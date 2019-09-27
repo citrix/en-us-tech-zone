@@ -1,7 +1,7 @@
 ---
 layout: doc
 ---
-# About Citrix Tech Zone
+## About Citrix Tech Zone
 
 ## What is Tech Zone?
 
