@@ -32,16 +32,13 @@ Citrix’s “Extract, Transform, and Notify” (ETN) methodology enables focuse
 Below are some sample applications (Systems of Record) which have out-of-the-box microapp integrations:
 
 -  Atlassian Jira
--  Google G-Suite Calendar
 -  Google G-Suite Directory
--  Google G-Suite Drive
+-  Google G-Suite Calendar
 -  Microsoft Dynamics CRM
 -  Microsoft Power BI
--  Microsoft Teams
 -  Salesforce
 -  SAP Ariba
 -  SAP Concur
--  SAP SuccessFactor
 -  ServiceNow
 -  Tableau
 -  Workday

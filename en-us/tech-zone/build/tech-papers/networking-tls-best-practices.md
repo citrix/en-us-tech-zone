@@ -9,7 +9,7 @@ layout: doc
 
 ## Overview
 
-This Tech Paper provides the steps necessary to validate the existing SSL\TLS configuration of a vServer running on a Citrix ADC and ways to ensure that best practices are applied. We cover configuration items such as the certificate chain bound to the vServer, cipher suite settings and disabling older protocols that are vulnerable to attack.
+This Tech Paper provides the steps necessary to validate the existing SSL\TLS configuration of a vServer running on a Citrix ADC and ways to ensure that best practices are applied. We will cover configuration items such as the certificate chain bound to the vServer, cipher suite settings and disabling older protocols that are vulnerable to attack.
 
 There are many tools that can be used to validate the configuration of a public-facing site protected by Citrix ADC - one such tool is the [**SSL Server Test by Qualys SSL Labs.**][SSLLabs] It performs a robust series of tests against your server and provides an easy to read score card that you can use to make improvements to your configuration. The scan is free and only takes about a minute to complete.
 
@@ -17,7 +17,7 @@ There are many tools that can be used to validate the configuration of a public-
 
 Qualys actively develop the SSL test and as such the tests are likely to change in the future as new protocols are created and new vulnerabilities are found. Because of this, it is good practice to test sites regularly to make sure that any new vulnerabilities are not exposed.
 
-_**Note:** SSLLabs posts the server URL being tested along with the final score on their public dashboard, unless the option to **Do not show the results on the boards** is chosen._
+_**Note:** SSLLabs will post the server URL being tested along with the final score on their public dashboard, unless the option to **Do not show the results on the boards** is chosen._
 
 ## Configuration Items that Should be Validated
 
@@ -34,13 +34,9 @@ Once the SSLLabs test is completed a letter grade is presented along with a poin
   3 Key Exchange
   4 Cipher Strength
 
-Each of the above categories receives a numerical score that is then averaged into a total score. There are also special cases or configurations that limit the final grade or take points away - such as when a certificate is not trusted, or if SSLv3 is enabled. Full documentation on how SSL Labs tests are graded can [be found here.][Grading]
+Each of the above categories receives a numerical score that is then averaged into a total score. There are also special cases or configurations that will limit the final grade or take points away - such as when a certificate is not trusted, or if SSLv3 is enabled. Full documentation on how SSL Labs tests are graded can [be found here.][Grading]
 
 [Grading]: https://github.com/ssllabs/research/wiki/SSL-Server-Rating-Guide
-
-## Citrix Receiver\Workspace app Cipher Support for Gateway deployments
-
-***Important:** Review the following articles regarding client cipher support when deploying a gateway vServer for virtual apps and desktops: [CTX234227 for Citrix Receiver](https://support.citrix.com/article/CTX234227) and [CTX250104 for Workspace app](https://support.citrix.com/article/CTX250104)*
 
 ## Implementation Concerns
 
@@ -62,7 +58,7 @@ The following are general steps that should be taken first to ensure a high scor
     -  Certificates are not always signed by a CA that every endpoint inherently trusts; often times they are signed by an intermediate CA
     -  The intermediate certificate should be installed on the ADC then linked to the server certificate that is bound to the vServer
     -  Intermediate certificates should be provided by the vendor that provided the server certificate, often in a 'certificate bundle'; they can also usually be found on the vendors public site
-    -  There can be multiple intermediate certificates that must be installed and linked; in order for the server certificate to function, the client must receive a certificate chain that ends with a CA certificate that the client already trusts
+    -  There may be multiple intermediate certificates that need to be installed and linked; in order for the server certificate to function, the client must receive a certificate chain that ends with a CA certificate that the client already trusts
     -  The root CA certificate used to sign the intermediate certificate will likely be trusted by all clients
     -  To install the Intermediate certificate, go to: _Traffic Management > SSL > Certificates > CA Certificates_ and choose _Install_ (_**Note:** earlier builds of Citrix ADC do not have the 'CA Certificates' option in the GUI_)
     -  Once the intermediate certificate is installed, it can be linked to the server certificate by selecting the certificate and choosing _link_ from the action menu.
@@ -85,11 +81,11 @@ The following are general steps that should be taken first to ensure a high scor
 ![Secure-Renegotiate](/en-us/tech-zone/build/media/tech-papers_networking-tls-best-practices_secure-renegotiate.png)
 
 -  Create a DH key to be used by the DHE cipher suites
-    -  _**Note:** creating and binding a DH key is optional, slower and only useful for older clients that lack ECDHE support. If a DH key is not bound, DHE cipher suites are ignored._
+    -  _**Note:** creating and binding a DH key is optional, slower and only useful for older clients that lack ECDHE support. If a DH key is not bound, DHE cipher suites will be ignored._
     -  Go to _Traffic Management > SSL_ and select **Create Diffie-Hellman (DH) key**
-    -  In the _DH Filename_ field, enter a file name for the key file (Note: the default path on the appliance is /nsconfig/ssl/)
+    -  In the _DH Filename_ field, enter a filename for the key file (Note: the default path on the appliance is /nsconfig/ssl/)
     -  Enter the desired DH key size in _DH Parameter Size_ - either 1024 or 2048 (Note: 4096 bit DH keys are not currently supported)
-    -  _**Note:** DH key size is expected to be the same size as the RSA key and is usually 2048 bit_
+    -  _**Note:** DH key size is expected to be the same size as the RSA key and in most cases 2048 bit_
     -  Choose either the 2 or 5 random number Generator
     -  Click _Create_ - key generation may take some time
 
@@ -105,7 +101,7 @@ The following are general steps that should be taken first to ensure a high scor
 -  Create a custom cipher group that provides Forward Secrecy (FS)
     -  Go to _Traffic Management > SSL > Cipher Groups_ and choose **Add**
     -  Enter a name for the Cipher group
-    -  Click **+ Add** then expand the **+ ALL** section - select the following cipher suites:
+    -  Click **+ Add** then expand the **+ ALL** section - select the following ciphersuites:
         -  TLS1.3-CHACHA20-POLY1305-SHA256
         -  TLS1.3-AES128-GCM-SHA256
         -  TLS1.3-AES256-GCM-SHA384
@@ -214,7 +210,7 @@ set ssl vServer Ex-vServer -HSTS ENABLED -maxage 157680000
 
 ### SHA1 Certificates
 
-Certificates that are signed with SHA1 are considered weak, and will prevent a high grade in the SSLLabs test. If any certificates are SHA1 signed, they should be renewed with an SHA256 certificate and installed on the ADC.
+Certificates that are signed with SHA1 are considered weak, and will prevent a high grade in the SSLLabs test. If any certificates are SHA1 signed, they should be renewed with a SHA256 certificate and installed on the ADC.
 
 ### DNS CAA
 
@@ -238,6 +234,6 @@ As new vulnerabilities are discovered, they will be tested for by SSLLabs so fre
 
 -  ECC certificate support was added to the VPX appliances in **12.0 build 57**; it was available in earlier builds for appliances with dedicated SSL hardware
 
--  The Zombie POODLE vulnerability was addressed in builds **12.1 build 50.31, 12.0 build 60.9, 11.1 build 60.14, 11.0 build 72.17, and 10.5 build 69.5**; this vulnerability only affects MPX\SDX appliances with Nitrox SSL hardware, meaning that MPX\SDX appliances with Coleto Creek are not vulnerable; disabling CBC-based cipher suites will also mitigate this vulnerability. [See CTX article for more information](https://support.citrix.com/article/CTX240139)
+-  The Zombie POODLE vulnerability was addressed in builds **12.1 build 50.31, 12.0 build 60.9, 11.1 build 60.14, 11.0 build 72.17, and 10.5 build 69.5**; this vulnerability only affects MPX\SDX appliances with Nitrox SSL hardware, meaning that MPX\SDX appliances with Coleto Creek are not vulnerable; disabling CBC-based cipher suites will also mitigate this vulnerability. [Please see this CTX article for more information](https://support.citrix.com/article/CTX240139)
 
 -  The cipher list has been modified to address CBC weaknesses, thus removing 0xc028 and 0x39 ciphers

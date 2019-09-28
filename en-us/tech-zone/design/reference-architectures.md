@@ -15,8 +15,6 @@ Just as buildings have blueprints that include details about their structure and
 
 [Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
 
-[ITSM Adapter Service](/en-us/tech-zone/design/reference-architectures/itsm-adapter-service.html) - Learn how to integrate ServiceNow within your Citrix Virtual Apps and Desktops environment including key technical concepts and use cases.
-
 ## Citrix Virtual Apps and Desktops
 
 [App Layering](/en-us/tech-zone/design/reference-architectures/app-layering.html) - Gain a deep understanding of the Citrix Layering technology that simplifies the image management for VDI and hosted-shared environments including use cases and technical concepts.
@@ -38,8 +36,6 @@ Just as buildings have blueprints that include details about their structure and
 ## Citrix Networking
 
 [SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan.html) - Learn about the framework, design, and architecture for Citrix SD-WAN with SD-WAN Orchestrator for single region deployment.
-
-[SD-WAN for Content Collaboration](/en-us/tech-zone/design/reference-architectures/sdwan-content-collaboration.html) - Learn about the deployment architecture and how Citrix SD-WAN WANOP helps to optimize Citrix Content Collaboration for customer-managed storage zones including relevant test data.
 
 [SD-WAN Multi-Region](/en-us/tech-zone/design/reference-architectures/sd-wan-multi-region.html) - Discover the framework, design, and architecture for Citrix SD-WAN multi-region deployment with SD-WAN Orchestrator.
 

@@ -55,8 +55,4 @@ layout: doc
 
 [Citrix NetScaler on Oracle Cloud](https://cloudmarketplace.oracle.com/marketplace/content?contentId=38906949) - Technical document for deploying Citrix NetScaler VPX on Oracle Cloud Infrastructure
 
-[Implementing Citrix Virtual Apps and Desktops in Oracle Cloud Infrastructure](https://docs.cloud.oracle.com/iaas/Content/Resources/Assets/whitepapers/implement-citrix-virtual-apps-and-desktops-in-oci.pdf) - Technical whitepaper for deploying Citrix Virtual Apps and Desktops in Oracle Cloud Infrastructure
-
-## SAP
-
-[Delivering on-premises SAP S/4 HANA workloads over Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/design/reference-architectures.html) - A performance analysis whitepaper for running SAP S/4 HANA using the Citrix Virtual Apps and Desktops Service with on-premises resource locations. **COMING SOON!**
+[Implementing Citrix Virtual Apps and Desktops in Oracle Cloud Infrastructure](https://citrixready.citrix.com/content/dam/ready/partners/or/oracle-corporation/oracle-cloud-infrastructure/implementing-citrix-virtual-apps-and-desktops-in-oracle-cloud-infrastructure-whitepapers.pdf) - Technical whitepaper for deploying Citrix Virtual Apps and Desktops in Oracle Cloud Infrastructure
