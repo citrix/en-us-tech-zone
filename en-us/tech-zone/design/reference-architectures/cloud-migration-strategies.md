@@ -125,28 +125,28 @@ As a pre-requisite, customers must ensure the network connectivity to establish 
 
 1.  Secure Cloud Connector Communication - Configure SSL on Cloud Connectors to secure XML traffic from the StoreFront server [CTX221671](https://support.citrix.com/article/CTX221671).
 
-1. Identity and Access Management - define the identity providers and accounts used for administrators and subscribers to Citrix Cloud and its offerings
+1.  Identity and Access Management - define the identity providers and accounts used for administrators and subscribers to Citrix Cloud and its offerings
     *  Configure the identity provider, for example, your on-premises Active Directory or Azure Active Directory. Refer to [Citrix Documentation](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management.html) for more information.
     *  Validate the authentication on each identity provider by accessing the Citrix Cloud Page or Workspace URL.
     *  Create and Download the Secure Client Key - Secure clients can be used to authenticate with the Citrix Cloud APIs and manage the cloud services. This enables administrators to create fully automated scripts and scheduled tasks.
     *  Add new cloud administrator accounts for the administration of Citrix Cloud Services.
     *  Customize the administrator roles with delegated permissions.
 
-1. Zone Creation and Mappings
+1.  Zone Creation and Mappings
     *  When you create a resource location in Citrix Cloud and then add a Cloud Connector to that resource location, the Citrix Virtual Apps and Desktops Service automatically create a zone.
     *  You can place host connections, machine catalogs, users, and applications in a zone. A zone can also contain Citrix Gateway and StoreFront servers.
     *  Placing items in a zone affects how the service interacts with them and with other objects related to them.
     *  After you create more than one resource location (and the zones are created automatically), you can move resources from one zone to another. This flexibility comes with the risk of separating items that work best in proximity. For example, moving a catalog to a different zone than the connection (host) that creates the machines in the catalog, can affect performance. So, consider potential unintended effects before moving items between zones. Keep a catalog and the host connection it uses in the same zone.
     *  If the connection between a zone and Citrix Cloud fails, the Local Host Cache feature enables a Cloud Connector in the zone to continue brokering connections to VDAs in that zone. The zone must have StoreFront installed.
 
-1. Configure the hosting connections
+1.  Configure the hosting connections
     *  Export the existing hosting connections from customer hosted locations.
     *  Import or manually create the hosting configurations into Citrix Cloud Studio.
     *  PowerShell scripts with SDK commands can be used to export the existing hosting connections to import them on Citrix Cloud.
     *  Each hosting connection gets associated with a zone by default.
     *  When a hypervisor connection is added to a zone, all the virtual machines on hypervisors managed through that connection also reside in that zone.
 
-1. Create Machine Catalogs
+1.  Create Machine Catalogs
     *  Before you create an MCS or PVS-based catalog, you first use the hypervisor or cloud service tools to create and configure the master image. This process includes installing a Virtual Delivery Agent (VDA) on the image. Then you create the machine catalog in the Studio management console. You can also point to the existing master image on the hypervisor to create the machine catalog.
     *  You can also use your own tools to provision machines. If your machines are already created using your own tools, you must still create one or more machine catalogs for those machines.
     *  Citrix Cloud Studio guides you to create the first machine catalog and uses a default functional level that can be earlier than the most current.
@@ -216,7 +216,7 @@ In this approach, all the above 1 to 15 steps are also applicable and are requir
 
 *  Configure On-Premises StoreFront and Gateway
     *  You can use the on-premises StoreFront and Gateway along with Citrix Cloud. This allows you to enable access to Citrix hybrid environment using the existing URL configured on your on-premises Gateway and StoreFront.
-    *  The biggest consideration points for customers that are new to the cloud is having the authentication point hosted in the cloud. The multi-factor authentication solution supported in Workspace Experience is Azure MFA and Okta, for all other integration Citrix recommends deploying StoreFront and Citrix ADC on-premises. 
+    *  The biggest consideration points for customers that are new to the cloud is having the authentication point hosted in the cloud. The multi-factor authentication solution supported in Workspace Experience is Azure MFA and Okta, for all other integration Citrix recommends deploying StoreFront and Citrix ADC on-premises.
     *  Customer-managed StoreFront offers greater security configuration options and flexibility for deployment architecture, including the ability to maintain user credentials on-premises.
     *  On-premises Citrix ADC offers customization flexibility. On-premises Citrix ADC passes the user credentials to on-premises StoreFront, which uses Cloud Connectors as the XML Server. With on-premises Citrix Gateway and StoreFront, the user credentials never traverse into the Citrix Cloud.
     *  Some basic customization can be done in Workspace, but for more advanced customization customers can use the CSS capabilities of StoreFront and Citrix ADC. For customers wanting to use their own FQDN and certificates, Citrix recommends deploying StoreFront and Citrix ADC on-premises.
@@ -320,11 +320,11 @@ Both public and self-signed certificates can be used as the customer-hosted Stor
 
 [![cloud-migration-strategies-Image-9](/en-us/tech-zone/design/media/reference-architectures_cloud-migration-strategies_009.png)](/en-us/tech-zone/design/media/reference-architectures_cloud-migration-strategies_009.png)
 
-**How to enable SSL on Cloud Connectors to secure XML Traffic?**
+#### Enable TLS on Cloud Connectors to secure XML Traffic
 
 Refer to the [Citrix Support Article](https://support.citrix.com/article/CTX221671) for detailed information on how to enable SSL on Cloud Connectors to secure the XML traffic. The XML Service is used for application and desktop resource enumeration including handling user name and password data from StoreFront to Cloud Connectors, therefore, it must be encrypted.
 
-**In which circumstances are the XML and the STA services used on the Cloud Connectors?**
+#### Using XML and STA services on Cloud Connector
 
 When StoreFront and Citrix Gateway are deployed at the customer-hosted location and integrated with Citrix Cloud, the XML and the STA services are being used. Since on-premises StoreFront and Citrix Gateway cannot talk directly to the Cloud Delivery Controller function directly, the Remote Broker Service on the Cloud Connectors helps to supply XML data and STA tickets.
 
@@ -344,7 +344,7 @@ If the connection between a zone and Citrix Cloud fails, the Local Host Cache fe
 
 A Hosting Connection is required in Citrix Cloud to enable the communication with hypervisors and public cloud platforms as well as power management of VDAs. Hypervisor commands are executed by the HCL Service in Cloud Connector when doing MCS operations in Citrix Cloud. To communicate with a customer-hosted hypervisor, we need to configure the hosting connections on Cloud Studio.
 
-**How to create a hosting connection on Citrix Cloud Studio?**
+#### Creating a hosting connection on Citrix Cloud Studio
 
 Refer to the [Citrix Docs Page](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html) for the step-by-step process on how to create the hosting connection on Citrix Cloud. It is recommended to manually create the public cloud hosting connections on Citrix Cloud.
 
@@ -710,7 +710,7 @@ Provide the name and create a client
 
 Downloading your Secure Client saves a file named secureclient.csv, which should be kept in a safe location. For more information, refer to the [Citrix Docs page](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/sdk-api.html) on how to install and use the Remote PowerShell SDK
 
-**How to use the credential file and setup a credential profile?**
+#### Using the credential file and setup a credential profile
 
 The following command creates a default credential profile for customer “citrixdemo” that will bypass manual authentication in the current and all subsequent PowerShell sessions.
 
@@ -751,4 +751,3 @@ To verify the successful authentication using SecureClientFile, execute the Get-
 [Cloud Connector Updates](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/cloud-connector-updates.html)
 
 [How to install SSL Certificate on Cloud Connectors](https://support.citrix.com/article/CTX221671)
-
