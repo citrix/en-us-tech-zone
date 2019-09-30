@@ -22,6 +22,6 @@ You have questions or feedback about published articles? Or even new content ide
 -  [Feedback submission](https://podio.com/webforms/22025531/1541944)
 -  [New content request](https://podio.com/webforms/22025559/1541946)
 
-Thank you!!
+Thank you!
 
 The Tech Zone Team
