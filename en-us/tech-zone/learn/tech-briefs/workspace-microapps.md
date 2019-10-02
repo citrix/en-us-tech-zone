@@ -7,8 +7,6 @@ layout: doc
 
 **Author:** [Ana Ruiz](https://twitter.com/mobileruiz)
 
-**Special Thanks:** Dan Brinkmann
-
 Organizations understand that when employees are forced to use complex, hard-to-use applications, they become frustrated and less productive. Employees spend 20% of their time searching for information while utilizing 4 or 5 key functions in about 80% of all business applications. [Citrix Workspace](/en-us/tech-zone/learn/tech-briefs/workspace-app.html/) allows users to access all their resources—SaaS apps, web apps, Windows Apps, Linux apps, desktops, and data through a single pane of glass. Citrix introduces intelligent features to workspace which extend these capabilities by adding machine learning-fueled microapps and workflows, universal search, and virtual assistance.
 
 ## Overview
@@ -37,7 +35,6 @@ Below are some sample applications (Systems of Record) which have out-of-the-box
 -  Google G-Suite Drive
 -  Microsoft Dynamics CRM
 -  Microsoft Power BI
--  Microsoft Teams
 -  Salesforce
 -  SAP Ariba
 -  SAP Concur
