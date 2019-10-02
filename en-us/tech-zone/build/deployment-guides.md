@@ -8,3 +8,5 @@ Deployment guides provide step-by-step instruction on how to perform key tasks a
 ## Citrix Workspace
 
 [Citrix Files with Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/build/deployment-guides/citrix-files.html) - Learn how to deploy the Citrix Files Client for Windows in a virtual app and desktop environment including related components, tips, and best practices for optimal performance and management.
+
+[Migrating Citrix Virtual Apps and Desktops from on-premises to Citrix Cloud](/en-us/tech-zone/build/deployment-guides/cvad-cvads-migration.html) - Learn how to migration your on-premises Citrix Virtual Apps and Desktops environment to Citrix Cloud.
