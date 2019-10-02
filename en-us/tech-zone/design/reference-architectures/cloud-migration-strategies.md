@@ -1,7 +1,7 @@
 ---
 layout: doc
 ---
-# Migration Strategies - Traditional On-Premises to Citrix Cloud Virtual Apps and Desktops Service
+# Migrating Citrix Virtual Apps and Desktops from on-premises to Citrix Cloud
 
 ## Contributors
 
