@@ -1,7 +1,7 @@
 ---
 layout: doc
 ---
-# Deployment Guides
+# Deployment Guides - MINOR EDIT
 
 Deployment guides provide step-by-step instruction on how to perform key tasks around installation and configuration of Citrix offerings. They are similar to a hands-on lab guide including product screenshots but focus on real-world production environments building for performance, scalability and security.
 
