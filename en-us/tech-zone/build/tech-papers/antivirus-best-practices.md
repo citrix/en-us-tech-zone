@@ -1,7 +1,7 @@
 ---
 layout: doc
 ---
-# Endpoint Security and Antivirus Best Practices
+# Endpoint Security and Antivirus Best Practices - MINOR EDIT
 
 ## Contributors
 
