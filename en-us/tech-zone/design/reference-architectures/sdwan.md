@@ -358,7 +358,7 @@ Goal of this reference architecture is to assist you with planning your own impl
 
 ## References
 
-[Citrix SD-WAN Orchestrator](/en-us/citrix-sd-wan-orchestrator/citrix-sd-wan-orchestrator.pdf)
+[Citrix SD-WAN Orchestrator](/en-us/citrix-sd-wan-orchestrator.html)
 
 [Citrix SD-WAN how to articles](/en-us/citrix-sd-wan/10-2/how-to-articles.html)
 

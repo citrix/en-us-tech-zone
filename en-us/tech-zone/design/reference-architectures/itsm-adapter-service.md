@@ -8,7 +8,7 @@ layout: doc
 
 **Author:** [Nagaraj Manoli](mailto:nagaraj.manoli@citrix.com)
 
-**Special Thanks:** [Arvind SankaraSubramanian](arvind.sankarasubramanian@citrix.com), [Kiran Kumar](kiran.kumar2@citrix.com)
+**Special Thanks:** [Arvind SankaraSubramanian](mailto:arvind.sankarasubramanian@citrix.com), [Kiran Kumar](mailto:kiran.kumar2@citrix.com)
 
 ## Audience
 
