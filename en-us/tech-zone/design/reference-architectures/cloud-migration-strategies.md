@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Vivekananthan Devaraj](Vivekananthan.Devaraj@Citrix.com)
 
-**Special thanks:**  [Allen Furmanski](https://twitter.com/tekguyallen), [Harsh Gupta](harsh.gupta@citrix.com), [Nitin Mehta](nitin.mehta@citrix.com) & [Victor Cataluna](victor.cataluna@citrix.com)
+**Special thanks:**  [Martin Zugec](https://twitter.com/MartinZugec), [Allen Furmanski](https://twitter.com/tekguyallen), [Harsh Gupta](harsh.gupta@citrix.com), [Nitin Mehta](nitin.mehta@citrix.com) & [Victor Cataluna](victor.cataluna@citrix.com)
 
 ## Audience
 
