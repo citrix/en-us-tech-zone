@@ -599,7 +599,7 @@ Provide the **Cloud Connector details** as controllers name
 
 [![cloud-migration-strategies-Image-59](/en-us/tech-zone/design/media/reference-architectures_cloud-migration-strategies_059.png)](/en-us/tech-zone/design/media/reference-architectures_cloud-migration-strategies_059.png)
 
-Next, add the **Enable auto update of Controller** option and select **Allowed**. This will allow VDAs to update the new Cloud controller information if they are added in a later stage.
+Next, add the **Enable auto update of Controller** option and select **Allowed**. This will allow VDAs to update the new Cloud Connectors information if they are added in a later stage.
 
 [![cloud-migration-strategies-Image-60](/en-us/tech-zone/design/media/reference-architectures_cloud-migration-strategies_060.png)](/en-us/tech-zone/design/media/reference-architectures_cloud-migration-strategies_060.png)
 
