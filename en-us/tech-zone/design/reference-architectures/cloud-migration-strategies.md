@@ -601,7 +601,7 @@ Provide the **Cloud Connector details** as controllers name
 
 Next, add the **Enable auto update of Controller** option and select **Allowed**. This will allow VDAs to update the list of controllers with newly added Cloud Connectors. Although auto-update is not used for initial registration, the auto-update downloads and stores the ListOfDDCs in a persistent cache on the VDA when initial registration occurs. This is done for each VDA.
 
-When you migrate from on-prem to cloud, what is expected behavior is that by changing ListOfDDCs, the auto-update cache should be refreshed and point to Cloud Connectors. Refer to the [VDA registration product documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html#auto-update") for additional details on how auto-update works and exceptions.
+When you migrate from on-premises to Citrix cloud, **the expected behavior is to change and update the ListOfDDCs entries**, the auto-update cache should be refreshed and point to Cloud Connectors.  Refer to the [VDA registration product documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html#auto-update") for additional details on how auto-update works and its exceptions.
 
 [![cloud-migration-strategies-Image-60](/en-us/tech-zone/design/media/reference-architectures_cloud-migration-strategies_060.png)](/en-us/tech-zone/design/media/reference-architectures_cloud-migration-strategies_060.png)
 
