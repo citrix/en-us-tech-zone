@@ -6,9 +6,9 @@ layout: doc
 
 ## Contributors
 
-**Author:** [Vivekananthan Devaraj](Vivekananthan.Devaraj@Citrix.com)
+**Author:** [Vivekananthan Devaraj](mailto:Vivekananthan.Devaraj@Citrix.com)
 
-**Special thanks:**  [Allen Furmanski](https://twitter.com/tekguyallen), [Jaskirat Chauhan](jaskirat.chauhan@citrix.com), & [Derek Thorslund](Derek.Thorslund@citrix.com)
+**Special thanks:**  [Allen Furmanski](https://twitter.com/tekguyallen), [Jaskirat Chauhan](mailto:jaskirat.chauhan@citrix.com), & [Derek Thorslund](https://twitter.com/derektcitrix)
 
 ## Audience
 
