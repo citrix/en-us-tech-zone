@@ -576,7 +576,7 @@ The administrator has an option to set the working hours depending on the time z
 
 To create a power management schedule, refer to the reference section.
 
-Reference: [Power Management](/en-us/citrix-managed-desktops/configure-manage.html#configure-power-management-schedules).
+Reference: [Power Management](/en-us/citrix-managed-desktops/configure-manage.html#power-management-schedules).
 
 ### Security
 
