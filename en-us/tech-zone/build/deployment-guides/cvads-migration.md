@@ -19,7 +19,7 @@ The purpose of this document is to describe a set of procedures to migrate an on
 
 ## Prerequisites and Assumptions
 
-It is important that the reader has background knowledge on Citrix FlexCast Management Architecture (FMA), Citrix Cloud Architecture, design concepts and terminologies to execute the migration strategies. As a prerequisite, Citrix strongly recommends reviewing the [product documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service.html) and [reference architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html) materials to gain adequate knowledge in preparation for the migration approaches.
+It is important that the reader has background knowledge on Citrix FlexCast Management Architecture (FMA), Citrix Cloud Architecture, design concepts and terminologies to execute the migration strategies. As a prerequisite, Citrix strongly recommends reviewing the [product documentation](/en-us/citrix-virtual-apps-desktops-service.html) and [reference architecture](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html) materials to gain adequate knowledge in preparation for the migration approaches.
 
 ## Planning and Design
 
@@ -39,7 +39,7 @@ Review and capture the existing configuration details for
 *  User Layer
     *  User Types and Groups
     *  Citrix Workspace app or Receiver version on endpoints
-    *  Combability of Citrix Workspace app or Receiver on thin clients
+    *  Compatibility of Citrix Workspace app or Receiver on thin clients
     *  TLS 1.2 support
 *  Access Layer
     *  Authentication point and provider
@@ -99,9 +99,9 @@ In this approach, the Control Layer components are migrated to Citrix Cloud, but
 
 [![cloud-migration-strategies-Image-3](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_003.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_003.png)
 
-## #3 - Migrating the Control Layer components and Storefront Services to Citrix Cloud and integrating Citrix Workspace with On-Premises Gateway
+## #3 - Migrating the Control Layer components and StoreFront Services to Citrix Cloud and integrating Citrix Workspace with On-Premises Gateway
 
-In this approach, the Control Layer components and StoreFront services are migrated to Citrix Cloud and Citrix Workspace is configured with On-Premises Gateway for accessing the workloads. This approach provides extended and optimal access utilizing existing On-Premises Citrix Gateway deployments to enable remote access for the workloads. Users access the environment through Citrix Workspace URL for the resource enumeration. When users launch a desktop or application, the ICA connection is then established via the on-premises Gateway to the workloads(VDA). After the migration, the users need to access the Citrix Cloud Workspace URL for example, `https://examplecustomer.cloud.com` to access the Citrix environment and the On-Premises Gateway for ICA proxy.
+In this approach, the Control Layer components and StoreFront services are migrated to Citrix Cloud and Citrix Workspace is configured with On-Premises Gateway for accessing the workloads. This approach provides extended and optimal access utilizing existing On-Premises Citrix Gateway deployments to enable remote access for the workloads. Users access the environment through Citrix Workspace URL for the resource enumeration. When users launch a desktop or application, the ICA connection is then established via the on-premises Gateway to the workloads(VDA). After the migration, the users need to access the Citrix Cloud Workspace URL for example, `https://examplecustomer.cloud.com` to access the Citrix environment and the On-Premises Gateway for ICA Proxy.
 
 [![cloud-migration-strategies-Image-4](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_004.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_004.png)
 
@@ -109,15 +109,15 @@ In this approach, the Control Layer components and StoreFront services are migra
 
 Let’s go through the migration steps involved in all three migration strategies.
 
-As a pre-requisite, customers must ensure the network connectivity to establish communication from the customer hosted on-premises, public, or private cloud environments to Citrix Cloud.  Please refer to the [Citrix documentation](https://docs.citrix.com/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html) for complete requirements.
+As a pre-requisite, customers must ensure the network connectivity to establish communication from the customer hosted on-premises, public, or private cloud environments to Citrix Cloud. Please refer to the [Citrix documentation](/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html) for complete requirements.
 
 ### Migration steps for Strategy #1 - Migrating the Control and Access Layer components to Citrix Cloud, integrating with Citrix Gateway Service
 
 [![cloud-migration-strategies-Image-2](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_002.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_002.png)
 
-1.  Login to your Citrix Cloud subscription at `https://citrix.cloud.com` and select the region for Citrix to provision the control layer components and Workspace on the selected region.
+1.  Log in to your Citrix Cloud subscription at `https://citrix.cloud.com` and select the region for Citrix to provision the control layer components and Workspace on the selected region.
 
-1.  Create a new resource location – A customer-hosted location where Cloud Connectors are installed and contain the workloads and resources required for users
+1.  Create a resource location – A customer-hosted location where Cloud Connectors are installed and contain the workloads and resources required for users
     *  Install the Cloud Connectors at each customer-hosted location.
     *  Citrix strongly recommends installing two or more Cloud Connectors at each site. Refer to the sizing guide to deploy the required number of Cloud Connectors at each customer-hosted location.
     *  Refer to the Cloud Connector Technical Details for the system requirements and deployment scenario for different types of Active Directory implementations.
@@ -128,7 +128,7 @@ As a pre-requisite, customers must ensure the network connectivity to establish 
 1.  Secure Cloud Connector Communication - Configure SSL on Cloud Connectors to secure XML traffic from the StoreFront server [CTX221671](https://support.citrix.com/article/CTX221671).
 
 1.  Identity and Access Management - define the identity providers and accounts used for administrators and subscribers to Citrix Cloud and its offerings
-    *  Configure the identity provider, for example, your on-premises Active Directory or Azure Active Directory. Refer to [Citrix Documentation](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management.html) for more information.
+    *  Configure the identity provider, for example, your on-premises Active Directory or Azure Active Directory. Refer to [Citrix Documentation](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management.html) for more information.
     *  Validate the authentication on each identity provider by accessing the Citrix Cloud Page or Workspace URL.
     *  Create and Download the Secure Client Key - Secure clients can be used to authenticate with the Citrix Cloud APIs and manage the cloud services. This enables administrators to create fully automated scripts and scheduled tasks.
     *  Add new cloud administrator accounts for the administration of Citrix Cloud Services.
@@ -151,10 +151,10 @@ As a pre-requisite, customers must ensure the network connectivity to establish 
     *  Before you create an MCS or PVS-based catalog, you first use the hypervisor or cloud service tools to create and configure the master image. This process includes installing a Virtual Delivery Agent (VDA) on the image. Then you create the machine catalog in the Studio management console. You can also point to the existing master image on the hypervisor to create the machine catalog.
     *  You can also use your own tools to provision machines. If your machines are already created using your own tools, you must still create one or more machine catalogs for those machines.
     *  Citrix Cloud Studio guides you to create the first machine catalog and uses a default functional level that can be earlier than the most current.
-    *  When you create a catalog of VMs, you need to specify how to provision those VMs. You can use Citrix tools such as Machine Creation Services (MCS) or Citrix Provisioning (PVS).
-        *  If you use Citrix Provisioning to create machines, see the [Citrix Provisioning documentation](https://docs.citrix.com/en-us/provisioning.html) for instructions.
+    *  When you create a catalog of VMs, you must specify how to provision those VMs. You can use Citrix tools such as Machine Creation Services (MCS) or Citrix Provisioning (PVS).
+        *  If you use Citrix Provisioning to create machines, see the [Citrix Provisioning documentation](/en-us/provisioning.html) for instructions.
         *  If you use MCS to provision VMs, you provide a master image (or snapshot) to create identical VMs in the catalog using the hypervisor or cloud service tools. You select that image (or a snapshot of an image), specify the number of VMs to create in the catalog, and configure additional information.
-        *  Refer to the [Citrix documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html) which gives more detailed information on how to create a master image and machine catalog on the hypervisor or cloud service.
+        *  Refer to the [Citrix documentation](/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html) which gives more detailed information on how to create a master image and machine catalog on the hypervisor or cloud service.
     *  When a machine catalog is placed in a zone, it is assumed that all VDAs in the catalog are in the same zone. If you move a machine catalog to another zone (using Studio), the VDAs in that catalog re-register with Cloud Connectors in the zone where you moved the catalog. When you move a catalog, ensure you also move any associated host connection to the same zone.
 
 1.  Create Delivery Groups
@@ -166,9 +166,9 @@ As a pre-requisite, customers must ensure the network connectivity to establish 
     *  When you create a Delivery Group, a page appears to choose the delivery type. Choose either Applications or Desktops if you chose the machine catalog containing single session desktop OS machines.
     *  If you selected machines from a server OS or desktop OS random (pooled) catalog, the delivery type is assumed to be applications and desktops. You can deliver applications, desktops, or both.
     *  PowerShell scripts with SDK commands can be used to export the existing on-premises applications to import them in Citrix Cloud with respective Delivery Groups.
-    *  To configure a mandatory home zone for a user, on the Delivery Group Wizard users page, select the “Sessions must launch in a user’s home zone” checkbox. All sessions launched by a user in that Delivery Group must launch from machines in that home zone. If a user in the Delivery Group does not have a configured home zone, this setting has no effect.
+    *  To configure a mandatory home zone for a user, on the Delivery Group Wizard users page, select the “Sessions must launch in a user’s home zone” check box. All sessions launched by a user in that Delivery Group must launch from machines in that home zone. If a user in the Delivery Group does not have a configured home zone, this setting has no effect.
     *  An application’s home zone is specified in the application’s properties. You can configure application properties when you add the application to a group or later. Configuring a home zone for an application is also known as adding an application to a zone.
-    *  A user or an application can have only one home zone at a time. (An exception for users is that they can have multiple zone memberships because of a user group membership. However, even in this case, the broker uses only one home zone). Although zone preferences for users and applications can be configured, the broker selects only one preferred zone for a launch. The default priority order for selecting the preferred zone is: application home > user home > user location. Refer to the [Citrix documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/zones.html) for more information on zone preferences and how it works.
+    *  A user or an application can have only one home zone at a time. (An exception for users is that they can have multiple zone memberships because of a user group membership. However, even in this case, the broker uses only one home zone). Although zone preferences for users and applications can be configured, the broker selects only one preferred zone for a launch. The default priority order for selecting the preferred zone is: application home > user home > user location. Refer to the [Citrix documentation](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/zones.html) for more information on zone preferences and how it works.
 
 1.  User Access (Library -> Subscriber) to Resources
     *  While creating the Delivery Group, on the users’ wizard specify the users and user groups who can use the applications and desktops in the Delivery Group.
@@ -177,13 +177,13 @@ As a pre-requisite, customers must ensure the network connectivity to establish 
 
 1.  Citrix Policies
     *  Configure Citrix policies to control user access and session environments. Citrix policies are the most efficient method of controlling connection, security, and bandwidth settings. You can create policies for specific groups of users, devices, or connection types. Each policy can contain multiple settings.
-    *  As part of the migration, you need to convert existing Citrix Policies into Templates.
-    *  Create a new Active Directory GPO (if there are no existing GPO with Citrix Policies) and link the GPO to the Organization Unit where the VDA’s are placed. Use the existing policy if there is an existing GPO with Citrix setting.
+    *  As part of the migration, you must convert existing Citrix Policies into Templates.
+    *  Create a new Active Directory GPO (if there are no existing GPO with Citrix Policies) and link the GPO to the Organization Unit where the VDAs are placed. Use the existing policy if there is an existing GPO with Citrix setting.
     *  Edit the GPO and select the Citrix Policies under Computer Configuration.
     *  Create a new policy and select the exported template name to import the template settings.
     *  Repeat the above steps for GPO User configuration and import Citrix Policies for users.
     *  Ensure there are no conflicts with Citrix settings from any other GPO settings.
-    *  Refer to the [Citrix Documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/policies.html) for more information about Citrix Policies on Citrix Cloud.
+    *  Refer to the [Citrix Documentation](/en-us/citrix-virtual-apps-desktops-service/policies.html) for more information about Citrix Policies on Citrix Cloud.
 
 1.  App Groups and Tags
     *  Application Groups let you manage collections of applications. Application Groups are optional; they offer an alternative to adding the same applications to multiple Delivery Groups. Delivery Groups can be associated with more than one Application Group, and an Application Group can be associated with more than one Delivery Group.
@@ -191,8 +191,8 @@ As a pre-requisite, customers must ensure the network connectivity to establish 
     *  Review the Application Groups and Tags from the on-premises environment and configure those App Groups and Tags on Citrix Cloud.
 
 1.  Workspace Configuration
-    *  The evolution of Citrix Storefront in Citrix Cloud is known as Citrix Workspace and it is enabled by default when you subscribe to Citrix Cloud. Citrix Workspace does not require updates or maintenance from a customer perspective. Customers have a similar configuration and customize options with Citrix Workspace compared to traditional StoreFront.
-    *  When using Workspace users will browse to `https://example.cloud.com`, the certificate and FQDN is owned by Citrix.
+    *  The evolution of Citrix StoreFront in Citrix Cloud is known as Citrix Workspace and it is enabled by default when you subscribe to Citrix Cloud. Citrix Workspace does not require updates or maintenance from a customer perspective. Customers have a similar configuration and customize options with Citrix Workspace compared to traditional StoreFront.
+    *  When using Workspace users browse to `https://example.cloud.com`, the certificate and FQDN is owned by Citrix.
     *  In Citrix Cloud > Workspace Configuration > Access tab shows the Workspace URL which is ready to use. You can enable the individual service resources to your users from the Service Integrations tab. By default, the Virtual Apps and Desktops Service and the Secure Browser Service are enabled after you subscribe to them.
     *  Change authentication to workspaces - Change how subscribers authenticate to their workspace in Workspace Configuration > Authentication > Workspace Authentication.
     *  Access the workspace URL and verify the resource enumeration.
@@ -205,7 +205,7 @@ As a pre-requisite, customers must ensure the network connectivity to establish 
     *  Gateway Service is a replacement of your on-premises Gateway to access the Citrix environment using the Workspace URL, for example `https://examplecustomer.cloud.com`.
 
 1.  VDA Registration with Cloud Connector
-    *  During the VDA install you would normally configure the ListOfDDCs registry flag containing the FQDNs of the controllers. Instead, now when you install the VDAs, you'll configure the Citrix Cloud Connector addresses. The VDAs will talk to the connector, which will then proxy all the traffic up to the Delivery Controllers that are managed in the cloud.
+    *  During the VDA install you would normally configure the ListOfDDCs registry flag containing the FQDNs of the controllers. Instead, now when you install the VDAs, you configure the Citrix Cloud Connector addresses. The VDAs talk to the connector, which will then proxy all the traffic up to the Delivery Controllers that are managed in the cloud.
     *  Configure the GPO or Citrix Policies and apply it to the existing VDAs to establish the communication with Cloud Connectors for registration. Specify all the relevant Cloud Connectors for the Resource Location or Domain.
     *  Update the Golden Images / virtual disks with new Cloud Connector information
     *  Validate the VDA registration with Cloud Connector
@@ -219,25 +219,25 @@ In this approach, all the above 1 to 15 steps are also applicable and are requir
 
 *  Configure On-Premises StoreFront and Gateway
     *  You can use the on-premises StoreFront and Gateway along with Citrix Cloud. This allows you to enable access to Citrix hybrid environment using the existing URL configured on your on-premises Gateway and StoreFront.
-    *  The biggest consideration points for customers that are new to the cloud is having the authentication point hosted in the cloud. The multi-factor authentication solution supported in Workspace Experience is Azure MFA and Okta, for all other integration Citrix recommends deploying StoreFront and Citrix ADC on-premises.
+    *  The biggest consideration points for customers that are new to the cloud is having the authentication point hosted in the cloud. The multifactor authentication solution supported in Workspace Experience is Azure MFA and Okta, for all other integration Citrix recommends deploying StoreFront and Citrix ADC on-premises.
     *  Customer-managed StoreFront offers greater security configuration options and flexibility for deployment architecture, including the ability to maintain user credentials on-premises.
     *  On-premises Citrix ADC offers customization flexibility. On-premises Citrix ADC passes the user credentials to on-premises StoreFront, which uses Cloud Connectors as the XML Server. With on-premises Citrix Gateway and StoreFront, the user credentials never traverse into the Citrix Cloud.
     *  Some basic customization can be done in the Workspace, but for more advanced customization customers can use the CSS capabilities of StoreFront and Citrix ADC. For customers wanting to use their own FQDN and certificates, Citrix recommends deploying StoreFront and Citrix ADC on-premises.
     *  When using Workspace Experience, customers cannot limit certain IP addresses or user groups from authenticating. When using StoreFront and Citrix ADC on-premises, customers gain a bit more flexibility and security, such as LDAP group extraction and DoS prevention.
     *  Local Host Cache - Local Host Cache (LHC) allows the Citrix Virtual Apps and Desktops Service deployment to continue connection brokering operations in a Site when the Cloud Connector fails to connect to Citrix Cloud. Any users connected when LHC engages continue to stay connected, uninterrupted. Local Host Cache only works with an on-premises StoreFront deployment. It does not compliment the Workspace Experience. During an outage, one of the Cloud Connectors is elected to be the primary broker for the resource location. Local Host Cache is supported for Server-hosted applications and desktops and Static (assigned) desktops.
     *  StoreFront on-premises does not support delegating authentication to the Delivery Controllers in a cloud deployment.
-    *  When using on-premises StoreFront and Citrix ADC, a customer can choose to integrate both the Virtual Apps and Desktops by pointing at the Cloud Connectors. Additionally, customers can also add their on-premises Delivery Controllers as a separate Site. Doing this will aggregate all the resources available for users between both the on-premises site and Citrix Cloud.
+    *  When using on-premises StoreFront and Citrix ADC, a customer can choose to integrate both the Virtual Apps and Desktops by pointing at the Cloud Connectors. Additionally, customers can also add their on-premises Delivery Controllers as a separate Site. Doing this aggregates all the resources available for users between both the on-premises site and Citrix Cloud.
 
-### Migration steps for Strategy #3 - Migrating the Control Layer components and Storefront Services to Citrix Cloud and integrating Citrix Workspace with On-Premises Gateway
+### Migration steps for Strategy #3 - Migrating the Control Layer components and StoreFront Services to Citrix Cloud and integrating Citrix Workspace with On-Premises Gateway
 
 [![cloud-migration-strategies-Image-4](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_004.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_004.png)
 
-In this approach, all the above 1 to 15 steps are applicable and are required to be followed in addition to the below Steps for enabling ICA proxy access integrating with Citrix Workspace.
+In this approach, all the above 1 to 15 steps are applicable and are required to be followed in addition to the below Steps for enabling ICA Proxy access integrating with Citrix Workspace.
 
 *  A customer-hosted Citrix Gateway acts as ICA-proxy only to enable remote access to the published resources. If you do not want to use the Citrix Gateway as a Service and to provide optimal connection to resources, you can deploy Citrix Gateways or Citrix ADCs at on-premises locations and register with the resource location. This is done within the Workspace Configuration.
     *  The Workspace URL is still used to access the Citrix environment and it remains the same for this deployment.
     *  HDX Optimal Routing is not available as a feature in Citrix Cloud. However, you can define Traditional on-premises Citrix Gateways per resource location and route the connections through those specific Citrix Gateways at the time of launch.
-    *  Managing an on-premises Citrix ADC deployment requires a specialized networking skillset. If an organization decides to use an on-premises Citrix ADC or Citrix Gateway it is always recommended to have all components in pairs to avoid a single point of failure.
+    *  Managing an on-premises Citrix ADC deployment requires a specialized networking skill set. If an organization decides to use an on-premises Citrix ADC or Citrix Gateway it is always recommended to have all components in pairs to avoid a single point of failure.
     *  To set up on-premises Citrix Gateway as an ICA Proxy, there are no authentication or session policies are needed. In Citrix Cloud > Resource Locations, select Gateway for the resource location you want to use. Select Traditional Gateway and enter the external FQDN URL configured on your on-premises Gateway. Do not add a protocol. Ports are optional. Bind Citrix Cloud Connectors as Secure Ticket Authority (STA) servers to Citrix Gateway. For more information, see CTX232640.
 
 ## Detailed Migration Steps
@@ -246,9 +246,9 @@ Let’s review the migration processes more in detail with screenshots
 
 ### Migration steps for Strategy #1 - Migrating the Control and Access Layer components to Citrix Cloud, integrating with Citrix Gateway Service
 
-#### Step-1: Login to your Citrix Cloud Subscription and select the Region
+#### Step-1: Log in to your Citrix Cloud Subscription and select the Region
 
-If an administrator logs in to Citrix Cloud for the first time, they will get an option to select a home region. It is important to select the appropriate region for your deployment. This cannot be changed later. Refer to the [Citrix Docs Page](https://docs.citrix.com/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/geographical-considerations.html) for more information. You can access the Studio management console to configure and manage connections, machine catalogs, and Delivery Groups. Studio launches when you select Manage in the Citrix Cloud console.
+If an administrator logs in to Citrix Cloud for the first time, they get an option to select a home region. It is important to select the appropriate region for your deployment. This cannot be changed later. Refer to the [Citrix Docs Page](/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/geographical-considerations.html) for more information. You can access the Studio management console to configure and manage connections, machine catalogs, and Delivery Groups. Studio launches when you select **Manage** in the Citrix Cloud console.
 
 #### Step-2: Add administrators to a Citrix Cloud account and Delegate Administration
 
@@ -262,7 +262,7 @@ When the first Citrix Cloud Administrator invites additional administrators, the
 
 ##### Delegated Administration
 
-With Delegated Administration in Citrix Cloud, the first administrator can configure the access permissions that a new administrator needs, in accordance with their role in their organization. Refer to the [Citrix Docs Page](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/delegated-administration.html) for complete information on Delegated Administration in Citrix Cloud.
+With Delegated Administration in Citrix Cloud, the first administrator can configure the access permissions that a new administrator needs, in accordance with their role in their organization. Refer to the [Citrix Docs Page](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/delegated-administration.html) for complete information on Delegated Administration in Citrix Cloud.
 
 #### Step-3: Create a Resource Location
 
@@ -279,9 +279,9 @@ Let’s create the first Resource Location by installing the Cloud Connectors on
 
 During installation, the Cloud Connector requires internet access to Citrix Cloud to authenticate the user performing the installation, validate the installer’s permission(s), and configure the services. The installation occurs with the privileges of the user who initiates the install.
 
-Refer to the [Citrix Docs Page](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html) for more information on how to install the Cloud Connector in interactive installation mode and command-line mode.
+Refer to the [Citrix Docs Page](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html) for more information on how to install the Cloud Connector in interactive installation mode and command-line mode.
 
-Once we successfully install the first Cloud Connector, the first resource location is created on  Citrix Cloud.
+Once we successfully install the first Cloud Connector, the first resource location is created on Citrix Cloud.
 
 [![cloud-migration-strategies-Image-5](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_005.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_005.png)
 
@@ -299,20 +299,20 @@ Cloud Connectors cannot traverse domain-level trusts. If deploying resources in 
 
 ##### Multi-Domain Support
 
-Each domain where Cloud Connectors are deployed will appear in the Domains list. Citrix Cloud supports multiple domains and forests. Launching resources in the same domain or forest does not require any trust relationships to be configured. When launching resources from another domain or forest, trust relationships between the domains or forests must be configured.
+Each domain where Cloud Connectors are deployed appears in the Domains list. Citrix Cloud supports multiple domains and forests. Launching resources in the same domain or forest does not require any trust relationships to be configured. When launching resources from another domain or forest, trust relationships between the domains or forests must be configured.
 
 [![cloud-migration-strategies-Image-8](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_008.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_008.png)
 
-Azure Active Directory domain service is also supported. Refer to the [Citrix Docs Page](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html#deployment-scenarios-for-cloud-connectors-in-active-directory) for more deployment scenarios for Cloud Connectors with Active Directory domains and forests.
+Azure Active Directory domain service is also supported. Refer to the [Citrix Docs Page](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html#deployment-scenarios-for-cloud-connectors-in-active-directory) for more deployment scenarios for Cloud Connectors with Active Directory domains and forests.
 
 **Key Points:**
 
-*  The Cloud Connector needs to be installed on a dedicated domain-joined machine.
+*  The Cloud Connector must be installed on a dedicated domain-joined machine.
 *  It is recommended to keep all the Connectors powered on for proper operation and maintenance.
-*  The number of Connectors to install should at minimum be N+1 where N is the capacity needed to support the load within your resource location. Also, it is important to consider the Local Host Cache resource requirement during an outage. While 2 x Cloud Connectors are technically enough to facilitate HA under normal operations, having 3 x Cloud Connectors would facilitate continued HA in place during any maintenance operations and handle the resource requirements of LHC. Refer to the Citrix [LHC documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/local-host-cache.html) for the scalability details.
+*  The number of Connectors to install should at minimum be N+1 where N is the capacity required to support the load within your resource location. Also, it is important to consider the Local Host Cache resource requirement during an outage. While 2 x Cloud Connectors are technically enough to facilitate HA under normal operations, having 3 x Cloud Connectors would facilitate continued HA in place during any maintenance operations and handle the resource requirements of LHC. Refer to the Citrix [LHC documentation](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/local-host-cache.html) for the scalability details.
 *  Having highly available Cloud Connectors minimizes the risk of a single point of failure and allows users to continue to use their resources even in the event of failure on a single Cloud Connector.
-*  Cloud Connectors automatically distribute the load for Workspace and Gateway Service access. If all the Cloud Connectors at a customer-hosted location lose connectivity to Citrix Cloud and if there is no StoreFront configuration available for LHC, all brokering, and power management will cease to function. Configuring on-premises StoreFront helps during the outage by enabling the Local Host Cache. Existing HDX connections within the resource location will continue to run unless they are made through the Cloud Hosted Gateway Service.
-*  Cloud Connector Updates - Periodically, Citrix releases updates to increase the performance, security, and reliability of the Cloud Connector. To install these updates timely without unduly affecting your users’ Citrix Cloud experience, you can choose when these updates are installed. Refer to the [Citrix documentation](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/cloud-connector-updates.html) for more information.
+*  Cloud Connectors automatically distribute the load for Workspace and Gateway Service access. If all the Cloud Connectors at a customer-hosted location lose connectivity to Citrix Cloud and if there is no StoreFront configuration available for LHC, all brokering, and power management will cease to function. Configuring on-premises StoreFront helps during the outage by enabling the Local Host Cache. Existing HDX connections within the resource location continues to run unless they are made through the Cloud Hosted Gateway Service.
+*  Cloud Connector Updates - Periodically, Citrix releases updates to increase the performance, security, and reliability of the Cloud Connector. To install these updates timely without unduly affecting your users’ Citrix Cloud experience, you can choose when these updates are installed. Refer to the [Citrix documentation](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/cloud-connector-updates.html) for more information.
 *  Refer to [CTX221535](https://support.citrix.com/article/CTX221671) for troubleshooting Cloud Connector issues.
 
 In the Citrix Virtual Apps and Desktops Service, zones are created automatically when you create a resource location and add a Cloud Connector to it. Unlike an on-premises deployment, a service environment does not classify zones as primary or satellite. You can place machine catalogs, hypervisors, host connections, users, and applications in a zone. A zone can also contain Citrix Gateway and StoreFront servers. To use the Local Host Cache feature, a zone must have a StoreFront server.
@@ -321,7 +321,7 @@ In the Citrix Virtual Apps and Desktops Service, zones are created automatically
 
 The Cloud Connector runs the XML and the STA services on port 80 by default as these communications are typically INTERNAL. To configure encryption for these traffic types, certificates should be deployed on the Cloud Connectors and these two services should be bound to those certificates.
 
-Both public and self-signed certificates can be used as the customer-hosted StoreFront and on-premises Citrix ADCs need to trust the certificates. This is only necessary if you are using on-premises StoreFront or Citrix ADCs. If using a cloud-hosted Workspace and Citrix Gateway as a Service, the communication will be encrypted by default. The Cloud Connector use HTTPS/SSL for all outbound communication to Citrix Cloud.
+Both public and self-signed certificates can be used as the customer-hosted StoreFront and on-premises Citrix ADCs need to trust the certificates. This is only necessary if you are using on-premises StoreFront or Citrix ADCs. If using a cloud-hosted Workspace and Citrix Gateway as a Service, the communication is encrypted by default. The Cloud Connector use HTTPS/SSL for all outbound communication to Citrix Cloud.
 
 [![cloud-migration-strategies-Image-9](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_009.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_009.png)
 
@@ -351,11 +351,11 @@ A Hosting Connection is required in Citrix Cloud to enable the communication wit
 
 ##### Creating a hosting connection on Citrix Cloud Studio
 
-Refer to the [Citrix Docs Page](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html) for the step-by-step process on how to create the hosting connection on Citrix Cloud. It is recommended to manually create the public cloud hosting connections on Citrix Cloud.
+Refer to the [Citrix Docs Page](/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html) for the step-by-step process on how to create the hosting connection on Citrix Cloud. It is recommended to manually create the public cloud hosting connections on Citrix Cloud.
 
 ##### Additional Hypervisor Requirements for Cloud Connectors
 
-1.  For a VMware vCenter that has self-signed certificates installed, the certificate needs to be added to the Citrix Cloud Connector
+1.  For a VMware vCenter that has self-signed certificates installed, the certificate must be added to the Citrix Cloud Connector
 2.  For Hyper-V and System Center Virtual Machine Manager (SCVMM), the SCVMM Console must be installed on the Citrix Cloud Connector.
 3.  For Citrix Hypervisor, consider deploying a certificate on the hosts and trusting it on the Cloud Connectors.
 
@@ -379,7 +379,7 @@ Enter how many virtual machines need to be created and Select the **OU** and **N
 
 [![cloud-migration-strategies-Image-14](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_014.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_014.png)
 
-Enter the domain credentials which has permissions to create AD accounts
+Enter the domain credentials which have permissions to create AD accounts
 
 [![cloud-migration-strategies-Image-15](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_015.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_015.png)
 
@@ -459,11 +459,11 @@ Select the Delivery type as **Desktop** and continue the remaining process to co
 
 [![cloud-migration-strategies-Image-30](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_030.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_030.png)
 
-We have successfully completed the delivery group creation for statically-assigned machines.
+We have successfully completed the delivery group creation for statically assigned machines.
 
 [![cloud-migration-strategies-Image-31](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_031.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_031.png)
 
-**Note:** We have not migrated the virtual machines but instead just created the Machine Catalog and Delivery Groups. Let’s migrate the Policies, Tags and App Groups before migrating the VMs from the on-premises Delivery Controllers to Cloud Connectors.
+**Note:** We have not migrated the virtual machines but instead created the Machine Catalog and Delivery Groups. Let’s migrate the Policies, Tags, and App Groups before migrating the VMs from the on-premises Delivery Controllers to Cloud Connectors.
 
 #### Step-11: Migrate Citrix Policies
 
@@ -489,11 +489,11 @@ Open the **Group Policy Management console**, and select the **OU** where the VD
 
 [![cloud-migration-strategies-Image-36](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_036.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_036.png)
 
-Create a new GPO and edit the new policy to import the Citrix policy settings
+Create a GPO and edit the new policy to import the Citrix policy settings
 
 [![cloud-migration-strategies-Image-37](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_037.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_037.png)
 
-On the left pane, select either the **computer or user configuration** > Policies > Citrix Policies. On the right pane, select the templates. You will see the template which was created earlier
+On the left pane, select either the **computer or user configuration** > Policies > Citrix Policies. On the right pane, select the templates. You can see the template which was created earlier
 
 [![cloud-migration-strategies-Image-38](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_038.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_038.png)
 
@@ -577,7 +577,7 @@ Open the **Registry**, and navigate to **HKLM\Software\Citrix\VirtualDeliveryAge
 
 [![cloud-migration-strategies-Image-55](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_055.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_055.png)
 
-Shutdown the master image for MCS or virtual disk for PVS and update the machine catalog details on the ListofDDCs registry to make sure that new ListOfDDCs are in the image itself.
+Shut down the master image for MCS or virtual disk for PVS and update the machine catalog details on the ListofDDCs registry to make sure that new ListOfDDCs are in the image itself.
 
 For Static virtual machines, we can use the Active Directory Group Policy to update the controller details. The following are the steps:
 
@@ -599,9 +599,9 @@ Provide the **Cloud Connector details** as controllers name
 
 [![cloud-migration-strategies-Image-59](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_059.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_059.png)
 
-Next, add the **Enable auto update of Controller** option and select **Allowed**. This will allow VDAs to update the list of controllers with newly added Cloud Connectors. Although auto-update is not used for initial registration, the auto-update downloads and stores the ListOfDDCs in a persistent cache on the VDA when initial registration occurs. This is done for each VDA.
+Next, add the **Enable auto update of Controller** option and select **Allowed**. This allows VDAs to update the list of controllers with newly added Cloud Connectors. Although auto-update is not used for initial registration, the auto-update downloads and stores the ListOfDDCs in a persistent cache on the VDA when initial registration occurs. This is done for each VDA.
 
-When you migrate from on-premises to Citrix cloud, **the expected behavior is to change and update the ListOfDDCs entries**, the auto-update cache should be refreshed and point to Cloud Connectors.  Refer to the [VDA registration product documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html#auto-update") for additional details on how auto-update works and its exceptions.
+When you migrate from on-premises to Citrix Cloud, **the expected behavior is to change and update the ListOfDDCs entries**, the auto-update cache should be refreshed and point to Cloud Connectors.  Refer to the [VDA registration product documentation](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html#auto-update") for additional details on how auto-update works and its exceptions.
 
 [![cloud-migration-strategies-Image-60](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_060.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_060.png)
 
@@ -617,7 +617,7 @@ Increase the **priority** of the policy to apply the settings
 
 [![cloud-migration-strategies-Image-63](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_063.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_063.png)
 
-Once the policy settings are updated on the virtual machines, they will start registering with Cloud Connectors. Users can access those resources from the Citrix Workspace URL or through the on-premises Gateway and StoreFront.
+Once the policy settings are updated on the virtual machines, they start registering with Cloud Connectors. Users can access those resources from the Citrix Workspace URL or through the on-premises Gateway and StoreFront.
 
 ### Migration steps for Strategy #2 - Migrating the Control Layer components integrating with On-Premises StoreFront and Gateway
 
@@ -627,7 +627,7 @@ In this approach, all the above 1 to 14 steps are also applicable and are requir
 
 Customers can use an existing StoreFront or install a set of StoreFront servers to aggregate applications and desktops in Citrix Cloud.
 
-The multi-factor authentication solution supported in Citrix Workspace is Azure MFA and Okta, for all other integration, Citrix recommends deploying StoreFront and Citrix ADC at customer-hosted locations. It also allows customers to customize their domain names and URLs. This deployment type is recommended for any Citrix Virtual Apps and Desktops customers who already have StoreFront deployed.
+The multifactor authentication solution supported in Citrix Workspace is Azure MFA and Okta, for all other integration, Citrix recommends deploying StoreFront and Citrix ADC at customer-hosted locations. It also allows customers to customize their domain names and URLs. This deployment type is recommended for any Citrix Virtual Apps and Desktops customers who already have StoreFront deployed.
 
 The StoreFront servers need to communicate with Cloud Connectors for resource enumeration from Citrix Cloud. The Cloud Connectors are installed with SSL certificates to ensure that the XML and STA traffic is encrypted and secure.
 
@@ -647,7 +647,7 @@ For external access, we need to verify the **Security Ticket Authority** details
 
 [![cloud-migration-strategies-Image-67](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_067.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_067.png)
 
-Configure the **CallBack URL** if required and finish the StoreFront configuration.
+Configure the **CallBack URL** if necessary and finish the StoreFront configuration.
 
 Let’s configure the **Citrix Gateway** to enable external access. Connect to Citrix ADC. In the Integrate with Citrix Products section, click **XenApp and XenDesktop**.
 
@@ -671,13 +671,13 @@ Configure the **Session Policies** to complete the ADC configuration. Also, appl
 
 On-premises StoreFront and Gateway configuration are successfully completed.
 
-### Migration steps for Strategy #3 - Migrating the Control Layer components and Storefront Services to Citrix Cloud and integrating Citrix Workspace with On-Premises Gateway
+### Migration steps for Strategy #3 - Migrating the Control Layer components and StoreFront Services to Citrix Cloud and integrating Citrix Workspace with On-Premises Gateway
 
-In this approach, all the above 1 to 14 steps are applicable and are required to be followed in addition to Step 16 for enabling ICA proxy access integrating with Citrix Workspace.
+In this approach, all the above 1 to 14 steps are applicable and are required to be followed in addition to Step 16 for enabling ICA Proxy access integrating with Citrix Workspace.
 
 #### Step-16: Configure On-Premises Gateway as ICA Proxy
 
-Now it’s time to configure the Citrix Cloud Workspace to enable the on-premises ADC as ICA proxy Access. Access the **Citrix Cloud Workspace page**, select the **Resource Location**, and Select **Gateway**
+Now it’s time to configure the Citrix Cloud Workspace to enable the on-premises ADC as ICA Proxy Access. Access the **Citrix Cloud Workspace page**, select the **Resource Location**, and Select **Gateway**
 
 [![cloud-migration-strategies-Image-73](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_073.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_073.png)
 
@@ -703,11 +703,11 @@ The Remote SDKs for Citrix Virtual Apps and Desktops can be downloaded from the 
 
 The Remote SDKs for Citrix Virtual Apps and Desktops require authentication before it can access Citrix Cloud. Once authenticated, the remote access remains valid in the current PowerShell Session for up to 24 hours. Authentication to use Remote PowerShell SDKs can be either done using:
 
-**CloudMC (My Citrix):** Prompt for username and password for each PowerShell session (GUI).
+**CloudMC (My Citrix):** Prompt for user name and password for each PowerShell session (GUI).
 
 **CloudAPI:** Customer ID and API key & secret stored in the users’ Windows profile. This method is used to run unattended scripts as it provides silent authentication.
 
-To create a CloudAPI profile that bypasses the manual Citrix Cloud authentication dialog, you must first create a Citrix Cloud API Access Secure Client.  This operation can be found in the Citrix Cloud console, under “Identity and Access Management.”
+To create a CloudAPI profile that bypasses the manual Citrix Cloud authentication dialog, you must first create a Citrix Cloud API Access Secure Client. This operation can be found in the Citrix Cloud console, under “Identity and Access Management.”
 
 [![cloud-migration-strategies-Image-75](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_075.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_075.png)
 
@@ -715,11 +715,11 @@ Provide the name and create a client
 
 [![cloud-migration-strategies-Image-76](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_076.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_076.png)
 
-Downloading your Secure Client saves a file named secureclient.csv, which should be kept in a safe location. For more information, refer to the [Citrix Docs page](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/sdk-api.html) on how to install and use the Remote PowerShell SDK
+Downloading your Secure Client saves a file named secureclient.csv, which should be kept in a safe location. For more information, refer to the [Citrix Docs page](/en-us/citrix-virtual-apps-desktops-service/sdk-api.html) on how to install and use the Remote PowerShell SDK
 
-#### Using the credential file and setup a credential profile
+#### Using the credential file and set up a credential profile
 
-The following command creates a default credential profile for customer “citrixdemo” that will bypass manual authentication in the current and all subsequent PowerShell sessions.
+The following command creates a default credential profile for customer “citrixdemo” that bypasses manual authentication in the current and all subsequent PowerShell sessions.
 
 `Set-XDCredentials -CustomerId “xaxdpm” -SecureClientFile “c:\temp\secureclient.csv” -ProfileType CloudAPI –StoreAs “default”`
 
@@ -727,34 +727,34 @@ To verify the successful authentication using SecureClientFile, execute the Get-
 
 ## References
 
-[Citrix Product Documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service.html)
+[Citrix Product Documentation](/en-us/citrix-virtual-apps-desktops-service.html)
 
-[Reference Architecture for Citrix Cloud Virtual Apps and Desktops Service](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html)
+[Reference Architecture for Citrix Cloud Virtual Apps and Desktops Service](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html)
 
-[Cloud Connector Connectivity requirements](https://docs.citrix.com/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html)
+[Cloud Connector Connectivity requirements](/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html)
 
-[Cloud Connector Sizing Guide](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-cloud-connector/cc-scale-and-size.html)
+[Cloud Connector Sizing Guide](/en-us/citrix-virtual-apps-desktops-service/install-configure/install-cloud-connector/cc-scale-and-size.html)
 
-[Cloud Connector Technical Details](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details)
+[Cloud Connector Technical Details](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details)
 
-[Deployment Scenarios for Cloud Connector with Active Directory domains](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html#deployment-scenarios-for-cloud-connectors-in-active-directory)
+[Deployment Scenarios for Cloud Connector with Active Directory domains](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html#deployment-scenarios-for-cloud-connectors-in-active-directory)
 
-[Cloud Connector Installation](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html)
+[Cloud Connector Installation](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html)
 
-[Citrix Cloud Identity and Access Management](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management.html)
+[Citrix Cloud Identity and Access Management](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management.html)
 
-[Citrix Provisioning documentation](https://docs.citrix.com/en-us/provisioning.html)
+[Citrix Provisioning documentation](/en-us/provisioning.html)
 
-[Hosting Connections](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
+[Hosting Connections](/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
 
-[Citrix Cloud SDK and API Access](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/sdk-api.html)
+[Citrix Cloud SDK and API Access](/en-us/citrix-virtual-apps-desktops-service/sdk-api.html)
 
-[Machine Catalog creation and types](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html)
+[Machine Catalog creation and types](/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html)
 
-[Citrix Policies](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/policies.html)
+[Citrix Policies](/en-us/citrix-virtual-apps-desktops-service/policies.html)
 
-[Local Host Cache](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/local-host-cache.html)
+[Local Host Cache](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/local-host-cache.html)
 
-[Cloud Connector Updates](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/cloud-connector-updates.html)
+[Cloud Connector Updates](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/cloud-connector-updates.html)
 
 [How to install SSL Certificate on Cloud Connectors](https://support.citrix.com/article/CTX221671)
