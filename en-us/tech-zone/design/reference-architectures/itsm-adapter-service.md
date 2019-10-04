@@ -2,7 +2,7 @@
 layout: doc
 ---
 
-# Citrix ITSM Adapter Service
+# Integrating ServiceNow with Citrix Virtual Apps and Desktops
 
 ## Contributors
 
