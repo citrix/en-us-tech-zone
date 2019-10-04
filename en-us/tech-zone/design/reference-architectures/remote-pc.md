@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Vivekananthan Devaraj](mailto:Vivekananthan.Devaraj@Citrix.com)
 
-**Special thanks:** [Gabe Carrejo](https://twitter.com/CitrixGabe), [Miguel Contreras](https://twitter.com/ctxmigs)
+**Special thanks:** Gabe Carrejo, [Miguel Contreras](https://twitter.com/ctxmigs)
 
 ## Overview of Remote PC Access
 
