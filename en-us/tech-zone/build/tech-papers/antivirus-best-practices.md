@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Martin Zugec](https://twitter.com/MartinZugec)
 
-**Special thanks:** [Miguel Contreras](https://twitter.com/ctxmigs), Judong Liao
+**Special thanks:** [Miguel Contreras](https://twitter.com/ctxmigs), Judong Liao, [James Kindon](https://twitter.com/james_kindon)
 
 ## Overview
 
@@ -213,9 +213,15 @@ Processes:
 
 -  `AgentGroupPolicyUtility.exe`
 -  `Citrix.Wem.Agent.LogonService.exe`
--  `Citrix.Wem.Agent.Service.exe`
+-  `Citrix.Wem.Agent.Service.exe` ('Norskale Agent Host Service.exe' before on-premises release 1909 and cloud release 1903)
 -  `VUEMCmdAgent.exe`
 -  `VUEMUIAgent.exe`
+
+## Antivirus Vendors
+
+[Microsoft - Windows Defender in VDI environments](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)
+
+[Trend Micro - Deep Security Recommended Exclusions](https://success.trendmicro.com/solution/1102554-citrix-recommended-exclusions-on-deep-security)
 
 ## References
 
