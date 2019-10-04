@@ -15,15 +15,13 @@ Just as buildings have blueprints that include details about their structure and
 
 [Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
 
-[ITSM Adapter Service](/en-us/tech-zone/design/reference-architectures/itsm-adapter-service.html) - Learn how to integrate ServiceNow within your Citrix Virtual Apps and Desktops environment including key technical concepts and use cases.
+[Integrating ServiceNow with Citrix Virtual Apps and Desktops](/en-us/tech-zone/design/reference-architectures/itsm-adapter-service.html) - Learn how to integrate ServiceNow within your Citrix Virtual Apps and Desktops environment including key technical concepts and use cases.
 
 ## Citrix Virtual Apps and Desktops
 
 [App Layering](/en-us/tech-zone/design/reference-architectures/app-layering.html) - Gain a deep understanding of the Citrix Layering technology that simplifies the image management for VDI and hosted-shared environments including use cases and technical concepts.
 
 [Image Management](/en-us/tech-zone/design/reference-architectures/image-management.html) - Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering and maintaining virtual machine images in your environment.
-
-[Migration Strategies from on-premises environments to Citrix Cloud](/en-us/tech-zone/design/reference-architectures.html) - Learn the set of procedures to migrate an on-premises Citrix Virtual Apps and Desktops environment to Citrix Cloud and the Virtual Apps and Desktops service including moving the control plane while keeping existing workloads on-premises. **COMING SOON!**
 
 [Virtual Apps and Desktops Service](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html) - Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
 
