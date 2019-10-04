@@ -23,8 +23,6 @@ Just as buildings have blueprints that include details about their structure and
 
 [Image Management](/en-us/tech-zone/design/reference-architectures/image-management.html) - Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering and maintaining virtual machine images in your environment.
 
-[Migration Strategies from on-premises environments to Citrix Cloud](/en-us/tech-zone/design/reference-architectures.html) - Learn the set of procedures to migrate an on-premises Citrix Virtual Apps and Desktops environment to Citrix Cloud and the Virtual Apps and Desktops service including moving the control plane while keeping existing workloads on-premises. **COMING SOON!**
-
 [Virtual Apps and Desktops Service](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html) - Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
 
 ## Citrix Solutions on Microsoft Azure
