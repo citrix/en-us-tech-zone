@@ -213,7 +213,7 @@ Processes:
 
 -  `AgentGroupPolicyUtility.exe`
 -  `Citrix.Wem.Agent.LogonService.exe`
--  `Citrix.Wem.Agent.Service.exe` ('Norskale Agent Host Service.exe' before on-premises release 1909 and cloud release 1903)
+-  `Citrix.Wem.Agent.Service.exe` (before on-premises release 1909 and cloud release 1903 this process was called `Norskale Agent Host Service.exe`)
 -  `VUEMCmdAgent.exe`
 -  `VUEMUIAgent.exe`
 
