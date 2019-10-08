@@ -27,7 +27,7 @@ The scope of this document is limited to:
 Customers deploy their own customer-managed storage zones for different reasons. Typical use cases for utilizing storage zones on Azure include:
 
 *  **Performance:**  While Citrix hosts storage zones in multiple geographic regions, customers in certain regions may not have access to a zone that provides the user experience employees expect. A customer can decide to deploy the storage zone directly in their Data center closer to the users, however this imposes the tax of CAPEX cost and ongoing operations/management costs. With 54 Azure regions across the globe, customers have more choice deploying the storage zone in a region closer to their users. That reduces the latency when transferring files providing a better user experience to employees and external collaborators.
-In the scenario when a customer deploys a Citrix Virtual App and Desktop resource location in Azure, customer should always deploy a Content collaboration storage zone in Azure in the same region closer proximity to their App/Desktops in Azure.
+When you deplo  a Citrix Virtual App and Desktop resource location in Azure, always deploy a Content collaboration storage zone in the same Azure region. That puts the data in closer proximity to their App/Desktops.
 *  **Governance and Data Residency:**  Similar to the prior statement, a customer might be required to host the data in a specific geography where Citrix might not have that footprint. The alternative would be customer hosting in their own data center and potentially being covered by one of the Azure Regions.
 *  **Modernize existing repositories:** Migration of files is not always possible or can be time consuming. With Citrix Content Collaboration this doesn’t mean that employees cannot have or have to wait for modern ways of accessing and working with files. By deploying a customer-managed storage zone, customers can directly unlock a modern work style on any device without having to migrate existing data.
 
@@ -141,38 +141,38 @@ The storage zone controller is an ASP.NET web application running on Internet In
 
 #### Memory
 
-*  **Available Mbytes**: Should not drop below a sustained value of 20% of total available RAM.
-*  **Pages Input/Sec**: Should not exceed 15. The lower the value the better the performance of the storage zone controller.
-*  **Pages/Sec**: Should not exceed a sustained value of 5 or higher.
+*  **Available Mbytes**: sustained value of 20% or greater of total available RAM.
+*  **Pages Input/Sec**: equal to or less than 15. The lower the value the better the performance of the storage zone controller.
+*  **Pages/Sec**: sustained value of 5 or less.
 
 #### Logical Disk
 
-*  **% Disk Time**: Should not exceed a sustained value of 50% or higher.
+*  **% Disk Time**: sustained value of 50% or lower.
 *  **Average Disk Queue Length**: Should not exceed the number of spindles plus 2.
-*  **Average Disk Read Queue Length**: Should be below 2.
-*  **Average Disk Write Queue Length**: Should be below 4.
-*  **Average Disk Sec/Read**: The average should be 15 ms or lower, with maximums of 25 ms.
-*  **Average Disk Sec/Write**: The average should be 15 ms or lower, with maximums of 25 ms.
-*  **Average Disk/Transfer**: Should be below 20 ms.
+*  **Average Disk Read Queue Length**: below 2.
+*  **Average Disk Write Queue Length**: below 4.
+*  **Average Disk Sec/Read**: equal to or less than be 15 ms, with spikes below 25 ms.
+*  **Average Disk Sec/Write**: equal to or less than 15 ms or lower, with spikes below 25 ms.
+*  **Average Disk sec/Transfer**: equal to or less than 20 ms.
 
 #### Processor
 
 The processor performance monitors should be done against the system, and for the W3WP process running the storage zone controller app. If the values are close to each other, then the web services are consuming the CPU, if not then other processes are impacting the performance of the system.
 
-*  **% Privileged Time**: Should not exceed a sustained value of 75% or higher.
-*  **% Processor Time**: Should not exceed a sustained value of 85% or higher.
+*  **% Privileged Time**: sustained value of 75% or lower.
+*  **% Processor Time**: sustained value of 85% or lower.
 
 #### System
 
-*  **Content Switches/Sec**: Should not exceed 15,000/second per CPU.
+*  **Content Switches/Sec**: equal to or less than 15,000/second per CPU.
 
 #### Web Service Cache
 
-*  **Kernel:URI Cache Hits %**: Should not drop below 80%.
+*  **Kernel:URI Cache Hits %**: greater than 80%.
 
 #### ASP.NET Apps v4.0.30319 (_Total_)
 
-*  **Request Wait Time**: Should not exceed 1,000 ms.
+*  **Request Wait Time**: equal to or less than 1,000 ms.
 
 ## Summary
 
