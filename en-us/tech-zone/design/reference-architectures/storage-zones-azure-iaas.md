@@ -137,7 +137,7 @@ To provide a better user experience and still maintain the required level of sec
 
 ### Performance Monitoring tips
 
-The storage zone controller is an ASP.NET web application running on Internet Information Server. Monitoring the performance of the storage zone controller host follows the general principles of monitoring any web server running ASP.NET applications. Below are recommended metrics to identify performance issues.
+The storage zone controller is an ASP.NET web application running on Internet Information Server. Monitoring the performance of the storage zone controller host follows the general principles of monitoring any web server running ASP.NET applications. Following are recommended metrics to identify performance issues.
 
 #### Memory
 
@@ -151,9 +151,9 @@ The storage zone controller is an ASP.NET web application running on Internet In
 *  **Average Disk Queue Length**: Should not exceed the number of spindles plus 2.
 *  **Average Disk Read Queue Length**: Should be below 2.
 *  **Average Disk Write Queue Length**: Should be below 4.
-*  **Average Disk Sec/Read**: The average should be 15ms or lower, with maximums of 25ms.
-*  **Average Disk Sec/Write**: The average should be 15ms or lower, with maximums of 25ms.
-*  **Average Disk/Transfer**: Should be below 20ms.
+*  **Average Disk Sec/Read**: The average should be 15 ms or lower, with maximums of 25 ms.
+*  **Average Disk Sec/Write**: The average should be 15 ms or lower, with maximums of 25 ms.
+*  **Average Disk/Transfer**: Should be below 20 ms.
 
 #### Processor
 
@@ -172,14 +172,14 @@ The processor performance monitors should be done against the system, and for th
 
 #### ASP.NET Apps v4.0.30319 (_Total_)
 
-*  **Request Wait Time**: Should not exceed 1,000ms.
+*  **Request Wait Time**: Should not exceed 1,000 ms.
 
 ## Summary
 
 Citrix Content Collaboration offers the ability to store files in the location that fits your organization’s needs best. This document describes the architecture to deploy the Content Collaboration storage zone in your Microsoft Azure IaaS and all the components needed.
 The use case of the Content Collaboration service in your organization impacts components needed:
 
-*  The place where persistent file objects will be stored
+*  The place where persistent file objects are stored
 *  A storage cache where recently accessed files can be retrieved
 *  Access to the Content Collaboration storage repository and existing repositories through storage zone connectors.
 *  The device types of the users accessing the storage zone, and the kind of external collaboration.
