@@ -148,7 +148,7 @@ The storage zone controller is an ASP.NET web application running on Internet In
 #### Logical Disk
 
 *  **% Disk Time**: sustained value of 50% or lower.
-*  **Average Disk Queue Length**: Should not exceed the number of spindles plus 2.
+*  **Average Disk Queue Length**: less than or equal to the number of spindles plus 2.
 *  **Average Disk Read Queue Length**: below 2.
 *  **Average Disk Write Queue Length**: below 4.
 *  **Average Disk Sec/Read**: equal to or less than be 15 ms, with spikes below 25 ms.
@@ -157,7 +157,7 @@ The storage zone controller is an ASP.NET web application running on Internet In
 
 #### Processor
 
-The processor performance monitors should be done against the system, and for the W3WP process running the storage zone controller app. If the values are close to each other, then the web services are consuming the CPU, if not then other processes are impacting the performance of the system.
+Run the processor performance monitors against the operating system and the W3WP process running the storage zone controller app. If the values are close to each other, then the web services are consuming the CPU, if not then other processes are impacting the performance of the system.
 
 *  **% Privileged Time**: sustained value of 75% or lower.
 *  **% Processor Time**: sustained value of 85% or lower.
