@@ -14,7 +14,7 @@ This reference architecture document is intended for IT decision makers, consult
 ## Objective of this document
 
 Citrix Content Collaboration allows customers to select the location where their files are stored. Customers can choose to store files within Citrix’s own cloud-native storage zone, a customer-managed storage zone location in their on-premises data center, a public cloud of their choice, or a combination. In addition to that, the customer-managed storage zone also functions as a gateway into existing repositories such as network file shares or SharePoint Server document libraries.
-This document focuses specifically on guidance for deploying storage zones on Azure cloud.
+This document focuses specifically on guidance for deploying storage zones on the Azure cloud.
 The scope of this document is limited to:
 
 *  Architectural components for an Azure storage zone
@@ -26,7 +26,7 @@ The scope of this document is limited to:
 
 Customers deploy their own customer-managed storage zones for different reasons. Typical use cases for utilizing storage zones on Azure include:
 
-*  **Performance:**  While Citrix hosts storage zones in multiple geographic regions, customers in certain regions may not have access to a zone that provides the user experience employees expect. A customer can decide to deploy the storage zone directly in their Data center closer to the users, however this imposes the tax of CAPEX cost and ongoing operations/management costs. With 54 Azure regions across the globe, customers has more choice deploying the storage zone in a region closer to their users. That reduces the latency when transferring files providing a better user experience to employees and external collaborators.
+*  **Performance:**  While Citrix hosts storage zones in multiple geographic regions, customers in certain regions may not have access to a zone that provides the user experience employees expect. A customer can decide to deploy the storage zone directly in their Data center closer to the users, however this imposes the tax of CAPEX cost and ongoing operations/management costs. With 54 Azure regions across the globe, customers have more choice deploying the storage zone in a region closer to their users. That reduces the latency when transferring files providing a better user experience to employees and external collaborators.
 In the scenario when a customer deploys a Citrix Virtual App and Desktop resource location in Azure, customer should always deploy a Content collaboration storage zone in Azure in the same region closer proximity to their App/Desktops in Azure.
 *  **Governance and Data Residency:**  Similar to the prior statement, a customer might be required to host the data in a specific geography where Citrix might not have that footprint. The alternative would be customer hosting in their own data center and potentially being covered by one of the Azure Regions.
 *  **Modernize existing repositories:** Migration of files is not always possible or can be time consuming. With Citrix Content Collaboration this doesn’t mean that employees cannot have or have to wait for modern ways of accessing and working with files. By deploying a customer-managed storage zone, customers can directly unlock a modern work style on any device without having to migrate existing data.
@@ -57,7 +57,7 @@ The storage zone controller is a Windows package consisting of ASP.NET web servi
 
 To reduce server overhead and attack surface, it’s recommended to use Windows Server Core (available in Azure as well) instances with the Internet Information Server and ASP.NET application server roles enabled.
 
-The number of storage zone controllers needed depends on how the storage zone deployment is being used. This number is impacted by a several factors. These factors include, but are not limited to:
+The number of storage zone controllers needed depends on how the storage zone deployment is being used. This number is impacted by several factors. These factors include, but are not limited to:
 
 *  Amount of new and updated files being stored: impacts the bandwidth required between the storage zone controllers and storage repository, to prevent file I/O queues from building up on the storage zone controller.
 *  Size of files being stored: incoming files are uploading in multiple parts and the storage zone controllers merge these parts back together into a single file object. Merging the parts increases the CPU utilization, with larger files requiring more CPU processing power.
