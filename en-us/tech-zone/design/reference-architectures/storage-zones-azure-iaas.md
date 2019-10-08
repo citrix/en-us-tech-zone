@@ -19,7 +19,7 @@ The scope of this document is limited to:
 
 *  Architectural components for an Azure storage zone
 *  Provide guidance on location where to store persistent file objects and cache
-*  Provide guidance on configuring the Citrix ADC for an optimal user experience
+*  Provide guidance on configuring the Citrix ADC (application delivery controller) for an optimal user experience
 *  Best practices recommendation to integrate antivirus solutions into the storage zone
 
 ## Use Cases
