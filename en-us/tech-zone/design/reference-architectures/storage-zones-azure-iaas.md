@@ -9,11 +9,11 @@ layout: doc
 
 ## Audience
 
-This reference architecture document is intended for IT decision makers, consultants, solution integrators, and partners who are seeking to deploy a customer-managed storage zone for Citrix Content Collaboration within their Azure subscription.
+This reference architecture is intended for individuals seeking to deploy a customer-managed storage zone for Citrix Content Collaboration within their Azure subscription. These individuals include IT decision makers, consultants, solution integrators, and partners.
 
 ## Objective of this document
 
-Citrix Content Collaboration allows customers to select the location where their files are stored. Customers can choose to store files within Citrix’s own cloud-native storage zone, a customer-managed storage zone location in their on-premises data center, a public cloud of their choice, or a combination. In addition to that, the customer-managed storage zone also functions as a gateway into existing repositories such as network file shares or SharePoint Server document libraries.
+Citrix Content Collaboration allows customers to select the location where their files are stored. Customers can choose to store files within Citrix’s cloud-native storage zone or a customer-managed storage zone location. Customer-managed storage zones can be in their on-premises data center, a public cloud of their choice, or a combination. The customer-managed storage zone also functions as a gateway into existing repositories such as network file shares or SharePoint Server document libraries.
 This document focuses specifically on guidance for deploying storage zones on the Azure cloud.
 The scope of this document is limited to:
 
@@ -22,33 +22,33 @@ The scope of this document is limited to:
 *  Provide guidance on configuring the Citrix Application Delivery Controller (ADC) for an optimal user experience
 *  Best practices recommendation to integrate antivirus solutions into the storage zone
 
+## Content Collaboration platform overview
+
+Citrix Content Collaboration is an enterprise content collaboration platform that enables IT to deliver a robust data sharing and sync service. This service meets the mobility and collaboration needs of users and the data security requirements of the enterprise. Citrix Content Collaboration offers the flexibility to choose the location where files are stored at rest. 
+Citrix Content Collaboration consists of three primary components: the Content Collaboration management plane, the storage zones, and the Citrix Files apps.
+
+*  Management plane: a Citrix-managed component hosting the Content Collaboration services and business logic, hosted in either the United States or the European Union.
+*  Storage zones: the location where customer files are stored. Customers can chose where to store files. The files are either hosted by Citrix or by the customer. The customer location be their own data center or a public cloud service subscriptions. This reference architecture focuses on a customer-managed storage zone hosted within Azure.
+*  Citrix Files (client side): native apps providing access to the Content Collaboration services. Citrix Files apps are available for Windows, macOS, iOS. Android, Outlook, and Gmail.
+
+INSERT IMAGE
+
 ## Use Cases
 
 Customers deploy their own customer-managed storage zones for different reasons. Typical use cases for utilizing storage zones on Azure include:
 
-*  **Performance:**  While Citrix hosts storage zones in multiple geographic regions, customers in certain regions may not have access to a zone that provides the user experience employees expect. A customer can decide to deploy the storage zone directly in their Data center closer to the users, however this imposes the tax of CAPEX cost and ongoing operations/management costs. With 54 Azure regions across the globe, customers have more choice deploying the storage zone in a region closer to their users. That reduces the latency when transferring files providing a better user experience to employees and external collaborators.
-When you deplo  a Citrix Virtual App and Desktop resource location in Azure, always deploy a Content collaboration storage zone in the same Azure region. That puts the data in closer proximity to their App/Desktops.
+*  **Performance:**  While Citrix hosts storage zones in multiple geographic regions, customers in certain regions may not have access to a zone that provides the user experience employees expect. Customers can deploy the storage zone directly in their data center closer to the users, however this design imposes a CAPEX cost with ongoing operational costs. With 54 Azure regions across the globe, customers have more choice deploying the storage zone in a region closer to their users. That reduces the latency when transferring files providing a better user experience to employees and external collaborators.
+When you deploy a Citrix Virtual App and Desktop resource location in Azure, always deploy a Content collaboration storage zone in the same Azure region. That puts the data in closer proximity to their App/Desktops.
 *  **Governance and Data Residency:**  Similar to the prior statement, a customer might be required to host the data in a specific geography where Citrix might not have that footprint. The alternative would be customer hosting in their own data center and potentially being covered by one of the Azure Regions.
-*  **Modernize existing repositories:** Migration of files is not always possible or can be time consuming. With Citrix Content Collaboration this doesn’t mean that employees cannot have or have to wait for modern ways of accessing and working with files. By deploying a customer-managed storage zone, customers can directly unlock a modern work style on any device without having to migrate existing data.
-
-## Content Collaboration platform overview
-
-Citrix Content Collaboration is an enterprise content collaboration platform that enables IT to deliver a robust data sharing and sync service that meets the mobility and collaboration needs of users and the data security requirements of the enterprise. Citrix Content Collaboration offers the flexibility to choose the location where files are stored at rest, either inside a Citrix-managed cloud-native storage repository or inside a storage repository managed by the customer.
-Citrix Content Collaboration consists of three primary components: the Content Collaboration management plane, the storage zones, and the Citrix Files apps.
-
-*  Management plane: a Citrix-managed component hosting the Content Collaboration services and business logic, hosted in either the United States or the European Union.
-*  Storage zones: the location where customer files are stored. Customers have a choice in where to store files, either hosted by Citrix or hosted by the customer in their own data center or on their own public cloud service subscriptions. This reference architecture focuses on a customer-managed storage zone hosted within Azure.
-*  Citrix Files (client side): native apps providing access to the Content Collaboration services. Citrix Files apps are available for Windows, macOS, iOS. Android, Outlook and Gmail.
-
-INSERT IMAGE
+*  **Modernize existing repositories:** Migration of files is not always possible or can be time consuming. By deploying a customer-managed storage zone, customers can directly unlock a modern work style on any device without having to migrate existing data.
 
 ## Customer-managed storage zone architecture in Azure
 
-The customer-managed storage zone stores all the file objects uploaded to the Content Collaboration service. It also provides access to these file objects, both to employees and external people collaborating on these files. The third and final function of the storage zone is to provide access to existing repositories hosted on-premises, such as network file shares, SharePoint Server document libraries, and the OpenText Documentum document management system. To provide those capabilities, the storage zone includes these components.
+The customer-managed storage zone stores all the file objects uploaded to the Content Collaboration service. It also provides access to these file objects, both to employees and external people collaborating on these files. Another function of the storage zone is to provide access to existing repositories hosted on-premises. Those reporistories include network file shares, SharePoint Server document libraries, and the OpenText Documentum document management system. To provide those capabilities, the storage zone includes these components.
 
 *  Storage zone controllers: Windows-based web servers that host the storage zone controller services.
-*  Storage repository: the location where the Citrix files objects are persistently stored. Recommendation: Microsoft Azure Blob Storage or an SMB share hosted by an Azure IaaS VM (consideration points discussed below). It is recommended you configure the file share to be highly available (using Storage Spaces Direct) and highly performant by attaching premium data disks.
-*  Storage cache: the location where data files from the Citrix Files client software are temporarily cached. Recommendation: We recommend Azure Files or a standard SMB share attached to a VM. If using an SMB share, it is recommended you configure the file share to be highly available (using Storage Spaces Direct) and highly performant by attaching premium data disks.
+*  Storage repository: the location where the Citrix files objects are persistently stored. Recommendation: Microsoft Azure Blob Storage or an SMB share hosted by an Azure IaaS VM. The recommendation is to configure the file share to be highly available using Storage Spaces Direct. To improve performanceof the SMB share attach premium data disks.
+*  Storage cache: the location where data files from the Citrix Files client software are temporarily cached. Recommendation: Use Azure Files or a standard SMB share attached to a VM. If using an SMB share, the recommendation is to configure the file share to be highly available using Storage Spaces Direct. To improve performanceof the SMB share, attach premium data disks.
 *  Citrix ADC: the application delivery controller provides network load balancing, SSL offloading, and authentication services for inbound traffic to the storage zone.
 
 ### Storage zones controllers
