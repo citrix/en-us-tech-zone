@@ -1,11 +1,11 @@
 ---
 layout: doc
 ---
-# Title
+# Content Collaboration with storage zones on Azure IaaS
 
 ## Contributors
 
-**Author:** [name](https://twitter.com/handle)
+**Author:** Loay Shbeilat, Krishna Swarup, Crystal Ricevuto
 
 ## Audience
 
