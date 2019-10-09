@@ -33,7 +33,7 @@ Citrix Content Collaboration consists of three primary components: the Content C
 *  Storage zones: the location where customer files are stored. Customers can choose where to store files. The files are either hosted by Citrix or by the customer. The customer location can be their own data center or a public cloud. This reference architecture focuses on a customer-managed storage zone hosted within Azure.
 *  Citrix Files (client side): native apps providing access to the Content Collaboration services. Citrix Files apps are available for Windows, macOS, iOS. Android, Outlook, and Gmail.
 
-INSERT IMAGE
+INSERT IMAGE reference-architectures_storage-zones-azure-iaas_001
 
 ## Use Cases
 
@@ -98,7 +98,7 @@ Azure Files supports the SMB protocol and shares can be mounted on a Windows mac
 
 **Note:** Our testing has shown no significant performance differences between Azure Files and Premium SSD.
 
-INSERT IMAGE
+INSERT IMAGE reference-architectures_storage-zones-azure-iaas_002
 
 #### Encryption of file objects
 
@@ -121,11 +121,11 @@ To provide the best possible user experience for local users, the configuration 
 
 Local users access the storage zone from an internal load balancing server or content switching server with an internal IP address. The choice for either a load balancing server or content switching server is based on whether authentication for connectors needs to occur on the Citrix ADC. In that case a content switching server is needed and the load balancing server for connectors for local users uses Kerberos to authenticate the users when accessing connectors. Remote users access the storage zone from an external content switch with an IP address in the DMZ range. The load balancing server for connectors for remote users uses Basic Authentication (user name and password) to authenticate users when accessing connectors. Authentication for connectors on the storage zone controller hosts uses Windows Authentication, the connectors repositories use the authentication method configured on the repository. For SharePoint Server this authentication is typically Kerberos, for file servers authentication is typically NTLM.
 
-INSERT IMAGE
+INSERT IMAGE reference-architectures_storage-zones-azure-iaas_003
 
 **Note:** Instead of using a single ADC on the boundary of the DMZ and local network, another configuration is using two separate ADCs. Use one Citrix ADC inside the DMZ for external users and another Citrix ADC on the local network for internal users.
 
-INSERT IMAGE
+INSERT IMAGE reference-architectures_storage-zones-azure-iaas_004
 
 ## Other Considerations
 
