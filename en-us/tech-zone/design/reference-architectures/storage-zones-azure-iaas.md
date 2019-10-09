@@ -5,7 +5,8 @@ layout: doc
 
 ## Contributors
 
-**Author:** Loay Shbeilat, Krishna Swarup, Crystal Ricevuto
+**Authors:** Loay Shbeilat, Krishna Swarup 
+**Special thanks:** Crystal Ricevuto, Allen Furmanski
 
 ## Audience
 
