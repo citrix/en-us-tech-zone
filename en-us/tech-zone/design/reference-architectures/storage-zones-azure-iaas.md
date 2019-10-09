@@ -47,15 +47,15 @@ When you deploy a Citrix Virtual App and Desktop resource location in Azure, alw
 The customer-managed storage zone stores all the file objects uploaded to the Content Collaboration service. It also provides access to these file objects, both to employees and external people collaborating on these files. Another function of the storage zone is to provide access to existing repositories hosted on-premises. Those reporistories include network file shares, SharePoint Server document libraries, and the OpenText Documentum document management system. To provide those capabilities, the storage zone includes these components.
 
 *  Storage zone controllers: Windows-based web servers that host the storage zone controller services.
-*  Storage repository: the location where the Citrix files objects are persistently stored. Recommendation: Microsoft Azure Blob Storage or an SMB share hosted by an Azure IaaS VM. The recommendation is to configure the file share to be highly available using Storage Spaces Direct. To improve performanceof the SMB share attach premium data disks.
-*  Storage cache: the location where data files from the Citrix Files client software are temporarily cached. Recommendation: Use Azure Files or a standard SMB share attached to a VM. If using an SMB share, the recommendation is to configure the file share to be highly available using Storage Spaces Direct. To improve performanceof the SMB share, attach premium data disks.
+*  Storage repository: the location where the Citrix files objects are persistently stored. Recommendation: Microsoft Azure Blob Storage or an SMB share hosted by an Azure IaaS VM. We recommend configuring the file share to be highly available using Storage Spaces Direct. To improve performance of the SMB share, attach premium data disks.
+*  Storage cache: the location where data files from the Citrix Files client software are temporarily cached. Recommendation: Use Azure Files or a standard SMB share attached to a VM. If using an SMB share, We recommend configuring the file share to be highly available using Storage Spaces Direct. To improve performance of the SMB share, attach premium data disks.
 *  Citrix ADC: the application delivery controller provides network load balancing, SSL offloading, and authentication services for inbound traffic to the storage zone.
 
 ### Storage zones controllers
 
 The storage zone controller is a Windows package consisting of ASP.NET web services and background Windows services. The controller software runs on top of a Windows Server IaaS VM with Internet Information Services (IIS). The system requirements for a storage zone controller are located [here](https://docs.citrix.com/en-us/storagezones-controller/5-0/system-requirements.html).
 
-To reduce server overhead and attack surface, it’s recommended to use Windows Server Core (available in Azure as well) instances with the Internet Information Server and ASP.NET application server roles enabled.
+To reduce server overhead and attack surface, we recommend using Windows Server Core instances with the Internet Information Server and ASP.NET application server roles enabled.
 
 The number of storage zone controllers needed depends on how the storage zone deployment is being used. This number is impacted by several factors. These factors include, but are not limited to:
 
@@ -64,7 +64,7 @@ The number of storage zone controllers needed depends on how the storage zone de
 *  Concurrent number of sessions: the number of concurrent file transfer sessions to the storage zone, for either file downloads or file uploads, impacts the amount of controller hosts needed.
 *  Usage of on-premises connectors: the metadata for files and folders in existing repositories is retrieved by the storage zone controllers in real-time, when the user opens a connector or browses to a different folder.
 
-The recommendation is to deploy at least two storage zone controllers per storage zone for high availability purposes, with the Citrix ADC providing load balancing services for inbound traffic. The baseline figure for such a deployment is 5,000 users inside the Content Collaboration tenant, with 2,500 users per additional controller host added to the storage zone. The actual usage of the storage zone determines how many controller hosts are needed. Customer deployments range from 2 controller hosts for 250 users, where the users are working with large files, to 4 controller hosts for 250,000 users where the use case is limited to occasional file sharing.
+We recommend deploying at least two storage zone controllers per storage zone for high availability purposes, with the Citrix ADC providing load balancing services for inbound traffic. The baseline figure for such a deployment is 5,000 users inside the Content Collaboration tenant, with 2,500 users per additional controller host added to the storage zone. The actual usage of the storage zone determines how many controller hosts are needed. Customer deployments range from 2 controller hosts for 250 users, where the users are working with large files, to 4 controller hosts for 250,000 users where the use case is limited to occasional file sharing.
 
 Internal testing has shown that the optimal maximum number of controllers per storage zone is 4. For deployments where more controllers are needed in a single site, it’s recommended to set up multiple storage zones.
 
