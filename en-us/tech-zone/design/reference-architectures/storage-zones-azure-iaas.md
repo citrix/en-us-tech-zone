@@ -33,7 +33,7 @@ Citrix Content Collaboration consists of three primary components: the Content C
 *  Storage zones: the location where customer files are stored. Customers can choose where to store files. The files are either hosted by Citrix or by the customer. The customer location can be their own data center or a public cloud. This reference architecture focuses on a customer-managed storage zone hosted within Azure.
 *  Citrix Files (client side): native apps providing access to the Content Collaboration services. Citrix Files apps are available for Windows, macOS, iOS. Android, Outlook, and Gmail.
 
-INSERT IMAGE reference-architectures_storage-zones-azure-iaas_001
+![content collaboration component overview](/en-us/tech-zone/design/media/reference-architectures_storage-zones-azure-iaas_001.png)
 
 ## Use Cases
 
