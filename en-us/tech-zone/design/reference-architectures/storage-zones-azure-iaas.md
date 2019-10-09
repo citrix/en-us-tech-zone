@@ -189,6 +189,6 @@ The described architecture covers the tested and supported deployment model our 
 
 [Resources for Citrix Content Collaboration](https://docs.citrix.com/en-us/citrix-content-collaboration.html)
 
-[Resources for storage zone controller](https://docs.citrix.com/en-us/storagezones-controller)
+[Resources for storage zone controller](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html)
 
 [Citrix File Deployment Guide](https://docs.citrix.com/en-us/tech-zone/build/deployment-guides/citrix-files.html)
