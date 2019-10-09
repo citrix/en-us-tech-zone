@@ -28,7 +28,7 @@ Citrix Content Collaboration is an enterprise content collaboration platform tha
 Citrix Content Collaboration consists of three primary components: the Content Collaboration management plane, the storage zones, and the Citrix Files apps.
 
 *  Management plane: a Citrix-managed component hosting the Content Collaboration services and business logic, hosted in either the United States or the European Union.
-*  Storage zones: the location where customer files are stored. Customers can chose where to store files. The files are either hosted by Citrix or by the customer. The customer location be their own data center or a public cloud service subscriptions. This reference architecture focuses on a customer-managed storage zone hosted within Azure.
+*  Storage zones: the location where customer files are stored. Customers can choose where to store files. The files are either hosted by Citrix or by the customer. The customer location can be their own data center or a public cloud. This reference architecture focuses on a customer-managed storage zone hosted within Azure.
 *  Citrix Files (client side): native apps providing access to the Content Collaboration services. Citrix Files apps are available for Windows, macOS, iOS. Android, Outlook, and Gmail.
 
 INSERT IMAGE
@@ -44,7 +44,7 @@ When you deploy a Citrix Virtual App and Desktop resource location in Azure, alw
 
 ## Customer-managed storage zone architecture in Azure
 
-The customer-managed storage zone stores all the file objects uploaded to the Content Collaboration service. It also provides access to these file objects, both to employees and external people collaborating on these files. Another function of the storage zone is to provide access to existing repositories hosted on-premises. Those reporistories include network file shares, SharePoint Server document libraries, and the OpenText Documentum document management system. To provide those capabilities, the storage zone includes these components.
+The customer-managed storage zone stores all the file objects uploaded to the Content Collaboration service. It also provides access to these file objects, both to employees and external people collaborating on these files. Another function of the storage zone is to provide access to existing repositories hosted on-premises. Those repositories include network file shares, SharePoint Server document libraries, and the OpenText Documentum document management system. To provide those capabilities, the storage zone includes these components.
 
 *  Storage zone controllers: Windows-based web servers that host the storage zone controller services.
 *  Storage repository: the location where the Citrix files objects are persistently stored. Recommendation: Microsoft Azure Blob Storage or an SMB share hosted by an Azure IaaS VM. We recommend configuring the file share to be highly available using Storage Spaces Direct. To improve performance of the SMB share, attach premium data disks.
@@ -100,7 +100,7 @@ INSERT IMAGE
 
 #### Encryption of file objects
 
-The storage zone allows configuring encryption of all file objects on a file level. The storage zone controller hosts encypt using an AES 256-bit encryption key generated during the initial setup of the storage zone. Enabling encryption impacts the performance of the storage zone controller hosts, as encrypting and decrypting file objects increases CPU utilization.
+The storage zone allows configuring encryption of all file objects on a file level. The storage zone controller hosts encrypt using an AES 256-bit encryption key generated during the initial setup of the storage zone. Enabling encryption impacts the performance of the storage zone controller hosts, as encrypting and decrypting file objects increases CPU utilization.
 
 We recommend using this option when encryption of all files is required by corporate security policy and no other means to encrypt the storage layer are available. Encryption by the storage zone controller hosts removes the ability to perform data deduplication on the persistent storage folder inside the storage zone. Encryption also makes recovering data impossible when rebuilding the storage zone without access to the SCKeys.txt file or the configuration passphrase.
 
