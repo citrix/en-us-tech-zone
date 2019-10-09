@@ -57,14 +57,14 @@ The storage zone controller is a Windows package consisting of ASP.NET web servi
 
 To reduce server overhead and attack surface, we recommend using Windows Server Core instances with the Internet Information Server and ASP.NET application server roles enabled.
 
-The number of storage zone controllers needed depends on how the storage zone deployment is being used. This number is impacted by several factors. These factors include, but are not limited to:
+The number of storage zone controllers needed depends on how the storage zone deployment is being used. Several factors impact this number which include the following:
 
 *  Amount of new and updated files being stored: impacts the bandwidth required between the storage zone controllers and storage repository, to prevent file I/O queues from building up on the storage zone controller.
 *  Size of files being stored: incoming files are uploading in multiple parts and the storage zone controllers merge these parts back together into a single file object. Merging the parts increases the CPU utilization, with larger files requiring more CPU processing power.
 *  Concurrent number of sessions: the number of concurrent file transfer sessions to the storage zone, for either file downloads or file uploads, impacts the amount of controller hosts needed.
-*  Usage of on-premises connectors: the metadata for files and folders in existing repositories is retrieved by the storage zone controllers in real-time, when the user opens a connector or browses to a different folder.
+*  Usage of on-premises connectors: the storage zone controllers update the metadata for files and folders in real-time when the user opens a connector or browses to a different folder.
 
-We recommend deploying at least two storage zone controllers per storage zone for high availability purposes, with the Citrix ADC providing load balancing services for inbound traffic. The baseline figure for such a deployment is 5,000 users inside the Content Collaboration tenant, with 2,500 users per additional controller host added to the storage zone. The actual usage of the storage zone determines how many controller hosts are needed. Customer deployments range from 2 controller hosts for 250 users, where the users are working with large files, to 4 controller hosts for 250,000 users where the use case is limited to occasional file sharing.
+We recommend deploying at least two storage zone controllers per storage zone for high availability purposes, with the Citrix ADC providing load balancing services for inbound traffic. The baseline deployment of 2 controllers supports up to 5,000 users inside the Content Collaboration tenant. Add one storage controller host to the storage zone for every 2,500 users over 5,000. The actual usage of the storage zone determines how many controller hosts are needed. Depending on file size and access frequency, deployments can range from 2 controller hosts per 250 users to 4 controller hosts per 250,000 users.
 
 Internal testing has shown that the optimal maximum number of controllers per storage zone is 4. For deployments where more controllers are needed in a single site, it’s recommended to set up multiple storage zones.
 
@@ -83,8 +83,8 @@ See the [Performance Monitoring](#Performance-Monitoring-tips) chapter for furth
 
 We recommend creating a V2 storage account with premium performance in Azure with GRS (Geo-Redundant Storage) as the replication mechanism. If the user chooses not to have a Geo-redundancy, the general guidance is to configure with LRS (Locally redundant storage). However, users need to note that there is a 20,000 IOPS limit for Azure storage accounts. Refer to this Microsoft documentation for Storage account [limits](https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-targets).
 
-**SMB File Share:** If users need more than 20,000 IOPS, then an SMB file share is the appropriate route. They can create a network share which supports the SMB protocol in an Azure virtual machine with managed data disks and use the shared folder as a Storage Repository. Alternatively, the user can consider Azure NetApp Files (highly available out of the box).
-When architecting your highly available IaaS file share, make sure to use Storage Spaces Direct and keep a close eye on performance limits. IOPS limits are imposed on [managed disk](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-types) types and sizes in addition to [VM types](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes-general) (whichever is lower).
+**SMB File Share:** If required capacity exceeds 20,000 IOPS, we recommend using an SMB file share on an Azure Virtual machine. Attach multiple managed data disks to host the shared folder. When architecting your highly available IaaS file share, make sure to use Storage Spaces Direct and keep a close eye on performance limits. IOPS limits are imposed on [managed disk](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-types) types and sizes in addition to [VM types](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes-general) (whichever is lower).
+Alternatively, the user can consider Azure NetApp Files (highly available out of the box).
 
 ### Storage cache
 
