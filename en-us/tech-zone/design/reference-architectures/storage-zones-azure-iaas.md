@@ -5,7 +5,7 @@ layout: doc
 
 ## Contributors
 
-**Authors:** Loay Shbeilat, Krishna Swarup 
+**Authors:** Loay Shbeilat, Krishna Swarup
 
 **Special thanks:** Crystal Ricevuto, Allen Furmanski
 
@@ -26,7 +26,7 @@ The scope of this document is limited to:
 
 ## Content Collaboration platform overview
 
-Citrix Content Collaboration is an enterprise content collaboration platform that enables IT to deliver a robust data sharing and sync service. This service meets the mobility and collaboration needs of users and the data security requirements of the enterprise. Citrix Content Collaboration offers the flexibility to choose the location where files are stored at rest. 
+Citrix Content Collaboration is an enterprise content collaboration platform that enables IT to deliver a robust data sharing and sync service. This service meets the mobility and collaboration needs of users and the data security requirements of the enterprise. Citrix Content Collaboration offers the flexibility to choose the location where files are stored at rest.
 Citrix Content Collaboration consists of three primary components: the Content Collaboration management plane, the storage zones, and the Citrix Files apps.
 
 *  Management plane: a Citrix-managed component hosting the Content Collaboration services and business logic, hosted in either the United States or the European Union.
@@ -100,7 +100,6 @@ Azure Files supports the SMB protocol and shares can be mounted on a Windows mac
 
 ![Storage Zone Architecture on Azure](/en-us/tech-zone/design/media/reference-architectures_storage-zones-azure-iaas_002.png)
 
-
 #### Encryption of file objects
 
 The storage zone allows configuring encryption of all file objects on a file level. The storage zone controller hosts encrypt using an AES 256-bit encryption key generated during the initial setup of the storage zone. Enabling encryption impacts the performance of the storage zone controller hosts, as encrypting and decrypting file objects increases CPU utilization.
@@ -124,11 +123,9 @@ Local users access the storage zone from an internal load balancing server or co
 
 ![Single ADC design within DMZ and internal network](/en-us/tech-zone/design/media/reference-architectures_storage-zones-azure-iaas_003.png)
 
-
 **Note:** Instead of using a single ADC on the boundary of the DMZ and local network, another configuration is using two separate ADCs. Use one Citrix ADC inside the DMZ for external users and another Citrix ADC on the local network for internal users.
 
 ![2 ADC deisgn,one in DMZ and one on local network](/en-us/tech-zone/design/media/reference-architectures_storage-zones-azure-iaas_004.png)
-
 
 ## Other Considerations
 
