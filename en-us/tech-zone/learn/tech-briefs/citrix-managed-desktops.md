@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Mayank Singh](https://twitter.com/techmayank)
 
-**Special Thanks:** Kireeti Valicherla and Swaroop Joseph Varghese
+**Special Thanks:** Kireeti Valicherla, Swaroop Joseph Varghese and Alan Goldman
 
 Citrix Managed Desktops is a turnkey Microsoft Azure hosted solution to deliver virtual desktops and apps. You can deliver Windows 10 multi-session desktops, Windows 10 Enterprise single session desktops or Windows Server 2012 R2 and 2016 OS sessions or apps running on any of these using a GUI interface in just a few clicks.
 
