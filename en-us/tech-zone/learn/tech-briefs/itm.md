@@ -262,3 +262,4 @@ Adds the power Openmix apps and ability to make complex DNS load balancing decis
 
 **ITM Premium**
 Adds the ability to delivery traffic management decisions through HTTP APIs in addition to DNS and captures 3rd Party Video Data and Metrics. It also includes 1 year of Data Retention.
+For more information see the [Citrix ITM data sheet](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-intelligent-traffic-management-service.pdf).
