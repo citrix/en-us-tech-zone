@@ -14,6 +14,10 @@ To learn more about markdown syntax, you can read many articles online and read 
 
 ## How To
 
+### Contact Tech Zone administrators
+
+TODO
+
 ### Create an account
 
 TODO
@@ -59,9 +63,12 @@ When you are done with your article, contact one of the administrators (Slack, e
 Publishing content is done in following steps:
 
 1  Content review - content review involves inviting subject matter experts to help you with technical validation of the content. It is strongly recommended to involve multiple people in all stages (from outline creation to final version) and get content reviewed as often as possible. Technical review is typically responsibility of content creator.
-1  Styling review - there are several rounds of review, from review of the markdown syntax (markdownlint) to grammar and styling (Acrolinx). If your article has any issues, administrator will contact you with list of problems and/or suggestions. You need to contact your administrator to initiate a review stage by providing name or URL of your branch. Administrator is responsible for generating report, however content creator is responsible for fixing issues that have been found.
-1  Staging environment - staging environment is used to validate if all rendering works as expected. You will receive a link to staging environment from administrator for final review.
-1  Production environment - after successful review in staging environment, article is release to production.
+
+2  Styling review - there are several rounds of review, from review of the markdown syntax (markdownlint) to grammar and styling (Acrolinx). If your article has any issues, administrator will contact you with list of problems and/or suggestions. You need to contact your administrator to initiate a review stage by providing name or URL of your branch. Administrator is responsible for generating report, however content creator is responsible for fixing issues that have been found.
+
+3  Staging environment - staging environment is used to validate if all rendering works as expected. You will receive a link to staging environment from administrator for final review.
+
+4  Production environment - after successful review in staging environment, article is release to production.
 
 ## Most Common Mistakes
 
