@@ -15,13 +15,13 @@ This document is intended for IT decision makers, consultants, solution integrat
 
 ## Objective of this document
 
-When designing a virtual apps and desktops solution using Citrix Cloud, there are several considerations starting from the type of desktops and apps required, to how users will access the desktops and apps with their data, how to build an environment that can scale along with an organization’s growth and expansion, and how the solution is made highly available to meet business needs.
+When designing a virtual apps and desktops solution using Citrix Cloud, there are several considerations starting from the type of desktops and apps required, to how users access the desktops and apps with their data, how to build an environment that can scale along with an organization’s growth and expansion, and how the solution is made highly available to meet business needs.
 
 This reference architecture focuses on providing a conceptual view of the solution including what is Citrix Cloud and its deployment models for the Citrix Virtual Apps and Desktops Service. The goal is to ensure a positive user experience and maximize the availability of services while integrating with hybrid-cloud workloads.
 
 ## What is Citrix Cloud?
 
-Citrix Cloud is a cloud-based platform comprised of various service offerings. Many of these services function as a management plane that is kept evergreen by Citrix with the workloads and data residing in the data center or cloud of the customer’s choice. This approach allows customers to focus on the most strategic part of IT and resource delivery with the security, availability and functionality that business demands.
+Citrix Cloud is a cloud-based platform comprised of various service offerings. Many of these services function as a management plane that is kept evergreen by Citrix with the workloads and data residing in the data center or cloud of the customer’s choice. This approach allows customers to focus on the most strategic part of IT and resource delivery with the security, availability, and functionality that business demands.
 At the time of writing, Citrix Cloud offers the below services:
 
 *  Virtual Apps and Desktops
@@ -45,11 +45,11 @@ These services can be accessed together as an integrated "workspace" or independ
 
 ### Why Citrix Cloud?
 
-Citrix service commitment is to maintain at least 99.5% monthly up-time. The status of the platform and its services is accessible at [https://status.cloud.com](https://status.cloud.com). Citrix Cloud-hosted services are managed by Citrix experts and are constantly updated, so IT doesn’t have to worry about large-scale platform upgrades resulting in a secure, evergreen environment that saves time and reduces costs. With Citrix Cloud, customers can move to a more predictable subscription cost of OpEx rather than an often unpredictable and potentially expensive capex model. Citrix Workspace Service provides an integrated experience to access applications and content from any device, anywhere, at any time. Users benefit from a seamless, engaging work experience regardless of the type of app, device, network, or location they connect from.
+Citrix service commitment is to maintain at least 99.5% monthly up-time. The status of the platform and its services is accessible at [https://status.cloud.com](https://status.cloud.com). Citrix Cloud-hosted services are managed by Citrix experts and are constantly updated, so IT doesn’t have to worry about large-scale platform upgrades resulting in a secure, evergreen environment that saves time and reduces costs. With Citrix Cloud, customers can move to a more predictable subscription cost of opex rather than an often unpredictable and potentially expensive capex model. Citrix Workspace provides an integrated experience to access applications and content from any device, anywhere, at any time. Users benefit from a seamless, engaging work experience regardless of the type of app, device, network, or location they connect from.
 
 ## Citrix Cloud Virtual Apps and Desktops Service (CVADS)
 
-A traditional Citrix deployment for apps and desktops consists of delivery controllers, StoreFront servers, a highly-available SQL database, Studio and Director consoles, a License Server and Citrix Gateway. These components are part of the management plane or control plane for the environment and are deployed at a data center or cloud that is customer or partner managed. The resources for end users made available from server and desktop Virtual Delivery Agents (VDAs) are also hosted on dedicated hypervisors within datacenter(s) and/or on private or public clouds. These components are called the Citrix workloads. Both management components and workloads are managed entirely by the customer or perhaps a partner.
+A traditional Citrix deployment for apps and desktops consists of delivery controllers, StoreFront servers, a highly available SQL database, Studio and Director consoles, a License Server and Citrix Gateway. These components are part of the management plane or control plane for the environment and are deployed at a data center or cloud that is customer or partner managed. The resources for end users made available from server and desktop Virtual Delivery Agents (VDAs) are also hosted on dedicated hypervisors within datacenter(s) and/or on private or public clouds. These components are called the Citrix workloads. Both management components and workloads are managed entirely by the customer or perhaps a partner.
 
 In the Citrix Cloud Virtual Apps and Desktops Service, the management or control plane for a customer deployment is provisioned and managed by Citrix on Citrix Cloud. Customers don’t handle the core product installation, setup, configuration, upgrades, monitoring, or scaling of the management plane as that is all left to Citrix to handle and keep evergreen and secure.
 
@@ -59,7 +59,7 @@ All of the control plane components - StoreFront, Delivery Controllers, even the
 
 The Cloud Connector is a new component that is installed in the resource location to connect the resources up to Citrix Cloud. It is placed next to the VDAs, within the hypervisor(s) or public cloud(s), and the Active Directory environment. Citrix Cloud Connectors are designed for seamless integration and to deliver the best user experience on any device, under any network condition.
 
-Citrix Workspace Experience, an enhanced version and successor of StoreFront in Citrix Cloud, is the industry’s-first solution offering the integration of Windows, Linux, Web, SaaS and mobile applications in a unified and simple-to-use interface. Citrix Workspace fully aggregates apps and data from both on-premises and cloud environments to deliver the required resources with the right experience to the right user at the right time. With this enhanced architecture, customers still own and maintain complete control over provisioned resources like desktops, applications, policies, and users using the Citrix Cloud Portal.
+Citrix Workspace Experience, an enhanced version and successor of StoreFront in Citrix Cloud, is the industry’s-first solution offering the integration of Windows, Linux, Web, SaaS, and mobile applications in a unified and simple-to-use interface. Citrix Workspace fully aggregates apps and data from both on-premises and cloud environments to deliver the required resources with the right experience to the right user at the right time. With this enhanced architecture, customers still own and maintain complete control over provisioned resources like desktops, applications, policies, and users using the Citrix Cloud Portal.
 
 ## Generic & Conceptual Architecture
 
@@ -67,15 +67,15 @@ The Citrix Virtual Apps and Desktops architecture is divided up into layers. All
 
 [![CVAD-Image-3](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_003.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_003.png)
 
-*  **User Layer** - This layer describes the end user environment and end-point devices that will be used to connect to resources. This section also explains the use case for Citrix Workspace and Citrix Workspace App.
+*  **User Layer** - This layer describes the end user environment and end-point devices that are used to connect to resources. This section also explains the use case for Citrix Workspace and Citrix Workspace app.
 
 *  **Access Layer** - This layer describes details surrounding external and internal access to the Citrix environment. This section provides design details for virtual networks, resource location connectivity, Citrix Gateway and StoreFront placement and configuration.
 
-*  **Resource Layer** - This layer captures information for the user’s personalization, applications and images for the Citrix environment.
+*  **Resource Layer** - This layer captures information for the user’s personalization, applications, and images for the Citrix environment.
 
 *  **Control Layer** - This layer describes details surrounding the components used to support the rest of the environment, which includes site design for the Citrix Cloud Services, Cloud Connector and Active Directory integration.
 
-*  **Platform Layer** - This layer describes the hardware components, private, public and hybrid cloud that will be used for the Citrix environment – hardware, storage and virtualization details.
+*  **Platform Layer** - This layer describes the hardware components, private, public, and hybrid cloud that will be used for the Citrix environment – hardware, storage, and virtualization details.
 
 *  **Operations Layer** – This layer explains the procedures and tools that support the core product and solution.
 
@@ -89,15 +89,15 @@ A Citrix Cloud account allows admins to have broad administrative access on the 
 
 ### Citrix Cloud Region
 
-A Citrix Cloud Region is a geographical boundary where Citrix operates, stores, and replicates services and data for delivery of Citrix Cloud services. When a customer is onboarded to Citrix Cloud and signs in for the first time, they will be asked to choose one of the following regions:
+A Citrix Cloud Region is a geographical boundary where Citrix operates, stores, and replicates services and data for delivery of Citrix Cloud services. When a customer is onboarded to Citrix Cloud and signs in for the first time, they are asked to choose one of the following regions:
 
-*  United States
+*  The United States
 *  European Union
 *  Asia Pacific South
 
-The customer has to choose a region that maps to where the majority of users and resources will be located. Citrix Cloud Services are designed to be used on a global basis. All services are globally available, regardless of the region a customer selects for their organization. Certain services, like the Virtual Apps and Desktops Service, have dedicated regional instances; however, some services have US-based instances only.
+The customer has to choose a region that maps to where most users and resources are located. Citrix Cloud Services are used on a global basis. All services are globally available, regardless of the region a customer selects for their organization. Certain services, like the Virtual Apps and Desktops Service, have dedicated regional instances; however, some services have US-based instances only.
 
-An important point to note is that admins can choose a region only once and it cannot be changed later. Customers who opted for the US Region with Cloud Connectors in Australia will see minimal impact from latency however.
+An important point to note is that admins can choose a region only once and it cannot be changed later. Customers who opted for the US Region with Cloud Connectors in Australia see minimal impact from latency however.
 
 ### Resource Locations
 
@@ -119,7 +119,7 @@ Setting up resource locations begins with the following:
 
 [![CVAD-Image-4](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_004.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_004.png)
 
-Active Directory on each resource location is required to access and verify the authentication requests via the Cloud Connector. In case the primary resource location is not available, the authentication requests will be handled from other resource locations from where the Cloud Connector is connected with the Active Directory Domain.
+Active Directory on each resource location is required to access and verify the authentication requests via the Cloud Connector. In case the primary resource location is not available, the authentication requests are handled from other resource locations from where the Cloud Connector is connected with the Active Directory Domain.
 
 Reference: [*Citrix Docs: Resource Location*](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html)
 
@@ -146,7 +146,7 @@ Active Directory is an important role for authentication and authorization with 
 
 #### Connecting Azure AD to Citrix Cloud
 
-Customers who have integrated their Active Directory with Azure AD, can now easily connect their Azure AD with Citrix Cloud. Once the Azure AD is connected with Citrix Cloud, it helps users to login seamlessly. Citrix Cloud includes an Azure AD app that allows Citrix Cloud to connect with Azure AD without the need for users to log in for a new Azure AD session.
+Customers who have integrated their Active Directory with Azure AD, can now easily connect their Azure AD with Citrix Cloud. Once the Azure AD is connected with Citrix Cloud, it helps users to log in seamlessly. Citrix Cloud includes an Azure AD app that allows Citrix Cloud to connect with Azure AD without the need for users to log in for a new Azure AD session.
 
 [![CVAD-Image-5](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_005.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_005.png)
 
@@ -167,11 +167,11 @@ Connecting the resource location (on-premises) Active Directory to Citrix Cloud 
 
 The Citrix Cloud Connector is an important component in a resource location that serves as a channel for communication between Citrix Cloud and resource locations. It enables cloud management without requiring any complex networking or infrastructure configuration. In a resource location, the Cloud Connector acts as a proxy for the Delivery Controller provisioned on Citrix Cloud. This removes all the hassle of the customer managing the delivery infrastructure.
 
-Citrix recommends to install the Cloud Connector on a machine running Windows Server 2016 or Windows Server 2012 R2. This Connector machine must be joined to the customer domain and be able to communicate with the resources that the customer wants to manage from Citrix Cloud. In each resource location, two or more Cloud Connectors are recommended to support the required load and ensure high availability.
+Citrix recommends installing the Cloud Connector on a machine running Windows Server 2016 or Windows Server 2012 R2. This Connector machine must be joined to the customer domain and be able to communicate with the resources that the customer wants to manage from Citrix Cloud. In each resource location, two or more Cloud Connectors are recommended to support the required load and ensure high availability.
 
 #### Load Balancing the Cloud Connectors
 
-The Citrix Cloud Connector is stateless, the load can be distributed across all available Cloud Connectors. To manage adequate load, install multiple Cloud Connectors in each resource location. There is no need to configure load balancing functionality as it is completely automated. The health of the Cloud Connectors can be monitored via the Citrix Cloud portal.
+The Citrix Cloud Connector is stateless, the load can be distributed across all available Cloud Connectors. To manage adequate load, install multiple Cloud Connectors in each resource location. There is no need to configure load balancing functionality as it is automated. The health of the Cloud Connectors can be monitored via the Citrix Cloud portal.
 
 #### Cloud Connector Functions
 
@@ -187,7 +187,7 @@ The Cloud Connector enables the following functions for the Citrix Cloud Virtual
 
 The Cloud Connector authenticates and encrypts all communication between Citrix Cloud and resource locations by utilizing the Internet connection available in the resource location. The Cloud Connector also supports connections to Citrix Cloud through the Internet via a web proxy server. The Web proxy needs to understand Connect tunneling and WebSocket persistent connections. During the installation, both the installer and the services it installs, need communication with Citrix Cloud. Internet access needs to be available at both these points.
 
-All communication between the Cloud Connector and Citrix Cloud are “outbound”. All connections are established from the Cloud Connector to the Citrix Cloud control plane using the standard HTTPS port (443) with the web standard TLS 1.2 protocol. No incoming connections are accepted. The Cloud Connector cannot transverse domain-level trusts, therefore additional Cloud Connectors should be installed per user domain. It is important to understand that Citrix Cloud only stores metadata, such as user names, application names and icons while the corporate data and resources remain within each resource location configured. Nonetheless, all data between Citrix Cloud and the Cloud Connectors is encrypted with TLS while in transit.
+All communication between the Cloud Connector and Citrix Cloud is “outbound”. All connections are established from the Cloud Connector to the Citrix Cloud control plane using the standard HTTPS port (443) with the web standard TLS 1.2 protocol. No incoming connections are accepted. The Cloud Connector cannot transverse domain-level trusts, therefore additional Cloud Connectors should be installed per user domain. It is important to understand that Citrix Cloud only stores metadata, such as user names, application names and icons while the corporate data and resources remain within each resource location configured. Nonetheless, all data between Citrix Cloud and the Cloud Connectors is encrypted with TLS while in transit.
 
 Enabling SSL decryption on certain proxies might prevent the Cloud Connector from connecting successfully to Citrix Cloud. For more information refer to [CTX221535](https://support.citrix.com/article/CTX221535).
 
@@ -201,9 +201,9 @@ In a Citrix Virtual Apps and Desktops Service environment, **each resource locat
 
 Citrix Virtual Apps and Desktops Service deployments that span widely dispersed locations connected by a WAN might face challenges from network latency and reliability. Zones can help users in remote regions to connect to resources without necessarily forcing their connections to traverse large segments of the WAN.
 
-Zones can be helpful in deployments of all sizes. Customers can use zones to keep applications and desktops closer to users, which improves performance. Zones can be used for disaster recovery, geographically distant data centers, branch offices, a cloud, or an availability zone in a cloud.
+Zones can be helpful in deployments of all sizes. Customers can use zones to keep applications and desktops closer to users, which improve performance. Zones can be used for disaster recovery, geographically distant data centers, branch offices, a cloud, or an availability zone in a cloud.
 
-Zones in a Citrix Virtual Apps and Desktops Service environment are not identical to zones in an on-premises Citrix Virtual Apps and Desktops deployment. In the Citrix Virtual Apps and Desktops Service, zones are created automatically when customers create a resource location and add a Cloud Connector to it. Unlike an on-premises deployment, a service environment does not classify zones as primary or satellite. In XenApp version 6.5 and earlier, each zones had an assigned data collector server that handled dynamic information about all servers in the zone such as load levels. The Citrix Virtual Apps and Desktops Service does not use data collectors for zones. Also, failover and preferred zones work differently.
+Zones in a Citrix Virtual Apps and Desktops Service environment are not identical to zones in an on-premises Citrix Virtual Apps and Desktops deployment. In the Citrix Virtual Apps and Desktops Service, zones are created automatically when customers create a resource location and add a Cloud Connector to it. Unlike an on-premises deployment, a service environment does not classify zones as primary or satellite. In XenApp version 6.5 and earlier, each zone had an assigned data collector server that handled dynamic information about all servers in the zone such as load levels. The Citrix Virtual Apps and Desktops Service does not use data collectors for zones. Also, failover and preferred zones work differently.
 
 [![CVAD-Image-8](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_008.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_008.png)
 
@@ -269,7 +269,7 @@ Reference: [*Citrix Docs: Citrix Cloud–Zones*](/en-us/citrix-virtual-apps-desk
 
 The Local Host Cache (LHC) is a feature with Cloud Connectors that enables users to continue to work by handling the connection brokering operations in a Citrix Virtual Apps and Desktops Service deployment when a Cloud Connector cannot communicate with Citrix Cloud. Local Host Cache engages when the network connection is lost between the Cloud Connector and Citrix Cloud for 20 seconds. With Local Host Cache, users who are connected can continue working uninterrupted. Reconnections and new connections experience minimal connection delays.
 
-LHC uses SQL Server Express LocalDB which is installed during Cloud Connector installation to store the required data for uninterrupted service during an outage. A Cloud Connector’s CPU configuration, particularly the number of cores available to the SQL Server Express LocalDB, directly affects Local Host Cache performance. CPU overhead is observed only during the outage period when the database is unreachable and the High Availability Service is active. Citrix recommends to use multiple sockets with multiple cores for Cloud Connector machines. In Citrix testing, a 2 socket, 3 core configuration provided better performance than 4x1 and 6x1 configurations. Local Host Cache works only in resource locations containing an on-premises StoreFront.
+LHC uses SQL Server Express LocalDB which is installed during Cloud Connector installation to store the required data for uninterrupted service during an outage. A Cloud Connector’s CPU configuration, particularly the number of cores available to the SQL Server Express LocalDB, directly affects Local Host Cache performance. CPU overhead is observed only during the outage period when the database is unreachable and the High Availability Service is active. Citrix recommends using multiple sockets with multiple cores for Cloud Connector machines. In Citrix testing, a 2 socket, 3 core configuration provided better performance than 4x1 and 6x1 configurations. Local Host Cache works only in resource locations containing an on-premises StoreFront.
 
 [![CVAD-Image-9](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_009.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_009.png)
 
@@ -295,7 +295,7 @@ Reference: [*Citrix Docs: Virtual Delivery Agent*](/en-us/citrix-virtual-apps-de
 
 ### RDS License
 
-Citrix Virtual Apps environments require an RDS (Remote Desktop Services) CAL. Citrix Virtual Apps environments run on top of VMs running Windows Server 2019/2016/2012R2 with Microsoft RDS technology (formerly Terminal Services) and thus needs to be licensed with RDS CALs (per user or device).
+Citrix Virtual Apps environments require an RDS (Remote Desktop Services) CAL. Citrix Virtual Apps environments run on top of VMs running Windows Server 2019/2016/2012R2 with Microsoft RDS technology (formerly Terminal Services) and thus need to be licensed with RDS CALs (per user or device).
 
 The VDA must be able to contact an RDS license server to request RDS CALs. Administrators should install and activate the license server in the resource locations.
 
@@ -314,7 +314,7 @@ The FAS is authorized to issue smart card class certificates automatically on be
 
 This allows Windows authentication without prompts to enter user credentials or smart card PINs, and without using “saved password management” features such as the single sign-on service. This can be used to replace the Kerberos Constrained Delegation logon features available in earlier versions of XenApp.
 
-In order to enable FAS together with the Citrix Cloud, the following Citrix components must be built outside of the Citrix Virtual Apps and Desktops Service:
+To enable FAS together with the Citrix Cloud, the following Citrix components must be built outside of the Citrix Virtual Apps and Desktops Service:
 
 *  FAS servers
 *  Citrix StoreFront (minimum version 3.6)
@@ -404,15 +404,15 @@ The following policy templates are available:
 *  **Optimized for Citrix SD-WAN:** Apply this template for users working from branch offices with Citrix SD-WAN for optimizing delivery of Virtual Apps and Desktops.
 *  **Optimized for WAN:** This template is intended for task workers in branch offices using a shared WAN connection or remote locations with low bandwidth connections accessing applications with graphically simple user interfaces with little multimedia content. This template trades off video playback experience and some server scalability for optimized bandwidth efficiency.
 *  **Optimized for WAN-Legacy OS:** This Optimized for WAN template applies only to VDAs running Windows Server 2008 R2 or Windows 7 and earlier. This template relies on the Legacy graphics mode which is more efficient for those operating systems.
-*  **Security and Control:** Use this template in environments with low tolerance to risk, to minimize the features enabled by default in Citrix Virtual Apps and Desktops. This template includes settings which will disable access to printing, clipboard, peripheral devices, drive mapping and port redirection. Applying this template may use more bandwidth and reduce user density per server.
+*  **Security and Control:** Use this template in environments with low tolerance to risk, to minimize the features enabled by default in Citrix Virtual Apps and Desktops. This template includes settings which disable access to printing, clipboard, peripheral devices, drive mapping and port redirection. Applying this template may use more bandwidth and reduce user density per server.
 
 ### StoreFront / Workspace
 
-Citrix StoreFront is an interface for users to access Citrix Virtual Apps and Desktops from the office or remotely with multiple devices. It will act as an enterprise self-service app store for users and enables administrators to provide users with self-service central access to their virtual desktops and applications. Citrix's StoreFront enables single sign-on access to users to which provides flexibility for the users to access the virtual apps and desktops.
+Citrix StoreFront is an interface for users to access Citrix Virtual Apps and Desktops from the office or remotely with multiple devices. It acts as an enterprise self-service app store for users and enables administrators to provide users with self-service central access to their virtual desktops and applications. Citrix's StoreFront enables single sign-on access to users to which provides flexibility for the users to access the virtual apps and desktops.
 
 It also keeps track of users’ application subscriptions, shortcut names, and other data to ensure they have a consistent experience across multiple devices. With the Citrix Cloud Virtual Apps and Desktops Services, the StoreFront deployment is flexible for customers to achieve their organization requirements and use cases.
 
-1.  **Cloud-hosted StoreFront / Workspace**: The Virtual Apps and Desktops Service in Citrix Cloud hosts a StoreFront / Workspace service for each customer. The benefit of the cloud-hosted StoreFront is that there is zero effort to deploy, and it is kept evergreen by Citrix. The customer will be provided with a cloud based URL to access the apps and desktops.
+1.  **Cloud-hosted StoreFront / Workspace**: The Virtual Apps and Desktops Service in Citrix Cloud hosts a StoreFront / Workspace service for each customer. The benefit of the cloud-hosted StoreFront is that there is zero effort to deploy, and it is kept evergreen by Citrix. The customer is provided with a cloud based URL to access the apps and desktops.
 
 2.  **On-Premises StoreFront**: Customers may also use an existing on-premises StoreFront to aggregate applications and desktops in Citrix Cloud. This use case offers greater security, including support for two-factor authentication and prevents users from entering their password into the cloud service. The benefit of using an existing StoreFront is that the Citrix Cloud Connector provides encryption of user passwords. Credentials are encrypted by the connector using AES-256 with a random-generated one-time key. This key is returned directly to Citrix Workspace app and never sent to the cloud. Citrix Workspace app then supplies it to the VDA during session launch to decrypt the credentials and provide a single sign-on experience into Windows. It also allows customers to customize their domain names and URLs. To use the Local Host Cache feature on-premises StoreFront is a requirement.
 
@@ -430,7 +430,7 @@ Citrix Workspace platform is a foundational component of Citrix Cloud that enume
 
 Reference: [*Citrix Docs: Workspace Configuration*](/en-us/citrix-cloud/workspace-configuration.html)
 
-### Citrix Cloud Gateway Service
+### Citrix Gateway Service
 
 Citrix Gateway provides users with secure remote access to Citrix Virtual Apps and Desktops applications across a range of devices including laptops, desktops, thin clients, tablets, and smartphones. The Citrix Gateway Service enables secure, remote access to Citrix Virtual Apps and Desktops applications, without having to deploy Citrix Gateway in the DMZ or reconfiguring the customer-owned on-premises firewall.
 
@@ -463,7 +463,7 @@ Reference: [*Citrix Docs: Citrix Gateway Service*](/en-us/citrix-virtual-apps-de
 
 Director is a monitoring and troubleshooting console for the Citrix Virtual Apps and Desktops Service. The Director dashboard provides a centralized location for monitoring the real-time and historical health and usage of a Site. Director functionality is available on the Monitor tab of the Citrix Virtual Apps and Desktops Service console.
 
-Administrators and help-desk personnel can use Director as a real time web tool to monitor, troubleshoot, and perform support tasks for subscribers. It helps admin to get the details of User sessions and sessions in use, logon performance, user connections and machines that includes failures, load evaluation, historical trends, and to monitor infrastructure hosts.
+Administrators and help-desk personnel can use Director as a real time web tool to monitor, troubleshoot, and perform support tasks for subscribers. It helps admin to get the details of User sessions and sessions in use, logon performance, user connections and machines that include failures, load evaluation, historical trends, and to monitor infrastructure hosts.
 
 Reference: [*Citrix Docs: Citrix Director*](/en-us/xenapp-and-xendesktop/7-15-ltsr/director.html)
 
@@ -496,7 +496,7 @@ Reference: [*Citrix Docs: Hosting Connections*](/en-us/citrix-virtual-apps-deskt
 
 A machine catalog is a collection or grouping of VDAs that have the same operating system type either Server or Desktop. A machine catalog containing Server OS machines can contain either Windows or Linux machines, not both.
 
-A virtual machine that is created on the hypervisor or on the cloud service named as a master image is also known as a template. This VM will have all the user applications and other security tools Installed. Finally, the Citrix Virtual Delivery Agent is installed that will allow Citrix tools to create multiple VMs from this master image via Citrix Studio.
+A virtual machine that is created on the hypervisor or on the cloud service named as a master image is also known as a template. This VM has all the user applications and other security tools Installed. Finally, the Citrix Virtual Delivery Agent is installed that allows Citrix tools to create multiple VMs from this master image via Citrix Studio.
 
 Once the template or master image is ready, create a machine catalog using a Citrix tool (MCS or Citrix Provisioning) or customer-owned other tools. With Citrix tools, the machine catalog creation process provisions identical VMs from that image. If there are other tools to provision VMs or physical machines, the catalog creation process adds those machines to the catalog.
 
@@ -516,7 +516,7 @@ Citrix App Layering is a Windows Operating System and application management sol
 
 Citrix App Layering uses a single virtual appliance to manage the layers and then hands them off to other platforms for image and application distribution.
 
-Citrix App Layering radically reduces the overhead involved in managing Windows applications and images. Regardless of which hypervisor or provisioning service a customer uses, the App Layering service allows:
+Citrix App Layering radically reduces the overhead involved in managing Windows applications and images. Regardless of which hypervisor or provisioning solution a customer uses, the App Layering service allows:
 
 *  To install the operating system, platform tools, and applications in separate layers
 *  To select the combination of layers needed for each of the images in an image template, then using the image template to provision systems for groups of users
@@ -542,7 +542,7 @@ Citrix Profile Management ensures that the user’s personal settings are applie
 
 Citrix Profile Management is enabled through a profile optimization service that provides an easy, reliable way for managing these settings in Windows environments to ensure a consistent experience by maintaining a single profile that follows the user. It auto-consolidates and optimizes user profiles to minimize management and storage requirements and requires minimal administration, support and infrastructure, while providing users with improved logon and logout.
 
-Citrix Profile Management addresses user profile deficiencies in environments where simultaneous domain logons by the same user introduces complexities and consistency issues to the profile. For example, if a user starts sessions to two different virtual resources based on a roaming profile, the profile of the session that terminates last overrides the profile of the first session. This problem, known as “last write wins” discards any personalization settings that the user makes in the first session.
+Citrix Profile Management addresses user profile deficiencies in environments where simultaneous domain logons by the same user introduce complexities and consistency issues to the profile. For example, if a user starts sessions to two different virtual resources based on a roaming profile, the profile of the session that terminates last overrides the profile of the first session. This problem, known as “last write wins” discards any personalization settings that the user makes in the first session.
 
 At logon, users’ registry entries and files are copied from the user store. If a locally cached profile exists, the two sets are synchronized. This makes all settings for all applications and silos available during the session. And it is no longer necessary to maintain a separate user profile for each silo. Citrix streamed user profiles can further enhance logon times.
 
@@ -560,7 +560,7 @@ The Citrix Cloud Virtual Apps and Desktops Service(CVADS) can be deployed in sev
 
 ## CVADS with Hybrid-Cloud/On-Premises Citrix Workloads
 
-In this deployment scenario, a company wants to enable its internal users to access their resources (apps and data) by using Citrix Cloud along with on-premises Citrix workloads, Since the applications are not cloud-ready, they are hosted in their on-premises data center and managed by their internal admins. These applications need to enabled via Citrix for the users. The company does not have any IT specialists to deploy the Citrix management components so they have decided to go with Citrix Cloud.
+In this deployment scenario, a company wants to enable its internal users to access their resources (apps and data) by using Citrix Cloud along with on-premises Citrix workloads. Since the applications are not cloud-ready, they are hosted in their on-premises data center and managed by their internal admins. These applications need to be enabled via Citrix for the users. The company does not have any IT specialists to deploy the Citrix management components so they have decided to go with Citrix Cloud.
 
 As a future expansion, the company is also planning to extend its on-premises workloads to the public cloud to offload the resource-intensive web components and to scale the Citrix workloads in the cloud. The company decided to go with this deployment model as it can provide higher availability for business continuity and disaster recovery provided they extend their Citrix workloads to any private or public cloud. In case of any disaster and if users are unable to access the resources from on-premises data centers, they can quickly enable the resources and provide access from cloud-hosted Citrix workloads.
 
@@ -568,7 +568,7 @@ The conceptual architecture for this deployment is shown below, let’s review t
 
 [![CVAD-Image-12](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_012.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_012.png)
 
-**User Layer:** Users within corporate who needs to access the Citrix environment. The company has enabled their corporate devices to access the Citrix resources. Workspace App is available for Windows, Mac, Android, and iOS. The internal IT team has installed the latest Workspace App on the corporate devices. The company enabled the printer and device redirection policy for users to access their company printers and drives for data management.
+**User Layer:** Users within corporate who needs to access the Citrix environment. The company has enabled their corporate devices to access the Citrix resources. Workspace app is available for Windows, Mac, Android, and iOS. The internal IT team has installed the latest Workspace app on the corporate devices. The company enabled the printer and device redirection policy for users to access their company printers and drives for data management.
 
 The company has identified their users and segregated as different workload types based on their application usage.
 
@@ -583,9 +583,9 @@ Upon user segregation, the Citrix admin has created the respective machine catal
 
 **Access Layer:** Citrix StoreFront / Workspace Service is the front end or entry point for Citrix users to access the Citrix environment. Citrix Cloud has provisioned StoreFront / Workspace to access the company’s Citrix environment and users are provided with the Workspace URL (`https://company.cloud.com`) from Citrix Cloud. The Workspace configuration tab allowed company admins to change the Workspace URL and the customization of Workspace / StoreFront Page.
 
-Installation of the Cloud Connector enables extending the customer Active Directory domain to Citrix Cloud for authentication. Authentication configuration in Workspace Configuration allows the admin to select the authentication source for users to sign-in and access the Citrix resources. The admin has selected on-premises Active directory to authenticate the Citrix subscribers on Citrix Cloud. Users accessing the Citrix Cloud URL `https://company.cloud.com` are asked to enter the domain credentials which will then be validated against their on-premises Active Directory domain via Cloud Connector.
+Installation of the Cloud Connector enables extending the customer Active Directory domain to Citrix Cloud for authentication. Authentication configuration in Workspace Configuration allows the admin to select the authentication source for users to sign in and access the Citrix resources. The admin has selected on-premises Active directory to authenticate the Citrix subscribers on Citrix Cloud. Users accessing the Citrix Cloud URL `https://company.cloud.com` are asked to enter the domain credentials which will then be validated against their on-premises Active Directory domain via Cloud Connector.
 
-Once the credential is validated, users are then presented with the workspace page where they can access the apps, desktops and content which are assigned. When the user launches an application or desktop, the user is presented with an ICA file which will launch the Workspace App and the ICA connection (TCP port 1494/2598) is established from the user system to the VDA which is assigned by the controller for this connection.
+Once the credential is validated, users are then presented with the workspace page where they can access the apps, desktops and content which are assigned. When the user launches an application or desktop, the user is presented with an ICA file which will launch the Workspace app and the ICA connection (TCP port 1494/2598) is established from the user system to the VDA which is assigned by the controller for this connection.
 
 [![CVAD-Image-13](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_013.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_013.png)
 
@@ -605,7 +605,7 @@ Virtual Delivery Agents installed with these VMs are registered with Cloud Conne
 
 [![CVAD-Image-15](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_015.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_015.png)
 
-**Platform Layer:** The customer has procured the server hardware which are required for the Citrix workload based on their requirements and design decisions. The Citrix admin has installed the hypervisor to host the Citrix workloads. The network admin has enabled the Firewall rules for the new environment on corporate devices. The storage admin helped to configure and assign the adequate storage to the new Citrix environment.
+**Platform Layer:** The customer has procured the server hardware which is required for the Citrix workload based on their requirements and design decisions. The Citrix admin has installed the hypervisor to host the Citrix workloads. The network admin has enabled the Firewall rules for the new environment on corporate devices. The storage admin helped to configure and assign the adequate storage to the new Citrix environment.
 
 **Operations Layer:** The components which are required to manage the Citrix workloads in Resource Location are covered under the Operations Layer. The IT Admin has deployed a file server cluster to store the user profiles from Citrix workloads. Also, they have deployed RDS CAL Server (Per user / device) to issue the RDS licenses for Virtual Apps Servers in the Resource Location.
 
@@ -629,9 +629,9 @@ The **conceptual architecture** for this deployment is shown below, Let’s go t
 
 [![CVAD-Image-17](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_017.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_017.png)
 
-**User Layer:** Users within corporate (internal) networks and over the internet (external) needs to access both new Citrix hybrid-cloud and old legacy Citrix environment. The IT team has enabled firewall rules on their network devices to access the new Citrix environment resources from their corporate devices. The Internal IT team has installed the latest Workspace App on the corporate devices and upgraded the old Citrix Receiver wherever applicable.
+**User Layer:** Users within corporate (internal) networks and over the internet (external) needs to access both new Citrix hybrid-cloud and old legacy Citrix environment. The IT team has enabled firewall rules on their network devices to access the new Citrix environment resources from their corporate devices. The Internal IT team has installed the latest Workspace app on the corporate devices and upgraded the old Citrix Receiver wherever applicable.
 
-External users who are accessing the Citrix Cloud environment over the internet use their personal devices along with corporate devices, hence the company recommended to install the latest Workspace App on their personal devices. External users can also utilize the HTML5 version of Workspace where they cannot install the Workspace App on the devices.
+External users who are accessing the Citrix Cloud environment over the internet use their personal devices along with corporate devices, hence the company recommended installing the latest Workspace app on their personal devices. External users can also utilize the HTML5 version of Workspace where they cannot install the Workspace app on the devices.
 
 User types and their workloads are identified from the existing legacy Citrix environment.
 
@@ -655,7 +655,7 @@ Installation of Cloud Connector enables the extension of the customer’s Active
 
 User accessing the Citrix Cloud URL `https://customer.cloud.com` is asked to enter the domain credentials which will then be validated against their on-premises Active Directory via Cloud Connector. Once validated, the user is then presented with the workspace page where they can access the apps and desktops which are assigned.
 
-When the user launches an application or desktop, the user is presented with an ICA file which will be launched via the Workspace App and the ICA connection (SSL) is established from user system to Citrix Gateway and then the connection is passed to Cloud connector and then (on port 1494/2598) to the VDA which is assigned by the controller for this connection. On successful connection, HDX session (2598) is launched and presented to the user.
+When the user launches an application or desktop, the user is presented with an ICA file which will be launched via the Workspace app and the ICA connection (SSL) is established from user system to Citrix Gateway and then the connection is passed to Cloud connector and then (on port 1494/2598) to the VDA which is assigned by the controller for this connection. On successful connection, HDX session (2598) is launched and presented to the user.
 
 [![CVAD-Image-18](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_018.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_018.png)
 
@@ -665,7 +665,7 @@ To aggregate the resources from legacy Citrix environments, the admin has instal
 
 The user accessing the Citrix Cloud URL `https://customer.cloud.com` asked to enter the domain credentials which are validated against their on-premises Active Directory via Cloud Connector. Once validated, the user is then presented with the workspace page with the apps and desktops from both old and new environments.
 
-When a user launches an application from the legacy environment, the user is presented with an ICA file which will then be launched via Workspace App. Workspace App initiates the ICA connection from the user system to Citrix Gateway and then to Cloud connector and then to the VDA assigned for this connection. On successful connection, the HDX session is launched and presented to the user.
+When a user launches an application from the legacy environment, the user is presented with an ICA file which will then be launched via Workspace app. Workspace app initiates the ICA connection from the user system to Citrix Gateway and then to Cloud connector and then to the VDA assigned for this connection. On successful connection, the HDX session is launched and presented to the user.
 
 [![CVAD-Image-19](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_019.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_019.png)
 
@@ -695,9 +695,9 @@ Virtual Delivery Agents installed with these VMs are registered with Cloud Conne
 
 **Operations Layer:** The tools or components which are required to manage the Citrix workloads within Resource Location are covered under the Operations Layer. The IT Admin has deployed a file server cluster to store the user profiles from Citrix workloads.
 
-Using Citrix Workspace Environment Manager Service, the Citrix admin has applied the Profile Management Polices to WEM Agents. The customer opted to use the latest Citrix User Profile Manager on VDAs to map the user’s profiles to the file server cluster. The IT Admin has created dedicated file shares for the user profiles and folder redirection. Profile Management polices optimize Citrix workloads for fast login and logoff.
+Using Citrix Workspace Environment Manager Service, the Citrix admin has applied the Profile Management Polices to WEM Agents. The customer opted to use the latest Citrix User Profile Manager on VDAs to map the user’s profiles to the file server cluster. The IT Admin has created dedicated file shares for the user profiles and folder redirection. Profile Management policies optimize Citrix workloads for fast login and logoff.
 
-The Citrix admin also applied resource management policies to optimize the CPU and memory utilization on VDA agents. Using the Workspace Environment Manager, the cloud admin applied application security and process management polices to control the end-user activity.
+The Citrix admin also applied resource management policies to optimize the CPU and memory utilization on VDA agents. Using the Workspace Environment Manager, the cloud admin applied application security and process management policies to control the end-user activity.
 
 The customer has enabled Remote Desktop Services (RDS) Client Access License Server to issue the RDS licenses for Virtual Apps workloads in the Resource Location.
 
@@ -713,7 +713,7 @@ As per the design strategy, the hardware resources which were used for legacy en
 
 All the components which are used in a production environment are replicated to the disaster recovery site to ensure the availability of the services during a disaster.
 
-Citrix App Layering helped to deploy the workloads by replicating the master templates which was created in the production environment to the DR site with no effort. The Citrix Workspace Environment Manager Service helped to configure and apply the profile settings in the DR Site.
+Citrix App Layering helped to deploy the workloads by replicating the master templates which were created in the production environment to the DR site with no effort. The Citrix Workspace Environment Manager Service helped to configure and apply the profile settings in the DR Site.
 
 The IT admin has configured Storage replication to replicate the user profiles and data stored on the production file server cluster to DR site file servers.
 
@@ -723,7 +723,7 @@ Once the environment is ready, the customer wants to test the DR environment wit
 
 The cloud admin has configured the zone preferences for the subscribers in Library (Apps and Desktops) offerings which enabled the end users to see the desktops and apps from “DR Site” on storefront/workspace page.
 
-When a user launches an application or desktop, the user is presented with an ICA file which will be launched via the Workspace App and the ICA connection (SSL) is established from the user system to Citrix Gateway and then the connection is passed to the DR Site Cloud Connector and then (on port 1494/2598) to the VDAs which is assigned by the controller for this connection from the DR Site. On successful connection, the HDX session (2598) is launched and presented to the user.
+When a user launches an application or desktop, the user is presented with an ICA file which will be launched via the Workspace app and the ICA connection (SSL) is established from the user system to Citrix Gateway and then the connection is passed to the DR Site Cloud Connector and then (on port 1494/2598) to the VDAs which is assigned by the controller for this connection from the DR Site. On successful connection, the HDX session (2598) is launched and presented to the user.
 
 [![CVAD-Image-23](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_023.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_023.png)
 
@@ -735,7 +735,7 @@ In this scenario a large enterprise customer wants to deploy a Citrix Virtual Ap
 
 The Information Security Team claims to implement either SAML based or multifactor authentication with their existing third-party solution to secure the authentication and auditing requirements. Since it is an enterprise company, users are traveling across regions and they need to access the Citrix environment from other region. The customer wants to have unique URL for each region to access their environment. As part of disaster recovery planning, the customer wants to allocate 20% additional hardware and reserve those Citrix workloads for other region users to access internal-only web applications during a disaster.
 
-The customer decided to go with this deployment model to satisfy the security requirement and to provide the best user experience. Along with Citrix workloads, the customer placed two Cloud Connectors, two StoreFront servers, and two Citrix ADC Gateways in all three resource locations. The conceptual architecture for this deployment shown below, the design framework of each layer of this deployment will explain how Citrix Cloud enables the best solution for the customer.
+The customer decided to go with this deployment model to satisfy the security requirement and to provide the best user experience. Along with Citrix workloads, the customer placed two Cloud Connectors, two StoreFront servers, and two Citrix ADC Gateways in all three resource locations. The conceptual architecture for this deployment shown below, the design framework of each layer of this deployment explains how Citrix Cloud enables the best solution for the customer.
 
 [![CVAD-Image-24](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_024.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_024.png)
 
@@ -745,9 +745,9 @@ The customer decided to go with this deployment model to satisfy the security re
 *  `https://eurapps.company.com` – Europe users
 *  `https://apjapps.company.com` – Asia users
 
-Users both internal (within corporate) and external (over internet) who will be accessing the Citrix environment do so using these Public URLs. The IT team has enabled firewall rules on their network devices to access the new Citrix environment resources from their corporate devices. The IT has installed the latest Workspace App on the corporate devices and upgraded the old Citrix Receiver wherever applicable.
+Users both internal (within corporate) and external (over internet) who will be accessing the Citrix environment do so using these Public URLs. The IT team has enabled firewall rules on their network devices to access the new Citrix environment resources from their corporate devices. The IT has installed the latest Workspace app on the corporate devices and upgraded the old Citrix Receiver wherever applicable.
 
-External users may also use their personal devices along with corporate devices so it is recommended to install the latest Workspace App on users’ personal devices. External users can also utilize the HTML5 version of Citrix Workspace using the latest web browsers where they cannot install the Workspace App on the devices.
+External users may also use their personal devices along with corporate devices so it is recommended to install the latest Workspace app on users’ personal devices. External users can also utilize the HTML5 version of Citrix Workspace using the latest web browsers where they cannot install the Workspace app on the devices.
 
 The company has identified their users’ types and segregated as different workload types based on their application usage.
 
@@ -758,7 +758,7 @@ The company has identified their users’ types and segregated as different work
 | Knowledge Users| 6 to 10    | 2 vCPU  |  2 GB   | 10-20  | Pooled Desktop    |
 | Power Users    | 8 to 12    | 2 vCPU  | 3-4 GB  | 15-25  | Dedicated Desktop |
 
-Upon user segregation,  the Citrix admin has created the respective Machine Catalog and Delivery Groups in Citrix Studio for each workload type on each cloud region subscription.
+Upon user segregation, the Citrix admin has created the respective Machine Catalog and Delivery Groups in Citrix Studio for each workload type on each cloud region subscription.
 
 The cloud admin has applied Citrix Policies for printer and device redirection to access their company printers and drives for data management.
 
@@ -768,29 +768,29 @@ The cloud admin has applied Citrix Policies for printer and device redirection t
 
 **On-Premises Gateway:**
 
-On each data center in respective regions, the customer has deployed an HA-pair of Citrix Gateway ADCs and two StoreFront servers in a group to allow the Citrix environment access for users. To enable the Citrix access via Citrix Gateway ADC, the customer has procured SSL certificate (SAN) from the third-party Public Certificate Authority with all three DNS fully-qualified domain names amrapps.company.com, eurapps.company.com, and apjapps.company.com.
+On each data center in respective regions, the customer has deployed an HA-pair of Citrix Gateway ADCs and two StoreFront servers in a group to allow the Citrix environment access for users. To enable the Citrix access via Citrix Gateway ADC, the customer has procured SSL certificate (SAN) from the third-party Public Certificate Authority with all three DNS fully qualified domain names amrapps.company.com, eurapps.company.com, and apjapps.company.com.
 
-The Citrix ADC admin has configured the Citrix Gateway ADC’s with SSL certificates on each region. This helps corporate network admins to enable the globally approved HTTPS (443) inbound access to the Citrix environment from the outside world on each region data center with a dedicated public IP for each URL.
+The Citrix ADC admin has configured the Citrix Gateway ADCs with SSL certificates on each region. This helps corporate network admins to enable the globally approved HTTPS (443) inbound access to the Citrix environment from the outside world on each region data center with a dedicated public IP for each URL.
 
 To achieve the multifactor authentication requirement for Citrix environment access, the customer opted to utilize the existing Azure-MFA (NPS-Plugin) solution. Each data center has two NPS-MFA Servers to ensure high availability of service. The ADC admin has configured the authentication policy with Azure MFA (LDAP as primary, Azure MFA as secondary) along with session policies (pointing to on-premises StoreFront Stores) in Citrix Gateway on each region.
 
 **On-Premises StoreFront:**
 
-The Citrix admin has deployed two StoreFront servers to integrate with Citrix Gateway ADC’s in each data center. They created a store named “VAD” in StoreFront to configure the additional settings which enables the admin to configure the authentication settings and delivery controller for resource enumeration. The admin has added two cloud connectors as delivery controller for each site in the store configuration.
+The Citrix admin has deployed two StoreFront servers to integrate with Citrix Gateway ADCs in each data center. They created a store named “VAD” in StoreFront to configure the additional settings which enable the admin to configure the authentication settings and delivery controller for resource enumeration. The admin has added two cloud connectors as delivery controller for each site in the store configuration.
 
 The user accessing the Citrix URL `https://amrapps.company.com` is asked to enter the domain credentials which will then be validated against their NPS-MFA Servers. Once validated, the user is then asked to enter the second factor which is as per configuration on MFA for each user.
 
-Once the authentication is successful, the on-premises StoreFront communicates with the Citrix Cloud Connector for resource enumeration. The Cloud connector will communicate with cloud-hosted Delivery Controllers and then enumerate the resources. Once the enumeration is completed, the user is presented with the StoreFront page where can they can access the apps and desktops which are assigned.
+Once the authentication is successful, the on-premises StoreFront communicates with the Citrix Cloud Connector for resource enumeration. The Cloud connector communicates with cloud-hosted Delivery Controllers and then enumerate the resources. Once the enumeration is completed, the user is presented with the StoreFront page where can they can access the apps and desktops which are assigned.
 
-When a user launches an application or desktop, they are presented with an ICA file which will be launched via the Workspace App and the ICA connection (SSL) is established from the user system to on-premises Citrix Gateway and then (on port 1494/2598) to the VDA which is assigned by the controller for this connection. On successful connection, the HDX session (2598) is launched and presented to the user.
+When a user launches an application or desktop, they are presented with an ICA file which will be launched via the Workspace app and the ICA connection (SSL) is established from the user system to on-premises Citrix Gateway and then (on port 1494/2598) to the VDA which is assigned by the controller for this connection. On successful connection, the HDX session (2598) is launched and presented to the user.
 
 The workflow remains the same for other regions as each region Citrix FQDN points to the respective data center on the respective region.
 
-**Control Layer:** Delivery controllers, SQL Database, Studio, and Licensing are the core components in the Control Layer which are provisioned on Citrix Cloud for the customer by Citrix. The admin can login to the Citrix Cloud portal and select Virtual Apps and Desktops Service to manage the components. When the admin selects the “manage” button on Citrix Cloud, it will launch Studio for them to administer the environment.
+**Control Layer:** Delivery controllers, SQL Database, Studio, and Licensing are the core components in the Control Layer which are provisioned on Citrix Cloud for the customer by Citrix. The admin can log in to the Citrix Cloud portal and select Virtual Apps and Desktops Service to manage the components. When the admin selects the “manage” button on Citrix Cloud, it launches Studio for them to administer the environment.
 
 Citrix Studio helps admins to configure the Hosting Connection, Machine Catalog, Delivery Groups, Applications and Policies for each region data center.
 
-Each data center will have a dedicated hosting connection to communicate with hypervisors to provision and manage the virtual machines. The admin has created separate machine catalogs and delivery groups for each region. The admin was able to enable the subscribers on respective delivery groups thus allowing users to access their apps and desktops.
+Each data center has a dedicated hosting connection to communicate with hypervisors to provision and manage the virtual machines. The admin has created separate machine catalogs and delivery groups for each region. The admin was able to enable the subscribers on respective delivery groups thus allowing users to access their apps and desktops.
 
 The admin selects the Monitor tab on the Citrix Cloud portal of Virtual Apps and Desktop Service page to open Citrix Director. This helps company admins to monitor the complete Citrix environment from Citrix Cloud.
 
@@ -808,13 +808,13 @@ Virtual Delivery Agents installed with these VMs are registered with Cloud Conne
 
 [![CVAD-Image-27](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_027.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_027.png)
 
-**Platform Layer:** The customer has procured the server hardware required to host Citrix workloads based on their requirements and design decisions. During the design decision step, the customer has allocated an additional 20% more resources to cater and handle disaster recovery situations in any other region. The Citrix admin has installed the hypervisor to host the Citrix workloads. The network admin has enabled the required firewall rules for the new environment. The storage admin helped to configure and assign the adequate storage to the new Citrix environment.
+**Platform Layer:** The customer has procured the server hardware required to host Citrix workloads based on their requirements and design decisions. During the design decision step, the customer has allocated an extra 20% resources to cater and handle disaster recovery situations in any other region. The Citrix admin has installed the hypervisor to host the Citrix workloads. The network admin has enabled the required firewall rules for the new environment. The storage admin helped to configure and assign the adequate storage to the new Citrix environment.
 
 **Operations Layer:** The tools or components which are required to manage the Citrix workloads within Resource Location are covered under the Operations Layer. The IT Admin has deployed a file server cluster on each data center to store the user profiles from Citrix workloads.
 
-Using Citrix Workspace Environment Manager Service, the Citrix admin has applied the Profile Management Polices to WEM Agents. The customer opted to use latest Citrix User Profile Manager on the VDAs to map the user’s profiles to the file server cluster. The IT Admin has created dedicated file shares and NFS shares for the user profiles and folder redirection. Profile Management polices optimized Citrix workloads for fast login and logoff.
+Using Citrix Workspace Environment Manager Service, the Citrix admin has applied the Profile Management Polices to WEM Agents. The customer opted to use latest Citrix User Profile Manager on the VDAs to map the user’s profiles to the file server cluster. The IT Admin has created dedicated file shares and NFS shares for the user profiles and folder redirection. Profile Management policies optimized Citrix workloads for fast login and logoff.
 
-The Citrix admin also applied resource management policies to optimize the CPU and memory utilization on VDA agents. Using the Workspace Environment Manager, the cloud admin applied application security and process management polices to control the end-user activity.
+The Citrix admin also applied resource management policies to optimize the CPU and memory utilization on VDA agents. Using the Workspace Environment Manager, the cloud admin applied application security and process management policies to control the end-user activity.
 
 The Customer has enabled Remote Desktop Services (RDS) Client Access License Server to issue the RDS licenses for Virtual Apps workloads in a Resource Location.
 
@@ -822,7 +822,7 @@ To manage multiple master images for each region and updating each master image 
 
 [![CVAD-Image-28](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_028.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_028.png)
 
-**Disaster recovery**: During a disaster in a region, the cloud admin has to enable access to other region subscribers for the apps and desktops access. The reserved workloads will be utilized during the disaster on the region. The access will be enabled only for identified resources to handle the disaster situation.
+**Disaster recovery**: During a disaster in a region, the cloud admin has to enable access to other region subscribers for the apps and desktops access. The reserved workloads are utilized during the disaster on the region. The access is enabled only for identified resources to handle the disaster situation.
 
 Identified users will be educated by an email message which helps them with the new URL and steps explaining how to access the required resources during the disaster.
 
