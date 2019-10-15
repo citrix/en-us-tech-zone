@@ -85,7 +85,7 @@ Now that we have seen the various deployment options, let’s take a look at the
 
 Machine Creation Services (MCS) is used to provision the workload VMs in the console. MCS configures, starts, stops and deletes virtual machines (VMs). MCS uses copies of the master image, called linked clones, to provision virtual desktops quickly and these can be updated easily by updating the image and then using that image as the master for the catalog. At the time of writing this brief, master images available are for Win 10 Multi-session, Win 10 Pro and Windows Server 2012 R2 and 2016.
 
-1)  Windows 10 Pro is the standard single user desktop operating system, it can be used to give access to an entire Windows 10 desktop to a user. The compute resources may or may not be fully consumed by the single user. 
+1)  Windows 10 Pro is the standard single user desktop operating system, it can be used to give access to an entire Windows 10 desktop to a user. The compute resources may or may not be fully consumed by the single user.
 
 2)  The Windows 10 multi-session is new OS made available in Azure that allows more than one user to login to a Windows 10 machine. This will help with reducing the number of machines that need to be brought up in Azure to serve the same set of users. This also helps with fully utilizing the compute resources of the machines that are deployed. This type of machine does not require RDS CALs for allowing multi user access.
 
