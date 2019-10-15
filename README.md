@@ -54,7 +54,14 @@ As a general rule - if you need to use multiple paragraphs of text, bulletpoints
 
 ### Publish content
 
-TODO
+When you are done with your article, contact one of the administrators (Slack, email or other communication channel) and request your changes to be reviewed and merged. Always provide a name of your branch (or URL).
+
+Publishing content is done in following steps:
+
+1  Content review - content review involves inviting subject matter experts to help you with technical validation of the content. It is strongly recommended to involve multiple people in all stages (from outline creation to final version) and get content reviewed as often as possible. Technical review is typically responsibility of content creator.
+1  Styling review - there are several rounds of review, from review of the markdown syntax (markdownlint) to grammar and styling (Acrolinx). If your article has any issues, administrator will contact you with list of problems and/or suggestions. You need to contact your administrator to initiate a review stage by providing name or URL of your branch. Administrator is responsible for generating report, however content creator is responsible for fixing issues that have been found.
+1  Staging environment - staging environment is used to validate if all rendering works as expected. You will receive a link to staging environment from administrator for final review.
+1  Production environment - after successful review in staging environment, article is release to production.
 
 ## Most Common Mistakes
 
@@ -62,7 +69,11 @@ For contributors, basic understanding of markdown language and versioning (GitHu
 
 ### Using the right fork / branch
 
-TODO - explain that contributors should make sure they always use the right branch! This is by far the most common mistake that new contributors are making.
+Versioning systems (like Git or Subversion) are extremely useful for professional developers (especially for large and complicated projects), however they can be very confusing for non-developers. While learning about versioning systems, pull requests and protected branches is definitely worth your time, you should follow few simple rules when working on Tech Zone content if you are not 100% comfortable with these advanced concepts:
+
+*  For any change to Tech Zone, you'll need a branch - this is required so that you don't impact other contributors. If you don't have a branch, contact one of the administrators
+*  Make sure you are using "martinzugec-ctx" fork (not your personal or Citrix fork)
+*  Never try to make any changes to `wip` or `master` branches (protected branches)
 
 **To fix:** Always confirm that you are using the right branch before making any changes.
 
