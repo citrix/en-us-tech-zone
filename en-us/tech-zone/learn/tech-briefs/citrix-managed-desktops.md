@@ -30,9 +30,10 @@ Once the user authenticates the Gateway service redirects the user to the approp
 
 ## Deployment Scenarios
 
-In order to support multiple topologies, organizations can choose an option for one of many deployment scenarios, divided into two main categories: 
-1)	Non-domain joined workloads
-2)	Domain joined workloads
+In order to support multiple topologies, organizations can choose an option for one of many deployment scenarios, divided into two main categories:
+
+1)  Non-domain joined workloads
+2)  Domain joined workloads
 
 ## Non-domain joined workloads
 
@@ -44,19 +45,19 @@ The user’s local mapped account is created by using the data that is stored in
 
 In a non-domain joined workload deployment model, there are 3 options for user accounts:
 
-**1)	User accounts in Citrix Managed Azure Active Directory**
+### 1)  User accounts in Citrix Managed Azure Active Directory
 
 In this scenario, the users’ accounts reside in the Azure Active Directory subscription that is created by Citrix for the particular deployment. The user accounts are administered by the admins in the organization via URL (that gives access to Azure AD) available in the Identity and Access Management section of the Citrix Cloud console. Users’ Azure account usernames (managed by the organization) are used to login to the Workspace. This deployment model helps in performing quick PoCs, where the entire environment can be stood up quickly to showcase the ease with which an admin can setup the solution.
 
 ![Deployment_Scenario_1](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_2-deployment-scenario-1.png)
 
-**2)	User accounts in Customer’s Azure Active Directory**
+### 2)  User accounts in Customer’s Azure Active Directory
 
 In this scenario, the user accounts are in the Customer’s Azure AD subscription. This scenario is common in Banking, Financial Services and Insurance sector and highly regulated industries where the customer wants to give access to a contractor or a temporary 3rd party user without utilizing the organization’s corporate domain, helping to create a barrier between the contractor environment and employee environment. Multi factor authentication is enabled by leveraging Azure MFA. The administration of the user’s accounts are done by the organization’s Azure AD admins.
 
 ![Deployment_Scenario_2](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_3-deployment-scenario-2.png)
 
-**3)	User accounts in organization’s on-premises Active Directory**
+### 3)  User accounts in organization’s on-premises Active Directory
 
 In this scenario, the users’ accounts are in the Customer’s Active Directory within their on-premises datacenter. To establish connectivity between the service and the organization’s AD, a Windows 2012 R2/2016 server virtual machine (generally deployed in an HA pair) is installed in the customer’s in the datacenter, called Citrix Cloud Connector. Software that allows for outbound TCP 443 based connection to Citrix Managed Desktops service is installed on it. In this scenario, the users will not be able to access any profile data and file servers in the company’s on-premises datacenter. Native 2 factor authentication is available using Time-based One Time Password.
 
@@ -66,13 +67,13 @@ In this scenario, the users’ accounts are in the Customer’s Active Directory
 
 In this category the workload machines (i.e. Windows machines running in Azure) are joined to the organization’s domain. This enables typical virtual desktop infrastructure use cases, such as centralization of apps and desktops in a few locations, that can be accessed by remote users from anywhere on any device. There are 2 deployment scenarios in this case:
 
-**1)	Domain joined using Azure Active Directory Domain Services and user accounts in organization’s Azure Active Directory**
+### 1)  Domain joined using Azure Active Directory Domain Services and user accounts in organization’s Azure Active Directory
 
 Here the users’ accounts are in the organization’s Azure Active Directory and the workload machines are joined to the Azure Active Directory Domain Services (AADDS) within the customer’s Azure subscription. For the machines to be able to connect to the AADDS, the customer needs to setup Azure VNet Peering from the network in Citrix Managed Desktops’ Azure subscription to their own Azure network in their subscription. You can administer the user and machine accounts via the organization’s Azure Active Directory.
 
 ![Deployment_Scenario_4](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_5-deployment-scenario-4.png)
 
-**2)	Domain Joined to and users’ accounts in organization’s on premises Active Directory**
+### 2)  Domain Joined to and users’ accounts in organization’s on premises Active Directory
 
 Here the users’ accounts are in the organization’s on-premises Active Directory, which is synced with the Azure AD in the customer’s Azure subscription using Azure AD Connect. This allows the user’s identity to be authenticated from the synched Azure AD. For the machines to be able to connect to the on-premises AD, the customer needs to setup Azure VNet Peering from the network in Citrix Managed Desktops’ Azure subscription to their own Azure network in their subscription. An additional connection to the data center for access to profile and app data and file servers is needed, this requires SDWAN or a site-to-site VPN or an Express Route. We recommend the use of SDWAN as this is a more reliable and cost effective solution.
 
@@ -84,11 +85,11 @@ Now that we have seen the various deployment options, let’s take a look at the
 
 Machine Creation Services (MCS) is used to provision the workload VMs in the console. MCS configures, starts, stops and deletes virtual machines (VMs). MCS uses copies of the master image, called linked clones, to provision virtual desktops quickly and these can be updated easily by updating the image and then using that image as the master for the catalog. At the time of writing this brief, master images available are for Win 10 Multi-session, Win 10 Pro and Windows Server 2012 R2 and 2016.
 
-1)	Windows 10 Pro is the standard single user desktop operating system, it can be used to give access to an entire Windows 10 desktop to a user. The compute resources may or may not be fully consumed by the single user. 
+1)  Windows 10 Pro is the standard single user desktop operating system, it can be used to give access to an entire Windows 10 desktop to a user. The compute resources may or may not be fully consumed by the single user. 
 
-2)	The Windows 10 multi-session is new OS made available in Azure that allows more than one user to login to a Windows 10 machine. This will help with reducing the number of machines that need to be brought up in Azure to serve the same set of users. This also helps with fully utilizing the compute resources of the machines that are deployed. This type of machine does not require RDS CALs for allowing multi user access.
+2)  The Windows 10 multi-session is new OS made available in Azure that allows more than one user to login to a Windows 10 machine. This will help with reducing the number of machines that need to be brought up in Azure to serve the same set of users. This also helps with fully utilizing the compute resources of the machines that are deployed. This type of machine does not require RDS CALs for allowing multi user access.
 
-3)	The Windows Server 2016/ 2012 R2 is a server operating system that allows multiple users to connect to a single machine. This can be used to serve applications to users or provide access to desktop sessions (which can be skinned to look like desktop operating system sessions). This is a cheaper option to deliver desktops than option 1. Note: Each user connecting to this machine will require an RDS CAL or RDS SAL
+3)  The Windows Server 2016/ 2012 R2 is a server operating system that allows multiple users to connect to a single machine. This can be used to serve applications to users or provide access to desktop sessions (which can be skinned to look like desktop operating system sessions). This is a cheaper option to deliver desktops than option 1. Note: Each user connecting to this machine will require an RDS CAL or RDS SAL
 
 ![Master_Images_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_7-master-images-ss.png)
 
@@ -99,7 +100,7 @@ The admin has the option to import their own image of one of these OSes (with al
 ![Build_Image_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_8-Build-your-image.png)
   
 Please go through this [link](https://docs.citrix.com/en-us/citrix-managed-desktops/security.html) to understand how the responsibility of the upkeep is shared between Citrix and the customer. The images created can then be updated and the updated image can be used to spawn new VMs.
- 
+
 Each of these templates can be applied to the 4 VM sizes that are available at launch
 
 ![Machine_Performance_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_9-machine-performance-ss.png)
@@ -113,19 +114,19 @@ Admins are given two methods of creating the catalogs – Quick Create and Custo
 ![Quick_Create_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_10-quick-create-ss.png)
   
  **Custom Create** provides you with a number of options so you get the catalog the way you want it.
- 
+
 Admins have the options for the catalog type, the subscription where the VMs are being created, setting up connectivity with the corporate network, the Azure region, the storage type, workload and number of machines in the catalog and which master image to be used as well as the AutoScale settings for the catalog.
 
 ![Custom_Create_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_11-custom-create-ss.png)
   
-Catalog types available are: 
+Catalog types available are:
 **Multi-session** - these are for Windows 10 Multi-session or Windows Server 2016 OS machines where more than one user is expected to login to a single machine. Giving you benefit of maximizing usage of machine resources and reducing the no of machines needed to serve a particular number of users.
 
 **Static (personal desktops)** – these are for Windows 10 and Windows 2012 R2 or Windows 2016 (server VDI) OS machines that are to be assigned to a specific individual and retain their data and state across reboots. The machine is intended to be used over time by the same user.
 
 **Random (pooled desktops)** – these are for Windows 10 and Windows 2012 R2 or 2016 (server VDI) machines that can be assigned to any user who requests a desktop. These machines are reset to their master image defaults after the session is logged off. So they can be used to deliver a repeatable desktop to the next user that logs in, for example to a shift workers, who need the same environment as the previous shift but not their data.
 
-The options for **Azure Subscription** allow the admin to choose where the VMs are to be located, these could be Citrix Managed Azure subscription or your own Azure subscription (this feature is not yet available). 
+The options for **Azure Subscription** allow the admin to choose where the VMs are to be located, these could be Citrix Managed Azure subscription or your own Azure subscription (this feature is not yet available).
 
 The **Network Connection** option allows you to select the Azure VNet-Peer that you have configured to be used to connect the machine into the Azure subscription.
 
@@ -133,8 +134,8 @@ The **Region** option allows you choose one of the 4 Azure regions that we curre
 
 The **Storage** option gives you the capability to choose between Standard Disks (HDDs) or Premium Disks (SSDs).
 
-In the **Select a machine** section, the options for selecting machines is different for Multi-session and single-session catalog types. 
-The Multi-session catalog would provide the workload dropdown, where we can estimate the number of sessions each VM can serve. 
+In the **Select a machine** section, the options for selecting machines is different for Multi-session and single-session catalog types.
+The Multi-session catalog would provide the workload dropdown, where we can estimate the number of sessions each VM can serve.
 
 The **Workload** option allows you to choose from 4 options, for the workload machine, that give you an idea of the kind of workloads that would be served by each of the machines. They are:
 
@@ -178,13 +179,13 @@ A few preset schedules are available for you the admin to use, or you can create
 
 ## Monitoring
 
-We provide the admin with visibility into their Citrix Managed Desktops deployment via the Monitor tab. This gives admins the ability to know what is going on in the environment, to see consumption patterns, detect which resources are being consumed more than others to balance capacity with demand. Visibility into the number of VMs running at a point in time would guide the configuration of AutoScale settings to have the optimal number of machines available when load is expected to rise or fall. 
+We provide the admin with visibility into their Citrix Managed Desktops deployment via the Monitor tab. This gives admins the ability to know what is going on in the environment, to see consumption patterns, detect which resources are being consumed more than others to balance capacity with demand. Visibility into the number of VMs running at a point in time would guide the configuration of AutoScale settings to have the optimal number of machines available when load is expected to rise or fall.
 
 The admin can view desktop usage, sessions, and machines.
 
 ![Monitoring_Usage_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_16-monitoring-usage-ss.png)
   
-The default view is the Desktop Usage page. This contains a real time active machine and session status with a total number of machines in the selected catalog(s).  The graph below is of the machines and sessions that are active for the selected catalog(s) for the selected time period. If the admin hovers over any of the points in graph, a pop up reveals the counts at the point in time. 
+The default view is the Desktop Usage page. This contains a real time active machine and session status with a total number of machines in the selected catalog(s).  The graph below is of the machines and sessions that are active for the selected catalog(s) for the selected time period. If the admin hovers over any of the points in graph, a pop up reveals the counts at the point in time.
 The time ranges available here are 1 day, 1 week, 1 month and 3 months going back from the current time.
 
 ![Monitoring_Top_10_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_17-top-10-ss.png)
@@ -194,9 +195,9 @@ There are two graphs below that show the Top 10 frequent users and the Top 10 ac
 ![Monitoring_Desktop_Launch_Activity_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_18-desktop-launch-activity-ss.png)
 
 The admin can also download the Desktop Launch Activity report for the last month for the subscription which results in a csv file.
- 
- ## Troubleshoot and Support
- 
+
+## Troubleshoot and Support
+
 Admins can use the Troubleshoot and Support section in the right side menu to resolve issues that may arise in their deployments. Issues may occur when you are trying to create a catalog or when your users are trying to access their apps or desktops. You can also open support tickets from here itself.
 
 We provide options for different issue scenarios:
