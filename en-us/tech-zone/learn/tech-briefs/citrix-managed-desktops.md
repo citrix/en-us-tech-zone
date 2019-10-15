@@ -18,13 +18,13 @@ As it is a Desktop-as-a-Service that can be subscribed to on a monthly subscript
 
 Organizations in the U.S., the E.U., and Asia/Pacific can deploy the VMs in four Azure locations globally: U.S. East, U.S. West, West Europe, and Australia East (and more to come soon). The workload locations combined with [11 global points of presence of Citrix Gateway service in Azure](https://www.citrix.com/blogs/2019/07/02/new-citrix-gateway-pops-now-available-in-india-and-south-africa/) helps optimize the experience of HDX delivery. Once the users reaches the Gateway PoP, then the traffic is redirected to the closest workload location over the superfast Azure backbone.
 
-The standard deployment would be as follows:
+The standard deployment model and authentication flow would be as follows:
 
-INSERT IMAGE tech-briefs_citrix-managed-desktops_1-authentication-flow-diagram.png
+[![Citrix_Managed_Desktops_Authentication_Flow](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_1-authentication-flow-diagram.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_1-authentication-flow-diagram.png)
 
 Users connects to their Workspace via their endpoint devices that have the corresponding Citrix Workspace App installed on them (or use the Citrix Workspace App for HTML5 from a browser), by logging into the Workspace URL.
 
-The authentication flows from the user’s device (where the credentials are provided) to the Gateway Service, which validates the same against the Azure Active Directory in the Customer’s Azure subscription. (The identity could also be based on an on-premises Active Directory, in most cases the admin would sync the on-prem AD with the Azure AD using Azure AD Connect.)'
+The authentication flows from the user’s device (where the credentials are provided) to the Gateway Service, which validates the same against the Azure Active Directory in the Customer’s Azure subscription. (The identity could also be based on an on-premises Active Directory, in most cases the admin would sync the on-prem AD with the Azure AD using Azure AD Connect.)
 
 Once the user authenticates the Gateway service redirects the user to the appropriate Workspace. If the user then selects a resource from a Citrix Managed Desktop catalog, the user’s request is routed via the Managed Desktops service and the cloud connector to the appropriate VM. The user is then single signed-on to the VM in Azure and the user is logged in to the session. The session is redirected to the user using the HDX protocol.
 
