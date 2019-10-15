@@ -203,8 +203,6 @@ Citrix Virtual Apps and Desktops Service deployments that span widely dispersed 
 
 Zones can be helpful in deployments of all sizes. Customers can use zones to keep applications and desktops closer to users, which improves performance. Zones can be used for disaster recovery, geographically distant data centers, branch offices, a cloud, or an availability zone in a cloud.
 
-The number of Zones and Cloud Connectors for each zone configured in the site can affect the performance of some operations. To avoid this, Citrix recommends to limit the number of zones to no more than 10.
-
 Zones in a Citrix Virtual Apps and Desktops Service environment are not identical to zones in an on-premises Citrix Virtual Apps and Desktops deployment. In the Citrix Virtual Apps and Desktops Service, zones are created automatically when customers create a resource location and add a Cloud Connector to it. Unlike an on-premises deployment, a service environment does not classify zones as primary or satellite. In XenApp version 6.5 and earlier, each zones had an assigned data collector server that handled dynamic information about all servers in the zone such as load levels. The Citrix Virtual Apps and Desktops Service does not use data collectors for zones. Also, failover and preferred zones work differently.
 
 [![CVAD-Image-8](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_008.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_008.png)
