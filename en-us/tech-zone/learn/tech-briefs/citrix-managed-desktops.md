@@ -30,7 +30,7 @@ Once the user authenticates the Gateway service redirects the user to the approp
 
 ## Deployment Scenarios
 
-In order to support multiple topologies, organizations can choose an option from one of many deployment scenarios, divided into two main categories:
+In order to support multiple topologies, organizations can choose an option from one of the many deployment scenarios, divided into two main categories:
 
 1)  Non-domain joined workloads
 2)  Domain joined workloads
@@ -93,7 +93,7 @@ Machine Creation Services (MCS) is used to provision the workload VMs in the con
 
 ![Master_Images_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_7-master-images-ss.png)
 
-These prebuilt images just have the operating system and the virtual delivery agent (Citrix software used to manage the system) installed on them. They would not have everything the organization needs to provide a usable desktop to the users.
+These prebuilt images just have the operating system and the Virtual Delivery Agent (Citrix software used to manage the system) installed on them. They would not have everything the organization needs to provide a usable desktop to the users.
 
 The admin has the option to import their own image of one of these OSes (with all the organizations apps and configurations done it) or build an image from the console using one of these as the base to get the master image in the desired configuration.
 
@@ -105,7 +105,7 @@ Each of these templates can be applied to the 4 VM sizes that are available at l
 
 ![Machine_Performance_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_9-machine-performance-ss.png)
 
-As the admin you will choose the VM size based on the workload and the number of users that are expected to connect to each machine. Machines with fewer CPUs and lesser RAM are more suited to lighter workloads and/or for machines that are expected to serve a single session at a time. The machines with larger number of CPUs and more memory can support more intensive workloads and/or support a larger number of sessions simultaneously.
+As the admin you will choose the VM size based on the workload and the number of users that are expected to connect to each machine. Machines with fewer CPUs and lesser RAM are more suited to lighter workloads or for machines that are expected to serve a single session at a time or both options. The machines with a larger number of CPUs and more memory can support more intensive workloads or support a larger number of sessions simultaneously or both.
 
 Admins are given two methods of creating the catalogs – Quick Create and Custom create.
 
@@ -115,7 +115,7 @@ Admins are given two methods of creating the catalogs – Quick Create and Custo
   
  **Custom Create** provides you with a number of options so you get the catalog the way you want it.
 
-Admins have the options for the catalog type, the subscription where the VMs are being created, setting up connectivity with the corporate network, the Azure region, the storage type, workload and number of machines in the catalog and which master image to be used in addition to the AutoScale settings for the catalog.
+Admins have the options for the catalog type, the subscription where the VMs are being created, setting up connectivity with the corporate network, the Azure region, the storage type, workload and number of machines in the catalog and which master image to be used in addition to the Autoscale settings for the catalog.
 
 ![Custom_Create_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_11-custom-create-ss.png)
   
@@ -126,7 +126,7 @@ Catalog types available are:
 
 **Random (pooled desktops)** – these are for Windows 10 and Windows 2012 R2 or 2016 (server VDI) machines that can be assigned to any user who requests a desktop. These machines are reset to their master image defaults after the session is logged off. So they can be used to deliver a repeatable desktop to the next user that logs in, for example to a shift worker, who needs the same environment as the previous shift but not their data.
 
-The options for **Azure Subscription** allow the admin to choose where the VMs are to be located, these could be Citrix Managed Azure subscription or your own Azure subscription (this feature is not yet available).
+The options for **Azure Subscription** allow the admin to choose where the VMs are to be located, these might be in the Citrix managed Azure subscription or your own Azure subscription (this feature is not yet available).
 
 The **Network Connection** option allows you to select the Azure VNet-Peer that you have configured to be used to connect the machine into the Azure subscription.
 
@@ -137,7 +137,7 @@ The **Storage** option gives you the capability to choose between Standard Disks
 In the **Select a machine** section, the options for selecting machines is different for Multi-session and single-session catalog types.
 The Multi-session catalog would provide the workload drop-down list, where we can estimate the number of sessions each VM can serve.
 
-The **Workload** option allows you to choose from 4 options, for the workload machine, that give you an idea of the kind of workloads that would be served by each of the machines. They are:
+The **Workload** option allows you to choose from 4 options, for the workload, that give you an idea of the kind of workloads that would be served by each of the machines. They are:
 
 ![Workload_Options_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_12-workload-options-ss.png)
   
@@ -153,7 +153,7 @@ For Static and Random (single session catalogs) in the **Machine Performance** d
 
 ## VNet Peering
 
-Customers who want to connect their Azure hosted VMs in Citrix’s subscription need to connect them back to their own Azure subscriptions that host Azure AD and/or app and profile data. As we have seen in the deployment scenarios for domain joined workloads the Citrix Managed Azure subscription (resource location) needs to have VNet peering with the organizations Azure subscription (hosts Azure AD). This can be accomplished by using the Network Connections item in the right menu.
+Customers who want to connect their Azure hosted VMs in Citrix’s subscription need to connect them back to their own Azure subscriptions that host Azure AD or app and profile data or both. As we have seen in the deployment scenarios for domain joined workloads the Citrix Managed Azure subscription (resource location) needs to have VNet peering with the organizations Azure subscription (hosts Azure AD). This can be accomplished by using the Network Connections item in the right menu.
 
 ![VNet_Peering_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_13-vnet-peering-ss.png)
   
@@ -204,4 +204,4 @@ We provide options for different issue scenarios:
 
 ![TroubleShoot_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_19-troubleshoot-ss.png)
   
-In case you run into an issue with your setup, you can use a machine (called a Bastion host, which has a tools preloaded on it) that can be created in the resource location (for machine creation issues) or RDP into the machine in question (if it’s a session launch issue) to resolve it.
+In case you run into an issue with your setup, you can use a machine (called a Bastion host, which has tools preloaded on it) that can be created in the resource location (for machine creation issues) or RDP into the machine in question (if it’s a session launch issue) to resolve it.
