@@ -207,4 +207,6 @@ We provide options for different issue scenarios:
   
 In case you run into an issue with your setup, you can use a machine called a Bastion host. The Bastion host has tools preloaded on it. The Bastion host can be created in the resource location (for machine creation issues). Or you can RDP into the machine in question (if it’s a session launch issue) to resolve it.
 
-To learn more on the best practices, read our [reference architecture for Citrix Managed Desktops](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) 
+Watch this video to see Citrix Managed Desktops in action: [Tech Insight Video](https://docs.citrix.com/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html)
+
+To learn more on the best practices, read our [reference architecture for Citrix Managed Desktops](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html)
