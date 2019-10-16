@@ -205,3 +205,5 @@ We provide options for different issue scenarios:
 ![TroubleShoot_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_19-troubleshoot-ss.png)
   
 In case you run into an issue with your setup, you can use a machine (called a Bastion host, which has tools preloaded on it) that can be created in the resource location (for machine creation issues) or RDP into the machine in question (if it’s a session launch issue) to resolve it.
+
+To learn more on the best practices of Citrix Managed Desktops, visit https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html
