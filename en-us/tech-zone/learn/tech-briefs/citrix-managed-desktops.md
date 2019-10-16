@@ -17,7 +17,7 @@ For companies undertaking a merger or acquisition, supporting the on-boarding of
 
 As it is a Desktop-as-a-Service that can be subscribed to on a monthly subscription. Citrix provides a single bill for the service and the Azure resource consumption.
 
-Organizations in the U.S., the E.U., and Asia/Pacific can deploy the VMs in four Azure locations globally: U.S. East, U.S. West, West Europe, and Australia East (and more to come soon). The workload locations combined with [11 global points of presence of Citrix Gateway service in Azure](https://www.citrix.com/blogs/2019/07/02/new-citrix-gateway-pops-now-available-in-india-and-south-africa/) helps optimize the experience of HDX delivery. Once the user reaches the Gateway PoP, then the traffic is redirected to the closest workload location over the superfast Azure backbone.
+Organizations in the U.S., the E.U., and Asia/Pacific can deploy the VMs in four Azure locations globally: U.S. East, U.S. West, West Europe, and Australia East (and more to come soon). The workload locations combined with [11 global points of presence of Citrix Gateway service in Azure](https://www.citrix.com/about/trust-center/privacy-compliance.html) helps optimize the experience of HDX delivery. Once the user reaches the Gateway PoP, then the traffic is redirected to the closest workload location over the superfast Azure backbone.
 
 The standard deployment model and authentication flow would be as follows:
 
@@ -40,7 +40,7 @@ To support multiple topologies, organizations can choose an option from one of t
 
 In this category, the workloads (that is, Windows machines running in Azure) are not joined to a domain. This type of deployment is applicable for proof of concept, dev/test setups, or contractor desktops. Also, for smaller organizations that have not created an Active Directory at all and use Azure AD identity.
 
-With the user and machine identities not being on the same domain/workgroup, we need a way to have the user’s ID be mapped to the machine. The mapping allows for user profile mapping and so on. A wrapper token encapsulates user ID token and uses (Citrix Managed or the organizations) Azure AD or the organization’s AD. This warpper token is used to create a mapped account for the user identity on the machine.
+With the user and machine identities not being on the same domain/workgroup, we need a way to have the user’s ID be mapped to the machine. The mapping allows for user profile mapping and so on. A wrapper token encapsulates user ID token and uses (Citrix Managed or the organizations) Azure AD or the organization’s AD. This wrapper token is used to create a mapped account for the user identity on the machine.
 
 The user’s local mapped account is created by using the data that is stored in the Azure AD or organization's AD and the associated password is stored securely. This process is done by a privileged service. The service creates an account for the user on the machine, if it's the first time ever the user is logging on to the machine. When a user authenticates to the Workspace with the preferred identity, the local mapped account’s user name password information is retrieved. The retrieved credentials are in turn used to log in to the machine.
 
@@ -100,7 +100,7 @@ The admin can import their own image of one of these OSes (with all the organiza
 
 ![Build_Image_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_8-Build-your-image.png)
 
-Visit this [link](https://docs.citrix.com/en-us/citrix-managed-desktops/security.html) to understand how the responsibility of the upkeep is shared between Citrix and the customer. The images created can then be updated and the updated image can be used to spawn new VMs.
+Visit this [link](/en-us/citrix-managed-desktops/security.html) to understand how the responsibility of the upkeep is shared between Citrix and the customer. The images created can then be updated and the updated image can be used to spawn new VMs.
 
 Each of these templates can be applied to the 4 VM sizes that are available at launch
 
@@ -158,7 +158,7 @@ Customers who want to connect their Azure hosted VMs in Citrix’s subscription 
 
 ![VNet_Peering_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_13-vnet-peering-ss.png)
   
-Existing VNet peered networks are listed here. You can add a new VNet peer by clicking + Add Connection. Then click the link for the Easy setup for Azure customers. Simply sign in with the Subscription Owner account and agree to provide the following permissions. The list of networks in the subscription are retrieved and displayed. You can choose which of the retrieved connecitons you need to peer with the Citrix Managed network.
+Existing VNet peered networks are listed here. You can add a new VNet peer by clicking + Add Connection. Then click the link for the Easy setup for Azure customers. Simply sign in with the Subscription Owner account and agree to provide the following permissions. The list of networks in the subscription is retrieved and displayed. You can choose which of the retrieved connections you need to peer with the Citrix Managed network.
 
 ![VNet_Peering_Permissions_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_14-vnet-peering-perms-ss.png)
 
@@ -170,7 +170,7 @@ With this feature the admin can ensure workload availability for their users whi
   
 You have the ability to power manage the machines that are in a catalog based on the time of the day. You can also control the actions that are to be performed on a session that is idle or disconnected and the time-out for those actions to occur.
 
-An admin can set the working hours for a catalog (based on time-zone) and then define how many VMs are needed in off-work hours. Then we can shutdown the rest of the VMs to save on Azure consumption cost. Autoscale also works to bring up the required number of machines to serve the session when the work hours are resumed. Resulting in a great experience when users try to log in again.
+An admin can set the working hours for a catalog (based on time-zone) and then define how many VMs are needed in off-work hours. Then we can shut down the rest of the VMs to save on Azure consumption cost. Autoscale also works to bring up the required number of machines to serve the session when the work hours are resumed. Resulting in a great experience when users try to log in again.
 
 Admin can set timeouts for when idle sessions should be disconnected, logged off, and powered off.
 
@@ -180,7 +180,7 @@ A few preset schedules are available for you the admin to use, or you can create
 
 ## Monitoring
 
-The admin are provided visibility into their Citrix Managed Desktops deployment via the **Monitor** tab. Admins gain the ability to know what is going on in the environment, to see consumption patterns. Admins can detect which resources are being consumed more than others to balance capacity with demand. Visibility into the number of VMs running at a point in time guides the configuration of Autoscale settings. Resulting in the optimal number of machines being available when load is expected to rise or fall.
+The admins are provided visibility into their Citrix Managed Desktops deployment via the **Monitor** tab. Admins gain the ability to know what is going on in the environment, to see consumption patterns. Admins can detect which resources are being consumed more than others to balance capacity with demand. Visibility into the number of VMs running at a point in time guides the configuration of Autoscale settings. Resulting in the optimal number of machines being available when load is expected to rise or fall.
 
 The admin can view desktop usage, sessions, and machines.
 
@@ -207,6 +207,6 @@ We provide options for different issue scenarios:
   
 In case you run into an issue with your setup, you can use a machine called a Bastion host. The Bastion host has tools preloaded on it. The Bastion host can be created in the resource location (for machine creation issues). Or you can RDP into the machine in question (if it’s a session launch issue) to resolve it.
 
-Watch this video to see Citrix Managed Desktops in action: [Tech Insight Video](https://docs.citrix.com/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html)
+Watch this video to see Citrix Managed Desktops in action: [Tech Insight Video](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html)
 
-To learn more on the best practices, read our [reference architecture for Citrix Managed Desktops](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html)
+To learn more on the best practices, read our [reference architecture for Citrix Managed Desktops](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html)
