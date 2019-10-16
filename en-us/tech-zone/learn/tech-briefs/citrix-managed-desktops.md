@@ -45,19 +45,19 @@ The user’s local mapped account is created by using the data that is stored in
 
 In a non-domain joined workload deployment model, there are 3 options for user accounts:
 
-### 1)  User accounts in Citrix Managed Azure Active Directory
+### 1) User accounts in Citrix Managed Azure Active Directory
 
 In this scenario, the users’ accounts reside in the Azure Active Directory subscription that is created by Citrix for the particular deployment. The user accounts are administered by the admins in the organization via URL (that gives access to Azure AD) available in the Identity and Access Management section of the Citrix Cloud console. Users’ Azure account user names (managed by the organization) are used to log in to the Workspace. This deployment model helps in performing quick PoCs, where the entire environment can be stood up quickly to showcase the ease with which an admin can set up the solution.
 
 ![Deployment_Scenario_1](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_2-deployment-scenario-1.png)
 
-### 2)  User accounts in Customer’s Azure Active Directory
+### 2) User accounts in Customer’s Azure Active Directory
 
 In this scenario, the user accounts are in the Customer’s Azure AD subscription. This scenario is common in Banking, Financial Services and Insurance sector and highly regulated industries where the customer wants to give access to a contractor or a temporary 3rd party user without utilizing the organization’s corporate domain, helping to create a barrier between the contractor environment and employee environment. Multifactor authentication is enabled by leveraging Azure MFA. The administration of the user’s accounts are done by the organization’s Azure AD admins.
 
 ![Deployment_Scenario_2](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_3-deployment-scenario-2.png)
 
-### 3)  User accounts in organization’s on-premises Active Directory
+### 3) User accounts in organization’s on-premises Active Directory
 
 In this scenario, the users’ accounts are in the Customer’s Active Directory within their on-premises data center. To establish connectivity between the service and the organization’s AD, a Windows 2012 R2/2016 server virtual machine (generally deployed in an HA pair) is installed in the customer’s in the data center, called Citrix Cloud Connector. Software that allows for outbound TCP 443 based connection to Citrix Managed Desktops service is installed on it. In this scenario, the users will not be able to access any profile data and file servers in the company’s on-premises data center. Native two-factor authentication is available using Time-based One Time Password.
 
@@ -67,13 +67,13 @@ In this scenario, the users’ accounts are in the Customer’s Active Directory
 
 In this category the machines (i.e. Windows machines running in Azure) are joined to the organization’s domain. This enables typical virtual desktop infrastructure use cases, such as centralization of apps and desktops in a few locations, that can be accessed by remote users from anywhere on any device. There are 2 deployment scenarios in this case:
 
-### 1)  Domain joined using Azure Active Directory Domain Services and user accounts in organization’s Azure Active Directory
+### 1) Domain joined using Azure Active Directory Domain Services and user accounts in organization’s Azure Active Directory
 
 Here the users’ accounts are in the organization’s Azure Active Directory and the machines are joined to the Azure Active Directory Domain Services (AADDS) within the customer’s Azure subscription. For the machines to be able to connect to the AADDS, the customer needs to set up Azure VNet Peering from the network in Citrix Managed Desktops’ Azure subscription to their own Azure network in their subscription. You can administer the user and machine accounts via the organization’s Azure Active Directory.
 
 ![Deployment_Scenario_4](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_5-deployment-scenario-4.png)
 
-### 2)  Domain Joined to and users’ accounts in organization’s on premises Active Directory
+### 2) Domain Joined to and users’ accounts in organization’s on premises Active Directory
 
 Here the users’ accounts are in the organization’s on-premises Active Directory, which is synced with the Azure AD in the customer’s Azure subscription using Azure AD Connect. This allows the user’s identity to be authenticated from the synced Azure AD. For the machines to be able to connect to the on-premises AD, the customer needs to set up Azure VNet Peering from the network in Citrix Managed Desktops’ Azure subscription to their own Azure network in their subscription. An additional connection to the data center for access to profile and app data and file servers is needed, this requires SDWAN or a site-to-site VPN or an Express Route. We recommend the use of SDWAN as this is a more reliable and cost effective solution.
 
