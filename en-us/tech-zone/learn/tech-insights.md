@@ -25,6 +25,8 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Authentication - Okta](/en-us/tech-zone/learn/tech-insights/okta.html) - Utilize Okta as the user's primary identity for Citrix Workspace
 
+[Authentication - Push](/en-us/tech-zone/learn/tech-insights/authentication-push.html) - Extend an on-premises TOTP deployment with Push authentication, eliminating the need for users to manually enter the temporary token.
+
 [Authentication - TOTP](/en-us/tech-zone/learn/tech-insights/authentication-totp.html) - Time-based One-Time Password (TOTP) provides multifactor authentication to the user's Workspace experience.
 
 ## Endpoint Management
