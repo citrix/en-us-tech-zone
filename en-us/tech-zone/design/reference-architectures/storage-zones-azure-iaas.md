@@ -33,7 +33,7 @@ Citrix Content Collaboration consists of three primary components: the Content C
 *  Storage zones: the location where customer files are stored. Customers can choose where to store files. The files are either hosted by Citrix or by the customer. The customer location can be their own data center or a public cloud. This reference architecture focuses on a customer-managed storage zone hosted within Azure.
 *  Citrix Files (client side): native apps providing access to the Content Collaboration services. Citrix Files apps are available for Windows, macOS, iOS. Android, Outlook, and Gmail.
 
-![content collaboration component overview](/en-us/tech-zone/design/media/reference-architectures_storage-zones-azure-iaas_001.png)
+![Content collaboration component overview](/en-us/tech-zone/design/media/reference-architectures_storage-zones-azure-iaas_001.png)
 
 ## Use Cases
 
@@ -55,9 +55,7 @@ The customer-managed storage zone stores all the file objects uploaded to the Co
 
 ### Storage zones controllers
 
-The storage zone controller is a Windows package consisting of ASP.NET web services and background Windows services. The controller software runs on top of a Windows Server IaaS VM with Internet Information Services (IIS). The system requirements for a storage zone controller are located [here](https://docs.citrix.com/en-us/storagezones-controller/5-0/system-requirements.html).
-
-To reduce server overhead and attack surface, we recommend using Windows Server Core instances with the Internet Information Server and ASP.NET application server roles enabled.
+The storage zone controller is a Windows package consisting of ASP.NET web services and background Windows services. The controller software runs on top of a Windows Server IaaS VM with Internet Information Services (IIS). The system requirements for a storage zone controller are located [here](/storagezones-controller/5-0/system-requirements.html).
 
 The number of storage zone controllers needed depends on how the storage zone deployment is being used. Several factors impact this number which include the following:
 
@@ -125,7 +123,7 @@ Local users access the storage zone from an internal load balancing server or co
 
 **Note:** Instead of using a single ADC on the boundary of the DMZ and local network, another configuration is using two separate ADCs. Use one Citrix ADC inside the DMZ for external users and another Citrix ADC on the local network for internal users.
 
-![2 ADC deisgn,one in DMZ and one on local network](/en-us/tech-zone/design/media/reference-architectures_storage-zones-azure-iaas_004.png)
+![Two ADCs design, one in DMZ and one on local network](/en-us/tech-zone/design/media/reference-architectures_storage-zones-azure-iaas_004.png)
 
 ## Other Considerations
 
@@ -170,7 +168,7 @@ Run the processor performance monitors against the operating system and the W3WP
 
 #### Web Service Cache
 
-*  **Kernel:URI Cache Hits %**: greater than 80%.
+*  **Kernel: URI Cache Hits %**: greater than 80%.
 
 #### ASP.NET Apps v4.0.30319 (_Total_)
 
@@ -189,8 +187,8 @@ The described architecture covers the tested and supported deployment model our 
 
 ## References
 
-[Resources for Citrix Content Collaboration](https://docs.citrix.com/en-us/citrix-content-collaboration.html)
+[Resources for Citrix Content Collaboration](/en-us/citrix-content-collaboration.html)
 
-[Resources for storage zone controller](https://docs.citrix.com/en-us/storagezones-controller)
+[Resources for storage zones controller](/en-us/storagezones-controller)
 
-[Citrix File Deployment Guide](https://docs.citrix.com/en-us/tech-zone/build/deployment-guides/citrix-files.html)
+[Citrix File Deployment Guide](/en-us/tech-zone/build/deployment-guides/citrix-files.html)
