@@ -65,7 +65,40 @@ Citrix developed a seven-attribute framework to evaluate the four architectures.
 
 ### Unified Ingress
 
+| Attribute                    | Rating                                                                                                            |
+|------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| App Security                 | N-S: Excellent protection by Citrix ADC                                                                           
+|                              | E-W: Limitations with Kube-proxy require additional network policy/segmentation solutions, e.g. Project Calico                                                      
+| Observability                | N-S: Excellent, Citrix ADC sees all traffic 
+|                              | E-W: Very limited telemetry with Kube-proxy                      
+| Continuous Deployment        | N-S: Excellent, Advanced traffic control by Citrix ADC 
+|                              | E-W: Lacking due to Kube-proxy limitations 
+| Scale Performance            | N-S: Good for scale out 
+|                              | E-W: Use IPVS mode; IP tables mode lacks scalability                                                   
+| Open Source Tool Support     | N-S: Excellent; e.g., Prometheus, Spinnaker, EFK 
+|                              | E-W: Limited due to Kube-proxy limitations                
+| Istio: Unified Control Plane | N-S: Support via Istio – enabled ADCs
+|                              | S-W: Kubeproxy is not Istio enabled                     
+| IT Skill Set Required        | Platform / Infrastructure team needs to be network savvy   
+
 ### Service Mesh
+
+| Attribute                    | Rating                                                                                                            |
+|------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| App Security                 | N-S: Excellent protection by Citrix ADC                                                                          
+|                              | E-W: Excellent protection sidecar, policy, rate control, auth, mTLS, API and Layer 7 attack protection                                                         
+| Observability                | N-S: Excellent, Citrix ADC sees all traffic 
+|                              | E-W: Excellent, Citrix ADC CPX sidecar sees all traffic                  
+| Continuous Deployment        | N-S: Excellent, Advanced traffic control by Citrix ADC 
+|                              | E-W: Excellent, Advanced traffic control by Citrix ADC CPX sidecar
+| Scale Performance            | N-S: Good for scale out 
+|                              | E-W: Distributed architecture scalability, sidecar-quality dependent, adds 2-hop latency, more CPU/memory                                                 
+| Open Source Tool Support     | N-S: Excellent; e.g., Prometheus, Spinnaker, EFK 
+|                              | E-W: Excellent; e.g., Prometheus, Spinnaker, EFK                
+| Istio: Unified Control Plane | N-S: Support via Istio – enabled ADCs
+|                              | E-W: Support via Istio APIs, Istio Mixer bottlenecks                        
+| IT Skill Set Required        | Steep learning curve for platform and networking teams 
+
 
 ### Service Mesh Lite
 
@@ -84,7 +117,7 @@ Citrix developed a seven-attribute framework to evaluate the four architectures.
 | Istio: Unified Control Plane | N-S: Support via Istio – enabled ADCs
 |                              | E-W: Support via Istio APIs, Istio Mixer bottlenecks                        
 | IT Skill Set Required        | Minimal training for platform and networking teams 
-|                              | Easy transition from 2-Tier ingress architecture               |
+|                              | Easy transition from 2-Tier ingress architecture               
 
 ## Architecture Decision Matrix
 
