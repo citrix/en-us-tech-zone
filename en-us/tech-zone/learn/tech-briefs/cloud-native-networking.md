@@ -86,7 +86,7 @@ The best choice of architectures will depend on a balance of benefits versus com
 
 Plotting the four architecture shows the relationship between benefits and complexity. On the lower left corner, you see Two-tier ingress which is the simplest to deploy and takes the North-South load balancing and splits it into a two-tier ingress. A variant of that is the Unified Ingress which combines the two-tiered ingress into one tier. The most advanced and feature rich architecture which has emerged as a leading architecture is the service mesh. A less complex version of the service mesh is known as service mesh lite. 
 
-![descriptive text](en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_plot.png)
+![descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_plot.png)
 
 Citrix developed a seven-attribute framework to evaluate the four architectures. The attributes are based on the unique needs of the six stakeholders and are a blueprint for the effectiveness that each architecture provides and insight into their benefit versus complexity tradeoff. Each attribute is described below, and each architecture is measured against these requirements for both North-South and East-West traffic.
 
