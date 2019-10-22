@@ -202,7 +202,7 @@ Cloud Native is all about scale, flexibility and speed.  We know that we can orc
 
 The following matrix summarizes the differences between the four proxy architectures available with the CPX as the Ingress Controller. This provides a good framework to consider which architecture to choose.
 
-![descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_plot.png)
+![descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_spectrum.png)
 
 There is no right or wrong answer, it’s purely dependent on the team skillset and the tradeoff between benefits and complexity. If you’re looking for the simplest and quickest way to production, then Two-tier ingress is the preferred choice, but you will lack the capabilities for advanced features for East-West traffic. If you have a network savvy team, then Unified ingress seems like a great choice, but you still lack that East-West intelligence. If you’re looking for the best observability, the best security, then the Service Mesh is the architecture of choice, but it is complex. If you want to offer very similar features of the Service Mesh but much simpler to deploy and manage, then Service Mesh Lite can be a good balance.
 
