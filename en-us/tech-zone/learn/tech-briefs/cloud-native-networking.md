@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Florin Lazurca](https://twitter.com/FlorinLazurca)
 
-#Citrix Cloud Native Networking and Microservices architecures
+# Citrix Cloud Native Networking and Microservices architecures
 
 # OVERVIEW
 
@@ -25,6 +25,23 @@ In a Kubernetes architecture, there is a key component that manages both ingress
 
 When applications are deployed on Kubernetes, there is no elegant way to apply these policies due to limitations of Kube-proxy, the native Kubernetes Ingress Controller. Layer 7 based policies direct the client requests to the microservices that are best suited to handle them. The result is reduced overhead for processing the client requests on the microservices.
 Detailed differences between Layer 4 and Layer 7 ingress controllers are listed below. 
+
+|                      | Layer 4 | Layer 7 |
+|----------------------|---------|---------|
+| Load Balancing       | Basic load balancing based on IP address and port only | Advanced load balancing based on URL – images, text, video and on client information – browser, OS, device language |
+|                      | HTTP/S blind
+| Session Persistance  |         |         |
+| Resource Monitoring  |         |         |
+| App Security         |         |         |
+|                      |         |         |
+|                      |         |         |
+|                      |         |         |
+|                      |         |         |
+|                      |         |         |
+|                      |         |         |
+|                      |         |         |
+|                      |         |         |
+|                      |         |         |
 
 
 The limitations of Layer 4 can create challenges for platform teams with Kube-proxy when:
@@ -63,7 +80,36 @@ Citrix developed a seven-attribute framework to evaluate the four architectures.
 
 ### Two-Tier Ingress
 
+The Two-tier Ingress architecture is the quickest and simplest to move into production for both the platform and network teams. The architecture is a standard deployment model for both cloud native novices and experts and it is followed widely irrespective of the platform, whether it's Google Cloud, Amazon Web Services, Azure, or an on-premises deployment. 
+
+In a Two-tier architecture, the ADC is split into two tiers for North-South traffic, each doing a different function. The networking team manages the Tier 1 Citrix ADC VPX/MPX outside of the Kubernetes cluster. This ADC is responsible for all security policies like web application firewall, TLS and Layer 4 load balancing of North-South traffic. The same ADC can be used to provide Layer 4-7 load balancing of traditional monolithic applications during their transition to microservices. Here configuration changes are more carefully and slowly implemented. The Tier 1 VPX/MPX load balances the Tier 2 CPX inside the Kubernetes cluster which is managed by the Platform team. Developers write their own policies and make configuration changes at their speed which can be daily or hourly, with policies applied to inbound traffic only. While this architecture rates high on the seven attributes for North-South traffic, it is lacking on the East-West traffic as seen in the table below:
+
+
+| Attribute                    | Rating                                                                                                            |
+|------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| App Security                 | N-S: Excellent protection by Citrix ADC                                                                           
+|                              | E-W: Limitations with Kube-proxy require additional network policy/segmentation solutions, e.g. Project Calico                                                      
+| Observability                | N-S: Excellent, Citrix ADC sees all traffic 
+|                              | E-W: Very limited telemetry with Kube-proxy                      
+| Continuous Deployment        | N-S: Excellent, Advanced traffic control by Citrix ADC 
+|                              | E-W: Lacking due to Kube-proxy limitations 
+| Scale Performance            | N-S: Good for scale out 
+|                              | E-W: Use IPVS mode; IP tables mode lacks scalability                                                   
+| Open Source Tool Support     | N-S: Excellent; e.g., Prometheus, Spinnaker, EFK 
+|                              | E-W: Limited due to Kube-proxy limitations                
+| Istio: Unified Control Plane | N-S: Support via Istio – enabled ADCs
+|                              | S-W: Kubeproxy is not Istio enabled                     
+| IT Skill Set Required        | Minimal training for platform and networking teams
+|                              | Both teams can move at their own speed
+  
+
+
 ### Unified Ingress
+
+The Unified Ingress architecture, or One-Tier, is a variant of the Two-tier modified to combine the two North-South traffic ingress into a single Citrix ADC. A realized benefit of this is the reduction to one tier (and of 1 hop extra latency), providing a level of simplicity over the two-tier architecture at the cost of requiring a very networking savvy platform team. 
+
+This is a good deployment for internal applications with the flexibility to add external applications that require additional protection such as web application firewall and SSL/TLS. As with the Two-tier, this architecture rates high on the seven attributes for North-South traffic, but it is lacking on the East-West traffic. The major difference is the level of skill set required of the platform team.
+
 
 | Attribute                    | Rating                                                                                                            |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------|
@@ -83,6 +129,10 @@ Citrix developed a seven-attribute framework to evaluate the four architectures.
 
 ### Service Mesh
 
+The Service Mesh architecture is designed for ultra-secure apps and communications between containers. This is the most advanced and most modern architecture that addresses the functionality requirements for East-West traffic in addition to the North-South traffic. 
+
+By attaching a mini ADC as a sidecar to every microservice pod, the architecture provides the highest levels of security, observability, integration, and very fine-grained traffic management between the microservices. Functionalities of the microservice like connection retries and encryption between microservices can be offloaded into the sidecar. Excellent advanced traffic control over East-West traffic allows continuous deployment methods such as Canary rollouts to be done independently for each container with a sidecar CPX. The tradeoff is the additional complexity and scalability requirements (CPU/Memory) added with sidecars. Also of note; with the current version of Istio, bottlenecks with Istio Mixer can occur by adding an extra hop to each packet. There is a steep learning curve for both the platform and network teams.
+
 | Attribute                    | Rating                                                                                                            |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | App Security                 | N-S: Excellent protection by Citrix ADC                                                                          
@@ -101,6 +151,11 @@ Citrix developed a seven-attribute framework to evaluate the four architectures.
 
 
 ### Service Mesh Lite
+
+The Service Mesh Lite architecture is similar to a Two-tier, a Citrix ADC VPX/MPX outside the Kubernetes cluster and a CPX inside the cluster. This makes for an easy transition to Service Mesh Lite in the future if starting out with a Two-tier deployment. However, requirements such as securing traffic and observability are met more easily since all East-West communication between pods or microservices pass through a centralized CPX.
+
+Effectively, the architecture has most of the benefits of a Service Mesh, but with reduced complexity. One benefit over a Service Mesh is the benefit of removing the extra hop seen with sidecars. However, CPU/Memory sizing of the CPX is more critical to ensure enough resources for each pod. Another distinction is that features like mutual TLS or encryption between the microservices cannot be offloaded to the sidecar and must be done at the application level. This additional requirement to build encryption – a nonbusiness logic functionality - into a microservice is not optimal for performance, scalability, and consistency.
+
 
 | Attribute                    | Rating                                                                                                            |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------|
