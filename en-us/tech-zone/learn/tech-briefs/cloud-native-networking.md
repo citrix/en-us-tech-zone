@@ -7,4 +7,92 @@ layout: doc
 
 **Author:** [Florin Lazurca](https://twitter.com/FlorinLazurca)
 
-TODO
+#Citrix Cloud Native Networking and Microservices architecures
+
+# OVERVIEW
+
+## Monolothic to Microservice
+
+Cloud Native is about developing and deploying web apps with agility and realizing operational efficiency. It’s the modern way of architecting apps that includes microservices and containers; it is also the modern way of constructing cross disciplinary platform teams. Companies want to move fast; they need create new software and deploy it quickly. However, many orgs are siloed - app developers vs. the networking team - causing bottlenecks. Additionally, networks are complex and change requests are manual and move at a slow pace. 
+
+To address these organizational gaps, architects and new roles such as the Digital Officer have been empowered to come up with a fresh approach – one that sees the big picture. Moreover, individual roles and responsibilities are being adjusted to insert a platform team to work across the business. The team combines multiple disparate product, support, and operational pipelines to create a platform that runs consistently. One that run consistently on premises and cloud. One that is easy to use and has the agility to deploy apps quickly.  One that has the operational efficiency to update, scale, and manage the whole system for common use across multiple stakeholders. Lastly the team is charged with platform governance, ensuring that platform meets policies around security, access, and tenancy.
+
+On the technical side, the architecture of web applications and their delivery has changed accordingly. To facilitate goals agility and operational efficiency, the traditional three tier architecture of presentation, logic, and database has been transformed into a service mesh comprised of single function apps or microservices that decouple critical app functions from each other. This decoupling facilitates continuous integration and development (CI/CD) in which development, testing, and rollout/rollback are done independently at a microservice level. However, creating a mesh opens up additional traffic patterns since microservices must communicate amongst each other.
+
+This East-West traffic benefits from the same advanced traffic management capabilities provided by Application Delivery Controllers (ADC) to North-South traffic i.e. security, performance, scalability, and observability.
+
+In a Kubernetes architecture, there is a key component that manages both ingress and inter microservice traffic. Ingress controllers provide a mechanism to send HTTP traffic to a microservice hosted in a Kubernetes cluster. This is done by implementing ingress rules that specify how the ingress traffic is routed to the target microservice from outside the cluster. Ingress controllers watch the Kubernetes API server for updates to the ingress resource and reconfigure the ingress load balancer accordingly. Any high scale production application will have several security and traffic routing policies for incoming traffic. 
+
+When applications are deployed on Kubernetes, there is no elegant way to apply these policies due to limitations of Kube-proxy, the native Kubernetes Ingress Controller. Layer 7 based policies direct the client requests to the microservices that are best suited to handle them. The result is reduced overhead for processing the client requests on the microservices.
+Detailed differences between Layer 4 and Layer 7 ingress controllers are listed below. 
+
+
+The limitations of Layer 4 can create challenges for platform teams with Kube-proxy when:
+
+  *Migrating legacy apps due to limited TCP/UDP support and no TCP-SSL support. These apps rely on advanced ADC functions not present in native proxies.
+  *Exposing critical applications based on Layer 7 protocols such as DNS, FTP or LDAP. Layer 7 traffic requires an intelligent load balancer act as a proxy.
+  *Protecting apps without advanced functions such as Rewrite and Responder that enable HTTP to HTTPs rewrite, dropping unwanted connections, or responding with custom messages.
+  *Operationalizing ingress load balancers such as managing SSL updates, versions 
+  *Relying on the open source community to plug security gaps - no commercial support
+  *Troubleshooting and finding bottlenecks without rich per app metrics and logs
+
+
+## Citrix Differentiator 
+
+Citrix offers a supported, enterprise grade ingress controller with 20 years of production expertise. Citrix Application Delivery Controller or ADC is available as a container-based application delivery controller that works in conjunction with Citrix Application Delivery Management (ADM) to provide a single pane of glass to monitor and improve application performance. CPX is the same code base as the very popular ADC with the benefit of being packaged for microservices and allowing the same configuration to be deployed across the entire infrastructure. 
+When scaling up or deploying new services, CPX recognizes the changes and auto-adjusts the load balancing accordingly; if one microservice becomes slow it can re-route traffic to a faster microservice. The CPX interfaces with Kubernetes APIs, providing real-time configuration of a Kubernetes cluster and applies advanced Layer 7 policies to manage and secure both high-scale North-South and East-West traffic while enabling troubleshooting and visibility into microservices performance problems using the ADM service graph. 
+
+To apply complex Layer 7 security and routing policies, Citrix offers a developer friendly solution using Kubernetes custom resource definitions or CRDs. For example, the Rewrite and Responder CRD is designed to expose policies available from Citrix ADCs with an extensive audit log. Using these functionalities, you can rewrite the header and payload of ingress and egress HTTP traffic as well as respond to HTTP traffic on behalf of a microservice.
+
+Additionally, application developers can closely monitor the health of TCP/UDP based apps through rich monitors in Citrix ADC (such as TCP-ECV, UDP-ECV). The ECV (extended content validation) monitors help in checking whether the application is returning expected content. The following chart summarizes the benefits that CPX with Layer 7 policy capabilities provide over those limited to Layer 4.
+
+## Proxy Architectures
+
+The most critical decision to be made as organizations advance towards microservices based applications, is choosing the right proxy architecture for both North-South and East-West traffic. The right architecture for a microservices and Kubernetes-based application delivery strikes a balance between ease of implementation and the greatest benefits. When considering the best architecture for an existing or new business-critical application, architects must consider:
+
+  *Each stakeholder has unique needs and evaluation criteria: e.g. developers, platform team, networking team, DevOps, SecOps, Site Reliability Engineers, and the app owner
+  *Load balancing and traffic control for North-South and East-West (inter microservices) traffic with the same level of visibility and security
+  *The tradeoff between the benefits and complexity of each architecture and the right fit for the skillsets of the team
+  *The rapid pace at which technology and open source innovation are evolving
+  
+The best choice of architectures will depend on a balance of benefits versus complexity which is shaped by the unique needs of the various stakeholders. At the center is the Platform team which is the connective tissue between multiple stakeholders. Each team’s main responsibilities are listed in the table below.
+
+Plotting the four architecture shows the relationship between benefits and complexity. On the lower left corner, you see Two-tier ingress which is the simplest to deploy and takes the North-South load balancing and splits it into a two-tier ingress. A variant of that is the Unified Ingress which combines the two-tiered ingress into one tier. The most advanced and feature rich architecture which has emerged as a “north star” architecture is the service mesh. A less complex version of the service mesh is known as service mesh lite. 
+
+Citrix developed a seven-attribute framework to evaluate the four architectures. The attributes are based on the unique needs of the six stakeholders and are a blueprint for the effectiveness that each architecture provides and insight into their benefit versus complexity tradeoff. Each attribute is described below, and each architecture is measured against these requirements for both North-South and East-West traffic.
+
+### Two-Tier Ingress
+
+### Unified Ingress
+
+### Service Mesh
+
+### Service Mesh Lite
+
+| Attribute                    | Rating                                                                                                            |
+|------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| App Security                 | N-S: Excellent protection by Citrix ADC                                                                           
+|                              | E-W: Excellent protection by Citrix ADC CPX, optional mTLS                                                        
+| Observability                | N-S: Excellent, Citrix ADC sees all traffic 
+|                              | E-W: Excellent, Citrix ADC CPX sees all traffic                       
+| Continuous Deployment        | N-S: Excellent, Advanced traffic control by Citrix ADC 
+|                              | E-W: Excellent, Advanced traffic control by Citrix ADC CPX 
+| Scale Performance            | N-S: Good for scale out 
+|                              | E-W: Highly scalable, adds 1-hop latency                                                  
+| Open Source Tool Support     | N-S: Excellent; e.g., Prometheus, Spinnaker, EFK 
+|                              | E-W: Excellent; e.g., Prometheus, Spinnaker, EFK                
+| Istio: Unified Control Plane | N-S: Support via Istio – enabled ADCs
+|                              | E-W: Support via Istio APIs, Istio Mixer bottlenecks                        
+| IT Skill Set Required        | Minimal training for platform and networking teams 
+|                              | Easy transition from 2-Tier ingress architecture               |
+
+## Architecture Decision Matrix
+
+Cloud Native is all about scale, flexibility and speed.  We know that we can orchestrate everything we need with Kubernetes, and we can run that infrastructure across any Cloud.  The key to having all these services running together and adapting to changes and new requirements happens at the ingress point – your Load Balancers.  With Citrix ADC CPX, you not only have an enterprise-class load balancer, but you can use the data coming into your infrastructure to adapt and respond without any intervention. 
+
+The following matrix summarizes the differences between the four proxy architectures available with the CPX as the Ingress Controller. This provides a good framework to consider which architecture to choose.
+
+There is no right or wrong answer, it’s purely dependent on the team skillset and the tradeoff between benefits and complexity. If you’re looking for the simplest and quickest way to production, then Two-tier ingress is the preferred choice, but you will lack the capabilities for advanced features for East-West traffic. If you have a network savvy team, then Unified ingress seems like a great choice, but you still lack that East-West intelligence. If you’re looking for the best observability, the best security, then the Service Mesh is the architecture of choice, but it is complex. If you want to offer very similar features of the Service Mesh but much simpler to deploy and manage, then Service Mesh Lite can be a good balance.
+
+
+
