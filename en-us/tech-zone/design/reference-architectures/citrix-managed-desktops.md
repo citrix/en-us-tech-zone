@@ -61,8 +61,8 @@ The following table compares the Citrix Managed Desktops solution with a traditi
 | Centralized desktop management            | Complete centralized management solution                     | Multiple silos of infrastructure to manage             |
 | Data security                             | Reduced attack surface with key back-end maintained by Citrix | Additional considerations for ongoing optimal security |
 | Issue resolution and recovery             | Simplified                                                   | Moderate with sturdy IT resources                      |
-| CapEx ($)                                 | Upfront investments not required                             | Moderate to the significant investment required        |
-| OpEx ($)                                  | Minimal deployment cost                                 | Moderate for small scale deployment                    |
+| Capex ($)                                 | Upfront investments not required                             | Moderate to the significant investment required        |
+| Opex ($)                                  | Minimal deployment cost                                 | Moderate for small scale deployment                    |
 | Geographic coverage (workloads)           | Supports multiple Geos across Azure regions                  | Bound to data center locations                         |
 | Complexity and risk                       | Minimal                                                 | Moderate                                               |
 | Pay-as-you-go model                     | Highly applicable                                            | Not applicable                                         |
@@ -104,19 +104,19 @@ To overcome all the challenges faced by universities, Citrix has seen the opport
 
 [![CMD-Image-11](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_011.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_011.png)
 
-The above diagram shows a conceptual Citrix Managed Desktops usage in universities. The administrator has to create the catalogs for individual machine types. The Student catalog uses a non-domain joined catalog. The administrator has to install the required application during the master image creation. For the Lecturers catalog, the separate image could be used to provision the VDAs which are domain joined desktops. If the university is already utilizing Azure AD with Office 365, no VNet peering or customer-managed components are necessary.
+The above diagram shows a conceptual Citrix Managed Desktops usage in universities. The administrator has to create the catalogs for individual machine types. The Student catalog uses a non-domain joined catalog. The administrator has to install the required application during the master image creation. For the Lecturers catalog, the separate image can be used to provision the VDAs which are domain joined desktops. If the university is already utilizing Azure AD with Office 365, no VNet peering or customer-managed components are necessary.
 
 Here multiple catalogs share a resource location and virtual network. A virtual network is a unique per-connection for domain-joined catalogs, and per region for non-domain joined catalogs.
 
-### Health Care Solution using Citrix Managed Desktops
+### Healthcare Solution using Citrix Managed Desktops
 
-In health care, field professionals have a pressing need to access real-time patient data and applications remotely and from multiple devices. Today many health care institutes are facing regulatory burdens and shrinking IT budgets which made their hands tied to traditional desktop technology. Citrix Managed Desktops offers a straightforward way to increase technological presence without a major refurbishment of a company’s systems and processes.
+In healthcare, field professionals have a pressing need to access real-time patient data and applications remotely and from multiple devices. Today many healthcare institutes are facing regulatory burdens and shrinking IT budgets which made their hands tied to traditional desktop technology. Citrix Managed Desktops offers a straightforward way to increase technological presence without a major refurbishment of a company’s systems and processes.
 
 [![CMD-Image-12](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_012.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_012.png)
 
-Overall cost reduction is the top challenge. Citrix Managed Desktops generally saves money and time and there is no cost associated with the implementations. The above diagram shows the health care institutes using Citrix Managed Desktops in multiple resource locations and providing anywhere access, centralized management, and flexible working are the key drivers for this solution.
+Overall cost reduction is the top challenge. Citrix Managed Desktops generally saves money and time and there is no cost associated with the implementations. The above diagram shows the healthcare institutes using Citrix Managed Desktops in multiple resource locations and providing anywhere access, centralized management, and flexible working are the key drivers for this solution.
 
-Key benefits of using Citrix Managed Desktops in health care institutes:
+Key benefits of using Citrix Managed Desktops in healthcare institutes:
 
 *  Access file and patient’s data from anywhere
 
@@ -278,7 +278,7 @@ The preceding diagram represents the Citrix SD-WAN architecture along with the C
 
 ### Overview of Citrix SD-WAN Architecture
 
-Citrix SD-WAN provides the flexibility that it can be deployed in several deployment modes and to integrate the appliances, both physical and virtual, into the customer’s existing networking design as well as with Cloud deployments. Refer to the [Citrix Tech Zone link](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/sdwan.html)for the SD-WAN overview.
+Citrix SD-WAN provides the flexibility that it can be deployed in several deployment modes and to integrate the appliances, both physical and virtual, into the customer’s existing networking design as well as with Cloud deployments. Refer to the [Citrix Tech Zone link](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/sdwan.html) for the SD-WAN overview.
 
 The solution demonstrates that the SD-WAN fits well with a customer’s existing network design and how it eases the integration process in the Azure platform for Citrix Managed Desktops. The administrator deploys a Citrix SD-WAN VPX (virtual appliance) that utilizes the internet path to establish the network connectivity from the Azure environment to a data center and branch office networks.
 
@@ -290,15 +290,15 @@ Citrix SD-WAN offers an always-on experience, changing network paths within 10 m
 
 [![CMD-Image-16](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_016.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_016.png)
 
-The preceding diagram depicts the deployment architecture of a Citrix SD-WAN solution for optimizing every connection needed to deliver a great user experience for Citrix Managed Desktops and applications. The Zscalar cloud security platform (or other SWG) is an optional component.
+The preceding diagram depicts the deployment architecture of a Citrix SD-WAN solution for optimizing every connection needed to deliver a great user experience for Citrix Managed Desktops and applications. The Zscaler cloud security platform (or other SWG) is an optional component.
 
 ### How Citrix SD-WAN helps in establishing connectivity to customer hosted locations
 
-Citrix SD-WAN virtual appliances hosted on a virtual network within Azure for Citrix Managed Desktops establishes virtual network connectivity with on-premises SD-WAN appliances at office locations and, if applicable, an on-premise data center. The connectivity begins over the inexpensive internet where customers can use broadband, landline or 4G/LTE of their choice. The Citrix SD-WAN solution is much cheaper than other hybrid connectivity options when achieving low latency and QoS features.
+Citrix SD-WAN virtual appliances hosted on a virtual network within Azure for Citrix Managed Desktops establishes virtual network connectivity with on-premises SD-WAN appliances at office locations and, if applicable, an on-premises data center. The connectivity begins over the inexpensive internet where customers can use broadband, landline or 4G/LTE of their choice. The Citrix SD-WAN solution is much cheaper than other hybrid connectivity options when achieving low latency and QoS features.
 
-**Citrix SD-WAN is faster and cheaper to deploy when compared to Azure ExpressRoute**
+Citrix SD-WAN is faster and cheaper to deploy when compared to Azure ExpressRoute
 
-*  Inexpensive business internet connectivity from Azure to on-premises (Cable, DSL,4G/LTE)
+*  Inexpensive business internet connectivity from Azure to on-premises (Cable, DSL, 4G/LTE)
 
 *  Augment or eliminate existing expensive MPLS links
 
@@ -310,7 +310,7 @@ Citrix SD-WAN features can help:
 
 *  ICA connections between users and their virtual desktops and applications
 
-*  Internet access from the virtual desktops and applications to web sites, SaaS apps, and other cloud resources
+*  Internet access from the virtual desktops and applications to websites, SaaS apps, and other cloud resources
 
 *  Access from the Citrix Managed Desktops back to on-premises resources such as Windows Active Directory Services and database servers
 
@@ -332,7 +332,7 @@ The preceding diagram depicts a skeleton view of Citrix SD-WAN integration with 
 
 The Citrix SD-WAN solution, when used with Citrix Managed Desktops, provides various benefits compared to different hybrid connectivity solutions. A few of them are described below.
 
-**Citrix SD-WAN offers the best end-user experience**
+Citrix SD-WAN offers the best end-user experience
 
 *  Reliable and high-performance connectivity through advanced SD-WAN features
 
@@ -420,9 +420,9 @@ Reference: [Deployment scenarios](/en-us/citrix-managed-desktops.html)
 
 ## Profile Management
 
-The user’s personal settings that are applied to the user’s virtual desktop and applications are retained using profile management. Citrix Profile management ensures that personal settings, documents, shortcuts, templates, desktop wallpapers, cookies, and favorites always follow the user in non-persistent desktops.
+The user’s personal settings that are applied to the user’s virtual desktop and applications are retained using profile management. Citrix Profile Management ensures that personal settings, documents, shortcuts, templates, desktop wallpapers, cookies, and favorites always follow the user in non-persistent desktops.
 
-The Active Directory Group Policy Objects allow the administrators to control the behavior of the Citrix user profiles. Profile Management optimizes profiles in an easy and reliable way. During, the logoff and at interim stages, registry changes, files, and folders in the profile are saved to the user store for each user.
+The Active Directory Group Policy Objects allow the administrators to control the behavior of the Citrix user profiles. Profile Management optimizes profiles in an easy and reliable way. During the logoff and at interim stages, registry changes, files, and folders in the profile are saved to the user store for each user.
 
 Citrix Managed Desktops offers multiple catalogs including multi-session, random-desktops supported by Windows 10 EVD and Windows 2016 servers. Customers have to create a user store in their Azure Subscription and profiles are fetched and written to the customer’s file share. The administrators have to make sure there is reliable network connectivity between Citrix Managed Desktops (multi-session and random catalog) and the file servers storing the user profiles.
 
@@ -658,7 +658,7 @@ Citrix Managed Desktop Cost Calculator [link](https://costcalculator.apps.cloud.
 
 Many organizations confront the challenge of effectively scaling resources to meet demand. In case merger and acquisition take place then the organization faces challenges when the data center is under-resourced. Citrix Managed Desktops makes it possible to mitigate the scalability constraints. Customers can provision compute on an availability region nearest to their data center situated with reliable connectivity.
 
-All the end-users use Citrix Workspace app to access their resources and that is the only single-point of entry. In case customers are using a file server or any other services running on their Azure Subscription, it is the customer’s responsibility to implement VNet peering between subscriptions. At the backend, the Azure backbone network with a bandwidth of 25 Gbps used to link between subscriptions.
+All the end-users use Citrix Workspace app to access their resources and that is the only single-point of entry. In case customers are using a file server or any other services running on their Azure Subscription, it is the customer’s responsibility to implement VNet peering between subscriptions. At the back-end, the Azure backbone network with a bandwidth of 25 Gbps used to link between subscriptions.
 
 There is a cost associated with CPU, memory, and bandwidth consumption so customers have to plan their deployment depending on the need.
 
@@ -688,7 +688,7 @@ Secure virtual desktops significantly mitigate risks to a company by being withi
 
 *  Applying patches and antivirus software: During the master image creation, it is best practice to apply relevant patches. This process makes the environment safe from malicious users that exploit vulnerabilities left open when operating systems are not kept up-to-date
 
-*  Multi-factor authentication: This layer of security in the form of multifactor authentication protects critical corporate resources accessed via Citrix Managed Desktops solutions. Most of the data breaches arising from credentials compromised by enabling MFA it mitigates the risk
+*  Multifactor authentication: This layer of security in the form of multifactor authentication protects critical corporate resources accessed via Citrix Managed Desktops solutions. Most of the data breaches arising from credentials compromised by enabling MFA it mitigates the risk
 
 Azure multifactor authentication helps safeguard access to Citrix Managed Desktops. With Conditional Access, the administrator can implement automated access control for accessing Citrix Managed Desktops based on conditions. To learn more about Azure MFA follow the Microsoft® documentation.
 
@@ -702,7 +702,7 @@ Profile management ensures that the user’s personal settings are retained for 
 
 For a detailed explanation of deciding factors, refer the [Profile management](/en-us/profile-management/current-release.html) documentation from Citrix.
 
-For the user share to store the profile, it is recommended to create a Windows file share on customers Azure subscription and all the user profiles are stored in that particular share. During, the login, the profile is fetched over the network using Azure backbone network. This reduces the latency and faster logon times to the machines.
+For the user share to store the profile, it is recommended to create a Windows file share on customers Azure subscription and all the user profiles are stored in that particular share. During the login, the profile is fetched over the network using Azure backbone network. This reduces the latency and faster logon times to the machines.
 
 ## Sources
 
