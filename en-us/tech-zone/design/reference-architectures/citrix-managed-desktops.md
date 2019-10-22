@@ -296,7 +296,7 @@ The preceding diagram depicts the deployment architecture of a Citrix SD-WAN sol
 
 Citrix SD-WAN virtual appliances hosted on a virtual network within Azure for Citrix Managed Desktops establishes virtual network connectivity with on-premises SD-WAN appliances at office locations and, if applicable, an on-premise data center. The connectivity begins over the inexpensive internet where customers can use broadband, landline or 4G/LTE of their choice. The Citrix SD-WAN solution is much cheaper than other hybrid connectivity options when achieving low latency and QoS features.
 
-**Citrix SD-WAN is faster and cheaper to deploy when compared to Azure ExpressRoute**
+Citrix SD-WAN is faster and cheaper to deploy when compared to Azure ExpressRoute
 
 *  Inexpensive business internet connectivity from Azure to on-premises (Cable, DSL,4G/LTE)
 
@@ -332,7 +332,7 @@ The preceding diagram depicts a skeleton view of Citrix SD-WAN integration with 
 
 The Citrix SD-WAN solution, when used with Citrix Managed Desktops, provides various benefits compared to different hybrid connectivity solutions. A few of them are described below.
 
-**Citrix SD-WAN offers the best end-user experience**
+Citrix SD-WAN offers the best end-user experience
 
 *  Reliable and high-performance connectivity through advanced SD-WAN features
 
