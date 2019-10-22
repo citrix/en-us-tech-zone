@@ -28,21 +28,14 @@ Detailed differences between Layer 4 and Layer 7 ingress controllers are listed 
 
 |                      | Layer 4 | Layer 7 |
 |----------------------|---------|---------|
-| Load Balancing       | Basic load balancing based on IP address and port only | Advanced load balancing based on URL – images, text, video and on client information – browser, OS, device language |
-|                      | HTTP/S blind
-| Session Persistance  |         |         |
-| Resource Monitoring  |         |         |
-| App Security         |         |         |
-|                      |         |         |
-|                      |         |         |
-|                      |         |         |
-|                      |         |         |
-|                      |         |         |
-|                      |         |         |
-|                      |         |         |
-|                      |         |         |
-|                      |         |         |
-
+| Load Balancing       | Basic load balancing based on IP address and port only | Advanced load balancing based on URL – images, text, video and on client information – browser, OS, device language           |
+|                      | HTTP/S blind      | Takes advantage of the HTTP/S packet info |
+|                      |                   | Designed for apps of today and tomorrow   |
+|                      | No content (payload rewrite & switching                       | Supports content rewriting: Apps with hard-coded URLs, mergers & acquisitions, publishing internal URLs, misconfigured apps, respond to malicious traffic |
+|                      | Inabilty to change anything on the wire                       | Can parse the payload and apply changes; allows making smarter content optimization and security decisions like app firewalling along with doing proxy   |
+| Session Persistance  | Very limited - only based on client IP address                | Advanced session persistence for better user experience Can use cookies – identify users to provide persistent experience Better experience for stateful applications |
+| Resource Monitoring  | Health checking limited to Ping and TCP handshake only        |    Advanced customizable health checks 1App-level visibility for better observability and load balancing decisions Enables circuit-breaking capabilities |
+| App Security         |Very limited due to just IP address and port visibility Lacks deep packet inspection | Advanced protection due to deep packet inspection Examples: web application firewall, L7 DoS protection, application stack vulnerabilities based on signature analysis, anomaly detection|
 
 The limitations of Layer 4 can create challenges for platform teams with Kube-proxy when:
 
