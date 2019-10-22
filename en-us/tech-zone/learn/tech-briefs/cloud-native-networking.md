@@ -55,14 +55,14 @@ To apply complex Layer 7 security and routing policies, Citrix offers a develope
 
 Additionally, application developers can closely monitor the health of TCP/UDP based apps through rich monitors in Citrix ADC (such as TCP-ECV, UDP-ECV). The ECV (extended content validation) monitors help in checking whether the application is returning expected content. The following chart summarizes the benefits that CPX with Layer 7 policy capabilities provide over those limited to Layer 4.
 
-|                      | Native Proxy | Citrix ADC CPX |
-|----------------------|---------|---------|
-| Legacy App Support   | TCP ingress supported with ConfigMaps                         | TCP LB functions available through smart annotations where key value pairs can be entered to map to direct NetScaler configurations    |
-|                      | Not all TCP LB functions available    |                                    |
-|                      | No TCP TLS                            | TCP-TLS supported as are TCP ECV monitors |
-| Rewrite/Responder policies  | Standard rewrite and responder policies available through annotations | Extensive Rewrite/Responder policies deployed as APIs to developer through custom resource definitions (CRD)  |
-| Day 0 to Day N operations  | Commercial support not available.  Security patches, or TLS capability enhancements through community        |    Fully supported product with security patches, new capabilities and feature enhancements through Citrix |
-| Troubleshooting microservices        | Service graph through cloud-based analytics under development| Service graphs with Web Insight data identify errors and latencies |
+|                               | Native Proxy | Citrix ADC CPX |
+|-------------------------------|---------|---------|
+| Legacy App Support            | TCP ingress supported with ConfigMaps                                      | TCP LB functions available through smart annotations where key value pairs can be entered to map to direct NetScaler configurations    |
+|                               | Not all TCP LB functions available    |                                    |
+|                               | No TCP TLS                            | TCP-TLS supported as are TCP ECV monitors |
+| Rewrite/Responder policies    | Standard rewrite and responder policies available through annotations | Extensive Rewrite/Responder policies deployed as APIs to developer through custom resource definitions (CRD)  |
+| Day 0 to Day N operations     | Commercial support not available.  Security patches, or TLS capability enhancements through community               | Fully supported product with security patches, new capabilities and feature enhancements through Citrix                  |
+| Troubleshooting microservices | Service graph through cloud-based analytics under development| Service graphs with Web Insight data identify errors and latencies |
 
 ## Proxy Architectures
 
@@ -84,7 +84,7 @@ The best choice of architectures will depend on a balance of benefits versus com
 | NetOps     | Policy & compliance, manage, control & monitor network, resources & capacity planning (visibility) |
 | DevSecOps  | Application & infrastructure security, Container security & API gateways, Automation               |
 
-Plotting the four architecture shows the relationship between benefits and complexity. On the lower left corner, you see Two-tier ingress which is the simplest to deploy and takes the North-South load balancing and splits it into a two-tier ingress. A variant of that is the Unified Ingress which combines the two-tiered ingress into one tier. The most advanced and feature rich architecture which has emerged as a “north star” architecture is the service mesh. A less complex version of the service mesh is known as service mesh lite. 
+Plotting the four architecture shows the relationship between benefits and complexity. On the lower left corner, you see Two-tier ingress which is the simplest to deploy and takes the North-South load balancing and splits it into a two-tier ingress. A variant of that is the Unified Ingress which combines the two-tiered ingress into one tier. The most advanced and feature rich architecture which has emerged as a leading architecture is the service mesh. A less complex version of the service mesh is known as service mesh lite. 
 
 Citrix developed a seven-attribute framework to evaluate the four architectures. The attributes are based on the unique needs of the six stakeholders and are a blueprint for the effectiveness that each architecture provides and insight into their benefit versus complexity tradeoff. Each attribute is described below, and each architecture is measured against these requirements for both North-South and East-West traffic.
 
@@ -178,7 +178,7 @@ Effectively, the architecture has most of the benefits of a Service Mesh, but wi
 
 
 | Attribute                    | Rating                                                                                                            |
-|------------------------------|-------------------------------------------------------------------------------------------------------------------|
+|------------------------------|------------------------------------------------------------------------------------------|
 | App Security                 | N-S: Excellent protection by Citrix ADC                                                                           
 |                              | E-W: Excellent protection by Citrix ADC CPX, optional mTLS                                                        
 | Observability                | N-S: Excellent, Citrix ADC sees all traffic 
