@@ -38,12 +38,12 @@ Detailed differences between Layer 4 and Layer 7 ingress controllers are listed 
 
 The limitations of Layer 4 can create challenges for platform teams with Kube-proxy when:
 
-  *Migrating legacy apps due to limited TCP/UDP support and no TCP-SSL support. These apps rely on advanced ADC functions not present in native proxies.
-  *Exposing critical applications based on Layer 7 protocols such as DNS, FTP or LDAP. Layer 7 traffic requires an intelligent load balancer act as a proxy.
-  *Protecting apps without advanced functions such as Rewrite and Responder that enable HTTP to HTTPs rewrite, dropping unwanted connections, or responding with custom messages.
-  *Operationalizing ingress load balancers such as managing SSL updates, versions 
-  *Relying on the open source community to plug security gaps - no commercial support
-  *Troubleshooting and finding bottlenecks without rich per app metrics and logs
+-  Migrating legacy apps due to limited TCP/UDP support and no TCP-SSL support. These apps rely on advanced ADC functions not present in native proxies.
+-  Exposing critical applications based on Layer 7 protocols such as DNS, FTP or LDAP. Layer 7 traffic requires an intelligent load balancer act as a proxy.
+-  Protecting apps without advanced functions such as Rewrite and Responder that enable HTTP to HTTPs rewrite, dropping unwanted connections, or responding with custom messages.
+-  Operationalizing ingress load balancers such as managing SSL updates, versions 
+-  Relying on the open source community to plug security gaps - no commercial support
+-  Troubleshooting and finding bottlenecks without rich per app metrics and logs
 
 
 ## Citrix Differentiator 
@@ -55,20 +55,48 @@ To apply complex Layer 7 security and routing policies, Citrix offers a develope
 
 Additionally, application developers can closely monitor the health of TCP/UDP based apps through rich monitors in Citrix ADC (such as TCP-ECV, UDP-ECV). The ECV (extended content validation) monitors help in checking whether the application is returning expected content. The following chart summarizes the benefits that CPX with Layer 7 policy capabilities provide over those limited to Layer 4.
 
+|                      | Native Proxy | Citrix ADC CPX |
+|----------------------|---------|---------|
+| Legacy App Support   | TCP ingress supported with ConfigMaps                         | TCP LB functions available through smart annotations where key value pairs can be entered to map to direct NetScaler configurations    |
+|                      | Not all TCP LB functions available    |                                    |
+|                      | No TCP TLS                            | TCP-TLS supported as are TCP ECV monitors |
+| Rewrite/Responder policies  | Standard rewrite and responder policies available through annotations | Extensive Rewrite/Responder policies deployed as APIs to developer through custom resource definitions (CRD)  |
+| Day 0 to Day N operations  | Commercial support not available.  Security patches, or TLS capability enhancements through community        |    Fully supported product with security patches, new capabilities and feature enhancements through Citrix |
+| Troubleshooting microservices        | Service graph through cloud-based analytics under development| Service graphs with Web Insight data identify errors and latencies |
+
 ## Proxy Architectures
 
 The most critical decision to be made as organizations advance towards microservices based applications, is choosing the right proxy architecture for both North-South and East-West traffic. The right architecture for a microservices and Kubernetes-based application delivery strikes a balance between ease of implementation and the greatest benefits. When considering the best architecture for an existing or new business-critical application, architects must consider:
 
-  *Each stakeholder has unique needs and evaluation criteria: e.g. developers, platform team, networking team, DevOps, SecOps, Site Reliability Engineers, and the app owner
-  *Load balancing and traffic control for North-South and East-West (inter microservices) traffic with the same level of visibility and security
-  *The tradeoff between the benefits and complexity of each architecture and the right fit for the skillsets of the team
-  *The rapid pace at which technology and open source innovation are evolving
+-  Each stakeholder has unique needs and evaluation criteria: e.g. developers, platform team, networking team, DevOps, SecOps, Site Reliability Engineers, and the app owner
+-  Load balancing and traffic control for North-South and East-West (inter microservices) traffic with the same level of visibility and security
+-  The tradeoff between the benefits and complexity of each architecture and the right fit for the skillsets of the team
+-  The rapid pace at which technology and open source innovation are evolving
   
 The best choice of architectures will depend on a balance of benefits versus complexity which is shaped by the unique needs of the various stakeholders. At the center is the Platform team which is the connective tissue between multiple stakeholders. Each team’s main responsibilities are listed in the table below.
+
+| Team       |  Responsibilities                                                                                  |
+|------------|----------------------------------------------------------------------------------------------------|
+| Platform   | Platform governance, Operation efficiency, Developer Agility                                       |
+| DevOps     | Faster release & development cycles, CI/CD & automation, Canary & progressive rollout              |
+| Developers | User experience, Troubleshooting, Microservice discovery and routing                               |
+| SRE        | Application availability, Observability, Incident Response, Postmortems                            |
+| NetOps     | Policy & compliance, manage, control & monitor network, resources & capacity planning (visibility) |
+| DevSecOps  | Application & infrastructure security, Container security & API gateways, Automation               |
 
 Plotting the four architecture shows the relationship between benefits and complexity. On the lower left corner, you see Two-tier ingress which is the simplest to deploy and takes the North-South load balancing and splits it into a two-tier ingress. A variant of that is the Unified Ingress which combines the two-tiered ingress into one tier. The most advanced and feature rich architecture which has emerged as a “north star” architecture is the service mesh. A less complex version of the service mesh is known as service mesh lite. 
 
 Citrix developed a seven-attribute framework to evaluate the four architectures. The attributes are based on the unique needs of the six stakeholders and are a blueprint for the effectiveness that each architecture provides and insight into their benefit versus complexity tradeoff. Each attribute is described below, and each architecture is measured against these requirements for both North-South and East-West traffic.
+
+| Attribute                    | Rating                                                                                                            |
+|------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| App Security                      | How effectively are communications and traffic being secured and segmented for both North-South and East-West |                                                     
+| Observability                     | How effectively and to what detail can traffic be logged and visible. What telemetry is available?          |           
+| Continuous Deployment             | Advanced traffic control technique like progressive and canary rollouts, automated, analysis, green and blue deployment model, faster roll backs |
+| Scale Performance                 | Scale out features such as with clustering, IPVS, IP table |                                                 
+| Open Source Tool Support          | To what level different architectures enable open source tool integration |            
+| Istio: Unified Control Plane      | How each architecture fairs with Istio unified control plane integration |                                      
+| IT Skill Set Required             | What kind of IT skills set are required for each architecture? |                  
 
 ### Two-Tier Ingress
 
