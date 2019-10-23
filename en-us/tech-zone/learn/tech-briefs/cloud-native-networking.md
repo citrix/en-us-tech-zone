@@ -15,7 +15,7 @@ To address these organizational gaps, architects and new roles such as the Digit
 
 On the technical side, the architecture of web applications and their delivery has changed accordingly. To facilitate goals agility and operational efficiency, the traditional three tier architecture of presentation, logic, and database has been transformed into a service mesh comprised of single function apps or microservices that decouple critical app functions from each other. This decoupling facilitates continuous integration and development (CI/CD) in which development, testing, and rollout/rollback are done independently at a microservice level. However, creating a mesh opens up additional East-West  traffic patterns since microservices must communicate amongst each other.
 
-![descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_east-west.png)
+![descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_east-west2.png)
 
 This East-West traffic benefits from the same advanced traffic management capabilities provided by Application Delivery Controllers (ADC) to North-South traffic i.e. security, performance, scalability, and observability.
 
