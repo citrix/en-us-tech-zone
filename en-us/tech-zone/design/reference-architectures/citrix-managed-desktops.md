@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Nagaraj Manoli](mailto:nagaraj.manoli@citrix.com)
 
-**Special Thanks:** [Kireeti Valicherla](mailto:kireeti.valicherla@citrix.com), [Swaroop JV](mailto:Swaroop.JosephVarghese@citrix.com), [Alan Goldman](mailto:alan.goldman@citrix.com), [Derek Thorslund](mailto:Derek.Thorslund@citrix.com)
+**Special Thanks:** [Kireeti Valicherla](mailto:kireeti.valicherla@citrix.com), [Swaroop JV](mailto:Swaroop.JosephVarghese@citrix.com), [Alan Goldman](mailto:alan.goldman@citrix.com), [Derek Thorslund](https://twitter.com/derektcitrix)
 
 ## Audience
 
