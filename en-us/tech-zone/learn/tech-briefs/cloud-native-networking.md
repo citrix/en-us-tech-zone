@@ -9,7 +9,7 @@ layout: doc
 
 ## Monolothic to Microservice
 
-Cloud Native is about developing and deploying web apps with agility and realizing operational efficiency. It’s the modern way of architecting apps that includes microservices and containers; it is also the modern way of constructing cross disciplinary platform teams. Companies want to move fast; they need create new software and deploy it quickly. However, many orgs are siloed - app developers vs. the networking team vs. the security team - causing bottlenecks. Additionally, networks are complex and change requests are manual and move at a slow pace.
+Cloud Native is about developing and deploying web apps with agility and realizing operational efficiency. It’s the modern way of architecting apps that includes microservices and containers; it's also the modern way of constructing cross disciplinary platform teams. Companies want to move fast; they need create new software and deploy it quickly. However, many organizations are siloed - app developers vs. the networking team vs. the security team - causing bottlenecks. Additionally, networks are complex and change requests are manual - moving at a slow pace.
 
 To address these organizational gaps, architects and new roles such as the Digital Officer have been empowered to come up with a fresh approach – one that sees the big picture. Moreover, individual roles and responsibilities are being adjusted to insert a platform team to work across the business. The team combines multiple disparate product, support, and operational pipelines to create a platform that runs consistently. One that run consistently on premises and cloud. One that is easy to use and has the agility to deploy apps quickly. And one that has the operational efficiency to update, scale, and manage the whole system for common use across multiple stakeholders. Lastly the team is charged with platform governance, ensuring that platform meets policies around security, access, and tenancy.
 
@@ -81,7 +81,7 @@ The best choice of architectures will depend on a balance of benefits versus com
 | NetOps     | Policy & compliance, manage, control & monitor network, resources & capacity planning (visibility) |
 | DevSecOps  | Application & infrastructure security, Container security & API gateways, Automation               |
 
-Plotting the four architecture shows the relationship between benefits and complexity. On the lower left corner, you see Two-tier ingress which is the simplest to deploy and takes the North-South load balancing and splits it into a two-tier ingress. A variant of that is the Unified Ingress which combines the two-tiered ingress into one tier. The most advanced and feature rich architecture which has emerged as a leading architecture is the service mesh. A less complex version of the service mesh is known as service mesh lite. 
+Plotting four common architectures shows the relationship between benefits and complexity. On the lower left corner, you see Two-tier ingress which is the simplest to deploy and takes the North-South load balancing and splits it into a two-tier ingress. A variant of that is the Unified Ingress which combines the Two-tier ingress into one tier. The most advanced and feature rich architecture which has emerged as a leading architecture is the service mesh. A less complex version of the service mesh is known as service mesh lite. 
 
 ![descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_plot.png)
 
@@ -127,7 +127,7 @@ In a Two-tier architecture, the ADC is split into two tiers for North-South traf
 
 ### Unified Ingress
 
-The Unified Ingress architecture, or One-Tier, is a variant of the Two-tier modified to combine the two North-South traffic ingress into a single Citrix ADC. A realized benefit of this is the reduction to one tier (and of 1 hop extra latency), providing a level of simplicity over the two-tier architecture at the cost of requiring a very networking savvy platform team. 
+The Unified Ingress architecture, or One-tier, is a variant of the Two-tier modified to combine the two North-South traffic ingress into a single Citrix ADC. A realized benefit of this is the reduction to one tier (and of 1 hop extra latency), providing a level of simplicity over the two-tier architecture at the cost of requiring a very networking savvy platform team.
 
 ![descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_1-tier.png)
 
