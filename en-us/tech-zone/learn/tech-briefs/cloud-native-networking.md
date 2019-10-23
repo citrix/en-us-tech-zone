@@ -55,8 +55,7 @@ Additionally, application developers can closely monitor the health of TCP/UDP b
 
 |                               | Native Proxy | Citrix ADC CPX |
 |-------------------------------|---------|---------|
-| Legacy App Support            | TCP ingress supported with ConfigMaps                                      | TCP LB functions available through smart annotations where key value pairs can be entered to map to direct NetScaler configurations    |
-|                               | Not all TCP LB functions available    |                                    |
+| Legacy App Support            | TCP ingress supported with ConfigMaps - not all TCP LB functions available                                      | TCP LB functions available through smart annotations where key value pairs can be entered to map to direct NetScaler configurations|
 |                               | No TCP TLS                            | TCP-TLS supported as are TCP ECV monitors |
 | Rewrite/Responder policies    | Standard rewrite and responder policies available through annotations | Extensive Rewrite/Responder policies deployed as APIs to developer through custom resource definitions (CRD)  |
 | Day 0 to Day N operations     | Commercial support not available.  Security patches, or TLS capability enhancements through community               | Fully supported product with security patches, new capabilities and feature enhancements through Citrix                  |
