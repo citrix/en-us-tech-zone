@@ -19,6 +19,8 @@ To address these organizational gaps, architects and new roles such as the Digit
 
 On the technical side, the architecture of web applications and their delivery has changed accordingly. To facilitate goals agility and operational efficiency, the traditional three tier architecture of presentation, logic, and database has been transformed into a service mesh comprised of single function apps or microservices that decouple critical app functions from each other. This decoupling facilitates continuous integration and development (CI/CD) in which development, testing, and rollout/rollback are done independently at a microservice level. However, creating a mesh opens up additional traffic patterns since microservices must communicate amongst each other.
 
+![descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_east-west.png)
+
 This East-West traffic benefits from the same advanced traffic management capabilities provided by Application Delivery Controllers (ADC) to North-South traffic i.e. security, performance, scalability, and observability.
 
 In a Kubernetes architecture, there is a key component that manages both ingress and inter microservice traffic. Ingress controllers provide a mechanism to send HTTP traffic to a microservice hosted in a Kubernetes cluster. This is done by implementing ingress rules that specify how the ingress traffic is routed to the target microservice from outside the cluster. Ingress controllers watch the Kubernetes API server for updates to the ingress resource and reconfigure the ingress load balancer accordingly. Any high scale production application will have several security and traffic routing policies for incoming traffic. 
@@ -100,9 +102,11 @@ Citrix developed a seven-attribute framework to evaluate the four architectures.
 | Istio: Unified Control Plane      | How each architecture fairs with Istio unified control plane integration |                                      
 | IT Skill Set Required             | What kind of IT skills set are required for each architecture? |                  
 
-### Two-Tier Ingress
+### Two-tier Ingress
 
 The Two-tier Ingress architecture is the quickest and simplest to move into production for both the platform and network teams. The architecture is a standard deployment model for both cloud native novices and experts and it is followed widely irrespective of the platform, whether it's Google Cloud, Amazon Web Services, Azure, or an on-premises deployment. 
+
+![descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_2-tier.png)
 
 In a Two-tier architecture, the ADC is split into two tiers for North-South traffic, each doing a different function. The networking team manages the Tier 1 Citrix ADC VPX/MPX outside of the Kubernetes cluster. This ADC is responsible for all security policies like web application firewall, TLS and Layer 4 load balancing of North-South traffic. The same ADC can be used to provide Layer 4-7 load balancing of traditional monolithic applications during their transition to microservices. Here configuration changes are more carefully and slowly implemented. The Tier 1 VPX/MPX load balances the Tier 2 CPX inside the Kubernetes cluster which is managed by the Platform team. Developers write their own policies and make configuration changes at their speed which can be daily or hourly, with policies applied to inbound traffic only. While this architecture rates high on the seven attributes for North-South traffic, it is lacking on the East-West traffic as seen in the table below:
 
@@ -130,6 +134,8 @@ In a Two-tier architecture, the ADC is split into two tiers for North-South traf
 
 The Unified Ingress architecture, or One-Tier, is a variant of the Two-tier modified to combine the two North-South traffic ingress into a single Citrix ADC. A realized benefit of this is the reduction to one tier (and of 1 hop extra latency), providing a level of simplicity over the two-tier architecture at the cost of requiring a very networking savvy platform team. 
 
+![descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_1-tier.png)
+
 This is a good deployment for internal applications with the flexibility to add external applications that require additional protection such as web application firewall and SSL/TLS. As with the Two-tier, this architecture rates high on the seven attributes for North-South traffic, but it is lacking on the East-West traffic. The major difference is the level of skill set required of the platform team.
 
 
@@ -153,6 +159,8 @@ This is a good deployment for internal applications with the flexibility to add 
 
 The Service Mesh architecture is designed for ultra-secure apps and communications between containers. This is the most advanced and most modern architecture that addresses the functionality requirements for East-West traffic in addition to the North-South traffic. 
 
+![descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_sm.png)
+
 By attaching a mini ADC as a sidecar to every microservice pod, the architecture provides the highest levels of security, observability, integration, and very fine-grained traffic management between the microservices. Functionalities of the microservice like connection retries and encryption between microservices can be offloaded into the sidecar. Excellent advanced traffic control over East-West traffic allows continuous deployment methods such as Canary rollouts to be done independently for each container with a sidecar CPX. The tradeoff is the additional complexity and scalability requirements (CPU/Memory) added with sidecars. Also of note; with the current version of Istio, bottlenecks with Istio Mixer can occur by adding an extra hop to each packet. There is a steep learning curve for both the platform and network teams.
 
 | Attribute                    | Rating                                                                                                            |
@@ -175,6 +183,8 @@ By attaching a mini ADC as a sidecar to every microservice pod, the architecture
 ### Service Mesh Lite
 
 The Service Mesh Lite architecture is similar to a Two-tier, a Citrix ADC VPX/MPX outside the Kubernetes cluster and a CPX inside the cluster. This makes for an easy transition to Service Mesh Lite in the future if starting out with a Two-tier deployment. However, requirements such as securing traffic and observability are met more easily since all East-West communication between pods or microservices pass through a centralized CPX.
+
+![descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_sml.png)
 
 Effectively, the architecture has most of the benefits of a Service Mesh, but with reduced complexity. One benefit over a Service Mesh is the benefit of removing the extra hop seen with sidecars. However, CPU/Memory sizing of the CPX is more critical to ensure enough resources for each pod. Another distinction is that features like mutual TLS or encryption between the microservices cannot be offloaded to the sidecar and must be done at the application level. This additional requirement to build encryption – a nonbusiness logic functionality - into a microservice is not optimal for performance, scalability, and consistency.
 
