@@ -84,7 +84,7 @@ The unique needs of the various stakeholders shape the best choice of architectu
 
 Plotting four common architectures shows the relationship between benefits and complexity. On the lower left corner, you see Two-tier ingress which is the simplest to deploy. It and takes the North-South load balancing and splits it into a two-tier deployment. A variant of that is the Unified Ingress which combines the Two-tier ingress into one tier. The most advanced and feature rich architecture which has emerged as a leading architecture is the service mesh. A less complex version of the service mesh is known as service mesh lite.
 
-![Descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_plot.png)
+![Architecture Complexity Benefit Spectrum](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_plot.png)
 
 Citrix developed a seven-attribute framework to evaluate the four architectures. The attributes are based on the unique needs of the six stakeholders. They are a blueprint for the effectiveness that each architecture provides an insight into their benefit versus complexity tradeoff. Each attribute is described below, and each architecture is measured against these requirements for both North-South and East-West traffic.
 
@@ -102,7 +102,7 @@ Citrix developed a seven-attribute framework to evaluate the four architectures.
 
 The Two-tier Ingress architecture is the quickest and simplest to move into production for both the platform and network teams. The architecture is a standard deployment model for both cloud native novices and experts. It is followed widely irrespective of the platform, whether it's Google Cloud, Amazon Web Services, Azure, or an on-premises deployment.
 
-![Descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_2-tier.png)
+![Two-tier Ingress Architecture](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_2-tier.png)
 
 In a Two-tier architecture, the ADC is split into two tiers for North-South traffic, each doing a different function. The networking team manages the Tier 1 Citrix ADC VPX/MPX outside of the Kubernetes cluster. This ADC is responsible for all security policies like web application firewall, TLS, and Layer 4 load balancing of North-South traffic. The same ADC can be used to provide Layer 4-7 load balancing of traditional monolithic applications during their transition to microservices. Here configuration changes are more carefully and slowly implemented. The Tier 1 VPX/MPX load balances the Tier 2 CPX inside the Kubernetes cluster. The Platform team manages thee Tier 2 CPX. Developers write their own policies and make configuration changes at their speed which can be daily or hourly, with policies applied to inbound traffic only. While this architecture rates high on the seven attributes for North-South traffic, it is lacking on the East-West traffic as seen in the table below:
 
@@ -127,7 +127,7 @@ In a Two-tier architecture, the ADC is split into two tiers for North-South traf
 
 The Unified Ingress architecture, or One-tier, is a variant of the Two-tier modified to combine the North-South traffic ingress into a single Citrix ADC. A realized benefit of this combination is the reduction to one tier (and of 1 hop extra latency). The reduction provides a level of simplicity over the two-tier architecture at the cost of requiring a very networking savvy platform team.
 
-![Descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_1-tier.png)
+![Unified Ingress Architecture](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_1-tier.png)
 
 Unified Ingress is a good deployment for internal applications with the flexibility to add external applications that require more protection such as web application firewall and SSL/TLS. As with the Two-tier, this architecture rates high on the seven attributes for North-South traffic, but it is lacking on the East-West traffic. The major difference is the level of skill set required of the platform team.
 
@@ -151,7 +151,7 @@ Unified Ingress is a good deployment for internal applications with the flexibil
 
 The Service Mesh architecture is designed for ultra-secure apps and communications between containers. The Service Mesh is the most advanced and most modern architecture that addresses the functionality requirements for East-West traffic in addition to the North-South traffic.
 
-![Descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_sm.png)
+![Service Mesh Architecture](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_sm.png)
 
 By attaching a mini ADC as a sidecar to every microservice pod, the architecture provides the highest levels of security, observability, integration, and fine-grained traffic management. Functionalities of the microservice like connection retries and encryption between microservices can be offloaded into the sidecar. Excellent advanced traffic control over East-West traffic allows continuous deployment methods such as Canary rollouts to be done independently for each container with a sidecar CPX. The tradeoff is the additional complexity and scalability requirements (CPU/Memory) added with sidecars. Also of note; with the current version of Istio, bottlenecks with Istio Mixer can occur by adding an extra hop to each packet. There is a steep learning curve for both the platform and network teams.
 
@@ -175,7 +175,7 @@ By attaching a mini ADC as a sidecar to every microservice pod, the architecture
 
 The Service Mesh Lite architecture is similar to a Two-tier, a Citrix ADC VPX/MPX outside the Kubernetes cluster and a CPX inside the cluster. This similarity makes for an easy transition to Service Mesh Lite in the future if starting out with a Two-tier deployment. However, requirements such as securing traffic and observability are met more easily since all East-West communications between pods or microservices pass through a centralized CPX.
 
-![Descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_sml.png)
+![Service Mesh Lite Architecture](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_sml.png)
 
 Effectively, the architecture has most of the benefits of a Service Mesh, but with reduced complexity. One benefit over a Service Mesh is the benefit of removing the extra hop seen with sidecars. However, CPU/Memory sizing of the CPX is more critical to ensure enough resources for each pod. Another distinction is that features like mutual TLS or encryption between the microservices cannot be offloaded to the sidecar. mTLS must be done at the application level. This additional requirement to build encryption – a nonbusiness logic functionality - into a microservice is not optimal for performance, scalability, and consistency.
 
@@ -202,6 +202,6 @@ Cloud Native is all about scale, flexibility, and speed. We know that we can orc
 
 The following matrix summarizes the differences between the four proxy architectures available with the CPX as the Ingress Controller. This matrix provides a good framework to consider which architecture to choose.
 
-![Descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_spectrum.png)
+![Architecture Complexity Benefits Chart](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_spectrum.png)
 
 There is no right or wrong answer, it’s purely dependent on the team skill set and the tradeoff between benefits and complexity. If you’re looking for the simplest and quickest way to production, then Two-tier ingress is the preferred choice. However, you will lack the capabilities for advanced features for East-West traffic. If you have a network savvy team, then Unified ingress seems like a great choice, but you still lack that East-West intelligence. If you’re looking for the best observability, the best security, then the Service Mesh is the architecture of choice, but it is complex. If you want to offer similar features of the Service Mesh but much simpler to deploy and manage, then Service Mesh Lite can be a good balance.
