@@ -1,23 +1,19 @@
 ---
 layout: doc
 ---
-# Cloud Native Networking
+# Microservices architecures and Cloud Native Networking
 
 ## Contributors
 
 **Author:** [Florin Lazurca](https://twitter.com/FlorinLazurca)
 
-# Citrix Cloud Native Networking and Microservices architecures
-
-# OVERVIEW
-
 ## Monolothic to Microservice
 
-Cloud Native is about developing and deploying web apps with agility and realizing operational efficiency. It’s the modern way of architecting apps that includes microservices and containers; it is also the modern way of constructing cross disciplinary platform teams. Companies want to move fast; they need create new software and deploy it quickly. However, many orgs are siloed - app developers vs. the networking team - causing bottlenecks. Additionally, networks are complex and change requests are manual and move at a slow pace. 
+Cloud Native is about developing and deploying web apps with agility and realizing operational efficiency. It’s the modern way of architecting apps that includes microservices and containers; it is also the modern way of constructing cross disciplinary platform teams. Companies want to move fast; they need create new software and deploy it quickly. However, many orgs are siloed - app developers vs. the networking team vs. the security team - causing bottlenecks. Additionally, networks are complex and change requests are manual and move at a slow pace. 
 
-To address these organizational gaps, architects and new roles such as the Digital Officer have been empowered to come up with a fresh approach – one that sees the big picture. Moreover, individual roles and responsibilities are being adjusted to insert a platform team to work across the business. The team combines multiple disparate product, support, and operational pipelines to create a platform that runs consistently. One that run consistently on premises and cloud. One that is easy to use and has the agility to deploy apps quickly.  One that has the operational efficiency to update, scale, and manage the whole system for common use across multiple stakeholders. Lastly the team is charged with platform governance, ensuring that platform meets policies around security, access, and tenancy.
+To address these organizational gaps, architects and new roles such as the Digital Officer have been empowered to come up with a fresh approach – one that sees the big picture. Moreover, individual roles and responsibilities are being adjusted to insert a platform team to work across the business. The team combines multiple disparate product, support, and operational pipelines to create a platform that runs consistently. One that run consistently on premises and cloud. One that is easy to use and has the agility to deploy apps quickly. And one that has the operational efficiency to update, scale, and manage the whole system for common use across multiple stakeholders. Lastly the team is charged with platform governance, ensuring that platform meets policies around security, access, and tenancy.
 
-On the technical side, the architecture of web applications and their delivery has changed accordingly. To facilitate goals agility and operational efficiency, the traditional three tier architecture of presentation, logic, and database has been transformed into a service mesh comprised of single function apps or microservices that decouple critical app functions from each other. This decoupling facilitates continuous integration and development (CI/CD) in which development, testing, and rollout/rollback are done independently at a microservice level. However, creating a mesh opens up additional traffic patterns since microservices must communicate amongst each other.
+On the technical side, the architecture of web applications and their delivery has changed accordingly. To facilitate goals agility and operational efficiency, the traditional three tier architecture of presentation, logic, and database has been transformed into a service mesh comprised of single function apps or microservices that decouple critical app functions from each other. This decoupling facilitates continuous integration and development (CI/CD) in which development, testing, and rollout/rollback are done independently at a microservice level. However, creating a mesh opens up additional East-West  traffic patterns since microservices must communicate amongst each other.
 
 ![descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_east-west.png)
 
