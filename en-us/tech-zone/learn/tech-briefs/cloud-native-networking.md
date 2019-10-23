@@ -38,7 +38,7 @@ The limitations of Layer 4 can create challenges for platform teams with kube-pr
 
 -  Migrating legacy apps due to limited TCP/UDP support and no TCP-SSL support. These apps rely on advanced ADC functions not present in native proxies.
 -  Exposing critical applications based on Layer 7 protocols such as DNS, FTP, or LDAP. Layer 7 traffic requires an intelligent load balancer act as a proxy.
--  Protecting apps without advanced functions such as Rewrite and Responder that enables HTTP to HTTPS rewrite, dropping unwanted connections, or responding with custom messages.
+-  Protecting apps without advanced functions such as Rewrite and Responder (HTTP to HTTPS rewrite, dropping unwanted connections, or responding with custom messages)
 -  Operationalizing ingress load balancers such as managing SSL updates, versions
 -  Relying on the open source community to plug security gaps - no commercial support
 -  Troubleshooting and finding bottlenecks without rich per app metrics and logs
@@ -50,9 +50,9 @@ Citrix offers a supported, enterprise grade ingress controller with 20 years of 
 When scaling up or deploying new services, CPX recognizes the changes and auto-adjusts the load balancing accordingly. If one microservice becomes slow it can reroute traffic to a faster microservice. The CPX interfaces with Kubernetes APIs, providing real-time configuration of a Kubernetes cluster. ADC and CPX apply advanced Layer 7 policies to manage and secure both high-scale North-South and East-West traffic while enabling troubleshooting and visibility into microservices performance problems using the ADM service graph.
 
 To apply complex Layer 7 security and routing policies, Citrix offers a developer friendly solution using Kubernetes Custom 
-Resource Definitions (CRD). For example, the Rewrite and Responder CRD is designed to expose policies available from Citrix ADCs with an extensive audit log. Using these functionalities, you can rewrite the header and payload of ingress and egress HTTP traffic and respond to HTTP traffic on behalf of a microservice.
+Resource Definitions (CRD). For example, the Rewrite and Responder CRD is designed to expose policies available from Citrix ADCs with an extensive audit log. Using these functionalities, you can rewrite the header and payload of ingress and egress HTTP traffic. You can also respond to HTTP traffic on behalf of a microservice.
 
-Also, application developers can closely monitor the health of TCP/UDP based apps through rich monitors in Citrix ADC (such as TCP-ECV, UDP-ECV). The ECV (extended content validation) monitors help in checking whether the application is returning expected content. The following chart summarizes the benefits that CPX with Layer 7 policy capabilities provides over those proxies limited to Layer 4.
+Also, application developers can closely monitor the health of TCP/UDP based apps through rich monitors. The ECV (extended content validation) monitors help in checking whether the application is returning expected content. The following chart summarizes the benefits that CPX with Layer 7 policy capabilities provides over those proxies limited to Layer 4.
 
 |                               | Native Proxy | Citrix ADC CPX |
 |-------------------------------|---------|---------|
@@ -68,7 +68,8 @@ The most critical decision to be made as organizations advance towards microserv
 
 -  Each stakeholder has unique needs and evaluation criteria - developers, platform team, networking team, DevOps, SecOps, Site Reliability Engineers, and the app owner
 -  Load balancing and traffic control for North-South and East-West (inter-microservices) traffic with as much visibility and security
--  The tradeoff between the benefits and complexity of each architecture and the right fit for the skill sets of the team
+-  The tradeoff between the benefits and complexity of each architecture
+-  The right fit for the skill sets of the team
 -  The rapid pace at which technology and open source innovation are evolving
   
 The unique needs of the various stakeholders shapes the best choice of architectures. It's a balance between benefit and complexity. At the center is the Platform team which is the connective tissue between multiple stakeholders. Each team’s main responsibilities are listed in the following table.
@@ -82,7 +83,7 @@ The unique needs of the various stakeholders shapes the best choice of architect
 | NetOps     | Policy & compliance, manage, control & monitor network, resources & capacity planning (visibility) |
 | DevSecOps  | Application & infrastructure security, Container security & API gateways, Automation               |
 
-Plotting four common architectures shows the relationship between benefits and complexity. On the lower left corner, you see Two-tier ingress which is the simplest to deploy and takes the North-South load balancing and splits it into a two-tier ingress. A variant of that is the Unified Ingress which combines the Two-tier ingress into one tier. The most advanced and feature rich architecture which has emerged as a leading architecture is the service mesh. A less complex version of the service mesh is known as service mesh lite.
+Plotting four common architectures shows the relationship between benefits and complexity. On the lower left corner, you see Two-tier ingress which is the simplest to deploy. It and takes the North-South load balancing and splits it into a two-tier deployment. A variant of that is the Unified Ingress which combines the Two-tier ingress into one tier. The most advanced and feature rich architecture which has emerged as a leading architecture is the service mesh. A less complex version of the service mesh is known as service mesh lite.
 
 ![Descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_plot.png)
 
@@ -92,7 +93,7 @@ Citrix developed a seven-attribute framework to evaluate the four architectures.
 |------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | App Security                      | How effectively are communications and traffic being secured and segmented for both North-South and East-West |
 | Observability                     | How effectively and to what detail can traffic be logged and visible. What telemetry is available?          |
-| Continuous Deployment             | Advanced traffic control technique like progressive and canary rollouts, automated, analysis, green and blue deployment model, faster roll backs |
+| Continuous Deployment             | Advanced traffic control technique like progressive and canary rollouts, automated, analysis, green and blue deployment model, and faster roll backs |
 | Scale Performance                 | Scale out features such as with clustering, IPVS, IP table |
 | Open Source Tool Support          | To what level different architectures enable open source tool integration |
 | Istio: Unified Control Plane      | How each architecture fair with Istio unified control plane integration |
@@ -177,7 +178,7 @@ The Service Mesh Lite architecture is similar to a Two-tier, a Citrix ADC VPX/MP
 
 ![Descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_sml.png)
 
-Effectively, the architecture has most of the benefits of a Service Mesh, but with reduced complexity. One benefit over a Service Mesh is the benefit of removing the extra hop seen with sidecars. However, CPU/Memory sizing of the CPX is more critical to ensure enough resources for each pod. Another distinction is that features like mutual TLS or encryption between the microservices cannot be offloaded to the sidecar and must be done at the application level. This additional requirement to build encryption – a nonbusiness logic functionality - into a microservice is not optimal for performance, scalability, and consistency.
+Effectively, the architecture has most of the benefits of a Service Mesh, but with reduced complexity. One benefit over a Service Mesh is the benefit of removing the extra hop seen with sidecars. However, CPU/Memory sizing of the CPX is more critical to ensure enough resources for each pod. Another distinction is that features like mutual TLS or encryption between the microservices cannot be offloaded to the sidecar. mTLS must be done at the application level. This additional requirement to build encryption – a nonbusiness logic functionality - into a microservice is not optimal for performance, scalability, and consistency.
 
 | Attribute                    | Rating                                                                                                            |
 |------------------------------|------------------------------------------------------------------------------------------|
