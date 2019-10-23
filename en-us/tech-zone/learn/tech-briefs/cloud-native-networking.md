@@ -13,7 +13,7 @@ Cloud Native is about developing and deploying web apps with agility and realizi
 
 To address organizational gaps, architects and Digital Officers have been empowered to come up with a fresh approach. An approach that is more holistic. Moreover, individual roles and responsibilities are being adjusted to insert a platform team to work across the business. The team combines multiple disparate product, support, and operational pipelines to create a platform that runs consistently. One that runs consistently on premises and cloud. One that is easy to use and has the agility to deploy apps quickly. And one that has the operational efficiency to update, scale, and manage the whole system for common use across multiple stakeholders. Lastly the team is charged with platform governance, ensuring that platform meets policies around security, access, and tenancy.
 
-On the technical side, the architecture of web applications and their delivery has changed accordingly. To facilitate goals agility and operational efficiency, the traditional three tier architecture of presentation, logic, and database has been transformed. The layers becomes a service mesh comprising single function apps or microservices that decouple critical app functions from each other. This decoupling facilitates continuous integration and development (CI/CD) in which development, testing, and rollout/rollback are done independently at a microservice level. However, creating a mesh opens up new East-West traffic patterns since microservices must communicate among each other.
+On the technical side, the architecture of web applications and their delivery has changed accordingly. To facilitate goals agility and operational efficiency, the traditional three tier architecture of presentation, logic, and database has been transformed. The layers become a service mesh comprising single function apps or microservices that decouple critical app functions from each other. This decoupling facilitates continuous integration and development (CI/CD) in which development, testing, and rollout/rollback are done independently at a microservice level. However, creating a mesh opens up new East-West traffic patterns since microservices must communicate among each other.
 
 ![Descriptive text](/en-us/tech-zone/learn/media/tech-briefs_cloud-native-networking_east-west2.png)
 
@@ -49,8 +49,7 @@ Citrix offers a supported, enterprise grade ingress controller with 20 years of 
 
 When scaling up or deploying new services, CPX recognizes the changes and auto-adjusts the load balancing accordingly. If one microservice becomes slow it can reroute traffic to a faster microservice. The CPX interfaces with Kubernetes APIs, providing real-time configuration of a Kubernetes cluster. ADC and CPX apply advanced Layer 7 policies to manage and secure both high-scale North-South and East-West traffic while enabling troubleshooting and visibility into microservices performance problems using the ADM service graph.
 
-To apply complex Layer 7 security and routing policies, Citrix offers a developer friendly solution using Kubernetes Custom 
-Resource Definitions (CRD). For example, the Rewrite and Responder CRD is designed to expose policies available from Citrix ADCs with an extensive audit log. Using these functionalities, you can rewrite the header and payload of ingress and egress HTTP traffic. You can also respond to HTTP traffic on behalf of a microservice.
+To apply complex Layer 7 security and routing policies, Citrix offers a developer friendly solution using Kubernetes Custom Resource Definitions (CRD). For example, the Rewrite and Responder CRD is designed to expose policies available from Citrix ADCs with an extensive audit log. Using these functionalities, you can rewrite the header and payload of ingress and egress HTTP traffic. You can also respond to HTTP traffic on behalf of a microservice.
 
 Also, application developers can closely monitor the health of TCP/UDP based apps through rich monitors. The ECV (extended content validation) monitors help in checking whether the application is returning expected content. The following chart summarizes the benefits that CPX with Layer 7 policy capabilities provides over those proxies limited to Layer 4.
 
@@ -72,7 +71,7 @@ The most critical decision to be made as organizations advance towards microserv
 -  The right fit for the skill sets of the team
 -  The rapid pace at which technology and open source innovation are evolving
   
-The unique needs of the various stakeholders shapes the best choice of architectures. It's a balance between benefit and complexity. At the center is the Platform team which is the connective tissue between multiple stakeholders. Each team’s main responsibilities are listed in the following table.
+The unique needs of the various stakeholders shape the best choice of architectures. It's a balance between benefit and complexity. At the center is the Platform team which is the connective tissue between multiple stakeholders. Each team’s main responsibilities are listed in the following table.
 
 | Team       |  Responsibilities                                                                                  |
 |------------|----------------------------------------------------------------------------------------------------|
