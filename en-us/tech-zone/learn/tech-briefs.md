@@ -13,6 +13,8 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [Citrix Managed Desktops](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Managed Desktops offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
 
+[Cloud Native Networking](/en-us/tech-zone/learn/tech-briefs/cloud-native-networking.html) - Learn how to choose the right ADC and proxy architecture for a microservices and Kubernetes-based application.
+
 [Gateway service for HDX Proxy](/en-us/tech-zone/learn/tech-briefs/gateway-hdxproxy.html) - Provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls.
 
 [Intelligent Traffic Management](/en-us/tech-zone/learn/tech-briefs/itm.html) - Citrix Intelligent Traffic Management (ITM) service brings “intelligence” to DNS by incorporating a broad set of capabilities to determine the best query response based on analysis of real time conditions
