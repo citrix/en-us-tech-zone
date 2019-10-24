@@ -55,7 +55,7 @@ The customer-managed storage zone stores all the file objects uploaded to the Co
 
 ### Storage zones controllers
 
-The storage zone controller is a Windows package consisting of ASP.NET web services and background Windows services. The controller software runs on top of a Windows Server IaaS VM with Internet Information Services (IIS). The system requirements for a storage zone controller are located [here](/storagezones-controller/5-0/system-requirements.html).
+The storage zone controller is a Windows package consisting of ASP.NET web services and background Windows services. The controller software runs on top of a Windows Server IaaS VM with Internet Information Services (IIS). The system requirements for a storage zone controller are located [here](https://docs.citrix.com/en-us/storage-zones-controller/5-0/system-requirements.html).
 
 The number of storage zone controllers needed depends on how the storage zone deployment is being used. Several factors impact this number which include the following:
 
@@ -75,7 +75,7 @@ To set up the Storage Zones Controller in Azure, we recommend:
 *  Enabling port 443 on the NSG (Network Security Groups) on the Storage Controller adapters.
 *  When creating the multiple controllers make sure that they are created within an Availability Set or Availability Zone depending on your reliability/availability requirements.
 
-See the [Performance Monitoring](#Performance-Monitoring-tips) chapter for further details.
+See the [Performance Monitoring](#performance-monitoring-tips) chapter for further details.
 
 ### Storage repository
 
@@ -191,4 +191,4 @@ The described architecture covers the tested and supported deployment model our 
 
 [Resources for storage zones controller](/en-us/storagezones-controller)
 
-[Citrix File Deployment Guide](/en-us/tech-zone/build/deployment-guides/citrix-files.html)
+[Citrix Files with Citrix Virtual Apps and Desktops Service Deployment Guide](/en-us/tech-zone/build/deployment-guides/citrix-files.html)
