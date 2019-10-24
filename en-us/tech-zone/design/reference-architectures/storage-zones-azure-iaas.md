@@ -55,7 +55,7 @@ The customer-managed storage zone stores all the file objects uploaded to the Co
 
 ### Storage zones controllers
 
-The storage zone controller is a Windows package consisting of ASP.NET web services and background Windows services. The controller software runs on top of a Windows Server IaaS VM with Internet Information Services (IIS). The system requirements for a storage zone controller are located [here](https://docs.citrix.com/en-us/storage-zones-controller/5-0/system-requirements.html).
+The storage zone controller is a Windows package consisting of ASP.NET web services and background Windows services. The controller software runs on top of a Windows Server IaaS VM with Internet Information Services (IIS). The system requirements for a storage zone controller are located [here](/en-us/storage-zones-controller/5-0/system-requirements.html).
 
 The number of storage zone controllers needed depends on how the storage zone deployment is being used. Several factors impact this number which include the following:
 
