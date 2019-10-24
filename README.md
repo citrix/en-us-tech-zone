@@ -50,7 +50,7 @@ Few additional recommendations:
 
 Our readers love images, so include as many as you need to get your message across. All images must be placed in the **/media** folder of the Tech Zone repo and you can upload them through GitHub website.
 
-**IMPORTANT:** Make sure that you are using the right branch AND right naming conventions when uploaded files.
+**IMPORTANT:** Make sure that you are using the right branch AND right naming conventions when uploaded files. GitHub will in some cases switch back to **master** branch, double-check that your branch is still selected before uploading any images.
 
 To add images to your article, you need to do following:
 
