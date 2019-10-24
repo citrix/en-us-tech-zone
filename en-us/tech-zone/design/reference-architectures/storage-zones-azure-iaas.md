@@ -192,4 +192,3 @@ The described architecture covers the tested and supported deployment model our 
 [Resources for storage zones controller](/en-us/storagezones-controller)
 
 [Citrix Files with Citrix Virtual Apps and Desktops Service Deployment Guide](/en-us/tech-zone/build/deployment-guides/citrix-files.html)
-
