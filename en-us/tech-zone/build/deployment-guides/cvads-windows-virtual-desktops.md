@@ -119,4 +119,54 @@ If you are an existing Microsoft O365 customer you should already have an Azure 
 
 ![Run Azure AD connect](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_16.png)
 
-5.  
+5.  In the Azure AD connect dialog, click **Continue.
+
+![Azure AD connect Exec](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_17.png)
+
+6.  Click **Use Express Settings**
+
+![Azure AD connect Express](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_18.png)
+
+7.  Provide the Azure Active Directory global administrator **Username and Password**. Click **Next** and **login again** if requested
+
+![Azure AD connect Express](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_19.png)
+
+8.  Provide the Active Directory enterprise administrator **Username and Password**. Click **Next**.
+
+![Azure AD connect AD creds](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_20.png)
+
+9. Check the **Continue without matching all UPN suffixes to verified domains**, click **Next**
+
+![Azure AD connect AD creds](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_21.png)
+
+10.  Click **Install**
+
+![Azure AD connect AD Install](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_22.png)
+
+11.  Once the config is complete. Click **Exit**
+
+![Azure AD connect AD Done](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_23.png)
+
+12.  Go back to the Azure Active Directory page in the Azure portal and click **Users**. Validate that the user(s) you created are visible in the list.
+
+![Azure AD connect AD Done](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_24.png)
+
+### Create a master image using Windows 10 Enterprise for Virtual Desktops
+
+1.  Select **+** or **+ Create a resource**. Search for **Microsoft Windows 10** and select the Microsoft Windows 10 option that shows Windows 10 Enterprise 2016 LTSB in the drop down.
+
+![Master Image - Win10 search](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_25.png)
+
+2.  Select one of the **Windows 10 Enterprise multi-session** options from the dropdown and then click **Create**
+
+![Master Image - Win10 select](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_26.png)
+
+3.  Select the appropriate **Subscription** and the **Resource group** created for WVD to deploy the machine in. Provide a **name** for the **Master Image VM**. Choose the same **region as the AD VM**. Enter the **credentials for the administrator account**. Click **Next: Disks**
+
+![Master Image - Basics](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_27.png)
+
+4.  Select the **appropriate OS disk Type** for your deployment. Click **Next: Networking**
+
+![Master Image - Disks](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_28.png)
+
+
