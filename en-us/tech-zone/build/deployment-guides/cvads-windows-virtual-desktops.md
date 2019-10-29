@@ -69,5 +69,54 @@ If you are an existing Microsoft O365 customer you should already have an Azure 
 
 ![Azure Account Info](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_4.png)
 
-3.  
+3.  **Verify your identity** and then **provide your credit card details** for billing purposes. You may be asked to verify your card details by making a payment of ~ USD 1
 
+![Azure Identity](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_5.png)
+
+4.  Once you are done you should see this in Azure Portal. If that is the payment method you want to use click **Next**. Else change it and then click **Next**.
+
+![Azure Account Card](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_6.png)
+
+5.  If you agree, check **I agree** check box for subscription agreement, offer details and privacy statement. Click **Sign Up**.
+
+![Azure Sign Up](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_7.png)
+
+6.  Alternately you can enroll in an O365 Enterprise E3 trial by going to this link https://signup.microsoft.com/Signup?OfferId=B07A1127-DE83-4a6d-9F85-2C104BDAE8B4&dl=ENTERPRISEPACK&culture=en-US&country=US&ali=1 and providing your details
+
+![O365 enrollment](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_8.png)
+
+7.  Click **+ Create a Resource** and search for **Azure Active Directory** and select it
+
+![Azure Active Directory](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_9.png)
+
+8.  Click **Create**
+
+![Create Azure Active Directory](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_10.png)
+
+9.  Provide the **Organization name** and **Initial domain name** of the AD that you wish to create. Select the **Country or Region** and then click **Create**
+
+![Create Azure Active Directory](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_11.png)
+
+10.  Wait for the Azure AD to be created
+
+![Create Azure Active Directory - Wait](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_12.png)
+
+### Connect the on premises AD to Azure AD using Azure AD Connect
+
+1.  Launch an RDP session to the AD.
+
+![Connect to AD](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_13.png)
+
+2.  Open a browser and login to Azure as the global administrator of the subscription and Azure AD. Click **Azure Active Directory** and then **Azure AD Connect**. Click **Download Azure AD Connect**
+
+![Download Azure AD connect](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_14.png)
+
+3.  In the browser window that opens click **Download**
+
+![Download Azure AD connect](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_15.png)
+
+4. Click **Run**
+
+![Run Azure AD connect](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_16.png)
+
+5.  
