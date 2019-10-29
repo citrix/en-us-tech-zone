@@ -61,6 +61,13 @@ This guide will provide detailed instructions on how to deploy and configure you
 
 If you are an existing Microsoft O365 customer you should already have an Azure Active Directory (AAD) and so you can login to Azure as the global administrator of the subscription and skip to the next section.
 
-Go to the url: [Sign into Azure](https://signup.azure.com/signup?offer=MS-AZR-0044P&returnUrl=https:%2F%2Faccount.azure.com%2FSubscriptions&l=en-US) and login to Azure
+1.  Go to the url: [Sign into Azure](https://signup.azure.com/signup?offer=MS-AZR-0044P&returnUrl=https:%2F%2Faccount.azure.com%2FSubscriptions&l=en-US) and **login to Azure**
 
 ![Login to Azure](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_3.png)
+
+2.  Enter you information, click **Next**
+
+![Azure Account Info](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_4.png)
+
+3.  
+
