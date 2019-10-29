@@ -165,8 +165,167 @@ If you are an existing Microsoft O365 customer you should already have an Azure 
 
 ![Master Image - Basics](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_27.png)
 
-4.  Select the **appropriate OS disk Type** for your deployment. Click **Next: Networking**
+4.  Select the **appropriate OS disk type** for your deployment. Click **Next: Networking**
 
 ![Master Image - Disks](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_28.png)
 
+5.  Select the **virtual network** that your other VMs are on and ensure that a **Public IP** is being created for the Master Image. Click **Review + Create**
+
+![Master Image - NW](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_29.png)
+
+6.  Ensure that the **Validation Passed** message appears and **check the machine settings**. Click **Create** to begin the Master Image VM creation
+
+![Master Image - Review](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_30.png)
+
+7.  Once the VM creation completes. Click **Go to resource**.
+
+![Master Image - Created](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_31.png)
+
+8.  The VM needs to have a networking rule to allow incoming RDP traffic on it Public IP. Click **Networking** in the Favorites column. Click **Add inbound port rule**
+
+![Master Image - Inbound Rule](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_32.png)
+
+9.  Your public IP can be obtained by running a google search for “whatsmyip” address to make RDP connections to the AD VM.
+Select **IP Address** as Source, enter the **Public IP Address of the machine** you wish to connect from in the Source IP field, set Destination Port ranges to **3389**, and **Protocol** to **TCP**. Set an appropriate **Priority value** and provide a **name to the rule.** * Click **Add**
+
+![Master Image - Inbound Rule Create](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_33.png)
+
+*: Please note that leaving port 3389 open remotely long-term could pose a security risk.
+
+10.  **RDP in to the machine with the admin credentials** you provided when creating the VM and **join the VM to the domain** and **reboot** the machine.
+
+### Create a Cloud Connector in your Azure subscription
+
+1.  Select **+** or **+ Create a resource** in Azure. Select **Windows Server 2016 Datacenter** under Get Started to create a new Windows Server 2016 machine.
+
+![Cloud Connector - Create](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_34.png)
+
+2.  Select the appropriate **Subscription** and the **Resource group** created for WVD to deploy the machine in. Provide a **name for the Cloud connector VM**. Chose the **same region as the AD** VM. Enter the **credentials for the administrator account**. Click **Next: Disks**
+
+![Cloud Connector - Basics](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_35.png)
+
+3.  Select the **appropriate OS disk type** for your deployment. Click **Next: Networking**
+
+![Cloud Connector - Disks](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_36.png)
+
+4.  Select the **virtual network** that your other VMs are on and ensure that a **Public IP** is being created for the Cloud Connector VM. Click **Review + Create**
+
+![Cloud Connector - NW](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_37.png)
+
+5.  Ensure that the **Validation Passed** message appears and **check the machine settings**. Click **Create** to begin the Cloud connector VM creation
+
+![Cloud Connector - Review](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_38.png)
+
+6.  Once the VM creation completes. Click **Go to Resource**
+
+![Cloud Connector - Created](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_39.png)
+
+7.  The VM needs to have a networking rule to allow incoming RDP traffic on it Public IP. * Click **Networking** in the favorites column and then click on the **name of the network interface**
+
+![Cloud Connector - NW Interface](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_40.png)
+
+8.  Click **Network Security Group** and then click **Edit**
+
+![Cloud Connector - NW Security Group Edit](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_41.png)
+
+9.  Click the **Network security group**
+
+![Cloud Connector - NW Security Group Select](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_42.png)
+
+10.  Select the **Network Security group** of your WVD VM as it already has the port rules to allow access to your machine. Click **Save** *
+
+![Cloud Connector - NW Security Group Set](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_43.png)
+
+*: Please note that leaving port 3389 open remotely long-term could pose a security risk.
+
+11.  RDP in to the machine with the admin credentials you provided when creating the VM and join the Cloud Connector VM to the domain and reboot the machine.
+
+### Create a Citrix Cloud account
+
+1.  RDP to the Cloud Connector VM and login as the AD admin. Goto the URL: https://citrix.cloud.com. If you are an existing Citrix Cloud customer go to Create a new Resource Location section. Please ensure that you have an active Citrix cloud account. If your account has expired you will need to contact sales to enable it.
+
+2.  If you are new to Citrix Cloud click Sign up and try it free in the bottom left.
+![Citrix Cloud - Sign Up](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_44.png)
+
+3.  Enter your **business details** and **check** the **“I’ve read, understand and agree to the Terms of Service”** check box, if you agree. Click **Continue**.
+
+![Citrix Cloud - Details](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_45.png)
+
+4.  Select an **appropriate region** to host your Citrix cloud deployment. Click **Continue**
+
+![Citrix Cloud - Region](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_46.png)
+
+5.  Verify your email id, by **clicking the link** sent to you **in your email**.
+
+![Citrix Cloud - Verify Email](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_47.png)
+
+6.  Open the email and click on the **Confirm Your Account** link.
+
+![Citrix Cloud - Confirm email](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_48.png)
+
+7.  Once the account is confirmed, **enter and confirm the password**. Click **Create Account**
+
+![Citrix Cloud - Create Account](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_49.png)
+
+8.  Click **Sign In**
+
+![Citrix Cloud - Sign In](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_50.png)
+
+### Create a new Resource Location
+
+1.  Enter **Username and Password**. Click **Sign In**. (If your account manages more than one customer select the appropriate one)
+
+![Resource Location - Login](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_51.png)
+
+2.  Under Resource Locations Click **Edit or Add New**
+
+![Resource Location - Edit or New](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_52.png)
+
+3.  Click + Resource Location and enter name of the New Resource Location. Click Save
+
+![Resource Location - Create](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_53.png)
+
+4.  Under the newly created resource location click + Cloud Connectors
+
+![Resource Location - + Cloud Connector](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_54.png)
+
+5.  Click Download. Click Run when the download begins
+
+![Resource Location - Download](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_55.png)
+
+6.  Citrix Cloud connectivity test successful message should be displayed. Click Close.
+If the test fails, check the following link to resolve the issue - https://support.citrix.com/article/CTX224133 
+
+![Resource Location - Connectivity Check](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_56.png)
+
+7.  Click Sign In and Sign in to Citrix Cloud
+
+![Resource Location - Sign In](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_57.png)
+
+8.  From the drop downs select the appropriate Customer and Resource Location. Click Install
+
+![Resource Location - Install](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_58.png)
+
+9.  Once the installation completes. A service connectivity test will run. Let it complete and you should again see a successful result. Click Close
+
+![Resource Location - Done](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_59.png)
+
+10.  Refresh the Resource Location page in Citrix Cloud. Click on Cloud Connectors
+
+![Cloud Connector - Refresh list](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_60.png)
+
+11.  The newly added Cloud Connector is listed. In Production environments, ensure to have 2 Cloud Connectors per Resource Location
+
+![Cloud Connector - Verify](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_61.png)
+
+![Cloud Trail - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_62.png)
+![Cloud Trail - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_63.png)
+![Cloud Trail - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_64.png)
+
+
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_65.png)
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_66.png)
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_67.png)
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_68.png)
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_69.png)
 
