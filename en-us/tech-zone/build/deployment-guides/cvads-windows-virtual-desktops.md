@@ -281,51 +281,92 @@ Select **IP Address** as Source, enter the **Public IP Address of the machine** 
 
 ![Resource Location - Edit or New](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_52.png)
 
-3.  Click + Resource Location and enter name of the New Resource Location. Click Save
+3.  Click **+ Resource Location** and enter **name of the New Resource Location**. Click **Save**
 
 ![Resource Location - Create](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_53.png)
 
-4.  Under the newly created resource location click + Cloud Connectors
+4.  Under the newly created resource location click **+ Cloud Connectors**
 
 ![Resource Location - + Cloud Connector](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_54.png)
 
-5.  Click Download. Click Run when the download begins
+5.  Click **Download**. Click **Run** when the download begins
 
 ![Resource Location - Download](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_55.png)
 
-6.  Citrix Cloud connectivity test successful message should be displayed. Click Close.
+6.  Citrix Cloud connectivity test successful message should be displayed. Click **Close**.
 If the test fails, check the following link to resolve the issue - https://support.citrix.com/article/CTX224133 
 
 ![Resource Location - Connectivity Check](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_56.png)
 
-7.  Click Sign In and Sign in to Citrix Cloud
+7.  Click **Sign In** and sign in to Citrix Cloud
 
 ![Resource Location - Sign In](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_57.png)
 
-8.  From the drop downs select the appropriate Customer and Resource Location. Click Install
+8.  From the drop downs select the appropriate **Customer and Resource Location**. Click **Install**
 
 ![Resource Location - Install](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_58.png)
 
-9.  Once the installation completes. A service connectivity test will run. Let it complete and you should again see a successful result. Click Close
+9.  Once the installation completes. A service connectivity test will run. Let it complete and you should again see a successful result. Click **Close**
 
 ![Resource Location - Done](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_59.png)
 
-10.  Refresh the Resource Location page in Citrix Cloud. Click on Cloud Connectors
+10.  Refresh the Resource Location page in Citrix Cloud. Click on **Cloud Connectors**
 
-![Cloud Connector - Refresh list](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_60.png)
+![Cloud Connector - Refresh list](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_61.png)
 
-11.  The newly added Cloud Connector is listed. In Production environments, ensure to have 2 Cloud Connectors per Resource Location
+11.  The newly added Cloud Connector is listed. In production environments, ensure to have 2 Cloud Connectors per resource location
 
-![Cloud Connector - Verify](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_61.png)
+![Cloud Connector - Verify](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_62.png)
 
-![Cloud Trail - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_62.png)
-![Cloud Trail - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_63.png)
-![Cloud Trail - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_64.png)
+### Request a Citrix Virtual Apps and Desktops service trial
 
+1.  Click **Citrix Cloud** on top of the page. If you don’t have a Virtual Apps and Desktops Service trial enabled, **scroll down** to **Available Services** and click **Request Demo** in the Virtual Apps and Desktops Service tile
 
-![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_65.png)
-![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_66.png)
-![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_67.png)
-![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_68.png)
-![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_69.png)
+![Cloud Trail - Request Demo](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_63.png)
 
+2.  Click **Request a call**
+
+![Cloud Trail - Request call](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_64.png)
+
+3.  **Enter your details** and in Comments section specify **“Windows Virtual Desktop Trial”**. Click **Submit**
+
+![Cloud Trail - Submit](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_65.png)
+
+### Install Virtual Delivery Agent on the WVD host VM
+
+While we wait, we can install the Citrix Virtual Apps and Desktops, virtual delivery agent on the Windows 10 Multiuser VM that we created.
+
+1.  Connect to the **WVD VM via RDP as the domain admin**
+
+![VDA Install - RDP](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_66.png)
+
+2.  Open **Citrix.com** in Internet Explorer. Hover over **Sign in** and click **My Account**
+
+![VDA Install - Citrix.com](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_67.png)
+
+3.  Sign in with your **Username and Password**. Click **Downloads** in the top menu
+
+![VDA Install - Sing In](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_68.png)
+
+4.  From the **Select a Product** drop down, select **Citrix Virtual Apps and Desktops**
+
+![VDA Install - Select CVAD](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_69.png)
+
+5.  In the page that opens, select the **latest version of Citrix Virtual Apps and Desktops 7** (without the .x at the end)
+
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_70.png)
+
+6.  Scroll down to **Components that are on the product ISO but also packaged separately**. Click the **chevron** to expand the section. Click **Download File** under Server OS Virtual Delivery Agent
+
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_71.png)
+
+7.  
+
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_72.png)
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_73.png)
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_74.png)
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_75.png)
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_76.png)
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_77.png)
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_78.png)
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_79.png)
