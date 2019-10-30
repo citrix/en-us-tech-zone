@@ -35,7 +35,7 @@ This guide will showcase how to do the following actions:
 12.  Utilize your Citrix Virtual Apps and Desktops service account (Citrix Cloud account) to connect to your on-premises resources using the Citrix Cloud Connector
 13.  Let your users connect to the WVD or on premises sessions via Citrix Workspace
 
-There is a requirement from Microsoft that the WVD session hosts must be joined to a Windows Active Directory (AD) domain that has been synchronized with either Azure AD using Azure AD Connect or with Azure AD Domain Services. This would require you to connect your on-premises Active Directory to your organization’s Azure subscription. This is out-of-scope for this guide but if you are also a Citrix Networking or Citrix SDWAN customer then you can use Site-to-Site VPN [https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal) with Citrix ADC https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html (which requires a public IP) or Citrix SDWAN [https://docs.citrix.com/en-us/citrix-sd-wan-center/10-2/azure-virtual-wan.html](https://docs.citrix.com/en-us/citrix-sd-wan-center/10-2/azure-virtual-wan.html). The two preceding options are creating IP-Sec tunnels between your on-premises environment and the WVD network in Azure.
+There is a requirement from Microsoft that the WVD session hosts must be joined to a Windows Active Directory (AD) domain that has been synchronized with either Azure AD using Azure AD Connect or with Azure AD Domain Services. This would require you to connect your on-premises Active Directory to your organization’s Azure subscription. This is out-of-scope for this guide but if you are also a Citrix Networking or Citrix SDWAN customer then you can use Site-to-Site VPN [https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal) with Citrix ADC [https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html](https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) (which requires a public IP) or Citrix SDWAN [https://docs.citrix.com/en-us/citrix-sd-wan-center/10-2/azure-virtual-wan.html](https://docs.citrix.com/en-us/citrix-sd-wan-center/10-2/azure-virtual-wan.html). The two preceding options are creating IP-Sec tunnels between your on-premises environment and the WVD network in Azure.
 
 If you are looking for a solution that does much more than just setup a link between these 2 locations, then we suggest considering creating an end to end SDWAN solution. The main advantages this gives you is integrated security, orchestration, and policy based configuration. SDWAN has further benefits:
 
@@ -82,7 +82,7 @@ If you are an existing Microsoft O365 customer you should already have an Azure 
 
     ![Azure Sign Up](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_7.png)
 
-1.  Alternately you can enroll in an O365 Enterprise E3 trial by going to this link https://signup.microsoft.com/Signup?OfferId=B07A1127-DE83-4a6d-9F85-2C104BDAE8B4&dl=ENTERPRISEPACK&culture=en-US&country=US&ali=1 and providing your details
+1.  Alternately you can enroll in an O365 Enterprise E3 trial by going to this [link](https://signup.microsoft.com/Signup?OfferId=B07A1127-DE83-4a6d-9F85-2C104BDAE8B4&dl=ENTERPRISEPACK&culture=en-US&country=US&ali=1) and providing your details
 
     ![O365 enrollment](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_8.png)
 
@@ -242,7 +242,7 @@ Select **IP Address** as Source, enter the **Public IP Address of the machine** 
 
 ### Create a Citrix Cloud account
 
-1.  RDP to the Cloud Connector VM and login as the AD admin. Goto the URL: https://citrix.cloud.com. If you are an existing Citrix Cloud customer go to Create a new Resource Location section. Please ensure that you have an active Citrix cloud account. If your account has expired you will need to contact sales to enable it.
+1.  RDP to the Cloud Connector VM and login as the AD admin. Goto the URL: [Citrix Cloud](https://citrix.cloud.com). If you are an existing Citrix Cloud customer go to Create a new Resource Location section. Please ensure that you have an active Citrix cloud account. If your account has expired you will need to contact sales to enable it.
 
 1.  If you are new to Citrix Cloud click Sign up and try it free in the bottom left.
 
@@ -295,7 +295,7 @@ Select **IP Address** as Source, enter the **Public IP Address of the machine** 
     ![Resource Location - Download](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_55.png)
 
 1.  Citrix Cloud connectivity test successful message should be displayed. Click **Close**.
-If the test fails, check the following link to resolve the issue - https://support.citrix.com/article/CTX224133
+If the test fails, check the following link to resolve the issue - [CTX224133](https://support.citrix.com/article/CTX224133)
 
     ![Resource Location - Connectivity Check](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_56.png)
 
@@ -430,7 +430,7 @@ Configure Citrix Virtual Apps and Desktops service to connect to the Azure Subsc
 
     ![Hosting Connect - Clipboard](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_87.png)
 
-1.  **Paste the ID** in the Subscription ID text box and enter a **Connection Name**. Click **Create New** to create a new service principal. Alternately you can manually grant Citrix Cloud Access to the Azure subscription (with more restrictive roles than the default contributor)  https://support.citrix.com/article/CTX224110
+1.  **Paste the ID** in the Subscription ID text box and enter a **Connection Name**. Click **Create New** to create a new service principal. Alternately you can manually grant Citrix Cloud Access to the Azure subscription (with more restrictive roles than the default contributor) [CTX224110](https://support.citrix.com/article/CTX224110)
 
     ![Hosting Connect - New Connection](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_88.png)
 
@@ -569,7 +569,7 @@ If you wish to add your on-premises resources to the Workspace follow the below 
 
 ### Add on-premises site to the Workspace
 
-1.  Follow the steps in the guide to add the on-premises site to the Workspace. https://docs.citrix.com/en-us/citrix-cloud/workspaces/add-on-premises-site.html#prerequisites Complete till the end of Task 3: Configure connectivity and confirm settings in this page.
+1.  Follow the steps in the [guide](https://docs.citrix.com/en-us/citrix-cloud/workspaces/add-on-premises-site.html#prerequisites) to add the on-premises site to the Workspace. Complete till the end of Task 3: Configure connectivity and confirm settings in this page.
 
 ![On Prem Site in WS](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_120.png)
 
