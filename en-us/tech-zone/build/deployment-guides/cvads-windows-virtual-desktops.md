@@ -439,5 +439,52 @@ Configure Citrix Virtual Apps and Desktops service to connect to the Azure Subsc
 9.   Check the **Consent on behalf of your organization** check box and click **Accept** if you agree. Once the validation completes Connected is displayed. Click **Next**
 
 ![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_90.png)
+
+10.  Select the **appropriate Region** and click **Next**
+
 ![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_91.png)
+
+11.  Enter a **Name for the network** and select the appropriate **Virtual network** and **Subnet** where the VMs are to be created. Click **Next**. Review the Summary and click **Finish**
+
 ![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_92.png)
+
+12.  You will be returned to the Hosting page. Once you are done click **Machine Catalogs** to start creating your catalog.
+
+![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_93.png)
+
+### Create a Machine Catalog and a Delivery Group
+
+
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_94.png)
+
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_95.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_96.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_97.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_98.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_99.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_100.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_101.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_102.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_103.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_104.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_105.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_106.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_107.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_108.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_109.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_110.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_111.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_112.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_113.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_114.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_115.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_116.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_117.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_118.png)
+![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_119.png)
+![On Prem Site in WS - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_120.png)
+![Launch Session - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_120.png)
+![Launch Session - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_121.png)
+![Launch Session - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_122.png)
+![Launch Session - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_123.png)
+![Launch Session - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_124.png)
