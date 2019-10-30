@@ -405,16 +405,39 @@ Configure Citrix Virtual Apps and Desktops service to connect to the Azure Subsc
 
 1.  Once the trial is approved. **Login to Citrix Cloud** from your local machine. Scroll to **My Services**, and locate **Virtual Apps and Desktops** service tile, click **Manage**
 
-![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_82.png)
+![Hosting Connect - Manage](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_82.png)
 
-2. 
-![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_83.png)
-![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_84.png)
+2.  Click **Manage Service**. If you scroll further down you will see the **Workspace Experience URL. Bookmark it**.
+
+![Hosting Connect - Bookmark](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_83.png)
+
+3.  In the Left Menu under Configuration. Click **Hosting** and then click **Add Connection and Resources** that will host the machines.
+
+![Hosting Connect - Add Hosting](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_84.png)
+
+4.  From the drop downs select **Microsoft© AzureTM*  as Connection Type, **Azure Global** for Azure environment and an
+**appropriate Zone** for Zone name. Leave **Studio Tools** selected. Click **Next**
+
 ![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_85.png)
+
+5.  **Hover over the grey notch** just below the Manage text (center of the screen). A **workspace icon** will slide down **click it**
+
 ![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_86.png)
+
+6.  **Copy your Azure Subscription ID** to the clipboard. Click the **Open clipboard button** in the middle and **paste the Subscription ID** in it. Click anywhere outside the text box
+
 ![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_87.png)
+
+7.  **Paste the ID** in the Subscription ID text box and enter a **Connection Name**. Click **Create New** to create a new service principal. Alternately you can manually grant Citrix Cloud Access to the Azure subscription (with more restrictive roles than the default contributor)  https://support.citrix.com/article/CTX224110
+
 ![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_88.png)
+
+8.  **Sign in** to your Azure account when prompted. **Ensure that the user is an owner and not an external user** in the subscription
+
 ![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_89.png)
+
+9.   Check the **Consent on behalf of your organization** check box and click **Accept** if you agree. Once the validation completes Connected is displayed. Click **Next**
+
 ![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_90.png)
 ![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_91.png)
 ![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_92.png)
