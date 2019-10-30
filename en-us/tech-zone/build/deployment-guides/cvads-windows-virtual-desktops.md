@@ -360,13 +360,61 @@ While we wait, we can install the Citrix Virtual Apps and Desktops, virtual deli
 
 ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_71.png)
 
-7.  
+7.  **Check** “I have read and certify that I comply with the above Export Control Laws” check box, if you agree. Click **Accept**. The download should begin.
 
 ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_72.png)
+
+8.  **Save** the file and **Run** it when the download completes
+
 ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_73.png)
+
+9.  Click **Next** in the Environment section to create a master MCS image.
+
 ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_74.png)
+
+10.  In the Core Components section, check the Citrix Workspace App checkbox if your users would use the session to launch sessions from within it. Click **Next**
+
 ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_75.png)
+
+11.  In the Additional  section choose the components  you need and click **Next**
+
 ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_76.png)
+
+12.  Enter the **UPN for the Cloud Connector** VM and click **Test Connection**. Ensure that the test is successful a green tick appears next to the entered UPN. Click **Add** and click **Next**
+
 ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_77.png)
+
+13.  Click **Next** in the Feature section and **Next** again in the Firewall section.
+
 ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_78.png)
+
+14.  Click **Install** in the Summary section
+
 ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_79.png)
+
+15.  Once the installation completes, in the Diagnostics section click **Connect**. Enter your **Citrix Cloud credentials**, click **OK**. Once the credentials are validated, click **Next**
+
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_80.png)
+
+16.  Click **Finish** and let the VM **reboot**.
+
+![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_81.png)
+
+### Create a hosting connection between Citrix Virtual Apps and Desktops and Azure
+Configure Citrix Virtual Apps and Desktops service to connect to the Azure Subscription that hosts the Windows Virtual Desktop VMs.
+
+1.  Once the trial is approved. **Login to Citrix Cloud** from your local machine. Scroll to **My Services**, and locate **Virtual Apps and Desktops** service tile, click **Manage**
+
+![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_82.png)
+
+2. 
+![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_83.png)
+![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_84.png)
+![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_85.png)
+![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_86.png)
+![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_87.png)
+![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_88.png)
+![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_89.png)
+![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_90.png)
+![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_91.png)
+![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_92.png)
