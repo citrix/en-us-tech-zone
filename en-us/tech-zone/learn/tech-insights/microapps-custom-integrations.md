@@ -1,14 +1,16 @@
 ---
 layout: doc
 ---
-# Title
+# Microapp Custom Integrations
 
 ## Contributors
 
-**Author:** [Name](https://twitter.com/ID)
+**Author:** [Ana Ruiz](https://twitter.com/mobileruiz)
 
-DESCRIPTION
+**Special Thanks:** Alan Goldman
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=ID):**
+Learn how you can create custom integrations with Citrix's Microapp Builder allowing you to create microapps for applications specific to your needs. Our HTTP connector allows you to connect to applications that can communicate through JSON or REST APIs. In this video we also go over how you can use an API wrapper to connect to applications that don't support JSON or REST.
 
-[![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=ID)
+**Watch this video to [learn more](https://www.youtube.com/watch?v=xbuyNoPtdac):**
+
+[![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=xbuyNoPtdac)
