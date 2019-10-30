@@ -61,6 +61,8 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 ## Workspace
 
+[Federated Authentication Service](/en-us/tech-zone/learn/tech-insights/federated-authentication-service.html) - Single Sign-on to Windows-based virtual apps and desktops when using a non-Active Directory based Citrix Workspace identity.
+
 [Microapps](/en-us/tech-zone/learn/tech-insights/microapps.html) - Increase productivity by adding microapps to Citrix Workspace. Microapps allow users to view information and perform actions without launching the full application.
 
 [Site Aggregation](/en-us/tech-zone/learn/tech-insights/site-aggregation.html) - Hybrid deployment that allows your on-premises Citrix Virtual Apps & Desktops environments to be part of Citrix Workspace.
