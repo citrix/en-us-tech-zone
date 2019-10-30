@@ -418,73 +418,174 @@ Configure Citrix Virtual Apps and Desktops service to connect to the Azure Subsc
 4.  From the drop downs select **Microsoft© AzureTM*  as Connection Type, **Azure Global** for Azure environment and an
 **appropriate Zone** for Zone name. Leave **Studio Tools** selected. Click **Next**
 
-![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_85.png)
+![Hosting Connect - Select Azure](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_85.png)
 
 5.  **Hover over the grey notch** just below the Manage text (center of the screen). A **workspace icon** will slide down **click it**
 
-![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_86.png)
+![Hosting Connect - Workspace tool](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_86.png)
 
 6.  **Copy your Azure Subscription ID** to the clipboard. Click the **Open clipboard button** in the middle and **paste the Subscription ID** in it. Click anywhere outside the text box
 
-![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_87.png)
+![Hosting Connect - Clipboard](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_87.png)
 
 7.  **Paste the ID** in the Subscription ID text box and enter a **Connection Name**. Click **Create New** to create a new service principal. Alternately you can manually grant Citrix Cloud Access to the Azure subscription (with more restrictive roles than the default contributor)  https://support.citrix.com/article/CTX224110
 
-![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_88.png)
+![Hosting Connect - New Connection](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_88.png)
 
 8.  **Sign in** to your Azure account when prompted. **Ensure that the user is an owner and not an external user** in the subscription
 
-![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_89.png)
+![Hosting Connect - Sign in](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_89.png)
 
 9.   Check the **Consent on behalf of your organization** check box and click **Accept** if you agree. Once the validation completes Connected is displayed. Click **Next**
 
-![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_90.png)
+![Hosting Connect - Agree terms](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_90.png)
 
 10.  Select the **appropriate Region** and click **Next**
 
-![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_91.png)
+![Hosting Connect - Region](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_91.png)
 
 11.  Enter a **Name for the network** and select the appropriate **Virtual network** and **Subnet** where the VMs are to be created. Click **Next**. Review the Summary and click **Finish**
 
-![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_92.png)
+![Hosting Connect - NW & Finish](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_92.png)
 
 12.  You will be returned to the Hosting page. Once you are done click **Machine Catalogs** to start creating your catalog.
 
-![Hosting Connect - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_93.png)
+![Hosting Connect - Done](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_93.png)
 
 ### Create a Machine Catalog and a Delivery Group
 
+1.  Click **Create Machine Catalog** (right side menu). In the Machine Catalog Setup dialog click **Next**
 
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_94.png)
+![Catalog and DG - Create](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_94.png)
 
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_95.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_96.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_97.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_98.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_99.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_100.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_101.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_102.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_103.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_104.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_105.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_106.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_107.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_108.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_109.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_110.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_111.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_112.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_113.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_114.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_115.png)
+2.  Ensure **Multi-Session OS** is selected. Click **Next**
+
+![Catalog and DG - Multi Session OS](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_95.png)
+
+3.  Ensure **Machines that are power managed** and **Citrix Machine Creation service** are selected and the correct Azure network is shown in the Resources. Click **Next**
+
+![Catalog and DG - Power Mgmt & MCS](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_96.png)
+
+4.  Choose the correct **disk that is associated with the WVD VM**. From the minimum functional level drop down **select 1811 (or newer)**. Click **Next**. A pop up will appear asking for the VM attached to the VHD to be stopped.
+
+![Catalog and DG - Master Image & Func Lvl](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_97.png)
+
+5.  **Login to the Azure portal** and Under **Virtual Machines**, go to the **WVD VM** and Click the **Stop** button. 
+Ignore the warning about losing the Public IP. Wait for **status to show Stopped (deallocated)**. Return to the **Citrix Cloud tab** and click **Close**
+
+![Catalog and DG - Stop VM](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_98.png)
+
+6.  Leave **Defaults** and click **Next**
+
+![Catalog and DG - Storage](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_99.png)
+
+7.  **Modify the number of VMs** if you wish and select the **machine size** you want for your VMs. Click **Next**
+
+![Catalog and DG - VM no & size](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_100.png)
+
+8.  Set the **write back cache size** if you want it. Click **Next**
+
+![Catalog and DG - Cache](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_101.png)
+
+9.  Click **Next** and click **Close**
+
+![Catalog and DG - Warning](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_102.png)
+
+10.  Click **Next**
+
+![Catalog and DG - NIC](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_103.png)
+
+11.  Select the **OU** in which the VMs should be placed. Enter the computer **Account naming scheme**. Ensure the name is less than 15 chars long and ends with a #. Click **Next**
+
+![Catalog and DG - AD accounts](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_104.png)
+
+12.  Click **Enter Credentials**. In the dialog that opens enter **username and password** of the AD admin. Click **OK**. Click **Next**
+
+![Catalog and DG - AD Admin creds](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_105.png)
+
+13.  Enter a **name** for the machine catalog. Click **Finish**
+
+![Catalog and DG - Catalog name](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_106.png)
+
+14.  Wait for the catalog to be created.
+
+![Catalog and DG - Creation](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_107.png)
+
+15.  You will be returned to the Machine Catalogs page. From the left side menu click **Delivery Groups** to start creating your delivery group.
+
+![Catalog and DG - Done](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_108.png)
+
+16.  Click **Create Delivery Group** from the right side menu. In the Create Delivery Group dialog that opens click **Next**
+
+![Catalog and DG - Create DG](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_109.png)
+
+17.  Select the **WVD Catalog**. **Increment the number of machines** to the number of VMS you want to add to the delivery group. Click **Next**
+
+![Catalog and DG - Select machines](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_110.png)
+
+18.  For our example we will assign the users to a particular group. Click the **Restrict use to this Delivery Group to the following users’** radio button. Click **Add**
+
+![Catalog and DG - Users restriction](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_111.png)
+
+19.  **Add domain users** that you want to have access to the delivery group. You can check their names by clicking **Check Names**. Once you are done click **OK**
+
+![Catalog and DG - Apps](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_112.png)
+
+
+20.  If you want to also make apps available from this delivery group click the **Add** dropdown list and choose **From Start Menu**
+
+![Catalog and DG - Choose Apps](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_113.png)
+
+21.  From the Add Applications from Start Menu Dialog **check the boxes next to the apps** you want to make available. Then click **OK**
+
+![Catalog and DG - Apps done](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_114.png)
+
+22.  Click **Next**
+
+![Catalog and DG - Add Desktops](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_115.png)
+
+23.  In the Desktops section click **Add**. Enter **Display Name** for the delivery group. Ensure **Enable desktop** is checked. Click **OK**
+
 ![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_116.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_117.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_118.png)
-![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_119.png)
-![On Prem Site in WS - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_120.png)
-![Launch Session - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_120.png)
-![Launch Session - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_121.png)
-![Launch Session - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_122.png)
-![Launch Session - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_123.png)
-![Launch Session - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_124.png)
+
+24.  Click **Next**
+
+![Catalog and DG - Create](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_117.png)
+
+25.  Enter a **Delivery Group name**. Click **Finish**
+
+![Catalog and DG - Done](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_118.png)
+
+26.  Once the delivery group is created, the Manage Tab should look like this.
+
+![Catalog and DG - DG list](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_119.png)
+
+If you wish to add your on-premises resources to the Workspace follow the below steps.
+
+### Create a Cloud Connector in your on-premises datacenter
+
+1.  Add a cloud connector in your on-premises datacenter. Create a Windows server 2012 R2 or 2016 VM in your on-premises. Repeat the steps in the “[Create a new Resource Location](#create-a-new-resource-location)” section. 
+
+### Add on-premises site to the Workspace
+
+1.  Follow the steps in the guide to add the on-premises site to the Workspace. https://docs.citrix.com/en-us/citrix-cloud/workspaces/add-on-premises-site.html#prerequisites Complete till the end of Task 3: Configure connectivity and confirm settings in this page.
+
+![On Prem Site in WS](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_120.png)
+
+### Launch the session from Citrix Workspace
+
+1.  **Open the Workspace URL** you had saved earlier (from Citrix Cloud) to the Citrix workspace. **Login as one of the domain users** that you had added to the Delivery Group. 
+
+![Launch Session - Open WS](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_121.png)
+
+2.  Click **View all Desktops**
+
+![Launch Session - Desktops list](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_122.png)
+
+3.  Click on the **Windows 10 Multi-session DG** desktop that you created in Azure.
+
+![Launch Session - Click desktop](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_123.png)
+
+4.  The session should launch giving you access to the Windows Virtual Desktop
+
+![Launch Session - Launch](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_124.png)
