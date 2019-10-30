@@ -1,7 +1,7 @@
 ---
 layout: doc
 ---
-# Microapp Custom Integrations
+# Microapps Custom Integrations
 
 ## Contributors
 
@@ -13,4 +13,4 @@ Learn how you can create custom integrations with Citrix's microapp builder allo
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=xbuyNoPtdac):**
 
-[![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=xbuyNoPtdac)
+[![Tech Insight Video](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=xbuyNoPtdac)
