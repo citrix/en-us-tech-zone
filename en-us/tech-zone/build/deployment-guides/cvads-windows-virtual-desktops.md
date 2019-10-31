@@ -1,6 +1,7 @@
 ---
 layout: doc
 ---
+
 # Deployment guide for Citrix Virtual Apps and Desktops service with Windows Virtual Desktop
 
 ## Contributors
@@ -35,7 +36,7 @@ This guide showcases how to do the following actions:
 12.  Utilize your Citrix Virtual Apps and Desktops service account (Citrix Cloud account) to connect to your on-premises resources using the Citrix Cloud Connector
 13.  Let your users connect to the WVD or on premises sessions via Citrix Workspace
 
-There is a requirement from Microsoft that the WVD session hosts must be joined to a Windows Active Directory (AD) domain that has been synchronized with either Azure AD using Azure AD Connect or with Azure AD Domain Services. This would require you to connect your on-premises Active Directory to your organization’s Azure subscription. This is out-of-scope for this guide but if you are also a Citrix Networking or Citrix SD-WAN customer then you can use Site-to-Site VPN [https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal) with Citrix ADC [https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html](https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) (which requires a public IP) or Citrix SD-WAN [https://docs.citrix.com/en-us/citrix-sd-wan-center/10-2/azure-virtual-wan.html](https://docs.citrix.com/en-us/citrix-sd-wan-center/10-2/azure-virtual-wan.html). The two preceding options are creating IPsec tunnels between your on-premises environment and the WVD network in Azure.
+There is a requirement from Microsoft that the WVD session hosts must be joined to a Windows Active Directory (AD) domain that has been synchronized with either Azure AD using Azure AD Connect or with Azure AD Domain Services. This would require you to connect your on-premises Active Directory to your organization’s Azure subscription. This is out-of-scope for this guide but if you are also a Citrix Networking or Citrix SD-WAN customer then you can use [Site-to-Site VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal) with [Citrix ADC](https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) (which requires a public IP) or [Citrix SD-WAN](https://docs.citrix.com/en-us/citrix-sd-wan-center/10-2/azure-virtual-wan.html). The two preceding options are creating IPsec tunnels between your on-premises environment and the WVD network in Azure.
 
 If you are looking for a solution that does much more than just set-up a link between these 2 locations, then we suggest considering creating an end to end SDWAN solution. The main advantages this gives you are integrated security, orchestration, and policy based configuration. SDWAN has further benefits:
 
@@ -46,19 +47,17 @@ If you are looking for a solution that does much more than just set-up a link be
 
 To set up an end to end SDWAN solution you can follow these guides:
 
-[https://docs.citrix.com/en-us/citrix-sd-wan/10-2/configuration/configuring-virtual-path-service-between-mcn-client-sites.html](https://docs.citrix.com/en-us/citrix-sd-wan/10-2/configuration/configuring-virtual-path-service-between-mcn-client-sites.html)
+[Configuring SDWAN to connect to Azure virtual network](https://docs.citrix.com/en-us/citrix-sd-wan/10-2/configuration/configuring-virtual-path-service-between-mcn-client-sites.html)
 
-[https://docs.citrix.com/en-us/citrix-sd-wan-platforms/vpx-models/vpx-se/sd-wan-se-on-azure-10-2.html](https://docs.citrix.com/en-us/citrix-sd-wan-platforms/vpx-models/vpx-se/sd-wan-se-on-azure-10-2.html)
+[Deplopy SDWAN on Azure](https://docs.citrix.com/en-us/citrix-sd-wan-platforms/vpx-models/vpx-se/sd-wan-se-on-azure-10-2.html)
 
-[https://docs.citrix.com/en-us/citrix-sd-wan-center/11/deploying-sd-wan-appliance/deploy-citrix-sd-wan-on-azure-from-citrix-sd-wan-center.html](https://docs.citrix.com/en-us/citrix-sd-wan-center/11/deploying-sd-wan-appliance/deploy-citrix-sd-wan-on-azure-from-citrix-sd-wan-center.html)
+[Deploy SDWAN on Azure using SDWAN Center](https://docs.citrix.com/en-us/citrix-sd-wan-center/11/deploying-sd-wan-appliance/deploy-citrix-sd-wan-on-azure-from-citrix-sd-wan-center.html)
 
-Express route [https://azure.microsoft.com/en-in/services/expressroute/](https://azure.microsoft.com/en-in/services/expressroute/) or Point-to-Site VPN [https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal) which doesn’t require a public IP are other options to establish the connectivity.
+[Express route](https://azure.microsoft.com/en-in/services/expressroute/) or [Point-to-Site VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal) which doesn’t require a public IP are other options to establish the connectivity.
 
 This guide provides detailed instructions on how to deploy and configure your environment including VMs, connecting your AD to Azure AD. As a Citrix and Azure tenant administrator, you create the WVD environment to enable your users to test various scenarios that showcase Citrix Virtual Apps and Desktops service and Windows Virtual Desktop integration.
 
-## Deployment Steps
-
-### Create an Azure Subscription and an Azure Active Directory Tenant
+## Create an Azure Subscription and an Azure Active Directory Tenant
 
 If you are an existing Microsoft O365 customer you should already have an Azure Active Directory (AAD) and so you can log in to Azure as the global administrator of the subscription and skip to the next section.
 
@@ -102,7 +101,7 @@ If you are an existing Microsoft O365 customer you should already have an Azure 
 
     ![Create Azure Active Directory - Wait](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_12.png)
 
-### Connect the on premises AD to Azure AD using Azure AD Connect
+## Connect the on premises AD to Azure AD using Azure AD Connect
 
 1.  Launch an RDP session to the AD.
 
@@ -152,7 +151,7 @@ If you are an existing Microsoft O365 customer you should already have an Azure 
 
     ![Azure AD connect AD Done](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_24.png)
 
-### Create a master image using Windows 10 Enterprise for Virtual Desktops
+## Create a master image using Windows 10 Enterprise for Virtual Desktops
 
 1.  Select **+** or **+ Create a resource**. Search for **Microsoft Windows 10** and select the Microsoft Windows 10 option that shows Windows 10 Enterprise 2016 LTSB in the drop-down list.
 
@@ -195,7 +194,7 @@ Select **IP Address** as Source, enter the **Public IP Address of the machine** 
 
 1.  **RDP in to the machine with the admin credentials** you provided when creating the VM and **join the VM to the domain** and **reboot** the machine.
 
-### Create a Cloud Connector in your Azure subscription
+## Create a Cloud Connector in your Azure subscription
 
 1.  Select **+** or **+ Create a resource** in Azure. Select **Windows Server 2016 Datacenter** under Get Started to create a new Windows Server 2016 machine.
 
@@ -240,7 +239,7 @@ Select **IP Address** as Source, enter the **Public IP Address of the machine** 
 
 1.  RDP in to the machine with the admin credentials you provided when creating the VM and join the Cloud Connector VM to the domain and reboot the machine.
 
-### Create a Citrix Cloud account
+## Create a Citrix Cloud account
 
 1.  RDP to the Cloud Connector VM and login as the AD admin. Goto the URL: [Citrix Cloud](https://citrix.cloud.com). If you are an existing Citrix Cloud customer go to Create a new Resource Location section. Ensure that you have an active Citrix Cloud account. If your account has expired you need to contact sales to enable it.
 
@@ -272,7 +271,7 @@ Select **IP Address** as Source, enter the **Public IP Address of the machine** 
 
     ![Citrix Cloud - Sign In](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_50.png)
 
-### Create a new Resource Location
+## Create a new Resource Location
 
 1.  Enter **Username and Password**. Click **Sign In**. (If your account manages more than one customer select the appropriate one)
 
@@ -319,7 +318,7 @@ If the test fails, check the following link to resolve the issue - [CTX224133](h
 
     ![Cloud Connector - Verify](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_62.png)
 
-### Request a Citrix Virtual Apps and Desktops service trial
+## Request a Citrix Virtual Apps and Desktops service trial
 
 1.  Click **Citrix Cloud** on top of the page. If you don’t have a Virtual Apps and Desktops Service trial enabled, **scroll down** to **Available Services** and click **Request Demo** in the Virtual Apps and Desktops Service tile
 
@@ -333,7 +332,7 @@ If the test fails, check the following link to resolve the issue - [CTX224133](h
 
     ![Cloud Trail - Submit](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_65.png)
 
-### Install Virtual Delivery Agent on the WVD host VM
+## Install Virtual Delivery Agent on the WVD host VM
 
 While we wait, we can install the Citrix Virtual Apps and Desktops, Virtual Delivery Agent on the Windows 10 Multiuser VM that we created.
 
@@ -355,53 +354,53 @@ While we wait, we can install the Citrix Virtual Apps and Desktops, Virtual Deli
 
 1.  In the page that opens, select the **latest version of Citrix Virtual Apps and Desktops 7** (without the .x at the end)
 
-    ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_70.png)
+    ![VDA Install - Choose latest](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_70.png)
 
 1.  Scroll down to **Components that are on the product ISO but also packaged separately**. Click the **chevron** to expand the section. Click **Download File** under Server OS Virtual Delivery Agent
 
-    ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_71.png)
+    ![VDA Install - Select components](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_71.png)
 
 1.  **Check** “I have read and certify that I comply with the above Export Control Laws” check box, if you agree. Click **Accept**. The download should begin.
 
-    ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_72.png)
+    ![VDA Install - Agree terms](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_72.png)
 
 1.  **Save** the file and **Run** it when the download completes
 
-    ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_73.png)
+    ![VDA Install - Run](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_73.png)
 
 1.  Click **Next** in the Environment section to create a master MCS image.
 
-    ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_74.png)
+    ![VDA Install - Environment](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_74.png)
 
 1.  In the Core Components section, check the Citrix Workspace app check box if your users would use the session to launch sessions from within it. Click **Next**
 
-    ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_75.png)
+    ![VDA Install - Workspace App](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_75.png)
 
 1.  In the Additional section choose the components you need and click **Next**
 
-    ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_76.png)
+    ![VDA Install - Additional Components](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_76.png)
 
 1.  Enter the **UPN for the Cloud Connector** VM and click **Test Connection**. Ensure that the test is successful a green tick appears next to the entered UPN. Click **Add** and click **Next**
 
-    ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_77.png)
+    ![VDA Install - CC UPN](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_77.png)
 
 1.  Click **Next** in the Feature section and **Next** again in the Firewall section.
 
-    ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_78.png)
+    ![VDA Install - Next](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_78.png)
 
 1.  Click **Install** in the Summary section
 
-    ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_79.png)
+    ![VDA Install - Install](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_79.png)
 
 1.  Once the installation completes, in the Diagnostics section click **Connect**. Enter your **Citrix Cloud credentials**, click **OK**. Once the credentials are validated, click **Next**
 
-    ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_80.png)
+    ![VDA Install - Connect to Citrix Cloud](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_80.png)
 
 1.  Click **Finish** and let the VM **reboot**.
 
-    ![VDA Install - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_81.png)
+    ![VDA Install - Finish](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_81.png)
 
-### Create a hosting connection between Citrix Virtual Apps and Desktops and Azure
+## Create a hosting connection between Citrix Virtual Apps and Desktops and Azure
 
 Configure Citrix Virtual Apps and Desktops service to connect to the Azure Subscription that hosts the Windows Virtual Desktop VMs.
 
@@ -454,7 +453,7 @@ Configure Citrix Virtual Apps and Desktops service to connect to the Azure Subsc
 
     ![Hosting Connect - Done](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_93.png)
 
-### Create a Machine Catalog and a Delivery Group
+## Create a Machine Catalog and a Delivery Group
 
 1.  Click **Create Machine Catalog** (right side menu). In the Machine Catalog Setup dialog click **Next**
 
@@ -547,11 +546,11 @@ Ignore the warning about losing the Public IP. Wait for **status to show Stopped
 
 1.  In the Desktops section click **Add**. Enter **Display Name** for the delivery group. Ensure **Enable desktop** is checked. Click **OK**
 
-    ![Catalog and DG - ](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_116.png)
+    ![Catalog and DG - Display Name & Enable](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_116.png)
 
 1.  Click **Next**
 
-    ![Catalog and DG - Create](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_117.png)
+    ![Catalog and DG - Finish](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_117.png)
 
 1.  Enter a **Delivery Group name**. Click **Finish**
 
@@ -563,17 +562,17 @@ Ignore the warning about losing the Public IP. Wait for **status to show Stopped
 
 If you want to add your on-premises resources to the Workspace follow the below steps.
 
-### Create a Cloud Connector in your on-premises data center
+## Create a Cloud Connector in your on-premises data center
 
 1.  Add a cloud connector in your on-premises data center. Create a Windows server 2012 R2 or 2016 VM in your on-premises. Repeat the steps in the “[Create a new Resource Location](#create-a-new-resource-location)” section.
 
-### Add on-premises site to the Workspace
+## Add on-premises site to the Workspace
 
 1.  Follow the steps in the [guide](https://docs.citrix.com/en-us/citrix-cloud/workspaces/add-on-premises-site.html#prerequisites) to add the on-premises site to the Workspace. Complete till the end of Task 3: Configure connectivity and confirm settings in this page.
 
 ![On-prem Site in WS](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_120.png)
 
-### Launch the session from Citrix Workspace
+## Launch the session from Citrix Workspace
 
 1.  **Open the Workspace URL** you had saved earlier (from Citrix Cloud) to the Citrix Workspace. **Log in as one of the domain users** that you had added to the Delivery Group.
 
