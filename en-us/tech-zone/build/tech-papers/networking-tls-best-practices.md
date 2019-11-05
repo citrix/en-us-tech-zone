@@ -7,6 +7,8 @@ layout: doc
 
 **Author:** [Jake Rutski](https://twitter.com/JRutski), [Steven Wright](https://twitter.com/stevenwrightuk)
 
+**Special thanks:** [Joe Shonk](https://twitter.com/joeshonk)
+
 ## Overview
 
 This Tech Paper provides the steps necessary to validate the existing SSL\TLS configuration of a vServer running on a Citrix ADC and ways to ensure that best practices are applied. We cover configuration items such as the certificate chain bound to the vServer, cipher suite settings and disabling older protocols that are vulnerable to attack.
