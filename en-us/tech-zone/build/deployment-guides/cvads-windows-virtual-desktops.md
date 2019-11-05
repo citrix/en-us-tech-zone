@@ -589,3 +589,9 @@ If you want to add your on-premises resources to the Workspace follow the below 
 1.  The session should launch giving you access to the Windows Virtual Desktop
 
     ![Launch Session - Launch](/en-us/tech-zone/build/media/deployment-guides_cvads-windows-virtual-desktops_124.png)
+
+## Summary
+
+The guide walked you through bringing your Azure hosted Windows Virtual Desktop and on premises resources (using Workspace Configuration) together, so users access them in one place. You learned how to create a hybrid setup to manage both Windows Virtual Desktops based VMs and on premises based resources using Citrix VIrtual Apps and Desktops. The process included creating a network conneciton between the Azure virtual network and your on premises data center. Also you learned how to synchronize your on premises Active Directory with Azure Active Directory with Azure AD connect. We even looked at how to create a Citrix Cloud account, if you didn't have one and get access to Citrix Virtual Apps and Desktops service, which makes all this work.
+
+To learn more about migrating your on premises Citrix Virtual Apps and Desktops setup to the cloud, read the deployment guide [here](https://docs.citrix.com/en-us/tech-zone/build/deployment-guides/cvads-migration.html)
