@@ -5,12 +5,14 @@ docs:
 - title: Learn
   url: /en-us/tech-zone/learn.html
   subfolderlist:
-    - title: Tech Insights
-      url: /en-us/tech-zone/learn/tech-insights.html
-    - title: Tech Briefs
-      url: /en-us/tech-zone/learn/tech-briefs.html
     - title: Diagrams & Posters
       url: /en-us/tech-zone/learn/diagrams-posters.html
+    - title: PoC Guides
+      url: /en-us/tech-zone/learn/poc-guides.html
+    - title: Tech Briefs
+      url: /en-us/tech-zone/learn/tech-briefs.html
+    - title: Tech Insights
+      url: /en-us/tech-zone/learn/tech-insights.html
 - title: Design
   url: /en-us/tech-zone/design.html
   subfolderlist:
