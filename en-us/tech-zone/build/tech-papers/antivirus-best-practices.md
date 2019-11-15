@@ -241,7 +241,7 @@ Processes:
 -  `%ProgramFiles%\Citrix\SessionRecording\Server\Bin\SsRecServerConsole.exe`
 -  `%ProgramFiles%\Citrix\SessionRecording\Server\Bin\TestPolicyAdmin.exe`
 
-File:
+Files:
 
 -  `%ProgramFiles%\Citrix\SessionRecording\Server\App_Data*.xml`
 
@@ -259,7 +259,7 @@ Processes:
 -  `%ProgramFiles%\Citrix\SessionRecording\Agent\Bin\SsRecAgent.exe`
 -  `%ProgramFiles%\Citrix\SessionRecording\Agent\Bin\SsRecAgentWrapper.exe`
 
-File:
+Files:
 
 -  `%SystemRoot%\System32\drivers\ssrecdrv.sys`
 -  `%SystemRoot%\System32\drivers\srminifilterdrv.sys`
@@ -274,7 +274,7 @@ Processes:
 
 -  `%ProgramFiles(x86)%\Citrix\SessionRecording\Player\Bin\SsRecPlayer.exe`
 
-Folder:
+Folders:
 
 -  `%UserProfile%\AppData\Local\Citrix\SessionRecording\Player\Cache`
 
