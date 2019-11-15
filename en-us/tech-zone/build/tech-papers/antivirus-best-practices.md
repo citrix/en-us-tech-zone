@@ -5,9 +5,9 @@ layout: doc
 
 ## Contributors
 
-**Author:** [Martin Zugec](https://twitter.com/MartinZugec)
+**Author:** [Martin Zugec](https://twitter.com/MartinZugec), [Miguel Contreras](https://twitter.com/ctxmigs)
 
-**Special thanks:** [Miguel Contreras](https://twitter.com/ctxmigs), Judong Liao, [James Kindon](https://twitter.com/james_kindon)
+**Special thanks:** Judong Liao, [James Kindon](https://twitter.com/james_kindon), Dmytro Bozhko, Dai Li
 
 ## Overview
 
@@ -21,21 +21,21 @@ In this Tech Paper, we cover a few major topics relevant to optimal antivirus de
 
 Agent software that is installed on every provisioned virtual machine usually needs to register with a central site for management, reporting of status and other activities. For registration to be successful, each agent needs to be uniquely identifiable.
 
-With machines provisioned from a single image using technologies such as Provisioning Services (PVS) or Machine Creation Services (MCS), it is important to understand how each agent is identified - and if there are any instructions required for virtualized environments. Some vendors use dynamic information such as the MAC address or computer name for machine identification. Others use the more traditional approach of a random string generated during installation. To prevent conflicting registrations, each machine needs to generate a unique identifier. This is often done using a startup script that automatically restores machine identification data from a persistent location.
+With machines provisioned from a single image using technologies such as Provisioning Services (PVS) or Machine Creation Services (MCS), it is important to understand how each agent is identified - and if there are any instructions required for virtualized environments. Some vendors use dynamic information such as the MAC address or computer name for machine identification. Others use the more traditional approach of a random string generated during installation. To prevent conflicting registrations, each machine needs to generate a unique identifier. Registration in non-persistent environments is often done using a startup script that automatically restores machine identification data from a persistent location.
 
 In more dynamic environments, it is also important to understand how de-provisioning of machines behaves, if cleanup is a manual operation, or if it is performed automatically. Some vendors offer integration with hypervisors or even delivery controllers where machines can be automatically created or deleted as they are provisioned.
 
-**Recommendation:** Ask your security vendor how registration/unregistration works with your specific product. If registration requires additional steps for environments with single-image management, include these steps in your image sealing instructions, preferably as a fully automated script.
+**Recommendation:** Ask your security vendor how registration/unregistration works with your specific product. If registration requires more steps for environments with single-image management, include these steps in your image sealing instructions, preferably as a fully automated script.
 
 ## Signature Updates
 
 Timely consistently updated signatures are one of the most important aspects of endpoint security solutions. Most vendors use locally cached, incrementally updated signatures that are stored on each of the protected devices.
 
-With non-persistent machines, it is important to understand how signatures are updated and where they are stored. This enables you to understand the window of opportunity for malware to infect the machine. Also, it helps to design the environment to minimize this window.
+With non-persistent machines, it is important to understand how signatures are updated and where they are stored. This enables you to understand and minimize the window of opportunity for malware to infect the machine.
 
 Especially in a situation in which updates are not incremental and can reach significant size, you might consider a deployment in which persistent storage is attached to each of the non-persistent machines to keep the update cache intact between resets and image updates. Using this approach, the window of opportunity and the performance impact of a definitions update is minimized.
 
-Aside from signature updates for each of the provisioned machines, it is also important to define a strategy for updating the master image. Automating this process is recommended, so is updating the master image on a regular basis with latest signatures. This is especially important for incremental updates in which you are minimizing the amount of traffic required for each virtual machine.
+Aside from signature updates for each of the provisioned machines, it is also important to define a strategy for updating the master image. Automating this process is recommended, so is updating the master image regularly with latest signatures. This is especially important for incremental updates in which you are minimizing the amount of traffic required for each virtual machine.
 
 Another approach to managing signature updates in virtualized environments is to completely replace the nature of the decentralized signatures with a centralized scanning engine. While this is primarily done to minimize the performance impact of an antivirus, it has the side benefit of centralizing signature updates as well.
 
@@ -50,7 +50,7 @@ Available performance optimization strategies and approaches are different for v
 ![Antivirus Offloading](/en-us/tech-zone/build/media/tech-papers_antivirus-best-practices_offload.png)
 *Offloading scans to a dedicated appliance can be highly effective in virtualized environments*
 
-Another approach is based on pre-scanning of read-only portions of the disks, performed on the master images before provisioning. It is important to understand how this affects the window of opportunity (e.g., what if disk already contains infected files but signatures are not available during pre-scan phase?). This optimization often is combined with scanning for write-only events, as all reads will either originate from pre-scanned disk portions or from a session-specific write cache/differential disk that was already scanned during write operation. Often, a good compromise is to combine real-time scans (optimized) with scheduled scans (full scans of the system).
+Another approach is based on pre-scanning of read-only portions of the disks, performed on the master images before provisioning. It is important to understand how this affects the window of opportunity (for example, what if disk already contains infected files but signatures are not available during pre-scan phase?). This optimization often is combined with scanning for write-only events, as all reads will either originate from pre-scanned disk portions or from a session-specific write cache/differential disk that was already scanned during write operation. Often, a good compromise is to combine real-time scans (optimized) with scheduled scans (full scans of the system).
 
 ![Antivirus Write Scans](/en-us/tech-zone/build/media/tech-papers_antivirus-best-practices_diffs.png)
 *The most common scan optimization is to focus only on the differences between virtual machines*
@@ -63,7 +63,7 @@ The most common (and often the most important) optimization for antivirus is pro
 
 Exclusions are typically recommended for real-time scanning. However Citrix recommends scanning the excluded files and folders regularly using scheduled scans. To mitigate any potential performance impact, it is recommended to perform scheduled scans during non-business or off-peak hours.
 
-The integrity of excluded files and folders should be maintained at all times. Organizations should consider leveraging a commercial File Integrity Monitoring or Host Intrusion Prevention solution to protect the integrity of files and folders that have been excluded from real-time or on-access scanning. It is noteworthy that database and log files should not be included in this type of data integrity monitoring because these files are expected to change. If an entire folder must be excluded from real-time or on-access scanning, Citrix recommends closely monitoring the creation of new files in the excluded folders.
+The integrity of excluded files and folders should be maintained at all times. Organizations should consider using a commercial File Integrity Monitoring or Host Intrusion Prevention solution to protect the integrity of files and folders that have been excluded from real-time or on-access scanning. It is noteworthy that database and log files should not be included in this type of data integrity monitoring because these files are expected to change. If an entire folder must be excluded from real-time or on-access scanning, Citrix recommends closely monitoring the creation of new files in the excluded folders.
 
 Scan only local drives - or disable network scanning. The assumption is that all remote locations that might include file servers that host user profiles and redirected folders are being monitored by antivirus and data integrity solutions. If not, it is recommended that network shares accessed by all provisioned machines be excluded. An example includes shares hosting redirected folders or user profiles.
 
@@ -109,6 +109,18 @@ Processes:
 -  `%ProgramFiles%\Citrix\ICAService\picaSvc2.exe` (Desktop OS only)
 -  `%ProgramFiles%\Citrix\ICAService\CpSvc.exe` (Desktop OS only)
 
+#### Virtual Delivery Agents - HDX RealTime Optimization Pack
+
+Files:
+
+-  `%UserProfile%\AppData\Local\Temp\Citrix\RTMediaEngineSRV\MediaEngineSRVDebugLogs**.txt`
+
+Processes:
+
+-  `%ProgramFiles(x86)%\Citrix\HDX RealTime Connector\AudioTranscoder.exe`
+-  `%ProgramFiles(x86)%\Citrix\HDX RealTime Connector\MediaEngine.Net.Service.exe`
+-  `%ProgramFiles(x86)%\Citrix\HDX RealTime Connector\MediaEngineService.exe`
+
 ### Workspace app / Receiver for Windows
 
 Files:
@@ -125,7 +137,7 @@ Processes:
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\SelfServicePlugin\SelfService.exe`
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\SelfServicePlugin\SelfServicePlugin.exe`
 
-Please note that these exclusions for Receiver typically are not needed. We have only seen a need for these in environments when the antivirus is configured with policies that are more strict than usual, or in situations in which multiple security agents are in use simultaneously (AV, DLP, HIP, etc.)
+Please note that these exclusions for Receiver typically are not needed. We have only seen a need for these in environments when the antivirus is configured with policies that are more strict than usual, or in situations in which multiple security agents are in use simultaneously (AV, DLP, HIP, and so on)
 
 ### Provisioning
 
@@ -217,7 +229,58 @@ Processes:
 -  `VUEMCmdAgent.exe`
 -  `VUEMUIAgent.exe`
 
+### Session Recording - Server
+
+Processes:
+
+-  `%ProgramFiles%\Citrix\SessionRecording\Server\Bin\SsRecStorageManager.exe`
+-  `%ProgramFiles%\Citrix\SessionRecording\Server\Bin\SsRecAnalyticsService.exe`
+-  `%ProgramFiles%\Citrix\SessionRecording\Server\Bin\SsRecWebSocketServer.exe`
+-  `%ProgramFiles%\Citrix\SessionRecording\Server\Bin\icldb.exe`
+-  `%ProgramFiles%\Citrix\SessionRecording\Server\Bin\iclstat.exe`
+-  `%ProgramFiles%\Citrix\SessionRecording\Server\Bin\SsRecServerConsole.exe`
+-  `%ProgramFiles%\Citrix\SessionRecording\Server\Bin\TestPolicyAdmin.exe`
+
+Files:
+
+-  `%ProgramFiles%\Citrix\SessionRecording\Server\App_Data*.xml`
+
+Folders:
+
+-  `C:\SessionRecordings`
+-  `C:\SessionRecordingsRestored`
+-  `%SystemRoot%\System32\msmq`
+-  `%ProgramFiles%\Citrix\SessionRecording\Server\Bin\log`
+
+### Session Recording - Agent
+
+Processes:
+
+-  `%ProgramFiles%\Citrix\SessionRecording\Agent\Bin\SsRecAgent.exe`
+-  `%ProgramFiles%\Citrix\SessionRecording\Agent\Bin\SsRecAgentWrapper.exe`
+
+Files:
+
+-  `%SystemRoot%\System32\drivers\ssrecdrv.sys`
+-  `%SystemRoot%\System32\drivers\srminifilterdrv.sys`
+
+Folders:
+
+-  `%SystemRoot%\System32\msmq`
+
+### Session Recording - Player
+
+Processes:
+
+-  `%ProgramFiles(x86)%\Citrix\SessionRecording\Player\Bin\SsRecPlayer.exe`
+
+Folders:
+
+-  `%UserProfile%\AppData\Local\Citrix\SessionRecording\Player\Cache`
+
 ## Antivirus Vendors
+
+[Bitdefender - Implementing Security Best Practices in the Virtual Data Center](https://businessinsights.bitdefender.com/implementing-security-best-practices-in-the-virtual-data-center)
 
 [Microsoft - Windows Defender in VDI environments](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)
 
