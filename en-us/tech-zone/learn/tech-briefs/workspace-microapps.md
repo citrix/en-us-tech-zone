@@ -65,8 +65,8 @@ Citrix Workspace with intelligence is comprised of different μ-services as part
 -  The active data cache µ-service is single-tenant and stores all configuration information and microapp data. It utilizes a per-tenant database encryption key and per-tenant database credentials.
 -  The credential wallet µ-service, stores encrypted service credentials for the system of records and user OAuth2 tokens.
 -  The data integration provider µ-service interacts with the SoR to decrypt end-user credentials and write back actions to the SoR under the identity of the end-user. The write-back actions utilize a user’s actual account to ensure all actions performed are compliant with data policies of the system we’re interacting with.
--  The notification service µ-service processes the notifications created. It either stores them in a database to be later served in a notification feed, or send the notifications out immediately as a push notification to the end user. Administrators can configure and limit what is shown in the notification cards to limit exposing sensitive content. Notifications can have expirations so that they disappear from the end-user’s feed once they are no longer relevant.
--  Finally, the Analytics Service, processes the raw events and creates targeted scored notifications and sends them to the notification service.
+-  The notification µ-service processes the notifications created. It either stores them in a database to be later served in a notification feed, or sends the notifications out immediately as a push notification to the end user. Administrators can configure and limit what is shown in the notification cards to limit exposing sensitive content. Notifications can have expirations so that they disappear from the end-user’s feed once they are no longer relevant. 
+-  Finally, the Analytics Service processes the raw events and creates targeted scored notifications and sends them to the notification service.
 
 The management plane is available in the US, EMEA and APS region.
 
@@ -76,6 +76,6 @@ The data flow of the workspace with intelligence can be found below:
 
 ## Summary
 
-Citrix Workspace customers are able to build microapps to increase end-user productivity. It eliminates the need for users to parse through complex enterprise apps to complete a single task. Citrix Workspace is designed with security and end-user experience in mind. It encrypts all the data and keys; therefore, admins do not have access to customer information. The system only stores the data it needs to create events. By utilizing public APIs, admins completely control which microapps are made available. No audit trail is lost because everything is written back in the context of the user. Microapps organize, automate, and guide your employees through their workday; maximizing productivity and boosting the overall user experience.
+Citrix Workspace customers are able to build microapps to increase end-user productivity. It eliminates the need for users to parse through complex enterprise apps to complete a single task. Citrix Workspace is designed with security and end-user experience in mind. It encrypts all the data and keys; therefore, admins do not have access to customer information. The system only stores the data it needs to create events. By utilizing public APIs, admins completely control which microapps are made available. No audit trail is lost because everything is written back in the context of the user. Microapps organize, automate, and guide your employees through their work day; maximizing productivity and boosting the overall user experience.
 
-**Note: Microapps is currently not generally available feature, information above is subject to change.**
+**Note: Microapps are currently not a generally available feature, information above is subject to change.**
