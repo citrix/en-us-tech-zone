@@ -271,8 +271,6 @@ The Local Host Cache (LHC) is a feature with Cloud Connectors that enables users
 
 LHC uses SQL Server Express LocalDB which is installed during Cloud Connector installation to store the required data for uninterrupted service during an outage. A Cloud Connector’s CPU configuration, particularly the number of cores available to the SQL Server Express LocalDB, directly affects Local Host Cache performance. CPU overhead is observed only during the outage period when the database is unreachable and the High Availability Service is active. Citrix recommends using multiple sockets with multiple cores for Cloud Connector machines. In Citrix testing, a 2 socket, 3 core configuration provided better performance than 4x1 and 6x1 configurations. Local Host Cache works only in resource locations containing an on-premises StoreFront.
 
-For customers requiring a higher level of resiliency, Citrix recommends the StoreFront with Local Host Cache deployment model.
-
 [![CVAD-Image-9](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_009.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_009.png)
 
 Reference: [*Citrix Docs: Local Host Cache*](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/local-host-cache.html)
@@ -414,11 +412,13 @@ Citrix StoreFront is an interface for users to access Citrix Virtual Apps and De
 
 It also keeps track of users’ application subscriptions, shortcut names, and other data to ensure they have a consistent experience across multiple devices. With the Citrix Cloud Virtual Apps and Desktops Services, the StoreFront deployment is flexible for customers to achieve their organization requirements and use cases.
 
-1.  **Cloud-hosted StoreFront / Workspace**: The Virtual Apps and Desktops Service in Citrix Cloud hosts a StoreFront / Workspace service for each customer. The benefit of the cloud-hosted StoreFront is that there is zero effort to deploy, and it is kept evergreen by Citrix. The customer is provided with a cloud based URL to access the apps and desktops.
+1.  **On-Premises StoreFront**: Customers may also use an existing on-premises StoreFront to aggregate applications and desktops in Citrix Cloud. This use case offers greater security, including support for two-factor authentication and prevents users from entering their password into the cloud service. The benefit of using an existing StoreFront is that the Citrix Cloud Connector provides encryption of user passwords. Credentials are encrypted by the connector using AES-256 with a random-generated one-time key. This key is returned directly to Citrix Workspace app and never sent to the cloud. Citrix Workspace app then supplies it to the VDA during session launch to decrypt the credentials and provide a single sign-on experience into Windows. It also allows customers to customize their domain names and URLs. To use the Local Host Cache feature on-premises StoreFront is a requirement.
 
-2.  **On-Premises StoreFront**: Customers may also use an existing on-premises StoreFront to aggregate applications and desktops in Citrix Cloud. This use case offers greater security, including support for two-factor authentication and prevents users from entering their password into the cloud service. The benefit of using an existing StoreFront is that the Citrix Cloud Connector provides encryption of user passwords. Credentials are encrypted by the connector using AES-256 with a random-generated one-time key. This key is returned directly to Citrix Workspace app and never sent to the cloud. Citrix Workspace app then supplies it to the VDA during session launch to decrypt the credentials and provide a single sign-on experience into Windows. It also allows customers to customize their domain names and URLs. To use the Local Host Cache feature on-premises StoreFront is a requirement.
+2.  **Cloud-hosted StoreFront / Workspace**: The Virtual Apps and Desktops Service in Citrix Cloud hosts a StoreFront / Workspace service for each customer. The benefit of the cloud-hosted StoreFront is that there is zero effort to deploy, and it is kept evergreen by Citrix. The customer is provided with a cloud based URL to access the apps and desktops.
 
 3.  A **combination** of both on-premises StoreFront and cloud-hosted StoreFront
+
+**Note:** For customers requiring a higher level of resiliency, Citrix recommends the StoreFront with Local Host Cache deployment model.
 
 ### Workspace Configuration
 
