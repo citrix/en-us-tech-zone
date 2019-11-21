@@ -51,21 +51,18 @@ Branch office optimization occurs on the Citrix SD-WAN appliance located in the 
 
 #### Link Aggregation
 ![ Link Aggregation](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-LnkAgr.png)
-
 With link aggregation, the Citrix SD-WAN appliance treats up to four links as a single bundle and load balances traffic according to capacity.  In the absence of this functionality, a typical router would have multiple default routes to each respective ISP and may only select one as the active primary, or route traffic across multiple routes unevenly.
 
 Citrix SD-WAN can allocate a fixed portion of each circuit to the Cloud Direct service or general internet use. Cloud Direct utilizes all available bandwidth allocated to the service. Probes continuously monitor availability and upon detecting a link outage the “virtual” aggregated circuit is reduced accordingly by removing the bad link from the bundle and the session is rerouted over a good link.  Sessions are rerouted at the network layer avoiding interruption to user sessions.
 
 #### Prioritization
 ![ Prioritization](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-Priori.png)
-
 Traditionally branch routers may transmit traffic on a First-In-First-Out basis, or otherwise rely on prioritization tags coming from the LAN which may be inconsistent or inexistent.  The Citrix SD-WAN appliance hosted Cloud Direct service process prioritizes egress transmission queues according to class of service. On reception they automatically identify traffic by 1 of 6 types, apply a QoS tag, and prioritize for appropriate handling.
 
 The traffic is prioritized according to class to ensure the highest priority sessions hit the egress transmit queues first.  The limited bandwidth of the local DSL, Cable, or LTE access links may be the bottleneck over the entire path to the cloud, therefore ensuring appropriate prioritization of traffic is critical to delivering maximum end-to-end QoS.
 
-
-![ Intelligent Steering](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-IntStr.png)
 #### Intelligent Steering
+![ Intelligent Steering](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-IntStr.png)
 Traditionally branch routers will consider a link “up” state indication that it can handle the full bandwidth associated with the interface, irrespective of its actual throughput capability.  The Cloud Direct service sends probes at 10 millisecond (ms) intervals over each link, constantly monitors latency, jitter, loss, congestion, and state. 
 
 Changes in state may vary from a black out where an entire link goes down, to a brown out where limited throughput or performance falls below the QoS that the class requires. When a state change is detected the service seamlessly reroutes sessions over to a “good” link. Intelligent steering avoids impact to session connections and subsequently maintains good user experience.
@@ -79,9 +76,8 @@ The general Internet lies between the branch office Citrix SD-WAN and Cloud Dire
 * Extended Visibility
 * VoIP Protection
 
-
-![ Hitless Failover](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_IO-Hitles.png)
 #### Hitless Failover
+![ Hitless Failover](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_IO-Hitles.png)
 Sessions originated from the Cloud Direct service process, on the branch office hosted Citrix SD-WAN appliance, are transported across non-encrypted OpenVPN UDP based tunnels to a primary Cloud Direct service PoP gateway, with a secondary PoP on standby.  The tunnel source and destination both are always public IP addresses, assigned and managed by the Cloud Direct service.  
 
 On the branch Citrix SD-WAN appliance the tunnel is sourced from a fixed LAN side public IP address. Each ISP circuit connected to the SD-WAN appliance will direct traffic over a different path across the internet to the Cloud Direct POP. When a failure occurs over one path, Cloud Direct reroutes sessions over one of the other available paths at the network layer. 
@@ -90,9 +86,8 @@ If a failure were to occur at the primary Cloud Direct service PoP the route for
 
 Thus, with Hitless Failover, transport or application layer protocols are unaware of the outage and subsequently sessions do not incur typical re-setup delay at those layers, and thus the user experience is not impacted. This includes, but is not limited to VPN, virtual desktop, SSH, VoIP, or Web Conference sessions.
 
-
-![ Extended Visibility](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_IO-ExtVis.png)
 #### Extended Visibility
+![ Extended Visibility](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_IO-ExtVis.png)
 Enterprises may have some visibility of traffic statistics over their 1st mile circuits, between the branch and their respective ISP PoPs, yet are limited beyond that.  The Cloud Direct service provides traffic details including latency, loss, jitter, and throughput from the Citrix SD-WAN appliance interface to each respective 1st mile circuit, across the internet, to the Cloud Direct service PoP gateways.
 
 The Cloud Direct service also provides reporting on performance statistics:
@@ -104,9 +99,8 @@ The Cloud Direct service also provides reporting on performance statistics:
 
 Administrators will have the ability to view this data on per day/week/month via [SD-WAN Orchestrator]( https://docs.citrix.com/en-us/citrix-sd-wan-orchestrator.html).  They can also have a report emailed on a regular basis.
 
-
-![ VoIP Protection](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_IO-VoIPro.png)
 #### VoIP Protection
+![ VoIP Protection](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_IO-VoIPro.png)
 Delivering voice-over-IP (VoIP) over the Internet is a challenge because it does not include the QoS protection provided on an Enterprise network.  While Cloud Direct tags VoIP packets appropriately for expedited forwarding and honors those over the Cloud Direct network the ISPs between the branch office and the Cloud Direct PoPs will not. 
 
 Jitter is one of the biggest factors in poor call quality, often caused by Internet congestion where ISPs cannot forward packets at the rate they are received and thus must buffer them.  Eventually they are forwarded, albeit with different inter-packet spacing, causing jitter.  It is not as significant a problem for other forms of traffic, but to deliver good VoIP call quality it is essential that buffering in transit is minimized.  With its constant monitoring, Cloud Direct has visibility across all available paths for jitter caused by congestion and it dynamically moves the flows to better paths as needed.
@@ -120,9 +114,8 @@ At the Cloud Direct service PoP, the OpenVPN tunnel that was originated at the b
 * Extensive Peering
 * Private Backbone
 
-
-![ Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CO-EntQos.png)
 #### Enterprise QoS
+![ Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CO-EntQos.png)
 Upon reception of packets, the Citrix SD-WAN appliance hosted Cloud Direct service process automatically identifies six types of traffic, maps them to a class of service and applies a QoS tag accordingly.  
 
 1. VoIP signaling traffic
@@ -134,14 +127,12 @@ Upon reception of packets, the Citrix SD-WAN appliance hosted Cloud Direct servi
 
 Packets originated at the branch office are transported across the Cloud Direct service tunnel.  Then at the PoP on the far end traffic is further delivered over the Cloud Direct private backbone over which QoS tags are honored as packets are transferred hop-to-hop.  
 
-
-![ Extensive Peering](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CO-ExPeer.png)
 #### Extensive Peering
+![ Extensive Peering](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CO-ExPeer.png)
 With 150+ peering agreements with premium cloud and service providers per PoP (see insert), Cloud Direct service provides efficient paths to SaaS sites reducing latency from branch users accessing them.  After transport over the Cloud Direct service tunnel, PoP gateways check their route tables for the shortest path to the target site and will often find one a few hops away thanks to Extensive Peering agreements (see insert).  
 
-
-![ Private Backbone](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CO-PrivBB.png)
 #### Private Backbone
+![ Private Backbone](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CO-PrivBB.png)
 The Cloud Direct service PoPs are connected by a private backbone with redundant high-speed circuits. This allows it to honor traffic with QoS tags and deliver it without typical best effort internet challenges such as oversubscription, congestion, and outage. When targets are not immediately reachable from the primary PoP gateway route table the respective traffic is sent, over the Cloud Direct private backbone, to the PoP with the shortest route.
 
 ![  as a Service](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_SaaSUcaaSDaaS.PNG)
