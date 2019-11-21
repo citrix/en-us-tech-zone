@@ -36,9 +36,9 @@ Each Cloud Direct PoP is strategically located at key internet exchange points a
 
 With these capabilities the Cloud Direct service optimizes delivery over the path between branch office and SaaS application. There are 3 distinct parts of the path that the Cloud Direct service optimizes:
 
-* **Branch Office Optimization**
-* **Internet Optimization**
-* **Cloud Core Optimization**
+* Branch Office Optimization
+* Internet Optimization
+* Cloud Core Optimization
 
 ![ Branch – 1st Mile Circuits](/en-us/tech-zone/learn/media/tech-briefs_BranchFirstMile.PNG)
 
