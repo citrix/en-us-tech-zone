@@ -161,4 +161,5 @@ One of the many benefits of Citrix Virtual Apps and Desktops and Citrix Managed 
 
 ## Contributors
 **Author:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
+
 **Special Thanks:**  Mark King, Daniel Feller 
