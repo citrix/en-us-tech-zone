@@ -135,7 +135,7 @@ With 150+ peering agreements with premium cloud and service providers per PoP (s
 #### Private Backbone
 The Cloud Direct service PoPs are connected by a private backbone with redundant high-speed circuits. This allows it to honor traffic with QoS tags and deliver it without typical best effort internet challenges such as oversubscription, congestion, and outage. When targets are not immediately reachable from the primary PoP gateway route table the respective traffic is sent, over the Cloud Direct private backbone, to the PoP with the shortest route.
 
-![ Peering](/en-us/tech-zone/learn/media/tech-briefs_SaaSUcaaSDaaS.PNG)
+![  as a Service](/en-us/tech-zone/learn/media/tech-briefs_SaaSUcaaSDaaS.PNG)
 
 ### Use Cases
 Citrix SD-WAN is a powerful networking technology that provides optimal routing across all available paths.  With the addition of the Cloud Direct service it provides premium transport over the public internet including enterprise-grade reliability and performance. Let’s discuss some use cases where the it provides the most benefits.
