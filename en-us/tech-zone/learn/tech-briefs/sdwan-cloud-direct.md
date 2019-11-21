@@ -49,16 +49,16 @@ Branch office optimization occurs on the Citrix SD-WAN appliance located in the 
 * Prioritization
 * Intelligent Steering
 
-
-![ Link Aggregation](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-LnkAgr.png)
 #### Link Aggregation
+![ Link Aggregation](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-LnkAgr.png)
+
 With link aggregation, the Citrix SD-WAN appliance treats up to four links as a single bundle and load balances traffic according to capacity.  In the absence of this functionality, a typical router would have multiple default routes to each respective ISP and may only select one as the active primary, or route traffic across multiple routes unevenly.
 
 Citrix SD-WAN can allocate a fixed portion of each circuit to the Cloud Direct service or general internet use. Cloud Direct utilizes all available bandwidth allocated to the service. Probes continuously monitor availability and upon detecting a link outage the “virtual” aggregated circuit is reduced accordingly by removing the bad link from the bundle and the session is rerouted over a good link.  Sessions are rerouted at the network layer avoiding interruption to user sessions.
 
-
-![ Prioritization](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-Priori.png)
 #### Prioritization
+![ Prioritization](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-Priori.png)
+
 Traditionally branch routers may transmit traffic on a First-In-First-Out basis, or otherwise rely on prioritization tags coming from the LAN which may be inconsistent or inexistent.  The Citrix SD-WAN appliance hosted Cloud Direct service process prioritizes egress transmission queues according to class of service. On reception they automatically identify traffic by 1 of 6 types, apply a QoS tag, and prioritize for appropriate handling.
 
 The traffic is prioritized according to class to ensure the highest priority sessions hit the egress transmit queues first.  The limited bandwidth of the local DSL, Cable, or LTE access links may be the bottleneck over the entire path to the cloud, therefore ensuring appropriate prioritization of traffic is critical to delivering maximum end-to-end QoS.
