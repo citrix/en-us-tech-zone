@@ -35,8 +35,8 @@ Cloud Direct branch tunnels terminate into redundant Cloud Direct PoPs. These Po
 Each Cloud Direct PoP is strategically located at key internet exchange points and peered with over 150 cloud, content, and carrier networks. Therefore, the proximity of a customer’s branch to a Cloud Direct PoP is less important than the location of SaaS to a Cloud Direct PoP. If the SaaS application is better accessed from a Cloud Direct PoP that is different than the PoP the customer’s branch site is connected to, that traffic will benefit from the private high-speed backbone that connects the Cloud Direct PoPs together. 
 
 With these capabilities the Cloud Direct service optimizes delivery over the path between branch office and SaaS application. There are 3 distinct parts of the path that the Cloud Direct service optimizes:
-⋅⋅* Branch Office Optimization
-⋅⋅* Internet Optimization
+*_Branch Office Optimization_
+*_Internet Optimization_
 ⋅⋅* Cloud Core Optimization
 
 ![ Branch – 1st Mile Circuits](/en-us/tech-zone/learn/media/tech-briefs_BranchFirstMile.PNG)
