@@ -26,7 +26,8 @@ With SD-WAN, individual applications can be routed directly to the internet to r
 #### SaaS via Citrix SD-WAN Cloud Direct
 SaaS apps are deployed across multiple cloud locations globally. To reach those applications more efficently and reliably, Cloud Direct PoPs are strategically located at major internet and cloud service provider exchanges with direct peering to thousands of SaaS applications and networks, enabling higher performance connectivity and service reliability.
 
-![ Best Effort Internet](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BestEffortInternet.png)
+![ Best Effort Internet](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BestEffortInternet.PNG)
+
 
 ### Cloud Access Optimization
 For branch office users to reach public SaaS services their sessions must traverse the internet.  This network is composed of a vast and complex web of circuits, service providers, network equipment, data centers, and routing domains. The internet is considered a “best effort” network because there are no guarantees of transport reliability or quality. Therefore, trusting delivery over the best effort internet is a risk.  
@@ -115,7 +116,7 @@ At the Cloud Direct service PoP, the OpenVPN tunnel that was originated at the b
 * Private Backbone
 
 #### Enterprise QoS
-![ Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CO-EntQos.png)
+![ Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_EnterpriseQoS.png)
 Upon reception of packets, the Citrix SD-WAN appliance hosted Cloud Direct service process automatically identifies six types of traffic, maps them to a class of service and applies a QoS tag accordingly.  
 
 1. VoIP signaling traffic
