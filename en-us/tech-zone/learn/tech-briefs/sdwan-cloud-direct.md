@@ -49,17 +49,20 @@ Branch office optimization occurs on the Citrix SD-WAN appliance located in the 
 * Prioritization
 * Intelligent Steering
 
+
 ![ Link Aggregation](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-LnkAgr.png)
 #### Link Aggregation
 With link aggregation, the Citrix SD-WAN appliance treats up to four links as a single bundle and load balances traffic according to capacity.  In the absence of this functionality, a typical router would have multiple default routes to each respective ISP and may only select one as the active primary, or route traffic across multiple routes unevenly.
 
 Citrix SD-WAN can allocate a fixed portion of each circuit to the Cloud Direct service or general internet use. Cloud Direct utilizes all available bandwidth allocated to the service. Probes continuously monitor availability and upon detecting a link outage the “virtual” aggregated circuit is reduced accordingly by removing the bad link from the bundle and the session is rerouted over a good link.  Sessions are rerouted at the network layer avoiding interruption to user sessions.
 
+
 ![ Prioritization](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-Priori.png)
 #### Prioritization
 Traditionally branch routers may transmit traffic on a First-In-First-Out basis, or otherwise rely on prioritization tags coming from the LAN which may be inconsistent or inexistent.  The Citrix SD-WAN appliance hosted Cloud Direct service process prioritizes egress transmission queues according to class of service. On reception they automatically identify traffic by 1 of 6 types, apply a QoS tag, and prioritize for appropriate handling.
 
 The traffic is prioritized according to class to ensure the highest priority sessions hit the egress transmit queues first.  The limited bandwidth of the local DSL, Cable, or LTE access links may be the bottleneck over the entire path to the cloud, therefore ensuring appropriate prioritization of traffic is critical to delivering maximum end-to-end QoS.
+
 
 ![ Intelligent Steering](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-IntStr.png)
 #### Intelligent Steering
@@ -76,6 +79,7 @@ The general Internet lies between the branch office Citrix SD-WAN and Cloud Dire
 * Extended Visibility
 * VoIP Protection
 
+
 ![ Hitless Failover](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_IO-Hitles.png)
 #### Hitless Failover
 Sessions originated from the Cloud Direct service process, on the branch office hosted Citrix SD-WAN appliance, are transported across non-encrypted OpenVPN UDP based tunnels to a primary Cloud Direct service PoP gateway, with a secondary PoP on standby.  The tunnel source and destination both are always public IP addresses, assigned and managed by the Cloud Direct service.  
@@ -85,6 +89,7 @@ On the branch Citrix SD-WAN appliance the tunnel is sourced from a fixed LAN sid
 If a failure were to occur at the primary Cloud Direct service PoP the route for the tunnel endpoint, already be advertising from the secondary PoP by BGP with a lower preference, would become the preferred path immediately once the route change converged over the internet.
 
 Thus, with Hitless Failover, transport or application layer protocols are unaware of the outage and subsequently sessions do not incur typical re-setup delay at those layers, and thus the user experience is not impacted. This includes, but is not limited to VPN, virtual desktop, SSH, VoIP, or Web Conference sessions.
+
 
 ![ Extended Visibility](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_IO-ExtVis.png)
 #### Extended Visibility
@@ -98,6 +103,7 @@ The Cloud Direct service also provides reporting on performance statistics:
 * Circuit Performance - Overall % uptime for each circuit and aggregate time of major and minor issues incurred respectively
 
 Administrators will have the ability to view this data on per day/week/month via [SD-WAN Orchestrator]( https://docs.citrix.com/en-us/citrix-sd-wan-orchestrator.html).  They can also have a report emailed on a regular basis.
+
 
 ![ VoIP Protection](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_IO-VoIPro.png)
 #### VoIP Protection
@@ -114,6 +120,7 @@ At the Cloud Direct service PoP, the OpenVPN tunnel that was originated at the b
 * Extensive Peering
 * Private Backbone
 
+
 ![ Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CO-EntQos.png)
 #### Enterprise QoS
 Upon reception of packets, the Citrix SD-WAN appliance hosted Cloud Direct service process automatically identifies six types of traffic, maps them to a class of service and applies a QoS tag accordingly.  
@@ -127,9 +134,11 @@ Upon reception of packets, the Citrix SD-WAN appliance hosted Cloud Direct servi
 
 Packets originated at the branch office are transported across the Cloud Direct service tunnel.  Then at the PoP on the far end traffic is further delivered over the Cloud Direct private backbone over which QoS tags are honored as packets are transferred hop-to-hop.  
 
+
 ![ Extensive Peering](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CO-ExPeer.png)
 #### Extensive Peering
 With 150+ peering agreements with premium cloud and service providers per PoP (see insert), Cloud Direct service provides efficient paths to SaaS sites reducing latency from branch users accessing them.  After transport over the Cloud Direct service tunnel, PoP gateways check their route tables for the shortest path to the target site and will often find one a few hops away thanks to Extensive Peering agreements (see insert).  
+
 
 ![ Private Backbone](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CO-PrivBB.png)
 #### Private Backbone
