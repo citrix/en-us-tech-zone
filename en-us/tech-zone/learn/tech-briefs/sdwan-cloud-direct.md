@@ -1,6 +1,4 @@
----
-layout: doc
----
+
 # Citrix SD-WAN Cloud Direct service overview
 ## The Cloud Direct service extends Citrix SD-WAN optimal routing and delivery benefits to SaaS.  It hosts Cloud Direct service PoPs at major Internet Exchanges and transports branch office endpoint traffic in tunnels across the internet to the front door of popular SaaS sites.
 ![ Citrix SD-WAN Cloud Direct Service](/en-us/tech-zone/learn/media/tech-briefs_SDWAN-CDs.png)
