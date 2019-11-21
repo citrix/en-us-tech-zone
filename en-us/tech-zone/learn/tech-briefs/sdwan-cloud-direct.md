@@ -112,7 +112,7 @@ Delivering voice-over-IP (VoIP) over the Internet is a challenge because it does
 
 Jitter is one of the biggest factors in poor call quality, often caused by Internet congestion where ISPs cannot forward packets at the rate they are received and thus must buffer them.  Eventually they are forwarded, albeit with different inter-packet spacing, causing jitter.  It is not as significant a problem for other forms of traffic, but to deliver good VoIP call quality it is essential that buffering in transit is minimized.  With its constant monitoring, Cloud Direct has visibility across all available paths for jitter caused by congestion and it dynamically moves the flows to better paths as needed.
 
-![ Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_EnterpriseQoS.png)
+![ Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_EnterpriseQoS.PNG)
 
 ### Cloud Core Optimization
 At the Cloud Direct service PoP, the OpenVPN tunnel that was originated at the branch office, after transport across the internet, is de-encapsulated and ready for delivery to the destination cloud provider, that hosts the target SaaS site.  The Cloud Direct service provides several benefits to transport traffic efficiently across this last segment:
@@ -122,7 +122,7 @@ At the Cloud Direct service PoP, the OpenVPN tunnel that was originated at the b
 * Private Backbone
 
 #### Enterprise QoS
-![ Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_EnterpriseQoS.png)
+![ Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CO-EntQos.png)
 
 Upon reception of packets, the Citrix SD-WAN appliance hosted Cloud Direct service process automatically identifies six types of traffic, maps them to a class of service and applies a QoS tag accordingly.  
 
