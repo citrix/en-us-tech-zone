@@ -117,4 +117,4 @@ The Cloud Direct service provides several benefits for [ Citrix Virtual Apps and
 One of the many benefits of Citrix Virtual Apps and Desktops and Citrix Managed Desktops is that its virtual delivery agents (VDA) may be hosted in a variety of hybrid cloud locations.  After a Citrix SD-WAN appliance identifies Citrix Virtual Apps and Desktops HDX (the delivery protocol) session it checks all available virtual paths for the optimal route.  If it is destined for a public internet site and the service is mapped to Cloud direct the session traffic is tagged, prioritized as high priority interactive and transported accordingly. Citrix SD-WAN with Cloud Direct service is the ideal solution to route and deliver Citrix Virtual Apps and Desktops and Citrix Managed Desktops optimally across the public internet.
 ## Contributors
 **Author:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
-### Special Thanks:  Mark King, Daniel Feller 
+**Special Thanks:**  Mark King, Daniel Feller 
