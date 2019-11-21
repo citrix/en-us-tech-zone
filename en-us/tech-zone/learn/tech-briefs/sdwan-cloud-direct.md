@@ -57,9 +57,9 @@ Each Cloud Direct PoP is strategically located at key internet exchange points a
 
 With these capabilities the Cloud Direct service optimizes delivery over the path between branch office and SaaS application. There are 3 distinct parts of the path that the Cloud Direct service optimizes:
 
-* Branch Office Optimization
-* Internet Optimization
-* Cloud Core Optimization
+*  Branch Office Optimization
+*  Internet Optimization
+*  Cloud Core Optimization
 
 ![Branch – 1st Mile Circuits](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BranchFirstMile.PNG)
 
@@ -67,9 +67,9 @@ With these capabilities the Cloud Direct service optimizes delivery over the pat
 
 Branch office optimization occurs on the Citrix SD-WAN appliance located in the local office. Here it interfaces with the Internet Service Provider’s (ISP) access links.  The physical and data link layers vary including DSL, Cable Modem, or Mobile LTE, yet on the network layer they ultimately provide internet access.  While this segment is typically the shortest portion of the overall journey to the cloud, many issues may occur over it that can affect quality.  The Cloud Direct service provides several features to optimize access at the branch.
 
-* Link Aggregation
-* Prioritization
-* Intelligent Steering
+*  Link Aggregation
+*  Prioritization
+*  Intelligent Steering
 
 #### Link Aggregation
 
@@ -101,9 +101,9 @@ Changes in state may vary from a black out where an entire link goes down, to a 
 
 The general Internet lies between the branch office Citrix SD-WAN and Cloud Direct PoPs.  The majority of the segment is up to local ISPs to manage and traffic is typically transported as best effort with no quality or service level agreements.  Nevertheless, the Cloud Direct service includes several benefits to optimize traffic while in route.
 
-* Hitless Failover
-* Extended Visibility
-* VoIP Protection
+*  Hitless Failover
+*  Extended Visibility
+*  VoIP Protection
 
 #### Hitless Failover
 ![Hitless Failover](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_IO-Hitles.png)
@@ -124,10 +124,10 @@ Enterprises may have some visibility of traffic statistics over their 1st mile c
 
 The Cloud Direct service also provides reporting on performance statistics:
 
-* Total uptime improvement – additional time of internet availability as a result of the Cloud Direct service intervention
-* QoS adaptations – the volume of intelligent path changes to protect sensitive traffic like VoIP
-* Major Issues Fixed – the number of circuit blackout or brownouts avoided by intelligent routing
-* Circuit Performance - Overall % uptime for each circuit and aggregate time of major and minor issues incurred respectively
+*  Total uptime improvement – additional time of internet availability as a result of the Cloud Direct service intervention
+*  QoS adaptations – the volume of intelligent path changes to protect sensitive traffic like VoIP
+*  Major Issues Fixed – the number of circuit blackout or brownouts avoided by intelligent routing
+*  Circuit Performance - Overall % uptime for each circuit and aggregate time of major and minor issues incurred respectively
 
 Administrators will have the ability to view this data on per day/week/month via [SD-WAN Orchestrator](https://docs.citrix.com/en-us/citrix-sd-wan-orchestrator.html).  They can also have a report emailed on a regular basis.
 
@@ -144,21 +144,21 @@ Jitter is one of the biggest factors in poor call quality, often caused by Inter
 ### Cloud Core Optimization
 At the Cloud Direct service PoP, the OpenVPN tunnel that was originated at the branch office, after transport across the internet, is de-encapsulated and ready for delivery to the destination cloud provider, that hosts the target SaaS site.  The Cloud Direct service provides several benefits to transport traffic efficiently across this last segment:
 
-* Enterprise QoS
-* Extensive Peering
-* Private Backbone
+*  Enterprise QoS
+*  Extensive Peering
+*  Private Backbone
 
 #### Enterprise QoS
 ![Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CO-EntQos.png)
 
 Upon reception of packets, the Citrix SD-WAN appliance hosted Cloud Direct service process automatically identifies six types of traffic, maps them to a class of service and applies a QoS tag accordingly.
 
-1. VoIP signaling traffic
-2. VoIP bearer traffic
-3. Urgent traffic (Remote Desktop, Citrix HDX, Interactive Apps)
-4. Interactive Apps, VPN
-5. Bulk Data (Netflix, Dropbox)
-6. Other
+1.  VoIP signaling traffic
+2.  VoIP bearer traffic
+3.  Urgent traffic (Remote Desktop, Citrix HDX, Interactive Apps)
+4.  Interactive Apps, VPN
+5.  Bulk Data (Netflix, Dropbox)
+6.  Other
 
 Packets originated at the branch office are transported across the Cloud Direct service tunnel.  Then at the PoP on the far end traffic is further delivered over the Cloud Direct private backbone over which QoS tags are honored as packets are transferred hop-to-hop.
 
@@ -180,9 +180,9 @@ The Cloud Direct service PoPs are connected by a private backbone with redundant
 
 Citrix SD-WAN is a powerful networking technology that provides optimal routing across all available paths. With the addition of the Cloud Direct service it provides premium transport over the public internet including enterprise-grade reliability and performance. Let’s discuss some use cases where the it provides the most benefits.
 
-* SaaS
-* UCaaS
-* DaaS
+*  SaaS
+*  UCaaS
+*  DaaS
 
 #### SaaS
 
@@ -200,5 +200,4 @@ UCaaS includes VoIP based communication solutions such as Microsoft Teams and Sk
 
 The Cloud Direct service provides several benefits for [Citrix Virtual Apps and Desktops service](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops.html) and [Citrix Managed Desktops](https://docs.citrix.com/en-us/citrix-managed-desktops.html)  users to improve user experience including; Better use experience when links are congested; and seamless aggregation and steering to avoid session outages when local access links fail, or internet paths encounter brown outs.
 
-One of the many benefits of Citrix Virtual Apps and Desktops and Citrix Managed Desktops is that its virtual delivery agents (VDA) may be hosted in a variety of hybrid cloud locations.  After a Citrix SD-WAN appliance identifies Citrix Virtual Apps and Desktops HDX (the delivery protocol) session it checks all available virtual paths for the optimal route.  If it is destined for a public internet site and the service is mapped to Cloud direct the session traffic is tagged, prioritized as high priority interactive and transported accordingly. Citrix SD-WAN with Cloud Direct service is the ideal solution to route and deliver Citrix Virtual Apps and Desktops and Citrix Managed Desktops optimally across the public internet. 	 	
-
+One of the many benefits of Citrix Virtual Apps and Desktops and Citrix Managed Desktops is that its virtual delivery agents (VDA) may be hosted in a variety of hybrid cloud locations.  After a Citrix SD-WAN appliance identifies Citrix Virtual Apps and Desktops HDX (the delivery protocol) session it checks all available virtual paths for the optimal route.  If it is destined for a public internet site and the service is mapped to Cloud direct the session traffic is tagged, prioritized as high priority interactive and transported accordingly. Citrix SD-WAN with Cloud Direct service is the ideal solution to route and deliver Citrix Virtual Apps and Desktops and Citrix Managed Desktops optimally across the public internet.
