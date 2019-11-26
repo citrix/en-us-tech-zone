@@ -5,7 +5,7 @@ layout: doc
 
 ## Contributors
 
-**Daniel Feller:** [Daniel Feller](https://twitter.com/djfeller)
+**Author:** [Daniel Feller](https://twitter.com/djfeller)
 
 A user’s primary workspace identity authorizes access to all workspace resource feeds including microapps, mobile apps, virtual apps, virtual desktops and content. Citrix Workspace provides organizations with a choice in selecting the user’s primary identity provider.
 
@@ -69,7 +69,7 @@ The cloud connector includes an AD Provider service that allows Citrix Workspace
 
 ## Active Directory with TOTP
 
-For many organizations, providing access to application and desktop services with a username and password does not provide adequate security.  Incorporating a Time-based One-Time Password (TOTP) provides multi-factor authentication by introducing a “something you have”, which is the TOTP token, with the “something you know”, which is the password.
+For many organizations, providing access to application and desktop services with a username and password does not provide adequate security.  Incorporating a [Time-based One-Time Password](https://docs.citrix.com/en-us/tech-zone/learn/tech-insights/authentication-totp.html) (TOTP) provides multi-factor authentication by introducing a “something you have”, which is the TOTP token, with the “something you know”, which is the password.
 
 TOTP generates a random 6 digit code that changes every 30 seconds. This code is based on a secret key that is shared between the user’s mobile app and the backend infrastructure.  The secret key is the “something you have” factor for multi-factor authentication. To generate the random code, an industry standard, secure-hash algorithm gets applied to the secret key and the current time. To authenticate, the code in the mobile app is compared against the code from the backend infrastructure.
 
@@ -117,7 +117,7 @@ To integrate Citrix Workspace and Citrix Gateway, an OAuth IdP policy must get c
 
 The OpenID Connect application, configured on Citrix Gateway, leverages the advanced authentication policies bound to the authentication virtual server to authenticate the user. Once the user is successfully authenticated to Citrix Gateway, Citrix Gateway returns the user’s Active Directory credentials to Citrix Workspace.
 
-With the use of nFactor, Citrix Gateway allows organizations to create a more dynamic authentication flow, taking into account characteristics like user group membership, device ownership and user location.
+With the use of [nFactor](https://support.citrix.com/article/CTX264698), Citrix Gateway allows organizations to create a more dynamic authentication flow, taking into account characteristics like user group membership, device ownership and user location.
 
 In one example, using the most basic configuration, organizations can integrate a Citrix Gateway with Citrix Workspace to provide authentication to Active Directory.
 
