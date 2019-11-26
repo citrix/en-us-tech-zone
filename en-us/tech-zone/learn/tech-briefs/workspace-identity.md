@@ -98,6 +98,8 @@ There are a few items to consider when enabling TOTP-based multi-factor authenti
 *  Token Reset: Administrators are able to manually reset a user’s token. Once reset, users will be unable to complete authentication without reregistering with the TOTP service.
 *  Deployment: Like all identity and access management configuration changes, enabling TOTP on a Workspace subscription impacts all users. When enabled, any new authentication attempts will fail until the user successfully registers with the TOTP service.
 
+The [TOTP Tech Insight video](https://docs.citrix.com/en-us/tech-zone/learn/tech-insights/authentication-totp.html) provides additional details on the user and admin experience.
+
 ## Azure Active Directory
 
 Citrix Workspace allows users to authenticate with an Azure Active Directory account. The authentication can be as simple as a username and password or utilize any multi-factor authentication policies available within Azure Active Directory. The integration between Citrix Workspace and Azure Active Directory results in Azure Active Directory handling the authentication process while returning an identity token for the user.
@@ -120,6 +122,8 @@ In order for Citrix Workspace to complete the authentication process and to gene
 *  User Principal Name
 *  Security Identifier (SID)
 
+The [Azure Active Directory Tech Insight videi](https://www.youtube.com/watch?v=H1Z9OOWSEGA) provides additional detail on the admin configuration and user experience when using a FIDO2 Yubikey. 
+
 ## Citrix Gateway
 
 Users are able to authenticate to Citrix Workspace using an on-premises Citrix Gateway. Citrix Gateway authentication accommodates simple authentication policies that use a single source for user authentication, like Active Directory, as well as more complex, cascaded authentication policies that rely upon multiple authentication providers and policies.
@@ -131,6 +135,8 @@ The integration between Citrix Workspace and Citrix Gateway results in Citrix Ga
 To integrate Citrix Workspace and Citrix Gateway, an OAuth IdP policy must get created within the on-premises Citrix Gateway, which is an authentication protocol based on the OAuth 2.0 specification.  Citrix Workspace connects to the organization’s unique Citrix Gateway URL to access the OpenID Connect application by referencing the application’s client ID, which is protected with a shared secret key.
 
 The OpenID Connect application, configured on Citrix Gateway, leverages the advanced authentication policies bound to the authentication virtual server to authenticate the user. Once the user is successfully authenticated to Citrix Gateway, Citrix Gateway returns the user’s Active Directory credentials to Citrix Workspace.
+
+The [Citrix Gateway Tech insight video](https://docs.citrix.com/en-us/tech-zone/learn/tech-insights/gateway-idp.html) provides additional details on the admin configuration and the user experience. 
 
 With the use of [nFactor](https://support.citrix.com/article/CTX264698), Citrix Gateway allows organizations to create a more dynamic authentication flow, taking into account characteristics like user group membership, device ownership and user location.
 
@@ -157,6 +163,8 @@ Another example of contextual authentication provides different authentication p
 [![Citrix Gateway - User Groups](/en-us/tech-zone/learn/media/tech-briefs_workspace-identity_citrix-gateway-user-groups.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-identity_citrix-gateway-user-groups.png)
 
 Users interacting with financial data, personal data or intellectual property data should encounter stricter authentication policies as shown with Group2 in the diagram.
+
+When using an on-premises Citrix Gateway as the identity provider, users are able to utilize push-based authentication with Citrix Workspace, as detailed in the [Push Authentication Tech Insight video.](https://docs.citrix.com/en-us/tech-zone/learn/tech-insights/authentication-push.html)
 
 Regardless of the type of authentication policy configured, once the user successfully validates their identity, Citrix Gateway must respond to the initial Citrix Workspace request with the user’s Active Directory credentials. In order for Citrix Workspace to complete the authentication process and to generate a list of authorized resources, each Active Directory user account must have the following parameters defined: 
 *  Email address
@@ -186,3 +194,5 @@ The type of resource feeds within Citrix Workspace dictates the requirements for
 *  Active Directory linked Okta identity: Microsoft Windows-based resources (VDI) require an Active Directory-based identity. If Citrix Workspace must authorize access to Citrix Virtual Apps and Desktops resources, the Okta identity used to authenticate to Workspace must contain claims (Active Directory SID, UPN and GUID). These claims enables Citrix Workspace to authorize Active Directory-based resources to an Okta identity. The process for linking the Active Directory parameters with an Okta ID is greatly simplified with the use of the Okta Active Directory synchronization tool.
 
 [![Okta - Parameters](/en-us/tech-zone/learn/media/tech-briefs_workspace-identity_okta-parameters.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-identity_okta-parameters.png)
+
+The setup and configuration of Okta as an identity provider is detailed in the [Okta Tech Insight video.](https://docs.citrix.com/en-us/tech-zone/learn/tech-insights/okta.html)
