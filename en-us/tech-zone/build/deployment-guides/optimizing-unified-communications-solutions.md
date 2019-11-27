@@ -73,6 +73,7 @@ When designing an optimized unified communications solution with Citrix, it is i
 •	Will the unified communications software be available through published apps, desktops, and/or VDI?
 •	What endpoint telephony hardware will be used? (see [Citrix Ready](https://citrixready.citrix.com/) offerings)
 
+
 ## Optimizing Video
 
 This section will cover optimizing video for unified communications solutions and typically applies in generic fallback scenarios (e.g. Unsupported endpoint client device or platform and/or unsupported unified communication solution). One such example is running the GoToMeeting collaboration offering within a virtual desktop. 
@@ -82,9 +83,43 @@ This section will cover optimizing video for unified communications solutions an
   - A Citrix endpoint client that supports GPU hardware acceleration is recommended. That includes the Citrix Workspace App for Windows, Linux, Mac, and Chrome-OS. When using thin-client devices confirm with vendor if H.264 hardware decoding is supported, and which Citrix client version is used (if integrated with vendor image).  
   - Installing a GPU that supports H.264 hardware encoding/decoding on the Citrix server or VDI can also improve performance and save CPU cycles by offloading this process. There are scalability considerations when using a GPU in a multi-session server (Virtual Apps).        
   - Webcam optimization - https://support.citrix.com/article/CTX132764
-  
+
+
 ## Optimizing Audio
 
 In this section we will cover how to optimize audio for fallback scenarios. The Citrix recommendation is to enable UDP audio for the best overall experience. For audio quality, VOIP services work best with the “medium” setting. Playback is ideal at the “high” setting. For more details, refer to the [7.15 LTSR Audio Documentation](https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/multimedia/audio.html#audio-over-udp-real-time-transport-and-audio-udp-port-range).
 
 
+## Generic USB
+
+Generic USB redirection offers support for a wide range of USB devices within virtual sessions; however, given the nature of the USB standard and bandwidth it requires, it is typically only suited for LAN situations. For webcams, the recommendation is to not use this generic USB redirection capability because it consumes too much bandwidth in almost all situations. Unified communications hardware with specialty buttons can take advantage of composite USB redirection (also known as hybrid mode) to leverage optimized multimedia virtual channels for voice and video while using generic USB redirection only for specific functions configured by the admin. Refer to the Composite USB Redirection section at [https://support.citrix.com/article/CTX133024](https://support.citrix.com/article/CTX133024) for additional details.
+
+
+## Browser Content Redirection
+
+Browser Content Redirection offloads the viewable “viewport” area of a VDA-based web browser to the endpoint device for rendering. This solution is ideal for optimizing any web-based unified communication offering, but especially true for those utilizing WebRTC. Refer to [Browser Content Redirection Documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html) and [https://support.citrix.com/article/CTX230052](https://support.citrix.com/article/CTX230052) for additional details on the feature including configuration and troubleshooting.
+
+
+## Monitoring
+
+Ongoing monitoring of the optimized unified communications solution in a Citrix environment is important. Administrators should first understand if optimization is taking place, as well as what graphics modes and virtual channels are in use, bandwidth consumption, etc. Help desk staff should also have an understanding of tools and processes available to assess and troubleshoot as required. 
+For solutions that offer an optimization pack, the easiest way to check if optimization is taking place during a voice or video call is to simply observe the resource utilization in task manager. With optimization enabled, the running process for the unified communication solution will consume significantly less CPU when compared to running in a non-optimized state.   For Browser Content Redirection, the processes are called HdxBrowserCef.exe and HdxBrowser.exe. Additional details can be found in the Browser Content Redirection troubleshooting guide at [https://support.citrix.com/article/CTX230052](https://support.citrix.com/article/CTX230052).
+
+(additional monitoring content)
+
+
+## Summary
+
+Whichever unified communication solution customers decide to utilize within their organization, Citrix has a way to secure and optimize it with the Citrix Virtual Apps and Desktops family. Many popular solutions have specific optimization packs while others leverage Citrix’s innovative Browser Content Redirection or generic fallback optimization techniques. Understanding the architecture and implementation specifics for a given environment will help to ensure the best possible user experience and scalability. Lastly, Citrix Director provides the necessary visibility for administrators and help desk staff to proactively analyze and troubleshoot unified communication optimization.
+
+
+## Resources
+
+- [https://support.citrix.com/article/CTX133024](https://support.citrix.com/article/CTX133024)
+- [https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/delivering-microsoft-lync-to-xenapp-and-xendesktop-users.pdf](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/delivering-microsoft-lync-to-xenapp-and-xendesktop-users.pdf)
+- [https://docs.citrix.com/en-us/hdx-optimization/current-release/whats-new.html](https://docs.citrix.com/en-us/hdx-optimization/current-release/whats-new.html)
+- [https://support.citrix.com/article/CTX200279](https://support.citrix.com/article/CTX200279)
+- [https://support.zoom.us/hc/en-us/articles/360031096531-Getting-Started-with-VDI](https://support.zoom.us/hc/en-us/articles/360031096531-Getting-Started-with-VDI)
+- [https://help.webex.com/en-us/tx7gq6/The-Webex-Meetings-Virtual-Desktop-App](https://help.webex.com/en-us/tx7gq6/The-Webex-Meetings-Virtual-Desktop-App)
+- [https://help.webex.com/en-us/j3p7bp/Cisco-Jabber-and-Virtual-Desktop-Infrastructure](https://help.webex.com/en-us/j3p7bp/Cisco-Jabber-and-Virtual-Desktop-Infrastructure)
+- [Skype for Business Lab Guide from Synergy 2016](https://citrix.sharefile.com/share/view/7a7f3b27e2984e2a)
