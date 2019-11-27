@@ -57,3 +57,34 @@ RTOP = RealTime Optimization Pack
 | Cisco Webex Teams              | 7.15+                   | No                               | Yes with BCR                      | n/a             | n/a         | n/a           |
 | Zoom                           | 7.15+                   | Yes. Zoom plug-in                | n/a                               | Yes             | No          | Yes           |
 | Avaya One-X                    | 7.15+                   | Yes. One-X plug-in               | n/a                               | Yes             | No          | No            |
+
+* Note that the table above is subject to change at any time and may not necessarily contain the latest data. It also reflects the solutions that have been tested for optimization within Citrix environments. Other solutions may be optimized in a generic fashion as described in the sections below.
+
+The Microsoft Teams and Skype for Business solutions use a media engine which is co-developed and co-supported between Citrix and Microsoft. For Teams it’s built into the VDA and Workspace app so no additional components are required. For Skype for Business, there are separate agent (RealTime Connector on the VDA) and engine (RTME on the endpoint) components that must be installed as part of the HDX RealTime Optimization Pack.
+
+Jabber, WebEx, Zoom, and Avaya solutions use a similar agent/engine architecture as Microsoft solutions; however, those solutions are owned by their respective vendors. Consult the respective vendor’s web site and/or Citrix Ready for additional details on these solutions.
+
+Cisco WebEx offerings in particular make use of Citrix’s Browser Content Redirection (BCR) functionality for web app optimization. BCR redirects the viewport area of a web browser running on a Citrix VDA to the endpoint client device for rendering to improve user experience and server scalability. For more information on BCR, see the section below and/or refer to the [product documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html).
+
+When designing an optimized unified communications solution with Citrix, it is important to understand basic hardware and software requirements including potential additional loads presented to the environment. These are just a few of the questions that must be considered:
+
+•	How many users will leverage the unified communications solution with Citrix?
+•	How will the users connect to the environment?
+•	Will the unified communications software be available through published apps, desktops, and/or VDI?
+•	What endpoint telephony hardware will be used? (see [Citrix Ready](https://citrixready.citrix.com/) offerings)
+
+## Optimizing Video
+
+This section will cover optimizing video for unified communications solutions and typically applies in generic fallback scenarios (e.g. Unsupported endpoint client device or platform and/or unsupported unified communication solution). One such example is running the GoToMeeting collaboration offering within a virtual desktop. 
+
+- Fallback scenarios will result in server-side rendered video. In this case, Citrix recommends the following configuration for best performance: 
+  - The H.264 video codec should be used for video playback and it is enabled by default.
+  - A Citrix endpoint client that supports GPU hardware acceleration is recommended. That includes the Citrix Workspace App for Windows, Linux, Mac, and Chrome-OS. When using thin-client devices confirm with vendor if H.264 hardware decoding is supported, and which Citrix client version is used (if integrated with vendor image).  
+  - Installing a GPU that supports H.264 hardware encoding/decoding on the Citrix server or VDI can also improve performance and save CPU cycles by offloading this process. There are scalability considerations when using a GPU in a multi-session server (Virtual Apps).        
+  - Webcam optimization - https://support.citrix.com/article/CTX132764
+  
+## Optimizing Audio
+
+In this section we will cover how to optimize audio for fallback scenarios. The Citrix recommendation is to enable UDP audio for the best overall experience. For audio quality, VOIP services work best with the “medium” setting. Playback is ideal at the “high” setting. For more details, refer to the [7.15 LTSR Audio Documentation](https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/multimedia/audio.html#audio-over-udp-real-time-transport-and-audio-udp-port-range).
+
+
