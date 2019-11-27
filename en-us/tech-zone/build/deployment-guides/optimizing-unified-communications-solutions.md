@@ -4,11 +4,27 @@
 
 **Author:** [Allen Furmanski](mailto:allen.furmanski@citrix.com)
 
+
 ## Audience
 
 This document is intended for Citrix technical professionals, IT decision-makers, partners, and consultants who wish to deliver unified communication solutions in a Citrix virtualized environment – whether on-premises or from a public cloud. The reader should have a basic understanding of Citrix app and desktop virtualization offerings as well as unified communications solutions. For more information on Citrix Virtual Apps and Desktops, refer to the [Citrix Virtual Apps and Desktops official documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops).
 
+
 ## Objective of this Document
 
 The purpose of this document is to describe how to best deploy unified communication solutions with Citrix Virtual Apps and Desktops to deliver optimal user experience, improve security, and maximize server scalability.
+
+
+## Introduction
+
+Real-time collaboration is at the heart of the modern workplace. It’s how employees remain productive and business gets done. Whether a two-person internal voice call across town or an international video conference with a prospective customer hosting dozens of attendees, today’s unified communication solutions meet the demanding needs of any organization. Citrix virtual app and desktop solutions complement these offerings by:
+
+- Keeping sensitive data like chat logs, file transfers, and SIP signaling secure within the confines of the data center as opposed to distributed across hundreds or thousands of endpoint devices.
+- Providing a consistent user experience across various device types and platforms – even helping to enable capabilities on platforms without native client support.
+- Easing the administrative burden. Instead of managing unified communications clients and versions across endpoints simply deploy Workspace app, embrace auto-updates, and BYO initiatives
+- And much more…
+
+
+Citrix has worked with the vendor’s of the below unified communications solutions to offer optimization packs. These packs help offload voice and video content to the endpoint device wherever possible while keeping the unified communication client secure in the data center (see the architecture section for more details).
+
 
