@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.
 ---
 # Workspace Identity
 
@@ -28,7 +29,7 @@ Citrix Workspace provides a better alternative to the status quo. Citrix Workspa
 
 Citrix Workspace relies on the identity broker micro-service to manage authentication to the configured identity provider. A successful workspace authentication allows the resource feed µ-service to create a list of authorized resources available to the user.
 
-However, many of these services have, or require an identity different from the user’s primary workspace identity as they utilize a different identity provider. The single sign-on µ-service (discussed in more detail in the Tech Brief – Workspace Single Sign-On) translates the user’s primary workspace identity into a resource-specific identity using appropriate approaches like:
+However, many of these services have, or require an identity different from the user’s primary workspace identity as they utilize a different identity provider. The single sign-on µ-service translates the user’s primary workspace identity into a resource-specific identity using appropriate approaches like:
 
 *  SAML
 *  Kerberos
