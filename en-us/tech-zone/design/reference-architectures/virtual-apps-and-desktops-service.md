@@ -271,6 +271,8 @@ The Local Host Cache (LHC) is a feature with Cloud Connectors that enables users
 
 LHC uses SQL Server Express LocalDB which is installed during Cloud Connector installation to store the required data for uninterrupted service during an outage. A Cloud Connector’s CPU configuration, particularly the number of cores available to the SQL Server Express LocalDB, directly affects Local Host Cache performance. CPU overhead is observed only during the outage period when the database is unreachable and the High Availability Service is active. Citrix recommends using multiple sockets with multiple cores for Cloud Connector machines. In Citrix testing, a 2 socket, 3 core configuration provided better performance than 4x1 and 6x1 configurations. Local Host Cache works only in resource locations containing an on-premises StoreFront.
 
+For customers requiring a higher level of resiliency, Citrix recommends the StoreFront with Local Host Cache deployment model.
+
 [![CVAD-Image-9](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_009.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_009.png)
 
 Reference: [*Citrix Docs: Local Host Cache*](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/local-host-cache.html)
