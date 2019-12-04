@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.
 ---
 # Workspace Identity
 
