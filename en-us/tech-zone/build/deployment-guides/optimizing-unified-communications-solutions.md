@@ -54,13 +54,13 @@ RTOP = RealTime Optimization Pack
 | Zoom                           | 7.15+                   | Yes. Zoom plug-in                | n/a                               | Yes             | No          | Yes           |
 | Avaya One-X                    | 7.15+                   | Yes. One-X plug-in               | n/a                               | Yes             | No          | No            |
 
-Note that the table above is subject to change at any time and may not necessarily contain the latest data. It also reflects the solutions that have been tested for optimization within Citrix environments. Other solutions may be optimized in a generic fashion as described in the sections below.
+The preceding table is subject to change at any time and may not necessarily contain the latest data. It also reflects the solutions that have been tested for optimization within Citrix environments. Other solutions can be optimized in a generic fashion as described in the following sections.
 
 The Microsoft Teams and Skype for Business solutions use a media engine which is co-developed and co-supported between Citrix and Microsoft. For Teams it’s built into the VDA and Workspace app so no further components are required. For Skype for Business, there are separate agent (RealTime Connector on the VDA) and engine (RTME on the endpoint) components that must be installed as part of the HDX RealTime Optimization Pack.
 
-Jabber, WebEx, Zoom, and Avaya solutions use a similar agent/engine architecture as Microsoft solutions; however, those solutions are owned by their respective vendors. Consult the respective vendor’s website or Citrix Ready for more details on these solutions.
+Jabber, WebEx, Zoom, and Avaya solutions use a similar agent/engine architecture as Microsoft solutions. However, those solutions are owned by their respective vendors. Consult the respective vendor’s website or Citrix Ready for more details on these solutions.
 
-Cisco WebEx offerings in particular make use of Citrix’s Browser Content Redirection (BCR) functionality for web app optimization. BCR redirects the viewport area of a web browser running on a Citrix VDA to the endpoint client device for rendering to improve user experience and server scalability. For more information on BCR, see the section below or refer to the [product documentation](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html).
+Cisco WebEx offerings in particular make use of Citrix’s Browser Content Redirection (BCR) functionality for web app optimization. BCR redirects the viewport area of a web browser running on a Citrix VDA to the endpoint client device for rendering to improve user experience and server scalability. For more information on BCR, see the following section or refer to the [product documentation](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html).
 
 When designing an optimized unified communications solution with Citrix, it is important to understand basic hardware and software requirements including potential extra loads presented to the environment. These are just a few of the questions that must be considered:
 
@@ -71,7 +71,7 @@ When designing an optimized unified communications solution with Citrix, it is i
 
 ## Optimizing Video
 
-This section will cover optimizing video for unified communications solutions and typically applies in generic fallback scenarios (such as unsupported endpoint client device or platform or unsupported unified communication solution). One such example is running the GoToMeeting collaboration offering within a virtual desktop.
+This section covers optimizing video for unified communications solutions. It typically applies in generic fallback scenarios such as unsupported endpoint client device or platform or unsupported unified communication solution. One such example is running the GoToMeeting collaboration offering within a virtual desktop.
 
 Fallback scenarios result in server-side rendered video. In this case, Citrix recommends the following configuration for best performance:
 
@@ -86,7 +86,7 @@ In this section we cover how to optimize audio for fallback scenarios. The Citri
 
 ## Generic USB
 
-Generic USB redirection offers support for a wide range of USB devices within virtual sessions; however, given the nature of the USB standard and bandwidth it requires, it is typically only suited for LAN situations. For webcams, the recommendation is to not use this generic USB redirection capability because it consumes too much bandwidth in almost all situations. Unified communications hardware with specialty buttons can take advantage of composite USB redirection (also known as hybrid mode) to use optimized multimedia virtual channels for voice and video while using generic USB redirection only for specific functions configured by the admin. Refer to the Composite USB Redirection section at [https://support.citrix.com/article/CTX133024](https://support.citrix.com/article/CTX133024) for more details.
+Generic USB redirection offers support for a wide range of USB devices within virtual sessions. However, given the nature of the USB standard and bandwidth it requires, it is typically only suited for LAN situations. For webcams, the recommendation is to not use this generic USB redirection capability because it consumes too much bandwidth in almost all situations. Unified communications hardware with specialty buttons can take advantage of composite USB redirection. This is also known as hybrid mode and is used to optimize multimedia virtual channels for voice and video while using generic USB redirection for specific functions. The functions are configurable by the admin. Refer to the Composite USB Redirection section at [https://support.citrix.com/article/CTX133024](https://support.citrix.com/article/CTX133024) for more details.
 
 ## Browser Content Redirection
 
@@ -95,7 +95,7 @@ Browser Content Redirection offloads the viewable “viewport” area of a VDA-b
 ## Monitoring
 
 Ongoing monitoring of the optimized unified communications solution in a Citrix environment is important. Administrators should first understand if optimization is taking place, and what graphics modes and virtual channels are in use, bandwidth consumption, and so forth. Help desk staff should also have an understanding of tools and processes available to assess and troubleshoot as required.
-For solutions that offer an optimization pack, the easiest way to check if optimization is taking place during a voice or video call is to simply observe the resource utilization in task manager. With optimization enabled, the running process for the unified communication solution consumes less CPU when compared to running in a non-optimized state.   For Browser Content Redirection, the processes are called HdxBrowserCef.exe and HdxBrowser.exe. More details can be found in the Browser Content Redirection troubleshooting guide at [https://support.citrix.com/article/CTX230052](https://support.citrix.com/article/CTX230052).
+For solutions with an optimization pack, the easiest way to check for optimization during a voice or video call is to simply observe the resource utilization in task manager. With optimization enabled, the running process for the unified communication solution consumes less CPU when compared to running in a non-optimized state.   For Browser Content Redirection, the processes are called HdxBrowserCef.exe and HdxBrowser.exe. More details can be found in the Browser Content Redirection troubleshooting guide at [https://support.citrix.com/article/CTX230052](https://support.citrix.com/article/CTX230052).
 
 (additional monitoring content)
 
