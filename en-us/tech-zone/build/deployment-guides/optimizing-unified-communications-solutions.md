@@ -6,22 +6,22 @@
 
 ## Audience
 
-This document is intended for Citrix technical professionals, IT decision-makers, partners, and consultants who want to deliver unified communication solutions in a Citrix virtualized environment – whether on-premises or from a public cloud. The reader should have a basic understanding of Citrix app and desktop virtualization offerings in addition to unified communications solutions. For more information on Citrix Virtual Apps and Desktops, refer to the [Citrix Virtual Apps and Desktops official documentation](/en-us/citrix-virtual-apps-desktops).
+This document is intended for Citrix technical professionals, IT decision-makers, partners, and consultants who want to deliver unified communication solutions in a Citrix virtualized environment. The content is relevant with both on-premises and public cloud architectures. The reader should have a basic understanding of Citrix app and desktop virtualization offerings in addition to unified communications solutions. For more information on Citrix Virtual Apps and Desktops, refer to the [Citrix Virtual Apps and Desktops official documentation](/en-us/citrix-virtual-apps-desktops).
 
 ## Objective of this Document
 
-The purpose of this document is to describe how to best deploy unified communication solutions with Citrix Virtual Apps and Desktops to deliver optimal user experience, improve security, and maximize server scalability.
+The purpose of this document is to describe how to best deploy unified communication solutions with Citrix Virtual Apps and Desktops. The overall goal is to deliver an optimal user experience, improve security, and maximize server scalability.
 
 ## Introduction
 
-Real-time collaboration is at the heart of the modern workplace. It’s how employees remain productive and business gets done. Whether a two-person internal voice call across town or an international video conference with a prospective customer hosting dozens of attendees, today’s unified communication solutions meet the demanding needs of any organization. Citrix virtual app and desktop solutions complement these offerings by:
+Real-time collaboration is at the heart of the modern workplace. It’s how employees remain productive and business gets done. Whether a two-person internal voice call or an international video conference hosting dozens of attendees, today’s unified communication solutions meet the demanding needs of any organization. Citrix virtual app and desktop solutions complement these offerings by:
 
--  Keeping sensitive data like chat logs, file transfers, and SIP signaling secure within the confines of the data center as opposed to distributed across hundreds or thousands of endpoint devices.
+-  Keeping sensitive data like chat logs, file transfers, and SIP signaling secure within the data center as opposed to distributed across hundreds or thousands of endpoint devices.
 -  Providing a consistent user experience across various device types and platforms – even helping to enable capabilities on platforms without native client support.
 -  Easing the administrative burden. Instead of managing unified communications clients and versions across endpoints simply deploy Workspace app, embrace auto-updates, and BYO initiatives
 -  And much more…
 
-Citrix has worked with the vendors of the below unified communications solutions to offer optimization packs. These packs help offload voice and video content to the endpoint device wherever possible while keeping the unified communication client secure in the data center (see the architecture section for more details).
+Citrix has worked with the vendors of the below unified communications solutions to offer optimization packs. These packs help offload voice and video content to the endpoint device wherever possible. The unified communication client remains secure in the data center with this approach (see the architecture section for more details).
 
 -  [Optimization for Microsoft Teams](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html)
 -  [HDX RealTime Optimization Pack for Skype for Business](/en-us/hdx-optimization/current-release.html)
@@ -29,15 +29,15 @@ Citrix has worked with the vendors of the below unified communications solutions
 -  [Avaya VDI Communicator](https://support.avaya.com/products/P0994/vdi-communicator/)
 -  [Zoom Meetings optimization](https://citrixready.citrix.com/zoom-video-communications/zoom-meetings.html)
 
-The above solutions ensure the best possible user experience and server scalability when used with supported Citrix versions and endpoint client devices. When the requirements are not met with these solutions (for instance connecting from an unsupported platform or client device) or a different unified communications solution is in use, a generic fallback approach may be used to optimize audio and video. We discuss this later in the document.
+The preceding solutions ensure the best possible user experience and server scalability when used with supported Citrix versions and endpoint client devices. When the requirements are not met (for instance connecting from an unsupported platform or client device) or a different unified communications solution is in use, a generic fallback approach can be used to optimize audio and video. We discuss this approach later in the document.
 
 ## Architecture
 
-Most optimized unified communication solutions for Citrix environments employ an agent on the Citrix server/desktop to handle business logic, signaling, and so on and a decoupled media engine on the endpoint device to process the audio and video. This approach reduces the hops that data packets would normally travel through in a virtualized environment.
+Most optimized unified communication solutions for Citrix environments employ an agent on the Citrix server/desktop to handle business logic, signaling, and other capabilities. A decoupled media engine resides on the endpoint device to process the audio and video. This approach reduces the hops that data packets would normally travel through in a virtualized environment.
 
 (diagram placeholder)
 
-The below table provides the details of each officially supported unified communications solution including platform support and versions.
+The following table provides the details of each officially supported unified communications solution including platform support and versions.
 Acronyms used:
 BCR = Browser Content Redirection
 VDA = Virtual Delivery Agent
@@ -58,20 +58,20 @@ Note that the table above is subject to change at any time and may not necessari
 
 The Microsoft Teams and Skype for Business solutions use a media engine which is co-developed and co-supported between Citrix and Microsoft. For Teams it’s built into the VDA and Workspace app so no further components are required. For Skype for Business, there are separate agent (RealTime Connector on the VDA) and engine (RTME on the endpoint) components that must be installed as part of the HDX RealTime Optimization Pack.
 
-Jabber, WebEx, Zoom, and Avaya solutions use a similar agent/engine architecture as Microsoft solutions; however, those solutions are owned by their respective vendors. Consult the respective vendor’s website and/or Citrix Ready for more details on these solutions.
+Jabber, WebEx, Zoom, and Avaya solutions use a similar agent/engine architecture as Microsoft solutions; however, those solutions are owned by their respective vendors. Consult the respective vendor’s website or Citrix Ready for more details on these solutions.
 
-Cisco WebEx offerings in particular make use of Citrix’s Browser Content Redirection (BCR) functionality for web app optimization. BCR redirects the viewport area of a web browser running on a Citrix VDA to the endpoint client device for rendering to improve user experience and server scalability. For more information on BCR, see the section below and/or refer to the [product documentation](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html).
+Cisco WebEx offerings in particular make use of Citrix’s Browser Content Redirection (BCR) functionality for web app optimization. BCR redirects the viewport area of a web browser running on a Citrix VDA to the endpoint client device for rendering to improve user experience and server scalability. For more information on BCR, see the section below or refer to the [product documentation](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html).
 
 When designing an optimized unified communications solution with Citrix, it is important to understand basic hardware and software requirements including potential extra loads presented to the environment. These are just a few of the questions that must be considered:
 
 •  How many users will use the unified communications solution with Citrix?
 •  How will the users connect to the environment?
-•  Will the unified communications software be available through published apps, desktops, and/or VDI?
+•  Will the unified communications software be available through published apps, desktops, or VDI?
 •  What endpoint telephony hardware will be used? (see [Citrix Ready](https://citrixready.citrix.com/) offerings)
 
 ## Optimizing Video
 
-This section will cover optimizing video for unified communications solutions and typically applies in generic fallback scenarios (such as unsupported endpoint client device or platform and/or unsupported unified communication solution). One such example is running the GoToMeeting collaboration offering within a virtual desktop.
+This section will cover optimizing video for unified communications solutions and typically applies in generic fallback scenarios (such as unsupported endpoint client device or platform or unsupported unified communication solution). One such example is running the GoToMeeting collaboration offering within a virtual desktop.
 
 Fallback scenarios result in server-side rendered video. In this case, Citrix recommends the following configuration for best performance:
 
