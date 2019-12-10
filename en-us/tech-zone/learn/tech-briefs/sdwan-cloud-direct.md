@@ -1,7 +1,7 @@
 
 # Citrix SD-WAN Cloud Direct service overview
 
-Contributors
+## Contributors
 
 **Author:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
 
@@ -29,7 +29,7 @@ Enterprises continue to adopt SaaS applications in lieu of traditional hosted ap
 
 ![SaaS backhauled via the Data Center](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CES-DataCenter.png)
 
- #### SaaS backhauled via the Data Center
+#### SaaS backhauled via the Data Center
 
 In a traditional model, backhauling branch internet traffic worked when the minority of web traffic was not performance sensitive. Now with a significant number of business-critical applications, powered by SaaS, data center centric network infrastructure must be redesigned.
 
@@ -106,6 +106,7 @@ The general Internet lies between the branch office Citrix SD-WAN and Cloud Dire
 *  VoIP Protection
 
 #### Hitless Failover
+
 ![Hitless Failover](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_IO-Hitles.png)
 
 Sessions originated from the Cloud Direct service process, on the branch office hosted Citrix SD-WAN appliance, are transported across non-encrypted OpenVPN UDP based tunnels. The tunnels terminate on a primary Cloud Direct service PoP gateway, with a secondary PoP on standby. The tunnel source and destination both are always public IP addresses, assigned and managed by the Cloud Direct service.
@@ -142,6 +143,7 @@ Jitter is one of the biggest factors in poor call quality. Jitter is often cause
 ![Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_EnterpriseQoS.PNG)
 
 ### Cloud Core Optimization
+
 At the Cloud Direct service PoP, the OpenVPN tunnel that was originated at the branch office is de-encapsulated. Thereafter it delivered to the destination cloud provider that hosts the target SaaS site. The Cloud Direct service provides several benefits to transport traffic efficiently across this last segment:
 
 *  Enterprise QoS
@@ -149,16 +151,17 @@ At the Cloud Direct service PoP, the OpenVPN tunnel that was originated at the b
 *  Private Backbone
 
 #### Enterprise QoS
+
 ![Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_CO-EntQos.png)
 
 Upon reception of packets, the Citrix SD-WAN appliance hosted Cloud Direct service process automatically identifies six types of traffic. Once identified it maps them to a CoS and applies a QoS tag accordingly.
 
-1. VoIP signaling traffic
-2. VoIP bearer traffic
-3. Urgent traffic (Remote Desktop, Citrix HDX, Interactive Apps)
-4. Interactive Apps, VPN
-5. Bulk Data (Netflix, Dropbox)
-6. Other
+1.  VoIP signaling traffic
+2.  VoIP bearer traffic
+3.  Urgent traffic (Remote Desktop, Citrix HDX, Interactive Apps)
+4.  Interactive Apps, VPN
+5.  Bulk Data (Netflix, Dropbox)
+6.  Other
 
 Packets originated at the branch office are transported across the Cloud Direct service tunnel. Then at the PoP, on the far end, they routed to the target SaaS site via the shortest path. If they traverse the Cloud Direct private backbone, QoS tags are honored, as packets are transferred hop-to-hop.
 
