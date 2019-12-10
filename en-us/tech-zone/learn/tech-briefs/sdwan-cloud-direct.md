@@ -65,7 +65,7 @@ With these capabilities the Cloud Direct service optimizes delivery over the pat
 
 ### Branch Optimization
 
-Branch office optimization occurs on the Citrix SD-WAN appliance located in the local office. Here it interfaces with the ISP access links. The physical and data link layers vary including DSL, Cable Modem, or Mobile LTE.  They ultimately provide internet access on the network layer. The segment is typically the shortest portion of the overall journey to the cloud, however many issues can occur over it that can affect quality. The Cloud Direct service provides several features to optimize access at the branch.
+Branch office optimization occurs on the Citrix SD-WAN appliance located in the local office. Here it interfaces with the ISP access links. The physical and data link layers vary including DSL, Cable Modem, or Mobile LTE. They ultimately provide internet access on the network layer. The segment is typically the shortest portion of the overall journey to the cloud, however many issues can occur over it that can affect quality. The Cloud Direct service provides several features to optimize access at the branch.
 
 *  Link Aggregation
 *  Prioritization
@@ -75,7 +75,7 @@ Branch office optimization occurs on the Citrix SD-WAN appliance located in the 
 
 ![Link Aggregation](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-LnkAgr.png)
 
-With link aggregation, the Citrix SD-WAN appliance treats up to four links as a single bundle and load balances traffic according to capacity. A typical router could have multiple default routes to each respective ISP.  It may only select one as the active primary, or route traffic across multiple routes unevenly.
+With link aggregation, the Citrix SD-WAN appliance treats up to four links as a single bundle and load balances traffic according to capacity. A typical router could have multiple default routes to each respective ISP. It may only select one as the active primary, or route traffic across multiple routes unevenly.
 
 Citrix SD-WAN can allocate a fixed portion of each circuit to the Cloud Direct service or general internet use. Cloud Direct utilizes all available bandwidth allocated to the service. Probes continuously monitor availability. Upon detecting a link outage, the “virtual” aggregated circuit is condensed by removing the “bad link” from the bundle, and rerouting sessions over “good links”. Sessions are rerouted at the network layer avoiding interruption to user sessions.
 
@@ -85,7 +85,7 @@ Citrix SD-WAN can allocate a fixed portion of each circuit to the Cloud Direct s
 
 Traditionally branch routers may transmit traffic on a First-In-First-Out basis, or otherwise rely on prioritization tags coming from the LAN which may be inconsistent or inexistent. The Citrix SD-WAN appliance hosted Cloud Direct service process prioritizes egress transmission queues according to CoS. On reception they automatically identify traffic by 1 of 6 types, apply a QoS tag, and prioritize for appropriate handling.
 
-The traffic is prioritized according to class.  This ensures that the highest priority sessions are sent to the egress transmit queues first. The limited bandwidth of the local DSL, Cable, or LTE access links may be the bottleneck over the entire path to the cloud. Therefore, ensuring appropriate prioritization of traffic is critical to delivering maximum end-to-end QoS.
+The traffic is prioritized according to class. This ensures that the highest priority sessions are sent to the egress transmit queues first. The limited bandwidth of the local DSL, Cable, or LTE access links may be the bottleneck over the entire path to the cloud. Therefore, ensuring appropriate prioritization of traffic is critical to delivering maximum end-to-end QoS.
 
 #### Intelligent Steering
 
@@ -135,7 +135,7 @@ Administrators have the ability to view this data on per day/week/month via [SD-
 
 ![ VoIP Protection](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_IO-VoIPro.png)
 
-Delivering voice-over-IP (VoIP) over the Internet is a challenge.  It does not include the QoS protection provided on an Enterprise network. Cloud Direct tags VoIP packets appropriately for expedited forwarding and honors them over the Cloud Direct network. However, ISPs between the branch office and the Cloud Direct PoPs, do not honor the tags.
+Delivering voice-over-IP (VoIP) over the Internet is a challenge. It does not include the QoS protection provided on an Enterprise network. Cloud Direct tags VoIP packets appropriately for expedited forwarding and honors them over the Cloud Direct network. However, ISPs between the branch office and the Cloud Direct PoPs, do not honor the tags.
 
 Jitter is one of the biggest factors in poor call quality. Jitter is often caused by Internet congestion, where ISPs cannot forward packets at the rate they are received, and thus must buffer them. Eventually they are forwarded, albeit with different inter-packet spacing, causing jitter. It is not as significant a problem for other forms of traffic. However, to deliver good VoIP call quality it is essential that buffering in transit is minimized. Cloud Direct has visibility across all available paths for jitter that is often caused by congestion. It dynamically moves the flows to better paths as needed.
 
@@ -194,7 +194,7 @@ The performance and reliability benefit the service provides decrease the furthe
 
 The Cloud Direct service has several benefits for access to UCaaS services. Sessions persist during outages in the communication path with hitless failover. The service monitors and dynamically switches internet paths when call quality degrades with VoIP Protection. It also maintains call quality with Enterprise QoS.
 
-UCaaS includes VoIP based communication solutions such as Microsoft Teams and Skype. Call setup is done via one of multiple redundant sites hosted, across the globe, on the public internet. DNS queries are transported via the Cloud Direct service tunnel.  The source of the query is the Cloud Direct service POP ensuring the nearest site is returned. After call setup the bearer traffic can be proxied via the same site. Alternatively, it may be setup directly to a peer on the intranet or internet. The Cloud Direct service ensures the session traffic is routed via the most efficient path.
+UCaaS includes VoIP based communication solutions such as Microsoft Teams and Skype. Call setup is done via one of multiple redundant sites hosted, across the globe, on the public internet. DNS queries are transported via the Cloud Direct service tunnel. The source of the query is the Cloud Direct service POP ensuring the nearest site is returned. After call setup the bearer traffic can be proxied via the same site. Alternatively, it may be setup directly to a peer on the intranet or internet. The Cloud Direct service ensures the session traffic is routed via the most efficient path.
 
 #### DaaS
 
