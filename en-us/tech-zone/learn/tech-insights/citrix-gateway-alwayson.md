@@ -2,11 +2,11 @@
 layout: doc
 description: Short description of this Tech Insight
 ---
-# Title
+# Citrix Gateway AlwaysOn Service for Windows
 
 ## Contributors
 
-**Author:** [Name](https://twitter.com/ID)
+**Author:** [Matt Brooks](https://twitter.com/tweetmattbrooks)
 
 DESCRIPTION
 
