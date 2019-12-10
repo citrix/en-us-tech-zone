@@ -11,7 +11,7 @@ description: Optimize SaaS access for branch users by tunneling session traffic 
 
 **Special Thanks:**  Mark King, Daniel Feller
 
-The Cloud Direct service extends Citrix SD-WAN optimal routing and delivery benefits to SaaS. The service tunnels branch office endpoint traffic, to the front door of popular SaaS sites, via PoPs hosted at major Internet Exchanges.
+The Cloud Direct service extends Citrix SD-WAN optimal routing and delivery optimization benefits to SaaS. The service tunnels branch office endpoint traffic, to the front door of popular SaaS sites, via PoPs hosted at major Internet Exchanges.
 
 [![Citrix SD-WAN Cloud Direct Service](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_SDWAN-CDs.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_SDWAN-CDs.png)
 
