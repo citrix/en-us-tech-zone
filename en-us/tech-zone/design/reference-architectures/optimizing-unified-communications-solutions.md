@@ -1,3 +1,8 @@
+---
+layout: doc
+description: TODO
+---
+
 # Optimizing Unified Communications Solutions with Citrix Technologies
 
 ## Contributors
@@ -104,8 +109,8 @@ Whichever unified communication solution customers decide to utilize within thei
 ## Resources
 
 -  [https://support.citrix.com/article/CTX133024](https://support.citrix.com/article/CTX133024)
--  [https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/delivering-microsoft-lync-to-xenapp-and-xendesktop-users.pdf](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/delivering-microsoft-lync-to-xenapp-and-xendesktop-users.pdf)
--  [/en-us/hdx-optimization/current-release/whats-new.html](/en-us/hdx-optimization/current-release/whats-new.html)
+-  [Delivering Microsoft Skype for Business to XenApp and XenDesktop Users](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/delivering-microsoft-lync-to-xenapp-and-xendesktop-users.pdf)
+-  [HDX RealTime Optimization Pack - What's New](/en-us/hdx-optimization/current-release/whats-new.html)
 -  [https://support.citrix.com/article/CTX200279](https://support.citrix.com/article/CTX200279)
 -  [https://support.zoom.us/hc/en-us/articles/360031096531-Getting-Started-with-VDI](https://support.zoom.us/hc/en-us/articles/360031096531-Getting-Started-with-VDI)
 -  [https://help.webex.com/en-us/tx7gq6/The-Webex-Meetings-Virtual-Desktop-App](https://help.webex.com/en-us/tx7gq6/The-Webex-Meetings-Virtual-Desktop-App)
