@@ -14,14 +14,14 @@ The purpose of this document is to describe how to best deploy unified communica
 
 ## Introduction
 
-Real-time collaboration is at the heart of the modern workplace. It’s how employees remain productive and business gets done. Whether a two-person internal voice call or an international video conference hosting dozens of attendees, today’s unified communication solutions meet the demanding needs of any organization. Citrix virtual app and desktop solutions complement these offerings by:
+Real-time collaboration is at the heart of the modern workplace. It’s how employees remain productive and business gets done. Whether a two-person internal voice call or an international video conference hosting dozens of attendees, today’s unified communication solutions meet the demanding needs of any organization. Citrix virtualization solutions complement these offerings by:
 
 -  Keeping sensitive data like chat logs, file transfers, and SIP signaling secure within the data center as opposed to distributed across hundreds or thousands of endpoint devices.
 -  Providing a consistent user experience across various device types and platforms – even helping to enable capabilities on platforms without native client support.
 -  Easing the administrative burden. Instead of managing unified communications clients and versions across endpoints simply deploy Workspace app, embrace auto-updates, and BYO initiatives
 -  And much more…
 
-Citrix has worked with the vendors of the following unified communications solutions to offer optimization packs. These packs help offload voice and video content to the endpoint device wherever possible. The unified communication client remains secure in the data center with this approach (see the architecture section for more details).
+Citrix has worked with the vendors of the following unified communications solutions to offer Optimization Packs. These packs help offload voice and video content to the endpoint device wherever possible. The unified communication client remains secure in the data center with this approach (see the architecture section for more details).
 
 -  [Optimization for Microsoft Teams](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html)
 -  [HDX RealTime Optimization Pack for Skype for Business](/en-us/hdx-optimization/current-release.html)
@@ -29,7 +29,7 @@ Citrix has worked with the vendors of the following unified communications solut
 -  [Avaya VDI Communicator](https://support.avaya.com/products/P0994/vdi-communicator/)
 -  [Zoom Meetings optimization](https://citrixready.citrix.com/zoom-video-communications/zoom-meetings.html)
 
-The preceding solutions ensure the best possible user experience and server scalability when used with supported Citrix versions and endpoint client devices. When the requirements are not met (such as connecting from an unsupported platform or client device) or a different unified communications solution is in use, a generic fallback approach can be used. This provides optimization of audio and video for sessions. We discuss this approach later in the document.
+The preceding solutions ensure the best possible user experience and server scalability when used with supported Citrix versions and endpoint client devices. When the requirements are not met (such as connecting from an unsupported platform or client device) or using a different unified communications solution, a generic fallback approach can be used. This provides optimization of audio and video for sessions. We discuss this approach later in the document.
 
 ## Architecture
 
@@ -48,11 +48,11 @@ RTOP = RealTime Optimization Pack
 |--------------------------------|-------------------------|----------------------------------|-----------------------------------|-----------------|-------------|---------------|
 | Microsoft Teams                | VDA 1906+  CWA 1909+    | Yes                              | Yes, with BCR (Windows CWA Only) | Yes             | Roadmap     | Roadmap       |
 | Skype for Business             | RTOP 2.4+               | Yes                              | n/a                               | Yes             | Yes         | Yes           |
-| Cisco Jabber Softphone for VDI | 7.15+                   | Yes. Cisco plug-in 12.6+         | n/a                               | Yes             | No          | Yes           |
-| Cisco Webex Meetings           | 7.15+                   | Yes. Cisco Plug-in 39.3+         | Yes with BCR                      | Yes             | No          | Yes           |
+| Cisco Jabber Softphone for VDI | 7.15+                   | Yes. Cisco Plugin 12.6+         | n/a                               | Yes             | No          | Yes           |
+| Cisco Webex Meetings           | 7.15+                   | Yes. Cisco Plugin 39.3+         | Yes with BCR                      | Yes             | No          | Yes           |
 | Cisco Webex Teams              | 7.15+                   | No                               | Yes with BCR                      | n/a             | n/a         | n/a           |
-| Zoom                           | 7.15+                   | Yes. Zoom plug-in                | n/a                               | Yes             | No          | Yes           |
-| Avaya One-X                    | 7.15+                   | Yes. One-X plug-in               | n/a                               | Yes             | No          | No            |
+| Zoom                           | 7.15+                   | Yes. Zoom Plugin                | n/a                               | Yes             | No          | Yes           |
+| Avaya One-X                    | 7.15+                   | Yes. One-X Plugin               | n/a                               | Yes             | No          | No            |
 
 The preceding table is subject to change at any time and may not necessarily contain the latest data. It also reflects the solutions that have been tested for optimization within Citrix environments. Other solutions can be optimized in a generic fashion as described in the following sections.
 
@@ -60,7 +60,7 @@ The Microsoft Teams and Skype for Business solutions use a media engine which is
 
 Jabber, WebEx, Zoom, and Avaya solutions use a similar agent/engine architecture as Microsoft solutions. However, those solutions are owned by their respective vendors. Consult the respective vendor’s website or Citrix Ready for more details on these solutions.
 
-Cisco WebEx offerings in particular make use of Citrix’s Browser Content Redirection (BCR) for web app optimization. BCR redirects the viewport area of a web browser running on a Citrix VDA to the endpoint client device for rendering to improve user experience and server scalability. For more information on BCR, see the following section or refer to the [product documentation](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html).
+Cisco WebEx offerings in particular use Citrix’s Browser Content Redirection (BCR) for web app optimization. BCR redirects the viewport area of a web browser running on a Citrix VDA to the endpoint client device for rendering to improve user experience and server scalability. For more information on BCR, see the following section or refer to the [product documentation](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html).
 
 When designing an optimized unified communications solution with Citrix, it is important to understand basic hardware and software requirements including potential extra loads presented to the environment. These are just a few of the questions that must be considered:
 
@@ -86,7 +86,7 @@ In this section we cover how to optimize audio for fallback scenarios. The Citri
 
 ## Generic USB
 
-Generic USB redirection offers support for a wide range of USB devices within virtual sessions. However, given the nature of the USB standard and bandwidth it requires, it is typically only suited for LAN situations. For webcams, the recommendation is to not use this generic USB redirection capability because it consumes too much bandwidth in almost all situations. Unified communications hardware with specialty buttons can take advantage of composite USB redirection. This is also known as hybrid mode and is used to optimize multimedia virtual channels for voice and video while using generic USB redirection for specific functions. The functions are configurable by the admin. Refer to the Composite USB Redirection section at [https://support.citrix.com/article/CTX133024](https://support.citrix.com/article/CTX133024) for more details.
+Generic USB redirection offers support for a wide range of USB devices within virtual sessions. However, given the nature of the USB standard and bandwidth it requires, it is typically only suited for LAN situations. For webcams, the recommendation is to not use this generic USB redirection capability because it consumes too much bandwidth in almost all situations. Unified communications hardware with specialty buttons can take advantage of composite USB redirection. This is also known as hybrid mode and is used to optimize multimedia virtual channels for voice and video while using generic USB redirection for specific functions. The functions are configurable by the admin. Refer to the **Composite USB Redirection** section at [https://support.citrix.com/article/CTX133024](https://support.citrix.com/article/CTX133024) for more details.
 
 ## Browser Content Redirection
 
@@ -95,13 +95,11 @@ Browser Content Redirection offloads the viewable “viewport” area of a VDA-b
 ## Monitoring
 
 Ongoing monitoring of the optimized unified communications solution in a Citrix environment is important. Administrators should first understand if optimization is taking place, and what graphics modes and virtual channels are in use, bandwidth consumption, and so forth. Help desk staff should also have an understanding of tools and processes available to assess and troubleshoot as required.
-For solutions with an optimization pack, the easiest way to check for optimization during a voice or video call is to observe resource utilization in task manager. With optimization enabled, the running process for the unified communication solution consumes less CPU when compared to running in a non-optimized state.   For Browser Content Redirection, the processes are called HdxBrowserCef.exe and HdxBrowser.exe. More details can be found in the Browser Content Redirection troubleshooting guide at [https://support.citrix.com/article/CTX230052](https://support.citrix.com/article/CTX230052).
-
-(additional monitoring content)
+For solutions with an Optimization Pack, the easiest way to check for optimization during a voice or video call is to observe resource utilization in task manager. With optimization enabled, the running process for the unified communication solution consumes less CPU when compared to running in a non-optimized state.   For Browser Content Redirection, the processes are called HdxBrowserCef.exe and HdxBrowser.exe. More details can be found in the Browser Content Redirection troubleshooting guide at [https://support.citrix.com/article/CTX230052](https://support.citrix.com/article/CTX230052).
 
 ## Summary
 
-Whichever unified communication solution customers decide to utilize within their organization, Citrix has a way to secure and optimize it with the Citrix Virtual Apps and Desktops family. Many popular solutions have specific optimization packs while others can use Citrix’s innovative Browser Content Redirection or generic fallback optimization techniques. Understanding the architecture and implementation specifics for a given environment helps to ensure the best possible user experience and scalability. Lastly, Citrix Director provides the necessary visibility for administrators and help desk staff to proactively analyze and troubleshoot unified communication optimization.
+Whichever unified communication solution customers decide to utilize within their organization, Citrix has a way to secure and optimize it with the Citrix Virtual Apps and Desktops family. Many popular solutions have specific Optimization Packs while others can use Citrix’s innovative Browser Content Redirection or generic fallback optimization techniques. Understanding the architecture and implementation specifics for a given environment helps to ensure the best possible user experience and scalability. Lastly, Citrix Director provides the necessary visibility for administrators and help desk staff to proactively analyze and troubleshoot unified communication optimization.
 
 ## Resources
 
