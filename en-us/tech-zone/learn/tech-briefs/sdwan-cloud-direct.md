@@ -15,7 +15,7 @@ The Cloud Direct service extends Citrix SD-WAN optimal routing and delivery opti
 
 [![Citrix SD-WAN Cloud Direct Service](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_SDWAN-CDs.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_SDWAN-CDs.png)
 
-The [Cloud Direct service](https://docs.citrix.com/en-us/citrix-sd-wan-center/11/cloud-direct-service.html) virtually bundles multiple branch office internet access links such as DSL, Cable, and LTE. It creates redundant UDP tunnels. On one end is a Cloud Direct service process, hosted on branch office SD-WAN appliances. On the other end is gateways hosted in Cloud Direct service PoPs. The gateways are hosted in Points of Presence (PoP) at Internet Exchanges, near popular SaaS sites. It is able to utilize and monitor each link within the bundles to mitigate against data link or network issues in the first mile. The first mile is the segment of the circuit between the branch office and the ISP PoP where issues often occur. Further it aides with optimal transport of sessions throughout their path across the internet to target sites in the cloud.
+The [Cloud Direct service](https://docs.citrix.com/en-us/citrix-sd-wan-center/11/cloud-direct-service.html) virtually bundles multiple branch office internet access links such as DSL, Cable, and LTE. It creates redundant UDP tunnels. On one end is a Cloud Direct service process, hosted on branch office SD-WAN appliances. On the other end are gateways hosted in Cloud Direct service PoPs. The gateways are hosted in Points of Presence (PoP) at Internet Exchanges, near popular SaaS sites. It is able to utilize and monitor each link within the bundles to mitigate against data link or network issues in the first mile. The first mile is the segment of the circuit between the branch office and the ISP PoP where issues often occur. Further it aides with optimal transport of sessions throughout their path across the internet to target sites in the cloud.
 
 It can protect delivery sensitive VoIP traffic by applying bi-directional quality-of-service (QoS) prioritization and shaping with class-of-service (CoS) tags. It sends that marked traffic through the links with the least latency, loss, and jitter, improving the [mean opinion score (MOS)](https://en.wikipedia.org/wiki/Mean_opinion_score). In parallel it automatically identifies other traffic types and applies pertinent QoS tags to map to one of six classes of service. Then, it prioritizes traffic for egress transmission. Once on the Cloud Direct network infrastructure that traffic is transported, according to its CoS marking, over a high-speed private delivery network.
 
@@ -41,11 +41,11 @@ SaaS apps are deployed across multiple cloud locations globally. Cloud Direct Po
 
 #### Best Effort Internet
 
-Accessing business critical SaaS applications over the internet is problematic since traffic delivery over the internet is best effort by default. It is a collection of service providers connected using a variety of network equipment, administrators, and circuits with varying levels of reliability. Therefore, SaaS connections are susceptible to disruption due to outages, oversubscription, and congestion. 
+Accessing business critical SaaS applications over the internet is problematic since traffic delivery over the internet is best effort by default. It is a collection of service providers connected using various network equipment, administrators, and circuits with varying levels of reliability. Therefore, SaaS connections are susceptible to disruption due to outages, oversubscription, and congestion.
 
-* **Outage** – may be caused by a variety of factors such as the failure of circuits from cuts due to unplanned digging, failure of equipment from anomalies, or failure of data centers from natural disasters.
-* **Oversubscription** – lower tier providers depend on paid transit circuits to access certain cloud providers and SaaS sites.  To minimize their costs, they may over subscribe those circuits routing more customer traffic bandwidth than there is capacity available causing packet loss, retransmission, and ultimately latency.
-* **Congestion** – similarly, due to oversubscription or just peak usage, ISP routes may need to buffer traffic destine over congested circuits which are at full transfer capacity. Accessing business critical SaaS applications over the internet is problematic since traffic delivery over the internet is best effort by default. It is a collection of service providers connected using a variety of network equipment, administrators, and circuits with varying levels of reliability. Therefore, SaaS connections are susceptible to disruption due to outages, oversubscription, and congestion.
+*  **Outage** – may be caused by various factors such as the failure of circuits from cuts due to unplanned digging, failure of equipment from anomalies, or failure of data centers from natural disasters.
+*  **Oversubscription** – lower tier providers depend on paid transit circuits to access certain cloud providers and SaaS sites. To minimize their costs, they may over subscribe those circuits routing more customer traffic bandwidth than there is capacity available causing packet loss, retransmission, and ultimately latency.
+*  **Congestion** – similarly, due to oversubscription or peak usage, ISP routes may need to buffer traffic destine over congested circuits which are at full transfer capacity. Accessing business critical SaaS applications over the internet is problematic since traffic delivery over the internet is best effort by default. It is a collection of service providers connected using various network equipment, administrators, and circuits with varying levels of reliability. Therefore, SaaS connections are susceptible to disruption due to outages, oversubscription, and congestion.
 
 ![Best Effort Internet](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BestEffortInternet.PNG)
 
@@ -63,13 +63,13 @@ With these capabilities the Cloud Direct service optimizes delivery over the pat
 *  Internet Optimization
 *  Cloud Core Optimization
 
-#### Branch – First Mile Circuits
+### Branch – First Mile Circuits
 
 1st mile circuits are access links to ISPs that are typically lower speed, lower cost, and subsequently lower reliability compared to circuits used by large enterprise and data centers. While the Citrix SD-WAN appliances connect to the modems via ethernet the data link technologies vary including:
 
-* **DSL** – is a family of technologies that are used to transmit digital data over telephone lines. The bit rate typically ranges from 256 kbps to over 100 Mbps and varies by upload and download speed depending on several factors.
-* **Cable** – like DSL cable provides connectivity from the ISP to a branch office. And akin to how DSL is delivered over the telephone network infrastructure it is delivered over the cable television infrastructure.   Download speeds range from 384 kbps to more than 50 Mbps.
-* **4G LTE** – is a standard for wireless communication for mobile devices, yet it is increasingly used as an alternative to fixed internet circuits providing fairly high-speed access, up to 30 Mbps upload and download, virtually anywhere.
+*  **DSL** – is a family of technologies that are used to transmit digital data over telephone lines. The bit rate typically ranges from 256 kbps to over 100 Mbps and varies by upload and download speed depending on several factors.
+*  **Cable** – like DSL cable provides connectivity from the ISP to a branch office. And akin to how DSL is delivered over the telephone network infrastructure it is delivered over the cable television infrastructure. Download speeds range from 384 kbps to more than 50 Mbps.
+*  **4G LTE** – is a standard for wireless communication for mobile devices, yet it is increasingly used as an alternative to fixed internet circuits providing fairly high-speed access, up to 30 Mbps upload and download, virtually anywhere.
 
 ## Branch Optimization
 
@@ -83,7 +83,7 @@ Branch office optimization occurs on the Citrix SD-WAN appliance located in the 
 
 ![Link Aggregation](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-LnkAgr.png)
 
-With link aggregation, the Citrix SD-WAN appliance treats up to four links as a single bundle and load balances traffic according to capacity. A typical router could have multiple default routes to each respective ISP. It may only select one as the active primary, or route traffic across multiple routes unevenly.
+With link aggregation, the Citrix SD-WAN appliance treats up to four links as a single bundle and load balances traffic according to capacity. A typical router can have multiple default routes to each respective ISP. It may only select one as the active primary, or route traffic across multiple routes unevenly.
 
 Citrix SD-WAN can allocate a fixed portion of each circuit to the Cloud Direct service or general internet use. Cloud Direct utilizes all available bandwidth allocated to the service. Probes continuously monitor availability. Upon detecting a link outage, the “virtual” aggregated circuit is condensed by removing the “bad link” from the bundle, and rerouting sessions over “good links”. Sessions are rerouted at the network layer avoiding interruption to user sessions.
 
@@ -108,9 +108,9 @@ Changes in state can vary between black out and brown out. A black out is when a
 Peering is a voluntary interconnection of internet autonomous systems to expedite traffic between hosted content and users. It is typically settlement-free meaning neither provider pays the other rather the access to each other’s routes is mutually beneficial.
 The average user or enterprise accessing the internet through a typical service provider must pass through several hops before reaching their desired destination. Having direct access to service providers with Extensive Peering agreements reduces their traffic hops and ultimately reduces their session latency.
 
-* **BGP** – the Border Gateway Protocol is the primary protocol use to exchange routes between internet service providers and is the mechanism used to determine which traffic is passed as a result of peering agreements.
-* **IX** – exchange points are typically large data centers where public peering takes place between providers over large switch fabrics.
-* **Transit** – service providers that do not have sufficient peering typically pay for circuits to access higher tier provides to provide access or “transit” to destinations needed by their customers.
+*  **BGP** – the Border Gateway Protocol is the primary protocol use to exchange routes between ISPs and is the mechanism used to determine which traffic is passed as a result of peering agreements.
+*  **IX** – exchange points are typically large data centers where public peering takes place between providers over large switch fabrics.
+*  **Transit** – service providers that do not have sufficient peering typically pay for circuits to access higher tier provides to provide access or “transit” to destinations needed by their customers.
 
 ![Peering](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_Peering.PNG)
 
@@ -132,7 +132,7 @@ On the branch Citrix SD-WAN appliance the tunnel is sourced from a fixed LAN sid
 
 The Cloud Direct service advertises a route to the tunnel end point from a secondary PoP via BGP with a lower preference. If a failure occurred at the primary Cloud Direct service PoP the secondary site would become the route once the change converged over the internet.
 
-Thus, with Hitless Failover, transport or application layer protocols are unaware of the outage. Subsequently sessions do not incur typical delay to get reestablished at those layers, and the user experience is not impacted. This benefit applies to a variety of session types including VPN, virtual desktop, SSH, VoIP, or Web Conference sessions.
+Thus, with Hitless Failover, transport or application layer protocols are unaware of the outage. Subsequently sessions do not incur typical delay to get reestablished at those layers, and the user experience is not impacted. This benefit applies to various session types including VPN, virtual desktop, SSH, VoIP, or Web Conference sessions.
 
 ### Extended Visibility
 
@@ -161,9 +161,9 @@ Jitter is one of the biggest factors in poor call quality. Jitter is often cause
 
 Depending on the application Enterprise network traffic has different QoS requirements:
 
-* **Latency** – pertains to the length of time it takes a packet to reach its destination which grows based on distance, congestion or other limiting factors on the network.
-* **Loss** – pertains to the rate of packet loss due to congestion avoidance, queue starvation, dirty WAN data links, or other network issues. This affects available bandwidth and retransmission.
-* **Jitter** – pertains to the average difference in packet arrival time relative to their transmission time. This has the most effect on VoIP call quality.
+*  **Latency** – pertains to the length of time it takes a packet to reach its destination which grows based on distance, congestion, or other limiting factors on the network.
+*  **Loss** – pertains to the rate of packet loss due to congestion avoidance, queue starvation, dirty WAN data links, or other network issues. This affects available bandwidth and retransmission.
+*  **Jitter** – pertains to the average difference in packet arrival time relative to their transmission time. This has the most effect on VoIP call quality.
 
 ![Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_EnterpriseQoS.PNG)
 
@@ -204,11 +204,11 @@ The Cloud Direct service PoPs are connected by a private backbone with redundant
 
 #### As a Service
 
-* **Software as a Service**
+*  **Software as a Service**
 SaaS is a software licensing and delivery model in which software is licensed on a subscription basis and is centrally hosted within a publicly accessible cloud computing platform. SaaS applications are typically accessed by users using a web browser or other thin client technology. SaaS has become a common delivery model for many business applications, including office productivity, payroll processing, point-of-sale, customer relationship management, enterprise resource planning, virtualization, development, and other enterprise software.
-* **Unified Communications as a Service**
+*  **Unified Communications as a Service**
 UCaaS is a way of delivering enterprise communication service through a managed cloud service model. This can include voice and telephony, meeting solutions, unified and instant messaging, contact and collaboration services, and other similar functions.
-* **Virtual Applications and Desktops Service**
+*  **Virtual Applications and Desktops Service**
 A solution that helps you optimize productivity with universal access to Virtual Applications and Desktops as a Service (DaaS) from any device. Virtual Apps and Desktops may be hosted in public or private clouds and accessed from private networks or over the public internet.
 
 ## Use Cases
@@ -229,10 +229,10 @@ The performance and reliability benefit the service provides decrease the furthe
 
 The Cloud Direct service has several benefits for access to UCaaS services. Sessions persist during outages in the communication path with hitless failover. The service monitors and dynamically switches internet paths when call quality degrades with VoIP Protection. It also maintains call quality with Enterprise QoS.
 
-UCaaS includes VoIP based communication solutions such as Microsoft Teams and Skype. Call setup is done via one of multiple redundant sites hosted, across the globe, on the public internet. DNS queries are transported via the Cloud Direct service tunnel. The source of the query is the Cloud Direct service POP ensuring the nearest site is returned. After call setup the bearer traffic can be proxied via the same site. Alternatively, it may be setup directly to a peer on the intranet or internet. The Cloud Direct service ensures the session traffic is routed via the most efficient path.
+UCaaS includes VoIP based communication solutions such as Microsoft Teams and Skype. Call setup is done via one of multiple redundant sites hosted, across the globe, on the public internet. DNS queries are transported via the Cloud Direct service tunnel. The source of the query is the Cloud Direct service POP ensuring the nearest site is returned. After call setup the bearer traffic can be proxied via the same site. Alternatively, it may be set up directly to a peer on the intranet or internet. The Cloud Direct service ensures the session traffic is routed via the most efficient path.
 
 ### DaaS
 
 The Cloud Direct service provides several benefits for [Citrix Virtual Apps and Desktops service](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops.html) and [Citrix Managed Desktops](https://docs.citrix.com/en-us/citrix-managed-desktops.html) users to improve user experience. The service provides better user experience when links are congested. It also aggregates and steers traffic to avoid session outages when local access links fail.
 
-Citrix Virtual Apps and Desktops and Citrix Managed Desktops VDAs may be hosted in a variety of hybrid cloud locations. After a Citrix SD-WAN appliance identifies a HDX session (the delivery protocol) it checks all available virtual paths for the optimal route. If the session is mapped to the Cloud Direct service, its traffic is tagged as interactive. Then the session is prioritized and transported accordingly. Citrix SD-WAN with Cloud Direct service is the ideal solution to route and deliver Citrix Virtual Apps and Desktops and Citrix Managed Desktops optimally across the public internet.
+Citrix Virtual Apps and Desktops and Citrix Managed Desktops VDAs may be hosted in various hybrid cloud locations. After a Citrix SD-WAN appliance identifies an HDX session (the delivery protocol) it checks all available virtual paths for the optimal route. If the session is mapped to the Cloud Direct service, its traffic is tagged as interactive. Then the session is prioritized and transported accordingly. Citrix SD-WAN with Cloud Direct service is the ideal solution to route and deliver Citrix Virtual Apps and Desktops and Citrix Managed Desktops optimally across the public internet.
