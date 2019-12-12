@@ -13,4 +13,4 @@ Citrix introduces intelligent features to the workspace which extend its capabil
 
 [![Tech Insight-Microapp Overview](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=a1W_BEHYUcI&feature=youtu.be)
 
-For more information about Microapps, see [Microapps](/en-us/citrix-microapps.md) in Citrix product documentation.
+For more information about Microapps, see [Microapps](/en-us/citrix-microapps.html) in Citrix product documentation.
