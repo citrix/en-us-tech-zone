@@ -78,4 +78,4 @@ The data flow of the workspace with intelligence can be found below:
 
 Citrix Workspace customers are able to build microapps to increase end-user productivity. It eliminates the need for users to parse through complex enterprise apps to complete a single task. Citrix Workspace is designed with security and end-user experience in mind. It encrypts all the data and keys; therefore, admins do not have access to customer information. The system only stores the data it needs to create events. By utilizing public APIs, admins completely control which microapps are made available. No audit trail is lost because everything is written back in the context of the user. Microapps organize, automate, and guide your employees through their work day; maximizing productivity and boosting the overall user experience.
 
-For more information about Microapps, see [Microapps](/en-us/citrix-microapps.md) in Citrix product documentation.
+For more information about Microapps, see [Microapps](/en-us/citrix-microapps.html) in Citrix product documentation.
