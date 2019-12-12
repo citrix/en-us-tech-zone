@@ -2,11 +2,11 @@
 layout: doc
 description: Short description of this article
 ---
-# Title
+# Reference Architecture on Citrix ADC - GSLB
 
 ## Contributors
 
-**Author:** [Albert Lee](URL)
+**Author:** [Albert Lee](Albert.lee@citrix.com)
 
 ## Audience
 
