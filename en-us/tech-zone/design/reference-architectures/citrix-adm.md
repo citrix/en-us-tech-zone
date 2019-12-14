@@ -6,7 +6,7 @@ description: Referenced Design Guide for Citrix ADM
 
 ## Contributors
 
-**Author:** [Albert Lee](Albert.lee@citrix.com)
+**Author:** [Albert Lee](mailto:Albert.lee@citrix.com)
 
 **Special thanks:** [Allen Furmanski](https://twitter.com/tekguyallen)
 
