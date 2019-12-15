@@ -31,7 +31,7 @@ The Citrix Application Delivery Management (ADM) software uses a built-in data s
 
 The following image shows the different internal and external subsystem components that make up a Citrix ADM appliance and the communication flow between both the internal ADM server components and externally managed networking appliances and instances.
 
-[![Citrix-ADM-Image-1](/en-us/tech-zone/build/media/reference-architectures_citrix-adm-strategies_001.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_001.PNG)
+[![Citrix-ADM-Image-1](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_001.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_001.PNG)
 
 The Citrix ADM NITRO Service acts as a web server that handles HTTP requests and responses sent to other subsystems within the appliance from the management GUI or APIs/SDKs, using ports 80 and 443. These requests travel via the Message Bus (message processing system) by using the inter-process communication (IPC) mechanism. Initially, the HTTP requests sent to the Control subsystem, which either processes the information or sends it to another, more appropriate subsystem. Each of the other subsystems—Inventory, Stylebooks, Data Collector, Configuration, AppFlow Decoder, AppFlow Analytics, Performance, Events, Entities, SLA Manager, Provisioner, Journal and daemons (aaad/snmpd/ntpd/syslogd/monit/sshd/pitboss) — have specific roles.
 
@@ -46,7 +46,7 @@ To manage and monitor applications and the network infrastructure, you must firs
 
 The following diagram depicts the high-level ADM HA appliance deployment.
 
-[![Citrix-ADM-Image-2](/en-us/tech-zone/build/media/reference-architectures_citrix-adm-strategies_002.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_002.PNG)
+[![Citrix-ADM-Image-2](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_002.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_002.PNG)
 
 ## ADM Key System Requirements
 
@@ -113,7 +113,7 @@ The following is the minimum requirements for Citrix ADM on-prem agent:
 The following figure shows Citrix ADC instances in two data centers and Citrix ADM high availability deployment using multisite agent-based architecture.
 
 
-[![Citrix-ADM-Image-3](/en-us/tech-zone/build/media/reference-architectures_citrix-adm-strategies_003.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_003.PNG)
+[![Citrix-ADM-Image-3](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_003.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_003.PNG)
 
 The primary site has the Citrix ADM nodes deployed in a high availability configuration. The Citrix ADC instances in the primary site directly registered with the Citrix ADM.
 
@@ -186,13 +186,13 @@ The following are the benefits of a high availability deployment with Citrix ADM
 
 The following diagram depicts the ADM HA deployment.
 
-[![Citrix-ADM-Image-4](/en-us/tech-zone/build/media/reference-architectures_citrix-adm-strategies_004.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_004.PNG)
+[![Citrix-ADM-Image-4](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_004.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_004.PNG)
 
 #### Components of high availability architecture
 
 In high availability deployment, one of the Citrix ADM nodes configured as the primary node (ADM HA Node 1) and the other as the secondary node (ADM HA Node 2). If the primary node goes down due to any reason, the secondary node takes over as the new primary node.
 
-[![Citrix-ADM-Image-5](/en-us/tech-zone/build/media/reference-architectures_citrix-adm-strategies_005.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_005.PNG)
+[![Citrix-ADM-Image-5](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_005.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_005.PNG)
 
 ## Disaster Recovery (DR) Mode - Reference Architecture
 
@@ -212,7 +212,7 @@ The following table describes the terms used while configuring disaster recovery
 
 The following image shows the disaster recovery workflow, the initial setup before the disaster, and the workflow after the disaster.
 
-[![Citrix-ADM-Image-6](/en-us/tech-zone/build/media/reference-architectures_citrix-adm-strategies_006.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_006.PNG)
+[![Citrix-ADM-Image-6](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_006.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_006.PNG)
 
 The image shows the disaster recovery setup before the disaster.
 
@@ -220,7 +220,7 @@ The primary site has Citrix ADM nodes deployed in the high availability mode, as
 
 The recovery site has a standalone Citrix ADM disaster recovery node deployed remotely. The disaster recovery node is in read-only mode and receives data from the primary node to create data backup. Citrix ADC instances in the recovery site are also discovered, but they do not have any traffic flowing through them. During the backup process, all data, files, and configurations are sent and replicated on the disaster recovery node from the primary node.
 
-[![Citrix-ADM-Image-7](/en-us/tech-zone/build/media/reference-architectures_citrix-adm-strategies_007.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_007.PNG)
+[![Citrix-ADM-Image-7](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_007.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_007.PNG)
 
 After the initiation of the script at the DR site, the DR site now becomes the new primary site. You can also access the DR user interface.
 
