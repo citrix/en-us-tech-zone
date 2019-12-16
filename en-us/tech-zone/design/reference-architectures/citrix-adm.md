@@ -66,12 +66,12 @@ An ADM appliance deployed on-premises as virtual appliances can run on Citrix Hy
 
 The following table lists the hypervisors supported by Citrix ADM.
 
-| **Hypervisor**    | **Versions**              | **Support   Documentation**                                  |
+| **Hypervisor**    | **Versions**              | **Product Documentation**                                  |
 | ----------------- | ------------------------- | ------------------------------------------------------------ |
-| Citrix Hypervisor | 7.1 and 7.4               | https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-xenserver.html |
-| VMware ESXi       | 6.0 and 6.5               | https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-esxi.html |
-| Microsoft Hyper-V | 2012 R2 and 2016          | https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-hyper-v.html |
-| Generic KVM       | RHEL 7.4 and Ubuntu 16.04 | https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-kvm.html |
+| Citrix Hypervisor | 7.1 and 7.4               | [Citrix ADM with Citrix Hypervisor](https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-xenserver.html) |
+| VMware ESXi       | 6.0 and 6.5               | [Citrix ADM with VMware ESXi](https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-esxi.html) |
+| Microsoft Hyper-V | 2012 R2 and 2016          | [Citrix ADM with Microsoft Hyper-V](https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-hyper-v.html) |
+| Generic KVM       | RHEL 7.4 and Ubuntu 16.04 | [Citrix ADM with Linux KVM server](https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-kvm.html) |
 
 ### Requirements for ADM appliance and agent Images
 
@@ -88,7 +88,7 @@ Customers have their data centers located across the globe. Agents play a vital 
 | -------------------------- | ------------------------------------------------------------ |
 | RAM                        | 32 GB required                                               |
 | Virtual CPU                | Eight vCPUs required                                         |
-| Storage space              | Citrix recommends using  solid-state drive (SSD) technology for Citrix ADM deployments.   The default value is 120 GB.  Actual storage requirement will depend on   Citrix ADM sizing estimation.    If your Citrix ADM storage  requirement exceeds 120 GB, you to have to attach an additional disk. Note  that you can add only one additional disk.   Citrix recommends you estimate  storage and attach additional disk at the time of initial deployment.   Use the [sizing   calculator](https://citrix.sharefile.com/share/getinfo/se7df156b4de42888)[ ](https://citrix.sharefile.com/share/getinfo/se7df156b4de42888)[t](https://citrix.sharefile.com/share/getinfo/se7df156b4de42888)o do the exact sizing  estimation for your MAS deployment, and for more information, see How to  Attach an Additional Disk to Citrix ADM. |
+| Storage space              | Citrix recommends using  solid-state drive (SSD) technology for Citrix ADM deployments.   The default value is 120 GB.  Actual storage requirement will depend on   Citrix ADM sizing estimation.    If your Citrix ADM storage  requirement exceeds 120 GB, you to have to attach an additional disk. Note  that you can add only one additional disk.   Citrix recommends you estimate  storage and attach additional disk at the time of initial deployment.   Use the [sizing calculator](https://citrix.sharefile.com/share/getinfo/se7df156b4de42888)(https://citrix.sharefile.com/share/getinfo/se7df156b4de42888)o do the exact sizing  estimation for your MAS deployment, and for more information, see How to  Attach an Additional Disk to Citrix ADM. |
 | Virtual network interfaces | 1                                                            |
 | Throughput                 | 1 Gbps or 100 Mbps                                           |
 
@@ -111,7 +111,6 @@ The following is the minimum requirements for Citrix ADM on-prem agent:
 | Throughput                 | 1 Gbps                                                       |
 
 The following figure shows Citrix ADC instances in two data centers and Citrix ADM high availability deployment using multisite agent-based architecture.
-
 
 [![Citrix-ADM-Image-3](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_003.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-adm_003.PNG)
 
