@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: TODO
+description: Learn how to optimize voice, video, and other capabilities of unified communication solutions in virtualized Citrix environments.
 ---
 
 # Optimizing Unified Communications Solutions with Citrix Technologies
