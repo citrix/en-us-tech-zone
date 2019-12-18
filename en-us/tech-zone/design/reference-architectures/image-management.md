@@ -91,6 +91,7 @@ The following table compares both the Citrix MCS and PVS models.
 |    Support for physical machines                   |               |       X       |
 |    Support for Microsoft Azure machines            |       X       |               |
 |    Support for Amazon Web Services (AWS) machines                 |       X       |               |
+|    Support for Google Cloud Platform | X |  |
 
 You can read more about image management decision factors in our article [Choosing the Provisioning Model for Image Management](/en-us/tech-zone/design/design-decisions/image-management.html)
 
