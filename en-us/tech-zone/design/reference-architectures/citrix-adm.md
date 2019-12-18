@@ -50,7 +50,7 @@ The following diagram depicts the high-level ADM HA appliance deployment.
 
 ## ADM Key System Requirements
 
-Before importing a Citrix ADM appliance to your current platform (i.e., Hypervisors), understanding the critical system licensing, hypervisor requirements, appliance image requirements, and ADC Build Integration limitations is a must.
+Before importing a Citrix ADM appliance to your current platform (that is, Hypervisors), understanding the critical system licensing, hypervisor requirements, appliance image requirements, and ADC Build Integration limitations is a must.
 
 ### Licensing Overview
 
@@ -88,7 +88,7 @@ Customers have their data centers located across the globe. Agents play a vital 
 | -------------------------- | ------------------------------------------------------------ |
 | RAM                        | 32 GB required                                               |
 | Virtual CPU                | Eight vCPUs required                                         |
-| Storage space              | Citrix recommends using solid-state drive (SSD) technology for Citrix ADM deployments.   The default value is 120 GB.  Actual storage requirement depends on Citrix ADM sizing estimation.    If your Citrix ADM storage requirement exceeds 120 GB, you to have to attach an additional disk. Note  that you can add only one additional disk.   Citrix recommends you estimate storage and attach the additional disk at the time of initial deployment.   Use the [sizing calculator](https://citrix.sharefile.com/share/getinfo/se7df156b4de42888) to do the exact sizing estimation for your Citrix ADM deployment, and for more information, see How to Attach an Additional Disk to Citrix ADM. |
+| Storage space              | Citrix recommends using solid-state drive (SSD) technology for Citrix ADM deployments. The default value is 120 GB. Actual storage requirement depends on Citrix ADM sizing estimation. If your Citrix ADM storage requirement exceeds 120 GB, you to have to attach an extra disk. You can add only one extra disk.   Citrix recommends you estimate storage and attach the extra disk at the time of initial deployment. Use the [sizing calculator](https://citrix.sharefile.com/share/getinfo/se7df156b4de42888) to do the exact sizing estimation for your Citrix ADM deployment, and for more information, see How to Attach an Additional Disk to Citrix ADM. |
 | Virtual network interfaces | 1                                                            |
 | Throughput                 | 1 Gbps or 100 Mbps                                           |
 
@@ -144,7 +144,7 @@ Diverse Citrix ADM features supported on different Citrix ADC software versions.
 
 ### Sizing Settings
 
-Citrix Application Delivery Management (ADM) storage requirement is determined based on your Citrix ADM sizing estimation. By default, Citrix ADM provides you a storage capacity of 120 gigabytes. If you need more than 120 gigabytes for storing your data, you can attach an extra disk (Max additional disk per ADM is 3TB).
+Citrix Application Delivery Management (ADM) storage requirement is determined based on your Citrix ADM sizing estimation. By default, Citrix ADM provides you a storage capacity of 120 GB. If you need more than 120 GB for storing your data, you can attach an extra disk (Max additional disk per ADM is 3TB).
 
 Notes:
 
@@ -171,13 +171,13 @@ In a Citrix ADM single server deployment, the database is deployed and integrate
 
 ### High Availability (HA) Deployment
 
-An HA deployment of two Citrix ADM servers provides uninterrupted operations. In a high availability setup, both the Citrix ADM nodes must be deployed in active-passive mode, on the same subnet using the same software version and build and must have identical configurations. With HA deployment, the ability to configure the floating IP address on the Citrix ADM primary node eliminates the need for separate Citrix ADC load balancer.
+An HA deployment of two Citrix ADM servers provides uninterrupted operations. In a high availability setup, both the Citrix ADM nodes must be deployed in active-passive mode, on the same subnet using the same software version and build and must have identical configurations. With HA deployment, the ability to configure the floating IP address on the Citrix ADM primary node eliminates the need for a separate Citrix ADC load balancer.
 
 The following are the benefits of a high availability deployment with Citrix ADM:
 
 *  An improved mechanism to monitor heartbeats between the primary and secondary nodes.
 *  It provides physical streaming replication of the database instead of logical bi-directional replication.
-*  High availability configuration provides the ability to configure the floating IP address on the primary node to eliminate the need for separate Citrix load balancer.
+*  High availability configuration provides the ability to configure the floating IP address on the primary node to eliminate the need for a separate Citrix load balancer.
 *  It provides easy access to the Citrix ADM user interface using the floating IP address.
 *  Citrix ADM user interface is provided only on the primary node. By using the primary node, you can eliminate the risk of accessing and making changes to the secondary node.
 *  Configuring the floating IP address handles the failover situation, and reconfiguring the instances is not required.
@@ -203,9 +203,9 @@ The following table describes the terms used while configuring disaster recovery
 
 | **Terms**                     | **Description**                                              |
 | ----------------------------- | ------------------------------------------------------------ |
-| Primary site (Data Center A)  | The primary site has Citrix ADM nodes  deployed in high availability mode. |
-| Recovery site (Data Center B) | The recovery site has a disaster recovery  node deployed in standalone mode. This node is in read-only mode and is not  operational until the primary site is down. |
-| Disaster recovery node        | The recovery node is a standalone node deployed  in the recovery site. This node is made operational (to the new primary) in  case a disaster hits the primary site, and it is non-functional. |
+| Primary site (Data Center A)  | The primary site has Citrix ADM nodes deployed in high availability mode. |
+| Recovery site (Data Center B) | The recovery site has a disaster recovery node deployed in standalone mode. This node is in read-only mode and is not operational until the primary site is down. |
+| Disaster recovery node        | The recovery node is a standalone node deployed in the recovery site. This node is made operational (to the new primary) in case a disaster hits the primary site, and it is non-functional. |
 
 **Note:** The primary site and DR site communicate with each other through ports 5454 and 22, which are enabled by default.
 
@@ -223,7 +223,7 @@ The recovery site has a standalone Citrix ADM disaster recovery node deployed re
 
 After the initiation of the script at the DR site, the DR site now becomes the new primary site. You can also access the DR user interface.
 
-Full information on Disaster Recovery (DR) feature in the Citrix ADM eDocs [here](https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/disaster-recovery.html).
+Full information about the disaster recovery (DR) feature is available in the Citrix ADM product documentation article [Configure disaster recovery for high availability](https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/disaster-recovery.html).
 
 ## ADM Agent Deployment
 
@@ -242,19 +242,19 @@ For communication purposes, the following ports must be open between the agent a
 
 | **Type** | **Port**      | **Details**                                                  |
 | -------- | ------------- | ------------------------------------------------------------ |
-| TCP      | 8443,7443,443 | For outbound and inbound communication between the agent and the  Citrix ADM on-prem server |
+| TCP      | 8443,7443,443 | For outbound and inbound communication between the agent and the Citrix ADM on-prem server |
 
 The following ports must be open between the agent and Citrix ADC Instances.
 
 | **Type** | **Port**          | **Details**                                                  |
 | -------- | ----------------- | ------------------------------------------------------------ |
-| TCP      | 80                | For  NITRO communication between the agent and Citrix ADC or Citrix SD-WAN  instance. |
-| TCP      | 22                | For SSH communication between the agent and Citrix ADC or Citrix  SD-WAN instance. For synchronization between Citrix ADM servers deployed in  high availability mode. |
-| UDP      | 4739              | For AppFlow communication between the agent and Citrix ADC or Citrix  SD-WAN instance. |
-| ICMP     | No  reserved port | To detect network reachability between Citrix ADM and Citrix ADC  instances, SD-WAN instances, or the secondary Citrix ADM server deployed in  high availability mode. |
+| TCP      | 80                | For NITRO communication between the agent and Citrix ADC or Citrix SD-WAN instance. |
+| TCP      | 22                | For SSH communication between the agent and Citrix ADC or Citrix SD-WAN instance. For synchronization between Citrix ADM servers deployed in high availability mode. |
+| UDP      | 4739              | For AppFlow communication between the agent and Citrix ADC or Citrix SD-WAN instance. |
+| ICMP     | No reserved port | To detect network reachability between Citrix ADM and Citrix ADC instances, SD-WAN instances, or the secondary Citrix ADM server deployed in high availability mode. |
 | SNMP     | 161,162           | To receive SNMP events from Citrix ADC instance to agent.    |
-| Syslog   | 514               | To receive Syslog messages from Citrix ADC or Citrix SD-WAN instance  to the agent. |
-| TCP      | 5557              | For log stream communication between the agent and Citrix ADC  instances. |
+| Syslog   | 514               | To receive Syslog messages from Citrix ADC or Citrix SD-WAN instance to the agent. |
+| TCP      | 5557              | For log stream communication between the agent and Citrix ADC instances. |
 
 ## References
 
@@ -284,7 +284,7 @@ The VPX provides the full functionality of the Citrix Networking product line, w
 
 #### Citrix ADC VPX in Azure
 
-Citrix ADC VPX in Azure is deployed in a Virtual Network (VNET) and is available from the Azure Marketplace in subscription-based, check-in/check-out, or Bring Your Own License (BYOL) editions. The recommended configuration includes three network interface cards (NICs): management, client-side, and server-side subnets. All on-premises Citrix Networking features are available in Azure, except for the following: clustering, IPv6, gratuitous ARP (GARP), L2 mode, tagged VLANs, dynamic routing, virtual MAC (VMAC), USIP, and jumbo frames.
+Citrix ADC VPX in Azure is deployed in a Virtual Network (VNET) and is available from the Azure Marketplace in subscription-based, check-in/check-out, or Bring Your Own License (BYOL) editions. The recommended configuration includes three NICs: management, client-side, and server-side subnets. All on-premises Citrix Networking features are available in Azure, except for the following: clustering, IPv6, gratuitous ARP (GARP), L2 mode, tagged VLANs, dynamic routing, virtual MAC (VMAC), USIP, and jumbo frames.
 
 More details on Citrix ADC VPX in Azure can be found [here](https://docs.citrix.com/en-us/netscaler/12-1/deploying-vpx/deploy-vpx-on-azure.html).
 
@@ -307,7 +307,7 @@ The Citrix ADC SDX platform delivers fully isolated network instances running on
 A Citrix ADC can be connected to a network using various of methods such as one arm mode or two-arm mode. Citrix ADC requires multiple IP addresses to function on a network. The most important IP addresses are:
 
 *  **NSIP (ADC IP):** There must be only one NSIP assigned to each instance, used for management. NSIP addresses are not shared between a High Availability (HA) Pair.
-*  **VIP (Virtual Server IP):** Virtual Server IP's are used to host services on Citrix ADCs. Examples would be a Load Balancing Virtual Server, SSL VPN Virtual Server, etc. VIP addresses are shared between a High Availability (HA) Pair.
+*  **VIP (Virtual Server IP):** Virtual Server IP's are used to host services on Citrix ADCs. Examples would be a Load Balancing Virtual Server, SSL VPN Virtual Server, and so on. VIP addresses are shared between a High Availability (HA) Pair.
 *  **SNIP (Subnet IP):** This IP address is used to access a particular subnet. This IP is used as the source address on the network when accessing resources on the particular subnet configured for use with the subnet IP. SNIP's are shared between a High Availability (HA) pair.
 
 ## Citrix Application Delivery Management Analytics (Insight) Overview
@@ -342,4 +342,4 @@ The Video Insight feature provides a secure and scalable solution for monitoring
 
 ### WAN Insight
 
-WAN Insight analytics enables administrators to easily monitor the accelerated and unaccelerated WAN traffic that flows between the datacenter and branch WAN optimization appliances. WAN Insight also provides visibility into clients, applications and branches on the network to help troubleshoot network issues effectively.
+WAN Insight analytics enables administrators to easily monitor the accelerated and unaccelerated WAN traffic that flows between the data center and branch WAN optimization appliances. WAN Insight also provides visibility into clients, applications and branches on the network to help troubleshoot network issues effectively.
