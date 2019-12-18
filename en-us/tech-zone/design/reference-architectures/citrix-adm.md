@@ -66,12 +66,12 @@ An ADM appliance deployed on-premises as virtual appliances can run on Citrix Hy
 
 The following table lists the hypervisors supported by Citrix ADM.
 
-| **Hypervisor**    | **Versions**              | **Support   Documentation**                                  |
+| **Hypervisor**    | **Versions**              | **Product Documentation**                                  |
 | ----------------- | ------------------------- | ------------------------------------------------------------ |
-| Citrix Hypervisor | 7.1 and 7.4               | https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-xenserver.html |
-| VMware ESXi       | 6.0 and 6.5               | https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-esxi.html |
-| Microsoft Hyper-V | 2012 R2 and 2016          | https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-hyper-v.html |
-| Generic KVM       | RHEL 7.4 and Ubuntu 16.04 | https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-kvm.html |
+| Citrix Hypervisor | 7.1 and 7.4               | [Citrix ADM with Citrix Hypervisor](https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-xenserver.html) |
+| VMware ESXi       | 6.0 and 6.5               | [Citrix ADM with VMware ESXi](https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-esxi.html) |
+| Microsoft Hyper-V | 2012 R2 and 2016          | [Citrix ADM with Microsoft Hyper-V](https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-hyper-v.html) |
+| Generic KVM       | RHEL 7.4 and Ubuntu 16.04 | [Citrix ADM with Linux KVM server](https://docs.citrix.com/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-kvm.html) |
 
 ### Requirements for ADM appliance and agent Images
 
