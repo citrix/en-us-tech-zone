@@ -40,7 +40,7 @@ The preceding solutions ensure the best possible user experience and server scal
 
 Most optimized unified communication solutions for Citrix environments employ an agent on the Citrix server/desktop to handle business logic, signaling, and other capabilities. A decoupled media engine resides on the endpoint device to process the audio and video. This approach reduces the hops that data packets would normally travel through in a virtualized environment.
 
-[![Architecture of Unified Communications Solutions with Citrix Virtual Apps and Desktops](en-us/tech-zone/design/media/reference-architectures_optimizing-unified-communications-solutions_001.png)](en-us/tech-zone/design/media/reference-architectures_optimizing-unified-communications-solutions_001.png)
+[![Architecture of Unified Communications Solutions with Citrix Virtual Apps and Desktops](/en-us/tech-zone/design/media/reference-architectures_optimizing-unified-communications-solutions_001.png)](/en-us/tech-zone/design/media/reference-architectures_optimizing-unified-communications-solutions_001.png)
 
 The following table provides the details of each officially supported unified communications solution including platform support and versions.
 Acronyms used:
