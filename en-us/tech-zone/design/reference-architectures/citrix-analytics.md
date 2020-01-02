@@ -1,5 +1,7 @@
 ---
 layout: doc
+description: TODO
+---
 
 # Citrix Analytics Service
 
@@ -7,7 +9,7 @@ layout: doc
 
 **Author:** [Nagaraj Manoli](mailto:nagaraj.manoli@citrix.com)
 
-**Special Thanks:** [George Tsolis](George.Tsolis@citrix.com), [Vikramjeet Singh](Vikramjeet.Singh@citrix.com), [Arun Pons](ponnambalam.mudivaiarun@citrix.com)
+**Special Thanks:** [George Tsolis](mailto:George.Tsolis@citrix.com), [Vikramjeet Singh](mailto:Vikramjeet.Singh@citrix.com), [Arun Pons](mailto:ponnambalam.mudivaiarun@citrix.com)
 
 ## Audience
 
@@ -15,7 +17,7 @@ This document is intended for technical professionals, IT decision-makers, partn
 
 ## Objective of this document
 
-This document covers a technical overview, architectural concepts, and capabilities of the Citrix Analytics service.  This document includes a tailor-made solution with other Citrix solutions that help administrators and users to understand and adopt in their Citrix environment.
+This document covers a technical overview, architectural concepts, and capabilities of the Citrix Analytics service. This document includes a tailor-made solution with other Citrix solutions that help administrators and users to understand and adopt in their Citrix environment.
 
 ## Intelligent threat detection and mitigation
 
@@ -39,7 +41,7 @@ By applying machine learning techniques on more massive sets of data, an organiz
 
 ## Introduction to Citrix Analytics
 
-Many organizations are facing cyber threats from all over the world. In real-time, it is challenging to identify insider threats that may be even more damaging than external threats. Standard analytics often fails to expose those threats before severe damage to the system. The organization has to adopt user behavior analytics delivering proactive, secure insights. Standard analytics solutions primarily focuses on security, and resolution does not provide visibility into the user session and information on user activities. Eventually, the IT team loses control over the performance and operations of the IT environment.
+Many organizations are facing cyber threats from all over the world. In real-time, it is challenging to identify insider threats that may be even more damaging than external threats. Standard analytics often fails to expose those threats before severe damage to the system. The organization has to adopt user behavior analytics delivering proactive, secure insights. Standard analytics solutions primarily focus on security, and resolution does not provide visibility into the user session and information on user activities. Eventually, the IT team loses control over the performance and operations of the IT environment.
 
 Citrix has developed a turnkey solution that works across the Citrix product portfolio. Citrix Analytics collects data across Citrix portfolio products and third-party products. Citrix Analytics allows administrators to detect, analyze, and proactively respond to security threats across Citrix environments.
 
@@ -65,7 +67,7 @@ The preceding diagram depicts the Citrix Analytics service that is a cloud-based
 
 ## Data Governance and Data Sources
 
-Data governance provides information regarding the collection, storage, retention of logs, and protect the gathered data by Analytics service. Security administrators can choose the logs that have to be monitored and take representative action based on the logged activity.
+Data governance provides information regarding the collection, storage, retention of logs, and protects the gathered data by Analytics service. Security administrators can choose the logs that have to be monitored and take representative action based on the logged activity.
 
 [![CAS-3](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_003.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_003.png)
 
@@ -79,7 +81,7 @@ Most of the organizations have some form of data governance for individual appli
 *  Data storage
 *  Data quality and types
 
-Reference:[Data governance](https://docs.citrix.com/en-us/citrix-analytics/data-governance.html)
+Reference: [Data governance](/en-us/citrix-analytics/data-governance.html)
 
 ### Data Sources
 
@@ -89,7 +91,7 @@ Services that are running on Citrix Cloud, including Content Collaboration, Endp
 
 The preceding diagrams show external data sources such as Microsoft® Graph Security and Microsoft® Active Directory are part of Citrix Analytics data sources. Citrix Analytics captures data from these external data sources after successful integration.
 
-Reference:[Data Sources](https://docs.citrix.com/en-us/citrix-analytics/data-sources.html)
+Reference: [Data Sources](/en-us/citrix-analytics/data-sources.html)
 
 ## Tech Concepts
 
@@ -109,15 +111,15 @@ Citrix Analytics creates profiles of the users and applications across the netwo
 
 [![CAS-4](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_004.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_004.png)
 
-The preceding picture depicts the integration of Citrix products with the Citrix Analytics cloud service.  Typically, end-users use their own devices to connect to Citrix Workspace and access required resources. Those services will communicate with the Citrix Analytics Service hosted in Citrix Cloud. Also, customers can tie back on-premise Citrix Virtual Apps and Desktops environment to communicate with the Citrix Analytics service. Connecting on-premises resources requires either site aggregation or an on-premises StoreFront and Citrix Analytics agent installed on the Delivery Controller.
+The preceding picture depicts the integration of Citrix products with the Citrix Analytics cloud service. Typically, end-users use their own devices to connect to Citrix Workspace and access required resources. Those services communicate with the Citrix Analytics Service hosted in Citrix Cloud. Also, customers can tie back on-premises Citrix Virtual Apps and Desktops environment to communicate with the Citrix Analytics service. Connecting on-premises resources requires either site aggregation or an on-premises StoreFront and Citrix Analytics agent installed on the Delivery Controller.
 
-Citrix Analytics service receives logs directly from the data sources. Captured data will remain in the databases for 13 months. Citrix Analytics uses these metrics for analysis through a machine learning platform and can perform actions when deviant or suspicious activities occur.
+Citrix Analytics service receives logs directly from the data sources. Captured data remain in the databases for 13 months. Citrix Analytics uses these metrics for analysis through a machine learning platform and can perform actions when deviant or suspicious activities occur.
 
 ## Citrix Analytics and Microsoft® products integration
 
 Most organizations today rely on a diverse portfolio of security solutions that include endpoint protection, network firewalls, identity, access controls, cloud security, and so on. In the end, it tends to increase cost and complexity. Along with that, connecting multiple security tools and workflows becomes a challenging task for the IT team. To overcome these challenges integration has to be simplified. Citrix Analytics integration with Microsoft® products helps unification of security and incident management which results in simplified reporting and analytics.
 
-Citrix Analytics supports the integration of Microsoft® products that include Microsoft® Graph Security and Microsoft® Active Directory. Currently, it supports Azure AD Identity Protection and Windows Defender ATP from Microsoft® Graph Security. To enable this service on Microsoft® products, the customer must have enabled Citrix Analytics Service from Citrix Cloud. For more information, refer to the following [link](https://docs.citrix.com/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud).
+Citrix Analytics supports the integration of Microsoft® products that include Microsoft® Graph Security and Microsoft® Active Directory. Currently, it supports Azure AD Identity Protection and Windows Defender ATP from Microsoft® Graph Security. To enable this service on Microsoft® products, the customer must have enabled Citrix Analytics Service from Citrix Cloud. For more information, refer to the following [link](/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud).
 
 ### Enable Citrix Analytics on Microsoft® Graph Security
 
@@ -134,21 +136,21 @@ The preceding diagram depicts the Microsoft® Security Graph solution with Citri
 
 Citrix Analytics UI provides processed data based on risk score indicators from high, medium, and low. Based on the risk score, value analytics can perform actions on that particular user. With the external feeds from Microsoft® Graph Security to Citrix, Analytics administrators can start to have a holistic picture of the access to resources by a user.
 
-Reference:[Integration of Microsoft® Graph Security](https://docs.citrix.com/en-us/citrix-analytics/getting-started/microsoft-security-graph.html)
+Reference: [Integration of Microsoft® Graph Security](/en-us/citrix-analytics/getting-started/microsoft-security-graph.html)
 
 ### Integrate Analytics with Microsoft® Active Directory
 
-The organization can connect Microsoft® Active Directory service with Citrix Analytics, resulting in an enhancement in the user profile in Citrix Analytics. User profile in Citrix Analytics encompasses imported information such as user information and user groups data. In case risky users are identified by Citrix Analytics, imported information like job title, organization, office location, email, and contact details will help in gaining visibility of the user profile.
+The organization can connect Microsoft® Active Directory service with Citrix Analytics, resulting in an enhancement in the user profile in Citrix Analytics. User profile in Citrix Analytics encompasses imported information such as user information and user groups data. In case risky users are identified by Citrix Analytics, imported information like job title, organization, office location, email, and contact details help in gaining visibility of the user profile.
 
 Security Analytics has provisions for monitoring privileged users. This functionality enables the administrator to monitor behavior anomalies of privileged users closely. For example, if a privileged user starts deleting files and folders excessively, the machine learning platform detects unusual behavior and triggers an alarm.
 
-Reference:[Privileged users in Citrix Analytics](https://docs.citrix.com/en-us/citrix-analytics/security-analytics/users-dashboard.html#privileged-users)
+Reference: [Privileged users in Citrix Analytics](/en-us/citrix-analytics/security-analytics/users-dashboard.html#privileged-users)
 
 [![CAS-6](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_006.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_006.png)
 
 The preceding diagram depicts the integration of Microsoft® Active Directory with Citrix Analytics. Before enabling this service, Cloud Connectors are installed on-premises to pull the information. On successful integration, the Citrix administrator has to turn on data processing on the Citrix Analytics UI so that they can monitor and troubleshoot risks identified in the environment.
 
-To learn more about integration with Microsoft® Active Directory, refer to this [link](https://docs.citrix.com/en-us/citrix-analytics/getting-started/active-directory-integration.html).
+To learn more about integration with Microsoft® Active Directory, refer to this [link](/en-us/citrix-analytics/getting-started/active-directory-integration.html).
 
 ## Analytics
 
@@ -162,7 +164,7 @@ Each offering is discussed in the following sections:
 
 ## Security Analytics
 
-Security Analytics aggregates data from endpoints for security monitoring and threat detection. Many deployments will have a different set of tools that incorporate large and diverse data sets into the algorithm. As technology changes security analytics include adaptive learning skills. That helps to calibrate detection models, based on learnings and logic behind anomaly detection.
+Security Analytics aggregates data from endpoints for security monitoring and threat detection. Many deployments have a different set of tools that incorporate large and diverse data sets into the algorithm. As technology changes security analytics include adaptive learning skills. That helps to calibrate detection models, based on learnings and logic behind anomaly detection.
 
 Citrix Security Analytics receives data from multiple data sources and displays actionable insights. Machine learning algorithms within Security Analytics detect and takes predefined actions on user behavior. Risk score indicators that are dynamic based on users, user behavior, endpoints, network traffic, and files.
 
@@ -176,7 +178,7 @@ Security Analytics supports integration with the following:
 *  Microsoft® Graph Security
 *  Microsoft® Active Directory
 
-To learn more about Security Analytics, refer to the following [link](https://docs.citrix.com/en-us/citrix-analytics/security-analytics.html).
+To learn more about Security Analytics, refer to the following [link](/en-us/citrix-analytics/security-analytics.html).
 
 ### User risk indicators
 
@@ -192,23 +194,23 @@ User risk indicators occur based on the following categories:
 
 The preceding diagram depicts user risk score indicators. The indicators are based on user behavior and are triggered where the user’s behavior deviates from the norm.
 
-Reference:[Citrix user risk indicators](https://docs.citrix.com/en-us/citrix-analytics/security-analytics/risk-indicators.html)
+Reference: [Citrix user risk indicators](/en-us/citrix-analytics/security-analytics/risk-indicators.html)
 
 ### Policies and actions
 
 A policy is defined as a set of conditions that must be met for an action to execute. A policy contains a single condition and one or more actions. The administrator can create single policy with multiple actions that can be applied to a user’s account.
 
-Policies on Citrix Analytics helps to perform actions on user accounts when unusual or suspicious activities occur. Once policies are applied, the action is triggered immediately after an unexpected event occurs.
+Policies on Citrix Analytics help to perform actions on user accounts when unusual or suspicious activities occur. Once policies are applied, the action is triggered immediately after an unexpected event occurs.
 
 [![CAS-8](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_008.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_008.png)
 
 As mentioned, the policy is a set of conditions. The risk score and risk score change are global conditions applied to a specific user for a particular data source.
 
-Reference:[Policies](https://docs.citrix.com/en-us/citrix-analytics/security-analytics/policies-and-actions.html#what-are-policies)
+Reference: [Policies](/en-us/citrix-analytics/security-analytics/policies-and-actions.html#what-are-policies)
 
 Actions help to respond to suspicious events and prevent future anomalous events from occurring. The administrator can take action on user accounts that display unusual or suspicious behavior. It is up to the admin to apply action automatically, or manually depending on the conditions.
 
-Reference:[Actions](https://docs.citrix.com/en-us/citrix-analytics/security-analytics/policies-and-actions.html#what-are-actions)
+Reference: [Actions](/en-us/citrix-analytics/security-analytics/policies-and-actions.html#what-are-actions)
 
 ## Performance Analytics
 
@@ -218,9 +220,9 @@ The user experience score is calculated based on latency, logon duration, reconn
 
 [![CAS-9](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_009.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_009.png)
 
-The preceding diagram shows the UX score compilation by getting information from an end user’s latency, logon duration, failures, and reconnections. It allows the administrator to drill down further to find the root cause of the issues that users are experiencing. Currently, performance analytics (tech-preview) may be used for both on-premises as well as cloud-based Citrix Virtual Apps and Desktops envrironments.
+The preceding diagram shows the UX score compilation by getting information from an end user’s latency, logon duration, failures, and reconnections. It allows the administrator to drill down further to find the root cause of the issues that users are experiencing. Currently, performance analytics (tech preview) may be used for both on-premises as well as cloud-based Citrix Virtual Apps and Desktops environments.
 
-To learn more about user experience, refer to the following [link](https://docs.citrix.com/en-us/citrix-analytics/performance-analytics/user-analytics.html#what-is-user-experience-analytics).
+To learn more about user experience, refer to the following [link](/en-us/citrix-analytics/performance-analytics/user-analytics.html#what-is-user-experience-analytics).
 
 ## Operations Analytics
 
@@ -240,11 +242,11 @@ User Operations: Provides an overview of the user operations data based on trans
 
 App Operations: Provides an overview of app operations data based on domains, categories, and download volume.
 
-Reference:[Operations Analytics](https://docs.citrix.com/en-us/citrix-analytics/operations-analytics.html)
+Reference: [Operations Analytics](/en-us/citrix-analytics/operations-analytics.html)
 
 ## Citrix Analytics integration with Citrix Products
 
-Citrix Analytics integrated with the other Citrix components labeled “data sources.” The following products support by Citrix Analytics service to provides insights about user behaviour in the Citrix environment.
+Citrix Analytics integrated with the other Citrix components labeled “data sources.” The following products support by Citrix Analytics service to provides insights about user behavior in the Citrix environment.
 
 *  Citrix Access Control
 *  Citrix Content Collaboration
@@ -268,7 +270,7 @@ Security Analytics
 
 The following are policies that an administrator can create to take actions based on a user’s activity.
 
-*  Attempt to Access Backlisted URL: Policy that can enable to indicate when a user attempts to access a blacklisted URL
+*  Attempt to Access Blacklisted URL: Policy that can enable to indicate when a user attempts to access a blacklisted URL
 
 *  Risky Website Access: This policy suggests that the user tried to access malicious, suspicious, or unsafe websites with high reputation ratings. (URL reputation rating is given for websites. The values range from 1 to 4. 4 is the riskiest website, and 1 is a clean site
 
@@ -276,11 +278,11 @@ The following are policies that an administrator can create to take actions base
 
 *  Unusual Upload Volume: The amount of data uploaded by the user from an app or sites has surpassed the limit set implicitly by Citrix Analytics
 
-To learn more about Citrix Analytics integration with Citrix Access Control, refer to the following [link](https://docs.citrix.com/en-us/citrix-access-control/analytics.html).
+To learn more about Citrix Analytics integration with Citrix Access Control, refer to the following [link](/en-us/citrix-access-control/analytics.html).
 
 ### Citrix Analytics and Citrix Content Collaboration
 
-Citrix Content Collaboration enables us to quickly and securely exchange documents, send extensive material by email, and safely handle document transfers to third parties. In the Citrix Workspace environment, the user can access all of their files from the Citrix Workspace app. To track the user’s behavior and activity, it is very cumbersome. In a small scale or large-scale Citrix environment, threats hidden behind the screen are tough to discern and take precautionary measures.
+Citrix Content Collaboration enables us to quickly and securely exchange documents, send extensive material by email, and safely handle document transfers to third parties. In the Citrix Workspace environment, the user can access all of their files from the Citrix Workspace app. To track the user’s behavior and activity, it is cumbersome. In a small scale or large-scale Citrix environment, threats hidden behind the screen are tough to discern and take precautionary measures.
 
 Citrix Content Collaboration can be monitored and troubleshot with the help of Citrix Analytics. Citrix Content Collaboration service hosted on Citrix Cloud nimbly integrates with Analytics service by enabling the data sources.
 
@@ -294,7 +296,7 @@ The following are policies that an administrator can create to take actions base
 
 *  Excessive file downloads: This policy indicates an attempt to download data that exceeds the AI-based threshold for this period
 
-*  Excessive file/folder deletion: This policy indicates an attempt to delete a disproportionate number of files or folders, which exceeds the AI-based threshold for the user
+*  Excessive file/folder deletion: This policy indicates an attempt to delete a disproportionate number of files or folders, which exceed the AI-based threshold for the user
 
 *  Excessive file sharing: This policy indicates that the share links created and shared have exceeded the threshold set by the machine learning algorithms for this period
 
@@ -316,9 +318,9 @@ In case any unusual behavior or suspicious activity detected by Citrix Analytics
 
 Citrix Endpoint Management is a solution for managing endpoints, offering mobile device management (MDM) and mobile application management (MAM) capabilities. With Endpoint Management, the administrator can manage device and app policies and deliver apps to users.
 
-In most cases, the end-user might change his device or may install one of the blacklisted apps. Such incidents trigger an alarm in the Endpoint management environments. Most of the time, it may go unnoticed to Citrix administrators or the possibility of manual errors.
+Usually, the end-user might change his device or may install one of the blacklisted apps. Such incidents trigger an alarm in the Endpoint Management environments. Most of the time, it may go unnoticed to Citrix administrators or the possibility of manual errors.
 
-In such cases, when an administrator has to manage thousands of endpoints, it becomes a burden. This process tends to increase a lot of working hours managing the devices. To overcome these problems, Citrix Endpoints Management can be integrated with Citrix Analytics service to detect unmanaged device, blacklisted app installed device detetion and applying actions on such device can be automated by Citrix administrators.
+In such cases, when an administrator has to manage thousands of endpoints, it becomes a burden. This process tends to increase a lot of working hours managing the devices. To overcome these problems, Citrix Endpoints Management can be integrated with Citrix Analytics service to detect unmanaged device, blacklisted app installed device detection and applying actions on such device can be automated by Citrix administrators.
 
 [![CAS-13](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_013.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_013.png)
 
@@ -342,7 +344,7 @@ Citrix Gateway service provides secure remote access solutions with a diverse Id
 
 Citrix Gateway’s End Point Analysis (EPA) scan policies help to detect user access-based threats and reports in the UI. Similarly, Citrix Gateway detects all the user logon failures, which can be primary, secondary, or tertiary authentication failures. Also, authorization failures distinguished from the Citrix Gateway.
 
-Citrix Gateway metrics on user logon activity is collected by Citrix Analytics to perform an automated task that would not be practical for an administrator to do manually.
+Citrix Gateway metrics on user logon activity are collected by Citrix Analytics to perform an automated task that would not be practical for an administrator to do manually.
 
 [![CAS-14](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_014.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_014.png)
 
@@ -358,7 +360,7 @@ The following policies can be created by the administrator to automate the monit
 
 *  Logon failures: This policy indicates that the Analytics AI engine identified multiple primary authentication failures based on the user’s usage and behavior patterns
 
-*  Unusual login access: This policy suggests an attempt to log on to Citrix gateway from significant locations that deviated from the user’s access pattern
+*  Unusual login access: This policy suggests an attempt to log on to Citrix Gateway from significant locations that deviated from the user’s access pattern
 
 With the help of Citrix Analytics, when any of the conditions crop up, then the administrator can take action on that user by enabling “Log off user” from the Analytics UI. Else administrators can examine that user’s activity with the help of selecting “Notify administrator(s).”
 
@@ -378,7 +380,7 @@ The following policies can be created by the administrator to automate the monit
 
 *  Potential Data Exfiltration: This policy indicates an attempt to exfiltrate data from Citrix Workspace to an external device or location
 
-*  Access from New Device(s): This policy indicates an attempt to logon to Citrix Workspace from a new device
+*  Access from New Device(s): This policy indicates an attempt to log on to Citrix Workspace from a new device
 
 *  Access from a device with unsupported OS: This policy indicates an attempt to access the network launching receiver from a device with an unsupported OS version or unsupported browser version
 
@@ -388,7 +390,7 @@ The following policies can be created by the administrator to automate the monit
 
 Citrix Analytics can perform actions on the user’s account when the preceding conditions are encountered. During the policy creation the administrator can enable the action when any conditions are met.
 
-Reference:[CVAD Risk Indicators](https://docs.citrix.com/en-us/citrix-analytics/security-analytics/risk-indicators/citrix-virtual-apps-and-desktops-risk-indicators.html)
+Reference: [CVAD Risk Indicators](/en-us/citrix-analytics/security-analytics/risk-indicators/citrix-virtual-apps-and-desktops-risk-indicators.html)
 
 Performance Analytics
 
@@ -396,7 +398,7 @@ Performance Analytics gives an insight into user session details in the Citrix e
 
 The following are metrics that Citrix Performance Analytics provides to the administrator.
 
-*  User Experience: This offering provides insights into the user and session performance parameters — a profound view of all sites in the organization within a concise dashboard. The user experience score helps to segregate the users based on their experience viz. Excellent, Fair, or weak
+*  User Experience: This offering provides insights into the user and session performance parameters — a profound view of all sites in the organization within a concise dashboard. The user experience score helps to segregate the users based on their experience namely Excellent, Fair, or Weak
 
 *  User Sessions: The User Session section of the User Experience dashboard displays an important session metric for the chosen period and Site. The administrator can view Total Sessions, Total unique users, and Session failures data
 
@@ -404,7 +406,7 @@ The following are metrics that Citrix Performance Analytics provides to the admi
 
 *  Session Logon Duration: Logon duration is the app or desktop availability after the user clicks in the Citrix Workspace app. Total logon time includes phases such as Brokering, VM Start, HDX Connection, Authentication, Profile Load, Logon Script, GPO, and Shell Launch. This section has Total logons, Session classification, and sorted by Delivery Groups
 
-Reference:[Performance Analytics](https://docs.citrix.com/en-us/citrix-analytics/performance-analytics/user-analytics.html#user-experience-score)
+Reference: [Performance Analytics](/en-us/citrix-analytics/performance-analytics/user-analytics.html#user-experience-score)
 
 ## Citrix Analytics and on-premises Citrix Virtual Apps and Desktops
 
@@ -421,7 +423,7 @@ To enable Analytics on Virtual Apps and Desktops Sites administrator can adopt o
 
 Citrix Analytics automatically discovers the sites once added to Citrix Workspace. The Virtual Apps and Desktops site card displays the number of discovered Sites and users. To add Sites in Citrix Cloud the customer needs to have a Workspace subscription. The administrator has to do Site aggregation before proceeding with onboarding on Citrix Analytics.
 
-The administrator has to turn on data processing on the Site card. Once the Citrix Analytics start receiving the events, then collected data can be viewed based on the selected time. A policy agent has to be installed to configure the policies and this step does not associated with data transmission from the data sources. To know more about policy agent and installation, refer to the following [link](https://docs.citrix.com/en-us/citrix-analytics/getting-started/virtual-apps-desktops-data-source.html#onboard-virtual-apps-and-desktops-sites-using-workspace).
+The administrator has to turn on data processing on the Site card. Once the Citrix Analytics start receiving the events, collected data can be viewed based on the selected time. A policy agent has to be installed to configure the policies and this step does not associated with data transmission from the data sources. To know more about policy agent and installation, refer to the following [link](/en-us/citrix-analytics/getting-started/virtual-apps-desktops-data-source.html#onboard-virtual-apps-and-desktops-sites-using-workspace).
 
 ### Onboard Virtual Apps and Desktops Sites using StoreFront
 
@@ -429,19 +431,19 @@ Another method that StoreFront can become a data source to Citrix Analytics is b
 
 From the Citrix Analytics service, the administrator has to connect to an on-premises StoreFront deployment. To enable this feature, import the configuration settings. That makes Citrix Analytics receive the data from StoreFront.
 
-To learn more on Citrix Virtual Apps and Desktops as a data source, refer to the following [link](https://docs.citrix.com/en-us/citrix-analytics/getting-started/virtual-apps-desktops-data-source.html#onboard-virtual-apps-and-desktops-sites-using-workspace).
+To learn more on Citrix Virtual Apps and Desktops as a data source, refer to the following [link](/en-us/citrix-analytics/getting-started/virtual-apps-desktops-data-source.html#onboard-virtual-apps-and-desktops-sites-using-workspace).
 
 Onboarding Citrix Performance Analytics
 
 Performance Analytics is a comprehensive monitoring solution. Performance analytics helps in monitoring and viewing the usage of Citrix Virtual Apps and Desktops Sites in the organization. To enable these capabilities, the administrator has to configure on-premises sites with Citrix Analytics from the Citrix Director console. This feature requires Director version 1909 or later, Delivery Controller and VDA version 1906 or later.
 
-Reference:[Configuring on-premises Sites with Citrix Analytics for performance](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/director/install-and-configure/onboarding.html)
+Reference: [Configuring on-premises Sites with Citrix Analytics for performance](/en-us/citrix-virtual-apps-desktops/director/install-and-configure/onboarding.html)
 
 ## Key Benefits of Citrix Analytics
 
 Citrix Analytics is an intuitive analytics service that allows administrators to monitor and identify inconsistent or suspicious activity on the networks. A turn-key machine learning platform that provides actionable insights into user behavior based on indicators across users, endpoints, network traffic, and files.
 
-An organization can solve business challenges and performance-related issues by adopting analytics solutions built-on a machine learning platform. There are various benefits that organizations and administrators can realize by selecting Analytics Service in Citrix brownfield deployment or greenfield deployment.
+An organization can solve business challenges and performance-related issues by adopting analytics solutions built-on a machine learning platform. There are various benefits that organizations and administrators can realize by selecting Analytics Service in Citrix brownfield deployment or green field deployment.
 
 *  Detect and analyze threats based on user behavior
 Detect and prevent ransomware attacks by taking security measures. Monitor and analyze user access, and authentication behavior helps to stop malicious activity and prevent any data loss. Automated platform with the help of ML and AI algorithms, any anomalies are detected
@@ -453,28 +455,28 @@ Advanced analytics helps to identify issues proactively. Application Performance
 Citrix Analytics generates a threat index based on violation type, rate of attack, location, and client details
 
 *  Improved internal security
-Citrix Analytics collects a wide variety of data from many sources surrounding user activity, access behaviors, and network and data usage patterns. The automated machine learning platform helps to mitigate any unusual occurrences. Information on UI helps admininstrators to understand the activities/events on the environment
+Citrix Analytics collects a wide variety of data from many sources surrounding user activity, access behaviors, and network and data usage patterns. The automated machine learning platform helps to mitigate any unusual occurrences. Information on UI helps administrators to understand the activities/events on the environment
 
 *  Central management and automation
-Citrix Analytics collects different metrics from multiple resources, that helps an administrator to monitor all Citrix portfolio products from a single UI
+Citrix Analytics collects different metrics from multiple resources, that help an administrator to monitor all Citrix portfolio products from a single UI
 
 *  Cloud service
 Citrix Analytics is a SaaS offering from Citrix Cloud that has security, performance, and the operational dashboard. The UI provides a summary and categorization of the user risk profiles, user experience details, and so on in the Citrix environment
 
 ## Summary
-Many of the global security challenges  are not addressed by existing traditional threat protection tools alone. Most of the attacks come from external actors that possibly defended, but strikes from within the perimeter are even more menacing. While defending external threats, many organizations fail to recognize the impact on performance and identifying the root cause.
 
-Citrix Analytics that comes with built-in machine learning enhanced with artificial intelligence holds great promise in addressing many security challenges in a Citrix environment. Citrix Analytics is not just about the security of a Citrix environment but also gives visibility into performance with user experience score and user operations visibility in terms of domains visited, data consumption, and so on. Integration of Citrix Analytics in greenfield or brownfield deployments helps the administrator to have greater control of the Citrix environment and reduce IT costs.
+Many of the global security challenges are not addressed by existing traditional threat protection tools alone. Most of the attacks come from external actors that possibly defended, but strikes from within the perimeter are even more menacing. While defending external threats, many organizations fail to recognize the impact on performance and identifying the root cause.
+
+Citrix Analytics that comes with built-in machine learning enhanced with artificial intelligence holds great promise in addressing many security challenges in a Citrix environment. Citrix Analytics is not just about the security of a Citrix environment but also gives visibility into performance with user experience score and user operations visibility in terms of domains visited, data consumption, and so on. Integration of Citrix Analytics in green field or brownfield deployments helps the administrator to have greater control of the Citrix environment and reduce IT costs.
 
 ## References
 
 The following resources referenced for a better understanding of Citrix Analytics:
 
-[Citrix Analytics](https://docs.citrix.com/en-us/citrix-analytics)
+[Citrix Analytics](/en-us/citrix-analytics)
 
-[Security Analytics](https://docs.citrix.com/en-us/citrix-analytics/security-analytics.html)
+[Security Analytics](/en-us/citrix-analytics/security-analytics.html)
 
-[Operations Analytics](https://docs.citrix.com/en-us/citrix-analytics/operations-analytics.html)
+[Operations Analytics](/en-us/citrix-analytics/operations-analytics.html)
 
-[FAQ](https://docs.citrix.com/en-us/citrix-analytics/faqs.html)
-
+[FAQ](/en-us/citrix-analytics/faqs.html)
