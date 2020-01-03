@@ -469,6 +469,10 @@ Many of the global security challenges are not addressed by existing traditional
 
 Citrix Analytics that comes with built-in machine learning enhanced with artificial intelligence holds great promise in addressing many security challenges in a Citrix environment. Citrix Analytics is not just about the security of a Citrix environment. It gives visibility into performance with user experience score and user operations visibility in terms of domains visited, data consumption, and so on. Integration of Citrix Analytics in green field or brownfield deployments helps the administrator to have greater control of the Citrix environment and reduce IT costs.
 
+## Sources
+
+Goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: source diagrams.
+
 ## References
 
 The following resources referenced for a better understanding of Citrix Analytics:
