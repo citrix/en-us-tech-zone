@@ -338,6 +338,10 @@ The below diagram depicts the new access method with Microapps integration for a
 
 The Microapps Service with Citrix Workspace is the solution for a better way to work. It enables modern digital workspaces that unifies all resources for users to do their best work and help their organizations gain an edge. Citrix Workspace and Microapps Services allow customers to build microapps to increase end-user productivity. By utilizing public APIs, admins completely control which microapps are made available to users. Microapps organize, automate, and guide your employees through their workday, maximizing productivity and boosting the overall user experience.
 
+## Sources
+
+The goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [source diagrams](https://citrix.sharefile.com).
+
 ## References
 
 [Getting Started Guide](https://docs.citrix.com/en-us/citrix-microapps/getting-started.html)
