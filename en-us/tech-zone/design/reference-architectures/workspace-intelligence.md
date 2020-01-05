@@ -30,11 +30,11 @@ The microapps utilize APIs available within SaaS, web, or home-grown application
 
 *  **Event-driven microapp experience** - Automated, event-driven microapps notify users when something requires their attention like a new expense report that needs to be approved, or a new course available for registration. Also, it shows up as cards in the Workspace activity feed as **Notifications**.
 
-[![Citrix-Microapps-Image-1](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_001.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_001.PNG)
+[![Citrix-Microapps-Image-1](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_001.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_001.PNG)
 
 *  **User-Initiated action microapp experience** - Present the workflows in an easy way to do things like request PTO or submit a ticket to your help desk or creating a new event is available as actions in Citrix Workspace.
 
-[![Citrix-Microapps-Image-2](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_002.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_002.PNG)
+[![Citrix-Microapps-Image-2](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_002.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_002.PNG)
 
 #### Intelligent Feed
 
@@ -42,7 +42,7 @@ Citrix Workspace includes an **Intelligent Smart Feed** that allows end-users to
 
 The **intelligent feed** focuses and facilitates work by reducing noise and organizing information into a prioritized, personal flow. It delivers content, actions, and insights to end-users into the feed pulled from connected applications **(System of Record)**. End users engage with content directly within the feed without the need to launch the full app. The feed data is getting populated by utilizing machine learning and AI algorithms.
 
-[![Citrix-Microapps-Image-3](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_003.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_003.PNG)
+[![Citrix-Microapps-Image-3](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_003.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_003.PNG)
 
 #### System of Record (SoR)
 
@@ -80,11 +80,11 @@ The microapp builder is a service hosted fully within Citrix Cloud, which allows
 
 The microapp page builder delivered within the Citrix Cloud console connects to legacy, on-premises, and SaaS applications to easily create streamlined user workflows with low-code tooling. It allows creating your microapp actions to leverage custom applications, including those residing on-premises, with the generic web services connector. Administrators can configure the content within microapps via the microapp page builder.
 
-[![Citrix-Microapps-Image-4](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_004.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_004.PNG)
+[![Citrix-Microapps-Image-4](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_004.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_004.PNG)
 
 ## Component Architecture of Citrix Workspace with Intelligence Features
 
-[![Citrix-Microapps-Image-5](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_005.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_005.PNG)
+[![Citrix-Microapps-Image-5](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_005.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_005.PNG)
 
 1.  **Endpoints** - An endpoint is an application interface with plugins that an end-user can use to interact with Citrix Workspace and its new features, including the intelligent feed and microapp actions. The Citrix Workspace app itself is the primary endpoint, whether the native desktop app, the web client or the native mobile app. The microapps allows integrating with other endpoints like Microsoft Teams.
 
@@ -148,7 +148,7 @@ After the creation of the integration, out-of-the-box microapps are available on
 
 #### Conceptual Architecture – ServiceNow Integration
 
-[![Citrix-Microapps-Image-6](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_006.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_006.PNG)
+[![Citrix-Microapps-Image-6](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_006.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_006.PNG)
 
 #### Data Synchronization
 
@@ -173,7 +173,7 @@ Built-in template integration for ServiceNow provides several out-of-the-box mic
 
 The following diagram depicts a sample workflow for an event notification:
 
-[![Citrix-Microapps-Image-7](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_007.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_007.PNG)
+[![Citrix-Microapps-Image-7](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_007.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_007.PNG)
 
 1.  The Microapps Service checks for updates with ServiceNow on the synchronization schedule.
 2.  ServiceNow has updated records for Incident, Change, and Problem requests.
@@ -193,7 +193,7 @@ The following diagram depicts a sample workflow for an event notification:
 
 The following diagram depicts a sample workflow for an Action - Approval Event:
 
-[![Citrix-Microapps-Image-8](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_008.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_008.PNG)
+[![Citrix-Microapps-Image-8](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_008.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_008.PNG)
 
 1.  The user invokes an approval action from the change request approval microapp
 2.  The Microapps service receives the user action and retrieves an encrypted OAuth token from KMS.
@@ -216,7 +216,7 @@ The following diagram depicts a sample workflow for an Action - Approval Event:
 
 The following diagram depicts a sample workflow for a User-Initiated Action - Submit Event:
 
-[![Citrix-Microapps-Image-9](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_009.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_009.PNG)
+[![Citrix-Microapps-Image-9](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_009.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_009.PNG)
 
 1.  A user submits an incident request for software access. Users provide title and description as text inputs for the incident ticket and submit it through Workspace UI.
 2.  The Microapps service receives the action with the incident details and retrieves encrypted OAuth token from KMS.
@@ -238,7 +238,7 @@ The SAP Concur integrates with the Microapps Service using a built-in template; 
 
 #### Conceptual Architecture – SAP Concur Integration
 
-[![Citrix-Microapps-Image-10](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_010.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_010.PNG)
+[![Citrix-Microapps-Image-10](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_010.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_010.PNG)
 
 #### Data Synchronization
 
@@ -263,7 +263,7 @@ After creating the integration with SAP Concur, the microapps built-in template 
 The following diagram describes a sample workflow for an Action event - Approvals:
 
 
-[![Citrix-Microapps-Image-11](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_011.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_011.PNG)
+[![Citrix-Microapps-Image-11](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_011.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_011.PNG)
 
 1.  The Microapps Service checks for the updates with the SAP Concur on the synchronization schedule for full or incremental data sync.
 2.  SAP Concur has few updated records for expense reports, and those are pending for the manager's approval.
@@ -288,7 +288,7 @@ The following diagram describes a sample workflow for an Action event - Approval
 
 The following diagram describes a sample workflow for an Action Input – Expense Report Submit:
 
-[![Citrix-Microapps-Image-12](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_012.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_012.PNG)
+[![Citrix-Microapps-Image-12](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_012.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_012.PNG)
 
 1.  A user submits an expense report with text inputs for all the required fields.
 2.  The Microapps service receives an action with the text inputs.
@@ -311,7 +311,7 @@ Let’s compare the traditional access approach vs. Microapps Integration to und
 
 The below diagram depicts the traditional access method for an employee with illustration tasks that the employee needs to perform every day.
 
-[![Citrix-Microapps-Image-13](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_013.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_013.PNG)
+[![Citrix-Microapps-Image-13](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_013.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_013.PNG)
 
 *  Employees access Windows, Linux, mobile, SaaS, Web, and Virtual applications with various points of authentication every workday. In a day, switching between these applications distracts, and for each app requires time-consuming authentication.
   
@@ -327,7 +327,7 @@ The below diagram depicts the traditional access method for an employee with ill
 
 The below diagram depicts the new access method with Microapps integration for an employee with illustration tasks that he needs to perform every day.
 
-[![Citrix-Microapps-Image-14](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_014.PNG)](/en-us/tech-zone/build/media/reference-architectures_citrix-microapps_014.PNG)
+[![Citrix-Microapps-Image-14](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_014.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_014.PNG)
 
 *  With the help of Microapps Services and System of Record integration, employees can access all business applications through Citrix Workspace. It allows accessing all the business applications in a single user interface, and it eliminates the login time of each application.
 *  Microapps Services allows the organization to integrate the applications using OAuth; hence, it enables single-sign-on to all the applications. Users don’t have to enter the credentials for each application; therefore, it saves time and allows continuous user engagement.
