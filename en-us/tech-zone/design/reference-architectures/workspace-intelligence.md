@@ -2,6 +2,7 @@
 layout: doc
 description: Reference Architecture on Citrix Workspace + Microapps Service
 ---
+
 # Reference Architecture on Microapps Service with Citrix Workspace
 
 ## Contributors
@@ -24,15 +25,15 @@ The Citrix Microapps Service is a new cloud-based service introduced to add inte
 
 #### Microapp
 
-A microapp is a small and interactive software module designed to perform like a fully coded extensive application. Microapps help organizations to breakdown their large, hard-to-use apps into smaller, consumable apps without compromising the security and authentication, which benefits the organization and end-users. For example, a microapp needs to create for the “Approve PTO” use case and another microapp for “Submit PTO”. Similarly, for each use case, administrators can create or use built-in out-of-the-box microapps as per the organization's requirement.
+A microapp is a small and interactive software module designed to perform like a fully coded extensive application. Microapps help organizations to break down their large, hard-to-use apps into smaller, consumable apps without compromising the security and authentication, which benefits the organization and end-users. For example, a microapp needs to create for the “Approve PTO” use case and another microapp for “Submit PTO”. Similarly, for each use case, administrators can create or use built-in out-of-the-box microapps as per the organization's requirement.
 
 The microapps utilize APIs available within SaaS, web, or home-grown applications allowing users to see the content and interact with specific actions without needing the full launch of the application. Prior to microapps, users would have to launch an application, navigate to the page, and then perform the action.
 
-*  **Event-driven microapp experience** - Automated, event-driven microapps notify users when something requires their attention like a new expense report that needs to be approved, or a new course available for registration. Also, it shows up as cards in the Workspace activity feed as **Notifications**.
+*  **Event-driven microapp experience** - Automated, event-driven microapps notify users when something requires their attention like a new expense report that must be approved, or a new course available for registration. Also, it shows up as cards in the Workspace activity feed as **Notifications**.
 
 [![Citrix-Microapps-Image-1](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_001.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_001.PNG)
 
-*  **User-Initiated action microapp experience** - Present the workflows in an easy way to do things like request PTO or submit a ticket to your help desk or creating a new event is available as actions in Citrix Workspace.
+*  **User-Initiated action microapp experience** - Present the workflows in an easy way to do things like request PTO or submit a ticket to your help desk or creating an event is available as actions in Citrix Workspace.
 
 [![Citrix-Microapps-Image-2](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_002.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_002.PNG)
 
@@ -72,7 +73,7 @@ Universal search is a single unified experience to quickly find content and data
 
 #### Virtual Assistance
 
-Users interact with virtual-assistance within Citrix Workspace and ask questions such as “What is the Support Team phone number?” or “What absences are pending my approval?”. The system then parses these requests with the integrated backend systems and response. Users can directly interact with virtual assistance through the workspace app or directly from Microsoft Teams.
+Users interact with virtual-assistance within Citrix Workspace and ask questions such as “What is the Support Team phone number?” or “What absences are pending my approval?”. The system then parses these requests with the integrated back end systems and response. Users can directly interact with virtual assistance through the workspace app or directly from Microsoft Teams.
 
 #### Microapp Builder
 
@@ -86,7 +87,7 @@ The microapp page builder delivered within the Citrix Cloud console connects to 
 
 [![Citrix-Microapps-Image-5](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_005.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_005.PNG)
 
-1.  **Endpoints** - An endpoint is an application interface with plugins that an end-user can use to interact with Citrix Workspace and its new features, including the intelligent feed and microapp actions. The Citrix Workspace app itself is the primary endpoint, whether the native desktop app, the web client or the native mobile app. The microapps allows integrating with other endpoints like Microsoft Teams.
+1.  **Endpoints** - An endpoint is an application interface with plug-ins that an end-user can use to interact with Citrix Workspace and its new features, including the intelligent feed and microapp actions. The Citrix Workspace app itself is the primary endpoint, whether the native desktop app, the web client or the native mobile app. The microapps allows integrating with other endpoints like Microsoft Teams.
 
 2.  **Systems of Record (SoR)** - The Systems of Record (SoR) are the applications that Citrix Workspace interacts with to create microapps. These could be SaaS applications, legacy applications, homegrown applications and could be hosted on-prem or cloud.
 
@@ -100,7 +101,7 @@ The microapp page builder delivered within the Citrix Cloud console connects to 
 
 7.  **Citrix Analytics Service** - The Citrix Analytics Service processes the raw events and creates targeted scored notifications and sends them to the notification service.
 
-8. **Notification Service** - The notification service processes the notifications created and either store them in a database to be later served as notification cards or sends them out immediately as a push notification to the end-user.
+8.  **Notification Service** - The notification service processes the notifications created and either store them in a database to be later served as notification cards or sends them out immediately as a push notification to the end-user.
 
 Refer to the [Tech Zone document](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html#microapps-and-workflows) for more detailed microapp architecture and process flow.
 
@@ -123,11 +124,11 @@ Citrix Workspace Microapps Service allows integrating any custom application tha
 
 *  REST API support
 *  JSON, OData-JSON, XML
-*  Writeback in user context using OAuth2 or using a service account
+*  Write back in user context using OAuth2 or using a service account
 
 Refer to the [Citrix documentation](https://docs.citrix.com/en-us/citrix-microapps/build-a-custom-application-integration.html) to plan, create, and configure the custom application integration.
 
-## How to integrate a Systems of Record (business application) with Citrix Workspace using the Microapps service?
+## How to integrate a System of Record (business application) with Citrix Workspace using the Microapps service?
 
 The following are the simple steps for a System of Record integration with Citrix Workspace:
 
@@ -144,7 +145,7 @@ Review the [Technical Security guide](https://docs.citrix.com/en-us/citrix-micro
 
 ServiceNow integration enables the organization to allow the users to monitor an incident and add change and problem requests within Citrix Workspace. Refer to the [Citrix documentation](https://docs.citrix.com/en-us/citrix-microapps/set-up-template-integrations/integrate-servicenow.html#review-prerequisites) to review the prerequisites, requirements and to learn how to integrate ServiceNow using Microapps.
 
-After the creation of the integration, out-of-the-box microapps are available on the microapps page that is associated with the ServiceNow Integration. Each microapp can be either an actionable event, an informational event, or a user-initiated action. The microapps that are of type event contain events that can be triggered to generate Feed Cards. If the microapp is an actionable type, the user has to input information that performs Writeback Actions to the backend System of Record.
+After the creation of the integration, out-of-the-box microapps are available on the microapps page that is associated with the ServiceNow Integration. Each microapp can be either an actionable event, an informational event, or a user-initiated action. The microapps that are of type event contain events that can be triggered to generate Feed Cards. If the microapp is an actionable type, the user has to input information that performs Writeback Actions to the back-end System of Record.
 
 #### Conceptual Architecture – ServiceNow Integration
 
@@ -152,7 +153,7 @@ After the creation of the integration, out-of-the-box microapps are available on
 
 #### Data Synchronization
 
-The Microapps Service needs to synchronize all the required tables and data from ServiceNow to its local cache.  For the data synchronization from ServiceNow, the Microapps service retrieves encrypted service account credentials for the system of record from the Credential Wallet and requests sync from the Data Integration Provider. The service account must have read permission to all the required data from the ServiceNow System of Record.
+The Microapps Service needs to synchronize all the required tables and data from ServiceNow to its local cache. For the data synchronization from ServiceNow, the Microapps service retrieves encrypted service account credentials for the system of record from the Credential Wallet and requests sync from the Data Integration Provider. The service account must have read permission to all the required data from the ServiceNow System of Record.
 
 The Data Integration Provider decrypts the service account credentials from the Credential Wallet (Key Management Service). With the service account details, the Data Integration Provider connects the ServiceNow application and retrieves the updated data. There are two types of synchronization configured with the Microapps Service - Full and Incremental Synchronization. The interval for synchronization is set based on the organization's requirements.
 
@@ -166,10 +167,10 @@ Built-in template integration for ServiceNow provides several out-of-the-box mic
 
 | **Microapps**               | **Event Type**                |
 | --------------------------- | ----------------------------- |
-| Incident Updates            | Notification -  Informational |
-| Change Request  Updates     | Notification –  Informational |
-| Incident  Assignments       | Notification –  Informational |
-| Change Request  Assignments | Notification –  Informational |
+| Incident Updates            | Notification - Informational |
+| Change Request Updates     | Notification – Informational |
+| Incident Assignments       | Notification – Informational |
+| Change Request Assignments | Notification – Informational |
 
 The following diagram depicts a sample workflow for an event notification:
 
@@ -188,8 +189,8 @@ The following diagram depicts a sample workflow for an event notification:
 
 | **Microapps**           | **Event Type** |
 | ----------------------- | -------------- |
-| Approve Change  Request | Action – Event |
-| Reject Change  Request  | Action – Event |
+| Approve Change Request | Action – Event |
+| Reject Change Request  | Action – Event |
 
 The following diagram depicts a sample workflow for an Action - Approval Event:
 
@@ -198,21 +199,21 @@ The following diagram depicts a sample workflow for an Action - Approval Event:
 1.  The user invokes an approval action from the change request approval microapp
 2.  The Microapps service receives the user action and retrieves an encrypted OAuth token from KMS.
 3.  The Key Management Service sends an action to the Data Integration Provider with the OAuth token.
-4.  The Data Integration Provider decrypts the end user’s OAuth token via the Credential Wallet for the action, which is invoked by the user for the ServiceNow Change request. 
+4.  The Data Integration Provider decrypts the end user’s OAuth token via the Credential Wallet for the action, which is invoked by the user for the ServiceNow Change request.
 5.  The Data Integration Provider writes user actions to the system of record under the identity of the end-user.
 6.  The Data Integration Provider reads back changed data and updates the Microapps service.
 7.  The Microapps Service sends the updated events to the Citrix Analytics Service.
 8.  The Citrix Analytics Service creates target scored notifications.
 9.  CAS sends the targeted notification to the User Notification Service.
-10.  The User Notification Service pushes the updated notifications to user endpoints. 
+10.  The User Notification Service pushes the updated notifications to user endpoints.
 11.  Endpoints receive feedback on Successful actions
 
 #### Workflow: User-Initiated action with Text input submission
 
 | **Microapps**          | **Event Type**              |
 | ---------------------- | --------------------------- |
-| Submit Incident        | Action + Text Input  Submit |
-| Submit Change  Request | Action + Text Input  Submit |
+| Submit Incident        | Action + Text Input Submit |
+| Submit Change Request | Action + Text Input Submit |
 
 The following diagram depicts a sample workflow for a User-Initiated Action - Submit Event:
 
@@ -221,7 +222,7 @@ The following diagram depicts a sample workflow for a User-Initiated Action - Su
 1.  A user submits an incident request for software access. Users provide title and description as text inputs for the incident ticket and submit it through Workspace UI.
 2.  The Microapps service receives the action with the incident details and retrieves encrypted OAuth token from KMS.
 3.  The Key Management Service sends the submissions and user’s action to the Data Integration Provider with OAuth token.
-4.  The Data Integration Provider decrypts the end user’s OAuth token via the Credential Wallet for the action, which is invoked by the user for the ServiceNow Incident request. 
+4.  The Data Integration Provider decrypts the end user’s OAuth token via the Credential Wallet for the action, which is invoked by the user for the ServiceNow Incident request.
 5.  The Data Integration Provider writes the incident request to the system of record under the identity of the end-user.
 6.  The Data Integration Provider reads back changed data and incident details to the Microapps service.
 7.  The Microapps Service sends the updated raw events to Citrix Analytics Service.
@@ -256,12 +257,11 @@ After creating the integration with SAP Concur, the microapps built-in template 
 
 | **Microapps**                  | **Event Type** |
 | ------------------------------ | -------------- |
-| Expense Submissions  Reminders | Action – Event |
-| Expense Report  Approvals      | Action – Event |
+| Expense Submissions Reminders | Action – Event |
+| Expense Report Approvals      | Action – Event |
 | Report Updates                 | Action – Event |
 
 The following diagram describes a sample workflow for an Action event - Approvals:
-
 
 [![Citrix-Microapps-Image-11](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_011.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-microapps_011.PNG)
 
@@ -294,7 +294,7 @@ The following diagram describes a sample workflow for an Action Input – Expens
 2.  The Microapps service receives an action with the text inputs.
 3.  The Microapps Service retrieves encrypted OAuth token from Key Management Service.
 4.  The Key Management Service sends the report details and user’s action to the Data Integration Provider with OAuth token.
-5.  The Data Integration Provider decrypts the end user’s OAuth token via the Credential Wallet(KMS) for the expense report action. 
+5.  The Data Integration Provider decrypts the end user’s OAuth token via the Credential Wallet(KMS) for the expense report action.
 6.  Data Integration Provider writes the expense report to the system of record under the identity of the end-user.
 7.  Data Integration Provider reads back changed data and expense report details to the Microapps service.
 8.  Microapps Service sends the updated raw events to Citrix Analytics Service for processing.
@@ -303,7 +303,7 @@ The following diagram describes a sample workflow for an Action Input – Expens
 11.  User Notification Service pushes the updated notifications to user endpoints.
 12.  Endpoints receive feedback on the successful submission of the expense report.
 
-## How does the Microapps Service and Citrix Workspace help organizations in increasing user engagement and productivity? 
+## How does the Microapps Service and Citrix Workspace help organizations in increasing user engagement and productivity?
 
 Let’s compare the traditional access approach vs. Microapps Integration to understand how Microapps services deliver value to the organization.
 
