@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Reference Architecture on Citrix Workspace + Microapps Service
+description: Learn about the Citrix Microapps Service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered
 ---
 
 # Reference Architecture on Microapps Service with Citrix Workspace
