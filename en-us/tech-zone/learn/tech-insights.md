@@ -41,7 +41,7 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 ## Networking
 
-[AlwaysOn VPN](/en-us/tech-zone/learn/tech-insights/citrix-gateway-alwayson.html) - manage remote domain joined Windows endpoints 24x7 by provide LAN-like access with AlwaysOn VPN.
+[AlwaysOn VPN](/en-us/tech-zone/learn/tech-insights/citrix-gateway-alwayson.html) - Manage remote domain joined Windows endpoints 24x7 by providing LAN-like access with AlwaysOn VPN.
 
 [Intelligent Traffic Management - Radar](/en-us/tech-zone/learn/tech-insights/itm.html) - Learn how Citrix ITM can direct users to cloud service mirror sites with the most bandwidth available between them.
 
