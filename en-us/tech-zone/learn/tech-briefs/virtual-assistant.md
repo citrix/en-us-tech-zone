@@ -43,21 +43,21 @@ Citrix Assistant is comprised of different μ-services. All components are maint
 
 Below is a detailed diagram of the data flow for the Citrix Assistant:
 
-[![Citrix Workspace Virtual Assistant Architecture](/en-us/tech-zone/learn/media/tech-briefs_workspace-virtual-assistant_processflow.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-virtual-assistant_processflow.png)
+[![Citrix Workspace Virtual Assistant Architecture](/en-us/tech-zone/learn/media/tech-briefs_virtual-assistant_processflow.png)](/en-us/tech-zone/learn/media/tech-briefs_virtual-assistant_processflow.png)
 
 ## Administrative Controls
 
 Administrators are able to create Citrix assistant resolvers. This means the administrator is able to choose a Citrix assistant intent and map them to specific source tables (see image below)
 
-[![Citrix Workspace Virtual Assistant Admin Console1](/en-us/tech-zone/learn/media/tech-briefs_workspace-virtual-assistant_admin-console1.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-virtual-assistant_admin-console1.png)
+[![Citrix Workspace Virtual Assistant Admin Console1](/en-us/tech-zone/learn/media/tech-briefs_virtual-assistant_admin-console1.png)](/en-us/tech-zone/learn/media/tech-briefs_virtual-assistant_admin-console1.png)
 
 They are also able to create filtering conditions. When the user asks for a lead from an application, the administrator would map user entities to data base entities. For example, when the user asks for the name of a lead, it would map to a specific entity within the database from that specific system of record.
 
-[![Citrix Workspace Virtual Assistant Admin Console2](/en-us/tech-zone/learn/media/tech-briefs_workspace-virtual-assistant_admin-console2.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-virtual-assistant_admin-console2.png)
+[![Citrix Workspace Virtual Assistant Admin Console2](/en-us/tech-zone/learn/media/tech-briefs_virtual-assistant_admin-console2.png)](/en-us/tech-zone/learn/media/tech-briefs_virtual-assistant_admin-console2.png)
 
 The administrator is also in control of what is the response value.  When a user queries a lead, the administrator is mapping the fields that we need with the respective database fields.
 
-[![Citrix Workspace Virtual Assistant Admin Console3](/en-us/tech-zone/learn/media/tech-briefs_workspace-virtual-assistant_admin-console3.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-virtual-assistant_admin-console3.png)
+[![Citrix Workspace Virtual Assistant Admin Console3](/en-us/tech-zone/learn/media/tech-briefs_virtual-assistant_admin-console3.png)](/en-us/tech-zone/learn/media/tech-briefs_virtual-assistant_admin-console3.png)
 
 ## Authentication and authorization
 
