@@ -8,7 +8,7 @@ description: The Citrix Assistant guides users to information and allows them to
 
 **Author:** [Ana Ruiz](https://twitter.com/mobileruiz)
 
-Consumers have rapidly adopted voice assistants to do simple searches, requests, or questions. In 2018, there were over 2.5 billion assistants in use—this number is estimated to grow over 3 times in the next 4 years. It is estimated that by 2023, there will be over 8 billion digital voice assistants. Whether it’s on their smart phones, smart tvs, or speakers, consumers expect the ability to interact and search with virtual assistants. 
+Consumers have rapidly adopted voice assistants to do simple searches, requests, or questions. In 2018, there were over 2.5 billion assistants in use—this number is estimated to grow over 3 times in the next 4 years. It is estimated that by 2023, there will be over 8 billion digital voice assistants. Whether it’s on their smart phones, smart tvs, or speakers, consumers expect the ability to interact and search with virtual assistants.
 
 ## Overview
 
@@ -18,28 +18,29 @@ The Citrix Assistant guides users to information and allows them to interact wit
 
 The list of skills and applications that are supported today are the following:
 
-- Accounts (Salesforce, MS Dynamics)
-- Appointments (Salesforce, MS Dynamics)
-- Contracts (Salesforce)
-- Company Directory (Workday)
-- Expense Reports (Concur)
-- Leads (Salesforce, MS Dynamics)
-- Learning Courses (SAP Successfactors)
-- Opportunities (Salesforce, MS Dynamics)
-- Time off (Workday)
-- Purchase Orders (SAP Ariba, Workday)
-- Tasks (Salesforce, MS Dynamics)
-- Tickets (ServiceNove, Jira, Zendesk)
+-  Accounts (Salesforce, MS Dynamics)
+-  Appointments (Salesforce, MS Dynamics)
+-  Contracts (Salesforce)
+-  Company Directory (Workday)
+-  Expense Reports (Concur)
+-  Leads (Salesforce, MS Dynamics)
+-  Learning Courses (SAP SuccessFactors)
+-  Opportunities (Salesforce, MS Dynamics)
+-  Time off (Workday)
+-  Purchase Orders (SAP Ariba, Workday)
+-  Tasks (Salesforce, MS Dynamics)
+-  Tickets (ServiceNove, Jira, Zendesk)
 
 ## Citrix Assistant architecture and process flow
 
-Citrix Assistant is comprised of different μ-services. Citrix maintains all components and hosts them within the Citrix Cloud control plane. The following multitenant µ-services are used by the Citrix assistant. 
-- 	Endpoints: allow users to interact with the Citrix assistant. Currently users can interact with the Citrix assistant either through Citrix Workspace or Microsoft Teams.
-- 	Bot μ-service: responsible for managing the session and routing all the messages to the specific μ-service to fulfill the user’s request (these can be either a question or an action)
-- Skills μ-service: responsible for creating dialogs with the user and fetch any specific data from the systems of records to create a response
-- 	Microapp service: responsible for creating microapps and providing information to the Citrix assistant. This is a single-tenant service
-- 	Utterance μ-service: To understand the user’s request, the utterance service uses natural language processing (NLP) to understand the user’s intent and entity of the query (for example if user asks “Who is Bob Smith?”, the intent is a directory lookup for the entity Bob Smith)
-- Spellcheck μ-service: to avoid user frustration when they have a typo. Corrects anything that is misspelled within the user’s request
+Citrix Assistant is comprised of different μ-services. Citrix maintains all components and hosts them within the Citrix Cloud control plane. The following multitenant µ-services are used by the Citrix assistant.
+
+-  Endpoints: allow users to interact with the Citrix assistant. Currently users can interact with the Citrix assistant either through Citrix Workspace or Microsoft Teams.
+-  Bot μ-service: responsible for managing the session and routing all the messages to the specific μ-service to fulfill the user’s request (these can be either a question or an action)
+-  Skills μ-service: responsible for creating dialogs with the user and fetch any specific data from the systems of records to create a response
+-  Microapp service: responsible for creating microapps and providing information to the Citrix assistant. This is a single-tenant service
+-  Utterance μ-service: To understand the user’s request, the utterance service uses natural language processing (NLP) to understand the user’s intent and entity of the query (for example if user asks “Who is Bob Smith?”, the intent is a directory lookup for the entity Bob Smith)
+-  Spellcheck μ-service: to avoid user frustration when they have a typo. Corrects anything that is misspelled within the user’s request
 
 Below is a detailed diagram of the data flow for the Citrix Assistant:
 
@@ -61,8 +62,8 @@ The administrator is also in control of what is the response value. When a user 
 
 ## Authentication and authorization
 
-The end-user would authenticate to Citrix Workspace like they usually would. Within Citrix Workspace they are able to interact and engage with the Citrix assistant. All service to service communications are encrypted using TLS encryption 1.2 or above. Communication between bot μ-service, skills μ-service, and the microapp service use RSA key pairs which are onetime use tokens to provide trust between the services. The authorization path must be implemented on the microapp service platform. The service μ-service to the SoR uses the user email to read from the microapp cache. Use the service accounts to read from the SoR while using user context for the writeback to the SoRs. 
+The end-user would authenticate to Citrix Workspace like they usually would. Within Citrix Workspace they are able to interact and engage with the Citrix assistant. All service to service communications are encrypted using TLS encryption 1.2 or above. Communication between bot μ-service, skills μ-service, and the microapp service use RSA key pairs which are onetime use tokens to provide trust between the services. The authorization path must be implemented on the microapp service platform. The service μ-service to the SoR uses the user email to read from the microapp cache. Use the service accounts to read from the SoR while using user context for the writeback to the SoRs.
 
 ## Summary
 
-Citrix Workspace’s intelligent features allow users to complete daily tasks in a more efficient manner. Gone are the days of wasting hours searching for information thanks to the Citrix Assistant. The Citrix assistant allows users to find information and complete actions even if they are not sure which application to find that information or complete the task in. 
+Citrix Workspace’s intelligent features allow users to complete daily tasks in a more efficient manner. Gone are the days of wasting hours searching for information thanks to the Citrix Assistant. The Citrix assistant allows users to find information and complete actions even if they are not sure which application to find that information or complete the task in.
