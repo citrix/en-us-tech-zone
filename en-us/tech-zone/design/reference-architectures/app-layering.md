@@ -213,9 +213,9 @@ Hypervisor connectors are used when creating layers or importing a Gold Image to
 
 Citrix Provisioning connector integrates with an App Layering Agent on a Citrix Provisioning server to publish an image directly to the Provisioning server as a virtual disk. The prerequisites for Citrix Provisioning are:
 
-1)  The connector service account must be a domain account with the administrator permission within PVS.
-2)  The connector service account must also be a local administrator on the Citrix Provisioning server.
-3)  A Citrix App Layering Agent must be installed on each Citrix Provisioning server defined in a connector. Only one agent can be defined per connector.
+1.  The connector service account must be a domain account with the administrator permission within PVS.
+1.  The connector service account must also be a local administrator on the Citrix Provisioning server.
+1.  A Citrix App Layering Agent must be installed on each Citrix Provisioning server defined in a connector. Only one agent can be defined per connector.
 
 Reference: [Citrix Provisioning](/en-us/citrix-app-layering/4/connect/citrix-provisioning.html)
 
@@ -290,9 +290,9 @@ A Platform Layer is a layer that contains configuration settings, tools, and oth
 
 **Packaging Platform Layer:** Packaging Platform Layers are used if a packaging layer is required to support packaging machines. These layers are not often required, but there are several instances where one has to be necessary including:
 
-1)  If a layer has to be packaged on a different hypervisor than the standard. For example, if most layers are created on Hyper-V, but for some reason, a particular layer created within vSphere, a packaging platform layer with VMware Tools are used to support the packaging machine on vSphere.
+1.  If a layer has to be packaged on a different hypervisor than the standard. For example, if most layers are created on Hyper-V, but for some reason, a particular layer created within vSphere, a packaging platform layer with VMware Tools are used to support the packaging machine on vSphere.
 
-2)  If access to the packaging machine is required using VDA software. This layer is most often required when installing drivers for USB peripherals that must see the device to install properly. By creating a packaging platform layer with the VDA software installed and adding the packaging machine to a manually provisioned catalog in Studio, this type of access can be supported.
+1.  If access to the packaging machine is required using VDA software. This layer is most often required when installing drivers for USB peripherals that must see the device to install properly. By creating a packaging platform layer with the VDA software installed and adding the packaging machine to a manually provisioned catalog in Studio, this type of access can be supported.
 
 ### Creating a Platform Layer
 
@@ -321,9 +321,9 @@ Elastic Layering is a method for dynamically deploying the application to a virt
 
 All applications are not supported by Elastic Layering technology because Elastic Layers are mounted during logon. The following application requirements exclude applications from being used within Elastic Layers:
 
-1)  Applications with Kernel drivers
-2)  Applications with services that are dependencies for other boot time services
-3)  Applications that modify the Windows Driver store like third-party printer drivers
+1.  Applications with Kernel drivers
+2.  Applications with services that are dependencies for other boot time services
+3.  Applications that modify the Windows Driver store like third-party printer drivers
 
 Applications with these requirements can be layered but the layers must be included in the published image.
 
