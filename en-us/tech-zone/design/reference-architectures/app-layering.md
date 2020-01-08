@@ -101,7 +101,7 @@ The User Layer is mounted on logon and any subsequent writes on the desktop are 
 
 [![AL-Image-5](/en-us/tech-zone/design/media/reference-architectures_app-layering_005.png)](/en-us/tech-zone/design/media/reference-architectures_app-layering_005.png)
 
-For use cases that require persistence, the User Layer is the best choice. For use cases to support just Microsoft Outlook OST files and index files, the User Layer may not be the best choice. The User Layer is intended to handle all writes to the VDI desktop after the user logs on. Other technologies like the Citrix Profile Management Outlook Container or FSLogix Profile or Office 365 Container handle the Outlook OST and indexes in a much more targeted manner so that the amount of IO handled by the container is much smaller.  All of these solutions now handle managing the Outlook OST, Outlook streaming files and Outlook index files so that supporting indexing is no longer a reason to choose one technology over another.
+For use cases that require persistence, the User Layer is the best choice. For use cases to support just Microsoft Outlook OST files and index files, the User Layer may not be the best choice. The User Layer is intended to handle all writes to the VDI desktop after the user logs on. Other technologies like the Citrix Profile Management Outlook Container or FSLogix Profile or Office 365 Container handle the Outlook OST and indexes in a much more targeted manner so that the amount of I/O handled by the container is much smaller. All of these solutions now handle managing the Outlook OST, Outlook streaming files and Outlook index files so that supporting indexing is no longer a reason to choose one technology over another.
 
 ## Technical Overview of Citrix App Layering
 
@@ -154,11 +154,12 @@ The Citrix App Layering management console is a web-based application hosted on 
 
 ### Compositing Engines
 
-New to version 1910 and later is a feature called Composting Engines.  Compositing Engines offload most of the packaging and publishing tasks that can also be performed by the App Layering Appliance.  By offloading these tasks the packaging and publishing processes scale much better and due to the advantages of the technologies used, performance of the process is also significantly enhanced.
+New to version 1910 and later is a feature called Composting Engines. Compositing Engines offload most of the packaging and publishing tasks that can also be performed by the App Layering Appliance. By offloading these tasks the packaging and publishing processes scale much better and due to the advantages of the technologies used, performance of the process is also significantly enhanced.
 
-A Compositing Engine is built by a Hypervisor connector as a Windows PE virtual machine that carries out a set of publishing tasks, then reboots itself into a packaging machine or published image.  The Compositing Engine is used to create cached layer disks, create packaging machines and publish images.  At the time of writing of this reference architecture, there are Composting Engines for HyperV and vSphere introduced in versiosns 1910 and 1911, respectively.  
+A Compositing Engine is built by a Hypervisor connector as a Windows PE virtual machine that carries out a set of publishing tasks, then reboots itself into a packaging machine or published image. The Compositing Engine is used to create cached layer disks, create packaging machines and publish images. At the time of writing of this reference architecture, there are Composting Engines for HyperV and vSphere introduced in versions 1910 and 1911, respectively.
 
 Composting Engines have the following characteristics:
+
 *  Lightweight, ephemeral appliance running Windows PE
 *  Self compositing
 *  Controlled via REST API
@@ -169,7 +170,8 @@ Composting Engines have the following characteristics:
 *  No Limit on the Number of simultaneous publishing jobs (there is a practical limit)
 
 #### Advantages of Compositing Engines
-Use of Compositing Engines is a choice.  In the HyperV Connector and the vSphere Connector there is a checkbox to enable "Offload Compositing".  This setting is also available in the Machine Creation for vSphere and the VMware Horizon View connectors.  The big advantage to the Compostiing Engine is that it is running on a Windows device with direct access to hypervisor disks.  This provides the mechanisms to support GEN2 machines in HyperV, native ESX VMDK formats with Thin Provisioining in vSphere and UEFI in both.  Packaging and Publishing performance is enhanced because the large layer files are processed less and written directly into disks on the hypervisor by the Compositing Engine which attaches back to the App Layering Appliance to access the layers using ISCSI connections.
+
+Use of Compositing Engines is a choice. In the HyperV Connector and the vSphere Connector there is a checkbox to enable "Offload Compositing". This setting is also available in the Machine Creation for vSphere and the VMware Horizon View connectors. The significant advantage to the Compositing Engine is that it is running on a Windows device with direct access to hypervisor disks. This provides the mechanisms to support GEN2 machines in HyperV, native ESX VMDK formats with Thin Provisioning in vSphere and UEFI in both. Packaging and Publishing performance is enhanced because the large layer files are processed less and written directly into disks on the hypervisor by the Compositing Engine which attaches back to the App Layering Appliance to access the layers using iSCSI connections.
 
 Note: PVS publishing cannot yet be performed using a Composting Engine, therefore it is still not possible to directly publish a VHDX file or GEN2 virtual machine to PVS.
 
@@ -344,7 +346,7 @@ User Layers provide a more persistent experience for users while still supportin
 
 User Layers are assigned one to one. One user can have only one user writable layer per OS layer per domain. The user can therefore only log on to one delivery group or pool with a desktop using the same OS layer and Platform Layer combination with the User Layer enabled. This layer is created as a virtual disk on a file share when the user logs on for the first time.
 
-As of version 1910 the Full user layer supports search index persistence between sessions.  in order to support this, the Windows Search service is set to DISABLED (4) on VDAs when they boot.  When the user logs on the Ulayer Service will change the start type of the Windwos Search service to START_ON_DEMAND (3).  Prior to enabling WSearch, the ULayer service must also ensure the indexer's "crawl-scope" registry settings are correct. The crawl-scope is a set of registry keys that determine the areas of the user's data to be indexed. Input into the crawl-scope comes from defaults built into the base image, but also can come from the elastic layers and the user's persistence layer settings too. These inputs are processed at logon time to provide the complete set of crawl-scope locations, and there is a modest but measurable overhead to building this for each logon. To avoid this overhead, the ULayer service generates a hash string to represent the base image deployment (e.g., the BIC instance) and the elastic layer assignments, and stores this string in the user's \Program Files\Unidesk\Etc\UserLayer.json file as "IndexerHash".  On subsequent logons this string is compared to the recalculated IndexerHash and only when they differ is the crawl-scope rebuilt.
+As of version 1910 the Full user layer supports search index persistence between sessions. To support this, the Windows Search service is set to DISABLED (4) on VDAs when they boot. When the user logs on the Ulayer Service changes the start type of the Windows Search service to START_ON_DEMAND (3). Prior to enabling WSearch, the ULayer service must also ensure the indexer's "crawl-scope" registry settings are correct. The crawl-scope is a set of registry keys that determine the areas of the user's data to be indexed. Input into the crawl-scope comes from defaults built into the base image, but also can come from the elastic layers and the user's persistence layer settings too. These inputs are processed at logon time to provide the complete set of crawl-scope locations, and there is a modest but measurable overhead to building this for each logon. To avoid this overhead, the ULayer service generates a hash string to represent the base image deployment (e.g., the BIC instance) and the elastic layer assignments, and stores this string in the user's \Program Files\Unidesk\Etc\UserLayer.json file as "IndexerHash". On subsequent logons this string is compared to the recalculated IndexerHash and only when they differ is the crawl-scope rebuilt.
 
 The following types of User Layers can be used:
 
@@ -352,7 +354,7 @@ The following types of User Layers can be used:
 *  **Office 365:** only the user’s Outlook data and settings are stored on their user layer. Search indexes are recreated every logon.
 *  **Session Office 365:** Only the user’s Outlook data and settings are stored on their user layer. Search indexes are recreated every logon.
 
-Note: In case of using the Office 365 layer it is recommended to use Citrix profile management to persist outlook settings.
+Note: In case of using the Office 365 layer it is recommended to use Citrix Profile Management to persist outlook settings.
 
 The default max size of a User Layer is 10 GB. This size can be altered by defining a quota for the User Layer share. It is also possible to override the default User Layer max size using a registry entry on the VDAs. To change default max size, add the following registry override,
 
@@ -584,7 +586,7 @@ For vSphere file uploads, and downloads are not performed by communicating with 
 
 ### Compositing Engines
 
-Compositing Engines connect back to the App Layering Appliance for ISCSI connections on port 3260 and they make API calls to the appliance on port 443.  The App Layering Appliance performs API calls to the Composting Engines also on port 443.
+Compositing Engines connect back to the App Layering Appliance for iSCSI connections on port 3260 and they make API calls to the appliance on port 443. The App Layering Appliance performs API calls to the Composting Engines also on port 443.
 
 ## Availability, Backup, and Recovery
 
