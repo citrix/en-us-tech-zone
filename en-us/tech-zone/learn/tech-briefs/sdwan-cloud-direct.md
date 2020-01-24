@@ -43,11 +43,11 @@ SaaS apps are deployed across multiple cloud locations globally. Cloud Direct Po
 
 #### Best Effort Internet
 
-Accessing business critical SaaS applications over the internet is problematic since traffic delivery over the internet is best effort by default. It is a collection of service providers connected using various network equipment, administrators, and circuits with varying levels of reliability. Therefore, SaaS connections are susceptible to disruption due to outages, oversubscription, and congestion. 
+Accessing business critical SaaS applications over the internet is problematic since traffic delivery over the internet is best effort by default. It is a collection of service providers connected using various network equipment, administrators, and circuits with varying levels of reliability. Therefore, SaaS connections are susceptible to disruption due to outages, oversubscription, and congestion.
 
-* **Outage** – may be caused by various factors such as the failure of circuits from cuts due to unplanned digging, failure of equipment from anomalies, or failure of data centers from natural disasters.
-* **Oversubscription** – lower tier providers depend on paid transit circuits to access certain cloud providers and SaaS sites.  To minimize their costs, they may over subscribe those circuits routing more customer traffic bandwidth than there is capacity available causing packet loss, retransmission, and ultimately latency.
-* **Congestion** – similarly, due to oversubscription or just peak usage, ISP routes may need to buffer traffic destine over congested circuits which are at full transfer capacity. Accessing business critical SaaS applications over the internet is problematic since traffic delivery over the internet is best effort by default. It is a collection of service providers connected using various network equipment, administrators, and circuits with varying levels of reliability. Therefore, SaaS connections are susceptible to disruption due to outages, oversubscription, and congestion.
+*  **Outage** – may be caused by various factors such as the failure of circuits from cuts due to unplanned digging, failure of equipment from anomalies, or failure of data centers from natural disasters.
+*  **Oversubscription** – lower tier providers depend on paid transit circuits to access certain cloud providers and SaaS sites.  To minimize their costs, they may over subscribe those circuits routing more customer traffic bandwidth than there is capacity available causing packet loss, retransmission, and ultimately latency.
+*  **Congestion** – similarly, due to oversubscription or just peak usage, ISP routes may need to buffer traffic destine over congested circuits which are at full transfer capacity. Accessing business critical SaaS applications over the internet is problematic since traffic delivery over the internet is best effort by default. It is a collection of service providers connected using various network equipment, administrators, and circuits with varying levels of reliability. Therefore, SaaS connections are susceptible to disruption due to outages, oversubscription, and congestion.
 
 ![Best Effort Internet](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BestEffortInternet.PNG)
 
@@ -65,13 +65,13 @@ With these capabilities Citrix SD-WAN Cloud Direct optimizes delivery over the p
 *  Internet Optimization
 *  Cloud Core Optimization
 
-#### Branch – First Mile Circuits
+### Branch – First Mile Circuits
 
 1st mile circuits are access links to ISPs that are typically lower speed, lower cost, and subsequently lower reliability compared to circuits used by large enterprise and data centers. While the Citrix SD-WAN appliances connect to the modems via ethernet the data link technologies vary including:
 
-* **DSL** – is a family of technologies that are used to transmit digital data over telephone lines. The bit rate typically ranges from 256 kbps to over 100 Mbps and varies by upload and download speed depending on several factors.
-* **Cable** – like DSL cable provides connectivity from the ISP to a branch office. And akin to how DSL is delivered over the telephone network infrastructure it is delivered over the cable television infrastructure.   Download speeds range from 384 kbps to more than 50 Mbps.
-* **4G LTE** – is a standard for wireless communication for mobile devices, yet it is increasingly used as an alternative to fixed internet circuits providing fairly high-speed access, up to 30 Mbps upload and download, virtually anywhere.
+*  **DSL** – is a family of technologies that are used to transmit digital data over telephone lines. The bit rate typically ranges from 256 kbps to over 100 Mbps and varies by upload and download speed depending on several factors.
+*  **Cable** – like DSL cable provides connectivity from the ISP to a branch office. And akin to how DSL is delivered over the telephone network infrastructure it is delivered over the cable television infrastructure.   Download speeds range from 384 kbps to more than 50 Mbps.
+*  **4G LTE** – is a standard for wireless communication for mobile devices, yet it is increasingly used as an alternative to fixed internet circuits providing fairly high-speed access, up to 30 Mbps upload and download, virtually anywhere.
 
 ## Branch Optimization
 
@@ -101,7 +101,7 @@ The traffic is prioritized according to class. This ensures that the highest pri
 
 ![Intelligent Steering](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-IntStr.png)
 
-Traditionally branch routers consider a link “up” state indication that it can handle the full bandwidth associated with the interface, irrespective of its actual throughput capability. Citrix SD-WAN Cloud Direct sends probes at 10 millisecond (ms) intervals over each link to constantly monitors latency, jitter, loss, congestion, and state. It 
+Traditionally branch routers consider a link “up” state indication that it can handle the full bandwidth associated with the interface, irrespective of its actual throughput capability. Citrix SD-WAN Cloud Direct sends probes at 10 millisecond (ms) intervals over each link to constantly monitors latency, jitter, loss, congestion, and state.
 
 Changes in state can vary between black out and brown out. A black out is when an entire link goes down. A brown out is when limited throughput or performance falls below the QoS that the class requires. When a state change is detected the service seamlessly reroutes sessions over to a “good” link. Intelligent steering avoids an impact to session connections, allowing it to maintain a good user experience.
 
@@ -109,9 +109,9 @@ Changes in state can vary between black out and brown out. A black out is when a
 
 Peering is a voluntary interconnection of internet autonomous systems to expedite traffic between hosted content and users. The average user or enterprise accessing the internet through a typical service provider must pass through several hops before reaching their desired destination. Having direct access to service providers with Extensive Peering agreements reduces their traffic hops and ultimately reduces their session latency.
 
-* **BGP** – the Border Gateway Protocol is the primary protocol use to exchange routes between ISPs and is the mechanism used to determine which traffic is passed as a result of peering agreements.
-* **IX** – exchange points are typically large data centers where public peering takes place between providers over large switch fabrics.
-* **Transit** – service providers that do not have sufficient peering typically pay for circuits to access higher tier provides to provide access or “transit” to destinations needed by their customers.
+*  **BGP** – the Border Gateway Protocol is the primary protocol use to exchange routes between ISPs and is the mechanism used to determine which traffic is passed as a result of peering agreements.
+*  **IX** – exchange points are typically large data centers where public peering takes place between providers over large switch fabrics.
+*  **Transit** – service providers that do not have sufficient peering typically pay for circuits to access higher tier provides to provide access or “transit” to destinations needed by their customers.
 
 ![Peering](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_Peering.PNG)
 
@@ -162,9 +162,9 @@ Jitter is one of the biggest factors in poor call quality. Jitter is often cause
 
 Depending on the application Enterprise network traffic has different QoS requirements:
 
-* **Latency** – pertains to the length of time it takes a packet to reach its destination which grows based on distance, congestion or other limiting factors on the network.
-* **Loss** – pertains to the rate of packet loss due to congestion avoidance, queue starvation, dirty WAN data links, or other network issues. This affects available bandwidth and retransmission.
-* **Jitter** – pertains to the average difference in packet arrival time relative to their transmission time. This has the most effect on VoIP call quality.
+*  **Latency** – pertains to the length of time it takes a packet to reach its destination which grows based on distance, congestion or other limiting factors on the network.
+*  **Loss** – pertains to the rate of packet loss due to congestion avoidance, queue starvation, dirty WAN data links, or other network issues. This affects available bandwidth and retransmission.
+*  **Jitter** – pertains to the average difference in packet arrival time relative to their transmission time. This has the most effect on VoIP call quality.
 
 ![Enterprise QoS](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_EnterpriseQoS.PNG)
 
@@ -205,11 +205,11 @@ Citrix SD-WAN Cloud Direct PoPs are connected by a private backbone with redunda
 
 #### As a Service
 
-* **Software as a Service**
+*  **Software as a Service**
 SaaS is a software licensing and delivery model in which software is licensed on a subscription basis and is centrally hosted within a publicly accessible cloud computing platform. SaaS applications are typically accessed by users using a web browser or other thin client technology. SaaS has become a common delivery model for many business applications, including office productivity, payroll processing, point-of-sale, customer relationship management, enterprise resource planning, virtualization, development, and other enterprise software.
-* **Unified Communications as a Service**
+*  **Unified Communications as a Service**
 UCaaS is a way of delivering enterprise communication service through a managed cloud service model. This can include voice and telephony, meeting solutions, unified and instant messaging, contact and collaboration services, and other similar functions.
-* **Virtual Applications and Desktops Service**
+*  **Virtual Applications and Desktops Service**
 A solution that helps you optimize productivity with universal access to Virtual Applications and Desktops as a Service (DaaS) from any device. Virtual Apps and Desktops may be hosted in public or private clouds and accessed from private networks or over the public internet.
 
 ## Use Cases
