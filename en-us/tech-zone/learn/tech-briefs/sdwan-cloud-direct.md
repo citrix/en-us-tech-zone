@@ -15,7 +15,7 @@ Citrix SD-WAN Cloud Direct extends Citrix SD-WAN optimal routing and delivery op
 
 [![Citrix SD-WAN Cloud Direct](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_SDWAN-CDs.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_SDWAN-CDs.png)
 
-[Citrix SD-WAN Cloud Direct](https://docs.citrix.com/en-us/citrix-sd-wan-center/11/cloud-direct-service.html) virtually bundles multiple branch office internet access links such as DSL, Cable, and LTE. It creates redundant UDP tunnels. On one end is a Citrix SD-WAN Cloud Direct process, hosted on branch office SD-WAN appliances. On the other end are gateways hosted in Citrix SD-WAN Cloud Direct PoPs. The gateways are hosted in Points of Presence (PoP) at Internet Exchanges, near popular SaaS sites. It is able to utilize and monitor each link within the bundles to mitigate against data link or network issues in the first mile. The first mile is the segment of the circuit between the branch office and the ISP PoP where issues often occur. Further it aides with optimal transport of sessions throughout their path across the internet to target sites in the cloud.
+[Citrix SD-WAN Cloud Direct](/en-us/citrix-sd-wan-center/11/cloud-direct-service.html) virtually bundles multiple branch office internet access links such as DSL, Cable, and LTE. It creates redundant UDP tunnels. On one end is a Citrix SD-WAN Cloud Direct process, hosted on branch office SD-WAN appliances. On the other end are gateways hosted in Citrix SD-WAN Cloud Direct PoPs. The gateways are hosted in Points of Presence (PoP) at Internet Exchanges, near popular SaaS sites. It is able to utilize and monitor each link within the bundles to mitigate against data link or network issues in the first mile. The first mile is the segment of the circuit between the branch office and the ISP PoP where issues often occur. Further it aides with optimal transport of sessions throughout their path across the internet to target sites in the cloud.
 
 It can protect delivery sensitive VoIP traffic by applying bi-directional quality-of-service (QoS) prioritization and shaping with class-of-service (CoS) tags. It sends that marked traffic through the links with the least latency, loss, and jitter, improving the [mean opinion score (MOS)](https://en.wikipedia.org/wiki/Mean_opinion_score). In parallel it automatically identifies other traffic types and applies pertinent QoS tags to map to one of six classes of service. Then, it prioritizes traffic for egress transmission. Once on the Cloud Direct network infrastructure that traffic is transported, according to its CoS marking, over a high-speed private delivery network.
 
@@ -67,10 +67,10 @@ With these capabilities Citrix SD-WAN Cloud Direct optimizes delivery over the p
 
 ### Branch – First Mile Circuits
 
-1st mile circuits are access links to ISPs that are typically lower speed, lower cost, and subsequently lower reliability compared to circuits used by large enterprise and data centers. While the Citrix SD-WAN appliances connect to the modems via ethernet the data link technologies vary including:
+1st mile circuits are access links to ISPs that are typically lower speed, lower cost, and subsequently lower reliability compared to circuits used by large enterprise and data centers. While the Citrix SD-WAN appliances connect to the modems via Ethernet the data link technologies vary including:
 
 *  **DSL** – is a family of technologies that are used to transmit digital data over telephone lines. The bit rate typically ranges from 256 kbps to over 100 Mbps and varies by upload and download speed depending on several factors.
-*  **Cable** – like DSL cable provides connectivity from the ISP to a branch office. And akin to how DSL is delivered over the telephone network infrastructure it is delivered over the cable television infrastructure.   Download speeds range from 384 kbps to more than 50 Mbps.
+*  **Cable** – like DSL cable provides connectivity from the ISP to a branch office. And akin to how DSL is delivered over the telephone network infrastructure it is delivered over the cable television infrastructure. Download speeds range from 384 kbps to more than 50 Mbps.
 *  **4G LTE** – is a standard for wireless communication for mobile devices, yet it is increasingly used as an alternative to fixed internet circuits providing fairly high-speed access, up to 30 Mbps upload and download, virtually anywhere.
 
 ## Branch Optimization
@@ -93,7 +93,7 @@ Citrix SD-WAN can allocate a fixed portion of each circuit to Citrix SD-WAN Clou
 
 ![Prioritization](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-Priori.png)
 
-Traditionally branch routers may transmit traffic on a First-In-First-Out basis, or otherwise rely on prioritization tags coming from the LAN which may be inconsistent or inexistent. Citrix SD-WAN Cloud Direct identifies, prioritizes and tags traffic into 1 of 6 classes of service to be processed accordingly throughout Citrix SD-WAN Cloud Direct infrastructure. This happens in both directions, automatically.
+Traditionally branch routers may transmit traffic on a First-In-First-Out basis, or otherwise rely on prioritization tags coming from the LAN which may be inconsistent or inexistent. Citrix SD-WAN Cloud Direct identifies, prioritizes, and tags traffic into 1 of 6 classes of service to be processed accordingly throughout Citrix SD-WAN Cloud Direct infrastructure. This happens in both directions, automatically.
 
 The traffic is prioritized according to class. This ensures that the highest priority sessions are sent to the egress transmit queues first. The limited bandwidth of the local DSL, Cable, or LTE access links may be the bottleneck over the entire path to the cloud. Therefore, ensuring appropriate prioritization of traffic is critical to delivering maximum end-to-end QoS.
 
@@ -133,7 +133,7 @@ On the branch Citrix SD-WAN appliance the tunnel is sourced from a fixed LAN sid
 
 Citrix SD-WAN Cloud Direct advertises a route to the tunnel end point from a secondary PoP via BGP with a lower preference. If a failure occurred at the primary Cloud Direct service PoP the secondary site would become the route once the change converged over the internet.
 
-Thus, with Hitless Failover, transport or application layer protocols are unaware of the outage. Subsequently sessions do not incur typical delay to get reestablished at those layers, and the user experience is not impacted. This benefit applies to various session types including VPN, virtual desktop, SSH, VoIP, or Web Conference sessions.
+Thus, with Hitless Failover, transport or application layer protocols are unaware of the outage. Later sessions do not incur typical delay to get reestablished at those layers, and the user experience is not impacted. This benefit applies to various session types including VPN, virtual desktop, SSH, VoIP, or Web Conference sessions.
 
 ### Extended Visibility
 
@@ -143,12 +143,12 @@ Enterprises have some visibility of traffic statistics between the branch and th
 
 Citrix SD-WAN Cloud Direct also provides reporting on performance statistics:
 
-*  Total uptime improvement – additional time of internet availability as a result of Citrix SD-WAN Cloud Direct intervention
+*  Total uptime improvement – extra time of internet availability as a result of Citrix SD-WAN Cloud Direct intervention
 *  QoS adaptations – the volume of intelligent path changes to protect sensitive traffic like VoIP
 *  Major Issues Fixed – the number of circuit blackout or brownouts avoided by intelligent routing
 *  Circuit Performance - Overall % uptime for each circuit and aggregate time of major and minor issues incurred respectively
 
-Administrators have the ability to view this data on per day/week/month via [SD-WAN Orchestrator](https://docs.citrix.com/en-us/citrix-sd-wan-orchestrator.html). They can also have a report emailed regularly.
+Administrators have the ability to view this data on per day/week/month via [SD-WAN Orchestrator](/en-us/citrix-sd-wan-orchestrator.html). They can also have a report emailed regularly.
 
 ### VoIP Protection
 
@@ -162,7 +162,7 @@ Jitter is one of the biggest factors in poor call quality. Jitter is often cause
 
 Depending on the application Enterprise network traffic has different QoS requirements:
 
-*  **Latency** – pertains to the length of time it takes a packet to reach its destination which grows based on distance, congestion or other limiting factors on the network.
+*  **Latency** – pertains to the length of time it takes a packet to reach its destination which grows based on distance, congestion, or other limiting factors on the network.
 *  **Loss** – pertains to the rate of packet loss due to congestion avoidance, queue starvation, dirty WAN data links, or other network issues. This affects available bandwidth and retransmission.
 *  **Jitter** – pertains to the average difference in packet arrival time relative to their transmission time. This has the most effect on VoIP call quality.
 
@@ -230,10 +230,10 @@ The performance and reliability benefit the service provides decrease the furthe
 
 Citrix SD-WAN Cloud Direct has several benefits for access to UCaaS services. Sessions persist during outages in the communication path with hitless failover. The service monitors and dynamically switches internet paths when call quality degrades with VoIP Protection. It also maintains call quality with Enterprise QoS.
 
-UCaaS includes VoIP based communication solutions such as Microsoft Teams and Skype. Call setup is done via one of multiple redundant sites hosted, across the globe, on the public internet. DNS queries are transported via the Citrix SD-WAN Cloud Direct tunnel. The source of the query is the Citrix SD-WAN Cloud Direct PoP ensuring the nearest site is returned. After call setup the bearer traffic can be proxied via the same site. Alternatively, it may be setup directly to a peer on the intranet or internet. Citrix SD-WAN Cloud Direct ensures the session traffic is routed via the most efficient path.
+UCaaS includes VoIP based communication solutions such as Microsoft Teams and Skype. Call setup is done via one of multiple redundant sites hosted, across the globe, on the public internet. DNS queries are transported via the Citrix SD-WAN Cloud Direct tunnel. The source of the query is the Citrix SD-WAN Cloud Direct PoP ensuring the nearest site is returned. After call setup the bearer traffic can be proxied via the same site. Alternatively, it may be set up directly to a peer on the intranet or internet. Citrix SD-WAN Cloud Direct ensures the session traffic is routed via the most efficient path.
 
 ### DaaS
 
-Citrix SD-WAN Cloud Direct provides several benefits for [Citrix Virtual Apps and Desktops service](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops.html) and [Citrix Managed Desktops](https://docs.citrix.com/en-us/citrix-managed-desktops.html) users to improve user experience. The service provides better user experience when links are congested. It also aggregates and steers traffic to avoid session outages when local access links fail.
+Citrix SD-WAN Cloud Direct provides several benefits for [Citrix Virtual Apps and Desktops service](/en-us/citrix-virtual-apps-desktops.html) and [Citrix Managed Desktops](/en-us/citrix-managed-desktops.html) users to improve user experience. The service provides better user experience when links are congested. It also aggregates and steers traffic to avoid session outages when local access links fail.
 
 Citrix Virtual Apps and Desktops and Citrix Managed Desktops VDAs may be hosted in various hybrid cloud locations. After a Citrix SD-WAN appliance identifies an HDX session (the delivery protocol) it checks all available virtual paths for the optimal route. If the session is mapped to Citrix SD-WAN Cloud Direct, its traffic is tagged as interactive. Then the session is prioritized and transported accordingly. Citrix SD-WAN with Cloud Direct service is the ideal solution to route and deliver Citrix Virtual Apps and Desktops and Citrix Managed Desktops optimally across the public internet.
