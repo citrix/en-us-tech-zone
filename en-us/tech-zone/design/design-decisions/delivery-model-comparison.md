@@ -13,7 +13,7 @@ Designing a desktop virtualization solution is simply a matter of following a pr
 
 ![Layered Design Model](/en-us/tech-zone/design/media/design-decisions_delivery-model-comparison_layer-model.png)
 
-Users are segmented into logical groups, based on personalization, security, mobility, resiliency and activity requirements. The top three layers are designed for each user group independently. These layers define the users’ resources and how users access their resources. Upon completion of these three layers, the foundational layers (control and hardware) are designed for the entire solution.
+Users are segmented into logical groups, based on personalization, security, mobility, resiliency, and activity requirements. The top three layers are designed for each user group independently. These layers define the users’ resources and how users access their resources. Upon completion of these three layers, the foundational layers (control and hardware) are designed for the entire solution.
 
 This process guides the design thinking in that decisions made higher up impact lower level design decisions.
 
@@ -26,7 +26,7 @@ Even though the infrastructure remains the same for all delivery models, the loc
 
 ![Citrix Virtual Apps and Desktops Architecture](/en-us/tech-zone/design/media/design-decisions_delivery-model-comparison_cvad-architecture.png)
 
-*  Citrix Virtual Apps and Desktops Service - Breaks a typical deployment into multiple management domains. The access and control layer components are hosted and managed in the Citrix Cloud by Citrix while the resource layer components remains managed by the local IT team either as an on-premises, public cloud or hybrid cloud model. Citrix manages the hardware, sizing and updates to the access and control components while the local IT team manages the resources. In addition, if the public cloud hosts the resources, the local IT team does not have to manage the resource hardware.
+*  Citrix Virtual Apps and Desktops Service - Breaks a typical deployment into multiple management domains. The access and control layer components are hosted and managed in the Citrix Cloud by Citrix while the resource layer components remains managed by the local IT team either as an on-premises, public cloud or hybrid cloud model. Citrix manages the hardware, sizing, and updates to the access and control components while the local IT team manages the resources. In addition, if the public cloud hosts the resources, the local IT team does not have to manage the resource hardware.
 
 ![Citrix Virtual Apps and Desktops Service Architecture](/en-us/tech-zone/design/media/design-decisions_delivery-model-comparison_cvads-architecture.png)
 
@@ -34,7 +34,7 @@ Even though the infrastructure remains the same for all delivery models, the loc
 
 ![Citrix Managed Desktops Architecture](/en-us/tech-zone/design/media/design-decisions_delivery-model-comparison_cmd-architecture.png)
 
-*  Citrix Service Provider - A hosted service offering where third party organizations design, build and manage a Citrix Virtual Apps and Desktops environment on behalf of the organization. The Citrix Service Provider program is an outsourced IT management service that can handle solution deployments, updates and management.
+*  Citrix Service Provider - A hosted service offering where third party organizations design, build, and manage a Citrix Virtual Apps and Desktops environment on behalf of the organization. The Citrix Service Provider program is an outsourced IT management service that can handle solution deployments, updates, and management.
 
 ### Design Considerations
 
