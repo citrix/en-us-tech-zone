@@ -9,7 +9,7 @@ layout: doc
 
 ## Overview
 
-This article provides recommendations and guidance to estimate how many users or virtual machines (VMs) can be supported on a single physical host. This is commonly referred to as Citrix Virtual Apps and Desktops “single-server scalability” (SSS). In the context of Citrix Virtual Apps (CVA) or session virtualization, it is also commonly called “user density”. The idea is to ascertain how many users or VMs can be executed on a single piece of hardware running a major hypervisor such as XenServer.
+This article provides recommendations and guidance to estimate how many users or virtual machines (VMs) can be supported on a single physical host. This is commonly referred to as Citrix Virtual Apps and Desktops “single-server scalability” (SSS). In the context of Citrix Virtual Apps (CVA) or session virtualization, it is also commonly called “user density”. The idea is to ascertain how many users or VMs can be executed on a single piece of hardware running a major hypervisor such as Citrix Hypervsor.
 
 In this article, we will cover several of the variables or factors that influence Citrix Virtual Apps and Desktops (CVAD) SSS. We will then provide recommendations and simple guidelines to quickly estimate SSS for a given environment. We’ll conclude by providing a few sizing examples using real-world scenarios.
 
@@ -69,4 +69,4 @@ As mentioned previously, we realize there are many more variables or parameters 
 
 [Antivirus Best Practices](/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html)
 
-[Login VSI Load Testing](https://www.loginvsi.com/products/login-vsi)
+[Login VSI Load Testing](https://www.loginvsi.com/products/application-and-capacity-load-testing)
