@@ -9,11 +9,11 @@ description: Learn about the Citrix Microapps service, which brings intelligent 
 
 **Author:** [Vivekananthan Devaraj](mailto:Vivekananthan.Devaraj@citrix.com)
 
-**Special thanks:** [Dan Feller](mailto:daniel.feller@citrix.com) and [Allen Furmanski](mailto:allen.furmanski@citrix.com)
+**Special thanks:** [Dan Feller](mailto:daniel.feller@citrix.com), [Allen Furmanski](mailto:allen.furmanski@citrix.com), and [Radovan Hrabcak](radovan.hrabcak@citrix.com)
 
 ## Executive Summary
 
-Citrix introduced Microapps Services to add intelligence to the Citrix Workspace Platform. The Microapps Services allows administrators to build microapps and intelligent features to the workspace that eliminates the need for users to parse through complex enterprise apps to complete simple tasks. The intelligent features of Citrix Workspace significantly reduce the time spent on day-to-day business tasks by simplifying the access workflow. Microapps organize, automate, and guide employees through their workday, maximizing productivity and boosting the overall user experience and engagement. Let’s review the component architectures and sample use cases to see how Citrix Workspace Intelligence adds value to organizations.
+Citrix introduced Microapps Service to add intelligence to the Citrix Workspace Platform. The Microapps Service allows administrators to build microapps and intelligent features to the workspace that eliminates the need for users to parse through complex enterprise apps to complete simple tasks. The intelligent features of Citrix Workspace significantly reduce the time spent on day-to-day business tasks by simplifying the access workflow. Microapps organize, automate, and guide employees through their workday, maximizing productivity and boosting the overall user experience and engagement. Let’s review the component architectures and sample use cases to see how Citrix Workspace Intelligence adds value to organizations.
 
 ## An Introduction to the Microapps service
 
@@ -25,7 +25,7 @@ The Citrix Microapps service is a new cloud-based service introduced to add inte
 
 #### Microapp
 
-A microapp is a small and interactive software module designed to perform like a fully coded extensive application. Microapps help organizations to break down their large, hard-to-use apps into smaller, consumable apps without compromising the security and authentication, which benefits the organization and end-users. For example, a microapp needs to create for the “Approve PTO” use case and another microapp for “Submit PTO”. Similarly, for each use case, administrators can create or use built-in out-of-the-box microapps as per the organization's requirement.
+A microapp is a small, task-specific application that delivers highly targeted functionality. These apps allow users to accomplish single-purpose activities in a simple and quick manner. Microapps deliver actionable forms and notifications. Microapps can be transactional and write back to source systems. For example, a microapp needed for the “Approve PTO” use case and another microapp for “Submit PTO”. Similarly, for each use case, administrators can create or use built-in out-of-the-box microapps as per the organization's requirement.
 
 The microapps utilize APIs available within SaaS, web, or home-grown applications allowing users to see the content and interact with specific actions without needing the full launch of the application. Prior to microapps, users would have to launch an application, navigate to the page, and then perform the action.
 
@@ -41,13 +41,13 @@ The microapps utilize APIs available within SaaS, web, or home-grown application
 
 Citrix Workspace includes an **Intelligent Smart Feed** that allows end-users to interact with microapps to perform actions or gain insights from legacy, on-premises, and SaaS applications. Admins can configure or build microapps using the **Microapps service** available in the Citrix Cloud console.
 
-The **intelligent feed** focuses and facilitates work by reducing noise and organizing information into a prioritized, personal flow. It delivers content, actions, and insights to end-users into the feed pulled from connected applications **(System of Record)**. End users engage with content directly within the feed without the need to launch the full app. The feed data is getting populated by utilizing machine learning and AI algorithms.
+The **intelligent feed** can identify changes in the data like new, updated, deleted, or matching records and trigger notification based on the business rules set as part of the notification event setup. So, it adds value on a top of just displaying by identifying those changes and notifying users of them. End users engage with content directly within the feed without the need to launch the full app. The feed data is getting populated by utilizing machine learning and AI algorithms.
 
 [![Citrix-Microapps-Image-3](/en-us/tech-zone/design/media/reference-architectures_workspace-intelligence_003.PNG)](/en-us/tech-zone/design/media/reference-architectures_workspace-intelligence_003.PNG)
 
 #### System of Record (SoR)
 
-All the applications like SaaS, legacy, and homegrown applications from on-premises or cloud that can be connected via the Microapps service to create microapps is called **Systems of Record (SoR)**. There are connectors available as out-of-the-box templates to integrate several applications with the Microapps service. However, custom applications also can be integrated through the microapp page builder. The Microapp page builder helps to create streamlined user workflows via microapp actions.
+All the applications like SaaS, legacy, and homegrown applications from on-premises or cloud that can be connected via the Microapps service to create microapps is called **Systems of Record (SoR)**. There are Integrations available as out-of-the-box templates to integrate several applications with the Microapps service. However, custom applications also can be integrated through the microapp page builder. The Microapp page builder helps to create streamlined user workflows via microapp actions.
 
 Workflows are presented to the end-user via the **feed** by pulling content, actions, and insights from connected applications (Systems of Record), allowing end-users to interact with systems of records directly within Citrix Workspace. End-users can customize the actions pane to reduce complex workflows.
 
@@ -77,7 +77,7 @@ Users interact with virtual-assistance within Citrix Workspace and ask questions
 
 #### Microapp Builder
 
-The microapp builder is a service hosted fully within Citrix Cloud, which allows the creation of microapps quickly and easily. Administrators can add new integrations and connect to the data sources and create events based on data changes.
+The microapp builder allows the creation of microapps quickly and easily. Administrators can add new integrations and connect to the data sources and create events based on data changes.
 
 The microapp page builder delivered within the Citrix Cloud console connects to legacy, on-premises, and SaaS applications to easily create streamlined user workflows with low-code tooling. It allows creating your microapp actions to leverage custom applications, including those residing on-premises, with the generic web services connector. Administrators can configure the content within microapps via the microapp page builder.
 
@@ -87,7 +87,7 @@ The microapp page builder delivered within the Citrix Cloud console connects to 
 
 [![Citrix-Microapps-Image-5](/en-us/tech-zone/design/media/reference-architectures_workspace-intelligence_005.PNG)](/en-us/tech-zone/design/media/reference-architectures_workspace-intelligence_005.PNG)
 
-1.  **Endpoints** - An endpoint is an application interface with plug-ins that an end-user can use to interact with Citrix Workspace and its new features, including the intelligent feed and microapp actions. The Citrix Workspace app itself is the primary endpoint, whether the native desktop app, the web client or the native mobile app. The microapps allows integrating with other endpoints like Microsoft Teams.
+1.  **Endpoints** - An endpoint is an application interface with plug-ins that an end-user can use to interact with Citrix Workspace and its new features, including the intelligent feed and microapp actions. The Citrix Workspace app itself is the primary endpoint, whether the native desktop app, the web client, or the native mobile app. The microapps allows integrating with other endpoints like Microsoft Teams.
 
 2.  **Systems of Record (SoR)** - The Systems of Record (SoR) are the applications that Citrix Workspace interacts with to create microapps. These could be SaaS applications, legacy applications, homegrown applications and could be hosted on-prem or cloud.
 
@@ -95,7 +95,7 @@ The microapp page builder delivered within the Citrix Cloud console connects to 
 
 4.  **Microapps service** - The Microapps service is a single-tenant service responsible for configuring and exposing microapps. It periodically polls systems of record to update its local data cache. Its event engine then generates raw events based on its data cache, and it sends to Citrix Analytics to sort them for relevancy.
 
-5.  **Data Integration Provider Service** - The Data Integration Provider service interacts with the Systems of Record (SoR) to decrypt end-user credentials and write back actions to the SoR under the identity of the end-user. The write-back operations utilize a user’s actual account to ensure all activities performed are compliant with the data policies of the system.
+5.  **Data Integration Provider Service** - The Data Integration Provider interacts with the Systems of Record (SoR) to decrypt end-user credentials and write back actions to the SoR under the identity of the end-user. The write-back operations utilize a user’s actual account wherever possible to ensure all activities performed are compliant with the data policies of the system.
 
 6.  **Credential Wallet Service** - The credential wallet Key Management Service (KMS), stores encrypted service credentials for the system of records and user OAuth2 tokens.
 
@@ -116,7 +116,7 @@ There are countless applications that can be integrated using:
 
 ### Built-in Template Integration
 
-The Microapps Page builder is bundled with built-in templates to integrate the most common enterprise SaaS applications. There are over 100 out-of-the-box microapps available to integrate all kinds of Systems of Record. Refer to the [Citrix documentation](/en-us/citrix-microapps/set-up-template-integrations.html) for the complete list of template integration and out-of-box microapps.
+Citrix Workspace microapps has a large selection of out-of-the-box integrations to use. Administrators can set up a template integration and use the out-of-the-box microapps or build their own. There are over 100 out-of-the-box microapps available to integrate all kinds of Systems of Record. Refer to the [Citrix documentation](/en-us/citrix-microapps/set-up-template-integrations.html) for the complete list of template integration and out-of-box microapps.
 
 ### Custom Application HTTP Integration
 
@@ -155,7 +155,7 @@ After the creation of the integration, out-of-the-box microapps are available on
 
 The Microapps service needs to synchronize all the required tables and data from ServiceNow to its local cache. For the data synchronization from ServiceNow, the Microapps service retrieves encrypted service account credentials for the system of record from the Credential Wallet and requests sync from the Data Integration Provider. The service account must have read permission to all the required data from the ServiceNow System of Record.
 
-The Data Integration Provider decrypts the service account credentials from the Credential Wallet (Key Management Service). With the service account details, the Data Integration Provider connects the ServiceNow application and retrieves the updated data. There are two types of synchronization configured with the Microapps service - Full and Incremental Synchronization. The interval for synchronization is set based on the organization's requirements.
+The Data Integration Provider decrypts the service account credentials from the Credential Wallet (Key Management Service). With the service account details, the Data Integration Provider connects the ServiceNow application and retrieves the updated data. There are two types of synchronization configured with the Microapps Service - Full and Incremental Synchronization. The incremental sync is possible as soon as service supports that with time-related information in API payload. The interval for synchronization is set based on the organization's requirements in order not to break SaaS service API limits as well as to avoid sync jobs that are getting queued in the microapps platform.
 
 The Data Integration Provider streams ServiceNow table schema and data to the Microapps service for storage and processing. During the full or incremental synchronization, the microapps service compares the local cache with previous and current data and processes them to send them to users as notifications and actions.
 
@@ -179,7 +179,7 @@ The following diagram depicts a sample workflow for an event notification:
 1.  The Microapps service checks for updates with ServiceNow on the synchronization schedule.
 2.  ServiceNow has updated records for Incident, Change, and Problem requests.
 3.  Microapps service retrieves the updated data and stores in its local cache.
-4.  Microapps service compares the previous sync data with the current data and sends the updated events to Citrix Analytics Service for relevancy scoring.
+4.  Microapps Service compares the previous sync data with the current data to identify changes in the data and based on business rules set as part of the event configuration. It triggers notification events as soon as the rules match and send the updated events to Citrix Analytics Service for relevancy scoring.
 5.  Citrix Analytics Service (CAS) performs Active Directory OID lookup for the notifications and creates targeted scored notifications.
 6.  CAS sends the targeted notification to the User Notification Service for processing and storage.
 7.  User Notification Service pushes the updated notifications to user endpoints.
@@ -200,7 +200,7 @@ The following diagram depicts a sample workflow for an Action - Approval Event:
 2.  The Microapps service receives the user action and retrieves an encrypted OAuth token from KMS.
 3.  The Key Management Service sends an action to the Data Integration Provider with the OAuth token.
 4.  The Data Integration Provider decrypts the end user’s OAuth token via the Credential Wallet for the action, which is invoked by the user for the ServiceNow Change request.
-5.  The Data Integration Provider writes user actions to the system of record under the identity of the end-user.
+5.  The Data Integration Provider does the pre-writeback validation. Upon validation, it writes user actions to the system of record under the identity of the end-user.
 6.  The Data Integration Provider reads back changed data and updates the Microapps service.
 7.  The Microapps service sends the updated events to the Citrix Analytics Service.
 8.  The Citrix Analytics Service creates target scored notifications.
@@ -273,7 +273,7 @@ The following diagram describes a sample workflow for an Action event - Approval
 6.  CAS sends the targeted notification to the User Notification Service for processing and storage.
 7.  The User Notification Service pushes the updated notifications to user endpoints.
 8.  Endpoints receive notifications for respective users on their Citrix Workspace user interface. For Managers, it is approval notification and for the employee’s the status of the expense report.
-9.  The manager invokes the action for expense report approval or reject. If it is approved, there are no comments needed, and if it is a rejection of the expense report, the card page appears to enter the feedback.
+9.  The manager invokes the action for expense report approval or rejection. If it is approved, there are no comments needed, and if it is a rejection of the expense report, the card page appears to enter the feedback.
 10.  The Microapps service receives action with the incident details and retrieves encrypted OAuth token from KMS.
 11.  The Key Management Service sends the submissions and user’s action to the Data Integration Provider with OAuth token.
 12.  The Data Integration Provider decrypts end user’s (Manager) OAuth token via the KMS for the SAP Concur expense report approval action.
@@ -305,7 +305,7 @@ The following diagram describes a sample workflow for an Action Input – Expens
 
 ## How does the Microapps service and Citrix Workspace help organizations in increasing user engagement and productivity?
 
-Let’s compare the traditional access approach vs. Microapps Integration to understand how Microapps services deliver value to the organization.
+Let’s compare the traditional access approach vs. Microapps Integration to understand how Microapps service delivers value to the organization.
 
 ### Traditional Access
 
@@ -329,14 +329,14 @@ The below diagram depicts the new access method with Microapps integration for a
 
 [![Citrix-Microapps-Image-14](/en-us/tech-zone/design/media/reference-architectures_workspace-intelligence_014.PNG)](/en-us/tech-zone/design/media/reference-architectures_workspace-intelligence_014.PNG)
 
-*  With the help of Microapps Services and System of Record integration, employees can access all business applications through Citrix Workspace. It allows accessing all the business applications in a single user interface, and it eliminates the login time of each application.
-*  Microapps Services allows the organization to integrate the applications using OAuth; hence, it enables single-sign-on to all the applications. Users don’t have to enter the credentials for each application; therefore, it saves time and allows continuous user engagement.
+*  With the help of Microapps Service and System of Record integration, employees can access all business applications through Citrix Workspace. It allows accessing all the business applications in a single user interface, and it eliminates the login time of each application.
+*  Microapps Service allows the organization to integrate the applications using OAuth; hence, it enables single-sign-on to all the applications. Users don’t have to enter the credentials for each application; therefore, it saves time and allows continuous user engagement.
 *  Citrix Workspace intelligent features enable employees to accomplish their tasks with simple mouse clicks, which saves time on searching and navigating the extensive applications.
 *  Citrix Workspace and Microapps service enable the employees to access all the resources from the Workspace UI, and it saves context switching time, thus increasing user productivity.
 
 ## Summary
 
-The Microapps service with Citrix Workspace is the solution for a better way to work. It enables modern digital workspaces that unifies all resources for users to do their best work and help their organizations gain an edge. Citrix Workspace and Microapps Services allow customers to build microapps to increase end-user productivity. By utilizing public APIs, admins completely control which microapps are made available to users. Microapps organize, automate, and guide your employees through their workday, maximizing productivity and boosting the overall user experience.
+The Microapps service with Citrix Workspace is the solution for a better way to work. It enables modern digital workspace that unifies all resources for users to do their best work and help their organizations gain an edge. Citrix Workspace and Microapps Service allow customers to build microapps to increase end-user productivity. By utilizing public APIs, admins completely control which microapps are made available to users. Microapps organize, automate, and guide your employees through their workday, maximizing productivity and boosting the overall user experience.
 
 ## Sources
 
