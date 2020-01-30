@@ -5,7 +5,7 @@ layout: doc
 
 ## Authors
 
-This document was authored by a team of Citrix and AWS technologists, including Rick Dehlinger, Jill Fetscher, Allen Furmanski, Faubricio Guitierrez,
+This document was authored by a team of Citrix and AWS technologists, including Rick Dehlinger, Jill Fetscher, Allen Furmanski, Faubricio Gutierrez,
 David Johnson, and Joanne Lei
 
 ### Contributors
