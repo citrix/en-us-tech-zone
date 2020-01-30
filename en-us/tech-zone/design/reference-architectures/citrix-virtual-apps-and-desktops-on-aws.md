@@ -89,14 +89,14 @@ model to use for which subsystem and when.
 Next, we define and examine three common deployment scenarios,
 highlighting which adoption model is used for each subsystem:
 
-- **Greenfield**/**Cloud only** - leverages cloud services for all
+-  **Greenfield**/**Cloud only** - leverages cloud services for all
     Citrix virtualization system subsystems, plus AWS public cloud
     services.
-- **Hybrid** (not to be confused with a ‘hybrid cloud’) - the most
+-  **Hybrid** (not to be confused with a ‘hybrid cloud’) - the most
     common deployment model, the hybrid model uses CVADS for session
     brokering and administration, with both customer managed and cloud
     service options for the remaining subsystems.
-- **Lift and Shift** - as the name states, this model leverages
+-  **Lift and Shift** - as the name states, this model leverages
     existing, customer managed CVAD, StoreFront, and ADC/Gateway and
     either migrates these components to AWS as is, or installs them into
     AWS as part of a workload migration to AWS public cloud services.
@@ -127,11 +127,11 @@ services meet their specific needs.
 For additional insights into leading practices for Citrix on AWS,
 please reference the following Cloud Guidepost articles:
 
-- [Leading practices for Citrix Cloud on AWS - Part 1](https://www.citrix.com/blogs/2019/09/23/cloud-guidepost-leading-practices-for-citrix-cloud-on-aws-part-1/)
-- [Leading practices for Citrix Cloud on AWS - Part 2](https://www.citrix.com/blogs/2019/11/21/cloud-guidepost-leading-practices-for-citrix-cloud-on-aws-part-2/)
-- [Leading practices for Citrix Cloud on AWS - Part 3](https://www.citrix.com/blogs/2020/01/21/cloud-guidepost-leading-practices-for-citrix-cloud-on-aws-part-3/)
+-  [Leading practices for Citrix Cloud on AWS - Part 1](https://www.citrix.com/blogs/2019/09/23/cloud-guidepost-leading-practices-for-citrix-cloud-on-aws-part-1/)
+-  [Leading practices for Citrix Cloud on AWS - Part 2](https://www.citrix.com/blogs/2019/11/21/cloud-guidepost-leading-practices-for-citrix-cloud-on-aws-part-2/)
+-  [Leading practices for Citrix Cloud on AWS - Part 3](https://www.citrix.com/blogs/2020/01/21/cloud-guidepost-leading-practices-for-citrix-cloud-on-aws-part-3/)
 
-Source files for all images included in this work can be found [here](/en-us/tech-zone/design/download/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_diagrams.pptx)
+Source files for all images included in this work can be found [here](/en-us/tech-zone/design/downloads/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_diagrams.pptx)
 
 ## Key Concepts and Deployment Scenarios
 
@@ -319,20 +319,20 @@ for common migration scenarios.
 The three most common scenarios for delivering Citrix Apps and Desktops
 on AWS are:
 
-- **Greenfield/Cloud Only** deployment, leveraging Citrix Cloud
+-  **Greenfield/Cloud Only** deployment, leveraging Citrix Cloud
     services with “resource locations” on Amazon EC2 (Amazon Elastic
     Compute Cloud) service. This scenario is commonly used when
     customers prefer to go to a subscription model and outsource control
     plane infrastructure and management responsibility to Citrix, or
     they’re looking to experience/evaluate the capabilities provided by
     Citrix Cloud services.
-- **Hybrid** deployment/workload migration to AWS, leveraging Citrix
+-  **Hybrid** deployment/workload migration to AWS, leveraging Citrix
     Cloud services for session brokering and administration, Workspace
     UI or StoreFront for content aggregation/session
     presentation/session launching, and may also leverage customer
     managed Citrix ADC/Gateways for HDX session proxying and/or complex
     authentication scenarios.
-- **Lift and shift**. With this scenario, customers essentially move
+-  **Lift and shift**. With this scenario, customers essentially move
     or re-deploy their self-managed Citrix infrastructure into AWS,
     treating the deployment on AWS just like their existing customer
     managed deployment. With this scenario, customers use Citrix
@@ -428,12 +428,12 @@ The hybrid deployment model is the most common deployment seen today,
 and is the model Citrix recommends for most customers. Here are some of
 the primary reasons why we take this position:
 
-- **Simplicity** - With Citrix Cloud services, simplicity is a
+-  **Simplicity** - With Citrix Cloud services, simplicity is a
     foundational design tenet. When multiple cloud services are
     leveraged, they come pre-configured to work together, and when
     configuration is necessary, workflows and options are dramatically
     simplified.
-- **Infrastructure and licensing cost savings** - customer managed
+-  **Infrastructure and licensing cost savings** - customer managed
     Citrix virtualization services often require additional hardware and
     software to support them, and these have costs associated with them.
     One good example is Microsoft SQL Server: customer managed brokering
@@ -441,7 +441,7 @@ the primary reasons why we take this position:
     to build/manage your own, you need to provide them. (An alternative
     is leveraging the AWS Relational Database Service (Amazon RDS) for
     SQL Server).
-- **Autoscaling** - Citrix’s managed brokering service (CVADS)
+-  **Autoscaling** - Citrix’s managed brokering service (CVADS)
     includes the [**autoscale feature**](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html),
     which provides built-in VDA capacity and cost management
     functionality. This feature can save customers a substantial amount
@@ -455,7 +455,7 @@ the primary reasons why we take this position:
     service (i.e. Citrix Virtual Apps and Desktops service) customers -
     it is not available to customer managed brokering infrastructure
     (i.e. Citrix Virtual Apps and Desktops LTSR or CR releases).*
-- **Management savings** - With cloud services, Citrix shoulders the
+-  **Management savings** - With cloud services, Citrix shoulders the
     responsibility for keeping the services highly available,
     performant, secure, and up to date. You still build and manage your
     VDA’s regardless, but don’t underestimate the value of delegating
@@ -463,14 +463,14 @@ the primary reasons why we take this position:
     freeing up IT resources to focus on providing unique value to their
     businesses instead of these critical but tedious and often
     time-consuming tasks.
-- **“Free” upgrades and continuous innovation** - with customer
+-  **“Free” upgrades and continuous innovation** - with customer
     managed infrastructure, the onus is on the customer to upgrade and
     patch the components in their care. With Cloud services, most of
     those work efforts go away. The service providers (Citrix or AWS for
     example) tend to be constantly innovating, and they bring those
     innovations to the customers who consume the services, often without
     requiring any work on behalf of the customer.
-- **Access to additional features, functionality, and services -**
+-  **Access to additional features, functionality, and services -**
     modern service delivery platforms (such as Citrix Cloud and AWS EC2)
     give technology providers a powerful, cost effective way to bring
     new features, capabilities, and services to market that would not
@@ -479,7 +479,7 @@ the primary reasons why we take this position:
     transformation journey, but sometimes the only way to cost
     effectively deliver new capabilities is to deliver them as a cloud
     service.
-- **Flexibility** - with CVADS as the foundation of this deployment
+-  **Flexibility** - with CVADS as the foundation of this deployment
     model, customers can mix and match customer managed or cloud service
     components of the Citrix virtualization system to meet a broad
     variety of use cases and support complex enterprise requirements for
@@ -554,7 +554,7 @@ perceived skills deficits, loss of control, and license acquisition fall
 into this category. There are, however, a few technical reasons why this
 model is appealing. These include:
 
-- **System Isolation** - some use cases, such as air-gapped systems
+-  **System Isolation** - some use cases, such as air-gapped systems
     with no Internet access, often make the lift and shift model
     appealing. Since cloud services require outbound Internet access to
     function, in a strictly air-gapped deployment, cloud services won’t
@@ -567,7 +567,7 @@ model is appealing. These include:
     concession which allows the managed brokering services to be
     utilized, but even this may not be an option for some customers and
     use cases.
-- **Configuration flexibility** - one person’s ‘complex’ is another
+-  **Configuration flexibility** - one person’s ‘complex’ is another
     person’s ‘flexible’, and flexibility has been a strong suite of
     customer managed Citrix virtualization infrastructure for more than
     two decades. Over the years the technology has gained a ton of
@@ -578,7 +578,7 @@ model is appealing. These include:
     edge cases are still best served by a customer managed stack, though
     with the rapid pace of innovation coming to the Citrix Cloud
     services, the edge cases are becoming more and more rare.
-- **Control** - some organizations, cultures, and business models
+-  **Control** - some organizations, cultures, and business models
     demand as much control as possible. With customer managed Citrix
     virtualization components, customers can completely own their
     destiny. This control comes at a cost (infrastructure, complexity,
@@ -648,7 +648,7 @@ Connectors vs. Delivery Controllers + SQL databases + Director servers +
 Citrix Licensing servers). Here are some of the primary reasons why we
 take this position (and they might sound familiar!):
 
-- **Simplicity** - While customer managed session brokering services
+-  **Simplicity** - While customer managed session brokering services
     provide the ultimate in control and configuration flexibility, it
     comes at the cost of complexity and ongoing maintenance
     requirements. With Citrix Cloud services, simplicity is a
@@ -656,13 +656,13 @@ take this position (and they might sound familiar!):
     leveraged, they come pre-configured to work together, and when
     configuration is necessary, workflows and options are dramatically
     simplified.
-- **Infrastructure and licensing cost savings** - customer managed
+-  **Infrastructure and licensing cost savings** - customer managed
     Citrix virtualization services often require additional hardware and
     software to support them, and these have costs associated with them.
     One good example is Microsoft SQL Server: customer managed brokering
     services require databases, and if you’re going to build/manage your
     own, you need to provide them.
-- Speaking of infrastructure cost savings - this brings up a critical
+-  Speaking of infrastructure cost savings - this brings up a critical
     differentiator between the two session brokering options:
     **Autoscaling**. Citrix’s managed brokering service
     (CVADS) includes the [**autoscale
@@ -679,7 +679,7 @@ take this position (and they might sound familiar!):
     service (i.e. Citrix Virtual Apps and Desktops service) customers -
     it is not available to customer managed brokering infrastructure
     (i.e. Citrix Virtual Apps and Desktops LTSR or CR releases).*
-- **Management savings** - With cloud services, Citrix (and AWS in
+-  **Management savings** - With cloud services, Citrix (and AWS in
     this case) shoulders the responsibility for keeping the services
     highly available, performant, secure, and up to date. You still
     build and manage your VDA’s regardless, but don’t underestimate the
@@ -687,14 +687,14 @@ take this position (and they might sound familiar!):
     long way towards freeing up IT resources to focus on providing
     unique value to their businesses instead of these critical but
     tedious and often time-consuming tasks.
-- **“Free” upgrades and continuous innovation** - with customer
+-  **“Free” upgrades and continuous innovation** - with customer
     managed infrastructure, the onus is on the customer to upgrade and
     patch the components in their care. With cloud services, most of
     those work efforts go away. The service providers (Citrix and AWS in
     this case) tend to be constantly innovating, and they bring these
     innovations to the customers who consume the services, often without
     requiring any work on behalf of the customer.
-- **Access to additional features, functionality, and services -**
+-  **Access to additional features, functionality, and services -**
     modern service delivery platforms (such as Citrix Cloud and Amazon
     EC2) give technology providers a powerful, cost effective way to
     bring new features, capabilities, and services to market that
@@ -721,10 +721,10 @@ help you be successful. We recommend reviewing these materials before
 you continue on with this document, as we’ll be highlighting important
 design decisions that have changed since these works were completed:
 
-- [Citrix XenApp and XenDesktop 7.6 on AWS Reference Architecture](https://www.citrix.com/blogs/2015/06/18/xenapp-and-xendesktop-7-6-reference-architecture-on-aws/) (blog)
-- [Citrix XenApp and XenDesktop 7.6 on Amazon Web Services Reference Architecture](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/citrix-xenapp-and-xendesktop-7.6-on-amazon-web-services-reference-architecture.pdf) (guide)
-- [Using AWS Directory Service and Amazon RDS with Citrix Virtual Apps and Desktops](https://aws.amazon.com/blogs/apn/using-aws-directory-service-and-amazon-rds-with-citrix-virtual-apps-and-desktops/) (blog)
-- [Deploying Citrix Virtual Apps and Desktop with AWS Directory Service and Amazon RDS – Version 1.0](https://s3-us-west-2.amazonaws.com/apnblog.awspartner.com/Citrix+Virtual+Apps+and+Desktops/Citrix+Ready-Amazon+RDS+Deployment+Guide_v1.pdf) (deployment guide)
+-  [Citrix XenApp and XenDesktop 7.6 on AWS Reference Architecture](https://www.citrix.com/blogs/2015/06/18/xenapp-and-xendesktop-7-6-reference-architecture-on-aws/) (blog)
+-  [Citrix XenApp and XenDesktop 7.6 on Amazon Web Services Reference Architecture](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/citrix-xenapp-and-xendesktop-7.6-on-amazon-web-services-reference-architecture.pdf) (guide)
+-  [Using AWS Directory Service and Amazon RDS with Citrix Virtual Apps and Desktops](https://aws.amazon.com/blogs/apn/using-aws-directory-service-and-amazon-rds-with-citrix-virtual-apps-and-desktops/) (blog)
+-  [Deploying Citrix Virtual Apps and Desktop with AWS Directory Service and Amazon RDS – Version 1.0](https://s3-us-west-2.amazonaws.com/apnblog.awspartner.com/Citrix+Virtual+Apps+and+Desktops/Citrix+Ready-Amazon+RDS+Deployment+Guide_v1.pdf) (deployment guide)
 
 ## Design Decisions
 
@@ -754,18 +754,18 @@ depicted in the conceptual diagram below:
 
 *Diagram 9: Conceptual Architecture, Citrix Virtual Apps and Desktops Service.*
 
-- ***User Layer*** - This layer defines user groups and locations of
+-  ***User Layer*** - This layer defines user groups and locations of
     the Citrix environment.
-- ***Access layer*** - This layer defines how users access the
+-  ***Access layer*** - This layer defines how users access the
     resources.
-- ***Control layer*** - This layer defines the components that control
+-  ***Control layer*** - This layer defines the components that control
     the Citrix solution.
-- ***Resource layer*** - This layer defines provisioning of Citrix
+-  ***Resource layer*** - This layer defines provisioning of Citrix
     workloads and how resources are assigned to the given users.
-- ***Platform layer*** - This layer defines the physical elements
+-  ***Platform layer*** - This layer defines the physical elements
     where the hypervisor components and cloud service provider framework
     run to host the Citrix workloads.
-- ***Operations Layer*** - This layer defines the tools that support
+-  ***Operations Layer*** - This layer defines the tools that support
     the delivery of the core solutions.
 
 ### User Layer Considerations
@@ -957,10 +957,10 @@ Fortunately deploying Citrix ADC/Gateway on AWS is thoroughly
 documented, so we recommend reviewing the following resources before you
 solidify your design and begin implementation:
 
-- [Citrix ADC VPX on AWS in Citrix Docs](https://docs.citrix.com/en-us/citrix-adc/13/deploying-vpx/deploy-aws.html): Provides a comprehensive overview of Citrix ADC on AWS, including supported VPX models, AWS regions, EC2 instance types, and additional resource references.
-- [Citrix ADC and Amazon Web Services Validated Reference Design](https://docs.citrix.com/en-us/advanced-concepts/design-guides/netscaler-and-amazon-aws.html) in Citrix Docs/Advanced Concepts - includes additional details and deployment guidance.
-- [Citrix ADC for Web Applications Quick Start Cloud Formation](https://aws.amazon.com/quickstart/architecture/citrix-adc-vpx/) template: functional and relevant for Citrix Gateway deployments with CVAD/CVADS also, though Citrix and AWS are working on an additional Quick Start for this specific use case.
-- [Read.me](https://github.com/citrix/citrix-adc-aws-cloudformation/blob/master/templates/README.md) from Citrix ADC on AWS QuickStart Cloud Formation template - an excellent reference for available Citrix Networking products on AWS Marketplace, and also provides AMI ID’s for all available regions/instance types/firmware models.
+-  [Citrix ADC VPX on AWS in Citrix Docs](https://docs.citrix.com/en-us/citrix-adc/13/deploying-vpx/deploy-aws.html): Provides a comprehensive overview of Citrix ADC on AWS, including supported VPX models, AWS regions, EC2 instance types, and additional resource references.
+-  [Citrix ADC and Amazon Web Services Validated Reference Design](https://docs.citrix.com/en-us/advanced-concepts/design-guides/netscaler-and-amazon-aws.html) in Citrix Docs/Advanced Concepts - includes additional details and deployment guidance.
+-  [Citrix ADC for Web Applications Quick Start Cloud Formation](https://aws.amazon.com/quickstart/architecture/citrix-adc-vpx/) template: functional and relevant for Citrix Gateway deployments with CVAD/CVADS also, though Citrix and AWS are working on an additional Quick Start for this specific use case.
+-  [Read.me](https://github.com/citrix/citrix-adc-aws-cloudformation/blob/master/templates/README.md) from Citrix ADC on AWS QuickStart Cloud Formation template - an excellent reference for available Citrix Networking products on AWS Marketplace, and also provides AMI ID’s for all available regions/instance types/firmware models.
 
 While there are potential variants for a Citrix ADC/Gateway VPX
 architecture on AWS, the following diagram (from the
@@ -976,14 +976,16 @@ As discussed in [Citrix ADC VPX on AWS](https://docs.citrix.com/en-us/citrix-adc
 on Citrix Docs, there are two primary deployment options available. They
 are:
 
-- [Standalone](https://docs.citrix.com/en-us/citrix-adc/13/deploying-vpx/deploy-aws/launch-vpx-for-aws-ami.html)
-  - Individual instances of Citrix ADC/Gateway can be deployed and
+-  [Standalone](https://docs.citrix.com/en-us/citrix-adc/13/deploying-vpx/deploy-aws/launch-vpx-for-aws-ami.html)
+
+    -  Individual instances of Citrix ADC/Gateway can be deployed and
     managed as separate entities. This is commonly used for smaller
     scale or POC deployments where high availability is not a
     requirement.
 
-- [High Availability](https://docs.citrix.com/en-us/citrix-adc/13/deploying-vpx/deploy-aws/how-aws-ha-works.html)
-  - This is the most commonly deployed model for production
+-  [High Availability](https://docs.citrix.com/en-us/citrix-adc/13/deploying-vpx/deploy-aws/how-aws-ha-works.html)
+
+    -  This is the most commonly deployed model for production
     environments: pairs of Citrix ADC/Gateway VPX instances can be
     deployed leveraging native Citrix HA mode on AWS. With older
     firmware versions, the pair is deployed in the same AWS Availability
@@ -1122,7 +1124,7 @@ desktops and applications. When deploying a Citrix virtualization system
 on AWS, the key things to keep in mind (aside from all the ‘normal’
 stuff we won’t cover here) are:
 
-- **CIFS storage and data replication** - Regardless of the tooling
+-  **CIFS storage and data replication** - Regardless of the tooling
     you use for managing user personalization settings (i.e. the users’
     Windows profile and redirected folders) you’ve got to have Windows
     file shares to store them on. If you’ve got VDAs in multiple regions
@@ -1130,7 +1132,7 @@ stuff we won’t cover here) are:
     also got to deal with data replication. Many applications also
     leverage Windows file shares, so CIFS storage and data replication
     are important for these too.
-- **Image design** - Citrix App Layering and Citrix Provisioning
+-  **Image design** - Citrix App Layering and Citrix Provisioning
     Services (PVS) do not currently support Amazon EC2 - customers
     hosting a resource location in AWS leverage Machine Creation
     Services for VDA fleet creation, management, and updating.
@@ -1304,7 +1306,7 @@ three main delivery models, which can be mixed and matched and used in
 combination to support a broad variety of use cases. The three delivery
 models are:
 
-- **Hosted shared:** The hosted shared model most commonly utilizes a
+-  **Hosted shared:** The hosted shared model most commonly utilizes a
 Windows Server OS with the RDSH role installed, though Linux instances
 can provide the same functionality for compatible apps. With this model,
 a single VDA instance can support multiple simultaneous users, each
@@ -1329,7 +1331,7 @@ under Microsoft’s SPLA licensing model, though customers can avoid these
 additional costs by leveraging Linux as the OS. *This model is, hands
 down, the most cost effective to run on AWS.*
 
-- **Server VDI:** The “Server VDI” model also leverages a Windows Server
+-  **Server VDI:** The “Server VDI” model also leverages a Windows Server
 OS, and with the Desktop Experience and related components installed, it
 looks and feels to the user just like a Windows Desktop OS. The RDSH
 role is not installed with this model, so one instance supports one user
@@ -1349,7 +1351,7 @@ workloads that can benefit from a GPU, though the GPU vendor may require
 additional licenses. *This is the second most cost-effective delivery
 model to run on AWS.*
 
-- **Client VDI:** The client VDI delivery model typically leverages a
+-  **Client VDI:** The client VDI delivery model typically leverages a
 Windows desktop OS such as Windows 10 or Windows 7, although a supported
 Linux OS version can be used as well. Client VDI is a 1:1 model, meaning
 each unique user requires their own OS instance. Customers who are new
@@ -1477,7 +1479,7 @@ resource consumption across multiple sessions on a host. “T” series are
 characteristics of VDI (e.g. one minute a user is idling and the next
 they are running a macro calculation). For additional details on
 instance type selection and pricing, please refer to the [Citrix on AWS
-cost estimation presentation](/en-us/tech-zone/design/download/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_costs.pptx).
+cost estimation presentation](/en-us/tech-zone/design/downloads/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_costs.pptx).
 
 For more information regarding instance selection (especially as it
 applies to the hosted shared delivery model) see
@@ -1607,11 +1609,11 @@ following before you continue: collectively, they cover most of the
 design decisions you’ll need to make to be successful deploying Citrix
 on AWS using the lift and shift deployment model:
 
-- [Citrix XenApp and XenDesktop 7.6 on AWS Reference Architecture](https://www.citrix.com/blogs/2015/06/18/xenapp-and-xendesktop-7-6-reference-architecture-on-aws/) (blog)
-- [Citrix XenApp and XenDesktop 7.6 on Amazon Web Services Reference Architecture](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/citrix-xenapp-and-xendesktop-7.6-on-amazon-web-services-reference-architecture.pdf) (guide)
-- [Using AWS Directory Service and Amazon RDS with Citrix Virtual Apps and Desktops](https://aws.amazon.com/blogs/apn/using-aws-directory-service-and-amazon-rds-with-citrix-virtual-apps-and-desktops/) (blog)
-- [Deploying Citrix Virtual Apps and Desktop with AWS Directory Service and Amazon RDS – Version 1.0](https://s3-us-west-2.amazonaws.com/apnblog.awspartner.com/Citrix+Virtual+Apps+and+Desktops/Citrix+Ready-Amazon+RDS+Deployment+Guide_v1.pdf) (deployment guide)
-- [Citrix VDI Handbook and Best Practices for XenApp and XenDesktop 7.15 LTSR](https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/downloads/handbook-715-ltsr.pdf) (document)
+-  [Citrix XenApp and XenDesktop 7.6 on AWS Reference Architecture](https://www.citrix.com/blogs/2015/06/18/xenapp-and-xendesktop-7-6-reference-architecture-on-aws/) (blog)
+-  [Citrix XenApp and XenDesktop 7.6 on Amazon Web Services Reference Architecture](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/citrix-xenapp-and-xendesktop-7.6-on-amazon-web-services-reference-architecture.pdf) (guide)
+-  [Using AWS Directory Service and Amazon RDS with Citrix Virtual Apps and Desktops](https://aws.amazon.com/blogs/apn/using-aws-directory-service-and-amazon-rds-with-citrix-virtual-apps-and-desktops/) (blog)
+-  [Deploying Citrix Virtual Apps and Desktop with AWS Directory Service and Amazon RDS – Version 1.0](https://s3-us-west-2.amazonaws.com/apnblog.awspartner.com/Citrix+Virtual+Apps+and+Desktops/Citrix+Ready-Amazon+RDS+Deployment+Guide_v1.pdf) (deployment guide)
+-  [Citrix VDI Handbook and Best Practices for XenApp and XenDesktop 7.15 LTSR](https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/downloads/handbook-715-ltsr.pdf) (document)
 
 ### Active Directory Considerations
 
@@ -1659,21 +1661,21 @@ users, computers, groups, OU’s, group policies, etc.
 
 A few other things you CAN NOT do:
 
-- Create AD objects in any of the default containers (such as
+-  Create AD objects in any of the default containers (such as
     /Computers): they’re essentially read-only. This brings up a common
     mistake some customers make when using Citrix’s MCS provisioning
     technology: you must choose to create the machine accounts for your
     MCS managed VDA’s in a container/OU that’s writeable - if you don’t
     choose such a location, MCS won’t be able to create the machine
     accounts.
-- Install and configure some AD integrated features such as
+-  Install and configure some AD integrated features such as
     Certificate Services. As such, this impacts customers who will be
     using Citrix’s Federated Authentication Services (“FAS”) technology
     (which requires AD integrated Certificate Services): these customers
     will need to build and manage their own Active Directory on AWS
     using EC2 Windows Server instances.
 
-- Have local Server Administrator equivalence by default. In an ‘out
+-  Have local Server Administrator equivalence by default. In an ‘out
     of the box’ Active Directory installation, the Domain Administrators
     group is added to the local Server Administrators group by default.
     If you’re leveraging the AWS Managed Microsoft AD service, you’ll
@@ -1835,7 +1837,7 @@ details on VPC design as it relates to MCS.
 
 This section lists some common issues and associated recommendations/resolution links.
 
-- Some newer AWS instance types will not show up by default in the Machine
+-  Some newer AWS instance types will not show up by default in the Machine
 Catalog creation wizard in Studio (either CVAD or CVADS). The UI is
 populated with instance types from a static XML file which resides on
 Delivery Controllers (CVAD) or Cloud Connectors (CVADS). This XML can be
@@ -1845,12 +1847,12 @@ Connector updates or customer-initiated Delivery Controller upgrades).
 See [Updating AWS Instance Types for XenDesktop](https://support.citrix.com/article/CTX139707)
 for more details on how to update the list of available AWS instance
 types.
-- [MCS Provisioning fails on AWS EC2 when using Dedicated instances](https://support.citrix.com/article/CTX222527)
-- [Unable to create AWS hosting connection on Citrix Cloud DDC when proxy is configured on connector server](https://support.citrix.com/article/CTX248735)
-- [When Creating Machines with MCS and AWS an Error "XDDS:2367399e" Occurs](https://support.citrix.com/article/CTX219734)
-- [Configure the Volume Worker instance to use the Machine Catalog VPC and not the default VPC](https://support.citrix.com/article/CTX219734)
-- [How to Ensure Region Compatibility When Using XenApp/XenDesktop MCS in AWS](https://support.citrix.com/article/CTX225276)
-- [Troubleshooting tips from the field for Machine Creation Services in AWS](https://www.citrix.com/blogs/2019/10/16/troubleshooting-tips-from-the-field-for-machine-creation-services-in-aws/)
+-  [MCS Provisioning fails on AWS EC2 when using Dedicated instances](https://support.citrix.com/article/CTX222527)
+-  [Unable to create AWS hosting connection on Citrix Cloud DDC when proxy is configured on connector server](https://support.citrix.com/article/CTX248735)
+-  [When Creating Machines with MCS and AWS an Error "XDDS:2367399e" Occurs](https://support.citrix.com/article/CTX219734)
+-  [Configure the Volume Worker instance to use the Machine Catalog VPC and not the default VPC](https://support.citrix.com/article/CTX219734)
+-  [How to Ensure Region Compatibility When Using XenApp/XenDesktop MCS in AWS](https://support.citrix.com/article/CTX225276)
+-  [Troubleshooting tips from the field for Machine Creation Services in AWS](https://www.citrix.com/blogs/2019/10/16/troubleshooting-tips-from-the-field-for-machine-creation-services-in-aws/)
 
 ## Infrastructure (or Platform) Layer Considerations
 
@@ -1924,21 +1926,21 @@ region(s) for your Citrix virtualization system is beyond the scope of
 this document, consider at least the following when making your
 choice(s):
 
-- If you have one or more existing, customer managed data centers
+-  If you have one or more existing, customer managed data centers
     you’ll be connecting to AWS, consider the region(s) which provides
     the lowest latency network connectivity to your datacenters and/or
     major offices.
-- All regions may not have the AWS services or instance types you’re
+-  All regions may not have the AWS services or instance types you’re
     looking for. AWS deploys new services or instance types initially to
     a few main regions, then expands to the rest over time.
     Additionally, newer regions may not have older instance types - do
     your research before you build whenever possible\!
-- CVAD sites and CVADS resource locations are realistically bound to a
+-  CVAD sites and CVADS resource locations are realistically bound to a
     specific region. High availability for individual components of a
     site/resource location (such as cloud connectors, StoreFront
     servers, and/or ADC/Gateway VPX instances) is accomplished by
     placing resources in multiple availability zones in a given region.
-- Don’t go overboard spreading your infrastructure across regions:
+-  Don’t go overboard spreading your infrastructure across regions:
     while it is extremely easy to do on AWS, consider cost and
     complexity relative to the payoff you expect before you scale any
     system. You do end up paying for network traffic and storage traffic
@@ -2023,9 +2025,9 @@ sourced (meaning they can be duplicated and modified as needed). As of
 the time of writing, the following Quick Start templates are available
 for Citrix technologies on AWS:
 
-- [Citrix Virtual Apps and Desktops Service on AWS](https://aws.amazon.com/quickstart/architecture/citrix-virtual-apps/) - deploys a highly available Citrix Cloud Virtual Apps and Desktops
+-  [Citrix Virtual Apps and Desktops Service on AWS](https://aws.amazon.com/quickstart/architecture/citrix-virtual-apps/) - deploys a highly available Citrix Cloud Virtual Apps and Desktops
     Service “Resource Location” on AWS.
-- [Citrix ADC for Web Applications](https://aws.amazon.com/quickstart/architecture/citrix-adc-vpx/) - deploys highly available Citrix ADC VPX instances on AWS. While
+-  [Citrix ADC for Web Applications](https://aws.amazon.com/quickstart/architecture/citrix-adc-vpx/) - deploys highly available Citrix ADC VPX instances on AWS. While
     the use case focus differs slightly, this design pattern is
     functional and relevant for Citrix Gateway deployments with
     CVAD/CVADS also. Citrix and AWS are working on an additional Quick
@@ -2094,28 +2096,28 @@ your Citrix on AWS public cloud journey, and we’ve merely skimmed the
 surface of many deep topics here. Hopefully, however, we’ve successfully
 illustrated the following salient points:
 
-- Infrastructure as Code is a powerful concept that can revolutionize
+-  Infrastructure as Code is a powerful concept that can revolutionize
     the way complete systems are designed, built, and maintained.
-- When deploying systems on AWS’ public cloud, different components of
+-  When deploying systems on AWS’ public cloud, different components of
     any given solution can be represented by code, and built on-demand
     using AWS Cloud Formation and other technologies.
-- These components are represented by stack templates when using AWS
+-  These components are represented by stack templates when using AWS
     Cloud Formation, and templates can be version managed, copied,
     modified, etc. as needed to achieve the desired results.
-- Templates can be nested, building complete systems (such as a fully
+-  Templates can be nested, building complete systems (such as a fully
     functioning CVADS resource location on AWS) from the individual
     design patterns (templates).
-- The [Citrix Virtual Apps and Desktops Service on AWS](https://aws.amazon.com/quickstart/architecture/citrix-virtual-apps/)
+-  The [Citrix Virtual Apps and Desktops Service on AWS](https://aws.amazon.com/quickstart/architecture/citrix-virtual-apps/)
     Quick Start template is built upon three AWS managed/maintained
     foundation templates, which are very well documented. Start with the
     links below to learn more about each:
-  - The VPCStack template:
+    -  The VPCStack template:
     [https://aws.amazon.com/quickstart/architecture/vpc/](https://aws.amazon.com/quickstart/architecture/vpc/)
-  - The RDGWStack template:
+    -  The RDGWStack template:
     [https://aws.amazon.com/quickstart/architecture/rd-gateway/](https://aws.amazon.com/quickstart/architecture/rd-gateway/)
-  - The ADStack template:
+    -  The ADStack template:
     [https://aws.amazon.com/quickstart/architecture/active-directory-ds/](https://aws.amazon.com/quickstart/architecture/active-directory-ds/)
-- By leveraging templates and performing trial builds, an Enterprise
+-  By leveraging templates and performing trial builds, an Enterprise
     technologist can learn about, evaluate, and design systems that meet
     the specific needs of their organization or customer.
 
@@ -2125,7 +2127,7 @@ The following resources can be leveraged to help learn and/or understand
 more about Citrix virtualization on AWS requirements and leading
 practices:
 
-- [Communication Ports Used by Citrix Technologies](https://support.citrix.com/article/CTX101810):
+-  [Communication Ports Used by Citrix Technologies](https://support.citrix.com/article/CTX101810):
     a good global reference for the communication ports used by
     different components of the Citrix virtualization stack.
 
