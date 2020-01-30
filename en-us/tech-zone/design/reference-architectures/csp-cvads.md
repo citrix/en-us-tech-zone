@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Darren Harding](https://Twitter.com/DarrenHarding)
 
-**Special Thanks:** [Selma Wei](https://Twitter.com/_selw), [Bala ](https://Twitter.com/Bala)
+**Special Thanks:** [Selma Wei](https://Twitter.com/_selw), [Bala Swaminathan](https://Twitter.com/Bala)
 
 ## Audience
 
