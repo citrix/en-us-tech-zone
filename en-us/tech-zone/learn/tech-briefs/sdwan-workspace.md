@@ -140,14 +140,14 @@ The global configuration of all SD-WAN appliance is done central on the Master C
 The monitoring tab in GUI connected to the MCN shows essential information such as WAN link status, throughout, and overlay paths.
 ![Paths Status](/en-us/tech-zone/learn/media/tech-briefs_sdwan-workspace_exhb8.png)
 
+### SD-WAN Orchestrator
+
+A cloud-hosted, multitenant management SaaS offering available through Citrix Cloud. It provides a central management and reporting with multi-tenancy administration. Contains key capabilities such as guided workflow for site creation, site profiles/templates for easy management of network configuration.
+
 ### SD-WAN Center
 
 An on-prem, customer managed, SD-WAN management solution. A software appliance that may be installed on most popular hypervisor platforms. It provides more comprehensive reporting on the SD-WAN environment and is essential to some configuration tasks such as integration with Azure virtual WAN and Zero Touch Deployment.
 ![Paths Status](/en-us/tech-zone/learn/media/tech-briefs_sdwan-workspace_exhb9.png)
-
-### SD-WAN Orchestrator
-
-A cloud-hosted, multitenant management SaaS offering available through Citrix Service Provider (CSP), Citrix Solution Advisor (CSA), or Citrix SD-WAN Managed Service Providers (MSP). It provides a central manage and reporting with multi-tenancy administration. Contains key capabilities such as guided workflow for site creation, site profiles/templates for easy management of network configuration.
 
 ### Application Deliver Management (ADM)
 
