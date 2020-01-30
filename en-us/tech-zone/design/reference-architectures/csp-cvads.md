@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Darren Harding](https://Twitter.com/DarrenHarding)
 
-**Special Thanks:** [Selma Wei](https://Twitter.com/_selw), [Bala Swaminathan](https://Twitter.com/Bala)
+**Special Thanks:** [Selma Wei](https://Twitter.com/_selw), [Bala ](https://Twitter.com/Bala)
 
 ## Audience
 
@@ -44,13 +44,17 @@ This version of the Reference Architecture focuses on Citrix Virtual Apps and De
 
 Is a unified secure cloud platform managed by Citrix where hosting providers can securely deliver applications and data while maintaining end user experience and productivity in an increasingly mobile workstyle.  
 
-[Citrix Workspace](https://docs.citrix.com/en-us/citrix-workspace.html )
+[More information on Citrix Workspace](https://docs.citrix.com/en-us/citrix-workspace.html )
 
 ## Citrix Virtual Apps and Desktops service
-[Citrix Workspace](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/setup-for-citrix-service-providers.html )
+Nearly 80% of our Service Providers offer apps and desktops solution to their customers, traditionally these offerings are hosted and managed on-premises. Citrix Virtual Apps and Desktops service makes the Access and Control Layers cloud hosted and managed by Citrix, and provides the flexibility for Service Providers to focus on hosting and managing workloads from their chosen cloud.
+
+[More information on Citrix Virtual Apps and Desktops service](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/setup-for-citrix-service-providers.html )
 
 ## Citrix Cloud Connectors
-[Citrix Cloud Connectors](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/cloud-connectors-install.html )
+The Cloud Connector is a Citrix component that authenticates and encrypts all communications between Citrix Cloud and Service Provider managed resource location. All communication between Citrix Cloud and the Resource Location environment is encrypted, negating the need for ingress firewall rules.  
+
+[More information on Citrix Cloud Connectors](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/cloud-connectors-install.html )
 
 ## Architecture Models for Citrix Service Providers
 
