@@ -238,6 +238,7 @@ We’ll be discussing the details of this design in a later section of
 this document:
 
 ![Diagram 2: 100% Cloud Services on AWS with AWS Managed Services](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_002.png)
+
 *Diagram 2: 100% Cloud Services on AWS with AWS Managed Services*
 
 #### Partner Managed
@@ -988,6 +989,7 @@ configuration. Note that it shows a single VPX instance in a single AZ -
 this design pattern would be duplicated (likely in a second AZ) for a
 High Availability configuration:
 ![Diagram 11: Citrix ADC VPX instance interface mapping for CVAD/CVADS deployments](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_011.png)
+
 *Diagram 11: Citrix ADC VPX instance interface mapping for CVAD/CVADS deployments.*
 
 #### ADC High Availability across Availability Zones
@@ -1725,6 +1727,7 @@ Cloud. Placing them in a separate subnet from VDAs allows administrators
 to apply different routing policies to the two different resource types.
 
 ![Diagram 13: CVADS Resource Location design pattern with separate subnets for VDA’s and Cloud Connectors](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_013.png)
+
 *Diagram 13: CVADS Resource Location design pattern with separate subnets for VDA’s and Cloud Connectors.*
 
 The same general concepts apply when we're talking about Delivery Controllers (CVAD), though we use the term zone vs. resource location in the customer managed brokering subsystem. Also note that Cloud Connector instances on EC2 are great candidates for
@@ -2018,6 +2021,7 @@ Designer, we get a visual representation of this template. From this
 visual, we can see that this template utilizes three separate “nested”
 stacks or templates:
 ![Diagram 15: CVADS template in Cloud Formation Designer with nested stacks](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_015.png)
+
 *Diagram 15: CVADS template in Cloud Formation Designer with nested stacks.*
 
 In Diagram 15, CitrixResourceLocationStack is ‘on top’, and the other
