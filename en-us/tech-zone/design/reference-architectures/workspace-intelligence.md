@@ -13,7 +13,7 @@ description: Learn about the Citrix Microapps service, which brings intelligent 
 
 ## Executive Summary
 
-Citrix introduced Microapps Service to add intelligence to the Citrix Workspace Platform. The Microapps Service allows administrators to build microapps and intelligent features to the workspace that eliminates the need for users to parse through complex enterprise apps to complete simple tasks. The intelligent features of Citrix Workspace significantly reduce the time spent on day-to-day business tasks by simplifying the access workflow. Microapps organize, automate, and guide employees through their workday, maximizing productivity and boosting the overall user experience and engagement. Let’s review the component architectures and sample use cases to see how Citrix Workspace Intelligence adds value to organizations.
+Citrix introduced the Microapps Service to add intelligence to the Citrix Workspace Platform. The Microapps Service allows administrators to build microapps and intelligent features to the workspace that eliminates the need for users to parse through complex enterprise apps to complete simple tasks. The intelligent features of Citrix Workspace significantly reduce the time spent on day-to-day business tasks by simplifying the access workflow. Microapps organize, automate, and guide employees through their workday, maximizing productivity and boosting the overall user experience and engagement. Let’s review the component architectures and sample use cases to see how Citrix Workspace Intelligence adds value to organizations.
 
 ## An Introduction to the Microapps service
 
