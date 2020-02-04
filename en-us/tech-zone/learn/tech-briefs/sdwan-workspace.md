@@ -54,12 +54,12 @@ For more information see:
 
 ### HDX Session and Traffic Optimization
 
-Citrix Virtual App and Desktop sessions are delivered by the HDX protocol suite. The protocol provides the ability to tag session traffic by using a unique port or QOS tag. Yet either options may require extensive firewall changes and or routing QOS changes to implement. Also, they do not utilize a multi-path approach whereas Citrix SD-WAN can uniquely identify Multi-stream ICA, using the default configuration, over a single port and prioritize traffic over multiple paths simultaneously according to QOS requirements.
+Citrix Virtual App and Desktop sessions are delivered by the HDX protocol suite. The protocol provides the ability to tag session traffic by using a unique port or QOS tag. Yet either options might require extensive firewall changes and or routing QOS changes to implement. Also, they do not utilize a multi-path approach whereas Citrix SD-WAN can uniquely identify Multi-stream ICA, using the default configuration, over a single port and prioritize traffic over multiple paths simultaneously according to QOS requirements.
 ![ICA single port Auto-Qos](/en-us/tech-zone/learn/media/tech-briefs_sdwan-workspace_exhb3.png)
 
 ### Citrix SD-WAN Virtual Instance for Azure Resource Locations
 
-Microsoft Azure is a popular cloud platform and many Citrix customers utilize it to host hybrid Resource Location systems such as Virtual Desktop Agents (VDA). Both the [SD-WAN VPX Standard Edition](/en-us/citrix-sd-wan-platforms/vpx-models/vpx-se/sd-wan-se-on-azure-10-2.html) and [WANOP Edition VPX](/en-us/citrix-sd-wan-platforms/vpx-models/vpx-wanop/install-on-azure.html) may be deployed in Microsoft Azure and integrated with an Enterprise SD-WAN environment to facilitate such features as link bonding, instantaneous failover and selective packet duplication to Azure hosted resources.
+Microsoft Azure is a popular cloud platform and many Citrix customers utilize it to host hybrid Resource Location systems such as Virtual Delivery Agents (VDA). Both the [SD-WAN VPX Standard Edition](/en-us/citrix-sd-wan-platforms/vpx-models/vpx-se/sd-wan-se-on-azure-10-2.html) and [WANOP Edition VPX](/en-us/citrix-sd-wan-platforms/vpx-models/vpx-wanop/install-on-azure.html) can be deployed in Microsoft Azure and integrated with an Enterprise SD-WAN environment to facilitate such features as link bonding, instantaneous failover and selective packet duplication to Azure hosted resources.
 ![ Azure hosted Citrix SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-workspace_arch2.png)
 
 ### Integration with Microsoft Azure global Virtual WAN
@@ -73,7 +73,7 @@ Citrix SD-WAN monitors and manages a complex web of paths with various delivery 
 
 ### Underlay Network
 
-Operates across the existing enterprise network. The deployment team will consult current network diagrams to design the SD-WAN integration to take advantage of existing network links and equipment.
+Operates across the existing enterprise network. The deployment team consults current network diagrams to design the SD-WAN integration to take advantage of existing network links and equipment.
 
 ### Management Network
 
@@ -91,15 +91,15 @@ Citrix SD-WAN offers flexible options for deployment depending on use cases, or 
 
 ### Inline
 
-Hardware appliances may be deployed seamlessly in the path between the LAN and the WAN edge network. If the device goes offline for any reason the physical ethernet connection, through the equipment between switches or routers, remains intact.
+Hardware appliances can be deployed seamlessly in the path between the LAN and the WAN edge network. If the device goes offline for any reason the physical Ethernet connection, through the equipment between switches or routers, remains intact.
 
 ### Virtual Inline
 
-An approach that offers similar usage to Inline, without the need to physically interrupt the primary data center network. The Citrix SD-WAN equipment is implemented on a Vlan adjacent to the Edge router which uses policy routing to direct pertinent traffic to it for optimization.
+An approach that offers similar usage to Inline, without the need to physically interrupt the primary data center network. The Citrix SD-WAN equipment is implemented on a VLAN adjacent to the Edge router which uses policy routing to direct pertinent traffic to it for optimization.
 
 ### Edge / Gateway Mode
 
-Takes over responsibility for WAN edge networking including terminating leased lines, routing, firewall, and internet proxy filtering in addition to providing full SD-WAN functionality. This allows enterprises to consolidated branch hardware to maximize network throughput, availability, and security while minimizing complexity and cost.
+Takes over responsibility for WAN edge networking including terminating leased lines, routing, firewall, and internet proxy filtering in addition to providing full SD-WAN functionality. This mode allows enterprises to consolidate branch hardware to maximize network throughput, availability, and security while minimizing complexity and cost.
 
 ### Fail-to-Wire
 
@@ -111,7 +111,7 @@ The various deployment options (Inline, Virtual Inline, Edge) support high-avail
 
 ### Geographically Distributed MCN
 
-A secondary datacenter or branch site can be assigned the role of Secondary MCN (also known as GEO MCN). This site will take the responsibility of the primary datacenter SD-WAN and ensure that the SD-WAN Overlay continues to operate until the primary site comes back online.
+A secondary data center or branch site can be assigned the role of Secondary MCN (also known as GEO MCN). This site takes the responsibility of the primary data center SD-WAN and ensure that the SD-WAN Overlay continues to operate until the primary site comes back online.
 
 ![Zero Touch Deployment](/en-us/tech-zone/learn/media/tech-briefs_sdwan-workspace_exhb5.png)
 For more information see:
@@ -121,7 +121,7 @@ For more information see:
 
 ### Initial Setup
 
-Citrix SD-WAN supports a variety of hardware and software [appliances](https://www.citrix.com/products/citrix-sd-wan/citrix-networking-data-sheet.html), including support for leading Cloud platforms, hypervisor platforms, and Citrix SDX, including a variety of speeds and feeds with flexible resources to meet throughput needs. Some models oriented for branch offices may be configured using the Zero Touch Deployment (ZTD) Cloud Service whereby once units are connected to the network and powered on they are able automatically contact the cloud and obtain the configuration made centrally by and administrator. Other models can easily be configured through their console to access the management network.
+Citrix SD-WAN supports various hardware and software [appliances](https://www.citrix.com/products/citrix-sd-wan/citrix-networking-data-sheet.html), including support for leading Cloud platforms, hypervisor platforms, and Citrix SDX, including a variety of speeds and feeds with flexible resources to meet throughput needs. Some models oriented for branch offices may be configured using the Zero Touch Deployment Cloud Service whereby once units are connected to the network and powered on they are able automatically contact the cloud and obtain the configuration made centrally by and administrator. Other models can easily be configured through their console to access the management network.
 
 ### Initial Configuration
 
@@ -130,7 +130,7 @@ The configuration GUI can be accessed by connecting to the management IP with a 
 
 ### Initial Deployment
 
-The global configuration of all SD-WAN appliance is done central on the Master Control Node (MCN). The 1st configuration package for each is downloaded through the MCN and applied to the GUI of each branch, yet all further configuration is done centrally through the MCN. See SD-WAN documentation more information.
+The global configuration of all SD-WAN appliance is done central on the Master Control Node (MCN). The first configuration package for each is downloaded through the MCN and applied to the GUI of each branch, yet all further configuration is done centrally through the MCN. See SD-WAN documentation more information.
 ![Change Management](/en-us/tech-zone/learn/media/tech-briefs_sdwan-workspace_exhb7.png)
 
 ## Monitoring & Management
@@ -140,14 +140,14 @@ The global configuration of all SD-WAN appliance is done central on the Master C
 The monitoring tab in GUI connected to the MCN shows essential information such as WAN link status, throughout, and overlay paths.
 ![Paths Status](/en-us/tech-zone/learn/media/tech-briefs_sdwan-workspace_exhb8.png)
 
-### SD-WAN Center
-
-An on-prem, customer managed, SD-WAN management solution. A software appliance that may be installed on most popular hypervisor platforms. It provides more comprehensive reporting on the SD-WAN environment and is essential to some configuration tasks such as integration with Azure virtual WAN and Zero Touch Deployment.
-![Paths Status](/en-us/tech-zone/learn/media/tech-briefs_sdwan-workspace_exhb9.png)
-
 ### SD-WAN Orchestrator
 
-A cloud-hosted, multitenant management SaaS offering available through Citrix Service Provider (CSP), Citrix Solution Advisor (CSA), or Citrix SD-WAN Managed Service Providers (MSP). It provides a central manage and reporting with multi-tenancy administration. Contains key capabilities such as guided workflow for site creation, site profiles/templates for easy management of network configuration.
+A cloud-hosted, multitenant management SaaS offering available through Citrix Cloud. It provides a central management and reporting with multitenancy administration. Contains key capabilities such as guided workflow for site creation, site profiles/templates for easy management of network configuration.
+
+### SD-WAN Center
+
+An on-prem, customer managed, SD-WAN management solution. A software appliance that can be installed on most popular hypervisor platforms. It provides more comprehensive reporting on the SD-WAN environment and is essential to some configuration tasks such as integration with Azure virtual WAN and Zero Touch Deployment.
+![Paths Status](/en-us/tech-zone/learn/media/tech-briefs_sdwan-workspace_exhb9.png)
 
 ### Application Deliver Management (ADM)
 
