@@ -35,10 +35,6 @@ Just as buildings have blueprints that include details about their structure and
 
 [Virtual Apps and Desktops Service - Azure](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-azure.html) - Learn the detailed architecture and deployment model of Citrix Virtual Apps and Desktops on Microsoft Azure with five key architectural principles.
 
-## Citrix Solutions on Amazon Web Services
-
-[Virtual Apps and Desktops - AWS](/en-us/tech-zone/design/reference-architectures/citrix-virtual-apps-and-desktops-on-aws.html) - Learn about the architecture and design decisions, and leading practices for deploying Citrix virtualization technologies on Amazon's public cloud. 
-
 ## Citrix Content Collaboration
 
 [Content Collaboration with on-premises storage zones](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html) - Learn about the architecture and design considerations for deploying an on-premises customer-managed storage zone to provide the best user experience and security for Citrix Content Collaboration.
