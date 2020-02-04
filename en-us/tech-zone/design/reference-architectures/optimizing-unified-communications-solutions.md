@@ -9,6 +9,8 @@ description: Learn how to optimize voice, video, and other capabilities of unifi
 
 **Author:** [Allen Furmanski](mailto:allen.furmanski@citrix.com)
 
+**Special Thanks:** [Derek Thorslund](https://twitter.com/derektcitrix)
+
 ## Audience
 
 This document is intended for Citrix technical professionals, IT decision-makers, partners, and consultants who want to deliver unified communication solutions in a Citrix virtualized environment. The content is relevant with both on-premises and public cloud architectures. The reader should have a basic understanding of Citrix app and desktop virtualization offerings in addition to unified communications solutions. For more information on Citrix Virtual Apps and Desktops, refer to the [Citrix Virtual Apps and Desktops official documentation](/en-us/citrix-virtual-apps-desktops).
@@ -97,6 +99,10 @@ Generic USB redirection offers support for a wide range of USB devices within vi
 
 Browser Content Redirection offloads the viewable “viewport” area of a VDA-based web browser to the endpoint device for rendering. This solution is ideal for optimizing any web-based unified communication offering, but especially true for those utilizing WebRTC. Refer to [Browser Content Redirection Documentation](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html) and [https://support.citrix.com/article/CTX230052](https://support.citrix.com/article/CTX230052) for more details on the feature including configuration and troubleshooting.
 
+## Network Connectivity
+
+Citrix SD-WAN is recommended to ensure optimal network connectivity and audio/video quality between office locations and the unified communications server. The [Citrix SD-WAN Cloud Direct service](/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html) provides a great solution for connectivity to UCaaS solutions such as RingCentral, Cisco WebEx, GoToMeeting and Microsoft Teams. Citrix customers who run their workloads in public clouds can use the Citrix SD-WAN virtual appliance which is supported on Azure, AWS, GCP, and (in Tech Preview) Oracle Cloud. Microsoft Teams customers should refer to the documentation section [Citrix SD-WAN Optimized Network Connectivity for Microsoft Teams](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html#citrix-sd-wan-optimized-network-connectivity-for-microsoft-teams). For more information on SD-WAN, please refer to the [SD-WAN Documentation](/en-us/netscaler-sd-wan.html) and [SD-WAN Reference Architecture](/en-us/tech-zone/design/reference-architectures/sdwan.html).
+
 ## Monitoring
 
 Ongoing monitoring of the optimized unified communications solution in a Citrix environment is important. Administrators should first understand if optimization is taking place, and what graphics modes and virtual channels are in use, bandwidth consumption, and so forth. Help desk staff should also have an understanding of tools and processes available to assess and troubleshoot as required.
@@ -108,6 +114,7 @@ Whichever unified communication solution customers decide to utilize within thei
 
 ## Resources
 
+-  [Optimization for Microsoft Teams](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html)
 -  [https://support.citrix.com/article/CTX133024](https://support.citrix.com/article/CTX133024)
 -  [Delivering Microsoft Skype for Business to XenApp and XenDesktop Users](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/delivering-microsoft-lync-to-xenapp-and-xendesktop-users.pdf)
 -  [HDX RealTime Optimization Pack - What's New](/en-us/hdx-optimization/current-release/whats-new.html)
