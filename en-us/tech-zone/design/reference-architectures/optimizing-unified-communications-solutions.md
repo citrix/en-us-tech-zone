@@ -63,7 +63,7 @@ RealTime Optimization Pack (RTOP)
 
 The preceding table is subject to change at any time and may not necessarily contain the latest data. It also reflects the solutions that have been tested for optimization within Citrix environments. Other solutions can be optimized in a generic fashion as described in the following sections.
 
-The Microsoft Teams and Skype for Business solutions use a media engine which is co-developed and co-supported between Citrix and Microsoft. For Teams it’s built into the VDA and Workspace app so no further components are required. For Skype for Business, there are separate agent (RealTime Connector on the VDA) and engine (RTME on the endpoint) components. They must be installed as part of the HDX RealTime Optimization Pack.
+The Microsoft Teams and Skype for Business solutions use a media engine which is co-developed and co-supported between Citrix and Microsoft. For Teams it’s built into the VDA and Workspace app so no further components are required. For Skype for Business, there are separate components for agent (RealTime Connector on the VDA) and engine (RTME on the endpoint). They must be installed as part of the HDX RealTime Optimization Pack.
 
 Jabber, WebEx, Zoom, and Avaya solutions use a similar agent/engine architecture as Microsoft solutions. However, those solutions are owned by their respective vendors. Consult the respective vendor’s website or Citrix Ready for more details on these solutions.
 
