@@ -1,7 +1,7 @@
 ---
 layout: doc
 ---
-# Workspace Intelligence Features - Microapps
+# Citrix Workspace Microapps Service
 
 ## Contributors
 
