@@ -9,7 +9,7 @@ description: Optimize SaaS access for branch users by tunneling session traffic 
 
 **Author:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
 
-**Special Thanks:**  Mark King, Daniel Feller
+**Special Thanks:**  Karthick Srivatsan, Mark King, Daniel Feller
 
 Citrix SD-WAN Cloud Direct extends Citrix SD-WAN optimal routing and delivery optimization benefits to SaaS. The service tunnels branch office endpoint traffic, to the front door of popular SaaS sites, via PoPs hosted at major Internet Exchanges.
 
@@ -85,7 +85,7 @@ Branch office optimization occurs on the Citrix SD-WAN appliance located in the 
 
 ![Link Aggregation](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_BO-LnkAgr.png)
 
-Citrix SD-WAN Cloud Direct can aggregate up to four links as a single bundle and load balance traffic according to capacity. A typical router could have multiple default routes to each respective ISP. It may only select one as the active primary, or route traffic across multiple routes unevenly.
+Citrix SD-WAN Cloud Direct can aggregate up to four Internet links as a single bundle and load balance traffic according to capacity. A typical router could have multiple default routes to each respective ISP. It may only select one as the active primary, or route traffic across multiple routes unevenly.
 
 Citrix SD-WAN can allocate a fixed portion of each circuit to Citrix SD-WAN Cloud Direct or general internet use. Cloud Direct utilizes all available bandwidth allocated to the service. Probes continuously monitor availability. Upon detecting a link outage, the “virtual” aggregated circuit is condensed by removing the “bad link” from the bundle, and rerouting sessions over “good links”. Sessions are rerouted at the network layer avoiding interruption to user sessions.
 
