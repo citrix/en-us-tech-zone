@@ -10,8 +10,7 @@ David Johnson, and Joanne Lei
 
 ### Contributors
 
-Special thanks to the following people who contributed to this document: Rich Meesters, Ryan McLure, James Richards, Josh Fleming, Divesh Chadha,
-Nick Czabaranek, Arnaud Pain, Neil Spellings, and Matt Lull
+Special thanks to the following people who contributed to this document: Nick Czabaranek, Josh Fleming, Matt Lull, Ryan McLure, Rich Meesters, Arnaud Pain, James Richards, and Neil Spellings. Cheers! 
 
 ### Revision History
 
@@ -57,7 +56,7 @@ consider as you’re planning your deployment.
 
 We start by defining two primary technology adoption models:
 **Customer Managed** and **Cloud Services**. We
-then break the **components of a Citrix virtualization system**
+then break the [components of a Citrix virtualization system](#citrix-virtualization-system-components)
 down into multiple subsystems, and categorize them by adoption model:
 
 | Adoption Model / Subsystem function | Customer Managed (installed from downloaded binaries) | Cloud Service (delivered via Citrix Cloud) |
@@ -131,7 +130,7 @@ please reference the following Cloud Guidepost articles:
 -  [Leading practices for Citrix Cloud on AWS - Part 2](https://www.citrix.com/blogs/2019/11/21/cloud-guidepost-leading-practices-for-citrix-cloud-on-aws-part-2/)
 -  [Leading practices for Citrix Cloud on AWS - Part 3](https://www.citrix.com/blogs/2020/01/21/cloud-guidepost-leading-practices-for-citrix-cloud-on-aws-part-3/)
 
-Source files for all images included in this work can be found [here](/en-us/tech-zone/design/downloads/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_diagrams.pptx)
+Source files for all images included in this work can be found [here](/en-us/tech-zone/design/downloads/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_diagrams.pptx).
 
 ## Key Concepts and Deployment Scenarios
 
@@ -239,6 +238,7 @@ We’ll be discussing the details of this design in a later section of
 this document:
 
 ![Diagram 2: 100% Cloud Services on AWS with AWS Managed Services](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_002.png)
+
 *Diagram 2: 100% Cloud Services on AWS with AWS Managed Services*
 
 #### Partner Managed
@@ -283,7 +283,7 @@ vs another will be covered later in this document:
 |**Session brokering and administration** - The core of any Citrix virtualization system: without this core subsystem, you don’t have any apps or desktops, and you can’t manage them! This subsystem is where you define, provision, and update Machine Catalogs (collections of “Virtual Delivery Agent” or “VDA” VM instances). It is also where you create Delivery Groups, assigning apps/desktops to users, as well as administer the environment and user sessions. | **CVAD - Citrix Virtual Apps and Desktops**, either Long term service release (LTSR) or Current Release (CR). If you install/configure a “Delivery Controller” in your environment, this is what you’re running. It also means you’re installing and managing your own Microsoft SQL Server infrastructure. Administrative functions in a customer managed (CVAD) deployment include Citrix Director and Citrix Studio. You install, configure, and manage these yourself using LTSR/CR binaries. Director also requires Microsoft SQL Server infrastructure. Citrix licensing is also a part of this subsystem, with customers installing/configuring/ managing Citrix license servers and license files. | **CVADS - Citrix Virtual Apps and Desktops Service**, delivered via Citrix Cloud. If you’re logging into Citrix Cloud and installing/registering “Cloud Connectors” in your environment, you’re using this Citrix Cloud service. You install and register Cloud Connectors on Windows instances you manage, and then Citrix keeps them evergreen and available. Citrix Cloud also provides and maintains most administrative functionality via web browser through the Citrix Cloud console. This includes cloud service versions of Citrix Studio and Citrix Director. There is no additional infrastructure for the customer to maintain, keep highly available, or patch/update: Citrix owns this administrative responsibility. |
 |**UI (user interface) services** - Native Citrix Workspace apps (and web browsers for clientless access) ultimately connect to a URL. The subsystem behind the URL is configured by IT administrators to match corporate requirements for authentication, and to present virtualized apps/desktops, SaaS apps, and possibly much more for users to access. | **Citrix Storefront**. Also installed/ configured from CVAD LTSR or CR binaries, this role provides extreme flexibility for the most complex deployment scenarios. Typically deployed in pairs, with Citrix ADC/Gateway instances in front of them for high availability. Can aggregate and present apps and desktops from both customer managed/brokered environments (CVAD) and Citrix Cloud managed/brokered environments (CVADS). | **Citrix Workspace** (the service, not the Citrix Workspace app). Provided as a cloud service through Citrix Cloud, and includes a lot of next generation capabilities that can only be leveraged through this service. Can aggregate and present apps and desktops from both customer managed/brokered environments (CVAD) and Citrix Cloud managed/brokered environments (CVADS). |
 | **Authentication** - In this context, we’re referring to how users authenticate prior to accessing Citrix virtualized apps/desktops, files, SaaS apps, and more. Authentication in a Citrix environment is typically configured at the UI services layer, though Citrix ADC/Gateway can also play a big authentication role in all deployment models. Each of the UI service provider options (Citrix StoreFront or Citrix Workspace) have different authentication options available, some requiring a customer managed Citrix ADC/Gateway. | **Citrix StoreFront** (plus **Citrix ADC/Gateway** for most use cases). User authentication services can be provided a number of different ways, though ultimately require an Active Directory instance and valid user accounts. The customer manages the AD instance in most cases. Citrix ADC/Gateway instances can also play a big role in providing authentication services, and also provide a ton of advanced capabilities that are commonly leveraged for more complex environments. Citrix Federated Authentication Services (FAS) can also be installed and used to provide session SSO for complex use cases. | **Citrix Workspace** (plus **Citrix ADC/Gateway** for certain use cases). With Citrix Workspace (the service), user authentication sources and requirements are configured once for the Citrix Cloud tenant and leveraged by all users using this URL. It is configured for Active Directory out of the box, but for advanced use cases, can also be configured to support other authentication providers (Azure AD, Okta, customer managed Citrix Gateway, Google Cloud ID, or other SAML/OpenID/RADIUS providers). Some scenarios require customer managed Citrix ADC/Gateways and/or Citrix Federated Authentication Services (FAS) for the best user experience. |
-|**HDX session proxy** | **Citrix ADC/Gateway** appliances (virtual or physical) - these appliances provide a ton of additional functionality for a Citrix virtualization system, but their core role is for securely proxying HDX session traffic to your VDA’s when clients are on public networks. Requires installation, configuration, SSL certificates, etc. Works with both StoreFront (customer managed UI services) and Workspace cloud service, as well as both Citrix managed and customer managed session brokering options. | **Citrix Gateway Service** - provided by Citrix Cloud, this service proxies HDX session traffic to your VDA’s as well, and it uses Citrix managed infrastructure to get the job done. Requires no public IP addresses, SSL certs, or ingress firewall rules to operate. Works with the Citrix Workspace cloud service and both Citrix Cloud managed and customer managed session brokering options (CVAD and CVADS). |
+| **HDX session proxy** - The ability to securely and seamlessly connect users/devices outside the private corporate network to CVAD/CVADS delivered apps and desktops on the inside. | **Citrix ADC/Gateway** appliances (virtual or physical) - these appliances provide a ton of additional functionality for a Citrix virtualization system, but their core role is for securely proxying HDX session traffic to your VDA’s when clients are on public networks. Requires installation, configuration, SSL certificates, etc. Works with both StoreFront (customer managed UI services) and Workspace cloud service, as well as both Citrix managed and customer managed session brokering options. | **Citrix Gateway Service** - provided by Citrix Cloud, this service proxies HDX session traffic to your VDA’s as well, and it uses Citrix managed infrastructure to get the job done. Requires no public IP addresses, SSL certs, or ingress firewall rules to operate. Works with the Citrix Workspace cloud service and both Citrix Cloud managed and customer managed session brokering options (CVAD and CVADS). |
 
 #### Leading Practices and Recommendations
 
@@ -378,11 +378,9 @@ resulting system on AWS is built closely matching the reference
 architecture diagrams below:
 
 ![Diagram 3: Deployed system architecture detail using the CVADS on AWS QuickStart template and default parameters. Citrix Cloud Services not shown](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_003.png)
-
 *Diagram 3: Deployed system architecture detail using the CVADS on AWS QuickStart template and default parameters. Citrix Cloud Services not shown.*
 
 ![Diagram 4: Greenfield/Cloud Only deployment conceptual architecture with optional AWS services and Citrix Cloud Services](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_004.png)
-
 *Diagram 4: Greenfield/Cloud Only deployment conceptual architecture with optional AWS services and Citrix Cloud Services.*
 
 It is worth noting that this deployment model (actually, all three
@@ -400,12 +398,12 @@ Citrix on AWS architect well regardless of the deployment model.
 To summarize, the **greenfield deployment model** leverages all cloud
 services, at least as a starting point:
 
-| [Citrix virtualization system component](#citrix-virtualization-system-components) | Provided by: |
+| Citrix virtualization system component | Provided by: |
 |---|---|
-| [Session brokering and administration](#session-brokering-and-administration) | Citrix Virtual Apps and Desktops Service (“CVADS”, via Citrix Cloud) |
-| [UI services](#ui-user-interface-services) | Citrix Workspace Service (via Citrix Cloud) |
-| [Authentication](#authentication) | Citrix Workspace Service (via Citrix Cloud) |
-| [HDX session proxy](#hdx-session-proxy) | Citrix Gateway Service (via Citrix Cloud) |
+| Session brokering and administration | Citrix Virtual Apps and Desktops Service (“CVADS”, via Citrix Cloud) |
+| UI services | Citrix Workspace Service (via Citrix Cloud) |
+| Authentication | Citrix Workspace Service (via Citrix Cloud) |
+| HDX session proxy | Citrix Gateway Service (via Citrix Cloud) |
 | VM compute, networking, and storage | Amazon Elastic Compute Cloud (Amazon EC2), Amazon Virtual Private Cloud (Amazon VPC), Amazon Elastic Block Store (Amazon EBS) |
 | Active Directory and file systems | [AWS Directory Service for Microsoft Active Directory](https://aws.amazon.com/directoryservice/) and [Amazon’s FSx for Windows File Server](https://aws.amazon.com/fsx/windows/) (optional) |
 
@@ -419,7 +417,7 @@ deployment model: hybrid.
 
 With the hybrid deployment model, customers may choose to
 install/configure/manage some of the [Citrix virtualization system components](#citrix-virtualization-system-components) themselves,
-**with the exception of the [session brokering and administration](#session-brokering-and-administration)
+with the exception of the **session brokering and administration
 subsystem**. In a hybrid deployment model, this subsystem is provided as
 a cloud service called “Citrix Virtual Apps and Desktops Service” (CVADS
 for short), and it is delivered as a subscription from Citrix Cloud.
@@ -488,12 +486,12 @@ the primary reasons why we take this position:
 
 To summarize, the **hybrid deployment model** leverages the following:
 
-| [Citrix virtualization system component](#citrix-virtualization-system-components) | Provided by: |
+| Citrix virtualization system component | Provided by: |
 |---|---|
-| [Session brokering and administration](#session-brokering-and-administration) | Citrix Virtual Apps and Desktops Service (“CVADS”, via Citrix Cloud) |
-| [UI services](#ui-user-interface-services) | Citrix Workspace Service (via Citrix Cloud) **OR** Citrix StoreFront on Amazon EC2 (customer managed) |
-| [Authentication](#authentication) | Citrix Workspace Service (via Citrix Cloud) **OR** Citrix StoreFront on EC2 (Citrix ADC/Gateway optional but common) |
-| [HDX session proxy](#hdx-session-proxy) | Citrix Gateway Service (via Citrix Cloud) **OR** Citrix ADC/Gateway VPX on Amazon EC2 (Citrix ADC/Gateway optional but common) |
+| Session brokering and administration | Citrix Virtual Apps and Desktops Service (“CVADS”, via Citrix Cloud) |
+| UI services | Citrix Workspace Service (via Citrix Cloud) **OR** Citrix StoreFront on Amazon EC2 (customer managed) |
+| Authentication | Citrix Workspace Service (via Citrix Cloud) **OR** Citrix StoreFront on EC2 (Citrix ADC/Gateway optional but common) |
+| HDX session proxy | Citrix Gateway Service (via Citrix Cloud) **OR** Citrix ADC/Gateway VPX on Amazon EC2 (Citrix ADC/Gateway optional but common) |
 | VM compute, networking, and storage | Amazon Elastic Compute Cloud (Amazon EC2), Amazon Virtual Private Cloud (Amazon VPC), Amazon Elastic Block Store (Amazon EBS) |
 | Active Directory and file systems | [AWS Directory Service for Microsoft Active Directory](https://aws.amazon.com/directoryservice/) and [Amazon’s FSx for Windows File Server](https://aws.amazon.com/fsx/windows/) (optional) |
 
@@ -503,12 +501,11 @@ one, succinct architecture that fits all customers. There are, however,
 some common design patterns that can also be mixed/matched to suit the
 customers’ needs. The foundational pattern, however, is the pattern for
 a Citrix Cloud “Resource Location” on AWS. It is also the pattern built
-by the “[Citrix Virtual Apps and Desktops Service on AWS](https://aws.amazon.com/quickstart/architecture/citrix-virtual-apps/)”
+by the [Citrix Virtual Apps and Desktops Service on AWS](https://aws.amazon.com/quickstart/architecture/citrix-virtual-apps/)
 QuickStart template, and it looks similar to the architectural diagram
 below:
 
 ![Diagram 5: Conceptual Architecture, CVADS - Hybrid Deployment Model on AWS](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_005.png)
-
 *Diagram 5: Conceptual Architecture, CVADS - Hybrid Deployment Model on AWS.*
 
 It is worth noting that this deployment model also leverages
@@ -527,7 +524,6 @@ Locations’ which deliver apps, desktops, and resources from the customer
 managed datacenter. The resulting conceptual architecture looks
 something like the diagram below:
 ![Diagram 6: Conceptual Architecture, CVADS: Hybrid Deployment/Hybrid Cloud Model](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_006.png)
-
 *Diagram 6: Conceptual Architecture, CVADS: Hybrid Deployment/Hybrid Cloud Model.*
 
 #### Lift and Shift
@@ -536,11 +532,11 @@ Referring back to our definition of the [Citrix
 virtualization system
 components](#citrix-virtualization-system-components), when we’re
 talking about a lift and shift deployment scenario, the key component of
-this is the [session brokering and
-administration](#session-brokering-and-administration) subsystem
-and associated infrastructure. **If you’re using self-managed brokering
-infrastructure (i.e. you’re deploying Delivery Controllers instead of
-Cloud Connectors) then for the purposes of this paper you’re lifting and
+this is the **session brokering and
+administration** subsystem
+and associated infrastructure. If you’re using **self-managed brokering
+infrastructure** (i.e. you’re deploying Delivery Controllers instead of
+Cloud Connectors) then for the purposes of this paper **you’re lifting and
 shifting.**
 
 ##### Lift and Shift - why
@@ -588,12 +584,12 @@ model is appealing. These include:
 To summarize, the **lift and shift deployment model** leverages the
 following:
 
-| [Citrix virtualization system component](#citrix-virtualization-system-components) | Provided by: |
+| Citrix virtualization system component | Provided by: |
 |---|---|
-| [Session brokering and administration](#session-brokering-and-administration) | Citrix Virtual Apps and Desktops (“CVAD”, customer managed using LTSR or CR downloadables) on Amazon EC2 |
-| [UI services](#ui-user-interface-services) | Citrix StoreFront on Amazon EC2 (customer managed) |
-| [Authentication](#authentication) |Citrix StoreFront on EC2 (Citrix ADC/Gateway optional but common) |
-| [HDX session proxy](#hdx-session-proxy) | Citrix ADC/Gateway VPX on Amazon EC2 (customer managed) |
+| Session brokering and administration | Citrix Virtual Apps and Desktops (“CVAD”, customer managed using LTSR or CR downloadables) on Amazon EC2 |
+| UI services | Citrix StoreFront on Amazon EC2 (customer managed) |
+| Authentication |Citrix StoreFront on EC2 (Citrix ADC/Gateway optional but common) |
+| HDX session proxy | Citrix ADC/Gateway VPX on Amazon EC2 (customer managed) |
 | VM compute, networking, and storage | Amazon Elastic Compute Cloud (Amazon EC2), Amazon Virtual Private Cloud (Amazon VPC), Amazon Elastic Block Store (Amazon EBS) |
 | Active Directory and file systems | Customer managed Windows Server instances on EC2; [AWS Directory Service for Microsoft Active Directory](https://aws.amazon.com/directoryservice/) and/or [Amazon’s FSx for Windows File Server](https://aws.amazon.com/fsx/windows/) (optional) |
 
@@ -605,9 +601,7 @@ machines and VPC networking at a minimum. As mentioned above, it
 requires the customer to build/configure/maintain all system components,
 plus supporting services such as SQL databases. The following diagram
 depicts this deployment model:
-
 ![Diagram 7: Conceptual Architecture, CVAD: Lift and Shift Deployment Model on AWS](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_007.png)
-
 *Diagram 7: Conceptual Architecture, CVAD: Lift and Shift Deployment Model on AWS.*
 
 It is worth noting that this deployment model also leverages
@@ -629,9 +623,7 @@ use case requirements, etc. A conceptual architecture of this deployment
 model (using AWS RDS for SQL Server and/or on-premises SQL server) is
 shown below. Note that only one active instance of Citrix Licensing is
 needed, but we’ve shown multiple to depict available options:
-
 ![Diagram 8: Conceptual Architecture, CVAD: Lift and Shift Deployment Model with Hybrid Cloud infrastructure model and AWS managed cloud services](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_008.png)
-
 *Diagram 8: Conceptual Architecture, CVAD: Lift and Shift Deployment Model with Hybrid Cloud infrastructure model and AWS managed cloud services.*
 
 #### Lift and Shift - why not
@@ -640,7 +632,7 @@ By now you’ve gathered that the Citrix leading practice/recommendation
 is to NOT do a full lift and shift. You may be wondering why, and/or
 where this is coming from. Referring back to our breakdown of
 [Citrix virtualization system components](#citrix-virtualization-system-components), the
-[session brokering and administration](#session-brokering-and-administration) subsystem
+**session brokering and administration** subsystem
 is the most critical component you’ll want to consider NOT lifting and
 shifting. We strongly recommend customers consider using Citrix’s cloud
 services for session brokering and administration (i.e. deploy Cloud
@@ -665,8 +657,7 @@ take this position (and they might sound familiar!):
 -  Speaking of infrastructure cost savings - this brings up a critical
     differentiator between the two session brokering options:
     **Autoscaling**. Citrix’s managed brokering service
-    (CVADS) includes the [**autoscale
-    feature**](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html),
+    (CVADS) includes the [**autoscale feature**](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html),
     which provides built-in VDA capacity and cost management
     functionality. This feature can save customers a substantial amount
     of money on infrastructure when they’re only paying for what they
@@ -749,9 +740,7 @@ standardized layer model. It provides a consistent and easily accessible
 framework for understanding the technical architecture for most of the
 common Virtual Apps and Desktops deployment scenarios. These layers are
 depicted in the conceptual diagram below:
-
-[Diagram 9: Conceptual Architecture, Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_009.png)
-
+![Diagram 9: Conceptual Architecture, Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_009.png)
 *Diagram 9: Conceptual Architecture, Citrix Virtual Apps and Desktops Service.*
 
 -  ***User Layer*** - This layer defines user groups and locations of
@@ -809,11 +798,11 @@ system components](#citrix-virtualization-system-components) we
 defined earlier, the access layer contains the following components and
 choices:
 
-| [Citrix virtualization system component](#citrix-virtualization-system-components) | Provided by: |
+| Citrix virtualization system component | Provided by: |
 |---|---|
-| [UI services](#ui-user-interface-services) | Citrix Workspace (provided by Citrix Cloud) **OR** Citrix StoreFront on Amazon EC2 (customer managed) |
-| [Authentication](#authentication) | Citrix Workspace Service (Citrix ADC/Gateway optional) **OR** Citrix StoreFront on EC2 (Citrix ADC/Gateway optional but common) |
-| [HDX session proxy](#hdx-session-proxy) | Citrix Gateway Service (provided by Citrix Cloud) **OR** Citrix ADC/Gateway VPX on Amazon EC2 (customer managed) |
+| UI services | Citrix Workspace (provided by Citrix Cloud) **OR** Citrix StoreFront on Amazon EC2 (customer managed) |
+| Authentication | Citrix Workspace Service (Citrix ADC/Gateway optional) **OR** Citrix StoreFront on EC2 (Citrix ADC/Gateway optional but common) |
+| HDX session proxy | Citrix Gateway Service (provided by Citrix Cloud) **OR** Citrix ADC/Gateway VPX on Amazon EC2 (customer managed) |
 
 The table below contains critical decision points when determining which
 access layer component to deploy, but the choice is certainly not
@@ -825,7 +814,7 @@ customized to suit your needs.
 Consider the following when choosing how you want to provide UI services
 for your Citrix virtualization system on AWS:
 
-| Attribute / Capability | [Customer Managed](#customer-managed) (installed from downloaded binaries) | [Cloud Service](#cloud-services) (delivered via Citrix Cloud) |
+| Attribute / Capability | Customer Managed (installed from downloaded binaries) | Cloud Service (delivered via Citrix Cloud) |
 |---|---|---|
 | Ability to present and launch virtualized apps and desktops from multiple “Citrix Farms”. | **YES** - Both legacy environments (XenApp/XenDesktop 6.5/7.x, Citrix Virtual Apps and Desktops CR/LTSR) and Citrix Virtual Apps and Desktops Service. | **YES** - Both legacy environments (XenApp/XenDesktop 6.5/7.x, Citrix Virtual Apps and Desktops CR/LTSR) and Citrix Virtual Apps and Desktops Service. See [this article](https://docs.citrix.com/en-us/citrix-cloud/workspaces/add-on-premises-site.html) for more details. |
 | Ability to create multiple ‘Stores’ with different settings for different use cases, including authentication requirements. | **YES** - StoreFront can be configured with multiple different Stores, and when combined with Citrix ADC/Gateway VPX, can apply sophisticated rules to direct certain devices and/or user groups to different stores. For more information, see [How SmartAccess Works for Citrix Virtual Apps and Desktops](https://docs.citrix.com/en-us/citrix-gateway/13/integrate-web-interface-apps/ng-smartaccess-wrapper-con/ng-smartaccess-how-it-works-con.html). One common scenario requiring two StoreFront Stores would be when users require published applications from inside a published desktop. Another common scenario would be a requirement of having an internal only Store (no Citrix Gateway access) for a specific use case and another Store configured for both internal and remote access. See [Configure and manage stores](https://docs.citrix.com/en-us/storefront/current-release/configure-manage-stores.html) for more information. | **NO** - the Workspace Service is essentially a single store, on a single URL. All users leverage the same store and Workspace settings. Authentication requirements are setup once, and apply to all users of the Workspace tenant. |
@@ -848,7 +837,7 @@ for your Citrix virtualization system on AWS:
 Consider the following when choosing how you want to provide HDX session
 proxy functionality for your Citrix virtualization system on AWS:
 
-| Attribute / Capability | [Customer Managed](#customer-managed) (Citrix ADC/Gateway VPX on AWS) | [Cloud Service](#cloud-services) ([Citrix Gateway Service](https://docs.citrix.com/en-us/citrix-gateway-service.html) provided by Citrix Cloud) |
+| Attribute / Capability | Customer Managed (Citrix ADC/Gateway VPX on AWS) | Cloud Service ([Citrix Gateway Service](https://docs.citrix.com/en-us/citrix-gateway-service.html) provided by Citrix Cloud) |
 |---|---|---|
 | Simple, pre-configured service, providing HDX proxy with no administrative overhead | **NO** - As a customer managed component, these appliances require licensing, installation, configuration, and maintenance. | **YES** - [Citrix Gateway Service](https://docs.citrix.com/en-us/citrix-gateway-service.html) is a complete HDX proxy solution, managed by Citrix, delivered as a cloud service. |
 | Ability to leverage Citrix HDX’s EDT (UDP) based transport protocol. For more information, see [Adaptive Transport](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/adaptive-transport.html) and [How to Configure HDX Enlightened Data Transport Protocol](https://support.citrix.com/article/CTX220732). | **YES** - This feature optimizes traffic from high-latency sites and is available for customer managed ADC/Gateway instances. | **Not Yet** - This feature is in Tech Preview as of this writing. The Gateway Service currently only supports TCP based connections to VDA’s. |
@@ -967,25 +956,17 @@ architecture on AWS, the following diagram (from the
 [Citrix ADC for Web Applications Quick Start Deployment Guide](https://aws-quickstart.s3.amazonaws.com/quickstart-citrix-adc-vpx/doc/citrix-adc-vpx-for-web-applications-on-the-aws-cloud.pdf))
 depicts a multi-AZ Citrix HA pair deployment as deployed by the Quick
 Start template (with default subnets/CIDR blocks):
-
 ![Diagram 10: Conceptual Architecture, Citrix ADC/Gateway VPX on AWS with HA across Availability Zones](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_010.png)
-
 *Diagram 10: Conceptual Architecture, Citrix ADC/Gateway VPX on AWS with HA across Availability Zones.*
 
 As discussed in [Citrix ADC VPX on AWS](https://docs.citrix.com/en-us/citrix-adc/13/deploying-vpx/deploy-aws.html)
 on Citrix Docs, there are two primary deployment options available. They
 are:
 
--  [Standalone](https://docs.citrix.com/en-us/citrix-adc/13/deploying-vpx/deploy-aws/launch-vpx-for-aws-ami.html)
+-  **[Standalone](https://docs.citrix.com/en-us/citrix-adc/13/deploying-vpx/deploy-aws/launch-vpx-for-aws-ami.html)**: Individual instances of Citrix ADC/Gateway can be deployed and managed as separate entities. This is commonly used for smaller
+    scale or POC deployments where high availability is not a requirement.
 
-    -  Individual instances of Citrix ADC/Gateway can be deployed and
-    managed as separate entities. This is commonly used for smaller
-    scale or POC deployments where high availability is not a
-    requirement.
-
--  [High Availability](https://docs.citrix.com/en-us/citrix-adc/13/deploying-vpx/deploy-aws/how-aws-ha-works.html)
-
-    -  This is the most commonly deployed model for production
+-  **[High Availability](https://docs.citrix.com/en-us/citrix-adc/13/deploying-vpx/deploy-aws/how-aws-ha-works.html)**: This is the most commonly deployed model for production
     environments: pairs of Citrix ADC/Gateway VPX instances can be
     deployed leveraging native Citrix HA mode on AWS. With older
     firmware versions, the pair is deployed in the same AWS Availability
@@ -1007,7 +988,6 @@ Subnet”. The following simplified conceptual diagram depicts this
 configuration. Note that it shows a single VPX instance in a single AZ -
 this design pattern would be duplicated (likely in a second AZ) for a
 High Availability configuration:
-
 ![Diagram 11: Citrix ADC VPX instance interface mapping for CVAD/CVADS deployments](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_011.png)
 
 *Diagram 11: Citrix ADC VPX instance interface mapping for CVAD/CVADS deployments.*
@@ -1036,7 +1016,6 @@ expansion. For detailed information about setting up GSLB between AWS
 AZs, see [Citrix Documentation](https://docs.citrix.com/en-us/advanced-concepts/design-guides/netscaler-and-amazon-aws.html).
 
 ![Diagram 12: Traffic flow before and after HA failover in multi-AZ HA deployment](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_012.png)
-
 *Diagram 12: Traffic flow before and after HA failover in multi-AZ HA deployment.*
 
 In the above diagram, we can see that each ADC has a different Gateway
@@ -1078,7 +1057,7 @@ Make sure you measure latencies between instances in all AZ’s you plan
 to host StoreFront and enable/disable subscriptions accordingly.
 
 We already called this out in the [UI Service and Authentication Considerations](#ui-service-and-authentication-considerations)
-table earlier in this document, but it is worth calling out again: **For
+table earlier in this document, but it is worth calling out again: **for
 Citrix Virtual Apps and Desktops Service environments with extensive
 resiliency requirements, Citrix strongly recommends a StoreFront
 implementation to fully benefit from the Local Host Cache feature**
@@ -1283,7 +1262,7 @@ system disk into a generalized AMI), the cloning process (creating and
 managing a fleet of VDA instances based upon the AMI created from the
 snapshot of the template VM), autoscaling Delivery Groups, updating
 deployed images, and more. We’ll discuss MCS on AWS in much more detail
-in the [Control Layer Considerations](#operations-layer-considerations) sections of
+in the [Control Layer Considerations](#control-layer-considerations) sections of
 this document.
 
 **Note:** customers already using MCS for their on premises
@@ -1723,7 +1702,7 @@ brokering and administration subsystem (via CVAD LTSR or CR releases)
 may be necessary or recommended. The table below highlights some of
 these requirements and scenarios for your consideration:
 
-| Attribute/Capability | [Customer Managed](#customer-managed) CVAD (Citrix Virtual Apps and Desktops, LTSR or CR versions) | [Cloud Service](#cloud-services) CVADS (Citrix Virtual Apps and Desktops Service, provided by Citrix Cloud) |
+| Attribute/Capability | Customer Managed CVAD (Citrix Virtual Apps and Desktops, LTSR or CR versions) | Cloud Service CVADS (Citrix Virtual Apps and Desktops Service, provided by Citrix Cloud) |
 |---|---|---|
 | Requires outbound Internet connectivity to Citrix Cloud. | **NO** - Delivery Controllers don’t require outbound Internet connectivity, though they do need to be able to communicate to AWS infrastructure in order for MCS provisioning to function. | **YES** - Cloud Connectors communicate over the Internet to Citrix Cloud, though these connections can be proxied. See [How to Setup a Proxy Server for Citrix Cloud Connector](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/proxy-firewall-configuration.html_) for more details. For strictly air gapped deployments, this is often a show stopper. |
 | Requires the customer to provide highly available Microsoft SQL database services. | **YES** - CVAD (in both LTSR and CR release types) requires the customer to provide and highly available Microsoft SQL database services. These can be provided by building SQL Servers on EC2 instances, or by leveraging the AWS RDS for SQL Server service. | **NO** - CVADS does not require customers to touch SQL server: highly available database services are provided by the Citrix Cloud delivery platform and are transparent to customers. |
@@ -1875,9 +1854,7 @@ also allows us to describe the AWS platform in terms that are familiar
 to most IT professionals. To facilitate this understanding, we’ll refer
 to the following diagram which represents the design pattern for a CVADS
 resource location on AWS:
-
 ![Diagram 14: Deployed "Resource Location" architecture/design pattern from the Citrix Virtual Apps and Desktops Service on AWS Quick Start Cloud Formation template](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_014.png)
-
 *Diagram 14: Deployed “Resource Location” architecture/design pattern
 from the [Citrix Virtual Apps and Desktops Service on AWS](https://aws.amazon.com/quickstart/architecture/citrix-virtual-apps/) Quick Start Cloud Formation template.*
 
@@ -2043,7 +2020,6 @@ If we open the CVADS QuickStart template in the Cloud Formation
 Designer, we get a visual representation of this template. From this
 visual, we can see that this template utilizes three separate “nested”
 stacks or templates:
-
 ![Diagram 15: CVADS template in Cloud Formation Designer with nested stacks](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_015.png)
 
 *Diagram 15: CVADS template in Cloud Formation Designer with nested stacks.*
@@ -2057,9 +2033,7 @@ lays down the bulk of the networking foundation underneath the CVADS
 template. VPCStack is responsible for building the following components
 of the CVADS stack diagram. All other stacks build on top of these
 resources and parameters:
-
 ![Diagram 16: VPCStack sample build results](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_016.png)
-
 *Diagram 16: VPCStack sample build results.*
 
 On top of VPCStack comes the RDGWStack and ADStack. The
@@ -2072,9 +2046,7 @@ infrastructure for a system. It includes options for creating AD on IaaS
 instances and also using the AWS Active Directory service. For our
 example design pattern below, it is building the AD DS Service object in
 red:
-
 ![Diagram 17: VPStack + RDGWStack + ADStack sample build results](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_017.png)
-
 *Diagram 17: VPStack + RDGWStack + ADStack sample build results.*
 
 Finally, CitrixResourceLocationStack (the ‘master’ stack, which calls
@@ -2084,9 +2056,7 @@ AWS, and it leverages Citrix Cloud API’s to create the resource
 location, hosting connection, machine catalog, delivery group, etc. in
 your Citrix Cloud tenant. The end result? A fully functional Citrix
 Cloud resource location running on AWS:
-
 ![Diagram 18: CitrixResourceLocationStack (plus nested stacks) sample build results](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_018.png)
-
 *Diagram 18: CitrixResourceLocationStack (plus nested stacks) sample build results.*
 
 ### Summary - Understanding Design Patterns for Citrix on AWS
@@ -2180,7 +2150,7 @@ weekly basis.
 | Generic | Review latest hotfixes and patches | Review, test, and deploy the latest Citrix [hotfixes](http://support.citrix.com/product/xd/) and ascertain whether the Delivery Controllers and Server-Based OS / Desktop-Based OS virtual machines require them. For Microsoft updates deployed via SCCM or WSUS to machines in AWS, all machines will receive these updates when powered on. If Citrix Power Management is employed, there may be machines in the Machine Catalog that are not regular turned on. When performing image updates, it is best to use a dynamic master instance that is powered on during all update cycles. AMIs can then be created from this instance and include all necessary patches. **Note:** Any required hotfixes should be tested using the recommended testing process prior to implementation in Production. |
 | Generic | Create Citrix environment status report | Create a report on overall environment performance (server health, resource usage, user experience) and number of Citrix issues (close rate, open issues, and so on). |
 | Generic | Review status report | Review Citrix status report to identify any trends or common issues. |
-| Generic | Maintain internal support knowledge base | Create KBA and issue resolution scripts to address Level-1 and Level-2 support requests. | Review KBA and issue resolution scripts for accuracy, compliance, and feasibility. |
+| Generic | Maintain internal support knowledge base | Create KBA and issue resolution scripts to address Level-1 and Level-2 support requests. Review KBA and issue resolution scripts for accuracy, compliance, and feasibility. |
 | Citrix Virtual Apps and Desktops | Check Configuration Logging reports | Confirm that Citrix Site-wide changes implemented during the previous week were approved through change control. |
 | Citrix Virtual Apps and Desktops | Perform full backup of Citrix-related databases | Perform full-data backups of the following Citrix databases: Site Database, Configuration Logging Database, Monitoring Database. |
 | AWS | Perform snapshots of all EBS volumes | All Elastic Block Storage volumes should be snapshotted on a periodic basis. Snapshots can be managed and groomed in the AWS EC2 console. |
