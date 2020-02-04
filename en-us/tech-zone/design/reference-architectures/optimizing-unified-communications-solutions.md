@@ -9,6 +9,8 @@ description: Learn how to optimize voice, video, and other capabilities of unifi
 
 **Author:** [Allen Furmanski](mailto:allen.furmanski@citrix.com)
 
+**Special Thanks:** [Derek Thorslund](https://twitter.com/derektcitrix)
+
 ## Audience
 
 This document is intended for Citrix technical professionals, IT decision-makers, partners, and consultants who want to deliver unified communication solutions in a Citrix virtualized environment. The content is relevant with both on-premises and public cloud architectures. The reader should have a basic understanding of Citrix app and desktop virtualization offerings in addition to unified communications solutions. For more information on Citrix Virtual Apps and Desktops, refer to the [Citrix Virtual Apps and Desktops official documentation](/en-us/citrix-virtual-apps-desktops).
