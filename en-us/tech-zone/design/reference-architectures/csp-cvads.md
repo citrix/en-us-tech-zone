@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Darren Harding](https://Twitter.com/DarrenHarding)
 
-**Special Thanks:** [Selma Wei](https://Twitter.com/_selw), [Bala ](https://Twitter.com/Bala)
+**Special Thanks:** [Selma Wei](https://Twitter.com/_selw), [Bala Swaminathan](https://Twitter.com/Bala)
 
 ## Audience
 
@@ -238,4 +238,305 @@ For details on setting up a Citrix Virtual Apps and Desktops service resource lo
 
 ***link***
 
+## Deployment Steps
+## Onboard a Customer
+***## Customer Dashboard***
+To add a new Customer or invite an existing one to be managed by the Citrix Service Provider, the onboarding process is the same for both multi-tenant and single tenant customers.
+
+## Add a new Customer
+In the Citrix Cloud Dashboard page, select Customers
+
+***Image***
+
+On the Customer Dashboard you will see all of Citrix Service Provider’s managed tenants, to Add a new Customer select Invite or Add:
+
+***Image***
+
+Select Add and Continue
+
+***Image***
+
+Complete the onboarding information for the Customer, make sure the email address used here is unique and has not been used for any other Citrix Cloud accounts:
+
+***Image***
+
+This will create a new Customer with a unique Organisation ID (Org ID).
+
+## Invite a Customer
+To invite an existing Citrix Cloud Customer to be Managed by the Citrix Service Provider, you can select the Invite option. 
+
+***Image***
+
+Select Invite and Continue.
+
+***Image***
+
+Copy the Invite Link and email to the Administrator of the Customer you would like to invite:
+
+## Enable Virtual Apps and Desktops Service to a New Customer
+After a new customer on boarded or an existing customer accepted the invite, the Citrix Service Provider can enable services to that customer (tenant).  
+
+## Enable Single Tenant (private) Citrix Virtual Apps and Desktops Service
+For a new customer in private workspace to have single tenant service, i.e. the customer will have its own instance of Virtual Apps and Desktops service, the CSP needs to make a $0 order via its distributor and “ship to” the customer’s Citrix Cloud account.
+Once the single tenant service instance is enabled for the customer (stocking order fulfilled), “Manage” option will appear inside the Virtual Apps and Desktops service tile, by selecting “Manage” option, the customer’s instance of Studio will load.
+
+## Enable Multi-Tenant Citrix Virtual Apps and Desktops Service
+Assume the CSP partner already has multi-tenant Virtual Apps and Desktops service entitlement fulfilled on the partner account via $0 stocking order from the distributor, for a new customer to be managed under the CSP’s multi-tenant service, follow the steps:
+
+	1)	In the Citrix Cloud Dashboard page, select Customers
+	2)	On the Customer Dashboard locate the Customer you want to add services to and select the three-dot button and select Add Services
+
+
+***Image***
+
+	3)	Select “Continue” next to the Citrix Virtual Apps and Desktops Service
+
+***Image***
+Once the “add service” process is completed in a few minutes, “Manage” option will appear inside the Virtual Apps and Desktops service tile within the tenant’s cloud account, however by selecting “Manage” option, “This instance of the Citrix Virtual Apps and Desktops Service is being managed by your Citrix Service Provider” message will be displayed.
+
+***Image***
+
+## Configure Multi-tenant Virtual Apps and Desktops Service for the New Customer
+This document focuses on the deployment configurations of multi-tenant architecture models, for single tenant Virtual Apps and Desktops Service refer to
+
+***link***
+
+The following section of multi-tenant deployment uses a hybrid cloud solution as an example to run workloads in an on-premises datacenter.
+
+## Deploy a New Resource Location
+The resource Location and domain are a 1:1 relationship. 
+
+##Dedicated Resource Location
+
+Each time when onboarding a new tenant, a new active directory, resource location, and a pair of cloud connectors need to be setup for the tenant.
+
+##Shared Resource Location
+The resource location, active directory and cloud connectors only need to be setup when the first tenant of the resource location is onboarded, the subsequent tenants share the same setup except the actual resources to be consumed, e.g. AD OU and VDAs, etc. The Service Provider is responsible to partition the active directory and resources for each tenant with secure isolation.
+##Process
+When connected to the Citrix Cloud Console, select Resource Location (Edit or Add New)
+
+
+***Image***
+
+Select Add Resource Location, name the Resource location to the multi-tenant nomenclature choose add Cloud Connector, download and install the cloud connector to at least two dedicated Servers, for detailed steps please follow
+***link***
+You can view the Active Directory Domain and Cloud Connectors after deployment.
+
+
+***Image***
+## Define Hosting Connection
+Since each resource location may be deployed in different cloud infrastructure e.g. Azure, GCP, AWS, on-premises hypervisor etc. a new Hosting Connection to the resources needs to be defined for the new resource location.
+Navigate to the hamburger menu at the top left side of the page and choose Citrix Virtual Apps and Desktops.
+
+***Image***
+Select Manage Service, the Citrix Studio will then load, select hosting from the Left-Hand Studio Menu.
+
+***Image***
+Select Add Connection or Resource from the Action pane.
+Select Create a new Connection, choose the Connection type and enter the credentials and address for the connection, name the connection using the correct nomenclature.
+
+
+***Image***
+Select the storage location for the Resources.
+
+Select the Network Associated with the new customer.
+
+***Image***
+Select the scope of the Customer just onboarded, the review the hosting connection and choose finish.
+
+***Image***
+## Configure Machine Catalogues for the New Customer
+In the CSP partner’s Citrix Cloud portal page, navigate to Citrix Virtual Apps and Desktops service, and select Manage Service.
+
+From the Citrix Studio, select Machine Catalogues, and Create Machine Catalogues from the Action Pane.
+In this example we are using Machines that are created with Machine Creation Services, and are hosted on a hypervisor in the datacenter that is able to control the power state, select the appropriate Resource Location Shared or Single etc. for the corresponding Customer who will be assigned the Machine Catalog, select Next
+
+
+***Image***
+Add the Machines from the Corresponding Active Directory and also the Zone for the Customer.
+Enter the name of the machines(s) and select OK.
+Confirm the Zone and the minimal functional level of the VDA installed on the machines to be added, here we have a VDA that is from version 1811 or newer, select Next.
+
+
+***Image***
+Choose the Scope of the new customer, select Next.
+
+***Image***
+Since machine catalogues are created for specific customer scope, predefined naming convention is necessary in a multi-tenant deployment.
+The Machines will then appear in the Machine Catalogue list.
+
+
+***Image***
+Use the View Machines Search option, to confirm the registration status of the new Machine Catalogue.
+
+***Image***
+***Image***
+## Create Delivery Groups for the New Customer
+From the Citrix Studio, select Delivery Group, and Create Delivery Group from the Action Pane.
+Read the Getting Started information and select Next.
+Select a relevant Machine Catalogue that is assigned with the customer’s scope, select Next.
+
+
+***Image***
+The recommendation is to leave the management of Users to Citrix Cloud, select Next.
+Select Add Applications from a source, usually it is the Start Menu if an application appears there on the corresponding VDA. All applications selected will appear under the same delivery group and be available as Libraries to all subscribers that are later added via Citrix Cloud portal. Separate delivery groups can be created for applications and user groups that need restricted access.
+Under the multi-tenant deployment, some delivery groups may contain applications with the same name for different tenants. To avoid confusion to the administrators and clearly define the ownership of these applications, it is recommended to update the application naming to be tenant specific as shown in the example below. Application name for user can remain unchanged.
+
+
+***Image***
+***Image***
+
+
+Assign the scope of the customer to the delivery group, and select Next 
+
+
+***Image***
+
+To securely isolate customers in a multi-tenant setup, a delivery group should only be assigned to a specific customer scope. Different customer scopes should not share delivery groups. Predefined naming convention for delivery groups is also necessary in a multi-tenant deployment.
+
+## Configure Federated Domain for the New Customer
+For large customers under the single tenant (private workspace) architecture model, this step is not required, as domains and resource locations are configured directly within the customer’s cloud account.
+For a new customer to be managed under the partner’s multi-tenant Virtual Apps and Desktops service deployment and still maintain its own workspace experience, for example to enable the Customers Gateway URL, the customer needs to be federated to the domain configured under the partner account. 
+Within the partner’s Citrix Cloud account, select the Customers domain from the Domains tab in the Identity and access management page, select Manage Federated Domain.
+
+
+
+***Image***
+
+Select the customer(s) to be added to the Domain, this will allow the tenant to use their customized Workspace Configurations.
+
+
+***Image***
+
+Note: The Federated Domain described here for multi-tenant Virtual Apps and Desktops service is for workspace configuration only, it is not integrated with ADFS or Citrix Federated Authentication Service.
+
+## Subscribe Customer User Groups to Offerings
+Under Single Tenant architecture model where each customer has own instance of the service, managing subscribers to libraries is performed directly within the customer’s cloud account, for details please refer to the online document 
+
+***link***
+
+Under multi-tenant architecture models, subscribing user groups to libraries is performed inside the CSP partner’s Citrix Cloud account.  The preferred method is to assign well named Active Directory groups to the library resources for easy administration and scalability. 
+To add users to a published application or desktop offering from either a Shared or Dedicated resource location of the multi-tenant service, locate the Library Offerings from the Citrix Cloud homepage, In the Library offering, select the View Library option, search or find the resource you would like to add users too using the three dot menu, Manage Subscribers, chose from the list of Managed domains and then add the Resource Group.
+
+
+
+
+***Image***
+
+## Configure Tenant Workspace
+The CSP multi-tenant Virtual Apps and Desktops service allows each tenant to maintain its own Workspace Experience.
+To change the Workspace for a customer from the Citrix Cloud Dashboard page, select Customers, view Details.
+Select a customer and Expand using the Arrow, select View Customer Details.
+
+
+
+***Image***
+
+Select Access Customer Account (there is also an alternative way to access the customer’s account via Change Customer)
+
+
+***Image***
+
+Confirm that you are leaving the Citrix Service Provider’s Account to enter the Customer Account and select Continue.
+
+After entering the tenant’s Citrix Cloud account, navigate to the hamburger menu and choose, Workspace configuration:
+
+
+
+***Image***
+
+## Access URL
+Under the Access tab, the Customers Gateway URL can be customized. Edit the URL and select Save.
+
+
+
+***Image***
+## Authentication
+In the Authentication tab, specify the Authentication method for the customer:
+
+
+
+
+***Image***
+
+If Active Directory Authentication is used and the tenant is configured within a shared resource location, i.e. the tenant user accounts and groups reside within an OU of the hosted multi-tenant Active Directory, the users’ UPN suffix which is normally the customer’s own domain that differs from the AD system domain, e.g. customer domain selwfashion.nz in the example below vs cms.azr system domain of the hosting AD; for the user’s UPN domain to be recognized and authenticate through the custom Workspace URL, the UPN suffix needs to be added to the hosting Active Directory at root level.
+
+
+***Image***
+
+7.6.3 Appearance
+Customized branding and appearance often help achieve great result for end user experience. From Customize tab, configure the customer logo and preferences.
+
+
+***Image***
+
+## User Login to Workspace
+When the users of a customer login to the Workspace via the customized URL, e.g. https://selwfashion.cloud.com, same set of credentials of UPN and password (e.g. email address and password that match their Office 365 accounts) will be used.  
+
+
+***Image***
+
+After logging on the user’s workspace would look similar as below. 
+
+***Image***
+
+##	Performance and Monitoring
+
+The Citrix Virtual Apps and Desktops Service allows Citrix Service Providers to control and monitor the workloads centrally in the Cloud Console, this lowers the cost and administration effort of the management and allows the operations team to deliver greater uptime.
+
+
+## Director
+
+The Citrix Service Provider admins has the ability to manage their multi-tenant Shared and Dedicated Resource location Customers using a single Monitoring console, the CSP admin can chose to view an overview of all resources or drill down to a specific Customer. The Service provider can also set Role Based Access Control permissions for its team remembers to manage specific customer scope or perform a subset of functions.
+
+
+***Image***
+
+Single tenants in their private workspace with own instance of Citrix Virtual Apps and Desktops Service, their Monitoring console is dedicated. A Citrix Service Provider with administrator rights will need login to the customer’s cloud account to access and manage through this console.
+
+## Citrix Analytics Service
+
+The Analytics service included in the Citrix Service Providers Workspace collects data across the hosting network, users, files and endpoints. A Service provider can centrally manage the insights to handle security threats, monitor service performance and optimise and improve their offering.
+
+
+***Image***
+
+##	License Usage
+Citrix Service Providers can gain insights on the number of User Licenses that have been assigned against their total commitment amount within the “Licensing” page of Citrix Cloud. As soon as a Citrix Service Provider specific entitlement is provisioned, the licensing rules on the page will be aligned with the program rules. Service Providers can expect “Assigned” license counts to reset monthly, and overage amounts to be highlighted separately from the committed amount. Please find associated number in the image for the appropriate detail around the experience.
+	1.	Provides the “Assigned” license count across all tenants and the total commitment amount. This “Assigned” amount will reset every month.
+	2.	 A graphical representation of the monthly assigned licenses across all tenants against the commitment amount. 
+	3.	The ability to export the current month’s detailed list of users that are listed in item 4. Until the Longer-Term solution for Multi-Tenancy is delivered in the “License Usage Insights” Service, this would be the best way for partners to break out the users across the different tenants. 
+	4.	The detailed list of users that have an assigned license in the current month. This list makes up the total “Assigned” count. Additional insights are provided like the 1st time a license was assigned.
+
+
+## Appendix
+Common Abbreviations
+ADC	Application Delivery Controller
+AWS	Amazon Web Services
+BYOD	Bring your own Device
+CCC	Citrix Cloud Connector
+CEM	Citrix Endpoint Management
+CVAD	Citrix Virtual Apps and Desktops
+CWS	Citrix Workspace Service
+EFSS	Enterprise File Sync and Sharing
+EMM	Enterprise Mobility Management
+HSD	Hosted Shared Desktops
+LUI	License usage insights
+MAM	Mobile Application Management
+MDM	Mobile Device Management
+RBAC	Role Based Access Control
+SDN	Software Defined Networking
+SD-WAN	Software Defined WAN
+VDA	Virtual Delivery Agent
+VDI	Virtual Delivery Infrastructure
+VM	Virtual Machine
+
+11.	References
+Supported Hypervisors for Virtual Desktops (XenDesktop) and Provisioning Services
+
+***link***
+
+Supported Host Connection Resources
+
+***link***
 
