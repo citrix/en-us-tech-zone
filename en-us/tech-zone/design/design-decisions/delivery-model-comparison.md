@@ -17,7 +17,7 @@ Users are segmented into logical groups, based on personalization, security, mob
 
 This process guides the design thinking in that decisions made higher up impact lower level design decisions.
 
-### Delivery Models
+## Delivery Models
 
 A Citrix Virtual Apps and Desktops solution can take on many delivery forms. The organization’s business objectives help select the right approach.
 Even though the infrastructure remains the same for all delivery models, the local IT team’s management scope changes.
@@ -36,7 +36,7 @@ Even though the infrastructure remains the same for all delivery models, the loc
 
 *  Citrix Service Provider - A hosted service offering where third party organizations design, build, and manage a Citrix Virtual Apps and Desktops environment on behalf of the organization. The Citrix Service Provider program is an outsourced IT management service that can handle solution deployments, updates, and management.
 
-### Design Considerations
+## Design Considerations
 
 Selecting the correct delivery model is based on identifying how much of the solution does the local IT team want and need to manage. The local IT team can have complete ownership, no ownership or somewhere in the middle. The following diagram provides a high-level overview of how the different options compare.
 
