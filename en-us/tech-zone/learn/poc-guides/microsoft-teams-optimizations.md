@@ -51,10 +51,11 @@ These components are by default, bundled into Citrix Workspace app and the Virtu
 
 ### Conceptual Architecture
 
-<Create the Visio for it>
+[![Teams Optimization for Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/media/poc-guides_microsoft-teams-optimizations_2.png)](/en-us/tech-zone/learn/media/poc-guides_microsoft-teams-optimizations_2.png)
 
-**OS versions supported by the the Optimization for Teams with Microsoft Teams desktop app**
--  VM hosting Teams client – Install Citrix Virtual Delivery Agent (VDA) version 1909 or higher: -
+### OS versions supported by the the Optimization for Teams with Microsoft Teams desktop app
+
+-  VM hosting Teams client – Install Citrix Virtual Delivery Agent (VDA) version 1909 or higher
     -  Single session OS - Microsoft Windows 10 64-bit, minimum version 1607 upto 1909
     -  Multi-session OS - Microsoft Windows Server 2019, 2016, 2012 R2 (Standard and Datacenter Editions)
 
@@ -71,20 +72,23 @@ Note: Microsoft Teams does not support iPhone headsets
 ## Installation Steps
 
 ### Prerequisites
+
 Note - The Optimization for Teams at GA only applies to Windows Endpoints
+
 1.  Download the latest Citrix Virtual Apps and Desktops VDA installer. On Citrix.com, select the Downloads Tab. Select Citrix Virtual Apps and Desktops as the product and select Product Software as the download type. Select Citrix Virtual Apps and Desktops 1906 or later, it will be under Components
 1.  Ensure that the Teams service is reachable, from the client as well as the VDA
 1.  Ensure Microsoft Teams client version 1.2.00.31357 or higher is installed in the Virtual Delivery Agent hosts or base image or on Citrix Virtual Apps servers, which will be used to deliver Microsoft Teams or on both. See instructions on how to install it below
-1.  Download the latest Citrix Workspace app. Link: https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html
+1.  Download the latest Citrix Workspace app. [Link](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html)
 
 The installation procedures are simple
 
 ## Microsoft Teams install
 
-The installation must be done on the golden image of your catalog or in the office layer (if you are using App Layering). We recommend you follow the Microsoft Teams installation guidelines. Avoid installing Teams under Appdata. Instead, install in **C:\Program Files** by using the **ALLUSER=1** flag. 
+The installation must be done on the golden image of your catalog or in the office layer (if you are using App Layering). We recommend you follow the Microsoft Teams installation guidelines. Avoid installing Teams under Appdata. Instead, install in **C:\Program Files** by using the **ALLUSER=1** flag
 For more information, see [Install Microsoft Teams using MSI](https://docs.microsoft.com/en-us/MicrosoftTeams/msi-deployment#vdi-installation)
 
 If Teams was installed in user mode before on the image:
+
 -  Users from EXE installer:
     -  Have all users in the environment manually uninstall from Control Panel > Programs & Features
 -  Admin from MSI:
@@ -98,9 +102,10 @@ If Teams was installed in user mode before on the image:
 
 The HDX Optimization for Teams is bundled as part of VDA in Citrix Virtual Apps and Desktops. It is installed on the hosts or base image of the catalog as well as Citrix Virtual Apps servers, which may be used to deliver Teams. Link to the version 1909 is [here](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/product-software/citrix-virtual-apps-and-desktops-1909.html)
 
-**Application requirements**
+### Application requirements
 
 The VDA installer automatically installs the following items, which are available on the Citrix installation media in the Support folders
+
 -  Microsoft .NET Framework 4.7.1 or later, if it is not already installed
 -  Microsoft Visual C++ 2013 and 2015 Runtimes, 32-bit and 64-bit
 -  BCR_x64.msi - the MSI that contains the Microsoft Teams optimization code and starts automatically from the GUI. If you’re using the command line interface for the VDA installation, don’t exclude it
@@ -119,7 +124,7 @@ Using this image, create the appropriate machine catalogs and delivery groups in
 
 The Citrix Workspace app 1909 for Windows has the optimization components built into it. When you install the application on your client, they should already be present.
 
-**System Requirements**
+### System Requirements
 
 -  Approximately 1.8–2.0 GHz quad core CPU required for 720p HD resolution during a peer-to-peer video conference call. Quad core CPUs with lower speeds (~1.5 GHz) but equipped with Intel Turbo Boost or AMD Turbo Core that can boost up to 2.0 GHz are also supported
 -  Citrix Workspace app requires a minimum of 600 MB free disk space and 1 GB RAM.
@@ -132,7 +137,7 @@ Follow the instructions, to install the Citrix Workspace app for Windows [here](
 To enable optimization, ensure the **Microsoft Teams redirection** Studio policy is set to **Allowed**
 The policy is enabled by default
 
-<Insert the screenshot>
+![Studio Policy to enable Teams optimization](/en-us/tech-zone/learn/media/poc-guides_microsoft-teams-optimizations_3.png)
 
 **Note**: In addition to this policy being enabled, HDX checks to verify that the version of Citrix Workspace app is equal to or greater than the minimum required version. If both conditions are met, the below registry key is set to 1 on the VDA. The Microsoft Teams application reads the key to load in VDI mode
 
@@ -149,7 +154,8 @@ Microsoft Teams relies on Media Processor servers in Microsoft Azure for meeting
 We recommend evaluating your environment to identify any risks and requirements that can influence your overall cloud voice and video deployment. Use the [Prepare your organization’s network for Microsoft Teams](https://aka.ms/PerformanceRequirements) page to evaluate if your network is ready for Microsoft Teams.
 
 ### Port / Firewall settings
-Teams traffic will flow via Transport Relay on TCP and UDP 80, 443, UDP 3478-3481. 
+
+Teams traffic will flow via Transport Relay on TCP and UDP 80, 443, UDP 3478-3481
 Optimized traffic for peer to peer connections is routed on higher ports (40K+ UDP) at random, if they are open. For more info [read](https://docs.microsoft.com/en-us/office365/enterprise/urls-and-ip-address-ranges#skype-for-business-online-and-microsoft-teams)
 
 For support information, see [Support](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html#support) section of our documentation.
@@ -165,7 +171,7 @@ The WebRTC media engine in Workspace app (HdxTeams.exe) uses the Secure RTP prot
 -  Packet Loss < 1% during any 15 second interval
 -  Packet inter-arrival jitter < 30 ms during any 15 second interval
 
-In terms of bandwidth requirements, optimization for Microsoft Teams can use a wide variety of codecs for audio (OPUS/G.722/PCM/G711) and video (H264/VP9). The peers negotiate these codecs during the call establishment process using the Session Description Protocol (SDP) Offer/Answer. 
+In terms of bandwidth requirements, optimization for Microsoft Teams can use a wide variety of codecs for audio (OPUS/G.722/PCM/G711) and video (H264/VP9). The peers negotiate these codecs during the call establishment process using the Session Description Protocol (SDP) Offer/Answer.
 
 Citrix minimum recommendations for bandwidth and codes for specific type of content are:
 
@@ -191,7 +197,7 @@ To uninstall the Teams desktop client MSI, if it was first installed using the p
 
 ### Screen sharing
 
-Microsoft Teams relies on video-based screen sharing (VBSS), effectively encoding the desktop being shared with video codecs like H264 and creating a high-definition stream. 
+Microsoft Teams relies on video-based screen sharing (VBSS), effectively encoding the desktop being shared with video codecs like H264 and creating a high-definition stream.
 With HDX optimization, incoming screen sharing is treated as a video stream, therefore if you are in the middle of a video call and the other peer starts to share his desktop, his camera video feed will be paused and instead the screen sharing video feed will be displayed. The peer must then manually resume his camera sharing.
 
 ### Multi-monitor
@@ -207,8 +213,9 @@ Here are a few ways to resolve the issues users may face:
 **Cause**: Inconsistent state of Citrix redirection services
 
 **Resoultion**: Validate the following:
+
 1.  Teams automatically launches for all users after sign-in to Windows
-1.	Existence of directories and files:
+1.  Existence of directories and files:
         -  Program Files (x86) or Program Files
                 -  Microsoft\Teams\current folder with Teams.exe, which is main application
                 -  Teams Installer folder with Teams.exe, which is EXE installer (do not ever run this manually!)
@@ -222,7 +229,6 @@ Here are a few ways to resolve the issues users may face:
         -  A value named Teams, of type REG_SZ, in one of the following key paths in registry:
                 -  Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run
                 -  Computer\HKEY_LOCAL_MACHINE\Microsoft\Windows\CurrentVersion\Run
-
 
 **Sympton**: Failure while placing an audio/video call and cannot find the audio/video devices connected
 
@@ -239,12 +245,12 @@ Here are a few ways to resolve the issues users may face:
 -  Restart "Citrix HDX HTML5 Video Redirection Service"
 -  Launch Teams on VDA
 
-
 **Sympton**: No incoming ring notification tone on a Citrix Session
 
 **Cause**: Audio being played on the VDA host
 
 **Resoultion**: No audio devices on Citrix session / incorrect local default audio device
+
 -  Make sure that a remote audio device is present on the Citrix session.
 -  Make sure that Citrix Redirection service is running on remote host. Restart it (solves most problems).
 -  In case multiple audio sources are available, make sure that the default playback device on the client machine is selected to the device where the user expect to hear the ring notification.
