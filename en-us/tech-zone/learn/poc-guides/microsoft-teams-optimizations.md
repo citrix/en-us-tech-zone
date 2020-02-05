@@ -1,7 +1,7 @@
 ---
 layout: doc
 ---
-# Microsoft Teams optimization for Citrix Virtual Apps and Desktops environments
+# Proof of Concept guide for Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments
 
 ## Contributors
 
