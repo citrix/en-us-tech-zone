@@ -63,7 +63,7 @@ These components are by default, bundled into Citrix Workspace app and the Virtu
     -  Microsoft Windows 10, 8, 7 (32-bit & 64-bit editions, including Embedded editions 2016 LTSR or 2019 LTSC)
     -  While Citrix Workspace app 1905 for Windows also supports Optimization for Teams, it doesn’t support outgoing screen sharing
 
-**Supported Teams headsets and handsets**
+### Supported Teams headsets and handsets
 
 The list of devices that are supported by Microsoft for [Teams](https://products.office.com/en-us/microsoft-teams/across-devices/devices) and [Skype for Business](https://docs.microsoft.com/en-us/skypeforbusiness/certification/devices-usb-devices)
 
@@ -141,7 +141,7 @@ The policy is enabled by default
 
 **Note**: In addition to this policy being enabled, HDX checks to verify that the version of Citrix Workspace app is equal to or greater than the minimum required version. If both conditions are met, the below registry key is set to 1 on the VDA. The Microsoft Teams application reads the key to load in VDI mode
 
-**HKEY_CURRENT_USER\Software\Citrix\HDXMediaStream**
+Key: **HKEY_CURRENT_USER\Software\Citrix\HDXMediaStream**
 
 Name: **MSTeamsRedirSupport**
 
@@ -191,9 +191,9 @@ To update the Teams desktop client, Uninstall the currently installed version, t
 
 To uninstall the Teams desktop client MSI, if it was first installed using the per-machine mode, use one of the following commands:
 
-**msiexec /passive /x Teams_windows_x64.msi /l*v msi_uninstall_x64.log**
+msiexec /passive /x Teams_windows_x64.msi /l*v msi_uninstall_x64.log
 
-**msiexec /passive /x Teams_windows.msi /l*v msi_uninstall.log**
+msiexec /passive /x Teams_windows.msi /l*v msi_uninstall.log
 
 ### Screen sharing
 
