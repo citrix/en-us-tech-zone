@@ -254,3 +254,9 @@ Here are a few ways to resolve the issues users may face:
 -  Make sure that a remote audio device is present on the Citrix session.
 -  Make sure that Citrix Redirection service is running on remote host. Restart it (solves most problems).
 -  In case multiple audio sources are available, make sure that the default playback device on the client machine is selected to the device where the user expect to hear the ring notification.
+
+## Summary
+
+We support Microsoft Teams infrastructures: whether in a hybrid model or an Office 365 (cloud) as long as configuration allows for successful internal and external client communication.
+
+We have walked through the way to go about evaluating the Citrix Optimization for Teams and pointed you to the resources for deploying the rest. The Optimization for Microsoft Teams greatly increases server scalability and offers zero degradation in audio-video quality and optimal network bandwidth efficiency. It is the Microsoft recommended solution for a VDI deployment. If there are Linux clients in your environment, then it’s the only solution that is jointly supported by Microsoft and Citrix.
