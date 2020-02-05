@@ -11,7 +11,7 @@ layout: doc
 
 Selecting the best VDI model starts with properly defining user groups and then aligning the requirements with the capabilities of the VDI models. Although there are multiple approaches towards defining user groups, it is often easiest to align user groups with departments. Typically most users within the same department or organizational unit consumes the same set of applications.
 
-### User Segmentation
+## User Segmentation
 
 Depending on the size of the department, there might be a subset of users with unique requirements. Each defined user group is evaluated against the following criteria to determine if the departmental user group needs to be further divided into more specialized user groups.
 
@@ -63,7 +63,7 @@ Depending on the size of the department, there might be a subset of users with u
 |Utility Company | A large utility company collected data on every user in their organization. During the user segmentation process, it was realized that the organization’s existing role definitions were sufficiently well defined that all the users within a role shared the same requirements. This allowed a significant amount of time to be saved by reviewing a select number of users per group. |
 | Government | A government organization discovered that there was significant deviation between user requirements within each role, particularly around security and desktop loss criticality. As such, each user needed to be carefully reviewed to ensure that they were grouped appropriately |
 
-### Assign VDI Models
+## Assign VDI Models
 
 As with physical desktops, it is not possible to meet every user requirement with a single type of VDI. Different types of users need different types of resources. Some users may require simplicity and standardization, while others may require high levels of performance and personalization. Implementing a single VDI model across the entire organization inevitably leads to user frustration and reduced productivity.
 Citrix offers a complete set of VDI technologies that have been combined into a single integrated solution. Because each model has different strengths, it is important that the right model is chosen for each user group within the organization.
