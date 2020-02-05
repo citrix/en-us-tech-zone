@@ -253,7 +253,7 @@ Here are a few ways to resolve the issues users may face:
 
 -  Make sure that a remote audio device is present on the Citrix session.
 -  Make sure that Citrix Redirection service is running on remote host. Restart it (solves most problems).
--  In case multiple audio sources are available, make sure that the default playback device on the client machine is selected to the device where the user expect to hear the ring notification.
+-  In case multiple audio sources are available, make sure that the default playback device on the client machine is selected to the device where the user expects to hear the ring notification.
 
 ## Summary
 
