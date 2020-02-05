@@ -85,3 +85,44 @@ At its core is Thinwire+, leveraging still image (JPEG) compression, RLE for tex
 As illustrated below, H.264 is “Inactive” until regions of fluid movement are detected.  The VDA then transitions to H.264 to encode the selected region during fluid movement and returns to an “Inactive” state once the selected region no longer contains fluid content.
 
 ![HDX Graphics 2](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_001.png)
+
+H.264 provides a much more rich experience than adaptive JPEG at the expense of CPU to compress regions of fluid movement.  Network bandwidth will generally be less with H.264 compared to adaptive JPEG for multimedia workload. It is highly recommended to run your own tests with your specific use-case (check the Tools section below).
+
+### Do Not Use Video Codec (Thinwire+ with Adaptive JPEG)
+
+The **Do Not Use Video Codec** offers maximum compatibility for client endpoints, including endpoints that do not support the decoding of H.264 graphics.
+
+Similar to the **For Actively Changing Regions** setting, Thinwire+ is also at the core of this graphics mode. As stated in the HDX Graphics Overview section, you should consider Thinwire+ as the main feature, with Adaptive JPEG and Selective H.264 as sub-features as in below:
+
+Thinwire+
+
+*  Selective H.264
+*  Adaptive JPEG
+
+In this graphics mode, Thinwire+ on the VDA analyzes the screen for regions of fluid movement.  Rather than encoding with H.264, however, Thinwire+ encodes moving images as Adaptive JPEG to deliver high compatibility or where H.264 is not needed.  The remaining regions are presented as JPEG for still images, and RLE for text and simple graphics to deliver quality imagery.
+
+CPU processing for encoding moving images using Adaptive JPEG is typically lower than with Thinwire+ with Selective H.264 or Full Screen H.264.  This mode is desired if server scalability is your priority.  The tradeoff is seen in terms of increased bandwidth and decreased moving image fidelity in WAN scenarios.  This graphics mode should be limited to the use-case where accessing moving images is minimal, such as in a call center or point of sale system.  In which case, the bandwidth utilization in this mode would be similar in comparison to Thinwire+ with Selective H.264.
+
+Thinwire+ with Adaptive JPEG is the default fall back method for the other two graphics modes (Thinwire+ with Selective H.264 and Full Screen H.264).
+
+### For the Entire Screen (Full Screen H.264)
+
+The **For the Entire Screen** graphics mode setting configures the VDA to encode all display data using H.264, with the exception of text.  Text is encoded using RLE and is overlayed with the remainder of the screen.  If **Optimize for 3D Graphics Workloads** is enabled the entire screen, including text, is encoded as H.264.
+
+Fullscreen H.264 is designed for the heavy multimedia use-case, where larger regions of the screen will be in motion.  Higher compression and quality is achieved at the expense of CPU and server scalability.
+
+On its own, this mode provides the best user experience when heavy multimedia, 3-D modelling, or CAD drawing applications are in use.  The CPU can quickly become a bottleneck, if undersized, resulting in poor performance and user experience under heavy multimedia conditions.  Consider GPU offload capabilities to supplement this graphics mode while using these application types.
+
+## HDX Graphics Configurations
+
+As the **Use Video Codec for Compression** policy is a good starting point to baseline your configuration, additional policies can be set to further customize your visual policies to fit your different workloads.  By customizing these supporting policy settings, you can opt to reduce quality in certain areas to reclaim resources and achieve higher scalability and save on bandwidth.  You can also opt to increase quality to support use-cases requiring precise visualizations, as in the Health Care industry.
+
+*  Visual Quality
+*  Use Hardware Encoding for Video Codec
+*  Preferred Color Depth for Simple Graphics
+*  Extra Color Compression
+*  Target Frame Rate
+*  Target Minimum Frame Rate
+*  Allow Visually Lossless Compression
+
+
