@@ -216,19 +216,19 @@ Here are a few ways to resolve the issues users may face:
 
 1.  Teams automatically launches for all users after sign-in to Windows
 1.  Existence of directories and files
--  Program Files (x86) or Program Files
-    -  Microsoft\Teams\current folder with Teams.exe, which is main application
-    -  Teams Installer folder with Teams.exe, which is EXE installer (do not ever run this manually!)
--  %LOCALAPPDATA%
-    -  Microsoft\Teams is either not there, or mostly empty (only a couple of files)
+    -  Program Files (x86) or Program Files
+        -  Microsoft\Teams\current folder with Teams.exe, which is main application
+        -  Teams Installer folder with Teams.exe, which is EXE installer (do not ever run this manually!)
+    -  %LOCALAPPDATA%
+        -  Microsoft\Teams is either not there, or mostly empty (only a couple of files)
 1.  Existence of shortcuts:
--  Teams desktop client shortcut, pointing to Program Files…, in following places:
-    -  On desktop
-    -  In Start menu
+    -  Teams desktop client shortcut, pointing to Program Files…, in following places:
+        -  On desktop
+        -  In Start menu
 1.  Existence of Windows Registry information:
--  A value named Teams, of type REG_SZ, in one of the following key paths in registry:
-    -  Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run
-    -  Computer\HKEY_LOCAL_MACHINE\Microsoft\Windows\CurrentVersion\Run
+    -  A value named Teams, of type REG_SZ, in one of the following key paths in registry:
+        -  Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run
+        -  Computer\HKEY_LOCAL_MACHINE\Microsoft\Windows\CurrentVersion\Run
 
 **Symptom**: Failure while placing an audio/video call and cannot find the audio/video devices connected
 
