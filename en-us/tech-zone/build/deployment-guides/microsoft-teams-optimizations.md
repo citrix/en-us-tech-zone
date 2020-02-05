@@ -94,7 +94,7 @@ If Teams was installed in user mode before on the image:
     -  Admin may need to uninstall as if MSI were directly installed (above)
     -  Office Pro Plus needs to be configured to not include Teams
 
-## Citrix Virtual Apps and Desktops VDA install on the host virttual machines
+## Citrix Virtual Apps and Desktops VDA install on the host virtual machines
 
 The HDX Optimization for Teams is bundled as part of VDA in Citrix Virtual Apps and Desktops. It is installed on the hosts or base image of the catalog as well as Citrix Virtual Apps servers, which may be used to deliver Teams. Link to the version 1909 is [here](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/product-software/citrix-virtual-apps-and-desktops-1909.html)
 
@@ -138,3 +138,39 @@ The policy is enabled by default
 **HKEY_CURRENT_USER\Software\Citrix\HDXMediaStream**
 Name: **MSTeamsRedirSupport**
 Value: DWORD (1 - on, 0 - off)
+
+## Network Requirements
+
+Microsoft Teams relies on Media Processor servers in Microsoft Azure for meetings or multiparty calls, and on Azure Transport Relays for scenarios where two peers in a point-to-point call do not have direct connectivity, or where a participant does not have direct connectivity to the Media Processor. Therefore, the network health between the peer and the Office 365 cloud determines the performance of the call.
+
+We recommend evaluating your environment to identify any risks and requirements that can influence your overall cloud voice and video deployment. Use the [Skype for Business Network Assessment Tool](https://www.microsoft.com/en-us/download/details.aspx?id=53885) to test if your network is ready for Microsoft Teams.
+
+### Port / Firewall settings
+Teams traffic will flow via Transport Relay on TCP and UDP 80, 443, UDP 3478-3481. 
+Optimized traffic for peer to peer connections is routed on higher ports (40K+ UDP) at random, if they are open. For more info [read](https://docs.microsoft.com/en-us/office365/enterprise/urls-and-ip-address-ranges#skype-for-business-online-and-microsoft-teams)
+
+For support information, see [Support](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html#support) section of our documentation.
+
+### Summary of key network recommendations for Real Time Protocol (RTP) traffic
+
+Connect to the Office 365 network as directly as possible from the branch office
+Bypass proxy servers, network SSL intercept, deep packet inspection devices, and VPN hairpins (use split tunneling if possible) at the branch office. If you must use them, make sure RTP/UDP Teams traffic is unhindered. Plan and provide enough bandwidth. Check each branch office for network connectivity and quality.
+The WebRTC media engine in Workspace app (HdxTeams.exe) uses the Secure RTP protocol for multimedia streams that are offloaded to the client. The following metrics are recommended for guaranteeing a great user experience
+
+-  Latency (one way) < 50 milli seconds
+-  Latency (RTT) < 100 milli seconds
+-  Packet Loss < 1% during any 15 second interval
+-  Packet inter-arrival jitter < 30 ms during any 15 second interval
+
+For more information, see [Prepare your organization’s network for Microsoft Teams](https://aka.ms/PerformanceRequirements)
+In terms of bandwidth requirements, optimization for Microsoft Teams can use a wide variety of codecs for audio (OPUS/G.722/PCM/G711) and video (H264/VP9). The peers negotiate these codecs during the call establishment process using the Session Description Protocol (SDP) Offer/Answer. 
+
+Citrix minimum recommendations for bandwidth and codes for specific type of content are:
+
+-  Audio (each way)  ~90 kbps   G.722
+-  Audio (each way)  ~60 kbps   Opus*
+-  Video (each way)  ~700 kbps  H264 360p @ 30 fps 16:9
+-  Video (each way)  ~2500 kbps H264 720p @ 30 fps 16:9
+-  Screen sharing    ~300 kbps  H264 1080p @ 15 fps
+
+(*) Opus supports constant and variable bitrate encoding from 6 kbps up to 510 kbps, and it is the preferred codec for p2p calls between two VDI users
