@@ -61,7 +61,7 @@ These components are by default, bundled into Citrix Workspace app and the Virtu
 1.  Citrix JavaScript in Teams opens a secure WebSocket connection to WebSocketService.exe running on the VDA (127.0.0.1:9002). WebSocketService.exe runs as a Local System account on session 0. WebSocketService.exe performs TLS termination and user session mapping, and spawns WebSocketAgent.exe, which now runs inside the user session.
 1.  WebSocketAgent.exe instantiates a generic virtual channel by calling into the Citrix HDX Browser Redirection Service (CtxSvcHost.exe).
 1.  Citrix Workspace app’s wfica32.exe (HDX engine) spawns a new process called HdxTeams.exe, which is the new WebRTC engine used for Teams optimization.
-1. HdxTeams.exe and Teams.exe have a 2-way virtual channel path and can start processing multimedia requests.
+1.  HdxTeams.exe and Teams.exe have a 2-way virtual channel path and can start processing multimedia requests.
 
 —–User calls——
 
