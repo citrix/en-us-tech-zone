@@ -223,6 +223,7 @@ Here are a few ways to resolve the issues users may face:
                 -  Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run
                 -  Computer\HKEY_LOCAL_MACHINE\Microsoft\Windows\CurrentVersion\Run
 
+
 **Sympton**: Failure while placing an audio/video call and cannot find the audio/video devices connected
 
 **Cause**: Inconsistent state of Citrix redirection services
@@ -236,3 +237,14 @@ Here are a few ways to resolve the issues users may face:
 -  Reconnect to the HDX session
 -  Start "Citrix HDX Teams Redirection Service"
 -  Restart "Citrix HDX HTML5 Video Redirection Service"
+-  Launch Teams on VDA
+
+
+**Sympton**: No incoming ring notification tone on a Citrix Session
+
+**Cause**: Audio being played on the VDA host
+
+**Resoultion**: No audio devices on Citrix session / incorrect local default audio device
+-  Make sure that a remote audio device is present on the Citrix session.
+-  Make sure that Citrix Redirection service is running on remote host. Restart it (solves most problems).
+-  In case multiple audio sources are available, make sure that the default playback device on the client machine is selected to the device where the user expect to hear the ring notification.
