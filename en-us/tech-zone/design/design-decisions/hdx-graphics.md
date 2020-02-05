@@ -125,4 +125,17 @@ As the **Use Video Codec for Compression** policy is a good starting point to ba
 *  Target Minimum Frame Rate
 *  Allow Visually Lossless Compression
 
+![HDX Graphics 2](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_002.png)
+
+Furthermore, review our **Use Cases** Section below to discover how these additional policies (listed below) can reduce resource consumption, although at a slight reduction in quality (in some cases).
+
+## CPU or GPU
+
+By default, all processing for encoding graphics occurs within the CPU on the VDA.  AMD, Intel, and NVIDIA graphics cards are currently supported to offload encoding to the GPU before being sent to your endpoint for decoding.
+
+Offloading graphics encoding to a GPU will free up resources on the CPU for other tasks, resulting in a better overall experience for the end-user.
+
+Due to varying GPU feature support, visit [Citrix Docs](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/graphics-policy-settings.html#use-hardware-encoding-for-video) to review feature supportability for each vendor GPU when enabling the **Use hardware encoding for video codec** policy setting.
+
+## Use Cases
 
