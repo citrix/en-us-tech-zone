@@ -135,15 +135,18 @@ The policy is enabled by default
 <Insert the screenshot>
 
 **Note**: In addition to this policy being enabled, HDX checks to verify that the version of Citrix Workspace app is equal to or greater than the minimum required version. If both conditions are met, the below registry key is set to 1 on the VDA. The Microsoft Teams application reads the key to load in VDI mode
+
 **HKEY_CURRENT_USER\Software\Citrix\HDXMediaStream**
+
 Name: **MSTeamsRedirSupport**
+
 Value: DWORD (1 - on, 0 - off)
 
 ## Network Requirements
 
 Microsoft Teams relies on Media Processor servers in Microsoft Azure for meetings or multiparty calls, and on Azure Transport Relays for scenarios where two peers in a point-to-point call do not have direct connectivity, or where a participant does not have direct connectivity to the Media Processor. Therefore, the network health between the peer and the Office 365 cloud determines the performance of the call.
 
-We recommend evaluating your environment to identify any risks and requirements that can influence your overall cloud voice and video deployment. Use the [Skype for Business Network Assessment Tool](https://www.microsoft.com/en-us/download/details.aspx?id=53885) to test if your network is ready for Microsoft Teams.
+We recommend evaluating your environment to identify any risks and requirements that can influence your overall cloud voice and video deployment. Use the [Prepare your organization’s network for Microsoft Teams](https://aka.ms/PerformanceRequirements) page to evaluate if your network is ready for Microsoft Teams.
 
 ### Port / Firewall settings
 Teams traffic will flow via Transport Relay on TCP and UDP 80, 443, UDP 3478-3481. 
@@ -162,7 +165,6 @@ The WebRTC media engine in Workspace app (HdxTeams.exe) uses the Secure RTP prot
 -  Packet Loss < 1% during any 15 second interval
 -  Packet inter-arrival jitter < 30 ms during any 15 second interval
 
-For more information, see [Prepare your organization’s network for Microsoft Teams](https://aka.ms/PerformanceRequirements)
 In terms of bandwidth requirements, optimization for Microsoft Teams can use a wide variety of codecs for audio (OPUS/G.722/PCM/G711) and video (H264/VP9). The peers negotiate these codecs during the call establishment process using the Session Description Protocol (SDP) Offer/Answer. 
 
 Citrix minimum recommendations for bandwidth and codes for specific type of content are:
@@ -174,3 +176,63 @@ Citrix minimum recommendations for bandwidth and codes for specific type of cont
 -  Screen sharing    ~300 kbps  H264 1080p @ 15 fps
 
 (*) Opus supports constant and variable bitrate encoding from 6 kbps up to 510 kbps, and it is the preferred codec for p2p calls between two VDI users
+
+## Common deployment related tips and questions
+
+### Team Tips
+
+To update the Teams desktop client, Uninstall the currently installed version, then install the new version.
+
+To uninstall the Teams desktop client MSI, if it was first installed using the per-machine mode, use one of the following commands:
+
+**msiexec /passive /x Teams_windows_x64.msi /l*v msi_uninstall_x64.log**
+
+**msiexec /passive /x Teams_windows.msi /l*v msi_uninstall.log**
+
+### Screen sharing
+
+Microsoft Teams relies on video-based screen sharing (VBSS), effectively encoding the desktop being shared with video codecs like H264 and creating a high-definition stream. 
+With HDX optimization, incoming screen sharing is treated as a video stream, therefore if you are in the middle of a video call and the other peer starts to share his desktop, his camera video feed will be paused and instead the screen sharing video feed will be displayed. The peer must then manually resume his camera sharing.
+
+### Multi-monitor
+
+In cases where CDViewer is in full screen mode and spanning across multi-monitor setups, only the primary monitor will be shared. Users must drag the application of interest inside the virtual desktop to the primary monitor for it to be seen by the other peer on the call.
+
+## Troubleshooting
+
+Here are a few ways to resolve the issues users may face:
+
+**Sympton**: Installation Failure
+
+**Cause**: Inconsistent state of Citrix redirection services
+
+**Resoultion**: Validate the following:
+1.  Teams automatically launches for all users after sign-in to Windows
+1.	Existence of directories and files:
+        -  Program Files (x86) or Program Files
+                -  Microsoft\Teams\current folder with Teams.exe, which is main application
+                -  Teams Installer folder with Teams.exe, which is EXE installer (do not ever run this manually!)
+        -  %LOCALAPPDATA%
+                -  Microsoft\Teams is either not there, or mostly empty (only a couple of files)
+1.  Existence of shortcuts:
+        -  Teams desktop client shortcut, pointing to Program Files…, in following places:
+                -  On desktop
+                -  In Start Menu
+1.  Existence of Windows Registry information:
+        -  A value named Teams, of type REG_SZ, in one of the following key paths in registry:
+                -  Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run
+                -  Computer\HKEY_LOCAL_MACHINE\Microsoft\Windows\CurrentVersion\Run
+
+**Sympton**: Failure while placing an audio/video call and cannot find the audio/video devices connected
+
+**Cause**: Inconsistent state of Citrix redirection services
+
+**Resoultion**: Validate that the HDXTeams.exe process is running on the VDA. If the process is not running then we will need to restart Citrix Redirection Services, do the following -in this order- to check if HdxTeams.exe is getting launched
+
+-  Exit Teams on VDA
+-  Start services.msc on VDA
+-  Stop "Citrix HDX Teams Redirection Service"
+-  Disconnect the HDX session
+-  Reconnect to the HDX session
+-  Start "Citrix HDX Teams Redirection Service"
+-  Restart "Citrix HDX HTML5 Video Redirection Service"
