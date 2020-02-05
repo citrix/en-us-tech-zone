@@ -11,16 +11,16 @@ layout: doc
 
 ## Overview
 
-This document serves as a guide to prepare an IT organization for successfully evaluating Unified Communications (UC) in desktop and application virtualization environments using Microsoft Teams. Over 500,000 organizations, including 91 of the Fortune 100 (as of Mar 2019) use Teams in 44 languages across 181 markets. Without proper consideration and design for optimization, virtual desktop and virtual application users will very likely find the Microsoft Teams experience to be subpar. Citrix provides technologies to optimize this experience, to make Teams more responsive with crisp video and audio, even when working remotely in a virtual desktop. However, with multiple combinations of Teams infrastructures, clients, endpoint types, and user locations one must find the right “recipe” to deliver Teams optimally.
+This document serves as a guide to prepare an IT organization for successfully evaluating Unified Communications (UC) in desktop and application virtualization environments using Microsoft Teams. Over 500,000 organizations, including 91 of the Fortune 100 (as of Mar 2019) use Teams in 44 languages across 181 markets. Without proper consideration and design for optimization, virtual desktop and virtual application users will likely find the Microsoft Teams experience to be subpar. Citrix provides technologies to optimize this experience, to make Teams more responsive with crisp video and audio, even when working remotely in a virtual desktop. However, with multiple combinations of Teams infrastructures, clients, endpoint types, and user locations one must find the right “recipe” to deliver Teams optimally.
 
 The **Citrix® HDX™ Optimization for Microsoft® Teams** offers clear, crisp 720p high-definition video calls @30 fps, in an optimized architecture. Users can seamlessly participate in audio-video or audio-only calls to and from other Teams users, Optimized Teams’ users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
-This document will guide administrators in evaluating the Teams delivery solution in their Citrix environment. It contains best practices, tips and tricks to ensure that the deployment is the most robust.
+This document guides administrators in evaluating the Teams delivery solution in their Citrix environment. It contains best practices, tips, and tricks to ensure that the deployment is the most robust.
 
 ## Optimized versus Generic delivery of Microsoft Teams
 
-This is often what causes the most confusion about delivering a Microsoft Teams experience in a Citrix environment. The main reason is that without optimization the media must “hairpin” from your client to the server in the data center and then back to the endpoint. This can put significant load on the server (especially for video) and can cause delay and an overall degraded experience, especially if the other party in a Teams call is originating from a user in a similar virtualized experience. This method for delivering a Microsoft Teams experience is referred to as “Generic” delivery.
+This choice is often what causes the most confusion about delivering a Microsoft Teams experience in a Citrix environment. The main reason is that without optimization the media must “hairpin” from your client to the server in the data center and then back to the endpoint. This additional traffic can put significant load on the server (especially for video) and can cause delay and an overall degraded experience, especially if the other party in a Teams call is originating from a user in a similar virtualized experience. This method for delivering a Microsoft Teams experience is referred to as “Generic” delivery.
 
-The preferred method of delivery is the “Optimized” method. In this case, the architect and/or administrator uses Optimization for Microsoft Teams in their environment. The “Optimized” method is like splitting the Teams client in two, as illustrated in the following comparison diagram. The user interface lives inside the virtual host, and is seen completely in the virtual desktop or application display. However, the media rendering, or media engine is separated off to run on the endpoint. This allows for a very rich rendering of the audio and video and a great desktop sharing experience.
+The preferred method of delivery is the “Optimized” method. In this case, the architect and/or administrator uses Optimization for Microsoft Teams in their environment. The “Optimized” method is like splitting the Teams client in two, as illustrated in the following comparison diagram. The user interface lives inside the virtual host, and is seen completely in the virtual desktop or application display. However, the media rendering, or media engine is separated off to run on the endpoint. This method allows for a exquisite rendering of the audio and video and a great desktop sharing experience.
 
 ![Optimized vs Fallback mode of delivery for Microsoft Teams](/en-us/tech-zone/learn/media/poc-guides_microsoft-teams-optimizations_1.png)
 
@@ -28,7 +28,7 @@ The preferred method of delivery is the “Optimized” method. In this case, th
 
 Optimization for Teams is not a “one size fits all” technology. For the Teams desktop app, with Windows clients, the Citrix HDX Optimization for Microsoft Teams with Citrix Workspace app is the way to go. With Linux and Mac clients being on the roadmap.
 For Web based teams, with Windows and Linux clients using a Chrome browser, the Citrix HDX Optimization for Microsoft Teams with Browser Content Redirection would be the right solution.
-For the remaining OS and Teams delivery format combinations, the generic delivery with the Fallback to Media over HDX is the option. Optimization for mobile OS’s is not available right now. Typically, mobile users who desire access to Teams on their devices will leverage Teams native apps from the appropriate app store.
+For the remaining OS and Teams delivery format combinations, the generic delivery with the Fallback to Media over HDX is the option. Optimization for mobile OSs is not available right now. Typically, mobile users who desire access to Teams on their devices use Teams native apps from the appropriate app store.
 
 ### Pros of using Citrix HDX Optimization for Microsoft Teams
 
@@ -37,9 +37,9 @@ For the remaining OS and Teams delivery format combinations, the generic deliver
 -  Less resource impact on the Citrix Virtual Apps and Desktops hosts
 -  Less HDX bandwidth consumed over “generic” approach
 -  Allows for use of high tech Teams optimized headsets and handsets
--  Supports delivery with Citrix Virtual Apps using Windows Server OS’s
+-  Supports delivery with Citrix Virtual Apps using Windows Server OSs
 -  Simple installation on client devices, minimal prerequisites
--  Can be used remotely from the enterprise network in conjunction with Office 365
+-  Can be used remotely from the enterprise network with Office 365
 -  Wide choice of supported HDX Premium thin client devices (see [Citrix Ready list](https://citrixready.citrix.com/category-results.html?&f1=endpoints&f2=thin-clients&f3=unique-proposition/ms-teams-optimized&lang=en_us))
 -  Support provided by both Microsoft and Citrix support
 -  No requirement for both the sides of the optimized architecture to authenticate to the back-end
@@ -90,13 +90,13 @@ For more information, see [Install Microsoft Teams using MSI](https://docs.micro
 If Teams was installed in user mode before on the image:
 
 -  Users from EXE installer:
-    -  Have all users in the environment manually uninstall from Control Panel > Programs & Features
+    -  Have all users in the environment manually uninstall from **Control Panel > Programs & Features**
 -  Admin from MSI:
     -  Admin uninstalls in the normal way
-    -  All users in the environment need to sign in, in order uninstallation to be completed
+    -  All users in the environment must sign in, in order for uninstallation to be completed
 -  Admin from Office Pro Plus:
     -  Admin may need to uninstall as if MSI were directly installed (above)
-    -  Office Pro Plus needs to be configured to not include Teams
+    -  Office Pro Plus must be configured to not include Teams
 
 ## Citrix Virtual Apps and Desktops VDA install on the host virtual machines
 
@@ -118,7 +118,7 @@ Ensure that the Microsoft Teams client application is installed in per-machine m
 
 **Install the Citrix Virtual Delivery Agent** on the host or base image, following the instructions [here](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas.html)
 
-Using this image, create the appropriate machine catalogs and delivery groups in Citrix Studio/ Citrix Cloud Manage tab before trying to establish sessions and accessing the Teams client.
+Using this image, create the appropriate machine catalogs and delivery groups in **Citrix Studio / Citrix Cloud Manage** tab before trying to establish sessions and accessing the Teams client.
 
 ## Windows client device – Citrix Workspace app 1909 for Windows install
 
@@ -139,7 +139,7 @@ The policy is enabled by default
 
 ![Studio Policy to enable Teams optimization](/en-us/tech-zone/learn/media/poc-guides_microsoft-teams-optimizations_3.png)
 
-**Note**: In addition to this policy being enabled, HDX checks to verify that the version of Citrix Workspace app is equal to or greater than the minimum required version. If both conditions are met, the below registry key is set to 1 on the VDA. The Microsoft Teams application reads the key to load in VDI mode
+**Note**: In addition to this policy being enabled, HDX checks to verify that the version of Citrix Workspace app is equal to or greater than the minimum required version. If both conditions are met, the following registry key is set to 1 on the VDA. The Microsoft Teams application reads the key to load in VDI mode
 
 Key: **HKEY_CURRENT_USER\Software\Citrix\HDXMediaStream**
 
@@ -149,21 +149,20 @@ Value: DWORD (1 - on, 0 - off)
 
 ## Network Requirements
 
-Microsoft Teams relies on Media Processor servers in Microsoft Azure for meetings or multiparty calls, and on Azure Transport Relays for scenarios where two peers in a point-to-point call do not have direct connectivity, or where a participant does not have direct connectivity to the Media Processor. Therefore, the network health between the peer and the Office 365 cloud determines the performance of the call.
+Microsoft Teams relies on Media Processor servers in Microsoft Azure for meetings or multiparty calls. Microsoft Teams relies on Azure Transport Relays for scenarios where two peers in a point-to-point call do not have direct connectivity or where a participant does not have direct connectivity to the Media Processor. Therefore, the network health between the peer and the Office 365 cloud determines the performance of the call.
 
 We recommend evaluating your environment to identify any risks and requirements that can influence your overall cloud voice and video deployment. Use the [Prepare your organization’s network for Microsoft Teams](https://aka.ms/PerformanceRequirements) page to evaluate if your network is ready for Microsoft Teams.
 
 ### Port / Firewall settings
 
-Teams traffic will flow via Transport Relay on TCP and UDP 80, 443, UDP 3478-3481
-Optimized traffic for peer to peer connections is routed on higher ports (40K+ UDP) at random, if they are open. For more info [read](https://docs.microsoft.com/en-us/office365/enterprise/urls-and-ip-address-ranges#skype-for-business-online-and-microsoft-teams)
+Teams traffic flows via Transport Relay on TCP and UDP 80, 443, UDP 3478-3481.
+Optimized traffic for peer to peer connections is routed on higher ports (40 K+ UDP) at random, if they are open. For more info [read](https://docs.microsoft.com/en-us/office365/enterprise/urls-and-ip-address-ranges#skype-for-business-online-and-microsoft-teams)
 
 For support information, see [Support](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html#support) section of our documentation.
 
 ### Summary of key network recommendations for Real Time Protocol (RTP) traffic
 
-Connect to the Office 365 network as directly as possible from the branch office
-Bypass proxy servers, network SSL intercept, deep packet inspection devices, and VPN hairpins (use split tunneling if possible) at the branch office. If you must use them, make sure RTP/UDP Teams traffic is unhindered. Plan and provide enough bandwidth. Check each branch office for network connectivity and quality.
+Connect to the Office 365 network as directly as possible from the branch office. Bypass proxy servers, network SSL intercept, deep packet inspection devices, and VPN hairpins (use split tunneling if possible) at the branch office. If you must use them, make sure RTP/UDP Teams traffic is unhindered. Plan and provide enough bandwidth. Check each branch office for network connectivity and quality.
 The WebRTC media engine in Workspace app (HdxTeams.exe) uses the Secure RTP protocol for multimedia streams that are offloaded to the client. The following metrics are recommended for guaranteeing a great user experience
 
 -  Latency (one way) < 50 milliseconds
@@ -198,11 +197,11 @@ msiexec /passive /x Teams_windows.msi /l*v msi_uninstall.log
 ### Screen sharing
 
 Microsoft Teams relies on video-based screen sharing (VBSS), effectively encoding the desktop being shared with video codecs like H264 and creating a high-definition stream.
-With HDX optimization, incoming screen sharing is treated as a video stream, therefore if you are in the middle of a video call and the other peer starts to share his desktop, his camera video feed will be paused and instead the screen sharing video feed will be displayed. The peer must then manually resume his camera sharing.
+With HDX optimization, incoming screen sharing is treated as a video stream, therefore if you are in the middle of a video call and the other peer starts to share thier desktop, thier camera video feed is paused and instead the screen sharing video feed is displayed. The peer must then manually resume thier camera sharing.
 
 ### Multi-monitor
 
-In cases where CDViewer is in full screen mode and spanning across multi-monitor setups, only the primary monitor will be shared. Users must drag the application of interest inside the virtual desktop to the primary monitor for it to be seen by the other peer on the call.
+In cases where CDViewer is in full screen mode and spanning across multi-monitor setups, only the primary monitor is shared. Users must drag the application of interest inside the virtual desktop to the primary monitor for it to be seen by the other peer on the call.
 
 ## Troubleshooting
 
@@ -234,7 +233,7 @@ Here are a few ways to resolve the issues users may face:
 
 **Cause**: Inconsistent state of Citrix redirection services
 
-**Resolution**: Validate that the HDXTeams.exe process is running on the VDA. If the process is not running then we will need to restart Citrix Redirection Services, do the following -in this order- to check if HdxTeams.exe is getting launched
+**Resolution**: Validate that the HDXTeams.exe process is running on the VDA. If the process is not running then we need to restart Citrix Redirection Services, do the following - in this order - to check if HdxTeams.exe is getting launched
 
 -  Exit Teams on VDA
 -  Start services.msc on VDA
@@ -259,4 +258,4 @@ Here are a few ways to resolve the issues users may face:
 
 We support Microsoft Teams infrastructures: whether in a hybrid model or an Office 365 (cloud) as long as configuration allows for successful internal and external client communication.
 
-We have walked through the way to go about evaluating the Citrix Optimization for Teams and pointed you to the resources for deploying the rest. The Optimization for Microsoft Teams greatly increases server scalability and offers zero degradation in audio-video quality and optimal network bandwidth efficiency. It is the Microsoft recommended solution for a VDI deployment. If there are Linux clients in your environment, then it’s the only solution that is jointly supported by Microsoft and Citrix.
+We have walked through the way to go about evaluating the Citrix Optimization for Teams and pointed you to the resources for deploying the rest. The Optimization for Microsoft Teams greatly increases server scalability and offers zero degradation in audio-video quality and optimal network bandwidth efficiency. It is the Microsoft recommended solution for a VDI deployment. If there are Linux clients in your environment, then it’s the only solution, that Microsoft and Citrix, jointly support.
