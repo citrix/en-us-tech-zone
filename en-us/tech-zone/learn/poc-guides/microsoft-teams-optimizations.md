@@ -22,7 +22,7 @@ This is often what causes the most confusion about delivering a Microsoft Teams 
 
 The preferred method of delivery is the “Optimized” method. In this case, the architect and/or administrator uses Optimization for Microsoft Teams in their environment. The “Optimized” method is like splitting the Teams client in two, as illustrated in the following comparison diagram. The user interface lives inside the virtual host, and is seen completely in the virtual desktop or application display. However, the media rendering, or media engine is separated off to run on the endpoint. This allows for a very rich rendering of the audio and video and a great desktop sharing experience.
 
-![Optimized vs Fallback mode of delivery for Microsoft Teams](/en-us/tech-zone/build/media/deployment-guides_microsoft-teams-optimizations_1.png)
+![Optimized vs Fallback mode of delivery for Microsoft Teams](/en-us/tech-zone/learn/media/poc-guides_microsoft-teams-optimizations_1.png)
 
 ### Choosing the right Teams optimization for your environment
 
