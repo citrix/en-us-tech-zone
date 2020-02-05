@@ -9,7 +9,7 @@ description: Learn about the Citrix Microapps service, which brings intelligent 
 
 **Author:** [Vivekananthan Devaraj](mailto:Vivekananthan.Devaraj@citrix.com)
 
-**Special thanks:** [Dan Feller](mailto:daniel.feller@citrix.com), [Allen Furmanski](mailto:allen.furmanski@citrix.com), and [Radovan Hrabcak](radovan.hrabcak@citrix.com)
+**Special thanks:** [Dan Feller](https://twitter.com/djfeller), [Allen Furmanski](https://twitter.com/TekGuyAllen), and [Radovan Hrabcak](https://twitter.com/HrabcakRado)
 
 ## Executive Summary
 
