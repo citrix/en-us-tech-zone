@@ -11,7 +11,7 @@ layout: doc
 
 ## Overview
 
-This document serves as a guide to prepare an IT organization for successfully evaluating Unified Communications (UC) in desktop and application virtualization environments using Microsoft Teams. Over 500,000 organizations, including 91 of the Fortune 100 (as of Mar 2019)use Teams in 44 languages across 181 markets. Without proper consideration and design for optimization, virtual desktop and virtual application users will very likely find the Microsoft Teams experience to be subpar. Citrix provides technologies to optimize this experience, to make Teams more responsive with crisp video and audio, even when working remotely in a virtual desktop. However, with multiple combinations of Teams infrastructures, clients, endpoint types, and user locations one must find the right “recipe” to deliver Teams optimally.
+This document serves as a guide to prepare an IT organization for successfully evaluating Unified Communications (UC) in desktop and application virtualization environments using Microsoft Teams. Over 500,000 organizations, including 91 of the Fortune 100 (as of Mar 2019) use Teams in 44 languages across 181 markets. Without proper consideration and design for optimization, virtual desktop and virtual application users will very likely find the Microsoft Teams experience to be subpar. Citrix provides technologies to optimize this experience, to make Teams more responsive with crisp video and audio, even when working remotely in a virtual desktop. However, with multiple combinations of Teams infrastructures, clients, endpoint types, and user locations one must find the right “recipe” to deliver Teams optimally.
 
 The **Citrix® HDX™ Optimization for Microsoft® Teams** offers clear, crisp 720p high-definition video calls @30 fps, in an optimized architecture. Users can seamlessly participate in audio-video or audio-only calls to and from other Teams users, Optimized Teams’ users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
 This document will guide administrators in evaluating the Teams delivery solution in their Citrix environment. It contains best practices, tips and tricks to ensure that the deployment is the most robust.
@@ -26,7 +26,7 @@ The preferred method of delivery is the “Optimized” method. In this case, th
 
 ### Choosing the right Teams optimization for your environment
 
-Optimization for Teams is not a “one size fits all” technology. For the Teams desktop app, with Windows clients, the Citrix HDX Optimization for Microsoft Teams with Citrix Workspace App is the way to go. With Linux and Mac clients being on the roadmap.
+Optimization for Teams is not a “one size fits all” technology. For the Teams desktop app, with Windows clients, the Citrix HDX Optimization for Microsoft Teams with Citrix Workspace app is the way to go. With Linux and Mac clients being on the roadmap.
 For Web based teams, with Windows and Linux clients using a Chrome browser, the Citrix HDX Optimization for Microsoft Teams with Browser Content Redirection would be the right solution.
 For the remaining OS and Teams delivery format combinations, the generic delivery with the Fallback to Media over HDX is the option. Optimization for mobile OS’s is not available right now. Typically, mobile users who desire access to Teams on their devices will leverage Teams native apps from the appropriate app store.
 
@@ -42,7 +42,7 @@ For the remaining OS and Teams delivery format combinations, the generic deliver
 -  Can be used remotely from the enterprise network in conjunction with Office 365
 -  Wide choice of supported HDX Premium thin client devices (see [Citrix Ready list](https://citrixready.citrix.com/category-results.html?&f1=endpoints&f2=thin-clients&f3=unique-proposition/ms-teams-optimized&lang=en_us))
 -  Support provided by both Microsoft and Citrix support
--  No requirement for both the sides of the optimized architecture to authenticate to the backend
+-  No requirement for both the sides of the optimized architecture to authenticate to the back-end
 -  Requires no modification to the Teams back end
 
 ## Citrix HDX Optimization for Microsoft Teams
@@ -53,10 +53,10 @@ These components are by default, bundled into Citrix Workspace app and the Virtu
 
 [![Teams Optimization for Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/media/poc-guides_microsoft-teams-optimizations_2.png)](/en-us/tech-zone/learn/media/poc-guides_microsoft-teams-optimizations_2.png)
 
-### OS versions supported by the the Optimization for Teams with Microsoft Teams desktop app
+### OS versions supported by the Optimization for Teams with Microsoft Teams desktop app
 
 -  VM hosting Teams client – Install Citrix Virtual Delivery Agent (VDA) version 1909 or higher
-    -  Single session OS - Microsoft Windows 10 64-bit, minimum version 1607 upto 1909
+    -  Single session OS - Microsoft Windows 10 64-bit, minimum version 1607 up to 1909
     -  Multi-session OS - Microsoft Windows Server 2019, 2016, 2012 R2 (Standard and Datacenter Editions)
 
 -  Windows client machine - Install Citrix Workspace app 1907 for Windows or higher
@@ -76,7 +76,7 @@ Note: Microsoft Teams does not support iPhone headsets
 Note - The Optimization for Teams at GA only applies to Windows Endpoints
 
 1.  Download the latest Citrix Virtual Apps and Desktops VDA installer. On Citrix.com, select the Downloads Tab. Select Citrix Virtual Apps and Desktops as the product and select Product Software as the download type. Select Citrix Virtual Apps and Desktops 1906 or later, it will be under Components
-1.  Ensure that the Teams service is reachable, from the client as well as the VDA
+1.  Ensure that the Teams service is reachable, from the client in addition to the VDA
 1.  Ensure Microsoft Teams client version 1.2.00.31357 or higher is installed in the Virtual Delivery Agent hosts or base image or on Citrix Virtual Apps servers, which will be used to deliver Microsoft Teams or on both. See instructions on how to install it below
 1.  Download the latest Citrix Workspace app. [Link](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html)
 
@@ -84,7 +84,7 @@ The installation procedures are simple
 
 ## Microsoft Teams install
 
-The installation must be done on the golden image of your catalog or in the office layer (if you are using App Layering). We recommend you follow the Microsoft Teams installation guidelines. Avoid installing Teams under Appdata. Instead, install in **C:\Program Files** by using the **ALLUSER=1** flag
+The installation must be done on the golden image of your catalog or in the office layer (if you are using App Layering). We recommend you follow the Microsoft Teams installation guidelines. Avoid installing Teams under AppData. Instead, install in **C:\Program Files** by using the **ALLUSER=1** flag.
 For more information, see [Install Microsoft Teams using MSI](https://docs.microsoft.com/en-us/MicrosoftTeams/msi-deployment#vdi-installation)
 
 If Teams was installed in user mode before on the image:
@@ -100,7 +100,7 @@ If Teams was installed in user mode before on the image:
 
 ## Citrix Virtual Apps and Desktops VDA install on the host virtual machines
 
-The HDX Optimization for Teams is bundled as part of VDA in Citrix Virtual Apps and Desktops. It is installed on the hosts or base image of the catalog as well as Citrix Virtual Apps servers, which may be used to deliver Teams. Link to the version 1909 is [here](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/product-software/citrix-virtual-apps-and-desktops-1909.html)
+The HDX Optimization for Teams is bundled as part of VDA in Citrix Virtual Apps and Desktops. It is installed on the hosts or base image of the catalog and Citrix Virtual Apps servers, which may be used to deliver Teams. Link to the version 1909 is [here](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/product-software/citrix-virtual-apps-and-desktops-1909.html)
 
 ### Application requirements
 
@@ -116,7 +116,7 @@ For Windows Server, if you did not install and enable the Remote Desktop Service
 
 Ensure that the Microsoft Teams client application is installed in per-machine mode on the VDA
 
-**Install the Citrix Virtual Delivery Agent** on the host or base image, following the instrcutions [here](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas.html)
+**Install the Citrix Virtual Delivery Agent** on the host or base image, following the instructions [here](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas.html)
 
 Using this image, create the appropriate machine catalogs and delivery groups in Citrix Studio/ Citrix Cloud Manage tab before trying to establish sessions and accessing the Teams client.
 
@@ -166,8 +166,8 @@ Connect to the Office 365 network as directly as possible from the branch office
 Bypass proxy servers, network SSL intercept, deep packet inspection devices, and VPN hairpins (use split tunneling if possible) at the branch office. If you must use them, make sure RTP/UDP Teams traffic is unhindered. Plan and provide enough bandwidth. Check each branch office for network connectivity and quality.
 The WebRTC media engine in Workspace app (HdxTeams.exe) uses the Secure RTP protocol for multimedia streams that are offloaded to the client. The following metrics are recommended for guaranteeing a great user experience
 
--  Latency (one way) < 50 milli seconds
--  Latency (RTT) < 100 milli seconds
+-  Latency (one way) < 50 milliseconds
+-  Latency (RTT) < 100 milliseconds
 -  Packet Loss < 1% during any 15 second interval
 -  Packet inter-arrival jitter < 30 ms during any 15 second interval
 
@@ -175,13 +175,13 @@ In terms of bandwidth requirements, optimization for Microsoft Teams can use a w
 
 Citrix minimum recommendations for bandwidth and codes for specific type of content are:
 
--  Audio (each way)  ~90 kbps   G.722
--  Audio (each way)  ~60 kbps   Opus*
--  Video (each way)  ~700 kbps  H264 360p @ 30 fps 16:9
--  Video (each way)  ~2500 kbps H264 720p @ 30 fps 16:9
--  Screen sharing    ~300 kbps  H264 1080p @ 15 fps
+-  Audio (each way) ~90 kbps using G.722
+-  Audio (each way) ~60 kbps using Opus*
+-  Video (each way) ~700 kbps using H264 360p @ 30 fps and 16:9
+-  Video (each way) ~2500 kbps using H264 720p @ 30 fps and 16:9
+-  Screen sharing ~300 kbps using H264 1080p @ 15 fps
 
-(*) Opus supports constant and variable bitrate encoding from 6 kbps up to 510 kbps, and it is the preferred codec for p2p calls between two VDI users
+(*) Opus supports constant and variable bitrate encoding from 6 kbps up to 510 kbps, and it is the preferred codec for Peer to Peer calls between two VDI users
 
 ## Common deployment related tips and questions
 
@@ -208,33 +208,33 @@ In cases where CDViewer is in full screen mode and spanning across multi-monitor
 
 Here are a few ways to resolve the issues users may face:
 
-**Sympton**: Installation Failure
+**Symptom**: Installation Failure
 
 **Cause**: Inconsistent state of Citrix redirection services
 
-**Resoultion**: Validate the following:
+**Resolution**: Validate the following:
 
 1.  Teams automatically launches for all users after sign-in to Windows
-1.  Existence of directories and files:
-        -  Program Files (x86) or Program Files
-                -  Microsoft\Teams\current folder with Teams.exe, which is main application
-                -  Teams Installer folder with Teams.exe, which is EXE installer (do not ever run this manually!)
-        -  %LOCALAPPDATA%
-                -  Microsoft\Teams is either not there, or mostly empty (only a couple of files)
+1.  Existence of directories and files
+-  Program Files (x86) or Program Files
+    -  Microsoft\Teams\current folder with Teams.exe, which is main application
+    -  Teams Installer folder with Teams.exe, which is EXE installer (do not ever run this manually!)
+-  %LOCALAPPDATA%
+    -  Microsoft\Teams is either not there, or mostly empty (only a couple of files)
 1.  Existence of shortcuts:
-        -  Teams desktop client shortcut, pointing to Program Files…, in following places:
-                -  On desktop
-                -  In Start Menu
+-  Teams desktop client shortcut, pointing to Program Files…, in following places:
+    -  On desktop
+    -  In Start menu
 1.  Existence of Windows Registry information:
-        -  A value named Teams, of type REG_SZ, in one of the following key paths in registry:
-                -  Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run
-                -  Computer\HKEY_LOCAL_MACHINE\Microsoft\Windows\CurrentVersion\Run
+-  A value named Teams, of type REG_SZ, in one of the following key paths in registry:
+    -  Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run
+    -  Computer\HKEY_LOCAL_MACHINE\Microsoft\Windows\CurrentVersion\Run
 
-**Sympton**: Failure while placing an audio/video call and cannot find the audio/video devices connected
+**Symptom**: Failure while placing an audio/video call and cannot find the audio/video devices connected
 
 **Cause**: Inconsistent state of Citrix redirection services
 
-**Resoultion**: Validate that the HDXTeams.exe process is running on the VDA. If the process is not running then we will need to restart Citrix Redirection Services, do the following -in this order- to check if HdxTeams.exe is getting launched
+**Resolution**: Validate that the HDXTeams.exe process is running on the VDA. If the process is not running then we will need to restart Citrix Redirection Services, do the following -in this order- to check if HdxTeams.exe is getting launched
 
 -  Exit Teams on VDA
 -  Start services.msc on VDA
@@ -245,11 +245,11 @@ Here are a few ways to resolve the issues users may face:
 -  Restart "Citrix HDX HTML5 Video Redirection Service"
 -  Launch Teams on VDA
 
-**Sympton**: No incoming ring notification tone on a Citrix Session
+**Symptom**: No incoming ring notification tone on a Citrix Session
 
 **Cause**: Audio being played on the VDA host
 
-**Resoultion**: No audio devices on Citrix session / incorrect local default audio device
+**Resolution**: No audio devices on Citrix session / incorrect local default audio device
 
 -  Make sure that a remote audio device is present on the Citrix session.
 -  Make sure that Citrix Redirection service is running on remote host. Restart it (solves most problems).
