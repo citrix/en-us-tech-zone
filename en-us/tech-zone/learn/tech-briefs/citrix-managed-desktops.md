@@ -11,15 +11,15 @@ layout: doc
 
 Citrix Managed Desktops is a turnkey Microsoft Azure hosted solution to deliver virtual desktops and apps. The admin can deliver Windows 10 multi-session desktops, Windows 10 Enterprise and Windows 7 ESU single session desktops. Also, Windows Server 2012 R2, 2016, and 2019 OS sessions or apps running on any of the above OS using a GUI interface in just a few clicks.
 
-Admins can extend the organization’s on-premises deployment to burst into Azure. Admins can provide access to contractors or third party users without having to bring up machines in thier own environment. It can also be used for setting up training labs or dev test setups that need to be brought up on demand.
+Admins can extend the organization’s on-premises deployment to burst into Azure. Admins can provide access to contractors or third party users without having to bring up machines in their own environment. It can also be used for setting up training labs or dev test setups that need to be brought up on demand.
 
 For companies undertaking a merger or acquisition, supporting the on-boarding of the employees is critical to success. Citrix Managed Desktops can help quickly provide access to the key applications and desktops that are needed to incorporate new employees and keep them productive.
 
-As it is a Desktop-as-a-Service that can be subscribed to on a monthly subscription. Citrix provides a single bill for the service and the Azure resource consumption, if the organization chooses to use Citrix managed Azure for the workloads. 
+As it is a Desktop-as-a-Service that can be subscribed to on a monthly subscription. Citrix provides a single bill for the service and the Azure resource consumption, if the organization chooses to use Citrix managed Azure for the workloads.
 
 With this option, organizations in the U.S., the E.U., and Asia/Pacific can deploy the VMs in four Azure locations globally: U.S. East, U.S. West, West Europe, and Australia East (and more to come soon). The workload locations combined with [11 global points of presence of Citrix Gateway service in Azure](https://www.citrix.com/about/trust-center/privacy-compliance.html) helps optimize the experience of HDX delivery. Once the user reaches the Gateway PoP, then the traffic is redirected to the closest workload location over the superfast Azure backbone.
 
-Citrix is now enabling customers and partners, the capability to use thier own Azure subscription along with Citrix Managed Desktops. Now customers and partners alike have the flexibility to use any Azure region or VM type as well as the option of leveraging reserved instance pricing from Microsoft.
+Citrix is now enabling customers and partners, the capability to use their own Azure subscription along with Citrix Managed Desktops. Now customers and partners alike have the flexibility to use any Azure region or VM type as well as the option of leveraging reserved instance pricing from Microsoft.
 
 The standard deployment model and authentication flow would be as follows:
 
@@ -82,7 +82,7 @@ Here the users’ accounts are in the organization’s on-premises Active Direct
 
 ![Deployment_Scenario_5](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_6-deployment-scenario-5.png)
 
-### 3)	Domain Joined to and users’ accounts in organization’s on premises Active Directory
+### 3) Domain Joined to and users’ accounts in organization’s on premises Active Directory
 
 Here both the machines’ and users’ accounts are in the organization’s on-premises Active Directory. The Citrix Managed Desktops Azure subscription (SD-WAN virtual appliance installed) and the customer’s on-premises (SD-WAN branch appliance installed) locations are connected to each other using SD-WAN. These appliances are managed by the customer using the SD-WAN Orchestrator in Citrix Cloud. This deployment is the simplest (as there is no need for syncing the on prem Active Directory with the customer’s Azure AD) and utilizes the optimizations built into SD-WAN to help ensure that the user gets the best experience possible.
 
