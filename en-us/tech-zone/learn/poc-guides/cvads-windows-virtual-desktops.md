@@ -380,6 +380,8 @@ While we wait, we can install the Citrix Virtual Apps and Desktops, Virtual Deli
 
     ![VDA Install - Additional Components](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_76.png)
 
+    **NOTE:** To see logon information in Citrix Director, select also Citrix User Profile Manager
+
 1.  Enter the **UPN for the Cloud Connector** VM and click **Test Connection**. Ensure that the test is successful a green tick appears next to the entered UPN. Click **Add** and click **Next**
 
     ![VDA Install - CC UPN](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_77.png)
