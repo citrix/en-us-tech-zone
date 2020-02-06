@@ -8,7 +8,7 @@ description: Copy & paste description from TOC here
 
 **Author:** [Rico Projer](https://www.linkedin.com/in/rico-projer-0a8b2354/), [Jason Delgado](https://www.linkedin.com/in/jason-delgado-819a0575/)
 
-**Special thanks:** [Saša Petrović](https://twitter.com/petrovicsasa), [Muhammad Dawood](https://www.linkedin.com/in/muhammad-dawood/), [Nick Czabaranek](https://www.linkedin.com/in/nick-czabaranek-9b03504/)
+**Special thanks:** [Saša Petrović](https://twitter.com/petrovicsasa), [Muhammad Dawood](https://www.linkedin.com/in/muhammad-dawood/), [Nick Czabaranek](https://www.linkedin.com/in/nick-czabaranek-9b03504/), [Martin Zugec](https://twitter.com/MartinZugec)
 
 ## Introduction
 
@@ -115,15 +115,7 @@ On its own, this mode provides the best user experience when heavy multimedia, 3
 
 ## HDX Graphics Configurations
 
-As the **Use Video Codec for Compression** policy is a good starting point to baseline your configuration, additional policies can be set to further customize your visual policies to fit your different workloads. By customizing these supporting policy settings, you can opt to reduce quality in certain areas to reclaim resources and achieve higher scalability and save on bandwidth. You can also opt to increase quality to support use-cases requiring precise visualizations, as in the healthcare industry.
-
-*  Visual Quality
-*  Use Hardware Encoding for Video Codec
-*  Preferred Color Depth for Simple Graphics
-*  Extra Color Compression
-*  Target Frame Rate
-*  Target Minimum Frame Rate
-*  Allow Visually Lossless Compression
+As the **Use Video Codec for Compression** policy is a good starting point to baseline your configuration, additional policies can be set to further customize your visual policies to fit your different workloads. By customizing these supporting policy settings, you can opt to reduce quality in certain areas to reclaim resources and achieve higher scalability and save on bandwidth. You can also opt to increase quality to support use-cases requiring precise visualizations, as in the healthcare industry. The chart below outlines these settings:
 
 ![HDX Graphics 2](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_002.png)
 
