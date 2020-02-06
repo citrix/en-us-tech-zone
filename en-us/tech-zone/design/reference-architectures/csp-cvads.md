@@ -9,10 +9,9 @@ layout: doc
 
 **Special Thanks:** [Selma Wei](https://Twitter.com/_selw), [Bala Swaminathan](https://Twitter.com/Bala)
 
-# Audience
+
 ## Audience
-### Audience
-#### Audience
+
 
 This document is intended for IT deciscion makers, consultants, solution integrators, cloud engineers, and CSP Partners whom are seeling to deploy or migrate existing multi-tenant Citrix Virtual Apps & Desktops environment to the multi-tenanat Citrix Cloud.
 
