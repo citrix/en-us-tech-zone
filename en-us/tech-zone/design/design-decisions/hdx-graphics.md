@@ -8,7 +8,7 @@ description: Copy & paste description from TOC here
 
 **Author:** [Rico Projer](https://www.linkedin.com/in/rico-projer-0a8b2354/), [Jason Delgado](https://www.linkedin.com/in/jason-delgado-819a0575/)
 
-**Special thanks:** [Saša Petrović](https://twitter.com/petrovicsasa), [Muhammad Dawood](https://www.linkedin.com/in/muhammad-dawood/), [Nick Czabaranek](https://www.linkedin.com/in/nick-czabaranek-9b03504/)
+**Special thanks:** [Saša Petrović](https://twitter.com/petrovicsasa), [Muhammad Dawood](https://www.linkedin.com/in/muhammad-dawood/), [Nick Czabaranek](https://www.linkedin.com/in/nick-czabaranek-9b03504/), [Martin Zugec](https://twitter.com/MartinZugec)
 
 ## Introduction
 
@@ -115,15 +115,7 @@ On its own, this mode provides the best user experience when heavy multimedia, 3
 
 ## HDX Graphics Configurations
 
-As the **Use Video Codec for Compression** policy is a good starting point to baseline your configuration, additional policies can be set to further customize your visual policies to fit your different workloads. By customizing these supporting policy settings, you can opt to reduce quality in certain areas to reclaim resources and achieve higher scalability and save on bandwidth. You can also opt to increase quality to support use-cases requiring precise visualizations, as in the healthcare industry.
-
-*  Visual Quality
-*  Use Hardware Encoding for Video Codec
-*  Preferred Color Depth for Simple Graphics
-*  Extra Color Compression
-*  Target Frame Rate
-*  Target Minimum Frame Rate
-*  Allow Visually Lossless Compression
+As the **Use Video Codec for Compression** policy is a good starting point to baseline your configuration, additional policies can be set to further customize your visual policies to fit your different workloads. By customizing these supporting policy settings, you can opt to reduce quality in certain areas to reclaim resources and achieve higher scalability and save on bandwidth. You can also opt to increase quality to support use-cases requiring precise visualizations, as in the healthcare industry. The chart below outlines these settings:
 
 ![HDX Graphics 2](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_002.png)
 
@@ -267,9 +259,9 @@ The build-in graphics status indicator can be enabled through Citrix policy by e
 
 The **Use Video Codec for Compression** is the policy to configure the use of either HDX Thinwire with Adaptive JPEG, HDX Thinwire with Selective H.264, or Full Screen H.264.
 
-Each HDX graphics mode has benefits and trade-offs in terms of resource consumption, whether CPU or network utilization Resource consumption, particularly CPU, affects server scalability.
+Each HDX graphics mode has benefits and trade-offs in terms of resource consumption, whether CPU or network utilization. Resource consumption, particularly CPU, affects server scalability.
 
-Additional policies, such as Visual Quality, Target Framerate, and others can be customized to offset the resource consumption at the expense of minor visual quality, or increase quality where it is needed most Customize these policies to fit the uses-cases within your own environment Refer to the Visio Diagram to guide you through the process.
+Additional policies, such as Visual Quality, Target Framerate, and others can be customized to offset the resource consumption at the expense of minor visual quality, or increase quality where it is needed most. Customize these policies to fit the uses-cases within your own environment. Refer to the Visio Diagram to guide you through the process.
 
 Endpoint selection is essential for compatibility with your selected graphics mode. The VDA falls back to HDX Thinwire with Adaptive JPEG for endpoints without H.264 support.
 
