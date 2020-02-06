@@ -9,7 +9,7 @@ layout: doc
 
 **Special Thanks:** Kireeti Valicherla, Swaroop Joseph Varghese, and Alan Goldman
 
-Citrix Managed Desktops is a turnkey Microsoft Azure hosted solution to deliver virtual desktops and apps. The admin can deliver Windows 10 multi-session desktops, Windows 10 Enterprise and Windows 7 ESU single session desktops. Also, Windows Server 2012 R2, 2016, and 2019 OS sessions or apps running on any of the above OS using a GUI interface in just a few clicks.
+Citrix Managed Desktops is a turnkey Microsoft Azure hosted solution to deliver virtual desktops and apps. The admin can deliver Windows 10 multi-session desktops, Windows 10 Enterprise and Windows 7 ESU single session desktops. Also, Windows Server 2008 R2, 2012 R2, 2016, and 2019 OS sessions or apps running on any of the above OS using a GUI interface in just a few clicks.
 
 Admins can extend the organization’s on-premises deployment to burst into Azure. Admins can provide access to contractors or third party users without having to bring up machines in their own environment. It can also be used for setting up training labs or dev test setups that need to be brought up on demand.
 
@@ -98,7 +98,10 @@ Machine Creation Services (MCS) is used to provision the workload VMs in the con
 
 2)  The Windows 10 multi-session is new OS made available in Azure that allows more than one user to log in to a Windows 10 machine. This OS helps with reducing the number of machines that must be brought up in Azure to serve the same set of users. This OS also helps with fully utilizing the compute resources of the machines that are deployed. This type of machine does not require RDS CALs for allowing multiuser access.
 
-3)  The Windows Server 2012 R2 / 2016 / 2019 are server operating systems that allow multiple users to connect to a single machine. One of these OSs can be used to serve applications to users or provide access to desktop sessions (which can be skinned to look like desktop operating system sessions). These OSs are a cheaper option to deliver desktops than option 1. Note: Each user connecting to this machine requires an RDS CAL or RDS SAL.
+3)  The Windows Server 2008 R2 / 2012 R2 / 2016 / 2019 are server operating systems that allow multiple users to connect to a single machine. One of these OSs can be used to serve applications to users or provide access to desktop sessions (which can be skinned to look like desktop operating system sessions). These OSs are a cheaper option to deliver desktops than option 1. 
+Note: Each user connecting to this machine requires an RDS CAL or RDS SAL.
+
+Note: For Windows 7 ESU and the Windows Server 2008 R2 operating systems, the version of the Virtual Delivery agent to be installed on the image must be Citrix Virrual Apps and Desktop 7.15 LTSR.
 
 ![Master_Images_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_7-master-images-ss.png)
 
@@ -172,9 +175,11 @@ Existing VNet peered networks are listed here. The admin can add a new VNet peer
 
 ## User Defined Routes
 
-Some organizations using Citrix Managed Desktops service may have requirements for outgoing Internet traffic to originate from a known Static IP address. Due to the default routing mechanisms built into Azure, traffic originating from a deployed machine will originate from a random set of public IPs. The solution is to configure a router or firewall that has a static assigned public IP on the machine’s WAN interface. For this to work, the machine must be joined to the domain on the Azure subscription of the organization (Domain joined deployment scenarios 1 and 2) and vnet peering is enabled between the machines and the customer’s Azure subscription. The Azure subscription network must have 2 subnets, one that contains all the Azure resources (call it LAN) and the one containing the external facing (outgoing) IP address (call it WAN). The WAN subnet can have a small network address space as it only is used for external routing.
+Some organizations using Citrix Managed Desktops service may have requirements for outgoing Internet traffic to originate from a known Static IP address. Due to the default routing mechanisms built into Azure, traffic originating from a deployed machine will originate from a random set of public IPs. The solution is to configure a Azure Network Virtual Appliance (NVA) that has a static assigned public IP on the NVA’s WAN interface. For this to work, the machine must be joined to the domain on the Azure subscription of the organization (Domain joined deployment scenarios 1 and 2) and vnet peering is enabled between Citrix Managed Azure and the customer’s Azure subscription. The Azure subscription network must have 2 subnets, one that contains all the Azure resources (call it LAN) and the one containing the external facing (outgoing) IP address (call it WAN). The WAN subnet can have a small network address space as it only is used for external routing.
 
-For the outgoing IP to be static the admin must assign it to a router or a firewall. Configure the router to NAT the LAN IP to the WAN IP. In the example found in this link, a Windows Server 2016 Datacenter edition VM is used for the outgoing IP.
+For the outgoing IP to be static the admin must assign it to an Azure NVA. With the NVA in place there are additional feauters that are available including but not limited to URL filtering, content / SSL inspection, threat detection such virus scan etc.
+
+Configure the Azure NVA to NAT the LAN IP to the WAN IP. In the example found in this link, a Windows Server 2016 Datacenter edition VM is used for the outgoing IP.
 Then add an route in the Citrix Managed Desktops UI, **Network Connections** > **Azure VNet Peering** previously created > **Routes** tab. Add a new route that points to the LAN IP of the router.
 
 ![User Defined Routes](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_20-user-defined-routes-ss.png)
