@@ -70,13 +70,12 @@ These components are by default, bundled into Citrix Workspace app and the Virtu
 
 ### OS versions supported by the Optimization for Teams with Microsoft Teams desktop app
 
--  VM hosting Teams client – Install Citrix Virtual Delivery Agent (VDA) version 1909 or higher
+-  VM hosting Teams client – Install Citrix Virtual Delivery Agent (VDA) version 1906.2 or higher
     -  Single session OS - Microsoft Windows 10 64-bit, minimum version 1607 up to 1909
     -  Multi-session OS - Microsoft Windows Server 2019, 2016, 2012 R2 (Standard and Datacenter Editions)
 
 -  Windows client machine - Install Citrix Workspace app 1907 for Windows or higher
     -  Microsoft Windows 10, 8, 7 (32-bit & 64-bit editions, including Embedded editions 2016 LTSR or 2019 LTSC)
-    -  While Citrix Workspace app 1905 for Windows also supports Optimization for Teams, it doesn’t support outgoing screen sharing
 
 ### Supported Teams headsets and handsets
 
@@ -271,6 +270,6 @@ Here are a few ways to resolve the issues users may face:
 
 ## Summary
 
-We support Microsoft Teams infrastructures: whether in a hybrid model or an Office 365 (cloud) as long as configuration allows for successful internal and external client communication.
+We support Microsoft Teams infrastructures: whether on-prem or Office 365 (cloud) as long as configuration allows for successful internal and external client communication.
 
 We have walked through the way to go about evaluating the Citrix Optimization for Teams and pointed you to the resources for deploying the rest. The Optimization for Microsoft Teams greatly increases server scalability and offers zero degradation in audio-video quality and optimal network bandwidth efficiency. It is the Microsoft recommended solution for a VDI deployment. If there are Linux clients in your environment, then it’s the only solution, that Microsoft and Citrix, jointly support.
