@@ -259,9 +259,9 @@ The build-in graphics status indicator can be enabled through Citrix policy by e
 
 The **Use Video Codec for Compression** is the policy to configure the use of either HDX Thinwire with Adaptive JPEG, HDX Thinwire with Selective H.264, or Full Screen H.264.
 
-Each HDX graphics mode has benefits and trade-offs in terms of resource consumption, whether CPU or network utilization Resource consumption, particularly CPU, affects server scalability.
+Each HDX graphics mode has benefits and trade-offs in terms of resource consumption, whether CPU or network utilization. Resource consumption, particularly CPU, affects server scalability.
 
-Additional policies, such as Visual Quality, Target Framerate, and others can be customized to offset the resource consumption at the expense of minor visual quality, or increase quality where it is needed most Customize these policies to fit the uses-cases within your own environment Refer to the Visio Diagram to guide you through the process.
+Additional policies, such as Visual Quality, Target Framerate, and others can be customized to offset the resource consumption at the expense of minor visual quality, or increase quality where it is needed most. Customize these policies to fit the uses-cases within your own environment. Refer to the Visio Diagram to guide you through the process.
 
 Endpoint selection is essential for compatibility with your selected graphics mode. The VDA falls back to HDX Thinwire with Adaptive JPEG for endpoints without H.264 support.
 
