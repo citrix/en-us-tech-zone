@@ -63,7 +63,7 @@ These components are by default, bundled into Citrix Workspace app and the Virtu
 1.  Citrix Workspace app’s wfica32.exe (HDX engine) spawns a new process called HdxTeams.exe, which is the new WebRTC engine used for Teams optimization.
 1.  HdxTeams.exe and Teams.exe have a 2-way virtual channel path and can start processing multimedia requests.
 
-—–User calls——
+    —–User calls——
 
 1.  Peer A clicks the call button. Teams.exe communicates with the Teams services in Azure establishing an end-to-end signaling path with Peer B. Teams asks HdxTeams for a series of supported call parameters (codecs, resolutions, and so forth, which is known as a Session Description Protocol (SDP) offer). These call parameters are then relayed using the signaling path to the Teams services in Azure and from there to the other peer.
 1.  The SDP offer/answer (single-pass negotiation) and the Interactive Connectivity Establishment (ICE) connectivity checks (NAT and Firewall traversal using Session Traversal Utilities for NAT (STUN) bind requests) complete. Then, Secure Real-time Transport Protocol (SRTP) media flows directly between HdxTeams.exe and the other peer (or O365 conference servers if it is a Meeting).
