@@ -134,9 +134,9 @@ Admins have the options for the catalog type, the subscription where the VMs are
 Catalog types available are:
 **Multi-session** - This type is for Windows 10 Multi-session or Windows Server 2016 OS machines. More than one user is expected to log in to a single machine. Giving admins the benefit of maximizing usage of machine resources and reducing the no of machines needed to serve a particular number of users.
 
-**Static (personal desktops)** – This type is for Windows 10 and Windows 2012 R2 or Windows 2016 (server VDI) OS machines. The machines are to be assigned to a specific individual and retain their data and state across reboots. The machine is intended to be used over time by the same user.
+**Static (personal desktops)** – This type is for Windows 7 ESU, Windows 10 and Windows 2008 R2 / 2012 R2 / 2016 / 2019 (server VDI) OS machines. The machines are to be assigned to a specific individual and retain their data and state across reboots. The machine is intended to be used over time by the same user.
 
-**Random (pooled desktops)** – This type is for Windows 10 and Windows 2012 R2 or 2016 (server VDI) machines. The machines can be assigned to any user who requests a desktop. These machines are reset to their master image defaults after the session is logged off. So they can be used to deliver a repeatable desktop to the next user that logs in, for example to a shift worker, who needs the same environment as the previous shift but not their data.
+**Random (pooled desktops)** – This type is for Windows 7 ESU, Windows 10 and Windows 2008 R2 / 2012 R2 / 2016 / 2019 (server VDI) machines. The machines can be assigned to any user who requests a desktop. These machines are reset to their master image defaults after the session is logged off. So they can be used to deliver a repeatable desktop to the next user that logs in, for example to a shift worker, who needs the same environment as the previous shift but not their data.
 
 The options for **Azure Subscription** allow the admin to choose where the VMs are to be located. The location might be in the Citrix managed Azure subscription or the organization's Azure subscription.
 
