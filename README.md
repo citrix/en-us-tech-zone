@@ -136,7 +136,7 @@ Markdown does not allow you to use multiple consecutive blank lines in the docum
 
 Both headers and lists should have an empty line **before** and **after** them.
 
-**To fix:** Add empty line before and after any header and/or list.
+**To fix:** Add an empty line before and after any header and/or list.
 
 [More information - headers](https://github.com/DavidAnson/markdownlint/blob/v0.17.0/doc/Rules.md#md022)
 [More information - lists](https://github.com/DavidAnson/markdownlint/blob/v0.17.0/doc/Rules.md#md032)
