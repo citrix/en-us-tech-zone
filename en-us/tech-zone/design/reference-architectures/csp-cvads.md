@@ -46,7 +46,7 @@ Citrix Cloud allows Citrix Service Providers to create multiple types of workspa
 
 [![CSP-Image-1](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_001.png)]
 
-[Citrix Cloud](https://docs.citrix.com/en-us/citrix-cloud.html )
+[More information Citrix Cloud](https://docs.citrix.com/en-us/citrix-cloud.html )
 
 ## Citrix Workspace
 
@@ -76,7 +76,7 @@ The traditional deployment in a hosting environment for Citrix Virtual Apps and 
 [![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_002.png)]
 
 ## Security and Isolation 
-The Citrix Virtual Apps and Desktops Service Architecture consists of layers that connect together to create a complete end-to-end solution for service providers. For general conceptual architecture, and to understand how all layers flow together, please refer to Citrix Tech Zone
+The Citrix Virtual Apps and Desktops Service Architecture consists of layers that connect together to create a complete end-to-end solution for service providers. For general conceptual architecture, and to understand how all layers flow together, please refer to [Citrix Tech Zone](https://docs.citrix.com/en-us/tech-zone.html)
 
 [![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_003.png)]
 
@@ -157,7 +157,7 @@ For very small customers, it is not the most economic model, however there are m
 [Private Workspace, showing that the tenant has a fully isolated Workspace and no service instance is shared from the Service Provider’s Cloud account]
 
 Some large enterprise customers need the ability to have a private Workspace managed by their Citrix Service Provider for complex applications, and strict security and compliance requirements, the private workspace does not have any shared components with other customers of the same service provider. The service provider will need to be invited by the customer to manage the Cloud environment.  This allows for complete isolation, flexibility and control for the customer and service provider.  The management and control from the Citrix Service Providers perspective are duplicated with the complete service instance being dedicated to the customer.
-The design and deployment for this mode is the same as standalone enterprise accounts on Citrix Cloud except the service provider is invited to connect and administer these accounts, and this is the deployment model available to-date before multi-tenant support became available at the end of 2019. The detailed design, deployment, and best practices of the single tenant private workspace model can be found on Citrix Tech Zone.
+The design and deployment for this mode is the same as standalone enterprise accounts on Citrix Cloud except the service provider is invited to connect and administer these accounts, and this is the deployment model available to-date before multi-tenant support became available at the end of 2019. The detailed design, deployment, and best practices of the single tenant private workspace model can be found on [Citrix Tech Zone](https://docs.citrix.com/en-us/tech-zone.html).
 
 ***Link***
 
@@ -227,7 +227,7 @@ Many of our Citrix Service Providers are also Microsoft Cloud Solution Providers
 Service providers hosting their customers in Resource Groups in Azure, uses a collection of assets (e.g. Virtual Network, Virtual Machines, Storage accounts) in logical allocations for easy automatic provisioning, monitoring, and access control. They divide the dedicated or shared resource in separate Azure virtual networks, typically the access will be controlled by the Cloud Connectors linking the Azure resource to Citrix Cloud.
 For more recommendations regarding Citrix Virtual Apps and Desktops service on Azure see:
 
-***link***
+[Microsoft Azure](https://www.citrix.com/blogs/2018/06/07/cloud-guidepost-citrix-virtual-apps-and-desktops-service-on-azure-part-2/)
 
 ## Amazon Web Services
 
@@ -236,14 +236,14 @@ In Amazon Elastic Compute Cloud, an Availability Group is a collection of assets
 The Virtual Machines used for Citrix Virtual Apps and Desktops workloads in EC2 are typically the T type machines.  These Virtual Machines have the best balance for CPU and memory for Citrix Service Providers scaling up and down busing Auto Scale to accommodate customer requirements and control the cost. Any unused workloads would be reduced during off-peak hours and increased prior to peak hours.
 For more details regarding Citrix Virtual Apps and Desktops on AWS see:
 
-***link***
+[Amazon Web Services](https://aws.amazon.com/about-aws/whats-new/2019/01/deploy-citrix-virtual-apps-and-desktops-service-on-aws-with-new-quick-start/)
 
 ## Google Cloud
 The Google Public Cloud offering for Citrix Virtual Apps and Desktops service allows Service Providers to provision and manage machines within a Project on Google Cloud Platform (GCP), using Machine Creation Services (MCS) to provision workloads and enable lifecycle image management. 
 The automated provisioning for GCP, working in conjunction with Citrix Autoscale to scale up and down these workloads on demand, at least one Project is needed to run the Citrix Virtual Apps and Desktops Service in conjunction with the Compute Engine API and the “Cloud Resource Manager API. This is all controlled via a GCP Service Account and can be shared between multiple CGP Projects, and the MCS Service will use it to power manage the virtual machines. 
 For details on setting up a Citrix Virtual Apps and Desktops service resource location on GCP, see:
 
-***link***
+[Google Cloud](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html)
 
 ## Deployment Steps
 ## Onboard a Customer
@@ -306,7 +306,7 @@ Once the “add service” process is completed in a few minutes, “Manage” o
 ## Configure Multi-tenant Virtual Apps and Desktops Service for the New Customer
 This document focuses on the deployment configurations of multi-tenant architecture models, for single tenant Virtual Apps and Desktops Service refer to
 
-***link***
+[Virtual Apps and Desktops Service](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure.html)
 
 The following section of multi-tenant deployment uses a hybrid cloud solution as an example to run workloads in an on-premises datacenter.
 
@@ -326,7 +326,7 @@ When connected to the Citrix Cloud Console, select Resource Location (Edit or Ad
 [![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_019.png)]
 
 Select Add Resource Location, name the Resource location to the multi-tenant nomenclature choose add Cloud Connector, download and install the cloud connector to at least two dedicated Servers, for detailed steps please follow
-***link***
+[How to install Citrix Cloud Connector](https://support.citrix.com/article/CTX223580)
 You can view the Active Directory Domain and Cloud Connectors after deployment.
 
 
@@ -420,7 +420,7 @@ Note: The Federated Domain described here for multi-tenant Virtual Apps and Desk
 ## Subscribe Customer User Groups to Offerings
 Under Single Tenant architecture model where each customer has own instance of the service, managing subscribers to libraries is performed directly within the customer’s cloud account, for details please refer to the online document 
 
-***link***
+[Assign users and groups to service offerings using Library](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/assign-users-to-offerings-using-library.html)
 
 Under multi-tenant architecture models, subscribing user groups to libraries is performed inside the CSP partner’s Citrix Cloud account.  The preferred method is to assign well named Active Directory groups to the library resources for easy administration and scalability. 
 To add users to a published application or desktop offering from either a Shared or Dedicated resource location of the multi-tenant service, locate the Library Offerings from the Citrix Cloud homepage, In the Library offering, select the View Library option, search or find the resource you would like to add users too using the three dot menu, Manage Subscribers, chose from the list of Managed domains and then add the Resource Group.
@@ -541,9 +541,9 @@ VM	Virtual Machine
 11.	References
 Supported Hypervisors for Virtual Desktops (XenDesktop) and Provisioning Services
 
-***link***
+[](https://support.citrix.com/article/CTX131239 )
 
 Supported Host Connection Resources
 
-***link***
+[](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/system-requirements.html)
 
