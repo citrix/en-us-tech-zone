@@ -48,19 +48,19 @@ Depending on the HDX mode configured, these categories are encoded by different 
 So, to recap the following three different flavors can be configured:
 
 **HDX Thinwire with Adaptive JPEG**
-Text: RLE
-Static images: JPEG
-Moving Images: Adaptive JPEG
+*  Text: RLE
+*  Static images: JPEG
+*  Moving Images: Adaptive JPEG
 
 **HDX Thinwire with Selective H.264**
-Text: RLE
-Static images: JPEG
-Moving Images: H.264
+*  Text: RLE
+*  Static images: JPEG
+*  Moving Images: H.264
 
 **Full Screen H.264**
-Text: RLE (or H.264 if Optimize for 3D graphics workload has been enabled)
-Static images: H.264
-Moving Images: H.264
+*  Text: RLE (or H.264 if Optimize for 3D graphics workload has been enabled)
+*  Static images: H.264
+*  Moving Images: H.264
 But how can these modes be configured?
 
 In the next section, we will cover how these modes can be configured.
