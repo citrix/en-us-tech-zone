@@ -10,7 +10,7 @@ David Johnson, and Joanne Lei
 
 ### Contributors
 
-Special thanks to the following people who contributed to this document: Nick Czabaranek, Josh Fleming, Matt Lull, Ryan McLure, Rich Meesters, Arnaud Pain, James Richards, and Neil Spellings. Cheers! 
+Special thanks to the following people who contributed to this document: Nick Czabaranek, Josh Fleming, Matt Lull, Ryan McLure, Rich Meesters, Arnaud Pain, James Richards, and Neil Spellings. Cheers!
 
 ### Revision History
 
@@ -20,44 +20,16 @@ Special thanks to the following people who contributed to this document: Nick Cz
 
 ### Audience and Objective
 
-This document is intended to help existing and prospective Citrix
-partners and customers analyze and understand the most critical design
-decisions necessary to successfully deploy Citrix virtualization
-technologies on Amazon’s public cloud. It is not meant to be a “How-To”
-reference - Citrix considers those [Deployment Guides](https://docs.citrix.com/en-us/tech-zone/build/deployment-guides.html),
-and they are now delivered and maintained separately from
-[Reference Architectures](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures.html).
-In this document we will be leveraging the Citrix Architectural Design
-Framework to organize and present the leading practices,
-recommendations, and design patterns used by Citrix and select Citrix
-consulting partners.
+This document is intended to help existing and prospective Citrix partners and customers analyze and understand the most critical design decisions necessary to successfully deploy Citrix virtualization technologies on Amazon’s public cloud. It is not meant to be a “How-To” reference - Citrix considers those [Deployment Guides](https://docs.citrix.com/en-us/tech-zone/build/deployment-guides.html), and they are now delivered and maintained separately from [Reference Architectures](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures.html). In this document we will be leveraging the Citrix Architectural Design Framework to organize and present the leading practices, recommendations, and design patterns used by Citrix and select Citrix consulting partners.
 
 ## Overview and Executive Summary
 
-Citrix virtualization and networking technologies are very comprehensive
-and mature, having successfully served the needs of enterprises large
-and small for nearly three decades. There are many ways in which
-Citrix’s virtualization and networking technologies can be licensed,
-deployed, integrated, and managed in order to meet a broad variety of
-use cases, business types, integration requirements, and operational
-models. This paper has been written for the Citrix customer/partner
-who’s considering or planning to deploy these technologies on AWS’
-public cloud infrastructure.
+Citrix virtualization and networking technologies are very comprehensive and mature, having successfully served the needs of enterprises large and small for nearly three decades. There are many ways in which Citrix virtualization and networking technologies can be licensed, deployed, integrated, and managed to meet a broad variety of use cases, business types, integration requirements, and operational models. This paper has been written for the Citrix customer/partner who’s considering or planning to deploy these technologies on AWS’ public cloud infrastructure.
 
-For both existing customers looking to modernize their infrastructure or
-new customers looking to deploy Citrix virtualization and networking
-technologies, there are a number of key high and low level decisions
-which need to be made along the way to help facilitate a successful
-deployment. In order to help customers and partners understand these
-decision points, we have introduced and/or defined some specific
-terminology to set the appropriate context, then used this context to
-highlight the critical decisions and implications you’ll want to
-consider as you’re planning your deployment.
+For both existing customers looking to modernize their infrastructure and new customers looking to deploy Citrix virtualization and networking technologies, there are several key high and low level decisions which need to be made along the way to help facilitate a successful deployment. To help customers and partners understand these decision points, we have introduced and/or defined some specific terminology to set the appropriate context, then used this context to highlight the critical decisions and implications you’ll want to consider as you plan your deployment.
 
 We start by defining two primary technology adoption models:
-**Customer Managed** and **Cloud Services**. We
-then break the [components of a Citrix virtualization system](#citrix-virtualization-system-components)
-down into multiple subsystems, and categorize them by adoption model:
+**Customer Managed** and **Cloud Services**. We then break the [components of a Citrix virtualization system](#citrix-virtualization-system-components) down into multiple subsystems, and categorize them by adoption model:
 
 | Adoption Model / Subsystem function | Customer Managed (installed from downloaded binaries) | Cloud Service (delivered via Citrix Cloud) |
 |-----------------|-------------------------------|-------------------------------|
@@ -66,65 +38,21 @@ down into multiple subsystems, and categorize them by adoption model:
 | **Authentication** | Citrix StoreFront (plus Citrix ADC/Gateway for most use cases) | Citrix Workspace (plus Citrix ADC/Gateway for certain use cases) |
 | **HDX session proxy** | Citrix ADC/Gateway | Citrix Gateway Service |
 
-We take a stand for **cloud services**, recommending that **most
-organizations leverage or plan to leverage cloud services** where
-feasible. We don’t offer this stand blindly - while we do believe cloud
-services, in the long run, offer overwhelmingly positive benefits for
-our customers, we recognize that **not all organizations/deployments
-will be able to leverage cloud services for all subsystems today**. In
-some cases, use case requirements (in combination with technical
-attributes and/or shortcomings in a currently available/specific cloud
-service) will necessitate adopting a combination of cloud services and
-customer managed component: we focus on these in this paper. In other
-cases, non-technical items (politics, budgetary/contractual
-considerations, cloud readiness deficiencies, regulatory/compliance
-considerations, etc.) may discourage the usage of cloud services. In
-these instances, we recommend working with your Citrix
-partner/sales/engineering team to help overcome them. Through the rest
-of this paper, we go to great lengths to identify key capabilities,
-features, or attributes that will help customers decide which adoption
+We take a stand for **cloud services**, recommending that **most organizations leverage or plan to leverage cloud services** where feasible. We don’t offer this stand blindly - while we do believe cloud services, in the long run, offer overwhelmingly positive benefits for our customers, we recognize that **not all organizations/deployments will be able to leverage cloud services for all subsystems today**. In some cases, use case requirements (in combination with technical attributes and/or shortcomings in a currently available/specific cloud service) will necessitate adopting a combination of cloud services and customer managed component: we focus on these in this paper. In other cases, non-technical items (politics, budgetary/contractual considerations, cloud readiness deficiencies, regulatory/compliance considerations, etc.) may discourage the usage of cloud services. In these instances, we recommend working with your Citrix partner/sales/engineering team to help overcome them. Through the rest of this paper, we go to great lengths to identify key capabilities, features, or attributes that will help customers decide which adoption
 model to use for which subsystem and when.
 
-Next, we define and examine three common deployment scenarios,
-highlighting which adoption model is used for each subsystem:
+Next, we define and examine three common deployment scenarios, highlighting which adoption model is used for each subsystem:
 
--  **Greenfield**/**Cloud only** - leverages cloud services for all
-    Citrix virtualization system subsystems, plus AWS public cloud
-    services.
--  **Hybrid** (not to be confused with a ‘hybrid cloud’) - the most
-    common deployment model, the hybrid model uses CVADS for session
-    brokering and administration, with both customer managed and cloud
-    service options for the remaining subsystems.
--  **Lift and Shift** - as the name states, this model leverages
-    existing, customer managed CVAD, StoreFront, and ADC/Gateway and
-    either migrates these components to AWS as is, or installs them into
-    AWS as part of a workload migration to AWS public cloud services.
-    While this is a valid deployment model for certain specific use
-    cases, it comes with substantial caveats.
+-  **Greenfield**/**Cloud only** - leverages cloud services for all Citrix virtualization system subsystems, plus AWS public cloud services.
+-  **Hybrid** (not to be confused with a ‘hybrid cloud’) - the most common deployment model, the hybrid model uses CVADS for session brokering and administration, with both customer managed and cloud service options for the remaining subsystems.
+-  **Lift and Shift** - as the name states, this model leverages existing, customer managed CVAD, StoreFront, and ADC/Gateway and either migrates these components to AWS as is, or installs them into AWS as part of a workload migration to AWS public cloud services. While this is a valid deployment model for certain specific use cases, it comes with substantial caveats.
 
-Finally, we leverage the well documented **Citrix Architectural Design Framework** to
-organize and present the key design decisions to be considered when
-deploying Citrix virtualization technology on AWS. We keep our focus on
-“what’s different about Citrix on AWS” for clarity, providing links to
-other resources for more detailed information as needed.
+Finally, we leverage the well documented **Citrix Architectural Design Framework** to organize and present the key design decisions to be considered when deploying Citrix virtualization technology on AWS. We keep our focus on “what’s different about Citrix on AWS” for clarity, providing links to other resources for more detailed information as needed.
 
-We ultimately recommend that most customers leverage the
-**Hybrid deployment model** from day one, using the CVAD service
-for **session brokering and
-administration**. This
-provides the customer with key capabilities necessary to cost
-effectively run a Citrix virtualization system on AWS, substantially
-reduces the cost and complexity, provides access to the latest features
-and capabilities available, and simplifies the migration to and usage of
-other cloud services in the future. Either cloud services OR customer
-managed components can be leveraged for the remaining subsystems
-(depending upon the customers’ specific needs), though we recommend
-customers are clear as to why they’re using customer managed components
-and have a plan to move to cloud services in the future once the cloud
-services meet their specific needs.
+We ultimately recommend that most customers leverage the **Hybrid deployment model** from day one, using the CVAD service
+for **session brokering and administration**. This provides the customer with key capabilities necessary to cost effectively run a Citrix virtualization system on AWS, substantially reduces the cost and complexity, provides access to the latest features and capabilities available, and simplifies the migration to and usage of other cloud services in the future. Either cloud services OR customer managed components can be leveraged for the remaining subsystems (depending upon the customers’ specific needs), though we recommend customers are clear as to why they’re using customer managed components and have a plan to move to cloud services in the future once the cloud services meet their specific needs.
 
-For additional insights into leading practices for Citrix on AWS,
-please reference the following Cloud Guidepost articles:
+For additional insights into leading practices for Citrix on AWS, please reference the following Cloud Guidepost articles:
 
 -  [Leading practices for Citrix Cloud on AWS - Part 1](https://www.citrix.com/blogs/2019/09/23/cloud-guidepost-leading-practices-for-citrix-cloud-on-aws-part-1/)
 -  [Leading practices for Citrix Cloud on AWS - Part 2](https://www.citrix.com/blogs/2019/11/21/cloud-guidepost-leading-practices-for-citrix-cloud-on-aws-part-2/)
@@ -279,7 +207,7 @@ vs another will be covered later in this document:
 
 | Adoption Model / Subsystem function | Customer Managed (installed from downloaded binaries) | Cloud Service (delivered via Citrix Cloud) |
 |---|---|---|
-|**Session brokering and administration** - The core of any Citrix virtualization system: without this core subsystem, you don’t have any apps or desktops, and you can’t manage them! This subsystem is where you define, provision, and update Machine Catalogs (collections of “Virtual Delivery Agent” or “VDA” VM instances). It is also where you create Delivery Groups, assigning apps/desktops to users, as well as administer the environment and user sessions. | **CVAD - Citrix Virtual Apps and Desktops**, either Long term service release (LTSR) or Current Release (CR). If you install/configure a “Delivery Controller” in your environment, this is what you’re running. It also means you’re installing and managing your own Microsoft SQL Server infrastructure. Administrative functions in a customer managed (CVAD) deployment include Citrix Director and Citrix Studio. You install, configure, and manage these yourself using LTSR/CR binaries. Director also requires Microsoft SQL Server infrastructure. Citrix licensing is also a part of this subsystem, with customers installing/configuring/ managing Citrix license servers and license files. | **CVADS - Citrix Virtual Apps and Desktops Service**, delivered via Citrix Cloud. If you’re logging into Citrix Cloud and installing/registering “Cloud Connectors” in your environment, you’re using this Citrix Cloud service. You install and register Cloud Connectors on Windows instances you manage, and then Citrix keeps them evergreen and available. Citrix Cloud also provides and maintains most administrative functionality via web browser through the Citrix Cloud console. This includes cloud service versions of Citrix Studio and Citrix Director. There is no additional infrastructure for the customer to maintain, keep highly available, or patch/update: Citrix owns this administrative responsibility. |
+|**Session brokering and administration** - The core of any Citrix virtualization system: without this core subsystem, you don’t have any apps or desktops, and you can’t manage them! This subsystem is where you define, provision, and update Machine Catalogs (collections of “Virtual Delivery Agent” or “VDA” VM instances). It is also where you create Delivery Groups, assigning apps/desktops to users, as well as administer the environment and user sessions. | **CVAD - Citrix Virtual Apps and Desktops**, either Long term service release (LTSR) or Current Release (CR). If you install and configure a delivery controller in your environment, this is what you’re running. It also means you’re installing and managing your own Microsoft SQL Server infrastructure. Administrative functions in a customer managed (CVAD) deployment include Citrix Director and Citrix Studio. You install, configure, and manage these yourself using LTSR/CR binaries. Director also requires Microsoft SQL Server infrastructure. Citrix licensing is also a part of this subsystem, with customers installing/configuring/ managing Citrix license servers and license files. | **CVADS - Citrix Virtual Apps and Desktops Service**, delivered via Citrix Cloud. If you’re logging into Citrix Cloud and installing and registering Cloud connectors in your environment, you’re using this Citrix Cloud service. You install and register Cloud Connectors on Windows instances you manage, and then Citrix keeps them evergreen and available. Citrix Cloud also provides and maintains most administrative functionality via web browser through the Citrix Cloud console. This includes cloud service versions of Citrix Studio and Citrix Director. There is no additional infrastructure for the customer to maintain, keep highly available, or patch/update: Citrix owns this administrative responsibility. |
 |**UI (user interface) services** - Native Citrix Workspace apps (and web browsers for clientless access) ultimately connect to a URL. The subsystem behind the URL is configured by IT administrators to match corporate requirements for authentication, and to present virtualized apps/desktops, SaaS apps, and possibly much more for users to access. | **Citrix Storefront**. Also installed/ configured from CVAD LTSR or CR binaries, this role provides extreme flexibility for the most complex deployment scenarios. Typically deployed in pairs, with Citrix ADC/Gateway instances in front of them for high availability. Can aggregate and present apps and desktops from both customer managed/brokered environments (CVAD) and Citrix Cloud managed/brokered environments (CVADS). | **Citrix Workspace** (the service, not the Citrix Workspace app). Provided as a cloud service through Citrix Cloud, and includes a lot of next generation capabilities that can only be leveraged through this service. Can aggregate and present apps and desktops from both customer managed/brokered environments (CVAD) and Citrix Cloud managed/brokered environments (CVADS). |
 | **Authentication** - In this context, we’re referring to how users authenticate prior to accessing Citrix virtualized apps/desktops, files, SaaS apps, and more. Authentication in a Citrix environment is typically configured at the UI services layer, though Citrix ADC/Gateway can also play a big authentication role in all deployment models. Each of the UI service provider options (Citrix StoreFront or Citrix Workspace) have different authentication options available, some requiring a customer managed Citrix ADC/Gateway. | **Citrix StoreFront** (plus **Citrix ADC/Gateway** for most use cases). User authentication services can be provided a number of different ways, though ultimately require an Active Directory instance and valid user accounts. The customer manages the AD instance in most cases. Citrix ADC/Gateway instances can also play a big role in providing authentication services, and also provide a ton of advanced capabilities that are commonly leveraged for more complex environments. Citrix Federated Authentication Services (FAS) can also be installed and used to provide session SSO for complex use cases. | **Citrix Workspace** (plus **Citrix ADC/Gateway** for certain use cases). With Citrix Workspace (the service), user authentication sources and requirements are configured once for the Citrix Cloud tenant and leveraged by all users using this URL. It is configured for Active Directory out of the box, but for advanced use cases, can also be configured to support other authentication providers (Azure AD, Okta, customer managed Citrix Gateway, Google Cloud ID, or other SAML/OpenID/RADIUS providers). Some scenarios require customer managed Citrix ADC/Gateways and/or Citrix Federated Authentication Services (FAS) for the best user experience. |
 | **HDX session proxy** - The ability to securely and seamlessly connect users/devices outside the private corporate network to CVAD/CVADS delivered apps and desktops on the inside. | **Citrix ADC/Gateway** appliances (virtual or physical) - these appliances provide a ton of additional functionality for a Citrix virtualization system, but their core role is for securely proxying HDX session traffic to your VDA’s when clients are on public networks. Requires installation, configuration, SSL certificates, etc. Works with both StoreFront (customer managed UI services) and Workspace cloud service, as well as both Citrix managed and customer managed session brokering options. | **Citrix Gateway Service** - provided by Citrix Cloud, this service proxies HDX session traffic to your VDA’s as well, and it uses Citrix managed infrastructure to get the job done. Requires no public IP addresses, SSL certs, or ingress firewall rules to operate. Works with the Citrix Workspace cloud service and both Citrix Cloud managed and customer managed session brokering options (CVAD and CVADS). |
@@ -352,7 +280,7 @@ above).
 
 #### Greenfield Deployment
 
-The most common example of the greenfield deployment model is trial or
+The most common example of the green field deployment model is trial or
 proof of concept deployments of Citrix virtualization technology on AWS
 cloud. Since you’re essentially starting from scratch, the power of
 ‘infrastructure as code’ can be experienced since you’re not trying to
@@ -360,7 +288,7 @@ integrate with a bunch of existing ‘stuff’. It is also a fantastic
 opportunity to ‘play with’ a broad variety of cloud services and
 evaluate their suitability to your or your customers’ needs.
 
-Consequently, a greenfield deployment is also the quickest and easiest
+Consequently, a green field deployment is also the quickest and easiest
 Citrix virtualization system you can build, and you can simply tear it
 down if/when the system is no longer needed and you’re no longer paying
 for the resources it consumes. All you need for this type of deployment
@@ -394,7 +322,7 @@ depicted in the preceding diagram are used for hybrid and even lift and
 shift deployment types, so learning these design patterns will suit a
 Citrix on AWS architect well regardless of the deployment model.
 
-To summarize, the **greenfield deployment model** leverages all cloud
+To summarize, the **green field deployment model** leverages all cloud
 services, at least as a starting point:
 
 | Citrix virtualization system component | Provided by: |
@@ -406,7 +334,7 @@ services, at least as a starting point:
 | VM compute, networking, and storage | Amazon Elastic Compute Cloud (Amazon EC2), Amazon Virtual Private Cloud (Amazon VPC), Amazon Elastic Block Store (Amazon EBS) |
 | Active Directory and file systems | [AWS Directory Service for Microsoft Active Directory](https://aws.amazon.com/directoryservice/) and [Amazon’s FSx for Windows File Server](https://aws.amazon.com/fsx/windows/) (optional) |
 
-We mentioned earlier that the greenfield deployment model is often used
+We mentioned earlier that the green field deployment model is often used
 as a starting point for proof of concept and technology trial systems.
 If you start with this model and then drop in StoreFront or Citrix
 ADC/Gateway VPX’s in, you’re ostensibly creating our next type of
@@ -455,7 +383,7 @@ the primary reasons why we take this position:
 -  **Management savings** - With cloud services, Citrix shoulders the
     responsibility for keeping the services highly available,
     performant, secure, and up to date. You still build and manage your
-    VDA’s regardless, but don’t underestimate the value of delegating
+    VDAs regardless, but don’t underestimate the value of delegating
     these responsibilities\! Cloud services can go a long way towards
     freeing up IT resources to focus on providing unique value to their
     businesses instead of these critical but tedious and often
@@ -585,7 +513,7 @@ following:
 
 | Citrix virtualization system component | Provided by: |
 |---|---|
-| Session brokering and administration | Citrix Virtual Apps and Desktops (“CVAD”, customer managed using LTSR or CR downloadables) on Amazon EC2 |
+| Session brokering and administration | Citrix Virtual Apps and Desktops (customer managed using LTSR or CR downloadables) on Amazon EC2 |
 | UI services | Citrix StoreFront on Amazon EC2 (customer managed) |
 | Authentication |Citrix StoreFront on EC2 (Citrix ADC/Gateway optional but common) |
 | HDX session proxy | Citrix ADC/Gateway VPX on Amazon EC2 (customer managed) |
@@ -612,7 +540,7 @@ this document for more context.
 A lift and shift deployment model is often combined with a hybrid cloud
 infrastructure model, leveraging AWS Direct Connect, AWS VPN, Citrix
 SD-WAN, or similar networking technology to connect a customer managed
-datacenter and resources to AWS. customers can optionally adopt some of
+datacenter and resources to AWS. Customers can optionally adopt some of
 AWS’ more advanced cloud services (to provide a measure of
 simplification with the transition), and they may also choose to host
 some services (such as SQL databases, Citrix licensing, Citrix
@@ -857,7 +785,7 @@ we defined earlier.
 
 ##### Access Layer: Greenfield/Cloud Only Deployment
 
-Since the greenfield or cloud only deployment model leverage cloud
+Since the green field or cloud only deployment model leverage cloud
 services across the board, the AWS specific implications on the design
 of your Citrix virtualization system are simple: there aren’t any\!
 There’s no need to build or configure anything on AWS since everything
@@ -886,7 +814,7 @@ is the way to go.
 
 With the hybrid deployment model, you’re going to be building/managing
 some of the Citrix virtualization system components, otherwise it is a
-greenfield or cloud only deployment by definition\! With the hybrid
+green field or cloud only deployment by definition\! With the hybrid
 model, you’re possibly deploying Citrix ADC/Gateway VPXs on AWS or even
 on-premises, and depending upon your requirements, you might also be
 deploying Citrix StoreFront on AWS or on-premises. Customers who have
@@ -1426,9 +1354,9 @@ billing model, and leverage the [Citrix Autoscale](https://docs.citrix.com/en-us
 feature to control costs. By leveraging Citrix Autoscale (a feature
 exclusive to the CVADS cloud service brokering subsystem) VMs are
 powered on as needed with anticipation for peak hours. During off peak
-hours, however, VMs will be shut down so its important to consolidate
+hours, however, VMs will be shut down, so it's important to consolidate
 loads with the hosted-shared model and for all models ensure that users
-save their work and ideally logoff gracefully from their sessions.
+save their work and ideally log off gracefully from their sessions.
 Reserved instance capacity may be used for infrastructure components
 like the Cloud Connectors which remain on 24/7, as well as a
 predetermined amount of VDAs that will always remain on (e.g. 10% of
@@ -1443,8 +1371,7 @@ for your different workloads (VDA’s) is a key decision, with substantial
 performance, manageability, and cost considerations. Choose too small of
 an instance and performance can suffer. Choose too large of an instance,
 and you’re paying for resources you’re not using. Choosing the right
-instance type ends up being a balancing act, and often requires fine
-tuning for each specific workload.
+instance type ends up being a balancing act, and often requires fine-tuning for each specific workload.
 
 Which AWS EC2 instance type to choose for your VDAs depends heavily upon
 the specific workload and delivery type; however, as a general
@@ -1551,7 +1478,7 @@ more deeply into the AWS specific considerations.
 
 ### Control Layer: Greenfield/Cloud Only Deployment
 
-The greenfield or cloud only deployment model leverages cloud services
+The green field or cloud only deployment model leverages cloud services
 across the board. As you might imagine, this model is the simplest and
 most cost effective to build, manage, and maintain over time as many of
 the Citrix virtualization system components are provided and/or managed
@@ -1566,7 +1493,7 @@ servers, Citrix Director servers and more.
 
 Remember that with the hybrid deployment model, you’re going to be
 building/managing some of the Citrix virtualization system components,
-otherwise it is a greenfield or cloud only deployment by definition\!
+otherwise it is a green field or cloud only deployment by definition\!
 The interesting thing here is that, in the context of the Control layer,
 they’re pretty much identical.
 
@@ -1674,7 +1601,7 @@ have some limitations imposed upon it to deliver it as a service at
 scale, and the currently known/most impactful limitations for a Citrix
 environment are listed here.*
 
-For more information on Active Directory requirements for greenfield and
+For more information on Active Directory requirements for green field and
 hybrid deployments (i.e. environments leveraging Citrix Cloud and the
 CVAD Service for session brokering and administration) see
 [Citrix Cloud Connector Technical Details](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html).
@@ -1702,7 +1629,7 @@ these requirements and scenarios for your consideration:
 
 | Attribute/Capability | Customer Managed CVAD (Citrix Virtual Apps and Desktops, LTSR or CR versions) | Cloud Service CVADS (Citrix Virtual Apps and Desktops Service, provided by Citrix Cloud) |
 |---|---|---|
-| Requires outbound Internet connectivity to Citrix Cloud. | **NO** - Delivery Controllers don’t require outbound Internet connectivity, though they do need to be able to communicate to AWS infrastructure in order for MCS provisioning to function. | **YES** - Cloud Connectors communicate over the Internet to Citrix Cloud, though these connections can be proxied. See [How to Setup a Proxy Server for Citrix Cloud Connector](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/proxy-firewall-configuration.html_) for more details. For strictly air gapped deployments, this is often a show stopper. |
+| Requires outbound Internet connectivity to Citrix Cloud. | **NO** - Delivery Controllers don’t require outbound Internet connectivity, though they do need to be able to communicate to AWS infrastructure in order for MCS provisioning to function. | **YES** - Cloud Connectors communicate over the Internet to Citrix Cloud, though these connections can be proxied. See [How to Set up a Proxy Server for Citrix Cloud Connector](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/proxy-firewall-configuration.html_) for more details. For strictly air gapped deployments, this is often a show stopper. |
 | Requires the customer to provide highly available Microsoft SQL database services. | **YES** - CVAD (in both LTSR and CR release types) requires the customer to provide and highly available Microsoft SQL database services. These can be provided by building SQL Servers on EC2 instances, or by leveraging the AWS RDS for SQL Server service. | **NO** - CVADS does not require customers to touch SQL server: highly available database services are provided by the Citrix Cloud delivery platform and are transparent to customers. |
 | Requires the customer to apply patches and upgrades to Citrix software over time to maintain security and supportability, as well as get access to new features and capabilities. | **YES** - customers are responsible for installation, configuration, patching, upgrading, etc. both Citrix software and underlying operating system for all components in a CVAD based session brokering and administration system. They’re also responsible for maintaining high availability of each component, including Citrix Delivery Controllers, Studio installations, Director, and Citrix Licensing. | **NO** - Cloud Connectors (the only session brokering and administrative component that resides in the customer’s VPC) are automatically updated and maintained by Citrix. Customers are responsible for patching and maintaining the Windows Server operating system on the EC2 Cloud Connector instances, and new features and capabilities are available immediately, without requiring the customer to manually update the Cloud Connectors. |
 | Ability to leverage advanced services provided by Citrix Cloud, including the [Citrix Autoscale feature](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html). | **Sometimes** - not all advanced services are available to customer managed CVAD deployments, and when they are, may require the installation and/or configuration of additional components. The autoscale feature is not available for CVAD environments. | **YES** - CVADS is designed to work ‘out of the box’ with other Citrix Cloud services, and in most cases these services are pre-configured so the customer simply turns them on. The [Autoscale feature](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html), which provides the ability to granularly control the quantity and power state of VDA’s, is particularly impactful for VDA deployments on public cloud. It can provide substantial infrastructure cost savings in scenarios where you’re paying for only the capacity you need. |
@@ -1711,7 +1638,7 @@ these requirements and scenarios for your consideration:
 
 ### Cloud Connectors, Delivery Controllers, and Resource Locations
 
-Since both greenfield and hybrid models leverage cloud services (CVADS)
+Since both green field and hybrid models leverage cloud services (CVADS)
 for session brokering and administration, you deploy Cloud Connectors to
 create a [resource location](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html)
 in each region where you plan to host VDA’s. When you create a resource
@@ -1947,14 +1874,14 @@ often served by [Internet Gateways](https://docs.aws.amazon.com/vpc/latest/userg
 which facilitate routing of inbound connections to services you make
 accessible from the Internet.
 
-Subnets are also commonly labeled as ‘public’ and ‘private’. A pubic
+Subnets are also commonly labeled as ‘public’ and ‘private’. A public
 subnet is a subnet with Internet routable IP addresses assigned (in
 addition to the private IP addresses) and is associated with a route
 table that has a route to an Internet Gateway (IGW) for both inbound and
 outbound Internet traffic. A private subnet is a subnet with only
 private IP addresses assigned, and is associated with a route table that
 has a route for outbound internet access through a NAT Gateway or NAT
-Instances which reside in a pubic subnet. In a Citrix virtualization
+Instances which reside in a public subnet. In a Citrix virtualization
 system, the Gateway vServer (VIP) usually
 resides in a public subnet
 since it accepts inbound connections from client devices over the
@@ -2118,7 +2045,7 @@ on-demand based on application requirements and troubleshooting efforts.
 | Citrix Virtual Apps and Desktops | Publish Image | When images are modified, they are usually tested and published. |
 | AWS | Verify instance launch | When a new instance is launched via MCS, verify that the instance has been created in the AWS console, and that there are available IPs in the pool for the given VPC. MCS-provisioned machines will not be created if there are no available IPs in the VPC pool. |
 | AWS | Verify on-prem image efficacy | An instance created from any on-prem image should be tested for launchability and viability before being used to update production instances. |
-| AWS | Modify IAM user/ group permissions | As needed, IAM user and group permissions should be reviewed to reduce the amount of users with administrative access and to implement the “least privilege” methodology. |
+| AWS | Modify IAM user/ group permissions | As needed, IAM user and group permissions should be reviewed to reduce the number of users with administrative access and to implement the “least privilege” methodology. |
 | AWS | Modify Security Groups | As needed, Security Groups should be reviewed to grant or remove access for different traffic protocols from various IPs or IP ranges. Ingress and egress rules should be modified to implement network traffic lockdowns. |
 | AWS and Citrix Virtual Apps and Desktops | Update machines in a Machine Catalog   | As needed, update machine images to include any necessary modifications. A new AMI must be created of the modified image, and used to update the Machine Catalog. See Update and Upgrade Process section below for more details. |
 | AWS and Citrix Virtual Apps and Desktops | Roll back updates to a Machine Catalog | As needed, in the case that a machine image must be rolled back, a previous AMI with the last known working configuration can be used to update machines in the Machine Catalog. |
@@ -2158,7 +2085,7 @@ monthly basis.
 
 | Component | Task | Description |
 |-----|-----|-----|
-| Generic | Perform capacity assessment | Conduct environment performance and capacity assessment of the Citrix environment to determine environment utilization and any scalability requirements. Review monthly reports from monitoring tools to assess environment performance and capacity, including, but not limited to: Virtual server compute (CPU and RAM) allocation, Licensing, Network bandwidth. Procure software and/or licenses and build additional servers as needed. **Note:** Recommendations for performing a capacity assessment are included in [Decision: Capacity Management](https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/citrix-vdi-best-practices/monitor.html#decision-capacity-management) in the Monitoring section of the Citrix Virtual Apps and Desktop Best Practices guide.|
+| Generic | Perform capacity assessment | Conduct environment performance and capacity assessment of the Citrix environment to determine environment utilization and any scalability requirements. Review monthly reports from monitoring tools to assess environment performance and capacity, including, but not limited to: Virtual server compute (CPU and RAM) allocation, Licensing, Network bandwidth. Procure software and or licenses and build additional servers as needed. **Note:** Recommendations for performing a capacity assessment are included in [Decision: Capacity Management](https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/citrix-vdi-best-practices/monitor.html#decision-capacity-management) in the Monitoring section of the Citrix Virtual Apps and Desktop Best Practices guide.|
 | Generic | Review elevated privilege access | Review which users and groups have elevated permissions to the environment and assess whether ongoing elevated access is required. Remove any accounts that no longer require these administrative rights. Primarily only IAM users and roles should be used to assign elevated privileges, with tightly restricted access to individual user, local, or root accounts. |
 
 ### Yearly Periodic Tasks
@@ -2171,5 +2098,5 @@ yearly basis.
 | Generic | Conduct Citrix policy assessment | Review Citrix policies and determine whether new policies are required and existing policies need to be updated. |
 | Generic | Review software upgrades | Review and assess the requirement for new Citrix software releases or versions. |
 | Generic | Perform Business Continuity Plan (BCP)/ Disaster Recovery (DR) test | Conduct functional BCP/DR test to confirm DR readiness. This plan should include a yearly restore test to validate the actual restore process from backup data is functioning correctly. |
-| Generic | Perform application assessment | Review the usage of applications outside and within the Citrix environment. Assess the validity of adding additional applications to the Citrix Site, removing applications that are no longer required, or upgrading the applications to the latest version. |
+| Generic | Perform application assessment | Review the usage of applications outside and within the Citrix environment. Assess the validity of adding more applications to the Citrix Site, removing applications that are no longer required, or upgrading the applications to the latest version. |
 | AWS | Assess Network Security Group Accesses | As features or applications are added or removed from the Citrix infrastructure servers or application servers, the Network Security Groups associated with those instances should also be assessed and modified if necessary, to add or remove any ports or protocols. |
