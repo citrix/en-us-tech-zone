@@ -159,7 +159,7 @@ For very small customers, it is not the most economic model, however there are m
 Some large enterprise customers need the ability to have a private Workspace managed by their Citrix Service Provider for complex applications, and strict security and compliance requirements, the private workspace does not have any shared components with other customers of the same service provider. The service provider will need to be invited by the customer to manage the Cloud environment.  This allows for complete isolation, flexibility and control for the customer and service provider.  The management and control from the Citrix Service Providers perspective are duplicated with the complete service instance being dedicated to the customer.
 The design and deployment for this mode is the same as standalone enterprise accounts on Citrix Cloud except the service provider is invited to connect and administer these accounts, and this is the deployment model available to-date before multi-tenant support became available at the end of 2019. The detailed design, deployment, and best practices of the single tenant private workspace model can be found on [Citrix Tech Zone](https://docs.citrix.com/en-us/tech-zone.html).
 
-***Link***
+[Citrix Tech Zone](https://docs.citrix.com/en-us/tech-zone.html)
 
 
 ## Combination of Different Architecture Models
@@ -247,7 +247,7 @@ For details on setting up a Citrix Virtual Apps and Desktops service resource lo
 
 ## Deployment Steps
 ## Onboard a Customer
-***## Customer Dashboard***
+## Customer Dashboard
 To add a new Customer or invite an existing one to be managed by the Citrix Service Provider, the onboarding process is the same for both multi-tenant and single tenant customers.
 
 ## Add a new Customer
