@@ -44,7 +44,7 @@ Citrix Cloud is a platform that hosts and administers Citrix services, such as C
 
 Citrix Cloud allows Citrix Service Providers to create multiple types of workspace hosting environments as resource locations (for example on-premises, public cloud, private cloud, or hybrid cloud).
 
-[![CSP-Image-1](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_001.png)]
+[![CSP-Image-001](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_001.png)]
 
 [More information Citrix Cloud](https://docs.citrix.com/en-us/citrix-cloud.html )
 
@@ -73,12 +73,12 @@ Citrix Cloud for Citrix Service Providers (CSPs) is the platform for the deliver
 
 The traditional deployment in a hosting environment for Citrix Virtual Apps and Desktops includes highly available delivery controllers, storefront servers, SQL databases, gateway, and management consoles deployed in the service provider’s datacentre along with the Virtual Delivery Agents (VDA).  In the Citrix Cloud model for CSP, the management or control plane, and optional access layer (cloud gateway), are managed by Citrix, leaving the Citrix Service Provider to focus on the customers’ application data and critical services. 
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_002.png)]
+[![CSP-Image-002](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_002.png)]
 
 ## Security and Isolation 
 The Citrix Virtual Apps and Desktops Service Architecture consists of layers that connect together to create a complete end-to-end solution for service providers. For general conceptual architecture, and to understand how all layers flow together, please refer to [Citrix Tech Zone](https://docs.citrix.com/en-us/tech-zone.html)
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_003.png)]
+[![CSP-Image-003](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_003.png)]
 
 ## External Access Security
 
@@ -108,7 +108,7 @@ The Multi-tenant Virtual Apps and Desktops service supports two architecture mod
 
 ## Shared Resource Location
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_004.png)]
+[![CSP-Image-004](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_004.png)]
 
 [Shared Resource Location, showing an overview of the components that can be shared between tenants under Citrix Service Provider’s cloud account]
 
@@ -126,7 +126,7 @@ The advantages of this model are the best economics, easy and fast cloud transit
 
 ## Dedicated Resource Location
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_005.png)]
+[![CSP-Image-005](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_005.png)]
 
 [Dedicated Resource Location, showing the dedicated and shared components between tenants under Citrix Service Providers cloud account]
 
@@ -152,7 +152,7 @@ For very small customers, it is not the most economic model, however there are m
 
 ## Private Workspace (Non-Multi-tenant)
  
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_006.png)]
+[![CSP-Image-006](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_006.png)]
  
 [Private Workspace, showing that the tenant has a fully isolated Workspace and no service instance is shared from the Service Provider’s Cloud account]
 
@@ -166,7 +166,7 @@ The design and deployment for this mode is the same as standalone enterprise acc
 
 The different architecture models below are not mutually exclusive, a service provider can apply each model or mixed architectures under their partner cloud account or manage a separate Cloud Account for their large Customer.  The Service Provider models are developed to be flexible to meet the needs of their customers, offering solutions for providing a return of investment on shared infrastructure or isolation to solve data sovereignty challenges 
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_007.png)]
+[![CSP-Image-007](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_007.png)]
 
 [Combined architecture models for customer use cases managed under a single Citrix Service Provider Account]
 
@@ -204,7 +204,7 @@ This service to enables customers to connect their on-premises FAS deployment to
 
 The Citrix Service Providers Cloud model allows for a wide range of deployment options to best suit the needs of the Service Providers’ customers for a wide range of public clouds and hypervisors.  Service Providers and their customer can combine these deployment options to provide hybrid cloud migration or multi cloud adoptions.
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_008.png)]
+[![CSP-Image-008](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_008.png)]
 
 [Combined deployment options for tenants managed under a single Citrix Service Provider Account]
 
@@ -253,30 +253,30 @@ To add a new Customer or invite an existing one to be managed by the Citrix Serv
 ## Add a new Customer
 In the Citrix Cloud Dashboard page, select Customers
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_008.png)]
+[![CSP-Image-009](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_009.png)]
 
 On the Customer Dashboard you will see all of Citrix Service Provider’s managed tenants, to Add a new Customer select Invite or Add:
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_010.png)]
+[![CSP-Image-010](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_010.png)]
 
 Select Add and Continue
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_011.png)]
+[![CSP-Image-011](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_011.png)]
 
 Complete the onboarding information for the Customer, make sure the email address used here is unique and has not been used for any other Citrix Cloud accounts:
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_012.png)]
+[![CSP-Image-012](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_012.png)]
 
 This will create a new Customer with a unique Organisation ID (Org ID).
 
 ## Invite a Customer
 To invite an existing Citrix Cloud Customer to be Managed by the Citrix Service Provider, you can select the Invite option. 
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_013.png)]
+[![CSP-Image-013](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_013.png)]
 
 Select Invite and Continue.
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_014.png)]
+[![CSP-Image-014](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_014.png)]
 
 Copy the Invite Link and email to the Administrator of the Customer you would like to invite:
 
@@ -294,14 +294,14 @@ Assume the CSP partner already has multi-tenant Virtual Apps and Desktops servic
 	2)	On the Customer Dashboard locate the Customer you want to add services to and select the three-dot button and select Add Services
 
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_016.png)]
+[![CSP-Image-016](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_016.png)]
 
 	3)	Select “Continue” next to the Citrix Virtual Apps and Desktops Service
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_017.png)]
+[![CSP-Image-017](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_017.png)]
 Once the “add service” process is completed in a few minutes, “Manage” option will appear inside the Virtual Apps and Desktops service tile within the tenant’s cloud account, however by selecting “Manage” option, “This instance of the Citrix Virtual Apps and Desktops Service is being managed by your Citrix Service Provider” message will be displayed.
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_018.png)]
+[![CSP-Image-018](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_018.png)]
 
 ## Configure Multi-tenant Virtual Apps and Desktops Service for the New Customer
 This document focuses on the deployment configurations of multi-tenant architecture models, for single tenant Virtual Apps and Desktops Service refer to
@@ -323,35 +323,35 @@ The resource location, active directory and cloud connectors only need to be set
 When connected to the Citrix Cloud Console, select Resource Location (Edit or Add New)
 
 
-[![CSP-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_019.png)]
+[![CSP-Image-019](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_019.png)]
 
 Select Add Resource Location, name the Resource location to the multi-tenant nomenclature choose add Cloud Connector, download and install the cloud connector to at least two dedicated Servers, for detailed steps please follow
 [How to install Citrix Cloud Connector](https://support.citrix.com/article/CTX223580)
 You can view the Active Directory Domain and Cloud Connectors after deployment.
 
 
-[![CSP-Image-20](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_012.png)]
+[![CSP-Image-020](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_012.png)]
 ## Define Hosting Connection
 Since each resource location may be deployed in different cloud infrastructure e.g. Azure, GCP, AWS, on-premises hypervisor etc. a new Hosting Connection to the resources needs to be defined for the new resource location.
 Navigate to the hamburger menu at the top left side of the page and choose Citrix Virtual Apps and Desktops.
 
-[![CSP-Image-21](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_021.png)]
+[![CSP-Image-021](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_021.png)]
 Select Manage Service, the Citrix Studio will then load, select hosting from the Left-Hand Studio Menu.
 
-[![CSP-Image-22](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_022.png)]
+[![CSP-Image-022](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_022.png)]
 Select Add Connection or Resource from the Action pane.
 Select Create a new Connection, choose the Connection type and enter the credentials and address for the connection, name the connection using the correct nomenclature.
 
 
-[![CSP-Image-22](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_023.png)]
+[![CSP-Image-022](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_023.png)]
 Select the storage location for the Resources.
 
 Select the Network Associated with the new customer.
 
-[![CSP-Image-24](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_024.png)]
+[![CSP-Image-024](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_024.png)]
 Select the scope of the Customer just onboarded, the review the hosting connection and choose finish.
 
-[![CSP-Image-25](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_025.png)]
+[![CSP-Image-025](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_025.png)]
 ## Configure Machine Catalogues for the New Customer
 In the CSP partner’s Citrix Cloud portal page, navigate to Citrix Virtual Apps and Desktops service, and select Manage Service.
 
@@ -359,45 +359,45 @@ From the Citrix Studio, select Machine Catalogues, and Create Machine Catalogues
 In this example we are using Machines that are created with Machine Creation Services, and are hosted on a hypervisor in the datacenter that is able to control the power state, select the appropriate Resource Location Shared or Single etc. for the corresponding Customer who will be assigned the Machine Catalog, select Next
 
 
-[![CSP-Image-26](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_026.png)]
+[![CSP-Image-026](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_026.png)]
 Add the Machines from the Corresponding Active Directory and also the Zone for the Customer.
 Enter the name of the machines(s) and select OK.
 Confirm the Zone and the minimal functional level of the VDA installed on the machines to be added, here we have a VDA that is from version 1811 or newer, select Next.
 
 
-[![CSP-Image-27](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_027.png)]
+[![CSP-Image-027](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_027.png)]
 Choose the Scope of the new customer, select Next.
 
-[![CSP-Image-28](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_028.png)]
+[![CSP-Image-028](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_028.png)]
 Since machine catalogues are created for specific customer scope, predefined naming convention is necessary in a multi-tenant deployment.
 The Machines will then appear in the Machine Catalogue list.
 
 
-[![CSP-Image-29](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_029.png)]
+[![CSP-Image-029](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_029.png)]
 Use the View Machines Search option, to confirm the registration status of the new Machine Catalogue.
 
-[![CSP-Image-30](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_030.png)]
-[![CSP-Image-31](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_031.png)]
+[![CSP-Image-030](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_030.png)]
+[![CSP-Image-031](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_031.png)]
 ## Create Delivery Groups for the New Customer
 From the Citrix Studio, select Delivery Group, and Create Delivery Group from the Action Pane.
 Read the Getting Started information and select Next.
 Select a relevant Machine Catalogue that is assigned with the customer’s scope, select Next.
 
 
-[![CSP-Image-32](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_032.png)]
+[![CSP-Image-032](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_032.png)]
 The recommendation is to leave the management of Users to Citrix Cloud, select Next.
 Select Add Applications from a source, usually it is the Start Menu if an application appears there on the corresponding VDA. All applications selected will appear under the same delivery group and be available as Libraries to all subscribers that are later added via Citrix Cloud portal. Separate delivery groups can be created for applications and user groups that need restricted access.
 Under the multi-tenant deployment, some delivery groups may contain applications with the same name for different tenants. To avoid confusion to the administrators and clearly define the ownership of these applications, it is recommended to update the application naming to be tenant specific as shown in the example below. Application name for user can remain unchanged.
 
 
-[![CSP-Image-33](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_033.png)]
-[![CSP-Image-34](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_034.png)]
+[![CSP-Image-033](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_033.png)]
+[![CSP-Image-034](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_034.png)]
 
 
 Assign the scope of the customer to the delivery group, and select Next 
 
 
-[![CSP-Image-35](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_035.png)]
+[![CSP-Image-035](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_035.png)]
 
 To securely isolate customers in a multi-tenant setup, a delivery group should only be assigned to a specific customer scope. Different customer scopes should not share delivery groups. Predefined naming convention for delivery groups is also necessary in a multi-tenant deployment.
 
@@ -408,12 +408,12 @@ Within the partner’s Citrix Cloud account, select the Customers domain from th
 
 
 
-[![CSP-Image-36](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_036.png)]
+[![CSP-Image-036](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_036.png)]
 
 Select the customer(s) to be added to the Domain, this will allow the tenant to use their customized Workspace Configurations.
 
 
-[![CSP-Image-37](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_037.png)]
+[![CSP-Image-037](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_037.png)]
 
 Note: The Federated Domain described here for multi-tenant Virtual Apps and Desktops service is for workspace configuration only, it is not integrated with ADFS or Citrix Federated Authentication Service.
 
@@ -428,7 +428,7 @@ To add users to a published application or desktop offering from either a Shared
 
 
 
-[![CSP-Image-38](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_038.png)]
+[![CSP-Image-038](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_038.png)]
 
 ## Configure Tenant Workspace
 The CSP multi-tenant Virtual Apps and Desktops service allows each tenant to maintain its own Workspace Experience.
@@ -437,12 +437,12 @@ Select a customer and Expand using the Arrow, select View Customer Details.
 
 
 
-[![CSP-Image-39](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_039.png)]
+[![CSP-Image-039](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_039.png)]
 
 Select Access Customer Account (there is also an alternative way to access the customer’s account via Change Customer)
 
 
-[![CSP-Image-40](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_040.png)]
+[![CSP-Image-040](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_040.png)]
 
 Confirm that you are leaving the Citrix Service Provider’s Account to enter the Customer Account and select Continue.
 
@@ -450,42 +450,42 @@ After entering the tenant’s Citrix Cloud account, navigate to the hamburger me
 
 
 
-[![CSP-Image-41](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_041.png)]
+[![CSP-Image-041](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_041.png)]
 
 ## Access URL
 Under the Access tab, the Customers Gateway URL can be customized. Edit the URL and select Save.
 
 
 
-[![CSP-Image-42](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_042.png)]
+[![CSP-Image-042](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_042.png)]
 ## Authentication
 In the Authentication tab, specify the Authentication method for the customer:
 
 
 
 
-[![CSP-Image-43](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_043.png)]
+[![CSP-Image-043](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_043.png)]
 
 If Active Directory Authentication is used and the tenant is configured within a shared resource location, i.e. the tenant user accounts and groups reside within an OU of the hosted multi-tenant Active Directory, the users’ UPN suffix which is normally the customer’s own domain that differs from the AD system domain, e.g. customer domain selwfashion.nz in the example below vs cms.azr system domain of the hosting AD; for the user’s UPN domain to be recognized and authenticate through the custom Workspace URL, the UPN suffix needs to be added to the hosting Active Directory at root level.
 
 
-[![CSP-Image-44](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_044.png)]
+[![CSP-Image-044](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_044.png)]
 
 7.6.3 Appearance
 Customized branding and appearance often help achieve great result for end user experience. From Customize tab, configure the customer logo and preferences.
 
 
-[![CSP-Image-45](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_045.png)]
+[![CSP-Image-405](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_045.png)]
 
 ## User Login to Workspace
 When the users of a customer login to the Workspace via the customized URL, e.g. https://selwfashion.cloud.com, same set of credentials of UPN and password (e.g. email address and password that match their Office 365 accounts) will be used.  
 
 
-[![CSP-Image-46](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_046.png)]
+[![CSP-Image-046](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_046.png)]
 
 After logging on the user’s workspace would look similar as below. 
 
-[![CSP-Image-47](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_047.png)]
+[![CSP-Image-047](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_047.png)]
 
 ##	Performance and Monitoring
 
@@ -497,7 +497,8 @@ The Citrix Virtual Apps and Desktops Service allows Citrix Service Providers to 
 The Citrix Service Provider admins has the ability to manage their multi-tenant Shared and Dedicated Resource location Customers using a single Monitoring console, the CSP admin can chose to view an overview of all resources or drill down to a specific Customer. The Service provider can also set Role Based Access Control permissions for its team remembers to manage specific customer scope or perform a subset of functions.
 
 
-[![CSP-Image-48](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_048.png)]
+[![CSP-Image-048](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_048.png)]
+[![CSP-Image-049](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_048.png)]
 
 Single tenants in their private workspace with own instance of Citrix Virtual Apps and Desktops Service, their Monitoring console is dedicated. A Citrix Service Provider with administrator rights will need login to the customer’s cloud account to access and manage through this console.
 
@@ -506,7 +507,7 @@ Single tenants in their private workspace with own instance of Citrix Virtual Ap
 The Analytics service included in the Citrix Service Providers Workspace collects data across the hosting network, users, files and endpoints. A Service provider can centrally manage the insights to handle security threats, monitor service performance and optimise and improve their offering.
 
 
-[![CSP-Image-49](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_049.png)]
+[![CSP-Image-050](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_050.png)]
 
 ##	License Usage
 Citrix Service Providers can gain insights on the number of User Licenses that have been assigned against their total commitment amount within the “Licensing” page of Citrix Cloud. As soon as a Citrix Service Provider specific entitlement is provisioned, the licensing rules on the page will be aligned with the program rules. Service Providers can expect “Assigned” license counts to reset monthly, and overage amounts to be highlighted separately from the committed amount. Please find associated number in the image for the appropriate detail around the experience.
@@ -515,6 +516,7 @@ Citrix Service Providers can gain insights on the number of User Licenses that h
 	3.	The ability to export the current month’s detailed list of users that are listed in item 4. Until the Longer-Term solution for Multi-Tenancy is delivered in the “License Usage Insights” Service, this would be the best way for partners to break out the users across the different tenants. 
 	4.	The detailed list of users that have an assigned license in the current month. This list makes up the total “Assigned” count. Additional insights are provided like the 1st time a license was assigned.
 
+[![CSP-Image-051](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_051.png)]
 
 ## Appendix
 Common Abbreviations
