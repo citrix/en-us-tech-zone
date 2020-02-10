@@ -24,7 +24,7 @@ Before diving into the specific graphics policies, let’s review how we categor
 
 As we deliver graphic content for applications or desktops the HDX graphics encoding engine dynamically categorizes display data into three types:
 
-*  Text 
+*  Text
 *  Simple Images and Solid Colors
 *  Static Image Content
 *  Moving (or Fluid) Images
@@ -32,7 +32,7 @@ As we deliver graphic content for applications or desktops the HDX graphics enco
 ![HDX Graphics 1](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_000.png)
 
 In the example above, text or simple images are highlighted in blue, static images in orange and moving (or fluid) images in green.
- 
+
 Within Citrix Virtual Apps and Desktops, there are two main display technologies at work:  **HDX Thinwire with Selective H.264/H.265 or Adaptive JPEG** and **HDX Thinwire Full-Screen H.264/H.265** Citrix adapts the use of industry leading standards, H.264, and H.265 for efficient delivery of high-quality video content in its “Full-Screen” and “Selective” codec implementations.
 
 *  **HDX Thinwire with Selective H.264/H.265 or Adaptive JPEG** is an adaptive remote display technology that senses regions of transient content (fluid images or video) and encodes it based on set policy and capabilities detected on the endpoint. HDX Thinwire encodes these “selected” (or transient) regions either as Adaptive JPEG or H.264/H.265. Adaptive JPEG and “Selective” H.264/H.265 are considered subfeatures as HDX Thinwire is the core technology. The remaining, non-transient regions (encoded as JPEG and Run-Length Encoding (RLE)) are then combined to complete the in-session display.
@@ -48,17 +48,20 @@ Depending on the HDX mode configured, these categories are encoded by different 
 
 So, to recap the following three different flavors can be configured:
 
-**HDX Thinwire with Adaptive JPEG**
+### HDX Thinwire with Adaptive JPEG
+
 *  Text: RLE
 *  Static images: JPEG
 *  Moving Images: Adaptive JPEG
 
-**HDX Thinwire with Selective H.264 / H.265**
+### HDX Thinwire with Selective H.264 / H.265
+
 *  Text: RLE
 *  Static images: JPEG
 *  Moving Images: H.264 / H.265
 
-**HDX Thinwire Full-Screen H.264**
+### HDX Thinwire Full-Screen H.264
+
 *  Text: RLE (or H.264 if Optimize for 3D graphics workload has been enabled)
 *  Static images: H.264
 *  Moving Images: H.264 / H.265
@@ -163,7 +166,7 @@ This use-case describes a user connecting through a connection with serious band
 *  Moving Image Compression: Enabled
 *  HDX Adaptive Transport: Preferred
 
-As you can see, even with a low bandwidth connection we oftentimes do not set the color depth to 8 bit but keep it at 16 bit. While 8 bit can lower the bandwidth requirement substantially, it also comes with a significantly lowered user experience. Therefore, 8 bit should only be used in the most extreme cases where access won't be possible otherwise. 
+As you can see, even with a low bandwidth connection we oftentimes do not set the color depth to 8 bit but keep it at 16 bit. While 8 bit can lower the bandwidth requirement substantially, it also comes with a significantly lowered user experience. Therefore, 8 bit should only be used in the most extreme cases where access won't be possible otherwise.
 
 ### Call-Center / Point-of-Sales
 
