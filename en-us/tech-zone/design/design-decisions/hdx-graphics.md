@@ -22,22 +22,23 @@ Important to note: This article is based on Citrix Virtual Apps and Desktops 191
 
 Before diving into the specific graphics policies, let’s review how we categorize what you see on your HDX session screen and the underlying technologies that are used for presentation.
 
-Within Citrix Virtual Apps and Desktops, there are two main display technologies at work:  **HDX Thinwire** and **Full-Screen H.264/H.265** Citrix adapts the use of industry leading standards, H.264, and H.265 for efficient delivery of high-quality video content in its “Full-Screen” and “Selective” codec implementations.
-
-*  **HDX Thinwire** is an adaptive remote display technology that senses regions of transient content (fluid images or video) and encodes it based on set policy and capabilities detected on the endpoint. HDX Thinwire encodes these “selected” (or transient) regions either as Adaptive JPEG or H.264/H.265 Adaptive JPEG and “Selective” H.264/H.265 are considered subfeatures as HDX Thinwire is the core technology. The remaining, non-transient regions (encoded as JPEG and Run-Length Encoding (RLE)) are then combined to complete the in-session display.
-*  **Full-Screen H.264/H.265** treats the entire screen as transient content, with the exception of text (by default), and encodes display data using one of these two codecs. Text is then overlaid onto the screen to provide a complete image. H.265 achieves higher compression over H.264 without compromising quality. However, H.265 is expensive in terms of processing and is only supported when used with [select GPUs](/en-us/citrix-workspace-app-for-windows/configure.html#h265-video-encoding) on the VDA. Additionally, H.265 compatible hardware, in the form of GPU or purpose-built thin client, is required for decoding H.265 display data on the client endpoint. Review vendor documentation to determine H.265 supportability for your endpoint hardware.
-
-As H.264 compatibility has a broader base, we focus on Full-Screen H.264 and Selective H.264 within this article unless otherwise noted.
-
 As we deliver graphic content for applications or desktops the HDX graphics encoding engine dynamically categorizes display data into three types:
 
-*  Text or Simple Images
+*  Text 
+*  Simple Images and Solid Colors
 *  Static Image Content
 *  Moving (or Fluid) Images
 
 ![HDX Graphics 1](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_000.png)
 
 In the example above, text or simple images are highlighted in blue, static images in orange and moving (or fluid) images in green.
+
+Within Citrix Virtual Apps and Desktops, there are two main display technologies at work:  **HDX Thinwire** and **Full-Screen H.264/H.265** Citrix adapts the use of industry leading standards, H.264, and H.265 for efficient delivery of high-quality video content in its “Full-Screen” and “Selective” codec implementations.
+
+*  **HDX Thinwire** is an adaptive remote display technology that senses regions of transient content (fluid images or video) and encodes it based on set policy and capabilities detected on the endpoint. HDX Thinwire encodes these “selected” (or transient) regions either as Adaptive JPEG or H.264/H.265. Adaptive JPEG and “Selective” H.264/H.265 are considered subfeatures as HDX Thinwire is the core technology. The remaining, non-transient regions (encoded as JPEG and Run-Length Encoding (RLE)) are then combined to complete the in-session display.
+*  **Full-Screen H.264/H.265** treats the entire screen as transient content, with the exception of text (by default), and encodes display data using one of these two codecs. Text is then overlaid onto the screen to provide a complete image. H.265 achieves higher compression over H.264 without compromising quality. However, H.265 is expensive in terms of processing and is only supported when used with [select GPUs](/en-us/citrix-workspace-app-for-windows/configure.html#h265-video-encoding) on the VDA. Additionally, H.265 compatible hardware, in the form of GPU or purpose-built thin client, is required for decoding H.265 display data on the client endpoint. Review vendor documentation to determine H.265 supportability for your endpoint hardware.
+
+As H.264 compatibility has a broader base, we focus on Full-Screen H.264 and Selective H.264 within this article unless otherwise noted.
 
 Depending on the HDX mode configured, these categories are encoded by different means:
 
@@ -123,7 +124,7 @@ You can enable YUV444 for Full-Screen H.264 with the following settings:
 *  Visual Quality: Always lossless / Build to lossless
 *  Allow visually lossless compression: Enabled
 
-Check the Visio chart above for more details.
+Check the Visio chart in this article for more details.
 
 ## HDX Graphics Configurations
 
@@ -155,14 +156,14 @@ This use-case describes a user connecting through a connection with serious band
 
 *  Use Video Codec for Compression: Do not use video codec
 *  Visual Quality: Low
-*  Preferred color depth for simple graphics: 16 bit
+*  Preferred color depth for simple graphics: 8 bit / 16 bit
 *  Extra Color Compression: Enabled
 *  Target Frame Rate: 15
 *  Target minimum frame rate: 10
 *  Moving Image Compression: Enabled
 *  HDX Adaptive Transport: Preferred
 
-As you can see, even with a low bandwidth connection we did not set the color depth to 8 bit. Why? Because as stated in the Visio chart above, this will automatically disable [Progressive Mode](/en-us/linux-virtual-delivery-agent/current-release/configuration/Thinwire-progressive-display.html). Progressive Mode will dynamically adjust the quality used depending on the available bandwidth the current latency. This allows for a better user experience at the expense of the overall visual quality. As conditions may change, allowing the quality to be adjusted automatically may increase the user experience for the user once there is more bandwidth available.
+As you can see, even with a low bandwidth connection we oftentimes do not set the color depth to 8 bit but keep it at 16 bit. While 8 bit can lower the bandwidth requirement substantially, it also comes with a significantly lowered user experience. Therefore, 8 bit should only be used in the most extreme cases where access won't be possible otherwise. 
 
 ### Call-Center / Point-of-Sales
 
