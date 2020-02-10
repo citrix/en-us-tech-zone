@@ -541,8 +541,8 @@ VM Virtual Machine
 
 Supported Hypervisors for Virtual Desktops (XenDesktop) and Provisioning Services
 
-[](https://support.citrix.com/article/CTX131239 )
+[Supported Hypervisors](https://support.citrix.com/article/CTX131239 )
 
 Supported Host Connection Resources
 
-[](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/system-requirements.html)
+[Supported Host Connection](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/system-requirements.html)
