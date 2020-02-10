@@ -62,7 +62,7 @@ So, to recap the following three different flavors can be configured:
 *  Static images: JPEG
 *  Moving Images: H.264 / H.265
 
-### HDX Thinwire Full-Screen H.264
+### HDX Thinwire Full-Screen H.264 / H.265
 
 *  Text: RLE (or H.264 / H.265 if Optimize for 3D graphics workload has been enabled)
 *  Simple Images and Solid Colors: H.264 / H.265
