@@ -51,18 +51,21 @@ So, to recap the following three different flavors can be configured:
 ### HDX Thinwire with Adaptive JPEG
 
 *  Text: RLE
+*  Simple Images and Solid Colors: RLE
 *  Static images: JPEG
 *  Moving Images: Adaptive JPEG
 
 ### HDX Thinwire with Selective H.264 / H.265
 
 *  Text: RLE
+*  Simple Images and Solid Colors: RLE
 *  Static images: JPEG
 *  Moving Images: H.264 / H.265
 
 ### HDX Thinwire Full-Screen H.264
 
 *  Text: RLE (or H.264 / H.265 if Optimize for 3D graphics workload has been enabled)
+*  Simple Images and Solid Colors: H.264 / H.265
 *  Static images: H.264 / H.265
 *  Moving Images: H.264 / H.265
 
