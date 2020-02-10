@@ -8,7 +8,7 @@ description: Copy & paste description from TOC here
 
 **Author:** [Rico Projer](https://www.linkedin.com/in/rico-projer-0a8b2354/), [Jason Delgado](https://www.linkedin.com/in/jason-delgado-819a0575/)
 
-**Special thanks:** [Saša Petrović](https://twitter.com/petrovicsasa), [Muhammad Dawood](https://www.linkedin.com/in/muhammad-dawood/), [Nick Czabaranek](https://www.linkedin.com/in/nick-czabaranek-9b03504/)
+**Special thanks:** [Saša Petrović](https://twitter.com/petrovicsasa), [Muhammad Dawood](https://www.linkedin.com/in/muhammad-dawood/), [Nick Czabaranek](https://www.linkedin.com/in/nick-czabaranek-9b03504/), [Martin Zugec](https://twitter.com/MartinZugec), [Martin Latteier](https://www.linkedin.com/in/martin-latteier-12441128)
 
 ## Introduction
 
@@ -22,16 +22,10 @@ Important to note: This article is based on Citrix Virtual Apps and Desktops 191
 
 Before diving into the specific graphics policies, let’s review how we categorize what you see on your HDX session screen and the underlying technologies that are used for presentation.
 
-Within Citrix Virtual Apps and Desktops, there are two main display technologies at work:  **HDX Thinwire** and **Fullscreen H.264/H.265** Citrix adapts the use of industry leading standards, H.264, and H.265 for efficient delivery of high-quality video content in its “Full Screen” and “Selective” codec implementations.
-
-*  **HDX Thinwire** is an adaptive remote display technology that senses regions of transient content (fluid images or video) and encodes it based on set policy and capabilities detected on the endpoint. HDX Thinwire encodes these “selected” (or transient) regions either as Adaptive JPEG or H.264/H.265 Adaptive JPEG and “Selective” H.264/H.265 are considered subfeatures as HDX Thinwire is the core technology. The remaining, non-transient regions (encoded as JPEG and Run-Length Encoding (RLE)) are then combined to complete the in-session display.
-*  **Fullscreen H.264/H.265** treats the entire screen as transient content, with the exception of text (by default), and encodes display data using one of these two codecs. Text is then overlaid onto the screen to provide a complete image. H.265 achieves higher compression over H.264 without compromising quality. However, H.265 is expensive in terms of processing and is only supported when used with [select GPUs](/en-us/citrix-workspace-app-for-windows/configure.html#h265-video-encoding) on the VDA. Additionally, H.265 compatible hardware, in the form of GPU or purpose-built thin client, is required for decoding H.265 display data on the client endpoint. Review vendor documentation to determine H.265 supportability for your endpoint hardware.
-
-As H.264 compatibility has a broader base, we focus on Fullscreen H.264 and Selective H.264 within this article unless otherwise noted.
-
 As we deliver graphic content for applications or desktops the HDX graphics encoding engine dynamically categorizes display data into three types:
 
-*  Text or Simple Images
+*  Text
+*  Simple Images and Solid Colors
 *  Static Image Content
 *  Moving (or Fluid) Images
 
@@ -39,29 +33,38 @@ As we deliver graphic content for applications or desktops the HDX graphics enco
 
 In the example above, text or simple images are highlighted in blue, static images in orange and moving (or fluid) images in green.
 
+Within Citrix Virtual Apps and Desktops, there are two main display technologies at work:  **HDX Thinwire with Selective H.264/H.265 or Adaptive JPEG** and **HDX Thinwire Full-Screen H.264/H.265** Citrix adapts the use of industry leading standards, H.264, and H.265 for efficient delivery of high-quality video content in its “Full-Screen” and “Selective” codec implementations.
+
+*  **HDX Thinwire with Selective H.264/H.265 or Adaptive JPEG** is an adaptive remote display technology that senses regions of transient content (fluid images or video) and encodes it based on set policy and capabilities detected on the endpoint. HDX Thinwire encodes these “selected” (or transient) regions either as Adaptive JPEG or H.264/H.265. Adaptive JPEG and “Selective” H.264/H.265 are considered subfeatures as HDX Thinwire is the core technology. The remaining, non-transient regions (encoded as JPEG and Run-Length Encoding (RLE)) are then combined to complete the in-session display.
+*  **HDX Thinwire Full-Screen H.264/H.265** treats the entire screen as transient content, with the exception of text (by default), and encodes display data using one of these two codecs. Text is then overlaid onto the screen to provide a complete image. H.265 achieves higher compression over H.264 without compromising quality. However, H.265 is expensive in terms of processing and is only supported when used with [select GPUs](/en-us/citrix-workspace-app-for-windows/configure.html#h265-video-encoding) on the VDA. H.265 cannot be used when CPU encoding is used. Additionally, H.265 compatible hardware, in the form of GPU or purpose-built thin client, is required for decoding H.265 display data on the client endpoint. Review vendor documentation to determine H.265 supportability for your endpoint hardware.
+
+As H.264 compatibility has a broader base, we focus on Full-Screen H.264 and Selective H.264 within this article unless otherwise noted.
+
 Depending on the HDX mode configured, these categories are encoded by different means:
 
-*  **Text and simple images** are almost always encoded in a lossless fashion using Run-Length Encoding (RLE). Starting with Version 7.17, a Citrix proprietary RLE flavor called MDRLE is used which allows for a better compression rate [CTX232041](https://support.citrix.com/article/CTX232041). As we call out in the Visio chart below, enabling the **Optimize for 3D graphics workload** will disable the lossless text detection and transfer the content with H.264/H.265, rather than RLE as our default.
-*  For **static images** with HDX Thinwire JPEG is used for encoding while the video codec H.264/H.265 is used if Full Screen H.264 has been chosen as the graphics mode. If JPEG is used, the quality of it can be configured with the Visual Quality setting. Check the attached Visio chart below for more details.
-*  For **moving images** the video codec H.264/H.265 is used when configuring Full Screen H.264 or HDX Thinwire with Selective H.264. If HDX Thinwire with Adaptive JPEG has been configured, JPEG is used with a quality that automatically adapts (hence the name) to conditions such as frame rate and available bandwidth.
+*  **Text and simple images** are almost always encoded in a lossless fashion using Run-Length Encoding (RLE). Starting with Version 7.17, a Citrix proprietary RLE flavor called MDRLE is used which allows for a better compression rate [CTX232041](https://support.citrix.com/article/CTX232041). Enabling the **Optimize for 3D graphics workload** will disable the lossless text detection and transfer the content with H.264/H.265, rather than RLE.  You can visualize this policy through our Visio diagram later in this article.
+*  For **static images** with both Selective H.264/H.265 and Adaptive JPEG, JPEG is used for encoding while the video codec H.264/H.265 is used if Full-Screen H.264 has been chosen as the graphics mode. If JPEG is used, the quality of it can be configured with the Visual Quality setting. Check the attached Visio chart later in this article for more details.
+*  For **moving images** the video codec H.264/H.265 is used when configuring Full-Screen H.264 or HDX Thinwire with Selective H.264. If HDX Thinwire with Adaptive JPEG has been configured, JPEG is used with a quality that automatically adapts (hence the name) to conditions such as frame rate and available bandwidth.
 
 So, to recap the following three different flavors can be configured:
 
-**HDX Thinwire with Adaptive JPEG**
-Text: RLE
-Static images: JPEG
-Moving Images: Adaptive JPEG
+### HDX Thinwire with Adaptive JPEG
 
-**HDX Thinwire with Selective H.264**
-Text: RLE
-Static images: JPEG
-Moving Images: H.264
+*  Text: RLE
+*  Static images: JPEG
+*  Moving Images: Adaptive JPEG
 
-**Full Screen H.264**
-Text: RLE (or H.264 if Optimize for 3D graphics workload has been enabled)
-Static images: H.264
-Moving Images: H.264
-But how can these modes be configured?
+### HDX Thinwire with Selective H.264 / H.265
+
+*  Text: RLE
+*  Static images: JPEG
+*  Moving Images: H.264 / H.265
+
+### HDX Thinwire Full-Screen H.264
+
+*  Text: RLE (or H.264 / H.265 if Optimize for 3D graphics workload has been enabled)
+*  Static images: H.264 / H.265
+*  Moving Images: H.264 / H.265
 
 In the next section, we will cover how these modes can be configured.
 
@@ -69,28 +72,28 @@ In the next section, we will cover how these modes can be configured.
 
 The **Use Video Codec for Compression** policy is the central function to give your end-users an optimal experience by configuring display methods appropriate for different use-cases. Below we map the technologies we outlined above with policy settings configurable within Citrix Studio.
 
-*  **For Actively Changing Regions** = HDX Thinwire with Selective H.264
+*  **For Actively Changing Regions** = HDX Thinwire with Selective H.264 / H.265
 *  **Do Not Use Video Codec (default fallback method)** = HDX Thinwire with Adaptive JPEG
-*  **For the Entire Screen** = Full Screen H.264
-*  **Use When Preferred** (policy default) = **HDX Thinwire with Selective H.264** is used unless **Optimize for 3D Graphics Workloads** is also set, then **Full Screen H.264** is used.
+*  **For the Entire Screen** = HDX Thinwire Full-Screen H.264 / H.265
+*  **Use When Preferred** (policy default) = **HDX Thinwire with Selective H.264 / H.265** is used unless **Optimize for 3D Graphics Workloads** is also set, then **HDX Thinwire Full-Screen H.264 / H.265** is used.
 
-Capabilities of both the client endpoint and the Virtual Delivery Agent (VDA) are evaluated at session launch or session reconnect. If the client does not support H.264, the display method is HDX Thinwire with Adaptive JPEG regardless of the policy set on the VDA.
+Capabilities of both the client endpoint and the Virtual Delivery Agent (VDA) are evaluated at session launch or session reconnect. If the client does not support H.264 / H.265, the display method is HDX Thinwire with Adaptive JPEG regardless of the policy set on the VDA.
 
-### For Actively Changing Regions (HDX Thinwire with Selective H.264)
+### For Actively Changing Regions (HDX Thinwire with Selective H.264 / H.265)
 
 The **For Actively Changing Regions** graphics mode is our most balanced setting. As such, we recommend starting with this mode as you begin to baseline policies within your environment since it covers a wide user base (for example Office worker with occasional video playback).
 
-At its core is HDX Thinwire, leveraging still image (JPEG) compression, RLE for text, and bitmap caching for areas of the screen that are determined by the VDA to be static. The VDA continuously analyzes the screen for regions of fluid movement, such as multimedia, and selectively uses **H.264** to encode the fluid region.
+At its core this mode is leveraging JPEG for still images,  RLE for text, and bitmap caching for areas of the screen that are determined by the VDA to be static. The VDA continuously analyzes the screen for regions of fluid movement, such as multimedia, and selectively uses **H.264 / H.265** to encode the fluid region.
 
-As illustrated below, H.264 is “Inactive” until regions of fluid movement are detected The VDA then transitions to H.264 to encode the selected region during fluid movement and returns to an “Inactive” state once the selected region no longer contains fluid content.
+As illustrated below, H.264 / H.265 is “Inactive” until regions of fluid movement are detected The VDA then transitions to H.264 / H.265 to encode the selected region during fluid movement and returns to an “Inactive” state once the selected region no longer contains fluid content.
 
 ![HDX Graphics 2](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_001.png)
 
-H.264 provides a much more rich experience than adaptive JPEG at the expense of CPU to compress regions of fluid movement Network bandwidth will generally be less with H.264 compared to adaptive JPEG for multimedia workload. It is highly recommended to run your own tests with your specific use-case (check the Tools section below).
+H.264 / H.265 provides a much more rich experience than adaptive JPEG at the expense of CPU to compress regions of fluid movement. Network bandwidth will generally be less with H.264 / H.265 compared to adaptive JPEG for multimedia workload. It is highly recommended to run your own tests with your specific use-case (check the Tools section below).
 
 ### Do Not Use Video Codec (HDX Thinwire with Adaptive JPEG)
 
-The **Do Not Use Video Codec** offers maximum compatibility for client endpoints, including endpoints that do not support the decoding of H.264 graphics.
+The **Do Not Use Video Codec** offers maximum compatibility for client endpoints, including endpoints that do not support the decoding of H.264 / H.265 graphics.
 
 Similar to the **For Actively Changing Regions** setting, HDX Thinwire is also at the core of this graphics mode. As stated in the HDX Graphics Overview section, you should consider HDX Thinwire as the main feature, with Adaptive JPEG and Selective H.264 as subfeatures as in below:
 
@@ -99,31 +102,36 @@ HDX Thinwire
 *  Selective H.264
 *  Adaptive JPEG
 
-In this graphics mode, HDX Thinwire on the VDA analyzes the screen for regions of fluid movement. Rather than encoding with H.264, however, HDX Thinwire encodes moving images as Adaptive JPEG to deliver high compatibility or where H.264 is not needed. The remaining regions are presented as JPEG for still images, and RLE for text and simple graphics to deliver quality imagery.
+In this graphics mode, HDX Thinwire on the VDA analyzes the screen for regions of fluid movement. Rather than encoding with H.264 / H.265, however, HDX Thinwire encodes moving images as Adaptive JPEG to deliver high compatibility or where H.264 / H.265 is not needed. The remaining regions are presented as JPEG for still images, and RLE for text and simple graphics to deliver quality imagery.
 
-CPU processing for encoding moving images using Adaptive JPEG is typically lower than with HDX Thinwire with Selective H.264 or Full Screen H.264. This mode is desired if server scalability is your priority. The tradeoff is seen in terms of increased bandwidth and decreased moving image fidelity in WAN scenarios. This graphics mode should be limited to the use-case where accessing moving images is minimal, such as in a call center or point of sale system. In which case, the bandwidth utilization in this mode would be similar in comparison to HDX Thinwire with Selective H.264.
+CPU processing for encoding moving images using Adaptive JPEG is typically lower than with HDX Thinwire with Selective H.264 or Full-Screen H.264. This mode is desired if server scalability is your priority. The tradeoff is seen in terms of increased bandwidth and decreased moving image fidelity in WAN scenarios. This graphics mode should be limited to the use-case where accessing moving images is minimal, such as in a call center or point of sale system. In which case, the bandwidth utilization in this mode would be similar in comparison to HDX Thinwire with Selective H.264.
 
-HDX Thinwire with Adaptive JPEG is the default fallback method for the other two graphics modes (HDX Thinwire with Selective H.264 and Full Screen H.264).
+HDX Thinwire with Adaptive JPEG is the default fallback method for the other two graphics modes (Selective H.264 and Full-Screen H.264).
 
-### For the Entire Screen (Full Screen H.264)
+### For the Entire Screen (HDX Thinwire Full-Screen H.264)
 
-The **For the Entire Screen** graphics mode setting configures the VDA to encode all display data using H.264, except for text. Text is encoded using RLE and is overlaid with the remainder of the screen. If **Optimize for 3D Graphics Workloads** is enabled the entire screen, including text, is encoded as H.264.
+The **For the Entire Screen** graphics mode setting configures the VDA to encode all display data using H.264 / H.265, except for text. Text is encoded using RLE and is overlaid with the remainder of the screen. If **Optimize for 3D Graphics Workloads** is enabled the entire screen, including text, is encoded as H.264 / H.265.
 
-Fullscreen H.264 is designed for the heavy multimedia use-case, where larger regions of the screen are in motion Higher compression and quality is achieved at the expense of CPU and server scalability.
+Full-Screen H.264 / H.265 is designed for the heavy multimedia use-case, where larger regions of the screen are in motion Higher compression and quality is achieved at the expense of CPU and server scalability.
 
-On its own, this mode provides the best user experience when heavy multimedia, 3-D modeling, or CAD drawing applications are in use. The CPU can quickly become a bottleneck, if undersized, resulting in poor performance and user experience under heavy multimedia conditions Consider GPU offload capabilities to supplement this graphics mode while using these application types.
+On its own, this mode provides a good user experience when heavy multimedia, 3-D modeling, or CAD drawing applications are in use. The CPU can quickly become a bottleneck, if undersized, resulting in poor performance and user experience under heavy multimedia conditions Consider GPU offload capabilities to supplement this graphics mode while using these application types.
+
+By default [YUV420](https://en.wikipedia.org/wiki/YUV) is used as color space. With Full-Screen H.264, you can choose between YUV420 or YUV444:
+
+![HDX Graphics 3](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_003.png)
+
+As you can see, YUV444 results in a better quality but it has a significant impact on the bandwidth requirements. The use of YUV444 will also disable hardware encoding on the server side as well as hardware decoding on the client side (and therefore also H.265 where available).
+
+You can enable YUV444 for Full-Screen H.264 with the following settings:
+
+*  Visual Quality: Always lossless / Build to lossless
+*  Allow visually lossless compression: Enabled
+
+Check the Visio chart in this article for more details.
 
 ## HDX Graphics Configurations
 
-As the **Use Video Codec for Compression** policy is a good starting point to baseline your configuration, additional policies can be set to further customize your visual policies to fit your different workloads. By customizing these supporting policy settings, you can opt to reduce quality in certain areas to reclaim resources and achieve higher scalability and save on bandwidth. You can also opt to increase quality to support use-cases requiring precise visualizations, as in the healthcare industry.
-
-*  Visual Quality
-*  Use Hardware Encoding for Video Codec
-*  Preferred Color Depth for Simple Graphics
-*  Extra Color Compression
-*  Target Frame Rate
-*  Target Minimum Frame Rate
-*  Allow Visually Lossless Compression
+As the **Use Video Codec for Compression** policy is a good starting point to baseline your configuration, additional policies can be set to further customize your visual policies to fit your different workloads. By customizing these supporting policy settings, you can opt to reduce quality in certain areas to reclaim resources and achieve higher scalability and save on bandwidth. You can also opt to increase quality to support use-cases requiring precise visualizations, as in the healthcare industry. The chart below outlines these settings:
 
 ![HDX Graphics 2](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_002.png)
 
@@ -141,7 +149,7 @@ Due to varying GPU feature support, visit [Citrix Docs](/en-us/citrix-virtual-ap
 
 Once the settings details are known, the obvious next questions are: “What HDX mode should I use?” or “Are there any configuration recommendations?” As usual, the answer is: It depends. In most cases, a "one size fits all" approach may not be the best approach but rather different settings for different use-cases. So, the first questions you have to ask yourself are: What challenges and use-cases do I have? Is there are any graphics intense workload, any multimedia requirements that I need to fulfill? How is the network connection of the users?
 
-In most cases, HDX Thinwire with Selective H.264 (Use Video Codec for Compression: For actively changing regions) is the best choice (with the exception if you have 3D requirements). Additionally, it is a good idea to explicitly configure the different settings to ensure the same settings apply even after an update of your environment. As you can see in the following link, the default HDX mode used has changed over time [HDX Graphics Encoder Configuration Overview – What Really Matters](https://www.citrix.com/blogs/2017/09/29/hdx-graphics-encoder-configuration-overview-what-really-matters/). Therefore, explicitly configure the HDX mode you would like to run. Generally, refrain from using "Use Video Codec for Compression: use when preferred" as this setting may have a different effect depending on the type of OS, Hardware, and VDA version you are running. Also avoid configuring any Citrix policies that are linked to legacy graphics mode. These settings are only supported on Windows Server 2008 R2 and Windows 7 and are left for compatibility reasons.
+In most cases, HDX Thinwire with Selective H.264 (Use Video Codec for Compression: For actively changing regions) is the best choice. Additionally, it is a good idea to explicitly configure the different settings to ensure the same settings apply even after an update of your environment. As you can see in the following link, the default HDX mode used has changed over time [HDX Graphics Encoder Configuration Overview – What Really Matters](https://www.citrix.com/blogs/2017/09/29/hdx-graphics-encoder-configuration-overview-what-really-matters/). Therefore, explicitly configure the HDX mode you would like to run. Generally, refrain from using "Use Video Codec for Compression: use when preferred" as this setting may have a different effect depending on the type of OS, Hardware, and VDA version you are running. Also avoid configuring any Citrix policies that are linked to legacy graphics mode. These settings are only supported on Windows Server 2008 R2 and Windows 7 and are left for compatibility reasons.
 
 To give you an idea on how to start, we have created a few base line configurations for a few generic use-cases below. Still, we recommend you run your own tests to ensure you have the best mode configured for your specific needs:
 
@@ -151,14 +159,14 @@ This use-case describes a user connecting through a connection with serious band
 
 *  Use Video Codec for Compression: Do not use video codec
 *  Visual Quality: Low
-*  Preferred color depth for simple graphics: 16 bit
+*  Preferred color depth for simple graphics: 8 bit / 16 bit
 *  Extra Color Compression: Enabled
 *  Target Frame Rate: 15
 *  Target minimum frame rate: 10
 *  Moving Image Compression: Enabled
 *  HDX Adaptive Transport: Preferred
 
-As you can see, even with a low bandwidth connection we did not set the color depth to 8 bit. Why? Because as stated in the Visio chart above, this will automatically disable [Progressive Mode](/en-us/linux-virtual-delivery-agent/current-release/configuration/Thinwire-progressive-display.html). Progressive Mode will dynamically adjust the quality used depending on the available bandwidth the current latency. This allows for a better user experience at the expense of the overall visual quality. As conditions may change, allowing the quality to be adjusted automatically may increase the user experience for the user once there is more bandwidth available.
+As you can see, even with a low bandwidth connection we oftentimes do not set the color depth to 8 bit but keep it at 16 bit. While 8 bit can lower the bandwidth requirement substantially, it also comes with a significantly lowered user experience. Therefore, 8 bit should only be used in the most extreme cases where access won't be possible otherwise.
 
 ### Call-Center / Point-of-Sales
 
@@ -192,36 +200,22 @@ In the task worker use-case, a user has some multimedia requirements such as wat
 
 For 3D workload such as CAD / CAE, the user experience is key, therefore the following settings are used:
 
-*  Use Video Codec for Compression: For the entire screen
-*  Optimize for 3D graphics workload: Enabled
+*  Use Video Codec for Compression: For actively changing regions
 *  Use hardware encoding for video codec: Enabled (where available)
-*  Visual Quality: High/Medium/Low (there will be no difference between the three)
+*  Visual Quality: Build to lossless
 *  Target Frame Rate: 30 (can be 60 if required)
 *  Target minimum frame rate: 10
 *  HDX Adaptive Transport: Preferred
 *  Hardware Acceleration for graphics: Enabled (configured for Citrix Workspace app if available)
 *  H265 Decoding for graphics: Enabled (configured for Citrix Workspace app if available)
 
-The settings above will result in a [YUV420](https://en.wikipedia.org/wiki/YUV) as the used color space. With Fullscreen H.264, you can choose between YUV420 or YUV444:
-
-![HDX Graphics 3](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_003.png)
-
-As you can see, YUV444 results in a better quality but it has a significant impact on the bandwidth requirements. The use of YUV444 will however disable hardware encoding on the server side as well as hardware decoding on the client side (and therefore also H.265 where available).
-
-You can enable YUV444 for Fullscreen H.264 with the following settings:
-
-*  Visual Quality: Always lossless / Build to lossless
-*  Allow visually lossless compression: Enabled
-
-Check the Visio chart above for more details.
-
 ## Endpoint Device Consideration
 
 Our goal is to support delivery of your Citrix Virtual Apps and Desktops to any device, anywhere.
 
-On the surface this sounds appealing. However, this does not necessarily mean all capabilities are present on all endpoints. For example, H.264 decoding support may be missing, or supported only within specific boundaries such as the max monitor resolution or max number of monitors.
+On the surface this sounds appealing. However, this does not necessarily mean all capabilities are present on all endpoints. For example, H.264 / H.265 decoding support may be missing, or supported only within specific boundaries such as the max monitor resolution or max number of monitors.
 
-We recommend reviewing the vendor documentation for your chosen endpoint to determine overall supportability for H.264.
+We recommend reviewing the vendor documentation for your chosen endpoint to determine overall supportability for H.264 / H.265.
 
 ### Thin Clients
 
@@ -265,14 +259,14 @@ The build-in graphics status indicator can be enabled through Citrix policy by e
 
 ## Key Takeaways
 
-The **Use Video Codec for Compression** is the policy to configure the use of either HDX Thinwire with Adaptive JPEG, HDX Thinwire with Selective H.264, or Full Screen H.264.
+The **Use Video Codec for Compression** is the policy to configure the use of either HDX Thinwire with Adaptive JPEG, HDX Thinwire with Selective H.264, or HDX Thinwire Full-Screen H.264.
 
-Each HDX graphics mode has benefits and trade-offs in terms of resource consumption, whether CPU or network utilization Resource consumption, particularly CPU, affects server scalability.
+Each HDX graphics mode has benefits and trade-offs in terms of resource consumption, whether CPU or network utilization. Resource consumption, particularly CPU, affects server scalability.
 
-Additional policies, such as Visual Quality, Target Framerate, and others can be customized to offset the resource consumption at the expense of minor visual quality, or increase quality where it is needed most Customize these policies to fit the uses-cases within your own environment Refer to the Visio Diagram to guide you through the process.
+Additional policies, such as Visual Quality, Target Framerate, and others can be customized to offset the resource consumption at the expense of minor visual quality, or increase quality where it is needed most. Customize these policies to fit the uses-cases within your own environment. Refer to the Visio Diagram to guide you through the process.
 
-Endpoint selection is essential for compatibility with your selected graphics mode. The VDA falls back to HDX Thinwire with Adaptive JPEG for endpoints without H.264 support.
+Endpoint selection is essential for compatibility with your selected graphics mode. The VDA falls back to HDX Thinwire with Adaptive JPEG for endpoints without H.264 / H.265 support.
 
 Leverage our built-in tools (HDX Monitor and the Graphics Status Indicator) to evaluate if your policy settings have met your desired outcome.
 
-HDX Thinwire with Selective H.264 is often times an appropriate starting point. However, knowing your use case(s) and configuring your environment accordingly is the best approach to deliver a rich experience to end-users.
+HDX Thinwire with Selective H.264 / H.265 is often times an appropriate starting point. However, knowing your use case(s) and configuring your environment accordingly is the best approach to deliver a rich experience to end-users.
