@@ -86,7 +86,7 @@ Capabilities of both the client endpoint and the Virtual Delivery Agent (VDA) ar
 
 The **For Actively Changing Regions** graphics mode is our most balanced setting. As such, we recommend starting with this mode as you begin to baseline policies within your environment since it covers a wide user base (for example Office worker with occasional video playback).
 
-At its core this mode is leveraging JPEG for still images,  RLE for text, and bitmap caching for areas of the screen that are determined by the VDA to be static. The VDA continuously analyzes the screen for regions of fluid movement, such as multimedia, and selectively uses **H.264 / H.265** to encode the fluid region.
+At its core this mode is leveraging JPEG for still images,  RLE for text, simple images and solid color blocks, as well as bitmap caching for areas of the screen that are determined by the VDA to be static. The VDA continuously analyzes the screen for regions of fluid movement, such as multimedia, and selectively uses **H.264 / H.265** to encode the fluid region.
 
 As illustrated below, H.264 / H.265 is “Inactive” until regions of fluid movement are detected The VDA then transitions to H.264 / H.265 to encode the selected region during fluid movement and returns to an “Inactive” state once the selected region no longer contains fluid content.
 
