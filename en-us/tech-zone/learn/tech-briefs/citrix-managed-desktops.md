@@ -101,7 +101,7 @@ Machine Creation Services (MCS) is used to provision the workload VMs in the con
 3)  The Windows Server 2008 R2 / 2012 R2 / 2016 / 2019 are server operating systems that allow multiple users to connect to a single machine. One of these OSs can be used to serve applications to users or provide access to desktop sessions (which can be skinned to look like desktop operating system sessions). These OSs are a cheaper option to deliver desktops than option 1. 
 Note: Each user connecting to this machine requires an RDS CAL or RDS SAL.
 
-Note: For Windows 7 ESU and the Windows Server 2008 R2 operating systems, the version of the Virtual Delivery agent to be installed on the image must be Citrix Virrual Apps and Desktop 7.15 LTSR.
+Note: For Windows 7 ESU and the Windows Server 2008 R2 operating systems, the version of the Virtual Delivery agent to be installed on the image must be Citrix Virtual Apps and Desktop 7.15 LTSR.
 
 ![Master_Images_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_7-master-images-ss.png)
 
