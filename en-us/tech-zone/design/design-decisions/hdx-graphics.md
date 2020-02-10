@@ -98,11 +98,11 @@ H.264 / H.265 provides a much more rich experience than adaptive JPEG at the exp
 
 The **Do Not Use Video Codec** offers maximum compatibility for client endpoints, including endpoints that do not support the decoding of H.264 / H.265 graphics.
 
-Similar to the **For Actively Changing Regions** setting, HDX Thinwire is also at the core of this graphics mode. As stated in the HDX Graphics Overview section, you should consider HDX Thinwire as the main feature, with Adaptive JPEG and Selective H.264 as subfeatures as in below:
+Similar to the **For Actively Changing Regions** setting, HDX Thinwire is also at the core of this graphics mode. As stated in the HDX Graphics Overview section, you should consider HDX Thinwire as the main feature, with Adaptive JPEG and Selective H.264 / H.265 as subfeatures as in below:
 
 HDX Thinwire
 
-*  Selective H.264
+*  Selective H.264 / H.265
 *  Adaptive JPEG
 
 In this graphics mode, HDX Thinwire on the VDA analyzes the screen for regions of fluid movement. Rather than encoding with H.264 / H.265, however, HDX Thinwire encodes moving images as Adaptive JPEG to deliver high compatibility or where H.264 / H.265 is not needed. The remaining regions are presented as JPEG for still images, and RLE for text and simple graphics to deliver quality imagery.
