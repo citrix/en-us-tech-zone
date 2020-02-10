@@ -36,7 +36,7 @@ In the example above, text or simple images are highlighted in blue, static imag
 Within Citrix Virtual Apps and Desktops, there are two main display technologies at work:  **HDX Thinwire with Selective H.264 / H.265 or Adaptive JPEG** and **HDX Thinwire Full-Screen H.264 / H.265** Citrix adapts the use of industry leading standards, H.264, and H.265 for efficient delivery of high-quality video content in its “Full-Screen” and “Selective” codec implementations.
 
 *  **HDX Thinwire with Selective H.264 / H.265 or Adaptive JPEG** is an adaptive remote display technology that senses regions of transient content (fluid images or video) and encodes it based on set policy and capabilities detected on the endpoint. HDX Thinwire encodes these “selected” (or transient) regions either as Adaptive JPEG or H.264 / H.265. Adaptive JPEG and “Selective” H.264 / H.265 are considered subfeatures as HDX Thinwire is the core technology. The remaining, non-transient regions (encoded as JPEG and Run-Length Encoding (RLE)) are then combined to complete the in-session display.
-*  **HDX Thinwire Full-Screen H.264 / H.265** treats the entire screen as transient content, with the exception of text (by default), and encodes display data using one of these two codecs. Text is then overlaid onto the screen to provide a complete image. H.265 achieves higher compression over H.264 without compromising quality. However, H.265 is expensive in terms of processing and is only supported when used with [select GPUs](/en-us/citrix-workspace-app-for-windows/configure.html#h265-video-encoding) on the VDA. H.265 cannot be used when CPU encoding is used. Additionally, H.265 compatible hardware, in the form of GPU or purpose-built thin client, is required for decoding H.265 display data on the client endpoint. Review vendor documentation to determine H.265 supportability for your endpoint hardware.
+*  **HDX Thinwire Full-Screen H.264 / H.265** treats the entire screen as transient content, with the exception of text (by default), and encodes display data using one of these two codecs. Text is then overlaid onto the screen to provide a complete image. H.265 achieves higher compression over H.264 without compromising quality. However, H.265 is expensive in terms of processing and is only supported when used with [select GPUs](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/configure.html#h265-video-encoding) on the VDA. H.265 cannot be used when CPU encoding is used. Additionally, H.265 compatible hardware, in the form of GPU or purpose-built thin client, is required for decoding H.265 display data on the client endpoint. Review vendor documentation to determine H.265 supportability for your endpoint hardware.
 
 As H.264 compatibility has a broader base, we focus on Full-Screen H.264 and Selective H.264 within this article unless otherwise noted.
 
@@ -146,7 +146,7 @@ By default, all processing for encoding graphics occurs within the CPU on the VD
 
 Offloading graphics encoding to a GPU will free up resources on the CPU for other tasks, resulting in a better overall experience for the end-user.
 
-Due to varying GPU feature support, visit [Citrix Docs](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/graphics-policy-settings.html#use-hardware-encoding-for-video) to review feature supportability for each vendor GPU when enabling the **Use hardware encoding for video codec** policy setting.
+Due to varying GPU feature support, visit [Citrix Docs](/https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/graphics-policy-settings.html#use-hardware-encoding-for-video) to review feature supportability for each vendor GPU when enabling the **Use hardware encoding for video codec** policy setting.
 
 ## Use Cases
 
@@ -242,7 +242,7 @@ If you manage thick client endpoints in your environment, consider the following
 *  Browser: Citrix Workspace app for HTML5
 *  Citrix Receiver/ Workspace app version:  Feature Support Matrix can be found [here](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf).
 *  GPU Offload Capability
-    *  Requires additional configuration for [Citrix Workspace app for Windows](/en-us/receiver/windows/current-release/improve.html#hardware-decoding) and [Citrix Workspace app for Linux](/en-us/citrix-workspace-app-for-linux/configure-xenapp.html#h264) to enable Hardware Acceleration for Graphics with compatible GPU.
+    *  Requires additional configuration for [Citrix Workspace app for Windows](https://docs.citrix.com/en-us/receiver/windows/current-release/improve.html#hardware-decoding) and [Citrix Workspace app for Linux](https://docs.citrix.com/en-us/citrix-workspace-app-for-linux/configure-xenapp.html#h264) to enable Hardware Acceleration for Graphics with compatible GPU.
 
 ## Tools
 
