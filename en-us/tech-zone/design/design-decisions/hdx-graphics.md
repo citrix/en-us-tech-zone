@@ -146,7 +146,7 @@ By default, all processing for encoding graphics occurs within the CPU on the VD
 
 Offloading graphics encoding to a GPU will free up resources on the CPU for other tasks, resulting in a better overall experience for the end-user.
 
-Due to varying GPU feature support, visit [Citrix Docs](/https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/graphics-policy-settings.html#use-hardware-encoding-for-video) to review feature supportability for each vendor GPU when enabling the **Use hardware encoding for video codec** policy setting.
+Due to varying GPU feature support, visit [Citrix Docs](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/graphics-policy-settings.html#use-hardware-encoding-for-video) to review feature supportability for each vendor GPU when enabling the **Use hardware encoding for video codec** policy setting.
 
 ## Use Cases
 
