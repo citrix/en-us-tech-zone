@@ -67,7 +67,7 @@ Citrix ITM provides resiliency and a better user experience by directing workspa
 Citrix Gateway service operates in multiple POPs around the world in conjunction with ITM which monitors the health of each site. If for any reason a POP goes down or connectivity is degraded past thresholds, Citrix ITM responds to subsequent DNS queries with the public IP address of the next closest POP. The Workspace app and the Citrix Virtual Apps and Desktops controller will initiate retries and timeouts based on session [connection](/en-us/citrix-virtual-apps-desktops/manage-deployment/connections.html) and [timer](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-limits-policy-settings.html) settings.
 
 *  Each POP is configured for High Availability
-*  12 POPs (9 Azure, 3 AWS).
+*  14 POPs (11 Azure, 3 AWS).
 *  Four 9s of reliability
 
 ![Citrix Global Points of Presence](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_4.png)
