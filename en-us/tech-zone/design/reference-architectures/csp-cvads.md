@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Darren Harding](https://Twitter.com/DarrenHarding)
 
-**Special Thanks:** [Selma Wei](https://Twitter.com/_selw), [Bala Swaminathan](https://Twitter.com/Bala), [Alex Tompkins] (Alex.Tompkins@Citrix.com)
+**Special Thanks:** [Selma Wei](https://Twitter.com/_selw), [Bala Swaminathan](https://Twitter.com/Bala), [Jose Augustin](https://Twitter.com/joseaugustin), [Alex Tompkins] (Alex.Tompkins@Citrix.com)
 
 **Additional Thanks:** The CSP Channel team who reviewed the document.
 
