@@ -30,3 +30,5 @@ Short overview documents explaining a technology, a feature, a function next to 
 [Workspace Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) - Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.
 
 [Workspace Microapps](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html) - Streamline functionality from complex enterprise applications creating simple actions users can complete right within their feed.
+
+[Workspace Single Sign-On](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) - Learn how Citrix Workspace provides single sign-on capabilities to SaaS apps, web apps, mobile apps, Windows virtual apps and Windows virtual desktops. In addition, learn how Workspace single sign-on can support IdP chaining configurations.
