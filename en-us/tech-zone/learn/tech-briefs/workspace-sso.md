@@ -65,9 +65,9 @@ To achieve single sign-on to a SaaS application, Citrix Workspace utilizes indus
 
 SAML-based authentication typically focuses on three main entities:
 
-1.  Identity Provider: the entity that proves the user’s primary identity (Active Directory, Azure Active Directory, Okta, and so on)
-2.  Service Provider: the entity that delivers a service (SaaS app) and contains a secondary identity
-3.  Assertion: a package of data that indicates the user was authenticated (XML)
+*  Identity Provider: the entity that proves the user’s primary identity (Active Directory, Azure Active Directory, Okta, and so on)
+*  Service Provider: the entity that delivers a service (SaaS app) and contains a secondary identity
+*  Assertion: a package of data that indicates the user was authenticated (XML)
 
 SAML-based authentication works by associating two different user accounts (primary and secondary) with common attribute(s), typically a user principal name (UPN) or email address.
 
@@ -80,7 +80,7 @@ name or password. In addition, many SaaS applications have the ability to disabl
 
 Citrix Workspace adds a fourth component to the SAML process
 
-4.  Identity Broker: the entity that links multiple identity providers to multiple service providers (Citrix Workspace)
+*  Identity Broker: the entity that links multiple identity providers to multiple service providers (Citrix Workspace)
 
 [![Brokering Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-broker-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-broker-overview.png)
 
