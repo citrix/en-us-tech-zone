@@ -69,16 +69,16 @@ SAML-based authentication typically focuses on three main entities:
 *  Service Provider: the entity that delivers a service (SaaS app) and contains a secondary identity
 *  Assertion: a package of data that indicates the user was authenticated (XML)
 
-SAML-based authentication works by associating two different user accounts (primary and secondary) with common attribute(s), typically a user principal name (UPN) or email address.
+    SAML-based authentication works by associating two different user accounts (primary and secondary) with common attribute(s), typically a user principal name (UPN) or email address.
 
-[![SAML Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-overview.png)
+    [![SAML Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-overview.png)
 
-The user identity can be different between the primary identity from the identity provider and secondary identity from the service provider.
+    The user identity can be different between the primary identity from the identity provider and secondary identity from the service provider.
 
-With single sign-on, the user does not need to know their secondary identity’s user
+    With single sign-on, the user does not need to know their secondary identity’s user
 name or password. In addition, many SaaS applications have the ability to disable the password (and direct password access) from user accounts when authentication uses SAML. This forces user authentication to always use the primary identity from the identity provider and not the secondary identity from the service provider.
 
-Citrix Workspace adds a fourth component to the SAML process
+    Citrix Workspace adds a fourth component to the SAML process
 
 *  Identity Broker: the entity that links multiple identity providers to multiple service providers (Citrix Workspace)
 
