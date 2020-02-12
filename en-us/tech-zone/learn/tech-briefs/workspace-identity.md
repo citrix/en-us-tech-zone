@@ -67,6 +67,7 @@ To better understand the details of each identity provider, review the following
 *  Azure Active Directory
 *  Citrix Gateway
 *  Okta
+*  Google
 
 ## Active Directory
 
