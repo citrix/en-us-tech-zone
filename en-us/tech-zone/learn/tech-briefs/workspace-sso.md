@@ -63,24 +63,34 @@ From a Citrix Workspace perspective, a SaaS application is a browser-based appli
 
 To achieve single sign-on to a SaaS application, Citrix Workspace utilizes industry standard SAML-based authentication.
 
-With SAML, there are typically three main entities:
+SAML-based authentication typically focuses on three main entities:
 
-1.  Identity Provider: the entity that proves the user’s primary identity (Citrix Workspace)
-1.  Service Provider: the entity that delivers a service (SaaS app) and contains a secondary identity
-1.  Assertion: a package of data that indicates the user was authenticated (XML)
+*  Identity Provider: the entity that proves the user’s primary identity (Active Directory, Azure Active Directory, Okta, and so on)
+*  Service Provider: the entity that delivers a service (SaaS app) and contains a secondary identity
+*  Assertion: a package of data that indicates the user was authenticated (XML)
 
-SAML-based authentication works by associating two different user accounts (primary and secondary) with common attribute(s), typically a user principal name (UPN) or email address.
+    SAML-based authentication works by associating two different user accounts (primary and secondary) with common attribute(s), typically a user principal name (UPN) or email address.
 
-[![SAML Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-overview.png)
+    [![SAML Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-overview.png)
 
-***Note**: This process supports IdP chaining, discussed in a future section.*
+    The user identity can be different between the primary identity from the identity provider and secondary identity from the service provider.
 
-The user identity, consisting of user names and passwords, can be different between the primary identity from the identity provider and secondary identity from the service provider.
-
-With single sign-on, the user does not need to know their secondary identity’s user
+    With single sign-on, the user does not need to know their secondary identity’s user
 name or password. In addition, many SaaS applications have the ability to disable the password (and direct password access) from user accounts when authentication uses SAML. This forces user authentication to always use the primary identity from the identity provider and not the secondary identity from the service provider.
 
-For SAML authentication to work, the identity provider associates the request with a SAML specific logon URL for each SaaS application. This URL receives the user assertion. When the service provider receives the assertion, it must validate the assertion against the entity that generated the assertion, which is the identity provider’s SAML issuer URL.
+    Citrix Workspace adds a fourth component to the SAML process
+
+*  Identity Broker: the entity that links multiple identity providers to multiple service providers (Citrix Workspace)
+
+[![Brokering Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-broker-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-broker-overview.png)
+
+Citrix Workspace takes claims about the user’s primary identity and translates them to secondary identities.
+
+Adding an identity broker (IdB) into the SAML authentication flow still requires a common attribute linking the user’s primary identity (IdP) to the secondary identity (SP).
+
+[![Brokering Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-broker-detail.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-broker-detail.png)
+
+For SAML authentication to work, the identity broker associates the request with a SAML specific logon URL for each SaaS application. This URL receives the user assertion. When the service provider receives the assertion, it must validate the assertion against the entity that generated the assertion, which is the identity broker's SAML issuer URL.
 
 [![SAML URLs](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-urls.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-urls.png)
 
@@ -91,14 +101,15 @@ Within Citrix Workspace, the overall process for single sign-on to SaaS applicat
 SSO to SaaS apps within Citrix Workspace helps solve a few user and admin experience challenges:
 
 1.  Users do not have to remember a user name and password for each secondary identity
-1.  Users do not have to create complex passwords for each secondary identity
-1.  Users do not have to setup/configure MFA keys/tokens for each secondary identity
-1.  Admins can disable access to all SaaS apps by disabling the user’s primary identity
+2.  Users do not have to create complex passwords for each secondary identity
+3.  Users do not have to setup/configure MFA keys/tokens for each secondary identity
+4.  Admins can disable access to all SaaS apps by disabling the user’s primary identity
+5.  Admins can base the user’s primary identity on one of the growing list of supported identity providers
 
 To keep access secure, organizations must
 
 1.  Implement strong authentication policies for the primary Workspace identity
-1.  Disable direct access to SaaS apps with the secondary identity
+2.  Disable direct access to SaaS apps with the secondary identity
 
 ## SSO: Web Apps (section coming soon)
 
