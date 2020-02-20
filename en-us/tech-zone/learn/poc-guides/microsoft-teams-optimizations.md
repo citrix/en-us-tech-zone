@@ -20,7 +20,7 @@ This document guides administrators in evaluating the Teams delivery solution in
 
 This choice is often what causes the most confusion about delivering a Microsoft Teams experience in a Citrix environment. The main reason is that without optimization the media must “hairpin” from your client to the server in the data center and then back to the endpoint. This additional traffic can put significant load on the server (especially for video) and can cause delay and an overall degraded experience, especially if the other party in a Teams call is originating from a user in a similar virtualized experience. This method for delivering a Microsoft Teams experience is referred to as “Generic” delivery.
 
-The preferred method of delivery is the “Optimized” method. In this case, the architect and/or administrator uses Optimization for Microsoft Teams in their environment. The “Optimized” method is like splitting the Teams client in two, as illustrated in the following comparison diagram. The user interface lives inside the virtual host, and is seen completely in the virtual desktop or application display. However, the media rendering, or media engine is separated off to run on the endpoint. This method allows for a exquisite rendering of the audio and video and a great desktop sharing experience.
+The preferred method of delivery is the “Optimized” method. In this case, the architect and/or administrator uses Optimization for Microsoft Teams in their environment. The “Optimized” method is like splitting the Teams client in two, as illustrated in the following comparison diagram. The user interface lives inside the virtual host, and is seen completely in the virtual desktop or application display. However, the media rendering, or media engine is separated off to run on the endpoint. This method allows for an exquisite rendering of the audio and video and a great desktop sharing experience.
 
 ![Optimized vs Fallback mode of delivery for Microsoft Teams](/en-us/tech-zone/learn/media/poc-guides_microsoft-teams-optimizations_1.png)
 
@@ -89,7 +89,7 @@ Note: Microsoft Teams does not support iPhone headsets
 
 Note - The Optimization for Teams at GA only applies to Windows Endpoints
 
-1.  Download the latest Citrix Virtual Apps and Desktops VDA installer. On Citrix.com, select the Downloads Tab. Select Citrix Virtual Apps and Desktops as the product and select Product Software as the download type. Select Citrix Virtual Apps and Desktops 1906 or later, it will be under Components
+1.  Download the latest Citrix Virtual Apps and Desktops VDA installer. On Citrix.com, select the Downloads Tab. Select Citrix Virtual Apps and Desktops as the product and select Product Software as the download type. Select Citrix Virtual Apps and Desktops 1906 or later, it is under Components
 1.  Ensure that the Teams service is reachable, from the client in addition to the VDA
 1.  Ensure Microsoft Teams client version 1.2.00.31357 or higher is installed in the Virtual Delivery Agent hosts or base image or on Citrix Virtual Apps servers, which will be used to deliver Microsoft Teams or on both. See instructions on how to install it below
 1.  Download the latest Citrix Workspace app. [Link](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html)
@@ -107,7 +107,7 @@ If Teams was installed in user mode before on the image:
     -  Have all users in the environment manually uninstall from **Control Panel > Programs & Features**
 -  Admin from MSI:
     -  Admin uninstalls in the normal way
-    -  All users in the environment must sign in, in order for uninstallation to be completed
+    -  All users in the environment must sign in for uninstallation to be completed
 -  Admin from Office Pro Plus:
     -  Admin may need to uninstall as if MSI were directly installed (above)
     -  Office Pro Plus must be configured to not include Teams
@@ -211,7 +211,7 @@ msiexec /passive /x Teams_windows.msi /l*v msi_uninstall.log
 ### Screen sharing
 
 Microsoft Teams relies on video-based screen sharing (VBSS), effectively encoding the desktop being shared with video codecs like H264 and creating a high-definition stream.
-With HDX optimization, incoming screen sharing is treated as a video stream, therefore if you are in the middle of a video call and the other peer starts to share thier desktop, thier camera video feed is paused and instead the screen sharing video feed is displayed. The peer must then manually resume thier camera sharing.
+With HDX optimization, incoming screen sharing is treated as a video stream, therefore if you are in the middle of a video call and the other peer starts to share their desktop, their camera video feed is paused and instead the screen sharing video feed is displayed. The peer must then manually resume their camera sharing.
 
 ### Multi-monitor
 
