@@ -6,7 +6,7 @@ layout: doc
 
 ## Contributors
 
-**Author:** [name](https://twitter.com/handle)
+**Author:** [Loay Shbeilat](mailto:loay.shbeilat@citrix.com)
 
 The goal of this document is to provide guidance to enterprises that are moving towards deploying Citrix Virtual Applications and Desktops (CVAD) in the Microsoft Azure cloud. In an effort to provide the best possible advice to our customers, we decided to determine the answer to four key questions that impact Citrix architecture and design decisions
 
