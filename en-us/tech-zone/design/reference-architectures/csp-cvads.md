@@ -532,6 +532,7 @@ The Citrix Virtual Apps and Desktops Service allows Citrix Service Providers to 
 The Citrix Service Provider admins are able to manage their multitenant Shared and Dedicated Resource location Customers using a single Monitoring console. The CSP admin can choose to view an overview of all resources or drill down to a specific Customer. The Service provider can also set Role Based Access Control permissions for its team remembers to manage specific customer scope or perform a subset of functions.
 
 [![CSP-Image-048](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_048.png)]
+
 [![CSP-Image-049](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_048.png)]
 
 Single tenants in their private workspace with own instance of Citrix Virtual Apps and Desktops Service, their Monitoring console is dedicated. A Citrix Service Provider with administrator rights,  logs into the customer’s cloud account to access and manage through this console.
