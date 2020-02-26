@@ -9,7 +9,7 @@ layout: doc
 
 ## Overview
 
-Multi-factor authentication enhances the security of an application by requiring users to provide multiple proofs of identify to gain access. The NetScaler appliance provides an extensible and flexible approach to configuring multi-factor authentication. This approach is called **nFactor authentication.**
+Multifactor authentication enhances the security of an application by requiring users to provide multiple proofs of identify to gain access. The NetScaler appliance provides an extensible and flexible approach to configuring multifactor authentication. This approach is called **nFactor authentication.**
 
 nFactor authentication allows businesses to build authentication scenarios that match business use cases including any number of authentication factors, login interface and message customization and multiple potential authentication paths based on user or device context.
 

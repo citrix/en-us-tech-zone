@@ -9,7 +9,7 @@ layout: doc
 
 ## Overview
 
-Citrix ADC consists of a highly customized ADC kernel running on top of the BSD operating system. While some files, directories and processes may be familiar, there are numerous logs, processes and directories that are specific to the ADC.
+Citrix ADC consists of a highly customized ADC kernel running on top of the BSD operating system. While some files, directories and processes may be familiar, there are numerous logs, processes, and directories that are specific to the ADC.
 
 Use this cheat sheet to understand where ADC stores important files, the names of several ADC processes and the locations for important log files to use when troubleshooting various issues.
 
