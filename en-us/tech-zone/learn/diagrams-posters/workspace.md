@@ -17,5 +17,7 @@ The Citrix Workspace - User Experience poster provides an overview focusing on
 *  Optimized Fabric
 
 To show in full size, click on the image below:
+[Original Visio File](https://citrix.sharefile.com/d-sbb9281af1fe4496a)
 
 [![Citrix Workspace - User Experience Poster](/en-us/tech-zone/learn/media/diagrams-posters_citrix-workspace-user-experience-poster_main.png)](/en-us/tech-zone/learn/downloads/citrix-workspace-user-experience-poster.png)
+
