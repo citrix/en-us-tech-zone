@@ -21,7 +21,7 @@ The Citrix Workspace - User Experience poster provides an overview focusing on
 
 To show in full size, click on the image below:
 
-[![Citrix Workspace - User Experience Poster](/en-us/tech-zone/learn/media/diagrams-posters_citrix-workspace-user-experience-poster_main.png)](/en-us/tech-zone/learn/downloads/citrix-workspace-user-experience-poster.png)
+[![Citrix Workspace - User Experience Poster](/en-us/tech-zone/learn/media/diagrams-posters_workspace_user-experience-poster.png](/en-us/tech-zone/learn/downloads/diagrams-posters_workspace_user-experience-poster.png)
 
 ## Sources
 
