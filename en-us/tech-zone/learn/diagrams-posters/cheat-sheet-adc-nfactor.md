@@ -7,6 +7,8 @@ layout: doc
 
 **Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com)
 
+**Special thanks:** Paul Walker
+
 ## Overview
 
 Multifactor authentication enhances the security of an application by requiring users to provide multiple proofs of identify to gain access. The NetScaler appliance provides an extensible and flexible approach to configuring multifactor authentication. This approach is called **nFactor authentication.**

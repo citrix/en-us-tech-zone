@@ -7,6 +7,8 @@ layout: doc
 
 **Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com)
 
+**Special thanks:** Ian Guiterrez
+
 ## Overview
 
 Citrix Application Delivery Management (ADM) is the only application delivery management platform that provides comprehensive automation, faster troubleshooting, and actionable insights from a single pane of glass for all your application delivery controller (ADC) infrastructure across hybrid multi-cloud environments.
