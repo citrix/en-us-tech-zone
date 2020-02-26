@@ -15,7 +15,7 @@ Citrix ADC appliances configured for global server load balancing (GSLB) provide
 *  Communication process is accomplished between each GSLB site on TCP port 3011 (or 3009 for secure communication).
 *  MEP communication is initiated from the lower site IP address to the higher site address for site metrics exchange and higher to lower for network metrics.
 
-The Citrix ADC GSLB and sync cheat sheet provides you with the most commonly used resources to troubleshoot Citrix ADC GSLB and sync issues. 
+The Citrix ADC GSLB and sync cheat sheet provides you with the most commonly used resources to troubleshoot Citrix ADC GSLB and sync issues.
 
 Use the following link to [download Troubleshooting Citrix GSLB MEP Cheat Sheet](/en-us/tech-zone/learn/downloads/diagrams-posters_cheat-sheet-adc-troubleshooting-gslb.pdf).
 
