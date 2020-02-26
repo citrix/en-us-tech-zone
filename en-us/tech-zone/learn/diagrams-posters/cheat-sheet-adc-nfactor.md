@@ -11,4 +11,4 @@ The Citrix ADC nFactor Cheat Sheet provides a one-page summary of nFactor authen
 
 Use the following link to [download Citrix ADC nFactor Basics Cheat Sheet](/en-us/tech-zone/learn/downloads/diagrams-posters_cheat-sheet-adc-nfactor.pdf).
 
-[![TODO](/en-us/tech-zone/learn/media/diagrams-posters_cheat-sheet-adc-nfactor_1.png)](/en-us/tech-zone/learn/downloads/diagrams-posters_cheat-sheet-adc-nfactor.pdf)
+[![Cheat Sheet](/en-us/tech-zone/learn/media/diagrams-posters_cheat-sheet-adc-nfactor_1.png)](/en-us/tech-zone/learn/downloads/diagrams-posters_cheat-sheet-adc-nfactor.pdf)

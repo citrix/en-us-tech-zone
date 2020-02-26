@@ -11,4 +11,4 @@ The Citrix ADM Overview Cheat Sheet provides a one-page summary of the ADM Platf
 
 Use the following link to [download Citrix Application Delivery Management (ADM) Overview Cheat Sheet](/en-us/tech-zone/learn/downloads/diagrams-posters_cheat-sheet-adm.pdf).
 
-[![TODO](/en-us/tech-zone/learn/media/diagrams-posters_cheat-sheet-adm_1.png)](/en-us/tech-zone/learn/downloads/diagrams-posters_cheat-sheet-adm.pdf)
+[![Cheat Sheet](/en-us/tech-zone/learn/media/diagrams-posters_cheat-sheet-adm_1.png)](/en-us/tech-zone/learn/downloads/diagrams-posters_cheat-sheet-adm.pdf)

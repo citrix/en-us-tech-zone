@@ -11,4 +11,4 @@ This cheat sheet provides Citrix ADC SDX Basics and Common Log Files.  Quickly l
 
 Use the following link to [download Citrix ADC SDX Basics and Log File Cheat Sheet](/en-us/tech-zone/learn/downloads/diagrams-posters_cheat-sheet-adc-sdx-basics.pdf).
 
-[![TODO](/en-us/tech-zone/learn/media/diagrams-posters_cheat-sheet-adc-sdx-basics_1.png)](/en-us/tech-zone/learn/downloads/diagrams-posters_cheat-sheet-adc-sdx-basics.pdf)
+[![Cheat Sheet](/en-us/tech-zone/learn/media/diagrams-posters_cheat-sheet-adc-sdx-basics_1.png)](/en-us/tech-zone/learn/downloads/diagrams-posters_cheat-sheet-adc-sdx-basics.pdf)
