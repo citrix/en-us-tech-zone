@@ -7,6 +7,8 @@ layout: doc
 
 **Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com)
 
+## Contributors
+
 The Citrix ADC nFactor Cheat Sheet provides a one-page summary of nFactor authentication detailing in the following: concepts, how it works, nFactor Visualizer information, configuration steps, and more.
 
 Use the following link to [download Citrix ADC nFactor Basics Cheat Sheet](/en-us/tech-zone/learn/downloads/diagrams-posters_cheat-sheet-adc-nfactor.pdf).
