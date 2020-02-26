@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com)
 
-## Contributors
+## Overview
 
 A high availability (HA) deployment of two Citrix ADC appliances can provide uninterrupted operation in any transaction. With one appliance configured as the primary node and the other as the secondary node, the primary node accepts connections and manages servers while the secondary node monitors the primary. If, for any reason, the primary node is unable to accept connections, the secondary node takes over.
 

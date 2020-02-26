@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com)
 
-## Contributors
+## Overview
 
 Citrix ADC appliances configured for global server load balancing (GSLB) provide for disaster recovery and ensure continuous availability of applications by protecting against points of failure in a wide area network (WAN). GSLB can balance the load across data centers by directing client requests to the closest or best performing data center, or to surviving data centers in case of an outage.
 
