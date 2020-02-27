@@ -21,7 +21,7 @@ Conceptual architecture drawings, stencils, templates and other materials.
 
 [Citrix ADC - nsconmsg Commands Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-nsconmsg.html) - One-page summary of nsconmsg syntax and troubleshooting tips.
 
-[Citrix ADC - SDX Basics and Log File Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-sdx-basics.html) - One-page summary of SDX components and how to access them; common SVM ports; LOM configuration; Link Aggregation on the SDX; and Common Log files for both SVM and XS.
+[Citrix ADC - SDX Basics and Log File Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-sdx-basics.html) - One-page summary of SDX components and how to access them; common SVM ports; LOM configuration; Link Aggregation on the SDX; and Common Log files for both SVM and Citrix Hypervisor.
 
 [Citrix ADC - Troubleshooting GSLB MEP Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-troubleshooting-gslb.html) - One-page summary of GSLB, MEP protocol and troubleshooting tips.
 
