@@ -35,7 +35,7 @@ For purposes of this document, we are going to divide decision factors in two ca
 
 Explicit decision factors cover scenarios where PVS or MCS is not only preferred, but often there is only one possible option.
 
-![Explicit Decision Factors](/en-us/tech-zone/design/media/design-decisions_provisioning-solutions_diagram-explicit.png)
+![Explicit Decision Factors](/en-us/tech-zone/design/media/design-decisions_image-management_diagram-explicit.png)
 
 ### Physical Machines
 
@@ -63,7 +63,7 @@ While it is theoretically possible to provide dedicated desktops with Citrix PVS
 
 When using MCS for persistent machines, there are two possible approaches - using fast clones or full clones (introduced in version 7.11). While fast clones with MCS provides the benefit of small storage footprint and fast create and reset times (small delta disks), storage migration / backups / high-availability is more complicated in this deployment model. Since this is often a requirement for dedicated / persistent machines, full clones with MCS is usually recommended approach to persistent desktops. You can read more about difference between fast and full clones in [article CTX224040](https://support.citrix.com/article/CTX224040).
 
-![Fast vs Full Clone](/en-us/tech-zone/design/media/design-decisions_provisioning-solutions_fast-full-clones.png)
+![Fast vs Full Clone](/en-us/tech-zone/design/media/design-decisions_image-management_fast-full-clones.png)
 
 **Recommended model:** MCS
 
@@ -77,7 +77,7 @@ Citrix PVS is not available to all license editions - most notably, you are not 
 
 While previous set of decision factors are very straightforward, this second set is much more flexible, open to interpretation and personal preference / experience with technology plays a much bigger role in decision making. Citrix gives you flexibility to choose the best solution for your needs and your decision decisions for following factors might be different than our recommendations.
 
-![Variable Decision Factors](/en-us/tech-zone/design/media/design-decisions_provisioning-solutions_diagram-variable.png)
+![Variable Decision Factors](/en-us/tech-zone/design/media/design-decisions_image-management_diagram-variable.png)
 
 ### Technical Skills
 
@@ -143,4 +143,4 @@ The most notable candidate to mention here is Nutanix implementation of Shadow C
 
 In this article, we have discussed most common decision factors when choosing provisioning method for your Citrix Virtual Apps and Desktops environment. Both Citrix PVS and MCS are enterprise-ready solutions that offer great performance and flexibility.
 
-[![Decision Factors](/en-us/tech-zone/design/media/design-decisions_provisioning-solutions_diagram-full.png)](/en-us/tech-zone/design/media/design-decisions_provisioning-solutions_diagram-full.png)
+[![Decision Factors](/en-us/tech-zone/design/media/design-decisions_image-management_diagram-full.png)](/en-us/tech-zone/design/media/design-decisions_image-management_diagram-full.png)
