@@ -1,7 +1,7 @@
 ---
 layout: doc
 ---
-# Citrix Virtual Apps and Desktops on Azure
+# Citrix Virtual Apps and Desktops Service on Azure
 
 ## Contributors
 
@@ -40,7 +40,7 @@ This document focuses on the Citrix Cloud deployment model. Customers can plan a
 
 ### Citrix Virtual Apps and Desktops Service
 
-Citrix Cloud Virtual Apps and Desktops services simplifies the delivery and management of Citrix technologies, helping customers to extend existing on-premises software deployments or move 100 percent to the cloud. Deliver secure access to Windows, Linux and Web apps and Windows and Linux virtual desktops. Manage apps and desktops centrally across multiple resource locations while maintaining a great end-user experience.
+Citrix Cloud Virtual Apps and Desktops services simplifies the delivery and management of Citrix technologies, helping customers to extend existing on-premises software deployments or move 100 percent to the cloud. Deliver secure access to Windows, Linux, and Web apps and Windows and Linux virtual desktops. Manage apps and desktops centrally across multiple resource locations while maintaining a great end-user experience.
 
 ### Citrix Virtual Desktops Essentials Service
 
@@ -115,7 +115,7 @@ Selecting a subscription model is a complex decision that involves understanding
 
 #### Single Subscription workspace model
 
-In a single subscription model, all core infrastructure and Citrix infrastructure are located in the same subscription. This is the configuration recommended for deployments that require up to 1,000 Citrix VDAs.
+In a single subscription model, all core infrastructure and Citrix infrastructure are located in the same subscription. This is the configuration recommended for deployments that require up to 1,000 Citrix VDAs (could be session, pooled VDI, or persistent VDI).
 
 [![Azure-RA-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_002.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_002.png)
 
@@ -324,7 +324,7 @@ The size and number of components within customer’s infrastructure will always
 
 ### How about Scale-up or Scale-out?
 
-The following high-level questions should be reviewed to better understand customer’s use case and the resources needed for their end users. This will also help them to plan their workload well in advance.
+The following high-level questions should be reviewed to better understand customer’s use case and the resources needed for their end users. This also helps them to plan their workload well in advance.
 
 Scaling up is best when the cost per user per hour needs to be the lowest and a larger impact can be tolerated should the instance fail. Scaling out is preferred when the impact of a single instance failure needs to be minimized. The table below provides some example instance types for different Citrix components.
 
@@ -337,7 +337,7 @@ Scaling up is best when the cost per user per hour needs to be the lowest and a 
 
 The latest instance type study was done to provide great insight in this area and we highly recommend the [read](https://www.citrix.com/content/dam/citrix/en_us/documents/white-paper/citrix-virtual-app-and-desktop-services-microsoft-azure.pdf). In all cases, customers should evaluate the instance types with their workloads.
 
-For graphic-intensive workloads, consider the [NV_v3-series](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes-gpu#nvv3-series--1) virtual machines, which are powered by NVIDIA Tesla M60 GPUs and NVIDIA GRID technology with Intel Broadwell CPUs. These virtual machines are targeted for GPU accelerated graphics applications and virtual desktops where customers want to visualize their data, simulate results to view, work on CAD, or render and stream content. Also, these virtual machines can run single precision workloads such as encoding and rendering. NV_v2 virtual machines support Premium Storage and come with twice the system memory (RAM) when compared with its predecessor NV-series.
+For graphic-intensive workloads, consider the [NVv4-series](https://docs.microsoft.com/en-us/azure/virtual-machines/nvv4-series) virtual machines. They are powered by AMD EPYC 7002 processors and virtualized Radeon MI25 GPU. These virtual machines are optimized and designed for VDI and remote visualization. With partitioned GPUs, NVv4 offers the right size for workloads requiring smaller GPU resources at the most optimal price. Alternative the NVv3 series is optimized and designed for remote visualization, streaming, gaming, encoding, and VDI scenarios using frameworks such as OpenGL and DirectX. These VMs are backed by the NVIDIA Tesla M60 GPU. For further GPU options check the other [offerings](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-gpu) from Azure.
 
 While scaling up is usually a preferred model to reduce the cost, Autoscale can benefit from smaller instances (15–20 sessions per host). Smaller instances host fewer user sessions than larger instances. Therefore, in the case of smaller instances, Autoscale puts machines into drain state much faster because it takes less time for the last user session to be logged off. As a result, Autoscale powers off smaller instances sooner, thereby reducing costs. You can read more about instance size considerations for Autoscale in [official documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html#instance-size-considerations).
 
@@ -350,20 +350,6 @@ Azure Disks are designed to deliver enterprise-grade durability. Three performan
 Managed Disks are recommended over unmanaged disk by Microsoft. Unmanaged disks should be considered by exception only. Standard Storage (HDD and SSD) includes transaction costs (storage I/O) that must be considered but have lower costs per disk. Premium Storage has no transaction costs but have higher per disk costs and offers an improved user experience.
 
 The disks offer no SLA unless an Availability Set is used. Availability Sets are not supported with Citrix MCS but should be included with Citrix Cloud Connector, NetScaler, and StoreFront.
-
-### Microsoft Operations Management Suite (OMS)
-
-OMS Workspaces are best defined by customer, workload type, business groups, or department. For example Server VDAs, Client VDAs, StoreFront servers would all have their own OMS Workspace. To simplify management, create as few workspaces as possible. Two key management technologies are available within Microsoft’s Operations Management Suite.
-
-### Management Solutions
-
-Management solutions typically collect information into Log Analytics and provide log searches and views to analyze collected data. They may also use other services such as Azure Automation to perform actions related to the application or service.
-
-A Solution is a set of services, configurations, event IDs, capacity, etc. that can be captured and monitored for a given workload. Multiple Solutions can be applied to an OMS Workspace. Determine what data points are critical to the customer for the workload within scope of the OMS Workspace. Solutions are pre-built or custom modules available to OMS and assigned to a given Workspace.
-
-### Workspaces Log Analytics
-
-Log Analytics workspace, is a unique Log Analytics environment with its own data repository, data sources, and solutions. The purpose being to manage and access the log data that comes from Azure, looking for anomalies in the log data.
 
 ## Identity
 
@@ -448,13 +434,13 @@ Customer applies tags to their Azure resources giving metadata to logically orga
 
 Customer can retrieve all the resources in your subscription with that tag name and value. Tags enable them to retrieve related resources from different resource groups. This approach is helpful when admin need to organize resources for billing or management.
 
-There is a limit of 15 tags per Resource. Citrix MCS creates 2 tags per VM therefore a customer is limited to 13 tags for MCS machines. MCS non-persistent machines are deleted during reboot. This will remove Azure VM-specific characteristics such as tags, boot diagnostics, etc. If tags are required, it is recommended to create an Azure Append policy and apply it to the applicable MCS Resource Groups.
+There is a limit of 15 tags per Resource. Citrix MCS creates 2 tags per VM therefore a customer is limited to 13 tags for MCS machines. MCS non-persistent machines are deleted during reboot. This removes Azure VM-specific characteristics such as tags, boot diagnostics, etc. If tags are required, it is recommended to create an Azure Append policy and apply it to the applicable MCS Resource Groups.
 
 ### Azure Policy
 
 Azure policies can control aspects such as tagging, permitted SKUs, encryption, Azure region, and naming convention. There are default policies available and the capability to enforce custom policies. Azure policies can be applied at the subscription or Resource Group level. Multiple policies can be defined. Policies applied at the Resource Group level take precedence over Subscription Level policy.
 
-Identify aspects of Azure that should be controlled and standardized across the Citrix environment. Hard quota will force the policy and not permit exceptions. Soft quota will audit for policy enforcement and notify if the policy is not met. Refer Azure documentation for more detailed information to define the policies.
+Identify aspects of Azure that should be controlled and standardized across the Citrix environment. Hard quota forces the policy and not permit exceptions. Soft quota audits for policy enforcement and notify if the policy is not met. Refer Azure documentation for more detailed information to define the policies.
 
 [![Azure-RA-Image-6](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_006.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_006.png)
 
@@ -510,13 +496,13 @@ The primary considerations for Azure to Customer connectivity are bandwidth, lat
 
 Express Routes are dedicated private connections and not over the internet. This results in lower latency when using Express Route. Additionally, Express Route can scale up to 10 Gbps. Express Route is configured using a certified partner. Configuration time by these providers should be considered during project planning. Express Route costs have a Microsoft component and an Express Route provider component.
 
-Typically these connections are shared across multiple services (database replication, domain traffic, application traffic, etc.) In a hybrid cloud deployment there may be scenarios where internal users will require their ICA traffic to go through this connection to get to their Citrix apps in Azure, therefore monitoring its bandwidth is critical.
+Typically these connections are shared across multiple services (database replication, domain traffic, application traffic, etc.) In a hybrid cloud deployment there may be scenarios where internal users require their ICA traffic to go through this connection to get to their Citrix apps in Azure, therefore monitoring its bandwidth is critical.
 
 With NetScaler and traditional StoreFront optimal gateway routing may also be used to direct a user’s connection to a NetScaler using an office’s ISP rather than the Express Route or VPN to Azure.
 
 ### User-Defined Routes (UDRs)
 
-Typically customers will use a UDR to route Azure traffic to a firewall appliance within Azure or a specific virtual network. For example, North/South traffic from a VDA to the internet. If large amounts of traffic are routed to 3rd party firewall appliances within Azure this can create a resource bottleneck or availability risk if these appliances are not sized or configured appropriately. NSGs can be used to supplement third-party firewalls and should be utilized as much as possible where appropriate. Consider Azure Network Watcher if traffic introspection is required.
+Typically customers use a UDR to route Azure traffic to a firewall appliance within Azure or a specific virtual network. For example, North/South traffic from a VDA to the internet. If large amounts of traffic are routed to 3rd party firewall appliances within Azure this can create a resource bottleneck or availability risk if these appliances are not sized or configured appropriately. NSGs can be used to supplement third-party firewalls and should be utilized as much as possible where appropriate. Consider Azure Network Watcher if traffic introspection is required.
 
 ### Virtual network peering
 
@@ -541,7 +527,7 @@ Software-defined WAN (SD-WAN) technology makes it possible to deliver a great us
 *  Use the unique HDX Quality of Experience technology to optimize performance and tune network policies.
 *  Ensure always-on connections for virtual apps and desktop users with the highest possible-quality experience—even for rich media and high-definition video.
 
-Customers using VPN might leverage SD-WAN to add redundancy to the Azure and Customer data center connectivity or to provide application-specific routing. Citrix SD-WAN automatically redirecting traffic across any available connections. In fact, the experience is so seamless, users won’t even realize any change has occurred. Their primary access IP address will remain unchanged, allowing users to access their apps and data using the same methods and devices.
+Customers using VPN might leverage SD-WAN to add redundancy to the Azure and Customer data center connectivity or to provide application-specific routing. Citrix SD-WAN automatically redirecting traffic across any available connections. In fact, the experience is so seamless, users won’t even realize any change has occurred. Their primary access IP address remains unchanged, allowing users to access their apps and data using the same methods and devices.
 
 ### Citrix ADC
 
@@ -553,7 +539,7 @@ Discuss with customer and define the following use case for each Resource Locati
 |--------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Internal only  | A Citrix ADC is not required if only internal access is needed. |
 | External access via Citrix ADC Gateway Service. | The Citrix Cloud ADC Gateway Service provides ICA Proxy (secure remote connectivity only). |
-| External access via Citrix ADC VPX deployed in Azure Resource Location | A customer will need to consider a Citrix ADC VPX appliance in Azure if they require the following:  1. Multifactor authentication with full SSON 2. Endpoint scanning 3. Advanced authentication or pre-authentication policies 4. Citrix SmartAccess policies. Note: These requirements will prompt the need for authentication to occur at the Citrix ADC rather than the Workspace Experience service. StoreFront is required if authentication is managed by a Citrix ADC Gateway virtual server. |
+| External access via Citrix ADC VPX deployed in Azure Resource Location | A customer needs to consider a Citrix ADC VPX appliance in Azure if they require the following:  1. Multifactor authentication with full SSON 2. Endpoint scanning 3. Advanced authentication or pre-authentication policies 4. Citrix SmartAccess policies. Note: These requirements will prompt the need for authentication to occur at the Citrix ADC rather than the Workspace Experience service. StoreFront is required if authentication is managed by a Citrix ADC Gateway virtual server. |
 
 ### Citrix ADC - Deployment Model
 
