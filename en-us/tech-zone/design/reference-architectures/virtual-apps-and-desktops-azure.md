@@ -115,7 +115,7 @@ Selecting a subscription model is a complex decision that involves understanding
 
 #### Single Subscription workspace model
 
-In a single subscription model, all core infrastructure and Citrix infrastructure are located in the same subscription. This is the configuration recommended for deployments that require up to 1,000 Citrix VDAs (could be session, pooled vdi or persistant vdi).
+In a single subscription model, all core infrastructure and Citrix infrastructure are located in the same subscription. This is the configuration recommended for deployments that require up to 1,000 Citrix VDAs (could be session, pooled VDI or persistant VDI).
 
 [![Azure-RA-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_002.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_002.png)
 
