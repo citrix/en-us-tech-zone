@@ -160,7 +160,9 @@ To properly integrate the federated authentication service, consider the followi
 
 ## SSO: IdP Chaining
 
-Many organizations currently rely on a 3rd party solution (Okta, Ping, Azure, and so on) to provide single sign-on to SaaS applications. Citrix Workspace can integrate the SSO-enabled SaaS applications into the user’s resource feed through a process called IdP chaining.
+Many organizations currently rely on a 3rd party solution (Okta, Ping, Azure, and so on) to provide single sign-on to SaaS applications. Citrix Workspace can integrate the SSO-enabled SaaS applications into the user’s resource feed through a process called IdP chaining, allowing organizations to maintain their current SSO deployment will fully integrating with Citrix Workspace, including the implementation of enhanced security policies.
+
+[![IdP Chaining Demo](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-demo.gif)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-demo.gif)
 
 When Citrix Workspace provides SSO to SaaS applications, it uses SAML authentication. SAML-based authentication works by associating two different user accounts (primary and secondary) with common attribute(s), typically a user principal name (UPN) or email address.
 
@@ -196,7 +198,7 @@ In this example, when a user selects an Okta-enabled application from within Cit
 The easiest way to think of IdP chaining is to focus on each link in the chain individually, which includes one identity provider and one service provider. In this example, the links in the chain are:
 
 1.  Citrix-to-Okta
-1.  Okta-to-Workday
+2.  Okta-to-Workday
 
 This results in the following authentication flow:
 
