@@ -10,17 +10,17 @@ layout: doc
 
 The goal of this document is to provide guidance to enterprises that are moving towards deploying Citrix Virtual Applications and Desktops (CVAD) in the Microsoft Azure cloud. In an effort to provide the best possible advice to our customers, we decided to determine the answer to four key questions that impact Citrix architecture and design decisions
 
-1. What is the most efficient instance series for hosting CVAD
-2. What is the most cost-effective instance type in the most efficient family
-3. What impact does the Machine Creation Services Input Output (MCSIO) cache have?
-4. How does Windows 10 Multisession scalability compare to Windows Server OS?
+1.  What is the most efficient instance series for hosting CVAD
+2.  What is the most cost-effective instance type in the most efficient family
+3.  What impact does the Machine Creation Services Input Output (MCSIO) cache have?
+4.  How does Windows 10 Multisession scalability compare to Windows Server OS?
 
 A more detailed paper is available from Citrix that goes into the specifics of the testing methodology and the performance results captured during the evaluation. This paper focuses primarily on the high-level results and provides specific guidance on how the results may be used to design an efficient Citrix implementation in the Microsoft Azure cloud.
 
 To determine the performance, we used LoginVSI 4.1.32.1, which creates simulated sessions against a single Citrix server. The two workloads that we used for testing are described below.
 
-- Task Worker Workload – includes segments with Microsoft Office 2016 Outlook, Excel, and Internet Explorer, Adobe Acrobat and PDF Writer. The Task Worker workload does not place a high demand on the environment and represents users that do not access the system heavily.
-- Knowledge Worker Workload – includes segments with Microsoft Office 2016 Outlook, Word, PowerPoint, and Excel; Adobe Acrobat, FreeMind, PhotoViewer, Doro PDF Writer and includes viewing of several 360p movies. The Knowledge Worker workload places a higher demand on the environment, including more use of the available memory, and represents users that access the system more heavily.
+-  Task Worker Workload – includes segments with Microsoft Office 2016 Outlook, Excel, and Internet Explorer, Adobe Acrobat and PDF Writer. The Task Worker workload does not place a high demand on the environment and represents users that do not access the system heavily.
+-  Knowledge Worker Workload – includes segments with Microsoft Office 2016 Outlook, Word, PowerPoint, and Excel; Adobe Acrobat, FreeMind, PhotoViewer, Doro PDF Writer and includes viewing of several 360p movies. The Knowledge Worker workload places a higher demand on the environment, including more use of the available memory, and represents users that access the system more heavily.
 
 The number of users successfully completing the multi-session test provides a key performance indicator under real-world conditions. This value, referred to as the VSImax session count, will be used for the comparative analysis. The Login VSI workloads calculate the VSImax session count by observing when the user response time has diminished significantly below the expected threshold which was derived from the baseline value taken with only a single user on the system.
 
@@ -64,13 +64,13 @@ In the testing, the density results showed a clear benefit from the faster proce
 
 When the cost per user is similar, such as the case with F8S\_v2 and F16s\_v2, select the smaller instance sizes, when either of the following conditions exist:
 
-- Need for resiliency: you want to impact less users during maintenance windows
-- Need for efficient power management: you want to power off unused machines quickly
+-  Need for resiliency: you want to impact less users during maintenance windows
+-  Need for efficient power management: you want to power off unused machines quickly
 
 Select the larger instance sizes when either of these conditions exist:
 
-- Need for reduced management: you want to manage less machines in the environment
-- Need reduced API calls: you need less API calls to Azure infrastructure for operations
+-  Need for reduced management: you want to manage less machines in the environment
+-  Need reduced API calls: you need less API calls to Azure infrastructure for operations
 
 ## What impact does the Machine Creation Services I/O cache have?
 
