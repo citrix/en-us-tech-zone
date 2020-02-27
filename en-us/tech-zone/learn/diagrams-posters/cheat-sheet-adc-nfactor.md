@@ -5,9 +5,9 @@ layout: doc
 
 ## Contributors
 
-**Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com)
+**Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com), Paul Walker
 
-**Special thanks:** Paul Walker
+**Special thanks:** Adrianna Pellitteri
 
 ## Overview
 

@@ -5,9 +5,9 @@ layout: doc
 
 ## Contributors
 
-**Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com)
+**Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com), Ian Guiterrez
 
-**Special thanks:** Ian Guiterrez
+**Special thanks:** Adrianna Pellitteri
 
 ## Overview
 
