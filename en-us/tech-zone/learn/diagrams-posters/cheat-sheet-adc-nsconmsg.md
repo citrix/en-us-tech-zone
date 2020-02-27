@@ -7,6 +7,8 @@ layout: doc
 
 **Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com)
 
+**Special thanks:** Adrianna Pellitteri
+
 ## Overview
 
 Nsconmsg operates on Citrix ADC newnslog and is most widely used tool for troubleshooting Citrix ADC issues. The following are some of the most important points to remember:
