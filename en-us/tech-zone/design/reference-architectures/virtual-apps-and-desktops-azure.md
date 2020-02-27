@@ -351,19 +351,6 @@ Managed Disks are recommended over unmanaged disk by Microsoft. Unmanaged disks 
 
 The disks offer no SLA unless an Availability Set is used. Availability Sets are not supported with Citrix MCS but should be included with Citrix Cloud Connector, NetScaler, and StoreFront.
 
-### Microsoft Operations Management Suite (OMS)
-
-OMS Workspaces are best defined by customer, workload type, business groups, or department. For example Server VDAs, Client VDAs, StoreFront servers would all have their own OMS Workspace. To simplify management, create as few workspaces as possible. Two key management technologies are available within Microsoft’s Operations Management Suite.
-
-### Management Solutions
-
-Management solutions typically collect information into Log Analytics and provide log searches and views to analyze collected data. They may also use other services such as Azure Automation to perform actions related to the application or service.
-
-A Solution is a set of services, configurations, event IDs, capacity, etc. that can be captured and monitored for a given workload. Multiple Solutions can be applied to an OMS Workspace. Determine what data points are critical to the customer for the workload within scope of the OMS Workspace. Solutions are pre-built or custom modules available to OMS and assigned to a given Workspace.
-
-### Workspaces Log Analytics
-
-Log Analytics workspace, is a unique Log Analytics environment with its own data repository, data sources, and solutions. The purpose being to manage and access the log data that comes from Azure, looking for anomalies in the log data.
 
 ## Identity
 
