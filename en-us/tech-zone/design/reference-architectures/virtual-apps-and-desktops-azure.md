@@ -1,7 +1,7 @@
 ---
 layout: doc
 ---
-# Citrix Virtual Apps and Desktops on Azure
+# Citrix Virtual Apps and Desktops Service on Azure
 
 ## Contributors
 
