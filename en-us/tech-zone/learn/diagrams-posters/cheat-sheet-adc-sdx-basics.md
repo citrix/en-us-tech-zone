@@ -7,6 +7,8 @@ layout: doc
 
 **Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com)
 
+**Special thanks:** Adrianna Pellitteri
+
 ## Overview
 
 The Citrix ADC SDX appliance is a multitenant platform on which you can provision and manage multiple virtual Citrix ADC machines (instances), without the typical loss in cryptographic performance. The SDX provides flexible multitenancy allowing service providers to fully isolate instances or to separate instances based on the network security level, or business unit.
