@@ -16,7 +16,7 @@ If you prefer to use email, feel free to reach out to us using [email](mailto:Te
 
 ### 1 - Create an account
 
-There are two different methods how you can become one of the contributors. 
+There are two different methods how you can become one of the contributors, depending on whether or not you are a Citrix employee.
 
 #### Citrix employees
 
