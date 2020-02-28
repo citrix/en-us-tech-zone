@@ -8,7 +8,7 @@ layout: doc
 
 **Author:** [Jacob Rutski](https://twitter.com/jrutski)
 
-**Special Thanks:** [Ronan O'Brien](https://twitter.com/obrienronan)
+**Special Thanks:** [Ronan O'Brien](https://twitter.com/obrienronan), [Jen Sheerin](https://twitter.com/jensheerin), [Paul Stansel](https://twitter.com/pstansel)
 
 ## Overview
 
@@ -45,7 +45,7 @@ This guide assumes the following is already configured on your Citrix ADC or sta
 
 ## WAF Proof of Concept Considerations
 
-More than likely, the web service or application that we want to protect is already being proxied by the ADC for load balancing or other traffic management. During the WAF deployment we do NOT want to disrupt the application functionality or availability for users, thus we will effectively be making a duplicate virtual server with the only difference being that the duplicate virtual server will have WAF policies bound to it.
+More than likely, the web service or application that we want to protect is already being proxied by the ADC for load balancing or other traffic management. During the WAF deployment we do NOT want to disrupt the application functionality or availability for users; thus we will effectively be making a duplicate virtual server with the only difference being that the duplicate virtual server will have WAF policies bound to it.
 
 This will also give users the ability to test the application to ensure that it is functioning correctly and to build WAF rules for acceptable traffic.
 
@@ -151,8 +151,10 @@ Regardless of the method used, a basic Web App Firewall configuration is now ava
 
 -  Navigate to Security > Citrix Web App Firewall > Signatures
 -  Highlight the newly created signature set and press **Select Action > Auto Update Settings**
--  Enable _Signatures Auto Update_ and ensure that the update URL is populated **Note: signature update requires that the ADC can resolve DNS names and access the signature update files**
+-  Enable _Signatures Auto Update_ and ensure that the update URL is populated **Note: signature update requires that the ADC can resolve DNS names and access the public internet**
 -  Once auto-update is configured, ADC checks for updates once per hour; the signatures can be updated manually as well; a manual update needs be run once after the WAF profile and policy are created
+
+The most recent signature update documentation is available on [Citrix eDocs](https://docs.citrix.com/en-us/citrix-adc/13/application-firewall/signature-alerts.html) - updates via RSS are also available.
 
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_14.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_14)
 
@@ -279,7 +281,7 @@ Learned data is used to create rules for the **positive security model** of the 
 -  Gathers more useful data the more traffic is processed during UAT
 -  It is **strongly recommended to configure Trusted Learning Clients** for learning when the appliance is receiving traffic from both known and unknown clients to ensure that malicious traffic is not allowed into a rule
 
-Learned rules are stored in sqlite format in the following location:
+Learned engine runs as the **aslearn** process and rules are stored in sqlite format in the following location:
 
 ```bash
 
@@ -287,6 +289,8 @@ Learned rules are stored in sqlite format in the following location:
 ```
 
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_22.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_22)
+
+Learning mode can be enabled permanently, but the learning database has a size limit of 20MB - meaning that the learning engine will stop adding new data once the database reaches this size.
 
 From a process perspective, learning occurs as follows:
 
@@ -348,6 +352,8 @@ Lastly, if the PoC is being run on a test platform that has different resources 
 ## Additional Resources
 
 [Citrix Product Documentation - Web App Firewall](https://docs.citrix.com/en-us/citrix-adc/13/application-firewall)
+
+[Citrix Product Documentation WAF - FAQ](https://docs.citrix.com/en-us/citrix-adc/13/application-firewall/DeploymentGuide.html)
 
 [How Citrix Application Firewall Modifies Application Data Traffic](https://support.citrix.com/article/CTX131488)
 
