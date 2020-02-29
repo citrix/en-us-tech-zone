@@ -57,9 +57,9 @@ show httpband -type RESPONSE
 show httpband -type REQUEST
 ```
 
-Certain protections require more resources than others, these are referred to as **Advanced** protections. Advanced protections consume additional resources because they are remembering Form Fields, URLs, Cookies and other data and validating that the data does not change between transactions to ensure that requests and responses are not being tampered with and as such consume more appliance memory. Some advanced protections support _Sessionless_ checking as noted in the configuration - sessionless protection requires additional CPU resources rather than memory.
+Certain protections require **significantly** more resources than others, these are referred to as **Advanced** protections. Advanced protections consume additional resources because they are remembering Form Fields, URLs, Cookies and other data and validating that the data does not change between transactions to ensure that requests and responses are not being tampered with and as such consume more appliance memory. Some advanced protections support _Sessionless_ checking as noted in the configuration - sessionless protection requires additional CPU resources rather than memory.
 
-Refer to the Citrix ADC data sheets for the supported WAF throughput capabilities for each different appliance.
+As an example, an appliance with _Advanced_ policies will be able to process approximately one tenth as much traffic as an identical appliance with only _Basic_ protections. Refer to the Citrix ADC data sheets for the supported WAF throughput capabilities for each different appliance.
 
 ## Recommended Protections
 
@@ -127,25 +127,25 @@ There are two options when configuring WAF protection:
     [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_12.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_12)
 
 -  **Option 2:** Alternatively, WAF protection can be applied to an application or site by manually creating a WAF profile, WAF policy and applying a signature set
-    -  Create a signature set for the application
-        -  Navigate to Security > Citrix Web App Firewall > Signatures
-        -  Highlight the **Default Signatures** then press **Add** to create a copy of the default signature set
-        -  Select the appropriate signatures depending on the application or site being protected; ensure that the signatures are set to **ENABLED**
-    -  Create a Web App Firewall Profile
-        -  Navigate to Security > Citrix Web App Firewall > Profiles
-        -  Give the profile a descriptive name then select Web, XML or JSON depending on the type of application you are protecting
-        -  Select **Basic** to apply the basic default settings
-        -  Once created, highlight the new Profile, and press **Edit**
-        -  Open **Security Checks** and deselect **BLOCK** on all items
-        -  Open **Profile Settings**
+    -  **Create a signature set for the application**
+        1.  Navigate to Security > Citrix Web App Firewall > Signatures
+        1.  Highlight the **Default Signatures** then press **Add** to create a copy of the default signature set
+        1.  Select the appropriate signatures depending on the application or site being protected; ensure that the signatures are set to **ENABLED**
+    -  **Create a Web App Firewall Profile**
+        1.  Navigate to Security > Citrix Web App Firewall > Profiles
+        1.  Give the profile a descriptive name then select Web, XML or JSON depending on the type of application you are protecting
+        1.  Select **Basic** to apply the basic default settings
+        1.  Once created, highlight the new Profile, and press **Edit**
+        1.  Open **Security Checks** and deselect **BLOCK** on all items
+        1.  Open **Profile Settings**
             -  Select the previously created Signature Set in the **Bound Signatures** setting
             -  If the back-end application server supports _chunked requests_, enable **Streaming** to improve performance
             -  Modify any additional settings based on the application or website being protected
-    -  Create a Web App Firewall Policy
-        -  Navigate to Security > Citrix Web App Firewall > Policies > Firewall
-        -  Press **Add** to create a new policy
-        -  Give the policy a descriptive name and select the WAF Profile created earlier
-        -  Create a traffic expression that will determine which traffic is processed by the WAF engine
+    -  **Create a Web App Firewall Policy**
+        1.  Navigate to Security > Citrix Web App Firewall > Policies > Firewall
+        1.  Press **Add** to create a new policy
+        1.  Give the policy a descriptive name and select the WAF Profile created earlier
+        1.  Create a traffic expression that will determine which traffic is processed by the WAF engine
 
 Regardless of the method used, a basic Web App Firewall configuration is now available to be bound. The final step is to update the signature file.
 
@@ -168,7 +168,7 @@ To quickly clone an existing virtual server, do the following:
 -  Highlight the existing virtual server and press **Add** to create a new virtual server with similar settings
     -  Give the new virtual server a new name and different IP address
     -  Ensure that the port and protocol are correct then press **OK**
-    -  Bind services or service groups then press **Continue
+    -  Bind services or service groups then press **Continue**
     -  Modify the load balancing method, persistence and any other Traffic settings needed to match the existing virtual server
     -  If this virtual server is an HTTPS virtual server, ensure that an appropriate certificate is bound and a secure Cipher Suite is bound
 
@@ -226,26 +226,13 @@ The resulting error page will present valuable diagnostic information, including
 
 **Important: Some WAF blocks will only prevent certain elements of the page from loading, for example an image, CSS formatting, script or button\form functionality may not work. These are still considered blocks, though the diagnostic error page will not show. Use the syslog viewer (see below) to find the offending signature or security check that is causing the issue.**
 
-By turning on **stats** for all items, the appliance will gather counters anytime a rule or signature is violated. This can be especially useful in the initial configuration as it allows counters to be cleared to see if any new blocked requests occurred as a result of the WAF policy.
-
-From the **Dashboard** tab of the ADC UI, set the stats view to **Application Firewall** to view all of the associated stat counts. Stats can be cleared from this view as well.
-
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_19.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_19)
-
-Be familiar with **Syslog Messages** that are generated by the WAF engine to help understand blocked sessions when the diagnostic error page is not available
+The **Syslog Messages** that are generated by the WAF engine help understand blocked sessions when the diagnostic error page is not available
 
 -  Go to **System > Auditing > Syslog messages**
 -  Under the **Filter By** column, select Module and choose **APPFW**
 -  Press apply
 
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_6.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_6)
-
-Alternatively, stats can be viewed from the _shell_ command line of the appliance by using the following command:
-
-```bash
-
-nsonmsg -d stats | grep appfw
-```
 
 Some violations can be immediately relaxed from the **Syslog** viewer if there are false positive blocks
 
@@ -255,6 +242,19 @@ Some violations can be immediately relaxed from the **Syslog** viewer if there a
 -  Alternatively, you can modify the relaxation rule prior to deploying it
 
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_7.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_7)
+
+By turning on **stats** for all items, the appliance will gather counters anytime a rule or signature is violated. This can be especially useful in the initial configuration as it allows counters to be cleared to see if any new blocked requests occurred as a result of the WAF policy.
+
+From the **Dashboard** tab of the ADC UI, set the stats view to **Application Firewall** to view all of the associated stat counts. Stats can be cleared from this view as well.
+
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_19.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_19)
+
+Alternatively, stats can be viewed from the _shell_ command line of the appliance by using the following command:
+
+```bash
+
+nsonmsg -d stats | grep appfw
+```
 
 Be aware that the Web Application Firewall follows web standards and by default, malformed requests will be blocked
 
