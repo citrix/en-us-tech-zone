@@ -36,7 +36,7 @@ To gain a deeper understanding of the primary identity for Citrix Workspace, ref
 
 ## Secondary Identities
 
-Many of the applications, desktops, and resources a user accesses within Citrix Workspace are secured with an another set of user credentials, referred to as secondary identities. Many of the secondary identities are different than the user’s primary identity.
+Many of the applications, desktops, and resources a user accesses within Citrix Workspace are secured with  another set of user credentials, referred to as secondary identities. Many of the secondary identities are different than the user’s primary identity.
 
 [![Workspace Secondary Identities](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_secondary-identities.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_secondary-identities.png)
 
@@ -55,36 +55,38 @@ How Citrix Workspace provides single sign-on to different resources is based on 
 *  Web apps (section coming soon)
 *  Mobile apps (section coming soon)
 *  Virtual apps and desktops
-*  IdP Chaining (section coming soon)
+*  IdP Chaining
 
 ## SSO: SaaS Apps
 
 From a Citrix Workspace perspective, a SaaS application is a browser-based application hosted in the cloud by a third party. To access the application, users must authenticate with a set of credentials associated with the SaaS application, referred to as a secondary identity.
 
-To achieve single sign-on to a SaaS application, Citrix Workspace utilizes industry standard SAML-based authentication.
+To achieve single sign-on to a SaaS application, Citrix Workspace federates identity between the primary identity and secondary identity. The SSO process utilizes industry standard SAML-based authentication.
 
 SAML-based authentication typically focuses on three main entities:
 
-*  Identity Provider: the entity that proves the user’s primary identity (Active Directory, Azure Active Directory, Okta, and so on)
-*  Service Provider: the entity that delivers a service (SaaS app) and contains a secondary identity
-*  Assertion: a package of data that indicates the user was authenticated (XML)
+*  Identity Provider: the entity in a SAML link providing proof the user’s identity is valid
+*  Service Provider: the entity in a SAML link delivering a service (SaaS app) based on a secondary identity
+*  Assertion: a package of data providing
 
-    SAML-based authentication works by associating two different user accounts (primary and secondary) with common attribute(s), typically a user principal name (UPN) or email address.
+SAML-based authentication works by associating two different user accounts (primary and secondary) with common attribute(s), typically a user principal name (UPN) or email address.
 
-    [![SAML Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-overview.png)
+[![SAML Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-overview.png)
 
-    The user identity can be different between the primary identity from the identity provider and secondary identity from the service provider.
+The user identity can be different between the primary identity from the identity provider and secondary identity from the service provider.
 
-    With single sign-on, the user does not need to know their secondary identity’s user
+With single sign-on, the user does not need to know their secondary identity’s user
 name or password. In addition, many SaaS applications have the ability to disable the password (and direct password access) from user accounts when authentication uses SAML. This forces user authentication to always use the primary identity from the identity provider and not the secondary identity from the service provider.
 
-    Citrix Workspace adds a fourth component to the SAML process
+ Citrix Workspace introduces a fourth component to the SAML process
 
 *  Identity Broker: the entity that links multiple identity providers to multiple service providers (Citrix Workspace)
 
 [![Brokering Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-broker-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-broker-overview.png)
 
-Citrix Workspace takes claims about the user’s primary identity and translates them to secondary identities.
+Within a SAML link, there needs to be an entity acting as the service provider (SP) and identity provider (IdP).  The IdP does not have to contain the primary user account identities. In this example, the primary user identity is contained within the primary user directory (Dir).
+
+When acting as an identity broker (IdB), Citrix Workspace takes claims about the user’s primary identity and translates them to secondary identities.
 
 Adding an identity broker (IdB) into the SAML authentication flow still requires a common attribute linking the user’s primary identity (IdP) to the secondary identity (SP).
 
@@ -156,4 +158,56 @@ To properly integrate the federated authentication service, consider the followi
 *  Certificate Authority: For a production deployment, organizations must design the certificate authority to handle the scale. Also, organizations must properly design the associated certificate revocation list (CRL) infrastructure to overcome potential service disruptions.
 *  Tertiary Authentication: Within a virtual desktop session, many internal websites require users to authenticate with an Active Directory identity. The virtual smartcard used to provide single sign-on to the virtual desktop can be used to provide single sign-on to the internal website. The federated authentication service allows (via a group policy object) in-session certificates where the virtual smartcard is placed within the user certificate store. This capability provides single sign-on to these tertiary resources.
 
-## SSO: IdP Chaining (section coming soon)
+## SSO: IdP Chaining
+
+Many organizations currently rely on a 3rd party solution (Okta, Ping, Azure, and so on) to provide single sign-on to SaaS applications. Citrix Workspace can integrate the SSO-enabled SaaS applications into the user’s resource feed through a process called IdP chaining, allowing organizations to maintain their current SSO deployment will fully integrating with Citrix Workspace, including the implementation of enhanced security policies.
+
+[![IdP Chaining Demo](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-demo.gif)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-demo.gif)
+
+When Citrix Workspace provides SSO to SaaS applications, it uses SAML authentication. SAML-based authentication works by associating two different user accounts (primary and secondary) with common attribute(s), typically a user principal name (UPN) or email address.
+
+With SAML-based single sign-on, there are two partners:
+
+1.  Service Provider (SP): the entity that delivers a service and contains a secondary identity
+1.  Identity Provider (IdP): the entity that provides validation for the user’s primary identity. The identity provider in a SAML group does not have to be the final authority on the user’s identity.
+
+[![Brokering Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-broker-detail.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-broker-detail.png)
+
+The primary user directory is the final authority on the user’s identity. Citrix Workspace, acting as an identity broker (IdB), obtains claims about the user from the primary user directory (Dir) to create a SAML assertion. The assertion proves the user’s identity to the service provider (SP) and fulfills the single sign-on process.
+
+When an organization already utilizes another SSO provider, IdP chaining adds an additional SAML authentication link into the authentication chain.
+
+[![IdP Chaining Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-overview.png)
+
+In this IdP chaining example, Citrix Workspace, acting as an identity broker authenticates the user to the primary user directory. Within the first SAML link, Citrix Workspace utilizes claims about the user to create a SAML assertion for an Okta-specific resource, which acts as a service provider. Within the second SAML link, Okta utilizes claims about the user to create a SAML assertion for a specific SaaS app, which is the service provider.
+
+IdP chaining adds additional links between the user’s primary identity and the requested service.  Within each SAML link, the common attribute between identity provider and service provider must be the same. As the authentication passes across different links in the chain, the common attribute can change.
+
+[![IdP Chaining Common Attribute](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-common-attribute.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-common-attribute.png)
+
+Within each SAML link, the identity provider associates the authentication request with a SAML specific logon URL for each SaaS application.  This URL receives the user assertion, which includes the common attribute.  When the service provider receives the assertion, it must validate the assertion against the entity that generated the assertion, which is the identity provider’s SAML issuer URL.
+
+[![IdP Chaining URL Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-url-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-url-overview.png)
+
+In an IdP chain, the process is identical except each SSO-enabled application within the SSO provider has an app-specific URL. The app-specific URL acts as a service provider. The app-specific URL is used as the SAML login URL for when the SSO provider takes on the service provider role.
+
+[![IdP Chaining URL Details](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-url-detail.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-url-detail.png)
+
+In this example, when a user selects an Okta-enabled application from within Citrix Workspace, Citrix Workspace presents the assertion to the SAML login URL for the requested Okta application. Okta validates the assertion with the SAML issuer URL from Citrix Workspace. Once successful, Okta presents an assertion to the SaaS application’s SAML login URL, which validates the assertion with the Okta SAML issuer URL.
+
+The easiest way to think of IdP chaining is to focus on each link in the chain individually, which includes one identity provider and one service provider. In this example, the links in the chain are:
+
+1.  Citrix-to-Okta
+2.  Okta-to-Workday
+
+This results in the following authentication flow:
+
+[![IdP Chaining Flow](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-flow.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-flow.png)
+
+In some instances, organizations utilize multiple SSO providers, requiring users to access different SSO provider stores based on the application requested. Being able to aggregate SaaS, web, mobile into a single Workspace greatly improves the overall user experience.
+
+Creating an IdP chain allows organizations to maintain their current SSO provider while still unifying all resources within Citrix Workspace.
+
+[![Multiple Service Providers](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-multiple-sp.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-multiple-sp.png)
+
+Once the SaaS applications are available within Citrix Workspace, organizations can apply enhanced security policies (via Access Control) and capture Security Analytics across any SaaS.
