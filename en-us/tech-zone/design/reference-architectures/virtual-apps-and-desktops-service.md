@@ -849,13 +849,13 @@ External users may also use their personal devices along with corporate devices,
 
 The Citrix admin started replicating the machine catalog and delivery groups like the existing legacy environment, which are pointing to Citrix Cloud Connectors. In addition to that, the customer wants to create additional machine catalogs and delivery groups for the knowledge and power users as per new requirements.
 
-**Access Layer:** Citrix Cloud has provisioned Workspace to access the Company’s Citrix environment, and users are provided with the Workspace URL (https://customer.cloud.com) from Citrix Cloud. The Workspace configuration tab allows company admins to change the Workspace URL and the customization of the Workspace Page.
+**Access Layer:** Citrix Cloud has provisioned Workspace to access the Company’s Citrix environment, and users are provided with the Workspace URL (`https://customer.cloud.com`) from Citrix Cloud. The Workspace configuration tab allows company admins to change the Workspace URL and the customization of the Workspace Page.
 
 [![CVAD-Image-31](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_031.PNG)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_031.PNG)
 
 Installation of Cloud Connector enables the extension of the customer’s Active Directory domain to Citrix Cloud for authentication. The authentication configuration in Workspace Configuration allows the admin to select the domain for users to sign-in and access the Citrix resources. The admin has selected on-premises Active Directory to authenticate the Citrix subscribers on Citrix Cloud.
 
-Users accessing the Citrix Cloud URL https://customer.cloud.com is asked to enter the domain credentials, which will then be validated against their on-premises Active Directory via Cloud Connector. Once validated, the user is then presented with the workspace page where they can access the apps and desktops which are assigned.
+Users accessing the Citrix Cloud URL `https://customer.cloud.com` is asked to enter the domain credentials, which will then be validated against their on-premises Active Directory via Cloud Connector. Once validated, the user is then presented with the workspace page where they can access the apps and desktops which are assigned.
 
 On workspace configuration, the Citrix admin has enabled the Traditional Gateway, which enabled the external access to Citrix workloads via on-premises Gateway. Citrix Workspace is the front-end entry point for all the users to access the Citrix environment. This helps corporate network admins to enable the globally approved HTTPS access towards Citrix Cloud from corporate devices.
 
