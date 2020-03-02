@@ -161,6 +161,9 @@ Regardless of the method used, a basic Web App Firewall configuration is now ava
 -  Navigate to Security > Citrix Web App Firewall > Signatures
 -  Highlight the newly created signature set and press **Select Action > Auto Update Settings**
 -  Enable _Signatures Auto Update_ and ensure that the update URL is populated **Note: signature update requires that the ADC can resolve DNS names and access the public internet from the NSIP**
+
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_14.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_14)
+
 -  Once auto-update is configured, ADC checks for updates once per hour; the signatures can be updated manually as well; a manual update needs be run once after the WAF profile and policy are created
 
 To verify if the ADC appliance is able to reach the signature updates, the following command can be run from the **CLI** (by first exiting to the command shell):
@@ -176,8 +179,6 @@ The system should return an **HTTP/1.1 200 OK**
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_30.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_30)
 
 The most recent signature update documentation is available on [Citrix eDocs](https://docs.citrix.com/en-us/citrix-adc/13/application-firewall/signature-alerts.html) - updates via RSS are also available.
-
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_14.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_14)
 
 ## Clone Virtual Server Configuration
 
