@@ -558,11 +558,12 @@ Some user settings and data can be redirected by folder redirection. However, if
 
 The Citrix Cloud Virtual Apps and Desktops Service(CVADS) can be deployed in several ways depending on organization requirements and use cases. Citrix Cloud provides flexibility and enables customers to choose the deployment model for their requirements. Below are a few conceptual reference architectures that can help customers with their needs and their use case(s):
 
-*  **CVADS with Hybrid-Cloud/On-Premises Citrix workloads**
-*  **CVADS and Gateway Service with On-Premises Citrix workloads**
-*  **CVADS with On-Premises Gateway, StoreFront, and Citrix workloads**
+*  **CVADS using Citrix Workspace with Hybrid-Cloud/On-Premises Citrix workloads**
+*  **CVADS and Gateway Service using Citrix Workspace with On-Premises Citrix workloads**
+*  **CVADS using On-Premises StoreFront, Gateway, and Citrix workloads**
+*  **CVADS using Citrix Workspace with On-Premises Gateway and Citrix workloads**
 
-## CVADS with Hybrid-Cloud/On-Premises Citrix Workloads
+## CVADS using Citrix Workspace with Hybrid-Cloud/On-Premises Citrix workloads
 
 In this deployment scenario, a company wants to enable its internal users to access their resources (apps and data) by using Citrix Cloud along with on-premises Citrix workloads. Since the applications are not cloud-ready, they are hosted in their on-premises data center and managed by their internal admins. These applications need to be enabled via Citrix for the users. The company does not have any IT specialists to deploy the Citrix management components, so they have decided to go with Citrix Cloud.
 
@@ -619,7 +620,7 @@ Using Workspace Environment Management, the admin has configured the user profil
 
 [![CVAD-Image-16](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_016.PNG)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_016.PNG)
 
-## CVADS and Gateway Service with On-Premises Citrix workloads
+## CVADS and Gateway Service using Citrix Workspace with On-Premises Citrix workloads
 
 An existing Citrix customer who has a legacy XenApp environment (on-premises) for their internal users, which is due for an upgrade as the product reached the end of life. As part of the upgrade plan, the customer wants to build a new parallel Citrix environment with the latest version of Citrix components and also wants to extend the Citrix environment access to external (Internet) users that include existing legacy XenApp since the existing setup does not have an ADC / gateway configured.
 
@@ -733,7 +734,7 @@ When a user launches an application or desktop, the user is presented with an IC
 
 Citrix WEM user profile configuration helped users to access their data from the DR file server to do their day-to-day activity.
 
-## CVADS with On-Premises Gateway, StoreFront, and Citrix workloads
+## CVADS using On-Premises StoreFront, Gateway and Citrix workloads
 
 In this scenario, a large enterprise customer wants to deploy a Citrix Virtual Apps and Desktops Service environment for their corporate users that are spread across different regions in all over the world. This Citrix environment is focused on providing access to internal-only web applications and other resources. The customer also has a requirement to enable pooled and dedicated desktops for their web developers. The customer wants to place the Citrix environment (VDAs) close by user proximity in their region to provide the best user experience. They decided to split the Citrix workloads up and host them in their existing data center across three regions the USA, Europe, and Asia, with Citrix Cloud to manage their control plane.
 
