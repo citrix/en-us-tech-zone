@@ -261,7 +261,7 @@ Each HDX graphics mode has benefits and trade-offs in terms of resource consumpt
 
 Additional policies, such as Visual Quality, Target Framerate, and others can be customized to offset the resource consumption at the expense of minor visual quality, or increase quality where it is needed most. Customize these policies to fit the uses-cases within your own environment. Refer to the Visio Diagram to guide you through the process.
 
-Endpoint selection is essential for compatibility with your selected graphics mode. The VDA falls back to Thinwire with Adaptive JPEG for endpoints without H.264 / H.265 support.
+Endpoint selection is essential for compatibility with your selected graphics mode. The VDA configures Thinwire to not use the video codec, as a fallback method,  for endpoints without H.264 / H.265 support
 
 Leverage our built-in tools (HDX Monitor and the Graphics Status Indicator) to evaluate if your policy settings have met your desired outcome.
 
