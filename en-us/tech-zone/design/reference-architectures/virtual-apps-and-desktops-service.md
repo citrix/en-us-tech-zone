@@ -41,7 +41,7 @@ At the time of writing, Citrix Cloud offers the below services:
 
 These services can be accessed together as an integrated "workspace" or independently.
 
-[![CVAD-Image-1](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_001.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_001.png)
+[![CVAD-Image-1](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_001.PNG)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_001.PNG)
 
 ### Why Citrix Cloud?
 
