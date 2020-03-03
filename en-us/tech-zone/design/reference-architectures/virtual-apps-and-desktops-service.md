@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Vivekananthan Devaraj](mailto:Vivekananthan.Devaraj@Citrix.com)
 
-**Special thanks:** [Martin Zugec](https://twitter.com/MartinZugec), [Allen Furmanski](https://twitter.com/tekguyallen), [James Hsu](https://twitter.com/JamesHsu2Go), and [Carlos Jimenez](mailto:carlos.jimenez1@Citrix.com)
+**Special thanks:** [Martin Zugec](https://twitter.com/MartinZugec), [Allen Furmanski](https://twitter.com/tekguyallen), [James Hsu](https://twitter.com/JamesHsu2Go), and [Carlos Jimenez](https://twitter.com/itmobility)
 
 ## Audience
 
