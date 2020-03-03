@@ -190,7 +190,7 @@ Customers under a multitenant setup, with dedicated resource location under the 
 
 ## Time-Based One-Time Password
 
-Either single or multitenant with or without a token as a secondary factor of authentication. Supporting the Times Based One-Time Password standard such as Citrix Single Slign On (SSO), Google, or Microsoft Authenticator.
+Either single or multitenant with or without a token as a secondary factor of authentication. Supporting the Times Based One-Time Password standard such as Citrix Single Sign On (SSO), Google, or Microsoft Authenticator.
 
 ## Azure Active Directory
 
