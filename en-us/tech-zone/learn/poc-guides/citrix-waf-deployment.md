@@ -20,7 +20,7 @@ These instructions cover cloning an application or server that is already being 
 
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_1.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_1)
 
-A Web Application Firewall operates at Layer 7, the application layer, unlike tradittional network firewalls that operate at Layer 3 or Layer 4. It understands web and application protocols like HTTP, XML, SQL, and HTML.
+A Web Application Firewall operates at Layer 7, the application layer, unlike traditional network firewalls that operate at Layer 3 or Layer 4. It understands web and application protocols like HTTP, XML, SQL, and HTML.
 
 The Citrix WAF provides both positive and negative security models for the widest protection possible. The **negative security model** employs vulnerability signatures to prevent known attacks. It also allows for rapid initial deployment and provides a mechanism for "Virtual Patching" of applications by importing the results from third party assessment tools.
 
@@ -38,7 +38,7 @@ This guide assumes the following is already configured on your Citrix ADC or sta
 2.  The ADC appliance is already deployed and accessible on the network
 3.  A suitable license has been applied - either standalone WAF or for ADC, a **Premium** license is required
 4.  An NSIP has been assigned, and is accessible for management
-5.  A SNIP has been assigned and can communicate with one or more service that is protected
+5.  A SNIP has been assigned and can communicate with one or more services that are protected
 6.  An _internal only_ IP address and DNS entry for another VIP (the service may already be load balanced by the ADC, ensure that a separate IP and DNS are available) **Note: using a different DNS name and URL to access an application MAY require adding configuration to the application to make it aware of the new name**
 7.  A Basic understanding of the architecture and structure of the application or service that you are protecting. _For example, if the site processes credit card information determines if credit card protections are enabled, or if the application uses an SQL database for storage determines if SQLi protections are used_
 8.  A Basic understanding of layer 4 load balancing and configuration on the Citrix ADC
@@ -64,7 +64,7 @@ As an example, an appliance with _Advanced_ policies is able to process approxim
 
 ## Recommended Protections
 
-These security checks can usually be enabled in the WAF profile. Most of these checks **require learned rules** to be applied before enabling blocking; do NOT enable **BLOCK** by default, without deploying learned rules first.  **NOTE: This list is NOT exhaustive. Some protections are not compatible with some applications and some protections do not add any benefit to other applications.**
+These security checks can usually be enabled in the WAF profile. Most of these checks **require learned rules** to be applied before enabling blocking; do NOT enable **BLOCK** by default, without deploying learned rules first. **NOTE: This list is NOT exhaustive. Some protections are not compatible with some applications and some protections do not add any benefit to other applications.**
 
 -  Cookie Consistency
     -  Allows session cookies from the application to be encrypted or proxied by the WAF engine
@@ -309,7 +309,7 @@ Learned data is used to create rules for the **positive security model** of the 
 -  Gathers more useful data the more traffic is processed during UAT
 -  It is **strongly recommended to configure Trusted Learning Clients** for learning when the appliance is receiving traffic from both known and unknown clients. This setting ensures that malicious traffic is not allowed into a learned rule.
 
-Learned engine runs as the **aslearn** process and rules are stored in SQLite format in the following location:
+Learned engine runs as the `aslearn` process and rules are stored in SQLite format in the following location:
 
 ```bash
 
