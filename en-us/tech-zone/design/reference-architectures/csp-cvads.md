@@ -57,7 +57,7 @@ Is a unified secure cloud platform managed by Citrix. Where hosting providers ca
 
 ## Citrix Virtual Apps and Desktops service
 
-Nearly 80% of our Service Providers offer application and desktops solution to their customers. Traditionally these offerings are hosted and managed on-premises. The Citrix Virtual Apps and Desktops service Access and Control Layers, are hosted and managed by Citrix. Providing the flexibility for Service Providers to focus on hosting and managing workloads from their chosen Public cloud or maintained on-premises.
+Nearly 80% of our Service Providers offer application and desktops solution to their customers. Traditionally these offerings are hosted and managed on-premises. The Citrix Virtual Apps and Desktops service Access and Control Layers, hosted and managed by Citrix. Providing the flexibility for Service Providers to focus on hosting and managing workloads from their chosen Public cloud or maintained on-premises.
 
 [More information on Citrix Virtual Apps and Desktops service](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/setup-for-citrix-service-providers.html )
 
@@ -73,7 +73,7 @@ Citrix Cloud for Citrix Service Providers (CSPs) is the platform for the deliver
 
 ## Citrix Virtual Apps and Desktops Service for CSP
 
-The traditional deployment in a hosting environment for Citrix Virtual Apps and Desktops. Includes highly available components corresponding but not limited to. Delivery controllers, StoreFront servers, SQL databases, gateway, and management consoles deployed in the service provider’s datacenter along with the Virtual Delivery Agents (VDA). In the Citrix Cloud model for CSP, the management or control plane, and optional access layer (CloudGateway), managed by Citrix. Leaving the Citrix Service Provider to focus on the customers’ application data and critical services.
+The traditional deployment in a hosting environment for Citrix Virtual Apps and Desktops. Includes highly available components corresponding but not limited to. Delivery controllers, StoreFront servers, SQL databases, gateway, and management consoles deployed in the service provider’s data center along with the Virtual Delivery Agents (VDA). In the Citrix Cloud model for CSP, the management or control plane, and optional access layer (CloudGateway), managed by Citrix. Leaving the Citrix Service Provider to focus on the customers’ application data and critical services.
 
 [![CSP-Image-002](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_002.png)]
 
@@ -85,7 +85,7 @@ The Citrix Virtual Apps and Desktops Service Architecture consists of layers tha
 
 ## External Access Security
 
-A multitenant environment is isolated from the internet using a blended approach.  Leveraging complimentary technologies such as Firewalls, Application Delivery Controllers, Packet Filtering, intrusion detection and prevention systems and so forth. Access to a multitenant network from Citrix Cloud is facilitated either by using the Citrix Cloud Connectors or a Citrix Application Delivery Controller and Citrix StoreFront combination.
+A multitenant environment is isolated from the internet using a blended approach. Leveraging complimentary technologies such as Firewalls, Application Delivery Controllers, Packet Filtering, intrusion detection and prevention systems and so forth. Access to a multitenant network from Citrix Cloud is facilitated either by using the Citrix Cloud Connectors or a Citrix Application Delivery Controller and Citrix StoreFront combination.
 
 ## Management Separation
 
@@ -97,7 +97,7 @@ Access to the file repositories of each tenant needs to be separated from other 
 
 ## Tenant Isolation
 
-Partitioning of the tenants can defined by the level of separation demanded by the customers. Citrix recommends that each tenant is placed into a segregated network using a SDN for their dedicated workloads and complimentary services. Ensuring that there are effective security isolation boundaries, with managed networks and IP management and routing
+Partitioning of the tenants is defined by the level of separation demanded by the customers. Citrix recommends that each tenant is placed into a segregated network using a Software defined Network (SDN) for their dedicated workloads and complimentary services. Ensuring that there are effective security isolation boundaries, with managed networks and IP management and routing
 
 ## Multitenant Architecture Models
 
@@ -119,9 +119,9 @@ The multitenant Virtual Apps and Desktops service supports two architecture mode
 
 In this multitenant architecture model. Customers or tenants of the Service provider share the partner’s Citrix Virtual Apps and Desktops service, the same resource location, and a hosted Active Directory. Each customer has a dedicated Workspace experience. Allowing them to customize own workspace configurations including authentication, branding, and Workspace URL to closely align with the customer’s business name and brand.
 
-The advantage of this model is to provide the best economics for hosting a wide range of shared customers using shared infrastructure and management components. Service providers are able to elastically scale easily and incorporate small customers rapidly. Shared resource location can be located on-premises or hosted in a public or private cloud. This option would not allow for hosting at a customer datacenter.
+The advantage of this model is to provide the best economics for hosting a wide range of shared customers using shared infrastructure and management components. Service providers are able to elastically scale easily and incorporate small customers rapidly. Shared resource location can be located on-premises or hosted in a public or private cloud. This option would not allow for hosting at a customer data center.
 
-It is recommended that the Machine Catalogs managed in a shared resource location are dedicated per tenant and assigned to specific Customer scope. However, machine catalogs of some common applications for small tenants may be shared, based on the service provider’s discretion. The naming convention also extends to objects managed by the service provider that are contained within the infrastructure. When managing shared Resource Location Delivery Groups, it is highly recommended that they are dedicated per tenant. Assigning with correspondingly named Active Directory Security groups via managing subscribers page on the cloud control plane. Adding individual users to a delivery group is not recommended due to the high administrative overhead and low scalability.
+It is recommended that the Machine Catalogs managed in a shared resource location are dedicated per tenant and assigned to specific Customer scope. However, it is possible to share machine catalogs of some common applications for small tenants, based on the service provider’s discretion. The naming convention also extends to objects managed by the service provider that are contained within the infrastructure. When managing shared Resource Location Delivery Groups, it is highly recommended that they are dedicated per tenant. Assigning with correspondingly named Active Directory Security groups via managing subscribers page on the cloud control plane. Adding individual users to a delivery group is not recommended due to the high administrative overhead and low scalability.
 
 In summary, under the shared resource location model, each customer has dedicated workspace experience and delivery groups, but share:
 • Active Directory
@@ -226,7 +226,7 @@ Multitenant SKU – The new SKU with entitlement only delivered to the Citrix Se
 
 ## Data centers
 
-Some Service Providers have invested into long term infrastructure and compute to host services or meet stringent compliance requirements. To utilize these existing resources, the suitable option is to have the Resource location deployed in the Citrix Service Provider Datacenter.
+Some Service Providers have invested into long term infrastructure and compute to host services or meet stringent compliance requirements. To utilize these existing resources, the suitable option is to have the Resource location deployed in the Citrix Service Provider Data center.
 
 Citrix Virtual Apps and Desktops Services supports the main hypervisors available. Including integration with Machine Creation Service and Provisioning Services, automating the delivery and operation of the compute resources.
 
@@ -350,7 +350,7 @@ Each time when onboarding a new tenant, a new active directory, resource locatio
 
 ## Shared Resource Location
 
-The resource location, active directory, and cloud connectors only need to be setup when the first tenant of the resource location is onboarded. The subsequent tenants share setup except the actual resources to be consumed, for example AD OU and VDAs, and so forth. The Service Provider is responsible to partition the active directory and resources for each tenant with secure isolation.
+The resource location, active directory, and cloud connectors only need to be set up when the first tenant of the resource location is onboarded. The subsequent tenants share setup except the actual resources to be consumed, for example AD OU and VDAs, and so forth. The Service Provider is responsible to partition the active directory and resources for each tenant with secure isolation.
 
 ## Process
 
@@ -464,7 +464,7 @@ Note: The Federated Domain described here for multitenant Virtual Apps and Deskt
 
 ## Subscribe Customer User Groups to Offerings
 
-Under Single Tenant architecture model where each customer has own instance of the service. Managing subscribers to libraries is performed directly within the customer’s cloud account, for details refer to the online document
+Under the Single Tenant architecture model where each customer has own instance of the service. Managing subscribers to libraries is performed directly within the customer’s cloud account, for details refer to the online document
 
 [Assign users and groups to service offerings using Library](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/assign-users-to-offerings-using-library.html)
 
