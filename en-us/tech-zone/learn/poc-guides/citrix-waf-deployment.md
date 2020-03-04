@@ -18,17 +18,17 @@ These instructions cover cloning an application or server that is already being 
 
 ## Conceptual Architecture
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_1.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_1)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_1.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_1.png)
 
 A Web Application Firewall operates at Layer 7, the application layer, unlike traditional network firewalls that operate at Layer 3 or Layer 4. It understands web and application protocols like HTTP, XML, SQL, and HTML.
 
 The Citrix WAF provides both positive and negative security models for the widest protection possible. The **negative security model** employs vulnerability signatures to prevent known attacks. It also allows for rapid initial deployment and provides a mechanism for "Virtual Patching" of applications by importing the results from third party assessment tools.
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_2.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_2)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_2.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_2.png)
 
 The **positive security model** defines the traffic patterns and user behaviors that are allowed and blocks everything else. Dynamic profiling is used by the WAF engine to build rule sets for the behavior that is acceptable.
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_3.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_3)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_3.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_3.png)
 
 ## Prerequisites
 
@@ -105,27 +105,27 @@ There are two options when configuring WAF protection:
     -  The wizard guides you through building an initial signature set and other security checks and settings as follows:
         -  In the web UI, navigate to: **Security > Citrix Web App Firewall**
 
-        [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_29.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_29)
+        [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_29.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_29.png)
 
         -  Choose a name for the WAF profile and the profile type (Web, XML, or JSON depending on the type of application you are protecting)
 
-        [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_9.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_9)
+        [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_9.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_9.png)
 
         -  Specify the expression that determines which traffic is processed by the WAF engine
 
-        [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_13.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_13)
+        [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_13.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_13.png)
 
         -  Select the signatures that apply protections for known vulnerabilities - there are options to use an existing signature set or create a new set. To choose which signatures to apply to this protection profile, there are two editor options offering basic or advanced capabilities.
 
         -  There are navigation options on both editors to select the signatures then enable, block, log, or stats. Watch out for multiple pages of signatures and ensure that all are selected. The Basic editor is easier to get started with, while the advanced editor offers more capabilities **NOTE: Ensure that the signatures are marked as ENABLED prior to moving on to the next step**
 
-        [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_10.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_10)
+        [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_10.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_10.png)
 
-        [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_21.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_21)
+        [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_21.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_21.png)
 
         -  Choose the Deep Protections that are applicable to the application. It is recommended to start by enabling logging, stats, and learning; do NOT enable blocking initially as many protections require some number of learned rules
 
-        [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_11.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_11)
+        [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_11.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_11.png)
 
     -  **IMPORTANT: If the WAF wizard is used to create a profile and policy, it does become bound GLOBALLY! If the filtering expression is left as default (true) then ALL traffic is processed by the WAF engine, likely leading to applications misbehaving. The recommended action is to unbind the policy from the _Default Global_ bind point and instead bind to the LB virtual server that is created later.** To unbind a WAF policy from the Global bind point, do the following:
 
@@ -133,7 +133,7 @@ There are two options when configuring WAF protection:
         -  Choose **Policy Manager**, then choose **Default Global**
         -  Highlight the WAF policy listed, and choose **Unbind**
 
-    [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_12.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_12)
+    [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_12.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_12.png)
 
 -  **Option 2:** Alternatively, WAF protection can be applied to an application or site by manually creating a WAF profile, WAF policy, and applying a signature set
     1.  **Create a signature set for the application**
@@ -162,7 +162,7 @@ Regardless of the method used, a basic Web App Firewall configuration is now ava
 -  Highlight the newly created signature set and press **Select Action > Auto Update Settings**
 -  Enable _Signatures Auto Update_ and ensure that the update URL is populated **Note: signature update requires that the ADC can resolve DNS names and access the public internet from the NSIP**
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_14.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_14)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_14.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_14.png)
 
 -  Once auto-update is configured, ADC checks for updates once per hour. The signatures can be updated manually as well and a manual update needs to be run once after the WAF profile and policy are created
 
@@ -176,7 +176,7 @@ curl -I https://s3.amazonaws.com/NSAppFwSignatures/SignaturesMapping.xml
 
 The system should return an **HTTP/1.1 200 OK**
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_30.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_30)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_30.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_30.png)
 
 The most recent signature update documentation is available on [Citrix Prod Docs](https://docs.citrix.com/en-us/citrix-adc/13/application-firewall/signature-alerts.html) - updates via RSS are also available.
 
@@ -188,7 +188,7 @@ To quickly clone an existing virtual server, do the following:
 
 -  Navigate to **Traffic Management > Load Balancing > Virtual Servers**
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_31.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_31)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_31.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_31.png)
 
 -  Highlight the existing virtual server and press **Add** to create a new virtual server with similar settings
     -  Give the new virtual server a new name and different IP address
@@ -197,9 +197,9 @@ To quickly clone an existing virtual server, do the following:
     -  Modify the load balancing method, persistence, and any other Traffic settings needed to match the existing virtual server
     -  If this virtual server is an HTTPS virtual server, ensure that an appropriate certificate is bound and a secure Cipher Suite is bound
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_15.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_15)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_15.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_15.png)
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_16.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_16)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_16.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_16.png)
 
 Next, the WAF policy needs to be bound to this new virtual server:
 
@@ -210,9 +210,9 @@ Next, the WAF policy needs to be bound to this new virtual server:
     -  Choose an **App Firewall** policy with a type of **Request**
     -  The default binding details can be left alone
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_17.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_17)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_17.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_17.png)
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_18.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_18)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_18.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_18.png)
 
 ## User Acceptance Testing and Initial Troubleshooting
 
@@ -243,11 +243,11 @@ administrators quoting the following: </H3> <UL>
 </html>
 ```
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_4.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_4)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_4.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_4.png)
 
 The resulting error page presents valuable diagnostic information, including the violation category and log details. This information allows the administrator to validate if the block needs to be relaxed due to a false positive.
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_5.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_5)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_5.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_5.png)
 
 **Important: Some WAF blocks only prevent certain elements of the page from loading, for example an image, CSS formatting, script or button\form functionality may not work. These blocks are still considered issues, though the diagnostic error page do not show. Use the syslog viewer (see the example below) to find the offending signature or security check that is causing the issue.**
 
@@ -255,12 +255,12 @@ The **Syslog Messages** that are generated by the WAF engine help understand blo
 
 -  Go to **System > Auditing > Syslog messages**
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_32.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_32)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_32.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_32.png)
 
 -  Under the **Filter By** column, select Module and choose **APPFW**
 -  Press apply
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_6.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_6)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_6.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_6.png)
 
 Some violations can be immediately relaxed from the **Syslog** viewer if there are false positive blocks
 
@@ -269,13 +269,13 @@ Some violations can be immediately relaxed from the **Syslog** viewer if there a
 -  Select the Action menu then choose deploy
 -  Alternatively, you can modify the relaxation rule before deploying it
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_7.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_7)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_7.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_7.png)
 
 By turning on **stats** for all items, the appliance gathers counters anytime a rule or signature is violated. This is useful in the initially as it allows counters to be cleared to see if any new blocked requests occurred as a result of the WAF policy.
 
 From the **Dashboard** tab of the ADC UI, set the stats view to **Application Firewall** to view all of the associated stat counts. Stats can be cleared from this view as well.
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_19.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_19)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_19.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_19.png)
 
 Alternatively, stats can be viewed from the _shell_ command line of the appliance by using the following command:
 
@@ -292,7 +292,7 @@ Be aware that the Web Application Firewall follows web standards and by default,
     -  See the following code for the CLI method to set only logging and stat generation for malformed requests
     -  **Note:** This setting is global. _**If you disable the block option, the WAF engine bypasses application firewall processing for any non-RFC compliant requests. This is not recommended.**_
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_8.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_8)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_8.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_8.png)
 
 ```bash
 
@@ -316,19 +316,19 @@ Learned engine runs as the `aslearn` process and rules are stored in SQLite form
 /var/nslog/asl/appfwprofile.db
 ```
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_22.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_22)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_22.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_22.png)
 
 Learning mode can be enabled permanently, but the learning database has a size limit of 20 MB. The learning engine does not add new data once the database reaches this size.
 
 From a process perspective, learning occurs as follows:
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_23.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_23)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_23.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_23.png)
 
 Anytime that a user is accessing the new application with a bound WAF policy containing enabled learning checks, learned rules are generated. By using a **duplicate virtual server** approach, production traffic is not blocked while users test the protected application. Additionally, all traffic that is passed through the WAF engine at this point will generate learned rules.
 
 The typical flow for building relaxation rules and ensuring the application is working as expected without false positive blocks occurs continuously:
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_20.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_20)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_20.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_20.png)
 
 This process must be repeated anytime there is a change to an application or workflow where rules were not previously created.
 
@@ -339,13 +339,13 @@ To view the learned data using the UI, do the following:
 -  Each of the security checks that support learning are displayed with a few options:
     -  Select **Edit** to view and deploy the rules that have been learned for a specific security check
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_25.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_25)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_25.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_25.png)
 
 -  Once rules are deployed, they are moved from _learned rules_ to _relaxation rules_
 -  From the learned rules UI, the rules can be exported to CSV using the **Export Learned Data** button before moving rules to relaxation rules
 -  The **Visualizer** is also a valuable tool especially for Start URL checks to visualize rules and a URL map of the protected application
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_24.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_24)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_24.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_24.png)
 
 Once the learned rules have been deployed to relaxation rules, the security check can be set to **Block** - **Note: if enough traffic has not been processed or all of the application paths have not been seen by the WAF engine, there will likely be false positive blocks. The learned rule process can be repeated until the application behaves as expected.**
 
@@ -358,16 +358,16 @@ The Dynamic Profiling feature was added to the WAF Engine in version 13.0 and al
     -  Each security check can be enabled or disabled from this UI
     -  The dynamic profiling settings for this WAf profile can also be modified by selecting **Settings**
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_26.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_26)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_26.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_26.png)
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_28.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_28)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_28.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_28.png)
 
 When using dynamic profiling, it is strongly recommended to enable **Trusted Learning Clients** to ensure that only valid application traffic is generating rules. These clients can be added from:
 
 -  Learned Rules UI
 -  Dynamic Profiling UI
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_27.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_27)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_27.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_27.png)
 
 ## Considerations When Moving to Production
 
