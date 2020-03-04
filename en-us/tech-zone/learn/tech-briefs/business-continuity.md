@@ -68,15 +68,15 @@ To add a new environment, the administrator must deploy the following components
 *  StoreFront: Provides users an enterprise app store used to launch sessions to authorized resources.
 *  Delivery Controller: Authorizes and audits user sessions to Windows PCs.
 
-These three components should be deployed with redundancy to overcome any single point of failure.
+It is recommended that three components be deployed with redundancy to overcome any single point of failure.
 
 With a new infrastructure deployed, the administrator can perform the following to enable Remote PC Access:
 
-*  Deploys the virtual desktop agent to physical Windows PCs
+*  Deploys the Virtual Delivery Agent to physical Windows PCs
 *  Creates a new Remote PC Access catalog
 *  Assigns users to PCs
 
-Although the virtual desktop agent can be installed on each physical PC manually, to simplify deployment of the virtual desktop agent, it is recommended to use electronic software distribution such as Active Directory scripts and Microsoft System Center Configuration Manager.
+Although the Virtual Delivery Agent can be installed on each physical PC manually, to simplify deployment of the Virtual Delivery Agent, it is recommended to use electronic software distribution such as Active Directory scripts and Microsoft System Center Configuration Manager.
 
 ### Expanded Deployment
 
@@ -86,7 +86,7 @@ An organization can also easily add Remote PC Access to a current Citrix Virtual
 
 To add Remote PC Access to a current Citrix Virtual Apps and Desktops environment, the administrator simply does the following:
 
-*  Deploys the virtual desktop agent to physical Windows PCs
+*  Deploys the Virtual Delivery Agent to physical Windows PCs
 *  Creates a new Remote PC Access catalog
 *  Assigns users to PCs
 
