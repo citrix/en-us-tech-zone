@@ -15,20 +15,20 @@ The goal of this document is to provide guidance to enterprises that are moving 
 3.  What impact does the Machine Creation Services I/O (MCSIO) cache have?
 4.  How does Windows 10 Multisession scalability compare to Windows Server OS?
 
-A more detailed paper is available from Citrix that goes into the specifics of the testing methodology and the performance results captured during the evaluation. This paper focuses primarily on the high-level results and provides specific guidance on how the results may be used to design an efficient Citrix implementation in the Microsoft Azure cloud.
+A more detailed paper is available from Citrix that goes into the specifics of the testing methodology and the performance results captured during the evaluation. This paper focuses on the high-level results and provides guidance on how to design an efficient Citrix implementation in the Microsoft Azure cloud.
 
-To determine the performance, we used LoginVSI 4.1.32.1, which creates simulated sessions against a single Citrix server. The two workloads that we used for testing are described below.
+To determine the performance, we used LoginVSI 4.1.32.1, which creates simulated sessions against a single Citrix server. The two workloads that we used for testing are described as follows:
 
--  Task Worker Workload – includes segments with Microsoft Office 2016 Outlook, Excel, and Internet Explorer, Adobe Acrobat and PDF Writer. The Task Worker workload does not place a high demand on the environment and represents users that do not access the system heavily.
--  Knowledge Worker Workload – includes segments with Microsoft Office 2016 Outlook, Word, PowerPoint, and Excel; Adobe Acrobat, FreeMind, PhotoViewer, Doro PDF Writer and includes viewing of several 360p movies. The Knowledge Worker workload places a higher demand on the environment, including more use of the available memory, and represents users that access the system more heavily.
+-  Task Worker Workload – includes segments with Microsoft Office 2016 Outlook, Excel, Internet Explorer, Adobe Acrobat, and PDF Writer. The Task Worker workload does not place a high demand on the environment and represents users that do not access the system heavily.
+-  Knowledge Worker Workload – includes segments with Microsoft Office 2016 Outlook, Word, PowerPoint, Excel, Adobe Acrobat, FreeMind, PhotoViewer, Doro PDF Writer and includes viewing of several 360p movies. The Knowledge Worker workload places a higher demand on the environment, including more use of the available memory, and represents users that access the system more heavily.
 
-The number of users successfully completing the multi-session test provides a key performance indicator under real-world conditions. This value, referred to as the VSImax session count, will be used for the comparative analysis. The Login VSI workloads calculate the VSImax session count by observing when the user response time has diminished significantly below the expected threshold which was derived from the baseline value taken with only a single user on the system.
+The number of users successfully completing the multi-session test provides a key performance indicator under real-world conditions. This value, referred to as the VSImax session count, is used for the comparative analysis. The Login VSI workloads calculate the VSImax session count by observing the response time of a single user on the system. VSImax is reached when the response time has diminished significantly below the expected threshold which was derived from the baseline value taken with only a single user on the system.
 
-All test results here reflect application execution using default Citrix policies and default settings for Windows Server 2016, Windows Server 2019, Windows 10 Multisession, Office 2016, and Windows Defender.
+Test results reflect application execution using default Citrix policies and default settings for Windows Server 2016, Windows Server 2019, Windows 10 Multisession, Office 2016, and Windows Defender.
 
 ## What is the most efficient instance series?
 
-To find the most efficient instance series, we needed test the different instance series without changing any other variables in the mix. The base image was Windows Server 2016 with the 1903.1 version of the Citrix VDA and a standard HDD 128GB disk for the system C: drive. We selected the 8-core instance types for two primary reasons: (1) They represent the workhorse of Azure instance types for hosted sessions and are generally the most popular size deployed and (2) they provide a good balance of CPU/RAM and minimal OS impact as opposed to a smaller 2-core system.
+To find the most efficient instance series, we needed test the different instance series without changing any other variables in the mix. The base image was Windows Server 2016 with the 1903.1 version of the Citrix VDA and a standard HDD 128 GB disk for the system C: drive. We selected the 8-core instance types for two primary reasons: (1) They represent the workhorse of Azure instance types for hosted sessions and are generally the most popular size deployed and (2) they provide a good balance of CPU/RAM and minimal OS impact as opposed to a smaller 2-core system.
 
 The graph below shows the instance family results along with the average cost per user per hour based on pay-as-you-go pricing for the Azure US West 2 region where the tests were performed.
 
