@@ -28,21 +28,23 @@ Test results reflect application execution using default Citrix policies and def
 
 ## What is the most efficient instance series?
 
-To find the most efficient instance series, we needed test the different instance series without changing any other variables in the mix. The base image was Windows Server 2016 with the 1903.1 version of the Citrix VDA and a standard HDD 128 GB disk for the system C: drive. We selected the 8-core instance types for two primary reasons: (1) They represent the workhorse of Azure instance types for hosted sessions and are generally the most popular size deployed and (2) they provide a good balance of CPU/RAM and minimal OS impact as opposed to a smaller 2-core system.
+To find the most efficient instance series, we needed test the different instance series without changing any other variables in the mix. The base image was Windows Server 2016 with the 1903.1 version of the Citrix VDA and a standard HDD 128 GB disk for the system C: drive. We selected the 8-core instance types for two primary reasons: 
+1) They represent the workhorse of Azure instance types for hosted sessions and are generally the most popular size deployed and 
+2) They provide a good balance of CPU/RAM and minimal OS impact as opposed to a smaller 2-core system.
 
-The graph below shows the instance family results along with the average cost per user per hour based on pay-as-you-go pricing for the Azure US West 2 region where the tests were performed.
+The following graph shows the instance family results along with the average cost per user per hour based on pay-as-you-go pricing for the Azure US-West-2 region where the tests were performed.
 
 ![8-Core Performance](/en-us/tech-zone/design/media/reference-architectures_azure-instance-scalability_001.png)
 
 ### Analysis
 
-The majority of these instance types leverage the same processor, Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz, with the primary difference being the amount of memory available to the virtual machine. More information about these different series can be found on [Microsoft&#39;s website](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/).
+Most of these instance types leverage the same processor, Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30 GHz. The primary difference being the amount of memory available to the virtual machine. More information about these different series can be found on [Microsoft&#39;s website](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/).
 
-Generally speaking, the 8-core instances have fairly similar performance, especially when you consider the physical cores (D13\_v2, D4\_v2, L8s) compared to hyper-threaded cores (F8s\_v2, D8\_v3, E8\_v3). However, when the instance&#39;s hourly cost is considered, the D13\_v2, and F8s\_v2 instances provide the more efficient use. The E\_v3 and LS\_v1 series are less cost-efficient because Microsoft charges a higher premium for Memory optimized and Storage optimized instances. In situations where your user&#39;s applications are extremely memory or storage intensive, these instances may provide a good return on investment.
+Generally speaking, the 8-core instances have fairly similar performance, especially when you consider the physical cores (D13\_v2, D4\_v2, L8s) compared to hyper-threaded cores (F8s\_v2, D8\_v3, E8\_v3). However, when the instance&#39;s hourly cost is considered, the D13\_v2, and F8s\_v2 instances provide the more efficient use. The E\_v3 and LS\_v1 series are less cost-efficient because Microsoft charges a higher premium for Memory optimized and Storage optimized instances. In situations where your user&#39;s applications are extremely memory or storage intensive, these instances often provide a good return on investment.
 
 ### Recommendations
 
-If your typical user&#39;s applications are very CPU-intensive and do not require a lot of memory to run, the most cost-efficient performance will be the F series. Select the F series when you need excellent CPU response times and do not require a significant amount of memory. If your user&#39;s applications consume a fair amount of memory, use one of the D instance types depending on how much additional memory per core is required for your user&#39;s environment.
+If your typical user&#39;s applications are CPU-intensive and do not require significant memory to run, the most cost-efficient performance is the F series. Select the F series when you need excellent CPU response times and do not require a significant amount of memory. If your user&#39;s applications consume a fair amount of memory, use one of the D instance types depending on how much additional memory per core is required for your user&#39;s environment.
 
 ## What is the most cost-effective instance type in the most efficient family?
 
@@ -84,7 +86,7 @@ We decided then to consider the Machine Creation Services I/O (MCSIO) cache, as 
 
 ### Analysis
 
-When the operating system disk has no MCSIO cache enabled, the VSImax User score was 61 on 128GB HDD, 74 on a 64GB SSD disk and 75 on a 128GB SSD disk. Enabling the MCSIO cache on a standard HDD disk actually provided better performance than an SSD, with a 4GB cache enabled on the 64GB HDD the score increased to 76 and with a 2GB cache the score increased slightly more to 77. The loss of the additional user between the 4GB and 2GB cache sizes is attributed to the additional RAM being used for the cache and not available for user workload.
+When the operating system disk has no MCSIO cache enabled, the VSImax User score was 61 on 128 GB HDD, 74 on a 64 GB SSD disk and 75 on a 128 GB SSD disk. Enabling the MCSIO cache on a standard HDD disk actually provided better performance than an SSD, with a 4 GB cache enabled on the 64 GB HDD the score increased to 76 and with a 2 GB cache the score increased slightly more to 77. The loss of the additional user between the 4 GB and 2 GB cache sizes is attributed to the additional RAM being used for the cache and not available for user workload.
 
 While MCSIO contributes to a lower cost per user per hour, that number is not significant on its own. The real impact of MCSIO can be ascertained when looking at the end user experience. The graph below shows the average response time drop when using MCSIO.
 
