@@ -36,13 +36,13 @@ In the example above, text or simple images are highlighted in blue, static imag
 Within Citrix Virtual Apps and Desktops, Thinwire can take different approaches for display analysis, compression, and delivery: Citrix adapts the use of industry leading standards, H.264, and H.265 for efficient delivery of high-quality video content in its “Full-Screen” and “Selective” codec implementations.
 
 *  Choosing to **Configure Thinwire to not use the Video Codec** or **Configure Thinwire to use the Video Codec for Actively Changing Regions** allows Thinwire to sense regions of transient content (fluid images or video) and encodes it based on set policy and capabilities detected on the endpoint. Thinwire encodes these “selected” (or transient) regions either as Adaptive JPEG or H.264 / H.265. Adaptive JPEG and “Selective” H.264 / H.265 are considered subfeatures as Thinwire is the core technology. The remaining, non-transient regions (encoded as JPEG and Run-Length Encoding (RLE)) are then combined to complete the in-session display.
-*  Choosing to **Configure Thinwire to use the Codec For the Entire Screen** tell Thinwire to treat the entire screen as transient content, with the exception of text (by default), and encodes display data using either H.264 or H.265 video codecs. Text is then overlaid onto the screen to provide a complete image. H.265 achieves higher compression over H.264 without compromising quality. However, H.265 is expensive in terms of processing and is only supported when used with [select GPUs](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/configure.html#h265-video-encoding) on the VDA. H.265 cannot be used when CPU encoding is used. Additionally, H.265 compatible hardware, in the form of GPU or purpose-built thin client, is required for decoding H.265 display data on the client endpoint. Review vendor documentation to determine H.265 supportability for your endpoint hardware.
+*  Choosing to **Configure Thinwire to use the Codec For the Entire Screen** tell Thinwire to treat the entire screen as transient content, except for text (by default), and encodes display data using either H.264 or H.265 video codecs. Text is then overlaid onto the screen to provide a complete image. H.265 achieves higher compression over H.264 without compromising quality. However, H.265 is expensive in terms of processing and is only supported when used with [select GPUs](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/configure.html#h265-video-encoding) on the Virtual Delivery Agent (VDA). H.265 cannot be used when CPU encoding is used. Additionally, H.265 compatible hardware, in the form of GPU or purpose-built thin client, is required for decoding H.265 display data on the client endpoint. Review vendor documentation to determine H.265 supportability for your endpoint hardware.
 
 As H.264 compatibility has a broader base, we focus on Full-Screen H.264 and Selective H.264 within this article unless otherwise noted.
 
 Depending on the HDX mode configured, these categories are encoded by different means:
 
-*  **Text and simple images** are almost always encoded in a lossless fashion using Run-Length Encoding (RLE). Starting with Version 7.17, a Citrix proprietary RLE flavor called MDRLE is used which allows for a better compression rate [CTX232041](https://support.citrix.com/article/CTX232041). Enabling the **Optimize for 3D graphics workload** will disable the lossless text detection and transfer the content with H.264 / H.265, rather than RLE.  You can visualize this policy through our Visio diagram later in this article.
+*  **Text and simple images** are almost always encoded in a lossless fashion using Run-Length Encoding (RLE). Starting with Version 7.17, a Citrix proprietary RLE flavor called MDRLE is used which allows for a better compression rate [CTX232041](https://support.citrix.com/article/CTX232041). Enabling the **Optimize for 3D graphics workload** will disable the lossless text detection and transfer the content with H.264 / H.265, rather than RLE. You can visualize this policy through our Visio diagram later in this article.
 *  For **static images** with both Selective H.264 / H.265 and Adaptive JPEG, JPEG is used for encoding while the video codec H.264 / H.265 is used if Full-Screen H.264 / H.265 has been chosen as the graphics mode. If JPEG is used, the quality of it can be configured with the Visual Quality setting. Check the attached Visio chart later in this article for more details.
 *  For **moving images** the video codec H.264 / H.265 is used when configuring Full-Screen H.264 / H.265 or Thinwire with Selective H.264. If Thinwire with Adaptive JPEG has been configured, JPEG is used with a quality that automatically adapts (hence the name) to conditions such as frame rate and available bandwidth.
 
@@ -86,7 +86,7 @@ Capabilities of both the client endpoint and the Virtual Delivery Agent (VDA) ar
 
 The **For Actively Changing Regions** graphics mode is our most balanced setting. As such, we recommend starting with this mode as you begin to baseline policies within your environment since it covers a wide user base (for example Office worker with occasional video playback).
 
-At its core this mode is leveraging JPEG for still images,  RLE for text, simple images and solid color blocks, as well as bitmap caching for areas of the screen that are determined by the VDA to be static. The VDA continuously analyzes the screen for regions of fluid movement, such as multimedia, and selectively uses **H.264 / H.265** to encode the fluid region.
+At its core this mode is leveraging JPEG for still images, RLE for text, simple images, and solid color blocks, as well as bitmap caching for areas of the screen that are determined by the VDA to be static. The VDA continuously analyzes the screen for regions of fluid movement, such as multimedia, and selectively uses **H.264 / H.265** to encode the fluid region.
 
 As illustrated below, H.264 / H.265 is “Inactive” until regions of fluid movement are detected The VDA then transitions to H.264 / H.265 to encode the selected region during fluid movement and returns to an “Inactive” state once the selected region no longer contains fluid content.
 
@@ -98,7 +98,7 @@ H.264 / H.265 provides a much more rich experience than adaptive JPEG at the exp
 
 The **Do Not Use Video Codec** offers maximum compatibility for client endpoints, including endpoints that do not support the decoding of H.264 / H.265 graphics.
 
-In this graphics mode, Thinwire behaves similarly as when it is configured For Actively Changing Regions.  The VDA analyzes the screen for regions of fluid movement. Rather than encoding with H.264 / H.265, however, Thinwire encodes moving images as Adaptive JPEG to deliver high compatibility or where H.264 / H.265 is not needed. The remaining regions are presented as JPEG for still images, and RLE for text and simple graphics to deliver quality imagery.
+In this graphics mode, Thinwire behaves similarly as when it is configured For Actively Changing Regions. The VDA analyzes the screen for regions of fluid movement. Rather than encoding with H.264 / H.265, however, Thinwire encodes moving images as Adaptive JPEG to deliver high compatibility or where H.264 / H.265 is not needed. The remaining regions are presented as JPEG for still images, and RLE for text and simple graphics to deliver quality imagery.
 
 CPU processing for encoding moving images using Adaptive JPEG is typically lower than with Thinwire with H.264 for Full Screen or Actively Changing Regions. This mode is desired if server scalability is your priority. The trade-off is seen in terms of increased bandwidth and decreased moving image fidelity in WAN scenarios. This graphics mode should be limited to the use-case where accessing moving images is minimal, such as in a call center or point of sale system. In which case, the bandwidth utilization in this mode would be similar in comparison to Thinwire configured with Video Codec for Actively Changing Regions.
 
@@ -108,7 +108,7 @@ The **Do Not Use Video Codec** policy setting is the default fallback method for
 
 The **For the Entire Screen** graphics mode setting configures the VDA to encode all display data using H.264 / H.265, except for text. Text is encoded using RLE and is overlaid with the remainder of the screen. If **Optimize for 3D Graphics Workloads** is enabled the entire screen, including text, is encoded as H.264 / H.265.
 
-Configuring Thinwire to use the the Video Codec for the Entire Screen is designed for the heavy multimedia use-case, where larger regions of the screen are in motion Higher compression and quality is achieved at the expense of CPU and server scalability.
+Configuring Thinwire to use the Video Codec for the Entire Screen is designed for the heavy multimedia use-case, where larger regions of the screen are in motion Higher compression and quality is achieved at the expense of CPU and server scalability.
 
 On its own, this mode provides a good user experience when heavy multimedia, 3-D modeling, or CAD drawing applications are in use. The CPU can quickly become a bottleneck, if undersized, resulting in poor performance and user experience under heavy multimedia conditions Consider GPU offload capabilities to supplement this graphics mode while using these application types.
 
@@ -129,7 +129,7 @@ Check the Visio chart in this article for more details.
 
 As the **Use Video Codec for Compression** policy is a good starting point to baseline your configuration, additional policies can be set to further customize your visual policies to fit your different workloads. By customizing these supporting policy settings, you can opt to reduce quality in certain areas to reclaim resources and achieve higher scalability and save on bandwidth. You can also opt to increase quality to support use-cases requiring precise visualizations, as in the healthcare industry. The chart below outlines these settings:
 
-![HDX Graphics 2](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_002.png)
+[![HDX Graphics 2](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_002.png)](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_002.png)
 
 Furthermore, review our **Use Cases** Section below to discover how these additional policies (listed below) can reduce resource consumption, although at a slight reduction in quality (in some cases).
 
@@ -177,7 +177,7 @@ This use-case describes a call-center or point-of-sales workplace with no specia
 *  Moving Image Compression: Enabled
 *  HDX Adaptive Transport: Preferred
 
-### Task Worker  
+### Task Worker
 
 In the task worker use-case, a user has some multimedia requirements such as watching videos online in addition to using a basic set of office applications:
 
@@ -199,7 +199,7 @@ For 3D workload such as CAD / CAE, the user experience is key, therefore the fol
 *  Use Video Codec for Compression: For actively changing regions
 *  Use hardware encoding for video codec: Enabled (where available)
 *  Visual Quality: Build to lossless
-*  Target Frame Rate: 30 (can be 60 if required)
+*  Target Frame Rate: 30 (can be 60 if necessary)
 *  Target minimum frame rate: 10
 *  HDX Adaptive Transport: Preferred
 *  Hardware Acceleration for graphics: Enabled (configured for Citrix Workspace app if available)
@@ -231,9 +231,9 @@ You can find the certification criteria for the features under each HDX level [h
 
 If you manage thick client endpoints in your environment, consider the following components when determining Codec Support (H.264 / H.265):
 
-*  Operating System:  Some Linux distributions require additional libraries to be installed.
+*  Operating System: Some Linux distributions require additional libraries to be installed.
 *  Browser: Citrix Workspace app for HTML5
-*  Citrix Receiver/ Workspace app version:  Feature Support Matrix can be found [here](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf).
+*  Citrix Receiver/ Workspace app version: Feature Support Matrix can be found [here](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf).
 *  GPU Offload Capability
     *  Requires additional configuration for [Citrix Workspace app for Windows](https://docs.citrix.com/en-us/receiver/windows/current-release/improve.html#hardware-decoding) and [Citrix Workspace app for Linux](https://docs.citrix.com/en-us/citrix-workspace-app-for-linux/configure-xenapp.html#h264) to enable Hardware Acceleration for Graphics with compatible GPU.
 
@@ -261,7 +261,7 @@ Each HDX graphics mode has benefits and trade-offs in terms of resource consumpt
 
 Additional policies, such as Visual Quality, Target Framerate, and others can be customized to offset the resource consumption at the expense of minor visual quality, or increase quality where it is needed most. Customize these policies to fit the uses-cases within your own environment. Refer to the Visio Diagram to guide you through the process.
 
-Endpoint selection is essential for compatibility with your selected graphics mode. The VDA configures Thinwire to not use the video codec, as a fallback method,  for endpoints without H.264 support.
+Endpoint selection is essential for compatibility with your selected graphics mode. The VDA configures Thinwire to not use the video codec, as a fallback method, for endpoints without H.264 support.
 
 Leverage our built-in tools (HDX Monitor and the Graphics Status Indicator) to evaluate if your policy settings have met your desired outcome.
 
