@@ -49,19 +49,19 @@ Citrix Cloud allows Citrix Service Providers to create multiple types of workspa
 
 [More information Citrix Cloud](https://docs.citrix.com/en-us/citrix-cloud.html )
 
-## Citrix Workspace
+### Citrix Workspace
 
 Is a unified secure cloud platform managed by Citrix. Where hosting providers can securely deliver applications and data while maintaining end user experience and productivity, in an increasingly mobile work style.
 
 [More information on Citrix Workspace](https://docs.citrix.com/en-us/citrix-workspace.html )
 
-## Citrix Virtual Apps and Desktops service
+### Citrix Virtual Apps and Desktops service
 
 Nearly 80% of our Service Providers offer application and desktops solution to their customers. Traditionally these offerings are hosted and managed on-premises. The Citrix Virtual Apps and Desktops service Access and Control Layers, hosted and managed by Citrix. Providing the flexibility for Service Providers to focus on hosting and managing workloads from their chosen Public cloud or maintained on-premises.
 
 [More information on Citrix Virtual Apps and Desktops service](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/setup-for-citrix-service-providers.html )
 
-## Citrix Cloud Connectors
+### Citrix Cloud Connectors
 
 The Cloud Connector is a Citrix component that authenticates and encrypts all communications between Citrix Cloud and Service Provider managed resource location. All communication between Citrix Cloud and the Resource Location environment is encrypted, negating the need for ingress firewall rules.
 
@@ -71,35 +71,35 @@ The Cloud Connector is a Citrix component that authenticates and encrypts all co
 
 Citrix Cloud for Citrix Service Providers (CSPs) is the platform for the delivery and management of Citrix technologies. Helping Service providers extend existing hosting deployments or move their customers to a hosted cloud solution. CSPs can create and deploy secure digital workspaces rapidly using Citrix Cloud, while maintaining the control of sensitive data and resources hosted on-prem or in a chosen cloud.
 
-## Citrix Virtual Apps and Desktops Service for CSP
+### Citrix Virtual Apps and Desktops Service for CSP
 
 The traditional deployment in a hosting environment for Citrix Virtual Apps and Desktops. Includes highly available components corresponding but not limited to. Delivery controllers, StoreFront servers, SQL databases, gateway, and management consoles deployed in the service provider’s data center along with the Virtual Delivery Agents (VDA). In the Citrix Cloud model for CSP, the management or control plane, and optional access layer (CloudGateway), managed by Citrix. Leaving the Citrix Service Provider to focus on the customers’ application data and critical services.
 
 [![CSP-Image-002](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_002.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_002.png)
 
-## Security and Isolation
+### Security and Isolation
 
 The Citrix Virtual Apps and Desktops Service Architecture consists of layers that connect together to create a complete end-to-end solution for service providers. For general conceptual architecture, and to understand how all layers flow together, refer to [Citrix Tech Zone](https://docs.citrix.com/en-us/tech-zone.html)
 
 [![CSP-Image-003](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_003.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_003.png)
 
-## External Access Security
+#### External Access Security
 
 A multitenant environment is isolated from the internet using a blended approach. Leveraging complimentary technologies such as Firewalls, Application Delivery Controllers, Packet Filtering, intrusion detection and prevention systems and so forth. Access to a multitenant network from Citrix Cloud is facilitated either by using the Citrix Cloud Connectors or a Citrix Application Delivery Controller and Citrix StoreFront combination.
 
-## Management Separation
+#### Management Separation
 
 The core network services for a Service Provider are located in a separate partitioned that allows the hosting of shared services. Depending on the services offered, the components of this partition can include: Active Directory Domain Controllers, Backup, Automation Services, DNS and so forth.
 
-## Storage Security
+#### Storage Security
 
 Access to the file repositories of each tenant needs to be separated from other tenants. Isolation can be achieved with using dedicated of shared servers that are protected using security partitions or permissions
 
-## Tenant Isolation
+#### Tenant Isolation
 
 Partitioning of the tenants is defined by the level of separation demanded by the customers. Citrix recommends that each tenant is placed into a segregated network using a Software defined Network (SDN) for their dedicated workloads and complimentary services. Ensuring that there are effective security isolation boundaries, with managed networks and IP management and routing
 
-## Multitenant Architecture Models
+### Multitenant Architecture Models
 
 Citrix Cloud multitenant Virtual Apps and Desktops service enables Service Providers to manage multiple customers. Using the single instance of the CVAD service with shared multitenant Citrix Studio and Director consoles. Using Role Based Access Control under the partner cloud account. Citrix license management is also centralized for easy allocation.
 
@@ -111,7 +111,7 @@ The multitenant Virtual Apps and Desktops service supports two architecture mode
    1.Shared Resource Location for multiple tenants
    2.Dedicated resource location per tenant
 
-## Shared Resource Location
+### Shared Resource Location
 
 [![CSP-Image-004](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_004.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_004.png)
 
@@ -130,7 +130,7 @@ In summary, under the shared resource location model, each customer has dedicate
 
 The advantages of this model are the best economics, easy and fast cloud transition for existing on-prem multitenant AD environment, and good elasticity and scalability. However, it has limitations for integrating custom environments with complex applications and high compliance requirements.
 
-## Dedicated Resource Location
+### Dedicated Resource Location
 
 [![CSP-Image-005](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_005.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_005.png)
 
@@ -157,7 +157,7 @@ In summary, Customers share CSP’s Citrix Virtual Apps and Desktops service und
 • Good flexibility and scalability
 • Balanced approach and suits most common use cases
 
-## Private Workspace (NonMultitenant)
+### Private Workspace (NonMultitenant)
 
 [![CSP-Image-006](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_006.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_006.png)
 
@@ -169,7 +169,7 @@ The design and deployment for this mode is the same as standalone enterprise acc
 
 [Citrix Tech Zone](https://docs.citrix.com/en-us/tech-zone.html)
 
-## Combination of Different Architecture Models
+### Combination of Different Architecture Models
 
 The different architecture models are not mutually exclusive. A service provider can apply each model or mixed architectures under their partner cloud account or manage a separate Cloud Account for their large Customer. The Service Provider models are developed to be flexible to meet the needs of their customers. Offering solutions for providing a return of investment on shared infrastructure or isolation to solve data sovereignty challenges
 
@@ -177,34 +177,34 @@ The different architecture models are not mutually exclusive. A service provider
 
 [Combined architecture models for customer use cases managed under a single Citrix Service Provider Account](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_007.png)
 
-## Workspace Experience and Authentication
+### Workspace Experience and Authentication
 
 Each customer or tenant has its own workspace, the authentication method used can vary from tenant to tenant if necessary.
 There are several identity providers available to the customers of a Citrix Service Provider.
 
-## Active Directory
+### Active Directory
 
 Default provider for a CSP. Offering the Virtual Apps and Desktops Service and authenticating using Kerberos to a shared or dedicated Active Directory. Allowing multiple Customer domains using distinct UPN suffixes.
 
 Customers under a multitenant setup, with dedicated resource location under the partner account. Can use Active Directory credentials to authenticate users for their Office 365 access once the AD credentials are synced to their Azure AD.
 
-## Time-Based One-Time Password
+### Time-Based One-Time Password
 
 Either single or multitenant with or without a token as a secondary factor of authentication. Supporting the Times Based One-Time Password standard such as Citrix Single Sign On (SSO), Google, or Microsoft Authenticator.
 
-## Azure Active Directory
+### Azure Active Directory
 
 For customers with private workspace (Single Tenant), a CSP can connect the customer’s Azure AD to its Citrix Cloud account, and authenticate users to the workspace.
 
-## Citrix Gateway
+### Citrix Gateway
 
 The Citrix Virtual Apps and Desktops Service supports the use per tenant of an on-premises Citrix ADC Gateway and StoreFront that enables multiples of authentication, and authorization functions.
 
-## OKTA
+### OKTA
 
 Using a Cloud based identity provider such as OKTA allows CSPs to authenticate Customers providing a common sign-in procedure. Simplifying the management of multiple authentication points for CSPs. At the time of publication OKTA is in Preview.
 
-## Cloud Federated Authentication Service
+### Cloud Federated Authentication Service
 
 The FAS service enables customers to connect their on-premises FAS deployment to Citrix Cloud. It enables end-users to achieve Single Sign On (SSO) to Citrix Virtual Apps and Desktops resources. Using a federated identity provider in Workspace such as Azure Active Directory or OKTA.
 
@@ -224,7 +224,7 @@ Single Tenant SKU – The existing SKU that the Citrix Service Provider orders f
 
 Multitenant SKU – The new SKU with entitlement only delivered to the Citrix Service Provider Partner account that allows managing and distributing licenses between multiple customers.
 
-## Data centers
+### Data centers
 
 Some Service Providers have invested into long term infrastructure and compute to host services or meet stringent compliance requirements. To utilize these existing resources, the suitable option is to have the Resource location deployed in the Citrix Service Provider Data center.
 
@@ -232,7 +232,7 @@ Citrix Virtual Apps and Desktops Services supports the main hypervisors availabl
 
 Service providers normally offer a tired storage option to their customers to ensure that there is distributed performance to allow for their current offering and future expansion.
 
-## Microsoft Azure
+### Microsoft Azure
 
 Many of our Citrix Service Providers are also Microsoft Cloud Solution Providers. Azure is a public cloud option from Microsoft for Service Providers looking to host workloads in a flexible and elastic way. Citrix Virtual Apps and Desktops has built in support for Azure capabilities allowing for Machine Creation Services Integration. Citrix Autoscale proactively manages the workloads to balance the costs and service levels demanded by the customer. Any unused workloads would be reduced during off-peak hours and increased prior to peak hours.
 
@@ -241,7 +241,7 @@ For more recommendations regarding Citrix Virtual Apps and Desktops service on A
 
 [Microsoft Azure](https://www.citrix.com/blogs/2018/06/07/cloud-guidepost-citrix-virtual-apps-and-desktops-service-on-azure-part-2/)
 
-## Amazon Web Services
+### Amazon Web Services
 
 Amazon Web Services is another public hosting option for Citrix Service Providers looking to host workloads in a flexible and controllable environment. Using an operations cost model to grow their business according to customer demands. Citrix Virtual Apps and Desktops has built in AWS capabilities. Allowing for Machine Creation Services Integration for on-demand provisioning. In conjunction with Citrix Autoscale to proactively manage the workloads to balance the cost and services levels demanded by the customer. Any unused workloads would be reduced during off-peak hours and increased prior to peak hours.
 
@@ -253,7 +253,7 @@ For more details regarding Citrix Virtual Apps and Desktops on AWS see:
 
 [Amazon Web Services](https://aws.amazon.com/about-aws/whats-new/2019/01/deploy-citrix-virtual-apps-and-desktops-service-on-aws-with-new-quick-start/)
 
-## Google Cloud
+### Google Cloud
 
 The Google Public Cloud offering for Citrix Virtual Apps and Desktops service allows Service Providers. Provisioning and managing machines within a Project on Google Cloud Platform (GCP), using Machine Creation Services (MCS) to provision workloads and enable lifecycle image management.
 
@@ -265,13 +265,13 @@ For details on setting up a Citrix Virtual Apps and Desktops service resource lo
 
 ## Deployment Steps
 
-## Onboard a Customer
+### Onboard a Customer
 
-## Customer Dashboard
+#### Customer Dashboard
 
 To add a new customer or invite an existing customer managed by the Citrix Service Provider. The onboarding process is the same for both multitenant and single tenant customers.
 
-## Add a new Customer
+#### Add a new Customer
 
 In the Citrix Cloud Dashboard page, select Customers
 
@@ -291,7 +291,7 @@ Complete the onboarding information for the Customer, make sure the email addres
 
 This creates a new Customer with a unique Organization ID (Org ID).
 
-## Invite a Customer
+#### Invite a Customer
 
 To invite an existing Citrix Cloud Customer, Managed by the Citrix Service Provider, you can select the Invite option.
 
@@ -303,17 +303,17 @@ Select Invite and Continue.
 
 Copy the Invite Link and email to the Administrator of the Customer you would like to invite:
 
-## Enable Virtual Apps and Desktops Service to a New Customer
+### Enable Virtual Apps and Desktops Service to a New Customer
 
 After a new customer on boarded or an existing customer accepted the invite, the Citrix Service Provider can enable services to that customer (tenant).
 
-## Enable Single Tenant (private) Citrix Virtual Apps and Desktops Service
+#### Enable Single Tenant (private) Citrix Virtual Apps and Desktops Service
 
 For a new customer in a private workspace to have single tenant service. For example the customer has their own instance of Virtual Apps and Desktops service. The CSP needs to make a $0 order via its distributor and “ship to” the customer’s Citrix Cloud account.
 
 Once the single tenant service instance is enabled for the customer (stocking order fulfilled), “Manage” option appears inside the Virtual Apps and Desktops service tile. By selecting “Manage” option, the customer’s instance of Studio loads.
 
-## Enable Multitenant Citrix Virtual Apps and Desktops Service
+#### Enable Multitenant Citrix Virtual Apps and Desktops Service
 
 Assuming the CSP partner already has the multitenant Virtual Apps and Desktops service entitlement fulfilled (Otherwise it is enabled via a $0 stocking order from the distributor).
 
@@ -332,7 +332,7 @@ Once the “add service” process is completed (I can take a few minutes). “M
 
 [![CSP-Image-018](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_018.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_018.png)
 
-## Configure Multitenant Virtual Apps and Desktops Service for the New Customer
+### Configure Multitenant Virtual Apps and Desktops Service for the New Customer
 
 This document focuses on the deployment configurations of multitenant architecture models, for single tenant Virtual Apps and Desktops Service refer to
 
@@ -340,19 +340,19 @@ This document focuses on the deployment configurations of multitenant architectu
 
 The following section of multitenant deployment uses a hybrid cloud solution as an example to run workloads in an on-premises data center.
 
-## Deploy a New Resource Location
+#### Deploy a New Resource Location
 
 The resource location and domain are a 1:1 relationship.
 
-## Dedicated Resource Location
+##### Dedicated Resource Location
 
 Each time when onboarding a new tenant, a new active directory, resource location, and a pair of cloud connectors need to be configured for the tenant.
 
-## Shared Resource Location
+###### Shared Resource Location
 
 The resource location, active directory, and cloud connectors only need to be set up when the first tenant of the resource location is onboarded. The subsequent tenants share setup except the actual resources to be consumed, for example AD OU and VDAs, and so forth. The Service Provider is responsible to partition the active directory and resources for each tenant with secure isolation.
 
-## Process
+##### Process
 
 When connected to the Citrix Cloud Console, select Resource Location (Edit or Add New)
 
@@ -365,7 +365,7 @@ You can view the Active Directory Domain and Cloud Connectors after deployment.
 
 [![CSP-Image-020](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_012.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_012.png)
 
-## Define Hosting Connection
+#### Define Hosting Connection
 
 Since it is possible that each resource location can be deployed in different cloud infrastructure. For example Azure, GCP, AWS, on-premises hypervisor a new Hosting Connection to the resources needs to be defined for the new resource location.
 Navigate to the hamburger menu at the top left side of the page and choose Citrix Virtual Apps and Desktops.
@@ -391,7 +391,7 @@ Select the scope of the Customer recently onboarded, the review the hosting conn
 
 [![CSP-Image-025](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_025.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_025.png)
 
-## Configure Machine Catalogs for the New Customer
+#### Configure Machine Catalogs for the New Customer
 
 In the CSP partner’s Citrix Cloud portal page, navigate to Citrix Virtual Apps and Desktops service, and select Manage Service.
 
@@ -422,7 +422,7 @@ Use the View Machines Search option, to confirm the registration status of the n
 
 [![CSP-Image-031](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_031.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_031.png)
 
-## Create Delivery Groups for the New Customer
+#### Create Delivery Groups for the New Customer
 
 From the Citrix Studio, select Delivery Group, and Create Delivery Group from the Action Pane.
 Read the Getting Started information and select Next.
@@ -446,7 +446,7 @@ Assign the scope of the customer to the delivery group, and select Next
 
 To securely isolate customers in a multitenant setup, a delivery group is only be assigned to a specific customer scope. Different customer scopes do not share delivery groups. Predefined naming convention for delivery groups is also necessary in a multitenant deployment.
 
-## Configure Federated Domain for the New Customer
+### Configure Federated Domain for the New Customer
 
 For large customers under the single tenant (private workspace) architecture model, this step is not required. Domains and resource locations are configured directly within the customer’s cloud account.
 
@@ -461,7 +461,7 @@ Select the customer(s) to be added to the Domain, allowing the tenant to use the
 
 Note: The Federated Domain described here for multitenant Virtual Apps and Desktops service is for workspace configuration only, it is not integrated with ADFS or Citrix Federated Authentication Service.
 
-## Subscribe Customer User Groups to Offerings
+### Subscribe Customer User Groups to Offerings
 
 Under the Single Tenant architecture model where each customer has own instance of the service. Managing subscribers to libraries is performed directly within the customer’s cloud account, for details refer to the online document
 
@@ -473,7 +473,7 @@ To add users to a published application or desktop offering from either a Shared
 
 [![CSP-Image-038](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_038.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_038.png)
 
-## Configure Tenant Workspace
+### Configure Tenant Workspace
 
 The CSP multitenant Virtual Apps and Desktops service allows each tenant to maintain its own Workspace Experience.
 To change the Workspace for a customer from the Citrix Cloud Dashboard page, select Customers, view Details.
@@ -491,13 +491,13 @@ After entering the tenant’s Citrix Cloud account, navigate to the hamburger me
 
 [![CSP-Image-041](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_041.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_041.png)
 
-## Access URL
+#### Access URL
 
 Under the Access tab, the Customers Gateway URL can be customized. Edit the URL and select Save.
 
 [![CSP-Image-042](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_042.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_042.png)
 
-## Authentication
+#### Authentication
 
 In the Authentication tab, specify the Authentication method for the customer:
 
@@ -507,13 +507,13 @@ If Active Directory Authentication is used and the tenant is configured within a
 
 [![CSP-Image-044](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_044.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_044.png)
 
-## Appearance
+#### Appearance
 
 Customized branding and appearance often help the end user experience. From Customize tab, configure the customer logo and preferences.
 
 [![CSP-Image-045](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_045.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_045.png)
 
-## User Log in to Workspace
+### User Log in to Workspace
 
 When the users of a customer login to the Workspace via the customized URL. For example <https://selwfashion.cloud.com,> same set of credentials of UPN and password (for example email address and password that match their Office 365 accounts) are used.
 
@@ -527,7 +527,7 @@ After logging on the user’s workspace would look similar as following.
 
 The Citrix Virtual Apps and Desktops Service allows Citrix Service Providers to control and monitor the workloads centrally in the Cloud Console. Lowering the cost and administration effort of the management and allows the operations team to deliver greater uptime.
 
-## Director
+### Director
 
 The Citrix Service Provider admins are able to manage their multitenant Shared and Dedicated Resource location Customers using a single Monitoring console. The CSP admin can choose to view an overview of all resources or drill down to a specific Customer. The Service provider can also set Role Based Access Control permissions for its team remembers to manage specific customer scope or perform a subset of functions.
 
@@ -537,7 +537,7 @@ The Citrix Service Provider admins are able to manage their multitenant Shared a
 
 Single tenants in their private workspace with own instance of Citrix Virtual Apps and Desktops Service, their Monitoring console is dedicated. A Citrix Service Provider with administrator rights, logs into the customer’s cloud account to access and manage through this console.
 
-## Citrix Analytics Service
+### Citrix Analytics Service
 
 The Analytics service included in the Citrix Service Providers Workspace collects data across the hosting network, users, files, and endpoints. A Service provider can centrally manage the insights to handle security threats, monitor service performance and optimize, and improve their offering.
 
