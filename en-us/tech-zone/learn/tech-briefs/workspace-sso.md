@@ -98,7 +98,7 @@ For SAML authentication to work, the identity broker associates the request with
 
 Within Citrix Workspace, the overall process for single sign-on to SaaS applications is as follows:
 
-[![SAML URLs](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso-saas-flow.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso-saas-flow.png)
+[![SAML URLs](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saas-flow.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saas-flow.png)
 
 SSO to SaaS apps within Citrix Workspace helps solve a few user and admin experience challenges:
 
