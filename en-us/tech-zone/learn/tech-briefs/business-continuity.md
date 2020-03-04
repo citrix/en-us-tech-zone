@@ -8,8 +8,6 @@ description: Copy & paste description from TOC here
 
 **Author:** [Daniel Feller](https://twitter.com/djfeller)
 
-## Business Continuity
-
 Most organizations have defined business continuity plans. The success of a business continuity plan is based on how much it impacts the user experience, how well it scales to overcome global issues, and how well it maintains corporate security policies.
 
 ## Overview
