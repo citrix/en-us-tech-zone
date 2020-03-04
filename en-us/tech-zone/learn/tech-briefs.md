@@ -11,6 +11,8 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [Analytics](/en-us/tech-zone/learn/tech-briefs/analytics.html) - Provide visibility into your environment to protect it from malicious users and to improve the end user experience proactively.
 
+[Business Continuity](/en-us/tech-zone/learn/tech-briefs/business-continuity.html) - Business continuity events can have a regional or global impact.  Learn about the different ways Citrix allows users to remain productive when making it to the office is not possible.
+
 [Citrix Managed Desktops](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Managed Desktops offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
 
 [Gateway service for HDX Proxy](/en-us/tech-zone/learn/tech-briefs/gateway-hdxproxy.html) - Provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls.
