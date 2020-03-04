@@ -160,9 +160,7 @@ To properly integrate the federated authentication service, consider the followi
 
 ## SSO: IdP Chaining
 
-Many organizations currently rely on a 3rd party solution (Okta, Ping, Azure, and so on) to provide single sign-on to SaaS applications. Citrix Workspace can integrate the SSO-enabled SaaS applications into the user’s resource feed through a process called IdP chaining, allowing organizations to maintain their current SSO deployment will fully integrating with Citrix Workspace, including the implementation of enhanced security policies.
-
-[![IdP Chaining Demo](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-demo.gif)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-demo.gif)
+Many organizations currently rely on a 3rd party solution (Okta, Ping, Azure, and so on) to provide single sign-on to SaaS applications. Citrix Workspace can integrate the SSO-enabled SaaS applications into the user’s resource feed through a process called IdP chaining. IdP chaining essentially converts one SAML assertion to another SAML assertion. IdP chaining allows organizations to maintain their current SSO provider while fully integrating with Citrix Workspace, including the implementation of enhanced security policies.
 
 When Citrix Workspace provides SSO to SaaS applications, it uses SAML authentication. SAML-based authentication works by associating two different user accounts (primary and secondary) with common attribute(s), typically a user principal name (UPN) or email address.
 
@@ -204,10 +202,4 @@ This results in the following authentication flow:
 
 [![IdP Chaining Flow](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-flow.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-flow.png)
 
-In some instances, organizations utilize multiple SSO providers, requiring users to access different SSO provider stores based on the application requested. Being able to aggregate SaaS, web, mobile into a single Workspace greatly improves the overall user experience.
-
 Creating an IdP chain allows organizations to maintain their current SSO provider while still unifying all resources within Citrix Workspace.
-
-[![Multiple Service Providers](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-multiple-sp.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-multiple-sp.png)
-
-Once the SaaS applications are available within Citrix Workspace, organizations can apply enhanced security policies (via Access Control) and capture Security Analytics across any SaaS.
