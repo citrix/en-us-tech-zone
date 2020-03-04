@@ -8,11 +8,11 @@ layout: doc
 
 **Author:** [Loay Shbeilat](mailto:loay.shbeilat@citrix.com)
 
-The goal of this document is to provide guidance to enterprises that are moving towards deploying Citrix Virtual Applications and Desktops (CVAD) in the Microsoft Azure cloud. In an effort to provide the best possible advice to our customers, we decided to determine the answer to four key questions that impact Citrix architecture and design decisions
+The goal of this document is to provide guidance to enterprises that are moving towards deploying Citrix Virtual Applications and Desktops (CVAD) in the Microsoft Azure cloud. To provide the best possible advice to our customers, we decided to determine the answer to four key questions that impact Citrix architecture and design decisions
 
 1.  What is the most efficient instance series for hosting CVAD
 2.  What is the most cost-effective instance type in the most efficient family
-3.  What impact does the Machine Creation Services Input Output (MCSIO) cache have?
+3.  What impact does the Machine Creation Services I/O (MCSIO) cache have?
 4.  How does Windows 10 Multisession scalability compare to Windows Server OS?
 
 A more detailed paper is available from Citrix that goes into the specifics of the testing methodology and the performance results captured during the evaluation. This paper focuses primarily on the high-level results and provides specific guidance on how the results may be used to design an efficient Citrix implementation in the Microsoft Azure cloud.
@@ -52,7 +52,7 @@ When we completed the broad test across families, we expected a single series to
 
 ### Analysis
 
-The graph above shows the results of those tests with the highest densities of 74 and 63 user sessions, for task worker and knowledge worker respectively, being obtained on the D14\_v2 instance type (16 cores, 112 GB RAM). Since pricing varies between instance type, a higher density does not necessarily imply a lower cost per user.
+The graph above shows the results of those tests with the highest densities of 74 and 63 user sessions, for task worker and knowledge worker respectively, being obtained on the D14\_v2 instance type (16 cores, 112 GB RAM). Since pricing varies between the instance types, a higher density does not necessarily imply a lower cost per user.
 
 The pricing model for Azure instances varies according to the region, the instance type, and the resources provided. The graphs above also includes the cost efficiency of each instance type based on VDA user densities achieved in the single-server testing. The costs reflect U.S. West 2 Pay-As-You-Go pricing for standard VM instances as of September 2019 and includes the cost of Microsoft Windows licensing.
 
@@ -64,12 +64,12 @@ In the testing, the density results showed a clear benefit from the faster proce
 
 When the cost per user is similar, such as the case with F8S\_v2 and F16s\_v2, select the smaller instance sizes, when either of the following conditions exist:
 
--  Need for resiliency: you want to impact less users during maintenance windows
+-  Need for resiliency: you want to impact fewer users during maintenance windows
 -  Need for efficient power management: you want to power off unused machines quickly
 
 Select the larger instance sizes when either of these conditions exist:
 
--  Need for reduced management: you want to manage less machines in the environment
+-  Need for reduced management: you want to manage fewer machines in the environment
 -  Need reduced API calls: you need less API calls to Azure infrastructure for operations
 
 ## What impact does the Machine Creation Services I/O cache have?
@@ -78,13 +78,13 @@ The instance types used for testing were configured with standard storage rather
 
 At the disk sizes that we are using, the HDD and SDD disks have very similar IOPS performance (500). While the SSD disks have a more consistent performance, the additional cost is not always justified.
 
-We decided then to consider the Machine Creation Services Input-Output (MCSIO) cache, as a way to achieve SSD-like performance with the larger standard disks. The tests were completed using the Citrix VDA version 1903.1 and Windows Server 2016 on a D5\_v2 (16 vCPU, 56GB of RAM) instance type. The chart below shows the increase in user density gained by enabling the MCSIO cache with the Knowledge worker load.
+We decided then to consider the Machine Creation Services I/O (MCSIO) cache, as a way to achieve SSD-like performance with the larger standard disks. The tests were completed using the Citrix VDA version 1903.1 and Windows Server 2016 on a D5\_v2 (16 vCPU, 56GB of RAM) instance type. The chart below shows the increase in user density gained by enabling the MCSIO cache with the Knowledge worker load.
 
 ![MCSIO Performance](/en-us/tech-zone/design/media/reference-architectures_azure-instance-scalability_003.png)
 
 ### Analysis
 
-When the operating system disk has no MCSIO cache enabled, the VSImax User score was 61 on 128GB HDD, 74 on a 64GB SSD disk and 75 on a 128GB SSD disk. Enabling the MCSIO cache on a standard HDD disk actually provided better performance than a SSD, with a 4GB cache enabled on the 64GB HDD the score increased to 76 and with a 2GB cache the score increased slightly more to 77. The loss of the additional user between the 4GB and 2GB cache sizes is attributed to the additional RAM being used for the cache and not available for user workload.
+When the operating system disk has no MCSIO cache enabled, the VSImax User score was 61 on 128GB HDD, 74 on a 64GB SSD disk and 75 on a 128GB SSD disk. Enabling the MCSIO cache on a standard HDD disk actually provided better performance than an SSD, with a 4GB cache enabled on the 64GB HDD the score increased to 76 and with a 2GB cache the score increased slightly more to 77. The loss of the additional user between the 4GB and 2GB cache sizes is attributed to the additional RAM being used for the cache and not available for user workload.
 
 While MCSIO contributes to a lower cost per user per hour, that number is not significant on its own. The real impact of MCSIO can be ascertained when looking at the end user experience. The graph below shows the average response time drop when using MCSIO.
 
@@ -92,11 +92,11 @@ While MCSIO contributes to a lower cost per user per hour, that number is not si
 
 ### Recommendations
 
-If user experience is a driving factor when considering performance, we recommend enabling the MCSIO cache. When enabled, the recommendation is to use a standard disk with the 2GB cache since it provides the best improvement without affecting user density. However, the MCSIO cache should not be enabled on virtual machines with that are memory constrained, such as the F or FS series instance types that are optimized for compute but have very low memory-to-cpu core ratios.
+If user experience is a driving factor when considering performance, we recommend enabling the MCSIO cache. When enabled, the recommendation is to use a standard disk with the 2GB cache since it provides the best improvement without affecting user density. However, the MCSIO cache must not be enabled on virtual machines that are memory constrained, such as the F or FS series instance types that are optimized for compute but have very low memory-to-cpu core ratios.
 
 ## How does Windows 10 Multisession scalability compare to Windows Server OS?
 
-With the release of both the Windows Server 2019 and Windows 10 Multi-session operating systems, we thought it would be best to provide some guidance about how the client operating system would impact the scalability. Both Windows Server 2019 and Windows 10 Multi-session operating systems required a the newer Citrix VDA version 1906.1. Windows 10 Multisession is currently available with Windows Virtual Desktop (WVD) Entitlement and grants the tenant the base price of the VM (Linux pricing). That entitlement also extends the VM pricing to Windows Server 2016 and Windows Server 2019.
+With the release of both the Windows Server 2019 and Windows 10 Multi-session operating systems, we thought it would be best to provide some guidance about how the client operating system would impact the scalability. Both Windows Server 2019 and Windows 10 Multi-session operating systems require the newer Citrix VDA version 1906.1. Windows 10 Multisession is currently available with Windows Virtual Desktop (WVD) Entitlement and grants the tenant the base price of the VM (Linux pricing). That entitlement also extends the VM pricing to Windows Server 2016 and Windows Server 2019.
 
 The graph below shows the density changes when compared against the same test runs with Windows Server 2016 using the Citrix VDA version 1906.1 on the same D4\_v2 (8 vCPU, 28GB of RAM) instance. The prices below are using the Linux VM pricing in line with the WVD Entitlement required.
 
@@ -106,7 +106,7 @@ The graph below shows the density changes when compared against the same test ru
 
 When compared to the Windows Server 2016 results, the Windows Server 2019 provided a slightly lower user density for both the knowledge worker and the task worker, with a 7% decrease for task workers and a 12% decrease for knowledge workers.
 
-Comparing Windows Server 2019 to Windows 10 Multisession workload resulted in 19% less task workers and 32% less Knowledge workers. This performance decrease is expected because Windows 10 is a full client version and is not optimized for server-based computing like Windows Server 2016 and Windows Server 2019.
+Comparing Windows Server 2019 to Windows 10 Multisession workload resulted in 19% less task workers and 32% fewer Knowledge workers. This performance decrease is expected because Windows 10 is a full client version and is not optimized for server-based computing like Windows Server 2016 and Windows Server 2019.
 
 One cost advantage of using Windows 10 Multisession is that it does not require RDS CAL licenses for clients to connect to the virtual machine. This cost advantage is not included in the calculations above since it is a Microsoft licensing cost in addition to the Azure cost per hour.
 
@@ -118,8 +118,8 @@ When planning to upgrade from Windows Server 2016 to Windows Server 2019, expect
 
 The Azure instance type that you select to deploy Citrix virtual application workloads is a critical element that determines the user density and scalability, and in turn the cost-per-user for an Azure delivery model. As shown, the different instance types in Azure have advantages for specific workloads, such as high computational requirements or additional memory. In most cases, a D13\_v2 instance with standard HDD disks and a 2GB MCSIO cache enabled will provide the best user performance at the lowest cost. Consider the Windows 10 Multisession operating system when you need Windows Store, application compatibility, or a true Windows client experience.
 
-The Citrix on Azure results presented here should be used only as guidelines in configuring your Azure solution. If you do not have data about your specific user workloads, the numbers we provided here should be used as your design estimates. Before making final sizing and deployment decisions, we strongly suggest that you run proof-of-concept tests on different Azure instance types using your own workloads, then use that data for your final designs.
+The Citrix on Azure results presented here represent only guidelines in configuring your Azure solution. If you do not have data about your specific user workloads, the numbers we provided here will serve as your design estimates. Before making final sizing and deployment decisions, we strongly suggest that you run proof-of-concept tests on different Azure instance types using your own workloads, then use that data for your final designs.
 
 ### Learn more
 
-For more information about deploying Citrix Virtual Apps workloads on Microsoft Azure Cloud Services, see the Citrix and Microsoft partner web site at [http://www.citrix.com/global-partners/microsoft/resources.html](http://www.citrix.com/global-partners/microsoft/resources.html)
+For more information about deploying Citrix Virtual Apps workloads on Microsoft Azure Cloud Services, see the Citrix and Microsoft partner website at [http://www.citrix.com/global-partners/microsoft/resources.html](http://www.citrix.com/global-partners/microsoft/resources.html)
