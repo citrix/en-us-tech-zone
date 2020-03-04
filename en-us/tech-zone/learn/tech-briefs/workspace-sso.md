@@ -36,7 +36,7 @@ To gain a deeper understanding of the primary identity for Citrix Workspace, ref
 
 ## Secondary Identities
 
-Many of the applications, desktops, and resources a user accesses within Citrix Workspace are secured with  another set of user credentials, referred to as secondary identities. Many of the secondary identities are different than the user’s primary identity.
+Many of the applications, desktops, and resources a user accesses within Citrix Workspace are secured with another set of user credentials, referred to as secondary identities. Many of the secondary identities are different than the user’s primary identity.
 
 [![Workspace Secondary Identities](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_secondary-identities.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_secondary-identities.png)
 
@@ -84,7 +84,7 @@ name or password. In addition, many SaaS applications have the ability to disabl
 
 [![Brokering Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-broker-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_saml-broker-overview.png)
 
-Within a SAML link, there needs to be an entity acting as the service provider (SP) and identity provider (IdP).  The IdP does not have to contain the primary user account identities. In this example, the primary user identity is contained within the primary user directory (Dir).
+Within a SAML link, there needs to be an entity acting as the service provider (SP) and identity provider (IdP). The IdP does not have to contain the primary user account identities. In this example, the primary user identity is contained within the primary user directory (Dir).
 
 When acting as an identity broker (IdB), Citrix Workspace takes claims about the user’s primary identity and translates them to secondary identities.
 
@@ -179,11 +179,11 @@ When an organization already utilizes another SSO provider, IdP chaining adds an
 
 In this IdP chaining example, Citrix Workspace, acting as an identity broker authenticates the user to the primary user directory. Within the first SAML link, Citrix Workspace utilizes claims about the user to create a SAML assertion for an Okta-specific resource, which acts as a service provider. Within the second SAML link, Okta utilizes claims about the user to create a SAML assertion for a specific SaaS app, which is the service provider.
 
-IdP chaining adds additional links between the user’s primary identity and the requested service.  Within each SAML link, the common attribute between identity provider and service provider must be the same. As the authentication passes across different links in the chain, the common attribute can change.
+IdP chaining adds additional links between the user’s primary identity and the requested service. Within each SAML link, the common attribute between identity provider and service provider must be the same. As the authentication passes across different links in the chain, the common attribute can change.
 
 [![IdP Chaining Common Attribute](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-common-attribute.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-common-attribute.png)
 
-Within each SAML link, the identity provider associates the authentication request with a SAML specific logon URL for each SaaS application.  This URL receives the user assertion, which includes the common attribute.  When the service provider receives the assertion, it must validate the assertion against the entity that generated the assertion, which is the identity provider’s SAML issuer URL.
+Within each SAML link, the identity provider associates the authentication request with a SAML specific logon URL for each SaaS application. This URL receives the user assertion, which includes the common attribute. When the service provider receives the assertion, it must validate the assertion against the entity that generated the assertion, which is the identity provider’s SAML issuer URL.
 
 [![IdP Chaining URL Overview](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-url-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_idp-chaining-url-overview.png)
 
