@@ -39,7 +39,7 @@ This version of the Reference Architecture focuses on Citrix Virtual Apps and De
 
 ## Overview
 
-## Citrix Cloud
+### Citrix Cloud
 
 Citrix Cloud is a platform that hosts and administers Citrix services, such as Citrix Workspace and Citrix Virtual Apps and Desktops. It connects to hosted resources through the Citrix Cloud Connector on any cloud or infrastructure.
 
