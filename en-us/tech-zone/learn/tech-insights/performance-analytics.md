@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Gain visibility into your environment through user-centric experience scores, application & infrastructure performance scores with Performance Analytics.
 ---
 # Citrix Analytics for Performance
 

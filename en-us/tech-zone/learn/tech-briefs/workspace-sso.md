@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn how Citrix Workspace provides single sign-on capabilities to SaaS apps, web apps, mobile apps, Windows virtual apps and Windows virtual desktops. In addition, learn how Workspace single sign-on can support IdP chaining configurations.
 ---
 # Workspace - Single Sign-On
 

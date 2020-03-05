@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Tech Paper focused on installation, configuration, and various optimizations for Google Chrome browser running on Citrix Virtual Apps and Desktops.
 ---
 # Running Google Chrome on Virtual Apps and Desktop
 

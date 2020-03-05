@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: One-page summary of GSLB, MEP protocol and troubleshooting tips.
 ---
 # Troubleshooting Citrix GSLB MEP Cheat Sheet
 

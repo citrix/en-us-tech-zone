@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
 ---
 # Citrix Cloud Virtual Apps and Desktops Service Reference Architecture and Deployment Methods
 

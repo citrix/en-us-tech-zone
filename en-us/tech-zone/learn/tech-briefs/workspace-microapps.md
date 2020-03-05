@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Streamline functionality from complex enterprise applications creating simple actions users can complete right within their feed.
 ---
 # Citrix Workspace Microapps Service
 

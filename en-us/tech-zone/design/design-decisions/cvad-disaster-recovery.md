@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn more about different decision factors and recommendations for business continuity and disaster recovery planning.
 ---
 # Citrix Virtual Apps and Desktops - Disaster Recovery Planning
 

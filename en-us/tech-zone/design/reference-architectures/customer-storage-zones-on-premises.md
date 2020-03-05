@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn about the architecture and design considerations for deploying an on-premises customer-managed storage zone to provide the best user experience and security for Citrix Content Collaboration.
 ---
 # Content Collaboration with on-premises storage zones
 

@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Single Sign-on to Windows-based virtual apps and desktops when using a non-Active Directory based Citrix Workspace identity.
 ---
 # Federated Authentication Service
 

@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Citrix Endpoint Management MDX containers protect mobile apps and control their access to device resources through policy mitigating the risk of unwanted enterprise data loss.
 ---
 # Citrix MDX Containers for iOS
 

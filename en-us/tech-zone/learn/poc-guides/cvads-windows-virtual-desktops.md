@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and your on premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
 ---
 
 # Proof of Concept guide for Citrix Virtual Apps and Desktops service with Windows Virtual Desktop

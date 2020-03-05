@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Provides optimal network connectivity between Enterprise branch offices and their Workspace hosted in data resource locations on-premises or in the cloud.
 ---
 # Introduction to Citrix SD-WAN for Citrix Workspace
 

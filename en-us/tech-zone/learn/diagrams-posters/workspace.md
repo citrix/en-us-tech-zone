@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Conceptual architecture drawing for Citrix Workspace.
 ---
 # Citrix Workspace
 

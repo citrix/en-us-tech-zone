@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Integrates the Access Control service with an on-premises Citrix Virtual Apps and Desktops deployment utilizing StoreFront.
 ---
 # Access Control for StoreFront
 
