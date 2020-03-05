@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Integrate SaaS and web apps into an on-premises StoreFront deployment with features like single sign-on, secure remote access, URL, and content inspection and filtering.
 ---
 # Access Control for StoreFront
 

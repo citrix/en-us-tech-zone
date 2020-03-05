@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Managed Desktops offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
 ---
 # Citrix Managed Desktops
 

@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 ---
 # Access Control
 

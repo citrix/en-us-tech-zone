@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Optimize YouTube delivery in branch offices with Citrix Virtual Apps and Desktops and Citrix SD-WAN.
 ---
 # YouTube Optimization for Branch Offices
 

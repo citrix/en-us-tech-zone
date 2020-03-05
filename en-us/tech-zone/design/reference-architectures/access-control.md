@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Gain knowledge about the Citrix Access Control solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
 ---
 # Citrix Access Control
 

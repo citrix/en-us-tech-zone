@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls.
 ---
 # Citrix Gateway service for HDX Proxy
 

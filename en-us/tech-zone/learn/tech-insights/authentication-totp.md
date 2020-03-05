@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Time-based One-Time Password (TOTP) provides multifactor authentication to the user's Workspace experience.
 ---
 # Authentication - Time-based One-time Password (TOTP)
 

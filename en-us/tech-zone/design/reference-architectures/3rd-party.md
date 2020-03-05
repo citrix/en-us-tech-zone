@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: View reference architectures created by our industry partners on joint technical solutions.
 ---
 # Third Party Reference Architectures
 

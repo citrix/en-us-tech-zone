@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
 ---
 # Workspace App Reference Architecture
 

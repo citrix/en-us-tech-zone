@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: The Citrix Assistant guides users to information and allows them to interact with backend applications to complete simple requests
+description: The Citrix Assistant guides users to information and allows them to interact with back-end applications to complete simple requests.
 ---
 # Workspace Intelligence Features - Citrix Assistant
 

@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Selecting the best VDI model starts with properly defining user groups and  aligning the requirements with the capabilities of the VDI models. Learn how different factors plays a role in selecting the correct VDI model for a user group.
 ---
 # Evaluating VDI Models
 

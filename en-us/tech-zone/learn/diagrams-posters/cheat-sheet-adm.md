@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: One-page summary of the ADM Platform detailing in the following: system requirements, deployment modes, protocols & ports, common log files, common issues/failures, and more.
 ---
 # Citrix Application Delivery Management (ADM) Overview Cheat Sheet
 

@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn how to integrate ServiceNow within your Citrix Virtual Apps and Desktops environment including key technical concepts and use cases.
 ---
 
 # Integrating ServiceNow with Citrix Virtual Apps and Desktops
