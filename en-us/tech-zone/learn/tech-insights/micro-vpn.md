@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: On-demand, per-app VPN that gives access to a specific app back end resource without the risk of opening a full tunnel to your data center.
 ---
 # Micro VPN
 

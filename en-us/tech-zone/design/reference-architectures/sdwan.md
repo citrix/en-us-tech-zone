@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn about the framework, design, and architecture for Citrix SD-WAN with SD-WAN Orchestrator for single region deployment.
 ---
 # Citrix SD-WAN Reference Architecture
 

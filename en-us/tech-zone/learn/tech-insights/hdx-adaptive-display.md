@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Technologies that ensure an unparalleled user experience when connecting to remote Citrix resources.
 ---
 # HDX - Display and Adaptive Technologies
 

@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn about the different decision factors involved in choosing the optimal application delivery method.
 ---
 # Evaluating Application Delivery Methods
 

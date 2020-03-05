@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: One-page summary of high availability and troubleshooting tips.
 ---
 # Troubleshooting Citrix ADC High Availability Cheat Sheet
 

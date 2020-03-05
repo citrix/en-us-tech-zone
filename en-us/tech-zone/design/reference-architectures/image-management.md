@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering and maintaining virtual machine images in your environment.
 ---
 # Citrix Virtual Apps and Desktops Image Management
 

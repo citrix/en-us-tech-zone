@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Gain a deep understanding of the Citrix Layering technology that simplifies the image management for VDI and hosted-shared environments including use cases and technical concepts.
 ---
 # Citrix App Layering
 

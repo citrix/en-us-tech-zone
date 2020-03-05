@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn how to deliver the Citrix® HDX™ Optimization for Microsoft® Teams in a Citrix environment. The optimization offers clear, crisp high-definition video calls, audio-video or audio-only calls to and from other Teams users, optimized Teams’ users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
 ---
 # Proof of Concept guide for Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments
 

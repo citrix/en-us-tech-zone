@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Referenced Design Guide for Citrix ADM
+description: See how the Citrix Application Delivery Management software is deployed to simplify management and monitoring of your application delivery infrastructure.
 ---
 # Citrix Application Delivery Management
 

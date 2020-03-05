@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Utilize Okta as the user's primary identity for Citrix Workspace
 ---
 # Authentication - Okta
 
