@@ -99,7 +99,7 @@ Machine Creation Services (MCS) is used to provision the workload VMs in the con
 
 2)  The Windows 10 multi-session is new OS made available in Azure that allows more than one user to log in to a Windows 10 machine. This OS helps with reducing the number of machines that must be brought up in Azure to serve the same set of users. This OS also helps with fully utilizing the compute resources of the machines that are deployed. This type of machine does not require RDS CALs for allowing multiuser access.
 
-3)  The Windows Server 2008 R2 / 2012 R2 / 2016 / 2019 are server operating systems that allow multiple users to connect to a single machine. One of these OSs can be used to serve applications to users or provide access to desktop sessions (which can be skinned to look like desktop operating system sessions). These OSs are a cheaper option to deliver desktops than option 1. 
+3)  The Windows Server 2008 R2 / 2012 R2 / 2016 / 2019 are server operating systems that allow multiple users to connect to a single machine. One of these OSs can be used to serve applications to users or provide access to desktop sessions (which can be skinned to look like desktop operating system sessions). These OSs are a cheaper option to deliver desktops than option 1.
 Note: Each user connecting to this machine requires an RDS CAL or RDS SAL.
 
 Note: For Windows 7 ESU and the Windows Server 2008 R2 operating systems, the version of the Virtual Delivery agent to be installed on the image must be Citrix Virtual Apps and Desktop 7.15 LTSR.
