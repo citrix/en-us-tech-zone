@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
 ---
 
 # Enterprise web apps

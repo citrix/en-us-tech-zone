@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Conceptual architecture drawing for Citrix Virtual Apps and Desktop deployment in Citrix Cloud.
 ---
 # Virtual Apps and Desktops Service
 

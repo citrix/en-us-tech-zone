@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn how to migrate your on-premises Citrix Virtual Apps and Desktops environment to Citrix Cloud.
 ---
 # Migrating Citrix Virtual Apps and Desktops from on-premises to Citrix Cloud
 

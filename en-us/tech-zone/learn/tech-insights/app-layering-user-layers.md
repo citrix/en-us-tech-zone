@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: User layers persist user profile settings, data, and user-installed applications in non-persistent VDI environments.
 ---
 # Citrix App Layering - User Layers
 

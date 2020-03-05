@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn how Citrix SD-WAN implements Microsoft Connectivity Principles to support Office 365 Optimization for Branch Offices.
 ---
 # Office 365 Optimization for Branch Offices
 

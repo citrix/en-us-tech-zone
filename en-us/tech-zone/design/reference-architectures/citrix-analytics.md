@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products
+description: Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
 ---
 
 # Citrix Analytics Service

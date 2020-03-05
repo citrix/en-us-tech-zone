@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Increase productivity by adding microapps to Citrix Workspace. Microapps allow users to view information and perform actions without launching the full application.
 ---
 # Microapps Overview
 

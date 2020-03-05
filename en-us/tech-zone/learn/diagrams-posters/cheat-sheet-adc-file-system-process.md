@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: One-page summary of most common system directories, files, processes/daemons and logs.
 ---
 # Citrix ADC File System and Process Cheat Sheet
 

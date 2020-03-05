@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: One-page summary of nsconmsg syntax and troubleshooting tips.
 ---
 # Citrix ADC nsconmsg Commands Cheat Sheet
 
