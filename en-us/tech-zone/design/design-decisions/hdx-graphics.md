@@ -129,7 +129,7 @@ Check the Visio chart in this article for more details.
 
 As the **Use Video Codec for Compression** policy is a good starting point to baseline your configuration, additional policies can be set to further customize your visual policies to fit your different workloads. By customizing these supporting policy settings, you can opt to reduce quality in certain areas to reclaim resources and achieve higher scalability and save on bandwidth. You can also opt to increase quality to support use-cases requiring precise visualizations, as in the healthcare industry. The chart below outlines these settings:
 
-[![HDX Graphics 2](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_002.png)](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_002.png)
+[![HDX Graphics 2](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_002.png)](/en-us/tech-zone/design/downloads/design-decisions_hdx-graphics_overview.pdf)
 
 Furthermore, review our **Use Cases** Section below to discover how these additional policies (listed below) can reduce resource consumption, although at a slight reduction in quality (in some cases).
 
