@@ -102,7 +102,7 @@ Content review is done in following steps:
 
 ### 5 - Publish content
 
-After you are done with review stage, contact TZ team and ask them to publish your new article. 
+After you are done with review stage, contact TZ team and ask them to publish your new article.
 
 Make sure that you've also updated a category markdown file (e.g. reference-architectures.md) with a link to your newly created article and brief description of content. Use the same description in `description:` section of your article. This is third line from top with placeholder text `Copy & paste description from TOC here`.
 
