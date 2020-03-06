@@ -266,3 +266,7 @@ Endpoint selection is essential for compatibility with your selected graphics mo
 Leverage our built-in tools (HDX Monitor and the Graphics Status Indicator) to evaluate if your policy settings have met your desired outcome.
 
 Thinwire **For Actively Changing Regions** is often times an appropriate starting point. However, knowing your use case(s) and configuring your environment accordingly is the best approach to deliver a rich experience to end-users.
+
+## Sources
+
+The goal of this article is to assist you with planning your own implementation. To make this task easier, we would like to provide you with source diagrams that you can adapt for your own needs: [source diagrams](https://citrix.sharefile.com/MARTINZNEEDSTOUPDATE).
