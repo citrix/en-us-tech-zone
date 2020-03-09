@@ -108,8 +108,8 @@ Multitenancy capabilities provide economies of scale on a single shared infrastr
 The tenant isolation in multitenant deployments needs to include appropriate nomenclature to clearly define the objects that are shared or dedicated within the management consoles and control planes. For example {Tenant}-{Location}-{Group}.
 The multitenant Virtual Apps and Desktops service supports two architecture models:
 
-   1.Shared Resource Location for multiple tenants
-   2.Dedicated resource location per tenant
+  1.Shared Resource Location for multiple tenants.
+  2.Dedicated resource location per tenant.
 
 ### Shared Resource Location
 
@@ -166,8 +166,6 @@ In summary, Customers share CSP’s Citrix Virtual Apps and Desktops service und
 Some large enterprise customers need the ability to have a private Workspace managed by their Citrix Service Provider. For complex applications. With strict security and compliance requirements, the private workspace does not have any shared components with other customers of the same service provider. The service provider invited by the customer to manage the Cloud environment. This isolation allows for flexibility, and control for the customer and service provider. The management and control from the Citrix Service Providers perspective are duplicated with the complete service instance being dedicated to the customer.
 
 The design and deployment for this mode is the same as standalone enterprise accounts on Citrix Cloud. Except the service provider is invited to connect and administer these accounts, the deployment model before multitenant support became available at the end of 2019. The detailed design, deployment, and best practices of the single tenant private workspace model can be found on [Citrix Tech Zone](https://docs.citrix.com/en-us/tech-zone.html).
-
-[Citrix Tech Zone](https://docs.citrix.com/en-us/tech-zone.html)
 
 ### Combination of Different Architecture Models
 
