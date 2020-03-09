@@ -269,4 +269,4 @@ Thinwire **For Actively Changing Regions** is often times an appropriate startin
 
 ## Sources
 
-The goal of this article is to assist you with planning your own implementation. To make this task easier, we would like to provide you with source diagrams that you can adapt for your own needs: [source diagrams](https://citrix.sharefile.com/MARTINZNEEDSTOUPDATE).
+The goal of this article is to assist you with planning your own implementation. To make this task easier, we would like to provide you with source diagrams that you can adapt for your own needs: [source diagrams](https://citrix.sharefile.com/d-s7af08eb73f74aeb8).
