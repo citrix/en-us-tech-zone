@@ -9,7 +9,7 @@ description: Learn how to deploy Citrix Web Application Firewall (WAF) standalon
 
 **Author:** [Jacob Rutski](https://twitter.com/jrutski)
 
-**Special Thanks:** [Ronan O'Brien](https://twitter.com/obrienronan), [Jen Sheerin](https://twitter.com/jensheerin), [Paul Stansel](https://twitter.com/pstansel), [Patrick Coble](https://twitter.com/VDIHacker)
+**Special Thanks:** [Ronan O'Brien](https://twitter.com/obrienronan), [Jen Sheerin](https://twitter.com/jensheerin), [Paul Stansel](https://twitter.com/pstansel), [Patrick Coble](https://twitter.com/VDIHacker), [Carl Stalhood](https://twitter.com/cstalhood)
 
 ## Overview
 
