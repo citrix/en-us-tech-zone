@@ -59,7 +59,7 @@ Is a unified secure cloud platform managed by Citrix. Where hosting providers ca
 
 Nearly 80% of our Service Providers offer application and desktops solution to their customers. Traditionally these offerings are hosted and managed on-premises. The Citrix Virtual Apps and Desktops service Access and Control Layers, hosted and managed by Citrix. Providing the flexibility for Service Providers to focus on hosting and managing workloads from their chosen Public cloud or maintained on-premises.
 
-[More information on Citrix Virtual Apps and Desktops service](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/setup-for-citrix-service-providers.html )
+[More information on the Citrix Virtual Apps and Desktops Service](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/setup-for-citrix-service-providers.html )
 
 ### Citrix Cloud Connectors
 
@@ -108,8 +108,8 @@ Multitenancy capabilities provide economies of scale on a single shared infrastr
 The tenant isolation in multitenant deployments needs to include appropriate nomenclature to clearly define the objects that are shared or dedicated within the management consoles and control planes. For example {Tenant}-{Location}-{Group}.
 The multitenant Virtual Apps and Desktops service supports two architecture models:
 
-   1.Shared Resource Location for multiple tenants
-   2.Dedicated resource location per tenant
+  1.Shared Resource Location for multiple tenants.
+  2.Dedicated resource location per tenant.
 
 ### Shared Resource Location
 
@@ -166,8 +166,6 @@ In summary, Customers share CSP’s Citrix Virtual Apps and Desktops service und
 Some large enterprise customers need the ability to have a private Workspace managed by their Citrix Service Provider. For complex applications. With strict security and compliance requirements, the private workspace does not have any shared components with other customers of the same service provider. The service provider invited by the customer to manage the Cloud environment. This isolation allows for flexibility, and control for the customer and service provider. The management and control from the Citrix Service Providers perspective are duplicated with the complete service instance being dedicated to the customer.
 
 The design and deployment for this mode is the same as standalone enterprise accounts on Citrix Cloud. Except the service provider is invited to connect and administer these accounts, the deployment model before multitenant support became available at the end of 2019. The detailed design, deployment, and best practices of the single tenant private workspace model can be found on [Citrix Tech Zone](https://docs.citrix.com/en-us/tech-zone.html).
-
-[Citrix Tech Zone](https://docs.citrix.com/en-us/tech-zone.html)
 
 ### Combination of Different Architecture Models
 
@@ -555,3 +553,25 @@ When the Citrix Service Provider specific entitlement is provisioned, the licens
  4.  The detailed list of users that have an assigned license in the current month. This list makes up the total “Assigned” count. Additional insights are provided when the first time a license was assigned.
 
 [![CSP-Image-051](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_051.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_051.png)
+
+The goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [Source Diagrams](https://citrix.sharefile.com/d/s0160d55a024469da)
+
+## References
+
+[Resource Location](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html)
+
+[Identity and Access Management](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management.html)
+
+[Library Offerings and User Assignment](/en-us/citrix-cloud/citrix-cloud-management/assign-users-to-offerings-using-library.html)
+
+[Cloud Connector Internet Connectivity Requirements](/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html)
+
+[Cloud Connector Secure Deployment](/en-us/citrix-cloud/overview/secure-deployment-guide-for-the-citrix-cloud-platform.html)
+
+[Citrix FAS](/en-us/xenapp-and-xendesktop/7-15-ltsr/secure/federated-authentication-service/fas-architectures.html)
+
+[Citrix Gateway Service](/en-us/citrix-virtual-apps-desktops-service/netscaler.html)
+
+[Virtual Delivery Agent](/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html)
+
+[Hosting Connections](/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
