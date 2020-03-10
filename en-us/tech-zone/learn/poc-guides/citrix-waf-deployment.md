@@ -9,7 +9,7 @@ description: Learn how to deploy Citrix Web Application Firewall (WAF) standalon
 
 **Author:** [Jacob Rutski](https://twitter.com/jrutski)
 
-**Special Thanks:** [Ronan O'Brien](https://twitter.com/obrienronan), [Jen Sheerin](https://twitter.com/jensheerin), [Paul Stansel](https://twitter.com/pstansel), [Patrick Coble](https://twitter.com/VDIHacker)
+**Special Thanks:** [Ronan O'Brien](https://twitter.com/obrienronan), [Jen Sheerin](https://twitter.com/jensheerin), [Paul Stansel](https://twitter.com/pstansel), [Patrick Coble](https://twitter.com/VDIHacker), [Carl Stalhood](https://twitter.com/cstalhood)
 
 ## Overview
 
@@ -42,8 +42,9 @@ This guide assumes the following is already configured on your Citrix ADC or sta
 5.  A SNIP has been assigned and can communicate with one or more services that are protected
 6.  An _internal only_ IP address and DNS entry for another VIP (the service may already be load balanced by the ADC, ensure that a separate IP and DNS are available) **Note: using a different DNS name and URL to access an application MAY require adding configuration to the application to make it aware of the new name**
 7.  A Basic understanding of the architecture and structure of the application or service that you are protecting. _For example, if the site processes credit card information determines if credit card protections are enabled, or if the application uses an SQL database for storage determines if SQLi protections are used_
-8.  A Basic understanding of layer 4 load balancing and configuration on the Citrix ADC
-9.  A dedicated syslog server - while local syslogs are available, having a dedicated syslog server configured is recommended
+8.  A basic understanding of web protocols and technologies such as HTTP, HTML, regular expressions, JavaScript and more, depending on the application that is being protected
+9.  A Basic understanding of layer 4 load balancing and configuration on the Citrix ADC
+10.  A dedicated syslog server - while local syslogs are available, having a dedicated syslog server configured is recommended. Alternatively, Citrix ADM with Security Insight provides detailed analytics into the WAF engine and application security
 
 ## WAF Proof of Concept Considerations
 
@@ -271,6 +272,8 @@ Some violations can be immediately relaxed from the **Syslog** viewer if there a
 -  Alternatively, you can modify the relaxation rule before deploying it
 
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_7.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_7.png)
+
+**Note: A false-positive block from a signature violation often means that the web application is not following standards or is written poorly. The immediate action to allow the application to function is to apply a relaxation rule, but the long term goal is to fix the application itself. Relaxation rules on poorly written applications can allow malicious content through by means of allowing the application to function.**
 
 By turning on **stats** for all items, the appliance gathers counters anytime a rule or signature is violated. This is useful in the initially as it allows counters to be cleared to see if any new blocked requests occurred as a result of the WAF policy.
 

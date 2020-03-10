@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: One-page summary of nFactor authentication detailing in the following: concepts, how it works, nFactor Visualizer information, configuration steps, and more.
+description: One-page summary of nFactor authentication detailing concepts, how it works, nFactor Visualizer information, configuration steps, and more.
 ---
 # Citrix ADC nFactor Basics Cheat Sheet
 
