@@ -554,6 +554,8 @@ When the Citrix Service Provider specific entitlement is provisioned, the licens
 
 [![CSP-Image-051](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_051.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_051.png)
 
+## Sources
+
 The goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [Source Diagrams](https://citrix.sharefile.com/d/s0160d55a024469da)
 
 ## References
