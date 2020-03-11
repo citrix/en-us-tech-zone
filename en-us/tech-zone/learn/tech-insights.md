@@ -29,6 +29,10 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Mobile SSO](/en-us/tech-zone/learn/tech-insights/mobile-sso.html) - Single sign-on to native mobile applications via Citrix Gateway.
 
+## Citrix Managed Desktops
+
+[Citrix Managed Desktops](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html) - Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Windows Virtual Desktop in Microsoft Azure.
+
 ## Citrix Networking
 
 [AlwaysOn VPN](/en-us/tech-zone/learn/tech-insights/citrix-gateway-alwayson.html) - Manage remote domain joined Windows endpoints 24x7 by providing LAN-like access with AlwaysOn VPN.
@@ -44,8 +48,6 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 ## Citrix Virtual Apps and Desktops
 
 [App Layering - User Layers](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html) - User layers persist user profile settings, data, and user-installed applications in non-persistent VDI environments.
-
-[Citrix Managed Desktops](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html) - Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Windows Virtual Desktop in Microsoft Azure.
 
 [HDX - Display and Adaptive Technologies](/en-us/tech-zone/learn/tech-insights/hdx-adaptive-display.html) - Technologies that ensure an unparalleled user experience when connecting to remote Citrix resources.
 

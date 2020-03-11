@@ -11,8 +11,6 @@ Just as buildings have blueprints that include details about their structure and
 
 [Citrix Analytics](/en-us/tech-zone/design/reference-architectures/citrix-analytics.html) - Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
 
-[Citrix Managed Desktops](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) - Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
-
 [Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the Citrix Microapps Service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
 
 [Remote PC Access](/en-us/tech-zone/design/reference-architectures/remote-pc.html) - Discover the use cases and learn about the detailed architecture of Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.  
@@ -38,6 +36,10 @@ Just as buildings have blueprints that include details about their structure and
 [Content Collaboration with on-premises storage zones](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html) - Learn about the architecture and design considerations for deploying an on-premises customer-managed storage zone to provide the best user experience and security for Citrix Content Collaboration.
 
 [Content Collaboration with storage zones on Azure IaaS](/en-us/tech-zone/design/reference-architectures/storage-zones-azure-iaas.html) - Learn about the architecture and design considerations for deploying a customer-managed storage zone in Azure to provide the best user experience and security for Citrix Content Collaboration.
+
+## Citrix Managed Desktops
+
+[Citrix Managed Desktops](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) - Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
 
 ## Citrix Networking
 

@@ -75,6 +75,14 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Citrix Managed Desktops](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Managed Desktops offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
 
+### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)
+
+[Citrix Managed Desktops](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html) - Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Windows Virtual Desktop in Microsoft Azure.
+
+### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
+
+[Citrix Managed Desktops](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) - Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
+
 ## Citrix Networking
 
 ### [Learn - Diagrams and Posters](/en-us/tech-zone/learn/diagrams-posters.html)
@@ -140,8 +148,6 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 ### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)
 
 [App Layering - User Layers](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html) - User layers persist user profile settings, data, and user-installed applications in non-persistent VDI environments.
-
-[Citrix Managed Desktops](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html) - Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Windows Virtual Desktop in Microsoft Azure.
 
 [HDX - Display and Adaptive Technologies](/en-us/tech-zone/learn/tech-insights/hdx-adaptive-display.html) - Technologies that ensure an unparalleled user experience when connecting to remote Citrix resources.
 
@@ -218,8 +224,6 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [Access Control](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Access Control solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
 
 [Citrix Analytics](/en-us/tech-zone/design/reference-architectures/citrix-analytics.html) - Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
-
-[Citrix Managed Desktops](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) - Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
 
 [Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the Citrix Microapps Service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
 
