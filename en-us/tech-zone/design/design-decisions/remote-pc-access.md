@@ -10,7 +10,7 @@ description: Remote PC Access is easy to deploy. These design decisions help mai
 
 ## Overview
 
-Remote PC Access is an easy and effective way to allow users access their office-based, physical Windows PC. Using any endpoint device, users can remain productive regardless of their location. However, organizations should consider the following when implementing Remote PC Access.
+Remote PC Access is an easy and effective way to allow users access to their office-based, physical Windows PC. Using any endpoint device, users can remain productive regardless of their location. However, organizations should consider the following when implementing Remote PC Access.
 
 ## Authentication
 
@@ -21,7 +21,7 @@ Because the site is external, organizations require stronger authentication than
 Citrix Gateway provides organizations with numerous multifactor authentication options, which include:
 
 *  [Time-based One Time Password](/en-us/citrix-gateway/13/authentication-authorization/configure-onetime-passwords.html)
-*  [RAIUS](/en-us/citrix-gateway/13/authentication-authorization/configure-radius.html)
+*  [RADIUS](/en-us/citrix-gateway/13/authentication-authorization/configure-radius.html)
 *  [TACACS+](/en-us/citrix-gateway/13/authentication-authorization/configure-tacacs.html)
 *  [SAML](/en-us/citrix-gateway/13/authentication-authorization/configure-saml.html)
 
@@ -39,7 +39,7 @@ Users are able to remotely access the work PC with an untrusted, personal device
 
 ***Note:** The following sizing recommendations are a good starting point, but each environment is unique, resulting in unique results.  Please monitor the infrastructure and size appropriately.*
 
-In many implementations, organizations enable thousands of physical PCs for Remote PC Access capabilities.  Each PC must register with the Citrix Virtual Apps and Desktop controller. The controller must be able to accommodate the increase load.
+In many implementations, organizations enable thousands of physical PCs for Remote PC Access capabilities.  Each PC must register with the Citrix Virtual Apps and Desktop controller. The controller must be able to accommodate the increase load. Additionally, Citrix Gateway tier must be sized appropriately to handle the ICA traffic for additional new users.
 
 As a general recommendation with regards to sizing
 
@@ -50,18 +50,24 @@ When using an on-premises deployment of Citrix Virtual Apps and Desktops, start 
 *  A 4 vCPU controller can handle 5,000 new sessions
 *  A 4 vCPU StoreFront server supports 55,000 requests per hour
 
+### Gateway
+
+ When using an on-premises Citrix ADC for Citrix Gateway, consult the datasheet for the particular model and refer to the SSL VPN/ICA proxy concurrent users line item as a starting point.  If the ADC is handling other workloads, validate that current throughput and CPU usage are not approaching any upper limits
+
 ### Gateway Service
 
-When using the Gateway Service from Citrix Cloud, start with the following recommendations:
+When using the Gateway Service from Citrix Cloud, sizing is irrelevant as it is managed by Citrix. However, this type of implementation requires on-premises Citrix Cloud Connectors.
 
-*  A Citrix Cloud Connector can handle 1,000 sessions without using the rendezvous protocol
-*  A Citrix Cloud Connector can handle 2,000 sessions when using the rendezvous protocol
+The rendezvous protocol enables the virtual delivery agent installed on each physical PC to communicate directly with the Gateway Service instead of tunneling the session through the Cloud Connector.  The rendezvous protocol requires the 1912 version of the virtual delivery agent. It is disabld by default and can be enabled with a Virtual Apps and Desktops policy.
 
-The rendezvous protocol enables the virtual delivery agent installed on each physical PC to communicate directory with the Gateway Service instead of tunneling the session through the Cloud Connector.  The rendezvous protocol requires the 1912 version of the virtual delivery agent.
+For Remote PC Access, the following can be used for initial planning estimations:
+
+*  A 4 vCPU Citrix Cloud Connector can handle 1,000 concurrent sessions without using the rendezvous protocol. This is because the ICA traffic funnels through the Cloud Connector on the way to the Gateway Service.
+*  A 4 vCPU Citrix Cloud Connector sizing becomes irrelevant when using the rendezvous protocol as the ICA traffic flows directly between the Gateway Service and the PC.  
 
 ## Availability
 
-Remote PC Access supports Wake-on-LAN operations to enable powering on Windows PC that are currently powered off.  However, this option requires the use of Microsoft Configuration Manager.
+Remote PC Access supports Wake-on-LAN operations to enable powering on Windows PC that are currently powered off.  However, this option requires the use of Microsoft Endpoint Configuration Manager.
 
 If Configuration Manager is not an option, administrators can configure an Active Directory Group Policy object to remove the "Shut Down" option from the Windows PC. This prevents the user from powering down the physical PC, allowing them to connect remotely.  
 
@@ -75,7 +81,9 @@ In order to have the remote experience match the local experience, users need to
 
 User assignments can be automated. Once the virtual delivery agent installs on the physical PC, the next user who logs on will get assigned to that PC within Citrix Virtual Apps and Desktops. This is an effective method for assigning thousands of users.
 
-The Citrix Virtual Apps and Desktops administrator can modify the assignments as needed within Citrix Studio.
+By default, multiple users can be assigned to a desktop if they have all logged into the physical PC, but this can be disabled via a [registry edit](https://support.citrix.com/article/CTX137805) on the Delivery Controllers.
+
+The Citrix Virtual Apps and Desktops administrator can modify the assignments as needed within Citrix Studio or via PowerShell.
 
 ## Agent Deployment
 
