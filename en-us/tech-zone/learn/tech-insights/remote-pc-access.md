@@ -1,15 +1,15 @@
 ---
 layout: doc
-description: Copy & paste description from TOC here
+description: Learn how Remote PC Access provides remote connectivity to a user's phsyical Windows PC when they are unable to make it to the office. 
 ---
-# Title
+# Remote PC Access
 
 ## Contributors
 
-**Author:** [Name](https://twitter.com/ID)
+**Author:** [Daniel Feller](https://twitter.com/djfeller)
 
-DESCRIPTION
+For many users, the work environment centers on a physical Windows 10 PC sitting under their desk. Remote PC Access allows a remote user to log into their physical Windows office PC using virtually any device (tablets, phones, and laptops using iOS, Mac, Android, Linux, and Windows).
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=ID):**
+**Watch this video to [learn more](https://www.youtube.com/watch?v=RyNh3_FWRTM):**
 
-[![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=ID)
+[![Remove PC Access Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=RyNh3_FWRTM)
