@@ -48,7 +48,7 @@ For many users, the work environment centers on a physical Windows 10 PC sitting
 
 The following Remote PC Access Tech Insight video provides an overview of the solution.
 
-[![Remote PC Access Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=s4IFTPF-waw)
+[![Remote PC Access Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://youtu.be/RyNh3_FWRTM)
 
 Adding Remote PC Access to the business continuity strategy assumes the following:
 
