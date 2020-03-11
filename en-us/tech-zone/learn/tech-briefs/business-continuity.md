@@ -6,7 +6,7 @@ description: Business continuity events can have a regional or global impact. Le
 
 ## Contributors
 
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
+**Author:** [Daniel Feller](https://twitter.com/djfeller) and [Mayank Singh](https://twitter.com/techmayank)
 
 Most organizations have defined business continuity plans. The success of a business continuity plan is based on how much it impacts the user experience, how well it scales to overcome global issues, and how well it maintains corporate security policies.
 
@@ -101,3 +101,48 @@ Because Remote PC Access allows users to connect to their standard Windows PC du
 *  Protect corporate resources from untrusted endpoint devices. Gateway creates a reverse proxy between the end point and work PC. With session policies, administrators can block users from transferring data to/from the work PC and corporate network.
 *  Easily integrate with the current infrastructure. Remote PC Access is simply a different type of virtual desktop within the Citrix Virtual Apps and Desktops solution.
 *  Maintain the same security profile during a business continuity event. Remote PC Access connects users to their office-based Windows PC. Users have the ability to access the same resources, the same way like they were physically in the office.
+
+## Citrix Managed Desktops
+
+Customers who want to use cloud to host their business continuity environment must consider Citrix Managed Desktops, a Desktop-as-a-Service (DaaS) offering. This deployment option also works when an administrator does not have time to setup or does not want to manage on-premises Citrix Virtual Apps and Desktops environment.
+
+The entire Citrix Managed Desktops environment is hosted in Microsoft Azure. The Citrix Managed Desktops service can be spun up quickly when the business continuity event occurs. With the monthly pay-as-you-go billing (which includes Azure consumption), the environment can be shut down when no longer needed.
+
+### Identity
+
+Users authenticate to their Citrix Managed Desktop with either Active Directory or Azure Active Directory.
+
+* Option 1: Users authenticate to the organization's Azure Active Directory
+* Options 2: Users authenticate to the on-premises Active Directory which is synced with the organization's Azure Active Directory
+
+In most instances, an organization synchronizes the on-premises Active Directory with Azure Active Directory by using the [Azure Active Directory Connect](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html#connect-the-on-premises-ad-to-azure-ad-using-azure-ad-connect) utility.
+
+### Datacenter Connectivity
+
+To be effective, users need to access files and backend resources from their Citrix Managed Desktop. Unless these items are transitioned to Azure, connectivity between Azure and the data center must be established.
+
+Using Citrix SD-WAN, organizations can create a secure tunnel between Azure and the data center. SD-WAN understands the data traversing the tunnel and can properly optimize the traffic to improve application response time and user experience.
+
+###  Deployment
+
+Organizations can easily deploy Citrix Managed Desktops with a minimal deployment footprint, as seen in the following conceptual diagram:
+[![Citrix Managed Desktops - Deployment](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-conceptual-diagram.png)](/en-us/tech-zone/learn/media/tech-briefs_business_citrix-managed-desktops-conceptual-diagram.png)
+
+To add a new deployment, the admin performs the following steps:
+
+* Sets up VNet peering between the Azure subscription where the machines would be hosted and the organization’s Azure Active Directory (if the machines are not already in the same subscription)
+* Creates and uploads a master Windows image, which contains the required apps
+* Deploys a machine catalog based on the master image
+* Assigns users to the machine catalog
+
+Once deployed, users authenticate to the environment and receive a cloud-hosted managed virtual desktop available from any location and from any device.
+
+### Results
+* Easily deployed in an environment where no existing Citrix infrastructure is present.
+* Citrix updates and manages the setup with best practices. Only the desktop hosts are managed by the admin.
+* Can bring up an environment in just a few hours and accessible to users from anywhere in the world.
+* With the cloud scale of Azure, admins can bring up as many machines as needed in very short time.
+* The monthly subscription model keeps the cost down by having the machines in the secondary location up and running only when needed.
+* The session is connected on  over the super-fast Azure back bone
+* The user connects to the session over the the internet for the last mile (from the nearest Citrix Gateway PoP), the ICA protocol adjusts based on network conditions to provide the most responsive experience possible. 
+* Citrix session policies secures the environment by blocking untrusted endpoints from transferring data to and from the managed desktop.
