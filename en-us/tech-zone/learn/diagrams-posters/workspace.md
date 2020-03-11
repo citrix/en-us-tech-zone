@@ -30,9 +30,9 @@ We would like to provide you with source diagrams that you can adapt for your ow
 
 ## References
 
-*  [Workspace Identity](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html)
-*  [Workspace Intelligence - Microapps](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html)
-*  [Workspace Intelligence - Virtual Assistant](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html)
-*  [Workspace Single Sign-On](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
-*  [Workspace Fabric - Cloud Direct](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html)
-*  [Workspace Fabric - SD-WAN](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html)
+*  [Workspace Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html)
+*  [Workspace Intelligence - Microapps](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html)
+*  [Workspace Intelligence - Virtual Assistant](/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html)
+*  [Workspace Single Sign-On](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
+*  [Workspace Fabric - Cloud Direct](/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html)
+*  [Workspace Fabric - SD-WAN](/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html)
