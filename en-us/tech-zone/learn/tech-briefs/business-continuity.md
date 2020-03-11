@@ -56,7 +56,7 @@ Adding Remote PC Access to the business continuity strategy assumes the followin
 *  User’s authenticate with Active Directory
 *  There is minimal extra data center hardware capacity to accommodate a large virtual desktop (VDI) style deployment
 
-When the user remotely accesses their work PC, the connection utilizes the ICA protocol, which dynamically adjusts to changing network conditions and content. The dynamic ICA protocal provides the best possible experience.
+When the user remotely accesses their work PC, the connection utilizes the ICA protocol, which dynamically adjusts to changing network conditions and content. The dynamic ICA protocol provides the best possible experience.
 
 ### New Deployment
 
@@ -74,7 +74,7 @@ It is recommended that three components be deployed with redundancy to overcome 
 
 With a new infrastructure deployed, the administrator can perform the following to enable Remote PC Access:
 
-*  Deploys the Virtual Delivery Agent to physical Windows PCs ([Automation Deployment Scripts](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/vda-install-scripts.html))
+*  Deploys the Virtual Delivery Agent to physical Windows PCs ([Automation Deployment Scripts](/en-us/citrix-virtual-apps-desktops/install-configure/vda-install-scripts.html))
 *  Creates a new Remote PC Access catalog
 *  Assigns users to PCs
 
@@ -96,22 +96,22 @@ Because users simply access their physical work PC, the organization only needs 
 
 ### Identity
 
-Users continue to authenticate with Active Directory, but this authentication happens when the user initiates a connection to the organization's public fully qualified domain name for Citrix Gateway.  Because the site is external, organizations require stronger authentication than a simple Active Directory user name and password.  Incorporatig multifactor authentication, like a time-based one-time password token, can greatly improve authentication security.
+Users continue to authenticate with Active Directory, but this authentication happens when the user initiates a connection to the organization's public fully qualified domain name for Citrix Gateway. Because the site is external, organizations require stronger authentication than a simple Active Directory user name and password. Incorporating multifactor authentication, like a time-based one-time password token, can greatly improve authentication security.
 
 Citrix Gateway provides organizations with numerous multifactor authentication options, which include:
 
-*  [One Time Password](https://docs.citrix.com/en-us/citrix-gateway/13/authentication-authorization/configure-onetime-passwords.html)
-*  [RAIUS](https://docs.citrix.com/en-us/citrix-gateway/13/authentication-authorization/configure-radius.html)
-*  [TACACS+](https://docs.citrix.com/en-us/citrix-gateway/13/authentication-authorization/configure-tacacs.html)
-*  [SAML](https://docs.citrix.com/en-us/citrix-gateway/13/authentication-authorization/configure-saml.html)
+*  [One Time Password](/en-us/citrix-gateway/13/authentication-authorization/configure-onetime-passwords.html)
+*  [RAIUS](/en-us/citrix-gateway/13/authentication-authorization/configure-radius.html)
+*  [TACACS+](/en-us/citrix-gateway/13/authentication-authorization/configure-tacacs.html)
+*  [SAML](/en-us/citrix-gateway/13/authentication-authorization/configure-saml.html)
 
 ### Session Security
 
 Users are able to remotely access the work PC with an untrusted, personal device. Organizations can use integrated Citrix Virtual Apps and Desktops policies to protect against:
 
-*  Endpoint Risks: Key loggers secretly installed on the endpoint device can easily capture a user's username and password.  Anti-keylogging capabilities protect the organization from stolen credentials by obfuscating keystrokes.
+*  Endpoint Risks: Key loggers secretly installed on the endpoint device can easily capture a user's username and password. Anti-keylogging capabilities protect the organization from stolen credentials by obfuscating keystrokes.
 *  Inbound Risks: Untrusted endpoints can contain malware, spyware, and other dangerous content. Denying access to the endpoint device's drives prevents transmission of dangerous content to the corporate network.
-*  Outbound Risks: Organizations must maintain control over content. Allowing users to copy content to local, untrusted endpoint devices places additional risks on the organization.  These capabilities can be denied by blocking access to the endpoint's drives, printers, clipboard, and anti-screen-capturing policies.
+*  Outbound Risks: Organizations must maintain control over content. Allowing users to copy content to local, untrusted endpoint devices places additional risks on the organization. These capabilities can be denied by blocking access to the endpoint's drives, printers, clipboard, and anti-screen-capturing policies.
 
 ### Results
 
@@ -133,12 +133,12 @@ The entire Citrix Managed Desktops environment is hosted in Microsoft Azure. The
 
 ### Identity
 
-To maintain a user experience similar to the traditional, on-premises model, the user's identity will continue to use Active Directory. Domain-joined, Active-Directory based deployments of Citrix Managed Desktops allows users to use either of the following options:
+To maintain a user experience similar to the traditional, on-premises model, the user's identity continues to use Active Directory. Domain-joined, Active-Directory based deployments of Citrix Managed Desktops allow users to use either of the following options:
 
 *  Option 1: Users authenticate to the organization's Azure Active Directory, which is synchronized from the organization's on-premises Active Directory domain.
 *  Option 2: Users authenticate to the on-premises Active Directory domain by using an Azure-to-Data Center tunnel created with Citrix SD-WAN.
 
-In most instances, an organization synchronizes the on-premises Active Directory with Azure Active Directory by using the [Azure Active Directory Connect](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html#connect-the-on-premises-ad-to-azure-ad-using-azure-ad-connect) utility.
+In most instances, an organization synchronizes the on-premises Active Directory with Azure Active Directory by using the [Azure Active Directory Connect](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html#connect-the-on-premises-ad-to-azure-ad-using-azure-ad-connect) utility.
 
 ### Data Center Connectivity
 
