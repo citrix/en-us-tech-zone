@@ -27,3 +27,12 @@ To show in full size, click on the image below:
 ## Sources
 
 We would like to provide you with source diagrams that you can adapt for your own needs. [Source Diagrams](https://citrix.sharefile.com/d-sbb9281af1fe4496a)
+
+## References
+
+*  [Workspace Identity](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html)
+*  [Workspace Intelligence - Microapps](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html)
+*  [Workspace Intelligence - Virtual Assistant](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html)
+*  [Workspace Single Sign-On](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
+*  [Workspace Fabric - Cloud Direct](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html)
+*  [Workspace Fabric - SD-WAN](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html)
