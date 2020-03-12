@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how Remote PC Access provides remote connectivity to a user's phsyical Windows PC when they are unable to make it to the office. 
+description: Remote PC Access allows users to access their physical, office-based Windows PC from remote locations.
 ---
 # Remote PC Access
 
