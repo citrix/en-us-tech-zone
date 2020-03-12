@@ -5,17 +5,17 @@ layout: doc
 
 Just as buildings have blueprints that include details about their structure and inner workings, enterprise software solutions also need blueprints that define technical components and interactions. Citrix reference architectures are comprehensive guides that assist organizations in planning their Citrix Workspace implementations complete with use cases, recommendations, and more.
 
-## Citrix Workspace
+## Citrix Access Control
 
 [Access Control](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Access Control solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
 
+## Citrix Analytics
+
 [Citrix Analytics](/en-us/tech-zone/design/reference-architectures/citrix-analytics.html) - Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
 
+## Citrix Workspace
+
 [Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the Citrix Microapps Service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
-
-[Remote PC Access](/en-us/tech-zone/design/reference-architectures/remote-pc.html) - Discover the use cases and learn about the detailed architecture of Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.  
-
-[ServiceNow with Citrix Virtual Apps and Desktops](/en-us/tech-zone/design/reference-architectures/itsm-adapter-service.html) - Learn how to integrate ServiceNow within your Citrix Virtual Apps and Desktops environment including key technical concepts and use cases.
 
 [Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
 
@@ -26,6 +26,10 @@ Just as buildings have blueprints that include details about their structure and
 [Image Management](/en-us/tech-zone/design/reference-architectures/image-management.html) - Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering and maintaining virtual machine images in your environment.
 
 [Optimizing Unified Communications Solutions](/en-us/tech-zone/design/reference-architectures/optimizing-unified-communications-solutions.html) - Learn how to optimize voice, video, and other capabilities of unified communication solutions in virtualized Citrix environments.
+
+[Remote PC Access](/en-us/tech-zone/design/reference-architectures/remote-pc.html) - Discover the use cases and learn about the detailed architecture of Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.  
+
+[ServiceNow with Citrix Virtual Apps and Desktops](/en-us/tech-zone/design/reference-architectures/itsm-adapter-service.html) - Learn how to integrate ServiceNow within your Citrix Virtual Apps and Desktops environment including key technical concepts and use cases.
 
 [Virtual Apps and Desktops Service](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html) - Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
 
