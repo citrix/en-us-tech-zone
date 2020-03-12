@@ -808,4 +808,4 @@ The following table outlines the tasks that ought to be performed on a yearly ba
 
 ## Sources
 
-Goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [source diagrams](https://citrix.sharefile.com/sb187612552943089).
+Goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [source diagrams](https://citrix.sharefile.com/d-sda01a8cdca14f04a).
