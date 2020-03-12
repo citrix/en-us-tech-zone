@@ -49,16 +49,6 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Mobile SSO](/en-us/tech-zone/learn/tech-briefs/mobile-sso.html) - Native mobile app single sign-on for iOS and Android SaaS applications.
 
-[Virtual Assistant](/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html) - The Citrix Assistant guides users to information and allows them to interact with back-end applications to complete simple requests.
-
-[Workspace app](/en-us/tech-zone/learn/tech-briefs/workspace-app.html) - Personalized interface that provides access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
-
-[Workspace Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) - Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.
-
-[Workspace Microapps](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html) - Streamline functionality from complex enterprise applications creating simple actions users can complete right within their feed.
-
-[Workspace Single Sign-On](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) - Learn how Citrix Workspace provides single sign-on capabilities to SaaS apps, web apps, mobile apps, Windows virtual apps and Windows virtual desktops. In addition, learn how Workspace single sign-on can support IdP chaining configurations.
-
 ### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)
 
 [Google Chrome OS Management](/en-us/tech-zone/learn/tech-insights/google-chrome-os-management.html) - Manage Chrome OS devices with Citrix Endpoint Management.
@@ -208,6 +198,18 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [Virtual Apps and Desktops On-Prem](/en-us/tech-zone/learn/diagrams-posters/virtual-apps-and-desktops.html) - Conceptual architecture drawing for Citrix Virtual Apps and Desktop on-premises deployment.
 
 [Virtual Apps and Desktops Service](/en-us/tech-zone/learn/diagrams-posters/virtual-apps-and-desktops-service.html) - Conceptual architecture drawing for Citrix Virtual Apps and Desktop deployment in Citrix Cloud.
+
+### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
+
+[Virtual Assistant](/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html) - The Citrix Assistant guides users to information and allows them to interact with back-end applications to complete simple requests.
+
+[Workspace app](/en-us/tech-zone/learn/tech-briefs/workspace-app.html) - Personalized interface that provides access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
+
+[Workspace Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) - Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.
+
+[Workspace Microapps](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html) - Streamline functionality from complex enterprise applications creating simple actions users can complete right within their feed.
+
+[Workspace Single Sign-On](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) - Learn how Citrix Workspace provides single sign-on capabilities to SaaS apps, web apps, mobile apps, Windows virtual apps and Windows virtual desktops. In addition, learn how Workspace single sign-on can support IdP chaining configurations.
 
 ### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)
 
