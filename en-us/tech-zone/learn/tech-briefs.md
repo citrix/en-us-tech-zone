@@ -33,7 +33,7 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [Mobile SSO](/en-us/tech-zone/learn/tech-briefs/mobile-sso.html) - Native mobile app single sign-on for iOS and Android SaaS applications.
 
-Citrix Workspace
+## Citrix Workspace
 
 [Virtual Assistant](/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html) - The Citrix Assistant guides users to information and allows them to interact with back-end applications to complete simple requests.
 
