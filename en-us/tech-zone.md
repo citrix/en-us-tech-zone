@@ -23,6 +23,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Access Control for StoreFront](/en-us/tech-zone/learn/tech-insights/access-control-storefront.html) - Integrate SaaS and web apps into an on-premises StoreFront deployment with features like single sign-on, secure remote access, URL, and content inspection and filtering.
 
+### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
+
+[Access Control](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Access Control solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
+
 ## Citrix Analytics
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
@@ -35,6 +39,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Security Analytics](/en-us/tech-zone/learn/tech-insights/security-analytics.html) - Generate actionable insights about your environment, enabling administrators to proactively handle user and application security threats.
 
+### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
+
+[Citrix Analytics](/en-us/tech-zone/design/reference-architectures/citrix-analytics.html) - Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
+
 ## Citrix Content Collaboration
 
 ### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
@@ -42,6 +50,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [Content Collaboration with on-premises storage zones](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html) - Learn about the architecture and design considerations for deploying an on-premises customer-managed storage zone to provide the best user experience and security for Citrix Content Collaboration.
 
 [Content Collaboration with storage zones on Azure IaaS](/en-us/tech-zone/design/reference-architectures/storage-zones-azure-iaas.html) - Learn about the architecture and design considerations for deploying a customer-managed storage zone in Azure to provide the best user experience and security for Citrix Content Collaboration.
+
+### [Build - Deployment Guides](/en-us/tech-zone/build/deployment-guides.html)
+
+[Citrix Files with Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/build/deployment-guides/citrix-files.html) - Learn how to deploy the Citrix Files Client for Windows in a virtual app and desktop environment including related components, tips, and best practices for optimal performance and management.
 
 ## Citrix Endpoint Management
 
@@ -135,6 +147,12 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ## Citrix Virtual Apps and Desktops
 
+### [Learn - Diagrams and Posters](/en-us/tech-zone/learn/diagrams-posters.html)
+
+[Virtual Apps and Desktops On-Prem](/en-us/tech-zone/learn/diagrams-posters/virtual-apps-and-desktops.html) - Conceptual architecture drawing for Citrix Virtual Apps and Desktop on-premises deployment.
+
+[Virtual Apps and Desktops Service](/en-us/tech-zone/learn/diagrams-posters/virtual-apps-and-desktops-service.html) - Conceptual architecture drawing for Citrix Virtual Apps and Desktop deployment in Citrix Cloud.
+
 ### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
 
 [Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid Proof of Concept Guide](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and your on premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
@@ -179,11 +197,19 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Optimizing Unified Communications Solutions](/en-us/tech-zone/design/reference-architectures/optimizing-unified-communications-solutions.html) - Learn how to optimize voice, video, and other capabilities of unified communication solutions in virtualized Citrix environments.
 
+[Remote PC Access](/en-us/tech-zone/design/reference-architectures/remote-pc.html) - Discover the use cases and learn about the detailed architecture of Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.  
+
+[ServiceNow with Citrix Virtual Apps and Desktops](/en-us/tech-zone/design/reference-architectures/itsm-adapter-service.html) - Learn how to integrate ServiceNow within your Citrix Virtual Apps and Desktops environment including key technical concepts and use cases.
+
 [Virtual Apps and Desktops Service](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html) - Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
 
 [Virtual Apps and Desktops Service - AWS](/en-us/tech-zone/design/reference-architectures/citrix-virtual-apps-and-desktops-on-aws.html) - Learn the architecture and deployment considerations of Citrix Virtual Apps and Desktops on Amazon Web Services cloud platform.
 
 [Virtual Apps and Desktops Service - Azure](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-azure.html) - Learn the detailed architecture and deployment model of Citrix Virtual Apps and Desktops on Microsoft Azure with five key architectural principles.
+
+### [Build - Deployment Guides](/en-us/tech-zone/build/deployment-guides.html)
+
+[Migrating Citrix Virtual Apps and Desktops from on-premises to Citrix Cloud](/en-us/tech-zone/build/deployment-guides/cvads-migration.html) - Learn how to migrate your on-premises Citrix Virtual Apps and Desktops environment to Citrix Cloud.
 
 ### [Build - Tech Papers](/en-us/tech-zone/build/tech-papers.html)
 
@@ -194,10 +220,6 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 ### [Learn - Diagrams and Posters](/en-us/tech-zone/learn/diagrams-posters.html)
 
 [Citrix Workspace](/en-us/tech-zone/learn/diagrams-posters/workspace.html) - Conceptual architecture drawing for Citrix Workspace.
-
-[Virtual Apps and Desktops On-Prem](/en-us/tech-zone/learn/diagrams-posters/virtual-apps-and-desktops.html) - Conceptual architecture drawing for Citrix Virtual Apps and Desktop on-premises deployment.
-
-[Virtual Apps and Desktops Service](/en-us/tech-zone/learn/diagrams-posters/virtual-apps-and-desktops-service.html) - Conceptual architecture drawing for Citrix Virtual Apps and Desktop deployment in Citrix Cloud.
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
@@ -233,23 +255,9 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
 
-[Access Control](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Access Control solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
-
-[Citrix Analytics](/en-us/tech-zone/design/reference-architectures/citrix-analytics.html) - Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
-
 [Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the Citrix Microapps Service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
 
-[Remote PC Access](/en-us/tech-zone/design/reference-architectures/remote-pc.html) - Discover the use cases and learn about the detailed architecture of Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.  
-
-[ServiceNow with Citrix Virtual Apps and Desktops](/en-us/tech-zone/design/reference-architectures/itsm-adapter-service.html) - Learn how to integrate ServiceNow within your Citrix Virtual Apps and Desktops environment including key technical concepts and use cases.
-
 [Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
-
-### [Build - Deployment Guides](/en-us/tech-zone/build/deployment-guides.html)
-
-[Citrix Files with Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/build/deployment-guides/citrix-files.html) - Learn how to deploy the Citrix Files Client for Windows in a virtual app and desktop environment including related components, tips, and best practices for optimal performance and management.
-
-[Migrating Citrix Virtual Apps and Desktops from on-premises to Citrix Cloud](/en-us/tech-zone/build/deployment-guides/cvads-migration.html) - Learn how to migrate your on-premises Citrix Virtual Apps and Desktops environment to Citrix Cloud.
 
 ## Other
 
