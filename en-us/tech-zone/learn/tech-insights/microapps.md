@@ -1,7 +1,8 @@
 ---
 layout: doc
+description: Increase productivity by adding microapps to Citrix Workspace. Microapps allow users to view information and perform actions without launching the full application.
 ---
-# Microapp Overview
+# Microapps Overview
 
 ## Contributors
 
@@ -13,4 +14,4 @@ Citrix introduces intelligent features to the workspace which extend its capabil
 
 [![Tech Insight-Microapp Overview](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=a1W_BEHYUcI&feature=youtu.be)
 
-**Note: Microapps is currently not a generally available feature, information above is subject to change.**
+For more information about Microapps, see [Microapps](/en-us/citrix-microapps.html) in Citrix product documentation.

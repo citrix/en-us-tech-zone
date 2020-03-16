@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn how to migrate your on-premises Citrix Virtual Apps and Desktops environment to Citrix Cloud.
 ---
 # Migrating Citrix Virtual Apps and Desktops from on-premises to Citrix Cloud
 
@@ -601,7 +602,7 @@ Provide the **Cloud Connector details** as controllers name
 
 Next, add the **Enable auto update of Controller** option and select **Allowed**. This allows VDAs to update the list of controllers with newly added Cloud Connectors. Although auto-update is not used for initial registration, the auto-update downloads and stores the ListOfDDCs in a persistent cache on the VDA when initial registration occurs. This is done for each VDA.
 
-When you migrate from on-premises to Citrix Cloud, **the expected behavior is to change and update the ListOfDDCs entries**, the auto-update cache should be refreshed and point to Cloud Connectors.  Refer to the [VDA registration product documentation](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html#auto-update") for additional details on how auto-update works and its exceptions.
+When you migrate from on-premises to Citrix Cloud, **the expected behavior is to change and update the ListOfDDCs entries**, the auto-update cache should be refreshed and point to Cloud Connectors.  Refer to the [VDA registration product documentation](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html#auto-update) for additional details on how auto-update works and its exceptions.
 
 [![cloud-migration-strategies-Image-60](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_060.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_060.png)
 

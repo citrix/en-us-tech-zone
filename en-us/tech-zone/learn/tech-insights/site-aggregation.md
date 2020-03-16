@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Hybrid deployment that allows your on-premises Citrix Virtual Apps & Desktops environments to be part of Citrix Workspace.
 ---
 # Site Aggregation
 

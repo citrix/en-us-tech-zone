@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Discover the framework, design, and architecture for Citrix SD-WAN multi-region deployment with SD-WAN Orchestrator.
 ---
 # Reference Architecture for Citrix SD-WAN Multi-Region Deployment
 

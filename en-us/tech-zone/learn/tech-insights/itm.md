@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn how Citrix ITM can direct users to cloud service mirror sites with the most bandwidth available between them.
 ---
 # Citrix Intelligent Traffic Management - Radar throughput based traffic management
 

@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Single sign-on to native mobile applications via Citrix Gateway.
 ---
 # Mobile SSO
 
