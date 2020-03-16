@@ -28,7 +28,7 @@ Test results reflect application execution using default Citrix policies and def
 
 ## What is the most efficient instance series?
 
-To find the most efficient instance series, we needed test the different instance series without changing any other variables in the mix. The base image was Windows Server 2016 with the 1903.1 version of the Citrix VDA and a standard HDD 128 GB disk for the system C: drive. We selected the 8-core instance types for two primary reasons:
+To find the most efficient instance series, we needed test the different instance series without changing any other variables in the mix. The base image was Windows Server 2016 with the 1903.1 version of the Citrix VDA and a standard hard disk drive (HDD) 128 GB disk for the system C: drive. We selected the 8-core instance types for two primary reasons:
 
 1)  They represent the workhorse of Azure instance types for hosted sessions and are generally the most popular size deployed
 2)  They provide a good balance of CPU/RAM and minimal OS impact as opposed to a smaller 2-core system.
@@ -39,17 +39,17 @@ The following graph shows the instance family results along with the average cos
 
 ### Analysis
 
-Most of these instance types leverage the same processor, Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30 GHz. The primary difference being the amount of memory available to the virtual machine. More information about these different series can be found on [Microsoft&#39;s website](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/).
+Most of these instance types use the same processor, Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30 GHz. The primary difference being the amount of memory available to the virtual machine. More information about these different series can be found on [Microsoft's website](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/).
 
-Generally speaking, the 8-core instances have fairly similar performance, especially when you consider the physical cores (D13\_v2, D4\_v2, L8s) compared to hyper-threaded cores (F8s\_v2, D8\_v3, E8\_v3). However, when the instance&#39;s hourly cost is considered, the D13\_v2, and F8s\_v2 instances provide the more efficient use. The E\_v3 and LS\_v1 series are less cost-efficient because Microsoft charges a higher premium for Memory optimized and Storage optimized instances. In situations where your user&#39;s applications are extremely memory or storage intensive, these instances often provide a good return on investment.
+Generally speaking, the 8-core instances have fairly similar performance, especially when you consider the physical cores (D13\_v2, D4\_v2, L8s) compared to hyper-threaded cores (F8s\_v2, D8\_v3, E8\_v3). However, when the instance's hourly cost is considered, the D13\_v2, and F8s\_v2 instances provide the more efficient use. The E\_v3 and LS\_v1 series are less cost-efficient because Microsoft charges a higher premium for Memory optimized and Storage optimized instances. In situations where your user's applications are extremely memory or storage intensive, these instances often provide a good return on investment.
 
 ### Recommendations
 
-If your typical user&#39;s applications are CPU-intensive and do not require significant memory to run, the most cost-efficient performance is the F series. Select the F series when you need excellent CPU response times and do not require a significant amount of memory. If your user&#39;s applications consume a fair amount of memory, use one of the D instance types depending on how much additional memory per core is required for your user&#39;s environment.
+If your typical user's applications are CPU-intensive and do not require significant memory to run, the most cost-efficient performance is the F series. Select the F series when you need excellent CPU response times and do not require a significant amount of memory. If your user's applications consume a fair amount of memory, use one of the D instance types depending on how much additional memory per core is required for your user's environment.
 
 ## What is the most cost-effective instance type in the most efficient family?
 
-When we completed the broad test across families, we expected a single series to be a clear leader; however the results ended up convincing us that the two best instance families for additional testing were the D series and the F series when tested with standard hard disk drive (HDD) storage. The next step was to test the specific sizes ranging between 2 and 16 vCPUs within the D\_v2 and FS\_v2 families. The results of these tests are shown below.
+When we completed the broad test across families, we expected a single series to be a clear leader. However the results ended up convincing us that the two best instance families for additional testing were the D series and the F series when tested with standard HDD storage. The next step was to test the specific sizes ranging between 2 and 16 vCPUs within the D\_v2 and FS\_v2 families. The results of these tests are shown below.
 
 ![FS and D Series Performance](/en-us/tech-zone/design/media/reference-architectures_azure-instance-scalability_002.png)
 
@@ -59,7 +59,7 @@ The graph above shows the results of those tests with the highest densities of 7
 
 The pricing model for Azure instances varies according to the region, the instance type, and the resources provided. The graphs above also includes the cost efficiency of each instance type based on VDA user densities achieved in the single-server testing. The costs reflect U.S. West 2 Pay-As-You-Go pricing for standard VM instances as of September 2019 and includes the cost of Microsoft Windows licensing.
 
-As shown in the graph above, the D13\_v2 instance type shows the lowest cost per hour per user of $0.018 for task worker, with the F16s\_v2 and F8s\_v2 coming in second with a cost of $0.019.  As for knowledge worker, both the F16s\_v2 and F8s\_v2 instance types share the best hourly cost of $0.025, followed closely by the D13\_v2 instance type at $0.026.
+As shown in the graph above, the D13\_v2 instance type shows the lowest cost per hour per user of $0.018 for task worker, with the F16s\_v2 and F8s\_v2 coming in second with a cost of $0.019. As for knowledge worker, both the F16s\_v2 and F8s\_v2 instance types share the best hourly cost of $0.025, followed closely by the D13\_v2 instance type at $0.026.
 
 ### Recommendations
 
@@ -81,7 +81,7 @@ The instance types used for testing were configured with standard storage rather
 
 At the disk sizes that we are using, the HDD and SDD disks have very similar IOPS performance (500). While the SSD disks have a more consistent performance, the additional cost is not always justified.
 
-We decided then to consider the Machine Creation Services I/O (MCSIO) cache, as a way to achieve SSD-like performance with the larger standard disks. The tests were completed using the Citrix VDA version 1903.1 and Windows Server 2016 on a D5\_v2 (16 vCPU, 56GB of RAM) instance type. The chart below shows the increase in user density gained by enabling the MCSIO cache with the Knowledge worker load.
+We decided then to consider the Machine Creation Services I/O (MCSIO) cache, as a way to achieve SSD-like performance with the larger standard disks. The tests were completed using the Citrix VDA version 1903.1 and Windows Server 2016 on a D5\_v2 (16 vCPU, 56 GB of RAM) instance type. The chart below shows the increase in user density gained by enabling the MCSIO cache with the Knowledge worker load.
 
 ![MCSIO Performance](/en-us/tech-zone/design/media/reference-architectures_azure-instance-scalability_003.png)
 
@@ -99,9 +99,9 @@ If user experience is a driving factor when considering performance, we recommen
 
 ## How does Windows 10 Multisession scalability compare to Windows Server OS?
 
-With the release of both the Windows Server 2019 and Windows 10 Multi-session operating systems, we thought it would be best to provide some guidance about how the client operating system would impact the scalability. Both Windows Server 2019 and Windows 10 Multi-session operating systems require the newer Citrix VDA version 1906.1. Windows 10 Multisession is currently available with Windows Virtual Desktop (WVD) Entitlement and grants the tenant the base price of the VM (Linux pricing). That entitlement also extends the VM pricing to Windows Server 2016 and Windows Server 2019.
+With the release of both the Windows Server 2019 and Windows 10 Multi-session operating systems, we thought it would be best to provide some guidance about how the client operating system would impact the scalability. Both Windows Server 2019 and Windows 10 Multi-session operating systems require the newer Citrix VDA version 1906.1. Windows 10 Multisession is available with Windows Virtual Desktop (WVD) Entitlement and grants the tenant the base price of the VM (Linux pricing). That entitlement also extends the VM pricing to Windows Server 2016 and Windows Server 2019.
 
-The graph below shows the density changes when compared against the same test runs with Windows Server 2016 using the Citrix VDA version 1906.1 on the same D4\_v2 (8 vCPU, 28GB of RAM) instance. The prices below are using the Linux VM pricing in line with the WVD Entitlement required.
+The graph below shows the density changes when compared against the same test runs with Windows Server 2016 using the Citrix VDA version 1906.1 on the same D4\_v2 (8 vCPU, 28 GB of RAM) instance. The prices below are using the Linux VM pricing in line with the WVD Entitlement required.
 
 ![Operating System Performance](/en-us/tech-zone/design/media/reference-architectures_azure-instance-scalability_005.png)
 
@@ -119,9 +119,9 @@ When planning to upgrade from Windows Server 2016 to Windows Server 2019, expect
 
 ## Conclusion
 
-The Azure instance type that you select to deploy Citrix virtual application workloads is a critical element that determines the user density and scalability, and in turn the cost-per-user for an Azure delivery model. As shown, the different instance types in Azure have advantages for specific workloads, such as high computational requirements or additional memory. In most cases, a D13\_v2 instance with standard HDD disks and a 2GB MCSIO cache enabled will provide the best user performance at the lowest cost. Consider the Windows 10 Multisession operating system when you need Windows Store, application compatibility, or a true Windows client experience.
+The Azure instance type that you select to deploy Citrix virtual application workloads is a critical element that determines the user density and scalability, and in turn the cost-per-user for an Azure delivery model. As shown, the different instance types in Azure have advantages for specific workloads, such as high computational requirements or additional memory. Usually, a D13\_v2 instance with standard HDD disks and a 2GB MCSIO cache enabled provides the best user performance at the lowest cost. Consider the Windows 10 Multisession operating system when you need Windows Store, application compatibility, or a true Windows client experience.
 
-The Citrix on Azure results presented here represent only guidelines in configuring your Azure solution. If you do not have data about your specific user workloads, the numbers we provided here will serve as your design estimates. Before making final sizing and deployment decisions, we strongly suggest that you run proof-of-concept tests on different Azure instance types using your own workloads, then use that data for your final designs.
+The Citrix on Azure results presented here represent only guidelines in configuring your Azure solution. If you do not have data about your specific user workloads, the numbers we provided here serve as your design estimates. Before making final sizing and deployment decisions, we strongly suggest that you run proof-of-concept tests on different Azure instance types using your own workloads, then use that data for your final designs.
 
 ### Learn more
 
