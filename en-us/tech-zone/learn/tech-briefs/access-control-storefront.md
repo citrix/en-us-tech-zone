@@ -47,3 +47,13 @@ Integrating Access Control with an on-premises deployment of StoreFront includes
 ## Additional Details
 
 [Access Control for SaaS Apps](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/access-control.html)
+
+## Other Tech Zone content
+
+[Learn -> Tech Insight -> Access Control for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
+
+[Learn -> Tech Insight -> Access Control for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
+
+[Learn -> Tech Brief -> Access Control](/en-us/tech-zone/learn/tech-briefs/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
+
+[Design -> Reference Architectures -> Access Control](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Access Control solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.

@@ -67,3 +67,5 @@ description: View reference architectures created by our industry partners on jo
 ## VMware
 
 [Citrix Virtual Apps and Desktops for VMware Cloud on AWS](https://assets.contentstack.io/v3/assets/blt58b49a8a0e43b5ff/blt577e4a7c31386be6/5db9c38689fb926b491efefb/Citrix_CVAD_Solution_Architecture.pdf) - This document provides a high-level Reference Architecture on Citrix Virtual Apps and Desktops service deployment in VMware Cloud on AWS environment.
+
+## Other Tech Zone content

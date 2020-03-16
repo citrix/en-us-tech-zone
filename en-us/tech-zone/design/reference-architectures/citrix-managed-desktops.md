@@ -716,3 +716,5 @@ The following resources are referenced for a better understanding of Citrix Mana
 [Citrix Managed Desktops](/en-us/citrix-managed-desktops.html)
 
 [CMD Architecture](/en-us/citrix-managed-desktops/security.html)
+
+## Other Tech Zone content

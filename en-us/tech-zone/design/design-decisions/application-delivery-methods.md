@@ -110,3 +110,7 @@ In this article, we have reflected the most common decision factors when choosin
 ## Sources
 
 The goal of this article is to assist you with planning your own implementation. To make this task easier, we would like to provide you with source diagrams that you can adapt for your own needs: [source diagrams](https://citrix.sharefile.com/d-sc3b40c906354b5ab).
+
+## Other Tech Zone content
+
+[Learn -> Tech Brief -> Business Continuity](/en-us/tech-zone/learn/tech-briefs/business-continuity.html) - Business continuity events can have a regional or global impact. Learn about the different ways Citrix allows users to remain productive when making it to the office is not possible.

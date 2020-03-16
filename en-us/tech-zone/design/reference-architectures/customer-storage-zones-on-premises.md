@@ -180,3 +180,9 @@ The described architecture covers the most common deployment model our customers
 [Resources for Citrix Content Collaboration](/en-us/citrix-content-collaboration.html)
 
 [Resources for storage zone controller](/en-us/storage-zones-controller/5-0.html)
+
+## Other Tech Zone content
+
+[Design -> Reference Architectures -> Content Collaboration with storage zones on Azure IaaS](/en-us/tech-zone/design/reference-architectures/storage-zones-azure-iaas.html) - Learn about the architecture and design considerations for deploying a customer-managed storage zone in Azure to provide the best user experience and security for Citrix Content Collaboration.
+
+[Build -> Deployment Guides -> Citrix Files with Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/build/deployment-guides/citrix-files.html) - Learn how to deploy the Citrix Files Client for Windows in a virtual app and desktop environment including related components, tips, and best practices for optimal performance and management.
