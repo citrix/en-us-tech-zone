@@ -250,3 +250,7 @@ As new vulnerabilities are discovered, they will be tested for by SSLLabs so fre
 -  The Zombie POODLE vulnerability was addressed in builds **12.1 build 50.31, 12.0 build 60.9, 11.1 build 60.14, 11.0 build 72.17, and 10.5 build 69.5**; this vulnerability only affects MPX\SDX appliances with Nitrox SSL hardware, meaning that MPX\SDX appliances with Coleto Creek are not vulnerable; disabling CBC-based cipher suites will also mitigate this vulnerability. [See CTX article for more information](https://support.citrix.com/article/CTX240139)
 
 -  The cipher list has been modified to address CBC weaknesses, thus removing 0xc028 and 0x39 ciphers
+
+## Other Tech Zone content
+
+[Build -> Tech Papers -> Endpoint Security, Antivirus and Antimalware Best Practices](/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html) - Tech Paper focused on proper configuration, and recommendations for running antivirus solution in Citrix Virtual Apps & Desktops environments. Recommended exclusions, configuration, and leading practices.

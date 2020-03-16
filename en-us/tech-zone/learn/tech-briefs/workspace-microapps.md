@@ -80,3 +80,35 @@ The data flow of the workspace with intelligence can be found below:
 Citrix Workspace customers are able to build microapps to increase end-user productivity. It eliminates the need for users to parse through complex enterprise apps to complete a single task. Citrix Workspace is designed with security and end-user experience in mind. It encrypts all the data and keys; therefore, admins do not have access to customer information. The system only stores the data it needs to create events. By utilizing public APIs, admins completely control which microapps are made available. No audit trail is lost because everything is written back in the context of the user. Microapps organize, automate, and guide your employees through their work day; maximizing productivity and boosting the overall user experience.
 
 For more information about Microapps, see [Microapps](/en-us/citrix-microapps.html) in Citrix product documentation.
+
+## Other Tech Zone content
+
+[Learn -> Tech Insight -> Authentication - Citrix Gateway](/en-us/tech-zone/learn/tech-insights/gateway-idp.html) - Utilize an on-premises Citrix Gateway as an identity provider for Citrix Workspace.
+
+[Learn -> Tech Insight -> Authentication - TOTP](/en-us/tech-zone/learn/tech-insights/authentication-totp.html) - Time-based One-Time Password (TOTP) provides multifactor authentication to the user's Workspace experience.
+
+[Learn -> Tech Insight -> Workspace app](/en-us/tech-zone/learn/tech-insights/workspace-app.html) - Personalized interface to provide access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
+
+[Learn -> Tech Insight -> Microapps Custom Integrations](/en-us/tech-zone/learn/tech-insights/microapps-custom-integrations.html) - Create custom integrations with the microapp builder through the HTTP connector.
+
+[Learn -> Tech Insight -> Site Aggregation](/en-us/tech-zone/learn/tech-insights/site-aggregation.html) - Hybrid deployment that allows your on-premises Citrix Virtual Apps & Desktops environments to be part of Citrix Workspace.
+
+[Learn -> Tech Insight -> Authentication - Okta](/en-us/tech-zone/learn/tech-insights/okta.html) - Utilize Okta as the user's primary identity for Citrix Workspace
+
+[Learn -> Tech Insight -> Microapps](/en-us/tech-zone/learn/tech-insights/microapps.html) - Increase productivity by adding microapps to Citrix Workspace. Microapps allow users to view information and perform actions without launching the full application.
+
+[Learn -> Tech Brief -> Virtual Assistant](/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html) - The Citrix Assistant guides users to information and allows them to interact with back-end applications to complete simple requests.
+
+[Learn -> Diagrams and Posters -> Citrix Workspace](/en-us/tech-zone/learn/diagrams-posters/workspace.html) - Conceptual architecture drawing for Citrix Workspace.
+
+[Learn -> Tech Insight -> Authentication - Push](/en-us/tech-zone/learn/tech-insights/authentication-push.html) - Extend an on-premises TOTP deployment with Push authentication, eliminating the need for users to manually enter the temporary token.
+
+[Learn -> Tech Brief -> Workspace Single Sign-On](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) - Learn how Citrix Workspace provides single sign-on capabilities to SaaS apps, web apps, mobile apps, Windows virtual apps and Windows virtual desktops. In addition, learn how Workspace single sign-on can support IdP chaining configurations.
+
+[Learn -> Tech Brief -> Workspace Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) - Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.
+
+[Learn -> Tech Brief -> Workspace app](/en-us/tech-zone/learn/tech-briefs/workspace-app.html) - Personalized interface that provides access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
+
+[Design -> Reference Architectures -> Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
+
+[Design -> Reference Architectures -> Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the Citrix Microapps Service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.

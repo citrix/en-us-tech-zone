@@ -235,3 +235,5 @@ In case the admin runs into an issue with the setup, the admin can use a machine
 Watch this video to see Citrix Managed Desktops in action: [Tech Insight Video](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html)
 
 To learn more on the best practices, read our [reference architecture for Citrix Managed Desktops](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html)
+
+## Other Tech Zone content

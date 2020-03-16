@@ -182,3 +182,7 @@ Once deployed, users authenticate to the environment and receive a cloud-hosted 
 *  The session is connected on over the super-fast Azure back bone
 *  The user connects to the session over the internet for the last mile (from the nearest Citrix Gateway PoP), the ICA protocol adjusts based on network conditions to provide the most responsive experience possible.
 *  Citrix session policies secure the environment by blocking untrusted endpoints from transferring data to and from the managed desktop.
+
+## Other Tech Zone content
+
+[Design -> Design Decisions -> Evaluating Application Delivery Methods](/en-us/tech-zone/design/design-decisions/application-delivery-methods.html) - Learn about the different decision factors involved in choosing the optimal application delivery method.
