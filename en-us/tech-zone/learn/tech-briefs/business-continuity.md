@@ -35,6 +35,7 @@ Most organizations need a way to provide users with secure remote access to corp
 *  VPN Risk 2: Require users install VPN software on endpoint devices, which might utilize an unsupported operating system
 *  VPN Risk 3: Require the configuration of complex policies to prevent an untrusted endpoint device from having unrestricted access to the corporate network, resources, and data.
 *  VPN Risk 4: Difficult to keep security policies synchronized between VPN infrastructure and on-premises infrastructure.
+*  VPN Risk 5: Once the VPN establishes, traditional client/server applications have extensive bandwidth requirements using native protocols that will quickly overload VPNs and network pipes. As network latency increases, the application responsiveness degrades resulting in a unusable user experience.
 
 ### Business Continuity Options
 
@@ -138,7 +139,7 @@ To maintain a user experience similar to the traditional, on-premises model, the
 *  Option 1: Users authenticate to the organization's Azure Active Directory, which is synchronized from the organization's on-premises Active Directory domain.
 *  Option 2: Users authenticate to the on-premises Active Directory domain by using an Azure-to-Data Center tunnel created with Citrix SD-WAN.
 
-In most instances, an organization synchronizes the on-premises Active Directory with Azure Active Directory by using the [Azure Active Directory Connect](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html#connect-the-on-premises-ad-to-azure-ad-using-azure-ad-connect) utility.
+In most instances, an organization synchronizes the on-premises Active Directory with Azure Active Directory by using the [Azure Active Directory Connect](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html#connect-the-on-premises-ad-to-azure-ad-using-azure-ad-connect) utility or sets up trust between the Active Directory Domain Services in Azure with the on-premises Active Directory.
 
 ### Data Center Connectivity
 
@@ -148,16 +149,21 @@ Using Citrix SD-WAN, organizations create a secure tunnel between Azure and the 
 
 ### Deployment
 
-Organizations can easily deploy Citrix Managed Desktops with a minimal deployment footprint, as seen in the following conceptual diagrams. The first diagram shows Citrix Managed Desktops using Azure Active Directory for user authentication:
-[![Citrix Managed Desktops - Azure Active Directory](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-aad-conceptual-diagram.png)](/en-us/tech-zone/learn/media/tech-briefs_business_citrix-managed-desktops-aad-conceptual-diagram.png)
+Organizations can easily deploy Citrix Managed Desktops with a minimal deployment footprint, as seen in the following conceptual diagrams. 
+The first diagram shows Citrix Managed Desktops deployed in Citrix managed Azure and authenticating to Active Directory for user authentication and connected to on prem with SD WAN:
+[![Citrix Managed Desktops - Citrix Managed Azure and Active Directory auth with SDWAN](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-citrix-managed-desktops-ad-auth.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-citrix-managed-desktops-ad-auth.png)
 
-The second diagram shows how Citrix Managed Desktops can use the SD-WAN tunnel to authenticate users to an on-premises Active Directory domain.
+The second diagram shows how Citrix Managed Desktops deployed in Citrix managed Azure and authenticating users to an Azure Active Directory or Active Directory Domain Services instance which syncs to or has trust with (respectively) an on-premises Active Directory.
 
-[![Citrix Managed Desktops - Active Directory](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-ad-conceptual-diagram.png)](/en-us/tech-zone/learn/media/tech-briefs_business_citrix-managed-desktops-ad-conceptual-diagram.png)
+[![Citrix Managed Desktops - Citrix Managed Azure and Azure Active Directory auth with AD sync](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-citrix-managed-desktops-aad-auth.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-citrix-managed-desktops-aad-auth.png)
+
+The third diagram shows how Citrix Managed Desktops deployed in Customer managed Azure and authenticating users to an Azure Active Directory or Active Directory Domain Services instance which syncs to or has trust with (respectively) an on-premises Active Directory. Connection to the on-prem location via SDWAN, Site to Site VPN or Express Route.
+
+[![Citrix Managed Desktops - Customer Managed Azure and Azure Active Directory auth with AD sync](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-customer-managed-desktops-aad-auth.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-customer-managed-desktops-aad-auth.png)
 
 To add a new deployment, the admin performs the following steps:
 
-*  Sets up VNet peering between the Azure subscription where the machines would be hosted and the organization’s Azure Active Directory (if the machines are not already in the same subscription)
+*  Sets up VNet peering between the Azure subscription where the machines would be hosted and the organization’s Azure Active Directory (if the machines are in Citrix managed Azure and the authentication is via AAD / ADDS in the customer subscription)
 *  Creates and uploads a master Windows image, which contains the required apps
 *  Deploys a machine catalog based on the master image
 *  Assigns users to the machine catalog
