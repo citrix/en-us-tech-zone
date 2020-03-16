@@ -150,6 +150,7 @@ Using Citrix SD-WAN, organizations create a secure tunnel between Azure and the 
 ### Deployment
 
 Organizations can easily deploy Citrix Managed Desktops with a minimal deployment footprint, as seen in the following conceptual diagrams. 
+
 The first diagram shows Citrix Managed Desktops deployed in Citrix managed Azure and authenticating to Active Directory for user authentication and connected to on prem with SD WAN:
 [![Citrix Managed Desktops - Citrix Managed Azure and Active Directory auth with SDWAN](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-citrix-managed-desktops-ad-auth.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-citrix-managed-desktops-ad-auth.png)
 
