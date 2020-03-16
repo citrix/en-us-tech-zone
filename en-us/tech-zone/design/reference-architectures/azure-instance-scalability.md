@@ -28,9 +28,10 @@ Test results reflect application execution using default Citrix policies and def
 
 ## What is the most efficient instance series?
 
-To find the most efficient instance series, we needed test the different instance series without changing any other variables in the mix. The base image was Windows Server 2016 with the 1903.1 version of the Citrix VDA and a standard HDD 128 GB disk for the system C: drive. We selected the 8-core instance types for two primary reasons: 
-1) They represent the workhorse of Azure instance types for hosted sessions and are generally the most popular size deployed and 
-2) They provide a good balance of CPU/RAM and minimal OS impact as opposed to a smaller 2-core system.
+To find the most efficient instance series, we needed test the different instance series without changing any other variables in the mix. The base image was Windows Server 2016 with the 1903.1 version of the Citrix VDA and a standard HDD 128 GB disk for the system C: drive. We selected the 8-core instance types for two primary reasons:
+
+1)  They represent the workhorse of Azure instance types for hosted sessions and are generally the most popular size deployed
+2)  They provide a good balance of CPU/RAM and minimal OS impact as opposed to a smaller 2-core system.
 
 The following graph shows the instance family results along with the average cost per user per hour based on pay-as-you-go pricing for the Azure US-West-2 region where the tests were performed.
 
