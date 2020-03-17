@@ -6,7 +6,9 @@ description: View reference architectures created by our industry partners on jo
 
 ## Amazon
 
-[Citrix Virtual Apps and Desktops on Amazon Web Services](https://aws.amazon.com/quickstart/architecture/citrix-virtual-apps/) - Quick Start deployment guides and scripts for Amazon Web Services
+[Citrix ADC VPX for Web Applications on AWS](https://aws.amazon.com/quickstart/architecture/citrix-adc-vpx/) – Quick Start deployment guide and scripts for Amazon Web Services to automatically deploy Citrix Application Delivery Controller (ADC) VPX.
+
+[Citrix Virtual Apps and Desktops on Amazon Web Services](https://aws.amazon.com/quickstart/architecture/citrix-virtual-apps/) - Quick Start deployment guides and scripts for Amazon Web Services to automatically deploy Citrix Virtual Apps and Desktops service resource location
 
 ## Cisco
 
