@@ -109,6 +109,7 @@ Processes:
 -  `%SystemRoot%\System32\winlogon.exe`
 -  `%ProgramFiles%\Citrix\ICAService\picaSvc2.exe` (Desktop OS only)
 -  `%ProgramFiles%\Citrix\ICAService\CpSvc.exe` (Desktop OS only)
+-  `%ProgramFiles%\Citrix\ICAService\WebSocketService.exe`
 
 #### Virtual Delivery Agents - HDX RealTime Optimization Pack
 
