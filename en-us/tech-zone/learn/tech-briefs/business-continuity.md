@@ -63,7 +63,7 @@ When the user remotely accesses their work PC, the connection utilizes the ICA p
 
 Organizations can easily deploy Citrix Virtual Apps and Desktops to provide Remote PC Access to their environment with a minimal deployment footprint, as seen in the following.
 
-[![Remote PC Access - New Deployment](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_remote-pc-access-new.png)](/en-us/tech-zone/learn/media/tech-briefs_business-remote-pc-access-new.png)
+[![Remote PC Access - New Deployment](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_remote-pc-access-new.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_remote-pc-access-new.png)
 
 To add a new environment, the administrator must deploy the following components:
 
@@ -85,7 +85,7 @@ Although the Virtual Delivery Agent can be installed on each physical PC manuall
 
 An organization can also easily add Remote PC Access to a current Citrix Virtual Apps and Desktops environment. This process effectively expands the conceptual architecture as follows:
 
-[![Remote PC Access - New Deployment](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_remote-pc-access-add.png)](/en-us/tech-zone/learn/media/tech-briefs_business-remote-pc-access-add.png)
+[![Remote PC Access - New Deployment](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_remote-pc-access-add.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_remote-pc-access-add.png)
 
 To add Remote PC Access to a current Citrix Virtual Apps and Desktops environment, the administrator simply does the following:
 
