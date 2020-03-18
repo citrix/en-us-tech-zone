@@ -406,39 +406,39 @@ These four types of SSO configured through Citrix Gateway Service:
 
 Form-Based Authentication
 
-1) Citrix Gateway Service established a secure channel between Citrix Gateway Connector and sends web app request with login credentials
+1)  Citrix Gateway Service established a secure channel between Citrix Gateway Connector and sends web app request with login credentials
 
-2) Citrix Gateway Connector submits login credentials to respective web applications
+2)  Citrix Gateway Connector submits login credentials to respective web applications
 
 3) End to End secure connection is established between a web app and Citrix Workspace app via Citrix Gateway Service by single sign-on to the web app
 
 Basic SSO Authentication
 
-1) Citrix Gateway Service creates a secure channel between Citrix Gateway Connector and sends web app request with user name and password
+1)  Citrix Gateway Service creates a secure channel between Citrix Gateway Connector and sends web app request with user name and password
 
-2) Citrix Gateway Connector submits login credentials to web application login page
+2)  Citrix Gateway Connector submits login credentials to web application login page
 
-3) Web app request for authentication request using NTLM protocols
+3)  Web app request for authentication request using NTLM protocols
 
-4) Citrix Gateway Connector responds for NTLM request with user name and password
+4)  Citrix Gateway Connector responds for NTLM request with user name and password
 
-5) End to End secure connection is established between a web app and Citrix Workspace app via Citrix Gateway Service by single sign-on to a web app
+5)  End to End secure connection is established between a web app and Citrix Workspace app via Citrix Gateway Service by single sign-on to a web app
 
 Kerberos Authentication
 
-1) Citrix Gateway Service created a secure channel between Citrix Gateway Connector and sent web app request with user name and password
+1)  Citrix Gateway Service created a secure channel between Citrix Gateway Connector and sent web app request with user name and password
 
-2) Citrix Gateway Connector submits login credentials to web application login page
+2)  Citrix Gateway Connector submits login credentials to web application login page
 
-3) Web app request for authentication request using Kerberos protocols
+3)  Web app request for authentication request using Kerberos protocols
 
-4) Citrix Gateway Connector contact domain controller to verify the login credentials
+4)  Citrix Gateway Connector contact domain controller to verify the login credentials
 
-5) Domain Controller validates the user credentials and acknowledges
+5)  Domain Controller validates the user credentials and acknowledges
 
-6) Citrix Gateway Connector forward the application back to the web app
+6)  Citrix Gateway Connector forward the application back to the web app
 
-7) End to End secure connection established among Citrix web app and Citrix Workspace app via Citrix Gateway Service by single sign-on to a web app
+7)  End to End secure connection established among Citrix web app and Citrix Workspace app via Citrix Gateway Service by single sign-on to a web app
 
 To enable Kerberos single sign-on functionality, administrator configure Gateway Connector with credentials for a service account trusted to perform Kerberos Constrained Delegation.
 
@@ -558,7 +558,7 @@ Citrix Gateway service with Active Directory can serve as an Identity provider t
 
 **Scenario 1:** Enhanced security is turned off. When a user launches Gmail within the G Suite it opens it in a standard browser and similarly on the URL within their Gmail account uses a standard browser without any additional security policies or controls. A user has a freedom to navigate from the page, cut, copy, and print the page.
 
-**Scenario 2:** Enhanced security is turned on. When a user launches Gmail within the G Suite it opens in a Secure Browser. Now a layer of control capability is applied through Citrix Access Control and the end user doen not get a navigation bar to navigate away from the site and cut, copy, and paste restrictions are imposed. Apart from this Citrix Access Control provides URL filtering capability which prevents from visiting malicious websites. Also, users can be redirected to a Secure Browser based on the policies.
+**Scenario 2:** Enhanced security is turned on. When a user launches Gmail within the G Suite it opens in a Secure Browser. Now a layer of control capability is applied through Citrix Access Control and the end user does not get a navigation bar to navigate away from the site and cut, copy, and paste restrictions are imposed. Apart from this Citrix Access Control provides URL filtering capability which prevents from visiting malicious websites. Also, users can be redirected to a Secure Browser based on the policies.
 
 Benefits of using Citrix Access Control with G Suite SaaS apps:
 
