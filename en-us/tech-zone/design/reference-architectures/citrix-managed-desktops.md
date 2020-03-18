@@ -567,6 +567,8 @@ Citrix runs the validation test on the imported image. The administrator has to 
 
 *  The personality.ini file must exist on the system drive (VDA is set to MCS provisioning)
 
+Note: Before importing a master image from Azure, administrator make sure that the Azure Virtual Machine Agent is installed on the image.
+
 Learn more about importing a master image from Azure and installation of VDA on the master image, at this [link](/en-us/citrix-managed-desktops/master-images.html).
 
 To create and managed master images refer to the [link](/en-us/citrix-managed-desktops/master-images.html#prepare-a-new-master-image).
