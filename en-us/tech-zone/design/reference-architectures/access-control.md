@@ -26,7 +26,7 @@ In today’s business world, user data is one of the most treasured commodities,
 
 Many IT departments within organizations do not have a solution for controlling access to users accessing an ever-increasing number of enterprise SaaS-based applications. In addition to the security risks posed by the potential for corporate data interacting with unmanaged SaaS apps, user productivity is lost due to logging into multiple apps. In addition, having to remember multiple passwords can often lead to bad password habits or the same passwords being used for multiple sites.
 
-Browsing the internet poses another risk to enterprises today. Most of the attacks are exploiting vulnerabilities in websites, browsers and browser plug-ins according to security experts. In response, some organizations even completely prohibit internet browsing, severely affecting productivity.
+Browsing the internet poses another risk for enterprises today. Most of the attacks are exploiting vulnerabilities in websites, browsers and browser plug-ins according to security experts. In response, some organizations even completely prohibit internet browsing, severely affecting productivity.
 
 Some web and SaaS apps require a certain browser version or plug-in to function properly. With the rapid changes to the browser landscape, ensuring the usability of the corporate web and SaaS apps quickly mounts to a resource consuming support task.
 
@@ -46,7 +46,7 @@ Citrix has come up with a better way to secure access to sanctioned SaaS and Web
 
 The above diagram illustrates the traditional Citrix environment, endpoints are connecting through Citrix ADC and accessing their resources. These resources including apps, desktops, and data are being accessed from on-premises, and some of the external resources are accessed through internet that includes SaaS-based applications. Users are accessing these external resources securely through Secure Gateway and web filtering services.
 
-Workspace app is a single entry point to access resources from any device. Workspace app provides a unique functionality to end users with enhanced security with embedded browser engine. Networking engine within Workspace app optimizes network traffic provides SSL VPN as well Micro VPN capabilities for certain applications. End users are connected through Citrix ADC provides Identity and Access Management capability.
+Workspace app is a single entry point to access resources from any device. Workspace app provides a unique functionality to end users with enhanced security with a embedded browser engine. Networking engine within Workspace app optimizes network traffic provides SSL VPN as well Micro VPN capabilities for certain applications. End users are connected through Citrix ADC provides Identity and Access Management capability.
 
 Security monitoring provides end-user behavior and threat detection within the network. Data security includes DLP and IRM when users are working with files or sharing the files to keep control of data. In Citrix Cloud Web filtering, Analytics, and Citrix Gateway services offer a consolidated solution to deliver a secure digital workspace to end users.
 
@@ -134,7 +134,7 @@ To perform management activities, and install the Citrix Cloud Connector on Citr
 
 [![AC-Image-4](/en-us/tech-zone/design/media/reference-architectures_access-control_004.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_004.png)
 
-A subscriber’s identity defines the services to which they have access to in Citrix Cloud. Identity comes from Active Directory domain accounts provided from the domains within the resource location. Subscribers can authorize to access the offering from Citrix Cloud by assigning a subscriber to a library offering.
+A subscriber’s identity defines the services to which subscriber has access to Citrix Cloud. Identity comes from the Active Directory domain accounts provided from the domains within the resource location. Subscribers can authorize to access the offering from Citrix Cloud by assigning a subscriber to a library offering.
 
 On-premises Active Directory communication with Citrix Cloud takes place through highly available Citrix Cloud Connectors. Organizations opting to use Azure Active Directory service have more flexibility in terms of managing the user accounts, audit control, and password policies. Also, the administrator can configure multifactor authentication for a higher level of security.
 
@@ -164,7 +164,7 @@ Protecting user data (SaaS app users) is a challenging task for most of the orga
 | **SL NO** | **Workspace App with Sanctioned SaaS App** | **Local Browser with sanctioned SaaS App** |
 | --- | --- | --- |
 | **1** | The user launches the Workspace app on the endpoint. | The user launches a web browser on the endpoint, connects to Workspace and authenticates using on-premises Active Directory or Azure Active Directory. |
-| **2** | Workspace app connects to the workspace and authenticates using the on-premises Active Directory/ Azure Active Directory. | Local browser populates with approved resources. |
+| **2** | Workspace app connects to the workspace and authenticates using the on-premises Active Directory/ Azure Active Directory. |  The local browser populates with approved resources. |
 | **3** | Workspace app populates with approved resources. | When the user selects a SaaS app, the local browser sends the request to Workspace, which requests a one-time-use URL and recommended browser from the Gateway Service. |
 | **4** | Workspace app sends the request to Workspace, which requests a one-time-use URL from the Gateway Service and a preferred browser. | The local browser initiates a connection to the Gateway Service. |
 | **5** | The local browser initiates a connection to the Gateway Service. | The Gateway Service requests an assertion from the single sign-on micro-service. |
@@ -204,7 +204,7 @@ Most SaaS apps are safe to use though sometimes when a user clicks a hyperlink w
 | **3** | The Access Control service requests an analysis of the URL by the Web Filtering micro-service | The Access Control service requests an analysis of the URL by the Web Filtering micro-service. |
 | **4** | For blocked links, the Web Filtering micro-service denies access to the hyperlink. | For blocked links, the Web Filtering micro-service denies access to the hyperlink. |
 | **5** | For approved links, the Web Filtering micro-service allows the user to access the link with the embedded browser. | For approved links, the Web Filtering micro-service allows the user to access the link as a new tab within their current Secure Browser service session. |
-| **6** | For redirected links, the Web Filtering micro-service has Workspace app send the link to Secure Browser service, which starts a new, virtual browser session for the end user. | For redirected links, the Web Filtering micro-service allow the user to access the link as a new tab within their current Secure Browser service session. |
+| **6** | For redirected links, the Web Filtering micro-service has a Workspace app send the link to Secure Browser service, which starts a new, virtual browser session for the end user. | For redirected links, the Web Filtering micro-service allow the user to access the link as a new tab within their current Secure Browser service session. |
 
 ## Web Filtering Overview
 
@@ -257,7 +257,7 @@ For more information refer Citrix Workspace app [Reference Architecture](/en-us/
 
 When the user launches the Workspace app on the endpoint, users will see their applications, desktops, files, and SaaS apps. If a user clicks the SaaS application when the enhanced security is turned off, the application opens in a standard browser which is locally installed. If the administrator has turned on enhanced security then SaaS apps open on the embedded browser within Workspace app. Accessibility to hyperlinks within SaaS apps and web apps are controlled based on web filtering policies.
 
-Similarly, with Workspace Web portal, when enhanced security it turned off SaaS applications are opened through the standard browser which is natively installed. When enhanced security is turned on, SaaS apps are opened through the Secure Browser. Users will be able to access the websites within SaaS apps based on web filtering policies.
+Similarly, with a Workspace Web portal, when enhanced security it turned off SaaS applications are opened through the standard browser which is natively installed. When enhanced security is turned on, SaaS apps are opened through the Secure Browser. Users will be able to access the websites within SaaS apps based on web filtering policies.
 
 ## Implementing Citrix Access Control
 
@@ -271,17 +271,17 @@ The Citrix administrator logs in to Citrix Cloud using their credentials, and re
 
 **Step1:** The Citrix administrator configures Identity and Access Management on Citrix Cloud. By default, Citrix Cloud uses the Citrix Identity provider to manage the identity information for all users in the Citrix Cloud account. The administrator has the option to change this to use Azure Active Directory or an on-premises Active Directory service.
 
-**Step2:** The Citrix administrator logs in to Citrix Gateway service to configure single sign-on to SaaS and web applications. The Citrix Gateway service offers a secure login to the company’s environment, end user’s sign in to applications utilizing SAML single sign-on.
+**Step2:** The Citrix administrator logs in to Citrix Gateway service to configure single sign-on to SaaS and web applications. The Citrix Gateway service offers a secure login to the company’s environment, end user’s sign-in to applications utilizing SAML single sign-on.
 
 Add a web or SaaS app to the library from the template. To learn more about a list of SaaS applications supported by Citrix Access Control follow the link below
 
 Reference: [SaaS applications supported by the Citrix Access Control Service](/en-us/citrix-cloud/access-control/saas-apps-supported-by-acs.html)
 
-**Step3:** The administrator enters the app details like name of the application, URL and domain details. Enhanced security policies are enabled to prevent data leaks. These policies within the SaaS applications enforce a restriction on the embedded browser when using Workspace app for desktop or on Secure Browser when using Workspace app web or mobile.
+**Step3:** The administrator enters the app details like a name of the application, URL and domain details. Enhanced security policies are enabled to prevent data leaks. These policies within the SaaS applications enforce a restriction on the embedded browser when using a Workspace app for desktop or on Secure Browser when using Workspace app web or mobile.
 
 [![AC-Image-15](/en-us/tech-zone/design/media/reference-architectures_access-control_015.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_015.png)
 
-**Step4:** **Enable Single sign on to web/SaaS apps for publishing:** Citrix Gateway Service (cloud services only) provides single sign-on to SaaS application. To enable single sign on to SaaS application is now simplified in just a few web forms and clicking on the configuration page greatly simplifies the deployment process. It is possible for administrators to leverage the Gateway Connector to proxy the internal web-based SaaS application access to the external Workspace app user.
+**Step4:** **Enable Single sign-on to web/SaaS apps for publishing:** Citrix Gateway Service (cloud services only) provides single sign-on to SaaS application. To enable single sign-on to SaaS application is now simplified in just a few web forms and clicking on the configuration page greatly simplifies the deployment process. It is possible for administrators to leverage the Gateway Connector to proxy the internal web-based SaaS application access to the external Workspace app user.
 
 Under the Library section of Citrix Cloud, SaaS and web apps are published. The administrator has to add the users from choosing the domain, only subscribed users will get to access the application through Workspace app or Workspace web.
 
@@ -355,7 +355,7 @@ The above hybrid configurations would enable an organization to leverage the Acc
 
 When the user authenticates with the Citrix environment, the delivery controller provides a list of resources available to that user which would include SaaS and Web applications.
 
-To learn more about data flow model when SaaS and web apps are accessed from Citrix StoreFront refer the following [link](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html).
+To learn more about data flow model when SaaS and web apps are accessed from Citrix StoreFront refer to the [link](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html).
 
 For SaaS applications, the delivery controller sends a request to Citrix Gateway Service. The Gateway service provides insertion tokens for that particular user access to the selected SaaS applications. SaaS application verifies that token with gateway service to complete the authentication process.
 
@@ -363,7 +363,7 @@ Similarly, for Web apps, when user accessing from the StoreFront, a request is p
 
 ### Synchronize SaaS and Web applications
 
-After adding or deleting SaaS and Web applications from the Citrix Cloud, Citrix administrators has to synchronize applications that end user account is subscribed to in the library.  To make sure on -premise end users are accessing updated SaaS and Web applications, Citrix provides Access Control sync tool. This tool has to be installed on the Citrix Delivery Controller with few parameters.
+After adding or deleting SaaS and Web applications from the Citrix Cloud, Citrix administrators has to synchronize applications that end user account is subscribed to in the library.  To make sure on-premises end users are accessing updated SaaS and Web applications, Citrix provides a Access Control sync tool. This tool has to be installed on the Citrix Delivery Controller with few parameters.
 
 After installing the tool administrator has to click Synchronize SaaS Apps so that any integrated applications that exist on the machine, the utility deletes them and installs application with the Access Control policies.
 
@@ -371,13 +371,13 @@ To learn more about the installation of Access Control Sync for StoreFront tool 
 
 The hybrid configuration not only enhances user experience but also provides security capabilities against clipboard access, printing, downloads, navigation, and displaying the watermark. The hybrid solution is ideal for customers looking to improve security posture without moving StoreFront to the Cloud. Now with Access Control capabilities, the entire app session from any device is protected. Internal web applications can be securely accessed without a VPN.
 
-Reference : [Access Control for SaaS and Web apps](https://docs.citrix.com/en-us/citrix-cloud/advanced-concepts/access-control-saas-web-apps.html)
+Reference: [Access Control for SaaS and Web apps](https://docs.citrix.com/en-us/citrix-cloud/advanced-concepts/access-control-saas-web-apps.html)
 
 ## Citrix Access Control Solution for Enterprise web apps
 
 Most of the on-premises customers still use web apps, including SharePoint, Confluence, Microsoft office, help desk application, and so on. Enterprise applications are delivered remotely using Citrix Gateway service and add necessary security using Citrix Access Control solution.
 
-End users access web apps using Citrix Workspace using Citrix Gateway Service. Citrix Gateway service, securely coupled with Citrix Workspace delivers a unified user experience for the configured web apps. Single sign-on and remote accessibility to internal web apps are available through different service packages.
+End users access web apps using Citrix Workspace using Citrix Gateway Service. Citrix Gateway service, securely coupled with Citrix Workspace delivers a unified user experience for the configured web apps. Single sign-on and remote accessibility to internal web apps is available through different service packages.
 
 [![AC-Image-20](/en-us/tech-zone/design/media/reference-architectures_access-control_020.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_020.png)
 
@@ -387,9 +387,9 @@ The above diagram shows the Citrix Access Control solution applied to the on-pre
 
 The user launches the Citrix Workspace app and connects with Citrix Workspace using an on-premises Active Directory service. Citrix Workspace app is used to start a web app. Citrix Gateway service provides the recommended browser and the link. The embedded browser from the Citrix Workspace app makes application connection with Citrix Gateway service. Also, enhanced security policies enabled through Citrix Access Control Service. Further Citrix Gateway service established an outbound connection with Gateway Connector from the resource location. Verifies the login credentials, and Citrix Workspace app secures an end-to-end connection with the internal web app.
 
-In case of user uses a local browser, authentication happens through the Active Directory service, and the local browser makes a secure connection with Secure Browser service. Enhanced security policies, through the Access Control service. A secure outbound channel established between Gateway Connector and Citrix Gateway service. User credentials are negotiated and established single sign-on behalf of the user. Now end-to-end connection found via Secure browser for users.
+In case of user uses a local browser, authentication happens through the Active Directory service, and the local browser makes a secure connection with Secure Browser service. Enhanced security policies, through the Access Control service. A secure outbound channel established between Gateway Connector and Citrix Gateway service. User credentials are negotiated and established single sign-on behalf of the user. Now end-to-end connection found via the Secure browser for users.
 
-Reference : [Support for Enterprise web apps](https://docs.citrix.com/en-us/citrix-gateway-service/support-web-apps.html)
+Reference: [Support for Enterprise web apps](https://docs.citrix.com/en-us/citrix-gateway-service/support-web-apps.html)
 
 ## Citrix Access Control Single sign-on for web apps
 
@@ -416,11 +416,11 @@ Basic SSO Authentication
 
 1) Citrix Gateway Service creates a secure channel between Citrix Gateway Connector and sends web app request with user name and password
 
-2) Citrix Gateway Connector submit login credentials to web application login page
+2) Citrix Gateway Connector submits login credentials to web application login page
 
 3) Web app request for authentication request using NTLM protocols
 
-4) Citrix Gateway Connector respond for NTLM request with user name and password
+4) Citrix Gateway Connector responds for NTLM request with user name and password
 
 5) End to End secure connection is established between a web app and Citrix Workspace app via Citrix Gateway Service by single sign-on to a web app
 
@@ -428,7 +428,7 @@ Kerberos Authentication
 
 1) Citrix Gateway Service created a secure channel between Citrix Gateway Connector and sent web app request with user name and password
 
-2) Citrix Gateway Connector submit login credentials to web application login page
+2) Citrix Gateway Connector submits login credentials to web application login page
 
 3) Web app request for authentication request using Kerberos protocols
 
@@ -442,7 +442,7 @@ Kerberos Authentication
 
 To enable Kerberos single sign-on functionality, administrator may configure Gateway Connector with credentials for a service account trusted to perform Kerberos Constrained Delegation.
 
-Users may try to access malicious websites that cause severe damage. Also, they may violate enterprise regulation and policies. To overcome this problem, adopting Citrix Access Control that filter risky websites that pose a risk to an organization. Along with that, creates watermark content throughout the session that includes the user’s name and IP address.
+Users may try to access malicious websites that cause severe damage. Also, they may violate enterprise regulation and policies. To overcome this problem, adopting Citrix Access Control that filters risky websites that pose a risk to an organization. Along with that, creates watermark content throughout the session that includes the user’s name and IP address.
 
 Reference: [Support for Enterprise web apps](https://docs.citrix.com/en-us/citrix-gateway-service/support-web-apps.html)
 
@@ -450,7 +450,7 @@ Reference: [Support for Enterprise web apps](https://docs.citrix.com/en-us/citri
 
 It is quite common today, the user's login credentials stolen, and the user may not be aware of this action. Cybercriminals use variety of exertion to apprehend the end user data and one of the common scenarios is keylogger malware to capture user data. These malware products easily enter to user machine and start obtaining the user information. The event can lead to significant damage to any organization or an individual. To overcome this problem, the organization has to invest heavily in protecting user data and create a defensive shield against using anti-keylogger.
 
-Similarly, another enhancement in the keylogger is the screenshot logging feature. This malicious program operates by making screenshots of the user desktop to capture the information shown on the screen. Multiple software installed and policies are imposed on user end-point to overcome image grabbing of user desktop screen. It can lead to slower performance of user desktops and environment.
+Similarly, another enhancement in the keylogger is the screenshot logging feature. This malicious program operates by making screenshots of the user desktop to capture the information shown on the screen. Multiple software installed and policies are imposed on user end-point to overcome image grabbing of the user desktop screen. It can lead to slower performance of user desktops and environment.
 
 Citrix Access Control has advanced policies used to protect organization data. Endpoint security is an important security consideration for any organization due to the maximum breach occurs at endpoints. App protection policies are rules and applied while enabling enhanced security to a SaaS app. Following are two advanced security policies that can be used by customers:
 
@@ -472,11 +472,11 @@ Reference: [App Protection policies](https://www.citrix.com/en-in/downloads/citr
 
 ## Protect users from risky internet browsing using Citrix Secure Browser
 
-Web browsers are integral to an active production environment. Web browsers are powerful, data-rich tools exposed to the internet than any other application in the working environment. During the past few years, cybercriminals have taken advantage of web browsers fetch vast amounts of user information, including credit card data, email IDs, stored passwords, and so on.
+Web browsers are integral to an active production environment. Web browsers are powerful, data-rich tools exposed to the internet other than any other application in the working environment. During the past few years, cybercriminals have taken advantage of web browsers fetch vast amounts of user information, including credit card data, email IDs, stored passwords, and so on.
 
 The prevalence of browser-based attacks becomes a trend, not because of strategically desirable hacking targets but because browser-based attacks are difficult to distinguish. Conventional security controls fail to detect such attacks because these applications only scrutinize download files and attachments. The prevalence Hence, a browser-based attack likely goes unnoticed.
 
-The Citrix Secure Browser Service isolates web browsing to protect the customer production environment from browser-based attacks. Citrix Workspace app or local browsers are an entry point to Citrix production environment. Citrix Secure Browser isolates internet browsing that website does not directly transfer any browsing data to or from the user device. Security administrators offer safe internet access and user experience without modification of enterprise security.
+The Citrix Secure Browser Service isolates web browsing to protect the customer production environment from browser-based attacks. Citrix Workspace app or local browsers are an entry point to Citrix production environment. Citrix Secure Browser isolates internet browsing that website does not directly transfers any browsing data to or from the user device. Security administrators offer safe internet access and user experience without modification of enterprise security.
 
 Citrix Secure Browser Service is a SaaS product managed and operated by Citrix. It allows access to web applications via an intermediate web browser hosted in the cloud. During usage of Citrix Secure Service, hosted web browsers track user’s browsing history and perform caching of HTTP requests. Citrix uses mandatory profiles and ensures that once the browsing session ends, data erased at the end.
 
@@ -502,7 +502,7 @@ Citrix Files is a file manager that offers data sharing and storage, customizabl
 
 The above diagram depicts delivering the Citrix Files SaaS app to end user in a hybrid cloud model scenario. The Citrix Cloud Connector provides a link to the Citrix Cloud account and resource location. The resource location will contain the Active Directory for end users, allowing users to seamlessly sign on to their web application.
 
-The Citrix Gateway Service offers authentication, single sign-on, and enables fast and secure delivery of Citrix Virtual Apps and SaaS applications. End user’s login to the company’s environment using their login credentials and will then be able to sign on to a web application utilizing SAML single sign-on. On the Citrix Gateway Service administrators choose the template of Web/SaaS app or define their own application parameters. For example:
+The Citrix Gateway Service offers authentication, single sign-on, and enables fast and secure delivery of Citrix Virtual Apps and SaaS applications. End user’s log in to the company’s environment using their login credentials and will then be able to sign on to a web application utilizing SAML single sign-on. On the Citrix Gateway Service administrators choose the template of Web/SaaS app or define their own application parameters. For example:
 
 **Name the application:** “Citrix Files”
 
@@ -518,7 +518,7 @@ Similarly, on the SSO page ensuring SAML is selected, assuming SAML/SSO setting 
 
 **Name ID:** Email
 
-Once the SaaS app is added to the Citrix Cloud library, the administrator has to manage subscribers and provide the Workspace URL to users to access. In conjunction with Active Directory, it can serve as an identity provider to allow SAML single sign on to various web and SaaS applications.
+Once the SaaS app is added to the Citrix Cloud library, the administrator has to manage subscribers and provide the Workspace URL to users to access. In conjunction with Active Directory, it can serve as an identity provider to allow SAML single sign-on to various web and SaaS applications.
 
 ### Content Control and Contextual Access
 
@@ -540,7 +540,7 @@ To monitor user behavior and activities, Citrix Access Control service is easily
 
 G Suite is a SaaS application, these apps are accessible remotely over the internet. G Suite is formerly known as Google Apps developed by Google. G Suite comprises Gmail, Hangouts, Calendar, and Google+ for communication; Drive for storage; Docs, Sheets, Slides, Forms, and Sites for collaboration. It also comprises an app development platform, App Maker. G Suite provides tremendous productivity advantages, but most of the networks are not designed properly to deliver the performance and security needed for mobility and cloud.
 
-Google Cloud and Citrix enable end users to expedite pioneering solutions delivering enhanced security with great user experience, and the flexibility of choice in an app-centric, mobile-first, multi and hybrid cloud world.
+Google Cloud and Citrix enable end users to expedite pioneering solutions delivering enhanced security with great user experience, and the flexibility of choice in an app-centric, mobile-first, and hybrid cloud world.
 
 G Suite, a market-leading productivity SaaS app, integrated with Citrix Access Control which allows the organization to get increased visibility and control for SaaS application which in turn prevents data leaks and unauthorized disclosure of sensitive information.
 
@@ -586,7 +586,7 @@ The idea of solely protecting a network is no longer enough. The organization mu
 
 ## Sources
 
-Goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [source diagrams](https://citrix.sharefile.com/d-sa50da6ce47142da8).
+The goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [source diagrams](https://citrix.sharefile.com/d-sa50da6ce47142da8).
 
 ## References
 
