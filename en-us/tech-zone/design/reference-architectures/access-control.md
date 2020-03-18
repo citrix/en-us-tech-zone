@@ -410,7 +410,7 @@ Form-Based Authentication
 
 2)  Citrix Gateway Connector submits login credentials to respective web applications
 
-3) End to End secure connection is established between a web app and Citrix Workspace app via Citrix Gateway Service by single sign-on to the web app
+3)  End to End secure connection is established between a web app and Citrix Workspace app via Citrix Gateway Service by single sign-on to the web app
 
 Basic SSO Authentication
 
