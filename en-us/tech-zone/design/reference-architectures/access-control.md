@@ -8,7 +8,7 @@ description: Gain knowledge about the Citrix Access Control solution including k
 
 **Author:** [Nagaraj Manoli](mailto:nagaraj.manoli@citrix.com)
 
-**Special thanks:** [Praveen Raghuraman](mailto:praveen.raghuraman@citrix.com), [Allen Furmanski](https://twitter.com/tekguyallen)
+**Special thanks:** [Praveen Raghuraman](mailto:praveen.raghuraman@citrix.com), [Pradeep Vasu](mailto:pradeep.vasu@citrix.com), [Allen Furmanski](https://twitter.com/tekguyallen)
 
 ## Audience
 
@@ -330,6 +330,163 @@ Citrix Access Control enforces enhanced security policies for SaaS apps (waterma
 | Organizations looking to adopt Citrix Cloud services. | 1) Citrix Access Control provides the right fit into their environment, providing security for SaaS, SSO, and web filtering feature to end users. 2) Organization looking towards on-premises model Citrix Gateway helps in providing SSO and enhanced security to end users. |
 | Organizations that have already adopted the Citrix Gateway service. | 1) Citrix Cloud offers several cloud-based services including Citrix Access Control, Analytics, and Secure browser providing security control for SaaS and internet. |
 | Organizations that have already adopted third-party SSO | 1) Citrix Access Control provides granular level security control for SaaS apps, minimizes web-based threats and automatic policy enforcement through analytics, based on user behavior. 2) ICA Proxy for both on-premises and Citrix Virtual Apps and Desktops Service. |
+
+## Citrix Access Control with StoreFront on-premises
+
+Many large organizations have on-premises Citrix Virtual Apps and Desktops environment. Citrix StoreFront is the enterprise app store that aggregates all virtual apps and desktops displayed in the customer’s data center into one place for easy access for the users.
+
+Citrix StoreFront runs on customer on-premises data center, helps users to launch Windows and Linux virtual apps and desktops. On-premises users want to launch SaaS and Web application they cannot launch it from the same app store which the users were accessing their virtual apps and desktops. To ease up this process Citrix introduced integration of Citrix Access Control with on-premises Storefront. Hence on-premises users can launch SaaS and Web application from one enterprise app store.
+
+Importance of hybrid configuration and benefits:
+
+The idea of hybrid configuration is to provide the same set of Citrix Cloud user experience and security to on-premises customers. That means Integration of Citrix Access Control with StoreFront enhances access to SaaS and web application by subsuming SSO and web filtering.
+
+Citrix Access Control magnifies user experience and security for SaaS and web applications. Since Citrix Access Control runs in Citrix Cloud, other Citrix Cloud services like Citrix Gateway service, Citrix Analytics Services, and Secure Browser service are easily inter-linked to provide a holistic solution to the customer. Some of the key benefits of Citrix Access Control are:
+
+*  Single Sign-on
+*  Web Filtering
+*  Secure Browser
+*  Embedded Browser
+*  Remote Access
+
+[![AC-Image-19](/en-us/tech-zone/design/media/reference-architectures_access-control_019.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_019.png)
+
+The above hybrid configurations would enable an organization to leverage the Access Control service to deliver SaaS and web applications to their existing StoreFront setup. These SaaS/Web applications would show up alongside their virtual apps and desktops in the same StoreFront.
+
+When the user authenticates with the Citrix environment, the delivery controller provides a list of resources available to that user which would include SaaS and Web applications.
+
+To learn more about data flow model when SaaS and web apps are accessed from Citrix StoreFront refer the following [link](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html).
+
+For SaaS applications, the delivery controller sends a request to Citrix Cloud Gateway Service. The Gateway service provides insertion tokens for that particular user access to the selected SaaS applications. SaaS application verifies that token with gateway service to complete the authentication process.
+
+Similarly, for Web apps, when user accessing from the StoreFront, a request is propagated through the delivery controller and lands into Citrix Gateway Service and provides SSO parameters. End-user makes a connection with Citrix Gateway Service with the help of an on-premises gateway connector creates a secure channel with the on-premises web application.
+
+### Synchronize SaaS and Web applications
+
+After adding or deleting SaaS and Web applications from the Citrix Cloud, Citrix administrators has to synchronize applications that end user account is subscribed to in the library.  To make sure on -premise end users are accessing updated SaaS and Web applications, Citrix provides Access Control sync tool. This tool has to be installed on the Citrix Delivery Controller with few parameters.
+
+After installing the tool administrator has to click Synchronize SaaS Apps so that any integrated applications that exist on the machine, the utility deletes them and installs application with the Access Control policies.
+
+To learn more about the installation of Access Control Sync for StoreFront tool refer the [link](https://docs.citrix.com/en-us/citrix-cloud/advanced-concepts/access-control-saas-web-apps.html#synchronize-saas-and-web-applications)
+
+The hybrid configuration not only enhances user experience but also provides security capabilities against clipboard access, printing, downloads, navigation, and displaying the watermark. The hybrid solution is ideal for customers looking to improve security posture without moving StoreFront to the Cloud. Now with Access Control capabilities, the entire app session from any device is protected. Internal web applications can be securely accessed without a VPN.
+
+Reference : [Access Control for SaaS and Web apps](https://docs.citrix.com/en-us/citrix-cloud/advanced-concepts/access-control-saas-web-apps.html)
+
+## Citrix Access Control Solution for Enterprise web apps
+
+Most of the on-premises customers still use web apps, including SharePoint, Confluence, Microsoft office, help desk application, and so on. Enterprise applications are delivered remotely using Citrix Gateway service and add necessary security using Citrix Access Control solution.
+
+End users access web apps using Citrix Workspace using Citrix Gateway Service. Citrix Gateway service, securely coupled with Citrix Workspace delivers a unified user experience for the configured web apps. Single sign-on and remote accessibility to internal web apps are available through different service packages.
+
+[![AC-Image-20](/en-us/tech-zone/design/media/reference-architectures_access-control_020.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_020.png)
+
+The above diagram shows the Citrix Access Control solution applied to the on-premises customers using the Citrix Gateway Connector. Citrix Gateway connector acts as a bridge between Enterprise web apps and the Citrix Workspace service.
+
+### Web Apps Single-Sign on with enhanced security
+
+The user launches the Citrix Workspace App and connects with Citrix Workspace using an on-premises Active Directory service. Citrix Workspace App is used to start a web app. Citrix Gateway service provides the recommended browser and the link. The embedded browser from the Citrix Workspace App makes application connection with Citrix Gateway service. Also, enhanced security policies enabled through Citrix Access Control Service. Further Citrix gateway service established an outbound connection with Gateway Connector from the resource location. Verifies the login credentials, and Citrix Workspace App secures an end-to-end connection with the internal web app.
+
+In case of user uses a local browser, authentication happens through the Active Directory service, and the local browser makes a secure connection with Secure Browser service. Enhanced security policies, through the Access Control service. A secure outbound channel established between Gateway Connector and Citrix Gateway service. User credentials are negotiated and established single sign-on behalf of the user. Now end-to-end connection found via Secure browser for users.
+
+Reference : [Support for Enterprise web apps](https://docs.citrix.com/en-us/citrix-gateway-service/support-web-apps.html)
+
+## Citrix Access Control Single sign-on for web apps
+
+Citrix Gateway Connector and the Citrix Gateway service in the cloud secure the communication with on-premises application. The web application is accessed and delivered through a Workspace using a VPN-less connection. The administrator has to choose the Single Sign-On method during the web app setup.
+
+These four types of SSO configured through Citrix Gateway Service:
+
+*  Form-Based
+*  Basic SSO
+*  Kerberos
+*  SAML (TP)
+
+[![AC-Image-21](/en-us/tech-zone/design/media/reference-architectures_access-control_021.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_021.png)
+
+Form-Based Authentication
+
+1) Citrix Gateway Service established a secure channel between Citrix Gateway Connector and sends web app request with login credentials
+
+2) Citrix Gateway Connector submits login credentials to respective web applications
+
+3) End to End secure connection is established between a web app and Citrix Workspace App via Citrix Gateway Service by Single Sign-on to the web app
+
+Basic SSO Authentication
+
+1) Citrix Gateway Service creates a secure channel between Citrix Gateway Connector and sends web app request with username and password
+
+2) Citrix Gateway Connector submit login credentials to web application login page
+
+3) Web app request for authentication request using NTLM protocols
+
+4) Citrix Gateway Connector respond for NTLM request with username and password
+
+5) End to End secure connection is established between a web app and Citrix Workspace App via Citrix Gateway Service by Single Sign-on to a web app
+
+Kerberos Authentication
+
+1) Citrix Gateway Service created a secure channel between Citrix Gateway Connector and sent web app request with username and password
+
+2) Citrix Gateway Connector submit login credentials to web application login page
+
+3) Web app request for authentication request using Kerberos protocols
+
+4) Citrix Gateway Connector contact domain controller to verify the login credentials
+
+5) Domain Controller validates the user credentials and acknowledges
+
+6) Citrix Gateway Connector forward the application back to the web app
+
+7) End to End secure connection established among Citrix web app and Citrix Workspace App via Citrix Gateway Service by Single Sign-on to a web app
+
+To enable Kerberos Single Sign-on functionality, administrator may configure Gateway Connector with credentials for a service account trusted to perform Kerberos Constrained Delegation.
+
+Users may try to access malicious websites that cause severe damage. Also, they may violate enterprise regulation and policies. To overcome this problem, adopting Citrix Access Control that filter risky websites that pose a risk to an organization. Along with that, creates watermark content throughout the session that includes the user’s name and IP address.
+
+Reference: [Support for Enterprise web apps](https://docs.citrix.com/en-us/citrix-gateway-service/support-web-apps.html)
+
+## Citrix Access Control App Protection policies
+
+It is quite common today, the user's login credentials stolen, and the user may not be aware of this action. Cybercriminals use variety of exertion to apprehend the end user data and one of the common scenarios is keylogger malware to capture user data. These malware products easily enter to user machine and start obtaining the user information. The event could lead to significant damage to any organization or an individual. To overcome this problem, the organization has to invest heavily in protecting user data and create a defensive shield against using anti-keylogger.
+
+Similarly, another enhancement in the keylogger is the screenshot logging feature. This malicious program operates by making screenshots of the user desktop to capture the information shown on the screen. Multiple software installed and policies are imposed on user end-point to overcome image grabbing of user desktop screen. This could lead to slower performance of user desktops and environment.
+
+Citrix Access Control has advanced policies used to protect organization data. Endpoint security is an important security consideration for any organization due to the maximum breach occurs at endpoints. App protection policies are rules and applied while enabling enhanced security to a SaaS app. Following are two advanced security policies that can be used by customers:
+
+*  Anti-Key Logging
+
+*  Anti-Screen Capture
+
+[![AC-Image-22](/en-us/tech-zone/design/media/reference-architectures_access-control_022.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_022.png)
+
+Citrix App protection policies enabled via Citrix Access Control solution. The benefits are as follows:
+
+*  Protects against key-logging and screen capture
+*  Centralized management for Citrix administrators
+*  Agnostic of device security posture
+
+App protection policies are baked with Citrix Workspace App 1912 for Windows and administrator has to enable this feature.
+
+Reference: [App Protection policies](https://www.citrix.com/en-in/downloads/citrix-virtual-apps-and-desktops/components/app-protection-policies.html)
+
+## Protect users from risky internet browsing using Citrix Secure Browser
+
+Web browsers are integral to an active production environment. Web browsers are powerful, data-rich tools exposed to the internet than any other application in the working environment. During the past few years, cybercriminals have taken advantage of web browsers fetch vast amounts of user information, including credit card data, email IDs, stored passwords, and so on.
+
+The prevalence of browser-based attacks becomes a trend, not because of strategically desirable hacking targets but because browser-based attacks are difficult to distinguish. Conventional security controls fail to detect such attacks because these applications only scrutinize download files and attachments. The prevalence Hence, a browser-based attack likely goes unnoticed.
+
+The Citrix Secure Browser service isolates web browsing to protect the customer production environment from browser-based attacks. Citrix Workspace App or local browsers are an entry point to Citrix production environment. Citrix Secure Browser isolates internet browsing that website does not directly transfer any browsing data to or from the user device. Security administrators offer safe internet access and user experience without modification of enterprise security.
+
+Citrix Secure Browser service is a SaaS product managed and operated by Citrix. It allows access to web applications via an intermediate web browser hosted in the cloud. During usage of Citrix Secure Service, hosted web browsers track user’s browsing history and perform caching of HTTP requests. Citrix uses mandatory profiles and ensures that once the browsing session ends, data erased at the end.
+
+Secure Browser service accessed with an HTML-5 compatible web browser. There is no downloadable client available for users. All traffic between the end-user browser and Citrix Cloud service is encrypted using industry-standard TLS encryption and supports TLS 1.2 only.
+
+[![AC-Image-23](/en-us/tech-zone/design/media/reference-architectures_access-control_023.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_023.png)
+
+The preceding diagram shows the integration of Citrix Access Control solution, including Citrix Secure Browser Service for both cloud and on-premises Citrix environment. Citrix Virtual Apps and Desktops customers with an on-premises StoreFront can easily integrate with the Secure Browser Service.
+
+To learn more about configuring Citrix StoreFront with the Secure Browser Service, follow the [link](https://support.citrix.com/article/CTX230272?_ga=2.235378497.1770257565.1575439566-348774687.1571729438&_gac=1.241968438.1575297468.EAIaIQobChMI_eLFrJiX5gIV1AorCh1E7ggkEAAYASAAEgLlCPD_BwE).
 
 ## Citrix Access Control and Content Collaboration
 
