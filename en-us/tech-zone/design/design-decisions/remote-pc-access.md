@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: When deploying a Remote PC Access solution, learn about the impact it will have on authentication, performance, scalability, and deployment.
+description: Remote PC Access is easy to deploy. These design decisions help maintain security, availability and performance.
 ---
 # Remote PC Access Design Decisions
 
@@ -10,28 +10,60 @@ description: When deploying a Remote PC Access solution, learn about the impact 
 
 ## Overview
 
-Remote PC Access is an easy and effective way to allow users access to their office-based, physical Windows PC. Using any endpoint device, users can remain productive regardless of their location. However, organizations want to consider the following when implementing Remote PC Access.
+Remote PC Access is an easy and effective way to allow users to access their office-based, physical Windows PC. Using any endpoint device, users can remain productive regardless of their location. However, organizations will want to consider the following when implementing Remote PC Access.
+
+## Deployment Options
+
+There are multiple ways to connect a PC to a user, each applicable to different scenarios.
+
+### Office Workers
+
+In many deployments, Remote PC Access gets deployed in an office worker scenario where one user is permanently assigned to one PC.
+
+[![Office Workers](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_office-workers.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_office-workers.png)
+
+This is the most common deployment scenario. To implement this use case, the administrator can use the Remote PC Access machine catalog type.
+
+[![Office Workers](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_machine-catalog-rpca.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_machine-catalog-rpca.png)
+
+### Computing Labs
+
+In certain situations, users will need to share a set of computing resources, often found in computing labs at schools, colleges and universities. Users are randomly assigned to an avaialble physical PC.
+
+[![Computing Lab Users](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_computing-lab-users.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_computing-lab-users.png)
+
+This type of configuration uses an unmanaged, randomly assigned, single-session OS, which is configured as follows:
+
+*  In the Machine Catalog Setup Wizard, use **Single-session OS**
+
+[![Office Workers](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_machine-catalog-pooled.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_machine-catalog-pooled.png)
+
+*  Select **Machines that are not power managed**
+*  Select **Another service or technology**
+
+[![Office Workers](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_machine-catalog-management.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_machine-catalog-management.png)
+
+*  Select **I want users to connect to a new (random) desktop each time they log on.**
+
+[![Office Workers](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_machine-catalog-assignment.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_machine-catalog-assignment.png)
+
+Because there are often more users than PCs in a computing lab, [policies limiting session time](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-limits-policy-settings.html) are recommended.
 
 ## Authentication
 
-Users continue to authenticate with Active Directory, but this authentication happens when the user initiates a connection to the organization's public fully qualified domain (FQDN). The FQDN requests authentication from Citrix Gateway.
+Users continue to authenticate to their office-based PC with their Active Directory credentials, however, as they will be accessing over the Internet from outside the office premises, organizations typically require stronger levels of authentication than just username and password.
 
-Because the site is external, organizations require stronger authentication than a simple Active Directory user name and password. Incorporating multifactor authentication, like a time-based one-time password token, can greatly improve authentication security.
+Citrix Workspace supports different authentication options to be selected including Active Directory + Token and Azure Active Directory. [Current Support Authentication Options](https://docs.citrix.com/en-us/citrix-workspace/secure.html)
 
-Citrix Gateway provides organizations with numerous multifactor authentication options, which include:
+If Citrix Gateway is configured as the authentication option for Citrix Workspace, or if a customer chooses to leverage Citrix Gateway + Citrix StoreFront as an alternative to Citrix Workspace, then the much wider selection of [Citrix Gateway authentication options](https://docs.citrix.com/en-us/citrix-gateway/13/authentication-authorization.html) becomes available.
 
-*  [Time-based One Time Password](/en-us/citrix-gateway/13/authentication-authorization/configure-onetime-passwords.html)
-*  [RADIUS](/en-us/citrix-gateway/13/authentication-authorization/configure-radius.html)
-*  [TACACS+](/en-us/citrix-gateway/13/authentication-authorization/configure-tacacs.html)
-*  [SAML](/en-us/citrix-gateway/13/authentication-authorization/configure-saml.html)
-
-Some of these options, like the time-based one time password, requires the user to initially register for a new token. As this option requires access to the user's email, it would need to be done before the user attempts to work remotely.
+Some of these options, like the time-based one-time password, require the user to initially register for a new token. As token registration requires the user to access their email to validate their identity, it may need to be completed before the user attempts to work remotely.
 
 ## Session Security
 
-Users are able to remotely access the work PC with an untrusted, personal device. Organizations can use integrated Citrix Virtual Apps and Desktops policies to protect against:
+Users can remotely access their work PC with an untrusted, personal device. Organizations can use integrated Citrix Virtual Apps and Desktops policies to protect against:
 
-*  Endpoint Risks: Key loggers secretly installed on the endpoint device can easily capture a user's user name and password. Anti-keylogging capabilities protect the organization from stolen credentials by obfuscating keystrokes.
+*  Endpoint Risks: Key loggers secretly installed on the endpoint device can easily capture a user’s username and password. [Anti-keylogging capabilities](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html) protect the organization from stolen credentials by obfuscating keystrokes.
 *  Inbound Risks: Untrusted endpoints can contain malware, spyware, and other dangerous content. Denying access to the endpoint device's drives prevents transmission of dangerous content to the corporate network.
 *  Outbound Risks: Organizations must maintain control over content. Allowing users to copy content to local, untrusted endpoint devices places extra risks on the organization. These capabilities can be denied by blocking access to the endpoint's drives, printers, clipboard, and anti-screen-capturing policies.
 
@@ -39,67 +71,75 @@ Users are able to remotely access the work PC with an untrusted, personal device
 
 ***Note:** The following sizing recommendations are a good starting point, but each environment is unique, resulting in unique results. Please monitor the infrastructure and size appropriately.*
 
-In many implementations, organizations enable thousands of physical PCs for Remote PC Access capabilities. Each PC must register with the Citrix Virtual Apps and Desktop controller. The controller must be able to accommodate the increase load. Also, Citrix Gateway must be sized appropriately to handle the ICA traffic for the new users.
+As users are accessing existing office PCs there is minimal additional infrastructure needed to support adding Remote PC Access, however it is important that the Control layer and Access layer infrastructure are sized and monitored correctly to ensure that they do not become a bottleneck.
 
-As a general recommendation with regards to sizing
+### Control Layer
 
-### Citrix Virtual Apps and Desktops
+The Virtual Delivery Agent (VDA) on each Office PC must register with Citrix Virtual Apps and Desktops. For on-premises deployments VDA registration happens directly with a Delivery Controller, for Citrix Virtual Apps & Desktops Service in Citrix Cloud this registration happens via a Citrix Cloud Connector.
 
-When using an on-premises deployment of Citrix Virtual Apps and Desktops, start with the following recommendations:
+Sizing of Delivery Controllers or Cloud Connectors for Remote PC Access workloads is similar to VDI workloads. Citrix Consulting recommends at least N+1 availability. Guidance for Cloud Connector scaling including conditions where Local Host Cache may be required is available here
 
-*  A 4 vCPU controller can handle 5,000 new sessions
-*  A 4 vCPU StoreFront server supports 55,000 requests per hour
+*  [Scale and size considerations for Cloud Connectors](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/cc-scale-and-size.html)
+*  [Scale and size considerations for Local Host Cache](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/local-host-scale-and-size.html)
 
-### Gateway
+### Access Layer
 
- When using an on-premises Citrix ADC for Citrix Gateway, consult the data sheet for the particular model and refer to the SSL VPN/ICA proxy concurrent users line item as a starting point. If the ADC is handling other workloads, validate that current throughput and CPU usage are not approaching any upper limits
+When a user establishes an HDX session to their office PC, the ICA traffic needs to be proxied to the VDA. ICA proxy can be provided via Citrix Gateway appliances or Citrix Gateway Service.
 
-### Gateway Service
+When using an on-premises Citrix ADC for Citrix Gateway, consult the data sheet for the particular model and refer to the SSL VPN/ICA proxy concurrent users line item as a starting point. If the ADC is handling other workloads, validate that current throughput and CPU usage are not approaching any upper limits.
 
-When using the Gateway Service from Citrix Cloud, sizing is irrelevant as it is managed by Citrix. However, this type of implementation requires on-premises Citrix Cloud Connectors.
+Ensure that there is adequate available Internet bandwidth where the Gateway appliances is located to support the expected concurrent ICA sessions.
 
-The rendezvous protocol enables the Virtual Delivery Agent installed on each physical PC to communicate directly with the Gateway Service instead of tunneling the session through the Cloud Connector. The rendezvous protocol requires the 1912 version of the Virtual Delivery Agent.
+When using the Gateway Service from Citrix Cloud, the ICA traffic flows between the Resource Location (where the VDAs and Cloud Connectors are located) directly to the Gateway service. The traffic is either proxied by the Cloud Connectors (default) or can flow directly from the VDA, bypassing the Cloud Connectors if the conditions to leverage the rendezvous protocol can be met.
+
+When Cloud Connectors are used to proxy ICA traffic to the Gateway Service then this can be a bottleneck and careful monitoring of CPU & memory on the Cloud Connector VMs is advised.  For initial planning estimates a 4 vCPU Citrix Cloud Connector VM can handle a maximum of 1000 concurrent ICA Proxy sessions.
+Rendezvous protocol (when configured) enables the Virtual Delivery Agent installed on each physical PC to communicate directly with the Gateway Service instead of tunnelling the session through the Cloud Connector.
+
+When using Gateway Service, Citrix recommends leveraging rendezvous protocol to mitigate the issue of Cloud Connectors being a bottleneck for ICA Proxy.
 
 [![Rendezvous Protocol Policy](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_rendezvous-protocol-policy.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_rendezvous-protocol-policy.png)
 
-It is disabled by default and can be enabled with a Virtual Apps and Desktops policy.
+There are certain prerequisites to allow rendezvous protocol to function, including:
 
-For Remote PC Access, the following can be used for initial planning estimations:
+*  Citrix Virtual Apps & Desktops Service
+*  VDA version 1912 or higher
+*  An enabled HDX Policy
+*  DNS PTR Records for all VDAs
+*  Specific SSL Cipher Suite Order
+*  Direct (non-proxied) Internet connectivity from VDA to Gateway Service
 
-*  A 4 vCPU Citrix Cloud Connector can handle 1,000 concurrent sessions without using the rendezvous protocol. Without the rendezvous protocol, traffic funnels through the Cloud Connector on the way to the Gateway Service.
-*  A 4 vCPU Citrix Cloud Connector sizing becomes irrelevant when using the rendezvous protocol as the ICA traffic flows directly between the Gateway Service and the PC.
+More details on the requirements the [rendezvous protocol](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html)
 
-## Availability
+### Availability
 
-Remote PC Access supports Wake-on-LAN operations to enable powering on Windows PC that are currently powered off. However, this option requires the use of Microsoft Endpoint Configuration Manager.
+If the office PC is not powered on with the VDA registered, the user’s session will not be brokered. Citrix recommends putting place processes to ensure the machines that users need to connect to are powered-on.
 
-If Configuration Manager is not an option, administrators can configure an Active Directory Group Policy object to remove the "Shut Down" option from the Windows PC. This prevents the user from powering down the physical PC, allowing them to connect remotely.
+If available, modify the PC’s BIOS setting to automatically power on in the event of a power failure. Administrators can also configure an Active Directory Group Policy object to remove the “Shut Down” option from the Windows PC. This helps prevent the user from powering down the physical PC
 
-***Note:** Wake on LAN functionality is not available when using the cloud service - Citrix Virtual Apps and Desktops Service.*
+Remote PC Access also supports [Wake-on-LAN](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/remote-pc-access.html#wake-on-lan) operations to enable powering on Windows PCs that are currently powered off. This option requires the use of Microsoft System Center Configuration Manager 2012, 2012 R2 or 2016.
 
-If there is a power failure, the physical PC will be powered off. If available, modify the PC's BIOS setting to automatically power on in the event of a power failure.
+***Note:** The Microsoft Configuration Manager Wake-on-LAN hosting connection functionality is not available when using the Citrix Virtual Apps and Desktops Service in Citrix Cloud*
 
-## User Assignments
+### User Assignments
 
-To have the remote experience match the local experience, users need to connect to their personal work PC. The user must get assigned to the correct physical PC.
+It is important that users are each brokered to their own office PC. Once the VDA has been installed and the catalog and delivery group defined, users are automatically assigned when they next log on locally to the PC. This is an effective method for assigning thousands of users.
 
-User assignments can be automated. Once the Virtual Delivery Agent installs on the physical PC, the next user who logs on will get assigned to that PC within Citrix Virtual Apps and Desktops. This is an effective method for assigning thousands of users.
-
-By default, multiple users can be assigned to a desktop if they have all logged into the physical PC, but this can be disabled via a [registry edit](https://support.citrix.com/article/CTX137805) on the Delivery Controllers.
+By default, multiple users can be assigned to a desktop if they have all logged into the same physical PC, but this can be disabled via a registry edit on the Delivery Controllers.
 
 The Citrix Virtual Apps and Desktops administrator can modify the assignments as needed within Citrix Studio or via PowerShell.
 
-## Agent Deployment
+### Agent Deployment
 
 To deploy the Virtual Delivery Agent to thousands of physical PCs, automated processes are required.
-
-The install media for Citrix Virtual Apps and Desktops include a deployment script (InstallMedia\Support\ADDeploy\InstallVDA.bat) that can be leveraged by Active Directory Group Policy Objects.
+The install media for Citrix Virtual Apps and Desktops includes a deployment script (InstallMedia\Support\ADDeploy\InstallVDA.bat) that can be leveraged by Active Directory Group Policy Objects.
 
 The script can be used as a baseline for PowerShell scripts and Enterprise Software Deployments (ESD) tools. These approaches allow organizations to quickly deploy the agent to thousands of physical endpoints.
 
-## VDA Registration
+### VDA Registration
 
-Depending on the network topology, the subnet containing the Virtual Apps and Desktops delivery controllers might not allow communication from the physical PCs. To properly register with the delivery controller, the VDA on the PC must be able to communicate with the delivery controller over ports:
+Depending on the network topology, the subnet containing the Virtual Apps and Desktops delivery controllers might not allow communication from the physical PCs. To properly register with the delivery controller, the VDA on the PC must be able to communicate with the delivery controller in both directions using the following protocols:
 
-*  TCP port 80 if communication unsecured
-*  TCP port 443 if communication secured (preferred configuration)
+*  VDA to Controller: Kerberos
+*  Controller to VDA: Kerberos
+
+If the VDA is unable to register with the controller, review the [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html) article.
