@@ -25,6 +25,8 @@ Any architectural design effort confronts decisions that need to be made to ensu
 
 [Single Server Scalability](/en-us/tech-zone/design/design-decisions/single-server-scalability.html) - Learn about the magic formula to calculate how many users you can have on a single server, what are the different variables that has impact on scalability and recommendations to improve it.
 
+[The scalability and economics of delivering Citrix Virtual App and Desktop services on Azure](/en-us/tech-zone/design/design-decisions/azure-instance-scalability.html) - Learn about the different Azure instance type scale characteristics and how MSC I/O enhances the response time for your users. The document will guide you through choosing the ideal Azure instance type for your workload and touches upon cost per user.
+
 ## Other
 
 [Evaluating Application Delivery Methods](/en-us/tech-zone/design/design-decisions/application-delivery-methods.html) - Learn about the different decision factors involved in choosing the optimal application delivery method.

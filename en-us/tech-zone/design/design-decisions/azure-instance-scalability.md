@@ -125,4 +125,4 @@ The Citrix on Azure results presented here represent only guidelines in configur
 
 ### Learn more
 
-For more information about deploying Citrix Virtual Apps workloads on Microsoft Azure Cloud Services, see the Citrix and Microsoft partner website at [http://www.citrix.com/global-partners/microsoft/resources.html](http://www.citrix.com/global-partners/microsoft/resources.html)
+For more information about deploying Citrix Virtual Apps workloads on Microsoft Azure Cloud Services, see the Citrix and Microsoft partner website at [https://www.citrix.com/global-partners/microsoft/resources.html](https://www.citrix.com/global-partners/microsoft/resources.html)
