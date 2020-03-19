@@ -150,7 +150,7 @@ A cloud-hosted, multitenant management SaaS offering available through Citrix Cl
 An on-prem, customer managed, SD-WAN management solution. A software appliance that can be installed on most popular hypervisor platforms. It provides more comprehensive reporting on the SD-WAN environment and is essential to some configuration tasks such as integration with Azure virtual WAN and Zero Touch Deployment.
 ![Paths Status](/en-us/tech-zone/learn/media/tech-briefs_sdwan-workspace_exhb9.png)
 
-### Application Deliver Management (ADM)
+### Application Delivery Management (ADM)
 
 ADM is a Citrix Cloud service that provides broad visibility and management capabilities across Citrix Networking product. It can add Citrix SD-WAN WanOp instances to provide advanced workspace session flow information using Deep Packet Inspection (DPI) capabilities.
 ![Deep Packet Inspection](/en-us/tech-zone/learn/media/tech-briefs_sdwan-workspace_exhb10.png)
