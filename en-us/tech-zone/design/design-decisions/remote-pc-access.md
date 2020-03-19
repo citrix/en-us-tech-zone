@@ -108,7 +108,7 @@ There are certain prerequisites to allow [rendezvous protocol](/en-us/citrix-vir
 *  Specific SSL Cipher Suite Order
 *  Direct (non-proxied) Internet connectivity from VDA to Gateway Service
 
-### Availability
+## Availability
 
 If the office PC is not powered on with the VDA registered, the user’s session cannot be brokered. Citrix recommends putting in place processes to ensure the machines that users need to connect to are powered-on.
 
@@ -118,7 +118,7 @@ Remote PC Access also supports [Wake-on-LAN](/en-us/citrix-virtual-apps-desktops
 
 ***Note:** The Microsoft Configuration Manager Wake-on-LAN hosting connection functionality is not available when using the Citrix Virtual Apps and Desktops Service in Citrix Cloud*
 
-### User Assignments
+## User Assignments
 
 It is important that users are each brokered to their own office PC. Once the VDA has been installed and the catalog and delivery group defined, users are automatically assigned when they next log on locally to the PC. This is an effective method for assigning thousands of users.
 
@@ -126,14 +126,20 @@ By default, multiple users can be assigned to a desktop if they have all logged 
 
 The Citrix Virtual Apps and Desktops administrator can modify the assignments as needed within Citrix Studio or via PowerShell.
 
-### Agent Deployment
+## Agent Deployment
 
 To deploy the Virtual Delivery Agent to thousands of physical PCs, automated processes are required.
 The install media for Citrix Virtual Apps and Desktops includes a deployment script (InstallMedia\Support\ADDeploy\InstallVDA.bat) that can be leveraged by Active Directory Group Policy Objects.
 
-The script can be used as a baseline for PowerShell scripts and Enterprise Software Deployments (ESD) tools. These approaches allow organizations to quickly deploy the agent to thousands of physical endpoints. If you are automating the VDA installation with an ESD tool such as SCCM or Altiris, we've found that creating separate packages for the pre-reqs and VDA tends to work best.
+The script can be used as a baseline for PowerShell scripts and Enterprise Software Deployments (ESD) tools. These approaches allow organizations to quickly deploy the agent to thousands of physical endpoints. If you are automating the VDA installation with an ESD tool such as SCCM or Altiris, we've found that creating separate packages for the pre-reqs and VDA tends to work best. You can find more information about VDA installation in [product documentation](/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html).
 
-### VDA Registration
+### Microsoft Teams
+
+If users access Microsoft Teams for voice and video calls, content redirection functionality is required to create a positive user experience. Content redirection requires administrators deploy the full VDA on the physical PCs using the command line options:
+
+`VDAWorkstationSetup.exe /remotepc /includeadditional "Citrix Browser Content Redirection"`
+
+## VDA Registration
 
 Depending on the network topology, the subnet containing the Virtual Apps and Desktops delivery controllers might not allow communication from the physical PCs. To properly register with the delivery controller, the VDA on the PC must be able to communicate with the delivery controller in both directions using the following protocols:
 
