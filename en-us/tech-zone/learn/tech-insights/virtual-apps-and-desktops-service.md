@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Citrix Virtual Apps and Desktops Service provides a fast, low-impact deployment option for on-premises/cloud-hosted, Windows/Linux, desktops/apps.
 ---
 # Virtual Apps and Desktops Service
 

@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
 ---
 # Citrix Managed Desktops
 
@@ -520,7 +521,7 @@ Azure AD Connect sync takes care of all the operation that is related to synchro
 
 Another option is to use **customer-managed Azure AD** with a non-domain joined catalog. In this scenario, the customer-managed Azure AD would be entirely in the cloud with no on-premises connection or synchronization. This method is ideal for customers who do not have any legacy Active Directory or on-premises infrastructure.
 
-Reference: [User Authentication](/en-us/citrix-managed-desktops/configure-manage.html#add-and-delete-users-in-managed-azure-ad)
+Reference: [User Authentication](/en-us/citrix-managed-desktops/users.html#add-and-delete-users-in-managed-azure-ad)
 
 ### Connect Citrix Cloud to Azure AD
 
@@ -566,9 +567,9 @@ Citrix runs the validation test on the imported image. The administrator has to 
 
 *  The personality.ini file must exist on the system drive (VDA is set to MCS provisioning)
 
-Learn more about importing a master image from Azure and installation of VDA on the master image, at this [link](/en-us/citrix-managed-desktops.html#about-master-images).
+Learn more about importing a master image from Azure and installation of VDA on the master image, at this [link](/en-us/citrix-managed-desktops/master-images.html).
 
-To create and managed master images refer to the [link](/en-us/citrix-managed-desktops/configure-manage.html#prepare-a-new-master-image).
+To create and managed master images refer to the [link](/en-us/citrix-managed-desktops/master-images.html#prepare-a-new-master-image).
 
 ### Optimization of the image
 
@@ -616,7 +617,7 @@ There are a few limitations on the BYO Azure subscription model that are describ
 
 With the BYO Azure subscription model, the customer has full control over the VDAs running on their subscription. Also, image management becomes easier in terms of importing the image and managing the existing images.
 
-Reference: [Bring-your-own Azure Subscription](https://docs.citrix.com/en-us/citrix-managed-desktops.html#about-azure-subscriptions)
+Reference: [Bring-your-own Azure Subscription](/en-us/citrix-managed-desktops/subscriptions.html)
 
 ### Windows 10 EVD licensing
 
@@ -680,7 +681,7 @@ The administrator has an option to set the working hours depending on the time z
 
 To create a power management schedule, refer to the reference section.
 
-Reference: [Power Management](/en-us/citrix-managed-desktops/configure-manage.html#power-management-schedules).
+Reference: [Power Management](/en-us/citrix-managed-desktops/catalogs-manage.html#manage-power-management-schedules).
 
 ### Security
 

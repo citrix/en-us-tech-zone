@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Windows Virtual Desktop in Microsoft Azure.
 ---
 # Citrix Managed Desktops
 

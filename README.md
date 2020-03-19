@@ -16,14 +16,22 @@ If you prefer to use email, feel free to reach out to us using [email](mailto:Te
 
 ### 1 - Create an account
 
+There are two different methods how you can become one of the contributors, depending on whether or not you are a Citrix employee.
+
+#### Citrix employees
+
 1.  Create your GitHub account with two-factor authentication enabled
 2.  Accept contributors agreement: [https://docs.citrix.com/en-us/settings.html](https://docs.citrix.com/en-us/settings.html). **This is required step!**
 3.  Send us your GitHub user name (see [Contact Tech Zone administrators](#contact-tech-zone-administrators) section)
 4.  Wait for validation email – you have to confirm to become one of the Tech Zone contributors
 
+#### Everybody else
+
+Follow this [simple guide](https://citrix.github.io/tech-marketing/projects/tech-zone/crowdsourcing.html) to become one of our contributors.
+
 ### 2 - Request a branch
 
-To make any changes to Tech Zone, you have to use a dedicated branch (think about it as an isolated clone of Tech Zone only to be used for your new article or update of an existing article.
+To make any changes to Tech Zone, you have to use a dedicated branch (think about it as an isolated clone of Tech Zone only to be used for your new article or update of an existing article). Another approach is to use you own fork of Tech Zone and just create a pull request, but this approach is recommended only for advanced GitHub users. If you are familiar with private forks and concept of pull requests, you can use this method.
 
 1.  Use one of the dedicated Slack channels to request new branch. Specify section of Tech Zone (e.g. Tech Insight) and title of the article (e.g. "Workspace app").
 2.  Wait for link to your new branch. You get it through Slack or by email from Tech Zone team.
@@ -94,7 +102,9 @@ Content review is done in following steps:
 
 ### 5 - Publish content
 
-After you are done with review stage, contact TZ team and ask them to publish your new article. Make sure that you've also updated a category markdown file (e.g. reference-architectures.md) with a link to your newly created article.
+After you are done with review stage, contact TZ team and ask them to publish your new article.
+
+Make sure that you've also updated a category markdown file (e.g. reference-architectures.md) with a link to your newly created article and brief description of content. Use the same description in `description:` section of your article. This is third line from top with placeholder text `Copy & paste description from TOC here`.
 
 1.  Staging environment - after styling review is finished (no markdown violations and Acrolinx score of at least 80 points), your article is published in staging environment to validate if all rendering works as expected. You receive a link to staging environment from TZ team for final review.
 2.  Production environment - after successful review in staging environment, article is released to production.

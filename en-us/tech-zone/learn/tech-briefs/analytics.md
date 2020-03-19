@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Provide visibility into your environment to protect it from malicious users and to improve the end user experience proactively.
 ---
 # Citrix Analytics
 

@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Create custom integrations with the microapp builder through the HTTP connector.
 ---
 # Microapps Custom Integrations
 

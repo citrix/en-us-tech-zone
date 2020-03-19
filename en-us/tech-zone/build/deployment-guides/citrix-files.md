@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn how to deploy the Citrix Files Client for Windows in a virtual app and desktop environment including related components, tips, and best practices for optimal performance and management.
 ---
 # Citrix Files Deployment Guide with Citrix Virtual Apps and Desktops Service
 

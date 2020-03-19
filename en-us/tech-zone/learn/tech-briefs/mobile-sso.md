@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Native mobile app single sign-on for iOS and Android SaaS applications.
 ---
 # Mobile SSO
 

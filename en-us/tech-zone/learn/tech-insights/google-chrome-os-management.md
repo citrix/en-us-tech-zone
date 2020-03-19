@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Manage Chrome OS devices with Citrix Endpoint Management.
 ---
 # Google Chrome OS Management
 

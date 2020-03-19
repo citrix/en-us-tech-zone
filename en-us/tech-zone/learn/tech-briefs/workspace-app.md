@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Personalized interface that provides access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
 ---
 # Workspace app
 
