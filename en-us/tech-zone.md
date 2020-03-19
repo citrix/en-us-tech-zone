@@ -189,6 +189,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Single Server Scalability](/en-us/tech-zone/design/design-decisions/single-server-scalability.html) - Learn about the magic formula to calculate how many users you can have on a single server, what are the different variables that has impact on scalability and recommendations to improve it.
 
+[The scalability and economics of delivering Citrix Virtual App and Desktop services on Azure](/en-us/tech-zone/design/design-decisions/azure-instance-scalability.html) - Learn about the different Azure instance type scale characteristics and how MSC I/O enhances the response time for your users. The document will guide you through choosing the ideal Azure instance type for your workload and touches upon cost per user.
+
 [VDI Model Comparison](/en-us/tech-zone/design/design-decisions/vdi-model-comparison.html) - Selecting the best VDI model starts with properly defining user groups and  aligning the requirements with the capabilities of the VDI models. Learn how different factors plays a role in selecting the correct VDI model for a user group.
 
 ### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
