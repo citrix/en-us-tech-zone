@@ -99,7 +99,7 @@ Because TOTP is incorporated as a capability within Citrix Workspace, the comple
 
 There are a few items to consider when enabling TOTP-based multifactor authentication:
 
-*  Authenticator Apps: TOTP uses an industry standard algorithm to generate the time-based token. Users can use any number of mobile apps to generate the tokens, including: Citrix SSO, Microsoft Authenticator, Google Authenticator and others.
+*  Authenticator Apps: TOTP uses an industry standard algorithm to generate the time-based token. Users can use any number of mobile apps to generate the tokens, including: Citrix SSO, Microsoft Authenticator and others.
 *  Token Count: Users are allowed one token (key) per user account.
 *  Device Count: Although users are limited to a single token (key), users can install the token across multiple devices. However, the install must happen during the registration phase as users are unable to reveal the QR code or secret key after registration completes.
 *  Device Replacement: Whenever a user replaces their mobile device, they must register the device with the TOTP service. When the user goes through the TOTP registration process again, the old secret key is deleted. Any device using the old secret key fails to generate the correct token, resulting in a failed Workspace authentication.
