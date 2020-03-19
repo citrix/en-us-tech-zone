@@ -102,7 +102,7 @@ Users continue to authenticate with Active Directory, but this authentication ha
 Citrix Gateway provides organizations with numerous multifactor authentication options, which include:
 
 *  [One Time Password](/en-us/citrix-gateway/13/authentication-authorization/configure-onetime-passwords.html)
-*  [RAIUS](/en-us/citrix-gateway/13/authentication-authorization/configure-radius.html)
+*  [RADIUS](/en-us/citrix-gateway/13/authentication-authorization/configure-radius.html)
 *  [TACACS+](/en-us/citrix-gateway/13/authentication-authorization/configure-tacacs.html)
 *  [SAML](/en-us/citrix-gateway/13/authentication-authorization/configure-saml.html)
 

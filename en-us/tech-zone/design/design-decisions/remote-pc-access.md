@@ -99,7 +99,6 @@ The script can be used as a baseline for PowerShell scripts and Enterprise Softw
 
 ## VDA Registration
 
-Depending on the network topology, the subnet containing the Virtual Apps and Desktops delivery controllers might not allow communication from the physical PCs. To properly register with the delivery controller, the VDA on the PC must be able to communicate with the delivery controller over ports:
+Depending on the network topology, the subnet containing the Virtual Apps and Desktops delivery controllers might not allow communication from the physical PCs. To properly register with the delivery controller, the VDA on the PC must be able to communicate with the delivery controller over port 80. This secure connection uses Kerberos, so time synchronization and domain membership are important.
 
-*  TCP port 80 if communication unsecured
-*  TCP port 443 if communication secured (preferred configuration)
+You can read more about VDA registration in [docs.citrix.com](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html).
