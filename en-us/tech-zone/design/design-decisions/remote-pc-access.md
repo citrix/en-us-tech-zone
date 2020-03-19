@@ -99,7 +99,7 @@ When using Gateway Service, Citrix recommends leveraging rendezvous protocol to 
 
 [![Rendezvous Protocol Policy](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_rendezvous-protocol-policy.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_rendezvous-protocol-policy.png)
 
-There are certain prerequisites to allow rendezvous protocol to function, including:
+There are certain prerequisites to allow [rendezvous protocol](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html) to function, including:
 
 *  Citrix Virtual Apps & Desktops Service
 *  VDA version 1912 or higher
@@ -107,8 +107,6 @@ There are certain prerequisites to allow rendezvous protocol to function, includ
 *  DNS PTR Records for all VDAs
 *  Specific SSL Cipher Suite Order
 *  Direct (non-proxied) Internet connectivity from VDA to Gateway Service
-
-More details on the requirements of the [rendezvous protocol](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html).
 
 ### Availability
 
