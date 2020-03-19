@@ -81,8 +81,7 @@ For example, in a burst to the cloud scenario, an organization would fully utili
 
 ### Hybrid deployment with on-premises and cloud based instances
 
-[![Autoscale - Zone Preference Hybrid Deployment](/en-us/tech-zone/learn/media/tech-briefs_autoscale_5-hybrid-zone-preference
-.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_5-hybrid-zone-preference.png)
+[![Autoscale - Zone Preference Hybrid Deployment](/en-us/tech-zone/learn/media/tech-briefs_autoscale_5-hybrid-zone-preference.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_5-hybrid-zone-preference.png)
 
 ### Cloud deployment with reserved and pay-as-you-go-instances
 
