@@ -35,7 +35,7 @@ To find the most efficient instance series, we needed test the different instanc
 
 The following graph shows the instance family results along with the average cost per user per hour based on pay-as-you-go pricing for the Azure US-West-2 region where the tests were performed.
 
-![8-Core Performance](/en-us/tech-zone/design/media/reference-architectures_azure-instance-scalability_001.png)
+![8-Core Performance](/en-us/tech-zone/design/media/design-decisions_azure-instance-scalability_001.png)
 
 ### Analysis
 
@@ -51,7 +51,7 @@ If your typical user's applications are CPU-intensive and do not require signifi
 
 When we completed the broad test across families, we expected a single series to be a clear leader. However the results ended up convincing us that the two best instance families for additional testing were the D series and the F series when tested with standard HDD storage. The next step was to test the specific sizes ranging between 2 and 16 vCPUs within the D\_v2 and FS\_v2 families. The results of these tests are shown below.
 
-![FS and D Series Performance](/en-us/tech-zone/design/media/reference-architectures_azure-instance-scalability_002.png)
+![FS and D Series Performance](/en-us/tech-zone/design/media/design-decisions_azure-instance-scalability_002.png)
 
 ### Analysis
 
@@ -83,7 +83,7 @@ At the disk sizes that we are using, the HDD and SDD disks have very similar IOP
 
 We decided then to consider the Machine Creation Services I/O (MCSIO) cache, as a way to achieve SSD-like performance with the larger standard disks. The tests were completed using the Citrix VDA version 1903.1 and Windows Server 2016 on a D5\_v2 (16 vCPU, 56 GB of RAM) instance type. The chart below shows the increase in user density gained by enabling the MCSIO cache with the Knowledge worker load.
 
-![MCSIO Performance](/en-us/tech-zone/design/media/reference-architectures_azure-instance-scalability_003.png)
+![MCSIO Performance](/en-us/tech-zone/design/media/design-decisions_azure-instance-scalability_003.png)
 
 ### Analysis
 
@@ -91,7 +91,7 @@ When the operating system disk has no MCSIO cache enabled, the VSImax User score
 
 While MCSIO contributes to a lower cost per user per hour, that number is not significant on its own. The real impact of MCSIO can be ascertained when looking at the end user experience. The graph below shows the average response time drop when using MCSIO.
 
-![MCSIO Login Response](/en-us/tech-zone/design/media/reference-architectures_azure-instance-scalability_004.png)
+![MCSIO Login Response](/en-us/tech-zone/design/media/design-decisions_azure-instance-scalability_004.png)
 
 ### Recommendations
 
@@ -103,7 +103,7 @@ With the release of both the Windows Server 2019 and Windows 10 Multi-session op
 
 The graph below shows the density changes when compared against the same test runs with Windows Server 2016 using the Citrix VDA version 1906.1 on the same D4\_v2 (8 vCPU, 28 GB of RAM) instance. The prices below are using the Linux VM pricing in line with the WVD Entitlement required.
 
-![Operating System Performance](/en-us/tech-zone/design/media/reference-architectures_azure-instance-scalability_005.png)
+![Operating System Performance](/en-us/tech-zone/design/media/design-decisions_azure-instance-scalability_005.png)
 
 ### Analysis
 
