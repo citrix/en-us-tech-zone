@@ -11,15 +11,15 @@ layout: doc
 
 ## Overview
 
-A poorly designed power-management scheme can increase cloud computing costs by ???% over what the organization requires to support the users. Cloud-based services often use a pay-as-you-go model where organizations are billed, sometimes every second, for compute time, network throughput, storage consumption and transactions. To minimize costs, organizations need to intelligently utilize, allocate and deallocate resources, which is in stark contrast from a traditional, on-premises model where organizations leave resources allocated indefinitely. In a virtual desktop deployment, organizations must consider the cost of permanently allocating hundreds or thousands of virtual machines that are minimally utilized. This approach will make the solution too expensive to be feasible.
+A poorly designed power-management scheme can increase cloud computing costs by 70%+ over what the organization requires to support the users. Cloud-based services often use a pay-as-you-go model where organizations are billed, sometimes every second, for compute time, network throughput, storage consumption and transactions. To minimize costs, organizations need to intelligently utilize, allocate and deallocate resources, which is in stark contrast from a traditional, on-premises model where organizations leave resources allocated indefinitely. In a virtual desktop deployment, organizations must consider the cost of permanently allocating hundreds or thousands of virtual machines that are minimally utilized. This approach will make the solution too expensive to be feasible.
 
-The Citrix Virtual Apps and Desktops service leverages Autoscale with vertical load balancing as one of the ways to help lower cloud costs. These capabilities allows organizations to fully utilize virtual desktops, identify usage trends and convert those trends into schedule and load-based rules that dynamically allocates and deallocates resources to maintain a positive user experience.
+The Citrix Virtual Apps and Desktops service leverages Autoscale with vertical load balancing as one of the ways to help lower cloud costs. These capabilities allow organizations to fully utilize virtual desktops, identify usage trends and convert those trends into schedule and load-based rules that dynamically allocate and deallocate resources to maintain a positive user experience.
 
 ## Cost vs Experience
 
-The main impact of power managing machines on user experience manifests in the time taken to connect a user to the requested session. If the power management is too aggressive and any machine that is not hosting sessions is shutdown, the pool capacity (from running machines) depletes. When another user requests a session and the powered on machines have no available capacity, the user must wait for a machine to be powered-on. This affects the user experience negatively, adding up to a few minutes to the session launch time. When a large number of users login simultaneously, for example at the beginning of a shift, the boot time can be even longer as a number of machines need to be powered on at the same time.
+The main impact of power managing machines on user experience manifests in the time taken to connect a user to the requested session. If the power management is too aggressive and any machine that is not hosting sessions is shut down, the pool capacity (from running machines) depletes. When another user requests a session and the powered on machines have no available capacity, the user must wait for a machine to be powered-on. This affects the user experience negatively, adding up to a few minutes to the session launch time. When a large number of users log in simultaneously, for example at the beginning of a shift, the boot time can be even longer as a number of machines need to be powered on at the same time.
 
-Cost savings from powering off unused machines come from the compute cost being nil, and reduction of network ingress/egress and data transactions (reading and writing to storage) cost. This results in the admin needing to perform a balancing act of ensuring that users can login to sessions quickly, while keeping costs down by shutting down as many unutilized machines as is optimal.
+Cost savings from powering off unused machines come from the compute cost being nil, and reduction of network ingress/egress and data transactions (reading and writing to storage) cost. This results in the admin needing to perform a balancing act of ensuring that users can log into sessions quickly, while keeping costs down by shutting down as many unutilized machines as is optimal.
 
 To effectively balance cost vs experience, Citrix incorporates the following technologies:
 
@@ -53,7 +53,7 @@ At the end of the working hours (6 PM for example) or on the weekend, unused hos
 
 Load-based scaling lets admins create a capacity buffer of machines in case they are needed to host sessions. The capacity buffer is a safety net to support unexpected increases in usage without negatively impacting the user experience. Ascertaining the right value for the capacity buffer (as a percentage of the pool capacity), is based on usage and the understanding the load variance in the customer environment.
 
-As users login, the available capacity of the delivery group depletes. When it falls below the capacity buffer value, another machine in the pool is started to bring the capacity buffer back above the defined value. On the other side, when users start logging off, the machines with the least load are put in drain mode. Once the machines are clear of sessions, the machines are shut down until the pool capacity reduces to the set capacity buffer value.
+As users log in, the available capacity of the delivery group depletes. When it falls below the capacity buffer value, another machine in the pool is started to bring the capacity buffer back above the defined value. On the other side, when users start logging off, the machines with the least load are put in drain mode. Once the machines are clear of sessions, the machines are shut down until the pool capacity reduces to the set capacity buffer value.
 
 [![Autoscale - Savings illustration](/en-us/tech-zone/learn/media/tech-briefs_autoscale_2-savings-illustration.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_2-savings-illustration.png)
 
@@ -88,9 +88,9 @@ For example, in a burst to the cloud scenario, an organization would fully utili
 
 [![Autoscale - Zone Preference Cloud only Deployment](/en-us/tech-zone/learn/media/tech-briefs_autoscale_6-cloud-zone-preference.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_6-cloud-zone-preference.png)
 
-Zone preference and tagging is critical for reducing costs in hybrid deployments. Primary instance machines are paid for upfront. There is limited cost savings by powering these resources down. The organization uses these resources first before the secondary instances are used.
+Zone preference and tagging are critical for reducing costs in hybrid deployments. Primary instance machines are paid for upfront. There are limited cost savings by powering these resources down. The organization uses these resources first before the secondary instances are used.
 
-The Citrix Virtual Apps and Desktops Service supports the use of multiple resource locations with the zone preference option. The admin uses zone preference to define which resource location to use first to fulfill demand and which location power down first when session demand drops. Once the capacity of the primary zone is fully utilized, the hosts marked as the secondary boot to serve session demand. When demand falls, the hosts in the secondary zone (cloud resources) are shutdown first, resulting in optimal cloud utilization.
+The Citrix Virtual Apps and Desktops Service supports the use of multiple resource locations with the zone preference option. The admin uses zone preference to define which resource location to use first to fulfill demand and which location power down first when session demand drops. Once the capacity of the primary zone is fully utilized, the hosts marked as the secondary boot to serve session demand. When demand falls, the hosts in the secondary zone (cloud resources) are shut down first, resulting in optimal cloud utilization.
 The settings for these are done at the machine catalog level.
 
 [![Autoscale - Zone Preference Config](/en-us/tech-zone/learn/media/tech-briefs_autoscale_7-zone-preference-config.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_7-zone-preference-config.png)
@@ -144,19 +144,21 @@ The scalability numbers are used to provide sizing guidance for the following th
 *  Active per Month: 198 hours
 *  Load Balancing Algorithm: Horizontal
 
+Based on this scenario, the active sessions during the day are as follows:
+
 [![Autoscale - Scenario 1 Active sessions graph](/en-us/tech-zone/learn/media/tech-briefs_autoscale_10-scenario-1-active-sessions-graph.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_10-scenario-1-active-sessions-graph.png)
 
 If all the machines are shut down after the off peak times begin, the number of hours the machines would be on during a single month is 198 hrs. The cost savings calculations are:
 
-| Knowledge Worker -Machine Size                     | D3_V2       | D4_V2       | F16         |
-|----------------------------------------------------|-------------|-------------|-------------|
-| VSImax - Sessions / machine                        | 25          | 50          | 74          |
-| No of machines needed                              | 40          | 20          | 14          |
-| Compute Cost per hour (in USD)                     | 0.504       | 1.008       | 1.732       |
-| Cost per hour (incl. 128 GB disk) for   1000 users | 20.48548    | 20.32274    | 24.36192    |
-| Cost per month (100% On)                           | 14954.4     | 14835.6     | 17784.2     |
-| Cost per month with Autoscale (198 hrs)            | **4229.28** | **4110.48** | **4884.26** |
-| Percentage Cost Savings                            | **71.72**   | **72.29**   | **72.54**   |
+| Knowledge Worker -Machine Size                   | D3_V2       | D4_V2       | F16         |
+|--------------------------------------------------|-------------|-------------|-------------|
+| VSImax - Sessions / machine                      | 25          | 50          | 74          |
+| No of machines needed                            | 40          | 20          | 14          |
+| Compute Cost per hour (in USD)                   | 0.504       | 1.008       | 1.732       |
+| Cost per hour (incl. 128 GB disk) for 1000 users | 20.48548    | 20.32274    | 24.36192    |
+| Cost per month (100% On)                         | 14954.4     | 14835.6     | 17784.2     |
+| Cost per month with Autoscale (198 hrs)          | **4229.28** | **4110.48** | **4884.26** |
+| Percentage Cost Savings                          | **71.72**   | **72.29**   | **72.54**   |
 
 From the table we can see that the cost of running the machine 100% of the time are over 350% the cost when the machines are power managed by Autoscale.
 The following graph shows the difference in cost of running the machines, when being powered on all the time vs being power managed by Autoscale in this scenario.
@@ -176,21 +178,21 @@ The following graph shows the difference in cost of running the machines, when b
 *  Active per Month: 198 hours
 *  Load Balancing Algorithm: Horizontal
 
-Based on this scenario, the active sessions for the week is as follows:
+Based on this scenario, the active sessions for the week are as follows:
 
 [![Autoscale - Scenario 2 Active sessions graph](/en-us/tech-zone/learn/media/tech-briefs_autoscale_12-scenario-2-active-sessions-graph.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_12-scenario-2-active-sessions-graph.png)
 
 The number of hours all the machines would be on during a single month is 198. Additionally, 10% of the machines (rounded up) would be running for an additional 15 hrs multiplied by 18 days in the month. The cost savings calculations are:
 
-| Knowledge Worker -Machine Size                     | D3_V2       | D4_V2       | F16         |
-|----------------------------------------------------|-------------|-------------|-------------|
-| VSImax - Sessions / machine                        | 25          | 50          | 74          |
-| No of machines needed                              | 40          | 20          | 14          |
-| Compute Cost per hour (in USD)                     | 0.504       | 1.008       | 1.732       |
-| Cost per hour (incl. 128 GB disk) for   1000 users | 20.48548    | 20.32274    | 24.36192    |
-| Cost per month (100% On)                           | 14954.4     | 14835.6     | 17784.2     |
-| Cost per month with Autoscale (198 hrs)            | **4773.6**  | **4564.8**  | **5819.54** |
-| Percentage Cost Savings                            | **68.08**   | **68.62**   | **67.28**   |
+| Knowledge Worker -Machine Size                   | D3_V2       | D4_V2       | F16         |
+|--------------------------------------------------|-------------|-------------|-------------|
+| VSImax - Sessions / machine                      | 25          | 50          | 74          |
+| No of machines needed                            | 40          | 20          | 14          |
+| Compute Cost per hour (in USD)                   | 0.504       | 1.008       | 1.732       |
+| Cost per hour (incl. 128 GB disk) for 1000 users | 20.48548    | 20.32274    | 24.36192    |
+| Cost per month (100% On)                         | 14954.4     | 14835.6     | 17784.2     |
+| Cost per month with Autoscale (198 hrs)          | **4773.6**  | **4564.8**  | **5819.54** |
+| Percentage Cost Savings                          | **68.08**   | **68.62**   | **67.28**   |
 
 From the table we can see that the cost of running the machine 100% of the time are over 300% the cost when the machines are power managed by Autoscale.
 The following graph shows the difference in cost of running the machines, when being powered on all the time vs being power managed by Autoscale in this scenario:
@@ -211,21 +213,21 @@ The following graph shows the difference in cost of running the machines, when b
 *  Load Balancing Algorithm: Vertical (different than scenario 2)
 *  Logon\Logoff Rate: 25% each hour
 
-Based on this scenario, the active sessions for the week is as follows:
+Based on this scenario, the active sessions for the week are as follows:
 
 [![Autoscale - Scenario 3 Active sessions graph](/en-us/tech-zone/learn/media/tech-briefs_autoscale_14-scenario-3-active-sessions-graph.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_14-scenario-3-active-sessions-graph.png)
 
 There will be fewer machines needed at the beginning of the day. Since the calculation multiplies the number of machines and hours, the number of compute hours reduces by 1 hour a day, 22 hours in the month. As discussed, users logging off would be from random machines, so the assumption is that the required number of machines drops to 10% after the end of the workday. The cost savings calculations are:
 
-| Knowledge Worker -Machine Size                     | D3_V2       | D4_V2       | F16         |
-|----------------------------------------------------|-------------|-------------|-------------|
-| VSImax - Sessions / machine                        | 25          | 50          | 74          |
-| No of machines needed                              | 40          | 20          | 14          |
-| Compute Cost per hour (in USD)                     | 0.504       | 1.008       | 1.732       |
-| Cost per hour (incl. 128 GB disk) for   1000 users | 20.48548    | 20.32274    | 24.36192    |
-| Cost per month (100% On)                           | 14954.4     | 14835.6     | 17784.2     |
-| Cost per month with Autoscale (198 hrs)            | **3893.6**  | **4214.4**  | **5511.54** |
-| Percentage Cost Savings                            | **73.96**   | **71.59**   | **69.01**   |
+| Knowledge Worker -Machine Size                   | D3_V2       | D4_V2       | F16         |
+|--------------------------------------------------|-------------|-------------|-------------|
+| VSImax - Sessions / machine                      | 25          | 50          | 74          |
+| No of machines needed                            | 40          | 20          | 14          |
+| Compute Cost per hour (in USD)                   | 0.504       | 1.008       | 1.732       |
+| Cost per hour (incl. 128 GB disk) for 1000 users | 20.48548    | 20.32274    | 24.36192    |
+| Cost per month (100% On)                         | 14954.4     | 14835.6     | 17784.2     |
+| Cost per month with Autoscale (198 hrs)          | **3893.6**  | **4214.4**  | **5511.54** |
+| Percentage Cost Savings                          | **73.96**   | **71.59**   | **69.01**   |
 
 From the Table we can see that the cost of running the machine 100% of the time are over 300% the cost when the machines are power managed by Autoscale. For smallest machine, D3_V2 it’s at 433%. The smaller the machine size the higher number of them can be shut down to serve the same load, when compared to larger machines. Similarly, they are quicker to shut down and they will be quicker in reaching zero sessions running on them, when users start to log off.
 
@@ -268,7 +270,7 @@ Read [Nitin Mehta's blog](https://www.citrix.com/blogs/2019/06/03/simplifying-yo
 Three types of delivery groups that Autoscale manages:]
 
 1.  Static single session OS (or Static VDI) delivery group: delivery groups that only let users login to the specific machine assigned to the specific user. The capacity of a single session delivery group is equal to the number of machines in the catalogs that are associated with it.
-1.  Pooled single session OS (or Pooled VDI) delivery group: delivery groups that allow users to randomly login to the next available host that can provide a session to the user on OS that allow one user to login at a time.
-1.  Pooled multi-session OS (or hosted shared) delivery group: delivery groups that allow users to randomly login to the machine that has available capacity to host a session for the user on OSes (for example Windows server operating systems or Windows 10 multi-session OS) that allow more than one user to login simultaneously. The capacity of a host in a multi-session delivery group is the number of sessions that can run on the host simultaneously.
+1.  Pooled single session OS (or Pooled VDI) delivery group: delivery groups that allow users to randomly login to the next available host that can provide a session to the user on OS that allows one user to log in at a time.
+1.  Pooled multi-session OS (or hosted shared) delivery group: delivery groups that allow users to randomly log into the machine that has available capacity to host a session for the user on OSes (for example Windows server operating systems or Windows 10 multi-session OS) that allow more than one user to log in simultaneously. The capacity of a host in a multi-session delivery group is the number of sessions that can run on the host simultaneously.
 
 See the different configuration UIs available for each of these delivery group types [here](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html#three-types-of-autoscale-user-interfaces).
