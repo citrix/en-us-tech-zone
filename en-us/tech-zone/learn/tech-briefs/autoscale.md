@@ -120,9 +120,9 @@ To better determine the potential cost savings with Autoscale, Citrix conducted 
 *  Citrix Virtual Apps and Desktops 1902
 *  Citrix Workspace app 1903
 *  Windows Server 2016 Multi-session OS Azure VMs
-*      D3_V2
-*      D4_V2
-*      F16
+    *  D3_V2
+    *  D4_V2
+    *  F16
 *  LoginVSI Workload: Knowledge Worker
 
 This resulted in the following user load per virtual machine instance:
