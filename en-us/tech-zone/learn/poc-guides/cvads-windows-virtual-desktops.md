@@ -236,7 +236,7 @@ Select **IP Address** as Source, enter the **Public IP Address of the machine** 
 1.  Select the **Network Security group** of your WVD VM as it already has the port rules to allow access to your machine. Click **Save** *
 
     ![Cloud Connector - NW Security Group Set](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_43.png)
-    
+
     *: Leaving port 3389 open remotely long-term can pose a security risk.
 
 1.  RDP in to the machine with the admin credentials you provided when creating the VM and join the Cloud Connector VM to the domain and reboot the machine.
