@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Mayank Singh](https://twitter.com/techmayank)
 
-**Special Thanks:** Nitin D. Mehta and Daniel Feller
+**Special Thanks:** [Nitin D. Mehta](https://twitter.com/nitinme1) and [Daniel Feller](https://twitter.com/djfeller)
 
 ## Overview
 
@@ -59,13 +59,13 @@ As users log in, the available capacity of the delivery group depletes. When it 
 
 ## Load-balancing algorithms
 
-Citrix employs a horizontal load-balancing algorithm by default to power manage the machines in the cloud. Incoming sessions are load balanced to optimize the user experience. Each new session is assigned to the machine that is least loaded. Once a new machine in a catalog is started, it will have the least load and would be used for all subsequent logons until the load is no longer the lowest.
+Citrix employs a horizontal load-balancing algorithm by default to power manage the machines in the cloud. Incoming sessions are load balanced to optimize the user experience. Each new session is assigned to the machine that is least loaded. Once a new machine in a catalog is started, it has the least load and would be used for all subsequent logons until the load is no longer the lowest.
 
-In the followin example, there are 6 machines in a delivery group. If the capacity buffer is set to 15%, then soon as free capacity goes below 5 sessions, a new machine is powered-on. Now when a new user logs in, that user is assigned the newly powered-on machine. The next user will be assigned the least loaded machine. You can see the distribution. This reduces the chances of any of the machines being able to be shut down as almost all have equal number of sessions running on them. For example if one of the first 5 sessions logs off then free capacity goes up to 5 sessions but none of the machines can be shut down as each has at least one session running on it.
+In the following example, there are 6 machines in a delivery group. If the capacity buffer is set to 15%, then soon as free capacity goes below 5 sessions, a new machine is powered-on. Now when a new user logs in, that user is assigned the newly powered-on machine. The next user will be assigned the least loaded machine. You can see the distribution. This reduces the chances of any of the machines being able to be shut down as almost all have equal number of sessions running on them. For example if one of the first 5 sessions logs off then free capacity goes up to 5 sessions but none of the machines can be shut down as each has at least one session running on it.
 
 [![Autoscale - Horizontal Load-balancing](/en-us/tech-zone/learn/media/tech-briefs_autoscale_3-horizontal-load-balancing.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_3-horizontal-load-balancing.png)
 
-With vertical load-balancing, admins can configure it so that incoming sessions are load balanced to optimize for least powered-on machine count. Sessions are assigned to the most loaded machine, so long as it does not reach the high watermark for max load. This ensures that only the minimum number of machines needed to service the current load are powered on, thus being much more cost effective. Consider our preceding example, if one of the first 5 sessions logs off, reducing the session count on machine 1 to 4, then free capacity goes back up to 5 sessions. Machine 3 can now be shutdown, saving extra cost. Also a new session would be assigned to machine 1 rather than a new machine booting up. In addition, sessions on the least loaded machine are marked for logout first.
+With vertical load-balancing, admins can configure it so that incoming sessions are load balanced to optimize for least powered-on machine count. Sessions are assigned to the most loaded machine, so long as it does not reach the high watermark for max load. This ensures that only the minimum number of machines needed to service the current load are powered on, thus being much more cost effective. Consider our preceding example, if one of the first 5 sessions logs off, reducing the session count on machine 1 to 4, then free capacity goes back up to 5 sessions. Machine 3 can now be shut down, saving extra cost. Also a new session would be assigned to machine 1 rather than a new machine booting up. In addition, sessions on the least loaded machine are marked for logout first.
 
 [![Autoscale - Vertical Load-balancing](/en-us/tech-zone/learn/media/tech-briefs_autoscale_4-vertical-load-balancing.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_4-vertical-load-balancing.png)
 
@@ -78,7 +78,7 @@ In hybrid deployments, there are resources in cloud and on-premises. A hybrid de
 *  Primary: The preferred location for resource utilization.
 *  Secondary: The resource location tapped when the primary zone is fully utilized.
 
-For example, in a burst to the cloud scenario, an organization would fully utilize primary, on-premises resources.  When extra capacity is required, secondary instances are consumed from the cloud. The delivery group would consist of two catalogs, one for the on-premises resource location and another for the cloud location.
+For example, in a burst to the cloud scenario, an organization would fully utilize primary, on-premises resources. When extra capacity is required, secondary instances are consumed from the cloud. The delivery group would consist of two catalogs, one for the on-premises resource location and another for the cloud location.
 
 ### Hybrid deployment with on-premises and cloud based instances
 
@@ -114,7 +114,7 @@ To measure the cloud cost savings with Autoscale, we need to determine the cost 
 Cost per month calculation assumes the machine is running for the entire month (730 hours). The storage cost is a fixed monthly cost regardless if the machine is powered on or off.
 
 **With Autoscale, we reduce the time the machine remains powered-on to better align with user behaviors.**
- 
+
 To better determine the potential cost savings with Autoscale, Citrix conducted LoginVSI single server scalability tests with the following setup:
 
 *  Citrix Virtual Apps and Desktops 1902
@@ -267,8 +267,8 @@ Read [Nitin Mehta's blog](https://www.citrix.com/blogs/2019/06/03/simplifying-yo
 
 Three types of delivery groups that Autoscale manages:
 
-1.  Static single session OS (or Static VDI) delivery group: delivery groups that only let users login to the specific machine assigned to the specific user. The capacity of a single session delivery group is equal to the number of machines in the catalogs that are associated with it.
-1.  Pooled single session OS (or Pooled VDI) delivery group: delivery groups that allow users to randomly login to the next available host that can provide a session to the user on OS that allows one user to log in at a time.
+1.  Static single session OS (or Static VDI) delivery group: delivery groups that only let users log in to the specific machine assigned to the specific user. The capacity of a single session delivery group is equal to the number of machines in the catalogs that are associated with it.
+1.  Pooled single session OS (or Pooled VDI) delivery group: delivery groups that allow users to randomly log in to the next available host that can provide a session to the user on OS that allows one user to log in at a time.
 1.  Pooled multi-session OS (or hosted shared) delivery group: delivery groups that allow users to randomly log into the machine that has available capacity to host a session for the user on OSes (for example Windows server operating systems or Windows 10 multi-session OS) that allow more than one user to log in simultaneously. The capacity of a host in a multi-session delivery group is the number of sessions that can run on the host simultaneously.
 
 See the different configuration UIs available for each of these delivery group types [here](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html#three-types-of-autoscale-user-interfaces).
