@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Tech Paper focused on proper configuration, and recommendations for running antivirus solution in Citrix Virtual Apps & Desktops environments. Recommended exclusions, configuration, and leading practices.
 ---
 # Endpoint Security and Antivirus Best Practices
 
@@ -108,6 +109,7 @@ Processes:
 -  `%SystemRoot%\System32\winlogon.exe`
 -  `%ProgramFiles%\Citrix\ICAService\picaSvc2.exe` (Desktop OS only)
 -  `%ProgramFiles%\Citrix\ICAService\CpSvc.exe` (Desktop OS only)
+-  `%ProgramFiles%\Citrix\ICAService\WebSocketService.exe`
 
 #### Virtual Delivery Agents - HDX RealTime Optimization Pack
 
@@ -129,13 +131,14 @@ Files:
 
 Processes:
 
--  `%ProgramFiles(x86)%\Citrix\ICA Client\MediaEngineService.exe`
+-  `%ProgramFiles(x86)%\Citrix\ICA Client\MediaEngineService.exe` (HDX RealTime Optimization Pack)
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\CDViewer.exe`
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\concentr.exe`
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\wfica32.exe`
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\AuthManager\AuthManSvr.exe`
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\SelfServicePlugin\SelfService.exe`
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\SelfServicePlugin\SelfServicePlugin.exe`
+-  `%ProgramFiles(x86)%\Citrix\ICA Client\HdxTeams.exe` (Optimization for Microsoft Teams)
 
 Please note that these exclusions for Receiver typically are not needed. We have only seen a need for these in environments when the antivirus is configured with policies that are more strict than usual, or in situations in which multiple security agents are in use simultaneously (AV, DLP, HIP, and so on)
 

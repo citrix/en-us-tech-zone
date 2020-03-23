@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Tech Paper focused on SSL / TLS best practices for Citrix Networking deployments. We cover configuration items such as the certificate chain bound to the virtual server, cipher suite settings, and disabling older protocols that are vulnerable to attack.
 ---
 # Citrix Networking SSL / TLS Best Practices
 
@@ -152,6 +153,12 @@ The following are general steps that should be taken first to ensure a high scor
 
 ```bash
 set ssl vserver Ex-vServer -ssl3 DISABLED -tls1 ENABLED -tls11 ENABLED -tls12 ENABLED
+```
+
+-  To enable ONLY TLS1.2 and TLS1.3 on _Ex-vServer_ use the following command in place of the above
+
+```bash
+set ssl vserver Ex-vServer -ssl3 DISABLED -tls1 DISABLED -tls11 DISABLED -tls12 ENABLED -tls13 ENABLED
 ```
 
 -  Allow secure renegotiation

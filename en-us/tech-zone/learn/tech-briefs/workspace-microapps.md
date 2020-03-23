@@ -1,7 +1,8 @@
 ---
 layout: doc
+description: Streamline functionality from complex enterprise applications creating simple actions users can complete right within their feed.
 ---
-# Workspace Intelligence Features - Microapps
+# Citrix Workspace Microapps Service
 
 ## Contributors
 

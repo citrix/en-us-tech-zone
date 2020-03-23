@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and your on premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
 ---
 
 # Proof of Concept guide for Citrix Virtual Apps and Desktops service with Windows Virtual Desktop
@@ -380,6 +381,8 @@ While we wait, we can install the Citrix Virtual Apps and Desktops, Virtual Deli
 1.  In the Additional section choose the components you need and click **Next**
 
     ![VDA Install - Additional Components](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_76.png)
+
+    **NOTE:** To see logon information in Citrix Director, select also Citrix User Profile Manager
 
 1.  Enter the **UPN for the Cloud Connector** VM and click **Test Connection**. Ensure that the test is successful a green tick appears next to the entered UPN. Click **Add** and click **Next**
 

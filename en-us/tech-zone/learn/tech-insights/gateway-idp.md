@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Utilize an on-premises Citrix Gateway as an identity provider for Citrix Workspace.
 ---
 # Authentication - On-Premises Citrix Gateway
 

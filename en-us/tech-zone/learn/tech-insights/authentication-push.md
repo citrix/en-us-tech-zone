@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Extend an on-premises TOTP deployment with Push authentication, eliminating the need for users to manually enter the temporary token.
 ---
 # Authentication - Push
 

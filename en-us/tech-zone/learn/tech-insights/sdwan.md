@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Optimize delivery of Citrix Virtual Apps and Desktops traffic with Citrix SD-WAN.
 ---
 # SD-WAN Single-port Multi-stream AutoQOS
 

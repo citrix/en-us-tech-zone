@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Learn about the deployment architecture and how Citrix SD-WAN WANOP helps to optimize Citrix Content Collaboration for customer-managed storage zones including relevant test data.
 ---
 
 # Citrix SD-WAN WANOP for Content Collaboration (Customer-Managed on-premises Storage Zones)

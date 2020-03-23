@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Generate actionable insights about your environment, enabling administrators to proactively handle user and application security threats.
 ---
 # Citrix Analytics for Security
 
