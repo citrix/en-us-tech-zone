@@ -120,7 +120,7 @@ If you are an existing Microsoft O365 customer you should already have an Azure 
 
     ![Run Azure AD connect](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_16.png)
 
-1.  In the Azure AD connect dialog, click **Continue.
+1.  In the Azure AD connect dialog, click **Continue**
 
     ![Azure AD connect Exec](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_17.png)
 
@@ -221,7 +221,7 @@ Select **IP Address** as Source, enter the **Public IP Address of the machine** 
 
     ![Cloud Connector - Created](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_39.png)
 
-1.  The VM must have a networking rule to allow incoming RDP traffic on it Public IP. * Click **Networking** in the favorites column and then click the **name of the network interface**
+1.  The VM must have a networking rule to allow incoming RDP traffic on it Public IP. Click **Networking** in the favorites column and then click the **name of the network interface**
 
     ![Cloud Connector - NW Interface](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_40.png)
 
@@ -236,6 +236,7 @@ Select **IP Address** as Source, enter the **Public IP Address of the machine** 
 1.  Select the **Network Security group** of your WVD VM as it already has the port rules to allow access to your machine. Click **Save** *
 
     ![Cloud Connector - NW Security Group Set](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_43.png)
+    
     *: Leaving port 3389 open remotely long-term can pose a security risk.
 
 1.  RDP in to the machine with the admin credentials you provided when creating the VM and join the Cloud Connector VM to the domain and reboot the machine.
@@ -419,7 +420,7 @@ Configure Citrix Virtual Apps and Desktops service to connect to the Azure Subsc
 
     ![Hosting Connect - Add Hosting](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_84.png)
 
-1.  From the drop downs select **Microsoft© AzureTM as Connection Type, **Azure Global** for Azure environment and an
+1.  From the drop downs select **Microsoft© AzureTM** as Connection Type, **Azure Global** for Azure environment and an
 **appropriate Zone** for Zone name. Leave **Studio Tools** selected. Click **Next**
 
     ![Hosting Connect - Select Azure](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_85.png)
