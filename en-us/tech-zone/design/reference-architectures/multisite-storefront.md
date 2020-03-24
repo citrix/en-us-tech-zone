@@ -135,6 +135,21 @@ The data centers in a GSLB setup exchange metrics with each other through the ME
 
 MEP is required for health checking of data centers to ensure their availability. A connection for exchanging network metric (round-trip time) can be initiated by either of the data centers involved in the exchange, but a connection for exchanging site metrics is always initiated by the data center with the lower IP address. By default, the data center uses a subnet IP address (SNIP) to establish a connection to the IP address of a different data center. However, you can configure a specific SNIP, virtual IP (VIP) address, or the NSIP address, as the source IP address for metrics exchange. The communication process between GSLB sites uses TCP port 3011 or 3009, so this port must be open on firewalls that are between the Citrix ADC appliances.
 
+
+
+###########
+
+| Round  Robin             | When  a GSLB virtual server is configured to use the round robin method, it  continuously rotates a list of the services that are bound to it. When the  virtual server receives a request, it assigns the connection to the first  service in the list and then moves that service to the bottom of the list. |
+| ------------------------ | ------------------------------------------------------------ |
+| **Least  Response Time** | When  the GSLB virtual server is configured to use the least response time method,  it selects the service with the lowest value. Where, lowest value = current  active connections X average response time. |
+| **Least  Connections**   | When  a GSLB virtual server is configured to use the least connection GSLB  algorithm (or method), it selects the service with the fewest active  connections. This is the default method, because, in most circumstances, it  provides the best performance. |
+| **Least  Bandwidth**     | A  GSLB virtual server configured to use the least bandwidth method selects the  service that is currently serving the least amount of traffic, measured in  megabits per second (Mbps). |
+| **Least  Packets**       | A  GSLB virtual server configured to use the least packets method selects the  service that has received the fewest packets in the last 14 seconds. |
+| **Source  IP Hash**      | A  GSLB virtual server configured to use the source IP hash method uses the  hashed value of the client IPv4 or IPv6 address to select a service. To  direct all requests from source IP addresses that belong to a particular  network to a specific destination server, you must mask the source IP  address. For IPv4 addresses, use the netmask parameter. For IPv6 addresses,  use the v6NetMaskLength parameter. |
+| **Custom  Load**         | Custom  load balancing is performed on server parameters such as CPU usage, memory,  and response time. When using the custom load method, the Citrix ADC  appliance usually selects a service that is not handling any active  transactions. If all of the services in the GSLB setup are handling active  transactions, the appliance selects the service with the smallest load. A special  type of monitor, known as a load monitor, calculates the load on each service  in the network. The load monitors do not mark the state of a service, but  they do take services out of the GSLB decision when those services are not  UP. |
+
+##############
+
 #### Load Balancing Methods
 
 Unlike traditional DNS servers that simply respond with the IP addresses of the configured servers, a Citrix ADC appliance configured for GSLB responds with the IP addresses of the services, as determined by the configured GSLB method. By default, the GSLB virtual server is set to the least connection method. If all GSLB services are down, the appliance responds with the IP addresses of all the configured GSLB services.
