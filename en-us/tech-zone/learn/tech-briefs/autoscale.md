@@ -17,7 +17,7 @@ The Citrix Virtual Apps and Desktops service uses Autoscale with vertical load b
 
 ## Cost vs Experience
 
-The main impact of power managing machines on user experience manifests in the time taken to connect a user to the requested session. If the power management is too aggressive and any machine that is not hosting sessions is shut down, the pool capacity (from running machines) depletes. When another user requests a session and the powered on machines have no available capacity, the user must wait for a machine to be powered-on. The wait affects the user experience negatively, adding up to a few minutes to the session launch time. When many users log in simultaneously, for example at the beginning of a shift, the boot time can be even longer as several machines need to be powered on at the same time.
+The main impact of power managing machines on user experience is in the time taken to connect a user to the requested session. If the power management is too aggressive and any machine that is not hosting sessions is shut down, the pool capacity (from running machines) depletes. When another user requests a session and the powered on machines have no available capacity, the user must wait for a machine to be powered-on. The wait affects the user experience negatively, adding up to a few minutes to the session launch time. When many users log in simultaneously, for example at the beginning of a shift, the boot time can be even longer as several machines need to be powered on at the same time.
 
 Cost savings from powering off unused machines come from the compute cost being nil, and reduction of network ingress/egress and data transactions (reading and writing to storage) cost. This scenario results in the admin needing to perform a balancing act of ensuring that users can log into sessions quickly, while keeping costs down by shutting down as many unutilized machines as is optimal.
 
@@ -29,8 +29,10 @@ To effectively balance cost vs experience, Citrix incorporates the following tec
 
 ## Autoscale
 
-A delivery group groups users that have similar requirements for apps and desktops. The group of users most likely have similar working hours; for example, the HR department of a company in the London office. Therefore admins configure Autoscale at a delivery group level.
-The users in the delivery group are allocated resources running on pool(s) of machines (machine catalog(s)) that can service their requests. (Learn about types of delivery groups in the Appendix).
+Autoscale is a set of capabilites that are designed to automate the process of powering managing Virtual Machines that are part of a deployment. Autoscale is designed to reduce the cost of running machines in a Citrix environment.
+
+A delivery group contains users that have similar requirements for apps and desktops. The group of users most likely have similar working hours; for example, the HR department of a company in the London office. Therefore admins configure Autoscale at a delivery group level.
+The users in the delivery group are allocated resources running on pool(s) of machines (machine catalog(s)) that can service their requests.
 To make accurate decisions about powering on and off machines in a pool, Autoscale must know the capacity of the delivery group. To ensure that Autoscale has an accurate view of hosts that can accept session requests, Autoscale includes only machines that are registered with the service when determining the capacity for a given delivery group.
 
 Autoscale enables the admin to perform power management based on the following two settings:
@@ -45,13 +47,13 @@ Note: Both are used in conjunction to define the power management settings.
 ### Schedule-based scaling
 
 In a typical office with defined working hours, peak and off-peak hours are differentiated. Admins define the number of machines to be powered on during working hours and non-working hours.
-Working hours generally would need to have a minimum number of machines turned on to meet demand. If the work day begins at 9 AM, the virtual desktops must already be available. Sometime before the working hours begin (8 AM for example), several hosts are booted up to handle the anticipated load, which results in the users getting the positive logon experience. So the schedule would be set from 8 AM to 6 PM.
+Working hours (for example 9 AM to 5 PM on weekdays) generally would need to have a minimum number of machines turned on to meet demand. If the work day begins at 9 AM, the virtual desktops must already be available. Its a good idea to have booted up the machines and given them sometime to finish their post boot tasks before users start logging onto them. Therefore sometime before the working hours begin (8 AM in our example), several hosts are booted up to handle the anticipated load, which results in the users getting the positive logon experience. So the schedule would be set from 8 AM to 6 PM.
 
-At the end of the working hours (6 PM for example) or on the weekend, unused hosts are shut down and only the number of hosts required are left powered on. This results in drastically reducing the cloud consumption cost, as opposed to running the entire inventory of hosts 24/7. Citrix offers the admins the flexibility to define these hours with a granularity of 30 minutes. For multi-session delivery groups, admins can set the minimum number of running hosts separately for each half-hour of the day. For pooled single session delivery groups, admins can set the minimum number of running hosts separately for each hour of the day. Admins can set the working hours individually for different days.
+After working hours are over (at 5 PM in our example) users start to log off. Admins want to shut down nused hosts. Around 6 PM Autoscale start powering off hosts and only the number of hosts required for off-peak use are left powered on. This results in drastically reducing the cloud consumption cost, as opposed to running the entire inventory of hosts 24/7. Citrix offers the admins the flexibility to define these hours with a granularity of 30 minutes. For multi-session delivery groups, admins can set the minimum number of running hosts separately for each half-hour of the day. For pooled single session delivery groups, admins can set the minimum number of running hosts separately for each hour of the day. Admins can set the working hours individually for different days.
 
 ### Load-based Scaling
 
-Load-based scaling lets admins create a capacity buffer of machines in case they are needed to host sessions. The capacity buffer is a safety net to support unexpected increases in usage without negatively impacting the user experience. Ascertaining the right value for the capacity buffer (as a percentage of the pool capacity), is based on usage and the understanding the load variance in the customer environment.
+Load-based scaling lets admins create a capacity buffer of machines in case they are needed to host sessions. The capacity buffer is a safety net to support unexpected increases in usage without negatively impacting the user experience. Ascertaining the right value for the capacity buffer (as a percentage of the pool capacity), is based on usage and the understanding the load variance in the customer environment. For a delivery group, if the total session capacity is 100, and the admin defines capacity buffer as 10% then during peak times, the number of machines needed to keep spare capacity above 10 sessions are powered on.
 
 As users log in, the available capacity of the delivery group depletes. When it falls below the capacity buffer value, another machine in the pool is started to bring the capacity buffer back above the defined value. On the other side, when users start logging off, the machines with the least load are put in drain mode. Once the machines are clear of sessions, the machines are shut down until the pool capacity reduces to the set capacity buffer value.
 
@@ -82,9 +84,13 @@ For example, in a burst to the cloud scenario, an organization would fully utili
 
 ### Hybrid deployment with on-premises and cloud based instances
 
+In a Hybrid deployment model, the on-premises resources are your primary zone while the cloud based pay-as-you-go instances make up the secondary zone.
+
 [![Autoscale - Zone Preference Hybrid Deployment](/en-us/tech-zone/learn/media/tech-briefs_autoscale_5-hybrid-zone-preference.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_5-hybrid-zone-preference.png)
 
 ### Cloud deployment with reserved and pay-as-you-go-instances
+
+In a cloud only deployment, the reserved instances would be the primary zone and the secondary zone contains the pay-as-you go instances that are consumed on a need basis.
 
 [![Autoscale - Zone Preference Cloud only Deployment](/en-us/tech-zone/learn/media/tech-briefs_autoscale_6-cloud-zone-preference.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_6-cloud-zone-preference.png)
 
@@ -102,6 +108,8 @@ Admins must use tag restriction along with Zone preference to let Autoscale know
 For more information, see [Zone Preference](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/zones.html#zone-preference) and [Tags](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/tags.html#manage-tags-and-tag-restrictions)
 
 ## Autoscale cost savings with Schedule-based scaling
+
+**Note:** Results vary based on usage and load characteristics of each orgnization. Observe these patterns in your own system to fine tune the Autoscale settings for your environment. The following are results based on our internal testing with LoginVSI loads.
 
 To measure the cloud cost savings with Autoscale, we need to determine the cost of running machines in the cloud. The sizes and cost (as of writing this paper) for pay as you go in West US of the VMs, as calculated using [Azure pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator) are as follows:
 
@@ -164,12 +172,12 @@ The following graph shows the difference in cost of running the machines, when b
 
 [![Autoscale - Scenario 1 Cost savings graph](/en-us/tech-zone/learn/media/tech-briefs_autoscale_11-scenario-1-cost-savings-graph.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_11-scenario-1-cost-savings-graph.png)
 
-From the table we can see that the cost of running the machine 100% of the time are over 350% the cost when the machines are power managed by Autoscale. An admin in this scenario can save around 70% of the compute cost by using Autoscale.
+From the table, the cost of machines powered on all the time is over 350% the cost when the machines are power managed by Autoscale. An admin in this scenario can save around 70% of the compute cost by using Autoscale.
 
 ### Scenario 2 - Horizontal scaling with defined peak & off peak hours. Off-peak hours – 10% active users
 
 *  User Count during Peak Time: 1,000 users
-*  User Count per Off Peak Time: 100 users (Different than scenario 1)
+*  **User Count per Off Peak Time: 100 users (Different than scenario 1)**
 *  User Count during Off Peak Weekend Time: 0 users
 *  Peak Logon Time: 9AM
 *  Peak Logoff Time: 5PM
@@ -199,7 +207,7 @@ The following graph shows the difference in cost of running the machines, when b
 
 [![Autoscale - Scenario 2 Cost savings graph](/en-us/tech-zone/learn/media/tech-briefs_autoscale_13-scenario-2-cost-savings-graph.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_13-scenario-2-cost-savings-graph.png)
 
-From the table, the cost of running the machines 100% of the time is over 300% the cost when the machines are power managed by Autoscale. An admin in this scenario can save around 68% of the compute cost by using Autoscale. Comparing the Autoscale cost per month with the previous scenario, the off peak cost per month for both the D_V2 VM sizes comes to about $545 while the larger F16 VMs account for $935 per month during off peak hours. The graph clearly shows that, for the same number of sessions, the smaller size machines are not only cost effective overall but also cost less when there is lower demand.
+From the table, the cost of machines powered on all the time is over 300% the cost when the machines are power managed by Autoscale. An admin in this scenario can save around 68% of the compute cost by using Autoscale. Comparing the Autoscale cost per month with the previous scenario, the off peak cost per month for both the D_V2 VM sizes comes to about $545 while the larger F16 VMs account for $935 per month during off peak hours. The graph clearly shows that, for the same number of sessions, the smaller size machines are not only cost effective overall but also cost less when there is lower demand.
 
 ### Scenario 3 - Vertical scaling with staggered peak hours. Off-peak hours – 10% active users
 
@@ -235,13 +243,11 @@ The following graph shows the difference in cost of running the machines, when b
 
 [![Autoscale - Scenario 3 Cost savings graph](/en-us/tech-zone/learn/media/tech-briefs_autoscale_15-scenario-3-cost-savings-graph.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_15-scenario-3-cost-savings-graph.png)
 
-From the table we can see that the cost of running the machines 100% of the time is over 300% the cost when the machines are power managed by Autoscale. For smallest machine, D3_V2 it’s at 384%. The smaller the machine size the higher number of them can be shut down to serve the same load, when compared to larger machines. Similarly, they are quicker to shut down and they are quicker in reaching zero sessions running on them, when users start to log off.
+From the table, the cost of machines powered on all the time is over 300% the cost when the machines are power managed by Autoscale. For smallest machine, D3_V2 it’s at 384%. The smaller the machine size the higher number of them can be shut down to serve the same load, when compared to larger machines. Similarly, they are quicker to shut down and they are quicker in reaching zero sessions running on them, when users start to log off.
 
 Taking into consideration all three scenarios, and looking at the cost savings graphs, it is evident that the smaller the machine size the more cost effective it is when Autoscale is enabled.
 
 **Important Note:** To allow Autoscale be able to shut down machines, users must disconnect or log off from them. Therefore, consider configuring disconnect and log off timers in the Autoscale settings for delivery groups, so the cost savings are higher.
-
-Results will vary based on usage and load characteristics of each orgnization. Observe these patterns in your own system to fine tune the Autoscale settings for your environment.
 
 ## Monitoring
 
@@ -264,15 +270,3 @@ Savings are calculated based on the cost per hour of the machines entered by the
 1.  Leverage zone preference and tagging to achieve more cost savings
 
 **Further reading**: Learn more about Autoscale in our [Technical documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html).
-
-Read [Nitin Mehta's blog](https://www.citrix.com/blogs/2019/06/03/simplifying-your-cloud-transformation-with-autoscale/) for more on the benefits of Autoscale.
-
-## Appendix
-
-Three types of delivery groups that Autoscale manages:
-
-1.  Static single session OS (or Static VDI) delivery group: delivery groups that only let users login to the specific machine assigned to the specific user. The capacity of a single session delivery group is equal to the number of machines in the catalogs that are associated with it.
-1.  Pooled single session OS (or Pooled VDI) delivery group: delivery groups that allow users to randomly login to the next available host that can provide a session to the user on OS that allows one user to log in at a time.
-1.  Pooled multi-session OS (or hosted shared) delivery group: delivery groups that allow users to randomly log into the machine that has available capacity to host a session for the user on OSes (for example Windows server operating systems or Windows 10 multi-session OS) that allow more than one user to log in simultaneously. The capacity of a host in a multi-session delivery group is the number of sessions that can run on the host simultaneously.
-
-See the different configuration UIs available for each of these delivery group types [here](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html#three-types-of-autoscale-user-interfaces).
