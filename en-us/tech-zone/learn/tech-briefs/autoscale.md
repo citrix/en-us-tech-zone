@@ -1,7 +1,7 @@
 ---
 layout: doc
 ---
-### Autoscale
+# Autoscale
 
 ## Contributors
 
