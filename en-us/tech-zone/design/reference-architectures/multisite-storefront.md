@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Albert Lee](mailto:albert.leej@Citrix.com)
 
-**Special thanks:** [Brendan Lin]() and [Sarah Steinhoff]()
+**Special thanks:** [Brendan Lin](mailto:brendan.lin@citrix.com) and [Sarah Steinhoff](sarah.steinhoff@citrix.com)
 
 ## Overview
 
@@ -16,7 +16,6 @@ Citrix Application Delivery Controller (ADC) Global Server Load Balancing (GSLB)
 ## Fundamental Design Factors
 
 The following includes fundamental design factors during an assessment and design phase that affects the formation of the design to cater for requirements. The list below highlights those considerations and provides background information and insight to support these.
-
 
 *  **Multi-site Geo-dispersed Data center deployment with ADC** -  Customer operates Citrix ADC appliances deployed across data center sites (i.e., data center 1 and data center 2). A Citrix ADC high availability pair deployment consisting of two appliances commonly shares the same physical peripheral hardware components placed within the same data center site. It is intended to protect against Citrix ADC services outages caused by Citrix ADC appliance or peripheral hardware component failures (i.e., network switches, power distribution units, etc..). As Citrix ADC appliances are deployed to two different sites (i.e., data center 1 and data center 2) not physically sharing peripheral hardware components (i.e., network switches, power distribution units, etc..), the design caters for a deployment that leverages Citrix ADC GSLB to provide for resilience and redundancy.
 These services can be accessed together as an integrated "workspace" or independently.
@@ -146,8 +145,6 @@ The Citrix ADC appliance provides the following GSLB methods:
 | **Source  IP Hash**      | A  GSLB virtual server configured to use the source IP hash method uses the  hashed value of the client IPv4 or IPv6 address to select a service. To  direct all requests from source IP addresses that belong to a particular  network to a specific destination server, you must mask the source IP  address. For IPv4 addresses, use the netmask parameter. For IPv6 addresses,  use the v6NetMaskLength parameter. |
 | **Custom  Load**         | Custom  load balancing is performed on server parameters such as CPU usage, memory,  and response time. When using the custom load method, the Citrix ADC  appliance usually selects a service that is not handling any active  transactions. If all of the services in the GSLB setup are handling active  transactions, the appliance selects the service with the smallest load. A special  type of monitor, known as a load monitor, calculates the load on each service  in the network. The load monitors do not mark the state of a service, but  they do take services out of the GSLB decision when those services are not  UP. |
 
- 
-
 For GSLB methods to work with a remote site, either MEP must be enabled, or explicit monitors must be bound to the remote services. If MEP is disabled, RTT, Least Connections, Least Bandwidth, Least Packets and Least Response Time methods default to Round Robin.
 
 #### Monitor GSLB services
@@ -242,4 +239,3 @@ Citrix Community Blog [StoreFront Remote Access Part 1: The Subnet IP Demystifie
 Citrix Community Blog [Gateway Integration with StoreFront Lessons Learned](https://www.citrix.com/blogs/2014/10/15/gateway-integration-with-storefront-lessons-learned/)
 
 Citrix Community Blog [StoreFront and Citrix Gateway GSLB considerations](https://www.citrix.com/blogs/2018/05/25/storefront-and-citrix-gateway-gslb-considerations/)
-
