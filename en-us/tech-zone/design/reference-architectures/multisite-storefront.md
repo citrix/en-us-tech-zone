@@ -136,7 +136,7 @@ GSLB methods are algorithms that the GSLB virtual server uses to select the best
 
 The Citrix ADC appliance provides the following GSLB methods:
 
-| **Method** | Description |
+| Method | Description |
 | ------------------------ | :----------------------------------------------------------- |
 | **Round Robin**           | When a GSLB virtual server is configured to use the round robin method, it continuously rotates a list of the services that are bound to it. When the virtual server receives a request, it assigns the connection to the first service in the list and then moves that service to the bottom of the list. |
 | **Least Response Time** | When the GSLB virtual server is configured to use the least response time method, it selects the service with the lowest value. Where, lowest value = current active connections X average response time. |
