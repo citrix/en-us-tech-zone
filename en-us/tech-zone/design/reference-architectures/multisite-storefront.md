@@ -195,7 +195,7 @@ Those specific GSLB entities, as described in the earlier chapter, are:
 
 **Public IP Addresses:** In summary, for public GSLB, if MEP and ADNS are listening on the same IP, then you need one new public IP that is NAT’d to the DMZ IP that is used for ADNS and MEP (GSLB Site IP).
 
-*  Each datacenter has a separate public IP.
+*  Each data center has a separate public IP.
 *  DNS is delegated to all public ADNS IP listeners.
 
 #### Other Dependencies
@@ -212,7 +212,7 @@ The goal of this reference architecture is to assist you with planning your own 
 
 ### Citrix Product Documentation References
 
-The deliverable provides guidelines for the implementation as well as configuration references. However, it does not provide step-by-step instructions on how to install or maintain the components discussed. Therefore, Citrix Consulting recommends Client design and operations teams involved in the design and deployment to review the following documents, articles, and guides prior to implementing the environment provided for production. These documents, articles, guides, and more are available from the online Citrix Knowledge Center, online Citrix Product Documentation, or online Citrix Community.
+The deliverable provides guidelines for the implementation and configuration references. However, it does not provide step-by-step instructions on how to install or maintain the components discussed. Therefore, Citrix Consulting recommends Client design and operations teams involved in the design and deployment to review the following documents, articles, and guides prior to implementing the environment provided for production. These documents, articles, guides, and more are available from the online Citrix Knowledge Center, online Citrix Product Documentation, or online Citrix Community.
 
 Citrix Online Product Documentation [Citrix ADC 11](http://support.citrix.com/proddocs/topic/netscaler/ns-gen-netscaler11-wrapper-con.html)
 
