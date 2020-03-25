@@ -2,7 +2,6 @@
 layout: doc
 description: Learn about the deployment architecture and how Citrix SD-WAN WANOP helps to optimize Citrix Content Collaboration for customer-managed storage zones including relevant test data.
 ---
-
 # Citrix SD-WAN WANOP for Content Collaboration (Customer-Managed on-premises Storage Zones)
 
 ## Contributors
@@ -93,7 +92,7 @@ Citrix SD-WAN WANOP appliances accelerate the traffic over WAN links. To acceler
 
 A single Citrix SD-WAN WANOP appliance can communicate with any number of partner sites. Point-to-point hub-and-spoke and mesh networks are all supported. Citrix SD-WAN WANOP appliances can be added to the network at will because their auto-detection and auto-negotiation features ensure that a new appliance on the network is immediately detected by other appliances, and acceleration begins at once.
 
-Refer to the [Product documentation](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/about-sd-wan-wanop.html) for more information on WANOP Architecture and its features.
+Refer to the [Product documentation](/en-us/citrix-sd-wan-wanop/11/about-sd-wan-wanop.html) for more information on WANOP Architecture and its features.
 
 The following diagram represents the Citrix SD-WAN WANOP deployment architecture on a high level:
 
@@ -112,7 +111,7 @@ The most basic deployment criteria are:
 
 When these criteria are met, acceleration is automatic.
 
-Refer to the [Product Documentation](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/cb-deployment-modes-con.html) and the [Supported Features matrix](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/get-started-with-sd-wan-wanop/supported-mode-and-feature-matrix.html) for more details.
+Refer to the [Product Documentation](/en-us/citrix-sd-wan-wanop/11/cb-deployment-modes-con.html) and the [Supported Features matrix](/en-us/citrix-sd-wan-wanop/11/get-started-with-sd-wan-wanop/supported-mode-and-feature-matrix.html) for more details.
 
 ## Citrix SD-WAN WANOP Features
 
@@ -263,18 +262,18 @@ Goal of this reference architecture is to assist you with planning your own impl
 
 ## References
 
-[Reference Architecture on Customer-Managed Storage Zone](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html)
+[Reference Architecture on Customer-Managed Storage Zone](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html)
 
-[Storage Zone Controller Architecture](https://docs.citrix.com/en-us/storage-zones-controller/5-0/architecture-overview.html)
+[Storage Zone Controller Architecture](/en-us/storage-zones-controller/5-0/architecture-overview.html)
 
-[Installation Process for Storage Zone Controller](https://docs.citrix.com/en-us/storage-zones-controller/5-0/install.html)
+[Installation Process for Storage Zone Controller](/en-us/storage-zones-controller/5-0/install.html)
 
-[Citrix Files Deployment Guide](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html)
+[Citrix Files Deployment Guide](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html)
 
-[Citrix Product Documentation](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/about-sd-wan-wanop.html)
+[Citrix Product Documentation](/en-us/citrix-sd-wan-wanop/11/about-sd-wan-wanop.html)
 
-[Deployment Modes for Citrix SD-WAN WANOP](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/cb-deployment-modes-con.html)
+[Deployment Modes for Citrix SD-WAN WANOP](/en-us/citrix-sd-wan-wanop/11/cb-deployment-modes-con.html)
 
-[FAQ for SD-WAN WANOP](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/faqs.html)
+[FAQ for SD-WAN WANOP](/en-us/citrix-sd-wan-wanop/11/faqs.html)
 
-[SD-WAN WANOP Supported Mode and Feature Matrix](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/get-started-with-sd-wan-wanop/supported-mode-and-feature-matrix.html)
+[SD-WAN WANOP Supported Mode and Feature Matrix](/en-us/citrix-sd-wan-wanop/11/get-started-with-sd-wan-wanop/supported-mode-and-feature-matrix.html)
