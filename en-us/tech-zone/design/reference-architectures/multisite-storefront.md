@@ -9,10 +9,6 @@ layout: doc
 
 **Special thanks:** [Martin Zugec](https://twitter.com/MartinZugec)
 
-## Audience
-
-This document is intended for IT decision-makers, consultants, solution integrators, and partners who are seeking to deploy or expand their existing Citrix Apps & Desktops deployment solutions with Citrix Cloud.
-
 ## Overview
 
 Citrix Application Delivery Controller (ADC) Global Server Load Balancing (GSLB) is a DNS-based solution which describes a range of technologies to distribute resources around multi-site data center locations. This document describes the deployment topology and configuration architecture needed to set up GSLB between multi-sites where Citrix Virtual Apps and Desktops StoreFront servers are load-balanced by Citrix Gateway and Citrix ADC.
