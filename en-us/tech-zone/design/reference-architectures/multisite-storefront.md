@@ -31,8 +31,6 @@ These services can be accessed together as an integrated "workspace" or independ
 
 ### Global Server Load Balancing
 
-Citrix service commitment is to maintain at least 99.5% monthly uptime. The status of the platform and its services are accessible at [https://status.cloud.com](https://status.cloud.com). Citrix Cloud-hosted services are managed by Citrix experts and are updated continuously, so IT doesn’t have to worry about large-scale platform upgrades resulting in a secure, evergreen environment that saves time and reduces costs. With Citrix Cloud, customers can move to a more predictable subscription cost of opex rather than an often unpredictable and potentially expensive CAPEX model. Citrix Workspace provides an integrated experience to access applications and content from any device, anywhere, at any time. Users benefit from a seamless, engaging work experience regardless of the type of app, device, network, or location they connect from.
-
 #### GSLB Feature Overview
 
 With ordinary DNS, when a client sends a domain name system (DNS) request, it receives a list of IP addresses of the domain or service. Generally, the client chooses the first IP address in the list and initiates a connection with that server. The DNS server uses a technique called DNS round robin to rotate through the IPs on the list. It sends the first IP address to the end of the list and promotes the others after it responds to each DNS request. This technique ensures equal distribution of the load, but it does not support disaster recovery, load balancing based on load or proximity of servers, or persistency.
