@@ -105,7 +105,7 @@ Admins must use tag restriction along with Zone preference to let Autoscale know
 
 [![Autoscale - Tagging](/en-us/tech-zone/learn/media/tech-briefs_autoscale_8-tags.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_8-tags.png)
 
-For more information, see [Zone Preference](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/zones.html#zone-preference) and [Tags](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/tags.html#manage-tags-and-tag-restrictions)
+For more information, see [Zone Preference](/en-us/citrix-virtual-apps-desktops/manage-deployment/zones.html#zone-preference) and [Tags](/en-us/citrix-virtual-apps-desktops/manage-deployment/tags.html#manage-tags-and-tag-restrictions)
 
 ## Autoscale cost savings with Schedule-based scaling
 
@@ -269,4 +269,4 @@ Savings are calculated based on the cost per hour of the machines entered by the
 1.  Using smaller size VMs results in better cost savings under horizontal load balancing scenario
 1.  Leverage zone preference and tagging to achieve more cost savings
 
-**Further reading**: Learn more about Autoscale in our [Technical documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html).
+**Further reading**: Learn more about Autoscale in our [Technical documentation](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html).
