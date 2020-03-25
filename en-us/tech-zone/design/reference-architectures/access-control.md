@@ -355,7 +355,7 @@ The preceding hybrid configurations would enable an organization to apply the Ac
 
 When the user authenticates with the Citrix environment, the delivery controller provides a list of resources available to that user which would include SaaS and Web applications.
 
-To learn more about data flow model when SaaS and web apps are accessed from Citrix StoreFront refer to the [link](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html).
+To learn more about data flow model when SaaS and web apps are accessed from Citrix StoreFront refer to the [link](/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html).
 
 For SaaS applications, the delivery controller sends a request to Citrix Gateway Service. The Gateway service provides insertion tokens for that particular user access to the selected SaaS applications. SaaS application verifies that token with gateway service to complete the authentication process.
 
@@ -367,11 +367,11 @@ Citrix administrators has to synchronize applications that end user account is s
 
 After installing the tool administrator has to click Synchronize SaaS Apps so that any integrated applications that exist on the machine, the utility deletes them and installs application with the Access Control policies.
 
-To learn more about the installation of Access Control Sync for StoreFront tool refer the [link](https://docs.citrix.com/en-us/citrix-cloud/advanced-concepts/access-control-saas-web-apps.html#synchronize-saas-and-web-applications)
+To learn more about the installation of Access Control Sync for StoreFront tool refer the [link](/en-us/citrix-cloud/advanced-concepts/access-control-saas-web-apps.html#synchronize-saas-and-web-applications)
 
 The hybrid configuration not only enhances user experience but also provides security capabilities against clipboard access, printing, downloads, navigation, and displaying the watermark. The hybrid solution is ideal for customers looking to improve security posture without moving StoreFront to the Cloud. Now with Access Control capabilities, the entire app session from any device is protected. Internal web applications can be securely accessed without a VPN.
 
-Reference: [Access Control for SaaS and Web apps](https://docs.citrix.com/en-us/citrix-cloud/advanced-concepts/access-control-saas-web-apps.html)
+Reference: [Access Control for SaaS and Web apps](/en-us/citrix-cloud/advanced-concepts/access-control-saas-web-apps.html)
 
 ## Citrix Access Control Solution for Enterprise web apps
 
@@ -389,7 +389,7 @@ The user launches the Citrix Workspace app and connects with Citrix Workspace us
 
 If there is user uses a local browser, authentication happens through the Active Directory service, and the local browser makes a secure connection with Secure Browser service. Enhanced security policies, through the Access Control service. A secure outbound channel established between Gateway Connector and Citrix Gateway service. User credentials are negotiated and established single sign-on behalf of the user. Now end-to-end connection found via the Secure browser for users.
 
-Reference: [Support for Enterprise web apps](https://docs.citrix.com/en-us/citrix-gateway-service/support-web-apps.html)
+Reference: [Support for Enterprise web apps](/en-us/citrix-gateway-service/support-web-apps.html)
 
 ## Citrix Access Control Single sign-on for web apps
 
@@ -444,7 +444,7 @@ To enable Kerberos single sign-on functionality, administrator configure Gateway
 
 Users try to access malicious websites that cause severe damage. Also, they violate enterprise regulation and policies. To overcome this problem, adopting Citrix Access Control that filters risky websites that pose a risk to an organization. Along with, creates a watermark content throughout the session that includes the user’s name and IP address.
 
-Reference: [Support for Enterprise web apps](https://docs.citrix.com/en-us/citrix-gateway-service/support-web-apps.html)
+Reference: [Support for Enterprise web apps](/en-us/citrix-gateway-service/support-web-apps.html)
 
 ## Citrix Access Control App Protection policies
 

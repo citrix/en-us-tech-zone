@@ -2,7 +2,6 @@
 layout: doc
 description: Learn about the different decision factors involved in choosing the right provisioning model for image management. Learn more about Citrix Provisioning and Machine Creation Services solutions.
 ---
-
 # Choosing the Provisioning Model for Image Management
 
 ## Contributors

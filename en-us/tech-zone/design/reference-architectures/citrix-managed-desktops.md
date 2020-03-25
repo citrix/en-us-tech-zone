@@ -279,7 +279,7 @@ The preceding diagram represents the Citrix SD-WAN architecture along with the C
 
 ### Overview of Citrix SD-WAN Architecture
 
-Citrix SD-WAN provides the flexibility that it can be deployed in several deployment modes and to integrate the appliances, both physical and virtual, into the customer’s existing networking design as well as with Cloud deployments. Refer to the [Citrix Tech Zone link](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/sdwan.html) for the SD-WAN overview.
+Citrix SD-WAN provides the flexibility that it can be deployed in several deployment modes and to integrate the appliances, both physical and virtual, into the customer’s existing networking design as well as with Cloud deployments. Refer to the [Citrix Tech Zone link](/en-us/tech-zone/design/reference-architectures/sdwan.html) for the SD-WAN overview.
 
 The solution demonstrates that the SD-WAN fits well with a customer’s existing network design and how it eases the integration process in the Azure platform for Citrix Managed Desktops. The administrator deploys a Citrix SD-WAN VPX (virtual appliance) that utilizes the internet path to establish the network connectivity from the Azure environment to a data center and branch office networks.
 

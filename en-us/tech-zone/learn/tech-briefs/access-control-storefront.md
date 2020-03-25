@@ -46,4 +46,4 @@ Integrating Access Control with an on-premises deployment of StoreFront includes
 
 ## Additional Details
 
-[Access Control for SaaS Apps](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/access-control.html)
+[Access Control for SaaS Apps](/en-us/tech-zone/learn/tech-briefs/access-control.html)
