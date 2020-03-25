@@ -15,14 +15,13 @@ Citrix Application Delivery Controller (ADC) Global Server Load Balancing (GSLB)
 
 ## Fundamental Design Factors
 
-The following includes fundamental design factors during an assessment and design phase that affects the formation of the design to cater for requirements. The list below highlights those considerations and provides background information and insight to support these.
+The following includes fundamental design factors during an assessment and design phase that affects the formation of the design to cater for requirements. It highlights those considerations and provides background information and insight to support these.
 
-*  **Multi-site Geo-dispersed Data center deployment with ADC** -  Customer operates Citrix ADC appliances deployed across data center sites (i.e., data center 1 and data center 2). A Citrix ADC high availability pair deployment consisting of two appliances commonly shares the same physical peripheral hardware components placed within the same data center site. It is intended to protect against Citrix ADC services outages caused by Citrix ADC appliance or peripheral hardware component failures (i.e., network switches, power distribution units, etc.). As Citrix ADC appliances are deployed to two different sites (i.e., data center 1 and data center 2) not physically sharing peripheral hardware components (i.e., network switches, power distribution units, etc.), the design caters for a deployment that leverages Citrix ADC GSLB to provide for resilience and redundancy.
-These services can be accessed together as an integrated "workspace" or independently.
+*  **Multi-site Geo-dispersed Data center deployment with ADC** -  Customer operates Citrix ADC appliances deployed across data center sites (that is, data center 1 and data center 2). A Citrix ADC high availability pair deployment consisting of two appliances commonly shares physical peripheral hardware components placed within the same data center site. It is intended to protect against Citrix ADC services outages caused by Citrix ADC appliance or peripheral hardware component failures (that is, network switches, power distribution units, etc.). As Citrix ADC appliances are deployed to two different sites (that is, data center 1 and data center 2) not physically sharing peripheral hardware components (that is, network switches, power distribution units, etc.), the design caters for a deployment that uses Citrix ADC GSLB to provide for resilience and redundancy.
 
-*  **Business continuity** - For component resilience and redundancy, business requirements exist for the design to cater for single systems failure within and across data center sites without affecting services availability and performance. A disaster may involve a single data center failure or failure of individual services within a single data center site resulting in failing over services and client connections to another data center site. Citrix ADC GSLB will be used to cater to network traffic distribution, high availability, and failover services across both data center 1 and data center 2 sites.
+*  **Business continuity** - For component resilience and redundancy, business requirements exist for the design to cater for single systems failure within and across data center sites without affecting services availability and performance. A disaster may involve a single data center failure or failure of individual services within a single data center site resulting in failing over services and client connections to another data center site. Citrix ADC GSLB is used to cater to network traffic distribution, high availability, and failover services across both data center 1 and data center 2 sites.
 
-*  **Network traffic flow efficiency** - The design incorporates network traffic flows involving multiple serial hops to access individual services within the customer infrastructure. To ensure network traffic flow efficiency and eliminate routing inefficiency, network traffic flows are designed to remain within each local data center site. As such, the design caters to primary traffic flows to leverage back-end systems within the same data center site, and secondary (backup) traffic flows leverage back-end systems within the opposite data center site.
+*  **Network traffic flow efficiency** - The design incorporates network traffic flows involving multiple serial hops to access individual services within the customer infrastructure. To ensure network traffic flow efficiency and eliminate routing inefficiency, network traffic flows are designed to remain within each local data center site. As such, the design caters to primary traffic flows to use back-end systems within the same data center site, and secondary (backup) traffic flows use back-end systems within the opposite data center site.
 
 ### Global Server Load Balancing
 
@@ -30,14 +29,14 @@ These services can be accessed together as an integrated "workspace" or independ
 
 With ordinary DNS, when a client sends a domain name system (DNS) request, it receives a list of IP addresses of the domain or service. Generally, the client chooses the first IP address in the list and initiates a connection with that server. The DNS server uses a technique called DNS round robin to rotate through the IPs on the list. It sends the first IP address to the end of the list and promotes the others after it responds to each DNS request. This technique ensures equal distribution of the load, but it does not support disaster recovery, load balancing based on load or proximity of servers, or persistency.
 
-Fundamentally, GSLB based on DNS works the same way as standard DNS, with the exception that more logic is in place to determine what addresses to return.  The logic in most situations is based on:
+Fundamentally, GSLB based on DNS works the same way as standard DNS, with the exception that more logic is in place to determine what addresses to return. The logic in most situations is based on:
 
 *  The load and capacity of resources on the network
 *  The IP address or interface the query came from
 *  Previous requests made from the same IP or network
 *  The health state of resources
 
-In order to ensure the various pieces of information are in place, the ADC system makes use of several ways to determine state so that proper decision making can occur:
+To ensure the various pieces of information are in place, the ADC system makes use of several ways to determine state so that proper decision making can occur:
 
 *  Via explicit monitors that check for availability of remote resources by accessing the resource itself
 *  Via Metric Exchange Protocol (MEP), which is a channel of communication between distinct NetScaler devices, and provides a mechanism for one ADC to provide state information about resources to another ADC
