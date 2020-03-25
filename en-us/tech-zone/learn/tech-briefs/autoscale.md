@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Explore the various ways Citrix enables admins to save on cost when hosting workloads in the cloud. Learn about different load balancing algorithms ans scaling methodologies and how much they can save in an environment based on our tests.
 ---
 # Autoscale
 
