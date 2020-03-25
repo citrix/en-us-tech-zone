@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Albert Lee](mailto:albert.leej@Citrix.com)
 
-**Special thanks:** [](https://twitter.com/zzzzzzz)
+**Special thanks:** [Brendan Lin](),[Sarah Steinhoff]()
 
 ## Overview
 
