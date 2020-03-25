@@ -109,7 +109,7 @@ A GSLB service is usually a representation of a load balancing or content switch
 
 A GSLB virtual server has one or more GSLB services bound to it, and load balances traffic among those services. It evaluates the configured GSLB methods (algorithms) to select the appropriate service to which to send a client request. Because the GSLB services can represent either local or remote servers, selecting the optimal GSLB service for a request has the effect of selecting the data center that should serve the client request.
 
-The domain for which global server load balancing is configured must be bound to the GSLB virtual server, because one or more services bound to the virtual server will serve requests made for that domain.
+The domain for which global server load balancing is configured must be bound to the GSLB virtual server, because one or more services bound to the virtual server serve requests made for that domain.
 
 Unlike other virtual servers configured on a Citrix ADC appliance, a GSLB virtual server does not have its own virtual IP address (VIP).
 
@@ -145,7 +145,7 @@ The Citrix ADC appliance provides the following GSLB methods:
 | **Source IP Hash**      | A GSLB virtual server configured to use the source IP hash method uses the hashed value of the client IPv4 or IPv6 address to select a service. To direct all requests from source IP addresses that belong to a particular network to a specific destination server, you must mask the source IP address. For IPv4 addresses, use the netmask parameter. For IPv6 addresses, use the v6NetMaskLength parameter. |
 | **Custom Load**         | Custom load balancing is performed on server parameters such as CPU usage, memory, and response time. When using the custom load method, the Citrix ADC appliance usually selects a service that is not handling any active  transactions. If all of the services in the GSLB setup are handling active transactions, the appliance selects the service with the smallest load. A special type of monitor, known as a load monitor, calculates the load on each service in the network. The load monitors do not mark the state of a service, but they do take services out of the GSLB decision when those services are not UP. |
 
-For GSLB methods to work with a remote site, either MEP must be enabled, or explicit monitors must be bound to the remote services. If MEP is disabled, RTT, Least Connections, Least Bandwidth, Least Packets and Least Response Time methods default to Round Robin.
+For GSLB methods to work with a remote site, either MEP must be enabled, or explicit monitors must be bound to the remote services. If MEP is disabled, RTT, Least Connections, Least Bandwidth, Least Packets, and Least Response Time methods default to Round Robin.
 
 #### Monitor GSLB services
 
@@ -171,9 +171,9 @@ The following details the Citrix ADC instances network address configurations in
 
 [Figure-4] DNS and GSLB workflow
 
-Figure 4 describes a DNS workflow from the client's application access request via DNS, which will be handled by GSLB entities. As a DNS request comes into the global DNS server, which delegates the request sub-zone to each ADNS IP as sub-zone name servers. Upon reception of a DNS request by an ADNS service, the appliance checks for a GSLB virtual server bound to that domain. If a GSLB virtual server is bound to the domain, it is queried for the best IP address to which to send the DNS response.
+Figure 4 describes a DNS workflow from the client's application access request via DNS, which will be handled by GSLB entities. As a DNS request comes into the global DNS server, which delegates the request subzone to each ADNS IP as subzone name servers. Upon reception of a DNS request by an ADNS service, the appliance checks for a GSLB virtual server bound to that domain. If a GSLB virtual server is bound to the domain, it is queried for the best IP address to which to send the DNS response.
 
-Figure 5 diagram illustrates its actual deployment architecture topology. It lists all necessary interfaces associated with specifically designated ADC IP addresses accordingly (i.e., NSIP, SNIP/ADNS IP, Gateway IP, Load Balance IP) overlays with GSLB topology and services.
+Figure 5 diagram illustrates its actual deployment architecture topology. It lists all necessary interfaces associated with designated ADC IP addresses accordingly (that is, NSIP, SNIP/ADNS IP, Gateway IP, Load Balance IP) overlays with GSLB topology and services.
 
 [![Citrix-ADC-GSLB-Image-5](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_005.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_005.png)
 
@@ -186,7 +186,7 @@ Those specific GSLB entities, as described in the earlier chapter, are:
 *  The ADNS listener IP is typically an existing SNIP on the ADC appliance.
 *  For external DNS, create a public IP for the ADNS Listener IP, and open UDP 53 and TCP 53, so Internet-based DNS servers can access it.
 
-**GSLB Site IP / MEP listener IP:** An ADC IP that will be used for ADC-to-ADC GSLB communication. The communication, MEP transmits the following between GSLB-enabled ADC pairs: load balancing metrics, proximity, persistence, and monitoring.
+**GSLB Site IP / MEP listener IP:** An ADC IP that is used for ADC-to-ADC GSLB communication. The communication, MEP transmits the following between GSLB-enabled ADC pairs: load balancing metrics, proximity, persistence, and monitoring.
 
 *  GSLB Sites – On ADC, you create GSLB Sites. GSLB Sites are the endpoints for the MEP communication. Each ADC pair is configured with the MEP endpoints for the local appliance pair, and all remote appliance pairs.
 *  TCP Ports – MEP uses port TCP 3009 or TCP 3011 between the ADC pairs. TCP 3009 is encrypted.
@@ -202,8 +202,8 @@ Those specific GSLB entities, as described in the earlier chapter, are:
 
 The infrastructure for the solution provides a set of common components used by the entire solution.
 
-*  Network Time Services - Most components in the overall solution will require integration with Network Time Services (NTP). The following table details the key NTP settings within Client infrastructure to be used with the Citrix Delivery Network deployment.
-*  Domain Name Services - Most components in the overall solution will require integration with Domain Name Services (DNS). The following table details key DNS infrastructure within the Customer network to be leveraged by the Citrix Delivery Network deployment
+*  Network Time Services - Most components in the overall solution require integration with Network Time Services (NTP). The following table details the key NTP settings within Client infrastructure to be used with the Citrix Delivery Network deployment.
+*  Domain Name Services - Most components in the overall solution require integration with Domain Name Services (DNS). The following table details key DNS infrastructure within the Customer network to be used by the Citrix Delivery Network deployment
 *  Security and Authentication - Secure sessions are handled by Citrix Gateway. The following table details key decisions pertaining to SAN certificates for use in each production, acceptance, and test infrastructure.
 
 ### Sources
@@ -228,7 +228,7 @@ Citrix Knowledgebase Article [CTX122619](http://support.citrix.com/article/CTX12
 
 Citrix Knowledgebase Article [CTX121713](http://support.citrix.com/article/CTX121713) – How to Delegate Subdomains in a Microsoft DNS or a BIND for Global Server Load Balancing on a Citrix ADC Appliance
 
-Citrix Knowledgebase Article [CTX110488](http://support.citrix.com/article/CTX110488) – Delegating DNS Sub-domains to the GSLB Setup of the Citrix ADC Appliances
+Citrix Knowledgebase Article [CTX110488](http://support.citrix.com/article/CTX110488) – Delegating DNS Subdomains to the GSLB Setup of the Citrix ADC Appliances
 
 Citrix Online Product Documentation [Load Balancing](http://support.citrix.com/proddocs/topic/netscaler-traffic-management-11-map/ns-lb-wrapper-con-10.html)
 
