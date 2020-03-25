@@ -17,12 +17,12 @@ Citrix Application Delivery Controller (ADC) Global Server Load Balancing (GSLB)
 
 The following includes fundamental design factors during an assessment and design phase that affects the formation of the design to cater for requirements. The list below highlights those considerations and provides background information and insight to support these.
 
-*  **Multi-site Geo-dispersed Data center deployment with ADC** -  Customer operates Citrix ADC appliances deployed across data center sites (i.e., data center 1 and data center 2). A Citrix ADC high availability pair deployment consisting of two appliances commonly shares the same physical peripheral hardware components placed within the same data center site. It is intended to protect against Citrix ADC services outages caused by Citrix ADC appliance or peripheral hardware component failures (i.e., network switches, power distribution units, etc..). As Citrix ADC appliances are deployed to two different sites (i.e., data center 1 and data center 2) not physically sharing peripheral hardware components (i.e., network switches, power distribution units, etc..), the design caters for a deployment that leverages Citrix ADC GSLB to provide for resilience and redundancy.
+*  **Multi-site Geo-dispersed Data center deployment with ADC** -  Customer operates Citrix ADC appliances deployed across data center sites (i.e., data center 1 and data center 2). A Citrix ADC high availability pair deployment consisting of two appliances commonly shares the same physical peripheral hardware components placed within the same data center site. It is intended to protect against Citrix ADC services outages caused by Citrix ADC appliance or peripheral hardware component failures (i.e., network switches, power distribution units, etc.). As Citrix ADC appliances are deployed to two different sites (i.e., data center 1 and data center 2) not physically sharing peripheral hardware components (i.e., network switches, power distribution units, etc.), the design caters for a deployment that leverages Citrix ADC GSLB to provide for resilience and redundancy.
 These services can be accessed together as an integrated "workspace" or independently.
 
 *  **Business continuity** - For component resilience and redundancy, business requirements exist for the design to cater for single systems failure within and across data center sites without affecting services availability and performance. A disaster may involve a single data center failure or failure of individual services within a single data center site resulting in failing over services and client connections to another data center site. Citrix ADC GSLB will be used to cater to network traffic distribution, high availability, and failover services across both data center 1 and data center 2 sites.
 
-*  **Network traffic flow efficiency** - The design incorporates network traffic flows involving multiple serial hops to access individual services within the customer infrastructure. To ensure network traffic flow efficiency and eliminate routing inefficiency, network traffic flows are designed to remain within each local data center site. As such, the design caters to primary traffic flows to leverage backend systems within the same data center site, and secondary (backup) traffic flows leverage backend systems within the opposite data center site.
+*  **Network traffic flow efficiency** - The design incorporates network traffic flows involving multiple serial hops to access individual services within the customer infrastructure. To ensure network traffic flow efficiency and eliminate routing inefficiency, network traffic flows are designed to remain within each local data center site. As such, the design caters to primary traffic flows to leverage back-end systems within the same data center site, and secondary (backup) traffic flows leverage back-end systems within the opposite data center site.
 
 ### Global Server Load Balancing
 
@@ -41,7 +41,7 @@ In order to ensure the various pieces of information are in place, the ADC syste
 
 *  Via explicit monitors that check for availability of remote resources by accessing the resource itself
 *  Via Metric Exchange Protocol (MEP), which is a channel of communication between distinct NetScaler devices, and provides a mechanism for one ADC to provide state information about resources to another ADC
-*  Through SNMP based load monitors, which poll a remote resource for statistics such as CPU load, network load, etc.
+*  Through SNMP based load monitors, which poll a remote resource for statistics such as CPU load, network load, and so on
 
 [![Citrix-ADC-GSLB-Image-1](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_001.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_001.png)
 
@@ -53,13 +53,13 @@ When you configure GSLB on ADC appliances and enable MEP, the DNS infrastructure
 
 ##### Deployment Types
 
-Citrix ADC appliances configured for GSLB provide for disaster recovery and ensure the continuous availability of applications by protecting against points of failure in a wide area network (WAN). GSLB can balance the load across data centers by directing client requests to the closest or best-performing data center, or to surviving data centers in the event of an outage.
+Citrix ADC appliances configured for GSLB provide for disaster recovery and ensure the continuous availability of applications by protecting against points of failure in a WAN. GSLB can balance the load across data centers by directing client requests to the closest or best-performing data center, or to surviving data centers in the event of an outage.
 
 The following are some of the typical GSLB deployment types:
 
 Active-Active site deployment - An active-active site consists of multiple active data centers. Client requests are load balanced across active data centers. This deployment type can be used when you require global distribution of traffic in a distributed environment.
 
-All the sites in an active-active deployment are active, and all the services for a particular application/domain are bound to the same GSLB vserver. Sites exchange metrics through the Metrics Exchange Protocol (MEP). Site metrics exchanged between the sites include the status of each load balancing and content switching virtual server, the current number of connections, current packet rate, and current bandwidth usage. The Citrix ADC appliance needs this information to perform load balancing across the sites.
+All the sites in an active-active deployment are active, and all the services for a particular application/domain are bound to the same GSLB virtual server. Sites exchange metrics through the Metrics Exchange Protocol (MEP). Site metrics exchanged between the sites include the status of each load balancing and content switching virtual server, the current number of connections, current packet rate, and current bandwidth usage. The Citrix ADC appliance needs this information to perform load balancing across the sites.
 
 An active-active deployment can include a maximum of 32 GSLB sites, because MEP cannot synchronize more than 32 sites. No backup sites are configured in this deployment type.
 
