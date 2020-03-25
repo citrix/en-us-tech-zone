@@ -48,25 +48,25 @@ Citrix Cloud allows Citrix Service Providers to create multiple types of workspa
 
 [![CSP-Image-001](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_001.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_001.png)
 
-[More information Citrix Cloud](https://docs.citrix.com/en-us/citrix-cloud.html )
+[More information Citrix Cloud](/en-us/citrix-cloud.html )
 
 ### Citrix Workspace
 
 Is a unified secure cloud platform managed by Citrix. Where hosting providers can securely deliver applications and data while maintaining end user experience and productivity, in an increasingly mobile work style.
 
-[More information on Citrix Workspace](https://docs.citrix.com/en-us/citrix-workspace.html )
+[More information on Citrix Workspace](/en-us/citrix-workspace.html )
 
 ### Citrix Virtual Apps and Desktops service
 
 Nearly 80% of our Service Providers offer application and desktops solution to their customers. Traditionally these offerings are hosted and managed on-premises. The Citrix Virtual Apps and Desktops service Access and Control Layers, hosted and managed by Citrix. Providing the flexibility for Service Providers to focus on hosting and managing workloads from their chosen Public cloud or maintained on-premises.
 
-[More information on the Citrix Virtual Apps and Desktops Service](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/setup-for-citrix-service-providers.html )
+[More information on the Citrix Virtual Apps and Desktops Service](/en-us/citrix-virtual-apps-desktops-service/setup-for-citrix-service-providers.html )
 
 ### Citrix Cloud Connectors
 
 The Cloud Connector is a Citrix component that authenticates and encrypts all communications between Citrix Cloud and Service Provider managed resource location. All communication between Citrix Cloud and the Resource Location environment is encrypted, negating the need for ingress firewall rules.
 
-[More information on Citrix Cloud Connectors](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/cloud-connectors-install.html )
+[More information on Citrix Cloud Connectors](/en-us/citrix-virtual-apps-desktops-service/install-configure/cloud-connectors-install.html )
 
 ## Architecture Models for Citrix Service Providers
 
@@ -80,7 +80,7 @@ The traditional deployment in a hosting environment for Citrix Virtual Apps and 
 
 ### Security and Isolation
 
-The Citrix Virtual Apps and Desktops Service Architecture consists of layers that connect together to create a complete end-to-end solution for service providers. For general conceptual architecture, and to understand how all layers flow together, refer to [Citrix Tech Zone](https://docs.citrix.com/en-us/tech-zone.html)
+The Citrix Virtual Apps and Desktops Service Architecture consists of layers that connect together to create a complete end-to-end solution for service providers. For general conceptual architecture, and to understand how all layers flow together, refer to [Citrix Tech Zone](/en-us/tech-zone.html)
 
 [![CSP-Image-003](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_003.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_003.png)
 
@@ -166,7 +166,7 @@ In summary, Customers share CSP’s Citrix Virtual Apps and Desktops service und
 
 Some large enterprise customers need the ability to have a private Workspace managed by their Citrix Service Provider. For complex applications. With strict security and compliance requirements, the private workspace does not have any shared components with other customers of the same service provider. The service provider invited by the customer to manage the Cloud environment. This isolation allows for flexibility, and control for the customer and service provider. The management and control from the Citrix Service Providers perspective are duplicated with the complete service instance being dedicated to the customer.
 
-The design and deployment for this mode is the same as standalone enterprise accounts on Citrix Cloud. Except the service provider is invited to connect and administer these accounts, the deployment model before multitenant support became available at the end of 2019. The detailed design, deployment, and best practices of the single tenant private workspace model can be found on [Citrix Tech Zone](https://docs.citrix.com/en-us/tech-zone.html).
+The design and deployment for this mode is the same as standalone enterprise accounts on Citrix Cloud. Except the service provider is invited to connect and administer these accounts, the deployment model before multitenant support became available at the end of 2019. The detailed design, deployment, and best practices of the single tenant private workspace model can be found on [Citrix Tech Zone](/en-us/tech-zone.html).
 
 ### Combination of Different Architecture Models
 
@@ -260,7 +260,7 @@ The automated provisioning for GCP, working in conjunction with Citrix Autoscale
 
 For details on setting up a Citrix Virtual Apps and Desktops service resource location on GCP, see:
 
-[Google Cloud](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html)
+[Google Cloud](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html)
 
 ## Deployment Steps
 
@@ -282,7 +282,7 @@ On the Customer Dashboard, displayed is a list of the Citrix Service Provider’
 
 Select Add and Continue
 
-[![CSP-Image-011](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_011.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvadse_011.png)
+[![CSP-Image-011](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_011.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_011.png)
 
 Complete the onboarding information for the Customer, make sure the email address used here is unique and has not been used for any other Citrix Cloud accounts:
 
@@ -335,7 +335,7 @@ Once the “add service” process is completed (I can take a few minutes). “M
 
 This document focuses on the deployment configurations of multitenant architecture models, for single tenant Virtual Apps and Desktops Service refer to
 
-[Virtual Apps and Desktops Service](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure.html)
+[Virtual Apps and Desktops Service](/en-us/citrix-virtual-apps-desktops-service/install-configure.html)
 
 The following section of multitenant deployment uses a hybrid cloud solution as an example to run workloads in an on-premises data center.
 
@@ -384,11 +384,11 @@ Select the storage location for the Resources.
 
 Select the Network Associated with the new customer.
 
-[![CSP-Image-024](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_024.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvadse_024.png)
+[![CSP-Image-024](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_024.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_024.png)
 
 Select the scope of the Customer recently onboarded, the review the hosting connection and choose finish.
 
-[![CSP-Image-025](/en-us/tech-zone/design/media/reference-architectures_csp-cvadse_025.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_025.png)
+[![CSP-Image-025](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_025.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_025.png)
 
 #### Configure Machine Catalogs for the New Customer
 
@@ -398,7 +398,7 @@ From the Citrix Studio, select Machine Catalogs, and Create Machine Catalogs fro
 
 In this example we are using machines that are created with Machine Creation Services. Hosted on a hypervisor in the data center that is able to control the power state. Select the appropriate Resource Location Shared or Single and so forth, for the corresponding Customer assign the Machine Catalog, select Next
 
-[![CSP-Image-026](/en-us/tech-zone/design/media/reference-architectures_csp-cvadse_026.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_026.png)
+[![CSP-Image-026](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_026.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_026.png)
 
 Add the Machines from the Corresponding Active Directory and also the Zone for the Customer.
 Enter the name of the machines(s) and select OK.
@@ -464,7 +464,7 @@ Note: The Federated Domain described here for multitenant Virtual Apps and Deskt
 
 Under the Single Tenant architecture model where each customer has own instance of the service. Managing subscribers to libraries is performed directly within the customer’s cloud account, for details refer to the online document
 
-[Assign users and groups to service offerings using Library](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/assign-users-to-offerings-using-library.html)
+[Assign users and groups to service offerings using Library](/en-us/citrix-cloud/citrix-cloud-management/assign-users-to-offerings-using-library.html)
 
 Under multitenant architecture models, subscribing user groups to libraries is performed inside the CSP partner’s Citrix Cloud account. The preferred method is to assign well named Active Directory groups to the library resources for easy administration and scalability.
 

@@ -2,7 +2,6 @@
 layout: doc
 description: Learn about the deployment architecture and how Citrix SD-WAN WANOP helps to optimize Citrix Content Collaboration for customer-managed storage zones including relevant test data.
 ---
-
 # Citrix SD-WAN WANOP for Content Collaboration (Customer-Managed on-premises Storage Zones)
 
 ## Contributors
@@ -93,7 +92,7 @@ Citrix SD-WAN WANOP appliances accelerate the traffic over WAN links. To acceler
 
 A single Citrix SD-WAN WANOP appliance can communicate with any number of partner sites. Point-to-point hub-and-spoke and mesh networks are all supported. Citrix SD-WAN WANOP appliances can be added to the network at will because their auto-detection and auto-negotiation features ensure that a new appliance on the network is immediately detected by other appliances, and acceleration begins at once.
 
-Refer to the [Product documentation](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/about-sd-wan-wanop.html) for more information on WANOP Architecture and its features.
+Refer to the [Product documentation](/en-us/citrix-sd-wan-wanop/11/about-sd-wan-wanop.html) for more information on WANOP Architecture and its features.
 
 The following diagram represents the Citrix SD-WAN WANOP deployment architecture on a high level:
 
@@ -112,7 +111,7 @@ The most basic deployment criteria are:
 
 When these criteria are met, acceleration is automatic.
 
-Refer to the [Product Documentation](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/cb-deployment-modes-con.html) and the [Supported Features matrix](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/get-started-with-sd-wan-wanop/supported-mode-and-feature-matrix.html) for more details.
+Refer to the [Product Documentation](/en-us/citrix-sd-wan-wanop/11/cb-deployment-modes-con.html) and the [Supported Features matrix](/en-us/citrix-sd-wan-wanop/11/get-started-with-sd-wan-wanop/supported-mode-and-feature-matrix.html) for more details.
 
 ## Citrix SD-WAN WANOP Features
 
@@ -263,60 +262,18 @@ Goal of this reference architecture is to assist you with planning your own impl
 
 ## References
 
-[Reference Architecture on Customer-Managed Storage Zone](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html)
+[Reference Architecture on Customer-Managed Storage Zone](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html)
 
-[Storage Zone Controller Architecture](https://docs.citrix.com/en-us/storage-zones-controller/5-0/architecture-overview.html)
+[Storage Zone Controller Architecture](/en-us/storage-zones-controller/5-0/architecture-overview.html)
 
-[Installation Process for Storage Zone Controller](https://docs.citrix.com/en-us/storage-zones-controller/5-0/install.html)
+[Installation Process for Storage Zone Controller](/en-us/storage-zones-controller/5-0/install.html)
 
-[Citrix Files Deployment Guide](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html)
+[Citrix Files Deployment Guide](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html)
 
-[Citrix Product Documentation](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/about-sd-wan-wanop.html)
+[Citrix Product Documentation](/en-us/citrix-sd-wan-wanop/11/about-sd-wan-wanop.html)
 
-[Deployment Modes for Citrix SD-WAN WANOP](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/cb-deployment-modes-con.html)
+[Deployment Modes for Citrix SD-WAN WANOP](/en-us/citrix-sd-wan-wanop/11/cb-deployment-modes-con.html)
 
-[FAQ for SD-WAN WANOP](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/faqs.html)
+[FAQ for SD-WAN WANOP](/en-us/citrix-sd-wan-wanop/11/faqs.html)
 
-[SD-WAN WANOP Supported Mode and Feature Matrix](https://docs.citrix.com/en-us/citrix-sd-wan-wanop/11/get-started-with-sd-wan-wanop/supported-mode-and-feature-matrix.html)
-
-## Other Tech Zone content
-
-[Learn -> Tech Brief -> Intelligent Traffic Management](/en-us/tech-zone/learn/tech-briefs/itm.html) - Citrix Intelligent Traffic Management (ITM) service brings “intelligence” to DNS by incorporating a broad set of capabilities to determine the best query response based on analysis of real time conditions.
-
-[Learn -> Tech Brief -> SD-WAN Cloud Direct service](/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html) - Optimize SaaS access for branch users by tunneling session traffic to Internet Exchanges with direct connectivity to popular sites.
-
-[Learn -> PoC Guides -> Citrix Web Application Firewall Deployment Proof of Concept Guide](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) - Learn how to deploy Citrix Web Application Firewall (WAF) standalone or as a part of a Citrix ADC deployment. Protect web servers or applications from various attacks including Cross Site Scripting, SQL Injection, Buffer Overflow, Forceful Browsing and more. Deploy in any public cloud or your on-premises environment.
-
-[Learn -> Tech Brief -> Gateway service for HDX Proxy](/en-us/tech-zone/learn/tech-briefs/gateway-hdxproxy.html) - Provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls.
-
-[Learn -> Tech Brief -> SD-WAN for Workspace](/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html) - Provides optimal network connectivity between Enterprise branch offices and their Workspace hosted in data resource locations on-premises or in the cloud.
-
-[Learn -> Tech Insight -> Office 365 Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/office365-optimization.html) - Learn how Citrix SD-WAN implements Microsoft Connectivity Principles to support Office 365 Optimization for Branch Offices.
-
-[Learn -> Tech Insight -> SD-WAN](/en-us/tech-zone/learn/tech-insights/sdwan.html) - Optimize delivery of Citrix Virtual Apps and Desktops traffic with Citrix SD-WAN.
-
-[Learn -> Tech Insight -> AlwaysOn VPN](/en-us/tech-zone/learn/tech-insights/citrix-gateway-alwayson.html) - Manage remote domain joined Windows endpoints 24x7 by providing LAN-like access with AlwaysOn VPN.
-
-[Learn -> Tech Insight -> Intelligent Traffic Management - Radar](/en-us/tech-zone/learn/tech-insights/itm.html) - Learn how Citrix ITM can direct users to cloud service mirror sites with the most bandwidth available between them.
-
-[Learn -> Tech Insight -> YouTube Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/youtube-optimizations.html) - Optimize YouTube delivery in branch offices with Citrix Virtual Apps and Desktops and Citrix SD-WAN.
-
-[Learn -> Diagrams and Posters -> Citrix ADC - nFactor Basics Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-nfactor.html) - One-page summary of nFactor authentication detailing concepts, how it works, nFactor Visualizer information, configuration steps, and more.
-
-[Learn -> Diagrams and Posters -> Citrix ADC - File System and Process Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-file-system-process.html) - One-page summary of most common system directories, files, processes/daemons and logs.
-
-[Learn -> Diagrams and Posters -> Citrix ADM - Overview Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adm.html) - One-page summary of the ADM Platform detailing system requirements, deployment modes, protocols and ports, common log files, common issues/failures, and more.
-
-[Learn -> Diagrams and Posters -> Citrix ADC - nsconmsg Commands Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-nsconmsg.html) - One-page summary of nsconmsg syntax and troubleshooting tips.
-
-[Learn -> Diagrams and Posters -> Citrix ADC - Troubleshooting High Availability Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-troubleshooting-high-availability.html) - One-page summary of high availability and troubleshooting tips.
-
-[Learn -> Diagrams and Posters -> Citrix ADC - Troubleshooting GSLB MEP Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-troubleshooting-gslb.html) - One-page summary of GSLB, MEP protocol and troubleshooting tips.
-
-[Learn -> Diagrams and Posters -> Citrix ADC - SDX Basics and Log File Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-sdx-basics.html) - One-page summary of SDX components and how to access them, common SVM ports, LOM configuration, Link Aggregation on the SDX, and Common Log files for both SVM and Citrix Hypervisor.
-
-[Design -> Reference Architectures -> Application Delivery Management](/en-us/tech-zone/design/reference-architectures/citrix-adm.html) - See how the Citrix Application Delivery Management software is deployed to simplify management and monitoring of your application delivery infrastructure.
-
-[Design -> Reference Architectures -> SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan.html) - Learn about the framework, design, and architecture for Citrix SD-WAN with SD-WAN Orchestrator for single region deployment.
-
-[Design -> Reference Architectures -> SD-WAN Multi-Region](/en-us/tech-zone/design/reference-architectures/sd-wan-multi-region.html) - Discover the framework, design, and architecture for Citrix SD-WAN multi-region deployment with SD-WAN Orchestrator.
+[SD-WAN WANOP Supported Mode and Feature Matrix](/en-us/citrix-sd-wan-wanop/11/get-started-with-sd-wan-wanop/supported-mode-and-feature-matrix.html)

@@ -131,7 +131,7 @@ For Windows Server, if you did not install and enable the Remote Desktop Service
 
 Ensure that the Microsoft Teams client application is installed in per-machine mode on the VDA
 
-**Install the Citrix Virtual Delivery Agent** on the host or base image, following the instructions [here](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas.html)
+**Install the Citrix Virtual Delivery Agent** on the host or base image, following the instructions [here](/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas.html)
 
 Using this image, create the appropriate machine catalogs and delivery groups in **Citrix Studio / Citrix Cloud Manage** tab before trying to establish sessions and accessing the Teams client.
 
@@ -145,7 +145,7 @@ The Citrix Workspace app 1909 for Windows has the optimization components built 
 -  Citrix Workspace app requires a minimum of 600 MB free disk space and 1 GB RAM.
 -  Microsoft .NET Framework version 4.6.2 or later is installed automatically, if it is not already installed.
 
-Follow the instructions, to install the Citrix Workspace app for Windows [here](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#using-a-windows-based-installer)
+Follow the instructions, to install the Citrix Workspace app for Windows [here](/en-us/citrix-workspace-app-for-windows/install.html#using-a-windows-based-installer)
 
 ## Policy Settings
 
@@ -173,7 +173,7 @@ We recommend evaluating your environment to identify any risks and requirements 
 Teams traffic flows via Transport Relay on TCP and UDP 80, 443, UDP 3478-3481.
 Optimized traffic for peer to peer connections is routed on higher ports (40 K+ UDP) at random, if they are open. For more info [read](https://docs.microsoft.com/en-us/office365/enterprise/urls-and-ip-address-ranges#skype-for-business-online-and-microsoft-teams)
 
-For support information, see [Support](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html#support) section of our documentation.
+For support information, see [Support](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html#support) section of our documentation.
 
 ### Summary of key network recommendations for Real Time Protocol (RTP) traffic
 

@@ -2,7 +2,6 @@
 layout: doc
 description: Learn about different decisions involved when aggregating and de-duplicating applications and desktops from multiple sites.
 ---
-
 # Designing StoreFront Multi-Site Aggregation
 
 ## Contributors
@@ -36,7 +35,7 @@ For the aggregated Sites, there are two additional configurations that control h
 -  **Controllers publish identical resources**: This setting controls enumeration. If two Sites are marked as “identical,” StoreFront places the farms in the same “equivalent farm set,” which means that enumeration requests are load balanced (round robin) across the Sites as the resource sets are assumed to be equivalent, saving enumeration time. If the two Sites are not marked as “identical,” then StoreFront sends XML enumeration request to all and de-duplicates the common application and desktops from the resulting resource sets.
 -  **Load balance resources across controllers**:  This setting controls session launch. Launch requests are either load balanced across the Sites or distributed in failover order, regardless of whether the Sites are “identical” or not. Session sharing takes precedence over a load balancing decision. Therefore, if a user already has a session in Site B and launches another applications or desktop, that session will also launch in Site B (assuming the application or desktop is available there).
 
-Some use cases that are not handled well through the GUI are combinations of load balancing and failover or combinations of identical and non-identical Sites. For instance, if there are two production Sites that should be load balanced and one DR site that should only be used if both production Sites are down, the GUI cannot be used and the web.config file must be manually modified instead (refer to [eDocs](https://docs.citrix.com/en-us/storefront/current-release/set-up-highly-available-multi-site-stores.html) for the proper format for this).
+Some use cases that are not handled well through the GUI are combinations of load balancing and failover or combinations of identical and non-identical Sites. For instance, if there are two production Sites that should be load balanced and one DR site that should only be used if both production Sites are down, the GUI cannot be used and the web.config file must be manually modified instead (refer to [eDocs](/en-us/storefront/current-release/set-up-highly-available-multi-site-stores.html) for the proper format for this).
 
 ### Design Takeaways
 

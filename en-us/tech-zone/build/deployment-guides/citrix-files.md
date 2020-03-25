@@ -22,8 +22,8 @@ This guide assumes that the reader has a basic understanding of the following Ci
 
 Refer to the following reference architectures for additional details as needed:
 
-*  [Citrix Virtual Apps and Desktops Service](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html) - Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
-*  [Citrix Content Collaboration with on-premises storage zones](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html) - Learn about the architecture and design considerations for deploying an on-premises customer-managed storage zone.
+*  [Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html) - Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
+*  [Citrix Content Collaboration with on-premises storage zones](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html) - Learn about the architecture and design considerations for deploying an on-premises customer-managed storage zone.
 
     >**Note:**
     >
@@ -32,7 +32,7 @@ Refer to the following reference architectures for additional details as needed:
 ## Section 1a: Installing Citrix Files as part of the Virtual Delivery Agent install
 
 The Citrix Files for Windows app is included within the Virtual Delivery Agent (VDA) installation. In this section we install it in a Windows Server image using the installer from Citrix Cloud within the Virtual Apps and Desktops Service.
-It can also be installed within a desktop operating system image. Refer to the product documentation page on [Install VDAs](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html) for additional details on installing the VDA.
+It can also be installed within a desktop operating system image. Refer to the product documentation page on [Install VDAs](/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html) for additional details on installing the VDA.
 
    >**Note:**
    >
@@ -56,7 +56,7 @@ It can also be installed within a desktop operating system image. Refer to the p
 
     ![Download Server OS VDA](/en-us/tech-zone/build/media/deployment-guides_citrix-files_Download-Server-VDA.png)
 
-1.  Run the VDA installer on your server VM image. Select the appropriate configuration option for your environment and then click **Next**. For more information on image delivery with MCS and PVS, refer to the [Image Management Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/image-management.html).
+1.  Run the VDA installer on your server VM image. Select the appropriate configuration option for your environment and then click **Next**. For more information on image delivery with MCS and PVS, refer to the [Image Management Reference Architecture](/en-us/tech-zone/design/reference-architectures/image-management.html).
 [![VDA Install Environment Screen](/en-us/tech-zone/build/media/deployment-guides_citrix-files_VDA-Install-Environment.png)](/en-us/tech-zone/build/media/deployment-guides_citrix-files_VDA-Install-Environment.png)
 
 1.  If needed, click the check box to install the optional Citrix Workspace app client in your image for connecting to resources (double-hop scenario). Then click **Next**.
@@ -103,7 +103,7 @@ It can also be installed within a desktop operating system image. Refer to the p
 
 ## Section 1b: Installing Citrix Files with the VDA Command-line
 
-The Citrix Files Client for Windows is included within the Virtual Delivery Agent (VDA) installation. In this section we install it in a Windows Server image using the command-line with the installer from Citrix Cloud within the Virtual Apps and Desktops Service. It can also be installed within a desktop operating system image. Refer to the product documentation page at [https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-command.html](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-command.html) for additional info on installing the VDA from the command-line.
+The Citrix Files Client for Windows is included within the Virtual Delivery Agent (VDA) installation. In this section we install it in a Windows Server image using the command-line with the installer from Citrix Cloud within the Virtual Apps and Desktops Service. It can also be installed within a desktop operating system image. Refer to the product documentation page at [/en-us/citrix-virtual-apps-desktops-service/install-configure/install-command.html](/en-us/citrix-virtual-apps-desktops-service/install-configure/install-command.html) for additional info on installing the VDA from the command-line.
 
 ### Step-by-step guidance
 
@@ -133,13 +133,13 @@ Deploy VDAs using MCS, PVS and/or manually as required. Refer to existing image 
 
 ### Helpful resources
 
-*  [Image Management Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/image-management.html)
-*  [Machine Catalog Creation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html)
-*  [Provisioning Documentation](https://docs.citrix.com/en-us/provisioning)
+*  [Image Management Reference Architecture](/en-us/tech-zone/design/reference-architectures/image-management.html)
+*  [Machine Catalog Creation](/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html)
+*  [Provisioning Documentation](/en-us/provisioning)
 
 ## Section 3: Enabling Session Lingering
 
-Session Lingering allows published application sessions to remain active for a specified duration after the last application from the session has been closed. The primary use case for this feature is to provide fast subsequent application launches when users close their published application and shortly afterwards launch another. In the case of Citrix Files, Session Lingering ensures that any background file upload tasks complete within the session before it is terminated. For more details on Session Lingering, please refer to [https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/delivery-groups-manage.html](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/delivery-groups-manage.html).
+Session Lingering allows published application sessions to remain active for a specified duration after the last application from the session has been closed. The primary use case for this feature is to provide fast subsequent application launches when users close their published application and shortly afterwards launch another. In the case of Citrix Files, Session Lingering ensures that any background file upload tasks complete within the session before it is terminated. For more details on Session Lingering, please refer to [/en-us/citrix-virtual-apps-desktops-service/install-configure/delivery-groups-manage.html](/en-us/citrix-virtual-apps-desktops-service/install-configure/delivery-groups-manage.html).
 
    >**Note:**
    >
@@ -168,7 +168,7 @@ Session Lingering allows published application sessions to remain active for a s
 ## Section 4: Testing Access and Single Sign-On
 
 In this section we test access to the Citrix Files app including single sign-on (SSO). SSO takes place from Active Directory credentials associated with an email address that matches a user account registered for Content Collaboration.
-See [https://docs.citrix.com/en-us/citrix-content-collaboration/citrix-files-app/configuration.html](https://docs.citrix.com/en-us/citrix-content-collaboration/citrix-files-app/configuration.html) for details.
+See [/en-us/citrix-content-collaboration/citrix-files-app/configuration.html](/en-us/citrix-content-collaboration/citrix-files-app/configuration.html) for details.
 
 ### Step-by-step guidance
 
@@ -198,7 +198,7 @@ The “Account” GPO must be deployed for the Citrix Files app on Windows to en
 
 ## Section 5: Configuring File Type Association (Optional)
 
-Applications can be associated with file types/extensions to make sure users can easily work with their files in Citrix Files – creating and editing content as required. Some scenarios include Citrix Files/Workspace app on an endpoint device without appropriate software available or double-hop situations with a generic desktop containing Citrix Files/Workspace app and appropriate software not available. Refer to [https://docs.citrix.com/en-us/citrix-content-collaboration/files-workspace.html](https://docs.citrix.com/en-us/citrix-content-collaboration/files-workspace.html) for more details.
+Applications can be associated with file types/extensions to make sure users can easily work with their files in Citrix Files – creating and editing content as required. Some scenarios include Citrix Files/Workspace app on an endpoint device without appropriate software available or double-hop situations with a generic desktop containing Citrix Files/Workspace app and appropriate software not available. Refer to [/en-us/citrix-content-collaboration/files-workspace.html](/en-us/citrix-content-collaboration/files-workspace.html) for more details.
 
    >**Note:**
    >
@@ -259,11 +259,11 @@ User Configuration → Administrative Templates → Citrix Files
 ## Section 7: Configuring Profile Containers with Citrix Profile Management (Optional)
 
 As users access their files within the Citrix Files app, the files are cached locally helping to speed up subsequent access requests. Once a user logs off from a non-persistent machine though, the cache is lost and must be rebuilt in future sessions. Profile Container technology in Citrix Profile Management allows the Citrix Files cache to efficiently persist across user sessions offering an improved experience. Refer to
-[https://docs.citrix.com/en-us/profile-management/current-release/configure/profile-container.html](https://docs.citrix.com/en-us/profile-management/current-release/configure/profile-container.html) for more information on Profile Containers.
+[/en-us/profile-management/current-release/configure/profile-container.html](/en-us/profile-management/current-release/configure/profile-container.html) for more information on Profile Containers.
 
    >**Note:**
    >
-   >When using Citrix Profile Management and the Citrix Files app, it is important to ensure users properly logoff or force a session logoff. This helps guarantee that the data syncs up correctly with the profile. Define the session limits policy as outlined at [https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-limits-policy-settings.html](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-limits-policy-settings.html).
+   >When using Citrix Profile Management and the Citrix Files app, it is important to ensure users properly logoff or force a session logoff. This helps guarantee that the data syncs up correctly with the profile. Define the session limits policy as outlined at [/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-limits-policy-settings.html](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-limits-policy-settings.html).
 
 ### Step-by-step guidance
 

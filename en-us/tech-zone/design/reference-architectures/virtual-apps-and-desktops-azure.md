@@ -271,7 +271,7 @@ Azure Reserved VM Instances (RIs) significantly reduce costs—up to 72 percent 
 
 While Azure Reserved Instances require making upfront commitments on **compute** capacity, they also provide flexibility to exchange or cancel reserved instances at any time. A reservation only covers the virtual machine compute costs. It does not reduce any of the additional software, networking, or storage charges. This is good for Citrix infrastructure and minimum capacity needed for a use case (on and off hours).
 
-Citrix Autoscale feature can work with reserved instances as well to further reduce your costs - you can now use Autoscale for bursting in the cloud. In a delivery group you can tag machines that need to be autoscaled and exclude your reserved instances (or on-premises workloads) - you can find more info here: [Restrict Autoscale to certain machines in a Delivery Group](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html#restrict-autoscale-to-certain-machines-in-a-delivery-group).
+Citrix Autoscale feature can work with reserved instances as well to further reduce your costs - you can now use Autoscale for bursting in the cloud. In a delivery group you can tag machines that need to be autoscaled and exclude your reserved instances (or on-premises workloads) - you can find more info here: [Restrict Autoscale to certain machines in a Delivery Group](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html#restrict-autoscale-to-certain-machines-in-a-delivery-group).
 
 ### Citrix Autoscale
 
@@ -295,7 +295,7 @@ Power management for a single Site using one of these services is supported as f
 
 Diagram-4: Citrix Autoscale Flow
 
-You can read more about Citrix Autoscale [here](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html).
+You can read more about Citrix Autoscale [here](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html).
 
 ### Optimizing End-User Experience
 
@@ -340,7 +340,7 @@ The latest instance type study was done to provide great insight in this area an
 
 For graphic-intensive workloads, consider the [NVv4-series](https://docs.microsoft.com/en-us/azure/virtual-machines/nvv4-series) virtual machines. They are powered by AMD EPYC 7002 processors and virtualized Radeon MI25 GPU. These virtual machines are optimized and designed for VDI and remote visualization. With partitioned GPUs, NVv4 offers the right size for workloads requiring smaller GPU resources at the most optimal price. Alternative the NVv3 series is optimized and designed for remote visualization, streaming, gaming, encoding, and VDI scenarios using frameworks such as OpenGL and DirectX. These VMs are backed by the NVIDIA Tesla M60 GPU. For further GPU options check the other [offerings](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-gpu) from Azure.
 
-While scaling up is usually a preferred model to reduce the cost, Autoscale can benefit from smaller instances (15–20 sessions per host). Smaller instances host fewer user sessions than larger instances. Therefore, in the case of smaller instances, Autoscale puts machines into drain state much faster because it takes less time for the last user session to be logged off. As a result, Autoscale powers off smaller instances sooner, thereby reducing costs. You can read more about instance size considerations for Autoscale in [official documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html#instance-size-considerations).
+While scaling up is usually a preferred model to reduce the cost, Autoscale can benefit from smaller instances (15–20 sessions per host). Smaller instances host fewer user sessions than larger instances. Therefore, in the case of smaller instances, Autoscale puts machines into drain state much faster because it takes less time for the last user session to be logged off. As a result, Autoscale powers off smaller instances sooner, thereby reducing costs. You can read more about instance size considerations for Autoscale in [official documentation](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html#instance-size-considerations).
 
 ### Storage
 
