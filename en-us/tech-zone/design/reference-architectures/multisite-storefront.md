@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Albert Lee](mailto:albert.leej@Citrix.com)
 
-**Special thanks:** [Martin Zugec](https://twitter.com/MartinZugec)
+**Special thanks:** [](https://twitter.com/zzzzzzz)
 
 ## Overview
 
