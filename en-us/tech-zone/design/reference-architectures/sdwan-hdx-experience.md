@@ -7,7 +7,9 @@ description: Measure HDX user interface performance improvements provided by Cit
 
 ## Contributors
 
-**Author:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
+**Authors:** 
+
+[Matthew Brooks](https://twitter.com/tweetmattbrooks)
 
 [Shoaib Yusuf](https://twitter.com/Shoaibys)
 
