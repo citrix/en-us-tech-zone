@@ -53,7 +53,7 @@ Just as buildings have blueprints that include details about their structure and
 
 ## Citrix Networking
 
-[Application Delivery Controller Global Server Load Balancing](/en-us/tech-zone/design/reference-architectures/adc-gslb.html) - Learn how Citrix ADC can be used for GSLB to provide disaster recovery and ensure continuous availability of applications by protecting against points of failure in a WAN.
+[Application Delivery Controller - Global Server Load Balancing](/en-us/tech-zone/design/reference-architectures/adc-gslb.html) - Learn the architecture and deployment considerations for Global Server Load Balancing configuration with Citrix Application Delivery Controller.
 
 [Application Delivery Management](/en-us/tech-zone/design/reference-architectures/citrix-adm.html) - See how the Citrix Application Delivery Management software is deployed to simplify management and monitoring of your application delivery infrastructure.
 
