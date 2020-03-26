@@ -102,9 +102,8 @@ Below are the results and detailed test steps used to measure quantitative benef
 
 ICA RTT was configured for measurement every second by the VDA. For the Interactive BW, Congestion BW, Bulk BW, and Loss tests the RTT varied increasingly due to the increased bandwidth and subsequent queue management and retransmissions.  Therefore, three measurements were captured, and the median value was recorded. Each complete set of tests, for all three scenarios, were further repeated three times and the median value was again recorded as the result.
 
-| Test Case | Steps | Results(ms) ROUTED + MPLS | Results(ms) SD-WAN+
-MPLS | Results(ms) SD-WAN + MPLS |
-
+| Test Case | Steps | ROUTED and MPLS | SD-WAN and MPLS | SD-WAN and MPLS |
 | ------------- |:-------------:| --------:| --------:| --------:|
 | Baseline      | a. Open a Google Chrome browser b. Navigate to http://ddc.training.lab/Citrix/StoreWeb/ c. Login as user1@training.lab / Citrix123 d. Launch desktop NYC. e. RECORD ICA RTT on NYC-VDA | 3 | 6 | 6 |
+
 
