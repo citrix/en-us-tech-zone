@@ -23,9 +23,9 @@ The following includes fundamental design factors during an assessment and desig
 
 *  **Network traffic flow efficiency** - The design incorporates network traffic flows involving multiple serial hops to access individual services within the customer infrastructure. To ensure network traffic flow efficiency and eliminate routing inefficiency, network traffic flows are designed to remain within each local data center site. As such, the design caters to primary traffic flows to use back-end systems within the same data center site, and secondary (backup) traffic flows use back-end systems within the opposite data center site.
 
-### Global Server Load Balancing
+## Global Server Load Balancing
 
-#### GSLB Feature Overview
+### GSLB Feature Overview
 
 With ordinary DNS, when a client sends a domain name system (DNS) request, it receives a list of IP addresses of the domain or service. Generally, the client chooses the first IP address in the list and initiates a connection with that server. The DNS server uses a technique called DNS round robin to rotate through the IPs on the list. It sends the first IP address to the end of the list and promotes the others after it responds to each DNS request. This technique ensures equal distribution of the load, but it does not support disaster recovery, load balancing based on load or proximity of servers, or persistency.
 
@@ -48,9 +48,9 @@ Figure-1 A Typical DNS Flow to Application Access
 
 When you configure GSLB on ADC appliances and enable MEP, the DNS infrastructure is used to connect the client to the data center that best meets the set criteria. The criteria can designate the least loaded data center, the closest data center, the data center that responds most quickly to requests from the client’s location, a combination of those metrics, and SNMP metrics. An appliance tracks the location, performance, load, and availability of each data center. It uses these factors to select the data center to send the client request.
 
-#### GSLB Deployment
+### GSLB Deployment
 
-##### Deployment Types
+#### Deployment Types
 
 Citrix ADC appliances configured for GSLB provide for disaster recovery and ensure the continuous availability of applications by protecting against points of failure in a WAN. GSLB can balance the load across data centers by directing client requests to the closest or best-performing data center, or to surviving data centers in the event of an outage.
 
@@ -82,7 +82,7 @@ Figure-3 Active-Passive Site Deployment
 
 Parent-child topology deployment - Citrix ADC GSLB provides global server load balancing and disaster recovery by creating mesh connections between all the involved sites and making intelligent load balancing decisions. Each site communicates with the others to exchange server and network metrics through Metric Exchange Protocol (MEP), at regular intervals. However, with the increase in number of peer sites, the volume of MEP traffic increases exponentially because of the mesh topology. To overcome this, you can use a parent-child topology. The parent-child topology also supports larger deployments. In addition to the 32 parent sites, you can configure 1024 child sites.
 
-##### Entities
+#### Entities
 
 A GSLB configuration consists of a group of GSLB entities on each appliance in the configuration. These entities include GSLB sites, GSLB services, GSLB service groups, GSLB virtual servers, and ADNS services.
 
@@ -155,9 +155,9 @@ If a metric exchange connection is momentarily lost between any of the participa
 
 The Citrix ADC appliance periodically evaluates the state of the remote GSLB services by using either MEP or monitors that are explicitly bound to the remote services. Binding explicit monitors to local services is not required, because the state of the local GSLB service is updated by default using the MEP. However, you can bind explicit monitors to a remote service. When monitors are explicitly bound, the state of the remote service is not controlled by the metric exchange.
 
-### Reference Architecture
+## Reference Architecture
 
-#### Design GSLB
+### Design GSLB
 
 The following details the Citrix ADC instances network address configurations in terms of IP addressing and routing in data center site data center 1 and 2:
 
@@ -198,7 +198,7 @@ Those specific GSLB entities, as described in the earlier chapter, are:
 *  Each data center has a separate public IP.
 *  DNS is delegated to all public ADNS IP listeners.
 
-#### Other Dependencies
+### Other Dependencies
 
 The infrastructure for the solution provides a set of common components used by the entire solution.
 
@@ -206,11 +206,11 @@ The infrastructure for the solution provides a set of common components used by 
 *  Domain Name Services - Most components in the overall solution require integration with Domain Name Services (DNS). The following table details key DNS infrastructure within the Customer network to be used by the Citrix Delivery Network deployment
 *  Security and Authentication - Secure sessions are handled by Citrix Gateway. The following table details key decisions pertaining to SAN certificates for use in each production, acceptance, and test infrastructure.
 
-### Sources
+## Sources
 
-The goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [source diagrams](https://citrix.sharefile.com/d-scf6abc634394c1fa).
+The goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [source diagrams](https://citrix.sharefile.com/d-sa75c12c15894e2b8).
 
-### Citrix Product Documentation References
+## Citrix Product Documentation References
 
 The deliverable provides guidelines for the implementation and configuration references. However, it does not provide step-by-step instructions on how to install or maintain the components discussed. Therefore, Citrix Consulting recommends Client design and operations teams involved in the design and deployment to review the following documents, articles, and guides prior to implementing the environment provided for production. These documents, articles, guides, and more are available from the online Citrix Knowledge Center, online Citrix Product Documentation, or online Citrix Community.
 
