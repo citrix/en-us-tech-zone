@@ -92,3 +92,22 @@ b) The result of the ICA “Round Trip Time” counter was then recorded.
 
 *Table 1: Test Cases*
 
+### Results
+
+When reviewing the quantitative results between the topologies Routed + MPLS and the Citrix SD-WAN + MPLS, Citrix SD-WAN provided **greater than 500% improvement** delivering HDX traffic running video, and a large file transfer, when faced with latency, congestion, and loss, using a single MPLS link, in comparison to HDX delivered over a traditional routed network.  When a second path, over an Internet link, in the Citrix SD-WAN + MPLS + INET topology was added there was greater than a 4 second reduction in in the ICA Round Trip time using the same test scenarios.
+
+[![Results](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_results.png)](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_results.png)
+
+Below are the results and detailed test steps used to measure quantitative benefits of delivery with Citrix SD-WAN versus delivery over a traditional routed network without Citrix SD-WAN. 
+
+ICA RTT was configured for measurement every second by the VDA. For the Interactive BW, Congestion BW, Bulk BW, and Loss tests the RTT varied increasingly due to the increased bandwidth and subsequent queue management and retransmissions.  Therefore, three measurements were captured, and the median value was recorded. Each complete set of tests, for all three scenarios, were further repeated three times and the median value was again recorded as the result.
+
+| Test Case | Steps | Results (ms) -> ROUTED + MPLS  | Results (ms) -> SD-WAN+
+MPLS | Results (ms) -> SD-WAN + MPLS |
+| ------------- |:-------------:| --------:| --------:| --------:|
+| Baseline      | a. Open a Google Chrome browser b. Navigate to http://ddc.training.lab/Citrix/StoreWeb/ c. Login as user1@training.lab / Citrix123 d. Launch desktop NYC. e. RECORD ICA RTT on NYC-VDA | 3 | 6 | 6 |
+| Latency      | a. Open Google Chrome from the NYC Util server and navigate to http://192.168.10.26/WANem b. Select “Advanced Mode” > eth1 c. Set the “Delay time” field to 100 and select “Apply Setting” toward the bottom of the screen d. OBSERVE the Video on the LON_Client e. RECORD ICA RTT on NYC-VDA | 104 | 13 | 109 |
+| Interactive Bandwidth (BW)      | a. Within the virtual desktop open VLC media player b. Select Media > Open File > C://Citrix_Workspace_with_Intelligence.mp4 c. Select View > Advanced Controls d. Set the video at the start of the ‘virtual hurricane’ and click the third button ‘Loop from point A to point B continuously’. You should see the first part of the icon turn red. Set the video to the end of the ‘virtual hurricane’ and press the button again. The second part of the loop button should not be red too. Press Play to view the loop. e. OBSERVE the Video on the LON_Client f. RECORD ICA RTT on NYC-VDA | 126 | 16 | 142 |
+| Congestion BW      | a. On the LON_Client open File Explorer b. Navigate to the “FILES” share on NYC_VDA and copy “LARGE_FILE.mp4” to the C:\outside-HDX-download on LON_Client c. OBSERVE the Video on the LON_Client d. RECORD ICA RTT on NYC-VDA | 1606 | 63 | 485 |
+| Bulk BW      | a. Within the virtual desktop running on LON_Client open File Explorer b. Navigate to the C:\FILES (on NYC_VDA) and copy “LARGE_FILE.mp4” to the C:\inside-HDX-download on LON_Client c. OBSERVE the Video on the LON_Client d. RECORD ICA RTT on NYC-VDA | 3486 | 62 | 465 |
+| Loss      | a. Open Google Chrome from the NYC Util server and navigate to http:192.168.10.26/WANem b. Select “Advanced Mode” > eth1 c. Set the “Loss” field to 25 and select “Apply Setting” toward the bottom of the screen d. OBSERVE the Video on the LON_Client e. RECORD ICA RTT on NYC-VDA | 4243 | 64 | 536 |
