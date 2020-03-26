@@ -111,6 +111,8 @@ ICA RTT was configured for measurement every second by the VDA. For the Interact
 | Bulk BW      | a. Within the virtual desktop running on LON_Client open File Explorer b. Navigate to the C:\FILES (on NYC_VDA) and copy “LARGE_FILE.mp4” to the C:\inside-HDX-download on LON_Client c. OBSERVE the Video on the LON_Client d. RECORD ICA RTT on NYC-VDA | 3486 | 62 | 465 |
 | Loss      | a. Open Google Chrome from the NYC Util server and navigate to http:192.168.10.26/WANem b. Select “Advanced Mode” > eth1 c. Set the “Loss” field to 25 and select “Apply Setting” toward the bottom of the screen d. OBSERVE the Video on the LON_Client e. RECORD ICA RTT on NYC-VDA | 4243 | 64 | 536 |
 
+**NOTE**: Find a worksheet with a detailed compilation of results [here]( https://citrix.sharefile.com/d-s80a041db88d46ceb).
+
 ## Conceptual Architecture
 
 The architecture is based on a mock setup with a Windows 10 client, hosted in a London (LON) branch, connecting to a Citrix Virtual Apps and Desktops virtual delivery agent (VDA), running on Windows Server 2016, hosted in a New York City (NYC) data center.
