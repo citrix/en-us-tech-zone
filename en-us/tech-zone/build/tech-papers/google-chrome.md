@@ -158,4 +158,4 @@ The installation directory is: `C:\Users\%UserName%\AppData\Local\Google\Chrome\
 
 Using Microsoft Group Policy to manage your extensions also works when using Citrix Provisioning Server (PVS) to deploy your images, not just with Machine Creation Services (MCS).
 
-For more detailed information on how to manage Chrome extensions using Microsoft Group Policy, please see the article [Deploying Google Chrome extensions using Group Policy](http://dennisspan.com/deploying-google-chrome-extensions-using-group-policy/).
+For more detailed information on how to manage Chrome extensions using Microsoft Group Policy, please see the article [Deploying Google Chrome extensions using Group Policy](https://dennisspan.com/deploying-google-chrome-extensions-using-group-policy/).

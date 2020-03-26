@@ -2,7 +2,6 @@
 layout: doc
 description: Learn how to integrate ServiceNow within your Citrix Virtual Apps and Desktops environment including key technical concepts and use cases.
 ---
-
 # Integrating ServiceNow with Citrix Virtual Apps and Desktops
 
 ## Contributors
@@ -123,7 +122,7 @@ The Citrix ITSM Adapter itself runs on Citrix Cloud regardless of resource locat
 
 The plug-in within ITSM console communicates with the workspace service eliminating wait times associated with provisioning and managing virtual assets. Assets are managed using out-of-the-box workflows that are available in ServiceNow.
 
-Learn more about Citrix ITSM and ServiceNow integration at this [link](https://docs.citrix.com/en-us/advanced-concepts/downloads/itsm-adapter-service-user-guide.pdf).
+Learn more about Citrix ITSM and ServiceNow integration at this [link](/en-us/advanced-concepts/downloads/itsm-adapter-service-user-guide.pdf).
 
 ## Citrix ITSM Adapter Service and ServiceNow integration
 
@@ -159,7 +158,7 @@ For ServiceNow on-boarding, the ServiceNow administrator has to install the appl
 
 The preceding picture shows the Citrix ITSM Adapter management console. The Citrix Virtual Apps and Desktops Service can be enabled or disabled for use with the feature on this page. The ITSM Adapter can connect to multiple ServiceNow instances.
 
-Learn about configuring Citrix ITSM Adapter with ServiceNow at this [link](https://docs.citrix.com/en-us/citrix-cloud/itsm.html).
+Learn about configuring Citrix ITSM Adapter with ServiceNow at this [link](/en-us/citrix-cloud/itsm.html).
 
 ## Service Catalog
 
@@ -181,7 +180,7 @@ The preceding diagram shows a holistic view of the ServiceNow and Citrix ITSM se
 
 For higher availability, it is recommended to have a minimum of two Citrix Cloud Connectors at the resource location. Citrix Virtual Apps and Desktop Service support all the major public cloud platforms to provision workloads. It is easy for an administrator to adopt Citrix ITSM service in any green field or brownfield environment.
 
-Reference: [CVAD Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html)
+Reference: [CVAD Reference Architecture](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html)
 
 ## Citrix ITSM Adapter Service and ServiceNow Workflow
 
@@ -302,8 +301,8 @@ Goal of this reference architecture is to assist you with planning your own impl
 
 The following resources are referenced for a better understanding of Citrix ITSM Adapter Service:
 
-[Citrix ITSM Adapter](https://docs.citrix.com/en-us/citrix-cloud/itsm.html)
+[Citrix ITSM Adapter](/en-us/citrix-cloud/itsm.html)
 
 [MCS PowerShell script](https://www.citrix.com/blogs/2012/03/06/using-powershell-to-create-a-catalog-of-machine-creations-services-machines/)
 
-[CVAD Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html)
+[CVAD Reference Architecture](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html)

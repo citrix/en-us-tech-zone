@@ -2,7 +2,6 @@
 layout: doc
 description: Optimize SaaS access for branch users by tunneling session traffic to Internet Exchanges with direct connectivity to popular sites.
 ---
-
 # Citrix SD-WAN Cloud Direct overview
 
 ## Contributors

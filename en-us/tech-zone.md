@@ -159,6 +159,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments Proof of Concept Guide](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html) - Learn how to deliver the Citrix® HDX™ Optimization for Microsoft® Teams in a Citrix environment. The optimization offers clear, crisp high-definition video calls, audio-video or audio-only calls to and from other Teams users, optimized Teams’ users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
 
+### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
+
+[Autoscale](/en-us/tech-zone/learn/tech-briefs/autoscale.html) - Explore the various ways Citrix enables admins to save on cost when hosting workloads in the cloud. Learn about different load balancing algorithms ans scaling methodologies and how much they can save in an environment based on our tests.
+
 ### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)
 
 [App Layering - User Layers](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html) - User layers persist user profile settings, data, and user-installed applications in non-persistent VDI environments.
