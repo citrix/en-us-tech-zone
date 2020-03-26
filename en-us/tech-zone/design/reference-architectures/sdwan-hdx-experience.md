@@ -106,6 +106,11 @@ ICA RTT was configured for measurement every second by the VDA. For the Interact
 | ------------- |:-------------:| --------:| --------:| --------:|
 | Baseline      | a. Open a Google Chrome browser b. Navigate to http://ddc.training.lab/Citrix/StoreWeb/ c. Login as user1@training.lab / Citrix123 d. Launch desktop NYC. e. RECORD ICA RTT on NYC-VDA | 3 | 6 | 6 |
 | Latency      | a. Open Google Chrome from the NYC Util server and navigate to http://192.168.10.26/WANem b. Select “Advanced Mode” > eth1 c. Set the “Delay time” field to 100 and select “Apply Setting” toward the bottom of the screen d. OBSERVE the Video on the LON_Client e. RECORD ICA RTT on NYC-VDA | 104 | 13 | 109 |
+| Interactive Bandwidth (BW)      | a. Within the virtual desktop open VLC media player b. Select Media > Open File > C://Citrix_Workspace_with_Intelligence.mp4 c. Select View > Advanced Controls d. Set the video at the start of the ‘virtual hurricane’ and click the third button ‘Loop from point A to point B continuously’. You should see the first part of the icon turn red. Set the video to the end of the ‘virtual hurricane’ and press the button again. The second part of the loop button should not be red too. Press Play to view the loop. e. OBSERVE the Video on the LON_Client f. RECORD ICA RTT on NYC-VDA | 126 | 16 | 142 |
+| Congestion BW      | a. On the LON_Client open File Explorer b. Navigate to the “FILES” share on NYC_VDA and copy “LARGE_FILE.mp4” to the C:\outside-HDX-download on LON_Client c. OBSERVE the Video on the LON_Client d. RECORD ICA RTT on NYC-VDA | 1606 | 63 | 485 |
+| Bulk BW      | a. Within the virtual desktop running on LON_Client open File Explorer b. Navigate to the C:\FILES (on NYC_VDA) and copy “LARGE_FILE.mp4” to the C:\inside-HDX-download on LON_Client c. OBSERVE the Video on the LON_Client d. RECORD ICA RTT on NYC-VDA | 3486 | 62 | 465 |
+| Loss      | a. Open Google Chrome from the NYC Util server and navigate to http:192.168.10.26/WANem b. Select “Advanced Mode” > eth1 c. Set the “Loss” field to 25 and select “Apply Setting” toward the bottom of the screen d. OBSERVE the Video on the LON_Client e. RECORD ICA RTT on NYC-VDA | 4243 | 64 | 536 |
+
 
 
 
