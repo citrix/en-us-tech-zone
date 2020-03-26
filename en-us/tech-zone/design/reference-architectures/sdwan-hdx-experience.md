@@ -81,6 +81,7 @@ Both SD-WAN instances analyze the conditions of each available path, using real-
 a) From the NYC-VDA MsDos prompt the following was executed:
 **wmic**
 **/namespace:\\root\citrix\euem“path citrix_euem_RoundTrip get /value”**
+
 b) The result of the ICA “Round Trip Time” counter was then recorded.
 
 *  On the LON Client, the playback of a video was looped.  The video pertained to Citrix Workspace with Intelligence where a “virtual tornado” represented the many elements IT teams must manage was spinning rapidly.  During each test case we observed the graphics quality, and how rapidly the “virtual tornado” was spinning.
