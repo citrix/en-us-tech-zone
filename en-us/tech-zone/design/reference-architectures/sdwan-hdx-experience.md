@@ -104,5 +104,7 @@ ICA RTT was configured for measurement every second by the VDA. For the Interact
 
 | Test Case | Steps | Results(ms) ROUTED + MPLS | Results(ms) SD-WAN+
 MPLS | Results(ms) SD-WAN + MPLS |
+
 | ------------- |:-------------:| --------:| --------:| --------:|
 | Baseline      | a. Open a Google Chrome browser b. Navigate to http://ddc.training.lab/Citrix/StoreWeb/ c. Login as user1@training.lab / Citrix123 d. Launch desktop NYC. e. RECORD ICA RTT on NYC-VDA | 3 | 6 | 6 |
+
