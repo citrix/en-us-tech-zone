@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Explore the various ways Citrix enables admins to save on cost when hosting workloads in the cloud. Learn about different load balancing algorithms ans scaling methodologies and how much they can save in an environment based on our tests.
 ---
 # Autoscale
 
@@ -58,6 +59,12 @@ Load-based scaling lets admins create a capacity buffer of machines in case they
 As users log in, the available capacity of the delivery group depletes. When it falls below the capacity buffer value, another machine in the pool is started to bring the capacity buffer back above the defined value. On the other side, when users start logging off, the machines with the least load are put in drain mode. Once the machines are clear of sessions, the machines are shut down until the pool capacity reduces to the set capacity buffer value.
 
 [![Autoscale - Savings illustration](/en-us/tech-zone/learn/media/tech-briefs_autoscale_2-savings-illustration.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_2-savings-illustration.png)
+
+### Drain mode
+
+When there are more session capacity than the capacity buffer, the machine with the least number of sessions is put in drain mode. A machine in drain mode will not accept new sessions, even though it may have spare capacity. Autoscale attempts to have all sessions on the machine be logged off, so the machine can be shut down.
+
+Note: If there is no spare capacity in a delivery group left, then Autoscale will launch sessions on the machine in drain mode rather than boot up another machine.
 
 ## Load-balancing algorithms
 
