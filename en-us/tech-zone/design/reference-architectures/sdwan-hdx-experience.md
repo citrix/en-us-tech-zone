@@ -3,7 +3,7 @@ layout: doc
 description: Measure HDX user interface performance improvements provided by Citrix SD-WAN flow enhancements
 
 ---
-# Measuring Citrix SD-WAN performance improvements to Citrix Virtual Apps and Desktops HDX sessions
+# Measuring HDX User Interface (UX) Performance Improvements with Citrix SD-WAN
 
 ## Contributors
 
@@ -13,16 +13,17 @@ description: Measure HDX user interface performance improvements provided by Cit
 
 [Shoaib Yusuf](https://twitter.com/Shoaibys)
 
-**Special Thanks:**  Daljit Singh, Dan Feller, Derek Thorslund, Jaskirat Singh Chauhan, Karthick Srivatsan, Mallikarjuna Komma, Mallikarjuna Reddy M, Muhammad Dawood, Ramanjaneya Kamalapuram, Ravindra L Patil, Shoaib Yusuf, Siva Prasad, and Thavamani Rajan
+**Special Thanks:**  Daljit Singh, Dan Feller, Derek Thorslund, Jaskirat Singh Chauhan, Karthick Srivatsan, Mallikarjuna Komma, Mallikarjuna Reddy M, Muhammad Dawood, Ramanjaneya Kamalapuram, Ravindra L Patil, Siva Prasad, and Thavamani Rajan
 
 ## Executive Summary
+
 In a Citrix Virtual Apps and Desktops environment, the length of time it takes a user’s action on an endpoint to get sent to the virtual desktop, get rendered and transmitted back to the user’s display determines the responsiveness of the session.  This “graphical” round-trip time directly impacts the overall user experience.
 
 Based on tests comparing a traditional routed network versus one using Citrix SD-WAN:
 
-* Citrix SD-WAN reduced the “graphical” round-trip time by greater than 500%, when congestion was encountered, in comparison to a traditional routed network.
+*  Citrix SD-WAN reduced the “graphical” round-trip time by greater than 500%, when congestion was encountered, in comparison to a traditional routed network.
 
-* When redundant links were added into the environment, Citrix SD-WAN reduced the round-trip time by greater than 4 seconds on average, when congestion was encountered, in comparison to a traditional routed network.
+*  When redundant links were added into the environment, Citrix SD-WAN reduced the round-trip time by greater than 4 seconds on average, when congestion was encountered, in comparison to a traditional routed network.
 
 Citrix SD-WAN provides a better user experience than traditional routing when network conditions are not ideal.
 
@@ -32,12 +33,12 @@ SD-WAN seamlessly routes traffic, on a per-packet basis, over the best available
 
 Citrix Virtual Apps and Desktops is heavily reliant on the quality of the network connection between the user and the virtual app and desktop. While Citrix’s HDX technologies and ICA protocol will squeeze the best performance possible out of any network, a better connection results in a better user experience.  Optimizing the session traffic through quality of service handling, queuing, and routing is an effective strategy for improving the user experience, especially when the network conditions are not ideal.  These are the success criteria that were used to evaluate HDX network performance improvements with Citrix SD-WAN:
 
-1. Use the default settings that come with a new implementation, using software-based Citrix SD-WAN instances (VPX) and the latest software version (11.0.3 at the time of testing).  For the comparison network, also use the default settings on open source router instances, which would also be software based.  This includes no special provisions that may improve forwarding performance such as custom queuing, load balancing, etc.
-2. Both the Citrix SD-WAN instances and open source router instances should be allocated the same amount of memory on the hypervisor host.
-3. Design an environment that may be reproduced by Citrix customers, field employees and partners to observe similar results.
-4. Develop an isolated environment that will provide consistent, reproducible results free of variable networking conditions that may occur in the cloud.
-5. The environment should use Citrix Storefront to enumerate virtual apps and desktops in Workspace App, yet results should also apply to Citrix Virtual Apps and Desktops service delivered via Citrix Workspace.
-6. Follow or highlight Citrix best practices and recommendations where possible.
+1.  Use the default settings that come with a new implementation, using software-based Citrix SD-WAN instances (VPX) and the latest software version (11.0.3 at the time of testing).  For the comparison network, also use the default settings on open source router instances, which would also be software based.  This includes no special provisions that may improve forwarding performance such as custom queuing, load balancing, etc.
+2.  Both the Citrix SD-WAN instances and open source router instances should be allocated the same amount of memory on the hypervisor host.
+3.  Design an environment that may be reproduced by Citrix customers, field employees and partners to observe similar results.
+4.  Develop an isolated environment that will provide consistent, reproducible results free of variable networking conditions that may occur in the cloud.
+5.  The environment should use Citrix Storefront to enumerate virtual apps and desktops in Workspace App, yet results should also apply to Citrix Virtual Apps and Desktops service delivered via Citrix Workspace.
+6.  Follow or highlight Citrix best practices and recommendations where possible.
 
 ## Scenarios
 
@@ -87,7 +88,7 @@ b) The result of the ICA “Round Trip Time” counter was then recorded.
 *  On the LON Client, the playback of a video was looped.  The video pertained to Citrix Workspace with Intelligence where a “virtual tornado” represented the many elements IT teams must manage was spinning rapidly.  During each test case we observed the graphics quality, and how rapidly the “virtual tornado” was spinning.
 
 | Test       | Overview           | Description  | Observation |
-| :-------------: |:-------------:| :--------:| :--------:|
+| :-------------:| :-------------:| :--------:| :--------:|
 | Baseline      | Steady state environment| This test captured the ICA RTT “baseline” after the virtual desktop was launched on the Windows 10 client and in a “steady state”.| Citrix SD-WAN instances are delivering the virtual desktop HDX flows, over virtual paths, using UDP transport. We’ll notice a few ms delay added in the Citrix SD-WAN topologies, but will see the invaluable performance benefits in the results of the additional tests.|
 | Latency      | (+) added “latency” | This test captured the ICA RTT with a 100ms delay added to the MPLS path, via a WAN emulator, between the Client and VDA. | There is no visible effect to the video playback on the client.  The ICA RTT increased by 100ms in both the Routed and SD-WAN single-path iteration, but the SD-WAN multi-path  iteration remained the same since the HDX traffic was redirected from the MPLS path with the added latency to the Internet (INET) path. |
 | Interactive BW | (+) added “interactive” BW | This test by ran a video loop, using a .mp4 file hosted on the VDA, with no caching on the player | The video plays unimpeded by network constraints in each topology. The graphics quality is good and the “virtual tornado” is spinning rapidly. |
@@ -101,12 +102,13 @@ When reviewing the quantitative results between the topologies Routed + MPLS and
 
 [![Results](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_results.png)](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_results.png)
 
-Below are the results and detailed test steps used to measure quantitative benefits of delivery with Citrix SD-WAN versus delivery over a traditional routed network without Citrix SD-WAN. 
+Below are the results and detailed test steps used to measure quantitative benefits of delivery with Citrix SD-WAN versus delivery over a traditional routed network without Citrix SD-WAN.
 
 ICA RTT was configured for measurement every second by the VDA. For the Interactive BW, Congestion BW, Bulk BW, and Loss tests the RTT varied increasingly due to the increased bandwidth and subsequent queue management and retransmissions.  Therefore, three measurements were captured, and the median value was recorded. Each complete set of tests, for all three scenarios, were further repeated three times and the median value was again recorded as the result.
 
+
 | Test Case | Steps | ROUTED + MPLS | SD-WAN + MPLS | SD-WAN + MPLS + INET |
-| ------------- |:-------------:| --------:| --------:| --------:|
+| :-------------: |:-------------:| :--------:| :--------:| :--------:|
 | Baseline      | a. Open a Google Chrome browser b. Navigate to http://ddc.training.lab/Citrix/StoreWeb/ c. Login as user1@training.lab / Citrix123 d. Launch desktop NYC. e. RECORD ICA RTT on NYC-VDA | 3 | 6 | 6 |
 | Latency      | a. Open Google Chrome from the NYC Util server and navigate to http://192.168.10.26/WANem b. Select “Advanced Mode” > eth1 c. Set the “Delay time” field to 100 and select “Apply Setting” toward the bottom of the screen d. OBSERVE the Video on the LON_Client e. RECORD ICA RTT on NYC-VDA | 104 | 13 | 109 |
 | Interactive Bandwidth (BW)      | a. Within the virtual desktop open VLC media player b. Select Media > Open File > C://Citrix_Workspace_with_Intelligence.mp4 c. Select View > Advanced Controls d. Set the video at the start of the ‘virtual hurricane’ and click the third button ‘Loop from point A to point B continuously’. You should see the first part of the icon turn red. Set the video to the end of the ‘virtual hurricane’ and press the button again. The second part of the loop button should not be red too. Press Play to view the loop. e. OBSERVE the Video on the LON_Client f. RECORD ICA RTT on NYC-VDA | 126 | 16 | 142 |
@@ -126,7 +128,7 @@ Citrix SD-WAN supports a variety of [deployment topologies](https://docs.citrix.
 
 A series of Vyatta routers are implemented to simulate an MPLS provider network and an Internet provider network.  A WanEm virtual appliance is used to interject latency and loss.
 
-[![ICA RTT](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_architecture.png)](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_architecture.png)
+[![Architecture](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_architecture.png)](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_architecture.png)
 
 ### Environment
 
@@ -137,13 +139,13 @@ The open source routers used have limited memory, in order to be hosted within t
 ### Hardware
 
 | Component | Notes (Location/Resources/Version)|
-| ------------- |:-------------:|
+| :-------------:| :-------------:|
 | Server (Citrix Hypervisor)   | 32G RAM |
 
 ### Software
 
 | Component | Notes (Location/Resources/Version)|
-| ------------- |:-------------:|
+| :-------------:| :-------------:|
 | SD-WAN   | Citrix SD-WAN VPX  |
 | Routers   | Vyatta OS  |
 | Wan Emulation | WanEm open source tool  |
@@ -169,7 +171,7 @@ Citrix Virtual Apps and Desktops allow:
 ### Virtual Machines
 
 | Component | OS | Memory |
-| :-------------: |:-------------:|:-------------:|
+| :-------------:| :-------------:| :-------------:|
 | AD.training.lab | Windows Server 2012 R2 | .5G |
 | LON_LAN/WAN (CE_Rtr) | Vyatta | 4G |
 | LON_Client | Window 10 | 1G |
@@ -188,7 +190,7 @@ Citrix Virtual Apps and Desktops allow:
 ### Network
 
 | Component | Vlan | IP Address |
-| :-------------: |:-------------:|:-------------:|
+| :-------------:| :-------------:| :-------------:|
 | AD.training.lab | Internal / NYC_LAN | 192.168.10.11 / 172.16.10.11 |
 | LON_CE_Rtr | LON_SD / PE_WeMPLS_LON | 172.70.1.1 / 169.15.70.3 |
 | LON_Client | Internal / LON_SD | 192.168.10.28 / 172.70.1.28 |
@@ -212,7 +214,3 @@ A couple key reasons behind the network performance improvements that were obser
 
 *  The inherent nature of SD-WAN technology’s ability to route traffic dynamically based on real time network conditions, as opposed to traditional routers that rely on routing protocol timeouts.
 *  Only Citrix SD-WAN “Multi-stream HDX Auto-QoS” can dynamically identify and prioritize HDX flows according to ICA class of service resulting in the least delay for the most time sensitive data.
-
-
-
-
