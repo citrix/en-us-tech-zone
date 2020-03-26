@@ -111,6 +111,80 @@ ICA RTT was configured for measurement every second by the VDA. For the Interact
 | Bulk BW      | a. Within the virtual desktop running on LON_Client open File Explorer b. Navigate to the C:\FILES (on NYC_VDA) and copy “LARGE_FILE.mp4” to the C:\inside-HDX-download on LON_Client c. OBSERVE the Video on the LON_Client d. RECORD ICA RTT on NYC-VDA | 3486 | 62 | 465 |
 | Loss      | a. Open Google Chrome from the NYC Util server and navigate to http:192.168.10.26/WANem b. Select “Advanced Mode” > eth1 c. Set the “Loss” field to 25 and select “Apply Setting” toward the bottom of the screen d. OBSERVE the Video on the LON_Client e. RECORD ICA RTT on NYC-VDA | 4243 | 64 | 536 |
 
+## Conceptual Architecture
+
+The architecture is based on a mock setup with a Windows 10 client, hosted in a London (LON) branch, connecting to a Citrix Virtual Apps and Desktops virtual delivery agent (VDA), running on Windows Server 2016, hosted in a New York City (NYC) data center.
+
+A Citrix SD-WAN Standard Edition (SE) VPX instance hosted in NYC, is configured as the Master Control Node (MCN), while another Citrix SD-WAN Standard Edition (SE) VPX instance is hosted in LON.  The SD-WAN instances create virtual paths over an MPLS and or Internet (INET) link to optimize delivery of the Citrix Virtual Apps and Desktops HDX session flows.
+
+Citrix SD-WAN supports a variety of [deployment topologies](https://docs.citrix.com/en-us/citrix-sd-wan/11/use-cases-sd-wan-virtual-routing.html) to provide flexible options to integrate with Enterprise networks. The NYC_SDWAN_SE instance is deployed in “virtual inline mode”, which is a common deployment for Data Center networks.  It relies on dynamic routing with the NYC_Core_Rtr (LAN) to take over routing for NYC LAN traffic and manage delivery of HDX flows to and from the NYC_VDA.  While the LON_SDWAN_SE instance is deployed in “inline mode”, which is a common deployment for branch office networks. It sits as a bridge between the LON_Client LAN and the LON_CE_Rtr (LAN/WAN) LAN and intervenes to manage delivery of HDX flows to and from the LON_Client.
+
+A series of Vyatta routers are implemented to simulate an MPLS provider network and an Internet provider network.  A WanEm virtual appliance is used to interject latency and loss.
+
+[![ICA RTT](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_architecture.png)](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_architecture.png)
+
+### Environment
+
+The environment is composed of various software and virtual machines hosted on a Citrix Hypervisor.  It is based on an environment that is commonly used for Citrix readiness labs used for field and events training.
+
+The open source routers used have limited memory, in order to be hosted within the confines of a 32G hypervisor (including supporting management router and jump server) and would typically use more if used in production.  However, the SD-WAN virtual paths traverse the same paths and open source routers as the directly routed traffic.  Therefore, the absolute measurements should not be referenced, rather the comparative differences that demonstrate quantitative benefits of using Citrix SD-WAN to deliver HDX sessions.  The NYC_Lan (Core_Rtr) and LON_LAN/WAN (CE_Rtr) routers were allocated the same 4G of memory that is allocated to the NYC_SDWAN_SE and LON_SDWAN_SE Citrix SD-WAN instances.
+
+### Hardware
+
+| Component | Notes (Location/Resources/Version)|
+| ------------- |:-------------:|
+| Server (Citrix Hypervisor)   | 32G RAM |
+
+### Software
+
+| Component | Notes (Location/Resources/Version)|
+| ------------- |:-------------:|
+| SD-WAN   | Citrix SD-WAN VPX  |
+| Routers   | Vyatta OS  |
+| Wan Emulation | WanEm open source tool  |
+| Citrix Virtual Apps and Desktops | V7 1912 LTSR |
+| Deliver Controller and VDA | Windows Server 2016  |
+| Domain Controller and Utility Server | Windows Server 2012 R2 |
+| Client   | Windows 10  |
+
+#### Citrix SD-WAN
+
+[Citrix SD-WAN](https://docs.citrix.com/en-us/citrix-sd-wan.html) simplifies branch networking with a reliable and high-performance workspace experience that helps accessing SaaS applications, virtual desktops, or traditional data centers.
+
+The [Citrix SD-WAN Standard Edition](https://docs.citrix.com/en-us/citrix-sd-wan/11.html) used in testing includes Virtual WAN features. It supports software-defined WAN capability to create a highly reliable network from multiple network links and to ensure that each application takes the best path to achieve the highest application performance.
+
+#### Citrix Virtual Apps and Desktops
+
+[Citrix Virtual Apps and Desktops](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/technical-overview.html) are virtualization solutions that give IT control of virtual machines, applications, licensing, and security while providing anywhere access for any device.
+Citrix Virtual Apps and Desktops allow:
+* End users to run applications and desktops independently of the device’s operating system and interface.
+* Administrators to manage the network and control access from selected devices or from all devices.
+* Administrators to manage an entire network from a single data center.
+
+### Virtual Machines
+
+| Component | OS | Memory |
+| :-------------: |:-------------:|:-------------:|
+| AD.training.lab | Windows Server 2012 R2 | .5G |
+| LON_LAN/WAN (CE_Rtr) | Vyatta | 4G |
+| LON_Client | Window 10 | 1G |
+| LON_SDWAN_SE | Citrix SD-WAN | 4G |
+| NYC_DDC | Windows Server 2016 | 4G |
+| NYC_VDA | Windows Server 2016 | 3G |
+| NYC_Lan (Core_Rtr) | Vyatta | 4G |
+| NYC_INET_Rtr | Vyatta | .5G |
+| NYC_MPLS_Rtr | Vyatta | .5G |
+| NYC_SDWAN_SE | Citrix SD-WAN | 4G |
+| NYC_Server | Windows Server 2012 R2 | .5G |
+| PE_INET_Rtr | Vyatta | .5G |
+| PE_MPLS_Rtr | Vyatta | .5G |
+| PE_WANem | WanEm | .5G |
+	
+### Network
+
+| Component | Vlan | IP Address |
+| :-------------: |:-------------:|:-------------:|
+| AD.training.lab | Internal / NYC_LAN | 192.168.10.11 / 172.16.10.11 |
 
 
 
