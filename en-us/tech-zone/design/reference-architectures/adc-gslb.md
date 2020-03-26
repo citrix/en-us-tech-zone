@@ -42,9 +42,9 @@ To ensure the various pieces of information are in place, the ADC system makes u
 *  Via Metric Exchange Protocol (MEP), which is a channel of communication between distinct NetScaler devices, and provides a mechanism for one ADC to provide state information about resources to another ADC
 *  Through SNMP based load monitors, which poll a remote resource for statistics such as CPU load, network load, and so on
 
-[![Citrix-ADC-GSLB-Image-1](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_001.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_001.png)
+[![Citrix-ADC-GSLB-Image-1](/en-us/tech-zone/design/media/reference-architectures_adc-gslb_001.png)](/en-us/tech-zone/design/media/reference-architectures_adc-gslb_001.png)
 
-[Figure-1] A Typical DNS Flow to Application Access
+Figure-1 A Typical DNS Flow to Application Access
 
 When you configure GSLB on ADC appliances and enable MEP, the DNS infrastructure is used to connect the client to the data center that best meets the set criteria. The criteria can designate the least loaded data center, the closest data center, the data center that responds most quickly to requests from the client’s location, a combination of those metrics, and SNMP metrics. An appliance tracks the location, performance, load, and availability of each data center. It uses these factors to select the data center to send the client request.
 
@@ -64,9 +64,9 @@ An active-active deployment can include a maximum of 32 GSLB sites, because MEP 
 
 The Citrix ADC appliance sends client requests to the appropriate GSLB site as determined by the GSLB method specified in the GSLB configuration.
 
-[![Citrix-ADC-GSLB-Image-2](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_002.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_002.png)
+[![Citrix-ADC-GSLB-Image-2](/en-us/tech-zone/design/media/reference-architectures_adc-gslb_002.png)](/en-us/tech-zone/design/media/reference-architectures_adc-gslb_002.png)
 
-[Figure-2] Active-Active Site Deployment
+Figure-2 Active-Active Site Deployment
 
 Active-Passive site deployment - An active-passive site consists of an active and a passive data center. This deployment type is ideal for disaster recovery.
 
@@ -76,9 +76,9 @@ Once you have configured the primary data center, replicate the configuration fo
 
 An active-passive deployment can include a maximum of 32 GSLB sites, because MEP cannot synchronize more than 32 sites.
 
-[![Citrix-ADC-GSLB-Image-3](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_003.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_003.png)
+[![Citrix-ADC-GSLB-Image-3](/en-us/tech-zone/design/media/reference-architectures_adc-gslb_003.png)](/en-us/tech-zone/design/media/reference-architectures_adc-gslb_003.png)
 
-[Figure-3] Active-Passive Site Deployment
+Figure-3 Active-Passive Site Deployment
 
 Parent-child topology deployment - Citrix ADC GSLB provides global server load balancing and disaster recovery by creating mesh connections between all the involved sites and making intelligent load balancing decisions. Each site communicates with the others to exchange server and network metrics through Metric Exchange Protocol (MEP), at regular intervals. However, with the increase in number of peer sites, the volume of MEP traffic increases exponentially because of the mesh topology. To overcome this, you can use a parent-child topology. The parent-child topology also supports larger deployments. In addition to the 32 parent sites, you can configure 1024 child sites.
 
@@ -167,17 +167,17 @@ The following details the Citrix ADC instances network address configurations in
 *  VIP – Citrix ADC VIP for Citrix Gateway
 *  VIP Citrix ADC Load Balancing (LB) VIP for StoreFront
 
-[![Citrix-ADC-GSLB-Image-4](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_004.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_004.png)
+[![Citrix-ADC-GSLB-Image-4](/en-us/tech-zone/design/media/reference-architectures_adc-gslb_004.png)](/en-us/tech-zone/design/media/reference-architectures_adc-gslb_004.png)
 
-[Figure-4] DNS and GSLB workflow
+Figure-4 DNS and GSLB workflow
 
 Figure 4 describes a DNS workflow from the client's application access request via DNS, which will be handled by GSLB entities. As a DNS request comes into the global DNS server, which delegates the request subzone to each ADNS IP as subzone name servers. Upon reception of a DNS request by an ADNS service, the appliance checks for a GSLB virtual server bound to that domain. If a GSLB virtual server is bound to the domain, it is queried for the best IP address to which to send the DNS response.
 
 Figure 5 diagram illustrates its actual deployment architecture topology. It lists all necessary interfaces associated with designated ADC IP addresses accordingly (that is, NSIP, SNIP/ADNS IP, Gateway IP, Load Balance IP) overlays with GSLB topology and services.
 
-[![Citrix-ADC-GSLB-Image-5](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_005.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-ADC-GSLB_005.png)
+[![Citrix-ADC-GSLB-Image-5](/en-us/tech-zone/design/media/reference-architectures_adc-gslb_005.png)](/en-us/tech-zone/design/media/reference-architectures_adc-gslb_005.png)
 
-[Figure-5] GSLB Deployment Architecture
+Figure-5 GSLB Deployment Architecture
 
 Those specific GSLB entities, as described in the earlier chapter, are:
 
@@ -214,13 +214,13 @@ The goal of this reference architecture is to assist you with planning your own 
 
 The deliverable provides guidelines for the implementation and configuration references. However, it does not provide step-by-step instructions on how to install or maintain the components discussed. Therefore, Citrix Consulting recommends Client design and operations teams involved in the design and deployment to review the following documents, articles, and guides prior to implementing the environment provided for production. These documents, articles, guides, and more are available from the online Citrix Knowledge Center, online Citrix Product Documentation, or online Citrix Community.
 
-Citrix Online Product Documentation [Citrix ADC 11](http://support.citrix.com/proddocs/topic/netscaler/ns-gen-netscaler11-wrapper-con.html)
+Citrix Online Product Documentation [Citrix ADC](/en-us/citrix-adc.html)
 
-Citrix Online Product Documentation [Citrix ADC VPX Virtual Machines](http://support.citrix.com/proddocs/topic/netscaler-11/ns-gen-nsvpx-wrapper-con-10.html)
+Citrix Online Product Documentation [Citrix ADC VPX Virtual Machines](/en-us/citrix-adc/13/deploying-vpx.html)
+
+Citrix Online Product Documentation [Global Server Load Balancing](/en-us/citrix-adc/13/global-server-load-balancing.html)
 
 Citrix Whitepaper [CTX129514](http://support.citrix.com/article/CTX129514) – Secure Deployment Guide for Citrix ADC MPX, VPX, and SDX Appliances
-
-Citrix Online Product Documentation [Global Server Load Balancing](http://support.citrix.com/proddocs/topic/netscaler-traffic-management-11-map/netscaler-gslb-gen-wrapper-10-con.html)
 
 Citrix Whitepaper [CTX123976](http://support.citrix.com/article/CTX123976) – Citrix ADC Global Server Load Balancing Primer: Theory and Implementation
 
@@ -230,9 +230,9 @@ Citrix Knowledgebase Article [CTX121713](http://support.citrix.com/article/CTX12
 
 Citrix Knowledgebase Article [CTX110488](http://support.citrix.com/article/CTX110488) – Delegating DNS Subdomains to the GSLB Setup of the Citrix ADC Appliances
 
-Citrix Online Product Documentation [Load Balancing](http://support.citrix.com/proddocs/topic/netscaler-traffic-management-11-map/ns-lb-wrapper-con-10.html)
+Citrix Online Product Documentation [Load Balancing](/en-us/citrix-adc/13/load-balancing.html)
 
-Citrix Online Product Documentation [SSL Offload and Acceleration](http://support.citrix.com/proddocs/topic/netscaler-traffic-management-11-map/ns-ssl-wrapper-con-10.html)
+Citrix Online Product Documentation [SSL Offload and Acceleration](/en-us/citrix-adc/13/ssl.html)
 
 Citrix Community Blog [StoreFront Remote Access Part 1: The Subnet IP Demystified](https://www.citrix.com/blogs/2013/07/08/storefront-remote-access-part-1-the-subnet-ip-demystified/)
 
