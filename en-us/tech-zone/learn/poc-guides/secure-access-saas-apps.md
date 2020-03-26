@@ -85,7 +85,48 @@ To successfully integrate Okta apps with Citrix Workspace, the administrator nee
 *  Configure SaaS app
 *  Authorize SaaS app
 
-### SAML Login URL
+### Identify SAML Login URL
 
-### IdP Issuer URI
+*  Log into Okta as an administrator
+*  Select **Applications**
+*  Select the application to add into Citrix Workspace. In this example, Microsoft Office 365 is used.
+*  Under **General**, scroll down until the correct **App Embed Link** is located. This will be used as the SAML Login URL for Citrix Workspace.
 
+[![SAML Login URL](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_app-embed-link.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_app-embed-link.png)
+
+### Identify IdP Issuer URI
+
+*  Log into Citrix cloud as an administrator
+*  Under the **Identity and Access Management** section, select **API Access**
+*  Capture the **customer ID** parameter.  This is used to create the IdP Issuer URI in the format: https://cloud.com/<customerID>
+
+[![IdP Issuer URI](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_idp-issuer-uri.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_idp-issuer-uri.png)
+
+### Setup SAML Identity Provider
+
+Okta needs to use Citrix Workspace as a SAML identity provider, resulting in Okta becoming a service provider in the SAML configuration.
+
+*  Log into Okta as an administrator
+*  Select **Security** -> **Identity Providers**
+*  Select **Add Identity Provider** -> **Add SAML 2.0 IdP**
+[![Setup SAML IdP 01](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-add-saml-idp-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-add-saml-idp-01.png)
+*  Provide a **Name**
+*  For the IdP Username, use the following expression: **idpuser.userName** (this is case sensitive)
+*  Match against should be **Okta Username or email**
+*  If no match is found, select **Redirect to Okta sign-in page**
+*  For the IdP Issuer URI, use the URL https://cloud.com/<customerID>. CustomerID is from the IdP Issuer URI section
+*  For the IdP Single Sign-On URL, use the following URL https://app.netscalergateway.net/ngs/<customerid>/saml/login substituting customer ID, which was obtained from the IdP Issuer URI section
+[![Setup SAML IdP 02](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-add-saml-idp-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-add-saml-idp-02.png)
+*  Leave this part of the process open until we are able to obtain an SSL certificate from Citrix Cloud.
+
+### Configure SaaS App
+
+*  Within Citrix cloud, select **Manage** from the Gateway tile.
+
+[![Setup SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-01.png)
+
+*  Select **Add a Web/SaaS app**
+*  In the Choose a template wizard, select **Skip**
+*  In the App details window, provide a **name** for the application
+*  For the URL, use the **App Embed Link** from the Identity SAML Login URL section
+*  For related domains, one is automatically added based on the entered URL added in the previous step. That specific related domain is associated with the Okta application link. Citrix Workspace requires additional related domains for the actual application, which will often be *.<companyID>.SaaSApp.com (as an example *.citrix.slack.com).  
