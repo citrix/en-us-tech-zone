@@ -185,6 +185,29 @@ Citrix Virtual Apps and Desktops allow:
 | Component | Vlan | IP Address |
 | :-------------: |:-------------:|:-------------:|
 | AD.training.lab | Internal / NYC_LAN | 192.168.10.11 / 172.16.10.11 |
+| LON_CE_Rtr | LON_SD / PE_WeMPLS_LON | 172.70.1.1 / 169.15.70.3 |
+| LON_Client | Internal / LON_SD | 192.168.10.28 / 172.70.1.28 |
+| LON_SDWAN_SE | Internal / LON_SD / LON_LAN / PE_WeINET_LON | 192.168.10.201 / 172.70.1.27 / 172.70.1.28 / 169.15.71.3 |
+| NYC_DDC | Internal / NYC_LAN | 192.168.10.200 / 172.16.10.51 |
+| NYC_VDA | Internal / NYC_LAN | 192.168.10.202 / 172.16.10.53 |
+| NYC_Core_Rtr | NYC_LAN / NYC_RtrMPLS / NYC_RtrINET / NYC_SD | 172.16.10.199 / 172.16.20.2 / 172.16.30.4 / 172.16.40.1 |
+| NYC_INET_Rtr | NYC_Rtr_INET / PE_INET_NY | 172.16.30.3 / 169.15.60.2 |
+| NYC_MPLS_Rtr | NYC_RtrMPLS / PE_MPLS_NYC | 172.16.20.1 / 169.15.50.2 |
+| NYC_SDWAN_SE | Internal / NYC_SD| 192.168.10.200 / 172.16.40.2 |
+| NYC_Server | Internal / NYC_LAN | 192.168.10.12 / 172.16.10.12 |
+| PE_INET_Rtr | Internal / PE_INET_NYC / PE_INET_WeLON | 192.168.10.92 /  169.15.60.1 / 169.15.71.1 |
+| PE_MPLS_Rtr | PE_MPLS_NYC / PE_MPLS_WeLON | 169.15.50.1 / 169.15.70.1 |
+| PE_WANem | Internal / PE_MPLS_WeLON / PE_WeMPLS_LON / PE_INET_WeLON /  PE_WeINET_LON | 192.168.10.26 / 169.15.70.2 / 169.15.70.2 / 169.15.71.2 / 169.15.71.2 |
+
+## Summary
+
+Citrix SD-WAN significantly improves the network performance of Citrix Virtual Apps and Desktops HDX sessions, over environments without Citrix SD-WAN, resulting in a better user experience.  This was demonstrated by measuring the quantitative results of test scenarios under a variety of network constraints.
+
+A couple key reasons behind the network performance improvements that were observed include:
+
+*  The inherent nature of SD-WAN technology’s ability to route traffic dynamically based on real time network conditions, as opposed to traditional routers that rely on routing protocol timeouts.
+*  Only Citrix SD-WAN “Multi-stream HDX Auto-QoS” can dynamically identify and prioritize HDX flows according to ICA class of service resulting in the least delay for the most time sensitive data.
+
 
 
 
