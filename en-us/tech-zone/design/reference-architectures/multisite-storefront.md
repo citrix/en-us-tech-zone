@@ -5,7 +5,7 @@ layout: doc
 
 ## Contributors
 
-**Author:** [Albert Lee](mailto:albert.leej@Citrix.com)
+**Author:** [Rajendra Soebhag](mailto:rajendra.soebhag@citrix.com) and [Albert Lee](mailto:albert.leej@Citrix.com)
 
 **Special thanks:** [Brendan Lin](mailto:brendan.lin@citrix.com) and [Sarah Steinhoff](sarah.steinhoff@citrix.com)
 
