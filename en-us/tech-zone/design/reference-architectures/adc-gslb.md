@@ -220,15 +220,15 @@ Citrix Online Product Documentation [Citrix ADC VPX Virtual Machines](/en-us/cit
 
 Citrix Online Product Documentation [Global Server Load Balancing](/en-us/citrix-adc/13/global-server-load-balancing.html)
 
-Citrix Whitepaper [CTX129514](http://support.citrix.com/article/CTX129514) – Secure Deployment Guide for Citrix ADC MPX, VPX, and SDX Appliances
+Citrix Whitepaper [CTX129514](https://support.citrix.com/article/CTX129514) – Secure Deployment Guide for Citrix ADC MPX, VPX, and SDX Appliances
 
-Citrix Whitepaper [CTX123976](http://support.citrix.com/article/CTX123976) – Citrix ADC Global Server Load Balancing Primer: Theory and Implementation
+Citrix Whitepaper [CTX123976](https://support.citrix.com/article/CTX123976) – Citrix ADC Global Server Load Balancing Primer: Theory and Implementation
 
-Citrix Knowledgebase Article [CTX122619](http://support.citrix.com/article/CTX122619) – DNS and GSLB Primer
+Citrix Knowledgebase Article [CTX122619](https://support.citrix.com/article/CTX122619) – DNS and GSLB Primer
 
-Citrix Knowledgebase Article [CTX121713](http://support.citrix.com/article/CTX121713) – How to Delegate Subdomains in a Microsoft DNS or a BIND for Global Server Load Balancing on a Citrix ADC Appliance
+Citrix Knowledgebase Article [CTX121713](https://support.citrix.com/article/CTX121713) – How to Delegate Subdomains in a Microsoft DNS or a BIND for Global Server Load Balancing on a Citrix ADC Appliance
 
-Citrix Knowledgebase Article [CTX110488](http://support.citrix.com/article/CTX110488) – Delegating DNS Subdomains to the GSLB Setup of the Citrix ADC Appliances
+Citrix Knowledgebase Article [CTX110488](https://support.citrix.com/article/CTX110488) – Delegating DNS Subdomains to the GSLB Setup of the Citrix ADC Appliances
 
 Citrix Online Product Documentation [Load Balancing](/en-us/citrix-adc/13/load-balancing.html)
 
