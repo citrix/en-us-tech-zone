@@ -7,7 +7,7 @@ description: Measure HDX user interface performance improvements provided by Cit
 
 ## Contributors
 
-**Authors:** 
+**Authors:**
 
 [Matthew Brooks](https://twitter.com/tweetmattbrooks)
 
@@ -33,11 +33,11 @@ SD-WAN seamlessly routes traffic, on a per-packet basis, over the best available
 
 Citrix Virtual Apps and Desktops is heavily reliant on the quality of the network connection between the user and the virtual app or desktop. While Citrix’s HDX technologies and Independent Computing Architecture (ICA) protocol squeezes the best performance possible out of any network, a better connection results in a better user experience. Citrix SD-WAN can enhance HDX session traffic performance, especially when network conditions are not ideal, with capabilities such as Quality of Service, prioritization, and intelligent steering. The following success criteria were used to evaluate HDX network performance improvements with Citrix SD-WAN:
 
-1.  Use the default settings that come with a new implementation, using software-based Citrix SD-WAN instances (VPX) and the latest software version (11.0.3 at the time of testing). For the comparison network, also use the default settings on open source router instances, which would also be software based. This includes no special provisions that may improve forwarding performance such as custom queuing, load balancing, and so on.
-2.  Both the Citrix SD-WAN instances and open source router instances should be allocated the same amount of memory on the hypervisor host.
+1.  Use the default settings that come with a new implementation, using software-based Citrix SD-WAN instances (VPX) and the latest software version (11.0.3 at the time of testing). For the comparison network, also use the default settings on open source router instances, which would also be software based. This includes no special provisions that could improve forwarding performance such as custom queuing or load balancing.
+2.  Both the Citrix SD-WAN instances and open source router instances are allocated the same amount of memory on the hypervisor host.
 3.  Design an environment that can be reproduced by Citrix customers, field employees, and partners to observe similar results.
-4.  Develop an isolated environment provides consistent, reproducible results free of variable networking conditions that may occur in the cloud.
-5.  The environment should use Citrix StoreFront to enumerate virtual apps and desktops in Workspace App.  However, results should also apply to Citrix Virtual Apps and Desktops service delivered via Citrix Workspace.
+4.  Develop an isolated environment provides consistent, reproducible results free of variable networking conditions that occur in the cloud.
+5.  The environment uses Citrix StoreFront to enumerate virtual apps and desktops in Workspace App.  However, results also apply to Citrix Virtual Apps and Desktops service delivered via Citrix Workspace.
 6.  Follow or highlight Citrix best practices and recommendations where possible.
 
 ## Scenarios
@@ -52,7 +52,7 @@ Therefore, ICA RTT constitutes the actual application layer delay, which include
 
 [![ICA RTT](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_ICARTT.png)](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_ICARTT.png)
 
-The ICA RTT counter was used to measure the quantitative HDX performance for each test. It was captured directly on the VDA during each test. The same client and server infrastructure were used for each test iteration.  Therefore, only changes made to the network had a relative impact on the ICA RTT measured between tests.
+The ICA RTT counter was used to measure the quantitative HDX performance for each test. It was captured directly on the VDA during each test. The same client and server infrastructure were used for each test iteration. Therefore, only changes made to the network had a relative impact on the ICA RTT measured between tests.
 
 ### Network Topologies
 
@@ -60,16 +60,15 @@ Every set of tests ran for three iterations using the following network topologi
 
 [![Network Topologies](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_nettopos.png)](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_nettopos.png)
 
+1.  **Routed + MPLS** – using this environment, HDX traffic from the London (LON) Client to the New York City (NYC) VDA traverses the routed “underlay” network’s MPLS path.
 
-1. **Routed + MPLS** – using this environment, HDX traffic from the London (LON) Client to the New York City (NYC) VDA traverses the routed “underlay” network’s MPLS path.
+The link throughput is rate limited to 2 Mbps similar to a branch with an E1 or T1 (1.544 Mpbs) leased line. This type of topology is commonly used to backhaul all traffic to a central data center to access apps and data on the intranet.  This topology is also often used for security inspection before being routed to the Internet.
 
-The link throughput is rate limited to 2 Mbps similar to a branch with an E1 or T1 (1.544 Mpbs) leased line. This type of topology is commonly used to backhaul all traffic to a central data center to access apps and data on the intranet or for security inspection before being routed to the Internet.
-
-2. **SD-WAN + MPLS** - using this environment, HDX traffic from the LON Client to the NYC VDA traverses the SD-WAN “overlay” network, consisting of only a single MPLS path.
+2.  **SD-WAN + MPLS** - using this environment, HDX traffic from the LON Client to the NYC VDA traverses the SD-WAN “overlay” network, consisting of only a single MPLS path.
 
 Here we observe the Citrix SD-WAN appliance’s ability to automatically identify and prioritize ICA traffic classes, providing Quality of Service to the delivery across the WAN. While it is ultimately delivered over the same routed network infrastructure (used in the Routed + MPLS scenario) its unique performance enhancement capabilities provide the best user experience for Citrix Virtual Apps and Desktops session traffic.
 
-3. **SD-WAN + MPLS + Internet** - using this environment, HDX traffic from the LON Client to the NYC VDA traverses the SD-WAN “overlay” network’s MPLS and Internet (INET) paths.
+3.  **SD-WAN + MPLS + Internet** - using this environment, HDX traffic from the LON Client to the NYC VDA traverses the SD-WAN “overlay” network’s MPLS and Internet (INET) paths.
 
 Here we observe Citrix SD-WAN’s ability to seamless redirect HDX flows, on a per-packet basis, securely over the INET path, when it detects poor quality on the MPLS path. The link throughput is rate limited to 20 Mbps similar to a branch with a DSL or Cable link.
 
@@ -77,7 +76,7 @@ Both SD-WAN instances analyze the conditions of each available path, using real-
 
 ### Test Cases
 
-*  While running each test case, ICA RTT was captured using the Windows Management Instrumentation Interface (WMI).
+*  During each test case, ICA RTT was captured using the Windows Management Instrumentation Interface (WMI).
 
 a) From the NYC-VDA MsDos prompt the following was executed:
 **wmic**
@@ -89,11 +88,11 @@ b) The result of the ICA “Round Trip Time” counter was then recorded.
 
 | Test       | Overview           | Description  | Observation |
 | :-------------:| :-------------:| :--------:| :--------:|
-| Baseline      | Steady state environment| This test captured the ICA RTT “baseline” after the virtual desktop was launched on the Windows 10 client and in a “steady state”.| Citrix SD-WAN instances are delivering the virtual desktop HDX flows, over virtual paths, using UDP transport. We notice a few ms delay added in the Citrix SD-WAN topologies, but we will see the invaluable performance benefits in the results of the additional tests.|
+| Baseline      | Steady state environment| This test captured the ICA RTT “baseline” after the virtual desktop was launched on the Windows 10 client and in a “steady state”.| Citrix SD-WAN instances are delivering the virtual desktop HDX flows, over virtual paths, using UDP transport. We notice a few ms delay added in the Citrix SD-WAN topologies, but we see the invaluable performance benefits in the results of the additional tests.|
 | Latency      | (+) added “latency” | This test captured the ICA RTT with a 100 ms delay added to the MPLS path, via a WAN emulator, between the Client and VDA. | There is no visible effect to the video playback on the client. The ICA RTT increased by 100 ms in both the Routed and SD-WAN single-path iteration. However, the SD-WAN multi-path iteration remained the same since the HDX traffic was redirected from the MPLS path with the added latency to the Internet (INET) path. |
 | Interactive BW | (+) added “interactive” BW | This test by ran a video loop, using a .mp4 file hosted on the VDA, with no caching on the player | The video plays unimpeded by network constraints in each topology. The graphics quality is good and the “virtual tornado” is spinning rapidly. |
 | Congestion BW | (+) added “congestion” BW | This test added “congestion” by sending CIFS traffic by copying a large file from the VDA file system to the Windows 10 Client file system. | ICA RTT increases significantly in the Routed iteration since it directly fights for transmit queue buffers on the LON_CE_Rtr. Here we see the “virtual tornado” begin to slow and pause intermittently. For the SD-WAN multi-path iteration again there is no effect since the SD-WAN instance is dynamically rerouting HDX flows over the INET path. For the SD-WAN single-path iteration there is some effect since there is congestion queuing and policing measures take effect. However, since the HDX traffic ICA classes have appropriate queue allocations there is virtually no noticeable effect on the video playback. |
-| Bulk BW      | (+) added “bulk” BW | This test copied a large file from the VDA to the Client file system, from within the virtual desktop, which occurs within the HDX session. | We observe that ICA RTT increases significantly in the Routed iteration. Now there is greater demand for bandwidth, and transmit queues, while the client and VDA continue to need to retransmit lost packets, while fighting for transmit queue buffers on the LON_CE_Rtr. For the SD-WAN multi-path iteration again there is no effect since the SD-WAN instance is dynamically rerouting HDX flows over the INET path. For the SD-WAN single-path iteration there is some effect since now there are additional bandwidth demands while the client and VDA need to retransmit lost packets and congestion queuing and policing measures are in effect. Yet effect on the video playback of the “virtual tornado” is mitigated. Here we observe the unique [Citrix SD-WAN ICA classification](https://docs.citrix.com/en-us/citrix-sd-wan/11/quality-of-service/app-classification-sd-wan.html) benefits as the HDX flows are automatically streamed into four separate classes. These include class_0 voice and class_1 video flows are prioritized over the class_2 bulk file transfer traffic. |
+| Bulk BW      | (+) added “bulk” BW | This test copied a large file from the VDA to the Client file system, from within the virtual desktop, which occurs within the HDX session. | We observe that ICA RTT increases significantly in the Routed iteration. Now there is greater demand for bandwidth, while the client and VDA continue to need to retransmit lost packets, while fighting for transmit queue buffers on the LON_CE_Rtr. For the SD-WAN multi-path iteration again there is no effect since the SD-WAN instance is dynamically rerouting HDX flows over the INET path. For the SD-WAN single-path iteration there is some effect now.  There are additional bandwidth demands while the client and VDA need to retransmit lost packets and congestion queuing along with policing measures are in effect. Yet effect on the video playback of the “virtual tornado” is mitigated. Here we observe the unique [Citrix SD-WAN ICA classification](https://docs.citrix.com/en-us/citrix-sd-wan/11/quality-of-service/app-classification-sd-wan.html) benefits as the HDX flows are automatically streamed into four separate classes. These include class_0 voice and class_1 video flows are prioritized over the class_2 bulk file transfer traffic. |
 | Loss      | (+) added 25% loss | This test added 25% loss directly to the MPLS path, between the Client and VDA using Wan Emulation. | We observe that ICA RTT increases significantly in the Routed iteration since now the client and VDA need to retransmit lost packets, while fighting for transmit queue buffers on the LON_CE_Rtr. For the SD-WAN multi-path iteration again there is no effect since the SD-WAN instance is dynamically rerouting HDX flows over the INET path. For the SD-WAN single-path iteration there is some effect since now the client and VDA need to retransmit lost packets and congestion queuing and policing measures are in effect. However, since the HDX traffic ICA classes have appropriate queue allocations the effect is nearly not noticeable to the user experience. |
 
 ### Results
@@ -106,21 +105,20 @@ Following are the results and detailed test steps used to measure quantitative b
 
 ICA RTT was configured for measurement every second by the VDA. For the Interactive BW, Congestion BW, Bulk BW, and Loss tests the RTT varied increasingly due to the increased bandwidth and subsequent queue management and retransmissions. Therefore, three measurements were captured, and the median value was recorded. Each complete set of tests, for all three scenarios, were further repeated three times and the median value was again recorded as the result.
 
-
 | Test Case | Steps | ROUTED + MPLS | SD-WAN + MPLS | SD-WAN + MPLS + INET |
 | :-------------: |:-------------:| :--------:| :--------:| :--------:|
 | Baseline      | 1.  Open a **Google Chrome** browser 2.  Navigate to ddc.training.lab/Citrix/StoreWeb/ 3.  Login as user1@training.lab / Citrix123 4.  Launch desktop NYC. 5.  RECORD ICA RTT on NYC-VDA | 3 | 6 | 6 |
 | Latency      | 1.  Open **Google Chrome** from the NYC Util server and navigate to 192.168.10.26/WANem 2.  Select “Advanced Mode” > eth1 3.  Set the “Delay time” field to 100 and select “Apply Setting” toward the bottom of the screen 4.  OBSERVE the Video on the LON_Client 5.  RECORD ICA RTT on NYC-VDA | 104 | 13 | 109 |
-| Interactive Bandwidth (BW)      | 1.  Within the virtual desktop open VLC media player 2.  Select Media > Open File > C://Citrix_Workspace_with_Intelligence.mp4 3.  Select **View > Advanced Controls** 4.  Set the video at the start of the ‘virtual hurricane’ and click the third button ‘Loop from point A to point B continuously’. You should see the first part of the icon turn red. Set the video to the end of the ‘virtual hurricane’ and press the button again. The second part of the loop button should not be red too. Press **Play** to view the loop. 5.  OBSERVE the Video on the LON_Client 6.  RECORD ICA RTT on NYC-VDA | 126 | 16 | 142 |
+| Interactive Bandwidth (BW)      | 1.  Within the virtual desktop open VLC media player 2.  Select Media > Open File > C://Citrix_Workspace_with_Intelligence.mp4 3.  Select **View > Advanced Controls** 4.  Set the video at the start of the ‘virtual hurricane’ and click the third button ‘Loop from point A to point B continuously’. You will see the first part of the icon turn red. Set the video to the end of the ‘virtual hurricane’ and press the button again. The second part of the loop button will turn red too. Press **Play** to view the loop. 5.  OBSERVE the Video on the LON_Client 6.  RECORD ICA RTT on NYC-VDA | 126 | 16 | 142 |
 | Congestion BW      | 1.  On the LON_Client open **File Explorer** 2.  Navigate to the “FILES” share on NYC_VDA and copy “LARGE_FILE.mp4” to the C:\outside-HDX-download on LON_Client 3.  OBSERVE the Video on the LON_Client 4.  RECORD ICA RTT on NYC-VDA | 1606 | 63 | 485 |
 | Bulk BW      | 1.  Within the virtual desktop running on LON_Client open **File Explorer** 2.  Navigate to the C:\FILES (on NYC_VDA) and copy “LARGE_FILE.mp4” to the C:\inside-HDX-download on LON_Client 3.  OBSERVE the Video on the LON_Client 4.  RECORD ICA RTT on NYC-VDA | 3486 | 62 | 465 |
-| Loss      | 1.  Open **Google Chrome** from the NYC Util server and navigate to http:192.168.10.26/WANem 2.  Select “Advanced Mode” > eth1 3.  Set the “Loss” field to 25 and select “Apply Setting” toward the bottom of the screen 4.  OBSERVE the Video on the LON_Client 5.  RECORD ICA RTT on NYC-VDA | 4243 | 64 | 536 |
+| Loss      | 1.  Open **Google Chrome** from the NYC Util server and navigate to 192.168.10.26/WANem 2.  Select “Advanced Mode” > eth1 3.  Set the “Loss” field to 25 and select “Apply Setting” toward the bottom of the screen 4.  OBSERVE the Video on the LON_Client 5.  RECORD ICA RTT on NYC-VDA | 4243 | 64 | 536 |
 
 **NOTE**: Find a worksheet with a detailed compilation of results [here]( https://citrix.sharefile.com/d-s80a041db88d46ceb).
 
 ## Conceptual Architecture
 
-The architecture is based on a mock setup with a Windows 10 client, hosted in a London (LON) branch, connecting to a Citrix Virtual Apps and Desktops virtual delivery agent (VDA), running on Windows Server 2016, hosted in a New York City (NYC) data center.
+The architecture is based on a mock setup with a Windows 10 client, hosted in a London (LON) branch, connecting to a Citrix Virtual Apps and Desktops VDA, running on Windows Server 2016, hosted in a New York City (NYC) data center.
 
 A Citrix SD-WAN Standard Edition (SE) VPX instance hosted in NYC, is configured as the Master Control Node (MCN), while another Citrix SD-WAN Standard Edition (SE) VPX instance is hosted in LON. The SD-WAN instances create virtual paths over an MPLS and or Internet (INET) link to optimize delivery of the Citrix Virtual Apps and Desktops HDX session flows.
 
@@ -164,9 +162,10 @@ The [Citrix SD-WAN Standard Edition](https://docs.citrix.com/en-us/citrix-sd-wan
 
 [Citrix Virtual Apps and Desktops](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/technical-overview.html) are virtualization solutions that give IT control of virtual machines, applications, licensing, and security while providing anywhere access for any device.
 Citrix Virtual Apps and Desktops allow:
-* End users to run applications and desktops independently of the device’s operating system and interface.
-* Administrators to manage the network and control access from selected devices or from all devices.
-* Administrators to manage an entire network from a single data center.
+
+*  End users to run applications and desktops independently of the device’s operating system and interface.
+*  Administrators to manage the network and control access from selected devices or from all devices.
+*  Administrators to manage an entire network from a single data center.
 
 ### Virtual Machines
 
@@ -186,12 +185,12 @@ Citrix Virtual Apps and Desktops allow:
 | PE_INET_Rtr | Vyatta | .5G |
 | PE_MPLS_Rtr | Vyatta | .5G |
 | PE_WANem | WanEm | .5G |
-	
+
 ### Network
 
-| Component | Vlan | IP Address |
+| Component | VLAN | IP Address |
 | :-------------:| :-------------:| :-------------:|
-| AD.training.lab | Internal / NYC_LAN | 192.168.10.11 / 172.16.10.11 |
+| AD.training.lab | Internal / NYC_LAN | *  192.168.10.11 *  172.16.10.11 |
 | LON_CE_Rtr | LON_SD / PE_WeMPLS_LON | 172.70.1.1 / 169.15.70.3 |
 | LON_Client | Internal / LON_SD | 192.168.10.28 / 172.70.1.28 |
 | LON_SDWAN_SE | Internal / LON_SD / LON_LAN / PE_WeINET_LON | 192.168.10.201 / 172.70.1.27 / 172.70.1.28 / 169.15.71.3 |
