@@ -51,11 +51,11 @@ Because there are often more users than PCs in a computing lab, [policies limiti
 
 ## Authentication
 
-Users continue to authenticate to their office-based PC with their Active Directory credentials, however, as they are accessing over the Internet from outside the office premises, organizations typically require stronger levels of authentication than just user name and password.
+Users continue to authenticate to their office-based PC with their Active Directory credentials. However, as they are accessing over the Internet from outside the office premises, organizations typically require stronger levels of authentication than just user name and password.
 
 Citrix Workspace supports different authentication options to be selected including Active Directory + Token and Azure Active Directory. [Current Supported Authentication Options](/en-us/citrix-workspace/secure.html)
 
-If Citrix Gateway is configured as the authentication option for Citrix Workspace, or if a customer chooses to leverage Citrix Gateway + Citrix StoreFront as an alternative to Citrix Workspace, then the much wider selection of [Citrix Gateway authentication options](/en-us/citrix-gateway/13/authentication-authorization.html) becomes available.
+If Citrix Gateway is configured as the authentication option for Citrix Workspace, or if a customer chooses to use Citrix Gateway + Citrix StoreFront as an alternative to Citrix Workspace, then the much wider selection of [Citrix Gateway authentication options](/en-us/citrix-gateway/13/authentication-authorization.html) becomes available.
 
 Some of these options, like the time-based one-time password, require the user to initially register for a new token. As token registration requires the user to access their email to validate their identity, it may need to be completed before the user attempts to work remotely.
 
@@ -71,7 +71,7 @@ Users can remotely access their work PC with an untrusted, personal device. Orga
 
 ***Note:** The following sizing recommendations are a good starting point, but each environment is unique, resulting in unique results. Monitor the infrastructure and size appropriately.*
 
-As users are accessing existing office PCs there is minimal additional infrastructure needed to support adding Remote PC Access, however it is important that the Control layer and Access layer infrastructure are sized and monitored correctly to ensure that they do not become a bottleneck.
+As users are accessing existing office PCs there is minimal extra infrastructure needed to support adding Remote PC Access, however it is important that the Control layer and Access layer infrastructure are sized and monitored correctly to ensure that they do not become a bottleneck.
 
 ### Control Layer
 
@@ -90,12 +90,12 @@ When using an on-premises Citrix ADC for Citrix Gateway, consult the data sheet 
 
 Ensure that there is adequate available Internet bandwidth where the Gateway appliance is located to support the expected concurrent ICA sessions.
 
-When using the Gateway Service from Citrix Cloud, the ICA traffic flows between the Resource Location (where the VDAs and Cloud Connectors are located) directly to the Gateway service. The traffic is either proxied by the Cloud Connectors (default) or can flow directly from the VDA, bypassing the Cloud Connectors if the conditions to leverage the rendezvous protocol can be met.
+When using the Gateway Service from Citrix Cloud, the ICA traffic flows between the Resource Location (where the VDAs and Cloud Connectors are located) directly to the Gateway service. The traffic is either proxied by the Cloud Connectors (default) or can flow directly from the VDA, bypassing the Cloud Connectors if the conditions to use the rendezvous protocol can be met.
 
 When Cloud Connectors are used to proxy ICA traffic to the Gateway Service then this can be a bottleneck and careful monitoring of CPU & memory on the Cloud Connector VMs is advised. For initial planning estimates a 4 vCPU Citrix Cloud Connector VM can handle a maximum of 1000 concurrent ICA Proxy sessions.
 Rendezvous protocol (when configured) enables the Virtual Delivery Agent installed on each physical PC to communicate directly with the Gateway Service instead of tunneling the session through the Cloud Connector.
 
-When using Gateway Service, Citrix recommends leveraging rendezvous protocol to mitigate the issue of Cloud Connectors being a bottleneck for ICA Proxy.
+When using Gateway Service, Citrix recommends using rendezvous protocol to mitigate the issue of Cloud Connectors being a bottleneck for ICA Proxy.
 
 [![Rendezvous Protocol Policy](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_rendezvous-protocol-policy.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_rendezvous-protocol-policy.png)
 
@@ -112,9 +112,9 @@ There are certain prerequisites to allow [rendezvous protocol](/en-us/citrix-vir
 
 If the office PC is not powered on with the VDA registered, the user’s session cannot be brokered. Citrix recommends putting in place processes to ensure the machines that users need to connect to are powered-on.
 
-If available, modify the PC’s BIOS setting to automatically power on in the event of a power failure. Administrators can also configure an Active Directory Group Policy object to remove the “Shut Down” option from the Windows PC. This helps prevent the user from powering down the physical PC
+If available, modify the PC’s BIOS setting to automatically power on in the event of a power failure. Administrators can also configure an Active Directory Group Policy object to remove the “Shut Down” option from the Windows PC. This helps prevent the user from powering down the physical PC.
 
-Remote PC Access also supports [Wake-on-LAN](/en-us/citrix-virtual-apps-desktops/install-configure/remote-pc-access.html#wake-on-lan) operations to enable powering on Windows PCs that are currently powered off. This option requires the use of Microsoft System Center Configuration Manager 2012, 2012 R2 or 2016.
+Remote PC Access also supports [Wake-on-LAN](#wake-on-lan) operations to enable powering on Windows PCs that are currently powered off. This option requires the use of Microsoft System Center Configuration Manager 2012, 2012 R2 or 2016.
 
 ***Note:** The Microsoft Configuration Manager Wake-on-LAN hosting connection functionality is not available when using the Citrix Virtual Apps and Desktops Service in Citrix Cloud*
 
@@ -124,26 +124,95 @@ It is important that users are each brokered to their own office PC. Once the VD
 
 By default, multiple users can be assigned to a desktop if they have all logged into the same physical PC, but this can be disabled via a registry edit on the Delivery Controllers.
 
-The Citrix Virtual Apps and Desktops administrator can modify the assignments as needed within Citrix Studio or via PowerShell.
+The Citrix Virtual Apps and Desktops administrator can modify the assignments as needed within Citrix Studio or via PowerShell. To get started with using PowerShell for adding Remote PC Access VDAs to a Site and assigning users, Citrix Consulting produced a reference script which can be found on the [Citrix GitHub page](https://github.com/citrix/remote-pc-load-script).
 
-## Agent Deployment
+## Virtual Delivery Agent
+
+This section reviews key considerations for handling the Virtual Delivery Agent package.
+
+### Versions
+
+Citrix Virtual Apps and Desktops administrators can use either the VDAWorkstationCoreSetup.exe package or the VDAWorkstationSetup.exe package with the /remotePC flag. The VDAWorkstationCoreSetup.exe package is smaller and only includes the core components required for Remote PC Access, but notably, in version 1912 and earlier, excludes the components required for content redirection (see the [Microsoft Teams](#microsoft-teams) section for further guidance).
+
+#### Windows 7 and 8.1
+
+Though Windows 7 is no longer supported, many organizations still have legacy Windows 7 desktop machines. For deployment on Windows 7 and Windows 8.1, customers should use the XenDesktop 7.15 LTSR VDA.
+
+#### Windows 10
+
+For deployment on Windows 10, customers should use the Citrix Virtual Apps and Desktops 1912 LTSR VDA or a supported Current Release VDA. Citrix version compatibility for Windows 10 builds can be found in [CTX224843](https://support.citrix.com/article/CTX224843).
+
+### Helpful Command-line Options
+
+There are several VDA installer command-line options to consider when deploying Remote PC Access that can enable useful functionality.
+
+#### /remotePC
+
+Used with the full VDA package, VDAWorkstationSetup.exe, to install only the core components required for Remote PC Access.
+
+#### /enable_hdx_ports
+
+Opens ports in the Windows firewall required by the Cloud Connector and enabled features (except Windows Remote Assistance), if the Windows Firewall Service is detected, even if the firewall is not enabled.
+
+#### /enable_hdx_udp_ports
+
+Opens UDP ports in the Windows firewall that are required by HDX adaptive transport, if the Windows Firewall Service is detected, even if the firewall is not enabled.
+
+To open the ports that the VDA uses to communicate with the Controller and enabled features, specify the /enable_hdx_ports option, in addition to the /enable_hdx_udp_ports option.
+
+#### /enable_real_time_transport
+
+Enables or disables use of UDP for audio packets (RealTime Audio Transport for audio). Enabling this feature can improve audio performance.
+
+To open the ports that the VDA uses to communicate with the Controller and enabled features, specify the /enable_hdx_ports option, in addition to the /enable_real_time_transport option.
+
+#### /logpath path
+
+Log file location. The specified folder must exist as the installer does not create it. The default path is "%TEMP%\Citrix\XenDesktop Installer," but if the install is conducted via SCCM, then depending on the context, the log files may be in the system temp folder instead.
+
+#### /optimize
+
+Do NOT use this flag as it is intended mainly for MCS deployed machines.
+
+### Deployment
 
 To deploy the Virtual Delivery Agent to thousands of physical PCs, automated processes are required.
-The install media for Citrix Virtual Apps and Desktops includes a deployment script (InstallMedia\Support\ADDeploy\InstallVDA.bat) that can be leveraged by Active Directory Group Policy Objects.
 
-The script can be used as a baseline for PowerShell scripts and Enterprise Software Deployments (ESD) tools. These approaches allow organizations to quickly deploy the agent to thousands of physical endpoints. If you are automating the VDA installation with an ESD tool such as SCCM or Altiris, we've found that creating separate packages for the pre-reqs and VDA tends to work best. You can find more information about VDA installation in [product documentation](/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html).
+#### Via Scripting
 
-### Microsoft Teams
+The install media for Citrix Virtual Apps and Desktops includes a deployment script (`%InstallMedia%\Support\ADDeploy\InstallVDA.bat`) that can be used via Active Directory Group Policy Objects.
 
-If users access Microsoft Teams for voice and video calls, content redirection functionality is required to create a positive user experience. Content redirection requires administrators deploy the full VDA on the physical PCs using the command line options:
+The script can be used as a baseline for PowerShell scripts and Enterprise Software Deployments (ESD) tools. These approaches allow organizations to quickly deploy the agent to thousands of physical endpoints.
 
-`VDAWorkstationSetup.exe /remotepc /includeadditional "Citrix Browser Content Redirection"`
+#### Via SCCM
+
+If you are automating the VDA installation with an ESD tool such as SCCM or Altiris, creating separate packages for the prerequisites and VDA tends to work best. You can find more information about VDA deployment with ESD tools in the [product documentation](/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas-sccm.html).
+
+## Microsoft Teams
+
+If users access Microsoft Teams for voice and video calls, content redirection functionality is required to create a positive user experience.
+
+For content redirection to be available when using VDA 1912 or older, it is required to deploy the VDA on the physical PCs using the single-session full VDA installer (standalone `VDAWorkstationSetup.exe`) with the `/remotepc` command line option.
+
+For example: `VDAWorkstationSetup.exe /quiet /remotepc /controllers “control.domain.com” /enable_hdx_ports /noresume /noreboot`
+
+If deploying VDA 2003 or newer, the single-session core VDA installer may be used instead (standalone `VDAWorkstationCoreSetup.exe`).
+
+For example: `VDAWorkstationCoreSetup.exe /quiet /controllers “control.domain.com” /enable_hdx_ports /noresume /noreboot`
+
+## Common Network Ports
+
+Similar to any other Citrix VDA, there are a handful of key network ports to be mindful of opening for the system to function. As a reminder, ICA traffic needs to reach the Remote PC Access from the Citrix ADC hosting the external Citrix Gateway. A comprehensive list of ports can be found in [CTX101810](https://support.citrix.com/article/CTX101810#XenDesktop_XenApp).
 
 ## VDA Registration
 
-Depending on the network topology, the subnet containing the Virtual Apps and Desktops delivery controllers might not allow communication from the physical PCs. To properly register with the delivery controller, the VDA on the PC must be able to communicate with the delivery controller in both directions using the following protocols:
+Depending on the network topology, the subnet containing the Virtual Apps and Desktops Delivery Controllers might not allow communication to or from the physical PCs. To properly register with the Delivery Controller, the VDA on the PC must be able to communicate with the Delivery Controller in both directions using the following protocols:
 
 *  VDA to Controller: Kerberos
 *  Controller to VDA: Kerberos
 
-If the VDA is unable to register with the controller, review the [VDA registration](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html) article.
+If the VDA is unable to register with the controller, review the [VDA registration](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html) article. If you are using Citrix Cloud, the Cloud Connectors take the place of the Delivery Controller.
+
+## Further Guidance
+
+More design guidance including considerations and troubleshooting steps can be found in the [Remote PC Access product documentation](/en-us/citrix-virtual-apps-desktops/install-configure/remote-pc-access.html).
