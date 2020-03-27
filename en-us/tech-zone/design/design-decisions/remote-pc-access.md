@@ -12,7 +12,7 @@ description: Remote PC Access is easy to deploy. These design decisions help mai
 
 Remote PC Access is an easy and effective way to allow users to access their office-based, physical Windows PC. Using any endpoint device, users can remain productive regardless of their location. However, organizations want to consider the following when implementing Remote PC Access.
 
-## Deployment Options
+## Deployment Scenarios
 
 There are multiple ways to connect a PC to a user, each applicable to different scenarios.
 
