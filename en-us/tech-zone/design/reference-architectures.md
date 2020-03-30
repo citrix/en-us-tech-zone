@@ -25,7 +25,7 @@ Just as buildings have blueprints that include details about their structure and
 
 [Image Management](/en-us/tech-zone/design/reference-architectures/image-management.html) - Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering and maintaining virtual machine images in your environment.
 
-[Measuring HDX User Interface (UX) Performance Improvements with Citrix SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html) - Citrix SD-WAN can significantly improve the network performance of Citrix Virtual Apps and Desktops HDX sessions. Learn about the reference architecture we used to measure quantitive benefits.
+[Measuring HDX User Interface Performance Improvements with Citrix SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html) - Citrix SD-WAN can significantly improve the network performance of Citrix Virtual Apps and Desktops HDX sessions. Learn about the reference architecture we used to measure quantitive benefits.
 
 [Optimizing Unified Communications Solutions](/en-us/tech-zone/design/reference-architectures/optimizing-unified-communications-solutions.html) - Learn how to optimize voice, video, and other capabilities of unified communication solutions in virtualized Citrix environments.
 
