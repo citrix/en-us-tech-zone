@@ -2,7 +2,7 @@
 layout: doc
 description: Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
 ---
-# Citrix Cloud Virtual Apps and Desktops Service Reference Architecture and Deployment Methods
+# Citrix Virtual Apps and Desktops Service Reference Architecture and Deployment Methods
 
 ## Contributors
 
@@ -48,11 +48,11 @@ These services can be accessed together as an integrated "workspace" or independ
 
 Citrix service commitment is to maintain at least 99.5% monthly uptime. The status of the platform and its services are accessible at [https://status.cloud.com](https://status.cloud.com). Citrix Cloud-hosted services are managed by Citrix experts and are updated continuously, so IT doesn’t have to worry about large-scale platform upgrades resulting in a secure, evergreen environment that saves time and reduces costs. With Citrix Cloud, customers can move to a more predictable subscription cost of opex rather than an often unpredictable and potentially expensive CAPEX model. Citrix Workspace provides an integrated experience to access applications and content from any device, anywhere, at any time. Users benefit from a seamless, engaging work experience regardless of the type of app, device, network, or location they connect from.
 
-## Citrix Cloud Virtual Apps and Desktops Service (CVADS)
+## Citrix Virtual Apps and Desktops Service (CVADS)
 
 A traditional Citrix deployment for apps and desktops consists of delivery controllers, StoreFront servers, a highly available SQL database, Studio and Director consoles, a License Server, and Citrix Gateway. These components are part of the management plane or control plane for the environment and are deployed at a data center or cloud that is a customer or partner-managed. The resources for end-users made available from server and desktop Virtual Delivery Agents (VDAs) are also hosted on dedicated hypervisors within datacenter(s) and/or on private or public clouds. These components are called the Citrix workloads. Both management components and workloads are managed entirely by the customer or perhaps a partner.
 
-In the Citrix Cloud Virtual Apps and Desktops Service, the management or control plane for a customer deployment is provisioned and managed by Citrix on Citrix Cloud. Customers don’t handle the core product installation, setup, configuration, upgrades, monitoring, or scaling of the management plane as that is all left to Citrix to handle and keep evergreen and secure.
+In the Citrix Virtual Apps and Desktops Service, the management or control plane for a customer deployment is provisioned and managed by Citrix on Citrix Cloud. Customers don’t handle the core product installation, setup, configuration, upgrades, monitoring, or scaling of the management plane as that is all left to Citrix to handle and keep evergreen and secure.
 
 [![CVAD-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_002.PNG)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-service_002.PNG)
 
@@ -176,7 +176,7 @@ The Citrix Cloud Connector is stateless, and the load can be distributed across 
 
 #### Cloud Connector Functions
 
-The Cloud Connector enables the following functions for the Citrix Cloud Virtual Apps and Desktops Service:
+The Cloud Connector enables the following functions for the Citrix Virtual Apps and Desktops Service:
 
 *  Active Directory: Enables AD management, allowing the use of AD forests and domains within resource locations. It removes the need for adding any additional AD trusts.
 *  Virtual Apps and Desktops publishing: Enables publishing resources from all resource locations.
@@ -413,7 +413,7 @@ The following policy templates are available:
 
 Citrix StoreFront is an interface for users to access Citrix Virtual Apps and Desktops from the office or remotely with multiple devices. It acts as an enterprise self-service app store for users and enables administrators to provide users with self-service central access to their virtual desktops and applications. Citrix's StoreFront enables single sign-on access to users to which provides flexibility for the users to access the virtual apps and desktops.
 
-It also keeps track of users’ application subscriptions, shortcut names, and other data to ensure they have a consistent experience across multiple devices. With the Citrix Cloud Virtual Apps and Desktops Services, the StoreFront deployment is flexible for customers to achieve their organization requirements and use cases.
+It also keeps track of users’ application subscriptions, shortcut names, and other data to ensure they have a consistent experience across multiple devices. With the Citrix Virtual Apps and Desktops Services, the StoreFront deployment is flexible for customers to achieve their organization requirements and use cases.
 
 1.  **On-Premises StoreFront**: Customers may also use an existing on-premises StoreFront to aggregate applications and desktops in Citrix Cloud. This use case offers greater security, including support for two-factor authentication, and prevents users from entering their password into the cloud service. The benefit of using an existing StoreFront is that the Citrix Cloud Connector provides encryption of user passwords. Credentials are encrypted by the connector using AES-256 with a random-generated one-time key. This key is returned directly to the Citrix Workspace app and never sent to the cloud. Citrix Workspace app then supplies it to the VDA during session launch to decrypt the credentials and provide a single sign-on experience into Windows. It also allows customers to customize their domain names and URLs. To use the Local Host Cache feature on-premises StoreFront is a requirement.
 
@@ -451,7 +451,7 @@ The entire infrastructure overhead of using Citrix Gateway moves to the cloud an
 Citrix Gateway Service is ideally suited to address these following use cases:
 
 1.  Customers are looking to refresh on-premises Gateway to support the on-premises deployment of Citrix Virtual Apps and Desktops environments. Customers using basic ICA Proxy can now use Citrix Gateway Service for basic ICA Proxy to on-premises Virtual Apps and Desktops.
-2.  Customers are looking to subscribe to Citrix Cloud Virtual Apps and Desktops service. Customers can now use Citrix Gateway Service for SSO to the Citrix Virtual Apps and Desktops Service, along with on-premises Apps and Desktops, any web, and SaaS applications.
+2.  Customers are looking to subscribe to Citrix Virtual Apps and Desktops service. Customers can now use Citrix Gateway Service for SSO to the Citrix Virtual Apps and Desktops Service, along with on-premises Apps and Desktops, any web, and SaaS applications.
 3.  Customers are looking to consolidate their access management solutions. Customers using Citrix Gateway for their Citrix Apps and Desktops solutions/services, and are using a third-party cloud service for SSO to SaaS and web applications, can now use the Citrix Gateway Service for SSO to all applications. They don’t need to have two different access management solutions, thereby reducing costs, providing a better end-user experience, and enforcing consistent access control policies across all applications.
 
 #### Citrix Gateway Service Features
@@ -557,7 +557,7 @@ Some user settings and data can be redirected by folder redirection. However, if
 
 ## Planning for a Citrix Cloud Deployment
 
-The Citrix Cloud Virtual Apps and Desktops Service(CVADS) can be deployed in several ways depending on organization requirements and use cases. Citrix Cloud provides flexibility and enables customers to choose the deployment model for their requirements. Below are a few conceptual reference architectures that can help customers with their needs and their use case(s):
+The Citrix Virtual Apps and Desktops Service(CVADS) can be deployed in several ways depending on organization requirements and use cases. Citrix Cloud provides flexibility and enables customers to choose the deployment model for their requirements. Below are a few conceptual reference architectures that can help customers with their needs and their use case(s):
 
 *  **CVADS using Citrix Workspace with Hybrid-Cloud/On-Premises Citrix workloads**
 *  **CVADS and Gateway Service using Citrix Workspace with On-Premises Citrix workloads**
@@ -860,7 +860,7 @@ Users accessing the Citrix Cloud URL `https://customer.cloud.com` is asked to en
 
 On workspace configuration, the Citrix admin has enabled the Traditional Gateway, which enabled the external access to Citrix workloads via on-premises Gateway. Citrix Workspace is the front-end entry point for all the users to access the Citrix environment. This helps corporate network admins to enable the globally approved HTTPS access towards Citrix Cloud from corporate devices.
 
-When the user launches an application or desktop, the user is presented with an ICA file which will be launched via the Workspace app and the ICA connection (SSL) is established from user system to on-premises Gateway and then the connection is passed to the VDA  (on port 1494/2598) which is assigned by the controller for this connection. On a successful connection, the HDX session (2598) is launched and presented to the user.
+When the user launches an application or desktop, the user is presented with an ICA file which will be launched via the Workspace app and the ICA connection (SSL) is established from user system to on-premises Gateway and then the connection is passed to the VDA (on port 1494/2598) which is assigned by the controller for this connection. On a successful connection, the HDX session (2598) is launched and presented to the user.
 
 **Control Layer:** Delivery controllers, SQL Database, Studio, and Licensing, are the core components in the Control Layer, which are provisioned on Citrix Cloud for the customer by Citrix. The admin can log in to the Citrix Cloud portal and select Virtual Apps and Desktops Service tile to manage the components. When the admin selects the “manage” button, it launches Studio to administer the environment.
 
