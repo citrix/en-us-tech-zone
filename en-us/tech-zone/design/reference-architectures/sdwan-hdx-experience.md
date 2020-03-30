@@ -80,15 +80,15 @@ During each test case, ICA RTT was captured using the Windows Management Instrum
 
 1.  From the NYC-VDA MS-DOS prompt the following commands were executed:
 
-**wmic**
+    **wmic**
 
-**/namespace:\\root\citrix\euem**
+    **/namespace:\\root\citrix\euem**
 
-**path citrix_euem_RoundTrip get /value**
+    **path citrix_euem_RoundTrip get /value**
 
-2.  The result of the ICA RTT counter was then recorded.
+1.  The result of the ICA RTT counter was then recorded.
 
-On the LON Client, the playback of a video was looped. The video pertained to Citrix Workspace with Intelligence where a “virtual tornado” represented the many elements IT teams must manage was spinning rapidly. During each test case we observed the graphics quality, and how rapidly the “virtual tornado” was spinning.
+    On the LON Client, the playback of a video was looped. The video pertained to Citrix Workspace with Intelligence where a “virtual tornado” represented the many elements IT teams must manage was spinning rapidly. During each test case we observed the graphics quality, and how rapidly the “virtual tornado” was spinning.
 
 | Test       | Overview           | Description  | Observation |
 | :-------------:| :-------------:| :--------:| :--------:|
