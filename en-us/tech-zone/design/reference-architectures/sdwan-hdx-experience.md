@@ -107,7 +107,7 @@ When reviewing the quantitative results between the topologies Routed + MPLS and
 
 Following are the results and detailed test steps which were used to measure quantitative benefits of delivery with Citrix SD-WAN, versus delivery over a traditional routed network, without Citrix SD-WAN.
 
-ICA RTT was configured for measurement every second by the VDA. For the Interactive BW, Congestion BW, Bulk BW, and Loss tests the RTT varied increasingly due to the increased bandwidth and subsequent queue management and retransmissions. Therefore, three measurements were captured, and the median value was recorded. Each complete set of tests, for all three scenarios, were further repeated three times and the median value was again recorded as the result.
+ICA RTT was configured for measurement every second by the VDA. For the Interactive BW, Congestion BW, Bulk BW, and Loss tests the RTT varied increasingly due to the growing bandwidth demands, subsequent queue policing, and retransmissions. Therefore, three measurements were captured, and the median value was recorded. Each complete set of tests, for all three scenarios, were further repeated three times and the median value was again recorded as the result.
 
 | Test Case | Steps | ROUTED + MPLS | SD-WAN + MPLS | SD-WAN + MPLS + INET |
 | :-------------: |:-------------:| :--------:| :--------:| :--------:|
@@ -134,21 +134,21 @@ A series of Vyatta routers simulate an MPLS provider network and an Internet pro
 
 ### Environment
 
-The environment is composed of various software and virtual machines hosted on a Citrix Hypervisor. It is based on an environment that is commonly used for Citrix readiness labs used for field and events training.
+The environment is composed of various software and virtual machines hosted on a Citrix Hypervisor. It is based on an environment that is commonly used for Citrix readiness labs employed for field and events training.
 
 To be hosted within the confines of a 32 GB hypervisor, including supporting management routers and servers, the open source routers used had limited memory. They would typically use more memory in production. However, the SD-WAN virtual paths traverse the same paths and open source routers as the directly routed traffic. Therefore, the absolute measurements should not be referenced, rather the comparative differences that demonstrate quantitative benefits of using Citrix SD-WAN to deliver HDX sessions. The NYC_Lan (Core_Rtr) and LON_LAN/WAN (CE_Rtr) edge routers were allocated the same 4 GB of memory that is allocated to the NYC_SDWAN_SE and LON_SDWAN_SE Citrix SD-WAN instances.
 
 ### Hardware
 
-| Component | Notes (Location/Resources/Version)|
+| Component | Memory |
 | :-------------:| :-------------:|
 | Server (Citrix Hypervisor)   | 32 GB RAM |
 
 ### Software
 
-| Component | Notes (Location/Resources/Version)|
+| Component | OS/Version |
 | :-------------:| :-------------:|
-| SD-WAN   | Citrix SD-WAN VPX  |
+| SD-WAN   | Citrix SD-WAN SE VPX 11.0.3 |
 | Routers   | Vyatta OS  |
 | Wan Emulation | WanEm open source tool  |
 | Citrix Virtual Apps and Desktops | V7 1912 LTSR |
@@ -158,7 +158,7 @@ To be hosted within the confines of a 32 GB hypervisor, including supporting man
 
 #### Citrix SD-WAN
 
-[Citrix SD-WAN](https://docs.citrix.com/en-us/citrix-sd-wan.html) simplifies branch networking with a reliable and high-performance workspace experience that helps accessing SaaS applications, virtual desktops, or traditional data centers.
+[Citrix SD-WAN](https://docs.citrix.com/en-us/citrix-sd-wan.html) simplifies branch networking while providing a reliable and high-performance workspace experience that helps accessing SaaS applications, virtual desktops, or traditional data centers.
 
 The [Citrix SD-WAN Standard Edition](https://docs.citrix.com/en-us/citrix-sd-wan/11.html) used in testing includes Virtual WAN features. It supports software-defined WAN capability to create a highly reliable network from multiple network links.  It ensures that each application takes the best path to achieve the highest application performance.
 
@@ -177,7 +177,7 @@ Citrix Virtual Apps and Desktops allow:
 | :-------------:| :-------------:| :-------------:|
 | AD.training.lab | Windows Server 2012 R2 | .5 GB |
 | LON_LAN/WAN (CE_Rtr) | Vyatta | 4 GB |
-| LON_Client | Window 10 | 1G |
+| LON_Client | Window 10 | 1 GB |
 | LON_SDWAN_SE | Citrix SD-WAN | 4 GB |
 | NYC_DDC | Windows Server 2016 | 4 GB |
 | NYC_VDA | Windows Server 2016 | 3 GB |
@@ -211,9 +211,9 @@ Citrix Virtual Apps and Desktops allow:
 
 ## Summary
 
-Citrix SD-WAN significantly improves the network performance of Citrix Virtual Apps and Desktops HDX sessions, over environments without Citrix SD-WAN, resulting in a better user experience. This value was demonstrated by measuring the quantitative results of test scenarios under various network constraints.
+Citrix SD-WAN significantly improves the network performance of Citrix Virtual Apps and Desktops HDX sessions, over environments without Citrix SD-WAN, resulting in a better user experience. This value was demonstrated by measuring the quantitative results of test scenarios with various network constraints.
 
-A couple key reasons behind the network performance improvements that were observed include:
+Two reasons behind the network performance improvements that were observed include:
 
 *  The inherent nature of SD-WAN technology’s ability to route traffic dynamically based on real-time network conditions, as opposed to traditional routers that rely on routing protocol timeouts.
 *  Only Citrix SD-WAN “Multi-stream HDX Auto-QoS” can dynamically identify and prioritize HDX flows, according to ICA class of service, resulting in the least delay for the most time sensitive data.
