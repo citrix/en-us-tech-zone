@@ -10,6 +10,8 @@ description: Copy & paste description from TOC here
 
 [Matthew Brooks](https://twitter.com/tweetmattbrooks)
 
+**Special Thanks:**  Fernando Klurfan
+
 Citrix Virtual Apps and Desktops can optimize Microsoft Teams to run on any device any where.  Citrix SD-WAN can enhance the performance of Microsoft Teams voice, video and data delivery.  Together both provide the ideal Teams user experience.
 
 **Watch this video to learn how Citrix optimizes Microsoft Teams (https://www.youtube.com/watch?v=ID):**
