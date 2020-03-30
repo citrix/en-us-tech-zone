@@ -36,7 +36,7 @@ Citrix Virtual Apps and Desktops is heavily reliant on the quality of the networ
 1.  Use the default settings that come with a new implementation, using software-based Citrix SD-WAN instances (VPX) and the latest software version (11.0.3 at the time of testing). For the comparison network, also use the default settings on open source router instances, which would also be software based. Default settings include no special provisions that can improve forwarding performance such as custom queuing or load balancing.
 2.  Both the Citrix SD-WAN instances and open source router instances are allocated the same amount of memory on the hypervisor host.
 3.  Design an environment that Citrix customers, field employees, and partners can reproduce to observe similar results.
-4.  Develop an isolated environment provides consistent, reproducible results free of variable networking conditions that occur in the cloud.
+4.  Develop an isolated environment that provides consistent, reproducible, results free of variable networking conditions that occur in the cloud.
 5.  The environment uses Citrix StoreFront to enumerate virtual apps and desktops in Workspace App. The results also apply to Citrix Virtual Apps and Desktops service delivered via Citrix Workspace.
 6.  Follow or highlight Citrix best practices and recommendations where possible.
 
@@ -62,43 +62,46 @@ Every set of tests ran for three iterations using the following network topologi
 
 1.  **Routed + MPLS** – using this environment, HDX traffic from the London (LON) Client to the New York City (NYC) VDA traverses the routed “underlay” network’s MPLS path.
 
-The link throughput is rate limited to 2 Mbps, similar to a branch with an E1 or T1 (1.544 Mbps) leased line. This type of topology is commonly used to backhaul all traffic to a central data center to access apps and data on the intranet. This topology is also often used for security inspection before being routed to the Internet.
+    The link throughput is rate limited to 2 Mbps, similar to a branch with an E1 or T1 (1.544 Mbps) leased line. This type of topology is commonly used to backhaul all traffic to a central data center to access apps and data on the intranet. This topology is also often used for central security inspection before being routed to the Internet.
 
 1.  **SD-WAN + MPLS** - using this environment, HDX traffic from the LON Client to the NYC VDA traverses the SD-WAN “overlay” network, consisting of only a single MPLS path.
 
-Here we observe the Citrix SD-WAN appliance’s ability to automatically identify and prioritize ICA traffic classes, providing Quality of Service to flows transported across the WAN. While, it is ultimately delivered over the same routed network infrastructure, used in the Routed + MPLS scenario, its unique performance enhancement capabilities provide the best user experience for Citrix Virtual Apps and Desktops session traffic.
+    Here we observe the Citrix SD-WAN appliance’s ability to automatically identify and prioritize ICA traffic classes, providing Quality of Service to flows transported across the WAN. While, it is ultimately delivered over the same routed network infrastructure, used in the Routed + MPLS scenario, its unique performance enhancement capabilities provide the best user experience for Citrix Virtual Apps and Desktops session traffic.
 
 1.  **SD-WAN + MPLS + Internet** - using this environment, HDX traffic from the LON Client to the NYC VDA traverses the SD-WAN “overlay” network’s MPLS and Internet (INET) paths.
 
-Here we observe Citrix SD-WAN’s ability to steer HDX flows, on a per-packet basis. When it detects poor quality on the MPLS path it securely sends the flows over the INET path. The link throughput is rate limited to 20 Mbps similar to a branch with a DSL or Cable link.
+    Here we observe Citrix SD-WAN’s ability to steer HDX flows, on a per-packet basis. When it detects poor quality on the MPLS path it securely sends the flows over the INET path. The link throughput is rate limited to 20 Mbps similar to a branch with a DSL or Cable link.
 
-Both SD-WAN instances analyze the conditions of each available path.  They use real-time measurements of the best one-way latency, loss, jitter, and congestion, introduced in the test cases. Also, the instances provide dynamic Quality of Service to efficiently deliver the HDX traffic across the virtualized WAN, achieving optimal user experience.
+    Both SD-WAN instances analyze the conditions of each available path.  They use real-time measurements of the best one-way latency, loss, jitter, and congestion, introduced in the test cases. Also, the instances provide dynamic Quality of Service to efficiently deliver the HDX traffic across the virtualized WAN, achieving optimal user experience.
 
 ### Test Cases
 
-*  During each test case, ICA RTT was captured using the Windows Management Instrumentation Interface (WMI).
+During each test case, ICA RTT was captured using the Windows Management Instrumentation Interface (WMI).
 
-a) From the NYC-VDA MS-DOS prompt the following commands were executed:
+1.  From the NYC-VDA MS-DOS prompt the following commands were executed:
+
 **wmic**
-**/namespace:\\root\citrix\euem
+
+**/namespace:\\root\citrix\euem**
+
 **path citrix_euem_RoundTrip get /value**
 
-b) The result of the ICA RTT counter was then recorded.
+2.  The result of the ICA RTT counter was then recorded.
 
-*  On the LON Client, the playback of a video was looped. The video pertained to Citrix Workspace with Intelligence where a “virtual tornado” represented the many elements IT teams must manage was spinning rapidly. During each test case we observed the graphics quality, and how rapidly the “virtual tornado” was spinning.
+On the LON Client, the playback of a video was looped. The video pertained to Citrix Workspace with Intelligence where a “virtual tornado” represented the many elements IT teams must manage was spinning rapidly. During each test case we observed the graphics quality, and how rapidly the “virtual tornado” was spinning.
 
 | Test       | Overview           | Description  | Observation |
 | :-------------:| :-------------:| :--------:| :--------:|
 | Baseline      | Steady state environment| This test captured the ICA RTT “baseline” after the virtual desktop was launched on the Windows 10 client and in a “steady state”.| Citrix SD-WAN instances are delivering the virtual desktop HDX flows, over virtual paths, using UDP transport. We notice a few ms delay added in the Citrix SD-WAN topologies, but we see the invaluable performance benefits in the results of the additional tests.|
 | Latency      | (+) added “latency” | This test captured the ICA RTT with a 100 ms delay added to the MPLS path, via a WAN emulator, between the Client and VDA. | There is no visible effect to the video playback on the client. The ICA RTT increased by 100 ms in both the Routed and SD-WAN single-path iteration. However, the SD-WAN multi-path iteration remained the same since the HDX traffic was redirected from the MPLS path, with the added latency, to the Internet (INET) path. |
 | Interactive Bandwidth (BW) | (+) added “interactive” BW | This test by ran a video loop, using a .mp4 file hosted on the VDA, with no caching on the player | The video plays unimpeded by network constraints in each topology. The graphics quality is good and the “virtual tornado” is spinning rapidly. |
-| Congestion BW | (+) added “congestion” BW | This test added “congestion” by sending CIFS traffic. It copied a large file from the VDA file system to the Windows 10 Client file system. | ICA RTT increases significantly in the Routed iteration since it directly fights for transmit queue buffers on the LON_CE_Rtr. Here we see the “virtual tornado” begin to slow and pause intermittently. For the SD-WAN multi-path iteration again there is no effect since the SD-WAN instance is dynamically rerouting HDX flows over the INET path. For the SD-WAN single-path iteration there is some effect now. There are congestion queuing and policing measures taking effect. However, since the HDX traffic ICA classes have appropriate queue allocations there is virtually no noticeable effect on the video playback. |
+| Congestion BW | (+) added “congestion” BW | This test added “congestion” by sending CIFS traffic. It copied a large file from the VDA file system to the Windows 10 Client file system. | ICA RTT increases significantly in the Routed iteration since it directly fights for transmit queue buffers on the LON_CE_Rtr. Here we see the “virtual tornado” begin to slow and pause intermittently. For the SD-WAN multi-path iteration again there is no effect since the SD-WAN instance is dynamically rerouting HDX flows over the INET path. For the SD-WAN single-path iteration there is some effect now. There are congestion queuing and policing measures taking place. However, since the HDX traffic ICA classes have appropriate queue allocations there is virtually no noticeable effect on the video playback. |
 | Bulk BW      | (+) added “bulk” BW | This test copied a large file from the VDA to the Client file system, from within the virtual desktop, which occurs within the HDX session. | We observe that ICA RTT increases significantly in the Routed iteration. Now there is greater demand for bandwidth, while the client and VDA continue to need to retransmit lost packets, while fighting for transmit queue buffers on the LON_CE_Rtr. For the SD-WAN multi-path iteration again there is no effect since the SD-WAN instance is dynamically rerouting HDX flows over the INET path. For the SD-WAN single-path iteration there continues to be some effect. There are additional bandwidth demands while the client and VDA need to retransmit lost packets and congestion queuing along with policing measures are in effect. Yet effect on the video playback of the “virtual tornado” is mitigated. Here we observe the unique [Citrix SD-WAN ICA classification](https://docs.citrix.com/en-us/citrix-sd-wan/11/quality-of-service/app-classification-sd-wan.html) benefits as the HDX flows are automatically streamed into four separate classes. These include class_0 voice and class_1 video flows which are prioritized over the class_2 bulk file transfer traffic. |
-| Loss      | (+) added 25% loss | This test added 25% loss directly to the MPLS path, between the Client and VDA using Wan Emulation. | We observe that ICA RTT increases significantly in the Routed iteration. Now the client and VDA need to retransmit lost packets, while fighting for transmit queue buffers on the LON_CE_Rtr. For the SD-WAN multi-path iteration again there is no effect since the SD-WAN instance is dynamically rerouting HDX flows over the INET path. For the SD-WAN single-path iteration there continues to be some effect. However, since the HDX traffic ICA classes have appropriate queue allocations the effect on the user experience is nearly unnoticeable. |
+| Loss      | (+) added 25% loss | This test added 25% loss directly to the MPLS path, between the Client and VDA using Wan Emulation. | We observe that ICA RTT increases significantly in the Routed iteration. Now the client and VDA need to retransmit lost packets, while fighting for transmit queue buffers on the LON_CE_Rtr. For the SD-WAN multi-path iteration again there is no effect since the SD-WAN instance is dynamically rerouting HDX flows over the INET path. For the SD-WAN single-path iteration there continues to be some effect. However, since the HDX traffic ICA classes have appropriate queue allocations the effect on the user experience is minimized. |
 
 ### Results
 
-When reviewing the quantitative results between the topologies Routed + MPLS and the Citrix SD-WAN + MPLS, Citrix SD-WAN provided **greater than 500% improvement**. The improvement came while delivering HDX traffic running video, and a large file transfer, when faced with latency, congestion, and loss, using a single MPLS link. A second path, over an Internet link, was added in the Citrix SD-WAN + MPLS + INET topology. It added greater than a 4 second reduction in the ICA RTT using the same test scenarios.
+When reviewing the quantitative results between the topologies Routed + MPLS and Citrix SD-WAN + MPLS, Citrix SD-WAN provided **greater than 500% improvement**. The improvement came while delivering HDX traffic running video, and a large file transfer, when faced with latency, congestion, and loss, using a single MPLS link. With a second path added, over the INET link, in the Citrix SD-WAN + MPLS + INET topology there was greater than a 4 second reduction in the ICA RTT using the same test scenarios.
 
 [![Results](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_results.png)](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_results.png)
 
