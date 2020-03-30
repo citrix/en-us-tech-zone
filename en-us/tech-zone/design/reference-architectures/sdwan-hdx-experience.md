@@ -50,7 +50,7 @@ ICA Round Trip Time (RTT) is used to measure the delivery of virtual session gra
 
 Therefore, ICA RTT constitutes the actual application layer delay, which includes the time required for the action to traverse the following components:
 
-[![ICA RTT](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_ICARTT.png)](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_ICARTT.png)
+[![ICA RTT](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-experience_ICARTT.png)](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-experience_ICARTT.png)
 
 The ICA RTT counter was used to measure the quantitative HDX performance for each test. It was captured directly on the VDA during each test. The same client and server infrastructure were used for each test iteration. Therefore, only changes made to the network had a relative impact on the ICA RTT measured between tests.
 
@@ -58,7 +58,7 @@ The ICA RTT counter was used to measure the quantitative HDX performance for eac
 
 Every set of tests ran for three iterations using the following network topologies to compare Citrix SD-WAN HDX UX performance improvements:
 
-[![Network Topologies](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_nettopos.png)](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_nettopos.png)
+[![Network Topologies](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-experience_nettopos.png)](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-experience_nettopos.png)
 
 1.  **Routed + MPLS** – using this environment, HDX traffic from the London (LON) Client to the New York City (NYC) VDA traverses the routed “underlay” network’s MPLS path.
 
@@ -103,7 +103,7 @@ During each test case, ICA RTT was captured using the Windows Management Instrum
 
 When reviewing the quantitative results between the topologies Routed + MPLS and Citrix SD-WAN + MPLS, Citrix SD-WAN provided **greater than 500% improvement**. The improvement came while delivering HDX traffic running video, and a large file transfer, when faced with latency, congestion, and loss, using a single MPLS link. With a second path added, over the INET link, in the Citrix SD-WAN + MPLS + INET topology there was greater than a 4 second reduction in the ICA RTT using the same test scenarios.
 
-[![Results](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_results.png)](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_results.png)
+[![Results](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-experience_results.png)](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-experience_results.png)
 
 Following are the results and detailed test steps which were used to measure quantitative benefits of delivery with Citrix SD-WAN, versus delivery over a traditional routed network, without Citrix SD-WAN.
 
@@ -130,7 +130,7 @@ Citrix SD-WAN supports various [deployment topologies](https://docs.citrix.com/e
 
 A series of Vyatta routers simulate an MPLS provider network and an Internet provider network. A WanEm virtual appliance is used to interject latency and loss.
 
-[![Architecture](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_architecture.png)](/en-us/tech-zone/design/media/reference-architecture_sdwan-hdx-experience_architecture.png)
+[![Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-experience_architecture.png)](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-experience_architecture.png)
 
 ### Environment
 
