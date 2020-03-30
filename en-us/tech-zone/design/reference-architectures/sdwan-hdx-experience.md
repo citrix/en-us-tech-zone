@@ -62,7 +62,7 @@ Every set of tests ran for three iterations using the following network topologi
 
 1.  **Routed + MPLS** – using this environment, HDX traffic from the London (LON) Client to the New York City (NYC) VDA traverses the routed “underlay” network’s MPLS path.
 
-The link throughput is rate limited to 2 Mbps, similar to a branch with an E1 or T1 (1.544 Mpbs) leased line. This type of topology is commonly used to backhaul all traffic to a central data center to access apps and data on the intranet. This topology is also often used for security inspection before being routed to the Internet.
+The link throughput is rate limited to 2 Mbps, similar to a branch with an E1 or T1 (1.544 Mbps) leased line. This type of topology is commonly used to backhaul all traffic to a central data center to access apps and data on the intranet. This topology is also often used for security inspection before being routed to the Internet.
 
 1.  **SD-WAN + MPLS** - using this environment, HDX traffic from the LON Client to the NYC VDA traverses the SD-WAN “overlay” network, consisting of only a single MPLS path.
 
