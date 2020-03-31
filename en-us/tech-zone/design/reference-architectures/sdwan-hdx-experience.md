@@ -1,9 +1,9 @@
 ---
 layout: doc
-description: Measure HDX user interface performance improvements provided by Citrix SD-WAN flow enhancements
+description: Measuring HDX user interface performance improvements provided by Citrix SD-WAN flow enhancements
 
 ---
-# Measuring HDX User Interface (UX) Performance Improvements with Citrix SD-WAN
+# Measuring HDX User Interface Improvements from Citrix SD-WAN Network Performance Enhancements
 
 ## Contributors
 
@@ -74,9 +74,11 @@ Every set of tests ran for three iterations using the following network topologi
 
 ### Test Cases
 
-During each test case, ICA RTT was captured using the Windows Management Instrumentation Interface (WMI).
+The Citrix Cloud Direct service telemetry is able to monitor customer internet usage and availability. Aggregate customer connectivity reports have shown that the average business Internet connection, in the U.S., is completely down for 3 1/2 hours per month. Reports also show that the connectivity is unusable, or in an “up” state while effectively being “down”, for up to 23 hours per month. The test cases used were designed to replicate network constraints, a small branch office may face, that could cause connectivity issues.
 
-1.  From the NYC-VDA MS-DOS prompt the following commands were executed:
+During each test the following actions were repeated to measure and observe the effects of the network constraints:
+
+*  ICA RTT was captured using the Windows Management Instrumentation Interface (WMI). From the NYC-VDA MS-DOS prompt the following commands were executed and the results were recorded:
 
     **wmic**
 
@@ -84,9 +86,7 @@ During each test case, ICA RTT was captured using the Windows Management Instrum
 
     **path citrix_euem_RoundTrip get /value**
 
-1.  The result of the ICA RTT counter was then recorded.
-
-    On the LON Client, the playback of a video was looped. The video pertained to Citrix Workspace with Intelligence where a “virtual tornado” represented the many elements IT teams must manage was spinning rapidly. During each test case we observed the graphics quality, and how rapidly the “virtual tornado” was spinning.
+*  On the LON Client, the playback of a video was looped. The video pertained to Citrix Workspace with Intelligence where a “virtual tornado” represented the many elements IT teams must manage was spinning rapidly. During each test case we observed the graphics quality, and how rapidly the “virtual tornado” was spinning.
 
 | Test       | Overview           | Description  | Observation |
 | :-------------:| :-------------:| :--------:| :--------:|
@@ -107,16 +107,16 @@ Following are the results and detailed test steps which were used to measure qua
 
 ICA RTT was configured for measurement every second by the VDA. For the Interactive BW, Congestion BW, Bulk BW, and Loss tests the RTT varied increasingly due to the growing bandwidth demands, subsequent queue policing, and retransmissions. Therefore, three measurements were captured, and the median value was recorded. Each complete set of tests, for all three scenarios, were further repeated three times and the median value was again recorded as the result.
 
-| Test Case | Steps | ROUTED + MPLS | SD-WAN + MPLS | SD-WAN + MPLS + INET |
+| Test Case | Steps | ROUTED + MPLS (ms) | SD-WAN + MPLS (ms) | SD-WAN + MPLS + INET (ms) |
 | :-------------: |:-------------:| :--------:| :--------:| :--------:|
 | Baseline      | 1)  Open a **Google Chrome** browser 2) Navigate to ddc.training.lab/Citrix/StoreWeb/ 3) Login as user1@training.lab / Citrix123 4) Launch desktop NYC. 5) RECORD ICA RTT on NYC-VDA | 3 | 6 | 6 |
-| Latency      | 1) Open **Google Chrome** from the NYC_Util server and navigate to 192.168.10.26/WANem 2) Select “Advanced Mode” > eth1 3) Set the “Delay time” field to 100 and select “Apply Setting” toward the bottom of the screen 4) OBSERVE the Video on the LON_Client 5) RECORD ICA RTT on NYC-VDA | 104 | 13 | 109 |
-| Interactive BW      | 1) Within the virtual desktop open VLC media player 2) Select Media > Open File > C://Citrix_Workspace_with_Intelligence.mp4 3) Select **View > Advanced Controls** 4) Set the video at the start of the ‘virtual hurricane’ and click the third button ‘Loop from point A to point B continuously’. You will see the first part of the icon turn red. Set the video to the end of the ‘virtual hurricane’ and press the button again. The second part of the loop button turns red too. Press **Play** to view the loop. 5) OBSERVE the Video on the LON_Client 6) RECORD ICA RTT on NYC-VDA | 126 | 16 | 142 |
-| Congestion BW      | 1) On the LON_Client open **File Explorer** 2) Navigate to the “FILES” share on NYC_VDA and copy “LARGE_FILE.mp4” to the C:\outside-HDX-download on LON_Client 3) OBSERVE the Video on the LON_Client 4) RECORD ICA RTT on NYC-VDA | 1606 | 63 | 485 |
-| Bulk BW      | 1) Within the virtual desktop running on LON_Client open **File Explorer** 2) Navigate to the C:\FILES (on NYC_VDA) and copy “LARGE_FILE.mp4” to the C:\inside-HDX-download on LON_Client 3) OBSERVE the Video on the LON_Client 4) RECORD ICA RTT on NYC-VDA | 3486 | 62 | 465 |
-| Loss      | 1) Open **Google Chrome** from the NYC_Util server and navigate to 192.168.10.26/WANem 2) Select “Advanced Mode” > eth1 3) Set the “Loss” field to 25 and select “Apply Setting” toward the bottom of the screen 4) OBSERVE the Video on the LON_Client 5) RECORD ICA RTT on NYC-VDA | 4243 | 64 | 536 |
+| Latency      | 1) Open **Google Chrome** from the NYC_Util server and navigate to 192.168.10.26/WANem 2) Select “Advanced Mode” > eth1 3) Set the “Delay time” field to 100 and select “Apply Setting” toward the bottom of the screen 4) OBSERVE the Video on the LON_Client 5) RECORD ICA RTT on NYC-VDA | 104 | 109 | 13 |
+| Interactive BW      | 1) Within the virtual desktop open VLC media player 2) Select Media > Open File > C://Citrix_Workspace_with_Intelligence.mp4 3) Select **View > Advanced Controls** 4) Set the video at the start of the ‘virtual hurricane’ and click the third button ‘Loop from point A to point B continuously’. You will see the first part of the icon turn red. Set the video to the end of the ‘virtual hurricane’ and press the button again. The second part of the loop button turns red too. Press **Play** to view the loop. 5) OBSERVE the Video on the LON_Client 6) RECORD ICA RTT on NYC-VDA | 126 | 142 | 16 |
+| Congestion BW      | 1) On the LON_Client open **File Explorer** 2) Navigate to the “FILES” share on NYC_VDA and copy “LARGE_FILE.mp4” to the C:\outside-HDX-download on LON_Client 3) OBSERVE the Video on the LON_Client 4) RECORD ICA RTT on NYC-VDA | 1606 | 485 | 63 |
+| Bulk BW      | 1) Within the virtual desktop running on LON_Client open **File Explorer** 2) Navigate to the C:\FILES (on NYC_VDA) and copy “LARGE_FILE.mp4” to the C:\inside-HDX-download on LON_Client 3) OBSERVE the Video on the LON_Client 4) RECORD ICA RTT on NYC-VDA | 3486 | 465 | 62 |
+| Loss      | 1) Open **Google Chrome** from the NYC_Util server and navigate to 192.168.10.26/WANem 2) Select “Advanced Mode” > eth1 3) Set the “Loss” field to 25 and select “Apply Setting” toward the bottom of the screen 4) OBSERVE the Video on the LON_Client 5) RECORD ICA RTT on NYC-VDA | 4243 | 536 | 64 |
 
-**NOTE**: Find a worksheet with a detailed compilation of results [here]( https://citrix.sharefile.com/d-s80a041db88d46ceb).
+**NOTE**: Find a worksheet with a detailed compilation of results [here]( https://citrix.sharefile.com/d-sbb3fd2296334c7c9).
 
 ## Conceptual Architecture
 
