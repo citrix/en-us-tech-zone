@@ -77,7 +77,8 @@ Every set of tests ran for three iterations using the following network topologi
 ### Test Cases
 
 The Citrix Cloud Direct service telemetry is able to monitor customer internet usage and availability. Aggregate customer connectivity reports have shown that the average business Internet connection, in the U.S., is completely down for 3 1/2 hours per month. Reports also show that the connectivity is unusable, or in an “up” state while effectively being “down”, for up to 23 hours per month. The test cases used were designed to replicate network constraints, a small branch office may face, that could cause connectivity issues.
-During each test the following actions were repeated to observe and measure the effect of the network constraints:
+
+During each test the following actions were repeated to measure and observe the effects of the network constraints:
 
 *  ICA RTT was captured using the Windows Management Instrumentation Interface (WMI). From the NYC-VDA MS-DOS prompt the following commands were executed and the results were recorded:
 
