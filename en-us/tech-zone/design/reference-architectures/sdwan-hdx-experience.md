@@ -76,7 +76,10 @@ Every set of tests ran for three iterations using the following network topologi
 
 ### Test Cases
 
-During each test case, ICA RTT was captured using the Windows Management Instrumentation Interface (WMI).
+The Citrix Cloud Direct service telemetry is able to monitor customer internet usage and availability. Aggregate customer connectivity reports have shown that the average business Internet connection, in the U.S., is completely down for 3 1/2 hours per month. Reports also show that the connectivity is unusable, or in an “up” state while effectively being “down”, for up to 23 hours per month. The test cases used were designed to replicate network constraints, a small branch office may face, that could cause connectivity issues.
+During each test the following actions were repeated to observe and measure the effect of the network constraints:
+
+*  During each test case, ICA RTT was captured using the Windows Management Instrumentation Interface (WMI).
 
 1.  From the NYC-VDA MS-DOS prompt the following commands were executed:
 
@@ -88,7 +91,7 @@ During each test case, ICA RTT was captured using the Windows Management Instrum
 
 1.  The result of the ICA RTT counter was then recorded.
 
-    On the LON Client, the playback of a video was looped. The video pertained to Citrix Workspace with Intelligence where a “virtual tornado” represented the many elements IT teams must manage was spinning rapidly. During each test case we observed the graphics quality, and how rapidly the “virtual tornado” was spinning.
+*  On the LON Client, the playback of a video was looped. The video pertained to Citrix Workspace with Intelligence where a “virtual tornado” represented the many elements IT teams must manage was spinning rapidly. During each test case we observed the graphics quality, and how rapidly the “virtual tornado” was spinning.
 
 | Test       | Overview           | Description  | Observation |
 | :-------------:| :-------------:| :--------:| :--------:|
