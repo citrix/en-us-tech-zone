@@ -3,7 +3,7 @@ layout: doc
 description: Citrix SD-WAN can significantly improve the network performance of Citrix Virtual Apps and Desktops HDX sessions. Learn about the reference architecture we used to measure quantitive benefits.
 
 ---
-# Measuring HDX User Interface Improvements from Citrix SD-WAN Network Performance Enhancements
+# Measuring HDX User Experience Improvements from Citrix SD-WAN Network Performance Enhancements
 
 ## Contributors
 
