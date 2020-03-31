@@ -109,7 +109,7 @@ Following are the results and detailed test steps which were used to measure qua
 
 ICA RTT was configured for measurement every second by the VDA. For the Interactive BW, Congestion BW, Bulk BW, and Loss tests the RTT varied increasingly due to the growing bandwidth demands, subsequent queue policing, and retransmissions. Therefore, three measurements were captured, and the median value was recorded. Each complete set of tests, for all three scenarios, were further repeated three times and the median value was again recorded as the result.
 
-| Test Case | Steps | ROUTED + MPLS | SD-WAN + MPLS | SD-WAN + MPLS + INET |
+| Test Case | Steps | ROUTED + MPLS (ms) | SD-WAN + MPLS (ms) | SD-WAN + MPLS + INET (ms) |
 | :-------------: |:-------------:| :--------:| :--------:| :--------:|
 | Baseline      | 1)  Open a **Google Chrome** browser 2) Navigate to ddc.training.lab/Citrix/StoreWeb/ 3) Login as user1@training.lab / Citrix123 4) Launch desktop NYC. 5) RECORD ICA RTT on NYC-VDA | 3 | 6 | 6 |
 | Latency      | 1) Open **Google Chrome** from the NYC_Util server and navigate to 192.168.10.26/WANem 2) Select “Advanced Mode” > eth1 3) Set the “Delay time” field to 100 and select “Apply Setting” toward the bottom of the screen 4) OBSERVE the Video on the LON_Client 5) RECORD ICA RTT on NYC-VDA | 104 | 109 | 13 |
