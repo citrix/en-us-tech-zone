@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Measuring HDX user interface performance improvements provided by Citrix SD-WAN flow enhancements
+description: Measuring HDX user experience improvements from Citrix SD-WAN network performance enhancements
 
 ---
 # Measuring HDX User Experience Improvements from Citrix SD-WAN Network Performance Enhancements
