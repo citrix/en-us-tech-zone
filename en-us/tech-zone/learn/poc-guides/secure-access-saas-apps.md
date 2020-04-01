@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to setup a Citrix Workspace environment able to use Citrix or Okta as the single sign-on provider for SaaS applications.
+description: Learn how to setup a Citrix Access Control environment that is able to use Citrix, Okta or Microsoft as the single sign-on provider for SaaS applications.
 ---
 # Proof of Concept: Secure Access to SaaS Applications
 
