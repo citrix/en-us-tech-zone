@@ -205,7 +205,7 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Image Management](/en-us/tech-zone/design/reference-architectures/image-management.html) - Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering and maintaining virtual machine images in your environment.
 
-[Measuring HDX User Interface Performance Improvements with Citrix SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html) - Citrix SD-WAN can significantly improve the network performance of Citrix Virtual Apps and Desktops HDX sessions. Learn about the reference architecture we used to measure quantitive benefits.
+[Measuring HDX User Experience Performance Improvements with Citrix SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html) - Citrix SD-WAN can significantly improve the network performance of Citrix Virtual Apps and Desktops HDX sessions. Learn about the reference architecture we used to measure quantitive benefits.
 
 [Optimizing Unified Communications Solutions](/en-us/tech-zone/design/reference-architectures/optimizing-unified-communications-solutions.html) - Learn how to optimize voice, video, and other capabilities of unified communication solutions in virtualized Citrix environments.
 
@@ -232,6 +232,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 ### [Learn - Diagrams and Posters](/en-us/tech-zone/learn/diagrams-posters.html)
 
 [Citrix Workspace](/en-us/tech-zone/learn/diagrams-posters/workspace.html) - Conceptual architecture drawing for Citrix Workspace.
+
+### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
+
+[Secure Access to SaaS Applications with Okta SSO](/en-us/tech-zone/learn/poc-guides/secure-access-saas-apps.html) Learn how to setup a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
