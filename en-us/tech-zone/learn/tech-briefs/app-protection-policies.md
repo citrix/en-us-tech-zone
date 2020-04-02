@@ -8,9 +8,9 @@ description: App protection policies protect application data from attackers tha
 
 **Author:** [Mayank Singh](https://twitter.com/techmayank)
 
-**Special Thanks:** [Martin Zugec](https://twitter.com/MartinZugec)
+**Special Thanks:** [Martin Zugec](https://twitter.com/MartinZugec) and [Arvind SankaraSubramaniam]()
 
-The end user is widely considered the weakest piece on the attack surface of an organization. It has become common practice for attackers to use sophisticated methods to fool users into installing malware on their endpoints. Once installed, the malware can silently collect and exfiltrate sensitive data such as user’s credentials, sensitive information, company’s intellectual property or confidential data. With the proliferation of BYO devices and access of corporate resources from unmanaged endpoints, the client endpoint becomes an even more exposed threat surface. With many users working from home, the risk to the organizations is heightened due to the untrustworthiness of the endpoint device. 
+The end user is widely considered the weakest piece on the attack surface of an organization. It has become common practice for attackers to use sophisticated methods to fool users into installing malware on their endpoints. Once installed, the malware can silently collect and exfiltrate sensitive data such as user’s credentials, sensitive information, company’s intellectual property or confidential data. With the proliferation of BYO devices and access of corporate resources from unmanaged endpoints, the client endpoint becomes an even more exposed threat surface. With many users working from home, the risk to the organizations is heightened due to the untrustworthiness of the endpoint device.
 
 When accessing a virtual app or virtual desktop session, the attack surface is drastically reduced, as the session is not running on the endpoint and users generally do not have permission to install apps within the virtual session. The data within the session is secure in the datacenter or cloud resource location. However, a compromised endpoint can capture session keystrokes and information displayed on the endpoint. Citrix provides administrators the ability prevent these attack vectors, using an add-on feature called App protection. The feature enables Citrix Virtual Apps and Desktops (CVAD) administrators to enforce policies on specific delivery group(s), such that when users connect to sessions from these delivery group(s), the user’s endpoint has anti-screen capture and/or anti-keylogging enforced on the endpoints.
 
@@ -39,7 +39,7 @@ Anti-screen capture prevents an app from attempting to take a screenshot of or a
 [![App_protection_policies_Anti_screen_capture](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_2-anti-screen-capture-ss.png)](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_2-anti-screen-capture-ss.png)
 
 The anti-screen capture protection is active only when any of the protected apps are on screen. If any part of the window displaying the app is on screen then the policies disable screen captures.
-If the user wishes to take a screenshot of the client endpoint’s screen / other apps, while a protected app is running on the endpoint, then the user must minimize the protected app. 
+If the user wishes to take a screenshot of the client endpoint’s screen / other apps, while a protected app is running on the endpoint, then the user must minimize the protected app.
 
 The protection extends to files from [Citrix Files](https://docs.citrix.com/en-us/mobile-productivity-apps/citrix-files.html) or any other connectors like Google Drive or Microsoft OneDrive that are accessed from within Citrix Workspace app. The apps will be protected from screen scrapers, as will be all the microapps and their notifications from within Workspace.
 
