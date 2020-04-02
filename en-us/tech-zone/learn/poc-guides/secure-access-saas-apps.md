@@ -2,7 +2,7 @@
 layout: doc
 description: Learn how to setup a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
 ---
-# Proof of Concept: Secure Access to SaaS Applications
+# Proof of Concept: Secure Access to SaaS Applications with Okta SSO
 
 ## Contributors
 
