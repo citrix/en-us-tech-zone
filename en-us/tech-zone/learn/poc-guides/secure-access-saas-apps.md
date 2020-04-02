@@ -22,7 +22,7 @@ This proof of concept guide demonstrates how to:
 
 ## Setup Citrix Workspace
 
-The initial steps for setting up the environment is to get Citrix Workspace prepared for the organization. This involves
+The initial steps for setting up the environment is to get Citrix Workspace prepared for the organization, which includes
 
 1.  Setting up the Workspace URL
 1.  Enabling the appropriate services
@@ -46,7 +46,7 @@ From the Service Integration tab, enable the following services to support the s
 
 ### Verify
 
-Citrix Workspace may take a few moments to update services and URL settings.  From a browser, verify the custom Workspace URL is active. However, logon will not be available until a primary user directory gets defined and configured.
+Citrix Workspace takes a few moments to update services and URL settings. From a browser, verify the custom Workspace URL is active. However, logon is not be available until a primary user directory gets defined and configured.
 
 ## Integrate a Primary User Directory
 
@@ -55,10 +55,10 @@ Before users can authenticate to Workspace, a [primary user directory](https://d
 An organization can use any one of the following primary user directories
 
 *  [Active Directory](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#active-directory): To enable Active Directory authentication, a cloud connector must be deployed within the same data center as an Active Directory domain controller by following the [Cloud Connector Installation](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html) guide.
-*  [Active Directory with Time-Based One Time Password](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#active-directory-with-totp): Active Directory-based authentication can also include multi-factor authentication with a Time-based One Time Password (TOTP). This [guide](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-ad.html#active-directory-authentication) details the required steps to enable this authentication option.
-*  [Azure Active Directory](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#azure-active-directory): Users can authenticate to Citrix Workspace with an Azure Active Directory identity.  This [guide](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-azure-ad.html) provides details on configuring this option.
+*  [Active Directory with Time-Based One Time Password](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#active-directory-with-totp): Active Directory-based authentication can also include multifactor authentication with a Time-based One Time Password (TOTP). This [guide](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-ad.html#active-directory-authentication) details the required steps to enable this authentication option.
+*  [Azure Active Directory](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#azure-active-directory): Users can authenticate to Citrix Workspace with an Azure Active Directory identity. This [guide](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-azure-ad.html) provides details on configuring this option.
 *  [Citrix Gateway](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#citrix-gateway): Organizations can utilize an on-premises Citrix Gateway to act as an identity provider for Citrix Workspace. This [guide](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-ad-gateway.html) provides details on the integration.
-*  [Okta](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#okta): Organizations can use Okta as the primary user directory for Citrix Workspace.  This [guide](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/okta-identity.html) provides instructions for configuring this option.
+*  [Okta](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#okta): Organizations can use Okta as the primary user directory for Citrix Workspace. This [guide](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/okta-identity.html) provides instructions for configuring this option.
 
 ## Option 1: Citrix-Provided Single Sign-On to SaaS Apps (Coming Soon)
 
@@ -92,15 +92,15 @@ To successfully integrate Okta apps with Citrix Workspace, the administrator nee
 *  Log into Okta as an administrator
 *  Select **Applications**
 *  Select the application to add into Citrix Workspace. In this example, Microsoft Office 365 is used.
-*  Under **General**, scroll down until the correct **App Embed Link** is located. This will be used as the SAML Login URL for Citrix Workspace.
+*  Under **General**, scroll down until the correct **App Embed Link** is located. This is used as the SAML Login URL for Citrix Workspace.
 
 [![SAML Login URL](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_app-embed-link.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_app-embed-link.png)
 
 ### Identify IdP Issuer URI
 
-*  Log into Citrix cloud as an administrator
+*  Log into Citrix Cloud as an administrator
 *  Under the **Identity and Access Management** section, select **API Access**
-*  Capture the **customer ID** parameter.  This is used to create the IdP Issuer URI in the format: `https://citrix.com/<customerID>`
+*  Capture the **customer ID** parameter. This is used to create the IdP Issuer URI in the format: `https://citrix.com/<customerID>`
 
 [![IdP Issuer URI](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_idp-issuer-uri.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_idp-issuer-uri.png)
 
@@ -111,12 +111,14 @@ Okta needs to use Citrix Workspace as a SAML identity provider, resulting in Okt
 *  Log into Okta as an administrator
 *  Select **Security** -> **Identity Providers**
 *  Select **Add Identity Provider** -> **Add SAML 2.0 IdP**
+
 [![Setup SAML IdP 01](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-add-saml-idp-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-add-saml-idp-01.png)
+
 *  Provide a **Name**
 *  For the IdP Username, use the following expression: **idpuser.userName** (this is case sensitive)
 *  Match against should be **Okta Username or email**
 *  If no match is found, select **Redirect to Okta sign-in page**
-*  For the IdP Issuer URI, use the URL `https://cloud.com/<customerID>`. CustomerID is from the IdP Issuer URI section
+*  For the IdP Issuer URI, use the URL `https://citrix.com/<customerID>`. CustomerID is from the IdP Issuer URI section
 
 [![Setup SAML IdP 02](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-add-saml-idp-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-add-saml-idp-02.png)
 
@@ -133,7 +135,7 @@ Okta needs to use Citrix Workspace as a SAML identity provider, resulting in Okt
 *  Because this is a SaaS app, select **Outside my corporate network**
 *  In the App details window, provide a **name** for the application
 *  For the URL, use the **App Embed Link** from the Identity SAML Login URL section
-*  Enhanced security policies uses the related domains field to determine the URLs to secure. One related domain is automatically added based on the entered URL added in the previous step. That specific related domain is associated with the Okta application link. Enhanced security policies require additional related domains for the actual application, which will often be `*.<companyID>.SaaSApp.com` (as an example *.citrix.slack.com)
+*  Enhanced security policies uses the related domains field to determine the URLs to secure. One related domain is automatically added based on the entered URL added in the previous step. That specific related domain is associated with the Okta application link. Enhanced security policies require related domains for the actual application, which is often `*.<companyID>.SaaSApp.com` (as an example *.citrix.slack.com)
 
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-02.png)
 
@@ -165,7 +167,7 @@ Okta needs to use Citrix Workspace as a SAML identity provider, resulting in Okt
 
 ### Authorize SaaS App
 
-*  Within Citrix cloud, select **Library** from the menu
+*  Within Citrix Cloud, select **Library** from the menu
 
 [![Authorize SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_authorize-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-01.png)
 
@@ -186,9 +188,9 @@ So far, the configuration supports an IdP-initiated launch process, where the us
 
 [![Okta Identity Provider Routing Rule](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-idp-routing.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-idp-routing.png)
 
-* Select **Activate**
+*  Select **Activate**
 
-***Note**: During the configuration, the Okta admin might be unable to sign into the Okta admin console because the inbound SAML configuration is incomplete.  If this happens, the admin can bypass the IdP routing rule by accessing the Okta enviornment with the following address: `http://companyname.oka.com/login/default`*
+***Note**: During the configuration, the Okta admin might be unable to sign into the Okta admin console because the inbound SAML configuration is incomplete. If this happens, the admin can bypass the IdP routing rule by accessing the Okta enviornment with the following address: `http://companyname.oka.com/login/default`*
 
 ### Validate
 
@@ -197,14 +199,14 @@ IdP-Initiated Validation
 *  Log into to Citrix Workspace as a user
 *  Select the configured SaaS application
 *  Observe the Okta sign-on process briefly appearing
-*  The SaaS App should successfully launch
+*  The SaaS App successfully launches
 
 SP-Initiated Validation
 
 *  Launch a browser
 *  Go to the company-defined URL for the SaaS application
-*  The browser should redirect to Okta then to Citrix Workspace for authentication
-*  Once the user authenticates with the primary user directory, the SaaS app should launch with Okta providing single sign-on
+*  The browser redirects to Okta then to Citrix Workspace for authentication
+*  Once the user authenticates with the primary user directory, the SaaS app launches with Okta providing single sign-on
 
 ## Option 3: Microsoft-Provided Single Sign-On to SaaS Apps (Coming Soon)
 
@@ -230,23 +232,23 @@ Citrix Access Control service provides website filtering within SaaS and Web app
 
 *  Do the same for allowed categories
 *  Do the same for redirected categories. These categories redirect to a Secure Browser instance
-*  If needed, admins can filter denied, allowed and redirected actions for specific URLs following the same process that was used for defining categories.  Website URLs takes precedence over categories.
+*  If needed, admins can filter denied, allowed and redirected actions for specific URLs following the same process that was used for defining categories. Website URLs takes precedence over categories.
 
 ## Validate the Configuration
 
 IdP-Initiated Validation
 
 *  Log into to Citrix Workspace as a user
-*  Select the configured SaaS application. If enhanced security is disabled, the app should launch within the local browser, otherwise the embedded browser is used
-*  The user should automatically sign on to the app
+*  Select the configured SaaS application. If enhanced security is disabled, the app launches within the local browser, otherwise the embedded browser is used
+*  The user automatically signs on to the app
 *  The appropriate enhanced security policies are applied
 *  If configured, select a URL within the SaaS app that is in the blocked, allowed and redirected categories
 *  If configured, select a URL within the SaaS app that is in the blocked, allowed and redirected URLs
-*  The SaaS App should successfully launch
+*  The SaaS App successfully launches
 
 SP-Initiated Validation
 
 *  Launch a browser
 *  Go to the company-defined URL for the SaaS application
-*  The browser should direct the browser to Citrix Workspace for authentication
-*  Once the user authenticates with the primary user directory, the SaaS app should launch in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches the SaaS app
+*  The browser directs the browser to Citrix Workspace for authentication
+*  Once the user authenticates with the primary user directory, the SaaS app launches in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches the SaaS app
