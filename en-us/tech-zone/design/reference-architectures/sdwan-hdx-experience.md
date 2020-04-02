@@ -19,9 +19,9 @@ In a Citrix Virtual Apps and Desktops environment, the length of time it takes a
 
 Based on tests comparing a traditional routed network versus one using Citrix SD-WAN:
 
-*  Citrix SD-WAN reduced the “graphical” round-trip time by greater than 500%, when congestion was encountered, in comparison to a traditional routed network.
+*  Citrix SD-WAN reduced the “graphical” round-trip time by greater than 500%, when severe network constraints were in encountered, in comparison to a traditional routed network.
 
-*  When redundant links were added into the environment, Citrix SD-WAN reduced the round-trip time by greater than 4 seconds on average, when congestion was encountered, in comparison to a traditional routed network.
+*  When redundant links were added into the environment, Citrix SD-WAN reduced the round-trip time by greater than 4 seconds, when severe network constraints were in encountered, in comparison to a traditional routed network.
 
 Citrix SD-WAN provides a better user experience than traditional routing when network conditions are not ideal.
 
