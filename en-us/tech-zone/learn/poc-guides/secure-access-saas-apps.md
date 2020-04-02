@@ -100,7 +100,7 @@ To successfully integrate Okta apps with Citrix Workspace, the administrator nee
 
 *  Log into Citrix cloud as an administrator
 *  Under the **Identity and Access Management** section, select **API Access**
-*  Capture the **customer ID** parameter.  This is used to create the IdP Issuer URI in the format: `https://cloud.com/<customerID>`
+*  Capture the **customer ID** parameter.  This is used to create the IdP Issuer URI in the format: `https://citrix.com/<customerID>`
 
 [![IdP Issuer URI](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_idp-issuer-uri.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_idp-issuer-uri.png)
 
@@ -130,9 +130,10 @@ Okta needs to use Citrix Workspace as a SAML identity provider, resulting in Okt
 
 *  Select **Add a Web/SaaS app**
 *  In the Choose a template wizard, select **Skip**
+*  Because this is a SaaS app, select **Outside my corporate network**
 *  In the App details window, provide a **name** for the application
 *  For the URL, use the **App Embed Link** from the Identity SAML Login URL section
-*  For related domains, one is automatically added based on the entered URL added in the previous step. That specific related domain is associated with the Okta application link. Citrix Workspace requires additional related domains for the actual application, which will often be `*.<companyID>.SaaSApp.com` (as an example *.citrix.slack.com)
+*  Enhanced security policies uses the related domains field to determine the URLs to secure. One related domain is automatically added based on the entered URL added in the previous step. That specific related domain is associated with the Okta application link. Enhanced security policies require additional related domains for the actual application, which will often be `*.<companyID>.SaaSApp.com` (as an example *.citrix.slack.com)
 
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-02.png)
 
@@ -142,9 +143,9 @@ Okta needs to use Citrix Workspace as a SAML identity provider, resulting in Okt
 
 [![Setup SaaS App 03](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-03.png)
 
-*  Switch back to the Okta configuration
+*  Switch back to the Okta configuration. The **Add Identity Provider** dialog should still be visible
 *  For the **IdP Single Sign-On URL**, use the Citrix Login URL copied from the previous step. It should resemble `https://app.netscalergateway.net/ngs/<customerid>/saml/login?APPID=2347894324327`
-*  Add the certificate to the SAML-based IdP configuration.
+*  In the **IdP Signature Certificate**, brows for the downloaded PEM certificate
 
 [![Setup SaaS App 04](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-04.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-04.png)
 
@@ -158,6 +159,9 @@ Okta needs to use Citrix Workspace as a SAML identity provider, resulting in Okt
 *  The Name ID Format and Name ID can remain as email. Okta uses the Email address to associate with an Okta user.
 
 [![Setup SaaS App 06](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-06.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-06.png)
+
+*  Select **Save**
+*  Select **Finish**
 
 ### Authorize SaaS App
 
@@ -182,7 +186,9 @@ So far, the configuration supports an IdP-initiated launch process, where the us
 
 [![Okta Identity Provider Routing Rule](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-idp-routing.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-idp-routing.png)
 
-***Note**: During the configuration, the Okta admin might be unable to sign into the Okta admin console because the inbound SAML configuration is incomplete.  If this happens, the admin can bypass the IdP routing rule by accessing the Okta enviornment witht he following address: `http://companyname.oka.com/login/default`*
+* Select **Activate**
+
+***Note**: During the configuration, the Okta admin might be unable to sign into the Okta admin console because the inbound SAML configuration is incomplete.  If this happens, the admin can bypass the IdP routing rule by accessing the Okta enviornment with the following address: `http://companyname.oka.com/login/default`*
 
 ### Validate
 
