@@ -8,15 +8,15 @@ description: App protection policies protect application data from attackers tha
 
 **Author:** [Mayank Singh](https://twitter.com/techmayank)
 
-**Special Thanks:** [Martin Zugec](https://twitter.com/MartinZugec) and [Arvind SankaraSubramaniam]()
+**Special Thanks:** [Martin Zugec](https://twitter.com/MartinZugec) and [Arvind SankaraSubramanian]()
 
-The end user is widely considered the weakest piece on the attack surface of an organization. It has become common practice for attackers to use sophisticated methods to fool users into installing malware on their endpoints. Once installed, the malware can silently collect and exfiltrate sensitive data such as user’s credentials, sensitive information, company’s intellectual property or confidential data. With the proliferation of BYO devices and access of corporate resources from unmanaged endpoints, the client endpoint becomes an even more exposed threat surface. With many users working from home, the risk to the organizations is heightened due to the untrustworthiness of the endpoint device.
+The end user is widely considered the weakest piece on the attack surface of an organization. It has become common practice for attackers to use sophisticated methods to fool users into installing malware on their endpoints. Once installed, the malware can silently collect and exfiltrate sensitive data such as user’s credentials, sensitive information, company’s intellectual property, or confidential data. With the proliferation of BYO devices and access of corporate resources from unmanaged endpoints, the client endpoint becomes an even more exposed threat surface. With many users working from home, the risk to the organizations is heightened due to the untrustworthiness of the endpoint device.
 
 When accessing a virtual app or virtual desktop session, the attack surface is drastically reduced, as the session is not running on the endpoint and users generally do not have permission to install apps within the virtual session. The data within the session is secure in the data center or cloud resource location. However, a compromised endpoint can capture session keystrokes and information displayed on the endpoint. Citrix provides administrators the ability prevent these attack vectors, using an add-on feature called App protection. The feature enables Citrix Virtual Apps and Desktops (CVAD) administrators to enforce policies on specific delivery group(s), such that when users connect to sessions from these delivery group(s), the user’s endpoint has either anti screen capture or anti-keylogging ot both enforced on the endpoints.
 
 ## Features
 
-App protection policies, at the time of writing this brief (March 2020), protect client endpoints running Windows Desktop OSes (Windows 10, Windows 8.1 and Windows 7) and all versions of macOS that the Citrix Workspace app for Mac supports.
+App protection policies, at the time of writing this brief (March 2020), protect client endpoints running Windows Desktop OSes (Windows 10, Windows 8.1, and Windows 7) and all versions of macOS that the Citrix Workspace app for Mac supports.
 
 App protection policies work by controlling access to specific API calls of the underlying OS, required to capture screens or keyboard presses. App protection policies can therefore provide protection even against custom and purpose-built hacker tools. However, as OSes evolve, new ways of capturing screens and logging keys can emerge. While Citrix continues to identify and address, Citrix cannot guarantee full protection in specific configurations and deployments.
 
@@ -54,10 +54,10 @@ The protection extends to files from [Citrix Files](https://docs.citrix.com/en-u
 *  The required versions of the Citrix Workspace app are: Citrix Workspace app 1912 for Windows (LTSR) and later, Citrix Workspace app 2001 for Mac and later.  The HTML5 client is not supported.
 
 *  If users connect from an older version than Citrix Workspace app 1912 for Windows or Citrix Workspace app 2001 for Mac, or from Citrix Receiver, then the tagged resources (to be protected) are not enumerated in the StoreFront.
-App protection policies don’t work in conjunction with the Client Clipboard Redirection policies and the policies need to be disabled to ensure that App protection works.
+App protection policies don’t work with the Client Clipboard Redirection policies and the policies must be disabled to ensure that App protection works.
 
 As of writing this document (March 2020), app protection policies are unsupported in a double hop (nested) scenario or if a user is using Remote Desktop Protocol to access the Citrix session. For nested sessions, the first hop must be to a Windows desktop operating system and then the user must launch a second Citrix session from within it for the protections to apply.
 
 ## Summary
 
-App protection policies can help protect application data from attackers that have surreptitiously installed either keyloggers or screen capture tools or both while allowing companies to embrace [BYOD](https://www.citrix.com/glossary/byod.html), and extend their desktops or apps to remote workers, contractors and gig economy workers.
+App protection policies can help protect application data from attackers that have surreptitiously installed either keyloggers or screen capture tools or both while allowing companies to embrace [BYOD](https://www.citrix.com/glossary/byod.html), and extend their desktops or apps to remote workers, contractors, and gig economy workers.
