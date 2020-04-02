@@ -5,6 +5,10 @@ layout: doc
 
 Learn firsthand, the functionality of the solution by following these guides within your test environment.
 
+## Citrix Workspace
+
+[Citrix Access Control Proof of Concept Guide](/en-us/tech-zone/learn/poc-guides/secure-access-saas-apps.html) Learn how to setup a Citrix Access Control environment that is able to use Citrix, Okta or Microsoft as the single sign-on provider for SaaS applications.
+
 ## Citrix Virtual Apps and Desktops
 
 [Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid Proof of Concept Guide](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and your on premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
