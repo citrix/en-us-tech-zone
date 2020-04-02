@@ -206,8 +206,6 @@ SP-Initiated Validation
 *  The browser redirects to Okta then to Citrix Workspace for authentication
 *  Once the user authenticates with the primary user directory, the SaaS app launches with Okta providing single sign-on
 
-## Option 3: Microsoft-Provided Single Sign-On to SaaS Apps (Coming Soon)
-
 ## Define website filtering policies
 
 Citrix Access Control service provides website filtering within SaaS and Web apps to help protect the user from phishing attacks. The following shows how to setup website filtering policies.
