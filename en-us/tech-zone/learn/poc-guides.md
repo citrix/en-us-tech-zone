@@ -7,7 +7,7 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 ## Citrix Workspace
 
-[Citrix Access Control Proof of Concept Guide](/en-us/tech-zone/learn/poc-guides/secure-access-saas-apps.html) Learn how to setup a Citrix Access Control environment that is able to use Citrix, Okta or Microsoft as the single sign-on provider for SaaS applications.
+[Citrix Access Control Proof of Concept Guide](/en-us/tech-zone/learn/poc-guides/secure-access-saas-apps.html) Learn how to setup a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
 
 ## Citrix Virtual Apps and Desktops
 

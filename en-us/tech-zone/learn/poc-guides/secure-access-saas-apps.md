@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to setup a Citrix Access Control environment that is able to use Citrix, Okta or Microsoft as the single sign-on provider for SaaS applications.
+description: Learn how to setup a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
 ---
 # Proof of Concept: Secure Access to SaaS Applications
 
@@ -60,9 +60,7 @@ An organization can use any one of the following primary user directories
 *  [Citrix Gateway](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#citrix-gateway): Organizations can utilize an on-premises Citrix Gateway to act as an identity provider for Citrix Workspace. This [guide](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-ad-gateway.html) provides details on the integration.
 *  [Okta](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#okta): Organizations can use Okta as the primary user directory for Citrix Workspace. This [guide](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/okta-identity.html) provides instructions for configuring this option.
 
-## Option 1: Citrix-Provided Single Sign-On to SaaS Apps (Coming Soon)
-
-## Option 2: Okta-Provided Single Sign-On to SaaS Apps
+## Add Okta as Single Sign-On Provider
 
 In this scenario, a user authenticates to Citrix Workspace using either Active Directory or Okta as the primary user directory. Okta also provides single sign-on services for a defined set of SaaS applications.
 
