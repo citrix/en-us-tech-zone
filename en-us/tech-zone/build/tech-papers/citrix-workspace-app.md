@@ -41,8 +41,9 @@ For a successful rollout make sure to understand each of the parameters and that
 -  Do some users in your organization require Local App Access? Local App Access enables the integration of locally installed applications within a hosted desktop. If yes, make sure to include the parameter */FORCE_LAA=1* to install the Local App Access component.
 -  Are users allowed to use Citrix Virtual Apps and Desktops without having to re-authenticate again? If yes, make sure to include the parameters */includeSSON* to install the single sign-on component and /*ENABLE_SSON=Yes* to enable the single sign-on component.
 
-**Tip:**
-You can also use the **Citrix Workspace app Commandline Tool** to help you to build the exact command line syntax ([https://support.citrix.com/article/CTX227370](https://support.citrix.com/article/CTX227370)).
+    **Tip:**
+
+    You can also use the **Citrix Workspace app Commandline Tool** to help you to build the exact command line syntax ([https://support.citrix.com/article/CTX227370](https://support.citrix.com/article/CTX227370)).
 
 When upgrading to Citrix Workspace app from an older and unsupported version (for example Citrix Receiver 3.4) make sure to use the parameter */rcu* or */forceinstall* (Citrix Workspace app 1909 and later).
 
@@ -80,7 +81,7 @@ Citrix Workspace app writes multiple log files to the *%TEMP%* directory in the 
     -  CtxInstall-WebHelper-%Date%-%Time%.log
     -  CtxInstall-WinDockerInstaller-%Date%-%Time%.log
 
-The exact location of the temp folder depends on the user executing the installation. For example, the temp folder of the local system account (used by SCCM) is *C:\Windows\Temp*.
+The exact location of the temp folder depends on the user executing the installation. For example, the temp folder of the local system account (used by Microsoft SCCM for example) is *C:\Windows\Temp*.
 The logfile path cannot be changed. It is possible to copy the log files to a different directory after the installation of Citrix Workspace app has finished.
 
 ## Configuration
@@ -203,7 +204,11 @@ Some users in your organization may not need to interact with the local desktop 
 
 Citrix Desktop Lock is a separate component and is not included in Citrix Workspace app. Citrix Workspace app must be installed before Citrix Desktop Lock can be installed. SSON must be enabled when installing Citrix Workspace app and a store must be configured, either during installation or using a Group Policy. Citrix Desktop Lock works on domain-joined machines.
 
-For more information about Citrix Desktop Lock see the following article:
+Download the latest version of Citrix Desktop Lock here:
+
+[https://www.citrix.com/downloads/workspace-app/additional-client-software/workspace-app-desktop-lock-Latest2.html](https://www.citrix.com/downloads/workspace-app/additional-client-software/workspace-app-desktop-lock-Latest2.html)
+
+See the following article for more information about installing and configuring Citrix Desktop Lock:
 
 [https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/workspace-windows-desktop-lock.html](/en-us/citrix-workspace-app-for-windows/workspace-windows-desktop-lock.html)
 
@@ -211,7 +216,7 @@ For more information about Citrix Desktop Lock see the following article:
 
 Citrix Workspace app version 1912 introduced the new security feature *app protection*. This is an add-on feature for Citrix Workspace app that provides enhanced security when using Citrix Virtual Apps and Desktops published resources. To be more specific. *App protection* provides anti-keylogging and anti-screen-capturing capabilities in a Citrix HDX session.
 
-For silent installations, make sure to include the switch */includeappprotection* ([https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app](/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app)).
+For silent installations, make sure to include the switch */includeappprotection* when installing Citrix Workspace app ([https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app](/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app)).
 
 For more information about *app protection* see the following article:
 
@@ -441,7 +446,7 @@ Also, the script removes any existing machine-specific group policy settings by 
 -  `HKLM\SOFTWARE\Policies\Citrix\ICA Client`
 -  `HKLM\SOFTWARE\Wow6432Node\Policies\Citrix\ICA Client`
 
-The script also imports the *Client Selective Trust* registry file, but this is optional. If no `*.reg file is found the script will not end in an error.
+The script also imports the *Client Selective Trust* registry file, but this is optional. If no **.reg* file is found the script will not end in an error.
 
 You can execute scripts in an Active Directory Group Policy or using Electronic Software Distribution software (ESD), for example Microsoft SCCM.
 
