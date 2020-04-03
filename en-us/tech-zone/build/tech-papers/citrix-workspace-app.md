@@ -44,7 +44,7 @@ For a successful rollout make sure to understand each of the parameters and that
 **Tip:**
 You can also use the **Citrix Workspace app Commandline Tool** to help you to build the exact command line syntax ([https://support.citrix.com/article/CTX227370](https://support.citrix.com/article/CTX227370)).
 
-When upgrading to Citrix Workspace app from an older and unsupported version (e.g. Citrix Receiver 3.4) make sure to use the parameter */rcu* or */forceinstall* (Citrix Workspace app 1909 and later).
+When upgrading to Citrix Workspace app from an older and unsupported version (for example Citrix Receiver 3.4) make sure to use the parameter */rcu* or */forceinstall* (Citrix Workspace app 1909 and later).
 
 Keep in mind that some components, for example enabling single sign-on, require a reboot of the local machine.
 
@@ -116,7 +116,7 @@ Citrix Workspace app comes with both per-machine and per-user settings. There ar
 -  *User Configuration \ Policies \ Administrative Templates \ Citrix Components \ Citrix Workspace*
     -  **User Authentication \ Local username and password:** to allow single sign-on, enable this setting and tick the options Enable pass-through authentication and Allow pass-through authentication for all ICA connections.
 
-When launching a session, the user may be presented with a dialog window asking for permissions concerning device access (e.g. for local drives, webcams or microphones). By default, the Desktop Viewer client device restrictions are based on the Internet region. This behavior can be changed by creating and configuring the *Client Selective Trust* registry keys. As an administrator, you can define the access level by modifying the registry. There are four access levels:
+When launching a session, the user may be presented with a dialog window asking for permissions concerning device access (for example for local drives, webcams or microphones). By default, the Desktop Viewer client device restrictions are based on the Internet region. This behavior can be changed by creating and configuring the *Client Selective Trust* registry keys. As an administrator, you can define the access level by modifying the registry. There are four access levels:
 
 -  0 = No Access
 -  1 = Read-Only
@@ -153,7 +153,7 @@ For example, when the prompt **Open Citrix Workspace Launcher** is displayed in 
 Working with virtual applications and desktops on remote systems means two things:
 
 1.  The resources (CPU/RAM) of the remote system are used by multiple users at the same time and may at times run under heavy load.
-2.  Communication between the local endpoint and the remote system may be less than optimal due to network performance (e.g. latency, jitter).
+2.  Communication between the local endpoint and the remote system may be less than optimal due to network performance (for example latency and jitter).
 
 For this reason, various optimization features have been introduced.
 
