@@ -34,7 +34,7 @@ The default installation path for machine-based installations is *C:\Program Fil
 
 Citrix Workspace app comes with many installation parameters. For a complete overview of all available parameters see the following article:
 
-[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters)
+[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters](/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters)
 
 For a successful rollout make sure to understand each of the parameters and that they are aligned with your organization’s requirements. For example:
 
@@ -170,11 +170,11 @@ The HDX RealTime Media Engine can only be installed when the Citrix Workspace ap
 
 Download the latest version of the Citrix RealTime Optimization Pack here:
 
-[https://docs.citrix.com/en-us/hdx-optimization/current-release/download.html](https://docs.citrix.com/en-us/hdx-optimization/current-release/download.html)
+[https://docs.citrix.com/en-us/hdx-optimization/current-release/download.html](/en-us/hdx-optimization/current-release/download.html)
 
 For more information on the Citrix HDX RealTime Optimization Pack for Skype for Business see the following article:
 
-[https://docs.citrix.com/en-us/hdx-optimization/current-release.html](https://docs.citrix.com/en-us/hdx-optimization/current-release.html)
+[https://docs.citrix.com/en-us/hdx-optimization/current-release.html](/en-us/hdx-optimization/current-release.html)
 
 ### Optimization for Microsoft Teams
 
@@ -182,11 +182,11 @@ Concerning Microsoft Teams, no further optimization is required. All available o
 
 For more information see the following article:
 
-[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html)
+[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html)
 
 For optimizing the rendering of webpages in a browser see the following article:
 
-[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html)
+[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html)
 
 ### Citrix Desktop Lock
 
@@ -196,17 +196,17 @@ Citrix Workspace app must be installed before Citrix Desktop Lock can be install
 
 For more information about Citrix Desktop Lock see the following article:
 
-[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/workspace-windows-desktop-lock.html](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/workspace-windows-desktop-lock.html)
+[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/workspace-windows-desktop-lock.html](/en-us/citrix-workspace-app-for-windows/workspace-windows-desktop-lock.html)
 
 ### App protection
 
 Citrix Workspace app version 1912 introduced the new security feature *app protection*. This is an add-on feature for Citrix Workspace app that provides enhanced security when using Citrix Virtual Apps and Desktops published resources. To be more specific. *App protection* provides anti-keylogging and anti-screen-capturing capabilities in a Citrix HDX session.
 
-For silent installations, make sure to include the switch */includeappprotection* ([https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app)).
+For silent installations, make sure to include the switch */includeappprotection* ([https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app](/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app)).
 
 For more information about *app protection* see the following article:
 
-[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html)
+[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html](/en-us/citrix-virtual-apps-desktops/secure/app-protection.html)
 
 ## Automation
 
@@ -442,4 +442,4 @@ Uninstalling Citrix Workspace app for Windows can be accomplished with the follo
 
 For more information see the following article:
 
-[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#uninstall](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#uninstall)
+[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#uninstall](/en-us/citrix-workspace-app-for-windows/install.html#uninstall)
