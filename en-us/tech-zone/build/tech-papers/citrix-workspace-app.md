@@ -34,7 +34,7 @@ The default installation path for machine-based installations is *C:\Program Fil
 
 Citrix Workspace app comes with many installation parameters. For a complete overview of all available parameters see the following article:
 
-[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters)
+[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters](/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters)
 
 For a successful rollout make sure to understand each of the parameters and that they are aligned with your organization’s requirements. For example:
 
@@ -44,7 +44,7 @@ For a successful rollout make sure to understand each of the parameters and that
 **Tip:**
 You can also use the **Citrix Workspace app Commandline Tool** to help you to build the exact command line syntax ([https://support.citrix.com/article/CTX227370](https://support.citrix.com/article/CTX227370)).
 
-When upgrading to Citrix Workspace app from an older and unsupported version (e.g. Citrix Receiver 3.4) make sure to use the parameter */rcu* or */forceinstall* (Citrix Workspace app 1909 and later).
+When upgrading to Citrix Workspace app from an older and unsupported version (for example Citrix Receiver 3.4) make sure to use the parameter */rcu* or */forceinstall* (Citrix Workspace app 1909 and later).
 
 Keep in mind that some components, for example enabling single sign-on, require a reboot of the local machine.
 
@@ -116,7 +116,7 @@ Citrix Workspace app comes with both per-machine and per-user settings. There ar
 -  *User Configuration \ Policies \ Administrative Templates \ Citrix Components \ Citrix Workspace*
     -  **User Authentication \ Local username and password:** to allow single sign-on, enable this setting and tick the options Enable pass-through authentication and Allow pass-through authentication for all ICA connections.
 
-When launching a session, the user may be presented with a dialog window asking for permissions concerning device access (e.g. for local drives, webcams or microphones). By default, the Desktop Viewer client device restrictions are based on the Internet region. This behavior can be changed by creating and configuring the *Client Selective Trust* registry keys. As an administrator, you can define the access level by modifying the registry. There are four access levels:
+When launching a session, the user may be presented with a dialog window asking for permissions concerning device access (for example for local drives, webcams or microphones). By default, the Desktop Viewer client device restrictions are based on the Internet region. This behavior can be changed by creating and configuring the *Client Selective Trust* registry keys. As an administrator, you can define the access level by modifying the registry. There are four access levels:
 
 -  0 = No Access
 -  1 = Read-Only
@@ -153,7 +153,7 @@ For example, when the prompt **Open Citrix Workspace Launcher** is displayed in 
 Working with virtual applications and desktops on remote systems means two things:
 
 1.  The resources (CPU/RAM) of the remote system are used by multiple users at the same time and may at times run under heavy load.
-2.  Communication between the local endpoint and the remote system may be less than optimal due to network performance (e.g. latency, jitter).
+2.  Communication between the local endpoint and the remote system may be less than optimal due to network performance (for example latency and jitter).
 
 For this reason, various optimization features have been introduced.
 
@@ -170,11 +170,11 @@ The HDX RealTime Media Engine can only be installed when the Citrix Workspace ap
 
 Download the latest version of the Citrix RealTime Optimization Pack here:
 
-[https://docs.citrix.com/en-us/hdx-optimization/current-release/download.html](https://docs.citrix.com/en-us/hdx-optimization/current-release/download.html)
+[https://docs.citrix.com/en-us/hdx-optimization/current-release/download.html](/en-us/hdx-optimization/current-release/download.html)
 
 For more information on the Citrix HDX RealTime Optimization Pack for Skype for Business see the following article:
 
-[https://docs.citrix.com/en-us/hdx-optimization/current-release.html](https://docs.citrix.com/en-us/hdx-optimization/current-release.html)
+[https://docs.citrix.com/en-us/hdx-optimization/current-release.html](/en-us/hdx-optimization/current-release.html)
 
 ### Optimization for Microsoft Teams
 
@@ -182,11 +182,11 @@ Concerning Microsoft Teams, no further optimization is required. All available o
 
 For more information see the following article:
 
-[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html)
+[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html)
 
 For optimizing the rendering of webpages in a browser see the following article:
 
-[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html)
+[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html)
 
 ### Citrix Desktop Lock
 
@@ -196,17 +196,17 @@ Citrix Workspace app must be installed before Citrix Desktop Lock can be install
 
 For more information about Citrix Desktop Lock see the following article:
 
-[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/workspace-windows-desktop-lock.html](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/workspace-windows-desktop-lock.html)
+[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/workspace-windows-desktop-lock.html](/en-us/citrix-workspace-app-for-windows/workspace-windows-desktop-lock.html)
 
 ### App protection
 
 Citrix Workspace app version 1912 introduced the new security feature *app protection*. This is an add-on feature for Citrix Workspace app that provides enhanced security when using Citrix Virtual Apps and Desktops published resources. To be more specific. *App protection* provides anti-keylogging and anti-screen-capturing capabilities in a Citrix HDX session.
 
-For silent installations, make sure to include the switch */includeappprotection* ([https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app)).
+For silent installations, make sure to include the switch */includeappprotection* ([https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app](/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app)).
 
 For more information about *app protection* see the following article:
 
-[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html)
+[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html](/en-us/citrix-virtual-apps-desktops/secure/app-protection.html)
 
 ## Automation
 
@@ -442,4 +442,4 @@ Uninstalling Citrix Workspace app for Windows can be accomplished with the follo
 
 For more information see the following article:
 
-[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#uninstall](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#uninstall)
+[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#uninstall](/en-us/citrix-workspace-app-for-windows/install.html#uninstall)
