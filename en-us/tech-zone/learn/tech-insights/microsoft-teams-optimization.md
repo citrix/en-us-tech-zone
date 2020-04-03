@@ -1,6 +1,7 @@
 ---
 layout: doc
-description: Copy & paste description from TOC here
+description: Learn how Citrix Virtual Apps and Desktops, along with Citrix SD-WAN, can optimize Microsoft Teams and provide a great user experience.
+
 ---
 # Microsoft Teams Optimization with Citrix
 
