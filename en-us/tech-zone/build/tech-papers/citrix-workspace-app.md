@@ -12,9 +12,9 @@ description: Tech Paper focused on the (unattended) installation and configurati
 
 ## Overview
 
-Citrix Workspace app for Windows provides access to a user’s resources, such as SaaS, web and legacy applications and desktops, using Citrix Virtual Apps and Desktops from a Windows-based client device. Citrix Workspace app provides access from the desktop, start menu, Citrix Workspace user interface and web browsers.
+Citrix Workspace app for Windows provides access to a user’s resources using Citrix Virtual Apps and Desktops. These resources include SaaS, web and legacy applications and desktops. Citrix Workspace app provides access from the desktop, start menu, Citrix Workspace user interface and web browsers.
 
-On a side note, it is possible to access resources on a Windows device using the Citrix Workspace app for HTML5 in an HTML5-capable browser, without installing the Citrix Workspace app for Windows. However, there is a significant feature disparity between both clients. For a complete overview of all features supported in each of the available Workspace app versions see the following matrix:
+On a side note, it is possible to access resources on a Windows device using the Citrix Workspace app for HTML5, without installing the Citrix Workspace app for Windows. However, there is a significant feature disparity between both clients. For a complete overview of all features supported in each of the available Workspace app versions see the following matrix:
 
 [https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf?_ga=2.27649141.890901474.1583830777-25366109.1583146462](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf?_ga=2.27649141.890901474.1583830777-25366109.1583146462)
 
@@ -26,10 +26,9 @@ The latest version of Citrix Workspace app for Windows can be downloaded here:
 
 Although technically possible, there is no need to extract the files included in the *CitrixWorkspaceApp.exe*. It is highly recommended to install Citrix Workspace app using the executable directly.
 
-Citrix Workspace app can be installed on both your Windows clients as well as on your VDAs.
+Citrix Workspace app can be installed on both your Windows clients and on your Citrix workers (your VDAs).
 
-You may decide to rename the installation file *CitrixWorkspaceApp.exe* to *CitrixWorkspaceApp**Web**.exe*.
-Renaming this file prevents the *Add Account* button from being displayed in the last dialog window at the end of the installation. It also prevents the *Add Account* window (First Time Use, FTU) from appearing at first login.
+It is possible to rename the installation file *CitrixWorkspaceApp.exe* to *CitrixWorkspaceApp**Web**.exe*. Renaming this file removes the *Add Account* button from the last dialog window at the end of the installation. It also prevents the *Add Account* window (First Time Use, FTU) from appearing at first login.
 
 The default installation path for machine-based installations is *C:\Program Files (x86)\Citrix\ICA Client*.
 
@@ -37,23 +36,23 @@ Citrix Workspace app comes with many installation parameters. For a complete ove
 
 [https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters)
 
-For a successful rollout make sure to understand each of the parameters in combination with your organization’s requirements. For example:
+For a successful rollout make sure to understand each of the parameters and that they are aligned with your organization’s requirements. For example:
 
 -  Do some users in your organization require Local App Access? Local App Access enables the integration of locally installed applications within a hosted desktop. If yes, make sure to include the parameter */FORCE_LAA=1* to install the Local App Access component.
--  Should users be allowed to use Citrix Virtual Apps and Desktops without having to re-authenticate again? If yes, make sure to include the parameters */includeSSON* to install the single sign-on component and /*ENABLE_SSON=Yes* to enable the single sign-on component.
+-  Are users allowed to use Citrix Virtual Apps and Desktops without having to re-authenticate again? If yes, make sure to include the parameters */includeSSON* to install the single sign-on component and /*ENABLE_SSON=Yes* to enable the single sign-on component.
 
 **Tip:**
 You can also use the **Citrix Workspace app Commandline Tool** to help you to build the exact command line syntax ([https://support.citrix.com/article/CTX227370](https://support.citrix.com/article/CTX227370)).
 
-When upgrading to Citrix Workspace app from an older and unsupported version (Citrix Receiver 3.4 for example) make sure to use the parameter */rcu* or, for Citrix Workspace app 1909 and later, the new parameter */forceinstall*.
+When upgrading to Citrix Workspace app from an older and unsupported version (e.g. Citrix Receiver 3.4) make sure to use the parameter */rcu* or */forceinstall* (Citrix Workspace app 1909 and later).
 
-Please keep in mind that some components, for example enabling single sign-on, require a reboot of the local machine.
+Keep in mind that some components, for example enabling single sign-on, require a reboot of the local machine.
 
 Here is an example of the command line syntax: **CitrixWorkspaceApp.exe /silent /includeSSON /FORCE_LAA=1**
 
-In case you would like to install Citrix Workspace app **without administrative privileges**, please be aware of the following:
+In case you would like to install Citrix Workspace app **without administrative privileges** be aware of the following:
 
--  The Microsoft Visual C++ Redistributable 2017 (32 and 64 bit) must be pre-installed on the local machine since it is a prerequisite for Citrix Workspace app. The Visual C++ Redistributable can only be installed with administrative privileges.
+-  The Microsoft Visual C++ Redistributable 2017 (both 32-bit and 64-bit) must be pre-installed on the local machine. This is a prerequisite for the installation of Citrix Workspace app. The Visual C++ Redistributable can only be installed with administrative privileges.
 -  The following components of Citrix Workspace app can only be installed with administrative privileges:
     -  SSON (Single Sign-On)
     -  URL Redirection
@@ -61,9 +60,9 @@ In case you would like to install Citrix Workspace app **without administrative 
     -  USB support
     -  App Protection
 -  If the installation is user-based, Citrix Workspace app must be installed for each user who logs on to the local machine. The default installation path for user-based installations is `C:\Users\%UserName%\AppData\Local\Citrix\ICA Client`.
--  In order to avoid potential conflicts, make sure to uninstall all user-based installations of Citrix Workspace app on the local machine before installing Citrix Workspace app using administrative rights.
+-  To avoid potential conflicts, make sure to uninstall all user-based installations of Citrix Workspace app on the local machine before installing Citrix Workspace app using administrative rights.
 
-The installation log files generated by Citrix Workspace app are always created in the *%TEMP%* folder in the subfolder *CTXReceiverInstallLogs-%Date%-%Time%*. The following log files are created:
+Citrix Workspace app writes multiple log files to the *%TEMP%* directory in the subfolder *CTXReceiverInstallLogs-%Date%-%Time%*. The following log files are created:
 
 -  Log files from the main installer:
     -  TrolleyExpress-%Date%-%Time%.log
@@ -86,9 +85,9 @@ The logfile path cannot be changed. It is possible to copy the log files to a di
 
 ## Configuration
 
-In an Active Directory infrastructure, Citrix Workspace app can be centrally configured using Microsoft group policies. For this, the administrative templates (the ADMX and ADML files) for Citrix Workspace app need to be copied to your Group Policy Central Store.
+In an Active Directory infrastructure, Citrix Workspace app can be centrally configured using Microsoft group policies. This requires that the administrative templates (the ADMX and ADML files) for Citrix Workspace app are copied to your Group Policy Central Store.
 
-ADMX files contain the actual settings; ADML files are the language files that contain the text displayed in the Group Policy Management Console.
+ADMX files contain the actual settings. ADML files are the language files that contain the text displayed in the Group Policy Management Console.
 
 The administrative template files are included in the installation directory of Citrix Workspace app:
 
@@ -111,13 +110,13 @@ For testing purposes, you can copy the administrative templates to a local machi
 Citrix Workspace app comes with both per-machine and per-user settings. There are many settings available, for example:
 
 -  *Computer Configuration \ Policies \ Administrative Templates \ Citrix Components \ Citrix Workspace*
-    -  **DPI \ High DPI:** in most cases, the default setting will suffice, but in case users with multiple screens report issues you may need to change the DPI configuration.
-    -  **SelfService \ EnableFTU:** disable this setting to prevent the *Add Account* window at the user’s first login. Renaming the installation file *CitrixWorkspaceApp.exe* to *CitrixWorkspaceApp**Web**.exe* has the same result
+    -  **DPI \ High DPI:** in most environments the default setting will suffice, but in case users with multiple screens report issues you may need to change the DPI configuration.
+    -  **SelfService \ EnableFTU:** disable this setting to prevent the *Add Account* window at the user’s first login. Renaming the installation file *CitrixWorkspaceApp.exe* to *CitrixWorkspaceApp**Web**.exe* has the same result.
     -  **StoreFront \ NetScaler Gateway URL/StoreFront Accounts List:** use this setting to automatically add NetScaler Gateway or StoreFront URLs to the user’s Workspace app.
 -  *User Configuration \ Policies \ Administrative Templates \ Citrix Components \ Citrix Workspace*
     -  **User Authentication \ Local username and password:** to allow single sign-on, enable this setting and tick the options Enable pass-through authentication and Allow pass-through authentication for all ICA connections.
 
-When launching a session, the user may be presented with a dialog window asking for permissions concerning device access, for example for local drives, webcams or microphones. By default, the Desktop Viewer client device restrictions are based on the Internet region and this behavior can be changed by creating and configuring the *Client Selective Trust* feature registry keys. As an administrator, you can define the access level by modifying the registry. There are four access levels:
+When launching a session, the user may be presented with a dialog window asking for permissions concerning device access (e.g. for local drives, webcams or microphones). By default, the Desktop Viewer client device restrictions are based on the Internet region. This behavior can be changed by creating and configuring the *Client Selective Trust* registry keys. As an administrator, you can define the access level by modifying the registry. There are four access levels:
 
 -  0 = No Access
 -  1 = Read-Only
@@ -136,11 +135,11 @@ It is also possible to use the REG file to create and configure the *Client Sele
 
 HKLM\SOFTWARE\WOW6432Node\Citrix\ICA Client\Client Selective Trust\oidPredefinedSecurityPolicySettings\InstantiatedSecurityPolicyEditable
 
-In some cases, administrative templates from other products are required to configure the behavior of Citrix Workspace app.
+Sometimes, administrative templates from other products are required to configure the behavior of Citrix Workspace app.
 
-**Warning:** the following configurations could allow malicious websites to launch a session silently to their malicious VDAs without any prompts.
+**Warning:** the following configurations might allow malicious websites to launch a session silently to their malicious VDAs without any prompts.
 
-For example, when the prompt "Open Citrix Workspace Launcher" is displayed in Google Chrome and Microsoft Edge on Chromium each time a user launches a StoreFront resource, configure the following settings:
+For example, when the prompt **Open Citrix Workspace Launcher** is displayed in Google Chrome and Microsoft Edge on Chromium each time a user launches a StoreFront resource, configure the following settings:
 
 -  User Configuration \ Administrative Templates \ Google \ Google Chrome
     -  **Policy setting:** Allow access to a list of URLs -> enable
@@ -154,7 +153,7 @@ For example, when the prompt "Open Citrix Workspace Launcher" is displayed in Go
 Working with virtual applications and desktops on remote systems means two things:
 
 1.  The resources (CPU/RAM) of the remote system are used by multiple users at the same time and may at times run under heavy load.
-2.  Communication between the local endpoint and the remote system may be less than optimal due to network performance (latency, jitter, etc.).
+2.  Communication between the local endpoint and the remote system may be less than optimal due to network performance (e.g. latency, jitter).
 
 For this reason, various optimization features have been introduced.
 
@@ -185,13 +184,13 @@ For more information see the following article:
 
 [https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html)
 
-For optimizing the rendering of web pages in a browser see the following article:
+For optimizing the rendering of webpages in a browser see the following article:
 
 [https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html)
 
 ### Citrix Desktop Lock
 
-Some users in your organization may not need to interact with the local desktop of their PC; they only need their virtual desktop. Citrix Desktop Lock can lock-down physical PCs and effectively puts these machines into kiosk mode. When the PC is started, the user is presented with their virtual desktop instead of the desktop of the local OS.
+Some users in your organization may not need to interact with the local desktop of their PC; they only need their virtual desktop. Citrix Desktop Lock can lock down physical PCs and effectively puts these machines into kiosk mode. When the PC is started, the user is presented with their virtual desktop instead of the desktop of the local OS.
 
 Citrix Workspace app must be installed before Citrix Desktop Lock can be installed. SSON must be enabled when installing Citrix Workspace app and a store must be configured, either during installation or using a Group Policy. Citrix Desktop Lock works on domain-joined machines.
 
@@ -201,7 +200,7 @@ For more information about Citrix Desktop Lock see the following article:
 
 ### App protection
 
-Citrix Workspace app version 1912 introduced the new security feature *app protection*. This is an add-on feature for Citrix Workspace app that provides enhanced security when using Citrix Virtual Apps and Desktops published resources. To be more specific; *app protection* provides anti-keylogging and anti-screen-capturing capabilities in a Citrix HDX session.
+Citrix Workspace app version 1912 introduced the new security feature *app protection*. This is an add-on feature for Citrix Workspace app that provides enhanced security when using Citrix Virtual Apps and Desktops published resources. To be more specific. *App protection* provides anti-keylogging and anti-screen-capturing capabilities in a Citrix HDX session.
 
 For silent installations, make sure to include the switch */includeappprotection* ([https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app)).
 
@@ -211,23 +210,24 @@ For more information about *app protection* see the following article:
 
 ## Automation
 
-Larger organizations may want to automate the installation and configuration of Citrix workspace app on their Windows endpoint devices. There are various ways how to go about this.
+Larger organizations may want to automate the installation and configuration of Citrix Workspace app on their Windows endpoint devices. There are various ways how to go about this.
 
-Several deployment scripts (*.bat files) can be downloaded from the URL below in the section *Downloads for admins*:
+Several deployment scripts (\*.bat files) can be downloaded from the following URL in the section *Downloads for admins*:
 
 [https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html)
 
 Before they can be deployed, these batch files first need to be customized to suit your organization's environment.
 
-Another option is to use a custom PowerShell script such as the one below:
+Another option is to use a custom PowerShell script such as this one:
 
 ```powershell
 #==========================================================================
 # INSTALLING AND CONFIGURING CITRIX WORKSPACE APP FOR WINDOWS
 #
-# AUTHOR: Citrix Systems, Inc.
-# DATE  : 16.03.2020
-# EDITOR: Microsoft Visual Studio Code
+# Author: Citrix Systems, Inc.
+# Date  : 16.03.2020
+# Editor: Microsoft Visual Studio Code
+# Citrix Workspace app versions supported by this script: ALL
 #==========================================================================
 
 # Error handling
@@ -238,11 +238,11 @@ if($verbose){ $global:VerbosePreference = "Continue" }
 $env:SEE_MASK_NOZONECHECKS = 1
 
 # Custom variables [edit | customize to your needs]
-$LogDir = "C:\Logs\Citrix Workspace app" # the full path to your log directory
-$LogFile = Join-Path $LogDir "Install Citrix Workspace app.log" # the full path to your log file
-$StartDir = $PSScriptRoot # the directory path of the installation file and, optionally, the registry file containing the Client Selective Trust settings. $PSScriptRoot is the directory of the current script.
-$InstallFileName = "CitrixWorkspaceApp.exe" # the name of the installation file. Options: 'CitrixWorkspaceApp.exe' or 'CitrixWorkspaceAppWeb.exe'.
-$InstallArguments = "/silent /includeSSON /FORCE_LAA=1" # the command line arguments for the installation file
+$LogDir = "C:\Logs\Citrix Workspace app"                                       # the full path to your log directory
+$LogFile = Join-Path $LogDir "Install Citrix Workspace app.log"                # the full path to your log file
+$StartDir = $PSScriptRoot                                                      # the directory path of the installation file(s). $PSScriptRoot is the directory of the current script.
+$InstallFileName = "CitrixWorkspaceApp.exe"                                    # the name of the installation file. Options: 'CitrixWorkspaceApp.exe' or 'CitrixWorkspaceAppWeb.exe'.
+$InstallArguments = "/silent /includeSSON /FORCE_LAA=1"                        # the command line arguments for the installation file
 $ClientSelectiveTrustRegKeys = "CitrixWorkspaceApp_Client_Selective_Trust.reg" # the name of the registry file containing the Client Selective Trust settings
 
 # Create the log directory if it does not exist
@@ -423,11 +423,11 @@ Save the script as a ***.ps1** file and execute the script as follows:
 
 `powershell.exe -executionpolicy bypass -file "C:\Temp\Citrix Workspace app installation.ps1"`
 
-Make sure to run the PowerShell script as an administrator. By default, the PowerShell script expects the installer (CitrixWorkspaceApp.exe), and optionally the registry file containing the Client Selective Trust registry keys and values, to be in the same directory as the script itself. You can change the installation path if needed.
+Make sure to run the PowerShell script as an administrator. By default, the PowerShell script expects the installer (CitrixWorkspaceApp.exe), and optionally the registry file containing the *Client Selective Trust* registry keys and values, to be in the same directory as the script itself. You can change the installation path if needed.
 
 Log files are written to `C:\Logs\Citrix Workspace app`, but this path can be changed. All log files generated by the Citrix Workspace app installer are copied to `C:\Logs\Citrix Workspace app` after the installation has finished.
 
-Additionally, the script also removes any existing machine-specific group policy settings by deleting the following two registry keys:
+Also, the script removes any existing machine-specific group policy settings by deleting the following two registry keys:
 
 -  `HKLM\SOFTWARE\Policies\Citrix\ICA Client`
 -  `HKLM\SOFTWARE\Wow6432Node\Policies\Citrix\ICA Client`
