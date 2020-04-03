@@ -114,7 +114,7 @@ Citrix Workspace app comes with both per-machine and per-user settings. There ar
     -  **SelfService \ EnableFTU:** disable this setting to prevent the *Add Account* window at the user’s first login. Renaming the installation file *CitrixWorkspaceApp.exe* to *CitrixWorkspaceApp**Web**.exe* has the same result.
     -  **StoreFront \ NetScaler Gateway URL/StoreFront Accounts List:** use this setting to automatically add NetScaler Gateway or StoreFront URLs to the user’s Workspace app.
 -  *User Configuration \ Policies \ Administrative Templates \ Citrix Components \ Citrix Workspace*
-    -  **User Authentication \ Local username and password:** to allow single sign-on, enable this setting and tick the options Enable pass-through authentication and Allow pass-through authentication for all ICA connections.
+    -  **User Authentication \ Local username and password:** to allow single sign-on, enable this setting and tick the options *Enable pass-through authentication* and *Allow pass-through authentication for all ICA connections*.
 
 When launching a session, the user may be presented with a dialog window asking for permissions concerning device access (for example for local drives, webcams or microphones). By default, the Desktop Viewer client device restrictions are based on the Internet region. This behavior can be changed by creating and configuring the *Client Selective Trust* registry keys. As an administrator, you can define the access level by modifying the registry. There are four access levels:
 
@@ -133,7 +133,7 @@ In the article, a ZIP file can be downloaded containing both Group Policy files 
 
 It is also possible to use the REG file to create and configure the *Client Selective Trust* registry keys and values. Use the file *ReceiverCSTRegUpx64.reg* for 64-bit operating systems or the file *ReceiverCSTRegUpx86.reg* for 32-bit operating systems. When using the REG file, keep in mind that users can change the device access settings. If you want to prevent the user from changing the preferences, set the value *(Default)* in the following registry key to *false*:
 
-HKLM\SOFTWARE\WOW6432Node\Citrix\ICA Client\Client Selective Trust\oidPredefinedSecurityPolicySettings\InstantiatedSecurityPolicyEditable
+`HKLM\SOFTWARE\WOW6432Node\Citrix\ICA Client\Client Selective Trust\oidPredefinedSecurityPolicySettings\InstantiatedSecurityPolicyEditable`
 
 Sometimes, administrative templates from other products are required to configure the behavior of Citrix Workspace app.
 
@@ -159,10 +159,10 @@ For this reason, various optimization features have been introduced.
 
 ### Citrix HDX RealTime Optimization Pack
 
-One of these features concerns the Citrix HDX RealTime Optimization Pack for Skype for Business. The RealTime Optimization Pack consists of two components:
+One of these features concerns the Citrix HDX RealTime Optimization Pack for Microsoft Skype for Business. The RealTime Optimization Pack consists of two components:
 
 1.  The HDX RealTime Media Engine (runs on the local endpoint together with Citrix Workspace app).
-2.  The HDX RealTime Connector (runs on the VDA in the data center together with the Skype for Business client).
+2.  The HDX RealTime Connector (runs on the VDA in the data center together with the Microsoft Skype for Business client).
 
 The HDX RealTime Media Engine performs media processing directly on the user device. It offloads the server for maximum scalability, minimizing network bandwidth consumption, and ensuring optimal audio-video quality.
 
@@ -172,27 +172,36 @@ Download the latest version of the Citrix RealTime Optimization Pack here:
 
 [https://docs.citrix.com/en-us/hdx-optimization/current-release/download.html](/en-us/hdx-optimization/current-release/download.html)
 
-For more information on the Citrix HDX RealTime Optimization Pack for Skype for Business see the following article:
+For more information on the Citrix HDX RealTime Optimization Pack for Microsoft Skype for Business see the following article:
 
 [https://docs.citrix.com/en-us/hdx-optimization/current-release.html](/en-us/hdx-optimization/current-release.html)
 
 ### Optimization for Microsoft Teams
 
-Concerning Microsoft Teams, no further optimization is required. All available optimization features are included in Citrix Workspace app and the Virtual Delivery Agent (VDA) by default, if the version for Citrix Workspace app is 1907 or higher and the version of the Delivery Controller and the VDA is 1906.2 or higher. For optimization to work, the version of Microsoft Teams must be 1.2.00.31357 or higher.
+Concerning Microsoft Teams, no further optimization is required. All available optimization features are included by default in Citrix Workspace app and the Virtual Delivery Agent (VDA) in the following versions:
+
+-  Citrix Workspace app 1907 or later
+-  Delivery Controller 1906.2 or later
+-  Virtual Delivery Agent (VDA) version 1906.2 or later
+-  Microsoft Teams version 1.2.00.31357 or later
 
 For more information see the following article:
 
 [https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html)
 
-For optimizing the rendering of webpages in a browser see the following article:
+### Browser Content Redirection
+
+The feature *Browser content redirection* prevents the rendering of whitelisted webpages on the VDA side. Instead, the webpages are rendered on the local endpoint.
+
+For more information on how to configure *Browser Content Redirection* see the following article:
 
 [https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html)
 
 ### Citrix Desktop Lock
 
-Some users in your organization may not need to interact with the local desktop of their PC; they only need their virtual desktop. Citrix Desktop Lock can lock down physical PCs and effectively puts these machines into kiosk mode. When the PC is started, the user is presented with their virtual desktop instead of the desktop of the local OS.
+Some users in your organization may not need to interact with the local desktop of their PC; they may only need their virtual desktop. Citrix Desktop Lock can lock down physical PCs and effectively puts these machines into kiosk mode. When the PC is started, the user is presented with their virtual desktop instead of the desktop of the local OS.
 
-Citrix Workspace app must be installed before Citrix Desktop Lock can be installed. SSON must be enabled when installing Citrix Workspace app and a store must be configured, either during installation or using a Group Policy. Citrix Desktop Lock works on domain-joined machines.
+Citrix Desktop Lock is a separate component and is not included in Citrix Workspace app. Citrix Workspace app must be installed before Citrix Desktop Lock can be installed. SSON must be enabled when installing Citrix Workspace app and a store must be configured, either during installation or using a Group Policy. Citrix Desktop Lock works on domain-joined machines.
 
 For more information about Citrix Desktop Lock see the following article:
 
@@ -423,16 +432,16 @@ Save the script as a ***.ps1** file and execute the script as follows:
 
 `powershell.exe -executionpolicy bypass -file "C:\Temp\Citrix Workspace app installation.ps1"`
 
-Make sure to run the PowerShell script as an administrator. By default, the PowerShell script expects the installer (CitrixWorkspaceApp.exe), and optionally the registry file containing the *Client Selective Trust* registry keys and values, to be in the same directory as the script itself. You can change the installation path if needed.
+Make sure to run the PowerShell script as an administrator. By default, the PowerShell script expects the installer (CitrixWorkspaceApp.exe), and optionally the registry file containing the *Client Selective Trust* registry keys and values, to be in the same directory as the script itself. Change the installation path and script name to your requirements.
 
-Log files are written to `C:\Logs\Citrix Workspace app`, but this path can be changed. All log files generated by the Citrix Workspace app installer are copied to `C:\Logs\Citrix Workspace app` after the installation has finished.
+Log files are written to `C:\Logs\Citrix Workspace app`, but this path can be changed by modifying the variables `$LogDir` and `$LogFile`. All log files generated by the Citrix Workspace app installer are copied to the log directory (defined in the variable `$LogDir`) after the installation has finished.
 
 Also, the script removes any existing machine-specific group policy settings by deleting the following two registry keys:
 
 -  `HKLM\SOFTWARE\Policies\Citrix\ICA Client`
 -  `HKLM\SOFTWARE\Wow6432Node\Policies\Citrix\ICA Client`
 
-The script also imports the *Client Selective Trust* registry file, but this is optional.
+The script also imports the *Client Selective Trust* registry file, but this is optional. If no `*.reg file is found the script will not end in an error.
 
 You can execute scripts in an Active Directory Group Policy or using Electronic Software Distribution software (ESD), for example Microsoft SCCM.
 
