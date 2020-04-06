@@ -432,6 +432,10 @@ The script also imports the *Client Selective Trust* registry file, but this is 
 
 You can execute scripts in an Active Directory Group Policy or using Electronic Software Distribution software (ESD), for example Microsoft SCCM.
 
+## Adoption
+
+After initial installation and configuration, one of the most critical deployment phases is end-users training and onboarding. Citrix has prepared a list of [Citrix Workspace end-user adoption resources](https://www.citrix.com/products/citrix-workspace/resources/user-adoption/) that includes everything you need to help your end users to start using Citrix Workspace. You can find everything including a sample deployment timeline, email templates, flyers and adoption kits in [tools section](https://www.citrix.com/products/citrix-workspace/resources/user-adoption/tools-for-successful-citrix-workspace-adoption.html).
+
 ## Uninstallation
 
 Uninstalling Citrix Workspace app for Windows can be accomplished with the following command line: **CitrixWorkspaceApp.exe /silent /uninstall**
