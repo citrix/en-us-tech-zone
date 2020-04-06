@@ -2,7 +2,7 @@
 layout: doc
 description: Tech Paper focused on the (unattended) installation and configuration of Citrix Workspace app
 ---
-# Citrix Workspace app for Windows - installation and configuration
+# Citrix Workspace app for Windows - Quick start guide
 
 ## Contributors
 
@@ -18,15 +18,25 @@ On a side note, it is possible to access resources on a Windows device using the
 
 ## Installation
 
-The latest version of Citrix Workspace app for Windows can be downloaded [here](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html).
+The latest version of Citrix Workspace app for Windows can be downloaded [here](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html). Citrix Workspace app can be installed on both your Windows clients and on your Citrix workers (your VDAs).
 
 Although technically possible, there is no need to extract the files included in the *CitrixWorkspaceApp.exe*. It is highly recommended to install Citrix Workspace app using the executable directly.
 
-Citrix Workspace app can be installed on both your Windows clients and on your Citrix workers (your VDAs).
+It is possible to rename the installation file *CitrixWorkspaceApp.exe* to *CitrixWorkspaceApp**Web**.exe*. Renaming this file removes the *Add Account* button from the last dialog window at the end of the installation. It also prevents the *Add Account* window (First Time Use, FTU) from appearing at first login. This mode is more suitable if only access through web store is planned.
 
-It is possible to rename the installation file *CitrixWorkspaceApp.exe* to *CitrixWorkspaceApp**Web**.exe*. Renaming this file removes the *Add Account* button from the last dialog window at the end of the installation. It also prevents the *Add Account* window (First Time Use, FTU) from appearing at first login.
+In case you would like to install Citrix Workspace app **without administrative privileges** be aware of the following:
 
-The default installation path for machine-based installations is *C:\Program Files (x86)\Citrix\ICA Client*.
+-  The Microsoft Visual C++ Redistributable 2017 (both 32-bit and 64-bit) must be pre-installed on the local machine. This is a prerequisite for the installation of Citrix Workspace app. The Visual C++ Redistributable can only be installed with administrative privileges.
+-  The following components of Citrix Workspace app can only be installed with administrative privileges:
+    -  SSON (Single Sign-On)
+    -  URL Redirection
+    -  Local App Access
+    -  USB support
+    -  App Protection
+-  If the installation is user-based, Citrix Workspace app must be installed for each user who logs on to the local machine. The default installation path for user-based installations is `C:\Users\%UserName%\AppData\Local\Citrix\ICA Client`.
+-  To avoid potential conflicts, make sure to uninstall all user-based installations of Citrix Workspace app on the local machine before installing Citrix Workspace app using administrative rights.
+
+### Command Line Arguments
 
 Citrix Workspace app comes with many installation parameters. For a complete overview of all available parameters see the [product documentation](/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters).
 
@@ -43,19 +53,11 @@ When upgrading to Citrix Workspace app from an older and unsupported version (fo
 
 Keep in mind that some components, for example enabling single sign-on, require a reboot of the local machine.
 
-Here is an example of the command line syntax: **CitrixWorkspaceApp.exe /silent /includeSSON /FORCE_LAA=1**
+Here is an example of the command line syntax: `CitrixWorkspaceApp.exe /silent /includeSSON /FORCE_LAA=1`
 
-In case you would like to install Citrix Workspace app **without administrative privileges** be aware of the following:
+### Installation Path
 
--  The Microsoft Visual C++ Redistributable 2017 (both 32-bit and 64-bit) must be pre-installed on the local machine. This is a prerequisite for the installation of Citrix Workspace app. The Visual C++ Redistributable can only be installed with administrative privileges.
--  The following components of Citrix Workspace app can only be installed with administrative privileges:
-    -  SSON (Single Sign-On)
-    -  URL Redirection
-    -  Local App Access
-    -  USB support
-    -  App Protection
--  If the installation is user-based, Citrix Workspace app must be installed for each user who logs on to the local machine. The default installation path for user-based installations is `C:\Users\%UserName%\AppData\Local\Citrix\ICA Client`.
--  To avoid potential conflicts, make sure to uninstall all user-based installations of Citrix Workspace app on the local machine before installing Citrix Workspace app using administrative rights.
+The default installation path for machine-based installations is *C:\Program Files (x86)\Citrix\ICA Client*.
 
 Citrix Workspace app writes multiple log files to the *%TEMP%* directory in the subfolder *CTXReceiverInstallLogs-%Date%-%Time%*. The following log files are created:
 
@@ -116,9 +118,7 @@ When launching a session, the user may be presented with a dialog window asking 
 -  2 = Full Access
 -  3 = Prompt User
 
-The *Client Selective Trust* registry keys and values are not created automatically. They can be created and configured either using Group Policy or directly in the registry. The following article provides detailed information about how to configure *Client Selective Trust* registry settings:
-
-[CTX133565](https://support.citrix.com/article/CTX133565)
+The *Client Selective Trust* registry keys and values are not created automatically. They can be created and configured either using Group Policy or directly in the registry. The following article provides detailed information about how to configure *Client Selective Trust* registry settings: [CTX133565](https://support.citrix.com/article/CTX133565).
 
 In the article, a ZIP file can be downloaded containing both Group Policy files (ADM, ADMX and AMDL) and REG files. When using Group Policy to configure your clients the recommended approach is to use the ADMX and ADML files.
 
