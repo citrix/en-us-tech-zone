@@ -51,10 +51,10 @@ The protection extends to files from [Citrix Files](https://docs.citrix.com/en-u
 
 *  App protection policies require a minimum of Citrix Virtual Apps and Desktops version 1912 installed on Desktop Delivery Controller and StoreFront. App protection policies are implemented on the client end point and control data sent from the Citrix Workspace app to the client’s OS. Therefore, there is no dependency on the state or version of the VDA installed in the session.
 
-*  The required versions of the Citrix Workspace app are: 
+*  The required versions of the Citrix Workspace app are:
     *  Citrix Workspace app 1912 for Windows (LTSR) and later
     *  Citrix Workspace app 2001 for Mac and later
-    
+
     The HTML5 client is not supported.
 
 *  If users connect from an older version than Citrix Workspace app 1912 for Windows or Citrix Workspace app 2001 for Mac, or from Citrix Receiver, then the tagged resources (to be protected) are not enumerated in the StoreFront.
