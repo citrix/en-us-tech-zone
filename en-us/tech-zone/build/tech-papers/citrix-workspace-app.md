@@ -14,15 +14,11 @@ description: Tech Paper focused on the (unattended) installation and configurati
 
 Citrix Workspace app for Windows provides access to a user’s resources using Citrix Virtual Apps and Desktops. These resources include SaaS, web and legacy applications and desktops. Citrix Workspace app provides access from the desktop, start menu, Citrix Workspace user interface and web browsers.
 
-On a side note, it is possible to access resources on a Windows device using the Citrix Workspace app for HTML5, without installing the Citrix Workspace app for Windows. However, there is a significant feature disparity between both clients. For a complete overview of all features supported in each of the available Workspace app versions see the following matrix:
-
-[https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf?_ga=2.27649141.890901474.1583830777-25366109.1583146462](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf?_ga=2.27649141.890901474.1583830777-25366109.1583146462)
+On a side note, it is possible to access resources on a Windows device using the Citrix Workspace app for HTML5, without installing the Citrix Workspace app for Windows. However, there is a significant feature disparity between both clients. For a complete overview of all features supported in each of the available Workspace app versions see the [Citrix Workspace app feature matrix](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf?_ga=2.27649141.890901474.1583830777-25366109.1583146462).
 
 ## Installation
 
-The latest version of Citrix Workspace app for Windows can be downloaded here:
-
-[https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html)
+The latest version of Citrix Workspace app for Windows can be downloaded [here](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html).
 
 Although technically possible, there is no need to extract the files included in the *CitrixWorkspaceApp.exe*. It is highly recommended to install Citrix Workspace app using the executable directly.
 
@@ -32,18 +28,16 @@ It is possible to rename the installation file *CitrixWorkspaceApp.exe* to *Citr
 
 The default installation path for machine-based installations is *C:\Program Files (x86)\Citrix\ICA Client*.
 
-Citrix Workspace app comes with many installation parameters. For a complete overview of all available parameters see the following article:
-
-[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters](/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters)
+Citrix Workspace app comes with many installation parameters. For a complete overview of all available parameters see the [product documentation](/en-us/citrix-workspace-app-for-windows/install.html#using-command-line-parameters).
 
 For a successful rollout make sure to understand each of the parameters and that they are aligned with your organization’s requirements. For example:
 
 -  Do some users in your organization require Local App Access? Local App Access enables the integration of locally installed applications within a hosted desktop. If yes, make sure to include the parameter */FORCE_LAA=1* to install the Local App Access component.
 -  Are users allowed to use Citrix Virtual Apps and Desktops without having to re-authenticate again? If yes, make sure to include the parameters */includeSSON* to install the single sign-on component and /*ENABLE_SSON=Yes* to enable the single sign-on component.
 
-    **Tip:**
-
-    You can also use the **Citrix Workspace app Commandline Tool** to help you to build the exact command line syntax ([https://support.citrix.com/article/CTX227370](https://support.citrix.com/article/CTX227370)).
+    >**Note:**
+    >
+    >You can also use the **Citrix Workspace app Commandline Tool** to help you to build the exact command line syntax ([CTX227370](https://support.citrix.com/article/CTX227370)).
 
 When upgrading to Citrix Workspace app from an older and unsupported version (for example Citrix Receiver 3.4) make sure to use the parameter */rcu* or */forceinstall* (Citrix Workspace app 1909 and later).
 
@@ -97,9 +91,7 @@ The administrative template files are included in the installation directory of 
 -  `C:\Program Files (x86)\Citrix\ICA Client\Configuration\%language%\CitrixBase.adml`
 -  `C:\Program Files (x86)\Citrix\ICA Client\Configuration\%language%\receiver.adml`
 
-They can also be downloaded from the Citrix website in the section *Downloads for admins (deployment tools)*:
-
-[https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html)
+They can also be downloaded from the Citrix website in the section [Downloads for admins (deployment tools)](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html).
 
 Copy the ADMX and ADML files to the Group Policy Central Store:
 
@@ -126,7 +118,7 @@ When launching a session, the user may be presented with a dialog window asking 
 
 The *Client Selective Trust* registry keys and values are not created automatically. They can be created and configured either using Group Policy or directly in the registry. The following article provides detailed information about how to configure *Client Selective Trust* registry settings:
 
-[https://support.citrix.com/article/CTX133565](https://support.citrix.com/article/CTX133565)
+[CTX133565](https://support.citrix.com/article/CTX133565)
 
 In the article, a ZIP file can be downloaded containing both Group Policy files (ADM, ADMX and AMDL) and REG files. When using Group Policy to configure your clients the recommended approach is to use the ADMX and ADML files.
 
@@ -169,13 +161,9 @@ The HDX RealTime Media Engine performs media processing directly on the user dev
 
 The HDX RealTime Media Engine can only be installed when the Citrix Workspace app is already present.
 
-Download the latest version of the Citrix RealTime Optimization Pack here:
+Download the latest version of the Citrix RealTime Optimization Pack [here](/en-us/hdx-optimization/current-release/download.html).
 
-[https://docs.citrix.com/en-us/hdx-optimization/current-release/download.html](/en-us/hdx-optimization/current-release/download.html)
-
-For more information on the Citrix HDX RealTime Optimization Pack for Microsoft Skype for Business see the following article:
-
-[https://docs.citrix.com/en-us/hdx-optimization/current-release.html](/en-us/hdx-optimization/current-release.html)
+For more information on the Citrix HDX RealTime Optimization Pack for Microsoft Skype for Business see the [product documentation](/en-us/hdx-optimization/current-release.html).
 
 ### Optimization for Microsoft Teams
 
@@ -186,17 +174,13 @@ Concerning Microsoft Teams, no further optimization is required. All available o
 -  Virtual Delivery Agent (VDA) version 1906.2 or later
 -  Microsoft Teams version 1.2.00.31357 or later
 
-For more information see the following article:
-
-[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html)
+For more information see the [product documentation](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html).
 
 ### Browser Content Redirection
 
 The feature *Browser content redirection* prevents the rendering of whitelisted webpages on the VDA side. Instead, the webpages are rendered on the local endpoint.
 
-For more information on how to configure *Browser Content Redirection* see the following article:
-
-[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html)
+For more information on how to configure *Browser Content Redirection* see the [product documentation](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html).
 
 ### Citrix Desktop Lock
 
@@ -204,35 +188,33 @@ Some users in your organization may not need to interact with the local desktop 
 
 Citrix Desktop Lock is a separate component and is not included in Citrix Workspace app. Citrix Workspace app must be installed before Citrix Desktop Lock can be installed. SSON must be enabled when installing Citrix Workspace app and a store must be configured, either during installation or using a Group Policy. Citrix Desktop Lock works on domain-joined machines.
 
-Download the latest version of Citrix Desktop Lock here:
+Download the latest version of Citrix Desktop Lock [here](https://www.citrix.com/downloads/workspace-app/additional-client-software/workspace-app-desktop-lock-Latest2.html).
 
-[https://www.citrix.com/downloads/workspace-app/additional-client-software/workspace-app-desktop-lock-Latest2.html](https://www.citrix.com/downloads/workspace-app/additional-client-software/workspace-app-desktop-lock-Latest2.html)
-
-See the following article for more information about installing and configuring Citrix Desktop Lock:
-
-[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/workspace-windows-desktop-lock.html](/en-us/citrix-workspace-app-for-windows/workspace-windows-desktop-lock.html)
+For more information about installing and configuring Citrix Desktop Lock see the [product documentation](/en-us/citrix-workspace-app-for-windows/workspace-windows-desktop-lock.html).
 
 ### App protection
 
 Citrix Workspace app version 1912 introduced the new security feature *app protection*. This is an add-on feature for Citrix Workspace app that provides enhanced security when using Citrix Virtual Apps and Desktops published resources. To be more specific. *App protection* provides anti-keylogging and anti-screen-capturing capabilities in a Citrix HDX session.
 
-For silent installations, make sure to include the switch */includeappprotection* when installing Citrix Workspace app ([https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app](/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app)).
+For silent installations, make sure to include the switch */includeappprotection* when installing Citrix Workspace app ([product documentation](/en-us/citrix-virtual-apps-desktops/secure/app-protection.html#2-citrix-workspace-app)).
 
-For more information about *app protection* see the following article:
-
-[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html](/en-us/citrix-virtual-apps-desktops/secure/app-protection.html)
+For more information about *app protection* see the [product documentation](/en-us/citrix-virtual-apps-desktops/secure/app-protection.html).
 
 ## Automation
 
 Larger organizations may want to automate the installation and configuration of Citrix Workspace app on their Windows endpoint devices. There are various ways how to go about this.
 
-Several deployment scripts (\*.bat files) can be downloaded from the following URL in the section *Downloads for admins*:
-
-[https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html)
+Several deployment scripts (\*.bat files) can be downloaded from the following URL in the section [Downloads for admins](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html).
 
 Before they can be deployed, these batch files first need to be customized to suit your organization's environment.
 
 Another option is to use a custom PowerShell script such as this one:
+
+### Disclaimer
+
+*These software applications are provided to you as is with no representations, warranties or conditions of any kind.  You may use and distribute it at your own risk. CITRIX DISCLAIMS ALL WARRANTIES WHATSOEVER, EXPRESS, IMPLIED, WRITTEN, ORAL OR STATUTORY, INCLUDING WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NONINFRINGEMENT. Without limiting the generality of the foregoing, you acknowledge and agree that (a) the software application may exhibit errors, design flaws or other problems, possibly resulting in loss of data or damage to property; (b) it may not be possible to make the software application fully functional; and (c) Citrix may, without notice or liability to you, cease to make available the current version and/or any future versions of the software application.  In no event should the code be used to support of ultra-hazardous activities, including but not limited to life support or blasting activities.  NEITHER CITRIX NOR ITS AFFILIATES OR AGENTS WILL BE LIABLE, UNDER BREACH OF CONTRACT OR ANY OTHER THEORY OF LIABILITY, FOR ANY DAMAGES WHATSOEVER ARISING FROM USE OF THE SOFTWARE APPLICATION, INCLUDING WITHOUT LIMITATION DIRECT, SPECIAL, INCIDENTAL, PUNITIVE, CONSEQUENTIAL OR OTHER DAMAGES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  You agree to indemnify and defend Citrix against any and all claims arising from your use, modification or distribution of the code.*
+
+### Script Example
 
 ```powershell
 #==========================================================================
@@ -454,6 +436,4 @@ You can execute scripts in an Active Directory Group Policy or using Electronic 
 
 Uninstalling Citrix Workspace app for Windows can be accomplished with the following command line: **CitrixWorkspaceApp.exe /silent /uninstall**
 
-For more information see the following article:
-
-[https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install.html#uninstall](/en-us/citrix-workspace-app-for-windows/install.html#uninstall)
+For more information see the [product documentation](/en-us/citrix-workspace-app-for-windows/install.html#uninstall)
