@@ -28,7 +28,7 @@ Since these features are based on the Citrix Workspace app, they protect not onl
 
 ## Anti-keylogging
 
-A keylogger is one of attacker’s favored tools of data exfiltration, as it can remain on an infected machine without doing any noticeable damage. All the keystrokes entered by the user are harvested, including username / password combinations, credit cards numbers, and confidential data. The harvested data is then silently exfiltrated later on.
+A keylogger is one of the attacker’s favored tools of data exfiltration, as it can remain on an infected machine without doing any noticeable damage. All the keystrokes entered by the user are harvested, including user name / password combinations, credit cards numbers, and confidential data. The harvested data is then silently exfiltrated later on.
 
 With encryption, the app protection’s anti-keylogging garbles the text the user is typing for both physical and on-screen keyboards. The anti-keylogging feature encrypts the text before any keylogging tool can access it from the kernel/OS level. A keylogger installed on the client endpoint, reading the data from the OS/driver, would capture gibberish instead of the keystrokes the user is typing.
 
@@ -49,7 +49,7 @@ The protection extends to files from [Citrix Files](https://docs.citrix.com/en-u
 
 *  App protection policies are configured on the Desktop Delivery Controller. Administrators identify the delivery groups to be protected by applying the policy on them. Read more about configuration and compatibility in our [technical docs](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html)
 
-*  App protection policies require a minimum of Citrix Virtual Apps and Desktops version 1912 installed on Desktop Delivery Controller and StoreFront. App protection policies are implemented on the client end point and control data  sent from the Citrix Workspace app to the client’s OS. Therefore, there is no dependency on the state or version of the VDA installed in the session.
+*  App protection policies require a minimum of Citrix Virtual Apps and Desktops version 1912 installed on Desktop Delivery Controller and StoreFront. App protection policies are implemented on the client end point and control data sent from the Citrix Workspace app to the client’s OS. Therefore, there is no dependency on the state or version of the VDA installed in the session.
 
 *  The required versions of the Citrix Workspace app are: 
     *  Citrix Workspace app 1912 for Windows (LTSR) and later
