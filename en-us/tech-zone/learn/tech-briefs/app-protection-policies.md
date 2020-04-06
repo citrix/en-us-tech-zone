@@ -2,7 +2,7 @@
 layout: doc
 description: App protection policies protect application data from attacks based on keyloggers and/or screen capture tools. Allow companies to embrace BYOD, and extend resources to remote workers, contractors, and gig economy workers.
 ---
-# Title
+# App protection policies
 
 ## Contributors
 
