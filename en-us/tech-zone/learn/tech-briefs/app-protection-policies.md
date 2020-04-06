@@ -65,4 +65,4 @@ The protection extends to files from [Citrix Files](https://docs.citrix.com/en-u
 
 ## Summary
 
-App protection policies can help protect application data from attackers that have surreptitiously installed either a keylogger or screen capture tools or both on endpoints. App protection policies allow companies to embrace [BYOD](https://www.citrix.com/glossary/byod.html), and extend resources to remote workers, contractors, and gig economy workers.
+App protection policies can help protect application data from attackers that have surreptitiously installed either a keylogger or screen capture tools or both on endpoints. App protection policies allow companies to embrace [BYOD](https://www.citrix.com/glossary/byod.html), and extend resources to [remote workers](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/business-continuity.html), contractors, and gig economy workers.
