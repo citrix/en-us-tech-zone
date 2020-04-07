@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Tech Paper focused on the (unattended) installation and configuration of Citrix Workspace app
+description: Quick start guide for Citrix Workspace app - everything you need to know in one place, including installation, configuration and optimizations.
 ---
 # Citrix Workspace app for Windows - Quick start guide
 
@@ -8,7 +8,7 @@ description: Tech Paper focused on the (unattended) installation and configurati
 
 **Author:** [Dennis Span](https://twitter.com/dennisspan)
 
-**Special thanks:** Santosh Sampath, [Martin Zugec](https://twitter.com/MartinZugec)
+**Special thanks:** Santosh Sampath, [Martin Zugec](https://twitter.com/MartinZugec), Nick Rintalan
 
 ## Overview
 
