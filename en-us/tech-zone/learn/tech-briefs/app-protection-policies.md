@@ -43,11 +43,11 @@ Anti screen capture prevents an app from attempting to take a screenshot of or a
 The anti screen capture protection is active only when any of the protected apps are on screen. If any part of the window displaying the app is on screen then the policies disable screen captures.
 If the user wants to take a screenshot of the client endpoint’s screen / other apps, while a protected app is running on the endpoint, then the user must minimize the protected app.
 
-The protection extends to files from [Citrix Files](https://docs.citrix.com/en-us/mobile-productivity-apps/citrix-files.html) or any other connectors like Google Drive or Microsoft OneDrive that are accessed from within Citrix Workspace app. The apps are protected from screen scrapers, as are all the microapps and their notifications from within Workspace.
+The protection extends to files from [Citrix Files](/en-us/mobile-productivity-apps/citrix-files.html) or any other connectors like Google Drive or Microsoft OneDrive that are accessed from within Citrix Workspace app. The apps are protected from screen scrapers, as are all the microapps and their notifications from within Workspace.
 
 ## Considerations
 
-*  App protection policies are configured on the Desktop Delivery Controller. Administrators identify the delivery groups to be protected by applying the policy on them. Read more about configuration and compatibility in our [technical docs](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html)
+*  App protection policies are configured on the Desktop Delivery Controller. Administrators identify the delivery groups to be protected by applying the policy on them. Read more about configuration and compatibility in our [technical docs](/en-us/citrix-virtual-apps-desktops/secure/app-protection.html)
 
 *  App protection policies require a minimum of Citrix Virtual Apps and Desktops version 1912 installed on Desktop Delivery Controller and StoreFront. App protection policies are implemented on the client end point and control data sent from the Citrix Workspace app to the client’s OS. Therefore, there is no dependency on the state or version of the VDA installed in the session.
 
@@ -65,4 +65,4 @@ The protection extends to files from [Citrix Files](https://docs.citrix.com/en-u
 
 ## Summary
 
-App protection policies can help protect application data from attackers that have surreptitiously installed either a keylogger or screen capture tools or both on endpoints. App protection policies allow companies to embrace [BYOD](https://www.citrix.com/glossary/byod.html), and extend resources to [remote workers](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/business-continuity.html), contractors, and gig economy workers.
+App protection policies can help protect application data from attackers that have surreptitiously installed either a keylogger or screen capture tools or both on endpoints. App protection policies allow companies to embrace [BYOD](https://www.citrix.com/glossary/byod.html), and extend resources to [remote workers](/en-us/tech-zone/learn/tech-briefs/business-continuity.html), contractors, and gig economy workers.
