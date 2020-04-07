@@ -8,7 +8,7 @@ description: Tech Paper focused on the (unattended) installation and configurati
 
 **Author:** [Dennis Span](https://twitter.com/dennisspan)
 
-**Special thanks:** Santosh Sampath, [Martin Zugec](https://twitter.com/MartinZugec)
+**Special thanks:** Santosh Sampath, [Martin Zugec](https://twitter.com/MartinZugec), Nick Rintalan
 
 ## Overview
 
