@@ -275,6 +275,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
 
+### [Build - Tech Papers](/en-us/tech-zone/build/tech-papers.html)
+
+[Citrix Workspace app quick start guide](/en-us/tech-zone/build/tech-papers/citrix-workspace-app.html) - Quick start guide for Citrix Workspace app - everything you need to know in one place, including installation, configuration and optimizations.
+
 ## Other
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
