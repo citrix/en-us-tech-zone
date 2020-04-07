@@ -438,6 +438,6 @@ After initial installation and configuration, one of the most critical deploymen
 
 ## Uninstallation
 
-Uninstalling Citrix Workspace app for Windows can be accomplished with the following command line: **CitrixWorkspaceApp.exe /silent /uninstall**
+Uninstalling Citrix Workspace app for Windows can be accomplished with the following command line: `CitrixWorkspaceApp.exe /silent /uninstall`
 
 For more information see the [product documentation](/en-us/citrix-workspace-app-for-windows/install.html#uninstall)
