@@ -102,11 +102,11 @@ Citrix Gateway service simplifies the requirements to access On-Premises Virtual
 
 ## Session Connectivity
 
-Users’ endpoints and their on-premises hosted resources VDAs are connected to their nearest respective POPs via Citrix Cloud Connectors. Subsequently when a user selects a virtual app or desktop to launch from their Workspace app the nearest POP hosting that connection identifies the pertinent Resource Location and directs it to establish a Citrix Cloud Connector session to that POP forming an end-to-end connection and subsequently a virtual session is established. Citrix POPs utilize Azure and AWS high-quality virtual WAN backbones which provide efficient routing, higher bandwidth, less latency and less congestion than a typical connection across the public internet.
+Users’ endpoints and their on-premises hosted resources VDAs are connected to their nearest respective POPs via Citrix Cloud Connectors. Subsequently when a user selects a virtual app or desktop to launch from their Workspace app the nearest POP hosting that connection identifies the pertinent Resource Location and directs it to establish a Citrix Cloud Connector session to that POP forming an end-to-end connection and subsequently a virtual session is established.
 
-*  Sessions are linked via Citrix Gateway service across cloud partner’s Global high-speed WANs
+*  Sessions are linked via Citrix Gateway service across cloud partner’s WANs
 *  VDAs and Workspace endpoints rendezvous at the Citrix POP closest to the user
-*  Low latency high quality sessions
+*  High quality sessions
 
 [![Citrix Gateway service and HDX Proxy: Traffic Flow](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_6.png)](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_6.png)
 
