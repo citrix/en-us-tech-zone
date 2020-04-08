@@ -33,7 +33,7 @@ The initial steps for setting up the environment is to get Citrix Workspace prep
 1.  Within Citrix Workspace, access **Workspace Configuration** from the upper-left menu
 1.  From the **Access** tab, enter a unique URL for the organization and select Enabled
 
-[![Workspace URL](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_workspace-config-001.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_workspace-config-001.png)
+[![Workspace URL](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_workspace-config-001.png)](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_workspace-config-001.png)
 
 ### Enable Services
 
@@ -42,7 +42,7 @@ From the Service Integration tab, enable the following services to support the s
 1.  Gateway
 2.  Secure Browser
 
-[![Workspace Services](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_workspace-config-002.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_workspace-config-002.png)
+[![Workspace Services](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_workspace-config-002.png)](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_workspace-config-002.png)
 
 ### Verify
 
@@ -81,7 +81,7 @@ To successfully integrate SaaS apps with Citrix Workspace, the administrator nee
 
 *  Within Citrix cloud, select **Manage** from the Gateway tile.
 
-[![Setup SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-01.png)
+[![Setup SaaS App 01](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_add-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_add-saas-app-01.png)
 
 *  Select **Add a Web/SaaS app**
 *  In the Choose a template wizard, search and select **Office 365**
@@ -103,12 +103,12 @@ To successfully integrate SaaS apps with Citrix Workspace, the administrator nee
 
 *  Within Citrix Cloud, select **Library** from the menu
 
-[![Authorize SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_authorize-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-01.png)
+[![Authorize SaaS App 01](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_authorize-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_add-saas-app-01.png)
 
 *  Find the SaaS app and select **Manage Subscribers**
 *  Add the appropriate users/groups who are authorized to launch the app
 
-[![Authorize SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_authorize-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-02.png)
+[![Authorize SaaS App 02](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_authorize-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_sso_authorize-saas-app-02.png)
 
 ### Validate
 
@@ -131,7 +131,7 @@ Citrix Access Control service provides website filtering within SaaS and Web app
 
 *  From Citrix Cloud, **Manage** within the Access Control tile
 
-[![Citrix Access Control 1](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_access-control-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_access-control-01.png)
+[![Citrix Access Control 1](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_access-control-01.png)](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_access-control-01.png)
 
 *  If this guide was followed, the **Set up end user authentication** step and the **Configure end user access to SaaS, web and virtual applciations** steps are complete. Select **Configure Content Access**
 *  Select **Edit**
@@ -139,11 +139,11 @@ Citrix Access Control service provides website filtering within SaaS and Web app
 *  Withint the **Blocked categories** box, select **Add**
 *  Select the categories to block users from accessing
 
-[![Citrix Access Control 2](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_access-control-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_access-control-02.png)
+[![Citrix Access Control 2](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_access-control-02.png)](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_access-control-02.png)
 
 *  When all applicable categories are selected, select **Add**
 
-[![Citrix Access Control 3](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_access-control-03.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_access-control-03.png)
+[![Citrix Access Control 3](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_access-control-03.png)](/en-us/tech-zone/learn/media/poc-guides-access-control-citrix-sso_access-control-03.png)
 
 *  Do the same for allowed categories
 *  Do the same for redirected categories. These categories redirect to a Secure Browser instance
