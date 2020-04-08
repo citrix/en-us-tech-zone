@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: arn how to setup a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
+description: Learn how to setup a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
 ---
 # Proof of Concept: Secure Access to SaaS Applications with Okta SSO
 
@@ -167,12 +167,12 @@ Okta needs to use Citrix Workspace as a SAML identity provider, resulting in Okt
 
 *  Within Citrix Cloud, select **Library** from the menu
 
-[![Authorize SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_authorize-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-01.png)
+[![Authorize SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_authorize-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_authorize-saas-app-01.png)
 
 *  Find the SaaS app and select **Manage Subscribers**
 *  Add the appropriate users/groups who are authorized to launch the app
 
-[![Authorize SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_authorize-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-02.png)
+[![Authorize SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_authorize-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_authorize-saas-app-02.png)
 
 ### Setup IdP Routing
 
@@ -248,3 +248,21 @@ SP-Initiated Validation
 *  Go to the company-defined URL for the SaaS application
 *  The browser directs the browser to Citrix Workspace for authentication
 *  Once the user authenticates with the primary user directory, the SaaS app launches in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches the SaaS app
+
+## Troubleshooting
+
+### Enhanced Security Policies Failing
+
+Users might experience the enhanced security policies (watermark, printing, or cliboard access) fail. Typically, this happens because the SaaS application uses multiple domain names. Within the application configuration settings for the SaaS app, there was an entry for **Related Domains**.
+
+[![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-02.png)
+
+The enhanced security policies are applied onto to those related domains. To identify missing domain names, an administrator can access the SaaS app with a local browser and do the following:
+
+*  Navigate to the section of the app where the policies fail
+*  In Google Chrome and Microsoft Edge (Chromium version), select the three dots in the upper right side of the browser to show a menu screen.
+*  Select **More Tools**.
+*  Select **Developer Tools**
+*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains should be added like the following `*.domain.com`
+
+[![Enhanced Security Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_enhanced-security-troubleshooting-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_enhanced-security-troubleshooting-01.png)
