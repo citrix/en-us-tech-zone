@@ -7,9 +7,9 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 ## Citrix Access Control
 
-[Secure Access to SaaS Applications with Citrix SSO](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) Learn how to setup a Citrix Access Control environment that uses Citrix as the single sign-on provider for Office 365 SaaS application.
+[Secure Access to SaaS Applications with Citrix SSO](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to setup a Citrix Access Control environment that uses Citrix as the single sign-on provider for Office 365 SaaS applications.
 
-[Secure Access to SaaS Applications with Okta SSO](/en-us/tech-zone/learn/poc-guides/secure-access-saas-apps.html) Learn how to setup a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
+[Secure Access to SaaS Applications with Okta SSO](/en-us/tech-zone/learn/poc-guides/secure-access-saas-apps.html) - Learn how to setup a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
 
 ## Citrix Virtual Apps and Desktops
 

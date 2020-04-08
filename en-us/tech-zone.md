@@ -9,6 +9,12 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ## Citrix Access Control
 
+### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
+
+[Secure Access to SaaS Applications with Citrix SSO](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to setup a Citrix Access Control environment that uses Citrix as the single sign-on provider for Office 365 SaaS applications.
+
+[Secure Access to SaaS Applications with Okta SSO](/en-us/tech-zone/learn/poc-guides/secure-access-saas-apps.html) - Learn how to setup a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
+
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
 [Access Control for StoreFront](/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html) - Integrates the Access Control service with an on-premises Citrix Virtual Apps and Desktops deployment utilizing StoreFront.
@@ -234,10 +240,6 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 ### [Learn - Diagrams and Posters](/en-us/tech-zone/learn/diagrams-posters.html)
 
 [Citrix Workspace](/en-us/tech-zone/learn/diagrams-posters/workspace.html) - Conceptual architecture drawing for Citrix Workspace.
-
-### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
-
-[Secure Access to SaaS Applications with Okta SSO](/en-us/tech-zone/learn/poc-guides/secure-access-saas-apps.html) Learn how to setup a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
