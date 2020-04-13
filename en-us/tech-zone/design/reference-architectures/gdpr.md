@@ -6,7 +6,7 @@ description: Copy & paste description from TOC here
 
 ## Contributors
 
-**Authors:** [Matthew Brooks](URL), [Florin Lazurca](URL),  [Rob Sanders](URL), [Martin Zugec](URL)
+**Authors:** [Matthew Brooks](URL), [Florin Lazurca](URL),  [Rob Sanders](URL), [Martin Zugec](URL), [Allen Furmanski](URL)
 
 ## General Data Protection Regulation (GDPR) Overview
 
@@ -38,3 +38,17 @@ personal data is not made accessible without the individual’s intervention to 
   * Ensure the ongoing confidentiality, integrity, availability and resilience of processing systems and services
   * The ability to restore the availability and access to personal data in a timelymanner in the event of a physical or technical incident
   * Protection from accidental and unlawful destruction, loss, alteration, unauthorized disclosure of, or access to personal data transmitted, stored or otherwise processed
+
+### How Citrix can help you with your GDPR compliance initiatives
+
+Citrix Workspace simplifies the management of your systems and data by centralizing
+services in the data center or cloud as a digital workspace. The goal of this white paper is to
+describe how it unifies applications, data and desktops into a digital workspace for your teams and allows you to better align with GDPR requirements around data management, data monitoring and information auditing.
+
+#### Citrix supports clients on their journey to GDPR compliance in 4 key ways:
+
+* By centraling and enclaving applications and data
+* By ensuring data is protected when shared or distributed
+* By controlling who has access to data and resources
+* By bringing IT together for application and data-specific security
+
