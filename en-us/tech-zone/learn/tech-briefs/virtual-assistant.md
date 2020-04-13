@@ -66,4 +66,4 @@ The end-user would authenticate to Citrix Workspace like they usually would. Wit
 
 ## Summary
 
-Citrix Workspace’s intelligent features allow users to complete daily tasks in a more efficient manner. Gone are the days of wasting hours searching for information thanks to the Citrix Assistant. The Citrix assistant allows users to find information and complete actions even if they are not sure which application to find that information or complete the task in.
+Citrix Workspace’s intelligent features allow users to complete daily tasks in a more efficient manner. Gone are the days of wasting hours searching for information thanks to the Citrix Assistant. The Citrix assistant allows users to find information and complete actions even if they are not sure which application to find that information or complete the task in. To learn more, visit [product documentation for Citrix Assistant](https://docs.citrix.com/en-us/citrix-workspace/experience/citrix-assistant.html).
