@@ -33,7 +33,7 @@ The initial steps for setting up the environment is to get Citrix Workspace prep
 1.  Within Citrix Workspace, access **Workspace Configuration** from the upper-left menu
 1.  From the **Access** tab, enter a unique URL for the organization and select Enabled
 
-[![Workspace URL](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_workspace-config-001.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_workspace-config-001.png)
+[![Workspace URL](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_workspace-config-001.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_workspace-config-001.png)
 
 ### Enable Services
 
@@ -42,7 +42,7 @@ From the Service Integration tab, enable the following services to support the s
 1.  Gateway
 2.  Secure Browser
 
-[![Workspace Services](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_workspace-config-002.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_workspace-config-002.png)
+[![Workspace Services](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_workspace-config-002.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_workspace-config-002.png)
 
 ### Verify
 
@@ -64,9 +64,9 @@ An organization can use any one of the following primary user directories
 
 In this scenario, a user authenticates to Citrix Workspace using either Active Directory or Okta as the primary user directory. Okta also provides single sign-on services for a defined set of SaaS applications.
 
-[![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_ad-dir-okta-sso.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_ad-dir-okta-sso.png)
+[![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_ad-dir-okta-sso.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_ad-dir-okta-sso.png)
 
-[![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-dir-okta-sso.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-dir-okta-sso.png)
+[![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-dir-okta-sso.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-dir-okta-sso.png)
 
  If the Citrix Access Control Service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the Okta-based SaaS applications.
 
@@ -92,7 +92,7 @@ To successfully integrate Okta apps with Citrix Workspace, the administrator nee
 *  Select the application to add into Citrix Workspace. In this example, Microsoft Office 365 is used.
 *  Under **General**, scroll down until the correct **App Embed Link** is located. This is used as the SAML Login URL for Citrix Workspace.
 
-[![SAML Login URL](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_app-embed-link.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_app-embed-link.png)
+[![SAML Login URL](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_app-embed-link.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_app-embed-link.png)
 
 ### Identify IdP Issuer URI
 
@@ -100,7 +100,7 @@ To successfully integrate Okta apps with Citrix Workspace, the administrator nee
 *  Under the **Identity and Access Management** section, select **API Access**
 *  Capture the **customer ID** parameter. This is used to create the IdP Issuer URI in the format: `https://citrix.com/<customerID>`
 
-[![IdP Issuer URI](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_idp-issuer-uri.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_idp-issuer-uri.png)
+[![IdP Issuer URI](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_idp-issuer-uri.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_idp-issuer-uri.png)
 
 ### Setup SAML Identity Provider
 
@@ -110,7 +110,7 @@ Okta needs to use Citrix Workspace as a SAML identity provider, resulting in Okt
 *  Select **Security** -> **Identity Providers**
 *  Select **Add Identity Provider** -> **Add SAML 2.0 IdP**
 
-[![Setup SAML IdP 01](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-add-saml-idp-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-add-saml-idp-01.png)
+[![Setup SAML IdP 01](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-add-saml-idp-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-add-saml-idp-01.png)
 
 *  Provide a **Name**
 *  For the IdP Username, use the following expression: **idpuser.userName** (this is case sensitive)
@@ -118,7 +118,7 @@ Okta needs to use Citrix Workspace as a SAML identity provider, resulting in Okt
 *  If no match is found, select **Redirect to Okta sign-in page**
 *  For the IdP Issuer URI, use the URL `https://citrix.com/<customerID>`. CustomerID is from the IdP Issuer URI section
 
-[![Setup SAML IdP 02](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-add-saml-idp-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-add-saml-idp-02.png)
+[![Setup SAML IdP 02](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-add-saml-idp-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-add-saml-idp-02.png)
 
 *  Leave this part of the process open until we are able to obtain the single sign-on URL and SSL certificate from Citrix Cloud.
 
@@ -126,7 +126,7 @@ Okta needs to use Citrix Workspace as a SAML identity provider, resulting in Okt
 
 *  Within Citrix cloud, select **Manage** from the Gateway tile.
 
-[![Setup SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-01.png)
+[![Setup SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-01.png)
 
 *  Select **Add a Web/SaaS app**
 *  In the Choose a template wizard, select **Skip**
@@ -135,30 +135,30 @@ Okta needs to use Citrix Workspace as a SAML identity provider, resulting in Okt
 *  For the URL, use the **App Embed Link** from the Identity SAML Login URL section
 *  Enhanced security policies uses the related domains field to determine the URLs to secure. One related domain is automatically added based on the entered URL added in the previous step. That specific related domain is associated with the Okta application link. Enhanced security policies require related domains for the actual application, which is often `*.<companyID>.SaaSApp.com` (as an example *.citrix.slack.com)
 
-[![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-02.png)
+[![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-02.png)
 
 *  In the **Enhanced Security** window, select the appropriate security policies for the environment
 *  In the **Single Sign-On** window, select **Download** to capture the PEM-based certificate.
 *  Select the **Copy** button to capture the Login URL
 
-[![Setup SaaS App 03](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-03.png)
+[![Setup SaaS App 03](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-03.png)
 
 *  Switch back to the Okta configuration. The **Add Identity Provider** dialog should still be visible
 *  For the **IdP Single Sign-On URL**, use the Citrix Login URL copied from the previous step. It should resemble `https://app.netscalergateway.net/ngs/<customerid>/saml/login?APPID=2347894324327`
 *  In the **IdP Signature Certificate**, brows for the downloaded PEM certificate
 
-[![Setup SaaS App 04](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-04.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-04.png)
+[![Setup SaaS App 04](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-04.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-04.png)
 
 *  Once the wizard completes, copy the **Assertion Consumer Service URL** and the **Audience URI**.
 
-[![Setup SaaS App 05](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-05.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-05.png)
+[![Setup SaaS App 05](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-05.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-05.png)
 
 *  Switch back to the Citrix configuration.
 *  In the **Single Sign-On** window, for the **Assertion URL**, use the **Assertion Consumer Service URL** item obtained from the SAML Identity Provider section
 *  For the **Audience**, use the **Audience URI** item obtained from the SAML Identity Provider section.
 *  The Name ID Format and Name ID can remain as email. Okta uses the Email address to associate with an Okta user.
 
-[![Setup SaaS App 06](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-06.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-06.png)
+[![Setup SaaS App 06](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-06.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-06.png)
 
 *  Select **Save**
 *  Select **Finish**
@@ -167,12 +167,12 @@ Okta needs to use Citrix Workspace as a SAML identity provider, resulting in Okt
 
 *  Within Citrix Cloud, select **Library** from the menu
 
-[![Authorize SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_authorize-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_authorize-saas-app-01.png)
+[![Authorize SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_authorize-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_authorize-saas-app-01.png)
 
 *  Find the SaaS app and select **Manage Subscribers**
 *  Add the appropriate users/groups who are authorized to launch the app
 
-[![Authorize SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_authorize-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_authorize-saas-app-02.png)
+[![Authorize SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_authorize-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_authorize-saas-app-02.png)
 
 ### Setup IdP Routing
 
@@ -184,7 +184,7 @@ So far, the configuration supports an IdP-initiated launch process, where the us
 *  Provide a name for the rule
 *  For the Use this **identity provider option**, select the Citrix identity provider created earlier
 
-[![Okta Identity Provider Routing Rule](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-idp-routing.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_okta-idp-routing.png)
+[![Okta Identity Provider Routing Rule](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-idp-routing.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-idp-routing.png)
 
 *  Select **Activate**
 
@@ -212,7 +212,7 @@ Citrix Access Control service provides website filtering within SaaS and Web app
 
 *  From Citrix Cloud, **Manage** within the Access Control tile
 
-[![Citrix Access Control 1](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_access-control-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_access-control-01.png)
+[![Citrix Access Control 1](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-01.png)
 
 *  If this guide was followed the **Set up end user authentication** step and the **Configure end user access to SaaS, web and virtual applciations** steps are complete. Select **Configure Content Access**
 *  Select **Edit**
@@ -220,11 +220,11 @@ Citrix Access Control service provides website filtering within SaaS and Web app
 *  Withint the **Blocked categories** box, select **Add**
 *  Select the categories to block users from accessing
 
-[![Citrix Access Control 2](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_access-control-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_access-control-02.png)
+[![Citrix Access Control 2](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-02.png)
 
 *  When all applicable categories are selected, select **Add**
 
-[![Citrix Access Control 3](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_access-control-03.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_access-control-03.png)
+[![Citrix Access Control 3](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-03.png)
 
 *  Do the same for allowed categories
 *  Do the same for redirected categories. These categories redirect to a Secure Browser instance
@@ -255,7 +255,7 @@ SP-Initiated Validation
 
 Users might experience the enhanced security policies (watermark, printing, or cliboard access) fail. Typically, this happens because the SaaS application uses multiple domain names. Within the application configuration settings for the SaaS app, there was an entry for **Related Domains**.
 
-[![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_add-saas-app-02.png)
+[![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-02.png)
 
 The enhanced security policies are applied onto to those related domains. To identify missing domain names, an administrator can access the SaaS app with a local browser and do the following:
 
@@ -265,4 +265,4 @@ The enhanced security policies are applied onto to those related domains. To ide
 *  Select **Developer Tools**
 *  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains should be added like the following `*.domain.com`
 
-[![Enhanced Security Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_enhanced-security-troubleshooting-01.png)](/en-us/tech-zone/learn/media/poc-guides_secure-access-saas-apps_enhanced-security-troubleshooting-01.png)
+[![Enhanced Security Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_enhanced-security-troubleshooting-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_enhanced-security-troubleshooting-01.png)
