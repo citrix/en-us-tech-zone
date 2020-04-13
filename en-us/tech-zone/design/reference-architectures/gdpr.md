@@ -83,3 +83,20 @@ and moving higher up the stack to make sure that data sources are properly secur
 **Remediate** - Identify if existing data sources and applications used to access them are following the GDPR guidance, or if changes are needed. If the data source includes PII data and is not secure, identify the possible approaches to solve the situation. A cross departmental GDPR team should also identify, assess, and review not only the data itself, but also access methods, applications used and
 other factors, such as limiting user and 3rd party access, revisiting requirements and more specifically defining data security measures.
 
+**Review** - GDPR compliancy is an ongoing process and data assessments need to be performed on a regular basis. It is therefore important to implement a robust, stable, and repeatable process that can be defended if it ever needs to be presented to auditors. The data sources security assessment should be performed and reviewed on a regular basis.
+
+With the large number of data sources that are in scope, the goal for most companies should be to choose
+a few, robust, and proven architectures that can help secure data sources that don’t initially meet GDPR requirements. Trying
+to create a tailor-made solution for each of the problematic data sources is unrealistic, unless a company has limited data sources. The result is often an environment where only a few applications are properly secured, while the majority are left unsecured, with the implementation project being stalled by months or even years and going well over budget. GDPR also presents an opportunity to update privacy architectures across applications and data usage to support evolving global and regional privacy initiatives.
+
+Complexity is considered one of the biggest enemies of security. You want to identify the minimum number of different architectures
+that could be used to secure the majority of the data sources that have been identified as critical and are storing data included in the GDPR scope.
+
+The Pareto principle (also known as 80/20 rule) is important during this data assessment–and companies should try to minimize the effort required to secure the majority of data sources. Most enterprises have hundreds or thousands of different applications and data sources that are being used and they need to promptly identify those applications that contain critical data and don’t meet the GDPR requirements. Automated application assessment solutions can reduce the time required to analyze applications.
+
+Many companies plan to use this mitigation period to transition to a more flexible IT model. While this goal is plausible, it is important to understand the timelines and choose realistic goals. Customers should choose solutions that can be gradually improved without the need for a complete redesign.
+
+In the following few sections, we will present you with a few selected architectures that can provide a universal, secure, and proven solution to secure any type of data, ranging from web-based applications, through legacy client/server applications hosted on Windows or Linux to data stored in various documents or exchanged through emails.
+
+(GDPR reference architecture flow chart)
+
