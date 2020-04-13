@@ -52,3 +52,34 @@ describe how it unifies applications, data and desktops into a digital workspace
 * By controlling who has access to data and resources
 * By bringing IT together for application and data-specific security
 
+### Citrix Workspace - supporting your GDPR journey
+
+(overall architecture diagram. needs update for naming and to include Workspace Service)
+
+## Data oriented approach to GDPR requirements
+
+Following the GDPR guidelines might be much easier for modern cloud companies than traditional enterprises. While most cloud companies have only a few centralized sources where personally identifiable information (PII) is stored, traditional companies potentially have hundreds, if not thousands, of different databases and data sources that need to be
+assessed, reviewed and updated to meet the latest data privacy standards.
+
+These data sources can range from traditional SQL databases to emails, digital documents or even physical documents. With today's often aggressive timelines, many enterprises face a challenge to properly prepare and update systems as required. It is important to understand that the GDPR doesn’t affect only active data sources, but also all backups, disaster recovery sites and physical printouts.
+
+The GDPR is all about the maturity of the company when dealing with data and privacy information. Citrix has always been a data and
+application oriented company, with a proven record of handling complex, often international projects that are dealing with thousands of applications.
+
+The traditional consulting approach is focused on the business processes, identifying people
+and business requirements, access methods and slowly cascading down to infrastructure
+and data sources. However, the GDPR requires a more data centric approach. We recommend
+starting with identifying and assessing various locations where PII data is currently stored
+and moving higher up the stack to make sure that data sources are properly secured. You can think about this as an inside out approach to security.
+
+(Define, Assess, Reduce, Remediate, Review flow diagram)
+
+**Define** - Start by defining the criteria of PII data that is in scope of assessment. This phase should help you define what to look for and how to prioritize data sources from a privacy perspective. This should include employees, customers, vendors, and any other relevant entities.
+
+**Assess** - Analyze all the existing locations where data is stored. Identify the business requirements, data retention and potential challenges to securing the data. Identify not only where the data is stored, but also how it’s being collected. Data segmentation is one of the most time consuming and critical phases of data consolidation projects. This phase requires a comprehensive approach, critical thinking and well-defined methodology. Organizations mustn't ignore data held in legacy systems, even if there is a program in place to modernize soon or that the data is used only as a backup. It is important to understand that all these legacy systems are covered by the GDPR requirements as well and companies need to take a holistic approach.
+
+**Reduce** - The goal of this phase is to identify if it is possible to reduce the number of data sources that need to be secured. For example, it is possible to consolidate data sources that are being used by business units – instead of storing client data in multiple locations, a centralized location could be used to maximize effectiveness of security measures. Maybe the data is not even needed at all – the biggest privacy offender might not even be considered critical for the business units. It is also possible that applications are simply collecting too much data (“just in case”). The applications can be modified to stop collecting excessive information and the existing data can be erased. Instead of trying to secure all the possible locations of PII, companies should ask when/where do they actually need to store the data about customers and other parties. As GDPR compliancy is an ongoing process with periodic reviews, minimizing the amount of included data sources can prove to be a very effective long-term strategy.
+
+**Remediate** - Identify if existing data sources and applications used to access them are following the GDPR guidance, or if changes are needed. If the data source includes PII data and is not secure, identify the possible approaches to solve the situation. A cross departmental GDPR team should also identify, assess, and review not only the data itself, but also access methods, applications used and
+other factors, such as limiting user and 3rd party access, revisiting requirements and more specifically defining data security measures.
+
