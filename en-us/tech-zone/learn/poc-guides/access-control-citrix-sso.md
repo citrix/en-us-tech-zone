@@ -20,7 +20,7 @@ In this scenario, a user authenticates to Citrix Workspace using Active Director
 
 The following animation shows a user accessing a SaaS application with Citrix providing SSO and secured with Citrix Access Control.
 
- [![Citrix SSO Demo](/en-us/tech-zone/learn/downloads/poc-guides_access-control-citrix-sso_demo-video.gif)](/en-us/tech-zone/learn/downloads/poc-guides_access-control-citrix-sso_demo-video.gif.png)
+ [![Citrix SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_demo-video.gif.png)
 
  Assumptions:
 
