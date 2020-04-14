@@ -22,7 +22,7 @@ In this scenario, a user authenticates to Citrix Workspace using either Active D
 
 The following animation shows a user accessing a SaaS application with Okta providing SSO and secured with Citrix Access Control.
 
- [![Okta SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_demo-video.gif.png)
+ [![Okta SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_demo-video.gif)
 
  Assumptions:
 
