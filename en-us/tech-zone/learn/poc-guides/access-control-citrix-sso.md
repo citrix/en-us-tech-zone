@@ -12,13 +12,27 @@ description: Learn how to setup a Citrix Access Control environment that uses Ci
 
 As users consume more SaaS-based applications, organizations must be able to unify all sanctioned apps, simplify user login operations while still enforcing authentication standards. Organizations must be able to secure these applications even though they exist beyond the confines of the data center. Citrix Workspace provides organizations with secure access to SaaS apps.
 
+In this scenario, a user authenticates to Citrix Workspace using Active Directory, Azure Active Directory, Okta, Google, or Citrix Gateway as the primary user directory. Citrix Workspace provides single sign-on services for a defined set of SaaS applications.
+
+[![Single Sign-on Overview](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_overview.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_overview.png)
+
+ If the Citrix Access Control Service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the SaaS applications.
+
+The following animation shows a user accessing a SaaS application with Citrix providing SSO and secured with Citrix Access Control.
+
+ [![Citrix SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_demo-video.gif.png)
+
+ Assumptions:
+
+*  Citrix Workspaces is already configured with the user’s primary identity directory.
+
 This proof of concept guide demonstrates how to:
 
 1.  Setup Citrix Workspace
-1.  Integrate a primary user directory
-1.  Incorporate Single Sign-On for Office 365
-1.  Define website filtering policies
-1.  Validate the configuration
+2.  Integrate a primary user directory
+3.  Incorporate Single Sign-On for Office 365
+4.  Define website filtering policies
+5.  Validate the configuration
 
 ## Setup Citrix Workspace
 
@@ -61,16 +75,6 @@ An organization can use any one of the following primary user directories
 *  [Okta](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#okta): Organizations can use Okta as the primary user directory for Citrix Workspace. This [guide](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/okta-identity.html) provides instructions for configuring this option.
 
 ## Configure Single Sign-on
-
-In this scenario, a user authenticates to Citrix Workspace using Active Directory, Azure Active Directory, Okta, Google, or Citrix Gateway as the primary user directory. Citrix Workspace provides single sign-on services for a defined set of SaaS applications.
-
-[![Single Sign-on Overview](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_overview.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_overview.png)
-
- If the Citrix Access Control Service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the SaaS applications.
-
- Assumptions:
-
-*  Citrix Workspaces is already configured with the user’s primary identity directory.
 
 To successfully integrate SaaS apps with Citrix Workspace, the administrator needs to do the following
 
@@ -167,6 +171,8 @@ SP-Initiated Validation
 *  Go to the company-defined URL for the SaaS application
 *  The browser directs the browser to Citrix Workspace for authentication
 *  Once the user authenticates with the primary user directory, the SaaS app launches in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches the SaaS app
+
+***Note**: If Azure Active Directory is the primary user directory for Citrix Workspace, an SP-initiated launch will not function correctly with Office 365.  Office 365 apps must be launched from within Citrix Workspace (IdP-Initiated).*
 
 ## Troubleshooting
 
