@@ -12,6 +12,24 @@ description: Learn how to setup a Citrix Access Control environment that is able
 
 As users consume more SaaS-based applications, organizations must be able to unify all sanctioned apps, simplify user login operations while still enforcing authentication standards. Organizations must be able to secure these applications even though they exist beyond the confines of the data center. Citrix Workspace provides organizations with secure access to SaaS apps.
 
+In this scenario, a user authenticates to Citrix Workspace using either Active Directory or Okta as the primary user directory. Okta also provides single sign-on services for a defined set of SaaS applications.
+
+[![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_ad-dir-okta-sso.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_ad-dir-okta-sso.png)
+
+[![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-dir-okta-sso.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-dir-okta-sso.png)
+
+ If the Citrix Access Control Service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the Okta-based SaaS applications.
+
+The following animation shows a user accessing a SaaS application with Okta providing SSO and secured with Citrix Access Control.
+
+ [![Okta SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_demo-video.gif.png)
+
+ Assumptions:
+
+*  Okta is already configured to provide SSO to Office 365 and other SaaS apps
+*  Users can successfully sign into the Okta portal and launch Office 365 and other SaaS apps
+*  Citrix Workspaces is already configured with Active Directory or Okta as the user’s primary identity directory.
+
 This proof of concept guide demonstrates how to:
 
 1.  Setup Citrix Workspace
@@ -61,20 +79,6 @@ An organization can use any one of the following primary user directories
 *  [Okta](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#okta): Organizations can use Okta as the primary user directory for Citrix Workspace. This [guide](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/okta-identity.html) provides instructions for configuring this option.
 
 ## Add Okta as Single Sign-On Provider
-
-In this scenario, a user authenticates to Citrix Workspace using either Active Directory or Okta as the primary user directory. Okta also provides single sign-on services for a defined set of SaaS applications.
-
-[![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_ad-dir-okta-sso.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_ad-dir-okta-sso.png)
-
-[![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-dir-okta-sso.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-dir-okta-sso.png)
-
- If the Citrix Access Control Service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the Okta-based SaaS applications.
-
- Assumptions:
-
-*  Okta is already configured to provide SSO to Office 365 and other SaaS apps
-*  Users can successfully sign into the Okta portal and launch Office 365 and other SaaS apps
-*  Citrix Workspaces is already configured with Active Directory or Okta as the user’s primary identity directory.
 
 To successfully integrate Okta apps with Citrix Workspace, the administrator needs to do the following
 
