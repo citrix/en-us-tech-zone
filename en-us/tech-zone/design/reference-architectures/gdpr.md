@@ -173,6 +173,14 @@ authentication and access is a pain point addressable with Citrix Virtual Apps a
 
 (traditional web application architecture diagram)
 
+The second challenge is providing unified security features across the wide range of SaaS and cloud applications that typical enterprises are using – effectively giving back some IT control – especially in BYOD and mobile environments. An example is providing a unified multi-factor authentication solution across all apps instead of a fragmented user experience.
+
+Citrix has a long tradition of providing a platform for secure delivery of web apps. This secure delivery is based on the Citrix Application Delivery Controller (ADC). Citrix ADC secures the session between the browser and the web app – by encrypting
+data in transit, maintaining strict access control, and data protection. This is largely based on its design as a reverse proxy that brokers connections coming from the browser to web app servers. And, with its position between the client and the server, additional security features can be enabled.
+
+We’re going to cover how this architecture can help you secure the applications to follow GDPR standards. These technical measures fall largely under the requirements or Article 25 and 32 where controllers are required to “implement appropriate technical and organizational measures.”
+
+(Web application architecture with NetScaler diagram)
 
 
 
