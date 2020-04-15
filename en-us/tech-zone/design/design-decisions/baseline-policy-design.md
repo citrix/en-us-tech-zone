@@ -15,7 +15,7 @@ Policies provide the basis to configure and fine-tune Citrix Virtual Apps and De
 -  Security
 -  Bandwidth
 
-When making policy decisions, consider both Microsoft and Citrix policies to include all user experience, security, and optimization settings. For a list of all Citrix-related policies, refer to the [Citrix Policy Settings Reference](/en-us/citrix-virtual-apps-desktops/policies/reference.html).
+When making policy decisions, consider both Microsoft and Citrix policies to include all user experience, security, and optimization settings. This article focuses on Citrix policies only. For a list of all Citrix-related policy settings, refer to the [Citrix Policy Settings Reference](/en-us/citrix-virtual-apps-desktops/policies/reference.html).
 
 ## Decision: Preferred Policy Engine
 
@@ -49,7 +49,7 @@ To avoid this confusion, Citrix recommends to configure RDS policies only where 
 
 ## Decision: Policy Scope
 
-Once policies are created, apply the policies to groups of users, computers, or both, based on the required outcome. Policy filtering allows policies to be applied to the required user or computer groups. With Active Directory-based policies, a crucial decision is whether to apply a policy to computers or users within the site, domain, or organizational units (OUs). Active Directory policies are broken down into user configuration and computer configuration. By default, the settings within the user configuration apply to users who reside within the OU at logon. Settings within the computer configuration are applied to the computer at system startup and affect all users who log on to the system. One challenge of policy association with Active Directory and Citrix deployments revolves around three core areas:
+Once policies are created, apply the policies to groups of users, computers, or both, based on the required outcome. Policy filtering allows policies to be applied to the required user or computer groups. With Active Directory-based policies, a crucial decision is whether to apply a policy to computers or users within the Site, domain, or organizational units (OUs). Active Directory policies are broken down into user configuration and computer configuration. By default, the settings within the user configuration apply to users who reside within the OU at logon. Settings within the computer configuration are applied to the computer at system startup and affect all users who log on to the system. One challenge of policy association with Active Directory and Citrix deployments revolves around three core areas:
 
 -  **Citrix environment-specific computer policies**  
   Citrix servers and virtual desktops often have computer policies that are created and deployed specifically for the environment. Applying these policies is easily accomplished by creating separate OU structures for the servers and the virtual desktops. Specific policies can then be created and confidently applied only to the computers within the OU and below and nothing else. Based on requirements, divide virtual desktops and servers within the OU structure based on server roles, geographical locations, or business units.
@@ -76,7 +76,7 @@ Citrix policies created using Citrix Studio have specific filter settings availa
 
 ## Decision: Baseline Policy
 
-A baseline policy contains all common elements required to deliver a high-definition experience to most users within the organization. A baseline policy creates the foundation for user access and any exceptions that are needed to address specific access requirements for groups of users. To create the simplest policy structure possible, configure the policy settings in the baseline to be comprehensive enough to accommodate as many use cases as possible. Set the priority of the baseline policy to lowest priority, for example, 99. A priority number of "1" is the highest priority. Use Citrix's unfiltered policy collection as the default policy for establishing the baseline policy, as it refers to all users and connections. Enable all Citrix policy settings in the baseline configuration, even if those settings use the default value. Configuring these settings defines desired behavior and avoid confusion if the default settings change. Use Citrix policy templates to configure Citrix policies to effectively manage the end-user experience within an environment. Citrix Policy templates are a solid initial starting point for a baseline policy. Templates consist of pre-configured settings that optimize performance for specific environments or network conditions. The built-in templates included in Citrix Virtual Apps and Desktops are shown in the following table:
+A baseline policy contains all common elements required to deliver a high-definition experience to most users within the organization. A baseline policy creates the foundation for user access and any exceptions that are needed to address specific access requirements for groups of users. To create the simplest policy structure possible, configure the policy settings in the baseline to be comprehensive enough to accommodate as many use cases as possible. Set the priority of the baseline policy to lowest priority, for example, 99. A priority number of "1" is the highest priority. Use Citrix's unfiltered policy collection as the default policy for establishing the baseline policy, as it refers to all users and connections. Enable all Citrix policy settings in the baseline configuration, even if those settings use the default value. Configuring these settings defines desired behavior and avoids confusion if the default settings change. Use Citrix policy templates to configure Citrix policies to effectively manage the end-user experience within an environment. Citrix Policy templates are a solid initial starting point for a baseline policy. Templates consist of pre-configured settings that optimize performance for specific environments or network conditions. The built-in templates included in Citrix Virtual Apps and Desktops are shown in the following table:
 
 | Template name | Description |
 | :--- | :--- |
@@ -93,3 +93,36 @@ For more information on Citrix policy templates, refer to Citrix Docs - [Policy 
 Include Windows policies in a baseline policy configuration. Windows policies reflect settings that optimize the user experience and remove features that are not required or desired in a Citrix Virtual Apps and Desktops environment. One common feature turned off in these environments is Windows Update. In virtualized environments, mainly where desktops and servers are streamed and non-persistent, Windows Update creates processing and network overhead. Changes made by the update process do not persist after a restart of the virtual desktop or application server. Organizations often use Windows Software Update Service (WSUS) to control Windows Updates. In these cases, updates are applied to the master disk and made available by the IT department on a scheduled basis.
 
 In addition to the preceding considerations, an organization’s final baseline policy includes settings to address the organization's requirements. These requirements can be related to security, common network conditions, or to manage user devices or user profiles.
+
+## Design Decision: Administrative Delegation
+
+Prevent unauthorized access by limiting the number of users who have access to the policies. Leaving security too relaxed can lead to exfiltration of configuration information of the Citrix Virtual Apps and Desktops deployment. The method to restrict access depends on the engine used to configure the policies. When using Citrix Studio as the policy engine, assign roles to groups to delegate administrative access. For more information about scopes and roles, refer to the [Delegated Administration documentation](/en-us/citrix-virtual-apps-desktops/secure/delegated-administration.html).
+
+-  **Use the built-in administrative roles**  
+   Add Active Directory groups to the respective role to delegate the required level of control.
+
+    -  **Full Administrator** grants read and write access on all objects in the Citrix Virtual Apps and Desktops Site. Pay special attention when assigning the "Full Administrator" role. Besides policies, the "Full Administrator" role grants read and write access to all other objects within the entire Site as well.
+    -  **Read Only Administrator** provides read-only permissions on objects within the assigned scope in a Citrix Virtual Apps and Desktops Site. Assigning a group to the "Read Only Administrator" roles grants read-only access to all policies regardless of the assigned scope.
+
+-  **Create a custom administrative role**  
+    For more granular control over access to policies, create custom roles. A custom role enables administrators to assign specific tasks to a group of administrators. Assign the "Manage Policies" or "View Policies" definition to delegate the appropriate permissions. As policies are not part of a specific scope, the scope assigned to the administrator does not affect access to the policies. Add Active Directory groups as Administrators and assign the custom role to delegate access.
+
+When configuring Citrix policies using Active Directory group policies, administrators delegate access using the Group Policy Management Console. A single Group Policy Object (GPO) can contain multiple Citrix policies. The granularity of the assigned permissions depends on the design of the GPO structure. Read or write access is granted to a user or group on a per-GPO basis. Access granted on GPO level grants permissions to all Citrix policies configured in that GPO.
+
+## Policy Design Recommendations
+
+Based on experience from the field, Citrix developed leading practices related to Citrix policy design. The leading practices put together the design decisions taken from the previous chapters.
+
+### Baseline Policy
+
+Leave the unfiltered policy empty and set it to disabled. Configure the unfiltered policy to have a priority of 1, the lowest priority possible. Create baseline computer and user policies named according to the company's naming convention. Ensure that the baseline policies apply to the majority of user and computers. Configure all settings in the baseline policy, even if these settings use the default value.
+
+### Policy Layering
+
+Create exceptions to the baseline policy based on the requirements of the end-users. Assign the policy exceptions based on the appropriate filter. Set the priority for the exception policies to be higher than the baseline policy. Avoid creating policy sprawl by creating as few policies as possible.
+
+**Example:** *In a Citrix Virtual Apps and Desktops deployment, users are not allowed to access the local drives on their endpoint devices inside the Citrix session. Active Directory group membership grants access to local drives. To achieve this behavior, set the "Client drive redirection" setting to "Prohibited" in the baseline policy. Create a policy with a higher priority and set the "Client drive redirection" setting to "Allowed" in the new policy. Add an Active Directory group in the assignments of the new policy. Only users who are a member of the Active Directory group have access to local drives. The default behavior is to deny access to local drives for all other users.*
+
+### Policy Management
+
+Do not mix-and-match policy engines. Choose one policy engine and configure all Citrix policies using that engine. For example, when using Active Directory group policies, do not use Citrix Studio to create other Citrix policies. Document all policies, policy settings and exceptions.
