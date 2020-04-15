@@ -182,6 +182,22 @@ We’re going to cover how this architecture can help you secure the application
 
 (Web application architecture with NetScaler diagram)
 
+#### Article 25 - Access to Personal Data
+
+Authentication, Authorization and Auditing are all core to controlling access to personal data. As an AAA proxy, Citrix ADC consolidates, extends, and enhances the traditional authentication schemes even in scenarios where the web apps do not natively support MFA. Citrix ADC supports authentication using username/password, multi-factor (MFA), time-based and one-time tokens (Citrix ADC has native OTP support), smartcards, user or machine certificates and biometrics. While this is especially important for internet facing web apps, some organizations with a zero trust networking approach are moving to require MFA for “internal” access.
+
+Citrix ADC's enhanced MFA, called nFactor authentication, takes into account capabilities such as SAML, client certificates, group extraction, and multiple passwords. Federation and SSO also provide an additional level of security and ease of use.
+
+To learn more about different capabilities of nFactor authentication, refer to the following knowledge base article and one of the many
+deployment guides: [https://support.citrix.com/article/CTX201949](https://support.citrix.com/article/CTX201949). On a relatd note, SMS-bsed MFA is not recommended as it has been deemed insecure by NIST.
+
+Logging and visibility are provided through NetScaler Management and Analytics System (MAS). Cpturing telemetry from NetScaler MAS provides:
+
+* Security Insight against application layer attacks leveraging the application layer firewall
+* SSL Insight for visibility into the security ciphers in use
+* Gateway Insight for visibility into failed logins and Endpoint Analysis scans
+
+(NetScaler authentication options diagram)
 
 
 (Link to include in links section https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/)
