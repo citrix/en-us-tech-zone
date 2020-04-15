@@ -111,3 +111,12 @@ Another common challenge for applications installed on traditional computers is 
 
 (traditional client/server app delivery diagram)
 
+Citrix has a long tradition of providing a platform for the secure delivery of these client/server applications. This secure delivery is based on offloading the client application piece onto a dedicated set of servers (Citrix Virtual Apps and Desktops), specially designed, optimized, and secured for application delivery. By decoupling the application from the endpoint, it's possible to enable additional security features. The advantage of this approach is that security features are applied consistently, without requiring any changes or access to the source code and even to applications that are no longer actively supported.
+
+### Securing Applications to GDPR Standards
+
+#### Article 25 - Access to Personal Data
+There are multiple ways to limit or prevent users from accessing published resources. The most basic method is to simply hide the applications or desktops from users by enforcing Active Directory group membership. When publishing resources through the Citrix management console, the access is enforced on the Citrix Virtual Delivery Agent (VDA) machines hosting the workloads. Access and availabile functionality is further tweaked through Citrix's comprehensive policy engine.
+
+The use of traditional username/password authentication is decreasing with more secure multi-factor authentication (MFA) increasing. Even for internal networks, more and more companies are enforcing MFA requirements to enhance security. With Citrix Virtual Apps and Desktops and Citrix ADC, MFA can be applied to any client/server application including even legacy applications that are hard to maintain. The ADC appliance provides an extensible and flexible approach to configuring MFA, from time-based one-time tokens, through smart cards, user or machine certificates to biometric authentication (through third party integration).
+
