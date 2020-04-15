@@ -120,3 +120,16 @@ There are multiple ways to limit or prevent users from accessing published resou
 
 The use of traditional username/password authentication is decreasing with more secure multi-factor authentication (MFA) increasing. Even for internal networks, more and more companies are enforcing MFA requirements to enhance security. With Citrix Virtual Apps and Desktops and Citrix ADC, MFA can be applied to any client/server application including even legacy applications that are hard to maintain. The ADC appliance provides an extensible and flexible approach to configuring MFA, from time-based one-time tokens, through smart cards, user or machine certificates to biometric authentication (through third party integration).
 
+This access can also be configured based on various other factors – for example the endpoint a user is connecting from, the security state of endpoints such as antivirus or firewall requirements or the network where the user is connecting from. Context-aware policies can be applied, even enforcing a specific geo-location or using more advanced security measures, such as requirements for user and/or machine certificates to access certain resources. You can learn more about context-aware security through the zero-trust model in the following [blog post](https://www.citrix.com/blogs/2019/10/02/approaching-a-zero-trust-security-model-with-citrix-workspace-part-1/).
+
+Even more flexibility is available through Citrix ADC’s enhanced MFA feature call nFactor authentication. To learn more about different
+capabilities of nFactor authentication, refer to the following knowledge base article and one of the many deployment guides: [https://support.citrix.com/article/CTX201949](https://support.citrix.com/article/CTX201949)
+
+The ability to deliver centralized access and authentication is critical in providing information about users connecting to
+applications. With Citrix Virtual Apps and Desktops, all access to resources is brokered through a controller with historical data saved in a centralized database. This data can be accessed from an ODATA API to provide integration with SIEM systems or provide copies for auditors if needed. To learn more about monitoring and reporting, refer to the doc on how to [Monitor historical trends across a Site](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/director/site-analytics/trends.html).
+
+
+
+
+
+(Link to include in links section https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/)
