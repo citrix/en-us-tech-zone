@@ -100,3 +100,14 @@ In the following few sections, we will present you with a few selected architect
 
 (GDPR reference architecture flow chart)
 
+## Securing Windows and Linux Applications
+
+Trying to secure traditional client/server applications, whether they are running on Windows or Linux operating systems, can prove challenging for various reasons.
+
+The traditional approach was to secure each endpoint where these applications are installed. This involves management challenges, such as keeping all the endpoints up to date, encryption of the network traffic, data and workload encryption, implementing multi-factor authentication (MFA) and encryption of the locally stored or cached data. In traditional IT architecture, defenses need to be set up around all endpoints, applications and networks and the whole environment is as secure as the weakest point. This traditional approach to security has often failed due to the introduction of new concepts including mobile workforce, expansion of security perimeter
+with cloud computing and BYOD initiatives.
+
+Another common challenge for applications installed on traditional computers is to provide the same security functionality across the whole portfolio. It’s common to have a multigenerational IT portfolio residing on a single workstation, from Office-based applications (using Microsoft Access databases or custom plugins) through legacy Visual Basic to the latest professionally built applications. Making sure that applications with access to sensitive data support encryption, multifactor authentication and provide enough information for auditors has always been complicated.
+
+(traditional client/server app delivery diagram)
+
