@@ -128,7 +128,19 @@ capabilities of nFactor authentication, refer to the following knowledge base ar
 The ability to deliver centralized access and authentication is critical in providing information about users connecting to
 applications. With Citrix Virtual Apps and Desktops, all access to resources is brokered through a controller with historical data saved in a centralized database. This data can be accessed from an ODATA API to provide integration with SIEM systems or provide copies for auditors if needed. To learn more about monitoring and reporting, refer to the doc on how to [Monitor historical trends across a Site](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/director/site-analytics/trends.html).
 
+Aside from the monitoring and reporting of user access, all administrative changes and activities can be logged to a separate database. It is recommended to enable mandatory logging, where administrative activities are not allowed unless they are logged in the Configuration Logging database first. To learn more, refer to the [Configuration Logging Documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/1912/monitor/configuration-logging.html)
 
+Finally, for the most security-conscious environments, it is possible to create a separate set of user identities and automatically switch to them using the federation and virtual smart card service called Federated Authentication Service. This approach can be used to further minimize the impact of lateral movement and contain the security breach.
+
+#### Article 32 - Data Encryption in Transit
+With Citrix Virtual Apps and Desktops, only screen pixels are transferred between the hosting server and the endpoint. Connection parameters are established during session initiation or reconnection. CVAD can ensure that traffic coming to and from the endpoint is always encrypted, even if the application itself doesn’t support encryption. This encryption can be enabled for any published application or desktop. For details on end-to-end encryption, refer to [this document](https://www.citrix.com/content/dam/citrix/en_us/documents/white-paper/end-to-end-encryption-with-xenapp-and-xendesktop.pdf)
+
+#### Article 32 - Data Encryption at Rest
+
+While Citrix Virtual Apps and Desktops can help with the encryption between user and application, the backend itself remains out of scope for this solution. However, CVAD can be used to isolate unencrypted traffic and data during the transition period utilizing secure zones – making sure that all data is encrypted is a long-term process and encapsulating this data in an isolated enclave can provide the required security while the migration project is underway. You can read more about secure zones in this blog post: [“Unsinkable”: The Myth of Foolproof IT Security](https://www.citrix.com/blogs/2017/10/31/unsinkable-the-myth-of-foolproof-it-security/).
+
+As for encryption on the endpoint, it is important to minimize data exposure at the endpoint and control data remanence. Data residing on the endpoint should be restricted, delivering only the minimum amount of data necessary, virtualizing all access to PII and ensuring that residual data, keystrokes and screen data are managed and protected. To learn more, read this blog post about [Citrix ICA
+client footprint](https://www.citrix.com/blogs/2017/08/31/citrix-ica-client-what-leaks/).
 
 
 
