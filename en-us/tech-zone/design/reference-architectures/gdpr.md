@@ -142,6 +142,23 @@ While Citrix Virtual Apps and Desktops can help with the encryption between user
 As for encryption on the endpoint, it is important to minimize data exposure at the endpoint and control data remanence. Data residing on the endpoint should be restricted, delivering only the minimum amount of data necessary, virtualizing all access to PII and ensuring that residual data, keystrokes and screen data are managed and protected. To learn more, read this blog post about [Citrix ICA
 client footprint](https://www.citrix.com/blogs/2017/08/31/citrix-ica-client-what-leaks/).
 
+#### Article 32 - Data Isolation and Protection
+
+Contrary to traditional desktops on physical endpoints, server and desktop OS images within Citrix Virtual Apps and Desktops usually have a much more restricted scope of operation. They are used to host a group of well-defined, centrally managed applications and desktops with predictable behavior and centralized configuration options.
+
+There are different ways how data and applications can be protected and isolated from each other. With aggregation of resources from multiple servers, it is possible to create groups of separated servers to host different applications with different trust levels.
+
+Even if applications are hosted on the same server, it is common practice to isolate and secure them. CVAD servers are used to
+host well-defined, centrally managed sets of applications. This means that these servers can support more restrictive security hardening than traditional workstations. Application whitelisting solutions such as Citrix's Workspace Environment Management (WEM) Application Security feature are much more useful with servers built for specific applications rather than general workloads. Allowing only specific white-listed executables is much simpler on these special-purpose built servers than general workstations.
+
+Security can be further enhanced by application of granular Citrix policies. These policies provide control over many aspects of
+the workspace: available printers, ability to access network and local drives, or clipboard mapping among many more. A special template for “Security & Control” is included with all the best practices and recommended settings.
+
+To learn more about hardening, refer to the [System Hardening white paper](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/system-hardening-for-xenapp-and-xendesktop.pdf).
+
+(diagram Aggregation of applications with different trust levels)
+
+
 
 
 (Link to include in links section https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/)
