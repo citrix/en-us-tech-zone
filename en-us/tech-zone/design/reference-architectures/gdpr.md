@@ -158,6 +158,21 @@ To learn more about hardening, refer to the [System Hardening white paper](https
 
 (diagram Aggregation of applications with different trust levels)
 
+### Securing Web and SaaS Applications
+
+Web apps are architecturally different from client/server apps yet also similar in many ways – including suffering from security challenges. With web apps, a specific client is replaced with a single corporate standard or multiple general-purpose web browsers,
+with varying capabilities and dependencies. Although somewhat simplified, the same management challenges apply – keeping the browser up- to-date against vulnerabilities, encryption of traffic, and implementing multi-factor authentication.
+
+The demands for legacy application support and modern capabilities for SaaS have driven conflicting requirements. There are two types
+of web apps – the born-on-the-internet-apps and webified apps-custom and legacy web apps that support the business. The born-on-the-internet apps drive the requirements on security and architecture – load balancing, scalability, failover, and performance. While the webified apps drive the requirements on supportability - browser plugins, extensions, and validating browser updates can break functionality.
+
+At the core, the functional goal is for the end user to interact with web apps and manipulate data – including personal and sensitive data regardless if running in legacy environments or on SaaS apps pushing the limits of HTML5. Gartner recommends a two-pronged strategy. This is when an organization uses a legacy browser for running legacy applications, but also employs modern browsers for use with all other applications or sites, including general web surfing. That’s where Citrix helps – tying together the user experience and security requirements for hybrid or bimodal web environments.
+
+For the enterprise, maintaining multiple versions of multiple browsers, plugins, and applets while at the same time simplifying
+authentication and access is a pain point addressable with Citrix Virtual Apps and Desktops by building a remote browsing solution to separate internet and intranet web traffic from each other and the endpoint.
+
+(traditional web application architecture diagram)
+
 
 
 
