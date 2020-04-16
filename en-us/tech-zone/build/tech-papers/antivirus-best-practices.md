@@ -26,7 +26,7 @@ With machines provisioned from a single image using technologies such as Provisi
 
 In more dynamic environments, it is also important to understand how de-provisioning of machines behaves, if cleanup is a manual operation, or if it is performed automatically. Some vendors offer integration with hypervisors or even delivery controllers where machines can be automatically created or deleted as they are provisioned.
 
-**Recommendation:** Ask your security vendor how registration/unregistration works with your specific product. If registration requires more steps for environments with single-image management, include these steps in your image sealing instructions, preferably as a fully automated script.
+**Recommendation:** Ask your security vendor how is registration/unregistration of their agents implemented. If registration requires more steps for environments with single-image management, include these steps in your image sealing instructions, preferably as a fully automated script.
 
 ## Signature Updates
 
@@ -46,7 +46,7 @@ Another approach to managing signature updates in virtualized environments is to
 
 An antivirus, especially if improperly configured, can have a negative impact on scalability and overall user experience. It is, therefore, important to understand the performance impact to determine what is causing it and how it can be minimized.
 
-Available performance optimization strategies and approaches are different for various antivirus vendors and implementations. One of the most common and effective approaches is to provide centralized offloading antivirus scanning capabilities. Rather than each machine being responsible for scanning (often identical) samples, scanning is centralized and performed only once. This approach is optimized for virtualized environments; however, please make sure you understand its impact on high-availability.
+Available performance optimization strategies and approaches are different for various antivirus vendors and implementations. One of the most common and effective approaches is to provide centralized offloading antivirus scanning capabilities. Rather than each machine being responsible for scanning (often identical) samples, scanning is centralized and performed only once. This approach is optimized for virtualized environments; however, make sure you understand its impact on high-availability.
 
 ![Antivirus Offloading](/en-us/tech-zone/build/media/tech-papers_antivirus-best-practices_offload.png)
 *Offloading scans to a dedicated appliance can be highly effective in virtualized environments*
@@ -56,7 +56,7 @@ Another approach is based on pre-scanning of read-only portions of the disks, pe
 ![Antivirus Write Scans](/en-us/tech-zone/build/media/tech-papers_antivirus-best-practices_diffs.png)
 *The most common scan optimization is to focus only on the differences between virtual machines*
 
-**Recommendation:** Performance optimizations can greatly improve user experiences. However it should be noted that they can be regarded as a security risks. Therefore, consultation with your vendor and your security team is recommended. Most antivirus vendors with solutions for virtualized environments offer optimized scanning engines.
+**Recommendation:** Performance optimizations can greatly improve user experiences. However they can also be regarded as a security risks. Therefore, consultation with your vendor and your security team is recommended. Most antivirus vendors with solutions for virtualized environments offer optimized scanning engines.
 
 ## Antivirus Exclusions
 
@@ -64,7 +64,7 @@ The most common (and often the most important) optimization for antivirus is pro
 
 Exclusions are typically recommended for real-time scanning. However Citrix recommends scanning the excluded files and folders regularly using scheduled scans. To mitigate any potential performance impact, it is recommended to perform scheduled scans during non-business or off-peak hours.
 
-The integrity of excluded files and folders should be maintained at all times. Organizations should consider using a commercial File Integrity Monitoring or Host Intrusion Prevention solution to protect the integrity of files and folders that have been excluded from real-time or on-access scanning. It is noteworthy that database and log files should not be included in this type of data integrity monitoring because these files are expected to change. If an entire folder must be excluded from real-time or on-access scanning, Citrix recommends closely monitoring the creation of new files in the excluded folders.
+The integrity of excluded files and folders needs to be maintained at all times. Organizations can consider using a commercial File Integrity Monitoring or Host Intrusion Prevention solution to protect the integrity of files and folders that have been excluded from real-time or on-access scanning. Database and log files are excluded in this type of data integrity monitoring because these files are expected to change. If an entire folder must be excluded from real-time or on-access scanning, Citrix recommends closely monitoring the creation of new files in the excluded folders.
 
 Scan only local drives - or disable network scanning. The assumption is that all remote locations that might include file servers that host user profiles and redirected folders are being monitored by antivirus and data integrity solutions. If not, it is recommended that network shares accessed by all provisioned machines be excluded. An example includes shares hosting redirected folders or user profiles.
 
@@ -109,7 +109,13 @@ Processes:
 -  `%SystemRoot%\System32\winlogon.exe`
 -  `%ProgramFiles%\Citrix\ICAService\picaSvc2.exe` (Desktop OS only)
 -  `%ProgramFiles%\Citrix\ICAService\CpSvc.exe` (Desktop OS only)
--  `%ProgramFiles%\Citrix\ICAService\WebSocketService.exe`
+
+WebSocketService.exe file can be found in different locations in various CVAD versions. Below is a list of supported LTSR releases and the latest CR release. If you are running any other version of CVAD, we recommend confirming the file location first.
+
+-  `%ProgramFiles%\Citrix\HTML5 Video Redirection\WebSocketService.exe` (CVAD 7.15 LTSR - both desktop and server OS)
+-  `%ProgramFiles(x86)%\Citrix\System32\WebSocketService.exe` (CVAD 1912 LTSR - Server OS only)
+-  `%ProgramFiles%\Citrix\ICAService\WebSocketService.exe` (CVAD 1912 LTSR - Desktop OS only)
+-  `%ProgramFiles(x86)%\Citrix\HDX\bin\WebSocketService.exe` (CVAD 2003+ - both desktop and server OS)
 
 #### Virtual Delivery Agents - HDX RealTime Optimization Pack
 
@@ -140,7 +146,8 @@ Processes:
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\SelfServicePlugin\SelfServicePlugin.exe`
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\HdxTeams.exe` (Optimization for Microsoft Teams)
 
-Please note that these exclusions for Receiver typically are not needed. We have only seen a need for these in environments when the antivirus is configured with policies that are more strict than usual, or in situations in which multiple security agents are in use simultaneously (AV, DLP, HIP, and so on)
+    >**Note:**
+    >These exclusions for Receiver typically are not needed. We have only seen a need for these in environments when the antivirus is configured with policies that are more strict than usual, or in situations in which multiple security agents are in use simultaneously (AV, DLP, HIP, and so on)
 
 ### Provisioning
 
