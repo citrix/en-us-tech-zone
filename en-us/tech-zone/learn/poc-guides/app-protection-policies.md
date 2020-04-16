@@ -148,6 +148,8 @@ Anti-keylogging and anti screen capture protection is configured on delivery gro
 
 ## Testing - Citrix Workspace app for Windows
 
+Following steps provides guidance for anti screen sharing testing only. To test anti-keylogging protection, we recommend to consult with your own security team.
+
 1.  Launch Citrix Workspace app and login
 
     ![Launch Workspace](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_25.png)
@@ -170,3 +172,10 @@ Anti-keylogging and anti screen capture protection is configured on delivery gro
 1.  Confirm that you see a blank screen (expected behavior)
 
     ![Blank screenshot](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_28.png)
+
+When testing anti-keylogging and anti screen capture protection, be aware of expected behavior:
+
+-  **Anti-keylogging** - This feature is active only when a protected window is in focus
+-  **Anti screen capture** - This feature is active when a protected window is visible (not minimized)
+
+Another very simple method to test the anti screen capture protection is to use one of the popular conference tools (GoToMeeting, Microsoft Teams, Zoom or Slack). Screen sharing should not be possible when protection is enabled.
