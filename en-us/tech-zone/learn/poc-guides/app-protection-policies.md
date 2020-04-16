@@ -31,8 +31,8 @@ Operating Systems Supported:
 
 Server operating systems (for example Windows Server 2019) are not supported.
 
-    >**Note:**
-    > These operating systems are supported where Citrix Workspace app is installed (typically endpoint). The VDA supports all operating systems, including server OS.
+  >**Note:**
+  >These operating systems are supported where Citrix Workspace app is installed (typically endpoint). The VDA supports all operating systems, including server OS.
 
 ### Licenses
 
@@ -48,13 +48,16 @@ Following server components are required:
 -  StoreFront 1912 or higher
 -  Delivery Controller 1912 or higher
 
-## Install - Delivery Controller
+## Installation - Delivery Controller
 
 1.  After you purchase the app protection feature, download the `FeatureTable.OnPrem.AppProtection.xml` file from the Citrix Virtual Apps and Desktops 1912 or later download page
 
-    Note: May need to filter \ narrow results to Components
+    >**Note:**
+    >App Protection Policies XML file is located under Components
 
     ![Download](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_13.png)
+
+1.  Click on **Download File** and save it to local disk
 
     ![Download](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_14.png)
 
@@ -83,12 +86,12 @@ Following server components are required:
 
     ![Set XML trust](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_21.png)
 
-## Install - Licensing
+## Installation - Licensing
 
 1.  Download the license file and import it into the Citrix License Server alongside an existing Citrix Virtual Desktops license
 2.  Use the Citrix Licensing Manager to import the license file (preferred method) or copy the license file to `C:\Program Files (x86)\Citrix\Licensing\MyFiles` on the License Server and restart the Citrix Licensing service. For more information, see [Import license files](/en-us/licensing/current-release/manage/import-license-files.html)
 
-## Install - StoreFront
+## Installation - StoreFront
 
 1.  On StoreFront server, run the following PowerShell command:
 
@@ -100,7 +103,7 @@ Following server components are required:
 
     ![Get STF feature](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_18.png)
 
-## Install - Citrix Workspace app
+## Installation - Citrix Workspace app
 
 1.  Include the app protection component using one of the following methods:
 
@@ -115,7 +118,8 @@ Following server components are required:
 
     ![Optional download](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_8.png)
 
-    ![Optional install](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_9.png)
+    >**Note:**
+    >This option is not available with older versions of Citrix Receiver / Citrix Workspace app
 
 1.  Click **Finish**
 
@@ -129,8 +133,8 @@ Following server components are required:
 
 Anti-keylogging and anti screen capture protection is configured on delivery group level using PowerShell.There are two properties on each delivery group that affects the behavior of app protection policies:
 
--  AppProtectionKeyLoggingRequired - can be $True (enabled) or $False (disabled)
--  AppProtectionScreenCaptureRequired - can be $True (enabled) or $False (disabled)
+-  `AppProtectionKeyLoggingRequired` - can be `$True` (enabled) or `$False` (disabled)
+-  `AppProtectionScreenCaptureRequired` - can be `$True` (enabled) or `$False` (disabled)
 
 1.  On any Delivery Controller, launch PowerShell and load the Citrix PowerShell Snapins using cmdlet
 
