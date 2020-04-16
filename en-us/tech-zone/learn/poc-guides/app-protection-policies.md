@@ -107,19 +107,14 @@ Following server components are required:
 
 1.  Include the app protection component using one of the following methods:
 
-    For Windows: During Citrix Workspace app installation (for Windows), select **Enable app protection** and then click **Install** to continue with the installation or use the command-line switch `CitrixWorkspaceApp.exe /includeappprotection`. For more information, see [App protection section](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/configure.html#app-protection) of Citrix Workspace app for Windows production documentation.
+    **For Windows:** During Citrix Workspace app installation (for Windows), select **Enable app protection** and then click **Install** to continue with the installation or use the command-line switch `CitrixWorkspaceApp.exe /includeappprotection`. For more information, see [App protection section](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/configure.html#app-protection) of Citrix Workspace app for Windows production documentation.
 
     ![Install feature](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_5.png)
 
-    For macOS: App protection requires no specific installation or configuration on Citrix Workspace for Mac.
-1.  Launch Citrix Workspace app and authenticate to StoreFront. Web stores are not supported, only native.
-1.  Click on a virtual app or desktop icon.
-1.  If App protection was not included as part of the CWA installation, you will see the following popup when trying to launch a protected virtual app or desktop.  Click **Yes**
-
-    ![Optional download](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_8.png)
+    **For macOS:** App protection requires no specific installation or configuration on Citrix Workspace for Mac.
 
     >**Note:**
-    >This option is not available with older versions of Citrix Receiver / Citrix Workspace app
+    >It is not possible to add App protection support to older clients. Uninstall old version of Citrix Receiver / Citrix Workspace app and install new version with App protection component.
 
 1.  Click **Finish**
 
@@ -157,14 +152,21 @@ Anti-keylogging and anti screen capture protection is configured on delivery gro
 
     ![Launch Workspace](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_25.png)
 
-2.  Click on a protected virtual app or virtual desktop (for example Admin Desktop) and launch the HDX session. If you don't see protected resources, you are probably using web store or unsupported Citrix Receiver / Citrix Workspace app.
+1.  Click on a protected virtual app or virtual desktop (for example Admin Desktop) and launch the HDX session. If you don't see protected resources, you are probably using web store or unsupported Citrix Receiver / Citrix Workspace app.
 
     ![Launch resource](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_26.png)
 
-3.  Try to perform a screen capture
+1.  (Optional) If App protection is not installed, you will see the following popup when trying to launch a protected virtual app or desktop.  Click **Yes**
+
+    ![Optional download](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_8.png)
+
+    >**Note:**
+    >This option is not available with older versions of Citrix Receiver / Citrix Workspace app
+
+1.  Try to perform a screen capture
 
     ![Take screenshot](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_27.png)
 
-4.  Confirm that you see a blank screen (expected behavior)
+1.  Confirm that you see a blank screen (expected behavior)
 
     ![Blank screenshot](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_28.png)
