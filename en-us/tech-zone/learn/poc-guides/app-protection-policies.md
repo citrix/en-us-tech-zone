@@ -10,7 +10,7 @@ description: Copy & paste description from TOC here
 
 ## Overview
 
-This guide is designed to walk you through the technical prerequisites, use cases and configuration of App protection policies for your on-premises Citrix Virtual Apps and Desktops deployment. App protection is an add-on feature for Citrix Workspace app (CWA) that provides enhanced security when using Citrix Virtual Apps and Desktops published resources. Two policies provide anti-keylogging and anti screen capturing capabilities in a Citrix HDX session.
+This guide is designed to walk you through the technical prerequisites, use cases, and configuration of App protection policies for your on-premises Citrix Virtual Apps and Desktops deployment. App protection is an add-on feature for Citrix Workspace app (CWA) that provides enhanced security when using Citrix Virtual Apps and Desktops published resources. Two policies provide anti-keylogging and anti screen capturing capabilities in a Citrix HDX session.
 
 ## System Requirements
 
@@ -61,11 +61,11 @@ Following server components are required:
 
     ![Download](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_14.png)
 
-1.  On any Delivery Controller, launch PowerShell and load the Citrix PowerShell Snapins using cmdlet
+1.  On any Delivery Controller, launch PowerShell and load the Citrix PowerShell snap-ins using cmdlet
 
     `Add-PSSnapin Citrix*`
 
-    ![Import snapin](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_15.png)
+    ![Import snap-in](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_15.png)
 
 1.  In PowerShell, navigate to folder where XML file has been downloaded
 1.  Enable the App protection feature with the following command:
@@ -126,12 +126,12 @@ Following server components are required:
 
 ## Configuration - Delivery Group
 
-Anti-keylogging and anti screen capture protection is configured on delivery group level using PowerShell.There are two properties on each delivery group that affects the behavior of app protection policies:
+Anti-keylogging and anti screen capture protection is configured on delivery group level using PowerShell. There are two properties on each delivery group that affects the behavior of app protection policies:
 
 -  `AppProtectionKeyLoggingRequired` - can be `$True` (enabled) or `$False` (disabled)
 -  `AppProtectionScreenCaptureRequired` - can be `$True` (enabled) or `$False` (disabled)
 
-1.  On any Delivery Controller, launch PowerShell and load the Citrix PowerShell Snapins using cmdlet
+1.  On any Delivery Controller, launch PowerShell and load the Citrix PowerShell snap-ins using cmdlet
 
     `Add-PSSnapin Citrix*`
 1.  To Enable App protection for the `Admin Desktop` delivery group, use the following command:
@@ -148,7 +148,7 @@ Anti-keylogging and anti screen capture protection is configured on delivery gro
 
 ## Testing - Citrix Workspace app for Windows
 
-Following steps provides guidance for anti screen sharing testing only. To test anti-keylogging protection, we recommend to consult with your own security team.
+Following steps provides guidance for anti screen sharing testing only. To test anti-keylogging protection, we recommend consulting with your own security team.
 
 1.  Launch Citrix Workspace app and login
 
@@ -158,7 +158,7 @@ Following steps provides guidance for anti screen sharing testing only. To test 
 
     ![Launch resource](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_26.png)
 
-1.  (Optional) If App protection is not installed, you will see the following popup when trying to launch a protected virtual app or desktop.  Click **Yes**
+1.  (Optional) If App protection is not installed, you get the following popup when trying to launch a protected virtual app or desktop.  Click **Yes**
 
     ![Optional download](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_8.png)
 
@@ -178,4 +178,4 @@ When testing anti-keylogging and anti screen capture protection, be aware of exp
 -  **Anti-keylogging** - This feature is active only when a protected window is in focus
 -  **Anti screen capture** - This feature is active when a protected window is visible (not minimized)
 
-Another very simple method to test the anti screen capture protection is to use one of the popular conference tools (GoToMeeting, Microsoft Teams, Zoom or Slack). Screen sharing should not be possible when protection is enabled.
+Another simple method to test the anti screen capture protection is to use one of the popular conference tools (GoToMeeting, Microsoft Teams, Zoom, or Slack). Screen sharing should not be possible when protection is enabled.
