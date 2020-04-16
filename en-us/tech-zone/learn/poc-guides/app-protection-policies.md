@@ -107,7 +107,7 @@ Following server components are required:
 
 1.  Include the app protection component using one of the following methods:
 
-    **For Windows:** During Citrix Workspace app installation (for Windows), select **Enable app protection** and then click **Install** to continue with the installation or use the command-line switch `CitrixWorkspaceApp.exe /includeappprotection`. For more information, see [App protection section](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/configure.html#app-protection) of Citrix Workspace app for Windows production documentation.
+    **For Windows:** During Citrix Workspace app installation (for Windows), select **Enable app protection** and then click **Install** to continue with the installation or use the command-line switch `CitrixWorkspaceApp.exe /includeappprotection`. For more information, see [App protection section](/en-us/citrix-workspace-app-for-windows/configure.html#app-protection) of Citrix Workspace app for Windows production documentation.
 
     ![Install feature](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_5.png)
 
