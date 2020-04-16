@@ -215,4 +215,31 @@ defense (Layer 3). Citrix ADC not only provides a multi-layer approach to DDoS p
 
 (Tokenization with NetScaler diagram)
 
+(Pseudonymization with NetScaler diagram)
+
+Pseudonymization is another control mentioned in Article 32. Conceptually, it’s a procedure by which the most identifying fields
+within a data record are replaced by one or more artificial identifiers, or pseudonyms. This makes storing personal data more secure
+in the event of a breach – by using data segmentation. An example is tokenizing or hashing sensitive data that Citrix ADC parses for web-application traffic – i.e. hashing personally identifying data while transmitted between a controller and a processer. This is done in PCI-DSS regulated environments. For example, for cardholder data, tokenization guidelines are specific for the Primary Account Number (PAN). Tokenization replaces the PAN with a surrogate value called a token. De-tokenization is the reverse process of redeeming a token for its associated PAN value. The security of an individual token relies predominantly on the infeasibility of determining the original PAN by knowing only the surrogate value. Applications may not need the same level of security protection as associated with the use of PAN. For GDPR, storing tokens instead of PII is one alternative that can help to reduce the amount of personal data in the environment, potentially reducing the effort to implement GDPR requirements.
+
+(NetScaler data protection diagram)
+
+## Securing Mobile Applications
+
+Mobile devices, particularly with BYOD ownership, present many challenges to enterprises trying to secure data. Their use within the enterprise has driven the inception of technologies to securely manage mobile endpoints. Used beyond the borders of enterprise DMZs, on any public or private network, at any time, with apps from a variety of sources, mobile devices present special risks to companies seeking to secure their personal data.
+
+* The GDPR controller must secure personal data used by corporate mobile apps despite the fact they’re hosted on a user-owned mobile device.
+
+* Not only must the GDPR controller ensure the confidentiality, integrity, and availability of the personal data during its use, it must ensure that when a user exercises their right to erase that no artifacts are left behind and exposed to other apps or users, etc.
+
+* Controllers must support file sharing and collaboration securely between enterprise mobile apps and be able to erase files from the device in a moment’s notice.
+
+* They need to help protect the platform OS, mitigate the risk of malware, and enforce device security and pertinent policies to control device functions that make data vulnerable to loss.
+
+* Controllers need to provide Unified Endpoint Management across multiple platforms including control of critical software patches that include updates to address vulnerabilities.
+
+(Traditional mobile device application architecture diagram)
+
+
+
+
 (Link to include in links section https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/)
