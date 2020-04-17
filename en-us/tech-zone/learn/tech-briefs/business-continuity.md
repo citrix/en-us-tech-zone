@@ -152,7 +152,7 @@ Organizations can easily deploy Citrix Virtual Desktops with a minimal deploymen
 
 The diagram shows how Citrix Virtual Desktops service is deployed with Remote PC workloads in the customer’s office or data center.
 
-[Diagram]
+[![Citrix Virtual Desktops - Remote PC Access](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-virtual-desktops-conceptual-diagram-remote-pc.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-virtual-desktops-conceptual-diagram-remote-pc.png)
 
 To add a new deployment, the admin performs the following steps:
 
@@ -173,7 +173,7 @@ Organizations can easily extend the Citrix Virtual Desktops deployment to includ
 
 The diagram shows how Citrix Virtual Desktops service is deployed with virtual desktop workloads in customer’s cloud of choice.
 
-[Diagram]
+[![Citrix Virtual Desktops - Expand to Cloud](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-virtual-desktops-conceptual-diagram-expand-to-cloud.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-virtual-desktops-conceptual-diagram-expand-to-cloud.png)
 
 Once deployed, users authenticate to the environment and receive a cloud-hosted managed virtual desktop available from any location and from any device.
 
