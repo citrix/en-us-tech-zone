@@ -110,7 +110,7 @@ Citrix Gateway provides organizations with numerous multifactor authentication o
 
 Users are able to remotely access the work PC with an untrusted, personal device. Organizations can use integrated Citrix Virtual Apps and Desktops policies to protect against:
 
-*  Endpoint Risks: Key loggers secretly installed on the endpoint device can easily capture a user's username and password. Anti-keylogging capabilities protect the organization from stolen credentials by obfuscating keystrokes.
+*  Endpoint Risks: Key loggers secretly installed on the endpoint device can easily capture a user's user name and password. Anti-keylogging capabilities protect the organization from stolen credentials by obfuscating keystrokes.
 *  Inbound Risks: Untrusted endpoints can contain malware, spyware, and other dangerous content. Denying access to the endpoint device's drives prevents transmission of dangerous content to the corporate network.
 *  Outbound Risks: Organizations must maintain control over content. Allowing users to copy content to local, untrusted endpoint devices places additional risks on the organization. These capabilities can be denied by blocking access to the endpoint's drives, printers, clipboard, and anti-screen-capturing policies.
 
@@ -128,17 +128,17 @@ Because Remote PC Access allows users to connect to their standard Windows PC du
 
 ## Citrix Virtual Desktops service
 
-Customers that want to give users access to their physical machines while not having to manage the underlying Citrix infrastructure, can do so by utilizing the Citrix Virtual Desktops service. This service allows admins to rapidly grant users (who go to the office to work) access to their workstations via Remote PC access.
+Customers that want to give users access to their physical machines while not having to manage the underlying Citrix infrastructure, can do so by utilizing the Citrix Virtual Desktops service. This service allows admins to rapidly grant users (who go to the office to work) access to their workstations via Remote PC Access.
 
-The Citrix Virtual Desktops service can provide access to remote workers or temporary workers (3rd party or consultants) to virtual desktops. The virtual machines can be hosted either in the customer’s datacenter or in a cloud of their choice.
+The Citrix Virtual Desktops service can provide access to remote workers or temporary workers (3rd party or consultants) to virtual desktops. The virtual machines can be hosted either in the customer’s data center or in a cloud of their choice.
 
-Both capabilities allow the admins to ensure users are productive, during a business continuity scenario. Users that are used to desktops and workstations in the office, can access them via Remote PC from home. Temporary workers and even new staff get access to virtual desktops, which they connect to from anywhere and on any device.
+Both capabilities allow the admins to ensure users are productive, during a business continuity scenario. Users that are used to desktops and workstations in the office, can access them via Remote PC Access from home. Temporary workers and even new staff get access to virtual desktops, which they connect to from anywhere and on any device.
 
 The added benefit of the service is that all the Citrix management components are cloud hosted and are updated with best practices automatically.
 
 ### Identity
 
-To maintain a user experience similar to the traditional, on-premises model, the user’s identity continues to use Active Directory. The authentication mechanisms are the same as the ones provided in the Remote PC access scenario.
+To maintain a user experience similar to the traditional, on-premises model, the user’s identity continues to use Active Directory. The authentication mechanisms are the same as the ones provided in the Remote PC Access scenario.
 
 ### Data Center Connectivity
 
@@ -146,11 +146,11 @@ For cloud hosted resources, users need to access files and back end resources fr
 
 Using Citrix SD-WAN, organizations create a secure tunnel between the cloud of the customer's choice and the on-prem data center. SD-WAN understands the data traversing the tunnel and can properly optimize the traffic to improve application response time and user experience.
 
-### New Remote PC Deployment
+### New Remote PC Access Deployment
 
 Organizations can easily deploy Citrix Virtual Desktops with a minimal deployment footprint, as seen in the following conceptual diagram.
 
-The diagram shows how Citrix Virtual Desktops service is deployed with Remote PC workloads in the customer’s office or data center.
+The diagram shows how Citrix Virtual Desktops service is deployed with Remote PC Access workloads in the customer’s office or data center.
 
 [![Citrix Virtual Desktops - Remote PC Access](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-virtual-desktops-conceptual-diagram-remote-pc.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-virtual-desktops-conceptual-diagram-remote-pc.png)
 
@@ -165,13 +165,13 @@ With a new infrastructure deployed, the administrator can perform the following 
 *  Creates a new Remote PC Access catalog
 *  Assigns users to PCs
 
-Once deployed, users authenticate to the environment and receive Remote PC access to their physical workstations available from any location and from any device.
+Once deployed, users authenticate to the environment and receive Remote PC Access to their physical workstations available from any location and from any device.
 
 ### Expand to the cloud
 
 Organizations can easily extend the Citrix Virtual Desktops deployment to include resources running in the cloud, as seen in the following conceptual diagram.
 
-The diagram shows how Citrix Virtual Desktops service is deployed with virtual desktop workloads in customer’s cloud of choice.
+The diagram shows how Citrix Virtual Desktops service is deployed with virtual desktop workloads in the customer’s cloud of choice.
 
 [![Citrix Virtual Desktops - Expand to Cloud](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-virtual-desktops-conceptual-diagram-expand-to-cloud.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-virtual-desktops-conceptual-diagram-expand-to-cloud.png)
 
@@ -180,11 +180,11 @@ Once deployed, users authenticate to the environment and receive a cloud-hosted 
 ### Results
 
 *  Easily deployed in an environment where no existing Citrix infrastructure is present.
-*  Citrix updates and manages the Citrix components including the Cloud Connectors, with best practices. Only the desktop hosts / Remote PC machines are managed by the admin.
+*  Citrix updates and manages the Citrix components including the Cloud Connectors, with best practices. Only the desktop hosts / Remote PC Access machines are managed by the admin.
 *  Can bring up an environment in just a few hours and accessible to users from anywhere in the world.
 *  Additional users can be added using virtual desktops running in the customer’s datacenter or a variety of cloud solutions.
 *  The user connects to the session over the internet for the last mile (from the nearest Citrix Gateway PoP), the ICA protocol adjusts based on network conditions to provide the most responsive experience possible.
-*  Citrix session policies secure the environment by blocking untrusted endpoints from transferring data to and from the Remote PC or the virtual desktop
+*  Citrix session policies secure the environment by blocking untrusted endpoints from transferring data to and from the Remote PC Access or the virtual desktop
 
 ## Citrix Managed Desktops
 
