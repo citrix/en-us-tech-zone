@@ -179,3 +179,9 @@ When testing anti-keylogging and anti screen capture protection, be aware of exp
 -  **Anti screen capture** - This feature is active when a protected window is visible (not minimized)
 
 Another simple method to test the anti screen capture protection is to use one of the popular conference tools (GoToMeeting, Microsoft Teams, Zoom, or Slack). Screen sharing should not be possible when protection is enabled.
+
+## References
+
+[Product Documentation - Citrix Workspace app](/en-us/citrix-workspace-app-for-windows/configure.html#app-protection)
+
+[Product Documentation - App protection](/en-us/citrix-virtual-apps-desktops/secure/app-protection.html)

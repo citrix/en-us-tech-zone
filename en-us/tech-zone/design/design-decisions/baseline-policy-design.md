@@ -128,7 +128,7 @@ Create exceptions to the baseline policy based on the requirements of the end-us
 
   >**Example:**
   >
-  >In a Citrix Virtual Apps and Desktops deployment, users are not allowed to access the local drives on their endpoint devices inside the Citrix session. Active Directory group membership grants access to local drives. To achieve this behavior, set the "Client drive redirection" setting to "Prohibited" in the baseline policy. Create a policy with a higher priority and set the "Client drive redirection" setting to "Allowed" in the new policy. Add an Active Directory group in the assignments of the new policy. Only users who are a member of the Active Directory group have access to local drives. The default behavior is to deny access to local drives for all other users.*
+  >In a Citrix Virtual Apps and Desktops deployment, users are not allowed to access the local drives on their endpoint devices inside the Citrix session. Active Directory group membership grants access to local drives. To achieve this behavior, set the "Client drive redirection" setting to "Prohibited" in the baseline policy. Create a policy with a higher priority and set the "Client drive redirection" setting to "Allowed" in the new policy. Add an Active Directory group in the assignments of the new policy. Only users who are a member of the Active Directory group have access to local drives. The default behavior is to deny access to local drives for all other users.
 
 ### Policy Management
 
