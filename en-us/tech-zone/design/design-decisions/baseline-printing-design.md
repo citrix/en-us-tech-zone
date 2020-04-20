@@ -78,7 +78,7 @@ However, the print job routing changes slightly if the VDA provisions printers a
 
 ![Session Printers: Windows Print Server Routing](/en-us/tech-zone/design/media/design-decisions_baseline-printing-design_session-printers-windows-print-server-routing.png)
 
-![Session Printers: Citrix Universal Print Server Routing](/en-us/tech-zone/design/media/design-decisions_baseline-printing-design_session-printersuniversal-print-server-routing.png)
+![Session Printers: Citrix Universal Print Server Routing](/en-us/tech-zone/design/media/design-decisions_baseline-printing-design_session-printers-universal-print-server-routing.png)
 
 Citrix bases the recommended option on the network location of the endpoint device, the user's session, and the print server.
 
