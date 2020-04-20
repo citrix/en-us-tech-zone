@@ -75,7 +75,9 @@ Citrix policies created using Citrix Studio have specific filter settings availa
 | Tag | Applies a policy based on any tags applied to the machine running the session. Tags are strings that can be added to items, such as machines, in Citrix Virtual Apps and Desktops environments. These tags can be used to search for or limit access to desktops.  | User and computer settings |
 | User or group | Applies a policy based on the user or group membership of the user connecting to the session. | User settings |
 
-**Note:** *Policies in a Citrix Virtual Apps and Desktops environment provide a merged view of settings that apply at the user and computer level. In the previous table, the **Scope** column identifies whether the specified filter applies to user settings, computer settings, or both.*
+  >**Note:**
+  >
+  >Policies in a Citrix Virtual Apps and Desktops environment provide a merged view of settings that apply at the user and computer level. In the previous table, the **Scope** column identifies whether the specified filter applies to user settings, computer settings, or both.
 
 ## Decision: Baseline Policy
 
