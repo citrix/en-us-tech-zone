@@ -14,14 +14,6 @@ The end user is widely considered the weakest piece on the attack surface of an 
 
 With use of virtual apps and desktops, attack surface of endpoints has been greatly reduced - data is stored centrally in a data center and it is much harder for the attacker to steal it. The virtual session is not running on the endpoint and users generally do not have permission to install apps within the virtual session. The data within the session is secure in the data center or cloud resource location. However, a compromised endpoint can capture session keystrokes and information displayed on the endpoint. Citrix provides administrators the ability prevent these attack vectors, using an add-on feature called App protection. The feature enables Citrix Virtual Apps and Desktops (CVAD) administrators to enforce policies specifically on one or more delivery groups. When users connect to sessions from these delivery groups, the user’s endpoint has either anti screen capture or anti-keylogging or both enforced on the endpoints.
 
-## Features
-
-App protection policies protect client endpoints running Windows and macOS operating systems. App protection policies work by controlling access to specific API calls of the underlying OS, required to capture screens or keyboard presses. App protection policies can therefore provide protection even against custom and purpose-built hacker tools. However, as OSes evolve, new ways of capturing screens and logging keys can emerge. While Citrix continues to identify and address, Citrix cannot guarantee full protection in specific configurations and deployments.
-
-When a user logs into StoreFront, security capabilities of the endpoint are assessed and matched against available resources. Applications and desktops protected by App protection policies are visible only if an endpoint meets the security requirements. One such requirement is a check if the App protection components are installed.
-
-[![App protection diagram](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_diagram.png)](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_diagram.png)
-
 ## Anti-keylogging
 
 A keylogger is one of the attacker’s favored tools of data exfiltration, as it can remain on an infected machine without doing any noticeable damage. All the keystrokes entered by the user are harvested, including user name / password combinations, credit cards numbers, and confidential data. The harvested data is then silently exfiltrated later on. Spyware/keyloggers are commonly used by attackers - it is one of the top 3 malware varieties that are present in security breaches.
@@ -42,7 +34,13 @@ The protection extends to files from [Citrix Files](/en-us/mobile-productivity-a
 
 Another use case for anti screen capture is preventing sharing of sensitive data in a virtual meeting / web conferencing applications (such as GoToMeeting, Microsoft Teams or Zoom). Misdelivery (sharing data with the wrong recipient or publishing data to unintended audiences) is a common threat action variety that plagues many industries. In [2019](https://enterprise.verizon.com/resources/reports/dbir/), misdelivery has been a primary source of security incidents in healthcare industry. Your data and applications should be protected not only from external threats, but also from your own employees. Internal actors have been involved in 34% of security incidents in 2019, but this number is higher in some industries (45% in Education and whopping 59% in Healthcare).
 
-## Considerations
+## How does it work?
+
+App protection policies protect client endpoints running Windows and macOS operating systems. App protection policies work by controlling access to specific API calls of the underlying OS, required to capture screens or keyboard presses. App protection policies can therefore provide protection even against custom and purpose-built hacker tools. However, as OSes evolve, new ways of capturing screens and logging keys can emerge. While Citrix continues to identify and address, Citrix cannot guarantee full protection in specific configurations and deployments.
+
+When a user logs into StoreFront, security capabilities of the endpoint are assessed and matched against available resources. Applications and desktops protected by App protection policies are visible only if an endpoint meets the security requirements. One such requirement is a check if the App protection components are installed.
+
+[![App protection diagram](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_diagram.png)](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_diagram.png)
 
 It is often assumed that you have to sacrifice user experience to get better security. App protection policies are implemented in a way that is seamless to the end users:
 
