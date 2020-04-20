@@ -380,7 +380,7 @@ The best way to migrate to the production virtual server would be to turn off bl
 
 Lastly, if the PoC is being run on a test platform that has different resources than production, it is important to consider the resource requirements that change by enabling Web Application Firewall.
 
-## Additional Resources
+## References
 
 [Citrix Product Documentation - Web App Firewall](/en-us/citrix-adc/13/application-firewall)
 
