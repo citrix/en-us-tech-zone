@@ -192,7 +192,7 @@ So far, the configuration supports an IdP-initiated launch process, where the us
 
 *  Select **Activate**
 
-***Note**: During the configuration, the Okta admin might be unable to sign into the Okta admin console because the inbound SAML configuration is incomplete. If this happens, the admin can bypass the IdP routing rule by accessing the Okta enviornment with the following address: `https://companyname.oka.com/login/default`*
+***Note**: During the configuration, the Okta admin might be unable to sign into the Okta admin console because the inbound SAML configuration is incomplete. If this happens, the admin can bypass the IdP routing rule by accessing the Okta enviornment with the following address: `https://companyname.okta.com/login/default`*
 
 ### Validate
 
