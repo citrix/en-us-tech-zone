@@ -157,7 +157,7 @@ The diagram shows how Citrix Virtual Desktops service is deployed with Remote PC
 To add a new deployment, the admin performs the following steps:
 
 *  Creates a Citrix account and subscribes to the Citrix Virtual Desktops service.
-*  Sets up Citrix Connectors (atleast 2) in the on-premises environment and adds the new resource location in the service console.
+*  Sets up Citrix Connectors (at least two) in the on-premises environment and adds the new resource location in the service console.
 *  Configures Citrix Gateway service to provide remote access to users.
 
 With the service configuration done, the administrator can perform the following to enable Remote PC Access:
@@ -178,7 +178,7 @@ The diagram shows how Citrix Virtual Desktops service is deployed with virtual d
 
 To expand the deployment, the admin performs the following steps:
 
-*  Sets up Citrix Connectors (atleast 2) in the cloud resource location and adds the new resource location in the service.
+*  Sets up Citrix Connectors (at least two) in the cloud resource location and adds the new resource location in the service.
 *  Deploys and configures the SDWAN instances to be able to connect the on-premises data center.
 
 With the service configuration done, the administrator can perform the following to enable Remote PC Access:
@@ -194,7 +194,7 @@ Once deployed, users authenticate to the environment and receive a cloud-hosted 
 *  Easily deployed in an environment where no existing Citrix infrastructure is present.
 *  Citrix updates and manages the Citrix components including the Cloud Connectors, with best practices. Only the desktop hosts / Remote PC Access machines are managed by the admin.
 *  Can bring up an environment in just a few hours and accessible to users from anywhere in the world.
-*  Additional users can be added using virtual desktops running in the customer’s datacenter or a variety of cloud solutions.
+*  Additional users can be added using virtual desktops running in the customer’s data center or a variety of cloud solutions.
 *  The user connects to the session over the internet for the last mile (from the nearest Citrix Gateway PoP), the ICA protocol adjusts based on network conditions to provide the most responsive experience possible.
 *  Citrix session policies secure the environment by blocking untrusted endpoints from transferring data to and from the Remote PC Access or the virtual desktop
 
