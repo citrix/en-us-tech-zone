@@ -126,11 +126,17 @@ Azure Active Directory authenticates the user. Once the user is successfully aut
 
 Citrix Workspace utilizes the Azure Active Directory claims to authorize the user to resources and services within Citrix Workspace.
 
-For Citrix Workspace to complete the authentication process and to generate a list of authorized resources, each Azure Active Directory user account must have the following parameters defined, which can be added manually or synchronized from an on-premises Windows Active Directory domain:
+Authorizing access to a resource requires a single “source of truth”. The source of truth is the final authority on authorization decisions. When using Azure Active Directory as the primary user directory, the type of Workspace resource dictates the source of truth.
 
-*  Email address
-*  User Principal Name
-*  Security Identifier (SID)
+*  Content Collaboration Service: For user files and content, the Content Collaboration Service is the source of truth. When Azure Active Directory is the identity provider for Workspace, an Azure Active Directory identity and the Content Collaboration account must use the same email address. For group membership information, the Content Collaboration Service is the source of truth. Group membership information is based on the user’s email address.
+*  Endpoint Management Service: For mobile applications, the Endpoint Management Service uses Active Directory as the source of truth. When Azure Active Directory is the identity provider for Workspace, an Azure Active Directory identity must contain specific Active Directory claims (SID, UPN, and an [ImmutableID](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/plan-connect-design-concepts) that does not change). These claims associate an Azure Active Directory identity with an Active Directory identity. If Endpoint Management Service uses group membership, Active Directory is the source of truth.
+*  Gateway Service: For SaaS and web applications, the Gateway Service uses Azure Active Directory as the source of truth. The Gateway Service is able to use Azure Active Directory user accounts or an Azure Active Directory user group membership to authorize access to resources.
+*  Microapps Service: For microapp applications, the Microapps Service uses Azure Active Directory as the source of truth. The Microapps Service is able to use Azure Active Directory user accounts or an Azure Active Directory user group membership to authorize access to resources.
+*  Virtual Apps and Desktops Service: Because Windows-based resources (VDI) requires an Active Directory-based user identity, the source of truth is dependent on the underlying Active Directory and Azure Active Directory integration.
+    *  Azure Active Directory user identities must contain specific Active Directory claims (SID, UPN, and an [ImmutableID](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/plan-connect-design-concepts) that does not change).  These claims associate an Azure Active Directory identity with an Active Directory identity. For a specific user identity, Azure Active Directory is the source of truth.
+    *  If authorization decisions are based on group membership, the source of truth is Active Directory. Workspace subsequently sends group membership requests to Active Directory via the cloud connector.
+
+The process for linking Active Directory parameters with an Azure Active Directory ID is greatly simplified with the use of the Azure Active Directory synchronization tool.
 
 The [Azure Active Directory Tech Insight video](https://www.youtube.com/watch?v=H1Z9OOWSEGA) provides additional detail on the admin configuration and user experience when using a FIDO2 YubiKey.
 
@@ -201,10 +207,18 @@ The OpenID Connect application authenticates the user. Once the user is successf
 
 These tokens allow Citrix Workspace to access the OpenID Connect application and to generate a list of authorized resources based on the user’s Okta identity.
 
-The type of resource feeds within Citrix Workspace dictates the requirements for the user’s Okta identity.
+Authorizing access to a resource requires a single “source of truth”. The source of truth is the final authority on authorization decisions. When using Okta as the primary user directory, the type of Workspace resource dictates the source of truth.
 
-*  Native Okta identity: A native Okta identity is a stand-alone identity within the Okta identity provider. SaaS, web, and microapp application resource feeds within Citrix Workspace are able to directly use the default set of claims within a native Okta identity token.
-*  Active Directory linked Okta identity: Microsoft Windows-based resources (VDI) require an Active Directory-based identity. If Citrix Workspace must authorize access to Citrix Virtual Apps and Desktops resources, the Okta identity used to authenticate to Workspace must contain claims (Active Directory SID, UPN, and GUID). These claims enable Citrix Workspace to authorize Active Directory-based resources to an Okta identity. The process for linking the Active Directory parameters with an Okta ID is greatly simplified with the use of the Okta Active Directory synchronization tool.
+*  Content Collaboration Service: For user files and content, the Content Collaboration Service is the source of truth. When Okta is the primary identity provider for Workspace, an Okta identity and the Content Collaboration account must use the same email address. For group membership information, the Content Collaboration Service is the source of truth. Group membership information is based on the user’s email address. In this scenario, Okta is only used as the identity provider for Workspace.
+*  Endpoint Management Service: For mobile applications, the Endpoint Management Service uses Active Directory as the source of truth. When Okta is the primary identity provider for Workspace, an Okta identity must contain specific Active Directory claims (SID, UPN, and GUID).  These claims associate an Okta identity with an Active Directory identity.
+If Endpoint Management Service uses group membership, Active Directory is the source of truth.
+*  Gateway Service: For SaaS and web applications, the Gateway Service uses Okta as the source of truth. The Gateway Service is able to use Okta user accounts or an Okta user group membership to authorize access to resources.
+*  Microapps Service: For microapp applications, the Microapps Service uses Okta as the source of truth. The Microapps Service is able to use Okta user accounts or an Okta user group membership to authorize access to resources.
+*  Virtual Apps and Desktops Service: Because Windows-based resources (VDI) requires an Active Directory-based user identity, the source of truth is dependent on the underlying Active Directory and Okta integration.
+    *  Okta user identities must contain specific Active Directory claims (SID, UPN, and GUID).  These claims associate an Okta identity with an Active Directory identity. For a specific user identity, Okta is the source of truth.
+    *  If authorization decisions are based on group membership, the source of truth is based on the synchronization parameters between Active Directory and Okta. If any Active Directory group gets synchronized with Okta and includes Active Directory claims (SID), then Okta becomes the source of truth for groups.  If Okta groups do not include Active Directory claims (SID), then Active Directory becomes the source of truth. Workspace subsequently sends group membership requests to Active Directory via the cloud connector.
+
+The process for linking Active Directory parameters with an Okta ID is greatly simplified with the use of the Okta Active Directory synchronization tool. The Active Directory claims must adhere to the following naming standard within Okta.
 
 [![Okta - Parameters](/en-us/tech-zone/learn/media/tech-briefs_workspace-identity_okta-parameters.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-identity_okta-parameters.png)
 
