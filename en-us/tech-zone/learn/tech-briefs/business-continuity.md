@@ -128,7 +128,7 @@ Because Remote PC Access allows users to connect to their standard Windows PC du
 
 ## Citrix Virtual Desktops service
 
-Organizations that want to give users access to their physical machines while not having to manage the underlying Citrix infrastructure, can do so by utilizing the Citrix Virtual Desktops service. This service allows admins to rapidly grant users (who go to the office to work) access to their workstations via Remote PC Access.
+Organizations that want to give users remote access to their physical machines while not having to manage the underlying Citrix infrastructure, can do so by utilizing the Citrix Virtual Desktops service. This service allows admins to rapidly grant users (who go to the office to work) remote access to their workstations via Remote PC Access.
 
 The Citrix Virtual Desktops service can provide access to remote workers or temporary workers (3rd party or consultants) to virtual desktops. The virtual machines can be hosted either in the customer’s data center or in a cloud of their choice.
 
@@ -157,7 +157,7 @@ The diagram shows how Citrix Virtual Desktops service is deployed with Remote PC
 To add a new deployment, the admin performs the following steps:
 
 *  Creates a Citrix account and subscribes to the Citrix Virtual Desktops service.
-*  Sets up Citrix Connectors (at least two) in the on-premises environment and adds the new resource location in the service console.
+*  Sets up Citrix Cloud Connectors (at least two) in the on-premises environment and adds the new resource location in the service console.
 *  Configures Citrix Gateway service to provide remote access to users.
 
 With the service configuration done, the administrator can perform the following to enable Remote PC Access:
@@ -178,10 +178,10 @@ The diagram shows how Citrix Virtual Desktops service is deployed with virtual d
 
 To expand the deployment, the admin performs the following steps:
 
-*  Sets up Citrix Connectors (at least two) in the cloud resource location and adds the new resource location in the service.
+*  Sets up Citrix Cloud Connectors (at least two) in the cloud resource location and adds the new resource location in the service.
 *  Deploys and configures the SDWAN instances to be able to connect the on-premises data center.
 
-With the service configuration done, the administrator can perform the following to enable Remote PC Access:
+With the service configuration done, the administrator can perform the following to enable access to the virtual machines:
 
 *  Creates a master image (with the required apps and the VDA installed on it) that will be used to clone the virtual machines.
 *  Creates a new virtual machine catalog based on the master image and a delivery group for the catalog.
