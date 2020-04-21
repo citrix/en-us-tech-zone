@@ -166,6 +166,14 @@ Enables or disables use of UDP for audio packets (RealTime Audio Transport for a
 
 To open the ports that the VDA uses to communicate with the Controller and enabled features, specify the /enable_hdx_ports option, in addition to the /enable_real_time_transport option.
 
+#### /includeadditional "Citrix User Profile Manager","Citrix User Profile Manager WMI Plugin"
+
+In a Remote PC Access deployment, most implementations do not require profile management. However, Citrix User Profile Manager also captures performance metrics, which are useful for administrators to identify and fix performance-related issues. User Profile Manager does not have to be configured, it just needs to be deployed to capture metrics.
+
+When installed, Citrix User Profile Manager allows administrators to run reports on the user experience, session responsiveness, and insights into logon performance within Citrix Director and Citrix Analytics for Performance.
+
+[![Logon Performance Chart](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_logon-performance-chart.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_logon-performance-chart.png)
+
 #### /logpath path
 
 Log file location. The specified folder must exist as the installer does not create it. The default path is "%TEMP%\Citrix\XenDesktop Installer," but if the install is conducted via SCCM, then depending on the context, the log files may be in the system temp folder instead.
