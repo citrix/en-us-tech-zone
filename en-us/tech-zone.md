@@ -299,6 +299,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [App protection policies](/en-us/tech-zone/learn/poc-guides/app-protection-policies.html) - Learn how to enhance security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
 
+### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
+
+[App protection](/en-us/tech-zone/learn/tech-briefs/app-protection-policies.html) - App protection policies protect application data from attacks based on keyloggers and/or screen capture tools. Allow companies to embrace BYOD, and extend resources to remote workers, contractors, and gig economy workers.
+
 ### [Build - Tech Papers](/en-us/tech-zone/build/tech-papers.html)
 
 [Endpoint Security, Antivirus and Antimalware Best Practices](/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html) - Tech Paper focused on proper configuration, and recommendations for running antivirus solution in Citrix Virtual Apps & Desktops environments. Recommended exclusions, configuration, and leading practices.
