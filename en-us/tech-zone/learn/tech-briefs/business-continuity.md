@@ -157,7 +157,7 @@ The diagram shows how Citrix Virtual Desktops service is deployed with Remote PC
 To add a new deployment, the admin performs the following steps:
 
 *  Creates a Citrix account and subscribes to the Citrix Virtual Desktops service.
-*  Sets up Citrix Connectors (at least two) in the on-premises environment and adds the new resource location in the service console.
+*  Sets up Citrix Cloud Connectors (at least two) in the on-premises environment and adds the new resource location in the service console.
 *  Configures Citrix Gateway service to provide remote access to users.
 
 With the service configuration done, the administrator can perform the following to enable Remote PC Access:
@@ -178,7 +178,7 @@ The diagram shows how Citrix Virtual Desktops service is deployed with virtual d
 
 To expand the deployment, the admin performs the following steps:
 
-*  Sets up Citrix Connectors (at least two) in the cloud resource location and adds the new resource location in the service.
+*  Sets up Citrix Cloud Connectors (at least two) in the cloud resource location and adds the new resource location in the service.
 *  Deploys and configures the SDWAN instances to be able to connect the on-premises data center.
 
 With the service configuration done, the administrator can perform the following to enable access to the virtual machines:
