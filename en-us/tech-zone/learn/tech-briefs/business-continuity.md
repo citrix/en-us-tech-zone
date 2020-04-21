@@ -128,7 +128,7 @@ Because Remote PC Access allows users to connect to their standard Windows PC du
 
 ## Citrix Virtual Desktops service
 
-Customers that want to give users access to their physical machines while not having to manage the underlying Citrix infrastructure, can do so by utilizing the Citrix Virtual Desktops service. This service allows admins to rapidly grant users (who go to the office to work) access to their workstations via Remote PC Access.
+Organizations that want to give users access to their physical machines while not having to manage the underlying Citrix infrastructure, can do so by utilizing the Citrix Virtual Desktops service. This service allows admins to rapidly grant users (who go to the office to work) access to their workstations via Remote PC Access.
 
 The Citrix Virtual Desktops service can provide access to remote workers or temporary workers (3rd party or consultants) to virtual desktops. The virtual machines can be hosted either in the customer’s data center or in a cloud of their choice.
 
@@ -144,7 +144,7 @@ To maintain a user experience similar to the traditional, on-premises model, the
 
 For cloud hosted resources, users need to access files and back end resources from their virtual desktops. Connectivity between the cloud resource location and the data center must be established.
 
-Using Citrix SD-WAN, organizations create a secure tunnel between the cloud of the customer's choice and the on-prem data center. SD-WAN understands the data traversing the tunnel and can properly optimize the traffic to improve application response time and user experience.
+Using Citrix SD-WAN, organizations create a secure tunnel between the cloud of the customer's choice and the on-premises data center. SD-WAN understands the data traversing the tunnel and can properly optimize the traffic to improve application response time and user experience.
 
 ### New Remote PC Access Deployment
 
@@ -157,11 +157,12 @@ The diagram shows how Citrix Virtual Desktops service is deployed with Remote PC
 To add a new deployment, the admin performs the following steps:
 
 *  Creates a Citrix account and subscribes to the Citrix Virtual Desktops service.
-*  Sets up Citrix Connector(s) in the on premises environment.
+*  Sets up Citrix Connectors (atleast 2) in the on-premises environment and adds the new resource location in the service console.
+*  Configures Citrix Gateway service to provide remote access to users.
 
-With a new infrastructure deployed, the administrator can perform the following to enable Remote PC Access:
+With the service configuration done, the administrator can perform the following to enable Remote PC Access:
 
-*  Deploys the Virtual Delivery Agent to physical Windows PCs (Automation Deployment Scripts)
+*  Deploys the Virtual Delivery Agent (VDA) to physical Windows PCs (Automation Deployment Scripts)
 *  Creates a new Remote PC Access catalog
 *  Assigns users to PCs
 
@@ -175,7 +176,18 @@ The diagram shows how Citrix Virtual Desktops service is deployed with virtual d
 
 [![Citrix Virtual Desktops - Expand to Cloud](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-virtual-desktops-conceptual-diagram-expand-to-cloud.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-virtual-desktops-conceptual-diagram-expand-to-cloud.png)
 
-Once deployed, users authenticate to the environment and receive a cloud-hosted managed virtual desktop available from any location and from any device.
+To expand the deployment, the admin performs the following steps:
+
+*  Sets up Citrix Connectors (atleast 2) in the cloud resource location and adds the new resource location in the service.
+*  Deploys and configures the SDWAN instances to be able to connect the on-premises data center.
+
+With the service configuration done, the administrator can perform the following to enable Remote PC Access:
+
+*  Creates a master image (with the required apps and the VDA installed on it) that will be used to clone the virtual machines.
+*  Creates a new virtual machine catalog based on the master image and a delivery group for the catalog.
+*  Assigns users to the delivery group.
+
+Once deployed, users authenticate to the environment and receive a cloud-hosted virtual desktop available from any location and from any device.
 
 ### Results
 
@@ -188,7 +200,7 @@ Once deployed, users authenticate to the environment and receive a cloud-hosted 
 
 ## Citrix Managed Desktops
 
-Customers who want to use cloud to host their business continuity environment can use Citrix Managed Desktops, a Desktop-as-a-Service (DaaS) offering. This deployment option also works when an administrator does not have time to setup or does not want to manage an on-premises Citrix Virtual Apps and Desktops environment.
+Customers who want to exclusively use cloud to host their business continuity environment can use Citrix Managed Desktops, a Desktop-as-a-Service (DaaS) offering. This deployment option also works when an administrator does not have time to setup or does not want to manage an on-premises Citrix Virtual Apps and Desktops environment.
 
 The entire Citrix Managed Desktops environment is hosted in Microsoft Azure. The Citrix Managed Desktops service can be spun up quickly when the business continuity event occurs. With the monthly pay-as-you-go billing (which includes Azure consumption), the environment can be shut down when no longer needed.
 
