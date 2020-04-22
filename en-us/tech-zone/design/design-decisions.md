@@ -9,6 +9,8 @@ Any architectural design effort confronts decisions that need to be made to ensu
 
 [Baseline Policy Design](/en-us/tech-zone/design/design-decisions/baseline-policy-design.html) - Policies provide the basis to configure and fine-tune Citrix Virtual Apps and Desktops environments, allowing organizations to control connection, security and bandwidth settings based on various combinations of users, devices or connection types. Learn about the different decisions related to the baseline policy design.
 
+[Baseline Printing Design](/en-us/tech-zone/design/design-decisions/baseline-printing-design.html) - Citrix Virtual Apps and Desktops supports various printing solutions. It is essential to understand the available technologies and their benefits and limitations to plan and successfully implement the proper printing solution.
+
 [Delivery Model Comparison](/en-us/tech-zone/design/design-decisions/delivery-model-comparison.html) - A Citrix Virtual Apps and Desktops solution can take on many delivery forms. The organization's business objectives help select the right approach as the different models impact the local IT team's management scope. Learn how Citrix Virtual Apps and Desktops management scope changes based on using a locally managed deployment, a cloud service deployment and a cloud managed deployment.
 
 [VDI Model Comparison](/en-us/tech-zone/design/design-decisions/vdi-model-comparison.html) - Selecting the best VDI model starts with properly defining user groups and  aligning the requirements with the capabilities of the VDI models. Learn how different factors plays a role in selecting the correct VDI model for a user group.
