@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: Citrix Virtual Apps and Desktops supports various printing solutions. It is essential to understand the available technologies and their benefits and limitations to plan and successfully implement the proper printing solution.
 ---
 # Baseline Printing Design
 
@@ -34,11 +35,13 @@ The process of creating printers at the start of a Citrix Virtual Apps and Deskt
     -  The user's login performance is a priority, and the Citrix policy "Wait for printers to be created" is enabled.
     -  The user is working from a Windows-based device or thin client.
 
-**Note:** *Other options for provisioning printers into a Citrix session are available, such as:*
-
--  *Active Directory group policy*
--  *"Follow-me" centralized print queue solutions*
--  *Other third-party print management solutions*
+  >**Note:**
+  >
+  >Other options for provisioning printers into a Citrix session are available, such as:
+  >
+  >-  Active Directory group policy
+  >-  "Follow-me" centralized print queue solutions
+  >-  Other third-party print management solutions
 
 ## Decision: Printer Drivers
 
@@ -94,19 +97,19 @@ Citrix bases the recommended option on the network location of the endpoint devi
 
 Configure redundancy when managing network-based printers with a Citrix Universal or Windows print server. Redundancy eliminates the print server being a single point of failure. Define the Citrix Universal Print Server redundancy within a Citrix Policy.
 
-## Experience from the field
-
-A print media company uses thin clients and Windows-based workstations at the company headquarters. The company placed network-based printers throughout the building (one per floor). Windows print servers reside in the data center and manage the network printers. The company hosts the Citrix Virtual Apps and Desktops solution in the data center as well.
-
-A regional office has numerous Windows, Linux, and Mac endpoints with network-attached printers. A remote branch office has a few Windows workstations with locally attached printers.
-
-The print media company applied three different print strategies:
-
--  **Headquarters**  
-    Headquarter users use a Citrix Universal Print Server for printing within the Citrix Virtual Apps and Desktops session. The Windows-based workstations do not require native print drivers. A session printer policy is configured per floor, which connects the floor printer as the default printer. The policies are filtered based on the subnet of the thin client for proximity printing.
-
-    Network staff implemented Quality of Service (QoS) policies. The QoS policies prioritize inbound, and outbound network traffic on ports TCP 1494, and TCP 2598 over all other network traffic. The QoS policies prevent large print jobs from impacting HDX user sessions.
--  **Regional Office**  
-    The regional office deployed a Universal Print Server. The print job uses the Universal Print Driver and is compressed and delivered from the user's session to the Universal Print Server, across the WAN. The print job then routes to the network-attached printer in the office.
--  **Branch Office**  
-    Since all branch users work on Windows-based workstations, branch office users use auto-created client printers with the Citrix Universal Printer Driver. Since the print job routes over ICA, the print data is compressed, which saves bandwidth. The Citrix Universal Printer Driver guarantees the ability to use all client-connected printers within the user's HDX session without concern about the printer model.
+  >## Experience from the field
+  >
+  >A print media company uses thin clients and Windows-based workstations at the company headquarters. The company placed network-based printers throughout the building (one per floor). Windows print servers reside in the data center and manage the network printers. The company hosts the Citrix Virtual Apps and Desktops solution in the data center as well.
+  >
+  >A regional office has numerous Windows, Linux, and Mac endpoints with network-attached printers. A remote branch office has a few Windows workstations with locally attached printers.
+  >
+  >The print media company applied three different print strategies:
+  >
+  >-  **Headquarters**  
+  >    Headquarter users use a Citrix Universal Print Server for printing within the Citrix Virtual Apps and Desktops session. The Windows-based workstations do not require native print drivers. A session printer policy is configured per floor, which connects the floor printer as the default printer. The policies are filtered based on the subnet of the thin client for proximity printing.
+  >
+  >    Network staff implemented Quality of Service (QoS) policies. The QoS policies prioritize inbound, and outbound network traffic on ports TCP 1494, and TCP 2598 over all other network traffic. The QoS policies prevent large print jobs from impacting HDX user sessions.
+  >-  **Regional Office**  
+  >    The regional office deployed a Universal Print Server. The print job uses the Universal Print Driver and is compressed and delivered from the user's session to the Universal Print Server, across the WAN. The print job then routes to the network-attached printer in the office.
+  >-  **Branch Office**  
+  >    Since all branch users work on Windows-based workstations, branch office users use auto-created client printers with the Citrix Universal Printer Driver. Since the print job routes over ICA, the print data is compressed, which saves bandwidth. The Citrix Universal Printer Driver guarantees the ability to use all client-connected printers within the user's HDX session without concern about the printer model.
