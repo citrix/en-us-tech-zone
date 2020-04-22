@@ -114,7 +114,6 @@ The following are general steps that should be taken first to ensure a high scor
         -  TLS1.3-AES256-GCM-SHA384
         -  TLS1.2-ECDHE-ECDSA-AES256-SHA384
         -  TLS1.2-ECDHE-ECDSA-AES256-GCM-SHA384
-        -  TLS1-ECDHE-ECDSA-AES256-SHA
         -  TLS1.2-DHE-RSA-AES256-GCM-SHA384
         -  TLS1.2-ECDHE-ECDSA-AES128-GCM-SHA256
         -  TLS1.2-ECDHE-RSA-CHACHA20-POLY1305
@@ -189,8 +188,6 @@ bind ssl cipher New_APlus_CipherGroup -cipherName TLS1.3-AES256-GCM-SHA384
 bind ssl cipher New_APlus_CipherGroup -cipherName TLS1.2-ECDHE-ECDSA-AES256-SHA384
 
 bind ssl cipher New_APlus_CipherGroup -cipherName TLS1.2-ECDHE-ECDSA-AES256-GCM-SHA384
-
-bind ssl cipher New_APlus_CipherGroup -cipherName TLS1-ECDHE-ECDSA-AES256-SHA
 
 bind ssl cipher New_APlus_CipherGroup -cipherName TLS1.2-DHE-RSA-AES256-GCM-SHA384
 
