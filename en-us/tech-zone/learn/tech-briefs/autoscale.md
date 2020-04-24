@@ -52,6 +52,8 @@ Working hours (for example 9 AM to 5 PM on weekdays) generally would need to hav
 
 After working hours are over (at 5 PM in our example) users start to log off. Admins want to shut down nused hosts. Around 6 PM Autoscale start powering off hosts and only the number of hosts required for off-peak use are left powered on. This results in drastically reducing the cloud consumption cost, as opposed to running the entire inventory of hosts 24/7. Citrix offers the admins the flexibility to define these hours with a granularity of 30 minutes. For multi-session delivery groups, admins can set the minimum number of running hosts separately for each half-hour of the day. For pooled single session delivery groups, admins can set the minimum number of running hosts separately for each hour of the day. Admins can set the working hours individually for different days.
 
+**Note:** Schedule based-scaling does not apply to static single session delivery groups as the user connects to a particular machine. Having other machines booted up at specific times does not help, except if a user is trying to login the very first time.
+
 ### Load-based Scaling
 
 Load-based scaling lets admins create a capacity buffer of machines in case they are needed to host sessions. The capacity buffer is a safety net to support unexpected increases in usage without negatively impacting the user experience. Ascertaining the right value for the capacity buffer (as a percentage of the pool capacity), is based on usage and the understanding the load variance in the customer environment. For a delivery group, if the total session capacity is 100, and the admin defines capacity buffer as 10% then during peak times, the number of machines needed to keep spare capacity above 10 sessions are powered on.
@@ -59,6 +61,8 @@ Load-based scaling lets admins create a capacity buffer of machines in case they
 As users log in, the available capacity of the delivery group depletes. When it falls below the capacity buffer value, another machine in the pool is started to bring the capacity buffer back above the defined value. On the other side, when users start logging off, the machines with the least load are put in drain mode. Once the machines are clear of sessions, the machines are shut down until the pool capacity reduces to the set capacity buffer value.
 
 [![Autoscale - Savings illustration](/en-us/tech-zone/learn/media/tech-briefs_autoscale_2-savings-illustration.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_2-savings-illustration.png)
+
+**Note:** Load based scaling is not available with single session desktop delivery groups as the load on each machine is either zero or full, based on whether the machine has a session running on it or not. Therefore when the capacity buffer is set for a single session delivery group it is based on the number of machines in the delivery group.
 
 ### Drain mode
 
