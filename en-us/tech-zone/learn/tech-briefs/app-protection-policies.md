@@ -22,13 +22,13 @@ With encryption, the app protection’s anti-keylogging garbles the text the use
 
 App protection policies are active not only for published applications and desktops, but for Citrix Workspace authentication dialogs as well. Your Citrix Workspace is protected from the moment when your users open the first authentication dialog.
 
-[![App_protection_policies_Anti_Keylogging](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_1-anti-keylogging-ss.png)](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_1-anti-keylogging-ss.png)
+[![Citrix App protection policies anti keylogging](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_anti-keylogging.gif)](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_anti-keylogging.gif)
 
 ## Anti screen capture
 
 Anti screen capture prevents an app from attempting to take a screenshot of or a recording of the screen within a virtual app or desktop session. The screen capture software would be unable to detect content within the capture region. The area selected by the app is grayed out or the app captures nothing instead of the screen section that it expects to copy. The anti screen capture feature applies to snip and sketch, snipping tool, Shift+Ctrl+Print Screen on Windows.
 
-[![App_protection_policies_Anti_screen_capture](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_2-anti-screen-capture-ss.png)](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_2-anti-screen-capture-ss.png)
+[![Citrix App protection policies anti screen capture](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_2-anti-screen-capture-ss.png)](/en-us/tech-zone/learn/media/tech-briefs_app-protection-policies_2-anti-screen-capture-ss.png)
 
 The protection extends to files from [Citrix Files](/en-us/mobile-productivity-apps/citrix-files.html) or any other connectors like Google Drive or Microsoft OneDrive that are accessed from within Citrix Workspace app. The apps are protected from screen scrapers, as are all the microapps and their notifications from within Workspace.
 
