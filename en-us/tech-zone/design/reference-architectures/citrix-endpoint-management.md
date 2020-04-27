@@ -52,7 +52,7 @@ With this integration, Citrix Endpoint Management (CEM) can push device-complian
 
 ### Conceptual Architecture
 
-[![Citrix-Endpoint-Management-Image-1](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_001.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_001.png)
+[![Citrix-Endpoint-Management-Image-1](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_001.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_001.png)
 
 ### Benefits of CEM Integration with EMS/Intune
 
@@ -62,7 +62,7 @@ CEM brings the value of Citrix Endpoint micro-VPN to Microsoft Intune aware apps
 
 IT can manage and deliver Office 365 apps, line-of-business apps, and Citrix Secure Mail in one container for ultimate security and user productivity. Micro-VPN brings the remote access capabilities of the market-leading Citrix Gateway to mobile devices via apps integrated with the CEM/XenMobile SDK. It is an on-demand application VPN connection that is initiated by Secure Hub on mobile devices to access corporate network sites or resources.
 
-[![Citrix-Endpoint-Management-Image-2](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_002.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_002.png)
+[![Citrix-Endpoint-Management-Image-2](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_002.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_002.png)
 
 ### Sample use-cases for CEM Integration with Intune
 
@@ -80,23 +80,23 @@ We'll review the three key integration scenarios:
 
 The recommended deployment model, which brings together all the key benefits into a single solution. It provides an excellent admin experience due to access to Microsoft Graph APIs within the Citrix console. All Citrix apps are Intune Enlightened and hence may share data securely within a single container with DLP. It also includes all the Micro-VPN value-adds, and it provides an excellent user experience. This model leverages comprehensive Citrix Unified Endpoint Management with Intune MAM for Office 365 apps as well as Secure Mail.
 
-[![Citrix-Endpoint-Management-Image-3](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_003.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_003.png)
+[![Citrix-Endpoint-Management-Image-3](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_003.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_003.png)
 
 ### Intune MDM + Intune MAM + mVPN SDK
 
 This deployment model may be a popular scenario for existing Microsoft EMS customers that are utilizing Intune as MDM (devices enrolled). Citrix Endpoint Management with Micro VPN provides value-add in several areas, including enlightened ShareFile, SecureMail, Microsoft Managed Intune Browser with XenMobile SDK, Citrix Gateway NAC, and the CEM integration with Intune EMS wizard to facilitate Intune configuration. Moreover, no re-enrollment is required; hence it adds value instantly.
 
-[![Citrix-Endpoint-Management-Image-4](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_004.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_004.png)
+[![Citrix-Endpoint-Management-Image-4](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_004.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_004.png)
 
 ### Intune MAM Only + mVPN SDK
 
 This deployment model provides excellent value for Intune customers who find MDM enrollment intrusive and may use third-party VPN solutions to access corporate resources behind the firewall. However, the downside of third-party VPN solutions is that they increase maintenance, can be inconsistent, require expensive infrastructure, licensing, and operational costs. Moreover, the device VPN solutions, as well as per-app VPN solutions, generally aren't as efficient for mobile devices and cause battery drain. On the other hand, the Citrix proprietary micro-VPN is clientless, and the Citrix Gateway configuration well drives it. Now Intune customers using Microsoft Managed Intune browsers (with or without Intune MDM) can leverage the Citrix micro-VPN to access Intranet resources.
 
-[![Citrix-Endpoint-Management-Image-5](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_005.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_005.png)
+[![Citrix-Endpoint-Management-Image-5](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_005.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_005.png)
 
 No device enrollment or device level VPN is required. Citrix is the only vendor to provide micro-VPN for Intune apps or Intune wrapped apps without MDM enrollment or use of legacy device VPN clients.
 
-[![Citrix-Endpoint-Management-Image-6](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_006.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_006.png)
+[![Citrix-Endpoint-Management-Image-6](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_006.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_006.png)
 
 This deployment model is for customers who are looking to utilize dual MAM containers for both Intune and Citrix wrapped applications. MDM and MAM with Micro VPN provide value-add in several areas, including Content Collaboration, SecureMail, Microsoft Managed Intune Browser with XenMobile SDK, Citrix Gateway NAC. The CEM integration with Intune EMS wizards to facilitate Intune configuration, and it is essential that the SecureMail defaults to Citrix MAM container.
 
@@ -152,7 +152,7 @@ With the increased need for Android devices in the enterprise world and its grow
 
 ### Reference Architecture for Android Enterprise with Citrix Endpoint Management
 
-[![Citrix-Endpoint-Management-Image-7](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_007.png)](/en-us/tech-zone/design/media/reference-architectures_Citrix-Endpoint-Management_007.png)
+[![Citrix-Endpoint-Management-Image-7](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_007.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-endpoint-management_007.png)
 
 To enroll a new customer through the EMM console, you need to create an enterprise. In an Android enterprise deployment, an enterprise maintains control over various aspects of user devices, such as isolating work-related information from users' personal data, pre-configuring approved apps for the environment, or disabling device capabilities (for example, the camera). Refer to the [Google documentation](https://developer.android.com/work/dpc/build-dpc).
 
