@@ -191,3 +191,27 @@ In addition to the Work Managed options above, the BYOD method is popular for wo
 | Existing  Site NOT setup with Android Enterprise  | Legacy  (device administrator)                   | Sites  without Android Enterprise setup will default to Legacy (device  administrator). Recommendation: Setup Android Enterprise and plan migration |
 
 Android Enterprise includes support for fully managed and work profile device modes. The Google publication, [Android Enterprise Migration Bluebook](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf), explains in detail about how legacy device administration and Android Enterprise differ. We recommend that you read the migration approach from Google. Also, refer to the [Android Enterprise Solution Directory ](https://androidenterprisepartners.withgoogle.com/devices/)for a list of Android-recommended devices that meet the elevated enterprise requirements. And for more information, visit [Citrix’s Android Enterprise product page](https://www.citrix.com/products/citrix-endpoint-management/android-mdm.html).
+
+### Sources
+
+The goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [source diagrams](https://citrix.sharefile.com/xxxxx).
+
+### References
+
+[Reference Architecture for On-Premises Deployments](https://docs.citrix.com/en-us/xenmobile/server/advanced-concepts/xenmobile-deployment/reference-architecture-on-prem.html)
+
+[Core Reference Architectures of CEM](https://docs.citrix.com/en-us/citrix-endpoint-management/about.html#architecture)
+
+[CEM Product Document for EMS/Intune Integration](https://docs.citrix.com/en-us/citrix-endpoint-management/integration-intune-ems.html)
+
+[Get Started with Intune Integration](https://docs.citrix.com/en-us/citrix-endpoint-management/downloads/integration-intune-ems-getting-started-guide.pdf)
+
+[Android Enterprise Google Guide](https://developers.google.com/android/work/overview)
+
+[Google document on build DPC](https://developer.android.com/work/dpc/build-dpc)
+
+[Android Enterprise Migration Bluebook](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)
+
+[Android Enterprise Solution Directory ](https://androidenterprisepartners.withgoogle.com/devices/)
+
+[Citrix’s Android Enterprise product document](https://www.citrix.com/products/citrix-endpoint-management/android-mdm.html)
