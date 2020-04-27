@@ -7,7 +7,7 @@ layout: doc
 
 **Author:** [Vivekananthan Devaraj](mailto:Vivekananthan.Devaraj@Citrix.com)
 
-**Special thanks:** [David Egan](mailto:davidp.egan@Citrix.com), [Chetan Thakker](mailto:chetan.thakker@citrix.com), and [Vikas Nambiar](mailto:vikas.nambiar@citrix.com)
+**Special thanks:** [David Egan](https://twitter.com/davidpegan), [Chetan Thakker](mailto:chetan.thakker@citrix.com), and [Vikas Nambiar](mailto:vikas.nambiar@citrix.com)
 
 ## Citrix Endpoint Management Overview
 
