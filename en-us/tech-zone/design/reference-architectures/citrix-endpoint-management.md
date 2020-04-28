@@ -195,7 +195,7 @@ Android Enterprise includes support for fully managed and work profile device mo
 
 ### Sources
 
-The goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [source diagrams](https://citrix.sharefile.com/xxxxx).
+The goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [source diagrams](https://citrix.sharefile.com/d-s00fae3bac694bca9).
 
 ### References
 
