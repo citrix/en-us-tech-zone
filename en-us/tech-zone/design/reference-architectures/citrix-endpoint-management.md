@@ -38,6 +38,7 @@ Microsoft EMS is licensed through several Microsoft offerings with different set
 The purpose of the integration between both of the products is to deliver applications securely to any device. Integration with Microsoft Intune/EMS is a feature of Citrix Endpoint Management Service that adds value to Microsoft EMS + Intune by providing secure access to on-premises resources for Intune and EMS-enabled apps, such as Office365 and other line-of-business apps. It also provides security and productivity benefits to Intune and Citrix Endpoint Management customers.
 
 Mobile app deployment for enterprise organizations contains the following:
+
 *  Office 365 apps
 *  Other native mobile apps
 *  Custom-built apps hosted on-premises
@@ -162,7 +163,7 @@ Once the integration is set-up, Citrix Endpoint Management and managed Google Pl
 
 An admin uses the EMM console to perform a range of tasks, including configuring device settings and apps. The DPC, Secure Hub, creates and manages the work profile on the device on which it is installed. The work profile encrypts work-related information and keeps it separate from users' personal apps and data. Before creating the work profile, the DPC can also provision a managed Google Play Account for use on the device.
 
-In Android Enterprise for work profile or fully managed devices, users receive their apps via the Managed Google Play Store. EMM Admins approve public apps for use and can also add private apps on the Managed Google Play Store. The OrgID binding with Citrix Endpoint Management controls visibility of the private apps, which are approved through Managed Google Play store, for devices enrolled with that organization. 
+In Android Enterprise for work profile or fully managed devices, users receive their apps via the Managed Google Play Store. EMM Admins approve public apps for use and can also add private apps on the Managed Google Play Store. The OrgID binding with Citrix Endpoint Management controls visibility of the private apps, which are approved through Managed Google Play store, for devices enrolled with that organization.
 
 The Secure Hub applies the device policies as set by an admin to meet an organization's requirements and constraints. For example, security policy might require that device lock after a certain number of failed password attempts. The DPC queries the EMM console for current policies then applies the policies
 
@@ -182,7 +183,7 @@ The Secure Hub applies the device policies as set by an admin to meet an organiz
 
 In addition to the Work Managed options above, the BYOD method is popular for workers using a personally owned device. With this method, IT manages the business data (the Android work profile), leaving all the personal data and applications private. In other words, IT only has visibility and control of the work applications and nothing else. With this method, there is no device management, only mobile application management (MAM).
 
-**Migrate from device administration to Android Enterprise**
+### Migrate from device administration to Android Enterprise
 
 | Site  Details                                     | Default  Enrollment Profile                      | Comments/Recommendation                                      |
 | ------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------ |
@@ -190,7 +191,7 @@ In addition to the Work Managed options above, the BYOD method is popular for wo
 | Existing  Site with Android Enterprise (AE) setup | Android  Enterprise – Fully Managed/Work Profile | Any sites with AE  configured will default to Android Enterprise.   Recommendation:   a) If the site is AE  with no Device Admin enrollment – no change required   b)If  the site has Device Admin mode enrollment – make sure to update the  Enrollment Profile for those devices to point to Legacy (device  administrator) |
 | Existing  Site NOT setup with Android Enterprise  | Legacy  (device administrator)                   | Sites  without Android Enterprise setup will default to Legacy (device  administrator). Recommendation: Setup Android Enterprise and plan migration |
 
-Android Enterprise includes support for fully managed and work profile device modes. The Google publication, [Android Enterprise Migration Bluebook](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf), explains in detail about how legacy device administration and Android Enterprise differ. We recommend that you read the migration approach from Google. Also, refer to the [Android Enterprise Solution Directory ](https://androidenterprisepartners.withgoogle.com/devices/)for a list of Android-recommended devices that meet the elevated enterprise requirements. And for more information, visit [Citrix’s Android Enterprise product page](https://www.citrix.com/products/citrix-endpoint-management/android-mdm.html).
+Android Enterprise includes support for fully managed and work profile device modes. The Google publication, [Android Enterprise Migration Bluebook](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf), explains in detail about how legacy device administration and Android Enterprise differ. We recommend that you read the migration approach from Google. Also, refer to the [Android Enterprise Solution Directory](https://androidenterprisepartners.withgoogle.com/devices/)for a list of Android-recommended devices that meet the elevated enterprise requirements. And for more information, visit [Citrix’s Android Enterprise product page](https://www.citrix.com/products/citrix-endpoint-management/android-mdm.html).
 
 ### Sources
 
@@ -212,6 +213,6 @@ The goal of this reference architecture is to assist you with planning your own 
 
 [Android Enterprise Migration Bluebook](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)
 
-[Android Enterprise Solution Directory ](https://androidenterprisepartners.withgoogle.com/devices/)
+[Android Enterprise Solution Directory](https://androidenterprisepartners.withgoogle.com/devices/)
 
 [Citrix’s Android Enterprise product document](https://www.citrix.com/products/citrix-endpoint-management/android-mdm.html)
