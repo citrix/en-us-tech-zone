@@ -15,9 +15,9 @@ Citrix Endpoint Management simplifies device and app management with a comprehen
 
 Citrix Endpoint Management has Mobile Device Management (MDM) and Mobile App Management (MAM) features. MDM features of Endpoint Management allow admins to deploy device policies and apps, retrieve asset inventories, and carry out actions on devices, such as a device wipe. MAM features of Endpoint Management allow securing the apps and data on Bring Your Own mobile devices, delivering mobile enterprise apps, locking apps, and wiping app data.
 
-Refer to the [Citrix documentation](https://docs.citrix.com/en-us/xenmobile/server/advanced-concepts/xenmobile-deployment/reference-architecture-on-prem.html), which illustrates the reference architectures for the Endpoint Management deployment, formerly known as XenMobile. The deployment scenarios include MDM-only, MAM-only, and MDM+MAM as the core architectures.
+Refer to the [Citrix documentation](/en-us/xenmobile/server/advanced-concepts/xenmobile-deployment/reference-architecture-on-prem.html), which illustrates the reference architectures for the Endpoint Management deployment, formerly known as XenMobile. The deployment scenarios include MDM-only, MAM-only, and MDM+MAM as the core architectures.
 
-Refer to the [Product documentation](https://docs.citrix.com/en-us/citrix-endpoint-management/about.html#architecture), which illustrates the Endpoint Management components and comprehensive reference architecture diagrams with communication flow. It also covers the core reference architecture, integration with Citrix Virtual Apps and Desktops, Endpoint Management connector for Exchange ActiveSync, and Citrix Gateway Connector for Exchange ActiveSync.
+Refer to the [Product documentation](/en-us/citrix-endpoint-management/about.html#architecture), which illustrates the Endpoint Management components and comprehensive reference architecture diagrams with communication flow. It also covers the core reference architecture, integration with Citrix Virtual Apps and Desktops, Endpoint Management connector for Exchange ActiveSync, and Citrix Gateway Connector for Exchange ActiveSync.
 
 ## Microsoft EMS Overview
 
@@ -103,7 +103,7 @@ This deployment model is for customers who are looking to utilize dual MAM conta
 
 ### Getting Started with integration
 
-Refer to the [Citrix documentation](https://docs.citrix.com/en-us/citrix-endpoint-management/integration-intune-ems.html) for system requirements and pre-requisites to prepare the integration. Also, refer to this [guide](https://docs.citrix.com/en-us/citrix-endpoint-management/downloads/integration-intune-ems-getting-started-guide.pdf), which walks you through how to set up Citrix Endpoint Management integration with Microsoft Intune/EMS so you can deliver apps securely from Azure to any device.
+Refer to the [Citrix documentation](/en-us/citrix-endpoint-management/integration-intune-ems.html) for system requirements and pre-requisites to prepare the integration. Also, refer to this [guide](/en-us/citrix-endpoint-management/downloads/integration-intune-ems-getting-started-guide.pdf), which walks you through how to set up Citrix Endpoint Management integration with Microsoft Intune/EMS so you can deliver apps securely from Azure to any device.
 
 ### Summary of Intune Integration
 
@@ -191,7 +191,7 @@ In addition to the Work Managed options above, the BYOD method is popular for wo
 | Existing Site with Android Enterprise (AE) setup | Android Enterprise – Fully Managed/Work Profile | Any sites with AE configured defaults to Android Enterprise.   Recommendation:   a) If the site is AE with no Device Admin enrollment – no change required b) If  the site has Device Admin mode enrollment – make sure to update the Enrollment Profile for those devices to point to Legacy (device administrator) |
 | Existing Site NOT setup with Android Enterprise  | Legacy (device administrator)                   | Sites without an Android Enterprise setup will default to Legacy (device  administrator). Recommendation: Set up Android Enterprise and plan migration |
 
-Android Enterprise includes support for fully managed and work profile device modes. The Google publication, [Android Enterprise Migration Bluebook](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf), explains in detail about how legacy device administration and Android Enterprise differ. We recommend that you read the migration approach from Google. Also, refer to the [Android Enterprise Solution Directory](https://androidenterprisepartners.withgoogle.com/devices/) for a list of Android-recommended devices that meet the elevated enterprise requirements. And for more information, visit [Citrix’s Android Enterprise product page](https://www.citrix.com/products/citrix-endpoint-management/android-mdm.html).
+Android Enterprise includes support for fully managed and work profile device modes. The Google publication, [Android Enterprise Migration Bluebook](https://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf), explains in detail about how legacy device administration and Android Enterprise differ. We recommend that you read the migration approach from Google. Also, refer to the [Android Enterprise Solution Directory](https://androidenterprisepartners.withgoogle.com/devices/) for a list of Android-recommended devices that meet the elevated enterprise requirements. And for more information, visit [Citrix’s Android Enterprise product page](https://www.citrix.com/products/citrix-endpoint-management/android-mdm.html).
 
 ### Sources
 
@@ -199,19 +199,19 @@ The goal of this reference architecture is to assist you with planning your own 
 
 ### References
 
-[Reference Architecture for On-Premises Deployments](https://docs.citrix.com/en-us/xenmobile/server/advanced-concepts/xenmobile-deployment/reference-architecture-on-prem.html)
+[Reference Architecture for On-Premises Deployments](/en-us/xenmobile/server/advanced-concepts/xenmobile-deployment/reference-architecture-on-prem.html)
 
-[Core Reference Architectures of CEM](https://docs.citrix.com/en-us/citrix-endpoint-management/about.html#architecture)
+[Core Reference Architectures of CEM](/en-us/citrix-endpoint-management/about.html#architecture)
 
-[CEM Product Document for EMS/Intune Integration](https://docs.citrix.com/en-us/citrix-endpoint-management/integration-intune-ems.html)
+[CEM Product Document for EMS/Intune Integration](/en-us/citrix-endpoint-management/integration-intune-ems.html)
 
-[Get Started with Intune Integration](https://docs.citrix.com/en-us/citrix-endpoint-management/downloads/integration-intune-ems-getting-started-guide.pdf)
+[Get Started with Intune Integration](/en-us/citrix-endpoint-management/downloads/integration-intune-ems-getting-started-guide.pdf)
 
 [Android Enterprise Google Guide](https://developers.google.com/android/work/overview)
 
 [Google document on build DPC](https://developer.android.com/work/dpc/build-dpc)
 
-[Android Enterprise Migration Bluebook](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)
+[Android Enterprise Migration Bluebook](https://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)
 
 [Android Enterprise Solution Directory](https://androidenterprisepartners.withgoogle.com/devices/)
 
