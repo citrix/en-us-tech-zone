@@ -2,9 +2,9 @@
 layout: doc
 description: Native mobile app single sign-on for iOS and Android SaaS applications.
 ---
-# Mobile SSO
+# Mobile SSO Technical Preview
 
-## Contributors
+## Contributors 
 
 **Author:** [Frank Srp](https://twitter.com/UEMSRP)
 
