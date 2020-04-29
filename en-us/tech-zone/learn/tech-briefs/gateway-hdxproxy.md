@@ -55,6 +55,10 @@ Citrix Cloud Connector runs on Windows Server instances hosted in Resource Locat
 
 Built on the code that evolved with the Citrix Gateway appliance over more than a decade, while used by the largest companies in the world, the Citrix Gateway service is an integral part of Citrix Cloud services to provide secure remote access. It relies on Citrix Intelligent Traffic Management (ITM) service to direct clients to the closest global Citrix Gateway service POP where it coordinates secure connectivity between Citrix Workspace clients and virtualization resources to deliver the lowest latency sessions with the best possible user experience.
 
+### Rendezvous protocol
+
+Each Cloud Connector supports a limit of 1,000 concurrent sessions, and while adding more connectors grows capacity Citrix provides a more efficient solution to scale. [Rendezvous protocol](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html) enables HDX sessions to be setup, through secure TLS transport, directly from the VDA to the Gateway service without going through the Cloud Connector first. It is available in Citrix Virtual Apps and Desktops release 1912+ and can be enabled through a Citrix Policy setting. If the Rendezvous protocol is enabled and it cannot reach Gateway service for any reason, it will fall back to proxying traffic through the Cloud Connector.
+
 ### Citrix Intelligent Traffic Management (ITM) service
 
 The Citrix Gateway service uses the Citrix Intelligent Traffic Management (ITM) service to help provide fast and reliable sessions. Developed to use a broad set of monitor sources and robust algorithms Citrix ITM directs workspace users from anywhere in the world to their nearest Citrix POP to help deliver the most efficient and reliable sessions possible.
@@ -102,7 +106,7 @@ Citrix Gateway service simplifies the requirements to access On-Premises Virtual
 
 ## Session Connectivity
 
-Users’ endpoints and their on-premises hosted resources VDAs are connected to their nearest respective POPs via Citrix Cloud Connectors. Subsequently when a user selects a virtual app or desktop to launch from their Workspace app the nearest POP hosting that connection identifies the pertinent Resource Location and directs it to establish a Citrix Cloud Connector session to that POP forming an end-to-end connection and subsequently a virtual session is established.
+A user selects a virtual app or desktop, from their Workspace, and their endpoint receives a launch ticket. It is directed to connect to Gateway service which, in turn, contacts the VDA. The VDA established a direct TLS connection back to the requesting Gateway, or utilizes Cloud Connector if it has any connectivity issues. Then Gateway establishes a connection between the endpoint and the VDA.
 
 *  Sessions are linked via Citrix Gateway service across cloud partner’s WANs
 *  VDAs and Workspace endpoints rendezvous at the Citrix POP closest to the user
