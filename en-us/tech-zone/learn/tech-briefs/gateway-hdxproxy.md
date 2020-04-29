@@ -57,7 +57,7 @@ Built on the code that evolved with the Citrix Gateway appliance over more than 
 
 ### Rendezvous protocol
 
-Each Cloud Connector supports a limit of 1,000 concurrent sessions, and while adding more connectors grows capacity Citrix provides a more efficient solution to scale. [Rendezvous protocol](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html) enables HDX sessions to be setup, through secure TLS transport, directly from the VDA to the Gateway service without going through the Cloud Connector first. It is available in Citrix Virtual Apps and Desktops release 1912+ and can be enabled through a Citrix Policy setting. If the Rendezvous protocol is enabled and it cannot reach Gateway service for any reason, it will fall back to proxying traffic through the Cloud Connector.
+Each Cloud Connector supports a limit of 1,000 concurrent sessions, and while adding more connectors grows capacity Citrix provides a more efficient solution to scale. [Rendezvous protocol](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html) enables HDX sessions to be setup, through secure TLS transport, directly from the VDA to the Gateway service without going through the Cloud Connector first. It is available in Citrix Virtual Apps and Desktops release 1912+ and can be enabled through a Citrix Policy setting. If the Rendezvous protocol is enabled and it cannot reach Gateway service for any reason, it will fall back to proxying traffic through the Cloud Connector.
 
 ### Citrix Intelligent Traffic Management (ITM) service
 
