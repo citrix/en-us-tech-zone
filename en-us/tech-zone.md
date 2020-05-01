@@ -77,6 +77,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Mobile SSO](/en-us/tech-zone/learn/tech-insights/mobile-sso.html) - Single sign-on to native mobile applications via Citrix Gateway.
 
+### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
+
+[Citrix Endpoint Management with Microsoft EMS/Intune and Android Enterprise Integration](/en-us/tech-zone/design/reference-architectures/citrix-endpoint-management.html) - Learn about the architecture and integration with Microsoft EMS/Intune and Android Enterprise to deliver applications securely to any device and how it enables security and productivity benefits for both Microsoft EMS/Intune and Citrix customers.
+
 ## Citrix Managed Desktops
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
