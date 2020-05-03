@@ -106,7 +106,7 @@ Citrix Gateway service simplifies the requirements to access On-Premises Virtual
 
 ## Session Connectivity
 
-A user selects a virtual app or desktop, from their Workspace, and their endpoint receives a launch ticket. It is directed to connect to Gateway service which, in turn, contacts the VDA. The VDA established a direct TLS connection back to the requesting Gateway, or utilizes Cloud Connector if it has any connectivity issues. Then Gateway establishes a connection between the endpoint and the VDA.
+A user selects a virtual app or desktop, from their Workspace, and their endpoint receives a launch ticket. It is directed to connect to Gateway service which, in turn, contacts the VDA. If configured to use the Rendezvous protocl the VDA will establish a TLS connection directly back to the requesting Gateway, otherwise it will use Cloud Connector. Then Gateway establishes the end-to-end session between the endpoint and the VDA.
 
 *  Sessions are linked via Citrix Gateway service across cloud partner’s WANs
 *  VDAs and Workspace endpoints rendezvous at the Citrix POP closest to the user
