@@ -53,7 +53,7 @@ Citrix Cloud Connector runs on Windows Server instances hosted in Resource Locat
 
 ### Citrix Gateway service
 
-Built on the code that evolved with the Citrix Gateway appliance over more than a decade, while used by the largest companies in the world, the Citrix Gateway service is an integral part of Citrix Cloud services to provide secure remote access. It relies on Citrix Intelligent Traffic Management (ITM) service to direct clients to the closest global Citrix Gateway service POP where it coordinates secure connectivity between Citrix Workspace clients and virtualization resources to deliver the lowest latency sessions with the best possible user experience.
+Built on the code that evolved with the Citrix Gateway appliance over more than a decade, while used by the largest companies in the world, the Citrix Gateway service is an integral part of Citrix Cloud services to provide secure remote access. It relies on Citrix Intelligent Traffic Management (ITM) service to direct clients to the closest global Citrix Gateway service POP where it coordinates secure connectivity between Citrix Workspace clients and virtualization resources to deliver sessions with the lowest latency and the best user experience possible.
 
 ### Rendezvous protocol
 
