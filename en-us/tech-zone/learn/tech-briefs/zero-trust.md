@@ -76,6 +76,7 @@ Ongoing authentication and authorization of trusted users is paramount to Zero T
 •	Monitoring
 •	Validating user trustworthiness
 Identity encompasses the use of technologies like Identity, Credential, and Access Management. Identity is the set of users of and attributes developed by the enterprise. The users and attributes form the basis for policies for resource access. User identities can include a mix of logical identity, biometric data, and behavior characteristics. Use identity attributes such as time and geolocation to derive trust scores. 
+
 Devices 
 Organizations need a consistent way of managing policies across devices and ownership models. Administrators need to be able to determine what level of confidence they can have in the device. Devices are one part of the “Where” question. Where is the request coming from and what is the device risk level? Real-time security posture and trustworthiness of devices are foundational attributes of the Zero Trust approach. 
 Traditionally, when looking at endpoint devices, there are three popular ownership models (corporate owned, BYOD/CYOD, COPE), each with differing inherent trust, trust factors and need for validation. With Zero Trust, that inherent trust is eliminated, and every device, regardless of ownership requires validation.
@@ -84,6 +85,7 @@ Network
 A Zero Trust Architecture focuses on protecting resources, not network segments. The network location of the user, device, or resource is no longer seen as the prime component of the security posture. However, the ability to segment, isolate, and control the network remains a pillar of security and essential for a Zero Trust network. And the ability to select the appropriate app and workspace delivery model is the second part of the “Where” question.
 Zero Trust networks are sometimes described as “perimeter-less”. Some argue that perimeter protections are becoming less important for networks, workflows, tools, and operations. In reality, the perimeter is still a there, but in a much more granular way. Zero Trust networks actually attempt to move perimeters in from the network edge and create segments to isolate critical data from other data. The perimeter must move closer to the data, in concert with micro-segmentation, to strengthen protections and controls. Hence the reason why the traditional castle and moat approach is not sufficient. 
 Network security is expanding as organizations grow their networks. During transitions to Software Defined Networks, SD-WANs, and internet-based technologies, it’s critical to consider how to:
+
 1.	Control privileged network access
 2.	Manage internal and external data flows
 3.	Prevent lateral movement in the network
@@ -106,6 +108,8 @@ Analytics data can either be analyzed separately or combined with other security
 
 Conceptual Architecture 
 In moving from a boundary, perimeter-based security model to a resource based one, Citrix Workspace uses a holistic context-aware VPN-less approach.
+
+## Image
 
 Citrix Workspace acts as the enforcement point to control access to applications and data. Access starts with a “default deny” instead of building on inherent trust. Access is only granted after verifying an entity by user and device credentials and other factors, including time, location, and device posture. Citrix Zero Trust mitigates the complexity around these factors by removing assumed trust and confirming it every step of the way.
 
@@ -149,6 +153,13 @@ Rules are configured to trigger specific actions on user accounts by continuousl
 
 Security admins can re-enable access once user risk levels are lower than acceptable levels. These capabilities are triggered based on contextual factors during the time of logon or on a continuous basis based on triggers from Citrix Security Analytics. It continuously monitors events and risk indicators from Citrix services and third-party security solutions such as Azure AD protection from Microsoft.
 
+## Image 
+## Conclusion
+
+Traditional security models assume all data and transactions are trusted. Incidents such as compromises, loss of data, malicious actors, or uncharacteristic user behavior would degrade that trust. Zero Trust flips the trust calculation by assuming all data and transactions are untrusted from the outset. 
+For organizations, the promise of Zero Trust and mitigating excessive access has been a goal for many years. But its implementation has been elusive. All necessary elements have been inordinately difficult to construct and manage as an end-to-end security solution. These include multifactor authentication (MFA), dynamic identity management, endpoint analysis, encryption, information rights management (IRM), application-specific networking, and data usage policies.
+
+Using Citrix Workspace, customers don’t need to deploy third-party products for SSO, MFA, SSL VPN, web proxies, and browser isolation. With Workspace, VPN-less access to sensitive resources is secured not only by providing access policies at the time of authentication, but throughout the session. Access is secured across all types of applications and resources deployed anywhere on a cloud, on premises, or in a hybrid deployment model. 
 
 
 ## Contributors
