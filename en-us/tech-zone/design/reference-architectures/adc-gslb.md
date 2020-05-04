@@ -8,7 +8,7 @@ description: Learn the architecture and deployment considerations for Global Ser
 
 **Author:** [Rajendra Soebhag](mailto:rajendra.soebhag@citrix.com) and [Albert Lee](mailto:albert.leej@Citrix.com)
 
-**Special thanks:** [Brendan Lin](mailto:brendan.lin@citrix.com) and [Sarah Steinhoff](sarah.steinhoff@citrix.com)
+**Special thanks:** [Brendan Lin](mailto:brendan.lin@citrix.com) and [Sarah Steinhoff](mailto:sarah.steinhoff@citrix.com)
 
 ## Overview
 

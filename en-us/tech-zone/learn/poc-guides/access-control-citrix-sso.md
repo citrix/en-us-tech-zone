@@ -89,7 +89,7 @@ To successfully integrate SaaS apps with Citrix Workspace, the administrator nee
 
 *  Select **Add a Web/SaaS app**
 *  In the Choose a template wizard, search and select **Office 365**
-*  In the App details window, select the link for [Application configuration instructions](en-us/citrix-gateway-service/app-server-specific-configuration.html). This link provides detailed instructions on how to setup SSO for SaaS applications. Within this list, find the item for [Office 365](/en-us/citrix-gateway-service/saas-apps-templates/citrix-gateway-o365-saas.html) and follow the steps.
+*  In the App details window, select the link for [Application configuration instructions](/en-us/citrix-gateway-service/app-server-specific-configuration.html). This link provides detailed instructions on how to setup SSO for SaaS applications. Within this list, find the item for [Office 365](/en-us/citrix-gateway-service/saas-apps-templates/citrix-gateway-o365-saas.html) and follow the steps.
 
 ***Note**: The provided URL for the Office 365 template corresponds to the Office 365 portal. If the user's prefer unique links for each Office 365 application, the admin must create a separate application with the app-specific URL. The app-specific URL is avaialble in the Office 365 application configuration instructions identitied in the previous step.*
 
