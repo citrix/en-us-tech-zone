@@ -57,7 +57,7 @@ Built on the code that evolved with the Citrix Gateway appliance over more than 
 
 ### Rendezvous protocol
 
-Each Cloud Connector supports a limit of 1,000 concurrent sessions, and while adding more connectors grows capacity Citrix provides a more efficient solution to scale. [Rendezvous protocol](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html) enables HDX sessions to be setup, through secure TLS transport, directly from the VDA to the Gateway service without going through the Cloud Connector first. It is available in Citrix Virtual Apps and Desktops release 1912+ and can be enabled through a Citrix Policy setting. If the Rendezvous protocol is enabled and it cannot reach Gateway service for any reason, it will fall back to proxying traffic through the Cloud Connector.
+Each Cloud Connector supports a limit of 1,000 concurrent sessions, and while adding more connectors grows capacity Citrix provides a more efficient solution to scale. [Rendezvous protocol](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html) enables HDX sessions to be setup, through secure TLS transport, directly from the VDA to the Citrix Gateway service without going through the Cloud Connector first. It is available in Citrix Virtual Apps and Desktops release 1912+ and can be enabled through a Citrix Policy setting. If the Rendezvous protocol is enabled and it cannot reach Gateway service for any reason, it will fall back to proxying traffic through the Cloud Connector.
 
 ### Citrix Intelligent Traffic Management (ITM) service
 
@@ -106,10 +106,10 @@ Citrix Gateway service simplifies the requirements to access On-Premises Virtual
 
 ## Session Connectivity
 
-A user selects a virtual app or desktop, from their Workspace, and their endpoint receives a launch ticket. It is directed to connect to Gateway service which, in turn, contacts the VDA. If configured to use the Rendezvous protocl the VDA will establish a TLS connection directly back to the requesting Gateway, otherwise it will use Cloud Connector. Then Gateway establishes the end-to-end session between the endpoint and the VDA.
+A user selects a virtual app or desktop, from their Workspace, and their endpoint receives a launch ticket. It is directed to connect to Citrix Gateway service which, in turn, contacts the VDA. If configured to use the Rendezvous protocol the VDA will establish a TLS connection directly back to the requesting Citrix Gateway service POP, otherwise it will use Cloud Connector. Then Citrix Gateway service establishes the end-to-end session between the endpoint and the VDA.
 
 *  Sessions are linked via Citrix Gateway service across cloud partner’s WANs
-*  VDAs and Workspace endpoints rendezvous at the Citrix POP closest to the user
+*  VDAs and Workspace endpoints rendezvous at the Citrix Gateway service POP closest to the user
 *  High quality sessions
 
 [![Citrix Gateway service and HDX Proxy: Traffic Flow](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_6.png)](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_6.png)
