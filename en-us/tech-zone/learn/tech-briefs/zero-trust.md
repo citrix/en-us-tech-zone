@@ -182,7 +182,7 @@ Rules are configured to trigger specific actions on user accounts by continuousl
 
 Security admins can re-enable access once user risk levels are lower than acceptable levels. These capabilities are triggered based on contextual factors during the time of logon or on a continuous basis based on triggers from Citrix Security Analytics. It continuously monitors events and risk indicators from Citrix services and third-party security solutions such as Azure AD protection from Microsoft.
 
-## Image 
+![Zero Trust Functions](/en-us/tech-zone/learn/media/tech-briefs_zero-trust_diagram2.png)
 ## Conclusion
 
 Traditional security models assume all data and transactions are trusted. Incidents such as compromises, loss of data, malicious actors, or uncharacteristic user behavior would degrade that trust. Zero Trust flips the trust calculation by assuming all data and transactions are untrusted from the outset. 
