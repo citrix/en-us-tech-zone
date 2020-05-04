@@ -20,10 +20,10 @@ The traditional VPN model doesn’t adequately meet the needs of the evolving us
 
 How do organizations secure the crown jewels with a complex model incorporating the following variables?  
 
-•	Users: Located in corporate offices and public locations 
-•	Devices: Mobile, Bring Your Own Device (BYOD), Choose Your Own Device (CYOD), and Corporate Own Personally Enabled (COPE)
-•	Applications: (Intranet/SaaS, browser, virtualized, mobile)
-•	Data access and storage (on-prem and cloud)
+* Users: Located in corporate offices and public locations 
+* Devices: Mobile, Bring Your Own Device (BYOD), Choose Your Own Device (CYOD), and Corporate Own Personally Enabled (COPE)
+* Applications: (Intranet/SaaS, browser, virtualized, mobile)
+* Data access and storage (on-prem and cloud)
 
 Given all these facets of access, relying on a moat as the security perimeter becomes a liability. 
 
@@ -36,21 +36,24 @@ A major downside of managing separate proxy and VPN solutions from multiple vend
 ## Guiding Principles
 
 Zero Trust works based on assuming “never trust and always verify” or an innate distrust ("default deny”).” John Kindervag, coined the term “Zero Trust” as a way to solve the compounded problem of “deperimeterization” – the expansion and dissolving of the perimeter as it becomes more porous. 
+
 The purpose of a Zero Trust Architecture is to protect data. It is not a single network architecture but a set of guiding principles in network infrastructure design and operation. The Zero Trust approach provides a consistent security strategy for accessing data that resides anywhere, from anywhere, from any device and in any way. 
+
 With Zero Trust, there is no implicit trust granted to systems based on their physical or network location. The approach requires continuous authorization no matter what the originating request location; and increases visibility and analytics across the network. 
+
 Zero trust is achieved through an intentional implementation of the framework. Using a collection of products that have Zero Trust principles built in and are integrated provides a collective approach to achieve the business outcomes.
 
 Citrix sees Zero Trust as a strategy that applies not only just to networking, but across the organization in users, devices, networks, applications – and how people work.
 
 Citrix Zero Trust Architecture focuses on protecting resources and is designed and deployed adhering to the following basic tenets:
 
-1.	All data sources and computing services are considered resources
-2.	All communication is secured regardless of network location because every network, both enterprise and remote, is innately hostile and not trustworthy 
-3.	Access to individual enterprise resources is granted on a per-session basis
-4.	Access to resources is enforced dynamic policy—including the observable state of client identity, application, and the requesting asset—and can include other behavioral attributes.
-5.	The enterprise ensures that all owned and associated devices are in the most secure state possible. It monitors assets to ensure that they remain in the most secure state possible. However, no device is inherently trusted.
-6.	All resource authentication and authorization are dynamic and strictly enforced before access is allowed.
-7.	The enterprise collects as much information as possible about the current state of network infrastructure and communications. It uses the data to improve its security posture.
+1. All data sources and computing services are considered resources
+2. All communication is secured regardless of network location because every network, both enterprise and remote, is innately hostile and not trustworthy 
+3. Access to individual enterprise resources is granted on a per-session basis
+4. Access to resources is enforced dynamic policy—including the observable state of client identity, application, and the requesting asset—and can include other behavioral attributes.
+5. The enterprise ensures that all owned and associated devices are in the most secure state possible. It monitors assets to ensure that they remain in the most secure state possible. However, no device is inherently trusted.
+6. All resource authentication and authorization are dynamic and strictly enforced before access is allowed.
+7. The enterprise collects as much information as possible about the current state of network infrastructure and communications. It uses the data to improve its security posture.
 
 ## Pillars of Zero Trust
 
@@ -60,24 +63,28 @@ Zero Trust must granularly identify users, devices, and applications on the netw
 
 Citrix calls this Contextual Access. Access policies scrutinize trust elements across the 5 W’s of Access to grant specific usage entitlements. Contextual Access is a continuous process. It extends from the request event through specific data usage entitlements and dynamic policies that govern the data security lifecycle.
 
-•	What data must be protected? 
-•	Where are requests for data coming from and where does it sit in the network?
-•	Who has access to the data and for how long?
-•	Why do these people need access privileges?
-•	When do they need access to the data?
+* What data must be protected?
+* Where are requests for data coming from and where does it sit in the network?
+* Who has access to the data and for how long?
+* Why do these people need access privileges?
+* When do they need access to the data?
 
 The journey from enterprise trust to Zero Trust requires a strategy for building a trust fabric. Organizations must identify current concerns and define their trust fabric to support digital transformation. Access must be aligned with the sensitivity of data and the situation in which the data is being requested and used. 
 
-User Identity 
+### User Identity 
+
 Ongoing authentication and authorization of trusted users is paramount to Zero Trust. Identity is the “Who” that is requesting access to a resource. User authentication is dynamic and strictly enforced before access is allowed. It is a constant cycle of access:
-•	Scanning and assessing threats
-•	Adapting
-•	Continuously authenticating
-•	Monitoring
-•	Validating user trustworthiness
+
+* Scanning and assessing threats
+* Adapting
+* Continuously authenticating
+* Monitoring
+* Validating user trustworthiness
+
 Identity encompasses the use of technologies like Identity, Credential, and Access Management. Identity is the set of users of and attributes developed by the enterprise. The users and attributes form the basis for policies for resource access. User identities can include a mix of logical identity, biometric data, and behavior characteristics. Use identity attributes such as time and geolocation to derive trust scores. 
 
-Devices 
+### Devices 
+
 Organizations need a consistent way of managing policies across devices and ownership models. Administrators need to be able to determine what level of confidence they can have in the device. Devices are one part of the “Where” question. Where is the request coming from and what is the device risk level? Real-time security posture and trustworthiness of devices are foundational attributes of the Zero Trust approach. 
 Traditionally, when looking at endpoint devices, there are three popular ownership models (corporate owned, BYOD/CYOD, COPE), each with differing inherent trust, trust factors and need for validation. With Zero Trust, that inherent trust is eliminated, and every device, regardless of ownership requires validation.
 Network
@@ -91,36 +98,47 @@ Network security is expanding as organizations grow their networks. During trans
 3.	Prevent lateral movement in the network
 4.	Make dynamic policy and trust decision on network and data traffic
 
-Apps
+### Apps
+
 Securing and properly managing the app layer and compute containers and virtual machines is central to Zero Trust adoption. Being able to identify and control the technology stack facilitates more granular and accurate access decisions. Unsurprisingly, MFA is an increasingly critical part of providing proper access control to apps in Zero Trust environments. 
 An important aspect of the Zero Trust model is granting access only to specific the apps required for end users to do their job. There’s no access provided into the network itself, significantly improving the organization’s security posture by reducing the attack surface.
 
-More granular access to app functions 
+### Data
 
-Data
 Customers, employees, and partners are increasingly mobile, and consume apps and data other resources from every network to which they connect. When someone wants to access data, a Zero Trust model weighs the value of data against the assurance that the correct person is there and authorized to access the data while using a secure device. 
 The minimal requirements for access to the resource can include authenticator assurance levels, such as MFA and or requests for system configuration. Whether that person is inside or outside the corporate network is not a reliable indicator of any of those three assurances. However, flag obvious unsanctioned network location such as deny access from overseas IP addresses or within unexpected time frames.
-Visibility and Analytics
 
-Zero Trust Architectures require increased access visibility. It is incomplete without tools like security information management, advanced security analytics platforms, and security user behavior analytics. These systems are continuously monitoring and logging access requests and policy changes over time. Security experts need these tools to observe in real time what is happening and orient defenses more intelligently. 
+### Visibility and Analytics
+
+Zero Trust Architectures require increased access visibility. It is incomplete without tools like security information management, advanced security analytics platforms, and security user behavior analytics. These systems are continuously monitoring and logging access requests and policy changes over time. Security experts need these tools to observe in real time what is happening and orient defenses more intelligently.
+
 Analytics is the system that is responsible for enabling, monitoring, and eventually terminating connections between a subject and an enterprise resource. The analytics policy engine is responsible for the ultimate decision to grant access to a resource for a given client or subject. It can use enterprise policy and input from external sources. 
+
 Analytics data can either be analyzed separately or combined with other security monitoring and logging data sets. Multiple services take data from multiple external sources and provide information about newly discovered attacks or vulnerabilities. The data includes DNS blacklists, discovered malware, or command and control systems that the policy engine wants to deny access to from enterprise systems. By using threat intelligence feeds, the policy engine can help develop proactive security measures before an actual incident occurs. Analytics can use criteria-based scoring that assumes a set of qualified attributes that must be met before access is granted to a resource. 
 
-Conceptual Architecture 
+## Citrix Zero Trust Architecture
+
 In moving from a boundary, perimeter-based security model to a resource based one, Citrix Workspace uses a holistic context-aware VPN-less approach.
 
-## Image
+### Image
 
 Citrix Workspace acts as the enforcement point to control access to applications and data. Access starts with a “default deny” instead of building on inherent trust. Access is only granted after verifying an entity by user and device credentials and other factors, including time, location, and device posture. Citrix Zero Trust mitigates the complexity around these factors by removing assumed trust and confirming it every step of the way.
 
-Citrix Endpoint Management
+### Citrix Endpoint Management
+
 Citrix Endpoint Management provides data to assess device trust. It helps answer the question the device risk/trust level through continuous evaluation of device posture to support authorization. Pre and post-authentication device evaluation supports the authorization required to perform work securely. Also, more assessments are conducted for every access request. Citrix Endpoint Management examines whether the device has been compromised, its software version, protection status, and encryption enablement. Citrix Endpoint Management can be used to perform Endpoint Analysis scans to check for platform certificates and includes features for both domain-joined and non-domain-joined devices. Differing levels of trust can be assigned to full device management, app, or access from a browser with all three having different requirements.
-Citrix Gateway
+
+### Citrix Gateway
+
 Citrix Gateway provides an enhanced and flexible approach to security. IT is enabled to configure multiple authentication steps to access confidential data based on user role, location, device state, and more. Citrix Gateway determines the authentication mechanism to be used for each session. It uses factors like a user’s location and the risk profile of the user or device. 
+
 Citrix’s identity approach allows enterprises to preserve their investments. It allows them to use the native IdP security capabilities like MFA, biometrics to protect the user within the Workspace. It supports LDAP, RADIUS, TACACS, Diameter, and SAML2.0 authentication mechanisms, among others.  
+
 Citrix Gateway provides SmartAccess and SmartControl policies that provide flexibility to balance user convenience with risk. Based on the result of a SmartAccess scan, a user can be granted full access, reduced access, quarantine, or no access at all. For example, a user who fails a device compliance check can get access to a reduced set of applications. Sensitive applications can have restricted functionality like blocking printing and downloading. 
+
 SmartControl centralizes policy management on Citrix Gateway, strengthening access control at the network layer before the user reaches the back-end resource. 
-Citrix Networking
+
+### Citrix Networking
 
 Networking is about defining and maintaining dynamic trust relationships and communication and Citrix ADC is at the bridge between securing applications and networking. Citrix ADC protects web apps against zero-day threats, cross site scripting, SQL injection with the Web App Firewall. It also protects APIs and does Bot mitigation. 
 
@@ -128,26 +146,37 @@ Considerations for networking security also include service mesh architectures, 
 
 For the branch, SDWAN combines performance and security. The solution is focused on protecting branch office users accessing data across the WAN. Its ICSA-certified stateful firewall and integration with third party Secure Web Gateways protect users at the branch with direct internet access.
 
-Citrix Access Control 
+### Citrix Access Control 
 
 Citrix Workspace offers an integrated approach to secure access to the internet. In addition to managing user devices, Access Control focuses on protecting a user’s workspace on both managed and unmanaged BYO devices. User information is always protected, whether accessing whitelist or blacklist URLs or URL categories.
+
 Citrix Access Control offers a URL filtering engine and an integrated browser isolation service. Together, they give an admin the choice to completely block a URL or access any URL in a sandbox environment. Also, admins can take a cautious approach even for accessing whitelist URLs. This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet. 
+
 A traditional URL filtering engine that assumes trust for a whitelist URL. Access Control does not implicitly trust a whitelist URL since webpages, deemed safe by URL filtering engines, that can host malicious links. With Access Control URLs within the trusted URL are also tested. 
+
 Access Control also addresses “gray status URLs” by offering the isolated browser. Users can securely access sites that fall between URLs blacklisted or whitelisted. Access Control doesn’t require a device to be managed making it ideal for BYO type environments. Most URL filtering engines push a PAC file on the end user’s device that is either managed or must be connected to a domain. 
-Citrix Files
+
+### Citrix Content Collaboration 
+
 Citrix Content Collaboration is a cloud-based Software-as-a-Service (SaaS) solution that enables the secure exchange of confidential business files. Content Collaboration safeguards both files in transit and at rest. 
+
 Content Collaboration employs TLS security protocols to protect authentication, authorization, and file transfers. Files are encrypted in transit with up to 256-bit encryption. A keyed-hashed message authentication code (HMAC) is employed to authenticate and ensure the integrity of intra-system communications.
+
 Citrix Content Collaboration provides admins configurable controls. Admins protect corporate documents with access controls, audit logs, account lockout, and session timeout thresholds. With Citrix Security Analytics, customers can detect anomalies in file related activities, identify breaches, and take appropriate actions. 
-•	Setting password policy, session timeout and account lockout thresholds
-•	Setting folder and subfolder permissions to ensure that users only have access to authorized files or folders 
-•	Tracking account activity with customized email notifications to give a better understanding of how often users access information.
-•	Enabling file versioning and retention so all versions of a file with the same name will save to the account according to the desired retention period.
-•	Setting MFA that requires a secondary authentication method, such as an SMS verification code, in addition to a username/password combination
-Citrix Analytics 
+
+* Setting password policy, session timeout and account lockout thresholds
+* Setting folder and subfolder permissions to ensure that users only have access to authorized files or folders 
+* Tracking account activity with customized email notifications to give a better understanding of how often users access information.
+* Enabling file versioning and retention so all versions of a file with the same name will save to the account according to the desired retention period.
+* Setting MFA that requires a secondary authentication method, such as an SMS verification code, in addition to a username/password combination
+
+### Citrix Analytics 
+
 Citrix Security Analytics and its continuous monitoring and assessment of risk scores supports the Zero Trust philosophy of “never trust, always verify”. Before providing access to resources, the appropriate level of risk /security posture is calculated.
+
 Citrix Security Analytics aggregates events from all Citrix services. Risk indicators from third party security solutions like Microsoft Security Graph are ingested to issue user risk scores. Citrix Security Analytics baselines, helps visualize, and maps trust relationships. It correlates events and activities to identify anomalies and provide insights by user, group, and app.  
-Citrix Security Analytics also offers continuous monitoring and insights into website access. Actions monitored include visiting malicious, dangerous, or unknown websites, bandwidth consumed, risky download and upload activity. If a user is downloading excessive amounts of data, an action can be triggered to request a response from the user to validate their identity. 
-Based on the user reply, a secondary action can be triggered. 
+
+Citrix Security Analytics also offers continuous monitoring and insights into website access. Actions monitored include visiting malicious, dangerous, or unknown websites, bandwidth consumed, risky download and upload activity. If a user is downloading excessive amounts of data, an action can be triggered to request a response from the user to validate their identity. Based on the user reply, a secondary action can be triggered. 
 
 Rules are configured to trigger specific actions on user accounts by continuously assessing risk score thresholds. For example, sessions authenticated into Citrix Workspace can be logged off on a change in the risk score.
 
