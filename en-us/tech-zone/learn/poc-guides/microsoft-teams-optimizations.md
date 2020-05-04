@@ -115,7 +115,7 @@ If Teams was installed in user mode before on the image:
 
 ## Citrix Virtual Apps and Desktops VDA install on the host virtual machines
 
-The HDX Optimization for Teams is bundled as part of VDA in Citrix Virtual Apps and Desktops. It is installed on the hosts or base image of the catalog and Citrix Virtual Apps servers, which may be used to deliver Teams. Link to the version 1909 is [here](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/product-software/citrix-virtual-apps-and-desktops-1909.html)
+The HDX Optimization for Teams is bundled as part of VDA in Citrix Virtual Apps and Desktops. It is installed on the hosts or base image of the catalog and Citrix Virtual Apps servers, which may be used to deliver Teams.
 
 ### Application requirements
 
