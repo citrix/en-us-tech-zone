@@ -187,6 +187,7 @@ Security admins can re-enable access once user risk levels are lower than accept
 ## Conclusion
 
 Traditional security models assume all data and transactions are trusted. Incidents such as compromises, loss of data, malicious actors, or uncharacteristic user behavior would degrade that trust. Zero Trust flips the trust calculation by assuming all data and transactions are untrusted from the outset. 
+
 For organizations, the promise of Zero Trust and mitigating excessive access has been a goal for many years. But its implementation has been elusive. All necessary elements have been inordinately difficult to construct and manage as an end-to-end security solution. These include multifactor authentication (MFA), dynamic identity management, endpoint analysis, encryption, information rights management (IRM), application-specific networking, and data usage policies.
 
 Using Citrix Workspace, customers don’t need to deploy third-party products for SSO, MFA, SSL VPN, web proxies, and browser isolation. With Workspace, VPN-less access to sensitive resources is secured not only by providing access policies at the time of authentication, but throughout the session. Access is secured across all types of applications and resources deployed anywhere on a cloud, on premises, or in a hybrid deployment model. 
