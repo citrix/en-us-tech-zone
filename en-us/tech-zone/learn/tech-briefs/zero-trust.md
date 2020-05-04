@@ -120,7 +120,7 @@ Analytics data can either be analyzed separately or combined with other security
 
 In moving from a boundary, perimeter-based security model to a resource based one, Citrix Workspace uses a holistic context-aware VPN-less approach.
 
-![Zero Trust Diagram](/en-us/tech-zone/design/media/tech-briefs_zero-trust_diagram1.png)
+![Zero Trust Diagram](/en-us/tech-zone/learn/media/tech-briefs_zero-trust_diagram1.png)
 
 Citrix Workspace acts as the enforcement point to control access to applications and data. Access starts with a “default deny” instead of building on inherent trust. Access is only granted after verifying an entity by user and device credentials and other factors, including time, location, and device posture. Citrix Zero Trust mitigates the complexity around these factors by removing assumed trust and confirming it every step of the way.
 
