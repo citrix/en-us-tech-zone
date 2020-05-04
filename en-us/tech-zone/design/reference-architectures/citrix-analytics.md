@@ -219,7 +219,7 @@ The user experience score is calculated based on latency, logon duration, reconn
 
 [![CAS-9](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_009.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_009.png)
 
-The preceding diagram shows the UX score compilation by getting information from an end user’s latency, logon duration, failures, and reconnections. It allows the administrator to drill down further to find the root cause of the issues that users are experiencing. Currently, performance analytics (tech preview) used for both on-premises and cloud-based Citrix Virtual Apps and Desktops environments.
+The preceding diagram shows the UX score compilation by getting information from an end user’s latency, logon duration, failures, and reconnections. It allows the administrator to drill down further to find the root cause of the issues that users are experiencing. Performance analytics is available for both on-premises and cloud-based Citrix Virtual Apps and Desktops environments.
 
 To learn more about user experience, refer to the following [link](/en-us/citrix-analytics/performance-analytics/user-analytics.html#what-is-user-experience-analytics).
 
