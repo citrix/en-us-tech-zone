@@ -216,4 +216,4 @@ The goal of this reference architecture is to assist you with planning your own 
 
 [Android Enterprise Solution Directory](https://androidenterprisepartners.withgoogle.com/devices/)
 
-[Citrix’s Android Enterprise product document](https://www.citrix.com/products/citrix-endpoint-management/android-mdm.html)
+[Citrix’s Android Enterprise product document](/en-us/citrix-endpoint-management/device-management/android/android-enterprise.html)
