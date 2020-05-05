@@ -8,7 +8,7 @@ description: Provides users with secure remote access to Citrix Virtual Apps and
 
 **Authors:** [Matthew Brooks](https://twitter.com/tweetmattbrooks), [Daniel Feller](https://twitter.com/djfeller)
 
-**Special Thanks:** Vijaya Raghavan, Kenneth Bell, Jeff Kann, and Hrushikesh Paralikar
+**Special Thanks:** Vijaya Raghavan, Kenneth Bell, Jeff Kann, Hrushikesh Paralikar, and Simon Jackson
 
 Citrix Gateway service for HDX Proxy provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls. The entire infrastructure overhead of managing remote access moves to the cloud and is hosted by Citrix.
 
@@ -53,7 +53,11 @@ Citrix Cloud Connector runs on Windows Server instances hosted in Resource Locat
 
 ### Citrix Gateway service
 
-Built on the code that evolved with the Citrix Gateway appliance over more than a decade, while used by the largest companies in the world, the Citrix Gateway service is an integral part of Citrix Cloud services to provide secure remote access. It relies on Citrix Intelligent Traffic Management (ITM) service to direct clients to the closest global Citrix Gateway service POP where it coordinates secure connectivity between Citrix Workspace clients and virtualization resources to deliver the lowest latency sessions with the best possible user experience.
+Built on the code that evolved with the Citrix Gateway appliance over more than a decade, while used by the largest companies in the world, the Citrix Gateway service is an integral part of Citrix Cloud services to provide secure remote access. It relies on Citrix Intelligent Traffic Management (ITM) service to direct clients to the closest global Citrix Gateway service POP where it coordinates secure connectivity between Citrix Workspace clients and virtualization resources to deliver sessions with the lowest latency and the best user experience possible.
+
+### Rendezvous protocol
+
+Each Cloud Connector supports a limit of 1,000 concurrent sessions, and while adding more connectors grows capacity Citrix provides a more efficient solution to scale. [Rendezvous protocol](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html) enables HDX sessions to be setup, through secure TLS transport, directly from the VDA to the Citrix Gateway service without going through the Cloud Connector first. It is available in Citrix Virtual Apps and Desktops release 1912+ and can be enabled through a Citrix Policy setting. If the Rendezvous protocol is enabled and it cannot reach Gateway service for any reason, it will fall back to proxying traffic through the Cloud Connector.
 
 ### Citrix Intelligent Traffic Management (ITM) service
 
@@ -102,10 +106,10 @@ Citrix Gateway service simplifies the requirements to access On-Premises Virtual
 
 ## Session Connectivity
 
-Users’ endpoints and their on-premises hosted resources VDAs are connected to their nearest respective POPs via Citrix Cloud Connectors. Subsequently when a user selects a virtual app or desktop to launch from their Workspace app the nearest POP hosting that connection identifies the pertinent Resource Location and directs it to establish a Citrix Cloud Connector session to that POP forming an end-to-end connection and subsequently a virtual session is established.
+A user selects a virtual app or desktop, from their Workspace, and their endpoint receives a launch ticket. It is directed to connect to Citrix Gateway service which, in turn, contacts the VDA. If configured to use the Rendezvous protocol the VDA will establish a TLS connection directly back to the requesting Citrix Gateway service POP, otherwise it will use Cloud Connector. Then Citrix Gateway service establishes the end-to-end session between the endpoint and the VDA.
 
 *  Sessions are linked via Citrix Gateway service across cloud partner’s WANs
-*  VDAs and Workspace endpoints rendezvous at the Citrix POP closest to the user
+*  VDAs and Workspace endpoints rendezvous at the Citrix Gateway service POP closest to the user
 *  High quality sessions
 
 [![Citrix Gateway service and HDX Proxy: Traffic Flow](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_6.png)](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_6.png)
