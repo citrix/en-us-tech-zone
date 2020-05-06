@@ -281,6 +281,9 @@ Device level encryption varies by platform. Apple's iOS features a file system w
 #### Article 32 - Data Isolation and Protetion
 Containerization enables mobile BYOD programs in corporate environments empowering users to use mobile endpoints as an enterprise device and personal device simultaneously by separating apps and data. It helps enterprises prevent malware, intruders, system resources or other applications from interacting with the application and any of its sensitive information. Citrix Endpoint Management enables containerized native mobile apps through MDX technology, and it also integrates with several partner container solutions providing valueadd by integrating many broad app and device management capabilities.
 
+## Securing Files with Workflows
+
+
 
 
 (Link to include in links section https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/)
