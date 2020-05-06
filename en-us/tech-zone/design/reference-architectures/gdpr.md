@@ -253,4 +253,30 @@ data stores, as well as between managed apps. Once these apps are installed, Sec
 
 (MDX end-to-end protection diagram)
 
+#### Article 25 - Access to Personal Data
+Citrix Endpoint Management provides a variety of enrollment methods to validate user identity prior to initiating Mobile Device Management and/or Mobile App Management and subsequently access to secure data. For example, a two-factor solution can include One-time PIN (OTP) enrollment invitations in conjunction with Active Directory domain credentials. For environments with the highest security requirements, enrollment invitations may be linked to a device by SN, UDID, EMEI to uniquely identify the hardware.
+
+Citrix Endpoint Management also provides a variety of multi-factor authentication options to validate the identity of enrolled user device/(s) including combinations of domain username and password, Radius, Azure Active Directory, certificate, or derived credentials (a high security federal standard based on government issued personal identity verification cards). Certificate and domain authentication used in conjunction with a CEM pin is a popular secure combination that provides a great user experience.
+
+Through these links learn more about Citrix Endpoint Management's enrollment methods and multi-factor authentication options with Secure Hub. Also find deployment guidance based on security posture. (add in appropriate links here)
+
+#### Article 32 - Data Encryption in Transit
+Citrix Endpoint Management support data encryption in transit through several methods such as:
+
+* Containerized with embedded VPN when apps utilize the CEM SDK
+* Platform-based utilizing a Citrix ADC VPN client
+* Through policies to utilize native platform OS VPN functionality
+
+The XenMobile SDK, or MDX technology, with microVPN which provides secure per-app VPN functionality to encrypt data in-transit between the mobile endpoint and intranet backend. It works in conjunction with Secure Hub and Citrix NetScaler to ensure MDX app traffic is directed over a dedicated encrypted VPN. It is unique Citrix XenMobile technology that provides seamless encryption of data in transit. Microsoft is adopting Citrix XenMobile microVPN  for its mobile apps such as Intune Browser.
+
+For more information see this microVPN FAQ; configuration of Android platform per-app VPNs using Citrix VPN for Android or iOS; or the configuration of platform per-app VPNs using native functionality.
+
+#### Article 32 - Data Encryption at Rest
+XenMobile supports Data Encryption at Rest through XenMobile MDX with Citrix-provided encryption libraries, or through platform level
+encryption directly or indirectly in conjunction with partner containerization solutions. XenMobile can provide encryption at rest on
+any supported mobile device independent of platform encryption. The XenMobile secure app container technology, MDX, uses its own software applied data encryption using FIPS compliant algorithms making the risk of data loss is virtually impossible. Device level encryption varies by platform. Apple's iOS features a file system with the OS information and user data written to flash memory. It also uses a factory-assigned device ID and group ID with the device user's passcode so only that passcode can unencrypt data on the phone or tablet. Android also provides encryption, although not every device manufacturer creates hardware that supports it and users can turn encryption off accidentally or deliberately with a factory reset on Android devices. Find more information about the MDX Toolkit, MDX policies, and integrating with MDX in Citrix documentation.
+
+#### Article 32 - Data Isolation and Protetion
+Containerization enables mobile BYOD programs in corporate environments empowering users to use mobile endpoints as an enterprise device and personal device simultaneously by separating apps and data. It helps enterprises prevent malware, intruders, system resources or other applications from interacting with the application and any of its sensitive information. XenMobile enables containerized native mobile apps through MDX technology, and it also integrates with several partner container solutions providing valueadd by integrating many broad app and device management capabilities.
+
 (Link to include in links section https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/)
