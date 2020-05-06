@@ -239,7 +239,18 @@ Mobile devices, particularly with BYOD ownership, present many challenges to ent
 
 (Traditional mobile device application architecture diagram)
 
+Citrix Endpoint Management (CEM) is a market leading Unified Endpoint Management (UEM) component of the Citrix Workspace. It securely manages a variety of mobile endpoint platforms ranging from iOS, Android, Windows and Mac to rugged mobile devices and IoT devices. CEM also manages a variety of mobile apps on endpoints and supports various delivery mechanisms including virtualized, web & SaaS, public app store, native enterprise mobile apps and containerized mobile apps.
 
+In the following sections, we will discuss how this architecture can help you secure PII on mobile endpoints. Also, you'll find a
+comprehensive general Citrix XenMobile Security whitepaper here.
 
+(Citrix Secure Digital Workspace - mobility architecture diagram)
+
+XenMobile MDX, the XenMobile MAM container technology, is a key part of the XenMobile solution to protect data. It provides end-to-end security maximizing protection of personal data, mitigating the risk of loss, by encrypting apps and data and managing secure transfer of data through 70+ MDX policies, including functional areas such as Authentication, Device Security, Networking, Encryption, Access Thresholds, App Interaction, App Restrictions, and other XenMobile App specific polices all applied on a per-app basis to mitigate the risk of PII loss. XenMobile MDX technology uses its own encryption libraries to host apps securely on iOS and Android platforms on top of platform encryption provided by the iOS keychain or device hardware encryption modes on Android which may or may not be active (depends on device encryption and passcode policies).
+
+MDX Technologies help provide end-to-end protection by managing encrypted data transfers between device and intranet
+data stores, as well as between managed apps. Once these apps are installed, Secure Hub, a mobile app that provides access to desktops, apps and data, ensures that the desired policies are continuously enforced, always keeping IT in control of the enterprise content on users’ devices. MDX also includes “microVPN”, a per-app VPN that technology that integrates with Citrix NetScaler Gateway. It can be utilized seamlessly by managed apps to encrypt data traffic to and from the Enterprise intranet.
+
+(MDX end-to-end protection diagram)
 
 (Link to include in links section https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/)
