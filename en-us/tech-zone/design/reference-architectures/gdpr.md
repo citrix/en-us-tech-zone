@@ -158,7 +158,7 @@ To learn more about hardening, refer to the [System Hardening white paper](https
 
 (diagram Aggregation of applications with different trust levels)
 
-### Securing Web and SaaS Applications
+## Securing Web and SaaS Applications
 
 Web apps are architecturally different from client/server apps yet also similar in many ways – including suffering from security challenges. With web apps, a specific client is replaced with a single corporate standard or multiple general-purpose web browsers,
 with varying capabilities and dependencies. Although somewhat simplified, the same management challenges apply – keeping the browser up- to-date against vulnerabilities, encryption of traffic, and implementing multi-factor authentication.
@@ -282,6 +282,18 @@ Device level encryption varies by platform. Apple's iOS features a file system w
 Containerization enables mobile BYOD programs in corporate environments empowering users to use mobile endpoints as an enterprise device and personal device simultaneously by separating apps and data. It helps enterprises prevent malware, intruders, system resources or other applications from interacting with the application and any of its sensitive information. Citrix Endpoint Management enables containerized native mobile apps through MDX technology, and it also integrates with several partner container solutions providing valueadd by integrating many broad app and device management capabilities.
 
 ## Securing Files with Workflows
+
+Many of our daily workflows consist of the creation of files and collaborating on those files with others. In many cases those files contain personal data, such as name and address, Social Security numbers or credit card details. Unfortunately, there are many examples of data leakage occurring, from lost USB drives filled with files containing personal information to phishing attempts to access files on secured systems with employee permissions. Under GDPR it is necessary to not only secure and control this information in every step of the process, from storing these files inside a repository to internal and external collaboration and providing context-based access to the files, but also to monitor for irregular activities and report on who has which permissions to which files.
+
+Citrix Content Collaboration (ShareFile) provides a range of controls to help organizations become and remain compliant under GDPR. This starts by having a choice on the location where files are being stored, either inside one of the Citrix-managed StorageZones in different global regions or in a StorageZone managed by the customer in their own datacenters or private cloud. Multiple locations can be used, allowing for the optimal location to store each individual file. By leveraging the StorageZone Connectors technology to access existing repositories, such as network file shares or SharePoint document libraries, all file related activities are done through a single platform. This makes auditing the activities easier, as well as making sure that the correct permissions are in place.
+
+Collaboration on files has not changed much over the past years. Most of these workflows use email to send files to a group of recipients, gather the feedback from each of those recipients as separate emails to the thread, then update the files and start this cycle again. As such, multiple messages and copies of the same document are stored inside the email platform, which makes it more difficult to comply with GDPR policies. By leveraging the ShareFile Feedback and Approvals workflow to collaborate on documents, all feedback and document revisions are stored in a single place, making it easier to comply with such regulations.
+
+Many paper-based workflows in an organization contain PII data in some form. For instance, the workflow to hire people involves multiple steps where personal information needs to be recorded and shared. All this information needs to comply with GDPR regulations, centralizing and digitizing these workflows have a positive impact. ShareFile Custom Workflows allow this personal information to be securely captured, securely stored inside ShareFile and, where needed, to be completed with an electronic signature. All information is stored together in a single location and is audited for who accesses and modifies this information, providing a practice that allows to stay compliant with GDPR.
+
+
+
+(StorageZones with global regions diagram)
 
 
 
