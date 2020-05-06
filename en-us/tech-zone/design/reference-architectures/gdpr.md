@@ -136,14 +136,12 @@ Finally, for the most security-conscious environments, it is possible to create 
 With Citrix Virtual Apps and Desktops, only screen pixels are transferred between the hosting server and the endpoint. Connection parameters are established during session initiation or reconnection. CVAD can ensure that traffic coming to and from the endpoint is always encrypted, even if the application itself doesn’t support encryption. This encryption can be enabled for any published application or desktop. For details on end-to-end encryption, refer to [this document](https://www.citrix.com/content/dam/citrix/en_us/documents/white-paper/end-to-end-encryption-with-xenapp-and-xendesktop.pdf)
 
 #### Article 32 - Data Encryption at Rest
-
 While Citrix Virtual Apps and Desktops can help with the encryption between user and application, the backend itself remains out of scope for this solution. However, CVAD can be used to isolate unencrypted traffic and data during the transition period utilizing secure zones – making sure that all data is encrypted is a long-term process and encapsulating this data in an isolated enclave can provide the required security while the migration project is underway. You can read more about secure zones in this blog post: [“Unsinkable”: The Myth of Foolproof IT Security](https://www.citrix.com/blogs/2017/10/31/unsinkable-the-myth-of-foolproof-it-security/).
 
 As for encryption on the endpoint, it is important to minimize data exposure at the endpoint and control data remanence. Data residing on the endpoint should be restricted, delivering only the minimum amount of data necessary, virtualizing all access to PII and ensuring that residual data, keystrokes and screen data are managed and protected. To learn more, read this blog post about [Citrix ICA
 client footprint](https://www.citrix.com/blogs/2017/08/31/citrix-ica-client-what-leaks/).
 
 #### Article 32 - Data Isolation and Protection
-
 Contrary to traditional desktops on physical endpoints, server and desktop OS images within Citrix Virtual Apps and Desktops usually have a much more restricted scope of operation. They are used to host a group of well-defined, centrally managed applications and desktops with predictable behavior and centralized configuration options.
 
 There are different ways how data and applications can be protected and isolated from each other. With aggregation of resources from multiple servers, it is possible to create groups of separated servers to host different applications with different trust levels.
@@ -183,7 +181,6 @@ We’re going to cover how this architecture can help you secure the application
 (Web application architecture with NetScaler diagram)
 
 #### Article 25 - Access to Personal Data
-
 Authentication, Authorization and Auditing are all core to controlling access to personal data. As an AAA proxy, Citrix ADC consolidates, extends, and enhances the traditional authentication schemes even in scenarios where the web apps do not natively support MFA. Citrix ADC supports authentication using username/password, multi-factor (MFA), time-based and one-time tokens (Citrix ADC has native OTP support), smartcards, user or machine certificates and biometrics. While this is especially important for internet facing web apps, some organizations with a zero trust networking approach are moving to require MFA for “internal” access.
 
 Citrix ADC's enhanced MFA, called nFactor authentication, takes into account capabilities such as SAML, client certificates, group extraction, and multiple passwords. Federation and SSO also provide an additional level of security and ease of use.
@@ -200,7 +197,6 @@ Logging and visibility are provided through NetScaler Management and Analytics S
 (NetScaler authentication options diagram)
 
 #### Article 32 - Data Isolation and Protection
-
 Citrix ADC is a reverse proxy and as such it benefits from its location in the network architecture, typically in a DMZ or security zone where it accepts the front-end user connection, creates a secure connection to the backend server, and has full visibility into requests and responses. Additionally, Citrix ADC can change the logic of the web traffic on the fly without requiring updates to the backend application. This includes encryption of not only packet header but body as it does deep packet inspection and rewrite.
 
 Citrix ADC can ensure that traffic coming to and from the browser is always encrypted, even if the web server itself doesn’t support encryption. This encryption can be enabled for any site proxied through the ADC. SSL offloading leverages the ADC to perform the resource intensive SSL/TLS handshakes thereby offloading them from the backend servers. For scenarios requiring end-to-end encryption, Citrix ADC can re-encrypt the connection to the backend. This allows the ADC to inspect and apply security policies to the traffic. SSL bridging is available for when requirements demand that ADC plays no part in terminating the connection. Using ADC with NetScaler Management and Analytics System (MAS) allows administrators to keep central configuration and visibility of the cipher suites in use, helping prevent negotiation of outdated ciphers.
@@ -287,13 +283,28 @@ Many of our daily workflows consist of the creation of files and collaborating o
 
 Citrix Content Collaboration (ShareFile) provides a range of controls to help organizations become and remain compliant under GDPR. This starts by having a choice on the location where files are being stored, either inside one of the Citrix-managed StorageZones in different global regions or in a StorageZone managed by the customer in their own datacenters or private cloud. Multiple locations can be used, allowing for the optimal location to store each individual file. By leveraging the StorageZone Connectors technology to access existing repositories, such as network file shares or SharePoint document libraries, all file related activities are done through a single platform. This makes auditing the activities easier, as well as making sure that the correct permissions are in place.
 
+(StorageZones with global regions diagram)
+
 Collaboration on files has not changed much over the past years. Most of these workflows use email to send files to a group of recipients, gather the feedback from each of those recipients as separate emails to the thread, then update the files and start this cycle again. As such, multiple messages and copies of the same document are stored inside the email platform, which makes it more difficult to comply with GDPR policies. By leveraging the ShareFile Feedback and Approvals workflow to collaborate on documents, all feedback and document revisions are stored in a single place, making it easier to comply with such regulations.
 
 Many paper-based workflows in an organization contain PII data in some form. For instance, the workflow to hire people involves multiple steps where personal information needs to be recorded and shared. All this information needs to comply with GDPR regulations, centralizing and digitizing these workflows have a positive impact. ShareFile Custom Workflows allow this personal information to be securely captured, securely stored inside ShareFile and, where needed, to be completed with an electronic signature. All information is stored together in a single location and is audited for who accesses and modifies this information, providing a practice that allows to stay compliant with GDPR.
 
+#### Article 32 - Data Encryption in Transit
+All connections between ShareFile clients and the Content Collaboration SaaS Control Plane, between ShareFile clients and ShareFile StorageZones, as well as between the Content Collaboration SaaS Control Plane and ShareFile StorageZones are TLS 1.1/1.2 and encrypted with up to AES 256-bit encryption.
 
+Citrix Files (ShareFile) clients for iOS and Android which are managed by Citrix Endpoint Management can also leverage the embedded VPN capabilities provided by the CEM SDK. See “Data Encryption in Transit” in the Securing Mobile Applications section of this document for additional details.
 
-(StorageZones with global regions diagram)
+#### Article 32 - Data Encryption at Rest
+Citrix Content Collaboration offers a flexible architecture which provides customers the choice of where files are stored at rest. These repositories are called StorageZones and are managed by either Citrix or the customer. 
+
+For StorageZones managed by Citrix, hosted in either Amazon AWS or Microsoft Azure, files are stored at rest with 256-bit AES encryption. The encryption key is a shared key for all files stored across all ShareFile tenants. Alternatively, this can be a customer-managed encryption key, configured in the Amazon Key Management Service. When the StorageZone is managed by the customer, per-file encryption can be enabled inside the StorageZone configuration. When enabled, all files are encrypted with 256-bit AES encryption. 
+
+Files are not only stored at rest inside the repository in the data center or cloud, but also on the devices being used by employees. As a best practice, it’s recommended to always use full drive encryption on Windows and macOS devices. On top of that, Content Collaboration allows controls for both corporate-owned and BYOD devices. It allows for a remote wipe of the user files, removing only the corporate files and not touching the personal files of the employee. When a remote wipe is initiated, the Citrix Files client will send back all file activity that has occurred offline between the wipe command and the actual wipe of the user data repository, which occurs when ShareFile logs on to the ShareFile SaaS application tier.
+
+Similar safeguards are in place with the Citrix Files app for iOS and Android. All files at rest are encrypted by using the device keychain and encryption capabilities. When using a Citrix Endpoint Management-managed version of Citrix Files, the encryption key is stored inside Secure Hub. And because ShareFile provides a robust rendering and editing engine for Office files and PDF documents as part of the mobile Citrix Files clients, files don’t have to leave the applications to be reviewed or edited. ShareFile offers multiple mobile device management options to secure the files, for instance by blocking access from jailbroken devices and blocking opening files in other applications. When using Citrix Endpoint Management, additional advanced policies for more granular control are available.
+
+#### Article 25 - Access to Personal Data
+Authentication to ShareFile is either controlled by a username and password (ShareFile credentials) or by using corporate credentials through a SAML Identity Provider. When using ShareFile credentials, the password for the user is subject to the password policy that has been configured. This password policy controls the requirements for the password in terms of complexity, history and how often it must be changed. The password is stored hashed and salted inside the ShareFile SaaS application tier, which makes it impossible for anyone to retrieve the password in clear text from the platform.
 
 
 
