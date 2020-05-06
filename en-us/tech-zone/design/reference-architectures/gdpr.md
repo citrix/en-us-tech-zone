@@ -306,7 +306,28 @@ Similar safeguards are in place with the Citrix Files app for iOS and Android. A
 #### Article 25 - Access to Personal Data
 Authentication to ShareFile is either controlled by a username and password (ShareFile credentials) or by using corporate credentials through a SAML Identity Provider. When using ShareFile credentials, the password for the user is subject to the password policy that has been configured. This password policy controls the requirements for the password in terms of complexity, history and how often it must be changed. The password is stored hashed and salted inside the ShareFile SaaS application tier, which makes it impossible for anyone to retrieve the password in clear text from the platform.
 
+SAML based authentication is commonly used for authentication to cloud services. Instead of authenticating directly to the
+enterprise directory, e.g. Active Directory, the authentication is done against an Identity Provider. This removes the need to expose the enterprise directory directly to ShareFile, but still allows users to authenticate with their enterprise credentials. The Identity Provider controls how the user must identify and authenticate itself, based on the context of that authentication attempt. This allows for additional security measures like multi-factor authentication for authentication attempts from outside the corporate network and SSO
+based on the Windows authentication token for domain-joined devices.
 
+#### Article 32 - Data Isolation and Protection
+ShareFile integrates with market-leading Data Loss Prevention products for customermanaged StorageZones and Cloud Access Security Broker services for any type of ShareFile StorageZone, enabling contentaware restrictions. Documents stored inside a ShareFile StorageZone are examined by the same policies that are already set up for other repositories and based on those scanning results, files can be blocked to be downloaded or shared with others.
 
+Sharing files is a key component of modern workflows. This makes controlling the access and permissions to documents containing
+privacy related information a priority, especially when the files are outside the direct control of your own security policies. With
+ShareFile Information Rights Management (IRM) documents are encrypted when the files are downloaded, controlling who can open the file. This prevents sensitive information from being seen by unauthorized people, even when the authorized person sends on the file to someone else. With the ShareFile IRM policies you can also control what permissions the recipient has when opening the file. This can range from View Only access to the ability to edit and print the document.
 
-(Link to include in links section https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/)
+ShareFile uses versioning to store different versions of the same file. This is not only very convenient to review changes made to
+documents, but this can help when recovering from a malware or ransomware attack. By restoring the files to the state before the attack, data loss can be minimized, and the recovery time can be reduced by automating the restore to previous versions by using the ShareFile PowerShell cmdlets.
+
+For customers requiring all files to be archived for compliance purposes, ShareFile offers this capability. When a user deletes a file, or when the file is automatically deleted by a retention policy, the file is stored inside an archive instead of being fully deleted from ShareFile. Dedicated auditors can review the contents of the archived files, including access permissions, during an investigation.
+
+## Summary
+
+[Citrix Workspace](https://www.citrix.com/products/citrix-workspace/) simplifies the management of your systems and data by centralizing services in the data center or cloud as a digital workspace. It can help Citrix customers adhere to GDPR compliance by ensuring applications are centralized and enclaved, data is protected when shared or distributed, access to data and resources is controlled, and IT is brought together for application and data-specific security.
+
+To learn more about security and compliance with Citrix secure digital workspace solutions, please visit [https://www.citrix.com/it-security/](https://www.citrix.com/it-security/).
+
+## Additional Links
+
+[https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/](https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/)
