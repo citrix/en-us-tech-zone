@@ -29,6 +29,8 @@ Traditional VPNs have long been the traditional way to access enterprise applica
 
 But this is why traditional VPN model doesn’t adequately meet the needs of the evolving use cases. Applications have been modernized for web-based access and deployed in multi-cloud environments. And forcing user access through a corporate VPN en route to a cloud app falls short on end-user experience. The requirement for a new strategy has been accelerated. How does an organization build a wall around a resource that exists in multiple locations simultaneously? 
 
+Apps, data and services are not just inside the walls of the data center. Locations have moved, become dynamic, users are accessing many things all over the place, and organizations need a framework that allows easy access to all resources without slowing down productivity.
+
 ## Guiding Principles
 
 Zero Trust works based on assuming “never trust and always verify” or an innate distrust ("default deny”).” John Kindervag, coined the term “Zero Trust” as a way to solve the compounded problem of “deperimeterization” – the expansion and dissolving of the perimeter as it becomes more porous. 
