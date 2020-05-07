@@ -14,7 +14,7 @@ The model has shortcomings in authentication, authorization, and granting excess
 
 Likewise, in cybersecurity, the data is surrounded by multiple layers of firewalls, segmentation, authentication, and authorization. And while these components are necessary, they are insufficient due to the “deperimeterization” caused by the move to cloud and mobile.
 
-A problem with this security model is the implied or implicit which is trust granted to persons or services within the walls of the network. The location or network on which a device or user resides must never implicitly grant a level of trust worthiness. The assumption must be made that neither the private network nor any device on it are inherently trustworthy.
+A problem with this security model is the implied or implicit trust which is granted to persons or services within the walls of the network. The location or network on which a device or user resides must never implicitly grant a level of trust worthiness. The assumption must be made that neither the private network nor any device on it are inherently trustworthy.
 
 How do organizations secure the crown jewels with a complex model incorporating the following variables?  
 
@@ -25,7 +25,7 @@ How do organizations secure the crown jewels with a complex model incorporating 
 
 Given all these facets of access, relying on a moat as the security perimeter becomes a liability. 
 
-Legacy VPNs have long been the traditional way to access enterprise applications and data when users are outside of corporate locations. This model has worked for use cases where end users get access to the corporate network, typically only from approved corporate-managed devices.
+Traditional VPNs have long been the traditional way to access enterprise applications and data when users are outside of corporate locations. This model has worked for use cases where end users get access to the corporate network, typically only from approved corporate-managed devices.
 
 But this is why traditional VPN model doesn’t adequately meet the needs of the evolving use cases. Applications have been modernized for web-based access and deployed in multi-cloud environments. And forcing user access through a corporate VPN en route to a cloud app falls short on end-user experience. The requirement for a new strategy has been accelerated. How does an organization build a wall around a resource that exists in multiple locations simultaneously? 
 
