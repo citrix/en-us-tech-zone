@@ -8,15 +8,13 @@ Traditional, perimeter-based approaches to protecting information systems and da
 
 For many years, the cybersecurity paradigm has emulated physical security from the middle ages: the castle and the moat. It’s an approach many enterprises have adopted and are finding insufficient in the world of cloud. 
 
-In this classic defense model, multiple layers of protection with tightly secured checkpoints and gateways surround and protect the crown jewels. All access is controlled and verified at the gateway where authentication and authorization are granted. Once verified, the user is effectively given free rein of the environment. 
+In this classic defense model, multiple layers of protection with tightly secured checkpoints and gateways surround and protect the crown jewels. All access is controlled and verified at the gateway where authentication and authorization are granted. However, once verified, the user is effectively given free rein of the environment. 
 
 The model has shortcomings in authentication, authorization, and granting excessive access. Attackers often use subterfuge to bypass the gateways and superior tools designed to break down the walls. 
 
 Likewise, in cybersecurity, the data is surrounded by multiple layers of firewalls, segmentation, authentication, and authorization. And while these components are necessary, they are insufficient due to the “deperimeterization” caused by the move to cloud and mobile.
 
-The problem with this security model is the implied or implicit which is trust granted to persons or services within the walls of the network. The location or network on which a device or user resides must never implicitly grant a level of trust worthiness. The assumption must be made that neither the private network nor any device on it are inherently trustworthy.
-
-The traditional VPN model doesn’t adequately meet the needs of the evolving use cases. Applications are being modernized for web-based access and deployed in multi-cloud environments. And forcing user access through a corporate VPN en route to a cloud app falls short on end-user experience. The requirement for a new strategy has been accelerated. How does an organization build a wall around a resource that exists in multiple locations simultaneously? 
+A problem with this security model is the implied or implicit which is trust granted to persons or services within the walls of the network. The location or network on which a device or user resides must never implicitly grant a level of trust worthiness. The assumption must be made that neither the private network nor any device on it are inherently trustworthy.
 
 How do organizations secure the crown jewels with a complex model incorporating the following variables?  
 
@@ -29,9 +27,7 @@ Given all these facets of access, relying on a moat as the security perimeter be
 
 Legacy VPNs have long been the traditional way to access enterprise applications and data when users are outside of corporate locations. This model has worked for use cases where end users get access to the corporate network, typically only from approved corporate-managed devices.
 
-But with the VPN model, end-user trust is strictly based on the notion of access to the corporate network. The question always comes up…what happens once a user is on the network? How do you prevent lateral access? 
-
-A major downside of managing separate proxy and VPN solutions from multiple vendors is complexity. These become separate sets of security policies, analytics engines, security silos. These separate solutions might not provide the same depth in security protection against unauthorized access.
+But this is why traditional VPN model doesn’t adequately meet the needs of the evolving use cases. Applications have been modernized for web-based access and deployed in multi-cloud environments. And forcing user access through a corporate VPN en route to a cloud app falls short on end-user experience. The requirement for a new strategy has been accelerated. How does an organization build a wall around a resource that exists in multiple locations simultaneously? 
 
 ## Guiding Principles
 
@@ -41,7 +37,7 @@ The purpose of a Zero Trust Architecture is to protect data. It is not a single 
 
 With Zero Trust, there is no implicit trust granted to systems based on their physical or network location. The approach requires continuous authorization no matter what the originating request location; and increases visibility and analytics across the network. 
 
-Zero trust is achieved through an intentional implementation of the framework. Using a collection of products that have Zero Trust principles built in and are integrated provides a collective approach to achieve the business outcomes.
+Zero trust is achieved through an intentional implementation of the framework. Using a collection of products that are integrate and have Zero Trust principles built in provides a collective approach to achieve the business outcomes.
 
 Citrix sees Zero Trust as a strategy that applies not only just to networking, but across the organization in users, devices, networks, applications – and how people work.
 
@@ -86,12 +82,16 @@ Identity encompasses the use of technologies like Identity, Credential, and Acce
 ### Devices 
 
 Organizations need a consistent way of managing policies across devices and ownership models. Administrators need to be able to determine what level of confidence they can have in the device. Devices are one part of the “Where” question. Where is the request coming from and what is the device risk level? Real-time security posture and trustworthiness of devices are foundational attributes of the Zero Trust approach. 
+
 Traditionally, when looking at endpoint devices, there are three popular ownership models (corporate owned, BYOD/CYOD, COPE), each with differing inherent trust, trust factors and need for validation. With Zero Trust, that inherent trust is eliminated, and every device, regardless of ownership requires validation.
-Network
+
+### Network
 
 A Zero Trust Architecture focuses on protecting resources, not network segments. The network location of the user, device, or resource is no longer seen as the prime component of the security posture. However, the ability to segment, isolate, and control the network remains a pillar of security and essential for a Zero Trust network. And the ability to select the appropriate app and workspace delivery model is the second part of the “Where” question.
-Zero Trust networks are sometimes described as “perimeter-less”. Some argue that perimeter protections are becoming less important for networks, workflows, tools, and operations. In reality, the perimeter is still a there, but in a much more granular way. Zero Trust networks actually attempt to move perimeters in from the network edge and create segments to isolate critical data from other data. The perimeter must move closer to the data, in concert with micro-segmentation, to strengthen protections and controls. Hence the reason why the traditional castle and moat approach is not sufficient. 
-Network security is expanding as organizations grow their networks. During transitions to Software Defined Networks, SD-WANs, and internet-based technologies, it’s critical to consider how to:
+
+Zero Trust networks are sometimes described as “perimeter-less”. Some argue that perimeter protections are becoming less important for networks and operations. In reality, the perimeter is still there, but in a much more granular way. Zero Trust networks actually attempt to move perimeters in from the network edge and create segments to isolate critical data from other data. The perimeter must move closer to the data to strengthen protections and controls. Hence the reason why the traditional castle and moat approach is not sufficient. 
+
+During transitions to Software Defined Networks, SD-WANs, and internet-based technologies, it’s critical to consider how to:
 
 1.	Control privileged network access
 2.	Manage internal and external data flows
@@ -101,12 +101,14 @@ Network security is expanding as organizations grow their networks. During trans
 ### Apps
 
 Securing and properly managing the app layer and compute containers and virtual machines is central to Zero Trust adoption. Being able to identify and control the technology stack facilitates more granular and accurate access decisions. Unsurprisingly, MFA is an increasingly critical part of providing proper access control to apps in Zero Trust environments. 
+
 An important aspect of the Zero Trust model is granting access only to specific the apps required for end users to do their job. There’s no access provided into the network itself, significantly improving the organization’s security posture by reducing the attack surface.
 
 ### Data
 
 Customers, employees, and partners are increasingly mobile, and consume apps and data other resources from every network to which they connect. When someone wants to access data, a Zero Trust model weighs the value of data against the assurance that the correct person is there and authorized to access the data while using a secure device. 
-The minimal requirements for access to the resource can include authenticator assurance levels, such as MFA and or requests for system configuration. Whether that person is inside or outside the corporate network is not a reliable indicator of any of those three assurances. However, flag obvious unsanctioned network location such as deny access from overseas IP addresses or within unexpected time frames.
+
+The minimal requirements for access to the resource can include authenticator assurance levels, such as MFA and or requests for system configuration. Whether that person is inside or outside the corporate network is not a reliable indicator of any of those three assurances. However, flag obvious unsanctioned network locations such as deny access from overseas IP addresses or within unexpected time frames.
 
 ### Visibility and Analytics
 
@@ -134,9 +136,7 @@ Citrix Gateway provides an enhanced and flexible approach to security. IT is ena
 
 Citrix’s identity approach allows enterprises to preserve their investments. It allows them to use the native IdP security capabilities like MFA, biometrics to protect the user within the Workspace. It supports LDAP, RADIUS, TACACS, Diameter, and SAML2.0 authentication mechanisms, among others.  
 
-Citrix Gateway provides SmartAccess and SmartControl policies that provide flexibility to balance user convenience with risk. Based on the result of a SmartAccess scan, a user can be granted full access, reduced access, quarantine, or no access at all. For example, a user who fails a device compliance check can get access to a reduced set of applications. Sensitive applications can have restricted functionality like blocking printing and downloading. 
-
-SmartControl centralizes policy management on Citrix Gateway, strengthening access control at the network layer before the user reaches the back-end resource. 
+Citrix Gateway provides SmartAccess and SmartControl policies that provide flexibility to balance user convenience with risk. Based on the result of a SmartAccess scan, a user can be granted full access, reduced access, quarantine, or no access at all. For example, a user who fails a device compliance check can get access to a reduced set of applications. Sensitive applications can have restricted functionality like blocking printing and downloading. SmartControl centralizes policy management on Citrix Gateway, strengthening access control at the network layer before the user reaches the back-end resource. 
 
 ### Citrix Networking
 
@@ -163,12 +163,6 @@ Citrix Content Collaboration is a cloud-based Software-as-a-Service (SaaS) solut
 Content Collaboration employs TLS security protocols to protect authentication, authorization, and file transfers. Files are encrypted in transit with up to 256-bit encryption. A keyed-hashed message authentication code (HMAC) is employed to authenticate and ensure the integrity of intra-system communications.
 
 Citrix Content Collaboration provides admins configurable controls. Admins protect corporate documents with access controls, audit logs, account lockout, and session timeout thresholds. With Citrix Security Analytics, customers can detect anomalies in file related activities, identify breaches, and take appropriate actions. 
-
-* Setting password policy, session timeout and account lockout thresholds
-* Setting folder and subfolder permissions to ensure that users only have access to authorized files or folders 
-* Tracking account activity with customized email notifications to give a better understanding of how often users access information.
-* Enabling file versioning and retention so all versions of a file with the same name will save to the account according to the desired retention period.
-* Setting MFA that requires a secondary authentication method, such as an SMS verification code, in addition to a username/password combination
 
 ### Citrix Analytics 
 
