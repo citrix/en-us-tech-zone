@@ -27,19 +27,19 @@ Given all these facets of access, relying on a moat as the security perimeter be
 
 Traditional VPNs have long been the traditional way to access enterprise applications and data when users are outside of corporate locations. This model has worked for use cases where end users get access to the corporate network, typically only from approved corporate-managed devices.
 
-But this is why traditional VPN model doesn’t adequately meet the needs of the evolving use cases. Applications have been modernized for web-based access and deployed in multi-cloud environments. And forcing user access through a corporate VPN en route to a cloud app falls short on end-user experience. The requirement for a new strategy has been accelerated. How does an organization build a wall around a resource that exists in multiple locations simultaneously? 
+But this is why the VPN model doesn’t adequately meet the needs of the evolving use cases. Applications have been modernized for web-based access and deployed in multi-cloud environments. And forcing user access through a corporate VPN en route to a cloud app falls short on end-user experience. The requirement for a new strategy has been accelerated. How does an organization build a wall around a resource that exists in multiple locations simultaneously? 
 
 Apps, data and services are not just inside the walls of the data center. Locations have moved, become dynamic, users are accessing resources everywhere, and organizations need a framework that allows easy access to all resources without slowing down productivity.
 
 ## Guiding Principles
 
-Zero Trust works based on assuming “never trust and always verify” or an innate distrust ("default deny”).” John Kindervag, coined the term “Zero Trust” as a way to solve the compounded problem of “deperimeterization” – the expansion and dissolving of the perimeter as it becomes more porous. 
+Zero Trust works based on assuming “never trust and always verify” or an innate distrust ("default deny”). John Kindervag, coined the term “Zero Trust” as a way to solve the compounded problem of “deperimeterization” – the expansion and dissolving of the perimeter as it becomes more porous. 
 
 The purpose of a Zero Trust Architecture is to protect data. It is not a single network architecture but a set of guiding principles in network infrastructure design and operation. The Zero Trust approach provides a consistent security strategy for accessing data that resides anywhere, from anywhere, from any device and in any way. 
 
 With Zero Trust, there is no implicit trust granted to systems based on their physical or network location. The approach requires continuous authorization no matter what the originating request location; and increases visibility and analytics across the network. 
 
-Zero trust is achieved through an intentional implementation of the framework. Using a collection of products that are integrate and have Zero Trust principles built in provides a collective approach to achieve the business outcomes.
+Zero trust is achieved through an intentional implementation of the framework. Using a collection of products that are integrated and have Zero Trust principles built in provides a collective approach to achieve the business outcomes.
 
 Citrix sees Zero Trust as a strategy that applies not only just to networking, but across the organization in users, devices, networks, applications – and how people work.
 
@@ -48,16 +48,16 @@ Citrix Zero Trust Architecture focuses on protecting resources and is designed a
 1. All data sources and computing services are considered resources
 2. All communication is secured regardless of network location because every network, both enterprise and remote, is innately hostile and not trustworthy 
 3. Access to individual enterprise resources is granted on a per-session basis
-4. Access to resources is enforced dynamic policy—including the observable state of client identity, application, and the requesting asset—and can include other behavioral attributes.
-5. As no device is inherently trusted, the enterprise monitors assets to ensure that they remain in the most secure state possible. 
-6. All resource authentication and authorization are dynamic and strictly enforced before access is allowed.
-7. The enterprise collects as much information as possible about the current state of network infrastructure and communications. It uses the data to improve its security posture.
+4. Access to resources is enforced dynamic policy—including the observable state of client identity, application, and the requesting asset—and can include other behavioral attributes
+5. As no device is inherently trusted, the enterprise monitors assets to ensure that they remain in the most secure state possible
+6. All resource authentication and authorization are dynamic and strictly enforced before access is allowed
+7. The enterprise collects as much information as possible about the current state of network infrastructure and communications. It uses the data to improve its security posture
 
 ## Pillars of Zero Trust
 
 Zero Trust is the most important End User Computing movement since Mobile and Cloud. The “any-any-any” vision that Citrix has been espousing for years is secured by access policies that take trust into context. 
 
-Zero Trust must granularly identify users, devices, and applications on the network. Authentication (both user and device) is performed before establishing a connection and access to resources is minimized to only those end users who are validated. Users are continuously authenticated to determine the identity and security posture of each access request. . After these requirements are met, access to data resources is granted only when the resource is required. 
+Zero Trust must granularly identify users, devices, and applications on the network. Authentication (both user and device) is performed before establishing a connection and access to resources is minimized to only those end users who are validated. Users are continuously authenticated to determine the identity and security posture of each access request. After these requirements are met, access to data resources is granted only when the resource is required. 
 
 Citrix calls this Contextual Access. Access policies scrutinize trust elements across the 5 W’s of Access to grant specific usage entitlements. Contextual Access is a continuous process. It extends from the request event through specific data usage entitlements and dynamic policies that govern the data security lifecycle.
 
@@ -95,10 +95,10 @@ Zero Trust networks are sometimes described as “perimeter-less”. Some argue 
 
 During transitions to Software Defined Networks, SD-WANs, and internet-based technologies, it’s critical to consider how to:
 
-1.	Control privileged network access
-2.	Manage internal and external data flows
-3.	Prevent lateral movement in the network
-4.	Make dynamic policy and trust decision on network and data traffic
+1. Control privileged network access
+2. Manage internal and external data flows
+3. Prevent lateral movement in the network
+4. Make dynamic policy and trust decision on network and data traffic
 
 ### Apps
 
@@ -110,7 +110,7 @@ An important aspect of the Zero Trust model is granting access only to specific 
 
 Customers, employees, and partners are increasingly mobile, and consume apps and data other resources from every network to which they connect. When someone wants to access data, a Zero Trust model weighs the value of data against the assurance that the correct person is there and authorized to access the data while using a secure device. 
 
-The minimal requirements for access to the resource can include authenticator assurance levels, such as MFA and or requests for system configuration. Whether that person is inside or outside the corporate network is not a reliable indicator of any of those three assurances. However, flag obvious unsanctioned network locations such as deny access from overseas IP addresses or within unexpected time frames.
+The minimal requirements for access to the resource can include authenticator assurance levels, such as MFA and or requests for system configuration. Whether that person is inside or outside the corporate network is not a reliable indicator of any of those three assurances. However, flag obvious unusual or unsanctioned network locations such as deny access from overseas IP addresses or within unexpected time frames.
 
 ### Visibility and Analytics
 
