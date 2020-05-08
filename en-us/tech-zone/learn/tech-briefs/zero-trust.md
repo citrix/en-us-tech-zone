@@ -29,7 +29,7 @@ Traditional VPNs have long been the traditional way to access enterprise applica
 
 But this is why traditional VPN model doesn’t adequately meet the needs of the evolving use cases. Applications have been modernized for web-based access and deployed in multi-cloud environments. And forcing user access through a corporate VPN en route to a cloud app falls short on end-user experience. The requirement for a new strategy has been accelerated. How does an organization build a wall around a resource that exists in multiple locations simultaneously? 
 
-Apps, data and services are not just inside the walls of the data center. Locations have moved, become dynamic, users are accessing many things all over the place, and organizations need a framework that allows easy access to all resources without slowing down productivity.
+Apps, data and services are not just inside the walls of the data center. Locations have moved, become dynamic, users are accessing resources everywhere, and organizations need a framework that allows easy access to all resources without slowing down productivity.
 
 ## Guiding Principles
 
@@ -49,7 +49,7 @@ Citrix Zero Trust Architecture focuses on protecting resources and is designed a
 2. All communication is secured regardless of network location because every network, both enterprise and remote, is innately hostile and not trustworthy 
 3. Access to individual enterprise resources is granted on a per-session basis
 4. Access to resources is enforced dynamic policy—including the observable state of client identity, application, and the requesting asset—and can include other behavioral attributes.
-5. The enterprise ensures that all owned and associated devices are in the most secure state possible. It monitors assets to ensure that they remain in the most secure state possible. However, no device is inherently trusted.
+5. As no device is inherently trusted, the enterprise monitors assets to ensure that they remain in the most secure state possible. 
 6. All resource authentication and authorization are dynamic and strictly enforced before access is allowed.
 7. The enterprise collects as much information as possible about the current state of network infrastructure and communications. It uses the data to improve its security posture.
 
@@ -57,7 +57,7 @@ Citrix Zero Trust Architecture focuses on protecting resources and is designed a
 
 Zero Trust is the most important End User Computing movement since Mobile and Cloud. The “any-any-any” vision that Citrix has been espousing for years is secured by access policies that take trust into context. 
 
-Zero Trust must granularly identify users, devices, and applications on the network. Access to data resources is granted when the resource is required. Authentication (both user and device) is performed before establishing a connection. Protection minimizes access to resources to only uses who are validated. Users are continuously authenticated the identity and security posture of each access request. Control over lifecycle usage of resources means being continuously situationally aware and what is contextually risk appropriate.
+Zero Trust must granularly identify users, devices, and applications on the network. Authentication (both user and device) is performed before establishing a connection and access to resources is minimized to only those end users who are validated. Users are continuously authenticated to determine the identity and security posture of each access request. . After these requirements are met, access to data resources is granted only when the resource is required. 
 
 Citrix calls this Contextual Access. Access policies scrutinize trust elements across the 5 W’s of Access to grant specific usage entitlements. Contextual Access is a continuous process. It extends from the request event through specific data usage entitlements and dynamic policies that govern the data security lifecycle.
 
@@ -79,7 +79,7 @@ Ongoing authentication and authorization of trusted users is paramount to Zero T
 * Monitoring
 * Validating user trustworthiness
 
-Identity encompasses the use of technologies like Identity, Credential, and Access Management. Identity is the set of users of and attributes developed by the enterprise. The users and attributes form the basis for policies for resource access. User identities can include a mix of logical identity, biometric data, and behavior characteristics. Use identity attributes such as time and geolocation to derive trust scores. 
+Identity encompasses the use of technologies like Identity, Credential, and Access Management. Identity is the set of users of and attributes developed by the enterprise. The users and attributes form the basis for policies for resource access. User identities can include a mix of logical identity, biometric data, and behavior characteristics. Use identity attributes such as time and geolocation to derive trust scores to dynamically assess the risk and adjust access appropriately.
 
 ### Devices 
 
@@ -182,7 +182,7 @@ Security admins can re-enable access once user risk levels are lower than accept
 
 ## Conclusion
 
-Traditional security models assume all data and transactions are trusted. Incidents such as compromises, loss of data, malicious actors, or uncharacteristic user behavior would degrade that trust. Zero Trust flips the trust calculation by assuming all data and transactions are untrusted from the outset. 
+Traditional security models assume all data and transactions are trusted based on assumptions. Incidents such as compromises, loss of data, malicious actors, or uncharacteristic user behavior would degrade that trust. Zero Trust flips the trust posture by assuming all data and transactions are untrusted from the outset. 
 
 For organizations, the promise of Zero Trust and mitigating excessive access has been a goal for many years. But its implementation has been elusive. All necessary elements have been inordinately difficult to construct and manage as an end-to-end security solution. These include multifactor authentication (MFA), dynamic identity management, endpoint analysis, encryption, information rights management (IRM), application-specific networking, and data usage policies.
 
