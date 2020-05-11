@@ -134,8 +134,7 @@ This guide provides detailed instructions on how to configure your environment i
 
     ![Citrix Virtual Desktops service - Download and run Citrix Cloud Connector installer](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-18.png)
 
-1.  Citrix Cloud connectivity test successful message is displayed. Click **Close**.
-**Note**: If the test fails, check the following ![link to resolve the issue](https://support.citrix.com/article/CTX224133)
+1.  Citrix Cloud connectivity test successful message is displayed. Click **Close**. **Note**: If the test fails, check the following [link to resolve the issue](https://support.citrix.com/article/CTX224133)
 
     ![Citrix Virtual Desktops service - Citrix Cloud connectivity check](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-19.png)
 
@@ -240,105 +239,105 @@ Use Citrix Virtual Desktop service to create a catalog of the physical machines
 
 1.  In the Actions menu(right side). Click **Create Machine Catalog**.
 
-    ![Citrix Virtual Desktops service - Click Create Machine Catalog](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-41.png)
+    ![Citrix Virtual Desktops service - Click Create Machine Catalog](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-42.png)
 
 1.  In the Machine Catalog Setup dialog, click **Next**
 
-    ![Citrix Virtual Desktops service - Intro page](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-42.png)
+    ![Citrix Virtual Desktops service - Intro page](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-43.png)
 
 1.  Select **Remote PC Access**. Click **Next**
 
-    ![Citrix Virtual Desktops service - Select Remote PC Access](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-43.png)
+    ![Citrix Virtual Desktops service - Select Remote PC Access](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-44.png)
 
 1.  Click **Add Machine Accounts** or click **Add OUs** based on whether you want to add machines or OUs (all the physical machines in the OU). In our example we are adding a machine.
 
-    ![Citrix Virtual Desktops service - Add machines accounts or OU](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-44.png)
+    ![Citrix Virtual Desktops service - Add machines accounts or OU](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-45.png)
 
 1.  In the Select Computers pop up, **enter the first few characters of the machine hostname** you want to add. Click **Check Names**
 
-    ![Citrix Virtual Desktops service - Search for machine host name](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-45.png)
+    ![Citrix Virtual Desktops service - Search for machine host name](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-46.png)
 
 1.  If the search returns more than one machine names, **choose the ones you want to add** (hold down the CTRL key to choose more than one). Once you have selected all the machines. Click **OK**
 
-    ![Citrix Virtual Desktops service - Select machine host names](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-46.png)
+    ![Citrix Virtual Desktops service - Select machine host names](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-47.png)
 
 1.  Repeat the last 2 steps to add all the machines you want to add to the catalog. Then click **OK** in the Select Computers dialog
 
-    ![Citrix Virtual Desktops service - Repeat steps for other machines](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-47.png)
+    ![Citrix Virtual Desktops service - Repeat steps for other machines](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-48.png)
 
 1.  From the **Select the minimum functional level for this catalog** drop-down list, select **1811 (or newer)**. Click **Next**
 
-    ![Citrix Virtual Desktops service - Choose minimum functional level](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-48.png)
+    ![Citrix Virtual Desktops service - Choose minimum functional level](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-49.png)
 
 1.  **Enter a name** for the machine catalog. Click **Finish**. You will be returned to the Machine Catalogs page.
 
-    ![Citrix Virtual Desktops service - Complete catalog creation](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-49.png)
+    ![Citrix Virtual Desktops service - Complete catalog creation](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-50.png)
 
 ## Create a Delivery group
 
 1.  From the left side menu click **Delivery Groups** to start creating your delivery group.
 
-    ![Citrix Virtual Desktops service - Open Delivery Groups](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-50.png)
+    ![Citrix Virtual Desktops service - Open Delivery Groups](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-51.png)
 
 1.  From the Actions menu(right side), click **Create Delivery Group**.
 
-    ![Citrix Virtual Desktops service - Click Create Delivery Group](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-51.png)
+    ![Citrix Virtual Desktops service - Click Create Delivery Group](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-52.png)
 
 1.  In the Create Delivery Group dialog, click **Next**
 
-    ![Citrix Virtual Desktops service - Intro Page](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-52.png)
+    ![Citrix Virtual Desktops service - Intro Page](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-53.png)
 
 1.  Select the **catalog you created earlier**. Click **Next**
 
-    ![Citrix Virtual Desktops service - Select Remote PC Access catalog](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-53.png)
+    ![Citrix Virtual Desktops service - Select Remote PC Access catalog](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-54.png)
 
 1.  Specify which users can access these desktops. For our example we assign the desktops to a group of users. Click the **Restrict use to this Delivery Group to the following users’** radio button. Click **Add**
 
-    ![Citrix Virtual Desktops service - Restrict Delivery group to specific users](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-54.png)
+    ![Citrix Virtual Desktops service - Restrict Delivery group to specific users](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-55.png)
 
 1.  **Add domain users / groups** that you want to have access to the delivery group. You can check their names by clicking **Check Names**. Once you are done click **OK**
 
-    ![Citrix Virtual Desktops service - Select users or groups to be added](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-55.png)
+    ![Citrix Virtual Desktops service - Select users or groups to be added](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-56.png)
 
 1.  If the search returns more than one user name, **choose the ones you want to add** (hold down the CTRL key to choose more than one). Once you have selected all the users you want to add. Click **OK**
 
-    ![Citrix Virtual Desktops service - Choose the users](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-56.png)
+    ![Citrix Virtual Desktops service - Choose the users](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-57.png)
 
 1.  Repeat the last 2 steps for all the users you want to add to the delivery group. Then click **OK** in the Select Users or Groups dialog. Click **Next** in the Create Delivery group dialog
 
-    ![Citrix Virtual Desktops service - Finish user selection](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-57.png)
+    ![Citrix Virtual Desktops service - Finish user selection](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-58.png)
 
 1.  Click **Add**
 
-    ![Citrix Virtual Desktops service - Add Desktop Assignment Rule](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-58.png)
+    ![Citrix Virtual Desktops service - Add Desktop Assignment Rule](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-59.png)
 
 1.  In the Add Desktops Assignment Rule dialog. **Enter Display Name** for the delivery group. Click **Add** and **add the same or a subset of the users you chose earlier** again. **Ensure Enable desktop assignment rule** check box is checked. Click **OK**
 
-    ![Citrix Virtual Desktops service - Enter display name of Delivery Group and click Add](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-59.png)
+    ![Citrix Virtual Desktops service - Enter display name of Delivery Group and click Add](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-60.png)
 
 1.  Click **Next**
 
-    ![Citrix Virtual Desktops service - Click Next](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-60.png)
+    ![Citrix Virtual Desktops service - Click Next](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-61.png)
 
 1.  **Enter a Delivery Group name**. Click **Finish**
 
-    ![Citrix Virtual Desktops service - Enter Delivery Group name and start creation](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-61.png)
+    ![Citrix Virtual Desktops service - Enter Delivery Group name and start creation](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-62.png)
 
 1.  Once the delivery group is created, the Manage Tab looks like this. Click the **Desktops tab** in the Details section. Click **x machine(s)** is/are not assigned to a user.
 
-    ![Citrix Virtual Desktops service - Choose Desktops Tab and click list of unassigned machines](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-62.png)
+    ![Citrix Virtual Desktops service - Choose Desktops Tab and click list of unassigned machines](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-63.png)
 
 1.  **Select the machine you want to assign** to a user. Click **Change User** from the Action menu
 
-    ![Citrix Virtual Desktops service - Select machine and click Change User](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-63.png)
+    ![Citrix Virtual Desktops service - Select machine and click Change User](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-64.png)
 
 1.  Click **Add**
 
-    ![Citrix Virtual Desktops service - Click Add](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-64.png)
+    ![Citrix Virtual Desktops service - Click Add](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-65.png)
 
 1.  **Search for the user** you want to assign to the machine using the **Check Names** button. Once found, click **OK**. Click **Ok** again.
 
-    ![Citrix Virtual Desktops service - Select user and click OK](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-65.png)
+    ![Citrix Virtual Desktops service - Select user and click OK](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-66.png)
 
 Repeat the steps for the rest of the machines to assign each user to their physical machine.
 
@@ -346,16 +345,16 @@ Repeat the steps for the rest of the machines to assign each user to their physi
 
 1.  **Open the Workspace URL** you had saved earlier (from Citrix Cloud) to gain access to the Citrix Workspace. **Log in as a domain user** you have assigned the remote desktop to.
 
-    ![Citrix Virtual Desktops service - Log in to Citrix Workspace](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-66.png)
+    ![Citrix Virtual Desktops service - Log in to Citrix Workspace](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-67.png)
 
 1.  If this is the first time you are launching a session from the browser, you may get the following pop up. **Ensure Citrix Workspace App is installed** and click **Detect Workspace**
 
-    ![Citrix Virtual Desktops service - Detect Citrix Workspace app](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-67.png)
+    ![Citrix Virtual Desktops service - Detect Citrix Workspace app](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-68.png)
 
 1.  Click **View All Desktops**. Click the **Remote PC Access delivery group**
 
-    ![Citrix Virtual Desktops service - View All Desktops and launch session](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-68.png)
+    ![Citrix Virtual Desktops service - View All Desktops and launch session](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-69.png)
 
 1.  The session will launch giving the user access to the remote physical PC
 
-    ![Citrix Virtual Desktops service - Session launches](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-69.png)
+    ![Citrix Virtual Desktops service - Session launches](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-70.png)
