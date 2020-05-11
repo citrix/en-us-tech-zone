@@ -32,6 +32,8 @@ description: View reference architectures created by our industry partners on jo
 
 ## HPE
 
+[HPE Synergy with NVIDIA GPU on Citrix Virtual Apps and Desktops Service for Healthcare](https://h20195.www2.hpe.com/V2/GetDocument.aspx?docname=a50001404enw) - Robust hybrid cloud solution for app and desktop delivery from composable infrastructure with GPU acceleration
+
 [HPE Reference Architecture for Citrix XenApp on HPE Synergy Platform](https://h20195.www2.hpe.com/v2/getdocument.aspx?docname=a00049199enw) - Delivering cost effective client virtualization with Citrix XenApp on VMware ESXi Server
 
 [HPE Reference Architecture for Citrix XenDesktop on HPE SimpliVity Platform](https://h20195.www2.hpe.com/v2/getdocument.aspx?docname=a00016054enw) - HPE Reference Architecture for Citrix XenDesktop 7.13 on HPE SimpliVity 380 hyper-converged infrastructure
