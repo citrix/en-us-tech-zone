@@ -24,6 +24,8 @@ The following animation shows a user accessing a SaaS application with Okta prov
 
  [![Okta SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_demo-video.gif)
 
+This demonstration shows an IdP-initiated SSO flow where the user launches the application from within Citrix Workspace. This PoC guide also supports a SP-initiated SSO flow where the user tries to access the SaaS app directly from their preferred browser.
+
  Assumptions:
 
 *  Okta is already configured to provide SSO to Office 365 and other SaaS apps
