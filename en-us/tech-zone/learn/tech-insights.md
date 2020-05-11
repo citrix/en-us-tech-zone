@@ -75,4 +75,6 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Site Aggregation](/en-us/tech-zone/learn/tech-insights/site-aggregation.html) - Hybrid deployment that allows your on-premises Citrix Virtual Apps & Desktops environments to be part of Citrix Workspace.
 
+[VPN-Less Access to Web, Windows and Linux Resources](/en-us/tech-zone/learn/tech-insights/vpn-less-access.html) - Learn how users can access internal web apps, Windows/Linux apps and Windows/Linux desktops without a VPN.
+
 [Workspace app](/en-us/tech-zone/learn/tech-insights/workspace-app.html) - Personalized interface to provide access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
