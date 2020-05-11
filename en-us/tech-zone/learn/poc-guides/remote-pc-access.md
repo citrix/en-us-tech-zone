@@ -160,8 +160,199 @@ This guide provides detailed instructions on how to configure your environment i
 
     ![Citrix Virtual Desktops service - Refresh resource locations](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-25.png)
 
-## Install Virtual Delivery Agent on the Remote PC hosts
+## Install Citrix Virtual Delivery Agent on the Remote PC hosts
 
-We now install the Citrix Virtual Desktops, virtual delivery agent on the physical machines that we are going to give users access to. If you wish to install the Citrix Virtual Delivery Agent using [scripts](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/vda-install-scripts.html) or a deployment tool like [SCCM](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas-sccm.html) follow the appropriate links. Ensure to use the install command line parameters as shown in the instructions below.
+We now install the Citrix Virtual Desktops, Virtual Delivery Agent on the physical machines that we are going to give users access to. If you wish to install the Citrix Virtual Delivery Agent using [scripts](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/vda-install-scripts.html) or a deployment tool like [SCCM](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas-sccm.html) follow the appropriate links. Ensure to use the install command line parameters as shown in the instructions below.
 
-1.  
+1.  Connect to the **physical machine via RDP as the Domain admin**.
+
+    ![Citrix Virtual Desktops service - RDP to physical host](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-26.png)
+
+1.  Open **Citrix.com** in Internet Explorer. Hover over **Sign In** and click **My Account**
+
+    ![Citrix Virtual Desktops service - Open Citrix.com](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-27.png)
+
+1.  Sign in with your **username and password**. Click **Downloads** in the top menu
+
+    ![Citrix Virtual Desktops service - Log in to Citrix.com](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-28.png)
+ 
+1.  From the **Select a product...** drop down, select **Citrix Virtual Apps and Desktops**
+
+    ![Citrix Virtual Desktops service - Select CVAD from drop down](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-29.png)
+
+1.  In the page that opens, select the **latest version of Citrix Virtual Apps and Desktops 7** (without the .x at the end)
+
+    ![Citrix Virtual Desktops service - Select latest version](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-30.png)
+
+1.  Scroll down to **Components that are on the product ISO but also packaged separately**. Click **chevron** to expand the section. Click **Download File** under the **Single-session OS Virtual Delivery Agent *version***
+
+    ![Citrix Virtual Desktops service - Select Single-session OS VDA](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-31.png)
+
+1.  **Check “I have read and certify that I comply with the above Export Control Laws”** check box, if you agree. Click **Accept**. The download should begin.
+
+    ![Citrix Virtual Desktops service - Accept terms and download](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-32.png)
+
+1.  **Save** the file. When the download completes. Click **Open Folder**
+
+    ![Citrix Virtual Desktops service - Save and open download folder](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-33.png)
+
+1.  **Search for PowerShell** from the Start Menu search bar and Click **Run as administrator**
+
+    ![Citrix Virtual Desktops service - Run powershell as administrator](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-34.png)
+
+1.  Traverse to the directory you downloaded the installer in.
+
+    ![Citrix Virtual Desktops service - Change directory to download folder](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-35.png)
+
+1.  Run the following command. (Replace the name of the executable with the one you downloaded and the cloud connector FQDN)
+**VDAWorkstationSetup_*version*.exe /quiet /remotepc /includeadditional “Citrix User Profile Manager”,“Citrix User Profile Manager WMI Plugin” /controllers “cloudconnecotrFQDN” /enable_hdx_ports /noresume /noreboot**
+
+    ![Citrix Virtual Desktops service - Run installer](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-36.png)
+
+1.  Wait for the installation to complete. **Reboot** the physical machine.
+
+    ![Citrix Virtual Desktops service - Wait for install and reboot](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-37.png)
+    
+Repeat the procedure for all the physical hosts that you want to make available remotely.
+
+## Create a machine catalog in Citrix Virtual Desktops service
+
+Use Citrix Virtual Desktop service to create a catalog of the physical machines
+
+1.  Once the trial is approved. **Log in to Citrix Cloud from your local machine**. Scroll to **My Services**, and locate **Virtual Apps and Desktops** service tile, click **Manage**
+
+    ![Citrix Virtual Desktops service - Log in to Citrix Cloud](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-38.png)
+
+1.  The service overview page is displayed. **Scroll further** down you will see the **Workspace Experience URL**. **Bookmark it**.
+
+    ![Citrix Virtual Desktops service - Book mark Workspace URL](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-39.png)
+
+1.  Click the **chevron** next to Manage on the top left. Click **Web Studio (Preview)**
+
+    ![Citrix Virtual Desktops service - Open Web Studio](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-40.png)
+
+1.  In the left menu under Citrix Studio. Click **Machine Catalogs**
+
+    ![Citrix Virtual Desktops service - Open Web Studio](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-41.png)
+
+1.  In the Actions menu(right side). Click **Create Machine Catalog**.
+
+    ![Citrix Virtual Desktops service - Click Create Machine Catalog](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-41.png)
+
+1.  In the Machine Catalog Setup dialog, click **Next**
+
+    ![Citrix Virtual Desktops service - Intro page](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-42.png)
+
+1.  Select **Remote PC Access**. Click **Next**
+
+    ![Citrix Virtual Desktops service - Select Remote PC Access](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-43.png)
+
+1.  Click **Add Machine Accounts** or click **Add OUs** based on whether you want to add machines or OUs (all the physical machines in the OU). In our example we are adding a machine.
+
+    ![Citrix Virtual Desktops service - Add machines accounts or OU](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-44.png)
+
+1.  In the Select Computers pop up, **enter the first few characters of the machine hostname** you want to add. Click **Check Names**
+
+    ![Citrix Virtual Desktops service - Search for machine hostnames](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-45.png)
+
+1.  If the search returns more than one machine names, then you will have to **choose the ones you want to add** (hold down the CTRL key to choose more than one). Once you have selected all the machines. Click **OK**
+
+    ![Citrix Virtual Desktops service - Select machine hostnames](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-46.png)
+
+1.  Repeat the last 2 steps to add all the machines you wish to add to the catalog. Then click **OK** in the Select Computers dialog
+
+    ![Citrix Virtual Desktops service - Repeat steps for other machines](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-47.png)
+
+1.  From the **Select the minimum functional level for this catalog** dropdown, select **1811 (or newer)**. Click **Next**
+
+    ![Citrix Virtual Desktops service - Choose minimum functional level](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-48.png)
+
+1.  **Enter a name** for the machine catalog. Click **Finish**. You will be returned to the Machine Catalogs page.
+
+    ![Citrix Virtual Desktops service - Complete catalog creation](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-49.png)
+
+## Create a Delivery group
+
+1.  From the left side menu click **Delivery Groups** to start creating your delivery group.
+
+    ![Citrix Virtual Desktops service - Open Delivery Groups](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-50.png)
+
+1.  From the Actions menu(right side), click **Create Delivery Group**.
+
+    ![Citrix Virtual Desktops service - Click Create Delivery Group](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-51.png)
+
+1.  In the Create Delivery Group dialog, click **Next**
+
+    ![Citrix Virtual Desktops service - Intro Page](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-52.png)
+
+1.  Select the **catalog you created earlier**. Click **Next**
+
+    ![Citrix Virtual Desktops service - Select Remote PC catalog](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-53.png)
+
+1.  For our example we will assign the users to a group. Click the **Restrict use to this Delivery Group to the following users’** radio button. Click **Add**
+
+    ![Citrix Virtual Desktops service - Restrict Delivery group to specific users](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-54.png)
+
+1.  **Add domain users / groups** that you want to have access to the delivery group. You can check their names by clicking **Check Names**. Once you are done click **OK**
+
+    ![Citrix Virtual Desktops service - Select users or groups to be added](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-55.png)
+
+1.  If the search returns more than one username, **choose the ones you want to add** (hold down the CTRL key to choose more than one). Once you have selected all the users you want to add. Click **OK**
+
+    ![Citrix Virtual Desktops service - Choose the users](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-56.png)
+
+1.  Repeat the last 2 steps for all the users you wish to add to the delivery group. Then click **OK** in the Select Users or Groups dialog. Click **Next** in the Create Delivery group dialog
+
+    ![Citrix Virtual Desktops service - Finish user selectio](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-57.png)
+
+1.  Click **Add**
+
+    ![Citrix Virtual Desktops service - Add Desktop Assignment Rule](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-58.png)
+
+1.  In the Add Desktops Assignment Rule dialog. **Enter Display Name** for the delivery group. Click **Add** and **add the same or a subset of the users you chose earlier** again. **Ensure Enable desktop assignment rule** checkbox is checked. Click **OK**
+
+    ![Citrix Virtual Desktops service - Enter display name of Delivery Group and click Add](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-59.png)
+
+1.  Click **Next**
+
+    ![Citrix Virtual Desktops service - Click Next](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-60.png)
+
+1.  **Enter a Delivery Group name**. Click **Finish**
+
+    ![Citrix Virtual Desktops service - Enter Delivery Group name and start creation](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-61.png)
+
+1.  Once the delivery group is created, the Manage Tab should look like this. Click the **Desktops tab** in the Details section. Click **x machine(s)** is/are not assigned to a user.
+
+    ![Citrix Virtual Desktops service - Choose Desktops Tab and click list of unassigned machines](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-62.png)
+
+1.  **Select the machine you wish to assign** to a user. Click **Change User** from the Action menu
+
+    ![Citrix Virtual Desktops service - Select machine and click Change User](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-63.png)
+
+1.  Click **Add**
+
+    ![Citrix Virtual Desktops service - Click Add](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-64.png)
+
+1.  **Search for the user** you want to assign to the machine using the **Check Names** button. Once found, click **OK**. Click **Ok** again.
+
+    ![Citrix Virtual Desktops service - Select user and click OK](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-65.png)
+
+Repeat the steps for the rest of the machines to assign each user to their physical machine.
+
+## Launch the session from Citrix Workspace
+
+1.  **Open the Workspace URL** you had saved earlier (from Citrix Cloud) to gain access to the Citrix workspace. **Log in as a domain user** you have assigned the remote desktop to.
+
+    ![Citrix Virtual Desktops service - Log in to Citrix Workspace](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-66.png)
+
+1.  If this is the first time you are launching a session from the browser, you may get the following pop up. **Ensure Citrix Workspace App is installed** and click **Detect Workspace**
+
+    ![Citrix Virtual Desktops service - Detect Citrix Workspace app](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-67.png)
+
+1.  Click **View All Desktops**. Click on the **Remote PC Access delivery group**
+
+    ![Citrix Virtual Desktops service - View All Desktops and launch session](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-68.png)
+
+1.  The session should launch giving the user access to the Remote PC
+
+    ![Citrix Virtual Desktops service - Session launches](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-69.png)
