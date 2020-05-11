@@ -22,7 +22,7 @@ The following animation shows a user accessing a SaaS application with Citrix pr
 
  [![Citrix SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_demo-video.gif)
 
-This demonstration shows an IdP-initiated SSO flow where the user launches the application from within Citrix Workspace. This PoC guide also supports a SP-initiated SSO flow where the user tries to access the SaaS app directly from their preferred browser. 
+This demonstration shows an IdP-initiated SSO flow where the user launches the application from within Citrix Workspace. This PoC guide also supports a SP-initiated SSO flow where the user tries to access the SaaS app directly from their preferred browser.
 
  Assumptions:
 
