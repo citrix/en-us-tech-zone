@@ -14,7 +14,7 @@ Citrix announced the general availability of Citrix Virtual Desktop service on 4
 
 ## Conceptual Architecture
 
-[![Citrix Virtual Desktops service - Add Remote PC Access](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_virtual-desktops-service_ca.png)](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_virtual-desktops-service-ca.png)
+[![Citrix Virtual Desktops service - Add Remote PC Access](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_virtual-desktops-service-ca.png)](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_virtual-desktops-service-ca.png)
 
 ## Scope
 
