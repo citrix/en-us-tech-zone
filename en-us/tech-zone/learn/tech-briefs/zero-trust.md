@@ -1,6 +1,7 @@
 ---
 layout: doc
-description: Copy & paste description from TOC here
+description: Zero Trust is the most important End User Computing movement since Mobile and Cloud. The Citrix Zero Trust Architecture enables the “any-any-any” vision that Citrix has been espousing for years and is secured by access policies that take trust into context.
+
 ---
 # Zero Trust Architecture
 
@@ -54,8 +55,6 @@ Citrix Zero Trust Architecture focuses on protecting resources and is designed a
 7. The enterprise collects as much information as possible about the current state of network infrastructure and communications. It uses the data to improve its security posture
 
 ## Pillars of Zero Trust
-
-Zero Trust is the most important End User Computing movement since Mobile and Cloud. The “any-any-any” vision that Citrix has been espousing for years is secured by access policies that take trust into context. 
 
 Zero Trust must granularly identify users, devices, and applications on the network. Authentication (both user and device) is performed before establishing a connection and access to resources is minimized to only those end users who are validated. Users are continuously authenticated to determine the identity and security posture of each access request. After these requirements are met, access to data resources is granted only when the resource is required. 
 
