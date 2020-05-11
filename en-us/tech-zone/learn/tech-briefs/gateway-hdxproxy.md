@@ -73,7 +73,7 @@ Citrix Gateway service operates in multiple POPs around the world in conjunction
 
 *  Each POP is configured for High Availability
 *  Four 9s of reliability
-*  19 POPs
+*  19 Global POPs
 
 ![Citrix Global Points of Presence](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_4.png)
 
