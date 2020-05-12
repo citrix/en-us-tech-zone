@@ -10,7 +10,7 @@ description: Learn how to remotely connect your users working from home to their
 
 ## Overview
 
-Citrix announced the general availability of Citrix Virtual Desktops service on 4 May 2020. This Proof of Concept guide is designed to help you quickly configure Citrix Virtual Desktops service to include Remote PC Access in your environment. At the end of this Proof of Concept guide you will be able to give users who are working from home access to the on-premises physical desktops using Citrix Virtual Desktops service. You will be able to let your users access their on-premises workstations on any device of their choice without having to connect over a VPN.
+Citrix announced the addition of Remote PC Access within Citrix Virtual Desktops service on April 30, 2020. This Proof of Concept guide is designed to help you quickly configure Citrix Virtual Desktops service to include Remote PC Access in your environment. At the end of this Proof of Concept guide you will be able to give users who are working from home access to the on-premises physical desktops using Citrix Virtual Desktops service. You will be able to let your users access their on-premises workstations on any device of their choice without having to connect over a VPN.
 
 ## Conceptual Architecture
 
@@ -39,7 +39,7 @@ The in-office workstations that you are looking to connect to are Windows machin
 ### Citrix Cloud Connector
 
 To install the Citrix Cloud Connectors in your environment, you require (at least two) Windows Server 2012 R2 or later server machines/VMs. You require static IPs for these two machines. Windows installation and domain join of these machines must have been done in advance.
-The system requirements for the Cloud Connectors are [here](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html). Review the guidance on the cloud connector installation [here](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html#installation-considerations-and-guidance).
+The system requirements for the Cloud Connectors are [here](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html). Review the guidance on the cloud connector installation [here](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html#installation-considerations-and-guidance).
 The machine the Citrix Cloud Connector runs on must have network access to all the physical machines that are to be made available on the internet via the Citrix Workspace.
 
 Some requirements that can block Citrix Cloud Connector installation are:
@@ -164,7 +164,7 @@ This guide provides detailed instructions on how to configure your environment i
 
 ## Install Citrix Virtual Delivery Agent on the Remote PC Access hosts
 
-We now install the Citrix Virtual Desktops, Virtual Delivery Agent on the physical machines that we are going to give users access to. If you want to install the Citrix Virtual Delivery Agent using [scripts](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/vda-install-scripts.html) or a deployment tool like [SCCM](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas-sccm.html) follow the appropriate links. Ensure to use the install command line parameters as shown in the following instructions.
+We now install the Citrix Virtual Desktops, Virtual Delivery Agent on the physical machines that we are going to give users access to. If you want to install the Citrix Virtual Delivery Agent using [scripts](/en-us/citrix-virtual-apps-desktops/install-configure/vda-install-scripts.html) or a deployment tool like [SCCM](/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas-sccm.html) follow the appropriate links. Ensure to use the install command line parameters as shown in the following instructions.
 
 1.  Connect to the **physical machine via RDP as the Domain admin**.
 
@@ -206,7 +206,7 @@ We now install the Citrix Virtual Desktops, Virtual Delivery Agent on the physic
 
     ![Citrix Virtual Desktops service - Change directory to download folder](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-35.png)
 
-1.  Run the following command. (Replace the name of the executable with the one you downloaded and the cloud connector FQDN). 
+1.  Run the following command. (Replace the name of the executable with the one you downloaded and the cloud connector FQDN).
 **VDAWorkstationSetup_*version*.exe /quiet /remotepc /includeadditional “Citrix User Profile Manager”,“Citrix User Profile Manager WMI Plugin” /controllers “cloudconnecotrFQDN” /enable_hdx_ports /noresume /noreboot**
 
     ![Citrix Virtual Desktops service - Run installer](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-36.png)
