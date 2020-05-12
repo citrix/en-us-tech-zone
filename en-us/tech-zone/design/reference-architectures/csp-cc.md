@@ -7,23 +7,23 @@ layout: doc
 
 **Author:** [Darren Harding](https://Twitter.com/DarrenHarding)
 
-**Additional Thanks:** The Citris Service Provider Channel team who reviewed the document.
+**Additional Thanks:** The Citrix Service Provider Channel team who reviewed the document.
 
 ## Audience
 
-This document is intended for IT decision makers, consultants, solution integrators, cloud engineers, and CSP Partners. Whom are seeking to deploy a CSP Content Collaboration  environment integrated with Citrix Workspace.
+This document is intended for IT decision makers, consultants, solution integrators, cloud engineers, and CSP Partners. Whom are seeking to deploy a CSP Content Collaboration environment integrated with Citrix Workspace.
 
-## Introducion and Scope
+## Introduction and Scope
 
-This document provides architectural guidance for Citrix Service Providers (CSP) who want to resell Content Collaboration services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base shared across multiple tenants and multiple geographies.
+This document provides architectural guidance for Citrix Service Providers (CSP) who want to resell Content Collaboration services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base. Shared across multiple tenants and multiple geographies.
 
 The Citrix CSP Reference Architecture is designed to be flexible and can be used to implement hosting environments within virtually any infrastructure, during any phase of implementation.
 
 This documentation describes the design and implementation of the Content Collaboration infrastructure to be vendor agnostic and uses common wording for the specific technology in use.
 
-This version of the Reference Architecture focuses on the Workspace integration of Content Collabnoration for Citrix Service Providers, and is designed in principal for new Content Collaboration Resellers.
+This version of the Reference Architecture focuses on the Workspace integration of Content Collaboration for Citrix Service Providers, and is designed in principle for new Content Collaboration Resellers.
 
-We are continually expaning the scope of the reference architecture to cover the overall workspace services for CSPs in future versions.
+We are continually expanding the scope of the reference architecture to cover the overall workspace services for CSPs in future versions.
 
 ## Workspace Integration with Content Collaboration
 
@@ -52,29 +52,29 @@ Give the mobile users secure access to documents on specified network file share
 
 In order to use Content Collaboration, Citrix Service Providers need to have a reseller account. Enabling a Service Provider to manage Customers, Customers users, and Storage Zones.
 
-There are three storage options available to Citrix Service Providers. Citrix Cloud Hosted single-tenant, on-premises Single Tenant and on-premises multitenant.
+There are three storage options available to Citrix Service Providers. Citrix Cloud Hosted single-tenant, on-premises Single Tenant, and on-premises multitenant.
 
-Service providers can host customers using a mix of dedicated ot multitenant Storage Zones. However it is not easy to switch between Storage Zones once the configuration is set. Requiring a migration of data between Storage Zones.
+Service providers can host customers using a mix of dedicated of multitenant Storage Zones. However, it is not easy to switch between Storage Zones once the configuration is set. Requiring a migration of data between Storage Zones.
 
 ### Single Tenant Storage Zones
 
-The first option is to have the Service provider Manage individual customer on their own control planes and storage zones. The advantage of this model is complete isolation from other customers. Usually located within dedicated Resource Locations. These Storage Zones can be located within the CSP or customers data center or using the storage from Citrix Cloud.
+The first option is to have the Service provider Manage individual customer on their own control planes and storage zones. The advantage of this model is complete isolation from other customers. Located within dedicated Resource Locations. These Storage Zones can be located within the CSP or customers data center or using the storage from Citrix Cloud.
 
 [Resource Locations](/en-us/tech-zone/design/reference-architectures/csp-cvads.html#architecture-models-for-citrix-service-providers)
 
-This gives the Customer and CSP greater flexibility. However this consumes more resources as dedicated components are needed per customer.
+Giving the Customer and CSP greater flexibility. Consuming more resources as dedicated components are needed per customer.
 
 [![CSP-Image-001](/en-us/tech-zone/design/media/reference-architectures_csp-cc_001.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cc_001.png)
 
 ### Multitenant Storage Zones
 
-The second option is for the Service Provider to manage multiple customers on a shared control plane and storage zone. This aligns with the Shared Resource location simplifying the configuration and reducing one-time processes. Giving the CSP the ability to rapidly add additional customers, reducing complexity and cost.
+The second option is for the Service Provider to manage multiple customers on a shared control plane and storage zone. Aligning with the Shared Resource location simplifying the configuration and reducing one-time processes. Giving the CSP the ability to rapidly add additional customers, reducing complexity and cost.
 
 [![CSP-Image-002](/en-us/tech-zone/design/media/reference-architectures_csp-cc_002.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cc_002.png)
 
 ## Management
 
-The design of the CSP Reseller Account for Content Collaboration is to centrally control and manage customer accounts and Storage Zones, additional control is allowed under the customer accounts, to give them the flexibility to manage users settings for their organization
+The design of the CSP Reseller Account for Content Collaboration. Is to centrally control and manage customer accounts and Storage Zones, additional control is allowed under the customer accounts. Giving them the flexibility to manage users settings for their organization
 
 ### Storage Zone Management
 
@@ -90,15 +90,15 @@ The list of managed customers is displayed under Tenant Management with the Stor
 
 [![CSP-Image-005](/en-us/tech-zone/design/media/reference-architectures_csp-cc_005.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cc_005.png)
 
-To manage the customer, select the hyperlink on the Account Name and you will be redirected to the Customer Content Collaboration configuration page under the ShareFile.com. To manage under Citrix Cloud use the link in the manage customers page.
+To manage the customer, select the hyperlink on the Account Name and you are redirected to the Customer Content Collaboration configuration page under the ShareFile.com. To manage under Citrix Cloud use the link in the manage customers page.
 
 ## Deployment Considerations
 
-For a Service Provider to add the Content Collaboration service they will need to first Activate the service in their Cloud Account. Then Convert the Service to a Citrix Service Providers Reseller account using the Stocking SKU provided from their distributor. They will also create a ShareFile subdomain in their relevant Citrix Region. This will match the region of their cloud account. Non-United States Partners need to verify they regions and locations of any service before adding the Content Collaboration service.
+For a Service Provider to add the Content Collaboration service they need to first activate the service in their Cloud Account. Then Convert the Service to a Citrix Service Providers Reseller account using the Stocking SKU provided from their distributor. Creating a ShareFile subdomain in their relevant Citrix Region. Matching of their cloud account. Non-United States Partners need to verify they regions and locations of any service before adding the Content Collaboration service.
 
 ### Workspace Integration
 
-One of the best features of the Citrix Service Providers Managed Content Collaboration Service. Is the ability to add users to the workspace and enable integration between the Applications, Desktop and Files Services.
+One of the best features of the Citrix Service Providers Managed Content Collaboration Service. Is the ability to add users to the workspace and enable integration between the Applications, Desktop, and Files Services.
 
 ### Preparing Storage Zones
 
@@ -120,7 +120,7 @@ When the Reseller account is complete the Citrix Service Provider can add conten
 
 When the Service Provider has the Reseller account. They can add the service to existing customers.
 
-To onboard a new customer, navigate to the Customers section on the Cloud Portal. Select a Customer, choose add services and select the Content Collaboration Service.
+To onboard a new customer, navigate to the Customers section on the Cloud Portal. Select a Customer, choose add services, and select the Content Collaboration Service.
 
 [![CSP-Image-007](/en-us/tech-zone/design/media/reference-architectures_csp-cc_007.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cc_007.png)
 
@@ -150,7 +150,7 @@ Set up the Master Admin and Support details for the Content Collaboration Servic
 
 [![CSP-Image-012](/en-us/tech-zone/design/media/reference-architectures_csp-cc_012.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cc_012.png)
 
-Select the Storage Zone for the Customer, (Partner Hosted and multitenant Storage Zones need to be configured before continuing)
+Select the Storage Zone for the Customer (Partner Hosted and multitenant Storage Zones need to be configured before continuing).
 
 [![CSP-Image-013](/en-us/tech-zone/design/media/reference-architectures_csp-cc_013.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cc_013.png)
 
@@ -192,7 +192,7 @@ When the user logs on to the Workspace, using the Active Directory sAMAccountNam
 
 ## Sources
 
-The goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [Source Diagrams](https://citrix.sharefile.com/d/s0160d55a024469da)
+The goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [Source Diagrams](https://citrix.sharefile.com/d/s633f91d0dfc4b3e8)
 
 ## References
 
