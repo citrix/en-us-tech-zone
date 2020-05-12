@@ -118,7 +118,7 @@ When the Reseller account is complete the Citrix Service Provider can add conten
 
 ### Citrix Service Provider Customer Content Collaboration Account
 
-When the Service Provider has the Reseller account. They can add the service to existing customers.
+When the Service Provider has the Reseller account, they can add the service to existing customers.
 
 To onboard a new customer, navigate to the Customers section on the Cloud Portal. Select a Customer, choose add services, and select the Content Collaboration Service.
 
@@ -126,7 +126,7 @@ To onboard a new customer, navigate to the Customers section on the Cloud Portal
 
 Adding the service starts the reseller process.
 
-Select the Customer use case, this is useful for identifying Customer Services and reporting, however it does not affect the configuration of the service.
+Select the Customer use case, this information is useful for identifying Customer Services and reporting, however it does not affect the configuration of the service.
 
 [![CSP-Image-008](/en-us/tech-zone/design/media/reference-architectures_csp-cc_008.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cc_008.png)
 
@@ -178,7 +178,7 @@ To enable Workspace integration, under the Customers Cloud account, select Works
 
 ### Adding Workspace Enabled users
 
-To add users that have Workspace integration. There needs to be a connection between the Content Collaboration User and the corresponding user in Active Directory. The email address needs to be contiguous with the, for example;
+To add users with Workspace integration. There needs to be a connection between the Content Collaboration User and the corresponding user in Active Directory. The email address needs to be contiguous, for example;
 
 Email address in Content Collaboration
 
@@ -188,7 +188,7 @@ Email address in Active Directory
 
 [![CSP-Image-018](/en-us/tech-zone/design/media/reference-architectures_csp-cc_018.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cc_018.png)
 
-When the user logs on to the Workspace, using the Active Directory sAMAccountName or UPN. They will have the Content Collaboration Files integration, even they do not have any Applications or Desktops assigned.
+When the user logs on to the Workspace, using the Active Directory sAMAccountName or UPN. They will have the Content Collaboration integration, even they do not have any Applications or Desktops assigned.
 
 ## Sources
 
