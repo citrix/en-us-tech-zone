@@ -1,7 +1,7 @@
 ---
 layout: doc
 ---
-# Citrix Service Provider -Content Collaboration Workspace Integration
+# Citrix Service Provider Content Collaboration Workspace Integration
 
 ## Contributors
 
@@ -34,19 +34,19 @@ CSP Content Collaboration enables true business-class data security for Customer
 
 Citrix maintains Online data centers. The ShareFile control subsystem handles various operations not related to file contents and performs storage zones health checks.
 
-[Storage zones controllers](https://docs.citrix.com/en-us/storage-zones-controller/5-0.html#components)
+[Storage zones controllers](/en-us/storage-zones-controller/5-0.html#components)
 
 ### Storage Zones
 
 Is a Single or Multitenant location that provides data storage. Where the Citrix Service Provider and Customer store data in an on-premises or Public Cloud network or hosted in Citrix Cloud
 
-[Storage zones](https://docs.citrix.com/en-us/storage-zones-controller/5-0.html#data-storage)
+[Storage zones](/en-us/storage-zones-controller/5-0.html#data-storage)
 
 ### Storage zone connectors
 
 Give the mobile users secure access to documents on specified network file shares and to SharePoint sites, site collections, and document libraries
 
-[Storage zones](https://docs.citrix.com/en-us/storage-zones-controller/5-0.html#components)
+[Storage zones](/en-us/storage-zones-controller/5-0.html#components)
 
 ## Architecture Models for Citrix Service Providers
 
@@ -90,7 +90,7 @@ The list of managed customers is displayed under Tenant Management with the Stor
 
 [![CSP-Image-005](/en-us/tech-zone/design/media/reference-architectures_csp-cc_005.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cc_005.png)
 
-To manage the customer, select the hyperlink on the Account Name and you are redirected to the Customer Content Collaboration configuration page under the ShareFile.com. To manage under Citrix Cloud use the link in the manage customers page.
+To manage the customer, select the hyperlink on the Account Name and you are redirected to the Customer Content Collaboration configuration page under ShareFile.com. To manage under Citrix Cloud use the link in the manage customers page.
 
 ## Deployment Considerations
 
@@ -104,7 +104,7 @@ One of the best features of the Citrix Service Providers Managed Content Collabo
 
 After the Reseller account configuration, the Service Providers can add Single of Multitenant Storage Zone to their account. They need to prepare and install the Storage Zone Controller before adding customers to the storage.
 
-[Install storage zones controller and create a storage zone](https://docs.citrix.com/en-us/storage-zones-controller/5-0/install/controller.html)
+[Install storage zones controller and create a storage zone](/en-us/storage-zones-controller/5-0/install/controller.html)
 
 ## Deployment Process
 
