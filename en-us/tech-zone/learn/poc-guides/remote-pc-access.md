@@ -10,7 +10,7 @@ description: Learn how to remotely connect your users working from home to their
 
 ## Overview
 
-Citrix announced the general availability of Citrix Virtual Desktop service on 4 May 2020. This Proof of Concept guide is designed to help you quickly configure Citrix Virtual Desktops service to include Remote PC Access in your environment. At the end of this Proof of Concept guide you will be able to give users who are working from home access to the on-premises physical desktops using Citrix Virtual Desktops service. You will be able to let your users access their on-premises workstations on any device of their choice without having to connect over a VPN.
+Citrix announced the general availability of Citrix Virtual Desktops service on 4 May 2020. This Proof of Concept guide is designed to help you quickly configure Citrix Virtual Desktops service to include Remote PC Access in your environment. At the end of this Proof of Concept guide you will be able to give users who are working from home access to the on-premises physical desktops using Citrix Virtual Desktops service. You will be able to let your users access their on-premises workstations on any device of their choice without having to connect over a VPN.
 
 ## Conceptual Architecture
 
@@ -219,7 +219,7 @@ Repeat the procedure for all the physical hosts that you want to make available 
 
 ## Create a machine catalog in Citrix Virtual Desktops service
 
-Use Citrix Virtual Desktop service to create a catalog of the physical machines
+Use Citrix Virtual Desktops service to create a catalog of the physical machines
 
 1.  Once the trial is approved, **Log in to Citrix Cloud from your local machine**. Scroll to **My Services**, and locate **Virtual Apps and Desktops** service tile, click **Manage**
 
