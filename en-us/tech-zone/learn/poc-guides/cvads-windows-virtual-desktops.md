@@ -20,7 +20,7 @@ Microsoft announced the general availability of Windows Virtual Desktop on 30th 
 
 In this PoC guide, you experience the role of a Citrix Cloud and Microsoft Azure administrator and create a hybrid environment that spans your organization’s on-premises deployment and Azure. You provide access to a virtualization environment consisting of the Windows 10 Multi-Session experience in Windows Virtual Desktop (WVD) and on-premises resources to an end user with Citrix Virtual Apps and Desktops service.
 
-This guide showcases how to do the following actions:
+This guide showcases how to perform the following actions:
 
 1.  Create a new Azure subscription and an Azure Active Directory (AAD) Tenant (if you don’t have one)
 2.  Connect your on-premises AD to your AAD using Azure AD Connect
