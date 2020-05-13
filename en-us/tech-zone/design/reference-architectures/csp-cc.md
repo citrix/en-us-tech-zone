@@ -15,7 +15,7 @@ This document is intended for IT decision makers, consultants, solution integrat
 
 ## Introduction and Scope
 
-This document provides architectural guidance for Citrix Service Providers (CSP) who want to resell Content Collaboration services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base. Shared across multiple tenants and multiple geographies.
+This document provides architectural guidance for Citrix Service Providers (CSP) who want to resell Content Collaboration services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base.
 
 The Citrix CSP Reference Architecture is designed to be flexible and can be used to implement hosting environments within virtually any infrastructure, during any phase of implementation.
 
@@ -30,9 +30,9 @@ We are continually expanding the scope of the reference architecture to cover th
 The CSP Content Collaboration reseller Service provides the platform and simplifies the management and deployment of collaboration for their customers.
 CSP Content Collaboration enables true business-class data security for Customers users. While maintaining total control. The Customers can access, synchronize, and securely share files from anywhere, on any device. Automate feedback and approval workflows to streamline and maximize productivity.
 
-### ShareFile control subsystem
+### ShareContent Collaboration File control subsystem
 
-Citrix maintains Online data centers. The ShareFile control subsystem handles various operations not related to file contents and performs storage zones health checks.
+Citrix maintains Online data centers. The Content Collaboration control subsystem handles various operations not related to file contents and performs storage zones health checks.
 
 [Storage zones controllers](/en-us/storage-zones-controller/5-0.html#components)
 
@@ -44,25 +44,29 @@ Is a Single or Multitenant location that provides data storage. Where the Citrix
 
 ### Storage zone connectors
 
-Give the mobile users secure access to documents on specified network file shares and to SharePoint sites, site collections, and document libraries
+Give users secure access to documents or specified network file shares and to SharePoint sites, site collections, and document libraries
 
 [Storage zones](/en-us/storage-zones-controller/5-0.html#components)
 
 ## Architecture Models for Citrix Service Providers
 
-In order to use Content Collaboration, Citrix Service Providers need to have a reseller account. Enabling a Service Provider to manage Customers, Customers users, and Storage Zones.
+In order to use Content Collaboration, Citrix Service Providers need to have a reseller account. Managing Customers, Customers users, and Storage Zones.
 
-There are three storage options available to Citrix Service Providers. Citrix Cloud Hosted single-tenant, on-premises Single Tenant, and on-premises multitenant.
+There are three storage options available to Citrix Service Providers.
 
-Service providers can host customers using a mix of dedicated of multitenant Storage Zones. However, it is not easy to switch between Storage Zones once the configuration is set. Requiring a migration of data between Storage Zones.
+ -Citrix Cloud Hosted single-tenant
+ -On-premises Single Tenant
+ -on-premises Multitenant
+
+Service providers can host customers using a mix of Storage Zones. However, it is not easy to switch between Storage Zones once the configuration is set. Requiring a migration of data between Storage Zones.
 
 ### Single Tenant Storage Zones
 
-The first option is to have the Service provider Manage individual customer on their own control planes and storage zones. The advantage of this model is complete isolation from other customers. Located within dedicated Resource Locations. These Storage Zones can be located within the CSP or customers data center or using the storage from Citrix Cloud.
+The first option is to have the Service provider Manage individual customer on their own storage zones. The advantage of this model is complete isolation from other customers. Located within dedicated Resource Locations. These Storage Zones can be situated within the CSP or customers data center or using the storage from Citrix Cloud.
 
 [Resource Locations](/en-us/tech-zone/design/reference-architectures/csp-cvads.html#architecture-models-for-citrix-service-providers)
 
-Giving the Customer and CSP greater flexibility. Consuming more resources as dedicated components are needed per customer.
+This model allows the Customer and CSP greater flexibility. Consuming more resources as dedicated components are needed per customer.
 
 [![CSP-Image-001](/en-us/tech-zone/design/media/reference-architectures_csp-cc_001.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cc_001.png)
 
@@ -74,7 +78,7 @@ The second option is for the Service Provider to manage multiple customers on a 
 
 ## Management
 
-The design of the CSP Reseller Account for Content Collaboration. Is to centrally control and manage customer accounts and Storage Zones, additional control is allowed under the customer accounts. Giving them the flexibility to manage users settings for their organization
+The design of the CSP Reseller Account for Content Collaboration. Is to centrally control and manage customer accounts and Storage Zones, additional control is also allowed under the customer accounts. Giving them the flexibility to manage users settings for their organization
 
 ### Storage Zone Management
 
@@ -94,7 +98,7 @@ To manage the customer, select the hyperlink on the Account Name and you are red
 
 ## Deployment Considerations
 
-For a Service Provider to add the Content Collaboration service they need to first activate the service in their Cloud Account. Then Convert the Service to a Citrix Service Providers Reseller account using the Stocking SKU provided from their distributor. Creating a ShareFile subdomain in their relevant Citrix Region. Matching of their cloud account. Non-United States Partners need to verify they regions and locations of any service before adding the Content Collaboration service.
+For a Service Provider to add the Content Collaboration service they need to first activate the service in their Cloud Account. Then Convert the Service to a Citrix Service Providers Reseller account using the Stocking SKU provided from their distributor. Creating a Content Collaboration subdomain in their relevant Citrix Region. Matching of their cloud account. Non-United States Partners need to verify they regions and locations of any service before adding the Content Collaboration service.
 
 ### Workspace Integration
 
