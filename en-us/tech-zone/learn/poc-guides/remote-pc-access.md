@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from any anywhere and on any device.
+description: Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from anywhere and on any device.
 ---
 # Proof of Concept guide for Remote PC Access with Citrix Virtual Desktops service
 
@@ -32,9 +32,9 @@ This guide will showcase how to perform the following actions:
 
 ## Prerequisites
 
-### Domain requirements
+### Host machine requirements
 
-The in-office workstations that you are looking to connect to are Windows machines that are joined to a Windows Active Directory (AD) domain.
+The in-office workstations that your users must connect to are Windows single-session operating system machines, and are joined to a Windows Active Directory (AD) domain.
 
 ### Citrix Cloud Connector
 
@@ -58,7 +58,7 @@ This guide provides detailed instructions on how to configure your environment i
 
 1.  Go to the [Citrix Cloud](https://citrix.cloud.com) URL. If you are an existing Citrix Cloud customer skip to the next section: [Subscribe to the Citrix Virtual Desktops service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html#subscribe-to-the-citrix-virtual-desktops-service). Ensure that you have an active Citrix Cloud account. If your account has expired you must contact sales to enable it.
 
-1.  If you are new to Citrix Cloud click **Sign up and try it free** in the bottom left
+1.  If you are new to Citrix Cloud, click **Sign up and try it free** in the bottom left
 
     ![Citrix Virtual Desktops service - Create Citrix Cloud account](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-1.png)
 
