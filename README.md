@@ -12,7 +12,7 @@ Tech Zone has always been oriented towards technical community, but now you can 
 
 Preferred method of contacting Citrix Tech Zone team is through one of the dedicated Slack channels. If you are not a Citrix employee or member of NDA communities (CTP/CTA program), you can use the Slack channel at [World of EUC](https://worldofeuc.slack.com/messages/CLKSAPFUG) workspace. For citrites, use channel `#tm-techzone`.
 
-If you prefer to use email, feel free to reach out to us using [email](mailto:Tech-Content-Feedback@citrix.com).
+If you prefer to use email, feel free to reach out to us using [email](mailto:tech-content-feedback@citrix.com).
 
 ### 1 - Create an account
 
