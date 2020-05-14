@@ -58,10 +58,11 @@ describe how it unifies applications, data and desktops into a digital workspace
 
 ## Data oriented approach to GDPR requirements
 
-Following the GDPR guidelines might be much easier for modern cloud companies than traditional enterprises. While most cloud companies have only a few centralized sources where personally identifiable information (PII) is stored, traditional companies potentially have hundreds, if not thousands, of different databases and data sources that need to be
-assessed, reviewed and updated to meet the latest data privacy standards.
+Following the GDPR guidelines might be much easier for modern cloud companies than traditional enterprises. While most cloud companies have only a few centralized sources where personally identifiable information (PII) is stored, traditional companies potentially have hundreds, if not thousands, of different databases and data sources that need to be assessed, reviewed and updated to meet the latest data privacy standards.
 
 These data sources can range from traditional SQL databases to emails, digital documents or even physical documents. With today's often aggressive timelines, many enterprises face a challenge to properly prepare and update systems as required. It is important to understand that the GDPR doesn’t affect only active data sources, but also all backups, disaster recovery sites and physical printouts.
+
+GDPR involves two key roles for data: the data controller and the data processor. The data controller is the entity who determines the purpose of the data and how the data is to be handled. The data processor handles or processes the actual data per the controller's guidelines.
 
 The GDPR is all about the maturity of the company when dealing with data and privacy information. Citrix has always been a data and
 application oriented company, with a proven record of handling complex, often international projects that are dealing with thousands of applications.
