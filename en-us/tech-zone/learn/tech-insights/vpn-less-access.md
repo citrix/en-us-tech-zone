@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn ho users can access internal web apps, Windows/Linux apps and Windows/Linux desktops without a VPN
+description: Learn how users can access internal web apps, Windows/Linux apps and Windows/Linux desktops without a VPN.
 ---
 # VPN-Less Access to Web, Windows, and Linux Resources
 
