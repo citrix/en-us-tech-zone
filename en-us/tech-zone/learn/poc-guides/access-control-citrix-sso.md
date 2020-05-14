@@ -109,12 +109,12 @@ To successfully integrate SaaS apps with Citrix Workspace, the administrator nee
 
 *  Within Citrix Cloud, select **Library** from the menu
 
-[![Authorize SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_authorize-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-01.png)
+[![Authorize SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_authorize-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_authorize-saas-app-01.png)
 
 *  Find the SaaS app and select **Manage Subscribers**
 *  Add the appropriate users/groups who are authorized to launch the app
 
-[![Authorize SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_authorize-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_sso_authorize-saas-app-02.png)
+[![Authorize SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_authorize-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_authorize-saas-app-02.png)
 
 ### Validate
 
