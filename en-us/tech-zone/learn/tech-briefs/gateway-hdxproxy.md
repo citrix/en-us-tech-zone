@@ -8,7 +8,7 @@ description: Provides users with secure remote access to Citrix Virtual Apps and
 
 **Authors:** [Matthew Brooks](https://twitter.com/tweetmattbrooks), [Daniel Feller](https://twitter.com/djfeller)
 
-**Special Thanks:** Vijaya Raghavan, Kenneth Bell, Jeff Kann, Hrushikesh Paralikar, and Simon Jackson
+**Special Thanks:** Vijaya Raghavan, Kenneth Bell, Jeff Kann, Hrushikesh Paralikar, Simon Jackson, and Pradeep Vasu
 
 Citrix Gateway service for HDX Proxy provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls. The entire infrastructure overhead of managing remote access moves to the cloud and is hosted by Citrix.
 
@@ -72,8 +72,8 @@ Citrix ITM provides resiliency and a better user experience by directing workspa
 Citrix Gateway service operates in multiple POPs around the world in conjunction with ITM which monitors the health of each site. If for any reason a POP goes down or connectivity is degraded past thresholds, Citrix ITM responds to subsequent DNS queries with the public IP address of the next closest POP. The Workspace app and the Citrix Virtual Apps and Desktops controller will initiate retries and timeouts based on session [connection](/en-us/citrix-virtual-apps-desktops/manage-deployment/connections.html) and [timer](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-limits-policy-settings.html) settings.
 
 *  Each POP is configured for High Availability
-*  14 POPs (11 Azure, 3 AWS).
 *  Four 9s of reliability
+*  19 Global POPs
 
 ![Citrix Global Points of Presence](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_4.png)
 
