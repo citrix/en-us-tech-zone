@@ -456,7 +456,7 @@ As stated previously, MCS is the service (within CVAD) responsible for spinning 
 * Storage account network is access from the public internet. 
 * Storage account RBAC is listkeys permission
  
-For some organizations keeping the Storage account endpoint public is a concern.  Below is an analysis of the assets created and stored when deploying VMs w/ managed disk (the default behavior). 
+For some organizations keeping the Storage account endpoint public is a concern.  Below is an analysis of the assets created and stored when deploying VMs with managed disk (the default behavior). 
  
 * Table Storage.
 We maintain machine configuration and state data in table storage in the primary storage account (or a secondary one, if the primary one is being used for Premium disks) for the catalog.  There is no sensitive information within the tables.
