@@ -339,7 +339,7 @@ Use Citrix Virtual Desktops service to create a catalog of the physical machines
 
     ![Citrix Virtual Desktops service - Select user and click OK](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-66.png)
 
-Repeat the steps for the rest of the machines to assign each user to their physical machine. 
+Repeat the steps for the rest of the machines to assign each user to their physical machine.
 
 **Note**: The last 4 steps are needed, if you want to assign specific users to specific desktops, else the users will be auto assigned to next available desktop in the delivery group or you can use PowerShell scripts to perfrom the assignment.
 
@@ -360,3 +360,12 @@ Repeat the steps for the rest of the machines to assign each user to their physi
 1.  The session will launch giving the user access to the remote physical PC
 
     ![Citrix Virtual Desktops service - Session launches](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-70.png)
+
+## Summary
+
+The guide walked you through connecting your physical desktops in your office to the Citrix Virtual Desktops service, so users access them remotely.
+You learned how use Citrix Virtual Desktops service to allow users to access their desktops on any device from any location.
+The process included how to install a Citrix Cloud connector in your on-premises office location, installing Citrix Virtual Delivery agents on the desktop machines. Creating a machine catalog from those machines and then a delivery group.
+Assigning users to their machines and then allowing them to connect to those desktops using Citrix Workspace app.
+
+To learn more about Citrix solutions for Business Continuity, read the [Tech Brief](/en-us/tech-zone/learn/tech-briefs/business-continuity.html)
