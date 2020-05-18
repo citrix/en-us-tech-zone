@@ -35,6 +35,8 @@ For this Proof of Concept, we will demonstrate establishing connectivity between
 **Citrix Cloud** – the Orchestrator service is the central system for deployment and management of Citrix SD-WAN networks. SD-WAN appliances automatically contact the Orchestrator service with their serial number to verify manageability.
 1.  Orchestrator service – will be configured with the serial number of both the Cloud and Data Center SD-WAN instance to establish their cloud connectivity and deploy their configuration details to make their virtual paths available.
 
+[![Cloud-to-Data Center Connectivity Overview](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-overview.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-overview.png)
+
 ## Cloud Setup
 
 Following are the steps to setup Citrix SD-WAN VPX in Azure and configure a test server to route through it. Steps pertinent to the setup are documented, while other setup options not mentioned may be left as default or set to your preference.
@@ -44,8 +46,26 @@ SD-WAN Appliance Setup
 
 1.  Login to Azure Portal and administrator for your tenant
 1.  Search the Marketplace for Citrix SD-WAN Standard Edition and select “Create”
+[![Cloud-to-Data Center Connectivity Conceptual Architecture](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuremarketplacesdwanse.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuremarketplacesdwanse.png)
 1.  On the first page (Basics) in the workflow enter:
     *  a.  Select “Create new”.
     *  b.  Resource Group – Azure requires using an existing unpopulated group or creating a new one
     *  c. Region - where your services will be hosted
     *  d. Select “Next” at the bottom of the page
+1.  On the next page (General settings) enter:
+    *  a.  Virtual Machine name
+    *  b.  Username and Password
+NOTE: To login into the SD-WAN appliance you use the name “admin” along with the password that you set here.  The user that you set here is not given admin rights.
+    *  c.  Select “Next” at the bottom of the page
+[![Cloud-to-Data Center Connectivity Conceptual Architecture](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwansettings.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwansettings.png)
+1.  On the next page (SDWAN Settings) enter:
+    *  a. Virtual Machine size – there are 4 options for VM size that determine the maximum number of virtual paths the appliance can support.
+    *  b. Virtual network - where your services will be hosted (select an existing one or select create new. If you do not have a naming convention for your Azure tenant, it is recommended to use one here to help with configuration and troubleshooting in the future)
+    *  c. Management subnet – the IP address for the management interface will be assigned from this
+    *  d. LAN subnet - the IP address for the LAN interface will be assigned from this
+    *  e. WAN subnet - the IP address for the WAN interface will be assigned from this
+    *  f. AUX subnet - the IP address for the AUX interface will be assigned from this
+    NOTE: Auto generated subnets are offered, yet may be changed as required and AUX subnet will only have relevance in Azure SD-WAN HA
+    *  g. Route table name – name of route table object, for the local LAN, used in Azure
+    *  h. Route Address Prefix – the address prefix of the data center on the far end for which all traffic within its scope will be routed via the SD-WAN instance. This will add an Azure User Defined Router (UDR) into the local LAN routing table for local LAN routing of hosts via the Azure SD-WAN instance to reach that remote prefix.
+    *  i. Select “Next” at the bottom of the page
