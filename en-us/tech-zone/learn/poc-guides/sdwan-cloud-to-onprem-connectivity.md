@@ -38,3 +38,14 @@ For this Proof of Concept, we will demonstrate establishing connectivity between
 ## Cloud Setup
 
 Following are the steps to setup Citrix SD-WAN VPX in Azure and configure a test server to route through it. Steps pertinent to the setup are documented, while other setup options not mentioned may be left as default or set to your preference.
+
+(NOTE: Citrix SD-WAN is also supported on AWS, or GCP and once the initial setup is done the appliance uses the same configuration process.)
+SD-WAN Appliance Setup
+
+1.  Login to Azure Portal and administrator for your tenant
+1.  Search the Marketplace for Citrix SD-WAN Standard Edition and select “Create”
+1.  On the first page (Basics) in the workflow enter:
+    *  a.  Select “Create new”.
+    *  b.  Resource Group – Azure requires using an existing unpopulated group or creating a new one
+    *  c. Region - where your services will be hosted
+    *  d. Select “Next” at the bottom of the page
