@@ -121,7 +121,6 @@ In a single subscription model, all core infrastructure and Citrix infrastructur
 Diagram-2: Azure Single Subscription workspace model
 [![Azure-RA-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_002.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_002.png)
 
-
 #### Multi-Subscription workspace model
 
 In this model, core infrastructure and Citrix infrastructure are in separate subscriptions to manage the scalability in large deployments. Often enterprise deployments with multi-region infrastructure design are broken into multiple subscriptions to prevent reaching Azure subscription limits.
