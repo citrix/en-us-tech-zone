@@ -85,4 +85,51 @@ The IP addresses assigned by Azure are dynamic by default. It is good practice t
 
     *  a.  MGMT
        *  a1.  Select the private IP address, toggle Assignment to “Static” and select “Save”. (the public IP address should be set to static automatically now)
-[![Cloud-to-Data Center Connectivity Conceptual Architecture](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwannetworkingmgmtipconfig.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwannetworkingmgmtipconfig.png)
+[![MGMT Networking Ipconfig](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwannetworkingmgmtipconfig.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwannetworkingmgmtipconfig.png)
+       *  a2. RECORD the MGMT public IP address and document in your network diagram
+[![MGMT IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-diagrammgmt.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-diagrammgmt.png)
+    *  b.  LAN
+       *  b1.  Select the private IP address, toggle Assignment to “Static” and select “Save”
+       *  b2. RECORD the sdwan-vpx-nic-lan private IP address and document your network diagram
+[![MGMT IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-diagramlan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-diagramlan.png)
+    *  c.  WAN
+       *  c1.  Select the private IP address, toggle Assignment to “Static” and select “Save” (the public IP address should be set to static automatically now)
+       *  c2. RECORD the sdwan-vpx-nic-wan private IP address and document your network diagram
+[![WAN IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-diagramwan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-diagramwan.png)
+1.  Navigate to Virtual Machines, check sdwanamer, and select “Start”
+1.  Once sdwanamer is running again, from a management server open a browser, navigate to the assigned sdwan-vpx-nic-mgmt IP address using https and login with your admin password.
+[![WAN IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwanbrowsergui.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwanbrowsergui.png)
+1.  Now from the SD-WAN appliance management GUI:
+    *  a.  Clear the initial warning regarding the license grace period for now
+    *  b.  On the dashboard page RECORD the appliance serial number
+[![WAN IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwanbrowserdashboard.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwanbrowserdashboard.png)
+NOTE: The browser will report “Not Secure” since the site link is using an IP address. You can create a record in your DNS system to eliminate it. Also note that we are accessing the appliance management interface using a public IP address.  Alternatively, you can access it from a jump server on the LAN. Either way you should configure an Azure rule to limit access to source IP of management hosts.
+    *  c.  Navigate to Configuration > Appliance Settings > Network Adapters and verify the Primary DNS IP address was learned through Azure DHCP and is configured on the appliance
+[![WAN IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwanbrowseradapter.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwanbrowseradapter.png)
+
+### Cloud Test Server
+
+Now we will create a Windows Server 2016 Virtual Machine, hosted on the sdwanamer Vnet, to test connectivity between the Cloud Vnet and Data Center LAN.
+
+1.  From the Azure menu select virtual machines and select “Add”.  Chose default settings except for the following.
+1.  Basic Settings
+    *  a.  Resource Group – enter the resource group where the SD-WAN instance was created
+    *  b.  Region – where the SD-WAN instance is created (if you do not select the same region you will not be able to use the same vNet)
+    *  c.  Enter username and password
+    *  d.  Select “Next” at the bottom of the page and next again under Disk settings
+1.  Networking
+    *  a.  Virtual Network – select vnet-sdwanamer
+    *  b.  Subnet – select snet-sdwanamer-lan
+This will allow the server to communicate directly with the SD-WAN instance and route through it without any other routing or tunnel constructs in Azure.
+    *  c.  Select “Review + create” at the bottom of the page
+[![WAN IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresvmnetworking.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresvmnetworking.png)
+1.  Create – select “Create” after validation passes.
+1.  In the search menu at the top enter “route tables” and select the service
+    *  a.  Select the “SdWanLANRouteTable” that’s part of the resource group “sdwanamer”
+Here we will see an entry for the Route Table Name “SdWanHaRoute” and Route Address Prefix “192.168.0.0”, which we assigned in the SD-WAN appliance provisioning workflow.  It has been set to use the SD-WAN appliance LAN subnet interface “10.100.1.4”
+[![WAN IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azureslanroutetable.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azureslanroutetable.png)
+    *  b.  Select Subnets > Associate and from the “Virtual network” dropdown menu select “vnet-sdwanamer” and from the “Subnet” dropdown menu select “snet-sdwanamer-lan”.  Then click “Ok” at the bottom of the screen.
+[![WAN IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azureslanroutetablesubnet.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azureslanroutetablesubnet.png)
+1.  Here it’s recommended you also select “Networking” and configure an Azure rule to limit access to source IP of management hosts.
+
+## Data Center Setup
