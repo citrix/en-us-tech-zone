@@ -59,7 +59,7 @@ This conceptual architecture provides common guidelines for deployment of a Citr
 
 Diagram-1: Citrix Cloud Conceptual Reference Architecture
 
-Refer to the [design guide](https://docs.citrix.com/en-us/tech-zone/design/design-decisions/azure-instance-scalability.html) on scalability and economics of delivering Citrix Virtual Apps and Desktops services on Microsoft Azure
+Refer to the [design guide](/en-us/tech-zone/design/design-decisions/azure-instance-scalability.html) on scalability and economics of delivering Citrix Virtual Apps and Desktops services on Microsoft Azure
 
 ## Operations
 
