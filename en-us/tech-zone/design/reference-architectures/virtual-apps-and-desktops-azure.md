@@ -452,17 +452,19 @@ Diagram-6: Azure Governance Access Policy and RBAC
 Security is integrated into every aspect of Azure. Azure offers unique security advantages derived from global security intelligence, sophisticated customer-facing controls, and a secure hardened infrastructure. This powerful combination helps protect applications and data, support compliance efforts, and provide cost-effective security for organizations of all sizes.
 
 ### Securing storage accounts provisioning by CVAD service
+
 As stated previously, MCS is the service (within CVAD) responsible for spinning up machines in the customer subscription. MCS utilizes uses an AAD identity – Application service principal for access to Azure resource groups to perform different actions.  For storage account type of resources, MCS requires the listkeys permission to acquire the key when needed for different actions (write/read/delete).  Per our current implementation, MCS requirement for:
-* Storage account network is access from the public internet. 
-* Storage account RBAC is listkeys permission
- 
-For some organizations keeping the Storage account endpoint public is a concern.  Below is an analysis of the assets created and stored when deploying VMs with managed disk (the default behavior). 
- 
-* Table Storage.
+
+*  Storage account network is access from the public internet.
+*  Storage account RBAC is listkeys permission
+
+For some organizations keeping the Storage account endpoint public is a concern.  Below is an analysis of the assets created and stored when deploying VMs with managed disk (the default behavior).
+
+*  Table Storage.
 We maintain machine configuration and state data in table storage in the primary storage account (or a secondary one, if the primary one is being used for Premium disks) for the catalog.  There is no sensitive information within the tables.
-* Disk Import
+*  Disk Import
 When importing disks (identity, instruction), we upload the disk as a page blob.  We then create a managed disk from the page blob and delete the page blob. The transient data does include sensitive data for computer object names and password.
-* Locks
+*  Locks
 For certain operations (allocating machines to storage accounts, replicating disks), we use a lock object to synchronize operations from multiple plug-in instances.  Those files are essentially empty blobs and include no sensitive data.
 
 Using a narrow Scope Service Principal applied to the specific resource groups is recommended to limit the permissions only to the permissions required by the service. This adheres to the security concept of "least privilege". Refer to [CTX219243](https://support.citrix.com/article/CTX219243) and [CTX224110](https://support.citrix.com/article/CTX224110) for additional details.
