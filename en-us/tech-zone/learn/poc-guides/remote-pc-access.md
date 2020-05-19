@@ -42,9 +42,9 @@ To install the Citrix Cloud Connectors in your environment, you require (at leas
 The system requirements for the Cloud Connectors are [here](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html). Review the guidance on the cloud connector installation [here](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html#installation-considerations-and-guidance).
 The machine the Citrix Cloud Connector runs on must have network access to all the physical machines that are to be made available on the internet via the Citrix Workspace.
 
-Some requirements Citrix Cloud Connector installation (installer perfroms checks for these) are:
+Some requirements Citrix Cloud Connector installation (installer performs checks for these) are:
 
-The Citrix Cloud Connector machine must have outbound Internet access on port 443
+The Citrix Cloud Connector machine must have outbound Internet access on port 443, and port 80 to only **\*.digicert.com**. The port 80 requirement is for X.509 certificate validation. See more info [here](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html#certificate-validation-requirements)
 
 Microsoft .NET Framework 4.7.2 or later must be pre-installed on the machine
 
@@ -291,7 +291,7 @@ Use Citrix Virtual Desktops service to create a catalog of the physical machines
 
     ![Citrix Virtual Desktops service - Select Remote PC Access catalog](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-54.png)
 
-1.  Specify which users can access these desktops. For our example we assign the desktops to a group of users. Click the **Restrict use to this Delivery Group to the following users’** radio button. Click **Add**
+1.  Specify which users can access these desktops. For our example we assign the desktops to a group of users, that have a 1:1 mapping for each of the machines in the delivery group for enhanced security. Click the **Restrict use to this Delivery Group to the following users’** radio button. Click **Add**
 
     ![Citrix Virtual Desktops service - Restrict Delivery group to specific users](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-55.png)
 
