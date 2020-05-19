@@ -28,17 +28,17 @@ For this Proof of Concept, we will demonstrate establishing connectivity between
 
 **Cloud** – a SD-WAN VPX appliance will be built on an Azure tenant. It offers four sizes that vary by the number of virtual paths supported. It is also supported on AWS, and GCP public cloud platforms.
 
-*  1. Cloud Citrix SD-WAN –  the appliance, built in Azure,  requires subnet assignments for a Management, LAN, and WAN interface. Their host addresses will be dynamically allocated.
-*  2. Cloud Test Server - a Windows Server 2016 VM, provisioned on the SD-WAN LAN, must have its subnet bound to the Azure Route table to reach the Data Center via the appliance.
+*  1) Cloud Citrix SD-WAN –  the appliance, built in Azure,  requires subnet assignments for a Management, LAN, and WAN interface. Their host addresses will be dynamically allocated.
+*  2) Cloud Test Server - a Windows Server 2016 VM, provisioned on the SD-WAN LAN, must have its subnet bound to the Azure Route table to reach the Data Center via the appliance.
 
 **Data Center** – a SD-WAN VPX appliance will be built on a Citrix Hypervisor. It is also supported other major hypervisors and hardware platforms to support a broad range for forwarding requirements.
 
-*  3. Data Center Citrix SD-WAN –  the appliance, built on a Citrix Hypervisor,  requires subnet assignments for a Management, LAN, and WAN interfaces and Internet access to reach the Orchestrator Citrix [Zero Touch Deployment (ZTD)](https://docs.citrix.com/en-us/citrix-sd-wan-orchestrator/zero-touch-deployment.html) service.
-*  4. Data Center Test Server -  a Windows Server 2016 VM, provisioned on the SD-WAN LAN, must have a static route to the Cloud LAN, via the SD-WAN appliance in order to reach the Test Server
+*  3) Data Center Citrix SD-WAN –  the appliance, built on a Citrix Hypervisor,  requires subnet assignments for a Management, LAN, and WAN interfaces and Internet access to reach the Orchestrator Citrix [Zero Touch Deployment (ZTD)](https://docs.citrix.com/en-us/citrix-sd-wan-orchestrator/zero-touch-deployment.html) service.
+*  4) Data Center Test Server -  a Windows Server 2016 VM, provisioned on the SD-WAN LAN, must have a static route to the Cloud LAN, via the SD-WAN appliance in order to reach the Test Server
 
 **Citrix Cloud** – the Orchestrator service is the central system for deployment and management of Citrix SD-WAN networks. SD-WAN appliances automatically contact the Orchestrator service with their serial number to verify manageability.
 
-*  5. Orchestrator service – will be configured with the serial number of both the Cloud and Data Center SD-WAN instance to establish their cloud connectivity and deploy their configuration details to make their virtual paths available.
+*  5) Orchestrator service – will be configured with the serial number of both the Cloud and Data Center SD-WAN instance to establish their cloud connectivity and deploy their configuration details to make their virtual paths available.
 
 [![Cloud-to-Data Center Connectivity Overview](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-conceptualarchitecture.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-conceptualarchitecture.png)
 
