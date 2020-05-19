@@ -46,13 +46,13 @@ For this Proof of Concept, we will demonstrate establishing connectivity between
 
 ## Cloud Setup
 
-Following are the steps to setup Citrix SD-WAN VPX in Azure and configure a test server to route through it. Steps pertinent to the setup are documented, while other setup options not mentioned may be left as default or set to your preference.
+Following are the steps to setup a Citrix SD-WAN VPX in Azure and configure a test server to route through it. Steps pertinent to the setup are documented, while other setup options not mentioned may be left as default or set to your preference.
 
 (NOTE: Citrix SD-WAN is also supported on AWS, or GCP and once the initial setup is done the appliance uses the same configuration process.)
 
 ### SD-WAN Appliance Setup
 
-1.  Login to Azure Portal and administrator for your tenant
+1.  Login to Azure Portal with an administrator account for your tenant
 1.  Search the Marketplace for Citrix SD-WAN Standard Edition and select “Create”
 [![Cloud-to-Data Center Connectivity Conceptual Architecture](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuremarketplacesdwanse.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuremarketplacesdwanse.png)
 1.  On the first page (Basics) in the workflow enter:
@@ -60,22 +60,23 @@ Following are the steps to setup Citrix SD-WAN VPX in Azure and configure a test
     *  b.  Resource Group – Azure requires using an existing unpopulated group or creating a new one
     *  c. Region - where your services will be hosted
     *  d. Select “Next” at the bottom of the page
+[![Cloud-to-Data Center Connectivity Conceptual Architecture](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwanbasics.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwanbasics.png)
 1.  On the next page (General settings) enter:
     *  a.  Virtual Machine name
     *  b.  Username and Password
-NOTE: To login into the SD-WAN appliance you use the name “admin” along with the password that you set here.  The user that you set here is not given admin rights.
+[NOTE: To login into the SD-WAN appliance you use the name “admin” along with the password that you set here.  The username that you set here is not given admin rights.]
     *  c.  Select “Next” at the bottom of the page
 [![Cloud-to-Data Center Connectivity Conceptual Architecture](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwangeneralsettings.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwangeneralsettings.png)
 1.  On the next page (SDWAN Settings) enter:
-    *  a. Virtual Machine size – there are 4 options for [VM size](https://docs.citrix.com/en-us/citrix-sd-wan-platforms/vpx-models/vpx-se/sd-wan-se-on-azure-10-2.html) that determine the maximum number of virtual paths the appliance can support.
-    *  b. Virtual network - where your services will be hosted (select an existing one or select create new. If you do not have a naming convention for your Azure tenant, it is recommended to use one here to help with configuration and troubleshooting in the future)
+    *  a. Virtual Machine size – there are 4 options for [VM size](https://docs.citrix.com/en-us/citrix-sd-wan-platforms/vpx-models/vpx-se/sd-wan-se-on-azure-10-2.html) that determine the maximum number of virtual paths the appliance can support. We will leave the default size.
+    *  b. Virtual network - where your services will be hosted (select an existing one or select create new. If you do not have a naming convention for your Azure tenant, it is recommended to use one here to help with configuration and troubleshooting in the future). We will create "vnet-sdwanamer"
     *  c. Management subnet – the IP address for the management interface will be assigned from this
     *  d. LAN subnet - the IP address for the LAN interface will be assigned from this
     *  e. WAN subnet - the IP address for the WAN interface will be assigned from this
     *  f. AUX subnet - the IP address for the AUX interface will be assigned from this
-    NOTE: Auto generated subnets are offered, yet may be changed as required and AUX subnet will only have relevance in Azure SD-WAN HA
-    *  g. Route table name – name of route table object, for the local LAN, used in Azure
-    *  h. Route Address Prefix – the address prefix of the data center on the far end for which all traffic within its scope will be routed via the SD-WAN instance. This will add an Azure User Defined Router (UDR) into the local LAN routing table for local LAN routing of hosts via the Azure SD-WAN instance to reach that remote prefix.
+    [NOTE: Auto generated subnets are offered, yet may be changed as required and AUX subnet will only have relevance in Azure SD-WAN HA]
+    *  g. Route table name – name of route table object, for the local LAN, used in Azure. We will leave the default name "SdWanHaRoute"
+    *  h. Route Address Prefix – the address prefix of the data center on the far end for which all traffic within its scope will be routed via the SD-WAN instance. This will add an Azure User Defined Router (UDR) into the local LAN routing table for local LAN routing of hosts via the Azure SD-WAN instance to reach that remote prefix. We will enter 192.168.0.0/16
     *  i. Select “Next” at the bottom of the page
 [![Cloud-to-Data Center Connectivity Conceptual Architecture](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwansdwansettings.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwansdwansettings.png)
 1.  Review + create - review the summary of settings
@@ -84,8 +85,8 @@ NOTE: To login into the SD-WAN appliance you use the name “admin” along with
 ### Post Deployment Activities
 
 1.  Once you are notified that the deployment is complete select “Go to Resource” to navigate to the SD-WAN virtual machine detail menu.
-1.  Navigate to Virtual Machines, check sdwanamer, and select “Stop”
 [![Cloud-to-Data Center Connectivity Conceptual Architecture](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwandeploymentcomplete.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwandeploymentcomplete.png)
+1.  Navigate to Virtual Machines, check sdwanamer, and select “Stop”
 The IP addresses assigned by Azure are dynamic by default. It is good practice to set them to static addresses to ensure they do not change and risk interrupting connectivity.  
 1.  Navigate to Virtual Machines > select “sdwanamer” > Networking.  For each Nic shown on the top (Mgmt, LAN, WAN) we will select the Network Interface link.
 [![Cloud-to-Data Center Connectivity Conceptual Architecture](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwannetworking.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity-azuresdwannetworking.png)
