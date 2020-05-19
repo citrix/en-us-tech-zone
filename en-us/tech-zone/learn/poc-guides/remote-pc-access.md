@@ -341,7 +341,7 @@ Use Citrix Virtual Desktops service to create a catalog of the physical machines
 
 Repeat the steps for the rest of the machines to assign each user to their physical machine.
 
-**Note**: The last 4 steps are needed, if you want to assign specific users to specific desktops, else the users will be auto assigned to next available desktop in the delivery group or you can use PowerShell scripts to perfrom the assignment.
+**Note**: The last 4 steps are needed, if you want to assign specific users to specific desktops, else the users will be auto assigned to next available desktop in the delivery group or you can use PowerShell scripts to perform the assignment.
 
 ## Launch the session from Citrix Workspace
 
