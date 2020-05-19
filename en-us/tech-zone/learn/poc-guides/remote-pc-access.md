@@ -42,9 +42,9 @@ To install the Citrix Cloud Connectors in your environment, you require (at leas
 The system requirements for the Cloud Connectors are [here](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html). Review the guidance on the cloud connector installation [here](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html#installation-considerations-and-guidance).
 The machine the Citrix Cloud Connector runs on must have network access to all the physical machines that are to be made available on the internet via the Citrix Workspace.
 
-Some requirements that can block Citrix Cloud Connector installation are:
+Some requirements Citrix Cloud Connector installation (installer perfroms checks for these) are:
 
-The Citrix Cloud Connector machine must have outbound Internet access on port 80 and 443
+The Citrix Cloud Connector machine must have outbound Internet access on port 443
 
 Microsoft .NET Framework 4.7.2 or later must be pre-installed on the machine
 
@@ -54,7 +54,7 @@ This guide provides detailed instructions on how to configure your environment i
 
 ## Create a Citrix Cloud Account
 
-1.  RDP to the Cloud Connector machine / VM and login as the AD admin.
+1.  RDP to the Cloud Connector machine / VM and login as the local admin.
 
 1.  Go to the [Citrix Cloud](https://citrix.cloud.com) URL. If you are an existing Citrix Cloud customer skip to the next section: [Subscribe to the Citrix Virtual Desktops service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html#subscribe-to-the-citrix-virtual-desktops-service). Ensure that you have an active Citrix Cloud account. If your account has expired you must contact sales to enable it.
 
@@ -166,7 +166,7 @@ This guide provides detailed instructions on how to configure your environment i
 
 We now install the Citrix Virtual Desktops, Virtual Delivery Agent on the physical machines that we are going to give users access to. If you want to install the Citrix Virtual Delivery Agent using [scripts](/en-us/citrix-virtual-apps-desktops/install-configure/vda-install-scripts.html) or a deployment tool like [SCCM](/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas-sccm.html) follow the appropriate links. Ensure to use the install command line parameters as shown in the following instructions.
 
-1.  Connect to the **physical machine via RDP as the Domain admin**.
+1.  Connect to the **physical machine via RDP as the a local admin**.
 
     ![Citrix Virtual Desktops service - RDP to physical host](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-26.png)
 
