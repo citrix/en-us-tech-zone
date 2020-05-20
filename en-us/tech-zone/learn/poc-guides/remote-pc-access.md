@@ -42,9 +42,9 @@ To install the Citrix Cloud Connectors in your environment, you require (at leas
 The system requirements for the Cloud Connectors are [here](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html). Review the guidance on the cloud connector installation [here](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html#installation-considerations-and-guidance).
 The machine the Citrix Cloud Connector runs on must have network access to all the physical machines that are to be made available on the internet via the Citrix Workspace.
 
-Some requirements that can block Citrix Cloud Connector installation are:
+Some requirements Citrix Cloud Connector installation (installer performs checks for these) are:
 
-The Citrix Cloud Connector machine must have outbound Internet access on port 80 and 443
+The Citrix Cloud Connector machine must have outbound Internet access on port 443, and port 80 to only **\*.digicert.com**. The port 80 requirement is for X.509 certificate validation. See more info [here](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html#certificate-validation-requirements)
 
 Microsoft .NET Framework 4.7.2 or later must be pre-installed on the machine
 
@@ -54,7 +54,7 @@ This guide provides detailed instructions on how to configure your environment i
 
 ## Create a Citrix Cloud Account
 
-1.  RDP to the Cloud Connector machine / VM and login as the AD admin.
+1.  RDP to the Cloud Connector machine / VM and login as the local admin.
 
 1.  Go to the [Citrix Cloud](https://citrix.cloud.com) URL. If you are an existing Citrix Cloud customer skip to the next section: [Subscribe to the Citrix Virtual Desktops service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html#subscribe-to-the-citrix-virtual-desktops-service). Ensure that you have an active Citrix Cloud account. If your account has expired you must contact sales to enable it.
 
@@ -166,7 +166,7 @@ This guide provides detailed instructions on how to configure your environment i
 
 We now install the Citrix Virtual Desktops, Virtual Delivery Agent on the physical machines that we are going to give users access to. If you want to install the Citrix Virtual Delivery Agent using [scripts](/en-us/citrix-virtual-apps-desktops/install-configure/vda-install-scripts.html) or a deployment tool like [SCCM](/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas-sccm.html) follow the appropriate links. Ensure to use the install command line parameters as shown in the following instructions.
 
-1.  Connect to the **physical machine via RDP as the Domain admin**.
+1.  Connect to the **physical machine via RDP as the a local admin**.
 
     ![Citrix Virtual Desktops service - RDP to physical host](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-26.png)
 
@@ -291,7 +291,7 @@ Use Citrix Virtual Desktops service to create a catalog of the physical machines
 
     ![Citrix Virtual Desktops service - Select Remote PC Access catalog](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-54.png)
 
-1.  Specify which users can access these desktops. For our example we assign the desktops to a group of users. Click the **Restrict use to this Delivery Group to the following users’** radio button. Click **Add**
+1.  Specify which users can access these desktops. For our example we assign the desktops to a group of users, that have a 1:1 mapping for each of the machines in the delivery group for enhanced security. Click the **Restrict use to this Delivery Group to the following users’** radio button. Click **Add**
 
     ![Citrix Virtual Desktops service - Restrict Delivery group to specific users](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-55.png)
 
@@ -341,7 +341,7 @@ Use Citrix Virtual Desktops service to create a catalog of the physical machines
 
 Repeat the steps for the rest of the machines to assign each user to their physical machine.
 
-**Note**: The last 4 steps are needed, if you want to assign specific users to specific desktops, else the users will be auto assigned to next available desktop in the delivery group or you can use PowerShell scripts to perfrom the assignment.
+**Note**: The last 4 steps are needed, if you want to assign specific users to specific desktops, else the users will be auto assigned to next available desktop in the delivery group or you can use PowerShell scripts to perform the assignment.
 
 ## Launch the session from Citrix Workspace
 
