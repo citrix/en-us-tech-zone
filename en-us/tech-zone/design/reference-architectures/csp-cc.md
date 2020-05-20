@@ -28,7 +28,7 @@ We are continually expanding the scope of the reference architecture to cover th
 ## Workspace Integration with Content Collaboration
 
 The CSP Content Collaboration reseller Service provides the platform and simplifies the management and deployment of collaboration for their customers.
-CSP Content Collaboration enables true business-class data security for Service Provisers, their customers and users. While maintaining total control, the Customers can access, synchronize, and securely share files from anywhere, on any device. Including automated feedback and approval workflows to streamline and maximize productivity.
+CSP Content Collaboration enables true business-class data security for Service Providers, their customers and users. While maintaining total control, the Customers can access, synchronize, and securely share files from anywhere, on any device. Including automated feedback and approval workflows to streamline and maximize productivity.
 
 ### Content Collaboration control subsystem
 
@@ -65,7 +65,7 @@ The first option is to have the Service provider manage individual customers on 
 
 [Resource Locations](/en-us/tech-zone/design/reference-architectures/csp-cvads.html#architecture-models-for-citrix-service-providers)
 
-This model allows the customer and CSP the greatest flexibility. Hoever dedicated components and resources are needed per customer.
+This model allows the customer and CSP the greatest flexibility. However dedicated components and resources are needed per customer.
 
 [![CSP-Image-001](/en-us/tech-zone/design/media/reference-architectures_csp-cc_001.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cc_001.png)
 
@@ -113,7 +113,7 @@ After the Reseller account configuration, the Service Providers can add a Single
 
 ### Citrix Service Provider Content Collaboration Reseller Account
 
-To deploy the Content Collaboration Service the Citrix Service Provider can Request a new account. Or Link an existing account CSP Content Collaboration account within their cloud account. Please verify with your CSP team before linking an existing reseller account with onboarded cutomers
+To deploy the Content Collaboration Service the Citrix Service Provider can Request a new account. Or Link an existing account CSP Content Collaboration account within their cloud account. Verify with your CSP team before linking an existing reseller account with onboarded customers
 
 [![CSP-Image-006](/en-us/tech-zone/design/media/reference-architectures_csp-cc_006.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cc_006.png)
 
