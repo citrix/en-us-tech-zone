@@ -187,7 +187,7 @@ Authentication, Authorization and Auditing are all core to controlling access to
 Citrix ADC's enhanced MFA, called nFactor authentication, takes into account capabilities such as SAML, client certificates, group extraction, and multiple passwords. Federation and SSO also provide an additional level of security and ease of use.
 
 To learn more about different capabilities of nFactor authentication, refer to the following knowledge base article and one of the many
-deployment guides: [https://support.citrix.com/article/CTX201949](https://support.citrix.com/article/CTX201949). On a relatd note, SMS-bsed MFA is not recommended as it has been deemed insecure by NIST.
+deployment guides: [https://support.citrix.com/article/CTX201949](https://support.citrix.com/article/CTX201949). On a related note, SMS-based MFA is not recommended as it has been deemed insecure by NIST.
 
 Logging and visibility are provided through NetScaler Management and Analytics System (MAS). Capturing telemetry from NetScaler MAS provides:
 
@@ -331,3 +331,4 @@ To learn more about security and compliance with Citrix secure digital workspace
 ## Additional Links
 
 [https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/](https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/)
+[Citrix Trust Center and Privacy Policy](https://www.citrix.com/about/trust-center/privacy-compliance.html)
