@@ -331,4 +331,5 @@ To learn more about security and compliance with Citrix secure digital workspace
 ## Additional Links
 
 [https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/](https://www.citrix.com/blogs/2019/04/29/citrix-tips-top-10-findings-from-citrix-environment-security-assessments/)
+
 [Citrix Trust Center and Privacy Policy](https://www.citrix.com/about/trust-center/privacy-compliance.html)
