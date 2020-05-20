@@ -189,7 +189,7 @@ Citrix ADC's enhanced MFA, called nFactor authentication, takes into account cap
 To learn more about different capabilities of nFactor authentication, refer to the following knowledge base article and one of the many
 deployment guides: [https://support.citrix.com/article/CTX201949](https://support.citrix.com/article/CTX201949). On a relatd note, SMS-bsed MFA is not recommended as it has been deemed insecure by NIST.
 
-Logging and visibility are provided through NetScaler Management and Analytics System (MAS). Cpturing telemetry from NetScaler MAS provides:
+Logging and visibility are provided through NetScaler Management and Analytics System (MAS). Capturing telemetry from NetScaler MAS provides:
 
 * Security Insight against application layer attacks leveraging the application layer firewall
 * SSL Insight for visibility into the security ciphers in use
