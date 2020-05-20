@@ -157,6 +157,7 @@ We will demonstrate configuring a Citrix SD-WAN VPX on a Citrix Hypervisor. Citr
     *  c.  Select network to connect VM – here you will add an entry for each SD-WAN interface.  The Network typically maps to a public or private vlan. [To create a network in Citrix Hypervisor XenCenter select your target XenServer instances Networking tab]
 [![WAN IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_xenserverxvanetwork.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_xenserverxvanetwork.png)
 1.  Once the Citrix SD-WAN virtual machine boots select the “Login” tab and login with the default credentials admin/password where you will be prompted to change the default password
+[![WAN IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_xenserverxvaconsole.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_xenserverxvaconsole.png)
 There are two options for the appliance to obtain management addressing:
     *  a.  By default, it will make a DHCP request and if it successfully acquires an IP address, mask, gateway, and primary DNS the initial setup will be complete
     *  b.  To manually set the appliance details through the console with the default username/password of "admin/password" (the password should be changed at your earliest opportunity)
