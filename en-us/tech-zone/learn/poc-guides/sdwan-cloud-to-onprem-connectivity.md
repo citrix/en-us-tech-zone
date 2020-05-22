@@ -326,7 +326,7 @@ Click Next
 1.  Verify the configuration details the on the Summary page, then click Save and Done.
 [![Orchestrator - DC - Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcsummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordcsummary.png)
 1.  In the Network Configuration Home, you should see the entry for the sdwanamerdc site Cloud Connectivity column change from a gray circle that says “offline” to a green circle that says “online”. If this does not happen within 1 minute refer to the Troubleshooting section to investigate.
-[![Orchestrator - DC - Connectivity](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcconnectivity.gif)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordcconnectivity.gif)
+[![Orchestrator - DC - Connectivity](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcconnectivity.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordcconnectivity.png)
 
 ### Provisioning
 
@@ -336,6 +336,10 @@ Now that both sites are configured and online, we can start the provisioning pro
 1.  Now select “Deploy/Configure” and select “Stage”. If there are any configuration issues you will be notified here. To resolve them from the left menu navigate to Configuration > Network Home and select the SD-WAN appliance to return to the configuration workflow.  If you make changes be sure to click save and then return to “Deploy/Configure” and select “Stage”. The staging process will report back while downloading and confirm when staging is complete.
 1.  Now select “Activate” to make live the downloaded software and configuration details on each SD-WAN appliance. The activation process will report on its progress and confirm “Activation Complete” for each appliance.
 [![Orhestrator Provisioning - Activate](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorprovisioningactivate.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratorprovisioningactivate.png)
+
+Now select "Network Config Home" under the Configuration menu on the left to see the sites status become available as their virtual path is established.
+
+[![Orchestrator - DC - Availability](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcconnectivity.gif)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordcconnectivity.gif)
 
 ### Verification
 
