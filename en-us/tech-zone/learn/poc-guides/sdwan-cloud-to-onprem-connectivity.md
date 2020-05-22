@@ -12,7 +12,7 @@ description: Steps to implement a Proof of Concept of Citrix SD-WAN Cloud-to-Dat
 
 ## Overview
 
-Use of the Cloud to deliver Enterprise services continues to grow. The recent need for significant portions of the workforce to work from home is driving demand for more scalable resources available from anywhere on demand.  However, those Cloud services typically still need to make backend calls to Data Centers systems such as; service account authenticating to Active Directory, applications pulling records from databases, or virtual desktops copying files from shares.
+Use of the Cloud to deliver Enterprise services continues to grow. The recent need for significant portions of the workforce to work from home is driving demand for more scalable resources available from anywhere on demand.  However, those Cloud services typically still need to make backend calls to Data Centers systems such as; service accounts authenticating to Active Directory, applications pulling records from databases, or virtual desktops copying files from shares.
 
 Networking options like Express Routes, or Vnet Peering, available in Microsoft Azure for example, have disadvantages including complexity, and cost.  Also, they are limited to passing point-to-point traffic without providing performance benefits, can require complex integration to expand their use, and are not portable between public cloud platforms.
 
@@ -32,11 +32,11 @@ For this Proof of Concept, we will demonstrate establishing connectivity between
 
 2 - Cloud Test Server - a Windows Server 2016 VM, provisioned on the SD-WAN LAN, must have its subnet bound to the Azure Route table to reach the Data Center via the appliance.
 
-**Data Center** – a SD-WAN VPX appliance will be built on a Citrix Hypervisor. It is also supported other major hypervisors and hardware platforms to support a broad range for forwarding requirements.
+**Data Center** – a SD-WAN VPX appliance will be built on a Citrix Hypervisor. It is also supported other major hypervisors and hardware platforms to meet a broad range of forwarding requirements.
 
-3 - Data Center Citrix SD-WAN –  the appliance, built on a Citrix Hypervisor,  requires subnet assignments for a Management, LAN, and WAN interfaces and Internet access to reach the Orchestrator Citrix [Zero Touch Deployment (ZTD)](/en-us/citrix-sd-wan-orchestrator/zero-touch-deployment.html) service.
+3 - Data Center Citrix SD-WAN –  the appliance, built on a Citrix Hypervisor,  requires subnet assignments for a Management, LAN, and WAN interfaces and Internet access to reach the Citrix Orchestrator [Zero Touch Deployment (ZTD)](/en-us/citrix-sd-wan-orchestrator/zero-touch-deployment.html) service.
 
-4 - Data Center Test Server -  a Windows Server 2016 VM, provisioned on the SD-WAN LAN, must have a static route to the Cloud LAN, via the SD-WAN appliance in order to reach the Test Server
+4 - Data Center Test Server -  a Windows Server 2016 VM, provisioned on the SD-WAN LAN, must have a static route to the Cloud LAN, via the SD-WAN appliance in order to reach the Cloud Test Server.
 
 **Citrix Cloud** – the Orchestrator service is the central system for deployment and management of Citrix SD-WAN networks. SD-WAN appliances automatically contact the Orchestrator service with their serial number to verify manageability.
 
