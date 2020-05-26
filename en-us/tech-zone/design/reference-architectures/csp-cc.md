@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: The CSP Content Collaboration Service and Workspace integration simplifies the Citrix Cloud reseller management, customer deployment and provides real-time file sync to data in one secure centrally managed platform.
 ---
 # Citrix Service Provider Content Collaboration Workspace Integration
 
@@ -38,7 +39,7 @@ Citrix maintains and provides management and control functionality, in Citrix On
 
 ### Storage Zones
 
-Is a Single or Multitenant location that provides data storage. Where the Citrix Service Provider can store customer data on-premises or or in a Public Cloud.
+Is a Single or Multitenant location that provides data storage. Where the Citrix Service Provider can store customer data on-premises or in a Public Cloud.
 
 [Storage zones](/en-us/storage-zones-controller/5-0.html#data-storage)
 
@@ -113,7 +114,7 @@ After the Reseller account configuration, the Service Providers can add a Single
 
 ### Citrix Service Provider Content Collaboration Reseller Account
 
-To deploy the Content Collaboration Service the Citrix Service Provider can Request a new account. Or Link an existing account CSP Content Collaboration account within their cloud account. Verify with your CSP team before linking an existing reseller account with onboarded customers
+To deploy the Content Collaboration Service the Citrix Service Provider can Request a new account. The CSP Team is currently working on a procedure to link existing resellers and tenants.
 
 [![CSP-Image-006](/en-us/tech-zone/design/media/reference-architectures_csp-cc_006.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cc_006.png)
 
@@ -195,7 +196,7 @@ When the user logs on to the Workspace, using the Active Directory sAMAccountNam
 
 ## Sources
 
-The goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [Source Diagrams](https://citrix.sharefile.com/d/s633f91d0dfc4b3e8)
+The goal of this reference architecture is to assist you with planning your own implementation. To make this job easier, we would like to provide you with source diagrams that you can adapt in your own detailed designs and implementation guides: [Source Diagrams](https://citrix.sharefile.com/d-s35a988f69ff4365b)
 
 ## References
 
