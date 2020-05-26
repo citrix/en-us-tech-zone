@@ -2,7 +2,7 @@
 layout: doc
 description: The CSP Reference Architecture provides architectural guidance for Citrix Service Providers who utilize Citrix Cloud technologies to offer services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base shared across multiple tenants and multiple geographies, using a single pane of glass.
 ---
-# Citrix Service Provider Cloud Reference Architecture
+# Citrix Service Provider Virtual Apps and Desktops Reference Architecture
 
 ## Contributors
 
@@ -207,7 +207,7 @@ Using a Cloud based identity provider such as OKTA allows CSPs to authenticate C
 
 The Federated Authentication Service (FAS) is only currently supported on the Service Providers cloud account, and currently is not supported with the Federated Domain option for CSPs. Which allows customers to use their own workspace configuration, found here:
 
-[Configure Federated Domain for the New Customer](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/csp-cvads.html#deployment-steps)
+[Configure Federated Domain for the New Customer](#deployment-steps)
 
  The FAS service enables customers to connect their on-premises FAS deployment to the Service Provider account in Citrix Cloud. It enables end-users to achieve Single Sign On (SSO) to Citrix Virtual Apps and Desktops resources. Using a federated identity provider in Workspace such as Azure Active Directory or OKTA.
 
