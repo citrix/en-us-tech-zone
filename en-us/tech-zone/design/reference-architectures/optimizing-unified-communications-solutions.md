@@ -52,11 +52,11 @@ RealTime Optimization Pack (RTOP)
 
 |                                | Citrix Minimum Versions | Virtual App/Desktop Optimization | Web App Optimization              | Windows Support | Mac Support | Linux Support |
 |--------------------------------|-------------------------|----------------------------------|-----------------------------------|-----------------|-------------|---------------|
-| Microsoft Teams                | VDA 1906+  CWA 1909+    | Yes                              | Yes, with BCR (Windows CWA Only) | Yes             | Roadmap     | Roadmap       |
+| Microsoft Teams                | VDA 1906.2+  CWA 1907+    | Yes                              | Yes, with BCR (Windows CWA Only) | Yes             | Roadmap     | CWA 2004+       |
 | Skype for Business             | RTOP 2.4+               | Yes                              | n/a                               | Yes             | Yes         | Yes           |
 | Cisco Jabber Softphone for VDI | 7.15+                   | Yes. Cisco Plug-in 12.6+         | n/a                               | Yes             | No          | Yes           |
-| Cisco Webex Meetings           | 7.15+                   | Yes. Cisco Plug-in 39.3+         | Yes with BCR                      | Yes             | No          | Yes           |
-| Cisco Webex Teams              | 7.15+                   | No                               | Yes with BCR                      | n/a             | n/a         | n/a           |
+| Cisco Webex Meetings           | 7.15+                   | Yes. Cisco Plug-in 40.4+         | Yes with BCR                      | Yes             | No          | Yes           |
+| Cisco Webex Teams              | 7.15+                   | Yes. Cisco Plug-in.                               | Yes with BCR                      | n/a             | n/a         | n/a           |
 | Zoom                           | 7.15+                   | Yes. Zoom Plug-in                | n/a                               | Yes             | No          | Yes           |
 | Avaya One-X                    | 7.15+                   | Yes. One-X Plug-in               | n/a                               | Yes             | No          | No            |
 
@@ -88,7 +88,7 @@ Fallback scenarios result in server-side rendered video. In this case, Citrix re
 
 ## Optimizing Audio
 
-In this section we cover how to optimize audio for fallback scenarios. The Citrix recommendation is to enable UDP audio for the best overall experience. For audio quality, VOIP services work best with the “medium” setting. Playback is ideal at the “high” setting. For more details, refer to the [7.15 LTSR Audio Documentation](/en-us/xenapp-and-xendesktop/7-15-ltsr/multimedia/audio.html#audio-over-udp-real-time-transport-and-audio-udp-port-range).
+In this section we cover how to optimize audio for fallback scenarios. The Citrix recommendation is to enable UDP audio for the best overall experience. For audio quality, VOIP services work best with the “medium” setting. Playback is ideal at the “high” setting. For more details, refer to the [7.15 LTSR Audio Documentation](/en-us/xenapp-and-xendesktop/7-15-ltsr/multimedia/audio.html#audio-over-udp-real-time-transport-and-audio-udp-port-range). For additional information on optimizing audio, refer to the KB article [Delivering Softphones with Virtual Apps and Desktops](https://support.citrix.com/article/CTX133024).
 
 ## Generic USB
 
