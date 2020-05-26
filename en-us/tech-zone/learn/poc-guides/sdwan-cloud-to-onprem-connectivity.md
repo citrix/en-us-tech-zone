@@ -76,7 +76,7 @@ Following are the steps to setup a Citrix SD-WAN VPX in Azure and configure a te
     *  f. AUX subnet - the IP address for the AUX interface will be assigned from this
     [NOTE: Auto generated subnets are offered, yet may be changed as required and AUX subnet will only have relevance in Azure SD-WAN HA]
     *  g. Route table name – name of route table object, for the local LAN, used in Azure. We will leave the default name "SdWanHaRoute"
-    *  h. Route Address Prefix – the address prefix of the data center on the far end for which all traffic within its scope will be routed via the SD-WAN instance. This will add an Azure User Defined Router (UDR) into the local LAN routing table for local LAN routing of hosts via the Azure SD-WAN instance to reach that remote prefix. We will enter 192.168.0.0/16
+    *  h. Route Address Prefix – the address prefix of the data center on the far end for which all traffic within its scope will be routed via the SD-WAN instance. This will add an Azure User Defined Route (UDR) into the local LAN routing table for local LAN routing of hosts via the Azure SD-WAN instance to reach that remote prefix. We will enter 192.168.0.0/16
     *  i. Select “Next” at the bottom of the page
 [![Azure - SD-WAN Settings](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_azuresdwansdwansettings.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_azuresdwansdwansettings.png)
 1.  Review + create - review the summary of settings
