@@ -34,7 +34,7 @@ For this Proof of Concept, we will demonstrate establishing connectivity between
 
 **Data Center** – a SD-WAN VPX appliance will be built on a Citrix Hypervisor. It is also supported other major hypervisors and hardware platforms to meet a broad range of forwarding requirements.
 
-3 - Data Center Citrix SD-WAN –  the appliance, built on a Citrix Hypervisor,  requires subnet assignments for a Management, LAN, and WAN interfaces and Internet access to reach the Citrix Orchestrator [Zero Touch Deployment (ZTD)](/en-us/citrix-sd-wan-orchestrator/zero-touch-deployment.html) service.
+3 - Data Center Citrix SD-WAN –  the appliance, built on a Citrix Hypervisor,  requires subnet assignments for a Management, LAN, and WAN interface and Internet access to reach the Citrix Orchestrator [Zero Touch Deployment (ZTD)](/en-us/citrix-sd-wan-orchestrator/zero-touch-deployment.html) service.
 
 4 - Data Center Test Server -  a Windows Server 2016 VM, provisioned on the SD-WAN LAN, must have a static route to the Cloud LAN, via the SD-WAN appliance in order to reach the Cloud Test Server.
 
@@ -52,7 +52,7 @@ Following are the steps to setup a Citrix SD-WAN VPX in Azure and configure a te
 
 ### SD-WAN Appliance Setup
 
-1.  Login to Azure Portal with an administrator account for your tenant
+1.  Login to the Azure Portal with an administrator account for your tenant
 1.  Search the Marketplace for Citrix SD-WAN Standard Edition and select “Create”
 [![Azure - Marketplace - SD-WAN SE Edition](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_azuremarketplacesdwanse.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_azuremarketplacesdwanse.png)
 1.  On the first page (Basics) in the workflow enter:
