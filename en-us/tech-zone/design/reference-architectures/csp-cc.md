@@ -1,5 +1,6 @@
 ---
 layout: doc
+description: The CSP Content Collaboration Service and Workspace integration simplifies the Citrix Cloud reseller management, customer deployment and provides real-time file sync to data in one secure centrally managed platform.
 ---
 # Citrix Service Provider Content Collaboration Workspace Integration
 
@@ -38,7 +39,7 @@ Citrix maintains and provides management and control functionality, in Citrix On
 
 ### Storage Zones
 
-Is a Single or Multitenant location that provides data storage. Where the Citrix Service Provider can store customer data on-premises or or in a Public Cloud.
+Is a Single or Multitenant location that provides data storage. Where the Citrix Service Provider can store customer data on-premises or in a Public Cloud.
 
 [Storage zones](/en-us/storage-zones-controller/5-0.html#data-storage)
 
