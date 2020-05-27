@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Steps to implement a Proof of Concept of Citrix SD-WAN Cloud-to-Data Center Connectivity
+description: Learn how to implement Citrix SD-WAN rapidly to provide secure, enhanced, and resilient connectivity between your public cloud and data center environments.
 ---
 # Proof of Concept Guide: Citrix SD-WAN Cloud-to-Data Center Connectivity
 
