@@ -8,7 +8,7 @@ description: Learn how to optimize voice, video, and other capabilities of unifi
 
 **Author:** [Allen Furmanski](mailto:allen.furmanski@citrix.com)
 
-**Special Thanks:** [Derek Thorslund](https://twitter.com/derektcitrix)
+**Special Thanks:** [Derek Thorslund](https://twitter.com/derektcitrix), [Fernando Klurfan](https://twitter.com/citrixferk)
 
 ## Audience
 
@@ -52,12 +52,12 @@ RealTime Optimization Pack (RTOP)
 
 |                                | Citrix Minimum Versions | Virtual App/Desktop Optimization | Web App Optimization              | Windows Support | Mac Support | Linux Support |
 |--------------------------------|-------------------------|----------------------------------|-----------------------------------|-----------------|-------------|---------------|
-| Microsoft Teams                | VDA 1906+  CWA 1909+    | Yes                              | Yes, with BCR (Windows CWA Only) | Yes             | Roadmap     | Roadmap       |
+| Microsoft Teams                | VDA 1906.2+  CWA 1907+    | Yes                              | Yes, with BCR (Windows CWA Only) | Yes             | Roadmap     | CWA 2004+       |
 | Skype for Business             | RTOP 2.4+               | Yes                              | n/a                               | Yes             | Yes         | Yes           |
-| Cisco Jabber Softphone for VDI | 7.15+                   | Yes. Cisco Plug-in 12.6+         | n/a                               | Yes             | No          | Yes           |
-| Cisco Webex Meetings           | 7.15+                   | Yes. Cisco Plug-in 39.3+         | Yes with BCR                      | Yes             | No          | Yes           |
-| Cisco Webex Teams              | 7.15+                   | No                               | Yes with BCR                      | n/a             | n/a         | n/a           |
-| Zoom                           | 7.15+                   | Yes. Zoom Plug-in                | n/a                               | Yes             | No          | Yes           |
+| [Cisco Jabber Softphone for VDI](https://software.cisco.com/download/home/284585947) | 7.15+                   | Yes. Cisco Plug-in 12.6+         | n/a                               | Yes             | No          | Yes           |
+| [Cisco Webex Meetings](https://software.cisco.com/download/home/286304684/type/283802941/release/39.3(0))           | 7.15+                   | [Yes. Cisco Plug-in 40.4+](https://www.cisco.com/c/en/us/td/docs/collaboration/meeting_center/wvdi/wvdi-b-admin-guide/wvdi-b-admin-guide_chapter_010.html)         | [Yes with BCR](https://www.cisco.com/c/en/us/td/docs/collaboration/meeting_center/wvdi/wvdi-b-admin-guide/wvdi-b-admin-guide_chapter_01.html)                      | Yes             | No          | Yes           |
+| [Cisco Webex Teams](https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cloudCollaboration/wbxt/vdi/wbx-teams-vdi-deployment-guide.html)              | 7.15+                   | [Yes. Cisco Plug-in.](https://www.webex.com/downloads/teams-vdi.html)                               | Yes with BCR                      | [Yes](https://binaries.webex.com/WebexTeamsDesktop-Windows-VDI-gold-Production/WebexTeamsVDIClient.msi)             | n/a         | n/a           |
+| Zoom                           | 7.15+                   | [Yes. Zoom Plug-in](https://support.zoom.us/hc/en-us/articles/360031096531-Getting-Started-with-VDI)                | n/a                               | Yes             | No          | Yes           |
 | Avaya One-X                    | 7.15+                   | Yes. One-X Plug-in               | n/a                               | Yes             | No          | No            |
 
 The preceding table is subject to change at any time and may not necessarily contain the latest data. It also reflects the solutions that have been tested for optimization within Citrix environments. Other solutions can be optimized in a generic fashion as described in the following sections.
@@ -88,7 +88,7 @@ Fallback scenarios result in server-side rendered video. In this case, Citrix re
 
 ## Optimizing Audio
 
-In this section we cover how to optimize audio for fallback scenarios. The Citrix recommendation is to enable UDP audio for the best overall experience. For audio quality, VOIP services work best with the “medium” setting. Playback is ideal at the “high” setting. For more details, refer to the [7.15 LTSR Audio Documentation](/en-us/xenapp-and-xendesktop/7-15-ltsr/multimedia/audio.html#audio-over-udp-real-time-transport-and-audio-udp-port-range).
+In this section we cover how to optimize audio for fallback scenarios. The Citrix recommendation is to enable UDP audio for the best overall experience. For audio quality, VOIP services work best with the “medium” setting. Playback is ideal at the “high” setting. For more details, refer to the [7.15 LTSR Audio Documentation](/en-us/xenapp-and-xendesktop/7-15-ltsr/multimedia/audio.html#audio-over-udp-real-time-transport-and-audio-udp-port-range). For additional information on optimizing audio, refer to the KB article [Delivering Softphones with Virtual Apps and Desktops](https://support.citrix.com/article/CTX133024).
 
 ## Generic USB
 
