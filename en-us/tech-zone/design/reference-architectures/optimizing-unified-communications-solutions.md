@@ -8,7 +8,7 @@ description: Learn how to optimize voice, video, and other capabilities of unifi
 
 **Author:** [Allen Furmanski](mailto:allen.furmanski@citrix.com)
 
-**Special Thanks:** [Derek Thorslund](https://twitter.com/derektcitrix). [Fernando Klurfan](https://twitter.com/citrixferk)
+**Special Thanks:** [Derek Thorslund](https://twitter.com/derektcitrix), [Fernando Klurfan](https://twitter.com/citrixferk)
 
 ## Audience
 
@@ -55,7 +55,7 @@ RealTime Optimization Pack (RTOP)
 | Microsoft Teams                | VDA 1906.2+  CWA 1907+    | Yes                              | Yes, with BCR (Windows CWA Only) | Yes             | Roadmap     | CWA 2004+       |
 | Skype for Business             | RTOP 2.4+               | Yes                              | n/a                               | Yes             | Yes         | Yes           |
 | [Cisco Jabber Softphone for VDI](https://software.cisco.com/download/home/284585947) | 7.15+                   | Yes. Cisco Plug-in 12.6+         | n/a                               | Yes             | No          | Yes           |
-| [Cisco Webex Meetings](https://software.cisco.com/download/home/286304684/type/283802941/release/39.3(0))           | 7.15+                   | Yes. Cisco Plug-in 40.4+         | Yes with BCR                      | Yes             | No          | Yes           |
+| [Cisco Webex Meetings](https://software.cisco.com/download/home/286304684/type/283802941/release/39.3(0))           | 7.15+                   | [Yes. Cisco Plug-in 40.4+](https://www.cisco.com/c/en/us/td/docs/collaboration/meeting_center/wvdi/wvdi-b-admin-guide/wvdi-b-admin-guide_chapter_010.html)         | [Yes with BCR](https://www.cisco.com/c/en/us/td/docs/collaboration/meeting_center/wvdi/wvdi-b-admin-guide/wvdi-b-admin-guide_chapter_01.html)                      | Yes             | No          | Yes           |
 | [Cisco Webex Teams](https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cloudCollaboration/wbxt/vdi/wbx-teams-vdi-deployment-guide.html)              | 7.15+                   | Yes. Cisco Plug-in.                               | Yes with BCR                      | n/a             | n/a         | n/a           |
 | Zoom                           | 7.15+                   | Yes. Zoom Plug-in                | n/a                               | Yes             | No          | Yes           |
 | Avaya One-X                    | 7.15+                   | Yes. One-X Plug-in               | n/a                               | Yes             | No          | No            |
