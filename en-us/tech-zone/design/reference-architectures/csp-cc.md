@@ -206,7 +206,7 @@ The goal of this reference architecture is to assist you with planning your own 
 
 [Citrix Service Provider – Deliver ShareFile Service in Minutes!](https://www.citrix.com/blogs/2018/03/14/citrix-service-provider-deliver-sharefile-service-in-minutes/)
 
-[Content Collaboration with on-premises storage zones](en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html)
+[Content Collaboration with on-premises storage zones](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html)
 
 [Content Collaboration with storage zones on Azure IaaS](/en-us/tech-zone/design/reference-architectures/storage-zones-azure-iaas.html)
 

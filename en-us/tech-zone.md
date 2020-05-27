@@ -115,7 +115,9 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
 
-[Citrix Web Application Firewall Deployment Proof of Concept Guide](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) - Learn how to deploy Citrix Web Application Firewall (WAF) standalone or as a part of a Citrix ADC deployment. Protect web servers or applications from various attacks including Cross Site Scripting, SQL Injection, Buffer Overflow, Forceful Browsing and more. Deploy in any public cloud or your on-premises environment.
+[Citrix SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html) - Learn how to implement Citrix SD-WAN rapidly to provide secure, enhanced, and resilient connectivity between your public cloud and data center environments.
+
+[Citrix Web Application Firewall Deployment](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) - Learn how to deploy Citrix Web Application Firewall (WAF) standalone or as a part of a Citrix ADC deployment. Protect web servers or applications from various attacks including Cross Site Scripting, SQL Injection, Buffer Overflow, Forceful Browsing and more. Deploy in any public cloud or your on-premises environment.
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
@@ -171,11 +173,11 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
 
-[Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid Proof of Concept Guide](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and on premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
+[Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
 
-[Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments Proof of Concept Guide](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html) - Learn how to deliver the Citrix® HDX™ Optimization for Microsoft® Teams in a Citrix environment. The optimization offers clear, crisp high-definition video calls, audio-video or audio-only calls to and from other Teams users, optimized Teams’ users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
+[Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html) - Learn how to deliver the Citrix® HDX™ Optimization for Microsoft® Teams in a Citrix environment. The optimization offers clear, crisp high-definition video calls, audio-video or audio-only calls to and from other Teams users, optimized Teams’ users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
 
-[Remote PC Access with Citrix Virtual Desktops service Proof of Concept Guide](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html) - Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from anywhere and on any device.
+[Remote PC Access with Citrix Virtual Desktops service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html) - Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from anywhere and on any device.
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
