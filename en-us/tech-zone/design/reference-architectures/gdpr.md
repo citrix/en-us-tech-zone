@@ -29,7 +29,7 @@ information (PII). It could include information such as names, photographs, IP o
 
 **Note:** Privacy considerations for GDPR span the data lifecycle from opt-in collection, to specific or anonymized usage and secured disposal and retirement of data. It covers all personal data relating to your customers, employees, supply chain, partners and anyone else about whom you collect personal information.
 
-### Two key GDPR article will be the focus of this document
+### Two key GDPR articles will be the focus of this document
 
 * Access control (Article 25) - calls out particular measures which shall ensure that by default
 personal data is not made accessible without the individual’s intervention to an indefinite number of natural persons.
