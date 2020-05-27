@@ -190,6 +190,10 @@ Files:
 -  `%SystemRoot%\System32\drivers\cnicteam.sys`
 -  `%SystemRoot%\System32\drivers\CVhdMp.sys` (7.x only)
 
+Processes:
+
+-  `%ProgramFiles%\Citrix\Provisioning Services\BNDevice.exe`
+
 ### StoreFront
 
 Files:
