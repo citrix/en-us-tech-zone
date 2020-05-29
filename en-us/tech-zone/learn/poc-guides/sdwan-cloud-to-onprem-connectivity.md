@@ -233,7 +233,7 @@ Click Next
 1.  Enter Device Details:
     *  a. Primary Device Serial Number – refer to your network map
     *  b. Short Name – enter “Cloud”
-[![Orchestrator - Cloud - Device Details](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorclouddevicedetails.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratorclouddevicedetails.png)
+[![Orchestrator - Cloud - Device Details](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorclouddevicedetails.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorclouddevicedetails.png)
 Click Next
 1.  Add Interfaces:
     *  a. Select “+” plus to add the sdwan-vpx-nic-lan interface
@@ -243,7 +243,7 @@ Click Next
     *  a4. Select Physical Interface “1”
     *  a5. Enter Primary IP with CIDR mask – refer to your network map
     *  a6. Select Done twice
-[![Orchestrator - Cloud - LAN Interfaces](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudinterfaceslan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratorcloudinterfaceslan.png)
+[![Orchestrator - Cloud - LAN Interfaces](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudinterfaceslan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudinterfaceslan.png)
     *  b. Select “+” plus to add the WAN interface
     *  b1. Keep Deployment Mode as “Edge(Gateway)”
     *  b2. Keep Interface Type as “WAN”
@@ -251,9 +251,9 @@ Click Next
     *  b4. Select Physical Interface “2”
     *  b5. Enter Primary IP with CIDR mask – refer to your network map
     *  b6. Select Done twice
-[![Orchestrator - Cloud - WAN Interfaces](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudinterfaceswan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratorcloudinterfaceswan.png)
+[![Orchestrator - Cloud - WAN Interfaces](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudinterfaceswan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudinterfaceswan.png)
 Click Next
-[![Orchestrator - Cloud - Interfaces Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudinterfacessummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratorcloudinterfacessummary.png)
+[![Orchestrator - Cloud - Interfaces Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudinterfacessummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudinterfacessummary.png)
 1.  Enter WAN Link:
     *  a. Select “+” to add the WAN Link
     *  a1. Select “Done” on the Popup to create a new Wan Link
@@ -264,14 +264,14 @@ Click Next
     *  a6. IP Address – the IP will automatically be populated based on the Virtual Interface
     *  a7. Gateway IP Address – verify in Azure.  It is usually .1 in the last octet of the subnet
     *  a8. Select Done twice
-[![Orchestrator - Cloud - Wan Links](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudwanlinks.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratorcloudwanlinks.png)
+[![Orchestrator - Cloud - Wan Links](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudwanlinks.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudwanlinks.png)
 Click Next
-[![Orchestrator - Cloud - Wan Links Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudwanlinkssummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratorcloudwanlinkssummary.png)
+[![Orchestrator - Cloud - Wan Links Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudwanlinkssummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudwanlinkssummary.png)
 1.  Routes – we will leave routes blank.  For this POC the sdwan-vpx-nic-lan subnets will automatically be exchanged by the SD-WAN instances to establish connectivity between our test servers. To extend routing beyond the LANs discuss the requirements for static or dynamic routing with your network team and refer to SD-WAN [routing](/en-us/citrix-sd-wan/11-1/routing.html) documentation.
 1.  Verify the configuration details the on the Summary page, then click Save and Done.
-[![Orchestrator - Cloud - Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudsummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratorcloudsummary.png)
+[![Orchestrator - Cloud - Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudsummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudsummary.png)
 1.  In the Network Configuration Home, you should see the entry for the sdwanamercloud site Cloud Connectivity column change from a gray circle that says “offline” to a green circle that says “online”. If this does not happen within 1 minute refer to the Troubleshooting section to investigate.
-[![Orchestrator - Cloud - Connectivity](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudconnectivity.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratorcloudconnectivity.png)
+[![Orchestrator - Cloud - Connectivity](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudconnectivity.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudconnectivity.png)
 
 ### Data Center site
 
@@ -288,7 +288,7 @@ Click Next
 1.  Enter Device Details:
     *  a. Primary Device Serial Number – refer to your network map
     *  b. Short Name – enter “DC”
-[![Orchestrator - DC - Device Details](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcdevicedetails.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordcdevicedetails.png)
+[![Orchestrator - DC - Device Details](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcdevicedetails.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcdevicedetails.png)
 Click Next
 1.  Add Interfaces:
     *  a. Select “+” plus to add the lan interface
@@ -298,7 +298,7 @@ Click Next
     *  a4. Select Physical Interface “1”
     *  a5. Enter Primary IP with CIDR mask – refer to your network map
     *  a6. Select Done twice
-[![Orchestrator - DC - LAN Interfaces](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcinterfaceslan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordcdinterfaceslan.png)
+[![Orchestrator - DC - LAN Interfaces](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcinterfaceslan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcdinterfaceslan.png)
     *  b. Select “+” plus to add the WAN interface
     *  b1. Keep Deployment Mode as “Edge(Gateway)”
     *  b2. Keep Interface Type as “WAN”
@@ -306,9 +306,9 @@ Click Next
     *  b4. Select Physical Interface “2”
     *  b5. Enter Primary IP with CIDR mask – refer to your network map
     *  b6. Select Done twice
-[![Orchestrator - DC - WAN Interfaces](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcinterfaceswan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordcinterfaceswan.png)
+[![Orchestrator - DC - WAN Interfaces](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcinterfaceswan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcinterfaceswan.png)
 Click Next
-[![Orchestrator - DC - Interfaces Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcinterfacessummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordcinterfacessummary.png)
+[![Orchestrator - DC - Interfaces Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcinterfacessummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcinterfacessummary.png)
 1.  Enter WAN Link:
     *  a. Select “+” to add the WAN Link
     *  a1. Select “Done” on the Popup to create a new Wan Link
@@ -319,14 +319,14 @@ Click Next
     *  a6. IP Address – the IP will automatically be populated based on the Virtual Interface
     *  a7. Gateway IP Address – verify with your network team.  It is often .1 in the last octet of the network
     *  a8. Select Done twice
-[![Orchestrator - DC - Wan Links](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcwanlinks.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordcwanlinks.png)
+[![Orchestrator - DC - Wan Links](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcwanlinks.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcwanlinks.png)
 Click Next
-[![Orchestrator - DC - Wan Links Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcwanlinkssummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordcwanlinkssummary.png)
+[![Orchestrator - DC - Wan Links Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcwanlinkssummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcwanlinkssummary.png)
 1.  Routes – we will leave routes blank.  For this POC the sdwan-vpx-nic-lan subnets will automatically be exchanged by the SD-WAN instances to establish connectivity between our test servers. To extend routing beyond the LANs discuss the requirements for static or dynamic routing with your network team and refer to SD-WAN Routing documentation.
 1.  Verify the configuration details the on the Summary page, then click Save and Done.
-[![Orchestrator - DC - Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcsummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordcsummary.png)
+[![Orchestrator - DC - Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcsummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcsummary.png)
 1.  In the Network Configuration Home, you should see the entry for the sdwanamerdc site Cloud Connectivity column change from a gray circle that says “offline” to a green circle that says “online”. If this does not happen within 1 minute refer to the Troubleshooting section to investigate.
-[![Orchestrator - DC - Connectivity](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcconnectivity.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordcconnectivity.png)
+[![Orchestrator - DC - Connectivity](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcconnectivity.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcconnectivity.png)
 
 ### Provisioning
 
@@ -335,30 +335,30 @@ Now that both sites are configured and online, we can start the provisioning pro
 1.  Since these are new installations, we will start by upgrading the Software version. From the Software Version drop down menu select the latest version at the bottom of the list. Select “Proceed” on the popup confirming the update.
 1.  Now select “Deploy/Configure” and select “Stage”. If there are any configuration issues you will be notified here. To resolve them from the left menu navigate to Configuration > Network Home and select the SD-WAN appliance to return to the configuration workflow.  If you make changes be sure to click save and then return to “Deploy/Configure” and select “Stage”. The staging process will report back while downloading and confirm when staging is complete.
 1.  Now select “Activate” to make live the downloaded software and configuration details on each SD-WAN appliance. The activation process will report on its progress and confirm “Activation Complete” for each appliance.
-[![Orhestrator Provisioning - Activate](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorprovisioningactivate.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratorprovisioningactivate.png)
+[![Orhestrator Provisioning - Activate](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorprovisioningactivate.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorprovisioningactivate.png)
 
 Now select "Network Config Home" under the Configuration menu on the left to see the sites status become available as their virtual path is established.
 
-[![Orchestrator - DC - Availability](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcconnectivity.gif)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordcconnectivity.gif)
+[![Orchestrator - DC - Availability](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcconnectivity.gif)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcconnectivity.gif)
 
 ### Verification
 
 Now that our sites are upgraded, configured, and online we can verify connectivity between the SD-WAN appliances and between the test servers on their respective LANs.
 
 1.  First select “Dashboard” and you should now see the entries for sdwanamerdc and sdwanamercloud with a green square in the Availability column.  This indicates that the Virtual Path is established between the 2 sites. If the state is another color refer to the Troubleshooting section to investigate.
-[![Orchestrator Network Dashboard](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratornetworkdashboard.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratornetworkdashboard.png)
+[![Orchestrator Network Dashboard](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratornetworkdashboard.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratornetworkdashboard.png)
 1.  Verify connectivity:
     *  a. First select the sdwanamerdc site
     *  b. Notice the green link between sdwanamerdc and sdwanamercloud confirming the virtual path is up
     *  c. Select “Devices” and verify the status is “Up” for both interfaces
-[![Orchestrator Dashboard Devices](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorsitedashboarddevices.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratorsitedashboarddevices.png)
+[![Orchestrator Dashboard Devices](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorsitedashboarddevices.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorsitedashboarddevices.png)
 1.  Select “Troubleshooting” from the menu on the left
     *  a. Enter the IP Address of the Cloud SD-WAN sdwan-vpx-nic-lan IP address and select “Run”.  Verify the pings are successful to confirm connectivity from the DC SD-WAN appliance.
-[![SD-WAN Ping](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordiagnosticsping.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratordiagnosticsping.png)
+[![SD-WAN Ping](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordiagnosticsping.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordiagnosticsping.png)
     *  b. Select Reports > Real Time > Statistics > Routes > "Retrieve latest data". Notice that routes to the Cloud SD-WAN Cloud sdwan-vpx-nic-lan and WAN subnets have been learned dynamically via the SD-WAN Virtual Path show by the protocol type "Virtual_WAN"
-[![SD-WAN Routes](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorstatisticsroutes.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-citrixcloudorchestratorstatisticsroutes.png)
+[![SD-WAN Routes](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorstatisticsroutes.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorstatisticsroutes.png)
 1.  From the Data Center Test Server open a MS-DOS prompt and verify it can trace route to the Cloud Test Server.
-[![Ping DC to Cloud Test Server](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_pingdctocloudtestserver.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-pingdctocloudtestserver.png)
+[![Ping DC to Cloud Test Server](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_pingdctocloudtestserver.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_pingdctocloudtestserver.png)
 
 ### Routing
 
