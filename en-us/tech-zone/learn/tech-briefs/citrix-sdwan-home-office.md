@@ -34,7 +34,7 @@ Citrix solutions enable business continuity. As the definition of workforce chan
 
 Traditional remote branch offices are an extension of the Data Center network, connected over Private Intranet links (e.g. MPLS). In the use-case of remote branch offices, Private Intranet circuits are generally reliable and secure. However, depending on the location of the branch office, ensuring availability and the cost of maintaining a high bandwidth WAN becomes challenging, which can negatively impact user-experience.
 
-[![Branch MPLS Topology](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_branch_mpls_topology.png)](tech-briefs_citrix-sdwan-home-office_branch_mpls_topology.png)
+[![Branch MPLS Topology](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_BranchMplsTopology.png)](tech-briefs_citrix-sdwan-home-office_BranchMplsTopology.png)
 
 Home Users / Teleworkers traditionally connect into the network over Public Internet links. Like a traditional VPN solution, one option would be to utilize Citrix Gateway to provide users with secure remote access to Citrix Virtual Apps and Desktops across a range of devices. In a VPN use-case, Public Internet links are generally unreliable and of poor quality, again depending on the geographic location of the teleworker and the conditions of the last mile. Ensuring a high end-user experience across a questionable Wide Area Network (WAN) becomes a challenge as teleworkers and home users are introduced to the workforce.
 
