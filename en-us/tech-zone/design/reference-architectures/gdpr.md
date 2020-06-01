@@ -36,7 +36,7 @@ personal data is not made accessible without the individual’s intervention to 
 * Encryption and data protection (Article 32) - calls out:
   * Pseudonymisation and encryption of personal data
   * Ensure the ongoing confidentiality, integrity, availability and resilience of processing systems and services
-  * The ability to restore the availability and access to personal data in a timelymanner in the event of a physical or technical incident
+  * The ability to restore the availability and access to personal data in a timely manner in the event of a physical or technical incident
   * Protection from accidental and unlawful destruction, loss, alteration, unauthorized disclosure of, or access to personal data transmitted, stored or otherwise processed
 
 ### How Citrix can help you with your GDPR compliance initiatives
