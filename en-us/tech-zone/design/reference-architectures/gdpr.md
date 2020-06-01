@@ -110,7 +110,7 @@ with cloud computing and BYOD initiatives.
 
 Another common challenge for applications installed on traditional computers is to provide the same security functionality across the whole portfolio. It’s common to have a multigenerational IT portfolio residing on a single workstation, from Office-based applications (using Microsoft Access databases or custom plugins) through legacy Visual Basic to the latest professionally built applications. Making sure that applications with access to sensitive data support encryption, multifactor authentication and provide enough information for auditors has always been complicated.
 
-(traditional client/server app delivery diagram)
+**Traditional Client/Server App Delivery**
 
 [![Traditional client/server app delivery diagram](/en-us/tech-zone/design/media/reference-architectures_gdpr_client-server-apps_003.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_client-server-apps_003.png)
 
