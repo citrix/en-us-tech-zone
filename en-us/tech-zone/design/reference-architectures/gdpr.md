@@ -97,7 +97,7 @@ The Pareto principle (also known as the 80/20 rule) is important during this dat
 
 Many companies plan to use this mitigation period to transition to a more flexible IT model. While this goal is plausible, it is important to understand the timelines and choose realistic goals. Customers should choose solutions that can be gradually improved without the need for a complete redesign.
 
-In the following few sections, we will present you with a few selected architectures that can provide a universal, secure, and proven solution to secure any type of data, ranging from web-based applications, through legacy client/server applications hosted on Windows or Linux to data stored in various documents or exchanged through emails.
+In the following sections, we present a few selected architectures that can provide a universal, secure, and proven solution to secure any type of data, ranging from web-based applications, through legacy client/server applications hosted on Windows or Linux to data stored in various documents or exchanged through emails.
 
 (GDPR reference architecture flow chart)
 
