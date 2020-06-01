@@ -77,6 +77,7 @@ Rapid deployment of thousands of endpoints is easily accomplished through centra
 *  Providers:
     *  ISP #1 (only one)
 [![Single ISP Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_singleisp.png)](design-decisions_citrix-sdwan-home-office_singleisp.png)
+
 *  Benefits:
     *  Site-to-Site (enable many devices simultaneously connected to SD-WAN Remote Work Network), eliminating the need for multiple Point-to-Site VPN connections
     *  Faster access to corporate resources (local SD-WAN MCN/RCN regional PoPs)
@@ -90,6 +91,7 @@ Rapid deployment of thousands of endpoints is easily accomplished through centra
     *  Central management with SD-WAN Orchestrator (Configuration, Reports, Alerts, etc.)
         *  Link monitoring/metrics (useful for SLA compliance)
     *  (optional) DHCP Server for the Remote Work Network
+
 *  Considerations:
     *  No SD-WAN overlay load balancing due to single ISP WAN link
     *  No SD-WAN overlay resiliency due to single ISP WAN link
@@ -101,14 +103,74 @@ Rapid deployment of thousands of endpoints is easily accomplished through centra
 *  Providers:
     *  ISP #1
     *  ISP #2
-[![Single ISP Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_dualisp.png)](design-decisions_citrix-sdwan-home-office_dualisp.png)
+[![Dual ISP Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_dualisp.png)](design-decisions_citrix-sdwan-home-office_dualisp.png)
+
 *  Benefits:
     *  Site-to-Site with higher, aggregated, bandwidth simultaneously using multiple ISP WAN links
     *  SD-WAN overlay load balancing simultaneously using both ISP WAN links
     *  SD-WAN overlay resiliency using both ISP WAN links
     *  Local internet load balancing simultaneously using both ISP WAN links
     *  Local internet resiliency using both ISP WAN links
+
 *  Considerations:
     *  Additional cost of second ISP WAN link
     *  Time and effort to setup ISP #2
     *  Requires additional hardware (Modem for ISP #2)
+
+### ISP + LTE
+
+*  Providers:
+    *  ISP #1
+    *  LTE #1 (wireless transport used as second WAN link)
+[![ISP + LTE Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_isppluslte.png)](design-decisions_citrix-sdwan-home-office_isppluslte.png)
+
+*  Benefits (in addition to benefits of Dual ISP):
+    *  Simpler setup of second WAN link
+    *  No additional components and cables required (embedded modem)
+
+*  Considerations:
+    *  Cost is potentially higher per MB/month than wired ISP option
+    *  Limited to contracted monthly bandwidth allocation (going over will be additional cost)
+    *  Wireless is generally slower then wired transports
+
+### ISP + LTE (standby)
+
+*  Providers:
+    *  ISP #1
+    *  LTE #1 (used as second WAN link in Standby mode)
+[![ISP + LTE (standby) Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_ispplusltestandby.png)](design-decisions_citrix-sdwan-home-office_ispplusltestandby.png)
+
+*  Benefits (in addition to benefits of Single ISP):
+    *  Cost can be managed with standby features of on-demand and last resort
+    *  SD-WAN overlay resiliency using both ISP WAN links
+    *  Local internet resiliency using both ISP WAN links
+
+*  Considerations:
+    *  No SD-WAN overlay load balancing due to single active WAN link
+    *  No local internet load balancing due to single active WAN link
+
+### Dual LTE
+
+*  Providers:
+    *  LTE #1
+    *  LTE #2
+[![LTE1 + LTE2 Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_lte1pluslte2.png)](design-decisions_citrix-sdwan-home-office_lte1pluslte2.png)
+
+*  Benefits (in addition to benefits of Single ISP):
+    *  Cost can be managed with standby features of on-demand and last resort
+    *  SD-WAN overlay resiliency using both ISP WAN links
+    *  Local internet resiliency using both ISP WAN links
+
+*  Considerations:
+    *  No SD-WAN overlay load balancing due to single active WAN link
+    *  No local internet load balancing due to single active WAN link
+
+Each use-case described above can be augmented with additional WAN links (ISP or LTE), further increasing the available bandwidth and improving network availability for the remote home worker.
+
+## References
+
+For more information refer to:
+
+[Citrix SD-WAN Home Office POC Guide](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html) - learn how to implement a proof of concept of Citrix SD-WAN for a Home Office
+
+[Citrix SD-WAN Home Office Tech Brief](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-home-office.html) - provides an overview of using Citrix SD-WAN for a Home Office
