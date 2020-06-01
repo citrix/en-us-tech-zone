@@ -157,6 +157,7 @@ the workspace: available printers, ability to access network and local drives, o
 
 To learn more about hardening, refer to the [System Hardening white paper](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/system-hardening-for-xenapp-and-xendesktop.pdf).
 
+**Aggregation of Applications with Different Trust Levels**
 [![Citrix Workspace helps enable GDPR compliance](/en-us/tech-zone/design/media/reference-architectures_gdpr_apps-trust-levels.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_apps-trust-levels.png)
 
 ## Securing Web and SaaS Applications
