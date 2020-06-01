@@ -42,7 +42,7 @@ personal data is not made accessible without the individual’s intervention to 
 ### How Citrix can help you with your GDPR compliance initiatives
 
 Citrix Workspace simplifies the management of your systems and data by centralizing
-services in the data center or cloud as a digital workspace. The goal of this white paper is to
+services in the data center or cloud as a digital workspace. The goal of this document is to
 describe how it unifies applications, data and desktops into a digital workspace for your teams and allows you to better align with GDPR requirements around data management, data monitoring and information auditing.
 
 #### Citrix supports clients on their journey to GDPR compliance in 4 key ways:
