@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to work from home with secure, enhanced, and resilient connectivity using the Citrix SD-WAN 110
+description: Learn how to work from home with secure, enhanced, and resilient connectivity using the Citrix SD-WAN 110 appliance
 ---
 # Citrix SD-WAN for Home Offices
 
