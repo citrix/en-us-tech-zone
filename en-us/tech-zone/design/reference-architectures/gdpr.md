@@ -73,7 +73,7 @@ and data sources. However, the GDPR requires a more data centric approach. We re
 starting with identifying and assessing various locations where PII data is currently stored
 and moving higher up the stack to make sure that data sources are properly secured. You can think about this as an inside out approach to security.
 
-(Define, Assess, Reduce, Remediate, Review flow diagram)
+![GDPR Flow Diagram](/en-us/tech-zone/design/media/reference-architectures_gdpr-flow_002.png)
 
 **Define** - Start by defining the criteria of PII data that is in scope of assessment. This phase should help you define what to look for and how to prioritize data sources from a privacy perspective. This should include employees, customers, vendors, and any other relevant entities.
 
