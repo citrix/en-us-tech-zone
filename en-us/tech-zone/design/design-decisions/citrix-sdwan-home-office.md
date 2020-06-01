@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Understand the design decisions required to implement the Citrix SD-WAN 110 to work from home with secure, enhanced, and resilient connectivity
+description: Understand the design decisions required to implement the Citrix SD-WAN 110 in a Home Office to provide secure, enhanced, and resilient connectivity
 ---
 # Citrix SD-WAN for Home Offices Design Decisions
 
