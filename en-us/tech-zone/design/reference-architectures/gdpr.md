@@ -93,7 +93,7 @@ to create a tailor-made solution for each of the problematic data sources is unr
 Complexity is considered one of the biggest enemies of security. You want to identify the minimum number of different architectures
 that could be used to secure the majority of the data sources that have been identified as critical and are storing data included in the GDPR scope.
 
-The Pareto principle (also known as 80/20 rule) is important during this data assessment–and companies should try to minimize the effort required to secure the majority of data sources. Most enterprises have hundreds or thousands of different applications and data sources that are being used and they need to promptly identify those applications that contain critical data and don’t meet the GDPR requirements. Automated application assessment solutions can reduce the time required to analyze applications.
+The Pareto principle (also known as the 80/20 rule) is important during this data assessment. Companies should try to minimize the effort required to secure the majority of data sources. Most enterprises have hundreds or thousands of different applications and data sources that are being used and they need to promptly identify those applications that contain critical data and don’t meet the GDPR requirements. Automated application assessment solutions can reduce the time required to analyze applications.
 
 Many companies plan to use this mitigation period to transition to a more flexible IT model. While this goal is plausible, it is important to understand the timelines and choose realistic goals. Customers should choose solutions that can be gradually improved without the need for a complete redesign.
 
