@@ -73,7 +73,7 @@ and data sources. However, the GDPR requires a more data centric approach. We re
 starting with identifying and assessing various locations where PII data is currently stored
 and moving higher up the stack to make sure that data sources are properly secured. You can think about this as an inside out approach to security.
 
-![GDPR Flow Diagram](/en-us/tech-zone/design/media/reference-architectures_gdpr-flow_002.png)
+![GDPR Flow Diagram](/en-us/tech-zone/design/media/reference-architectures_gdpr_flow_002.png)
 
 **Define** - Start by defining the criteria of PII data that is in scope of assessment. This phase should help you define what to look for and how to prioritize data sources from a privacy perspective. This should include employees, customers, vendors, and any other relevant entities.
 
@@ -111,6 +111,8 @@ with cloud computing and BYOD initiatives.
 Another common challenge for applications installed on traditional computers is to provide the same security functionality across the whole portfolio. It’s common to have a multigenerational IT portfolio residing on a single workstation, from Office-based applications (using Microsoft Access databases or custom plugins) through legacy Visual Basic to the latest professionally built applications. Making sure that applications with access to sensitive data support encryption, multifactor authentication and provide enough information for auditors has always been complicated.
 
 (traditional client/server app delivery diagram)
+
+[![Traditional client/server app delivery diagram](/en-us/tech-zone/design/media/reference-architectures_gdpr_client-server-apps_003.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_client-server-apps_003.png)
 
 Citrix has a long tradition of providing a platform for the secure delivery of these client/server applications. This secure delivery is based on offloading the client application piece onto a dedicated set of servers (Citrix Virtual Apps and Desktops), specially designed, optimized, and secured for application delivery. By decoupling the application from the endpoint, it's possible to enable additional security features. The advantage of this approach is that security features are applied consistently, without requiring any changes or access to the source code and even to applications that are no longer actively supported.
 
