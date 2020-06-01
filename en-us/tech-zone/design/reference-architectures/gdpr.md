@@ -99,7 +99,7 @@ Many companies plan to use this mitigation period to transition to a more flexib
 
 In the following sections, we present a few selected architectures that can provide a universal, secure, and proven solution to secure any type of data, ranging from web-based applications, through legacy client/server applications hosted on Windows or Linux to data stored in various documents or exchanged through emails.
 
-**Decision flow for data types**
+**Decision Flow for Data Types**
 [![Citrix Workspace helps enable GDPR compliance](/en-us/tech-zone/design/media/reference-architectures_gdpr_data-flow-diagram.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_data-flow-diagram.png)
 
 ## Securing Windows and Linux Applications
