@@ -54,9 +54,23 @@ In a deployment involving Citrix Virtual Apps and Desktop, CVAD keeps data and w
 
 Another option would be to backhaul Home User traffic and limit resource and connectivity to Corporate Network through Firewalled DMZs. Further, firewall policies on the SD-WAN devices can be centrally mandated to all SD-WAN devices in remote Home User networks to limit the traffic allowed on the “New WAN Overlay” to only certain applications, protocols, and/or Server IPs, etc.
 
+[![Firewall DMZ](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_firewalldmz.png)](design-decisions_citrix-sdwan-home-office_firewalldmz.png)
+
+Selection of the network topology is central to planning the remote access architecture to ensure that it can support the necessary functionality, performance, and security requirements.  The design of the remote access architecture should be completed in collaboration with the security team to ensure adherence to corporate security requirements and standards. In either case, to address the typical pain points on the last mile of the Wide Area Network, the new SD-WAN overlay directly addresses issues typically found with shared internet access links available to most Home Users, making it a must-have solution to provide optimal user experience for happy and productive home workers.
+
+### Segment the Network with Routing Domains (VRF-lite)
+
+Additionally, Citrix SD-WAN allows segmenting the SD-WAN deployment for more security and manageability by using Virtual Routing and Forwarding. This capability on Citrix SD-WAN is called Routing Domains. Considering a network that already has a Citrix SD-WAN deployment, connecting remote offices to data centers, we can introduce a new Home User Routing Domain to separate Home User network traffic from Corporate network traffic. Each routing domain maintains its own unique route table on the SD-WAN devices. A Virtual Path can communicate all routing domains. On ingress of a packet into the tunnel, the packet is tagged based on the routing domain associated with the interface used to enter the system. Within the tunnel, each packet is tagged with its associated routing domain, and upon egress of the tunnel the associated routing table is used for proper delivery. The existing SD-WAN site deployment can leverage the Default Routing Domain, and a the new routing domain can be added to the head-end SD-WAN device leveraging a dedicated interface for limited access to limited Home User resources in the corporate network, as illustrated below.
+
+[![Routing Domains](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_routingdomains.png)](design-decisions_citrix-sdwan-home-office_routingdomains.png)
+
+(Here you may find more information regarding [Citrix SD-WAN Routing Domains](/en-us/citrix-sd-wan/11-1/routing/virtual-routing-and-forwarding.html))
+
 ## Home User Network Design Considerations
 
 Rapid deployment of thousands of endpoints is easily accomplished through central management tools specifically designed for large-scale SD-WAN deployments. However, when possible Administrators should eliminate complexity by limiting the Home User use case to a manageable scope. This could mean keeping the initial home user network design to only support one deployment mode on a specific platform. However, the options are numerous and again heavily dependent on the local network availability of the home users. Let us outline some potential options with different local network variances in mind, along with potential benefits and things to consider for each when introducing an SD-WAN device to serve the home worker’s network.
+
+## DECISION: WAN Links
 
 ### Single ISP (VPN replacement)
 
@@ -81,3 +95,20 @@ Rapid deployment of thousands of endpoints is easily accomplished through centra
     *  No SD-WAN overlay resiliency due to single ISP WAN link
     *  No local internet load balancing due to single ISP WAN link
     *  No local internet resiliency due to single ISP WAN link
+
+### Dual ISP
+
+*  Providers:
+    *  ISP #1
+    *  ISP #2
+[![Single ISP Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_dualisp.png)](design-decisions_citrix-sdwan-home-office_dualisp.png)
+*  Benefits:
+    *  Site-to-Site with higher, aggregated, bandwidth simultaneously using multiple ISP WAN links
+    *  SD-WAN overlay load balancing simultaneously using both ISP WAN links
+    *  SD-WAN overlay resiliency using both ISP WAN links
+    *  Local internet load balancing simultaneously using both ISP WAN links
+    *  Local internet resiliency using both ISP WAN links
+*  Considerations:
+    *  Additional cost of second ISP WAN link
+    *  Time and effort to setup ISP #2
+    *  Requires additional hardware (Modem for ISP #2)
