@@ -10,6 +10,50 @@ description: Understand the design decisions required to implement the Citrix SD
 
 **Special Thanks** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
 
+## Overview
+
+Citrix SD-WAN for Home Offices may be deployed in a several flexible topologies. It can also provide enhanced delivery of Citrix Virtual Apps and Desktops sessions for Home Users. This design document provide guidance regarding the design decisions to implement Citrix SD-WAN for Home Offices to allow optimimal use by Home Users.
+
+## Network Administration
+
+The Network Administrators for the SD-WAN deployment play a key role in successful rollout of the solution. In designing and maintaining SD-WAN deployments, Administrators are generally concerned with the following:
+
+*  Enabling corporate network access to only those that need it, while adhering to corporate security requirements
+*  Rapid streamlined deployment of hundreds or thousands of endpoints geographically distributed across different regions
+*  Enabling the highest user experience with company-wide business policies via Quality of Service
+*  Stabilizing performance and user experience while accounting for as many disparities as manageable
+
+The success of any deployment hinges on the seamless execution on both a technical and business level.  Further detail and recommendations are provided in this document to help guide the Network Administrator to accomplish a successful SD-WAN deployment.
+
+## Network Security Considerations
+
+Enabling corporate network access to home users opens potential attack vectors, so it is highly recommended to take extra precaution to reduce as much risk as possible. Some of these can include:
+
+1.  Segregate the network by adding barriers, limiting the reach of newly introduced segments, such as Home Users
+1.  Eliminate complexity, by limiting the Home User use case to a manageable scope
+1.  Control the endpoints by monitoring network connections and eliminating any local device access
+1.  Monitor endpoint activity by keeping endpoints on constant surveillance and set up alerts when endpoint behaviors deviate from the norm
+
+## DECISION: Citrix Virtual Apps and Desktops delivery
+
+For optimal security in extending parts of the corporate network to remote resources, it is always recommended to make use of Citrix technologies, such as Citrix Virtual Apps and Desktops. This technology has led in Virtual Client Computing for many years and can help in the design of a secure network. (Here you may find more information regarding [Citrix Virtual Apps and Desktops security](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/1912-ltsr/secure/best-practices.html)).  Citrix SD-WAN can be coupled with this solution to better deliver to remote locations where the Wide Area Network may not always be reliable.
+
+One security conscious approach would be to place SD-WAN in the path of Citrix Workspace traffic delivered through Citrix Gateway. In the Data Center network, the incoming front-end traffic is isolated from back-end traffic, between the CVAD infrastructure servers and services. This allows the use of separate demilitarized zones (DMZs) to isolate front-end and back-end traffic flows along with granular firewall control and monitoring.
+
+[![Citrix Gateway ICA Proxy](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_gatewayicaproxy.png)](design-decisions_citrix-sdwan-home-office_gatewayicaproxy.png)
+
+It is important to understand that in this scenario, the traffic that is delivered through the SD-WAN overlay will be encrypted between the user endpoint and the Citrix Gateway, meaning the SD-WAN will only see encrypted payload. Encrypted traffic means the HDX Auto-QoS feature will not work, along with detailed reporting.  HDX Auto-QoS is designed to dynamically investigate the HDX session when delivered between the SD-WAN peers and allow differentiation between the different channels that comprise a single HDX session.  This is also known as Mult-Stream ICA, which enables prioritization of interactive channels above the bulk data channels, resulting in improved end-user experience. A key component with the integration of Citrix SD-WAN is that that the CVAD servers can keep the session in Single-Stream ICA, which the SD-WAN dynamically delivers Mult-Stream ICA across the Virtual Path / Overlay.
+
+An alternative approach would be to set the Citrix Gateway in “transparent mode”. In transparent mode, the client endpoints can access CVAD resources directly, with no intervening virtual servers on Gateway, thus the HDX traffic is not transmitted as SSL encrypted, allowing the SD-WAN devices to see the HDX protocol and initiate the Auto-QoS capabilities. The Auto-QoS feature on SD-WAN requires usage of CVAD LTSR 7-1912 or higher release.  In this scenario the HDX traffic is still protected as it traverses the WAN, since SD-WAN peers establish AES encrypted tunnels across all available WAN paths between the SD-WAN devices in the network. In addition there is a built-in authentication process with encryption key rotation helping to ensure key regeneration for every Virtual Path at intervals of 10-15 minutes, so that only trusted peers are allowed on the WAN overlay (Here you may find more information regarding [Citrix SD-WAN Security Best Practices](/en-us/citrix-sd-wan/11-1/best-practices/security-best-practices.html))
+
+[![Citrix Gateway Transparent Mode](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_gatewaytransparentmode.png)](design-decisions_citrix-sdwan-home-office_gatewaytransparentmode.png)
+
+In a deployment involving Citrix Virtual Apps and Desktop, CVAD keeps data and workloads secure in the Data Center. Even internet traffic access through those resources (e.g. VDAs) predominately is handled through local Internet links at the Data Center and internet traffic does not actually traverse the new WAN overlay to the remote user. If HDX redirection is enabled, then only in certain scenarios does Internet traffic like Microsoft Teams get broken out of the HDX session for the remote client host to fetch it using local internet sources. Here, the Home User SD-WAN can be enabled for Internet Service to route that traffic appropriately, either directly to Office 365 cloud, or Secure Web Gateway services, or direct to Internet breakout.
+
+### Limit Home User Networks through Firewall DMZ
+
+Another option would be to backhaul Home User traffic and limit resource and connectivity to Corporate Network through Firewalled DMZs. Further, firewall policies on the SD-WAN devices can be centrally mandated to all SD-WAN devices in remote Home User networks to limit the traffic allowed on the “New WAN Overlay” to only certain applications, protocols, and/or Server IPs, etc.
+
 ## Home User Network Design Considerations
 
 Rapid deployment of thousands of endpoints is easily accomplished through central management tools specifically designed for large-scale SD-WAN deployments. However, when possible Administrators should eliminate complexity by limiting the Home User use case to a manageable scope. This could mean keeping the initial home user network design to only support one deployment mode on a specific platform. However, the options are numerous and again heavily dependent on the local network availability of the home users. Let us outline some potential options with different local network variances in mind, along with potential benefits and things to consider for each when introducing an SD-WAN device to serve the home worker’s network.
