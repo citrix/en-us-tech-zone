@@ -46,7 +46,7 @@ Home Users / Teleworkers traditionally connect into the network over Public Inte
 
 Citrix SD-WAN 110 platform addresses the needs of small offices, retail stores, and work-from-home users. The 110 platform ensures business continuity in a small form factor providing the highest network resiliency with sub-second failover, along with the best in-class application experience for virtual, SaaS, and cloud applications providing end-to-end Quality of Service (QoS).
 
-[**SD-WAN 110-LTE-WiFi-SE Overview**]( https://www.youtube.com/watch?v=DFCeF68NXM0&feature=youtu.be )
+[**SD-WAN 110-LTE-WiFi-SE Overview**]( https://www.youtube.com/watch?v=a1mVYA-Ckyk )
 
 SD-WAN 110-LTE-WIFI-SE Product Specs include:
 
