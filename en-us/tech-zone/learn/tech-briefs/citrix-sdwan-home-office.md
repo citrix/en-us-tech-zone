@@ -108,12 +108,14 @@ If there is a requirement to limit home user responsibility, the Administration 
 
 With the Home User’s SD-WAN successfully activated through zero touch deployment, a Virtual Path will be established across the available WAN and LTE interfaces to the configured MCN/RCN in the existing SD-WAN environment. Any changes to the local administration of the device or SD-WAN application and security policies are remotely managed by the SD-WAN Administrator.
 
+## References
+
 For more information refer to:
 
-[ZTD via the WAN Interface (Citrix SD-WAN 110-SE)](https://support.citrix.com/article/CTX272229)
+[ZTD via the WAN Interface (Citrix SD-WAN 110-SE)](https://support.citrix.com/article/CTX272229) - a Quick Start Guide for Citrix SD-WAN 110-SE appliances when performing ZTD (Zero Touch Deployment) via the WAN Interface
 
-[ZTD via the LTE Interface (Citrix SD-WAN 110-LTE-SE)](https://support.citrix.com/article/CTX272228)
+[ZTD via the LTE Interface (Citrix SD-WAN 110-LTE-SE)](https://support.citrix.com/article/CTX272228) - a Quick Start Guide for Citrix SD-WAN 110-LTE-SE appliances when performing ZTD (Zero Touch Deployment) via the LTE Interface
 
-[Citrix SD-WAN Home Office POC Guide](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html)
+[Citrix SD-WAN Home Office POC Guide](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html) - learn how to implement a proof of concept of Citrix SD-WAN for a Home Office
 
-[Citrix SD-WAN Home Office Design Decisions](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html)
+[Citrix SD-WAN Home Office Design Decisions](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) - learn about the decisions to need to be made to implement Citrix SD-WAN for Home Offices
