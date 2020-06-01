@@ -47,7 +47,7 @@ describe how it unifies applications, data and desktops into a digital workspace
 
 #### Citrix supports clients on their journey to GDPR compliance in 4 key ways:
 
-* By centraling and enclaving applications and data
+* By centralizing and enclaving applications and data
 * By ensuring data is protected when shared or distributed
 * By controlling who has access to data and resources
 * By bringing IT together for application and data-specific security
