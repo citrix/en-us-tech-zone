@@ -175,7 +175,7 @@ data in transit, maintaining strict access control, and data protection. This is
 We’re going to cover how this architecture can help you secure the applications to follow GDPR standards. These technical measures fall largely under the requirements or Article 25 and 32 where controllers are required to “implement appropriate technical and organizational measures.”
 
 **Web Applications with Citrix ADC**
-[![Web Applications with Citrix ADC Diagram](/en-us/tech-zone/design/media/reference-architectures_web-apps-citrix-adc.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-citrix-adc.png)
+[![Web Applications with Citrix ADC Diagram](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-citrix-adc.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-citrix-adc.png)
 
 #### Article 25 - Access to Personal Data
 Authentication, Authorization, and Auditing are all core to controlling access to personal data. As an AAA proxy, Citrix ADC consolidates, extends, and enhances the traditional authentication schemes even in scenarios where the web apps do not natively support MFA. Citrix ADC supports authentication using user name/password, multi-factor (MFA), time-based and one-time tokens (Citrix ADC has native OTP support), smartcards, user or machine certificates and biometrics. While this is especially important for internet facing web apps, some organizations with a zero trust networking approach are moving to require MFA for “internal” access.
