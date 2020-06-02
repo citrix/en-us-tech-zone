@@ -280,7 +280,8 @@ Many of our daily workflows consist of the creation of files and collaborating o
 
 Citrix Content Collaboration (ShareFile) provides a range of controls to help organizations become and remain compliant under GDPR. This starts by having a choice on the location where files are being stored. Options include inside one of the Citrix-managed StorageZones in different global regions or in a StorageZone managed by the customer in their own data centers or private cloud. Multiple locations can be used, allowing for the optimal location to store each individual file. By using the StorageZone Connectors technology to access existing repositories, such as network file shares or SharePoint document libraries, all file related activities are done through a single platform. This makes auditing the activities easier, in addition to making sure that the correct permissions are in place.
 
-(StorageZones with global regions diagram)
+**StorageZones Options**
+[![StorageZones Options](/en-us/tech-zone/design/media/reference-architectures_gdpr_storagezones.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_storagezones.png)
 
 For more information on StorageZones including architecture details and deployment options, see the [Content Collaboration Reference Architectures](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures.html#citrix-content-collaboration)
 
