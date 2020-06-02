@@ -65,12 +65,12 @@ Concerns regarding the WAN for the Home User use-case can be solved with the Cit
 
 [![Citrix SD-WAN Home Office Use Case](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeusecase.png)](tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeusecase.png)
 
-Generally, you will find more benefits with the SD-WAN solution by introducing additional WAN transports such as DLS, Broadband Internet and/or LTE links to augment any existing WAN transports. Diversifying the Internet Service providers can significantly increase network reliability. In the above scenario, SD-WAN devices (physical or virtual) can be placed directly in the path of existing network with additional WAN transports to increase user experience and productivity. The benefits include:
+Generally, you will find more benefits with the SD-WAN solution by introducing additional WAN transports such as DLS, Broadband Internet and/or LTE links to augment any existing WAN transports. Diversifying the Internet Service providers can significantly increase network reliability. In the above scenario, SD-WAN devices (physical or virtual) can be placed directly in the path of the existing network with additional WAN transports to increase user experience and productivity. The benefits include:
 
 *  link bandwidth aggregation (a.k.a. link load balancing) for remote locations with multiple Internet/LTE links
 *  sub-second link blackout and brownout detection, enabling an always-on network
 *  per-packet prioritization providing dual-ended Quality of Service with ability to deliver asymmetrically across all available paths
-*  augment security protection with cloud services (e.g. Zscaler, Palo Alto Prisma, and iBoss) or by utilizing higher-end appliance unlock additional on-prem VNF options (e.g. Palo Alto, Checkpoint) with simple integration with industry-leading security vendors
+*  augment security protection with cloud services (e.g. Zscaler, Palo Alto Prisma, and iBoss) or by utilizing higher-end appliances unlock additional on-prem Virtual Network Function (VNF) options (e.g. Palo Alto, Checkpoint) with simple integration with industry-leading security vendors
 *  serve as a DHCP Server to allocate and fix IP address for LAN devices based on MAC address
 *  enable usage of LTE-based WAN with standby (last resort and on-demand) functionality to further increase network reliability across wireless transports
 *  prioritize business critical applications utilizing a Deep Packet Inspection (DPI) and a Quality of Service engine, and with an integrated firewall solution, the ability to route and enforce security policies to block undesired apps or allow direct internet breakout for low latency connectivity to trusted SaaS apps (e.g. Office 365)
