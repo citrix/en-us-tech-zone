@@ -75,7 +75,9 @@ Generally, you will find more benefits with the SD-WAN solution by introducing a
 *  enable usage of LTE-based WAN with standby (last resort and on-demand) functionality to further increase network reliability across wireless transports
 *  prioritize business critical applications utilizing a Deep Packet Inspection (DPI) and a Quality of Service engine, and with an integrated firewall solution, the ability to route and enforce security policies to block undesired apps or allow direct internet breakout for low latency connectivity to trusted SaaS apps (e.g. Office 365)
 
-The availability of these benefits may vary based on the available WAN transports and the design of the site. The Network Administrator for the SD-WAN deployment plays a key role in SD-WAN deployments. The Network Administrator centrally dictates what is business critical and the extent of connectivity for the Home User use-case. We’ll dive into more detail on the roles and responsibilities of an Administrator in [Citrix SD-WAN Home Office POC Guide](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html), as well as cover the varying benefits depending on local network connectivity options in [Citrix SD-WAN Home Office Design Decisions](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html).
+The availability of these benefits may vary based on the available WAN transports and the design of the site.
+
+The Network Administrator plays a key role in SD-WAN deployments. The Network Administrator centrally dictates what is business critical and the extent of connectivity for the Home User use-case. We’ll dive into more detail on the roles and responsibilities of an Administrator in the [Citrix SD-WAN Home Office POC Guide](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html), as well as cover the varying benefits depending on local network connectivity options in [Citrix SD-WAN Home Office Design Decisions](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html).
 
 ## Citrix SD-WAN for Home Offices Topologies
 
