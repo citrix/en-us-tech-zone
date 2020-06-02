@@ -12,7 +12,7 @@ description: Understand the design decisions required to implement the Citrix SD
 
 ## Overview
 
-Citrix SD-WAN for Home Offices may be deployed in a several flexible topologies. It can also provide enhanced delivery of Citrix Virtual Apps and Desktops sessions for Home Users. This design document provide guidance regarding the design decisions to implement Citrix SD-WAN for Home Offices to allow optimimal use by Home Users.
+Citrix SD-WAN for Home Offices may be deployed in a several flexible topologies. It can also provide enhanced delivery of Citrix Virtual Apps and Desktops sessions for Home Users. This design document provides guidance regarding the design decisions to implement Citrix SD-WAN for Home Offices to enable optimimal use by Home Users.
 
 ## Network Administration
 
