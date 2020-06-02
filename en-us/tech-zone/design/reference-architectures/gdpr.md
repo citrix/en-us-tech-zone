@@ -162,7 +162,7 @@ of web apps – the born-on-the-internet-apps and webified apps-custom and legac
 The goal is for the end user to interact with web apps and manipulate data. This includes personal and sensitive data regardless if running in legacy environments or on SaaS apps pushing the limits of HTML5. Gartner recommends a two-pronged strategy. This is when an organization uses a legacy browser for running legacy applications, but also employs modern browsers for use with all other applications or sites, including general web surfing. That’s where Citrix helps – tying together the user experience and security requirements for hybrid or bimodal web environments.
 
 For the enterprise, maintaining multiple versions of various browsers, plug-ins, and applets while also simplifying
-authentication and access is a pain point. It is addressable with Citrix Virtual Apps and Desktops by building a remote browsing solution to separate internet and intranet web traffic from each other and the endpoint.
+authentication and access is a pain point. It is addressable with Citrix Virtual Apps and Desktops or [Citrix Secure Browser](https://www.citrix.com/products/citrix-secure-browser/) offerings. These solutions allow organizations to build a remote browsing infrastructure that separates internet and intranet web traffic from each other and the endpoint.
 
 (traditional web application architecture diagram)
 
