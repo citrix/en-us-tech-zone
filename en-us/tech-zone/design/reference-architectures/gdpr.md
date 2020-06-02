@@ -164,7 +164,8 @@ The goal is for the end user to interact with web apps and manipulate data. This
 For the enterprise, maintaining multiple versions of various browsers, plug-ins, and applets while also simplifying
 authentication and access is a pain point. It is addressable with Citrix Virtual Apps and Desktops or [Citrix Secure Browser](https://www.citrix.com/products/citrix-secure-browser/) offerings. These solutions allow organizations to build a remote browsing infrastructure that separates internet and intranet web traffic from each other and the endpoint.
 
-(traditional web application architecture diagram)
+**Traditional Web Applications Architecture**
+[![Traditional Web Applications Architecture](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps.png)
 
 The second challenge is providing unified security features across the wide range of SaaS and cloud applications that typical enterprises are using. This effectively helps to give back some IT control – especially in BYOD and mobile environments. An example is providing a unified multi-factor authentication solution across all apps instead of a fragmented user experience.
 
