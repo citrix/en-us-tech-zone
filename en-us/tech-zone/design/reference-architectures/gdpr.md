@@ -213,7 +213,8 @@ Pseudonymization is another control mentioned in Article 32. Conceptually, it’
 within a data record are replaced by one or more artificial identifiers, or pseudonyms. This makes storing personal data more secure
 in the event of a breach – by using data segmentation. An example is tokenizing or hashing sensitive data that Citrix ADC parses for web-application traffic – that is, hashing personally identifying data while transmitted between a controller and a processor. This is done in PCI-DSS regulated environments. For example, for cardholder data, tokenization guidelines are specific for the Primary Account Number (PAN). Tokenization replaces the PAN with a surrogate value called a token. De-tokenization is the reverse process of redeeming a token for its associated PAN value. The security of an individual token relies predominantly on the infeasibility of determining the original PAN by knowing only the surrogate value. Applications may not need as much security protection as associated with the use of PAN. For GDPR, storing tokens instead of PII is one alternative that can help to reduce the amount of personal data in the environment, potentially reducing the effort to adhere to GDPR requirements.
 
-(NetScaler data protection diagram)
+**Citrix ADC Data Protection**
+[![Citrix ADC Data Protection](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-adc-data-protection.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-adc-data-protection.png)
 
 ## Securing Mobile Applications
 
