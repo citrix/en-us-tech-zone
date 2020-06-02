@@ -6,12 +6,12 @@ description: Copy & paste description from TOC here
 
 ## Contributors
 
-**Authors:** [Matthew Brooks](URL), [Florin Lazurca](URL),  [Rob Sanders](URL), [Martin Zugec](URL), [Allen Furmanski](URL)
+**Authors:** [Matthew Brooks](URL), [Florin Lazurca](URL), [Rob Sanders](URL), [Martin Zugec](URL), [Allen Furmanski](URL)
 
 ## General Data Protection Regulation (GDPR) Overview
 
-GDPR is a set of data privacy rules that apply broadly to both companies in the European Union (EU) and the usage of data pertaining to EU residents. The GDPR went into full effect on the 25th of May, 2018 across the EU. The official regulation includes several
-chapters which are further broken down into “articles”, or subsections that describe specific provisions, which are referenced frequently by number or title in documents describing how to comply with their requirements.
+GDPR is a set of data privacy rules that apply broadly to both companies in the European Union (EU) and the usage of data pertaining to EU residents. The GDPR went into full effect on May 25, 2018 across the EU. The official regulation includes several
+chapters which are further broken down into “articles”, or subsections. They describe specific provisions, which are frequently referenced by number or title in documents describing how to comply with their requirements.
 
 ### GDPR seeks to:
 
@@ -24,25 +24,25 @@ chapters which are further broken down into “articles”, or subsections that 
 ### The GDPR applies to:
 
 * Organizations operating within the EU
-* Organizations operating outside of the EU who offer goods, services or are involved in ‘monitoring the behavior’ of EU residents
+* Organizations operating outside of the EU who offer goods, services, or are involved in ‘monitoring the behavior’ of EU residents
 
-**Note:** Privacy considerations for GDPR span the data lifecycle from opt-in collection, to specific or anonymized usage and secured disposal and retirement of data. It covers all personal data relating to your customers, employees, supply chain, partners and anyone else about whom you collect personal information.
+**Note:** Privacy considerations for GDPR span the data lifecycle from opt-in collection, to specific or anonymized usage and secured disposal and retirement of data. It covers all personal data relating to your customers, employees, supply chain, partners, and anyone else about whom you collect personal information.
 
-### Two key GDPR articles will be the focus of this document
+### Two key GDPR articles are the focus of this document
 
 * Access control (Article 25) - calls out particular measures which shall ensure that by default
 personal data is not made accessible without the individual’s intervention to an indefinite number of natural persons.
 * Encryption and data protection (Article 32) - calls out:
   * Pseudonymisation and encryption of personal data
-  * Ensure the ongoing confidentiality, integrity, availability and resilience of processing systems and services
+  * Ensure the ongoing confidentiality, integrity, availability, and resilience of processing systems and services
   * The ability to restore the availability and access to personal data in a timely manner in the event of a physical or technical incident
-  * Protection from accidental and unlawful destruction, loss, alteration, unauthorized disclosure of, or access to personal data transmitted, stored or otherwise processed
+  * Protection from accidental and unlawful destruction, loss, alteration, unauthorized disclosure of, or access to personal data transmitted, stored, or otherwise processed
 
 ### How Citrix can help you with your GDPR compliance initiatives
 
 Citrix Workspace simplifies the management of your systems and data by centralizing
 services in the data center or cloud as a digital workspace. The goal of this document is to
-describe how it unifies applications, data and desktops into a digital workspace for your teams and allows you to better align with GDPR requirements around data management, data monitoring and information auditing.
+describe how it unifies applications, data, and desktops into a digital workspace for your teams and allows you to better align with GDPR requirements around data management, data monitoring, and information auditing.
 
 #### Citrix supports clients on their journey to GDPR compliance in 4 key ways:
 
@@ -57,31 +57,27 @@ describe how it unifies applications, data and desktops into a digital workspace
 
 ## Data oriented approach to GDPR requirements
 
-Following the GDPR guidelines might be much easier for modern cloud companies than traditional enterprises. While most cloud companies have only a few centralized sources where personally identifiable information (PII) is stored, traditional companies potentially have hundreds, if not thousands, of different databases and data sources that need to be assessed, reviewed and updated to meet the latest data privacy standards.
+Following the GDPR guidelines might be much easier for modern cloud companies than traditional enterprises. While most cloud companies have only a few centralized sources where personally identifiable information (PII) is stored, traditional companies potentially have hundreds, if not thousands, of different databases and data sources that need to be assessed, reviewed, and updated to meet the latest data privacy standards.
 
-These data sources can range from traditional SQL databases to emails, digital documents or even physical documents. With today's often aggressive timelines, many enterprises face a challenge to properly prepare and update systems as required. It is important to understand that the GDPR doesn’t affect only active data sources, but also all backups, disaster recovery sites and physical printouts.
+These data sources can range from traditional SQL databases to emails, digital documents, or even physical documents. With today's often aggressive timelines, many enterprises face a challenge to properly prepare and update systems as required. It is important to understand that the GDPR doesn’t affect only active data sources, but also all backups, disaster recovery sites and physical printouts.
 
 GDPR involves two key roles for data: the data controller and the data processor. The data controller is the entity who determines the purpose of the data and how the data is to be handled. The data processor handles or processes the actual data per the controller's guidelines.
 
 The GDPR is all about the maturity of the company when dealing with data and privacy information. Citrix has always been a data and
 application oriented company, with a proven record of handling complex, often international projects that are dealing with thousands of applications.
 
-The traditional consulting approach is focused on the business processes, identifying people
-and business requirements, access methods and slowly cascading down to infrastructure
-and data sources. However, the GDPR requires a more data centric approach. We recommend
-starting with identifying and assessing various locations where PII data is currently stored
-and moving higher up the stack to make sure that data sources are properly secured. You can think about this as an inside out approach to security.
+The traditional consulting approach is focused on the business processes, identifying people and business requirements, access methods and slowly cascading down to infrastructure and data sources. However, the GDPR requires a more data centric approach. We recommend starting with identifying and assessing various locations where PII data is stored. Then move higher up the stack to make sure that data sources are properly secured. You can think about this as an inside out approach to security.
 
 ![GDPR Flow Diagram](/en-us/tech-zone/design/media/reference-architectures_gdpr_flow_002.png)
 
 **Define** - Start by defining the criteria of PII data that is in scope of assessment. This phase will help you define what to look for and how to prioritize data sources from a privacy perspective. This can include employees, customers, vendors, and any other relevant entities.
 
-**Assess** - Analyze all the existing locations where data is stored. Identify the business requirements, data retention and potential challenges to securing the data. Identify not only where the data is stored, but also how it’s being collected. Data segmentation is one of the most time consuming and critical phases of data consolidation projects. This phase requires a comprehensive approach, critical thinking and well-defined methodology. Organizations shouldn't ignore data held in legacy systems, even if there is a program in place to modernize soon or that the data is used only as a backup. It is important to understand that all these legacy systems are covered by the GDPR requirements as well and companies need to take a holistic approach.
+**Assess** - Analyze all the existing locations where data is stored. Identify the business requirements, data retention, and potential challenges to securing the data. Identify not only where the data is stored, but also how it’s being collected. Data segmentation is one of the most time consuming and critical phases of data consolidation projects. This phase requires a comprehensive approach, critical thinking, and well-defined methodology. Organizations shouldn't ignore data held in legacy systems. This is true even if there is a program in place to modernize or if the data is used only as a backup. It is important to understand that all these legacy systems are covered by the GDPR requirements as well and companies need to take a holistic approach.
 
-**Reduce** - The goal of this phase is to identify if it is possible to reduce the number of data sources that need to be secured. For example, it is possible to consolidate data sources that are being used by business units – instead of storing client data in multiple locations, a centralized location can be used to maximize effectiveness of security measures. Maybe the data is not even needed at all – the biggest privacy offender might not even be considered critical for the business units. It is also possible that applications are simply collecting too much data (“just in case”). The applications can be modified to stop collecting excessive information and the existing data can be erased. Instead of trying to secure all the possible locations of PII, companies should ask when/where do they actually need to store the data about customers and other parties. As GDPR compliancy is an ongoing process with periodic reviews, minimizing the amount of included data sources can prove to be a very effective long-term strategy.
+**Reduce** - The goal of this phase is to identify if it is possible to reduce the number of data sources that need to be secured. For example, it is possible to consolidate data sources that are being used by business units. Instead of storing client data in multiple locations, a centralized location can be used to maximize effectiveness of security measures. Maybe the data is not even needed at all – the biggest privacy offender might not even be considered critical for the business units. It is also possible that applications are simply collecting too much data (“just in case”). The applications can be modified to stop collecting excessive information and the existing data can be erased. Instead of trying to secure all the possible locations of PII, companies should ask when/where do they actually need to store the data about customers and other parties. As GDPR compliancy is an ongoing process with periodic reviews, minimizing the number of included data sources can prove to be an effective long-term strategy.
 
 **Remediate** - Identify if existing data sources and applications used to access them are following the GDPR guidance, or if changes are needed. If the data source includes PII data and is not secure, identify the possible approaches to solve the situation. A cross departmental GDPR team can also identify, assess, and review not only the data itself, but also access methods, applications used and
-other factors, such as limiting user and 3rd party access, revisiting requirements and more specifically defining data security measures.
+other factors. This includes items such as limiting user and third party access, revisiting requirements, and more specifically defining data security measures.
 
 **Review** - GDPR compliancy is an ongoing process and data assessments need to be performed on a regular basis. It is therefore important to implement a robust, stable, and repeatable process that can be defended if it ever needs to be presented to auditors. The data sources security assessment should be performed and reviewed on a regular basis.
 
@@ -118,7 +114,7 @@ Citrix has a long tradition of providing a platform for the secure delivery of t
 ### Securing Applications to GDPR Standards
 
 #### Article 25 - Access to Personal Data
-There are multiple ways to limit or prevent users from accessing published resources. The most basic method is to simply hide the applications or desktops from users by enforcing Active Directory group membership. When publishing resources through the Citrix management console, the access is enforced on the Citrix Virtual Delivery Agent (VDA) machines hosting the workloads. Access and availabile functionality is further tweaked through Citrix's comprehensive policy engine.
+There are multiple ways to limit or prevent users from accessing published resources. The most basic method is to simply hide the applications or desktops from users by enforcing Active Directory group membership. When publishing resources through the Citrix management console, the access is enforced on the Citrix Virtual Delivery Agent (VDA) machines hosting the workloads. Access and available functionality is further tweaked through Citrix's comprehensive policy engine.
 
 The use of traditional user name/password authentication is decreasing with more secure multi-factor authentication (MFA) increasing. Even for internal networks, more and more companies are enforcing MFA requirements to enhance security. With Citrix Virtual Apps and Desktops and Citrix ADC, MFA can be applied to any client/server application including even legacy applications that are hard to maintain. The ADC appliance provides an extensible and flexible approach to configuring MFA, from time-based one-time tokens, through smart cards, user or machine certificates to biometric authentication (through third party integration).
 
@@ -140,7 +136,7 @@ With Citrix Virtual Apps and Desktops, only screen pixels are transferred betwee
 #### Article 32 - Data Encryption at Rest
 While Citrix Virtual Apps and Desktops can help with the encryption between user and application, the back-end itself remains out of scope for this solution. However, CVAD can be used to isolate unencrypted traffic and data during the transition period utilizing secure zones – making sure that all data is encrypted is a long-term process and encapsulating this data in an isolated enclave can provide the required security while the migration project is underway. You can read more about secure zones in this blog post: [“Unsinkable”: The Myth of Foolproof IT Security](https://www.citrix.com/blogs/2017/10/31/unsinkable-the-myth-of-foolproof-it-security/).
 
-As for encryption on the endpoint, it is important to minimize data exposure at the endpoint and control data remanence. Data residing on the endpoint should be restricted, delivering only the minimum amount of data necessary, virtualizing all access to PII and ensuring that residual data, keystrokes and screen data are managed and protected. To learn more, read this blog post about [Citrix ICA
+As for encryption on the endpoint, it is important to minimize data exposure at the endpoint and control data remanence. Data residing on the endpoint should be restricted, delivering only the minimum amount of data necessary, virtualizing all access to PII and ensuring that residual data, keystrokes and screen data are managed and protected. To learn more, read this blog post about the [Citrix ICA
 client footprint](https://www.citrix.com/blogs/2017/08/31/citrix-ica-client-what-leaks/).
 
 #### Article 32 - Data Isolation and Protection
@@ -202,7 +198,7 @@ Logging and visibility are provided through NetScaler Management and Analytics S
 (NetScaler authentication options diagram)
 
 #### Article 32 - Data Isolation and Protection
-Citrix ADC is a reverse proxy and as such it benefits from its location in the network architecture, typically in a DMZ or security zone where it accepts the front-end user connection, creates a secure connection to the back-end server, and has full visibility into requests and responses. Additionally, Citrix ADC can change the logic of the web traffic on the fly without requiring updates to the back-end application. This includes encryption of not only packet header but body as it does deep packet inspection and rewrite.
+Citrix ADC is a reverse proxy and as such it benefits from its location in the network architecture, typically in a DMZ or security zone where it accepts the front-end user connection, creates a secure connection to the back-end server, and has full visibility into requests and responses. Additionally, Citrix ADC can change the logic of the web traffic on the fly without requiring updates to the back-end application. This includes encryption of not only the packet header but also the body as it does deep packet inspection and rewrite.
 
 Citrix ADC can ensure that traffic coming to and from the browser is always encrypted, even if the web server itself doesn’t support encryption. This encryption can be enabled for any site proxied through the ADC. SSL offloading leverages the ADC to perform the resource intensive SSL/TLS handshakes thereby offloading them from the back-end servers. For scenarios requiring end-to-end encryption, Citrix ADC can re-encrypt the connection to the back-end. This allows the ADC to inspect and apply security policies to the traffic. SSL bridging is available for when requirements demand that ADC plays no part in terminating the connection. Using ADC with NetScaler Management and Analytics System (MAS) allows administrators to keep central configuration and visibility of the cipher suites in use, helping prevent negotiation of outdated ciphers.
 
@@ -220,7 +216,7 @@ defense (Layer 3). Citrix ADC not only provides a multi-layer approach to DDoS p
 
 Pseudonymization is another control mentioned in Article 32. Conceptually, it’s a procedure by which the most identifying fields
 within a data record are replaced by one or more artificial identifiers, or pseudonyms. This makes storing personal data more secure
-in the event of a breach – by using data segmentation. An example is tokenizing or hashing sensitive data that Citrix ADC parses for web-application traffic – i.e. hashing personally identifying data while transmitted between a controller and a processer. This is done in PCI-DSS regulated environments. For example, for cardholder data, tokenization guidelines are specific for the Primary Account Number (PAN). Tokenization replaces the PAN with a surrogate value called a token. De-tokenization is the reverse process of redeeming a token for its associated PAN value. The security of an individual token relies predominantly on the infeasibility of determining the original PAN by knowing only the surrogate value. Applications may not need the same level of security protection as associated with the use of PAN. For GDPR, storing tokens instead of PII is one alternative that can help to reduce the amount of personal data in the environment, potentially reducing the effort to implement GDPR requirements.
+in the event of a breach – by using data segmentation. An example is tokenizing or hashing sensitive data that Citrix ADC parses for web-application traffic – i.e. hashing personally identifying data while transmitted between a controller and a processor. This is done in PCI-DSS regulated environments. For example, for cardholder data, tokenization guidelines are specific for the Primary Account Number (PAN). Tokenization replaces the PAN with a surrogate value called a token. De-tokenization is the reverse process of redeeming a token for its associated PAN value. The security of an individual token relies predominantly on the infeasibility of determining the original PAN by knowing only the surrogate value. Applications may not need the same level of security protection as associated with the use of PAN. For GDPR, storing tokens instead of PII is one alternative that can help to reduce the amount of personal data in the environment, potentially reducing the effort to implement GDPR requirements.
 
 (NetScaler data protection diagram)
 
@@ -247,7 +243,7 @@ comprehensive general Citrix XenMobile Security whitepaper here.
 
 (Citrix Secure Digital Workspace - mobility architecture diagram)
 
-The Citrix MDX Toolkit, the Citrix Endpoint Management MAM container technology, is a key part of the Citrix Endpoint Management solution to protect data. It provides end-to-end security maximizing protection of personal data, mitigating the risk of loss, by encrypting apps and data and managing secure transfer of data through 70+ [MDX Policies](https://docs.citrix.com/en-us/mdx-toolkit/policies-platform.html), including functional areas such as Authentication, Device Security, Networking, Encryption, Access Thresholds, App Interaction, App Restrictions, and other app-specific polices all applied on a per-app basis to mitigate the risk of PII loss. Citrix MDX technology uses its own encryption libraries to host apps securely on iOS and Android platforms on top of platform encryption provided by the iOS keychain or device hardware encryption modes on Android which may or may not be active (depends on device encryption and passcode policies).
+The Citrix MDX Toolkit, the Citrix Endpoint Management MAM container technology, is a key part of the Citrix Endpoint Management solution to protect data. It provides end-to-end security maximizing protection of personal data, mitigating the risk of loss, by encrypting apps and data and managing secure transfer of data through 70+ [MDX Policies](https://docs.citrix.com/en-us/mdx-toolkit/policies-platform.html), including functional areas such as Authentication, Device Security, Networking, Encryption, Access Thresholds, App Interaction, App Restrictions, and other app-specific policies all applied on a per-app basis to mitigate the risk of PII loss. Citrix MDX technology uses its own encryption libraries to host apps securely on iOS and Android platforms on top of platform encryption provided by the iOS keychain or device hardware encryption modes on Android which may or may not be active (depends on device encryption and passcode policies).
 
 MDX Technologies help provide end-to-end protection by managing encrypted data transfers between device and intranet
 data stores, as well as between managed apps. Once these apps are installed, Secure Hub, a mobile app that provides access to desktops, apps and data, ensures that the desired policies are continuously enforced, always keeping IT in control of the enterprise content on users’ devices. MDX also includes micro VPN, a per-app VPN that technology that integrates with Citrix Gateway. It can be utilized seamlessly by managed apps to encrypt data traffic to and from the Enterprise intranet.
@@ -279,8 +275,8 @@ CEM can provide encryption at rest on any supported mobile device independent of
 
 Device level encryption varies by platform. Apple's iOS features a file system with the OS information and user data written to flash memory. It also uses a factory-assigned device ID and group ID with the device user's passcode so only that passcode can unencrypt data on the phone or tablet. Android also provides encryption, although not every device manufacturer creates hardware that supports it and users can turn encryption off accidentally or deliberately with a factory reset on Android devices. Find more information about the [MDX Toolkit](https://docs.citrix.com/en-us/mdx-toolkit/10.html), [MDX policies](https://docs.citrix.com/en-us/mdx-toolkit/policies-platform.html), and [integrating with MDX](https://docs.citrix.com/en-us/mdx-toolkit/developer-guide-overview.html) in Citrix documentation.
 
-#### Article 32 - Data Isolation and Protetion
-Containerization enables mobile BYOD programs in corporate environments empowering users to use mobile endpoints as an enterprise device and personal device simultaneously by separating apps and data. It helps enterprises prevent malware, intruders, system resources or other applications from interacting with the application and any of its sensitive information. Citrix Endpoint Management enables containerized native mobile apps through MDX technology, and it also integrates with several partner container solutions providing valueadd by integrating many broad app and device management capabilities.
+#### Article 32 - Data Isolation and Protection
+Containerization enables mobile BYOD programs in corporate environments empowering users to use mobile endpoints as an enterprise device and personal device simultaneously by separating apps and data. It helps enterprises prevent malware, intruders, system resources or other applications from interacting with the application and any of its sensitive information. Citrix Endpoint Management enables containerized native mobile apps through MDX technology, and it also integrates with several partner container solutions providing further value by integrating many broad app and device management capabilities.
 
 ## Securing Files with Workflows
 
@@ -316,7 +312,7 @@ enterprise directory, such as Active Directory, the authentication is done again
 based on the Windows authentication token for domain-joined devices.
 
 #### Article 32 - Data Isolation and Protection
-ShareFile integrates with market-leading Data Loss Prevention products for customermanaged StorageZones and Cloud Access Security Broker Services for any type of ShareFile StorageZone, enabling contentaware restrictions. Documents stored inside a ShareFile StorageZone are examined by the same policies that are already set up for other repositories and based on those scanning results, files can be blocked to be downloaded or shared with others.
+ShareFile integrates with market-leading Data Loss Prevention products for customer-managed StorageZones and Cloud Access Security Broker Services for any type of ShareFile StorageZone, enabling content-aware restrictions. Documents stored inside a ShareFile StorageZone are examined by the same policies that are already set up for other repositories and based on those scanning results, files can be blocked to be downloaded or shared with others.
 
 Sharing files is a key component of modern workflows. This makes controlling the access and permissions to documents containing
 privacy related information a priority, especially when the files are outside the direct control of your own security policies. With ShareFile Information Rights Management (IRM) watermarking, documents are protected via watermark with an online view only option that helps address unauthorized access including various image capture techniques. It also facilitates forensic investigations as needed to comply with GDPR.
