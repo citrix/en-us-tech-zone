@@ -1,7 +1,3 @@
----
-layout: doc
-description: Copy & paste description from TOC here
----
 # Architectural Considerations for the General Data Protection Regulation (GDPR)
 
 ## Contributors
@@ -147,7 +143,7 @@ There are different ways how data and applications can be protected and isolated
 Even if applications are hosted on the same server, it is common practice to isolate and secure them. CVAD servers are used to
 host well-defined, centrally managed sets of applications. This means that these servers can support more restrictive security hardening than traditional workstations. Application whitelisting solutions such as Citrix's Workspace Environment Management (WEM) Application Security feature are much more useful with servers built for specific applications rather than general workloads. Allowing only specific white-listed executables is much simpler on these special-purpose built servers than general workstations.
 
-Security can be further enhanced by application of granular Citrix policies. These policies provide control over many aspects of
+Security is further enhanced by application of granular Citrix policies. These policies provide control over many aspects of
 the workspace: available printers, ability to access network and local drives, or clipboard mapping among many more. A special template for “Security & Control” is included with all the best practices and recommended settings.
 
 To learn more about hardening, refer to the [System Hardening white paper](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/system-hardening-for-xenapp-and-xendesktop.pdf).
@@ -158,31 +154,31 @@ To learn more about hardening, refer to the [System Hardening white paper](https
 ## Securing Web and SaaS Applications
 
 Web apps are architecturally different from client/server apps yet also similar in many ways – including suffering from security challenges. With web apps, a specific client is replaced with a single corporate standard or multiple general-purpose web browsers,
-with varying capabilities and dependencies. Although somewhat simplified, the same management challenges apply – keeping the browser up-to-date against vulnerabilities, encryption of traffic, and implementing multi-factor authentication.
+with varying capabilities and dependencies. Although simplified, the same management challenges apply – keeping the browser up-to-date against vulnerabilities, encryption of traffic, and implementing multi-factor authentication.
 
 The demands for legacy application support and modern capabilities for SaaS have driven conflicting requirements. There are two types
 of web apps – the born-on-the-internet-apps and webified apps-custom and legacy web apps that support the business. The born-on-the-internet apps drive the requirements on security and architecture – load balancing, scalability, failover, and performance. While the webified apps drive the requirements on supportability - browser plug-ins, extensions, and validating browser updates can break functionality.
 
-At the core, the functional goal is for the end user to interact with web apps and manipulate data – including personal and sensitive data regardless if running in legacy environments or on SaaS apps pushing the limits of HTML5. Gartner recommends a two-pronged strategy. This is when an organization uses a legacy browser for running legacy applications, but also employs modern browsers for use with all other applications or sites, including general web surfing. That’s where Citrix helps – tying together the user experience and security requirements for hybrid or bimodal web environments.
+The goal is for the end user to interact with web apps and manipulate data. This includes personal and sensitive data regardless if running in legacy environments or on SaaS apps pushing the limits of HTML5. Gartner recommends a two-pronged strategy. This is when an organization uses a legacy browser for running legacy applications, but also employs modern browsers for use with all other applications or sites, including general web surfing. That’s where Citrix helps – tying together the user experience and security requirements for hybrid or bimodal web environments.
 
-For the enterprise, maintaining multiple versions of multiple browsers, plug-ins, and applets while at the same time simplifying
-authentication and access is a pain point addressable with Citrix Virtual Apps and Desktops by building a remote browsing solution to separate internet and intranet web traffic from each other and the endpoint.
+For the enterprise, maintaining multiple versions of various browsers, plug-ins, and applets while also simplifying
+authentication and access is a pain point. It is addressable with Citrix Virtual Apps and Desktops by building a remote browsing solution to separate internet and intranet web traffic from each other and the endpoint.
 
 (traditional web application architecture diagram)
 
-The second challenge is providing unified security features across the wide range of SaaS and cloud applications that typical enterprises are using – effectively giving back some IT control – especially in BYOD and mobile environments. An example is providing a unified multi-factor authentication solution across all apps instead of a fragmented user experience.
+The second challenge is providing unified security features across the wide range of SaaS and cloud applications that typical enterprises are using. This effectively helps to give back some IT control – especially in BYOD and mobile environments. An example is providing a unified multi-factor authentication solution across all apps instead of a fragmented user experience.
 
 Citrix has a long tradition of providing a platform for secure delivery of web apps. This secure delivery is based on the Citrix Application Delivery Controller (ADC). Citrix ADC secures the session between the browser and the web app – by encrypting
-data in transit, maintaining strict access control, and data protection. This is largely based on its design as a reverse proxy that brokers connections coming from the browser to web app servers. And, with its position between the client and the server, additional security features can be enabled.
+data in transit, maintaining strict access control, and data protection. This is largely based on its design as a reverse proxy that brokers connections coming from the browser to web app servers. And, with its position between the client and the server, extra security features can be enabled.
 
 We’re going to cover how this architecture can help you secure the applications to follow GDPR standards. These technical measures fall largely under the requirements or Article 25 and 32 where controllers are required to “implement appropriate technical and organizational measures.”
 
 (Web application architecture with NetScaler diagram)
 
 #### Article 25 - Access to Personal Data
-Authentication, Authorization and Auditing are all core to controlling access to personal data. As an AAA proxy, Citrix ADC consolidates, extends, and enhances the traditional authentication schemes even in scenarios where the web apps do not natively support MFA. Citrix ADC supports authentication using user name/password, multi-factor (MFA), time-based and one-time tokens (Citrix ADC has native OTP support), smartcards, user or machine certificates and biometrics. While this is especially important for internet facing web apps, some organizations with a zero trust networking approach are moving to require MFA for “internal” access.
+Authentication, Authorization, and Auditing are all core to controlling access to personal data. As an AAA proxy, Citrix ADC consolidates, extends, and enhances the traditional authentication schemes even in scenarios where the web apps do not natively support MFA. Citrix ADC supports authentication using user name/password, multi-factor (MFA), time-based and one-time tokens (Citrix ADC has native OTP support), smartcards, user or machine certificates and biometrics. While this is especially important for internet facing web apps, some organizations with a zero trust networking approach are moving to require MFA for “internal” access.
 
-Citrix ADC's enhanced MFA, called nFactor authentication, takes into account capabilities such as SAML, client certificates, group extraction, and multiple passwords. Federation and SSO also provide an additional level of security and ease of use.
+Citrix ADC's enhanced MFA, called nFactor authentication, takes into account capabilities such as SAML, client certificates, group extraction, and multiple passwords. Federation and SSO also provide an extra level of security and ease of use.
 
 To learn more about different capabilities of nFactor authentication, refer to the following knowledge base article and one of the many
 deployment guides: [https://support.citrix.com/article/CTX201949](https://support.citrix.com/article/CTX201949). On a related note, SMS-based MFA is not recommended as it has been deemed insecure by NIST.
@@ -191,16 +187,16 @@ To understand how Citrix protects your privacy and personal data, refer to the [
 
 Logging and visibility are provided through NetScaler Management and Analytics System (MAS). Capturing telemetry from NetScaler MAS provides:
 
-* Security Insight against application layer attacks leveraging the application layer firewall
+* Security Insight against application layer attacks using the application layer firewall
 * SSL Insight for visibility into the security ciphers in use
 * Gateway Insight for visibility into failed logins and Endpoint Analysis scans
 
 (NetScaler authentication options diagram)
 
 #### Article 32 - Data Isolation and Protection
-Citrix ADC is a reverse proxy and as such it benefits from its location in the network architecture, typically in a DMZ or security zone where it accepts the front-end user connection, creates a secure connection to the back-end server, and has full visibility into requests and responses. Additionally, Citrix ADC can change the logic of the web traffic on the fly without requiring updates to the back-end application. This includes encryption of not only the packet header but also the body as it does deep packet inspection and rewrite.
+Citrix ADC is a reverse proxy and as such it benefits from its location in the network architecture. Typically it is in a DMZ or security zone where it accepts the front-end user connection, creates a secure connection to the back-end server, and has full visibility into requests and responses. Also, Citrix ADC can change the logic of the web traffic on the fly without requiring updates to the back-end application. This includes encryption of not only the packet header but also the body as it does deep packet inspection and rewrite.
 
-Citrix ADC can ensure that traffic coming to and from the browser is always encrypted, even if the web server itself doesn’t support encryption. This encryption can be enabled for any site proxied through the ADC. SSL offloading leverages the ADC to perform the resource intensive SSL/TLS handshakes thereby offloading them from the back-end servers. For scenarios requiring end-to-end encryption, Citrix ADC can re-encrypt the connection to the back-end. This allows the ADC to inspect and apply security policies to the traffic. SSL bridging is available for when requirements demand that ADC plays no part in terminating the connection. Using ADC with NetScaler Management and Analytics System (MAS) allows administrators to keep central configuration and visibility of the cipher suites in use, helping prevent negotiation of outdated ciphers.
+Citrix ADC can ensure that traffic coming to and from the browser is always encrypted, even if the web server itself doesn’t support encryption. This encryption can be enabled for any site proxied through the ADC. SSL offloading uses the ADC to perform the resource intensive SSL/TLS handshakes thereby offloading them from the back-end servers. For scenarios requiring end-to-end encryption, Citrix ADC can re-encrypt the connection to the back-end. This allows the ADC to inspect and apply security policies to the traffic. SSL bridging is available for when requirements demand that ADC plays no part in terminating the connection. Using ADC with NetScaler Management and Analytics System (MAS) allows administrators to keep central configuration and visibility of the cipher suites in use, helping prevent negotiation of outdated ciphers.
 
 (NetScaler encryption options diagram)
 
