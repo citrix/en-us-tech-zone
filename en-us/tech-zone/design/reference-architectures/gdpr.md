@@ -203,9 +203,11 @@ attacks against databases, attacks against the web app, and other users using it
 Protecting data also includes maximizing availability through Denial of Service (DoS/DDoS) attack protections. Combination attacks hit at all layers—so Citrix ADC provides Application layer defense (Layer 7), Transport layer defense (Layer 4) and Network layer
 defense (Layer 3). Citrix ADC not only provides a multi-layer approach to DDoS protection but it is coupled with a built-in IP Reputation service which is an effective tool in identifying the IP address that is sending unwanted requests. Since most malware comes from compromised sites, you can use the IP reputation list to preemptively reject requests that are coming from the IP with the bad reputation. Citrix ADC's forward proxy, Secure Web Gateway, filters out connections going out to the internet based on reputational risk - enforcing security policies on all outgoing web traffic, while blocking access to inappropriate sites on a per user/group basis.
 
-(Tokenization with NetScaler diagram)
+**Citrix ADC Tokenization**
+[![Citrix ADC Tokenization](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-citrix-adc-tokenization.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-citrix-adc-tokenization.png)
 
-(Pseudonymization with NetScaler diagram)
+**Citrix ADC Pseudonymization**
+[![Citrix ADC Pseudonymization](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-citrix-adc-pseudo.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-citrix-adc-pseudo.png)
 
 Pseudonymization is another control mentioned in Article 32. Conceptually, it’s a procedure by which the most identifying fields
 within a data record are replaced by one or more artificial identifiers, or pseudonyms. This makes storing personal data more secure
