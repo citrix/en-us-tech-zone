@@ -273,6 +273,8 @@ Routing policies can be globally defined to enable traffic steering. As an examp
 Firewall policies can be globally defined to limit the Home Users to only business critical applications. As an example, this can include configuring the global firewall settings to drop all traffic, and further configure policies to strictly limit only certain traffic (e.g. Workspace) through the Virtual Path Service and O365 traffic through Internet Service. (For more detail refer to
 [Orchestrator Security](/en-us/citrix-sd-wan-orchestrator/network-level-configuration/security.html))
 
+## References
+
 For more information refer to:
 
 [Remote Employee Productivity](https://www.citrix.com/networking/remote-employee-productivity.html)
