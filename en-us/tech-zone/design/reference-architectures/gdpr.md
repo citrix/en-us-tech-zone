@@ -187,13 +187,9 @@ deployment guides: [https://support.citrix.com/article/CTX201949](https://suppor
 
 To understand how Citrix protects your privacy and personal data, refer to the [Citrix Trust Center/Privacy Policy](https://www.citrix.com/about/trust-center/privacy-compliance.html).
 
-Logging and visibility are provided through NetScaler Management and Analytics System (MAS). Capturing telemetry from NetScaler MAS provides:
-
-* Security Insight against application layer attacks using the application layer firewall
-* SSL Insight for visibility into the security ciphers in use
-* Gateway Insight for visibility into failed logins and Endpoint Analysis scans
-
 (NetScaler authentication options diagram)
+
+Logging, visibility, automation, and other capabilities are provided by Citrix Application Delivery Management (ADM). Refer to the [product landing page](https://www.citrix.com/products/citrix-application-delivery-management/) for more details on Citrix ADM.
 
 #### Article 32 - Data Isolation and Protection
 Citrix ADC is a reverse proxy and as such it benefits from its location in the network architecture. Typically it is in a DMZ or security zone where it accepts the front-end user connection, creates a secure connection to the back-end server, and has full visibility into requests and responses. Also, Citrix ADC can change the logic of the web traffic on the fly without requiring updates to the back-end application. This includes encryption of not only the packet header but also the body as it does deep packet inspection and rewrite.
