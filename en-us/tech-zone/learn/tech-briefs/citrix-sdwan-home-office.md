@@ -77,14 +77,16 @@ Generally, you will find more benefits with the SD-WAN solution by introducing a
 
 The availability of these benefits may vary based on the available WAN transports and the design of the site.
 
-The Network Administrator plays a key role in SD-WAN deployments. The Network Administrator centrally dictates what is business critical and the extent of connectivity for the Home User use-case. We’ll dive into more detail on the roles and responsibilities of an Administrator in the [Citrix SD-WAN Home Office POC Guide](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html), as well as cover the varying benefits depending on local network connectivity options in [Citrix SD-WAN Home Office Design Decisions](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html).
-
 ## Citrix SD-WAN for Home Offices Topologies
+
+The Network Administrator plays a key role in SD-WAN deployments. The Network Administrator centrally dictates what is business critical and the extent of connectivity for the Home User use-case.
 
 It is important for the Network Administrator to identify the Home User opportunity based on the requirements of the individual Home Users and their potentially different local network conditions. The local network conditions of the home user can enable some variance in Home User use-cases. Some Home Users may have access to multiple internet providers (e.g. DSL and Broadband), while other may only be limited to LTE service (e.g. AT&T and Verizon) in their area.  Most often, Home Users have the flexibility of have both wired and wireless transport options. Network Administrators can centrally control which of the Home User use-case deployments are supported through site profiles and templates.
 Let us cover some different use-cases based on some variances of local network availability of Home Users:
 
 [![Citrix SD-WAN Home Office Use Cases Comparison](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeuseasescomparison.png)](tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeuseasescomparison.png)
+
+We’ll dive into more detail on the roles and responsibilities of a Network Administrator in the [Citrix SD-WAN Home Office POC Guide](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html), as well as cover the varying benefits depending on local network connectivity options in [Citrix SD-WAN Home Office Design Decisions](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html).
 
 ## Citrix SD-WAN for Home Offices Deployment
 
