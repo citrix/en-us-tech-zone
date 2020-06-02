@@ -46,7 +46,7 @@ Home Users / Teleworkers traditionally connect into the network over Public Inte
 
 Citrix SD-WAN 110 platform addresses the needs of small offices, retail stores, and work-from-home users. The 110 platform ensures business continuity in a small form factor providing the highest network resiliency with sub-second failover, along with the best in-class application experience for virtual, SaaS, and cloud applications providing end-to-end Quality of Service (QoS).
 
-[**SD-WAN 110-LTE-WiFi-SE Overview**]( https://www.youtube.com/watch?v=DFCeF68NXM0&feature=youtu.be )
+[**SD-WAN 110-LTE-WiFi-SE Overview**]( https://www.youtube.com/watch?v=a1mVYA-Ckyk )
 
 SD-WAN 110-LTE-WIFI-SE Product Specs include:
 
@@ -65,24 +65,28 @@ Concerns regarding the WAN for the Home User use-case can be solved with the Cit
 
 [![Citrix SD-WAN Home Office Use Case](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeusecase.png)](tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeusecase.png)
 
-Generally, you will find more benefits with the SD-WAN solution by introducing additional WAN transports such as DLS, Broadband Internet and/or LTE links to augment any existing WAN transports. Diversifying the Internet Service providers can significantly increase network reliability. In the above scenario, SD-WAN devices (physical or virtual) can be placed directly in the path of existing network with additional WAN transports to increase user experience and productivity. The benefits include:
+Generally, you will find more benefits with the SD-WAN solution by introducing additional WAN transports such as DLS, Broadband Internet and/or LTE links to augment any existing WAN transports. Diversifying the Internet Service providers can significantly increase network reliability. In the above scenario, SD-WAN devices (physical or virtual) can be placed directly in the path of the existing network with additional WAN transports to increase user experience and productivity. The benefits include:
 
 *  link bandwidth aggregation (a.k.a. link load balancing) for remote locations with multiple Internet/LTE links
 *  sub-second link blackout and brownout detection, enabling an always-on network
 *  per-packet prioritization providing dual-ended Quality of Service with ability to deliver asymmetrically across all available paths
-*  augment security protection with cloud services (e.g. Zscaler, Palo Alto Prisma, and iBoss) or by utilizing higher-end appliance unlock additional on-prem VNF options (e.g. Palo Alto, Checkpoint) with simple integration with industry-leading security vendors
+*  augment security protection with cloud services (e.g. Zscaler, Palo Alto Prisma, and iBoss) or by utilizing higher-end appliances unlock additional on-prem Virtual Network Function (VNF) options (e.g. Palo Alto, Checkpoint) with simple integration with industry-leading security vendors
 *  serve as a DHCP Server to allocate and fix IP address for LAN devices based on MAC address
 *  enable usage of LTE-based WAN with standby (last resort and on-demand) functionality to further increase network reliability across wireless transports
 *  prioritize business critical applications utilizing a Deep Packet Inspection (DPI) and a Quality of Service engine, and with an integrated firewall solution, the ability to route and enforce security policies to block undesired apps or allow direct internet breakout for low latency connectivity to trusted SaaS apps (e.g. Office 365)
 
-The availability of these benefits may vary based on the available WAN transports and the design of the site. The Network Administrator for the SD-WAN deployment plays a key role in SD-WAN deployments. The Network Administrator centrally dictates what is business critical and the extent of connectivity for the Home User use-case. We’ll dive into more detail on the roles and responsibilities of an Administrator in [Citrix SD-WAN Home Office POC Guide](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html), as well as cover the varying benefits depending on local network connectivity options in [Citrix SD-WAN Home Office Design Decisions](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html).
+The availability of these benefits may vary based on the available WAN transports and the design of the site.
 
 ## Citrix SD-WAN for Home Offices Topologies
+
+The Network Administrator plays a key role in SD-WAN deployments. The Network Administrator centrally dictates what is business critical and the extent of connectivity for the Home User use-case.
 
 It is important for the Network Administrator to identify the Home User opportunity based on the requirements of the individual Home Users and their potentially different local network conditions. The local network conditions of the home user can enable some variance in Home User use-cases. Some Home Users may have access to multiple internet providers (e.g. DSL and Broadband), while other may only be limited to LTE service (e.g. AT&T and Verizon) in their area.  Most often, Home Users have the flexibility of have both wired and wireless transport options. Network Administrators can centrally control which of the Home User use-case deployments are supported through site profiles and templates.
 Let us cover some different use-cases based on some variances of local network availability of Home Users:
 
 [![Citrix SD-WAN Home Office Use Cases Comparison](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeuseasescomparison.png)](tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeuseasescomparison.png)
+
+We’ll dive into more detail on the roles and responsibilities of a Network Administrator in the [Citrix SD-WAN Home Office POC Guide](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html), as well as cover the varying benefits depending on local network connectivity options in [Citrix SD-WAN Home Office Design Decisions](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html).
 
 ## Citrix SD-WAN for Home Offices Deployment
 
@@ -118,4 +122,4 @@ For more information refer to:
 
 [Citrix SD-WAN Home Office POC Guide](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html) - learn how to implement a proof of concept of Citrix SD-WAN for a Home Office
 
-[Citrix SD-WAN Home Office Design Decisions](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) - learn about the decisions to need to be made to implement Citrix SD-WAN for Home Offices
+[Citrix SD-WAN Home Office Design Decisions](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) - learn about the decisions that need to be made to implement Citrix SD-WAN for Home Offices
