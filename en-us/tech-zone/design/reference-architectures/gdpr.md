@@ -6,7 +6,7 @@ description: Copy & paste description from TOC here
 
 ## Contributors
 
-**Authors:** [Matthew Brooks](URL), [Florin Lazurca](URL), [Rob Sanders](URL), [Martin Zugec](URL), [Allen Furmanski](URL)
+**Authors:** [Matthew Brooks](https://twitter.com/tweetmattbrooks), [Florin Lazurca](https://twitter.com/florinlaz), [Rob Sanders](https://twitter.com/robsanders), [Martin Zugec](https://twitter.com/MartinZugec), [Allen Furmanski](https://twitter.com/TekGuyAllen)
 
 ## General Data Protection Regulation (GDPR) Overview
 
