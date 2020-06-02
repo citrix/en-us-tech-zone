@@ -187,16 +187,15 @@ deployment guides: [https://support.citrix.com/article/CTX201949](https://suppor
 
 To understand how Citrix protects your privacy and personal data, refer to the [Citrix Trust Center/Privacy Policy](https://www.citrix.com/about/trust-center/privacy-compliance.html).
 
-(NetScaler authentication options diagram)
-
 Logging, visibility, automation, and other capabilities are provided by Citrix Application Delivery Management (ADM). Refer to the [product landing page](https://www.citrix.com/products/citrix-application-delivery-management/) for more details on Citrix ADM.
 
 #### Article 32 - Data Isolation and Protection
 Citrix ADC is a reverse proxy and as such it benefits from its location in the network architecture. Typically it is in a DMZ or security zone where it accepts the front-end user connection, creates a secure connection to the back-end server, and has full visibility into requests and responses. Also, Citrix ADC can change the logic of the web traffic on the fly without requiring updates to the back-end application. This includes encryption of not only the packet header but also the body as it does deep packet inspection and rewrite.
 
-Citrix ADC can ensure that traffic coming to and from the browser is always encrypted, even if the web server itself doesn’t support encryption. This encryption can be enabled for any site proxied through the ADC. SSL offloading uses the ADC to perform the resource intensive SSL/TLS handshakes thereby offloading them from the back-end servers. For scenarios requiring end-to-end encryption, Citrix ADC can re-encrypt the connection to the back-end. This allows the ADC to inspect and apply security policies to the traffic. SSL bridging is available for when requirements demand that ADC plays no part in terminating the connection. Using ADC with NetScaler Management and Analytics System (MAS) allows administrators to keep central configuration and visibility of the cipher suites in use, helping prevent negotiation of outdated ciphers.
+Citrix ADC can ensure that traffic coming to and from the browser is always encrypted, even if the web server itself doesn’t support encryption. This encryption can be enabled for any site proxied through the ADC. SSL offloading uses the ADC to perform the resource intensive SSL/TLS handshakes thereby offloading them from the back-end servers. For scenarios requiring end-to-end encryption, Citrix ADC can re-encrypt the connection to the back-end. This allows the ADC to inspect and apply security policies to the traffic. SSL bridging is available for when requirements demand that ADC plays no part in terminating the connection. Using Citrix ADC with Citrix ADM allows administrators to keep central configuration and visibility of the cipher suites in use, helping prevent negotiation of outdated ciphers.
 
-(NetScaler encryption options diagram)
+**Citrix ADC Encryption Options**
+[![Citrix ADC Encryption Options](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-adc-encryption-options.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-adc-encryption-options.png)
 
 As a proxy between the browser and the web app, Citrix ADC protects the data flowing through it. That includes protecting from
 attacks against databases, attacks against the web app, and other users using its built-in application firewall. Citrix ADC protects against common web attacks including SQL Injection and cross-site scripting. You can read more about the Web App Firewall in our [product documentation](https://docs.citrix.com/en-us/citrix-adc/13/application-firewall.html).
