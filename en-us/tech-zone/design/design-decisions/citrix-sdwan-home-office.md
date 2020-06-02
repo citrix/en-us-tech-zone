@@ -12,7 +12,7 @@ description: Understand the design decisions required to implement the Citrix SD
 
 ## Overview
 
-Citrix SD-WAN for Home Offices may be deployed in a several flexible topologies. It can also provide enhanced delivery of Citrix Virtual Apps and Desktops sessions for Home Users. This design document provide guidance regarding the design decisions to implement Citrix SD-WAN for Home Offices to allow optimimal use by Home Users.
+Citrix SD-WAN for Home Offices may be deployed in a several flexible topologies. It can also provide enhanced delivery of Citrix Virtual Apps and Desktops sessions for Home Users. This design document provides guidance regarding the design decisions to implement Citrix SD-WAN for Home Offices to enable optimimal use by Home Users.
 
 ## Network Administration
 
@@ -36,7 +36,7 @@ Enabling corporate network access to home users opens potential attack vectors, 
 
 ## DECISION: Citrix Virtual Apps and Desktops delivery
 
-For optimal security in extending parts of the corporate network to remote resources, it is always recommended to make use of Citrix technologies, such as Citrix Virtual Apps and Desktops. This technology has led in Virtual Client Computing for many years and can help in the design of a secure network. (Here you may find more information regarding [Citrix Virtual Apps and Desktops security](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/1912-ltsr/secure/best-practices.html)).  Citrix SD-WAN can be coupled with this solution to better deliver to remote locations where the Wide Area Network may not always be reliable.
+For optimal security in extending parts of the corporate network to remote resources, it is always recommended to make use of Citrix technologies, such as Citrix Virtual Apps and Desktops. This technology has led in Virtual Client Computing for many years and can help in the design of a secure network. (Here you may find more information regarding [Citrix Virtual Apps and Desktops security](/en-us/citrix-virtual-apps-desktops/1912-ltsr/secure/best-practices.html)).  Citrix SD-WAN can be coupled with this solution to better deliver to remote locations where the Wide Area Network may not always be reliable.
 
 One security conscious approach would be to place SD-WAN in the path of Citrix Workspace traffic delivered through Citrix Gateway. In the Data Center network, the incoming front-end traffic is isolated from back-end traffic, between the CVAD infrastructure servers and services. This allows the use of separate demilitarized zones (DMZs) to isolate front-end and back-end traffic flows along with granular firewall control and monitoring.
 
