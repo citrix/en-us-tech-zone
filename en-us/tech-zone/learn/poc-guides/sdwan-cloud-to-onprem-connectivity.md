@@ -298,7 +298,7 @@ Click Next
     *  a4. Select Physical Interface “1”
     *  a5. Enter Primary IP with CIDR mask – refer to your network map
     *  a6. Select Done twice
-[![Orchestrator - DC - LAN Interfaces](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcinterfaceslan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcdinterfaceslan.png)
+[![Orchestrator - DC - LAN Interfaces](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcinterfaceslan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcinterfaceslan.png)
     *  b. Select “+” plus to add the WAN interface
     *  b1. Keep Deployment Mode as “Edge(Gateway)”
     *  b2. Keep Interface Type as “WAN”
