@@ -64,3 +64,80 @@ To set up Site Profiles in Orchestrator, an Administrator can perform the follow
 [![Site Details](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorsitedetails.png)](poc-guides_citrix-sdwan-home-office_orchestratorsitedetails.png)
 1.  Next, configure usage of Interfaces to match the desired design, add each required interface:
 [![Site Details](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_isppluslteinterfaces.png)](poc-guides_citrix-sdwan-home-office_isppluslteinterfaces.png)
+
+*  Add Interface 1/1 for LAN:
+    *  Deployment Mode: Edge (Gateway)
+    *  Interface Type: LAN
+    *  Security: Trusted
+    *  Select Interface: **1/1**
+    *  VLAN ID: 0
+    *  Routing Domain: **HomeUser**
+(_The single routing domain (Default_RoutingDomain) can be used for SD-WAN deployments that are only connecting home users and are not connecting into an existing SD-WAN site deployment. However, in the scenario outlined earlier in the documentation, to add home users to an already existing deployment, a new routing domain can be introduced to segregate and limit connectivity access of home user in the data center network._)
+    *  Firewall Zone: **Default_LAN_Zone**
+[![Site Details](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorinterfaceslan.png)](poc-guides_citrix-sdwan-home-office_orchestratorinterfaceslan.png)
+
+*  Add Interface 1/2 for WAN:
+    *  Deployment Mode: Edge (Gateway)
+    *  Interface Type: **WAN**
+    *  Security: **Untrusted**
+    *  Select Interface: **1/2**
+    *  DHCP Client: **enabled**
+(_The expectation is that that this SD-WAN interface will be cabled to the home users existing home network, where a home router will be configured as a DHCP Server and will assign an IP address to interface 1/2 operating as a DHCP Client._)
+    *  VLAN ID: 0
+    *  Routing Domain: Default_RoutingDomain
+    *  Firewall Zone: **Untrusted Internet_Zone**
+[![Site Details](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorinterfaceswan.png)](poc-guides_citrix-sdwan-home-office_orchestratorinterfaceswan.png)
+
+*  Add Interface LTE-1 for WAN:
+    *  Deployment Mode: Edge (Gateway)
+    *  Interface Type: **WAN**
+    *  Security: **Untrusted**
+    *  Select Interface: **LTE-1**
+    *  VLAN ID: 0
+    *  DHCP Client: **enabled**
+    *  Routing Domain: Default_RoutingDomain
+    *  Firewall Zone: **Untrusted Internet_Zone**
+[![Site Details](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorinterfaceslte.png)](poc-guides_citrix-sdwan-home-office_orchestratorinterfaceslte.png)
+
+*  Add Interface 1/4-MGMT for device administration purposes:
+    *  Deployment Mode: Edge (Gateway)
+    *  Interface Type: LAN
+    *  Security: Trusted
+    *  Select Interface: **1/4-MGMT**
+    *  VLAN ID: 0
+    *  Routing Domain: **Default_RoutingDomain**
+(_The configuration of this management interface is required and serves two purposes_:
+   1.  _Enables continued connectivity to Cloud Services after the device has been provisioned through ZTD._
+   2.  _Serves as a method for an Administrator to remotely access the device’s local web interface for troubleshooting/monitoring._
+
+        _Assuming the Administrator is in the data center network connecting to the SD-WAN on the Default_RoutingDomain, the remote SD-WAN device’s web interface can be accessed with the in-band management feature enabled on this interface. Connectivity to the Mgmt. interface by the remote Admin is accomplished through the Virtual Path. Also, connectivity to Cloud Services, like SD-WAN Orchestrator, is accomplished through local internet breakout (Internet Service) being enabled for the Default_RoutingDomain.  If desired internet connectivity can alternatively be backhauled through the data center and broken out there for internet access. The management port (1/4) does not require to be cabled for the web interface and data polling features to work on any in-band management enabled interface._)
+[![Site Details](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratormanagement.png)](poc-guides_citrix-sdwan-home-office_orchestratormanagement.png)
+    *  Firewall Zone: **Default_LAN_Zone**
+[![Site Details](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorinterfacesmgmt.png)](poc-guides_citrix-sdwan-home-office_orchestratorinterfacesmgmt.png)
+
+Interfaces that meet the following configuration requirements can be used for in-band management:
+
+*  Security must be set to Trusted
+*  Interface type must be LAN
+*  Selected IP should not be set to Private
+*  Identify of the IP should be set to true
+
+Site Profiles allow for selection of the in-band management IP that meet those requirements
+
+[![Site Details](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorinterfacessummary.png)](poc-guides_citrix-sdwan-home-office_orchestratorinterfacessummary.png)
+Find more detail on [in-band management](/en-us/citrix-sd-wan/11-1/inband-and-backup-management.html)
+
+1.  Next, create new WAN links to match the desired design:
+     *  Add WAN Link#1 using interface 1/2:
+     *  Access Type: Public Internet
+     *  ISP Name (Custom): ISP
+     *  Internet Category: Internet
+     *  Link Name: Internet-ISP-1
+     *  Public IP Address Auto Learn: ENABLED
+(_The MCN/RCN denoted sites will dynamically learn the advertised public IP address of each branch site using this feature, as Branch nodes attempt the path establishment with their MCN/MCN. When using Public Internet transports, only static public IP addresses are required for the MCN/RCN denoted sites._)
+     *  Egress Speed:  50 Mbps
+     *  Ingress Speed: 50 Mbps
+(_The upload and download speed defined on WAN link#1 will be dependent on the bandwidth availability of each home network. It is recommended to stay under those bandwidth limitations and allow for some bandwidth to be used by other household members sharing that link. Prioritizing SD-WAN tunnel traffic (UDP 4980) on the ISP router will help ensure SD-WAN does not back off usage of that link when contention for the link is encountered. If needed, several Site Profiles, at different WAN links speeds, can be configured to accommodate for some variances in home user local internet conditions._)
+     *  Virtual Interface: VIF-2-WAN-1
+     *  Virtual Path Mode: Primary
+[![Site Details](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorwanlinks.png)](poc-guides_citrix-sdwan-home-office_orchestratorwanlinks.png)
