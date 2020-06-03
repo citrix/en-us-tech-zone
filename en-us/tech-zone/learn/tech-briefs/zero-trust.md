@@ -111,7 +111,7 @@ Customers, employees, and partners are increasingly mobile, and consume apps and
 
 The minimal requirements for access to the resource can include authenticator assurance levels, such as MFA and or requests for system configuration. Whether that person is inside or outside the corporate network is not a reliable indicator of any of those three assurances. However, flag obvious unusual or unsanctioned network locations such as deny access from overseas IP addresses or within unexpected time frames.
 
-### Visibilits, Analytics and Orchestration
+### Visibility, Analytics and Orchestration
 
 Zero Trust Architectures require increased access visibility. It is incomplete without tools like security information management, advanced security analytics platforms, and security user behavior analytics. These systems are continuously monitoring and logging access requests and policy changes over time. Security experts need these tools to observe in real time what is happening and orient defenses more intelligently.
 
