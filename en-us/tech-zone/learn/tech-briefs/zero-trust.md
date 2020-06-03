@@ -9,9 +9,9 @@ Traditional, perimeter-based approaches to protecting information systems and da
 
 For many years, the cybersecurity paradigm has emulated physical security from the middle ages: the castle and the moat. It’s an approach many enterprises have adopted and are finding insufficient in the world of cloud. 
 
-In this classic defense model, multiple layers of protection with tightly secured checkpoints and gateways surround and protect the crown jewels. All access is controlled and verified at the gateway where authentication and authorization are granted. However, once verified, the user is effectively given free rein of the environment. 
+In this classic defense model, multiple layers of protection with tightly secured checkpoints and gateways surround and protect the crown jewels. All access is controlled and verified at the gateway where authentication and authorization are granted. However, once verified, people are effectively given free rein of the environment. 
 
-The model has shortcomings in authentication, authorization, and granting excessive access. Attackers often use subterfuge to bypass the gateways and superior tools designed to break down the walls. 
+The model has shortcomings, mainly with granting excessive access from inadaquate authentication and authorization. Attackers often use subterfuge to bypass the gateways and superior tools designed to break down the walls. 
 
 Likewise, in cybersecurity, the data is surrounded by multiple layers of firewalls, segmentation, authentication, and authorization. And while these components are necessary, they are insufficient due to the “deperimeterization” caused by the move to cloud and mobile.
 
@@ -56,7 +56,7 @@ Citrix Zero Trust Architecture focuses on protecting resources and is designed a
 
 ## Pillars of Zero Trust
 
-Zero Trust must granularly identify users, devices, and applications on the network. Authentication (both user and device) is performed before establishing a connection and access to resources is minimized to only those end users who are validated. Users are continuously authenticated to determine the identity and security posture of each access request. After these requirements are met, access to data resources is granted only when the resource is required. 
+The journey from enterprise trust to Zero Trust requires a strategy for building a trust fabric. Organizations must identify current concerns and define their trust fabric to support digital transformation. Access must be aligned with the sensitivity of data and the situation in which the data is being requested and used. Zero Trust must granularly identify people, devices, data, and workloads on the network.
 
 Citrix calls this Contextual Access. Access policies scrutinize trust elements across the 5 W’s of Access to grant specific usage entitlements. Contextual Access is a continuous process. It extends from the request event through specific data usage entitlements and dynamic policies that govern the data security lifecycle.
 
@@ -66,9 +66,9 @@ Citrix calls this Contextual Access. Access policies scrutinize trust elements a
 * Why do these people need access privileges?
 * When do they need access to the data?
 
-The journey from enterprise trust to Zero Trust requires a strategy for building a trust fabric. Organizations must identify current concerns and define their trust fabric to support digital transformation. Access must be aligned with the sensitivity of data and the situation in which the data is being requested and used. 
+Authentication (both user and device) is performed before establishing a connection and access to resources is minimized to only those end users who are validated. People are continuously authenticated to determine the identity and security posture of each access request. After these requirements are met, access to data resources is granted only when the resource is required. 
 
-### User Identity 
+### People 
 
 Ongoing authentication and authorization of trusted users is paramount to Zero Trust. Identity is the “Who” that is requesting access to a resource. User authentication is dynamic and strictly enforced before access is allowed. It is a constant cycle of access:
 
@@ -99,7 +99,7 @@ During transitions to Software Defined Networks, SD-WANs, and internet-based tec
 3. Prevent lateral movement in the network
 4. Make dynamic policy and trust decision on network and data traffic
 
-### Apps
+### Workload
 
 Securing and properly managing the app layer and compute containers and virtual machines is central to Zero Trust adoption. Being able to identify and control the technology stack facilitates more granular and accurate access decisions. Unsurprisingly, MFA is an increasingly critical part of providing proper access control to apps in Zero Trust environments. 
 
@@ -111,7 +111,7 @@ Customers, employees, and partners are increasingly mobile, and consume apps and
 
 The minimal requirements for access to the resource can include authenticator assurance levels, such as MFA and or requests for system configuration. Whether that person is inside or outside the corporate network is not a reliable indicator of any of those three assurances. However, flag obvious unusual or unsanctioned network locations such as deny access from overseas IP addresses or within unexpected time frames.
 
-### Visibility and Analytics
+### Visibilits, Analytics and Orchestration
 
 Zero Trust Architectures require increased access visibility. It is incomplete without tools like security information management, advanced security analytics platforms, and security user behavior analytics. These systems are continuously monitoring and logging access requests and policy changes over time. Security experts need these tools to observe in real time what is happening and orient defenses more intelligently.
 
