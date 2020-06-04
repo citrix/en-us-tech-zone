@@ -25,18 +25,18 @@ For this implementation, we are following Google's Active Directory resource for
 *  GCP Cloud Identity has been configured (pre-requisite to deploy a GCP organization)
 *  An organization has been configured along with a folder to deploy the test/dev GCP projects to be utilized. Check this link to learn more about GCP Resource Hierarchy
 *  The following GCP APIs are enabled:
-o Compute Engine API
-o Cloud Resource Manager API
-o Identity and Access Management (IAM) API
-o Cloud Build API
-*  A GCP projects will be deployed with 2 subnets:
-o Resources subnet: resources subnet to deploy the Managed Microsoft AD service, and the Citrix Cloud Connectors, Master Images and VDAs. Most of the configurations will be performed on this project
-o AD management subnet:  management subnet dedicated to instances utilized to manage Active Directory through the Remote Server Administration Tools
+    *  Compute Engine API
+    *  Cloud Resource Manager API
+    *  Identity and Access Management (IAM) API
+    *  Cloud Build API
+*  A GCP project will be deployed with 2 subnets:
+    *  Resources subnet: resources subnet to deploy the Managed Microsoft AD service, and the Citrix Cloud Connectors, Master Images and VDAs. Most of the configurations will be performed on this project
+    *  AD management subnet:  management subnet dedicated to instances utilized to manage Active Directory through the Remote Server Administration Tools
 *  Managed Microsoft AD service will be deployed:
-o Completely managed by GCP
-o Deploys its own subnet, which is not viewable through the GCP console
-o A VPC peering is deployed automatically with the service for connectivity from our your GCP projects
-o Google Cloud DNS is configured to forward all DNS queries to the managed domain controllers
+    *  Completely managed by GCP
+    *  Deploys its own subnet, which is not viewable through the GCP console
+    *  A VPC peering is deployed automatically with the service for connectivity from our your GCP projects
+    *  Google Cloud DNS is configured to forward all DNS queries to the managed domain controllers
 1.4.2 Citrix Cloud
 *  A Citrix Cloud subscription is available
 *  Citrix Cloud Connector will be deployed
@@ -56,7 +56,7 @@ The following are the most common GCP terms you will need to understand, as desc
 *  GCE: Google Compute Engine, this is the GCP platform in which you deploy compute resources, including VM instances, disks, instance templates, instance groups, etc.
 *  GCE Instance: A VM deployed on the GCE platform. We will deploy GCE instances for Cloud Connectors, master image, the AD management VM, etc. All machines created through a Citrix machine catalog are deployed as GCE instances.
 *  Instance Template: A “baseline” resource you can utilize to deploy VMs and instance groups in GCP. The Citrix MCS process will copy the master image into an instance template, which is utilized to deploy catalog machines.
-*  VPC Network: GCP’s virtual network object. VPC in GCP are global, meaning you can deploy subnets to a VPC from each GCP region. You can deploy VPCs in auto-mode, which creates all subnets and CIDR ranges automatically, or custom-mode, which let you create subnets and CIDR ranges manually. Non-overlapping VPCs from different projects can be connected through a VPC peering.
+*  VPC Network: GCP’s virtual network object. VPCs in GCP are global, meaning you can deploy subnets to a VPC from each GCP region. You can deploy VPCs in auto-mode, which creates all subnets and CIDR ranges automatically, or custom-mode, which lets you create subnets and CIDR ranges manually. Non-overlapping VPCs from different projects can be connected through a VPC peering.
 *  Shared VPC: A shared VPC can be spanned across multiple projects, eliminating the requirement to create separate VPCs for each project, or the utilization of VPC peerings.
 *  VPC Peering: A VPC peering allows you to connect VPCs which would otherwise be disconnected. For the purpose of this implementation, the GCP Managed Microsoft AD service will create a VPC peering automatically to connect our VPC to the managed AD service VPC.
 *  Cloud DNS: GCP service utilized to manage DNS zones and records. With the creation of the Managed Microsoft AD service, Cloud DNS will be automatically configured to forward DNS queries to the managed domain controllers.
@@ -91,9 +91,9 @@ Considerations:
 *  On the navigation menu, go to VPC Network > VPC Networks and click Create VPC network.
 
 *  On the Create a VPC network screen, enter the following initial information:
-o Name: VPC network name
-o Description: VPC network description
-o Subnet creation mode: Custom
+    *  Name: VPC network name
+    *  Description: VPC network description
+    *  Subnet creation mode: Custom
 
 Considerations:
 
@@ -107,25 +107,25 @@ Considerations:
 
 Considerations:
 
-*  Since this is a testing environment, we are allowing inbound RDP, SSH, and ICMP from any external network, for production environments, set-up the firewall rules appropriately to ensure only authorized users / networks can access the instances.
+*  Since this is a testing environment, we are allowing inbound RDP, SSH, and ICMP from any external network, for production environments, setup the firewall rules appropriately to ensure only authorized users / networks can access the instances.
 *  On the Create a firewall rule screen, enter the following information:
-o Name: firewall rule name
-o Description: firewall rule description
-o Network: shared VPC network
-o Priority: rule priority
+    *  Name: firewall rule name
+    *  Description: firewall rule description
+    *  Network: shared VPC network
+    *  Priority: rule priority
 *  Scroll down and enter the following information:
-o Direction: Ingress
-o Action: Allow
-o Targets: as appropriate for your environment
-o Source filter: as appropriate for your environment
+    *  Direction: Ingress
+    *  Action: Allow
+    *  Targets: as appropriate for your environment
+    *  Source filter: as appropriate for your environment
 
 Considerations:
 
 *  Targets and Source filter are configured under the assumption that this is a testing environment, production environments should be configured accordingly to ensure access is restricted to authorized targets and sources only.
 *  Under Protocols and ports, enter the following information:
-o Specified protocols and ports
- TCP: 22, 3389
- Other protocols: ICMP
+    *  Specified protocols and ports
+    *  TCP: 22, 3389
+    *  Other protocols: ICMP
 *  Click CREATE.
 2.1.5 Deploy the Managed Microsoft AD Service
 *  On the navigation menu, go to Security > Managed Microsoft AD and click CREATE NEW AD DOMAIN.
@@ -136,16 +136,16 @@ Considerations:
 *  As explained previously, the domain controllers are not accessible or appear on the instance list on Compute Engine.
 *  We will create a management VM for Active Directory shortly.
 *  On the Create a new domain screen, enter the following information:
-o FQDN: Domain FQDN
-o NetBIOS: will be automatically populated
-o Select networks: networks that will have access to the service, in this case we are choosing our shared VPC
-o CIDR Range: a /24 CIDR range for the VPC where the domain controllers will be deployed, it must not overlap with your current subnets
+    *  FQDN: Domain FQDN
+    *  NetBIOS: will be automatically populated
+    *  Select networks: networks that will have access to the service, in this case we are choosing our shared VPC
+    *  CIDR Range: a /24 CIDR range for the VPC where the domain controllers will be deployed, it must not overlap with your current subnets
 
 Considerations:
 
 *  The VPC that is deployed as part of the service cannot be managed from the GCP console.
 *  Scroll down an enter the following information:
-o Region: GCP regions to which the service will be available
+    *  Region: GCP regions to which the service will be available
 o Delegated Admin: name of the delegated administrator account
 *  Click CREATE DOMAIN.
 
@@ -154,15 +154,15 @@ Considerations:
 *  The delegated admin account will be utilized to manage AD objects, add additional administrators, etc.
 *  The delegated administrator account resides on the Users container within AD, you can reset its password directly in the ADUC console, but you cannot move the object to another OU.
 *  The delegated administrator account has access to the following OUs:
-o Cloud: Full control
-o Cloud Service Objects: very limited update permissions
+    *  Cloud: Full control
+    *  Cloud Service Objects: very limited update permissions
 *  When joining a computer to the domain, the AD account will be created under the Cloud > Computers OU, not the default Computers container.
 *  Service creation can take up to 60 minutes.
 *  Once creation is finalized, select your domain and click on SET PASSWORD.
 *  On the Set password window, click CONFIRM.
 *  On the New password window, copy the password and click DONE.
 2.1.6 Create the management instance
-*  On the navigation menu go to Compute Engine > VM Instances and click Create.
+*  On the navigation menu goto: Compute Engine > VM Instances and click Create.
 
 *  On the instance creation window, enter a Name and select the Region and Zone.
 
@@ -171,17 +171,19 @@ Considerations:
 *  Region and zone must match those of your management subnet.
 *  Scroll down to Boot disk and click Change.
 *  On the Boot disk window, select the following:
-o Operating System: Windows Server
-o Version: select your preferred Windows Server version
+    *  Operating System: Windows Server
+    *  Version: select your preferred Windows Server version
 *  Click Select.
 *  Scroll down and click Management, security, disks, networking, sole tenancy.
 *  Select Networking and configure the following:
-o Shared subnetwork: your management subnet.
-o Primary internal IP: Create IP address
-o External IP: Create IP address
+    *  Shared subnetwork: your management subnet.
+    *  Primary internal IP: Create IP address
+    *  External IP: Create IP address
 *  Click Done.
 *  Scroll to the bottom and click Create.
-2.1.7 Configure the management VM
+
+#### Configure the management
+
 *  Still on the Compute Engine > VM Instances screen, under Connect, click the arrow and select Set windows password.
 
 Considerations:
@@ -191,13 +193,13 @@ Considerations:
 *  On the Set new Windows password window, enter a username and click SET.
 *  On the New Windows password window, copy the password and click CLOSE.
 *  Connect to the instance via RDP and start by installation the following Windows features from server manager:
-o Role Administration Tools
-o ADDS and AD LDS Tools
-o Active Directory module for Windows PowerShell
-o AD DS Tools
-o AD DS Snap-Ins and Command-Line Tools
-o Group Policy Management Console (GPMC)
-o DNS Manager
+    *  Role Administration Tools
+    *  ADDS and AD LDS Tools
+    *  Active Directory module for Windows PowerShell
+    *  AD DS Tools
+    *  AD DS Snap-ins and Command-Line Tools
+    *  Group Policy Management Console (GPMC)
+    *  DNS Manager
 *  Join the instance to the domain and restart it.
 
 Considerations:
@@ -211,9 +213,9 @@ Considerations:
 
 *  This service account will be utilized to configure a hosting connection in Citrix Cloud.
 *  On the Service account details screen, enter the following information:
-o Service account name: enter a name for your service account
-o Service account ID: enter an ID for the service account (can be the same as the name)
-o Service account description: optional description
+    *  Service account name: enter a name for your service account
+    *  Service account ID: enter an ID for the service account (can be the same as the name)
+    *  Service account description: optional description
 *  Click CREATE.
 
 Considerations:
@@ -234,22 +236,22 @@ Considerations:
 *  On the Private key saved to your computer window, click CLOSE.
 *  On the navigation menu, go to IAM & Admin > IAM, and click ADD.
 *  On the Add members screen, enter the following information.
-o New members: the new service account.
-o Roles:
- Compute Admin
- Storage Admin
- Cloud Build Editor
- Service Account User
- Cloud Datastore User
-o Click SAVE.
+    *  New members: the new service account.
+    *  Roles:
+        *  Compute Admin
+        *  Storage Admin
+        *  Cloud Build Editor
+        *  Service Account User
+        *  Cloud Datastore User
+    *  Click SAVE.
 *  Back on the IAM screen, search for the Cloud Build Service Account and click the edit pencil icon on the far right.
 
 *  On the Edit permissions page, enter the following information:
-o Roles:
- Cloud Build Service Account
- Compute Instance Admin
- Service Account User
-o Click SAVE.
+    *  Roles:
+        *  Cloud Build Service Account
+        *  Compute Instance Admin
+        *  Service Account User
+    *  Click SAVE.
 
 2.2 CITRIX COMPONENTS
 2.2.1 Create the Cloud Connector VM
@@ -293,11 +295,11 @@ Considerations:
 *  On the Additional Components page, select the components that best apply to your requirements and click Next.
 
 *  On the Delivery Controller page, enter the following information:
-o Select “Do it manually”
-o Enter the FQDN of each Cloud Connector
-o Click Test Connection and if you get a green checkmark, click Add
+    *  Select “Do it manually”
+    *  Enter the FQDN of each Cloud Connector
+    *  Click Test Connection and if you get a green checkmark, click Add
 *  Click Next.
-*  On the Features page, check the boxes of the features you wish to enable based on your deployment needs, then click Next.
+*  On the Features page, check the boxes of the features you want to enable based on your deployment needs, then click Next.
 
 *  On the Firewall page, select Automatically and click Next.
 *  On the Summary page, ensure all the details are correct and click Install.
@@ -315,12 +317,12 @@ o Click Test Connection and if you get a green checkmark, click Add
 *  In Citrix Studio, navigate to Citrix Studio > Configuration > Hosting and select Add Connection and Resources.
 
 *  On the Connection page, click the radio button next to Create a new connection and enter the following information:
-o Connection type: Google Cloud Platform
-o Service account key: Enter the contents of your GCP service account key created earlier
-o Service account ID: will be auto populated when entering the service account key
-o Zone name: Select your Citrix zone
-o Connection name: enter a name
-o Create virtual machines using: Studio tools (Machine Creation Services)
+    *  Connection type: Google Cloud Platform
+    *  Service account key: Enter the contents of your GCP service account key created earlier
+    *  Service account ID: will be auto populated when entering the service account key
+    *  Zone name: Select your Citrix zone
+    *  Connection name: enter a name
+    *  Create virtual machines using: Studio tools (Machine Creation Services)
 *  Click Next.
 
 Considerations:
@@ -346,9 +348,9 @@ Considerations:
 
 *  At the moment of this writing, Citrix does not support deploying Windows desktop OS catalogs to GCP. This
 *  On the Machine Management page, select the following information:
-o The machine catalog will use: machine that are powered managed
-o Deploy machines using: Citrix Machine Creation Services (MCS)
-o Resources: select your GCP hosting connection
+    *  The machine catalog will use: machine that are powered managed
+    *  Deploy machines using: Citrix Machine Creation Services (MCS)
+    *  Resources: select your GCP hosting connection
 *  Click Next.
 *  On the Master Image page, select the master image, the functional level (VDA version), and click Next.
 
@@ -359,10 +361,10 @@ Considerations:
 *  For GCP, CPU and RAM for the machines created by MCS will be the same as the master image. The master image will be utilized to create an instance template in GCP.
 *  Catalog machines will be deployed without a public IP address on GCP.
 *  On the Active Directory Computer Accounts page, configure the following:
-o Account option: Create new AD accounts
-o Domain: select your domain
-o OU: the OU where the computer accounts will be stored
-o Naming scheme: naming convention to be utilized
+    *  Account option: Create new AD accounts
+    *  Domain: select your domain
+    *  OU: the OU where the computer accounts will be stored
+    *  Naming scheme: naming convention to be utilized
 
 Considerations:
 
