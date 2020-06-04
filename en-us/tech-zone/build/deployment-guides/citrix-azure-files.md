@@ -42,8 +42,8 @@ After the sync, please give it some time for Users and Groups to be replicated t
 
 This procedure explains how to create an Azure Files file share for storing your user layers.
 
-Currently, there are two tiers of Azure Files, Stanadrd and Premium. Choose the appropriate tier based on your performance requirements. For more about Azure Files performance, refer to [Azure Files scalability and performance targets
-(https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets]).
+Currently, there are two tiers of Azure Files, Stanadrd and Premium. Choose the appropriate tier based on your performance requirements. For more about Azure Files performance, refer to [Azure Files scalability and performance targets]
+(https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets).
 
 This document explains how to set up Standard storage as an example.
 
