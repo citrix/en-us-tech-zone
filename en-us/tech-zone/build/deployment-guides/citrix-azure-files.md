@@ -29,7 +29,7 @@ Before you set up User personalization layers, set up Azure Files using the foll
 
 ## Step 1: Sync Azure AD with your on prem AD
 
-To use Azure Files with AD Authentication, you will need to sync your on prem AD with Azure AD, using Azure AD Connect. (https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-install-roadmap).
+To use Azure Files with AD Authentication, you will need to [sync your on prem AD with Azure AD, using Azure AD Connect](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-install-roadmap).
 
 >IMPORTANT:
 >
@@ -42,8 +42,7 @@ After the sync, please give it some time for Users and Groups to be replicated t
 
 This procedure explains how to create an Azure Files file share for storing your user layers.
 
-Currently, there are two tiers of Azure Files, Stanadrd and Premium. Choose the appropriate tier based on your performance requirements. For more about Azure Files performance, refer to [Azure Files scalability and performance targets]
-(https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets).
+Currently, there are two tiers of Azure Files, Stanadrd and Premium. Choose the appropriate tier based on your performance requirements. For more about Azure Files performance, refer to [Azure Files scalability and performance targets](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets).
 
 This document explains how to set up Standard storage as an example.
 
@@ -66,8 +65,7 @@ For more detail about setting up Standard and Premium Azure Files, refer to thes
 [Standard](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-how-to-create-large-file-share?tabs=azure-portal)
  and [Premium](https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-create-premium-fileshare).
 
-For further details, refer to:
-https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share?tabs=azure-portalz
+For further details, refer to [Create an Azure file share](https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share?tabs=azure-portal).
 
 ## Step 3: Enable Azure Files AD Authentication
 
