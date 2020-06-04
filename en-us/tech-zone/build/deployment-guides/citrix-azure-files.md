@@ -6,7 +6,7 @@ description: Copy & paste description from TOC here
 
 ## Contributors
 
-**Author:** [Name](URL)
+**Author:** [Elaine Welch](mailto:Elaine.Welch@citrix.com), [Loay Shbeilat](mailto:loay.shbeilat@citrix.com) 
 
 Azure Files offers SMB access within Azure storage accounts. By using SMB, you can mount an Azure file share directly on Windows, Linux, or macOS, either on premises or in cloud virtual machines, without writing any code or attaching any special drivers to the file system.
 
