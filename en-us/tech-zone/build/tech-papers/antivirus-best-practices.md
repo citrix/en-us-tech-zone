@@ -296,7 +296,7 @@ Folders:
 
 [Bitdefender - Implementing Security Best Practices in the Virtual Data Center](https://businessinsights.bitdefender.com/implementing-security-best-practices-in-the-virtual-data-center)
 
-[Microsoft - Windows Defender in VDI environments](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)
+[Microsoft - Windows Defender in VDI environments](https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/deployment-vdi-windows-defender-antivirus)
 
 [Trend Micro - Deep Security Recommended Exclusions](https://success.trendmicro.com/solution/1102554-citrix-recommended-exclusions-on-deep-security)
 
