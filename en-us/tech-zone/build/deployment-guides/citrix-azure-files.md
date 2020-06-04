@@ -73,19 +73,21 @@ Use the instructions in this section to enable Azure Files AD Authentication on 
 
 1.  Use Remote Desktop Protocol (RDP) to connect to the **domain-joined** virtual machine.
 
-1.  To install the AzFilesHybrid module and enable authentication, follow the instructions in [Enable Azure AD DS authentication for your Azure file shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable).
+1.  To install the **AzFilesHybrid** module and enable authentication, follow the instructions in [Enable Azure AD DS authentication for your Azure file shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable).
 
 Before proceeding to the next step, validate that Azure Files AD Authentication is enabled as follows:
 
 1.  From the Azure portal, open your storage account that is tied to your Azure Files.
 
-1.  Under Setting, select **Configuration**, and confirm that Active Directory (AD) is set to **Enabled**.
+1.  Under **Setting**, select **Configuration**, and confirm that Active Directory (AD) is set to **Enabled**.
 
-Step 4: Assign share level and NTFS permissions
+## Step 4: Assign share level and NTFS permissions
 
 Before assigning user personalization layers to users and groups, configure the appropriate access to the Azure Files file share. 
 
-Important: The accounts or groups you assign permissions to should have been created in the domain and synchronized with Azure AD. Accounts created in Azure AD won't work.
+>**Important:**
+>
+>The accounts or groups you assign permissions to should have been created in the domain and synchronized with Azure AD. Accounts created in Azure AD won't work.
 
 ### Assign share level permissions to users
 
@@ -95,11 +97,11 @@ The following section describes how to set the share level permissions:
 1.  Open the storage account you created in the section above.
 1.  Select **Access Control (IAM)**.
 1.  Select **Add a role assignment**.
-1.  In the Add role assignment tab, select **Storage File Data SMB Share Elevated Contributor** for the Share administrator account.
-1.  Then select Storage File Data SMB Share Contributor for the users or group that will be using the UPL feature.
-1.  Select Save.
+1.  In the **Add role assignment** tab, select **Storage File Data SMB Share Elevated Contributor** for the Share administrator account.
+1.  Then select **Storage File Data SMB Share Contributor** for the users or group that will be using the user personalization layers.
+1.  Select **Save**.
 
-The permissions might take up to 30 minutes before they fully take effect. Please give it some time before you proceed to next step.
+The permissions can take up to 30 minutes before they fully take effect. Please give it some time before you proceed to next step.
 
 For additional details, refer to the [Assign share-level permissions to an identity](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-assign-permissions).
 
@@ -111,19 +113,17 @@ To configure directory and file level NTFS permissions:
 
 1.  Open the Azure portal.
 1.  Open the storage account you created in step 3.
-1.  Click on the File Share tile
-1.  Click on the share name you created uplshare
-1.  Click on Properties
-1.  Copy the URL link
-1.  After copying the URL, convert it into the UNC:
-    1.  Remove https://
-    1.  Replace the forward slashes // with a back slash \\.
-     For example:
-     `https://uplshare.file.core.windows.net/uplfolder` becomes `\\uplshare.file.core.windows.net\uplfolder`.
-
-1.  Using RDP connect to a VM that is domain joined:
+1.  Click the **File Share** tile
+1.  Click the share name you created, for example **uplshare**.
+1.  Click **Properties**.
+1.  Copy the URL link.
+1.  After copying the URL, convert it into the **UNC** format:
+    1.  Remove `https://`.
+    1.  Replace all forward slashes `//` with back slashes `\\`. For example:
+       `https://uplshare.file.core.windows.net/uplfolder` becomes
+       `\\uplshare.file.core.windows.net\uplfolder`.
+1.  Using RDP, connect to a virtual machine that is domain joined.
 1.  Open a command prompt, and run the following cmdlet to mount the Azure file share and assign it a drive letter:
-
      `net use <drive-letter> UNC-path`
      Example: `net use S:\ \\uplshare.file.core.windows.net\uplshare`
 
