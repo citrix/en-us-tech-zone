@@ -11,6 +11,8 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 [Secure Access to SaaS Applications with Okta SSO](/en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html) - Learn how to set up a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
 
+[Secure Access to SaaS Applications with Okta SSO](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Access Control, utilizing Citrix-provided SSO.
+
 ## Citrix Virtual Apps and Desktops
 
 [Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
