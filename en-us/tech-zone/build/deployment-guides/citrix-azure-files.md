@@ -8,11 +8,11 @@ description: Copy & paste description from TOC here
 
 **Author:** [Elaine Welch](mailto:Elaine.Welch@citrix.com), [Loay Shbeilat](mailto:loay.shbeilat@citrix.com) 
 
-Azure Files offers SMB access within Azure storage accounts. By using SMB, you can mount an Azure file share directly on Windows, Linux, or macOS, either on premises or in cloud virtual machines, without writing any code or attaching any special drivers to the file system.
+Azure Files offers SMB access within Azure storage accounts. Using SMB, you can mount an Azure file share on Windows, Linux, or macOS, either on premises or in cloud virtual machines, without writing any code or attaching any special drivers to the file system.
 
-Recently, Azure Files released support for on-premises AD Domain service authentication. With the following addition, User personalization layers can make use of Azure Files.
+Azure Files now supports on-premises Active Directory Domain Service Authentication, which enables User personalization layers to use Azure Files.
 
-For full details, see [on-premises Active Directory Service Authentication over SBM for Azure File shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-active-directory-enable)
+For full details, see [on-premises Active Directory Service Authentication over SBM for Azure File shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-active-directory-enable).
 
 ## Requirements
 
