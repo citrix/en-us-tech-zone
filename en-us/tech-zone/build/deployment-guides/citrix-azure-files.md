@@ -51,16 +51,16 @@ This document explains how to set up Standard storage as an example.
 1.  Select **Storage account – blob, file, table, queue**.
 1.  Enter the following information into the **Create storage account** page:
     -  Create a new **resource group**.
-    -  Enter a unique name for your storage account.
-    -  For Location, we recommend you choose the same location as the Virtual Delivery Agents (VDA’s) in the Azure resource location.
-    -  For Performance, select Standard. (example choise)
-    -  For Account type, select StorageV2.
-    -  For Replication, select Locally-redundant storage (LRS).
-1.  When you're done, select Review + create, then select Create.
-1.  Once storage accounts provisions, select Go to resource.
-1.  On the Overview page, select File shares.
-1.  Select +File shares, create a new file share, for example **uplfolder**, then either enter an appropriate quota or leave the field blank for no quota.
-1.  Select Create.
+    -  Enter a unique name for your **storage account**.
+    -  For **Location**, we recommend you choose the same location as the Virtual Delivery Agents (VDA’s) in the Azure resource location.
+    -  For **Performance**, select **Standard**. (example choice)
+    -  For **Account type**, select **StorageV2**.
+    -  For **Replication**, select **Locally-redundant storage (LRS)**.
+1.  When you're done, select **Review + create**, then select **Create**.
+1.  Once storage accounts provisions, select **Go to resource**.
+1.  On the **Overview** page, select **File shares** tile.
+1.  Select **+File share**, create a new file share, for example **uplfolder**, then either enter an appropriate **Quota** or leave the field blank for no quota.
+1.  Select **Create**.
 
 For more detail about setting up Standard and Premium Azure Files, refer to these documents:
 [Standard](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-how-to-create-large-file-share?tabs=azure-portal)
