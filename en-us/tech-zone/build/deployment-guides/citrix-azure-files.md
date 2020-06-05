@@ -16,11 +16,11 @@ For full details, see [on-premises Active Directory Service Authentication over 
 
 ## Requirements
 
-In addition to the [User personalization layer requirements](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html) and [profile management requirements](https://docs.citrix.com/en-us/profile-management/current-release/system-requirements.html), Azure Files requires that your on-premises domain controller is synchronized to your Azure Active Directory.
+In addition to the [User personalization layer requirements](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html) and [Profile Management requirements](https://docs.citrix.com/en-us/profile-management/current-release/system-requirements.html), Azure Files requires that your on-premises domain controller is synchronized to your Azure Active Directory.
 
 ## Overview
 
-Before you set up User personalization layers or profile management, set up Azure Files using the following steps:
+Before you set up User personalization layers or Profile Management, set up Azure Files using the following steps:
 
 -  Step 1: Synchronize Azure AD with your on-premises AD 
 -  Step 2: Create Azure Files share
@@ -36,7 +36,7 @@ To use Azure Files with AD Authentication, [Synchronize your on-premises AD with
 >-  The Azure AD tenant and the file share that are used for user personalization layers or Profile Management must be associated with the same subscription.
 >-  The accounts being used must be created in the domain controller and synchronized to Azure AD. Accounts sourced from Azure AD are not appropriate.
 
-After the Synchronization completes, please give it some time for Users and Groups to be replicated to Azure AD before you proceed.
+After the Synchronization completes, give it some time for Users and Groups to be replicated to Azure AD before you proceed.
 
 ## Step 2: Create Azure Files share
 
@@ -103,7 +103,7 @@ The following section describes how to set the share level permissions:
 1. Then select **Storage File Data SMB Share Contributor** for the users or groups that are assigned user personalization layers and profiles.
 1. Select **Save**.
 
-The permissions can take up to 30 minutes before they fully take effect. Please give it some time before you proceed to next step.
+The permissions can take up to 30 minutes before they fully take effect. Give it some time before you proceed to next step.
 
 For details, refer to the [Assign share-level permissions to an identity](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-assign-permissions).
 
@@ -138,9 +138,6 @@ To configure directory and file level NTFS permissions:
 | System | Full Control | Selected Folder, Subfolders, and Files |
 | Domain Admins, and selected Admin group | Full Control | Selected Folder, Subfolders, and Files |
 
-This completes the Azure Files configuration for user personalization layers and profile management.
-
 ## Set the user personalization layers and profiles
 
-Once you configure Azure Files storage for user personalization layer and profies, follow the instructions for [deploying User personalization layers](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html) and [profile management quick start guide](https://docs.citrix.com/en-us/profile-management/current-release/quick-start-guide.html). Use the UNC path described in **Step 4** for the **User Layer Repository Path**.
-
+Once you configure Azure Files storage for user personalization layer and profiles, follow the instructions for [deploying User personalization layers](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html) and [Profile Management quick start guide](https://docs.citrix.com/en-us/profile-management/current-release/quick-start-guide.html). Use the UNC path described in **Step 4** for the **User Layer Repository Path**.
