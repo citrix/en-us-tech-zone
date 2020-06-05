@@ -121,10 +121,8 @@ To configure directory and file level NTFS permissions:
 1. Copy the URL link.
 1. After copying the URL, convert it into the **UNC** format:
    - Remove `https://`.
-   - Replace all forward slashes `//` with back slashes `\\`. For example:
-   
-      `https://uplshare.file.core.windows.net/uplfolder` becomes
-      
+   - Replace all forward slashes `//` with back slashes `\\`. For example:  
+      `https://uplshare.file.core.windows.net/uplfolder` becomes      
       `\\uplshare.file.core.windows.net\uplfolder`.
 1. Using RDP, connect to a virtual machine that is domain joined.
 1. Open a command prompt, and run the following cmdlet to mount the Azure file share and assign it a drive letter:
