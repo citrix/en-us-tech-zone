@@ -72,13 +72,11 @@ For further details, refer to [Create an Azure file share](https://docs.microsof
 Use the instructions in this section to enable Azure Files AD Authentication on a machine that's already domain-joined. 
 
 1.  Use Remote Desktop Protocol (RDP) to connect to the **domain-joined** virtual machine.
-
 1.  To install the **AzFilesHybrid** module and enable authentication, follow the instructions in [Enable Azure AD DS authentication for your Azure file shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable).
 
 Before proceeding to the next step, validate that Azure Files AD Authentication is enabled as follows:
 
 1.  From the Azure portal, open your storage account that is tied to your Azure Files.
-
 1.  Under **Setting**, select **Configuration**, and confirm that Active Directory (AD) is set to **Enabled**.
 
 ## Step 4: Assign share level and NTFS permissions
@@ -126,7 +124,6 @@ To configure directory and file level NTFS permissions:
 1.  Open a command prompt, and run the following cmdlet to mount the Azure file share and assign it a drive letter:
      `net use <drive-letter> UNC-path`
      Example: `net use S:\ \\uplshare.file.core.windows.net\uplshare`
-
 1.  Once the share is mounted, set the following permissions on the mounted share.
 
 | Setting name | Value | Apply to |
