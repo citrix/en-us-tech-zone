@@ -10,7 +10,7 @@ description: Copy & paste description from TOC here
 
 ## ARCHITECTURE
 
-GCP’s Managed Service for Microsoft Active Directory is a fully managed service on the Google Cloud Platform. The service automatically deploys and manages highly available Active Directory domain controllers on your GCP project in an isolated VPC network. Domain controller access is restricted, and you can only manage your domain by deploying management instances with Remote Server Administration tools. A VPC peering is deployed automatically with the service for your AD-dependent workloads to reach Active Directory; additionally, Google Cloud DNS is configured to forward all DNS queries to the Managed Microsoft AD.
+GCP’s Managed Service for Microsoft Active Directory is a fully managed service on the Google Cloud Platform. The service automatically deploys and manages highly available Active Directory domain controllers on your GCP project in an isolated VPC network. Domain controller access is restricted, and you can only manage your domain by deploying management instances with Remote Server Administration tools. A VPC peering is deployed automatically with the service for your AD-dependent workloads to reach Active Directory. Additionally, Google Cloud DNS is configured to forward all DNS queries to the Managed Microsoft AD.
 For this implementation, we are following Google's Active Directory resource forest architecture in combination with a Citrix Virtual Apps and Desktops service multitenant environment.
 
 ## CITRIX AND GCP SERVICES
@@ -29,7 +29,7 @@ For this implementation, we are following Google's Active Directory resource for
     *  Cloud Resource Manager API
     *  Identity and Access Management (IAM) API
     *  Cloud Build API
-*  A GCP project will be deployed with 2 subnets:
+*  A GCP project is deployed with 2 subnets:
     *  Resources subnet: resources subnet to deploy the Managed Microsoft AD service, and the Citrix Cloud Connectors, Master Images and VDAs. Most of the configurations will be performed on this project
     *  AD management subnet:  management subnet dedicated to instances utilized to manage Active Directory through the Remote Server Administration Tools
 *  Managed Microsoft AD service will be deployed:
@@ -144,7 +144,7 @@ Considerations:
 Considerations:
 
 *  The VPC that is deployed as part of the service cannot be managed from the GCP console.
-*  Scroll down an enter the following information:
+*  Scroll down and enter the following information:
     *  Region: GCP regions to which the service will be available
 o Delegated Admin: name of the delegated administrator account
 *  Click CREATE DOMAIN.
@@ -264,14 +264,14 @@ Considerations:
 *  On a production deployment, at least 2 Cloud Connectors must be deployed to avoid possible service disruption.
 *  Once the instance is created, connect to it via RDP and use a web browser to navigate to <https://citrix.cloud.com.>
 
-*  Enter your Citrix Cloud credentials and click Sign in.
+*  Enter your Citrix Cloud credentials and click Sign-in.
 *  Under Domains, click Add New.
 *  On the Domains tab under Identity and Access Management, click +Domain.
 *  On the Add a Cloud Connector window click Download.
 *  Save the cwcconnector.exe file to the instance.
 *  Right-click the cwcconnector.exe file and select Run as administrator.
-*  On the Citrix Cloud Connector window, click Sign in.
-*  On the sign in window, enter your Citrix Cloud credentials and click Sign in.
+*  On the Citrix Cloud Connector window, click Sign-in.
+*  On the sign-in window, enter your Citrix Cloud credentials and click Sign-in.
 *  When the installation finishes, click Close.
 
 Considerations:
@@ -310,7 +310,7 @@ Considerations:
 2.2.3 Create a GCP hosting connection
 *  Use a web browser to navigate to <https://citrix.cloud.com.>
 
-*  Enter your Citrix Cloud credentials and click Sign in.
+*  Enter your Citrix Cloud credentials and click Sign-in.
 *  On the upper left hamburger menu, click My Services and select Citrix Virtual Apps and Desktops.
 
 *  Under Manage, select Full Configuration.
@@ -358,7 +358,7 @@ Considerations:
 
 Considerations:
 
-*  For GCP, CPU and RAM for the machines created by MCS will be the same as the master image. The master image will be utilized to create an instance template in GCP.
+*  For GCP, the CPU and RAM for the machines created by MCS will be the same as the master image. The master image will be utilized to create an instance template in GCP.
 *  Catalog machines will be deployed without a public IP address on GCP.
 *  On the Active Directory Computer Accounts page, configure the following:
     *  Account option: Create new AD accounts
@@ -373,7 +373,7 @@ Considerations:
 *  On the Domain Credentials page, click Enter credentials.
 *  On the Windows Security pop-up, enter your domain credentials and click OK.
 *  Back on the Domain Credentials page, click Next.
-*  On the Scopes page, select an scope and click Next.
+*  On the Scopes page, select a scope and click Next.
 *  On the Summary page, enter a name and description and click Finish.
 2.2.5 Create a Delivery Group
 *  In Citrix Studio, navigate to Citrix Studio > Delivery Groups and select Create Delivery Group.
