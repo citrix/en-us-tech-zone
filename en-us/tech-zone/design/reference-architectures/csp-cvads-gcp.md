@@ -15,7 +15,11 @@ For this implementation, we are following Google's Active Directory resource for
 
 ## CITRIX AND GCP SERVICES
 
+[![CSP-Image-001](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_001.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_001.png)
+
 ## GCP RESOURCE HIERARCHY AND BILLING
+
+[![CSP-Image-002](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_002.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_002.png)
 
 ### INITIAL ASSUMPTIONS
 
@@ -67,6 +71,8 @@ The following are the most common GCP terms you will need to understand, as desc
 
 ### Create the GCP main project
 
+[![CSP-Image-003](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_003.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_003.png)
+
 *  On the GCP console, click Select a project.
 
 Considerations:
@@ -75,25 +81,40 @@ Considerations:
 *  As recommended by Google, for production environments you should be protecting your projects against accidental deletion.
 *  On the projects window, click NEW PROJECT.
 
+[![CSP-Image-004](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_004.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_004.png)
+
 *  On the New Project screen, enter the following information:
     *  Project name: must be unique
     *  Billing account: the billing account to use for this project
     *  Organization: your GCP organization
     *  Location: Folder under which to deploy the project
+
+    [![CSP-Image-005](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_005.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_005.png)
+
 *  Delete the main project default VPC
 *  On the navigation menu, go to VPC Network > VPC Networks and select your default VPC.
+
+[![CSP-Image-006](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_006.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_006.png)
 
 #### Considerations
 
 *  When a new project is created, a default VPC (auto-mode) is automatically created, we will create a new VPC soon.
 *  On the VPC network details screen, click DELETE VPC NETWORK and then DELETE.
-2.1.3 Create a new custom-mode VPC
+
+[![CSP-Image-7](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_007.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_007.png)
+
+#### Create a new custom-mode VPC
+
 *  On the navigation menu, go to VPC Network > VPC Networks and click Create VPC network.
+
+[![CSP-Image-8](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_008.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_008.png)
 
 *  On the Create a VPC network screen, enter the following initial information:
     *  Name: VPC network name
     *  Description: VPC network description
     *  Subnet creation mode: Custom
+
+[![CSP-Image-9](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_009.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_009.png)
 
 Considerations:
 
@@ -101,9 +122,17 @@ Considerations:
 *  Custom-mode VPCs allow you to create your subnets and CIDR ranges as required.
 *  On the Subnets section, create 2 subnets, these will be utilized by the Citrix instances, and the AD management servers.
 
+[![CSP-Image-10](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_010.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_010.png)
+
 *  Check all the details and click Create.
-2.1.4 Create Firewall Rules
+
+[![CSP-Image-11](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_011.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_011.png)
+
+#### Create Firewall Rules
+
 *  On the navigation menu, go to VPC Network > Firewall Rules, select CREATE FIREWALL RULE.
+
+[![CSP-Image-12](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_012.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_012.png)
 
 Considerations:
 
@@ -113,11 +142,16 @@ Considerations:
     *  Description: firewall rule description
     *  Network: shared VPC network
     *  Priority: rule priority
+
+[![CSP-Image-13](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_013.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_013.png)
+
 *  Scroll down and enter the following information:
     *  Direction: Ingress
     *  Action: Allow
     *  Targets: as appropriate for your environment
     *  Source filter: as appropriate for your environment
+
+[![CSP-Image-14](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_014.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_014.png)
 
 Considerations:
 
@@ -127,7 +161,11 @@ Considerations:
     *  TCP: 22, 3389
     *  Other protocols: ICMP
 *  Click CREATE.
-2.1.5 Deploy the Managed Microsoft AD Service
+
+[![CSP-Image-15](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_015.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_015.png)
+
+#### Deploy the Managed Microsoft AD Service
+
 *  On the navigation menu, go to Security > Managed Microsoft AD and click CREATE NEW AD DOMAIN.
 
 Considerations:
