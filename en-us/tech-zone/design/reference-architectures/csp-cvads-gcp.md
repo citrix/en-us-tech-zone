@@ -166,6 +166,8 @@ Considerations:
 
 #### Deploy the Managed Microsoft AD Service
 
+[![CSP-Image-16](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_016.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_016.png)
+
 *  On the navigation menu, go to Security > Managed Microsoft AD and click CREATE NEW AD DOMAIN.
 
 Considerations:
@@ -179,13 +181,17 @@ Considerations:
     *  Select networks: networks that will have access to the service, in this case we are choosing our shared VPC
     *  CIDR Range: a /24 CIDR range for the VPC where the domain controllers will be deployed, it must not overlap with your current subnets
 
+[![CSP-Image-17](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_017.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_017.png)
+
 Considerations:
 
 *  The VPC that is deployed as part of the service cannot be managed from the GCP console.
 *  Scroll down and enter the following information:
     *  Region: GCP regions to which the service will be available
-o Delegated Admin: name of the delegated administrator account
+    *  Delegated Admin: name of the delegated administrator account
 *  Click CREATE DOMAIN.
+
+[![CSP-Image-18](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_018.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_018.png)
 
 Considerations:
 
@@ -197,27 +203,53 @@ Considerations:
 *  When joining a computer to the domain, the AD account will be created under the Cloud > Computers OU, not the default Computers container.
 *  Service creation can take up to 60 minutes.
 *  Once creation is finalized, select your domain and click on SET PASSWORD.
+
+[![CSP-Image-19](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_019.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_019.png)
+
 *  On the Set password window, click CONFIRM.
+
+[![CSP-Image-20](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_020.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_020.png)
+
 *  On the New password window, copy the password and click DONE.
-2.1.6 Create the management instance
+
+[![CSP-Image-21](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_021.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_021.png)
+
+#### Create the management instance
+
 *  On the navigation menu goto: Compute Engine > VM Instances and click Create.
 
+[![CSP-Image-22](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_022.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_022.png)
+
 *  On the instance creation window, enter a Name and select the Region and Zone.
+
+[![CSP-Image-23](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_023.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_023.png)
 
 Considerations:
 
 *  Region and zone must match those of your management subnet.
 *  Scroll down to Boot disk and click Change.
+
+[![CSP-Image-24](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_024.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_024.png)
+
 *  On the Boot disk window, select the following:
     *  Operating System: Windows Server
     *  Version: select your preferred Windows Server version
 *  Click Select.
+
+[![CSP-Image-25](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_025.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_025.png)
+
 *  Scroll down and click Management, security, disks, networking, sole tenancy.
+
+[![CSP-Image-26](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_026.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_026.png)
+
 *  Select Networking and configure the following:
     *  Shared subnetwork: your management subnet.
     *  Primary internal IP: Create IP address
     *  External IP: Create IP address
 *  Click Done.
+
+[![CSP-Image-27](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_027.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_027.png)
+
 *  Scroll to the bottom and click Create.
 
 #### Configure the management
