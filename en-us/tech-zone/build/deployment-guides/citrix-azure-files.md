@@ -81,7 +81,7 @@ Before proceeding to the next step, validate that Azure Files AD Authentication 
 
 ## Step 4: Assign share level and NTFS permissions
 
-Before assigning user personalization layers to users and groups, configure the appropriate access to the Azure Files file share. 
+Before assigning user personalization layers and profiles to users and groups, configure the appropriate access to the Azure Files file share. 
 
 >**Important:**
 >
@@ -134,7 +134,7 @@ To configure directory and file level NTFS permissions:
 | System | Full Control | Selected Folder, Subfolders, and Files |
 | Domain Admins, and selected Admin group | Full Control | Selected Folder, Subfolders, and Files |
 
-This completes the Azure Files configuration for user personalization layers.
+This completes the Azure Files configuration for user personalization layers and profile management.
 
 ## Set the user personalization layers
 
