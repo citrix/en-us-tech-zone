@@ -138,6 +138,6 @@ To configure directory and file level NTFS permissions:
 | System | Full Control | Selected Folder, Subfolders, and Files |
 | Domain Admins, and selected Admin group | Full Control | Selected Folder, Subfolders, and Files |
 
-## Set the user personalization layers and profiles
+## Set up the User personalization layers and profiles
 
-Once you configure Azure Files storage for user personalization layer and profiles, follow the instructions for [deploying User personalization layers](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html) and [Profile Management quick start guide](https://docs.citrix.com/en-us/profile-management/current-release/quick-start-guide.html). Use the UNC path described in **Step 4** for the **User Layer Repository Path**.
+Next, you can configure User personalization layers and profiles. Follow the instructions for [deploying User personalization layers](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html) and [Profile Management quick start guide](https://docs.citrix.com/en-us/profile-management/current-release/quick-start-guide.html). Use the UNC path described in **Step 4** for the **User Layer Repository Path**.
