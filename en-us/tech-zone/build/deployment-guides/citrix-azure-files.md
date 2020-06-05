@@ -10,7 +10,7 @@ description: Learn how to deploy Azure Files for use with Citrix User personaliz
 
 Azure Files offers SMB access within Azure storage accounts. Using SMB, you can mount an Azure file share on Windows, Linux, or macOS, either on-premises or in cloud virtual machines, without writing any code or attaching any special drivers to the file system.
 
-Azure Files now supports on-premises Active Directory Domain Service Authentication, which enables User personalization layers and profile management to use Azure Files.
+Azure Files now supports on-premises Active Directory Domain Service Authentication, which enables User personalization layers and Profile Management to use Azure Files.
 
 For full details, see [on-premises Active Directory Service Authentication over SBM for Azure File shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-active-directory-enable).
 
@@ -33,7 +33,7 @@ To use Azure Files with AD Authentication, [Synchronize your on-premises AD with
 
 >IMPORTANT:
 >
->-  The Azure AD tenant and the file share that are used for user personalization layers or profile management must be associated with the same subscription.
+>-  The Azure AD tenant and the file share that are used for user personalization layers or Profile Management must be associated with the same subscription.
 >-  The accounts being used must be created in the domain controller and synchronized to Azure AD. Accounts sourced from Azure AD are not appropriate.
 
 After the Synchronization completes, please give it some time for Users and Groups to be replicated to Azure AD before you proceed.
@@ -46,23 +46,23 @@ Currently, there are two tiers of Azure Files, Standard and Premium. Choose the 
 
 This document explains how to set up Standard storage as an example.
 
-1.  Open the Azure Portal. 
-1.  Click **Create a resource**.
-1.  Select **Storage account – blob, file, table, queue**.
-1.  Enter the following information into the **Create storage account** page:
+1. Open the Azure Portal. 
+1. Click **Create a resource**.
+1. Select **Storage account – blob, file, table, queue**.
+1. Enter the following information into the **Create storage account** page:
     -  For **Resource Group**, click **Create new**.
     -  For **Storage account**, enter a unique name.
     -  For **Location**, we recommend you choose the same location as the Virtual Delivery Agents (VDAs) in the Azure resource location.
     -  For **Performance**, select **Standard**. (example choice)
     -  For **Account kind**, select **StorageV2**.
     -  For **Replication**, select **Locally-redundant storage (LRS)**.
-1.  When you're done, select **Review + create**, then select **Create**.
-1.  Once storage accounts provisions, select **Go to resource**.
-1.  On the **Overview** page, select **File shares** tile.
-1.  Select **+File share**.
+1. When you're done, select **Review + create**, then select **Create**.
+1. Once storage accounts provisions, select **Go to resource**.
+1. On the **Overview** page, select **File shares** tile.
+1. Select **+File share**.
     -  Enter a **Name**, for example **uplfolder**.
     -  Enter an appropriate **Quota**, or leave the field blank for no quota.
-1.  Select **Create**.
+1. Select **Create**.
 
 For more detail about setting up Standard and Premium Azure Files, refer to these documents:
 [Standard](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-how-to-create-large-file-share?tabs=azure-portal)
