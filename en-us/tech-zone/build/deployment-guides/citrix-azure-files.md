@@ -8,7 +8,7 @@ description: Learn how to deploy Azure Files for use with Citrix User personaliz
 
 **Author:** [Elaine Welch](mailto:Elaine.Welch@citrix.com), [Loay Shbeilat](mailto:loay.shbeilat@citrix.com) 
 
-Azure Files offers SMB access within Azure storage accounts. Using SMB, you can mount an Azure file share on Windows, Linux, or macOS, either on-premises or in cloud virtual machines, without writing any code or attaching any special drivers to the file system.
+Azure Files offers fully managed file shares in the cloud that are accessible via Server Message Block (SMB) protocol. File shares can be mounted concurrently in the cloud or on-premises on Windows, Linux, or macOS.
 
 Azure Files now supports on-premises Active Directory Domain Service Authentication, which enables User personalization layers and Profile Management to use Azure Files.
 
