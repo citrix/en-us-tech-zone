@@ -89,14 +89,14 @@ Before assigning user personalization layers and profiles to users and groups, c
 
 >**Important:**
 >
->The accounts or groups you assign permissions to should have been created in the domain and synchronized with Azure AD. Accounts created in Azure AD won't work.
+>The accounts or groups to which you assign permissions must be created in the domain and synchronized with Azure AD. Accounts created in Azure AD are not supported.
 
 ### Assign share level permissions to users
 
 The following section describes how to set the share level permissions:
 
 1.  Open the Azure portal.
-1.  Open the **storage account** you created in the section above.
+1.  Open the **storage account** you created in **Step 2**.
 1.  Select **Access Control (IAM)**.
 1.  Select **Add a role assignment**.
 1.  In the **Add role assignment** tab, select **Storage File Data SMB Share Elevated Contributor** for the Share administrator account.
@@ -105,7 +105,7 @@ The following section describes how to set the share level permissions:
 
 The permissions can take up to 30 minutes before they fully take effect. Please give it some time before you proceed to next step.
 
-For additional details, refer to the [Assign share-level permissions to an identity](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-assign-permissions).
+For details, refer to the [Assign share-level permissions to an identity](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-assign-permissions).
 
 ### Configure your NTFS permissions on the shared folder
 
@@ -142,5 +142,5 @@ This completes the Azure Files configuration for user personalization layers and
 
 ## Set the user personalization layers and profiles
 
-Once you configure Azure Files storage for user personalization layer and profies, follow the instructions for [deploying User personalization layers](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html) and [profile management quick start guide](https://docs.citrix.com/en-us/profile-management/current-release/quick-start-guide.html). Use the UNC path described in the previous procedure for the **User Layer Repository Path**.
+Once you configure Azure Files storage for user personalization layer and profies, follow the instructions for [deploying User personalization layers](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html) and [profile management quick start guide](https://docs.citrix.com/en-us/profile-management/current-release/quick-start-guide.html). Use the UNC path described in **Step 4** for the **User Layer Repository Path**.
 
