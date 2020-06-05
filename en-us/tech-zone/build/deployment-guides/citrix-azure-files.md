@@ -96,7 +96,7 @@ The following section describes how to set the share level permissions:
 1.  Select **Access Control (IAM)**.
 1.  Select **Add a role assignment**.
 1.  In the **Add role assignment** tab, select **Storage File Data SMB Share Elevated Contributor** for the Share administrator account.
-1.  Then select **Storage File Data SMB Share Contributor** for the users or group that will be using the user personalization layers.
+1.  Then select **Storage File Data SMB Share Contributor** for the users or group that will be using the user personalization layers and profiles.
 1.  Select **Save**.
 
 The permissions can take up to 30 minutes before they fully take effect. Please give it some time before you proceed to next step.
@@ -136,6 +136,7 @@ To configure directory and file level NTFS permissions:
 
 This completes the Azure Files configuration for user personalization layers and profile management.
 
-## Set the user personalization layers
+## Set the user personalization layers and profiles
 
-Once you configure Azure Files storage for Upl, follow the instructions for [deploying User personalization layers](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html), using the UNC path described in the previous procedure for the **User Layer Repository Path**.
+Once you configure Azure Files storage for user personalization layer and profies, follow the instructions for [deploying User personalization layers](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html) and [profile management quick start guide](https://docs.citrix.com/en-us/profile-management/current-release/quick-start-guide.html). Use the UNC path described in the previous procedure for the **User Layer Repository Path**.
+
