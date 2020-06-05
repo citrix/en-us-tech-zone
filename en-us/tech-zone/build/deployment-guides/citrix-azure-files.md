@@ -1,8 +1,8 @@
 ---
 layout: doc
-description: Copy & paste description from TOC here
+description: Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management
 ---
-# Set up Azure Files storage for User personalization layers
+# Set up Azure Files storage for User personalization layers and Citrix Profile Management
 
 ## Contributors
 
@@ -10,17 +10,17 @@ description: Copy & paste description from TOC here
 
 Azure Files offers SMB access within Azure storage accounts. Using SMB, you can mount an Azure file share on Windows, Linux, or macOS, either on premises or in cloud virtual machines, without writing any code or attaching any special drivers to the file system.
 
-Azure Files now supports on-premises Active Directory Domain Service Authentication, which enables User personalization layers to use Azure Files.
+Azure Files now supports on-premises Active Directory Domain Service Authentication, which enables User personalization layers and profile management to use Azure Files.
 
 For full details, see [on-premises Active Directory Service Authentication over SBM for Azure File shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-active-directory-enable).
 
 ## Requirements
 
-In addition to the [User personalization layer requirements](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html), Azure Files requires that your on-premises domain controller is synchromized to your Azure Active Directory.
+In addition to the [User personalization layer requirements](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html) and [profile management requirements](https://docs.citrix.com/en-us/profile-management/current-release/system-requirements.html), Azure Files requires that your on-premises domain controller is synchronized to your Azure Active Directory.
 
 ## Overview
 
-Before you set up User personalization layers, set up Azure Files using the following steps:
+Before you set up User personalization layers or profile management, set up Azure Files using the following steps:
 
 -  Step 1: Sync AD to Azure AD (Prereq for Azure Files) 
 -  Step 2: Create Azure Files share
@@ -33,14 +33,14 @@ To use Azure Files with AD Authentication, you will need to [sync your on prem A
 
 >IMPORTANT:
 >
->-  The Azure AD tenant and the file share that will be used for UPL must be associated with the same subscription.
+>-  The Azure AD tenant and the file share that will be used for user personalization layers or profile management must be associated with the same subscription.
 >-  The accounts being used must be created in the domain controller and synched to Azure AD. Accounts sourced from Azure AD are not appropriate.
 
 After the sync, please give it some time for Users and Groups to be replicated to Azure AD before you proceed.
 
 ## Step 2: Create Azure Files storage
 
-This procedure explains how to create an Azure Files file share for storing your user layers.
+This procedure explains how to create an Azure Files file share for storing your user layers and profiles.
 
 Currently, there are two tiers of Azure Files, Stanadrd and Premium. Choose the appropriate tier based on your performance requirements. For more about Azure Files performance, refer to [Azure Files scalability and performance targets](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets).
 
