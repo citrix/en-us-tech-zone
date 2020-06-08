@@ -27,6 +27,8 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [SD-WAN Cloud Direct service](/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html) - Optimize SaaS access for branch users by tunneling session traffic to Internet Exchanges with direct connectivity to popular sites.
 
+[SD-WAN for Home Offices](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-home-office.html) - Learn how to work from home with secure, enhanced, and resilient connectivity using the Citrix SD-WAN 110 appliance.
+
 [SD-WAN for Workspace](/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html) - Provides optimal network connectivity between Enterprise branch offices and their Workspace hosted in data resource locations on-premises or in the cloud.
 
 ## Citrix Endpoint Management

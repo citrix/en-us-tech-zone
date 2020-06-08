@@ -21,9 +21,11 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 ## Citrix Networking
 
-[Citrix SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html) - Learn how to implement Citrix SD-WAN rapidly to provide secure, enhanced, and resilient connectivity between your public cloud and data center environments.
+[SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html) - Learn how to implement Citrix SD-WAN rapidly to provide secure, enhanced, and resilient connectivity between your public cloud and data center environments.
 
-[Citrix Web Application Firewall Deployment](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) - Learn how to deploy Citrix Web Application Firewall (WAF) standalone or as a part of a Citrix ADC deployment. Protect web servers or applications from various attacks including Cross Site Scripting, SQL Injection, Buffer Overflow, Forceful Browsing and more. Deploy in any public cloud or your on-premises environment.
+[SD-WAN for Home Offices](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html) - Learn how to implement a POC of the Citrix SD-WAN 110 appliance to demonstrate how to work from home with secure, enhanced, and resilient connectivity.
+
+[Web Application Firewall Deployment](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) - Learn how to deploy Citrix Web Application Firewall (WAF) standalone or as a part of a Citrix ADC deployment. Protect web servers or applications from various attacks including Cross Site Scripting, SQL Injection, Buffer Overflow, Forceful Browsing and more. Deploy in any public cloud or your on-premises environment.
 
 ## Security
 
