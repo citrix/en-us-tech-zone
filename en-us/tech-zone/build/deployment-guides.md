@@ -11,4 +11,6 @@ Deployment guides provide step-by-step instruction on how to perform key tasks a
 
 ## Citrix Virtual Apps and Desktops
 
+[Deploying Azure Files for Citrix Profile Management and Citrix User personalization layers](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html) - Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management.
+
 [Migrating Citrix Virtual Apps and Desktops from on-premises to Citrix Cloud](/en-us/tech-zone/build/deployment-guides/cvads-migration.html) - Learn how to migrate your on-premises Citrix Virtual Apps and Desktops environment to Citrix Cloud.
