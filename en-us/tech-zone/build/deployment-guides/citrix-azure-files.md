@@ -8,15 +8,13 @@ description: Learn how to deploy Azure Files for use with Citrix User personaliz
 
 **Author:** [Elaine Welch](mailto:Elaine.Welch@citrix.com), [Loay Shbeilat](mailto:loay.shbeilat@citrix.com)
 
-Azure Files offers fully managed file shares in the cloud that are accessible via Server Message Block (SMB) protocol. File shares can be mounted concurrently in the cloud or on-premises on Windows, Linux, or macOS.
+Azure Files offers fully managed file shares that are in the cloud, and accessible using Server Message Block (SMB) protocol. Azure Files shares can be mounted both in the cloud and on-premises, on Windows, Linux, or macOS.
 
-Azure Files now supports on-premises Active Directory Domain Service Authentication, which enables User personalization layers and Profile Management to use Azure Files.
-
-For full details, see [on-premises Active Directory Service Authentication over SBM for Azure File shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-active-directory-enable).
+Azure Files support for on-premises Active Directory Domain Service Authentication enables Citrix User personalization layers and Profile Management to use Azure Files. For details, see [on-premises Active Directory Service Authentication over SBM for Azure File shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-active-directory-enable).
 
 ## Requirements
 
-In addition to the [User personalization layer requirements](/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html) and [Profile Management requirements](/en-us/profile-management/current-release/system-requirements.html), Azure Files requires that your on-premises domain controller is synchronized to your Azure Active Directory.
+In addition to the requirements for [User personalization layer](/en-us/citrix-virtual-apps-desktops/install-configure/user-personalization-layer.html) and [Profile Management](/en-us/profile-management/current-release/system-requirements.html), Azure Files requires that your on-premises domain controller is synchronized to your Azure Active Directory.
 
 ## Overview
 
