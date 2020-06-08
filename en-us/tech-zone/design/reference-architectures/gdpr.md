@@ -148,6 +148,8 @@ the workspace: available printers, ability to access network and local drives, o
 
 To learn more about hardening, refer to the [System Hardening white paper](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/system-hardening-for-xenapp-and-xendesktop.pdf).
 
+Given that users often connect from untrusted devices and locations, additional security layers are often welcomed. Citrix [App Protection Policies](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/secure/app-protection.html) provides anti-keylogging and anti-screen-capturing while users are connected in virtual app and desktop sessions. [Session Watermarking](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-watermark-policy-setting.html) allows administrators to place customizable text overlays in sessions. [Session Recording](https://docs.citrix.com/en-us/session-recording) saves the entire video stream of a session to a file for later playback. These features help deter and remediate possible data exfiltration events.
+
 **Aggregation of Applications with Different Trust Levels**
 [![Citrix Workspace helps enable GDPR compliance](/en-us/tech-zone/design/media/reference-architectures_gdpr_apps-trust-levels.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_apps-trust-levels.png)
 
