@@ -5,6 +5,10 @@ layout: doc
 
 Any architectural design effort confronts decisions that need to be made to ensure that the expected outcome can be delivered to meet business objectives and success criteria for a Citrix Workspace deployment. Design Decision will help you guide through the decision process to configure, optimize, and deploy your solution in its best way.
 
+## Citrix Networking
+
+[Citrix SD-WAN for Home Offices](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) - Understand the design decisions required to implement the Citrix SD-WAN 110 in a Home Office to provide secure, enhanced, and resilient connectivity.
+
 ## Citrix Virtual Apps and Desktops
 
 [Baseline Policy Design](/en-us/tech-zone/design/design-decisions/baseline-policy-design.html) - Policies provide the basis to configure and fine-tune Citrix Virtual Apps and Desktops environments, allowing organizations to control connection, security and bandwidth settings based on various combinations of users, devices or connection types. Learn about the different decisions related to the baseline policy design.
