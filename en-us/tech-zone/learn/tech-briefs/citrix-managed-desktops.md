@@ -110,7 +110,7 @@ These prebuilt images have just the operating system and the Virtual Delivery Ag
 
 The admin can import their own image of one of these OSes (with all the organizations apps and configurations done it). Or build an image from the console using one of these images as the base to get the master image in the desired configuration.
 
-![Build_Image_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_8-Build-your-image.png)
+![Build_Image_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_8-build-your-image.png)
 
 Visit this [link](/en-us/citrix-managed-desktops/security.html) to understand how the responsibility of the upkeep is shared between Citrix and the customer. The images created can then be updated and the updated image can be used to spawn new VMs.
 
