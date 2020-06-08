@@ -124,7 +124,7 @@ To configure directory and file level NTFS permissions:
 1.  Using RDP, connect to a virtual machine that is domain joined.
 1.  Open a command prompt, and run the following cmdlet to mount the Azure file share and assign it a drive letter:
     `net use <drive-letter> UNC-path`
-    Example: `net use S:\ \\uplshare.file.core.windows.net\uplshare`
+    Example: `net use S:\ \\uplshare.file.core.windows.net\uplfolder`
 1.  Once the share is mounted, set the following permissions on the mounted share.
 
 | Setting name | Value | Apply to |
