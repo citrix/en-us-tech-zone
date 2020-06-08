@@ -12,7 +12,7 @@ description: Optimize SaaS access for branch users by tunneling session traffic 
 
 Citrix SD-WAN Cloud Direct extends Citrix SD-WAN optimal routing and delivery optimization benefits to SaaS. The service tunnels branch office endpoint traffic, to the front door of popular SaaS sites, via PoPs hosted at major Internet Exchanges.
 
-[![Citrix SD-WAN Cloud Direct](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_SDWAN-CDs.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_SDWAN-CDs.png)
+[![Citrix SD-WAN Cloud Direct](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_sdwan-cds.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-cloud-direct_sdwan-cds.png)
 
 [Citrix SD-WAN Cloud Direct](/en-us/citrix-sd-wan-center/11/cloud-direct-service.html) virtually bundles multiple branch office internet access links such as DSL, Cable, and LTE. It creates redundant UDP tunnels. On one end is a Citrix SD-WAN Cloud Direct process, hosted on branch office SD-WAN appliances. On the other end are gateways hosted in Citrix SD-WAN Cloud Direct PoPs. The gateways are hosted in Points of Presence (PoP) at Internet Exchanges, near popular SaaS sites. It is able to utilize and monitor each link within the bundles to mitigate against data link or network issues in the first mile. The first mile is the segment of the circuit between the branch office and the ISP PoP where issues often occur. Further it aides with optimal transport of sessions throughout their path across the internet to target sites in the cloud.
 

@@ -146,7 +146,7 @@ To better determine the potential cost savings with Autoscale, Citrix conducted 
 
 This resulted in the following user load per virtual machine instance:
 
-[![Autoscale - Session per machine for different Azure VM sizes](/en-us/tech-zone/learn/media/tech-briefs_autoscale_9-Sessions-per-machine-vs-Azure-machine-size.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_9-Sessions-per-machine-vs-Azure-machine-size.png)
+[![Autoscale - Session per machine for different Azure VM sizes](/en-us/tech-zone/learn/media/tech-briefs_autoscale_9-sessions-per-machine-vs-azure-machine-size.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_9-sessions-per-machine-vs-azure-machine-size.png)
 
 The scalability numbers are used to provide sizing guidance for the following three scenarios.
 
