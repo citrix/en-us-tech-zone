@@ -10,7 +10,9 @@ description: Learn how to deploy Azure Files for use with Citrix User personaliz
 
 Azure Files offers fully managed file shares in the cloud, and accessible using Server Message Block (SMB) protocol. Azure Files shares can be mounted simultaneously in the cloud and on-premises, on Windows, Linux, or macOS.
 
-Azure Files support for on-premises Active Directory Domain Service Authentication enables Citrix User personalization layers and Profile Management to use Azure Files. For more about this feature, see [on-premises Active Directory Service Authentication over SMB for Azure File shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-active-directory-enable).
+Azure Files support for on-premises Active Directory Domain Service Authentication enables Citrix User personalization layers and Citrix Profile Management to use Azure Files. For more about Active Directory Domain Service Authentication, see [on-premises Active Directory Service Authentication over SMB for Azure File shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-active-directory-enable).
+
+This article explains how to set up Azure Files to use with Citrix User personalization layers and Citrix Profile Management.
 
 ## Requirements
 
