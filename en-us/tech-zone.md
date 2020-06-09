@@ -251,6 +251,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Build - Deployment Guides](/en-us/tech-zone/build/deployment-guides.html)
 
+[Deploying Azure Files for Citrix Profile Management and Citrix User personalization layers](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html) - Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management.
+
 [Migrating Citrix Virtual Apps and Desktops from on-premises to Citrix Cloud](/en-us/tech-zone/build/deployment-guides/cvads-migration.html) - Learn how to migrate your on-premises Citrix Virtual Apps and Desktops environment to Citrix Cloud.
 
 ### [Build - Tech Papers](/en-us/tech-zone/build/tech-papers.html)
