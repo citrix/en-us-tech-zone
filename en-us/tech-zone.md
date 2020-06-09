@@ -115,9 +115,11 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
 
-[Citrix SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html) - Learn how to implement Citrix SD-WAN rapidly to provide secure, enhanced, and resilient connectivity between your public cloud and data center environments.
+[SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html) - Learn how to implement Citrix SD-WAN rapidly to provide secure, enhanced, and resilient connectivity between your public cloud and data center environments.
 
-[Citrix Web Application Firewall Deployment](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) - Learn how to deploy Citrix Web Application Firewall (WAF) standalone or as a part of a Citrix ADC deployment. Protect web servers or applications from various attacks including Cross Site Scripting, SQL Injection, Buffer Overflow, Forceful Browsing and more. Deploy in any public cloud or your on-premises environment.
+[SD-WAN for Home Offices](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html) - Learn how to implement a POC of the Citrix SD-WAN 110 appliance to demonstrate how to work from home with secure, enhanced, and resilient connectivity.
+
+[Web Application Firewall Deployment](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) - Learn how to deploy Citrix Web Application Firewall (WAF) standalone or as a part of a Citrix ADC deployment. Protect web servers or applications from various attacks including Cross Site Scripting, SQL Injection, Buffer Overflow, Forceful Browsing and more. Deploy in any public cloud or your on-premises environment.
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
@@ -126,6 +128,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [Intelligent Traffic Management](/en-us/tech-zone/learn/tech-briefs/itm.html) - Citrix Intelligent Traffic Management (ITM) service brings “intelligence” to DNS by incorporating a broad set of capabilities to determine the best query response based on analysis of real time conditions.
 
 [SD-WAN Cloud Direct service](/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html) - Optimize SaaS access for branch users by tunneling session traffic to Internet Exchanges with direct connectivity to popular sites.
+
+[SD-WAN for Home Offices](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-home-office.html) - Learn how to work from home with secure, enhanced, and resilient connectivity using the Citrix SD-WAN 110 appliance.
 
 [SD-WAN for Workspace](/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html) - Provides optimal network connectivity between Enterprise branch offices and their Workspace hosted in data resource locations on-premises or in the cloud.
 
@@ -142,6 +146,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [SD-WAN](/en-us/tech-zone/learn/tech-insights/sdwan.html) - Optimize delivery of Citrix Virtual Apps and Desktops traffic with Citrix SD-WAN.
 
 [YouTube Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/youtube-optimizations.html) - Optimize YouTube delivery in branch offices with Citrix Virtual Apps and Desktops and Citrix SD-WAN.
+
+### [Design - Design Decisions](/en-us/tech-zone/design/design-decisions.html)
+
+[Citrix SD-WAN for Home Offices](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) - Understand the design decisions required to implement the Citrix SD-WAN 110 in a Home Office to provide secure, enhanced, and resilient connectivity.
 
 ### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
 
@@ -242,6 +250,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [Virtual Apps and Desktops Service](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html) - Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
 
 ### [Build - Deployment Guides](/en-us/tech-zone/build/deployment-guides.html)
+
+[Deploying Azure Files for Citrix Profile Management and Citrix User personalization layers](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html) - Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management.
 
 [Migrating Citrix Virtual Apps and Desktops from on-premises to Citrix Cloud](/en-us/tech-zone/build/deployment-guides/cvads-migration.html) - Learn how to migrate your on-premises Citrix Virtual Apps and Desktops environment to Citrix Cloud.
 
