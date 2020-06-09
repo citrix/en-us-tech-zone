@@ -24,8 +24,7 @@ Before diving into the specific graphics policies, let’s review how we categor
 
 As we deliver graphic content for applications or desktops the HDX graphics encoding engine, Thinwire, dynamically categorizes display data into three types:
 
-*  Text
-*  Simple Images and Solid Colors
+*  Text, Simple Images and Solid Colors
 *  Static Image Content
 *  Moving (or Fluid) Images
 
@@ -36,7 +35,7 @@ In the example above, text or simple images are highlighted in blue, static imag
 Within Citrix Virtual Apps and Desktops, Thinwire can take different approaches for display analysis, compression, and delivery: Citrix adapts the use of industry leading standards, H.264, and H.265 for efficient delivery of high-quality video content in its “Full-Screen” and “Selective” codec implementations.
 
 *  Choosing to **Configure Thinwire to not use the Video Codec** or **Configure Thinwire to use the Video Codec for Actively Changing Regions** allows Thinwire to sense regions of transient content (fluid images or video) and encodes it based on set policy and capabilities detected on the endpoint. Thinwire encodes these “selected” (or transient) regions either as Adaptive JPEG or H.264 / H.265. Adaptive JPEG and “Selective” H.264 / H.265 are considered subfeatures as Thinwire is the core technology. The remaining, non-transient regions (encoded as JPEG and Run-Length Encoding (RLE)) are then combined to complete the in-session display.
-*  Choosing to **Configure Thinwire to use the Codec For the Entire Screen** tell Thinwire to treat the entire screen as transient content, except for text (by default), and encodes display data using either H.264 or H.265 video codecs. Text is then overlaid onto the screen to provide a complete image. H.265 achieves higher compression over H.264 without compromising quality. However, H.265 is expensive in terms of processing and is only supported when used with [select GPUs](/en-us/citrix-workspace-app-for-windows/configure.html#h265-video-encoding) on the Virtual Delivery Agent (VDA). H.265 cannot be used when CPU encoding is used. Additionally, H.265 compatible hardware, in the form of GPU or purpose-built thin client, is required for decoding H.265 display data on the client endpoint. Review vendor documentation to determine H.265 supportability for your endpoint hardware.
+*  Choosing to **Configure Thinwire to use the Codec For the Entire Screen** tells Thinwire to treat the entire screen as transient content, except for text (by default), and encodes display data using either H.264 or H.265 video codecs. Text is then overlaid onto the screen to provide a complete image. H.265 achieves higher compression over H.264 without compromising quality. However, H.265 is expensive in terms of processing and is only supported when used with [select GPUs](/en-us/citrix-workspace-app-for-windows/configure.html#h265-video-encoding) on the Virtual Delivery Agent (VDA). H.265 cannot be used when CPU encoding is used. Additionally, H.265 compatible hardware, in the form of GPU or purpose-built thin client, is required for decoding H.265 display data on the client endpoint. Review vendor documentation to determine H.265 supportability for your endpoint hardware.
 
 As H.264 compatibility has a broader base, we focus on Full-Screen H.264 and Selective H.264 within this article unless otherwise noted.
 
@@ -88,7 +87,7 @@ The **For Actively Changing Regions** graphics mode is our most balanced setting
 
 At its core this mode is leveraging JPEG for still images, RLE for text, simple images, and solid color blocks, as well as bitmap caching for areas of the screen that are determined by the VDA to be static. The VDA continuously analyzes the screen for regions of fluid movement, such as multimedia, and selectively uses **H.264 / H.265** to encode the fluid region.
 
-As illustrated below, H.264 / H.265 is “Inactive” until regions of fluid movement are detected The VDA then transitions to H.264 / H.265 to encode the selected region during fluid movement and returns to an “Inactive” state once the selected region no longer contains fluid content.
+As illustrated below, H.264 / H.265 is “Inactive” until regions of fluid movement are detected. The VDA then transitions to H.264 / H.265 to encode the selected region during fluid movement and returns to an “Inactive” state once the selected region no longer contains fluid content.
 
 ![HDX Graphics 2](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_001.png)
 
@@ -108,9 +107,9 @@ The **Do Not Use Video Codec** policy setting is the default fallback method for
 
 The **For the Entire Screen** graphics mode setting configures the VDA to encode all display data using H.264 / H.265, except for text. Text is encoded using RLE and is overlaid with the remainder of the screen. If **Optimize for 3D Graphics Workloads** is enabled the entire screen, including text, is encoded as H.264 / H.265.
 
-Configuring Thinwire to use the Video Codec for the Entire Screen is designed for the heavy multimedia use-case, where larger regions of the screen are in motion Higher compression and quality is achieved at the expense of CPU and server scalability.
+Configuring Thinwire to use the Video Codec for the Entire Screen is designed for the heavy multimedia use-case, where larger regions of the screen are in motion. Higher compression and quality is achieved at the expense of CPU and server scalability.
 
-On its own, this mode provides a good user experience when heavy multimedia, 3-D modeling, or CAD drawing applications are in use. The CPU can quickly become a bottleneck, if undersized, resulting in poor performance and user experience under heavy multimedia conditions Consider GPU offload capabilities to supplement this graphics mode while using these application types.
+On its own, this mode provides a good user experience when heavy multimedia, 3-D modeling, or CAD drawing applications are in use. The CPU can quickly become a bottleneck, if undersized, resulting in poor performance and user experience under heavy multimedia conditions. Consider GPU offload capabilities to supplement this graphics mode while using these application types.
 
 By default [YUV420](https://en.wikipedia.org/wiki/YUV) is used as color space. With Full-Screen H.264, you can choose between YUV420 or YUV444:
 
@@ -135,7 +134,7 @@ Furthermore, review our **Use Cases** Section below to discover how these additi
 
 ## CPU or GPU
 
-By default, all processing for encoding graphics occurs within the CPU on the VDA AMD, Intel, and NVIDIA graphics cards are currently supported to offload encoding to the GPU before being sent to your endpoint for decoding.
+By default, all processing for encoding graphics occurs within the CPU on the VDA. AMD, Intel, and NVIDIA graphics cards are currently supported to offload encoding to the GPU before being sent to your endpoint for decoding.
 
 Offloading graphics encoding to a GPU will free up resources on the CPU for other tasks, resulting in a better overall experience for the end-user.
 
@@ -255,9 +254,7 @@ The build-in graphics status indicator can be enabled through Citrix policy by e
 
 ## Key Takeaways
 
-The **Use Video Codec for Compression** is the main policy to configure Thinwire to Not Use Video Codec (Adaptive JPEG), For Actively Changing Regions (Selective H.264/H.265), or Thinwire for the Entire Screen (Full Screen H.264/H.265).
-
-Each HDX graphics mode has benefits and trade-offs in terms of resource consumption, whether CPU or network utilization. Resource consumption, particularly CPU, affects server scalability.
+The **Use Video Codec for Compression** policy lets you choose between the different HDX graphics modes illustrated above. Each mode has its benefits and trade-offs in terms of resource consumption, whether it be CPU or network utilization. Resource consumption, particularly CPU, affects server scalability.
 
 Additional policies, such as Visual Quality, Target Framerate, and others can be customized to offset the resource consumption at the expense of minor visual quality, or increase quality where it is needed most. Customize these policies to fit the uses-cases within your own environment. Refer to the Visio Diagram to guide you through the process.
 
