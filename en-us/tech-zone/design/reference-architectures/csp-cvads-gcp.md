@@ -252,16 +252,26 @@ Considerations:
 
 *  Scroll to the bottom and click Create.
 
+[![CSP-Image-28](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_028.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_028.png)
+
 #### Configure the management
 
 *  Still on the Compute Engine > VM Instances screen, under Connect, click the arrow and select Set windows password.
+
+[![CSP-Image-29](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_029.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_029.png)
 
 Considerations:
 
 *  This configures the local windows admin username and password, not a domain user password.
 *  This process assumes basic windows administration knowledge.
 *  On the Set new Windows password window, enter a username and click SET.
+
+[![CSP-Image-30](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_030.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_030.png)
+
 *  On the New Windows password window, copy the password and click CLOSE.
+
+[![CSP-Image-31](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_031.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_031.png)
+
 *  Connect to the instance via RDP and start by installation the following Windows features from server manager:
     *  Role Administration Tools
     *  ADDS and AD LDS Tools
@@ -270,14 +280,23 @@ Considerations:
     *  AD DS Snap-ins and Command-Line Tools
     *  Group Policy Management Console (GPMC)
     *  DNS Manager
+
+    [![CSP-Image-32](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_032.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_032.png)
+
 *  Join the instance to the domain and restart it.
+
+[![CSP-Image-33](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_033.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_033.png)
 
 Considerations:
 
 *  Remember that the Managed Microsoft AD service deployment configures GCP Cloud DNS to forward DNS queries to the managed domain controllers, DNS resolution should automatically work when joining the instance to the domain.
 *  Optionally, reconnect to the instance and launch any management tool to perform specific configurations like creating OUs, users, configuring DNS records, etc.
-2.1.8 Create a GCP service account
+
+#### Create a GCP service account
+
 *  On the navigation menu go to IAM & Admin > Service Accounts, then click CREATE SERVICE ACCOUNT.
+
+[![CSP-Image-34](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_034.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_034.png)
 
 Considerations:
 
@@ -288,22 +307,33 @@ Considerations:
     *  Service account description: optional description
 *  Click CREATE.
 
+[![CSP-Image-35](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_035.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_035.png)
+
 Considerations:
 
 *  Service account names must be unique.
 *  On the Grant this service account access to project screen, click CANCEL.
+
+[![CSP-Image-36](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_036.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_036.png)
 
 Considerations:
 
 *  Service account permissions will be configured shortly.
 *  On the Service accounts screen, click the Actions menu (three dots) for your service account and select Create key.
 
+[![CSP-Image-37](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_037.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_037.png)
+
 *  On the Create private key screen, choose JSON and click CREATE.
+
+[![CSP-Image-38](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_038.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_038.png)
 
 Considerations:
 
 *  The private key will be downloaded to your computer, we will utilize the contents of the key file when creating a hosting connection in Citrix Cloud.
 *  On the Private key saved to your computer window, click CLOSE.
+
+[![CSP-Image-39](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_039.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_039.png)
+
 *  On the navigation menu, go to IAM & Admin > IAM, and click ADD.
 *  On the Add members screen, enter the following information.
     *  New members: the new service account.
@@ -314,7 +344,12 @@ Considerations:
         *  Service Account User
         *  Cloud Datastore User
     *  Click SAVE.
+
+[![CSP-Image-40](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_040.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_040.png)
+
 *  Back on the IAM screen, search for the Cloud Build Service Account and click the edit pencil icon on the far right.
+
+[![CSP-Image-41](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_041.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_041.png)
 
 *  On the Edit permissions page, enter the following information:
     *  Roles:
@@ -323,10 +358,15 @@ Considerations:
         *  Service Account User
     *  Click SAVE.
 
-2.2 CITRIX COMPONENTS
-2.2.1 Create the Cloud Connector VM
+[![CSP-Image-42](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_042.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_042.png)
+
+### CITRIX COMPONENTS
+
+#### Create the Cloud Connector VM
 
 *  On the VM instances page, repeat steps 2.1.6 and 2.1.7 to create a Windows instance and join it to the domain, this will be utilized as the Citrix Cloud Connector.
+
+[![CSP-Image-43](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_043.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_043.png)
 
 Considerations:
 
@@ -334,46 +374,105 @@ Considerations:
 *  On a production deployment, at least 2 Cloud Connectors must be deployed to avoid possible service disruption.
 *  Once the instance is created, connect to it via RDP and use a web browser to navigate to <https://citrix.cloud.com.>
 
+[![CSP-Image-44](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_044.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_044.png)
+
 *  Enter your Citrix Cloud credentials and click Sign-in.
+
+[![CSP-Image-45](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_045.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_045.png)
+
 *  Under Domains, click Add New.
+
+[![CSP-Image-46](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_046.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_046.png)
+
 *  On the Domains tab under Identity and Access Management, click +Domain.
+
+[![CSP-Image-47](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_047.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_047.png)
+
 *  On the Add a Cloud Connector window click Download.
+
+[![CSP-Image-48](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_048.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_048.png)
+
 *  Save the cwcconnector.exe file to the instance.
+
+[![CSP-Image-49](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_049.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_049.png)
+
 *  Right-click the cwcconnector.exe file and select Run as administrator.
+
+[![CSP-Image-50](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_050.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_050.png)
+
 *  On the Citrix Cloud Connector window, click Sign-in.
+
+[![CSP-Image-51](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_051.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_051.png)
+
 *  On the sign-in window, enter your Citrix Cloud credentials and click Sign-in.
+
+[![CSP-Image-52](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_052.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_052.png)
+
 *  When the installation finishes, click Close.
 
-Considerations:
+[![CSP-Image-53](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_053.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_053.png)
 
-*  Cloud Connector installation will take up to 5 minutes.
-2.2.2 Create the VDA master image VM
+#### Considerations
+
+Cloud Connector installation will take up to 5 minutes
+
+### Create the VDA master image VM
+
 *  On the VM instances page, repeat steps 2.1.10 and 2.1.11 to create a Windows instance and join it to the domain to be utilized as the Citrix VDA.
+
+[![CSP-Image-54](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_054.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_054.png)
 
 Considerations:
 
 *  This process assumes previous Citrix administration knowledge.
 *  Once the instance is created, connect to it via RDP and use a web browser to navigate to <https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/> and download the latest Citrix VDA version.
 
+[![CSP-Image-55](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_055.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_055.png)
+
 Considerations:
 
 *  Citrix credentials will be required to download the VDA software.
 *  Either the LTSR or CR version can be installed.
 *  Right-click the VDA installer file and select Run as administrator.
+
+[![CSP-Image-56](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_056.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_056.png)
+
 *  On the Environment page, select Create a master MCS image.
+
+[![CSP-Image-57](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_057.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_057.png)
+
 *  On the Core Components page, click Next.
+
+[![CSP-Image-58](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_058.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_058.png)
+
 *  On the Additional Components page, select the components that best apply to your requirements and click Next.
+
+[![CSP-Image-59](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_059.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_059.png)
 
 *  On the Delivery Controller page, enter the following information:
     *  Select “Do it manually”
     *  Enter the FQDN of each Cloud Connector
     *  Click Test Connection and if you get a green checkmark, click Add
 *  Click Next.
+
+[![CSP-Image-60](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_060.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_060.png)
+
 *  On the Features page, check the boxes of the features you want to enable based on your deployment needs, then click Next.
 
+[![CSP-Image-61](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_061.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_061.png)
+
 *  On the Firewall page, select Automatically and click Next.
+
+[![CSP-Image-62](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_062.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_062.png)
+
 *  On the Summary page, ensure all the details are correct and click Install.
+
+[![CSP-Image-63](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_063.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_063.png)
+
 *  The instance will need to be restarted during installation.
+
+[![CSP-Image-64](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_064.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_064.png)
+
 *  After the installation finishes, on the Diagnostics page, select the option that best fits your deployment needs and click Next.
 
 *  On the Finish page, make sure Restart machine is checked and click Finish.
