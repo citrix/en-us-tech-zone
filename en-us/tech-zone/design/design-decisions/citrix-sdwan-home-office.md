@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Understand the design decisions required to implement the Citrix SD-WAN 110 in a Home Office to provide secure, enhanced, and resilient connectivity
+description: Understand the design decisions required to implement the Citrix SD-WAN 110 in a Home Office to provide secure, enhanced, and resilient connectivity.
 ---
 # Citrix SD-WAN for Home Offices Design Decisions
 
@@ -40,13 +40,13 @@ For optimal security in extending parts of the corporate network to remote resou
 
 One security conscious approach would be to place SD-WAN in the path of Citrix Workspace traffic delivered through Citrix Gateway. In the Data Center network, the incoming front-end traffic is isolated from back-end traffic, between the CVAD infrastructure servers and services. This allows the use of separate demilitarized zones (DMZs) to isolate front-end and back-end traffic flows along with granular firewall control and monitoring.
 
-[![Citrix Gateway ICA Proxy](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_gatewayicaproxy.png)](design-decisions_citrix-sdwan-home-office_gatewayicaproxy.png)
+![Citrix Gateway ICA Proxy](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_gatewayicaproxy.png)
 
 It is important to understand that in this scenario, the traffic that is delivered through the SD-WAN overlay will be encrypted between the user endpoint and the Citrix Gateway, meaning the SD-WAN will only see encrypted payload. Encrypted traffic means the HDX Auto-QoS feature will not work, along with detailed reporting.  HDX Auto-QoS is designed to dynamically investigate the HDX session when delivered between the SD-WAN peers and allow differentiation between the different channels that comprise a single HDX session.  This is also known as Mult-Stream ICA, which enables prioritization of interactive channels above the bulk data channels, resulting in improved end-user experience. A key component with the integration of Citrix SD-WAN is that that the CVAD servers can keep the session in Single-Stream ICA, which the SD-WAN dynamically delivers Mult-Stream ICA across the Virtual Path / Overlay.
 
 An alternative approach would be to set the Citrix Gateway in “transparent mode”. In transparent mode, the client endpoints can access CVAD resources directly, with no intervening virtual servers on Gateway, thus the HDX traffic is not transmitted as SSL encrypted, allowing the SD-WAN devices to see the HDX protocol and initiate the Auto-QoS capabilities. The Auto-QoS feature on SD-WAN requires usage of CVAD LTSR 7-1912 or higher release.  In this scenario the HDX traffic is still protected as it traverses the WAN, since SD-WAN peers establish AES encrypted tunnels across all available WAN paths between the SD-WAN devices in the network. In addition there is a built-in authentication process with encryption key rotation helping to ensure key regeneration for every Virtual Path at intervals of 10-15 minutes, so that only trusted peers are allowed on the WAN overlay (Here you may find more information regarding [Citrix SD-WAN Security Best Practices](/en-us/citrix-sd-wan/11-1/best-practices/security-best-practices.html))
 
-[![Citrix Gateway Transparent Mode](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_gatewaytransparentmode.png)](design-decisions_citrix-sdwan-home-office_gatewaytransparentmode.png)
+![Citrix Gateway Transparent Mode](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_gatewaytransparentmode.png)
 
 In a deployment involving Citrix Virtual Apps and Desktop, CVAD keeps data and workloads secure in the Data Center. Even internet traffic access through those resources (e.g. VDAs) predominately is handled through local Internet links at the Data Center and internet traffic does not actually traverse the new WAN overlay to the remote user. If HDX redirection is enabled, then only in certain scenarios does Internet traffic like Microsoft Teams get broken out of the HDX session for the remote client host to fetch it using local internet sources. Here, the Home User SD-WAN can be enabled for Internet Service to route that traffic appropriately, either directly to Office 365 cloud, or Secure Web Gateway services, or direct to Internet breakout.
 
@@ -54,7 +54,7 @@ In a deployment involving Citrix Virtual Apps and Desktop, CVAD keeps data and w
 
 Another option would be to backhaul Home User traffic and limit resource and connectivity to Corporate Network through Firewalled DMZs. Further, firewall policies on the SD-WAN devices can be centrally mandated to all SD-WAN devices in remote Home User networks to limit the traffic allowed on the “New WAN Overlay” to only certain applications, protocols, and/or Server IPs, etc.
 
-[![Firewall DMZ](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_firewalldmz.png)](design-decisions_citrix-sdwan-home-office_firewalldmz.png)
+![Firewall DMZ](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_firewalldmz.png)
 
 Selection of the network topology is central to planning the remote access architecture to ensure that it can support the necessary functionality, performance, and security requirements.  The design of the remote access architecture should be completed in collaboration with the security team to ensure adherence to corporate security requirements and standards. In either case, to address the typical pain points on the last mile of the Wide Area Network, the new SD-WAN overlay directly addresses issues typically found with shared internet access links available to most Home Users, making it a must-have solution to provide optimal user experience for happy and productive home workers.
 
@@ -62,7 +62,7 @@ Selection of the network topology is central to planning the remote access archi
 
 Additionally, Citrix SD-WAN allows segmenting the SD-WAN deployment for more security and manageability by using Virtual Routing and Forwarding. This capability on Citrix SD-WAN is called Routing Domains. Considering a network that already has a Citrix SD-WAN deployment, connecting remote offices to data centers, we can introduce a new Home User Routing Domain to separate Home User network traffic from Corporate network traffic. Each routing domain maintains its own unique route table on the SD-WAN devices. A Virtual Path can communicate all routing domains. On ingress of a packet into the tunnel, the packet is tagged based on the routing domain associated with the interface used to enter the system. Within the tunnel, each packet is tagged with its associated routing domain, and upon egress of the tunnel the associated routing table is used for proper delivery. The existing SD-WAN site deployment can leverage the Default Routing Domain, and a the new routing domain can be added to the head-end SD-WAN device leveraging a dedicated interface for limited access to limited Home User resources in the corporate network, as illustrated below.
 
-[![Routing Domains](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_routingdomains.png)](design-decisions_citrix-sdwan-home-office_routingdomains.png)
+![Routing Domains](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_routingdomains.png
 
 (Here you may find more information regarding [Citrix SD-WAN Routing Domains](/en-us/citrix-sd-wan/11-1/routing/virtual-routing-and-forwarding.html))
 
@@ -76,7 +76,7 @@ Rapid deployment of thousands of endpoints is easily accomplished through centra
 
 *  Providers:
     *  ISP #1 (only one)
-[![Single ISP Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_singleisp.png)](design-decisions_citrix-sdwan-home-office_singleisp.png)
+![Single ISP Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_singleisp.png)
 
 *  Benefits:
     *  Site-to-Site (enable many devices simultaneously connected to SD-WAN Remote Work Network), eliminating the need for multiple Point-to-Site VPN connections
@@ -103,7 +103,7 @@ Rapid deployment of thousands of endpoints is easily accomplished through centra
 *  Providers:
     *  ISP #1
     *  ISP #2
-[![Dual ISP Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_dualisp.png)](design-decisions_citrix-sdwan-home-office_dualisp.png)
+![Dual ISP Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_dualisp.png)
 
 *  Benefits:
     *  Site-to-Site with higher, aggregated, bandwidth simultaneously using multiple ISP WAN links
@@ -122,7 +122,7 @@ Rapid deployment of thousands of endpoints is easily accomplished through centra
 *  Providers:
     *  ISP #1
     *  LTE #1 (wireless transport used as second WAN link)
-[![ISP + LTE Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_isppluslte.png)](design-decisions_citrix-sdwan-home-office_isppluslte.png)
+![ISP + LTE Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_isppluslte.png)
 
 *  Benefits (in addition to benefits of Dual ISP):
     *  Simpler setup of second WAN link
@@ -138,7 +138,7 @@ Rapid deployment of thousands of endpoints is easily accomplished through centra
 *  Providers:
     *  ISP #1
     *  LTE #1 (used as second WAN link in Standby mode)
-[![ISP + LTE (standby) Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_ispplusltestandby.png)](design-decisions_citrix-sdwan-home-office_ispplusltestandby.png)
+![ISP + LTE (standby) Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_ispplusltestandby.png)
 
 *  Benefits (in addition to benefits of Single ISP):
     *  Cost can be managed with standby features of on-demand and last resort
@@ -154,7 +154,7 @@ Rapid deployment of thousands of endpoints is easily accomplished through centra
 *  Providers:
     *  LTE #1
     *  LTE #2
-[![LTE1 + LTE2 Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_lte1pluslte2.png)](design-decisions_citrix-sdwan-home-office_lte1pluslte2.png)
+![LTE1 + LTE2 Decision](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_lte1pluslte2.png)
 
 *  Benefits (in addition to benefits of Single ISP):
     *  Cost can be managed with standby features of on-demand and last resort

@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management
+description: Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management.
 ---
 # Set up Azure Files storage for User personalization layers and Citrix Profile Management
 
