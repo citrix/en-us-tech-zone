@@ -31,7 +31,7 @@ In this proof of concept scenario, a user authenticates to Citrix Workspace usin
 
 The animation shows a user accessing a web application with Citrix-provided SSO and secured with Citrix Access Control service.
 
- [![Citrix SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix_demo-video.gif)
+ [![Citrix SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_demo-video.gif)
 
 This demonstration shows a flow where the user launches the application from within Citrix Workspace, which uses the vpn-less connection to the data center. Because the user accesses an internal web app from an external device, the access request must come from within Citrix Workspace.
 
