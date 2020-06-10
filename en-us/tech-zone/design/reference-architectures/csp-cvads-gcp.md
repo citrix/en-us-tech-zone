@@ -475,8 +475,14 @@ Considerations:
 
 *  After the installation finishes, on the Diagnostics page, select the option that best fits your deployment needs and click Next.
 
+[![CSP-Image-65](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_065.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_065.png)
+
 *  On the Finish page, make sure Restart machine is checked and click Finish.
-2.2.3 Create a GCP hosting connection
+
+[![CSP-Image-66](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_066.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_066.png)
+
+### Create a GCP hosting connection
+
 *  Use a web browser to navigate to <https://citrix.cloud.com.>
 
 *  Enter your Citrix Cloud credentials and click Sign-in.
@@ -484,6 +490,8 @@ Considerations:
 
 *  Under Manage, select Full Configuration.
 *  In Citrix Studio, navigate to Citrix Studio > Configuration > Hosting and select Add Connection and Resources.
+
+[![CSP-Image-67](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_067.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_067.png)
 
 *  On the Connection page, click the radio button next to Create a new connection and enter the following information:
     *  Connection type: Google Cloud Platform
@@ -494,21 +502,33 @@ Considerations:
     *  Create virtual machines using: Studio tools (Machine Creation Services)
 *  Click Next.
 
+[![CSP-Image-68](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_068.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_068.png)
+
 Considerations:
 
 *  Citrix Studio Zones are created when you create a resource location and install at least one Cloud Connector.
 *  On the Region page, ensure the appropriate GCP project was populated, select the region where your Cloud Connector and VDA were deployed and click Next.
 
+[![CSP-Image-69](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_069.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_069.png)
+
 *  On the Region page, enter a name for the resources, select the appropriate Virtual Network and Subnet and click Next.
 
+[![CSP-Image-70](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_070.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_070.png)
+
 *  On the Scopes page, select the appropriate scope and click Next.
+
+[![CSP-Image-71](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_071.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_071.png)
 
 Considerations:
 
 *  A scope represents a collection of objects. Scopes are used to group objects in a way that is relevant to your organization. Objects can be in more than one scope.
 *  On the Summary page, ensure all the information is correct and click Finish.
-2.2.4 Create a Machine Catalog
+
+### Create a Machine Catalog
+
 *  In Citrix Studio, navigate to Citrix Studio > Machine Catalogs and select Create Machine Catalog.
+
+[![CSP-Image-72](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_072.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_072.png)
 
 *  On the Introduction page, click Next.
 *  On the Operating System page, select Multi-session OS and click Next.
@@ -520,8 +540,13 @@ Considerations:
     *  The machine catalog will use: machine that are powered managed
     *  Deploy machines using: Citrix Machine Creation Services (MCS)
     *  Resources: select your GCP hosting connection
+
+[![CSP-Image-73](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_073.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_073.png)
+
 *  Click Next.
 *  On the Master Image page, select the master image, the functional level (VDA version), and click Next.
+
+[![CSP-Image-74](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_074.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_074.png)
 
 *  On the Virtual Machines page, configure the number of virtual machines to deploy and click Next.
 
@@ -535,6 +560,8 @@ Considerations:
     *  OU: the OU where the computer accounts will be stored
     *  Naming scheme: naming convention to be utilized
 
+[![CSP-Image-75](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_075.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_075.png)
+
 Considerations:
 
 *  Pound signs will be replaced by numbers on the naming scheme.
@@ -543,6 +570,9 @@ Considerations:
 *  On the Windows Security pop-up, enter your domain credentials and click OK.
 *  Back on the Domain Credentials page, click Next.
 *  On the Scopes page, select a scope and click Next.
+
+[![CSP-Image-76](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_076.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_076.png)
+
 *  On the Summary page, enter a name and description and click Finish.
 2.2.5 Create a Delivery Group
 *  In Citrix Studio, navigate to Citrix Studio > Delivery Groups and select Create Delivery Group.
