@@ -62,7 +62,7 @@ Selection of the network topology is central to planning the remote access archi
 
 Additionally, Citrix SD-WAN allows segmenting the SD-WAN deployment for more security and manageability by using Virtual Routing and Forwarding. This capability on Citrix SD-WAN is called Routing Domains. Considering a network that already has a Citrix SD-WAN deployment, connecting remote offices to data centers, we can introduce a new Home User Routing Domain to separate Home User network traffic from Corporate network traffic. Each routing domain maintains its own unique route table on the SD-WAN devices. A Virtual Path can communicate all routing domains. On ingress of a packet into the tunnel, the packet is tagged based on the routing domain associated with the interface used to enter the system. Within the tunnel, each packet is tagged with its associated routing domain, and upon egress of the tunnel the associated routing table is used for proper delivery. The existing SD-WAN site deployment can leverage the Default Routing Domain, and a the new routing domain can be added to the head-end SD-WAN device leveraging a dedicated interface for limited access to limited Home User resources in the corporate network, as illustrated below.
 
-![Routing Domains](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_routingdomains.png
+![Routing Domains](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_routingdomains.png)
 
 (Here you may find more information regarding [Citrix SD-WAN Routing Domains](/en-us/citrix-sd-wan/11-1/routing/virtual-routing-and-forwarding.html))
 
