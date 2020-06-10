@@ -19,27 +19,27 @@ With remote work, users need access to internal web-based applications. Providin
 
 To improve the overall user experience, organizations must be able to unify all sanctioned apps, simplify user login operations while still enforcing authentication standards.
 
-[![Single Sign-on Overview](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_vpn-less-web-apps.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_vpn-less-web-apps.png)
+[![Single sign-on Overview](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_vpn-less-web-apps.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_vpn-less-web-apps.png)
 
-Organizations must be able to deliver and secure SaaS, web, Windows, Linux applications and desktops even though some of these these resources exist beyond the confines of the data center and are able to access resources outside of the data center. Citrix Workspace provides organizations with secure, vpn-less access to user-authorized resources.
+Organizations must be able to deliver and secure SaaS, web, Windows, Linux applications, and desktops even though some of these resources exist beyond the confines of the data center and are able to access resources outside of the data center. Citrix Workspace provides organizations with secure, vpn-less access to user-authorized resources.
 
-In this proof of concept scenario, a user authenticates to Citrix Workspace using Active Directory, Azure Active Directory, Okta, Google, or Citrix Gateway as the primary user directory. Citrix Workspace provides single sign-on services for a defined set of enterpise web applications.
+In this proof of concept scenario, a user authenticates to Citrix Workspace using Active Directory, Azure Active Directory, Okta, Google, or Citrix Gateway as the primary user directory. Citrix Workspace provides single sign-on services for a defined set of enterprise web applications.
 
-[![Single Sign-on Overview](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_identity-brokering-web-app.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_identity-brokering-web-app.png)
+[![Single sign-on Overview](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_identity-brokering-web-app.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_identity-brokering-web-app.png)
 
  If the Citrix Access Control Service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the web applications.
 
-The following animation shows a user accessing a web application with Citrix-provided SSO and secured with Citrix Access Control service.
+The animation shows a user accessing a web application with Citrix-provided SSO and secured with Citrix Access Control service.
 
- [![Citrix SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix_demo-video.gif)](/en-us/tech-zone/learn/media/ppoc-guides_access-control-web-citrix_demo-video.gif)
+ [![Citrix SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix_demo-video.gif)
 
-This demonstration shows a flow where the user launches the application from within Citrix Workspace, which uses the vpn-less connection to the data center. Because the user acesses an internal web app from an external device, the access request must come from within Citrix Workspace.
+This demonstration shows a flow where the user launches the application from within Citrix Workspace, which uses the vpn-less connection to the data center. Because the user accesses an internal web app from an external device, the access request must come from within Citrix Workspace.
 
 This proof of concept guide demonstrates how to:
 
 1.  Setup Citrix Workspace
 2.  Integrate a primary user directory
-3.  Incorporate Single Sign-On for Outlook Web Access, which is locatd within the data center
+3.  Incorporate Single sign-on for Outlook Web Access, which is located within the data center
 4.  Define website filtering policies
 5.  Validate the configuration
 
@@ -52,7 +52,7 @@ The initial steps for setting up the environment is to get Citrix Workspace prep
 
 ### Set Workspace URL
 
-1.  Connect to [Citrix Cloud](https://cloud.com) and log in as your administrator account
+1.  Connect to [Citrix cloud](https://cloud.com) and log in as your administrator account
 1.  Within Citrix Workspace, access **Workspace Configuration** from the upper-left menu
 1.  From the **Access** tab, enter a unique URL for the organization and select Enabled
 
@@ -60,7 +60,7 @@ The initial steps for setting up the environment is to get Citrix Workspace prep
 
 ### Enable Services
 
-From the Service Integration tab, enable the following services to support the secure access to web apps use case
+From the **Service Integration** tab, enable the following services to support the secure access to web apps use case
 
 1.  Gateway
 2.  Secure Browser
@@ -69,7 +69,7 @@ From the Service Integration tab, enable the following services to support the s
 
 ### Verify
 
-Citrix Workspace takes a few moments to update services and URL settings. From a browser, verify the custom Workspace URL is active. However, logon is not be available until a primary user directory gets defined and configured.
+Citrix Workspace takes a few moments to update services and URL settings. From a browser, verify the custom Workspace URL is active. However, logon is not available until a primary user directory gets defined and configured.
 
 ## Integrate a Primary User Directory
 
@@ -107,11 +107,11 @@ To successfully integrate web apps with Citrix Workspace, the administrator need
 
 *  Log into the Connector and change the admin password and set the network IP address
 *  To provide single sign-on for certain on-prem applications (SharePoint for example), configure an account to perform Kerberos Constrained Delegation
-*  Return to the browser window that downloaded the Connector image.  Select **Get Activation Code**
+*  Return to the browser window that downloaded the Connector image. Select **Get Activation Code**
 
 [![Gateway Connector 03](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_connector-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_connector-03.png)
 
-*  Add the activation code to the on-premises Gateway Connector configuration screen. If done correctly, the Gateway Connector will show an established connection with the Citrix Gateway Service.
+*  Add the activation code to the on-premises Gateway Connector configuration screen. If done correctly, the Gateway Connector shows an established connection with the Citrix Gateway Service.
 
 ### Configure Web App
 
@@ -130,7 +130,7 @@ To successfully integrate web apps with Citrix Workspace, the administrator need
 *  Add additional related domains as necessary for the web application
 *  Add an application specific icon if necessary
 
-***Note**: Enhanced security policies uses the related domains field to determine the URLs to secure. One related domain is automatically added based on the URL in the previous step. Enhanced security policies require related domains for the application. If the application uses multiple domain names, the must be added into the related domains field, which is often `*.<companyID>.company.com` (as an example `*.mail.citrix.com`)*
+***Note**: Enhanced security policies use the related domains field to determine the URLs to secure. One related domain is automatically added based on the URL in the previous step. Enhanced security policies require related domains for the application. If the application uses multiple domain names, each must be added into the related domains field, which is often `*.<companyID>.company.com` (as an example `*.mail.citrix.com`)*
 
 [![Setup Web App 03](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_add-web-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_add-web-app-03.png)
 
@@ -144,7 +144,7 @@ To successfully integrate web apps with Citrix Workspace, the administrator need
 
 [![Setup Web App 05](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_add-web-app-05.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_add-web-app-05.png)
 
-*  In the **Single Sign-On** window, select the appropriate SSO option for the web application.  This will often require help from the web app owner.  For OWA, select **Form-Based**
+*  In the **Single Sign-On** window, select the appropriate SSO option for the web application.  This often requires help from the web app owner.  For OWA, select **Form-Based**
 *  Enter the appropriate information for the web app's logon form. This is app-specific
 
 [![Setup Web App 06](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_add-web-app-06.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_add-web-app-06.png)
@@ -154,7 +154,7 @@ To successfully integrate web apps with Citrix Workspace, the administrator need
 
 ### Authorize Web App
 
-*  Within Citrix Cloud, select **Library** from the menu
+*  Within Citrix cloud, select **Library** from the menu
 
 [![Authorize Web App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_authorize-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_authorize-saas-app-01.png)
 
@@ -177,16 +177,16 @@ SP-Initiated Validation
 
 ## Define website filtering policies
 
-Citrix Access Control service provides website filtering within SaaS and Web apps to help protect the user from phishing attacks. The following shows how to setup website filtering policies.
+Citrix Access Control service provides website filtering within SaaS and Web apps to help protect the user from phishing attacks. The following shows how to set up website filtering policies.
 
-*  From Citrix Cloud, **Manage** within the Access Control tile
+*  From Citrix cloud, **Manage** within the Access Control tile
 
 [![Citrix Access Control 1](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_access-control-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_access-control-01.png)
 
 *  If this guide was followed, the **Set up end user authentication** step and the **Configure end user access to SaaS, web and virtual applciations** steps are complete. Select **Configure Content Access**
 *  Select **Edit**
 *  **Enable** the **Filter website categories** option
-*  Withint the **Blocked categories** box, select **Add**
+*  Within the **Blocked categories** box, select **Add**
 *  Select the categories to block users from accessing
 
 [![Citrix Access Control 2](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_access-control-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_access-control-02.png)
@@ -197,7 +197,7 @@ Citrix Access Control service provides website filtering within SaaS and Web app
 
 *  Do the same for allowed categories
 *  Do the same for redirected categories. These categories redirect to a Secure Browser instance
-*  If needed, admins can filter denied, allowed and redirected actions for specific URLs following the same process that was used for defining categories. Website URLs takes precedence over categories.
+*  If needed, admins can filter denied, allowed and redirected actions for specific URLs following the same process that was used for defining categories. Website URLs take precedence over categories.
 
 ## Validate the Configuration
 
@@ -232,7 +232,7 @@ An on-premises deployment for SharePoint can support different types of authenti
 
 ### Enhanced Security Policies Failing
 
-Users might experience the enhanced security policies (watermark, printing, or cliboard access) fail. Typically, this happens because the web application uses multiple domain names. Within the application configuration settings for the web app, there was an entry for **Related Domains**.
+Users might experience the enhanced security policies (watermark, printing, or clipboard access) fail. Typically, this happens because the web application uses multiple domain names. Within the application configuration settings for the web app, there was an entry for **Related Domains**.
 
 [![Setup Web App 03](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_add-web-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_add-web-app-03.png)
 
@@ -242,6 +242,6 @@ The enhanced security policies are applied onto to those related domains. To ide
 *  In Google Chrome and Microsoft Edge (Chromium version), select the three dots in the upper right side of the browser to show a menu screen.
 *  Select **More Tools**.
 *  Select **Developer Tools**
-*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains should be added like the following `*.domain.com`
+*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains are added like the following `*.domain.com`
 
 [![Enhanced Security Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_enhanced-security-troubleshooting-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_enhanced-security-troubleshooting-01.png)
