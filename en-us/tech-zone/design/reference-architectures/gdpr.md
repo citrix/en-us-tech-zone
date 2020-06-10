@@ -237,35 +237,28 @@ Mobile devices, particularly with BYOD ownership, present many challenges to ent
 
 Citrix Endpoint Management (CEM) is a market leading Unified Endpoint Management (UEM) component of the Citrix Workspace. It securely manages a variety of mobile endpoint platforms ranging from iOS, Android, Windows and Mac to rugged mobile devices and IoT devices. CEM also manages a variety of mobile apps on endpoints and supports various delivery mechanisms including virtualized, web & SaaS, public app store, native enterprise mobile apps and containerized mobile apps.
 
-In the following sections, we will discuss how this architecture can help you secure PII on mobile endpoints. Also, you'll find a
-comprehensive general Citrix XenMobile Security whitepaper here.
+In the following sections, we will discuss how this architecture can help you secure PII on mobile endpoints.
 
-(Citrix Secure Digital Workspace - mobility architecture diagram)
-
-The Citrix MDX Toolkit, the Citrix Endpoint Management MAM container technology, is a key part of the Citrix Endpoint Management solution to protect data. It provides end-to-end security maximizing protection of personal data, mitigating the risk of loss, by encrypting apps and data and managing secure transfer of data through 70+ [MDX Policies](https://docs.citrix.com/en-us/mdx-toolkit/policies-platform.html), including functional areas such as Authentication, Device Security, Networking, Encryption, Access Thresholds, App Interaction, App Restrictions, and other app-specific policies all applied on a per-app basis to mitigate the risk of PII loss. Citrix MDX technology uses its own encryption libraries to host apps securely on iOS and Android platforms on top of platform encryption provided by the iOS keychain or device hardware encryption modes on Android which may or may not be active (depends on device encryption and passcode policies).
+The [Citrix MDX Toolkit](https://docs.citrix.com/en-us/mdx-toolkit/overview.html), the Citrix Endpoint Management MAM container technology, is a key part of the Citrix Endpoint Management solution to protect data. It provides end-to-end security maximizing protection of personal data, mitigating the risk of loss, by encrypting apps and data and managing secure transfer of data through 70+ [MDX Policies](https://docs.citrix.com/en-us/mdx-toolkit/policies-platform.html), including functional areas such as Authentication, Device Security, Networking, Encryption, Access Thresholds, App Interaction, App Restrictions, and other app-specific policies all applied on a per-app basis to mitigate the risk of PII loss. Citrix MDX technology uses its own encryption libraries to host apps securely on iOS and Android platforms on top of platform encryption provided by the iOS keychain or device hardware encryption modes on Android which may or may not be active (depends on device encryption and passcode policies).
 
 MDX Technologies help provide end-to-end protection by managing encrypted data transfers between device and intranet
-data stores, as well as between managed apps. Once these apps are installed, Secure Hub, a mobile app that provides access to desktops, apps and data, ensures that the desired policies are continuously enforced, always keeping IT in control of the enterprise content on users’ devices. MDX also includes micro VPN, a per-app VPN that technology that integrates with Citrix Gateway. It can be utilized seamlessly by managed apps to encrypt data traffic to and from the Enterprise intranet.
-
-(MDX end-to-end protection diagram)
+data stores, as well as between managed apps. Once these apps are installed, Secure Hub, a mobile app that provides access to desktops, apps and data, ensures that the desired policies are continuously enforced, always keeping IT in control of the enterprise content on users’ devices. MDX also includes micro VPN, a per-app VPN that technology that integrates with Citrix Gateway. It can be utilized seamlessly by managed apps to encrypt data traffic to and from the enterprise intranet.
 
 #### Article 25 - Access to Personal Data
-Citrix Endpoint Management provides a variety of enrollment methods to validate user identity prior to initiating Mobile Device Management and/or Mobile App Management and subsequently access to secure data. For example, a two-factor solution can include One-time PIN (OTP) enrollment invitations in conjunction with Active Directory domain credentials. For environments with the highest security requirements, enrollment invitations may be linked to a device by SN, UDID, EMEI to uniquely identify the hardware.
+Citrix Endpoint Management provides a variety of enrollment methods to validate user identity prior to initiating Mobile Device Management or Mobile App Management and subsequently access to secure data. For example, a two-factor solution can include One-time PIN (OTP) enrollment invitations in conjunction with Active Directory domain credentials. For environments with the highest security requirements, enrollment invitations may be linked to a device by SN, UDID, EMEI to uniquely identify the hardware.
 
 Citrix Endpoint Management also provides a variety of multi-factor authentication options to validate the identity of enrolled user device/(s) including combinations of domain user name and password, RADIUS, Azure Active Directory, certificate, or derived credentials (a high security federal standard based on government issued personal identity verification cards). Certificate and domain authentication used in conjunction with a CEM pin is a popular secure combination that provides a great user experience.
 
-Through these links learn more about Citrix Endpoint Management's enrollment methods and multi-factor authentication options with Secure Hub. Also find deployment guidance based on security posture. (add in appropriate links here)
-
 #### Article 32 - Data Encryption in Transit
-Citrix Endpoint Management support data encryption in transit through several methods such as:
+Citrix Endpoint Management supports data encryption in transit through several methods such as:
 
 * Containerized with embedded VPN when apps utilize the CEM SDK
 * Platform-based utilizing a Citrix ADC VPN client
 * Through policies to utilize native platform OS VPN functionality
 
-The Citrix Endpoint Management SDK, or MDX technology, with microVPN which provides secure per-app VPN functionality to encrypt data in-transit between the mobile endpoint and intranet back-end. It works in conjunction with Secure Hub and Citrix ADC to ensure MDX app traffic is directed over a dedicated encrypted VPN. It is unique Citrix technology that provides seamless encryption of data in transit.
+The Citrix Endpoint Management SDK, or MDX technology, with microVPN provides secure per-app VPN functionality to encrypt data in-transit between the mobile endpoint and intranet back-end. It works in conjunction with Secure Hub and Citrix ADC to ensure MDX app traffic is directed over a dedicated encrypted VPN. It is unique Citrix technology that provides seamless encryption of data in transit.
 
-For more information see this [microVPN FAQ](https://support.citrix.com/article/CTX136914); configuration of Android platform per-app VPNs using Citrix VPN for Android or iOS; or the configuration of platform per-app VPNs using native functionality. (include these latter links??)
+For more information see this [microVPN FAQ](https://support.citrix.com/article/CTX136914); configuration of Android platform per-app VPNs using Citrix VPN for Android or iOS; or the configuration of platform per-app VPNs using native functionality.
 
 #### Article 32 - Data Encryption at Rest
 Citrix Endpoint Management supports data encryption at rest through the CEM MDX with Citrix-provided encryption libraries, or through platform level encryption directly or indirectly in conjunction with partner containerization solutions. 
