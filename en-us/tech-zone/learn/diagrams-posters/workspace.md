@@ -8,7 +8,7 @@ description: Conceptual architecture drawing for Citrix Workspace.
 
 **Author:** [Daniel Feller](https://twitter.com/djfeller)
 
-## User Experience
+## Diagrams
 
 Users are continuously blocked from getting work done because they are forced to remember which application they need, how to access it, how to authenticate to it and where to go within it. Citrix Workspaces improves the overall user experience by removing these challenges with the integration of multiple cloud-based services.
 
