@@ -11,6 +11,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
 
+[Secure Access to Internal Web Applications with Citrix SSO](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Access Control, utilizing Citrix-provided SSO.
+
 [Secure Access to SaaS Applications with Citrix SSO](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to set up a Citrix Access Control environment that uses Citrix as the single sign-on provider for Office 365 SaaS applications.
 
 [Secure Access to SaaS Applications with Okta SSO](/en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html) - Learn how to set up a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
