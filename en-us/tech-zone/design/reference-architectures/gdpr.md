@@ -232,7 +232,8 @@ Mobile devices, particularly with BYOD ownership, present many challenges to ent
 
 * Controllers need to provide Unified Endpoint Management across multiple platforms including control of critical software patches that include updates to address vulnerabilities.
 
-(Traditional mobile device application architecture diagram)
+**Traditional Mobile Application Architecture**
+[![Traditional Mobile Application Architecture](/en-us/tech-zone/design/media/reference-architectures_gdpr_mobile-apps.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_mobile-apps.png)
 
 Citrix Endpoint Management (CEM) is a market leading Unified Endpoint Management (UEM) component of the Citrix Workspace. It securely manages a variety of mobile endpoint platforms ranging from iOS, Android, Windows and Mac to rugged mobile devices and IoT devices. CEM also manages a variety of mobile apps on endpoints and supports various delivery mechanisms including virtualized, web & SaaS, public app store, native enterprise mobile apps and containerized mobile apps.
 
