@@ -7,7 +7,7 @@
 ## General Data Protection Regulation (GDPR) Overview
 
 GDPR is a set of data privacy rules that apply broadly to both companies in the European Union (EU) and the usage of data pertaining to EU residents. The GDPR went into full effect on May 25, 2018 across the EU. The official regulation includes several
-chapters which are further broken down into “articles”, or subsections. They describe specific provisions, which are frequently referenced by number or title in documents describing how to comply with their requirements.
+chapters which are further broken down into “articles,” or subsections. They describe specific provisions, which are frequently referenced by number or title in documents describing how to comply with their requirements.
 
 ### GDPR seeks to:
 
@@ -38,7 +38,7 @@ personal data is not made accessible without the individual’s intervention to 
 
 Citrix Workspace simplifies the management of your systems and data by centralizing
 services in the data center or cloud as a digital workspace. The goal of this document is to
-describe how it unifies applications, data, and desktops into a digital workspace for your teams and allows you to better align with GDPR requirements around data management, data monitoring, and information auditing.
+describe how it unifies applications, data, and desktops into a digital workspace for your teams. One that allows you to better align with GDPR requirements around data management, data monitoring, and information auditing.
 
 #### Citrix supports clients on their journey to GDPR compliance in 4 key ways:
 
@@ -53,7 +53,7 @@ describe how it unifies applications, data, and desktops into a digital workspac
 
 ## Data oriented approach to GDPR requirements
 
-Following the GDPR guidelines might be much easier for modern cloud companies than traditional enterprises. While most cloud companies have only a few centralized sources where personally identifiable information (PII) is stored, traditional companies potentially have hundreds, if not thousands, of different databases and data sources that need to be assessed, reviewed, and updated to meet the latest data privacy standards.
+Following the GDPR guidelines might be much easier for modern cloud companies than traditional enterprises. While most cloud companies have only a few centralized data sources where personally identifiable information (PII) is stored, traditional companies potentially have hundreds or thousands. These different data sources need to be assessed, reviewed, and updated to meet the latest data privacy standards.
 
 These data sources can range from traditional SQL databases to emails, digital documents, or even physical documents. With today's often aggressive timelines, many enterprises face a challenge to properly prepare and update systems as required. It is important to understand that the GDPR doesn’t affect only active data sources, but also all backups, disaster recovery sites and physical printouts.
 
@@ -100,7 +100,7 @@ Trying to secure traditional client/server applications, whether they are runnin
 The traditional approach was to secure each endpoint where these applications are installed. This involves management challenges, such as keeping all the endpoints up to date, encryption of the network traffic, data and workload encryption, implementing multi-factor authentication (MFA) and encryption of the locally stored or cached data. In traditional IT architecture, defenses need to be set up around all endpoints, applications, and networks and the whole environment is only as secure as the weakest point. This traditional approach to security has often failed due to the introduction of new concepts including mobile workforce, expansion of security perimeter
 with cloud computing and BYOD initiatives.
 
-Another common challenge for applications installed on traditional computers is to provide the same security functionality across the whole portfolio. It’s common to have a multigenerational IT portfolio residing on a single workstation, from Office-based applications (using Microsoft Access databases or custom plug-ins) through legacy Visual Basic to the latest professionally built applications. Making sure that applications with access to sensitive data support encryption, multifactor authentication and provide enough information for auditors has always been complicated.
+Another common challenge for applications installed on traditional computers is to provide the same security functionality across the whole portfolio. It’s common to have a multigenerational IT portfolio residing on a single workstation. From Office-based applications (using Microsoft Access databases or custom plug-ins) through legacy Visual Basic to the latest professionally built applications. Making sure that applications with access to sensitive data support encryption, multifactor authentication and provide enough information for auditors has always been complicated.
 
 **Traditional Client/Server App Delivery**
 [![Traditional client/server app delivery diagram](/en-us/tech-zone/design/media/reference-architectures_gdpr_client-server-apps_003.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_client-server-apps_003.png)
@@ -124,7 +124,7 @@ applications. With Citrix Virtual Apps and Desktops, all access to resources is 
 
 Aside from the monitoring and reporting of user access, all administrative changes and activities can be logged to a separate database. It is recommended to enable mandatory logging, where administrative activities are not allowed unless they are logged in the Configuration Logging database first. To learn more, refer to the [Configuration Logging Documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/1912/monitor/configuration-logging.html)
 
-Finally, for the most security-conscious environments, it is possible to create a separate set of user identities and automatically switch to them using the federation and virtual smart card service called Federated Authentication Service. This approach can be used to further minimize the impact of lateral movement and contain the security breach.
+Finally, for the most security-conscious environments, it is possible to create a separate set of user identities and automatically switch to them. This is done using the Federated Authentication Service. The approach can be used to further minimize the impact of lateral movement and contain the security breach.
 
 #### Article 32 - Data Encryption in Transit
 With Citrix Virtual Apps and Desktops, only screen pixels are transferred between the hosting server and the endpoint. Connection parameters are established during session initiation or reconnection. CVAD can ensure that traffic coming to and from the endpoint is always encrypted, even if the application itself doesn’t support encryption. This encryption can be enabled for any published application or desktop. For details on end-to-end encryption, refer to [this document](https://www.citrix.com/content/dam/citrix/en_us/documents/white-paper/end-to-end-encryption-with-xenapp-and-xendesktop.pdf)
@@ -143,7 +143,7 @@ There are different ways how data and applications can be protected and isolated
 Even if applications are hosted on the same server, it is common practice to isolate and secure them. CVAD servers are used to
 host well-defined, centrally managed sets of applications. This means that these servers can support more restrictive security hardening than traditional workstations. Application whitelisting solutions such as Citrix's Workspace Environment Management (WEM) Application Security feature are much more useful with servers built for specific applications rather than general workloads. Allowing only specific white-listed executables is much simpler on these special-purpose built servers than general workstations.
 
-Security is further enhanced by application of granular Citrix policies. These policies provide control over many aspects of
+Security is enhanced even more by application of granular Citrix policies. These policies provide control over many aspects of
 the workspace: available printers, ability to access network and local drives, or clipboard mapping among many more. A special template for “Security & Control” is included with all the best practices and recommended settings.
 
 To learn more about hardening, refer to the [System Hardening white paper](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/system-hardening-for-xenapp-and-xendesktop.pdf).
@@ -192,7 +192,7 @@ To understand how Citrix protects your privacy and personal data, refer to the [
 Logging, visibility, automation, and other capabilities are provided by Citrix Application Delivery Management (ADM). Refer to the [product landing page](https://www.citrix.com/products/citrix-application-delivery-management/) for more details on Citrix ADM.
 
 #### Article 32 - Data Isolation and Protection
-Citrix ADC is a reverse proxy and as such it benefits from its location in the network architecture. Typically it is in a DMZ or security zone where it accepts the front-end user connection, creates a secure connection to the back-end server, and has full visibility into requests and responses. Also, Citrix ADC can change the logic of the web traffic on the fly without requiring updates to the back-end application. This includes encryption of not only the packet header but also the body as it does deep packet inspection and rewrite.
+Citrix ADC is a reverse proxy and as such it benefits from its location in the network architecture. Typically it is in a DMZ or security zone. From here it accepts the front-end user connection, creates a secure connection to the back-end server, and has full visibility into requests and responses. Also, Citrix ADC can change the logic of the web traffic on the fly without requiring updates to the back-end application. This includes encryption of not only the packet header but also the body as it does deep packet inspection and rewrite.
 
 Citrix ADC can ensure that traffic coming to and from the browser is always encrypted, even if the web server itself doesn’t support encryption. This encryption can be enabled for any site proxied through the ADC. SSL offloading uses the ADC to perform the resource intensive SSL/TLS handshakes thereby offloading them from the back-end servers. For scenarios requiring end-to-end encryption, Citrix ADC can re-encrypt the connection to the back-end. This allows the ADC to inspect and apply security policies to the traffic. SSL bridging is available for when requirements demand that ADC plays no part in terminating the connection. Using Citrix ADC with Citrix ADM allows administrators to keep central configuration and visibility of the cipher suites in use, helping prevent negotiation of outdated ciphers.
 
