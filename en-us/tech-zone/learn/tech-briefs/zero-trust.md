@@ -24,10 +24,10 @@ A problem with this security model is the implied or implicit trust which is gra
 
 How do organizations secure the crown jewels with a complex model incorporating the following variables?
 
-* Users: Located in corporate offices and public locations
-* Devices: Mobile, Bring Your Own Device (BYOD), Choose Your Own Device (CYOD), and Corporate Own Personally Enabled (COPE)
-* Applications: (Intranet/SaaS, browser, virtualized, mobile)
-* Data access and storage (on-prem and cloud)
+*  Users: Located in corporate offices and public locations
+*  Devices: Mobile, Bring Your Own Device (BYOD), Choose Your Own Device (CYOD), and Corporate Own Personally Enabled (COPE)
+*  Applications: (Intranet/SaaS, browser, virtualized, mobile)
+*  Data access and storage (on-prem and cloud)
 
 Given all these facets of access, relying on a moat as the security perimeter becomes a liability.
 
@@ -77,11 +77,11 @@ Authentication (both user and device) is performed before establishing a connect
 
 Ongoing authentication and authorization of trusted users is paramount to Zero Trust. Identity is the “Who” that is requesting access to a resource. User authentication is dynamic and strictly enforced before access is allowed. It is a constant cycle of access:
 
-* Scanning and assessing threats
-* Adapting
-* Continuously authenticating
-* Monitoring
-* Validating user trustworthiness
+*  Scanning and assessing threats
+*  Adapting
+*  Continuously authenticating
+*  Monitoring
+*  Validating user trustworthiness
 
 Identity encompasses the use of technologies like Identity, Credential, and Access Management. Identity is the set of users of and attributes developed by the enterprise. The users and attributes form the basis for policies for resource access. User identities can include a mix of logical identity, biometric data, and behavior characteristics. Use identity attributes such as time and geolocation to derive trust scores to dynamically assess the risk and adjust access appropriately.
 
