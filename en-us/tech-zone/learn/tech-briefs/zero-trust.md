@@ -22,10 +22,10 @@ A problem with this security model is the implied or implicit trust which is gra
 
 How do organizations secure the crown jewels with a complex model incorporating the following variables?
 
-* Users: Located in corporate offices and public locations
-* Devices: Mobile, Bring Your Own Device (BYOD), Choose Your Own Device (CYOD), and Corporate Own Personally Enabled (COPE)
-* Applications: (Intranet/SaaS, browser, virtualized, mobile)
-* Data access and storage (on-prem and cloud)
+*  Users: Located in corporate offices and public locations
+*  Devices: Mobile, Bring Your Own Device (BYOD), Choose Your Own Device (CYOD), and Corporate Own Personally Enabled (COPE)
+*  Applications: (Intranet/SaaS, browser, virtualized, mobile)
+*  Data access and storage (on-prem and cloud)
 
 Given all these facets of access, relying on a moat as the security perimeter becomes a liability.
 
@@ -49,13 +49,13 @@ Citrix sees Zero Trust as a strategy that applies not only just to networking, b
 
 Citrix Zero Trust Architecture focuses on protecting resources and is designed and deployed adhering to the following basic tenets:
 
-1. All data sources and computing services are considered resources
-2. All communication is secured regardless of network location because every network, both enterprise and remote, is innately hostile and not trustworthy
-3. Access to individual enterprise resources is granted on a per-session basis
-4. Access to resources is enforced dynamic policy—including the observable state of client identity, application, and the requesting asset—and can include other behavioral attributes
-5. As no device is inherently trusted, the enterprise monitors assets to ensure that they remain in the most secure state possible
-6. All resource authentication and authorization are dynamic and strictly enforced before access is allowed
-7. The enterprise collects as much information as possible about the current state of network infrastructure and communications. It uses the data to improve its security posture
+1.  All data sources and computing services are considered resources
+2.  All communication is secured regardless of network location because every network, both enterprise and remote, is innately hostile and not trustworthy
+3.  Access to individual enterprise resources is granted on a per-session basis
+4.  Access to resources is enforced dynamic policy—including the observable state of client identity, application, and the requesting asset—and can include other behavioral attributes
+5.  As no device is inherently trusted, the enterprise monitors assets to ensure that they remain in the most secure state possible
+6.  All resource authentication and authorization are dynamic and strictly enforced before access is allowed
+7.  The enterprise collects as much information as possible about the current state of network infrastructure and communications. It uses the data to improve its security posture
 
 ## Pillars of Zero Trust
 
@@ -63,11 +63,11 @@ The journey from enterprise trust to Zero Trust requires a strategy for building
 
 Citrix calls this Contextual Access. Access policies scrutinize trust elements across the 5 W’s of Access to grant specific usage entitlements. Contextual Access is a continuous process. It extends from the request event through specific data usage entitlements and dynamic policies that govern the data security lifecycle.
 
-* What data must be protected?
-* Where are requests for data coming from and where does it sit in the network?
-* Who has access to the data and for how long?
-* Why do these people need access privileges?
-* When do they need access to the data?
+*  What data must be protected?
+*  Where are requests for data coming from and where does it sit in the network?
+*  Who has access to the data and for how long?
+*  Why do these people need access privileges?
+*  When do they need access to the data?
 
 Authentication (both user and device) is performed before establishing a connection and access to resources is minimized to only those end users who are validated. People are continuously authenticated to determine the identity and security posture of each access request. After these requirements are met, access to data resources is granted only when the resource is required.
 
@@ -75,11 +75,11 @@ Authentication (both user and device) is performed before establishing a connect
 
 Ongoing authentication and authorization of trusted users is paramount to Zero Trust. Identity is the “Who” that is requesting access to a resource. User authentication is dynamic and strictly enforced before access is allowed. It is a constant cycle of access:
 
-* Scanning and assessing threats
-* Adapting
-* Continuously authenticating
-* Monitoring
-* Validating user trustworthiness
+*  Scanning and assessing threats
+*  Adapting
+*  Continuously authenticating
+*  Monitoring
+*  Validating user trustworthiness
 
 Identity encompasses the use of technologies like Identity, Credential, and Access Management. Identity is the set of users of and attributes developed by the enterprise. The users and attributes form the basis for policies for resource access. User identities can include a mix of logical identity, biometric data, and behavior characteristics. Use identity attributes such as time and geolocation to derive trust scores to dynamically assess the risk and adjust access appropriately.
 
@@ -97,10 +97,10 @@ Zero Trust networks are sometimes described as “perimeter-less”. Some argue 
 
 During transitions to Software Defined Networks, SD-WANs, and internet-based technologies, it’s critical to consider how to:
 
-1. Control privileged network access
-2. Manage internal and external data flows
-3. Prevent lateral movement in the network
-4. Make dynamic policy and trust decision on network and data traffic
+1.  Control privileged network access
+2.  Manage internal and external data flows
+3.  Prevent lateral movement in the network
+4.  Make dynamic policy and trust decision on network and data traffic
 
 ### Workload
 
