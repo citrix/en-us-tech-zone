@@ -1,14 +1,12 @@
 ---
 layout: doc
 description: Zero Trust is the most important End User Computing movement since Mobile and Cloud. The Citrix Zero Trust Architecture enables the “any-any-any” vision that Citrix has been espousing for years and is secured by access policies that take trust into context.
-
 ---
+# Zero Trust Architecture
 
 ## Contributors
 
 **Author:** Florin Lazurca
-
-# Zero Trust Architecture
 
 Traditional, perimeter-based approaches to protecting information systems and data are inadequate.
 
@@ -24,10 +22,10 @@ A problem with this security model is the implied or implicit trust which is gra
 
 How do organizations secure the crown jewels with a complex model incorporating the following variables?
 
-*  Users: Located in corporate offices and public locations
-*  Devices: Mobile, Bring Your Own Device (BYOD), Choose Your Own Device (CYOD), and Corporate Own Personally Enabled (COPE)
-*  Applications: (Intranet/SaaS, browser, virtualized, mobile)
-*  Data access and storage (on-prem and cloud)
+* Users: Located in corporate offices and public locations
+* Devices: Mobile, Bring Your Own Device (BYOD), Choose Your Own Device (CYOD), and Corporate Own Personally Enabled (COPE)
+* Applications: (Intranet/SaaS, browser, virtualized, mobile)
+* Data access and storage (on-prem and cloud)
 
 Given all these facets of access, relying on a moat as the security perimeter becomes a liability.
 
@@ -65,11 +63,11 @@ The journey from enterprise trust to Zero Trust requires a strategy for building
 
 Citrix calls this Contextual Access. Access policies scrutinize trust elements across the 5 W’s of Access to grant specific usage entitlements. Contextual Access is a continuous process. It extends from the request event through specific data usage entitlements and dynamic policies that govern the data security lifecycle.
 
-*  What data must be protected?
-*  Where are requests for data coming from and where does it sit in the network?
-*  Who has access to the data and for how long?
-*  Why do these people need access privileges?
-*  When do they need access to the data?
+* What data must be protected?
+* Where are requests for data coming from and where does it sit in the network?
+* Who has access to the data and for how long?
+* Why do these people need access privileges?
+* When do they need access to the data?
 
 Authentication (both user and device) is performed before establishing a connection and access to resources is minimized to only those end users who are validated. People are continuously authenticated to determine the identity and security posture of each access request. After these requirements are met, access to data resources is granted only when the resource is required.
 
@@ -77,11 +75,11 @@ Authentication (both user and device) is performed before establishing a connect
 
 Ongoing authentication and authorization of trusted users is paramount to Zero Trust. Identity is the “Who” that is requesting access to a resource. User authentication is dynamic and strictly enforced before access is allowed. It is a constant cycle of access:
 
-*  Scanning and assessing threats
-*  Adapting
-*  Continuously authenticating
-*  Monitoring
-*  Validating user trustworthiness
+* Scanning and assessing threats
+* Adapting
+* Continuously authenticating
+* Monitoring
+* Validating user trustworthiness
 
 Identity encompasses the use of technologies like Identity, Credential, and Access Management. Identity is the set of users of and attributes developed by the enterprise. The users and attributes form the basis for policies for resource access. User identities can include a mix of logical identity, biometric data, and behavior characteristics. Use identity attributes such as time and geolocation to derive trust scores to dynamically assess the risk and adjust access appropriately.
 
@@ -99,10 +97,10 @@ Zero Trust networks are sometimes described as “perimeter-less”. Some argue 
 
 During transitions to Software Defined Networks, SD-WANs, and internet-based technologies, it’s critical to consider how to:
 
-1.  Control privileged network access
-2.  Manage internal and external data flows
-3.  Prevent lateral movement in the network
-4.  Make dynamic policy and trust decision on network and data traffic
+1. Control privileged network access
+2. Manage internal and external data flows
+3. Prevent lateral movement in the network
+4. Make dynamic policy and trust decision on network and data traffic
 
 ### Workload
 
@@ -142,7 +140,7 @@ Citrix Gateway provides an enhanced and flexible approach to security. IT is ena
 
 Citrix’s identity approach allows enterprises to preserve their investments. It allows them to use the native IdP security capabilities like MFA, biometrics to protect the user within the Workspace. It supports LDAP, RADIUS, TACACS, Diameter, and SAML2.0 authentication mechanisms, among others.
 
-Citrix Gateway provides SmartAccess and SmartControl policies that provide flexibility to balance user convenience with risk. Based on the result of a SmartAccess scan, a user can be granted full access, reduced access, quarantine, or no access at all. For example, a user who fails a device compliance check can get access to a reduced set of applications. Sensitive applications can have restricted functionality like blocking printing and downloading. SmartControl centralizes policy management on Citrix Gateway, strengthening access control at the network layer before the user reaches the back-end resource. 
+Citrix Gateway provides SmartAccess and SmartControl policies that provide flexibility to balance user convenience with risk. Based on the result of a SmartAccess scan, a user can be granted full access, reduced access, quarantine, or no access at all. For example, a user who fails a device compliance check can get access to a reduced set of applications. Sensitive applications can have restricted functionality like blocking printing and downloading. SmartControl centralizes policy management on Citrix Gateway, strengthening access control at the network layer before the user reaches the back-end resource.
 
 ### Citrix Networking
 
