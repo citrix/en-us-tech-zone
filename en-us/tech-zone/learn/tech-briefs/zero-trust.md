@@ -65,11 +65,11 @@ The journey from enterprise trust to Zero Trust requires a strategy for building
 
 Citrix calls this Contextual Access. Access policies scrutinize trust elements across the 5 W’s of Access to grant specific usage entitlements. Contextual Access is a continuous process. It extends from the request event through specific data usage entitlements and dynamic policies that govern the data security lifecycle.
 
-* What data must be protected?
-* Where are requests for data coming from and where does it sit in the network?
-* Who has access to the data and for how long?
-* Why do these people need access privileges?
-* When do they need access to the data?
+*  What data must be protected?
+*  Where are requests for data coming from and where does it sit in the network?
+*  Who has access to the data and for how long?
+*  Why do these people need access privileges?
+*  When do they need access to the data?
 
 Authentication (both user and device) is performed before establishing a connection and access to resources is minimized to only those end users who are validated. People are continuously authenticated to determine the identity and security posture of each access request. After these requirements are met, access to data resources is granted only when the resource is required.
 
@@ -99,10 +99,10 @@ Zero Trust networks are sometimes described as “perimeter-less”. Some argue 
 
 During transitions to Software Defined Networks, SD-WANs, and internet-based technologies, it’s critical to consider how to:
 
-1. Control privileged network access
-2. Manage internal and external data flows
-3. Prevent lateral movement in the network
-4. Make dynamic policy and trust decision on network and data traffic
+1.  Control privileged network access
+2.  Manage internal and external data flows
+3.  Prevent lateral movement in the network
+4.  Make dynamic policy and trust decision on network and data traffic
 
 ### Workload
 
