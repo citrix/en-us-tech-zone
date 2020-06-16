@@ -8,15 +8,17 @@ description: Zero Trust is the most important End User Computing movement since 
 
 **Author:** Florin Lazurca
 
+## Overview 
+
 Traditional, perimeter-based approaches to protecting information systems and data are inadequate.
 
-For many years, the cybersecurity paradigm has emulated physical security from the middle ages: the castle and the moat. It’s an approach many enterprises have adopted and are finding insufficient in the world of cloud.
+For many years, the cybersecurity paradigm has emulated a familiar form of physical security from the middle ages: the castle and the moat. It’s an approach many enterprises have adopted and are finding insufficient in the world of cloud.
 
 In this classic defense model, multiple layers of protection with tightly secured checkpoints and gateways surround and protect the crown jewels. All access is controlled and verified at the gateway where authentication and authorization are granted. However, once verified, people are effectively given free rein of the environment.
 
 The model has shortcomings, mainly with granting excessive access from inadaquate authentication and authorization. Attackers often use subterfuge to bypass the gateways and superior tools designed to break down the walls.
 
-Likewise, in cybersecurity, the data is surrounded by multiple layers of firewalls, segmentation, authentication, and authorization. And while these components are necessary, they are insufficient due to the “deperimeterization” caused by the move to cloud and mobile.
+Likewise, in cybersecurity, valuable data is surrounded by multiple layers of firewalls, segmentation, authentication, and authorization. And while these components are necessary, they are insufficient due to the “deperimeterization” caused by the move to cloud and mobile.
 
 A problem with this security model is the implied or implicit trust which is granted to persons or services within the walls of the network. The location or network on which a device or user resides must never implicitly grant a level of trust worthiness. The assumption must be made that neither the private network nor any device on it are inherently trustworthy.
 
@@ -29,11 +31,11 @@ How do organizations secure the crown jewels with a complex model incorporating 
 
 Given all these facets of access, relying on a moat as the security perimeter becomes a liability.
 
-Traditional VPNs have long been the traditional way to access enterprise applications and data when users are outside of corporate locations. This model has worked for use cases where end users get access to the corporate network, typically only from approved corporate-managed devices.
+VPNs have long been the traditional way to access enterprise applications and data when users are outside of corporate locations. This model has worked for use cases where end users gain access to the corporate network only from approved corporate-managed devices.
 
-But this is why the VPN model doesn’t adequately meet the needs of the evolving use cases. Applications have been modernized for web-based access and deployed in multi-cloud environments. And forcing user access through a corporate VPN en route to a cloud app falls short on end-user experience. The requirement for a new strategy has been accelerated. How does an organization build a wall around a resource that exists in multiple locations simultaneously?
+But this is why the VPN model doesn’t adequately meet the needs of the evolving use cases. Apps have been modernized for web-based access and deployed in multi-cloud environments. Apps, data, and services are not just inside the walls of the data center. Locations have moved, become dynamic, users are accessing resources everywhere, and organizations need a framework that allows easy access to all resources without slowing down productivity. Forcing user access through a corporate VPN en route to a cloud app falls short on end-user experience.
 
-Apps, data and services are not just inside the walls of the data center. Locations have moved, become dynamic, users are accessing resources everywhere, and organizations need a framework that allows easy access to all resources without slowing down productivity.
+The requirement for a new strategy has been accelerated with the need for remote workers. How does an organization build a wall around a resource that exists in multiple locations simultaneously?
 
 ## Guiding Principles
 
@@ -43,7 +45,7 @@ The purpose of a Zero Trust Architecture is to protect data. It is not a single 
 
 With Zero Trust, there is no implicit trust granted to systems based on their physical or network location. The approach requires continuous authorization no matter what the originating request location; and increases visibility and analytics across the network.
 
-Zero trust is achieved through an intentional implementation of the framework. Using a collection of products that are integrated and have Zero Trust principles built in provides a collective approach to achieve the business outcomes.
+Zero trust is achieved through an intentional implementation of the framework. Using a collection of products that are integrated and have Zero Trust principles built in provides a collective approach to achieve the desired business outcomes.
 
 Citrix sees Zero Trust as a strategy that applies not only just to networking, but across the organization in users, devices, networks, applications – and how people work.
 
@@ -52,7 +54,7 @@ Citrix Zero Trust Architecture focuses on protecting resources and is designed a
 1.  All data sources and computing services are considered resources
 2.  All communication is secured regardless of network location because every network, both enterprise and remote, is innately hostile and not trustworthy
 3.  Access to individual enterprise resources is granted on a per-session basis
-4.  Access to resources is enforced dynamic policy—including the observable state of client identity, application, and the requesting asset—and can include other behavioral attributes
+4.  Access to resources is enforced by dynamic policy that includes the observable state of identity, device, application, network and can include behavioral attributes
 5.  As no device is inherently trusted, the enterprise monitors assets to ensure that they remain in the most secure state possible
 6.  All resource authentication and authorization are dynamic and strictly enforced before access is allowed
 7.  The enterprise collects as much information as possible about the current state of network infrastructure and communications. It uses the data to improve its security posture
@@ -69,8 +71,6 @@ Citrix calls this Contextual Access. Access policies scrutinize trust elements a
 *  Why do these people need access privileges?
 *  When do they need access to the data?
 
-Authentication (both user and device) is performed before establishing a connection and access to resources is minimized to only those end users who are validated. People are continuously authenticated to determine the identity and security posture of each access request. After these requirements are met, access to data resources is granted only when the resource is required.
-
 ### People
 
 Ongoing authentication and authorization of trusted users is paramount to Zero Trust. Identity is the “Who” that is requesting access to a resource. User authentication is dynamic and strictly enforced before access is allowed. It is a constant cycle of access:
@@ -82,6 +82,8 @@ Ongoing authentication and authorization of trusted users is paramount to Zero T
 *  Validating user trustworthiness
 
 Identity encompasses the use of technologies like Identity, Credential, and Access Management. Identity is the set of users of and attributes developed by the enterprise. The users and attributes form the basis for policies for resource access. User identities can include a mix of logical identity, biometric data, and behavior characteristics. Use identity attributes such as time and geolocation to derive trust scores to dynamically assess the risk and adjust access appropriately.
+
+Authentication (both user and device) is performed before establishing a connection and access to resources is minimized to only those end users who are validated. People are continuously authenticated to determine the identity and security posture of each access request. After these requirements are met, access to data resources is granted only when the resource is required.
 
 ### Devices
 
