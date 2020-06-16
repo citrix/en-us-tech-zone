@@ -8,7 +8,7 @@ description: Zero Trust is the most important End User Computing movement since 
 
 **Author:** Florin Lazurca
 
-## Overview 
+## Overview
 
 Traditional, perimeter-based approaches to protecting information systems and data are inadequate.
 
