@@ -90,19 +90,19 @@ e - Create rewrite policy and action
 
 f - Bind rewrite policy to vserver
 
-1.  From the ssh session of ADC management console, run the command
+From the ssh session of ADC management console, run the command
 enable feature IC urlfiltering rewrite CS
 
-1.  [Reference](https://docs.citrix.com/en-us/citrix-adc/13/forward-proxy/ssl-interception.html) or [Follow the process shown in this video for setting up steps (a) through (f)](https://citrix.sharefile.com/d-s74bb5855411495bb)
+[Reference](https://docs.citrix.com/en-us/citrix-adc/13/forward-proxy/ssl-interception.html) or [Follow the process shown in this video for setting up steps (a) through (f)](https://citrix.sharefile.com/d-s74bb5855411495bb)
 
-    *Supporting information for the video*
+Supporting information for the video
 
 *  *04:58 minute* Action BYPASS rule is needed for detected domain “cloud” to not intercept traffic for launch.cloud.com so as to make the secure browser session work after the redirection happens.  
 
 *  *09:20 minute* pfx format of the cert-key pair needs to be uploaded. It can be prepared by [openssl tool](https://www.cloudinsidr.com/content/how-to-install-the-most-recent-version-of-openssl-on-windows-10-in-64-bit/)
         * [More information here](https://stackoverflow.com/questions/6307886/how-to-create-pfx-file-from-certificate-and-private-key)
   
-    *Policies used*
+Policies used
 
 *  client.ssl.detected_domain.url_categorize(0,0).category.eq("News")
 
