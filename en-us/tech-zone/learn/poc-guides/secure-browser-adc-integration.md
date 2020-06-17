@@ -38,7 +38,7 @@ For setting up ADC as proxy to route the traffic through it: (If you already hav
 
 9 - Login to the management public ip address of the ADC instance; from the initial configuration screen, click Continue (we will configure the rest of the settings manually because we will not be using Subnet IP in the setup)
 
-10 - Go to System/Licenses, click on Manage Licenses and upload the two licenses from https://citrix.sharefile.com/d-sc0719582db546e28 and reboot the server after uploading both licenses. The licenses you bring should support the features highlighted in bold below.  
+10 - Go to System/Licenses, click on Manage Licenses and upload the two licenses from 'https://citrix.sharefile.com/d-sc0719582db546e28' and reboot the server after uploading both licenses. The licenses you bring should support the features highlighted in bold below.  
 
 11 - Login again to management, go to System/Settings/Configure Modes; disable Use Subnet IP, only two options that should be enabled are Mac based forwarding and Path MTU Discovery
 
@@ -117,6 +117,6 @@ enable feature IC urlfiltering rewrite CS
 
 Citrix ADC URL redirection to Secure Browser automatically. See demo video [here](https://citrix.sharefile.com/d-s7a540d5498c42a59)
 
-Note: launch.cloud.com/<customername>/<appname> 
+Note: launch.cloud.com/`<customername>/<appname>
 
-For the <appname> e.g., ‘browser’ in the above example, enable ‘URL Parameters’ policy for the app which is currently in Tech Preview
+For the `<appname> e.g., ‘browser’ in the above example, enable ‘URL Parameters’ policy for the app which is currently in Tech Preview
