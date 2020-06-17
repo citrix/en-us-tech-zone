@@ -110,9 +110,7 @@ Policies used
 
 *  HTTP.REQ.HOSTNAME.APPEND(HTTP.REQ.URL).URL_CATEGORIZE(0,0).CATEGORY.EQ("News")
 
-        {
-            set rewrite action cloud_act -target q{"HTTP/1.1 302 Found" + "\r\n" + "Location: http://launch.cloud.com/nagpottest5/browser?url=https://" + HTTP.REQ.HOSTNAME.APPEND(HTTP.REQ.URL.PATH) + "\r\n\r\n\" "} 
-        }
+        set rewrite action cloud_act -target q{"HTTP/1.1 302 Found" + "\r\n" + "Location: http://launch.cloud.com/nagpottest5/browser?url=https://" + HTTP.REQ.HOSTNAME.APPEND(HTTP.REQ.URL.PATH) + "\r\n\r\n\" "
 
 ## Demo of the solution
 
