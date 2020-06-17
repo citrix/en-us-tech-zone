@@ -70,6 +70,8 @@ Microsoft .NET Framework 4.7.2 or later must be pre-installed on the machine
 
 Time on the machine must be synced with UTC
 
+The [Cloud Connector Connectivity Check Utility](https://support.citrix.com/article/CTX260337) tool can be used to test the reachability of the Citrix Cloud and its related services
+
 ## Deployment Steps
 
 ### Create Citrix Cloud Account
@@ -93,6 +95,7 @@ If you agree then check the **“I’ve read, understand and agree to the Terms 
 [![Citrix Virtual Apps and Desktops Sign In](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc6.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc6.png)
 8. Verify your email id, by clicking **Sign in to Get Started** in the email you received from Citrix Cloud.
 [![Citrix Virtual Apps and Desktops Email](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc7.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc7.png)
+*Note: If you are unable to locate this email, please seach your spam folder. The subject of the email is: Complete your Account Setup from: donotreplynotifications@citrix.com*
 9. Once the account is confirmed, **Enter and Confirm the password.** Click **Create Account**.
 [![Citrix Virtual Apps and Desktops Password](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc8.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc8.png)
 
@@ -100,7 +103,7 @@ If you agree then check the **“I’ve read, understand and agree to the Terms 
 
 1. Enter **Username and Password** Click **Sign In**. (If your account manages more than one customer select the appropriate one)
 [![Citrix Virtual Apps and Desktops Cloud Sign In](/en-us/tech-zone/learn/media/poc-guides_cvads_trial1.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_trial1.png)
-2. Click **Citrix Cloud** on top of the page. Search for the Citrix Virtual Desktops Service Tile. Click **Request Demo**.
+2. Click **Citrix Cloud** on top of the page. Search for the Citrix Virtual Desktops Service Tile. Click **Request Trial**.
 [![Citrix Virtual Apps and Desktops Cloud Request Demo](/en-us/tech-zone/learn/media/poc-guides_cvads_trial2.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_trial2.png)
 3. If you know who your account team is, please reach out to them to get the trial approved. If you are unsure who your account team is, please continue to next step.
 4. Click **Request a Call**
@@ -127,7 +130,7 @@ Resource locations contain the resources required to deliver applications and de
 7. Click **Download**. Click **Run** once the download finishes
 [![Citrix Virtual Apps and Desktops Run](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location6.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location6.png)
 8. Citrix Cloud connectivity test successful message should be displayed. Click Close.
-If the test fails, check the following [link](https://support.citrix.com/article/CTX224133) to resolve the issue
+If the test fails, check the following [link](https://support.citrix.com/article/CTX224133) to resolve the issue. You may also use the [Cloud Connector Connectivity Check Utility](https://support.citrix.com/article/CTX260337) tool to verify all addresses are reachable
 [![Citrix Virtual Apps and Desktops Connection Test](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location7.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location7.png)
 9. Click **Sign In** and **Sign in to Citrix Cloud**
 [![Citrix Virtual Apps and Desktops Sign In Connector](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location8.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location8.png)
@@ -187,9 +190,11 @@ The Virtual Delivery Agent must be installed on all physical or virtual machines
 [![Citrix Virtual Apps and Desktops Diagnostic2](/en-us/tech-zone/learn/media/poc-guides_cvads_vda20.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_vda20.png)
 21. Once the installation is completed click **Finish** (this might require the machine to restart)
 [![Citrix Virtual Apps and Desktops Finish](/en-us/tech-zone/learn/media/poc-guides_cvads_vda21.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_vda21.png)
-**Repeat the procedure for all the master images you want to make. The same process applies for shared OS, except you would download the shared OS iso.**
+**Repeat the procedure for all the master images you want to make. The same process applies for multi-session OS, except you would download the multi-session OS iso.**
 
 ### Create a Hosting Connection to Citrix Cloud
+
+Specific supported hypervisors can be found [here](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/system-requirements.html#hosts--virtualization-resources)
 
 1. Once the trial is approved, **Login to Citrix Cloud** from your local machine. Scroll to **My Services**, and locate **Virtual Apps and Desktops** service tile, click **Manage**
 [![Citrix Virtual Apps and Desktops Manage](/en-us/tech-zone/learn/media/poc-guides_cvads_hosting1.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_hosting1.png)
@@ -212,7 +217,7 @@ The Virtual Delivery Agent must be installed on all physical or virtual machines
 
 ### Create a Machine Catalog in Citrix Virtual Apps & Desktops service
 
-Use Citrix Virtual Apps & Desktop service to create a catalog of the virtual machines.
+Use Citrix Virtual Apps & Desktop service to create a catalog of the virtual machines. We are going to be creating copies of the machine we installed the VDA agent.
 
 1. In the left menu under Citrix Studio. Click **Machine Catalogs**
 [![Citrix Virtual Apps and Desktops Machine Catalog](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog1.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog1.png)
@@ -277,3 +282,14 @@ Use Citrix Virtual Apps & Desktop service to create a catalog of the virtual mac
 3. Click **View all Desktops**. You will now see the desktop that we assigned in the previous section
 [![Citrix Virtual Apps and Desktops Start Session](/en-us/tech-zone/learn/media/poc-guides_cvads_launch3.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_launch3.png)
 4. The session should launch giving the user access to their virtual desktop
+
+## Additional Information
+
+The Citrix Cloud Resource Center can help you learn more about features, and search to resolve issues.
+
+1. Click the **blue compass** arrow at the bottoom of the Citrix Cloud page
+[![Citrix Virtual Apps and Desktops Help](/en-us/tech-zone/learn/media/poc-guides_cvads_info1.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_info1.png)
+2. Click **Search Articles**. This allows you to search through a list of product documentation and Knowledge Center Articles
+[![Citrix Virtual Apps and Desktops Search](/en-us/tech-zone/learn/media/poc-guides_cvads_info2.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_info2.png)
+3. Enter a search query
+[![Citrix Virtual Apps and Desktops How To](/en-us/tech-zone/learn/media/poc-guides_cvads_info3.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_info3.png)
