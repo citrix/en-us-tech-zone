@@ -95,7 +95,7 @@ f - Bind rewrite policy to vserver
 20 - From the ssh session of ADC management console, run the command
 enable feature IC urlfiltering rewrite CS
 
-21 - [Reference](https://docs.citrix.com/en-us/citrix-adc/13/forward-proxy/ssl-interception.html) or [Follow the process shown in this video for setting up steps a through f](https://citrix.sharefile.com/d-s74bb5855411495bb)
+21 - [Reference](https://docs.citrix.com/en-us/citrix-adc/13/forward-proxy/ssl-interception.html) or [Follow the process shown in this video for setting up steps (a) through (f)](https://citrix.sharefile.com/d-s74bb5855411495bb)
 
     *Supporting information for the video*
 
