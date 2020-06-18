@@ -89,7 +89,7 @@ Following server components are required:
 ## Installation - Licensing
 
 1.  Download the license file and import it into the Citrix License Server alongside an existing Citrix Virtual Desktops license
-2.  Use the Citrix Licensing Manager to import the license file (preferred method) or copy the license file to `C:\Program Files (x86)\Citrix\Licensing\MyFiles` on the License Server and restart the Citrix Licensing service. For more information, see [Import license files](/en-us/licensing/current-release/manage/import-license-files.html)
+2.  Use the Citrix Licensing Manager to import the license file. For more information, see [Install licenses](/en-us/licensing/current-release/citrix-licensing-manager/install.html)
 
 ## Installation - StoreFront
 
