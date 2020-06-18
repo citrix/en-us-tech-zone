@@ -20,15 +20,15 @@ The Citrix Virtual Apps and Desktop service allows you to provide employees with
 
 ### Components
 
-Hosted by Citrix:
+**Hosted by Citrix:**
 
 *  [Workspace](https://docs.citrix.com/en-us/citrix-workspace): complete digital workspace that lets you securely deliver apps, desktops, files, & microapps to your end-users
 *  [Gateway Service](https://docs.citrix.com/en-us/citrix-gateway-service): allows secure, contextual remote access to apps and data
 *  [Virtual Apps and Desktop Service](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service): allows IT to provide virtual apps and desktops to their end users
 
-Hosted by Customer:
+**Hosted by Customer:**
 
-*  [Cloud Connector](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector.html): serves as a channel for communication between Citrix Cloud and your resource location
+*  [Cloud Connector](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector.html): serves as a channel for communication between Citrix Cloud and your resource location. Although this is hosted within the customer's resource location, it is managed by Citrix and kept evergreen. A minimum of two Cloud Connectors per resource location is recommended so that there is no loss in communication with Citrix Cloud.
 *  [Virtual Delivery Agent](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service): The VDA is used to register with the Cloud connector so connections can be brokered between the end-user's device and the virtual machine
 
 ## Scope
@@ -293,3 +293,5 @@ The Citrix Cloud Resource Center can help you learn more about features, and sea
 [![Citrix Virtual Apps and Desktops Search](/en-us/tech-zone/learn/media/poc-guides_cvads_info2.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_info2.png)
 3.  Enter a search query
 [![Citrix Virtual Apps and Desktops How To](/en-us/tech-zone/learn/media/poc-guides_cvads_info3.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_info3.png)
+
+You will have access to a list of product documentation and Knowledge Center articles for common tasks without leaving Citrix Cloud.
