@@ -2,7 +2,7 @@
 layout: doc
 description: Learn how to set up a Citrix Access Control environment that uses Citrix as the single sign-on provider for Office 365 SaaS applications.
 ---
-# Proof of Concept: Secure Access to SaaS Applications with Citrix SSO
+# Proof of Concept: Secure Access to SaaS Applications with Citrix Access Control
 
 ## Contributors
 
