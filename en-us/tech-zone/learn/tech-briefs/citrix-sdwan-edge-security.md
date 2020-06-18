@@ -12,7 +12,7 @@ description: Learn how Citrix SD-WAN Advanced Edition provides Edge Security for
 
 ## Introduction
 
-With the continued growth cloud and SaaS, Enterprises are searching for solutions to provide optimal Internet access irrespective of where the endpoint is located. Citrix SD-WAN excels at steering intranet-bound traffic across the WAN or Internet-bound traffic, at the Edge, using business rules for 4.500+ predefined applications.
+With the continued growth of cloud and SaaS, Enterprises are searching for solutions to provide optimal Internet access irrespective of where the endpoint is located. Citrix SD-WAN excels at steering intranet-bound traffic across the WAN or Internet-bound traffic, at the Edge, using business rules for 4.500+ predefined applications.
 
 However, in order to provide direct Internet access Enterprises also need to secure remote offices to protect the intranet. Direct Internet access exposes remote networks, and subsequently the entire corporate network, to threats. Ingress and egress traffic must be filtered, inspected, and scanned to protect against vulnerabilities.  
 
