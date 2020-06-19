@@ -85,8 +85,6 @@ Complexity is considered one of the biggest enemies of security. You want to ide
 
 The Pareto principle (also known as the 80/20 rule) is important during this data assessment. Companies need to try to minimize the effort required to secure most data sources. Most enterprises have hundreds or thousands of different applications and data sources that are used. They need to promptly identify the applications that contain critical data and don’t meet the GDPR requirements. Automated application assessment solutions can reduce the time required to analyze applications.
 
-Many companies plan to use this mitigation period to transition to a more flexible IT model. While this goal is plausible, it is important to understand the timelines and choose realistic goals. Customers need to choose solutions that can be gradually improved without the need for a complete redesign.
-
 In the following sections, we present a few selected architectures that can provide a universal, secure, and proven solution to secure any type of data. This ranges from web-based applications, through legacy client/server applications hosted on Windows or Linux to data stored in various documents or exchanged through emails.
 
 **Decision Flow for Data Types**
@@ -123,7 +121,7 @@ applications. With Citrix Virtual Apps and Desktops, all access to resources is 
 
 Aside from the monitoring and reporting of user access, all administrative changes and activities can be logged to a separate database. It is recommended to enable mandatory logging, where administrative activities are not allowed unless they are logged in the Configuration Logging database first. To learn more, refer to the [Configuration Logging Documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/1912/monitor/configuration-logging.html)
 
-Finally, for the most security-conscious environments, it is possible to create a separate set of user identities and automatically switch to them. This is done using the Federated Authentication Service. The approach can be used to further minimize the impact of lateral movement and contain the security breach.
+Finally, for the most security-conscious environments, it is possible to create a separate set of user identities and automatically switch to them. This is done using the Federated Authentication Service. The approach can be used to further minimize the impact of lateral movement and contain any security breach.
 
 #### Article 32 - Data Encryption in Transit
 With Citrix Virtual Apps and Desktops, only screen pixels are transferred between the hosting server and the endpoint. Connection parameters are established during session initiation or reconnection. CVAD can ensure that traffic coming to and from the endpoint is always encrypted, even if the application itself doesn’t support encryption. This encryption can be enabled for any published application or desktop. For details on end-to-end encryption, refer to [this document](https://www.citrix.com/content/dam/citrix/en_us/documents/white-paper/end-to-end-encryption-with-xenapp-and-xendesktop.pdf)
@@ -157,7 +155,7 @@ Web apps are architecturally different from client/server apps yet also similar 
 with varying capabilities and dependencies. Although simplified, the same management challenges apply – keeping the browser up-to-date against vulnerabilities, encryption of traffic, and implementing multifactor authentication.
 
 The demands for legacy application support and modern capabilities for SaaS have driven conflicting requirements. There are two types
-of web apps – the born-on-the-internet-apps and webified apps-custom and legacy web apps that support the business. The born-on-the-internet apps drive the requirements on security and architecture – load balancing, scalability, failover, and performance. While the webified apps drive the requirements on supportability - browser plug-ins, extensions, and validating browser updates can break functionality.
+of web apps – the born-on-the-internet-apps and webified apps-custom and legacy web apps that support the business. The born-on-the-internet apps drive the requirements on security and architecture – load balancing, scalability, failover, and performance. Webified apps drive the requirements on supportability - browser plug-ins, extensions, and validating browser updates can break functionality.
 
 The goal is for the end user to interact with web apps and manipulate data. This includes personal and sensitive data regardless if running in legacy environments or on SaaS apps pushing the limits of HTML5. Gartner recommends a two-pronged strategy. This is when an organization uses a legacy browser for running legacy applications, but also employs modern browsers for all other applications. That’s where Citrix helps – tying together the user experience and security requirements for hybrid or bimodal web environments.
 
@@ -261,7 +259,7 @@ For more information see this [micro VPN FAQ](https://support.citrix.com/article
 #### Article 32 - Data Encryption at Rest
 Citrix Endpoint Management supports data encryption at rest through the CEM MDX with Citrix-provided encryption libraries, or through platform level encryption directly or indirectly with partner containerization solutions. 
 
-CEM can provide encryption at rest on any supported mobile device independent of platform encryption. The CEM secure app container technology, MDX, uses its own software applied data encryption using FIPS compliant algorithms making the risk of data loss virtually impossible. 
+CEM can provide encryption at rest on any supported mobile device independent of platform encryption. The CEM secure app container technology, MDX, uses its own software applied data encryption using FIPS compliant algorithms minimizing the risk of data loss.
 
 Device level encryption varies by platform. Apple's iOS features a file system with the OS information and user data written to flash memory. It also uses a factory-assigned device ID and group ID with the device user's passcode so only that passcode can unencrypt data on the phone or tablet. Android also provides encryption, although not every device manufacturer creates hardware that supports it and users can turn encryption off accidentally or deliberately with a factory reset on Android devices. Find more information about the [MDX Toolkit](https://docs.citrix.com/en-us/mdx-toolkit/10.html), [MDX policies](https://docs.citrix.com/en-us/mdx-toolkit/policies-platform.html), and [integrating with MDX](https://docs.citrix.com/en-us/mdx-toolkit/developer-guide-overview.html) in Citrix documentation.
 
@@ -279,12 +277,12 @@ Citrix Content Collaboration (ShareFile) provides a range of controls to help or
 
 For more information on StorageZones including architecture details and deployment options, see the [Content Collaboration Reference Architectures](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures.html#citrix-content-collaboration)
 
-Collaboration on files has not changed much over the years. Most of these workflows use email to send files to a group of recipients. Then gather the feedback from each of those recipients as separate emails to the thread and update the files before starting the cycle again. As such, multiple messages and copies of the same document are stored inside the email platform, which makes it more difficult to comply with GDPR policies. By using the ShareFile Feedback and Approvals workflow to collaborate on documents, all feedback and document revisions are stored in a single place, making it easier to comply with such regulations.
+Collaboration on files has not changed much over the years. Most of these workflows use email to send files to a group of recipients. Feedback is gathered from each of those recipients as separate emails to the thread and update the files before starting the cycle again. As such, multiple messages and copies of the same document are stored inside the email platform, which makes it more difficult to comply with GDPR policies. By using the ShareFile Feedback and Approvals workflow to collaborate on documents, all feedback and document revisions are stored in a single place, making it easier to comply with such regulations.
 
 Many paper-based workflows in an organization contain PII data in some form. For instance, the workflow to hire people involves multiple steps where personal information needs to be recorded and shared. All this information needs to comply with GDPR regulations, centralizing and digitizing these workflows have a positive impact. ShareFile Custom Workflows allow this personal information to be securely captured, securely stored inside ShareFile and, where needed, completed with an electronic signature. All information is stored together in a single location and is audited for who accesses and modifies this information, providing a practice that complies with GDPR.
 
 #### Article 32 - Data Encryption in Transit
-All connections between ShareFile clients and the Content Collaboration SaaS Control Plane, between ShareFile clients and ShareFile StorageZones, in addition to the Content Collaboration SaaS Control Plane and ShareFile StorageZones are TLS 1.1/1.2 and encrypted with up to AES 256-bit encryption.
+All connections between ShareFile clients and the Content Collaboration SaaS Control Plane, between ShareFile clients and ShareFile StorageZones, in addition to the Content Collaboration SaaS Control Plane and ShareFile StorageZones are fully encrypted. See [CTX208317](https://support.citrix.com/article/CTX208317) and the [Citrix ShareFile Security and Compliance FAQ](https://www.sharefile.com/resources/citrix-sharefile-security-and-compliance-frequently-asked-questions) for further details.
 
 Citrix Files (ShareFile) clients for iOS and Android, which can be managed by Citrix Endpoint Management, also use the embedded VPN capabilities provided by the CEM SDK. See “Data Encryption in Transit” in the Securing Mobile Applications section of this document for more details.
 
