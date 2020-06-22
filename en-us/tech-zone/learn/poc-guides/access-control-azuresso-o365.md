@@ -80,30 +80,10 @@ An organization can use any one of the following primary user directories
 
 To successfully federate Office 365 with Citrix Workspace, the administrator needs to do the following
 
-*  Verify Authentication Domain
 *  Configure SaaS App
 *  Authorize SaaS App
+*  Verify Authentication Domain
 *  Configure Domain Federation
-
-### Verify Authentication Domain
-
-To federate authentication to Citrix Workspace, Azure must verify the fully qualified domain name.  Within the Azure Portal, do the following:
-
-*  Access Azure Active Directory
-*  Select **Custom domain names** in the navigation window
-*  Select **Add custom domain**
-*  Enter the fully qualified domain name
-
-[![Domain Verification 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-01.png)
-
-*  Select **Add domain**
-*  Azure provides records to incorporate into your domain name registrar. Once done, select **Verify**.
-
-[![Domain Verification 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-02.png)
-
-*  Once complete, the domain should contain a verified mark
-
-[![Domain Verification 03](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-03.png)
 
 ### Configure SaaS App
 
@@ -156,30 +136,90 @@ With the domain verified within Azure, an Office 365 SaaS app can get configured
 
 [![Authorize SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_authorize-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_authorize-saas-app-02.png)
 
+### Verify Authentication Domain
+
+To federate authentication to Citrix Workspace, Azure must verify the fully qualified domain name.  Within the Azure Portal, do the following:
+
+*  Access Azure Active Directory
+*  Select **Custom domain names** in the navigation window
+*  Select **Add custom domain**
+*  Enter the fully qualified domain name
+
+[![Domain Verification 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-01.png)
+
+*  Select **Add domain**
+*  Azure provides records to incorporate into your domain name registrar. Once done, select **Verify**.
+
+[![Domain Verification 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-02.png)
+
+*  Once complete, the domain should contain a verified mark
+
+[![Domain Verification 03](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-03.png)
+
 ### Configure Domain Federation
 
+The final configuration is to have Azure use Citrix Workspace as the federated authority for the verified domain. Configuring federation must be done with PowerShell.
 
+*  Launch PowerShell
+*  Add the appropriate modules with the following commands
 
+```
+Install-Module AzureAD -Force
+Import-Module AzureAD -Force
+Install-Module MSOnline -Force
+Import-module MSOnline -Force
+```
 
-### Configure SaaS App
+*  Connect to Microsoft Online via PowerShell and authenticate
 
+```
+Connect-MSOLService
+```
 
+*  Verify the domain is currently set to **Managed** within Azure by running the following PowerShell command
 
-### Setup IdP Routing
+```
+Get-MsolDomain
+```
 
-So far, the configuration supports an IdP-initiated launch process, where the user launches the app from within Citrix Workspace. In order to enable an SP-initiated process, where the user launches the app with direct URL, Okta needs an IdP routing rule defined.
+[![Domain Federation 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_domain-federation-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_domain-federation-01.png)
 
-*  Within the Okta admin console, select **Security** - **Identity Providers**
-*  Select **Routing Rules**
-*  Select **Add Routing Rule**
-*  Provide a name for the rule
-*  For the Use this **identity provider option**, select the Citrix identity provider created earlier
+*  Use the following code in a PowerShell script to make this domain **Federated** by changing the variables to align with your environment
 
-[![Okta Identity Provider Routing Rule](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-idp-routing.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_okta-idp-routing.png)
+```
+ $dom = "workspaces.wwco.net" # The fully qualified domain name verified within Azure
+ $fedBrandName = "CitrixWorkspaceSAMLIdP" # A name to help remember the configuration purpose
+ $IssuerUri = "https://citrix.com/fdafdjk4" # The entityID taken from the Citrix Worksapce SAML Metadata file
+ $logoffuri = "https://app.netscalergateway.net/cgi/logout" # Standard entry for all. Do not change
+ $uri = "https://app.netscalergateway.net/ngs/dhhn4j3mf1kc/saml/login?APPID=8dd87428-460b-4358-a3c2-609451e8f5be" # The Login URL from the Citrix Workspace Office 365 app configuration
+ $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("e:\CitrixCloud.crt") # Path to the downloaded certificate file from Citrix Workspace
+ $certData = [system.convert]::tobase64string($cert.rawdata)
+ Set-MsolDomainAuthentication |
+    -DomainName $dom |
+    –federationBrandName $fedBrandName |
+    -Authentication Federated |
+    -PassiveLogOnUri $uri |
+    -LogOffUri $logoffuri |
+    -SigningCertificate $certData |
+    -IssuerUri $IssuerUri |
+    -PreferredAuthenticationProtocol SAMLP
+```
 
-*  Select **Activate**
+*  Verify the domain is currently set to **Federated** within Azure by running the following PowerShell command
 
-***Note**: During the configuration, the Okta admin might be unable to sign into the Okta admin console because the inbound SAML configuration is incomplete. If this happens, the admin can bypass the IdP routing rule by accessing the Okta enviornment with the following address: `https://companyname.okta.com/login/default`*
+```
+Get-MsolDomain
+```
+
+[![Domain Federation 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_domain-federation-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_domain-federation-02.png)
+
+*  Verify the federation settings in Azure by running the following PowerShell command
+
+```
+Get-MsolDomainFederationSettings -DomainName $dom
+```
+
+[![Domain Federation 03](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_domain-federation-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_domain-federation-03.png)
 
 ### Validate
 
