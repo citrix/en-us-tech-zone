@@ -212,27 +212,27 @@ in the event of a breach – by using data segmentation. An example is tokenizin
 
 Mobile devices, particularly with BYOD ownership, present many challenges to enterprises trying to secure data. Their use within the enterprise has driven the inception of technologies to securely manage mobile endpoints. Used beyond the borders of enterprise DMZs on any network, with apps from various sources, mobile devices present special risks to companies and their data.
 
-* The GDPR controller must secure personal data used by corporate mobile apps despite the fact they’re hosted on a user-owned mobile device.
+* The GDPR data controller must secure personal data used by corporate mobile apps despite the fact they’re hosted on a user-owned mobile device.
 
-* The GDPR controller must ensure the confidentiality, integrity, and availability of the personal data during its use. It must also ensure that when a user exercises their right to erase that no artifacts are left behind and exposed to other apps, users, and so forth.
+* The GDPR data controller must ensure the confidentiality, integrity, and availability of the personal data during its use. It must also ensure that when a user exercises their right to erase their personal data that no artifacts are left behind and exposed to other apps, users, and so forth.
 
-* Controllers must support file sharing and collaboration securely between enterprise mobile apps and be able to erase files from the device in a moment’s notice.
+* Data controllers must support file sharing and collaboration securely between enterprise mobile apps and be able to erase files from the device in a moment’s notice.
 
 * They must help protect the platform OS, mitigate the risk of malware, and enforce device security and pertinent policies to control device functions that make data vulnerable to loss.
 
-* Controllers must provide Unified Endpoint Management across multiple platforms including control of critical software patches that include updates to address vulnerabilities.
+* Data controllers must provide Unified Endpoint Management across multiple platforms including control of critical software patches that include updates to address vulnerabilities.
 
 **Traditional Mobile Application Architecture**
 [![Traditional Mobile Application Architecture](/en-us/tech-zone/design/media/reference-architectures_gdpr_mobile-apps.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_mobile-apps.png)
 
-Citrix Endpoint Management (CEM) is a market leading Unified Endpoint Management (UEM) component of the Citrix Workspace. It securely manages various mobile endpoint platforms ranging from iOS, Android, Windows, and Mac to rugged mobile devices and IoT devices. CEM also manages various mobile apps on endpoints and supports various delivery mechanisms including virtualized, web & SaaS, public app store, native enterprise mobile apps, and containerized mobile apps.
+Citrix Endpoint Management (CEM) is a market leading Unified Endpoint Management (UEM) component of the Citrix Workspace. It can help you secure and manage various mobile endpoint platforms ranging from iOS, Android, Windows, and Mac to rugged mobile devices and IoT devices. CEM also manages various mobile apps on endpoints and supports various delivery mechanisms including virtualized, web & SaaS, public app store, native enterprise mobile apps, and containerized mobile apps.
 
-In the following sections, we discuss how this architecture can help you secure PII on mobile endpoints.
+In the following sections, we discuss how this architecture can help you secure personal data on mobile endpoints.
 
-The [Citrix MDX Toolkit](https://docs.citrix.com/en-us/mdx-toolkit/overview.html), the Citrix Endpoint Management MAM container technology, is a key part of the Citrix Endpoint Management solution to protect data. It provides end-to-end security maximizing protection of personal data, mitigating the risk of loss, by encrypting apps and data and managing secure transfer of data through 70+ [MDX Policies](https://docs.citrix.com/en-us/mdx-toolkit/policies-platform.html). These include functional areas such as Authentication, Device Security, Networking, Encryption, Access Thresholds, App Interaction, App Restrictions, and other app-specific policies.  All of these are applied on a per-app basis to mitigate the risk of PII loss.
+The [Citrix MDX Toolkit](https://docs.citrix.com/en-us/mdx-toolkit/overview.html), the Citrix Endpoint Management MAM container technology, is a key part of the Citrix Endpoint Management solution to protect data. It provides end-to-end security maximizing protection of personal data, mitigating the risk of loss, by encrypting apps and data and managing the transfer of data through 70+ [MDX Policies](https://docs.citrix.com/en-us/mdx-toolkit/policies-platform.html). These include functional areas such as Authentication, Device Security, Networking, Encryption, Access Thresholds, App Interaction, App Restrictions, and other app-specific policies.  All of these are applied on a per-app basis designed to mitigate the risk of personal data loss.
 
 MDX Technologies help provide end-to-end protection by managing encrypted data transfers between device and intranet
-data stores, in addition to between managed apps. Once these apps are installed, Secure Hub, a mobile app that provides access to desktops, apps and data, ensures that the desired policies are continuously enforced. IT is always in control of the enterprise content on users’ devices. MDX also includes micro VPN, a per-app VPN that technology that integrates with Citrix Gateway. It is utilized seamlessly by managed apps to encrypt data traffic to and from the enterprise intranet.
+data stores, in addition to between managed apps. Once these apps are installed, Secure Hub, a mobile app that provides access to desktops, apps and data, helps continuously enforce the desired policies. IT is always in control of the enterprise content on users’ devices. MDX also includes micro VPN, a per-app VPN that technology that integrates with Citrix Gateway. It is utilized seamlessly by managed apps to encrypt data traffic to and from the enterprise intranet.
 
 #### Article 25 - Access to Personal Data
 Citrix Endpoint Management provides a variety of enrollment methods to validate user identity before initiating Mobile Device Management or Mobile App Management and then access to secure data. For example, a two-factor solution can include One-time PIN (OTP) enrollment invitations along with Active Directory domain credentials. For environments with the highest security requirements, enrollment invitations may be linked to a device by SN, UDID, EMEI to uniquely identify the hardware.
@@ -251,7 +251,7 @@ The Citrix Endpoint Management SDK, or MDX technology, with micro VPN provides s
 For more information see this [micro VPN FAQ](https://support.citrix.com/article/CTX136914); configuration of Android platform per-app VPNs using Citrix VPN for Android or iOS; or the configuration of platform per-app VPNs using native functionality.
 
 #### Article 32 - Data Encryption at Rest
-Citrix Endpoint Management supports data encryption at rest through the CEM MDX with Citrix-provided encryption libraries, or through platform level encryption directly or indirectly with partner containerization solutions. 
+Citrix Endpoint Management (CEM) supports data encryption at rest through the CEM MDX with Citrix-provided encryption libraries, or through platform level encryption directly or indirectly with partner containerization solutions. 
 
 CEM can provide encryption at rest on any supported mobile device independent of platform encryption. The CEM secure app container technology, MDX, uses its own software applied data encryption using FIPS compliant algorithms minimizing the risk of data loss.
 
