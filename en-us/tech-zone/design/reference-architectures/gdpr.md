@@ -12,19 +12,19 @@ GDPR is a set of data privacy rules that apply broadly to both companies in the 
 
 * Unify the different data protection regulations adopted by EU member states
 * Protect the data privacy of EU residents
-* Manage how organizations handle personal data
+* Ensure that organizations handle personal data in a responsible and accountable manner from collection through to return or destruction
 
 ### The GDPR applies to:
 
 * Organizations operating within the EU
 * Organizations operating outside of the EU who offer goods and services to EU residents
 
-**Note:** Privacy considerations for GDPR span the data lifecycle from collection, usage, storage, and secure disposal and retirement of data. It covers all personal data relating to your customers, employees, supply chain, partners, and anyone else about whom you collect personal information who reside in the EU. Personal data is any information relating to an identifiable person, therefore it is often referred to as personally identifiable information (PII). This can include information such as names, photographs, IP or email addresses, and medical information.
+**Note:** Privacy considerations for GDPR span the data lifecycle from collection, usage, storage, and secure disposal and retirement of data. It covers all personal data relating to your customers, employees, supply chain, partners, and anyone else about whom you collect personal information who reside in the EU. Personal data is any information relating to an identifiable person, therefore it is often referred to as personally identifiable information (PII). This can include information such as names, photographs, IP or email addresses, and medical information. For further detail on Citrix’s data lifecycle processes and practices, visit the [Citrix Trust Center](https://www.citrix.com/about/trust-center/).
 
 ### Two key GDPR articles are the focus of this document
 
-* Access control (Article 25) - calls out measures which shall ensure that by default personal data is not made accessible to an indefinite number of persons.
-* Encryption and data protection (Article 32) - calls out:
+* Access control (included in Article 25) - calls out measures which shall ensure that by default personal data is not made accessible to an indefinite number of persons.
+* Encryption and data protection (included in Article 32) - calls out:
   * Pseudonymisation and encryption of personal data
   * Ensure the ongoing confidentiality, integrity, availability, and resilience of processing systems and services
   * The ability to restore the availability and access to personal data in a timely manner in the event of a physical or technical incident
@@ -55,7 +55,7 @@ These data sources can range from traditional SQL databases to emails, digital d
 
 GDPR involves two key roles for data: the data controller and the data processor. The data controller is the entity who determines the purpose of the data and how the data is to be handled. The data processor handles or processes the actual data per the controller's guidelines.
 
-The GDPR is all about upleveling the maturity of the company when dealing with data and privacy information. Citrix has always been a data and application oriented company, with a proven record of handling complex, often international projects that are dealing with thousands of applications.
+The GDPR is all about upleveling the maturity of the company when dealing with data and personal information. Citrix has always been a data and application oriented company, with a proven record of handling complex, often international projects that are dealing with thousands of applications.
 
 The traditional consulting approach is focused on the business processes, identifying people and business requirements, access methods and slowly cascading down to infrastructure and data sources. However, the GDPR requires a more data centric approach. We recommend starting with identifying and assessing various locations where personal data is stored. Then move higher up the stack to make sure that data sources are properly secured. You can think about this as an inside out approach to security.
 
