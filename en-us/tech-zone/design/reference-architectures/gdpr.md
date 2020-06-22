@@ -6,8 +6,7 @@
 
 ## General Data Protection Regulation (GDPR) Overview
 
-GDPR is a set of data privacy rules that apply broadly to both companies in the European Union (EU) and the usage of data pertaining to EU residents. The GDPR went into full effect on May 25, 2018 across the EU. The official regulation includes several
-chapters which are further broken down into “articles,” or subsections. They describe specific provisions, which are frequently referenced by number or title in documents describing how to comply with their requirements.
+GDPR is a set of data privacy rules that apply broadly to both companies in the European Union (EU) as well as any company globally that collects and uses data pertaining to EU residents. The GDPR went into effect on May 25, 2018 and includes several chapters which are further broken down into numbered “articles” or subsections that we will refer to in this document. These articles describe the specific requirements applicable to the handling of personal data.
 
 ### GDPR seeks to:
 
