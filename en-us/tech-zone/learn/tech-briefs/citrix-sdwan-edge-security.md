@@ -14,9 +14,9 @@ description: Learn how Citrix SD-WAN Advanced Edition provides Edge Security for
 
 With the continued growth of cloud and SaaS, Enterprises are searching for solutions to provide optimal Internet access irrespective of where the endpoint is located. Citrix SD-WAN excels at steering intranet traffic across the WAN or Internet traffic, at the Edge. It applies business rules to identify applications using a database of 4,500+ predefined entries.
 
-However, in order to provide direct Internet access Enterprises also need to secure remote offices to protect the intranet. Direct Internet access exposes remote networks, and subsequently the entire corporate network, to threats. Ingress and egress traffic must be filtered, inspected, and scanned to protect against vulnerabilities.  
+However, to provide direct Internet access Enterprises also need to secure remote offices to protect the intranet. Direct Internet access exposes remote networks, and subsequently the entire corporate network, to threats. Ingress and egress traffic must be filtered, inspected, and scanned to protect against vulnerabilities.  
 
-Citrix SD-WAN has a native [onboard ICSA certified firewall](https://www.citrix.com/blogs/2019/08/13/do-you-trust-your-sd-wan-firewall/). It integrates with leading third party [Secure Web Gateway (SWG)](/en-us/citrix-sd-wan/11-2/internet-service/dia-with-secure-web-gateway.html) vendors via cloud proxy. It also hosts onboard SWGs as a [Virtual Network Function (VNF)](https://www.citrix.com/blogs/2020/05/14/citrix-check-point-software-support-choice-in-protecting-the-wan-edge/). Security partners include:
+Citrix SD-WAN has a native [onboard ICSA certified firewall](https://www.citrix.com/blogs/2019/08/13/do-you-trust-your-sd-wan-firewall/). It integrates with leading third party [Secure Web Gateway (SWG)](/en-us/citrix-sd-wan/11-2/internet-service/dia-with-secure-web-gateway.html) vendors via cloud proxy. Citrix SD-WAN also hosts onboard SWGs as a [Virtual Network Function (VNF)](https://www.citrix.com/blogs/2020/05/14/citrix-check-point-software-support-choice-in-protecting-the-wan-edge/). Security partners include:
 
 *  [iboss](/en-us/citrix-sd-wan/11-2/security/citrix-sd-wan-secure-web-gateway/iboss-integration.html)
 *  [Check Point](/en-us/citrix-sd-wan/11-2/hosted-firewalls/checkpoint-integration-on-1100-platform.html)
@@ -30,7 +30,7 @@ Now Citrix has added native onboard Next Generation Firewall – Edge Security f
 *  [Web Filtering](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html)
 *  [Malware Protection](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html)
 
-As a result, Enterprises are now able to enhance application performance securely from the edge of their network entirely with Citrix. They are also can confidently consolidate their Branch Office networks with a Citrix SD-WAN appliance that can provide steering to Internet services while inspecting traffic, and protecting it. Enterprises also can manage and monitor Edge Security through a single plane of glass with Citrix Cloud hosted Orchestrator service.
+As a result, Enterprises are now able to enhance application performance securely from the edge of their network entirely with Citrix. They also can confidently consolidate their Branch Office networks with a Citrix SD-WAN appliance that can provide steering to Internet services while inspecting traffic, and protecting it. Enterprises also can manage and monitor Edge Security through a single plane of glass with Citrix Cloud hosted Orchestrator service.
 
 ## Getting Started
 
@@ -97,17 +97,17 @@ For more information see [Citrix SD-WAN Edge Security – Intrusion Prevention](
 
 ## Web Filtering
 
-Web Filtering mitigates the risk of unsuspecting users clicking links on sites behind known “unsafe” domains and infecting their endpoints with malware, viruses, ransomware or other threats. It also helps protect users from accessing sites that would violate compliance rules or the Enterprise Acceptable Use Policy.
+Web Filtering mitigates the risk of unsuspecting users clicking links on sites behind known “unsafe” domains and infecting their endpoints with malware, viruses, ransomware, or other threats. It also helps protect users from accessing sites that would violate compliance rules or the Enterprise Acceptable Use Policy.
 
 ![Web Filtering](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_webfiltering.png)
 
-Citrix SD-WAN utilizes [Webroot’s BrightCloud](https://www.webroot.com/us/en/business/threat-intelligence/internet/web-classification-and-reputation-services) machine learning-based Web Classification and Web Reputation engine to filter domain names. It includes over thirty-two (32) billion URLs and seven hundred fifty (750) million domains. When users visit a site, the URL is sent for classification in real time. A temporary local cache is maintained to expedite the lookup the next time the URL is requested.
+Citrix SD-WAN utilizes [Webroot’s BrightCloud](https://www.webroot.com/us/en/business/threat-intelligence/internet/web-classification-and-reputation-services) machine learning-based Web Classification and Web Reputation engine to filter domain names. It includes over 32 billion URLs and 750 million domains. When users visit a site, the URL is sent for classification. A temporary local cache is maintained to expedite the lookup the next time the URL is requested.
 
 Web filtering is enabled, and preferences are configured within a Security Profile.
 
 ![Web Filtering Security Profile](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_webfilteringsecurityprofile.png)
 
-Existing categories may be selected to “block” access to the website or “flag” (log) access.  Alternatively, specific sites may be “bypassed” by domain name or IP address.
+Existing categories can be selected to “block” access to the website or “flag” (log) access. Alternatively, specific sites may be “bypassed” by domain name or IP address.
 
 ![Web Filtering Categories](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_webfilteringsecuritycategories.png)
 
@@ -115,20 +115,20 @@ For more information see [Citrix SD-WAN Edge Security – Web Filtering](/en-us/
 
 ## Anti-Malware
 
-Anti-Malware protects users against ransomware and viruses. It guards against files delivered by HTTP download or opened from SMTP delivered email. Powered by [Bitdefender](https://www.bitdefender.com/), it assembles and scans files destine for users through email or HTTP downloads. It can block the file delivery, log its presence, and or include a notification regarding the risk identified.
+Anti-Malware protects users against ransomware and viruses. It guards against files delivered by HTTP download or opened from SMTP delivered email. Powered by [Bitdefender](https://www.bitdefender.com/), it assembles and scans files destine for users through email or HTTP downloads. Anti-Malware can then block the file delivery, logs its presence, and or send a notification regarding the risk identified.
 
 ![Anti-Malware](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_antimalware.png)
 
-Citrix SD-WAN Anti-Malware takes a four-step process to evaluate files. It has the ability to scan 41 file-type extensions and 10 MIME types for email content. If the file fails any of the tests below it is considered malware and the download is blocked:
+Citrix SD-WAN Anti-Malware takes a four-step process to evaluate files. It can scan 41 file-type extensions and 10 MIME types for email content. If the file fails any of the tests below it is considered malware and the download is blocked:
 
 1.  Query a threat intelligence database for information about the file metadata based on its fingerprint.
-1.  Locally scan using Bitdefender's signature database will be run on the server while the cloud lookup is being performed.
+1.  A local scan using Bitdefender's signature database is run on the server while the cloud lookup is being performed.
 1.  Perform a heuristic scan to look for suspicious patterns in executable files.
 1.  Lastly, evaluate code in an emulator and look for malicious activity.
 
 ![Anti-Malware Security Profile](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_antimalwaresecurityprofile.png)
 
-Anti-Malware may be enabled or disabled for specific file types by selecting their extension.
+Anti-Malware can be enabled or disabled for specific file types by selecting their extension.
 
 ![Anti-Malware File Types](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_antimalwarefiletypes.png)
 
@@ -140,16 +140,16 @@ For more information see [Citrix SD-WAN Edge Security – Anti-Malware](/en-us/c
 
 ## Differentiation
 
-With Edge Security, that comes with 11.2 Advanced Edition, Citrix is now one of the few SD-WAN vendors that provides Intrusion Detection, Web Filtering, and Anti-Malware natively in On-premises appliances.  With Edge Security Citrix SD-WAN offers significant value to Enterprises including:
+With Edge Security, that comes with 11.2 Advanced Edition, Citrix is now one of the few SD-WAN vendors that provides Intrusion Detection, Web Filtering, and Anti-Malware natively in On-premises appliances. With Edge Security Citrix SD-WAN offers significant value to Enterprises including:
 
-*  **Maximize User Experience & Minimize Network Bandwidth** – Enterprises no longer need to backhaul internet traffic over their Wan to meet compliance requirements and guard against the perils of the Internet. Now they can steer flows to the nearest business SaaS sites while can protecting endpoints.
+*  **Maximize User Experience & Minimize Network Bandwidth** – Enterprises no longer must backhaul internet traffic over their Wan to meet compliance requirements and guard against the perils of the Internet. Now they can steer flows to the nearest business SaaS sites while protecting endpoints.
 *  **Secure the Enterprise Perimeter** – while direct Internet access enables better application performance it exposes branches and subsequently the corporate network to risk. Edge Security mitigates that risk by guarding against vulnerabilities at the point of remote office Internet access.
-*  **Branch Office consolidation** – Enterprises can simplify the equipment they need to manage and host in remote office utility closets. All of the following equipment functionality could be replaced with a Citrix SD-WAN 1100 AE appliance:
+*  **Branch Office consolidation** – Enterprises can simplify the equipment they need to manage and host in remote office utility closets. All of the following equipment functionality can be replaced with a Citrix SD-WAN 1100 AE appliance:
     *  Stand alone routers
     *  SWG appliances and firewalls
     *  DHCP and DNS servers
     *  WAN Optimization appliances
-*  **Single Point of Contact** – customers can contact Citrix regarding Network forwarding or Network security. Having a single point of contact avoids finger pointing if complex issues should arise. Enterprises can partner with Citrix Services to support operations.
+*  **Single Point of Contact** – customers can contact Citrix regarding Network forwarding or Network security. Having a single point of contact avoids finger pointing if complex issues arise. Enterprises can partner with Citrix Services to support operations.
 *  **Simplified Monitoring & Management** -  with Citrix Cloud hosted Orchestrator service Enterprise admins have an easy to use dashboard to onboard, configure, and monitor their Citrix SD-WAN Edge Security implementations.
 
 ## Summary
