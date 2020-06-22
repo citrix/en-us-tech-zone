@@ -91,18 +91,6 @@ Following server components are required:
 1.  Download the license file and import it into the Citrix License Server alongside an existing Citrix Virtual Desktops license
 2.  Use the Citrix Licensing Manager to import the license file. For more information, see [Install licenses](/en-us/licensing/current-release/citrix-licensing-manager/install.html)
 
-## Installation - StoreFront
-
-1.  On StoreFront server, run the following PowerShell command:
-
-    `Add-STFFeatureState -Name "Citrix.StoreFront.AppProtectionPolicy.Control" -IsEnabled $True`
-1.  In a multiple-server StoreFront deployment, you must manually propagate these changes to all the other servers in the server group
-1.  Verify that the feature is enabled on StoreFront by running the following PowerShell command
-
-    `Get-STFFeatureState -Name "Citrix.StoreFront.AppProtectionPolicy.Control"`
-
-    ![Get STF feature](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_18.png)
-
 ## Installation - Citrix Workspace app
 
 1.  Include the app protection component using one of the following methods:
@@ -158,7 +146,7 @@ Following steps provides guidance for anti screen sharing testing only. To test 
 
     ![Launch resource](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_26.png)
 
-1.  (Optional) If App protection is not installed, you get the following popup when trying to launch a protected virtual app or desktop.  Click **Yes**
+1.  (Optional) If App protection is not installed, you get the following popup when trying to launch a protected virtual app or desktop. Click **Yes**
 
     ![Optional download](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_8.png)
 
