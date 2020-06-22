@@ -15,14 +15,12 @@ chapters which are further broken down into “articles,” or subsections. They
 * Protect the data privacy of EU residents
 * Manage how organizations approach data privacy
 
-**Note:** Personal data is any information relating to an identifiable person, therefore it is often referred to as personally identifiable information (PII). This can include information such as names, photographs, IP or email addresses, and medical information.
-
 ### The GDPR applies to:
 
 * Organizations operating within the EU
 * Organizations operating outside of the EU who offer goods, services, or are involved in ‘monitoring the behavior’ of EU residents
 
-**Note:** Privacy considerations for GDPR span the data lifecycle from opt-in collection, to specific or anonymized usage and secured disposal and retirement of data. It covers all personal data relating to your customers, employees, supply chain, partners, and anyone else about whom you collect personal information.
+**Note:** Privacy considerations for GDPR span the data lifecycle from opt-in collection, to specific or anonymized usage and secured disposal and retirement of data. It covers all personal data relating to your customers, employees, supply chain, partners, and anyone else about whom you collect personal information. Personal data is any information relating to an identifiable person, therefore it is often referred to as personally identifiable information (PII). This can include information such as names, photographs, IP or email addresses, and medical information.
 
 ### Two key GDPR articles are the focus of this document
 
