@@ -79,7 +79,7 @@ Complexity is considered one of the biggest enemies of security. You want to ide
 
 The Pareto principle (also known as the 80/20 rule) is important during this data assessment. Companies need to try to minimize the effort required to secure most data sources. Most enterprises have hundreds or thousands of different applications and data sources that are used. They need to promptly identify the applications that contain critical data and don’t meet the GDPR requirements. Automated application assessment solutions can reduce the time required to analyze applications.
 
-In the following sections, we present a few selected architectures that can provide a universal, secure, and proven solution to secure any type of data. This ranges from web-based applications, through legacy client/server applications hosted on Windows or Linux to data stored in various documents or exchanged through emails.
+In the following sections, we present a few selected architectures that can provide a universal, secure, and proven solution to help secure any type of data. This ranges from web-based applications, through legacy client/server applications hosted on Windows or Linux to data stored in various documents or exchanged through emails.
 
 **Decision Flow for Data Types**
 [![Citrix Workspace helps enable GDPR compliance](/en-us/tech-zone/design/media/reference-architectures_gdpr_data-flow-diagram.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_data-flow-diagram.png)
@@ -193,7 +193,7 @@ As a proxy between the browser and the web app, Citrix ADC protects the data flo
 attacks against databases, attacks against the web app, and other users using its built-in application firewall. Citrix ADC protects against common web attacks including SQL Injection and cross-site scripting. You can read more about the Web App Firewall in our [product documentation](https://docs.citrix.com/en-us/citrix-adc/13/application-firewall.html).
 
 Protecting data also includes maximizing availability through Denial of Service (DoS/DDoS) attack protections. Combination attacks hit at all layers—so Citrix ADC provides Application layer defense (Layer 7), Transport layer defense (Layer 4) and Network layer
-defense (Layer 3). Citrix ADC not only provides a multi-layer approach to DDoS protection but it is coupled with a built-in IP Reputation service. It is an effective tool in identifying the IP address that is sending unwanted requests. Since most malware comes from compromised sites, you can use the IP reputation list to preemptively reject requests that are coming from the IP with the bad reputation. Citrix ADC's forward proxy, Secure Web Gateway, filters out connections going out to the internet based on reputational risk. This enforces security policies on all outgoing web traffic, while blocking access to inappropriate sites on a per user/group basis.
+defense (Layer 3). Citrix ADC not only provides a multi-layer approach to DDoS protection but it is coupled with a built-in IP Reputation service. It is an effective tool in identifying the IP address that is sending unwanted requests. Since most malware comes from compromised sites, you can use the IP reputation list to preemptively reject requests that are coming from the IP with the bad reputation. Citrix ADC's forward proxy, Secure Web Gateway, can filter out connections going out to the internet based on reputational risk. This enforces security policies on outgoing web traffic, while blocking access to inappropriate sites on a per user/group basis.
 
 **Citrix ADC Tokenization**
 [![Citrix ADC Tokenization](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-citrix-adc-tokenization.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-citrix-adc-tokenization.png)
@@ -201,7 +201,7 @@ defense (Layer 3). Citrix ADC not only provides a multi-layer approach to DDoS p
 **Citrix ADC Pseudonymization**
 [![Citrix ADC Pseudonymization](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-citrix-adc-pseudo.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-citrix-adc-pseudo.png)
 
-Pseudonymization is another control mentioned in Article 32. Conceptually, it’s a procedure by which the most identifying fields
+Pseudonymization is another control mentioned in Article 32. Conceptually, it’s a procedure by which identifying fields
 within a data record are replaced by one or more artificial identifiers, or pseudonyms. This makes storing personal data more secure
 in the event of a breach – by using data segmentation. An example is tokenizing or hashing sensitive data that Citrix ADC parses for web-application traffic. This means hashing personally identifying data while transmitted between a controller and a processor. This is done in PCI-DSS regulated environments. For example, for cardholder data, tokenization guidelines are specific for the Primary Account Number (PAN). Tokenization replaces the PAN with a surrogate value called a token. De-tokenization is the reverse process of redeeming a token for its associated PAN value. The security of an individual token relies predominantly on the infeasibility of determining the original PAN by knowing only the surrogate value. Applications may not need as much security protection as associated with the use of PAN. For GDPR, storing tokens instead of personal data is one alternative that can help to reduce the amount of personal data in the environment, potentially reducing the effort required to adhere to GDPR requirements.
 
@@ -312,6 +312,8 @@ For customers requiring all files to be archived for compliance purposes, ShareF
 [Citrix Workspace](https://www.citrix.com/products/citrix-workspace/) simplifies the management of your systems and data by centralizing services in the data center or cloud as a digital workspace. It helps Citrix customers adhere to many GDPR requirements by helping to ensure that applications are centralized and enclaved, data is protected when shared or distributed, access to data and resources is controlled, and IT is brought together for application and data-specific security.
 
 To learn more about security and compliance with Citrix secure digital workspace solutions, visit [https://www.citrix.com/it-security/](https://www.citrix.com/it-security/).
+
+To learn more about Citrix’s approach to data management, including security documentation, privacy and security compliance, and vulnerability management, visit [https://www.citrix.com/about/trust-center/](https://www.citrix.com/about/trust-center/).
 
 ## Additional Links
 
