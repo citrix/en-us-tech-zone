@@ -10,21 +10,20 @@ GDPR is a set of data privacy rules that apply broadly to both companies in the 
 
 ### GDPR seeks to:
 
-* Unify European data protection regulations
+* Unify the different data protection regulations adopted by EU member states
 * Protect the data privacy of EU residents
-* Manage how organizations approach data privacy
+* Manage how organizations handle personal data
 
 ### The GDPR applies to:
 
 * Organizations operating within the EU
-* Organizations operating outside of the EU who offer goods, services, or are involved in ‘monitoring the behavior’ of EU residents
+* Organizations operating outside of the EU who offer goods and services to EU residents
 
-**Note:** Privacy considerations for GDPR span the data lifecycle from opt-in collection, to specific or anonymized usage and secured disposal and retirement of data. It covers all personal data relating to your customers, employees, supply chain, partners, and anyone else about whom you collect personal information. Personal data is any information relating to an identifiable person, therefore it is often referred to as personally identifiable information (PII). This can include information such as names, photographs, IP or email addresses, and medical information.
+**Note:** Privacy considerations for GDPR span the data lifecycle from collection, usage, storage, and secure disposal and retirement of data. It covers all personal data relating to your customers, employees, supply chain, partners, and anyone else about whom you collect personal information who reside in the EU. Personal data is any information relating to an identifiable person, therefore it is often referred to as personally identifiable information (PII). This can include information such as names, photographs, IP or email addresses, and medical information.
 
 ### Two key GDPR articles are the focus of this document
 
-* Access control (Article 25) - calls out measures which shall ensure that by default
-personal data is not made accessible without the individual’s intervention to an indefinite number of persons.
+* Access control (Article 25) - calls out measures which shall ensure that by default personal data is not made accessible to an indefinite number of persons.
 * Encryption and data protection (Article 32) - calls out:
   * Pseudonymisation and encryption of personal data
   * Ensure the ongoing confidentiality, integrity, availability, and resilience of processing systems and services
