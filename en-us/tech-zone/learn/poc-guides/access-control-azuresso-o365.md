@@ -192,6 +192,7 @@ Get-MsolDomain
  $uri = "https://app.netscalergateway.net/ngs/dhhn4j3mf1kc/saml/login?APPID=8dd87428-460b-4358-a3c2-609451e8f5be" # The Login URL from the Citrix Workspace Office 365 app configuration
  $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("e:\CitrixCloud.crt") # Path to the downloaded certificate file from Citrix Workspace
  $certData = [system.convert]::tobase64string($cert.rawdata)
+
  Set-MsolDomainAuthentication `
      -DomainName $dom `
      –federationBrandName $fedBrandName `
@@ -398,6 +399,7 @@ During validation, a user might receive the following error:
 [![Federation Realm Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_troubleshooting-federation-realm-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_troubleshooting-federation-realm-01.png)
 
 This is often caused by the domain not being verified or properly federated.  Please review the following sections of the PoC guide:
+
 *  [Verify Authentication Domain](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#verify-authentication-domain)
 *  [Configure Domain Federation](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#configure-domain-federation)
 
@@ -416,4 +418,3 @@ The enhanced security policies are applied onto to those related domains. To ide
 *  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains should be added like the following `*.domain.com`
 
 [![Enhanced Security Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_enhanced-security-troubleshooting-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_enhanced-security-troubleshooting-01.png)
-
