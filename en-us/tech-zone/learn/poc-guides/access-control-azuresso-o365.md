@@ -194,15 +194,15 @@ Get-MsolDomain
  $uri = "https://app.netscalergateway.net/ngs/dhhn4j3mf1kc/saml/login?APPID=8dd87428-460b-4358-a3c2-609451e8f5be" # The Login URL from the Citrix Workspace Office 365 app configuration
  $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("e:\CitrixCloud.crt") # Path to the downloaded certificate file from Citrix Workspace
  $certData = [system.convert]::tobase64string($cert.rawdata)
- Set-MsolDomainAuthentication |
-    -DomainName $dom |
-    –federationBrandName $fedBrandName |
-    -Authentication Federated |
-    -PassiveLogOnUri $uri |
-    -LogOffUri $logoffuri |
-    -SigningCertificate $certData |
-    -IssuerUri $IssuerUri |
-    -PreferredAuthenticationProtocol SAMLP
+ Set-MsolDomainAuthentication `
+     -DomainName $dom `
+     –federationBrandName $fedBrandName `
+     -Authentication Federated `
+     -PassiveLogOnUri $uri `
+     -LogOffUri $logoffuri `
+     -SigningCertificate $certData `
+     -IssuerUri $IssuerUri `
+     -PreferredAuthenticationProtocol SAMLP
 ```
 
 *  Verify the domain is currently set to **Federated** within Azure by running the following PowerShell command
@@ -221,14 +221,20 @@ Get-MsolDomainFederationSettings -DomainName $dom
 
 [![Domain Federation 03](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_domain-federation-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_domain-federation-03.png)
 
+***Note: If the federation settings need to be removed, run the following PowerShell command*
+
+```
+Set-MsolDomainAuthentication -DomainName $dom -Authentication Managed
+```
+
 ### Validate
 
 IdP-Initiated Validation
 
 *  Log into to Citrix Workspace as a user
-*  Select the configured SaaS application
-*  Observe the Okta sign-on process briefly appearing
-*  The SaaS App successfully launches
+*  Select the Office 365 application
+*  Observe the URL to see it briefly redirect through Azure
+*  The Office 365 portal successfully launches
 
 SP-Initiated Validation
 
@@ -243,19 +249,19 @@ Citrix Access Control service provides website filtering within SaaS and Web app
 
 *  From Citrix Cloud, **Manage** within the Access Control tile
 
-[![Citrix Access Control 1](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-01.png)
+[![Citrix Access Control 1](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_access-control-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_access-control-01.png)
 
-*  If this guide was followed the **Set up end user authentication** step and the **Configure end user access to SaaS, web and virtual applciations** steps are complete. Select **Configure Content Access**
+*  If this guide was followed, the **Set up end user authentication** step and the **Configure end user access to SaaS, web and virtual applciations** steps are complete. Select **Configure Content Access**
 *  Select **Edit**
 *  **Enable** the **Filter website categories** option
-*  Withint the **Blocked categories** box, select **Add**
+*  Within the **Blocked categories** box, select **Add**
 *  Select the categories to block users from accessing
 
-[![Citrix Access Control 2](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-02.png)
+[![Citrix Access Control 2](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_access-control-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_access-control-02.png)
 
 *  When all applicable categories are selected, select **Add**
 
-[![Citrix Access Control 3](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-03.png)
+[![Citrix Access Control 3](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_access-control-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_access-control-03.png)
 
 *  Do the same for allowed categories
 *  Do the same for redirected categories. These categories redirect to a Secure Browser instance
@@ -266,7 +272,7 @@ Citrix Access Control service provides website filtering within SaaS and Web app
 IdP-Initiated Validation
 
 *  Log into to Citrix Workspace as a user
-*  Select the configured SaaS application. If enhanced security is disabled, the app launches within the local browser, otherwise the embedded browser is used
+*  Select Office 365. If enhanced security is disabled, the app launches within the local browser, otherwise the embedded browser is used
 *  The user automatically signs on to the app
 *  The appropriate enhanced security policies are applied
 *  If configured, select a URL within the SaaS app that is in the blocked, allowed and redirected categories
@@ -276,17 +282,132 @@ IdP-Initiated Validation
 SP-Initiated Validation
 
 *  Launch a browser
-*  Go to the company-defined URL for the SaaS application
-*  The browser directs the browser to Citrix Workspace for authentication
-*  Once the user authenticates with the primary user directory, the SaaS app launches in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches the SaaS app
+*  Go to the [Office 365](https://www.office365.com) website and select **Sign In**
+*  Enter the username.
+*  The browser redirects the browser to Citrix Workspace for authentication
+*  Once the user authenticates with the primary user directory, Office 365 launches in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches Office 365
+
+## Office 365 Related Domains
+
+The following list are the current associated domains associated with Office 365.
+
+***Note:** These domains can change at any time*
+
+*  *.office.com
+*  *.office365.com
+*  *.sharepoint.com
+*  *.live.com
+*  *.onenote.com
+*  *.microsoft.com
+*  *.powerbi.com
+*  *.dynamics.com
+*  *.microsoftstream.com
+*  *.powerapps.com
+*  *.yammer.com
+*  *.windowsazure.com
+*  *.msauth.net
+*  *.msauthimages.net
+*  *.msocdn.com
+*  *.microsoftonline.com
+*  *.windows.net
+*  *.microsoftonline-p.com
+*  *.akamaihd.net
+*  *.sharepointonline.com
+*  *.officescriptsservice.com
+*  *.live.net
+*  *.office.net
+*  *.msftauth.net
+
+## Office 365 Apps
+
+If it is preferrable to launch a specific Office 365 app (Word, PowerPoint, or Excel) instead of the Office 365 portal, the administrator needs to create a separate application instance within Citrix Cloud for each app. Each app has a unique URL, which must include the correct value for federated domain, which was configured in this guide. The federated domain entry informs Azure to redirect to the correct federated domain configuration.
+
+*  Word: `https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2Foffice.live.com%2Fstart%2FWord.aspx%3Fauth%3D2&whr=`**federated domain**
+*  Powerpoint: `https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2Fwww.office.com%2Flaunch%2Fpowerpoint%3Fauth%3D2&whr=`**federated domain**
+*  Excel: `https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2Foffice.live.com%2Fstart%2FExcel.aspx%3Fauth%3D2&whr=`**federated domain**
+*  CRM/Dynamics Online: `https://<tenant>.crm.dynamics.com/?whr=`**federated domain**
+*  OneDrive for Business: `https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2F<tenant>-my.sharepoint.com%2F&whr=`**federated domain**
+*  Outlook Calendar: `https://outlook.office.com/owa/?realm=`**federated domain**`&path=/calendar/view/Month`
+*  Outlook Web Access to Exchange Online: `https://outlook.com/owa/`**federated domain**
+*  SharePoint Online: `https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2F<tenant>.sharepoint.com%2F&whr=`**federated domain**
+
+*  Within Citrix cloud, select **Manage** from the Gateway tile.
+
+[![Setup SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-01.png)
+
+*  Select **Add a Web/SaaS app**
+*  In the Choose a template wizard, select **Office 365**
+
+[![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-02.png)
+
+*  Select **Next**
+*  In the **App details** screen, use the application-specifi URL from above and place it in the **URL** field.
+*  Change the **Name**, **Icon**, and **Description** as needed while leaving all remaining entries unchanged.
+
+[![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-individual-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-individual-saas-app-03.png)
+
+*  Select **Next**
+*  Enhanced security policies uses the related domains field to determine which URLs to secure. One related domain is automatically added based on the default URL. Enhanced security policies require related domains for any URL associated with the application. Office 365 includes many URLs, which can be found in the section Office 365 Related Domains.
+
+*  In the **Enhanced Security** window, select the appropriate security policies for the environment
+
+[![Setup SaaS App 04](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-04.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-04.png)
+
+*  In the **Single Sign-On** window, verify the **Relay State URL** is aligned with the application-specific URL from above
+*  Verify the **Name ID Format=Persistent** and **Name ID=Active Directory GUID**
+*  Enable the setting **Launch the app using the specified URL**. When the user launches an application from Workspace (IdP-initiated flow) the user will always end on the Azure portal page. This setting includes the Relay State URL within the SAML assertion, directing Azure to show the URL instead of the Azure portal page.
+*  Under Advanced attributes, verify **Attribute Name=IDPEmail**, **Attribute Format=Unspecified**, and **Attribute Value=Email**
+
+[![Setup SaaS App 05](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-individual-saas-app-05.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-individual-saas-app-05.png)
+
+*  Select **Save**
+*  Select **Finish** to complete the configuration of the Office 365 SaaS apps.
+
+## Stay Signed In
+
+In the default configuration, Azure Active Directory displays a dialog box during the logon process allowing the users to remain signed in.
+
+[![Persistent Sign In 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_persistent-signin-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_persistent-signin-01.png)
+
+This is an Azure setting that can be easily changed by doing the following:
+
+*  Within Azure, select **Azure Active Directory**
+*  Select **Company Branding**
+*  Select the enabled Locale
+*  In the Edit company branding pane, select **No** in the **Show option to remain signed in**
+
+[![Persistent Sign In 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_persistent-signin-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_persistent-signin-02.png)
+
+*  Select **Save**
 
 ## Troubleshooting
+
+### User Account Does Not Exist in the Directory
+
+When trying to launch Office 365, the user might receive the following error: The user account "account name" does not exist in the "GUID" directory.
+
+[![User Account Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_troubleshooting-no-user-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_troubleshooting-no-user-01.png)
+
+The following are suggestions on how to solve this issue:
+
+*  Verify the user is licensed to use Office 365 within the Office 365 administrator console
+*  Verify the identified email address within the error matches between the primary user directory, Azure Active Directory and Office 365.
+
+### Federation Realm Object
+
+During validation, a user might receive the following error:
+
+[![Federation Realm Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_troubleshooting-federation-realm-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_troubleshooting-federation-realm-01.png)
+
+This is often caused by the domain not being verified or properly federated.  Please review the following sections of the PoC guide:
+*  [Verify Authentication Domain](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#verify-authentication-domain)
+*  [Configure Domain Federation](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#configure-domain-federation)
 
 ### Enhanced Security Policies Failing
 
 Users might experience the enhanced security policies (watermark, printing, or cliboard access) fail. Typically, this happens because the SaaS application uses multiple domain names. Within the application configuration settings for the SaaS app, there was an entry for **Related Domains**.
 
-[![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_add-saas-app-02.png)
+[![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-03.png)
 
 The enhanced security policies are applied onto to those related domains. To identify missing domain names, an administrator can access the SaaS app with a local browser and do the following:
 
@@ -296,6 +417,5 @@ The enhanced security policies are applied onto to those related domains. To ide
 *  Select **Developer Tools**
 *  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains should be added like the following `*.domain.com`
 
-[![Enhanced Security Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_enhanced-security-troubleshooting-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_enhanced-security-troubleshooting-01.png)
+[![Enhanced Security Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_enhanced-security-troubleshooting-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_enhanced-security-troubleshooting-01.png)
 
-## Office 365 Related Domains
