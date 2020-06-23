@@ -1,8 +1,8 @@
 ---
 layout: doc
-description: Learn how to set up a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
+description: Learn how to set up a Citrix Access Control environment that provides single sign-on and enhanced security to Office 365.
 ---
-# Proof of Concept: Secure Access to Office 365 with Azure and Citrix Access Control
+# Proof of Concept: Secure Access to Office 365 with Citrix Access Control
 
 ## Contributors
 
@@ -14,17 +14,15 @@ description: Learn how to set up a Citrix Access Control environment that is abl
 
 As users access confidential content within Office 365, organizations must be able to simplify user login operations while still enforcing authentication standards. Organizations must be able to secure Office 365 even though it exist beyond the confines of the data center. Citrix Workspace provides organizations with enhanced security controls for Office 365.
 
-In this scenario, a user authenticates to Citrix Workspace using either Active Directory or Azure Active Directory as the primary user directory.
+In this scenario, a user authenticates to Citrix Workspace using either Active Directory as the primary user directory.
 
 [![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_ad-dir-azure-sso.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_ad-dir-azure-sso.png)
 
-[![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_aad-dir-azure-sso.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_aad-dir-azure-sso.png)
+ If the Citrix Access Control Service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the Office 365 applications.
 
- If the Citrix Access Control Service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the Azure-based SaaS applications.
+The following animation shows a user accessing Office 365 with  SSO and secured with Citrix Access Control.
 
-The following animation shows a user accessing a SaaS application with Azure providing SSO and secured with Citrix Access Control.
-
- [![Okta SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_demo-video.gif)
+ [![Okta SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_demo-video.gif)
 
 This demonstration shows an IdP-initiated SSO flow where the user launches the application from within Citrix Workspace. This PoC guide also supports a SP-initiated SSO flow where the user tries to access the SaaS app directly from their preferred browser.
 
