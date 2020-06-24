@@ -29,10 +29,10 @@ GDPR is a set of data privacy rules that apply broadly to both companies in the 
 
 *  Access control (included in Article 25) - calls out measures which shall ensure that by default personal data is not made accessible to an indefinite number of persons.
 *  Encryption and data protection (included in Article 32) - calls out:
-  *  Pseudonymization and encryption of personal data
-  *  Ensure the ongoing confidentiality, integrity, availability, and resilience of processing systems and services
-  *  The ability to restore the availability and access to personal data in a timely manner in the event of a physical or technical incident
-  *  Protection from accidental and unlawful destruction, loss, alteration, unauthorized disclosure of, or access to personal data transmitted, stored, or otherwise processed
+    *  Pseudonymization and encryption of personal data
+    *  Ensure the ongoing confidentiality, integrity, availability, and resilience of processing systems and services
+    *  The ability to restore the availability and access to personal data in a timely manner in the event of a physical or technical incident
+    *  Protection from accidental and unlawful destruction, loss, alteration, unauthorized disclosure of, or access to personal data transmitted, stored, or otherwise processed
 
 ### How Citrix can help you with your GDPR compliance initiatives
 
