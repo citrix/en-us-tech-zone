@@ -14,11 +14,9 @@ description: Learn how to set up a Citrix Access Control environment that provid
 
 As users access confidential content within SaaS applications, organizations must be able to simplify user login operations while still enforcing authentication standards. Organizations must be able to secure SaaS applications even though it exist beyond the confines of the data center. Citrix Workspace provides organizations with enhanced security controls for SaaS applications.
 
-In this scenario, a user authenticates to Citrix Workspace using either Active Directory or Azure Active Directory as the primary user directory.
+In this scenario, a user authenticates to Citrix Workspace using Active Directory as the primary user directory and launches an Azure-managed SaaS app.
 
 [![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_ad-dir-azure-sso.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas-_addir-azure-sso.png)
-
-[![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_aad-dir-azure-sso.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas-_aad-dir-azure-sso.png)
 
  If the Citrix Access Control Service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the SaaS applications.
 
@@ -103,7 +101,7 @@ With the SaaS app configured within Azure, the SaaS app can get configured withi
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-02.png)
 
 *  Copy the **User Access URL** and remember for later use
-*  Within Citrix cloud, select **Manage** from the Gateway tile.
+*  Within Citrix Cloud, select **Manage** from the Gateway tile.
 
 [![Setup SaaS App 03](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-03.png)
 
@@ -115,8 +113,6 @@ With the SaaS app configured within Azure, the SaaS app can get configured withi
 *  Select **Next**
 *  In the **App details** screen, replace the **URL** with the **User Access URL** copied from Azure.
 *  At the end of the **URL**, add the following: **&whr=federated_domain** replacing **federated_domain** with the  domain associated with the user's identity (information after the @ sign in the user's email). The federated domain entry informs Azure to redirect to the correct federated domain configuration. The federated domain information will get configured within Azure in an upcoming section.
-
-Word: https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2Foffice.live.com%2Fstart%2FWord.aspx%3Fauth%3D2&whr=federated domain
 
 [![Setup SaaS App 05](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-05.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-05.png)
 
@@ -131,9 +127,9 @@ Word: https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6
 *  Set the **Name ID Format=Persistent** and **Name ID=Active Directory GUID**
 *  Select the box labeled **Launch the app using the specified URL (SP Initiated)**. Once authenticated, the user will automatically get redirected tot he SaaS app instead of the Azure App Portal.
 *  Under Advanced attributes, add **Attribute Name=IDPEmail**, **Attribute Format=Unspecified**, and **Attribute Value=Email**
-*  Select **Download** to capture the **CRT-based** certificate.
-*  Next to the **Login URL**, select the **Copy** button to capture the Login URL. This URL gets used later.
-*  Select the **SAML Metadata** link
+*  ***Note:** Only needed to be done for first app.* Select **Download** to capture the **CRT-based** certificate.
+*  ***Note:** Only needed to be done for first app.* Next to the **Login URL**, select the **Copy** button to capture the Login URL. This URL gets used later.
+*  ***Note:** Only needed to be done for first app.* Select the **SAML Metadata** link
 
 [![Setup SaaS App 07](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-07.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-07.png)
 
@@ -142,22 +138,22 @@ Word: https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6
 [![Setup SaaS App 08](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-08.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-08.png)
 
 *  Select **Save**
-*  Select **Finish** to complete the configuration of the Office 365 SaaS apps.
+*  Select **Finish** to complete the configuration of the SaaS app.
 
 ### Authorize SaaS App
 
 *  Within Citrix Cloud, select **Library** from the menu
 
-[![Authorize SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_authorize-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_authorize-saas-app-01.png)
+[![Authorize SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_authorize-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_authorize-saas-app-01.png)
 
 *  Find the SaaS app and select **Manage Subscribers**
 *  Add the appropriate users/groups who are authorized to launch the app
 
-[![Authorize SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_authorize-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_authorize-saas-app-02.png)
+[![Authorize SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_authorize-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_authorize-saas-app-02.png)
 
 ## Federate Azure Authentication to Citrix Workspace
 
-To successfully federate Office 365 with Citrix Workspace, the administrator needs to do the following
+To successfully federate the SaaS app with Citrix Workspace, the administrator needs to do the following
 
 *  Verify Authentication Domain
 *  Configure Domain Federation
@@ -178,7 +174,7 @@ To federate authentication to Citrix Workspace, Azure must verify the fully qual
 
 [![Domain Verification 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_verify-domain-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_verify-domain-02.png)
 
-*  Once complete, the domain should contain a verified mark
+*  Once complete, the domain includes a verified mark
 
 [![Domain Verification 03](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_verify-domain-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_verify-domain-03.png)
 
@@ -217,7 +213,7 @@ Get-MsolDomain
  $fedBrandName = "CitrixWorkspaceSAMLIdP" # A name to help remember the configuration purpose
  $IssuerUri = "https://citrix.com/fdafdjk4" # The entityID taken from the Citrix Worksapce SAML Metadata file
  $logoffuri = "https://app.netscalergateway.net/cgi/logout" # Standard entry for all. Do not change
- $uri = "https://app.netscalergateway.net/ngs/dhhn4j3mf1kc/saml/login?APPID=8dd87428-460b-4358-a3c2-609451e8f5be" # The Login URL from the Citrix Workspace Office 365 app configuration
+ $uri = "https://app.netscalergateway.net/ngs/dhhn4j3mf1kc/saml/login?APPID=8dd87428-460b-4358-a3c2-609451e8f5be" # The Login URL from the Citrix Workspace SaaS app configuration
  $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("e:\CitrixCloud.crt") # Path to the downloaded certificate file from Citrix Workspace
  $certData = [system.convert]::tobase64string($cert.rawdata)
 
@@ -311,7 +307,7 @@ SP-Initiated Validation
 *  Launch a browser
 *  Go to the SaaS app website and **Sign In**. If there is an option to do SSO, select the option.
 *  The browser redirects the browser to Citrix Workspace for authentication
-*  Enter the username.
+*  Enter the user name.
 *  Once the user authenticates with the primary user directory, the SaaS app launches in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches the SaaS app.
 
 ## Stay Signed In
@@ -335,14 +331,14 @@ This is an Azure setting that can be easily changed by doing the following:
 
 ### User Account Does Not Exist in the Directory
 
-When trying to launch Office 365, the user might receive the following error: The user account "account name" does not exist in the "GUID" directory.
+When trying to launch the SaaS app, the user might receive the following error: The user account "account name" does not exist in the "GUID" directory.
 
 [![User Account Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_troubleshooting-no-user-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_troubleshooting-no-user-01.png)
 
 The following are suggestions on how to solve this issue:
 
-*  Verify the user is licensed to use Office 365 within the Office 365 administrator console
-*  Verify the identified email address within the error matches between the primary user directory, Azure Active Directory and Office 365.
+*  Verify the user is authorized to use the SaaS app within Azure Active Directory
+*  Verify the identified email address within the error matches between the primary user directory, Azure Active Directory and the SaaS app.
 
 ### Federation Realm Object
 
@@ -357,7 +353,7 @@ This is often caused by the domain not being verified or properly federated.  Pl
 
 ### Enhanced Security Policies Failing
 
-Users might experience the enhanced security policies (watermark, printing, or cliboard access) fail. Typically, this happens because the SaaS application uses multiple domain names. Within the application configuration settings for the SaaS app, there was an entry for **Related Domains**.
+Users might experience the enhanced security policies (watermark, printing, or clipboard access) fail. Typically, this happens because the SaaS application uses multiple domain names. Within the application configuration settings for the SaaS app, there was an entry for **Related Domains**.
 
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-03.png)
 
@@ -367,6 +363,6 @@ The enhanced security policies are applied onto to those related domains. To ide
 *  In Google Chrome and Microsoft Edge (Chromium version), select the three dots in the upper right side of the browser to show a menu screen.
 *  Select **More Tools**.
 *  Select **Developer Tools**
-*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains should be added like the following `*.domain.com`
+*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains are be added like the following `*.domain.com`
 
 [![Enhanced Security Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_enhanced-security-troubleshooting-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_enhanced-security-troubleshooting-01.png)
