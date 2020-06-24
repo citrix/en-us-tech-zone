@@ -65,7 +65,7 @@ Intrusion Prevention Systems (IPS) mitigate the risk of threats to networks by i
 
 ![Intrusion Prevention](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_intrustionprevention.png)
 
-Citrix SD-WAN Edge Security Intrusion Prevention functionality is powered by the [Suricata](http://suricata-ids.org/) open source network threat detection engine. Suricata is owned and supported by the Open Information Security Foundation (OISF). It inspects the network traffic after passing through the firewall using extensive rules and a powerful signature language.
+Citrix SD-WAN Edge Security Intrusion Prevention functionality is powered by the [Suricata](https://suricata-ids.org/) open source network threat detection engine. Suricata is owned and supported by the Open Information Security Foundation (OISF). It inspects the network traffic after passing through the firewall using extensive rules and a powerful signature language.
 
 Rules look for attacks such as
 
