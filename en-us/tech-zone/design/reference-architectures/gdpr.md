@@ -49,7 +49,7 @@ describe how it unifies applications, data, and desktops into a digital workspac
 
 ### Citrix Workspace - helping to enable GDPR compliance
 
-[![Citrix Workspace helps enable GDPR compliance](/en-us/tech-zone/design/media/reference-architectures_gdpr_001.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_001.png)
+[![Citrix Workspace helps enable GDPR compliance](/en-us/tech-zone/design/media/reference-architectures_gdpr_citrix-solution.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_citrix-solution.png)
 
 ## Data oriented approach to GDPR requirements
 
