@@ -63,7 +63,7 @@ The GDPR is all about increasing the maturity of the company when dealing with d
 
 The traditional consulting approach is focused on the business processes, identifying people and business requirements, access methods and slowly cascading down to infrastructure and data sources. However, the GDPR requires a more data centric approach. We recommend starting with identifying and assessing various locations where personal data is stored. Then move higher up the stack to make sure that data sources are properly secured. You can think about this as an inside out approach to security.
 
-![GDPR Flow Diagram](/en-us/tech-zone/design/media/reference-architectures_gdpr_flow_002.png)
+![GDPR Flow Diagram](/en-us/tech-zone/design/media/reference-architectures_gdpr_flow.png)
 
 **Define** - Start by defining the criteria of personal data that is in scope of the assessment. This phase helps you define what to look for and how to prioritize data sources from a privacy perspective. This can include employees, customers, vendors, and any other relevant entities.
 
