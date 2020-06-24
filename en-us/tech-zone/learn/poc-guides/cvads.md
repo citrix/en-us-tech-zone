@@ -76,7 +76,7 @@ The [Cloud Connector Connectivity Check Utility](https://support.citrix.com/arti
 
 ### Create Citrix Cloud Account
 
-If you are an existing Citrix Cloud customer, skip to the next section: [Obtain Citrix Virtual Apps and Desktops Trial](/en-us/tech-zone/learn/poc-guides/cvadss.html#obtain-citrix-virtual-apps-and-desktops-trial). Ensure that you have an active Citrix Cloud account. If your account has expired, please contact your account manager to enable it.
+If you are an existing Citrix Cloud customer, skip to the next section: [Obtain Citrix Virtual Apps and Desktops Trial](#obtain-a-citrix-virtual-apps-and-desktops-trial-account). Ensure that you have an active Citrix Cloud account. If your account has expired, please contact your account manager to enable it.
 
 1.  Go to the [Citrix Cloud](https://citrix.cloud.com).
 2.  If you are new to Citrix Cloud click **Sign up and try it free** in the bottom left.
@@ -226,7 +226,7 @@ Use Citrix Virtual Apps & Desktop service to create a catalog of the virtual mac
 3.  In the Machine Catalog Setup dialog, click **Next**
 [![Citrix Virtual Apps and Desktops Intro](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog3.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog3.png)
 4.  Select the **appropriate operating system for your machine catalog**. This should match the operating system of the virtual machine where you installed the VDA
-[![Citrix Virtual Apps and Desktops Operating System](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog4.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog.png)
+[![Citrix Virtual Apps and Desktops Operating System](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog4.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog4.png)
 5.  Choose how you want to deploy your machines. In this POC guide, we are going to have **Machines that are powered managed** and deployed through **Citrix Machine Creation Services**. Click **Next**
 [![Citrix Virtual Apps and Desktops Machine Management](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog5.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog5.png)
 6.  Choose how you want users to connect. Click **Next**
