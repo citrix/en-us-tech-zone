@@ -12,23 +12,23 @@ description: Learn how Citrix solutions help enable organizations to adhere to t
 
 GDPR is a set of data privacy rules that apply broadly to both companies in the European Union (EU) in addition to any company globally that collects and uses data pertaining to EU residents. The GDPR went into effect on May 25, 2018 and includes several chapters which are further broken down into numbered “articles” or subsections that we will refer to in this document. These articles describe the specific requirements applicable to the handling of personal data.
 
-### GDPR seeks to:
+### GDPR seeks to
 
-* Unify the different data protection regulations adopted by EU member states
-* Protect the data privacy of EU residents
-* Ensure that organizations handle personal data in a responsible and accountable manner from collection through to return or destruction
+*  Unify the different data protection regulations adopted by EU member states
+*  Protect the data privacy of EU residents
+*  Ensure that organizations handle personal data in a responsible and accountable manner from collection through to return or destruction
 
-### The GDPR applies to:
+### The GDPR applies to
 
-* Organizations operating within the EU
-* Organizations operating outside of the EU who offer goods and services to EU residents
+*  Organizations operating within the EU
+*  Organizations operating outside of the EU who offer goods and services to EU residents
 
 **Note:** Privacy considerations for GDPR span the data lifecycle from collection, usage, storage, and secure disposal and retirement of data. It covers all personal data relating to your customers, employees, supply chain, partners, and anyone else about whom you collect personal information who resides in the EU. Personal data is any information relating to an identifiable person, therefore it is often referred to as personally identifiable information (PII). This can include information such as names, photographs, IP or email addresses, and medical information. For further detail on Citrix’s data lifecycle processes and practices, visit the [Citrix Trust Center](https://www.citrix.com/about/trust-center/).
 
 ### Two key GDPR articles are the focus of this document
 
-* Access control (included in Article 25) - calls out measures which shall ensure that by default personal data is not made accessible to an indefinite number of persons.
-* Encryption and data protection (included in Article 32) - calls out:
+*  Access control (included in Article 25) - calls out measures which shall ensure that by default personal data is not made accessible to an indefinite number of persons.
+*  Encryption and data protection (included in Article 32) - calls out:
   * Pseudonymization and encryption of personal data
   * Ensure the ongoing confidentiality, integrity, availability, and resilience of processing systems and services
   * The ability to restore the availability and access to personal data in a timely manner in the event of a physical or technical incident
@@ -40,12 +40,12 @@ Citrix Workspace simplifies the management of your systems and data by centraliz
 services in the data center or cloud as a digital workspace. The goal of this document is to
 describe how it unifies applications, data, and desktops into a digital workspace for your teams. One that allows you to better align with GDPR requirements around data management, data monitoring, and information auditing.
 
-#### Citrix supports clients on their journey to GDPR compliance in 4 key ways:
+#### Citrix supports clients on their journey to GDPR compliance in 4 key ways
 
-* By centralizing and enclaving applications and data
-* By helping to ensure data is protected when shared or distributed
-* By controlling who has access to data and resources
-* By bringing IT together for application and data-specific security
+*  By centralizing and enclaving applications and data
+*  By helping to ensure data is protected when shared or distributed
+*  By controlling who has access to data and resources
+*  By bringing IT together for application and data-specific security
 
 ### Citrix Workspace - helping to enable GDPR compliance
 
@@ -105,6 +105,7 @@ Citrix has a long tradition of providing a platform for the secure delivery of t
 ### Securing Applications to GDPR Standards
 
 #### Article 25 - Access to Personal Data
+
 There are multiple ways to limit or prevent users from accessing published resources. The most basic method is to simply hide the applications or desktops from users by enforcing Active Directory group membership. When publishing resources through the Citrix management console, the access is enforced on the Citrix Virtual Delivery Agent (VDA) machines hosting the workloads. Access and available functionality is further tweaked through Citrix's comprehensive policy engine.
 
 The use of traditional user name/password authentication is decreasing with more secure multifactor authentication (MFA) increasing. Even for internal networks, more companies are enforcing MFA requirements to enhance security. With Citrix Virtual Apps and Desktops and Citrix Application Delivery Controller (ADC), MFA can be applied to any client/server application including even legacy applications that are hard to maintain. The ADC appliance provides an extensible and flexible approach to configuring MFA, from time-based one-time tokens, through smart cards, user or machine certificates to biometric authentication (through third party integration).
@@ -122,14 +123,17 @@ Aside from the monitoring and reporting of user access, all administrative chang
 Finally, for the most security-conscious environments, it is possible to create a separate set of user identities and automatically switch to them. This is done using the Federated Authentication Service. The approach can be used to further minimize the impact of lateral movement and contain any security breach.
 
 #### Article 32 - Data Encryption in Transit
+
 With Citrix Virtual Apps and Desktops, only screen pixels are transferred between the hosting server and the endpoint. Connection parameters are established during session initiation or reconnection. CVAD can ensure that traffic coming to and from the endpoint is always encrypted, even if the application itself doesn’t support encryption. This encryption can be enabled for any published application or desktop. For details on end-to-end encryption, refer to [this document](https://www.citrix.com/content/dam/citrix/en_us/documents/white-paper/end-to-end-encryption-with-xenapp-and-xendesktop.pdf)
 
 #### Article 32 - Data Encryption at Rest
+
 While Citrix Virtual Apps and Desktops can help with the encryption between user and application, the back-end itself remains out of scope for this solution. However, CVAD can be used to isolate unencrypted traffic and data during the transition period utilizing secure zones. This makes sure that all data is encrypted with a long-term process. Encapsulating this data in an isolated enclave can provide the required security while the migration project is underway. You can read more about secure zones in this blog post: [“Unsinkable”: The Myth of Foolproof IT Security](https://www.citrix.com/blogs/2017/10/31/unsinkable-the-myth-of-foolproof-it-security/).
 
 As for encryption on the endpoint, it is important to minimize data exposure at the endpoint and control data remanence. Data residing on the endpoint needs to be restricted, delivering only the minimum amount of data necessary. Virtualizing all access to personal data and then managing and protecting residual data, keystrokes and screen data is the Citrix approach. To learn more, read this blog post about the [Citrix ICA client footprint](https://www.citrix.com/blogs/2017/08/31/citrix-ica-client-what-leaks/).
 
 #### Article 32 - Data Isolation and Protection
+
 Contrary to traditional desktops on physical endpoints, server, and desktop OS images within Citrix Virtual Apps and Desktops usually have a much more restricted scope of operation. They are used to host a group of well-defined, centrally managed applications and desktops with predictable behavior and centralized configuration options.
 
 There are different ways how data and applications can be protected and isolated from each other. With aggregation of resources from multiple servers, it is possible to create groups of separated servers to host different applications with different trust levels.
@@ -173,7 +177,8 @@ We’re going to cover how this architecture can help you secure the application
 **Web Applications with Citrix ADC**
 [![Web Applications with Citrix ADC Diagram](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-citrix-adc.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-citrix-adc.png)
 
-#### Article 25 - Access to Personal Data
+### Article 25 - Access to Personal Data
+
 Authentication, Authorization, and Auditing are all core to controlling access to personal data. With Citrix ADC AAA proxy, it consolidates, extends, and enhances the traditional authentication schemes even in scenarios where the web apps do not natively support MFA. Citrix ADC supports authentication using user name/password, multifactor (MFA), time-based and one-time tokens (Citrix ADC has native One-time PIN support), smartcards, user or machine certificates and biometrics. While this is especially important for internet facing web apps, some organizations with a zero trust networking approach are moving to require MFA for “internal” access.
 
 Citrix ADC's enhanced MFA, called nFactor authentication, takes into account capabilities such as SAML, client certificates, group extraction, and multiple passwords. Federation and SSO also provide an extra level of security and ease of use.
@@ -186,6 +191,7 @@ To understand how Citrix protects personal data, refer to the [Citrix Trust Cent
 Logging, visibility, automation, and other capabilities are provided by Citrix Application Delivery Management (ADM). Refer to the [product landing page](https://www.citrix.com/products/citrix-application-delivery-management/) for more details on Citrix ADM.
 
 #### Article 32 - Data Isolation and Protection
+
 Citrix ADC is a reverse proxy and as such it benefits from its location in the network architecture. Typically it is in a DMZ or security zone. From here it accepts the front-end user connection, creates a secure connection to the back-end server, and has full visibility into requests and responses. Also, Citrix ADC can change the logic of the web traffic on the fly without requiring updates to the back-end application. This includes encryption of not only the packet header but also the body as it does deep packet inspection and rewrite.
 
 Citrix ADC can ensure that traffic coming to and from the browser is always encrypted, even if the web server itself doesn’t support encryption. This encryption can be enabled for any site proxied through the ADC. SSL offloading uses the ADC to perform the resource intensive SSL/TLS handshakes thereby offloading them from the back-end servers. For scenarios requiring end-to-end encryption, Citrix ADC can re-encrypt the connection to the back-end. This allows the ADC to inspect and apply security policies to the traffic. SSL bridging is available for when requirements demand that the ADC plays no part in terminating the connection. Using Citrix ADC with Citrix ADM allows administrators to keep central configuration and visibility of the cipher suites in use, helping prevent negotiation of outdated ciphers.
@@ -216,15 +222,15 @@ in the event of a breach – by using data segmentation. An example is tokenizin
 
 Mobile devices, particularly with BYOD ownership, present many challenges to enterprises trying to secure data. Their use within the enterprise has driven the inception of technologies to securely manage mobile endpoints. Used beyond the borders of enterprise DMZs on any network, with apps from various sources, mobile devices present special risks to companies and their data.
 
-* The GDPR data controller must secure personal data used by corporate mobile apps despite the fact they’re hosted on a user-owned mobile device.
+*  The GDPR data controller must secure personal data used by corporate mobile apps despite the fact they’re hosted on a user-owned mobile device.
 
-* The GDPR data controller must ensure the confidentiality, integrity, and availability of the personal data during its use. It must also ensure that when a user exercises their right to erase their personal data that no artifacts are left behind and exposed to other apps, users, and so forth.
+*  The GDPR data controller must ensure the confidentiality, integrity, and availability of the personal data during its use. It must also ensure that when a user exercises their right to erase their personal data that no artifacts are left behind and exposed to other apps, users, and so forth.
 
-* Data controllers must support file sharing and collaboration securely between enterprise mobile apps and be able to erase files from the device in a moment’s notice.
+*  Data controllers must support file sharing and collaboration securely between enterprise mobile apps and be able to erase files from the device in a moment’s notice.
 
-* They must help protect the platform OS, mitigate the risk of malware, and enforce device security and pertinent policies to control device functions that make data vulnerable to loss.
+*  They must help protect the platform OS, mitigate the risk of malware, and enforce device security and pertinent policies to control device functions that make data vulnerable to loss.
 
-* Data controllers must provide Unified Endpoint Management across multiple platforms including control of critical software patches that include updates to address vulnerabilities.
+*  Data controllers must provide Unified Endpoint Management across multiple platforms including control of critical software patches that include updates to address vulnerabilities.
 
 **Traditional Mobile Application Architecture**
 [![Traditional Mobile Application Architecture](/en-us/tech-zone/design/media/reference-architectures_gdpr_mobile-apps.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_mobile-apps.png)
@@ -238,30 +244,34 @@ The [Citrix MDX Toolkit](/en-us/mdx-toolkit/overview.html), the Citrix Endpoint 
 MDX Technologies help provide end-to-end protection by managing encrypted data transfers between device and intranet
 data stores, in addition to between managed apps. Once these apps are installed, Secure Hub, a mobile app that provides access to desktops, apps and data, helps continuously enforce the desired policies. IT is always in control of the enterprise content on users’ devices. MDX also includes micro VPN, a per-app VPN that technology that integrates with Citrix Gateway. It is utilized seamlessly by managed apps to encrypt data traffic to and from the enterprise intranet.
 
-#### Article 25 - Access to Personal Data
+### Article 25 - Access to Personal Data
+
 Citrix Endpoint Management provides various enrollment methods to validate user identity before initiating Mobile Device Management or Mobile App Management and then access to secure data. For example, a two-factor authentication solution can include One-time PIN (OTP) enrollment invitations along with Active Directory domain credentials. For environments with the highest security requirements, enrollment invitations may be linked to a device by SN, UDID, EMEI to uniquely identify the hardware.
 
 Citrix Endpoint Management also provides a variety of multifactor authentication options to validate the identity of enrolled user devices. These include combinations of domain user name and password, RADIUS, Azure Active Directory, certificate, or derived credentials (a high security federal standard based on government issued personal identity verification cards). Certificate and domain authentication used with a CEM pin is a popular secure combination that provides a great user experience.
 
-#### Article 32 - Data Encryption in Transit
+### Article 32 - Data Encryption in Transit
+
 Citrix Endpoint Management supports data encryption in transit through several methods such as:
 
-* Containerized with embedded VPN when apps utilize the CEM SDK
-* Platform-based utilizing a Citrix ADC VPN client
-* Through policies to utilize native platform OS VPN functionality
+*  Containerized with embedded VPN when apps utilize the CEM SDK
+*  Platform-based utilizing a Citrix ADC VPN client
+*  Through policies to utilize native platform OS VPN functionality
 
 The Citrix Endpoint Management SDK, or MDX technology, with micro VPN provides secure per-app VPN functionality to encrypt data in-transit between the mobile endpoint and intranet back-end. It works with Secure Hub and Citrix ADC to ensure MDX app traffic is directed over a dedicated encrypted VPN. It is unique Citrix technology that provides seamless encryption of data in transit.
 
 For more information see this [micro VPN FAQ](https://support.citrix.com/article/CTX136914); configuration of Android platform per-app VPNs using Citrix VPN for Android or iOS; or the configuration of platform per-app VPNs using native functionality.
 
-#### Article 32 - Data Encryption at Rest
+### Article 32 - Data Encryption at Rest
+
 Citrix Endpoint Management (CEM) supports data encryption at rest through the CEM MDX with Citrix-provided encryption libraries, or through platform level encryption directly or indirectly with partner containerization solutions. 
 
 CEM can provide encryption at rest on any supported mobile device independent of platform encryption. The CEM secure app container technology, MDX, uses its own software applied data encryption using FIPS compliant algorithms minimizing the risk of data loss.
 
 Device level encryption varies by platform. Apple's iOS features a file system with the OS information and user data written to flash memory. It also uses a factory-assigned device ID and group ID with the device user's passcode so only that passcode can unencrypt data on the phone or tablet. Android also provides encryption, although not every device manufacturer creates hardware that supports it and users can turn encryption off accidentally or deliberately with a factory reset on Android devices. Find more information about the [MDX Toolkit](/en-us/mdx-toolkit/10.html), [MDX policies](/en-us/mdx-toolkit/policies-platform.html), and [integrating with MDX](/en-us/mdx-toolkit/developer-guide-overview.html) in Citrix documentation.
 
-#### Article 32 - Data Isolation and Protection
+### Article 32 - Data Isolation and Protection
+
 Containerization enables mobile BYOD programs in corporate environments empowering users to use mobile endpoints as an enterprise device and personal device simultaneously by separating apps and data. It helps enterprises prevent malware, intruders, system resources or other applications from interacting with the application and any of its sensitive information. Citrix Endpoint Management enables containerized native mobile apps through MDX technology, and it also integrates with several partner container solutions providing further value by integrating many broad app and device management capabilities.
 
 ## Securing Files with Workflows
@@ -279,12 +289,14 @@ Collaboration on files has not changed much over the years. Most of these workfl
 
 Many paper-based workflows in an organization contain personal data in some form. For instance, the workflow to hire people involves multiple steps where personal information needs to be recorded and shared. All this information needs to comply with GDPR regulations, centralizing and digitizing these workflows have a positive impact. ShareFile Custom Workflows is therefore designed to allow this personal data to be securely captured, securely stored inside ShareFile and, where needed, completed with an electronic signature. All information is stored together in a single location and is audited for who accesses and modifies this information, providing a practice that complies with GDPR.
 
-#### Article 32 - Data Encryption in Transit
+### Article 32 - Data Encryption in Transit
+
 All connections between ShareFile clients and the Content Collaboration SaaS Control Plane, between ShareFile clients and ShareFile StorageZones, in addition to the Content Collaboration SaaS Control Plane and ShareFile StorageZones are fully encrypted. See [CTX208317](https://support.citrix.com/article/CTX208317) and the [Citrix ShareFile Security and Compliance FAQ](https://www.sharefile.com/resources/citrix-sharefile-security-and-compliance-frequently-asked-questions) for further details.
 
 Citrix Files (ShareFile) clients for iOS and Android, which can be managed by Citrix Endpoint Management, also use the embedded VPN capabilities provided by the CEM SDK. See “Data Encryption in Transit” in the Securing Mobile Applications section of this document for more details.
 
-#### Article 32 - Data Encryption at Rest
+### Article 32 - Data Encryption at Rest
+
 Citrix Content Collaboration offers a flexible architecture which provides customers the choice of where files are stored at rest. These repositories are called StorageZones and are managed by either Citrix or the customer. 
 
 For StorageZones managed by Citrix, hosted in either Amazon Web Services or Microsoft Azure, files are stored at rest with 256-bit AES encryption. The encryption key is a shared key for all files stored across every ShareFile tenant. Alternatively, this can be a customer-managed encryption key, configured in the Amazon Key Management Service. When the StorageZone is managed by the customer, per-file encryption can be enabled inside the StorageZone configuration. When enabled, files are encrypted with 256-bit AES encryption. 
@@ -293,14 +305,16 @@ Files are not only stored at rest inside the repository in the data center or cl
 
 Similar safeguards are in place with the Citrix Files app for iOS and Android. All files at rest are encrypted by using the device keychain and encryption capabilities. When using a Citrix Endpoint Management-managed version of Citrix Files, the encryption key is stored inside Secure Hub. And because ShareFile provides a robust rendering and editing engine for Office files and PDF documents, there are many advantages. With the mobile Citrix Files clients, files don’t need to leave the applications for reviewing or editing. ShareFile offers multiple mobile device management options to secure the files, for instance by blocking access from jailbroken devices and blocking opening files in other applications. When using Citrix Endpoint Management, other advanced policies for more granular control are available.
 
-#### Article 25 - Access to Personal Data
+### Article 25 - Access to Personal Data
+
 Authentication to ShareFile is either controlled by a user name and password (ShareFile credentials) or by using corporate credentials through a SAML Identity Provider. When using ShareFile credentials, the password for the user is subject to the password policy that has been configured. This password policy controls the requirements for the password in terms of complexity, history and how often it must be changed. The password is stored hashed and salted inside the ShareFile SaaS application tier for enhanced security.
 
 SAML based authentication is commonly used for authentication to cloud services. Instead of authenticating directly to the
 enterprise directory, such as Active Directory, the authentication is done against an Identity Provider. This removes the need to expose the enterprise directory directly to ShareFile, but still allows users to authenticate with their enterprise credentials. The Identity Provider controls how the user must identify and authenticate itself, based on the context of that authentication attempt. This allows for extra security measures like multifactor authentication for authentication attempts from outside the corporate network and SSO
 based on the Windows authentication token for domain-joined devices.
 
-#### Article 32 - Data Isolation and Protection
+### Article 32 - Data Isolation and Protection
+
 ShareFile integrates with market-leading Data Loss Prevention products for customer-managed StorageZones and Cloud Access Security Broker Services for any type of ShareFile StorageZone, enabling content-aware restrictions. Documents stored inside a ShareFile StorageZone are examined by the same policies that are already set up for other repositories. Based on those scanning results, files can be blocked for download or shared with others.
 
 Sharing files is a key component of modern workflows. This makes controlling the access and permissions to documents containing
