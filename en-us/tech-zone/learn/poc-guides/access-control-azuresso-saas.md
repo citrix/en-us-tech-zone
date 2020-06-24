@@ -22,7 +22,7 @@ In this scenario, a user authenticates to Citrix Workspace using Active Director
 
 The following animation shows a user accessing a SaaS app with Azure-provided SSO and secured with Citrix Access Control.
 
- [![Okta SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_demo-video.gif)
+ [![Azure SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_demo-video.gif)
 
 This demonstration shows an IdP-initiated SSO flow where the user launches the application from within Citrix Workspace. This PoC guide also supports a SP-initiated SSO flow where the user tries to access the SaaS app directly from their preferred browser.
 
