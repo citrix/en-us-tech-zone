@@ -98,7 +98,7 @@ with cloud computing and BYOD initiatives.
 Another common challenge for applications installed on traditional computers is to provide the same security functionality across the whole portfolio. It’s common to have a multigenerational IT portfolio residing on a single workstation. From Office-based applications (using Microsoft Access databases or custom plug-ins) through legacy Visual Basic to the latest professionally built applications. Making sure that applications with access to sensitive data support encryption, multifactor authentication and provide enough information for auditors has always been complicated.
 
 **Traditional Client/Server App Delivery**
-[![Traditional client/server app delivery diagram](/en-us/tech-zone/design/media/reference-architectures_gdpr_client-server-apps_003.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_client-server-apps_003.png)
+[![Traditional client/server app delivery diagram](/en-us/tech-zone/design/media/reference-architectures_gdpr_client-server-apps.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_client-server-apps.png)
 
 Citrix has a long tradition of providing a platform for the secure delivery of these client/server applications. This secure delivery is based on offloading the client application piece onto a dedicated set of servers (Citrix Virtual Apps and Desktops), specially designed, optimized, and secured for application delivery. By decoupling the application from the endpoint, it's possible to enable extra security features. The advantage of this approach is that security features are applied consistently. There is also no requirement for source code access and even applications that are no longer supported on newer platforms can be included.
 
