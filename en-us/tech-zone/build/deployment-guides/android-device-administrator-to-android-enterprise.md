@@ -51,7 +51,9 @@ For activation of Android enterprise, navigate to your CEM settings, and select 
 
 [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_01.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_01.png.)
 
-**Note:** Depending on your Endpoint Management version, you may see a different type of menu used to create the Android Enterprise account. In all versions an enterprise ID is added for Android Enterprise in your Console.
+  >**Note:**
+  >
+  >Depending on your Endpoint Management version, you may see a different type of menu used to create the Android Enterprise account. In all versions an enterprise ID is added for Android Enterprise in your Console.
 
 [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_02.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_02.png.)
 
