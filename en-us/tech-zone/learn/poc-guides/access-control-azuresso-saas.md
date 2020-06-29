@@ -2,7 +2,7 @@
 layout: doc
 description: Learn how to set up a Citrix Access Control environment that provides enhanced security to Microsot Azure SaaS Apps.
 ---
-# Proof of Concept: Secure Access to SaaS Apps with Microsot Azure SSO and Citrix Access Control
+# Proof of Concept: Secure Access to SaaS Apps with Microsoft Azure SSO and Citrix Access Control
 
 ## Contributors
 
@@ -12,7 +12,7 @@ description: Learn how to set up a Citrix Access Control environment that provid
 
 ## Overview
 
-As users access confidential content within SaaS applications, organizations must be able to simplify user login operations while still enforcing authentication standards. Organizations must be able to secure SaaS applications even though it exist beyond the confines of the data center. Citrix Workspace provides organizations with enhanced security controls for SaaS applications.
+As users access confidential content within SaaS applications, organizations must be able to simplify user login operations while still enforcing authentication standards. Organizations must be able to secure SaaS applications even though it exists beyond the confines of the data center. Citrix Workspace provides organizations with enhanced security controls for SaaS applications.
 
 In this scenario, a user authenticates to Citrix Workspace using Active Directory as the primary user directory and launches an Azure-managed SaaS app.
 
@@ -65,7 +65,7 @@ From the Service Integration tab, enable the following services to support the s
 
 ### Verify
 
-Citrix Workspace takes a few moments to update services and URL settings. From a browser, verify the custom Workspace URL is active. However, logon is not be available until a primary user directory gets defined and configured.
+Citrix Workspace takes a few moments to update services and URL settings. From a browser, verify the custom Workspace URL is active. However, logon is not available until a primary user directory gets defined and configured.
 
 ## Integrate a Primary User Directory
 
@@ -95,7 +95,7 @@ With the SaaS app configured within Azure, the SaaS app can get configured withi
 
 [![Setup SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-01.png)
 
-*  Within the list, select the SaaS app, which will bring up the application overview
+*  Within the list, select the SaaS app, which brings up the application overview
 *  Select **Properties**
 
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-02.png)
@@ -112,11 +112,11 @@ With the SaaS app configured within Azure, the SaaS app can get configured withi
 
 *  Select **Next**
 *  In the **App details** screen, replace the **URL** with the **User Access URL** copied from Azure.
-*  At the end of the **URL**, add the following: **&whr=federated_domain** replacing **federated_domain** with the  domain associated with the user's identity (information after the @ sign in the user's email). The federated domain entry informs Azure to redirect to the correct federated domain configuration. The federated domain information will get configured within Azure in an upcoming section.
+*  At the end of the **URL**, add the following: **&whr=federated_domain** replacing **federated_domain** with the  domain associated with the user's identity (information after the @ sign in the user's email). The federated domain entry informs Azure to redirect to the correct federated domain configuration. The federated domain information gets configured within Azure in an upcoming section.
 
 [![Setup SaaS App 05](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-05.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_add-saas-app-05.png)
 
-*  Enhanced security policies uses the related domains field to determine which URLs to secure. One related domain is automatically added based on the default URL. Add an additional domain for the actual URL for the SaaS app in addition to the one automatically created.
+*  Enhanced security policies use the related domains field to determine which URLs to secure. One related domain is automatically added based on the default URL. Add an additional domain for the actual URL for the SaaS app in addition to the one automatically created.
 *  Select **Next**
 *  In the **Enhanced Security** window, select the appropriate security policies for the environment
 
@@ -125,7 +125,7 @@ With the SaaS app configured within Azure, the SaaS app can get configured withi
 *  In the **Single Sign-On** window, set **Assertion URL** to be `https://login.microsoftonline.com/login.srf`
 *  Set **Audience** to be **urn:federation:MicrosoftOnline**
 *  Set the **Name ID Format=Persistent** and **Name ID=Active Directory GUID**
-*  Select the box labeled **Launch the app using the specified URL (SP Initiated)**. Once authenticated, the user will automatically get redirected tot he SaaS app instead of the Azure App Portal.
+*  Select the box labeled **Launch the app using the specified URL (SP Initiated)**. Once authenticated, the user automatically gets redirected to the SaaS app instead of the Azure App Portal.
 *  Under Advanced attributes, add **Attribute Name=IDPEmail**, **Attribute Format=Unspecified**, and **Attribute Value=Email**
 *  ***Note:** Only needed to be done for first app.* Select **Download** to capture the **CRT-based** certificate.
 *  ***Note:** Only needed to be done for first app.* Next to the **Login URL**, select the **Copy** button to capture the Login URL. This URL gets used later.
@@ -160,7 +160,7 @@ To successfully federate the SaaS app with Citrix Workspace, the administrator n
 
 ### Verify Authentication Domain
 
-To federate authentication to Citrix Workspace, Azure must verify the fully qualified domain name.  Within the Azure Portal, do the following:
+To federate authentication to Citrix Workspace, Azure must verify the fully qualified domain name. Within the Azure Portal, do the following:
 
 *  Access Azure Active Directory
 *  Select **Custom domain names** in the navigation window
@@ -185,7 +185,7 @@ The final configuration is to have Azure use Citrix Workspace as the federated a
 *  Launch PowerShell
 *  Add the appropriate modules with the following commands
 
-```
+```powershell
 Install-Module AzureAD -Force
 Import-Module AzureAD -Force
 Install-Module MSOnline -Force
@@ -194,13 +194,13 @@ Import-module MSOnline -Force
 
 *  Connect to Microsoft Online via PowerShell and authenticate
 
-```
+```powershell
 Connect-MSOLService
 ```
 
 *  Verify the domain is currently set to **Managed** within Azure by running the following PowerShell command
 
-```
+```powershell
 Get-MsolDomain
 ```
 
@@ -208,7 +208,7 @@ Get-MsolDomain
 
 *  Use the following code in a PowerShell script to make this domain **Federated** by changing the variables to align with your environment
 
-```
+```powershell
  $dom = "workspaces.wwco.net" # The fully qualified domain name verified within Azure
  $fedBrandName = "CitrixWorkspaceSAMLIdP" # A name to help remember the configuration purpose
  $IssuerUri = "https://citrix.com/fdafdjk4" # The entityID taken from the Citrix Worksapce SAML Metadata file
@@ -230,7 +230,7 @@ Get-MsolDomain
 
 *  Verify the domain is currently set to **Federated** within Azure by running the following PowerShell command
 
-```
+```powershell
 Get-MsolDomain
 ```
 
@@ -238,7 +238,7 @@ Get-MsolDomain
 
 *  Verify the federation settings in Azure by running the following PowerShell command
 
-```
+```powershell
 Get-MsolDomainFederationSettings -DomainName $dom
 ```
 
@@ -246,7 +246,7 @@ Get-MsolDomainFederationSettings -DomainName $dom
 
 ***Note: If the federation settings need to be removed, run the following PowerShell command*
 
-```
+```powershell
 Set-MsolDomainAuthentication -DomainName $dom -Authentication Managed
 ```
 
@@ -268,7 +268,7 @@ SP-Initiated Validation
 
 ## Define website filtering policies
 
-Citrix Access Control service provides website filtering within SaaS and Web apps to help protect the user from phishing attacks. The following shows how to setup website filtering policies.
+Citrix Access Control service provides website filtering within SaaS and Web apps to help protect the user from phishing attacks. The following shows how to set up website filtering policies.
 
 *  From Citrix Cloud, **Manage** within the Access Control tile
 
@@ -288,7 +288,7 @@ Citrix Access Control service provides website filtering within SaaS and Web app
 
 *  Do the same for allowed categories
 *  Do the same for redirected categories. These categories redirect to a Secure Browser instance
-*  If needed, admins can filter denied, allowed and redirected actions for specific URLs following the same process that was used for defining categories. Website URLs takes precedence over categories.
+*  If needed, admins can filter denied, allowed, and redirected actions for specific URLs following the same process that was used for defining categories. Website URLs take precedence over categories.
 
 ## Validate the Configuration
 
@@ -298,8 +298,8 @@ IdP-Initiated Validation
 *  Select the SaaS app. If enhanced security is disabled, the app launches within the local browser, otherwise the embedded browser is used
 *  The user automatically signs on to the app
 *  The appropriate enhanced security policies are applied
-*  If configured, select a URL within the SaaS app that is in the blocked, allowed and redirected categories
-*  If configured, select a URL within the SaaS app that is in the blocked, allowed and redirected URLs
+*  If configured, select a URL within the SaaS app that is in the blocked, allowed, and redirected categories
+*  If configured, select a URL within the SaaS app that is in the blocked, allowed, and redirected URLs
 *  The SaaS App successfully launches
 
 SP-Initiated Validation
@@ -346,7 +346,7 @@ During validation, a user might receive the following error:
 
 [![Federation Realm Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_troubleshooting-federation-realm-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_troubleshooting-federation-realm-01.png)
 
-This is often caused by the domain not being verified or properly federated.  Please review the following sections of the PoC guide:
+This is often caused by the domain not being verified or properly federated. Review the following sections of the PoC guide:
 
 *  [Verify Authentication Domain](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html#verify-authentication-domain)
 *  [Configure Domain Federation](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html#configure-domain-federation)
@@ -363,6 +363,6 @@ The enhanced security policies are applied onto to those related domains. To ide
 *  In Google Chrome and Microsoft Edge (Chromium version), select the three dots in the upper right side of the browser to show a menu screen.
 *  Select **More Tools**.
 *  Select **Developer Tools**
-*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains are be added like the following `*.domain.com`
+*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. To enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains are added like the following `*.domain.com`
 
 [![Enhanced Security Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_enhanced-security-troubleshooting-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_enhanced-security-troubleshooting-01.png)
