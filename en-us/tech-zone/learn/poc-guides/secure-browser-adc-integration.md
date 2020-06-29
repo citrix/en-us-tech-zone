@@ -48,7 +48,7 @@ This proof-of-concept guide will describe the following:
 
 ![Step 3.2](en-us-tech-zone\en-us\tech-zone\learn\media\poc-guides_secure-browser-adc-integration_5.png)
 
-Once you have Secure Browser trial approved, refer to Publish a secure browser (https://docs.citrix.com/en-us/citrix-cloud/secure-browser-service.html) section of the Citrix Doc to publish a Secure Browser app.
+Once you have Secure Browser trial approved, refer to Publish a secure browser [section of the Citrix Doc](https://docs.citrix.com/en-us/citrix-cloud/secure-browser-service.html) to publish a Secure Browser app.
 
 To enable URL Parameters for the published app:
 
@@ -107,7 +107,7 @@ Note: You may choose to close the ports 22 and 443 after the configuration is do
 
 **Step 6:** At this point the ADC instance in Azure is set up
 
-*  To continue with the configuration. Log in the management public IP address of the ADC instance by using the IP address of the machine you provisioned, e.g. https://40.88.150.164/
+*  To continue with the configuration. Log in the management public IP address of the ADC instance by using the IP address of the machine you provisioned, e.g. `https://40.88.150.164/`
 *  From the initial configuration screen, click Continue (we will configure the rest of the settings manually because we will not be using Subnet IP in the setup)
 
 ![Step 6](en-us-tech-zone\en-us\tech-zone\learn\media\poc-guides_secure-browser-adc-integration_13.png)
@@ -348,7 +348,7 @@ Bind the bypass policy:
 
 **Step 7:** Prepare cert-key pair with SSL Tool
 
-*  Install the SSL tool: https://slproweb.com/products/Win32OpenSSL.html
+*  [Install the SSL tool](https://slproweb.com/products/Win32OpenSSL.html)
 *  Add the openssl installation path to the system environment variables
 
 ![Step 7.1](en-us-tech-zone\en-us\tech-zone\learn\media\poc-guides_secure-browser-adc-integration_47.png)
@@ -370,7 +370,6 @@ Bind the bypass policy:
 *  Install
 
 ![Step 8](en-us-tech-zone\en-us\tech-zone\learn\media\poc-guides_secure-browser-adc-integration_49.png)
-
 
 **Step 9:** Bind SSL Profile to vserver
 
