@@ -173,7 +173,7 @@ We recommend evaluating your environment to identify any risks and requirements 
 Teams traffic flows via Transport Relay on TCP and UDP 80, 443, UDP 3478-3481.
 Optimized traffic for peer to peer connections is routed on higher ports (40 K+ UDP) at random, if they are open. For more info [read](https://docs.microsoft.com/en-us/office365/enterprise/urls-and-ip-address-ranges#skype-for-business-online-and-microsoft-teams)
 
-For support information, see [Support](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html#support) section of our documentation.
+For support information, see [Support](/en-us/citrix-virtual-apps-desktops/multimedia/opt-for-ms-teams/teams-monitor-ts-support.html#support) section of our documentation.
 
 ### Summary of key network recommendations for Real Time Protocol (RTP) traffic
 
