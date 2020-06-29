@@ -118,7 +118,7 @@ Limit by known device property name Android Enterprise Enabled Device ID isn't e
 
 -  Step 4: Create a second category for Secure Mail for Android Enterprise
 
-NOTE: This action should be performed for all Android Enterprise applications in your environment.
+**Note:** This action should be performed for all Android Enterprise applications in your environment.
 
 -  Step 5: Configure Secure for Android Enterprise
 -  _Example: SecureMail_AE_
