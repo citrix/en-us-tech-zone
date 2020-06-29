@@ -37,44 +37,11 @@ This proof-of-concept guide will describe the following:
 (image)
 
 3.  Click Request a Call
+4.  
 
-### Set up ADC as proxy to route the traffic from client browser to the Internet
+----
 
-### Set up SSL Interception and Rewrite Policies/Actions for URL redirection to Secure Browser
-
-For setting up ADC as proxy to route the traffic through it: (If you already have ADC setup, you can read steps 10, 12, 13, 18, 19 and skip to Section 2)
-
-1.  Go to `All Resources` and click on `+ Add button`, search for citrix ADC
-
-2.  Select `Citrix ADC 13.0` template, select `Bring your own Licenses` for software plan, click `Create`
-
-3.  Once ADC is created go to `All Resources` and select the NIC card for the ADC instance
-
-4.  Go to `IP Configurations`, make a note of the ADC management address.  
-
-5.  Enable `IP Forwarding Settings`, save the changes.
-
-6.  Click on `Add`, set `virtualip` as name of the new config, select `Static` and add new IP address after the management address; enable `Public address` option and create a new public IP address; save the changes to create new IP configuration.
-
-7.  Go to the `Public IP address` resource created for the virtualip configuration, go to `Configuration`, add a DNS label (e.g., redirection) unique for the group, this will be used as the FQDN for the proxy settings on the client
-
-8.  Add the following Networking rules in the Azure portal for the ADC.[insert image]
-
-9.  Login to the management public ip address of the ADC instance; from the initial configuration screen, click `Continue` (we will configure the rest of the settings manually because we will not be using `Subnet IP` in the setup)
-
-10. Go to `System/Licenses`, click on `Manage Licenses` and upload the [two licenses](https://citrix.sharefile.com/d-sc0719582db546e28) and reboot the server after uploading both licenses. The licenses you bring should support the features highlighted in bold below. [insert image]
-
-11. Login again to management, go to `System/Settings/Configure Modes`; disable `Use Subnet IP`, only two options that should be enabled are `Mac based forwarding` and `Path MTU Discovery`.
-
-12. Go to  `Configure Basic Features` and select `SSL Offloading`, `Load Balancing`, `Integrated Caching`, `Authentication`, `Authorization` and `Auditing`.  
-
-13. Go to `Configure Advanced Features` and select `Cache Redirection`, `AppFlow`, `URL Filtering`, `SSL Interception`, `Responder`, `Reputation`, `Forward Proxy`, `IPv6 Protocol Translation` and `Content Inspection`.  
-
-14. Go to `System/NTP Servers`, create a server and use `pool.ntp.org`, enable `NTP` when prompted and set server to enabled
-
-15. Save the Configuration from the management portal save action
-
-16. Open `SSH Session` to ADC management address, login with credentials you used while provisioning the ADC from Azure, run the following commands with the `sslproxy address i.e., virtualip`
+4.  Open `SSH Session` to ADC management address, login with credentials you used while provisioning the ADC from Azure, run the following commands with the `sslproxy address i.e., virtualip`
 
         add ns tcpProfile proxy-tcpprofile01 -dynamicReceiveBuffering ENABLED -KA ENABLED -mptcp ENABLED -mptcpDropDataOnPreEstSF ENABLED -mptcpSessionTimeout 360 -builtin MODIFIABLE
 
@@ -90,11 +57,11 @@ For setting up ADC as proxy to route the traffic through it: (If you already hav
 
         save ns config 
 
-17. Go back to management session on browser, go to `Optimization/Integrated Caching`, click on `Settings` -> Change cache settings, set `Memory Usage Limit` to 250 MB, click `OK`
+5.  Go back to management session on browser, go to `Optimization/Integrated Caching`, click on `Settings` -> Change cache settings, set `Memory Usage Limit` to 250 MB, click `OK`
 
-18. On a client, configure your browser proxy to `virtualip Public IP` or `FQDN:8080` that you configured in step 7 (i.e. for e.g., `redirection.westus.cloudapp.azure.com:8080`) for proxy settings and test any site connectivity.
+6.  On a client, configure your browser proxy to `virtualip Public IP` or `FQDN:8080` that you configured in step 7 (i.e. for e.g., `redirection.westus.cloudapp.azure.com:8080`) for proxy settings and test any site connectivity.
 
-19. If you got step 18 working that means, you have the connections from browser a vserver (adc is serving as proxy) DNS Internet are good.
+7.  If you got step 18 working that means, you have the connections from browser a vserver (adc is serving as proxy) DNS Internet are good.
 
 ## SSL Interception and Rewrite policies/Actions for url redirection to Secure Browser Setup
 
@@ -135,7 +102,7 @@ Policies used
 
         set rewrite action cloud_act -target q{"HTTP/1.1 302 Found" + "\r\n" + "Location: http://launch.cloud.com/nagpottest5/browser?url=https://" + HTTP.REQ.HOSTNAME.APPEND(HTTP.REQ.URL.PATH) + "\r\n\r\n\" "
 
-## Demo of the solution
+### Demo of the solution
 
 Citrix ADC URL redirection to Secure Browser automatically. See demo video [here](https://citrix.sharefile.com/d-s7a540d5498c42a59)
 
