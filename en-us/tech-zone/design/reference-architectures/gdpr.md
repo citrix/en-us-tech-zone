@@ -264,7 +264,7 @@ For more information see this [micro VPN FAQ](https://support.citrix.com/article
 
 ### Article 32 - Data Encryption at Rest
 
-Citrix Endpoint Management (CEM) supports data encryption at rest through the CEM MDX with Citrix-provided encryption libraries, or through platform level encryption directly or indirectly with partner containerization solutions. 
+Citrix Endpoint Management (CEM) supports data encryption at rest through the CEM MDX with Citrix-provided encryption libraries, or through platform level encryption directly or indirectly with partner containerization solutions.
 
 CEM can provide encryption at rest on any supported mobile device independent of platform encryption. The CEM secure app container technology, MDX, uses its own software applied data encryption using FIPS compliant algorithms minimizing the risk of data loss.
 
@@ -297,9 +297,9 @@ Citrix Files (ShareFile) clients for iOS and Android, which can be managed by Ci
 
 ### Article 32 - Data Encryption at Rest
 
-Citrix Content Collaboration offers a flexible architecture which provides customers the choice of where files are stored at rest. These repositories are called StorageZones and are managed by either Citrix or the customer. 
+Citrix Content Collaboration offers a flexible architecture which provides customers the choice of where files are stored at rest. These repositories are called StorageZones and are managed by either Citrix or the customer.
 
-For StorageZones managed by Citrix, hosted in either Amazon Web Services or Microsoft Azure, files are stored at rest with 256-bit AES encryption. The encryption key is a shared key for all files stored across every ShareFile tenant. Alternatively, this can be a customer-managed encryption key, configured in the Amazon Key Management Service. When the StorageZone is managed by the customer, per-file encryption can be enabled inside the StorageZone configuration. When enabled, files are encrypted with 256-bit AES encryption. 
+For StorageZones managed by Citrix, hosted in either Amazon Web Services or Microsoft Azure, files are stored at rest with 256-bit AES encryption. The encryption key is a shared key for all files stored across every ShareFile tenant. Alternatively, this can be a customer-managed encryption key, configured in the Amazon Key Management Service. When the StorageZone is managed by the customer, per-file encryption can be enabled inside the StorageZone configuration. When enabled, files are encrypted with 256-bit AES encryption.
 
 Files are not only stored at rest inside the repository in the data center or cloud, but also on the devices used by employees. As a best practice, it’s recommended to always use full drive encryption on Windows and macOS devices. On top of that, Content Collaboration allows controls for both corporate-owned and BYOD devices. It allows for a remote wipe of the user files, removing only the corporate files and not touching the personal files of the employee. When a remote wipe is initiated, the Citrix Files client sends back all file activity that has occurred offline between the wipe command and the actual wipe of the user data repository. This occurs when ShareFile logs on to the ShareFile SaaS application tier.
 
