@@ -11,7 +11,7 @@ description: Copy & paste description from TOC here
 ## ARCHITECTURE
 
 GCP’s Managed Service for Microsoft Active Directory is a fully managed service on the Google Cloud Platform. The service automatically deploys and manages highly available Active Directory domain controllers on your GCP project in an isolated VPC network. Domain controller access is restricted, and you can only manage your domain by deploying management instances with Remote Server Administration tools. A VPC peering is deployed automatically with the service for your AD-dependent workloads to reach Active Directory. Additionally, Google Cloud DNS is configured to forward all DNS queries to the Managed Microsoft AD.
-For this implementation, we are following Google's Active Directory resource forest architecture in combination with a Citrix Virtual Apps and Desktops service multitenant environment.
+For this implementation, we are following Google's Active Directory resource forest architecture with a Citrix Virtual Apps and Desktops service multitenant environment.
 
 ## CITRIX AND GCP SERVICES
 
@@ -27,43 +27,49 @@ For this implementation, we are following Google's Active Directory resource for
 
 *  A GCP subscription is available and billing has been configured
 *  GCP Cloud Identity has been configured (pre-requisite to deploy a GCP organization)
-*  An organization has been configured along with a folder to deploy the test/dev GCP projects to be utilized. Check this link to learn more about GCP Resource Hierarchy
+*  An organization has been configured along with a folder to deploy the test/dev GCP projects to be utilized. Check this link to learn more about:
+
+[GCP Resource Hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy)
+
 *  The following GCP APIs are enabled:
     *  Compute Engine API
     *  Cloud Resource Manager API
     *  Identity and Access Management (IAM) API
     *  Cloud Build API
 *  A GCP project is deployed with 2 subnets:
-    *  Resources subnet: resources subnet to deploy the Managed Microsoft AD service, and the Citrix Cloud Connectors, Master Images and VDAs. Most of the configurations will be performed on this project
+    *  Resources subnet: resources subnet to deploy the Managed Microsoft AD service, and the Citrix Cloud Connectors, Master Images, and VDAs. Most of the configurations is performed on this project
     *  AD management subnet:  management subnet dedicated to instances utilized to manage Active Directory through the Remote Server Administration Tools
-*  Managed Microsoft AD service will be deployed:
+*  Managed Microsoft AD service is deployed:
     *  Completely managed by GCP
     *  Deploys its own subnet, which is not viewable through the GCP console
-    *  A VPC peering is deployed automatically with the service for connectivity from our your GCP projects
+    *  A VPC peering is deployed automatically with the service for connectivity from your GCP projects
     *  Google Cloud DNS is configured to forward all DNS queries to the managed domain controllers
-1.4.2 Citrix Cloud
+
+### Citrix Cloud
+
 *  A Citrix Cloud subscription is available
-*  Citrix Cloud Connector will be deployed
-*  VDA master image will be deployed
-*  Google Cloud Platform hosting connection will be configured
-*  Machine Catalog and Delivery Group will be configured
+*  Citrix Cloud Connector is deployed
+*  VDA master image is deployed
+*  Google Cloud Platform hosting connection is configured
+*  Machine Catalog and Delivery Group is configured
 
-1.5 GCP TERMINOLOGY
-The following are the most common GCP terms you will need to understand, as described on the GCP documentation:
+### GCP TERMINOLOGY
 
-*  Organizations: Organizations represent the root node in the GCP resource hierarchy, in order to create an organization, GCP Cloud Identity or G-Suite will be required. An organization is not required for this implementation, but it is highly recommended to deploy one for your production environments in order to properly organize your resources.
+The following are the most common GCP terms you need to understand, as described on the GCP documentation:
+
+*  Organizations: Organizations represent the root node in the GCP resource hierarchy, to create an organization, GCP Cloud Identity, or G-Suite is required. An organization is not required for this implementation, but it is highly recommended to deploy one for your production environments to properly organize your resources.
 *  Folders: Folders are utilized to organize resources within GCP, they can contain more folders, or projects. For example, you can create folders to separate projects by department, environment type, etc. A folder is not required for this implementation, but in general terms, they are recommended for proper resource organization.
-*  Projects: A project provides an abstract grouping of resources within GCP, all resources in this deployment need to belong to a GCP project. Under normal circumstances, VM instances from one project cannot communicate with VM instances on another project, unless Shared VPC is utilized. Shared VPCs are yet to be supported by Citrix Cloud.
+*  Projects: A project provides an abstract grouping of resources within GCP, all resources in this deployment must belong to a GCP project. Under normal circumstances, VM instances from one project cannot communicate with VM instances on another project, unless Shared VPC is utilized. Shared VPCs are not currently supported by Citrix Cloud.
 *  Billing Accounts: Billing accounts represent the payment profile to be utilized to pay for GCP consumption. A billing account can be linked to multiple projects, but a project can only be linked to a single billing account.
-*  IAM: GCP’s Identity and Access Management platform. It is utilized to grant user permissions to perform actions on GCP resources. This platform is also utilized to deploy and manage Service Accounts. We will utilize IAM to configure various permissions.
-*  Service Account: a service account is a GCP account that is not connected to an actual user, but instead represents a VM instance or an application. Service accounts can be granted permissions to perform different actions on the various GCP APIs. A service account will be created to connect Citrix Cloud to GCP and enable Machine Creation Services.
+*  IAM: GCP’s Identity and Access Management platform. It is utilized to grant user permissions to perform actions on GCP resources. This platform is also utilized to deploy and manage Service Accounts. We utilize IAM to configure various permissions.
+*  Service Account: a service account is a GCP account that is not connected to an actual user, but instead represents a VM instance or an application. Service accounts can be granted permissions to perform different actions on the various GCP APIs. A service account is created to connect Citrix Cloud to GCP and enable Machine Creation Services.
 *  GCE: Google Compute Engine, this is the GCP platform in which you deploy compute resources, including VM instances, disks, instance templates, instance groups, etc.
-*  GCE Instance: A VM deployed on the GCE platform. We will deploy GCE instances for Cloud Connectors, master image, the AD management VM, etc. All machines created through a Citrix machine catalog are deployed as GCE instances.
-*  Instance Template: A “baseline” resource you can utilize to deploy VMs and instance groups in GCP. The Citrix MCS process will copy the master image into an instance template, which is utilized to deploy catalog machines.
+*  GCE Instance: A VM deployed on the GCE platform. We deploy GCE instances for Cloud Connectors, master image, the AD management VM, etc. All machines created through a Citrix machine catalog are deployed as GCE instances.
+*  Instance Template: A “baseline” resource you can utilize to deploy VMs and instance groups in GCP. The Citrix MCS process copies the master image into an instance template, which is utilized to deploy catalog machines.
 *  VPC Network: GCP’s virtual network object. VPCs in GCP are global, meaning you can deploy subnets to a VPC from each GCP region. You can deploy VPCs in auto-mode, which creates all subnets and CIDR ranges automatically, or custom-mode, which lets you create subnets and CIDR ranges manually. Non-overlapping VPCs from different projects can be connected through a VPC peering.
 *  Shared VPC: A shared VPC can be spanned across multiple projects, eliminating the requirement to create separate VPCs for each project, or the utilization of VPC peerings.
-*  VPC Peering: A VPC peering allows you to connect VPCs which would otherwise be disconnected. For the purpose of this implementation, the GCP Managed Microsoft AD service will create a VPC peering automatically to connect our VPC to the managed AD service VPC.
-*  Cloud DNS: GCP service utilized to manage DNS zones and records. With the creation of the Managed Microsoft AD service, Cloud DNS will be automatically configured to forward DNS queries to the managed domain controllers.
+*  VPC Peering: A VPC peering allows you to connect VPCs which would otherwise be disconnected. In this implementation, the GCP Managed Microsoft AD service creates a VPC peering automatically to connect our VPC to the managed AD service VPC.
+*  Cloud DNS: GCP service utilized to manage DNS zones and records. With the creation of the Managed Microsoft AD service, Cloud DNS is automatically configured to forward DNS queries to the managed domain controllers.
 
 ## IMPLEMENTATION
 
@@ -77,7 +83,7 @@ The following are the most common GCP terms you will need to understand, as desc
 
 Considerations:
 
-*  A project might already be selected, so the menu will show the name of your current project instead of Select a project.
+*  A project might already be selected, so the menu shows the name of your current project instead of Select a project.
 *  As recommended by Google, for production environments you should be protecting your projects against accidental deletion.
 *  On the projects window, click NEW PROJECT.
 
@@ -98,7 +104,7 @@ Considerations:
 
 #### Considerations
 
-*  When a new project is created, a default VPC (auto-mode) is automatically created, we will create a new VPC soon.
+*  When a new project is created, a default VPC (auto-mode) is automatically created, we creates a new VPC soon.
 *  On the VPC network details screen, click DELETE VPC NETWORK and then DELETE.
 
 [![CSP-Image-7](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_007.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_007.png)
@@ -120,7 +126,7 @@ Considerations:
 
 *  Auto-mode VPCs automatically create a subnet on each GCP region and assign an RFC 1918 CIDR range.
 *  Custom-mode VPCs allow you to create your subnets and CIDR ranges as required.
-*  On the Subnets section, create 2 subnets, these will be utilized by the Citrix instances, and the AD management servers.
+*  On the Subnets section, create 2 subnets, these is utilized by the Citrix instances, and the AD management servers.
 
 [![CSP-Image-10](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_010.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_010.png)
 
@@ -136,7 +142,7 @@ Considerations:
 
 Considerations:
 
-*  Since this is a testing environment, we are allowing inbound RDP, SSH, and ICMP from any external network, for production environments, setup the firewall rules appropriately to ensure only authorized users / networks can access the instances.
+*  Since this is a testing environment, we are allowing inbound RDP, SSH, and ICMP from any external network, for production environments, set up the firewall rules appropriately to ensure only authorized users / networks can access the instances.
 *  On the Create a firewall rule screen, enter the following information:
     *  Name: firewall rule name
     *  Description: firewall rule description
@@ -166,9 +172,9 @@ Considerations:
 
 #### Deploy the Managed Microsoft AD Service
 
-[![CSP-Image-16](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_016.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_016.png)
-
 *  On the navigation menu, go to Security > Managed Microsoft AD and click CREATE NEW AD DOMAIN.
+
+[![CSP-Image-16](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_016.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_016.png)
 
 Considerations:
 
@@ -177,9 +183,9 @@ Considerations:
 *  We will create a management VM for Active Directory shortly.
 *  On the Create a new domain screen, enter the following information:
     *  FQDN: Domain FQDN
-    *  NetBIOS: will be automatically populated
+    *  NetBIOS: is automatically populated
     *  Select networks: networks that will have access to the service, in this case we are choosing our shared VPC
-    *  CIDR Range: a /24 CIDR range for the VPC where the domain controllers will be deployed, it must not overlap with your current subnets
+    *  CIDR Range: a /24 CIDR range for the VPC where the domain controllers is deployed, it must not overlap with your current subnets
 
 [![CSP-Image-17](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_017.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_017.png)
 
@@ -187,7 +193,7 @@ Considerations:
 
 *  The VPC that is deployed as part of the service cannot be managed from the GCP console.
 *  Scroll down and enter the following information:
-    *  Region: GCP regions to which the service will be available
+    *  Region: GCP regions to which the service is available
     *  Delegated Admin: name of the delegated administrator account
 *  Click CREATE DOMAIN.
 
@@ -195,14 +201,14 @@ Considerations:
 
 Considerations:
 
-*  The delegated admin account will be utilized to manage AD objects, add additional administrators, etc.
+*  The delegated admin account is utilized to manage AD objects, add additional administrators, etc.
 *  The delegated administrator account resides on the Users container within AD, you can reset its password directly in the ADUC console, but you cannot move the object to another OU.
 *  The delegated administrator account has access to the following OUs:
     *  Cloud: Full control
     *  Cloud Service Objects: very limited update permissions
-*  When joining a computer to the domain, the AD account will be created under the Cloud > Computers OU, not the default Computers container.
+*  When joining a computer to the domain, the AD account is created under the Cloud > Computers OU, not the default Computers container.
 *  Service creation can take up to 60 minutes.
-*  Once creation is finalized, select your domain and click on SET PASSWORD.
+*  Once creation is finalized, select your domain and click SET PASSWORD.
 
 [![CSP-Image-19](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_019.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_019.png)
 
@@ -216,7 +222,7 @@ Considerations:
 
 #### Create the management instance
 
-*  On the navigation menu goto: Compute Engine > VM Instances and click Create.
+*  On the navigation menu, goto: Compute Engine > VM Instances and click Create.
 
 [![CSP-Image-22](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_022.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_022.png)
 
@@ -262,9 +268,9 @@ Considerations:
 
 Considerations:
 
-*  This configures the local windows admin username and password, not a domain user password.
+*  This configures the local windows admin user name and password, not a domain user password.
 *  This process assumes basic windows administration knowledge.
-*  On the Set new Windows password window, enter a username and click SET.
+*  On the Set new Windows password window, enter a user name and click SET.
 
 [![CSP-Image-30](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_030.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_030.png)
 
@@ -294,13 +300,13 @@ Considerations:
 
 #### Create a GCP service account
 
-*  On the navigation menu go to IAM & Admin > Service Accounts, then click CREATE SERVICE ACCOUNT.
+*  On the navigation menu, go to IAM & Admin > Service Accounts, then click CREATE SERVICE ACCOUNT.
 
 [![CSP-Image-34](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_034.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_034.png)
 
 Considerations:
 
-*  This service account will be utilized to configure a hosting connection in Citrix Cloud.
+*  This service account is utilized to configure a hosting connection in Citrix Cloud.
 *  On the Service account details screen, enter the following information:
     *  Service account name: enter a name for your service account
     *  Service account ID: enter an ID for the service account (can be the same as the name)
@@ -318,7 +324,7 @@ Considerations:
 
 Considerations:
 
-*  Service account permissions will be configured shortly.
+*  Service account permissions is configured shortly.
 *  On the Service accounts screen, click the Actions menu (three dots) for your service account and select Create key.
 
 [![CSP-Image-37](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_037.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_037.png)
@@ -329,7 +335,7 @@ Considerations:
 
 Considerations:
 
-*  The private key will be downloaded to your computer, we will utilize the contents of the key file when creating a hosting connection in Citrix Cloud.
+*  The private key is downloaded to your computer, we will utilize the contents of the key file when creating a hosting connection in Citrix Cloud.
 *  On the Private key saved to your computer window, click CLOSE.
 
 [![CSP-Image-39](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_039.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_039.png)
@@ -364,7 +370,7 @@ Considerations:
 
 #### Create the Cloud Connector VM
 
-*  On the VM instances page, repeat steps 2.1.6 and 2.1.7 to create a Windows instance and join it to the domain, this will be utilized as the Citrix Cloud Connector.
+*  On the VM instances page, repeat steps 2.1.6 and 2.1.7 to create a Windows instance and join it to the domain, this is utilized as the Citrix Cloud Connector.
 
 [![CSP-Image-43](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_043.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_043.png)
 
@@ -431,7 +437,7 @@ Considerations:
 
 Considerations:
 
-*  Citrix credentials will be required to download the VDA software.
+*  Citrix credentials is required to download the VDA software.
 *  Either the LTSR or CR version can be installed.
 *  Right-click the VDA installer file and select Run as administrator.
 
@@ -496,7 +502,7 @@ Considerations:
 *  On the Connection page, click the radio button next to Create a new connection and enter the following information:
     *  Connection type: Google Cloud Platform
     *  Service account key: Enter the contents of your GCP service account key created earlier
-    *  Service account ID: will be auto populated when entering the service account key
+    *  Service account ID: is auto populated when entering the service account key
     *  Zone name: Select your Citrix zone
     *  Connection name: enter a name
     *  Create virtual machines using: Studio tools (Machine Creation Services)
@@ -537,7 +543,7 @@ Considerations:
 
 *  At the moment of this writing, Citrix does not support deploying Windows desktop OS catalogs to GCP. This
 *  On the Machine Management page, select the following information:
-    *  The machine catalog will use: machine that are powered managed
+    *  The machine catalog will use: machines that are powered managed
     *  Deploy machines using: Citrix Machine Creation Services (MCS)
     *  Resources: select your GCP hosting connection
 
@@ -552,19 +558,19 @@ Considerations:
 
 Considerations:
 
-*  For GCP, the CPU and RAM for the machines created by MCS will be the same as the master image. The master image will be utilized to create an instance template in GCP.
-*  Catalog machines will be deployed without a public IP address on GCP.
+*  For GCP, the CPU and RAM for the machines created by MCS is the same as the master image. The master image is utilized to create an instance template in GCP.
+*  Catalog machines is deployed without a public IP address on GCP.
 *  On the Active Directory Computer Accounts page, configure the following:
     *  Account option: Create new AD accounts
     *  Domain: select your domain
-    *  OU: the OU where the computer accounts will be stored
+    *  OU: the OU where the computer accounts is stored
     *  Naming scheme: naming convention to be utilized
 
 [![CSP-Image-75](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_075.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_075.png)
 
 Considerations:
 
-*  Pound signs will be replaced by numbers on the naming scheme.
+*  Pound signs is replaced by numbers on the naming scheme.
 *  Be mindful of the NetBIOS 15 character limit when creating a naming scheme
 *  On the Domain Credentials page, click Enter credentials.
 *  On the Windows Security pop-up, enter your domain credentials and click OK.
@@ -582,7 +588,7 @@ Considerations:
 
 *  On the Users page select an authentication option and click Next.
 *  On the Applications page, click Add.
-*  On the Add Applications page, select which applications you wish to publish and click OK.
+*  On the Add Applications page, select which applications you want to publish and click OK.
 
 Considerations:
 
