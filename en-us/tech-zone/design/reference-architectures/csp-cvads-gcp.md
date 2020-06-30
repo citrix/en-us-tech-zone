@@ -172,9 +172,9 @@ Considerations:
 
 #### Deploy the Managed Microsoft AD Service
 
-[![CSP-Image-16](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_016.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_016.png)
-
 *  On the navigation menu, go to Security > Managed Microsoft AD and click CREATE NEW AD DOMAIN.
+
+[![CSP-Image-16](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_016.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_016.png)
 
 Considerations:
 
