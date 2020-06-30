@@ -6,7 +6,7 @@ description: Copy & paste description from TOC here
 
 ## Contributors
 
-**Author:** [Hubert Krautter](URL)
+**Author:** [Hubert Krautter](https://twitter.com/muchubsi)
 
 **Special thanks:**  [Martin Zugec](https://twitter.com/MartinZugec), Chetan Takker, Johnathan Campos
 
