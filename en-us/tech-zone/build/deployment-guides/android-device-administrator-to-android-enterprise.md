@@ -17,25 +17,25 @@ You can manage the entire device or a separate profile on the device. The separa
 
 For an overview of Android Enterprise capabilities from Google, see [Android Enterprise Management](https://www.android.com/enterprise/management/)
 
-Prior to Android Enterprise, companies were using Device Administrator (DA) to manage and secure Android devices. With the needs of organizations changing, devices now are reaching more corporate and confidential data than ever and at the same time end-users require protection of personal data and are concerned of their privacy. With this Google announced the deprecation of Device Administrator (DA) mode in favor for Android Enterprise, a modern management platform that focuses on security and user privacy. Google is recommending that customers using device administrator mode migrate to Android Enterprise due to Device Administrator (DA) deprecation
+Prior to Android Enterprise, companies were using Device Administrator (DA) to manage and secure Android devices. With the needs of organizations changing, devices now are reaching more corporate and confidential data than ever. At the same time end-users require protection of personal data and are concerned of their privacy. With this Google announced the deprecation of Device Administrator (DA) mode in favor for Android Enterprise, a modern management platform that focuses on security and user privacy. Google is recommending that customers using device administrator mode migrate to Android Enterprise due to Device Administrator (DA) deprecation
 
-This guide is intended to provide information and best practices on how to move from a legacy device administrator Android deployment to Android Enterprise by using a managed Google Play Account.
+This guide is intended to provide step by step information on how to move from a legacy device administrator Android deployment to Android Enterprise by using a managed Google Play Account.
 
-For more information please take a look on googles Android [Enterprise Migration Bluebook](https://static.googleusercontent.com/media/www.android.com/en//static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)
+For more information look on googles Android [Enterprise Migration Bluebook](https://static.googleusercontent.com/media/www.android.com/en//static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)
 
 ## Prerequisites for Using Android Enterprise
 
 When you integrate CEM with managed Google Play to use Android Enterprise, an enterprise is created. Google defines an enterprise as a binding between the Android Enterprise organization and your enterprise mobile management (EMM) solution. Registering Citrix as your EMM Provider, is required as part of this process. All the users and devices that the organization manages through your EMM solution belong to the created enterprise.
 
-If you are not using a G-Suite account, a personal/corporate shared Google account is required to complete the enterprise registration. This account will then be responsible for this enterprise, and become the main managed Google Play account. More information can be found by visiting the following [link](https://support.google.com/googleplay/work/answer/7042221?hl=en&ref_topic=7042018)
+If you are not using a G-Suite account, a personal/corporate shared Google account is required to complete the enterprise registration. This account is then responsible for this enterprise, and become the main managed Google Play account. More information can be found by visiting the following [link](https://support.google.com/googleplay/work/answer/7042221?hl=en&ref_topic=7042018)
 
-While both the G-Suite and personal/corporate shared accounts are free, the main difference between a managed Google Play account and a managed Google account is that the Managed Google Account is based on  a G-Suite Subscription and needs to prove the domain ownership. See the following [link](https://docs.citrix.com/en-us/xenmobile/server/provision-devices/android-enterprise/legacy-android-enterprise-for-g-suite-customers.html)
+The G-Suite and personal/corporate shared accounts are free. The main difference between a managed Google Play account and a managed Google account is that the Managed Google Account is based on a G-Suite Subscription and needs to prove the domain ownership. See the following [link](https://docs.citrix.com/en-us/xenmobile/server/provision-devices/android-enterprise/legacy-android-enterprise-for-g-suite-customers.html)
 
 If you do not have a Google account readily available to create this enterprise, use the following [instruction](https://support.google.com/googleplay/work/answer/7042126?hl=en&ref_topic=7042018) and prerequisites to create your account.
 
-For Citrix Endpoint Management (CEM) administrators, managed Google Play combines the user experience and app store features of Google Play with a set of management capabilities designed for enterprises.
+For Citrix Endpoint Management (CEM) administrators, managed Google Play combines the user experience and app store features of Google Play designed for enterprises.
 
-Managed Google play provides a store-like experience for end-users where the available apps are managed and controlled by the admin.
+Managed Google play provides a store for end-users managed and controlled by the admin.
 
 ## Activation of Android Enterprise
 
@@ -43,12 +43,12 @@ To set up Android Enterprise for your organization, register Citrix as your EMM 
 
 Google Play infrastructure is used to offer services that include a managed, private enterprise app delivery store. Google Play is also where device profiles live. The good news is that set-up is rather simple.
 
-For activation of Android Enterprise, navigate to your CEM settings, and select Android Enterprise and follow the instructions.
+For activation of Android Enterprise, navigate to your **CEM** settings, and select **Android Enterprise** and follow the instructions.
 
 [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_01.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_01.png.)
 
 **Note:**
-Depending on your Endpoint Management version, you may see a different type of menu used to create the Android Enterprise account. In all versions an enterprise ID is added for Android Enterprise in your Console.
+Depending on your Endpoint Management version, you see a different type of menu used to create the Android Enterprise account. In all versions an enterprise ID is added for Android Enterprise in your Console.
 
 [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_02.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_02.png.)
 
@@ -82,7 +82,7 @@ For additional information on enrollment profiles,  visit the following link: `h
 
 When creating enrollment profiles, you must assign delivery groups to them. If a user belongs to multiple delivery groups that have different enrollment profiles, the name of the delivery group determines the enrollment profile used
 
-In a delivery group conflict select the delivery group that appears last in a alphabetized list of delivery groups. For more information, see [Enrollment Profiles](https://docs.citrix.com/en-us/citrix-endpoint-management/users/enrollment-profiles.html)
+In a delivery group conflict select the delivery group that appears last in an alphabetized list of delivery groups. For more information, see [Enrollment Profiles](https://docs.citrix.com/en-us/citrix-endpoint-management/users/enrollment-profiles.html)
 
 **IMPORTANT:** Do not assign the new enrollment profile to any delivery group at the moment if you have a user who belongs to multiple delivery groups.
 
@@ -99,7 +99,7 @@ The best way to start is to copy an existing delivery group to associate to an A
 
 ## Mobile productivity apps to Android Enterprise users
 
-Although CEM has support for many different application types, for this migration scenario, we will show how to migrate Secure Mail.
+Although CEM has support for many different application types, for this migration scenario, we show how to migrate Secure Mail.
 
 -  Step 1: Create an app App Category for existing iOS and Android Legacy Apps.
   
@@ -114,10 +114,10 @@ Although CEM has support for many different application types, for this migratio
 
 Limit by known device property name Android Enterprise Enabled Device ID isn't equal to true
 
-**Note:** this value is only available if you already enrolled a Android Enterprise Device
+**Note:** this value is only available if you already enrolled an Android Enterprise Device
 
 -  Step 4: Create a second category for Secure Mail for Android Enterprise
-**NOTE:** This action have to be performed for all Android Enterprise applications in your environment.
+**NOTE:** This action has to be performed for all Android Enterprise applications in your environment.
 
 -  Step 5: Configure Secure for Android Enterprise
 -  _Example: SecureMail_AE_
@@ -130,7 +130,7 @@ Limit by known device property name Android Enterprise Enabled Device ID isn't e
 
 **Please proceed to section 7 if you are not using privately developed wrapped or enterprise applications.**
 
-## Publishing Enterprise Apps (MDX and Non MDX)
+## Publishing Enterprise Apps (MDX and Non-MDX)
 
 ALL Enterprise apps need to be uploaded to Google Play for using with Android Enterprise.
 To simplify IT admins’ app management workflow, we’ve integrated the [Managed Google Play iframe](https://developers.google.com/android/work/play/emm-api/managed-play-iframe) into Citrix Endpoint Management (CEM). This enables IT admins to approve and publish public or private apps from within the CEM console. Admins no longer need to go outside the console to the Managed Play or Developer portals to approve or publish apps.
@@ -145,13 +145,13 @@ Screenshot
 ## Add private Android Enterprise apps as MDX-wrapped Enterprise app
 
 Use cmd line toolkit to wrap a private AE app with the MDX Toolkit.
-Your output will is:
+Your output is:
 
   a. Wrapped .apk (size greater than original apk)
 
   b. Mdx file
 
--  Upload the .apk to Google Play ( similar to non-mdx apps above )
+-  Upload the .apk to Google Play (similar to non-mdx apps above)
 -  Goto publish MDX app and upload the mdx file
 
 For more details and wrapping example visit: `https://docs.citrix.com/en-us/citrix-endpoint-management/apps.html#add-private-android-enterprise-apps-as-mdx-wrapped-enti%20just%20erprise-apps`
@@ -175,13 +175,11 @@ To test, assign an Active Directory Group to the recently created delivery group
 Re-enroll the user’s device to begin the Android Enterprise enrollment process. Note the new look and feel of Android Enterprise.
 
 Reenroll
-Screenshots from AE Enrollment. Including Workprofile screenshots. Will follow
+Screenshots from AE Enrollment. Including Work profile screenshots. Will follow
 
 From you CEM console, navigate to Manage followed by Devices for an overview of which devices are Android Enterprise enabled.
 
 [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_09.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_09.png.)
 
 After successful re-enrollment you can see two devices, one Android (legacy DA) and the other Android Enterprise.
-The previous listed Android (legacy DA) device can be deleted to ensure the most updated device list.
-
 The previous listed Android (legacy DA) device can be deleted to ensure the most updated device list.
