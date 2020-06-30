@@ -14,7 +14,7 @@ description: Learn how Citrix SD-WAN Advanced Edition provides Edge Security for
 
 With the continued growth of cloud and SaaS, Enterprises are searching for solutions to provide optimal Internet access irrespective of where the endpoint is located. Citrix SD-WAN excels at steering intranet traffic across the WAN or Internet traffic, at the Edge. It applies business rules to identify applications using a database of 4,500+ predefined entries.
 
-However, to provide direct Internet access Enterprises also need to secure remote offices to protect the intranet. Direct Internet access exposes remote networks, and subsequently the entire corporate network, to threats. Ingress and egress traffic must be filtered, inspected, and scanned to protect against vulnerabilities.  
+However, to provide direct Internet access Enterprises also need to secure remote offices to protect the intranet. Direct Internet access exposes remote networks, and next the entire corporate network, to threats. Ingress and egress traffic must be filtered, inspected, and scanned to protect against vulnerabilities.  
 
 Citrix SD-WAN has a native [onboard ICSA certified firewall](https://www.citrix.com/blogs/2019/08/13/do-you-trust-your-sd-wan-firewall/). It integrates with leading third party [Secure Web Gateway (SWG)](/en-us/citrix-sd-wan/11-2/internet-service/dia-with-secure-web-gateway.html) vendors via cloud proxy. Citrix SD-WAN also hosts onboard SWGs as a [Virtual Network Function (VNF)](https://www.citrix.com/blogs/2020/05/14/citrix-check-point-software-support-choice-in-protecting-the-wan-edge/). Security partners include:
 
@@ -115,7 +115,7 @@ For more information see [Citrix SD-WAN Edge Security – Web Filtering](/en-us/
 
 ## Anti-Malware
 
-Anti-Malware protects users against ransomware and viruses. It guards against files delivered by HTTP download or opened from SMTP delivered email. Powered by [Bitdefender](https://www.bitdefender.com/), it assembles and scans files destine for users through email or HTTP downloads. Anti-Malware can then block the file delivery, logs its presence, and or send a notification regarding the risk identified.
+Anti-Malware protects users against ransomware and viruses. It guards against files delivered by HTTP download or opened from SMTP delivered email. Powered by [Bitdefender](https://www.bitdefender.com/), it assembles and scans files destine for users through email or HTTP downloads. Anti-Malware can then block the file delivery, log its presence, and or send a notification regarding the risk identified.
 
 ![Anti-Malware](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_antimalware.png)
 
@@ -144,7 +144,7 @@ With Edge Security, that comes with 11.2 Advanced Edition, Citrix is now one of 
 
 *  **Maximize User Experience & Minimize Network Bandwidth** – Enterprises no longer must backhaul internet traffic over their Wan to meet compliance requirements and guard against the perils of the Internet. Now they can steer flows to the nearest business SaaS sites while protecting endpoints.
 *  **Secure the Enterprise Perimeter** – while direct Internet access enables better application performance it exposes branches and subsequently the corporate network to risk. Edge Security mitigates that risk by guarding against vulnerabilities at the point of remote office Internet access.
-*  **Branch Office consolidation** – Enterprises can simplify the equipment they need to manage and host in remote office utility closets. All of the following equipment functionality can be replaced with a Citrix SD-WAN 1100 AE appliance:
+*  **Branch Office consolidation** – Enterprises can simplify the equipment they must manage and host in remote office utility closets. All of the following equipment functionality can be replaced with a Citrix SD-WAN 1100 AE appliance:
     *  Stand alone routers
     *  SWG appliances and firewalls
     *  DHCP and DNS servers
