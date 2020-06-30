@@ -6,5 +6,5 @@ description: Copy & paste description from TOC here
 
 ## Contributors
 
-**Author:** [Name](URL)
+**Author:** [Russell Peters](URL)
 
