@@ -16,7 +16,7 @@ As users access confidential content within SaaS applications, organizations mus
 
 In this scenario, a user authenticates to Citrix Workspace using Active Directory as the primary user directory and launches an Azure-managed SaaS app.
 
-[![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_ad-dir-azure-sso.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas-_addir-azure-sso.png)
+[![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_ad-dir-azure-sso.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-saas_ad-dir-azure-sso.png)
 
  If the Citrix Access Control Service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the SaaS applications.
 
