@@ -75,7 +75,7 @@ On-prem deployments do not have this option and must use RBAC for setup of dedic
 
 For additional information on enrollment profiles, visit the [link](https://docs.citrix.com/en-us/citrix-endpoint-management/device-management/android/android-enterprise.html#creating-enrollment-profiles)
 
-**Note:** With Android 11, all of this is about to change. Visit the Blog [(Changes ahead for Android Enterprise’s Fully Managed with Work Profile](https://www.citrix.com/blogs/2020/04/09/changes-ahead-for-android-enterprises-fully-managed-with-work-profile/) for more details
+**Note:** With Android 11, all of this is about to change. Visit the Blog [(Changes ahead for Android Enterprise’s Fully Managed with Work Profile)](https://www.citrix.com/blogs/2020/04/09/changes-ahead-for-android-enterprises-fully-managed-with-work-profile/) for more details
 
 [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_04.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_04.png.)
 
