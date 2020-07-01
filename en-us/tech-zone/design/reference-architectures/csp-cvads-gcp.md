@@ -8,20 +8,20 @@ description: Copy & paste description from TOC here
 
 **Author:** [JP Alfaro](https://www.linkedin.com/in/jp-alfaro-b2bb03b2/)
 
-## ARCHITECTURE
+## Architecture
 
 GCP’s Managed Service for Microsoft Active Directory is a fully managed service on the Google Cloud Platform. The service automatically deploys and manages highly available Active Directory domain controllers on your GCP project in an isolated VPC network. Domain controller access is restricted, and you can only manage your domain by deploying management instances with Remote Server Administration tools. A VPC peering is deployed automatically with the service for your AD-dependent workloads to reach Active Directory. Additionally, Google Cloud DNS is configured to forward all DNS queries to the Managed Microsoft AD.
 For this implementation, we are following Google's Active Directory resource forest architecture with a Citrix Virtual Apps and Desktops service multitenant environment.
 
-## CITRIX AND GCP SERVICES
+## Citrix and GCP Services
 
 [![CSP-Image-001](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_001.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_001.png)
 
-## GCP RESOURCE HIERARCHY AND BILLING
+## GCP Resource Hierarchy and Billing
 
 [![CSP-Image-002](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_002.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_002.png)
 
-### INITIAL ASSUMPTIONS
+### Iinitial Assimptions
 
 #### Google Cloud Platform
 
@@ -53,7 +53,7 @@ For this implementation, we are following Google's Active Directory resource for
 *  Google Cloud Platform hosting connection is configured
 *  Machine Catalog and Delivery Group is configured
 
-### GCP TERMINOLOGY
+### GCP Terminology
 
 The following are the most common GCP terms you need to understand, as described on the GCP documentation:
 
@@ -71,9 +71,9 @@ The following are the most common GCP terms you need to understand, as described
 *  VPC Peering: A VPC peering allows you to connect VPCs which would otherwise be disconnected. In this implementation, the GCP Managed Microsoft AD service creates a VPC peering automatically to connect our VPC to the managed AD service VPC.
 *  Cloud DNS: GCP service utilized to manage DNS zones and records. With the creation of the Managed Microsoft AD service, Cloud DNS is automatically configured to forward DNS queries to the managed domain controllers.
 
-## IMPLEMENTATION
+## Implementation
 
-## GOOGLE COMPONENTS
+## Google Components
 
 ### Create the GCP main project
 
