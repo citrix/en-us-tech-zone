@@ -21,7 +21,7 @@ For this implementation, we are following Google's Active Directory resource for
 
 [![CSP-Image-002](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_002.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_002.png)
 
-### Iinitial Assimptions
+### Initial Assumptions
 
 #### Google Cloud Platform
 
@@ -104,7 +104,7 @@ Considerations:
 
 #### Considerations
 
-*  When a new project is created, a default VPC (auto-mode) is automatically created, we creates a new VPC soon.
+*  When a new project is created, a default VPC (auto-mode) is automatically created, we will create a new VPC soon.
 *  On the VPC network details screen, click DELETE VPC NETWORK and then DELETE.
 
 [![CSP-Image-7](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_007.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_007.png)
