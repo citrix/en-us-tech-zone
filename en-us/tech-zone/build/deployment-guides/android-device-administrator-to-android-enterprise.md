@@ -6,7 +6,7 @@ description: Copy & paste description from TOC here
 
 ## Contributors
 
-**Author:** [Hubert Krautter](URL)
+**Author:** [Hubert Krautter](https://www.linkedin.com/in/hubert-krautter-813a1572/)
 
 **Special thanks:**  [Martin Zugec](https://twitter.com/MartinZugec), Chetan Takker, Johnathan Campos
 
@@ -75,7 +75,7 @@ On-prem deployments do not have this option and must use RBAC for setup of dedic
 
 For additional information on enrollment profiles, visit the [link](https://docs.citrix.com/en-us/citrix-endpoint-management/device-management/android/android-enterprise.html#creating-enrollment-profiles)
 
-**Note:** With Android 11, all of this is about to change. Visit the Blog [(Changes ahead for Android Enterprise’s Fully Managed with Work Profile)](https://www.citrix.com/blogs/2020/04/09/changes-ahead-for-android-enterprises-fully-managed-with-work-profile/) for more details
+**Note:** With Android 11, all of this is about to change. Visit the Blog [(Changes ahead for Android Enterprise’s Fully Managed with Work Profile](https://www.citrix.com/blogs/2020/04/09/changes-ahead-for-android-enterprises-fully-managed-with-work-profile/) for more details
 
 [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_04.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_04.png.)
 
@@ -153,7 +153,7 @@ Your output is:
 -  Upload the .apk to Google Play (similar to the non-mdx apps above)
 -  Goto **publish MDX app** and upload the mdx file
 
-For more details and wrapping example visit: `https://docs.citrix.com/en-us/citrix-endpoint-management/apps.html#add-private-android-enterprise-apps-as-mdx-wrapped-enti%20just%20erprise-apps`
+For more details and wrapping example [visit](https://docs.citrix.com/en-us/citrix-endpoint-management/apps.html#add-private-android-enterprise-apps-as-mdx-wrapped-enti%20just%20erprise-apps)
 
 ## Editing Existing Policies for the Correct Device Type Android (Legacy DA) and Android Enterprise (AE
 
