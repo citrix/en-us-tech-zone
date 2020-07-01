@@ -45,18 +45,18 @@ Google Play infrastructure is used to offer services that include a managed, pri
 
 For activation of Android Enterprise, navigate to your **CEM** settings, and select **Android Enterprise** and follow the instructions.
 
-[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_01.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_01.png.)
+[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_01.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_01.png)
 
 **Note:**
 Depending on your Endpoint Management version, you see a different type of menu used to create the Android Enterprise account. In all versions an enterprise ID is added for Android Enterprise in your Console.
 
-[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_02.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_02.png.)
+[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_02.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_02.png)
 
 Select **Enable** your Android Enterprise.
 
 **Note:** If you already use Enrollment profiles with Android Legacy Mode, you will see the following message:
 
-[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_03.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_03.png.)
+[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_03.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_03.png)
 
 ## Configuration Enrollment Profiles for Android Enterprise
 
@@ -77,7 +77,7 @@ For additional information on enrollment profiles, visit the [link](https://docs
 
 **Note:** With Android 11, all of this is about to change. Visit the Blog [(Changes ahead for Android Enterprise’s Fully Managed with Work Profile](https://www.citrix.com/blogs/2020/04/09/changes-ahead-for-android-enterprises-fully-managed-with-work-profile/) for more details
 
-[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_04.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_04.png.)
+[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_04.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_04.png)
 
 When creating enrollment profiles, you must assign delivery groups to them. If a user belongs to multiple delivery groups that have different enrollment profiles, the name of the delivery group determines the enrollment profile used
 
@@ -102,14 +102,14 @@ Although CEM has support for many different application types, for this migratio
 
 -  Step 1: Create an app App Category for existing iOS and Android Legacy Apps.
   
-   [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_05.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_05.png.)
+   [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_05.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_05.png)
 
 -  Step 2: Move Citrix Secure Mail configured for Android (legacy DA) into this new category to have a clear separation of Android (legacy DA) applications.
     -  NOTE: This action shall be performed for all Android (legacy DA) applications in your environment.
 
 -  Step 3: Edit Secure Mail Android (legacy DA) with the following Deployment Rule to prevent showing the app twice within Secure Hub (One: Android (legacy DA) Two: Android Enterprise)
 
-  [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_06.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_06.png.)
+  [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_06.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_06.png)
 
 Limit by known device property name Android Enterprise Enabled Device ID isn't equal to true
 
@@ -161,11 +161,11 @@ To differentiate devices enabled for Android Enterprise and Android (legacy DA),
 
 This Deployment Rule checks if the Android device is **NOT** enabled for Android Enterprise and deliver the policies along with the application.
 
-[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_07.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_07.png.)
+[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_07.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_07.png)
 
 This Deployment Rule will check if the Android device is enabled for Android Enterprise and deliver the policies along with the application.
 
-[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_08.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_08.png.)
+[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_08.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_08.png)
 
 ## Testing and Review
 
@@ -178,7 +178,7 @@ Screenshots from AE Enrollment. Including Work profile screenshots. Will follow
 
 From your CEM console, navigate to Manage followed by Devices for an overview of which devices are Android Enterprise enabled.
 
-[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_09.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_09.png.)
+[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_09.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_09.png)
 
 After successful re-enrollment you can see two devices, one Android (legacy DA) and the other Android Enterprise.
 The previous listed Android (legacy DA) device can be deleted to ensure the most updated device list.
