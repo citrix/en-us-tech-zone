@@ -28,144 +28,178 @@ This proof-of-concept guide will describe the following:
 
 ### Section 1: Obtain Secure Browser Trial Account
 
-[Reference](/en-us/citrix-cloud/secure-browser-service.html)
+[Reference doc for Secure Browser Service](/en-us/citrix-cloud/secure-browser-service.html)
 
-**Step 1:** Enter Username and Password Click Sign In. If your account manages more than one customer select the appropriate one
+#### Log in to your Citrix Cloud Account and request a Secure Browser trial
 
-![Step 1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_2.png)
+1.  Enter Username and Password Click Sign In. If your account manages more than one customer select the appropriate one
 
-**Step 2:** Click Citrix Cloud on top of the page. Search for the Secure Browser Tile.
+        ![Log in to Citrix Cloud](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_2.png)
 
-*  If you know who your account team is, please reach out to them to get the trial approved. If you are unsure who your account team is, please continue to next step.
+1.  Once logged in, navigate to the **Secure Browser Tile.**
 
-![Step 2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_3.png)
+        ![Secure Browser Tile](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_3.png)
 
-**Step 3:** Click Request a Call
+1.  If you know who your account team is, please reach out to them to get the trial approved. If you are unsure who your account team is, please continue to next step.
 
-![Step 3.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_4.png)
+1.  Click **Request a Call**
 
-*  Enter your details and in Comments section specify “Secure Browser service trial”. Click Submit. Citrix Sales will contact you to give you access to the service. Note: This is not immediate, a Citrix sales rep will reach out
+        ![Request a Call](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_4.png)
 
-![Step 3.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_5.png)
+1.  Enter your details and in Comments section specify **“Secure Browser service trial”**.
+1.  Click **Submit**.
 
-Once you have Secure Browser trial approved, refer to Publish a secure browser [section of the Citrix Doc](https://docs.citrix.com/en-us/citrix-cloud/secure-browser-service.html) to publish a Secure Browser app.
+        ![Request a Call form](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_5.png)
 
-To enable URL Parameters for the published app:
+        Note: Citrix Sales will contact you to give you access to the service. This is not immediate, a Citrix sales rep will reach out
 
-*  In your Citrix Cloud subscription, click on the Secure Browser tile
-*  On your published browser, e.g. “Browser”
-*  Click on the three dots > select Policies
+1.  Once you have Secure Browser trial approved, refer to Publish a Secure Srowser [section of the Citrix Doc](en-us/citrix-cloud/secure-browser-service.html) to publish a Secure Browser app.
 
-![Step 3.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_6.png)
+#### Once the browser app is published, enable URL Parameters
 
-*  Enable the URL Parameters policy on your published browser
+1.  In your Citrix Cloud subscription, **click on the Secure Browser tile**
 
-![Step 3.4](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_7.png)
+1.  On your published browser, e.g. “browser”, **Click on the three dots > select Policies**
+
+        ![published browser app](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_6.png)
+
+1.  Enable **URL Parameters policy** on your published browser
+
+        ![URL Parameters policy enable](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_7.png)
 
 ### Section 2: Set up ADC as proxy to route the traffic from client browser to the Internet
 
-**Step 1:** To Set-up the ADC
+#### Set-up the Citrix ADC in Azure
 
-*  Go to All Resources and click on + Add button, search for Citrix ADC
-*  Select Citrix ADC template
-*  Select any software plan based on your requirements (e.g.  Bring Your Own License)
-*  Click Create
+1.  Navigate to **All Resources** and click on **+ Add** button, search for Citrix ADC
 
-![Step 1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_8.png)
+1.  Select **Citrix ADC template**
 
-**Step 2:** Configure NIC card for the ADC – ipconfig1:
+1.  Select the software plan according to your requirements (e.g.  Bring Your Own License)
 
-*  Go to All Resources and select the NIC card for the ADC instance
-*  Go to IP Configurations, make a note of the ADC management address
-*  Enable IP Forwarding Settings, save the changes.
+1.  Click **Create**
 
-![Step 2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_9.png)
+        ![Set-up ADC in Azure](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_8.png)
 
-**Step 3:** Configure Virtual IP – virtualip
+#### Configure NIC card for the ADC e.g. ipconfig1
 
-*  Click on Add, set virtualip as name of the new config
-*  Select Static and add new IP address after the management address
-*  Enable Public address option and create a new public IP address
-*  Save the changes to create new IP configuration.
+1.  Navigate to **All Resources** and select the NIC card for the ADC instance
 
-![Step 3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_10.png)
+1.  Navigate to **IP Configurations**, make a note of the **ADC management address**
 
-**Step 4:** Set the FQDN for the proxy settings on the client
+1.  Enable IP Forwarding Settings, save the changes.
 
-*  Go to the Public IP address resource created for the virtualip configuration
-*  Go to Configuration, add a DNS label (e.g., urlredirection.eastus.cloudapp.azure.com)
+        ![Configure NIC for ADC](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_9.png)
 
-![Step 4](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_11.png)
+#### Configure Virtual IP e.g. virtualip
 
-**Step 5:** Set up Networking rules in the Azure portal for the created ADC:
+1.  Click on **Add**, set `virtualip` as name of the new config
 
-*  Add the following Networking rules
+1.  Select **Static** and add new IP address after the management address
 
-![Step 5](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_12.png)
+1.  Enable Public address option and create a new public IP address
 
-Note: You may choose to close the ports 22 and 443 after the configuration is done, as those ports are only needed for logging into management console for configuration purposes.
+1.  Save the changes to create new IP configuration
 
-**Step 6:** At this point the ADC instance in Azure is set up
+        ![Configure Virtual IP](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_10.png)
 
-*  To continue with the configuration. Log in the management public IP address of the ADC instance by using the IP address of the machine you provisioned, e.g. `https://40.88.150.164/`
-*  From the initial configuration screen, click Continue (we will configure the rest of the settings manually because we will not be using Subnet IP in the setup)
+#### Set the FQDN for the proxy settings on the client
 
-![Step 6](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_13.png)
+1.  Navigate to Public IP address resource created for the virtualip configuration
 
-**Step 7:** Upload the licenses:
+1.  Click on **Configuration**, and add a DNS label (e.g., urlredirection.eastus.cloudapp.azure.com)
 
-*  Go to System > Licenses, click on Manage Licenses
-*  Upload the necessary licenses for ADC. The licenses you bring should support the features highlighted in steps 9 and 10 under Configure Basic Features and Configure Advanced Features (e.g CNS_V3000_SERVER_PLT_Retail.lic, and CNS_WEBF_SSERVER_Retail.lic)
-*  Reboot the server after uploading both licenses.
+        ![Set FQDN](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_11.png)
 
-![Step 7](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_14.png)
+#### Set up Networking rules in the Azure portal for the created ADC
 
-**Step 8:** After reboot, login again to management
+1.  Add the following Networking rules
 
-*  Go to System > Settings > Configure Modes
-*  Disable Use Subnet IP
-*  Only two options that should be enabled are Mac based forwarding and Path MTU Discovery:
+        ![Networking rules](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_12.png)
 
-![Step 8](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_15.png)
+        Note: You may choose to close the ports 22 and 443 after the configuration is done, as those ports are only needed for logging into management console for configuration purposes.
 
-**Step 9:** System > Settings > Configure Basic Features
+1.  At this point **the ADC instance in Azure is set up**
 
-*  Select: (1) SSL Offloading, (2) Load Balancing, (3) Rewrite, (4) Authentication, Authorization and Auditing, (5) Content Switching, (6) Integrated Caching
+#### Set up Citrix ADC appliance as proxy
 
-![Step 9](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_16.png)
+1.  Navigate to the Citrix ADC management console by inputing the instance's public IP address in the search bar of your browser  
 
-**Step 10:** System > Settings > Configure Advanced Features
+        Note: Use the IP address of the machine you provisioned in prevous steps, e.g. `https://40.88.150.164/`
 
-*  Select: (1) Cache Redirection, (2) IPv6 Protocol Translation, (3) AppFlow, (4) Reputation, (5) Forward Proxy, (6) Content Inspection, (7) Responder, (8) URL Filtering, (9) SSL Interception:
+1.  Log in to the console by inputing the username and password you set up in previous steps
 
-![Step 10.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_17.png)
+        ![Login to management console](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_13.png)
 
-![Step 10.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_18.png)
+1.  From the initial configuration screen, click **Continue** (we will configure the rest of the settings manually because we will not be using Subnet IP in the setup)
 
-**Step 11:** Set up the NTP Server:
+1.  Upload the licenses:
 
-*  Go to System > NTP Servers
-*  Create a server and use pool.ntp.org
-*  Enable NTP when prompted and set server to enabled:
+1.  Navigate to **System > Licenses, click on Manage Licenses**
 
-![Step 11.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_19.png)
+1.  Upload the necessary licenses for ADC.
 
-![Step 11.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_20.png)
+        Note: The licenses you bring should support the features highlighted in steps 11 and 13 under Configure Basic Features and Configure Advanced Features (e.g CNS_V3000_SERVER_PLT_Retail.lic, and CNS_WEBF_SSERVER_Retail.lic)
 
-**Step 12:** Save the Configuration from the management portal save action
+        ![Manage licenses](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_14.png)
 
-![Step 12](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_21.png)
+1.  **Reboot** the server after uploading both licenses.
 
-**Step 13:** Open SSH Session to ADC management address, login with credentials you used while provisioning the ADC from Azure
+1.  After reboot, login again to management
 
-**Step 14:** Run the following commands with the sslproxy address i.e., virtualip:
+1.  Navigate to **System > Settings > Configure Modes**
 
-*  Get the virtualip from step 3 and input in the command (e.g. 10.1.0.5)
-*  To add TCP profile:
+1.  Only two options should be enabled **Mac based forwarding** and **Path MTU Discovery**
+
+        ![Configure Modes](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_15.png)
+
+        ![Configure Modes](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_15.1.png)
+
+1.  Navigate to **System > Settings > Configure Basic Features**
+
+        ![Configure Basic Features](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_16.png)
+
+1.  Select: (1) SSL Offloading, (2) Load Balancing, (3) Rewrite, (4) Authentication, Authorization and Auditing, (5) Content Switching, (6) Integrated Caching
+
+        ![Configure Basic Features](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_16.1.png)
+
+1.  Navigate to **System > Settings > Configure Advanced Features**
+
+        ![Configure Advanced Features](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_17.png)
+
+1.  Select: (1) Cache Redirection, (2) IPv6 Protocol Translation, (3) AppFlow, (4) Reputation, (5) Forward Proxy, (6) Content Inspection, (7) Responder, (8) URL Filtering, (9) SSL Interception:
+
+        ![Configure Advanced Features](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_17.1.png)
+
+#### Set up the NTP Server
+
+1.  Navigate to **System > NTP Servers > Add**
+
+        ![Set up NTP Server](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_18.png)
+
+1.  Create a server for example `pool.ntp.org`
+
+        ![Set up NTP Server](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_19.png)
+
+1.  Enable NTP when prompted and set server to enabled
+
+        ![Set up NTP Serve](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_20.png)
+
+1.  Save the Configuration from the management portal save action
+
+        ![Save configuration](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_21.png)
+
+1.  Open SSH Session to ADC management address, login with credentials you used while provisioning the ADC from Azure
+
+1.  Get the virtualip from steps in Section 2 and input in the command (e.g. 10.1.0.5)
+
+1.  Run the following commands with the sslproxy address i.e., virtualip:
+
+1.  To add TCP profile:
 
         add ns tcpProfile proxy-tcpprofile01 -dynamicReceiveBuffering ENABLED -KA ENABLED -mptcp ENABLED -mptcpDropDataOnPreEstSF ENABLED -mptcpSessionTimeout 360 -builtin MODIFIABLE
 
-*  To add virtual server
+1.  To add virtual server
 
         add cs vserver sslproxy01 PROXY 10.1.0.5 8080 -cltTimeout 360 -tcpProfileName proxy-tcpprofile01 -persistenceType NONE
 
@@ -179,301 +213,339 @@ Note: You may choose to close the ports 22 and 443 after the configuration is do
 
         save ns config
 
-**Step 15:** Change the Cache settings:
+1.  To change the **Cache settings** go back to management session on browser
 
-*  Go back to management session on browser
-*  Go to Optimization > Integrated Caching
-*  Click on Settings > Change cache settings
-*  Set Memory Usage Limit to 250 MB
-*  Click OK:
+1.  Navigate to **Optimization > Integrated Caching**
 
-![Step 15.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_22.png)
+1.  Click on **Settings > Change cache settings**
 
-![Step 15.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_23.png)
+        ![Change Cache settings](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_22.png)
 
-**Step 16:** Setup the client:
+1.  Set **Memory Usage Limit** to `250 MB` and click **OK**
 
-*  On a client, e.g. Firefox in this example
-*  Configure your browser proxy to virtualip Public IP or FQDN:8080 that you configured in step 4 (e.g., urlredirection.eastus.cloudapp.azure.com:8080)
-*  Test any site connectivity:
+        ![Memory usage limit](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_23.png)
 
-![Step 16](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_24.png)
+#### Setup the client for URL Redirection
 
-**Step 17:** Now that the above steps are configured, and we have an ADC set up let us test for any website connectivity from the browser with the ADC acting as a proxy.
+1.  On a client, e.g. Firefox in this example
+
+1.  Configure your browser proxy to virtualip Public IP or FQDN:8080 that you configured in Section 2 (e.g., urlredirection.eastus.cloudapp.azure.com:8080)
+
+        ![Configure Browser proxy](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_24.png)
+
+1.  Test any site connectivity by browsing any site
+
+1.  Now that the above steps are configured, and we have an ADC set up let us test for any website connectivity from the browser with the ADC acting as a proxy.
 
 ### Section 3: Set up SSL Interception and Rewrite Policies/Actions for URL redirection to Secure Browser
 
 References:
 
-*  [SSL Interception](/en-us/citrix-adc/13/forward-proxy/ssl-interception.html)
-*  [URL categories](/en-us/citrix-adc/13/forward-proxy/url-filtering-for-ssl-forward-proxy/url-categorization.html)
-*  [Video example of configuration](https://citrix.sharefile.com/d-s74bb5855411495bb)
+[SSL Interception](/en-us/citrix-adc/13/forward-proxy/ssl-interception.html)
 
-**Step 1:** Create an RSA Key
+[URL categories](/en-us/citrix-adc/13/forward-proxy/url-filtering-for-ssl-forward-proxy/url-categorization.html)
 
-*  Traffic management > SSL > SSL Files > Keys > Create RSA Key
+[Video example of configuration](https://citrix.sharefile.com/d-s74bb5855411495bb)
 
-![Step 1.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_25.png)
+#### Create an RSA Key
 
-![Step 1.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_26.png)
+1.  Navigate to **Traffic management > SSL > SSL Files > Keys**
 
-*  Once the key is created, download the .key file for later use
+1.  Select **Create RSA Key**
 
-**Step 2:** Create a CSR:
+        ![Create RSA Key](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_25.png)
 
-*  Traffic management > SSL > SSL Files > CSRs > Create Certificate Signing Request (CSR)
+1.  Select the key Filename and requiered key size
 
-![Step 2.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_27.png)
+        ![Create RSA Key](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_26.png)
 
-![Step 2.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_28.png)
+1.  Once the key is created, download the .key file for later use
 
-*  Key Filename is the key created in the previous step, e.g. smesec_key1.key.
-*  Select Appliance
-*  Select the key filename
+        ![Create RSA Key](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_26.1.png)
 
-![Step 2.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_29.png)
+#### Create a Certificate Signing Request (CSR)
 
-After selecting the Key continue to fill in the blanks required *
+1.  Navigato to **Traffic management > SSL > SSL Files > CSRs > Create Certificate Signing Request (CSR)**
 
-*  Common Name, Organization Name, and State or Province
-*  Click Create
+        ![CSR](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_27.png)
 
-**Step 3:** Create a Certificate:
+1.  Name que request file, for example semesec_req1.req
 
-*  Traffic management > SSL > SSL Files > Certificates > Create Certificate
+        ![CSR creation](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_28.1.png)
 
-![Step 3.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_30.png)
+1.  Choose **Key Filename > Appliace** the keyfilename should be the one created in the previous step, in this example smesec_key1.key.
 
-![Step 3.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_31.png)
+        ![CSR creation](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_28.2.png)
 
-*  Create a Certificate by giving it a name and choose both the Certificate Request File (e.g .req) and The Key Filename (e.g. .key) created in the previous steps
-*  Click Create
+1.  After selecting the Key continue to fill in the blanks required: Common Name, Organization Name, and State or Province
 
-![Step 3.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_32.png)
+1.  Click Create
 
-*  Once the certificate is created, download the .cert file for later use
+#### Create a Certificate
 
-**Step 4:** Create SSL INTERCEPT policy:
+1.  Navigate to **Traffic management > SSL > SSL Files > Certificates > Create Certificate**
 
-*  Traffic management > SSL > Policies
-*  Click Add
-*  Create the INTERCEPT policy:
+        ![Create certificate](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_29.png)
 
-Example:
+1.  Give the certificate a name and choose both the Certificate Request File (e.g .req) and the Key Filename (e.g. .key) created in the previous steps
 
-*  Name: smesec_intercept
-*  Action: INTERCEPT
-*  Expression to intercept news:
+        ![Create Certificate](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_30.png)
+
+1.  Click Create
+
+1.  Once the certificate is created, download the .cert file for later use
+
+        ![Create Certificate](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_30.1.png)
+
+#### Create SSL INTERCEPT policy
+
+1.  Navigate to **Traffic management > SSL > Policies**
+
+1.  Click Add
+
+        ![Create SSL Policy](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_31.png)
+
+1.  Give the policy a name and select the INTERCEPT action
+
+1.  Expression to intercept news:
 `client.ssl.detected_domain.url_categorize(0,0).category.eq("News")`
-*  Click Create
 
-![Step 4.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_33.png)
+1.  Click Create
 
-Bind policy to vserver
+        ![Create SSL Intercept](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_32.png)
 
-*  Security > Proxy Virtual Servers
+1.  To bind the Intercept policy to the vserver navigate to **Security > SSL Forward Proxy > Proxy Virtual Servers**
   
-![Step 4.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_34.png)
+        ![SSL proxy01](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_34.png)
 
-*  Click on the virtual server > add SSL Policies > click on No SSL Policy Binding
-*  Bind the intercept policy:
+1.  Click on the virtual server, in this example sslproxy01
 
-![Step 4.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_35.png)
+1.  Select add SSL Policies > click on No SSL Policy Binding
 
-**Step 5:** Create SSL BYPASS policy (this policy is created to bypass the ADC interception for traffic going to secure browser launch.cloud.com):
+1.  Bind the intercept policy:
 
-*  Traffic management > SSL > Policies
-*  Click Add
-*  Create the BYPASS policy:
+        ![Bind Intercept policy](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_35.png)
 
-Example:
+#### Create SSL BYPASS policy - this policy is created to bypass the ADC interception for traffic going to secure browser launch.cloud.com
 
-*  Name: smesec_bypass_ssli
-*  Action: NOOP (There is no BYPASS option, see next step)
-Expression:
+1.  Navigate to **Traffic management > SSL > Policies**
+
+1.  Click Add
+
+        ![Create SSL Policy](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_31.png)
+
+1.  Give the policy a name and select the NOOP ation - there is no BYPASS option, see next step
+
+1.  Expression to bypass policy:
 `CLIENT.SSL.DETECTED_DOMAIN.CONTAINS("cloud")`
 
-![Step 5.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_36.png)
+        ![Create bypass policy](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_36.png)
 
-*  Security > SSL Forward Proxy > SSL Interception Policies
+1.  Navitgate to **Security > SSL Forward Proxy > SSL Interception Policies**
 
-![Step 5.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_37.png)
+        ![SSL bypass policy](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_37.png)
 
-*  Click on the policy to edit it
-*  Change Action from NOOP to BYPASS
-*  Click OK
-*  Double check that the Action is now BYPASS
+1.  Click on the policy to edit it
 
-![Step 5.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_38.png)
+1.  Change Action from NOOP to BYPASS
 
-*  Go back to Traffic management > SSL > Policies to double check the change
+1.  Click OK
 
-![Step 5.4](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_39.png)
+        ![SSL bypass policy](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_37.1.png)
 
-Bind policy to vserver
+1.  Double check that the Action is now BYPASS
 
-*  Security > Proxy Virtual Servers
+1.  Go back to **Traffic management > SSL > Policies** to double check the change
 
-![Step 5.5](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_40.png)
+        ![Bypass policy](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_39.png)
 
-Click on the virtual server > add SSL Policies > click on SSL Policy Binding
-
-![Step 5.6](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_41.png)
-
-Click add binding
-
-![Step 5.7](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_42.png)
-
-Bind the bypass policy:
-
-![Step 5.8](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_43.png)
-
-**Step 6:** Create SSL Profile and bind an SSL Interception CA Certificate to SSL Profile
-
-*  System > Profiles > SSL Profile > Add
-
-![Step 6.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_44.png)
-
-*  Name the profile, e.g. smesec_swg_sslprofile
-
-![Step 6.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_45.png)
-
-*  Check the box to enable SSL Sessions Interception, then click ok
-
-![Step 6.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_46.png)
-
-*  Click ok to create SSL Profile
-*  Need to install the cert-key pair
-*  Before installing make sure you have a .pfx format of the cert-key pair (see next step for guidance on how to generate a .pfx file from the .cert and .key files that you previously downloaded in steps 1 and 3)
-
-**Step 7:** Prepare cert-key pair with SSL Tool
-
-*  [Install the SSL tool](https://slproweb.com/products/Win32OpenSSL.html)
-*  Add the openssl installation path to the system environment variables
-
-![Step 7.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_47.png)
-
-*  From Powershell, run the command:
+1.  To bind the Bypass policy to the vserver navigate to **Security > SSL Forward Proxy > Proxy Virtual Servers**
   
+        ![SSL proxy01](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_34.png)
+
+1.  Click on the virtual server, in this example sslproxy01
+
+1.  Select add SSL Policies > click on SSL Policy Binding
+
+1.  Bind the bypass policy > Add
+
+        ![Step 5.7](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_42.png)
+
+1.  Click Bind
+
+        ![Step 5.8](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_43.png)
+
+#### Create SSL Profile and bind an SSL Interception CA Certificate to SSL Profile
+
+1.  Navigate to **System > Profiles > SSL Profile > Add**
+
+        ![Step 6.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_44.png)
+
+1.  Create the profile by giving it a name, in this example smesec_swg_sslprofile
+
+        ![SSL profile name](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_45.png)
+
+1.  Check the box to enable SSL Sessions Interception, then click ok
+
+        ![Step 6.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_46.png)
+
+1.  Click ok to create SSL Profile
+
+1.  Need to install the cert-key pair
+
+1.  Before installing make sure you have a .pfx format of the cert-key pair (see "Prepare cert-key pair with SSL tool section for guidance on how to generate a .pfx file from the .cert and .key files that you previously downloaded)
+
+#### Prepare cert-key pair with SSL Tool
+
+1.  [Install the SSL tool](https://slproweb.com/products/Win32OpenSSL.html)
+
+1.  Add the openssl installation path to the system environment variables
+
+        ![Path of SSL install](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_47.png)
+
+1.  From Powershell, run the command:
+
         openssl pkcs12 -export -out smesec_cert1.pfx -inkey smesec.key1.key -in smesec.cert1.cert
 
-![Step 7.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_48.png)
+        ![Powershell](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_48.png)
 
-**Step 8:** Bind an SSL Interception CA Certificate to SSL Profile
+#### Bind an SSL Interception CA Certificate to SSL Profile
 
-*  System > Profiles > SSL Profile
-*  Go back to the profile you created in step 6
-*  Click “+ Certificate Key”
-*  Click Install
-*  Choose the .pfx file prepared in step 7
-*  Create a password (you will need it later)
-*  Install
+1.  Navigate to **System > Profiles > SSL Profile**
 
-![Step 8](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_49.png)
+1.  Select the profile created prevously
 
-**Step 9:** Bind SSL Profile to vserver
+1.  Click “+ Certificate Key”
 
-*  Security > SSL Forward Proxy > Proxy Virtual Servers
-*  Select the vserver
-*  Click to edit SSL Profile
+1.  Click Install
 
-![Step 9](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_50.png)
+1.  Choose the .pfx file prepared previously
 
-*  Choose the SSL profile created in step 6, e.g. smesec_swg_sslprofile
-*  Done
+1.  Create a password (you will need it later)
 
-**Step 10:** Create rewrite policy and action
+1.  Clik Install
 
-*  AppExpert > Rewrite > Policy
-*  Click Add
+        ![Step 8](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_49.png)
 
-Expression:
+#### Bind SSL Profile to vserver
+
+1.  Navigate to **Security > SSL Forward Proxy > Proxy Virtual Servers**
+
+        ![SSL proxy01](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_34.png)
+
+1.  Select the vserver, in this example sslproxy01
+
+1.  Click to edit SSL Profile
+
+        ![Edit SSL profile](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_50.png)
+
+1.  Choose the SSL profile created in previously, in this example smesec_swg_sslprofile
+
+1.  Done
+
+#### Create rewrite policy and action
+
+1.  Navigate to **AppExpert > Rewrite > Policy**
+
+1.  Click Add
+
+        ![Create rewrite policy](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_51.1.png)
+
+1.  Create the policy by naming it, cloud_pol in this example and use the expression:
 `HTTP.REQ.HOSTNAME.APPEND(HTTP.REQ.URL).URL_CATEGORIZE(0,0).CATEGORY.EQ("News")`
 
-*  Create
+1.  Click create
 
-![Step 10](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_51.png)
+        ![Create rewrite policy](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_51.png)
 
-Create the Action in PuTTy
+1.  Create the Action in PuTTy
 
-*  Run the following command:
+1.  Run the following command:
 
         add rewrite action cloud_act REPLACE_HTTP_RES q{"HTTP/1.1 302 Found" + "\r\n" + "Location: http://launch.cloud.com/<customername>/<appname>?url=https://" + HTTP.REQ.HOSTNAME.APPEND(HTTP.REQ.URL.PATH) + "\r\n\r\n\" "}
 
 Note:
 In the command replace `<customername>` with your Citrix Cloud customer account name and replace `<appname>` with the Secure Browser published app name for which the URL parameters policy is enabled. Referring to the published app you created in Section 1.
 
-**Step 11:** Bind rewrite policy to vserver
+#### Bind rewrite policy to vserver
 
-*  Back to management
-*  AppExpert > Rewrite > Policy
-*  Go to the policy cloud_pol and change the action to cloud_act (the one just created)
+1.  Back to the ADC management console
 
-![Step 11.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_52.png)
+1.  Navigate to **AppExpert > Rewrite > Policy**
 
-To choose the type:
+1.  Go to the policy cloud_pol and change the action to cloud_act (the one just created)
 
-*  Go to Security > SSL Forward Proxy > Proxy Virtual Servers
-*  Select “+ Policies”
-*  Choose type
-*  Policy: Rewrite
-*  Type: Response
+        ![cloud_act Action](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_52.png)
 
-![Step 11.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_53.png)
+1.  To choose the type of the rewrite policy navigate to **Security > SSL Forward Proxy > Proxy Virtual Servers**
 
-*  Select the policy created, e.g. cloud_pol
-*  Priority: 10
-*  Bind
+1.  Select “+ Policies”
 
-![Step 11.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_54.png)
+1.  Policy: Rewrite
 
-*  Done
-*  Save configuration
+1.  Type: Response
 
-**Step 12:** Bind Certificate key to Profile
+        ![Step 11.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_53.png)
 
-*  Go to System > Profiles > SSL Profile
-*  Select the profile created, e.g. smesec_swg_sslprofile
+1.  Select the policy created, in this example cloud_pol
 
-![Step 12.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_55.png)
+1.  Priority: 10
 
-*  Click on “+ Certificate Key”
+1.  Bind
 
-![Step 12.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_56.png)
+        ![Step 11.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_54.png)
 
-*  Select the certificate key, e.g. smesec_cert_overall
+1.  Click done
 
-![Step 12.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_57.png)
+1.  Save configuration
 
-*  Click Select
-*  Click Bind
-*  Click Done
-*  Save configuration
+#### Bind Certificate key to Profile
 
-**Step 13:** Import cert file to the browser + screenshot
+1.  Navigate to **System > Profiles > SSL Profile**
 
-*  Upload the cert into firefox (per our example with news)
-*  Go to options in your browser of choice, e.g. Firefox
-*  Search “certs” > click “View Certificates”
+1.  Select the profile created, e.g. smesec_swg_sslprofile
 
-![Step 13.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_58.png)
+1.  Click on “+ Certificate Key”
 
-*  In the Certificate Manager window click “Import…”
+        ![Step 12.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_56.png)
 
-![Step 13.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_59.png)
+1.  Select the certificate key, e.g. smesec_cert_overall
 
-*  Browse for your cert and click open, e.g. smesec_cert1.cert
+        ![Step 12.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_57.png)
 
-![Step 13.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_60.png)
+1.  Click Select
+1.  Click Bind
+1.  Click Done
+1.  Save configuration
 
-*  Input the password you created when making the cert
-*  Your certificate authority should be installed properly
+#### Import cert file to the browser + screenshot
 
-![Step 13.4](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_61.png)
+1.  Upload the cert into firefox (per our example with news)
 
-**Demo:**
+1.  Go to options in your browser of choice, e.g. Firefox
+
+1.  Search “certs” > click “View Certificates”
+
+        ![Step 13.1](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_58.png)
+
+1.  In the Certificate Manager window click “Import…”
+
+        ![Step 13.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_59.png)
+
+1.  Browse for your cert and click open, e.g. smesec_cert1.cert
+
+        ![Step 13.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_60.png)
+
+1.  Input the password you created when making the cert
+
+1.  Your certificate authority should be installed properly
+
+        ![Step 13.4](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_61.png)
+
+#### Demo
+
 News websites from local browser will be redirected to Secure Browser automatically. See the following [demo](https://citrix.sharefile.com/d-s7a540d5498c42a59)
 
 ## Summary
 
-To learn more about Citrix Secure Browser Service visit [Citrix web site](https://www.citrix.com/) and to learn more about its technical capabilities visit [Citrix Tech Zone](/en-us/tech-zone/).
+To learn more about Citrix Secure Browser Service visit [Citrix web site](https://www.citrix.com/) and to learn more about its technical capabilities visit [Citrix Tech Zone](/en-us/tech-zone/)
