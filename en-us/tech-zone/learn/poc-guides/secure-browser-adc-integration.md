@@ -59,7 +59,7 @@ This proof-of-concept guide will describe the following:
 
 1.  In your Citrix Cloud subscription, **click on the Secure Browser tile**
 
-1.  On your published browser, e.g. “browser”, **Click on the three dots > select Policies**
+1.  On your published browser, for example “browser”, **Click on the three dots > select Policies**
 
         ![published browser app](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_6.png)
 
@@ -75,13 +75,13 @@ This proof-of-concept guide will describe the following:
 
 1.  Select **Citrix ADC template**
 
-1.  Select the software plan according to your requirements (e.g.  Bring Your Own License)
+1.  Select the software plan according to your requirements (in this example Bring Your Own License)
 
 1.  Click **Create**
 
         ![Set-up ADC in Azure](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_8.png)
 
-#### Configure NIC card for the ADC e.g. ipconfig1
+#### Configure NIC card for the ADC, in this example ipconfig1
 
 1.  Navigate to **All Resources** and select the NIC card for the ADC instance
 
@@ -91,7 +91,7 @@ This proof-of-concept guide will describe the following:
 
         ![Configure NIC for ADC](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_9.png)
 
-#### Configure Virtual IP e.g. virtualip
+#### Configure Virtual IP, in this example virtualip
 
 1.  Click on **Add**, set `virtualip` as name of the new config
 
@@ -107,7 +107,7 @@ This proof-of-concept guide will describe the following:
 
 1.  Navigate to Public IP address resource created for the virtualip configuration
 
-1.  Click on **Configuration**, and add a DNS label (e.g., urlredirection.eastus.cloudapp.azure.com)
+1.  Click on **Configuration**, and add a DNS label (in this example, urlredirection.eastus.cloudapp.azure.com)
 
         ![Set FQDN](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_11.png)
 
@@ -125,7 +125,7 @@ This proof-of-concept guide will describe the following:
 
 1.  Navigate to the Citrix ADC management console by inputing the instance's public IP address in the search bar of your browser  
 
-        Note: Use the IP address of the machine you provisioned in prevous steps, e.g. `https://40.88.150.164/`
+        Note: Use the IP address of the machine you provisioned in prevous steps, in this example `https://40.88.150.164/`
 
 1.  Log in to the console by inputing the username and password you set up in previous steps
 
@@ -191,9 +191,9 @@ This proof-of-concept guide will describe the following:
 
 1.  Open SSH Session to ADC management address, login with credentials you used while provisioning the ADC from Azure
 
-1.  Get the virtualip from steps in Section 2 and input in the command (e.g. 10.1.0.5)
+1.  Get the virtualip from steps in Section 2 and input in the command (in this example 10.1.0.5)
 
-1.  Run the following commands with the sslproxy address i.e., virtualip:
+1.  Run the following commands with the sslproxy address for example, virtualip:
 
 1.  To add TCP profile:
 
@@ -227,9 +227,9 @@ This proof-of-concept guide will describe the following:
 
 #### Setup the client for URL Redirection
 
-1.  On a client, e.g. Firefox in this example
+1.  On a client, for example Firefox
 
-1.  Configure your browser proxy to virtualip Public IP or FQDN:8080 that you configured in Section 2 (e.g., urlredirection.eastus.cloudapp.azure.com:8080)
+1.  Configure your browser proxy to virtualip Public IP or FQDN:8080 that you configured in Section 2 (for example, urlredirection.eastus.cloudapp.azure.com:8080)
 
         ![Configure Browser proxy](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_24.png)
 
@@ -287,7 +287,7 @@ References:
 
         ![Create certificate](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_29.png)
 
-1.  Give the certificate a name and choose both the Certificate Request File (e.g .req) and the Key Filename (e.g. .key) created in the previous steps
+1.  Give the certificate a name and choose both the Certificate Request File (.req) and the Key Filename (.key) created in the previous steps
 
         ![Create Certificate](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_30.png)
 
@@ -503,13 +503,13 @@ In the command replace `<customername>` with your Citrix Cloud customer account 
 
 1.  Navigate to **System > Profiles > SSL Profile**
 
-1.  Select the profile created, e.g. smesec_swg_sslprofile
+1.  Select the profile created, for example smesec_swg_sslprofile
 
 1.  Click on “+ Certificate Key”
 
         ![Step 12.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_56.png)
 
-1.  Select the certificate key, e.g. smesec_cert_overall
+1.  Select the certificate key, for example smesec_cert_overall
 
         ![Step 12.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_57.png)
 
@@ -522,7 +522,7 @@ In the command replace `<customername>` with your Citrix Cloud customer account 
 
 1.  Upload the cert into firefox (per our example with news)
 
-1.  Go to options in your browser of choice, e.g. Firefox
+1.  Go to options in your browser of choice, Firefox in this example
 
 1.  Search “certs” > click “View Certificates”
 
@@ -532,7 +532,7 @@ In the command replace `<customername>` with your Citrix Cloud customer account 
 
         ![Step 13.2](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_59.png)
 
-1.  Browse for your cert and click open, e.g. smesec_cert1.cert
+1.  Browse for your cert and click open, smesec_cert1.cert in this example
 
         ![Step 13.3](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_60.png)
 
