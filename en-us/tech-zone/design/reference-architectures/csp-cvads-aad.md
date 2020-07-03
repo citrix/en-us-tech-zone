@@ -10,12 +10,12 @@ description: Copy & paste description from TOC here
 
 ## Architecture
 
-Azure Active Directory Domain Services is a fully managed Active Directory service on Microsoft Azure. Not to be confused with Azure AD, which is a cloud-based identity and authentication service for Microsoft services, Azure AD Domain Services provides managed domain controllers and includes enterprise features like domain-join, group policy, etc. Whilst Azure AD works with several modern authentication and authorization protocols like OpenID Connect, OAuth 2.0, and SAML, Azure AD Domain Services works with traditional protocols that rely on Active Directory, like LDAP, and Kerberos / NTLM. Azure AD Domain Services automatically synchronizes identities from Azure AD to your managed AD environment. 
+Azure Active Directory Domain Services is a fully managed Active Directory service on Microsoft Azure. Not to be confused with Azure AD, which is a cloud-based identity and authentication service for Microsoft services, Azure AD Domain Services provides managed domain controllers and includes enterprise features like domain-join, group policy, etc. Whilst Azure AD works with several modern authentication and authorization protocols like OpenID Connect, OAuth 2.0, and SAML, Azure AD Domain Services works with traditional protocols that rely on Active Directory, like LDAP, and Kerberos / NTLM. Azure AD Domain Services automatically synchronizes identities from Azure AD to your managed AD environment.
 Azure ADDS automatically deploys and manages highly available Active Directory domain controllers on your Azure subscription. Domain controller access is restricted, and you can only manage your domain by deploying management instances with Remote Server Administration tools; additionally, Domain Admin and Enterprise Admin permissions are not available under the managed service. The Azure ADDS instance is deployed directly to a Virtual Network (VNET) within your subscription, additionally resources can be deployed on the same VNET, or in different VNETs by leveraging a VNET peering.
 Azure ADDS can be deployed as a user forest, or a resource forest. For this implementation, we are deploying Azure ADDS as a user forest, without configuring a trust to an external on-premises AD environment. Additionally, the Citrix Virtual Apps and Desktops service resources will be deployed based on our CSP reference architecture.
 
 [Azure Active Directory Domain Services](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/overview)
-[Azure Active Directory Domain Services USer Forest](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/concepts-resource-forest)
+[Azure Active Directory Domain Services User Forest](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/concepts-resource-forest)
 [Azure Active Directory Domain Services](/en-us/tech-zone/design/reference-architectures/csp-cvads.html)
 
 ### Scenario 1
@@ -87,14 +87,14 @@ This deployment scenario implies the following considerations:
 *  Azure hosting connections will be configured
 *  Machine Catalog and Delivery Group will be configured
 
-## Teminology
+## Terminology
 
 The following are the most common Azure terms you will need to understand, as described on the Azure documentation:
 
 *  Azure subscriptions: Azure subscriptions are an agreement with Microsoft to use Azure services, billing is tied to a subscription based on the resources consumed, and resources cannot be deployed without a subscription. Subscriptions allow you to organize access to resources. Subscription types include trial, pay as you go, Enterprise Agreement, and MSDN, and each one can have a different payment setup. As a general rule, they must be tied to an (and only one) Azure AD tenant.
 *  Azure AD: Azure AD is Microsoft’s cloud-based identity management service for users, groups, and devices. Azure AD is not to be considered a replacement to traditional Active Directory Domain Services, as it does not support LDAP or Kerberos. Multiple Azure subscriptions can be tied to a single Azure AD tenant. Azure AD offers different types of licenses (Free, Premium 1, and Premium 2) which provide different functionality based on the license level.
-*  Management Groups: Azure Management Groups are containers that allow you to manage access, policy, and compliance across multiple subscriptions. Management groups can contain subscriptions, or other management groups. 
-*  Azure RBAC: Azure RBAC is utilized to manage authorization for Azure resources. Azure RBAC contains over 70 built-in roles and allows you to create custom roles to manage authorization to resources based on your requirements. Permissions are cascaded from management groups to subscriptions, from subscriptions to resources groups, and from resource groups to resources. The Owner RBAC role provides the highest level of permissions over an Azure Resource and also allows to manage resource permissions for other users. 
+*  Management Groups: Azure Management Groups are containers that allow you to manage access, policy, and compliance across multiple subscriptions. Management groups can contain subscriptions, or other management groups.
+*  Azure RBAC: Azure RBAC is utilized to manage authorization for Azure resources. Azure RBAC contains over 70 built-in roles and allows you to create custom roles to manage authorization to resources based on your requirements. Permissions are cascaded from management groups to subscriptions, from subscriptions to resources groups, and from resource groups to resources. The Owner RBAC role provides the highest level of permissions over an Azure Resource and also allows to manage resource permissions for other users.
 *  Azure AD Roles: Azure AD roles are used to manage Azure AD related actions, like creating users, groups, app registrations, interaction with APIs, and more. The Global Administrator role grants access to the highest level of authorization within Azure AD, including access to all Azure AD features, manage roles and licensing for other users, and more; and it is automatically assigned to the user who first created an Azure AD tenant.
 *  Custom Azure AD Domain: All new Azure AD tenants are created under the onmicrosoft.com domain suffix, a custom domain can be configured by validating ownership of a domain name with any domain registrar.
 *  Resource Groups: Resource groups are logical containers utilized to organize resources within Azure and manage their permissions via RBAC. Typically, resources within a resource group share a similar lifecycle. A resource group cannot contain other resource groups, an Azure resource cannot be created without specifying a resource group. Whilst a Resource Group is deployed to an Azure region, it can contain resources from different regions.
@@ -359,7 +359,7 @@ Considerations:
 
 Considerations:
 
-*  When Azure AD users are initially synced to Azure ADDS, their password hash is not synced, therefore, users need to reset their password in order for the hash to be synced to Azure ADDS. SSPR will be utilized to allow for users to reset their passwords. 
+*  When Azure AD users are initially synced to Azure ADDS, their password hash is not synced, therefore, users need to reset their password in order for the hash to be synced to Azure ADDS. SSPR will be utilized to allow for users to reset their passwords.
 *  User authentication against Azure ADDS will not work until this step is performed.
 *  The step to enable SSPR is only required if it has not been previously configured.
 *  This step is only required if Azure AD users are being managed from the Azure portal (not users synced from on-prem AD via Azure AD Connect). For users synced from on-prem AD via Azure AD connect, follow these steps.
@@ -386,7 +386,7 @@ Considerations:
 
 [![CSP-Image-035](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_035.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_035.png)
 
-•	Users can now navigate to https://aka.ms/sspr to reset their password.
+*  Users can now navigate to [Self-Service Password Reset](https://aka.ms/sspr) to reset their password.
 
 [![CSP-Image-036](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_036.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_036.png)
 
@@ -480,7 +480,7 @@ Considerations:
 
 *  Repeat the previous steps to join all other VMs to the Azure ADDS domain.
 *  RSAT tools installation is only required for the VMs used to manage the Azure ADDS instance.
-*  Make sure the password of the user account utilized to join the VMs to the Azure ADDS domain has been reset prior to attempting these steps. 
+*  Make sure the password of the user account utilized to join the VMs to the Azure ADDS domain has been reset prior to attempting these steps.
 
 ### Create an Azure AD App Registration
 
@@ -582,3 +582,286 @@ Considerations:
 *  On the Domains tab under Identity and Access Management, click +Domain.
 
 [![CSP-Image-066](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_066.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_066.png)
+
+*  In the Add a Cloud Connector window click Download.
+
+[![CSP-Image-067](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_067.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_067.png)
+
+*  Save the cwcconnector.exe file to the instance.
+
+[![CSP-Image-068](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_068.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_068.png)
+
+*  Right-click the cwcconnector.exe file and select Run as administrator.
+
+[![CSP-Image-069](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_069.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_069.png)
+
+*  On the Citrix Cloud Connector window, click Sign in.
+
+[![CSP-Image-070](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_070.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_070.png)
+
+*  On the sign in window, enter your Citrix Cloud credentials and click Sign in.
+
+[![CSP-Image-071](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_071.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_071.png)
+
+*  When the installation finishes, click Close.
+
+[![CSP-Image-072](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_072.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_072.png)
+
+Considerations:
+
+*  Cloud Connector installation can take up to 5 minutes.
+*  At least 2 Cloud Connectors should be configured per resource location.
+
+### Configure the VDA Master Image
+
+*  Connect to the Citrix VDA master image VM via RDP and use a web browser to navigate to [Citrix Downloads](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/) and download the latest Citrix VDA version.
+
+[![CSP-Image-073](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_073.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_073.png)
+
+Considerations:
+
+*  Citrix credentials will be required to download the VDA software.
+*  Either the LTSR or CR version can be installed.
+*  A separate VDA installer must be downloaded for Server and Desktop OS machines.
+
+*  Right-click the VDA installer file and select Run as administrator.
+
+[![CSP-Image-074](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_074.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_074.png)
+
+*  On the Environment page, select Create a master MCS image.
+
+[![CSP-Image-075](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_075.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_075.png)
+
+*  On the Core Components page, click Next.
+
+[![CSP-Image-076](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_076.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_076.png)
+
+*  On the Additional Components page, select the components that best apply to your requirements and click Next.
+
+[![CSP-Image-077](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_077.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_077.png)
+
+*  On the Delivery Controller page, enter the following information:
+    *  Select “Do it manually”
+    *  Enter the FQDN of each Cloud Connector
+    *  Click Test Connection and if you get a green checkmark, click Add
+*  Click Next.
+
+[![CSP-Image-078](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_078.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_078.png)
+
+*  On the Features page, check the boxes of the features you wish to enable based on your deployment needs, then click Next.
+
+[![CSP-Image-079](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_079.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_079.png)
+
+*  On the Firewall page, select Automatically and click Next.
+
+[![CSP-Image-080](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_080.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_080.png)
+
+*  On the Summary page, ensure all the details are correct and click Install.
+
+[![CSP-Image-081](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_081.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_081.png)
+
+*  The instance will need to be restarted during installation.
+
+[![CSP-Image-082](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_082.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_082.png)
+
+*  After the installation finishes, on the Diagnostics page, select the option that best fits your deployment needs and click Next.
+
+[![CSP-Image-083](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_083.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_083.png)
+
+*  On the Finish page, make sure Restart machine is checked and click Finish.
+
+[![CSP-Image-084](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_084.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_084.png)
+
+### Create an Azure Hosting Connection
+
+*  Use a web browser to navigate to [Citrix Cloud](https://citrix.cloud.com)
+
+*  Enter your Citrix Cloud credentials and click Sign in.
+
+*  On the Citrix Cloud hamburger menu, navigate to My Services > Virtual Apps and Desktops.
+
+[![CSP-Image-085](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_085.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_085.png)
+
+*  Under Manage, select Full Configuration.
+
+[![CSP-Image-086](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_086.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_086.png)
+
+*  In Citrix Studio, navigate to Citrix Studio > Configuration > Hosting and select Add Connection and Resources.
+
+[![CSP-Image-087](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_087.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_087.png)
+
+*  On the Connection page, click the radio button next to Create a new connection and enter the following information:
+    *  Connection type
+    *  Azure environment
+*  Click Next.
+
+[![CSP-Image-088](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_088.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_088.png)
+
+*  On the Connection Details page, enter the following information:
+    *  Subscription ID
+    *  Connection name
+*  Click Use existing.
+
+[![CSP-Image-089](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_089.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_089.png)
+
+*  On the Existing Service Principal page, enter the following information:
+    *  Active Directory ID
+    *  Application ID
+    *  Application Secret
+*  Click OK.
+
+[![CSP-Image-090](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_090.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_090.png)
+
+*  Back on the Connection Details page, click Next.
+
+[![CSP-Image-091](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_091.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_091.png)
+
+*  On the Region page, select the region where your Cloud Connector and VDA were deployed and click Next
+
+[![CSP-Image-092](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_092.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_092.png)
+
+*  On the Network page, enter a name for the resources, select the appropriate Virtual Network and Subnet and click Next.
+
+[![CSP-Image-093](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_093.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_093.png)
+
+*  On the Summary page, ensure all the information is correct and click Finish.
+
+[![CSP-Image-094](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_094.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_094.png)
+
+### Create a machine catalog
+
+*  In Citrix Studio, navigate to Citrix Studio > Machine Catalogs and select Create Machine Catalog.
+
+[![CSP-Image-095](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_095.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_095.png)
+
+*  On the Introduction page, click Next.
+
+[![CSP-Image-096](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_096.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_096.png)
+
+*  On the Operating System page, select Multi-session OS and click Next.
+
+[![CSP-Image-097](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_097.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_097.png)
+
+Considerations:
+
+*  Subsequent screens may vary depending on the OS type selected in this page.
+
+*  On the Machine Management page, select the following information:
+    *  The machine catalog will use: machines that are powered managed
+    *  Deploy machines using: Citrix Machine Creation Services (MCS)
+    *  Resources: select your Azure hosting connection
+*  Click Next.
+
+[![CSP-Image-098](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_098.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_098.png)
+
+*  On the Desktop Experience page, select the options that best adjust to your requirements and click Next.
+
+[![CSP-Image-099](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_099.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_099.png)
+
+*  On the Master Image page, select the master image, the functional level (VDA version), and click Next.
+
+[![CSP-Image-100](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_100.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_100.png)
+
+*  On the Storage and License Types, select the options that best adjust to your requirements and click Next.
+
+[![CSP-Image-101](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_101.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_101.png)
+
+*  n the Virtual Machines page, configure the number of virtual machines to deploy, the machine size, and click Next.
+
+[![CSP-Image-102](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_102.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_102.png)
+
+*  On the Write Back Cache page, select your write cache options and click Next.
+
+[![CSP-Image-103](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_103.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_103.png)
+
+*  On the Resource Groups page, select between creating new resource groups for the Citrix MCS resources or using pre-created resource groups.
+
+[![CSP-Image-104](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_104.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_104.png)
+
+Considerations:
+
+*  Only empty resource groups will appear on the list of existing resource groups.
+
+*  On the Network Interface Cards page, add NICs as required and click Next.
+
+[![CSP-Image-105](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_105.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_105.png)
+
+*  On the Active Directory Computer Accounts page, configure the following:
+    *  Account option: Create new AD accounts
+    *  Domain: select your domain
+    *  OU: the OU where the computer accounts will be stored
+    *  Naming scheme: naming convention to be utilized
+
+[![CSP-Image-106](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_106.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_106.png)
+
+Considerations:
+
+*  Pound signs will be replaced by numbers on the naming scheme.
+*  Be mindful of the NetBIOS 15-character limit when creating a naming scheme
+
+*  On the Domain Credentials page, click Enter credentials.
+
+[![CSP-Image-107](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_107.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_107.png)
+
+*  On the Windows Security pop-up, enter your domain credentials and click OK.
+
+[![CSP-Image-108](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_108.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_108.png)
+
+*  On the Summary page, enter a name and description and click Finish.
+
+[![CSP-Image-109](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_109.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_109.png)
+
+### Create a machine catalog
+
+*  In Citrix Studio, navigate to Citrix Studio > Delivery Groups and select Create Delivery Group.
+
+[![CSP-Image-110](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_110.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_110.png)
+
+*  On the Getting started page, click Next.
+
+[![CSP-Image-111](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_111.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_111.png)
+
+*  On the Machines page, select your machine catalog, the number of machines, and click Next.
+
+[![CSP-Image-112](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_112.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_112.png)
+
+*  On the Users page select an authentication option and click Next.
+
+[![CSP-Image-113](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_113.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_113.png)
+
+*  On the Applications page, click Add.
+
+[![CSP-Image-114](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_114.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_114.png)
+
+*  On the Add Applications page, select which applications you wish to publish and click OK.
+
+[![CSP-Image-115](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_115.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_115.png)
+
+Considerations:
+
+*  Whilst most applications should show through the start menu, you can also optionally add applications manually.
+*  This step can be skipped if you do not need to publish seamless applications.
+
+*  Back on the Applications page, click Next.
+
+[![CSP-Image-116](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_116.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_116.png)
+
+*  On the Desktops page, click Add.
+
+[![CSP-Image-117](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_117.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_117.png)
+
+*  On the Add Desktop page, configure the Desktop and click OK.
+
+[![CSP-Image-118](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_118.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_118.png)
+
+Considerations:
+
+*  This step can be skipped if you do not need to publish full desktops.
+
+*  Back on the Desktops page, click Next.
+
+[![CSP-Image-119](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_119.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_119.png)
+
+*  On the Summary page, enter a name, a description, and click Finish.
+
+[![CSP-Image-120](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_120.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_120.png)
