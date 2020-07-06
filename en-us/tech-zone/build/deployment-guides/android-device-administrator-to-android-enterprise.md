@@ -175,9 +175,9 @@ Re-enroll the user’s device to begin the Android Enterprise enrollment process
 
 ## Unenroll and reenroll the Device
 
-Users can unenroll from within Seucre Hub. Follow the detailed [instructions](/en-us/xenmobile/server/provision-devices/devices-enroll.html)
+Users can unenroll from within Secure Hub. Follow the detailed [instructions](/en-us/xenmobile/server/provision-devices/devices-enroll.html)
 
-In this guide we are using the work profile owner mode, so that the device do not need to be new or factory reset.
+In this guide we are using the work profile owner mode, so that the device does not need to be new or factory reset.
 
 [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_10.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_10.png)
 
