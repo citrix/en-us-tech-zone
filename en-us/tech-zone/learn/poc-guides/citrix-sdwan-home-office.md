@@ -12,7 +12,7 @@ description: Learn how to implement a POC of the Citrix SD-WAN 110 appliance to 
 
 ## Overview
 
-This proof of concept (PoC) guide is designed to help you quickly deploy a Citrix SD-WAN Home Office environment using Citrix SD-WAN Orchestrator as the management tool. The [Citrix SD-WAN Home Office Design Decisions Guide](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) outlined WAN topology decisions to integrate Citrix SD-WAN in a Home Office. Below The ISP Router will need use the ISP + LTE option, which includes a primary WAN link provided by an ISP. It is augmented with an LTE service, to review implementation considerations.
+This proof of concept (PoC) guide is designed to help you quickly deploy a Citrix SD-WAN Home Office environment using the Citrix SD-WAN Orchestrator service as the management tool. The [Citrix SD-WAN Home Office Design Decisions Guide](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) outlined WAN topology decisions to integrate Citrix SD-WAN in a Home Office. Below The ISP Router will need use the ISP + LTE option, which includes a primary WAN link provided by an ISP. It is augmented with an LTE service, to review implementation considerations.
 
 ![ISP + LTE Home Office Topology](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_ispplusltehomeofficetopology.png)]
 
@@ -20,12 +20,12 @@ In this use-case (ISP+LTE), an Administrator must first validate that the target
 
 *  Have up, and running an existing internet connection provided by their local ISP.
 *  The ISP has provided a managed router that serves the existing “Home Network”.
-The ISP Router must have an available Ethernet port.  It also functions as a DHCP Server to allocate IP, and DNS address information to the client host requesting it through Ethernet. Interface 1/2 on the SD-WAN device will be enabled as the DHCP Client.
+The ISP Router must have an available Ethernet port.  It also functions as a DHCP Server to allocate IP, and DNS address information to the client host requesting it through Ethernet. Interface 1/2 on the SD-WAN device is enabled as the DHCP Client.
 *  An activated LTE SIM card (either purchased directly by the end-user, or supplied by the Admin, or a third-party vendor).
 
 Confirming that the prerequisites are available, before engaging the user in any on-site activity, helps ensure a rapid streamlined deployment which can scale to thousands of endpoints.
 
-Selecting the appropriate SD-WAN platform that supports the desired design for the Home Office is essential. For example, if the design outlines that an LTE service is used as a WAN link, then selecting a SD-WAN platform that has an integrated LTE modem (for instance 110-LTE-SE, 210-LTE-SE) would help reduce on-site components, and mitigate complexity for the installer.
+Selecting the appropriate SD-WAN platform that supports the desired design for the Home Office is essential. For example, if the design outlines that an LTE service is used as a WAN link, then selecting an SD-WAN platform that has an integrated LTE modem (for instance 110-LTE-SE, 210-LTE-SE) would help reduce on-site components, and mitigate complexity for the installer.
 
 The design options (Single ISP, Dual ISP, ISP+LTE, ISP+LTE standby, Dual LTE) detailed earlier in this documentation are fully supported with the Citrix 110-LTE-SE, and 210-LTE-SE platforms. Each SD-WAN platform has slightly different hardware specifications, enabling some variances in supported design.
 
@@ -33,17 +33,17 @@ As an example, when using a 210 Standard Edition platform, the system is equippe
 
 Alternatively, by selecting Advanced Edition (targeted to be supported on the 210, 410, and 1100 platforms), the system is equipped with edge security features (such as IDS/IPS, web filtering, malware protection). These can help secure the “Remote Work Network”, and enable local breakout for select internet traffic.  
 
-Another example would be using an 1100-SE platform with available PoE+ interfaces, enabling usage of Ethernet powered devices, such as a VoIP Deskphone. However, using a PoE Injector can enable usage of lower-end SD-WAN devices, like a 110-SE, for the Home Office use-cases that require PoE. In addition to bypass interfaces, the 1100 platforms can host a third-party VNF such as a Palo Alto, or Checkpoint firewall.
+Another example would be using a 1100-SE platform with available PoE+ interfaces, enabling usage of Ethernet powered devices, such as a VoIP Desk phone. However, using a PoE Injector can enable usage of lower-end SD-WAN devices, like a 110-SE, for the Home Office use-cases that requires PoE. In addition to bypass interfaces, the 1100 platforms can host a third-party VNF such as a Palo Alto, or Checkpoint firewall.
 
 Some other feature capabilities worth mentioning to help narrow the focus on the right platform to select in Home Worker network design include the 110 platform that comes WiFi-Ready. After a software upgrade to R11.3.x it can function as a wireless access point for the “Remote Work Network”. (This functionality is targeted only for the 110-LTE-WiFi-SE platform in Q4 2020).  The 110 platform also has support for an external USB LTE modem (targeted also for the 210, and 1100 platforms with R11.1.1). Ith can be used to support the Dual LTE use case, or add a third WAN option for the ISP+LTE use-case.
 
-## Using SD-WAN Orchestrator
+## Using the Citrix SD-WAN Orchestrator service
 
-SD-WAN Administrators centrally manage, and limit their supported deployment use-case through Citrix SD-WAN Orchestrator site profiles, and templates. Limiting the Home User deployment scenarios makes it easy to manage large scale deployments, and allow quick modification to multiple sites to accommodate for future changes.
-There are some additional administrative considerations to account for when building the Home Office site in SD-WAN Orchestrator, for example:
+SD-WAN Administrators centrally manage, and limit their supported deployment use-case through the Citrix SD-WAN Orchestrator service site profiles, and templates. Limiting the Home User deployment scenarios makes it easy to manage large scale deployments, and allow quick modification to multiple sites to accommodate for future changes.
+There are some additional administrative considerations to account for when building the Home Office site in the Citrix SD-WAN Orchestrator service, for example:
 
 *  What method of Zero Touch Deployment will be used to provision the remote devices?
-*  After the appliance is provisioned, how will the device continue communication with SD-WAN Orchestrator for further configuration updates, and data collection?
+*  After the appliance is provisioned, how will the device continue communication with the Citrix SD-WAN Orchestrator service for further configuration updates, and data collection?
 *  How can we account for continued connectivity to Cloud Services in different failure scenarios?
 We will highlight some of these as we step through building the configuration.
 
@@ -82,7 +82,7 @@ To set up Site Profiles in Orchestrator, an Administrator can perform the follow
     *  Security: **Untrusted**
     *  Select Interface: **1/2**
     *  DHCP Client: **enabled**
-(_The expectation is that this SD-WAN interface will be cabled to the Home Offices existing home network, where a home router will be configured as a DHCP Server, and will assign an IP address to interface 1/2 operating as a DHCP Client._)
+(_The expectation is that this SD-WAN interface will be cabled to the Home Offices existing home network, where a home router will be configured as a DHCP Server, and will assign an IP address to interface 1/2 operating as a the DHCP Client._)
     *  VLAN ID: 0
     *  Routing Domain: Default_RoutingDomain
     *  Firewall Zone: **Untrusted Internet_Zone**
@@ -110,7 +110,7 @@ To set up Site Profiles in Orchestrator, an Administrator can perform the follow
    1.  _Enables continued connectivity to Cloud Services after the device has been provisioned through zero-touch deployment._
    2.  _Serves as a method for an Administrator to remotely access the device’s local web interface for troubleshooting/monitoring._
 
-        _Assuming the Administrator is in the data center network connecting to the SD-WAN on the Default_RoutingDomain, the remote SD-WAN device’s web interface can be accessed with the in-band management feature enabled on this interface. Connectivity to the Mgmt. interface by the remote Admin is accomplished through the Virtual Path. Also, connectivity to Cloud Services, like SD-WAN Orchestrator, is accomplished through local internet breakout (Internet Service) being enabled for the Default_RoutingDomain.  If desired internet connectivity can alternatively be backhauled through the data center, and broken out there for internet access. The management port (1/4) does not require to be cabled for the web interface, and data polling features to work on any in-band management enabled interface._)
+        _Assuming the Administrator is in the data center network connecting to the SD-WAN on the Default_RoutingDomain, the remote SD-WAN device’s web interface can be accessed with the in-band management feature enabled on this interface. Connectivity to the Mgmt. interface by the remote Admin is accomplished through the Virtual Path. Also, connectivity to Cloud Services, like the Citrix SD-WAN Orchestrator service, is accomplished through local internet breakout (Internet Service) being enabled for the Default_RoutingDomain.  If desired internet connectivity can alternatively be backhauled through the data center, and broken out there for internet access. The management port (1/4) does not require to be cabled for the web interface, and data polling features to work on any in-band management enabled interface._)
 ![Management](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratormanagement.png)
     *  Firewall Zone: **Default_LAN_Zone**
 ![Interface Mgmt](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorinterfacesmgmt.png)
@@ -119,10 +119,10 @@ Interfaces that meet the following configuration requirements can be used for in
 
 *  Security must be set to **Trusted**
 *  Interface type must be **LAN**
-*  Selected IP should not be set to **Private**
-*  **Identity** of the IP should be set to true
+*  Selected IP not set to **Private**
+*  **Identity** of the IP set to true
 
-Site Profiles allow for selection of the in-band management IP that meet those requirements.
+Site Profiles allow for selection of the in-band management IP that meets those requirements.
 
 ![Summary](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorinterfacessummary.png)
 
@@ -166,7 +166,7 @@ In both standby modes, there is still data usage on the link when not active. Th
 
 ## Batch Create Sites
 
-Once the Site Profile is created, it can be used in creating multiple Home Office sites in batch. To add new sites in Batch using Citrix SD-WAN Orchestrator, an Admin can perform the following:
+Once the Site Profile is created, it can be used in creating multiple Home Office sites in batch. To add new sites in Batch using the Citrix SD-WAN Orchestrator service, an Admin can perform the following:
 (For more information refer to [Orchestrator Network Configuration](/en-us/citrix-sd-wan-orchestrator/network-level-configuration/network-configuration.html))
 
 1.  Batch add sites (by selecting All Sites, then navigating to Configuration > Network Configuration Home, and click the Batch Add Sites button)
@@ -185,23 +185,23 @@ Here sites can be associated to a specific **Region** when deployed in a multi-r
 Here a **unique serial number**, specifically the serial number of the device shipped to the Home User, will be inputted. The serial number is used to authenticate the appliance as it calls home and retrieves this specific site configuration during the zero-touch deployment process.
 ![Batch Device Details](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorbatchdevicedetails.png)
 1.  **Interfaces**:
-     *  i. Edit Interface 1/1 LAN
+     *  i. Edit Interface 1/1 LAN.
 Each site will need to be uniquely defined with a “Remote Work Network”. Select the LAN interface and input the subnet to be allocated for this specific remote site. The Primary IP address entered will serve as the **LAN Gateway VIP** (for instance 172.17.30.1/29) for this remote work network.
 ![Batch Interfaces](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorbatchinterfaces.png)
-     *  ii. Edit Interface 1/2 WAN
-Verify the WAN interface is enabled for DHCP Client, to automatically obtain an IP address from the “Existing Home Network”. The benefit of using this feature is that you do not have to specifically know the existing subnets of home networks, but there are dependencies on the underlay to have an available 10/100/1000 Ethernet port on your existing home router/modem and ensure any device connected to it will be issued an IP address, DNS, and Internet connectivity.
+     *  ii. Edit Interface 1/2 WAN.
+Verify the WAN interface is enabled for the DHCP Client, to automatically obtain an IP address from the “Existing Home Network”. The benefit of using this feature is that you do not have to specifically know the existing subnets of home networks, but there are dependencies on the underlay to have an available 10/100/1000 Ethernet port on your existing home router/modem and ensure any device connected to it will be issued an IP address, DNS, and Internet connectivity.
 ![Batch WAN 12](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorbatchinterfaceswan12.png)
-     *  iii. Edit Interface LTE-1 WAN
-Verify the LTE WAN interface is enabled for DHCP Client, to automatically obtain an IP address from the LTE provider network.
+     *  iii. Edit Interface LTE-1 WAN.
+Verify the LTE WAN interface is enabled for the DHCP Client, to automatically obtain an IP address from the LTE provider network.
 ![Batch LTE](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorbatchinterfaceswanlte.png)
-     *  iv. Edit Interface 1/4 -MGMT LAN
+     *  iv. Edit Interface 1/4 -MGMT LAN.
 Each site will need to be uniquely defined with a management IP address, which will serve the purpose for continued connectivity to Cloud Services and web interface access by the remote Admin through the Virtual Path. Input the subnet to be allocated for this specific remote site. The Primary IP address entered will serve as the **Management IP** (for instance 172.17.36.1/32) for this remote work network.
 ![Batch Interfaces Mgmt](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorbatchinterfacesmgmt.png)
 Ensure that the InBand Management IP is appropriately selected for the targeted interface.
 ![Management IPs](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorbatchinterfacesmgmtip.png)
 1.  WAN Links:
-    *  i. Edit WAN Link #1 (for instance Internet-ISP-1) that uses interface 1/2:
-In this example scenario, WAN Link #1 will make use of an “Existing Home Network” which could be a shared resource with other users in the home (who are considered non-workers). In this situation, there is no way for the SD-WAN to be guaranteed the speeds configured for the egress and ingress rates unless a dedicated internet service is used for the home worker. On a shared line, you can enable the **Adaptive Bandwidth Detection** feature on this WAN link, which is a feature designed for WAN links that provide varying bandwidth. When the device detects loss on that available path, due to contending traffic, the device will use the WAN link at a reduced bandwidth rate first, and only when the available bandwidth is below the configured **Minimum Acceptable Bandwidth percentage** will the device mark the path as BAD and will try to avoid using it (i.e. use any other available link in good state). You would not be required to enable Adaptive Bandwidth Detection if the internet source is not shared and can operate at the configured speeds.
+    *  i. Edit WAN Link #1, for instance Internet-ISP-1, that uses interface 1/2:
+In this example scenario, WAN Link #1 will make use of an “Existing Home Network” which can be a shared resource with other users in the home (who are considered non-workers). In this situation, there is no way for the SD-WAN to be guaranteed the speeds configured for the egress and ingress rates unless a dedicated internet service is used for the home worker. On a shared line, you can enable the **Adaptive Bandwidth Detection** feature on this WAN link, which is a feature designed for WAN links that provide varying bandwidth. When the device detects loss on that available path, due to the contending traffic, the device will use the WAN link at a reduced bandwidth rate first, and only when the available bandwidth is below the configured **Minimum Acceptable Bandwidth percentage** will the device mark the path as BAD and will try to avoid using it (i.e. use any other available link in good state). You would not be required to enable Adaptive Bandwidth Detection if the internet source is not shared and can operate at the configured speeds.
 ![Batch WAN Link 1](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorbatchwanlinks1.png)
 ![Batch WAN Link 1 Advanced](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorbatchwanlinks1advanced.png)
     *  ii. Edit WAN Link #2 (for instance LTE-ATT-2) that uses interface LTE-1:
@@ -215,7 +215,7 @@ The summary detail of the site can be reviewed and **Saved**.  If the site confi
 
 ## Advanced Site Configuration
 
-With Basic Site configuration complete, we will need to ensure some additional configuration items are in place for the on-premises devices to have continued connectivity after the installation has been installed and activated via zero-touch deployment. This can be done at Global configuration, with All Sites selected, under Configuration > Delivery Services > Services & Bandwidth. Internet Service can be enabled by allocating a bandwidth percentage for a WAN link type. By allocating a percentage (for instance 30%) for “Internet Link” types, this will automatically configure internet breakout for any sites that are configured with that WAN link access type.
+With Basic Site configuration complete, we will need to ensure some additional configuration items are in place for the on-premises devices to have continued connectivity after the installation has been installed and activated via zero-touch deployment. This can be done at Global configuration, with All Sites selected, under Configuration > Delivery Services > Services & Bandwidth. Internet Service can be enabled by allocating a bandwidth percentage for a WAN link type. By allocating a percentage (for instance 30%) for “Internet Link” types, this will automatically configure the internet breakout for any sites that are configured with that WAN link access type.
 ![Service and Bandwidth](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorserviceandbandwidth.png)
 Additionally, when the site configuration for that Access Type (for instance **Public Internet**) is configured and the Security setting for the related interface are set to **Untrusted**, the system will automatically create a Dynamic NAT policy to allow for local internet breakout for the site.
 
@@ -232,7 +232,7 @@ Should the on-premises device require to serve as a DHCP Server for the Home Wor
 
 With the site-specific detail complete, the SD-WAN Administrator can push the configuration through the central management tool. Deploying the latest configuration will serve two purposes; 1) The existing SD-WAN devices (for instance MCN) will be prepped to allow the incoming Virtual Path connection attempt from the new remote device and 2) The on-premises device packages will be made available on the zero-touch deployment Cloud Service to hand down to the on-premisess devices that are calling home through the zero-touch deployment process.
 
-To deploy the configuration, make sure **All Sites** is selected, then navigate to **Configuration > Network Config Home page**. Select the desired software (11.1.1.39, or greater is required if using the 110 platform).  Then click **Deploy Config/Software** to stage the configuration and software packages.
+To deploy the configuration, make sure **All Sites** is selected, then navigate to the **Configuration > Network Config Home page**. Select the desired software (11.1.1.39, or greater is required if using the 110 platform).  Then click **Deploy Config/Software** to stage the configuration and software packages.
 
 ![Deploy](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratordeploy.png)
 
