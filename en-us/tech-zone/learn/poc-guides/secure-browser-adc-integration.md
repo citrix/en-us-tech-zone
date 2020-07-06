@@ -21,10 +21,10 @@ Here are the configuration steps for setting up an ADC, configuring SSL Forward 
 This proof-of-concept guide describes the following:
 
 1.  Obtain Secure Browser Trial Account
-1.  Set up ADC as proxy
+1.  Set up ADC in Azure
 1.  Set up Citrix ADC appliance as proxy
-1.  Set up Rewrite Policies and Actions
-1.  Set up Rewrite Policie and Actions
+1.  Set up SSL Interception
+1.  Set up Rewrite Policy and Actions
 
 ## Deployment Steps
 
@@ -74,7 +74,7 @@ This proof-of-concept guide describes the following:
 
 ### Section 2: Set up ADC in Azure
 
-The ADC can be set up in any cloud of choice in this example Azure is our Cloud of choice.
+The ADC can be set up in any cloud of choice. In this example Azure is our Cloud of choice.
 
 #### Configure an ADC instance
 
@@ -112,7 +112,7 @@ The ADC can be set up in any cloud of choice in this example Azure is our Cloud 
 
 #### Set up the FQDN on the client
 
-1.  Navigate to Public IP address resource created for the `virtualip` configuration
+1.  Navigate to the Public IP address resource created for the `virtualip` configuration
 
 1.  Click **Configuration**, and add a DNS label (in this example,   `urlredirection.eastus.cloudapp.azure.com`)
 
@@ -386,7 +386,7 @@ References:
 
         ![Step 5.8](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_43.png)
 
-Note: This policy is created to bypass the ADC interception for traffic going to secure browser launch.cloud.com
+Note: This policy is created to bypass the ADC interception for traffic going to secure browser `launch.cloud.com`
 
 #### Create SSL Profile
 
@@ -410,7 +410,7 @@ Note: This policy is created to bypass the ADC interception for traffic going to
 
 #### Prepare cert-key pair
 
-1.  Start by installing the SSL Tool.[Install the SSL tool](https://slproweb.com/products/Win32OpenSSL.html)
+1.  Start by [installing the SSL tool](https://slproweb.com/products/Win32OpenSSL.html)
 
 1.  Add the `openssl` installation path to the system environment variables
 
@@ -422,7 +422,7 @@ Note: This policy is created to bypass the ADC interception for traffic going to
 
         ![PowerShell](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_48.png)
 
-#### Bind an SSL Interception CA Certificate to SSL Profile
+#### Bind an SSL Interception CA Certificate to the SSL Profile
 
 1.  Navigate to **System > Profiles > SSL Profile**
 
@@ -440,7 +440,7 @@ Note: This policy is created to bypass the ADC interception for traffic going to
 
         ![Step 8](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_49.png)
 
-#### Bind the SSL Profile to virtual server
+#### Bind the SSL Profile to the virtual server
 
 1.  Navigate to **Security > SSL Forward Proxy > Proxy Virtual Servers**
 
@@ -458,7 +458,7 @@ Note: This policy is created to bypass the ADC interception for traffic going to
 
 ### Section 5: Set up Rewrite Policies and Actions
 
-For the URL redirection to happen to Secure Browser based on the category of the URL entered in the browser. SSL Interception needs to be set up in the ADC for it to be able to read the URL and apply the corresponding Policie and Actions.
+A rewrite policy consists of a rule and action. The rule determines the traffic on which rewrite is applied and the action determines the action to be taken by the Citrix ADC. The rewrite policy is necessary for URL redirection to happen to Secure Browser based on the category of the URL entered in the browser, in this example "News".
 
 [Reference](en-us/netscaler/12/appexpert/rewrite.html)
 
@@ -539,7 +539,7 @@ In the command replace `<customername>` with your Citrix Cloud customer account 
 
 #### Import the certificate file to the browser
 
-1.  Upload the certificate  into firefox (per our example with news)
+1.  Upload the certificate into firefox (per our example with News category websites)
 
 1.  Go to **Options** in your browser of choice, Firefox in this example
 
