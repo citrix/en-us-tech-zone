@@ -370,7 +370,7 @@ Considerations:
 
 #### Create the Cloud Connector VM
 
-*  On the VM instances page, repeat steps 2.1.6 and 2.1.7 to create a Windows instance and join it to the domain, this is utilized as the Citrix Cloud Connector.
+*  On the VM instances page, repeat steps Create the management instance and Configure the management VM to create a Windows instance and join it to the domain, this is utilized as the Citrix Cloud Connector.
 
 [![CSP-Image-43](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_043.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-gcp_043.png)
 
