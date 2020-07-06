@@ -21,8 +21,10 @@ Here are the configuration steps for setting up an ADC, configuring SSL Forward 
 This proof-of-concept guide describes the following:
 
 1.  Obtain Secure Browser Trial Account
-1.  Set up ADC as proxy to route the traffic from the client browser to the Internet
-1.  Set up SSL Interception and Rewrite Policies/Actions for URL redirection to Secure Browser
+1.  Set up ADC as proxy
+1.  Set up Citrix ADC appliance as proxy
+1.  Set up Rewrite Policies and Actions
+1.  Set up Rewrite Policie and Actions
 
 ## Deployment Steps
 
@@ -70,9 +72,11 @@ This proof-of-concept guide describes the following:
 
         ![URL Parameters policy enable](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_7.png)
 
-### Section 2: Set up ADC as proxy
+### Section 2: Set up ADC in Azure
 
-#### Set up the Citrix ADC in Azure
+The ADC can be set up in any cloud of choice in this example Azure is our Cloud of choice.
+
+#### Configure an ADC instance
 
 1.  Navigate to **All Resources** and click **+ Add** button, search for Citrix ADC
 
@@ -124,7 +128,11 @@ This proof-of-concept guide describes the following:
 
 1.  At this point **the ADC instance in Azure is set up**
 
-#### Set up Citrix ADC appliance as proxy
+### Section 3: Set up Citrix ADC appliance as proxy
+
+Set up the ADC as a proxy to route the traffic from the client browser to the Internet.
+
+#### Log in to ADC management console
 
 1.  Navigate to the Citrix ADC management console by inputting the instance's public IP address in the search bar of your browser  
 
@@ -238,7 +246,9 @@ This proof-of-concept guide describes the following:
 
 1.  Now that we have an ADC set up, test for any website connectivity from the browser with the ADC acting as a proxy.
 
-### Section 3: Set up SSL Interception and Rewrite Policies/Actions
+### Section 4: Set up SSL Interception
+
+SSL interception uses a policy that specifies which traffic to intercept, block, or allow. Citrix recommends that you configure one generic policy to intercept traffic and more specific policies to bypass some traffic.
 
 References:
 
@@ -398,9 +408,9 @@ Note: This policy is created to bypass the ADC interception for traffic going to
 
 1.  Make sure you have a `.pfx` format of the cert-key pair before. See the following step for guidance on how to generate a `.pfx` file from the `.cert` and `.key` files that you previously downloaded.
 
-#### Prepare cert-key pair with SSL Tool
+#### Prepare cert-key pair
 
-1.  [Install the SSL tool](https://slproweb.com/products/Win32OpenSSL.html)
+1.  Start by installing the SSL Tool.[Install the SSL tool](https://slproweb.com/products/Win32OpenSSL.html)
 
 1.  Add the `openssl` installation path to the system environment variables
 
@@ -445,6 +455,12 @@ Note: This policy is created to bypass the ADC interception for traffic going to
 1.  Choose the SSL profile created in previously, in this example `smesec_swg_sslprofile`
 
 1.  Done
+
+### Section 5: Set up Rewrite Policies and Actions
+
+For the URL redirection to happen to Secure Browser based on the category of the URL entered in the browser. SSL Interception needs to be set up in the ADC for it to be able to read the URL and apply the corresponding Policie and Actions.
+
+[Reference](en-us/netscaler/12/appexpert/rewrite.html)
 
 #### Create rewrite policy and action
 
