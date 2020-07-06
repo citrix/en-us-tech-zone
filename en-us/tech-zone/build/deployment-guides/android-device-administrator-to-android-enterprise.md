@@ -12,7 +12,7 @@ description: Copy & paste description from TOC here
 
 ## Introduction
 
-Android Enterprise is a set of tools and services provided by Google as an enterprise management solution for Android devices. With Android Enterprise, you use Citrix Endpoint Management (CEM) to manage coperate-owned and bring your own (BYOD) Android devices.
+Android Enterprise is a set of tools and services provided by Google as an enterprise management solution for Android devices. With Android Enterprise, you use Citrix Endpoint Management (CEM) to manage coperate owned and bring your own (BYOD) Android devices.
 You can manage the entire device or a separate profile on the device. The separate profile isolates business accounts, apps, and data from personal accounts, apps, and data. You can also manage devices dedicated to a single use, such as inventory management.
 
 For an overview of Android Enterprise capabilities from Google, see [Android Enterprise Management](https://www.android.com/enterprise/management/)
@@ -41,7 +41,7 @@ Managed Google play provides a store for end-users managed and controlled by the
 
 To set up Android Enterprise for your organization, register Citrix as your EMM provider through managed Google Play. Completing this setup will result in the creation of your enterprise connecting managed Google Play to Citrix Endpoint Management.
 
-Google Play infrastructure is used to offer services that include a managed, private enterprise app delivery store. Google Play is also where device profiles live. The good news is that set-up is rather simple.
+Google Play infrastructure is used to offer services that include a managed, private enterprise app delivery store. Google Play is also where device profiles live. The good news is that setup is rather simple.
 
 For activation of Android Enterprise, navigate to your **CEM** settings, and select **Android Enterprise** and follow the instructions.
 
@@ -177,7 +177,7 @@ Re-enroll the user’s device to begin the Android Enterprise enrollment process
 
 Users can unenroll from within Seucre Hub. Follow the detailed [instructions](/en-us/xenmobile/server/provision-devices/devices-enroll.html)
 
-In this guide we are using the work profile owner mode, so that the device do not need to be new or factory reset.
+In this guide we are using the work profile owner mode, so that the device does not need to be new or factory reset.
 
 [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_10.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_10.png)
 
