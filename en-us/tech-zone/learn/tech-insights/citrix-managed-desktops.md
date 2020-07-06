@@ -15,3 +15,5 @@ It is a turnkey solution where Citrix provides you with a single bill which incl
 **Watch this video to [learn more](https://youtu.be/_OSrjetVj4k):**
 
 [![Citrix Managed Desktops Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://youtu.be/_OSrjetVj4k)
+
+## Other Tech Zone content

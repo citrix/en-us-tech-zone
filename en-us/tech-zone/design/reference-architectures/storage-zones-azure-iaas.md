@@ -193,3 +193,9 @@ The described architecture covers the tested and supported deployment model our 
 [Resources for storage zone controller](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html)
 
 [Citrix Files with Citrix Virtual Apps and Desktops Service Deployment Guide](/en-us/tech-zone/build/deployment-guides/citrix-files.html)
+
+## Other Tech Zone content
+
+[Design -> Reference Architectures -> Content Collaboration with on-premises storage zones](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html) - Learn about the architecture and design considerations for deploying an on-premises customer-managed storage zone to provide the best user experience and security for Citrix Content Collaboration.
+
+[Build -> Deployment Guides -> Citrix Files with Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/build/deployment-guides/citrix-files.html) - Learn how to deploy the Citrix Files Client for Windows in a virtual app and desktop environment including related components, tips, and best practices for optimal performance and management.
