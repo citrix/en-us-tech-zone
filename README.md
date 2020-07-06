@@ -1,3 +1,8 @@
+---
+title: Citrix Tech Zone readme
+description: Citrix Tech Zone readme for new authors and contributors
+---
+
 # Citrix Tech Zone readme
 
 ## Welcome to Tech Zone
