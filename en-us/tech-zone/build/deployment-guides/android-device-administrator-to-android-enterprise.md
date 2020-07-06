@@ -189,4 +189,3 @@ From your **CEM console**, navigate to Manage followed by Devices for an overvie
 
 After successful re-enrollment you can see two devices, one Android (legacy DA) and the other Android Enterprise.
 The previous listed Android (legacy DA) device can be deleted to ensure the most updated device list.
-
