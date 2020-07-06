@@ -29,7 +29,7 @@ When you integrate CEM with managed Google Play to use Android Enterprise, an en
 
 If you are not using a G-Suite account, a personal/corporate shared Google account is required to complete the enterprise registration. This account is then responsible for this enterprise, and becomes the main managed Google Play account. More information can be found by visiting the following [link](https://support.google.com/googleplay/work/answer/7042221?hl=en&ref_topic=7042018)
 
-The G-Suite and personal/corporate shared accounts are free. The main difference between a managed Google Play account and a managed Google account is that the Managed Google Account is based on a G-Suite Subscription and needs to prove the domain ownership. See the following [link](https://docs.citrix.com/en-us/xenmobile/server/provision-devices/android-enterprise/legacy-android-enterprise-for-g-suite-customers.html)
+The G-Suite and personal/corporate shared accounts are free. The main difference between a managed Google Play account and a managed Google account is that the Managed Google Account is based on a G-Suite Subscription and needs to prove the domain ownership. See the following [link](/en-us/xenmobile/server/provision-devices/android-enterprise/legacy-android-enterprise-for-g-suite-customers.html)
 
 If you do not have a Google account readily available to create this enterprise, use the following [instruction](https://support.google.com/googleplay/work/answer/7042126?hl=en&ref_topic=7042018) and prerequisites to create your account.
 
@@ -73,7 +73,7 @@ These profiles allow admins to begin the easy migration to Android Enterprise. F
 
 On-prem deployments do not have this option and must use RBAC for setup of dedicated devices. On-prem deployments also do not provide an option within Enrollment Profiles for dedicated devices. See the following for [more information](https://support.citrix.com/article/CTX237983)
 
-For additional information on enrollment profiles, visit the [link](https://docs.citrix.com/en-us/citrix-endpoint-management/device-management/android/android-enterprise.html#creating-enrollment-profiles)
+For additional information on enrollment profiles, visit the [link](/en-us/citrix-endpoint-management/device-management/android/android-enterprise.html#creating-enrollment-profiles)
 
 **Note:** With Android 11, all of this is about to change. Visit the Blog [(Changes ahead for Android Enterprise’s Fully Managed with Work Profile](https://www.citrix.com/blogs/2020/04/09/changes-ahead-for-android-enterprises-fully-managed-with-work-profile/) for more details
 
@@ -81,7 +81,7 @@ For additional information on enrollment profiles, visit the [link](https://docs
 
 When creating enrollment profiles, you must assign delivery groups to them. If a user belongs to multiple delivery groups that have different enrollment profiles, the name of the delivery group determines the enrollment profile used
 
-In a delivery group conflict select the delivery group that appears last in an alphabetized list of delivery groups. For more information, see [Enrollment Profiles](https://docs.citrix.com/en-us/citrix-endpoint-management/users/enrollment-profiles.html)
+In a delivery group conflict select the delivery group that appears last in an alphabetized list of delivery groups. For more information, see [Enrollment Profiles](/en-us/citrix-endpoint-management/users/enrollment-profiles.html)
 
 **IMPORTANT:** Do not assign the new enrollment profile to any delivery group at the moment if you have a user who belongs to multiple delivery groups.
 
@@ -153,7 +153,7 @@ Your output is:
 -  Upload the .apk to Google Play (similar to the non-mdx apps above)
 -  Goto **publish MDX app** and upload the mdx file
 
-For more details and wrapping example [visit](https://docs.citrix.com/en-us/citrix-endpoint-management/apps.html#add-private-android-enterprise-apps-as-mdx-wrapped-enti%20just%20erprise-apps)
+For more details and wrapping example [visit](/en-us/citrix-endpoint-management/apps.html#add-private-android-enterprise-apps-as-mdx-wrapped-enti%20just%20erprise-apps)
 
 ## Editing Existing Policies for the Correct Device Type Android (Legacy DA) and Android Enterprise (AE
 
@@ -171,14 +171,22 @@ This Deployment Rule will check if the Android device is enabled for Android Ent
 
 To test, assign an Active Directory Group to the recently created delivery group used for Android Enterprise. Use the same AD-Group as used before on the existing delivery group.
 
-Re-enroll the user’s device to begin the Android Enterprise enrollment process. Note the new look and feel of Android Enterprise.
+Re-enroll the user’s device to begin the Android Enterprise enrollment process. Note the new look and feel of Android Enterprise
 
-Reenroll
-Screenshots from AE Enrollment. Including Work profile screenshots. Will follow
+## Unenroll and reenroll the Device
 
-From your CEM console, navigate to Manage followed by Devices for an overview of which devices are Android Enterprise enabled.
+Users can unenroll from within Seucre Hub. Follow the detailed [instructions](/en-us/xenmobile/server/provision-devices/devices-enroll.html)
 
-[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_09.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_09.png)
+In this guide we are using the work profile owner mode, so that the device do not need to be new or factory reset.
+
+[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_10.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_10.png)
+
+Your device is now Android Enterprise enabled.
+
+From your **CEM console**, navigate to Manage followed by Devices for an overview of which devices are Android Enterprise enabled.
+
+[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_11.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_11.png)
 
 After successful re-enrollment you can see two devices, one Android (legacy DA) and the other Android Enterprise.
 The previous listed Android (legacy DA) device can be deleted to ensure the most updated device list.
+
