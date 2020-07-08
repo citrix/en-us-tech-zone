@@ -215,8 +215,8 @@ To summarize, the **lift and shift deployment model** uses the following:
 | Active Directory and file systems | Customer managed Windows Server instances on EC2; [AWS Directory Service for Microsoft Active Directory](https://aws.amazon.com/directoryservice/) and [Amazon's FSx for Windows File Server](https://aws.amazon.com/fsx/windows/) (optional) |
 
 In its simplest form, a lift and shift deployment of Citrix virtualization technology onto AWS resembles a traditional customer managed deployment on-premises. It uses a CVAD 'site' deployed into an AWS region and uses basic AWS IaaS services such as EC2 virtual machines and VPC networking at a minimum. As mentioned previously, it requires the customer to build/configure/maintain all system components, plus supporting services such as SQL databases. The following diagram depicts this deployment model:
-![Diagram 7: Conceptual Architecture, CVAD: Lift and Shift Deployment Model on AWS](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_007.png)
-*Diagram 7: Conceptual Architecture, CVAD: Lift and Shift Deployment Model on AWS.*
+![Diagram 1: Conceptual Architecture, CVAD: Lift and Shift Deployment Model on AWS](/en-us/tech-zone/design/media/reference-architectures_citrix-virtual-apps-and-desktops-on-aws_001.png)
+*Diagram 1: Conceptual Architecture, CVAD: Lift and Shift Deployment Model on AWS.*
 
 It is worth noting that this deployment model also uses [AWS Availability Zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html) to provide a highly available design. See [Availability Zones](#infrastructure-as-code-and-the-aws-object-model) later in this document for more context.
 
