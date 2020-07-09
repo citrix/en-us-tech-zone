@@ -393,7 +393,7 @@ A more advanced but common configuration with enterprise customers and allows ac
 
 This model assumes a mature IT organization and enough WAN and compute infrastructure to support failover. This model also assumes that application and user data dependencies are in alignment with the latest site versions/updates and recoverable at the DR facility in a similarly automated manner to reduce prolonged impact of service to end-user and confusion on account of partial solution functionality.
 
-## Disaster Recovery in Cloud
+## Disaster Recovery in Public Cloud
 
 Disaster Recovery involving on-prem to cloud platforms or cloud-to-cloud comes with its own set of challenges or considerations which often do not present themselves in on-prem recovery scenarios.
 
@@ -481,6 +481,53 @@ The location of user data and application back-ends can have a notable impact on
 #### Recommendations
 
 Where possible, keep application and user data local to the Citrix platform in DR to maintain performance as optimal as possible by reducing latency and bandwidth demands across the WAN.
+
+## Disaster Recovery Planning for Citrix Cloud (Virtual Apps and Desktops Service)
+There are several notable differences between on-prem or “traditional” deployment of Citrix Virtual Apps and Desktops (CVAD), vs. the Citrix Virtual Apps and Desktops Service (CVADS) provided by Citrix Cloud with respect to DR planning:
+-  Citrix manages the majority of control components for the partner/customer, removing significant DR requirements for the Citrix Site and its components from their responsibility.
+-  The deployment of a DR environment for Citrix resources merely requires a customer to deploy Citrix Cloud Connectors in the recovery “Resource Location”, and optionally StoreFront and Citrix ADCs for Citrix Gateway.
+-  Citrix Cloud’s unique service architecture is geographically redundant and resilient by design.
+-  Access tier DR is not required if using Citrix Workspace and Citrix Gateway services. 
+
+Beyond these core differences, many of the DR considerations from prior sections still require partner/customer planning, as they retain responsibility for the Citrix VDAs, user data, application back-ends, and Citrix access tier if Citrix Gateway Service and Citrix Workspace Service are not used from Citrix Cloud.
+
+This section will cover key topics to assist customers in defining an appropriate DR strategy for Citrix Cloud.
+
+### CVADS Simplifies Disaster Recovery
+Below is a typical conceptual diagram outlining the conceptual architecture of CVADS, as well as the separation of responsibility for Citrix-managed components and partner/customer-managed components. Not illustrated here are the WEM, Analytics, and Citrix Gateway “Services” which are elective Citrix Cloud components related to CVADS which would fall under “Managed by Citrix”. 
+
+![Disaster Recovery](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/media/components-new.png)
+
+As illustrated in the diagram, a significant portion of Control components requiring recovery decisions fall under Citrix’s management scope. Being a cloud-based service, the CVADS architecture is highly resilient within the [Citrix Cloud region](https://docs.citrix.com/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/geographical-considerations.html). It is part of Citrix Cloud’s “Secret Sauce” and taken into consideration within [Citrix Cloud’s SLAs](https://docs.citrix.com/en-us/citrix-cloud/overview/service-level-agreement.html).
+
+Service availability management responsibilities are as follows:
+-  **Citrix.** Control Plane and access “services” if in use (Workspace, Citrix Gateway Service).
+-  **Customer.** Resource Location components including Cloud Connectors, VDAs, application back-ends, infrastructure dependencies (AD, DNS, etc.), and access tier (StoreFront, Citrix ADCs) if not using Citrix Cloud access tier.
+
+Customers gain the following advantages with respect to disaster recovery on CVADS:
+-  Lower administrative burden due to fewer components to manage, and fewer independent configurations to replicate and maintain between locations.
+-  Reduced chances of human error and configuration discrepancies between Citrix deployments due to the centralized configuration of the “Citrix Site” in Cloud.
+-  Streamlined operations due to simplification in resource management for production and disaster recovery deployments on account of fewer Citrix Sites and components to be configured and maintained, no access tier to manage between locations (optional), and less complex disaster recovery logic for Citrix resources.
+-  Reduced operational costs with fewer server components to deploy and maintain and gain a single pane of glass view of environment trends across deployments through the centralization of the monitoring database.
+
+### CVADS Disaster Recovery Considerations
+Although many components for recovery planning are removed from the customer’s scope of management, customers remain accountable the planning and management of DR and high availability (optional) for the components located within the Resource Location.
+
+The most significant difference in how we address availability comes down to how we interpret and configure Resource Locations. Within CVADS itself, Resource Locations are presented as Zones. With Zone Preference we can manage failover between Resource Locations based on the logic we specify. Using Zone Preference within a traditionally deployed CVAD Site would be considered a high-availability design but not a valid DR design. In the context of Citrix Cloud, this is a valid DR solution.
+
+Most of the [Disaster Recovery Options](#disaster-recovery-options) discussed earlier apply to CVADS so there are numerous options to fit organizational recovery goals and budgets. 
+
+When planning DR for Citrix Cloud’s CVADS service, several key guiding principles from an infrastructure planning perspective should be understood:
+-  **Resource Locations.** Production and DR locations should be set up as independent Resource Locations in Citrix Cloud.
+-  **Cloud Connectors.** Each Resource Location should have a minimum of two Cloud Connectors deployed. For clarity, Cloud Connectors are not a component which should be “recovered” manually or automatically during a DR event. They should be deemed “hot standby” components and kept online within each location.
+-  **Customer-Managed Access Controllers (Optional).** Customers may elect to deploy their own Citrix ADCs for Citrix Gateway and StoreFront servers and not consume Citrix Workspace or Citrix Gateway Service for several reasons. These may include:
+-    Custom authentication flows
+-    Increased branding capabilities
+-    Greater HDX traffic routing flexibility
+-    Auditing of ICA connections and integration into SIEM platforms
+-    Ability to continue to operate if the Cloud Connector’s connection to Citrix Cloud is severed, by using the Local Host Cache function of the Cloud Connectors in conjunction with StoreFront. 
+
+As with the Cloud Connectors, it is recommended to keep these components deployed as “hot standby” in the recovery location and not recovering them during a DR event.
 
 ## Operation Considerations
 
