@@ -553,6 +553,7 @@ We have covered a fair bit of ground on the topic of disaster recovery in Citrix
 -  It is imperative that disaster recovery components are kept up-to-date to match production updates and configurations to maintain integrity of the platform.
 -  Platforms that use an active-active configuration for Citrix between locations should be mindful of capacity monitoring to ensure in event of a disaster, sufficient resources are available to support projected load at one or more surviving locations.
 -  Customers should test their disaster recovery plan for Citrix periodically to validate its operation and ability to serve its core purpose.
+-  Citrix Virtual Apps and Desktops Service significantly simplifies many aspects of the DR architecture, and allows Resource Location redundancy via Zone Preference configuration.
 
 ## Sources
 
