@@ -519,7 +519,7 @@ Customers gain the following advantages with respect to disaster recovery on CVA
 
 Although many components for recovery planning are removed from the customer’s scope of management, customers remain accountable the planning and management of DR and high availability (optional) for the components located within the Resource Location.
 
-The most significant difference in how we address availability comes down to how we interpret and configure Resource Locations. Within CVADS itself, Resource Locations are presented as Zones. With Zone Preference we can manage failover between Resource Locations based on the logic we specify. Using Zone Preference within a traditionally deployed CVAD Site would be considered a high-availability design but not a valid DR design. In the context of Citrix Cloud, this is a valid DR solution.
+The most significant difference in how we address availability comes down to how we interpret and configure Resource Locations. Within CVADS itself, Resource Locations are presented as [Zones](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html). With [Zone Preference](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/manage-deployment/zones.html#zone-preference) we can manage failover between Resource Locations based on the logic we specify. Using Zone Preference within a traditionally deployed CVAD Site would be considered a high-availability design but not a valid DR design. In the context of Citrix Cloud, this is a valid DR solution.
 
 Most of the [Disaster Recovery Options](#disaster-recovery-options) discussed earlier apply to CVADS so there are numerous options to fit organizational recovery goals and budgets.
 
@@ -532,9 +532,9 @@ When planning DR for Citrix Cloud’s CVADS service, several key guiding princip
     -  Increased branding capabilities
     -  Greater HDX traffic routing flexibility
     -  Auditing of ICA connections and integration into SIEM platforms
-    -  Ability to continue to operate if the Cloud Connector’s connection to Citrix Cloud is severed, by using the Local Host Cache function of the Cloud Connectors in conjunction with StoreFront.
+    -  Ability to continue to operate if the Cloud Connector’s connection to Citrix Cloud is severed, by using the Local Host Cache function of the Cloud Connectors in conjunction with StoreFront
 
-As with the Cloud Connectors, it is recommended to keep these components deployed as “hot standby” in the recovery location and not recovering them during a DR event.
+    As with the Cloud Connectors, it is recommended to keep StoreFront and Citrix Gateway components deployed as “hot standby” in the recovery location and not recovering them during a DR event.
 
 ## Operation Considerations
 
