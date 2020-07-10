@@ -335,6 +335,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [App protection](/en-us/tech-zone/learn/tech-briefs/app-protection-policies.html) - App protection policies protect application data from attacks based on keyloggers and screen capture tools. Allow companies to embrace BYOD, and extend resources to remote workers, contractors, and gig economy workers.
 
+### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
+
+[Architectural Considerations for the General Data Protection Regulation - GDPR](/en-us/tech-zone/design/reference-architectures/gdpr.html) - Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.
+
 ### [Build - Tech Papers](/en-us/tech-zone/build/tech-papers.html)
 
 [Endpoint Security, Antivirus and Antimalware Best Practices](/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html) - Tech Paper focused on proper configuration, and recommendations for running antivirus solution in Citrix Virtual Apps & Desktops environments. Recommended exclusions, configuration, and leading practices.

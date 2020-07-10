@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how Citrix solutions help enable organizations to adhere to the European GDPR data privacy laws while also meeting business objectives
+description: Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.
 ---
 # Architectural Considerations for the General Data Protection Regulation (GDPR)
 
