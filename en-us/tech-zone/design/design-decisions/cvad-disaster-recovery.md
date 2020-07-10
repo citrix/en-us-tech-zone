@@ -482,7 +482,7 @@ The location of user data and application back-ends can have a notable impact on
 
 Where possible, keep application and user data local to the Citrix platform in DR to maintain performance as optimal as possible by reducing latency and bandwidth demands across the WAN.
 
-## Disaster Recovery Planning for Citrix Cloud (Virtual Apps and Desktops Service)
+## Disaster Recovery Planning for Citrix Cloud
 There are several notable differences between on-prem or “traditional” deployment of Citrix Virtual Apps and Desktops (CVAD), vs. the Citrix Virtual Apps and Desktops Service (CVADS) provided by Citrix Cloud with respect to DR planning:
 -  Citrix manages the majority of control components for the partner/customer, removing significant DR requirements for the Citrix Site and its components from their responsibility.
 -  The deployment of a DR environment for Citrix resources merely requires a customer to deploy Citrix Cloud Connectors in the recovery “Resource Location”, and optionally StoreFront and Citrix ADCs for Citrix Gateway.
@@ -521,11 +521,11 @@ When planning DR for Citrix Cloud’s CVADS service, several key guiding princip
 -  **Resource Locations.** Production and DR locations should be set up as independent Resource Locations in Citrix Cloud.
 -  **Cloud Connectors.** Each Resource Location should have a minimum of two Cloud Connectors deployed. For clarity, Cloud Connectors are not a component which should be “recovered” manually or automatically during a DR event. They should be deemed “hot standby” components and kept online within each location.
 -  **Customer-Managed Access Controllers (Optional).** Customers may elect to deploy their own Citrix ADCs for Citrix Gateway and StoreFront servers and not consume Citrix Workspace or Citrix Gateway Service for several reasons. These may include:
--    Custom authentication flows
--    Increased branding capabilities
--    Greater HDX traffic routing flexibility
--    Auditing of ICA connections and integration into SIEM platforms
--    Ability to continue to operate if the Cloud Connector’s connection to Citrix Cloud is severed, by using the Local Host Cache function of the Cloud Connectors in conjunction with StoreFront. 
+    -  Custom authentication flows
+    -  Increased branding capabilities
+    -  Greater HDX traffic routing flexibility
+    -  Auditing of ICA connections and integration into SIEM platforms
+    -  Ability to continue to operate if the Cloud Connector’s connection to Citrix Cloud is severed, by using the Local Host Cache function of the Cloud Connectors in conjunction with StoreFront. 
 
 As with the Cloud Connectors, it is recommended to keep these components deployed as “hot standby” in the recovery location and not recovering them during a DR event.
 
