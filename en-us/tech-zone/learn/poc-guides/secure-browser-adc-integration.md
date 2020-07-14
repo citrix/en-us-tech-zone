@@ -208,21 +208,21 @@ Set up the ADC as a proxy to route the traffic from the client browser to the In
 
 1.  To add TCP profile:
 
-        add ns tcpProfile proxy-tcpprofile01 -dynamicReceiveBuffering ENABLED -KA ENABLED -mptcp ENABLED -mptcpDropDataOnPreEstSF ENABLED -mptcpSessionTimeout 360 -builtin MODIFIABLE
+`add ns tcpProfile proxy-tcpprofile01 -dynamicReceiveBuffering ENABLED -KA ENABLED -mptcp ENABLED -mptcpDropDataOnPreEstSF ENABLED -mptcpSessionTimeout 360 -builtin MODIFIABLE`
 
 1.  To add virtual server
 
-        add cs vserver sslproxy01 PROXY 10.1.0.5 8080 -cltTimeout 360 -tcpProfileName proxy-tcpprofile01 -persistenceType NONE
+`add cs vserver sslproxy01 PROXY 10.1.0.5 8080 -cltTimeout 360 -tcpProfileName proxy-tcpprofile01 -persistenceType NONE`
 
-        bind cs vserver sslproxy01 -lbvserver azurelbdnsvserver
+`bind cs vserver sslproxy01 -lbvserver azurelbdnsvserver`
 
-        add netProfile proxy-netprofile01 -srcIP 10.1.0.5 -srcippersistency ENABLED -MBF ENABLED -proxyProtocol ENABLED -proxyProtocoltxversion V2
+`add netProfile proxy-netprofile01 -srcIP 10.1.0.5 -srcippersistency ENABLED -MBF ENABLED -proxyProtocol ENABLED -proxyProtocoltxversion V2`
 
-        set cs vserver sslproxy01 -netProfile proxy-netprofile01
+`set cs vserver sslproxy01 -netProfile proxy-netprofile01`
 
-        set ssl vserver sslproxy01 -sslProfile ns_default_ssl_profile_frontend
+`set ssl vserver sslproxy01 -sslProfile ns_default_ssl_profile_frontend`
 
-        save ns config
+`save ns config`
 
 1.  To change the **Cache settings** go back to management session on browser
 
@@ -418,9 +418,9 @@ Note: This policy is created to bypass the ADC interception for traffic going to
 
 1.  From PowerShell, run the command:
 
-        openssl pkcs12 -export -out smesec_cert1.pfx -inkey smesec.key1.key -in smesec.cert1.cert
+`openssl pkcs12 -export -out smesec_cert1.pfx -inkey smesec.key1.key -in smesec.cert1.cert`
 
-        ![PowerShell](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_48.png)
+        ![PowerShell screenshot](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_48.png)
 
 #### Bind an SSL Interception CA Certificate to the SSL Profile
 
@@ -481,7 +481,7 @@ A rewrite policy consists of a rule and action. The rule determines the traffic 
 
 1.  Run the following command:
 
-        add rewrite action cloud_act REPLACE_HTTP_RES q{"HTTP/1.1 302 Found" + "\r\n" + "Location: http://launch.cloud.com/<customername>/<appname>?url=https://" + HTTP.REQ.HOSTNAME.APPEND(HTTP.REQ.URL.PATH) + "\r\n\r\n\" "}
+`add rewrite action cloud_act REPLACE_HTTP_RES q{"HTTP/1.1 302 Found" + "\r\n" + "Location: http://launch.cloud.com/<customername>/<appname>?url=https://" + HTTP.REQ.HOSTNAME.APPEND(HTTP.REQ.URL.PATH) + "\r\n\r\n\" "}`
 
 Note:
 In the command replace `<customername>` with your Citrix Cloud customer account name and replace `<appname>` with the Secure Browser published app name for which the URL parameters policy is enabled. Referring to the published app you created in Section 1.
@@ -567,4 +567,4 @@ News websites from the local browser are redirected to Secure Browser automatica
 
 ## Summary
 
-To learn more about Citrix Secure Browser Service visit the [Citrix website](https://www.citrix.com/) and to learn more about its technical capabilities visit [Citrix Tech Zone](/en-us/tech-zone/)
+In this PoC guide, you have learned how to how to set up Citrix ADC in Azure and Configure SSL Forward Proxy and SSL Interception. This integration allows the dynamic delivery of resources by redirecting browsing to Secure Browser service protecting the company network without sacrificing user experience.
