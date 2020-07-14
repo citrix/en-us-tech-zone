@@ -567,4 +567,4 @@ News websites from the local browser are redirected to Secure Browser automatica
 
 ## Summary
 
-In this PoC guide, you have learned how to set up Citrix ADC in Azure and Configure SSL Forward Proxy and SSL Interception. This integration allows the dynamic delivery of resources by redirecting browsing to Secure Browser service protecting the company network without sacrificing user experience.
+In this PoC guide, you have learned how to set up Citrix ADC in Azure and Configure SSL Forward Proxy and SSL Interception. This integration allows the dynamic delivery of resources by redirecting browsing to Secure Browser service. Thus, protecting the company network without sacrificing user experience.
