@@ -286,6 +286,15 @@ SP-Initiated Validation
 *  The browser redirects the browser to Citrix Workspace for authentication
 *  Once the user authenticates with the primary user directory, Office 365 launches in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches Office 365
 
+## Azure Active Directory Considerations
+
+If Citrix Workspace utilizes Azure Active Directory for the primary identity, 
+
+
+
+
+
+
 ## Office 365 Related Domains
 
 The following list are the current associated domains associated with Office 365.
