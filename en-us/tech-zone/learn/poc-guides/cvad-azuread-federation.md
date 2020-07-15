@@ -51,7 +51,7 @@ See [using Azure AD Connect express settings](https://docs.microsoft.com/en-us/a
 
 #### Certificate Authority
 
-For this POC we assume you have a Certificate Authority installed an AD DC. If not navigate to Server Manager > Add roles and features and follow prompts on install Active Directory Certificate Services.  See below for more information.
+For this POC we assume you have a Certificate Authority installed on an AD DC. If not navigate to Server Manager > Add roles and features and follow prompts to install Active Directory Certificate Services.  See below for more information.
 
 1.  Launch MMC
 1.  Select Add/Remove Snap-in > Certificates > Computer Account > Ok
@@ -63,20 +63,35 @@ See [Microsoft Certificate Authority Installation](https://docs.microsoft.com/en
 
 ### Azure Active Directory
 
-1.  Create a new
-1.  Populate Site Details:
-    *  Site
+1.  Login to the [Azure Portal](https://portal.azure.com) as a global admin.
+1.  Navigate to Azure Active Directory > Enterprise Applications
+1.  Select New application
+1.  Select Non-gallery application ![AAD Non-gallery application](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-AADNonGalleryApplication.png)
+1.  Enter a unique name and select Add
+1.  Copy the values of the following to a text file to be entered in the Citrix ADC SAML configuration: ObjectID,
+1.  Select Single Sign-On > SAML and select the pencil icon to edit the Basic SAML Configuration
+1.  Enter the FQDN of the Citrix ADC gateway virtual server in the Identifier field.
+1.  Enter the FQDN with the uri /cgi/samlauth added in the Reply URL field ![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-AADBasicSAMLConfiguration.png)
+1.  Click save
+1.  Select Users and groups > Add user and select existing users or groups that will have access to Citrix Virtual Apps and Desktops using their AAD UPN ![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-AADUsersandGroups.png)
 
 See [Azure AD Connect sync](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-whatis) for more information.
 
 ## Citrix ADC  Setup
 
-To set up _ perform the following steps:
-For more information refer to [TITLE](/en-us/LINK.html).
+To set up the Citrix ADC perform the following steps:
 
-1.  Create a new
-1.  Populate Site Details:
-    *  Site
+1.  Login to the Citrix ADC UI
+1.  Navigate to Traffic Management > SSL> Certificates > All Certificates to verify you have the certificate your domain certificate installed.  In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
+1.  Navigate to Security > AAA - Application Traffic > Virtual Servers and select Add
+1.  Enter the following fields and click OK:
+    *  Name - a unique value
+    *  IP Address Type - Non Addressable
+![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCAAAVserver.png)
+1.  Select No Server Certificate, select the domain certificate, click Select, Bind, and Continue
+1.  Select No Authentication Policy
+
+See [Citrix ADC](/en-us/citrix-adc/13.html) for more information.
 
 ## Citrix Virtual Apps and Desktops Setup
 
@@ -101,6 +116,7 @@ See [Enable the FAS plug-in on StoreFront stores](/en-us/federated-authenticatio
 Next configure the Desktops Delivery Controller to trust the StoreFront servers that can connect to it.
 
 *  Open Powershell as an administrator and run
+    *  asnp citrix* (provided you do not have all Citrix snap-ins loaded) See [Install and set up FAS](https://docs.citrix.com/en-us/linux-virtual-delivery-agent/current-release/configuration/federated-authentication-service.html#install-and-set-up-fas) for more information
     *  Set-BrokerSite -TrustRequestsSentToTheXmlServicePort $true
 
 See [Configure the Delivery Controller](/en-us/federated-authentication-service/install-configure.html#configure-the-delivery-controller) for more information.
