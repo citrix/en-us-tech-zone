@@ -97,7 +97,7 @@ A Zero Trust Architecture focuses on protecting resources, not network segments.
 
 Zero Trust networks are sometimes described as “perimeter-less”. Some argue that perimeter protections are becoming less important for networks and operations. In reality, the perimeter is still there, but in a much more granular way. Zero Trust networks actually attempt to move perimeters in from the network edge and create segments to isolate critical data from other data. The perimeter must move closer to the data to strengthen protections and controls. Hence the reason why the traditional castle and moat approach is not sufficient.
 
-During transitions to Software Defined Networks, SD-WANs, and internet-based technologies, it’s critical to consider how to:
+During transitions internet-based technologies, it’s critical to consider how to:
 
 1.  Control privileged network access
 2.  Manage internal and external data flows
