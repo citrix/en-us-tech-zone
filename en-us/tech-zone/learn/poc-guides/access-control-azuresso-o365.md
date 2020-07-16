@@ -66,13 +66,14 @@ Citrix Workspace takes a few moments to update services and URL settings. From a
 
 Before users can authenticate to Workspace, a [primary user directory](/en-us/citrix-workspace/secure.html) must be configured. The primary user directory is the only identity the user requires as all requests for apps within Workspace utilizes single sign-on to secondary identities.
 
-An organization can use any one of the following primary user directories
+An organization can use any one of the following primary user directories with Office 365:
 
 *  [Active Directory](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#active-directory): To enable Active Directory authentication, a cloud connector must be deployed within the same data center as an Active Directory domain controller by following the [Cloud Connector Installation](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html) guide.
 *  [Active Directory with Time-Based One Time Password](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#active-directory-with-totp): Active Directory-based authentication can also include multifactor authentication with a Time-based One Time Password (TOTP). This [guide](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-ad.html#active-directory-authentication) details the required steps to enable this authentication option.
-*  [Azure Active Directory](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#azure-active-directory): Users can authenticate to Citrix Workspace with an Azure Active Directory identity. This [guide](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-azure-ad.html) provides details on configuring this option.
 *  [Citrix Gateway](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#citrix-gateway): Organizations can utilize an on-premises Citrix Gateway to act as an identity provider for Citrix Workspace. This [guide](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-ad-gateway.html) provides details on the integration.
 *  [Okta](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#okta): Organizations can use Okta as the primary user directory for Citrix Workspace. This [guide](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/okta-identity.html) provides instructions for configuring this option.
+
+***Note**: At this time, utilizing Azure Active Directory as the user's primary identity will not function properly.*
 
 ## Federate Azure Authentication to Citrix Workspace
 
@@ -286,18 +287,11 @@ SP-Initiated Validation
 *  The browser redirects the browser to Citrix Workspace for authentication
 *  Once the user authenticates with the primary user directory, Office 365 launches in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches Office 365
 
-## Azure Active Directory Considerations
-
-If Citrix Workspace utilizes Azure Active Directory for the primary identity, 
-
-
-
-
-
-
 ## Office 365 Related Domains
 
-The following list are the current associated domains associated with Office 365.
+When creating a new app within Citrix Workspace, a related domain field is available.  The enhanced security policies utilize these related domains to determine when to enforce the policy.
+
+The following list are the current domains associated with Office 365.
 
 ***Note:** These domains can change at any time*
 
