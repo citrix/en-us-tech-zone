@@ -87,7 +87,7 @@ To successfully integrate SaaS apps with Citrix Workspace, the administrator nee
 
 *  Select **Add a Web/SaaS app**
 *  In the Choose a template wizard, search and correct template, which in this instance is **Humanity**
-*  In the App details window, select the link for [Application configuration instructions](/en-us/citrix-gateway-service/app-server-specific-configuration.html). This link provides detailed instructions on how to setup SSO for SaaS applications. Within this list, find the item for [Office 365](/en-us/citrix-gateway-service/saas-apps-templates/citrix-gateway-o365-saas.html) and follow the steps.
+*  In the App details window, type in the organization's unique domain name for the SaaS application. The URL and Related Domains will automatically populate.
 
 ***Note**: Enhanced security policies uses the related domains field to determine the URLs to secure. One related domain is automatically added based on the URL in the previous step. Enhanced security policies require related domains for the application. If the application uses multiple domain names, the must be added into the related domains field, which is often `*.<companyID>.SaaSApp.com` (as an example `*.citrix.slack.com`)*
 
@@ -108,7 +108,7 @@ To successfully integrate SaaS apps with Citrix Workspace, the administrator nee
 [![Setup SaaS App 05](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-05.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-05.png)
 
 *  For the SAML Issuer URL, use the **Login URL** obtained from the Citrix Workspace configuration.
-*  Past the x.509 Certificate string from the Citrix metadata file into the Humanity SaaS app. 
+*  Past the x.509 Certificate string from the Citrix metadata file into the Humanity SaaS app.
 
 [![Setup SaaS App 06](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-06.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-06.png)
 
