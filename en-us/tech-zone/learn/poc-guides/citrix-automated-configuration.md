@@ -170,17 +170,14 @@ Currently, this tool does not support importing MCS machine catalogs or their co
 7.  On your **Cloud Studio** console, go to the **Applications** node and refresh to make sure the apps are listed as expected. Select the applications and go to **Application Properties > Groups** to doublecheck.
 
 *  **Application Folders in Cloud Studio Before running the Migration tool**
+
 [![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-006.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-006.png)
 
 *  **Application Folders in Cloud Studio After running the Migration tool**
 [![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-007.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-007.png)
- 
- 
 
-
-**Note:** After executing these actions, please follow the steps mentioned on the Import your Site Configuration into Cloud 
+* **Note:** After executing these actions, please follow the steps mentioned on the Import your Site Configuration into Cloud
 [ section](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html##) in this guide.
-
 
 ## Code snipet
 
