@@ -71,6 +71,7 @@ These steps must be run in your DDC or domain-joined machine where you wish to i
 [![On Prem Pre-Requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-002.png)
 
 4.  After the MSI runs, a window indicating successful completion pops up. Click on **Finish** to close the MSI Setup window. **Note:** Upon successful execution, the MSI will create the corresponding folder structure, located in ```C:\Users\<username>\Documents\Citrix\AutoConfig``` as well as a desktop icon called **Auto Config** which launches a PowerShell command prompt. We will use this **Auto Config** tool on the subsequent steps.
+
 [![On Prem Pre-Requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-003.png)
 
 ## Export your On-Premises site configuration
@@ -287,7 +288,10 @@ General information for troubleshooting:
 *  All operation log files are placed in a backup folder.
 *  All log file names begin with CitrixLog, then show the auto-config operation and the date and timestamp of the cmdlet execution.
 *  Logs do not auto-delete.
+*  The master history log is located in ```%HOMEPATH%\Documents\Citrix\AutoConfig```, in the file named ```History.Log```. Each cmdlet execution results in a master log entry containing the date, operation, result, backup, and log file locations of the execution. This log provides potential solutions and fixes to common errors.
 
-The master history log is located in ```%HOMEPATH%\Documents\Citrix\AutoConfig```, in the file named ```History.Log```. Each cmdlet execution results in a master log entry containing the date, operation, result, backup, and log file locations of the execution. This log provides potential solutions and fixes to common errors. For more information, please consult the [Auto Config Tool Troubleshooting FAQ article](https://support.citrix.com/article/CTX277730).
+For more information, please consult the [Auto Config Tool Troubleshooting FAQ article](https://support.citrix.com/article/CTX277730).
 
-*  If after consulting the article, you still need assistance, please get in touch with your Success Management team and provide them with the log files. They will let you know which ones might be required.
+You can also reach out via the [Support Forum](https://discussions.citrix.com/forum/1804-automated-configuration-for-virtual-apps-and-desktops-tech-preview/).
+
+If after consulting the FAQ article and the forum, you still need assistance, please get in touch with your Citrix representative, Customer Success Manager or Support for assistance.
