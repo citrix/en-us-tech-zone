@@ -51,7 +51,7 @@ See [using Azure AD Connect express settings](https://docs.microsoft.com/en-us/a
 
 #### Certificate Authority
 
-For this POC we assume you have a Certificate Authority installed on an AD DC. If not navigate to Server Manager > Add roles and features and follow prompts to install Active Directory Certificate Services.  See below for more information.
+For this POC we assume you have a Certificate Authority, including Web Enrollment, installed on an AD DC. If not navigate to Server Manager > Add roles and features and follow prompts to install Active Directory Certificate Services.  See below for more information.
 
 1.  Launch MMC
 1.  Select Add/Remove Snap-in > Certificates > Computer Account > Ok
@@ -68,16 +68,19 @@ See [Microsoft Certificate Authority Installation](https://docs.microsoft.com/en
 1.  Select New application
 1.  Select Non-gallery application ![AAD Non-gallery application](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-AADNonGalleryApplication.png)
 1.  Enter a unique name and select Add
-1.  Copy the values of the following to a text file to be entered in the Citrix ADC SAML configuration: ObjectID,
 1.  Select Single Sign-On > SAML and select the pencil icon to edit the Basic SAML Configuration
 1.  Enter the FQDN of the Citrix ADC gateway virtual server in the Identifier field.
 1.  Enter the FQDN with the uri /cgi/samlauth added in the Reply URL field ![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-AADBasicSAMLConfiguration.png)
 1.  Click save
+1.  Capture the following to be entered in the Citrix ADC SAML configuration:
+    *  Under SAML Signing Certificate - download Certificate (base64)
+    *  Under Setup Citrix FAS - Login & Logout URL
+![AAD settings](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-AADcapturesettings.png)
 1.  Select Users and groups > Add user and select existing users or groups that will have access to Citrix Virtual Apps and Desktops using their AAD UPN ![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-AADUsersandGroups.png)
 
 See [Azure AD Connect sync](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-whatis) for more information.
 
-## Citrix ADC  Setup
+## Citrix ADC Setup
 
 To set up the Citrix ADC perform the following steps:
 
@@ -89,7 +92,17 @@ To set up the Citrix ADC perform the following steps:
     *  IP Address Type - Non Addressable
 ![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCAAAVserver.png)
 1.  Select No Server Certificate, select the domain certificate, click Select, Bind, and Continue
-1.  Select No Authentication Policy
+1.  Select No Authentication Policy, and select Add
+1.  Enter a name, set Action Type to SAML, and select Add Action
+1.  Enter the following fields and click OK:
+    *  Name - a unique value
+    *  Unselect Import Metadata
+    *  Redirect URL - Paste the Login URL copied from the AAD config
+    *  Single Logout URL - paste the Logout URL copied from the AAD config
+    *  Logout binding - Redirect
+    *  IDP Certificate Name - select Add, enter a name, select Certificate File Name > local, and select the SAML Signing Certificate (base64) downloaded from AAD
+![SAML Signing Certificate](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCAAAVserver.png)
+1.  NEXT
 
 See [Citrix ADC](/en-us/citrix-adc/13.html) for more information.
 
@@ -99,7 +112,7 @@ To integrate Citrix Virtual Apps and Desktops components with FAS perform the fo
 
 ### StoreFront
 
-Enable FAS on StoreFront.
+#### Enable FAS on StoreFront
 
 *  Open Powershell as an administrator and run:
     *  Get-Module "Citrix.StoreFront.*" -ListAvailable | Import-Module
@@ -110,6 +123,14 @@ Enable FAS on StoreFront.
     *  Set-STFStoreLaunchOptions -StoreService $store -VdaLogonDataProvider "FASLogonDataProvider"
 
 See [Enable the FAS plug-in on StoreFront stores](/en-us/federated-authentication-service/install-configure.html#enable-the-fas-plug-in-on-storefront-stores) for more information.
+
+#### Configure StoreFront for Citrix Gateway
+
+1.  Login to the StoreFront virtual machine (also configured as FAS and DDC in our POC) and launch the StoreFront GUI
+1.  Select Manage Authentication Methods
+1.  Enter the following fields and click OK:
+    *  Name - a unique value
+    *  IP Address Type - Non Addressable
 
 ### Delivery Controller
 
@@ -157,14 +178,14 @@ To set up FAS perform the following steps:
     *  g. Navigate to each Delivery Controller, and VDA), open a MS-DOS prompt as Administrator, and run "gpupdate /force"
 ![FAS GPO update](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0016.png)
     *  h. To verify it's been applied open regedit.exe and navigate to: /Computer\HKLM\SOFTWARE\Policies\Citrix\Authentication\UserCredentialService\Addresses Address1 entry set to the fqdn applied through the GPO. If it does not appear you may need to reboot the respective virtual machine.
-![FAS GPO update](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0017.png)
+![FAS GPO registry](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0017.png)
     *  i. Next return to the FAS virtual machine to begin the service installation. (We host FAS, StoreFront, and the DDC on the same VM for the POC. For production you would typically host them on different VMs for improved scalability and supportability.)
     *  j. Run the Citrix Federated Authentication Service program. Select each of the five steps and following instructions:
        *  i. Deploy certificate templates
        *  ii. Setup a certificate authority
        *  iii. Authorize this service - for this step you will need to return to the CA to issue a  pending request. The CA is hosted on the Domain Controller in this POC example.
        *  iv. Create Rule - here specify the CA and certificate already configured. Also filter the VDAs and users that should be allowed to use the FAS service.
-       *  (v. Connect to Citrix Cloud - in this guide we use OnPremises Citrix Virtual Apps and Desktops)
+       *  v. (Connect to Citrix Cloud - in this guide we use OnPremises Citrix Virtual Apps and Desktops)
 
 See [FAS documentation](/en-us/federated-authentication-service.html) for more information.
 
