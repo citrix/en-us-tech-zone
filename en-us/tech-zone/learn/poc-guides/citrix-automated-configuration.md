@@ -89,29 +89,97 @@ Using an export PowerShell command, you can export your existing On-Premises con
 **Note:** For MCS and PVS catalogs and delivery groups, refer to 
 
 [ section](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html##) in this guide.
- 
+
 4.	Once the tool finishes running, the **Overall status** shows as **True** and the export process will be completed. You will see several output lines like the ones on this illustration:
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-003.png)
 
-**Note:** If there are any  errors, diagnostic files are created in the action-specific subfolders ```(Export, Import, Merge, Restore, Sync, Backup, Compare)```, which can be found under ```%HOMEPATH%\Documents\Citrix\AutoConfig```. Please get in touch with your Success Management designated team and provide these files for problem resolution.
+*  **Note:** If there are any  errors, diagnostic files are created in the action-specific subfolders ```(Export, Import, Merge, Restore, Sync, Backup, Compare)```, which can be found under ```%HOMEPATH%\Documents\Citrix\AutoConfig```. Please get in touch with your Success Management designated team and provide these files for problem resolution.
 
-5.  The resulting YAML (.yml) files will be in the current user’s Documents\Citrix\AutoConfig path and will look as follows:
+5.  The resulting *.yml* files will be in the current user’s ```Documents\Citrix\AutoConfig``` path and will look as follows:
+[![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-004.png)
+
+*  **Note:** See below for an example of the contents on a *.yml* file (```Application.yml```)
+[![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-005.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-005.png)
+
+*  **Note:** If necessary, copy *.yml* files to the machine you will use to import to the Cloud environment. Export and import can be done from the same machine.
+
+## Complete Prerequisites in Cloud
+
+Go to your **Resource Location** and make sure your **Cloud Connectors** are both showing green (Available). **Note:** If you need instructions on how to set up your Connectors, please refer to [this guide](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/cvads.html).
+
+1.  To verify the health status of your Cloud Connectors, first log onto your [cloud portal](https://citrix.cloud.com) with your Citrix credentials.
+[![Cloud Pre Requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_cloud-pre-requisites-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_cloud-pre-requisites-001.png)
+
+2.  If you have more than one Organization ID (Org ID), select your corresponding tenant
+[![Cloud Pre Requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_cloud-pre-requisites-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_cloud-pre-requisites-002.png)
+
+3.  Upon logon, click on the hamburger menu and then click on Resource Locations:
+[![Cloud Pre Requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_cloud-pre-requisites-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_cloud-pre-requisites-003.png)
+
+4.  Click on the Cloud Connector(s) tile under your Resource Location.
+[![Cloud Pre Requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_cloud-pre-requisites-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_cloud-pre-requisites-004.png)
+
+*  **Note:** The Cloud Connector(s) should show green, indicating a Healthy status as seen on the image below. Citrix recommends having more than one Cloud Connector per Resource Location, for redundancy.
+[![Cloud Pre Requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_cloud-pre-requisites-005.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_cloud-pre-requisites-005.png)
+
+## Requisites for Importing Site Configuration using different Provisioning Methods
+
+### Dealing with Provisioning Services (PVS) Machine Catalogs, Delivery and Application Groups and Policies
+
+Additional steps are required in order to import your PVS Catalogs and their corresponding applications. Please follow the steps below in order to prepare your environment, before proceeding to import the Application settings.
+
+**Note:** After executing these actions, please follow the steps mentioned on the Import your Site Configuration into Cloud 
+[ section](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html##) in this guide.
+
+1.  Run the **Auto Config tool** as an Administrator
+2.  Type the following command ```Export-CvadAcToFile -all $true``` and hit Return (Enter).
+[![Provisioning Method PVS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-001.png)
+
+*  **Note:** Successfully completed items will show in green (Ok) and you will see a screen like the following, once it’s done running:
+[![Provisioning Method PVS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-002.png)
+
+3.  Access the ```C:\Users\<username>\Documents\Citrix\AutoConfig``` folder and open up the ```CvadAcSecurity.yml``` file, which you will need to edit for PVS to work. **Note:** The UserName and Password fields refer to your PVS Site Server credentials. If you use a DOMAIN\Username password, be sure to specify it as such. Save the file when you’re ready.
+
+[![Provisioning Method PVS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-003.png)
+
+4.  After this, please follow the steps mentioned on the [ section](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html##) in this guide.
+
+### Dealing with Machine Creation Services (MCS) Machine Catalogs, Delivery and Application Groups and Policies
+
+Currently, this tool does not support importing MCS machine catalogs or their corresponding delivery groups in an automated way. However, you can still import other configuration such as Applications and policies using this tool. You will need to ensure you create the machine catalog and delivery group using the same name as the On-Premises setup one. Please follow the steps below in order to prepare your environment, before proceeding to import the Application settings:
+
+1.  In your [Cloud portal](https://citrix.cloud.com), click on the Hamburger menu > **My Services > Virtual Apps and Desktops Service > Manage** tab, in order to create your MCS machine Catalog as you normally would (by selecting the desired OS Type, Master Image, Storage, Licensing, Network and Account settings). If needed, please refer to [this guide](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/cvads.html) on how to set up your catalogs. **Important Note:** Be sure to name your catalog **exactly** the **same way** your existing On-Premises catalog is named.
+
+2.  Still in **Cloud Studio**, create the corresponding Delivery Group for the new Catalog and ensure you name it exactly after the corresponding **On-Premises Delivery Group** as well. **Note:** For additional details on how to create your Machine Catalogs and Delivery Groups, please refer to [this guide](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/cvads.html).
+
+3.  In your On-Premises environment’s Citrix Studio, under the **Applications** node, confirm that the desired applications belong to the matching **Delivery Groups** by selecting the desired app and then right clicking on the app to go to the **Properties** as follows:
+[![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-001.png)
+
+4.  Click on the **Groups** node to confirm the groups the app in question belongs to:
+[![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-002.png)
+
+5.  Back on the **PowerShell console**, run the **Merge** command and use the **byDeliveryGroupName** flag, which will filter the **Applications** by **Delivery Group** name. Complete Syntax example: ```Merge-CvadAcToSite –Applications $true –ByDeliveryGroupName <DG_name>```
+[![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-003.png)
+
+6.  Hit **Return (Enter)** on your keyboard in order to execute the above command and type **yes** to continue.
+[![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-004.png)
+
+*  **Note:** Upon Successful execution and completion, the output will look similar to the following:
+[![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-005.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-005.png)
+
+7.  On your **Cloud Studio** console, go to the **Applications** node and refresh to make sure the apps are listed as expected. Select the applications and go to **Application Properties > Groups** to doublecheck.
+
+*  **Application Folders in Cloud Studio Before running the Migration tool**
+[![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-006.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-006.png)
+
+*  **Application Folders in Cloud Studio After running the Migration tool**
+[![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-007.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-007.png)
  
-
-**Note:** See below for an example of the contents on a .yml file (Application.yml):
-
-
- 
-
-**Note:** If necessary, copy YML files to the machine you will use to import to the Cloud DDC. Export and import can be done from the same machine.
+ 
 
 
-Bulleted List
-
-*  Second item
-
-Numbered list
-
+**Note:** After executing these actions, please follow the steps mentioned on the Import your Site Configuration into Cloud 
+[ section](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html##) in this guide.
 
 
 ## Code snipet
