@@ -94,9 +94,26 @@ To successfully integrate SaaS apps with Citrix Workspace, the administrator nee
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-02.png)
 
 *  In the **Enhanced Security** window, select the appropriate security policies for the environment
-*  In the **Single Sign-On** window, select **Download** to capture the CRT-based certificate.
-*  Continue following the [Office 365](/en-us/citrix-gateway-service/saas-apps-templates/citrix-gateway-o365-saas.html)) configuration instructions from the previous step.
-*  Select **Save**
+*  In the **Single Sign-On** window, copy the **Login URL**.
+*  Select the link for **SAML Metadata** to identify the SAML settings needed for the SaaS application.
+
+[![Setup SaaS App 03](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-03.png)
+
+*  Within the SAML Metadata file, copy the X509 Certificate, represented as an alphanumeric string.
+
+[![Setup SaaS App 04](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-04.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-04.png)
+
+*  Within the Humanity SaaS app, use the gear icon in the upper right-hand corner to bring up settings. Select **Single Sign-On**
+
+[![Setup SaaS App 05](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-05.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-05.png)
+
+*  For the SAML Issuer URL, use the **Login URL** obtained from the Citrix Workspace configuration.
+*  Past the x.509 Certificate string from the Citrix metadata file into the Humanity SaaS app. 
+
+[![Setup SaaS App 06](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-06.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-06.png)
+
+*  Save the settings in Humanity.
+*  Within Citrix Workspace, select **Save**
 *  Select **Finish**
 
 ### Authorize SaaS App
@@ -167,8 +184,6 @@ SP-Initiated Validation
 *  Go to the company-defined URL for the SaaS application
 *  The browser directs the browser to Citrix Workspace for authentication
 *  Once the user authenticates with the primary user directory, the SaaS app launches in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches the SaaS app
-
-***Note**: If Azure Active Directory is the primary user directory for Citrix Workspace, an SP-initiated launch will not function correctly with Office 365.  Office 365 apps must be launched from within Citrix Workspace (IdP-Initiated).*
 
 ## Troubleshooting
 
