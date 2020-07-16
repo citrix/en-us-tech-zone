@@ -1,8 +1,8 @@
 ---
 layout: doc
-description: Learn how to set up a Citrix Access Control environment that provides single sign-on and enhanced security to Office 365.
+description: Learn how to set up a Citrix Access Control environment that provides single sign-on and enhanced security to Microsoft 365 (Office 365).
 ---
-# Proof of Concept: Secure Access to Office 365 with Citrix Access Control
+# Proof of Concept: Secure Access to Microsoft 365 with Citrix Access Control
 
 ## Contributors
 
@@ -12,15 +12,15 @@ description: Learn how to set up a Citrix Access Control environment that provid
 
 ## Overview
 
-As users access confidential content within Office 365, organizations must be able to simplify user login operations while still enforcing authentication standards. Organizations must be able to secure Office 365 even though it exist beyond the confines of the data center. Citrix Workspace provides organizations with enhanced security controls for Office 365.
+As users access confidential content within Microsoft 365 (Office 365), organizations must be able to simplify user login operations while still enforcing authentication standards. Organizations must be able to secure Microsoft 365 even though it exist beyond the confines of the data center. Citrix Workspace provides organizations with enhanced security controls for Microsoft 365.
 
 In this scenario, a user authenticates to Citrix Workspace using either Active Directory as the primary user directory.
 
 [![Active Directory and Okta SSO](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_ad-dir-azure-sso.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_ad-dir-azure-sso.png)
 
- If the Citrix Access Control Service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the Office 365 applications.
+ If the Citrix Access Control Service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the Microsoft 365 applications.
 
-The following animation shows a user accessing Office 365 with  SSO and secured with Citrix Access Control.
+The following animation shows a user accessing Microsoft 365 with  SSO and secured with Citrix Access Control.
 
  [![Okta SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_demo-video.gif)
 
@@ -66,7 +66,7 @@ Citrix Workspace takes a few moments to update services and URL settings. From a
 
 Before users can authenticate to Workspace, a [primary user directory](/en-us/citrix-workspace/secure.html) must be configured. The primary user directory is the only identity the user requires as all requests for apps within Workspace utilizes single sign-on to secondary identities.
 
-An organization can use any one of the following primary user directories with Office 365:
+An organization can use any one of the following primary user directories with Microsoft 365:
 
 *  [Active Directory](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#active-directory): To enable Active Directory authentication, a cloud connector must be deployed within the same data center as an Active Directory domain controller by following the [Cloud Connector Installation](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html) guide.
 *  [Active Directory with Time-Based One Time Password](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#active-directory-with-totp): Active Directory-based authentication can also include multifactor authentication with a Time-based One Time Password (TOTP). This [guide](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-ad.html#active-directory-authentication) details the required steps to enable this authentication option.
@@ -77,7 +77,7 @@ An organization can use any one of the following primary user directories with O
 
 ## Federate Azure Authentication to Citrix Workspace
 
-To successfully federate Office 365 with Citrix Workspace, the administrator needs to do the following
+To successfully federate Microsoft 365 with Citrix Workspace, the administrator needs to do the following
 
 *  Configure SaaS App
 *  Authorize SaaS App
@@ -86,7 +86,7 @@ To successfully federate Office 365 with Citrix Workspace, the administrator nee
 
 ### Configure SaaS App
 
-With the domain verified within Azure, an Office 365 SaaS app can get configured within Citrix Workspace.
+With the domain verified within Azure, an Microsoft 365 SaaS app can get configured within Citrix Workspace.
 
 *  Within Citrix Cloud, select **Manage** from the Gateway tile.
 
@@ -103,7 +103,7 @@ With the domain verified within Azure, an Office 365 SaaS app can get configured
 [![Setup SaaS App 03](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-03.png)
 
 *  Select **Next**
-*  Enhanced security policies uses the related domains field to determine which URLs to secure. One related domain is automatically added based on the default URL. Enhanced security policies require related domains for any URL associated with the application. Office 365 includes many URLs, which can be found in the section [Office 365 Related Domains](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#office-365-related-domains).
+*  Enhanced security policies uses the related domains field to determine which URLs to secure. One related domain is automatically added based on the default URL. Enhanced security policies require related domains for any URL associated with the application. Microsoft 365 includes many URLs, which can be found in the section [Microsoft 365 Related Domains](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#office-365-related-domains).
 
 *  In the **Enhanced Security** window, select the appropriate security policies for the environment
 
@@ -122,7 +122,7 @@ With the domain verified within Azure, an Office 365 SaaS app can get configured
 [![Setup SaaS App 06](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-06.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-06.png)
 
 *  Select **Save**
-*  Select **Finish** to complete the configuration of the Office 365 SaaS apps.
+*  Select **Finish** to complete the configuration of the Microsoft 365 SaaS apps.
 
 ### Authorize SaaS App
 
@@ -130,7 +130,7 @@ With the domain verified within Azure, an Office 365 SaaS app can get configured
 
 [![Authorize SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_authorize-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_authorize-saas-app-01.png)
 
-*  Find the Office 365 app and select **Manage Subscribers**
+*  Find the Microsoft 365 app and select **Manage Subscribers**
 *  Add the appropriate users/groups who are authorized to launch the app
 
 [![Authorize SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_authorize-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_authorize-saas-app-02.png)
@@ -190,7 +190,7 @@ Get-MsolDomain
  $fedBrandName = "CitrixWorkspaceSAMLIdP" # A name to help remember the configuration purpose
  $IssuerUri = "https://citrix.com/fdafdjk4" # The entityID taken from the Citrix Worksapce SAML Metadata file
  $logoffuri = "https://app.netscalergateway.net/cgi/logout" # Standard entry for all. Do not change
- $uri = "https://app.netscalergateway.net/ngs/dhhn4j3mf1kc/saml/login?APPID=8dd87428-460b-4358-a3c2-609451e8f5be" # The Login URL from the Citrix Workspace Office 365 app configuration
+ $uri = "https://app.netscalergateway.net/ngs/dhhn4j3mf1kc/saml/login?APPID=8dd87428-460b-4358-a3c2-609451e8f5be" # The Login URL from the Citrix Workspace Microsoft 365 app configuration
  $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("e:\CitrixCloud.crt") # Path to the downloaded certificate file from Citrix Workspace
  $certData = [system.convert]::tobase64string($cert.rawdata)
 
@@ -232,9 +232,9 @@ Set-MsolDomainAuthentication -DomainName $dom -Authentication Managed
 IdP-Initiated Validation
 
 *  Log into to Citrix Workspace as a user
-*  Select the Office 365 application
+*  Select the Microsoft 365 application
 *  Observe the URL to see it briefly redirect through Azure
-*  The Office 365 portal successfully launches
+*  The Microsoft 365 portal successfully launches
 
 SP-Initiated Validation
 
@@ -272,7 +272,7 @@ Citrix Access Control service provides website filtering within SaaS and Web app
 IdP-Initiated Validation
 
 *  Log into to Citrix Workspace as a user
-*  Select Office 365. If enhanced security is disabled, the app launches within the local browser, otherwise the embedded browser is used
+*  Select Microsoft 365. If enhanced security is disabled, the app launches within the local browser, otherwise the embedded browser is used
 *  The user automatically signs on to the app
 *  The appropriate enhanced security policies are applied
 *  If configured, select a URL within the SaaS app that is in the blocked, allowed and redirected categories
@@ -285,13 +285,13 @@ SP-Initiated Validation
 *  Go to the [Office 365](https://www.office365.com) website and select **Sign In**
 *  Enter the user name.
 *  The browser redirects the browser to Citrix Workspace for authentication
-*  Once the user authenticates with the primary user directory, Office 365 launches in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches Office 365
+*  Once the user authenticates with the primary user directory, Microsoft 365 launches in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches Microsoft 365
 
-## Office 365 Related Domains
+## Microsoft 365 Related Domains
 
 When creating a new app within Citrix Workspace, a related domain field is available.  The enhanced security policies utilize these related domains to determine when to enforce the policy.
 
-The following list are the current domains associated with Office 365.
+The following list are the current domains associated with Microsoft 365.
 
 ***Note:** These domains can change at any time*
 
@@ -320,9 +320,9 @@ The following list are the current domains associated with Office 365.
 *  *.office.net
 *  *.msftauth.net
 
-## Office 365 Apps
+## Microsoft 365 Apps
 
-If it is preferrable to launch a specific Office 365 app (Word, PowerPoint, or Excel) instead of the Office 365 portal, the administrator needs to create a separate application instance within Citrix Cloud for each app. Each app has a unique URL, which must include the correct value for federated domain, which was configured in this guide. The federated domain entry informs Azure to redirect to the correct federated domain configuration.
+If it is preferrable to launch a specific Microsoft 365 app (Word, PowerPoint, or Excel) instead of the Microsoft 365 portal, the administrator needs to create a separate application instance within Citrix Cloud for each app. Each app has a unique URL, which must include the correct value for federated domain, which was configured in this guide. The federated domain entry informs Azure to redirect to the correct federated domain configuration.
 
 *  Word: `https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2Foffice.live.com%2Fstart%2FWord.aspx%3Fauth%3D2&whr=`**federated domain**
 *  Powerpoint: `https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2Fwww.office.com%2Flaunch%2Fpowerpoint%3Fauth%3D2&whr=`**federated domain**
@@ -349,7 +349,7 @@ If it is preferrable to launch a specific Office 365 app (Word, PowerPoint, or E
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-individual-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-individual-saas-app-03.png)
 
 *  Select **Next**
-*  Enhanced security policies uses the related domains field to determine which URLs to secure. One related domain is automatically added based on the default URL. Enhanced security policies require related domains for any URL associated with the application. Office 365 includes many URLs, which can be found in the section [Office 365 Related Domains](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#office-365-related-domains).
+*  Enhanced security policies uses the related domains field to determine which URLs to secure. One related domain is automatically added based on the default URL. Enhanced security policies require related domains for any URL associated with the application. Microsoft 365 includes many URLs, which can be found in the section [Microsoft 365 Related Domains](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#Microsoft-365-related-domains).
 
 *  In the **Enhanced Security** window, select the appropriate security policies for the environment
 
@@ -363,7 +363,7 @@ If it is preferrable to launch a specific Office 365 app (Word, PowerPoint, or E
 [![Setup SaaS App 05](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-individual-saas-app-05.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-individual-saas-app-05.png)
 
 *  Select **Save**
-*  Select **Finish** to complete the configuration of the Office 365 SaaS apps.
+*  Select **Finish** to complete the configuration of the Microsoft 365 SaaS apps.
 
 ## Stay Signed In
 
@@ -386,14 +386,14 @@ This is an Azure setting that can be easily changed by doing the following:
 
 ### User Account Does Not Exist in the Directory
 
-When trying to launch Office 365, the user might receive the following error: The user account "account name" does not exist in the "GUID" directory.
+When trying to launch Microsoft 365, the user might receive the following error: The user account "account name" does not exist in the "GUID" directory.
 
 [![User Account Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_troubleshooting-no-user-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_troubleshooting-no-user-01.png)
 
 The following are suggestions on how to solve this issue:
 
-*  Verify the user is licensed to use Office 365 within the Office 365 administrator console
-*  Verify the identified email address within the error matches between the primary user directory, Azure Active Directory and Office 365.
+*  Verify the user is licensed to use Microsoft 365 within the Microsoft 365 administrator console
+*  Verify the identified email address within the error matches between the primary user directory, Azure Active Directory and Microsoft 365.
 
 ### Federation Realm Object
 
@@ -412,7 +412,7 @@ Users might experience the enhanced security policies (watermark, printing, or c
 
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-03.png)
 
-The enhanced security policies are applied onto to those related domains. The [Office 365 Related Domains](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#office-365-related-domains) section of this PoC guide contains the initial set of related domains, which Microsoft can change at any time.
+The enhanced security policies are applied onto to those related domains. The [Microsoft 365 Related Domains](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#Microsoft-365-related-domains) section of this PoC guide contains the initial set of related domains, which Microsoft can change at any time.
 
 If the enhanced security policies fail to function within certain sections of the app, a related domain is still missing. To identify missing domain names, an administrator can access the SaaS app with a local browser and do the following:
 
