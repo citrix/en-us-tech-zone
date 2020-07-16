@@ -103,7 +103,7 @@ With the domain verified within Azure, an Office 365 SaaS app can get configured
 [![Setup SaaS App 03](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-03.png)
 
 *  Select **Next**
-*  Enhanced security policies uses the related domains field to determine which URLs to secure. One related domain is automatically added based on the default URL. Enhanced security policies require related domains for any URL associated with the application. Office 365 includes many URLs, which can be found in the section Office 365 Related Domains.
+*  Enhanced security policies uses the related domains field to determine which URLs to secure. One related domain is automatically added based on the default URL. Enhanced security policies require related domains for any URL associated with the application. Office 365 includes many URLs, which can be found in the section [Office 365 Related Domains](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#office-365-related-domains).
 
 *  In the **Enhanced Security** window, select the appropriate security policies for the environment
 
@@ -349,7 +349,7 @@ If it is preferrable to launch a specific Office 365 app (Word, PowerPoint, or E
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-individual-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-individual-saas-app-03.png)
 
 *  Select **Next**
-*  Enhanced security policies uses the related domains field to determine which URLs to secure. One related domain is automatically added based on the default URL. Enhanced security policies require related domains for any URL associated with the application. Office 365 includes many URLs, which can be found in the section Office 365 Related Domains.
+*  Enhanced security policies uses the related domains field to determine which URLs to secure. One related domain is automatically added based on the default URL. Enhanced security policies require related domains for any URL associated with the application. Office 365 includes many URLs, which can be found in the section [Office 365 Related Domains](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#office-365-related-domains).
 
 *  In the **Enhanced Security** window, select the appropriate security policies for the environment
 
@@ -412,7 +412,9 @@ Users might experience the enhanced security policies (watermark, printing, or c
 
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-03.png)
 
-The enhanced security policies are applied onto to those related domains. To identify missing domain names, an administrator can access the SaaS app with a local browser and do the following:
+The enhanced security policies are applied onto to those related domains. The [Office 365 Related Domains](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#office-365-related-domains) section of this PoC guide contains the initial set of related domains, which Microsoft can change at any time.
+
+If the enhanced security policies fail to function within certain sections of the app, a related domain is still missing. To identify missing domain names, an administrator can access the SaaS app with a local browser and do the following:
 
 *  Navigate to the section of the app where the policies fail
 *  In Google Chrome and Microsoft Edge (Chromium version), select the three dots in the upper right side of the browser to show a menu screen.
