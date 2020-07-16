@@ -88,7 +88,7 @@ To successfully federate Office 365 with Citrix Workspace, the administrator nee
 
 With the domain verified within Azure, an Office 365 SaaS app can get configured within Citrix Workspace.
 
-*  Within Citrix cloud, select **Manage** from the Gateway tile.
+*  Within Citrix Cloud, select **Manage** from the Gateway tile.
 
 [![Setup SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-01.png)
 
@@ -151,7 +151,7 @@ To federate authentication to Citrix Workspace, Azure must verify the fully qual
 
 [![Domain Verification 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-02.png)
 
-*  Once complete, the domain should contain a verified mark
+*  Once complete, the domain contains a verified mark
 
 [![Domain Verification 03](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-03.png)
 
@@ -283,7 +283,7 @@ SP-Initiated Validation
 
 *  Launch a browser
 *  Go to the [Office 365](https://www.office365.com) website and select **Sign In**
-*  Enter the username.
+*  Enter the user name.
 *  The browser redirects the browser to Citrix Workspace for authentication
 *  Once the user authenticates with the primary user directory, Office 365 launches in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches Office 365
 
@@ -333,7 +333,7 @@ If it is preferrable to launch a specific Office 365 app (Word, PowerPoint, or E
 *  Outlook Web Access to Exchange Online: `https://outlook.com/owa/`**federated domain**
 *  SharePoint Online: `https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2F<tenant>.sharepoint.com%2F&whr=`**federated domain**
 
-*  Within Citrix cloud, select **Manage** from the Gateway tile.
+*  Within Citrix Cloud, select **Manage** from the Gateway tile.
 
 [![Setup SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-01.png)
 
@@ -420,6 +420,6 @@ If the enhanced security policies fail to function within certain sections of th
 *  In Google Chrome and Microsoft Edge (Chromium version), select the three dots in the upper right side of the browser to show a menu screen.
 *  Select **More Tools**.
 *  Select **Developer Tools**
-*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains should be added like the following `*.domain.com`
+*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains are added like the following `*.domain.com`
 
 [![Enhanced Security Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_enhanced-security-troubleshooting-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_enhanced-security-troubleshooting-01.png)

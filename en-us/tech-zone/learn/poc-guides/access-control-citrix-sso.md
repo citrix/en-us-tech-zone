@@ -81,7 +81,7 @@ To successfully integrate SaaS apps with Citrix Workspace, the administrator nee
 
 ### Configure SaaS App
 
-*  Within Citrix cloud, select **Manage** from the Gateway tile.
+*  Within Citrix Cloud, select **Manage** from the Gateway tile.
 
 [![Setup SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-01.png)
 
@@ -199,6 +199,6 @@ The enhanced security policies are applied onto to those related domains. To ide
 *  In Google Chrome and Microsoft Edge (Chromium version), select the three dots in the upper right side of the browser to show a menu screen.
 *  Select **More Tools**.
 *  Select **Developer Tools**
-*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains should be added like the following `*.domain.com`
+*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains are added like the following `*.domain.com`
 
 [![Enhanced Security Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_enhanced-security-troubleshooting-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_enhanced-security-troubleshooting-01.png)
