@@ -112,8 +112,11 @@ To set up the Citrix ADC perform the following steps:
 1.  Next navigate to Citrix Gateway > Virtual Servers and edit the pertinent vServer
 1.  If you have an existing basic policy bound under Basic Authentication select it, check the policy and select Unbind, confirm, and close.
 1.  From the menu on the right select Authentication Profile, select Add, enter a name and click the right arrow under Authentication Virtual Server, check the policy auth vServer just created and click create. ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCcreateauthprofile.png)
-1.  Click Ok and now you will have the completed AAA vServer bound to the Gateway vServer.
-![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCauthprofile.png)
+1.  Click Ok and now you will have the completed AAA vServer bound to the Gateway vServer. ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCauthprofile.png)
+1.  Navigate to Citrix Gateway > Policies > Session and select the Workspace App policy with the "CitrixReceiver" expression and make the following changes:
+    *  Under Published Applications clear the field Single Sign-on Domain, and uncheck Global Override
+    *  Under Client Experience from the Credential Index drop down select Secondary
+1.  Repeat those steps for the Workspace for web policy with the "CitrixReceiver").NOt expression, click Edit, and click Edit again for the Profile.
 
 See [Citrix ADC](/en-us/citrix-adc/13.html) for more information.
 
