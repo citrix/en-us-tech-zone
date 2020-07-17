@@ -101,8 +101,19 @@ To set up the Citrix ADC perform the following steps:
     *  Single Logout URL - paste the Logout URL copied from the AAD config
     *  Logout binding - Redirect
     *  IDP Certificate Name - select Add, enter a name, select Certificate File Name > local, and select the SAML Signing Certificate (base64) downloaded from AAD
-![SAML Signing Certificate](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCAAAVserver.png)
-1.  NEXT
+![IDP Certificate](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCAAAVserver.png)
+    *  Signing Certificate Name - select the domain certificate the ADC uses to sign requests to AAD.
+    *  Issue Name - enter the FQDN of the Citrix ADC Gateway
+1.  Select create to create the action
+1.  Enter true for the expression
+1.  Select create again to create the policy ![Authentication Policy](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCcreateauthenticationpolicy.png)
+1.  Select bind to bind the policy to the Vserver ![Authentication vServer](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCauthvserver.png)
+1.  Click continue to complete the configuration of the authentication vServer
+1.  Next navigate to Citrix Gateway > Virtual Servers and edit the pertinent vServer
+1.  If you have an existing basic policy bound under Basic Authentication select it, check the policy and select Unbind, confirm, and close.
+1.  From the menu on the right select Authentication Profile, select Add, enter a name and click the right arrow under Authentication Virtual Server, check the policy auth vServer just created and click create. ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCcreateauthprofile.png)
+1.  Click Ok and now you will have the completed AAA vServer bound to the Gateway vServer.
+![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCauthprofile.png)
 
 See [Citrix ADC](/en-us/citrix-adc/13.html) for more information.
 
