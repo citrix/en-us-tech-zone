@@ -10,13 +10,38 @@ description: Learn how to implement a Proof of Concept environment consisting of
 
 **Special Thanks:** Sachin Shetty, John Ashman
 
-## Overview
+## Introduction
 
 Use of the Cloud to deliver Enterprise services continues to grow. Cloud ervices inherit the benefits built into robust cloud infrastructure including resiliency, scalability, and global reach. Azure Active Directory (AAD) is Microsoft Azure hosted directory service and provides those same cloud benefits to Enterprises.  AAD allows Enterprises to host their employee identities in the cloud to utilize the securely access services hosted On Premises or in the Cloud.
 
 Citrix Virtual Apps and Desktops delivers virtual apps and desktops using resources hosted On Premises or in the Cloud.  Citrix ADC provides secure remote access to those virtual apps and desktops and also may be hosted On Premises or in the Cloud. Together along with the Citrix Federated Authentication Service they can utilize AAD to authenticate user access to Citrix Virtual Apps and Desktops from anywhere.
 
 ![AAD-IDP + CVAD + FAS + ADC-SP architecture](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0001.png)
+
+## Overview
+
+The POC guide will make assumptions about the installation or configuration of certain components.
+
+### AD and AAD
+
+*  An Active Directory Server is installed On Premises and you can login as Domain Admin
+*  An Azure tenant is available with a P2 license and you can login as a Global Admin
+
+### Citrix ADC
+
+A Citrix ADC appliance has been installed, is licensed, has a Citrix Gatewy virtual server and is configured to provide access to an On Premises Citrix Virtual Apps and Desktops environment.
+
+### Citrix Virtual Apps and Desktops
+
+A Delivery Controller, StoreFront, and VDA are installed and configured to delivery virtual apps or desktops for domain users.
+
+### Citrix Federated Authentication Service
+
+ A virtual machine is available or another server has enough capacity to install FAS. The DDC, FAS, and StoreFront are all installed on the same server in this POC.
+
+### Remote Client
+
+The Remote Client is able to launch a virtual app or desktop using the Workspace App or browser.
 
 ## AD and AAD Setup
 
