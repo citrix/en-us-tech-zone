@@ -22,26 +22,12 @@ Citrix Virtual Apps and Desktops delivers virtual apps and desktops using resour
 
 The POC guide will make assumptions about the installation or configuration of certain components.
 
-### AD and AAD
-
 *  An Active Directory Server is installed On Premises and you can login as Domain Admin
 *  An Azure tenant is available with a P2 license and you can login as a Global Admin
-
-### Citrix ADC
-
-A Citrix ADC appliance has been installed, is licensed, has a Citrix Gatewy virtual server and is configured to provide access to an On Premises Citrix Virtual Apps and Desktops environment. Use Version 13 build 60 or higher.
-
-### Citrix Virtual Apps and Desktops
-
-A Delivery Controller, StoreFront, and VDA are installed and configured to delivery virtual apps or desktops for domain users. Use version 2006 or higher.
-
-### Citrix Federated Authentication Service
-
- A virtual machine is available or another server has enough capacity to install FAS. The DDC, FAS, and StoreFront are all installed on the same server in this POC.
-
-### Remote Client
-
-The Remote Client is able to launch a virtual app or desktop using the Workspace App or browser.
+*  A Citrix ADC appliance has been installed, is licensed, has a Citrix Gatewy virtual server and is configured to provide access to an On Premises Citrix Virtual Apps and Desktops environment. Use Version 13 build 60 or higher.
+*  A Delivery Controller, StoreFront, and VDA are installed and configured to delivery virtual apps or desktops for domain users. Use version 2006 or higher.
+*  A virtual machine is available or another server has enough capacity to install FAS. The DDC, FAS, and StoreFront are all installed on the same server in this POC.
+*  The Remote Client is able to launch a virtual app or desktop using the Workspace App or browser. Use Windows Version 20.6.0.38(2006) or higher.
 
 ## AD and AAD Setup
 
@@ -166,10 +152,13 @@ See [Enable the FAS plug-in on StoreFront stores](/en-us/federated-authenticatio
 #### Configure StoreFront for Citrix Gateway
 
 1.  Login to the StoreFront virtual machine (also configured as FAS and DDC in our POC) and launch the StoreFront GUI
-1.  Select Manage Authentication Methods
-1.  Enter the following fields and click OK:
-    *  Name - a unique value
-    *  IP Address Type - Non Addressable
+1.  Select Manage Authentication Methods from the menu on the right
+1.  Select Pass-through from Citrix Gateway
+1.  Select the down arrow next to the gear, and select Configure Delegated Authentication
+1.  Check Fully delegate credential validation to Citrix Gateway and click Ok twice ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-StoreFrontdelegatedauth.png)
+1.  Select Manage Authentication Methods from the menu on the right
+1.  Edit the pertinent Citrix Gateway entry
+1.  Under Authentication Settings the Callback URL must be configured if it is not done already. Typically you can update the internal DNS or for a single StoreFront instance update the local host file to map the private IP of the Gateway vServer to the FQDN. ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-StoreFrontcallback.png)
 
 ### Delivery Controller
 
