@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to implement a Proof of Concept environment consisting of Microsoft AAD Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC
+description: Learn how to implement a Proof of Concept environment consisting of Microsoft AAD Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC.
 ---
 # Proof of Concept Guide: Microsoft AAD Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC
 
@@ -12,7 +12,7 @@ description: Learn how to implement a Proof of Concept environment consisting of
 
 ## Introduction
 
-Use of the Cloud to deliver Enterprise services continues to grow. Cloud ervices inherit the benefits built into robust cloud infrastructure including resiliency, scalability, and global reach. Azure Active Directory (AAD) is Microsoft Azure hosted directory service and provides those same cloud benefits to Enterprises.  AAD allows Enterprises to host their employee identities in the cloud to utilize the securely access services hosted On Premises or in the Cloud.
+Use of the Cloud to deliver Enterprise services continues to grow. Cloud services inherit the benefits built into cloud infrastructure including resiliency, scalability, and global reach. Azure Active Directory (AAD) is the Microsoft Azure hosted directory service and provides those same cloud benefits to Enterprises.  AAD allows Enterprises to host their employee identities in the cloud and securely access services also hosted in the Cloud or On Premises.
 
 Citrix Virtual Apps and Desktops delivers virtual apps and desktops using resources hosted On Premises or in the Cloud.  Citrix ADC provides secure remote access to those virtual apps and desktops and also may be hosted On Premises or in the Cloud. Together along with the Citrix Federated Authentication Service they can utilize AAD to authenticate user access to Citrix Virtual Apps and Desktops from anywhere.
 
@@ -20,7 +20,9 @@ Citrix Virtual Apps and Desktops delivers virtual apps and desktops using resour
 
 ## Overview
 
-The POC guide will make assumptions about the installation or configuration of certain components.
+The guide will demonstrate how to implement a Proof of Concept environment consisting of Microsoft AAD Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC using SAML. AAD will act as the Identity Provider (IDP) while Citrix ADC will act as the Service Provider (SP).
+
+It makes assumptions about the installation or configuration of certain components:
 
 *  An Active Directory Server is installed On Premises and you can login as Domain Admin
 *  An Azure tenant is available with a P2 license and you can login as a Global Admin
