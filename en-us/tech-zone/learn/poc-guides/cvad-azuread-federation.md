@@ -227,13 +227,6 @@ To validate the POC login from the Workspace client by performing the following 
 1.  Login with the UPN of a user configure to be part of the FAS environment ![Login](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebredirectAADuser.png)
 1.  Verify the users virtual apps and desktops are enumerated and launch while being logged in with the AAD user ![Logged in](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebloggedin.png)
 
-### Workspace App
-
-1.  Open the Workspace App and from the drop down menu navigate to accounts and click Add.
-1.  Add the FQDN of the enviroment ![Add Account](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-WSAaddaccount.png)
-1.  Login with the UPN of a user configure to be part of the FAS environment ![Login](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebredirectAADuser.png)
-1.  Verify the users virtual apps and desktops are enumerated and launch while being logged in with the AAD user ![Logged in](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebloggedin.png)
-
 ## Summary
 
 Citrix Virtual Apps and Desktops has been a resillient  technology for decades. By integrating AAD as the IDP and Citrix ADC as the Service Provider Enterprise can have even more reliable service by incorporating cloud hosted Identity.
@@ -243,7 +236,5 @@ To learn more about  or Citrix ADC pricing and packing visit the Citrix web site
 ## References
 
 For more information refer to:
-
-[TITLE](https://URL.html)
 
 [Federated Authentication Service](/en-us/tech-zone/learn/tech-insights/federated-authentication-service.html) – Learn how the federated authentication service, integrated with Citrix Workspace, utilizes virtual smartcards to provide single sign-on to Windows-based resources
