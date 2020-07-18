@@ -29,11 +29,11 @@ The POC guide will make assumptions about the installation or configuration of c
 
 ### Citrix ADC
 
-A Citrix ADC appliance has been installed, is licensed, has a Citrix Gatewy virtual server and is configured to provide access to an On Premises Citrix Virtual Apps and Desktops environment.
+A Citrix ADC appliance has been installed, is licensed, has a Citrix Gatewy virtual server and is configured to provide access to an On Premises Citrix Virtual Apps and Desktops environment. Use Version 13 build 60 or higher.
 
 ### Citrix Virtual Apps and Desktops
 
-A Delivery Controller, StoreFront, and VDA are installed and configured to delivery virtual apps or desktops for domain users.
+A Delivery Controller, StoreFront, and VDA are installed and configured to delivery virtual apps or desktops for domain users. Use version 2006 or higher.
 
 ### Citrix Federated Authentication Service
 
@@ -228,37 +228,22 @@ To set up FAS perform the following steps:
 
 See [FAS documentation](/en-us/federated-authentication-service.html) for more information.
 
-## Citrix Workspace client Setup
+## Citrix Workspace client validation
 
-To set up _ perform the following steps:
-For more information refer to [TITLE](/en-us/LINK.html).
+To validate the POC login from the Workspace client by performing the following steps:
 
-1.  Create a new
-1.  Populate Site Details:
-    *  Site
+### Workspace for Web
 
-## Troubleshooting
+1.  Open a browser and navigate the domain FQDN managed by the Citrix ADC. You will notice the Citrix Gateway redirects to AAD.
+1.  Login with the UPN of a user configure to be part of the FAS environment ![Login](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebredirectAADuser.png)
+1.  Verify the users virtual apps and desktops are enumerated and launch while being logged in with the AAD user ![Logged in](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebloggedin.png)
 
-The
+### Workspace App
 
-### Connectivity
-
-Verify that Citrix SD-WAN system requirements have been met and check external firewall rules to ensure required ports are open.
-
-*  Ports – if
-*  DNS – if  
-
-### Logs
-
-Verify that Citrix SD-WAN system requirements have been met and check external firewall rules to ensure required ports are open.
-
-*  Ports – if
-*  DNS – if  
-
-### Ctx articles
-
-[Citrix ADC Commands to Find the Policy Hits for Citrix Gateway Session Policies](https://support.citrix.com/article/CTX138840) – view authentication policy or session policy hits
-[Citrix ADC Commands to Find the Policy Hits for Citrix Gateway Session Policies](https://support.citrix.com/article/CTX207162) – common resolutions to a common access error “Cannot Complete Your Request”
+1.  Open the Workspace App and from the drop down menu navigate to accounts and click Add.
+1.  Add the FQDN of the enviroment ![Add Account](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-WSAaddaccount.png)
+1.  Login with the UPN of a user configure to be part of the FAS environment ![Login](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebredirectAADuser.png)
+1.  Verify the users virtual apps and desktops are enumerated and launch while being logged in with the AAD user ![Logged in](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebloggedin.png)
 
 ## Summary
 
