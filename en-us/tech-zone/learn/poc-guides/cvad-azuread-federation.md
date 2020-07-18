@@ -48,15 +48,16 @@ To set up Active Directory (AD) and Azure Active Directory (AAD) perform the fol
 
 1.  On your AD domain controller open Server Manager > Tools > Active Directory Users and Computers.
 1.  Right-click and select New > User, or edit an existing one
-1.  Under Properties > Account set the UPN to the new Suffix.
-![AAD-IDP + CVAD + FAS + ADC-SP architecture](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADUser.png)
+1.  Under Properties > Account set the UPN to the new Suffix. ![AAD-IDP + CVAD + FAS + ADC-SP architecture](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADUser.png)
 
 #### Microsoft Azure Active Directory Connect
 
-1.  From your AD domain controller or other virtual server where you will host the Microsoft Azure Active Directory Connect process.
+Azure AD Connect is a tool for connecting on premises identity infrastructure to Microsoft Azure AD. It will allow us to copy AD users to AAD with a UserPrincipalName (UPN) mapped to our AAD domain.
+
+1.  Login to your AD domain controller or other virtual server where you will host the Microsoft Azure Active Directory Connect process.
 1.  Download the executable from the Microsoft download site [Microsoft Azure Active Directory Connect](https://www.microsoft.com/en-us/download/details.aspx?id=47594) and launch it.
 1.  You will be promoted to accept making changes to the virtual machine and accept a license agreement on the welcome page.
-![AAD-IDP + CVAD + FAS + ADC-SP architecture](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADConnectWelcome.png)
+![AD Connect](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADConnectWelcome.png)
 1.  You will be prompted to login as a Global AAD admin as well as a Domain Services admin.
 1.  For installation on a single AD virtual machine you can follow express settings. After it verifies UPN Suffixes it makes a full sync of all users, groups, and contacts.
 
