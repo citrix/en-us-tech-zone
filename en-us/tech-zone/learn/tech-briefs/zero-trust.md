@@ -97,7 +97,7 @@ A Zero Trust Architecture focuses on protecting resources, not network segments.
 
 Zero Trust networks are sometimes described as “perimeter-less”. Some argue that perimeter protections are becoming less important for networks and operations. In reality, the perimeter is still there, but in a much more granular way. Zero Trust networks actually attempt to move perimeters in from the network edge and create segments to isolate critical data from other data. The perimeter must move closer to the data to strengthen protections and controls. Hence the reason why the traditional castle and moat approach is not sufficient.
 
-During transitions to Software Defined Networks, SD-WANs, and internet-based technologies, it’s critical to consider how to:
+During transitions internet-based technologies, it’s critical to consider how to:
 
 1.  Control privileged network access
 2.  Manage internal and external data flows
@@ -128,7 +128,7 @@ Analytics data can either be analyzed separately or combined with other security
 
 In moving from a boundary, perimeter-based security model to a resource based one, Citrix Workspace uses a holistic context-aware VPN-less approach.
 
-![Zero Trust Diagram](/en-us/tech-zone/learn/media/tech-briefs_zero-trust_diagram.png)
+![Zero Trust Diagram](/en-us/tech-zone/learn/media/tech-briefs_zero-trust_diagram4.png)
 
 Citrix Workspace acts as the enforcement point to control access to applications and data. Access starts with a “default deny” instead of building on inherent trust. Access is only granted after verifying an entity by user and device credentials and other factors, including time, location, and device posture. Citrix Zero Trust mitigates the complexity around these factors by removing assumed trust and confirming it every step of the way.
 
