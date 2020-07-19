@@ -36,7 +36,7 @@ Enabling corporate network access to home users opens potential attack vectors, 
 
 ## DECISION: Citrix Virtual Apps and Desktops delivery
 
-For optimal security in extending the corporate network to remote resources, it is always recommended to use Citrix technologies, such as Citrix Virtual Apps and Desktops. This technology has led in Virtual Client Computing for many years and can help in the design of a secure network. Here you can find more information on [Citrix Virtual Apps and Desktops security](/en-us/citrix-virtual-apps-desktops/1912-ltsr/secure/best-practices.html).  Citrix SD-WAN can be coupled with this solution to better deliver to remote locations where the WAN may not always be reliable.
+For optimal security in extending the corporate network to remote resources, it is always recommended to use Citrix technologies, such as Citrix Virtual Apps and Desktops. This technology has led in Virtual Client Computing for many years and can help in the design of a secure network. Here you can find more information on [Citrix Virtual Apps and Desktops security](/en-us/citrix-virtual-apps-desktops/1912-ltsr/secure/best-practices.html). Citrix SD-WAN can be coupled with this solution to better deliver to remote locations where the WAN may not always be reliable.
 
 One secure approach is to place SD-WAN in the path of Citrix Workspace traffic that is delivered through Citrix Gateway. In the Data Center network, the incoming front-end traffic is isolated from back-end traffic, between the CVAD infrastructure servers and services. This approach allows the use of separate demilitarized zones (DMZs) to isolate front-end and back-end traffic flows along with granular firewall control and monitoring.
 
@@ -54,7 +54,7 @@ In a deployment involving Citrix Virtual Apps and Desktop, CVAD keeps data and w
 
 ### Limit Home User Networks through Firewall DMZ
 
-Another option would be to backhaul Home User traffic and limit resource and connectivity to the Corporate Network through Firewalled DMZs. Further, firewall policies on the SD-WAN devices can be centrally pushed to all SD-WAN devices in remote Home User networks. These policies limits the traffic allowed on the “New WAN Overlay” to only certain applications, protocols, and or Server IPs, etc.
+Another option would be to backhaul Home User traffic and limit resource and connectivity to the Corporate Network through Firewalled DMZs. Further, firewall policies on the SD-WAN devices can be centrally pushed to all SD-WAN devices in remote Home User networks. These policies limit the traffic allowed on the “New WAN Overlay” to only certain applications, protocols, and or Server IPs, etc.
 
 ![Firewall DMZ](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_firewalldmz.png)
 
@@ -116,7 +116,7 @@ Rapid deployment of thousands of endpoints is easily accomplished through centra
 
 *  Considerations:
     *  Extra cost of second ISP WAN link
-    *  Time and effort to setup ISP #2
+    *  Time and effort to set up ISP #2
     *  Requires extra hardware (Modem for ISP #2)
 
 ### ISP + LTE

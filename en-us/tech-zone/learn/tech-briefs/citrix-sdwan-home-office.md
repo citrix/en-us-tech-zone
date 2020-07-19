@@ -55,7 +55,7 @@ SD-WAN 110-LTE-Wi-Fi-SE Product Specs include:
 *  USB based LTE dongle support (available with R11.1.1)
 *  Integrated Wi-Fi Access Point capability (Wi-Fi Ready)
 
-*Starting in 2Q 2020, 110-LTE-Wi-Fi will ship as “Wi-Fi Ready.” The Wi-Fi feature will be ready to use in the fourth quarter of 2020 through a software upgrade.
+*Starting in 2Q 2020, 110-LTE-Wi-Fi ships as “Wi-Fi Ready.” The Wi-Fi feature will be ready to use in the fourth quarter of 2020 through a software upgrade.
 
 Citrix SD-WAN is a book ended solution providing reliable, and high bandwidth connectivity between site locations. It directly addresses potential limitations of the WAN as indicated with the use-cases in the section preceding.
 
@@ -118,7 +118,7 @@ For more information refer to:
 
 [Zero-touch deployment via the WAN Interface (Citrix SD-WAN 110-SE)](https://support.citrix.com/article/CTX272229) - a Quick Start Guide for Citrix SD-WAN 110-SE appliances when performing Zero-touch deployment via the WAN Interface
 
-[Zero-touch deployment via the LTE Interface (Citrix SD-WAN 110-LTE-SE)](https://support.citrix.com/article/CTX272228) - a Quick Start Guide for Citrix SD-WAN 110-LTE-SE appliances when performing Zero-Touch deployment via the LTE Interface
+[Zero-touch deployment via the LTE Interface (Citrix SD-WAN 110-LTE-SE)](https://support.citrix.com/article/CTX272228) - a Quick Start Guide for Citrix SD-WAN 110-LTE-SE appliances when performing zero-touch deployment via the LTE Interface
 
 [Citrix SD-WAN Home Office POC Guide](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html) - learn how to implement a proof of concept of Citrix SD-WAN for a Home Office
 
