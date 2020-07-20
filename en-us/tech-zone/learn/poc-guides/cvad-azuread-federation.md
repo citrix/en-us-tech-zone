@@ -197,7 +197,7 @@ To configure FAS perform the following steps:
     *  a. Right-click to create new or edit an existing Group Policy Object that applies to all pertinent VDAs and Delivery Controllers. (We use the Default Domain Controllers policy for the POC. For production you would typically create a new policy or edit another pertinent policy.)
 ![GPO](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0014.png)
     *  b. Navigate to Computer Configuration > Policies > Administrative Templates > Citrix Components > Authentication
-    *  C. Right-click on Federated Authentication Service.
+    *  c. Right-click on Federated Authentication Service.
     *  d. Select edit
     *  e. Select Show DNS
     *  f. Enter the FQDN of the FAS server, click Ok twice, and close the Group Policy Management editor.
