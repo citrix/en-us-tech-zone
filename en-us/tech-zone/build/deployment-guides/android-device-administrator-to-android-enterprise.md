@@ -39,9 +39,9 @@ Managed Google play provides a store for end-users managed and controlled by the
 
 ## Activation of Android Enterprise
 
-To set up Android Enterprise for your organization, register Citrix as your EMM provider through managed Google Play. Completing this setup will result in the creation of your enterprise connecting managed Google Play to Citrix Endpoint Management.
+To set up Android Enterprise for your organization, register Citrix as your EMM provider through managed Google Play. Completing this setup results in the creation of your enterprise connecting managed Google Play to Citrix Endpoint Management.
 
-Google Play infrastructure is used to offer services that include a managed, private enterprise app delivery store. Google Play is also where device profiles live. The good news is that set-up is rather simple.
+Google Play infrastructure is used to offer services that include a managed, private enterprise app delivery store. Google Play is also where device profiles live. The good news is that setup is rather simple.
 
 For activation of Android Enterprise, navigate to your **CEM** settings, and select **Android Enterprise** and follow the instructions.
 
@@ -54,7 +54,7 @@ Depending on your Endpoint Management version, you see a different type of menu 
 
 Select **Enable** your Android Enterprise.
 
-**Note:** If you already use Enrollment profiles with Android Legacy Mode, you will see the following message:
+**Note:** If you already use Enrollment profiles with Android Legacy Mode, you can see the following message:
 
 [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_03.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_03.png)
 
@@ -96,7 +96,7 @@ The best way to start is to copy an existing delivery group to associate to an A
 
 ## Migration Apps
 
-## Mobile productivity apps to Android Enterprise users
+### Mobile productivity apps to Android Enterprise users
 
 Although CEM has support for many different application types, for this migration scenario, we show how to migrate Secure Mail.
 
@@ -104,7 +104,7 @@ Although CEM has support for many different application types, for this migratio
   
    [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_05.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_05.png)
 
--  Step 2: Move Citrix Secure Mail configured for Android (legacy DA) into this new category to have a clear separation of Android (legacy DA) applications. **NOTE**: This action shall be performed for all Android (legacy DA) applications in your environment
+-  Step 2: Move Citrix Secure Mail configured for Android (legacy DA) into this new category to have a clear separation of Android (legacy DA) applications. **NOTE**: This action must be done for all Android (legacy DA) applications in your environment
 
 -  Step 3: Edit Secure Mail Android (legacy DA) with the following Deployment Rule to prevent showing the app twice within Secure Hub (One: Android (legacy DA) Two: Android Enterprise)
 
@@ -115,7 +115,7 @@ Limit by known device property name Android Enterprise Enabled Device ID isn't e
 **Note:** this value is only available if you already enrolled an Android Enterprise Device
 
 -  Step 4: Create a second category for Secure Mail for Android Enterprise
-**NOTE:** This action has to be performed for all Android Enterprise applications in your environment.
+**NOTE:** This action must be done for all Android Enterprise applications in your environment.
 
 -  Step 5: Configure Secure for Android Enterprise
 -  _Example: SecureMail_AE_
@@ -126,13 +126,13 @@ Limit by known device property name Android Enterprise Enabled Device ID isn't e
 
 -  Step 6: Edit the app’s policies and actions to match your previous version of Secure Mail Android (legacy DA) within the Android Enterprise section.
 
-**Please proceed to section 7 if you are not using privately developed wrapped or enterprise applications.**
+### Publishing Enterprise Apps (MDX and Non-MDX)
 
-## Publishing Enterprise Apps (MDX and Non-MDX)
+**If you are not using privately developed wrapped or enterprise applications, you can skip this section. Click [here](#add-private-enterprise-app-as-android-enterprise-app-non-mdx) to go to the next section.**
 
 ALL Enterprise apps need to be uploaded to Google Play for using with Android Enterprise.
 To simplify IT admins’ app management workflow, we’ve integrated the [Managed Google Play iframe](https://developers.google.com/android/work/play/emm-api/managed-play-iframe) into Citrix Endpoint Management (CEM). This enables IT admins to approve and publish public or private apps from within the CEM console. Admins no longer need to go outside the console to the Managed Play or Developer portals to approve or publish apps.
-This iFrame allows you to upload to Google play without creating a google developer account (saving $25). Once enterprise apps are uploaded by IT admins, they will only be available within your enterprise deployment.
+This iFrame allows you to upload to Google play without creating a google developer account (saving $25). Once enterprise apps are uploaded by IT admins, they are only available within your enterprise deployment.
 
 ## Add private Enterprise app as Android Enterprise app (non-mdx)
 
@@ -142,12 +142,12 @@ Screenshot
 
 ## Add private Android Enterprise apps as MDX-wrapped Enterprise app
 
-Use cmd line toolkit to wrap a private AE app with the MDX Toolkit.
+Use command line toolkit to wrap a private AE app with the MDX Toolkit.
 Your output is:
 
   a. Wrapped .apk (size greater than original apk)
 
-  b. Mdx file
+  b. .mdx file
 
 -  Upload the .apk to Google Play (similar to the non-mdx apps above)
 -  Goto **publish MDX app** and upload the mdx file
@@ -162,7 +162,7 @@ This Deployment Rule checks if the Android device is **NOT** enabled for Android
 
 [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_07.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_07.png)
 
-This Deployment Rule will check if the Android device is enabled for Android Enterprise and deliver the policies along with the application.
+This Deployment Rule checks if the Android device is enabled for Android Enterprise and deliver the policies along with the application.
 
 [![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_08.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_08.png)
 
