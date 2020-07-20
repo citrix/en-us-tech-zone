@@ -144,14 +144,6 @@ Citrix’s identity approach allows enterprises to preserve their investments. I
 
 Citrix Gateway provides SmartAccess and SmartControl policies that provide flexibility to balance user convenience with risk. Based on the result of a SmartAccess scan, a user can be granted full access, reduced access, quarantine, or no access at all. For example, a user who fails a device compliance check can get access to a reduced set of applications. Sensitive applications can have restricted functionality like blocking printing and downloading. SmartControl centralizes policy management on Citrix Gateway, strengthening access control at the network layer before the user reaches the back-end resource.
 
-### Citrix Networking
-
-Networking is about defining and maintaining dynamic trust relationships and communication and Citrix ADC is at the bridge between securing applications and networking. Citrix ADC protects web apps against zero-day threats, cross site scripting, SQL injection with the Web App Firewall. It also protects APIs and does Bot mitigation.
-
-Considerations for networking security also include service mesh architectures, micro-segmentation, and legacy VPNs. Essential trust services such as certificate management, encryption, and DNS are established and verified with Citrix Application Delivery Manager.  Citrix ADM provides end-to-end security visibility across the entire application framework.
-
-For the branch, SDWAN combines performance and security. The solution is focused on protecting branch office users accessing data across the WAN. Its ICSA-certified stateful firewall and integration with third party Secure Web Gateways protect users at the branch with direct internet access.
-
 ### Citrix Access Control
 
 Citrix Workspace offers an integrated approach to secure access to the internet. In addition to managing user devices, Access Control focuses on protecting a user’s workspace on both managed and unmanaged BYO devices. User information is always protected, whether accessing whitelist or blacklist URLs or URL categories.
