@@ -99,8 +99,7 @@ To configure the Citrix ADC perform the following steps:
 1.  Navigate to Security > AAA - Application Traffic > Virtual Servers and select Add
 1.  Enter the following fields and click OK:
     *  Name - a unique value
-    *  IP Address Type - Non Addressable
-![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCAAAVserver.png)
+    *  IP Address Type - Non Addressable ![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCAAAVserver.png)
 1.  Select No Server Certificate, select the domain certificate, click Select, Bind, and Continue
 1.  Select No Authentication Policy, and select Add
 1.  Enter a name, set Action Type to SAML, and select Add Action
@@ -126,7 +125,7 @@ To configure the Citrix ADC perform the following steps:
 1.  Navigate to Citrix Gateway > Policies > Session and select the Workspace App policy with the "CitrixReceiver" expression and make the following changes:
     *  Under Published Applications clear the field Single Sign-on Domain, and uncheck Global Override
     *  Under Client Experience from the Credential Index drop down select Secondary
-1.  Repeat those steps for the Workspace for web policy with the "CitrixReceiver").NOt expression, click Edit, and click Edit again for the Profile.
+1.  Repeat those steps for the Workspace for web policy with the "CitrixReceiver").NOT expression, click Edit, and click Edit again for the Profile. ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCgatewaysessionpolicies.png)
 
 See [Citrix ADC](/en-us/citrix-adc/13.html) for more information.
 
