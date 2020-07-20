@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to set up Citrix ADC in Azure and Configure SSL Forward Proxy and SSL Interception. This integration allows the dynamic delivery of resources by redirecting browsing to Secure Browser service protecting the company network without sacrificing user experience. 
+description: Learn how to set up Citrix ADC in Azure and Configure SSL Forward Proxy and SSL Interception. This integration allows the dynamic delivery of resources by redirecting browsing to Secure Browser service protecting the company network without sacrificing user experience.
 ---
 # Proof of Concept Guide: URL Redirection to Secure Browser with Citrix ADC in Azure
 
