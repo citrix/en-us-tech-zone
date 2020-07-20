@@ -58,7 +58,7 @@ This proof-of-concept guide describes the following:
 
         Note: Citrix Sales will contact you to give you access to the service. This is not immediate, a Citrix sales rep will reach out
 
-1.  Once you have the Secure Browser trial approved, refer to the **Publish a Secure Browser** [section of the Citrix Doc](en-us/citrix-cloud/secure-browser-service.html) to publish a Secure Browser app.
+1.  Once you have the Secure Browser trial approved, refer to the **Publish a Secure Browser** [section of the Citrix Doc](/en-us/citrix-cloud/secure-browser-service.html) to publish a Secure Browser app.
 
 #### Enable URL Parameters
 
@@ -460,7 +460,7 @@ Note: This policy is created to bypass the ADC interception for traffic going to
 
 A rewrite policy consists of a rule and action. The rule determines the traffic on which rewrite is applied and the action determines the action to be taken by the Citrix ADC. The rewrite policy is necessary for URL redirection to happen to Secure Browser based on the category of the URL entered in the browser, in this example "News".
 
-[Reference](en-us/netscaler/12/appexpert/rewrite.html)
+[Reference](/en-us/netscaler/12/appexpert/rewrite.html)
 
 #### Create rewrite policy and action
 
@@ -481,7 +481,7 @@ A rewrite policy consists of a rule and action. The rule determines the traffic 
 
 1.  Run the following command:
 
-        `add rewrite action cloud_act REPLACE_HTTP_RES q{"HTTP/1.1 302 Found" + "\r\n" + "Location: http://launch.cloud.com/<customername>/<appname>?url=https://" + HTTP.REQ.HOSTNAME.APPEND(HTTP.REQ.URL.PATH) + "\r\n\r\n\" "}`
+        `add rewrite action cloud_act REPLACE_HTTP_RES q{"HTTP/1.1 302 Found" + "\r\n" + "Location: https://launch.cloud.com/<customername>/<appname>?url=https://" + HTTP.REQ.HOSTNAME.APPEND(HTTP.REQ.URL.PATH) + "\r\n\r\n\" "}`
 
 Note:
 In the command replace `<customername>` with your Citrix Cloud customer account name and replace `<appname>` with the Secure Browser published app name for which the URL parameters policy is enabled. Referring to the published app you created in Section 1.
