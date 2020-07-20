@@ -11,11 +11,13 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
 
-[Secure Access to Internal Web Applications with Citrix SSO](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Access Control, utilizing Citrix-provided SSO.
+[Secure Access to Azure-managed SaaS Applications and Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Access Control environment that provides enhanced security to Microsot Azure SaaS Apps.
 
-[Secure Access to SaaS Applications with Citrix SSO](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to set up a Citrix Access Control environment that uses Citrix as the single sign-on provider for Office 365 SaaS applications.
+[Secure Access to Citrix-managed Internal Web Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Access Control, utilizing Citrix-provided SSO.
 
-[Secure Access to SaaS Applications with Okta SSO](/en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html) - Learn how to set up a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
+[Secure Access to Citrix-managed SaaS Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to set up a Citrix Access Control environment that uses Citrix as the single sign-on provider for Office 365 SaaS applications.
+
+[Secure Access to Okta-managed SaaS Applications and Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html) - Learn how to set up a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
@@ -131,6 +133,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [SD-WAN Cloud Direct service](/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html) - Optimize SaaS access for branch users by tunneling session traffic to Internet Exchanges with direct connectivity to popular sites.
 
+[SD-WAN Edge Security](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-edge-security.html) - Learn how Citrix SD-WAN Advanced Edition provides Edge Security for your Enterprise network.
+
 [SD-WAN for Home Offices](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-home-office.html) - Learn how to work from home with secure, enhanced, and resilient connectivity using the Citrix SD-WAN 110 appliance.
 
 [SD-WAN for Workspace](/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html) - Provides optimal network connectivity between Enterprise branch offices and their Workspace hosted in data resource locations on-premises or in the cloud.
@@ -185,13 +189,15 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
 
+[Getting Started with Citrix Virtual Apps and Desktop Service](/en-us/tech-zone/learn/poc-guides/cvads.html) - Learn how to get started with Citrix Virtual Apps and Desktop Service to deliver virtual apps and desktops to your end users while having the management plane hosted on Citrix Cloud.
+
 [Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html) - Learn how to deliver the Citrix® HDX™ Optimization for Microsoft® Teams in a Citrix environment. The optimization offers clear, crisp high-definition video calls, audio-video or audio-only calls to and from other Teams users, optimized Teams’ users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
 
 [Remote PC Access with Citrix Virtual Desktops service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html) - Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from anywhere and on any device.
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
-[Autoscale](/en-us/tech-zone/learn/tech-briefs/autoscale.html) - Explore the various ways Citrix enables admins to save on cost when hosting workloads in the cloud. Learn about different load balancing algorithms ans scaling methodologies and how much they can save in an environment based on our tests.
+[Autoscale](/en-us/tech-zone/learn/tech-briefs/autoscale.html) - Explore the various ways Citrix enables admins to save on cost when hosting workloads in the cloud. Learn about different load balancing algorithms and scaling methodologies and how much they can save in an environment based on our tests.
 
 ### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)
 
@@ -327,7 +333,11 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
-[App protection](/en-us/tech-zone/learn/tech-briefs/app-protection-policies.html) - App protection policies protect application data from attacks based on keyloggers and/or screen capture tools. Allow companies to embrace BYOD, and extend resources to remote workers, contractors, and gig economy workers.
+[App protection](/en-us/tech-zone/learn/tech-briefs/app-protection-policies.html) - App protection policies protect application data from attacks based on keyloggers and screen capture tools. Allow companies to embrace BYOD, and extend resources to remote workers, contractors, and gig economy workers.
+
+### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
+
+[Architectural Considerations for the General Data Protection Regulation - GDPR](/en-us/tech-zone/design/reference-architectures/gdpr.html) - Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.
 
 ### [Build - Tech Papers](/en-us/tech-zone/build/tech-papers.html)
 

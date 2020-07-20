@@ -9,7 +9,7 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 [Secure Access to Internal Web Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Access Control, utilizing Citrix-provided SSO.
 
-[Secure Access to Office 365 with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html) - Learn how to set up a Citrix Access Control environment that provides single sign-on and enhanced security to Microsoft 365 (Office 365).
+[Secure Access to Office 365 with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html) - Learn how to set up a Citrix Access Control environment that provides single sign-on and enhanced security to Office 365.
 
 [Secure Access to SaaS Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to set up a Citrix Access Control environment that uses Citrix as the single sign-on provider for SaaS applications.
 
@@ -18,6 +18,8 @@ Learn firsthand, the functionality of the solution by following these guides wit
 ## Citrix Virtual Apps and Desktops
 
 [Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
+
+[Getting Started with Citrix Virtual Apps and Desktop Service](/en-us/tech-zone/learn/poc-guides/cvads.html) - Learn how to get started with Citrix Virtual Apps and Desktop Service to deliver virtual apps and desktops to your end users while having the management plane hosted on Citrix Cloud.
 
 [Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html) - Learn how to deliver the Citrix® HDX™ Optimization for Microsoft® Teams in a Citrix environment. The optimization offers clear, crisp high-definition video calls, audio-video or audio-only calls to and from other Teams users, optimized Teams’ users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
 
