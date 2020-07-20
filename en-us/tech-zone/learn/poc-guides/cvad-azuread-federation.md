@@ -31,9 +31,9 @@ It makes assumptions about the installation or configuration of certain componen
 *  A virtual machine is available or another server has enough capacity to install FAS. The DDC, FAS, and StoreFront are all installed on the same server in this POC.
 *  The Remote Client is able to launch a virtual app or desktop using the Workspace App or browser. Use Windows Version 20.6.0.38(2006) or higher.
 
-## AD and AAD Setup
+## AD and AAD Config
 
-To set up Active Directory (AD) and Azure Active Directory (AAD) perform the following steps:
+To configure Active Directory (AD) and Azure Active Directory (AAD) perform the following steps:
 
 ### AD
 
@@ -56,8 +56,7 @@ Azure AD Connect is a tool for connecting on premises identity infrastructure to
 
 1.  Login to your AD domain controller or other virtual server where you will host the Microsoft Azure Active Directory Connect process.
 1.  Download the executable from the Microsoft download site [Microsoft Azure Active Directory Connect](https://www.microsoft.com/en-us/download/details.aspx?id=47594) and launch it.
-1.  You will be promoted to accept making changes to the virtual machine and accept a license agreement on the welcome page.
-![AD Connect](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADConnectWelcome.png)
+1.  You will be promoted to accept making changes to the virtual machine and accept a license agreement on the welcome page. ![AD Connect](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADConnectWelcome.png)
 1.  You will be prompted to login as a Global AAD admin as well as a Domain Services admin.
 1.  For installation on a single AD virtual machine you can follow express settings. After it verifies UPN Suffixes it makes a full sync of all users, groups, and contacts.
 
@@ -65,19 +64,17 @@ See [using Azure AD Connect express settings](https://docs.microsoft.com/en-us/a
 
 #### Certificate Authority
 
-For this POC we assume you have a Certificate Authority, including Web Enrollment, installed on an AD DC. If not navigate to Server Manager > Add roles and features and follow prompts to install Active Directory Certificate Services.  See below for more information.
+For this POC we assume you have a Certificate Authority, including Web Enrollment, installed on an AD DC. If not navigate to Server Manager > Add roles and features and follow prompts to install Active Directory Certificate Services. See [Microsoft Certificate Authority Installation](https://docs.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/server-certs/install-the-certification-authority) for more information.
 
-1.  Launch MMC
-1.  Select Add/Remove Snap-in > Certificates > Computer Account > Ok
-1.  Right-click Personal > All Tasks > Request New Certificate
-1.  Click Next and select Active Directory Enrollment Policy
-1.  Select Domain Controller Authentication and click Enroll
-
-See [Microsoft Certificate Authority Installation](https://docs.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/server-certs/install-the-certification-authority) for more information.
+1.  Next launch MMC
+2.  Select Add/Remove Snap-in > Certificates > Computer Account > Ok
+3.  Right-click Personal > All Tasks > Request New Certificate
+4.  Click Next and select Active Directory Enrollment Policy
+5.  Select Domain Controller Authentication and click Enroll ![AAD Non-gallery application](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADdomaincontrollerauth.png)
 
 ### Azure Active Directory
 
-1.  Login to the [Azure Portal](https://portal.azure.com) as a global admin.
+1.  Login to the [Azure Portal](https://portal.azure.com) as a global admin
 1.  Navigate to Azure Active Directory > Enterprise Applications
 1.  Select New application
 1.  Select Non-gallery application ![AAD Non-gallery application](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-AADNonGalleryApplication.png)
@@ -92,14 +89,12 @@ See [Microsoft Certificate Authority Installation](https://docs.microsoft.com/en
 ![AAD settings](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-AADcapturesettings.png)
 1.  Select Users and groups > Add user and select existing users or groups that will have access to Citrix Virtual Apps and Desktops using their AAD UPN ![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-AADUsersandGroups.png)
 
-See [Azure AD Connect sync](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-whatis) for more information.
+## Citrix ADC Config
 
-## Citrix ADC Setup
-
-To set up the Citrix ADC perform the following steps:
+To configure the Citrix ADC perform the following steps:
 
 1.  Login to the Citrix ADC UI
-1.  Navigate to Traffic Management > SSL> Certificates > All Certificates to verify you have the certificate your domain certificate installed.  In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
+1.  Navigate to Traffic Management > SSL> Certificates > All Certificates to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
 1.  Navigate to Security > AAA - Application Traffic > Virtual Servers and select Add
 1.  Enter the following fields and click OK:
     *  Name - a unique value
@@ -134,7 +129,7 @@ To set up the Citrix ADC perform the following steps:
 
 See [Citrix ADC](/en-us/citrix-adc/13.html) for more information.
 
-## Citrix Virtual Apps and Desktops Setup
+## Citrix Virtual Apps and Desktops Config
 
 To integrate Citrix Virtual Apps and Desktops components with FAS perform the following steps:
 
@@ -173,9 +168,9 @@ Next configure the Desktops Delivery Controller to trust the StoreFront servers 
 
 See [Configure the Delivery Controller](/en-us/federated-authentication-service/install-configure.html#configure-the-delivery-controller) for more information.
 
-## Citrix Federated Authentication Service Setup
+## Citrix Federated Authentication Service Config
 
-To set up FAS perform the following steps:
+To configure FAS perform the following steps:
 
 1.  Load the Citrix Virtual Apps and Desktops ISO image on the FAS Virtual Machine
 1.  Select FAS to begin the installation
