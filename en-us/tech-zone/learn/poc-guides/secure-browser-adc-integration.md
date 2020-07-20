@@ -56,7 +56,7 @@ This proof-of-concept guide describes the following:
 
     ![Request a Call form](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_5.png)
 
-        Note: Citrix Sales will contact you to give you access to the service. This is not immediate, a Citrix sales rep will reach out
+    >**Note**: Citrix Sales will contact you to give you access to the service. This is not immediate, a Citrix sales rep will reach out
 
 1.  Once you have the Secure Browser trial approved, refer to the **Publish a Secure Browser** [section of the Citrix Doc](/en-us/citrix-cloud/secure-browser-service.html) to publish a Secure Browser app.
 
@@ -124,7 +124,7 @@ The ADC can be set up in any cloud of choice. In this example Azure is our Cloud
 
     ![Networking rules](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_12.png)
 
-        Note: You may choose to close the ports 22 and 443 after the configuration is done, as those ports are only needed for logging into management console for configuration purposes.
+    >**Note**: You may choose to close the ports 22 and 443 after the configuration is done, as those ports are only needed for logging into management console for configuration purposes.
 
 1.  At this point **the ADC instance in Azure is set up**
 
@@ -136,7 +136,7 @@ Set up the ADC as a proxy to route the traffic from the client browser to the In
 
 1.  Navigate to the Citrix ADC management console by inputting the instance's public IP address in the search bar of your browser  
 
-        Note: Use the IP address of the machine you provisioned in the previous steps, in this example `https://40.88.150.164/`
+    >**Note**: Use the IP address of the machine you provisioned in the previous steps, in this example `https://40.88.150.164/`
 
 1.  Log in to the console by inputting the user name and password you set up in the previous steps
 
@@ -150,7 +150,7 @@ Set up the ADC as a proxy to route the traffic from the client browser to the In
 
 1.  Upload the necessary licenses for ADC.
 
-        Note: The licenses you bring must support the features highlighted in the steps 11 and 13 under Configure Basic Features and Configure Advanced Features (e.g CNS_V3000_SERVER_PLT_Retail.lic, and CNS_WEBF_SSERVER_Retail.lic)
+    >**Note**: The licenses you bring must support the features highlighted in the steps 11 and 13 under Configure Basic Features and Configure Advanced Features (e.g CNS_V3000_SERVER_PLT_Retail.lic, and CNS_WEBF_SSERVER_Retail.lic)
 
     ![Manage licenses](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_14.png)
 
@@ -208,21 +208,25 @@ Set up the ADC as a proxy to route the traffic from the client browser to the In
 
 1.  To add TCP profile:
 
-        `add ns tcpProfile proxy-tcpprofile01 -dynamicReceiveBuffering ENABLED -KA ENABLED -mptcp ENABLED -mptcpDropDataOnPreEstSF ENABLED -mptcpSessionTimeout 360 -builtin MODIFIABLE`
+    ```
+    add ns tcpProfile proxy-tcpprofile01 -dynamicReceiveBuffering ENABLED -KA ENABLED -mptcp ENABLED -mptcpDropDataOnPreEstSF ENABLED -mptcpSessionTimeout 360 -builtin MODIFIABLE
+    ```
 
 1.  To add virtual server
 
-        `add cs vserver sslproxy01 PROXY 10.1.0.5 8080 -cltTimeout 360 -tcpProfileName proxy-tcpprofile01 -persistenceType NONE`
+    ```
+    add cs vserver sslproxy01 PROXY 10.1.0.5 8080 -cltTimeout 360 -tcpProfileName proxy-tcpprofile01 -persistenceType NONE
 
-        `bind cs vserver sslproxy01 -lbvserver azurelbdnsvserver`
+    bind cs vserver sslproxy01 -lbvserver azurelbdnsvserver
 
-        `add netProfile proxy-netprofile01 -srcIP 10.1.0.5 -srcippersistency ENABLED -MBF ENABLED -proxyProtocol ENABLED -proxyProtocoltxversion V2`
+    add netProfile proxy-netprofile01 -srcIP 10.1.0.5 -srcippersistency ENABLED -MBF ENABLED -proxyProtocol ENABLED -proxyProtocoltxversion V2
 
-        `set cs vserver sslproxy01 -netProfile proxy-netprofile01`
+    set cs vserver sslproxy01 -netProfile proxy-netprofile01
 
-        `set ssl vserver sslproxy01 -sslProfile ns_default_ssl_profile_frontend`
+    set ssl vserver sslproxy01 -sslProfile ns_default_ssl_profile_frontend
 
-        `save ns config`
+    save ns config
+    ```
 
 1.  To change the **Cache settings** go back to management session on browser
 
@@ -319,7 +323,8 @@ References:
 1.  Give the policy a name and select the INTERCEPT action
 
 1.  Expression to intercept news:
-`client.ssl.detected_domain.url_categorize(0,0).category.eq("News")`
+
+    `client.ssl.detected_domain.url_categorize(0,0).category.eq("News")`
 
 1.  Click Create
 
@@ -386,7 +391,7 @@ References:
 
     ![Step 5.8](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_43.png)
 
-Note: This policy is created to bypass the ADC interception for traffic going to secure browser `launch.cloud.com`
+    >**Note**: This policy is created to bypass the ADC interception for traffic going to secure browser `launch.cloud.com`
 
 #### Create SSL Profile
 
@@ -418,7 +423,7 @@ Note: This policy is created to bypass the ADC interception for traffic going to
 
 1.  From PowerShell, run the command:
 
-        `openssl pkcs12 -export -out smesec_cert1.pfx -inkey smesec.key1.key -in smesec.cert1.cert`
+    `openssl pkcs12 -export -out smesec_cert1.pfx -inkey smesec.key1.key -in smesec.cert1.cert`
 
     ![PowerShell screenshot](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_48.png)
 
@@ -481,9 +486,9 @@ A rewrite policy consists of a rule and action. The rule determines the traffic 
 
 1.  Run the following command:
 
-        `add rewrite action cloud_act REPLACE_HTTP_RES q{"HTTP/1.1 302 Found" + "\r\n" + "Location: https://launch.cloud.com/<customername>/<appname>?url=https://" + HTTP.REQ.HOSTNAME.APPEND(HTTP.REQ.URL.PATH) + "\r\n\r\n\" "}`
+    `add rewrite action cloud_act REPLACE_HTTP_RES q{"HTTP/1.1 302 Found" + "\r\n" + "Location: https://launch.cloud.com/<customername>/<appname>?url=https://" + HTTP.REQ.HOSTNAME.APPEND(HTTP.REQ.URL.PATH) + "\r\n\r\n\" "}`
 
-Note:
+**Note**:
 In the command replace `<customername>` with your Citrix Cloud customer account name and replace `<appname>` with the Secure Browser published app name for which the URL parameters policy is enabled. Referring to the published app you created in Section 1.
 
 #### Bind rewrite policy to virtual server
