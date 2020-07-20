@@ -52,7 +52,7 @@ This code is not limited to migration: it’s the future for creating configurat
 ### This proof of concept guide demonstrates how to
 
 1.  Complete the On-Premises pre-requisites
-2.  Export your On-Premises site configuration into YAML files
+2.  Export your On-Premises site configuration into YAML (*.yml*) files
 3.  Complete the cloud pre-requisites
 4.  Complete the requisites for importing site configuration when using different provisioning methods (PVS and MCS)
 5.  Import your Site Configuration into Cloud (by editing the required files)
@@ -62,7 +62,7 @@ This code is not limited to migration: it’s the future for creating configurat
 
 These steps must be run in your DDC or domain-joined machine where you wish to install the Auto Config tool.
 
-1.  Download the Auto Config tool to your On-Premises DDC or a domain-joined machine. **Note:** See the [Pre-requisites section](#pre-requisites) for more details on how to run it from a different machine.
+1.  Download the [Auto Config tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) to your On-Premises DDC or a domain-joined machine. **Note:** See the [Pre-requisites section](#pre-requisites) for more details on how to run it from a different machine.
 
 2.  Run the **MSI** on your On-Premises DDC, by right clicking on the **AutoConfig_PowerShell_x64.msi** installer and clicking on **Install**.
 
@@ -230,7 +230,7 @@ Note: For PVS and MCS, first follow the corresponding subsections under the [Imp
 
 Administrators must edit the ```CustomerInfo.yml``` file and add the corresponding **CustomerName**, **CustomerID** and **SecretKey** values to it. These values can be obtained and generated from the **Cloud portal**, as shown below.
 
-1.  First, open your ```CustomerInfo.yml``` file using a text editor application, such as Notepad. The following screenshot shows the CustomerInfo.yml file values that will need to be edited (underlined in red):
+1.  First, open your ```CustomerInfo.yml``` file using a text editor application, such as Notepad. The following screenshot shows the ```CustomerInfo.yml``` file values that will need to be edited (underlined in red):
 
 [![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-importing-connection-details-001.png)
 
@@ -296,7 +296,7 @@ When mapping **Zones** to different **Resource locations**, the file must look l
 
 [![Merging Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_merging-config-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_merging-config-001.png)
 
-2.  As tasks execute successfully, the output will look green as .yml files are imported and the corresponding components are added to the cloud site:
+2.  As tasks execute successfully, the output will look green as *.yml* files are imported and the corresponding components are added to the cloud site:
 
 [![Merging Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_merging-config-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_merging-config-002.png)
 
