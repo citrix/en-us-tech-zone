@@ -228,12 +228,6 @@ To validate the POC login from the Workspace client by performing the following 
 
 ## Summary
 
-Citrix Virtual Apps and Desktops has been a resillient  technology for decades. By integrating AAD as the IDP and Citrix ADC as the Service Provider Enterprise can have even more reliable service by incorporating cloud hosted Identity.
+Citrix Virtual Apps and Desktops has been a resillient  technology for decades. Incorporating cloud hosted Identity offers enterprises even more reliable service. Implementing the POC described in this guide demonstrates how to achieve that by integrating AAD as the IDP and Citrix ADC as the Service Provider Enterprises.
 
-To learn more about  or Citrix ADC pricing and packing visit the Citrix web site and to learn more about its technical capabilities visit Citrix Tech Zone.
-
-## References
-
-For more information refer to:
-
-[Federated Authentication Service](/en-us/tech-zone/learn/tech-insights/federated-authentication-service.html) – Learn how the federated authentication service, integrated with Citrix Workspace, utilizes virtual smartcards to provide single sign-on to Windows-based resources
+To learn more about  or Citrix pricing and packing visit the Citrix web site [Citrix.com](https://www.citrix.com/products/) and to learn more about its technical capabilities visit [Citrix TechZone](/en-us/tech-zone).
