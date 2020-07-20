@@ -73,7 +73,7 @@ Just as buildings have blueprints that include details about their structure and
 
 ## Security
 
-[Architectural Considerations for the General Data Protection Regulation (GDPR)](/en-us/tech-zone/design/reference-architectures/gdpr.html) - Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.
+[Architectural Considerations for the General Data Protection Regulation - GDPR](/en-us/tech-zone/design/reference-architectures/gdpr.html) - Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.
 
 ## Third Party Content
 
