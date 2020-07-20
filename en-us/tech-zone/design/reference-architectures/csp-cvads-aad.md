@@ -18,13 +18,15 @@ Azure ADDS can be deployed as a [user forest](https://docs.microsoft.com/en-us/a
 
 This deployment scenario implies the following considerations:
 
-| Considerations   |      Details      |
-|----------|-------------|
-| Azure AD | Shared Azure AD tenant for all customers  |
-| Azure ADDS | Shared Azure ADDS instance for all customers  |
-| Subscriptions |  Shared Azure subscription for smaller customers
-| | Dedicated Azure subscriptions for larger customers |
-| Network Connectivity | VNET Peering from dedicated subscriptions to the shared subscription for Azure ADDS connectivity  |
+*  **Azure AD**:
+    *  Shared Azure AD tenant for all customers
+*  **Azure ADDS**:
+    *  Shared Azure ADDS instance for all customers
+*  **Subscriptions**:
+    *  Shared Azure subscription for smaller customers
+    *  Dedicated Azure subscriptions for larger customers
+*  **Network Connectivity**:
+    *  VNET Peering from dedicated subscriptions to the shared subscription for Azure ADDS connectivity
 
 [![CSP-Image-001](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_001.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_001.png)
 
@@ -32,14 +34,16 @@ This deployment scenario implies the following considerations:
 
 This deployment scenario implies the following considerations:
 
-| Considerations   |      Details      |
-|----------|-------------|
-| Azure AD | Shared Azure AD tenant for smaller customers  |
-| | Dedicated Azure AD tenant for larger customers  |
-| Azure ADDS | Shared Azure ADDS instance for all customers |
-| Subscriptions |  Shared Azure subscription for smaller customers
-| | Dedicated Azure subscriptions for larger customers |
-| Network Connectivity | VNET Peering from dedicated subscriptions to the shared subscription for Azure ADDS connectivity  |
+*  **Azure AD**:
+    *  Shared Azure AD tenant for all customers
+    *  Dedicated Azure AD tenant for larger customers
+*  **Azure ADDS**:
+    *  Shared Azure ADDS instance for all customers
+*  **Subscriptions**:
+    *  Shared Azure subscription for smaller customers
+    *  Dedicated Azure subscriptions for larger customers
+*  **Network Connectivity**:
+    *  VNET Peering from dedicated subscriptions to the shared subscription for Azure ADDS connectivity
 
 [![CSP-Image-002](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_002.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_002.png)
 
@@ -47,18 +51,23 @@ This deployment scenario implies the following considerations:
 
 This deployment scenario implies the following considerations:
 
-| Considerations   |      Details      |
-|----------|-------------|
-| Azure AD | Shared Azure AD tenant for smaller customers  |
-| | Dedicated Azure AD tenant for larger customers  |
-| Azure ADDS | Shared Azure ADDS instance for all customers |
-| Subscriptions |  Shared Azure subscription for smaller customers
-| | Dedicated Azure subscriptions for larger customers |
-| Network Connectivity | No VNET peering from dedicated subscriptions to shared subscription |
+*  **Azure AD**:
+    *  Shared Azure AD tenant for all customers
+    *  Dedicated Azure AD tenant for larger customers
+*  **Azure ADDS**:
+    *  Shared Azure ADDS instance for small customers
+    *  Dedicated Azure ADDS instance for larger customers
+*  **Subscriptions**:
+    *  Shared Azure subscription for smaller customers
+    *  Dedicated Azure subscriptions for larger customers
+*  **Network Connectivity**:
+    *  No VNET peering from dedicated subscriptions to shared subscription
 
 [![CSP-Image-003](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_003.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_003.png)
 
 ## Azure Resource Hierarchy
+
+When designing and organizing your Azure subscription resources, take the following resource hierarchy in consideration:
 
 [![CSP-Image-004](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_004.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_004.png)
 
