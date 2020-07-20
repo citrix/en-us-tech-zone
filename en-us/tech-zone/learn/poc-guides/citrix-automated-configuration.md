@@ -40,7 +40,7 @@ This code is not limited to migration: it’s the future for creating configurat
 
 *  CVAD On-Premises environment with at least one registered VDA.
 *  CVAD On-Premises environment is running on one of the following versions: Any **Long Term Service Release (LTSR)** versions with their latest CU (7.6, 7.15, 1912); Or one of the corresponding latest two **Current Releases (CR)** versions (for example: 2003, 2006).
-*  The domain-joined machine where the CAC tool will be installed is running .NET 4.7.2 version or higher.
+*  The domain-joined machine where the Citrix Auto Config tool will be installed is running .NET 4.7.2 version or higher.
 *  A machine with the Citrix PowerShell SDK, which is automatically installed on the DDC. **Note:** if running on a different machine, it needs to be domain-joined and Studio must have the correct PowerShell snap-ins installed. This installer can be found on your corresponding version’s Product ISO installation media, which can be obtained from the [Citrix Downloads > Citrix Virtual Apps and Desktops](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/) website.
 
 ### Cloud-related components
