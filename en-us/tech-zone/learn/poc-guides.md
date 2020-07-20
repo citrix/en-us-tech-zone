@@ -9,7 +9,7 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 [Secure Access to Internal Web Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Access Control, utilizing Citrix-provided SSO.
 
-[Secure Access to Office 365 with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html) - Learn how to set up a Citrix Access Control environment that provides single sign-on and enhanced security to Office 365.
+[Secure Access to Office 365 with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html) - Learn how to set up a Citrix Access Control environment that provides single sign-on and enhanced security to Microsoft 365 (Office 365).
 
 [Secure Access to SaaS Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to set up a Citrix Access Control environment that uses Citrix as the single sign-on provider for SaaS applications.
 
