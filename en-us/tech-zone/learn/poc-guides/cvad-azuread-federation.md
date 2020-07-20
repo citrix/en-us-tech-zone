@@ -87,7 +87,8 @@ For this POC we assume you have a Certificate Authority, including Web Enrollmen
     *  Under SAML Signing Certificate - download Certificate (base64)
     *  Under Setup Citrix FAS - Login & Logout URL
 ![AAD settings](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-AADcapturesettings.png)
-1.  Select Users and groups > Add user and select existing users or groups that will have access to Citrix Virtual Apps and Desktops using their AAD UPN ![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-AADUsersandGroups.png)
+1.  Select Users and groups > Add user and select existing users or groups that will have access to Citrix Virtual Apps and Desktops using their AAD UPN
+![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-AADUsersandGroups.png)
 
 ## Citrix ADC Config
 
