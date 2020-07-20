@@ -12,7 +12,7 @@ description: Learn how to set up a Citrix Access Control environment that provid
 
 ## Overview
 
-As users access confidential content within Microsoft 365 (Office 365), organizations must be able to simplify user login operations while still enforcing authentication standards. Organizations must be able to secure Microsoft 365 even though it exist beyond the confines of the data center. Citrix Workspace provides organizations with enhanced security controls for Microsoft 365.
+As users access confidential content within Microsoft 365 (Office 365), organizations must be able to simplify user login operations while still enforcing authentication standards. Organizations must be able to secure Microsoft 365 even though it exists beyond the confines of the data center. Citrix Workspace provides organizations with enhanced security controls for Microsoft 365.
 
 In this scenario, a user authenticates to Citrix Workspace using either Active Directory as the primary user directory.
 
@@ -20,7 +20,7 @@ In this scenario, a user authenticates to Citrix Workspace using either Active D
 
  If the Citrix Access Control Service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the Microsoft 365 applications.
 
-The following animation shows a user accessing Microsoft 365 with  SSO and secured with Citrix Access Control.
+The following animation shows a user accessing Microsoft 365 with SSO and secured with Citrix Access Control.
 
  [![Okta SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_demo-video.gif)
 
@@ -51,7 +51,7 @@ The initial steps for setting up the environment is to get Citrix Workspace prep
 
 ### Enable Services
 
-From the Service Integration tab, enable the following services to support the secure access to SaaS apps use case
+From the **Service Integration** tab, enable the following services to support the secure access to SaaS apps use case
 
 1.  Gateway
 2.  Secure Browser
@@ -60,7 +60,7 @@ From the Service Integration tab, enable the following services to support the s
 
 ### Verify
 
-Citrix Workspace takes a few moments to update services and URL settings. From a browser, verify the custom Workspace URL is active. However, logon is not be available until a primary user directory gets defined and configured.
+Citrix Workspace takes a few moments to update services and URL settings. From a browser, verify the custom Workspace URL is active. However, logon will not be available until a primary user directory gets defined and configured.
 
 ## Integrate a Primary User Directory
 
@@ -86,7 +86,7 @@ To successfully federate Microsoft 365 with Citrix Workspace, the administrator 
 
 ### Configure SaaS App
 
-With the domain verified within Azure, an Microsoft 365 SaaS app can get configured within Citrix Workspace.
+With the domain verified within Azure, a Microsoft 365 SaaS app can get configured within Citrix Workspace.
 
 *  Within Citrix Cloud, select **Manage** from the Gateway tile.
 
@@ -137,7 +137,7 @@ With the domain verified within Azure, an Microsoft 365 SaaS app can get configu
 
 ### Verify Authentication Domain
 
-To federate authentication to Citrix Workspace, Azure must verify the fully qualified domain name.  Within the Azure Portal, do the following:
+To federate authentication to Citrix Workspace, Azure must verify the fully qualified domain name. Within the Azure Portal, do the following:
 
 *  Access Azure Active Directory
 *  Select **Custom domain names** in the navigation window
@@ -245,7 +245,7 @@ SP-Initiated Validation
 
 ## Define website filtering policies
 
-Citrix Access Control service provides website filtering within SaaS and Web apps to help protect the user from phishing attacks. The following shows how to setup website filtering policies.
+Citrix Access Control service provides website filtering within SaaS and Web apps to help protect the user from phishing attacks. The following shows how to set up website filtering policies.
 
 *  From Citrix Cloud, **Manage** within the Access Control tile
 
@@ -265,7 +265,7 @@ Citrix Access Control service provides website filtering within SaaS and Web app
 
 *  Do the same for allowed categories
 *  Do the same for redirected categories. These categories redirect to a Secure Browser instance
-*  If needed, admins can filter denied, allowed and redirected actions for specific URLs following the same process that was used for defining categories. Website URLs takes precedence over categories.
+*  If needed, admins can filter denied, allowed, and redirected actions for specific URLs following the same process that was used for defining categories. Website URLs take precedence over categories.
 
 ## Validate the Configuration
 
@@ -275,8 +275,8 @@ IdP-Initiated Validation
 *  Select Microsoft 365. If enhanced security is disabled, the app launches within the local browser, otherwise the embedded browser is used
 *  The user automatically signs on to the app
 *  The appropriate enhanced security policies are applied
-*  If configured, select a URL within the SaaS app that is in the blocked, allowed and redirected categories
-*  If configured, select a URL within the SaaS app that is in the blocked, allowed and redirected URLs
+*  If configured, select a URL within the SaaS app that is in the blocked, allowed, and redirected categories
+*  If configured, select a URL within the SaaS app that is in the blocked, allowed, and redirected URLs
 *  The SaaS App successfully launches
 
 SP-Initiated Validation
@@ -289,7 +289,7 @@ SP-Initiated Validation
 
 ## Microsoft 365 Related Domains
 
-When creating a new app within Citrix Workspace, a related domain field is available.  The enhanced security policies utilize these related domains to determine when to enforce the policy.
+When creating a new app within Citrix Workspace, a related domain field is available. The enhanced security policies utilize these related domains to determine when to enforce the policy.
 
 The following list are the current domains associated with Microsoft 365.
 
@@ -322,10 +322,10 @@ The following list are the current domains associated with Microsoft 365.
 
 ## Microsoft 365 Apps
 
-If it is preferrable to launch a specific Microsoft 365 app (Word, PowerPoint, or Excel) instead of the Microsoft 365 portal, the administrator needs to create a separate application instance within Citrix Cloud for each app. Each app has a unique URL, which must include the correct value for federated domain, which was configured in this guide. The federated domain entry informs Azure to redirect to the correct federated domain configuration.
+If it is preferable to launch a specific Microsoft 365 app (Word, PowerPoint, or Excel) instead of the Microsoft 365 portal, the administrator needs to create a separate application instance within Citrix Cloud for each app. Each app has a unique URL, which must include the correct value for federated domain, which was configured in this guide. The federated domain entry informs Azure to redirect to the correct federated domain configuration.
 
 *  Word: `https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2Foffice.live.com%2Fstart%2FWord.aspx%3Fauth%3D2&whr=`**federated domain**
-*  Powerpoint: `https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2Fwww.office.com%2Flaunch%2Fpowerpoint%3Fauth%3D2&whr=`**federated domain**
+*  PowerPoint: `https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2Fwww.office.com%2Flaunch%2Fpowerpoint%3Fauth%3D2&whr=`**federated domain**
 *  Excel: `https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2Foffice.live.com%2Fstart%2FExcel.aspx%3Fauth%3D2&whr=`**federated domain**
 *  CRM/Dynamics Online: `https://<tenant>.crm.dynamics.com/?whr=`**federated domain**
 *  OneDrive for Business: `https://login.microsoftonline.com/login.srf?wa=wsignin1%2E0&rver=6%2E1%2E6206%2E0&wreply=https%3A%2F%2F<tenant>-my.sharepoint.com%2F&whr=`**federated domain**
@@ -343,7 +343,7 @@ If it is preferrable to launch a specific Microsoft 365 app (Word, PowerPoint, o
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-02.png)
 
 *  Select **Next**
-*  In the **App details** screen, use the application-specifi URL from above and place it in the **URL** field.
+*  In the **App details** screen, use the application-specific URL from above and place it in the **URL** field.
 *  Change the **Name**, **Icon**, and **Description** as needed while leaving all remaining entries unchanged.
 
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-individual-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-individual-saas-app-03.png)
@@ -401,14 +401,14 @@ During validation, a user might receive the following error:
 
 [![Federation Realm Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_troubleshooting-federation-realm-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_troubleshooting-federation-realm-01.png)
 
-This is often caused by the domain not being verified or properly federated.  Please review the following sections of the PoC guide:
+This is often caused by the domain not being verified or properly federated. Review the following sections of the PoC guide:
 
 *  [Verify Authentication Domain](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#verify-authentication-domain)
 *  [Configure Domain Federation](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html#configure-domain-federation)
 
 ### Enhanced Security Policies Failing
 
-Users might experience the enhanced security policies (watermark, printing, or cliboard access) fail. Typically, this happens because the SaaS application uses multiple domain names. Within the application configuration settings for the SaaS app, there was an entry for **Related Domains**.
+Users might experience the enhanced security policies (watermark, printing, or clipboard access) fail. Typically, this happens because the SaaS application uses multiple domain names. Within the application configuration settings for the SaaS app, there was an entry for **Related Domains**.
 
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_add-saas-app-03.png)
 
@@ -420,6 +420,6 @@ If the enhanced security policies fail to function within certain sections of th
 *  In Google Chrome and Microsoft Edge (Chromium version), select the three dots in the upper right side of the browser to show a menu screen.
 *  Select **More Tools**.
 *  Select **Developer Tools**
-*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains are added like the following `*.domain.com`
+*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. To enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains are added like the following `*.domain.com`
 
 [![Enhanced Security Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_enhanced-security-troubleshooting-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_enhanced-security-troubleshooting-01.png)
