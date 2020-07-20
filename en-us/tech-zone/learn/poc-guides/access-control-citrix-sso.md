@@ -1,6 +1,7 @@
 ---
 layout: doc
-description: Learn how to set up a Citrix Access Control environment that uses Citrix as the single sign-on provider for Office 365 SaaS applications.
+description: Learn how to set up a Citrix Access Control environment that uses Citrix as the single sign-on provider for SaaS applications.
+
 ---
 # Proof of Concept: Secure Access to SaaS Applications with Citrix Access Control
 
@@ -24,15 +25,11 @@ The following animation shows a user accessing a SaaS application with Citrix pr
 
 This demonstration shows an IdP-initiated SSO flow where the user launches the application from within Citrix Workspace. This PoC guide also supports a SP-initiated SSO flow where the user tries to access the SaaS app directly from their preferred browser.
 
- Assumptions:
-
-*  Citrix Workspaces is already configured with the user’s primary identity directory.
-
 This proof of concept guide demonstrates how to:
 
 1.  Setup Citrix Workspace
 2.  Integrate a primary user directory
-3.  Incorporate Single Sign-On for Office 365
+3.  Incorporate Single Sign-On for SaaS applications
 4.  Define website filtering policies
 5.  Validate the configuration
 
@@ -85,24 +82,39 @@ To successfully integrate SaaS apps with Citrix Workspace, the administrator nee
 
 ### Configure SaaS App
 
-*  Within Citrix cloud, select **Manage** from the Gateway tile.
+*  Within Citrix Cloud, select **Manage** from the Gateway tile.
 
 [![Setup SaaS App 01](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-01.png)
 
 *  Select **Add a Web/SaaS app**
-*  In the Choose a template wizard, search and select **Office 365**
-*  In the App details window, select the link for [Application configuration instructions](/en-us/citrix-gateway-service/app-server-specific-configuration.html). This link provides detailed instructions on how to setup SSO for SaaS applications. Within this list, find the item for [Office 365](/en-us/citrix-gateway-service/saas-apps-templates/citrix-gateway-o365-saas.html) and follow the steps.
-
-***Note**: The provided URL for the Office 365 template corresponds to the Office 365 portal. If the user's prefer unique links for each Office 365 application, the admin must create a separate application with the app-specific URL. The app-specific URL is avaialble in the Office 365 application configuration instructions identitied in the previous step.*
+*  In the Choose a template wizard, search and correct template, which in this instance is **Humanity**
+*  In the App details window, type in the organization's unique domain name for the SaaS application. The URL and Related Domains will automatically populate.
 
 ***Note**: Enhanced security policies uses the related domains field to determine the URLs to secure. One related domain is automatically added based on the URL in the previous step. Enhanced security policies require related domains for the application. If the application uses multiple domain names, the must be added into the related domains field, which is often `*.<companyID>.SaaSApp.com` (as an example `*.citrix.slack.com`)*
 
 [![Setup SaaS App 02](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-02.png)
 
 *  In the **Enhanced Security** window, select the appropriate security policies for the environment
-*  In the **Single Sign-On** window, select **Download** to capture the CRT-based certificate.
-*  Continue following the [Office 365](/en-us/citrix-gateway-service/saas-apps-templates/citrix-gateway-o365-saas.html)) configuration instructions from the previous step.
-*  Select **Save**
+*  In the **Single Sign-On** window, copy the **Login URL**.
+*  Select the link for **SAML Metadata** to identify the SAML settings needed for the SaaS application.
+
+[![Setup SaaS App 03](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-03.png)
+
+*  Within the SAML Metadata file, copy the X509 Certificate, represented as an alphanumeric string.
+
+[![Setup SaaS App 04](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-04.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-04.png)
+
+*  Within the Humanity SaaS app, use the gear icon in the upper right-hand corner to bring up settings. Select **Single Sign-On**
+
+[![Setup SaaS App 05](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-05.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-05.png)
+
+*  For the SAML Issuer URL, use the **Login URL** obtained from the Citrix Workspace configuration.
+*  Past the x.509 Certificate string from the Citrix metadata file into the Humanity SaaS app.
+
+[![Setup SaaS App 06](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-06.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_add-saas-app-06.png)
+
+*  Save the settings in Humanity.
+*  Within Citrix Workspace, select **Save**
 *  Select **Finish**
 
 ### Authorize SaaS App
@@ -174,8 +186,6 @@ SP-Initiated Validation
 *  The browser directs the browser to Citrix Workspace for authentication
 *  Once the user authenticates with the primary user directory, the SaaS app launches in the local browser if enhanced security is disabled. If enhanced security is enabled, a Secure Browser instance launches the SaaS app
 
-***Note**: If Azure Active Directory is the primary user directory for Citrix Workspace, an SP-initiated launch will not function correctly with Office 365.  Office 365 apps must be launched from within Citrix Workspace (IdP-Initiated).*
-
 ## Troubleshooting
 
 ### Enhanced Security Policies Failing
@@ -190,6 +200,6 @@ The enhanced security policies are applied onto to those related domains. To ide
 *  In Google Chrome and Microsoft Edge (Chromium version), select the three dots in the upper right side of the browser to show a menu screen.
 *  Select **More Tools**.
 *  Select **Developer Tools**
-*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains should be added like the following `*.domain.com`
+*  Within the developer tools, select **Sources**. This provides a list of access domain names for that section of the application. In order to enable the enhanced security policies for this portion of the app, those domain names must be entered into the **related domains** field within the app configuration. Related domains are added like the following `*.domain.com`
 
 [![Enhanced Security Troubleshooting 01](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_enhanced-security-troubleshooting-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-citrix-sso_enhanced-security-troubleshooting-01.png)
