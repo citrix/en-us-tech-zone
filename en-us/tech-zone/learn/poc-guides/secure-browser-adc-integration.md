@@ -56,7 +56,9 @@ This proof-of-concept guide describes the following:
 
     ![Request a Call form](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_5.png)
 
-    >**Note**: Citrix Sales will contact you to give you access to the service. This is not immediate, a Citrix sales rep will reach out
+    >**Note:**
+    >
+    >Citrix Sales will contact you to give you access to the service. This is not immediate, a Citrix sales rep will reach out
 
 1.  Once you have the Secure Browser trial approved, refer to the **Publish a Secure Browser** [section of the Citrix Doc](/en-us/citrix-cloud/secure-browser-service.html) to publish a Secure Browser app.
 
@@ -124,7 +126,9 @@ The ADC can be set up in any cloud of choice. In this example Azure is our Cloud
 
     ![Networking rules](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_12.png)
 
-    >**Note**: You may choose to close the ports 22 and 443 after the configuration is done, as those ports are only needed for logging into management console for configuration purposes.
+    >**Note:**
+    >
+    >You may choose to close the ports 22 and 443 after the configuration is done, as those ports are only needed for logging into management console for configuration purposes.
 
 1.  At this point **the ADC instance in Azure is set up**
 
@@ -136,7 +140,9 @@ Set up the ADC as a proxy to route the traffic from the client browser to the In
 
 1.  Navigate to the Citrix ADC management console by inputting the instance's public IP address in the search bar of your browser  
 
-    >**Note**: Use the IP address of the machine you provisioned in the previous steps, in this example `https://40.88.150.164/`
+    >**Note:**
+    >
+    >Use the IP address of the machine you provisioned in the previous steps, in this example `https://40.88.150.164/`
 
 1.  Log in to the console by inputting the user name and password you set up in the previous steps
 
@@ -150,7 +156,9 @@ Set up the ADC as a proxy to route the traffic from the client browser to the In
 
 1.  Upload the necessary licenses for ADC.
 
-    >**Note**: The licenses you bring must support the features highlighted in the steps 11 and 13 under Configure Basic Features and Configure Advanced Features (e.g CNS_V3000_SERVER_PLT_Retail.lic, and CNS_WEBF_SSERVER_Retail.lic)
+    >**Note:**
+    >
+    >The licenses you bring must support the features highlighted in the steps 11 and 13 under Configure Basic Features and Configure Advanced Features (e.g CNS_V3000_SERVER_PLT_Retail.lic, and CNS_WEBF_SSERVER_Retail.lic)
 
     ![Manage licenses](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_14.png)
 
@@ -391,7 +399,9 @@ References:
 
     ![Step 5.8](/en-us/tech-zone/learn/media/poc-guides_secure-browser-adc-integration_43.png)
 
-    >**Note**: This policy is created to bypass the ADC interception for traffic going to secure browser `launch.cloud.com`
+    >**Note:**
+    >
+    >This policy is created to bypass the ADC interception for traffic going to secure browser `launch.cloud.com`
 
 #### Create SSL Profile
 
@@ -488,8 +498,9 @@ A rewrite policy consists of a rule and action. The rule determines the traffic 
 
     `add rewrite action cloud_act REPLACE_HTTP_RES q{"HTTP/1.1 302 Found" + "\r\n" + "Location: https://launch.cloud.com/<customername>/<appname>?url=https://" + HTTP.REQ.HOSTNAME.APPEND(HTTP.REQ.URL.PATH) + "\r\n\r\n\" "}`
 
-**Note**:
-In the command replace `<customername>` with your Citrix Cloud customer account name and replace `<appname>` with the Secure Browser published app name for which the URL parameters policy is enabled. Referring to the published app you created in Section 1.
+    >**Note:**
+    >
+    >In the command replace `<customername>` with your Citrix Cloud customer account name and replace `<appname>` with the Secure Browser published app name for which the URL parameters policy is enabled. Referring to the published app you created in Section 1.
 
 #### Bind rewrite policy to virtual server
 
