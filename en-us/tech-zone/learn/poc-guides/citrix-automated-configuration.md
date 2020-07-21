@@ -51,20 +51,20 @@ Note that this code is not limited to migrations: it is the future for creating 
 
 ### This proof of concept guide demonstrates how to
 
-1.  Complete the On-Premises pre-requisites
-2.  Export your On-Premises site configuration into YAML (*.yml*) files
-3.  Complete the cloud pre-requisites
-4.  Complete the requisites for importing site configuration when using different provisioning methods (PVS and MCS)
-5.  Import your Site Configuration into Cloud (by editing the required files)
-6.  Troubleshooting tips and where to find more information
+1.  [Complete the On-Premises pre-requisites](#complete-prerequisites-for-exporting-from-on-premises-site)
+2. [Export your On-Premises site configuration into YAML (*.yml*) files](#export-your-on-premises-site-configuration)
+3. [Complete the cloud pre-requisites](#complete-prerequisites-in-cloud)
+4. [Complete the requisites for importing site configuration when using different provisioning methods (PVS and MCS)](#dealing-with-provisioning-services-pvs-machine-catalogs-delivery-and-application-groups-and-policies)
+5. [Import your Site Configuration into Cloud (by editing the required files)](#import-your-site-configuration-into-cloud)
+6. [Troubleshooting tips and where to find more information](#troubleshooting-tips)
 
 ### Complete Prerequisites for Exporting from on-premises site
 
 These steps must be run in your DDC or the domain-joined machine where you wish to install the **Auto Config** tool.
 
-1.  Download the [Auto Config tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) to your On-Premises DDC or a domain-joined machine. **Note:** See the [Pre-requisites section](#pre-requisites) for more details on how to run it from a different machine.
+1.  Download the [Auto Config tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) to your **On-Premises DDC** or a domain-joined machine. **Note:** See the [Pre-requisites section](#pre-requisites) for more details on how to run it from a different machine.
 
-2.  Run the **MSI** on your On-Premises DDC, by right clicking on the **AutoConfig_PowerShell_x64.msi** installer and clicking on **Install**.
+2.  Run the **MSI** on your **On-Premises DDC**, by right clicking on the **AutoConfig_PowerShell_x64.msi** installer and clicking on **Install**.
 
 [![On Prem Pre-Requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-001.png)
 
@@ -110,7 +110,7 @@ Using an ```export``` PowerShell command, you can export your existing On-Premis
 
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-005.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-005.png)
 
-*  **Note:** If necessary, copy the *.yml* files to the machine you will use to import settings to the Cloud environment. Export and import can be done from the same machine.
+*  **Note:** If necessary, copy the *.yml* files to the machine you will use to import settings to the Cloud environment. Exporting and importing can be done from the same machine.
 
 ## Complete Prerequisites in Cloud
 
@@ -154,17 +154,21 @@ Additional steps are required in order to import your **PVS Catalogs** and their
 
 [![Provisioning Method PVS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-002.png)
 
-1.  Access the ```C:\Users\<username>\Documents\Citrix\AutoConfig``` folder and open up the ```CvadAcSecurity.yml``` file, which you will need to edit for PVS to work. **Note:** The **UserName** and **Password** fields refer to your **PVS Site Server** credentials. Be sure to specify your logon as ```DOMAIN\Username```, add the password and save the file when ready.
+3.  Access the ```C:\Users\<username>\Documents\Citrix\AutoConfig``` folder and open up the ```CvadAcSecurity.yml``` file, which you will need to edit for PVS to work. **Note:** The **UserName** and **Password** fields refer to your **PVS Site Server** credentials. Be sure to specify your logon as ```DOMAIN\Username```, add the password and save the file when ready.
 
 [![Provisioning Method PVS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-003.png)
 
-4.  After this, please follow the steps mentioned on the [Import your Site Configuration into Cloud section](#import-your-site-configuration-into-cloud) in this guide.
+1.  After this, please follow the steps mentioned on the [Import your Site Configuration into Cloud](#import-your-site-configuration-into-cloud) section in this guide.
 
 ### Dealing with Machine Creation Services (MCS) Machine Catalogs, Delivery and Application Groups and Policies
 
-Currently, this tool does not support importing MCS machine catalogs or their corresponding delivery groups in an automated way. However, you can still import other configuration such as Applications and policies automatically using this tool. You will need to ensure you create the **machine catalog** and **delivery group** using the same name as the On-Premises setup one. Please follow the steps below in order to prepare your environment, before proceeding to import the **Application** settings:
+Currently, this tool does not support importing MCS machine catalogs or their corresponding delivery groups in an automated way. However, you can still import other configuration such as Applications and policies automatically using this tool.
 
-1.  In your [Cloud portal](https://citrix.cloud.com), click on the Hamburger menu > **My Services > Virtual Apps and Desktops Service > Manage** tab, in order to create your **MCS machine Catalog** as you normally would (by selecting the desired OS Type, Master Image, Storage, Licensing, Network and Account settings). If needed, please refer to [this guide](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/cvads.html) for infomrmation on how to set up your catalogs. **Important Note:** Be sure to name your catalog **exactly** the **same way** your existing On-Premises catalog is named.
+You will need to ensure you create the **machine catalog** and **delivery group** using the same name as the On-Premises setup one. Please follow the steps below in order to prepare your environment, before proceeding to import the **Application** settings:
+
+1.  In your [Cloud portal](https://citrix.cloud.com), click on the Hamburger menu > **My Services > Virtual Apps and Desktops Service > Manage** tab, in order to create your **MCS machine Catalog** as you normally would (by selecting the desired OS Type, Master Image, Storage, Licensing, Network and Account settings).**Important Note:** Be sure to name your catalog **exactly** the **same way** your existing On-Premises catalog is named.
+
+*  **Note:** If needed, please refer to [this guide](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/cvads.html) for infomrmation on how to set up your catalogs.
 
 2.  Still in **Cloud Studio**, create the corresponding **Delivery Group** for the new Catalog and ensure you name it exactly after the corresponding **On-Premises Delivery Group** as well. **Note:** For additional details on how to create your **Machine Catalogs** and **Delivery Groups**, please refer to [this guide](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/cvads.html).
 
@@ -202,7 +206,7 @@ Currently, this tool does not support importing MCS machine catalogs or their co
 
 ### Importing MCS-related Policies
 
-Once you’ve performed the actions above, if you need to import policies associated with your MCS Catalogs/groups, follow these instructions:
+Once you’ve performed the actions above, if you need to import policies associated with your **MCS Machine Catalogs** and your **Delivery groups**, follow these instructions:
 
 1.  Run the ```Merge-CvadAcToSite -GroupPolicies $true``` command in the **PowerShell console** and type ```yes``` to continue, as shown in the screenshot below, and then hit **Return (Enter)**:
 
