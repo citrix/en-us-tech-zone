@@ -2,7 +2,7 @@
 layout: doc
 description: Copy & paste description from TOC here
 ---
-# Proof of Concept: Citrix Automated Configuration (Auto Config) tool
+# Proof of Concept: Citrix Automated Configuration tool
 
 ## Contributors
 
@@ -12,23 +12,23 @@ description: Copy & paste description from TOC here
 
 ## Overview
 
-The [Citrix Automated Configuration (Auto Config) tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) facilitates migrating and exporting configurations to the **Citrix Virtual Apps and Desktop Service** (CVADs). This guide illustrates the step by step instructions on how to leverage this tool.
+The [Citrix Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) facilitates migrating and exporting configurations to the **Citrix Virtual Apps and Desktop Service** (CVADs). This Proof of Concept guide illustrates the step by step instructions on how to leverage this tool.
 
-Administrators can easily test and explore the **Citrix Virtual Apps and Desktop Service** (CVADs) features and advantages, while simultaneously running existing On-Premises environments, as well as facilitate moves between cloud regions, back up existing configurations, and other use cases.
+Administrators can easily test and explore the **Citrix Virtual Apps and Desktop Service** (CVADs) features and advantages, while simultaneously running existing On-Premises environments, as well as facilitate moves between cloud regions, back up existing configurations, and other supported use cases. The [Citrix Automated Configuration download link](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) also contains additional information and detailed documentation on said use cases and customizations.
 
-### What is the Citrix Automated Configuration tool (Auto Config) for Virtual Apps and Desktops?
+### What is the Citrix Automated Configuration tool for Virtual Apps and Desktops?
 
 This tool is designed to help automate the migration of **Citrix Virtual Apps and Desktop** configuration (such as policies, applications, machine catalogs, and others) from one or more On-Premises site(s) to the **Citrix Virtual Apps and Desktop service** (CVADs) hosted on Citrix Cloud. It can also be used to migrate information between different Cloud regions or tenants.
 
 The migration can be performed in stages by executing the tool multiple times, allowing administrators to easily achieve the desired configuration state.
 
-### Why use the Auto Config tool?
+### Why use this tool?
 
 IT Administrators, particularly those dealing with large environments, often find migrations to be a very tedious process. They frequently end up writing their own tools to accomplish this task successfully since it tends to be specific to their use cases.
 
 Citrix wants to help ease this process by providing a tool that addresses use cases by means of automation. Administrators can now easily test their current configurations in Citrix Cloud and take advantage of the benefits offered by CVADs (such as a reduced administrative overload when managing the control plane) while still keeping their current environments intact.
 
-### How is the Auto Config tool implemented?
+### How is this tool implemented?
 
 Citrix has leveraged industry standard configuration as code to provide a mechanism to help automate migration processes. Essentially, with this tool, we discover and export one or more on-premises sites as **a collection of configuration files** (which administrators can optionally edit) and then import these edited files into CVADs.
 
@@ -40,7 +40,7 @@ Note that this code is not limited to migrations: it is the future for creating 
 
 *  CVAD On-Premises environment with **at least one registered VDA**.
 *  CVAD On-Premises environment running on one of the following versions: Any **Long Term Service Release (LTSR)** versions with their latest CU (7.6, 7.15, 1912); Or one of the corresponding latest two **Current Releases (CR)** versions (for example: 2003, 2006).
-*  The domain-joined machine where the **Citrix Auto Config** tool will be installed must be running .NET 4.7.2 version or higher.
+*  The domain-joined machine where the [Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) will be installed must be running .NET 4.7.2 version or higher.
 *  A machine with the C**itrix PowerShell SDK**, which is automatically installed on the DDC. **Note:** if running on a different machine, it needs to be domain-joined and Studio must have the correct PowerShell snap-ins installed. This installer can be found on your corresponding version’s **Product ISO installation media**, which can be obtained from the [Citrix Downloads > Citrix Virtual Apps and Desktops](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/) website.
 
 ### Cloud-related components
@@ -58,11 +58,11 @@ Note that this code is not limited to migrations: it is the future for creating 
 5. [Import your Site Configuration into Cloud (by editing the required files)](#import-your-site-configuration-into-cloud)
 6. [Troubleshooting tips and where to find more information](#troubleshooting-tips)
 
-### Complete Prerequisites for Exporting from on-premises site
+### Complete Pre-requisites for Exporting from on-premises site
 
-These steps must be run in your DDC or the domain-joined machine where you wish to install the **Auto Config** tool.
+These steps must be run in your DDC or the domain-joined machine where you wish to install the **Automated Configuration** tool.
 
-1.  Download the [Auto Config tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) to your **On-Premises DDC** or a domain-joined machine. **Note:** See the [Pre-requisites section](#pre-requisites) for more details on how to run it from a different machine.
+1.  Download the [Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) to your **On-Premises DDC** or a domain-joined machine. **Note:** See the [Pre-requisites section](#pre-requisites) for more details on how to run it from a different machine.
 
 2.  Run the **MSI** on your **On-Premises DDC**, by right clicking on the **AutoConfig_PowerShell_x64.msi** installer and clicking on **Install**.
 
@@ -76,7 +76,7 @@ These steps must be run in your DDC or the domain-joined machine where you wish 
 
 [![On Prem Pre-Requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-003.png)
 
-*  **Note:** Upon successful execution, the **MSI** will create the corresponding folder structure, located in ```C:\Users\<username>\Documents\Citrix\AutoConfig```, as well as a desktop icon called **Auto Config**, which launches a PowerShell command prompt. This is the **Auto Config** tool we will use on subsequent steps.
+*  **Note:** Upon successful execution, the **MSI** will create the corresponding folder structure, located in ```C:\Users\<username>\Documents\Citrix\AutoConfig```, as well as a desktop icon called **Auto Config**, which launches a PowerShell command prompt. This is the tool we will use on subsequent steps.
 
 ## Export your On-Premises site configuration
 
@@ -348,7 +348,7 @@ If everything looks as expected, your CVADs migration is complete.
 
 **For more information:**
 
-1.  Please consult the [Auto Config Tool Troubleshooting FAQ article](https://support.citrix.com/article/CTX277730).
+1.  Please consult the [Automated Configuration Tool Troubleshooting FAQ article](https://support.citrix.com/article/CTX277730).
 
 2.  You can also reach out via the [Support Forum](https://discussions.citrix.com/forum/1804-automated-configuration-for-virtual-apps-and-desktops-tech-preview/).
 
