@@ -2,7 +2,7 @@
 layout: doc
 description: Copy & paste description from TOC here
 ---
-# Proof of Concept: Citrix Automated Configuration tool
+# Proof of Concept: Citrix-developed Automated Configuration tool
 
 ## Contributors
 
@@ -12,13 +12,13 @@ description: Copy & paste description from TOC here
 
 ## Overview
 
-The [Citrix Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) facilitates migrating and exporting configurations to the **Citrix Virtual Apps and Desktop Service** (CVADs). This Proof of Concept guide illustrates the step by step instructions on how to leverage this tool.
+The Citrix-developed [Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) facilitates migrating and exporting configurations to the **Citrix Virtual Apps and Desktop Service** (CVADs). This Proof of Concept guide illustrates the step by step instructions on how to leverage this tool.
 
-Administrators can easily test and explore the **Citrix Virtual Apps and Desktop Service** (CVADs) features and advantages, while simultaneously running existing On-Premises environments, as well as facilitate moves between cloud regions, back up existing configurations, and other supported use cases. The [Citrix Automated Configuration download link](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) also contains additional information and detailed documentation on said use cases and customizations.
+Administrators can easily test and explore the **Citrix Virtual Apps and Desktop Service** (CVADs) features and advantages, while simultaneously running existing On-Premises environments, as well as facilitate moves between cloud regions, back up existing configurations, and other supported use cases. The [Automated Configuration download link](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) also contains **additional information** and **detailed documentation** on said **use cases** and **customizations**.
 
-### What is the Citrix Automated Configuration tool for Virtual Apps and Desktops?
+### What is the Automated Configuration tool for Virtual Apps and Desktops?
 
-This tool is designed to help automate the migration of **Citrix Virtual Apps and Desktop** configuration (such as policies, applications, machine catalogs, and others) from one or more On-Premises site(s) to the **Citrix Virtual Apps and Desktop service** (CVADs) hosted on Citrix Cloud. It can also be used to migrate information between different Cloud regions or tenants.
+This tool is designed to help automate the migration of **Citrix Virtual Apps and Desktop** configuration (such as policies, applications, machine catalogs, and others) from one or more On-Premises site(s) to the **Citrix Virtual Apps and Desktop service** (CVADs) hosted on Citrix Cloud. It can also be used to migrate information between **different Cloud regions** or **tenants**.
 
 The migration can be performed in stages by executing the tool multiple times, allowing administrators to easily achieve the desired configuration state.
 
@@ -42,6 +42,7 @@ Note that this code is not limited to migrations: it is the future for creating 
 *  CVAD On-Premises environment running on one of the following versions: Any **Long Term Service Release (LTSR)** versions with their latest CU (7.6, 7.15, 1912); Or one of the corresponding latest two **Current Releases (CR)** versions (for example: 2003, 2006).
 *  The domain-joined machine where the [Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) will be installed must be running .NET 4.7.2 version or higher.
 *  A machine with the C**itrix PowerShell SDK**, which is automatically installed on the DDC. **Note:** if running on a different machine, it needs to be domain-joined and Studio must have the correct PowerShell snap-ins installed. This installer can be found on your corresponding version’s **Product ISO installation media**, which can be obtained from the [Citrix Downloads > Citrix Virtual Apps and Desktops](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/) website.
+*  Download the [Automated Configuration tool MSI](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html).
 
 ### Cloud-related components
 
@@ -62,7 +63,7 @@ Note that this code is not limited to migrations: it is the future for creating 
 
 These steps must be run in your DDC or the domain-joined machine where you wish to install the **Automated Configuration** tool.
 
-1.  Download the [Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) to your **On-Premises DDC** or a domain-joined machine. **Note:** See the [Pre-requisites section](#pre-requisites) for more details on how to run it from a different machine.
+1.  Download the latest [Automated Configuration tool MSI](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) to your **On-Premises DDC** or a domain-joined machine. **Note:** See the [Pre-requisites section](#pre-requisites) for more details on how to run it from a different machine.
 
 2.  Run the **MSI** on your **On-Premises DDC**, by right clicking on the **AutoConfig_PowerShell_x64.msi** installer and clicking on **Install**.
 
@@ -339,10 +340,10 @@ If everything looks as expected, your CVADs migration is complete.
 
 **General information for troubleshooting:**
 
-*  Executing any cmdlet results in a created log file and an entry in the master history log file.
-*  All operation log files are placed in a backup folder.
-*  All log file names begin with CitrixLog, then show the auto-config operation and the date and timestamp of the cmdlet execution.
-*  Logs do not auto-delete.
+*  Executing any cmdlet results in a created **log file** and an entry in the **master history log file**.
+*  All operation log files are placed in a **backup folder**.
+*  All log file names begin with ```CitrixLog```, then show the ```auto-config``` operation and the date and timestamp of the cmdlet execution.
+*  Logs **do not** auto-delete.
 *  The master history log is located in ```%HOMEPATH%\Documents\Citrix\AutoConfig```, in the file named ```History.Log```.
 *  Each cmdlet execution results in a master log entry containing the date, operation, result, backup, and log file locations of the execution. This log provides potential solutions and fixes to common errors.
 
@@ -352,4 +353,6 @@ If everything looks as expected, your CVADs migration is complete.
 
 2.  You can also reach out via the [Support Forum](https://discussions.citrix.com/forum/1804-automated-configuration-for-virtual-apps-and-desktops-tech-preview/).
 
-3.  If after consulting the FAQ article and the forum, you still need assistance, please get in touch with your Citrix representatives, Customer Success Manager or Support.
+3.  Be sure to register and attend our **August 19 webinar** - ["Why Citrix Cloud migration is easier than ever"](bit.ly/CitrixTIPs) for more information on this tool, as well as a Live Q&A session with a panel of Citrix experts. You can visit this [same link](bit.ly/CitrixTIPs) for the On-demand content after August 19.
+
+4.  If after consulting the information listed above you still need assistance, please get in touch with your Citrix representatives, Customer Success Manager or Support.
