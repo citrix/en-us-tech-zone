@@ -56,7 +56,7 @@ Azure AD Connect is a tool for connecting on premises identity infrastructure to
 
 1.  Login to your AD domain controller or other virtual server where you will host the Microsoft Azure Active Directory Connect process.
 1.  Download the executable from the Microsoft download site [Microsoft Azure Active Directory Connect](https://www.microsoft.com/en-us/download/details.aspx?id=47594) and launch it.
-1.  You will be promoted to accept making changes to the virtual machine and accept a license agreement on the welcome page. ![AD Connect](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADConnectWelcome.png)
+1.  You will be prompted to accept making changes to the virtual machine and accept a license agreement on the welcome page. ![AD Connect](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADConnectWelcome.png)
 1.  You will be prompted to login as a Global AAD admin as well as a Domain Services admin.
 1.  For installation on a single AD virtual machine you can follow express settings. After it verifies UPN Suffixes it makes a full sync of all users, groups, and contacts.
 
@@ -111,9 +111,9 @@ To configure the Citrix ADC perform the following steps:
     *  Single Logout URL - paste the Logout URL copied from the AAD config
     *  Logout binding - Redirect
     *  IDP Certificate Name - select Add, enter a name, select Certificate File Name > local, and select the SAML Signing Certificate (base64) downloaded from AAD
-![IDP Certificate](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCAAAVserver.png)
     *  Signing Certificate Name - select the domain certificate the ADC uses to sign requests to AAD.
     *  Issue Name - enter the FQDN of the Citrix ADC Gateway
+![SAML Auth Action](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCsamlauthaction.png)
 1.  Select create to create the action
 1.  Enter true for the expression
 1.  Select create again to create the policy ![Authentication Policy](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADCcreateauthenticationpolicy.png)
