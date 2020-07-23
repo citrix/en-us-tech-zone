@@ -278,7 +278,7 @@ Because our on-premises lab is using MCS, we will only migrate the following:
 >
 >Because we are using MCS and can only import applications and group policies, we use two options here: `-Applications` and `-GroupPolicies` to export only the required information.
 
-#### Prerequisites
+###### Prerequisites
 
 We run the automated configuration tool on a delivery controller, and we need .NET Framework 4.7.2 or later to be installed on that server.
 
@@ -286,7 +286,7 @@ You can download .NET Framework 4.7.2 from: [https://dotnet.microsoft.com/downlo
 
 Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing the tool creates a desktop icon called **Auto Config** that launches the PowerShell command prompt. You run the Cloud automated configuration cmdlets from the PowerShell command prompt.
 
-#### Export applications
+###### Export applications
 
 1.  Click the **Auto Config** icon.
 
@@ -296,5 +296,24 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     ![Export apps = true](en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-export-apps-true.png)
 
-#### Export policies
+###### Export policies
 
+1.  Run the following command: `Export-CvadAcToFile –GroupPolicies $true`.
+
+    ![Export policies = true](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-export-policies-true.png)
+
+1.  Ensure that the result is reported as **True**.
+
+##### Import settings to Citrix Cloud
+
+###### Prerequisites
+
+1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID` and `Secret`.
+
+    ![Example customerinfo.yml file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
+
+1.  Connect to Citrix Cloud and go to **Identity and Access Management**.
+
+    ![Citrix Cloud IAM](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
+
+1.  Click **API Access**.
