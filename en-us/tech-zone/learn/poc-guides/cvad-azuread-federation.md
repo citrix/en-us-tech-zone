@@ -197,10 +197,10 @@ To configure FAS perform the following steps:
     *  a. Right-click to create new or edit an existing Group Policy Object that applies to all pertinent VDAs and Delivery Controllers. (We use the Default Domain Controllers policy for the POC. For production you would typically create a new policy or edit another pertinent policy.)
 ![GPO](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0014.png)
     *  b. Navigate to Computer Configuration > Policies > Administrative Templates > Citrix Components > Authentication
-    *  c. Right-click on Federated Authentication Service.
+    *  c. Right-click on Federated Authentication Service
     *  d. Select edit
     *  e. Select Show DNS
-    *  f. Enter the FQDN of the FAS server, click Ok twice, and close the Group Policy Management editor.
+    *  f. Enter the FQDN of the FAS server, click Ok twice, and close the Group Policy Management editor
 ![FAS GPO](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0015.png)
     *  g. Navigate to each Delivery Controller, and VDA), open a MS-DOS prompt as Administrator, and run "gpupdate /force"
 ![FAS GPO update](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0016.png)
@@ -218,16 +218,14 @@ See [FAS documentation](/en-us/federated-authentication-service.html) for more i
 
 ## Citrix Workspace client validation
 
-To validate the POC login from the Workspace client by performing the following steps:
+To validate the POC perform the following steps:
 
 ### Workspace for Web
 
-1.  Open a browser and navigate the domain FQDN managed by the Citrix ADC. You will notice the Citrix Gateway redirects to AAD.
-1.  Login with the UPN of a user configure to be part of the FAS environment ![Login](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebredirectAADuser.png)
-1.  Verify the users virtual apps and desktops are enumerated and launch while being logged in with the AAD user ![Logged in](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebloggedin.png)
+1.  Open a browser and navigate to the domain FQDN managed by the Citrix ADC. You will notice the Citrix Gateway redirects to AAD.
+1.  Login with the UPN of a user configured to be part of the FAS environment ![Login](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebredirectAADuser.png)
+1.  Verify the users virtual apps and desktops are enumerated and launch while being logged in with the UPN via the AAD user object ![Logged in](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebloggedin.png)
 
 ## Summary
 
-Citrix Virtual Apps and Desktops has been a resillient  technology for decades. Incorporating cloud hosted Identity offers enterprises even more reliable service. Implementing the POC described in this guide demonstrates how to achieve that by integrating AAD as the IDP and Citrix ADC as the Service Provider Enterprises.
-
-To learn more about  or Citrix pricing and packing visit the Citrix web site [Citrix.com](https://www.citrix.com/products/) and to learn more about its technical capabilities visit [Citrix TechZone](/en-us/tech-zone).
+Citrix Virtual Apps and Desktops has been a resillient  technology for decades. Incorporating cloud hosted Identity offers enterprises even more reliable service. Implementing the POC described in this guide demonstrates how to achieve that by integrating AAD as the IDP and Citrix ADC as the Service Provider. To learn more about  or Citrix pricing and packing visit the Citrix web site [Citrix.com](https://www.citrix.com/products/) and to learn more about its technical capabilities visit [Citrix TechZone](/en-us/tech-zone).
