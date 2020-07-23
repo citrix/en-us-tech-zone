@@ -172,3 +172,52 @@ The following diagram shows how our Azure environment is set up to communicate w
 >Option 1: Test using the ping command between resources in each location.
 >
 >Option 2: Join the deployed server in Azure to our on-premises AD Domain.
+
+Now that we have site-to-site connectivity configured and validated, our next step is to configure Citrix Cloud.
+
+## Set up a basic Citrix Cloud environment
+
+With our Azure environment established and site-to-site communication working, we’re ready to add Citrix Cloud.
+
+We set up the Citrix Cloud environment in three steps:
+
+Step 1: Onboarding
+
+Step 2: Deploy Citrix Cloud Connector
+
+Step 3: Rename the resource location
+
+### Step 1: Onboarding
+
+Ensure you have a valid Citrix Virtual Apps and Desktops subscription.
+https://docs.citrix.com/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html
+
+To proceed, you need access to the Citrix Virtual Apps and Desktops service. If you don’t have access, please work with a Citrix representative.
+
+### Step 2: Cloud Connector installation
+
+The Citrix Cloud Connector lets you configure secure communication between your on-premises deployment and Citrix Cloud. To ensure that your Citrix Cloud Connector is set up to spec, review the [System requirements]( https://docs.citrix.com/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html).
+
+You can install the Cloud Connector software [interactively](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html#interactive-installation) or using the [command line](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html#command-line-installation).
+
+### Step 3: Rename the resource location
+
+Because we will have multiple resource locations between on-premises and Azure, it’s useful to have a distinct name for each resource location.
+
+1.  Click the **Arrow** to go back to **Resource Location**.
+
+    ![Resource location back arrow](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_resource-location-back-arrow.png)
+
+1.  Click **...** and select **Rename**.
+
+    ![Rename resource location](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_rename-resource-location.png)
+
+1.  Give your resource location a new name, for example, "On-premises", and click **Save**.
+
+    ![Save new name](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_save-new-resource-location-name.png)
+
+>**Checkpoint: Citrix Cloud Connector**
+>
+>When your Cloud Connectors are deployed successfully, you should see them with a green bar on the left.
+>
+>![Cloud Connector status indicators](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cloud-connectors-green-bar.png)
