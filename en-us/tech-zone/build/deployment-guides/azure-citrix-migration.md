@@ -36,7 +36,7 @@ In our experience and testing, the best migration path follows these steps:
 1.  Prepare the Azure subscription to receive the workloads from your on-prem deployment.
 1.  Configure site-to-site communication.
 1.  Set up Citrix Cloud.
-1.  Migrate on-premises Citrix Virtual Apps and Desktops to Citrix Virtual Apps and Desktops service.
+1.  Migrate on-premises Citrix Virtual Apps and Desktops to Citrix Virtual Apps and Desktops service using the automated configuration tool developed by Citrix.
 1.  Migrate on-premises Workspace Environment Management to Workspace Environment Management service.
 1.  Use Azure tools to assess your on-premises environment.
 1.  Use Azure tools to migrate your on-premises servers to Azure.
@@ -103,19 +103,21 @@ The first step to migrating your workloads to Azure is to set up the Azure envir
 
 For a detailed look at how to architect Citrix Virtual Apps and Desktops on Azure, see [Citrix Virtual Apps and Desktops Service on Azure](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-azure.html).
 
-We prepped the Azure environment in three basic steps:
+We prepped the Azure environment in five basic steps:
 
-1.  Create a resource group.
-1.  Create a virtual network.
-1.  Deploy a server in Azure.
+Step 0: Select an Azure subscription model
+Step 1: Select Azure regions
+Step 2: Create a resource group
+Step 3: Create a virtual network.
+Step 4: Deploy a server in Azure that will serve as the domain controller.
 
 When our Azure subscription is set up and ready for the next step, our environment looks like the one in the following diagram. The resources and workloads are all on-premises and we have a resource group, a virtual network, and a server in Azure.
 
 ![Environment with Azure prepped](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-subscription-prepped.png)
 
-### Prerequisites
+### Step 0: Select an Azure subscription model
 
-Set up your Azure subscription with a resource group and a virtual network configured. If you need guidance setting up a resource group, Microsoft provides details in [What is Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview). For help with configuring a virtual network, see [What is Azure Virtual Network](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview).
+Set up your Azure subscription.
 
 Selecting a subscription model is a complex decision that involves understanding the growth of your Azure footprint within and outside the Citrix deployment. Even if the Citrix deployment is small, you might still have a large amount of other resources that are reading/writing heavily against the Azure API, which can have a negative impact on the Citrix environment. The reverse is also true, where many Citrix resources can consume an inordinate number of the available API calls, reducing availability for other resources within the subscription. For information about Azure subscription limits and quotas, see [Azure subscription and service limits, quotas, and constraints](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits).
 
@@ -130,17 +132,19 @@ A resource group in Azure is a collection of assets in logical groups for easy o
 
 The key to having a successful resource group design is understanding the lifecycle of the resources that are included in the resource groups.
 
+If you need guidance setting up a resource group, Microsoft provides details in [What is Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview).
+
 One or more resource groups can be applied to a machine catalog during initial creation. These resource groups cannot be shared across machine catalogs. Resource groups are limited to 240 Citrix MCS VMs due to the 800 per resource limit in a resource group. See [CTX237504](https://support.citrix.com/article/CTX237504) for more details about this limitation.
 
 Resource groups are tied to machine catalogs at creation time and cannot be added or changed later. To add resource groups to a machine catalog, the machine catalog must be removed and recreated.
 
 ### Step 3: Create a virtual network in Azure
 
-The virtual network is required to enable secure communication among the resources in your environment. For more information about creating virtual networks in Azure, see https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal.
+The virtual network is required to enable secure communication among the resources in your environment. For more information about creating virtual networks in Azure, see [Quickstart: Create a virtual network using the Azure portal](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal). For help with configuring a virtual network, see [What is Azure Virtual Network](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview).
 
 ### Step 4: Deploy a server in Azure
 
-With our resource group and virtual network established, we’re ready to deploy a server in Azure. We use the server to test. If you want more detailed information about how to set up virtual machines, see https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal. Microsoft also provides helpful guidance for choosing the right size VM for your workload in https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes.
+With our resource group and virtual network established, we’re ready to deploy a server in Azure. We use the server to test. If you want more detailed information about how to set up virtual machines, see [Quickstart: Create a Windows virtual machine in the Azure portal](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal). Microsoft also provides helpful guidance for choosing the right size VM for your workload in [Sizes for virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes).
 
 Now that we have our resource groups and virtual network created, and we have a server deployed, our next step is to configure connectivity between our on-premises and Azure environments.
 
@@ -179,6 +183,8 @@ Now that we have site-to-site connectivity configured and validated, our next st
 
 With our Azure environment established and site-to-site communication working, we’re ready to add Citrix Cloud.
 
+If you’re already using Citrix Virtual Apps and Desktops service, you can skip to the section [Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#Workspace Environment Management service).
+
 We set up the Citrix Cloud environment in three steps:
 
 Step 1: Onboarding
@@ -189,14 +195,13 @@ Step 3: Rename the resource location
 
 ### Step 1: Onboarding
 
-Ensure you have a valid Citrix Virtual Apps and Desktops subscription.
-https://docs.citrix.com/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html
+Ensure you have a valid [Citrix Virtual Apps and Desktops subscription](/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html).
 
 To proceed, you need access to the Citrix Virtual Apps and Desktops service. If you don’t have access, please work with a Citrix representative.
 
 ### Step 2: Cloud Connector installation
 
-The Citrix Cloud Connector lets you configure secure communication between your on-premises deployment and Citrix Cloud. To ensure that your Citrix Cloud Connector is set up to spec, review the [System requirements]( https://docs.citrix.com/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html).
+The Citrix Cloud Connector lets you configure secure communication between your on-premises deployment and Citrix Cloud. To ensure that your Citrix Cloud Connector is set up to spec, review the [System requirements]( https://docs.citrix.com/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html). You need two VMware ESX VMs to host two Citrix Cloud Connectors.
 
 You can install the Cloud Connector software [interactively](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html#interactive-installation) or using the [command line](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html#command-line-installation).
 
@@ -221,3 +226,75 @@ Because we will have multiple resource locations between on-premises and Azure, 
 >When your Cloud Connectors are deployed successfully, you should see them with a green bar on the left.
 >
 >![Cloud Connector status indicators](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cloud-connectors-green-bar.png)
+
+## Migrate to Citrix Virtual Apps and Desktops service
+
+If you’re already using Citrix Virtual Apps and Desktops service, you can skip to the section [Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#Workspace Environment Management service).
+
+If you’re using Citrix Virtual Apps and Desktops on-premises, you can use the procedures in this section as a guide for migrating to Citrix Virtual Apps and Desktops service.  
+
+For MCS users, the [MCS migration](#MCS migration) section provides detailed migration steps.
+
+If you use PVS, please go to [PVS migration](#PVS migration).
+
+The following diagram shows our cloud environment on Azure after we migrate to the Citrix Virtual Apps and Desktops service.
+
+![Environment with Citrix Virtual Apps and Desktops service configured](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cvad-service-migrated.png)
+
+### MCS migration
+
+#### Step 1: Preparation
+
+To migrate successfully using the automated configuration tool, for on-premises MCS configured catalogs, you will need to create a host connection, machine catalog, and delivery group within Citrix Virtual Apps and Desktops service.
+
+>**Important:**
+>
+>To run the migration tool successfully, the delivery groups created in the Citrix Virtual Apps and Desktops service must have identical names to the existing on-premises delivery groups.
+
+##### Establish host connection
+
+The host connection is where you establish the network and the storage–the resources–for a connection. See [Create and manage connections](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html) for detailed information about connections.
+
+##### Create machine catalogs
+
+Use machine catalogs to manage collections of machines as single entities. For more information, see [Create machine catalogs](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html). Machine catalogs are a prerequisite for creating delivery groups. When you run the Azure migration tool, the tool will bring over all of your settings and will create all of the VMs you need. To make sure you have placeholders for your delivery groups, create machine catalogs that contain a minimal number of VMs during this step. In most cases, two VMs is enough to satisfy this requirement.
+
+##### Create delivery groups
+
+Use delivery groups to control access and delivery to machines, applications, and desktops. For details, see [Create delivery groups](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/delivery-groups-create.html). Create delivery groups that have identical names to your existing on-premises delivery groups.
+
+Step 2: Migration
+
+We use a Citrix-developed tool, the automated configuration tool, to migrate Citrix Virtual Apps and Desktops from on-premises to Citrix Virtual Apps and Desktops service. You can [download the automated configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) from Citrix. Documentation for the tool is available on Tech Zone in [Automated Configuration](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html). The tool is available as a preview.
+
+Because our on-premises lab is using MCS, we will only migrate the following:
+
+*  Applications
+*  Citrix Policies
+
+##### Export the on-prem site configuration
+
+>**Note:**
+>
+>Because we are using MCS and can only import applications and group policies, we use two options here: `-Applications` and `-GroupPolicies` to export only the required information.
+
+#### Prerequisites
+
+We run the automated configuration tool on a delivery controller, and we need .NET Framework 4.7.2 or later to be installed on that server.
+
+You can download .NET Framework 4.7.2 from: [https://dotnet.microsoft.com/download/dotnet-framework/net472](https://dotnet.microsoft.com/download/dotnet-framework/net472).
+
+Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing the tool creates a desktop icon called **Auto Config** that launches the PowerShell command prompt. You run the Cloud automated configuration cmdlets from the PowerShell command prompt.
+
+#### Export applications
+
+1.  Click the **Auto Config** icon.
+
+    ![Auto Config icon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-desktop-icon.png)
+
+1.  Run the following command: `Export-CvadAcToFile –Applications $true`.
+
+    ![Export apps = true](en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-export-apps-true.png)
+
+#### Export policies
+
