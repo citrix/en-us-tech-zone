@@ -157,7 +157,7 @@ See [Enable the FAS plug-in on StoreFront stores](/en-us/federated-authenticatio
 1.  Check Fully delegate credential validation to Citrix Gateway and click Ok twice ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-StoreFrontdelegatedauth.png)
 1.  Select Manage Authentication Methods from the menu on the right
 1.  Edit the pertinent Citrix Gateway entry
-1.  Under Authentication Settings the Callback URL must be configured if it is not done already. Typically you can update the internal DNS or for a single StoreFront instance update the local host file to map the private IP of the Gateway vServer to the FQDN. ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-StoreFrontcallback.png)
+1.  Under Authentication Settings the Callback URL must be configured if it is not done already. Typically you can update the internal DNS or for a single StoreFront instance update the local host file to map the private IP of the Gateway vServer to the FQDN ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-StoreFrontcallback.png)
 
 ### Delivery Controller
 
