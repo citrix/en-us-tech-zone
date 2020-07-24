@@ -384,21 +384,27 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 
 1.  Run the following command in the Auto Config tool: `Import-CvadAcToSite -GroupPolicies $true`.
 
+    ![Import policies](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_import-policies-cmd.png)
+
 1.  Enter yes to validate the action.
 
+    ![Validate policy import](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_import-policies-cmd-validate.png)
+
     The resulting output looks like the following image:
+
+    ![Policy import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_import-policies-result.png)
 
 1.  Ensure that the result is **True**.
 
 >**Checkpoint: Citrix Virtual Apps and Desktops service
 >
 >1.  Connect to Citrix Virtual Apps and Desktops service, go to Applications and ensure that applications have been created.
->    ![Applications list](image)
+>    ![Applications list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_applications-list.png)
 >
 >1.  Go to **Policies** and ensure that your policies have been created and assigned.
->    ![Policies list](image)
+>    ![Policies list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_policies-list.png)
 
-Next we [configure the end user layer](#end user layer) with Citrix Workspace and Citrix Gateway service.
+Next we [configure the end user access layer](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#configure-end-user-access-layer) with Citrix Workspace and Citrix Gateway service.
 
 ### PVS Migration
 
