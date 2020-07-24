@@ -189,7 +189,7 @@ We set up the Citrix Cloud environment in three steps:
 
 Step 1: Onboarding
 
-Step 2: Deploy Citrix Cloud Connector
+Step 2: Deploy Citrix Cloud Connector on two VMware ESX VMs
 
 Step 3: Rename the resource location
 
