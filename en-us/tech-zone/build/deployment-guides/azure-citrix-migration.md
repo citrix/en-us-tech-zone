@@ -396,7 +396,7 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 
 1.  Ensure that the result is **True**.
 
->**Checkpoint: Citrix Virtual Apps and Desktops service
+>**Checkpoint: Citrix Virtual Apps and Desktops service**
 >
 >1.  Connect to Citrix Virtual Apps and Desktops service, go to Applications and ensure that applications have been created.
 >    ![Applications list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_applications-list.png)
@@ -538,7 +538,7 @@ The resulting output looks like the following image:
 
     ![Settings import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-result.png)
 
->**Checkpoint: Citrix Virtual Apps and Desktop service
+>**Checkpoint: Citrix Virtual Apps and Desktop service**
 >
 >1.  Connect to Citrix Virtual Apps and Desktops Service, go to Machine Catalogs and ensure that your Machine Catalogs have been created and machines allocated.
 >    ![Machine catalogs](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_machine-catalogs.png)
@@ -575,11 +575,10 @@ Add the Citrix Cloud Connector as the STA in your Citrix Gateway configuration.
 >**Checkpoint: STA**
 >
 >Ensure that all STA servers have a status of UP as shown in the following image.
->![STAs UP](image)
 
 Now the STA servers are up and StoreFront is configured.
 
->**Checkpoint Citrix Virtual Apps and Desktops service migration
+>**Checkpoint Citrix Virtual Apps and Desktops service migration**
 >
 >1.  Ensure in Citrix Cloud that the VDAs are registered.
 >
@@ -648,7 +647,6 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 >**Checkpoint: Workspace Environment Management service migration**
 >
 >1.  Open the Win 10 + Citrix Virtual Apps and Desktops Service Desktop.
->    ![Win10 desktop](image)
 >
 >1.  Ensure that the new application (in our example, Notepad) is populated on the user’s desktop.
 
@@ -908,7 +906,6 @@ Consider deploying [Azure Cost Management](https://docs.microsoft.com/en-us/az
 >    ![On-prem workload desktop](image)
 >
 >1.  Close the session and ensure that the user’s profile has been created on the Azure file server.
->    ![User profile in Azure](image)
 
 ## Move Citrix workload to Azure
 
