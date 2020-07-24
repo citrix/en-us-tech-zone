@@ -324,7 +324,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Connect to Citrix Cloud and go to **Identity and Access Management**.
 
-    ![Citrix Cloud IAM](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
+    ![Citrix Cloud IAM](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_citrix-cloud-menu-iam.png)
 
 1.  Click **API Access**.
 
