@@ -6,7 +6,7 @@ description: Copy & paste description from TOC here
 
 ## Contributors
 
-**Author:** [Arnaud Pain](URL)
+**Author:** [Arnaud Pain](https://arnaudpain.com)
 
 ## Objective
 
@@ -14,7 +14,7 @@ In this document, you'll discover how to migrate from Citrix Virtual Apps and De
 
 ## Project overview
 
-The guidance documented here is based on deployment in a lab environment that was reviewed and approved by Citrix and by Microsoft. The initial and final deployments represent typical customer environments.
+The guidance documented here is based on a deployment in a Citrix- and Microsoft-reviewed and approved lab environment. The initial and final deployments represent typical customer environments.
 
 We migrated these key products and components:
 
@@ -43,7 +43,7 @@ In our experience and testing, the best migration path follows these steps:
 1.  Configure Citrix workload on Azure.
 1.  Migrate from StoreFront and Citrix Gateway to Citrix Workspace and Citrix Gateway Service.
 
-![Migration path](migration-path.png)
+![Migration path](en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_migration-path.png)
 
 Doing the migration in the specified order provides a more organized and orderly migration. It allows you to run products, components, and services in a combination of on-premises and cloud deployments, minimizing disruption to daily workloads.
 
@@ -81,7 +81,7 @@ We ran the migration workflow in our lab, using virtual machines that had the fo
 
 Each component of the overall solution requires integration with Active Directory (AD) to provide authentication into the Citrix environment and personalization settings that are applied to user sessions via AD Organizational Units (OUs) in each part of the project.
 
-Citrix recommends an OU structure, like the one illustrated in the following image, that integrates with your current structure to host the machines and the user accounts for the Citrix Cloud environment.
+Citrix recommends an OU structure, like the one illustrated in the following image, that integrates with your current structure. The OU structure hosts the machines and the user accounts for the Citrix Cloud environment.
 
 ![Example Active Directory structure](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_example-active-directory-structure.png)
 
@@ -106,9 +106,13 @@ For a detailed look at how to architect Citrix Virtual Apps and Desktops on Azur
 We prepped the Azure environment in five basic steps:
 
 Step 0: Select an Azure subscription model
-Step 1: Select Azure regions
+
+Step 1: Select the Azure regions
+
 Step 2: Create a resource group
-Step 3: Create a virtual network.
+
+Step 3: Create a virtual network
+
 Step 4: Deploy a server in Azure that will serve as the domain controller.
 
 When our Azure subscription is set up and ready for the next step, our environment looks like the one in the following diagram. The resources and workloads are all on-premises and we have a resource group, a virtual network, and a server in Azure.
@@ -119,7 +123,7 @@ When our Azure subscription is set up and ready for the next step, our environme
 
 Set up your Azure subscription.
 
-Selecting a subscription model is a complex decision that involves understanding the growth of your Azure footprint within and outside the Citrix deployment. Even if the Citrix deployment is small, you might still have a large amount of other resources that are reading/writing heavily against the Azure API, which can have a negative impact on the Citrix environment. The reverse is also true, where many Citrix resources can consume an inordinate number of the available API calls, reducing availability for other resources within the subscription. For information about Azure subscription limits and quotas, see [Azure subscription and service limits, quotas, and constraints](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits).
+Selecting a subscription model is a complex decision that involves understanding the growth of your Azure footprint within and outside the Citrix deployment. Even if the Citrix deployment is small, you might still have a large amount of other resources that are reading/writing heavily against the Azure API. That heavy read/write activity can have a negative impact on the Citrix environment. The reverse is also true, where many Citrix resources can consume an inordinate number of the available API calls, reducing availability for other resources within the subscription. For information about Azure subscription limits and quotas, see [Azure subscription and service limits, quotas, and constraints](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits).
 
 ### Step 1: Select Azure regions
 
@@ -128,7 +132,7 @@ Microsoft provides details in [https://azure.microsoft.com/en-us/global-infrastr
 
 ### Step 2: Create a resource group
 
-A resource group in Azure is a collection of assets in logical groups for easy or even automatic provisioning, monitoring, and access control, and for more effective management of their costs. The benefit of using resource groups in Azure is that you can group related resources that belong to an application, because those resources share a unified lifecycle from creation to usage and finally, de-provisioning.
+A resource group in Azure is a collection of assets in logical groups for easy or even automatic provisioning, monitoring, and access control, and for more effective management of their costs. The benefit of using resource groups in Azure is that you can group related resources that belong to an application. Because the application's resources share a unified lifecycle from creation to usage and finally, de-provisioning, they can be managed together for efficiency.
 
 The key to having a successful resource group design is understanding the lifecycle of the resources that are included in the resource groups.
 
@@ -153,7 +157,7 @@ Now that we have our resource groups and virtual network created, and we have a 
 To connect your on-premises environment to Azure, you have multiple options:
 
 *  Site-to-site VPN
-    Detailed information is availabe in [Create a Site-to-Site connection using the Azure portal (classic)](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-classic-portal).
+    Detailed information is available in [Create a Site-to-Site connection using the Azure portal (classic)](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-classic-portal).
 
 *  Citrix SD-WAN
     Step-by-step guidance for Citrix SD-WAN is available in the [Proof of Concept Guide: Citrix SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html).
@@ -169,7 +173,7 @@ The following diagram shows how our Azure environment is set up to communicate w
 
 >**Checkpoint: site connectivity**
 >
->When you have connectivity implemented, a checkpoint is to communicate with Azure resources from your on-premises environment and vice versa.
+>When you have connectivity implemented, a checkpoint is to communicate with Azure resources from your on-premises environment and conversely.
 >
 >In our case, we used two methods:
 >
@@ -197,7 +201,7 @@ Step 3: Rename the resource location
 
 Ensure you have a valid [Citrix Virtual Apps and Desktops subscription](/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html).
 
-To proceed, you need access to the Citrix Virtual Apps and Desktops service. If you don’t have access, please work with a Citrix representative.
+To proceed, you need access to the Citrix Virtual Apps and Desktops service. If you don’t have access, contact a Citrix representative.
 
 ### Step 2: Cloud Connector installation
 
@@ -207,7 +211,7 @@ You can install the Cloud Connector software [interactively](/en-us/citrix-cloud
 
 ### Step 3: Rename the resource location
 
-Because we will have multiple resource locations between on-premises and Azure, it’s useful to have a distinct name for each resource location.
+Because we have multiple resource locations between on-premises and Azure, it’s useful to have a distinct name for each resource location.
 
 1.  Click the **Arrow** to go back to **Resource Location**.
 
@@ -223,7 +227,7 @@ Because we will have multiple resource locations between on-premises and Azure, 
 
 >**Checkpoint: Citrix Cloud Connector**
 >
->When your Cloud Connectors are deployed successfully, you should see them with a green bar on the left.
+>When your Cloud Connectors are deployed successfully, they are listed with a green bar on the left.
 >
 >![Cloud Connector status indicators](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cloud-connectors-green-bar.png)
 
@@ -233,9 +237,9 @@ If you’re already using Citrix Virtual Apps and Desktops service, you can skip
 
 If you’re using Citrix Virtual Apps and Desktops on-premises, you can use the procedures in this section as a guide for migrating to Citrix Virtual Apps and Desktops service.  
 
-For MCS users, the [MCS migration](#MCS migration) section provides detailed migration steps.
+For MCS users, the [MCS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.md#MCS migration) section provides detailed migration steps.
 
-If you use PVS, please go to [PVS migration](#PVS migration).
+If you use PVS, go to [PVS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.md#PVS migration).
 
 The following diagram shows our cloud environment on Azure after we migrate to the Citrix Virtual Apps and Desktops service.
 
@@ -245,13 +249,13 @@ The following diagram shows our cloud environment on Azure after we migrate to t
 
 #### Step 1: Preparation
 
-To migrate successfully using the automated configuration tool, for on-premises MCS configured catalogs, you must replicate your on-premises configuration for hosting, machine catalogs and delivery groups. The migration tool will create and assign applications and policies.
+To migrate successfully using the automated configuration tool, for on-premises MCS configured catalogs, you must replicate your on-premises configuration for hosting, machine catalogs, and delivery groups. The migration tool creates and assigns applications and policies.
 
-During this migration phase, we recommend that you create only a few VMs for each machine catalog. A small number of VMs allows you to validate machine catalog creation and then allows you to create delivery groups and run the Azure migration tool.
+During this migration phase, we recommend that you create only a few VMs for each machine catalog. Having just a few VMs allows you to validate machine catalog creation and then allows you to create delivery groups and run the Azure migration tool.
 
 Because the objective is to migrate your Citrix Workload to Azure, it's not necessary to create all the VMs with Citrix Virtual Apps and Desktop on-premises.
 
-You must use your on-premises master images to create Citrix Virtual Apps and Desktops service machine catalogs and delivery groups.
+Use your on-premises master images to create Citrix Virtual Apps and Desktops service machine catalogs and delivery groups.
 
 >**Important:**
 >
@@ -263,7 +267,7 @@ The host connection is where you establish the network and the storage–the res
 
 ##### Create machine catalogs
 
-Use machine catalogs to manage collections of machines as single entities. For more information, see [Create machine catalogs](/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html). Machine catalogs are a prerequisite for creating delivery groups. When you run the Azure migration tool, the tool will bring over all of your settings and will create all of the VMs you need. To make sure you have placeholders for your delivery groups, create machine catalogs that contain a minimal number of VMs during this step. In most cases, two VMs is enough to satisfy this requirement.
+Use machine catalogs to manage collections of machines as single entities. For more information, see [Create machine catalogs](/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html). Machine catalogs are a prerequisite for creating delivery groups. When you run the Azure migration tool, the tool brings over all of your settings and creates all the VMs you need. To make sure you have placeholders for your delivery groups, create machine catalogs that contain a minimal number of VMs during this step. Usually, two VMs are enough to satisfy this requirement.
 
 ##### Create delivery groups
 
@@ -273,7 +277,7 @@ Step 2: Migration
 
 We use a Citrix-developed tool, the automated configuration tool, to migrate Citrix Virtual Apps and Desktops from on-premises to Citrix Virtual Apps and Desktops service. You can [download the automated configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) from Citrix. Documentation for the tool is available on Tech Zone in [Automated Configuration](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html). The tool is available as a preview.
 
-Because our on-premises lab is using MCS, we will only migrate the following:
+Because our on-premises lab is using MCS, we only migrate the following:
 
 *  Applications
 *  Citrix Policies
@@ -314,7 +318,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 ###### Prerequisites
 
-1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID` and `Secret`.
+1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID`, and `Secret`.
 
     ![Example customerinfo.yml file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
 
@@ -338,7 +342,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Copy the Secret
 
-1.  Paste the information in a document (it will not be possible to see the information again, so keep the document safe).
+1.  Paste the information in a document (it is not possible to see the information again, so keep the document safe).
 
 1.  When the file is filled, save it (insert your information between the quotation marks).
 
@@ -352,7 +356,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 >
 >If the default on-prem has not been changed, it should be Primary.
 
-The correct syntax for the primary zone is to keep a space between the colon [:] and the first quotation mark ["]. The name is case-sensitive and must be enclosed in quotation marks as shown.
+The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark ["]. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
 ###### Import applications
 
@@ -404,7 +408,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     ![Auto Config icon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-desktop-icon.png)
 
-1.  Run the following command: `Export-CvadAcToFile`. This is the same as running the `Export-CvadAcToFile -All $True` command.
+1.  Run the following command: `Export-CvadAcToFile`. This command is the same as running the `Export-CvadAcToFile -All $True` command.
 
     ![Export](en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_***)
 
@@ -414,7 +418,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 ##### Prerequisites
 
-1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID` and `Secret`.
+1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID`, and `Secret`.
 
 1.  Connect to Citrix Cloud and go to **Identity and Access Management**.
 
@@ -428,7 +432,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Copy the Secret.
 
-1.  Paste the information in a document (it will not be possible to see the information again, so keep the document safe).
+1.  Paste the information in a document (it is not possible to see the information again, so keep the document safe).
 
 1.  Add the following line at the end of the file: HostConnections: True to allow the hosting configuration.
 
@@ -436,13 +440,13 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Edit `ZoneMapping.yml` using Notepad.
 
-1.  You will need to replace the highlighted text with your Cloud resource location in the following example:
+1.  You need to replace the highlighted text with your Cloud resource location in the following example:
 
     >**Note:**
     >
     >If the default on-prem has not been changed, it should be **Primary**.
 
-    The correct syntax for the primary zone is to keep a space between the colon [:] and the first quotation mark ["]. The name is case-sensitive and must be enclosed in quotation marks as shown.
+    The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark ["]. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
 1.  Edit `CvadAcSecurity.yml` using Notepad.
 
@@ -452,7 +456,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Connect to your vCenter and retrieve certificate details.
 
-1.  Copy the **Thumbprint** presented in Details tab.
+1.  Copy the **Thumbprint** presented in the **Details** tab.
 
 1.  Add a line `SslThumbprints`:
 
@@ -494,7 +498,7 @@ In this section, we configure the on-premises StoreFront and Citrix Gateway to i
 
 1.  Add your Cloud Connector as a delivery controller in each configured store.
 
-1.  Add a new delivery controller configuration by adding the Cloud Connector as the secure ticket authority (STA) in your Citrix Gateway configuration.
+1.  Add a delivery controller configuration by adding the Cloud Connector as the secure ticket authority (STA) in your Citrix Gateway configuration.
 
 1.  Aggregate resources.
 
@@ -513,7 +517,7 @@ Now the STA servers are up and StoreFront is configured.
 
 >**Checkpoint Citrix Virtual Apps and Desktops service migration
 >
->1.  Ensure in Citrix Cloud that VDAs are registered.
+>1.  Ensure in Citrix Cloud that the VDAs are registered.
 >
 >1.  Ensure in the on-premises Workspace Environment Management console that new VDAs (provisioned using Citrix Virtual Apps and Desktops service) are registered.
 >
@@ -533,13 +537,13 @@ The toolkit supports the migration from Workspace Environment Management 4.7 and
 
 For details about migrating to the Workspace Environment Management service, see [Migrate](/en-us/workspace-environment-management/service/migrate.html).
 
-The following diagram shows the environment with our on-prem and Azure resources, now adding Workspace Environment Management service to our cloud environment.
+The following diagram shows the environment with our on-prem and Azure resources, now adding the Workspace Environment Management service to our cloud environment.
 
 ![Workspace Environment Management service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-service.png)
 
 >**Note:**
 >
->After you return to the Workspace Environment Management Service **Downloads** tab, the progress message appears under **Upload**, which updates as the upload progresses. After your SQL file is uploaded successfully, the migration process starts automatically.
+>When you return to the Workspace Environment Management Service **Downloads** tab, the progress message appears under **Upload**, which updates as the upload progresses. After your SQL file is uploaded successfully, the migration process starts automatically.
 
 ### Step 2: Load data
 
@@ -549,7 +553,7 @@ The following diagram shows the environment with our on-prem and Azure resources
 
 #### Workspace Environment Management service settings
 
-To ensure that our VDAs will switch from on-prem to Cloud, an easy trick is to create a new setting that is only configured in the Workspace Environment Management service. The following image shows what we did as an example:
+To verify that our VDAs switch from on-prem to Cloud, an easy trick is to create a setting that is only configured in the Workspace Environment Management service. The following image shows what we did as an example:
 
 1.  In the Workspace Environment Management service administration console, go to **Actions > Applications > Add**.
 
@@ -573,7 +577,7 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 
 1.  In **Advanced Settings**, click the **Agent Switch** tab.
 
-1.  Check the box **Switch to Service Agent**, provide the Cloud Connector servers and click **Apply**.
+1.  Check the box **Switch to Service Agent**, provide the Cloud Connector servers, and click **Apply**.
 
 1.  Restart the VDA to apply the new settings.
 
@@ -588,7 +592,7 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 
 In a typical Citrix customer deployment, there are multiple components that can be migrated. Component types and migration plans may vary by customers.  
 
-To get a better sense of how to approach your migration, please refer to the [Microsoft Cloud Adoption Framework for Azure](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/).
+To get a better sense of how to approach your migration, refer to the [Microsoft Cloud Adoption Framework for Azure](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/).
 
  In this section we cover the migration of components that are closely related to Citrix, such as the file server for profiles and folder redirection, and the master images for provisioning.
 
@@ -616,23 +620,23 @@ While Azure Reserved Instances require making upfront commitments on compute�
 
 ### Azure VM instance types
 
-Each Citrix component leverages an associated virtual machine type in Azure. Each VM series available is mapped to a specific category of workloads (general purpose, compute-optimized, and so forth), with various sizes controlling the resources allocated to the VM (CPU, Memory, IOPS, network, and others). The [Virtual Machine Series](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/) provides detailed descriptions of the series and their capabilities.
+Each Citrix component uses an associated virtual machine type in Azure. Each VM series available is mapped to a specific category of workloads (general purpose, compute-optimized, and so forth), with various sizes controlling the resources allocated to the VM (CPU, Memory, IOPS, network, and others). The [Virtual Machine Series](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/) provides detailed descriptions of the series and their capabilities.
 
-Most Citrix deployments use the D-Series and F-Series instance types. The D-Series are commonly used for the Citrix infrastructure components and sometimes for the user workloads when they require additional memory beyond what is found in the F-Series instance types. F-Series instance types are the most common in the field for user workloads because of their faster processors, which bring with them the perception of responsiveness.
+Most Citrix deployments use the D-Series and F-Series instance types. The D-Series are commonly used for the Citrix infrastructure components and sometimes for the user workloads when they require more memory beyond what is found in the F-Series instance types. F-Series instance types are the most common in the field for user workloads because of their faster processors, which bring with them the perception of responsiveness.
 
-Why D-Series or F-Series? From a Citrix perspective, most infrastructure components (Cloud Connectors, StoreFront, NetScaler, and so on) use CPU to run core processes. These VM types have a balanced CPU to Memory ratio and are hosted on uniform hardware (unlike A-Series) for more consistent performance and support premium storage. Certainly, you can and should adjust your instance types to meet your needs and your budget.
+Why D-Series or F-Series? From a Citrix perspective, most infrastructure components (Cloud Connectors, StoreFront, NetScaler, and so on) use CPU to run core processes. These VM types have a balanced CPU to Memory ratio and are hosted on uniform hardware (unlike the A-Series) for more consistent performance and support premium storage. Certainly, you can and should adjust your instance types to meet your needs and your budget.
 
-The size and number of components within your infrastructure always depends on your requirements, scale, and workloads. However, with Azure we have the ability to scale dynamically and on-demand. For the cost conscious, starting smaller and scaling up is the best approach. Azure VMs require a restart when changing size, so plan these events only within scheduled maintenance windows and under established change control policies.
+The size and number of components within your infrastructure always depends on your requirements, scale, and workloads. However, with Azure we can scale dynamically and on-demand. For the cost conscious, starting smaller and scaling up is the best approach. Azure VMs require a restart when changing size, so plan these events only within scheduled maintenance windows and under established change control policies. Citrix provides a more detailed analysis in [The scalability and economics of delivering Citrix Virtual App and Desktop services on Azure](/en-us/tech-zone/design/design-decisions/azure-instance-scalability.html)
 
 ### Storage
 
-Just like any other computer, virtual machines in Azure use disks as a place to store an operating system, applications, and data. All Azure virtual machines have at least two disks – a Windows operating system disk and a temporary disk. The operating system disk is created from an image, and both the operating system disk and the image are stored within Azure as virtual hard disks (VHDs). Virtual machines may also have additional disks attached as data disks, also stored as VHDs.   <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-types>
+Just like any other computer, the virtual machines in Azure use disks as a place to store an operating system, applications, and data. All Azure virtual machines have at least two disks – a Windows operating system disk and a temporary disk. The operating system disk is created from an image, and both the operating system disk and the image are stored within Azure as virtual hard disks (VHDs). Virtual machines may also have other disks attached as data disks, also stored as VHDs.   <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-types>
 
-Azure Disks are designed to deliver enterprise-grade durability. Three performance tiers for storage exist that can be selected when creating disks: Premium SSD Disks, Standard SSD, and Standard HDD Storage, and the disks may be either managed or unmanaged. Managed disks are the default and are not subject to the storage account limitations like the unmanaged disks.
+Azure Disks are designed to deliver enterprise-grade durability. You can select from two performance tiers for storage exist when you create disks: Premium SSD Disks and Standard HDD Storage. The disks may be either managed or unmanaged. Managed disks are the default and are not subject to the storage account limitations like the unmanaged disks.
 
-Managed disks are recommended over unmanaged disks by Microsoft. Unmanaged disks should be considered only for exceptions. Consider that Standard Storage (HDD and SSD) includes transaction costs (storage I/O) but has lower costs per disk. Premium Storage has no transaction costs but has higher per-disk costs and offers an improved user experience.
+Microsoft recommends managed disks over unmanaged disks. Unmanaged disks should be considered only for exceptions. Consider that Standard Storage (HDD and SSD) includes transaction costs (storage I/O) but has lower costs per disk. Premium Storage has no transaction costs but has higher per-disk costs and offers an improved user experience.
 
-The disks offer no SLA unless an Availability Set is used. Availability Sets are not supported with Citrix MCS. When you create VMs for Citrix Cloud Connector, Citrix ADC, or StoreFront on Azure, use Availability Sets.
+The disks only offer an SLA when an Availability Set is used. Availability Sets are not supported with Citrix MCS. When you create VMs for Citrix Cloud Connector, Citrix ADC, or StoreFront on Azure, use Availability Sets.
 
 ### Azure Migrate services overview
 
@@ -652,11 +656,13 @@ Step 3: Migration
 
 >**Note:**
 >
->If you use PVS for your Citrix Virtual Apps and Desktops deployment, specific steps are required to prepare your environment before you migrate to Azure, please follow those steps below. If you have MCS please go directly to [Discovery](#Step1: Discovery).
+>For PVS users, specific steps are required to prepare your environment before you migrate to Azure. Follow those steps in the next section. MCS users can go directly to [Discovery](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.md#Step1: Discovery).
 
-### Prequisite for PVS-specific image preparation
+### Prerequisite for PVS-specific image preparation
 
-The process for PVS images is the following:
+For each PVS image, it's necessary to remove the VM from Provisioning and to temporarily configure it so it is hosted on VMware vSphere only.
+
+Follow these steps:
 
 Step 1: Reverse images
 
@@ -718,7 +724,7 @@ After the appliance is deployed and you've provided credentials, the appliance s
 
 Based on the discovery results, you create an assessment of all on-premises resources on your vCenter.
 
-For the assessment (which is recommended by Microsoft), you have multiple options. The two that interest us most for Citrix workloads are:
+For the assessment (which Microsoft recommends), you have multiple options. The two that interest us most for Citrix workloads are:
 
 *  [Azure Migrate: Server Assessment](https://docs.microsoft.com/en-us/azure/migrate/tutorial-assess-vmware#set-up-an-assessment)
 
@@ -792,7 +798,7 @@ We highly recommend that you run a test migration at least once for each machine
 
 Follow Microsoft’s guidance to [Complete the migration](https://docs.microsoft.com/en-us/azure/migrate/tutorial-migrate-vmware#complete-the-migration) and for [Post-migration best practices](https://docs.microsoft.com/en-us/azure/migrate/tutorial-migrate-vmware#post-migration-best-practices).
 
-1.  After the migration is done, right-click the VM > Stop Replication. This stops replication for the on-premises machine and cleans up replication state information for the VM.
+1.  After the migration is done, right-click and select **VM > Stop Replication**. This command stops replication for the on-premises machine and cleans up replication state information for the VM.
 
 1.  Install the Azure VM Windows or Linux agent on the migrated machines.
 
@@ -842,7 +848,7 @@ Consider deploying [Azure Cost Management](https://docs.microsoft.com/en-us/az
 
 ## Move Citrix workload to Azure
 
-Next we’ll move our Citrix workload to Azure.  
+Next we move our Citrix workload to Azure.  
 
 The following diagram shows the Azure and Citrix Cloud components that have been migrated and our remaining on-premises environment.
 
@@ -852,7 +858,7 @@ The following diagram shows the Azure and Citrix Cloud components that have been
 
 1.  Deploy two Cloud Connectors on Azure.
 
-1.  Create a new resource location in Citrix Cloud.
+1.  Create a resource location in Citrix Cloud.
 
 1.  Deploy Cloud Connector software on the servers and attach them to the new resource locations.
 
@@ -890,13 +896,13 @@ The following diagram shows the Azure and Citrix Cloud components that have been
 
 ## Migrate to Citrix Workspace and Citrix Gateway service
 
-In the final migration step, we migrate to Citrix Gateway service and Citrix Workspace, as shown in the following diagram.
+In the final migration step, we migrate to the Citrix Gateway service and Citrix Workspace, as shown in the following diagram.
 
 ![Workspace and Citrix Gateway Service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-and-citrix-gateway-service.png)
 
 >**Note:**
 >
->When you evaluate Citrix Gateway service and Citrix Workspace, make sure the customizations and configurations you need are available.
+>When you evaluate the Citrix Gateway service and Citrix Workspace, make sure the customizations and configurations you need are available.
 
 ### Configuration
 
@@ -912,7 +918,7 @@ In the final migration step, we migrate to Citrix Gateway service and Citrix Wor
 
 1.  You can customize with two logos. One for the authentication page and one for the Workspace store.
 
-1.  You can change colors if required.
+1.  You can change colors if necessary.
 
 1.  Click **Save**.
 
