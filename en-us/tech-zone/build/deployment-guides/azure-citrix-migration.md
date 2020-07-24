@@ -354,9 +354,11 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Edit `ZoneMapping.yml` using Notepad.
 
+    ![Original zone mapping YAML file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-original.png)
+
 1.  Replace the highlighted text with your Cloud resource location in the following example:
 
-    ![Zone mapping YAML example](image)
+    ![Zone mapping YAML example](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-edited.png)
 
 >**Note:**
 >
