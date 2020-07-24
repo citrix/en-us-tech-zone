@@ -410,7 +410,6 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Ensure that the result is reported as **True**.
 
-
 #### Import settings to Citrix Cloud
 
 ##### Prerequisites
@@ -589,7 +588,7 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 
 In a typical Citrix customer deployment, there are multiple components that can be migrated. Component types and migration plans may vary by customers.  
 
-To get a better sense of how to approach your migration, please refer to https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/.
+To get a better sense of how to approach your migration, please refer to the [Microsoft Cloud Adoption Framework for Azure](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/).
 
  In this section we cover the migration of components that are closely related to Citrix, such as the file server for profiles and folder redirection, and the master images for provisioning.
 
@@ -597,15 +596,15 @@ To get a better sense of how to approach your migration, please refer to https:/
 
 Azure offers several file server technologies that can be used to store Citrix user data, roaming profile information, or function as targets for Citrix App Layering network file shares. The Azure options include:
 
-*  Standalone file server (https://azure.microsoft.com/en-us/services/storage/files/)
+*  Standalone file server using [Azure files](https://azure.microsoft.com/en-us/services/storage/files/)
 
-*  File servers using storage replica (https://docs.microsoft.com/en-us/windows-server/storage/storage-replica/storage-replica-overview)
+*  File servers using [Storage Replica](https://docs.microsoft.com/en-us/windows-server/storage/storage-replica/storage-replica-overview)
 
-*  Scale out file server (SOFS) with storage spaces direct (S2D) (https://docs.microsoft.com/en-us/windows-server/storage/refs/refs-overview#storage-spaces-direct)
+*  Scale out file server (SOFS) with [Storage Spaces Direct (S2D)](https://docs.microsoft.com/en-us/windows-server/storage/refs/refs-overview#storage-spaces-direct)
 
-*  Distributed file system – replication (DFS-R) (https://docs.microsoft.com/en-us/previous-versions/windows/desktop/dfsr/distributed-file-system-replication--dfsr-)
+*  [Distributed File System Replication (DFS-R)](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/dfsr/distributed-file-system-replication--dfsr-)
 
-*  Third-party storage appliances from Azure Marketplace (such as NetApp and others) (https://azure.microsoft.com/en-us/marketplace/)
+*  Third-party storage appliances (such as NetApp and others) from [Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/)
 
 Select file server technologies that best meet your business requirements. [Introduction to Azure Storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction) provides a list of storage types and corresponding use cases to help you determine what’s best for your situation.
 
@@ -637,7 +636,7 @@ The disks offer no SLA unless an Availability Set is used. Availability Sets are
 
 ### Azure Migrate services overview
 
-Azure Migrate provides a set of tools to assess and migrate to Azure on-premises servers, infrastructure, applications, and data. For detailed information, see https://docs.microsoft.com/en-us/azure/migrate/migrate-services-overview 
+Azure Migrate provides a set of tools to assess and migrate to Azure on-premises servers, infrastructure, applications, and data. For detailed information, see [About Azure Migrate](https://docs.microsoft.com/en-us/azure/migrate/migrate-services-overview)
 
 The following diagram shows the locations of our resources when we migrate to Azure.
 
@@ -759,7 +758,7 @@ To facilitate the migration, we have created a group that only contains the VMs 
 
 ### Step 3: Migration
 
-For server migration, Microsoft provides options for agent-based and agentless approaches. Our focus here is on the agentless approach, as describe in [Migrate VMware VMs to Azure (agentless)] (https://docs.microsoft.com/en-in/azure/migrate/tutorial-migrate-vmware). To determine the best approach for your business, see [Select a VMware migration option](https://docs.microsoft.com/en-us/azure/migrate/server-migrate-overview).
+For server migration, Microsoft provides options for agent-based and agentless approaches. Our focus here is on the agentless approach, as describe in [Migrate VMware VMs to Azure (agentless)](https://docs.microsoft.com/en-in/azure/migrate/tutorial-migrate-vmware). To determine the best approach for your business, see [Select a VMware migration option](https://docs.microsoft.com/en-us/azure/migrate/server-migrate-overview).
 
 The migration process starts with an initial replication of the on-premises VMs to Azure.
 
