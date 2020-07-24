@@ -656,3 +656,195 @@ Step 3: Migration
 >If you use PVS for your Citrix Virtual Apps and Desktops deployment, specific steps are required to prepare your environment before you migrate to Azure, please follow those steps below. If you have MCS please go directly to [Discovery](#Step1: Discovery).
 
 ### Prequisite for PVS-specific image preparation
+
+The process for PVS images is the following:
+
+Step 1: Reverse images
+
+1.  Attach a new disk to one of your VMs.
+
+1.  In the Citrix Provisioning console, change the **Type** for this VM from **Production** to Maintenance.
+
+1.  Start your VM in maintenance mode.
+
+1.  Open a session on your VM.
+
+1.  Open the **Computer Management** console and click **Disk Management**.
+
+1.  When the new disk is detected, click **OK**.
+
+1.  Select the disk, right-click, and select **New Simple Volume**.
+
+1.  Keep the default options and click **Finish**.
+
+1.  Open Windows Explorer, go to `C:\Program Files\Citrix\Provisioning Services` and launch **P2PVS**.
+
+1.  Select **From: Citrix Provisioning Disk**, **To: This Machine** and click **Next**.
+
+1.  You can resize the disk if you want. Click **Next**.
+
+1.  When the process is finished, click **Finish**.
+
+1.  Shut down the VM.
+
+1.  In the Citrix Provisioning Console, change the **Boot from:** for this VM from **vDisk** to **Hard Disk**.
+
+1.  Restart the VM and open a session.
+
+1.  Open **Control Panel** and click **Uninstall program**.
+
+1.  Uninstall **Citrix Provisioning Target Device** software.
+
+1.  Restart the VM and ensure in Citrix Studio that your VM can register.
+
+1.  Clear the Event Logs and shut down your VM.
+
+Now that our VM is completely hosted by vSphere with the hard drive attached, we can migrate it to Azure.
+
+### Step 1: Discovery
+
+The first step is to create a migration project and select the tools to use. You need to set up the appliance for the discovery process. For more details, see [Discover machine apps, roles, and features](https://docs.microsoft.com/en-us/azure/migrate/how-to-discover-applications).
+
+Microsoft provides two methods for setting up the appliance:
+
+*  OVA template (a downloadable file)
+
+*  Script
+
+The Azure Migrate appliance connects to the vCenter Server to discover and migrate VMs using agentless migration.
+
+After the appliance is deployed and you've provided credentials, the appliance starts continuous discovery of VM metadata and performance data, along with discovery of apps, features, and roles. The duration of app discovery depends on how many VMs you have. It typically takes an hour for app discovery of 500 VMs.
+
+### Step 2: Assessment
+
+Based on the discovery results, you create an assessment of all on-premises resources on your vCenter.
+
+For the assessment (which is recommended by Microsoft), you have multiple options. The two that interest us most for Citrix workloads are:
+
+*  [Azure Migrate: Server Assessment](https://docs.microsoft.com/en-us/azure/migrate/tutorial-assess-vmware#set-up-an-assessment)
+
+*  [Movere (Coming Soon)](https://docs.microsoft.com/en-us/azure/migrate/migrate-services-overview)
+
+We use Azure Migrate: Server Assessment in this project.
+
+The migration tool provides an overview of your environment with details like:
+
+*  Name
+*  IP Address
+*  Applications installed
+*  Dependencies
+*  Cores
+*  Memory
+*  Disks
+*  Storage
+*  Operating System
+
+During the assessment configuration, you have access to assessment properties that allow you to:
+
+*  Select Target Location
+*  Select Storage Type
+*  Select if you want to assess based on reserved instances
+*  Select Sizing criteria
+*  Select Performance History
+*  Select Percentile utilization
+*  Select VMs Series
+*  Select Comfort Factor
+*  Select Pricing details
+
+For dependencies to be discovered, you need to deploy software on the VMs. See [Analyze machine dependencies (agentless)](https://docs.microsoft.com/en-us/azure/migrate/how-to-create-group-machine-dependencies-agentless).
+
+Dependencies are helpful to know when you want to migrate application or database servers. Knowing the dependencies lets you determine exactly which servers need to be migrated to ensure a persistent and secure connection between your servers.
+
+To facilitate the migration, we have created a group that only contains the VMs that we intend to migrate.
+
+### Step 3: Migration
+
+For server migration, Microsoft provides options for agent-based and agentless approaches. Our focus here is on the agentless approach, as describe in [Migrate VMware VMs to Azure (agentless)] (https://docs.microsoft.com/en-in/azure/migrate/tutorial-migrate-vmware). To determine the best approach for your business, see [Select a VMware migration option](https://docs.microsoft.com/en-us/azure/migrate/server-migrate-overview).
+
+The migration process starts with an initial replication of the on-premises VMs to Azure.
+
+The duration of the process depends on the size of the disks associated to your VMs and your bandwidth. The duration also depends on
+
+*  The number of concurrent migrations
+*  Your bandwidth on vCenter
+*  The availability of storage (for the agentless approach)
+*  Your network bandwidth
+
+During the replication process, you need to select:
+
+*  VMware vSphere
+*  Appliance to use
+*  Select Virtual machines to migrate (import the Assessment, select Group)
+*  Select Target Settings
+*  Select Compute
+*  Select Disks
+
+When the delta replication begins, after initial replication, you can [run a test migration](https://docs.microsoft.com/en-us/azure/migrate/tutorial-migrate-vmware#run-a-test-migration) before running a full migration to Azure.
+
+We highly recommend that you run a test migration at least once for each machine before you migrate it.
+
+*  Running a test migration checks that migration works as expected, without impacting the on-premises machines, which remain operational, and continues replicating.  
+
+*  Test migration simulates the migration by creating an Azure VM using replicated data (usually migrating to a non-production VNet in your Azure subscription).  
+
+*  You can use the replicated test Azure VM to validate the migration, perform app testing, and address any issues before full migration.
+
+#### Complete the migration
+
+Follow Microsoft’s guidance to [Complete the migration](https://docs.microsoft.com/en-us/azure/migrate/tutorial-migrate-vmware#complete-the-migration) and for [Post-migration best practices](https://docs.microsoft.com/en-us/azure/migrate/tutorial-migrate-vmware#post-migration-best-practices).
+
+1.  After the migration is done, right-click the VM > Stop Replication. This stops replication for the on-premises machine and cleans up replication state information for the VM.
+
+1.  Install the Azure VM Windows or Linux agent on the migrated machines.
+
+1.  Perform any post-migration app tweaks, such as updating database connection strings, and web server configurations.
+
+1.  Perform final application and migration acceptance testing on the migrated application now running in Azure.
+
+1.  Cut over traffic to the migrated Azure VM instance.
+
+1.  Remove the on-premises VMs from your local VM inventory.
+
+1.  Remove the on-premises VMs from local backups.
+
+1.  Update any internal documentation to show the new location and IP address of the Azure VMs.
+
+#### Post-migration best practices
+
+*  For increased resilience:
+
+    *  Keep data secure by backing up Azure VMs using the Azure Backup service. [Learn more in Back up a virtual machine in Azure](https://docs.microsoft.com/en-us/azure/backup/quick-backup-vm-portal).
+    *  Keep workloads running and continuously available by replicating Azure VMs to a secondary region with Site Recovery. [Learn more in Set up disaster recovery for Azure VMs](https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication).
+
+For increased security:
+
+    *  Lock down and limit inbound traffic access with [Azure Security Center - Just in time administration](https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication).
+    *  Restrict network traffic to management endpoints with [Network Security Groups](https://docs.microsoft.com/en-us/azure/virtual-network/security-overview).
+    *  Deploy [Azure Disk Encryption](https://docs.microsoft.com/en-us/azure/security/fundamentals/azure-disk-encryption-vms-vmss) to help secure disks, and keep data safe from theft and unauthorized access.
+    *  Read more about [securing IaaS resources](https://azure.microsoft.com/en-us/services/virtual-machines/secure-well-managed-iaas/), and visit the [Azure Security Center](https://azure.microsoft.com/en-us/services/security-center/).
+
+For monitoring and management, consider using [Citrix Application Delivery Management service](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/overview.html).
+
+Consider deploying [Azure Cost Management](https://docs.microsoft.com/en-us/azure/cost-management-billing/cloudyn/overview) to monitor resource usage and spending.
+
+>**Checkpoint: Azure Migration**
+>
+>1.  Validate the IP address assigned to the file server on Azure after migration.
+>
+>1.  Ensure the IP address has been updated on the DNS server.
+>
+>1.  Connect to the Citrix Gateway with a new user account.
+>
+>1.  Open the Citrix Virtual Apps and Desktops service desktop.
+>    ![On-prem workload desktop](image)
+>
+>1.  Close the session and ensure that the user’s profile has been created on the Azure file server.
+>    ![User profile in Azure](image)
+
+## Move Citrix workload to Azure
+
+Next we’ll move our Citrix workload to Azure.  
+
+The following diagram shows the Azure and Citrix Cloud components that have been migrated and our remaining on-premises environment.
+
+![Citrix workload on Azure](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_citrix-workload-on-azure.png)
