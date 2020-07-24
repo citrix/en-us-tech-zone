@@ -816,7 +816,7 @@ Follow Microsoft’s guidance to [Complete the migration](https://docs.microsoft
     *  Keep data secure by backing up Azure VMs using the Azure Backup service. [Learn more in Back up a virtual machine in Azure](https://docs.microsoft.com/en-us/azure/backup/quick-backup-vm-portal).
     *  Keep workloads running and continuously available by replicating Azure VMs to a secondary region with Site Recovery. [Learn more in Set up disaster recovery for Azure VMs](https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication).
 
-For increased security:
+*  For increased security:
 
     *  Lock down and limit inbound traffic access with [Azure Security Center - Just in time administration](https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication).
     *  Restrict network traffic to management endpoints with [Network Security Groups](https://docs.microsoft.com/en-us/azure/virtual-network/security-overview).
