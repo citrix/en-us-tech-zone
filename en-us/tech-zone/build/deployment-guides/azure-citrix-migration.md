@@ -848,3 +848,95 @@ Next we’ll move our Citrix workload to Azure.
 The following diagram shows the Azure and Citrix Cloud components that have been migrated and our remaining on-premises environment.
 
 ![Citrix workload on Azure](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_citrix-workload-on-azure.png)
+
+### Step 1: Prerequisites
+
+1.  Deploy two Cloud Connectors on Azure.
+
+1.  Create a new resource location in Citrix Cloud.
+
+1.  Deploy Cloud Connector software on the servers and attach them to the new resource locations.
+
+### Step 2: Create Citrix workload and publish through on-premises StoreFront
+
+1.  Create the basic configuration
+    1.  hosting
+    1.  machine catalogs
+    1.  delivery groups
+
+1.  Connect to the on-premises StoreFront server to add the Azure Cloud Connectors as delivery controllers on each store.
+
+1.  Configure user mapping and [multi-site aggregation](https://docs.citrix.com/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) (during the transition step) for the internal store.
+
+1.  Configure user mapping and multi-site aggregation for the external store.
+
+1.  Add the Azure-hosted Cloud Connectors as the STA in the Citrix Gateway configuration in StoreFront.
+
+1.  Add the Azure-hosted Cloud Connectors as the STA in the Citrix Gateway Virtual Servers configuration on Citrix ADC.
+
+1.  Ensure that all STAs are **UP**.
+
+1.  Apply the Citrix policy to the new delivery groups.
+
+>**Checkpoint: Citrix workload**
+>
+>1.  Connect to your Citrix Gateway.
+>
+>1.  Open the Azure-hosted Citrix Virtual Apps and Desktop service published desktop.
+>    ![Desktop on Azure](image)
+>
+>1.  Ensure that the name of the desktop is the one you provisioned on Azure.
+>
+>1.  Launch apps to make sure they launch. Make note of app performance. If your apps perform poorly, you may need to adjust your Azure machine sizing.
+
+## Migrate to Citrix Workspace and Citrix Gateway service
+
+In the final migration step, we migrate to Citrix Gateway service and Citrix Workspace, as shown in the following diagram.
+
+![Workspace and Citrix Gateway Service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-and-citrix-gateway-service.png)
+
+>**Note:**
+>
+>When you evaluate Citrix Gateway service and Citrix Workspace, make sure the customizations and configurations you need are available.
+
+### Configuration
+
+1.  Connect to Citrix Cloud.
+
+1.  Click **Home** and select **Workspace Configuration**.
+
+1.  Edit the Workspace URL and provide a name that meets your requirements. Click **Save**.
+
+1.  Click **Authentication**.
+
+1.  The supported authentication methods are presented. Select the one you want and click **Customize**.
+
+1.  You can customize with two logos. One for the authentication page and one for the Workspace store.
+
+1.  You can change colors if required.
+
+1.  Click **Save**.
+
+1.  Click **Service Integrations**.
+
+1.  Enable **Virtual Apps and Desktops**.
+
+1.  Click **Confirm**.
+
+1.  Click **Access**.
+
+1.  To the right of the Azure Resource Location, click the 3 dots **...** and select **Configure Connectivity**.
+
+1.  Select **Gateway Service** and click **Save**.
+
+>**Checkpoint: Citrix Workspace and Citrix Gateway service migration**
+>
+>![Workspace configuration](image)
+>
+>1.  Click the **Workspace URL**.
+>
+>1.  Provide your credentials and click **Log On**.
+>
+>1.  Click **Desktops**.
+>
+>1.  Click **Win 10 Azure + Citrix Virtual Apps and Desktops Service** to launch your desktop.
