@@ -520,7 +520,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Put all letters in CAPS and remove spaces.
 
-    ![Thumbprint formatted](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_thumbprint-raw.png)
+    ![Thumbprint formatted](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_thumbprint-formatted.png)
 
 1.  Save the file.
 
@@ -1002,3 +1002,5 @@ In the final migration step, we migrate to the Citrix Gateway service and Citrix
 >1.  Click **Desktops**.
 >
 >1.  Click **Win 10 Azure + Citrix Virtual Apps and Desktops Service** to launch your desktop.
+
+![Forcing build in a pinch with reference to unused image](/en-us/tech-zone/learn/media/shared_banner.png)
