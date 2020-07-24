@@ -340,7 +340,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Copy the ID.
 
-    ![ID copy](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_full-migration.gif)
+    ![ID copy](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_id-copy.png)
 
 1.  Copy the Secret
 
@@ -370,9 +370,15 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 
 1.  Run the following command in the Auto Config tool: `Import-CvadAcToSite -Applications $true`.
 
+    ![Import apps](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_import-apps-cmd.png)
+
 1.  Enter yes to validate the action.
 
+    ![Validate app import](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_import-apps-cmd-validate.png)
+
     The resulting output looks like the following image:
+
+    ![App import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_import-apps-result.png)
 
 ###### Import policies
 
