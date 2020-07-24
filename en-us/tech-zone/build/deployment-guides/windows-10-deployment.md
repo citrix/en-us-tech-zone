@@ -51,29 +51,31 @@ This guide assumes that the reader has a basic understanding of Citrix Virual Ap
 
 [![Citrix VDA Download Screen](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-download.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-download.png)
 
-2.  As an administrator run the instal file "VDAServerSetup_xxxx.exe"
-3.  Depending on your install type slect the configuration option:
-4.  Create a master MCS image
-5.  Create a master imageusing Citrix Provisioning or third-party provisioning tools
-6.  Enable Brokered Connection to a Server (option selected for this guide)
+2.  As an administrator run the instal file "VDAWorkstationSetup_xxxx.exe"
+3.  Depending on your install type select the configuration option:
+    1.  Create a master MCS image
+    2.  Create a master imageusing Citrix Provisioning or third-party provisioning tools
+    3.  Enable Brokered Connection to a Server (option selected for this guide)
 
 [![Citrix VDA install](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-1.png)
 
-7. If you required to deliver virtal applications or the benifits of Citrix Workspace, select the Citrix Workspace App
+7.  If you required to deliver virtal applications or the benifits of Citrix Workspace, select the Citrix Workspace App
 
 [![Citrix VDA install](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-2.png)
 
-8. If you have access to Citrix Content & Colaboration select the Citrix Files for windows & for Outlook option.
+8.  If you have access to Citrix Content & Colaboration select the Citrix Files for windows & for Outlook option.
+
   >**Note:**
-   >
-     > For a full list of VDA install options check here
+    >
+    > For a full list of VDA install options check here :
+    <https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html>
 
 [![Citrix VDA install](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-3.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-3.png)
 
-9. If you know your delivery controllers, select do it manually.
+9.  If you know your Cloud controllers, select do it manually.
 
-10. Enter the FQD name of each delivery controller (At lease two is recomended)
-11. Select Test Connection & if successfull select Add
+10.  Enter the FQD name of each Cloud controller (At lease two is recomended)
+11.  Select Test Connection & if successfull select Add
 
 [![Citrix VDA install](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-4.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-4.png)
 
@@ -83,20 +85,20 @@ This guide assumes that the reader has a basic understanding of Citrix Virual Ap
 
 [![Citrix VDA install](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-6.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-6.png)
 
-13. Review the summary & select install
+13.  Review the summary & select install
 
 [![Citrix VDA install](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-7.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-7.png)
 
 [![Citrix VDA install](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-8.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-8.png)
 
-14. Confirm everything was installed successfully, check the box to restart machine & select Finish
+14.  Confirm everything was installed successfully, check the box to restart machine & select Finish
 
 [![Citrix VDA install](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-9.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_vda-install-9.png)
 
 ## Citrix Workspace App
 
 1.  From the start menu launch Citrix Workspace
-   
+
 [![Citrix Workspace](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-1.png)
 
 2.  Add the URL to your Citrix environment
@@ -111,12 +113,10 @@ This guide assumes that the reader has a basic understanding of Citrix Virual Ap
 
 >**Note:**
  >This asumes the option to install Citrix Files was selected when installing the VDA above.
-  >If not that latest version can be downloaded from https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-windows.html
+  >If not that latest version can be downloaded from <https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-windows.html>
   
-
-
 1.  Check Citrix Files status from the icon in the taskbar. If offline, right click & select login.
-   
+
 [![Citrix Files](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Files-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Files-1.png)
 
 2.  Open Windows Explorer & check Citrix Files S: drive is available
@@ -127,10 +127,10 @@ This guide assumes that the reader has a basic understanding of Citrix Virual Ap
 
 >**Note:**
  >This asumes the option to install Citrix Files for Outlook was selected when installing the VDA above.
-  >If not that latest version can be downloaded from https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html
+  >If not that latest version can be downloaded from <https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html>
 
 1.  Open outlook & the Citrix files plug-in will be visable along the Outlook tool bar. If you are logged onto the WIndows 10 machine with an account with a valid Citrix Files account the authentication will pass through and enable the fles functionailty
-   
+
 [![Citrix Files for Outlook](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)
 
 2.  Select the icon to view the default settings. Best practice would be to have these settings deployed centraly from Citrix Content & Collaboration Service
@@ -151,10 +151,11 @@ This guide assumes that the reader has a basic understanding of Citrix Virual Ap
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-1.png)
 
-4. Run the alalysis option
-   
+4.  Run the alalysis option
+
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)
-1. Once analysesd, view the results.
+
+1.  Once analysesd, view the results.
 
 2.  Select all the desired optimisations & Select Optimise
 
@@ -162,13 +163,12 @@ This guide assumes that the reader has a basic understanding of Citrix Virual Ap
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)
 
-
-## HDX Monitor
+## HDX Monitor - Optional
 
 1.  From Citrix Insight Services - <https://cis.citrix.com/hdx/download/>
 
 2.  Select Current Version, Online install (if for this instance only) and select Download
-   
+
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-1.png)
 
 3.  Agree to the license terms
@@ -176,11 +176,11 @@ This guide assumes that the reader has a basic understanding of Citrix Virual Ap
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-3.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-3.png)
 
-5. Leave the default local hostname & select open
+5.  Leave the default local hostname & select open
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-4.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-4.png)
 
-6. Review the HDX Settings & Performance
-7. Click on each item for more information
+6.  Review the HDX Settings & Performance
+7.  Click on each item for more information
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-5.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-5.png)
