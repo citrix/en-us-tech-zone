@@ -903,7 +903,6 @@ Consider deploying [Azure Cost Management](https://docs.microsoft.com/en-us/az
 >1.  Connect to the Citrix Gateway with a new user account.
 >
 >1.  Open the Citrix Virtual Apps and Desktops service desktop.
->    ![On-prem workload desktop](image)
 >
 >1.  Close the session and ensure that the user’s profile has been created on the Azure file server.
 
@@ -949,7 +948,6 @@ The following diagram shows the Azure and Citrix Cloud components that have been
 >1.  Connect to your Citrix Gateway.
 >
 >1.  Open the Azure-hosted Citrix Virtual Apps and Desktop service published desktop.
->    ![Desktop on Azure](image)
 >
 >1.  Ensure that the name of the desktop is the one you provisioned on Azure.
 >
@@ -996,8 +994,6 @@ In the final migration step, we migrate to the Citrix Gateway service and Citrix
 1.  Select **Gateway Service** and click **Save**.
 
 >**Checkpoint: Citrix Workspace and Citrix Gateway service migration**
->
->![Workspace configuration](image)
 >
 >1.  Click the **Workspace URL**.
 >
