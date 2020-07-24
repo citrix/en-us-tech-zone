@@ -73,7 +73,7 @@ For further details, refer to [Create an Azure file share](https://docs.microsof
 Use the instructions in this section to enable Azure Files AD Authentication on a machine that's already domain-joined.
 
 1.  Use Remote Desktop Protocol (RDP) to connect to the **domain-joined** virtual machine.
-1.  To install the **AzFilesHybrid** module and enable authentication, follow the instructions in [Enable Azure AD DS authentication for your Azure file shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable).
+1.  To install the **AzFilesHybrid** module and enable authentication, follow the instructions in [Enable AD DS authentication for your Azure file shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable).
 
 Before proceeding to the next step, validate that Azure Files AD Authentication is enabled as follows:
 
