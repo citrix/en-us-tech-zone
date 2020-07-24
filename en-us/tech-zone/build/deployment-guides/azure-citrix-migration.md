@@ -237,9 +237,9 @@ If you’re already using Citrix Virtual Apps and Desktops service, you can skip
 
 If you’re using Citrix Virtual Apps and Desktops on-premises, you can use the procedures in this section as a guide for migrating to Citrix Virtual Apps and Desktops service.  
 
-For MCS users, the [MCS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.md#MCS migration) section provides detailed migration steps.
+For MCS users, the [MCS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.md#mcs-migration) section provides detailed migration steps.
 
-If you use PVS, go to [PVS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.md#PVS migration).
+If you use PVS, go to [PVS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#pvs-migration).
 
 The following diagram shows our cloud environment on Azure after we migrate to the Citrix Virtual Apps and Desktops service.
 
@@ -340,9 +340,15 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Copy the ID.
 
+    ![ID copy](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_full-migration.gif)
+
 1.  Copy the Secret
 
+    ![Secret copy](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_secret-copy.png)
+
 1.  Paste the information in a document (it is not possible to see the information again, so keep the document safe).
+
+    ![Customer info YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
 
 1.  When the file is filled, save it (insert your information between the quotation marks).
 
