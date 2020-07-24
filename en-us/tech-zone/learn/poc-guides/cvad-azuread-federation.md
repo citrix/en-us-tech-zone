@@ -24,8 +24,8 @@ The guide demonstrates how to implement a Proof of Concept environment consistin
 
 It makes assumptions about the installation, or configuration of certain components:
 
-*  An Active Directory Server is installed on-premises and you can login as Domain Admin.
-*  An Azure tenant is available with a P2 license and you can login as a Global Admin.
+*  An Active Directory Server is installed on-premises and you can log in as Domain Admin.
+*  An Azure tenant is available with a P2 license and you can log in as a Global Admin.
 *  A Citrix ADC appliance has been installed, is licensed, has a Citrix Gateway virtual server, and is configured to provide access to an on-premises Citrix Virtual Apps and Desktops environment. Use Version 13 build 60, or higher.
 *  A Delivery Controller, StoreFront, and VDA are installed, and configured to delivery virtual apps, or desktops for domain users. Use version 2006, or higher.
 *  A virtual machine is available, or another server has enough capacity to install FAS. The DDC, FAS, and StoreFront are all installed on the same server in this POC.
@@ -39,7 +39,7 @@ To configure Active Directory (AD) and Azure Active Directory (AAD) perform the 
 
 #### Alternative UPN Suffix
 
-1.  Login to your AD domain controller.
+1.  Log in to your AD domain controller.
 1.  Open **Server Manager > Tools > Active Directory Domains and Trusts**
 1.  Right-click, select Properties and enter the UPN Suffix for users corresponding to one of your AAD domains.
 ![AAD-IdP + CVAD + FAS + ADC-SP architecture](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adalternativeupnsuffix.png)
@@ -54,10 +54,10 @@ To configure Active Directory (AD) and Azure Active Directory (AAD) perform the 
 
 Azure AD Connect is a tool for connecting on-premises identity infrastructure to Microsoft Azure AD. It allows us to copy AD users to AAD with a UserPrincipalName (UPN) mapped to our AAD domain.
 
-1.  Login to your AD domain controller, or other virtual server where you will host the Microsoft Azure Active Directory Connect process.
+1.  Log in to your AD domain controller, or other virtual server where you will host the Microsoft Azure Active Directory Connect process.
 2.  Download the executable from the Microsoft download site [Microsoft Azure Active Directory Connect](https://www.microsoft.com/en-us/download/details.aspx?id=47594) and launch it.
 3.  You will be prompted to accept making changes to the virtual machine and accept a license agreement on the welcome page. ![AD Connect](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adConnectwelcome.png)
-4.  You will be prompted to login as a Global AAD admin and as a Domain Services admin.
+4.  You will be prompted to log in as a Global AAD admin and as a Domain Services admin.
 5.  For installation on a single AD virtual machine you can follow express settings. After it verifies UPN Suffixes it makes a full sync of all users, groups, and contacts.
 
 See [using Azure AD Connect express settings](/en-us/azure/active-directory/hybrid/how-to-connect-install-express) for more information.
@@ -74,7 +74,7 @@ For this POC we assume you have a Certificate Authority, including Web Enrollmen
 
 ### Azure Active Directory
 
-1.  Login to the [Azure Portal](https://portal.azure.com) as a global admin
+1.  Log in to the [Azure Portal](https://portal.azure.com) as a global admin
 1.  Navigate to Azure Active Directory > Enterprise Applications
 1.  Select New application
 1.  Select Non-gallery application ![AAD Non-gallery application](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-aadnonGalleryapplication.png)
@@ -94,7 +94,7 @@ For this POC we assume you have a Certificate Authority, including Web Enrollmen
 
 To configure the Citrix ADC perform the following steps:
 
-1.  Login to the Citrix ADC UI
+1.  Log in to the Citrix ADC UI
 1.  Navigate to Traffic Management > SSL> Certificates > All Certificates to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
 1.  Navigate to Security > AAA - Application Traffic > Virtual Servers and select Add
 1.  Enter the following fields and click OK:
@@ -150,7 +150,7 @@ See [Enable the FAS plug-in on StoreFront stores](/en-us/federated-authenticatio
 
 #### Configure StoreFront for Citrix Gateway
 
-1.  Login to the StoreFront virtual machine (which also hosts FAS, and the DDC in our POC), and launch the StoreFront GUI
+1.  Log in to the StoreFront virtual machine (which also hosts FAS, and the DDC in our POC), and launch the StoreFront GUI
 1.  Select Manage Authentication Methods from the menu on the right
 1.  Select Pass-through from Citrix Gateway
 1.  Select the down arrow next to the gear, and select Configure Delegated Authentication
@@ -223,7 +223,7 @@ To validate the POC perform the following steps:
 ### Workspace for Web
 
 1.  Open a browser, and navigate to the domain FQDN managed by the Citrix ADC. You will notice the Citrix Gateway redirects to AAD.
-1.  Login with the UPN of a user configured to be part of the FAS environment ![Login](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-remotewebredirectaaduser.png)
+1.  Log in with the UPN of a user configured to be part of the FAS environment ![Login](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-remotewebredirectaaduser.png)
 1.  Verify the users virtual apps, and desktops are enumerated, and launch while being logged in with the UPN via the AAD user object ![Logged in](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebloggedin.png)
 
 ## Summary
