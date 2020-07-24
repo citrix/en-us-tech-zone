@@ -342,7 +342,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     ![ID copy](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_id-copy.png)
 
-1.  Copy the Secret
+1.  Copy the secret
 
     ![Secret copy](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_secret-copy.png)
 
@@ -356,7 +356,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     ![Original zone mapping YAML file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-original.png)
 
-1.  Replace the highlighted text with your Cloud resource location in the following example:
+1.  Replace the highlighted text with your Cloud resource location as shown in the following example:
 
     ![Zone mapping YAML example](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-edited.png)
 
@@ -430,7 +430,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Run the following command: `Export-CvadAcToFile`. This command is the same as running the `Export-CvadAcToFile -All $True` command.
 
-    ![Export](en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_***)
+    ![Export](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-export-all.png)
 
 1.  Ensure that the result is reported as **True**.
 
@@ -440,19 +440,35 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID`, and `Secret`.
 
+    ![Example customerinfo.yml file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
+
 1.  Connect to Citrix Cloud and go to **Identity and Access Management**.
+
+    ![Citrix Cloud IAM](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_citrix-cloud-menu-iam.png)
 
 1.  Click **API Access**.
 
+    ![API access in Citrix Cloud IAM](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_api-access.png)
+
 1.  Take note of your **customer ID**.
+
+    ![CC customer ID](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_citrix-cloud-customer-id.png)
 
 1.  Provide a name and click **Create Client**.
 
+    ![CC resource name](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_citrix-cloud-resource-name.png)
+
 1.  Copy the ID.
 
-1.  Copy the Secret.
+    ![ID copy](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_id-copy.png)
+
+1.  Copy the secret.
+
+    ![Secret copy](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_secret-copy.png)
 
 1.  Paste the information in a document (it is not possible to see the information again, so keep the document safe).
+
+    ![Customer info YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
 
 1.  Add the following line at the end of the file: HostConnections: True to allow the hosting configuration.
 
@@ -460,7 +476,11 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Edit `ZoneMapping.yml` using Notepad.
 
-1.  You need to replace the highlighted text with your Cloud resource location in the following example:
+    ![Original zone mapping YAML file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-original.png)
+
+1.  You need to replace the highlighted text with your Cloud resource location as shown in the following example:
+
+    ![Zone mapping YAML example](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-edited.png)
 
     >**Note:**
     >
