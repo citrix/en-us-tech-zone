@@ -43,7 +43,7 @@ In our experience and testing, the best migration path follows these steps:
 1.  Configure Citrix workload on Azure.
 1.  Migrate from StoreFront and Citrix Gateway to Citrix Workspace and Citrix Gateway Service.
 
-![Migration path](en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_migration-path.png)
+![Migration path](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_migration-path.png)
 
 Doing the migration in the specified order provides a more organized and orderly migration. It allows you to run products, components, and services in a combination of on-premises and cloud deployments, minimizing disruption to daily workloads.
 
@@ -81,7 +81,7 @@ We ran the migration workflow in our lab, using virtual machines that had the fo
 
 Each component of the overall solution requires integration with Active Directory (AD) to provide authentication into the Citrix environment and personalization settings that are applied to user sessions via AD Organizational Units (OUs) in each part of the project.
 
-Citrix recommends an OU structure, like the one illustrated in the following image, that integrates with your current structure. The OU structure hosts the machines and the user accounts for the Citrix Cloud environment.
+Citrix recommends an OU structure like the one illustrated in the following image. Integrate the OU structure with your current structure. The OU structure hosts the machines and the user accounts for the Citrix Cloud environment.
 
 ![Example Active Directory structure](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_example-active-directory-structure.png)
 
@@ -105,32 +105,32 @@ For a detailed look at how to architect Citrix Virtual Apps and Desktops on Azur
 
 We prepped the Azure environment in five basic steps:
 
-Step 0: Select an Azure subscription model
+Step 1: Select an Azure subscription model
 
-Step 1: Select the Azure regions
+Step 2: Select the Azure regions
 
-Step 2: Create a resource group
+Step 3: Create a resource group
 
-Step 3: Create a virtual network
+Step 4: Create a virtual network
 
-Step 4: Deploy a server in Azure that will serve as the domain controller.
+Step 5: Deploy a server in Azure that will serve as the domain controller.
 
 When our Azure subscription is set up and ready for the next step, our environment looks like the one in the following diagram. The resources and workloads are all on-premises and we have a resource group, a virtual network, and a server in Azure.
 
 ![Environment with Azure prepped](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-subscription-prepped.png)
 
-### Step 0: Select an Azure subscription model
+### Step 1: Select an Azure subscription model
 
 Set up your Azure subscription.
 
 Selecting a subscription model is a complex decision that involves understanding the growth of your Azure footprint within and outside the Citrix deployment. Even if the Citrix deployment is small, you might still have a large amount of other resources that are reading/writing heavily against the Azure API. That heavy read/write activity can have a negative impact on the Citrix environment. The reverse is also true, where many Citrix resources can consume an inordinate number of the available API calls, reducing availability for other resources within the subscription. For information about Azure subscription limits and quotas, see [Azure subscription and service limits, quotas, and constraints](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits).
 
-### Step 1: Select Azure regions
+### Step 2: Select Azure regions
 
 An Azure region is a set of data centers deployed within a latency-defined perimeter and connected through a dedicated regional low-latency network. Azure gives customers the flexibility to deploy applications where they need to. Azure is generally available in 60 regions and 149 countries around the world.
 Microsoft provides details in [https://azure.microsoft.com/en-us/global-infrastructure/regions/](https://azure.microsoft.com/en-us/global-infrastructure/regions/).
 
-### Step 2: Create a resource group
+### Step 3: Create a resource group
 
 A resource group in Azure is a collection of assets in logical groups for easy or even automatic provisioning, monitoring, and access control, and for more effective management of their costs. The benefit of using resource groups in Azure is that you can group related resources that belong to an application. Because the application's resources share a unified lifecycle from creation to usage and finally, de-provisioning, they can be managed together for efficiency.
 
@@ -142,11 +142,11 @@ One or more resource groups can be applied to a machine catalog during initial c
 
 Resource groups are tied to machine catalogs at creation time and cannot be added or changed later. To add resource groups to a machine catalog, the machine catalog must be removed and recreated.
 
-### Step 3: Create a virtual network in Azure
+### Step 4: Create a virtual network in Azure
 
 The virtual network is required to enable secure communication among the resources in your environment. For more information about creating virtual networks in Azure, see [Quickstart: Create a virtual network using the Azure portal](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal). For help with configuring a virtual network, see [What is Azure Virtual Network](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview).
 
-### Step 4: Deploy a server in Azure
+### Step 5: Deploy a server in Azure
 
 With our resource group and virtual network established, we’re ready to deploy a server in Azure. We use the server to test. If you want more detailed information about how to set up virtual machines, see [Quickstart: Create a Windows virtual machine in the Azure portal](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal). Microsoft also provides helpful guidance for choosing the right size VM for your workload in [Sizes for virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes).
 
@@ -304,7 +304,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Run the following command: `Export-CvadAcToFile –Applications $true`.
 
-    ![Export apps = true](en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-export-apps-true.png)
+    ![Export apps = true](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-export-apps-true.png)
 
 ###### Export policies
 
@@ -328,15 +328,15 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Click **API Access**.
 
-    ![API access in Citrix Cloud IAM](image)
+    ![API access in Citrix Cloud IAM](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_api-access.png)
 
 1.  Take note of your customer ID.
 
-    ![CC customer ID](image)
+    ![CC customer ID](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_citrix-cloud-customer-id.png)
 
 1.  Provide a name and click **Create Client**.
 
-    ![CC resource name](image)
+    ![CC resource name](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_citrix-cloud-resource-name.png)
 
 1.  Copy the ID.
 
