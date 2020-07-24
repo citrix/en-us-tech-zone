@@ -9,11 +9,13 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 [Secure Access to Azure-managed SaaS Applications and Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Access Control environment that provides enhanced security to Microsot Azure SaaS Apps.
 
-[Secure Access to Citrix-managed Internal Web Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Access Control, utilizing Citrix-provided SSO.
+[Secure Access to Internal Web Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Access Control, utilizing Citrix-provided SSO.
 
-[Secure Access to Citrix-managed SaaS Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to set up a Citrix Access Control environment that uses Citrix as the single sign-on provider for Office 365 SaaS applications.
+[Secure Access to Office 365 with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html) - Learn how to set up a Citrix Access Control environment that provides single sign-on and enhanced security to Office 365.
 
-[Secure Access to Okta-managed SaaS Applications and Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html) - Learn how to set up a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
+[Secure Access to SaaS Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to set up a Citrix Access Control environment that uses Citrix as the single sign-on provider for SaaS applications.
+
+[Secure Access to SaaS Applications with Okta and Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html) - Learn how to set up a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
 
 ## Citrix Virtual Apps and Desktops
 
@@ -36,3 +38,5 @@ Learn firsthand, the functionality of the solution by following these guides wit
 ## Security
 
 [App protection policies](/en-us/tech-zone/learn/poc-guides/app-protection-policies.html) - Learn how to enhance security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
+
+[URL Redirection with Secure Browser and Citrix ADC in Azure](/en-us/tech-zone/learn/poc-guides/secure-browser-adc-integration.html) - Learn how to provide the dynamic delivery of resources by redirecting browsing to Secure Browser service protecting the company network without sacrificing user experience.
