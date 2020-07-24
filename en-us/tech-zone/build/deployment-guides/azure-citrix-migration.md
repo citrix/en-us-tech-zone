@@ -101,7 +101,7 @@ We recommend that you create the AD structure that will host your Azure workload
 
 The first step to migrating your workloads to Azure is to set up the Azure environment. If you’re new to Azure, or if your environment has some different components from our lab setup, Microsoft offers many helpful resources, like [New to Azure? Follow these easy steps to get started](https://azure.microsoft.com/en-us/blog/new-to-azure-follow-these-easy-steps-to-get-started/) and the [Azure Migrate documentation](https://docs.microsoft.com/en-us/azure/migrate/).
 
-For a detailed look at how to architect Citrix Virtual Apps and Desktops on Azure, see [Citrix Virtual Apps and Desktops Service on Azure](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-azure.html).
+For a detailed look at how to architect Citrix Virtual Apps and Desktops on Azure, see [Citrix Virtual Apps and Desktops Service on Azure](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-azure.html).
 
 We prepped the Azure environment in five basic steps:
 
@@ -201,7 +201,7 @@ To proceed, you need access to the Citrix Virtual Apps and Desktops service. If 
 
 ### Step 2: Cloud Connector installation
 
-The Citrix Cloud Connector lets you configure secure communication between your on-premises deployment and Citrix Cloud. To ensure that your Citrix Cloud Connector is set up to spec, review the [System requirements]( https://docs.citrix.com/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html). You need two VMware ESX VMs to host two Citrix Cloud Connectors.
+The Citrix Cloud Connector lets you configure secure communication between your on-premises deployment and Citrix Cloud. To ensure that your Citrix Cloud Connector is set up to spec, review the [System requirements](/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html). You need two VMware ESX VMs to host two Citrix Cloud Connectors.
 
 You can install the Cloud Connector software [interactively](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html#interactive-installation) or using the [command line](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html#command-line-installation).
 
@@ -259,19 +259,19 @@ You must use your on-premises master images to create Citrix Virtual Apps and De
 
 ##### Establish host connection
 
-The host connection is where you establish the network and the storage–the resources–for a connection. See [Create and manage connections](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html) for detailed information about connections.
+The host connection is where you establish the network and the storage–the resources–for a connection. See [Create and manage connections](/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html) for detailed information about connections.
 
 ##### Create machine catalogs
 
-Use machine catalogs to manage collections of machines as single entities. For more information, see [Create machine catalogs](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html). Machine catalogs are a prerequisite for creating delivery groups. When you run the Azure migration tool, the tool will bring over all of your settings and will create all of the VMs you need. To make sure you have placeholders for your delivery groups, create machine catalogs that contain a minimal number of VMs during this step. In most cases, two VMs is enough to satisfy this requirement.
+Use machine catalogs to manage collections of machines as single entities. For more information, see [Create machine catalogs](/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html). Machine catalogs are a prerequisite for creating delivery groups. When you run the Azure migration tool, the tool will bring over all of your settings and will create all of the VMs you need. To make sure you have placeholders for your delivery groups, create machine catalogs that contain a minimal number of VMs during this step. In most cases, two VMs is enough to satisfy this requirement.
 
 ##### Create delivery groups
 
-Use delivery groups to control access and delivery to machines, applications, and desktops. For details, see [Create delivery groups](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/delivery-groups-create.html). Create delivery groups that have identical names to your existing on-premises delivery groups.
+Use delivery groups to control access and delivery to machines, applications, and desktops. For details, see [Create delivery groups](/en-us/citrix-virtual-apps-desktops-service/install-configure/delivery-groups-create.html). Create delivery groups that have identical names to your existing on-premises delivery groups.
 
 Step 2: Migration
 
-We use a Citrix-developed tool, the automated configuration tool, to migrate Citrix Virtual Apps and Desktops from on-premises to Citrix Virtual Apps and Desktops service. You can [download the automated configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) from Citrix. Documentation for the tool is available on Tech Zone in [Automated Configuration](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html). The tool is available as a preview.
+We use a Citrix-developed tool, the automated configuration tool, to migrate Citrix Virtual Apps and Desktops from on-premises to Citrix Virtual Apps and Desktops service. You can [download the automated configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) from Citrix. Documentation for the tool is available on Tech Zone in [Automated Configuration](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html). The tool is available as a preview.
 
 Because our on-premises lab is using MCS, we will only migrate the following:
 
@@ -386,7 +386,7 @@ Next we [configure the end user layer](#end user layer) with Citrix Workspace an
 
 We use a Citrix-developed tool, the automated configuration tool, to migrate Citrix Virtual Apps and Desktops from on-premises to Citrix Virtual Apps and Desktops service. You can [download the automated configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) from Citrix.
 
-Documentation for the tool is available on Tech Zone in [Automated Configuration](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html). The tool is available as a preview.
+Documentation for the tool is available on Tech Zone in [Automated Configuration](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html). The tool is available as a preview.
 
 #### Export the on-prem site configuration
 
@@ -531,7 +531,7 @@ This step applies only if you use Workspace Environment Management on-premises a
 
 The toolkit supports the migration from Workspace Environment Management 4.7 and later. To migrate from an earlier version, upgrade Workspace Environment Management 4.x to Workspace Environment Management 4.7 or later, and then migrate the database to the Workspace Environment Management service.
 
-For details about migrating to the Workspace Environment Management service, see [Migrate](https://docs.citrix.com/en-us/workspace-environment-management/service/migrate.html).
+For details about migrating to the Workspace Environment Management service, see [Migrate](/en-us/workspace-environment-management/service/migrate.html).
 
 The following diagram shows the environment with our on-prem and Azure resources, now adding Workspace Environment Management service to our cloud environment.
 
@@ -822,7 +822,7 @@ Follow Microsoft’s guidance to [Complete the migration](https://docs.microsoft
     *  Deploy [Azure Disk Encryption](https://docs.microsoft.com/en-us/azure/security/fundamentals/azure-disk-encryption-vms-vmss) to help secure disks, and keep data safe from theft and unauthorized access.
     *  Read more about [securing IaaS resources](https://azure.microsoft.com/en-us/services/virtual-machines/secure-well-managed-iaas/), and visit the [Azure Security Center](https://azure.microsoft.com/en-us/services/security-center/).
 
-For monitoring and management, consider using [Citrix Application Delivery Management service](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/overview.html).
+For monitoring and management, consider using [Citrix Application Delivery Management service](/en-us/citrix-application-delivery-management-service/overview.html).
 
 Consider deploying [Azure Cost Management](https://docs.microsoft.com/en-us/azure/cost-management-billing/cloudyn/overview) to monitor resource usage and spending.
 
@@ -865,7 +865,7 @@ The following diagram shows the Azure and Citrix Cloud components that have been
 
 1.  Connect to the on-premises StoreFront server to add the Azure Cloud Connectors as delivery controllers on each store.
 
-1.  Configure user mapping and [multi-site aggregation](https://docs.citrix.com/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) (during the transition step) for the internal store.
+1.  Configure user mapping and [multi-site aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) (during the transition step) for the internal store.
 
 1.  Configure user mapping and multi-site aggregation for the external store.
 
