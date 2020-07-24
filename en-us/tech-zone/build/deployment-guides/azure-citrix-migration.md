@@ -364,7 +364,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 >
 >If the default on-prem has not been changed, it should be Primary.
 
-The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark ["]. The name is case-sensitive and must be enclosed in quotation marks as shown.
+The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
 ###### Import applications
 
@@ -434,6 +434,8 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Ensure that the result is reported as **True**.
 
+    ![Export result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-export-true.png)
+
 #### Import settings to Citrix Cloud
 
 ##### Prerequisites
@@ -472,6 +474,8 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Add the following line at the end of the file: HostConnections: True to allow the hosting configuration.
 
+    ![Host connections true](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_host-connections-true.png)
+
 1.  When the file is filled, save it (insert your information between the quotation marks).
 
 1.  Edit `ZoneMapping.yml` using Notepad.
@@ -486,47 +490,67 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
     >
     >If the default on-prem has not been changed, it should be **Primary**.
 
-    The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark ["]. The name is case-sensitive and must be enclosed in quotation marks as shown.
+    The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
 1.  Edit `CvadAcSecurity.yml` using Notepad.
+
+    ![CvadAcSecurity YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cvadacsecurity-yml.png)
 
 1.  Fill the file with your credentials and save it.
 
 1.  Edit `HostConnection.yml` using Notepad.
 
+    ![Host connection YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_host-connection-yml.png)
+
 1.  Connect to your vCenter and retrieve certificate details.
+
+    ![Certificate details](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_vmware-cert-info.png)
 
 1.  Copy the **Thumbprint** presented in the **Details** tab.
 
+    ![Thumbprint details](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_thumbprint-details.png)
+
 1.  Add a line `SslThumbprints`:
+
+    ![SSL thumbprints](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_ssl-thumbprints.png)
 
 1.  Paste your Thumbprint after – and between quotation marks.
 
+    ![Thumbprint as copied](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_thumbprint-raw.png)
+
 1.  Put all letters in CAPS and remove spaces.
+
+    ![Thumbprint formatted](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_thumbprint-raw.png)
 
 1.  Save the file.
 
 ##### Import settings
 
-1.  Run the following command in the Auto Config tool: `Import-CvadAcToSite -Applications $true`.
+1.  Run the following command in the Auto Config tool: `Import-CvadAcToSite -All $true`.
+
+    ![Import all settings](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-all.png)
 
 1.  Enter yes to validate the action.
 
+    ![Verify settings import](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-verify.png)
+
 The resulting output looks like the following image:
+
+    ![Settings import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-result.png)
 
 >**Checkpoint: Citrix Virtual Apps and Desktop service
 >
 >1.  Connect to Citrix Virtual Apps and Desktops Service, go to Machine Catalogs and ensure that your Machine Catalogs have been created and machines allocated.
->    ![Machine catalogs](machine-catalogs)
+>    ![Machine catalogs](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_machine-catalogs.png)
 >
 >1.  Go to **Delivery Groups** and ensure that your delivery groups have been created.
->    ![Delivery groups](delivery-groups)
+>    ![Delivery groups](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_delivery-groups.png)
 >
 >1.  Go to Applications and ensure that your applications have been created.
->    ![Applications](applications)
+>    ![Applications list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_applications-list.png)
 >
 >1.  Go to Policies and ensure that your policies have been created and assigned.
->    ![Policies](policies)
+>    ![Policies list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_policies-list.png)
 
 Next we configure the end user layer with Citrix Workspace and Citrix Gateway service.
 
