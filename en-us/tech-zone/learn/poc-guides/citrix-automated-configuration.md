@@ -26,7 +26,7 @@ The migration can be performed in stages by running the tool multiple times, all
 
 IT Administrators dealing with large or complex environments, often find migrations to be a tedious process. They frequently end up writing their own tools to accomplish this task successfully since it tends to be specific to their use cases.
 
-Citrix wants to help ease this process by providing a tool that addresses use cases through automation. Administrators can easily test current configurations in Citrix Cloud and take advantage of the benefits offered by CVADs while keeping their current environments intact. Such benefits include reduced administrative overload when Citrix is manages part of the backend and control plane, automatic and customizable Cloud component updates and others.
+Citrix wants to help ease this process by providing a tool that addresses use cases through automation. Administrators can easily test current configurations in **Citrix Cloud** and take advantage of the benefits offered by **CVADs** while keeping their current environments intact. Such benefits include reduced administrative overload when Citrix manages part of the backend and control plane, automatic and customizable **Citrix Cloud** component updates, and others.
 
 ### How is this tool implemented?
 
