@@ -30,9 +30,9 @@ Citrix wants to help ease this process by providing a tool that addresses use ca
 
 ### How is this tool implemented?
 
-Citrix has leveraged industry standard configuration as code to provide a mechanism to help automate migration processes. This tool discovers and exports one or more on-premises sites as **a collection of configuration files** (which administrators can optionally edit) and then import these edited files into CVADs.
+Citrix has leveraged industry standard configuration as code to provide a mechanism to help automate migration processes. This tool discovers and exports one or more on-premises sites as **a collection of configuration files**, which administrators can optionally edit, and then import these files' configuration into CVADs.
 
-This code is not limited to migrations, it is the future for creating configuration for Citrix sites, and as such, applicable for many different use cases. Disaster recovery, Development/Testing/Staging to Production site synchronization, Geographic (GEO) moves, and several other scenarios are supported. For administrators using public cloud providers, this can aid in creating a combination of objects automatically (parallel to Microsoft Azure ARM templates / AWS Cloud formation).
+This code is not limited to migrations, it is the future for creating configuration for Citrix sites, and as such, applicable for **many different use cases**. Disaster recovery, Development/Testing/Staging to Production site synchronization, Geographic (GEO) moves, and several other scenarios are supported. For administrators using public cloud providers, this can help create a combination of objects automatically (parallel to Microsoft Azure ARM templates and AWS Cloud formation).
 
 ## Pre-requisites
 
@@ -40,15 +40,15 @@ This code is not limited to migrations, it is the future for creating configurat
 
 *  CVAD On-Premises environment with **at least one registered VDA**.
 *  CVAD On-Premises environment running on one of the following versions: Any **Long Term Service Release (LTSR)** versions with their latest CU (7.6, 7.15, 1912); Or one of the corresponding latest two **Current Releases (CR)** versions (for example: 2003, 2006).
-*  The domain-joined machine where you plan on installing the [Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) must be running .NET 4.7.2 version or higher.
-*  A machine with the C**itrix PowerShell SDK**, which is automatically installed on the DDC. **Note:** if running on a different machine, it must be domain-joined and Studio must have the correct PowerShell snap-ins installed. This installer can be found on your corresponding version’s **Product ISO installation media**, which can be obtained from the [**Citrix Downloads > Citrix Virtual Apps and Desktops**](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/) website.
+*  The domain-joined machine where you plan on installing the [Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) must be running **.NET 4.7.2 version or higher**.
+*  A machine with the **Citrix PowerShell SDK**, which is automatically installed on the DDC. **Note:** If running the tool on a different machine, it must be domain-joined and **Studio** must have the correct **PowerShell snap-ins** installed. This installer can be found on your corresponding version’s **Product ISO installation media**, which can be obtained from the [**Citrix Downloads > Citrix Virtual Apps and Desktops**](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/) website.
 *  Download the [Automated Configuration tool MSI](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html).
 
 ### Cloud-related components
 
 *  Valid **CVADs** or **Workspace Premium Plus** licenses.
 *  Administrator must be able to log into the [Cloud Portal](https://citrix.cloud.com) and obtain: The **resource location name**, **customer ID**, **client Secret** (**app ID** and **Secret Key**)
-*  The existing cloud Resource Location has at least **one Cloud Connector**, which is marked as green (Healthy) and is part of the same domain as the On-Premises setup. **Note:** Citrix recommends having **two or more Cloud Connectors** (for redundancy and High Availability). For information on how to set up your Cloud Connectors, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html)
+*  The existing Citrix Cloud **Resource Location** has at least **one Cloud Connector**, which is marked as green (Healthy) and is part of the same domain as the On-Premises setup. **Note:** Citrix recommends having **two or more Cloud Connectors** (for redundancy and High Availability). For information on how to set up your Cloud Connectors, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html).
 
 ### This proof of concept guide demonstrates how to
 
@@ -79,7 +79,7 @@ These steps must be run in your DDC or the domain-joined machine where you want 
 
 ## Export your On-Premises site configuration
 
-Using an ```export``` PowerShell command, you can export your existing On-Premises configuration and obtain the necessary *.yml* files. These are used to import your desired configuration into Citrix Cloud.
+Using an ```export``` PowerShell command, you can export your existing On-Premises configuration and obtain the necessary *.yml* files. These files are used to import your desired configuration into **Citrix Cloud**.
 
 1.  After running the **MSI** installer on the previous step, you get an **Auto Config** shortcut automatically created on the Desktop. Right-click this shortcut and click **Run as Administrator**:
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-001.png)
@@ -90,7 +90,7 @@ Using an ```export``` PowerShell command, you can export your existing On-Premis
 3.  On the **Auto Config** Command Prompt, run the ```Export-CvadAcToFile -all $true``` command. This command exports policies, manually provisioned catalogs and delivery groups, applications, application folders, icons, zone mappings, tags, and other items. **Note:** For **MCS** and **PVS** machine catalogs and delivery groups, refer to the steps on [Requisites for Importing Site Configuration using different Provisioning Methods section](#requisites-for-importing-site-configuration-using-different-provisioning-methods) in this guide.
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002-1.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002-1.png)
 
-4.  Once the tool finishes running, the **Overall status** shows as **True** and the export process is completed (output lines matching the following illustration are shown). **Note:** If there are any errors, diagnostic files are created in the action-specific subfolders ```(Export, Import, Merge, Restore, Sync, Backup, Compare)```, which can be found under ```%HOMEPATH%\Documents\Citrix\AutoConfig```. Refer to the [Troubleshooting Tips section](#troubleshooting-tips) if you encounter any errors.
+4.  Once the tool finishes running, the **Overall status** shows as **True** and the export process is completed (the output lines shown will match the following illustration). **Note:** If there are any errors, diagnostic files are created in the action-specific subfolders ```(Export, Import, Merge, Restore, Sync, Backup, Compare)```, which can be found under ```%HOMEPATH%\Documents\Citrix\AutoConfig```. Refer to the [Troubleshooting Tips section](#troubleshooting-tips) if you encounter any errors.
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-003.png)
 
 5.  The resulting *.yml* files are now in the current user’s ```Documents\Citrix\AutoConfig``` path:
@@ -100,7 +100,7 @@ Using an ```export``` PowerShell command, you can export your existing On-Premis
 
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-005.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-005.png)
 
-*  **Note:** If necessary, copy the *.yml* files to the machine you want to use to import settings to the Cloud environment. Exporting and importing can be done from the same machine.
+*  **Note:** If necessary, copy the *.yml* files to the machine you want to use to import settings to your **Citrix Cloud** environment. Exporting and importing can be done from the same machine.
 
 ## Complete Prerequisites in Cloud
 
@@ -135,7 +135,7 @@ Extra steps are required to import your **PVS Catalogs** and their corresponding
 2.  Type the following command ```Export-CvadAcToFile -all $true``` and press **Return (Enter)** on your keyboard.
 [![Provisioning Method PVS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-001.png)
 
-3.  Successfully completed items show in green (OK) and once it’s done running a screen like the following shows up:
+3.  Successfully completed items show in green ```OK```. Once the tool finishes running, a screen like the following shows up:
 [![Provisioning Method PVS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-002.png)
 
 4.  Access the ```C:\Users\<username>\Documents\Citrix\AutoConfig``` folder and open up the ```CvadAcSecurity.yml``` file, which you must edit for PVS to work. **Note:** The **UserName** and **Password** fields refer to your **PVS Site Server** credentials. Be sure to specify your logon as ```DOMAIN\Username```, add the password, and save the file when ready.
@@ -222,7 +222,7 @@ Administrators must edit the ```CustomerInfo.yml``` file and add the correspondi
 3.  Go to the **API Access** tab and copy the **Customer ID** value, which can be found next to the ```customer ID``` text as seen on the following screenshot (red rectangle):
 [![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-importing-connection-details-003.png)
 
-4.  Paste the retrieved value **between the quotes** that follow the **CustomerId field** in your ```CustomerInfo.yml``` file, right between the ```“”``` (quotes):
+4.  Paste the retrieved value **between the quotes** that follow the **CustomerId field** in your ```CustomerInfo.yml``` file, between the ```“”``` (quotes):
 [![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-importing-connection-details-004.png)
 
 5.  Back on your **Cloud portal**, under the **Identity and Access Management** portal and **API Access** tab, enter the name you want to identify this API key with on the **Name your Secure Client** box and then click the **Create Client** button. **Note:** This generates the ```Client ID``` and the ```Secret Key```.
@@ -236,9 +236,9 @@ Administrators must edit the ```CustomerInfo.yml``` file and add the correspondi
 
 ### Manually create the Zone Mapping file (ZoneMapping.yml)
 
-**On-Premises Zones** cannot be automatically migrated to a **cloud Resource Location**, so they must be mapped using the ```ZoneMapping.yml``` file. **Note:** Migration failures occur if the zone is not mapped with a homonymous resource location (a Resource Location with the exact same name).
+**On-Premises Zones** cannot be automatically migrated to a **cloud Resource Location**, so they must be mapped using the ```ZoneMapping.yml``` file. **Note:** Migration failures occur if the zone is not mapped with a homonymous resource location (a Resource Location with the **exact same name**).
 
-1.  Back in the same directory where your *.yml* files reside ```(Documents\Citrix\AutoConfig)```, open up the ```ZoneMapping.yml``` using **Notepad** or your preferred text editor. **Note:** The ```Primary``` value must be replaced with the name of your corresponding Zone you want to migrate objects from in your On-Premises environment.
+1.  Back in the same directory where your *.yml* files reside ```(Documents\Citrix\AutoConfig)```, open up the ```ZoneMapping.yml``` using **Notepad** or your preferred text editor. **Note:** The ```Primary``` value must be replaced with the name of your corresponding **Zone** you want to migrate objects from (in your On-Premises environment).
 [![Zone Mapping](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-001.png)
 
 2.  You can find this name under your **On-Premises Citrix Studio console > Configuration > Zones**. **Note:** if your Zone is named ```Primary``` in your On-Premises environment, this value on the ```ZoneMapping.yml``` file doesn’t need to be changed:
@@ -294,12 +294,10 @@ If everything looks as expected, your CVADs migration is complete.
 
 **General information for troubleshooting:**
 
-*  Running any cmdlet results in a created **log file** and an entry in the **master history log file**.
-*  All operation log files are placed in a **backup folder**.
-*  All log file names begin with ```CitrixLog```, then show the ```auto-config``` operation and the date and timestamp of the cmdlet execution.
+*  Running any cmdlet creates a **log file** and an entry in the **master history log file**. The entries containthe date, operation, result, backup, and log file locations of the execution. This log provides potential solutions and fixes to common errors.
+*  The **master history log** is located in ```%HOMEPATH%\Documents\Citrix\AutoConfig```, in the file named ```History.Log```.*  All operation log files are placed in a **backup folder**.
+*  All log file names begin with ```CitrixLog```, then show the ```auto-config``` operation and the **date** and **timestamp** of the cmdlet execution.
 *  Logs **do not** auto-delete.
-*  The master history log is located in ```%HOMEPATH%\Documents\Citrix\AutoConfig```, in the file named ```History.Log```.
-*  Each cmdlet execution results in a master log entry containing the date, operation, result, backup, and log file locations of the execution. This log provides potential solutions and fixes to common errors.
 
 **For more information:**
 
@@ -307,6 +305,6 @@ If everything looks as expected, your CVADs migration is complete.
 
 2.  You can also reach out via the [Support Forum](https://discussions.citrix.com/forum/1804-automated-configuration-for-virtual-apps-and-desktops-tech-preview/).
 
-3.  Be sure to register and attend our **August 19 webinar** - ["Why Citrix Cloud migration is easier than ever"](https://bit.ly/CitrixTIPs), where we will share more information on the tool and host a Live Q&A session with a panel of Citrix experts. You can visit this [same link](https://bit.ly/CitrixTIPs) for the On-demand content after August 19.
+3.  Be sure to register and attend our **August 19 webinar** - ["Why Citrix Cloud migration is easier than ever"](https://bit.ly/CitrixTIPs), where we will share more information on the tool and host a **Live Q&A session** with a panel of Citrix experts. **Note:** You can visit this [same link](https://bit.ly/CitrixTIPs) for the On-demand content after August 19.
 
 4.  If after consulting the information listed previously you still need assistance, get in touch with your Citrix representatives, Customer Success Manager, or Support.
