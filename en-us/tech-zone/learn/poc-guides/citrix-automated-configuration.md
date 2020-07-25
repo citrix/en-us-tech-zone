@@ -2,7 +2,7 @@
 layout: doc
 description: Copy & paste description from TOC here
 ---
-# Proof of Concept: Automated Configuration tool
+# Proof of Concept: Automated Configuration Tool
 
 ## Contributors
 
