@@ -596,8 +596,11 @@ Now the STA servers are up and StoreFront is configured.
 >
 >1.  Launch your VDA that was deployed using the Citrix Virtual Apps and Desktops service.
 >
+>![Desktop deployed on Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migraton_cvad-service-desktop.png)
+>
 >1.  Open Google Chrome and ensure the connection server is the one you created using the Citrix Virtual Apps and Desktop service.
->    ![Desktop deployed on Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migraton_cvad-service-desktop.png)
+>
+>![Verify Google Chrome launch](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_verify-chrome-launch.png)
 
 ## Migrate to Workspace Environment Management service
 
@@ -627,11 +630,19 @@ The following diagram shows the environment with our on-prem and Azure resources
 
 To verify that our VDAs switch from on-prem to Cloud, an easy trick is to create a setting that is only configured in the Workspace Environment Management service. The following image shows what we did as an example:
 
+![Workspace Environment Management single app](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-single-app.png)
+
 1.  In the Workspace Environment Management service administration console, go to **Actions > Applications > Add**.
+
+    ![Add Notepad](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_notepad-new.png)
 
 1.  We created Notepad as a new application.
 
+    ![Notepad icon on desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-notepad-create-icon-desktop.png)
+
 1.  In **Assignment**, add the newly created application and modify the setting to create an icon on the Desktop.
+
+    ![Refresh agent cache and settings](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-refresh-cache-and-settings.png)
 
 1.  Refresh the agent cache and settings.
 
@@ -647,7 +658,11 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 
 1.  Connect to Workspace Environment Management Console on-prem.
 
+    ![WEM on-prem console](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-console-on-prem.png)
+
 1.  In **Advanced Settings**, click the **Agent Switch** tab.
+
+    ![WEM agent switch tab](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-agent-switch.png)
 
 1.  Check the box **Switch to Service Agent**, provide the Cloud Connector servers, and click **Apply**.
 
@@ -656,6 +671,8 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 >**Checkpoint: Workspace Environment Management service migration**
 >
 >1.  Open the Win 10 + Citrix Virtual Apps and Desktops Service Desktop.
+>
+>![Desktop with Workspace Environment Management app icon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-notepad-create-icon-desktop.png)
 >
 >1.  Ensure that the new application (in our example, Notepad) is populated on the user’s desktop.
 
