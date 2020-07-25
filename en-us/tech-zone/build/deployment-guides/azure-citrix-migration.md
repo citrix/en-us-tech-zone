@@ -536,7 +536,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 The resulting output looks like the following image:
 
-    ![Settings import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-result.png)
+![Settings import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-result.png)
 
 >**Checkpoint: Citrix Virtual Apps and Desktop service**
 >
