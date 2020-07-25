@@ -756,39 +756,71 @@ Step 1: Reverse images
 
 1.  Attach a new disk to one of your VMs.
 
+    ![Attach new disk](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_pvs-reverse-attach-new-disk.png)
+
 1.  In the Citrix Provisioning console, change the **Type** for this VM from **Production** to Maintenance.
+
+    ![Change disk type](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_pvs-change-disk-type.png)
 
 1.  Start your VM in maintenance mode.
 
+    ![Start in maintenance mode](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_maintenance-mode-start.png)
+
 1.  Open a session on your VM.
+
+    ![Maintenance mode session](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_pvs-vm-maintenance-mode-session.png)
 
 1.  Open the **Computer Management** console and click **Disk Management**.
 
+    ![PVS disk management](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_pvs-disk-management.png)
+
 1.  When the new disk is detected, click **OK**.
+
+    ![New disk detected](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_new-disk-detected.png)
 
 1.  Select the disk, right-click, and select **New Simple Volume**.
 
+    ![New simple volume](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_new-simple-volume.png)
+
 1.  Keep the default options and click **Finish**.
+
+    ![Finish simple volume](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_finish-simple-volume.png)
 
 1.  Open Windows Explorer, go to `C:\Program Files\Citrix\Provisioning Services` and launch **P2PVS**.
 
+    ![Launch P2PVS](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_launch-p2pvs.png)
+
 1.  Select **From: Citrix Provisioning Disk**, **To: This Machine** and click **Next**.
+
+    ![Workload source and destination](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workload-source-destination.png)
 
 1.  You can resize the disk if you want. Click **Next**.
 
+    ![Resize disk](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_resize-disk.png)
+
 1.  When the process is finished, click **Finish**.
+
+    ![Finish](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_finish.png)
 
 1.  Shut down the VM.
 
 1.  In the Citrix Provisioning Console, change the **Boot from:** for this VM from **vDisk** to **Hard Disk**.
 
+    ![Boot from](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_boot-from.png)
+
 1.  Restart the VM and open a session.
 
 1.  Open **Control Panel** and click **Uninstall program**.
 
+    ![Control panel uninstall](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_control-panel-uninstall.png)
+
 1.  Uninstall **Citrix Provisioning Target Device** software.
 
+    ![Uninstall provisioning target](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_uninstall-provisioning-target.png)
+
 1.  Restart the VM and ensure in Citrix Studio that your VM can register.
+
+    ![Confirm VM registration](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_confirm-vm-registration.png)
 
 1.  Clear the Event Logs and shut down your VM.
 
@@ -832,6 +864,8 @@ The migration tool provides an overview of your environment with details like:
 *  Storage
 *  Operating System
 
+![Discovered servers with detail](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_discovered-servers.png)
+
 During the assessment configuration, you have access to assessment properties that allow you to:
 
 *  Select Target Location
@@ -844,11 +878,17 @@ During the assessment configuration, you have access to assessment properties th
 *  Select Comfort Factor
 *  Select Pricing details
 
+![Assessment properties](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_assessment-properties.png)
+
 For dependencies to be discovered, you need to deploy software on the VMs. See [Analyze machine dependencies (agentless)](https://docs.microsoft.com/en-us/azure/migrate/how-to-create-group-machine-dependencies-agentless).
+
+![Dependencies discovery](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_dependencies.png)
 
 Dependencies are helpful to know when you want to migrate application or database servers. Knowing the dependencies lets you determine exactly which servers need to be migrated to ensure a persistent and secure connection between your servers.
 
 To facilitate the migration, we have created a group that only contains the VMs that we intend to migrate.
+
+![Assessment group](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_assessment-group.png)
 
 ### Step 3: Migration
 
@@ -871,6 +911,8 @@ During the replication process, you need to select:
 *  Select Target Settings
 *  Select Compute
 *  Select Disks
+
+![Replicate](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_replicate.png)
 
 When the delta replication begins, after initial replication, you can [run a test migration](https://docs.microsoft.com/en-us/azure/migrate/tutorial-migrate-vmware#run-a-test-migration) before running a full migration to Azure.
 
@@ -930,7 +972,11 @@ Consider deploying [Azure Cost Management](https://docs.microsoft.com/en-us/az
 >
 >1.  Open the Citrix Virtual Apps and Desktops service desktop.
 >
+>![Citrix Virtual Apps and Desktops service desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cvads-desktop.png)
+>
 >1.  Close the session and ensure that the user’s profile has been created on the Azure file server.
+>
+>![User profile on Azure server](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-profile.png)
 
 ## Move Citrix workload to Azure
 
