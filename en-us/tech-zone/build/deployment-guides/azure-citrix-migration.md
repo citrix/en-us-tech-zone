@@ -273,7 +273,7 @@ Use machine catalogs to manage collections of machines as single entities. For m
 
 Use delivery groups to control access and delivery to machines, applications, and desktops. For details, see [Create delivery groups](/en-us/citrix-virtual-apps-desktops-service/install-configure/delivery-groups-create.html). Create delivery groups that have identical names to your existing on-premises delivery groups.
 
-Step 2: Migration
+#### Step 2: Migration
 
 We use a Citrix-developed tool, the automated configuration tool, to migrate Citrix Virtual Apps and Desktops from on-premises to Citrix Virtual Apps and Desktops service. You can [download the automated configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) from Citrix. Documentation for the tool is available on Tech Zone in [Automated Configuration](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html). The tool is available as a preview.
 
@@ -488,7 +488,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     >**Note:**
     >
-    >If the default on-prem has not been changed, it should be **Primary**.
+    >If the default Azure resource location has not been changed, it should be **Primary**.
 
     The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
@@ -556,7 +556,7 @@ Next we configure the end user layer with Citrix Workspace and Citrix Gateway se
 
 ## Configure end user access layer
 
-In this section, we configure the on-premises StoreFront and Citrix Gateway to integrate with Citrix Virtual Apps and Desktops service.
+In this section, we configure the on-premises StoreFront and Citrix Gateway to integrate with Citrix Virtual Apps and Desktops service. To support multiple StoreFront sites, we use multisite aggregation. To learn more about multisite aggregation, [Designing StoreFront Multi-Site Aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) and [Site Aggregation](/en-us/tech-zone/learn/tech-insights/site-aggregation.html) are useful resources.
 
 ### StoreFront
 
