@@ -1061,40 +1061,74 @@ In the final migration step, we migrate to the Citrix Gateway service and Citrix
 
 1.  Connect to Citrix Cloud.
 
-1.  Click **Home** and select **Workspace Configuration**.
+1.  Click **Home > Workspace Configuration**.
+
+    ![Workspace configuration in Citrix Cloud](/en-us/tech-zone/build/media/deployment-guides_azure-workspace-configuration.png)
 
 1.  Edit the Workspace URL and provide a name that meets your requirements. Click **Save**.
 
+    ![Edit Workspace URL](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_edit-workspace-url.png)
+
 1.  Click **Authentication**.
+
+    ![Authentication tab](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-config-authentication-tab.png)
 
 1.  The supported authentication methods are presented. Select the one you want and click **Customize**.
 
+    ![Customize tab](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-config-customize-tab.png)
+
 1.  You can customize with two logos. One for the authentication page and one for the Workspace store.
+
+    ![Change colors](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-config-customize-color.png)
 
 1.  You can change colors if necessary.
 
+    ![Save customizations](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-config-save-customizations.png)
+
 1.  Click **Save**.
+
+    ![Service integrations](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-config-service-integrations.png)
 
 1.  Click **Service Integrations**.
 
+    ![Enable Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-config-enable-cvad-service.png)
+
 1.  Enable **Virtual Apps and Desktops**.
+
+    ![Confirm selected service integration](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-config-confirm-service-integration.png)
 
 1.  Click **Confirm**.
 
+    ![Workspace configuration access](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-config-access.png)
+
 1.  Click **Access**.
 
+    ![Configure Workspace connectivity](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-connectivity.png)
+
 1.  To the right of the Azure Resource Location, click the 3 dots **...** and select **Configure Connectivity**.
+
+    ![Save Workspace connectivity settings](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_save-workspace-connectivity-settings.png)
 
 1.  Select **Gateway Service** and click **Save**.
 
 >**Checkpoint: Citrix Workspace and Citrix Gateway service migration**
 >
+>![Workspace URL](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-url.png)
+>
 >1.  Click the **Workspace URL**.
+>
+>![Workspace logon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_logon.png)
 >
 >1.  Provide your credentials and click **Log On**.
 >
+>![Workspace](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-desktops.png)
+>
 >1.  Click **Desktops**.
 >
+>![Desktops in Workspace](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-desktops-available.png)
+>
 >1.  Click **Win 10 Azure + Citrix Virtual Apps and Desktops Service** to launch your desktop.
+>
+>![Launched desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-workload-desktop.png)
 
 ![Forcing build in a pinch with reference to unused image](/en-us/tech-zone/learn/media/shared_banner.png)
