@@ -586,7 +586,7 @@ Add the Citrix Cloud Connector as the STA in your Citrix Gateway configuration.
 
 Now the STA servers are up and StoreFront is configured.
 
->**Checkpoint Citrix Virtual Apps and Desktops service migration**
+>**Checkpoint: Citrix Virtual Apps and Desktops service migration**
 >
 >1.  Ensure in Citrix Cloud that the VDAs are registered.
 >
@@ -990,9 +990,15 @@ The following diagram shows the Azure and Citrix Cloud components that have been
 
 1.  Deploy two Cloud Connectors on Azure.
 
+    ![Cloud Connectors on Azure](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cloud-connectors-azure.png)
+
 1.  Create a resource location in Citrix Cloud.
 
+    ![New resource location Citrix Cloud](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_new-resource-location.png)
+
 1.  Deploy Cloud Connector software on the servers and attach them to the new resource locations.
+
+    ![Deploy Cloud Connector](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cloud-connector-resource-location.png)
 
 ### Step 2: Create Citrix workload and publish through on-premises StoreFront
 
@@ -1001,17 +1007,31 @@ The following diagram shows the Azure and Citrix Cloud components that have been
     1.  machine catalogs
     1.  delivery groups
 
+![Azure delivery group](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-delivery-group.png)
+
 1.  Connect to the on-premises StoreFront server to add the Azure Cloud Connectors as delivery controllers on each store.
+
+    ![Connect to on-prem StoreFront server](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_connect-on-prem-storefront.png)
 
 1.  Configure user mapping and [multi-site aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) (during the transition step) for the internal store.
 
+    ![Internal store configured](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_internal-store-configured.png)
+
 1.  Configure user mapping and multi-site aggregation for the external store.
+
+    ![External site aggregation](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_external-aggregation.png)
 
 1.  Add the Azure-hosted Cloud Connectors as the STA in the Citrix Gateway configuration in StoreFront.
 
+    ![Azure hosted Cloud Connectors as Gateway STA](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-connectors-sta-server-binding.png)
+
 1.  Add the Azure-hosted Cloud Connectors as the STA in the Citrix Gateway Virtual Servers configuration on Citrix ADC.
 
+    ![Gateway virtual servers](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_gateway-virtual-servers.png)
+
 1.  Ensure that all STAs are **UP**.
+
+    ![STA status](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_assign-policy.png)
 
 1.  Apply the Citrix policy to the new delivery groups.
 
@@ -1020,6 +1040,8 @@ The following diagram shows the Azure and Citrix Cloud components that have been
 >1.  Connect to your Citrix Gateway.
 >
 >1.  Open the Azure-hosted Citrix Virtual Apps and Desktop service published desktop.
+>
+>![Azure-hosted CVAD service desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-hosted-cvad-service-desktop.png)
 >
 >1.  Ensure that the name of the desktop is the one you provisioned on Azure.
 >
