@@ -562,7 +562,11 @@ In this section, we configure the on-premises StoreFront and Citrix Gateway to i
 
 1.  Add your Cloud Connector as a delivery controller in each configured store.
 
+    ![Cloud Connectors added as delivery controllers](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cloud-connectors-delivery-controllers.png)
+
 1.  Add a delivery controller configuration by adding the Cloud Connector as the secure ticket authority (STA) in your Citrix Gateway configuration.
+
+    ![Add delivery controller](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_add-delivery-controller.png)
 
 1.  Aggregate resources.
 
@@ -572,9 +576,13 @@ In this section, we configure the on-premises StoreFront and Citrix Gateway to i
 
 Add the Citrix Cloud Connector as the STA in your Citrix Gateway configuration.
 
+![Add Cloud Connector as STA](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cloud-connector-gateway-sta.png)
+
 >**Checkpoint: STA**
 >
 >Ensure that all STA servers have a status of UP as shown in the following image.
+>
+>![STA server status UP](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_sta-server-status-up.png)
 
 Now the STA servers are up and StoreFront is configured.
 
