@@ -6,9 +6,9 @@ description: Copy & paste description from TOC here
 
 ## Contributors
 
-**Author:** [Thamara Trejos](linkedin.com/in/thamaratrejos/)
+**Author:** [Thamara Trejos](https://linkedin.com/in/thamaratrejos/)
 
-**Special Thanks:** [Amir Trujillo](linkedin.com/in/amirtrujillo), Nitin Mehta, [Daniel Feller](https://twitter.com/djfeller)
+**Special Thanks:** [Amir Trujillo](https://linkedin.com/in/amirtrujillo), Nitin Mehta, [Daniel Feller](https://twitter.com/djfeller)
 
 ## Overview
 
