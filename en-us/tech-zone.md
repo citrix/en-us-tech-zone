@@ -11,7 +11,7 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
 
-[Secure Access to Azure-managed SaaS Applications and Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Access Control environment that provides enhanced security to Microsot Azure SaaS Apps.
+[Secure Access to Azure-managed SaaS Applications and Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Access Control environment that provides enhanced security to Microsoft Azure SaaS Apps.
 
 [Secure Access to Internal Web Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Access Control, utilizing Citrix-provided SSO.
 
@@ -86,6 +86,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 ### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
 
 [Citrix Endpoint Management with Microsoft EMS/Intune and Android Enterprise Integration](/en-us/tech-zone/design/reference-architectures/citrix-endpoint-management.html) - Learn about the architecture and integration with Microsoft EMS/Intune and Android Enterprise to deliver applications securely to any device and how it enables security and productivity benefits for both Microsoft EMS/Intune and Citrix customers.
+
+### [Build - Deployment Guides](/en-us/tech-zone/build/deployment-guides.html)
+
+[Migration from Android Device Administrator to Android Enterprise with Citrix Endpoint Management](/en-us/tech-zone/build/deployment-guides/android-device-administrator-to-android-enterprise.html) - Learn how to migrate your Citrix Endpoint Management policies and apps step by step from a legacy Android Device Administrator deployment to Android Enterprise by using a managed Google Play account.
 
 ## Citrix Managed Desktops
 
@@ -188,6 +192,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [Virtual Apps and Desktops Service](/en-us/tech-zone/learn/diagrams-posters/virtual-apps-and-desktops-service.html) - Conceptual architecture drawing for Citrix Virtual Apps and Desktop deployment in Citrix Cloud.
 
 ### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
+
+[Automated Configuration Tool](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html) - This Proof of Concept guide provides instructions on using Automated Configuration tool to automate moving your Citrix Virtual Apps and Desktops configuration to your Citrix Virtual Apps and Desktops Service deployment. The tool also supports use case of moving your configuration between Citrix Virtual Apps and Desktops Service deployments.
 
 [Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
 
@@ -333,9 +339,13 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [App protection policies](/en-us/tech-zone/learn/poc-guides/app-protection-policies.html) - Learn how to enhance security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
 
+[URL Redirection with Secure Browser and Citrix ADC in Azure](/en-us/tech-zone/learn/poc-guides/secure-browser-adc-integration.html) - Learn how to provide the dynamic delivery of resources by redirecting browsing to Secure Browser service protecting the company network without sacrificing user experience.
+
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
 [App protection](/en-us/tech-zone/learn/tech-briefs/app-protection-policies.html) - App protection policies protect application data from attacks based on keyloggers and screen capture tools. Allow companies to embrace BYOD, and extend resources to remote workers, contractors, and gig economy workers.
+
+[Zero Trust](/en-us/tech-zone/learn/tech-briefs/zero-trust.html) - Zero Trust is the most important End User Computing movement since Mobile and Cloud. The Citrix Zero Trust Architecture enables the “any-any-any” vision that Citrix has been espousing for years and is secured by access policies that take trust into context.
 
 ### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
 
