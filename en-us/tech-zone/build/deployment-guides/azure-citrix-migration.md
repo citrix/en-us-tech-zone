@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Copy & paste description from TOC here
+description: In this document, you'll discover how to migrate from Citrix Virtual Apps and Desktops to Citrix Virtual Apps and Desktops service and from VMware vSphere on-premises to Microsoft Azure. Migrating to cloud resources modernizes your deployment, providing enhanced elasticity, scalability, and management. The guidance documented here is based on a deployment in a Citrix- and Microsoft-reviewed and approved lab environment. The initial and final deployments represent typical customer environments.
 ---
 # Migrate Citrix Virtual Apps and Desktops to Microsoft Azure
 
@@ -113,7 +113,7 @@ Step 3: Create a resource group
 
 Step 4: Create a virtual network
 
-Step 5: Deploy a server in Azure that will serve as the domain controller.
+Step 5: Deploy a server in Azure, that in our case, acts as the domain controller
 
 When our Azure subscription is set up and ready for the next step, our environment looks like the one in the following diagram. The resources and workloads are all on-premises and we have a resource group, a virtual network, and a server in Azure.
 
@@ -148,7 +148,7 @@ The virtual network is required to enable secure communication among the resourc
 
 ### Step 5: Deploy a server in Azure
 
-With our resource group and virtual network established, we’re ready to deploy a server in Azure. We use the server to test. If you want more detailed information about how to set up virtual machines, see [Quickstart: Create a Windows virtual machine in the Azure portal](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal). Microsoft also provides helpful guidance for choosing the right size VM for your workload in [Sizes for virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes).
+With our resource group and virtual network established, we’re ready to deploy a server in Azure. We use this server as the domain controller. It helps us validate AD replication after we establish site-to-site connectivity. If you want more detailed information about how to set up virtual machines, see [Quickstart: Create a Windows virtual machine in the Azure portal](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal). Microsoft also provides helpful guidance for choosing the right size VM for your workload in [Sizes for virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes).
 
 Now that we have our resource groups and virtual network created, and we have a server deployed, our next step is to configure connectivity between our on-premises and Azure environments.
 
@@ -498,32 +498,6 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Fill the file with your credentials and save it.
 
-1.  Edit `HostConnection.yml` using Notepad.
-
-    ![Host connection YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_host-connection-yml.png)
-
-1.  Connect to your vCenter and retrieve certificate details.
-
-    ![Certificate details](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_vmware-cert-info.png)
-
-1.  Copy the **Thumbprint** presented in the **Details** tab.
-
-    ![Thumbprint details](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_thumbprint-details.png)
-
-1.  Add a line `SslThumbprints`:
-
-    ![SSL thumbprints](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_ssl-thumbprints.png)
-
-1.  Paste your Thumbprint after – and between quotation marks.
-
-    ![Thumbprint as copied](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_thumbprint-raw.png)
-
-1.  Put all letters in CAPS and remove spaces.
-
-    ![Thumbprint formatted](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_thumbprint-formatted.png)
-
-1.  Save the file.
-
 ##### Import settings
 
 1.  Run the following command in the Auto Config tool: `Import-CvadAcToSite -All $true`.
@@ -588,7 +562,7 @@ Now the STA servers are up and StoreFront is configured.
 
 >**Checkpoint: Citrix Virtual Apps and Desktops service migration**
 >
->1.  Ensure in Citrix Cloud that the VDAs are registered.
+>1.  Ensure in Citrix Cloud that the VDAs are registered. The Citrix product documentation provides a deeper understanding of [VDA registration](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html).
 >
 >1.  Ensure in the on-premises Workspace Environment Management console that new VDAs (provisioned using Citrix Virtual Apps and Desktops service) are registered.
 >
@@ -1130,5 +1104,3 @@ In the final migration step, we migrate to the Citrix Gateway service and Citrix
 >1.  Click **Win 10 Azure + Citrix Virtual Apps and Desktops Service** to launch your desktop.
 >
 >![Launched desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-workload-desktop.png)
-
-![Forcing build in a pinch with reference to unused image](/en-us/tech-zone/learn/media/shared_banner.png)
