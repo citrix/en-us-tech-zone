@@ -576,9 +576,16 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 
 ## Configure end user access layer
 
-In this section, we configure the on-premises StoreFront and Citrix Gateway to integrate with Citrix Virtual Apps and Desktops service. To support multiple StoreFront sites, we use multisite aggregation. To learn more about multisite aggregation, [Designing StoreFront Multi-Site Aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) and [Site Aggregation](/en-us/tech-zone/learn/tech-insights/site-aggregation.html) are useful resources.
+You have two options for configuring the end user access layer:
 
-### StoreFront
+*  Continue to use StoreFront with Citrix Gateway (link to section)
+*  Migrate to Citrix Workspace and Citrix Gateway service (link to section)
+
+### StoreFront with Citrix Gateway
+
+In this section, we configure the on-premises StoreFront and Citrix Gateway to integrate with Citrix Virtual Apps and Desktops service. To support multiple StoreFront sites, we use multisite aggregation. To learn more about multisite aggregation, [Designing StoreFront Multi-Site Aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) is a useful resources.
+
+#### StoreFront
 
 1.  Add your Cloud Connector as a delivery controller in each configured store.
 
@@ -592,7 +599,7 @@ In this section, we configure the on-premises StoreFront and Citrix Gateway to i
 
 1.  Map users to controllers.
 
-### Citrix Gateway
+#### Citrix Gateway
 
 Add the Citrix Cloud Connector as the STA in your Citrix Gateway configuration.
 
@@ -622,9 +629,9 @@ Now the STA servers are up and StoreFront is configured.
 >
 >![Verify Google Chrome launch](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_verify-chrome-launch.png)
 
-## Migrate to Citrix Workspace and Citrix Gateway service
+### Migrate to Citrix Workspace and Citrix Gateway service
 
-In the final migration step, we migrate to the Citrix Gateway service and Citrix Workspace, as shown in the following diagram.
+In this section, we migrate to the Citrix Gateway service and Citrix Workspace, as shown in the following diagram.
 
 ![Workspace and Citrix Gateway Service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-and-citrix-gateway-service.png)
 
@@ -632,7 +639,7 @@ In the final migration step, we migrate to the Citrix Gateway service and Citrix
 >
 >When you evaluate the Citrix Gateway service and Citrix Workspace, make sure the customizations and configurations you need are available.
 
-### Configuration
+#### Configuration
 
 1.  Connect to Citrix Cloud.
 
