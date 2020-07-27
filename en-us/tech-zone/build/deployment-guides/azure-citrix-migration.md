@@ -4,10 +4,6 @@ description: In this document, you'll discover how to migrate from Citrix Virtua
 ---
 # Migrate Citrix Virtual Apps and Desktops to Microsoft Azure
 
-## Contributors
-
-**Author:** [Arnaud Pain](https://arnaudpain.com)
-
 ## Objective
 
 In this document, you'll discover how to migrate from Citrix Virtual Apps and Desktops to Citrix Virtual Apps and Desktops service and from VMware vSphere on-premises to Microsoft Azure. Migrating to cloud resources modernizes your deployment, providing enhanced elasticity, scalability, and management.
