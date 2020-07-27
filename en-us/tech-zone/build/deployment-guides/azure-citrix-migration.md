@@ -2,13 +2,11 @@
 layout: doc
 description: In this document, you'll discover how to migrate from Citrix Virtual Apps and Desktops to Citrix Virtual Apps and Desktops service and from VMware vSphere on-premises to Microsoft Azure. Migrating to cloud resources modernizes your deployment, providing enhanced elasticity, scalability, and management. The guidance documented here is based on a deployment in a Citrix- and Microsoft-reviewed and approved lab environment. The initial and final deployments represent typical customer environments.
 ---
-# Migrate Citrix Virtual Apps and Desktops to Microsoft Azure
+# Migrate Citrix Virtual Apps and Desktops from VMware vSphere to Citrix Virtual Apps and Desktops service on Microsoft Azure
 
-## Objective
+## Overview
 
-In this document, you'll discover how to migrate from Citrix Virtual Apps and Desktops to Citrix Virtual Apps and Desktops service and from VMware vSphere on-premises to Microsoft Azure. Migrating to cloud resources modernizes your deployment, providing enhanced elasticity, scalability, and management.
-
-## Project overview
+In this document, you'll discover how to migrate from Citrix Virtual Apps and Desktops on VMware vSphere to Citrix Virtual Apps and Desktops service on Microsoft Azure. Migrating to cloud resources modernizes your deployment, providing enhanced elasticity, scalability, and management.
 
 The guidance documented here is based on a deployment in a Citrix- and Microsoft-reviewed and approved lab environment. The initial and final deployments represent typical customer environments.
 
@@ -19,7 +17,6 @@ We migrated these key products and components:
 *  On-premises StoreFront and Citrix Gateway to Citrix Workspace and Citrix Gateway service
 *  On-premises vSphere workloads to workloads in Azure
 *  On-premises file servers to Azure
-*  Application back-end
 
 The following diagram shows the migration process.
 
@@ -91,11 +88,9 @@ For our lab environment, we defined GPOs that:
 
 With the basic lab setup in place, we’re ready to start the migration.
 
-We recommend that you create the AD structure that will host your Azure workload before you start the migration project. It’s also helpful to have checkpoints in place to help you validate the successful completion of each step.
+We recommend that you create the AD structure, GPOs, and link the GPOs that will host your Azure workload before you start the migration project. It’s also helpful to have checkpoints in place so you can validate the successful completion of each step.
 
 ## Set up a basic Citrix Cloud environment
-
-With our Azure environment established and site-to-site communication working, we’re ready to add Citrix Cloud.
 
 If you’re already using Citrix Virtual Apps and Desktops service, you can skip to the section [Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#Workspace Environment Management service).
 
@@ -121,7 +116,7 @@ You can install the Cloud Connector software [interactively](/en-us/citrix-cloud
 
 ### Step 3: Rename the resource location
 
-Because we have multiple resource locations between on-premises and Azure, it’s useful to have a distinct name for each resource location.
+Because we will have multiple resource locations (on-premises and Azure), it’s useful to have a distinct name for each resource location.
 
 1.  Click the **Arrow** to go back to **Resource Location**.
 
@@ -506,7 +501,7 @@ More details about each option are available from Citrix product documentation i
 >1.  Go to Policies and ensure that your policies have been created and assigned.
 >    ![Policies list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_policies-list.png)
 
-Next we configure the end user layer with Citrix Workspace and Citrix Gateway service.
+Next we configure the end user access layer with Citrix Workspace and Citrix Gateway service.
 
 ## Migrate to Workspace Environment Management service
 
@@ -1124,7 +1119,7 @@ The following diagram shows the Azure and Citrix Cloud components that have been
 
     ![Deploy Cloud Connector](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cloud-connector-resource-location.png)
 
-### Step 2: Create Citrix workload and publish through on-premises StoreFront
+### Step 2: Create Citrix workload
 
 1.  Create the basic configuration
     1.  hosting
