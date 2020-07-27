@@ -77,7 +77,7 @@ For this POC we assume you have a Certificate Authority, including Web Enrollmen
 1.  Log in to the [Azure Portal](https://portal.azure.com) as a global admin
 1.  Navigate to **Azure Active Directory > Enterprise Applications**
 1.  Select New application
-1.  Select Non-gallery application ![AAD Non-gallery application](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-aadnonGalleryapplication.png)
+1.  Select Non-gallery application ![AAD Non-gallery application](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-aadnongalleryapplication.png)
 1.  Enter a unique name and select Add
 1.  Select **single sign-on > SAML** and select the pencil icon to edit the Basic SAML Configuration
 1.  Enter the FQDN of the Citrix ADC gateway virtual server in the Identifier field.
