@@ -7,7 +7,7 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 ## Citrix Access Control
 
-[Secure Access to Azure-managed SaaS Applications and Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Access Control environment that provides enhanced security to Microsot Azure SaaS Apps.
+[Secure Access to Azure-managed SaaS Applications and Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Access Control environment that provides enhanced security to Microsoft Azure SaaS Apps.
 
 [Secure Access to Internal Web Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Access Control, utilizing Citrix-provided SSO.
 
@@ -18,6 +18,8 @@ Learn firsthand, the functionality of the solution by following these guides wit
 [Secure Access to SaaS Applications with Okta and Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html) - Learn how to set up a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
 
 ## Citrix Virtual Apps and Desktops
+
+[Automated Configuration Tool](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html) - This Proof of Concept guide provides instructions on using Automated Configuration tool to automate moving your Citrix Virtual Apps and Desktops configuration to your Citrix Virtual Apps and Desktops Service deployment. The tool also supports use case of moving your configuration between Citrix Virtual Apps and Desktops Service deployments.
 
 [Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
 
