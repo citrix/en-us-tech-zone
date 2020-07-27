@@ -147,7 +147,7 @@ Because we have multiple resource locations between on-premises and Azure, it’
 
 ## Migrate to Citrix Virtual Apps and Desktops service
 
-If you’re already using Citrix Virtual Apps and Desktops service, you can skip to the section [Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#Workspace Environment Management service).
+If you’re already using Citrix Virtual Apps and Desktops service, you can skip to the section [Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service).
 
 If you’re using Citrix Virtual Apps and Desktops on-premises, you can use the procedures in this section as a guide for migrating to Citrix Virtual Apps and Desktops service.  
 
@@ -157,7 +157,7 @@ If you use PVS, go to [PVS migration](/en-us/tech-zone/build/deployment-guides/a
 
 The following diagram shows our cloud environment on Azure after we migrate to the Citrix Virtual Apps and Desktops service.
 
-![Environment with Citrix Virtual Apps and Desktops service configured](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cvad-service-migrated.png) step02
+![Environment with Citrix Virtual Apps and Desktops service configured](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cvad-service-migrated.png)
 
 ### MCS migration
 
