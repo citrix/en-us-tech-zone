@@ -396,14 +396,6 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 
 1.  Ensure that the result is **True**.
 
->**Checkpoint: Citrix Virtual Apps and Desktops service**
->
->1.  Connect to Citrix Virtual Apps and Desktops service, go to Applications and ensure that applications have been created.
->    ![Applications list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_applications-list.png)
->
->1.  Go to **Policies** and ensure that your policies have been created and assigned.
->    ![Policies list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_policies-list.png)
-
 During VDA installation, you need to configure the delivery controller. You have four options for configuring the delivery controller:
 
 *  **Configure it later (advanced)** If you select this method, you must change the policy to point VDA to Cloud Connectors.
@@ -411,7 +403,17 @@ During VDA installation, you need to configure the delivery controller. You have
 *  **Choose locations from Active Directory** Do not select this method. Citrix recommends that you use another method and point to your Cloud Connectors.
 *  **Let machine creation services (MCS) configure it automatically** This is the preferred method that Citrix recommends. The MCS configuration in Citrix Cloud provides the required information automatically.
 
-More details on each option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
+Based on your on-premises configuration, you should consider VDA reconfiguration.
+
+More details about each option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
+
+>**Checkpoint: Citrix Virtual Apps and Desktops service migration using MCS**
+>
+>1.  Connect to Citrix Virtual Apps and Desktops service, go to Applications and ensure that applications have been created.
+>    ![Applications list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_applications-list.png)
+>
+>1.  Go to **Policies** and ensure that your policies have been created and assigned.
+>    ![Policies list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_policies-list.png)
 
 Next we [configure the end user access layer](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#configure-end-user-access-layer) with Citrix Workspace and Citrix Gateway service.
 
@@ -430,6 +432,36 @@ We run the automated configuration tool on a delivery controller, and we need .N
 You can download .NET Framework 4.7.2 from: [https://dotnet.microsoft.com/download/dotnet-framework/net472](https://dotnet.microsoft.com/download/dotnet-framework/net472).
 
 Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing the tool creates a desktop icon called **Auto Config** that launches the PowerShell command prompt. You run the Cloud automated configuration cmdlets from the PowerShell command prompt.
+
+##### Prepare the VDAs for migration
+
+1.  Enable maintenance mode.
+
+1.  Shut down the VDAs.
+
+1.  In PVS, change teh image from standard to private.
+
+1.  Start the VDA and enable logging.
+
+1.  Go in Control Panel, select Citrix Virtual Apps and Desktop and select Change.
+
+1.  Click on Customize Virtual Delivery Agent settings
+
+1.  Click on Edit
+
+1.  Replace the name of your Delivery Controller with the name of your Cloud Connector server, test connection and click on Save. You can eventually add a 2nd cloud connector if you do not plan to migrate to Azure or at least not now.
+
+1.  Click on Next, Next and Reconfigure.
+
+1.  Click Finish.
+
+1.  Shut down the VM.
+
+1.  Change back the Disk image to Standard and exit Maintenance Mode in Machine Catalog.
+
+1.  Your VMs will start and register.
+
+1.  Ensure your VMs are registered in the Citrix Cloud studio console.
 
 ###### Export settings
 
@@ -521,7 +553,18 @@ The resulting output looks like the following image:
 
 ![Settings import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-result.png)
 
->**Checkpoint: Citrix Virtual Apps and Desktop service**
+During VDA installation, you need to configure the delivery controller. You have four options for configuring the delivery controller:
+
+*  **Configure it later (advanced)** If you select this method, you must change the policy to point VDA to Cloud Connectors.
+*  **Configure it manually** If you select this method, you must update your master images to point the VDA to your Cloud Connectors.
+*  **Choose locations from Active Directory** Do not select this method. Citrix recommends that you use another method and point to your Cloud Connectors.
+*  **Let machine creation services (MCS) configure it automatically** This is the preferred method that Citrix recommends. The MCS configuration in Citrix Cloud provides the required information automatically.
+
+Based on your on-premises configuration, you should consider VDA reconfiguration.
+
+More details about each option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
+
+>**Checkpoint: Citrix Virtual Apps and Desktop service using PVS**
 >
 >1.  Connect to Citrix Virtual Apps and Desktops Service, go to Machine Catalogs and ensure that your Machine Catalogs have been created and machines allocated.
 >    ![Machine catalogs](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_machine-catalogs.png)
