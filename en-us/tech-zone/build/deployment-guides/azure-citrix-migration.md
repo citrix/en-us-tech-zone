@@ -357,23 +357,23 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Start the VDA and enable logging.
 
-1.  Go in Control Panel, select Citrix Virtual Apps and Desktop and select Change.
+1.  Go to **Control Panel**. Select **Citrix Virtual Apps and Desktops > Change**.
 
-1.  Click on Customize Virtual Delivery Agent settings
+1.  Click **Customize Virtual Delivery Agent settings**
 
-1.  Click on Edit
+1.  Click **Edit**.
 
-1.  Replace the name of your Delivery Controller with the name of your Cloud Connector server, test connection and click on Save. You can eventually add a 2nd cloud connector if you do not plan to migrate to Azure or at least not now.
+1.  Replace the name of your delivery controller with the name of your Cloud Connector server. Test the connection and click **Save**. You can add a second cloud connector later if you don't plan to migrate to Azure.
 
-1.  Click on Next, Next and Reconfigure.
+1.  Click **Next > Next > Reconfigure**.
 
-1.  Click Finish.
+1.  Click **Finish**.
 
 1.  Shut down the VM.
 
 1.  Change back the Disk image to Standard and exit Maintenance Mode in Machine Catalog.
 
-1.  Your VMs will start and register.
+1.  Your VMs start and register.
 
 1.  Ensure your VMs are registered in the Citrix Cloud studio console.
 
@@ -437,7 +437,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     ![Original zone mapping YAML file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-original.png)
 
-1.  You must replace the highlighted text with your Cloud resource location as shown in the following example:
+1.  Replace the highlighted text with your Cloud resource location as shown in the following example:
 
     ![Zone mapping YAML example](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-edited.png)
 
