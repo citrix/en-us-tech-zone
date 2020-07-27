@@ -353,7 +353,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Shut down the VDAs.
 
-1.  In PVS, change teh image from standard to private.
+1.  In PVS, change the image from standard to private.
 
 1.  Start the VDA and enable logging.
 
