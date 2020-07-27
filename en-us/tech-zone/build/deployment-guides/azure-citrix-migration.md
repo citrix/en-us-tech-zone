@@ -118,7 +118,7 @@ You can install the Cloud Connector software [interactively](/en-us/citrix-cloud
 
 Because we will have multiple resource locations (on-premises and Azure), it’s useful to have a distinct name for each resource location.
 
-1.  Click **...** and select **Rename**.
+1.  Select your resource location, click **...** and select **Rename**.
 
     ![Rename resource location](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_rename-resource-location.png)
 
