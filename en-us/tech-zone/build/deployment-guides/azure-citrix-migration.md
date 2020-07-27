@@ -92,7 +92,7 @@ We recommend that you create the AD structure, GPOs, and link the GPOs that will
 
 ## Set up a basic Citrix Cloud environment
 
-If you’re already using Citrix Virtual Apps and Desktops service, you can skip to the section [Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#Workspace Environment Management service).
+If you’re already using Citrix Virtual Apps and Desktops service, you can skip to the section [Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#workspace-environment-management-service).
 
 We set up the Citrix Cloud environment in three steps:
 
@@ -138,7 +138,7 @@ If you’re already using Citrix Virtual Apps and Desktops service, you can skip
 
 If you’re using Citrix Virtual Apps and Desktops on-premises, you can use the procedures in this section as a guide for migrating to Citrix Virtual Apps and Desktops service.  
 
-For MCS users, the [MCS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.md#mcs-migration) section provides detailed migration steps.
+For MCS users, the [MCS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#mcs-migration) section provides detailed migration steps.
 
 If you use PVS, go to [PVS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#pvs-migration).
 
