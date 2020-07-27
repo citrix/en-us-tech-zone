@@ -475,7 +475,7 @@ You need to prepare the VDAs for migration by changing the image properties and 
 
 1.  Shut down the VM.
 
-1.  Change the Disk image access mode back to **Standard** and exit Maintenance Mode in Machine Catalog.
+1.  Change the disk image access mode back to **Standard** and exit **Maintenance Mode** in **Machine Catalogs**.
 
 1.  Your VMs start and register.
 
