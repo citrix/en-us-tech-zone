@@ -56,7 +56,7 @@ Azure AD Connect is a tool for connecting on-premises identity infrastructure to
 
 1.  Log in to your AD domain controller, or other virtual server where you host the Microsoft Azure Active Directory Connect process.
 2.  Download the executable from the Microsoft download site [Microsoft Azure Active Directory Connect](https://www.microsoft.com/en-us/download/details.aspx?id=47594) and launch it.
-3.  You are prompted to accept making changes to the virtual machine and accept a license agreement on the welcome page. ![AD Connect](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adConnectwelcome.png)
+3.  You are prompted to accept making changes to the virtual machine and accept a license agreement on the welcome page. ![AD Connect](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adconnectwelcome.png)
 4.  You are prompted to log in as a Global AAD admin and as a Domain Services admin.
 5.  For installation on a single AD virtual machine you can follow express settings. After it verifies UPN Suffixes it makes a full sync of all users, groups, and contacts.
 
