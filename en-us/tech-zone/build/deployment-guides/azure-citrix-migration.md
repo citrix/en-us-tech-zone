@@ -45,7 +45,7 @@ In our experience and testing, the best migration path follows these steps:
 
 ![Migration path](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_migration-path.png)
 
-Doing the migration in the specified order provides a more organized and orderly migration. It allows you to run products, components, and services in a combination of on-premises and cloud deployments, minimizing disruption to daily workloads.
+If you do the migration in the specified order, you'll have a more organized and orderly migration. The specified order lets you run products, components, and services in a combination of on-premises and cloud deployments, minimizing the disruption to daily workloads.
 
 The following diagram shows our migrated environment, with all workloads on Azure and using Citrix Cloud.
 
