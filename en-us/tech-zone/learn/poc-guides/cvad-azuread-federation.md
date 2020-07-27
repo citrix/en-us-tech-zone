@@ -41,7 +41,7 @@ To configure Active Directory (AD) and Azure Active Directory (AAD) perform the 
 
 1.  Log in to your AD domain controller.
 1.  Open **Server Manager > Tools > Active Directory Domains and Trusts**
-1.  Right-click, select Properties and enter the UPN Suffix for users corresponding to one of your AAD domains.
+1.  Right-click, select **Properties** and enter the UPN Suffix for users corresponding to one of your AAD domains.
 ![AAD-IdP + CVAD + FAS + ADC-SP architecture](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adalternativeupnsuffix.png)
 
 #### AD Users
@@ -81,7 +81,7 @@ For this POC we assume you have a Certificate Authority, including Web Enrollmen
 1.  Enter a unique name and select Add
 1.  Select **single sign-on > SAML** and select the pencil icon to edit the Basic SAML Configuration
 1.  Enter the FQDN of the Citrix ADC gateway virtual server in the Identifier field.
-1.  Enter the FQDN with the uri /cgi/samlauth added in the Reply URL field ![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-aadbasicsamlconfiguration.png)
+1.  Enter the FQDN with the URI /cgi/samlauth added in the Reply URL field ![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-aadbasicsamlconfiguration.png)
 1.  Click save
 1.  Capture the following to be entered in the Citrix ADC SAML configuration:
     *  Under SAML Signing Certificate - download Certificate (base64)
@@ -122,7 +122,7 @@ To configure the Citrix ADC perform the following steps:
 1.  Next navigate to **Citrix Gateway > Virtual Servers**, and edit the pertinent virtual server
 1.  If you have an existing basic policy bound under Basic Authentication select it, check the policy, and select Unbind, confirm, and close.
 1.  From the menu on the right select Authentication Profile, and select Add. Enter a name, and click the right arrow under Authentication Virtual Server. Check the policy Authentication virtual server, and click create. ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adccreateauthprofile.png)
-1.  Click OK to complete binding the AAA virtual server to the Gateway virtual server. ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adcauthprofile.png)
+1.  Click OK to complete binding the Citrix ADC AAA virtual server to the Gateway virtual server. ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adcauthprofile.png)
 1.  Navigate to **Citrix Gateway > Policies > Session**, and select the Workspace App policy with the "Citrix Receiver" expression, and make the following changes:
     *  Under Published Applications clear the field single sign-on Domain, and clear Global Override
     *  Under Client Experience from the Credential Index drop-down list select Secondary
@@ -202,9 +202,9 @@ To configure FAS perform the following steps:
     *  e. Select Show DNS
     *  f. Enter the FQDN of the FAS server, click OK twice, and close the Group Policy Management editor
 ![FAS GPO](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0015.png)
-    *  g. Navigate to each Delivery Controller, and VDA), open an MS-DOS prompt as Administrator, and run "gpupdate /force"
+    *  g. Navigate to each Delivery Controller, and VDA), open an MS-DOS prompt as Administrator, and run `gpupdate /force`
 ![FAS GPO update](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0016.png)
-    *  h. To verify it's been applied open regedit.exe, and navigate to: /Computer\HKLM\SOFTWARE\Policies\Citrix\Authentication\UserCredentialService\Addresses Address1 entry set to the fqdn applied through the GPO. If it does not appear you may need to reboot the respective virtual machine.
+    *  h. To verify it's been applied open regedit.exe, and navigate to: /Computer\HKLM\SOFTWARE\Policies\Citrix\Authentication\UserCredentialService\Addresses Address1 entry set to the FQDN applied through the GPO. If it does not appear you may need to reboot the respective virtual machine.
 ![FAS GPO registry](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0017.png)
     *  i. Next return to the FAS virtual machine to begin the service installation. (We host FAS, StoreFront, and the DDC on the same VM for the POC. For production you would typically host them on different VMs for improved scalability, and supportability.)
     *  j. Run the Citrix Federated Authentication Service program. Select each of the five steps in sequence, and follow the instructions:
