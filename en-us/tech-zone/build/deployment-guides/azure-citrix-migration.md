@@ -720,7 +720,7 @@ Step 5: Deploy a server in Azure, that in our case, acts as the domain controlle
 
 When our Azure subscription is set up and ready for the next step, our environment looks like the one in the following diagram. The resources and workloads are all on-premises and we have a resource group, a virtual network, and a server in Azure.
 
-![Environment with Azure prepped](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-subscription-prepped.png) Step 8
+![Environment with Azure prepped](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-subscription-prepped.png)
 
 ### Step 1: Select an Azure subscription model
 
@@ -772,7 +772,7 @@ For the purposes of our demonstration, we used site-to-site VPN.
 
 The following diagram shows how our Azure environment is set up to communicate with our on-premises environment.
 
-![Site-to-site VPN configured](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_site-to-site-configured.png) Step 9
+![Site-to-site VPN configured](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_site-to-site-configured.png)
 
 >**Checkpoint: site connectivity**
 >
@@ -842,7 +842,7 @@ Azure Migrate provides a set of tools to assess and migrate to Azure on-premises
 
 The following diagram shows the locations of our resources when we migrate to Azure.
 
-![Azure workload migration](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_migrate-azure-workload.png) 9b
+![Azure workload migration](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_migrate-azure-workload.png)
 
 We recommend a three-step process:
 
