@@ -150,7 +150,7 @@ The following diagram shows our cloud environment on Azure after we migrate to t
 
 #### Step 1: Preparation
 
-To migrate successfully using the automated configuration tool, for on-premises MCS configured catalogs, you must replicate your on-premises configuration for hosting, machine catalogs, and delivery groups. The migration tool creates and assigns applications and policies.
+To migrate successfully using the automated configuration tool, for on-premises MCS configured catalogs, you must replicate your on-premises configuration for hosting, machine catalogs, and delivery groups. The migration tool only creates and assigns applications and policies for MCS deployments.
 
 During this migration phase, we recommend that you create only a few VMs for each machine catalog. Having just a few VMs allows you to validate machine catalog creation and then allows you to create delivery groups and run the Azure migration tool.
 
@@ -176,7 +176,7 @@ Use delivery groups to control access and delivery to machines, applications, an
 
 #### Step 2: Migration
 
-We use a Citrix-developed tool, the automated configuration tool, to migrate Citrix Virtual Apps and Desktops from on-premises to Citrix Virtual Apps and Desktops service. You can [download the automated configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) from Citrix. Documentation for the tool is available on Tech Zone in [Automated Configuration](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html). The tool is available as a preview.
+We use a Citrix-developed tool, the automated configuration tool, to migrate Citrix Virtual Apps and Desktops from on-premises to Citrix Virtual Apps and Desktops service. You can [download the automated configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) from Citrix. Documentation for the tool is available on Tech Zone in [Automated Configuration](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html). _The tool is available as a preview._
 
 Because our on-premises lab is using MCS, we only migrate the following:
 
@@ -189,7 +189,7 @@ Because our on-premises lab is using MCS, we only migrate the following:
 >
 >Because we are using MCS and can only import applications and group policies, we use two options here: `-Applications` and `-GroupPolicies` to export only the required information.
 
-###### Prerequisites
+##### Prerequisites
 
 We run the automated configuration tool on a delivery controller, and we need .NET Framework 4.7.2 or later to be installed on that server.
 
@@ -197,7 +197,7 @@ You can download .NET Framework 4.7.2 from: [https://dotnet.microsoft.com/downlo
 
 Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing the tool creates a desktop icon called **Auto Config** that launches the PowerShell command prompt. You run the Cloud automated configuration cmdlets from the PowerShell command prompt.
 
-###### Export applications
+##### Export applications
 
 1.  Click the **Auto Config** icon.
 
@@ -207,7 +207,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     ![Export apps = true](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-export-apps-true.png)
 
-###### Export policies
+##### Export policies
 
 1.  Run the following command: `Export-CvadAcToFile –GroupPolicies $true`.
 
@@ -217,7 +217,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 ##### Import settings to Citrix Cloud
 
-###### Prerequisites
+##### Prerequisites
 
 1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID`, and `Secret`.
 
@@ -267,7 +267,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
-###### Import applications
+##### Import applications
 
 1.  Run the following command in the Auto Config tool: `Import-CvadAcToSite -Applications $true`.
 
@@ -281,7 +281,7 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 
     ![App import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_import-apps-result.png)
 
-###### Import policies
+##### Import policies
 
 1.  Run the following command in the Auto Config tool: `Import-CvadAcToSite -GroupPolicies $true`.
 
@@ -382,7 +382,7 @@ You need to prepare the VDAs for migration by changing the image properties and 
 
     ![Registered VMs in Cloud studio console](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_registered-vms-cloud-studio.png)
 
-###### Export settings
+##### Export settings
 
 1.  Click the **Auto Config** icon.
 
