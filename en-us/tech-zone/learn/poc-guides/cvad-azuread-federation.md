@@ -126,7 +126,7 @@ To configure the Citrix ADC perform the following steps:
 1.  Navigate to **Citrix Gateway > Policies > Session**, and select the Workspace App policy with the "Citrix Receiver" expression, and make the following changes:
     *  Under Published Applications clear the field single sign-on Domain, and clear Global Override
     *  Under Client Experience from the Credential Index drop-down list select Secondary
-1.  Repeat those steps for the Workspace for web policy with the "Citrix Receiver").NOT expression
+1.  Repeat those steps for the Workspace for web policy with the "Citrix Receiver").NOT expression ![ADC Gateway Session Policies](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adcgatewaysessionpolicies.png)
 
 See [Citrix ADC](/en-us/citrix-adc/13.html) for more information.
 
