@@ -2,7 +2,7 @@
 layout: doc
 description: Learn how to implement a Proof of Concept environment consisting of Microsoft AAD Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC.
 ---
-# Proof of Concept Guide: Microsoft AAD Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC
+# Proof of Concept Guide: Microsoft Azure Active Directory Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC
 
 ## Contributors
 
@@ -20,13 +20,13 @@ Citrix Virtual Apps and Desktops delivers virtual apps and desktops using resour
 
 ## Overview
 
-The guide demonstrates how to implement a Proof of Concept environment consisting of Microsoft AAD Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC using SAML. AAD acts as the Identity Provider (IdP) while Citrix ADC acts as the Service Provider (SP).
+The guide demonstrates how to implement a Proof of Concept environment for Microsoft AAD Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC using SAML. AAD acts as the Identity Provider (IdP) while Citrix ADC acts as the Service Provider (SP).
 
 It makes assumptions about the installation, or configuration of certain components:
 
 *  An Active Directory Server is installed on-premises and you can log in as Domain Admin.
 *  An Azure tenant is available with a P2 license and you can log in as a Global Admin.
-*  A Citrix ADC appliance has been installed, is licensed, has a Citrix Gateway virtual server, and is configured to provide access to an on-premises Citrix Virtual Apps and Desktops environment. Use Version 13 build 60, or higher.
+*  A Citrix ADC appliance has been installed and licensed. Also it has a Citrix Gateway virtual server configured to provide access to an on-premises Citrix Virtual Apps and Desktops environment. Use Version 13 build 60, or higher.
 *  A Delivery Controller, StoreFront, and VDA are installed, and configured to delivery virtual apps, or desktops for domain users. Use version 2006, or higher.
 *  A virtual machine is available, or another server has enough capacity to install FAS. The DDC, FAS, and StoreFront are all installed on the same server in this POC.
 *  The Remote Client is able to launch a virtual app or desktop using the Workspace App, or browser. Use Windows Version 20.6.0.38(2006), or higher.
@@ -37,7 +37,7 @@ To configure Active Directory (AD) and Azure Active Directory (AAD) perform the 
 
 ### AD
 
-#### Alternative UPN Suffix
+#### Alternative UserPrincipalName (UPN) Suffix
 
 1.  Log in to your AD domain controller.
 1.  Open **Server Manager > Tools > Active Directory Domains and Trusts**
@@ -46,7 +46,7 @@ To configure Active Directory (AD) and Azure Active Directory (AAD) perform the 
 
 #### AD Users
 
-1.  On your AD domain controller open Server Manager > Tools > Active Directory Users and Computers.
+1.  On your AD domain controller open **Server Manager > Tools > Active Directory Users and Computers**.
 1.  Right-click and select **New > User**, or edit an existing one
 1.  **Under Properties > Account set the UPN** to the new Suffix. ![AAD-IdP + CVAD + FAS + ADC-SP architecture](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-ADUser.png)
 
@@ -54,10 +54,10 @@ To configure Active Directory (AD) and Azure Active Directory (AAD) perform the 
 
 Azure AD Connect is a tool for connecting on-premises identity infrastructure to Microsoft Azure AD. It allows us to copy AD users to AAD with a UserPrincipalName (UPN) mapped to our AAD domain.
 
-1.  Log in to your AD domain controller, or other virtual server where you will host the Microsoft Azure Active Directory Connect process.
+1.  Log in to your AD domain controller, or other virtual server where you host the Microsoft Azure Active Directory Connect process.
 2.  Download the executable from the Microsoft download site [Microsoft Azure Active Directory Connect](https://www.microsoft.com/en-us/download/details.aspx?id=47594) and launch it.
-3.  You will be prompted to accept making changes to the virtual machine and accept a license agreement on the welcome page. ![AD Connect](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adConnectwelcome.png)
-4.  You will be prompted to log in as a Global AAD admin and as a Domain Services admin.
+3.  You are prompted to accept making changes to the virtual machine and accept a license agreement on the welcome page. ![AD Connect](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adConnectwelcome.png)
+4.  You are prompted to log in as a Global AAD admin and as a Domain Services admin.
 5.  For installation on a single AD virtual machine you can follow express settings. After it verifies UPN Suffixes it makes a full sync of all users, groups, and contacts.
 
 See [using Azure AD Connect express settings](/en-us/azure/active-directory/hybrid/how-to-connect-install-express) for more information.
@@ -75,7 +75,7 @@ For this POC we assume you have a Certificate Authority, including Web Enrollmen
 ### Azure Active Directory
 
 1.  Log in to the [Azure Portal](https://portal.azure.com) as a global admin
-1.  Navigate to Azure Active Directory > Enterprise Applications
+1.  Navigate to **Azure Active Directory > Enterprise Applications**
 1.  Select New application
 1.  Select Non-gallery application ![AAD Non-gallery application](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-aadnonGalleryapplication.png)
 1.  Enter a unique name and select Add
@@ -87,7 +87,7 @@ For this POC we assume you have a Certificate Authority, including Web Enrollmen
     *  Under SAML Signing Certificate - download Certificate (base64)
     *  Under Setup Citrix FAS - Login & Logout URL
 ![AAD settings](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-aadcapturesettings.png)
-1.  Select Users and groups > Add user and select existing users, or groups that will have access to Citrix Virtual Apps and Desktops using their AAD UPN
+1.  Select Users and groups > Add user and select existing users, or groups that have access to Citrix Virtual Apps and Desktops using their AAD UPN
 ![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-aadusersandgroups.png)
 
 ## Citrix ADC Config
@@ -95,11 +95,11 @@ For this POC we assume you have a Certificate Authority, including Web Enrollmen
 To configure the Citrix ADC perform the following steps:
 
 1.  Log in to the Citrix ADC UI
-1.  Navigate to Traffic Management > SSL> Certificates > All Certificates to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
-1.  Navigate to Security > AAA - Application Traffic > Virtual Servers and select Add
+1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
+1.  Navigate to **Security > AAA - Application Traffic > Virtual Servers** and select Add
 1.  Enter the following fields and click OK:
     *  Name - a unique value
-    *  IP Address Type - Non Addressable
+    *  IP Address Type - Non-Addressable
 ![Basic SAML Configuration](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adcaaavserver.png)
 1.  Select No Server Certificate, select the domain certificate, click Select, Bind, and Continue
 1.  Select No Authentication Policy, and select Add
@@ -113,7 +113,7 @@ To configure the Citrix ADC perform the following steps:
     *  IdP Certificate Name - select Add, enter a name, select Certificate File Name > local, and select the SAML Signing Certificate (base64) downloaded from AAD
     *  Signing Certificate Name - select the domain certificate the ADC uses to sign requests to AAD.
     *  Issue Name - enter the FQDN of the Citrix ADC Gateway
-![SAML Auth Action](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adcsamlauthaction.png)
+![SAML Authentication Action](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adcsamlauthaction.png)
 1.  Select create to create the action
 1.  Enter true for the expression
 1.  Select create again to create the policy ![Authentication Policy](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adccreateauthenticationpolicy.png)
@@ -121,11 +121,11 @@ To configure the Citrix ADC perform the following steps:
 1.  Click continue to complete the configuration of the authentication virtual server
 1.  Next navigate to **Citrix Gateway > Virtual Servers**, and edit the pertinent virtual server
 1.  If you have an existing basic policy bound under Basic Authentication select it, check the policy, and select Unbind, confirm, and close.
-1.  From the menu on the right select Authentication Profile, and select Add. Enter a name, and click the right arrow under Authentication Virtual Server. Check the policy auth virtual server just created, and click create. ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adccreateauthprofile.png)
+1.  From the menu on the right select Authentication Profile, and select Add. Enter a name, and click the right arrow under Authentication Virtual Server. Check the policy Authentication virtual server, and click create. ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adccreateauthprofile.png)
 1.  Click OK to complete binding the AAA virtual server to the Gateway virtual server. ![Create Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adcauthprofile.png)
 1.  Navigate to **Citrix Gateway > Policies > Session**, and select the Workspace App policy with the "Citrix Receiver" expression, and make the following changes:
     *  Under Published Applications clear the field single sign-on Domain, and clear Global Override
-    *  Under Client Experience from the Credential Index drop-down select Secondary
+    *  Under Client Experience from the Credential Index drop-down list select Secondary
 1.  Repeat those steps for the Workspace for web policy with the "Citrix Receiver").NOT expression
 
 See [Citrix ADC](/en-us/citrix-adc/13.html) for more information.
@@ -139,12 +139,12 @@ To integrate Citrix Virtual Apps and Desktops components with FAS perform the fo
 #### Enable FAS on StoreFront
 
 *  Open PowerShell as an administrator, and run:
-    *  Get-Module "Citrix.StoreFront.*" -ListAvailable | Import-Module
-    *  $StoreVirtualPath = "/Citrix/Store"
-    *  $store = Get-STFStoreService -VirtualPath $StoreVirtualPath
-    $auth = Get-STFAuthenticationService -StoreService $store
-    *  Set-STFClaimsFactoryNames -AuthenticationService $auth -ClaimsFactoryName "FASClaimsFactory"
-    *  Set-STFStoreLaunchOptions -StoreService $store -VdaLogonDataProvider "FASLogonDataProvider"
+    *  `Get-Module "Citrix.StoreFront.*" -ListAvailable | Import-Module`
+    *  `$StoreVirtualPath = "/Citrix/Store"`
+    *  `$store = Get-STFStoreService -VirtualPath $StoreVirtualPath
+    $auth = Get-STFAuthenticationService -StoreService $store`
+    *  `Set-STFClaimsFactoryNames -AuthenticationService $auth -ClaimsFactoryName "FASClaimsFactory"`
+    *  `Set-STFStoreLaunchOptions -StoreService $store -VdaLogonDataProvider "FASLogonDataProvider"`
 
 See [Enable the FAS plug-in on StoreFront stores](/en-us/federated-authentication-service/install-configure.html#enable-the-fas-plug-in-on-storefront-stores) for more information.
 
@@ -164,8 +164,8 @@ See [Enable the FAS plug-in on StoreFront stores](/en-us/federated-authenticatio
 Next configure the Desktops Delivery Controller to trust the StoreFront servers that can connect to it.
 
 *  Open PowerShell as an administrator, and run
-    *  asnp citrix* (provided you do not have all Citrix snap-ins loaded) See [Install and set up FAS](/en-us/linux-virtual-delivery-agent/current-release/configuration/federated-authentication-service.html#install-and-set-up-fas) for more information
-    *  Set-BrokerSite -TrustRequestsSentToTheXmlServicePort $true
+    *  `Add-PSSnapin Citrix*` (provided you do not have all Citrix snap-ins loaded) See [Install and set up FAS](/en-us/linux-virtual-delivery-agent/current-release/configuration/federated-authentication-service.html#install-and-set-up-fas) for more information
+    *  `Set-BrokerSite -TrustRequestsSentToTheXmlServicePort $true`
 
 See [Configure the Delivery Controller](/en-us/federated-authentication-service/install-configure.html#configure-the-delivery-controller) for more information.
 
@@ -184,7 +184,7 @@ To configure FAS perform the following steps:
 1.  Review the settings you made & click Install
 1.  After installation success click Finish again.
 ![FAS Finished](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0011.png)]
-1.  Under "C:\Program Files\Citrix\Federated Authentication Service" share the PolicyDefinions directory contents, and the en-us subdirectory
+1.  Under "C:\Program Files\Citrix\Federated Authentication Service" share the PolicyDefinions directory contents, and the "en-us" subdirectory
 ![FAS Policy Definitions Copy](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0012.png)
 1.  Under "C:\Program Files\Citrix\Federated Authentication Service" paste them to the Domain Controller at C:\Windows\PolicyDefinions, and ..\en-US respectively.
     Files include:
@@ -207,10 +207,10 @@ To configure FAS perform the following steps:
     *  h. To verify it's been applied open regedit.exe, and navigate to: /Computer\HKLM\SOFTWARE\Policies\Citrix\Authentication\UserCredentialService\Addresses Address1 entry set to the fqdn applied through the GPO. If it does not appear you may need to reboot the respective virtual machine.
 ![FAS GPO registry](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_0017.png)
     *  i. Next return to the FAS virtual machine to begin the service installation. (We host FAS, StoreFront, and the DDC on the same VM for the POC. For production you would typically host them on different VMs for improved scalability, and supportability.)
-    *  j. Run the Citrix Federated Authentication Service program. Select each of the five steps in sequence, and follow instructions:
+    *  j. Run the Citrix Federated Authentication Service program. Select each of the five steps in sequence, and follow the instructions:
        *  i. Deploy certificate templates
-       *  ii. Setup a certificate authority
-       *  iii. Authorize this service - for this step you will need to return to the CA to issue a  pending request. The CA is hosted on the Domain Controller in this POC example.
+       *  ii. Set up a certificate authority
+       *  iii. Authorize this service - for this step return to the CA to issue a pending request. The CA is hosted on the Domain Controller in this POC example.
        *  iv. Create Rule - here specify the CA, and certificate already configured. Also filter the VDAs, and users that are allowed to use the FAS service.
        *  v. (Connect to Citrix Cloud - in this guide we use on-premises Citrix Virtual Apps and Desktops)
 
@@ -222,10 +222,10 @@ To validate the POC perform the following steps:
 
 ### Workspace for Web
 
-1.  Open a browser, and navigate to the domain FQDN managed by the Citrix ADC. You will notice the Citrix Gateway redirects to AAD.
-1.  Log in with the UPN of a user configured to be part of the FAS environment ![Login](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-remotewebredirectaaduser.png)
-1.  Verify the users virtual apps, and desktops are enumerated, and launch while being logged in with the UPN via the AAD user object ![Logged in](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebloggedin.png)
+1.  Open a browser, and navigate to the domain FQDN managed by the Citrix ADC. Notice that the Citrix Gateway redirects to AAD.
+1.  Log in with the UPN of a user configured to be part of the FAS environment ![Log in](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-remotewebredirectaaduser.png)
+1.  Verify the users virtual apps, and desktops are enumerated, and launch once logged in with the UPN via the AAD user object ![Logged in](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-RemoteWebloggedin.png)
 
 ## Summary
 
-Citrix Virtual Apps and Desktops has been a resilient  technology for decades. Incorporating cloud hosted Identity offers enterprises even more reliable service. Implementing the POC described in this guide demonstrates how to achieve that by integrating AAD as the IdP, and Citrix ADC as the Service Provider. To learn more about Citrix pricing, and packing visit the Citrix website [Citrix.com](https://www.citrix.com/products/), and to learn more about Citrix technical capabilities visit [Citrix TechZone](/en-us/tech-zone).
+Citrix Virtual Apps and Desktops has been a resilient technology for decades. Cloud hosted Identity offers enterprises even more reliable service. Implementing the POC described in this guide demonstrates how to achieve that by integrating AAD as the IdP, and Citrix ADC as the Service Provider. To learn more about Citrix pricing, and packing visit the Citrix website [Citrix.com](https://www.citrix.com/products/), and to learn more about Citrix technical capabilities visit [Citrix TechZone](/en-us/tech-zone).
