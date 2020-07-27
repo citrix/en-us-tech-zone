@@ -404,6 +404,15 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 >1.  Go to **Policies** and ensure that your policies have been created and assigned.
 >    ![Policies list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_policies-list.png)
 
+During VDA installation, you need to configure the delivery controller. You have four options for configuring the delivery controller:
+
+*  **Configure it later (advanced)** If you select this method, you must change the policy to point VDA to Cloud Connectors.
+*  **Configure it manually** If you select this method, you must update your master images to point the VDA to your Cloud Connectors.
+*  **Choose locations from Active Directory** Do not select this method. Citrix recommends that you use another method and point to your Cloud Connectors.
+*  **Let machine creation services (MCS) configure it automatically** This is the preferred method that Citrix recommends. The MCS configuration in Citrix Cloud provides the required information automatically.
+
+More details on each option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
+
 Next we [configure the end user access layer](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#configure-end-user-access-layer) with Citrix Workspace and Citrix Gateway service.
 
 ### PVS Migration
