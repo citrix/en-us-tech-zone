@@ -303,8 +303,6 @@ If everything looks as expected, your CVADs migration is complete.
 
 1.  Refer to the [Automated Configuration Tool Troubleshooting FAQ article](https://support.citrix.com/article/CTX277730).
 
-2.  You can also reach out via the [Support Forum](https://discussions.citrix.com/forum/1804-automated-configuration-for-virtual-apps-and-desktops-tech-preview/).
+1.  You can also reach out via the [Support Forum](https://discussions.citrix.com/forum/1804-automated-configuration-for-virtual-apps-and-desktops-tech-preview/).
 
-3.  Be sure to register and attend our **August 19 webinar** - ["Why Citrix Cloud migration is easier than ever"](https://bit.ly/CitrixTIPs), where we will share more information on the tool and host a **Live Q&A session** with a panel of Citrix experts. **Note:** You can visit this [same link](https://bit.ly/CitrixTIPs) for the On-demand content after August 19.
-
-4.  If after consulting the information listed previously you still need assistance, get in touch with your Citrix representatives, Customer Success Manager, or Support.
+1.  If after consulting the information listed previously you still need assistance, get in touch with your Citrix representatives, Customer Success Manager, or Support.
