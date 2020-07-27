@@ -2,17 +2,11 @@
 layout: doc
 description: In this document, you'll discover how to migrate from Citrix Virtual Apps and Desktops to Citrix Virtual Apps and Desktops service and from VMware vSphere on-premises to Microsoft Azure. Migrating to cloud resources modernizes your deployment, providing enhanced elasticity, scalability, and management. The guidance documented here is based on a deployment in a Citrix- and Microsoft-reviewed and approved lab environment. The initial and final deployments represent typical customer environments.
 ---
-# Migrate Citrix Virtual Apps and Desktops to Microsoft Azure
+# Migrate Citrix Virtual Apps and Desktops from VMware vSphere to Citrix Virtual Apps and Desktops service on Microsoft Azure
 
-## Contributors
+## Overview
 
-**Author:** [Arnaud Pain](https://arnaudpain.com)
-
-## Objective
-
-In this document, you'll discover how to migrate from Citrix Virtual Apps and Desktops to Citrix Virtual Apps and Desktops service and from VMware vSphere on-premises to Microsoft Azure. Migrating to cloud resources modernizes your deployment, providing enhanced elasticity, scalability, and management.
-
-## Project overview
+In this document, you'll discover how to migrate from Citrix Virtual Apps and Desktops on VMware vSphere to Citrix Virtual Apps and Desktops service on Microsoft Azure. Migrating to cloud resources modernizes your deployment, providing enhanced elasticity, scalability, and management.
 
 The guidance documented here is based on a deployment in a Citrix- and Microsoft-reviewed and approved lab environment. The initial and final deployments represent typical customer environments.
 
@@ -23,7 +17,6 @@ We migrated these key products and components:
 *  On-premises StoreFront and Citrix Gateway to Citrix Workspace and Citrix Gateway service
 *  On-premises vSphere workloads to workloads in Azure
 *  On-premises file servers to Azure
-*  Application back-end
 
 The following diagram shows the migration process.
 
@@ -95,11 +88,9 @@ For our lab environment, we defined GPOs that:
 
 With the basic lab setup in place, we’re ready to start the migration.
 
-We recommend that you create the AD structure that will host your Azure workload before you start the migration project. It’s also helpful to have checkpoints in place to help you validate the successful completion of each step.
+We recommend that you create the AD structure, GPOs, and link the GPOs that will host your Azure workload before you start the migration project. It’s also helpful to have checkpoints in place so you can validate the successful completion of each step.
 
 ## Set up a basic Citrix Cloud environment
-
-With our Azure environment established and site-to-site communication working, we’re ready to add Citrix Cloud.
 
 If you’re already using Citrix Virtual Apps and Desktops service, you can skip to the section [Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#Workspace Environment Management service).
 
@@ -125,13 +116,9 @@ You can install the Cloud Connector software [interactively](/en-us/citrix-cloud
 
 ### Step 3: Rename the resource location
 
-Because we have multiple resource locations between on-premises and Azure, it’s useful to have a distinct name for each resource location.
+Because we will have multiple resource locations (on-premises and Azure), it’s useful to have a distinct name for each resource location.
 
-1.  Click the **Arrow** to go back to **Resource Location**.
-
-    ![Resource location back arrow](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_resource-location-back-arrow.png)
-
-1.  Click **...** and select **Rename**.
+1.  Select your resource location, click **...** and select **Rename**.
 
     ![Rename resource location](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_rename-resource-location.png)
 
@@ -163,7 +150,7 @@ The following diagram shows our cloud environment on Azure after we migrate to t
 
 #### Step 1: Preparation
 
-To migrate successfully using the automated configuration tool, for on-premises MCS configured catalogs, you must replicate your on-premises configuration for hosting, machine catalogs, and delivery groups. The migration tool creates and assigns applications and policies.
+To migrate successfully using the automated configuration tool, for on-premises MCS configured catalogs, you must replicate your on-premises configuration for hosting, machine catalogs, and delivery groups. The migration tool only creates and assigns applications and policies for MCS deployments.
 
 During this migration phase, we recommend that you create only a few VMs for each machine catalog. Having just a few VMs allows you to validate machine catalog creation and then allows you to create delivery groups and run the Azure migration tool.
 
@@ -189,7 +176,7 @@ Use delivery groups to control access and delivery to machines, applications, an
 
 #### Step 2: Migration
 
-We use a Citrix-developed tool, the automated configuration tool, to migrate Citrix Virtual Apps and Desktops from on-premises to Citrix Virtual Apps and Desktops service. You can [download the automated configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) from Citrix. Documentation for the tool is available on Tech Zone in [Automated Configuration](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html). The tool is available as a preview.
+We use a Citrix-developed tool, the automated configuration tool, to migrate Citrix Virtual Apps and Desktops from on-premises to Citrix Virtual Apps and Desktops service. You can [download the automated configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) from Citrix. Documentation for the tool is available on Tech Zone in [Automated Configuration](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html). _The tool is available as a preview._
 
 Because our on-premises lab is using MCS, we only migrate the following:
 
@@ -202,7 +189,7 @@ Because our on-premises lab is using MCS, we only migrate the following:
 >
 >Because we are using MCS and can only import applications and group policies, we use two options here: `-Applications` and `-GroupPolicies` to export only the required information.
 
-###### Prerequisites
+##### Prerequisites
 
 We run the automated configuration tool on a delivery controller, and we need .NET Framework 4.7.2 or later to be installed on that server.
 
@@ -210,7 +197,7 @@ You can download .NET Framework 4.7.2 from: [https://dotnet.microsoft.com/downlo
 
 Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing the tool creates a desktop icon called **Auto Config** that launches the PowerShell command prompt. You run the Cloud automated configuration cmdlets from the PowerShell command prompt.
 
-###### Export applications
+##### Export applications
 
 1.  Click the **Auto Config** icon.
 
@@ -220,7 +207,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     ![Export apps = true](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-export-apps-true.png)
 
-###### Export policies
+##### Export policies
 
 1.  Run the following command: `Export-CvadAcToFile –GroupPolicies $true`.
 
@@ -230,7 +217,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 ##### Import settings to Citrix Cloud
 
-###### Prerequisites
+##### Prerequisites
 
 1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID`, and `Secret`.
 
@@ -280,7 +267,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
-###### Import applications
+##### Import applications
 
 1.  Run the following command in the Auto Config tool: `Import-CvadAcToSite -Applications $true`.
 
@@ -294,7 +281,7 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 
     ![App import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_import-apps-result.png)
 
-###### Import policies
+##### Import policies
 
 1.  Run the following command in the Auto Config tool: `Import-CvadAcToSite -GroupPolicies $true`.
 
@@ -351,7 +338,9 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 You need to prepare the VDAs for migration by changing the image properties and shutting the image down. Not preparing the VDAs as outlined here prevents them from registering correctly after migration.
 
-1.  Enable maintenance mode.
+1.  Enable maintenance mode on each PVS delivery group.
+
+1.  Ensure that the images are not locked. If the images are locked, you cannot proceed after the images are shut down.
 
 1.  Shut down the VDAs.
 
@@ -359,7 +348,7 @@ You need to prepare the VDAs for migration by changing the image properties and 
 
     ![Virtual disk properties](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_vdisk-properties.png)
 
-1.  Start the VDA and enable logging.
+1.  Start the VDA and log on.
 
     ![Change Citrix Virtual Apps and Desktops](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_control-panel.png)
 
@@ -395,7 +384,7 @@ You need to prepare the VDAs for migration by changing the image properties and 
 
     ![Registered VMs in Cloud studio console](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_registered-vms-cloud-studio.png)
 
-###### Export settings
+##### Export settings
 
 1.  Click the **Auto Config** icon.
 
@@ -445,7 +434,7 @@ You need to prepare the VDAs for migration by changing the image properties and 
 
     ![Customer info YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
 
-1.  Add the following line at the end of the file: HostConnections: True to allow the hosting configuration.
+1.  Add the following line at the end of the file: `HostConnections: True` to allow the hosting configuration.
 
     ![Host connections true](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_host-connections-true.png)
 
@@ -510,7 +499,7 @@ More details about each option are available from Citrix product documentation i
 >1.  Go to Policies and ensure that your policies have been created and assigned.
 >    ![Policies list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_policies-list.png)
 
-Next we configure the end user layer with Citrix Workspace and Citrix Gateway service.
+Next we configure the end user access layer with Citrix Workspace and Citrix Gateway service.
 
 ## Migrate to Workspace Environment Management service
 
@@ -581,8 +570,7 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 >**Checkpoint: Workspace Environment Management service migration**
 >
 >1.  Open the Win 10 + Citrix Virtual Apps and Desktops Service Desktop.
->
->![Desktop with Workspace Environment Management app icon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-notepad-create-icon-desktop.png)
+>    ![Desktop with Workspace Environment Management app icon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-notepad-create-icon-desktop.png)
 >
 >1.  Ensure that the new application (in our example, Notepad) is populated on the user’s desktop.
 
@@ -1128,7 +1116,7 @@ The following diagram shows the Azure and Citrix Cloud components that have been
 
     ![Deploy Cloud Connector](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cloud-connector-resource-location.png)
 
-### Step 2: Create Citrix workload and publish through on-premises StoreFront
+### Step 2: Create Citrix workload
 
 1.  Create the basic configuration
     1.  hosting
