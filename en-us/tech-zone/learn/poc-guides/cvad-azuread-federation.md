@@ -224,7 +224,7 @@ To validate the POC perform the following steps:
 
 1.  Open a browser, and navigate to the domain FQDN managed by the Citrix ADC. Notice that the Citrix Gateway redirects to AAD.
 1.  Log in with the UPN of a user configured to be part of the FAS environment ![Log in](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-remotewebredirectaaduser.png)
-2.  Verify the users virtual apps, and desktops are enumerated, and launch once logged in with the UPN via the AAD user object ![Logged in](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-remotewebloggedin.png)
+1.  Verify the users virtual apps, and desktops are enumerated, and launch once logged in with the UPN via the AAD user object ![Logged in](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-remotewebloggedin.png)
 
 ## Summary
 
