@@ -221,7 +221,7 @@ Because we have multiple resource locations between on-premises and Azure, it’
 
     ![Rename resource location](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_rename-resource-location.png)
 
-1.  Give your resource location a new name, for example, "On-premises", and click **Save**.
+1.  Give your resource location a new name, for example, **On-premises**, and click **Save**.
 
     ![Save new name](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_save-new-resource-location-name.png)
 
@@ -491,7 +491,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     ![Original zone mapping YAML file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-original.png)
 
-1.  You need to replace the highlighted text with your Cloud resource location as shown in the following example:
+1.  You must replace the highlighted text with your Cloud resource location as shown in the following example:
 
     ![Zone mapping YAML example](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-edited.png)
 
