@@ -349,25 +349,41 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 ##### Prepare the VDAs for migration
 
+You need to prepare the VDAs for migration by changing the image properties and shutting the image down. Not preparing the VDAs as outlined here prevents them from registering correctly after migration.
+
 1.  Enable maintenance mode.
 
 1.  Shut down the VDAs.
 
 1.  In PVS, change the image from standard to private.
 
+    ![Virtual disk properties](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_vdisk-properties.png)
+
 1.  Start the VDA and enable logging.
+
+    ![Change Citrix Virtual Apps and Desktops](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_control-panel.png)
 
 1.  Go to **Control Panel**. Select **Citrix Virtual Apps and Desktops > Change**.
 
 1.  Click **Customize Virtual Delivery Agent settings**
 
+    ![Customize VDA settings](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customize-vda-settings.png)
+
 1.  Click **Edit**.
+
+    ![Edit VDA delivery controller](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_edit-vda-delivery-controller.png)
 
 1.  Replace the name of your delivery controller with the name of your Cloud Connector server. Test the connection and click **Save**. You can add a second cloud connector later if you don't plan to migrate to Azure.
 
+    ![Save and test delivery controller location](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_edit-vda-delivery-controller.png)
+
 1.  Click **Next > Next > Reconfigure**.
 
+    ![Delivery controller settings](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_delivery-controller-settings.png)
+
 1.  Click **Finish**.
+
+    ![Finish reconfiguration](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_finish-reconfiguration.png)
 
 1.  Shut down the VM.
 
@@ -376,6 +392,8 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 1.  Your VMs start and register.
 
 1.  Ensure your VMs are registered in the Citrix Cloud studio console.
+
+    ![Registered VMs in Cloud studio console](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_registered-vms-cloud-studio.png)
 
 ###### Export settings
 
