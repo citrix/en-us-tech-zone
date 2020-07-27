@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Copy & paste description from TOC here
+description: This Proof of Concept guide provides instructions on using Automated Configuration tool to automate moving your Citrix Virtual Apps and Desktops configuration to your Citrix Virtual Apps and Desktops Service deployment. The tool also supports use case of moving your configuration between Citrix Virtual Apps and Desktops Service deployments.
 ---
 # Proof of Concept: Automated Configuration Tool
 

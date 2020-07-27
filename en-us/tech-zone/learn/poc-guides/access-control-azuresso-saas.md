@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to set up a Citrix Access Control environment that provides enhanced security to Microsot Azure SaaS Apps.
+description: Learn how to set up a Citrix Access Control environment that provides enhanced security to Microsoft Azure SaaS Apps.
 ---
 # Proof of Concept: Secure Access to SaaS Apps with Microsoft Azure SSO and Citrix Access Control
 
