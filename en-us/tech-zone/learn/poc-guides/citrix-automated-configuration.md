@@ -26,13 +26,13 @@ The migration can be performed in stages by running the tool multiple times, all
 
 IT Administrators dealing with large or complex environments, often find migrations to be a tedious process. They frequently end up writing their own tools to accomplish this task successfully since it tends to be specific to their use cases.
 
-Citrix wants to help ease this process by providing a tool that addresses use cases through automation. Administrators can easily test current configurations in **Citrix Cloud** and take advantage of the benefits offered by **CVADs** while keeping their current environments intact. Such benefits include reduced administrative overload when Citrix manages part of the backend and control plane, automatic and customizable **Citrix Cloud** component updates, and others.
+Citrix wants to help ease this process by providing a tool that addresses use cases through automation. Administrators can easily test current configurations in **Citrix Cloud** and take advantage of the benefits offered by **CVADs** while keeping their current environments intact. Such benefits include reduced administrative overload when Citrix manages part of the back end and control plane, automatic and customizable **Citrix Cloud** component updates, and others.
 
 ### How is this tool implemented?
 
 Citrix has leveraged industry standard configuration as code to provide a mechanism to help automate migration processes. This tool discovers and exports one or more on-premises sites as **a collection of configuration files**, which administrators can optionally edit, and then import these files' configuration into CVADs.
 
-This code is not limited to migrations, it is the future for creating configuration for Citrix sites, and as such, applicable for **many different use cases**. Disaster recovery, Development/Testing/Staging to Production site synchronization, Geographic (GEO) moves, and several other scenarios are supported. For administrators using public cloud providers, this can help create a combination of objects automatically (parallel to Microsoft Azure ARM templates and AWS Cloud formation).
+This code is not limited to migrations, it is the future for creating configuration for Citrix sites, and as such, applicable for **many different use cases**. Disaster recovery, Development/Testing/Staging to Production site synchronization, Geographic (GEO) moves, and several other scenarios are supported. For administrators using public cloud providers, this can help create a combination of objects automatically (parallel to Microsoft Azure ARM templates and AWS CloudFormation).
 
 ## Pre-requisites
 
@@ -294,7 +294,7 @@ If everything looks as expected, your CVADs migration is complete.
 
 **General information for troubleshooting:**
 
-*  Running any cmdlet creates a **log file** and an entry in the **master history log file**. The entries containthe date, operation, result, backup, and log file locations of the execution. This log provides potential solutions and fixes to common errors.
+*  Running any cmdlet creates a **log file** and an entry in the **master history log file**. The entries contain the date, operation, result, backup, and log file locations of the execution. This log provides potential solutions and fixes to common errors.
 *  The **master history log** is located in ```%HOMEPATH%\Documents\Citrix\AutoConfig```, in the file named ```History.Log```.*  All operation log files are placed in a **backup folder**.
 *  All log file names begin with ```CitrixLog```, then show the ```auto-config``` operation and the **date** and **timestamp** of the cmdlet execution.
 *  Logs **do not** auto-delete.
