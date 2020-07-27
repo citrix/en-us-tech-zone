@@ -449,9 +449,9 @@ You need to prepare the VDAs for migration by changing the image properties and 
 
 1.  Start the VDA and log on.
 
-    ![Change Citrix Virtual Apps and Desktops](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_control-panel.png)
-
 1.  Go to **Control Panel**. Select **Citrix Virtual Apps and Desktops > Change**.
+
+    ![Change Citrix Virtual Apps and Desktops](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_control-panel.png)
 
 1.  Click **Customize Virtual Delivery Agent settings**
 
@@ -463,7 +463,7 @@ You need to prepare the VDAs for migration by changing the image properties and 
 
 1.  Replace the name of your delivery controller with the name of your Cloud Connector server. Test the connection and click **Save**. If you plan to migrate to Azure later, you can add a second cloud connector then.
 
-    ![Save and test delivery controller location](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_edit-vda-delivery-controller.png)
+    ![Save and test delivery controller location](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_save-test-vda-settings.png)
 
 1.  Click **Next > Next > Reconfigure**.
 
@@ -626,8 +626,7 @@ Now the STA servers are up and StoreFront is configured.
 >![Desktop deployed on Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migraton_cvad-service-desktop.png)
 >
 >1.  Open Google Chrome and ensure the connection server is the one you created using the Citrix Virtual Apps and Desktop service.
->
->![Verify Google Chrome launch](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_verify-chrome-launch.png)
+>    ![Verify Google Chrome launch](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_verify-chrome-launch.png)
 
 ### Migrate to Citrix Workspace and Citrix Gateway service
 
@@ -698,20 +697,16 @@ In this section, we migrate to the Citrix Gateway service and Citrix Workspace, 
 >![Workspace URL](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-url.png)
 >
 >1.  Click the **Workspace URL**.
->
->![Workspace logon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_logon.png)
+>    ![Workspace logon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_logon.png)
 >
 >1.  Provide your credentials and click **Log On**.
->
->![Workspace](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-desktops.png)
+>    ![Workspace](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-desktops.png)
 >
 >1.  Click **Desktops**.
->
->![Desktops in Workspace](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-desktops-available.png)
+>    ![Desktops in Workspace](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-desktops-available.png)
 >
 >1.  Click **Win 10 Azure + Citrix Virtual Apps and Desktops Service** to launch your desktop.
->
->![Launched desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-workload-desktop.png)
+>    ![Launched desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-workload-desktop.png)
 
 ## Prepare the Azure subscription
 
@@ -1094,12 +1089,10 @@ Consider deploying [Azure Cost Management](https://docs.microsoft.com/en-us/az
 >1.  Connect to the Citrix Gateway with a new user account.
 >
 >1.  Open the Citrix Virtual Apps and Desktops service desktop.
->
->![Citrix Virtual Apps and Desktops service desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cvads-desktop.png)
+>    ![Citrix Virtual Apps and Desktops service desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cvads-desktop.png)
 >
 >1.  Close the session and ensure that the user’s profile has been created on the Azure file server.
->
->![User profile on Azure server](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-profile.png)
+>    ![User profile on Azure server](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-profile.png)
 
 ## Move Citrix workload to Azure
 
@@ -1167,8 +1160,7 @@ Note: if you are not using Workspace and Citrix Gateway service, follow these st
 >1.  Connect to your Citrix Gateway.
 >
 >1.  Open the Azure-hosted Citrix Virtual Apps and Desktop service published desktop.
->
->![Azure-hosted CVAD service desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-hosted-cvad-service-desktop.png)
+>    ![Azure-hosted CVAD service desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-hosted-cvad-service-desktop.png)
 >
 >1.  Ensure that the name of the desktop is the one you provisioned on Azure.
 >
