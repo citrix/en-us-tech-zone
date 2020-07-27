@@ -338,7 +338,9 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 You need to prepare the VDAs for migration by changing the image properties and shutting the image down. Not preparing the VDAs as outlined here prevents them from registering correctly after migration.
 
-1.  Enable maintenance mode.
+1.  Enable maintenance mode on each PVS delivery group.
+
+1.  Ensure that the images are not locked. If the images are locked, you cannot proceed after the images are shut down.
 
 1.  Shut down the VDAs.
 
@@ -346,7 +348,7 @@ You need to prepare the VDAs for migration by changing the image properties and 
 
     ![Virtual disk properties](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_vdisk-properties.png)
 
-1.  Start the VDA and enable logging.
+1.  Start the VDA and log on.
 
     ![Change Citrix Virtual Apps and Desktops](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_control-panel.png)
 
@@ -432,7 +434,7 @@ You need to prepare the VDAs for migration by changing the image properties and 
 
     ![Customer info YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
 
-1.  Add the following line at the end of the file: HostConnections: True to allow the hosting configuration.
+1.  Add the following line at the end of the file: `HostConnections: True` to allow the hosting configuration.
 
     ![Host connections true](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_host-connections-true.png)
 
@@ -568,8 +570,7 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 >**Checkpoint: Workspace Environment Management service migration**
 >
 >1.  Open the Win 10 + Citrix Virtual Apps and Desktops Service Desktop.
->
->![Desktop with Workspace Environment Management app icon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-notepad-create-icon-desktop.png)
+>    ![Desktop with Workspace Environment Management app icon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-notepad-create-icon-desktop.png)
 >
 >1.  Ensure that the new application (in our example, Notepad) is populated on the user’s desktop.
 
