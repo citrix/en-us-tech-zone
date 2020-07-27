@@ -506,7 +506,7 @@ For details about migrating to the Workspace Environment Management service, see
 
 The following diagram shows the environment with our on-prem and Azure resources, now adding the Workspace Environment Management service to our cloud environment.
 
-![Workspace Environment Management service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-service.png) step-03
+![Workspace Environment Management service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-service.png)
 
 >**Note:**
 >
@@ -620,7 +620,7 @@ Now the STA servers are up and StoreFront is configured.
 
 In the final migration step, we migrate to the Citrix Gateway service and Citrix Workspace, as shown in the following diagram.
 
-![Workspace and Citrix Gateway Service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-and-citrix-gateway-service.png) Step 04
+![Workspace and Citrix Gateway Service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-and-citrix-gateway-service.png)
 
 >**Note:**
 >
