@@ -12,7 +12,7 @@ The guidance documented here is based on a deployment in a Citrix- and Microsoft
 
 We migrated these key products and components:
 
-*  Citrix Virtual Apps and Desktops on-premises to Citrix Virtual Apps and Desktops service
+*  [Citrix Virtual Apps and Desktops on-premises to Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-citrix-virtual-apps-and-desktops-service)
 *  Workspace Environment Management on-premises to Workspace Environment Management service
 *  On-premises StoreFront and Citrix Gateway to Citrix Workspace and Citrix Gateway service
 *  On-premises vSphere workloads to workloads in Azure
@@ -140,7 +140,7 @@ If you’re already using Citrix Virtual Apps and Desktops service, you can skip
 
 If you’re using Citrix Virtual Apps and Desktops on-premises, you can use the procedures in this section as a guide for migrating to Citrix Virtual Apps and Desktops service.  
 
-For MCS users, the [MCS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#mcs-migration) section provides detailed migration steps.
+For the MCS provisioning method, the [MCS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#mcs-migration) section provides detailed migration steps.
 
 If you use PVS, go to [PVS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#pvs-migration).
 
@@ -219,6 +219,8 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 ##### Import settings to Citrix Cloud
 
+All files that you edit are in the folder where you run the PowerShell command. The **Auto Config** tool creates the files when you run the export command.
+
 ##### Prerequisites
 
 1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID`, and `Secret`.
@@ -265,9 +267,9 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 >**Note:**
 >
->If the default on-prem has not been changed, it should be Primary.
+>If the default resource location has not been changed, it should be Primary.
 
-The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`. The name is case-sensitive and must be enclosed in quotation marks as shown.
+The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`, in keeping with standard YAML syntax. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
 ##### Import applications
 
@@ -299,14 +301,7 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 
 1.  Ensure that the result is **True**.
 
-During VDA installation, you need to configure the delivery controller. You have four options for configuring the delivery controller:
-
-*  **Configure it later (advanced)** If you select this method, you must change the policy to point VDA to Cloud Connectors.
-*  **Configure it manually** If you select this method, you must update your master images to point the VDA to your Cloud Connectors.
-*  **Choose locations from Active Directory** Do not select this method. Citrix recommends that you use another method and point to your Cloud Connectors.
-*  **Let machine creation services (MCS) configure it automatically** This is the preferred method that Citrix recommends. The MCS configuration in Citrix Cloud provides the required information automatically.
-
-Based on your on-premises configuration, you should consider VDA reconfiguration.
+Based on your on-premises configuration, reconfigure your VDAs to point to your Cloud Connectors.
 
 More details about each option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
 
@@ -396,7 +391,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     ![Original zone mapping YAML file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-original.png)
 
-1.  Replace the highlighted text with your Cloud resource location as shown in the following example:
+1.  Replace the highlighted text with the name of your on-premises resource location defined in Citrix Cloud, as shown in the following example:
 
     ![Zone mapping YAML example](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-edited.png)
 
@@ -425,13 +420,6 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 The resulting output looks like the following image:
 
 ![Settings import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-result.png)
-
-During VDA installation, you need to configure the delivery controller. You have four options for configuring the delivery controller:
-
-*  **Configure it later (advanced)** If you select this method, you must change the policy to point VDA to Cloud Connectors.
-*  **Configure it manually** If you select this method, you must update your master images to point the VDA to your Cloud Connectors.
-*  **Choose locations from Active Directory** Do not select this method. Citrix recommends that you use another method and point to your Cloud Connectors.
-*  **Let machine creation services (MCS) configure it automatically** This is the preferred method that Citrix recommends. The MCS configuration in Citrix Cloud provides the required information automatically.
 
 Based on your on-premises configuration, you should consider VDA reconfiguration, using the procedure in the following section, "Reconfigure".
 
