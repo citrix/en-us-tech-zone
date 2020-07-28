@@ -138,7 +138,7 @@ This iFrame allows you to upload to Google play without creating a google develo
 
 In the **Endpoint Management Console**, click configure > Apps and select Enterprise Apps and upload the apk. The upload button opens the managed Google Play store.
 
-[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_11.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_12.png)
+[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_12.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_12.png)
 
 ## Add private Android Enterprise apps as MDX-wrapped Enterprise app
 
