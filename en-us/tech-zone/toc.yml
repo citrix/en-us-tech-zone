@@ -13,7 +13,7 @@ docs:
       url: /en-us/tech-zone/learn/tech-briefs.html
     - title: Tech Insights
       url: /en-us/tech-zone/learn/tech-insights.html
-- title: Design
+ title: Design
   url: /en-us/tech-zone/design.html
   subfolderlist:
     - title: Design Decisions
