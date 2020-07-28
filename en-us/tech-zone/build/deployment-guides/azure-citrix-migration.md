@@ -12,12 +12,12 @@ The guidance documented here is based on a deployment in a Citrix- and Microsoft
 
 We migrated these key products and components:
 
-*  Citrix Virtual Apps and Desktops on-premises to Citrix Virtual Apps and Desktops service
-*  Workspace Environment Management on-premises to Workspace Environment Management service
-*  On-premises StoreFront and Citrix Gateway to Citrix Workspace and Citrix Gateway service
-*  On-premises vSphere workloads to workloads in Azure
-*  On-premises file servers to Azure
-*  Create Citrix workload in Azure
+*  [Citrix Virtual Apps and Desktops on-premises to Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-citrix-virtual-apps-and-desktops-service)
+*  [Workspace Environment Management on-premises to Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service)
+*  [On-premises StoreFront and Citrix Gateway to Citrix Workspace and Citrix Gateway service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-citrix-workspace-and-citrix-gateway-service)
+*  [On-premises vSphere workloads to workloads in Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-on-premises-to-azure)
+*  [On-premises file servers to Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#prepare-the-azure-subscription)
+*  [Create Citrix workload in Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#move-citrix-workload-to-azure)
 
 The following diagram shows the migration process.
 
@@ -128,9 +128,11 @@ Because we will have multiple resource locations (on-premises and Azure), it’s
 
 >**Checkpoint: Citrix Cloud Connector**
 >
->When your Cloud Connectors are deployed successfully, they are listed with a green bar on the left.
+>When your Cloud Connectors are deployed successfully and running, they are listed with a green bar on the left.
 >
 >![Cloud Connector status indicators](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cloud-connectors-green-bar.png)
+>
+>If the status is not what you expect, use the Citrix Cloud connectivity test for more information.
 
 ## Migrate to Citrix Virtual Apps and Desktops service
 
@@ -138,7 +140,7 @@ If you’re already using Citrix Virtual Apps and Desktops service, you can skip
 
 If you’re using Citrix Virtual Apps and Desktops on-premises, you can use the procedures in this section as a guide for migrating to Citrix Virtual Apps and Desktops service.  
 
-For MCS users, the [MCS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#mcs-migration) section provides detailed migration steps.
+For the MCS provisioning method, the [MCS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#mcs-migration) section provides detailed migration steps.
 
 If you use PVS, go to [PVS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#pvs-migration).
 
@@ -217,11 +219,13 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 ##### Import settings to Citrix Cloud
 
+All the files that you edit are in the folder where you run the PowerShell command. The **Auto Config** tool creates the files when you run the export command.
+
 ##### Prerequisites
 
 1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID`, and `Secret`.
 
-    ![Example customerinfo.yml file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
+    ![Example customerinfo.yml file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-empty copy.png)
 
 1.  Connect to Citrix Cloud and go to **Identity and Access Management**.
 
@@ -263,9 +267,9 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 >**Note:**
 >
->If the default on-prem has not been changed, it should be Primary.
+>If the default resource location has not been changed, it should be Primary.
 
-The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`. The name is case-sensitive and must be enclosed in quotation marks as shown.
+The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`, in keeping with standard YAML syntax. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
 ##### Import applications
 
@@ -297,16 +301,9 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 
 1.  Ensure that the result is **True**.
 
-During VDA installation, you need to configure the delivery controller. You have four options for configuring the delivery controller:
+Based on your on-premises configuration, you need to reconfigure your VDAs, using the procedure in the following section, [Reconfigure the VDAs for registration with Cloud Connector](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#reconfigure-the-vdas-for-registration-with-cloud-connector).
 
-*  **Configure it later (advanced)** If you select this method, you must change the policy to point VDA to Cloud Connectors.
-*  **Configure it manually** If you select this method, you must update your master images to point the VDA to your Cloud Connectors.
-*  **Choose locations from Active Directory** Do not select this method. Citrix recommends that you use another method and point to your Cloud Connectors.
-*  **Let machine creation services (MCS) configure it automatically** This is the preferred method that Citrix recommends. The MCS configuration in Citrix Cloud provides the required information automatically.
-
-Based on your on-premises configuration, you should consider VDA reconfiguration.
-
-More details about each option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
+More details about each VDA reconfiguration option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
 
 >**Checkpoint: Citrix Virtual Apps and Desktops service migration using MCS**
 >
@@ -316,7 +313,7 @@ More details about each option are available from Citrix product documentation i
 >1.  Go to **Policies** and ensure that your policies have been created and assigned.
 >    ![Policies list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_policies-list.png)
 
-Next we [configure the end user access layer](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#configure-end-user-access-layer) with Citrix Workspace and Citrix Gateway service.
+If you're using Workspace Environment Management, continue with [Migrate to Workspace Environment Management service](/en-us/tech-zone/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service). If you're not using Workspace Environment Management, the next step is to [configure the end user access layer](/en-us/tech-zone/deployment-guides/azure-citrix-migration.html#configure-the-end-user-access-layer).
 
 ### PVS Migration
 
@@ -346,15 +343,13 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Ensure that the result is reported as **True**.
 
-    ![Export result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-export-true.png)
-
 #### Import settings to Citrix Cloud
 
 ##### Prerequisites
 
 1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID`, and `Secret`.
 
-    ![Example customerinfo.yml file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
+    ![Example customerinfo.yml file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-empty copy.png)
 
 1.  Connect to Citrix Cloud and go to **Identity and Access Management**.
 
@@ -382,7 +377,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Paste the information in a document (it is not possible to see the information again, so keep the document safe).
 
-    ![Customer info YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
+    ![Customer info YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-empty copy.png)
 
 1.  Add the following line at the end of the file: `HostConnections: True` to allow the hosting configuration.
 
@@ -394,21 +389,21 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     ![Original zone mapping YAML file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-original.png)
 
-1.  Replace the highlighted text with your Cloud resource location as shown in the following example:
+1.  Replace the highlighted text with the name of your on-premises resource location defined in Citrix Cloud, as shown in the following example:
 
     ![Zone mapping YAML example](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-edited.png)
 
     >**Note:**
     >
-    >If the default Azure resource location has not been changed, it should be **Primary**.
+    >If the default resource location has not been changed, it should be Primary.
 
-    The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`. The name is case-sensitive and must be enclosed in quotation marks as shown.
+    The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`, in keeping with standard YAML syntax. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
 1.  Edit `CvadAcSecurity.yml` using Notepad.
 
     ![CvadAcSecurity YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cvadacsecurity-yml.png)
 
-1.  Fill the file with your credentials and save it.
+1.  Fill the file with your credentials and save it. The correct format for the user name is `domain\username`.
 
 ##### Import settings
 
@@ -424,66 +419,9 @@ The resulting output looks like the following image:
 
 ![Settings import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-result.png)
 
-During VDA installation, you need to configure the delivery controller. You have four options for configuring the delivery controller:
+Based on your on-premises configuration, you need to reconfigure your VDAs, using the procedure in the following section, [Reconfigure the VDAs for registration with Cloud Connector](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#reconfigure-the-vdas-for-registration-with-cloud-connector).
 
-*  **Configure it later (advanced)** If you select this method, you must change the policy to point VDA to Cloud Connectors.
-*  **Configure it manually** If you select this method, you must update your master images to point the VDA to your Cloud Connectors.
-*  **Choose locations from Active Directory** Do not select this method. Citrix recommends that you use another method and point to your Cloud Connectors.
-*  **Let machine creation services (MCS) configure it automatically** This is the preferred method that Citrix recommends. The MCS configuration in Citrix Cloud provides the required information automatically.
-
-Based on your on-premises configuration, you should consider VDA reconfiguration, using the procedure in the following section, "Reconfigure".
-
-##### Reconfigure the VDAs for registration with Cloud Connector
-
-You need to prepare the VDAs for migration by changing the image properties and shutting the image down. Not preparing the VDAs as outlined here prevents them from registering correctly after migration.
-
-1.  Enable maintenance mode on each PVS delivery group.
-
-1.  Shut down the VDAs.
-
-1.  Ensure that the images are not locked. If the images are locked, you cannot change the image access mode.
-
-1.  In PVS, change the image access mode from standard to private.
-
-    ![Virtual disk properties](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_vdisk-properties.png)
-
-1.  Start the VDA and log on.
-
-1.  Go to **Control Panel**. Select **Citrix Virtual Apps and Desktops > Change**.
-
-    ![Change Citrix Virtual Apps and Desktops](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_control-panel.png)
-
-1.  Click **Customize Virtual Delivery Agent settings**
-
-    ![Customize VDA settings](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customize-vda-settings.png)
-
-1.  Click **Edit**.
-
-    ![Edit VDA delivery controller](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_edit-vda-delivery-controller.png)
-
-1.  Replace the name of your delivery controller with the name of your Cloud Connector server. Test the connection and click **Save**. If you plan to migrate to Azure later, you can add a second cloud connector then.
-
-    ![Save and test delivery controller location](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_save-test-vda-settings.png)
-
-1.  Click **Next > Next > Reconfigure**.
-
-    ![Delivery controller settings](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_delivery-controller-settings.png)
-
-1.  Click **Finish**.
-
-    ![Finish reconfiguration](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_finish-reconfiguration.png)
-
-1.  Shut down the VM.
-
-1.  Change the disk image access mode back to **Standard** and exit **Maintenance Mode** in **Machine Catalogs**.
-
-1.  Your VMs start and register.
-
-1.  Ensure your VMs are registered in the Citrix Cloud studio console.
-
-    ![Registered VMs in Cloud studio console](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_registered-vms-cloud-studio.png)
-
-More details about each option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
+More details about VDA registration options are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
 
 >**Checkpoint: Citrix Virtual Apps and Desktop service using PVS**
 >
@@ -492,6 +430,8 @@ More details about each option are available from Citrix product documentation i
 >
 >1.  Go to **Delivery Groups** and ensure that your delivery groups have been created.
 >    ![Delivery groups](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_delivery-groups.png)
+>1.  Ensure your VMs are registered in the Citrix Cloud studio console.
+>    ![Registered VMs in Cloud studio console](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_registered-vms-cloud-studio.png)
 >
 >1.  Go to Applications and ensure that your applications have been created.
 >    ![Applications list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_applications-list.png)
@@ -499,7 +439,7 @@ More details about each option are available from Citrix product documentation i
 >1.  Go to Policies and ensure that your policies have been created and assigned.
 >    ![Policies list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_policies-list.png)
 
-Next we configure the end user access layer with Citrix Workspace and Citrix Gateway service.
+If you're using Workspace Environment Management, continue with [Migrate to Workspace Environment Management service](/en-us/tech-zone/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service). If you're not using Workspace Environment Management, the next step is to [configure the end user access layer](/en-us/tech-zone/deployment-guides/azure-citrix-migration.html#configure-the-end-user-access-layer).
 
 ## Migrate to Workspace Environment Management service
 
@@ -515,37 +455,11 @@ The following diagram shows the environment with our on-prem and Azure resources
 
 ![Workspace Environment Management service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-service.png)
 
->**Note:**
+>**Notes from the field:**
 >
->When you return to the Workspace Environment Management Service **Downloads** tab, the progress message appears under **Upload**, which updates as the upload progresses. After your SQL file is uploaded successfully, the migration process starts automatically.
+>To verify that our VDAs switch from on-prem to Cloud, an easy trick is to create a setting that is only configured in the Workspace Environment Management service.
 
-### Step 2: Load data
-
-1.  Load the migrated data into the Workspace Environment Management service administration console.
-
-1.  Refresh your browser window to reconnect to the Workspace Environment Management service and to view the data migrated from your on-premises Workspace Environment Management database.
-
-#### Workspace Environment Management service settings
-
-To verify that our VDAs switch from on-prem to Cloud, an easy trick is to create a setting that is only configured in the Workspace Environment Management service. The following image shows what we did as an example:
-
-![Workspace Environment Management single app](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-single-app.png)
-
-1.  In the Workspace Environment Management service administration console, go to **Actions > Applications > Add**.
-
-    ![Add Notepad](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_notepad-new.png)
-
-1.  We created Notepad as a new application.
-
-    ![Notepad icon on desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-notepad-create-icon-desktop.png)
-
-1.  In **Assignment**, add the newly created application and modify the setting to create an icon on the Desktop.
-
-    ![Refresh agent cache and settings](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-refresh-cache-and-settings.png)
-
-1.  Refresh the agent cache and settings.
-
-### Step 3: Switch to service agent mode
+### Step 2: Switch to service agent mode
 
 Use the agent switch feature to switch from on-premises to service agent mode. For information about the agent switch, see Agent Switch.
 
@@ -568,22 +482,23 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 1.  Restart the VDA to apply the new settings.
 
 >**Checkpoint: Workspace Environment Management service migration**
+>As a verification step to confirm that our VDAs switched from on-prem to Cloud, we added an app, Notepad, that is uniquely available from the Workspace Environment Management service. We used the following steps to confirm the switch.
 >
 >1.  Open the Win 10 + Citrix Virtual Apps and Desktops Service Desktop.
 >
->1.  Ensure that the new application (in our example, Notepad) is populated on the user’s desktop.
+>1.  Ensure that the new application configured with the Workspace Environment Management service (in our example, Notepad) is populated on the user’s desktop.
 >    ![Desktop with Workspace Environment Management app icon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-desktop-notepad-icon.png)
 
-## Configure end user access layer
+## Configure the end user access layer
 
 You have two options for configuring the end user access layer:
 
-*  Continue to use [StoreFront with Citrix Gateway](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#storefront-with-citrix-gateway)
+*  Continue to use [StoreFront with Citrix Gateway](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#storefront-with-citrix-gateway) if you require specific StoreFront features
 *  [Migrate to Citrix Workspace and Citrix Gateway service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-citrix-workspace-and-citrix-gateway-service)
 
 ### StoreFront with Citrix Gateway
 
-In this section, we configure the on-premises StoreFront and Citrix Gateway to integrate with Citrix Virtual Apps and Desktops service. To support multiple StoreFront sites, we use multisite aggregation. To learn more about multisite aggregation, [Designing StoreFront Multi-Site Aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) is a useful resource.
+In this section, we configure the on-premises StoreFront and Citrix Gateway to integrate with Citrix Virtual Apps and Desktops service. To support multiple StoreFront sites, we use multisite aggregation.
 
 #### StoreFront
 
@@ -595,7 +510,7 @@ In this section, we configure the on-premises StoreFront and Citrix Gateway to i
 
     ![Add delivery controller](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_add-delivery-controller.png)
 
-1.  Aggregate resources.
+1.  Aggregate resources. To learn more about multisite aggregation, [Designing StoreFront Multi-Site Aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) is a useful resource.
 
 1.  Map users to controllers.
 
@@ -617,15 +532,7 @@ Now the STA servers are up and StoreFront is configured.
 >
 >1.  Ensure in Citrix Cloud that the VDAs are registered. The Citrix product documentation provides a deeper understanding of [VDA registration](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html).
 >
->1.  Ensure in the on-premises Workspace Environment Management console that new VDAs (provisioned using Citrix Virtual Apps and Desktops service) are registered.
->
 >1.  Connect to your Citrix Gateway.
->
->1.  Launch your VDA that was deployed using the Citrix Virtual Apps and Desktops service.
->    ![Desktop deployed on Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migraton_cvad-service-desktop.png)
->
->1.  Open Google Chrome and ensure the connection server is the one you created using the Citrix Virtual Apps and Desktop service.
->    ![Verify Google Chrome launch](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_verify-chrome-launch.png)
 
 ### Migrate to Citrix Workspace and Citrix Gateway service
 
@@ -685,7 +592,7 @@ In this section, we migrate to the Citrix Gateway service and Citrix Workspace, 
 
     ![Configure Workspace connectivity](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-connectivity.png)
 
-1.  To the right of the Azure Resource Location, click the 3 dots **...** and select **Configure Connectivity**.
+1.  To the right of the resource location, click the 3 dots **...** and select **Configure Connectivity**.
 
     ![Save Workspace connectivity settings](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_save-workspace-connectivity-settings.png)
 
@@ -723,7 +630,7 @@ Step 3: Create a resource group
 
 Step 4: Create a virtual network
 
-Step 5: Deploy a server in Azure, that in our case, acts as the domain controller
+Step 5: Deploy a server in Azure, that in our case, acts as the domain controller. You can deploy any server type that's easy for you, or skip this step altogether.
 
 When our Azure subscription is set up and ready for the next step, our environment looks like the one in the following diagram. The resources and workloads are all on-premises and we have a resource group, a virtual network, and a server in Azure.
 
@@ -756,9 +663,11 @@ Resource groups are tied to machine catalogs at creation time and cannot be adde
 
 The virtual network is required to enable secure communication among the resources in your environment. For more information about creating virtual networks in Azure, see [Quickstart: Create a virtual network using the Azure portal](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal). For help with configuring a virtual network, see [What is Azure Virtual Network](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview).
 
-### Step 5: Deploy a server in Azure
+### Step 5: Deploy a server in Azure (optional)
 
 With our resource group and virtual network established, we’re ready to deploy a server in Azure. We use this server as the domain controller. It helps us validate AD replication after we establish site-to-site connectivity. If you want more detailed information about how to set up virtual machines, see [Quickstart: Create a Windows virtual machine in the Azure portal](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal). Microsoft also provides helpful guidance for choosing the right size VM for your workload in [Sizes for virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes).
+
+Step 5 is optional. We deployed a server in Azure to better represent a typical deployment.
 
 Now that we have our resource groups and virtual network created, and we have a server deployed, our next step is to configure connectivity between our on-premises and Azure environments.
 
@@ -767,7 +676,7 @@ Now that we have our resource groups and virtual network created, and we have a 
 To connect your on-premises environment to Azure, you have multiple options:
 
 *  Site-to-site VPN
-    Detailed information is available in [Create a Site-to-Site connection using the Azure portal (classic)](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-classic-portal).
+    Detailed information is available in [Create a Site-to-Site connection in the Azure portal](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal).
 
 *  Citrix SD-WAN
     Step-by-step guidance for Citrix SD-WAN is available in the [Proof of Concept Guide: Citrix SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html).
@@ -789,17 +698,17 @@ The following diagram shows how our Azure environment is set up to communicate w
 >
 >Option 1: Test using the ping command between resources in each location.
 >
->Option 2: Join the deployed server in Azure to our on-premises AD Domain.
+>Option 2: Join the deployed server in Azure to our on-premises AD Domain. If you omitted step 5, you can skip this option.
 
-Now that we have site-to-site connectivity configured and validated, our next step is to configure Citrix Cloud.
+Now that we have site-to-site connectivity configured and validated, our next step is to migrate our on-premises workloads to Azure.
 
-## Migrate on-premises to Azure
+## Migrate on-premises workloads to Azure
 
 In a typical Citrix customer deployment, there are multiple components that can be migrated. Component types and migration plans may vary by customers.  
 
 To get a better sense of how to approach your migration, refer to the [Microsoft Cloud Adoption Framework for Azure](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/).
 
- In this section we cover the migration of components that are closely related to Citrix, such as the file server for profiles and folder redirection, and the master images for provisioning.
+ In this section we cover the migration of components that are closely related to Citrix, such as the file server for profiles and folder redirection, and the master images for provisioning. For the purposes of this document, we limited the migration to the components in our lab environment. For your production environment, however, you have the option to move more of your infrastructure to Azure.
 
 ### File server technologies
 
@@ -865,81 +774,7 @@ Step 3: Migration
 
 ### Prerequisite for PVS-specific image preparation
 
-For each PVS image, it's necessary to remove the VM from Provisioning and to temporarily configure it so it is hosted on VMware vSphere only.
-
-Follow these steps:
-
-1.  Attach a new disk to one of your VMs.
-
-    ![Attach new disk](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_pvs-reverse-attach-new-disk.png)
-
-1.  In the Citrix Provisioning console, change the **Type** for this VM from **Production** to Maintenance.
-
-    ![Change disk type](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_pvs-change-disk-type.png)
-
-1.  Start your VM in maintenance mode.
-
-    ![Start in maintenance mode](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_maintenance-mode-start.png)
-
-1.  Open a session on your VM.
-
-    ![Maintenance mode session](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_pvs-vm-maintenance-mode-session.png)
-
-1.  Open the **Computer Management** console and click **Disk Management**.
-
-    ![PVS disk management](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_pvs-disk-management.png)
-
-1.  When the new disk is detected, click **OK**.
-
-    ![New disk detected](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_new-disk-detected.png)
-
-1.  Select the disk, right-click, and select **New Simple Volume**.
-
-    ![New simple volume](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_new-simple-volume.png)
-
-1.  Keep the default options and click **Finish**.
-
-    ![Finish simple volume](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_finish-simple-volume.png)
-
-1.  Open Windows Explorer, go to `C:\Program Files\Citrix\Provisioning Services` and launch **P2PVS**.
-
-    ![Launch P2PVS](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_launch-p2pvs.png)
-
-1.  Select **From: Citrix Provisioning Disk**, **To: This Machine** and click **Next**.
-
-    ![Workload source and destination](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workload-source-destination.png)
-
-1.  You can resize the disk if you want. Click **Next**.
-
-    ![Resize disk](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_resize-disk.png)
-
-1.  When the process is finished, click **Finish**.
-
-    ![Finish](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_finish.png)
-
-1.  Shut down the VM.
-
-1.  In the Citrix Provisioning Console, change the **Boot from:** for this VM from **vDisk** to **Hard Disk**.
-
-    ![Boot from](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_boot-from.png)
-
-1.  Restart the VM and open a session.
-
-1.  Open **Control Panel** and click **Uninstall program**.
-
-    ![Control panel uninstall](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_control-panel-uninstall.png)
-
-1.  Uninstall **Citrix Provisioning Target Device** software.
-
-    ![Uninstall provisioning target](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_uninstall-provisioning-target.png)
-
-1.  Restart the VM and ensure in Citrix Studio that your VM can register.
-
-    ![Confirm VM registration](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_confirm-vm-registration.png)
-
-1.  Clear the Event Logs and shut down your VM.
-
-Now that our VM is completely hosted by vSphere with the hard drive attached, we can migrate it to Azure.
+For each PVS image, it's necessary to remove the VM from Provisioning and to temporarily configure it so it is hosted on VMware vSphere only. You do this using reverse imaging. There are multiple methods for reverse imaging. One is described in detail in [CTX202159: How to Perform Reverse Imaging on a Provisioning Services Target Device for Windows and its Applicable Usages](https://support.citrix.com/article/CTX202159).
 
 ### Step 1: Discovery
 
@@ -963,7 +798,7 @@ For the assessment (which Microsoft recommends), you have multiple options. The 
 
 *  [Azure Migrate: Server Assessment](https://docs.microsoft.com/en-us/azure/migrate/tutorial-assess-vmware#set-up-an-assessment)
 
-*  [Movere (Coming Soon)](https://docs.microsoft.com/en-us/azure/migrate/migrate-services-overview)
+*  [Movere](https://docs.microsoft.com/en-us/azure/migrate/migrate-services-overview#movere)
 
 We use Azure Migrate: Server Assessment in this project.
 
@@ -1088,7 +923,7 @@ Consider deploying [Azure Cost Management](https://docs.microsoft.com/en-us/az
 >1.  Open the Citrix Virtual Apps and Desktops service desktop.
 >    ![Citrix Virtual Apps and Desktops service desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cvads-desktop.png)
 >
->1.  Close the session and ensure that the user’s profile has been created on the Azure file server.
+>1.  Close the session and ensure that the user’s profile has been created on the file server in Azure.
 >    ![User profile on Azure server](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-profile.png)
 
 ## Move Citrix workload to Azure
@@ -1124,6 +959,8 @@ The following diagram shows the Azure and Citrix Cloud components that have been
 
 ![Azure delivery group](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-delivery-group.png)
 
+### Step 3: Configure end user access layer
+
 >**Note:**
 >
 >If you are not using Citrix Workspace and Citrix Gateway service, follow these steps.
@@ -1149,10 +986,6 @@ The following diagram shows the Azure and Citrix Cloud components that have been
     ![Gateway virtual servers](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_gateway-virtual-servers.png)
 
 1.  Ensure that all STAs are **UP**.
-
-    ![STA status](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_assign-policy.png)
-
-1.  Apply the Citrix policy to the new delivery groups.
 
 >**Checkpoint: Citrix workload**
 >
