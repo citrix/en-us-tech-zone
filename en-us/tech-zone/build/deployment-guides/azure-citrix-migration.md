@@ -630,7 +630,7 @@ Step 3: Create a resource group
 
 Step 4: Create a virtual network
 
-Step 5: Deploy a server in Azure, that in our case, acts as the domain controller
+Step 5: Deploy a server in Azure, that in our case, acts as the domain controller. You can deploy any server type that's easy for you, or skip this step altogether.
 
 When our Azure subscription is set up and ready for the next step, our environment looks like the one in the following diagram. The resources and workloads are all on-premises and we have a resource group, a virtual network, and a server in Azure.
 
@@ -663,9 +663,11 @@ Resource groups are tied to machine catalogs at creation time and cannot be adde
 
 The virtual network is required to enable secure communication among the resources in your environment. For more information about creating virtual networks in Azure, see [Quickstart: Create a virtual network using the Azure portal](https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal). For help with configuring a virtual network, see [What is Azure Virtual Network](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview).
 
-### Step 5: Deploy a server in Azure
+### Step 5: Deploy a server in Azure (optional)
 
 With our resource group and virtual network established, we’re ready to deploy a server in Azure. We use this server as the domain controller. It helps us validate AD replication after we establish site-to-site connectivity. If you want more detailed information about how to set up virtual machines, see [Quickstart: Create a Windows virtual machine in the Azure portal](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal). Microsoft also provides helpful guidance for choosing the right size VM for your workload in [Sizes for virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes).
+
+Step 5 is optional. We deployed a server in Azure to better represent a typical deployment.
 
 Now that we have our resource groups and virtual network created, and we have a server deployed, our next step is to configure connectivity between our on-premises and Azure environments.
 
@@ -696,7 +698,7 @@ The following diagram shows how our Azure environment is set up to communicate w
 >
 >Option 1: Test using the ping command between resources in each location.
 >
->Option 2: Join the deployed server in Azure to our on-premises AD Domain.
+>Option 2: Join the deployed server in Azure to our on-premises AD Domain. If you omitted step 5, you can skip this option.
 
 Now that we have site-to-site connectivity configured and validated, our next step is to configure Citrix Cloud.
 
