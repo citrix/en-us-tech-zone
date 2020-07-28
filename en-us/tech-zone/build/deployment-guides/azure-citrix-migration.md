@@ -301,7 +301,7 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 
 1.  Ensure that the result is **True**.
 
-Based on your on-premises configuration, reconfigure your VDAs to point to your Cloud Connectors.
+Based on your on-premises configuration, you need to reconfigure your VDAs, using the procedure in the following section, [Reconfigure the VDAs for registration with Cloud Connector](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#reconfigure-the-vdas-for-registration-with-cloud-connector).
 
 More details about each VDA reconfiguration option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
 
@@ -419,57 +419,7 @@ The resulting output looks like the following image:
 
 ![Settings import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-result.png)
 
-Based on your on-premises configuration, you need to reconfigure your VDAs, using the procedure in the following section, [Reconfigure the VDAs for registration with Cloud ConnectorReconfigure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#reconfigure-the-vdas-for-registration-with-cloud-connector).
-
-##### Reconfigure the VDAs for registration with Cloud Connector
-
-You must prepare the VDAs for migration by changing the image properties and shutting the image down. Not preparing the VDAs as outlined here prevents them from registering correctly after migration.
-
-1.  Enable maintenance mode on each PVS delivery group.
-
-1.  Shut down the VDAs.
-
-1.  Ensure that the images are not locked. If the images are locked, you cannot change the image access mode.
-
-1.  In PVS, change the image access mode from standard to private.
-
-    ![Virtual disk properties](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_vdisk-properties.png)
-
-1.  Start the VDA and log on.
-
-1.  Go to **Control Panel**. Select **Citrix Virtual Apps and Desktops > Change**.
-
-    ![Change Citrix Virtual Apps and Desktops](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_control-panel.png)
-
-1.  Click **Customize Virtual Delivery Agent settings**
-
-    ![Customize VDA settings](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customize-vda-settings.png)
-
-1.  Click **Edit**.
-
-    ![Edit VDA delivery controller](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_edit-vda-delivery-controller.png)
-
-1.  Replace the name of your delivery controller with the name of your Cloud Connector server. Test the connection and click **Save**. If you plan to migrate to Azure later, you can add a second cloud connector then.
-
-    ![Save and test delivery controller location](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_save-test-vda-settings.png)
-
-1.  Click **Next > Next > Reconfigure**.
-
-    ![Delivery controller settings](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_delivery-controller-settings.png)
-
-1.  Click **Finish**.
-
-    ![Finish reconfiguration](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_finish-reconfiguration.png)
-
-1.  Shut down the VM.
-
-1.  Change the disk image access mode back to **Standard** and exit **Maintenance Mode** in **Machine Catalogs**.
-
-1.  Your VMs start and register.
-
-1.  Ensure your VMs are registered in the Citrix Cloud studio console.
-
-    ![Registered VMs in Cloud studio console](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_registered-vms-cloud-studio.png)
+Based on your on-premises configuration, you need to reconfigure your VDAs, using the procedure in the following section, [Reconfigure the VDAs for registration with Cloud Connector](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#reconfigure-the-vdas-for-registration-with-cloud-connector).
 
 More details about VDA registration options are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
 
@@ -480,6 +430,8 @@ More details about VDA registration options are available from Citrix product do
 >
 >1.  Go to **Delivery Groups** and ensure that your delivery groups have been created.
 >    ![Delivery groups](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_delivery-groups.png)
+>1.  Ensure your VMs are registered in the Citrix Cloud studio console.
+>    ![Registered VMs in Cloud studio console](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_registered-vms-cloud-studio.png)
 >
 >1.  Go to Applications and ensure that your applications have been created.
 >    ![Applications list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_applications-list.png)
