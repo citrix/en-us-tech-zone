@@ -459,33 +459,11 @@ The following diagram shows the environment with our on-prem and Azure resources
 >
 >When you return to the Workspace Environment Management Service **Downloads** tab, the progress message appears under **Upload**, which updates as the upload progresses. After your SQL file is uploaded successfully, the migration process starts automatically.
 
-### Step 2: Load data
+>**Notes from the field:**
+>
+>To verify that our VDAs switch from on-prem to Cloud, an easy trick is to create a setting that is only configured in the Workspace Environment Management service.
 
-1.  Load the migrated data into the Workspace Environment Management service administration console.
-
-1.  Refresh your browser window to reconnect to the Workspace Environment Management service and to view the data migrated from your on-premises Workspace Environment Management database.
-
-#### Workspace Environment Management service settings
-
-To verify that our VDAs switch from on-prem to Cloud, an easy trick is to create a setting that is only configured in the Workspace Environment Management service. The following image shows what we did as an example:
-
-![Workspace Environment Management single app](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-single-app.png)
-
-1.  In the Workspace Environment Management service administration console, go to **Actions > Applications > Add**.
-
-    ![Add Notepad](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_notepad-new.png)
-
-1.  We created Notepad as a new application.
-
-    ![Notepad icon on desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-notepad-create-icon-desktop.png)
-
-1.  In **Assignment**, add the newly created application and modify the setting to create an icon on the Desktop.
-
-    ![Refresh agent cache and settings](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-refresh-cache-and-settings.png)
-
-1.  Refresh the agent cache and settings.
-
-### Step 3: Switch to service agent mode
+### Step 2: Switch to service agent mode
 
 Use the agent switch feature to switch from on-premises to service agent mode. For information about the agent switch, see Agent Switch.
 
@@ -511,7 +489,7 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 >
 >1.  Open the Win 10 + Citrix Virtual Apps and Desktops Service Desktop.
 >
->1.  Ensure that the new application (in our example, Notepad) is populated on the user’s desktop.
+>1.  Ensure that the new application configured with the Workspace Environment Management service (in our example, Notepad) is populated on the user’s desktop.
 >    ![Desktop with Workspace Environment Management app icon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-desktop-notepad-icon.png)
 
 ## Configure the end user access layer
