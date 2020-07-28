@@ -15,7 +15,7 @@ We migrated these key products and components:
 *  [Citrix Virtual Apps and Desktops on-premises to Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-citrix-virtual-apps-and-desktops-service)
 *  [Workspace Environment Management on-premises to Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service)
 *  [On-premises StoreFront and Citrix Gateway to Citrix Workspace and Citrix Gateway service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-citrix-workspace-and-citrix-gateway-service)
-*  [On-premises vSphere workloads to workloads in Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-on-premises-to-azure)
+*  [On-premises vSphere workloads to workloads in Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-on-premises-workloads-to-azure)
 *  [On-premises file servers to Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#prepare-the-azure-subscription)
 *  [Create Citrix workload in Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#move-citrix-workload-to-azure)
 
@@ -92,7 +92,7 @@ We recommend that you create the AD structure, GPOs, and link the GPOs that will
 
 ## Set up a basic Citrix Cloud environment
 
-If you’re already using Citrix Virtual Apps and Desktops service, you can skip to the section [Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#workspace-environment-management-service).
+If you’re already using Citrix Virtual Apps and Desktops service, you can skip to the section [Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service).
 
 We set up the Citrix Cloud environment in three steps:
 
@@ -301,8 +301,6 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 
 1.  Ensure that the result is **True**.
 
-Based on your on-premises configuration, you need to reconfigure your VDAs, using the procedure in the following section, [Reconfigure the VDAs for registration with Cloud Connector](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#reconfigure-the-vdas-for-registration-with-cloud-connector).
-
 More details about each VDA reconfiguration option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
 
 >**Checkpoint: Citrix Virtual Apps and Desktops service migration using MCS**
@@ -418,8 +416,6 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 The resulting output looks like the following image:
 
 ![Settings import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-result.png)
-
-Based on your on-premises configuration, you need to reconfigure your VDAs, using the procedure in the following section, [Reconfigure the VDAs for registration with Cloud Connector](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#reconfigure-the-vdas-for-registration-with-cloud-connector).
 
 More details about VDA registration options are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
 
