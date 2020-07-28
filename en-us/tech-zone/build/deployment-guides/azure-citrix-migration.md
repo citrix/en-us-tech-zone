@@ -757,7 +757,7 @@ Now that we have our resource groups and virtual network created, and we have a 
 To connect your on-premises environment to Azure, you have multiple options:
 
 *  Site-to-site VPN
-    Detailed information is available in [Create a Site-to-Site connection using the Azure portal (classic)](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-classic-portal).
+    Detailed information is available in [Create a Site-to-Site connection in the Azure portal](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal).
 
 *  Citrix SD-WAN
     Step-by-step guidance for Citrix SD-WAN is available in the [Proof of Concept Guide: Citrix SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html).
