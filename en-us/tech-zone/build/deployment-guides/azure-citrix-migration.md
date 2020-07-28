@@ -583,7 +583,7 @@ You have two options for configuring the end user access layer:
 
 ### StoreFront with Citrix Gateway
 
-In this section, we configure the on-premises StoreFront and Citrix Gateway to integrate with Citrix Virtual Apps and Desktops service. To support multiple StoreFront sites, we use multisite aggregation. To learn more about multisite aggregation, [Designing StoreFront Multi-Site Aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) is a useful resources.
+In this section, we configure the on-premises StoreFront and Citrix Gateway to integrate with Citrix Virtual Apps and Desktops service. To support multiple StoreFront sites, we use multisite aggregation. To learn more about multisite aggregation, [Designing StoreFront Multi-Site Aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) is a useful resource.
 
 #### StoreFront
 
@@ -622,8 +622,7 @@ Now the STA servers are up and StoreFront is configured.
 >1.  Connect to your Citrix Gateway.
 >
 >1.  Launch your VDA that was deployed using the Citrix Virtual Apps and Desktops service.
->
->![Desktop deployed on Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migraton_cvad-service-desktop.png)
+>    ![Desktop deployed on Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migraton_cvad-service-desktop.png)
 >
 >1.  Open Google Chrome and ensure the connection server is the one you created using the Citrix Virtual Apps and Desktop service.
 >    ![Verify Google Chrome launch](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_verify-chrome-launch.png)
@@ -869,8 +868,6 @@ Step 3: Migration
 For each PVS image, it's necessary to remove the VM from Provisioning and to temporarily configure it so it is hosted on VMware vSphere only.
 
 Follow these steps:
-
-Step 1: Reverse images
 
 1.  Attach a new disk to one of your VMs.
 
@@ -1127,7 +1124,9 @@ The following diagram shows the Azure and Citrix Cloud components that have been
 
 ![Azure delivery group](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-delivery-group.png)
 
-Note: if you are not using Workspace and Citrix Gateway service, follow these steps.
+>**Note:**
+>
+>If you are not using Citrix Workspace and Citrix Gateway service, follow these steps.
 
 1.  Connect to the on-premises StoreFront server to add the Azure Cloud Connectors as delivery controllers on each store.
 
