@@ -305,13 +305,15 @@ More details about each VDA reconfiguration option are available from Citrix pro
 
 >**Checkpoint: Citrix Virtual Apps and Desktops service migration using MCS**
 >
->1.  Connect to Citrix Virtual Apps and Desktops service, go to Applications and ensure that applications have been created.
+>1.  Connect to Citrix Virtual Apps and Desktops service, go to **Applications** and ensure that applications have been created.
 >    ![Applications list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_applications-list.png)
 >
 >1.  Go to **Policies** and ensure that your policies have been created and assigned.
 >    ![Policies list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_policies-list.png)
 
-If you're using Workspace Environment Management, continue with [Migrate to Workspace Environment Management service](/en-us/tech-zone/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service). If you're not using Workspace Environment Management, the next step is to [configure the end user access layer](/en-us/tech-zone/deployment-guides/azure-citrix-migration.html#configure-the-end-user-access-layer).
+If you're using Workspace Environment Management, continue with [Migrate to Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service).
+
+If you're not using Workspace Environment Management, the next step is to [configure the end user access layer](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#configure-the-end-user-access-layer).
 
 ### PVS Migration
 
@@ -435,7 +437,7 @@ More details about VDA registration options are available from Citrix product do
 >1.  Go to Policies and ensure that your policies have been created and assigned.
 >    ![Policies list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_policies-list.png)
 
-If you're using Workspace Environment Management, continue with [Migrate to Workspace Environment Management service](/en-us/tech-zone/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service). If you're not using Workspace Environment Management, the next step is to [configure the end user access layer](/en-us/tech-zone/deployment-guides/azure-citrix-migration.html#configure-the-end-user-access-layer).
+If you're using Workspace Environment Management, continue with [Migrate to Workspace Environment Management service](/en-us/tech-zone//build/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service). If you're not using Workspace Environment Management, the next step is to [configure the end user access layer](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#configure-the-end-user-access-layer).
 
 ## Migrate to Workspace Environment Management service
 
@@ -766,7 +768,7 @@ Step 3: Migration
 
 >**Note:**
 >
->For PVS users, specific steps are required to prepare your environment before you migrate to Azure. Follow those steps in the next section. MCS users can go directly to [Discovery](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.md#Step1: Discovery).
+>For PVS users, specific steps are required to prepare your environment before you migrate to Azure. Follow those steps in the next section. MCS users can go directly to [Discovery](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.md#step-1-discovery).
 
 ### Prerequisite for PVS-specific image preparation
 
@@ -895,7 +897,7 @@ Follow Microsoft’s guidance to [Complete the migration](https://docs.microsoft
 *  For increased resilience:
 
     *  Keep data secure by backing up Azure VMs using the Azure Backup service. [Learn more in Back up a virtual machine in Azure](https://docs.microsoft.com/en-us/azure/backup/quick-backup-vm-portal).
-    *  Keep workloads running and continuously available by replicating Azure VMs to a secondary region with Site Recovery. [Learn more in Set up disaster recovery for Azure VMs](https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication).
+    *  Keep workloads running and continuously available by replicating Azure VMs to a secondary region with Site Recovery.  [Learn more in Set up disaster recovery for Azure VMs](https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication).
 
 *  For increased security:
 
@@ -955,7 +957,7 @@ The following diagram shows the Azure and Citrix Cloud components that have been
 
 ![Azure delivery group](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-delivery-group.png)
 
-### Step 3: Configure end user access layer
+### Step 3: Configure the end user access layer
 
 >**Note:**
 >
