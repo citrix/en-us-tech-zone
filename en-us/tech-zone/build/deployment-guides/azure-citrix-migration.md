@@ -622,8 +622,7 @@ Now the STA servers are up and StoreFront is configured.
 >1.  Connect to your Citrix Gateway.
 >
 >1.  Launch your VDA that was deployed using the Citrix Virtual Apps and Desktops service.
->
->![Desktop deployed on Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migraton_cvad-service-desktop.png)
+>    ![Desktop deployed on Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migraton_cvad-service-desktop.png)
 >
 >1.  Open Google Chrome and ensure the connection server is the one you created using the Citrix Virtual Apps and Desktop service.
 >    ![Verify Google Chrome launch](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_verify-chrome-launch.png)
