@@ -455,10 +455,6 @@ The following diagram shows the environment with our on-prem and Azure resources
 
 ![Workspace Environment Management service](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-service.png)
 
->**Note:**
->
->When you return to the Workspace Environment Management Service **Downloads** tab, the progress message appears under **Upload**, which updates as the upload progresses. After your SQL file is uploaded successfully, the migration process starts automatically.
-
 >**Notes from the field:**
 >
 >To verify that our VDAs switch from on-prem to Cloud, an easy trick is to create a setting that is only configured in the Workspace Environment Management service.
@@ -486,6 +482,7 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 1.  Restart the VDA to apply the new settings.
 
 >**Checkpoint: Workspace Environment Management service migration**
+>As a verification step to confirm that our VDAs switched from on-prem to Cloud, we added an app, Notepad, that is uniquely available from the Workspace Environment Management service. We used the following steps to confirm the switch.
 >
 >1.  Open the Win 10 + Citrix Virtual Apps and Desktops Service Desktop.
 >
