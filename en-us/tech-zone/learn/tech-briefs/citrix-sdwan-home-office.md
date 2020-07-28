@@ -65,7 +65,7 @@ Concerns regarding the WAN for the Home Office use-case can be solved with the C
 
 ![Citrix SD-WAN Home Office Use Case](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeusecase.png)
 
-Generally, you find more benefits with the SD-WAN solution by introducing more WAN transports. These include DLS, Broadband Internet, or LTE links to augment any existing WAN transports. Diversifying the ISPs can significantly increase network reliability. In the preceding scenario, SD-WAN devices (physical, or virtual) can be placed directly in the path of the existing network. With more WAN transports it increases user experience, and productivity. The benefits include:
+Generally, you find more benefits with the SD-WAN solution by introducing more WAN transports. These include DSL, Broadband Internet, or LTE links to augment any existing WAN transports. Diversifying the ISPs can significantly increase network reliability. In the preceding scenario, SD-WAN devices (physical, or virtual) can be placed directly in the path of the existing network. With more WAN transports it increases user experience, and productivity. The benefits include:
 
 *  link bandwidth aggregation (a.k.a. link load balancing) for remote locations with multiple Internet/LTE links
 *  subsecond link blackout, and brownout detection, enabling an always-on network
