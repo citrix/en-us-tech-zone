@@ -493,7 +493,7 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 
 You have two options for configuring the end user access layer:
 
-*  Continue to use [StoreFront with Citrix Gateway](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#storefront-with-citrix-gateway)
+*  Continue to use [StoreFront with Citrix Gateway](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#storefront-with-citrix-gateway) if you require specific StoreFront features
 *  [Migrate to Citrix Workspace and Citrix Gateway service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-citrix-workspace-and-citrix-gateway-service)
 
 ### StoreFront with Citrix Gateway
