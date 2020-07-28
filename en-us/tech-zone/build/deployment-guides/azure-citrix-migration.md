@@ -128,9 +128,11 @@ Because we will have multiple resource locations (on-premises and Azure), it’s
 
 >**Checkpoint: Citrix Cloud Connector**
 >
->When your Cloud Connectors are deployed successfully, they are listed with a green bar on the left.
+>When your Cloud Connectors are deployed successfully and running, they are listed with a green bar on the left.
 >
 >![Cloud Connector status indicators](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cloud-connectors-green-bar.png)
+>
+>If the status is not what you expect, use the Citrix Cloud connectivity test for more information.
 
 ## Migrate to Citrix Virtual Apps and Desktops service
 
