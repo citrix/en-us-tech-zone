@@ -798,7 +798,7 @@ For the assessment (which Microsoft recommends), you have multiple options. The 
 
 *  [Azure Migrate: Server Assessment](https://docs.microsoft.com/en-us/azure/migrate/tutorial-assess-vmware#set-up-an-assessment)
 
-*  [Movere (Coming Soon)](https://docs.microsoft.com/en-us/azure/migrate/migrate-services-overview)
+*  [Movere](https://docs.microsoft.com/en-us/azure/migrate/migrate-services-overview#movere)
 
 We use Azure Migrate: Server Assessment in this project.
 
@@ -923,7 +923,7 @@ Consider deploying [Azure Cost Management](https://docs.microsoft.com/en-us/az
 >1.  Open the Citrix Virtual Apps and Desktops service desktop.
 >    ![Citrix Virtual Apps and Desktops service desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cvads-desktop.png)
 >
->1.  Close the session and ensure that the user’s profile has been created on the Azure file server.
+>1.  Close the session and ensure that the user’s profile has been created on the file server in Azure.
 >    ![User profile on Azure server](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-profile.png)
 
 ## Move Citrix workload to Azure
@@ -959,6 +959,8 @@ The following diagram shows the Azure and Citrix Cloud components that have been
 
 ![Azure delivery group](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-delivery-group.png)
 
+### Step 3: Configure end user access layer
+
 >**Note:**
 >
 >If you are not using Citrix Workspace and Citrix Gateway service, follow these steps.
@@ -984,10 +986,6 @@ The following diagram shows the Azure and Citrix Cloud components that have been
     ![Gateway virtual servers](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_gateway-virtual-servers.png)
 
 1.  Ensure that all STAs are **UP**.
-
-    ![STA status](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_assign-policy.png)
-
-1.  Apply the Citrix policy to the new delivery groups.
 
 >**Checkpoint: Citrix workload**
 >
