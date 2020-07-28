@@ -403,7 +403,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     ![CvadAcSecurity YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cvadacsecurity-yml.png)
 
-1.  Fill the file with your credentials and save it.
+1.  Fill the file with your credentials and save it. The correct format for the user name is `domain\username`.
 
 ##### Import settings
 
