@@ -592,7 +592,7 @@ In this section, we migrate to the Citrix Gateway service and Citrix Workspace, 
 
     ![Configure Workspace connectivity](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-connectivity.png)
 
-1.  To the right of the Azure Resource Location, click the 3 dots **...** and select **Configure Connectivity**.
+1.  To the right of the resource location, click the 3 dots **...** and select **Configure Connectivity**.
 
     ![Save Workspace connectivity settings](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_save-workspace-connectivity-settings.png)
 
