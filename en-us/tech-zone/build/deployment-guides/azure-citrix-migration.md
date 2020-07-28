@@ -498,7 +498,7 @@ You have two options for configuring the end user access layer:
 
 ### StoreFront with Citrix Gateway
 
-In this section, we configure the on-premises StoreFront and Citrix Gateway to integrate with Citrix Virtual Apps and Desktops service. To support multiple StoreFront sites, we use multisite aggregation. To learn more about multisite aggregation, [Designing StoreFront Multi-Site Aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) is a useful resource.
+In this section, we configure the on-premises StoreFront and Citrix Gateway to integrate with Citrix Virtual Apps and Desktops service. To support multiple StoreFront sites, we use multisite aggregation.
 
 #### StoreFront
 
@@ -510,7 +510,7 @@ In this section, we configure the on-premises StoreFront and Citrix Gateway to i
 
     ![Add delivery controller](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_add-delivery-controller.png)
 
-1.  Aggregate resources.
+1.  Aggregate resources. To learn more about multisite aggregation, [Designing StoreFront Multi-Site Aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) is a useful resource.
 
 1.  Map users to controllers.
 
