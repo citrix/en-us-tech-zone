@@ -700,15 +700,15 @@ The following diagram shows how our Azure environment is set up to communicate w
 >
 >Option 2: Join the deployed server in Azure to our on-premises AD Domain. If you omitted step 5, you can skip this option.
 
-Now that we have site-to-site connectivity configured and validated, our next step is to configure Citrix Cloud.
+Now that we have site-to-site connectivity configured and validated, our next step is to migrate our on-premises workloads to Azure.
 
-## Migrate on-premises to Azure
+## Migrate on-premises workloads to Azure
 
 In a typical Citrix customer deployment, there are multiple components that can be migrated. Component types and migration plans may vary by customers.  
 
 To get a better sense of how to approach your migration, refer to the [Microsoft Cloud Adoption Framework for Azure](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/).
 
- In this section we cover the migration of components that are closely related to Citrix, such as the file server for profiles and folder redirection, and the master images for provisioning.
+ In this section we cover the migration of components that are closely related to Citrix, such as the file server for profiles and folder redirection, and the master images for provisioning. For the purposes of this document, we limited the migration to the components in our lab environment. For your production environment, however, you have the option to move more of your infrastructure to Azure.
 
 ### File server technologies
 
@@ -774,81 +774,7 @@ Step 3: Migration
 
 ### Prerequisite for PVS-specific image preparation
 
-For each PVS image, it's necessary to remove the VM from Provisioning and to temporarily configure it so it is hosted on VMware vSphere only.
-
-Follow these steps:
-
-1.  Attach a new disk to one of your VMs.
-
-    ![Attach new disk](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_pvs-reverse-attach-new-disk.png)
-
-1.  In the Citrix Provisioning console, change the **Type** for this VM from **Production** to Maintenance.
-
-    ![Change disk type](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_pvs-change-disk-type.png)
-
-1.  Start your VM in maintenance mode.
-
-    ![Start in maintenance mode](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_maintenance-mode-start.png)
-
-1.  Open a session on your VM.
-
-    ![Maintenance mode session](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_pvs-vm-maintenance-mode-session.png)
-
-1.  Open the **Computer Management** console and click **Disk Management**.
-
-    ![PVS disk management](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_pvs-disk-management.png)
-
-1.  When the new disk is detected, click **OK**.
-
-    ![New disk detected](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_new-disk-detected.png)
-
-1.  Select the disk, right-click, and select **New Simple Volume**.
-
-    ![New simple volume](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_new-simple-volume.png)
-
-1.  Keep the default options and click **Finish**.
-
-    ![Finish simple volume](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_finish-simple-volume.png)
-
-1.  Open Windows Explorer, go to `C:\Program Files\Citrix\Provisioning Services` and launch **P2PVS**.
-
-    ![Launch P2PVS](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_launch-p2pvs.png)
-
-1.  Select **From: Citrix Provisioning Disk**, **To: This Machine** and click **Next**.
-
-    ![Workload source and destination](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workload-source-destination.png)
-
-1.  You can resize the disk if you want. Click **Next**.
-
-    ![Resize disk](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_resize-disk.png)
-
-1.  When the process is finished, click **Finish**.
-
-    ![Finish](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_finish.png)
-
-1.  Shut down the VM.
-
-1.  In the Citrix Provisioning Console, change the **Boot from:** for this VM from **vDisk** to **Hard Disk**.
-
-    ![Boot from](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_boot-from.png)
-
-1.  Restart the VM and open a session.
-
-1.  Open **Control Panel** and click **Uninstall program**.
-
-    ![Control panel uninstall](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_control-panel-uninstall.png)
-
-1.  Uninstall **Citrix Provisioning Target Device** software.
-
-    ![Uninstall provisioning target](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_uninstall-provisioning-target.png)
-
-1.  Restart the VM and ensure in Citrix Studio that your VM can register.
-
-    ![Confirm VM registration](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_confirm-vm-registration.png)
-
-1.  Clear the Event Logs and shut down your VM.
-
-Now that our VM is completely hosted by vSphere with the hard drive attached, we can migrate it to Azure.
+For each PVS image, it's necessary to remove the VM from Provisioning and to temporarily configure it so it is hosted on VMware vSphere only. You do this using reverse imaging. There are multiple methods for reverse imaging. One is described in detail in [CTX202159: How to Perform Reverse Imaging on a Provisioning Services Target Device for Windows and its Applicable Usages](https://support.citrix.com/article/CTX202159).
 
 ### Step 1: Discovery
 
