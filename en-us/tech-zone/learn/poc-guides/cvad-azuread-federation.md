@@ -42,13 +42,13 @@ To configure Active Directory (AD) and Azure Active Directory (AAD) perform the 
 1.  Log in to your AD domain controller.
 1.  Open **Server Manager > Tools > Active Directory Domains and Trusts**
 1.  Right-click, select **Properties** and enter the UPN Suffix for users corresponding to one of your AAD domains.
-![AAD-IdP + CVAD + FAS + ADC-SP architecture](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adalternativeupnsuffix.png)
+![Alt UPN Suffix](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adalternativeupnsuffix.png)
 
 #### AD Users
 
 1.  On your AD domain controller open **Server Manager > Tools > Active Directory Users and Computers**.
 1.  Right-click and select **New > User**, or edit an existing one
-1.  **Under Properties > Account set the UPN** to the new Suffix. ![AAD-IdP + CVAD + FAS + ADC-SP architecture](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-aduser.png)
+1.  **Under Properties > Account set the UPN** to the new Suffix. ![AD User](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-aduser.png)
 
 #### Microsoft Azure Active Directory Connect
 
