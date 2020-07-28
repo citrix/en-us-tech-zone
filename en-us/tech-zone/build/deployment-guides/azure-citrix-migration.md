@@ -869,8 +869,6 @@ For each PVS image, it's necessary to remove the VM from Provisioning and to tem
 
 Follow these steps:
 
-Step 1: Reverse images
-
 1.  Attach a new disk to one of your VMs.
 
     ![Attach new disk](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_pvs-reverse-attach-new-disk.png)
