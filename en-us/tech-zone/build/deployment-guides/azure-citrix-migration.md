@@ -116,7 +116,9 @@ You can install the Cloud Connector software [interactively](/en-us/citrix-cloud
 
 ### Step 3: Rename the resource location
 
-Because we will have multiple resource locations (on-premises and Azure), it’s useful to have a distinct name for each resource location.
+>**Notes from the field:**
+>
+>When you have multiple resource locations (on-premises and Azure), it’s best practice to have a distinct name for each resource location. That helps you identify it more easily.
 
 1.  Select your resource location, click **...** and select **Rename**.
 
@@ -142,7 +144,7 @@ If you’re using Citrix Virtual Apps and Desktops on-premises, you can use the 
 
 For the MCS provisioning method, the [MCS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#mcs-migration) section provides detailed migration steps.
 
-If you use PVS, go to [PVS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#pvs-migration).
+For the PVS provisioning method, go to [PVS migration](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#pvs-migration).
 
 The following diagram shows our cloud environment on Azure after we migrate to the Citrix Virtual Apps and Desktops service.
 
@@ -261,13 +263,13 @@ All the files that you edit are in the folder where you run the PowerShell comma
 
     ![Original zone mapping YAML file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-original.png)
 
-1.  Replace the highlighted text with your Cloud resource location as shown in the following example:
+1.  Replace the highlighted text with your Cloud resource location name as shown in the following example:
 
     ![Zone mapping YAML example](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_zone-mapping-yml-edited.png)
 
 >**Note:**
 >
->If the default resource location has not been changed, it should be Primary.
+>If the default resource location name has not been changed, it should be **Primary**.
 
 The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`, in keeping with standard YAML syntax. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
@@ -313,7 +315,7 @@ More details about each VDA reconfiguration option are available from Citrix pro
 
 If you're using Workspace Environment Management, continue with [Migrate to Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service).
 
-If you're not using Workspace Environment Management, the next step is to [configure the end user access layer](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#configure-the-end-user-access-layer).
+If you're not using Workspace Environment Management, the next step is to [Configure the end user access layer](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#configure-the-end-user-access-layer).
 
 ### PVS Migration
 
@@ -395,7 +397,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     >**Note:**
     >
-    >If the default resource location has not been changed, it should be Primary.
+    >If the default resource location name has not been changed, it should be Primary.
 
     The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`, in keeping with standard YAML syntax. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
@@ -526,11 +528,13 @@ Add the Citrix Cloud Connector as the STA in your Citrix Gateway configuration.
 
 Now the STA servers are up and StoreFront is configured.
 
->**Checkpoint: Citrix Virtual Apps and Desktops service migration**
+>**Checkpoint: Citrix Virtual Apps and Desktops service migration with on-premises access layer**
 >
 >1.  Ensure in Citrix Cloud that the VDAs are registered. The Citrix product documentation provides a deeper understanding of [VDA registration](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html).
 >
 >1.  Connect to your Citrix Gateway.
+>
+>1.  Launch a published resource.
 
 ### Migrate to Citrix Workspace and Citrix Gateway service
 
