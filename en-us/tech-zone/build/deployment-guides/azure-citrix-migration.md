@@ -12,11 +12,12 @@ The guidance documented here is based on a deployment in a Citrix- and Microsoft
 
 We migrated these key products and components:
 
-*  Citrix Virtual Apps and Desktops on-premises to Citrix Cloud and Citrix Virtual Apps and Desktops service
+*  Citrix Virtual Apps and Desktops on-premises to Citrix Virtual Apps and Desktops service
 *  Workspace Environment Management on-premises to Workspace Environment Management service
 *  On-premises StoreFront and Citrix Gateway to Citrix Workspace and Citrix Gateway service
 *  On-premises vSphere workloads to workloads in Azure
 *  On-premises file servers to Azure
+*  Create Citrix workload in Azure
 
 The following diagram shows the migration process.
 
@@ -30,7 +31,6 @@ In our experience and testing, the best migration path follows these steps:
 1.  Migrate on-premises Citrix Virtual Apps and Desktops to Citrix Virtual Apps and Desktops service using the automated configuration tool developed by Citrix.
 1.  Migrate on-premises Workspace Environment Management to Workspace Environment Management service.
 1.  Configure the end-user access layer.
-1.  Migrate from StoreFront and Citrix Gateway to Citrix Workspace and Citrix Gateway Service.
 1.  Prepare the Azure subscription to receive the workloads from your on-prem deployment.
 1.  Configure site-to-site connectivity.
 1.  Use Azure tools to migrate your on-premises servers to Azure.
