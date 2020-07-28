@@ -25,7 +25,7 @@ The guide demonstrates how to implement a Proof of Concept environment for Micro
 It makes assumptions about the installation, or configuration of certain components:
 
 *  An Active Directory Server is installed on-premises and you can log in as Domain Admin.
-*  An Azure tenant is available with a P2 license and you can log in as a Global Admin.
+*  An Azure tenant is available with a P2 license and you can log in as Global Admin.
 *  A Citrix ADC appliance has been installed and licensed. Also it has a Citrix Gateway virtual server configured to provide access to an on-premises Citrix Virtual Apps and Desktops environment. Use Version 13 build 60, or higher.
 *  A Delivery Controller, StoreFront, and VDA are installed, and configured to delivery virtual apps, or desktops for domain users. Use version 2006, or higher.
 *  A virtual machine is available, or another server has enough capacity to install FAS. The DDC, FAS, and StoreFront are all installed on the same server in this POC.
