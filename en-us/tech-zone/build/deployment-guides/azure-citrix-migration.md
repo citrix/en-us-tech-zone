@@ -395,7 +395,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     >**Note:**
     >
-    >If the default Azure resource location has not been changed, it should be **Primary**.
+    >If the default resource location has not been changed, it should be Primary.
 
     The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`, in keeping with standard YAML syntax. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
