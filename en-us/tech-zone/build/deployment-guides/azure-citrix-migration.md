@@ -225,7 +225,7 @@ All files that you edit are in the folder where you run the PowerShell command. 
 
 1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID`, and `Secret`.
 
-    ![Example customerinfo.yml file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
+    ![Example customerinfo.yml file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-empty copy.png)
 
 1.  Connect to Citrix Cloud and go to **Identity and Access Management**.
 
