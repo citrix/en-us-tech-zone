@@ -583,7 +583,7 @@ You have two options for configuring the end user access layer:
 
 ### StoreFront with Citrix Gateway
 
-In this section, we configure the on-premises StoreFront and Citrix Gateway to integrate with Citrix Virtual Apps and Desktops service. To support multiple StoreFront sites, we use multisite aggregation. To learn more about multisite aggregation, [Designing StoreFront Multi-Site Aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) is a useful resources.
+In this section, we configure the on-premises StoreFront and Citrix Gateway to integrate with Citrix Virtual Apps and Desktops service. To support multiple StoreFront sites, we use multisite aggregation. To learn more about multisite aggregation, [Designing StoreFront Multi-Site Aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) is a useful resource.
 
 #### StoreFront
 
@@ -1127,7 +1127,9 @@ The following diagram shows the Azure and Citrix Cloud components that have been
 
 ![Azure delivery group](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-delivery-group.png)
 
-Note: if you are not using Workspace and Citrix Gateway service, follow these steps.
+>**Note:**
+>
+>If you are not using Citrix Workspace and Citrix Gateway service, follow these steps.
 
 1.  Connect to the on-premises StoreFront server to add the Azure Cloud Connectors as delivery controllers on each store.
 
