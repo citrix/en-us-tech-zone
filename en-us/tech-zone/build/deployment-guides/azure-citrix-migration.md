@@ -219,7 +219,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 ##### Import settings to Citrix Cloud
 
-All files that you edit are in the folder where you run the PowerShell command. The **Auto Config** tool creates the files when you run the export command.
+All the files that you edit are in the folder where you run the PowerShell command. The **Auto Config** tool creates the files when you run the export command.
 
 ##### Prerequisites
 
@@ -303,7 +303,7 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 
 Based on your on-premises configuration, reconfigure your VDAs to point to your Cloud Connectors.
 
-More details about each option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
+More details about each VDA reconfiguration option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
 
 >**Checkpoint: Citrix Virtual Apps and Desktops service migration using MCS**
 >
@@ -421,11 +421,11 @@ The resulting output looks like the following image:
 
 ![Settings import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-result.png)
 
-Based on your on-premises configuration, you should consider VDA reconfiguration, using the procedure in the following section, "Reconfigure".
+Based on your on-premises configuration, you need to reconfigure your VDAs, using the procedure in the following section, [Reconfigure the VDAs for registration with Cloud ConnectorReconfigure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#reconfigure-the-vdas-for-registration-with-cloud-connector).
 
 ##### Reconfigure the VDAs for registration with Cloud Connector
 
-You need to prepare the VDAs for migration by changing the image properties and shutting the image down. Not preparing the VDAs as outlined here prevents them from registering correctly after migration.
+You must prepare the VDAs for migration by changing the image properties and shutting the image down. Not preparing the VDAs as outlined here prevents them from registering correctly after migration.
 
 1.  Enable maintenance mode on each PVS delivery group.
 
@@ -473,7 +473,7 @@ You need to prepare the VDAs for migration by changing the image properties and 
 
     ![Registered VMs in Cloud studio console](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_registered-vms-cloud-studio.png)
 
-More details about each option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
+More details about VDA registration options are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
 
 >**Checkpoint: Citrix Virtual Apps and Desktop service using PVS**
 >
