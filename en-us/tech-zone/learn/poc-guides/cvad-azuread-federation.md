@@ -60,7 +60,7 @@ Azure AD Connect is a tool for connecting on-premises identity infrastructure to
 4.  You are prompted to log in as a Global AAD admin and as a Domain Services admin.
 5.  For installation on a single AD virtual machine you can follow express settings. After it verifies UPN Suffixes it makes a full sync of all users, groups, and contacts.
 
-See [using Azure AD Connect express settings](/en-us/azure/active-directory/hybrid/how-to-connect-install-express) for more information.
+See [using Azure AD Connect express settings](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-install-express) for more information.
 
 #### Certificate Authority
 
