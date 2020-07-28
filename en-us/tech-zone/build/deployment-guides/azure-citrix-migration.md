@@ -13,11 +13,11 @@ The guidance documented here is based on a deployment in a Citrix- and Microsoft
 We migrated these key products and components:
 
 *  [Citrix Virtual Apps and Desktops on-premises to Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-citrix-virtual-apps-and-desktops-service)
-*  Workspace Environment Management on-premises to Workspace Environment Management service
-*  On-premises StoreFront and Citrix Gateway to Citrix Workspace and Citrix Gateway service
-*  On-premises vSphere workloads to workloads in Azure
-*  On-premises file servers to Azure
-*  Create Citrix workload in Azure
+*  [Workspace Environment Management on-premises to Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service)
+*  [On-premises StoreFront and Citrix Gateway to Citrix Workspace and Citrix Gateway service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-citrix-workspace-and-citrix-gateway-service)
+*  [On-premises vSphere workloads to workloads in Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-on-premises-to-azure)
+*  [On-premises file servers to Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#prepare-the-azure-subscription)
+*  [Create Citrix workload in Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#move-citrix-workload-to-azure)
 
 The following diagram shows the migration process.
 
