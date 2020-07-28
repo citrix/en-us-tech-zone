@@ -313,7 +313,7 @@ More details about each VDA reconfiguration option are available from Citrix pro
 >1.  Go to **Policies** and ensure that your policies have been created and assigned.
 >    ![Policies list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_policies-list.png)
 
-Next we [configure the end user access layer](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#configure-end-user-access-layer) with Citrix Workspace and Citrix Gateway service.
+If you're using Workspace Environment Management, continue with [Migrate to Workspace Environment Management service](/en-us/tech-zone/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service). If you're not using Workspace Environment Management, the next step is to [configure the end user access layer](/en-us/tech-zone/deployment-guides/azure-citrix-migration.html#configure-the-end-user-access-layer).
 
 ### PVS Migration
 
@@ -342,8 +342,6 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
     ![Export](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-export-all.png)
 
 1.  Ensure that the result is reported as **True**.
-
-    ![Export result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-export-true.png)
 
 #### Import settings to Citrix Cloud
 
@@ -379,7 +377,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Paste the information in a document (it is not possible to see the information again, so keep the document safe).
 
-    ![Customer info YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
+    ![Customer info YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-empty copy.png)
 
 1.  Add the following line at the end of the file: `HostConnections: True` to allow the hosting configuration.
 
@@ -489,7 +487,7 @@ More details about VDA registration options are available from Citrix product do
 >1.  Go to Policies and ensure that your policies have been created and assigned.
 >    ![Policies list](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_policies-list.png)
 
-Next we configure the end user access layer with Citrix Workspace and Citrix Gateway service.
+If you're using Workspace Environment Management, continue with [Migrate to Workspace Environment Management service](/en-us/tech-zone/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service). If you're not using Workspace Environment Management, the next step is to [configure the end user access layer](/en-us/tech-zone/deployment-guides/azure-citrix-migration.html#configure-the-end-user-access-layer).
 
 ## Migrate to Workspace Environment Management service
 
@@ -564,7 +562,7 @@ Alternatively, you can download the agent from the service’s **Downloads**�
 >1.  Ensure that the new application (in our example, Notepad) is populated on the user’s desktop.
 >    ![Desktop with Workspace Environment Management app icon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_wem-desktop-notepad-icon.png)
 
-## Configure end user access layer
+## Configure the end user access layer
 
 You have two options for configuring the end user access layer:
 
