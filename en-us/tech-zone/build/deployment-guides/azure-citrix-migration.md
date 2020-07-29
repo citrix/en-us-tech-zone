@@ -303,7 +303,7 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 
 1.  Ensure that the result is **True**.
 
-More details about each VDA reconfiguration option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
+More details about each VDA reconfiguration option are available from Citrix product documentation in [VDA registration](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
 
 >**Checkpoint: Citrix Virtual Apps and Desktops service migration using MCS**
 >
@@ -421,7 +421,7 @@ The resulting output looks like the following image:
 
 ![Settings import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-result.png)
 
-More details about VDA registration options are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
+More details about VDA registration options are available from Citrix product documentation in [VDA registration](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
 
 >**Checkpoint: Citrix Virtual Apps and Desktop service using PVS**
 >
