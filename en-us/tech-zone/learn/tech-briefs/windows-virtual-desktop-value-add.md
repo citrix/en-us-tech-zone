@@ -66,7 +66,7 @@ To get several virtual machines running in the cloud, a Golden Image must be cre
 
 The admin faces difficulties when there are a few or several groups of users that need different applications. This requirement results in the proliferation of the number of images that need to be managed with redundant apps within them. Updating the OS and the apps in each of these images would get cumbersome. App Layering can be used to make the process of updating this image and its contents much easier by splitting the image up into individual layers that can be stacked as needed.
 
-[![App Layering - Layered Image](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_3-layered-image.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_3-layered-image.png)
+![App Layering - Layered Image](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_3-layered-image.png)
 
 App Layering also enables admins to make desktops available to different user groups (who require different apps) from the same set of layers. Consider the golden images of two pools in the following diagram.
 
@@ -296,9 +296,9 @@ Enabling Browser content redirection, not only offloads the media rendering from
 
 The following were screenshots taken during our tests
 
-[![BCR comparison screenshot](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-BCR-comparison-screenshot-large.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-BCR-comparison-screenshot-large.png)
+[![BCR comparison screenshot](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-BCR-comparison-screenshot-large.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-BCR-comparison-screenshot.png)
 
-To learn more about Browser Content Redirection, visit this [link](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html)
+To learn more about Browser Content Redirection, visit this [link](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html)
 
 #### Teams Optimization
 
@@ -484,7 +484,7 @@ The following is a list of some of the great features that Citrix brings to bear
     *  Monitor session responsiveness and latency
     *  Multi-product user behavior scoring to help admins evaluate security risks
 
-Read more about the monitoring features available in the CVAD service [here](/en-us/citrix-virtual-apps-desktops-service/monitor), and in the Citrix Managed Desktops monitor [here](/en-us/citrix-managed-desktops/monitor.html)
+Read more about the monitoring features available in the CVAD service [here](/en-us/citrix-virtual-apps-desktops-service/monitor.html), and in the Citrix Managed Desktops monitor [here](/en-us/citrix-managed-desktops/monitor.html)
 
 Learn about the analytics capabilities, visit the Analytics Tech Brief [here](/en-us/tech-zone/learn/tech-briefs/analytics.html), or visit the website [here](https://www.citrix.com/analytics/)
 
