@@ -338,7 +338,7 @@ WEM in real time detects which processes are in the focus of the user. A portion
 
 CPU optimization with WEM, involves real-time monitoring of the process running on each VM. When a process is detected to be hogging CPU resources (for a defined amount of time), it automatically reduces the priority of the process, allowing other processes to use the CPU and alleviate the server load. When the process is seen to have returned to low CPU consumption overtime, then its priority is reset back to normal.
 
-![WEM CPU Optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_25-WEM_CPU_Optimization.gif)
+![WEM CPU Optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_25-WEM-CPU-Optimization.gif)
 
 #### Logon Time Optimization
 
