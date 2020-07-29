@@ -764,7 +764,7 @@ Step 3: Migration
 
 >**Note:**
 >
->For PVS users, specific steps are required to prepare your environment before you migrate to Azure. Follow those steps in the next section. MCS users can go directly to [Discovery](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.md#step-1-discovery).
+>For PVS users, specific steps are required to prepare your environment before you migrate to Azure. Follow those steps in the next section. MCS users can go directly to [Discovery](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#step-1-discovery).
 
 ### Prerequisite for PVS-specific image preparation
 
