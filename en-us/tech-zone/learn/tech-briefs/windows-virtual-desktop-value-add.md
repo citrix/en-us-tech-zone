@@ -21,7 +21,7 @@ It consists of the core level compute, networking, and storage that makes up the
 
 For organizations to utilize the value add that Citrix provides, the bottom two layers of the WVD platform are retained. The top management layer is replaced by Citrix virtualization cloud services, including Citrix Virtual Apps and Desktops (CVAD) service and Citrix Managed Desktops service.
 
-[![Windows Virtual Desktop Citrix Value Add architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add-large.png)
+[![Windows Virtual Desktop Citrix Value Add architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add-large.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.png)
 
 The on-premises data center is now included in the deployment and Remote PC Access enables connectivity to physical machines from the same environment / leveraging existing security. Citrix virtualization cloud services unify external access and identity management.
 
@@ -186,7 +186,7 @@ For example, consider a physician working from home, she launches Outlook from h
 
 Citrix profile manager helps to synchronize files and settings that are changed in a Read-Only session. The centralized profile storage (user store) acts as the temporary storage for writes in the Read-Only sessions.
 
-![Multi Session Citrix Profile Management](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_13-Multi-session-Citrix-Profile-Management.png)
+![Multi Session Citrix Profile Management](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_14-Multi-session-Citrix-Profile-Management.png)
 
 This allows each session to write changed files back and those changes are merge using the last writer win strategy at file level. Changes to registry hive files like NTUSER.DAT, are merged at registry key level. More information about this can be found at this [link](/en-us/profile-management/current-release/configure/enable-multi-session-write-back-for-fslogix-profile-container.html)
 
@@ -232,7 +232,7 @@ HDX adaptive throughput intelligently fine-tunes the peak throughput of the ICA 
 
 Session interactivity is constantly measured to determine whether any data streams within the ICA session are adversely affecting interactivity. If that occurs, the throughput is decreased to reduce the impact of the large data stream on the session and allow interactivity to recover.
 
-![HDX Adaptive Throughput](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_14-HDX-Adaptive-Throughput.gif)
+![HDX Adaptive Throughput](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_15-HDX-Adaptive-Throughput.gif)
 
 Read more about optimizing HDX bandwidth over high latency connections [here](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/bandwidth-connections.html)
 
@@ -242,17 +242,19 @@ Hardware encoding and optimization for CAD based use cases. Utilization of GPU e
 
 **Build to Lossless** – when interacting with a model the quality may be reduced to increase interactivity but when the user stops interacting with the model a lossless image is rendered. The following side by side images showcases this feature.
 
+![HDX - Build to Lossless](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_16-Build-to-Lossless.png)
+
 #### Multi Monitor - Virtual Display Layout
 
 The Virtual Display layout feature lets the user define a virtual monitor layout to split up a single 4K display into up to eight monitors. The user can create various monitor layouts and apps can be easily moved between monitors.
 
-![Multi Monitor Layout](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_15-Mulit-Monitor-Display-Layout.png)
+![Multi Monitor Layout](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_17-Mulit-Monitor-Display-Layout.png)
 
 Windows display settings show the placement and scaling of each of the monitors. If the user wants to change the layout, they can define a new one by splitting the screen up by percentages of the client monitor resolution either horizontally or vertically. The user can set the DPI for each monitor individually.
 
 In the current era, where new hires are being onboarded from their homes and it is taking organizations longer to ship systems to their employees. Having the ability to work on multiple screens, even though the user has just one physical one is a great productivity booster.
 
-![Multi Monitor Layout config](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_16-Mulit-Monitor-Display-Layout-config.png)
+![Multi Monitor Layout config](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_18-Mulit-Monitor-Display-Layout-config.png)
 
 To learn more see the video [here](https://www.youtube.com/watch?v=aVhhy4Ms4r0)
 
@@ -288,13 +290,13 @@ With BCR the media encoding, and decoding is done on the client, which helps all
 
 Browsing websites even casually, can use up a lot of CPU and Memory resources, as can be seen from this graph where 5 mins were spent browsing followed by a couple minutes of idle time.
 
-![BCR RAM and CPU graph](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_17-BCR-RAM-CPU-Graph.png)
+![BCR RAM and CPU graph](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_19-BCR-RAM-CPU-Graph.png)
 
 Enabling Browser content redirection, not only offloads the media rendering from the CPU and reduces Memory requirements for the browser on each cloud hosted machine, which leads to higher single server scalability but also helps reduce ingress and egress data costs as these large video files are not being sent up to your cloud.
 
 The following were screenshots taken during our tests
 
-[![BCR comparison screenshot](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_18-BCR-comparison-screenshot.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_18-BCR-comparison-screenshot.png)
+[![BCR comparison screenshot](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-BCR-comparison-screenshot-large.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-BCR-comparison-screenshot-large.png)
 
 To learn more about Browser Content Redirection, visit this [link](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html)
 
@@ -304,15 +306,15 @@ Building on top of the Browser content redirection technology, Citrix in partner
 
 Consider a scenario in a global company, where two users in different locations want to have a Teams call with each other and the desktops are hosted in a different location. The below map depicts such a situation with one user in the Netherlands and another in India.
 
-![Teams User map without optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_19-Teams-user-map-without-optimization.png)
+![Teams User map without optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_21-Teams-user-map-without-optimization.png)
 
 The WVD resource location is US East and there was significant latency between these locations with the Azure region in the middle (880ms round trip). The optimization reduces the latency by ensuring that in a 1:1 call, the users are connecting directly to each other rather than having to hair pin to the WVD server in the East US region hosting the call.
 
-![Teams User map with optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-Teams-user-map-with-optimization.png)
+![Teams User map with optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_22-Teams-user-map-with-optimization.png)
 
 When Teams optimization is enabled, the improvement in the image in the call is evident.
 
-[![Teams image and CPU usage comparison with and without optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_21-Teams-optimization-comparison.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_21-Teams-optimization-comparison.png)
+[![Teams image and CPU usage comparison with and without optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_23-Teams-optimization-comparison.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_23-Teams-optimization-comparison.png)
 
 And CPU consumption on the machines hosting the Teams call is also drastically reduced.
 Microsoft has released their own Teams optimizations solution, currently it only supports Windows 10 on the endpoints, Citrix's value add is that, not only are Windows OS based clients supported, but also Linux endpoints.
@@ -329,24 +331,20 @@ Workspace Environment Management (WEM) uses intelligent resource management and 
 
 WEM in real time detects which processes are in the focus of the user. A portion of the RAM working set of apps that are not in focus can then be reclaimed. It is observed that even if these apps come back into focus, they do not need the smaller subset of the amount of RAM that was reclaimed from them. This optimizes RAM consumption in the cloud and increases single server scalability.
 
-![WEM RAM optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_22-WEM-RAM-optimization.png)
+![WEM RAM optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_24-WEM-RAM-optimization.png)
 **Graph of RAM consumed by an app without and with WEM**
 
 **CPU Optimization** - If a process is detected to be hogging CPU resources, this might negatively affect not only the session that it is running in, but also slow down other sessions running on the same machine and even impact logon times for other users.
 
 CPU optimization with WEM, involves real-time monitoring of the process running on each VM. When a process is detected to be hogging CPU resources (for a defined amount of time), it automatically reduces the priority of the process, allowing other processes to use the CPU and alleviate the server load. When the process is seen to have returned to low CPU consumption overtime, then its priority is reset back to normal.
 
-![WEM CPU Optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_23-WEM_CPU_Optimization.gif)
+![WEM CPU Optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_25-WEM_CPU_Optimization.gif)
 
 #### Logon Time Optimization
 
 To deliver the best possible logon performance, Workspace Environment Management replaces commonly used Windows Group Policy Object objects, logon scripts, and preferences with an agent which is deployed on each virtual machine or server. The agent is multi-threaded and applies changes to user environments only when required, ensuring users always have access to their desktop as fast as possible.
 
-![Log on process without optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_24-Logon-process-without-optimization.png)
-**Log on process without WEM**
-
-![WEM Logon time optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_25-WEM_Logon_time_optimization.png)
-**Log on process with WEM optimization**
+![Log on process with and without optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_26-Logon-process-without-optimization.png)
 
 Find more information about WEM and its benefits [here](/en-us/workspace-environment-management/current-release.html)
 
@@ -367,7 +365,7 @@ The following are some features of note to bolster the security of your WVD depl
 
 For sessions that have sensitive data being accessed by the user, a great deterrent to having the data be stolen is a watermark. Especially if the watermark can uniquely identify the user. Citrix enables admins to configure what to display. This includes use logon name, client IP address, VDA IP address, VDA host name, login timestamp, and even customized text. Being a server-side feature it is applicable to all sessions (not just on specific endpoints) and is immune to process termination at the end point by the user as a workaround.
 
-![Session Watermarking](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_26-Session-Watermarking.png)
+![Session Watermarking](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_27-Session-Watermarking.png)
 
 Learn more about session watermarking [here](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-watermark-policy-setting.html). Watch a short video to see the feature in action [here](https://youtu.be/XHEQlvpAZKs)
 
@@ -377,7 +375,7 @@ Citrix provides the ability to record all or part of a desktop or app session. T
 
 Session Recording provides flexible policies to trigger recordings of application and desktop sessions automatically. This enables regulatory compliance and an audit trail of what was done during a session. Playback can have events inserted in them to allow for easy seeking of the recording.
 
-![Session Recording player](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_27-Session-Recording-player.png)
+![Session Recording player](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_28-Session-Recording-player.png)
 
 Security of the session recordings can be enhanced by encrypting them to ensure only authorized users can view them or digitally signing the recordings. The admin can even define the size of the recording file based on file size or duration. Citrix Analytics can automatically turn on Session Recording when a user’s risk score is above the configured threshold.
 
@@ -422,7 +420,7 @@ Citrix Analytics service using all these services as data sources provides compr
 
 Citrix SD-WAN optimizes all the network connections needed by machines running in WVD. Working in concert with the HDX technologies, Citrix SD-WAN provides quality-of-service and connection reliability for ICA and out-of-band Citrix Virtual Apps and Desktops or Citrix Managed Desktops traffic. It also helps bridge the WVD deployment in Azure with the on-premises data center and other office locations.
 
-![SD-WAN Architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_28-SD-WAN-Architecture.png)
+![SD-WAN Architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_29-SD-WAN-Architecture.png)
 
 Citrix SD-WAN supports the following network connections:
 
@@ -450,7 +448,7 @@ The setup and design of an environment is just the first part of getting VDI inf
 
 Citrix gives full help desk visibility into user sessions, for both real-time debugging of specific user issues and performance, and broad visibility into the environment and trends.
 
-![Citrix Monitor console](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_29-Citrix-Monitor-console.png)
+[![Citrix Monitor console](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_30-Citrix-Monitor-console-large.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_30-Citrix-Monitor-console.png)
 
 As seen in the preceding screenshot, the admin has a view of what’s going on in the session, can shadow the session and can remediate from the same console.
 
