@@ -2,7 +2,7 @@
 layout: doc
 description: In this document, you'll discover how to migrate from Citrix Virtual Apps and Desktops to Citrix Virtual Apps and Desktops service and from VMware vSphere on-premises to Microsoft Azure. Migrating to cloud resources modernizes your deployment, providing enhanced elasticity, scalability, and management. The guidance documented here is based on a deployment in a Citrix- and Microsoft-reviewed and approved lab environment. The initial and final deployments represent typical customer environments.
 ---
-# Migrate Citrix Virtual Apps and Desktops from VMware vSphere to Citrix Virtual Apps and Desktops service on Microsoft Azure
+# Migrating Citrix Virtual Apps and Desktops from VMware vSphere to Citrix Virtual Apps and Desktops service on Microsoft Azure
 
 ## Overview
 
@@ -303,7 +303,7 @@ The correct syntax for the primary zone is to keep a space between the colon `:`
 
 1.  Ensure that the result is **True**.
 
-More details about each VDA reconfiguration option are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
+More details about each VDA reconfiguration option are available from Citrix product documentation in [VDA registration](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
 
 >**Checkpoint: Citrix Virtual Apps and Desktops service migration using MCS**
 >
@@ -421,7 +421,7 @@ The resulting output looks like the following image:
 
 ![Settings import result](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_auto-config-import-result.png)
 
-More details about VDA registration options are available from Citrix product documentation in [VDA registration](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
+More details about VDA registration options are available from Citrix product documentation in [VDA registration](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html)
 
 >**Checkpoint: Citrix Virtual Apps and Desktop service using PVS**
 >
