@@ -53,7 +53,7 @@ With Citrix Workspace, users authenticate once with their primary identity and a
 How Citrix Workspace provides single sign-on to different resources is based on the type of resource accessed. To better understand the different approaches, it is best to break it down into the following topics:
 
 *  SaaS apps
-*  Web apps (section coming soon)
+*  Web apps
 *  Mobile apps (section coming soon)
 *  Virtual apps and desktops
 *  IdP Chaining
@@ -114,7 +114,40 @@ To keep access secure, organizations must
 1.  Implement strong authentication policies for the primary Workspace identity
 2.  Disable direct access to SaaS apps with the secondary identity
 
-## SSO: Web Apps (section coming soon)
+## SSO: Web Apps
+
+A web application is a browser-based application hosted and managed by the organization.  The web application is hosted within the on-premises data center. To access a web application, users must establish a secure connection to the host and authenticate with a set of credentials associated with the web application, referred to as a secondary identity.  
+
+[![Web App SSO Flow](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_webapp-flow.png)](/en-us/tech-zone/learn/media/tech-briefs_workspace-sso_webapp-flow.png)
+
+Based on the conceptual architecture, the Gateway Connector establishes an outbound control channel connection to the organization's Citrix Cloud subscription. Once established authentication and access requests to the on-premises web application travel across the Gateway Connector's control channel, eliminating the need for a VPN connection.
+
+Depending on the web application, the secondary identity could be the same identity as the primary identity used to authenticate to Citrix Workspace or a unique identity managed by a different identity provider.
+
+To achieve single sign-on to a web application, Citrix Workspace federates identity between the primary identity (used to sign into Citrix Workspace) and the secondary identity (used to sign into the web app). The SSO process for web application utilizes multiple approaches to be able to support a larger number of web applications.  These approaches can be
+
+*  Basic - used when the web application server presents users with a basic-401 challenge. Basic authentication utilizes the credentials used to authenticate to Citrix Workspace.
+*  Kerberos - used when the web application server presents users with a negotiate-401 challenge. Kerberos utilizes the credentials used to authenticate to Citrix Workspace.
+*  Forms - used when the web application server presents users with an HTML authentication form. Forms-based authentication requires the administrator to identify the appropriate fields on the authentication page for the user name and password.
+*  SAML - used when the web application server is able to use SAML-based authentication, where the web app acts as the service provider and Citrix Workspace as the identity provider. The user's primary identity used to log into Citrix workspace must have a parameter (UPN or email) aligned with the credentials in the web application. To learn more about SAML-based single sign-on, review the [SSO to SaaS Apps](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html#sso-saas-apps) section.
+*  No SSO - used when the web application server does not require user authentication or when the administrator wants the user to sign in manually.
+
+Single sign-on to web applications within Citrix Workspace helps solve a few user and admin experience challenges:
+
+*  Users do not have to remember a user name and password for each web application
+*  Users do not have to create complex passwords for each web application
+*  Users do not have to setup/configure MFA keys/tokens for each web application
+*  Users do not have to start a VPN connection to access an internal web application
+*  Admins can disable access to all web applications by disabling the user’s primary identity
+*  Admins can base the user’s primary identity on one of the growing list of supported identity providers
+*  Once deployed, admins do not have to update the Gateway Connectors. Citrix Cloud services automates the updates as needed.
+
+To keep access secure, organizations must
+
+*  Implement strong authentication policies for the primary Workspace identity
+*  Disable VPN access to web applications
+
+Deploy redundant Gateway Connectors to maintain availability when a connector is being updated. Only one connector gets updated at a time and the process does not continue until a success result is received.
 
 ## SSO: Mobile Apps (section coming soon)
 
