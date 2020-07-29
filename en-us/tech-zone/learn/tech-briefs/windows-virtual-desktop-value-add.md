@@ -2,26 +2,27 @@
 layout: doc
 description: Learn about the value add Citrix provides to your Windows Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service and Citrix Managed Desktops service provide a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user expereince and enhanicng the security posture of our deployment. 
 ---
-# Citrix value-add to Windows Virtual Desktop
+# Enhancing Windows Virtual Desktop
 
 ## Contributors
 
 **Author:** [Mayank Singh](https://twitter.com/techmayank)
 
-**Special Thanks:** []
+**Special Thanks:** [Daniel Feller](https://twitter.com/djfeller)
 
 ## Overview
 
 Windows Virtual Desktop (WVD) is a platform in Microsoft Azure to host and manage virtual machines. It is not just a set of operating systems that can be run in Azure but a set of services that can be used to deliver the virtual desktops to users. Staying true to Citrix’s track record, from the earliest days of our partnership with Microsoft, our solutions add unique value to this platform.
 
 Let us first look at the WVD architecture:
+
 [![Windows Virtual Desktop architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_1-wvd-architecture.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_1-wvd-architecture.png)
 
 It consists of the core level compute, networking, and storage that makes up the physical infrastructure that the Azure cloud runs on (which are managed by Microsoft). Then there are the virtual machines that run on the cloud hardware – Windows single-session and multi session desktops / server OS machines and remote apps. And the shared storage exposed to the machines like Azure Files and Azure AD and related services. The expectation is that this layer is managed by the customer. And finally, the services that run to manage and provide access to the desktops and applications.
 
 For organizations to utilize the value add that Citrix provides, the bottom two layers of the WVD platform are retained. The top management layer is replaced by Citrix virtualization cloud services, including Citrix Virtual Apps and Desktops (CVAD) service and Citrix Managed Desktops service.
 
-[![Windows Virtual Desktop Citrix Value Add architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add-large.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.png)
+[![Windows Virtual Desktop Citrix Value Add architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add-large.png)
 
 The on-premises data center is now included in the deployment and Remote PC Access enables connectivity to physical machines from the same environment / leveraging existing security. Citrix virtualization cloud services unify external access and identity management.
 
@@ -448,7 +449,7 @@ The setup and design of an environment is just the first part of getting VDI inf
 
 Citrix gives full help desk visibility into user sessions, for both real-time debugging of specific user issues and performance, and broad visibility into the environment and trends.
 
-[![Citrix Monitor console](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_30-Citrix-Monitor-console-large.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_30-Citrix-Monitor-console.png)
+[![Citrix Monitor console](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_30-Citrix-Monitor-console.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_30-Citrix-Monitor-console-large.png)
 
 As seen in the preceding screenshot, the admin has a view of what’s going on in the session, can shadow the session and can remediate from the same console.
 
