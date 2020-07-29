@@ -71,7 +71,7 @@ The admin faces difficulties when there are a few or several groups of users tha
 
 App Layering also enables admins to make desktops available to different user groups (who require different apps) from the same set of layers. Consider the golden images of two pools in the following diagram.
 
-![App Layering - 2 Pool Golden Images](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_4-Two-Pool-Master-Images.png)
+![App Layering - 2 Pool Golden Images](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_4-Two-Pool-Golden-Images.png)
 
 Pool A for the Finance team requires Chrome and Accounting software while Pool B for the legal team requires Firefox and a PDF writer. Using a normal image management solution, the admin needs 2 different golden images and then must manage updates to the OS, the hypervisor driver, and Office 2016 in both the images, as and when an update occurs.
 
