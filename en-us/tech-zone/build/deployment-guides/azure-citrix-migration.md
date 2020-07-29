@@ -698,7 +698,7 @@ Now that we have site-to-site connectivity configured and validated, our next st
 
 ## Migrate on-premises workloads to Azure
 
-In a typical Citrix customer deployment, there are multiple components that can be migrated. Component types and migration plans may vary by customers.  
+In a typical Citrix customer deployment, there are multiple components that can be migrated. Component types and migration plans may vary by customers.
 
 To get a better sense of how to approach your migration, refer to the [Microsoft Cloud Adoption Framework for Azure](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/).
 
@@ -748,7 +748,7 @@ The disks only offer an SLA when an Availability Set is used. Availability Sets 
 
 ### Azure Migrate services overview
 
-Azure Migrate provides a set of tools to assess and migrate to Azure on-premises servers, infrastructure, applications, and data. For detailed information, see [About Azure Migrate](https://docs.microsoft.com/en-us/azure/migrate/migrate-services-overview)
+Azure Migrate provides a set of tools to assess and migrate to Azure on-premises servers, infrastructure, applications, and data. For detailed information, see [About Azure Migrate](https://docs.microsoft.com/en-us/azure/migrate/migrate-services-overview). We used Azure Migrate to migrate our file server and master images.
 
 The following diagram shows the locations of our resources when we migrate to Azure.
 
