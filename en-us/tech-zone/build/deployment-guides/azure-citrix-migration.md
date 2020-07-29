@@ -16,8 +16,8 @@ We migrated these key products and components:
 *  [Workspace Environment Management on-premises to Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service)
 *  [On-premises StoreFront and Citrix Gateway to Citrix Workspace and Citrix Gateway service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-citrix-workspace-and-citrix-gateway-service)
 *  [On-premises vSphere workloads to workloads in Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-on-premises-workloads-to-azure)
-*  [On-premises file servers to Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#prepare-the-azure-subscription)
-*  [Create Citrix workload in Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#move-citrix-workload-to-azure)
+*  [On-premises file servers to Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#file-server-technologies)
+*  [Citrix workload in Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#move-citrix-workload-to-azure)
 
 The following diagram shows the migration process.
 
@@ -27,14 +27,14 @@ The following diagram shows the migration process.
 
 In our experience and testing, the best migration path follows these steps:
 
-1.  Set up a basic Citrix Cloud environment.
-1.  Migrate on-premises Citrix Virtual Apps and Desktops to Citrix Virtual Apps and Desktops service using the automated configuration tool developed by Citrix.
-1.  Migrate on-premises Workspace Environment Management to Workspace Environment Management service.
-1.  Configure the end-user access layer.
-1.  Prepare the Azure subscription to receive the workloads from your on-prem deployment.
-1.  Configure site-to-site connectivity.
-1.  Use Azure tools to migrate your on-premises servers to Azure.
-1.  Move your Citrix workload to Azure.
+1.  [Set up a basic Citrix Cloud environment](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#set-up-a-basic-citrix-cloud-environment).
+1.  [Migrate on-premises Citrix Virtual Apps and Desktops to Citrix Virtual Apps and Desktops service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-citrix-virtual-apps-and-desktops-service) using the automated configuration tool developed by Citrix.
+1.  [Migrate on-premises Workspace Environment Management to Workspace Environment Management service](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-to-workspace-environment-management-service).
+1.  [Configure the end-user access layer](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#configure-the-end-user-access-layer).
+1.  [Prepare the Azure subscription](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#prepare-the-azure-subscription) to receive the workloads from your on-prem deployment.
+1.  [Configure site-to-site connectivity](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#configure-site-to-site-connectivity).
+1.  Use Azure tools to [migrate your on-premises servers to Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#migrate-on-premises-workloads-to-azure).
+1.  [Move your Citrix workload to Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html#move-citrix-workload-to-azure).
 
 ![Migration path](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_migration-path.png)
 
@@ -118,7 +118,7 @@ You can install the Cloud Connector software [interactively](/en-us/citrix-cloud
 
 >**Notes from the field:**
 >
->When you have multiple resource locations (on-premises and Azure), it’s best practice to have a distinct name for each resource location. That helps you identify it more easily.
+>When you have multiple resource locations, it’s best practice to have a distinct name for each resource location. That helps you identify it more easily.
 
 1.  Select your resource location, click **...** and select **Rename**.
 
@@ -134,7 +134,7 @@ You can install the Cloud Connector software [interactively](/en-us/citrix-cloud
 >
 >![Cloud Connector status indicators](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_cloud-connectors-green-bar.png)
 >
->If the status is not what you expect, use the Citrix Cloud connectivity test for more information.
+>If the status is not what you expect, use the **Citrix Cloud Services Connectivity Test Tool**, for more information.
 
 ## Migrate to Citrix Virtual Apps and Desktops service
 
@@ -227,7 +227,7 @@ All the files that you edit are in the folder where you run the PowerShell comma
 
 1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID`, and `Secret`.
 
-    ![Example customerinfo.yml file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-empty copy.png)
+    ![Example customerinfo.yml file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-empty-copy.png)
 
 1.  Connect to Citrix Cloud and go to **Identity and Access Management**.
 
@@ -269,7 +269,7 @@ All the files that you edit are in the folder where you run the PowerShell comma
 
 >**Note:**
 >
->If the default resource location name has not been changed, it should be **Primary**.
+>If the default Cloud resource location name has not been changed, it should be **Primary**.
 
 The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`, in keeping with standard YAML syntax. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
@@ -351,7 +351,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Edit and fill the `CustomerInfo.yml` file with `Customer ID`, `Client ID`, and `Secret`.
 
-    ![Example customerinfo.yml file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-empty copy.png)
+    ![Example customerinfo.yml file](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-empty-copy.png)
 
 1.  Connect to Citrix Cloud and go to **Identity and Access Management**.
 
@@ -379,7 +379,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
 1.  Paste the information in a document (it is not possible to see the information again, so keep the document safe).
 
-    ![Customer info YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-empty copy.png)
+    ![Customer info YAML](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_customer-info-yml-contents.png)
 
 1.  Add the following line at the end of the file: `HostConnections: True` to allow the hosting configuration.
 
@@ -397,7 +397,7 @@ Install `AutoConfig_PowerShell_x64.msi` on the delivery controller. Installing t
 
     >**Note:**
     >
-    >If the default resource location name has not been changed, it should be Primary.
+    >If the default Cloud resource location name has not been changed, it should be **Primary**.
 
     The correct syntax for the primary zone is to keep a space between the colon `:` and the first quotation mark `"`, in keeping with standard YAML syntax. The name is case-sensitive and must be enclosed in quotation marks as shown.
 
@@ -602,19 +602,11 @@ In this section, we migrate to the Citrix Gateway service and Citrix Workspace, 
 
 >**Checkpoint: Citrix Workspace and Citrix Gateway service migration**
 >
->![Workspace URL](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-url.png)
+>1.  Ensure in Citrix Cloud that the VDAs are registered. The Citrix product documentation provides a deeper understanding of [VDA registration](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html).
 >
->1.  Click the **Workspace URL**.
->    ![Workspace logon](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_logon.png)
+>1.  Connect to your Citrix Workspace URL.
 >
->1.  Provide your credentials and click **Log On**.
->    ![Workspace](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-desktops.png)
->
->1.  Click **Desktops**.
->    ![Desktops in Workspace](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_workspace-desktops-available.png)
->
->1.  Click **Win 10 Azure + Citrix Virtual Apps and Desktops Service** to launch your desktop.
->    ![Launched desktop](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-workload-desktop.png)
+>1.  Launch a published resource.
 
 ## Prepare the Azure subscription
 
