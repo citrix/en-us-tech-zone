@@ -345,7 +345,7 @@ CPU optimization with WEM, involves real-time monitoring of the process running 
 
 To deliver the best possible logon performance, Workspace Environment Management replaces commonly used Windows Group Policy Object objects, logon scripts, and preferences with an agent which is deployed on each virtual machine or server. The agent is multi-threaded and applies changes to user environments only when required, ensuring users always have access to their desktop as fast as possible.
 
-![Log on process with and without optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_26-WEM-Logon-Process_Optimization.png)
+![Log on process with and without optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_26-WEM-Logon-Process-Optimization.png)
 
 Find more information about WEM and its benefits [here](/en-us/workspace-environment-management/current-release.html)
 
