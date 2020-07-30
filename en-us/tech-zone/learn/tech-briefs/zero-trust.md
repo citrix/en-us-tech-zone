@@ -16,7 +16,7 @@ For many years, the cybersecurity paradigm has emulated a familiar form of physi
 
 In this classic defense model, multiple layers of protection with tightly secured checkpoints and gateways surround and protect the crown jewels. All access is controlled and verified at the gateway where authentication and authorization are granted. However, once verified, people are effectively given free rein of the environment.
 
-The model has shortcomings, mainly with granting excessive access from inadaquate authentication and authorization. Attackers often use subterfuge to bypass the gateways and superior tools designed to break down the walls.
+The model has shortcomings, mainly with granting excessive access from inadequate authentication and authorization. Attackers often use subterfuge to bypass the gateways and superior tools designed to break down the walls.
 
 Likewise, in cybersecurity, valuable data is surrounded by multiple layers of firewalls, segmentation, authentication, and authorization. And while these components are necessary, they are insufficient due to the “deperimeterization” caused by the move to cloud and mobile.
 
@@ -49,7 +49,7 @@ Zero trust is achieved through an intentional implementation of the framework. U
 
 Citrix sees Zero Trust as a strategy that applies not only just to networking, but across the organization in users, devices, networks, applications – and how people work.
 
-Citrix Zero Trust Architecture focuses on protecting resources and is designed and deployed adhering to the following basic tenets:
+Citrix Zero Trust Architecture focuses on protecting resources and is designed and deployed adhering to tenets modeled after the National Institute of Standards and Technology (NIST) [Zero Trust tenets](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207-draft2.pdf):
 
 1.  All data sources and computing services are considered resources
 2.  All communication is secured regardless of network location because every network, both enterprise and remote, is innately hostile and not trustworthy
@@ -116,13 +116,13 @@ Customers, employees, and partners are increasingly mobile, and consume apps and
 
 The minimal requirements for access to the resource can include authenticator assurance levels, such as MFA and or requests for system configuration. Whether that person is inside or outside the corporate network is not a reliable indicator of any of those three assurances. However, flag obvious unusual or unsanctioned network locations such as deny access from overseas IP addresses or within unexpected time frames.
 
-### Visibility, Analytics and Orchestration
+### Visibility, Analytics, and Orchestration
 
 Zero Trust Architectures require increased access visibility. It is incomplete without tools like security information management, advanced security analytics platforms, and security user behavior analytics. These systems are continuously monitoring and logging access requests and policy changes over time. Security experts need these tools to observe in real time what is happening and orient defenses more intelligently.
 
 Analytics is the system that is responsible for enabling, monitoring, and eventually terminating connections between a subject and an enterprise resource. The analytics policy engine is responsible for the ultimate decision to grant access to a resource for a given client or subject. It can use enterprise policy and input from external sources.
 
-Analytics data can either be analyzed separately or combined with other security monitoring and logging data sets. Multiple services take data from multiple external sources and provide information about newly discovered attacks or vulnerabilities. The data includes DNS blacklists, discovered malware, or command and control systems that the policy engine wants to deny access to from enterprise systems. By using threat intelligence feeds, the policy engine can help develop proactive security measures before an actual incident occurs. Analytics can use criteria-based scoring that assumes a set of qualified attributes that must be met before access is granted to a resource.
+Analytics data can either be analyzed separately or combined with other security monitoring and logging data sets. Multiple services take data from multiple external sources and provide information about newly discovered attacks or vulnerabilities. The data includes DNS block lists, discovered malware, or command and control systems that the policy engine wants to deny access to from enterprise systems. By using threat intelligence feeds, the policy engine can help develop proactive security measures before an actual incident occurs. Analytics can use criteria-based scoring that assumes a set of qualified attributes that must be met before access is granted to a resource.
 
 ## Citrix Zero Trust Architecture
 
@@ -146,11 +146,11 @@ Citrix Gateway provides SmartAccess and SmartControl policies that provide flexi
 
 ### Citrix Access Control
 
-Citrix Workspace offers an integrated approach to secure access to the internet. In addition to managing user devices, Access Control focuses on protecting a user’s workspace on both managed and unmanaged BYO devices. User information is always protected, whether accessing whitelist or blacklist URLs or URL categories.
+Citrix Workspace offers an integrated approach to secure access to the internet. In addition to managing user devices, Access Control focuses on protecting a user’s workspace on both managed and unmanaged BYO devices. User information is always protected, whether accessing allow list or block list URLs or URL categories.
 
-Citrix Access Control offers a URL filtering engine and an integrated browser isolation service. Together, they give an admin the choice to completely block a URL or access any URL in a sandbox environment. Also, admins can take a cautious approach even for accessing whitelist URLs. This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet.
+Citrix Access Control offers a URL filtering engine and an integrated browser isolation service. Together, they give an admin the choice to completely block a URL or access any URL in a sandbox environment. Also, admins can take a cautious approach even for accessing allow list URLs. This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet.
 
-A traditional URL filtering engine that assumes trust for a whitelist URL. Access Control does not implicitly trust a whitelist URL since webpages, deemed safe by URL filtering engines, that can host malicious links. With Access Control URLs within the trusted URL are also tested.
+A traditional URL filtering engine that assumes trust for a allow list URL. Access Control does not implicitly trust an allow list URL since webpages, deemed safe by URL filtering engines, that can host malicious links. With Access Control URLs within the trusted URL are also tested.
 
 Access Control also addresses “gray status URLs” by offering the isolated browser. Users can securely access sites that fall between URLs blacklisted or whitelisted. Access Control doesn’t require a device to be managed making it ideal for BYO type environments. Most URL filtering engines push a PAC file on the end user’s device that is either managed or must be connected to a domain.
 
@@ -168,7 +168,7 @@ Citrix Security Analytics and its continuous monitoring and assessment of risk s
 
 Citrix Security Analytics aggregates events from all Citrix services. Risk indicators from third party security solutions like Microsoft Security Graph are ingested to issue user risk scores. Citrix Security Analytics baselines, helps visualize, and maps trust relationships. It correlates events and activities to identify anomalies and provide insights by user, group, and app.
 
-Citrix Security Analytics also offers continuous monitoring and insights into website access. Actions monitored include visiting malicious, dangerous, or unknown websites, bandwidth consumed, risky download and upload activity. If a user is downloading excessive amounts of data, an action can be triggered to request a response from the user to validate their identity. Based on the user reply, a secondary action can be triggered.
+Citrix Security Analytics also offers continuous monitoring and insights into website access. Actions monitored include visiting malicious, dangerous, or unknown websites, bandwidth consumed, risky download, and upload activity. If a user is downloading excessive amounts of data, an action can be triggered to request a response from the user to validate their identity. Based on the user reply, a secondary action can be triggered.
 
 Rules are configured to trigger specific actions on user accounts by continuously assessing risk score thresholds. For example, sessions authenticated into Citrix Workspace can be logged off on a change in the risk score.
 
@@ -182,4 +182,4 @@ Traditional security models assume all data and transactions are trusted based o
 
 For organizations, the promise of Zero Trust and mitigating excessive access has been a goal for many years. But its implementation has been elusive. All necessary elements have been inordinately difficult to construct and manage as an end-to-end security solution. These include multifactor authentication (MFA), dynamic identity management, endpoint analysis, encryption, information rights management (IRM), application-specific networking, and data usage policies.
 
-Using Citrix Workspace, customers don’t need to deploy third-party products for SSO, MFA, SSL VPN, web proxies, and browser isolation. With Workspace, VPN-less access to sensitive resources is secured not only by providing access policies at the time of authentication, but throughout the session. Access is secured across all types of applications and resources deployed anywhere on a cloud, on premises, or in a hybrid deployment model.
+Using Citrix Workspace, customers don’t need to deploy third-party products for SSO, MFA, SSL VPN, web proxies, and browser isolation. With Workspace, VPN-less access to sensitive resources is secured not only by providing access policies at the time of authentication, but throughout the session. Access is secured across all types of applications and resources deployed anywhere on a cloud, on-premises, or in a hybrid deployment model.
