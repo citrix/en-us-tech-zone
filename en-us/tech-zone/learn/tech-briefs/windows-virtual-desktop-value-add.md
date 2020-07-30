@@ -294,7 +294,7 @@ Browsing websites even casually, can use up a lot of CPU and Memory resources, a
 
 ![BCR RAM and CPU graph](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_19-bcr-ram-cpu-graph.png)
 
-Enabling Browser content redirection, not only offloads the media rendering from the CPU and reduces Memory requirements for the browser on each cloud hosted machine, which leads to higher single server scalability but also helps reduce ingress and egress data costs as these large video files are not being sent up to your cloud.
+Enabling Browser content redirection, offloads the media rendering from the CPU and reduces Memory requirements for the browser on each cloud hosted machine. This offload leads to higher single server scalability and reduces ingress and egress data costs as these large video files are not being sent up to the cloud.
 
 The following were screenshots taken during our tests
 
@@ -306,11 +306,11 @@ To learn more about Browser Content Redirection, visit this [link](/en-us/citrix
 
 Building on top of the Browser content redirection technology, Citrix in partnership with Microsoft (since the days of optimizing Skype for Business), gives admins a Microsoft Teams optimization solution. The ability to have the endpoint perform the encoding and decoding of the audio, video, and screen sharing bits of a call, increases the server scalability and call quality, by a significant margin. For users working from home on latent connections this means that audio and video call or screensharing data is transmitted directly between them rather than being sent up to the cloud-based resources and then sent back to the recipient. This additional latency can mean the difference between a barely understandable video call and a perfectly smooth one.
 
-Consider a scenario in a global company, where two users in different locations want to have a Teams call with each other and the desktops are hosted in a different location. The below map depicts such a situation with one user in the Netherlands and another in India.
+Consider a scenario in a global company, where two users in different locations want to have a Teams call with each other and the desktops are hosted in a different location. The following map depicts such a situation with one user in the Netherlands and another in India.
 
 ![Teams User map without optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_21-teams-user-map-without-optimization.png)
 
-The WVD resource location is US East and there was significant latency between these locations with the Azure region in the middle (920ms round trip). The optimization reduces the latency by ensuring that in a 1:1 call, the users are connecting directly to each other rather than having to hair pin to the WVD server in the East US region hosting the call. This results in a sub 150ms latency between the users (one way) in our example, that improves user experience immensely.
+The WVD resource location is US East and there was significant latency between these locations with the Azure region in the middle (920 ms round trip). The optimization reduces the latency by ensuring that in a 1:1 call, the users are connecting directly to each other rather than having to hair pin to the WVD server in the East US region hosting the call. This results in a sub 150 ms latency between the users (one way) in our example, that improves user experience immensely.
 
 ![Teams User map with optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_22-teams-user-map-with-optimization.png)
 
@@ -344,11 +344,11 @@ Workspace Environment Management (WEM) uses intelligent resource management and 
 
 WEM in real time detects which processes are in the focus of the user. A portion of the RAM working set of apps that are not in focus can then be reclaimed. It is observed that even if these apps come back into focus, they do not need the smaller subset of the amount of RAM that was reclaimed from them. This optimizes RAM consumption in the cloud and increases single server scalability.
 
-The following graph shows the amount of memory being consumed by a set of sessions, with and without WEM.
+The following graph shows the amount of memory consumed by a set of sessions, with and without WEM.
 
 ![WEM RAM optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_24-wem-ram-optimization.png)
 
-**CPU Optimization** - If a process is detected to be hogging CPU resources, this might negatively affect not only the session that it is running in, but also slow down other sessions running on the same machine and even impact logon times for other users.
+**CPU Optimization** - If a process is detected to be hogging CPU resources, it might negatively affect not only the session that it is running in, but also slow down other sessions running on the same machine and even impact logon times for other users.
 
 CPU optimization with WEM, involves real-time monitoring of the process running on each VM. When a process is detected to be hogging CPU resources (for a defined amount of time), it automatically reduces the priority of the process, allowing other processes to use the CPU and alleviate the server load. When the process is seen to have returned to low CPU consumption overtime, then its priority is reset back to normal.
 
@@ -392,7 +392,7 @@ Read more about how the Citrix Workspace enables SSO with MFA in the [tech brief
 
 #### Session Watermarking
 
-For sessions that have sensitive data being accessed by the user, a great deterrent to having the data be stolen is a watermark. Especially if the watermark can uniquely identify the user. Citrix enables admins to configure what to display. This includes use logon name, client IP address, VDA IP address, VDA host name, login timestamp, and even customized text. Being a server-side feature it is applicable to all sessions (not just on specific endpoints) and is immune to process termination at the end point by the user as a workaround.
+For sessions that have a user accessing sensitive data, a great deterrent to having the data be stolen is a watermark. Especially if the watermark can uniquely identify the user. Citrix enables admins to configure what to display. This includes use logon name, client IP address, VDA IP address, VDA host name, login timestamp, and even customized text. Being a server-side feature it is applicable to all sessions (not just on specific endpoints) and is immune to process termination at the end point by the user as a workaround.
 
 ![Session Watermarking](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_27-session-watermarking.png)
 
@@ -400,7 +400,7 @@ Learn more about session watermarking [here](/en-us/citrix-virtual-apps-desktops
 
 #### Session Recording
 
-Citrix provides the ability to record all or part of a desktop or app session. The recording can be intelligently stopped when sensitive information is being displayed. The admin is also able to initiate recording of a session from the Manage tab in the Citrix VAD service console to be able to help troubleshoot issues being experienced by users.
+Citrix provides the ability to record all or part of a desktop or app session. The recording can be intelligently stopped when sensitive information is being displayed. The admin is also able to initiate recording of a session from the **Manage** tab in the Citrix VAD service console to be able to help troubleshoot issues being experienced by users.
 
 Session Recording provides flexible policies to trigger recordings of application and desktop sessions automatically. This enables regulatory compliance and an audit trail of what was done during a session. Playback can have events inserted in them to allow for easy seeking of the recording.
 
@@ -414,8 +414,7 @@ Security of the session recordings can be enhanced by encrypting them to ensure 
 
 As discussed in the preceding section the Citrix Gateway service and the on-premises Citrix Gateway are a great addition to the security of the WVD environment by adding additional capabilities to Azure MFA. It is also one of the best reverse proxy solutions in the market.
 
-Citrix Gateway Service has dozens of Points of Presence (POP) globally, this improves performance by connecting through the nearest Citrix Gateway POP.
-With Citrix VAD service and Citrix Gateway service enterprises now may provide remote access to apps and desktops without those additional requirements along with other benefits:
+Citrix Gateway Service has dozens of Points of Presence (POP) globally, connecting through the nearest Citrix Gateway POP improves performance. With Citrix VAD service and Citrix Gateway service enterprises now may provide remote access to apps and desktops without those additional requirements along with other benefits:
 
 *  Multiple sites are implemented and maintained globally by Citrix
 *  Public IP addresses are implemented and maintained by Citrix
@@ -453,7 +452,7 @@ Citrix SD-WAN provides optimized connectivity including:
 *  Simple, integrated admin workflow
 *  Low latency and congestion avoidance
 
-The breakout of internet traffic directly from the end point reduces the latency and ensure faster load times. Optimization of Unified Communications traffic including Microsoft Teams, make the conference audio and video the best-in-class. Citrix SD-WAN helps reduce the amount of data that needs to be sent to the WVD resources, thereby reducing the ingress and egress data to your Azure subscription.
+The breakout of internet traffic directly from the end point reduces the latency and ensure faster load times. Optimization of Unified Communications traffic including Microsoft Teams, make the conference audio and video the best-in-class. Citrix SD-WAN helps reduce the amount of data that needs to be sent to the WVD resources, consequently reducing the ingress and egress of data to your Azure subscription.
 
 Integrations with Citrix Managed Desktops can provision the SD-WAN instances in the Azure Tenant, by the using the Citrix SD-WAN Orchestrator service.
 
