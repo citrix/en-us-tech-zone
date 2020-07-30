@@ -73,7 +73,7 @@ While POC deployments are easy with even the most basic image management tools, 
 
 Citrix App Layering also enables admins to make desktops available to different user groups (who require different apps) from the same set of layers. Consider the golden images of two pools in the following diagram.
 
-![App Layering - 2 Pool Golden Images](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_4-Two-Pool-Golden-Images.png)
+![App Layering - 2 Pool Golden Images](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_4-two-pool-golden-images.png)
 
 Pool A for the Finance team requires Chrome and Accounting software while Pool B for the legal team requires Firefox and a PDF writer. Using a normal image management solution, the admin needs two different golden images and then must manage updates to the OS, the hypervisor driver, and Office 2016 in both the images, as and when an update occurs.
 
