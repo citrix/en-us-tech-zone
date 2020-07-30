@@ -552,7 +552,7 @@ In this section, we migrate to the Citrix Gateway service and Citrix Workspace, 
 
 1.  Click **Home > Workspace Configuration**.
 
-    ![Workspace configuration in Citrix Cloud](/en-us/tech-zone/build/media/deployment-guides_azure-workspace-configuration.png)
+    ![Workspace configuration in Citrix Cloud](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-workspace-configuration.png)
 
 1.  Edit the Workspace URL and provide a name that meets your requirements. Click **Save**.
 
