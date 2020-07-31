@@ -7,6 +7,7 @@ description: Copy & paste description from TOC here
 ## Contributors
 
 **Author:** [JP Alfaro](https://www.linkedin.com/in/jp-alfaro-b2bb03b2/)
+**Special thanks:** [Darren Harding](https://www.linkedin.com/in/hardingdarren/), [Selma Wei](https://www.linkedin.com/in/selmawei/), [Armando Rodriguez](https://www.linkedin.com/in/alearh/), [Daniel Lugo](https://www.linkedin.com/in/daniel-lugo-8358882/)
 
 ## Architecture
 
