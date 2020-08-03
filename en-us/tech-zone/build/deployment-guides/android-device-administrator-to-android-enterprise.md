@@ -152,7 +152,7 @@ Your output is:
 -  Upload the .apk to Google Play (similar to the non-mdx apps above)
 -  Goto **publish MDX app** and upload the mdx file
 
-For more details and wrapping example [visit](/en-us/citrix-endpoint-management/apps.html#add-private-android-enterprise-apps-as-mdx-wrapped-enti%20just%20erprise-apps)
+For more details and wrapping example [visit](/en-us/citrix-endpoint-management/apps.html#add-private-android-enterprise-apps-as-mdx-enabled-enterprise-apps)
 
 ## Editing Existing Policies for the Correct Device Type Android (Legacy DA) and Android Enterprise (AE
 
