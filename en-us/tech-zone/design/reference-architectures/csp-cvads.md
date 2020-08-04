@@ -588,3 +588,5 @@ The goal of this reference architecture is to assist you with planning your own 
 [Virtual Delivery Agent](/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html)
 
 [Hosting Connections](/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
+
+## Other Tech Zone content

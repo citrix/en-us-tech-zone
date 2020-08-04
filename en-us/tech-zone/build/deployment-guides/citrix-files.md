@@ -293,3 +293,9 @@ AppData\Local\Citrix\Citrix Files\db
 ## Summary
 
 The Citrix Files for Windows Client software allows the secure saving, retrieving, and sharing of data. It works with the Content Collaboration service offering in Citrix Cloud - aggregating various back end cloud and on-premises data storage locations for a seamless experience. This deployment guide covered the specific steps necessary to install and configure the Citrix Files for Windows Client in a virtual app and desktop environment. The end result is an integrated solution with true single sign-on for users to access all of their files from any hosted-shared or VDI session.
+
+## Other Tech Zone content
+
+[Design -> Reference Architectures -> Content Collaboration with storage zones on Azure IaaS](/en-us/tech-zone/design/reference-architectures/storage-zones-azure-iaas.html) - Learn about the architecture and design considerations for deploying a customer-managed storage zone in Azure to provide the best user experience and security for Citrix Content Collaboration.
+
+[Design -> Reference Architectures -> Content Collaboration with on-premises storage zones](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html) - Learn about the architecture and design considerations for deploying an on-premises customer-managed storage zone to provide the best user experience and security for Citrix Content Collaboration.
