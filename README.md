@@ -1,3 +1,7 @@
+---
+layout: doc
+description: Documentation for Citrix Tech Zone contributors
+---
 # Citrix Tech Zone readme
 
 ## Welcome to Tech Zone
@@ -21,9 +25,10 @@ There are two different methods how you can become one of the contributors, depe
 #### Citrix employees
 
 1.  Create your GitHub account with two-factor authentication enabled
-2.  Accept contributors agreement: [https://docs.citrix.com/en-us/settings.html](https://docs.citrix.com/en-us/settings.html). **This is required step!**
+2.  Accept contributors agreement: [https://docs.citrix.com/en-us/settings.html](https://docs.citrix.com/en-us/settings.html). **This is a required step!**
 3.  Send us your GitHub user name (see [Contact Tech Zone administrators](#contact-tech-zone-administrators) section)
-4.  Wait for validation email – you have to confirm to become one of the Tech Zone contributors
+4.  Wait for validation email – you have to accept this invitation to become one of the Tech Zone contributors
+5.  Make sure that correct name and email address is configured in your GitHub Desktop (Settings -> Git)
 
 #### Everybody else
 
@@ -35,14 +40,14 @@ To make any changes to Tech Zone, you have to use a dedicated branch (think abou
 
 1.  Use one of the dedicated Slack channels to request new branch. Specify section of Tech Zone (e.g. Tech Insight) and title of the article (e.g. "Workspace app").
 2.  Wait for link to your new branch. You get it through Slack or by email from Tech Zone team.
-3.  When you click on link, GitHub web editor opens with article you are working on. This is similar experience to writing a blog post. Another option is to create a local copy of your article and use [Visual Studio Code](https://citrix.github.io/tech-marketing/projects/tech-zone/visual-studio-code-guide.html) for editing.
+3.  When you click on link, GitHub web editor opens with article you are working on. Read [Visual Studio Code (VSC) guide](https://citrix.github.io/tech-marketing/projects/tech-zone/visual-studio-code-guide.html) to learn how to create a local copy of this branch for editing.
 4.  After you are done with your article, make sure to update category section with a link to your article (e.g. tech-insights.md file) and [upload images](#adding-images).
 
 ### 3 - Create content
 
-As many other large companies (including Microsoft or Amazon), we are using de-facto industry standard language called markdown to create Tech Zone content. Markdown language is a simple, lightweight language that is easy to learn and allows us to create dynamic content. Think about markdown as a text-to-HTML conversion tool. It based on easy-to-read and easy-to-write plain text syntax, but first make sure to read [most common mistakes](#most-common-mistakes) section.
+As many other large companies (for example Microsoft or Amazon), we are using de-facto industry standard language called markdown to create Tech Zone content. Markdown language is a simple, lightweight language that is easy to learn and allows us to create dynamic content. Think about markdown as a text-to-HTML conversion tool. It is highly recommend to read the [most common mistakes](#most-common-mistakes) section first - there is a learning curve and this short list can greatly help you to quickly learn this language.
 
-There are two options for content creation / editing - you can use built-in web editor from GitHub (limited functionality) or you can use [Visual Studio Code (VSC)](https://citrix.github.io/tech-marketing/projects/tech-zone/visual-studio-code-guide.html) (recommended).
+As a markdown editor, we recommend to use [Visual Studio Code (VSC)](https://citrix.github.io/tech-marketing/projects/tech-zone/visual-studio-code-guide.html). Don't be discouraged by Visual Studio in name - this tool is not only for developers, but useful as a general text editor.
 
 #### Writing text
 
@@ -81,7 +86,7 @@ When you are referencing your images in markdown language, you can use two diffe
 
 For simple images (screenshots), use format `![descriptive text](image URL)` with relative URL, for example `/en-us/tech-zone/design/media/design-decisions_provisioning-solutions_diagram-explicit.png`.
 
-For images that should open full screen after clicking them, use format `[![descriptive text](image URL)](image URL)`. This will open image after reader clicks on it.
+For images that should open full screen after clicking them, use format `[![descriptive text](image URL)](image URL)`. This will open image after reader clicks on it. This is typically recommended for images such as diagrams.
 
 #### Using tables
 
