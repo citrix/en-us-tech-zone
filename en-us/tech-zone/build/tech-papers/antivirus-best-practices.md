@@ -309,3 +309,7 @@ Folders:
 [Provisioning Services Antivirus Best Practices](https://support.citrix.com/article/CTX124185)
 
 [Antivirus layering with Citrix App Layering](/en-us/citrix-app-layering/4/layer/layer-antivirus-apps.html)
+
+## Other Tech Zone content
+
+[Build -> Tech Papers -> Networking SSL / TLS Best Practices](/en-us/tech-zone/build/tech-papers/networking-tls-best-practices.html) - Tech Paper focused on SSL / TLS best practices for Citrix Networking deployments. We cover configuration items such as the certificate chain bound to the virtual server, cipher suite settings, and disabling older protocols that are vulnerable to attack.
