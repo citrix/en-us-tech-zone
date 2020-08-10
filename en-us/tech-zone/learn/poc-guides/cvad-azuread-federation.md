@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to implement a Proof of Concept environment consisting of Microsoft AAD Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC.
+description: Learn how to use Microsoft Azure Active Directory as an identity provider for Citrix Virtual Apps and Desktops with Citrix ADC using SAML.
 ---
 # Proof of Concept Guide: Microsoft Azure Active Directory Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC
 
