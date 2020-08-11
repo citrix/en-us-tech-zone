@@ -25,7 +25,7 @@ The guide demonstrates how to implement a Proof of Concept environment for Micro
 It makes assumptions about the installation, or configuration of certain components:
 
 *  An Active Directory Server is installed on-premises and you can log in as Domain Admin.
-*  An Azure tenant is available with a P2 license and you can log in as a Global Admin.
+*  An Azure tenant is available with a P2 license and you can log in as Global Admin.
 *  A Citrix ADC appliance has been installed and licensed. Also it has a Citrix Gateway virtual server configured to provide access to an on-premises Citrix Virtual Apps and Desktops environment. Use Version 13 build 60, or higher.
 *  A Delivery Controller, StoreFront, and VDA are installed, and configured to delivery virtual apps, or desktops for domain users. Use version 2006, or higher.
 *  A virtual machine is available, or another server has enough capacity to install FAS. The DDC, FAS, and StoreFront are all installed on the same server in this POC.
@@ -42,13 +42,13 @@ To configure Active Directory (AD) and Azure Active Directory (AAD) perform the 
 1.  Log in to your AD domain controller.
 1.  Open **Server Manager > Tools > Active Directory Domains and Trusts**
 1.  Right-click, select **Properties** and enter the UPN Suffix for users corresponding to one of your AAD domains.
-![AAD-IdP + CVAD + FAS + ADC-SP architecture](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adalternativeupnsuffix.png)
+![Alt UPN Suffix](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adalternativeupnsuffix.png)
 
 #### AD Users
 
 1.  On your AD domain controller open **Server Manager > Tools > Active Directory Users and Computers**.
 1.  Right-click and select **New > User**, or edit an existing one
-1.  **Under Properties > Account set the UPN** to the new Suffix. ![AAD-IdP + CVAD + FAS + ADC-SP architecture](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-aduser.png)
+1.  **Under Properties > Account set the UPN** to the new Suffix. ![AD User](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-aduser.png)
 
 #### Microsoft Azure Active Directory Connect
 
@@ -60,7 +60,7 @@ Azure AD Connect is a tool for connecting on-premises identity infrastructure to
 4.  You are prompted to log in as a Global AAD admin and as a Domain Services admin.
 5.  For installation on a single AD virtual machine you can follow express settings. After it verifies UPN Suffixes it makes a full sync of all users, groups, and contacts.
 
-See [using Azure AD Connect express settings](/en-us/azure/active-directory/hybrid/how-to-connect-install-express) for more information.
+See [using Azure AD Connect express settings](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-install-express) for more information.
 
 #### Certificate Authority
 
