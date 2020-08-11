@@ -8,7 +8,7 @@ description: Learn how to migrate your Citrix Endpoint Management policies and a
 
 **Author:** [Hubert Krautter](https://www.linkedin.com/in/hubert-krautter-813a1572/)
 
-**Special thanks:**  [Martin Zugec](https://twitter.com/MartinZugec), Chetan Takker, Johnathan Campos
+**Special thanks:**  [Martin Zugec](https://twitter.com/MartinZugec), Chetan Takker, Johnathan Campos, Jeroen J.V Lebon
 
 ## Introduction
 
@@ -138,7 +138,7 @@ This iFrame allows you to upload to Google play without creating a google develo
 
 In the **Endpoint Management Console**, click configure > Apps and select Enterprise Apps and upload the apk. The upload button opens the managed Google Play store.
 
-Screenshot
+[![da-to-ae-migration-Image-01](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_12.png)](/en-us/tech-zone/build/media/deployment-guides_android-device-administrator-to-android-enterprise_12.png)
 
 ## Add private Android Enterprise apps as MDX-wrapped Enterprise app
 
@@ -152,7 +152,7 @@ Your output is:
 -  Upload the .apk to Google Play (similar to the non-mdx apps above)
 -  Goto **publish MDX app** and upload the mdx file
 
-For more details and wrapping example [visit](/en-us/citrix-endpoint-management/apps.html#add-private-android-enterprise-apps-as-mdx-wrapped-enti%20just%20erprise-apps)
+For more details and wrapping example [visit](/en-us/citrix-endpoint-management/apps.html#add-private-android-enterprise-apps-as-mdx-enabled-enterprise-apps)
 
 ## Editing Existing Policies for the Correct Device Type Android (Legacy DA) and Android Enterprise (AE
 

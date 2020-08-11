@@ -201,6 +201,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Getting Started with Citrix Virtual Apps and Desktop Service](/en-us/tech-zone/learn/poc-guides/cvads.html) - Learn how to get started with Citrix Virtual Apps and Desktop Service to deliver virtual apps and desktops to your end users while having the management plane hosted on Citrix Cloud.
 
+[Microsoft Azure Active Directory Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC](/en-us/tech-zone/learn/poc-guides/cvad-azuread-federation.html) - Learn how to use Microsoft Azure Active Directory as an identity provider for Citrix Virtual Apps and Desktops with Citrix ADC using SAML.
+
 [Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html) - Learn how to deliver the Citrix® HDX™ Optimization for Microsoft® Teams in a Citrix environment. The optimization offers clear, crisp high-definition video calls, audio-video or audio-only calls to and from other Teams users, optimized Teams’ users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
 
 [Remote PC Access with Citrix Virtual Desktops service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html) - Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from anywhere and on any device.
@@ -272,6 +274,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [Deploying Azure Files for Citrix Profile Management and Citrix User personalization layers](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html) - Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management.
 
 [Migrating Citrix Virtual Apps and Desktops from on-premises to Citrix Cloud](/en-us/tech-zone/build/deployment-guides/cvads-migration.html) - Learn how to migrate your on-premises Citrix Virtual Apps and Desktops environment to Citrix Cloud.
+
+[Migrating Citrix Virtual Apps and Desktops from VMware vSphere to Citrix Virtual Apps and Desktops service on Microsoft Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html) - Learn how to migrate your on-premises Citrix Virtual Apps and Desktops to Citrix Cloud and your on-premises VMware vSphere to Microsoft Azure.
 
 ### [Build - Tech Papers](/en-us/tech-zone/build/tech-papers.html)
 
