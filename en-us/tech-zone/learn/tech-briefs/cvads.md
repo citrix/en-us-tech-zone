@@ -18,23 +18,23 @@ Users get flexibility and consistency. They are no longer tied to a specific end
 
 IT gets benefits from this hybrid cloud offering as well. First, you get data security and IP protection since your workloads are hosted and managed by you. You can deploy and manage desktops and applications from Citrix Cloud services, even if all workloads are hosted on-premises. Our set of admin tools enables you to deploy to cloud and on-prem locations as your implementation evolves. You can conveniently host apps depending upon use cases. What’s more, you can move to the cloud as it suits your business needs.  
 
-Many on-premises Virtual Apps and Desktop environments are outdated because administrators don’t have the time to manually address patches and upgrades. Not only does this degrade the user experience, but also, it poses security threats to your organization. Citrix Virtual Apps and Desktops service enables you to maintain complete control over your applications, policies, and users as you offload control plane maintenance, patching, and upgrades to Citrix. This ensures your environment is always up to date.
+Many on-premises Virtual Apps and Desktop environments are outdated because administrators don’t have the time to manually address patches and upgrades. Not only do outdated environments degrade the user experience, but also, they pose security threats to your organization. Citrix Virtual Apps and Desktops service enables you to maintain complete control over your applications, policies, and users. But you offload control plane maintenance, patching, and upgrades to Citrix. This ensures your environment is always up to date.
 
-Customers who have made the switch to Citrix Cloud services can rapidly scale their environments, flex to address unexpected business conditions, and deploy new features easily – all without having to deploy new infrastructure.
+Customers who have made the switch to Citrix Cloud services can rapidly scale their environments, flex to address unexpected business conditions, and deploy new features easily. All without having to deploy new infrastructure.
 
 ## Why Migrate to Citrix Virtual Apps and Desktop service
 
 Migrating to the Citrix Virtual Apps and Desktops service lets IT focus on business needs and end-users take advantage of the latest features and functionality. Citrix Cloud services help you transition to cloud at your own pace. With a hybrid, multi-cloud approach, you have the flexibility to choose the appropriate data center or cloud to host each application.
 
-Citrix Virtual Apps and Desktop service is cloud and hypervisor agnostic. You avoid lock-in and give your organization true resource flexibility. Citrix Cloud services give your business the agility needed to respond to a disaster recovery or business continuity event without having to deploy new infrastructure. These services also allow you to adapt your workspace to address new use cases quickly and easily. You get enhanced visibility and control over all your Citrix infrastructure. Below are just some of the reasons why to use Citrix Virtual Apps and Desktop service.
+Citrix Virtual Apps and Desktop service is cloud and hypervisor agnostic. You avoid lock-in and give your organization true resource flexibility. Citrix Cloud services give your business the agility needed to respond to a disaster recovery or business continuity event without having to deploy new infrastructure. These services also allow you to adapt your workspace to address new use cases quickly and easily. You get enhanced visibility and control over all your Citrix infrastructure. Some of the reasons why to use Citrix Virtual Apps and Desktop service are listed below.
 
 ### Global Availability
 
-Citrix Cloud is deployed in multiple regions worldwide and has a Service Level Agreement (SLA) of 99.5% monthly uptime. To ensure the best user experience, Citrix Virtual Apps and Desktop Service can be deployed in conjunction with Citrix Gateway Service. Citrix Intelligent Traffic Management (ITM) ensures fast and reliable sessions.
+Citrix Cloud is deployed in multiple regions worldwide and has a Service Level Agreement (SLA) of 99.5% monthly uptime. To ensure the best user experience, Citrix Virtual Apps and Desktop Service can be deployed with Citrix Gateway Service. Citrix Intelligent Traffic Management (ITM) ensures fast and reliable sessions.
 
-In a traditional on-prem environment, customers architect and design the environment to include multiple sites so that end-users can access their applications and desktops even if there is an outage. Because Citrix Cloud is available in multiple points of presence (POPs) around the world, it delivers optimal uptime and eliminates the need for administrators to deploy in multiple sites.
+In a traditional on-prem environment, customers architect and design the environment to include multiple sites. This ensures end-users can access their applications and desktops even if there is an outage. Because Citrix Cloud is available in multiple points of presence (POPs) around the world, it delivers optimal uptime and eliminates the need for administrators to deploy in multiple sites.
   
-Citrix Gateway service operates in conjunction with ITM in multiple POPs throughout the world. If for any reason, a POP goes down or if the connectivity is degraded, Citrix ITM responds to subsequent domain name system (DNS) queries from the next closest POP. More information is available [here](/en-us/tech-zone/learn/tech-briefs/gateway-hdxproxy.html).
+Citrix Gateway service operates with ITM in multiple POPs throughout the world. If for any reason, a POP goes down or if the connectivity is degraded, Citrix ITM responds to subsequent domain name system (DNS) queries from the next closest POP. More information is available [here](/en-us/tech-zone/learn/tech-briefs/gateway-hdxproxy.html).
 
 Citrix Cloud has a global presence. A global footprint enables you to choose a centrally located control plane region to serve your users. You can choose between United States, European Union, or Asia Pacific regions to ensure the best performance. Your published apps and desktops can be hosted in any location worldwide. Policy controls enforce data sovereignty and protect intellectual property.
 
@@ -46,31 +46,31 @@ You can choose which hosting location or type makes the most sense for your busi
 
 ### Image Management
 
-A sophisticated provisioning system allows IT to scale up Citrix deployments to tens of thousands of users. Administrators can choose to use either Machine Creation Services (MCS) or Citrix Provisioning Services (PVS) to create machine catalogs. This helps administrators maintain their images throughout their lifecycles and ensure that they remain consistent even as patches or new applications need to be installed. MCS operates by cloning a master image to create identical VMs within the catalog that your users access. Citrix Provisioning is a streaming technology that streams OS images to the virtual machines.
+A sophisticated provisioning system allows IT to scale up Citrix deployments to tens of thousands of users. Administrators can choose to use either Machine Creation Services (MCS) or Citrix Provisioning Services (PVS) to create machine catalogs. These tools help administrators maintain their images throughout their lifecycles and ensure that they remain consistent even as patches or new applications need to be installed. MCS operates by cloning a master image to create identical VMs within the catalog that your users access. Citrix Provisioning is a streaming technology that streams OS images to the virtual machines.
 
-Citrix’s App Layering technology allows for the same image and applications to be used across different hypervisors or platforms. It reduces the time required to manage Windows applications and images. This is achieved by separating the OS, the platform tools, and the applications in separate layers. When it comes time to update an individual component, it gets propagated across all the images that have that specific layer. This significantly reduces image sprawl, and saves valuable time maintaining your environment
+Citrix’s App Layering technology allows for the same image and applications to be used across different hypervisors or platforms. It reduces the time required to manage Windows applications and images. This time savings are achieved by separating the OS, the platform tools, and the applications in separate layers. When it comes time to update an individual component, it gets propagated across all the images that have that specific layer. App Layering significantly reduces image sprawl, and saves valuable time maintaining your environment
 
-There are additional ways to realize the cost benefits of virtualization at scale. *User personalization layers* offer user-based customizations in non-persistent virtual environments. This provides users with an experience that mimics that of a dedicated desktop while offering the management and cost savings of a non-persistent Windows image.
+There are more ways to realize the cost benefits of virtualization at scale. *User personalization layers* offer user-based customizations in non-persistent virtual environments. User layers provide users with an experience that mimics that of a dedicated desktop while offering the management and cost savings of a non-persistent Windows image.
 
-In this type of deployment, users are provisioned a shared Windows instance for their desktops.   As users log in, a user layer with their specific customizations is generated. This allows their profile settings, data, and locally installed applications to persist in a portable container. When users log off, the desktop session is destroyed. However, individual data is retained and seamlessly applied at the next login. This happens regardless of whether users are assigned the same -- or different -- back-end Windows instances.
+In this type of deployment, users are provisioned a shared Windows instance for their desktops. As users log in, a user layer with their specific customizations is generated. This user layer allows their profile settings, data, and locally installed applications to persist in a portable container. When users log off, the desktop session is destroyed. However, individual data is retained and seamlessly applied at the next login. This happens regardless of whether users are assigned the same -- or different -- back-end Windows instances.
 
 You can enable the following user layers:
 
--  **Full User Layer:** This includes all of the user’s data, settings, and locally installed applications are stored within the user layer
--  **Office 365:** This is for desktop OS and it saves only the user’s Outlook data and settings
--  **Session Office 365:** This is for server OS and it saves only the user’s Outlook data and settings
+-  **Full User Layer:** includes all of the user’s data, settings, and locally installed applications are stored within the user layer
+-  **Office 365:** for desktop OS and it saves only the user’s Outlook data and settings
+-  **Session Office 365:** for server OS and it saves only the user’s Outlook data and settings
 
 Find more information on user layers [here](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html).
 
-### Leveraging Microsoft Windows Virtual Desktop (WVD) in Azure
+### Microsoft Windows Virtual Desktop (WVD) in Azure
 
-If maximizing Microsoft entitlements is your goal, Citrix extends the Microsoft Windows Virtual Desktop platform with enhancements targeted at experience, security, and choice. Windows Virtual Desktop (WVD) includes new multi-user Windows 10 capabilities. End-users get a familiar Windows 10 experience, and IT can still take advantage of the scalability of a multi-user operating system (OS). Citrix administrators can leverage Windows Virtual Desktop while using Citrix’s robust management tools, optimized HDX, and networking capabilities. The long-standing Citrix partnership with Microsoft affords cost-effective ways for customers to shift capacity into the cloud. Technologies like Citrix Autoscale enable cost savings by balancing workloads between fixed-capacity data centers and consumption-based flexible clouds. Autoscale is designed to automate management of virtual machines in a Citrix environment to reduce cost. You can find more information on Autoscale [here](/en-us/tech-zone/learn/tech-briefs/autoscale.html).
+If maximizing Microsoft entitlements is your goal, Citrix extends the Microsoft Windows Virtual Desktop platform with enhancements targeted at experience, security, and choice. Windows Virtual Desktop (WVD) includes new multi-user Windows 10 capabilities. End-users get a familiar Windows 10 experience, and IT can still take advantage of the scalability of a multi-user operating system (OS). Citrix administrators can use Windows Virtual Desktop while using Citrix’s robust management tools, optimized HDX, and networking capabilities. The long-standing Citrix partnership with Microsoft affords cost-effective ways for customers to shift capacity into the cloud. Technologies like Citrix Autoscale enable cost savings by balancing workloads between fixed-capacity data centers and consumption-based flexible clouds. Autoscale is designed to automate management of virtual machines in a Citrix environment to reduce cost. You can find more information on Autoscale [here](/en-us/tech-zone/learn/tech-briefs/autoscale.html).
 
 ### Agility for Business Continuity and Disaster Recovery
 
-By leveraging the Citrix Cloud control plane, administrators are able to rapidly scale and use existing images to extend to cloud hosted workloads. This can be done without having to invest in additional infrastructure.  
+By using the Citrix Cloud control plane, administrators are able to rapidly scale and use existing images to extend to cloud hosted workloads. This can be done without having to invest in more infrastructure.  
 
-Preparation for business interruptions – whether planned or unplanned – often means that end users must work remotely for extended periods of time. With this in mind, business continuity plans need to be designed to scale quickly, to have little impact on the end-user experience, and to fit within the company’s security requirements. With Citrix Virtual Apps and Desktop Service, you can leverage the control plane and burst more users into a hybrid cloud without having to stand up additional infrastructure. More information on how Citrix can help you with your Business Continuity plans can be found [here]( /en-us/tech-zone/learn/tech-briefs/business-continuity.html).
+Preparation for business interruptions – whether planned or unplanned – often means that end users must work remotely for extended periods of time. With this in mind, business continuity plans need to be designed to scale quickly, to have little impact on the end-user experience, and to fit within the company’s security requirements. With Citrix Virtual Apps and Desktop Service, you can use the control plane and burst more users into a hybrid cloud without having to stand up additional infrastructure. More information on how Citrix can help you with your Business Continuity plans can be found [here]( /en-us/tech-zone/learn/tech-briefs/business-continuity.html).
 
 Citrix Cloud architecture is designed to handle multiple in-service failures during a business interruption. By using multiple regions and data centers, Citrix Cloud is “always ready” when availability is threatened by an unplanned event.
 
@@ -78,7 +78,7 @@ Citrix Cloud architecture is designed to handle multiple in-service failures dur
 
 Citrix Analytics, an intuitive analytics service, is a component of Citrix Workspace. Citrix Analytics provides two kinds of functionality – performance analytics and security analytics. Machine learning and advanced algorithms enable this solution to provide actionable insights. Citrix Analytics collects indicators across users, endpoints, network traffic, and files. Both security and performance analytics are managed from a single console.
 
-Security Analytics collects data from different Citrix products and generates actionable insights to protect your environment from malicious or compromised users. It continuously assesses the behavior of your end users and finds deviations from normal behaviors. This ensures that your corporate data is always protected.
+Security Analytics collects data from different Citrix products and generates actionable insights to protect your environment from malicious or compromised users. It continuously assesses the behavior of your end users and finds deviations from normal behaviors. Security Analytics ensures that your corporate data is always protected.
 
 Performance Analytics enables you to track, aggregate, and see key performance indicators collected from end user sessions. By having these insights, you can proactively tweak your environment to make sure end-users have the best possible user experience (UX). More information about analytics can be found [here](/en-us/tech-zone/learn/tech-briefs/analytics.html).
 
@@ -86,7 +86,7 @@ Performance Analytics enables you to track, aggregate, and see key performance i
 
 In a typical on-premises Virtual Apps and Desktop deployment, administrators find themselves managing multiple networking devices, configuring firewall rules, and juggling public IP addresses, all while replicating configurations across multiple sites. In many organizations, the Citrix team does not manage networking. This results in added complexity and the need for collaboration and cooperation between teams to deploy and track changes.
 
-Migrating to Citrix Virtual Apps and Desktop service with Citrix Gateway service enables IT to deliver the same experience to all users, regardless of whether they are employees, partners, third party suppliers, or contractors. The need for public IP addresses and SSL certificates is alleviated. So is the need for firewall rule changes.
+Migrating to Citrix Virtual Apps and Desktop service with Citrix Gateway service enables IT to deliver the same experience to all users. Regardless of whether they are employees, partners, third party suppliers, or contractors. The need for public IP addresses and SSL certificates is alleviated. So is the need for firewall rule changes.
 
 There are no networking appliances to manage, and no need to worry about installs or upgrades. Overall, rolling out the initial environment in addition to maintaining it is simpler and less prone to error. Below is an illustration of certain aspects of the administration that get removed by offloading Citrix Gateway to Citrix Cloud.
 
@@ -98,10 +98,10 @@ Below is a diagram of what is managed by Citrix and what is managed by the custo
 
 [![Citrix Virtual Apps and Desktops Service Cloud](/en-us/tech-zone/learn/media/tech-briefs_cvads_cloud.png)](/en-us/tech-zone/learn/media/tech-briefs_cvads_cloud.png)
 
-By hosting Virtual Delivery Agents (VDAs) in resource locations managed by the customer, the amount of data and information that is accessible to the Citrix Cloud control plane is limited. The only thing that the control plane has access to is metadata (machine names, application names, application shortcuts, etc). This keeps intellectual property secure. All communication between the customer’s resource location and the Citrix Cloud control plane is encrypted, using HTTPS port 443 through the TCP protocol. All connections are outbound. No inbound connections are accepted. Citrix only collects the necessary logs for troubleshooting any potential issues.
+By hosting Virtual Delivery Agents (VDAs) in resource locations managed by the customer, the amount of data and information that is accessible to the Citrix Cloud control plane is limited. The only thing that the control plane has access to is metadata (machine names, application names, application shortcuts, and so forth). This keeps intellectual property secure. All communication between the customer’s resource location and the Citrix Cloud control plane is encrypted, using HTTPS port 443 through the TCP protocol. All connections are outbound. No inbound connections are accepted. Citrix only collects the necessary logs for troubleshooting any potential issues.
 
 **Components Managed by Citrix:**
-All of the components that are managed by Citrix are kept highly available.
+All components that Citrix manages are kept highly available.
 
 -  **Studio:** management console that is used to configure your environment
 -  **Director:** monitoring tool that enables IT support and help desk personnel to troubleshoot issues
@@ -120,18 +120,18 @@ All of the components that are managed by Citrix are kept highly available.
     -  An FAQ on LTSR can be found [here](https://support.citrix.com/article/CTX205549).
 -  **Active Directory:** used for authentication and authorization, Active Directory authenticates users and ensures that they are getting access to appropriate resources. A subscriber’s identity defines the services to which they have access in Citrix Cloud. This identity comes from Active Directory domain accounts provided from the domains within the resource location.
 -  **Identity Provider:** the final authority for the user’s identity. The following identity providers are supported: on-premises Active Directory, Active Directory plus token, Azure Active Directory, Citrix Gateway, and Okta. An in-depth look at how Citrix Workspace handles identity and authentication can be found here en-us/tech-zone/learn/tech-briefs/workspace-identity.html
--  **App and Desktop Workloads:** The app and desktop instances published by Citrix customers can be on-prem, hosted in public clouds, or in a hybrid mixture of both. As mentioned above, Citrix provides many tools to simplify and facilitate how these session hosts are built and maintained. By allowing customers to maintain their session hosts, intellectual property is protected.
+-  **App and Desktop Workloads:** The app and desktop instances published by Citrix customers can be on-prem, hosted in public clouds, or in a hybrid mixture of both. Citrix provides many tools to simplify and facilitate how these session hosts are built and maintained. By allowing customers to maintain their session hosts, intellectual property is protected.
 
 **Components that can be managed either by Citrix or by Customer:**
 
--  **Citrix Gateway:** Used so external users can connect to internal resources. This can either be deployed and managed within the customer’s resource location or deployed and managed in Citrix Cloud.
--  **StoreFront:** Used as the web interface for access to applications and desktops. This is an optional component that can be installed within a customer’s data center, or the cloud-hosted Workspace can be used for additional functionality.
+-  **Citrix Gateway:** Used so external users can connect to internal resources. Citrix Gateway can either be deployed and managed within the customer’s resource location or deployed and managed in Citrix Cloud.
+-  **StoreFront:** Used as the web interface for access to applications and desktops. StoreFront is an optional component that can be installed within a customer’s data center, or the cloud-hosted Workspace can be used for more functionality.
 
-For more information on why you would host these on-premises vs cloud look at [Conceptual Architecture and Process Flow](/en-us/tech-zone/learn/tech-briefs/cvads.html#sconceptual-architecture-and-process-flow) section.
+For more information on why you would host these components on-premises vs cloud look at [Conceptual Architecture and Process Flow](/en-us/tech-zone/learn/tech-briefs/cvads.html#sconceptual-architecture-and-process-flow) section.
 
 ### Expand your Workspace
 
-Citrix Cloud allows you to easily extend beyond Virtual Apps and Desktops to provide your end users with a complete workspace. Additional Citrix Cloud services allow you to deploy, create, and manage workspaces with apps and data from a unified location. A description of these Citrix Cloud services can be found below:
+Citrix Cloud allows you to easily extend beyond Virtual Apps and Desktops to provide your end users with a complete workspace. Other Citrix Cloud services allow you to deploy, create, and manage workspaces with apps and data from a unified location. A description of these Citrix Cloud services can be found below:
 
 -  **Microapps:** allows users to interact with content and complete workflows without context switching or launching the full application. Microapps presents a single use case from a business application
 -  **Virtual Apps and Desktop Service:** delivers Windows, Linux, web, and SaaS applications or full virtual desktops
@@ -148,7 +148,7 @@ The goal is to provide end-users with a unified place to get work done. This wor
 
 As you can see, Citrix Workspace is a unified, secure, and intelligent work platform that transforms the employee experience by organizing, guiding, and automating all activities people need to do their best work. With Citrix Workspace, employees are more productive and engaged, while IT receives more visibility and control for simplified management, security, and compliance.
 
-All of the services needed to power are controlled by a unified admin console. This provides administrators with an easier way to manage multiple Citrix services. It also allows them to gain valuable insight across the entire Citrix environment. Below is a picture of the administrative console used to manage all of the Citrix Cloud services.
+All of the services needed to power are controlled by a unified admin console. This unified admin console provides administrators with an easier way to manage multiple Citrix services. It also allows them to gain valuable insight across the entire Citrix environment. Below is a picture of the administrative console used to manage Citrix Cloud services.
 
 [![Citrix Virtual Apps and Desktops Console](/en-us/tech-zone/learn/media/tech-briefs_cvads_console.png)](/en-us/tech-zone/learn/media/tech-briefs_cvads_console.png)
 
@@ -166,9 +166,9 @@ Each organization is different, so we’ve provided different options and associ
 
 In a Cloud Hosted Workspace and Gateway Service scenario, Citrix does the heavy lifting for you. Your team does not need to expend effort on deployment. Citrix keeps the environment evergreen.
 
-The Gateway Service must be used with Citrix Workspace. By deploying both the Workspace and Gateway service, the need to deploy Citrix Gateway appliance in the DMZ is alleviated and complexity is reduced. This scenario negates the need for public IP addresses, firewall changes, and networking devices. This means fewer components to manage.
+The Gateway Service must be used with Citrix Workspace. By deploying both the Workspace and Gateway service, the need to deploy Citrix Gateway appliance in the DMZ is alleviated and complexity is reduced. This scenario negates the need for public IP addresses, firewall changes, and networking devices. Resulting in fewer components to manage.
 
-Also, Citrix Gateway service is a highly resilient solution. Multiple instances of Gateway service are deployed in different geographic locations. This allows users to be redirected to the nearest POP in case of a failure. Optimal Gateway Routing ensures that users are always connected to the closest POP.
+Also, Citrix Gateway service is a highly resilient solution. Multiple instances of Gateway service are deployed in different geographic locations. Citrix Gateway service allows users to be redirected to the nearest POP in case of a failure. Optimal Gateway Routing ensures that users are always connected to the closest POP.
 
 Below you can find the associated process flow with this type of configuration.
 
@@ -178,7 +178,7 @@ Below you can find the associated process flow with this type of configuration.
 
 Customers can take advantage of their current investment if they already have gateway deployed on-premises. Customers who are using the Gateway on-premises for use cases like full VPN or micro VPN and would like to continue using it for virtual apps and desktops are able to do so. On-premises Gateway allows for advanced authentication options as well such as multifactor authentication (MFA) with RADIUS.
 
-Some use cases require customers to maintain Gateway on-premises, for example, those with highly secure environments that require endpoint analysis (EPA). EPA scans end-user devices for certain security requirements. With this information, it determines if they are allowed to enter the environment and what policies must be applied.
+Some use cases require customers to maintain Gateway on-premises, for example, customers with highly secure environments that require endpoint analysis (EPA). EPA scans end-user devices for certain security requirements. With this information, it determines if they are allowed to enter the environment and what policies must be applied.
 
 Below you can find the associated process flow with this type of configuration.
 
@@ -188,7 +188,7 @@ Below you can find the associated process flow with this type of configuration.
 
 For organizations that want to retain control of authentication on-premises, a great option is StoreFront and Gateway deployed on-premises. In this scenario, end-users aren’t entering their passwords into a cloud service. Also, certain features such as Local Host Cache require StoreFront to be located on-premises. Local Host Cache allows users to continue working even when the Cloud Connectors have lost communication with Citrix Cloud.
 
-If customers require more advanced authentication settings like federated authentication, this also requires deployment of an on-premises StoreFront. Federated Authentication services dynamically issue certificates for users, enabling users to log in as if they had smart cards. This allows StoreFront to use a broad range of authentication protocols like SAML.
+If customers require more advanced authentication settings like federated authentication, they would require an on-premises StoreFront. Federated Authentication services (FAS) dynamically issue certificates for users, enabling users to log in as if they had smart cards. FAS allows StoreFront to use a broad range of authentication protocols like SAML.
 
 Below you can find the associated process flow with this type of configuration.
 
@@ -206,7 +206,7 @@ Virtual Apps and Desktop service can be used to deliver different types of deskt
 -  **Shared Linux Desktop:** a Linux desktop interface running on a sever-based OS, accessible to many users.
 -  **Pooled Windows Desktop:** a randomly assigned desktop-based Windows OS, accessible to a single user.
 -  **Pooled Linux Desktop:** a randomly assigned desktop-based Linux OS, accessible to a single user
--  **Personal Windows Desktop:** a statically assigned desktop-based Windows OS.   (accessible to a single user)
+-  **Personal Windows Desktop:** a statically assigned desktop-based Windows OS. (accessible to a single user)
 -  **Personal Linux Desktop:** a statically assigned desktop-based Linux OS (accessible to a single user)
 -  **Pro Graphics Desktop:** a virtual desktop using a hardware-based graphical processing unit (GPU), accessible to a single user
 -  **Remote PC Access:** a traditional Windows PC available to a remote user
