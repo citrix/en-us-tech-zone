@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: In this document, you'll discover how to migrate from Citrix Virtual Apps and Desktops to Citrix Virtual Apps and Desktops service and from VMware vSphere on-premises to Microsoft Azure. Migrating to cloud resources modernizes your deployment, providing enhanced elasticity, scalability, and management. The guidance documented here is based on a deployment in a Citrix- and Microsoft-reviewed and approved lab environment. The initial and final deployments represent typical customer environments.
+description: Learn how to migrate your on-premises Citrix Virtual Apps and Desktops to Citrix Cloud and your on-premises VMware vSphere to Microsoft Azure.
 ---
 # Migrating Citrix Virtual Apps and Desktops from VMware vSphere to Citrix Virtual Apps and Desktops service on Microsoft Azure
 
@@ -552,7 +552,7 @@ In this section, we migrate to the Citrix Gateway service and Citrix Workspace, 
 
 1.  Click **Home > Workspace Configuration**.
 
-    ![Workspace configuration in Citrix Cloud](/en-us/tech-zone/build/media/deployment-guides_azure-workspace-configuration.png)
+    ![Workspace configuration in Citrix Cloud](/en-us/tech-zone/build/media/deployment-guides_azure-citrix-migration_azure-workspace-configuration.png)
 
 1.  Edit the Workspace URL and provide a name that meets your requirements. Click **Save**.
 

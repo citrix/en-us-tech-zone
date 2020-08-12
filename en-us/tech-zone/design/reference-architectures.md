@@ -75,6 +75,8 @@ Just as buildings have blueprints that include details about their structure and
 
 [Architectural Considerations for the General Data Protection Regulation - GDPR](/en-us/tech-zone/design/reference-architectures/gdpr.html) - Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.
 
+[Federated Authentication Service](/en-us/tech-zone/design/reference-architectures/federated-authentication-service.html) - Learn about Federated Authentication Service, authentication delegation and how to use seamless web authentication methods to log in to Windows environments for both Citrix Cloud and on-premises deployments.
+
 ## Third Party Content
 
 [3rd Party Reference Architectures](/en-us/tech-zone/design/reference-architectures/3rd-party.html) - View reference architectures created by our industry partners on joint technical solutions.
