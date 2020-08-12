@@ -195,7 +195,7 @@ The Workspace Authentication configuration page enabled with the new option "Con
 
 [![Federated-Authentication-Service-Image-7](/en-us/tech-zone/design/media/reference-architectures_federated-authentication-service_007.png)](/en-us/tech-zone/design/media/reference-architectures_federated-authentication-service_007.png)
 
-When users start accessing the environment using the Workspace URL `https:\\citrix.cloud.com\go\mycompany`, users get redirected to the corresponding Identity providers based on the configuration. In this case, the user gets redirected to the Azure provided sign-in page. The user enters valid Azure AD credentials, and then the browser is redirected back to Citrix Workspace and presented with the resources page where it shows the Apps and Desktops, which are assigned to the user.
+When users start accessing the environment using the Workspace URL, users get redirected to the corresponding Identity providers based on the configuration. In this case, the user gets redirected to the Azure provided sign-in page. The user enters valid Azure AD credentials, and then the browser is redirected back to Citrix Workspace and presented with the resources page where it shows the Apps and Desktops, which are assigned to the user.
 
 The session launch processes, along with the FAS authentication workflow, are discussed at the end of all layers.
 
