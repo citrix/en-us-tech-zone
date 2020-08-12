@@ -47,9 +47,9 @@ This tech brief showcases the value add provided by various feature sets in Citr
 
 Effective management of Windows Virtual Desktop resources is important to be able to reduce cost while ensuring the best possible user experience. The simpler it is to manage the environment; the quicker it is to remediate user issues; the easier the administrator’s job is. To that end Citrix provides several features:
 
-*  [Hybrid Cloud Management](#hybrid-cloud-manageent) from a single console
+*  [Hybrid Cloud Management](#hybrid-cloud-management) from a single console
 *  [Image management and brokering](#image-management-and-brokering)
-*  Cost optimization using [active power management](#autoscale), [Azure On-Demand provisioning](#azure-on-demand-provisioning), and [MCS I/O optimization](#mcs-i/o-optimization)
+*  Cost optimization using [active power management](#autoscale), [Azure On-Demand provisioning](#azure-on-demand-provisioning), and [MCS I/O optimization](#mcs-io-optimization)
 
 ### Hybrid Cloud management
 
@@ -283,7 +283,7 @@ Using HDX technologies and creating optimizations for the delivery of high-quali
 
 Citrix is at the forefront of development of these technologies, some of which are:
 
-*  [Browser content redirection](#browser-content-redirection-(BCR))
+*  [Browser content redirection](#browser-content-redirection-bcr)
 *  [Microsoft Teams Optimization](#teams-optimization)
 
 ### Browser content redirection (BCR)
@@ -528,5 +528,7 @@ The following is a list of the features that were discussed in the detail in the
 1.  Workspace – Enhances the user experience by integrating the WVD based resources into a Workspace that helps, organize, guide, and automate work for the user.
 
 Call to action:
-For a trial of Citrix Virtual Apps and Desktops service click [here](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/inquiry/)
-For a trial of Citrix Managed Desktops service click [here](https://www.citrix.com/products/citrix-managed-desktops/form/inquiry/)
+
+For a trial of Citrix Virtual Apps and Desktops service click [here](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/inquiry/).
+
+For a trial of Citrix Managed Desktops service click [here](https://www.citrix.com/products/citrix-managed-desktops/form/inquiry/).
