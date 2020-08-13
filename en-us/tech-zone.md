@@ -359,6 +359,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Architectural Considerations for the General Data Protection Regulation - GDPR](/en-us/tech-zone/design/reference-architectures/gdpr.html) - Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.
 
+[Federated Authentication Service](/en-us/tech-zone/design/reference-architectures/federated-authentication-service.html) - Learn about Federated Authentication Service, authentication delegation and how to use seamless web authentication methods to log in to Windows environments for both Citrix Cloud and on-premises deployments.
+
 ### [Build - Tech Papers](/en-us/tech-zone/build/tech-papers.html)
 
 [Endpoint Security, Antivirus and Antimalware Best Practices](/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html) - Tech Paper focused on proper configuration, and recommendations for running antivirus solution in Citrix Virtual Apps & Desktops environments. Recommended exclusions, configuration, and leading practices.
