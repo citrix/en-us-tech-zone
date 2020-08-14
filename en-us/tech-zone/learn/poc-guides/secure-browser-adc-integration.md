@@ -202,6 +202,8 @@ Set up the ADC as a proxy to route the traffic from the client browser to the In
 
 1.  Open SSH Session to ADC management address, log in with credentials you used while provisioning the ADC from Azure
 
+#### Set up TCP Profile and vServer
+
 1.  Get the `virtualip` from the steps in Section 2 and input in the command (in this example 10.1.0.5)
 
 1.  Run the following commands with the `sslproxy` address for example, `virtualip`:
