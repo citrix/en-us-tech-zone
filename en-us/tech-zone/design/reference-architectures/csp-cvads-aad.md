@@ -7,6 +7,7 @@ description: Copy & paste description from TOC here
 ## Contributors
 
 **Author:** [JP Alfaro](https://www.linkedin.com/in/jp-alfaro-b2bb03b2/)
+
 **Special thanks:** [Darren Harding](https://www.linkedin.com/in/hardingdarren/), [Selma Wei](https://www.linkedin.com/in/selmawei/), [Armando Rodriguez](https://www.linkedin.com/in/alearh/), [Daniel Lugo](https://www.linkedin.com/in/daniel-lugo-8358882/)
 
 ## Architecture
@@ -140,25 +141,25 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 *  Custom domain accounts:
     *  Login using UPN (user@domain.com): Login successful
     *  Login using NetBIOS (domain\user): Login successful
-*  Onmicrosoft.com accounts:
-    *  Login using UPN (user@domain.onmicrosoft.com): Login unsuccessful[^1]
-    *  Login using NetBIOS (domain\user): Login successful[^2]
+*  Onmicrosoft domain accounts:
+    *  Login using UPN (user@domain.onmicrosoft.com): Login unsuccessful _(1)_
+    *  Login using NetBIOS (domain\user): Login successful _(2)_
 *  B2B accounts (guests):
     *  Login using UPN (user@domain.com): Login unsuccessful
-    *  Login using NetBIOS (domain\user): Login unsuccessful[^3]
+    *  Login using NetBIOS (domain\user): Login unsuccessful _(3)_
 
 **_NOTE:_**  
-[^1] Adding an alternate UPN name is not allowed on Azure ADDS, so these users cannot login via UPN.
+_(1)_ Adding an alternate UPN name is not allowed on Azure ADDS, so these users cannot login via UPN.
 
-[^2] This works properly because the NetBIOS name is the same for all users.
+_(2)_ This works properly because the NetBIOS name is the same for all users.
 
-[^3] These users cannot authenticate against Azure ADDs, even though they are synchronized, Azure does not have access to their password hash.
+_(3)_ These users cannot authenticate against Azure ADDs, even though they are synchronized, Azure does not have access to their password hash.
 
 ## Implementation
 
-## Azure Components
+### Azure Components
 
-### Step 1: Create a Resource Group for Azure ADDS
+#### Step 1: Create a Resource Group for Azure ADDS
 
 1- On the Azure portal menu, select Resource Groups, and click **Add**
 
@@ -185,7 +186,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 *  Repeat these steps to create resource groups for customer resources, networks, and more.
 *  Optionally, you can pre-create resource groups for Citrix Machine Creation Services to utilize. Machine Creation Services (MCS) can only utilize empty resource groups.
 
-### Step 2: Create the Azure ADDS VNet
+#### Step 2: Create the Azure ADDS VNet
 
 1- On the Azure portal menu, select **Virtual Networks**, and click **Add**.
 
@@ -223,7 +224,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 
 *  Repeat these steps to create customer networks, both in the same subscription, or any additional subscription.
 
-### Step 3: Configure VNet Peerings
+#### Step 3: Configure VNet Peerings
 
 1- On the Azure portal menu, select **Virtual Networks**, and select the **VNET** where ADDS will be deployed.
 
@@ -258,7 +259,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 
 *  Repeat these steps to peer other customer (spoke) networks.
 
-### Step 4: Create the Azure AD Domain Services instance
+#### Step 4: Create the Azure AD Domain Services instance
 
 1- On the Azure search bar, type **Domain Services**, and click **Azure AD Domain Services**
 
@@ -336,7 +337,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 
 *  The process to create the Azure ADDS instance can take up to 1 hour.
 
-### Step 5: Configure DNS for the Azure ADDS VNET
+#### Step 5: Configure DNS for the Azure ADDS VNET
 
 1- Once the Azure ADDS instance has been created, under **Update DNS server settings for your virtual network**, click **Configure**
 
@@ -347,7 +348,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 *  This step automatically configures the DNS settings of the VNET where the Azure ADDS instance was created (Hub network). Once configured, all DNS queries are forwarded to the managed domain controllers.
 *  Customer networks (spokes) must have their DNS settings updated manually.
 
-### Step 6: Configure DNS for the customer networks
+#### Step 6: Configure DNS for the customer networks
 
 1- On the Azure portal menu, select **Virtual Networks**, and select your customer (spoke) VNET.
 
@@ -361,7 +362,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 
 *  Repeat these steps for every customer (spoke) VNET, and any other external VNET that is peered to the VNET hosting the Azure ADDS instance.
 
-### Step 7: Configure Self Service Password Reset (SSPR)
+#### Step 7: Configure Self Service Password Reset (SSPR)
 
 1- On the Azure portal menu, select **Azure Active Directory**, and click **Password reset**
 
@@ -383,7 +384,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 *  You can optionally choose Selected to enable SSPR only to a subset of users.
 *  Next time the users login, they will be forced to register to SSPR.
 
-### Step 8: SSPR User Registration Process
+#### Step 8: SSPR User Registration Process
 
 1- When a user logs in, they are redirected to the **SSPR registration** screen and configure their authentication methods.
 
@@ -407,7 +408,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 *  Once this step is complete and the users reset their password, the password hash is synced from Azure AD to Azure ADDS.
 *  For synced users, the ADUC cannot be utilized to reset their password.
 
-### Step 9: Create the AD management VM
+#### Step 9: Create the AD management VM
 
 1- On the Azure portal menu, select **Virtual Machines**, and click **Add**
 
@@ -467,7 +468,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 
 *  Repeat the previous steps to create all additional VMs: Cloud Connectors, Master Images, and so forth and so forth and so on.
 
-### Step 10: Join the Management VM to the domain
+#### Step 10: Join the Management VM to the domain
 
 1- Connect to the instance via RDP and open Server Manager, and click **Add Roles and Features**
 
@@ -495,7 +496,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 *  RSAT tools installation is only required for the VMs used to manage the Azure ADDS instance.
 *  Make sure the password of the user account utilized to join the VMs to the Azure ADDS domain has been reset before attempting these steps.
 
-### Step 11: Create an Azure AD App Registration
+#### Step 11: Create an Azure AD App Registration
 
 1- On the Azure portal menu, select **Azure Active Directory > App registrations > + New registration**
 
@@ -579,9 +580,9 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 *  Repeat this step to add Contributor permissions to the registration on any additional subscription.
 *  If utilizing a secondary subscription belonging to a separate Azure AD tenant, a new app registration must be configured.
 
-## Citrix Components
+### Citrix Components
 
-### Step 1: Install the Cloud Connector
+#### Step 1: Install the Cloud Connector
 
 1- Connect to the Cloud Connector VM via RDP and use a web browser to navigate to [Citrix Cloud](https://citrix.cloud.com). Enter your Citrix Cloud credentials and click **Sign in**
 
@@ -624,7 +625,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 *  Cloud Connector installation can take up to 5 minutes.
 *  At a minimum, 2 Cloud Connectors must be configured per resource location.
 
-### Step 2: Configure the VDA Master Image
+#### Step 2: Configure the VDA Master Image
 
 1- Connect to the Citrix VDA master image VM via RDP and use a web browser to navigate to [Citrix Downloads](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/) and download the latest **Citrix VDA version**
 
@@ -684,7 +685,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 
 [![CSP-Image-084](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_084.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_084.png)
 
-### Step 3: Create an Azure Hosting Connection
+#### Step 3: Create an Azure Hosting Connection
 
 1- On the Citrix Cloud hamburger menu, navigate to **My Services > Virtual Apps and Desktops**
 
@@ -736,7 +737,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 
 [![CSP-Image-094](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_094.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_094.png)
 
-### Step 4: Create a Machine Catalog
+#### Step 4: Create a Machine Catalog
 
 1- In Citrix Studio, navigate to **Citrix Studio > Machine Catalogs**, and select **Create Machine Catalog**
 
@@ -820,7 +821,7 @@ Azure ADDS synchronizes user accounts from the Azure AD tenant under which is cr
 
 [![CSP-Image-109](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_109.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads-aad_109.png)
 
-### Step 5: Create a Delivery Group
+#### Step 5: Create a Delivery Group
 
 1- In Citrix Studio, navigate to **Citrix Studio > Delivery Groups**, and select **Create Delivery Group**
 
