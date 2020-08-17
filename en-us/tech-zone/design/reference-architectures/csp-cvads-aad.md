@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Copy & paste description from TOC here
+description: Citrix Virtual Apps and Desktops service implementation with Azure Active Directory Domain Services for CSPs Reference Architecture aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and implementation steps to leverage Azure AD Domain Services.
 ---
 # Citrix Virtual Apps and Desktops Service – Azure Implementation with Azure Active Directory Domain Services for CSPs
 
@@ -14,7 +14,7 @@ description: Copy & paste description from TOC here
 
 [Azure Active Directory Domain Services](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/overview) is a fully managed Active Directory service on Microsoft Azure. Not to be confused with Azure AD, which is a cloud-based identity and authentication service for Microsoft services, Azure AD Domain Services (ADDS) provides managed domain controllers. Azure ADDS includes enterprise features like domain-join and group policy. While Azure AD leverages modern authentication and authorization protocols like OpenID Connect and OAuth 2.0, Azure ADDS utilizes traditional protocols that rely on Active Directory, like LDAP and Kerberos. Azure AD Domain Services automatically synchronizes identities from Azure AD to your managed AD environment.
 
-Azure ADDS automatically deploys and manages highly available Active Directory domain controllers on your Azure subscription. Domain controller access is restricted, and you can only manage your domain by deploying management instances with Remote Server Administration tools. Additionally, Domain Admin and Enterprise Admin permissions are not available under the managed service. The Azure ADDS instance is deployed directly to a Virtual Network (VNet) within your subscription, resources can be deployed to the same VNet, or in different VNets. If resources are deployed to a different VNet, it must be connected to the Azure ADDS Vnet via a VNet peering.
+Azure ADDS automatically deploys and manages highly available Active Directory domain controllers on your Azure subscription. Domain controller access is restricted, and you can only manage your domain by deploying management instances with Remote Server Administration tools. Additionally, Domain Admin and Enterprise Admin permissions are not available under the managed service. The Azure ADDS instance is deployed directly to a Virtual Network (VNet) within your subscription, resources can be deployed to the same VNet, or in different VNets. If resources are deployed to a different VNet, it must be connected to the Azure ADDS VNet via a VNet peering.
 
 Azure ADDS can be deployed as a [user forest](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/concepts-resource-forest), or a resource forest. For this implementation, we are deploying Azure ADDS as a user forest, without configuring a trust to an external on-premises AD environment. Also, the Citrix Virtual Apps and Desktops service resources are deployed based on our [CSP reference architecture](/en-us/tech-zone/design/reference-architectures/csp-cvads.html).
 
