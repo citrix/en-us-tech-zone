@@ -33,7 +33,7 @@ Once the user successfully authenticates to Citrix Workspace with the primary id
 
 Many identity providers include strong authentication policy options, helping to secure the user’s primary authentication to Citrix Workspace. In cases where the identity provider only includes a single user name and password, like Active Directory, Citrix Workspace includes extra capabilities to improve primary authentication security, like [Time-based One Time Password](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#active-directory-with-totp).
 
-To gain a deeper understanding of the primary identity for Citrix Workspace, refer to the Workspace Identity Tech Brief.
+To gain a deeper understanding of the primary identity for Citrix Workspace, refer to the [Workspace Identity Tech Brief](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html).
 
 ## Secondary Identities
 
