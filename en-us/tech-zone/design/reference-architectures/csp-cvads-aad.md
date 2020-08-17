@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Copy & paste description from TOC here
+description: Citrix Virtual Apps and Desktops service implementation with Azure Active Directory Domain Services for CSPs Reference Architecture aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and implementation steps to leverage Azure AD Domain Services.
 ---
 # Citrix Virtual Apps and Desktops Service – Azure Implementation with Azure Active Directory Domain Services for CSPs
 
