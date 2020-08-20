@@ -199,7 +199,6 @@ Now we will test PUSH by registering a mobile device and authenticating into our
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regqrcodedisplay.png)
 1.  On your mobile device open your Citrix SSO app which is available for download from apps stores
 1.  Select Add New Token
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regqrcodedisplay.png)
 1.  Select Scan QR Code
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssoqrcode.png)
 1.  Select Aim your camera at the QR Code and once it's captured select Add
