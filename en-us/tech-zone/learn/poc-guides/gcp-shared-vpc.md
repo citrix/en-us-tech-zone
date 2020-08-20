@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: The Citrix Virtual Apps and Desktop service supports Shared VPC on Google Cloud Platform as a host resource. Learn how to use Machine Creation Services (MCS) to provision machines in a Shared VPC and manage them using Citrix Studio.
+description: Learn how to use Machine Creation Services (MCS) to provision machines in a Shared VPC on Google Cloud Platform (GCP) and manage them using Citrix Studio.
 ---
 # Google Cloud Platform (GCP) Shared VPC Support with Citrix Virtual Apps and Desktops
 
