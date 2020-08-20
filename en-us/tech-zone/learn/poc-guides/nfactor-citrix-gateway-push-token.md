@@ -223,7 +223,7 @@ Now we will test PUSH by registering a mobile device and authenticating into our
 
 ## Summary
 
-With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multi-factor authentication without making the user experience complex. Users can get access to all of their Workspaces resources by entering their standard domain user and password and simply confirming their identify with the push off a button in the  Citrix SSO app on their mobile device.
+With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multi-factor authentication without making the user experience complex. Users can get access to all of their Workspaces resources by entering their standard domain user and password and simply confirming their identify with the push off a button in the Citrix SSO app on their mobile device.
 
 ## References
 
