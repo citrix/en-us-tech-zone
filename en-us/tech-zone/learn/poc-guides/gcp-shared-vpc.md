@@ -76,15 +76,17 @@ In total, a maximum of four additional permissions must be granted to the Servic
 
     This permission is necessary to allow MCS to identify the subnets within the visible Shared VPCs.
 
-    > **Note**:
-    > This permission is already required for using Local VPCs but must also be assigned in the Shared VPC Host project.
+> **Note:**
+>
+> This permission is already required for using Local VPCs but must also be assigned in the Shared VPC Host project.
 
 -  compute.subnetworks.use - *May be* Mandatory (see below)
 
     This permission is necessary to utilize the subnet resources in the provisioned machine catalogs.
 
-    >**Note**:
-    >This permission is already required for using Local VPCs but must also be assigned in the Shared VPC Host Project.
+>**Note:**
+>
+>This permission is already required for using Local VPCs but must also be assigned in the Shared VPC Host Project.
 
 The last two items are noted as “*May be* Mandatory” because there are two different approaches to be considered when dealing with these permissions:
 
@@ -548,9 +550,9 @@ Consider the following:
 
 -  The list of virtual networks to choose from includes those from the local project, as well as those from the Shared VPC, as indicated by **(Shared)** appended to the network names.
 
-    >**Note**:
-    >
-    >If you do not see any networks with **Shared** appended to the name, click the **Back** button and verify you have chosen the correct Project. If you verify the project chosen is correct and still do not see any shared VPCs, something is misconfigured in the Google Cloud Console. See the [Commonly Encountered Issues and Errors](#commonly-encountered-issues-and-errors) later in this document.
+>**Note:**
+>
+>If you do not see any networks with **Shared** appended to the name, click the **Back** button and verify you have chosen the correct Project. If you verify the project chosen is correct and still do not see any shared VPCs, something is misconfigured in the Google Cloud Console. See the [Commonly Encountered Issues and Errors](#commonly-encountered-issues-and-errors) later in this document.
 
 ![Possible errors](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_044.jpg)
 
