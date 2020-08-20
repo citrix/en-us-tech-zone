@@ -32,6 +32,8 @@ description: View reference architectures created by our industry partners on jo
 
 ## HPE
 
+[Automation for HPE Simplivity and Citrix Cloud](https://citrixready.citrix.com/content/dam/ready/partners/he/hewlett-packard-enterprise/automation-for-hpe-simplivity-and-citrix-cloud/solution-brief-brochures.pdf) - This document is a step-by-step guide to automate the installation of Cloud Connectors using SimpliVity Citrix Plugin by deploying virtual machines (VMs), adding them to Active Directory (AD), downloading Citrix Cloud Connector and installing it.
+
 [HPE Synergy with NVIDIA GPU on Citrix Virtual Apps and Desktops Service for Healthcare](https://h20195.www2.hpe.com/V2/GetDocument.aspx?docname=a50001404enw) - Robust hybrid cloud solution for app and desktop delivery from composable infrastructure with GPU acceleration
 
 [HPE Reference Architecture for Citrix XenApp on HPE Synergy Platform](https://h20195.www2.hpe.com/v2/getdocument.aspx?docname=a00049199enw) - Delivering cost effective client virtualization with Citrix XenApp on VMware ESXi Server
