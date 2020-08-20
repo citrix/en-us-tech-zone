@@ -12,9 +12,9 @@ description: Learn how to implement a Proof of Concept environment consisting of
 
 ## Introduction
 
-Time Based One Time Passwords (TOTP) are an increasingly common method to provide an authentication that can increase security posture in conjunction with other factors. TOTP with PUSH takes advantage of mobile devices by allowing users to receive and accept authentication validation requests at their finger tips. The exchange is secured by applying a hash to a shared key, distributed during setup.
+Time Based One Time Passwords (TOTP) are an increasingly common method to provide an authentication that can increase security posture in conjunction with other factors. TOTP with PUSH takes advantage of mobile devices by allowing users to receive and accept authentication validation requests at their fingertips. The exchange is secured by applying a hash to a shared key, distributed during setup.
 
-Citrix Gateway supports push notifications for OTP, and can provide authentication for a variety of services including web services, VPN, and Citrix Virtual Apps and Desktops. In this POC Guide we will demonstrate using it for authentication in a Citrix Virtual Apps and Desktops environment.
+Citrix Gateway supports push notifications for OTP and, can provide authentication for a variety of services including web services, VPN, and Citrix Virtual Apps and Desktops. In this POC Guide we will demonstrate using it for authentication in a Citrix Virtual Apps and Desktops environment.
 
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_conceptualarchitecture.png)
 
@@ -25,7 +25,7 @@ The guide will demonstrate how to implement a Citrix Workspace Proof of Concept 
 It makes assumptions about the completed installation and configuration of the following components:
 
 *  Citrix Gateway installed, licensed and configure with an externally reachable vServer bound to a wildcard certificate.
-*  Citrix Gateway integrated with a Citrix Virtual Apps and Desktops environment which uses Ldap for authentication
+*  Citrix Gateway integrated with a Citrix Virtual Apps and Desktops environment which uses LDAP for authentication
 *  Citrix Cloud account established
 *  Endpoint with Citrix Workspace App installed
 *  Mobile device with Citrix SSO App installed
@@ -57,31 +57,31 @@ It makes assumptions about the completed installation and configuration of the f
     *  Customer ID - copy & paste the Client ID from the Citrix Cloud Identity and Access Management API Access page
 1.  Click Create
 
-### Ldap - authentication policy
+### LDAP - authentication policy
 
-1.  Next navigate to Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Actions > Ldap
+1.  Next navigate to Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Actions > LDAP
 1.  Select Add
 1.  Populate the following fields
     *  Name - a unique value
-    *  Server Name / IP address - select a FQDN or IP address for AD server/(s). We enter 192.168.64.50_LDAP
+    *  Server Name / IP address - select a FQDN or IP address for AD server/(s). We enter '192.168.64.50_LDAP'
     *  Base DN - enter the path to the AD user container. We enter 'OU=Team Accounts, DC=workspaces, DC=wwco, DC=net'
     *  Administrator Bind DN - enter the admin/service account to query AD to authenticate users. We enter 'workspacesserviceaccount@workspaces.wwco.net'
-    *  Confirm / Administrator Password - enter/confirm the admin/service account password
+    *  Confirm / Administrator Password - enter / confirm the admin / service account password
     *  Server Logon Name Attribute - in the 2nd field below enter 'userPrincipalName'
 1.  Select Create
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_ldapaction.png)
 For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-ldap-tsk.html)
 
-### Ldap - token storage policy
+### LDAP - token storage policy
 
-1.  Next navigate to Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Actions > Ldap
-1.  Select the Ldap policy created above and select create
+1.  Next navigate to Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Actions > LDAP
+1.  Select the LDAP policy created above and select create
 1.  Append OTP or any identifier to the name and unselect authentication
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_ldapotppolicyunauth.png)
-1.  Under Connection Settings verify the Base DN, Administrator Bind DN, and Password. **Be sure that the administrator user or service account is a member of domain administrators. This policy will be used to write the token registered by the users authenticator app in the userParameters attribute of their user object.**
+1.  Under Connection Settings verify the Base DN, Administrator Bind DN, and Password. **Be sure that the administrator user or service account is a member of domain administrators. This policy will be used to write the token registered by the user's authenticator app in the userParameters attribute of their user object.**
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_ldapotppolicyconnectionsettings.png)
 1.  Scroll down to Other Settings
-    *  OTP Secret - enter userParameters
+    *  OTP Secret - enter 'userParameters'
     *  Push Service - select the PUSH service policy created above
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_ldapotppolicyothersettings.png)
 1.  Select Create
@@ -97,60 +97,60 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 #### nFactor - Registration Flow
 
 1.  Select Add Policy and select Add again next to Select Policy
-1.  Enter authPol_OTPReg
-1.  Under Action Type select NO_AUTHN
+1.  Enter 'authPol_OTPReg'
+1.  Under Action Type select 'NO_AUTHN'
 1.  Select Expression Editor and build the expression by selecting the following in the drop down menus offered:
-    *  HTTP
-    *  REQ
-    *  COOKIE.VALUE(String) = NSC_TASS
-    *  EQ(String) = manageotp
+    *  'HTTP'
+    *  'REQ'
+    *  'COOKIE.VALUE(String) = NSC_TASS'
+    *  'EQ(String) = manageotp'
 1.  Select Done, followed by Create, followed by Add
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_nfactorauthpolotpreg.png)
 1.  Select the green plus sign next to the authPol_OTPReg policy to create a new factor
-1.  Enter OTPRegAD and select Create
+1.  Enter 'OTPRegAD' and select Create
 1.  In the box created select Add Schema
-1.  Select Add and enter lschema_SingleRegOTP
-1.  Under Schema Files navigate to LoginSchema, and select SingleAuthManageOTP.xml
+1.  Select Add and enter 'lschema_SingleRegOTP'
+1.  Under Schema Files navigate to LoginSchema, and select 'SingleAuthManageOTP.xml'
 1.  Select the blue select button, followed by Create, followed by Ok
 1.  In the same box select Add Policy and select Add again next to Select Policy
 1.  Enter authPol_LDAP for the name
 1.  Under Action Type select LDAP
-1.  Under Action select your first LDAP authentication action. We use 192.168.64.50_LDAP
+1.  Under Action select your first LDAP authentication action. We use '192.168.64.50_LDAP'
 1.  Under Expression enter true
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_nfactorauthpolldap.png)
 1.  Select Create followed by Add
-1.  Select the green plus sign next to the authPol_LDAP policy to create a new factor
-1.  Enter OTPRegDevice and select Create
+1.  Select the green plus sign next to the 'authPol_LDAP policy' to create a new factor
+1.  Enter 'OTPRegDevice' and select Create
 1.  In the same box select Add Policy and select Add again next to Select Policy
-1.  Enter authPol_OTPAuthDevice for the name
+1.  Enter 'authPol_OTPAuthDevice' for the name
 1.  Under Action Type select LDAP
-1.  Under Action select your newly created (second) LDAP authentication action. We use 192.168.64.50_LDAP_OTP
+1.  Under Action select your newly created (second) LDAP authentication action. We use '192.168.64.50_LDAP_OTP'
 1.  Under Expression enter true
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_nfactorotppolldap.png)
 1.  Select Create followed by Add
 
 #### nFactor - Authentication Flow
 
-1.  Select the blue plus sign under the authPol_OTPReg policy
-1.  Enter authPol_OTPAuth
-1.  Under Action Type select NO_AUTHN
+1.  Select the blue plus sign under the 'authPol_OTPReg' policy
+1.  Enter 'authPol_OTPAuth'
+1.  Under Action Type select 'NO_AUTHN'
 1.  Under Expression enter true
 1.  Select Create
-1.  Select the green plus sign next to the authPol_OTPAuth policy to create a new factor
-1.  Enter OTPAuthAD
+1.  Select the green plus sign next to the 'authPol_OTPAuth' policy to create a new factor
+1.  Enter 'OTPAuthAD'
 1.  Select Create
 1.  In the box created select Add Schema
-1.  Select Add and enter lschema_DualAuthOTP
-1.  Under Schema Files navigate to LoginSchema, and select DualAuthPushOrOTP.xml
+1.  Select Add and enter 'lschema_DualAuthOTP'
+1.  Under Schema Files navigate to LoginSchema, and select 'DualAuthPushOrOTP.xml'
 1.  Select the blue select button, followed by Create, followed by Ok
 1.  In the same box select Add Policy
-1.  Select the policy we created during setup of the Registration flow that maps to your first LDAP authentication action. We use authPol_LDAP
+1.  Select the policy we created during setup of the Registration flow that maps to your first LDAP authentication action. We use 'authPol_LDAP'
 1.  Select Add
-1.  Select the green plus sign next to the authPol_Ldap policy to create a new factor
-1.  Enter OTPAuthDevice **This Factor will use the OTP token to perform the 2nd factor authentication**
+1.  Select the green plus sign next to the 'authPol_Ldap' policy to create a new factor
+1.  Enter 'OTPAuthDevice' **This Factor will use the OTP token to perform the 2nd factor authentication**
 1.  Select Create
 1.  In the same box select Add Policy
-1.  Select the policy authPol_OTPAuthDevice that we created during setup of the Registration flow
+1.  Select the policy 'authPol_OTPAuthDevice' that we created during setup of the Registration flow
 1.  Select Add
 1.  Now we've completed the nFactor flow setup and can click Done
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_nfactorflow.png)
@@ -164,7 +164,7 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_aaavserver.png)
 1.  Select No Server Certificate, select the domain certificate, click Select, Bind, and Continue
 1.  Select No nFactor Flow
-1.  Under Select nFactor Flow click the right arrow, select the nFactor_OTP flow created earlier
+1.  Under Select nFactor Flow click the right arrow, select the 'nFactor_OTP' flow created earlier
 1.  Click Select, followed by Bind
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_authenticationvserver.png)
 
@@ -177,8 +177,8 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 1.  Check the policy, select Unbind, select Yes to confirm, and select Close
 1.  Under the Advanced Settings menu on the right select Authentication Profile
 1.  Select Add
-1.  Enter a name.  We enter PUSH_auth_profile
-1.  Under Authentication Virtual Server click the right arrow, and select the AAA Vserver we created PUSH_Auth_Vserver
+1.  Enter a name.  We enter 'PUSH_auth_profile'
+1.  Under Authentication Virtual Server click the right arrow, and select the AAA Vserver we created 'PUSH_Auth_Vserver'
 1.  Click Select, and Create
 1.  Click Ok and verify the Virtual Server now has an authentication profile selected while the basic authentcation policy has been removed
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_gatewayvserver.png)
@@ -193,7 +193,7 @@ Now we will test PUSH by registering a mobile device and authenticating into our
 1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway with /manageotp appended to the end of the FQDN. We use 'https://citrixadc5.workspaces.wwco.net/manageotp'
 1.  After the your browser is redirected to a login screen enter user UPN and password
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regldaplogin.png)
-1.  On the next screen select Add Device, enter a name. We use iPhone7
+1.  On the next screen select Add Device, enter a name. We use 'iPhone7'
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regadddevice.png)
 1.  Select Go and a QR code should appear
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regqrcodedisplay.png)
@@ -207,7 +207,7 @@ Now we will test PUSH by registering a mobile device and authenticating into our
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_poc-guides_nfactor-citrix-gateway-push-token_regssosave.png)
 1.  The Token is now active and begins displaying OTP codes at 30 second intervals
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssotoken.png)
-1.  Select Done and you should see confirmation that the device was added successfully.
+1.  Select Done and you should see confirmation that the device was added successfully
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_addeddevicesuccessfully.png)
 
 ### Citrix Virtual Apps and Desktops Authentication, Publication, and Launch
@@ -222,7 +222,7 @@ Now we will test PUSH by registering a mobile device and authenticating into our
 
 ## Summary
 
-With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multi-factor authentication without making the user experience complex. Users can get access to all of their Workspaces resources by entering their standard domain user and password and simply confirming their identify with the push off a button in the Citrix SSO app on their mobile device.
+With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multi-factor authentication without making the user experience complex. Users can get access to all of their Workspaces resources by entering their standard domain user and password and simply confirming their identify with the push off a button in the  Citrix SSO app on their mobile device.
 
 ## References
 
