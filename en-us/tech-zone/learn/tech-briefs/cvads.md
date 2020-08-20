@@ -127,7 +127,7 @@ All components that Citrix manages are kept highly available.
 -  **Citrix Gateway:** Used so external users can connect to internal resources. Citrix Gateway can either be deployed and managed within the customer’s resource location or deployed and managed in Citrix Cloud.
 -  **StoreFront:** Used as the web interface for access to applications and desktops. StoreFront is an optional component that can be installed within a customer’s data center, or the cloud-hosted Workspace can be used for more functionality.
 
-For more information on why you would host these components on-premises vs cloud look at [Conceptual Architecture and Process Flow](/en-us/tech-zone/learn/tech-briefs/cvads.html#sconceptual-architecture-and-process-flow) section.
+For more information on why you would host these components on-premises vs cloud look at [Conceptual Architecture and Process Flow](#conceptual-architecture-and-process-flow) section.
 
 ### Expand your Workspace
 
