@@ -24,7 +24,7 @@ This guide demonstrates how to implement a Citrix Workspace Proof of Concept env
 
 It makes assumptions about the completed installation and configuration of the following components:
 
-*  Citrix Gateway installed, licensed, and configure with an externally reachable vServer bound to a wildcard certificate.
+*  Citrix Gateway installed, licensed, and configure with an externally reachable virtual server bound to a wildcard certificate.
 *  Citrix Gateway integrated with a Citrix Virtual Apps and Desktops environment which uses LDAP for authentication
 *  Citrix Cloud account established
 *  Endpoint with Citrix Workspace app installed
@@ -155,7 +155,7 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 1.  Now we've completed the nFactor flow setup and can click Done
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_nfactorflow.png)
 
-### Authentication, Authorization,and Auditing (AAA) virtual server
+### Citrix ADC Authentication, Authorization,and Auditing (Citrix ADC AAA) virtual server
 
 1.  Next navigate to 'Security > AAA - Application Traffic > Virtual Servers' and select Add
 1.  Enter the following fields and click Ok:
@@ -178,7 +178,7 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 1.  Under the Advanced Settings menu on the right select Authentication Profile
 1.  Select Add
 1.  Enter a name.  We enter 'PUSH_auth_profile'
-1.  Under Authentication virtual server click the right arrow, and select the Authentication, Authorization,and Auditing (AAA) virtual server we created 'PUSH_Auth_Vserver'
+1.  Under Authentication virtual server click the right arrow, and select the Citrix ADC AAA virtual server we created 'PUSH_Auth_Vserver'
 1.  Click Select, and Create
 1.  Click Ok and verify the virtual server now has an authentication profile selected while the basic authentication policy has been removed
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_gatewayvserver.png)
