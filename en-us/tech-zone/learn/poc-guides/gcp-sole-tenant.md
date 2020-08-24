@@ -1,8 +1,8 @@
 ---
 layout: doc
-description: Learn to deploy provisioned catalogs to GCP Sole Tenant Nodes in Citrix Virtual Apps and Desktops Service.
+description: Learn how to configure zone selection on Google Cloud Platform to enable sole tenancy in Citrix Virtual Apps and Desktop Service.
 ---
-# Google Cloud Platform (GCP) zone selection support with Citrix Virtual Apps and Desktops service
+# Google Cloud Platform (GCP) Zone Selection Support with Citrix Virtual Apps and Desktops service
 
 ## Contributors
 
@@ -39,13 +39,13 @@ Sole Tenant nodes enable customers to comply with network access control policy,
 
 To reserve a Sole Tenant Node, access the Google Cloud Console menu and select **Compute Engine** and then select **Sole-tenant-nodes**:
 
-![Select tenant nodes](/media/poc-guides_gcp-sole-tenant_select-nodes.png)
+![Select tenant nodes](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_select-nodes.png)
 
 ### Sole-tenant nodes screen
 
 Sole tenants in Google Cloud are captured in Node Groups. The first step in reserving a sole tenant platform is to create a node group. In the **GCP Console**, select **Create Node Group**:
 
-![Sole tenant nodes](/media/poc-guides_gcp-sole-tenant_nodes.png)
+![Sole tenant nodes](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_nodes.png)
 
 ### Creating a node group
 
@@ -61,7 +61,7 @@ All node groups are associated with a *node template*, which is used to indicate
 
 Select the drop-down menu for the **Node template**. Then select **Create node template**:
 
-![Select node group template](/media/poc-guides_gcp-sole-tenant_select-create-node-template.png)
+![Select node group template](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_select-create-node-template.png)
 
 ### Create a node template
 
@@ -69,17 +69,19 @@ Enter a name for the new template. For example, `mh-sole-tenant-node-group-1-tem
 
 The next step is to select a **Node Type**. In the drop-down menu, select the **Node type** most applicable to your needs.
 
->**Note:** You can refer to this [Google documentation page](https://cloud.google.com/compute/docs/nodes) for more information on different node types.
+  >**Note:**
+  >
+  >You can refer to this [Google documentation page](https://cloud.google.com/compute/docs/nodes) for more information on different node types.
 
 Once you have chosen a node type click **Create**:
 
-![Create node group template](/media/poc-guides_gcp-sole-tenant_create-node-template.png)
+![Create node group template](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_create-node-template.png)
 
 ### Finish creating the node group
 
 After creating the node template, the **Create node group** screen reappears. Click **Create**:
 
-![Create node group](/media/poc-guides_gcp-sole-tenant_create-node-group.png)
+![Create node group](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_create-node-group.png)
 
 ## Creating the VDA master image
 
@@ -107,13 +109,13 @@ To set a new Instance:
 
 1.  Then click **Sole tenancy** to see the related settings panel.
 
-![Select management options](/media/poc-guides_gcp-sole-tenant_select-management-options.png)
+![Select management options](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_select-management-options.png)
 
 #### Sole tenancy settings
 
 The panel for setting the **Node affinity label** appears. Click **Browse** to see the available **Node Groups** in the currently selected Google Cloud project:
 
-![Assign an affinity label](/media/poc-guides_gcp-sole-tenant_set-affinity-label.png)
+![Assign an affinity label](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_set-affinity-label.png)
 
 #### Select node group screen
 
@@ -125,13 +127,13 @@ To select the node group:
 
 1.  Then click **Select** on the bottom of the panel.
 
-![Select node group](/media/poc-guides_gcp-sole-tenant_select-node-group.png)
+![Select node group](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_select-node-group.png)
 
 #### Set the affinity label
 
 After clicking **Select** in the previous step you are returned to the **Instance creation screen.** The **Node affinity labels** field contains the needed value to ensure catalogs created from this master image are deployed to the indicated node group:
 
-![Select affinity label](/media/poc-guides_gcp-sole-tenant_assign-affinity-label.png)
+![Select affinity label](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_assign-affinity-label.png)
 
 ### Set the node affinity label for an existing instance
 
@@ -151,13 +153,13 @@ Include three pieces of information with the `gcloud` command:
 
 The buttons appearing in the following image are present at the top right of the **Google Cloud Console** window. Click the **Cloud Shell** button:
 
-![Google Cloud Shell icon](/media/poc-guides_gcp-sole-tenant_open-google-cloud-shell-icon.png)
+![Google Cloud Shell icon](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_open-google-cloud-shell-icon.png)
 
 #### Fresh Cloud shell window
 
 When the Cloud Shell first opens it looks similar to:
 
-![Google Cloud Shell terminal window](/media/poc-guides_gcp-sole-tenant_google-cloud-shell.png)
+![Google Cloud Shell terminal window](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_google-cloud-shell.png)
 
 #### Use the `gcloud` command to set the node affinity label
 
@@ -169,7 +171,7 @@ Run this command in the **Cloud Shell** window:
 
 Finally, verify the details for the `s2019-vda-base` instance:
 
-![VM instance details](/media/poc-guides_gcp-sole-tenant_vm-instance-details.png)
+![VM instance details](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_vm-instance-details.png)
 
 ## Google shared VPCs
 
@@ -183,31 +185,31 @@ After performing the previous steps in this document, you can create a machine c
 
 In Citrix Studio, select **Machine Catalogs**:
 
-![Select machine catalogs](/media/poc-guides_gcp-sole-tenant_studio-select-machine-catalogs.png)
+![Select machine catalogs](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_studio-select-machine-catalogs.png)
 
 ### Create the machine catalog
 
 Select **Create Machine Catalog**:
 
-![Create machine catalog](/media/poc-guides_gcp-sole-tenant_studio-sole-tenant.png)
+![Create machine catalog](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_studio-sole-tenant.png)
 
 ### Introduction screen
 
 Click **Next** to being the configuration process:
 
-![Studio Introduction screen](/media/poc-guides_gcp-sole-tenant_studio-intro.png)
+![Studio Introduction screen](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_studio-intro.png)
 
 ### Operating system
 
 Select an operating system type for the machines in the catalog. Click **Next**:
 
-![Select OS](/media/poc-guides_gcp-sole-tenant_studio-select-os.png)
+![Select OS](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_studio-select-os.png)
 
 ### Machine management
 
 Accept the default setting that the catalog utilizes power managed machines. Then select MCS resources. In this example case we are using the Resources named `MyTestResources`. Click **Next**:
 
-![Select machine management](/media/poc-guides_gcp-sole-tenant_studio-select-machine-management.png)
+![Select machine management](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_studio-select-machine-management.png)
 
 >**Note:** These resources come from a previously created host connection, representing the network and other resources like the domain controller and reserved sole tenants. These elements are used when deploying the catalog. The process of creating the host connection is not covered in this document. More information can be found on the [Connections and resources page](/en-us/citrix-virtual-apps-desktops/manage-deployment/connections.html).
 
@@ -217,7 +219,7 @@ The next step is to select the master image for the catalog. Recall that to util
 
 Click **Next**:
 
-![Select master image](/media/poc-guides_gcp-sole-tenant_studio-select-master-image.png)
+![Select master image](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_studio-select-master-image.png)
 
 ### Virtual machines
 
@@ -225,7 +227,7 @@ This screen indicates the number of virtual machines and the zones to which the 
 
 Click **Next**:
 
-![Select VM](/media/poc-guides_gcp-sole-tenant_studio-select-vm.png)
+![Select VM](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_studio-select-vm.png)
 
 ### Active Directory computer account
 
@@ -245,7 +247,7 @@ Since the catalog in this example has three machines, and we have specified a na
 
 Click **Next**:
 
-![Select computer account](/media/poc-guides_gcp-sole-tenant_studio-select-computer-accounts.png)
+![Select computer account](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_studio-select-computer-accounts.png)
 
 ### Domain credentials
 
@@ -255,7 +257,7 @@ Specify the credentials used to communicate with the domain controller, mentione
 
 1.  Supply the credentials, then click **Next**.
 
-![Select domain credentials](/media/poc-guides_gcp-sole-tenant_studio-select-domain-credentials.png)
+![Select domain credentials](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_studio-select-domain-credentials.png)
 
 ### Summary
 
@@ -263,17 +265,17 @@ This screen displays a summary of key information during the catalog creation pr
 
 Enter the catalog name and click **Finish**:
 
-![Studio Summary screen](/media/poc-guides_gcp-sole-tenant_studio-summary.png)
+![Studio Summary screen](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_studio-summary.png)
 
 When the catalog creation process finishes, the Citrix Studio Console resembles:
 
-![Studio Console showing machine catalogs](/media/poc-guides_gcp-sole-tenant_studio-machine-catalogs.png)
+![Studio Console showing machine catalogs](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_studio-machine-catalogs.png)
 
 ### Verify in Google Cloud console
 
 Use the Google Console to verify that the machines were created on the node group as expected:
 
-![Verify machines](/media/poc-guides_gcp-sole-tenant_console-verify-machines.png)
+![Verify machines](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_console-verify-machines.png)
 
 ## Migrating non-sole tenant catalogs
 
@@ -322,11 +324,11 @@ There are two cases in which this occurs:
 
 If you encounter a dialog like this when creating the catalog:
 
-![Image prep error](/media/poc-guides_gcp-sole-tenant_studio-error-image-prep.png)
+![Image prep error](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_studio-error-image-prep.png)
 
 And selecting **View details** produces a screen resembling:
 
-![Image prep error details](/media/poc-guides_gcp-sole-tenant_studio-error-image-prep-details.png)
+![Image prep error details](/en-us/tech-zone/learn/media/poc-guides_gcp-sole-tenant_studio-error-image-prep-details.png)
 
 There are a few things you can check:
 
