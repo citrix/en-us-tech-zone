@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn to deploy provisioned catalogs to GCP Sole Tenant Nodes in Citrix Virtual Apps and Desktops Service.
+description: Learn how to configure zone selection on Google Cloud Platform to enable sole tenancy in Citrix Virtual Apps and Desktop Service.
 ---
 # Google Cloud Platform (GCP) Zone Selection Support with Citrix Virtual Apps and Desktops service
 
