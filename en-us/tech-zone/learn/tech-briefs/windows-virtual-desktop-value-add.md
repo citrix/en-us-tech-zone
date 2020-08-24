@@ -37,7 +37,7 @@ The Citrix value add is tabulated in the following table:
 | 5  | Experience  | [HDX](#hdx)  | The Citrix HDX protocol represents over 30 years of experience connecting remote apps and desktops to endpoints over latent networks. Reduces data on the wire and enables several optimizations and endpoint peripherals. Citrix sessions connecting directly to the session host. Adaptive display technologies are customizable for individual apps. 3D Optimizations for CAD and manufacturing use cases.  |
 | 6  | Experience  | [Collaboration Platforms and Content redirection](#multimedia-delivery-optimization)  | Unified communications optimization extends beyond Teams for Windows and Linux to Skype for Business, Zoom, Jabber and so on. Browser Content redirection reduces data ingress and egress costs while offloading media rendering to the client, increasing server scalability.  |
 | 7  | Experience  | [Personalization](#personalization), [WEM](#resource-optimization), and [Azure Files Integration](#azure-files-integration)  | Extend FSLogix profile containers for multi-session access using Citrix Profile Management. Workspace Environment Management (WEM) helps control compute costs by automatically managing applications. Accelerates logon to WVD and increases single server scalability.  |
-| 8  | Experience  | [Citrix Gateway and SD-WAN](#networking-solutions)  | Citrix Gateway POPs improve performance by connecting through the nearest gateway POP. Citrix SD-WAN allows the WVD environment to connect back to the on-premises data / environment and enables break out of Internet based traffic and HDX content optimizations to reduce data ingress and egress costs and improving user experience.  |
+| 8  | Experience  | [Citrix Gateway and SD-WAN](#app-delivery-solutions)  | Citrix Gateway POPs improve performance by connecting through the nearest gateway POP. Citrix SD-WAN allows the WVD environment to connect back to the on-premises data / environment and enables break out of Internet based traffic and HDX content optimizations to reduce data ingress and egress costs and improving user experience.  |
 | 9  | Experience  | [Citrix Workspace](#citrix-workspace)  | Citrix Workspace adds intelligent capabilities to organize, guide, and automate work in a single place, using microapps, universal search, Citrix assistant, relevant notifications and so on.  |
 | 10  | Security  | [Multifactor authentication](#multifactor-authentication), [Session Watermarking](#session-watermarking), [Session Recording](#session-recording), and Smart card support   | Compliance and regulatory requirements met. MFA extended to several IDPs natively and others via SAML. Smart card support. Endpoint Analysis scans and granular policy control over the content and the user can access.  |
 
@@ -416,13 +416,13 @@ Azure Files alleviates the need to set up, manage, and update the SMB store infr
 
 Learn more about how to set up the same [here](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html)
 
-## Networking solutions
+## App Delivery solutions
 
 ### Citrix Gateway and Citrix Access Control
 
-As discussed in the preceding section the Citrix Gateway service and the on-premises Citrix Gateway are a great addition to the security of the WVD environment by adding additional capabilities to Azure MFA. It is also one of the best reverse proxy solutions in the market.
+Citrix Gateway is the preferred app delivery solution for reverse proxy to Citrix resources, providing VPN less access to resoruces for end users.
 
-Citrix Gateway Service has dozens of Points of Presence (POP) globally, connecting through the nearest Citrix Gateway POP improves performance. With Citrix VAD service and Citrix Gateway service enterprises now may provide remote access to apps and desktops without those additional requirements along with other benefits:
+Citrix Gateway Service has dozens of Points of Presence (POP) globally, connecting through the nearest Citrix Gateway POP improves performance. With Citrix VAD service and Citrix Gateway service enterprises now may provide remote access to apps and desktops without additional VPN requirements along with following benefits:
 
 *  Multiple sites are implemented and maintained globally by Citrix
 *  Public IP addresses are implemented and maintained by Citrix
