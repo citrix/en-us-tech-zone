@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Citrix Virtual Apps and Desktops Service administrators, learn to deploy provisioned catalogs to GCP Sole Tenant Nodes.
+description: Learn to deploy provisioned Windows 10 catalogs to GCP Sole Tenant nodes in Citrix Virtual Apps and Desktop Service.
 ---
 # Google Cloud Platform (GCP) Windows 10 Sole Tenant with Optional Shared VPC Catalog Creation
 
