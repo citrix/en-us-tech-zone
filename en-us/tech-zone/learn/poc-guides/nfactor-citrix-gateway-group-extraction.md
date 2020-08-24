@@ -49,6 +49,7 @@ It makes assumptions about the completed installation and configuration of the f
 1.  Select Create
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_ldapaction.png)
 For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-ldap-tsk.html)
+
 /*:
 UPDATE HERE
 */
@@ -56,6 +57,7 @@ UPDATE HERE
 ### Device Certificate - authentication policy
 
 1.  Next navigate to 'Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Actions > CERT'
+
 /*:
 UPDATE HERE
 */
@@ -66,6 +68,7 @@ UPDATE HERE
 1.  Select Add and select the plus sign in the Factor box
 1.  Enter nFactor_OTP and select create
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_nfactorotp.png)
+
 /*:
 UPDATE HERE
 */
@@ -78,6 +81,7 @@ UPDATE HERE
 1.  Select Expression Editor and build the expression by selecting the following in the drop-down menus offered:
     *  'HTTP'
     *  'REQ'
+
 /*:
 UPDATE HERE
 */
@@ -107,6 +111,7 @@ UPDATE HERE
 1.  Select Add
 1.  Now we've completed the nFactor flow setup and can click Done
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_nfactorflow.png)
+
 /*:
 UPDATE HERE
 */
@@ -123,6 +128,7 @@ UPDATE HERE
 1.  Under Select nFactor Flow click the right arrow, select the 'nFactor_OTP' flow created earlier
 1.  Click Select, followed by Bind
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_authenticationvserver.png)
+
 /*:
 UPDATE HERE
 */
@@ -142,6 +148,7 @@ UPDATE HERE
 1.  Click Ok and verify the virtual server now has an authentication profile selected while the basic authentication policy has been removed
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_gatewayvserver.png)
 1.  Click Done
+
 /*:
 UPDATE HERE
 */
@@ -154,6 +161,7 @@ Now we test PUSH by registering a mobile device and authenticating into our Citr
 
 1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway 'https://citrixadc5.workspaces.wwco.net'
 1.  After your browser is redirected to a login screen enter user UPN
+
 /*:
 UPDATE HERE
 */
@@ -162,6 +170,7 @@ UPDATE HERE
 
 1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use 'https://citrixadc5.workspaces.wwco.net'
 1.  After the your browser is redirected to a login screen enter user UPN and password.
+
 /*:
 UPDATE HERE
 */
