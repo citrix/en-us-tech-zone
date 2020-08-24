@@ -420,7 +420,7 @@ Learn more about how to set up the same [here](/en-us/tech-zone/build/deployment
 
 ### Citrix Gateway and Citrix Access Control
 
-Citrix Gateway is the preferred app delivery solution for reverse proxy to Citrix resources, providing VPN less access to resoruces for end users.
+Citrix Gateway is the preferred app delivery solution for reverse proxy to Citrix resources, providing VPN-less access to resoruces for end users.
 
 Citrix Gateway Service has dozens of Points of Presence (POP) globally, connecting through the nearest Citrix Gateway POP improves performance. With Citrix VAD service and Citrix Gateway service enterprises now may provide remote access to apps and desktops without additional VPN requirements along with following benefits:
 
@@ -535,7 +535,7 @@ The following is a list of the features that were discussed in the detail in the
     1.  HDX technologies allow for the most optimized and customizable delivery of remote sessions with support for the richest set of peripherals.
     1.  Performance, Single server scalability and compute consumption optimization – Workspace Environment Manager, Optimization for UCE solutions including Microsoft Teams, Browser Content Redirection, and SD-WAN based network optimization.
     1.  Profile Management extension for multi session scenarios.
-    1.  Networking solutions – Gateway enhances security with SSO and MFA, reduces latency to the resources and increase the resiliency of the environment. SD-WAN provides QoS, reliability, out-of-band traffic for internet content, and optimizes connectivity between the cloud and on-premises data center. SD-WAN traffic optimization for UCE, Web, and SaaS apps delivers the best experience possible.
+    1.  App Delivery solutions – Gateway enhances security with SSO and MFA, reduces latency to the resources and increase the resiliency of the environment, while enabling VPN-less access. SD-WAN provides QoS, reliability, out-of-band traffic for internet content, and optimizes connectivity between the cloud and on-premises data center. SD-WAN traffic optimization for UCE, Web, and SaaS apps delivers the best experience possible.
     1.  Workspace – Enhances the user experience by integrating the WVD based resources into a Workspace that helps, organize, guide, and automate work for the user.
 1.  Security – Session Watermarking, Session Recording, expanded multifactor authentication capabilities, Security Analytics, Citrix Gateway service, and Citrix Access Control service all add to layers of extra security to your environment.
 
