@@ -45,6 +45,8 @@ This tech brief showcases the value add provided under the 3 themes of [Choice /
 
 ## Choice / Management
 
+In this section, the features that enhance the admin's ability to control, manage, and provision resources in the Windows Virtual Desktop environment are showcased.
+
 ## Management of the environment
 
 Effective management of Windows Virtual Desktop resources is important to be able to reduce cost while ensuring the best possible user experience. The simpler it is to manage the environment; the quicker it is to remediate user issues; the easier the administrator’s job is. To that end Citrix provides several features:
@@ -204,6 +206,8 @@ Read more about the monitoring features available in the Citrix VAD service [her
 Learn about the analytics capabilities, visit the [Analytics Tech Brief](/en-us/tech-zone/learn/tech-briefs/analytics.html), or visit the [website](https://www.citrix.com/analytics/)
 
 ## Experience
+
+In this section, the features that enhance the user expereince when accessing their Windows Virtual Desktop resoures are showcased.
 
 ## HDX
 
