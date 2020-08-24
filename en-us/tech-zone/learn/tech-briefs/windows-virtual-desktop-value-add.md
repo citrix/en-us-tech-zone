@@ -191,9 +191,9 @@ The following is a list of some of the great features that Citrix brings to bear
 *  Diagnostics
     *  Citrix Director utilized to diagnose and resolve user/application issues  
         1.  Shadow Users
-        2.  Send messages to users
-        3.  Disconnect/restore desktop and application sessions
-        4.  Session Recording
+        1.  Send messages to users
+        1.  Disconnect/restore desktop and application sessions
+        1.  Session Recording
 *  Help desk integration
     *  ITSM Adapter for ServiceNow allows for API-level integration
 *  Advanced analytics for performance and security
@@ -490,13 +490,13 @@ The following are some features of note to bolster the security of your WVD depl
 Citrix extends the Azure multifactor authentication capabilities with support for the following:
 
 1.  MFA for Citrix VAD service Administrators (TOTP)
-2.  Citrix Gateway Service Active Directory + Token (Citrix SSO, MS Authenticator, Google Authenticator)
-3.  Citrix Gateway Service with AAD MFA
-4.  Citrix Gateway Service with Okta
-5.  Citrix Gateway Service with Google IdP (in preview)
-6.  Citrix Gateway Service with SAML IdP (Ping, ONeLogin, Auth0) (in preview)
-7.  On-Premises Citrix Gateway and existing MFA configurations
-8.  Smart Card / Proximity Card support
+1.  Citrix Gateway Service Active Directory + Token (Citrix SSO, MS Authenticator, Google Authenticator)
+1.  Citrix Gateway Service with AAD MFA
+1.  Citrix Gateway Service with Okta
+1.  Citrix Gateway Service with Google IdP (in preview)
+1.  Citrix Gateway Service with SAML IdP (Ping, ONeLogin, Auth0) (in preview)
+1.  On-Premises Citrix Gateway and existing MFA configurations
+1.  Smart Card / Proximity Card support
     *  Supported (Imprivata, Gemalto, and so on)
 
 Read more about how the Citrix Workspace enables SSO with MFA in the [tech brief](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
