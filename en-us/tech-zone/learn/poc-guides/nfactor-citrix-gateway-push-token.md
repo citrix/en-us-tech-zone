@@ -20,7 +20,7 @@ Citrix Gateway supports push notifications for OTP and, can provide authenticati
 
 ## Overview
 
-This guide demonstrates how to implement a Citrix Workspace Proof of Concept environment using two factor authentication with Citrix Gateway. It uses LDAP to validate Active Directory credentials as the first factor and use Citrix Workspace Push Authentication as the second factor. Citrix Gateway will utilize the PUSH Service hosted in Citrix Cloud. It uses a Citrix Virtual Apps and Desktops published virtual desktop to validate connectivity.
+This guide demonstrates how to implement a Proof of Concept environment using two factor authentication with Citrix Gateway. It uses LDAP to validate Active Directory credentials as the first factor and use Citrix Cloud Push Authentication as the second factor. It uses a Citrix Virtual Apps and Desktops published virtual desktop to validate connectivity.
 
 It makes assumptions about the completed installation and configuration of the following components:
 
