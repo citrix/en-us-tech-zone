@@ -1,8 +1,8 @@
 ---
 layout: doc
-description: Learn how to implement a Proof of Concept environment consisting of Citrix Workspace Push Authentication with Citrix Gateway
+description: Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Push Token
 ---
-# Proof of Concept Guide: Citrix Workspace Push Authentication with Citrix Gateway
+# Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Push Token
 
 ## Contributors
 
