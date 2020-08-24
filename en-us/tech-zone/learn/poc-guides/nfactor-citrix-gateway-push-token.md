@@ -29,7 +29,7 @@ It makes assumptions about the completed installation and configuration of the f
 *  Citrix Cloud account established
 *  Endpoint with Citrix Workspace app installed
 *  Mobile device with Citrix SSO app installed
-*  Active Directory (AD)
+*  Active Directory (AD) is available in the environment
 
 ## Citrix Gateway
 
