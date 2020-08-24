@@ -65,7 +65,7 @@ It makes assumptions about the completed installation and configuration of the f
     *  Name - a unique value
     *  Server Name / IP address - select an FQDN or IP address for AD server/(s). We enter '192.168.64.50_LDAP'
     *  Base DN - enter the path to the AD user container. We enter 'OU=Team Accounts, DC=workspaces, DC=wwco, DC=net'
-    *  Administrator Bind DN - enter the admin/service account to query AD to authenticate users. We enter 'workspacesserviceaccount@workspaces.wwco.net'
+    *  Administrator Bind DN - enter the admin/service account to query AD to authenticate users. We enter 'wsrv@workspaces.wwco.net'
     *  Confirm / Administrator Password - enter / confirm the admin / service account password
     *  Server Logon Name Attribute - in the second field below this field enter 'userPrincipalName'
 1.  Select Create
