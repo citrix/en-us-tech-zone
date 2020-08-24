@@ -30,18 +30,20 @@ The Citrix value add is tabulated in the following table:
 
 |   |Theme   |Feature   |Value Add   |
 |---|---|---|---|
-| 1  | Experience  | [HDX](#hdx)  | The Citrix HDX protocol represents over 30 years of experience connecting remote apps and desktops to endpoints over latent networks. Reduces data on the wire and enables several optimizations and endpoint peripherals. Citrix sessions connecting directly to the session host. Adaptive display technologies are customizable for individual apps. 3D Optimizations for CAD and manufacturing use cases.  |
-| 2  | Choice  | [Hybrid Platform Management](#hybrid-cloud-management)  | Consume Windows Virtual Desktop as needed (burst capacity, migration to cloud, Disaster Recovery / Business Continuity, and more) while continuing to manage on-premises workloads from a single management plane. Remote PC Access is also managed and secured similarly from the same console. Support of Non-domain joined users.  |
-| 3  | Experience  | [Personalization](#personalization), [WEM](#resource-optimization), and [Azure Files Integration](#azure-files-integration)  | Extend FSLogix profile containers for multi-session access using Citrix Profile Management. Workspace Environment Management (WEM) helps control compute costs by automatically managing applications. Accelerates logon to WVD and increases single server scalability.  |
-| 4  | Security  | [Multifactor authentication](#multifactor-authentication), [Session Watermarking](#session-watermarking), [Session Recording](#session-recording), and Smart card support   | Compliance and regulatory requirements met. MFA extended to several IDPs natively and others via SAML. Smart card support. Endpoint Analysis scans and granular policy control over the content and the user can access.  |
-| 5  | Management  | [Provisioning](#management-of-the-environment)  | Automated GUI based provisioning with versioning and rollback support. Autoscale helps reduce compute cost in the cloud. Machine Creation Services including MCS I/O optimization and On Demand Provisioning, reduce premium disk costs. Zone preference helps with identifying on-prem or reserved instances to be used ahead of pay-as-you-go instances.  |
-| 6  | Monitoring  | [Director / Monitoring and Citrix Analytics](#monitoring-and-analytics) | A user centric monitoring system that helps pinpoint and resolve user/application issues (Shadows user session, send messages, disconnect / logoff sessions, logon duration drill-down) from one place. Also adding alerting (Session / app launch failures, resource consumption, and predictive analysis) and help desk integration with ITSM. Citrix Analytics enables advanced performance and security issue drill-down with automated real-time remediation.  |
-| 7  | Choice  | [Collaboration Platforms and Content redirection](#multimedia-delivery-optimization)  | Unified communications optimization extends beyond Teams for Windows and Linux to Skype for Business, Zoom, Jabber and so on. Browser Content redirection reduces data ingress and egress costs while offloading media rendering to the client, increasing server scalability.  |
-| 8  | Networking Integrations  | [Citrix Gateway and SD-WAN](#networking-solutions)  | Citrix Gateway POPs improve performance by connecting through the nearest gateway POP. Citrix SD-WAN allows the WVD environment to connect back to the on-premises data / environment and enables break out of Internet based traffic and HDX content optimizations to reduce data ingress and egress costs and improving user experience.  |
-| 9  | Management  | Delegated Administration and Configuration Logging  | Granular control over administrative rights from help desk staff to IT owner coupled with full tracking of environment changes with date/time/admin action.  |
-| 10  | Workspace Experience  | [Citrix Workspace](#citrix-workspace)  | Citrix Workspace adds intelligent capabilities to organize, guide, and automate work in a single place, using microapps, universal search, Citrix assistant, relevant notifications and so on.  |
+| 1  | Choice / Management  | [Hybrid Platform Management](#hybrid-cloud-management)  | Consume Windows Virtual Desktop as needed (burst capacity, migration to cloud, Disaster Recovery / Business Continuity, and more) while continuing to manage on-premises workloads from a single management plane. Remote PC Access is also managed and secured similarly from the same console. Support of Non-domain joined users.  |
+| 2  | Choice / Management  | [Provisioning](#management-of-the-environment)  | Automated GUI based provisioning with versioning and rollback support. Autoscale helps reduce compute cost in the cloud. Machine Creation Services including MCS I/O optimization and On Demand Provisioning, reduce premium disk costs. Zone preference helps with identifying on-prem or reserved instances to be used ahead of pay-as-you-go instances.  |
+| 3  | Choice / Management  | [Director / Monitoring and Citrix Analytics](#monitoring-and-analytics) | A user centric monitoring system that helps pinpoint and resolve user/application issues (Shadows user session, send messages, disconnect / logoff sessions, logon duration drill-down) from one place. Also adding alerting (Session / app launch failures, resource consumption, and predictive analysis) and help desk integration with ITSM. Citrix Analytics enables advanced performance and security issue drill-down with automated real-time remediation.  |
+| 4  | Choice / Management  | Delegated Administration and Configuration Logging  | Granular control over administrative rights from help desk staff to IT owner coupled with full tracking of environment changes with date/time/admin action.  |
+| 5  | Experience  | [HDX](#hdx)  | The Citrix HDX protocol represents over 30 years of experience connecting remote apps and desktops to endpoints over latent networks. Reduces data on the wire and enables several optimizations and endpoint peripherals. Citrix sessions connecting directly to the session host. Adaptive display technologies are customizable for individual apps. 3D Optimizations for CAD and manufacturing use cases.  |
+| 6  | Experience  | [Collaboration Platforms and Content redirection](#multimedia-delivery-optimization)  | Unified communications optimization extends beyond Teams for Windows and Linux to Skype for Business, Zoom, Jabber and so on. Browser Content redirection reduces data ingress and egress costs while offloading media rendering to the client, increasing server scalability.  |
+| 7  | Experience  | [Personalization](#personalization), [WEM](#resource-optimization), and [Azure Files Integration](#azure-files-integration)  | Extend FSLogix profile containers for multi-session access using Citrix Profile Management. Workspace Environment Management (WEM) helps control compute costs by automatically managing applications. Accelerates logon to WVD and increases single server scalability.  |
+| 8  | Experience  | [Citrix Gateway and SD-WAN](#networking-solutions)  | Citrix Gateway POPs improve performance by connecting through the nearest gateway POP. Citrix SD-WAN allows the WVD environment to connect back to the on-premises data / environment and enables break out of Internet based traffic and HDX content optimizations to reduce data ingress and egress costs and improving user experience.  |
+| 9  | Experience  | [Citrix Workspace](#citrix-workspace)  | Citrix Workspace adds intelligent capabilities to organize, guide, and automate work in a single place, using microapps, universal search, Citrix assistant, relevant notifications and so on.  |
+| 10  | Security  | [Multifactor authentication](#multifactor-authentication), [Session Watermarking](#session-watermarking), [Session Recording](#session-recording), and Smart card support   | Compliance and regulatory requirements met. MFA extended to several IDPs natively and others via SAML. Smart card support. Endpoint Analysis scans and granular policy control over the content and the user can access.  |
 
-This tech brief showcases the value add provided by various feature sets in Citrix products through all the phases of setting up a workspace and using the WVD resources hosted in Azure.
+This tech brief showcases the value add provided under the 3 themes of [Choice / Management](#choice--management), [Experience](#experience), [Security](#security) in Citrix products when setting up a workspace and using WVD based resources hosted in Azure.
+
+## Choice / Management
 
 ## Management of the environment
 
@@ -155,55 +157,53 @@ In addition to the cost savings, the user’s application response times are als
 
 Read more about the testing and results [here](/en-us/tech-zone/design/design-decisions/azure-instance-scalability.html)
 
-## Personalization
+## Monitoring and Analytics
 
-In a non-persistent VDI environment, which includes WVD, users often require some level of personalization. Without persistent personalization, users are required to configure OS/app settings with every session.
+The setup and design of an environment is just the first part of getting VDI infrastructure for an organization. For that reason, it gets the most focus from cloud providers. But the Day 2 and onwards of running and maintainence of a large environment in my opinion is as important. Hosting VMs in public clouds obfuscate the running of the machines, but the admin must still ensure that the user experience is consistent and high performing day in and day out.
 
-Microsoft incorporates FSLogix containers into a WVD environment. This solution helps solve several personalization challenges. However, Citrix is able to extend the capabilities to include items like
+Citrix gives full help desk visibility into user sessions, for both real-time debugging of specific user issues and performance, and broad visibility into the environment and trends.
 
-*  User-Installed Applications
-*  Multi-Session Support
-*  Azure Files Support
+[![Citrix Monitor console](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_30-citrix-monitor-console.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_30-citrix-monitor-console-large.png)
 
-### User-Installed Applications
+As seen in the preceding screenshot, the admin has a view of what’s going on in the session, can shadow the session and can remediate from the same console.
 
-There are several scenarios where the admin would want to provide a desktop to power users and knowledge workers that want to be able to install apps on the desktops. These apps would not be persisted across session logouts with most solutions.
+The following is a list of some of the great features that Citrix brings to bear for the administrator and the help desk:
 
-User personalization layer is a VHD based solution just like FSLogix Profile Containers but has the additional benefit of persisting user installed applications across session logouts.
+*  Full featured integrated monitoring, alerting, and help desk support console
+*  Real time Session Details with drill-down for support actions
+    *  Task Manager, process management, latency, user-perceived interaction latency, applied policy set, granular virtual channel status, client details, remoting protocol inspection, and so on.
+*  Always on monitoring of  
+    *  User Logons
+    *  Connection Failures
+    *  Server Resources
+    *  Application Failures
+*  Breakdown of Logon Times
+*  Connection probing - synthetic app launch attempts to proactively test availability
+*  Alerting
+*  Trending
+*  Predictive capabilities (for example capacity planning projection)
+*  Configuration Logging
+    *  Allows for full tracking of environment changes with date/time/admin action
+*  Delegated Administration
+    *  Granular controls over administrative rights from help desk staff to IT owner
+*  Diagnostics
+    *  Citrix Director utilized to diagnose and resolve user/application issues  
+        1.  Shadow Users
+        2.  Send messages to users
+        3.  Disconnect/restore desktop and application sessions
+        4.  Session Recording
+*  Help desk integration
+    *  ITSM Adapter for ServiceNow allows for API-level integration
+*  Advanced analytics for performance and security
+    *  Enterprise-wide view of environment with ability to drill down to specific locations or individual users
+    *  Monitor session responsiveness and latency
+    *  Multi-product user behavior scoring to help admins evaluate security risks
 
-![App Layering - user personalization layer](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_12-app-layering-user-layers.png)
+Read more about the monitoring features available in the Citrix VAD service [here](/en-us/citrix-virtual-apps-desktops-service/monitor.html), and in the Citrix Managed Desktops monitor [here](/en-us/citrix-managed-desktops/monitor.html)
 
-The user personalization layer VHD is mounted on the VMs at logon over the network. The changes a user makes are redirected to the individual user’s user personalization layer, which resides in the shared storage location.
+Learn about the analytics capabilities, visit the [Analytics Tech Brief](/en-us/tech-zone/learn/tech-briefs/analytics.html), or visit the [website](https://www.citrix.com/analytics/)
 
-Note: It is not necessary for the entire OS image to be layered using App Layering to utilize this feature.
-
-To learn more about the user personalization layer feature see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html)
-
-### Multi-session support for FSLogix containers
-
-Another advanced use case, one which is more prevalent when users are remote, is when a user wants to have multiple, concurrent sessions.
-
-With a VHD based profile solution, such as the FSLogix Profile Container or the user personalization layer alone, which requires the VHD to be mounted on the desktop that has the first session running on it, there is an inherent limitation. This approach allows only one session to write back changes. That is the first session that the user logs into has the VHD mounted in Read/Write mode, while the next session onwards the VHD can only be mounted as Read-Only.
-
-So, when a user has a desktop session running and launches an app which writes to their profile, the changes made in the app are discarded.
-
-![Multi Session FSLogix](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_13-multi-session-fslogix.png)
-
-For example, consider a physician working from home, they launch Outlook from their corporate Windows 10 device and a few minutes later launch’s the hospital’s EMR system on an iPad, to quickly check up on a few patients. That’s two simultaneous sessions, the first session that the physician logged into has the VHD mounted in Read/Write mode, while the EMR app session would have the VHD mounted as Read-Only. The changes made to the setting of the EMR app (default schemes, macros, favorites, and so on), are not written to the profile when they log off from it.
-
-Citrix profile manager helps to synchronize files and settings that are changed in a Read-Only session. The centralized profile storage (user store) acts as the temporary storage for writes in the Read-Only sessions.
-
-![Multi Session Citrix Profile Management](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_14-multi-session-citrix-profile-management.png)
-
-This allows each session to write changed files back and those changes are merge using the last writer win strategy at file level. Changes to registry hive files like NTUSER.DAT, are merged at registry key level. More information about this feature can be found at this [link](/en-us/profile-management/current-release/configure/enable-multi-session-write-back-for-fslogix-profile-container.html)
-
-### Azure Files Integration
-
-Citrix has built integrations to use Azure Files’ SMB based storage to host Citrix user personalization layer and Citrix Profile Management data. Azure Files support for on-premises Active Directory Domain Service Authentication (AD DS) enables these integrations. Azure Files shares can be mounted simultaneously in the cloud and on-premises, on Windows, Linux, or macOS. The benefit of having the personalization repositories in Azure, is that the data can be fetched quickly from the shares, making session launch and application data access much faster.
-
-Azure Files alleviates the need to set up, manage, and update the SMB store infrastructure (physical or virtual windows machines). Azure Files can be used to move the data that is hosted in your data center to the cloud and then be accessed by machines in your hybrid environment.
-
-Learn more about how to set up the same [here](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html)
+## Experience
 
 ## HDX
 
@@ -265,7 +265,7 @@ In the current era, where new hires are being onboarded from home and organizati
 
 To learn more see the video [here](https://www.youtube.com/watch?v=aVhhy4Ms4r0)
 
-## Policies and Peripherals
+### Policies and Peripherals
 
 The rich set of policies available to fine-tune the delivery of the app or desktop are extremely useful. The policies can be applied based on various criteria, such as group of users, a set of resources, a set of tagged objects and many more. The policies ensure the widest range of supported endpoints and devices while giving maximum control over the delivery of the session and what can and cannot be accessed by the user. Some examples are
 
@@ -362,51 +362,55 @@ To deliver the best possible logon performance, Workspace Environment Management
 
 Find more information about WEM and its benefits [here](/en-us/workspace-environment-management/current-release.html)
 
-## Security
+## Personalization
 
-Security provided by Microsoft is enhanced by adding additional layers with both client-side and server-side technologies. Features such as Session Watermarking, Session Recording, clipboard redirection policies and many more services from Citrix enhance the security stance. Extensions to authentication mechanisms with peripheral connectivity and the inclusion of various 3rd party identity providers, helps leverage existing investments, when extending the resource footprint in the cloud.
+In a non-persistent VDI environment, which includes WVD, users often require some level of personalization. Without persistent personalization, users are required to configure OS/app settings with every session.
 
-Delegated administration and configuration logging don’t just enhance change tracking and audit capabilities but also help remain compliant.
+Microsoft incorporates FSLogix containers into a WVD environment. This solution helps solve several personalization challenges. However, Citrix is able to extend the capabilities to include items like
 
-The following are some features of note to bolster the security of your WVD deployment:
+*  User-Installed Applications
+*  Multi-Session Support
+*  Azure Files Support
 
-*  [Multifactor authentication extension](#multifactor-authentication)
-*  [Session Watermarking](#session-watermarking)
-*  [Session Recording](#session-recording)
+### User-Installed Applications
 
-### Multifactor authentication
+There are several scenarios where the admin would want to provide a desktop to power users and knowledge workers that want to be able to install apps on the desktops. These apps would not be persisted across session logouts with most solutions.
 
-Citrix extends the Azure multifactor authentication capabilities with support for the following:
+User personalization layer is a VHD based solution just like FSLogix Profile Containers but has the additional benefit of persisting user installed applications across session logouts.
 
-1.  MFA for Citrix VAD service Administrators (TOTP)
-2.  Citrix Gateway Service Active Directory + Token (Citrix SSO, MS Authenticator, Google Authenticator)
-3.  Citrix Gateway Service with AAD MFA
-4.  Citrix Gateway Service with Okta
-5.  Citrix Gateway Service with Google IdP (in preview)
-6.  Citrix Gateway Service with SAML IdP (Ping, ONeLogin, Auth0) (in preview)
-7.  On-Premises Citrix Gateway and existing MFA configurations
-8.  Smart Card / Proximity Card support
-    *  Supported (Imprivata, Gemalto, and so on)
+![App Layering - user personalization layer](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_12-app-layering-user-layers.png)
 
-Read more about how the Citrix Workspace enables SSO with MFA in the [tech brief](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
+The user personalization layer VHD is mounted on the VMs at logon over the network. The changes a user makes are redirected to the individual user’s user personalization layer, which resides in the shared storage location.
 
-### Session Watermarking
+Note: It is not necessary for the entire OS image to be layered using App Layering to utilize this feature.
 
-For sessions that have a user accessing sensitive data, a great deterrent to having the data be stolen is a watermark. Especially if the watermark can uniquely identify the user. Citrix enables admins to configure what to display. This includes use logon name, client IP address, VDA IP address, VDA host name, login timestamp, and even customized text. Being a server-side feature it is applicable to all sessions (not just on specific endpoints) and is immune to process termination at the end point by the user as a workaround.
+To learn more about the user personalization layer feature see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html)
 
-![Session Watermarking](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_27-session-watermarking.png)
+### Multi-session support for FSLogix containers
 
-Learn more about session watermarking [here](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-watermark-policy-setting.html). Watch a short video to see the feature in action [here](https://youtu.be/XHEQlvpAZKs)
+Another advanced use case, one which is more prevalent when users are remote, is when a user wants to have multiple, concurrent sessions.
 
-### Session Recording
+With a VHD based profile solution, such as the FSLogix Profile Container or the user personalization layer alone, which requires the VHD to be mounted on the desktop that has the first session running on it, there is an inherent limitation. This approach allows only one session to write back changes. That is the first session that the user logs into has the VHD mounted in Read/Write mode, while the next session onwards the VHD can only be mounted as Read-Only.
 
-Citrix provides the ability to record all or part of a desktop or app session. The recording can be intelligently stopped when sensitive information is being displayed. The admin is also able to initiate recording of a session from the **Manage** tab in the Citrix VAD service console to be able to help troubleshoot issues being experienced by users.
+So, when a user has a desktop session running and launches an app which writes to their profile, the changes made in the app are discarded.
 
-Session Recording provides flexible policies to trigger recordings of application and desktop sessions automatically. This enables regulatory compliance and an audit trail of what was done during a session. Playback can have events inserted in them to allow for easy seeking of the recording.
+![Multi Session FSLogix](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_13-multi-session-fslogix.png)
 
-![Session Recording player](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_28-session-recording-player.png)
+For example, consider a physician working from home, they launch Outlook from their corporate Windows 10 device and a few minutes later launch’s the hospital’s EMR system on an iPad, to quickly check up on a few patients. That’s two simultaneous sessions, the first session that the physician logged into has the VHD mounted in Read/Write mode, while the EMR app session would have the VHD mounted as Read-Only. The changes made to the setting of the EMR app (default schemes, macros, favorites, and so on), are not written to the profile when they log off from it.
 
-Security of the session recordings can be enhanced by encrypting them to ensure only authorized users can view them or digitally signing the recordings. The admin can even define the size of the recording file based on file size or duration. Citrix Analytics can automatically turn on Session Recording when a user’s risk score is above the configured threshold, helping admins discover and diagnose unusual behavior.
+Citrix profile manager helps to synchronize files and settings that are changed in a Read-Only session. The centralized profile storage (user store) acts as the temporary storage for writes in the Read-Only sessions.
+
+![Multi Session Citrix Profile Management](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_14-multi-session-citrix-profile-management.png)
+
+This allows each session to write changed files back and those changes are merge using the last writer win strategy at file level. Changes to registry hive files like NTUSER.DAT, are merged at registry key level. More information about this feature can be found at this [link](/en-us/profile-management/current-release/configure/enable-multi-session-write-back-for-fslogix-profile-container.html)
+
+### Azure Files Integration
+
+Citrix has built integrations to use Azure Files’ SMB based storage to host Citrix user personalization layer and Citrix Profile Management data. Azure Files support for on-premises Active Directory Domain Service Authentication (AD DS) enables these integrations. Azure Files shares can be mounted simultaneously in the cloud and on-premises, on Windows, Linux, or macOS. The benefit of having the personalization repositories in Azure, is that the data can be fetched quickly from the shares, making session launch and application data access much faster.
+
+Azure Files alleviates the need to set up, manage, and update the SMB store infrastructure (physical or virtual windows machines). Azure Files can be used to move the data that is hosted in your data center to the cloud and then be accessed by machines in your hybrid environment.
+
+Learn more about how to set up the same [here](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html)
 
 ## Networking solutions
 
@@ -456,52 +460,6 @@ The breakout of internet traffic directly from the end point reduces the latency
 
 Integrations with Citrix Managed Desktops can provision the SD-WAN instances in the Azure Tenant, by the using the Citrix SD-WAN Orchestrator service.
 
-## Monitoring and Analytics
-
-The setup and design of an environment is just the first part of getting VDI infrastructure for an organization. For that reason, it gets the most focus from cloud providers. But the Day 2 and onwards of running and maintaining a large environment in my opinion is as important. Hosting VMs in public clouds obfuscate the running of the machines, but the admin must still ensure that the user experience is consistent and high performing day in and day out.
-
-Citrix gives full help desk visibility into user sessions, for both real-time debugging of specific user issues and performance, and broad visibility into the environment and trends.
-
-[![Citrix Monitor console](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_30-citrix-monitor-console.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_30-citrix-monitor-console-large.png)
-
-As seen in the preceding screenshot, the admin has a view of what’s going on in the session, can shadow the session and can remediate from the same console.
-
-The following is a list of some of the great features that Citrix brings to bear for the administrator and the help desk:
-
-*  Full featured integrated monitoring, alerting, and help desk support console
-*  Real time Session Details with drill-down for support actions
-    *  Task Manager, process management, latency, user-perceived interaction latency, applied policy set, granular virtual channel status, client details, remoting protocol inspection, and so on.
-*  Always on monitoring of  
-    *  User Logons
-    *  Connection Failures
-    *  Server Resources
-    *  Application Failures
-*  Breakdown of Logon Times
-*  Connection probing - synthetic app launch attempts to proactively test availability
-*  Alerting
-*  Trending
-*  Predictive capabilities (for example capacity planning projection)
-*  Configuration Logging
-    *  Allows for full tracking of environment changes with date/time/admin action
-*  Delegated Administration
-    *  Granular controls over administrative rights from help desk staff to IT owner
-*  Diagnostics
-    *  Citrix Director utilized to diagnose and resolve user/application issues  
-        1.  Shadow Users
-        2.  Send messages to users
-        3.  Disconnect/restore desktop and application sessions
-        4.  Session Recording
-*  Help desk integration
-    *  ITSM Adapter for ServiceNow allows for API-level integration
-*  Advanced analytics for performance and security
-    *  Enterprise-wide view of environment with ability to drill down to specific locations or individual users
-    *  Monitor session responsiveness and latency
-    *  Multi-product user behavior scoring to help admins evaluate security risks
-
-Read more about the monitoring features available in the Citrix VAD service [here](/en-us/citrix-virtual-apps-desktops-service/monitor.html), and in the Citrix Managed Desktops monitor [here](/en-us/citrix-managed-desktops/monitor.html)
-
-Learn about the analytics capabilities, visit the [Analytics Tech Brief](/en-us/tech-zone/learn/tech-briefs/analytics.html), or visit the [website](https://www.citrix.com/analytics/)
-
 ## Citrix Workspace
 
 Citrix Workspace extends the capabilities that WVD sessions provide by encompassing them with a holistic workspace. It is not just the place to provide single sign-on access to apps and desktops.
@@ -511,21 +469,71 @@ Citrix Workspace with Intelligence organizes work by funneling in notifications 
 
 Citrix Workspace adds universal search capabilities to all the data sources the workspace has been tied into including your on-premises SharePoint or SMB share, all the way to OneDrive in the cloud and everything in between. The Citrix Assistant is designed to learn and help users to information and allows them to interact with back-end applications to complete simple requests. It allows users to have natural language interaction and do queries for the data on the systems of records within Citrix Workspace. Learn about the Citrix Assistant [here](/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html)
 
+## Security
+
+Security provided by Microsoft is enhanced by adding additional layers with both client-side and server-side technologies. Features such as Session Watermarking, Session Recording, clipboard redirection policies and many more services from Citrix enhance the security stance. Extensions to authentication mechanisms with peripheral connectivity and the inclusion of various 3rd party identity providers, helps leverage existing investments, when extending the resource footprint in the cloud.
+
+Delegated administration and configuration logging don’t just enhance change tracking and audit capabilities but also help remain compliant.
+
+The following are some features of note to bolster the security of your WVD deployment:
+
+*  [Multifactor authentication extension](#multifactor-authentication)
+*  [Session Watermarking](#session-watermarking)
+*  [Session Recording](#session-recording)
+
+### Multifactor authentication
+
+Citrix extends the Azure multifactor authentication capabilities with support for the following:
+
+1.  MFA for Citrix VAD service Administrators (TOTP)
+2.  Citrix Gateway Service Active Directory + Token (Citrix SSO, MS Authenticator, Google Authenticator)
+3.  Citrix Gateway Service with AAD MFA
+4.  Citrix Gateway Service with Okta
+5.  Citrix Gateway Service with Google IdP (in preview)
+6.  Citrix Gateway Service with SAML IdP (Ping, ONeLogin, Auth0) (in preview)
+7.  On-Premises Citrix Gateway and existing MFA configurations
+8.  Smart Card / Proximity Card support
+    *  Supported (Imprivata, Gemalto, and so on)
+
+Read more about how the Citrix Workspace enables SSO with MFA in the [tech brief](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
+
+### Session Watermarking
+
+For sessions that have a user accessing sensitive data, a great deterrent to having the data be stolen is a watermark. Especially if the watermark can uniquely identify the user. Citrix enables admins to configure what to display. This includes use logon name, client IP address, VDA IP address, VDA host name, login timestamp, and even customized text. Being a server-side feature it is applicable to all sessions (not just on specific endpoints) and is immune to process termination at the end point by the user as a workaround.
+
+![Session Watermarking](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_27-session-watermarking.png)
+
+Learn more about session watermarking [here](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-watermark-policy-setting.html). Watch a short video to see the feature in action [here](https://youtu.be/XHEQlvpAZKs)
+
+### Session Recording
+
+Citrix provides the ability to record all or part of a desktop or app session. The recording can be intelligently stopped when sensitive information is being displayed. The admin is also able to initiate recording of a session from the **Manage** tab in the Citrix VAD service console to be able to help troubleshoot issues being experienced by users.
+
+Session Recording provides flexible policies to trigger recordings of application and desktop sessions automatically. This enables regulatory compliance and an audit trail of what was done during a session. Playback can have events inserted in them to allow for easy seeking of the recording.
+
+![Session Recording player](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_28-session-recording-player.png)
+
+Security of the session recordings can be enhanced by encrypting them to ensure only authorized users can view them or digitally signing the recordings. The admin can even define the size of the recording file based on file size or duration. Citrix Analytics can automatically turn on Session Recording when a user’s risk score is above the configured threshold, helping admins discover and diagnose unusual behavior.
+
 ## Summary
 
 The value-add Citrix provides to Microsoft Windows Virtual Desktop is multifaceted and can help expand the capabilities of your Microsoft WVD based VDI environment into a full-fledged Workspace.
 
 Citrix adds value in almost all the steps of the VDI deployment lifecycle in WVD, reducing cost and delivering the best possible user experience. Initial configuration and workload lifecycle tasks are streamlined through our provisioning tools and layering technologies. Day to day tasks are simplified through advanced monitoring, hands on help desk capabilities and performance and security analytics.
 
-The following is a list of the features that were discussed in the detail in the preceding sections, grouped into categories:
+The following is a list of the features that were discussed in the detail in the preceding sections, grouped by theme:
 
-1.  Setup and VM consumption cost management – Citrix App Layering, MCS, MCS I/O optimization, Azure On-demand provisioning, and Autoscale. Hybrid platform management allows the admin to move the environment into the cloud as needed.
-1.  User experience – HDX technologies allow for the most optimized and customizable delivery of remote sessions with support for the richest set of peripherals. SD-WAN traffic optimization for UCE, Web, and SaaS apps delivers the best experience possible.
-1.  Performance, Single server scalability and compute consumption optimization – Workspace Environment Manager, Optimization for UCE solutions including Microsoft Teams, Browser Content Redirection, and SD-WAN based network optimization.
+1.  Choice / Management
+    1.  Hybrid platform management allows the admin to move the environment into the cloud as needed.
+    1.  Setup and VM consumption cost management – Citrix App Layering, MCS, MCS I/O optimization, Azure On-demand provisioning, and Autoscale.
+    1.  A full-fledged user centric help desk solution that can remediate issues in the same console. Delegated administration and configuration logging of actions taken in the environment.
+1.  Experience
+    1.  HDX technologies allow for the most optimized and customizable delivery of remote sessions with support for the richest set of peripherals.
+    1.  Performance, Single server scalability and compute consumption optimization – Workspace Environment Manager, Optimization for UCE solutions including Microsoft Teams, Browser Content Redirection, and SD-WAN based network optimization.
+    1.  Profile Management extension for multi session scenarios.
+    1.  Networking solutions – Gateway enhances security with SSO and MFA, reduces latency to the resources and increase the resiliency of the environment. SD-WAN provides QoS, reliability, out-of-band traffic for internet content, and optimizes connectivity between the cloud and on-premises data center. SD-WAN traffic optimization for UCE, Web, and SaaS apps delivers the best experience possible.
+    1.  Workspace – Enhances the user experience by integrating the WVD based resources into a Workspace that helps, organize, guide, and automate work for the user.
 1.  Security – Session Watermarking, Session Recording, expanded multifactor authentication capabilities, Security Analytics, Citrix Gateway service, and Citrix Access Control service all add to layers of extra security to your environment.
-1.  Management – Profile Management extension for multi session scenarios, full-fledged user centric help desk solution that can remediate issues in the same console.
-1.  Networking solutions – Gateway enhances security with SSO and MFA, reduces latency to the resources and increase the resiliency of the environment. SD-WAN provides QoS, reliability, out-of-band traffic for internet content, and optimizes connectivity between the cloud and on-premises data center.
-1.  Workspace – Enhances the user experience by integrating the WVD based resources into a Workspace that helps, organize, guide, and automate work for the user.
 
 Call to action:
 
