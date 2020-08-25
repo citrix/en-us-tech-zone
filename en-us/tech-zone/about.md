@@ -5,7 +5,7 @@ layout: doc
 
 ## What is Tech Zone?
 
-Citrix Tech Zone is home for technical, in-depth articles, inspired and driven by the Citrix technical community and enthusiasts. Whether you are an architect, consultant, engineer, or technical IT manager, you can  find detailed insights into Citrix solutions.
+Citrix Tech Zone is home for technical, in-depth articles, inspired and driven by the Citrix technical community and enthusiasts. Whether you are an architect, consultant, engineer, or technical IT manager, you can find detailed insights into Citrix solutions.
 
 ## What resources can I find in Tech Zone?
 
@@ -13,7 +13,7 @@ Technical articles, video illustrations, architectural diagrams, reference archi
 
 ## Who is behind Tech Zone?
 
-Citrix experts and enthusiast from across the globe who are passionate about Citrix technologies and sharing their insights on what they can design, build, and deploy a secure digital workspace. These experts are Technical Marketing Engineers, Citrix Consultants, Sales Engineers, Citrix Technology Professionals, Citrix Technology Advocates, or any other technologists.
+Citrix experts and enthusiast from across the globe who are passionate about Citrix technologies. Here, these experts share their insights on what they can design, build, and deploy in a secure digital workspace. These experts are Technical Marketing Engineers, Citrix Consultants, Sales Engineers, Citrix Technology Professionals, Citrix Technology Advocates, or any other technologists.
 
 ## Contact us
 
