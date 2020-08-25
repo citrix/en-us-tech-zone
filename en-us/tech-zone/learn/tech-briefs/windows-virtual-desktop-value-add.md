@@ -31,21 +31,23 @@ The Citrix value add is tabulated in the following table:
 |   |Theme   |Feature   |Value Add   |
 |---|---|---|---|
 | 1  | Choice / Management  | [Hybrid Platform Management](#hybrid-cloud-management)  | Consume Windows Virtual Desktop as needed (burst capacity, migration to cloud, Disaster Recovery / Business Continuity, and more) while continuing to manage on-premises workloads from a single management plane. Remote PC Access is also managed and secured similarly from the same console. Support of Non-domain joined users.  |
-| 2  | Choice / Management  | [Provisioning](#management-of-the-environment)  | Automated GUI based provisioning with versioning and rollback support. Autoscale helps reduce compute cost in the cloud. Machine Creation Services including MCS I/O optimization and On Demand Provisioning, reduce premium disk costs. Zone preference helps with identifying on-prem or reserved instances to be used ahead of pay-as-you-go instances.  |
-| 3  | Choice / Management  | [Director / Monitoring and Citrix Analytics](#monitoring-and-analytics) | A user centric monitoring system that helps pinpoint and resolve user/application issues (Shadows user session, send messages, disconnect / logoff sessions, logon duration drill-down) from one place. Also adding alerting (Session / app launch failures, resource consumption, and predictive analysis) and help desk integration with ITSM. Citrix Analytics enables advanced performance and security issue drill-down with automated real-time remediation.  |
+| 2  | Choice / Management  | [Provisioning](#image-management-and-brokering)  | Automated GUI based provisioning with versioning and rollback support. Autoscale helps reduce compute cost in the cloud. Machine Creation Services including MCS I/O optimization and On Demand Provisioning, reduce premium disk costs. Zone preference helps with identifying on-prem or reserved instances to be used ahead of pay-as-you-go instances.  |
+| 3  | Choice / Management  | [Director / Monitoring and Citrix Analytics](#choice---monitoring-and-analytics) | A user centric monitoring system that helps pinpoint and resolve user/application issues (Shadows user session, send messages, disconnect / logoff sessions, logon duration drill-down) from one place. Also adding alerting (Session / app launch failures, resource consumption, and predictive analysis) and help desk integration with ITSM. Citrix Analytics enables advanced performance and security issue drill-down with automated real-time remediation.  |
 | 4  | Choice / Management  | Delegated Administration and Configuration Logging  | Granular control over administrative rights from help desk staff to IT owner coupled with full tracking of environment changes with date/time/admin action.  |
-| 5  | Experience  | [HDX](#hdx)  | The Citrix HDX protocol represents over 30 years of experience connecting remote apps and desktops to endpoints over latent networks. Reduces data on the wire and enables several optimizations and endpoint peripherals. Citrix sessions connecting directly to the session host. Adaptive display technologies are customizable for individual apps. 3D Optimizations for CAD and manufacturing use cases.  |
-| 6  | Experience  | [Collaboration Platforms and Content redirection](#multimedia-delivery-optimization)  | Unified communications optimization extends beyond Teams for Windows and Linux to Skype for Business, Zoom, Jabber and so on. Browser Content redirection reduces data ingress and egress costs while offloading media rendering to the client, increasing server scalability.  |
-| 7  | Experience  | [Personalization](#personalization), [WEM](#resource-optimization), and [Azure Files Integration](#azure-files-integration)  | Extend FSLogix profile containers for multi-session access using Citrix Profile Management. Workspace Environment Management (WEM) helps control compute costs by automatically managing applications. Accelerates logon to WVD and increases single server scalability.  |
-| 8  | Experience  | [Citrix Gateway and SD-WAN](#networking-solutions)  | Citrix Gateway POPs improve performance by connecting through the nearest gateway POP. Citrix SD-WAN allows the WVD environment to connect back to the on-premises data / environment and enables break out of Internet based traffic and HDX content optimizations to reduce data ingress and egress costs and improving user experience.  |
-| 9  | Experience  | [Citrix Workspace](#citrix-workspace)  | Citrix Workspace adds intelligent capabilities to organize, guide, and automate work in a single place, using microapps, universal search, Citrix assistant, relevant notifications and so on.  |
+| 5  | Experience  | [HDX](#experience---hdx)  | The Citrix HDX protocol represents over 30 years of experience connecting remote apps and desktops to endpoints over latent networks. Reduces data on the wire and enables several optimizations and endpoint peripherals. Citrix sessions connecting directly to the session host. Adaptive display technologies are customizable for individual apps. 3D Optimizations for CAD and manufacturing use cases.  |
+| 6  | Experience  | [Collaboration Platforms and Content redirection](#experience---multimedia-delivery-optimization)  | Unified communications optimization extends beyond Teams for Windows and Linux to Skype for Business, Zoom, Jabber and so on. Browser Content redirection reduces data ingress and egress costs while offloading media rendering to the client, increasing server scalability.  |
+| 7  | Experience  | [Personalization](#experience---personalization), [WEM](#experience---resource-optimization), and [Azure Files Integration](#azure-files-integration)  | Extend FSLogix profile containers for multi-session access using Citrix Profile Management. Workspace Environment Management (WEM) helps control compute costs by automatically managing applications. Accelerates logon to WVD and increases single server scalability.  |
+| 8  | Experience  | [Citrix Gateway and SD-WAN](#experience---app-delivery-solutions)  | Citrix Gateway POPs improve performance by connecting through the nearest gateway POP. Citrix SD-WAN allows the WVD environment to connect back to the on-premises data / environment and enables break out of Internet based traffic and HDX content optimizations to reduce data ingress and egress costs and improving user experience.  |
+| 9  | Experience  | [Citrix Workspace](#experience---citrix-workspace)  | Citrix Workspace adds intelligent capabilities to organize, guide, and automate work in a single place, using microapps, universal search, Citrix assistant, relevant notifications and so on.  |
 | 10  | Security  | [Multifactor authentication](#multifactor-authentication), [Session Watermarking](#session-watermarking), [Session Recording](#session-recording), and Smart card support   | Compliance and regulatory requirements met. MFA extended to several IDPs natively and others via SAML. Smart card support. Endpoint Analysis scans and granular policy control over the content and the user can access.  |
 
 This tech brief showcases the value add provided under the 3 themes of [Choice / Management](#choice--management), [Experience](#experience), [Security](#security) in Citrix products when setting up a workspace and using WVD based resources hosted in Azure.
 
 ## Choice / Management
 
-## Management of the environment
+In this section, the features that enhance the admin's ability to control, manage, and provision resources in the Windows Virtual Desktop environment are showcased.
+
+## Choice - Environment Management
 
 Effective management of Windows Virtual Desktop resources is important to be able to reduce cost while ensuring the best possible user experience. The simpler it is to manage the environment; the quicker it is to remediate user issues; the easier the administrator’s job is. To that end Citrix provides several features:
 
@@ -157,7 +159,7 @@ In addition to the cost savings, the user’s application response times are als
 
 Read more about the testing and results [here](/en-us/tech-zone/design/design-decisions/azure-instance-scalability.html)
 
-## Monitoring and Analytics
+## Choice - Monitoring and Analytics
 
 The setup and design of an environment is just the first part of getting VDI infrastructure for an organization. For that reason, it gets the most focus from cloud providers. But the Day 2 and onwards of running and maintainence of a large environment in my opinion is as important. Hosting VMs in public clouds obfuscate the running of the machines, but the admin must still ensure that the user experience is consistent and high performing day in and day out.
 
@@ -189,9 +191,9 @@ The following is a list of some of the great features that Citrix brings to bear
 *  Diagnostics
     *  Citrix Director utilized to diagnose and resolve user/application issues  
         1.  Shadow Users
-        2.  Send messages to users
-        3.  Disconnect/restore desktop and application sessions
-        4.  Session Recording
+        1.  Send messages to users
+        1.  Disconnect/restore desktop and application sessions
+        1.  Session Recording
 *  Help desk integration
     *  ITSM Adapter for ServiceNow allows for API-level integration
 *  Advanced analytics for performance and security
@@ -205,7 +207,9 @@ Learn about the analytics capabilities, visit the [Analytics Tech Brief](/en-us/
 
 ## Experience
 
-## HDX
+In this section, the features that enhance the user expereince when accessing their Windows Virtual Desktop resoures are showcased.
+
+## Experience - HDX
 
 For over three decades, Citrix has been in the business of remote delivery of desktops and applications. That experience led to various technologies designed to specifically come under the umbrella of HDX (**H**igh **D**efinition e**X**perience). These technologies include the graphics remoting (the encoding, decoding, and rendering of the session window), the compression technologies for various data types, the transport protocol used to send the data. And our broad support for the peripherals, including support for printing, various keyboards, scanners, mice, audio and video peripherals, security / authentication devices and many more.
 
@@ -277,7 +281,7 @@ The rich set of policies available to fine-tune the delivery of the app or deskt
     1.  Restriction on text and types of files that can be copied to the clipboard.
     1.  No clipboard or one way redirection (client to server or vice versa)
 
-## Multimedia Delivery Optimization
+## Experience - Multimedia Delivery Optimization
 
 Using HDX technologies and creating optimizations for the delivery of high-quality content and near native conferencing capabilities makes the entire remote desktop experience complete. When accessing content or using conferencing solutions from a cloud based resource several unique considerations are to be kept in mind. For users working from home, having large amounts of media data be routed to the customer data center or cloud location and then to the user's endpoint (possibly on a latent connection) is extremely detrimental to the user experience. As much as possible, the admin would want to ensure that media content is directly delivered to the user (saving data ingress and egress cost in the cloud). Another major consideration is the need to offload processing of media from the cloud-based resources to the client endpoint. Media processing when offloaded to the client reduces the load on the cloud resources, resulting in savings on compute cost while bettering user experience and server scalability.
 
@@ -323,7 +327,7 @@ Microsoft has released their own Teams optimizations solution, currently it only
 
 To learn more about Teams optimization, see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/microsoft-teams-optimization.html) or read the [Proof of Concept guide](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html)
 
-## Resource Optimization
+## Experience - Resource Optimization
 
 Most important to the user is a short logon time and session responsiveness. See how with Citrix technologies admins can reduce resource consumption by managing the applications running inside a WVD desktop while reducing logon times and making apps and desktops more responsive. This is a win-win as there are cost savings to be achieved as well.
 
@@ -362,7 +366,7 @@ To deliver the best possible logon performance, Workspace Environment Management
 
 Find more information about WEM and its benefits [here](/en-us/workspace-environment-management/current-release.html)
 
-## Personalization
+## Experience - Personalization
 
 In a non-persistent VDI environment, which includes WVD, users often require some level of personalization. Without persistent personalization, users are required to configure OS/app settings with every session.
 
@@ -412,13 +416,13 @@ Azure Files alleviates the need to set up, manage, and update the SMB store infr
 
 Learn more about how to set up the same [here](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html)
 
-## Networking solutions
+## Experience - App Delivery solutions
 
 ### Citrix Gateway and Citrix Access Control
 
-As discussed in the preceding section the Citrix Gateway service and the on-premises Citrix Gateway are a great addition to the security of the WVD environment by adding additional capabilities to Azure MFA. It is also one of the best reverse proxy solutions in the market.
+Citrix Gateway is the preferred app delivery solution for reverse proxy to Citrix resources, providing VPN-less access to resoruces for end users.
 
-Citrix Gateway Service has dozens of Points of Presence (POP) globally, connecting through the nearest Citrix Gateway POP improves performance. With Citrix VAD service and Citrix Gateway service enterprises now may provide remote access to apps and desktops without those additional requirements along with other benefits:
+Citrix Gateway Service has dozens of Points of Presence (POP) globally, connecting through the nearest Citrix Gateway POP improves performance. With Citrix VAD service and Citrix Gateway service enterprises now may provide remote access to apps and desktops without additional VPN requirements along with following benefits:
 
 *  Multiple sites are implemented and maintained globally by Citrix
 *  Public IP addresses are implemented and maintained by Citrix
@@ -460,7 +464,7 @@ The breakout of internet traffic directly from the end point reduces the latency
 
 Integrations with Citrix Managed Desktops can provision the SD-WAN instances in the Azure Tenant, by the using the Citrix SD-WAN Orchestrator service.
 
-## Citrix Workspace
+## Experience - Citrix Workspace
 
 Citrix Workspace extends the capabilities that WVD sessions provide by encompassing them with a holistic workspace. It is not just the place to provide single sign-on access to apps and desktops.
 The Workspace helps the user by organizing their work, guiding them to the important tasks and automating the repetitive tasks to enable them to complete tasks without having to leave the workspace.
@@ -486,13 +490,13 @@ The following are some features of note to bolster the security of your WVD depl
 Citrix extends the Azure multifactor authentication capabilities with support for the following:
 
 1.  MFA for Citrix VAD service Administrators (TOTP)
-2.  Citrix Gateway Service Active Directory + Token (Citrix SSO, MS Authenticator, Google Authenticator)
-3.  Citrix Gateway Service with AAD MFA
-4.  Citrix Gateway Service with Okta
-5.  Citrix Gateway Service with Google IdP (in preview)
-6.  Citrix Gateway Service with SAML IdP (Ping, ONeLogin, Auth0) (in preview)
-7.  On-Premises Citrix Gateway and existing MFA configurations
-8.  Smart Card / Proximity Card support
+1.  Citrix Gateway Service Active Directory + Token (Citrix SSO, MS Authenticator, Google Authenticator)
+1.  Citrix Gateway Service with AAD MFA
+1.  Citrix Gateway Service with Okta
+1.  Citrix Gateway Service with Google IdP (in preview)
+1.  Citrix Gateway Service with SAML IdP (Ping, ONeLogin, Auth0) (in preview)
+1.  On-Premises Citrix Gateway and existing MFA configurations
+1.  Smart Card / Proximity Card support
     *  Supported (Imprivata, Gemalto, and so on)
 
 Read more about how the Citrix Workspace enables SSO with MFA in the [tech brief](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
@@ -530,8 +534,8 @@ The following is a list of the features that were discussed in the detail in the
 1.  Experience
     1.  HDX technologies allow for the most optimized and customizable delivery of remote sessions with support for the richest set of peripherals.
     1.  Performance, Single server scalability and compute consumption optimization – Workspace Environment Manager, Optimization for UCE solutions including Microsoft Teams, Browser Content Redirection, and SD-WAN based network optimization.
-    1.  Profile Management extension for multi session scenarios.
-    1.  Networking solutions – Gateway enhances security with SSO and MFA, reduces latency to the resources and increase the resiliency of the environment. SD-WAN provides QoS, reliability, out-of-band traffic for internet content, and optimizes connectivity between the cloud and on-premises data center. SD-WAN traffic optimization for UCE, Web, and SaaS apps delivers the best experience possible.
+    1.  Profile Management extension for multi session scenarios, support for Azure Files.
+    1.  App Delivery solutions – Gateway enhances security with SSO and MFA, reduces latency to the resources and increase the resiliency of the environment, while enabling VPN-less access. SD-WAN provides QoS, reliability, out-of-band traffic for internet content, and optimizes connectivity between the cloud and on-premises data center. SD-WAN traffic optimization for UCE, Web, and SaaS apps delivers the best experience possible.
     1.  Workspace – Enhances the user experience by integrating the WVD based resources into a Workspace that helps, organize, guide, and automate work for the user.
 1.  Security – Session Watermarking, Session Recording, expanded multifactor authentication capabilities, Security Analytics, Citrix Gateway service, and Citrix Access Control service all add to layers of extra security to your environment.
 
