@@ -24,7 +24,7 @@ This guide demonstrates how to implement a Proof of Concept environment using tw
 
 It makes assumptions about the completed installation and configuration of the following components:
 
-*  Citrix Gateway installed, licensed, and configure with an externally reachable virtual server bound to a wildcard certificate.
+*  Citrix Gateway installed, licensed, and configure with an externally reachable virtual server bound to a wildcard certificate
 *  Citrix Gateway integrated with a Citrix Virtual Apps and Desktops environment which uses LDAP for authentication
 *  Citrix Cloud account established
 *  Endpoint with Citrix Workspace app installed
