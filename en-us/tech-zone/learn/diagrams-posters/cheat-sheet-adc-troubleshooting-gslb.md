@@ -12,7 +12,7 @@ description: One-page summary of GSLB, MEP protocol and troubleshooting tips.
 
 ## Overview
 
-Citrix ADC appliances configured for global server load balancing (GSLB) provide for disaster recovery and ensure continuous availability of applications by protecting against points of failure in a WAN. GSLB can balance the load across data centers by directing client requests to the closest or best performing data center. In the case of an outage, it can direct clients to the surviving data center. 
+Citrix ADC configured for global server load balancing (GSLB) provides for disaster recovery and ensures continuous availability of applications by protecting against points of failure in a WAN. GSLB can balance the load across data centers by directing client requests to the closest or best performing data center. In the case of an outage, it can direct clients to the surviving data center.
 
 *  GSLB Metric Exchange Protocol (MEP) is a Citrix proprietary protocol used by Citrix ADC. It is used to exchange site and network metrics, persistence data, and other information to other sites participating in GSLB.
 *  Communication process is accomplished between each GSLB site on TCP port 3011 (or 3009 for secure communication).
