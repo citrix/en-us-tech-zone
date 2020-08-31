@@ -141,13 +141,13 @@ The following data needs to be collected:
 
 The installation of the Cloud Connectors registers your on-premises domain to Citrix Cloud under the **Identity and Access Management** section.
 
-[![Active Directory association after Cloud Connector installation](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_007.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_007-large.png)
+[![Active Directory association after Cloud Connector installation](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_09.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_09-large.png)
 
 ### Deploy Certificates for Cloud Connectors
 
 If either on-premises StoreFront or Citrix ADCs are to be used after migration, then certificates are needed on the Cloud Connectors. The Cloud Connector runs the XML and the STA services on port 80 by default as these communications are typically INTERNAL. To configure encryption for these traffic types, certificates must be deployed on the Cloud Connectors and these two services must be bound to those certificates.
 
-[![cloud-migration-strategies-Image-9](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_009.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_009.png)
+[![cloud-migration-strategies-Image-9](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_10.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_10.png)
 
 Both public and self-signed certificates can be used as the customer-hosted StoreFront and on-premises Citrix ADCs need to trust the certificates.
 
@@ -179,7 +179,7 @@ The **ListOfDDCs** registry key on the golden image / virtual disk must be updat
 
 **Power on the golden image**, open the **Registry editor** and navigate to **HKLM\Software\Citrix\VirtualDeliveryAgent** key, and **update the ListOfDDCs with Cloud Connector host names** in their respective resource locations.
 
-[![Update ListOfDDCs registry key on VDAs](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_055.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_055.png)
+[![Update ListOfDDCs registry key on VDAs](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_11.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_11-large.png)
 
 Shut down the machine running the golden image for MCS or virtual disk for PVS. Take a new snapshot and update the machine catalog with the new snapshot.
 
@@ -191,33 +191,33 @@ Open the **Group Policy Management Console** and create a **new GPO**.
 
 **Edit the Policy**, select **Computer Configuration** and then **Citrix Policies**. On the right pane, select **New** under **Citrix Computer Policies**.
 
-![Create a policy for ListOfDDcs registry key update](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_056.png)
+[![Create a policy for ListOfDDcs registry key update](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_12.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_12-large.png)
 
 Name the Policy as **VDA Migration** and select the **Controllers** setting from the list and click **Add** to update.
 
-![Select Controllers setting](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_058.png)
+[![Select Controllers setting](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_13.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_13-large.png)
 
 Enter the **FQDN of the Cloud Connectors**, with space as a delimiter.
 
-![Enter Cloud Connector FQDNs](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_059.png)
+[![Enter Cloud Connector FQDNs](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_14.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_14-large.png)
 
 Set the **Enable auto update of Controller** option to **Allowed**. This setting allows VDAs to update the list of controllers with newly added Cloud Connectors. Although auto-update is not used for initial registration, the auto-update downloads and stores the ListOfDDCs in a persistent cache on the VDA when initial registration occurs. This process is done on each resource machine running a VDA.
 
-![Enable Auto Update of Controllers](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_060.png)
+[![Enable Auto Update of Controllers](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_15.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_15-large.png)
 
 Refer to the [VDA registration product documentation](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html#auto-update) for additional details on how auto-update works and its exceptions.
 
 On the **Filters** page, select the **Delivery Group(s)** on which this policy needs to be applied.
 
-![Select Delivery Group for filtering the policy](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_061.png)
+[![Select Delivery Group for filtering the policy](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_16.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_16-large.png)
 
 Check the **Enable this policy** check box and click **Create** to complete the policy creation.
 
-![Enable and create the policy](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_062.png)
+![Enable and create the policy](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_17.png)
 
 Increase the **priority** of the policy to apply the settings.
 
-![Increase the priority of the policy](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_063.png)
+[![Increase the priority of the policy](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_18.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_18-large.png)
 
 Once the Group Policy setting is updated, the machines start to register with the Cloud Controllers.
 
@@ -233,19 +233,19 @@ With everything ready the configuration of the access layer can be performed. On
 
 To configure access via the Citrix Workspace and Citrix Gateway services navigate to **Workspace Configuration** from the **hamburger menu** on the top left of the Citrix Cloud console.
 
-The **Access tab** shows the **Workspace URL** which is ready to use by the end-users. The first part of the workspace URL is customizable. You can change the URL from, for example, [https://example.cloud.com] to [https://<desired_URL>.cloud.com]
+The **Access tab** shows the **Workspace URL** which is ready to use by the end-users. The first part of the workspace URL is customizable. You can change the URL from, for example, `https://example.cloud.com` to `https://<desired_URL>.cloud.com`
 
-[![Change Workspace URL](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_049.png)
+[![Change Workspace URL](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_19.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_19-large.png)
 
 Enable connectivity using the Gateway service by clicking the ellipses for the desired resource location and selecting **Configure Connectivity**. (Perform this step and the following steps for each resource location that is being migrated).
 
 Select **Gateway Service** radio button and click **Save**.
 
-![Choose Gateway Service](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_051.png)]
+![Choose Gateway Service](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_20.png)
 
 The **Authentication tab** allows for configuration of the authentication mechanism. Choose the desired method.
 
-![Choose Authentication method](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_09.png)]
+![Choose Authentication method](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_21.png)
 
 The **Customize tab** in Workspace Configuration allows you to customize the Workspace appearance and preferences.
 
@@ -259,33 +259,33 @@ First the on-premises Gateway is configured to enable external access.
 
 1.  **Connect to the on-premises Citrix ADC** from a browser and **login as an administrator**. In the **Integrate with Citrix Products** section, click **XenApp and XenDesktop**.
 
-    ![Open Citrix ADC console](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_068.png)
+    [![Open Citrix ADC console](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_22.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_22-large.png)
 
 1.  Follow the wizard and provide the required **details for FQDN and SSL Certificate** for the configuration.
 
-    ![Enter Gateway FQDN and SSL cert details](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_069.png)
+    [![Enter Gateway FQDN and SSL cert details](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_23.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_23-large.png)
 
-1.  Enter **Workspace URL** in the **StoreFront URL** field. Click **Retrieve Stores**. Enter the **Active Directory Domain** in the **Default Active Directory Domain** text box. Enter **the URLs of the Cloud Connectors** as [`http://<cloudconnector.FQDN>`] or [`https://<cloudconnector.FQDN>`] (if SSL certificates are configured). Click **Test STA Connectivity**, ensure it passes.
+1.  Enter **Workspace URL** in the **StoreFront URL** field. Click **Retrieve Stores**. Enter the **Active Directory Domain** in the **Default Active Directory Domain** text box. Enter **the URLs of the Cloud Connectors** as `http://<cloudconnector.FQDN>` or `https://<cloudconnector.FQDN>` (if SSL certificates are configured). Click **Test STA Connectivity**, ensure it passes.
 
-    ![Enter StoreFront Details and test STA](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_070.png)
+    ![Enter StoreFront Details and test STA](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_24.png)
 
 1.  Complete the configuration of the Gateway, no need to provide Authentication and session policy details.
 
 To configure access via the Citrix Workspace service, **login to Citrix Cloud** and navigate to **Workspace Configuration** from the **hamburger menu** on the top left of the Citrix Cloud console.
 
-The **Access tab** shows the **Workspace URL** which is ready to use by the end-users. The first part of the workspace URL is customizable. You can change the URL from, for example, [https://example.cloud.com] to [https://<desired_URL>.cloud.com]
+The **Access tab** shows the **Workspace URL** which is ready to use by the end-users. The first part of the workspace URL is customizable. You can change the URL from, for example, `https://example.cloud.com` to `https://<desired_URL>.cloud.com`
 
-[![Change Workspace URL](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_049.png)
+[![Change Workspace URL](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_19.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_19-large.png)
 
 Enable connectivity using the on-premises Gateway by clicking **the ellipses for the desired resource location** and selecting **Configure Connectivity**. (Perform this step and the following steps for each resource location that is being migrated).
 
 Select **Traditional Gateway Service** radio button and click **Add**.
 
-![Choose Traditional Gateway](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_10.png)
+![Choose Traditional Gateway](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_25.png)
 
 Click **Test STA** to confirm connectivity to the Cloud Connector based STA services. Once it passes. Click **Save**.
 
-![Test STA connectivity](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_11.png)
+![Test STA connectivity](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_26.png)
 
 If the test fails, check the binding of Citrix Cloud Connectors as Secure Ticket Authority (STA) servers to Citrix Gateway. For more information, see [CTX232640](https://support.citrix.com/article/CTX232640).
 
@@ -297,17 +297,17 @@ The StoreFront servers need to communicate with Cloud Connectors for resource en
 
 Configure the **store** on StoreFront Servers with **Cloud Connectors**. If you are creating a new store add the Cloud Connectors on the **Delivery Controllers** page. If you are using the existing store, select the **Manage Delivery Controllers** option and **update the FQDNs of the Cloud Connectors**.
 
-[![Update Cloud Connector FQDN in Controller field](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_064.png)
+[![Update Cloud Connector FQDN in Controller field](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_27.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_27-large.png)
 
 Enable the **Remote Access** option to integrate the Store service with the on-premises Gateway to enable external access for this store.
 
-![Enable Remote Access](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_065.png)
+![Enable Remote Access](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_28.png)
 
 Configure the **trusted domain** for authentication and apply the customizations required as per the organization requirements. Access the StoreFront URL internally and verify the access.
 
 For external access, we need to verify the **Security Ticket Authority** details. If not added in previous steps add those details now.
 
-![Configure STA](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_067.png)
+[![Configure STA](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_29.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_29-large.png)
 
 Configure the CallBack URL if necessary and finish the StoreFront configuration.
 
@@ -315,10 +315,46 @@ Now configure the on-prem Gateway. Perform the first 3 steps in the on-premises 
 
 Configure the **Active Directory Domain** details for the authentication.
 
-![Add Active Directory Domain Details](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_071.png)
+![Add Active Directory Domain Details](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_30.png)
 
 Configure the **Session Policies** to complete the gateway configuration. Also, apply the necessary themes with the required customization.
 
-![Configure Session Policies](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_12.png)
+[![Configure Session Policies](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_31.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_31-large.png)
 
 On-premises StoreFront and Gateway configuration are successfully completed. The users can now seamlessly access their resources as they used to before the migration using the **StoreFront URL**.
+
+That completes the deployment guide to migrate an on-premises Citrix Virtual Apps and Desktops environemnt to the Citrix Cloud using the Citrix Virtual Apps and Desktops service.
+
+## Call to action
+
+Request a trial of Citrix Virtual Apps and Desktops service, click [here](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/inquiry/).
+
+Try the Automated Configuration tool, click [here](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html).
+
+## References
+
+[Citrix Virtual Apps and Desktops service product documentation](/en-us/citrix-virtual-apps-desktops-service.html)
+
+[Reference Architecture for Citrix Cloud Virtual Apps and Desktops Service](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html)
+
+[Cloud Connector connectivity requirements](/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html)
+
+[Cloud Connector sizing guide](/en-us/citrix-virtual-apps-desktops-service/install-configure/install-cloud-connector/cc-scale-and-size.html)
+
+[Cloud Connector Technical Details](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details)
+
+[Deployment scenarios for Cloud Connector with Active Directory domains](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html#deployment-scenarios-for-cloud-connectors-in-active-directory)
+
+[Cloud Connector installation](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html)
+
+[Citrix Cloud Identity and Access Management](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management.html)
+
+[Automated Configuration tool POC guide](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html)
+
+[Machine Catalog creation and types](/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html)
+
+[Citrix Policies](/en-us/citrix-virtual-apps-desktops-service/policies.html)
+
+[Cloud Connector Updates](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/cloud-connector-updates.html)
+
+[How to install SSL Certificate on Cloud Connectors](https://support.citrix.com/article/CTX221671)
