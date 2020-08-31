@@ -30,3 +30,5 @@ Conceptual architecture drawings, stencils, templates and other materials.
 [Citrix ADC - Troubleshooting High Availability Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-troubleshooting-high-availability.html) - One-page summary of high availability and troubleshooting tips.
 
 [Citrix ADM - Overview Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adm.html) - One-page summary of the ADM Platform detailing system requirements, deployment modes, protocols and ports, common log files, common issues/failures, and more.
+
+[Citrix ADM - Ports and URL's That Need To Be Opened for Communication](https://support.citrix.com/article/CTX269531) - One-page summary of Ports and URL's That Need To Be Opened for Communication to and from Citrix ADM.
