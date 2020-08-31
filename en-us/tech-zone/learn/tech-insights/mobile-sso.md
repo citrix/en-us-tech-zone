@@ -8,7 +8,7 @@ description: Single sign-on to native mobile applications via Citrix Gateway.
 
 **Author:** [Frank Srp](https://twitter.com/UEMSRP)
 
-Learn how to configure Endpoint Management and Citrix Gateway to deliver single sign-on to native SaaS apps on iOS and Android devices that are enrolled into the Citrix Workspace.
+Learn how to configure Endpoint Management and Citrix Gateway to deliver single sign-on to native SaaS apps. Here, you can find information for iOS and Android devices that are enrolled into the Citrix Workspace.  
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=VIwxcDI6t9Y&feature=youtu.be):**
 
