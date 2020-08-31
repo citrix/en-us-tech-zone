@@ -103,7 +103,7 @@ The following data needs to be collected:
 *  Authentication point and provider
 *  StoreFront configurations
 *  Citrix Gateway configuration for each site or data center
-*  If you have a Citrix Virtual Apps and Desktops service subscription, then creds for the same (skip to the [Install Citrix Cloud Connectors](#install-cloud-connectors-in-on-premises-resource-locations) section).
+*  If you have a Citrix Virtual Apps and Desktops service subscription, then use those credentials (skip to the [Install Citrix Cloud Connectors](#install-cloud-connectors-in-on-premises-resource-locations) section).
     *  Else follow the below steps to create a new subscription.
 
 ## Set up a basic Citrix Cloud Environment
