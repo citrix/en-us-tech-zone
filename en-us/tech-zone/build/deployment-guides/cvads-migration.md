@@ -12,11 +12,11 @@ description: Learn how to migrate your on-premises Citrix Virtual Apps and Deskt
 
 ## Overview
 
-In this deployment guide, you will learn how to migrate an on-premises Citrix Virtual Apps and Desktops environment to Citrix Virtual Apps and Desktops service in Citrix Cloud. The components that manage and control access to the environment move to Citrix Cloud. Having these components in Citrix Cloud, offloads the effort of managing and updating these components to Citrix. In Citrix Cloud, these components are deployed adhering to best practices and kept evergreen with the latest updates and security patches. Added benefits of the cloud include guaranteed uptime and flexible subscription options. The resources that host the sessions will continue to run in their original resource location(s).
+In this deployment guide, you learn how to migrate an on-premises Citrix Virtual Apps and Desktops environment to a Citrix Virtual Apps and Desktops service in Citrix Cloud. The components that manage and control access to the environment move to Citrix Cloud. Having these components in Citrix Cloud, offloads the effort of managing and updating these components to Citrix. In Citrix Cloud, these components are deployed adhering to best practices and kept evergreen with the latest updates and security patches. Added benefits of the cloud include guaranteed uptime and flexible subscription options. The resources that host the sessions continue to run in their original resource location(s).
 
 ## Audience
 
-This guide is intended for Citrix administrators, technical professionals, IT decision-makers, partners, and consultants who are assessing migration strategies to move their customer managed on-premises environment to Citrix Virtual Apps and Desktops service o Citrix Cloud. The document is for users who are
+This guide is intended for Citrix administrators, technical professionals, IT decision-makers, partners, and consultants who are assessing migration strategies to move their customer managed on-premises environment to a Citrix Virtual Apps and Desktops service on Citrix Cloud. The document is for users who are
 
 *  Familiar with the administration of a Citrix Virtual Apps and Desktops or XenApp and XenDesktop site.
 *  Familiar with the administration of a StoreFront environment.
@@ -33,23 +33,23 @@ The existing setup enables secure remote access to the resources (virtual apps a
 ## Desired state options after migration
 
 The CTO of the company wants to have the Citrix management components moved to Citrix Cloud and be managed by Citrix. The workloads are to remain in the on-premises data center.
-Now the decision needs to be made regarding where the access control components will reside after the migration.
+Now the admin must decide where the access control components will reside after the migration.
 
 There are 3 options available to the admins:
 
-1.  Move the access layer to Citrix Cloud and utilize Citrix Gateway service.
+1.  Move the access layer to Citrix Cloud and utilize the Citrix Gateway service.
 
     The admin chooses this option when the customer is willing to fully realize the benefits of the Citrix Workspace. This would be an option if the Gateway was being used exclusively for the CVAD deployment.
 
     [![Migration to cloud with Citrix Gateway and Citrix Workspace in Citrix Cloud](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_02.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_02-large.png)
 
-1.  Retain the on-premises Citrix Gateway and utilize Citrix Workspace service
+2.  Retain the on-premises Citrix Gateway and utilize the Citrix Workspace service
 
     The admin chooses this option when the customer wants to extend the benefits of Citrix Workspace to their end users while retaining control of the Gateway, as it may be used for other services in the customer environment.
 
     [![Migration to cloud with on-premises Gateway and Citrix Workspace in Citrix Cloud](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_03.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_03-large.png)
 
-1.  Retain the existing on-premises Gateway and StoreFront combination
+3.  Retain the existing on-premises Gateway and StoreFront combination
 
     The admin chooses this option if they want to keep control of both these components or if end users must continue to access the original Gateway URL to access their resources.
 
@@ -57,17 +57,17 @@ There are 3 options available to the admins:
 
 ## Migration methodologies
 
-Once the admin decides the desired state after the migration from the options in the preceding section, they must choose which migration method they will use:
+Once the admin decides the desired state after the migration from the options in the preceding section, they must choose which migration method to use:
 
-1.  **Using Auto config tool**
+1.  **Using Automated Configuration tool**
 
-    The admin chooses this option when their environment is supported by the Automated Configuration tool. This approach simplifies the migration process.
+    The admin chooses this option, when the Automated Configuration tool supports their environment. This approach simplifies the migration process.
 
 1.  **Manual**
 
     The admin chooses this option if they are unable to use the tool, for example, when the existing environment is not on one of the LTSR releases or on one of the latest two Current Releases.
 
-In this guide we will be looking into automated configuration tool base migration process.
+In this guide we are looking into the Automated Configuration tool based migration process.
 
 ## Prerequisites and data to be collected before migration
 
@@ -81,7 +81,7 @@ The system requirements for the Cloud Connectors are [here](/en-us/citrix-cloud/
 
 Review the guidance on the cloud connector installation [here](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html#installation-considerations-and-guidance).
 
-Some requirements Citrix Cloud Connector installation (installer performs checks for these) are:
+Some requirements for Citrix Cloud Connector installation (installer performs checks for these) are:
 
 1.  The Citrix Cloud Connector machine must have outbound Internet access on port 443, and port 80 to only *.digicert.com. The port 80 requirement is for X.509 certificate validation. See more info [here](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html#certificate-validation-requirements).
 1.  Microsoft .NET Framework 4.7.2 or later must be pre-installed on the machine.
@@ -110,15 +110,15 @@ The following data needs to be collected:
 
 1.  If the organization, does not have one, create a new Citrix Cloud account, by following the instructions in the **Create Citrix Cloud Account** section on this [page](/en-us/tech-zone/learn/poc-guides/cvads.html#deployment-steps). Continue with the next step once the section is complete.
 
-1.  Login to the Citrix Cloud account and then invite one or more administrators to the Citrix Cloud account. **Note**: Even if other administrators in the organization have access to your Citrix account on Citrix.com, they still need to be invited to the Citrix Cloud account. To do this, from the **Citrix Cloud management console**, click the **hamburger menu** in the top left corner and select **Identity and Access Management**. For more information, see [Add administrators to a Citrix Cloud account](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/add-admins.html).
+1.  Log in to the Citrix Cloud account and then invite one or more administrators to the Citrix Cloud account. **Note**: Even if other administrators in the organization have access to your Citrix account on Citrix.com, they still need to be invited to the Citrix Cloud account. To do this, from the **Citrix Cloud management console**, click the **hamburger menu** in the top left corner and select **Identity and Access Management**. For more information, see [Add administrators to a Citrix Cloud account](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/add-admins.html).
 
     ![Citrix Cloud - Identity and Access Management](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_05.png)
 
-1.  Return to the main page by clicking on **Citrix Cloud** on the top of the page and then request a trial for Citrix **Virtual Apps and Desktops service** by clicking on the **Request Trial** button in the tile.
+1.  Return to the main page by clicking on **Citrix Cloud** on the top of the page and then request a trial for the Citrix **Virtual Apps and Desktops service** by clicking on the **Request Trial** button in the tile.
 
     [![Citrix Cloud - Available Services](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_06.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_06-large.png)
 
-    **Note**: If you know who your account team is, reach out to them to get the trial approved. If you are unsure who your account team is, continue to next step.
+    **Note**: If you know who your account team is, reach out to them to get the trial approved. If you are unsure who your account team is, continue to the next step.
 
 1.  Click **Request a Call**
 
@@ -132,14 +132,14 @@ The following data needs to be collected:
 
 ## Install Cloud Connectors in on-premises resource location(s)
 
-1.  Login to one of the machines that has been prepared for hosting the cloud connector as a local administrator over RDP.
+1.  Log in to one of the machines that has been prepared for hosting the cloud connector as a local administrator over RDP.
 1.  **Open a browser** and go to the URL: [Citrix Cloud](https://citrix.cloud.com/).
 1.  The follow the steps in the **Create a Resource Location** section of this [guide](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html#create-a-new-resource-location), login as a full Citrix Cloud administrator.
 1.  Repeat the steps for all the resource locations and Cloud Connectors in your environment.
 
 **Note**: You can also install the Cloud Connector using the [command line](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html#command-line-installation).
 
-The installation of the Cloud Connectors registers your on-premises domain to Citrix Cloud under the Identity and Access Management section.
+The installation of the Cloud Connectors registers your on-premises domain to Citrix Cloud under the **Identity and Access Management** section.
 
 [![Active Directory association after Cloud Connector installation](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_007.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_007-large.png)
 
@@ -163,15 +163,15 @@ Refer to the [Citrix Support article](https://support.citrix.com/article/CTX2216
 
 Once your Citrix Virtual Apps and Desktops service trial / subscription has been activated continue with the following steps:
 
-As indicated in the migration methodologies section, the migration steps discussed in this guide will use the automated configuration tool. Depending on whether the provisioning scheme of the Citrix on-premises environment is PVS or MCS, the procedure changes.
+As indicated in the migration methodologies section, the migration steps discussed in this guide use the Automated Configuration tool. Depending on whether the provisioning scheme of the Citrix on-premises environment is PVS or MCS, the procedure changes.
 
-Follow the steps in the Automated configuration tool steps from the section linked [here](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html#export-your-on-premises-site-configuration).
+Follow the steps in the Automated Configuration tool steps from the section linked [here](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html#export-your-on-premises-site-configuration).
 
-Once the migration of control layer is complete and verification is done, return here and continue with the following steps.
+Once the migration of the control layer is complete and verification is done, return here and continue with the following steps.
 
 ## Migration steps - Configure machines running VDAs to register to the Cloud Connectors
 
-Once the automated configuration tool has been run, then the machines hosting resources (running VDAs) must be configured to register with the Cloud Connectors.
+Once the Automated Configuration tool has been run, then the machines hosting resources (running VDAs) must be configured to register with the Cloud Connectors.
 
 ### For the MCS and PVS based machines (Pooled and Server OS) machines
 
@@ -191,7 +191,7 @@ Open the **Group Policy Management Console** and create a **new GPO**.
 
 **Edit the Policy**, select **Computer Configuration** and then **Citrix Policies**. On the right pane, select **New** under **Citrix Computer Policies**.
 
-![Create new policy for ListOfDDcs registry key update](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_056.png)
+![Create a policy for ListOfDDcs registry key update](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_056.png)
 
 Name the Policy as **VDA Migration** and select the **Controllers** setting from the list and click **Add** to update.
 
@@ -201,7 +201,7 @@ Enter the **FQDN of the Cloud Connectors**, with space as a delimiter.
 
 ![Enter Cloud Connector FQDNs](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_059.png)
 
-Set the **Enable auto update of Controller** option to **Allowed**. This allows VDAs to update the list of controllers with newly added Cloud Connectors. Although auto-update is not used for initial registration, the auto-update downloads and stores the ListOfDDCs in a persistent cache on the VDA when initial registration occurs. This is done for each resource machine running a VDA.
+Set the **Enable auto update of Controller** option to **Allowed**. This setting allows VDAs to update the list of controllers with newly added Cloud Connectors. Although auto-update is not used for initial registration, the auto-update downloads and stores the ListOfDDCs in a persistent cache on the VDA when initial registration occurs. This process is done on each resource machine running a VDA.
 
 ![Enable Auto Update of Controllers](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_060.png)
 
@@ -217,7 +217,7 @@ Check the **Enable this policy** check box and click **Create** to complete the 
 
 Increase the **priority** of the policy to apply the settings.
 
-![Increase priority of the policy](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_063.png)
+![Increase the priority of the policy](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_063.png)
 
 Once the Group Policy setting is updated, the machines start to register with the Cloud Controllers.
 
@@ -231,13 +231,13 @@ With everything ready the configuration of the access layer can be performed. On
 
 ## User Access Layer - Citrix Workspace and Citrix Gateway service in Citrix Cloud
 
-To configure access via Citrix Workspace and Citrix Gateway services navigate to **Workspace Configuration** from the **hamburger menu** on the top left of the Citrix Cloud console.
+To configure access via the Citrix Workspace and Citrix Gateway services navigate to **Workspace Configuration** from the **hamburger menu** on the top left of the Citrix Cloud console.
 
 The **Access tab** shows the **Workspace URL** which is ready to use by the end-users. The first part of the workspace URL is customizable. You can change the URL from, for example, [https://example.cloud.com] to [https://<desired_URL>.cloud.com]
 
 [![Change Workspace URL](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_049.png)
 
-Enable connectivity using the Gateway service by clicking the ellipses for the desired resource location and selecting **Configure Connectivity**. (Perform this and the following steps for each resource location that is being migrated).
+Enable connectivity using the Gateway service by clicking the ellipses for the desired resource location and selecting **Configure Connectivity**. (Perform this step and the following steps for each resource location that is being migrated).
 
 Select **Gateway Service** radio button and click **Save**.
 
@@ -265,19 +265,19 @@ First the on-premises Gateway is configured to enable external access.
 
     ![Enter Gateway FQDN and SSL cert details](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_069.png)
 
-1.  Enter **Workspace URL** in the **StoreFront URL** field. Click **Retrieve Stores**. Enter the **Active Directory Domain** in the **Default Active Directory Domain** text box. Enter **the URLs of the Cloud Connectors** as "[http://<cloudconnector.FQDN>]" or [https://<cloudconnector.FQDN>] (if SSL certificates are configured). Click **Test STA Connectivity**, ensure it passes.
+1.  Enter **Workspace URL** in the **StoreFront URL** field. Click **Retrieve Stores**. Enter the **Active Directory Domain** in the **Default Active Directory Domain** text box. Enter **the URLs of the Cloud Connectors** as [`http://<cloudconnector.FQDN>`] or [`https://<cloudconnector.FQDN>`] (if SSL certificates are configured). Click **Test STA Connectivity**, ensure it passes.
 
     ![Enter StoreFront Details and test STA](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_070.png)
 
 1.  Complete the configuration of the Gateway, no need to provide Authentication and session policy details.
 
-To configure access via Citrix Workspace service, **login to Citrix Cloud** and navigate to **Workspace Configuration** from the **hamburger menu** on the top left of the Citrix Cloud console.
+To configure access via the Citrix Workspace service, **login to Citrix Cloud** and navigate to **Workspace Configuration** from the **hamburger menu** on the top left of the Citrix Cloud console.
 
 The **Access tab** shows the **Workspace URL** which is ready to use by the end-users. The first part of the workspace URL is customizable. You can change the URL from, for example, [https://example.cloud.com] to [https://<desired_URL>.cloud.com]
 
 [![Change Workspace URL](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_049.png)
 
-Enable connectivity using the on-premises Gateway by clicking **the ellipses for the desired resource location** and selecting **Configure Connectivity**. (Perform this and the following steps for each resource location that is being migrated).
+Enable connectivity using the on-premises Gateway by clicking **the ellipses for the desired resource location** and selecting **Configure Connectivity**. (Perform this step and the following steps for each resource location that is being migrated).
 
 Select **Traditional Gateway Service** radio button and click **Add**.
 
