@@ -32,7 +32,7 @@ The existing setup enables secure remote access to the resources (virtual apps a
 
 ## Desired state options after migration
 
-The CTO of the company wants to have the Citrix management components moved to Citrix cloud and be managed by Citrix. The workloads are to remain in the on-premises data center.
+The CTO of the company wants to have the Citrix management components moved to Citrix Cloud and be managed by Citrix. The workloads are to remain in the on-premises data center.
 Now the decision needs to be made regarding where the access control components will reside after the migration.
 
 There are 3 options available to the admins:
@@ -71,11 +71,11 @@ In this guide we will be looking into automated configuration tool base migratio
 
 ## Prerequisites and data to be collected before migration
 
-As a pre-requisite, customers must ensure the network connectivity to establish communication from the customer hosted on-premises environments to Citrix Cloud. Please refer to the [Citrix documentation](/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html) for complete requirements.
+As a pre-requisite, customers must ensure the network connectivity to establish communication from the customer hosted on-premises environments to Citrix Cloud. Refer to the [Citrix documentation](/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html) for complete requirements.
 
 ### Pre-requisites for machines that host the Cloud Connectors
 
-The Citrix Cloud Connectors act as the communication channel between the components hosted in Citrix Cloud and the components hosted in the resource location. The cloud connectors act as a proxy for the delivery controller in Citrix Cloud. To install Citrix Cloud Connectors in your environment, you require (at least two) Windows Server 2012 R2 or later server machines/VMs. You require static IPs for these machines. Windows installation and domain join of these machines must be done in advance. Ensure the hostnames of these machines help you to identify them and their location easily. The machines the Citrix Cloud Connectors run on must have network access to all the virtual machines that are to be made available to end users.
+The Citrix Cloud Connectors act as the communication channel between the components hosted in Citrix Cloud and the components hosted in the resource location. The cloud connectors act as a proxy for the delivery controller in Citrix Cloud. To install Citrix Cloud Connectors in your environment, you require (at least two) Windows Server 2012 R2 or later server machines/VMs. You require static IPs for these machines. Windows installation and domain join of these machines must be done in advance. Ensure the host names of these machines help you to identify them and their location easily. The machines the Citrix Cloud Connectors run on must have network access to all the virtual machines that are to be made available to end users.
 
 The system requirements for the Cloud Connectors are [here](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html).
 
@@ -103,10 +103,10 @@ The following data needs to be collected:
 *  Authentication point and provider
 *  StoreFront configurations
 *  Citrix Gateway configuration for each site or data center
-*  If you have a Citrix Virtual Apps and Desktops service subscription, then creds for the same (skip to the [Install Citrix Cloud connectors](#install-cloud-connectors-in-on-premises-resource-locations) section).
+*  If you have a Citrix Virtual Apps and Desktops service subscription, then creds for the same (skip to the [Install Citrix Cloud Connectors](#install-cloud-connectors-in-on-premises-resource-locations) section).
     *  Else follow the below steps to create a new subscription.
 
-## Set up a basic Citrix Cloud Envionment
+## Set up a basic Citrix Cloud Environment
 
 1.  If the organization, does not have one, create a new Citrix Cloud account, by following the instructions in the **Create Citrix Cloud Account** section on this [page](/en-us/tech-zone/learn/poc-guides/cvads.html#deployment-steps). Continue with the next step once the section is complete.
 
@@ -118,7 +118,7 @@ The following data needs to be collected:
 
     [![Citrix Cloud - Available Services](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_06.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_06-large.png)
 
-    **Note**: If you know who your account team is, please reach out to them to get the trial approved. If you are unsure who your account team is, please continue to next step.
+    **Note**: If you know who your account team is, reach out to them to get the trial approved. If you are unsure who your account team is, continue to next step.
 
 1.  Click **Request a Call**
 
@@ -145,7 +145,7 @@ The installation of the Cloud Connectors registers your on-premises domain to Ci
 
 ### Deploy Certificates for Cloud Connectors
 
-If either on-premises StoreFront or Citrix ADCs are to be used after migration, then certificates are needed on the Cloud Connectors. The Cloud Connector runs the XML and the STA services on port 80 by default as these communications are typically INTERNAL. To configure encryption for these traffic types, certificates should be deployed on the Cloud Connectors and these two services should be bound to those certificates.
+If either on-premises StoreFront or Citrix ADCs are to be used after migration, then certificates are needed on the Cloud Connectors. The Cloud Connector runs the XML and the STA services on port 80 by default as these communications are typically INTERNAL. To configure encryption for these traffic types, certificates must be deployed on the Cloud Connectors and these two services must be bound to those certificates.
 
 [![cloud-migration-strategies-Image-9](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_009.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_009.png)
 
@@ -153,7 +153,7 @@ Both public and self-signed certificates can be used as the customer-hosted Stor
 
 ### Enable TLS on Cloud Connectors to secure XML traffic
 
-Refer to the [Citrix Support article](https://support.citrix.com/article/CTX221671) for detailed information on how to enable SSL on Cloud Connectors to secure the XML traffic. The XML Service is used for application and desktop resource enumeration including handling username and password data from StoreFront to Cloud Connectors, therefore, it must be encrypted.
+Refer to the [Citrix Support article](https://support.citrix.com/article/CTX221671) for detailed information on how to enable SSL on Cloud Connectors to secure the XML traffic. The XML Service is used for application and desktop resource enumeration including handling user name and password data from StoreFront to Cloud Connectors, therefore, it must be encrypted.
 
 **Note**: Cloud Connectors cannot traverse domain-level trusts. If deploying resources in different domains, install Cloud Connectors in each user domain.
 
@@ -177,7 +177,7 @@ Once the automated configuration tool has been run, then the machines hosting re
 
 The **ListOfDDCs** registry key on the golden image / virtual disk must be updated.
 
-**Power on the golden image**, open the **Registry editor** and navigate to **HKLM\Software\Citrix\VirtualDeliveryAgent** key, and **update the ListOfDDCs with Cloud Connector hostnames** in their respective resource locations.
+**Power on the golden image**, open the **Registry editor** and navigate to **HKLM\Software\Citrix\VirtualDeliveryAgent** key, and **update the ListOfDDCs with Cloud Connector host names** in their respective resource locations.
 
 [![Update ListOfDDCs registry key on VDAs](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_055.png)](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_055.png)
 
@@ -193,7 +193,7 @@ Open the **Group Policy Management Console** and create a **new GPO**.
 
 ![Create new policy for ListOfDDcs registry key update](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_056.png)
 
-Name the Policy as **VDA Migration** and select the **Controllers** setting from the list and click on **Add** to update.
+Name the Policy as **VDA Migration** and select the **Controllers** setting from the list and click **Add** to update.
 
 ![Select Controllers setting](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_058.png)
 
@@ -211,7 +211,7 @@ On the **Filters** page, select the **Delivery Group(s)** on which this policy n
 
 ![Select Delivery Group for filtering the policy](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_061.png)
 
-Check the **Enable this policy** checkbox and click **Create** to complete the policy creation.
+Check the **Enable this policy** check box and click **Create** to complete the policy creation.
 
 ![Enable and create the policy](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_062.png)
 
@@ -265,9 +265,9 @@ First the on-premises Gateway is configured to enable external access.
 
     ![Enter Gateway FQDN and SSL cert details](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_069.png)
 
-1.  Enter **Workspace URL** in the **StoreFront URL** field. Click **Retrieve Stores**. Enter the **Active Directory Domain** in the **Default Active Directory Domain** text box. Enter **the URLs of the Cloud Connectors** as [http://<cloudconnectorFQDN>] or [https://<cloudconnectorFQDN>] (if SSL certificates are configured). Click **Test STA Connectivity**, ensure it passes.
+1.  Enter **Workspace URL** in the **StoreFront URL** field. Click **Retrieve Stores**. Enter the **Active Directory Domain** in the **Default Active Directory Domain** text box. Enter **the URLs of the Cloud Connectors** as "[http://<cloudconnector.FQDN>]" or [https://<cloudconnector.FQDN>] (if SSL certificates are configured). Click **Test STA Connectivity**, ensure it passes.
 
-    ![Enter Storeront Details and test STA](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_070.png)
+    ![Enter StoreFront Details and test STA](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_070.png)
 
 1.  Complete the configuration of the Gateway, no need to provide Authentication and session policy details.
 
@@ -315,7 +315,7 @@ Now configure the on-prem Gateway. Perform the first 3 steps in the on-premises 
 
 Configure the **Active Directory Domain** details for the authentication.
 
-![Add Active Directoy Domain Details](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_071.png)
+![Add Active Directory Domain Details](/en-us/tech-zone/build/media/deployment-guides_cvads-migration_071.png)
 
 Configure the **Session Policies** to complete the gateway configuration. Also, apply the necessary themes with the required customization.
 
