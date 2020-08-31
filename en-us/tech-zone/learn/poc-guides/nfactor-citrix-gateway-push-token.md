@@ -107,10 +107,11 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 1.  Select Done, followed by Create, followed by Add
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_nfactorauthpolotpreg.png)
 1.  Select the green plus sign next to the authPol_OTPReg policy to create a factor
-1.  Enter 'OTPRegAD' and select Create
+1.  Enter 'OTPReg_AD' and select Create
 1.  In the box created select Add Schema
 1.  Select Add and enter 'lschema_SingleRegOTP'
-1.  Under Schema Files navigate to LoginSchema, and select 'SingleAuthManageOTP.xml'
+1.  Under Authentication Schema select the pencil icon to edit the schema selection
+1.  Under Schema Files, select LoginSchema, and navigate to LoginSchema, and select 'SingleAuthManageOTP.xml'
 1.  Select the blue select button, followed by Create, followed by Ok
 1.  In the same box select Add Policy and select Add again next to Select Policy
 1.  Enter authPol_LDAP for the name
@@ -132,16 +133,17 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 #### nFactor - Authentication Flow
 
 1.  Select the blue plus sign under the 'authPol_OTPReg' policy
-1.  Enter 'authPol_OTPAuth'
+1.  Select Add and enter 'authPol_OTPAuth'
 1.  Under Action Type select 'NO_AUTHN'
 1.  Under Expression enter true
 1.  Select Create
 1.  Select the green plus sign next to the 'authPol_OTPAuth' policy to create a factor
 1.  Enter 'OTPAuthAD'
-1.  Select Create
+1.  Select Create followed by Add
 1.  In the box created select Add Schema
 1.  Select Add and enter 'lschema_DualAuthOTP'
-1.  Under Schema Files navigate to LoginSchema, and select 'DualAuthPushOrOTP.xml'
+1.  Under Authentication Schema select the pencil icon to edit the schema selection
+1.  Under Schema Files, select LoginSchema, and navigate to LoginSchema, and select 'DualAuthPushOrOTP.xml'
 1.  Select the blue select button, followed by Create, followed by Ok
 1.  In the same box select Add Policy
 1.  Select the policy we created during the setup of the Registration flow that maps to your first LDAP authentication action. We use 'authPol_LDAP'
