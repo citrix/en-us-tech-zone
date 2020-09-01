@@ -34,7 +34,7 @@ For this Proof of Concept, we demonstrate establishing connectivity between an A
 
 **Data Center** – an SD-WAN VPX appliance is built on a Citrix Hypervisor. It is also supported other major hypervisors and hardware platforms to meet a broad range of forwarding requirements.
 
-3 - Data Center Citrix SD-WAN – the appliance, built on a Citrix Hypervisor, requires subnet assignments for a Management, LAN, and WAN interface and Internet access to reach the Citrix Orchestrator [Zero-Touch Deployment (zero-touch deployment)](/en-us/citrix-sd-wan-orchestrator/zero-touch-deployment.html) service.
+3 - Data Center Citrix SD-WAN – the appliance, built on a Citrix Hypervisor, requires subnet assignments for a Management, LAN, and WAN interface and Internet access to reach the Citrix Orchestrator [Zero-Touch Deployment (ZTD)](/en-us/citrix-sd-wan-orchestrator/zero-touch-deployment.html) service.
 
 4 - Data Center Test Server - a Windows Server 2016 VM, provisioned on the SD-WAN LAN, must have a static route to the Cloud LAN, via the SD-WAN appliance to reach the Cloud Test Server.
 
@@ -357,7 +357,7 @@ Now that our sites are upgraded, configured, and online we can verify connectivi
 [![SD-WAN Ping](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordiagnosticsping.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordiagnosticsping.png)
     *  b. Select **Reports > Real Time > Statistics > Routes >** "Retrieve latest data". Notice that routes to the Cloud SD-WAN Cloud sdwan-vpx-nic-lan and WAN subnets have been learned dynamically via the SD-WAN Virtual Path show by the protocol type "Virtual_WAN"
 [![SD-WAN Routes](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorstatisticsroutes.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorstatisticsroutes.png)
-1.  From the Data Center Test Server open an MS-DOS prompt and verify the traceroute to the Cloud Test Server.
+1.  From the Data Center Test Server open a command prompt and verify the traceroute to the Cloud Test Server.
 [![Ping DC to Cloud Test Server](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_pingdctocloudtestserver.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_pingdctocloudtestserver.png)
 
 ### Routing

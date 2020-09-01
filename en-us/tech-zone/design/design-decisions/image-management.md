@@ -23,13 +23,13 @@ Citrix Provisioning is a software-based streaming technology that can deliver ce
 
 ## Overview of Citrix Machine Creation Services (MCS)
 
-Citrix Machine Creation Services is an orchestration component of Citrix Virtual Apps and Desktops that can provide single image management for shared or dedicated machines. MCS is **passive** component - in the majority of deployments, MCS is involved only in the image build orchestration process (telling the hypervisor what and where to do) and not in daily operations and delivery of images. There are some exceptions to this rule, most notably for hypervisors that cannot automatically reset disks. From a design perspective, environments built using MCS inherits the behavior and characteristics of the hypervisor or cloud provider that is hosting workloads. Design of the MCS environment is therefore heavily influenced by a combination of hypervisor and storage used.
+Citrix Machine Creation Services is an orchestration component of Citrix Virtual Apps and Desktops that can provide single image management for shared or dedicated machines. MCS is **passive** component - in most deployments, MCS is involved only in the image build orchestration process (telling the hypervisor what and where to do) and not in daily operations and delivery of images. There are some exceptions to this rule, most notably for hypervisors that cannot automatically reset disks. From a design perspective, environments built using MCS inherits the behavior and characteristics of the hypervisor or cloud provider that is hosting workloads. Design of the MCS environment is therefore heavily influenced by a combination of hypervisor and storage used.
 
 ## Provisioning Decision Factors
 
 Each project and environment is unique and have different requirements and goals. For that reason, it is common that a good architect chooses different provisioning models for different projects and not exclusive prefer only one. It is common that different provisioning models are used even in a same environment - for example when providing a combination of dedicated and shared machines.
 
-For the purpose of this document, we are going to divide decision factors in two categories - factors where it is clear which provisioning model is preferred (or have to be used) and factors that are more open to interpretation and where personal preference / experience is playing much bigger role in decision making.
+For this document, we are going to divide decision factors in two categories - factors where it is clear which provisioning model is preferred (or have to be used) and factors that are more open to interpretation and where personal preference / experience is playing much bigger role in decision making.
 
 ## Explicit Decision Factors
 
@@ -103,7 +103,7 @@ While it is possible to automate multi-site deployments with MCS, the PVS proces
 
 ### Requires Frequent Changes
 
-One of the biggest advantages of Citrix PVS is the ability to almost instantly switch from one virtual disk (Personal vDisk) to another and support for advanced versioning of virtual images. It is possible to achieve similar results with MCS using rolling catalogs and versioning on a master image level, however this process is simpler with PVS.
+One of the biggest advantages of Citrix PVS is the ability to almost instantly switch from one virtual disk (vDisk) to another and support for advanced versioning of virtual images. It is possible to achieve similar results with MCS using rolling catalogs and versioning on a master image level, however this process is simpler with PVS.
 
 For environments that require frequent changes (multiple images changes every week), PVS might offer a more flexible, out of the box solution. There are more factors involved in this decision - for example how long does it take to update images using MCS in your environment and how many storage repository replications are required, but generally, you can expect PVS to be the more flexible image management solution.
 
