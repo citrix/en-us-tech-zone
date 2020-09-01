@@ -130,19 +130,19 @@ The storage zone controller is an ASP.NET web application running on the Interne
 
 #### Memory
 
--  **Available Mbytes**: Cannot drop below a sustained value of 20% of total available RAM.
--  **Pages Input/Sec**: Cannot exceed 15. The lower the value the better the performance of the storage zone controller.
+-  **Available Mbytes**: It is not recommended to drop below a sustained value of 20% of total available RAM.
+-  **Pages Input/Sec**: It is not recommended to exceed 15. The lower the value the better the performance of the storage zone controller.
 -  **Pages/Sec**: Cannot exceed a sustained value of 5 or higher.
 
 #### Logical Disk
 
--  **% Disk Time**: Cannot exceed a sustained value of 50% or higher.
--  **Average Disk Queue Length**: Cannot exceed the number of spindles plus 2.
--  **Average Disk Read Queue Length**: Cannot be below 2.
--  **Average Disk Write Queue Length**: Cannot be below 4.
--  **Average Disk Sec/Read**: The average cannot be 15 ms or lower, with maximums of 25 ms.
--  **Average Disk Sec/Write**: The average cannot be 15 ms or lower, with maximums of 25 ms.
--  **Average Disk/Transfer**: Cannot be below 20 ms.
+-  **% Disk Time**: It is not recommended to exceed a sustained value of 50% or higher.
+-  **Average Disk Queue Length**: It is not recommended to exceed the number of spindles plus 2.
+-  **Average Disk Read Queue Length**: It is not recommended to be below 2.
+-  **Average Disk Write Queue Length**: It is not recommended to be below 4.
+-  **Average Disk Sec/Read**: The average is not recommended to be 15 ms or lower, with maximums of 25 ms.
+-  **Average Disk Sec/Write**: The average is not recommended to be 15 ms or lower, with maximums of 25 ms.
+-  **Average Disk/Transfer**: It is not recommended to be below 20 ms.
 
 #### Processor
 
