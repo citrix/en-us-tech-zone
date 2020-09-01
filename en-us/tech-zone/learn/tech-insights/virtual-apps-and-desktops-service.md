@@ -8,7 +8,7 @@ description: Citrix Virtual Apps and Desktops Service provides a fast, low-impac
 
 **Author:** [Daniel Feller](https://twitter.com/djfeller)
 
-The Citrix Virtual Apps and Desktops Service allows organizations to focus on the parts of the solution that directly impacts the users (the virtual desktops/apps servers), while Citrix manages the underlying infrastructure (databases, controllers and license servers). Learn how an entire Citrix Virtual Apps and Desktops solution can be deployed in less than 20 minutes with the use of the cloud service.
+The Citrix Virtual Apps and Desktops Service allows organizations to focus on the parts of the solution that directly impacts the users (the virtual desktops/apps servers). Citrix then manages the underlying infrastructure (databases, controllers, and license servers). Learn how an entire Citrix Virtual Apps and Desktops solution can be deployed in less than 20 minutes with the use of the cloud service.
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=id6FbiLktco):**
 
@@ -16,7 +16,7 @@ The Citrix Virtual Apps and Desktops Service allows organizations to focus on th
 
 ## Referenced Content
 
-The following provides additional information about additional concepts utilized within the video.
+The following provides additional information about more concepts utilized within the video.
 
 *  [Gateway Service](/en-us/tech-zone/learn/tech-briefs/gateway-hdxproxy.html)
-*  [Time-based One-time Password (TOTP)](/en-us/tech-zone/learn/tech-insights/authentication-totp.html)
+*  [Time-based one-time password (TOTP)](/en-us/tech-zone/learn/tech-insights/authentication-totp.html)
