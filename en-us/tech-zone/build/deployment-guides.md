@@ -3,15 +3,15 @@ layout: doc
 ---
 # Deployment Guides
 
-Deployment guides provide step-by-step instruction on how to perform key tasks around installation and configuration of Citrix offerings. They are similar to a hands-on lab guide including product screenshots but focus on real-world production environments building for performance, scalability, and security.
+Deployment guides provide step-by-step instruction on how to perform key tasks around the installation and configuration of Citrix offerings. They are similar to a hands-on lab guide including product screenshots but focus on real-world production environments building for performance, scalability, and security.
 
 ## Citrix Content Collaboration
 
-[Citrix Files with Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/build/deployment-guides/citrix-files.html) - Learn how to deploy the Citrix Files Client for Windows in a virtual app and desktop environment including related components, tips, and best practices for optimal performance and management.
+[Citrix Files with Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/build/deployment-guides/citrix-files.html) - Learn how to deploy the Citrix Files Client for Windows in a virtual app and desktop environment. This article includes related components, tips, and leading practices for optimal performance and management.
 
 ## Citrix Endpoint Management
 
-[Migration from Android Device Administrator to Android Enterprise with Citrix Endpoint Management](/en-us/tech-zone/build/deployment-guides/android-device-administrator-to-android-enterprise.html) - Learn how to migrate your Citrix Endpoint Management policies and apps step by step from a legacy Android Device Administrator deployment to Android Enterprise by using a managed Google Play account.
+[Migration from Android Device Administrator to Android Enterprise with Citrix Endpoint Management](/en-us/tech-zone/build/deployment-guides/android-device-administrator-to-android-enterprise.html) - Learn how to migrate your Citrix Endpoint Management policies and apps step by step. Take your Endpoint Management from a legacy Android Device Administrator deployment to Android Enterprise by using a managed Google Play account.
 
 ## Citrix Virtual Apps and Desktops
 
