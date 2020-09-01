@@ -169,11 +169,11 @@ Follow the steps in the Automated Configuration tool steps from the section link
 
 Once the migration of the control layer is complete and verification is done, return here and continue with the following steps.
 
-## Migration steps - Configure machines running VDAs to register to the Cloud Connectors
+### Migration steps - Configure machines running VDAs to register to the Cloud Connectors
 
 Once the Automated Configuration tool has been run, then the machines hosting resources (running VDAs) must be configured to register with the Cloud Connectors.
 
-### For the MCS and PVS based machines (Pooled and Server OS) machines
+#### For the MCS and PVS based machines (Pooled and Server OS) machines
 
 The **ListOfDDCs** registry key on the golden image / virtual disk must be updated.
 
@@ -183,7 +183,7 @@ The **ListOfDDCs** registry key on the golden image / virtual disk must be updat
 
 Shut down the machine running the golden image for MCS or virtual disk for PVS. Take a new snapshot and update the machine catalog with the new snapshot.
 
-### For manual machine catalogs
+#### For manual machine catalogs
 
 For catalogs that don’t use either of the provisioning methods, AD Group Policy can be used to update the registry key.
 
@@ -325,7 +325,7 @@ On-premises StoreFront and Gateway configuration are successfully completed. The
 
 That completes the deployment guide to migrate an on-premises Citrix Virtual Apps and Desktops environemnt to the Citrix Cloud using the Citrix Virtual Apps and Desktops service.
 
-## Call to action
+### Call to action
 
 Request a trial of Citrix Virtual Apps and Desktops service, click [here](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/inquiry/).
 
