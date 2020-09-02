@@ -12,11 +12,11 @@ description: One-page summary of nsconmsg syntax and troubleshooting tips.
 
 ## Overview
 
-Nsconmsg operates on Citrix ADC newnslog and is most widely used tool for troubleshooting Citrix ADC issues. The following are some of the most important points to remember:
+Nsconmsg operates on Citrix ADC newnslog and is the most widely used tool for troubleshooting Citrix ADC issues. The following are some of the most important points to remember:
 
 *  Reads newnslog formatted log files and displays the data
 *  The newnslog files are located in the /var/nslog/ directory
-*  Common items viewed from a newnslog are counter statistics, console messages, events, commands, feature specific output and system stats
+*  Common items viewed from a newnslog are: counter statistics, console messages, events, commands, feature specific output, and system stats
 *  Run the following command, in shell, to view all nsconmsg usage operations: `# nsconmsg -h`
 
 The nsconmsg cheat sheet provides you with the most commonly used commands for your reference.
