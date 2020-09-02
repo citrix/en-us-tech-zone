@@ -46,6 +46,8 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [Enhancing Windows Virtual Desktop](/en-us/tech-zone/learn/tech-briefs/windows-virtual-desktop-value-add.html) - Learn about the value add Citrix provides to your Windows Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service and Citrix Managed Desktops service provide a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user experience and enhancing the security posture of our deployment.
 
+[Citrix Workspace Environment Management service](/en-us/tech-zone/learn/tech-briefs/wem.html) - Citrix Workspace Environment Management service overview, Dive into the communications between WEM service and the recommendation for different WEM agent deployment models.
+
 ## Citrix Workspace
 
 [Virtual Assistant](/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html) - The Citrix Assistant guides users to information and allows them to interact with back-end applications to complete simple requests.
