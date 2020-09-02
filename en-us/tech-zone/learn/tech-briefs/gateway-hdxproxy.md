@@ -18,10 +18,10 @@ Citrix Gateway service for HDX Proxy provides users with secure remote access to
 
 Citrix Virtual Apps and Desktops have served Enterprises well for decades, yet they have extra requirements to provide remote access such as:
 
-* Implementing and maintaining multiple sites for redundancy
-* Implementing and maintaining public IP addresses
-* Implementing and maintaining network devices
-* Implementing and maintaining firewall rules
+*  Implementing and maintaining multiple sites for redundancy
+*  Implementing and maintaining public IP addresses
+*  Implementing and maintaining network devices
+*  Implementing and maintaining firewall rules
 
 ![On-Premises](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_1.png)
 
@@ -29,15 +29,15 @@ Citrix Virtual Apps and Desktops have served Enterprises well for decades, yet t
 
 With Citrix Cloud and Citrix Gateway service Enterprises now can provide remote access to Citrix Virtual Apps and Desktops without those additional requirements along with other benefits:
 
-* Multiple sites are implemented and maintained globally by Citrix
-* Public IP addresses are implemented and maintained by Citrix
-* Citrix Cloud advanced security with Citrix Analytics
-* Predictive DNS provides better user experience
-* No changes to the Virtual Apps and Desktops environment are required
-* Certificates are implemented and maintained by Citrix
-* Elastic scalability and High Availability is provided and managed by Citrix
-* Enterprises pay as they grow and reduce operating expenses
-* Faster onboarding for new customers
+*  Multiple sites are implemented and maintained globally by Citrix
+*  Public IP addresses are implemented and maintained by Citrix
+*  Citrix Cloud advanced security with Citrix Analytics
+*  Predictive DNS provides better user experience
+*  No changes to the Virtual Apps and Desktops environment are required
+*  Certificates are implemented and maintained by Citrix
+*  Elastic scalability and High Availability is provided and managed by Citrix
+*  Enterprises pay as they grow and reduce operating expenses
+*  Faster onboarding for new customers
 
 ![Cloud](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_2.png)
 
@@ -71,9 +71,9 @@ Citrix ITM provides resiliency and a better user experience by directing workspa
 
 Citrix Gateway service operates in multiple POPs around the world with ITM, which monitors the health of each site. If for any reason a POP goes down or connectivity is degraded past thresholds, Citrix ITM responds to subsequent DNS queries with the public IP address of the next closest POP. The Workspace app and the Citrix Virtual Apps and Desktops controller will initiate retries and timeouts based on session [connection](/en-us/citrix-virtual-apps-desktops/manage-deployment/connections.html) and [timer](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-limits-policy-settings.html) settings.
 
-* Each POP is configured for High Availability
-* Four 9 s of reliability
-* 19 Global POPs
+*  Each POP is configured for High Availability
+*  Four 9 s of reliability
+*  19 Global POPs
 
 ![Citrix Global Points of Presence](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_4.png)
 
@@ -98,9 +98,9 @@ After the Citrix Workspace is configured in Citrix Cloud the new FQDN can be add
 
 Citrix Gateway service simplifies the requirements to access On-Premises Virtual Apps and Desktops and thus reduces the needed infrastructure and the operational overhead to maintain it. The need to maintain gateways with SSL Certificates and public IPs in multiple POPs are eliminated. Admins can then focus more on the management of their own IT business service priorities.
 
-* 24x7x365 monitoring and maintenance by Citrix Cloud experts
-* Deliver a unified Workspace faster with existing IT staff
-* Reduce the need for specialized IT skills
+*  24x7x365 monitoring and maintenance by Citrix Cloud experts
+*  Deliver a unified Workspace faster with existing IT staff
+*  Reduce the need for specialized IT skills
 
 [![Citrix Cloud Operations](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_5.png)](https://status.cloud.com)
 
@@ -108,8 +108,8 @@ Citrix Gateway service simplifies the requirements to access On-Premises Virtual
 
 A user selects a virtual app or desktop, from their Workspace, and their endpoint receives a launch ticket. It is directed to connect to the Citrix Gateway service which, in turn, contacts the VDA. If configured to use the Rendezvous protocol the VDA establishes a TLS connection directly back to the requesting Citrix Gateway service POP, otherwise it uses Cloud Connector. Then the Citrix Gateway service establishes the session between the endpoint and the VDA.
 
-* Sessions are linked via Citrix Gateway service across cloud partner’s WANs
-* VDAs and Workspace endpoints rendezvous at the Citrix Gateway service POP closest to the user
-* High quality sessions
+*  Sessions are linked via Citrix Gateway service across cloud partner’s WANs
+*  VDAs and Workspace endpoints rendezvous at the Citrix Gateway service POP closest to the user
+*  High quality sessions
 
 [![Citrix Gateway service and HDX Proxy: Traffic Flow](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_6.png)](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_6.png)
