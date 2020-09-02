@@ -78,11 +78,11 @@ Table 3: GSLB URL Adjusted for Receiver & Workspace app
 
 To summarize the previous sections:
 
-*  Gateway URL is always needed and must match what is entered into web browsers or Workspace app (Receiver) clients
-*  Callback URL is only needed if SmartAccess CVAD policies or password-less authentication methods (Smart Cards, SAML, and so on) are used
-*  Virtual server IP address is only needed if a Callback URL specified and there are multiple Gateways bound to the Store that have the same Gateway URL specified
-*  GSLB URL is a new parameter that was added in StoreFront 3.9. The URL simplifies Gateway integration with StoreFront when a single Gateway virtual server can be accessed via multiple URLs
-*  Workspace app (Receiver) does not read the GSLB URL parameter, so the Gateway URL is always been the URL that is used by those clients and the GSLB URL is an alternate URL that can be used by web browser-based connections
+* Gateway URL is always needed and must match what is entered into web browsers or Workspace app (Receiver) clients
+* Callback URL is only needed if SmartAccess CVAD policies or password-less authentication methods (Smart Cards, SAML, and so on) are used
+* Virtual server IP address is only needed if a Callback URL specified and there are multiple Gateways bound to the Store that have the same Gateway URL specified
+* GSLB URL is a new parameter that was added in StoreFront 3.9. The URL simplifies Gateway integration with StoreFront when a single Gateway virtual server can be accessed via multiple URLs
+* Workspace app (Receiver) does not read the GSLB URL parameter, so the Gateway URL is always been the URL that is used by those clients and the GSLB URL is an alternate URL that can be used by web browser-based connections
 
 ## Selecting a "Default Appliance"
 
@@ -99,8 +99,8 @@ If the Gateways bound to the Store have different Gateway URLs, then whichever o
 
 To summarize:
 
-*  Store with Remote Access enabled has a default Gateway that defines which Gateway URL is used by the Workspace app (Receiver) clients
-*  To use multiple Gateway URLs and Workspace app (Receiver)-initiated access, separate Stores, or StoreFront server groups must be defined
+* Store with Remote Access enabled has a default Gateway that defines which Gateway URL is used by the Workspace app (Receiver) clients
+* To use multiple Gateway URLs and Workspace app (Receiver)-initiated access, separate Stores, or StoreFront server groups must be defined
 
 ## Optimal HDX Routing
 
@@ -117,9 +117,9 @@ That setting means that the “optimal” Gateway will only be used for ICA sess
 
 To summarize:
 
-*  Gateway used for Optimal HDX Routing only requires STA servers bound
-*  Gateways used for Optimal HDX Routing can either be “external only” or “external and internal,” but not “internal only”
-*  Separate Stores or Servers Groups are required to define separate internal and external Gateway URLs for Optimal HDX Routing
+* Gateway used for Optimal HDX Routing only requires STA servers bound
+* Gateways used for Optimal HDX Routing can either be “external only” or “external and internal,” but not “internal only”
+* Separate Stores or Servers Groups are required to define separate internal and external Gateway URLs for Optimal HDX Routing
 
 ## Beacons
 
@@ -136,8 +136,8 @@ There should no need to modify or tweak the beacon addresses unless the same Gat
 
 To summarize:
 
-*  Beacons are only used Workspace app (Receiver) clients
-*  Beacons are only be modified if the StoreFront base URL matches a Gateway URL (and is accessible from outside the corporate network)
+* Beacons are only used Workspace app (Receiver) clients
+* Beacons are only be modified if the StoreFront base URL matches a Gateway URL (and is accessible from outside the corporate network)
 
 ## References
 
