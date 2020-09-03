@@ -12,7 +12,7 @@ description: Learn how to implement a Proof of Concept environment consisting of
 
 ## Introduction
 
-Multi factor authentication is one of the best ways to verify identity and increase security posture. PUSH notifications for One Time Passwords (OTP) takes advantage of mobile devices. It allows users to receive and accept authentication validation requests at their fingertips. The exchange is secured by applying a hash to a shared key, distributed during setup.
+Multifactor authentication is one of the best ways to verify identity and increase security posture. PUSH notifications for One Time Passwords (OTP) takes advantage of mobile devices. It allows users to receive and accept authentication validation requests at their fingertips. The exchange is secured by applying a hash to a shared key, distributed during setup.
 
 Citrix Gateway supports push notifications for OTP and, can provide authentication for various services including web services, VPN, and Citrix Virtual Apps and Desktops. In this POC Guide we demonstrate using it for authentication in a Citrix Virtual Apps and Desktops environment.
 
@@ -42,7 +42,7 @@ It makes assumptions about the completed installation and configuration of the f
 
 1.  Next navigate to 'Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Actions > Push service'
 1.  Select Add
-1.  Populate the following fields and click Ok:
+1.  Populate the following fields and click OK:
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_pushserviceaction.png)
     *  Name - a unique value
 **We will enter values in the following fields to integrate with Citrix Cloud - PUSH Service**
@@ -112,7 +112,7 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 1.  Select Add and enter 'lschema_SingleRegOTP'
 1.  Under Authentication Schema select the pencil icon to edit the schema selection
 1.  Under Schema Files, select LoginSchema, and navigate to LoginSchema, and select 'SingleAuthManageOTP.xml'
-1.  Select the blue select button, followed by Create, followed by Ok
+1.  Select the blue select button, followed by Create, followed by OK
 1.  In the same box select Add Policy and select Add again next to Select Policy
 1.  Enter authPol_LDAP for the name
 1.  Under Action Type select LDAP
@@ -144,7 +144,7 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 1.  Select Add and enter 'lschema_DualAuthOTP'
 1.  Under Authentication Schema select the pencil icon to edit the schema selection
 1.  Under Schema Files, select LoginSchema, and navigate to LoginSchema, and select 'DualAuthPushOrOTP.xml'
-1.  Select the blue select button, followed by Create, followed by Ok
+1.  Select the blue select button, followed by Create, followed by OK
 1.  In the same box select Add Policy
 1.  Select the policy we created during the setup of the Registration flow that maps to your first LDAP authentication action. We use 'authPol_LDAP'
 1.  Select Add
@@ -160,7 +160,7 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 ### Citrix ADC Authentication, Authorization,and Auditing (Citrix ADC AAA) virtual server
 
 1.  Next navigate to 'Security > AAA - Application Traffic > Virtual Servers' and select Add
-1.  Enter the following fields and click Ok:
+1.  Enter the following fields and click OK:
     *  Name - a unique value
     *  IP Address Type - 'Non Addressable'
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_aaavserver.png)
@@ -182,7 +182,7 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 1.  Enter a name.  We enter 'PUSH_auth_profile'
 1.  Under Authentication virtual server click the right arrow, and select the Citrix ADC AAA virtual server we created 'PUSH_Auth_Vserver'
 1.  Click Select, and Create
-1.  Click Ok and verify the virtual server now has an authentication profile selected while the basic authentication policy has been removed
+1.  Click OK and verify the virtual server now has an authentication profile selected while the basic authentication policy has been removed
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_gatewayvserver.png)
 1.  Click Done
 
@@ -216,7 +216,7 @@ Now we test PUSH by registering a mobile device and authenticating into our Citr
 1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use 'https://citrixadc5.workspaces.wwco.net'
 1.  After the your browser is redirected to a login screen enter user UPN and password. On this screen you see the option to Click to input OTP manually if for some reason your camera is not working
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regldaplogin1f.png)
-1.  On your mobile device in your Citrix SSO app select Ok to confirm PUSH authentication
+1.  On your mobile device in your Citrix SSO app select OK to confirm PUSH authentication
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssoaccept.png)
 1.  Verify the users virtual apps, and desktops are enumerated, and launch once logged in
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_cvadlogin.png)
