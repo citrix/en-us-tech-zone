@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to use Machine Creation Services (MCS) to provision machines in a Shared VPC on Google Cloud Platform (GCP). Then, learn to manage the machines using Citrix Studio.
+description: Learn how to use Machine Creation Services (MCS) to provision machines in a Shared VPC on Google Cloud Platform (GCP). Then, learn to manage the machines using Citrix Studio.
 ---
 # Google Cloud Platform (GCP) Shared VPC Support with Citrix Virtual Apps and Desktops
 
@@ -44,7 +44,7 @@ Both of these will be discussed in greater detail later in this document.
 
 ## Google Cloud Shared VPCs
 
-GCP Shared VCPs are comprised of a Host Project, from which the shared subnets are made available, and one or more service projects that utilize the resources.
+GCP Shared VPCs are comprised of a Host Project, from which the shared subnets are made available, and one or more service projects that utilize the resources.
 
 Use of Shared VPCs is a good option for larger installations because they provide for more centralized control, usage, and administration of shared corporate Google cloud resources. Google Cloud describes it this way:
 
@@ -64,29 +64,29 @@ Technically speaking, the permissions required are not “new”, since they are
 
 In total, a maximum of four additional permissions must be granted to the Service Account associated with the Host Connection:
 
--  compute.firewalls.list - Mandatory
+1.  compute.firewalls.list - Mandatory
 
     This permission is necessary to allow Citrix MCS to retrieve the list of firewalls rules present on the Shared VPC (discussed in detail below).
 
--  compute.networks.list - Mandatory
+1.  compute.networks.list - Mandatory
 
     This permission is necessary to allow Citrix MCS to identify the Shared VPC networks available to the Service Account.
 
--  compute.subnetworks.list – *May be* Mandatory (see below)
+1.  compute.subnetworks.list – *May be* Mandatory (see below)
 
     This permission is necessary to allow MCS to identify the subnets within the visible Shared VPCs.
 
-> **Note:**
->
-> This permission is already required for using Local VPCs but must also be assigned in the Shared VPC Host project.
+    > **Note:**
+    >
+    > This permission is already required for using Local VPCs but must also be assigned in the Shared VPC Host project.
 
--  compute.subnetworks.use - *May be* Mandatory (see below)
+1.  compute.subnetworks.use - *May be* Mandatory (see below)
 
     This permission is necessary to utilize the subnet resources in the provisioned machine catalogs.
 
->**Note:**
->
->This permission is already required for using Local VPCs but must also be assigned in the Shared VPC Host Project.
+    >**Note:**
+    >
+    >This permission is already required for using Local VPCs but must also be assigned in the Shared VPC Host Project.
 
 The last two items are noted as “*May be* Mandatory” because there are two different approaches to be considered when dealing with these permissions:
 
@@ -132,8 +132,7 @@ If the firewall rules are not found, or the rules are found, but the rules or pr
 
 ## Cloud Connectors
 
-When using a Shared VPC for Citrix Virtual Apps and Desktops machine catalogs, you will create two or more Cloud Connectors to access the Domain Controller that resides within the Shared VPC. The Best Practice in this case is to create a GCP machine instance in your local project and add an additional network interface to the instance. The first interface would be connected to a subnet in the Shared VPC. The second network interface would connect to a subnet in your Local VPC to allow
-access for administrative control and maintenance via your Local VPC Bastion Server.
+When using a Shared VPC for Citrix Virtual Apps and Desktops machine catalogs, you will create two or more Cloud Connectors to access the Domain Controller that resides within the Shared VPC. The recommendation in this case is to create a GCP machine instance in your local project and add an additional network interface to the instance. The first interface would be connected to a subnet in the Shared VPC. The second network interface would connect to a subnet in your Local VPC to allow access for administrative control and maintenance via your Local VPC Bastion Server.
 
 Unfortunately, you cannot add a network interface to a GCP instance after it has been created. It is a simple process and is covered below in one of the How To entries.
 
@@ -568,7 +567,7 @@ After clicking **Next,** the **Summary screen** appears. In this screen, conside
 
 -  The Project is **Developer Project**.
 
--  The virtual network is **gcp-test-vcp**, one from the Shared VPC.
+-  The virtual network is **gcp-test-vpc**, one from the Shared VPC.
 
 -  The subnet is **subnet-good**.
 

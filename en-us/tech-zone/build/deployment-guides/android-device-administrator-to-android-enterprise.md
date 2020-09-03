@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to migrate your Citrix Endpoint Management policies and apps step by step from a legacy Android Device Administrator deployment to Android Enterprise by using a managed Google Play account.
+description: Learn how to migrate your Citrix Endpoint Management policies and apps step by step. Take your Endpoint Management from a legacy Android Device Administrator deployment to Android Enterprise by using a managed Google Play account.
 ---
 # Migration from Android Device Administrator to Android Enterprise with Citrix Endpoint Management
 
