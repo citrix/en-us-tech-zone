@@ -14,7 +14,7 @@ description: Learn how to implement a Proof of Concept environment consisting of
 
 Multifactor authentication is one of the best ways to verify identity and increase security posture. PUSH notifications for One Time Passwords (OTP) takes advantage of mobile devices. It allows users to receive and accept authentication validation requests at their fingertips. The exchange is secured by applying a hash to a shared key, distributed during setup.
 
-Citrix Gateway supports push notifications for OTP and, can provide authentication for various services including web services, VPN, and Citrix Virtual Apps and Desktops. In this POC Guide we demonstrate using it for authentication in a Citrix Virtual Apps and Desktops environment.
+Citrix Gateway supports push notifications for OTP, and can provide authentication for various services including web services, VPN, and Citrix Virtual Apps and Desktops. In this POC Guide we demonstrate using it for authentication in a Citrix Virtual Apps and Desktops environment.
 
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_conceptualarchitecture.png)
 
