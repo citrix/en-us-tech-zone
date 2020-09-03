@@ -33,7 +33,7 @@ It makes assumptions about the completed installation and configuration of the f
 
 ## Citrix Gateway
 
-### nFactor
+### Authentication policies
 
 1.  Log in to the Citrix ADC UI
 1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
