@@ -12,7 +12,7 @@ description: Learn how to implement a Proof of Concept environment consisting of
 
 ## Introduction
 
-Time Based One Time Passwords (TOTP) are an increasingly common method to provide an authentication that can increase security posture with other factors. TOTP with PUSH takes advantage of mobile devices by allowing users to receive and accept authentication validation requests at their fingertips. The exchange is secured by applying a hash to a shared key, distributed during setup.
+Multi factor authentication is one of the best ways to verify identity and increase security posture. PUSH notifications for One Time Passwords (OTP) takes advantage of mobile devices. It allows users to receive and accept authentication validation requests at their fingertips. The exchange is secured by applying a hash to a shared key, distributed during setup.
 
 Citrix Gateway supports push notifications for OTP and, can provide authentication for various services including web services, VPN, and Citrix Virtual Apps and Desktops. In this POC Guide we demonstrate using it for authentication in a Citrix Virtual Apps and Desktops environment.
 
@@ -20,7 +20,7 @@ Citrix Gateway supports push notifications for OTP and, can provide authenticati
 
 ## Overview
 
-This guide demonstrates how to implement a Proof of Concept environment using two factor authentication with Citrix Gateway. It uses LDAP to validate Active Directory credentials as the first factor and use Citrix Cloud Push Authentication as the second factor. It uses a Citrix Virtual Apps and Desktops published virtual desktop to validate connectivity.
+This guide demonstrates how to implement a Proof of Concept environment using two factor authentication with Citrix Gateway. It uses LDAP to validate Active Directory credentials as the first factor and use Push Authentication as the second factor. It uses a Citrix Virtual Apps and Desktops published virtual desktop to validate connectivity.
 
 It makes assumptions about the completed installation and configuration of the following components:
 
