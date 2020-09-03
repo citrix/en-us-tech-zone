@@ -157,7 +157,7 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 1.  Now we`ve completed the nFactor flow setup and can click Done
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_nfactorflow.png)
 
-### Citrix ADC Authentication, Authorization,and Auditing (Citrix ADC AAA) virtual server
+### Citrix ADC authentication, authorization, and auditing (Citrix ADC AAA) virtual server
 
 1.  Next navigate to `Security > AAA - Application Traffic > Virtual Servers` and select Add
 1.  Enter the following fields and click OK:
@@ -223,7 +223,7 @@ Now we test PUSH by registering a mobile device and authenticating into our Citr
 
 ## Summary
 
-With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multi-factor authentication without making the user experience complex. Users can get access to all of their Workspaces resources by entering their standard domain user and password and simply confirming their identity with the push off a button in the Citrix SSO app on their mobile device.
+With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Users can get access to all of their Workspaces resources by entering their standard domain user and password and simply confirming their identity with the push off a button in the Citrix SSO app on their mobile device.
 
 ## References
 
@@ -231,4 +231,4 @@ For more information refer to:
 
 [Authentication Push](/en-us/tech-zone/learn/tech-insights/authentication-push.html) – watch a Tech Insight video regarding the use of TOTP to improve authentication security for your Citrix Workspace
 
-[Authentication - On-Premises Citrix Gateway](/en-us/tech-zone/learn/tech-insights/gateway-idp.html) – watch a Tech Insight video regarding integrating with On Premises Citrix Gateway to improve authentication security for your Citrix Workspace
+[Authentication - On-Premises Citrix Gateway](/en-us/tech-zone/learn/tech-insights/gateway-idp.html) – watch a Tech Insight video regarding integrating with on-premises Citrix Gateway to improve authentication security for your Citrix Workspace
