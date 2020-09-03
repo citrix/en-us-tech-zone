@@ -19,7 +19,7 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 ## Citrix Virtual Apps and Desktops
 
-[Automated Configuration Tool](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html) - This Proof of Concept guide provides instructions on using Automated Configuration tool to automate moving your Citrix Virtual Apps and Desktops configuration to your Citrix Virtual Apps and Desktops Service deployment. The tool also supports use case of moving your configuration between Citrix Virtual Apps and Desktops Service deployments.
+[Automated Configuration Tool](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html) - This Proof of Concept guide provides instructions on using an Automated Configuration tool to automate moving your Citrix Virtual Apps and Desktops configuration to your Citrix Virtual Apps and Desktops Service deployment. The tool also supports the use case of moving your configuration between Citrix Virtual Apps and Desktops Service deployments.
 
 [Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
 
@@ -41,6 +41,6 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 ## Security
 
-[App protection policies](/en-us/tech-zone/learn/poc-guides/app-protection-policies.html) - Learn how to enhance security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
+[App protection policies](/en-us/tech-zone/learn/poc-guides/app-protection-policies.html) - Learn how to enhance the security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
 
-[URL Redirection with Secure Browser and Citrix ADC in Azure](/en-us/tech-zone/learn/poc-guides/secure-browser-adc-integration.html) - Learn how to provide the dynamic delivery of resources by redirecting browsing to Secure Browser service protecting the company network without sacrificing user experience.
+[URL Redirection with Secure Browser and Citrix ADC in Azure](/en-us/tech-zone/learn/poc-guides/secure-browser-adc-integration.html) - Learn how to provide the dynamic delivery of resources by redirecting browsing to a Secure Browser service protecting the company network without sacrificing user experience.
