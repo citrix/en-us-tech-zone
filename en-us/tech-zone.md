@@ -275,6 +275,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Virtual Apps and Desktops Service](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html) - Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
 
+[Workspace Environment Management Service](/en-us/tech-zone/design/reference-architectures/wem.html) - Learn the architecture and deployment considerations for this cloud-based service of Workspace Environment Management.
+
 ### [Build - Deployment Guides](/en-us/tech-zone/build/deployment-guides.html)
 
 [Deploying Azure Files for Citrix Profile Management and Citrix User personalization layers](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html) - Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management.
