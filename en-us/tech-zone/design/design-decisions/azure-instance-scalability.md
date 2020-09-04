@@ -24,7 +24,7 @@ To determine the performance, we used LoginVSI 4.1.32.1, which creates simulated
 
 The number of users successfully completing the multi-session test provides a key performance indicator under real-world conditions. This value, referred to as the VSImax session count, is used for the comparative analysis. The Login VSI workloads calculate the VSImax session count by observing the response time of a single user on the system. VSImax is reached when the response time has diminished significantly below the expected threshold which was derived from the baseline value taken with only a single user on the system.
 
-To provide conservative numbers which can be replicated consistently without specialized knowledge, all results here reflect test  execution using default Citrix policies and unoptimized default settings for Windows and Office products. Both performance and density can be improved by leveraging Citrix optimization tools such as the [Citrix WEM](/en-us/workspace-environment-management/current-release.html) and [Citrix Optimizer](https://support.citrix.com/article/CTX224676).  
+To provide conservative numbers which can be replicated consistently without specialized knowledge, all results here reflect test execution using default Citrix policies and unoptimized default settings for Windows and Office products. Both performance and density can be improved by applying Citrix optimization tools such as the [Citrix WEM](/en-us/workspace-environment-management/current-release.html) and [Citrix Optimizer](https://support.citrix.com/article/CTX224676).  
 
 ## What is the most efficient instance series?
 
@@ -41,15 +41,15 @@ The following graph shows the instance family results along with the average cos
 
 Most of these instance types use the same processor, Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30 GHz. The primary difference being the amount of memory available to the virtual machine. More information about these different series can be found on [Microsoft's website](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/).
 
-Generally speaking, the 8-core instances have fairly similar performance, especially when you consider the physical cores (D13\_v2, D4\_v2, L8s) compared to hyper-threaded cores (F8s\_v2, D8\_v3, E8\_v3). However, when the instance's hourly cost is considered, the D13\_v2, and F8s\_v2 instances provide the more efficient use. The E\_v3 and LS\_v1 series are less cost-efficient because Microsoft charges a higher premium for Memory optimized and Storage optimized instances. In situations where your user's applications are extremely memory or storage intensive, these instances often provide a good return on investment.
+Generally speaking, the 8-core instances have fairly similar performance, especially when you consider the physical cores (D13\_v2, D4\_v2, L8s) compared to hyper-threaded cores (F8s\_v2, D8\_v3, E8\_v3). However, when the instance's hourly cost is considered, the D13\_v2, and F8s\_v2 instances provide the more efficient use. The E\_v3 and LS\_v1 series are less cost-efficient because Microsoft charges a higher premium for Memory optimized and Storage optimized instances. In situations were your user's applications are extremely memory or storage intensive, these instances often provide a good return on investment.
 
 ### Recommendations
 
-If your typical user's applications are CPU-intensive and do not require significant memory to run, the most cost-efficient performance is the F series. Select the F series when you need excellent CPU response times and do not require a significant amount of memory. If your user's applications consume a fair amount of memory, use one of the D instance types depending on how much additional memory per core is required for your user's environment.
+If your typical user's applications are CPU-intensive and do not require significant memory to run, the most cost-efficient performance is the F series. Select the **F series** when you need excellent CPU response times and do not require a significant amount of memory. If your user's applications consume a fair amount of memory, use one of the D instance types depending on how much extra memory per core is required for your user's environment.
 
 ## What is the most cost-effective instance type in the most efficient family?
 
-When we completed the broad test across families, we expected a single series to be a clear leader. However the results ended up convincing us that the two best instance families for additional testing were the D series and the F series when tested with standard HDD storage. The next step was to test the specific sizes ranging between 2 and 16 vCPUs within the D\_v2 and FS\_v2 families. The results of these tests are shown below.
+When we completed the broad test across families, we expected a single series to be a clear leader. However the results ended up convincing us that the two best instance families for extra testing were the D series and the F series when tested with standard HDD storage. The next step was to test the specific sizes ranging between 2 and 16 vCPUs within the D\_v2 and FS\_v2 families. The results of these tests are shown below.
 
 ![FS and D Series Performance](/en-us/tech-zone/design/media/design-decisions_azure-instance-scalability_002.png)
 
@@ -59,11 +59,11 @@ The graph above shows the results of those tests with the highest densities of 7
 
 The pricing model for Azure instances varies according to the region, the instance type, and the resources provided. The graphs above also includes the cost efficiency of each instance type based on VDA user densities achieved in the single-server testing. The costs reflect U.S. West 2 Pay-As-You-Go pricing for standard VM instances as of September 2019 and includes the cost of Microsoft Windows licensing.
 
-As shown in the graph above, the D13\_v2 instance type shows the lowest cost per hour per user of $0.018 for task worker, with the F16s\_v2 and F8s\_v2 coming in second with a cost of $0.019. As for knowledge worker, both the F16s\_v2 and F8s\_v2 instance types share the best hourly cost of $0.025, followed closely by the D13\_v2 instance type at $0.026.
+As shown in the graph above, the D13\_v2 instance type shows the lowest cost per hour per user of $0.018 for a task worker, with the F16s\_v2 and F8s\_v2 coming in second with a cost of $0.019. As for knowledge worker, both the F16s\_v2 and F8s\_v2 instance types share the best hourly cost of $0.025, followed closely by the D13\_v2 instance type at $0.026.
 
 ### Recommendations
 
-In the testing, the density results showed a clear benefit from the faster processors available with the FS v2-series instances when under the heavier workload of the knowledge worker. However, the FS v2 memory-to-core ratio is significantly lower than the D v2-series ratios and we recommend using the FS v2-series instances only when the memory consumption for the workload is low. If users run applications that are particularly memory-intensive, the D\_v2-series is the best choice.
+In the testing, the density results showed a clear benefit from the faster processors available with the FS v2-series instances when under the heavier workload of the knowledge worker. However, the FS v2 memory-to-core ratio is lower than the D v2-series ratios and we recommend using the FS v2-series instances only when the memory consumption for the workload is low. If users run applications that are memory-intensive, the D\_v2-series is the best choice.
 
 When the cost per user is similar, such as the case with F8S\_v2 and F16s\_v2, select the smaller instance sizes, when either of the following conditions exist:
 
@@ -79,7 +79,7 @@ Select the larger instance sizes when either of these conditions exist:
 
 The instance types used for testing were configured with standard storage rather than more expensive SSD storage for the system drive on the virtual machine. Because the instance types with SSD storage have smaller ephemeral disks where the page file is stored, even though the disks were faster, the scalability was lower because the instance did not have enough swapfile space available to support the need virtual memory under a higher load.
 
-At the disk sizes that we are using, the HDD and SDD disks have very similar IOPS performance (500). While the SSD disks have a more consistent performance, the additional cost is not always justified.
+At the disk sizes that we are using, the HDD and SDD disks have similar IOPS performance (500). While the SSD disks have a more consistent performance, the additional cost is not always justified.
 
 We decided then to consider the Machine Creation Services I/O (MCSIO) cache, as a way to achieve SSD-like performance with the larger standard disks. The tests were completed using the Citrix VDA version 1903.1 and Windows Server 2016 on a D5\_v2 (16 vCPU, 56 GB of RAM) instance type. The chart below shows the increase in user density gained by enabling the MCSIO cache with the Knowledge worker load.
 
@@ -87,7 +87,7 @@ We decided then to consider the Machine Creation Services I/O (MCSIO) cache, as 
 
 ### Analysis
 
-When the operating system disk has no MCSIO cache enabled, the VSImax User score was 61 on 128 GB HDD, 74 on a 64 GB SSD disk and 75 on a 128 GB SSD disk. Enabling the MCSIO cache on a standard HDD disk actually provided better performance than an SSD, with a 4 GB cache enabled on the 64 GB HDD the score increased to 76 and with a 2 GB cache the score increased slightly more to 77. The loss of the additional user between the 4 GB and 2 GB cache sizes is attributed to the additional RAM being used for the cache and not available for user workload.
+When the operating system disk has no MCSIO cache enabled, the VSImax User score was 61 on a 128 GB HDD, 74 on a 64 GB SSD disk and 75 on a 128 GB SSD disk. Enabling the MCSIO cache on a standard HDD disk actually provided better performance than an SSD, with a 4 GB cache enabled on the 64 GB HDD the score increased to 76 and with a 2 GB cache the score increased slightly more to 77. The loss of the additional user between the 4 GB and 2 GB cache sizes is attributed to the additional RAM being used for the cache and not available for user workload.
 
 While MCSIO contributes to a lower cost per user per hour, that number is not significant on its own. The real impact of MCSIO can be ascertained when looking at the end user experience. The graph below shows the average response time drop when using MCSIO.
 
@@ -95,7 +95,7 @@ While MCSIO contributes to a lower cost per user per hour, that number is not si
 
 ### Recommendations
 
-If user experience is a driving factor when considering performance, we recommend enabling the MCSIO cache. When enabled, the recommendation is to use a standard disk with the 2GB cache since it provides the best improvement without affecting user density. However, the MCSIO cache must not be enabled on virtual machines that are memory constrained, such as the F or FS series instance types that are optimized for compute but have very low memory-to-cpu core ratios.
+If user experience is a driving factor when considering performance, we recommend enabling the MCSIO cache. When enabled, the recommendation is to use a standard disk with the 2GB cache since it provides the best improvement without affecting user density. However, the MCSIO cache must not be enabled on virtual machines that are memory constrained, such as the F or FS series instance types that are optimized for compute but have low memory-to-cpu core ratios.
 
 ## How does Windows 10 Multisession scalability compare to Windows Server OS?
 
@@ -115,11 +115,11 @@ One cost advantage of using Windows 10 Multisession is that it does not require 
 
 ### Recommendations
 
-When planning to upgrade from Windows Server 2016 to Windows Server 2019, expect to increase the number of virtual machines by approximately 10%. If you are planning on using Windows 10 Multisession for hosting applications that require the Windows client for compatibility, keep in mind the density will be significantly lower, resulting in approximately 30% additional costs over the server operating systems. The Windows 10 Multisession though does allow users to access the Windows Store, something that the server operating systems do not have available.
+When planning to upgrade from Windows Server 2016 to Windows Server 2019, expect to increase the number of virtual machines by approximately 10%. If you are planning on using Windows 10 Multisession for hosting applications that require the Windows client for compatibility, keep in mind the density will be lower, resulting in approximately 30% extra costs over the server operating systems. The Windows 10 Multisession though does allow users to access the Windows **Store**, something that the server operating systems do not have available.
 
 ## Conclusion
 
-The Azure instance type that you select to deploy Citrix virtual application workloads is a critical element that determines the user density and scalability, and in turn the cost-per-user for an Azure delivery model. As shown, the different instance types in Azure have advantages for specific workloads, such as high computational requirements or additional memory. Usually, a D13\_v2 instance with standard HDD disks and a 2GB MCSIO cache enabled provides the best user performance at the lowest cost. Consider the Windows 10 Multisession operating system when you need Windows Store, application compatibility, or a true Windows client experience.
+The Azure instance type that you select to deploy Citrix virtual application workloads is a critical element that determines the user density and scalability, and in turn the cost-per-user for an Azure delivery model. As shown, the different instance types in Azure have advantages for specific workloads, such as high computational requirements or extra memory. Usually, a D13\_v2 instance with standard HDD disks and a 2GB MCSIO cache enabled provides the best user performance at the lowest cost. Consider the Windows 10 Multisession operating system when you need Windows Store, application compatibility, or a true Windows client experience.
 
 The Citrix on Azure results presented here represent only guidelines in configuring your Azure solution. If you do not have data about your specific user workloads, the numbers we provided here serve as your design estimates. Before making final sizing and deployment decisions, we strongly suggest that you run proof-of-concept tests on different Azure instance types using your own workloads, then use that data for your final designs.
 
