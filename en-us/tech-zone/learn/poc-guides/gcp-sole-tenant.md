@@ -175,7 +175,7 @@ Finally, verify the details for the `s2019-vda-base` instance:
 
 ## Google shared VPCs
 
-If you intend to use Google Sole-tenants with a Shared VPC, refer to the *GCP Shared VPC Support with Citrix Virtual Apps and Desktops* document. Shared VPC support requires extra configuration steps related to Google Cloud permissions and service accounts.
+If you intend to use Google Sole-tenants with a Shared VPC, refer to the [GCP Shared VPC Support with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/gcp-shared-vpc.html) document. Shared VPC support requires extra configuration steps related to Google Cloud permissions and service accounts.
 
 ## Create a machine catalog
 
@@ -310,7 +310,7 @@ One or more of the following are the likely cause of receiving this message:
 
 -  You are attempting to provision a new catalog to a zone in which there is no reserved Sole Tenant Node. Ensure the zone selection is correct on the [Virtual Machines](#virtual-machines) screen.
 
--  You have a Sole Tenant Node reserved but the value of the VDA Master Node Affinity Label does not match the name of the reserved Node. Refer to these two sections; [Set Node Affinity Label at Instance Creation](#set-node-affinity-label-at-instance-creation) and [Setting the Node affinity label for an existing Instance](#setting-the-node-affinity-label-for-an-existing-instance).
+-  You have a Sole Tenant Node reserved but the value of the VDA Master Node Affinity Label does not match the name of the reserved Node. Refer to these two sections; [Set Node Affinity Label at Instance Creation](#set-the-affinity-label) and [Setting the Node affinity label for an existing Instance](#set-the-node-affinity-label-for-an-existing-instance).
 
 ### Upgrading an existing catalog fails with ‘Instance could not be scheduled due to absence of sole-tenant nodes in specified project and zone’
 
