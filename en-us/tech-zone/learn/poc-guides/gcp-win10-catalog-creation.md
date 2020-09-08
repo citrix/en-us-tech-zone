@@ -6,7 +6,7 @@ description: Learn to deploy provisioned Windows 10 catalogs to GCP Sole Tenant 
 
 ## Contributors
 
-**Author:** [Matthew Harper](matthew.harper@citrix.com)
+**Author:** [Matthew Harper](mailto:matthew.harper@citrix.com)
 
 **Special Thanks:** Josh Penick, Elaine Welch
 
