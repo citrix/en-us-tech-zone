@@ -1,6 +1,7 @@
 ---
 layout: doc
-description: Learn how to use Machine Creation Services (MCS) to provision machines in a Shared VPC on Google Cloud Platform (GCP). Then, learn to manage the machines using Citrix Studio.
+description: Learn how to use Machine Creation Services (MCS) to provision machines in a Shared VPC on Google Cloud Platform (GCP). Then, learn to manage the machines using Citrix Studio.
+
 ---
 # Google Cloud Platform (GCP) Shared VPC Support with Citrix Virtual Apps and Desktops
 
@@ -152,25 +153,25 @@ Below we will create the Project-Level role named *Citrix-ProjectLevel-SharedVpc
 
 Access the **IAM & Admin** configuration option in the Google Cloud Console:
 
-![IAM and Admin configuration option](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_001.jpg)
+![IAM and Admin configuration option](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_001.png)
 
 #### Create Role
 
 Select **Create Role**:
 
-![Create Role option](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_002.jpg)
+![Create Role option](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_002.png)
 
 #### Empty Create Role Screen
 
 A screen resembling the following appears:
 
-![Empty Create Role screen](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_003.jpg)
+![Empty Create Role screen](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_003.png)
 
 #### Fill in the Name and ADD PERMISSION
 
 Specify the **Role Name**. Click **ADD PERMISSIONS** to apply the update:
 
-![Role name specification](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_004.jpg)
+![Role name specification](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_004.png)
 
 #### Add Permissions Dialog
 
@@ -178,51 +179,51 @@ After clicking, **ADD PERMISSIONS**, a screen resembling the once below appears.
 
 Note that in this image the “*Filter Table”* text entry field has been highlighted:
 
-![Highlighted Filter Table text entry](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_005.jpg)
+![Highlighted Filter Table text entry](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_005.png)
 
 #### Add compute.firewalls.list Permission
 
 Clicking the **Filter Table** text entry field displays a contextual menu:
 
-![Contextual menu](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_006.jpg)
+![Contextual menu](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_006.png)
 
 Copy and paste (or type) the string **compute.firewalls.list** into the text field, as shown below:
 
-![Adding string to a text field](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_007.jpg)
+![Adding string to a text field](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_007.png)
 
 Selecting the **compute.firewalls.list** entry that has been filtered out of the table of permissions results in this dialog:
 
-![Permission dialog box](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_008.jpg)
+![Permission dialog box](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_008.png)
 
 Click the toggle box to enable the permission:
 
-![Enable permission](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_009.jpg)
+![Enable permission](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_009.png)
 
 Click **ADD**.
 
 The **Create Role** screen reappears. Note that the *compute.firewalls.list* permission has been added to the role:
 
-![Create Role screen](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_010.jpg)
+![Create Role screen](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_010.png)
 
 #### Add compute.networks.list Permission
 
 Using the same steps as above, add the *compute.networks.list* permission. However, make sure to select the proper rule. As you can see below, when the permission text is entered into the **filter table** field, two permissions are listed. Choose the *compute.networks.list* entry:
 
-![Choosing the correct permission](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_011.jpg)
+![Choosing the correct permission](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_011.png)
 
-![Correct permission entry](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_012.jpg)
+![Correct permission entry](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_012.png)
 
 Click **ADD**.
 
 The two Mandatory permissions added to our role:
 
-![Mandatory permission role](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_013.jpg)
+![Mandatory permission role](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_013.png)
 
 #### Project Level or Subnet-Level
 
 Determine what level of access the Role has, such as Project-Level access, or a more restricted model using Subnet-Level access. For the purposes of this document, we are currently creating the role named `Citrix-ProjectLevel-SharedVpc Role`, so we will add the *compute.subnetworks.list* and *compute.subnetworks.use* permissions using the same steps used above. The resulting screen looks like this, with the four permissions granted, just before clicking **Create**:
 
-![Four permissions granted](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_014.jpg)
+![Four permissions granted](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_014.png)
 
 Click **CREATE**.
 
@@ -232,7 +233,7 @@ Click **CREATE**.
 
 #### Citrix-ProjectLevel-SharedVpc Role Created
 
-![Subnet-level role](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_015.jpg)
+![Subnet-level role](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_015.png)
 
 ### How To: Add Service Account to Host Project IAM Role
 
@@ -242,50 +243,50 @@ Now that we have created the new `Citrix-ProjectLevel-SharedVpc Role`, we need t
 
 The first step is to navigate to the **IAM & Roles** screen for the project. In the console, select **IAM and Admin**. Select **IAM**:
 
-![IAM selection](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_016.jpg)
+![IAM selection](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_016.png)
 
 #### Project Permissions Screen
 
 Add members with the specified permissions. Click **ADD** to display the list of members:
 
-![Display list of members](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_017.jpg)
+![Display list of members](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_017.png)
 
 #### Add Members Panel
 
 Clicking **ADD** displays a small panel as shown in the image below. Data will be entered in the following step.
 
-![Add Members panel](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_018.jpg)
+![Add Members panel](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_018.png)
 
 #### Add Service Account
 
 Start typing the name of your Service Account into the field. As you type, Google Cloud will search the projects you have permissions to access and present a narrowed list of possible matches. In this case, we have one match (displayed directly below the fill-in), so we select that entry:
 
-![Service Account entry](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_019.jpg)
+![Service Account entry](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_019.png)
 
 #### Role Selection
 
 After specifying the **Member Name** (in our case the Service Account), select a role for the Service Account to function as in the Shared VPC Project. Start this process by clicking the indicated list:
 
-![Select role for Service Account](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_020.jpg)
+![Select role for Service Account](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_020.png)
 
 #### Selecting a Role
 
 Note that the **Select a Role** process is similar to the ones used in the previous How To - Create a New IAM
 Role. In this case, several more options are displayed as well as the fill-in.
 
-![More Select a Role option](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_021.jpg)
+![More Select a Role option](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_021.png)
 
 #### Specify the Role
 
 Since we know the Role we want to apply, we can start typing. Once the intended Role appears, select the role:
 
-![Role selection](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_022.jpg)
+![Role selection](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_022.png)
 
 #### Select and Save
 
 After selecting the Role, click **Save**:
 
-![Save the role](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_023.jpg)
+![Save the role](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_023.png)
 
 We have now successfully added the Service Account to the Host Project.
 
@@ -297,7 +298,7 @@ If you have chosen to use Subnet-Level access rather than Project-Level access, 
 
 The first step is to navigate to the Shared VPC screen in Google Console:
 
-![Shared VPC screen](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_024.jpg)
+![Shared VPC screen](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_024.png)
 
 #### Initial Shared VPC Screen
 
@@ -305,7 +306,7 @@ This is the landing page for the Google Cloud Console Shared VPC screen. This pr
 
 Select the check box next to the second *subnet-good* subnet:
 
-![Subnets](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_025.jpg)
+![Subnets](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_025.png)
 
 #### Select the subnet for Service Account access
 
@@ -315,7 +316,7 @@ It is also useful for this exercise to take note of the number of users this sub
 
 Click **ADD MEMBER**:
 
-![Add Member option](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_026.jpg)
+![Add Member option](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_026.png)
 
 #### Fill in New member name
 
@@ -323,7 +324,7 @@ Similar to the steps required to add the Service Account to the Host Project in 
 
 Double-click the **Service Account** to select it:
 
-![Service Account option](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_027.jpg)
+![Service Account option](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_027.png)
 
 #### Select a Role for the new Member
 
@@ -333,19 +334,19 @@ After a Service Account has been selected, a Role for the new Member needs to be
 
 1.  Double-click the *Compute Network User* Role.
 
-![Computer Network Users Role](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_028.jpg)
+![Computer Network Users Role](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_028.png)
 
 #### Role Selected
 
 The image shows that the Service Account and Role have been specified. The only remaining step is to click **SAVE** to commit the changes:
 
-![Select Role](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_029.jpg)
+![Select Role](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_029.png)
 
 #### User has been added to the subnet
 
 After the changes have been saved, the main Shared VPC screen appears. Observe that the number of users who have access to the last subnet has, as expected, increased to two:
 
-![Added members](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_030.jpg)
+![Added members](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_030.png)
 
 ### How To: Add Project CloudBuild Service Account to the Shared VPC
 
@@ -357,13 +358,13 @@ This *cloudbuild Service Account* also needs to be added as a member of the Shar
 
 You can determine what the Project ID number is for your project by selecting **Home** and **Dashboard** in the Google Cloud Console menu:
 
-![Project ID number](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_031.jpg)
+![Project ID number](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_031.png)
 
 Find the **Project Number** under the **Project Info** area of the screen.
 
 Enter the project number/cloudbuild.gserviceaccount combination into the **Add Member** field. Assign a Role of **Computer Network User**:
 
-![Assigning a role](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_032.jpg)
+![Assigning a role](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_032.png)
 
 Select **Save**.
 
@@ -381,7 +382,7 @@ Make certain you have selected the **Host Project**.
 
 From the Google Console menu, navigate to **VPC > Firewall**, as shown below:
 
-![Firewall options](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_033.jpg)
+![Firewall options](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_033.png)
 
 #### Create Firewall Rule Button
 
@@ -389,13 +390,13 @@ The top of the Firewall screen in Google Console includes a button to create a n
 
 Click **CREATE FIREWALL RULE**:
 
-![Create Firewall rule](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_034.jpg)
+![Create Firewall rule](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_034.png)
 
 #### Create New Firewall Screen
 
 The screen used to create a new firewall rules is shown below:
 
-![Create new firewall rule](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_035.jpg)
+![Create new firewall rule](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_035.png)
 
 #### Ingress Rule: Fill in Data
 
@@ -439,7 +440,7 @@ First, create the needed **Deny-All Ingress** rule by adding or changing values 
 
 The completed screen should look like this:
 
-![Final screen](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_036.jpg)
+![Final screen](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_036.png)
 
 Click **CREATE** and generate the new rule.
 
@@ -481,7 +482,7 @@ The egress rule is almost identical to the previously created ingress rule. Use 
 
 The completed screen should look like this:
 
-![Completed rule screen](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_037.jpg)
+![Completed rule screen](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_037.png)
 
 Click **CREATE** to generate the new rule.
 
@@ -497,13 +498,13 @@ Additional network interfaces cannot be added once the instance exists. To add t
 
 This is the initial panel for network settings presented when first creating a network instance
 
-![Network settings panel](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_038.jpg)
+![Network settings panel](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_038.png)
 
 Since we want to use the first network instance for the Shared VPC, click the **Pencil** icon to enter **Edit** mode.
 
 The expanded network settings screen is below. A key item to note is that we can now see the option for **Networks shared with me (from host project: citrix-shared-vpc-project-1)** directly beneath the **Network Interface** banner:
 
-![Networks shared with me options](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_039.jpg)
+![Networks shared with me options](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_039.png)
 
 The **Network Settings panel with Shared VPC selected** panel shows:
 
@@ -513,7 +514,7 @@ The **Network Settings panel with Shared VPC selected** panel shows:
 
 -  Modified the setting to an external IP address to **None**.
 
-![Network Settings panel](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_040.jpg)
+![Network Settings panel](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_040.png)
 
 Click **Done** to save the changes. Click **Add Network Interface**.
 
@@ -521,7 +522,7 @@ Click **Done** to save the changes. Click **Add Network Interface**.
 
 We now have our first interface connected to the Shared VPC (as indicated). We can configure the second interface using the same steps as would normally be used when creating a new Cloud Connector. Select a network, subnet, make a decision on an external IP address, and then click **Done**:
 
-![Second network interface](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_041.jpg)
+![Second network interface](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_041.png)
 
 ### How To: Creating Host Connection and Hosting Unit
 
@@ -531,13 +532,13 @@ Creating a Host Connection for use with Shared VPCs is not much different than i
 
 Creating a Host Connection for using Shared VPC resources is similar to creating any other GCP related Host Connection:
 
-![Host connection](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_042.jpg)
+![Host connection](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_042.png)
 
 #### Select Project and Region
 
 Once your project, shown as **Developer Project** in the following figure, has been added to the list that can access the Shared VPC, you may see both your project **and** the Shared VPC project in Studio. It is important to ensure you select the project where the deployed machine catalog should reside and **not** the Shared VPC:
 
-![Selecting project and region](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_043.jpg)
+![Selecting project and region](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_043.png)
 
 #### Select Resources
 
@@ -553,7 +554,7 @@ Consider the following:
 >
 >If you do not see any networks with **Shared** appended to the name, click the **Back** button and verify you have chosen the correct Project. If you verify the project chosen is correct and still do not see any shared VPCs, something is misconfigured in the Google Cloud Console. See the [Commonly Encountered Issues and Errors](#commonly-encountered-issues-and-errors) later in this document.
 
-![Possible errors](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_044.jpg)
+![Possible errors](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_044.png)
 
 #### Resources Selected
 
@@ -571,7 +572,7 @@ After clicking **Next,** the **Summary screen** appears. In this screen, conside
 
 -  The subnet is **subnet-good**.
 
-![Summary screen](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_046.jpg)
+![Summary screen](/en-us/tech-zone/learn/media/poc-guides_gcp-shared-vpc_046.png)
 
 ### How To: Creating a Catalog
 
