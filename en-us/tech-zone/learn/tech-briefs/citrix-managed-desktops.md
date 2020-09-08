@@ -20,7 +20,7 @@ As it is a Desktop-as-a-Service that can be subscribed to on a monthly subscript
 
 With this option, organizations in the U.S., the E.U., and Asia/Pacific can deploy the VMs in four Azure locations globally: U.S. East, U.S. West, West Europe, and Australia East (and more to come soon). The workload locations combined with [11 global points of presence of Citrix Gateway service in Azure](https://www.citrix.com/about/trust-center/privacy-compliance.html) helps optimize the experience of HDX delivery. Once the user reaches the Gateway PoP, then the traffic is redirected to the closest workload location over the superfast Azure backbone.
 
-Citrix is now enabling customers and partners, the capability to use their own Azure subscription along with Citrix Managed Desktops. Now customers and partners alike have the flexibility to use any Azure region or VM type as well as the option of leveraging reserved instance pricing from Microsoft.
+Citrix is now enabling customers and partners, the capability to use their own Azure subscription along with Citrix Managed Desktops. Now customers and partners alike have the flexibility to use any Azure region or VM type in addition to the option of applying reserved instance pricing from Microsoft.
 
 The standard deployment model and authentication flow would be as follows:
 
@@ -41,7 +41,7 @@ To support multiple topologies, organizations can choose an option from one of t
 
 ## Non-domain joined workloads
 
-In this category, the workloads (that is, Windows machines running in Azure) are not joined to a domain. This type of deployment is applicable for proof of concept, dev/test setups, or contractor desktops. Also, for smaller organizations that have not created an Active Directory at all and use Azure AD identity.
+In this category, the workloads (that is, Windows machines running in Azure) are not joined to a domain. This type of deployment is applicable for proof of concept, dev/test setups, or contractor desktops. Also, for smaller organizations that have not created an Active Directory at all and use the Azure AD identity.
 
 With the user and machine identities not being on the same domain/workgroup, we need a way to have the user’s ID be mapped to the machine. The mapping allows for user profile mapping and so on. A wrapper token encapsulates user ID token and uses (Citrix Managed or the organizations) Azure AD or the organization’s AD. This wrapper token is used to create a mapped account for the user identity on the machine.
 
@@ -63,7 +63,7 @@ In this scenario, the user accounts are in the Customer’s Azure AD subscriptio
 
 ### 3) User accounts in organization’s on-premises Active Directory
 
-In this scenario, the users’ accounts are in the Customer’s Active Directory within their on-premises data center. To establish connectivity between the service and the organization’s AD, a Windows 2012 R2/2016 server virtual machine (generally deployed in an HA pair) is installed in the customer’s data center, called Citrix Cloud Connector. Software that allows for outbound TCP 443 based connection to Citrix Managed Desktops service is installed on it. In this scenario, the users are not able to access any profile data and file servers in the company’s on-premises data center. Native two-factor authentication is available using Time-based One Time Password.
+In this scenario, the users’ accounts are in the Customer’s Active Directory within their on-premises data center. To establish connectivity between the service and the organization’s AD, a Windows 2012 R2/2016 server virtual machine (deployed in an HA pair) is installed in the customer’s data center, called Citrix Cloud Connector. Software that allows for outbound TCP 443 based connection to Citrix Managed Desktops service is installed on it. In this scenario, the users are not able to access any profile data and file servers in the company’s on-premises data center. Native two-factor authentication is available using Time-based One Time Password.
 
 ![Deployment_Scenario_3](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_4-deployment-scenario-3.png)
 
@@ -77,15 +77,15 @@ Here the users’ accounts are in the organization’s Azure Active Directory an
 
 ![Deployment_Scenario_4](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_5-deployment-scenario-4.png)
 
-### 2) Domain Joined to organization’s on premises Active Directory via Azure Active Directory Domain Services and users’ accounts in organization’s on premises Active Directory
+### 2) Domain Joined to organization’s on-premises Active Directory via Azure Active Directory Domain Services and users’ accounts in organization’s on-premises Active Directory
 
 Here the users’ accounts are in the organization’s on-premises Active Directory. The Active directory is synced with the Azure AD in the customer’s Azure subscription using Azure AD Connect. This setup allows the user’s identity to be authenticated from the synced Azure AD. For the machines to be able to connect to the on-premises AD, the customer needs to set up Azure VNet Peering from the network in Citrix Managed Desktops’ Azure subscription to their own Azure network in their subscription. Another connection to the data center for access to profile and app data and file servers is needed. The second connection requires SDWAN or a site-to-site VPN or an Express Route. We recommend the use of SDWAN as it is a more reliable and cost effective solution.
 
 ![Deployment_Scenario_5](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_6-deployment-scenario-5.png)
 
-### 3) Domain Joined to and users’ accounts in organization’s on premises Active Directory
+### 3) Domain Joined to and users’ accounts in organization’s on-premises Active Directory
 
-Here both the machines’ and users’ accounts are in the organization’s on-premises Active Directory. The Citrix Managed Desktops Azure subscription (SD-WAN virtual appliance installed) and the customer’s on-premises (SD-WAN branch appliance installed) locations are connected to each other using SD-WAN. These appliances are managed by the customer using the SD-WAN Orchestrator in Citrix Cloud. This deployment is the simplest (as there is no need for syncing the on prem Active Directory with the customer’s Azure AD) and utilizes the optimizations built into SD-WAN to help ensure that the user gets the best experience possible.
+Here both the machines’ and users’ accounts are in the organization’s on-premises Active Directory. The Citrix Managed Desktops Azure subscription (SD-WAN virtual appliance installed) and the customer’s on-premises (SD-WAN branch appliance installed) locations are connected to each other using SD-WAN. These appliances are managed by the customer using the SD-WAN Orchestrator in Citrix Cloud. This deployment is the simplest (as there is no need for syncing the on-prem Active Directory with the customer’s Azure AD) and utilizes the optimizations built into SD-WAN to help ensure that the user gets the best experience possible.
 
 ![Deployment_Scenario_6](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_6-deployment-scenario-6.png)
 
@@ -102,7 +102,7 @@ Machine Creation Services (MCS) is used to provision the workload VMs in the con
 3)  The Windows Server 2008 R2 / 2012 R2 / 2016 / 2019 are server operating systems that allow multiple users to connect to a single machine. One of these OSs can be used to serve applications to users or provide access to desktop sessions (which can be skinned to look like desktop operating system sessions). These OSs are a cheaper option to deliver desktops than option 1.
 Note: Each user connecting to this machine requires an RDS CAL or RDS SAL.
 
-Note: For Windows 7 ESU and the Windows Server 2008 R2 operating systems, the version of the Virtual Delivery agent to be installed on the image must be Citrix Virtual Apps and Desktop 7.15 LTSR.
+Note: For Windows 7 ESU and the Windows Server 2008 R2 operating systems, the version of the Virtual Delivery Agent to be installed on the image must be Citrix Virtual Apps and Desktop 7.15 LTSR.
 
 ![Master_Images_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_7-master-images-ss.png)
 
@@ -118,7 +118,7 @@ Each of these templates can be applied to the 4 VM sizes that are available at l
 
 ![Machine_Performance_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_9-machine-performance-ss.png)
 
-The admin can choose the VM size based on the workload and the number of users expected to connect to each machine. Machines with fewer CPUs and lesser RAM are more suited to lighter workloads or to serve a single session at a time or both options. The machines with a larger number of CPUs and more memory can support more intensive workloads or support a larger number of sessions simultaneously or both.
+The admin can choose the **VM size based** on the workload and the number of users expected to connect to each machine. Machines with fewer CPUs and lesser RAM are more suited to lighter workloads or to serve a single session at a time or both options. The machines with a larger number of CPUs and more memory can support more intensive workloads or support a larger number of sessions simultaneously or both.
 
 Admins have a choice of two methods for creating the catalogs – Quick Create and Custom create.
 
@@ -128,7 +128,7 @@ Admins have a choice of two methods for creating the catalogs – Quick Create a
   
  **Custom Create** provides admins with various options, so the required catalog can be created.
 
-Admins have the options for the catalog type, the subscription where the VMs are being created, setting up connectivity with the corporate network, the Azure region, the storage type, workload, and number of machines in the catalog and which master image to be used in addition to the Autoscale settings for the catalog.
+Admins have the options for the catalog type, the subscription where the VMs are being created, setting up connectivity with the corporate network, the Azure region, the storage type, workload, and number of machines in the catalog and which master image to be used in addition to the **Autoscale** settings for the catalog.
 
 ![Custom_Create_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_11-custom-create-ss.png)
   
@@ -176,16 +176,16 @@ Existing VNet peered networks are listed here. The admin can add a new VNet peer
 
 ## User Defined Routes
 
-Some organizations using Citrix Managed Desktops service may have requirements for outgoing Internet traffic to originate from a known Static IP address. Due to the default routing mechanisms built into Azure, traffic originating from a deployed machine will originate from a random set of public IPs. The solution is to configure a Azure Network Virtual Appliance (NVA) that has a static assigned public IP on the NVA’s WAN interface. For this to work, the machine must be joined to the domain on the Azure subscription of the organization (Domain joined deployment scenarios 1 and 2) and vnet peering is enabled between Citrix Managed Azure and the customer’s Azure subscription. The Azure subscription network must have 2 subnets, one that contains all the Azure resources (call it LAN) and the one containing the external facing (outgoing) IP address (call it WAN). The WAN subnet can have a small network address space as it only is used for external routing.
+Some organizations using the Citrix Managed Desktops service can have requirements for outgoing Internet traffic to originate from a known Static IP address. Due to the default routing mechanisms built into Azure, traffic originating from a deployed machine originates from a random set of public IPs. The solution is to configure an Azure Network Virtual Appliance (NVA) that has a statically assigned public IP on the NVA’s WAN interface. For this to work, the machine must be joined to the domain on the Azure subscription of the organization (Domain joined deployment scenarios 1 and 2) and VNet peering is enabled between Citrix Managed Azure and the customer’s Azure subscription. The Azure subscription network must have 2 subnets, one that contains all the Azure resources (call it LAN) and the one containing the external facing (outgoing) IP address (call it WAN). The WAN subnet can have a small network address space as it only is used for external routing.
 
-For the outgoing IP to be static the admin must assign it to an Azure NVA. With the NVA in place there are additional feauters that are available including but not limited to URL filtering, content / SSL inspection, threat detection such virus scan etc.
+For the outgoing IP to be static the admin must assign it to an Azure NVA. With the NVA in place there are extra features that are available including but not limited to URL filtering, content / SSL inspection, threat detection such virus scan and so on
 
-Configure the Azure NVA to NAT the LAN IP to the WAN IP. In the example found in this link, a Windows Server 2016 Datacenter edition VM is used for the outgoing IP.
-Then add an route in the Citrix Managed Desktops UI, **Network Connections** > **Azure VNet Peering** previously created > **Routes** tab. Add a new route that points to the LAN IP of the router.
+Configure the Azure NVA to NAT the LAN IP to the WAN IP. In the example found in this link, a Windows Server 2016 data center edition VM is used for the outgoing IP.
+Then add a route in the Citrix Managed Desktops UI, **Network Connections** > **Azure VNet Peering** previously created > **Routes** tab. Add a new route that points to the LAN IP of the router.
 
 ![User Defined Routes](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_20-user-defined-routes-ss.png)
 
-Once the route is added it will show up in the listing of routes for the vnet peering.
+Once the route is added it shows up in the listing of routes for the VNet peering.
 
 ## Autoscale
 
@@ -195,7 +195,7 @@ With this feature the admin can ensure workload availability for their users whi
   
 Admins have the ability to power manage the machines that are in a catalog based on the time of the day. Admins can also control the actions that are to be performed on a session that is idle or disconnected and the time-out for those actions to occur.
 
-An admin can set the working hours for a catalog (based on time-zone) and then define how many VMs are needed in off-work hours. Then we can shut down the rest of the VMs to save on Azure consumption cost. Autoscale also works to bring up the required number of machines to serve the session when the work hours are resumed. Resulting in a great experience when users try to log in again.
+An admin can set the working hours for a catalog (based on time-zone) and then define how many VMs are needed in off-work hours. Then we can shut down the rest of the VMs to save on the Azure consumption cost. Autoscale also works to bring up the required number of machines to serve the session when the work hours are resumed. Resulting in a great experience when users try to log in again.
 
 Admin can set timeouts for when idle sessions should be disconnected, logged off, and powered off.
 
@@ -211,7 +211,7 @@ The admin can view desktop usage, sessions, and machines.
 
 ![Monitoring_Usage_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_16-monitoring-usage-ss.png)
   
-The default view is the Desktop Usage page. The page contains a real time active machine and session status with a total number of machines in one or more selected catalogs. The following graph is of the machines and sessions that are active for one or more selected catalogs for the selected time period. If the admin hovers over any of the points in graph, a pop-up reveals the counts at the point in time.
+The default view is the Desktop Usage page. The page contains a real time active machine and session status with a total number of machines in one or more selected catalogs. The following graph is of the machines and sessions that are active for one or more selected catalogs for the selected time period. If the admin hovers over any of the points in the graph, a pop-up reveals the counts at the point in time.
 The time ranges available here are 1 day, 1 week, 1 month, and 3 months going back from the current time.
 
 ![Monitoring_Top_10_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_17-top-10-ss.png)

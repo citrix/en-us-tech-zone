@@ -14,7 +14,7 @@ description: Learn the detailed architecture and deployment model of Citrix Virt
 
 This guide assists with the Architecture and deployment model of Citrix Virtual Apps and Desktops services on Microsoft Azure.
 
-The combination of Citrix Cloud and Microsoft Azure makes it possible to spin up new Citrix virtual resources with greater agility and elasticity, adjusting usage as requirements change. Virtual Machines on Azure support all of the control and workload components required for a Citrix Virtual Apps and Desktops service deployment. Citrix Cloud and Microsoft Azure have common control plane integrations that establish identity, governance, and security for global operations.
+The combination of Citrix Cloud and Microsoft Azure makes it possible to spin up new Citrix virtual resources with greater agility and elasticity, adjusting usage as requirements change. Virtual Machines on Azure support all the control and workload components required for a Citrix Virtual Apps and Desktops service deployment. Citrix Cloud and Microsoft Azure have common control plane integrations that establish identity, governance, and security for global operations.
 
 This document also provides guidance on prerequisites, architecture design considerations, and deployment guidance for customer environments.
 The document highlights the design decisions and deployment considerations across the following five key architectural principles:
@@ -27,13 +27,13 @@ The document highlights the design decisions and deployment considerations acros
 
 *  **Security** - Azure provides a wide array of configurable security options and the ability to control them so that customers can customize security to meet the unique requirements of their organization’s deployments. This section helps to understand how Azure security capabilities can help you fulfill these requirements.
 
-*  **Connectivity** - Connecting Azure virtual networks with customer’s local/cloud network is referred to as hybrid networking. This section explains the options for network connectivity and network service routing.
+*  **Connectivity** - Connecting Azure virtual networks with the customer’s local/cloud network is referred to as hybrid networking. This section explains the options for network connectivity and network service routing.
 
 ## Planning
 
 The three most common scenarios for delivering Citrix Apps and Desktops through Azure are:
 
-*  Greenfield deployment with Citrix Cloud delivering resource locations in Azure. This scenario is delivered via Citrix Virtual Apps and Desktops service and used when customers prefer to go to a subscription model and outsource control plane infrastructure to Citrix.
+*  Greenfield deployment with Citrix Cloud delivering resource locations in Azure. This scenario is delivered via the Citrix Virtual Apps and Desktops service and used when customers prefer to go to a subscription model and outsource control plane infrastructure to Citrix.
 *  Extending an on-premises deployment into Azure. In this scenario, the customer has a current on-premises control layer and would like to add Azure as a Citrix resource location for new deployments or migration.
 *  Lift and shift. With this scenario, customers deploy their Citrix Management infrastructure into Azure and treat Azure as a site, using Citrix NetScaler and StoreFront to aggregate resources from multiple sites.
 
@@ -59,7 +59,7 @@ This conceptual architecture provides common guidelines for deployment of a Citr
 
 Diagram-1: Citrix Cloud Conceptual Reference Architecture
 
-Refer to the [design guide](/en-us/tech-zone/design/design-decisions/azure-instance-scalability.html) on scalability and economics of delivering Citrix Virtual Apps and Desktops services on Microsoft Azure
+Refer to the [design guide](/en-us/tech-zone/design/design-decisions/azure-instance-scalability.html) on the scalability and economics of delivering Citrix Virtual Apps and Desktops services on Microsoft Azure
 
 ## Operations
 
@@ -89,7 +89,7 @@ A recommended pattern for naming subscriptions is:
 
 When naming resources in Azure use common prefixes or suffixes to identify the type and context of the resource. While all the information about type, metadata, context, is available programmatically, applying common affixes simplifies visual identification. When incorporating affixes into your naming convention, it is important to clearly specify whether the affix is at the beginning of the name (prefix) or at the end (suffix).
 
-A well-defined naming scheme identifies the system, role, environment, instance count, and location of an Azure resource. Naming can be enforced using Azure Policy.
+A well-defined naming scheme identifies the system, role, environment, instance count, and location of an Azure resource. Naming can be enforced using an Azure Policy.
 
 | **Service** | **Scope** | **Suggested Pattern** | **Example** |
 | --- | ---| --- | --- |
@@ -116,7 +116,7 @@ Selecting a subscription model is a complex decision that involves understanding
 
 #### Single Subscription workspace model
 
-In a single subscription model, all core infrastructure and Citrix infrastructure are located in the same subscription. This is the configuration recommended for deployments that require up to 1,000 Citrix VDAs (could be session, pooled VDI, or persistent VDI). Refer to the following [blog](https://www.citrix.com/blogs/2020/05/06/improving-azure-performance-with-machine-creation-services/) for the latest start-shutdown scale numbers within a single subscription,
+In a single subscription model, all core infrastructure and Citrix infrastructure are located in the same subscription. This is the configuration recommended for deployments that require up to 1,000 Citrix VDAs (can be session, pooled VDI, or persistent VDI). Refer to the following [blog](https://www.citrix.com/blogs/2020/05/06/improving-azure-performance-with-machine-creation-services/) for the latest start-shutdown scale numbers within a single subscription,
 
 Diagram-2: Azure Single Subscription workspace model
 [![Azure-RA-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_002.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_002.png)
@@ -143,7 +143,7 @@ The following questions provide guidance to help customer’s understand the Azu
 
 An Azure region is a set of data centers deployed within a latency-defined perimeter and connected through a dedicated regional low-latency network. Azure gives customers the flexibility to deploy applications where they need to. Azure is generally available in 42 regions around the world, with plans announced for 12 more regions as of Nov 2018.
 
-A geography is a discrete market, typically containing two or more Azure regions, that preserves data residency and compliance boundaries. Geographies allow customers with specific data-residency and compliance needs to keep their data and applications close.
+A geography is a discrete market, typically containing two or more Azure regions, that preserve data residency and compliance boundaries. Geographies allow customers with specific data-residency and compliance needs to keep their data and applications close.
 
 Availability Zones are physically separate locations within an Azure region. Each Availability Zone is made up of one or more data centers equipped with independent power, cooling and networking. Availability Zones allow customers to run mission-critical applications with high availability and low-latency replication. To ensure resiliency, there’s a minimum of three separate zones in all enabled regions.
 
@@ -151,8 +151,8 @@ Consider these factors when choosing your region.
 
 | **Component** | **Requirement** |
 | --- | --- |
-| Compliance and data residency | Do customers have specific compliance or data-residency requirements? Microsoft may copy customer data between Regions within a given Geo for data redundancy or other operational purposes. For example, Azure Globally Redundant Storage (GRS) replicates Blob and Table data between two regions within the same Geo for enhanced data durability if there is a major data center disaster. Certain Azure services do not enable the customer to specify the region where the service will be deployed. These services may store customer data in any of Microsoft's data centers unless specified. Review [Azure Regions map](https://azure.microsoft.com/en-us/global-infrastructure/regions/) website for latest updates. |
-| Service availability | Review service availability within the tentative regions. Service Availability by region helps customer to determine which services are available within a region. While an Azure Service may be supported in a given region, not all Service features are available in sovereign clouds, such as Azure Government, Germany, and China. |
+| Compliance and data residency | Do customers have specific compliance or data-residency requirements? Microsoft can copy customer data between Regions within a given Geo for data redundancy or other operational purposes. For example, Azure Globally Redundant Storage (GRS) replicates Blob and Table data between two regions within the same Geo for enhanced data durability if there is a major data center disaster. Certain Azure services do not enable the customer to specify the region where the service will be deployed. These services can store customer data in any of Microsoft's data centers unless specified. Review [Azure Regions map](https://azure.microsoft.com/en-us/global-infrastructure/regions/) website for latest updates. |
+| Service availability | Review service availability within the tentative regions. Service Availability by region helps the customer to determine which services are available within a region. While an Azure Service can be supported in a given region, not all Service features are available in sovereign clouds, such as Azure Government, Germany, and China. |
 | Determine the target Azure regions for the Citrix deployment. | Review proximity of Azure region to users and customer data centers. |
 | Are multiple Azure regions required? | Multiple Azure regions are typically considered for the following high-level reasons: - Proximity to application data or end users - Geographic Redundancy for Business Continuity and Disaster Recovery - Azure Feature or Service availability |
 
@@ -173,7 +173,7 @@ These two features do not protect against unplanned maintenance/crashes.
 
 Azure periodically performs updates to improve the reliability, performance, and security of the host infrastructure in Azure. If maintenance requires a reboot, Microsoft sends a notice. Using Azure Planned Maintenance, it is possible to capture these notices and proactively take action on them on the customer’s schedule, instead of on Microsoft’s schedule.
 
-Make use of planned maintenance feature by sending email notifications to the service owner of each tier (for manual intervention) and build runbooks to automate the service protection.
+Make use of the planned maintenance feature by sending email notifications to the service owner of each tier (for manual intervention) and build runbooks to automate the service protection.
 
 ### Azure Scheduled Events
 
@@ -193,7 +193,7 @@ Azure can provide a highly cost-effective DR solution for Citrix customers looki
 
 Under this topology, the management infrastructure remains on-premises, but workloads are deployed to Azure. If the on-premises data center is not reachable, existing connected users remain connected, but new connections will not be possible because the management infrastructure is unavailable.
 
-To protect the management infrastructure, pre-configure Azure Site Recovery to recover management infrastructure into Azure. This is a manual process and once recovered, your environment can be made operational. This option is not seamless and cannot recover components such as NetScaler VPX, however for organizations with more a more flexible recovery time objective (RTO) it can reduce the operational costs.
+To protect the management infrastructure, pre-configure Azure Site Recovery to recover the management infrastructure into Azure. This is a manual process and once recovered, your environment can be made operational. This option is not seamless and cannot recover components such as NetScaler VPX, however for organizations with more a more flexible recovery time objective (RTO) it can reduce the operational costs.
 
 ### Hosting Architecture
 
@@ -203,14 +203,14 @@ The presence of the Citrix Infrastructure in Azure means that no manual processe
 
 ### Cloud Services Architecture
 
-When using Citrix Cloud, Azure becomes just another resource location. This topology provides the simplest deployment as the management components are hosted by Citrix as a Service, and Disaster Recovery workloads can be achieved without deploying duplicate infrastructure to support it. The user experience during failover in the event of a disaster can be virtually seamless.
+When using Citrix Cloud, Azure becomes just another resource location. This topology provides the simplest deployment as the management components are hosted by Citrix as a Service, and Disaster Recovery workloads can be achieved without deploying duplicate infrastructure to support it. The user experience during failover in the event of a disaster can be seamless.
 
 The items in the following table help the customer with their DR planning:
 
 | **Component** | **Requirement**|
 | ---| ---|
 | What are the RTO and RPO requirements of the Citrix environment? | RTO - Targeted duration of time and a service level within which a business process must be restored after a disaster. RPO - The interval of time that might pass during a disruption before the quantity of data lost during that period exceeds the Business Continuity Plan’s maximum allowable threshold or “tolerance.” |
-| What is the desired outcome when a service disruption occurs in the entire region where your Azure virtual machine application is deployed? | These options should be reviewed in alignment with the customer's RTO and RPO for DR. Disaster Recovery of a Citrix environment in Azure can be addressed with Azure Site Recover,passive Secondary Site and active Site Azure Site. Recovery only supports Server OS (Citrix infrastructure and Server VDAs). Client OS is not supported (for example persistent desktops created using ARM Templates). Additionally, Machine Catalogs created by MCS (Server or Client VDA) must be recreated using a Recovery Task. |
+| What is the desired outcome when a service disruption occurs in the entire region where your Azure virtual machine application is deployed? | These options should be reviewed in alignment with the customer's RTO and RPO for DR. Disaster Recovery of a Citrix environment in Azure can be addressed with Azure Site Recover, passive Secondary Site and active Site Azure Site. Recovery only supports Server OS (Citrix infrastructure and Server VDAs). Client OS is not supported (for example persistent desktops created using ARM Templates). Also, Machine Catalogs created by MCS (Server or Client VDA) must be recreated using a Recovery Task. |
 
 ### Resource Groups
 
@@ -220,7 +220,7 @@ The key to having a successful design of resource groups is understanding the li
 
 One or more Resource Groups can be applied to a Machine Catalog during initial creation. These Resource Groups cannot be shared across Machine Catalogs. Resource Groups are limited to 240. Citrix MCS VMs due to the 800 Resource Count limitation per type of resource within a Resource Group.
 
-Resource Groups are tied to Machine Catalogs at creation time and cannot be added or changed later. To add additional Resource Groups to a Machine Catalog, the Machine Catalog must be removed and recreated.
+Resource Groups are tied to Machine Catalogs at creation time and cannot be added or changed later. To add extra Resource Groups to a Machine Catalog, the Machine Catalog must be removed and recreated.
 
 ### Image Management
 
@@ -236,7 +236,7 @@ The customer needs to decide the organizational structure for the storing source
 
 ### Image Replication
 
-The customer needs to determine the appropriate process for replicating images across regions and how Citrix App Layering technology might be used within the overall image management strategy. PowerShell scripts may be used with Azure Automation to schedule image replication. More information on Citrix App Layering can be found [here](/en-us/citrix-app-layering/4.html), but keep in mind that Elastic Layering requires an SMB File share that does not reside on Azure Files. See the File Servers section for supported SMB share technologies that support Elastic Layering.
+The customer needs to determine the appropriate process for replicating images across regions and how Citrix App Layering technology might be used within the overall image management strategy. PowerShell scripts cam be used with Azure Automation to schedule image replication. More information on Citrix App Layering can be found [here](/en-us/citrix-app-layering/4.html), but keep in mind that Elastic Layering requires an SMB File share that does not reside on Azure Files. See the **File Servers** section for supported SMB share technologies that support Elastic Layering.
 
 ### File Server Technologies
 
@@ -252,13 +252,13 @@ The customer should select file server technologies that best meet their busines
 
 | **Options** | **Benefits** | **Considerations** |
 |---|---|---|
-| Standalone File Server | Well known and tested. Compatible with existing backup/restore products | Single point of failure. No data redundancy. Outage for monthly patching, usually measured in minutes. |
-| File Servers using Storage Replica | Block Level Replication. SMB 3.0. Storage Agnostic (SAN, Cloud, Local, and so on). Offers Synchronous and Asynchronous Replication. Recommended when multi-region access is required | Manual failover needed. Uses 2x disk space. Manual failover still has downtime, usually measured in minutes. DNS dependency. |
-| SOFS on Storage Spaces Direct | Highly available. Multi-node and Multi-disk HA. Scale up or scale out. SMB 3.0 and 3.1. Transparent failover during planned and unplanned maintenance activities. Recommended for user profile storage within Azure | Uses 2-3x disk space. 3rd party back-up software support can be limited by the vendor. Does not support multi-region deployment |
+| Standalone File Server | Well known and tested. Compatible with existing backup/restore products | Single point of failure. No data redundancy. Outage for monthly patching, measured in minutes. |
+| File Servers using Storage Replica | Block Level Replication. SMB 3.0. Storage Agnostic (SAN, Cloud, Local, and so on). Offers Synchronous and Asynchronous Replication. Recommended when multi-region access is required | Manual failover needed. Uses 2x disk space. Manual failover still has downtime, measured in minutes. DNS dependency. |
+| SOFS on Storage Spaces Direct | Highly available. Multi-node and Multi-disk HA. Scale up or scale out. SMB 3.0 and 3.1. Transparent failover during planned and unplanned maintenance activities. Recommended for user profile storage within Azure | Uses 2-3x disk space. Third party back-up software support can be limited by the vendor. Does not support multi-region deployment |
 | Distributed File System – Replication | Proven technology for file-based replication. Supports PowerShell | Domain-based. Cannot be deployed in an active-active configuration. |
-| Third-party storage applications | Deduplication technologies. Better use of storage space. | Additional cost. Proprietary management tools. |
+| Third-party storage applications | Deduplication technologies. Better use of storage space. | Extra cost. Proprietary management tools. |
 
-The recommended file server virtual machine types are generally DS1, DS2, DS3, DS4, or DS5, with the appropriate selection depending on customer use requirements. For best performance, ensure that premium disk support is selected. Additional guidance can be found on Microsoft Azure [documentation](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-storage-spaces-direct-deployment).
+The recommended file server virtual machine types are generally DS1, DS2, DS3, DS4, or DS5, with the appropriate selection depending on customer use requirements. For best performance, ensure that premium disk support is selected. Extra guidance can be found on Microsoft Azure [documentation](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-storage-spaces-direct-deployment).
 
 ### Infrastructure Cost Management
 
@@ -268,18 +268,18 @@ Two technologies are available that can be used to reduce the costs of the Citri
 
 Azure Reserved VM Instances (RIs) significantly reduce costs—up to 72 percent compared to pay-as-you-go prices—with one-year or three-year terms on Windows and Linux virtual machines (VMs). When customers combine the cost savings gained from Azure RIs with the added value of the Azure Hybrid Benefit, they can save up to 80 percent. The 80% is calculated based on a three-year Azure Reserved Instance commitment of a Windows Server when compared to the normal pay-as-you-go rate.
 
-While Azure Reserved Instances require making upfront commitments on **compute** capacity, they also provide flexibility to exchange or cancel reserved instances at any time. A reservation only covers the virtual machine compute costs. It does not reduce any of the additional software, networking, or storage charges. This is good for Citrix infrastructure and minimum capacity needed for a use case (on and off hours).
+While Azure Reserved Instances require making upfront commitments on **compute** capacity, they also provide flexibility to exchange or cancel reserved instances at any time. A reservation only covers the virtual machine compute costs. It does not reduce any of the additional software, networking, or storage charges. This is good for the Citrix infrastructure and minimum capacity needed for a use case (on and off hours).
 
 Citrix Autoscale feature can work with reserved instances as well to further reduce your costs - you can now use Autoscale for bursting in the cloud. In a delivery group you can tag machines that need to be autoscaled and exclude your reserved instances (or on-premises workloads) - you can find more info here: [Restrict Autoscale to certain machines in a Delivery Group](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html#restrict-autoscale-to-certain-machines-in-a-delivery-group).
 
 ### Citrix Autoscale
 
-Autoscale is a feature exclusive to Citrix Virtual Apps and Desktops service that provides a consistent, high-performance solution to proactively power manage your machines. It aims to balance costs and user experience. Autoscale incorporates the deprecated Smart Scale technology into the Studio power management solution.
+Autoscale is a feature exclusive to the Citrix Virtual Apps and Desktops service that provides a consistent, high-performance solution to proactively power manage your machines. It aims to balance costs and user experience. Autoscale incorporates the deprecated Smart Scale technology into the Studio power management solution.
 
 | **Machine Type** | **Schedule-based** | **Load-based** | **Load and schedule-based** |
 |-----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | **Server OS** machines hosting published applications or hosted shared desktops (Server VDI) | Supported | Supported | Supported |
-| **Desktop OS** machines hosting static persistent (dedicated) VDI desktops | Supported. During periods when machines are powered off (for example, after working hours), users can trigger machines to power on through Citrix Receiver. You can set Autoscale’s Power Off Delay so Autoscale does not automatically power machines off before the user can establish a session. | Supported only for unassigned machines. | Supported only for unassigned machines. |
+| **Desktop OS** machines hosting static persistent (dedicated) VDI desktops | Supported. During periods when machines are powered off (for example, after working hours), users can trigger machines to power on through the Citrix Receiver. You can set Autoscale’s Power Off Delay so Autoscale does not automatically power machines off before the user can establish a session. | Supported only for unassigned machines. | Supported only for unassigned machines. |
 | **Desktop OS** - machines hosting - random non-persistent VDI desktops (pooled VDI desktops) | Supported | Supported. Use the Session Count scaling metric and set the maximum number of sessions to 1. | Supported. Use the Session Count scaling metric and set the minimum number of machines to 1. |
 
 Autoscale supports power managing Sites using Virtual Apps and Desktops, the Virtual Apps and Desktops service, Virtual Apps Essentials, and Virtual Desktops Essentials.
@@ -309,22 +309,22 @@ When planning for a user assessment, the [Citrix VDI Handbook and Best Practices
 | Number of Users | How many users are expected within the environment? Did the assessment phase determine the appropriate VDI Model? (Virtual Apps or Virtual Desktops) |
 | Use Cases | What types of applications will be consumed by the end users? What are the VDA requirements for the applications? How will the applications be delivered best? (Virtual Apps vs Virtual Desktops) |
 | User Group working hours | When will users be accessing the environment? What are the peak hours? What is the expected consumption throughout the day? (The consumption of users during specific hours helps identify workspace requirements for scale automation and Azure reserved Instance purchasing.) |
-| Location | Where are end users located? Should workspaces be deployed across multiple regions or only in a single region? |
+| Location | Where are the end users located? Should workspaces be deployed across multiple regions or only in a single region? |
 | User and Application Data | Where is the user and application data stored? Will data be contained solely in Azure, only on-premises, or a mix of both? What is the maximum tolerable latency for accessing the user data? |
 
 ### Azure VM Instance Types
 
-Each Citrix component leverages an associated virtual machine type in Azure. Each VM series available is mapped to a specific category of workloads (general purpose, compute-optimized, and so forth) with various sizes controlling the resources allocated to the VM (CPU, Memory, IOPS, network, and others).
+Each Citrix component uses an associated virtual machine type in Azure. Each VM series available is mapped to a specific category of workloads (general purpose, compute-optimized, and so forth) with various sizes controlling the resources allocated to the VM (CPU, Memory, IOPS, network, and others).
 
-Most Citrix deployments use the D-Series and F-Series instance types. The D-Series are commonly used for the Citrix infrastructure components and sometimes for the user workloads when they require additional memory beyond what is found in the F-Series instance types. F-Series instance types are the most common in the field for user workloads because of their faster processors which bring with them the perception of responsiveness.
+Most Citrix deployments use the D-Series and F-Series instance types. The D-Series are commonly used for the Citrix infrastructure components and sometimes for the user workloads when they require extra memory beyond what is found in the F-Series instance types. F-Series instance types are the most common in the field for user workloads because of their faster processors which bring with them the perception of responsiveness.
 
-**Why D-Series or F-Series?** From a Citrix perspective, most infrastructure components (Cloud Connectors, StoreFront, NetScaler, etc.) use CPU to run core processes. These VM types have a balanced CPU to Memory ratio, are hosted on uniform hardware (unlike A-Series) for more consistent performance and support premium storage. Certainly, customers can and should adjust their instance types to meet their needs and their budget.
+**Why D-Series or F-Series?** From a Citrix perspective, most infrastructure components (Cloud Connectors, StoreFront, NetScaler, and so on) use CPU to run core processes. These VM types have a balanced CPU to Memory ratio, are hosted on uniform hardware (unlike the A-Series) for more consistent performance and support premium storage. Certainly, customers can and should adjust their instance types to meet their needs and their budget.
 
-The size and number of components within customer’s infrastructure will always depend on customer’s requirements, scale, and workloads. However, with Azure we have the ability to scale dynamically and on-demand! For cost-conscious customers, starting smaller and scaling up is the best approach. Azure VMs require a reboot when changing size so plan these events within scheduled maintenance windows only and under established change control policies.
+The size and number of components within a customer’s infrastructure will always depend on customer’s requirements, scale, and workloads. However, with Azure we have the ability to scale dynamically and on-demand! For cost-conscious customers, starting smaller and scaling up is the best approach. Azure VMs require a reboot when changing size so plan these events within scheduled maintenance windows only and under established change control policies.
 
 ### How about Scale-up or Scale-out?
 
-The following high-level questions should be reviewed to better understand customer’s use case and the resources needed for their end users. This also helps them to plan their workload well in advance.
+The following high-level questions should be reviewed to better understand a customer’s use case and the resources needed for their end users. This also helps them to plan their workload well in advance.
 
 Scaling up is best when the cost per user per hour needs to be the lowest and a larger impact can be tolerated should the instance fail. Scaling out is preferred when the impact of a single instance failure needs to be minimized. The table below provides some example instance types for different Citrix components.
 
@@ -343,11 +343,11 @@ While scaling up is usually a preferred model to reduce the cost, Autoscale can 
 
 ### Storage
 
-Just like any other computer, virtual machines in Azure use disks as a place to store an operating system, applications, and data. All Azure virtual machines have at least two disks – a Windows operating system disk and a temporary disk. The operating system disk is created from an image, and both the operating system disk and the image are stored within Azure as virtual hard disks (VHDs). Virtual machines may also have additional disks attached as data disks, also stored as VHDs.
+Just like any other computer, a virtual machines in Azure use disks as a place to store an operating system, applications, and data. All Azure virtual machines have at least two disks – a Windows operating system disk and a temporary disk. The operating system disk is created from an image, and both the operating system disk and the image are stored within Azure as virtual hard disks (VHDs). Virtual machines may also have extra disks attached as data disks, also stored as VHDs.
 
 Azure Disks are designed to deliver enterprise-grade durability. Three performance tiers for storage exist that can be selected when creating disks: Premium SSD Disks, Standard SSD, and Standard HDD Storage, and the disks may be either managed or unmanaged. Managed disks are the default and are not subject to the storage account limitations like the unmanaged disks.
 
-Managed Disks are recommended over unmanaged disk by Microsoft. Unmanaged disks should be considered by exception only. Standard Storage (HDD and SSD) includes transaction costs (storage I/O) that must be considered but have lower costs per disk. Premium Storage has no transaction costs but have higher per disk costs and offers an improved user experience.
+Managed Disks are recommended over the unmanaged disk by Microsoft. Unmanaged disks should be considered by exception only. Standard Storage (HDD and SSD) includes transaction costs (storage I/O) that must be considered but have lower costs per disk. Premium Storage has no transaction costs but have higher per disk costs and offers an improved user experience.
 
 The disks offer no SLA unless an Availability Set is used. Availability Sets are not supported with Citrix MCS but should be included with Citrix Cloud Connector, NetScaler, and StoreFront.
 
@@ -370,7 +370,7 @@ Azure Role-Based Access Control (RBAC) helps provide fine-grained access managem
 
 ### Authentication
 
-Domain Services (either AD DS or Azure AD DS) are required for core Citrix functionality. RBAC is an authorization system built on Azure Resource Manager that provides fine-grained access management of resources in Azure. RBAC allows you to granularly control the level of access that users have. For example, you can limit a user to only manage virtual networks and another user to manage all resources in a resource group. Azure includes several built-in roles that you can use.
+Domain Services (either AD DS or Azure AD DS) are required for core Citrix functionality. RBAC is an authorization system built on the Azure Resource Manager that provides fine-grained access management of resources in Azure. RBAC allows you to granularly control the level of access that users have. For example, you can limit a user to only manage virtual networks and another user to manage all resources in a resource group. Azure includes several built-in roles that you can use.
 
 Azure AD Authentication is supported for the Workspace Experience Service and Citrix ADC/StoreFront authentication. For full SSON with Azure AD, Citrix Federated Authentication Service (FAS) or Azure AD DS (for core Domain Services) must be used.
 
@@ -381,8 +381,8 @@ Active Directory and Azure Active Directory Outcomes
 
 *  Azure Active Directory Provisioned Tenant
 *  List of desired Organizational roles for Azure RBAC with mapping to Built-In or Custom Azure Roles
-*  List of desired Admin access levels (Account, Subscription, Resource Group etc.)
-*  Procedure to grant access/role to new user(s) for Azure
+*  List of desired Admin access levels (Account, Subscription, Resource Group and so on)
+*  Procedure to grant access/role to new users for Azure
 *  Procedure to assign JIT (just in time) elevation for users for specific tasks
 
 Below is an example architecture of namespace layout and authentication flow.
@@ -403,12 +403,12 @@ By using Azure AD with Citrix Cloud, Customers can:
 
 Citrix Cloud includes an Azure AD app that allows Citrix Cloud to connect with Azure AD without the need for you to be logged in to an active Azure AD session. Citrix Cloud Administrator Login allows Azure AD identities to be used in the customers Citrix Cloud tenant.
 
-*  Determine if Citrix Cloud administrators will use their Citrix Identity or Azure AD to access Citrix Cloud URL will follow the format "<https://citrix.cloud.com/go/{Customer> Determined}"
+*  Determine if Citrix Cloud administrators use their Citrix Identity or Azure AD to access the Citrix Cloud the URL will follow the format "<https://citrix.cloud.com/go/{Customer> Determined}"
 *  Identify the Authentication URL for Azure AD authentication into Citrix Cloud
 
 ## Governance
 
-Azure Governance is a collection of concepts and services that are designed to enable management of your various Azure resources at scale. These services provide the ability to organize and structure your subscriptions in a logical way, to create, deploy and reusable Azure native packages of resources. This subject is focused on establishing the policies, processes, and procedures associated with the planning, architecture, acquisition, deployment, operation and management of Azure resources.
+Azure Governance is a collection of concepts and services that are designed to enable management of your various Azure resources at scale. These services provide the ability to organize and structure your subscriptions in a logical way, to create, deploy, and reusable Azure native packages of resources. This subject is focused on establishing the policies, processes, and procedures associated with the planning, architecture, acquisition, deployment, operation, and management of Azure resources.
 
 ### Citrix Cloud Administrator Login
 
@@ -416,9 +416,9 @@ Determine if Citrix Cloud administrators use their Citrix Identity, Active Direc
 
 ### RBAC permissions & delegation
 
-Using Azure AD customers can implement their governance policies using Role-Based Access Control (RBAC) of Azure resources. One of the primary tools for application of these permissions is the concept of a Resource Group. Think of a Resource Group as a bundle of Azure resources that share lifecycle and administrative ownership.
+Using Azure AD customers can implement their governance policies using Role-Based Access Control (RBAC) of Azure resources. One of the primary tools for the application of these permissions is the concept of a Resource Group. Think of a Resource Group as a bundle of Azure resources that share lifecycle and administrative ownership.
 
-In the context of a Citrix environment these should be organized in a way that will allow for proper delegation between teams and promote the concept of least privilege. A good example is when a Citrix Cloud deployment uses a Citrix ADC VPX provisioned from the Azure Marketplace for external access. Although a core piece of Citrix infrastructure, the Citrix ADCs might have a separate update cycle, set of admins, etc. This would call for separating the Citrix ADCs from the other Citrix components into separate Resource Groups so the Azure RBAC permissions can be applied through the administrative zones of tenant, subscription, and resources.
+In the context of a Citrix environment these should be organized in a way that will allow for proper delegation between teams and promote the concept of least privilege. A good example is when a Citrix Cloud deployment uses a Citrix ADC VPX provisioned from the Azure Marketplace for external access. Although a core piece of Citrix infrastructure, the Citrix ADCs might have a separate update cycle, set of admins, and so on This would call for separating the Citrix ADCs from the other Citrix components into separate Resource Groups so the Azure RBAC permissions can be applied through the administrative zones of tenant, subscription, and resources.
 
 ### MCS Service Principal
 
@@ -434,13 +434,13 @@ Customer applies tags to their Azure resources giving metadata to logically orga
 
 Customer can retrieve all the resources in your subscription with that tag name and value. Tags enable them to retrieve related resources from different resource groups. This approach is helpful when admin need to organize resources for billing or management.
 
-There is a limit of 15 tags per Resource. Citrix MCS creates 2 tags per VM therefore a customer is limited to 13 tags for MCS machines. MCS non-persistent machines are deleted during reboot. This removes Azure VM-specific characteristics such as tags, boot diagnostics, etc. If tags are required, it is recommended to create an Azure Append policy and apply it to the applicable MCS Resource Groups.
+There is a limit of 15 tags per Resource. Citrix MCS creates 2 tags per VM therefore a customer is limited to 13 tags for MCS machines. MCS non-persistent machines are deleted during reboot. This removes Azure VM-specific characteristics such as tags, boot diagnostics If tags are required, it is recommended to create an Azure Append policy and apply it to the applicable MCS Resource Groups.
 
 ### Azure Policy
 
 Azure policies can control aspects such as tagging, permitted SKUs, encryption, Azure region, and naming convention. There are default policies available and the capability to enforce custom policies. Azure policies can be applied at the subscription or Resource Group level. Multiple policies can be defined. Policies applied at the Resource Group level take precedence over Subscription Level policy.
 
-Identify aspects of Azure that should be controlled and standardized across the Citrix environment. Hard quota forces the policy and not permit exceptions. Soft quota audits for policy enforcement and notify if the policy is not met. Refer Azure documentation for more detailed information to define the policies.
+Identify aspects of Azure that should be controlled and standardized across the Citrix environment. Hard quota forces the policy and not permits exceptions. Soft quota audits for policy enforcement and notify if the policy is not met. Refer Azure documentation for more detailed information to define the policies.
 
 [![Azure-RA-Image-6](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_006.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_006.png)
 
@@ -452,7 +452,7 @@ Security is integrated into every aspect of Azure. Azure offers unique security 
 
 ### Securing storage accounts provisioning by CVAD service
 
-As stated previously, MCS is the service (within CVAD) responsible for spinning up machines in the customer subscription. MCS utilizes uses an AAD identity – Application service principal for access to Azure resource groups to perform different actions.  For storage account type of resources, MCS requires the listkeys permission to acquire the key when needed for different actions (write/read/delete).  Per our current implementation, MCS requirement for:
+As stated previously, MCS is the service (within CVAD) responsible for spinning up machines in the customer subscription. MCS utilizes uses an AAD identity – Application service principal for access to Azure resource groups to perform different actions.  For storage account type of resources, MCS requires the listkeys permission to acquire the key when needed for different actions (write/read/delete).  Per our current implementation, an MCS requirement for:
 
 *  Storage account network is access from the public internet.
 *  Storage account RBAC is listkeys permission
@@ -464,18 +464,18 @@ We maintain machine configuration and state data in table storage in the primary
 *  Disk Import
 When importing disks (identity, instruction), we upload the disk as a page blob.  We then create a managed disk from the page blob and delete the page blob. The transient data does include sensitive data for computer object names and password.
 *  Locks
-For certain operations (allocating machines to storage accounts, replicating disks), we use a lock object to synchronize operations from multiple plug-in instances.  Those files are essentially empty blobs and include no sensitive data.
+For certain operations (allocating machines to storage accounts, replicating disks), we use a lock object to synchronize operations from multiple plug-in instances.  Those files are empty blobs and include no sensitive data.
 
-Using a narrow Scope Service Principal applied to the specific resource groups is recommended to limit the permissions only to the permissions required by the service. This adheres to the security concept of "least privilege". Refer to [CTX219243](https://support.citrix.com/article/CTX219243) and [CTX224110](https://support.citrix.com/article/CTX224110) for additional details.
+Using a narrow Scope Service Principal applied to the specific resource groups is recommended to limit the permissions only to the permissions required by the service. This adheres to the security concept of "least privilege". Refer to [CTX219243](https://support.citrix.com/article/CTX219243) and [CTX224110](https://support.citrix.com/article/CTX224110) for more details.
 
 ### IaaS - Azure Security Center Monitoring
 
-Azure Security Center analyzes the security state of Azure resources. When Security Center identifies potential security vulnerabilities, it creates recommendations that guide customer through the process of configuring the needed controls. Recommendations apply to Azure resource types: virtual machines (VMs) and computers, applications, networking, SQL, and Identity and Access. There are few best practices that you have to follow:
+Azure Security Center analyzes the security state of Azure resources. When the Security Center identifies potential security vulnerabilities, it creates recommendations that guide the customer through the process of configuring the needed controls. Recommendations apply to Azure resource types: virtual machines (VMs) and computers, applications, networking, SQL, and Identity and Access. There are few best practices that you have to follow:
 
 *  Control VM access and Secure privileged access.
 *  Provisioning antimalware to help identify and remove malicious software.
-*  Integrate your antimalware solution with Security Center to monitor the status of your protection.
-*  Keep your VMs current & ensure at deployment that images you built include the most recent round of Windows and security updates.
+*  Integrate your antimalware solution with the Security Center to monitor the status of your protection.
+*  Keep your VMs current & ensure at deployment that the images you built include the most recent round of Windows and security updates.
 *  Periodically redeploy your VMs to force a fresh version of the OS.
 *  Configuring network security groups and rules to control traffic to virtual machines.
 *  Provisioning web application firewalls to help defend against attacks that target your web applications.
@@ -491,9 +491,9 @@ Azure virtual networks are similar to a LAN on your on-premises network. The ide
 
 Use a **Network Security Group** (NSG). NSGs are simple, stateful packet inspection devices that use the 5-tuple (the source IP, source port, destination IP, destination port, and layer 4 protocol) approach to create allow/deny rules for network traffic. Rules allow or deny traffic to and from a single IP address, to and from multiple IP addresses, or to and from entire subnets.
 
-Customers can create custom, or user-defined, routes called User-defined Routes (UDRs) in Azure to override Azure's default system routes, or to add additional routes to a subnet's route table. In Azure, admins can create a route table, then associate the route table to zero or more virtual network subnets. Each subnet can have zero or one route table associated to it.
+Customers can create custom, or user-defined, routes called User-defined Routes (UDRs) in Azure to override Azure's default system routes, or to add extra routes to a subnet's route table. In Azure, admins can create a route table, then associate the route table to zero or more virtual network subnets. Each subnet can have zero or one route table associated to it.
 
-NSGs and UDRs are applied at the subnet-level within a Virtual Network. When designing a Citrix Virtual Network in Azure it is recommended to design the virtual network with this in mind, creating subnets for similar components, allowing for the granular application of NSGs and UDRs as needed. An example of this would be segmenting Citrix infrastructure into its own subnet, with a corresponding subnet for each use case.
+NSGs and UDRs are applied at the subnet-level within a Virtual Network. When designing a Citrix Virtual Network in Azure it is recommended to design the virtual network with this in mind, creating subnets for similar components, allowing for the granular application of NSGs and UDRs as needed. An example of this would be segmenting the Citrix infrastructure into its own subnet, with a corresponding subnet for each use case.
 
 Identify the ports and protocols required for Citrix and the supporting technologies. Review to verify these ports are allowed within the Network Security Groups used in the environment. Network Security Groups can limit inbound and outbound communications to a defined set of IP, Virtual Networks, Service Tags, or Application Security Groups.
 
@@ -506,21 +506,21 @@ Diagram-7: Azure Security Center and Network Security using NSG and ASG
 Connecting Azure virtual networks with customers local / cloud network is referred to as hybrid networking. This section explains the options for network connectivity and network service routing.
 Customers can connect their on-premises computers and networks to a virtual network using any combination of the following options:
 
-*  Point-to-site virtual private network (VPN): Established between a virtual network and a single computer in customer network. Each computer that wants to establish connectivity with a virtual network must configure its connection. This connection type is great for just getting started with Azure, or for developers, because it requires little or no changes to customer existing network. The communication between your computer and a virtual network is sent through an encrypted tunnel over the internet.
-*  Site-to-site VPN: Established between on-premises VPN device and an Azure VPN Gateway that is deployed in a virtual network. This connection type enables any on-premises resource that customer authorizes to access a virtual network. The communication between on-premises VPN device and an Azure VPN gateway is sent through an encrypted tunnel over the internet.
+*  Point-to-site virtual private network (VPN): Established between a virtual network and a single computer in customer network. Each computer that wants to establish connectivity with a virtual network must configure its connection. This connection type is great for just getting started with Azure, or for developers, because it requires little or no changes to the customer's existing network. The communication between your computer and a virtual network is sent through an encrypted tunnel over the internet.
+*  Site-to-site VPN: Established between on-premises VPN device and an Azure VPN Gateway that is deployed in a virtual network. This connection type enables any on-premises resource that the customer authorizes to access a virtual network. The communication between on-premises VPN device and an Azure VPN gateway is sent through an encrypted tunnel over the internet.
 *  Azure ExpressRoute: Established between customer’s network and Azure, through an ExpressRoute partner. This connection is private. Traffic does not go over the internet.
 
 The primary considerations for Azure to Customer connectivity are bandwidth, latency, security, and cost. Site to Site VPNs have lower bandwidth limits than Express Route and are dependent on the performance of the edge router used by the customer. SLAs are available on the VPN Gateway SKUs. Site to Site VPNs use IPSEC over the internet.
 
-Express Routes are dedicated private connections and not over the internet. This results in lower latency when using Express Route. Additionally, Express Route can scale up to 10 Gbps. Express Route is configured using a certified partner. Configuration time by these providers should be considered during project planning. Express Route costs have a Microsoft component and an Express Route provider component.
+Express Routes are dedicated private connections and not over the internet. This results in lower latency when using Express Route. Also, Express Route can scale up to 10 Gbps. Express Route is configured using a certified partner. Configuration time by these providers should be considered during project planning. Express Route costs have a Microsoft component and an Express Route provider component.
 
-Typically these connections are shared across multiple services (database replication, domain traffic, application traffic, etc.) In a hybrid cloud deployment there may be scenarios where internal users require their ICA traffic to go through this connection to get to their Citrix apps in Azure, therefore monitoring its bandwidth is critical.
+Typically these connections are shared across multiple services (database replication, domain traffic, application traffic, and so on) In a hybrid cloud deployment there may be scenarios where internal users require their ICA traffic to go through this connection to get to their Citrix apps in Azure, therefore monitoring its bandwidth is critical.
 
 With NetScaler and traditional StoreFront optimal gateway routing may also be used to direct a user’s connection to a NetScaler using an office’s ISP rather than the Express Route or VPN to Azure.
 
 ### User-Defined Routes (UDRs)
 
-Typically customers use a UDR to route Azure traffic to a firewall appliance within Azure or a specific virtual network. For example, North/South traffic from a VDA to the internet. If large amounts of traffic are routed to 3rd party firewall appliances within Azure this can create a resource bottleneck or availability risk if these appliances are not sized or configured appropriately. NSGs can be used to supplement third-party firewalls and should be utilized as much as possible where appropriate. Consider Azure Network Watcher if traffic introspection is required.
+Typically customers use a UDR to route Azure traffic to a firewall appliance within Azure or a specific virtual network. For example, North/South traffic from a VDA to the internet. If large amounts of traffic are routed to third party firewall appliances within Azure this can create a resource bottleneck or availability risk if these appliances are not sized or configured appropriately. NSGs can be used to supplement third-party firewalls and should be utilized as much as possible where appropriate. Consider Azure Network Watcher if traffic introspection is required.
 
 ### Virtual network peering
 
@@ -545,7 +545,7 @@ Software-defined WAN (SD-WAN) technology makes it possible to deliver a great us
 *  Use the unique HDX Quality of Experience technology to optimize performance and tune network policies.
 *  Ensure always-on connections for virtual apps and desktop users with the highest possible-quality experience—even for rich media and high-definition video.
 
-Customers using VPN might leverage SD-WAN to add redundancy to the Azure and Customer data center connectivity or to provide application-specific routing. Citrix SD-WAN automatically redirecting traffic across any available connections. In fact, the experience is so seamless, users won’t even realize any change has occurred. Their primary access IP address remains unchanged, allowing users to access their apps and data using the same methods and devices.
+Customers using VPN might use SD-WAN to add redundancy to the Azure and Customer data center connectivity or to provide application-specific routing. Citrix SD-WAN automatically redirecting traffic across any available connections. In fact, the experience is so seamless, users won’t even realize any change has occurred. Their primary access IP address remains unchanged, allowing users to access their apps and data using the same methods and devices.
 
 ### Citrix ADC
 
@@ -557,11 +557,11 @@ Discuss with customer and define the following use case for each Resource Locati
 |--------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Internal only  | A Citrix ADC is not required if only internal access is needed. |
 | External access via Citrix ADC Gateway Service. | The Citrix Cloud ADC Gateway Service provides ICA Proxy (secure remote connectivity only). |
-| External access via Citrix ADC VPX deployed in Azure Resource Location | A customer needs to consider a Citrix ADC VPX appliance in Azure if they require the following:  1. Multifactor authentication with full SSON 2. Endpoint scanning 3. Advanced authentication or pre-authentication policies 4. Citrix SmartAccess policies. Note: These requirements will prompt the need for authentication to occur at the Citrix ADC rather than the Workspace Experience service. StoreFront is required if authentication is managed by a Citrix ADC Gateway virtual server. |
+| External access via Citrix ADC VPX deployed in Azure Resource Location | A customer needs to consider a Citrix ADC VPX appliance in Azure if they require the following:  1. Multifactor authentication with full SSON 2. Endpoint scanning 3. Advanced authentication or pre-authentication policies 4. Citrix SmartAccess policies. Note: These requirements prompt the need for authentication to occur at the Citrix ADC rather than the Workspace Experience service. StoreFront is required if authentication is managed by a Citrix ADC Gateway virtual server. |
 
 ### Citrix ADC - Deployment Model
 
-Active-Active deployments leverage standalone Citrix ADC nodes that can be scaled out using the Azure Load Balancer. Active-Passive pairs facilitate stateful failover of ICA traffic in the event of a node failure however they are limited to the capacity of a single VPX. Active-Passive nodes also require Azure Load Balancer.
+Active-Active deployments use standalone Citrix ADC nodes that can be scaled out using the Azure Load Balancer. Active-Passive pairs facilitate stateful failover of ICA traffic in the event of a node failure however they are limited to the capacity of a single VPX. Active-Passive nodes also require Azure Load Balancer.
 
 Citrix ADC is limited to 500 Mbps per Azure NIC. Multiple NICs are recommended to isolate the SNIP, NSIP, and VIP traffic to maximize the throughput available for Citrix ADC Gateway or other services.
 
