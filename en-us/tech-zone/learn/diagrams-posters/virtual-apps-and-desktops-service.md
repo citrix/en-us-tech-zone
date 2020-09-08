@@ -10,7 +10,7 @@ description: Conceptual architecture drawing for Citrix Virtual Apps and Desktop
 
 ## Diagrams
 
-To show in full size, click on the image below:
+To show in full size, click the image found below:
 
 [![Virtual Apps and Desktops Service Poster](/en-us/tech-zone/learn/media/diagrams-posters_virtual-apps-and-desktops-service_poster.png)](/en-us/tech-zone/learn/downloads/diagrams-posters_virtual-apps-and-desktops-service_poster.png)
 
