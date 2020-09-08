@@ -571,7 +571,7 @@ Note: Before importing a master image from Azure, administrator make sure that t
 
 Learn more about importing a master image from Azure and installation of VDA on the master image, at this [link](/en-us/citrix-managed-desktops/master-images.html).
 
-To create and managed master images refer to the [link](/en-us/citrix-managed-desktops/master-images.html#prepare-a-new-master-image).
+To create and managed master images refer to the [link](/en-us/citrix-managed-desktops/master-images.html#prepare-a-new-image).
 
 ### Optimization of the image
 
