@@ -12,7 +12,7 @@ description: Provides optimal network connectivity between Enterprise branch off
 
 ## SD-WAN Overview
 
-SD-WAN is a software defined approach to managing enterprise WAN (WANs) to provide optimal network connectivity between enterprise branch offices and data resource locations on-premises or in the cloud.
+SD-WAN is a software defined approach to managing enterprise WANs to provide optimal network connectivity between enterprise branch offices and data resource locations on-premises or in the cloud.
 
 ![ Citrix Software Defined WAN (SD-WAN)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-workspace_arch1.png)
 

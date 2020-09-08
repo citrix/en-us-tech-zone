@@ -7,7 +7,7 @@ Just as buildings have blueprints that include details about their structure and
 
 ## Citrix Access Control
 
-[Access Control](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the **Citrix Access Control solution including** key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
+[Access Control](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Access Control solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
 
 ## Citrix Analytics
 
@@ -19,7 +19,7 @@ Just as buildings have blueprints that include details about their structure and
 
 ## Citrix Workspace
 
-[Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the microapps platforms Service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
+[Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the microapps platform service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
 
 [Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
 
@@ -35,7 +35,7 @@ Just as buildings have blueprints that include details about their structure and
 
 [Remote PC Access](/en-us/tech-zone/design/reference-architectures/remote-pc.html) - Discover the use cases and learn about the detailed architecture of the Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.  
 
-[ServiceNow with Citrix Virtual Apps and Desktops](/en-us/tech-zone/design/reference-architectures/itsm-adapter-service.html) - Learn how to integrate ServiceNow within your **Citrix Virtual Apps and Desktops environment including** key technical concepts and use cases.
+[ServiceNow with Citrix Virtual Apps and Desktops](/en-us/tech-zone/design/reference-architectures/itsm-adapter-service.html) - Learn how to integrate ServiceNow within your Citrix Virtual Apps and Desktops environment including key technical concepts and use cases.
 
 [Virtual Apps and Desktops Service](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html) - Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
 

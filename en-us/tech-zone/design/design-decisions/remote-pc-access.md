@@ -99,7 +99,7 @@ When using Gateway Service, Citrix recommends using rendezvous protocol to mitig
 
 [![Rendezvous Protocol Policy](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_rendezvous-protocol-policy.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_rendezvous-protocol-policy.png)
 
-There are certain prerequisites to allow [rendezvous protocol](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html) to function, including:
+There are certain prerequisites to allow the [rendezvous protocol](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html) to function, including:
 
 *  Citrix Virtual Apps & Desktops Service
 *  VDA version 1912 or higher
@@ -166,11 +166,11 @@ Enables or disables use of UDP for audio packets (RealTime Audio Transport for a
 
 To open the ports that the VDA uses to communicate with the Controller and enabled features, specify the /enable_hdx_ports option, in addition to the /enable_real_time_transport option.
 
-#### /includeadditional "Citrix User Profile Manager","Citrix User Profile Manager WMI plug-in"
+#### /includeadditional "Citrix User Profile Manager","Citrix User Profile Manager WMI Plug in"
 
-In a Remote PC Access deployment, most implementations do not require Profile Management. However, Citrix User Profile Manager also captures performance metrics, which are useful for administrators to identify and fix performance-related issues. User Profile Manager does not have to be configured, it just needs to be deployed to capture metrics.
+In a Remote PC Access deployment, most implementations do not require profile management. However, Citrix User Profile Manager also captures performance metrics, which are useful for administrators to identify and fix performance-related issues. User Profile Manager does not have to be configured, it just needs to be deployed to capture metrics.
 
-When installed, Citrix User Profile Manager allows administrators to run reports on the user experience, session responsiveness, and insights into logon performance within Citrix Director and Citrix Analytics for Performance.
+When installed, the Citrix User Profile Manager allows administrators to run reports on the user experience, session responsiveness, and insights into logon performance within Citrix Director and Citrix Analytics for Performance.
 
 [![Logon Performance Chart](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_logon-performance-chart.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_logon-performance-chart.png)
 
