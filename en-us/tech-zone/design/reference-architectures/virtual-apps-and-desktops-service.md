@@ -517,7 +517,7 @@ Creating a Delivery Group is the next step in configuring the Citrix deployment 
 
 The Citrix Cloud portal provides a management console for customers to manage the on-premises Enterprise Layer Manager VMs of Citrix App Layering.
 
-Citrix App Layering is a Windows Operating System and application management solution designed for on-premises, private clouds, and public clouds. Citrix App Layering's underlying technology, called layering, enables all components of a virtual machine to be independently assigned, patched, and updated. This includes the Windows **OS**, applications, and user settings and data. Built around this core innovation is a management system that encompasses application conflict resolution, image creation, application assignment, and integration technologies that can be used for any virtualization platform.
+Citrix App Layering is a Windows Operating System and application management solution designed for on-premises, private clouds, and public clouds. Citrix App Layering's underlying technology, called layering, enables all components of a virtual machine to be independently assigned, patched, and updated. This includes the Windows OS, applications, and user settings and data. Built around this core innovation is a management system that encompasses application conflict resolution, image creation, application assignment, and integration technologies that can be used for any virtualization platform.
 
 Citrix App Layering uses a single virtual appliance to manage the layers and then hands them off to other platforms for image and application distribution.
 

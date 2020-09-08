@@ -421,7 +421,7 @@ Reference: [Deployment scenarios](/en-us/citrix-managed-desktops.html)
 
 ## Profile Management
 
-The user’s personal settings that are applied to the user’s virtual desktop and applications are retained using Profile Management. Citrix Profile Management ensures that personal settings, documents, shortcuts, templates, desktop wallpapers, cookies, and favorites always follow the user in non-persistent desktops.
+The user’s personal settings that are applied to the user’s virtual desktop and applications are retained using profile management. Citrix Profile Management ensures that personal settings, documents, shortcuts, templates, desktop wallpapers, cookies, and favorites always follow the user in non-persistent desktops.
 
 The Active Directory Group Policy Objects allow the administrators to control the behavior of the Citrix user profiles. Profile Management optimizes profiles in an easy and reliable way. During the logoff and at interim stages, registry changes, files, and folders in the profile are saved to the user store for each user.
 
@@ -437,7 +437,7 @@ Reference: [Profile Management](/en-us/profile-management/current-release.html)
 
 ## Profile Management using FSLogix profile container with Azure Files
 
-Most organizations integrate some form of a Profile Management solution. As a result of the profile solution, end-users can sometimes face challenges in accessing their profile over the network due to the profile management being unable to handle large files and modern settings.
+Most organizations integrate some form of a profile management solution. As a result of the profile solution, end-users can sometimes face challenges in accessing their profile over the network due to the profile management being unable to handle large files and modern settings.
 
 To overcome these problems Microsoft® introduced the FSLogix container solution for profile and office 365. FSLogix provides the best performing end-user computing environment, reduces management costs, simplifies the computing infrastructure.
 
@@ -581,7 +581,7 @@ Citrix Optimizer runs in three different modes:
 
 *  Analyze - analyze the current system against a specified template and display any differences
 
-*  Run - apply the optimization from the template
+*  Execute - apply the optimization from the template
 
 *  Rollback - revert the optimization changes applied previously
 

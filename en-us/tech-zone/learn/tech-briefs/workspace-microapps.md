@@ -59,7 +59,7 @@ Citrix’s Identity Mapping allows the system to understand who the user is by l
 
 ### Microapp architecture and process flow
 
-Citrix Workspace with intelligence is comprise different μ-services as part of the Citrix management plane and interacts with existing Citrix Workspace services:
+Citrix Workspace with intelligence is made up of different μ-services as part of the Citrix management plane and interacts with existing Citrix Workspace services:
   
 -  The Systems of Record (SoR) are the applications Citrix Workspace interacts with to create microapps. These applications can be SaaS applications, legacy applications, homegrown applications and can be hosted on-prem or cloud. There are connectors with out-of-the-box templates for several applications (see list above), however integration with other applications can be configured through the low-code microapp page builder. The microapp page builder connects to legacy, on-premises, and SaaS systems by creating streamlined user workflows via microapp actions. The microapp page builder supports REST API, JSON, OData-JSON, and XML. The system can write back to the SoR using OAuth2 or a service account.
 -  The microapp service is a single-tenant service responsible for creating the microapps and sends raw events to Citrix Analytics for processing that it pulls from the SoR. The microapp server is periodically pulling active data from the Systems of Record. Synchronization periods are defined by administrators to determine how often the microapp service should complete a full sync or an incremental sync.

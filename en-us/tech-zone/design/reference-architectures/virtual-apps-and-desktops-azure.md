@@ -380,7 +380,7 @@ Azure MFA server (Cloud Service, Azure MFA Server, Azure MFA NPS Extension) can 
 Active Directory and Azure Active Directory Outcomes
 
 *  Azure Active Directory Provisioned Tenant
-*  List of desired Organizational roles for Azure RBAC with mapping too Built-In or Custom Azure Roles
+*  List of desired Organizational roles for Azure RBAC with mapping to Built-In or Custom Azure Roles
 *  List of desired Admin access levels (Account, Subscription, Resource Group and so on)
 *  Procedure to grant access/role to new users for Azure
 *  Procedure to assign JIT (just in time) elevation for users for specific tasks
