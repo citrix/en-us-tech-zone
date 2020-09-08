@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to migrate your on-premises Citrix Virtual Apps and Desktops environment to Citrix Cloud.
+description: Learn how to migrate your on-premises Citrix Virtual Apps and Desktops (CVAD) environment to CVAD service on Citrix Cloud using the Automated Configuration tool.
 ---
 # Migrating Citrix Virtual Apps and Desktops from on-premises to Citrix Cloud
 
