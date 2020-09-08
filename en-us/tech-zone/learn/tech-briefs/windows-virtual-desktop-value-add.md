@@ -22,7 +22,7 @@ It consists of the core level compute, networking, and storage that makes up the
 
 For organizations to utilize the value add that Citrix provides, the bottom two layers of the WVD platform are retained. Citrix virtualization cloud services including Citrix Virtual Apps and Desktops (VAD) service or Citrix Managed Desktops service replace the top layer.
 
-[![Windows Virtual Desktop Citrix Value Add architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.gif)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add-large.gif)
+[![Windows Virtual Desktop Citrix Value Add architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.gif)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.gif)
 
 The on-premises data center resources are now included in the deployment and Remote PC Access enables connectivity to physical machines from the same environment / leveraging existing security. Citrix VAD service unifies external access and identity management.
 
