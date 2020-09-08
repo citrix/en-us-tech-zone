@@ -20,7 +20,7 @@ The Citrix Workspace - User Experience poster provides an overview focusing on
 *  Single Sign-On
 *  Optimized Fabric
 
-To show in full size, click on the image below:
+To show in full size, click the image found below:
 
 [![Citrix Workspace - User Experience Poster](/en-us/tech-zone/learn/media/diagrams-posters_workspace_user-experience-poster.png)](/en-us/tech-zone/learn/downloads/diagrams-posters_workspace_user-experience-poster.png)
 
