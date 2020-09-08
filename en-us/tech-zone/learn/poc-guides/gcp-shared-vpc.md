@@ -29,7 +29,7 @@ The Citrix Virtual Apps and Desktops Service supports Google Cloud Platform (GCP
 
 This document assumes knowledge of Google Cloud and the use of Citrix Virtual Apps and Desktops Service for provisioning machine catalogs in a Google Cloud Project.
 
-To set up a GCP project for Citrix Virtual Apps and Desktops Service, see the [product documentation](/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html#configure-the-google-cloud-service-account).
+To set up a GCP project for Citrix Virtual Apps and Desktops Service, see the [product documentation](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html#configure-the-google-cloud-service-account).
 
 ## Summary
 
@@ -49,7 +49,7 @@ GCP Shared VPCs are comprised of a Host Project, from which the shared subnets a
 
 Use of Shared VPCs is a good option for larger installations because they provide for more centralized control, usage, and administration of shared corporate Google cloud resources. Google Cloud describes it this way:
 
-"Shared VPC allows an [organization](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy) to connect resources from multiple projects to a common [Virtual Private Cloud (VPC) network](https://cloud.google.com/vpc/docs/vpc), so that they can communicate with each other securely and efficiently using internal IPs from that network. When you use Shared VPC, you designate a project as a host project and attach one or more other service projects to it. The VPC networks in the host project are called Shared VPC networks. [Eligible resources](https://cloud.google.com/vpc/docsshared-vpc#resources_that_can_be_attached_to_shared_vpc_networks_from_a_service_project) from service projects can use subnets in the Shared VPC network."
+"Shared VPC allows an [organization](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy) to connect resources from multiple projects to a common [Virtual Private Cloud (VPC) network](https://cloud.google.com/vpc/docs/vpc), so that they can communicate with each other securely and efficiently using internal IPs from that network. When you use Shared VPC, you designate a project as a host project and attach one or more other service projects to it. The VPC networks in the host project are called Shared VPC networks. [Eligible resources](https://cloud.google.com/vpc/docs/shared-vpc#resources_that_can_be_attached_to_shared_vpc_networks_from_a_service_project) from service projects can use subnets in the Shared VPC network."
 
 The above paragraph was taken from the [Google Documentation site](https://cloud.google.com/vpc/docs/shared-vpc).
 
@@ -61,7 +61,7 @@ Technically speaking, the permissions required are not “new”, since they are
 
   >**Note:**
   >
-  >To review the permissions required for the currently shipping Citrix Virtual Apps and Desktops product, see the Citrix documentation site [describing resource locations](/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html).
+  >To review the permissions required for the currently shipping Citrix Virtual Apps and Desktops product, see the Citrix documentation site [describing resource locations](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html).
 
 In total, a maximum of four additional permissions must be granted to the Service Account associated with the Host Connection:
 
