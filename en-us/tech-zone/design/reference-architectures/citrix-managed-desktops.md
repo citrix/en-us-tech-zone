@@ -179,7 +179,7 @@ In Citrix Managed Desktops a virtual desktop can be domain joined or non-domain 
 
 [![CMD-Image-14](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_014.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_014.png)
 
-The above diagram shows a non-domain-joined desktop provisioned for contractors and any dev-ops worker. The administrator creates a catalog for the dev-ops team and provisions a desktop with a necessary application that is not joined to the corporate domain. The administrator can provide or leverage Azure multifactor authentication to add one more layer of security.
+The above diagram shows a non-domain-joined desktop provisioned for contractors and any dev-ops worker. The administrator creates a catalog for the dev-ops team and provisions a desktop with a necessary application that is not joined to the corporate domain. The administrator can provide or use Azure multifactor authentication to add one more layer of security.
 
 The end-user has to access their desktop through Citrix Workspace app using URL the provided by the Citrix administrator.
 
@@ -197,9 +197,9 @@ The above diagram depicts the architecture for Citrix Managed Desktops. In the C
 
 In case customers want to communicate with existing resources on their Azure platform, they can use a VNet peering between two virtual networks.  From the Citrix Cloud, customers can configure a VNet peering to their customer-managed virtual network by giving existing Azure subscription credentials.
 
-**Customer-Managed Azure Platform:** This platform is completely owned by the customer. This Azure platform is the home for multiple Azure services provisioned by the customer. These services are leveraged by providing high throughput connectivity to the Citrix Managed Azure platform using VNet peering. Currently, VNet peering is scoped to a single region.
+**Customer-Managed Azure Platform:** This platform is completely owned by the customer. This Azure platform is the home for multiple Azure services provisioned by the customer. These services are applied by providing high throughput connectivity to the Citrix Managed Azure platform using VNet peering. Currently, VNet peering is scoped to a single region.
 
-**Customer Data Center:** The resources in the data center are completely managed by the customer. In case the organization needs to leverage services that are running to Citrix Managed Desktops, the customer has to establish connectivity between the Azure Platform (owned by the customer) and data center by using site-to-site VPN or SD-WAN network services.
+**Customer Data Center:** The resources in the data center are completely managed by the customer. In case the organization needs to use services that are running to Citrix Managed Desktops, the customer has to establish connectivity between the Azure Platform (owned by the customer) and data center by using site-to-site VPN or SD-WAN network services.
 
 ### Citrix Managed Desktops instance types
 
@@ -279,7 +279,7 @@ The preceding diagram represents the Citrix SD-WAN architecture along with the C
 
 ### Overview of Citrix SD-WAN Architecture
 
-Citrix SD-WAN provides the flexibility that it can be deployed in several deployment modes and to integrate the appliances, both physical and virtual, into the customer’s existing networking design as well as with Cloud deployments. Refer to the [Citrix Tech Zone link](/en-us/tech-zone/design/reference-architectures/sdwan.html) for the SD-WAN overview.
+Citrix SD-WAN provides the flexibility that it can be deployed in several deployment modes and to integrate the appliances, both physical and virtual, into the customer’s existing networking design and with Cloud deployments. Refer to the [Citrix Tech Zone link](/en-us/tech-zone/design/reference-architectures/sdwan.html) for the SD-WAN overview.
 
 The solution demonstrates that the SD-WAN fits well with a customer’s existing network design and how it eases the integration process in the Azure platform for Citrix Managed Desktops. The administrator deploys a Citrix SD-WAN VPX (virtual appliance) that utilizes the internet path to establish the network connectivity from the Azure environment to a data center and branch office networks.
 
@@ -287,7 +287,7 @@ The Master Control Node (MCN) establishes a virtual path with Azure environment 
 
 Citrix recommends implementing a Citrix SD-WAN solution for Citrix Managed Desktops to improve the network connectivity and performance, required to deliver the DaaS offering and all associated applications. Also, the virtual desktop access via Citrix SD-WAN is specially optimized for **Citrix HDX technologies** thus providing the best user experience.
 
-Citrix SD-WAN offers an always-on experience, changing network paths within 10 milliseconds when there’s a failure in a specific path ensuring highly-available connectivity to Citrix Managed Desktops.
+Citrix SD-WAN offers an always-on experience, changing network paths within 10 milliseconds when there’s a failure in a specific path ensuring highly available connectivity to Citrix Managed Desktops.
 
 [![CMD-Image-16](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_016.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_016.png)
 
@@ -295,7 +295,7 @@ The preceding diagram depicts the deployment architecture of a Citrix SD-WAN sol
 
 ### How Citrix SD-WAN helps in establishing connectivity to customer hosted locations
 
-Citrix SD-WAN virtual appliances hosted on a virtual network within Azure for Citrix Managed Desktops establishes virtual network connectivity with on-premises SD-WAN appliances at office locations and, if applicable, an on-premises data center. The connectivity begins over the inexpensive internet where customers can use broadband, landline or 4G/LTE of their choice. The Citrix SD-WAN solution is much cheaper than other hybrid connectivity options when achieving low latency and QoS features.
+Citrix SD-WAN virtual appliances hosted on a virtual network within Azure for Citrix Managed Desktops establishes virtual network connectivity with on-premises SD-WAN appliances at office locations and, if applicable, an on-premises data center. The connectivity begins over the inexpensive internet where customers can use broadband, landline, or 4G/LTE of their choice. The Citrix SD-WAN solution is much cheaper than other hybrid connectivity options when achieving low latency and QoS features.
 
 Citrix SD-WAN is faster and cheaper to deploy when compared to Azure ExpressRoute
 
@@ -317,15 +317,15 @@ Citrix SD-WAN features can help:
 
 *  Real-Time Transport Protocol from the media engine in the Citrix Workspace app to cloud-hosted unified communications services such as Microsoft® Teams
 
-*  Client-side fetching of videos from sites like YouTube and Vimeo and filtering the access using Secure Web Gateway and third party (Zscaler, Palo Alto, Symantec or Check Point) cloud security solution
+*  Client-side fetching of videos from sites like YouTube and Vimeo and filtering the access using Secure Web Gateway and third party (Zscaler, Palo Alto, Symantec, or Check Point) cloud security solution
 
 [![CMD-Image-17](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_017.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_017.png)
 
-The preceding diagram depicts a skeleton view of Citrix SD-WAN integration with Citrix Managed Desktops. The Citrix SD-WAN solution offers the easiest and best way to deliver Citrix Managed Desktops and all associated Windows, SaaS and cloud applications. It also enables the best virtualized **Microsoft® Office 365 experience**.
+The preceding diagram depicts a skeleton view of Citrix SD-WAN integration with Citrix Managed Desktops. The Citrix SD-WAN solution offers the easiest and best way to deliver Citrix Managed Desktops and all associated Windows, SaaS, and cloud applications. It also enables the best virtualized **Microsoft® Office 365 experience**.
 
 *  HDX real-time media processing performed directly on the user device for Microsoft® Teams
 
-*  Local breakout of audio-video traffic from Citrix Managed Desktops will go through Azure SD-WAN VPX and then steer to nearest Microsoft® Office 365 PoP
+*  Local breakout of audio-video traffic from Citrix Managed Desktops go through Azure SD-WAN VPX and then steer to nearest Microsoft® Office 365 PoP
 
 *  Unified communications and video breakout to the internet
 
@@ -389,7 +389,7 @@ Typical uses for non-domain-joined VDAs are DevOps and providing access to third
 
 1.  Non-domain-joined catalogs with Citrix managed Azure AD
 
-    Citrix-managed Azure AD is used to manage users. Here customers don’t need to access resources from the on-premises network. This deployment is the simplest way to conduct POCs for non-domain-joined VDAs. Limited user management is performed through the CMD UI. The Citrix managed Azure AD does not offer all the options of Azure AD authentication, for example, MFA is not configurable with the Citrix managed Azure AD.
+    Citrix-managed Azure AD is used to manage users. Here customers don’t must access resources from the on-premises network. This deployment is the simplest way to conduct POCs for non-domain-joined VDAs. Limited user management is performed through the CMD UI. The Citrix managed Azure AD does not offer all the options of Azure AD authentication, for example, MFA is not configurable with the Citrix managed Azure AD.
 
 2.  Non-domain-joined catalogs with customer-managed Azure AD
 
@@ -407,7 +407,7 @@ Domain-joined catalogs feature domain-joined VDAs that have access to a customer
 
     In this type of deployment, the customer sets up an AADDS in their customer-managed Azure platform. They can establish a VNet peering between the Citrix-managed VNet and the customer-managed VNet so the VDAs have access to the AADDS. For end-user authentication, customers can use either Azure Active Directory that is available from their Azure Subscription, or they can use the AADDS for regular Active Directory authentication.
 
-    The customer-managed Azure Subscription resources including AADDS are being leveraged using VNet peering between two virtual networks within that region or location. Azure AD Domain Services is featuring all types of domain services including domain join, group policy, LDAP, Kerberos/NTLM authentication that is compatible with Windows Server Active Directory.
+    The customer-managed Azure Subscription resources including AADDS are being used using VNet peering between two virtual networks within that region or location. Azure AD Domain Services is featuring all types of domain services including domain join, group policy, LDAP, Kerberos/NTLM authentication that is compatible with Windows Server Active Directory.
 
 2.  Domain Joined VDAs using customer on-premises Active Directory Domain Services
 
@@ -415,7 +415,7 @@ Domain-joined catalogs feature domain-joined VDAs that have access to a customer
 
 [![CMD-Image-6](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_006.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_006.png)
 
-In case the customer is using Azure Active Directory authentication, the customer has to install Azure AD connect. The organization must run Azure AD connect on their data center which will be synced with Azure AD. Azure AD is hosted on Azure by the customer using their Azure Subscription. There will be a VNet peering required with the Citrix Managed Desktops environment. For authentication, this type of deployment leverages the customer AD hosted within their data center.
+In case the customer is using Azure Active Directory authentication, the customer has to install Azure AD connect. The organization must run Azure AD connect on their data center which will be synced with Azure AD. Azure AD is hosted on Azure by the customer using their Azure Subscription. There will be a VNet peering required with the Citrix Managed Desktops environment. For authentication, this type of deployment uses the customer AD hosted within their data center.
 
 Reference: [Deployment scenarios](/en-us/citrix-managed-desktops.html)
 
@@ -495,7 +495,7 @@ From the Monitor dashboard, administrators can apply filters to log off or disco
 
 ### Power-control machines
 
-Single session or multi-session machines are displayed by applying the filtered search. By clicking on Power Control action on the portal the administrator gets an option to restart, force restart, shutdown, force shutdown, and start the machines running on the Citrix Managed Desktops environment.
+Single session or multi-session machines are displayed by applying the filtered search. By clicking Power Control action on the portal the administrator gets an option to restart, force restart, shutdown, force shutdown, and start the machines running on the Citrix Managed Desktops environment.
 
 Reference: [Monitor](/en-us/citrix-managed-desktops/monitor.html)
 
@@ -509,9 +509,9 @@ Citrix Workspace app is the entry point to access desktops and apps running on t
 
 *  Customer Managed Azure AD
 
-**Citrix Managed Azure AD:** Azure Active Directory service is provided and managed by Citrix. Here the administrator does not need to provide or own any Azure infrastructure. Citrix has made it simple to manage, the admins just have to add their users to the directory using the CMD UI.
+**Citrix Managed Azure AD:** Azure Active Directory service is provided and managed by Citrix. Here the administrator does not need to provide or own any Azure infrastructure. Citrix has made it simple to manage, the admins have to add their users to the directory using the CMD UI.
 
-**Customer Managed Active Directory:** In this authentication method, customers are using their on-premises Active Directory services or leveraging the Azure Active Directory service.
+**Customer Managed Active Directory:** In this authentication method, customers are using their on-premises Active Directory services or using the Azure Active Directory service.
 
 [![CMD-Image-10](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_010.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_010.png)
 
@@ -531,7 +531,7 @@ After the Azure AD user accounts are connected, users can sign in to Citrix Clou
 
 Reference: [AAD to Citrix Cloud](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-azure-ad.html)
 
-Advanced multifactor authentication is provided by Azure AD. Turn-on the available features on the customer Azure AD, which enables Citrix Cloud users to leverage those capabilities by default.
+Advanced multifactor authentication is provided by Azure AD. Turn-on the available features on the customer Azure AD, which enables Citrix Cloud users to use those capabilities by default.
 
 ## Image Management
 
@@ -555,7 +555,7 @@ Citrix offers customers an option to build their own image by using existing mas
 
 ### Import a master image from Azure
 
-In the case customer has their customized images available in their Azure Subscription, images are directly imported to CMD. The administrator has to enter the Azure-generated URL for the Virtual Hard Disk (VHD).
+In the case customer has their customized images available in their Azure Subscription, images are directly imported to CMD. The administrator has to enter the **Azure-generated URL** for the Virtual Hard Disk (VHD).
 
 Citrix runs the validation test on the imported image. The administrator has to make sure the image has all the requirements to run on Citrix Managed Desktops. The requirement is:
 
@@ -563,11 +563,11 @@ Citrix runs the validation test on the imported image. The administrator has to 
 
 *  No configured Delivery Controllers
 
-*  Valid Citrix VDA newer than 7.11 installed and matching the operating system (e.g. server VDA on server OS)
+*  Valid Citrix VDA newer than 7.11 installed and matching the operating system (for example server VDA on server OS)
 
 *  The personality.ini file must exist on the system drive (VDA is set to MCS provisioning)
 
-Note: Before importing a master image from Azure, administrator make sure that the Azure Virtual Machine Agent is installed on the image.
+Note: Before importing a master image from Azure, administrator makes sure that the Azure Virtual Machine Agent is installed on the image.
 
 Learn more about importing a master image from Azure and installation of VDA on the master image, at this [link](/en-us/citrix-managed-desktops/master-images.html).
 
@@ -627,7 +627,7 @@ Windows Virtual Desktops (WVD) also known as Windows 10 Enterprise Virtual Deskt
 
 To deploy and manage a multi-session catalog using Windows Virtual Desktops customer gets a Windows 10 Enterprise E3 entitlement. A new Windows 10 EVD operating system licensed as part of Windows Virtual Desktops in Azure.
 
-Additional benefits of Windows Virtual Desktop are customer gets Windows 7 virtual desktop with free Extended Security Updates. WVD offers flexible service allowing administrators to virtualize both desktops and apps.
+Extra benefits of Windows Virtual Desktop are customer gets Windows 7 virtual desktop with free Extended Security Updates. WVD offers flexible service allowing administrators to virtualize both desktops and apps.
 
 ## Best Practices and Design Considerations for Citrix Managed Desktops
 
@@ -647,11 +647,11 @@ The Citrix Managed Desktops service components computing, storage, and networkin
 
 *  Multifactor authentication
 
-*  Profile management
+*  Profile Management
 
 ### Conducting a pre-assessment before moving to Citrix Managed Desktops
 
-To gain an understanding of the workloads, the solution architect has to do pre-assessment of the desktops and applications that will run in the Citrix Managed Desktops environment. It is critically imperative to design and gather resource requirement data for CMD.
+To gain an understanding of the workloads, the solution architect has to do pre-assessment of the desktops and applications that run in the Citrix Managed Desktops environment. It is critically imperative to design and gather resource requirement data for CMD.
 
 Pre-assessment is useful to determine the specific applications required for the users, the licensing requirement, and calculate the cost associated with the deployment. Citrix provides the Citrix Managed Desktops cost calculator to understand cost estimation for the deployment. Actual prices may vary depending upon other factors including date of purchase, type of agreement with Citrix, and so on.
 
@@ -673,7 +673,7 @@ Power management options are available for catalogs containing multi-session and
 
 The administrator has an option to set the working hours depending on the time zone. In some of the use cases, machines do not need to be powered-on after working hours. In such scenarios, power management is a viable option for administrators to power-off those machines. Here administrators can set the start and stop time. Perhaps there are other options available as well that are tuned by administrators to get the best balance of price to responsiveness:
 
-*  Disconnect idle sessions: Idle desktops are disconnected, and the user has to login to Workspace to start the machine
+*  Disconnect idle sessions: Idle desktops are disconnected, and the user has to log in to Workspace to start the machine
 
 *  Log off disconnected session: The administrator can set the time to log off disconnected sessions. Users experience longer logon times and lose any unsaved work, but the machine can power off if there are no logged-in sessions
 
@@ -701,7 +701,7 @@ Reference: [Technical security overview](/en-us/citrix-managed-desktops/security
 
 ### Profile Management
 
-Profile management ensures that the user’s personal settings are retained for non-persistent desktops. Profile management gives reliable roaming experience to users. The end-user personal settings, documents, shortcuts, templates, desktop wallpapers, cookies, and favorites always follow the user across different Windows machines on any device. Before implementing profile management on the environment few factors to be considered. This includes the type of catalog, understanding the application behavior, pilot test on a few users then going for all users, and network share to store all the profiles.
+Profile management ensures that the user’s personal settings are retained for non-persistent desktops. Profile management gives reliable roaming experience to users. The end-user personal settings, documents, shortcuts, templates, desktop wallpapers, cookies, and favorites always follow the user across different Windows machines on any device. Before implementing Profile Management on the environment few factors to be considered. This includes the type of catalog, understanding the application behavior, pilot test on a few users then going for all users, and network share to store all the profiles.
 
 For a detailed explanation of deciding factors, refer the [Profile management](/en-us/profile-management/current-release.html) documentation from Citrix.
 

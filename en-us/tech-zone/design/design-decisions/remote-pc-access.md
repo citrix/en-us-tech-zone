@@ -86,7 +86,7 @@ Sizing of Delivery Controllers or Cloud Connectors for Remote PC Access workload
 
 When a user establishes an HDX session to their office PC, the ICA traffic needs to be proxied to the VDA. ICA Proxy can be provided via Citrix Gateway appliances or Citrix Gateway Service.
 
-When using an on-premises Citrix ADC for Citrix Gateway, consult the data sheet for the particular model and refer to the SSL VPN/ICA proxy concurrent users line item as a starting point. If the ADC is handling other workloads, validate that current throughput and CPU usage are not approaching any upper limits.
+When using an on-premises Citrix ADC for Citrix Gateway, consult the data sheet for the particular model and refer to the **SSL VPN/ICA proxy concurrent users line** item as a starting point. If the ADC is handling other workloads, validate that current throughput and CPU usage are not approaching any upper limits.
 
 Ensure that there is adequate available Internet bandwidth where the Gateway appliance is located to support the expected concurrent ICA sessions.
 
@@ -99,7 +99,7 @@ When using Gateway Service, Citrix recommends using rendezvous protocol to mitig
 
 [![Rendezvous Protocol Policy](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_rendezvous-protocol-policy.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_rendezvous-protocol-policy.png)
 
-There are certain prerequisites to allow [rendezvous protocol](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html) to function, including:
+There are certain prerequisites to allow the [rendezvous protocol](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html) to function, including:
 
 *  Citrix Virtual Apps & Desktops Service
 *  VDA version 1912 or higher
@@ -112,7 +112,7 @@ There are certain prerequisites to allow [rendezvous protocol](/en-us/citrix-vir
 
 If the office PC is not powered on with the VDA registered, the user’s session cannot be brokered. Citrix recommends putting in place processes to ensure the machines that users need to connect to are powered-on.
 
-If available, modify the PC’s BIOS setting to automatically power on in the event of a power failure. Administrators can also configure an Active Directory Group Policy object to remove the “Shut Down” option from the Windows PC. This helps prevent the user from powering down the physical PC.
+If available, modify the PC’s BIOS setting to automatically power on in the event of a power failure. Administrators can also configure an Active Directory Group Policy object to remove the “Shut Down” option from the Windows **PC**. This helps prevent the user from powering down the physical PC.
 
 Remote PC Access also supports [Wake-on-LAN](/en-us/citrix-virtual-apps-desktops/install-configure/remote-pc-access.html#wake-on-lan) operations to enable powering on Windows PCs that are currently powered off. This option requires the use of Microsoft System Center Configuration Manager 2012, 2012 R2 or 2016.
 
@@ -120,7 +120,7 @@ Remote PC Access also supports [Wake-on-LAN](/en-us/citrix-virtual-apps-desktops
 
 ## User Assignments
 
-It is important that users are each brokered to their own office PC. Once the VDA has been installed and the catalog and delivery group defined, users are automatically assigned when they next log on locally to the PC. This is an effective method for assigning thousands of users.
+It is important that users are each brokered to their own office PC. Once the VDA has been installed and the catalog and delivery group defined, users are automatically assigned when they next logon locally to the PC. This is an effective method for assigning thousands of users.
 
 By default, multiple users can be assigned to a desktop if they have all logged into the same physical PC, but this can be disabled via a registry edit on the Delivery Controllers.
 
@@ -166,17 +166,17 @@ Enables or disables use of UDP for audio packets (RealTime Audio Transport for a
 
 To open the ports that the VDA uses to communicate with the Controller and enabled features, specify the /enable_hdx_ports option, in addition to the /enable_real_time_transport option.
 
-#### /includeadditional "Citrix User Profile Manager","Citrix User Profile Manager WMI Plugin"
+#### /includeadditional "Citrix User Profile Manager","Citrix User Profile Manager WMI Plug in"
 
 In a Remote PC Access deployment, most implementations do not require profile management. However, Citrix User Profile Manager also captures performance metrics, which are useful for administrators to identify and fix performance-related issues. User Profile Manager does not have to be configured, it just needs to be deployed to capture metrics.
 
-When installed, Citrix User Profile Manager allows administrators to run reports on the user experience, session responsiveness, and insights into logon performance within Citrix Director and Citrix Analytics for Performance.
+When installed, the Citrix User Profile Manager allows administrators to run reports on the user experience, session responsiveness, and insights into logon performance within Citrix Director and Citrix Analytics for Performance.
 
 [![Logon Performance Chart](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_logon-performance-chart.png)](/en-us/tech-zone/design/media/design-decisions_remote-pc-access_logon-performance-chart.png)
 
 #### /logpath path
 
-Log file location. The specified folder must exist as the installer does not create it. The default path is "%TEMP%\Citrix\XenDesktop Installer," but if the install is conducted via SCCM, then depending on the context, the log files may be in the system temp folder instead.
+Log file location. The specified folder must exist as the installer does not create it. The default path is "%TEMP%\Citrix\XenDesktop Installer," but if the install is conducted via SCCM, then depending on the context, the log files can be in the system temp folder instead.
 
 #### /optimize
 
@@ -204,7 +204,7 @@ For content redirection to be available when using VDA 1912 or older, it is requ
 
 For example: `VDAWorkstationSetup.exe /quiet /remotepc /controllers “control.domain.com” /enable_hdx_ports /noresume /noreboot`
 
-If deploying VDA 2003 or newer, the single-session core VDA installer may be used instead (standalone `VDAWorkstationCoreSetup.exe`).
+If deploying VDA 2003 or newer, the single-session core VDA installer can be used instead (standalone `VDAWorkstationCoreSetup.exe`).
 
 For example: `VDAWorkstationCoreSetup.exe /quiet /controllers “control.domain.com” /enable_hdx_ports /noresume /noreboot`
 

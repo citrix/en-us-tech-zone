@@ -22,7 +22,7 @@ description: View reference architectures created by our industry partners on jo
 
 [Cisco HyperFlex Systems and Cisco UCS Servers with NVIDIA, vSphere, and Citrix XenDesktop](https://www.cisco.com/c/dam/en/us/products/collateral/hyperconverged-infrastructure/hyperflex-hx-series/whitepaper-c11-740243.pdf) - Integrate Cisco HyperFlex Systems and Cisco UCS M5 Servers with NVIDIA GRID 5.0 on VMware vSphere 6.5 and Citrix XenDesktop 7.15
 
-[FlexPod Datacenter with Citrix XenDesktop/XenApp 7.15 and VMware vSphere 6.5 Update 1 for 6000 Seats](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/cisco_ucs_xd715esxi65u1_flexpod.html) - Cisco Validated Design for a 6000 Seat Virtual Desktop Infrastructure Built on Cisco UCS B200 M5, Cisco UCS Manager 3.2 with NetApp AFF A-Series using Citrix XenDesktop/XenApp 7.15, and VMware vSphere ESXi 6.5 Update 1 Hypervisor Platform
+[FlexPod DataCenter with Citrix XenDesktop/XenApp 7.15 and VMware vSphere 6.5 Update 1 for 6000 Seats](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/cisco_ucs_xd715esxi65u1_flexpod.html) - Cisco Validated Design for a 6000 Seat Virtual Desktop Infrastructure Built on Cisco UCS B200 M5, Cisco UCS Manager 3.2 with NetApp AFF A-Series using Citrix XenDesktop/XenApp 7.15, and VMware vSphere ESXi 6.5 Update 1 Hypervisor Platform
 
 [FlexPod for 3D Graphics Visualization with Citrix and NVIDIA](https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/whitepaper-c11-741599.pdf) - Understand the performance of the Cisco UCS B200 M5 Blade Server and C240 M5 Rack Server solution with NetApp AFF A300 system on Citrix XenServer 7.5 and XenDesktop 7.15 LTSR
 
@@ -32,7 +32,7 @@ description: View reference architectures created by our industry partners on jo
 
 ## HPE
 
-[Automation for HPE Simplivity and Citrix Cloud](https://citrixready.citrix.com/content/dam/ready/partners/he/hewlett-packard-enterprise/automation-for-hpe-simplivity-and-citrix-cloud/solution-brief-brochures.pdf) - This document is a step-by-step guide to automate the installation of Cloud Connectors using SimpliVity Citrix Plugin by deploying virtual machines (VMs), adding them to Active Directory (AD), downloading Citrix Cloud Connector and installing it.
+[Automation for HPE SimpliVity and Citrix Cloud](https://citrixready.citrix.com/content/dam/ready/partners/he/hewlett-packard-enterprise/automation-for-hpe-simplivity-and-citrix-cloud/solution-brief-brochures.pdf) - This document is a step-by-step guide to automate the installation of Cloud Connectors using the SimpliVity Citrix plug-in by deploying virtual machines (VMs), adding them to an Active Directory (AD), downloading Citrix Cloud Connector and installing it.
 
 [HPE Synergy with NVIDIA GPU on Citrix Virtual Apps and Desktops Service for Healthcare](https://h20195.www2.hpe.com/V2/GetDocument.aspx?docname=a50001404enw) - Robust hybrid cloud solution for app and desktop delivery from composable infrastructure with GPU acceleration
 
@@ -72,4 +72,4 @@ description: View reference architectures created by our industry partners on jo
 
 ## VMware
 
-[Citrix Virtual Apps and Desktops for VMware Cloud on AWS](https://assets.contentstack.io/v3/assets/blt58b49a8a0e43b5ff/blt577e4a7c31386be6/5db9c38689fb926b491efefb/Citrix_CVAD_Solution_Architecture.pdf) - This document provides a high-level Reference Architecture on Citrix Virtual Apps and Desktops service deployment in VMware Cloud on AWS environment.
+[Citrix Virtual Apps and Desktops for VMware Cloud on AWS](https://assets.contentstack.io/v3/assets/blt58b49a8a0e43b5ff/blt577e4a7c31386be6/5db9c38689fb926b491efefb/Citrix_CVAD_Solution_Architecture.pdf) - This document provides a high-level Reference Architecture on Citrix Virtual Apps and Desktops service deployment in a VMware Cloud on AWS environment.
