@@ -6,7 +6,7 @@ description: Learn the architecture and deployment considerations for this cloud
 
 ## Contributors
 
-**Author:** [Jian Luo](mailto:jian.luo@citrix.com), [Cheng Zhang](mailto:Cheng.Zhang@citrix.com) and [Jack Zhou](Jack.Zhou@citrix.com)
+**Author:** [Jian Luo](mailto:jian.luo@citrix.com), [Cheng Zhang](mailto:Cheng.Zhang@citrix.com) and [Jack Zhou](mailto:Jack.Zhou@citrix.com)
 
 ## Introduction
 
