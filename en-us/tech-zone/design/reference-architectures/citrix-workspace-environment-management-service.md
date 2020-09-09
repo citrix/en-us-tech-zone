@@ -22,7 +22,7 @@ Workspace Environment Management (WEM) service uses intelligent resource managem
 
 WEM service has the following architecture:
 
-![WEM architecture](/en-us/tech-zone/design/media/reference-architecture_citrix-workspace-environment-management-service_002.png)
+![WEM architecture](/en-us/tech-zone/design/media/reference-architectures_citrix-workspace-environment-management-service_002.png)
 
 The following components are hosted in Citrix Cloud and administered by Citrix as part of the service:
 
@@ -58,7 +58,7 @@ For on-premises deployments, WCF connections between the agent and the infrastru
 
 ### Agent connection insights
 
-![Agent connection insights](/en-us/tech-zone/design/media/reference-architecture_citrix-workspace-environment-management-service_001.png)
+![Agent connection insights](/en-us/tech-zone/design/media/reference-architectures_citrix-workspace-environment-management-service_001.png)
 
 In the diagram, there are two different agent-facing WCF services:
 
@@ -172,18 +172,18 @@ We can use three types of configurations to deploy WEM. Use the type that suits 
 
 This configuration can be used in an environment that has only a single domain in a single forest. Normally, the single domain contains all the resources and user objects. So, in this configuration, you only need to deploy one set of Cloud Connectors to enable all your devices to connect to the WEM service. Below is the overview of this configuration.
 
-![Single domain in a single forest setup](/en-us/tech-zone/design/media/reference-architecture_citrix-workspace-environment-management-service_004.png)
+![Single domain in a single forest setup](/en-us/tech-zone/design/media/reference-architectures_citrix-workspace-environment-management-service_004.png)
 
 ### Multiple domains in a single forest
 
 This configuration can be used in environments where multiple domains in a single forest exist. As the domains in the forest can communicate with each other, in this configuration, you only need to deploy one set of Cloud Connectors to enable all your devices to connect to the WEM service.
 
-![Multiple domains in a single forest setup](/en-us/tech-zone/design/media/reference-architecture_citrix-workspace-environment-management-service_003.png)
+![Multiple domains in a single forest setup](/en-us/tech-zone/design/media/reference-architectures_citrix-workspace-environment-management-service_003.png)
 
 ### Users and resources in separate forests (with trust)
 
 In this use case, users and resources reside in different domain forests for management purposes. A trust exists between the two forests that allows the users to log on to resources in another forest. In this deployment, customers need to deploy Cloud Connectors into each domain forest to complete the WEM deployment.
 
-![Users and resources in separate forests setup](/en-us/tech-zone/design/media/reference-architecture_citrix-workspace-environment-management-service_005.png)
+![Users and resources in separate forests setup](/en-us/tech-zone/design/media/reference-architectures_citrix-workspace-environment-management-service_005.png)
 
 To learn more, visit the [WEM product documentation](/en-us/workspace-environment-management/service.html). For the latest updates about WEM, check out [What’s new](/en-us/workspace-environment-management/service/whats-new.html).
