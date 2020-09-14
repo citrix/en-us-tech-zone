@@ -43,6 +43,8 @@ Just as buildings have blueprints that include details about their structure and
 
 [Virtual Apps and Desktops Service - Azure](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-azure.html) - Learn the detailed architecture and deployment model of Citrix Virtual Apps and Desktops on Microsoft Azure with five key architectural principles.
 
+[Workspace Environment Management service](/en-us/tech-zone/design/reference-architectures/citrix-workspace-environment-management-service.md) - Learn about the architecture and deployment considerations for this cloud-based service of Workspace Environment Management.
+
 ## Citrix Service Providers
 
 [Citrix Service Provider Content Collaboration Workspace Integration](/en-us/tech-zone/design/reference-architectures/csp-cc.html) - The CSP Content Collaboration Service and Workspace integration simplifies the Citrix Cloud reseller management, customer deployment and provides real-time file sync to data in one secure centrally managed platform.
