@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Policies provide the basis to configure and fine-tune Citrix Virtual Apps and Desktops environments, allowing organizations to control connection, security and bandwidth settings based on various combinations of users, devices or connection types. Learn about the different decisions related to the baseline policy design.
+description: Policies provide the basis to configure and fine-tune Citrix Virtual Apps and Desktops environments, allowing organizations to control connection, security, and bandwidth settings based on various combinations of users, devices, or connection types. Learn about the different decisions related to the baseline policy design.
 ---
 # Baseline Policy Design
 

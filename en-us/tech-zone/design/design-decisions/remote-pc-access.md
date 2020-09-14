@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Remote PC Access is easy to deploy. These design decisions help maintain security, availability and performance.
+description: Remote PC Access is easy to deploy. These design decisions help maintain security, availability, and performance.
 ---
 # Remote PC Access Design Decisions
 
