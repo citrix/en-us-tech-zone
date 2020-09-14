@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to provide the dynamic delivery of resources by redirecting browsing to Secure Browser service protecting the company network without sacrificing user experience.
+description: Learn how to provide the dynamic delivery of resources by redirecting browsing to a Secure Browser service protecting the company network without sacrificing user experience.
 ---
 # Proof of Concept Guide: URL Redirection to Secure Browser with Citrix ADC in Azure
 
