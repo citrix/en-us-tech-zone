@@ -48,8 +48,6 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 ## Citrix Workspace
 
-[Virtual Assistant](/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html) - The Citrix Assistant guides users to information and allows them to interact with back-end applications to complete simple requests.
-
 [Workspace app](/en-us/tech-zone/learn/tech-briefs/workspace-app.html) - Personalized interface that provides access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
 
 [Workspace Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) - Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.
