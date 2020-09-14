@@ -14,7 +14,7 @@ description: Learn how to implement Citrix SD-WAN rapidly to provide secure, enh
 
 Use of the Cloud to deliver Enterprise services continues to grow. The recent need to work from home is driving a demand for more resources available from anywhere. However, those Cloud services typically still need to make back end calls to Data Center systems such as: service accounts authenticating to Active Directory, applications pulling records from databases, or virtual desktops copying files from shares.
 
-Networking options like Express Routes, or VNet Peering, available in Microsoft Azure for example, have disadvantages including complexity, and cost. Also, they are limited to passing point-to-point traffic without providing performance benefits, can require complex integration to expand their use, and are not portable between public cloud platforms.
+Major cloud providers offer networking options to provide connectivity to data centers. For example Express Routes, or VNet Peering, are available in Microsoft Azure. Citrix SD-WAN can provide differentiated connectivity. Existing Citrix SD-WAN customers can seamlessly extend access across their overlay network, to multiple cloud sites, while providing performance benefits for app and service flows.
 
 Citrix SD-WAN virtual appliances (VPX) can be deployed in Microsoft Azure, Amazon Web Services (AWS), or Google Cloud Platform (GCP) and integrate with Citrix SD-WAN appliances hosted in Data Centers or Private Clouds. The secure tunnel that is established between SD-WAN instances routes traffic between the Cloud and Data Center, while enhancing performance in transit.
 
