@@ -471,7 +471,7 @@ The Workspace helps the user by organizing their work, guiding them to the impor
 
 Citrix Workspace with Intelligence organizes work by funneling in notifications from various sources and then enables users to action on them by integrating actions and workflows into the Workspace by using microapps. Learn more about Workspace Microapps [here](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html)
 
-Citrix Workspace adds universal search capabilities to all the data sources the workspace has been tied into including your on-premises SharePoint or SMB share, all the way to OneDrive in the cloud and everything in between. The Citrix Assistant is designed to learn and help users to information and allows them to interact with back-end applications to complete simple requests. It allows users to have natural language interaction and do queries for the data on the systems of records within Citrix Workspace. Learn about the Citrix Assistant [here](/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html)
+Citrix Workspace adds universal search capabilities to all the data sources the workspace has been tied into including your on-premises SharePoint or SMB share, all the way to OneDrive in the cloud and everything in between. Increasing productivity by saving you time and the hassle of searching for that file you need right now but don't know where it is stored.
 
 ## Security
 
