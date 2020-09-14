@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: To meet different user requirements, Citrix HDX protocol allows for different graphics modes to be configured. Learn about the different HDX modes and how they are configured.
+description: To meet different user requirements, the Citrix HDX protocol allows for different graphics modes to be configured. Learn about the different HDX modes and how they are configured.
 ---
 # HDX Graphics Overview
 

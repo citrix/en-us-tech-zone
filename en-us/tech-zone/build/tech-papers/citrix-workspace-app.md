@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Quick start guide for Citrix Workspace app - everything you need to know in one place, including installation, configuration and optimizations.
+description: Quick start guide for Citrix Workspace app - everything you need to know in one place, including installation, configuration, and optimizations.
 ---
 # Citrix Workspace app for Windows - Quick start guide
 

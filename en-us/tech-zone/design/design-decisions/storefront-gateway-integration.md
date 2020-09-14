@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn about different integration decisions involved when integrating StoreFront with Citrix Gateway for secure remote access.
+description: Learn about the different integration decisions involved when integrating StoreFront with Citrix Gateway for secure remote access.
 ---
 
 # Designing StoreFront and Gateway Integration
