@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Discover the use cases and learn about the detailed architecture of Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.
+description: Discover the use cases and learn about the detailed architecture of the Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.
 ---
 # Reference Architecture for Citrix Remote PC Access Solution
 

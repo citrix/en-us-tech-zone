@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn about different decisions involved when aggregating and de-duplicating applications and desktops from multiple sites.
+description: Learn about the different decisions involved when aggregating and de-duplicating applications and desktops from multiple sites.
 ---
 # Designing StoreFront Multi-Site Aggregation
 

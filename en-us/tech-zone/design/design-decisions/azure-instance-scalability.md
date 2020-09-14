@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn about the different Azure instance type scale characteristics and how MSC I/O enhances the response time for your users. The document will guide you through choosing the ideal Azure instance type for your workload and touches upon cost per user.
+description: Learn about the different Azure instance type scale characteristics and how MSC I/O enhances the response time for your users. The document guides you through choosing the ideal Azure instance type for your workload and touches upon cost per user.
 ---
 # The scalability and economics of delivering Citrix Virtual App and Desktop services on Azure
 

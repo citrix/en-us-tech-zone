@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn the architecture and deployment considerations of Citrix Virtual Apps and Desktops on Amazon Web Services cloud platform.
+description: Learn the architecture and deployment considerations of Citrix Virtual Apps and Desktops on an Amazon Web Services cloud platform.
 ---
 # Reference Architecture for Citrix Virtual Apps and Desktops on AWS
 
