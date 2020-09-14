@@ -12,3 +12,6 @@
 
 # secure-access-saas-apps renamed to access-control-okta-sso
 /en-us/tech-zone/learn/poc-guides/secure-access-saas-apps.html /en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html
+
+# temporarily disable virtual assistant (9/14/2020)
+/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html /en-us/tech-zone/learn/tech-briefs.html
