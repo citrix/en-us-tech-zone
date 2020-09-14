@@ -32,7 +32,6 @@ We would like to provide you with source diagrams that you can adapt for your ow
 
 *  [Workspace Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html)
 *  [Workspace Intelligence - Microapps](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html)
-*  [Workspace Intelligence - Virtual Assistant](/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html)
 *  [Workspace Single Sign-On](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
 *  [Workspace Fabric - Cloud Direct](/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html)
 *  [Workspace Fabric - SD-WAN](/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html)
