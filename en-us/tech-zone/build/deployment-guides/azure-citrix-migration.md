@@ -790,7 +790,7 @@ Based on the discovery results, you create an assessment of all on-premises reso
 
 For the assessment (which Microsoft recommends), you have multiple options. The two that interest us most for Citrix workloads are:
 
-*  [Azure Migrate: Server Assessment](https://docs.microsoft.com/en-us/azure/migrate/tutorial-assess-vmware#set-up-an-assessment)
+*  [Azure Migrate: Server Assessment](https://docs.microsoft.com/en-us/azure/migrate/tutorial-assess-vmware)
 
 *  [Movere](https://docs.microsoft.com/en-us/azure/migrate/migrate-services-overview#movere)
 
