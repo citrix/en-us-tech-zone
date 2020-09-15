@@ -4,6 +4,12 @@ description: Learn how to migrate your on-premises Citrix Virtual Apps and Deskt
 ---
 # Migrating Citrix Virtual Apps and Desktops from VMware vSphere to Citrix Virtual Apps and Desktops service on Microsoft Azure
 
+## Contributors
+
+**Author:** [Arnaud Pain](https://twitter.com/arnaud_pain)
+
+**Special thanks:**  [Beth Pollock](https://twitter.com/bethpoll25)
+
 ## Overview
 
 In this document, you'll discover how to migrate from Citrix Virtual Apps and Desktops on VMware vSphere to Citrix Virtual Apps and Desktops service on Microsoft Azure. Migrating to cloud resources modernizes your deployment, providing enhanced elasticity, scalability, and management.
