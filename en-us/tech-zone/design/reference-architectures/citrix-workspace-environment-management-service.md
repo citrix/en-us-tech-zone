@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn the architecture and deployment considerations for this cloud-based service of Workspace Environment Management.
+description: Learn about the architecture and deployment considerations for this cloud-based service of Workspace Environment Management.
 ---
 # Reference Architecture for Citrix Workspace Environment Management Service
 
