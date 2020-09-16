@@ -93,7 +93,7 @@ Following are the steps to set-up a Citrix SD-WAN VPX in Azure and configure a t
 [![Azure - SD-WAN - Networking](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_azuresdwannetworking.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_azuresdwannetworking.png)
 
     *  a.  MGMT
-       *  a1. Select the private IP address, toggle Assignment to “Static” and select “Save”. (the public IP address should be set to static automatically now)
+       *  a1. Select the private IP address, toggle Assignment to “Static” and select “Save”. (the public IP address will be set to static automatically now)
 [![MGMT Networking IpConfig](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_azuresdwannetworkingmgmtipconfig.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_azuresdwannetworkingmgmtipconfig.png)
        *  a2. RECORD the MGMT public IP address and document it in your network diagram
 [![MGMT IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_diagrammgmt.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_diagrammgmt.png)
@@ -102,7 +102,7 @@ Following are the steps to set-up a Citrix SD-WAN VPX in Azure and configure a t
        *  b2. RECORD the sdwan-vpx-nic-lan private IP address and document it in your network diagram
 [![LAN IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_diagramlan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_diagramlan.png)
     *  c.  WAN
-       *  c1. Select the private IP address, toggle Assignment to “Static” and select “Save” (the public IP address should be set to static automatically now)
+       *  c1. Select the private IP address, toggle Assignment to “Static” and select “Save” (the public IP address will be set to static automatically now)
        *  c2. RECORD the sdwan-vpx-nic-wan private IP address and public IP address and document them in your network diagram
 [![WAN IP Addresses](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_diagramwan.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_diagramwan.png)
 1.  Navigate to Virtual Machines, check sdwanamer, and select “Start”.
@@ -272,7 +272,7 @@ Click Next
 1.  Routes – we leave routes blank.  For this POC the sdwan-vpx-nic-lan subnets will automatically be exchanged by the SD-WAN instances to establish connectivity between our test servers. To extend routing beyond the LANs discuss the requirements for static or dynamic routing with your network team and refer to the SD-WAN [routing](/en-us/citrix-sd-wan/11-1/routing.html) documentation.
 1.  Verify the configuration details on the Summary page, then click Save and Done.
 [![Orchestrator - Cloud - Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudsummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudsummary.png)
-1.  In the Network Configuration Home, you should see the entry for the sdwanamercloud site Cloud Connectivity column change from a gray circle that says “offline” to a green circle that says “online”. If this change does not happen within 1 minute refer to the Troubleshooting section to investigate.
+1.  In the Network Configuration Home, you see the entry for the sdwanamercloud site Cloud Connectivity column change from a gray circle that says “offline” to a green circle that says “online”. If this change does not happen within 1 minute refer to the Troubleshooting section to investigate.
 [![Orchestrator - Cloud - Connectivity](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudconnectivity.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudconnectivity.png)
 
 ### Data Center site
@@ -327,7 +327,7 @@ Click Next
 1.  Routes – we leave routes blank.  For this POC the sdwan-vpx-nic-lan subnets is automatically exchanged by the SD-WAN instances to establish connectivity between our test servers. To extend routing beyond the LANs discuss the requirements for static or dynamic routing with your network team and refer to the SD-WAN Routing documentation.
 1.  Verify the configuration details on the Summary page, then click Save and Done.
 [![Orchestrator - DC - Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcsummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcsummary.png)
-1.  In the Network Configuration Home, you should see the entry for the sdwanamerdc site Cloud Connectivity column change from a gray circle that says “offline” to a green circle that says “online”. If this does not happen within 1 minute refer to the Troubleshooting section to investigate.
+1.  In the Network Configuration Home, you see the entry for the sdwanamerdc site Cloud Connectivity column change from a gray circle that says “offline” to a green circle that says “online”. If this does not happen within 1 minute refer to the Troubleshooting section to investigate.
 [![Orchestrator - DC - Connectivity](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcconnectivity.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratordcconnectivity.png)
 
 ### Provisioning
@@ -347,7 +347,7 @@ Now select "Network Config Home" under the **Configuration** menu on the left to
 
 Now that our sites are upgraded, configured, and online we can verify connectivity between the SD-WAN appliances and between the test servers on their respective LANs.
 
-1.  First select “Dashboard” and you should now see the entries for sdwanamerdc and sdwanamercloud with a green square in the Availability column. This color indicates that the Virtual Path is established between the 2 sites. If the state is another color refer to the Troubleshooting section to investigate.
+1.  First select “Dashboard” and you now see the entries for sdwanamerdc and sdwanamercloud with a green square in the Availability column. This color indicates that the Virtual Path is established between the 2 sites. If the state is another color refer to the Troubleshooting section to investigate.
 [![Orchestrator Network Dashboard](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratornetworkdashboard.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratornetworkdashboard.png)
 1.  Verify connectivity:
     *  a. First select the sdwanamerdc site
