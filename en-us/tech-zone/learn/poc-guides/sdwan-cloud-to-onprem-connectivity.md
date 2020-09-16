@@ -34,7 +34,7 @@ For this Proof of Concept, we demonstrate establishing connectivity between an A
 
 **Data Center** – an SD-WAN VPX appliance is built on a Citrix Hypervisor. It is also supported other major hypervisors and hardware platforms to meet a broad range of forwarding requirements.
 
-3 - Data Center Citrix SD-WAN – the appliance, built on a Citrix Hypervisor, requires subnet assignments for a Management, LAN, and WAN interface and Internet access to reach the Citrix Orchestrator [Zero-Touch Deployment (ZTD)](/en-us/citrix-sd-wan-orchestrator/zero-touch-deployment.html) service.
+3 - Data Center Citrix SD-WAN – the appliance, built on a Citrix Hypervisor, requires subnet assignments for a Management, LAN, and WAN interface and Internet access to reach the Citrix Orchestrator [Zero-Touch Deployment](/en-us/citrix-sd-wan-orchestrator/zero-touch-deployment.html) service.
 
 4 - Data Center Test Server - a Windows Server 2016 VM, provisioned on the SD-WAN LAN, must have a static route to the Cloud LAN, via the SD-WAN appliance to reach the Cloud Test Server.
 
@@ -46,7 +46,7 @@ For this Proof of Concept, we demonstrate establishing connectivity between an A
 
 ## Cloud Setup
 
-Following are the steps to setup a Citrix SD-WAN VPX in Azure and configure a test server to route through it. Steps pertinent to the setup are documented, while other setup options not mentioned can be left as default or set to your preference.
+Following are the steps to set up a Citrix SD-WAN VPX in Azure and configure a test server to route through it. Steps pertinent to the set up are documented, while other setup options not mentioned can be left as default or set to your preference.
 
 (NOTE: Citrix SD-WAN is also supported on AWS, or GCP and once the initial setup is done the appliance uses the same configuration process.)
 
@@ -112,7 +112,7 @@ Following are the steps to setup a Citrix SD-WAN VPX in Azure and configure a te
     *  a. Clear the initial warning regarding the license grace period for now
     *  b. On the dashboard page RECORD the appliance serial number
 [![Cloud SD-WAN - Browser Dashboard](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_azuresdwanbrowserdashboard.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_azuresdwanbrowserdashboard.png)
- [NOTE: The browser reports “Not Secure” since the site link is using an IP address. You can create a record in your DNS system to eliminate it. Also note that we are accessing the appliance management interface using its public IP address.  Alternatively, you can access using its private IP address, from a jump server on the LAN. Either way you should configure an Azure rule to limit access to source IP addresses of management hosts.]
+ [NOTE: The browser reports “Not Secure” since the site link is using an IP address. You can create a record in your DNS system to eliminate it. Also note that we are accessing the appliance management interface using its public IP address.  Alternatively, you can access using its private IP address, from a jump server on the LAN. Either it is beneficial to configure an Azure rule to limit access to source IP addresses of management hosts.]
     *  c. Navigate to Configuration > Appliance Settings > Network Adapters. Verify the Primary DNS IP address was learned through Azure DHCP and is configured on the appliance
 [![Cloud - SD-WAN - DNS](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_azuresdwanbrowseradapter.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_azuresdwanbrowseradapter.png)
 
@@ -147,7 +147,7 @@ We demonstrate configuring a Citrix SD-WAN VPX on a Citrix Hypervisor. Citrix SD
 
 ### SD-WAN Appliance Set-up
 
-1.  Log in to the Citrix downloads site with your Citrite credentials. Under the Citrix SD-WAN section, select the SD-WAN Standard Edition VPX for XenServer, and download the Virtual Appliance.
+1.  Log in to the Citrix downloads site with your Citrix credentials. Under the Citrix SD-WAN section, select the SD-WAN Standard Edition VPX for XenServer, and download the Virtual Appliance.
 [![DC - Citrix Hypervisor - XVA Download](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_xenserverxvadownload.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_xenserverxvadownload.png)
 1.  Import the .xva file into your Citrix Hypervisor - XenCenter.
 [![DC - Citrix Hypervisor - Import](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_xenserverxvaimport.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_xenserverxvaimport.png)
@@ -162,7 +162,7 @@ We demonstrate configuring a Citrix SD-WAN VPX on a Citrix Hypervisor. Citrix SD
 [![DC SD-WAN Console](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_xenserverxvaconsole.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_xenserverxvaconsole.png)
 There are two options for the appliance to obtain management addressing:
     *  a. By default, it makes a DHCP request and if it successfully acquires an IP address, mask, gateway, and primary DNS the initial setup is complete
-    *  b. To manually set the appliance details through the console with the default username/password of "admin/password" (the password should be changed at your earliest opportunity)
+    *  b. To manually set the appliance details through the console with the default username/password of "admin/password" (it is recommended to change the password at your earliest opportunity)
 1.  From a management server on the network open a browser, navigate to the assigned `sdwan-vpx-nic-mgmt` IP address and log in as admin.
 [![DC SD-WAN - Browser Log in](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_xenserverbrowserlogin.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_xenserverbrowserlogin.png)
 1.  Now from the SD-WAN appliance management GUI:
@@ -190,7 +190,7 @@ On our Data Center LAN, we have a Windows **Server** to test connectivity.
 
 One essential parts of setting up Cloud-to-Data Center Connectivity is to ensure the necessary firewall port are opened.
 
-*  TCP 443 – used by SD-WAN instances outbound to contact the [Zero-Touch Deployment (ZTD)](/en-us/citrix-sd-wan-orchestrator/zero-touch-deployment.html) configuration service.
+*  TCP 443 – used by SD-WAN instances outbound to contact the [Zero-Touch Deployment] (/en-us/citrix-sd-wan-orchestrator/zero-touch-deployment.html) configuration service.
 *  UDP 4980 – used by SD-WAN virtual paths bi-directionally to set up Virtual Paths between instances to exchange routing information, forward data flows, and so on.  Refer to the [Citrix SD-WAN Reference Architecture](/en-us/tech-zone/design/reference-architectures/sdwan.html) for more information.
 
 ### Orchestrator
