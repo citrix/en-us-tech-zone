@@ -25,8 +25,6 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
-[Access Control for StoreFront](/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html) - Integrates the Access Control service with an on-premises Citrix Virtual Apps and Desktops deployment utilizing StoreFront.
-
 [Access Control](/en-us/tech-zone/learn/tech-briefs/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 
 ### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)
@@ -34,8 +32,6 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [Access Control for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
 
 [Access Control for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
-
-[Access Control for StoreFront](/en-us/tech-zone/learn/tech-insights/access-control-storefront.html) - Integrate SaaS and web apps into an on-premises StoreFront deployment with features like single sign-on, secure remote access, URL, and content inspection and filtering.
 
 ### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
 

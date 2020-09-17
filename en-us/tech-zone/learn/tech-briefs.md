@@ -10,8 +10,6 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [Access Control](/en-us/tech-zone/learn/tech-briefs/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 
-[Access Control for StoreFront](/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html) - Integrates the Access Control service with an on-premises Citrix Virtual Apps and Desktops deployment utilizing StoreFront.
-
 ## Citrix Analytics
 
 [Analytics](/en-us/tech-zone/learn/tech-briefs/analytics.html) - Provide visibility into your environment to protect it from malicious users and to improve the end user experience proactively.
