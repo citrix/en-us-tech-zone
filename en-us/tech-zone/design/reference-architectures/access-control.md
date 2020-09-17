@@ -331,48 +331,6 @@ Citrix Access Control enforces enhanced security policies for SaaS apps (waterma
 | Organizations that have already adopted the Citrix Gateway service. | 1) Citrix Cloud offers several cloud-based services including Citrix Access Control, Analytics, and Secure browser providing security control for SaaS and internet. |
 | Organizations that have already adopted third-party SSO | 1) Citrix Access Control provides granular level security control for SaaS apps, minimizes web-based threats and automatic policy enforcement through analytics, based on user behavior. 2) ICA Proxy for both on-premises and Citrix Virtual Apps and Desktops Service. |
 
-## Citrix Access Control with StoreFront on-premises
-
-Many large organizations have on-premises Citrix Virtual Apps and Desktops environment. Citrix StoreFront is the enterprise app store that aggregates all virtual apps and desktops displayed in the customer’s data center into one place for easy access for the users.
-
-Citrix StoreFront runs on customer on-premises data center, helps users to launch Windows and Linux virtual apps and desktops. On-premises users want to launch SaaS and Web application they cannot launch it from the same app store which the users were accessing their virtual apps and desktops. To ease up this process Citrix introduced integration of Citrix Access Control with on-premises StoreFront. Hence on-premises users can launch SaaS and Web application from one enterprise app store.
-
-Importance of hybrid configuration and benefits:
-
-The idea of hybrid configuration is to provide the same set of Citrix Cloud user experience and security to on-premises customers. That means Integration of Citrix Access Control with StoreFront enhances access to SaaS and web application by subsuming SSO and web filtering.
-
-Citrix Access Control magnifies user experience and security for SaaS and web applications. Since Citrix Access Control runs in Citrix Cloud, other Citrix Cloud services like Citrix Gateway service, Citrix Analytics Services, and Secure Browser service are easily inter-linked to provide a holistic solution to the customer. Some of the key benefits of Citrix Access Control are:
-
-*  Single sign-on
-*  Web Filtering
-*  Secure Browser
-*  Embedded Browser
-*  Remote Access
-
-[![AC-Image-19](/en-us/tech-zone/design/media/reference-architectures_access-control_019.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_019.png)
-
-The preceding hybrid configurations would enable an organization to apply the Access Control service to deliver SaaS and web applications to their existing StoreFront setup. These SaaS/Web applications would show up alongside their virtual apps and desktops in the same StoreFront.
-
-When the user authenticates with the Citrix environment, the delivery controller provides a list of resources available to that user which would include SaaS and Web applications.
-
-To learn more about data flow model when SaaS and web apps are accessed from Citrix StoreFront refer to the [link](/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html).
-
-For SaaS applications, the delivery controller sends a request to Citrix Gateway Service. The Gateway service provides insertion tokens for that particular user access to the selected SaaS applications. SaaS application verifies that token with gateway service to complete the authentication process.
-
-Similarly, for Web apps, when user accessing from the StoreFront, a request is propagated through the delivery controller and lands into Citrix Gateway Service and provides SSO parameters. End-user makes a connection with Citrix Gateway Service with the help of an on-premises gateway connector creates a secure channel with the on-premises web application.
-
-### Synchronize SaaS and Web applications
-
-Citrix administrators has to synchronize applications that end user account is subscribed to in the library after adding or deleting SaaS and Web applications from the Citrix Cloud. To make sure on-premises end users are accessing updated SaaS and Web applications, Citrix provides a Access Control sync tool. This tool installed on the Citrix Delivery Controller with few parameters.
-
-After installing the tool administrator has to click Synchronize SaaS Apps so that any integrated applications that exist on the machine, the utility deletes them and installs application with the Access Control policies.
-
-To learn more about the installation of Access Control Sync for StoreFront tool refer the [link](/en-us/citrix-cloud/advanced-concepts/access-control-saas-web-apps.html#synchronize-saas-and-web-applications)
-
-The hybrid configuration not only enhances user experience but also provides security capabilities against clipboard access, printing, downloads, navigation, and displaying the watermark. The hybrid solution is ideal for customers looking to improve security posture without moving StoreFront to the Cloud. Now with Access Control capabilities, the entire app session from any device is protected. Internal web applications can be securely accessed without a VPN.
-
-Reference: [Access Control for SaaS and Web apps](/en-us/citrix-cloud/advanced-concepts/access-control-saas-web-apps.html)
-
 ## Citrix Access Control Solution for Enterprise web apps
 
 Most of the on-premises customers still use web apps, including SharePoint, Confluence, Microsoft office, help desk application, and so on. Enterprise applications are delivered remotely using Citrix Gateway service and add necessary security using Citrix Access Control solution.

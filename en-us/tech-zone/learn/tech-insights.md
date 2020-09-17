@@ -11,8 +11,6 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Access Control for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 
-[Access Control for StoreFront](/en-us/tech-zone/learn/tech-insights/access-control-storefront.html) - Integrate SaaS and web apps into an on-premises StoreFront deployment with features like single sign-on, secure remote access, URL, and content inspection and filtering.
-
 ## Citrix Analytics
 
 [Performance Analytics](/en-us/tech-zone/learn/tech-insights/performance-analytics.html) - Gain visibility into your environment through user-centric experience scores, application & infrastructure performance scores with Performance Analytics.

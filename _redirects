@@ -15,3 +15,9 @@
 
 # temporarily disable virtual assistant (9/14/2020)
 /en-us/tech-zone/learn/tech-briefs/virtual-assistant.html /en-us/tech-zone/learn/tech-briefs.html
+
+# Redirect all Access Control for StoreFront articles
+
+/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html /en-us/tech-zone.html#citrix-access-control
+/en-us/tech-zone/learn/tech-insights/access-control-storefront.html /en-us/tech-zone.html#citrix-access-control
+ 
