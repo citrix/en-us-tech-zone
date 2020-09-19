@@ -44,19 +44,19 @@ First connect to the CLI by opening an SSH session the the nsip address of the C
 
 Populate the following fields to create the LDAP action and paste the completed string into the cli:
 
-    *  ldapAction - enter the action name. We enter `authAct_LDAP_eotp`
-    *  serverIP - enter the domain server/(s) fqdn or IP address. We enter 192.168.64.50 for the private ip address of the domain server in our environment
-    *  serverPort - enter the ldap port. We enter 636 for the secure ldap port
-    *  ldapBase - enter the string of domain objects and containers where pertinent users are stored in your directory. We enter "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net"
-    *  ldapBindDn - enter the service account used to query domain users. We enter workspacessrv@workspaces.wwco.net
-    *  ldapBindDnPassword - enter your service account password. The password will be encrypted by the Citrix ADC by default
-    *  ldapLoginName - enter the user object type. We enter userPrincipalName
-    *  groupAttrName - enter the group attribute name. We enter memberOf
-    *  subAttributeName - enter the sub attribute name. We enter cn
-    *  secType - enter the security type. We enter SSL
-    *  ssoNameAttribute - enter the single signon name attribute. We enter userPrincipalName
-    *  defaultAuthenticationGroup - enter the default authentication group. We enter Email-OTP
-    *  alternateEmailAttr - enter the user domain object attribute where their email address can be retrieved. We enter otherMailbox.
+*  ldapAction - enter the action name. We enter `authAct_LDAP_eotp`
+*  serverIP - enter the domain server/(s) fqdn or IP address. We enter 192.168.64.50 for the private ip address of the domain server in our environment
+*  serverPort - enter the ldap port. We enter 636 for the secure ldap port
+*  ldapBase - enter the string of domain objects and containers where pertinent users are stored in your directory. We enter "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net"
+*  ldapBindDn - enter the service account used to query domain users. We enter workspacessrv@workspaces.wwco.net
+*  ldapBindDnPassword - enter your service account password. The password will be encrypted by the Citrix ADC by default
+*  ldapLoginName - enter the user object type. We enter userPrincipalName
+*  groupAttrName - enter the group attribute name. We enter memberOf
+*  subAttributeName - enter the sub attribute name. We enter cn
+*  secType - enter the security type. We enter SSL
+*  ssoNameAttribute - enter the single signon name attribute. We enter userPrincipalName
+*  defaultAuthenticationGroup - enter the default authentication group. We enter Email-OTP
+*  alternateEmailAttr - enter the user domain object attribute where their email address can be retrieved. We enter otherMailbox.
 
 Once you have constructed the full string for your environment copy and paste it into the CLI:
 `add authentication ldapAction authAct_LDAP_eotp -serverIP 192.168.64.50 -serverPort 636 -ldapBase "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword your_service_account_password -ldapLoginName sAMAccountName -groupAttrName memberOf -subAttributeName cn -secType SSL -ssoNameAttribute userPrincipalName -defaultAuthenticationGroup Email-OTP -alternateEmailAttr otherMailbox`
@@ -65,8 +65,8 @@ Once you have constructed the full string for your environment copy and paste it
 
 Populate the following fields to create the LDAP action and paste the completed string into the cli:
 
-    *  Policy - enter the policy name. We enter `authPol_LDAP_eotp`
-    *  action - enter the name of the Email action we created above. We enter `authAct_LDAP_eotp`
+*  Policy - enter the policy name. We enter `authPol_LDAP_eotp`
+*  action - enter the name of the Email action we created above. We enter `authAct_LDAP_eotp`
 
 Once you have constructed the full string for your environment copy and paste it into the CLI:
 `add authentication Policy authPol_LDAP_eotp -rule true -action authAct_LDAP_eotp`
@@ -77,13 +77,13 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 
 Populate the following fields to create the Email action and paste the completed string into the cli:
 
-    *  emailAction - enter the action name. We enter `authAct_Email_eotp`
-    *  userName - enter the user, or service account, that will login to the mail server. We enter `admin_matt@workspaces.wwco.net`
-    *  password - enter your service account password to login to the mail server. The password will be encrypted by the Citrix ADC by default
-    *  serverURL - enter the fqdn or IP address of the mail server. We enter `"smtps://192.168.64.40:587"`
-    *  content - enter the user message next to the field to enter the email code. We enter `"Your OTP is $code"`
-    *  timeout - enter the number of seconds the email code is valid. We enter 60
-    *  emailAddress - enter the LDAP object to query for the user email address. We enter `"aaa.user.attribute(\"alternate_mail\")"`
+*  emailAction - enter the action name. We enter `authAct_Email_eotp`
+*  userName - enter the user, or service account, that will login to the mail server. We enter `admin_matt@workspaces.wwco.net`
+*  password - enter your service account password to login to the mail server. The password will be encrypted by the Citrix ADC by default
+*  serverURL - enter the fqdn or IP address of the mail server. We enter `"smtps://192.168.64.40:587"`
+*  content - enter the user message next to the field to enter the email code. We enter `"Your OTP is $code"`
+*  timeout - enter the number of seconds the email code is valid. We enter 60
+*  emailAddress - enter the LDAP object to query for the user email address. We enter `"aaa.user.attribute(\"alternate_mail\")"`
 
 Once you have constructed the full string for your environment copy and paste it into the CLI:
 'add authentication emailAction authAct_Email_eotp -userName admin_matt@workspaces.wwco.net -password your_service_account_password -serverURL "smtps://192.168.64.40:587" -content "Your OTP is $code" -timeout 60 -emailAddress "aaa.user.attribute(\"alternate_mail\")"'
@@ -92,8 +92,8 @@ Once you have constructed the full string for your environment copy and paste it
 
 Populate the following fields to create the Email policy and paste the completed string into the cli:
 
-    *  Policy - enter the policy name. We enter `authPol_Email_eotp`
-    *  action - enter the name of the Email action we created above. We enter `authAct_Email_eotp`
+*  Policy - enter the policy name. We enter `authPol_Email_eotp`
+*  action - enter the name of the Email action we created above. We enter `authAct_Email_eotp`
 
 Once you have constructed the full string for your environment copy and paste it into the CLI:
 `add authentication Policy authPol_Email_eotp -rule true -action authAct_Email_eotp`
