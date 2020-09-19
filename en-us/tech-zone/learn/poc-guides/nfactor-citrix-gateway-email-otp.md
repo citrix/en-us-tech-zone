@@ -86,7 +86,7 @@ Populate the following fields to create the Email action and paste the completed
 *  emailAddress - enter the LDAP object to query for the user email address. We enter `"aaa.user.attribute(\"alternate_mail\")"`
 
 Once you have constructed the full string for your environment copy and paste it into the CLI:
-'add authentication emailAction authAct_Email_eotp -userName admin_matt@workspaces.wwco.net -password your_service_account_password -serverURL "smtps://192.168.64.40:587" -content "Your OTP is $code" -timeout 60 -emailAddress "aaa.user.attribute(\"alternate_mail\")"'
+`add authentication emailAction authAct_Email_eotp -userName admin_matt@workspaces.wwco.net -password your_service_account_password -serverURL "smtps://192.168.64.40:587" -content "Your OTP is $code" -timeout 60 -emailAddress "aaa.user.attribute(\"alternate_mail\")"`
 
 #### Email policy
 
