@@ -137,7 +137,7 @@ For more information see [Email authentication policies](/en-us/citrix-adc/13/aa
 1.  Select No nFactor Flow
 1.  Under Select nFactor Flow click the right arrow, select the `nFactor_EmailOTP` flow created earlier
 1.  Click Select, followed by Bind
-![EMAIL OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-OTP_authenticationvserver.png)
+![EMAIL OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_authenticationvserver.png)
 
 ### Citrix Gateway - virtual server
 
