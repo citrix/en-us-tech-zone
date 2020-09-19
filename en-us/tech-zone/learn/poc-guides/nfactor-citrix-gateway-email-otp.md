@@ -174,8 +174,8 @@ Now we test Email OTP by authenticating into our Citrix Virtual Apps and Desktop
 
 The Citrix Gateway must be able to authenticate to a mail server with a user name and password in order to originate the client email with the OTP code. If the Citrix Gatweay cannot send the email completion of the first factor will timeout after the user submits their username and password.
 
-    *  If your exchange server is configured for kerberos only by default the Citrix Gateway will not be able to login.
-    *  You can also use public email servers such as Gmail. For when configuring the Email OTP policy enter smtps://smtp.gmail.com:587 in the email server field.  However, you must configure your firewalls to allow outbound smtps on TCP port 587.
+*  If your exchange server is configured for kerberos only by default the Citrix Gateway will not be able to login.
+*  You can also use public email servers such as Gmail. For when configuring the Email OTP policy enter smtps://smtp.gmail.com:587 in the email server field.  However, you must configure your firewalls to allow outbound smtps on TCP port 587.
 
 ## Summary
 
