@@ -45,7 +45,7 @@ First connect to the CLI by opening an SSH session the NSIP address of the Citri
 Populate the following fields to create the LDAP action and paste the completed string into the CLI:
 
 *  `ldapAction` - enter the action name. We enter `authAct_LDAP_eotp`
-*  `serverIP` - enter the domain server/s fqdn or IP address. We enter `192.168.64.50` for the private ip address of the domain server in our environment
+*  `serverIP` - enter the domain server/s fqdn or IP address. We enter `192.168.64.50` for the private IP address of the domain server in our environment
 *  `serverPort` - enter the LDAP port. We enter `636` for the secure LDAP port
 *  `ldapBase` - enter the string of domain objects and containers where pertinent users are stored in your directory. We enter `"OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net"`
 *  `ldapBindDn` - enter the service account used to query domain users. We enter `workspacessrv@workspaces.wwco.net`
