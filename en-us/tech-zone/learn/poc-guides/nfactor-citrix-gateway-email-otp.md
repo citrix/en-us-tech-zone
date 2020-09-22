@@ -185,4 +185,4 @@ With Citrix Workspace and Citrix Gateway, Enterprises can improve their security
 
 For more information refer to other nFactor authentication options:
 
-[Email OTP](/en-us/citrix-adc/13/aaa-tm/email-otp.html) – Email OTP is introduced with Citrix ADC 12.1 build 51.x
+[Email OTP](/en-us/citrix-adc/13/aaa-tm/email-otp.html) – Email OTP was introduced with Citrix ADC 12.1 build 51.x
