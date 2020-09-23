@@ -40,13 +40,13 @@ Refer to Citrix Documentation for the latest product version and license require
 1.  Log in to the Citrix ADC UI
 1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
 
-### Push service policy
+### Push service action
 
 1.  Next navigate to 'Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Actions > Push service'
 1.  Select Add
 1.  Populate the following fields and click Ok:
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_pushserviceaction.png)
-    *  Name - a unique value
+    *  Name - a unique value.
 **We will enter values in the following fields to integrate with Citrix Cloud - PUSH Service**
     *  Log in to Citrix Cloud and navigate to **Identity and Access Management > API Access**
     *  Create a unique name for the push service and select create client
@@ -59,7 +59,7 @@ Refer to Citrix Documentation for the latest product version and license require
     *  Customer ID - copy & paste the Client ID from the Citrix Cloud Identity and Access Management API Access page
 1.  Click Create
 
-### LDAP - authentication policy
+### LDAP - authentication action
 
 1.  Next navigate to 'Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Actions > LDAP'
 1.  Select Add
@@ -74,10 +74,10 @@ Refer to Citrix Documentation for the latest product version and license require
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_ldapaction.png)
 For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-ldap-tsk.html)
 
-### LDAP - token storage policy
+### LDAP - token storage action
 
 1.  Next navigate to 'Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Actions > LDAP'
-1.  Select the LDAP policy created above and select create
+1.  Select the LDAP action created above and select create
 1.  Append OTP or any identifier to the name and unselect authentication
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_ldapotppolicyunauth.png)
 1.  Under Connection Settings verify the Base DN, Administrator Bind DN, and Password. **Be sure that the administrator user or service account is a member of domain administrators. This policy will be used to write the token registered by the user's authenticator app in the userParameters attribute of their user object.**
