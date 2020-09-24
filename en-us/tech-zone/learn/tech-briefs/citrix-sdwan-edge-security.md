@@ -166,4 +166,4 @@ With Edge Security, that comes with 11.2 Advanced Edition, Citrix is now one of 
 
 ## Summary
 
-Enterprises can provide a great Internet service user experience while securing their intranet at Edge egress points with **Citrix SD-WAN Edge Security**. With the **11.2 Advanced Edition** Citrix provides **Intrusion Prevention, Web Filtering, and Anti-Malware** on the **SD-WAN 1100 AE appliance**. User endpoints are protected in Branch Offices, while Administrators manage and monitor their network centrally through the Citrix Cloud hosted Orchestrator service.
+Enterprises can provide a great Internet service user experience while securing their intranet at Edge egress points with **Citrix SD-WAN Edge Security**. With the **11.2 Advanced Edition** Citrix provides **Intrusion Prevention, Web Filtering, and Anti-Malware** on the **SD-WAN 1100 AE appliance**. User endpoints are protected in Branch Offices, while Administrators manage and monitor their network centrally through the Citrix Cloud hosted Orchestrator services.
