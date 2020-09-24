@@ -61,6 +61,10 @@ Populate the following fields to create the LDAP action and paste the completed 
 Once you have constructed the full string for your environment copy and paste it into the CLI:
 `add authentication ldapAction authAct_LDAP_eotp -serverIP 192.168.64.50 -serverPort 636 -ldapBase "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword your_service_account_password -ldapLoginName sAMAccountName -groupAttrName memberOf -subAttributeName cn -secType SSL -ssoNameAttribute userPrincipalName -defaultAuthenticationGroup Email-OTP -alternateEmailAttr otherMailbox`
 
+A variety of tools exist that may be used to populate Active Directory user object attributes. For the POC we use ADSI edit, from 'Server Manager > Tools', to manually add an email address for user1 to it's 'otherMailbox' attribute.
+
+![Email OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_adsieditor.png)
+
 #### LDAP policy
 
 Populate the following fields to create the LDAP action and paste the completed string into the CLI:
