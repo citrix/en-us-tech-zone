@@ -45,7 +45,7 @@ First connect to the CLI by opening an SSH session the NSIP address of the Citri
 Populate the following fields to create the LDAP action and paste the completed string into the CLI:
 
 *  `ldapAction` - enter the action name. We enter `authAct_LDAP_eotp`
-*  `serverIP` - enter the domain server/s fqdn or IP address. We enter `192.168.64.50` for the private IP address of the domain server in our environment
+*  `serverIP` - enter the domain server/s FQDN or IP address. We enter `192.168.64.50` for the private IP address of the domain server in our environment
 *  `serverPort` - enter the LDAP port. We enter `636` for the secure LDAP port
 *  `ldapBase` - enter the string of domain objects and containers where pertinent users are stored in your directory. We enter `"OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net"`
 *  `ldapBindDn` - enter the service account used to query domain users. We enter `workspacessrv@workspaces.wwco.net`
@@ -84,7 +84,7 @@ Populate the following fields to create the Email action and paste the completed
 *  `emailAction` - enter the action name. We enter `authAct_Email_eotp`
 *  `userName` - enter the user, or service account, that will log in to the mail server. We enter `admin_matt@workspaces.wwco.net`
 *  `password` - enter your service account password to log in to the mail server. The password will be encrypted by the Citrix ADC by default
-*  `serverURL` - enter the fqdn or IP address of the mail server. We enter `"smtps://192.168.64.40:587"`
+*  `serverURL` - enter the FQDN or IP address of the mail server. We enter `"smtps://192.168.64.40:587"`
 *  `content` - enter the user message next to the field to enter the email code. We enter `"Your OTP is $code"`
 *  `time out` - enter the number of seconds the email code is valid. We enter `60`
 *  `emailAddress` - enter the LDAP object to query for the user email address. We enter `"aaa.user.attribute(\"alternate_mail\")"`
@@ -179,7 +179,7 @@ Now we test Email OTP by authenticating into our Citrix Virtual Apps and Desktop
 The Citrix Gateway must be able to authenticate to a mail server with a user name and password in order to originate the client email with the OTP code. If the Citrix Gateway cannot send the email, completion of the first factor will time out after the user submits their user name and password.
 
 *  If your exchange server is configured for Kerberos only by default the Citrix Gateway will not be able to log in.
-*  You can also use public email servers such as Gmail. When configuring the Email OTP policy enter smtps://smtp.gmail.com:587 in the email server field.  However, you must configure your firewalls to allow outbound smtps on TCP port 587.
+*  You can also use public email servers such as Gmail. When configuring the Email OTP policy enter `smtps://smtp.gmail.com:587` in the email server field.  However, you must configure your firewalls to allow outbound SMTPS on TCP port 587.
 
 ## Summary
 
