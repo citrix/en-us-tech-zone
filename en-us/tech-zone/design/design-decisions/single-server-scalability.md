@@ -50,6 +50,8 @@ Let’s assume you’re running Windows 10 with standard Office applications and
 
 > 5 x 36 = 180 VMs per host
 
+**Note** Citrix specialized VDI and RDSH-based workloads are CPU bound 99.9% of the time. CPU has become the scalability bottleneck as opposed to memory, disk storage, or network storage. These multipliers omit other areas aside from CPU because CPU has become the main factor.  Although hyper-threading, clock speeds, and virtual cores are all important, nothing is more important than the number of physical cores on a server. When utilizing the rule of 5 and 10, it is best to ignore all the other numbers at first to do the initial sizing to avoid confusion. 
+
 ### Example 2: Citrix Virtual Apps (older hardware)
 
 Let’s assume you’re running an application such as SAP on Windows Server 2012 R2 via CVA. You’re repurposing some older HP blades with 24 physical cores (2x12) and 256 GB of RAM. You’ve researched on Intel’s website that the underlying chip employs a ring buffer architecture and each socket is effectively split into 2 NUMA nodes with 6 cores each. Therefore, a 6 vCPU / 24 GB RAM VM specification seems optimal to maximize linear scalability and minimize NUMA thrashing. Using a 2:1 CPU over-subscription ratio, you utilize all 48 logical cores and deploy 8 XenApp servers on each host (48 / 6 = 8). Utilizing the Rule of 10 for CVA:
