@@ -55,9 +55,9 @@ With only a handful of requirements, Citrix SD-WAN customers can quickly get up 
 
 ![Firewall Security Profile](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_firewallsecurityprofile.png)
 
-### Firewall Policy Action
+### Firewall Profile Action
 
-![Firewall Policy Action](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_firewallpolicyaction.png)
+![Firewall Profile Action](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_firewallpolicyaction.png)
 
 ## Intrusion Prevention
 
@@ -93,6 +93,10 @@ Rules, which are customizable, include fields to specify patterns to identify in
 *  Enable Block - Drop the traffic that matches any of the signatures in the rule.
 *  Enable Block if Recommended is Enabled - If the rule action is Recommended, and the signature’s recommended action is Enable Log, drop the traffic matching any of the signatures in the rule.
 
+You can maintain visibility by reporting on Intrustion Prevention events.
+
+![Intrustion Prevention Events](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_intrusionpreventionreport.png)
+
 For more information see [Citrix SD-WAN Edge Security – Intrusion Prevention](/en-us/citrix-sd-wan-orchestrator/network-level-configuration/security.html#intrusion-prevention)
 
 ## Web Filtering
@@ -110,6 +114,10 @@ Web filtering is enabled, and preferences are configured within a Security Profi
 Existing categories can be selected to “block” access to the website or “flag” (log) access. Alternatively, specific sites may be “bypassed” by domain name or IP address.
 
 ![Web Filtering Categories](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_webfilteringsecuritycategories.png)
+
+You can maintain visibility by reporting on Web Filtering events.
+
+![Web Filtering Events](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_webfilteringreport.png)
 
 For more information see [Citrix SD-WAN Edge Security – Web Filtering](/en-us/citrix-sd-wan-orchestrator/network-level-configuration/edge-security.html#web-filtering)
 
@@ -135,6 +143,10 @@ Anti-Malware can be enabled or disabled for specific file types by selecting the
 Also, you can choose to exclude certain MIME types from scanning.
 
 ![Anti-Malware MIME Types](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_antimalwaremimetypes.png)
+
+You can maintain visibility by reporting on Anti-Malware events.
+
+![Anti-Malware Events](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-edge-security_antimalwarereport.png)
 
 For more information see [Citrix SD-WAN Edge Security – Anti-Malware](/en-us/citrix-sd-wan-orchestrator/network-level-configuration/edge-security.html#anti-malware)
 
