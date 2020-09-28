@@ -30,6 +30,8 @@ It makes assumptions about the completed installation and configuration of the f
 *  Endpoint with Citrix Workspace app installed
 *  Active Directory (AD) is available in the environment
 
+Refer to Citrix Documentation for the latest product version and license requirements. [Email OTP Authentication](/en-us/citrix-adc/13/aaa-tm/email-otp.html)
+
 ## Citrix Gateway
 
 First, we will log in to the CLI on our gateway and enter the authentication actions and associated policies for LDAP and email respectively. Then we will log in to our GUI to build our nFactor flow in the visualizer tool and complete the multifactor authentication configuration.
