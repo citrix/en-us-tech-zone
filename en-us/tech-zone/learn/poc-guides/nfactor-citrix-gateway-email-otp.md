@@ -30,7 +30,7 @@ It makes assumptions about the completed installation and configuration of the f
 *  Endpoint with Citrix Workspace app installed
 *  Active Directory (AD) is available in the environment
 
-Refer to Citrix Documentation for the latest product version and license requirements. [Email OTP Authentication](/en-us/citrix-adc/13/aaa-tm/email-otp.html)
+Refer to Citrix Documentation for the latest product version and license requirements: [Email OTP Authentication](/en-us/citrix-adc/current-release/aaa-tm/email-otp.html)
 
 ## Citrix Gateway
 
@@ -77,7 +77,7 @@ Populate the following fields to create the LDAP action and paste the completed 
 Once you have constructed the full string for your environment copy and paste it into the CLI:
 `add authentication Policy authPol_LDAP_eotp -rule true -action authAct_LDAP_eotp`
 ![LDAP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_ldapactpolcli.png)
-For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-LDAP-tsk.html)
+For more information see [LDAP authentication policies](/en-us/citrix-adc/current-release/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-LDAP-tsk.html)
 
 #### Email action
 
@@ -104,12 +104,12 @@ Populate the following fields to create the Email policy and paste the completed
 Once you have constructed the full string for your environment copy and paste it into the CLI:
 `add authentication Policy authPol_Email_eotp -rule true -action authAct_Email_eotp`
 ![Email](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_emailactpolcli.png)
-For more information see [Email authentication policies](/en-us/citrix-adc/13/aaa-tm/email-otp.html)
+For more information see [Email authentication policies](/en-us/citrix-adc/current-release/aaa-tm/email-otp.html)
 
 ### nFactor
 
 1.  Log in to the Citrix ADC UI
-1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
+1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/current-release/ssl/ssl-certificates.html) for more information.
 1.  Next navigate to `Security > AAA - Application Traffic > nFactor Visualizer > nFactor Flows`
 1.  Select Add and select the plus sign in the Factor box
 1.  Enter `nFactor_EmailOTP` and select create
@@ -191,4 +191,4 @@ With Citrix Workspace and Citrix Gateway, Enterprises can improve their security
 
 For more information refer to other nFactor authentication options:
 
-[Email OTP](/en-us/citrix-adc/13/aaa-tm/email-otp.html) – Email OTP is introduced with Citrix ADC 12.1 build 51.x
+[Email OTP](/en-us/citrix-adc/current-release/aaa-tm/email-otp.html) – Email OTP is introduced with Citrix ADC 12.1 build 51.x
