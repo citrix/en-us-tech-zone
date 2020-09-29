@@ -156,7 +156,7 @@ The App Access dashboard summarizes the details of domains, URLs, and apps acces
 
 The Share Links dashboard is the launching point into share event analysis and threat prevention. It shows the visibility into the share link’s patterns across an organization.
 
-[![Share Links](/en-us/tech-zone/learn/media/tech-briefs_share-links.png)](/en-us/tech-zone/learn/media/tech-briefs_analytics_share-links.png)
+[![Share Links](/en-us/tech-zone/learn/media/tech-briefs_analytics_share-links.png)](/en-us/tech-zone/learn/media/tech-briefs_analytics_share-links.png)
 
 ### Reporting
 
