@@ -22,6 +22,8 @@ IT Self-Service workflows enable employees to quickly find the IT resources that
 
 **Watch this video to [see demo](https://www.youtube.com/watch?v=9FMzApqIBqA&feature=youtu.be&ab_channel=Citrix):**
 
+[![Tech Insight-IT Self-Service](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=9FMzApqIBqA&feature=youtu.be&ab_channel=Citrix)
+
 For more information about IT Self-Service, see [IT Self-Service](/en-us/citrix-microapps/deliver-workflows/it-self-service.html) in Citrix product documentation.
 
 ## HR Self-Service Microapp Demo
@@ -29,5 +31,7 @@ For more information about IT Self-Service, see [IT Self-Service](/en-us/citrix-
 It is more essential than ever that businesses rethink their people strategies, placing new emphasis on delivering a best-in-class employee experience that differentiates and elevates the business. With a new portfolio of HR self-service microapps within Citrix Workspace, organizations can improve process efficiency, save time, and reduce HR case volume. Available via our out-of-the-box template integrations with Workday and SAP SuccessFactors.
 
 **Watch this video to [see demo](https://www.youtube.com/watch?v=1JMdpHt4msk&feature=youtu.be&ab_channel=Citrix):**
+
+[![Tech Insight-HR Self-Service](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=1JMdpHt4msk&feature=youtu.be&ab_channel=Citrix)
 
 For more information about HR Self-Service, see [HR Self-Service](/en-us/citrix-microapps/deliver-workflows/hr-self-service.html) in Citrix product documentation.
