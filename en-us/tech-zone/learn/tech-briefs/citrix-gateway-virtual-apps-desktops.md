@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Copy & paste description from TOC here
+description: Citrix Gateway is the best secure remote access solution for Citrix Workspace
 ---
 # Citrix Gateway and Citrix Virtual Apps and Desktops
 
