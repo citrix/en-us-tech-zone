@@ -1,6 +1,6 @@
 ---
 layout: doc
-h3inToc: true
+h3InToc: true
 description: Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
 ---
 # Citrix Managed Desktops
