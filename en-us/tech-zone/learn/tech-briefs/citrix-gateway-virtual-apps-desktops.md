@@ -237,5 +237,3 @@ Citrix Gateway has the most integration points with Citrix Workspace of any HDX 
 *  Adaptive Network Transport – Delivers a superior user experience by dynamically responding to changing network conditions
 *  Optimal Routing – Ensure a better user experience by always launch apps and desktops from the local gateway
 *  Custom Availability Monitors – Deep application health monitoring of back end services running on the StoreFront and Delivery Controller servers
-
-**Author:** [Florin Lazurca](URL)
