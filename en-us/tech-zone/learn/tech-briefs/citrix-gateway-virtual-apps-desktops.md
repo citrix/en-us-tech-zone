@@ -4,6 +4,10 @@ description: Citrix Gateway is the best secure remote access solution for Citrix
 ---
 # Citrix Gateway and Citrix Virtual Apps and Desktops
 
+## Contributors
+
+**Author:** [Florin Lazurca](URL)
+
 ## Overview
 
 Citrix Gateway is the best secure remote access solution for Citrix Workspace. It provides a myriad of unique integrations that enhance security and user experience. Moreover, Citrix Gateway consolidates access to any app, from any device, through a single URL.
@@ -201,7 +205,7 @@ HDX Optimal Gateway Routing gives administrators the ability to point Citrix Gat
 
 HDX Optimal Gateway Routing ensures that the user experience is both simple and consistent by de-coupling the authentication gateway from the optimal launch gateway. This ensures that users always launch their apps and desktops from the local gateway, thus ensuring a better user experience when working from anywhere, on any device.
 
-GSLB powered zone preference is a feature that integrates with Workspace, StoreFront, and the ADC appliance to provide user access to the most optimized data center on the basis of the user location. With this feature, the client IP address is examined when an HTTP request arrives at the Citrix Gateway appliance, and the real client IP address is used to create the datacenter preference list that is forwarded to StoreFront.
+GSLB powered zone preference is a feature that integrates with Workspace, StoreFront, and the ADC appliance to provide user access to the most optimized data center on the basis of the user location. With this feature, the client IP address is examined when an HTTP request arrives at the Citrix Gateway appliance, and the real client IP address is used to create the data center preference list that is forwarded to StoreFront.
 
 If the ADC is configured to insert the zone preference header, StoreFront 3.5 or later can use the information provided by the appliance to reorder the list of delivery controllers and connect to an optimal delivery controller in the same zone as the client. StoreFront selects the optimal gateway VPN virtual server for the selected data center zone, adds this information to the ICA file with appropriate IP addresses, and sends it to the client. StoreFront then tries to launch applications hosted on the preferred data center’s delivery controllers before trying to contact equivalent controllers in other data centers.
 
@@ -220,7 +224,7 @@ StoreFront services are monitored by probing a Windows service that runs on the 
 *  CitrixCredentialWallet
 *  CitrixDefaultDomainService
 
-Citrix Gateway also has custom Delivery Controller monitors to make sure the Delivery Controllers are alive and responding before the Citrix Gateway load balances to the resource.  The monitors probe will validate a user’s credentials and confirm application enumeration to confirm whether the XML service is working. This prevents black hole scenarios where requests could be sent to an unresponsive server.
+Citrix Gateway also has custom Delivery Controller monitors to make sure the Delivery Controllers are alive and responding before the Citrix Gateway load balances to the resource.  The monitors probe will validate a user’s credentials and confirm application enumeration to confirm whether the XML service is working. This prevents black hole scenarios where requests might be sent to an unresponsive server.
 
 ## Summary
 
@@ -232,6 +236,6 @@ Citrix Gateway has the most integration points with Citrix Workspace of any HDX 
 *  End to End Monitoring - Identify the source of delays and triage issues which impact user performance
 *  Adaptive Network Transport – Delivers a superior user experience by dynamically responding to changing network conditions
 *  Optimal Routing – Ensure a better user experience by always launch apps and desktops from the local gateway
-*  Custom Availability Monitors – Deep application health monitoring of backend services running on the StoreFront and Delivery Controller servers
+*  Custom Availability Monitors – Deep application health monitoring of back end services running on the StoreFront and Delivery Controller servers
 
 **Author:** [Florin Lazurca](URL)
