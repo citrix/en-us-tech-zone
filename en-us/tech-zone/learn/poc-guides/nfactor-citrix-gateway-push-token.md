@@ -31,7 +31,7 @@ It makes assumptions about the completed installation and configuration of the f
 *  Mobile device with Citrix SSO app installed
 *  Active Directory (AD) is available in the environment
 
-Refer to Citrix Documentation for the latest product version and license requirements. [Authentication Push](/en-us/citrix-gateway/13/push-notification-otp.html)
+Refer to Citrix Documentation for the latest product version and license requirements. [PUSH Authentication](/en-us/citrix-gateway/13/push-notification-otp.html)
 
 ## Citrix Gateway
 
