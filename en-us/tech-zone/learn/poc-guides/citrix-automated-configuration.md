@@ -8,7 +8,7 @@ description: Copy & paste description from TOC here
 
 **Author:** [Thamara Trejos](https://linkedin.com/in/thamaratrejos/)
 
-**Special Thanks:** [Amir Trujillo](https://linkedin.com/in/amirtrujillo), Nitin Mehta, [Daniel Feller](https://twitter.com/djfeller)
+**Special Thanks:** [Amir Trujillo](https://linkedin.com/in/amirtrujillo), Nitin Mehta, [Daniel Feller](https://twitter.com/djfeller), Bala Swaminathan
 
 ## Overview
 
@@ -40,9 +40,10 @@ This code is not limited to migrations, it is the future for creating configurat
 
 *  CVAD On-Premises environment with **at least one registered VDA**.
 *  CVAD On-Premises environment running on one of the following versions: Any **Long Term Service Release (LTSR)** versions with their latest CU (7.6, 7.15, 1912); Or one of the corresponding latest two **Current Releases (CR)** versions (for example: 2003, 2006).
-*  The domain-joined machine where you plan on installing the [Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) must be running **.NET 4.7.2 version or higher**.
+*  The domain-joined machine where you plan on running the **Automated Configuration tool commands** must be running **.NET 4.7.2 version or higher**.
 *  A machine with the **Citrix PowerShell SDK**, which is automatically installed on the DDC. **Note:** If running the tool on a different machine, it must be domain-joined and **Studio** must have the correct **PowerShell snap-ins** installed. This installer can be found on your corresponding version’s **Product ISO installation media**, which can be obtained from the [**Citrix Downloads > Citrix Virtual Apps and Desktops**](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/) website.
-*  Download the [Automated Configuration tool MSI](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html).
+*  If you have the Automated Configuration tool installed with the MSI, uninstall it.
+*  The Automated Configuration tool is now available through the [PowerShell Gallery](https://www.powershellgallery.com/packages/Citrix.AutoConfig/1.0.233). You can install the module directly from PowerShell as instructed in the [Complete the On-Premises pre-requisites](#complete-prerequisites-for-exporting-from-on-premises-site) section.
 
 ### Cloud-related components
 
@@ -61,39 +62,35 @@ This code is not limited to migrations, it is the future for creating configurat
 
 ### Complete Pre-requisites for Exporting from on-premises site
 
-These steps must be run in your DDC or the domain-joined machine where you want to install the **Automated Configuration** tool.
+These steps must be run in your DDC or the domain-joined machine where you want to run the **Automated Configuration tool commands**.
+The latest Automated Configuration tool is now available through the [PowerShell Gallery](https://www.powershellgallery.com/packages/Citrix.AutoConfig/1.0.233) but you can install the module directly from PowerShell.
+**Note:** For instructions on how to update the Automated Configuration tool that has been installed via PowerShell, refer to the [Updating the Automated Configuration Tool Section](#update-an-existing-powershell-tool)
 
-1.  Download the latest [Automated Configuration tool MSI](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) to your **On-Premises DDC** or a domain-joined machine. **Note:** See the [Pre-requisites section](#pre-requisites) for more details on how to run it from a different machine.
+1.  If you have the **MSI** version of the Automated Configuration tool installed, you must uninstall it first. Once the existing MSI is uninstalled, on your **On-Premises DDC** or a domain-joined machine run **PowerShell as an Administrator.**[![Pre-requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-001.png)
+**Note:** See the [Pre-requisites section](#pre-requisites) for more details on how to run it from a different machine.
+2.  On PowerShell, run the following command ```Install-Module -Name Citrix.AutoConfig```
 
-2.  Run the **MSI** on your **On-Premises DDC**, by right-clicking on the **AutoConfig_PowerShell_x64.msi** installer and clicking on **Install**.
-[![On-prem Pre-Requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-001.png)
+3.  A prompt will appear to update the PowerShellGet and NuGet packages while installing the tool. [![Pre-requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-002.png)
+4.  An untrusted repository prompt might appear when installing the tool for the first time. Type ```Y``` to trust the PowerShell Gallery repository. [![Pre-requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-003.png)
 
-3.  Read the **License Agreement** and check the box if you accept the terms. Then click **Install**:
-[![On-prem Pre-Requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-002.png)
+## Update an Existing PowerShell Tool
 
-4.  After the **MSI** runs, a window indicating successful completion pops up. Click **Finish** to close the **MSI setup** window.
+**Note:** This step must only be followed on pre-existing PowerShell tools. The MSI cannot be updated using this command, it must be uninstalled instead and the PowerShell tool installed instead, using the instructions specified on the [Complete the On-Premises pre-requisites](#complete-prerequisites-for-exporting-from-on-premises-site) section.
 
-[![On-prem Pre-Requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-prem-pre-requisites-003.png)
-
-*  **Note:** Upon successful execution, the **MSI** creates the corresponding folder structure, located in ```C:\Users\<username>\Documents\Citrix\AutoConfig```, and also a desktop icon called **Auto Config**, which launches a PowerShell command prompt. This tool is the one used on subsequent steps.
+1.  A prompt will appear to update the tool if a new version is available after running any command. In order to update the tool via PowerShell, run PowerShell as an Administrator.
+2.  Type the following command ```Update-Module -Name Citrix.AutoConfig``` [![Updating the Tool](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-update-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-update-001.png)
 
 ## Export your On-Premises site configuration
 
 Using an ```export``` PowerShell command, you can export your existing On-Premises configuration and obtain the necessary *.yml* files. These files are used to import your desired configuration into **Citrix Cloud**.
 
-1.  After running the **MSI** installer on the previous step, you get an **Auto Config** shortcut automatically created on the Desktop. Right-click this shortcut and click **Run as Administrator**:
-[![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-001.png)
-
-2.  The **Auto Config** PowerShell tool launches and the current directory points to the tool’s default path (```C:\Users\<username>\Documents\Citrix\AutoConfig```). **Note:** This directory is also where the *.yml* files are created later.
-[![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002.png)
-
-3.  On the **Auto Config** Command Prompt, run the ```Export-CvadAcToFile -all $true``` command. This command exports policies, manually provisioned catalogs and delivery groups, applications, application folders, icons, zone mappings, tags, and other items. **Note:** For **MCS** and **PVS** machine catalogs and delivery groups, refer to the steps on [Requisites for Importing Site Configuration using different Provisioning Methods section](#requisites-for-importing-site-configuration-using-different-provisioning-methods) in this guide.
+1.  On **PowerShell** running **as an Administrator**, run the ```Export-CvadAcToFile -all $true``` command. This command exports policies, manually provisioned catalogs and delivery groups, applications, application folders, icons, zone mappings, tags, and other items. **Note:** For **MCS** and **PVS** machine catalogs and delivery groups, refer to the steps on [Requisites for Importing Site Configuration using different Provisioning Methods section](#requisites-for-importing-site-configuration-using-different-provisioning-methods) in this guide.
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002-1.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002-1.png)
 
-4.  Once the tool finishes running, the **Overall status** shows as **True** and the export process is completed (the output lines shown will match the following illustration). **Note:** If there are any errors, diagnostic files are created in the action-specific subfolders ```(Export, Import, Merge, Restore, Sync, Backup, Compare)```, which can be found under ```%HOMEPATH%\Documents\Citrix\AutoConfig```. Refer to the [Troubleshooting Tips section](#troubleshooting-tips) if you encounter any errors.
+2.  Once the tool finishes running, the **Overall status** shows as **True** and the export process is completed (the output lines shown will match the following illustration). **Note:** If there are any errors, diagnostic files are created in the action-specific subfolders ```(Export, Import, Merge, Restore, Sync, Backup, Compare)```, which can be found under ```%HOMEPATH%\Documents\Citrix\AutoConfig```. Refer to the [Troubleshooting Tips section](#troubleshooting-tips) if you encounter any errors.
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-003.png)
 
-5.  The resulting *.yml* files are now in the current user’s ```Documents\Citrix\AutoConfig``` path:
+3.  The resulting *.yml* files are now in the current user’s ```Documents\Citrix\AutoConfig``` path:
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-004.png)
 
 *  **Note:** See the following image for an example of the contents on a *.yml* file (```Application.yml```)
@@ -131,7 +128,7 @@ Extra steps are required to import your **PVS Catalogs** and their corresponding
 **Note:** After performing these actions, follow the steps mentioned on the
 [Import your Site Configuration into Cloud section](#import-your-site-configuration-into-cloud) in this guide.
 
-1.  Run the **Auto Config tool** as an Administrator
+1.  Run **PowerShell** as an Administrator
 2.  Type the following command ```Export-CvadAcToFile -all $true``` and press **Return (Enter)** on your keyboard.
 [![Provisioning Method PVS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-001.png)
 
@@ -143,33 +140,72 @@ Extra steps are required to import your **PVS Catalogs** and their corresponding
 
 *  After performing these actions, follow the steps mentioned on the [Import your Site Configuration into Cloud](#import-your-site-configuration-into-cloud) section in this guide.
 
-### Dealing with Machine Creation Services (MCS) Machine Catalogs, Delivery and Application Groups and Policies
+### Dealing with Machine Creation Services (MCS): Pooled (Random) and RDS Machine Catalogs
+
+**Note:** A separate section is available with instructions for Static assigned VDIs. Refer to the steps mentioned on the [MCS Static Assigned VDIs](#dealing-with-machine-creation-services-mcs-static-assigned-machines) section in this guide.
 
 Currently, this tool does not support importing MCS machine catalogs or their corresponding delivery groups in an automated way. However, you can still import other configuration such as Applications and policies automatically using this tool.
 
+You must create the Hosting Connection, Machine Catalogs, Delivery Groups and Power Schemes manually. After this, you can automate the Applications, Application Groups, Application Folders, Tag creation and Policies by using the Automated Configuration tool.
+
 You must ensure you create the **machine catalog** and **delivery group** using the same names as the ones on On-Premises setup. Follow these steps to prepare your environment, before proceeding to import the **Application** settings:
 
-1.  In your [Cloud portal](https://citrix.cloud.com), click the Hamburger menu > **My Services > Virtual Apps and Desktops Service > Manage** tab to create your **MCS machine Catalog** as you normally would. You must select the desired OS Type, Master Image, Storage, Licensing, Network, and Account settings.**Important:** Be sure to name your catalog **exactly** the **same way** your existing On-Premises catalog is named.
+1.  On your Hypervisor or Cloud provider of choice, create as many Virtual Machines as necessary, depending on the capacity available in your environment.
+2.  In your [Cloud portal](https://citrix.cloud.com), click the Hamburger menu > **My Services > Virtual Apps and Desktops Service > Manage** tab, then on the left hand side expand the **Configuration** node and click on **Hosting** to create your **Hosting Connection** as you normally would. You must click **Add Connection and Resources**, select the Connection type, address, credentials, and Zone, if using a hypervisor, or the corresponding environment details if using a public cloud provider.
+**Note:** If needed, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html) for information on how to set up your Hosting Connection.
+
+3.  Still in **Cloud Studio** create your **MCS machine Catalog** as you normally would and name it **exactly** the **same way** your existing On-Premises catalog is named. You must select the desired OS Type, Master Image, Storage, Licensing, Network, and Account settings. **Important:** Confirm that the names match on both the On-Premises and the CVADs catalogs.
 **Note:** If needed, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html) for information on how to set up your catalogs.
 
-2.  Still in **Cloud Studio**, create the corresponding **Delivery Group** for the new Catalog and ensure you name it exactly after the corresponding **On-Premises Delivery Group** as well. **Note:** For more details on how to create your **Machine Catalogs** and **Delivery Groups**, refer to [this guide/en-us/tech-zone/learn/poc-guides/cvads.html).
+4.  Next in **Cloud Studio**, create the corresponding **Delivery Group** for the new Catalog and ensure you name it exactly after the corresponding **On-Premises Delivery Group** as well. **Note:** For more details on how to create your **Machine Catalogs** and **Delivery Groups**, refer to [this guide/en-us/tech-zone/learn/poc-guides/cvads.html).
 
-3.  In your On-Premises environment’s **Citrix Studio**, under the **Applications** node, confirm that the desired applications belong to the matching **Delivery Groups** by selecting the desired app and then right-clicking on the app to go to the **Properties** as follows:
+5.  Next, if you have any **Power Schemes** these must be applied to the machines by hand.
+6.  After this, you can proceed to import the rest of the Settings. Refer to the steps mentioned on the [MCS Static Assigned VDIs](#dealing-with-machine-creation-services-mcs-static-assigned-machines) section in this guide.
+
+## Dealing with Machine Creation Services (MCS): Static Assigned Machines
+
+**Note:** A separate section is available with instructions for Pooled and RDS Machines. Please refer to the steps mentioned on the [MCS Pooled VDI and RDS Machines](#dealing-with-machine-creation-services-mcs-pooled-vdi-and-rds-machines)
+
+Currently, static assigned Machine Catalogs cannot be migrated as is to the CVADs cloud account. This tool does not support importing MCS machine catalogs or their corresponding delivery groups in an automated way. However, you can still import other configuration such as Applications and policies automatically using this tool.
+
+You must create the Hosting Connection, Machine Catalogs, and Delivery Groups manually. After this, you can automate the Applications, Application Groups, Application Folders, Tag creation and Policies by using the Automated Configuration tool.
+**Note:** Power  Schemes do not work for non-provisioned catalogs.
+
+You must ensure you create the **machine catalog** and **delivery group** using the same names as the ones on On-Premises setup. Follow these steps to prepare your environment, before proceeding to import the **Application** settings. **Important Note:** One last step is required concerning an update to the ListOfDDCs once these settings are all imported. Find more details on the last step of this section.
+
+1.  On your Hypervisor or Cloud provider of choice, create as many Virtual Machines as necessary, depending on the capacity available in your environment. **Note:** These machines will need to be imported as physical machines into the machine catalogs created at a later step.
+2.  In your [Cloud portal](https://citrix.cloud.com), click the Hamburger menu > **My Services > Virtual Apps and Desktops Service > Manage** tab, then on the left hand side expand the **Configuration** node and click on **Hosting** to create your **Hosting Connection** as you normally would. You must click **Add Connection and Resources**, select the Connection type, address, credentials, and Zone, if using a hypervisor, or the corresponding environment details if using a public cloud provider.
+**Note:** If needed, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html) for information on how to set up your Hosting Connection.
+
+3.  Still in **Cloud Studio** create your **MCS machine Catalog** as non-provisioned physical catalogs. Name the catalogs **exactly** the **same way** your existing On-Premises catalog is named. You must select the desired OS Type, Master Image, Storage, Licensing, Network, and Account settings. **Important:** Confirm that the names match on both the On-Premises and the CVADs catalogs.
+**Note:** If needed, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html) for information on how to set up your catalogs.
+
+4.  Next in **Cloud Studio**, create the corresponding **Delivery Group** for the new Catalog and ensure you name it exactly after the corresponding **On-Premises Delivery Group** as well. **Note:** For more details on how to create your **Machine Catalogs** and **Delivery Groups**, refer to [this guide/en-us/tech-zone/learn/poc-guides/cvads.html).
+
+5.  Next, if you have any **Power Schemes** these must be applied to the machines by hand.
+6.  Follow the instructions on how to import applications, groups, folders and tags as described on this section
+7.  Last, make sure to update the ListOfDDCs registry entry in order to switch over and have the machines register agaisnt the cloud connectors. This step can be done once all the objects exist. This registry entry should be changed to point to the Citrix Cloud Connector FQDNs or IP address and it can be done either manually or just in the registry or through a group policy.
+
+## Dealing with Machine Creation Services (MCS): Importing Applications, Application Groups, Folders and Tags
+
+**Note:** Instructions for Pooled and RDS Machines catalogs and Static Assigned have to be followed first before proceeding to import these settings. Please refer to the steps mentioned on the [MCS Pooled and RDS VDIs](#dealing-with-machine-creation-services-mcs-pooled-random-and-rds-machine-catalogs) or the [MCS Static Assigned VDIs](#dealing-with-machine-creation-services-mcs-static-assigned-machines) depending on your needs. Also note that tags applied to machines may not migrate correctly, but the ones applied to Catalogs, Applications, Application Folders, and Application Groups will.
+
+1.  In your On-Premises environment’s **Citrix Studio**, under the **Applications** node, confirm that the desired applications belong to the matching **Delivery Groups** by selecting the desired app and then right-clicking on the app to go to the **Properties** as follows:
 [![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-001.png)
 
-4.  Click the **Groups** node to confirm the groups the app in question belongs to:
+2.  Click the **Groups** node to confirm the groups the app in question belongs to:
 [![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-002.png)
 
-5.  Back on the **PowerShell console**, run the **Merge** command and use the **byDeliveryGroupName** flag, which filters the **Applications** by **Delivery Group** name. Complete Syntax example: ```Merge-CvadAcToSite –Applications $true –ByDeliveryGroupName <DG_name>```
+3.  Back on the **PowerShell console**, run the **Merge** command and use the **byDeliveryGroupName** flag, which filters the **Applications** by **Delivery Group** name. Complete Syntax example: ```Merge-CvadAcToSite –Applications $true –ByDeliveryGroupName <DG_name>```
 [![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-003.png)
 
-6.  Press **Return (Enter)** on your keyboard to run the command and type ```yes``` to continue.
+4.  Press **Return (Enter)** on your keyboard to run the command and type ```yes``` to continue.
 [![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-004.png)
 
-7.  Upon successful execution and completion, the output looks similar to the following:
+5.  Upon successful execution and completion, the output looks similar to the following:
 [![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-005.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-005.png)
 
-8.  On your **Cloud Studio** console, go to the **Applications** node and refresh to make sure the apps are listed as expected. Select the applications and go to **Application Properties > Groups** to double-check.
+6.  On your **Cloud Studio** console, go to the **Applications** node and refresh to make sure the apps are listed as expected. Select the applications and go to **Application Properties > Groups** to double-check.
 
 *  **Application Folders in Cloud Studio Before running the Migration tool**
 
@@ -181,7 +217,9 @@ You must ensure you create the **machine catalog** and **delivery group** using 
 
 *  **Note:** After performing these actions, follow the steps mentioned on the [Import your Site Configuration into Cloud section](#import-your-site-configuration-into-cloud) in this guide.
 
-### Importing MCS-related Policies
+### Dealing with Machine Creation Services (MCS): Importing MCS-related Policies
+
+**Note:** Policies can be applied to machines that are tagged.
 
 Once you’ve performed the previous actions, if you need to import policies associated with your **MCS Machine Catalogs** and your **Delivery groups**, follow these instructions:
 
