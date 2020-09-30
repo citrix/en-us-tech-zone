@@ -6,7 +6,7 @@ description: Citrix Gateway is the best secure remote access solution for Citrix
 
 ## Contributors
 
-**Author:** [Florin Lazurca](URL)
+**Author:** Florin Lazurca
 
 ## Overview
 
