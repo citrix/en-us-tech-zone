@@ -232,4 +232,3 @@ Citrix Gateway has the most integration points with Citrix Workspace of any HDX 
 *  Custom Availability Monitors – Deep application health monitoring of backend services running on the StoreFront and Delivery Controller servers
 
 **Author:** [Florin Lazurca](URL)
-
