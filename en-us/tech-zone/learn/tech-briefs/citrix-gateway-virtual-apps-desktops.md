@@ -28,7 +28,7 @@ Many organizations protect their internal network with a single DMZ (Figure 1), 
 
 ![Single Hop DMZ Diagram](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig1.png)
 
-Figure 1: Virtual App and Desktops with Citrix Gateway deployed in a single DMZ
+<div align="center">Figure 1: Virtual App and Desktops with Citrix Gateway deployed in a single DMZ</div>
 
 Some organizations use multiple firewalls or to protect their internal networks. The three firewalls in Figure 2 divide the DMZ into two stages (double-hop) to provide an extra layer of security for the internal network.
 
