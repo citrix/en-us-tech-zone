@@ -1,5 +1,6 @@
 ---
 layout: doc
+h3inToc: true
 description: Tech Paper focused on proper configuration, and recommendations for running an antivirus solution in Citrix Virtual Apps & Desktops environments. Recommended exclusions, configuration, and leading practices.
 ---
 # Endpoint Security and Antivirus Best Practices
