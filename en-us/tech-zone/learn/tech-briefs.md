@@ -16,7 +16,7 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 ## Citrix Gateway
 
-[Citrix Gateway]/en-us/tech-zone/learn/tech-briefs/citrix-gateway-virtual-apps-desktops.html) - Citrix Gateway is the best secure remote access solution for Citrix Workspace. It provides a myriad of unique integrations that enhance security and user experience. Moreover, Citrix Gateway consolidates access to any app, from any device, through a single URL.
+[Citrix Gateway](/en-us/tech-zone/learn/tech-briefs/citrix-gateway-virtual-apps-desktops.html) - Citrix Gateway is the best secure remote access solution for Citrix Workspace. It provides a myriad of unique integrations that enhance security and user experience. Moreover, Citrix Gateway consolidates access to any app, from any device, through a single URL.
 
 ## Citrix Managed Desktops
 
