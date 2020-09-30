@@ -26,13 +26,13 @@ Citrix Gateway is a hardened appliance (physical or virtual) that proxies and se
 
 Many organizations protect their internal network with a single DMZ (Figure 1), however multiple Citrix Gateway appliances can be deployed for more complex deployments requiring a double-hop DMZ (Figure 2).
 
-![Single Hop DMZ Diagram](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops-fig1.png)
+![Single Hop DMZ Diagram](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig1.png)
 
 Figure 1: Virtual App and Desktops with Citrix Gateway deployed in a single DMZ
 
 Some organizations use multiple firewalls or to protect their internal networks. The three firewalls in Figure 2 divide the DMZ into two stages (double-hop) to provide an extra layer of security for the internal network.
 
-![Double Hop DMZ Diagram](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops-fig2.png)
+![Double Hop DMZ Diagram](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig2.png)
 
 Figure 2: Virtual Apps and Desktops with Citrix Gateway deployed in a double-hop DMZ
 
@@ -47,7 +47,7 @@ Citrix ADC appliances configured for global server load balancing (GSLB) can bal
 
 In Figure 3, the ADCs use the Metric Exchange Protocol (MEP) and the DNS infrastructure to connect the users to the data center that best meets the criteria set by administrators. The criteria can designate the least loaded data center, the closest data center, the data center that responds most quickly to requests from the client’s location, a combination of those metrics, and SNMP metrics from server resources.
 
-![GSLB for CVAD](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops-fig3.png)
+![GSLB for CVAD](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig3.png)
 
 Figure 3: Global Server Load Balancing for Virtual Apps and Desktops
 
@@ -60,7 +60,7 @@ Citrix Gateway consolidates remote access authentication infrastructure for all 
 *  A better user experience that improves productivity
 *  Multifactor authentication that improves security
 
-![Citrix Gateway Single Sign On consolidation](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops-fig4.png)
+![Citrix Gateway Single Sign On consolidation](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig4.png)
 
 Figure 4: Citrix Gateway Single Sign On consolidation
 
@@ -75,7 +75,7 @@ Citrix Gateway authentication incorporates local and remote authentication for u
 
 Citrix Gateway also supports multifactor authentication solutions such RSA SecurID, Gemalto Protiva (Thales), Duo (Cisco), and SafeWord (Aladdin) using a RADIUS server configuration
 
-![Citrix Gateway nFactor options](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops-fig5.png)
+![Citrix Gateway nFactor options](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig5.png)
 
 Figure 5: Citrix Gateway nFactor options
 
@@ -110,13 +110,13 @@ System scans validate system level attributes such as MAC address or device cert
 SmartAccess uses EPA and session policies to modify user access. Citrix administrators can modify Citrix HDX connection behavior based on how users connect to Citrix Gateway. Some examples include disabling client drive mappings, disabling access to specific apps and desktops, and disabling access to printing.
 In Figure 6, a user logs on to Citrix Workspace through Citrix Gateway with personal device and fails the compliance scan. The results of the EPA scan performed by the Citrix Gateway are communicated with Citrix Workspace. Using SmartAccess, the Delivery Controller enforces the results of the scan and prohibits clipboard access and client drive mappings.
 
-![EPA scan with compliance fail](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops-fig6.gif)
+![EPA scan with compliance fail](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig6.gif)
 
 Figure 6: EPA scan with compliance fail
 
 In Figure 7, the same user connects to the same Citrix Gateway with a compliant device. The EPA results now allow clipboard access and client drive mappings.
 
-![EPA scan with compliance pass](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops-fig7.gif)
+![EPA scan with compliance pass](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig7.gif)
 
 Figure 7: EPA scan with compliance pass
 
@@ -128,7 +128,7 @@ SmartControl helps customers meet security requirements that stipulate that acce
 
 SmartAccess and SmartControl are similar, however, SmartControl is configured exclusively on Citrix Gateway, while SmartAccess requires configuration on both Citrix Gateway and inside Citrix Studio. When administrators want to make access policy decisions for the entire farm, they can use SmartControl to make the changes in a central location that would apply to the entire farm. One difference is that SmartAccess lets administrators control visibility of published icons, while SmartControl does not. Figure 8 compares SmartAccess and SmartControl feature support.
 
-![SmartAccess and SmartControl feature comparison](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops-fig8.png)
+![SmartAccess and SmartControl feature comparison](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig8.png)
 
 Figure 8: SmartAccess and SmartControl feature comparison
 
@@ -152,7 +152,7 @@ A recent optimization to HDX is the Citrix UDP-based reliable transport protocol
 
 EDT is built on top of UDP and improves data throughput for all ICA virtual channels, including Thinwire display remoting, file transfer (Client Drive Mapping), printing, multimedia redirection. When EDT is not available, EDT intelligently switches to TCP ICA to deliver the best performance. Citrix Gateway supports EDT and Datagram Transport Layer Security (DTLS) which must be enabled to encrypt the UDP connection used by EDT.
 
-![HDX Adaptive Transport](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops-fig9.png)
+![HDX Adaptive Transport](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig9.png)
 
 Figure 9: HDX Adaptive Transport
 
@@ -166,7 +166,7 @@ By parsing HDX traffic, HDX Insight can identify the source of delays and triage
 
 Figure 10 shows an example where a specific user has normal WAN latency buy high Data Center latency. This information is crucial to helping administrators triage a performance issue.
 
-![HDX Insight session visibility](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops-fig10.png)
+![HDX Insight session visibility](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig10.png)
 
 Figure 10: HDX Insight session visibility
 
@@ -185,7 +185,7 @@ Gateway Insight also provides visibility into the reasons for application launch
 *  Total bytes and bandwidth used by all gateways associated with a Citrix Gateway appliance at any given time
 *  Details of all users associated with a gateway and their logon activity
 
-![HDX Insight L7 session visibility](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops-fig11.png)
+![HDX Insight L7 session visibility](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig11.png)
 
 Figure 11: HDX Insight L7 session visibility
 
@@ -201,7 +201,7 @@ GSLB powered zone preference is a feature that integrates with Workspace, StoreF
 
 If the ADC is configured to insert the zone preference header, StoreFront 3.5 or later can use the information provided by the appliance to reorder the list of delivery controllers and connect to an optimal delivery controller in the same zone as the client. StoreFront selects the optimal gateway VPN virtual server for the selected datacenter zone, adds this information to the ICA file with appropriate IP addresses, and sends it to the client. Storefront then tries to launch applications hosted on the preferred datacenter’s delivery controllers before trying to contact equivalent controllers in other datacenters.
 
-![HDX Insight Optimized Gateway Routing](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops-fig12.png)
+![HDX Insight Optimized Gateway Routing](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig12.png)
 
 Figure 12: HDX Insight Optimized Gateway Routing
 
