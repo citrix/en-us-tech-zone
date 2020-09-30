@@ -14,10 +14,6 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [Analytics](/en-us/tech-zone/learn/tech-briefs/analytics.html) - Provide visibility into your environment to protect it from malicious users and to improve the end user experience proactively.
 
-## Citrix Gateway
-
-[Citrix Gateway](/en-us/tech-zone/learn/tech-briefs/citrix-gateway-virtual-apps-desktops.html) - Citrix Gateway is the best secure remote access solution for Citrix Workspace. It provides a myriad of unique integrations that enhance security and user experience. Moreover, Citrix Gateway consolidates access to any app, from any device, through a single URL.
-
 ## Citrix Managed Desktops
 
 [Citrix Managed Desktops](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Managed Desktops offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
