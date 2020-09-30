@@ -28,15 +28,13 @@ Many organizations protect their internal network with a single DMZ (Figure 1), 
 
 ![Single Hop DMZ Diagram](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig1.png)
 
-<div align="center">Figure 1: Virtual App and Desktops with Citrix Gateway deployed in a single DMZ</div>
-
+Figure 1: Virtual App and Desktops with Citrix Gateway deployed in a single DMZ
 
 Some organizations use multiple firewalls or to protect their internal networks. The three firewalls in Figure 2 divide the DMZ into two stages (double-hop) to provide an extra layer of security for the internal network.
 
 ![Double Hop DMZ Diagram](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig2.png)
 
-<div align="center">Figure 2: Virtual Apps and Desktops with Citrix Gateway deployed in a double-hop DMZ</div>
-
+Figure 2: Virtual Apps and Desktops with Citrix Gateway deployed in a double-hop DMZ
 
 Citrix administrators can deploy Citrix Gateway appliances in a double-hop DMZ to control access to servers running Citrix Virtual Apps and Desktops. In a double-hop deployment the security functions are split across the two appliances.
 The Citrix Gateway in the first DMZ handles user connections and performs the security functions such as encryption, authentication, and access to the servers in the internal network.
@@ -51,7 +49,7 @@ In Figure 3, the ADCs use the Metric Exchange Protocol (MEP) and the DNS infrast
 
 ![GSLB for CVAD](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig3.png)
 
-<div align="center">Figure 3: Global Server Load Balancing for Virtual Apps and Desktops</div>
+Figure 3: Global Server Load Balancing for Virtual Apps and Desktops
 
 ## Contextual Authentication (nFactor and EPA)
 
@@ -64,7 +62,7 @@ Citrix Gateway consolidates remote access authentication infrastructure for all 
 
 ![Citrix Gateway Single Sign On consolidation](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig4.png)
 
-<div align="center">Figure 4: Citrix Gateway Single Sign On consolidation</div>
+Figure 4: Citrix Gateway Single Sign On consolidation
 
 Citrix Gateway authentication incorporates local and remote authentication for users and groups. Citrix Gateway includes support for the following authentication types.
 
@@ -79,7 +77,7 @@ Citrix Gateway also supports multifactor authentication solutions such RSA Secur
 
 ![Citrix Gateway nFactor options](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig5.png)
 
-<div align="center">Figure 5: Citrix Gateway nFactor options</div>
+Figure 5: Citrix Gateway nFactor options
 
 ## nFactor Authentication
 
@@ -114,13 +112,13 @@ In Figure 6, a user logs on to Citrix Workspace through Citrix Gateway with pers
 
 ![EPA scan with compliance fail](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig6.gif)
 
-<div align="center">Figure 6: EPA scan with compliance fail</div>
+Figure 6: EPA scan with compliance fail
 
 In Figure 7, the same user connects to the same Citrix Gateway with a compliant device. The EPA results now allow clipboard access and client drive mappings.
 
 ![EPA scan with compliance pass](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig7.gif)
 
-<div align="center">Figure 7: EPA scan with compliance pass</div>
+Figure 7: EPA scan with compliance pass
 
 Using SmartAccess policies, administrators can identify the resources that should be available to the end user on a per user basis. This can be determined by factors such as the source IP range, specific registry key, or file on the user endpoint. Similarly, SmartAccess scans can be used to identify specific peripherals attached to a computer and show applications that require that device.
 
@@ -132,7 +130,7 @@ SmartAccess and SmartControl are similar, however, SmartControl is configured ex
 
 ![SmartAccess and SmartControl feature comparison](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig8.png)
 
-<div align="center">Figure 8: SmartAccess and SmartControl feature comparison</div>
+Figure 8: SmartAccess and SmartControl feature comparison
 
 SmartControl policies are designed to not enable any type of access if prohibited at the individual Delivery Controller level. The options are to default to the policy setting at the Delivery Controller level or prohibit a certain access even if it is allowed at the Delivery Controller. SmartAccess and SmartControl policies can be defined concurrently, and the most restrictive policy set will apply. Below is a list of SmartControl settings:
 
@@ -156,7 +154,7 @@ EDT is built on top of UDP and improves data throughput for all ICA virtual chan
 
 ![HDX Adaptive Transport](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig9.png)
 
-<div align="center">Figure 9: HDX Adaptive Transport</div>
+Figure 9: HDX Adaptive Transport
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=5iWffZOq57Y&feature=youtu.be):**
 
@@ -170,7 +168,7 @@ Figure 10 shows an example where a specific user has normal WAN latency buy high
 
 ![HDX Insight session visibility](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig10.png)
 
-<div align="center">Figure 10: HDX Insight session visibility</div>
+Figure 10: HDX Insight session visibility
 
 An important capability of HDX Insight is the ability to capture and display latency at the Layer 7 (L7). L7 latency calculation is done at the HDX layer and thus provides end-to-end latency detection regardless of the existence of TCP proxies. Looking at Figure 10 above, visibility into the application layers helps administrators diagnose latency by detecting that it is coming from apps and not the network for example in the situation of an overloaded server or backend.
 
@@ -189,7 +187,7 @@ Gateway Insight also provides visibility into the reasons for application launch
 
 ![HDX Insight L7 session visibility](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig11.png)
 
-<div align="center">Figure 11: HDX Insight L7 session visibility</div>
+Figure 11: HDX Insight L7 session visibility
 
 ## HDX Optimal Gateway Routing
 
@@ -205,7 +203,7 @@ If the ADC is configured to insert the zone preference header, StoreFront 3.5 or
 
 ![HDX Insight Optimized Gateway Routing](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig12.png)
 
-<div align="center">Figure 12: HDX Insight Optimized Gateway Routing</div>
+Figure 12: HDX Insight Optimized Gateway Routing
 
 ## Custom Availability Monitors
 
