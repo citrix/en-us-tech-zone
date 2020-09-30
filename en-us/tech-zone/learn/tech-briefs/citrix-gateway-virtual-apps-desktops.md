@@ -85,6 +85,132 @@ nFactor authentication enables dynamic authentication flows based on the user pr
 2. Multi-Tenant authentication endpoint: Some organizations use different Citrix Gateway login points for certificate and non-certificate users. With users using their own devices to log in, user’s access levels vary on the Citrix Gateway based on the device being used. Gateway can cater to different authentication needs on the same login point – reducing complexity and improving user experience.
 3. Authentication based on group membership: Some organizations obtain user properties from AD servers to determine authentication requirements which can vary for individual users. For example, group extraction can be used to determine if a user is an employee or a vendor and present the appropriate second factor authentication.
 
+## End Point Analysis Scans
+
+Endpoint Analysis (EPA) scans are used to check user device compliance to endpoint security requirements. They are policy-based pre-authentication and post-authentication scans configured on the Citrix Gateway appliance. EPA scans are an integral part of contextual authentication if the state of endpoint is involved in the authentication policies.
+
+When a user device tries to access Citrix Workspace through the Citrix Gateway appliance, the device is scanned for compliance before being granted access. For example, EPA can be used to check parameters such as operating system, antivirus, web browser, specific processes, file system or registry key, and user or device certificates.
+
+Administrators can configure two types of EPA scans using the OPSWAT EPA engine scan and a System scan using the Client Security engine. Using the OPSWAT EPA engine, administrators can configure product, vendor, and generic scans to check for a particular product offered by a particular vendor, a vendor in a specific category, or a category across all vendors and products respectively.
+
+System scans validate system level attributes such as MAC address or device certificates. Device certificates can be configured in nFactor as an EPA component and administrators can selectively allow or block access to corporate intranet resources based on device certificate authentication.
+
+## Contextual Access (SmartAccess)
+
+SmartAccess uses EPA and session policies to modify user access. Citrix administrators can modify Citrix HDX connection behavior based on how users connect to Citrix Gateway. Some examples include disabling client drive mappings, disabling access to specific apps and desktops, and disabling access to printing.
+In Figure 6, a user logs on to Citrix Workspace through Citrix Gateway with personal device and fails the compliance scan. The results of the EPA scan performed by the Citrix Gateway are communicated with Citrix Workspace. Using SmartAccess, the Delivery Controller enforces the results of the scan and prohibits clipboard access and client drive mappings.
+
+Figure 6: EPA scan with compliance fail
+
+In Figure 7, the same user connects to the same Citrix Gateway with a compliant device. The EPA results now allow clipboard access and client drive mappings.
+
+Figure 7: EPA scan with compliance pass
+
+Using SmartAccess policies, administrators can identify the resources that should be available to the end user on a per user basis. This can be determined by factors such as the source IP range, specific registry key, or file on the user endpoint. Similarly, SmartAccess scans can be used to identify specific peripherals attached to a computer and show applications that require that device.
+
+## Contextual Control (SmartControl)
+
+SmartControl helps customers meet security requirements that stipulate that access conditions are evaluated at the edge of the network. Customer security policies can require the ability to block access to resources even before a user has gained access to the corporate network. SmartControl can be used to block or allow certain components such as printer access, audio redirection, and client device drive redirection – at the Citrix Gateway.
+
+SmartAccess and SmartControl are similar, however, SmartControl is configured exclusively on Citrix Gateway, while SmartAccess requires configuration on both Citrix Gateway and inside Citrix Studio. When administrators want to make access policy decisions for the entire farm, they can use SmartControl to make the changes in a central location that would apply to the entire farm. One difference is that SmartAccess lets administrators control visibility of published icons, while SmartControl does not. Figure 8 compares SmartAccess and SmartControl feature support.
+
+Figure 8: SmartAccess and SmartControl feature comparison
+
+SmartControl policies are designed to not enable any type of access if prohibited at the individual Delivery Controller level. The options are to default to the policy setting at the Delivery Controller level or prohibit a certain access even if it is allowed at the Delivery Controller. SmartAccess and SmartControl policies can be defined concurrently, and the most restrictive policy set will apply. Below is a list of SmartControl settings:
+
+* Connect Client LPT Ports – Blocks LPT port redirection used for printers
+* Client Audio Redirection – Redirect audio from VDA to client device
+* Local Remote Data Sharing – Allows or disallows data sharing using Receiver HTML5
+* Client Clipboard Redirection – Redirects client clipboard contents to VDA
+* Client COM Port Redirection – Redirect COM (serial) ports from client to VDA
+* Client Drive Redirection – Redirect client drives from client to VDA
+* Client Printer Redirection – Redirects client printers from client to VDA
+* Multistream – Allow or disable multistream
+* Client USB Drive Redirection – Redirect USB drives from client to desktop VDA only
+
+## Adaptive Network Transport (EDT)
+
+Citrix HDX is a set of technologies that ensure an unparalleled user experience when connecting to a remote Citrix resource. With the HDX engine in the Citrix Workspace App and the HDX protocol, Citrix HDX lets users interact seamlessly with resources even in challenging network conditions.
+
+A recent optimization to HDX is the Citrix UDP-based reliable transport protocol called Enlightened Data Transport (EDT). EDT is faster, improves application interactivity, and is more interactive on challenging long-haul WAN and internet connections. EDT delivers a superior user experience by dynamically responding to changing network conditions while maintaining high server scalability and efficient use of bandwidth.
+
+EDT is built on top of UDP and improves data throughput for all ICA virtual channels, including Thinwire display remoting, file transfer (Client Drive Mapping), printing, multimedia redirection. When EDT is not available, EDT intelligently switches to TCP ICA to deliver the best performance. Citrix Gateway supports EDT and Datagram Transport Layer Security (DTLS) which must be enabled to encrypt the UDP connection used by EDT.
+
+Figure 9: HDX Adaptive Transport
+
+The following video demonstrates the user experience with and without EDT. 
+
+## End to End Monitoring (HDX Insight)
+
+Citrix HDX Insight provides end-to-end visibility for HDX traffic to Virtual Apps and Desktops passing through Citrix Gateway. Using Citrix Application Delivery Management (ADM), administrators can view real-time client and network latency metrics, historical reports, end-to-end performance data, and troubleshoot performance issues.
+
+By parsing HDX traffic, HDX Insight can identify the source of delays and triage issues which impact user performance. For example, a user may experience delays while accessing Citrix Virtual Apps and Desktops. To identify the root cause of the issue, administrators can use HDX Insight to analyze WAN Latency, Data Center Latency, and Host Delay and determine if the latency is on the server, data center network, or client network side.
+
+Figure 8 shows an example where a specific user has normal WAN latency buy high Data Center latency. This information is crucial to helping administrators triage a performance issue.
+
+Figure 10: HDX Insight session visibility
+
+An important capability of HDX Insight is the ability to capture and display latency at the Layer 7 (L7). L7 latency calculation is done at the HDX layer and thus provides end-to-end latency detection regardless of the existence of TCP proxies. Looking at Figure 8 above, visibility into the application layers helps administrators diagnose latency by detecting that it is coming from apps and not the network for example in the situation of an overloaded server or backend.
+
+The L7 latency thresholding actively detects end-to-end network latency issues at the application. This is contrasted to capturing Layer 4 network latency, which does not require HDX parsing but suffers from the major drawback of an incomplete view of latency end to end.
+Successful user logons, latency, and application-level details for virtual HDX applications and desktops are provided by HDX Insight. End-point analysis (EPA), authentication, single sign-on (SSO), and application launch failures for a user are available with Gateway Insight.
+Gateway Insight also provides visibility into the reasons for application launch failure for virtual applications. This enhances administrator’s ability to troubleshoot any kind of logon or application launch failure issues and also view the:
+
+* Number of applications launched
+* Number of total and active sessions
+* Number of total bytes and bandwidth consumed by the applications
+* Details of the users, sessions, bandwidth, and launch errors for an application
+* Number of gateways
+* Number of active sessions
+* Total bytes and bandwidth used by all gateways associated with a Citrix Gateway appliance at any given time
+* Details of all users associated with a gateway and their logon activity
+
+Figure 11: HDX Insight session visibility
+
+## HDX Optimal Gateway Routing
+
+Citrix delivers the best app and desktop user experience with Citrix Workspace. In a hybrid cloud deployment, customers simplify the user experience with Global Server Load Balancing (GSLB). GSLB makes it easy for users to access apps, desktops and data regardless of their location. But with multiple Citrix Gateways, customers ask: “how can we send users to specific data center where users’ unique data or backend application dependencies reside?”
+
+HDX Optimal Gateway Routing gives administrators the ability to point Citrix Gateway connections to zones. This ensures that the Citrix Gateway picks the zone it typically has the best connection as defined by the administrator. Using a technology such as GSLB also routes the user to the optimal Citrix Gateway based on their location, and that Gateway would be connected to a zone for complete optimal gateway routing.
+
+HDX Optimal Gateway Routing via Citrix Gateway and Storefront ensures that the user experience is both simple and consistent by de-coupling the authentication gateway from the optimal launch gateway. This ensures that users always launch their apps and desktops from the local gateway, thus ensuring a better user experience when working from anywhere, on any device.
+
+GSLB powered zone preference is a feature that integrates with Workspace, StoreFront, and the ADC appliance to provide user access to the most optimized data center on the basis of the user location. With this feature, the client IP address is examined when an HTTP request arrives at the Citrix Gateway appliance, and the real client IP address is used to create the datacenter preference list that is forwarded to StoreFront.
+
+If the ADC is configured to insert the zone preference header, StoreFront 3.5 or later can use the information provided by the appliance to reorder the list of delivery controllers and connect to an optimal delivery controller in the same zone as the client. StoreFront selects the optimal gateway VPN virtual server for the selected datacenter zone, adds this information to the ICA file with appropriate IP addresses, and sends it to the client. Storefront then tries to launch applications hosted on the preferred datacenter’s delivery controllers before trying to contact equivalent controllers in other datacenters.
+
+Figure 9: HDX Insight Optimized Gateway Routing
+
+## Custom Availability Monitors
+
+Citrix Gateway deployed with Citrix Workspace ensures the efficient delivery of applications. Using Citrix Gateway, incoming user requests from Citrix Workspace app can be load balanced between multiple StoreFront nodes in a server group. While some other solutions utilize simple ICMP-Ping or TCP port monitors, Citrix Gateway has deep application health monitoring of backend services running on the StoreFront and Delivery Controller servers.
+
+StoreFront services are monitored by probing a Windows service that runs on the StoreFront server. The Citrix Service Monitor Windows service has no other service dependencies and can monitor and report the failure of the following critical services on which StoreFront relies for correct operation:
+
+* W3SVC (IIS)
+* WAS (Windows Process Activation Service)
+* CitrixCredentialWallet
+* CitrixDefaultDomainService
+
+Citrix Gateway also has custom Delivery Controller monitors to make sure the Delivery Controllers are alive and responding before the Citrix Gateway load balances to the resource.  The monitors probe will validate a user’s credentials and confirm application enumeration to confirm whether the XML service is working. This prevents black hole scenarios where requests could be sent to an unresponsive server.
+
+ 
+## Summary
+
+Citrix Gateway has the most integration points with Citrix Workspace of any HDX proxy solutions. Citrix Gateway provides secure remote access to Citrix Virtual Apps and Desktops and is augmented with visibility and optimization features that are useful to ensure optimal user performance. The Citrix ADC which provides intelligent global server load balancing that enhances availability and user experience.
+
+* Contextual Authentication – Multifactor (nFactor) authentication to validate the user and device
+* Contextual Access – Control access to resources by modifying Citrix HDX connection behavior
+* Contextual Control – Control access to resources at the network edge modifying Citrix HDX connection behavior
+* End to End Monitoring- Identify the source of delays and triage issues which impact user performance
+* Adaptive Network Transport – Delivers a superior user experience by dynamically responding to changing network conditions
+* Optimal Routing – Ensure a better user experience by always launch apps and desktops from the local gateway
+* Custom Availability Monitors – Deep application health monitoring of backend services running on the StoreFront and Delivery Controller servers
+
+
+
+
+
 
 
 ## Contributors
