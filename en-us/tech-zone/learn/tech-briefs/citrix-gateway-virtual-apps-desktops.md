@@ -224,7 +224,7 @@ Citrix Gateway also has custom Delivery Controller monitors to make sure the Del
 
 ## Summary
 
-Citrix Gateway has the most integration points with Citrix Workspace of any HDX proxy solutions. Citrix Gateway provides secure remote access to Citrix Virtual Apps and Desktops and is augmented with visibility and optimization features that are useful to ensure optimal user performance. The Citrix ADC which provides intelligent global server load balancing that enhances availability and user experience.
+Citrix Gateway has the most integration points with Citrix Workspace of any HDX proxy solutions. Citrix Gateway provides secure remote access to Citrix Virtual Apps and Desktops and is augmented with visibility and optimization features that are useful to ensure optimal user performance. The Citrix ADC provides intelligent global server load balancing that enhances availability and user experience. The following features enhance security and user experience:
 
 *  Contextual Authentication – Multifactor (nFactor) authentication to validate the user and device
 *  Contextual Access – Control access to resources by modifying Citrix HDX connection behavior
