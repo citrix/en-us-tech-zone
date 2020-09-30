@@ -170,7 +170,7 @@ Citrix HDX Insight provides end-to-end visibility for HDX traffic to Virtual App
 
 By parsing HDX traffic, HDX Insight can identify the source of delays and triage issues which impact user performance. For example, a user may experience delays while accessing Citrix Virtual Apps and Desktops. To identify the root cause of the issue, administrators can use HDX Insight to analyze WAN Latency, Data Center Latency, and Host Delay. Using HDX Insight helps determine if the latency is on the server, data center network, or client network side.
 
-Figure 10 shows an example where a specific user has normal WAN latency buy high Data Center latency. This information is crucial to helping administrators triage a performance issue.
+Figure 10 shows an example where a specific user has normal WAN latency but high Data Center latency. This information is crucial to helping administrators triage a performance issue.
 
 ![HDX Insight session visibility](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig10.png)
 
