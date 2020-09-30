@@ -202,7 +202,7 @@ Citrix Gateway has the most integration points with Citrix Workspace of any HDX 
 * Contextual Authentication – Multifactor (nFactor) authentication to validate the user and device
 * Contextual Access – Control access to resources by modifying Citrix HDX connection behavior
 * Contextual Control – Control access to resources at the network edge modifying Citrix HDX connection behavior
-* End to End Monitoring- Identify the source of delays and triage issues which impact user performance
+* End to End Monitoring - Identify the source of delays and triage issues which impact user performance
 * Adaptive Network Transport – Delivers a superior user experience by dynamically responding to changing network conditions
 * Optimal Routing – Ensure a better user experience by always launch apps and desktops from the local gateway
 * Custom Availability Monitors – Deep application health monitoring of backend services running on the StoreFront and Delivery Controller servers
