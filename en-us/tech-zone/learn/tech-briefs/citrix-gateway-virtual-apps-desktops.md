@@ -84,8 +84,8 @@ Figure 5: Citrix Gateway nFactor options
 Citrix Gateway extends two-factor authentication with true multifactor capabilities and gives flexibility to administrators for authentication, authorization, and auditing. For example, dynamic login forms and on-failure actions are possible by using nFactor authentication.
 Administrators can configure two types of multifactor authentication on Citrix Gateway:
 
-* Two-factor authentication that requires users to log on by using two types of authentication
-* Cascading authentication that sets the authentication priority level
+*  Two-factor authentication that requires users to log on by using two types of authentication
+*  Cascading authentication that sets the authentication priority level
 
 If the Citrix Gateway deployment has multiple authentication servers, administrators can set the priority of the authentication polices. The priority levels determine the order in which order the authentication server validates users’ credentials. When administrators configure a cascade, the system traverses each authentication server to validate a user’s credentials.
 
@@ -211,10 +211,10 @@ Citrix Gateway deployed with Citrix Workspace ensures the efficient delivery of 
 
 StoreFront services are monitored by probing a Windows service that runs on the StoreFront server. The Citrix Service Monitor Windows service has no other service dependencies and can monitor and report the failure of the following critical services on which StoreFront relies for correct operation:
 
-* W3SVC (IIS)
-* WAS (Windows Process Activation Service)
-* CitrixCredentialWallet
-* CitrixDefaultDomainService
+*  W3SVC (IIS)
+*  WAS (Windows Process Activation Service)
+*  CitrixCredentialWallet
+*  CitrixDefaultDomainService
 
 Citrix Gateway also has custom Delivery Controller monitors to make sure the Delivery Controllers are alive and responding before the Citrix Gateway load balances to the resource.  The monitors probe will validate a user’s credentials and confirm application enumeration to confirm whether the XML service is working. This prevents black hole scenarios where requests could be sent to an unresponsive server.
 
@@ -222,15 +222,13 @@ Citrix Gateway also has custom Delivery Controller monitors to make sure the Del
 
 Citrix Gateway has the most integration points with Citrix Workspace of any HDX proxy solutions. Citrix Gateway provides secure remote access to Citrix Virtual Apps and Desktops and is augmented with visibility and optimization features that are useful to ensure optimal user performance. The Citrix ADC which provides intelligent global server load balancing that enhances availability and user experience.
 
-* Contextual Authentication – Multifactor (nFactor) authentication to validate the user and device
-* Contextual Access – Control access to resources by modifying Citrix HDX connection behavior
-* Contextual Control – Control access to resources at the network edge modifying Citrix HDX connection behavior
-* End to End Monitoring - Identify the source of delays and triage issues which impact user performance
-* Adaptive Network Transport – Delivers a superior user experience by dynamically responding to changing network conditions
-* Optimal Routing – Ensure a better user experience by always launch apps and desktops from the local gateway
-* Custom Availability Monitors – Deep application health monitoring of backend services running on the StoreFront and Delivery Controller servers
-
-## Contributors
+*  Contextual Authentication – Multifactor (nFactor) authentication to validate the user and device
+*  Contextual Access – Control access to resources by modifying Citrix HDX connection behavior
+*  Contextual Control – Control access to resources at the network edge modifying Citrix HDX connection behavior
+*  End to End Monitoring - Identify the source of delays and triage issues which impact user performance
+*  Adaptive Network Transport – Delivers a superior user experience by dynamically responding to changing network conditions
+*  Optimal Routing – Ensure a better user experience by always launch apps and desktops from the local gateway
+*  Custom Availability Monitors – Deep application health monitoring of backend services running on the StoreFront and Delivery Controller servers
 
 **Author:** [Florin Lazurca](URL)
 
