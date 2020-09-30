@@ -146,11 +146,11 @@ Citrix HDX Insight provides end-to-end visibility for HDX traffic to Virtual App
 
 By parsing HDX traffic, HDX Insight can identify the source of delays and triage issues which impact user performance. For example, a user may experience delays while accessing Citrix Virtual Apps and Desktops. To identify the root cause of the issue, administrators can use HDX Insight to analyze WAN Latency, Data Center Latency, and Host Delay and determine if the latency is on the server, data center network, or client network side.
 
-Figure 8 shows an example where a specific user has normal WAN latency buy high Data Center latency. This information is crucial to helping administrators triage a performance issue.
+Figure 10 shows an example where a specific user has normal WAN latency buy high Data Center latency. This information is crucial to helping administrators triage a performance issue.
 
 Figure 10: HDX Insight session visibility
 
-An important capability of HDX Insight is the ability to capture and display latency at the Layer 7 (L7). L7 latency calculation is done at the HDX layer and thus provides end-to-end latency detection regardless of the existence of TCP proxies. Looking at Figure 8 above, visibility into the application layers helps administrators diagnose latency by detecting that it is coming from apps and not the network for example in the situation of an overloaded server or backend.
+An important capability of HDX Insight is the ability to capture and display latency at the Layer 7 (L7). L7 latency calculation is done at the HDX layer and thus provides end-to-end latency detection regardless of the existence of TCP proxies. Looking at Figure 10 above, visibility into the application layers helps administrators diagnose latency by detecting that it is coming from apps and not the network for example in the situation of an overloaded server or backend.
 
 The L7 latency thresholding actively detects end-to-end network latency issues at the application. This is contrasted to capturing Layer 4 network latency, which does not require HDX parsing but suffers from the major drawback of an incomplete view of latency end to end.
 Successful user logons, latency, and application-level details for virtual HDX applications and desktops are provided by HDX Insight. End-point analysis (EPA), authentication, single sign-on (SSO), and application launch failures for a user are available with Gateway Insight.
@@ -179,7 +179,7 @@ GSLB powered zone preference is a feature that integrates with Workspace, StoreF
 
 If the ADC is configured to insert the zone preference header, StoreFront 3.5 or later can use the information provided by the appliance to reorder the list of delivery controllers and connect to an optimal delivery controller in the same zone as the client. StoreFront selects the optimal gateway VPN virtual server for the selected datacenter zone, adds this information to the ICA file with appropriate IP addresses, and sends it to the client. Storefront then tries to launch applications hosted on the preferred datacenter’s delivery controllers before trying to contact equivalent controllers in other datacenters.
 
-Figure 9: HDX Insight Optimized Gateway Routing
+Figure 12: HDX Insight Optimized Gateway Routing
 
 ## Custom Availability Monitors
 
