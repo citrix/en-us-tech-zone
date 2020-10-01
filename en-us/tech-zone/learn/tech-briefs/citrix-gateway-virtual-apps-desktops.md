@@ -119,9 +119,13 @@ SmartAccess is configured on both the Citrix Gateway and inside Citrix Studio. T
 
 ![EPA scan with compliance fail](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig13.gif)
 
+Figure 6: EPA scan with compliance pass and app is allowed
+
 In Figure 7, the same user logs on to Citrix Workspace through Citrix Gateway with personal device and fails the compliance scan.
 
 ![EPA scan with compliance fail](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig14.gif)
+
+Figure 7: EPA scan with compliance pass and app is allowed
 
 ## Contextual Access (SmartAccess and SmartControl)
 
