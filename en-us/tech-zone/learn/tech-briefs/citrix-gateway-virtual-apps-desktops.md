@@ -125,7 +125,7 @@ In Figure 7, the same user logs on to Citrix Workspace through Citrix Gateway wi
 
 ![EPA scan with compliance fail](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig14.gif)
 
-Figure 7: EPA scan with compliance pass and app is allowed
+Figure 7: EPA scan with compliance fail and app is restricted
 
 ## Contextual Access (SmartAccess and SmartControl)
 
