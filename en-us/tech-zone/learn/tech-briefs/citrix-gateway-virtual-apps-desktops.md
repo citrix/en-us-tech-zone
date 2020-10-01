@@ -17,7 +17,7 @@ Citrix Gateway enables encrypted and contextual access (authentication and autho
 The following integrations add value to a Citrix Workspace deployment:
 
 *  Contextual Authentication – Validate the user and device with multifactor (nFactor) authentication
-*  Contextual Authorization - Limit app and desktop availability based on the user, location, and device properties  
+*  Contextual Authorization - Limit app and desktop availability based on the user, location, and device properties
 *  Contextual Access -  Limit access to HDX capabilities by modifying Citrix HDX connection behavior
 *  End to End Monitoring – Identify the source of delays and triage issues which impact user performance
 *  Adaptive Network Transport – Deliver a superior user experience by dynamically responding to changing network conditions
@@ -111,7 +111,7 @@ System scans validate system level attributes such as MAC address or device cert
 
 ## Contextual Authorization (SmartAccess)
 
-SmartAccess uses EPA post-authentication policies to limit user access to apps and desktops. For example, a sensitive Human Resources application can be enabled or disabled when a user connects from a managed or unmanaged device respectively. 
+SmartAccess uses EPA post-authentication policies to limit user access to apps and desktops. For example, a sensitive Human Resources application can be enabled or disabled when a user connects from a managed or unmanaged device respectively.
 
 Using SmartAccess policies, administrators can identify the resources available on a per user and per app basis. Factors such as the end user, source IP range, specific registry key, or file on the user endpoint are used to determine if compliance is met. Similarly, SmartAccess scans can be used to identify specific peripherals attached to a computer and show applications that require that device.
 
@@ -244,7 +244,7 @@ Citrix Gateway also has custom Delivery Controller monitors to make sure the Del
 Citrix Gateway has the most integration points with Citrix Workspace of any HDX proxy solutions. Citrix Gateway provides secure remote access to Citrix Virtual Apps and Desktops and is augmented with visibility and optimization features that are useful to ensure optimal user performance. The Citrix ADC provides intelligent global server load balancing that enhances availability and user experience. The following features enhance security and user experience:
 
 *  Contextual Authentication – Multifactor (nFactor) authentication to validate the user and device
-*  Contextual Authorization - Limit app and desktop availability based on the user, location, and device properties  
+*  Contextual Authorization - Limit app and desktop availability based on the user, location, and device properties
 *  Contextual Access -  Limit access to HDX capabilities by modifying Citrix HDX connection behavior
 *  End to End Monitoring - Identify the source of delays and triage issues which impact user performance
 *  Adaptive Network Transport – Delivers a superior user experience by dynamically responding to changing network conditions
