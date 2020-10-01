@@ -17,7 +17,8 @@ Citrix Gateway enables encrypted and contextual access (authentication and autho
 The following integrations add value to a Citrix Workspace deployment:
 
 *  Contextual Authentication – Validate the user and device with multifactor (nFactor) authentication
-*  Contextual Authorization - SmartAccess and SmartControl dynamically limit access to resources by modifying Citrix HDX connection behavior
+*  Contextual Authorization - Limit app and desktop availabiltiy based on the user, location, and device properties  
+*  Contextual Access - Dynamically limit access to HDX capalabilites by modifying Citrix HDX connection behavior
 *  End to End Monitoring – Identify the source of delays and triage issues which impact user performance
 *  Adaptive Network Transport – Deliver a superior user experience by dynamically responding to changing network conditions
 *  Optimal Routing – Ensure a better user experience by always launching apps and desktops from the local gateway
@@ -109,7 +110,11 @@ Administrators can configure two types of EPA scans using the OPSWAT EPA engine 
 
 System scans validate system level attributes such as MAC address or device certificates. Device certificates can be configured in nFactor as an EPA component and administrators can selectively allow or block access to corporate intranet resources based on device certificate authentication.
 
-## Contextual Access (SmartAccess)
+## Contextual Authorization
+
+
+
+## Contextual Access (SmartAccess and SmartControl)
 
 SmartAccess uses EPA and session policies to modify user access. Citrix administrators can modify Citrix HDX connection behavior based on how users connect to Citrix Gateway. Some examples include disabling client drive mappings, disabling access to specific apps and desktops, and disabling access to printing.
 
@@ -126,8 +131,6 @@ In Figure 7, the same user connects to the same Citrix Gateway with a compliant 
 Figure 7: EPA scan with compliance pass
 
 Using SmartAccess policies, administrators can identify the resources to be available to the end user on a per user basis. These are determined by factors such as the source IP range, specific registry key, or file on the user endpoint. Similarly, SmartAccess scans can be used to identify specific peripherals attached to a computer and show applications that require that device.
-
-## Contextual Control (SmartControl)
 
 SmartControl helps customers meet security requirements that stipulate that access conditions are evaluated at the edge of the network. Customer security policies can require the ability to block access to resources even before a user has gained access to the corporate network. SmartControl can be used to block or allow certain components such as printer access, audio redirection, and client device drive redirection – at the Citrix Gateway.
 
