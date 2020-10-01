@@ -17,7 +17,7 @@ Citrix Gateway enables encrypted and contextual access (authentication and autho
 The following integrations add value to a Citrix Workspace deployment:
 
 *  Contextual Authentication – Validate the user and device with multifactor (nFactor) authentication
-*  Contextual Authorization - Limit app and desktop availabilty based on the user, location, and device properties  
+*  Contextual Authorization - Limit app and desktop availability based on the user, location, and device properties  
 *  Contextual Access -  Limit access to HDX capabilities by modifying Citrix HDX connection behavior
 *  End to End Monitoring – Identify the source of delays and triage issues which impact user performance
 *  Adaptive Network Transport – Deliver a superior user experience by dynamically responding to changing network conditions
