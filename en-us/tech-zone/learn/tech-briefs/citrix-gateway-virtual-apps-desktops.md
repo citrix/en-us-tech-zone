@@ -17,8 +17,7 @@ Citrix Gateway enables encrypted and contextual access (authentication and autho
 The following integrations add value to a Citrix Workspace deployment:
 
 *  Contextual Authentication – Validate the user and device with multifactor (nFactor) authentication
-*  Contextual Access – Control access to resources by modifying Citrix HDX connection behavior
-*  Contextual Control – Control access to resources by modifying Citrix HDX connection behavior at the network edge
+*  Contextual Authorization - SmartAccess and SmartControl dynamically limit access to resources by modifying Citrix HDX connection behavior
 *  End to End Monitoring – Identify the source of delays and triage issues which impact user performance
 *  Adaptive Network Transport – Deliver a superior user experience by dynamically responding to changing network conditions
 *  Optimal Routing – Ensure a better user experience by always launching apps and desktops from the local gateway
@@ -231,8 +230,7 @@ Citrix Gateway also has custom Delivery Controller monitors to make sure the Del
 Citrix Gateway has the most integration points with Citrix Workspace of any HDX proxy solutions. Citrix Gateway provides secure remote access to Citrix Virtual Apps and Desktops and is augmented with visibility and optimization features that are useful to ensure optimal user performance. The Citrix ADC provides intelligent global server load balancing that enhances availability and user experience. The following features enhance security and user experience:
 
 *  Contextual Authentication – Multifactor (nFactor) authentication to validate the user and device
-*  Contextual Access – Control access to resources by modifying Citrix HDX connection behavior
-*  Contextual Control – Control access to resources at the network edge modifying Citrix HDX connection behavior
+*  Contextual Authorization - SmartAccess and SmartControl dynamically limit access to resources by modifying Citrix HDX connection behavior
 *  End to End Monitoring - Identify the source of delays and triage issues which impact user performance
 *  Adaptive Network Transport – Delivers a superior user experience by dynamically responding to changing network conditions
 *  Optimal Routing – Ensure a better user experience by always launch apps and desktops from the local gateway
