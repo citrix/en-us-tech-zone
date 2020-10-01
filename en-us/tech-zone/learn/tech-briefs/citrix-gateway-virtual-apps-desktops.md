@@ -84,7 +84,7 @@ Citrix Gateway also supports multifactor authentication solutions such RSA Secur
 
 Figure 5: Citrix Gateway nFactor options
 
-## nFactor Authentication
+### nFactor Authentication
 
 Citrix Gateway extends two-factor authentication with true multifactor capabilities and gives flexibility to administrators for authentication, authorization, and auditing. For example, dynamic login forms and on-failure actions are possible by using nFactor authentication.
 Administrators can configure two types of multifactor authentication on Citrix Gateway:
@@ -100,7 +100,7 @@ nFactor authentication enables dynamic authentication flows based on the user pr
 2.  Multitenant authentication endpoint: Some organizations use different Citrix Gateway login points for certificate and non-certificate users. With users using their own devices to log in, user’s access levels vary on the Citrix Gateway based on the device being used. Gateway can cater to different authentication needs on the same login point – reducing complexity and improving user experience.
 3.  Authentication based on group membership: Some organizations obtain user properties from AD servers to determine authentication requirements which can vary for individual users. For example, group extraction can be used to determine if a user is an employee or a vendor and present the appropriate second factor authentication.
 
-## End Point Analysis Scans
+### End Point Analysis Scans
 
 Endpoint Analysis (EPA) scans are used to check user device compliance to endpoint security requirements. They are policy-based pre-authentication and post-authentication scans configured on the Citrix Gateway appliance. EPA scans are a part of contextual authentication if the state of the endpoint is involved in the authentication policies.
 
