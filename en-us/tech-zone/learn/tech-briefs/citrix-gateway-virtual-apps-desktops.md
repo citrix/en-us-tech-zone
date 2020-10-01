@@ -115,13 +115,13 @@ SmartAccess uses EPA post-authentication policies to limit user access to apps a
 
 Using SmartAccess policies, administrators can identify the resources available on a per user and per app basis. Factors such as the end user, source IP range, specific registry key, or file on the user endpoint are used to deterimin if compliance is met. Similarly, SmartAccess scans can be used to identify specific peripherals attached to a computer and show applications that require that device.
 
-SmartAccess is configured on both the Citrix Gateway and inside Citrix Studio. The results of an EPA scan are matched to the corrosesponding access policies in Citrix Studio. In Figure 6, a user logs on to Citrix Workspace through Citrix Gateway with managed device and passes the compliance scan.
+SmartAccess is configured on both the Citrix Gateway and inside Citrix Studio. The results of an EPA scan are matched to the corrosesponding access policies in Citrix Studio. In Figure 6, a user logs on to Citrix Workspace through Citrix Gateway with managed device and passes the compliance scan. Since the scan passed, the associated Citrix Gateway virtual server and session policy trigger the Citrix Studio policy to enable access for the app.
 
 ![EPA scan with compliance fail](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig13.gif)
 
 Figure 6: EPA scan with compliance pass and app is allowed
 
-In Figure 7, the same user logs on to Citrix Workspace through Citrix Gateway with personal device and fails the compliance scan.
+In Figure 7, the same user logs on to Citrix Workspace through Citrix Gateway with personal device and fails the compliance scan. Conversly, failing the EPA scan doesnt not trigger the enabling of the app for this user and device.
 
 ![EPA scan with compliance fail](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig14.gif)
 
@@ -129,7 +129,7 @@ Figure 7: EPA scan with compliance pass and app is allowed
 
 ## Contextual Access (SmartAccess and SmartControl)
 
-Citrix administrators can modify Citrix HDX connection behavior based on how users connect to Citrix Gateway. Some examples include disabling client drive mappings, disabling access to specific apps and desktops, and disabling access to printing.
+Citrix administrators can also modify Citrix HDX connection behavior based on how users connect to Citrix Gateway. Some examples include disabling client drive mappings, disabling access to specific apps and desktops, and disabling access to printing.
 
 In Figure 8, a user logs on to Citrix Workspace through Citrix Gateway with personal device and fails the compliance scan. The results of the EPA scan performed by the Citrix Gateway are communicated with Citrix Workspace. Using SmartAccess, the Delivery Controller enforces the results of the scan and prohibits clipboard access and client drive mappings.
 
