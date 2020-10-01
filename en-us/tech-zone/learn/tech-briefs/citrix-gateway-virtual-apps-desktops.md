@@ -18,7 +18,7 @@ The following integrations add value to a Citrix Workspace deployment:
 
 *  Contextual Authentication – Validate the user and device with multifactor (nFactor) authentication
 *  Contextual Authorization - Limit app and desktop availabiltiy based on the user, location, and device properties  
-*  Contextual Access - Dynamically limit access to HDX capalabilites by modifying Citrix HDX connection behavior
+*  Contextual Access -  Limit access to HDX capalabilites by modifying Citrix HDX connection behavior
 *  End to End Monitoring – Identify the source of delays and triage issues which impact user performance
 *  Adaptive Network Transport – Deliver a superior user experience by dynamically responding to changing network conditions
 *  Optimal Routing – Ensure a better user experience by always launching apps and desktops from the local gateway
@@ -78,7 +78,7 @@ Citrix Gateway authentication incorporates local and remote authentication for u
 *  TACACS+
 *  Client certificate authentication (including smart card authentication)
 
-Citrix Gateway also supports multifactor authentication solutions such RSA SecurID, Gemalto Protiva (Thales), Duo (Cisco), and SafeWord (Aladdin) using a RADIUS server configuration
+Citrix Gateway also supports multifactor authentication solutions such RSA SecurID, Gemalto Protiva (Thales), Duo (Cisco), and SafeWord (Aladdin) using a RADIUS server configuration.
 
 ![Citrix Gateway nFactor options](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig5.png)
 
@@ -86,8 +86,7 @@ Figure 5: Citrix Gateway nFactor options
 
 ### nFactor Authentication
 
-Citrix Gateway extends two-factor authentication with true multifactor capabilities and gives flexibility to administrators for authentication, authorization, and auditing. For example, dynamic login forms and on-failure actions are possible by using nFactor authentication.
-Administrators can configure two types of multifactor authentication on Citrix Gateway:
+Citrix Gateway extends two-factor authentication with true multifactor capabilities and gives flexibility to administrators for authentication, authorization, and auditing. For example, dynamic login forms and on-failure actions are possible by using nFactor authentication. Administrators can configure two types of multifactor authentication on Citrix Gateway:
 
 *  Two-factor authentication that requires users to log on by using two types of authentication
 *  Cascading authentication that sets the authentication priority level
@@ -96,8 +95,8 @@ If the Citrix Gateway deployment has multiple authentication servers, administra
 
 nFactor authentication enables dynamic authentication flows based on the user profile. The flows can be simple, or they can be coupled with more complex security requirements using other authentication servers. The following are some use cases enabled by Citrix Gateway:
 
-1.  Dynamic user name and password selection: Traditionally, the Citrix clients (including Browsers and the Workspace App) use the Active Directory (AD) password as the first password field. The second password is reserved for the One-Time-Password (OTP). However, to secure AD servers against brute force and lockout attacks, customers can require that the second factor such as OTP is to be validated first. nFactor can do this without requiring client modifications.
-2.  Multitenant authentication endpoint: Some organizations use different Citrix Gateway login points for certificate and non-certificate users. With users using their own devices to log in, user’s access levels vary on the Citrix Gateway based on the device being used. Gateway can cater to different authentication needs on the same login point – reducing complexity and improving user experience.
+1.  Dynamic user name and password selection: Traditionally, the Citrix clients (including browsers and the Workspace app) use the Active Directory (AD) password as the first password field. The second password is reserved for the One-Time-Password (OTP). However, to secure AD servers against brute force and lockout attacks, customers can require that the second factor such as OTP is to be validated first. nFactor can do this without requiring client modifications.
+2.  Multitenant authentication endpoint: Some organizations use different Citrix Gateway login points for certificate and non-certificate users. With users using their own devices to log in, their access levels can vary on the Citrix Gateway based on the device being used. Citrix Gateway can cater to different authentication needs on the same login point – reducing complexity and improving user experience.
 3.  Authentication based on group membership: Some organizations obtain user properties from AD servers to determine authentication requirements which can vary for individual users. For example, group extraction can be used to determine if a user is an employee or a vendor and present the appropriate second factor authentication.
 
 ### End Point Analysis Scans
@@ -112,33 +111,45 @@ System scans validate system level attributes such as MAC address or device cert
 
 ## Contextual Authorization
 
+SmartAccess uses EPA post-authentication policies to limit user access to apps and desktops. For example, a sensitive Human Resources application can be enabled or disabled if a user connects from a managed or unmanaged device respectivley. 
 
+Using SmartAccess policies, administrators can identify the resources to be available to the end user on a per user and per app basis. These are determined by factors such as the end user, source IP range, specific registry key, or file on the user endpoint. Similarly, SmartAccess scans can be used to identify specific peripherals attached to a computer and show applications that require that device.
+
+SmartAccess is configured on both the Citrix Gateway and inside Citrix Studio. The results of an EPA scan are matched to the corrosespoint access policies oinCitrix Studio. In Figure 6
+
+
+![EPA scan with compliance fail](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig13.gif)
+
+
+
+
+In Figure 7
+
+![EPA scan with compliance fail](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig14.gif)
 
 ## Contextual Access (SmartAccess and SmartControl)
 
-SmartAccess uses EPA and session policies to modify user access. Citrix administrators can modify Citrix HDX connection behavior based on how users connect to Citrix Gateway. Some examples include disabling client drive mappings, disabling access to specific apps and desktops, and disabling access to printing.
+. Citrix administrators can modify Citrix HDX connection behavior based on how users connect to Citrix Gateway. Some examples include disabling client drive mappings, disabling access to specific apps and desktops, and disabling access to printing.
 
-In Figure 6, a user logs on to Citrix Workspace through Citrix Gateway with personal device and fails the compliance scan. The results of the EPA scan performed by the Citrix Gateway are communicated with Citrix Workspace. Using SmartAccess, the Delivery Controller enforces the results of the scan and prohibits clipboard access and client drive mappings.
+In Figure 8, a user logs on to Citrix Workspace through Citrix Gateway with personal device and fails the compliance scan. The results of the EPA scan performed by the Citrix Gateway are communicated with Citrix Workspace. Using SmartAccess, the Delivery Controller enforces the results of the scan and prohibits clipboard access and client drive mappings.
 
 ![EPA scan with compliance fail](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig6.gif)
 
-Figure 6: EPA scan with compliance fail
+Figure 8: EPA scan with compliance fail
 
-In Figure 7, the same user connects to the same Citrix Gateway with a compliant device. The EPA results now allow clipboard access and client drive mappings.
+In Figure 9, the same user connects to the same Citrix Gateway with a compliant device. The EPA results now allow clipboard access and client drive mappings.
 
 ![EPA scan with compliance pass](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig7.gif)
 
-Figure 7: EPA scan with compliance pass
-
-Using SmartAccess policies, administrators can identify the resources to be available to the end user on a per user basis. These are determined by factors such as the source IP range, specific registry key, or file on the user endpoint. Similarly, SmartAccess scans can be used to identify specific peripherals attached to a computer and show applications that require that device.
+Figure 9: EPA scan with compliance pass
 
 SmartControl helps customers meet security requirements that stipulate that access conditions are evaluated at the edge of the network. Customer security policies can require the ability to block access to resources even before a user has gained access to the corporate network. SmartControl can be used to block or allow certain components such as printer access, audio redirection, and client device drive redirection – at the Citrix Gateway.
 
-SmartAccess and SmartControl are similar, however, SmartControl is configured exclusively on Citrix Gateway, while SmartAccess requires configuration on both Citrix Gateway and inside Citrix Studio. When administrators want to make access policy decisions for the entire farm, they can use SmartControl on Citrix Gateway that applies to the entire farm. One difference is that SmartAccess lets administrators control the visibility of published icons, while SmartControl does not. Figure 8 compares SmartAccess and SmartControl feature support.
+SmartAccess and SmartControl are similar, however, SmartControl is configured exclusively on Citrix Gateway, while SmartAccess requires configuration on both Citrix Gateway and inside Citrix Studio. When administrators want to make access policy decisions for the entire farm, they can use SmartControl on Citrix Gateway that applies to the entire farm. One difference is that SmartAccess lets administrators control the visibility of published icons, while SmartControl does not. Figure 10 compares SmartAccess and SmartControl feature support.
 
 ![SmartAccess and SmartControl feature comparison](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig8.png)
 
-Figure 8: SmartAccess and SmartControl feature comparison
+Figure 10: SmartAccess and SmartControl feature comparison
 
 SmartControl policies are designed to not enable any type of access if prohibited at the individual Delivery Controller level. The options are to default to the policy setting at the Delivery Controller level or prohibit a certain access even if it is allowed at the Delivery Controller. SmartAccess and SmartControl policies can be defined concurrently, and the most restrictive policy set is applied. Below is a list of SmartControl settings:
 
@@ -162,7 +173,7 @@ EDT is built on top of UDP and improves data throughput for all ICA virtual chan
 
 ![HDX Adaptive Transport](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig9.png)
 
-Figure 9: HDX Adaptive Transport
+Figure 11: HDX Adaptive Transport
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=5iWffZOq57Y&feature=youtu.be):**
 
@@ -172,11 +183,11 @@ Citrix HDX Insight provides end-to-end visibility for HDX traffic to Virtual App
 
 By parsing HDX traffic, HDX Insight can identify the source of delays and triage issues which impact user performance. For example, a user may experience delays while accessing Citrix Virtual Apps and Desktops. To identify the root cause of the issue, administrators can use HDX Insight to analyze WAN Latency, Data Center Latency, and Host Delay. Using HDX Insight helps determine if the latency is on the server, data center network, or client network side.
 
-Figure 10 shows an example where a specific user has normal WAN latency but high Data Center latency. This information is crucial to helping administrators triage a performance issue.
+Figure 12 shows an example where a specific user has normal WAN latency but high Data Center latency. This information is crucial to helping administrators triage a performance issue.
 
 ![HDX Insight session visibility](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig10.png)
 
-Figure 10: HDX Insight session visibility
+Figure 12: HDX Insight session visibility
 
 An important capability of HDX Insight is the ability to capture and display latency at the Layer 7 (L7). L7 latency calculation is done at the HDX layer and thus provides end-to-end latency detection regardless of the existence of TCP proxies. Looking at Figure 10, visibility into the application layers helps administrators diagnose latency by detecting that it is coming from apps and not the network for example in the situation of an overloaded server or back end.
 
@@ -197,7 +208,7 @@ Gateway Insight also provides visibility into the reasons for application launch
 
 ![HDX Insight L7 session visibility](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig11.png)
 
-Figure 11: HDX Insight L7 session visibility
+Figure 13: HDX Insight L7 session visibility
 
 ## HDX Optimal Gateway Routing
 
@@ -213,7 +224,7 @@ If the ADC is configured to insert the zone preference header, StoreFront 3.5 or
 
 ![HDX Insight Optimized Gateway Routing](/en-us/tech-zone/learn/media/tech-briefs_citrix-gateway-virtual-apps-desktops_fig12.png)
 
-Figure 12: HDX Insight Optimized Gateway Routing
+Figure 14: HDX Insight Optimized Gateway Routing
 
 ## Custom Availability Monitors
 
