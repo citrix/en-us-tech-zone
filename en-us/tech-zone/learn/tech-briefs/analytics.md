@@ -162,7 +162,7 @@ The Share Links dashboard is the launching point into share event analysis and t
 
 Administrators can create custom reports from the events received in your data sources. Currently, the supported data sources for custom reports include Access Control, Content Collaboration, and Virtual Apps and Desktops. More information on how to create custom reports can be found [here](/en-us/security-analytics/create-custom-report.html).
 
-[![Report](/en-us/tech-zone/learn/media/tech-briefs_analytics_report.png)](/en-us/tech-zone/learn/media/tech-briefs_analytics_repoort.png)
+[![Report](/en-us/tech-zone/learn/media/tech-briefs_analytics_report.png)](/en-us/tech-zone/learn/media/tech-briefs_analytics_report.png)
 
 ## Citrix Analytics for Performance
 
