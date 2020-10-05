@@ -130,7 +130,7 @@ Extra steps are required to import your **PVS Catalogs** and their corresponding
 [Import your Site Configuration into Cloud section](#import-your-site-configuration-into-cloud) in this guide.
 
 1.  Run **PowerShell** as an Administrator
-2.  Type the following command ```Export-CvadAcToFile -all $true``` and press **Return (Enter)** on your keyboard.
+2.  Type the following command ```Export-CvadAcToFile``` and press **Return (Enter)** on your keyboard.
 [![Provisioning Method PVS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-001.png)
 
 3.  Successfully completed items show in green ```OK```. Once the tool finishes running, a screen like the following shows up:
@@ -183,7 +183,7 @@ Follow these steps to prepare your environment, before proceeding to import the 
 3.  Next in **Cloud Studio**, create the corresponding **Delivery Group** for the new Catalog and ensure you name it exactly after the corresponding **On-Premises Delivery Group** as well. **Note:** For more details on how to create your **Machine Catalogs** and **Delivery Groups**, refer to [this guide/en-us/tech-zone/learn/poc-guides/cvads.html).
 
 4.  Follow the instructions on how to import applications, groups, folders and tags as described on this section
-5.  Last, make sure to update the ListOfDDCs registry entry in order to switch over and have the machines register agaisnt the cloud connectors. This step can be done once all the objects exist. This registry entry should be changed to point to the Citrix Cloud Connector FQDNs or IP address and it can be done either manually or just in the registry or through a group policy.
+5.  Last, make sure to update the ListOfDDCs registry entry in order to switch over and have the machines register against the cloud connectors. This step can be performed once all the objects exist already. This registry entry should be changed to point to the Citrix Cloud Connector FQDNs or IP address and it can be done either manually in the registry or through a group policy.
 
 ## Dealing with Machine Creation Services (MCS): Importing Applications, Application Groups, Folders and Tags
 
