@@ -183,7 +183,7 @@ Follow these steps to prepare your environment, before proceeding to import the 
 3.  Next in **Cloud Studio**, create the corresponding **Delivery Group** for the new Catalog and ensure you name it exactly after the corresponding **On-Premises Delivery Group** as well. **Note:** For more details on how to create your **Machine Catalogs** and **Delivery Groups**, refer to [this guide/en-us/tech-zone/learn/poc-guides/cvads.html).
 
 4.  Follow the instructions on how to import applications, groups, folders and tags as described on this section
-5.  Last, make sure to update the ListOfDDCs registry entry in order to switch over and have the machines register against the cloud connectors. This step can be performed once all the objects exist already. This registry entry should be changed to point to the Citrix Cloud Connector FQDNs or IP address and it can be done either manually in the registry or through a group policy.
+5.  Once all the objects exist already, make sure to update the ListOfDDCs registry entry in order to point to the Citrix Cloud Connector FQDNs or IP addresses. This can be done either manually in the registry or through a group policy and the purpose is to have the machines register against the Cloud Connectors.
 
 ## Dealing with Machine Creation Services (MCS): Importing Applications, Application Groups, Folders and Tags
 
