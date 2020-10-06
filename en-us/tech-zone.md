@@ -135,6 +135,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
+[Citrix Gateway and Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/tech-briefs/citrix-gateway-virtual-apps-desktops.html) - Learn why Citrix Gateway is the best secure remote access solution for Citrix Virtual Apps and Desktops.
+
 [Gateway service for HDX Proxy](/en-us/tech-zone/learn/tech-briefs/gateway-hdxproxy.html) - Provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls.
 
 [Intelligent Traffic Management](/en-us/tech-zone/learn/tech-briefs/itm.html) - Citrix Intelligent Traffic Management (ITM) service brings “intelligence” to DNS by incorporating a broad set of capabilities to determine the best query response based on analysis of real time conditions.
