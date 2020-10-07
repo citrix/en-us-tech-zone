@@ -12,13 +12,13 @@ description: This Proof of Concept guide provides instructions on using an Autom
 
 ## Overview
 
-The [Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) facilitates migrating and exporting configurations to the **Citrix Virtual Apps and Desktop Service** (CVADs). This Proof of Concept guide illustrates the step by step instructions on how to use this tool.
+The [Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) facilitates migrating and exporting configurations to the **Citrix Virtual Apps and Desktop Service** (CVADS). This Proof of Concept guide illustrates the step by step instructions on how to use this tool.
 
-Administrators can easily test and explore the **Citrix Virtual Apps and Desktop Service** (CVADs) features and advantages, while simultaneously running existing On-Premises environments and even facilitate moves between cloud regions, back up existing configurations, and other use cases. The [Automated Configuration download link](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) also contains **additional information** and **detailed documentation** on said **use cases** and **customizations**.
+Administrators can easily test and explore the **Citrix Virtual Apps and Desktop Service** (CVADS) features and advantages, while simultaneously running existing On-Premises environments and even facilitate moves between cloud regions, back up existing configurations, and other use cases. The [Automated Configuration download link](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) also contains **additional information** and **detailed documentation** on said **use cases** and **customizations**.
 
 ### What is the Automated Configuration tool for Citrix Virtual Apps and Desktops?
 
-This tool is designed to help automate the migration of **CVAD** configuration (policies, applications, catalogs, and others) from one or more On-Premises site(s) to the **Citrix Virtual Apps and Desktop service** (CVADs) hosted on Citrix Cloud. It can also be used to migrate information between **different Cloud regions** or **tenants**.
+This tool is designed to help automate the migration of **CVAD** configuration (policies, applications, catalogs, and others) from one or more On-Premises site(s) to the **Citrix Virtual Apps and Desktop service** (CVADS) hosted on Citrix Cloud. It can also be used to migrate information between **different Cloud regions** or **tenants**.
 
 The migration can be performed in stages by running the tool multiple times, allowing administrators to easily achieve the desired configuration state.
 
@@ -26,11 +26,11 @@ The migration can be performed in stages by running the tool multiple times, all
 
 IT Administrators in charge of large or complex environments often find migrations to be a tedious process. They frequently end up writing their own tools to accomplish this task successfully since it tends to be specific to their use cases.
 
-Citrix wants to help ease this process by providing a tool that addresses use cases through automation. Administrators can easily test current configurations in **Citrix Cloud** and take advantage of the benefits offered by **CVADs** while keeping their current environments intact. Such benefits include reduced administrative overload when Citrix manages part of the back-end and control plane, automatic and customizable **Citrix Cloud** component updates, and others.
+Citrix wants to help ease this process by providing a tool that addresses use cases through automation. Administrators can easily test current configurations in **Citrix Cloud** and take advantage of the benefits offered by **CVADS** while keeping their current environments intact. Such benefits include reduced administrative overload when Citrix manages part of the back-end and control plane, automatic and customizable **Citrix Cloud** component updates, and others.
 
 ### How is this tool implemented?
 
-Citrix has leveraged industry standard configuration as code to provide a mechanism to help automate migration processes. This tool discovers and exports one or more on-premises sites as **a collection of configuration files**, which administrators can optionally edit, and then import these files' configuration into CVADs.
+Citrix has leveraged industry standard configuration as code to provide a mechanism to help automate migration processes. This tool discovers and exports one or more on-premises sites as **a collection of configuration files**, which administrators can optionally edit, and then import these files' configuration into CVADS.
 
 This code is not limited to migrations, it is the future for creating configuration for Citrix sites, and as such, applicable for **many different use cases**. Disaster recovery, Development/Testing/Staging to Production site synchronization, Geographic (GEO) moves, and several other scenarios are supported. For administrators using public cloud providers, this can help create a combination of objects automatically (parallel to Microsoft Azure ARM templates and AWS CloudFormation).
 
@@ -38,7 +38,7 @@ This code is not limited to migrations, it is the future for creating configurat
 
 ### On-Premises environment
 
-*  CVAD On-Premises environment with **at least one registered VDA**.
+*  Citrix Virtual Apps and Desktops (CVAD) On-Premises environment with **at least one registered VDA**.
 *  CVAD On-Premises environment running on one of the following versions: Any **Long Term Service Release (LTSR)** versions with their latest CU (7.6, 7.15, 1912); Or one of the corresponding latest two **Current Releases (CR)** versions (for example: 2003, 2006).
 *  The domain-joined machine where you plan on running the **Automated Configuration tool commands** must be running **.NET 4.7.2 version or higher**.
 *  A machine with the **Citrix PowerShell SDK**, which is automatically installed on the DDC. **Note:** If running the tool on a different machine, it must be domain-joined and **Studio** must have the correct **PowerShell snap-ins** installed. This installer can be found on your corresponding version’s **Product ISO installation media**, which can be obtained from the [**Citrix Downloads > Citrix Virtual Apps and Desktops**](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/) website.
@@ -47,7 +47,7 @@ This code is not limited to migrations, it is the future for creating configurat
 
 ### Cloud-related components
 
-*  Valid **CVADs** or **Workspace Premium Plus** licenses.
+*  Valid **CVADS** or **Workspace Premium Plus** licenses.
 *  Administrator must be able to log into the [Cloud Portal](https://citrix.cloud.com) and obtain: The **resource location name**, **customer ID**, **client Secret** (**app ID** and **Secret Key**)
 *  The existing Citrix Cloud **Resource Location** has at least **one Cloud Connector**, which is marked as green (Healthy) and is part of the same domain as the On-Premises setup. **Note:** Citrix recommends having **two or more Cloud Connectors** (for redundancy and High Availability). For information on how to set up your Cloud Connectors, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html).
 
@@ -147,7 +147,7 @@ Extra steps are required to import your **PVS Catalogs** and their corresponding
 
 Currently, this tool does not support importing MCS machine catalogs or their corresponding delivery groups in an automated way. However, you can still import other configuration such as Applications, policies and others automatically using this tool.
 
-You must create the Hosting Connection, Machine Catalogs, Delivery Groups, and Power Schemes manually. Catalog and Delivery group names must match your On-Premises setup. After these reosurces are created, you can automate the Applications, Application Groups, Application Folders, Tag creation and Policies by using the Automated Configuration tool.
+You must create the Hosting Connection, Machine Catalogs, Delivery Groups, and Power Schemes manually. Catalog and Delivery group names must match your On-Premises setup. After these resources are created, you can automate the Applications, Application Groups, Application Folders, Tag creation and Policies by using the Automated Configuration tool.
 
 Follow these steps to prepare your environment, before proceeding to import the **Application** settings:
 
@@ -156,7 +156,7 @@ Follow these steps to prepare your environment, before proceeding to import the 
 2.  In your [Cloud portal](https://citrix.cloud.com), create your **Hosting Connection** as you normally would.
 **Note:** If needed, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html) for information on how to set up your Hosting Connection.
 
-3.  Still in **Cloud Studio** create your **MCS machine Catalog** as you normally would and name it **exactly** the **same way** your existing On-Premises catalog is named. Select the desired OS Type, Master Image, Storage, Licensing, Network, and Account settings. **Important:** Confirm that the names match on both the On-Premises and the CVADs catalogs. Note that the number of machines that you can create depend on the available hypervisor resources.
+3.  Still in **Cloud Studio** create your **MCS machine Catalog** as you normally would and name it **exactly** the **same way** your existing On-Premises catalog is named. Select the desired OS Type, Master Image, Storage, Licensing, Network, and Account settings. **Important:** Confirm that the names match on both the On-Premises and the CVADS catalogs. Note that the number of machines that you can create depend on the available hypervisor resources.
 **Note:** If needed, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html) for information on how to set up your catalogs.
 
 4.  Next in **Cloud Studio**, create the corresponding **Delivery Group** for the new Catalog and ensure you name it exactly after the corresponding **On-Premises Delivery Group** as well. **Note:** For more details on how to create your **Machine Catalogs** and **Delivery Groups**, refer to [this guide/en-us/tech-zone/learn/poc-guides/cvads.html).
@@ -166,9 +166,9 @@ Follow these steps to prepare your environment, before proceeding to import the 
 
 ## Dealing with Machine Creation Services (MCS): Static Assigned Machines
 
-**Note:** A separate section is available with instructions for Pooled and RDS Machines. Please refer to the steps mentioned on the [MCS Pooled VDI and RDS Machines](#dealing-with-machine-creation-services-mcs-pooled-vdi-and-rds-machines)
+**Note:** A separate section is available with instructions for Pooled and RDS Machines. Refer to the steps mentioned on the [MCS Pooled VDI and RDS Machines](#dealing-with-machine-creation-services-mcs-pooled-vdi-and-rds-machines)
 
-Currently, static assigned Machine Catalogs cannot be migrated as is to the CVADs cloud account. You can import other configuration such as Applications and policies automatically using this tool.
+Currently, static assigned Machine Catalogs cannot be migrated as is to the CVADS cloud account. You can import other configuration such as Applications and policies automatically using this tool.
 
 Create the Hosting Connection, Machine Catalogs (as Non-Provisioned catalogs for these machines), and Delivery Groups manually, all with the exact same names as the On-Premises equivalents. Note that Power Schemes do not work for non-provisioned catalogs. After creating these, you can automate the Applications, Application Groups, Application Folders, Tag creation and Policies by using the Automated Configuration tool.
 
@@ -177,7 +177,7 @@ Follow these steps to prepare your environment, before proceeding to import the 
 1.  In your [Cloud portal](https://citrix.cloud.com), click the Hamburger menu > **My Services > Virtual Apps and Desktops Service > Manage** tab, then on the left hand side expand the **Configuration** node and click **Hosting** to create your **Hosting Connection** as you normally would.
 **Note:** If needed, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html) for information on how to set up your Hosting Connection.
 
-2.  Still in **Cloud Studio** create your **MCS machine Catalog** as non-provisioned physical catalogs. Name the catalogs **exactly** the **same way** your existing On-Premises catalog is named. Select the desired OS Type, Master Image, Storage, Licensing, Network, and Account settings. **Important:** Confirm that the names match on both the On-Premises and the CVADs catalogs.
+2.  Still in **Cloud Studio** create your **MCS machine Catalog** as non-provisioned physical catalogs. Name the catalogs **exactly** the **same way** your existing On-Premises catalog is named. Select the desired OS Type, Master Image, Storage, Licensing, Network, and Account settings. **Important:** Confirm that the names match on both the On-Premises and the CVADS catalogs.
 **Note:** If needed, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html) for information on how to set up your catalogs.
 
 3.  Next in **Cloud Studio**, create the corresponding **Delivery Group** for the new Catalog and ensure you name it exactly after the corresponding **On-Premises Delivery Group** as well. **Note:** For more details on how to create your **Machine Catalogs** and **Delivery Groups**, refer to [this guide/en-us/tech-zone/learn/poc-guides/cvads.html).
@@ -325,7 +325,7 @@ When mapping **Zones** to different **Resource locations**, the file must look l
 
 [![Verifying Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_verifying-config-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_verifying-config-002.png)
 
-If everything looks as expected, your CVADs migration is complete.
+If everything looks as expected, your CVADS migration is complete.
 
 ## Troubleshooting Tips
 
