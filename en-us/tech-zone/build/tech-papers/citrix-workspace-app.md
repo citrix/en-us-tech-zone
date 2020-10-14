@@ -1,7 +1,7 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: Ana Ruiz, Veronica, George william, Sanjay Bedi, Seth Mandela, John Doe, Sebastian, Nick Devas, Vinales, Luis Ugarte
+contributedBy: Ana Ruiz, Veronica, George william, Sanjay Bedi, Seth Mandela, John Doe, Sebastian, Nick Devas, Vinales, Luis, Ugarte
 specialThanksTo: Sameer Mehta, Mathew Varghese, Balu Singh, Craig Mathew, George ,Jamie, Casey Kareem, Ross William, Adam Sandler,Jim Carrey
 description: Quick start guide for Citrix Workspace app - everything you need to know in one place, including installation, configuration, and optimizations.
 ---
