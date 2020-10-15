@@ -35,7 +35,7 @@ It makes assumptions about the completed installation and configuration of the f
 1.  Navigate to 'Security > AAA - Application Traffic > Virtual Servers'
 2.  Select 'Add'
 3.  Create a new virtual server populating the fields as seen below amd click Ok:
-![Native OTP Virtual Server] (/en-us/tech-zone/learn/media/nOTP_vServer.png)
+![Native OTP Virtual Server] (/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_vserver.png)
 4.  Select 'No Server Certificate' then select and bind the domain certificate that was checked for above. Click continue.
 5.  Click 'Continue' again.
 6.  Under Advanced Settings on the right hand side, select '+ Portal Themes'
@@ -47,7 +47,7 @@ It makes assumptions about the completed installation and configuration of the f
 1.  Navigate to 'Security > AAA-Application Traffic > Authentication Profile'
 2.  Select 'Add'
 3.  Name your Authentication Profile and enter your Gateway URL as the authentication host. Click to Select the virtual server you made above as the Authentication Virtual Server. See the image below as an example.
-![Native OTP Authentication Profile] (/en-us/tech-zone/learn/media/nOTP_authpro.png)
+![Native OTP Authentication Profile] (/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_authpro.png)
 4.  Click 'Ok' to create the authentication Profile
 
 ### Edit Your Gateway
@@ -64,13 +64,13 @@ It makes assumptions about the completed installation and configuration of the f
 3.  Enter a name for your policy and change the Action Type to 'LDAP' as seen below
 4.  Click 'Add' under Action
 5.  Give your server a name, change server type to 'AD', and select the correct security type
-![LDAP Server Name and Type] (/en-us/tech-zone/learn/media/nOTP_authldap1.png)
+![LDAP Server Name and Type] (/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-otp_authpolicy.png)
 6.  Under Connection Settings enter your base dn, an administrator login, and the password
-![LDAP Connection Settings](/en-us/tech-zone/learn/media/nOTP_connectionsettings.png)
+![LDAP Connection Settings](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_connectionsettings.png)
 7.  Click Test Network Connectivity to ensure connection
 8.  Under Other Settings set Server Logon Name Attribute to *sAMAccountName* and click 'Create'
 9.  Enter the expression 'true' and click 'Ok'
-![Finished Authentication Policy] (/en-us/tech-zone/learn/media/nOTP_authpol2.png)
+![Finished Authentication Policy] (/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_authpol2.png)
 
 We will now create the second authentication policy for validation.
 
@@ -78,10 +78,10 @@ We will now create the second authentication policy for validation.
 2.  Name this new Authentication Policy and select the Action Type 'LDAP'
 3.  Select 'Add' under Action
 4.  Enter your new LDAP server, this time deselecting the 'Authentication' checkbox as seen below
-![Second LDAP Policy](/en-us/tech-zone/learn/media/nOTP_secondpol1.png)
+![Second LDAP Policy](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_secondpolicy.png)
 5.  Fill out the Connection Settings section the same way you did previously
 6.  Under Other Settings, change Server Logon Name Attribute to 'sAMAccountName' and then in the OTP Secret box enter 'userParameters'
-![Second LDAP Policy Settings] (/en-us/tech-zone/learn/media/nOTP_secondpol2.png)
+![Second LDAP Policy Settings] (/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_secondpolicy2.png)
 7.  Click 'Ok', enter the expression 'true' and click 'Ok' again
 
 ## Login Schemas
@@ -93,22 +93,22 @@ We will now create 2 Login Schemas.
 3.  Enter a name for your Login Schema
 4.  Click 'Add' under Profile and give your Profile a name
 5.  Click the pencil icon next to 'noschema'
-![Login Schema Profile](/en-us/tech-zone/learn/media/nOTP_loginSchema.png)
+![Login Schema Profile](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_loginschema.png)
 6.  Click on 'Login Schema' and scroll down to select 'DualauthOrOTPRegisterDynamic.xml' and hit the blue 'Select' in the right corner.
-![DualAuthOrOTP](en-us/tech-zone/learn/media/nOTP_dualauthorotp.png)
+![DualAuthOrOTP](en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_dualauth.png)
 7.  Click 'Create'
 8.  Enter 'true' under Rule and click 'Create'
-![Final Login Schema](/en-us/tech-zone/learn/media/nOTP_finalLoginSchema.png)
+![Final Login Schema](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_finalschema.png)
 
 Similarly, we will create a second login schema by clicking 'Add' again.
 
 1.  Give this second login schema a name
 2.  Click 'Add' under Profile. Give this Profile a name and then click the pencil icon next to 'noschema' as done previously
 3.  Click on 'LoginSchema' and scroll down to select 'SingleAuthManageOTP.xml'
-![Second Login Schema](/en-us/tech-zone/learn/media/nOTP_singleAuthManage.png)
+![Second Login Schema](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_singleauth.png)
 4.  Click on the blue 'Select' button and then click 'Create'
 5.  For this rule, we will enter 'http.REQ.COOKIE.VALUE("NSC_TASS").eq("manageOTP"). Feel free to use the drop downs.
-![Second Login Schema Final](/en-us/tech-zone/learn/media/nOTP_finalLoginSchema.png)
+![Second Login Schema Final](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_finallogina.png)
 6.  Click 'Create'
 
 ## Create and Bind Policy Labels
@@ -127,7 +127,7 @@ Next we will bind our Login Schemas.
 1.  Under 'Advanced Settings' on the right hand side, click Login Schemas to add it to your Authentication Virtual Server
 2.  Under 'Login Schema' click 'No Login Schema'
 3.  Click to Select the policy and choose your otp_management policy
-![Bind Login Schema](/en-us/tech-zone/learn/media/nOTP_bindingLoginSchema.png)
+![Bind Login Schema](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_binding.png)
 4.  Click 'Bind'
 5.  In a similar fashion, bind your other login schema
 
