@@ -8,7 +8,19 @@ description: Learn how to implement a Proof of Concept environment consisting of
 
 **Author:** [Alyssa Ramella]
 
+**Special Thanks:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
+
 ## Introduction
+
+Implementing multifactor authentication is one of the best ways to verify identity and improve security posture. Native OTP is a convenient way to implement another factor using readily available authenticator applications. It allows users to enter validation codes from their authenticator application, into their gateway authentication form, to authenticate.
+
+Citrix Gateway supports Native OTP authentication, and can provide authentication for various services including web services, VPN, and Citrix Virtual Apps and Desktops. In this POC Guide we demonstrate using it for authentication in a Citrix Virtual Apps and Desktops environment.
+
+### Conceptual Architecture
+
+![Native OTP Registration](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_registrationflow.png)
+
+![Native OTP Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_authenticationflow.png)
 
 ## Overview
 
@@ -18,10 +30,11 @@ It makes assumptions about the completed installation and configuration of the f
 
 *  Citrix Gateway installed, licensed, and configure with an externally reachable virtual server bound to a wildcard certificate.
 *  Citrix Gateway integrated with a Citrix Virtual Apps and Desktops environment which uses LDAP for authentication
-*  Citrix Cloud account established
 *  Endpoint with Citrix Workspace app installed
-*  Mobile device with Citrix SSO app installed
+*  Mobile device with Citrix SSO app installed (or other authenticator app that supports Time Based Passwords)
 *  Active Directory (AD) is available in the environment
+
+Refer to Citrix Documentation for the latest product version and license requirements: [Native OTP Authentication](/en-us/citrix-adc/current-release/aaa-tm/native-otp-authentication.html)
 
 ## Citrix Gateway
 
