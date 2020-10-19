@@ -115,7 +115,7 @@ By default [YUV420](https://en.wikipedia.org/wiki/YUV) is used as color space. W
 
 ![HDX Graphics 3](/en-us/tech-zone/design/media/design-decisions_hdx-graphics_003.png)
 
-As you can see, YUV444 results in a better quality but it has a significant impact on the bandwidth requirements. The use of YUV444 will also disable hardware encoding on the server side as well as hardware decoding on the client side (and therefore also H.265 where available).
+As you can see, YUV444 results in a better quality but it has a significant impact on the bandwidth requirements. The use of YUV444 will also hardware decoding on the client side (and therefore also H.265 where available).
 
 You can enable YUV444 for Full-Screen H.264 with the following settings:
 
