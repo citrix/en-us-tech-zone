@@ -6,10 +6,13 @@ description: Learn about the Scenarios to deploy Citrix SD-WAN to enhance Worksp
 
 ## Contributors
 
-**Author:** [Daljit]
+**Author:** Daljit Singh,
 [Matthew Brooks](https://twitter.com/tweetmattbrooks)
 
-**Special Thanks:** Dan, Derek, Shoaib
+**Special Thanks:**
+[Dan Feller](https://twitter.com/djfeller),
+[Derek Thorslund](https://twitter.com/derektcitrix),
+[Shoaib Yusuf](https://twitter.com/shoaibys)
 
 ## Introduction
 
