@@ -33,7 +33,7 @@ Citrix SD-WAN is a proven, cost-effective solution that has helped companies aro
 
 ## Scenarios
 
-### Deployment 1: Management and resources are both located in HQ/data center
+### Deployment 1: Management and resources are both located in Head Office / Data Center/s
 
 Until recently, you'd find that all of the resources (VDAs, AD, and data servers) and managing operations (licensing, StoreFront, and Director) resided in the data center. Citrix technologies have evolved since then and we recommend that most organizations use or should plan to use cloud services when feasible. Although we recommend using the cloud service, customers can choose to continue using the on-premises or hybrid cloud solution.
 
