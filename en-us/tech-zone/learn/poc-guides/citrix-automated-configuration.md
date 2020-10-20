@@ -42,7 +42,7 @@ This code is not limited to migrations, it is the future for creating configurat
 *  CVAD On-Premises environment running on one of the following versions: Any **Long Term Service Release (LTSR)** versions with their latest CU (7.6, 7.15, 1912); Or one of the corresponding latest two **Current Releases (CR)** versions (for example: 2003, 2006).
 *  The domain-joined machine where you plan on running the **Automated Configuration tool commands** must be running **.NET 4.7.2 version or higher**.
 *  A machine with the **Citrix PowerShell SDK**, which is automatically installed on the DDC. **Note:** If running the tool on a different machine, it must be domain-joined and **Studio** must have the correct **PowerShell snap-ins** installed. This installer can be found on your corresponding version’s **Product ISO installation media**, which can be obtained from the [**Citrix Downloads > Citrix Virtual Apps and Desktops**](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/) website.
-*  Download the Automated Configuration tool MSI[]()
+*  Download the Automated Configuration tool MSI from the [Official Downloads website](https://www.citrix.com/downloads/citrix-cloud/product-software/automated-configuration.html)
 
 ### Cloud-related components
 
