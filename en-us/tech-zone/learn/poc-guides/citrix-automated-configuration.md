@@ -42,8 +42,7 @@ This code is not limited to migrations, it is the future for creating configurat
 *  CVAD On-Premises environment running on one of the following versions: Any **Long Term Service Release (LTSR)** versions with their latest CU (7.6, 7.15, 1912); Or one of the corresponding latest two **Current Releases (CR)** versions (for example: 2003, 2006).
 *  The domain-joined machine where you plan on running the **Automated Configuration tool commands** must be running **.NET 4.7.2 version or higher**.
 *  A machine with the **Citrix PowerShell SDK**, which is automatically installed on the DDC. **Note:** If running the tool on a different machine, it must be domain-joined and **Studio** must have the correct **PowerShell snap-ins** installed. This installer can be found on your corresponding version’s **Product ISO installation media**, which can be obtained from the [**Citrix Downloads > Citrix Virtual Apps and Desktops**](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/) website.
-*  If you have the Automated Configuration tool installed with the MSI, uninstall it.
-*  The Automated Configuration tool is now available through the [PowerShell Gallery](https://www.powershellgallery.com/packages/Citrix.AutoConfig/1.0.233). You can install the module directly from PowerShell as instructed in the [Complete the On-Premises pre-requisites](#complete-prerequisites-for-exporting-from-on-premises-site) section.
+*  Download the Automated Configuration tool MSI[]()
 
 ### Cloud-related components
 
@@ -62,36 +61,30 @@ This code is not limited to migrations, it is the future for creating configurat
 
 ### Complete Pre-requisites for Exporting from on-premises site
 
-These steps must be run in your DDC or the domain-joined machine where you want to run the **Automated Configuration tool commands**.
-The latest Automated Configuration tool is now available through the [PowerShell Gallery](https://www.powershellgallery.com/packages/Citrix.AutoConfig/1.0.233) but you can install the module directly from PowerShell.
+These steps must be run in your DDC or the domain-joined machine where you want to run the **Automated Configuration** tool.
 
-**Note:** For instructions on how to update the Automated Configuration tool that has been installed via PowerShell, refer to the [Updating the Automated Configuration Tool Section](#update-an-existing-powershell-tool)
-
-1.  If you have the **MSI** version of the Automated Configuration tool installed, uninstall it first. Once the existing MSI is uninstalled, on your **On-Premises DDC** or a domain-joined machine run **PowerShell as an Administrator.**[![Pre-requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-001.png)
+1.  Download the latest **Automated Configuration tool MSI** to your **On-Premises DDC** or a domain-joined machine. **Note:** See the **Pre-requisites section** for more details on how to run it from a different machine. The tool can be downloaded from [here](INSERTLINKNITINWILLGIVEME).
 **Note:** See the [Pre-requisites section](#pre-requisites) for more details on how to run it from a different machine.
-2.  On PowerShell, run the following command ```Install-Module -Name Citrix.AutoConfig```
+2.  Run the **MSI** on your **On-Premises DDC**, by right-clicking on the **AutoConfig_PowerShell_x64.msi** installer and clicking on **Install**. [![Pre-requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-001.png)
+3.  Read the **License Agreement** and check the box if you accept the terms. Then click **Install**: [![Pre-requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-002.png)
+4.  Files will be copied and the progress bar will progress until it finishes the install. [![Pre-requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-003.png)
 
-3.  A prompt appears to update the PowerShellGet and NuGet packages while installing the tool. [![Pre-requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-002.png)
-4.  An untrusted repository prompt might appear when installing the tool for the first time. Type ```Y``` to trust the PowerShell Gallery repository. [![Pre-requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-003.png)
+5.  After the **MSI** runs, a window indicating successful completion pops up. Click **Finish** to close the **MSI setup** window. [![Pre-requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-004.png)
 
-## Updating the Automated Configuration Tool
-
-**Note:** This only works on pre-existing PowerShell tools. The MSI cannot be updated using this command, so uninstall it first. Then proceed to get the PowerShell tool installed, using the instructions specified on the [Complete the On-Premises pre-requisites](#complete-prerequisites-for-exporting-from-on-premises-site) section.
-
-1.  A prompt appears to update the tool if a new version is available after running any command. To update the tool via PowerShell, run PowerShell as an Administrator.
-2.  Type the following command ```Update-Module -Name Citrix.AutoConfig``` [![Updating the Tool](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-update-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-update-001.png)
+*  **Note**: Upon successful execution, the **MSI** creates the corresponding folder structure, located in ```C:\Users\<username>\Documents\Citrix\AutoConfig```, and also a desktop icon called **Auto Config**, which launches a PowerShell command prompt. This tool is the one used on subsequent steps.
 
 ## Export your On-Premises site configuration
 
 Using an ```export``` PowerShell command, you can export your existing On-Premises configuration and obtain the necessary *.yml* files. These files are used to import your desired configuration into **Citrix Cloud**.
 
-1.  On **PowerShell** running **as an Administrator**, run the ```Export-CvadAcToFile``` command. This command exports policies, manually provisioned catalogs, and delivery groups. It also exports applications, application folders, icons, zone mappings, tags, and other items. **Note:** For **MCS** and **PVS** machine catalogs and delivery groups, refer to the steps on [Requisites for Importing Site Configuration using different Provisioning Methods section](#requisites-for-importing-site-configuration-using-different-provisioning-methods) in this guide.
+1.  After running the **MSI** installer on the previous step, you get an **Auto Config** shortcut automatically created on the Desktop. Right-click this shortcut and click **Run as Administrator.**
+2.  Run the ```Export-CvadAcToFile``` command. This command exports policies, manually provisioned catalogs, and delivery groups. It also exports applications, application folders, icons, zone mappings, tags, and other items. **Note:** For **MCS** and **PVS** machine catalogs and delivery groups, refer to the steps on [Requisites for Importing Site Configuration using different Provisioning Methods section](#requisites-for-importing-site-configuration-using-different-provisioning-methods) in this guide.
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002-1.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002-1.png)
 
-2.  Once the tool finishes running, the **Overall status** shows as **True** and the export process is completed (the output lines shown match the following illustration). **Note:** If there are any errors, diagnostic files are created in the action-specific subfolders ```(Export, Import, Merge, Restore, Sync, Backup, Compare)```, which can be found under ```%HOMEPATH%\Documents\Citrix\AutoConfig```. Refer to the [Troubleshooting Tips section](#troubleshooting-tips) if you encounter any errors.
+3.  Once the tool finishes running, the **Overall status** shows as **True** and the export process is completed (the output lines shown match the following illustration). **Note:** If there are any errors, diagnostic files are created in the action-specific subfolders ```(Export, Import, Merge, Restore, Sync, Backup, Compare)```, which can be found under ```%HOMEPATH%\Documents\Citrix\AutoConfig```. Refer to the [Troubleshooting Tips section](#troubleshooting-tips) if you encounter any errors.
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-003.png)
 
-3.  The resulting *.yml* files are now in the current user’s ```Documents\Citrix\AutoConfig``` path:
+4.  The resulting *.yml* files are now in the current user’s ```Documents\Citrix\AutoConfig``` path:
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-004.png)
 
 *  **Note:** See the following image for an example of the contents on a *.yml* file (```Application.yml```)
