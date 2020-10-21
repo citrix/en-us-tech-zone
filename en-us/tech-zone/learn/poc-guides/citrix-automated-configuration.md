@@ -14,7 +14,7 @@ description: This Proof of Concept guide provides instructions on using an Autom
 
 The [Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) facilitates migrating and exporting configurations to the **Citrix Virtual Apps and Desktop Service** (CVADS). This Proof of Concept guide illustrates the step by step instructions on how to use this tool.
 
-Administrators can easily test and explore the **Citrix Virtual Apps and Desktop Service** (CVADS) features and advantages, while simultaneously running existing On-Premises environments and even facilitate moves between cloud regions, back up existing configurations, and other use cases. The [Automated Configuration download link](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) also contains **additional information** and **detailed documentation** on said **use cases** and **customizations**.
+Administrators can easily test and explore the **Citrix Virtual Apps and Desktop Service** (CVADS) features and advantages, while simultaneously running existing On-Premises environments and even facilitate moves between cloud regions, back up existing configurations, and other use cases. The [Automated Configuration download link](https://www.citrix.com/downloads/citrix-cloud/product-software/automated-configuration.html) also contains **additional information** and **detailed documentation** on said **use cases** and **customizations**.
 
 ### What is the Automated Configuration tool for Citrix Virtual Apps and Desktops?
 
