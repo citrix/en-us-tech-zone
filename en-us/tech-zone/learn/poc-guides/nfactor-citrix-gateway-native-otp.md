@@ -1,8 +1,8 @@
 ---
 layout: doc
-description: Learn how to implement a Proof of Concept environment consisting of nFactor for Native OTP 
+description: Learn how to implement an extensible and flexible approach to configuring multi-factor authentication with nFactor for Citrix Gateway authentication with Native OTP 
 ---
-# Proof of Concept Guide: nFactor For Citrix Gateway Authentication - Native OTP
+# Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Native OTP
 
 ## Contributors
 
@@ -41,7 +41,9 @@ Refer to Citrix Documentation for the latest product version and license require
 ### nFactor
 
 1.  Log in to the Citrix ADC UI
-1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
+1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain.
+
+   See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
 
 ### Native OTP Virtual Server
 
@@ -146,50 +148,12 @@ Next we bind our Login Schemas.
 
 You must bind your login schema's in this order.
 
-## User Endpoint
-
-Now we test PUSH by registering a mobile device and authenticating into our Citrix Virtual Apps and Desktops environment.
-
-### Registration with Citrix SSO app
-
-1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway with /manageotp appended to the end of the FQDN. We use 'https://citrixadc5.workspaces.wwco.net/manageotp'
-1.  After your browser is redirected to a login screen enter user UPN and password
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regldaplogin.png)
-1.  On the next screen select Add Device, enter a name. We use 'iPhone7'
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regadddevice.png)
-1.  Select Go and a QR code will appear
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regqrcodedisplay.png)
-1.  On your mobile device open your Citrix SSO app which is available for download from apps stores
-1.  Select Add New Token
-1.  Select Scan QR Code
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssoqrcode.png)
-1.  Select Aim your camera at the QR Code and once it's captured select Add
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssoscanqrcode.png)
-1.  Select Save to store the token
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_poc-guides_nfactor-citrix-gateway-push-token_regssosave.png)
-1.  The Token is now active and begins displaying OTP codes at 30 second intervals
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssotoken.png)
-1.  Select Done and you will see confirmation that the device was added successfully
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_addeddevicesuccessfully.png)
-
-### Citrix Virtual Apps and Desktops Authentication, Publication, and Launch
-
-1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use 'https://citrixadc5.workspaces.wwco.net'
-1.  After your browser is redirected to a login screen enter user UPN and password. On this screen you see the option to Click to input OTP manually if for some reason your camera is not working
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regldaplogin1f.png)
-1.  On your mobile device in your Citrix SSO app select Ok to confirm PUSH authentication
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssoaccept.png)
-1.  Verify the users virtual apps, and desktops are enumerated, and launch once logged in
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_cvadlogin.png)
-
 ## Summary
 
-With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Users can get access to all of their Workspaces resources by entering their standard domain user and password and simply confirming their identity with the push off a button in the Citrix SSO app on their mobile device.
+With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Users can get access to all of their Workspaces resources by entering their standard domain user and password and simply confirming their identity by entering a One Time Password from their authenticator app.
 
 ## References
 
 For more information refer to:
 
-[Authentication Push](/en-us/tech-zone/learn/tech-insights/authentication-push.html) – watch a Tech Insight video regarding the use of TOTP to improve authentication security for your Citrix Workspace
-
-[Authentication - On-Premises Citrix Gateway](/en-us/tech-zone/learn/tech-insights/gateway-idp.html) – watch a Tech Insight video regarding integrating with on-premises Citrix Gateway to improve authentication security for your Citrix Workspace
+[Native OTP Authentication](/en-us/citrix-adc/current-release/aaa-tm/native-otp-authentication.html) – find more details regarding Native OTP implementation and use cases.
