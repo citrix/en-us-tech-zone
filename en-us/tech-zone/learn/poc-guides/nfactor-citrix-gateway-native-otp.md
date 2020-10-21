@@ -45,20 +45,20 @@ Refer to Citrix Documentation for the latest product version and license require
 
 ### Native OTP Virtual Server
 
-1.  Navigate to '**Security > AAA** - **Application Traffic > Virtual Servers**'
-1.  Select 'Add'
+1.  Navigate to **Security > AAA** - **Application Traffic > Virtual Servers**
+1.  Select `Add`
 1.  Create a new virtual server, that's non-addressable, and click OK:
 ![Native OTP Virtual Server](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_vserver.png)
-1.  Select 'No Server Certificate' then select and bind the domain certificate that was checked for in the steps above. Click continue.
-1.  Click 'Continue' again.
-1.  Under Advanced Settings on the right hand side, select '+ Portal Themes'
-1.  Ensure 'RfWebUI' is the selected Portal Theme and click 'OK'
-1.  Click 'Done'
+1.  Select `No Server Certificate` then select and bind the domain certificate that was checked for in the steps above. Click continue.
+1.  Click `Continue` again.
+1.  Under Advanced Settings on the right hand side, select `+ Portal Themes`
+1.  Ensure `RfWebUI` is the selected Portal Theme and click `OK`
+1.  Click `Done`
 
 ## Native OTP Authentication Profile
 
-1.  Navigate to '**Security > AAA-Application Traffic > Authentication Profile**'
-1.  Select 'Add'
+1.  Navigate to **Security > AAA-Application Traffic > Authentication Profile**
+1.  Select `Add`
 1.  Name your Authentication Profile and enter your Gateway URL as the authentication host. Click to Select the virtual server you made above as the Authentication Virtual Server. See the image below as an example.
 ![Native OTP Authentication Profile](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_authpro.png)
 1.  Click 'OK' to create the authentication Profile
@@ -68,64 +68,65 @@ Refer to Citrix Documentation for the latest product version and license require
 1.  Navigate to '**Citrix Gateway > Virtual Servers**'
 1.  Select your current Gateway and click 'Edit'
 1.  Change the Authentication Profile to the new profile you created. You may must add this from the Advanced Settings panel on the right hand side
-1.  Click 'OK', then 'Done', and save the running configuration
+1.  Click `OK`, then `Done`, and save the running configuration
 
 ## Create Policies
 
 1.  Navigate to '**Security > AAA-Application Traffic > Policies > Authentication > Advanced Policies > Policy**'
-1.  Click 'Add'
-1.  Enter a name for your policy and change the Action Type to 'LDAP' as seen below
-1.  Click 'Add' under Action
-1.  Give your server a name, change server type to 'AD', and select the correct security type
+1.  Click `Add`
+1.  Enter a name for your policy and change the Action Type to `LDAP` as seen below
+1.  Click `Add` under Action
+1.  Give your server a name, change server type to `AD`, and select the correct security type
 ![LDAP Server Name and Type](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_authpolicy.png)
 1.  Under Connection Settings enter your base dn, an administrator login, and the password
 ![LDAP Connection Settings](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_connectionsettings.png)
 1.  Click Test Network Connectivity to ensure connection
-1.  Under Other Settings set Server Logon Name Attribute to *sAMAccountName* and click 'Create'
-1.  Enter the expression 'true' and click 'OK'
+1.  Under Other Settings set Server Logon Name Attribute to `sAMAccountName` and click `Create`
+1.  Enter the expression `true` and click 'OK'
 ![Finished Authentication Policy](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_authpol2.png)
 
 We will now create the second authentication policy for validation.
 
-1.  While you are in Authentication Policies, click 'Add' again
-1.  Name this new Authentication Policy and select the Action Type 'LDAP'
-1.  Select 'Add' under Action
-1.  Enter your new LDAP server, this time deselecting the 'Authentication' check box as seen below
+1.  While you are in Authentication Policies, click `Add` again
+1.  Name this new Authentication Policy and select the Action Type `LDAP`
+1.  Select `Add` under Action
+1.  Enter your new LDAP server, this time deselecting the `Authentication` check box as seen below
 ![Second LDAP Policy](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_secondpolicy.png)
 1.  Fill out the Connection Settings section the same way you did previously
-1.  Under Other Settings, change Server Logon Name Attribute to 'sAMAccountName' and then in the OTP Secret box enter 'userParameters'
+1.  Under Other Settings, change Server Logon Name Attribute to `sAMAccountName` and then in the OTP Secret box enter `userParameters`
 ![Second LDAP Policy Settings](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_secondpolicy2.png)
-1.  Click 'OK', enter the expression 'true' and click 'OK' again
+1.  Click OK, enter the expression `true` and click OK again
 
 ## Login Schemas
 
 We will now create 2 Login Schemas.
 
-1.  Navigate to '**Security > AAA-Application Traffic > Login Schema**'
-1.  Select the Profiles tab, and Click 'Add'
+1.  Navigate to **Security > AAA-Application Traffic > Login Schema**
+1.  Select the Profiles tab, and Click `Add`
 1.  Enter a name for your Login Schema
-1.  Click 'Add' under Profile and give your Profile a name. We enter 'otp_dualauth'
-1.  Click the pencil icon next to 'noschema'
+1.  Click `Add` under Profile and give your Profile a name. We enter `otp_dualauth`
+1.  Click the pencil icon next to `noschema`
 ![Login Schema Profile](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_loginschema.png)
-1.  Click 'Login Schema' and scroll down to select 'DualauthOrOTPRegisterDynamic.xml' and select the blue 'Select' in the right corner.
+1.  Click `Login Schema` and scroll down to select `DualauthOrOTPRegisterDynamic.xml` and select the blue `Select` in the right corner.
 ![DualAuthOrOTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_dualauth.png)
-1.  Click 'Create'
-1.  Now select the Policies tab, and Click 'Add'
-1.  Enter a policy name. We use 'nOTP_login'
-1.  From the Profile drop down select  'otp_dualauth' we just created.
+1.  Click `Create`
+1.  Now select the Policies tab, and Click `Add`
+1.  Enter a policy name. We use `nOTP_logindual`
+1.  From the Profile drop down select  `otp_dualauth` we just created.
 1.  Under Rule enter 'true' and click create
 ![Final Login Schema](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_finalschema.png)
 
-Similarly, we will create a second login schema by clicking 'Add' again.
+Similarly, we will create a second login schema by clicking `Add` again.
 
 1.  Give this second login schema a name
-1.  Click 'Add' under Profile. Give this Profile a name and then click the pencil icon next to 'noschema' as done previously
-1.  Click 'LoginSchema' and scroll down to select 'SingleAuthManageOTP.xml'
+1.  Click Add under Profile. Give this Profile a name. We use `nOTP_loginmanage`
+1.  Click the pencil icon next to `Noschema` as done previously
+1.  Click `LoginSchema` and scroll down to select `SingleAuthManageOTP.xml`
 ![Second Login Schema](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_singleauth.png)
-1.  Click the blue 'Select' button and then click 'Create'
-1.  Under Rule enter 'http.REQ.COOKIE.VALUE("NSC_TASS").eq("manageOTP") and click 'Create'
+1.  Click the blue `Select` button and then click `Create`
+1.  Under Rule enter `http.REQ.COOKIE.VALUE("NSC_TASS").eq("manageOTP")` and click `Create`
 ![Second Login Schema Final](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_finallogin.png)
-1.  Click 'Create'
+1.  Click `Create`
 
 ## Create and Bind Policy Labels
 
