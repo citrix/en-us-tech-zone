@@ -6,9 +6,7 @@ description: Learn how to implement an extensible and flexible approach to confi
 
 ## Contributors
 
-**Author:** [Alyssa Ramella]
-
-**Special Thanks:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
+**Author:** Alyssa Ramella, [Matthew Brooks](https://twitter.com/tweetmattbrooks)
 
 ## Introduction
 
@@ -49,7 +47,7 @@ Refer to Citrix Documentation for the latest product version and license require
 
 1.  Navigate to '**Security > AAA** - **Application Traffic > Virtual Servers**'
 1.  Select 'Add'
-1.  Create a new virtual server populating the fields as seen in the following image and click OK:
+1.  Create a new virtual server, that's non-addressable, and click OK:
 ![Native OTP Virtual Server](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_vserver.png)
 1.  Select 'No Server Certificate' then select and bind the domain certificate that was checked for in the steps above. Click continue.
 1.  Click 'Continue' again.
@@ -104,15 +102,18 @@ We will now create the second authentication policy for validation.
 We will now create 2 Login Schemas.
 
 1.  Navigate to '**Security > AAA-Application Traffic > Login Schema**'
-1.  Click 'Add'
+1.  Select the Profiles tab, and Click 'Add'
 1.  Enter a name for your Login Schema
-1.  Click 'Add' under Profile and give your Profile a name
+1.  Click 'Add' under Profile and give your Profile a name. We enter 'otp_dualauth'
 1.  Click the pencil icon next to 'noschema'
 ![Login Schema Profile](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_loginschema.png)
 1.  Click 'Login Schema' and scroll down to select 'DualauthOrOTPRegisterDynamic.xml' and select the blue 'Select' in the right corner.
 ![DualAuthOrOTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_dualauth.png)
 1.  Click 'Create'
-1.  Enter 'true' under Rule and click 'Create'
+1.  Now select the Policies tab, and Click 'Add'
+1.  Enter a policy name. We use 'nOTP_login'
+1.  From the Profile drop down select  'otp_dualauth' we just created.
+1.  Under Rule enter 'http.REQ.COOKIE.VALUE("NSC_TASS").eq("manageOTP") and click 'Create'
 ![Final Login Schema](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_finalschema.png)
 
 Similarly, we will create a second login schema by clicking 'Add' again.
@@ -122,7 +123,7 @@ Similarly, we will create a second login schema by clicking 'Add' again.
 1.  Click 'LoginSchema' and scroll down to select 'SingleAuthManageOTP.xml'
 ![Second Login Schema](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_singleauth.png)
 1.  Click the blue 'Select' button and then click 'Create'
-1.  For this rule, we enter 'http.REQ.COOKIE.VALUE("NSC_TASS").eq("manageOTP"). Feel free to use the drop-down lists.
+1.  Under Rule enter 'true' and click 'Create'
 ![Second Login Schema Final](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_finallogin.png)
 1.  Click 'Create'
 
@@ -147,6 +148,43 @@ Next we bind our Login Schemas.
 1.  In a similar fashion, bind your other login schema
 
 You must bind your login schema's in this order.
+
+## User Endpoint
+
+Now we test Native OTP by authenticating into our Citrix Virtual Apps and Desktops environment.
+
+### Registration with Citrix SSO app
+
+1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway with /manageotp appended to the end of the FQDN. We use `https://citrixadc5.workspaces.wwco.net/manageotp`
+1.  After your browser is redirected to a login screen enter user UPN and password
+![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regldaplogin.png)
+1.  On the next screen select Add Device, enter a name. We use `iPhone7`
+![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regadddevice.png)
+1.  Select Go and a QR code will appear
+![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regqrcodedisplay.png)
+1.  On your mobile device open your Citrix SSO app which is available for download from apps stores
+1.  Select Add New Token
+1.  Select Scan QR Code
+![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssoqrcode.png)
+1.  Select Aim your camera at the QR Code and once it`s captured select Add
+![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssoscanqrcode.png)
+1.  Select Save to store the token
+![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssosave.png)
+1.  The Token is now active and begins displaying OTP codes at 30 second intervals
+![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssotoken.png)
+1.  Select Done and you will see confirmation that the device was added successfully
+![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_addeddevicesuccessfully.png)
+
+### Citrix Virtual Apps and Desktops Authentication, Publication, and Launch
+
+1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://citrixadc5.workspaces.wwco.net`
+1.  After your browser is redirected to a login screen enter user userPrincipalName and password
+![Email OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_regldaplogin.png)
+1.  Open the authenticator app and copy the OTP code
+1.  Return to your browser where the user name is populated, paste the code, and click OK
+![Email OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_emailcodelogin.png)
+1.  Verify the users virtual apps, and desktops are enumerated, and launch once logged in
+![Email OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_cvadlogin.png)
 
 ## Summary
 
