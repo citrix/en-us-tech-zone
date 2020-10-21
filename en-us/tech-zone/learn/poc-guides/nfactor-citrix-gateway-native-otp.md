@@ -113,7 +113,7 @@ We will now create 2 Login Schemas.
 1.  Now select the Policies tab, and Click 'Add'
 1.  Enter a policy name. We use 'nOTP_login'
 1.  From the Profile drop down select  'otp_dualauth' we just created.
-1.  Under Rule enter 'http.REQ.COOKIE.VALUE("NSC_TASS").eq("manageOTP") and click 'Create'
+1.  Under Rule enter 'true' and click create
 ![Final Login Schema](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_finalschema.png)
 
 Similarly, we will create a second login schema by clicking 'Add' again.
@@ -123,7 +123,7 @@ Similarly, we will create a second login schema by clicking 'Add' again.
 1.  Click 'LoginSchema' and scroll down to select 'SingleAuthManageOTP.xml'
 ![Second Login Schema](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_singleauth.png)
 1.  Click the blue 'Select' button and then click 'Create'
-1.  Under Rule enter 'true' and click 'Create'
+1.  Under Rule enter 'http.REQ.COOKIE.VALUE("NSC_TASS").eq("manageOTP") and click 'Create'
 ![Second Login Schema Final](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_finallogin.png)
 1.  Click 'Create'
 
