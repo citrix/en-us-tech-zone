@@ -16,7 +16,7 @@ description: Learn about the Scenarios to deploy Citrix SD-WAN to enhance Worksp
 
 ## Introduction
 
-Citrix Workspace is a complete digital workspace solution that allows you to deliver secure access to the information, apps, and other content that is relevant to a person’s role in your organization.
+This Tech Brief explains how to optimize user experience with Citrix Workspace by deploying Citrix SD-WAN to maximize network connection reliability and provide quality-of-service prioritization of real-time and interactive traffic.
 
 ## Overview
 
@@ -61,13 +61,13 @@ For more information see the [Citrix Virtual Apps and Desktops - Component Archi
 
 ### Deployment 2: Citrix Virtual Apps and Desktops Service with resources on-premises
 
-As Citrix customers move to the cloud, their first step is often to use the Citrix Virtual Apps and Desktops service to manage their virtual apps, and desktops workloads hosted at their on-premises locations.
+As Citrix customers move to the cloud, their first step is often to use the Citrix Virtual Apps and Desktops service to manage their virtual apps, and desktops workloads hosted at their on-premises locations. Citrix takes over maintaining the control systems, while customers can continue to manage their enviroments through Citrix Cloud.
 
 ![Scenarios 2 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios2withoutsdwan.png)
 
 Although, in this scenario, while managing operations through the Citrix Cloud service is simplified, network connectivity may not be. Session traffic is directed to the nearest Gateway service PoP. From there, it is proxied to the resource locations. While there are many PoP locations around the world, for endpoints in Remote Branches on the WAN this step can add latency.
 
-To address this scenario Citrix introduced Direct Workload Connection via a new Network Location Service (NLS). It enables session flows from Remote Branch hosted endpoints to access VDAs directly across the WAN. It identifies endpoints located on the Internal Network IP address ranges, and provides them with connection information to access VDAs directly on the Internal Network.
+To address this scenario Citrix introduced [Direct Workload Connection](https://docs.citrix.com/en-us/citrix-workspace/workspace-network-location.html) via a new Network Location Service (NLS). It enables session flows from Remote Branch hosted endpoints to access VDAs directly across the WAN. It identifies endpoints located on the Internal Network IP address ranges, and provides them with connection information to access VDAs directly on the Internal Network.
 
 However, NLS requires branch public IP address ranges to be preconfigured. Branches that use DSL or Cable Modems use dynamic IPs that can change frequently. Home Offices can have the same issue, and can number in the tens of thousands making it too difficult to track, and update manually.
 
@@ -78,6 +78,7 @@ Citrix SD-WAN offers a solution to these issues, and provides other benefits in 
 *  **Reducing latency through NLS** and updating the NLS automatically through
 Citrix SD-WAN, helping to resolve issues where dynamic IP addresses are used
 *  **Providing deep visibility into HDX traffic** enabling IT to monitor User Experience, and proactively act in the event there is degradation
+*  **Citrix Cloud and Gateway Service breakout policy** allowing First Packet Classification, facilitating direct internt breakout from the SD-WAN branch, which reduces the latency
 
 ![Scenarios 2 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios2withsdwan.png)
 
@@ -95,7 +96,7 @@ It takes time, and costs to deploy MPLS-based connectivity options such as Micro
 
 #### Branch to VDAs in public clouds
 
-The second scenario in this deployment is the connectivity between branches, and VDAs in the cloud. The normal path for a branch user is through Citrix Cloud using the Citrix Gateway service, which is connected to VDAs through the Citrix connector. Usually, Citrix Cloud, and VDAs exist in different locations, and different clouds, however added latency can disrupt user experience. Citrix SD-WAN, along with Direct Workload Connection, can improve the users experience by reducing latency, and by reducing the egress bandwidth cost since traffic is traversing out of one cloud.
+The second scenario in this deployment is the connectivity between branches, and VDAs in the cloud. The normal path for a branch user is through Citrix Cloud using the Citrix Gateway service, which is connected to VDAs through the Citrix connector. Usually, Citrix Cloud, and VDAs exist in different locations, and different clouds. The transit distance, and forwarding delays, across the best effort Internet, can add latency and disrupt user experience. Citrix SD-WAN, along with Direct Workload Connection, can improve the user experience by reducing latency, and by reducing the egress bandwidth cost since traffic is traversing out of one cloud.
 
 ![Scenarios 3 - With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios3withsdwan.png)
 
@@ -125,7 +126,7 @@ Citrix has multiple Cloud Direct PoPs around the world that are peered with most
 
 *  **Improved SaaS performance**: Cloud Direct service can identify your most critical application traffic, and ensure that it’s always prioritized
 *  **VoIP, and UCaaS protection**: Provide a consistent VoIP, and UCaaS connection regardless of outages, lag, packet loss or jitter
-*  **VPN enhancements**: Keep your site-to-site VPN connections, and performance stable without the cost, and hassle of MPLS
+*  **VPN enhancements**: Keep your site-to-site VPN connections, and performance stable, with hitless failover, over best effort internet, without the cost, and hassle of MPLS
 *  **Reliability**: Redundancy with active failover/brownout detection
 *  **Increased bandwidth**: Via link aggregation/smart load-balancing
 *  **Enterprise-grade QoS**: Bi-directional QoS/app classification
@@ -140,7 +141,7 @@ Getting better experience to Citrix Virtual Apps and Desktops Service through th
 
 In the wake of recent events, many remote users experiencing poor call, and video conferencing quality in their home offices. Accessing critical SaaS applications, including Unified Communications as a Service, and Citrix virtual applications, and desktops with quality performance, and experience is of the utmost importance. Most home users have a single broadband Internet connection. Citrix SD-WAN Cloud Direct solves some of the most common home networking challenges by using QoS to prioritize business apps. Citrix SD-WAN Cloud Direct has a built-in capability to identify, and prioritize traffic to Citrix Virtual Apps and Desktops Service for Azure and Citrix Virtual Apps and Desktops service. This enables it to significantly improve the user experience. Therefore, by implementing a Citrix SD-WAN appliance in their home office Enterprises can improve Remote Worker’s user experience. For more information see the Citrix SD-WAN Cloud Direct overview Tech Brief.
 
-### Deployment 6: Citrix SD-WAN for Microsoft Virtual WAN
+### Deployment 6: Citrix SD-WAN for Microsoft Azure Virtual WAN
 
 Citrix is one of the preferred Microsoft partners for connecting to Azure Virtual WAN. The Citrix SD-WAN has an integrated, and simplified deployment for connecting to Azure. If customers are already using Microsoft Azure Virtual WAN for connecting to their workload, Citrix SD-WAN can help optimize connectivity from the branches. It can provide resilient tunnels from the branch to Hubs in Azure Regions. Again, providing reliable connectivity without the need to install the SD-WAN in the cloud. Integration between Citrix SD-WAN and Azure Virtual WAN provides the following benefits:
 
@@ -148,6 +149,7 @@ Citrix is one of the preferred Microsoft partners for connecting to Azure Virtua
 *  **Automated provisioning**, and configuration
 *  **Scalability**, and high throughput
 *  **Leverage Microsoft’s global backbone network** in branch to hub (in all Azure regions) communication.
+*  **Active-Active redundant IPSec tunnels** for failover to Azure vWAN using BGP for faster convergence and scalable management of network prefix changes
 
 ![Scenarios 6 - With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios6withsdwan.png)
 
