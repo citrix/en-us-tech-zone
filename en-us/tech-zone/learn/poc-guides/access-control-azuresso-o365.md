@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
+specialThanksTo: Krishna Kumar
 description: Learn how to set up a Citrix Access Control environment that provides single sign-on and enhanced security to Office 365.
 ---
 # Proof of Concept: Secure Access to Microsoft 365 with Citrix Access Control
-
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
-
-**Special Thanks:** Krishna Kumar
 
 ## Overview
 

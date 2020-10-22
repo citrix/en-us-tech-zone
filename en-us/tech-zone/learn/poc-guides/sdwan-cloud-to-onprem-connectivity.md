@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Matt Brooks
+specialThanksTo: Karthick Srivatsan
 description: Learn how to implement Citrix SD-WAN rapidly to provide secure, enhanced, and resilient connectivity between your public cloud and data center environments.
 ---
 # Proof of Concept Guide: Citrix SD-WAN Cloud-to-Data Center Connectivity
-
-## Contributors
-
-**Author:** [Matt Brooks](https://twitter.com/tweetmattbrooks)
-
-**Special Thanks:** Karthick Srivatsan
 
 ## Overview
 

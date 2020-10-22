@@ -1,17 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Matthew Brooks, Shoaib Yusuf
+specialThanksTo: Daljit Singh, Dan Feller, Derek Thorslund, Jaskirat Singh Chauhan, Karthick Srivatsan, Mallikarjuna Komma, Mallikarjuna Reddy M, Muhammad Dawood, Ramanjaneya Kamalapuram, Ravindra L Patil
 description: Citrix SD-WAN can significantly improve the network performance of Citrix Virtual Apps and Desktops HDX sessions. Learn about the reference architecture we used to measure quantitative benefits.
-
 ---
 # Measuring HDX User Experience Improvements from Citrix SD-WAN Network Performance Enhancements
-
-## Contributors
-
-**Authors:**
-
-[Matthew Brooks](https://twitter.com/tweetmattbrooks), [Shoaib Yusuf](https://twitter.com/Shoaibys)
-
-**Special Thanks:**  Daljit Singh, Dan Feller, Derek Thorslund, Jaskirat Singh Chauhan, Karthick Srivatsan, Mallikarjuna Komma, Mallikarjuna Reddy M, Muhammad Dawood, Ramanjaneya Kamalapuram, Ravindra L Patil, Siva Prasad, and Thavamani Rajan
 
 ## Executive Summary
 

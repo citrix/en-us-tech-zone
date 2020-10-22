@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Martin Zugec, Alvin Raagas
 description: Learn how to enhance the security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
 ---
 # App Protection Policies
-
-## Contributors
-
-**Author:** [Martin Zugec](https://twitter.com/MartinZugec) & [Alvin Raagas](https://twitter.com/AlvinRaagas)
 
 ## Overview
 
@@ -50,7 +48,16 @@ Following server components are required:
 
 ## Installation - Delivery Controller
 
-1.  After you purchase the app protection feature, download the `FeatureTable.OnPrem.AppProtection.xml` file from the Citrix Virtual Apps and Desktops 1912 or later download page
+  >**Note:**
+  >Following steps are only required for Citrix Virtual Apps and Desktops versions 1912, 2003 and 2006, app protection feature is automatically included in newer releases. Only required step on newer releases is to enable XML trust (first step).
+
+1.  Enable XML Trust by running the following command:
+
+    `Set-BrokerSite -TrustRequestsSentToTheXmlServicePort $true`
+
+    ![Set XML trust](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_21.png)
+
+1.  After you purchase the app protection feature, download the `FeatureTable.OnPrem.AppProtection.xml` file from the Citrix Virtual Apps and Desktops 1912 or later download page.
 
     >**Note:**
     >App Protection Policies XML file is located under Components
@@ -79,12 +86,6 @@ Following server components are required:
     `Get-ConfigEnabledFeature | Select-String –Pattern "AppProtection"`
 
     ![Get feature](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_17.png)
-
-1.  Enable XML Trust by running the following command:
-
-    `Set-BrokerSite -TrustRequestsSentToTheXmlServicePort $true`
-
-    ![Set XML trust](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_21.png)
 
 ## Installation - Licensing
 
