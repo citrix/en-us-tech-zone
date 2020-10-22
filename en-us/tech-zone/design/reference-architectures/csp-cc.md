@@ -8,8 +8,6 @@ description: The CSP Content Collaboration Service and Workspace integration sim
 
 **Author:** [Darren Harding](https://Twitter.com/DarrenHarding)
 
-**Special Thanks:** The Citrix Service Provider Channel team who reviewed the document.
-
 ## Audience
 
 This document is intended for IT decision makers, consultants, solution integrators, cloud engineers, and CSP Partners. Whom are seeking to deploy a CSP Content Collaboration environment integrated with Citrix Workspace.
