@@ -1,12 +1,10 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Nick Rintalan
 description: Learn about the magic formula to calculate how many users you can have on a single server, what are the different variables that have an impact on scalability and recommendations to improve it.
 ---
 # Citrix Virtual Apps and Desktops Single-Server Scalability
-
-## Contributors
-
-**Author:** [Nick Rintalan](https://www.citrix.com/blogs/author/nicholasr/)
 
 ## Overview
 
@@ -50,7 +48,7 @@ Let’s assume you’re running Windows 10 with standard Office applications and
 
 > 5 x 36 = 180 VMs per host
 
-**Note** Citrix specialized VDI and RDSH-based workloads are CPU bound 99.9% of the time. CPU has become the scalability bottleneck as opposed to memory, disk storage, or network storage. These multipliers omit other areas aside from CPU because CPU has become the main factor.  Although hyper-threading, clock speeds, and virtual cores are all important, nothing is more important than the number of physical cores on a server. When utilizing the rule of 5 and 10, it is best to ignore all the other numbers at first to do the initial sizing to avoid confusion. 
+**Note** Citrix specialized VDI and RDSH-based workloads are CPU bound 99.9% of the time. CPU has become the scalability bottleneck as opposed to memory, disk storage, or network storage. These multipliers omit other areas aside from CPU because CPU has become the main factor.  Although hyper-threading, clock speeds, and virtual cores are all important, nothing is more important than the number of physical cores on a server. When utilizing the rule of 5 and 10, it is best to ignore all the other numbers at first to do the initial sizing to avoid confusion.
 
 ### Example 2: Citrix Virtual Apps (older hardware)
 

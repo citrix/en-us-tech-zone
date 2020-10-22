@@ -1,12 +1,10 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
 description: Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 ---
 # Access Control
-
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
 
 The Access Control cloud service provides the following capabilities to SaaS and web apps:
 

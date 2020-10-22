@@ -1,14 +1,11 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Albert Lee
+specialThanksTo: Andrew Gravett
 description: See how the Citrix Application Delivery Management software is deployed to simplify management and monitoring of your application delivery infrastructure.
 ---
 # Citrix Application Delivery Management
-
-## Contributors
-
-**Author:** [Albert Lee](mailto:Albert.lee@citrix.com)
-
-**Special thanks:** [Andrew Gravett](mailto:Andrew.Gravett@citrix.com)
 
 ## Overview
 

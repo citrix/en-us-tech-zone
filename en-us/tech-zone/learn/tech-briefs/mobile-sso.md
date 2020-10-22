@@ -1,14 +1,11 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Frank Srp
+specialThanksTo: Alex Rubio
 description: Native mobile app single sign-on for iOS and Android SaaS applications.
 ---
 # Mobile SSO
-
-## Contributors
-
-**Author:** [Frank Srp](https://twitter.com/UEMSRP)
-
-**Special Thanks:** Alex Rubio
 
   >**Tech Preview Disclaimer**
   >

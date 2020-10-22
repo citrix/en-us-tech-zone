@@ -1,12 +1,10 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Matthew Brooks, Florin Lazurca, Rob Sanders, Martin Zugec, Allen Furmanski
 description: Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.
 ---
 # Architectural Considerations for the General Data Protection Regulation (GDPR)
-
-## Contributors
-
-**Authors:** [Matthew Brooks](https://twitter.com/tweetmattbrooks), [Florin Lazurca](https://twitter.com/florinlaz), [Rob Sanders](https://twitter.com/robsanders), [Martin Zugec](https://twitter.com/MartinZugec), [Allen Furmanski](https://twitter.com/TekGuyAllen)
 
 ## General Data Protection Regulation (GDPR) Overview
 

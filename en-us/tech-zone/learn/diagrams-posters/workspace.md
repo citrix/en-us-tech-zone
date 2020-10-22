@@ -1,12 +1,10 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
 description: Conceptual architecture drawing for Citrix Workspace.
 ---
 # Citrix Workspace
-
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
 
 ## Diagrams
 

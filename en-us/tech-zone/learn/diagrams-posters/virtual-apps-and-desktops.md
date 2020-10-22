@@ -1,12 +1,12 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
 description: Conceptual architecture drawing for Citrix Virtual Apps and Desktop on-premises deployment.
 ---
 # Virtual Apps and Desktops
 
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
+## Diagrams
 
 To show in full size, click the image found below:
 

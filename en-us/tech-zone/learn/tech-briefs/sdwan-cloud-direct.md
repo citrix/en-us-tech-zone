@@ -1,14 +1,11 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Matthew Brooks
+specialThanksTo: Karthick Srivatsan, Mark King, Daniel Feller
 description: Optimize SaaS access for branch users by tunneling session traffic to Internet Exchanges with direct connectivity to popular sites.
 ---
 # Citrix SD-WAN Cloud Direct overview
-
-## Contributors
-
-**Author:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
-
-**Special Thanks:**  Karthick Srivatsan, Mark King, Daniel Feller
 
 Citrix SD-WAN Cloud Direct extends Citrix SD-WAN optimal routing and delivery optimization benefits to SaaS. The service tunnels branch office endpoint traffic, to the front door of popular SaaS sites, via PoPs hosted at major Internet Exchanges.
 

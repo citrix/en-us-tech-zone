@@ -1,14 +1,11 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Ana Ruiz
+specialThanksTo: Mayank Singh
 description: Learn how to get started with Citrix Virtual Apps and Desktop Service to deliver virtual apps and desktops to your end users while having the management plane hosted on Citrix Cloud.
 ---
 # Proof of Concept guide for Getting Started with Citrix Virtual Apps and Desktop Service
-
-## Contributors
-
-**Author:** [Ana Ruiz](https://twitter.com/mobileruiz)
-
-**Special Thanks:** [Mayank Singh](https://twitter.com/techmayank)
 
 ## Overview
 

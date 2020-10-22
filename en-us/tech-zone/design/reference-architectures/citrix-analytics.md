@@ -1,14 +1,11 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Nagaraj Manoli
+specialThanksTo: George Tsolis, Vikramjeet Singh, Arun Pons
 description: Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
 ---
 # Citrix Analytics Service
-
-## Contributors
-
-**Author:** [Nagaraj Manoli](mailto:nagaraj.manoli@citrix.com)
-
-**Special Thanks:** [George Tsolis](mailto:George.Tsolis@citrix.com), [Vikramjeet Singh](mailto:Vikramjeet.Singh@citrix.com), [Arun Pons](mailto:ponnambalam.mudivaiarun@citrix.com)
 
 ## Audience
 
