@@ -10,8 +10,6 @@ description: The CSP Reference Architecture, provides architectural guidance for
 
 **Special Thanks:** [Selma Wei](https://Twitter.com/_selw), [Bala Swaminathan](https://Twitter.com/Bala), [Jose Augustin](https://Twitter.com/joseaugustin), [Alex Tompkins](mailto:Alex.Tompkins@Citrix.com)
 
-**Additional Thanks:** The CSP Channel team who reviewed the document.
-
 ## Audience
 
 This document is intended for IT decision makers, consultants, solution integrators, cloud engineers, and CSP Partners. Whom are seeking to deploy or migrate existing multitenant Citrix Virtual Apps & Desktops environment to the multitenant Citrix Cloud.

@@ -8,7 +8,7 @@ description: Learn about the deployment architecture and how Citrix SD-WAN WANOP
 
 **Author:** [Vivekananthan Devaraj](mailto:Vivekananthan.Devaraj@Citrix.com)
 
-**Special thanks:**  [Allen Furmanski](https://twitter.com/tekguyallen), [Jaskirat Chauhan](mailto:jaskirat.chauhan@citrix.com), & [Derek Thorslund](https://twitter.com/derektcitrix)
+**Special thanks:**  [Allen Furmanski](https://twitter.com/tekguyallen), [Jaskirat Chauhan](mailto:jaskirat.chauhan@citrix.com) & [Derek Thorslund](https://twitter.com/derektcitrix)
 
 ## Audience
 

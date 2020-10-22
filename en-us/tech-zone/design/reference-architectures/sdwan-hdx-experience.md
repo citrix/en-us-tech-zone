@@ -7,9 +7,7 @@ description: Citrix SD-WAN can significantly improve the network performance of 
 
 ## Contributors
 
-**Authors:**
-
-[Matthew Brooks](https://twitter.com/tweetmattbrooks), [Shoaib Yusuf](https://twitter.com/Shoaibys)
+**Authors:** [Matthew Brooks](https://twitter.com/tweetmattbrooks), [Shoaib Yusuf](https://twitter.com/Shoaibys)
 
 **Special Thanks:**  Daljit Singh, Dan Feller, Derek Thorslund, Jaskirat Singh Chauhan, Karthick Srivatsan, Mallikarjuna Komma, Mallikarjuna Reddy M, Muhammad Dawood, Ramanjaneya Kamalapuram, Ravindra L Patil, Siva Prasad, and Thavamani Rajan
 

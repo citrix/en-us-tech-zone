@@ -8,7 +8,7 @@ description: The CSP Content Collaboration Service and Workspace integration sim
 
 **Author:** [Darren Harding](https://Twitter.com/DarrenHarding)
 
-**Additional Thanks:** The Citrix Service Provider Channel team who reviewed the document.
+**Special Thanks:** The Citrix Service Provider Channel team who reviewed the document.
 
 ## Audience
 
