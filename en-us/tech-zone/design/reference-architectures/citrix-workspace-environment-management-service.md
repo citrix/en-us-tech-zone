@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 h3InToc: true
 contributedBy: Jian Luo, Cheng Zhang, Jack Zhou

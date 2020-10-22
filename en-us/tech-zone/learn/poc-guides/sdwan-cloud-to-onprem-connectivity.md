@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 h3InToc: true
 contributedBy: Matt Brooks

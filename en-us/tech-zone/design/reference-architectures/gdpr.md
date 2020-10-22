@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 h3InToc: true
 contributedBy: Matthew Brooks, Florin Lazurca, Rob Sanders, Martin Zugec, Allen Furmanski

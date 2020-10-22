@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 h3InToc: true
 contributedBy: Matthew Greenbaum, Simon Jackson, Nick Rintalan, Daniel Feller
