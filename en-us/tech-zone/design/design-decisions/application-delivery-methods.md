@@ -1,14 +1,11 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Sasa Petrovic
+specialThanksTo: Holger Marggrander, Jeff Qiu, Maria Chang, Martin Latteier, Martin Zugec, Rico Projer, Robert Wolfer, Sarah Steinhoff
 description: Learn about the different decision factors involved in choosing the optimal application delivery method.
 ---
 # Evaluating Application Delivery Methods
-
-## Contributors
-
-**Author:** [Sasa Petrovic](https://twitter.com/petrovicsasa)
-
-**Special thanks:** [Holger Marggrander](https://twitter.com/hmarggrander), [Jeff Qiu](https://www.linkedin.com/in/jeff-qiu-722b8122), [Maria Chang](https://www.linkedin.com/in/maria-chang-5084a822), [Martin Latteier](https://twitter.com/MartinLatteier), [Martin Zugec](https://twitter.com/MartinZugec), [Rico Projer](https://twitter.com/RProjer), [Robert Wolfer](https://www.linkedin.com/in/robert-woelfer-83b37483), [Sarah Steinhoff](https://www.linkedin.com/in/sarah-steinhoff-71336650/)
 
 ## Overview
 

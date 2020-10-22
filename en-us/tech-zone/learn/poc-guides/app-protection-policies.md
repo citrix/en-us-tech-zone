@@ -1,12 +1,10 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Martin Zugec, Alvin Raagas
 description: Learn how to enhance the security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
 ---
 # App Protection Policies
-
-## Contributors
-
-**Author:** [Martin Zugec](https://twitter.com/MartinZugec) & [Alvin Raagas](https://twitter.com/AlvinRaagas)
 
 ## Overview
 

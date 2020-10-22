@@ -1,12 +1,10 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
 description: A Citrix Virtual Apps and Desktops solution can take on many delivery forms. The organization's business objectives help select the right approach as the different models impact the local IT team's management scope. Learn how Citrix Virtual Apps and Desktops management scope changes based on using a locally managed deployment, a cloud service deployment and a cloud managed deployment.
 ---
 # Evaluating Delivery Models
-
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
 
 ## Overview
 

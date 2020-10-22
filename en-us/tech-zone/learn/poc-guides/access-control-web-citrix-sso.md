@@ -1,12 +1,10 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
 description: Learn how to set up VPN-less access to an internal web application with Citrix Access Control, utilizing Citrix-provided SSO.
 ---
 # Proof of Concept: Secure Access to Internal Web Applications with Citrix Access Control
-
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
 
 ## Overview
 

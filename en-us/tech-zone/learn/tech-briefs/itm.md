@@ -1,14 +1,11 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Matthew Brooks
+specialThanksTo: Antoine Thoumelin
 description: Citrix Intelligent Traffic Management (ITM) service brings “intelligence” to DNS by incorporating a broad set of capabilities to determine the best query response based on analysis of real time conditions.
 ---
 # Introduction to Citrix Intelligent Traffic Management
-
-## Contributors
-
-**Author:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
-
-**Special Thanks:** Antoine Thoumelin
 
 Citrix Intelligent Traffic Management (ITM) service brings “intelligence” to the Internet standard of Domain Name Server (DNS). This service is done by incorporating a broad set of capabilities that determine the best query response based on the analysis of real time conditions.
 

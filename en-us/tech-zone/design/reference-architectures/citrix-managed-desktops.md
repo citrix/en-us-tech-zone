@@ -1,14 +1,11 @@
----
+﻿---
 layout: doc
+h3InToc: true
+contributedBy: Nagaraj Manoli
+specialThanksTo: Kireeti Valicherla, Swaroop JV, Alan Goldman, Derek Thorslund
 description: Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
 ---
 # Citrix Managed Desktops
-
-## Contributors
-
-**Author:** [Nagaraj Manoli](mailto:nagaraj.manoli@citrix.com)
-
-**Special Thanks:** [Kireeti Valicherla](mailto:kireeti.valicherla@citrix.com), [Swaroop JV](mailto:Swaroop.JosephVarghese@citrix.com), [Alan Goldman](mailto:alan.goldman@citrix.com), [Derek Thorslund](https://twitter.com/derektcitrix)
 
 ## Audience
 
