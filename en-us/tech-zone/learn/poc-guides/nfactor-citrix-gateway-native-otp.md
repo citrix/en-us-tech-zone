@@ -74,7 +74,7 @@ Refer to Citrix Documentation for the latest product version and license require
 
 1.  Navigate to '**Security > AAA-Application Traffic > Policies > Authentication > Advanced Policies > Policy**'
 1.  Click `Add`
-1.  Enter a name for your policy and change the Action Type to `LDAP` as seen below
+1.  Enter `nOTP_authserverldap` for your policy name and change the Action Type to `LDAP` as seen below
 1.  Click `Add` under Action
 1.  Give your server a name, change server type to `AD`, and select the correct security type
 ![LDAP Server Name and Type](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_authpolicy.png)
@@ -131,11 +131,12 @@ Similarly, we will create a second login schema by clicking `Add` again.
 ## Create and Bind Policy Labels
 
 1.  Navigate back to '**Security > AAA-Application Traffic > Virtual Servers**'
-1.  Select the server you created previously and click 'Edit'
-1.  Under 'Advanced Authentication Policies', select 'No Authentication Policy'
-1.  Click to select and choose the first authentication policy created and select 'Add'
-1.  Under Binding Details, choose the '+' icon under 'Select Next Factor'
-1.  Give your Authentication PolicyLabel a name and click 'Continue'
+1.  Select the `nOTP_authvs` server you created previously and click `Edit`
+1.  Under `Advanced Authentication Policies`, select `No Authentication Policy`
+1.  Under 'Select Policy' click the right arrow and choose the first authentication policy created `nOTP_authserverldap` and click `Select`
+1.  Now beneath Binding Details, under `Select Next Factor` select `Add`
+1.  Give your Authentication PolicyLabel a name. We enter `nOTP_factor`
+1.  Click `Continue`
 1.  Under Policy Binding, click 'Click to Select' and choose the second advanced authentication policy. In this example, it is called 'nOTP_validation'
 1.  Click 'Bind', 'Done', then 'Bind" again for the original authentication policy
 
