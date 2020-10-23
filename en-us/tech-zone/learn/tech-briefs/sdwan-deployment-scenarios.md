@@ -61,7 +61,7 @@ For more information see the [Citrix Virtual Apps and Desktops - Component Archi
 
 ### Deployment 2: Citrix Virtual Apps and Desktops Service with resources on-premises
 
-As Citrix customers move to the cloud, their first step is often to use the Citrix Virtual Apps and Desktops service to manage their virtual apps, and desktops workloads hosted at their on-premises locations. Citrix takes over maintaining the control systems, while customers can continue to manage their enviroments through Citrix Cloud.
+As Citrix customers move to the cloud, their first step is often to use the Citrix Virtual Apps and Desktops service to manage their virtual apps, and desktops workloads hosted at their on-premises locations. Citrix takes over maintaining the control systems, while customers can continue to manage their environments through Citrix Cloud.
 
 ![Scenarios 2 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios2withoutsdwan.png)
 
@@ -78,7 +78,7 @@ Citrix SD-WAN offers a solution to these issues, and provides other benefits in 
 *  **Reducing latency through NLS** and updating the NLS automatically through
 Citrix SD-WAN, helping to resolve issues where dynamic IP addresses are used
 *  **Providing deep visibility into HDX traffic** enabling IT to monitor User Experience, and proactively act in the event there is degradation
-*  **Citrix Cloud and Gateway Service breakout policy** allowing First Packet Classification, facilitating direct internt breakout from the SD-WAN branch, which reduces the latency
+*  **Citrix Cloud and Gateway Service breakout policy** allowing First Packet Classification, facilitating direct internet breakout from the SD-WAN branch, which reduces the latency
 
 ![Scenarios 2 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios2withsdwan.png)
 
