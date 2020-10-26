@@ -71,3 +71,39 @@ Second, Citrix Secure Browser service is a cloud hosted browser service that doe
 Citrix Secure Workspace Access has a very large database of URIs that are risk scored. On top of that, the administrator can set policies on specific domains to allow or block URIs. Administrators can also set policies on how applications need to be served to end-users.
 
 Web links to unknown or risky websites can be automatically redirected to the Citrix Workspace embedded browser or the Secure Browser service to protect end-users from potentially malicious web sites. This transition is completely transparent for the end-user and keeps organizations safe while allowing employees to get their job done.
+
+## Enhanced Security
+
+To protect content, Secure Workspace Access incorporates enhanced security policies within the SaaS applications. Each policy enforces a restriction on the embedded browser when using Workspace app or on the Secure Browser service when using Workspace app web or mobile.
+
+Referred to as cloud app control, this capability provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications:
+
+*  Preferred browser: Disables local browser use and relies on the embedded browser engine (Workspace app - desktop) or Secure Browser (Workspace app – mobile and web).
+*  Restrict clipboard access: Disables cut/copy/paste operations between the app and endpoint clipboard.
+*  Restrict printing: Disables ability to print from within the app browser.
+*  Restrict navigation: Disables the next/back browser buttons.
+*  Restrict downloads: Disables the user’s ability to download from within the SaaS app.
+*  Display watermark: Overlays a screen-based watermark showing the user name and IP address of the endpoint. If a user tries to print or take a screenshot, the watermark appears as displayed on the screen.
+
+## App Protection
+
+One risk that must be mitigated when end users use their personal devices for work is malware. Two of the most dangerous types are keylogging and screen shot malware, which can be used to both exfiltrate and harvest sensitive information like user credentials or personally identifiable information.
+
+Secure Workspace Access has advanced policies to protect user and organization data on web, SaaS and virtual apps. App Protection policies protect user sessions and application data from being hijacked by keyloggers and screen capturing malware.
+
+App protection policies are rules applied while enabling enhanced security to an app.
+
+*  Anti-Key Logging – protects the active window in focus against keyloggers by encrypting keystrokes
+*  Anti-Screen Capture – protects the active window against screenshots by blanking the screen
+
+A less malicious but equally dangerous risk is accidental screen sharing. The line between personal and work usage on devices has been blurred, so it’s become common for end users to move from working on a business app to a virtual hangout with friends or family on that device. In these scenarios, accidental screen sharing of sensitive data in the business app could result in significant issues, especially for those in highly regulated industries.
+
+## Web Filtering
+
+Citrix Secure Workspace Access includes a URL filtering engine. By using the information contained in URLs, this feature helps admins monitor and control user access to malicious websites on the internet. Together, with the aforementioned browser isolation options, web filtering gives admins the choice to completely block a URL or access a URL in the embedded browswer or in a Secure Browser session.
+
+The web filtering controller uses a categorization database and URLs list. When the request comes to the web filtering controller, it first checks the global allow list which also contains critical Citrix Cloud URLs. Then it checks to Lists and Categorization and verifies with blocked and allowed and redirect to Secure Browser URLs. If none of the URLs match, then by default it falls back to the default list.
+
+Admins can take a cautious approach even for accessing allow list URLs. This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet.
+
+A traditional URL filtering engine that assumes trust for a allow list URL. Secure Workspace Access does not implicitly trust an allow list URL since webpages, deemed safe by URL filtering engines, that can host malicious links. With Secure Workspace Access, URLs on trusted sites are also tested.
