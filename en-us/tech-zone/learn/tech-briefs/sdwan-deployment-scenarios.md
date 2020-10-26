@@ -30,7 +30,7 @@ Citrix SD-WAN is a proven, cost-effective solution that has helped companies aro
 
 Until recently, you'd find that all of the resources (VDAs, AD, and data servers), and managing operations (licensing, StoreFront, and Director) resided in the data center. Citrix technologies have evolved since then, and we recommend that most organizations use or plan to use cloud services when feasible. Although we recommend using the cloud service, customers can choose to continue using the on-premises or hybrid cloud solution.
 
-![Scenarios 1 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios1withoutsdwan.png)
+[![Scenarios 1 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios1withoutsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios1withoutsdwan.png)
 
 Normally, a branch was connected to the data center through MPLS links. MPLS links are reliable. However, costs are significantly higher than broadband connections, and MPLS links take longer to implement. Citrix SD-WAN helps reduce the cost by allowing you to use broadband alongside or instead of your MPLS while ensuring the reliability, and security of your private WAN. This use case can be implemented rapidly, and it provides many benefits:
 
@@ -50,13 +50,13 @@ To reach the StoreFront FQDN, the endpoint resolves an internal IP address. It i
 
 For more information see the [Citrix Virtual Apps and Desktops - Component Architecture](/en-us/tech-zone/learn/downloads/diagrams-posters_virtual-apps-and-desktops_poster.png)
 
-![Scenarios 1 - WITH SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios1withsdwan.png)
+[![Scenarios 1 - WITH SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios1withsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios1withsdwan.png)
 
 ### Deployment 2: Citrix Virtual Apps and Desktops Service with resources on-premises
 
 As Citrix customers move to the cloud, their first step is often to use the Citrix Virtual Apps and Desktops service to manage their virtual apps, and desktops workloads hosted at their on-premises locations. Citrix takes over maintaining the control systems, while customers can continue to manage their environments through Citrix Cloud.
 
-![Scenarios 2 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios2withoutsdwan.png)
+[![Scenarios 2 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios2withoutsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios2withoutsdwan.png)
 
 Although, in this scenario, while managing operations through the Citrix Cloud service is simplified, network connectivity may not be. Session traffic is directed to the nearest Citrix Gateway service PoP. From there, it is proxied to the resource locations. While there are many PoP locations around the world, for endpoints in Remote Branches on the WAN, this step can add latency.
 
@@ -71,13 +71,13 @@ Citrix SD-WAN offers a solution to these issues, and provides other benefits in 
 *  **Providing deep visibility into HDX traffic** enabling IT to monitor User Experience, and proactively act in the event there is degradation
 *  **Citrix Cloud and Gateway Service internet breakout policy** allowing First Packet Classification, facilitating direct internet breakout from the SD-WAN branch, which reduces latency for endpoints that are unable to access StoreFront and VDAs directly over the Internal Network
 
-![Scenarios 2 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios2withsdwan.png)
+[![Scenarios 2 - With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios2withsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios2withsdwan.png)
 
 ### Deployment 3: Citrix Virtual Apps, and Desktops Service with VDAs in the cloud, other resources on-premises
 
 In this deployment, Citrix provides a service to manage resources located both in the cloud and on-prem locations. The adoption rate of this deployment is high due to benefits including reduced complexity, and cost. Nonetheless, the complexity around network connectivity continues to provide some challenges. Citrix SD-WAN offers a simple, cost-effective solution. The figure below is a typical topology without Citrix SD-WAN where the VDAs are in public clouds, but the data servers and the Active Directory servers are located at the on-premises location.
 
-![Scenarios 3 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios3withoutsdwan.png)
+[![Scenarios 3 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios3withoutsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios3withoutsdwan.png)
 
 Citrix SD-WAN offers two solutions to the scenario above:
 
@@ -89,15 +89,15 @@ It takes time, and costs to deploy Cloud platform connectivity options such as M
 
 The second scenario in this deployment is the connectivity between branches, and VDAs in the cloud. The normal path for a branch user is through Citrix Cloud using the Citrix Gateway service, which is connected to VDAs through the Citrix connector. Usually, Citrix Cloud, and VDAs exist in different locations, and different clouds. The transit distance, and forwarding delays, across the best effort Internet, can add latency and disrupt user experience. Citrix SD-WAN, along with Direct Workload Connection, can improve the user experience by reducing latency, and by reducing the egress bandwidth cost since traffic is traversing out of one cloud.
 
-![Scenarios 3 - With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios3withsdwan.png)
+[![Scenarios 3 - With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios3withsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios3withsdwan.png)
 
-### Deployment 4: Citrix Virtual Apps and Desktops service for Azure
+### Deployment 4: Citrix Virtual Apps and Desktops Standard for Azure
 
-Citrix Virtual Apps and Desktops service for Azure (DaaS offering) makes it easy to deliver secure Windows apps, and desktops from Azure. Both management operations and VDA resources run inside virtual machines on the Azure public cloud that Citrix owns, and manages. The following figure is a typical topology with connectivity from branch users.
+Citrix Virtual Apps and Desktops Standard for Azure (DaaS offering) makes it easy to deliver secure Windows apps, and desktops from Azure. Both management operations and VDA resources run inside virtual machines on the Azure public cloud that Citrix owns, and manages. The following figure is a typical topology with connectivity from branch users.
 
-![Scenarios 4 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios4withoutsdwan.png)
+[![Scenarios 4 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios4withoutsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios4withoutsdwan.png)
 
-SD-WAN technology is now integrated in the Citrix Virtual Apps and Desktops Service for Azure to simplify network connectivity from your cloud-hosted desktops to both:
+SD-WAN technology is now integrated in the Citrix Virtual Apps and Desktops Standard for Azure to simplify network connectivity from your cloud-hosted desktops to both:
 
 *  **On-premises resources** such as Active Directory, and data sources
 *  **Branch users** the integrated SD-WAN solution also significantly cuts down the network connectivity cost, and enhances the user experience. In addition, customers connecting to the Citrix Virtual Apps and Desktops Service for Azure can access the below services:
@@ -105,13 +105,13 @@ SD-WAN technology is now integrated in the Citrix Virtual Apps and Desktops Serv
 *  **Data Centers** in different clouds
 *  **Use of cloud network** backbones
 
-![Scenarios 4 - With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios4withsdwan.png)
+[![Scenarios 4 - With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios4withsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios4withsdwan.png)
 
 ### Deployment 5: Citrix SD-WAN Cloud Direct service for Citrix Virtual Apps and Desktops Standard for Azure and Citrix Virtual Apps and Desktops Service use cases
 
 SD-WAN Cloud Direct is a service that provides many of the benefits of SD-WAN virtual paths, without the need to install SD-WAN in the cloud. It is a good alternative for customers who are unable to manage their own virtual SD-WAN instances in the cloud. Cloud Direct supports connecting to virtual desktops in the cloud, including Citrix Virtual Apps and Desktops, Citrix Virtual Apps and Desktops Standard for Azure and Microsoft Windows Virtual Desktops. Complementing Cloud Direct, Citrix SD-WAN also supports connectivity from virtual apps to on-prem resources (For example databases, back-end servers).
 
-![Scenarios 5 - Azure With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios5azurewithsdwan.png)
+[![Scenarios 5 - Azure With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios5azurewithsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios5azurewithsdwan.png)
 
 Citrix has multiple Cloud Direct PoPs around the world that are peered with most public cloud, and SaaS providers. Customers providing access to SaaS applications, Citrix Virtual Apps and Desktops Standard for Azure / Citrix Virtual Apps and Desktops Service / Windows Virtual Desktops, and other cloud providers can use this service to improve application response times. It is especially valuable for organizations accessing applications hosted by third parties. Most cloud providers charge for data leaving the cloud. So, putting SD-WAN in the cloud can add extra cost to the customer. These network bandwidth charges can be avoided using the Cloud Direct service. Here are a few benefits using the Cloud Direct service:
 
@@ -124,7 +124,7 @@ Citrix has multiple Cloud Direct PoPs around the world that are peered with most
 *  **Extended visibility**: Benefit reporting beyond the edge
 Citrix Virtual Apps and Desktops Standard for Azure is another SaaS application. Here’s how the Cloud Direct service is used for connecting to virtual desktops.
 
-![Scenarios 5 - Citrix Virtual Apps, and Desktops Service With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios5cvadswithsdwan.png)
+[![Scenarios 5 - Citrix Virtual Apps, and Desktops Service With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios5cvadswithsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios5cvadswithsdwan.png)
 
 Getting better experience to Citrix Virtual Apps and Desktops Service through the Citrix Cloud service is no different. Customers can choose a **SD-WAN book-ended solution** for network connectivity between Head office, and Cloud DC.
 
@@ -142,7 +142,7 @@ Citrix is one of the preferred Microsoft partners for connecting to Azure Virtua
 *  **Leverage Microsoft’s global backbone network** in branch to hub (in all Azure regions) communication.
 *  **Active-Active redundant IPSec tunnels** for failover to Azure vWAN using BGP for faster convergence and scalable management of network prefix changes
 
-![Scenarios 6 - With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios6withsdwan.png)
+[![Scenarios 6 - With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios6withsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios6withsdwan.png)
 
 ## Summary
 
