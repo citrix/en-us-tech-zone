@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Martin Zugec, Miguel Contreras
+specialThanksTo: Judong Liao, James Kindon, Dmytro Bozhko, Dai Li
 description: Tech Paper focused on proper configuration, and recommendations for running an antivirus solution in Citrix Virtual Apps & Desktops environments. Recommended exclusions, configuration, and leading practices.
 ---
 # Endpoint Security and Antivirus Best Practices
-
-## Contributors
-
-**Author:** [Martin Zugec](https://twitter.com/MartinZugec), [Miguel Contreras](https://twitter.com/ctxmigs)
-
-**Special thanks:** Judong Liao, [James Kindon](https://twitter.com/james_kindon), Dmytro Bozhko, Dai Li
 
 ## Overview
 

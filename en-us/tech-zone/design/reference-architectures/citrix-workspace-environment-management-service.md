@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Jian Luo, Cheng Zhang, Jack Zhou
 description: Learn about the architecture and deployment considerations for this cloud-based service of Workspace Environment Management.
 ---
 # Reference Architecture for Citrix Workspace Environment Management Service
-
-## Contributors
-
-**Author:** [Jian Luo](mailto:jian.luo@citrix.com), [Cheng Zhang](mailto:Cheng.Zhang@citrix.com) and [Jack Zhou](mailto:Jack.Zhou@citrix.com)
 
 ## Introduction
 

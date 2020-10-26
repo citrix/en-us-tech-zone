@@ -1,16 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Darren Harding
+specialThanksTo: Selma Wei, Bala Swaminathan, Jose Augustin, Alex Tompkins
 description: The CSP Reference Architecture, provides architectural guidance for Citrix Service Providers to utilize the Virtual Apps and Desktops Service, and Citrix Cloud technologies to offer services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base shared across multiple tenants and multiple geographies, using a single pane of glass.
 ---
 # Citrix Service Provider Virtual Apps and Desktops Reference Architecture
-
-## Contributors
-
-**Author:** [Darren Harding](https://Twitter.com/DarrenHarding)
-
-**Special Thanks:** [Selma Wei](https://Twitter.com/_selw), [Bala Swaminathan](https://Twitter.com/Bala), [Jose Augustin](https://Twitter.com/joseaugustin), [Alex Tompkins](mailto:Alex.Tompkins@Citrix.com)
-
-**Additional Thanks:** The CSP Channel team who reviewed the document.
 
 ## Audience
 

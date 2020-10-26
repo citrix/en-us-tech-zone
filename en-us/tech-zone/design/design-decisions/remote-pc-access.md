@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Matthew Greenbaum, Simon Jackson, Nick Rintalan, Daniel Feller
 description: Remote PC Access is easy to deploy. These design decisions help maintain security, availability, and performance.
 ---
 # Remote PC Access Design Decisions
-
-## Contributors
-
-**Author:** Matthew Greenbaum, Simon Jackson, Nick Rintalan, [Daniel Feller](https://twitter.com/djfeller)
 
 ## Overview
 

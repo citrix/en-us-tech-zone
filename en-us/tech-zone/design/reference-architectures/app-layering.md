@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Nagaraj Manoli
+specialThanksTo: Rob Zylowski, Dan Morgan
 description: Gain a deep understanding of the Citrix Layering technology that simplifies the image management for VDI and hosted-shared environments including use cases and technical concepts.
 ---
 # Citrix App Layering
-
-## Contributors
-
-**Author:** [Nagaraj Manoli](mailto:nagaraj.manoli@citrix.com)
-
-**Special Thanks:** [Rob Zylowski](https://twitter.com/rzylowski), [Dan Morgan](mailto:Dan.Morgan@citrix.com)
 
 ## Audience
 

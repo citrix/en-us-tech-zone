@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Florin Lazurca
 description: Learn why Citrix Gateway is the best secure remote access solution for Citrix Virtual Apps and Desktops.
 ---
 # Citrix Gateway and Citrix Virtual Apps and Desktops
-
-## Contributors
-
-**Author:** Florin Lazurca
 
 ## Overview
 

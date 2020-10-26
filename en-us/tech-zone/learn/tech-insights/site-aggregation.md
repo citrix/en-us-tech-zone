@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
 description: Hybrid deployment that allows your on-premises Citrix Virtual Apps & Desktops environments to be part of Citrix Workspace.
 ---
 # Site Aggregation
-
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
 
 Allows organizations to integrate their IT-managed Virtual Apps and Desktops environment with the Workspace experience of Citrix Cloud, without requiring modifications to the current environment.
 

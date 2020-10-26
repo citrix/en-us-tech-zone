@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Matthew Brooks
+specialThanksTo: Ravi Pegada, Valerie DiMartino, Reshma Padmanabha
 description: Learn how Citrix SD-WAN Advanced Edition provides Edge Security for your Enterprise network.
 ---
 # Citrix SD-WAN Edge Security
-
-## Contributors
-
-**Author:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
-
-**Special Thanks:** Ravi Pegada, Valerie DiMartino, Reshma Padmanabha
 
 ## Introduction
 

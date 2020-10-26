@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
 description: Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 ---
 # Access Control
-
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
 
 As users consume more SaaS-based applications, organizations must be able to unify all sanctioned apps, simplify login operations while still enforcing authentication standards, and capture user behavior. Is also been crucial to monitor vendor SLAs and application utilization analytics.
 
