@@ -2,16 +2,16 @@
 layout: doc
 h3InToc: true
 contributedBy: Thamara Trejos
-specialThanksTo: Amir Trujillo, Nitin Mehta, Daniel Feller
+specialThanksTo: Amir Trujillo, Nitin Mehta, Daniel Feller, Mark Hoffman, Bala Swaminathan
 description: This Proof of Concept guide provides instructions on using an Automated Configuration tool to automate moving your Citrix Virtual Apps and Desktops configuration to your Citrix Virtual Apps and Desktops Service deployment. The tool also supports the use case of moving your configuration between Citrix Virtual Apps and Desktops Service deployments.
 ---
 # Proof of Concept: Automated Configuration Tool
 
 ## Overview
 
-The [Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html) facilitates migrating and exporting configurations to the **Citrix Virtual Apps and Desktop Service** (CVADS). This Proof of Concept guide illustrates the step by step instructions on how to use this tool.
+The [Automated Configuration tool](https://www.citrix.com/downloads/citrix-cloud/product-software/automated-configuration.html) facilitates migrating and exporting configurations to the **Citrix Virtual Apps and Desktop Service** (CVADS). This Proof of Concept guide illustrates the step by step instructions on how to use this tool.
 
-Administrators can easily test and explore the **Citrix Virtual Apps and Desktop Service** (CVADS) features and advantages, while simultaneously running existing On-Premises environments and even facilitate moves between cloud regions, back up existing configurations, and other use cases. The [Automated Configuration download link](https://www.citrix.com/downloads/citrix-cloud/product-software/automated-configuration.html) also contains **additional information** and **detailed documentation** on said **use cases** and **customizations**.
+Administrators can easily test and explore the **Citrix Virtual Apps and Desktop Service** (CVADS) features and advantages, while simultaneously running existing On-Premises environments and even facilitate moves between cloud regions, back up existing configurations, and other use cases. The [Automated Configuration download link](https://www.citrix.com/downloads/citrix-cloud/product-software/automated-configuration.html) also contains **additional information** and [**detailed documentation**](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/migrate.html) on said **use cases** and **customizations**.
 
 ### What is the Automated Configuration tool for Citrix Virtual Apps and Desktops?
 
@@ -60,7 +60,7 @@ This code is not limited to migrations, it is the future for creating configurat
 
 These steps must be run in your DDC or the domain-joined machine where you want to run the **Automated Configuration** tool.
 
-1.  Download the latest **Automated Configuration tool MSI** to your **On-Premises DDC** or a domain-joined machine. **Note:** See the **Pre-requisites section** for more details on how to run it from a different machine. The tool can be downloaded from [here](INSERTLINKNITINWILLGIVEME).
+1.  Download the latest **Automated Configuration tool MSI** to your **On-Premises DDC** or a domain-joined machine. **Note:** See the **Pre-requisites section** for more details on how to run it from a different machine. The tool can be downloaded from [here](https://www.citrix.com/downloads/citrix-cloud/product-software/automated-configuration.html).
 **Note:** See the [Pre-requisites section](#pre-requisites) for more details on how to run it from a different machine.
 2.  Run the **MSI** on your **On-Premises DDC**, by right-clicking on the **AutoConfig_PowerShell_x64.msi** installer and clicking on **Install**. [![Pre-requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-001.png)
 3.  Read the **License Agreement** and check the box if you accept the terms. Then click **Install**: [![Pre-requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-002.png)
@@ -332,6 +332,6 @@ If everything looks as expected, your CVADS migration is complete.
 
 2.  You can also reach out via the [Support Forum](https://discussions.citrix.com/forum/1804-automated-configuration-for-virtual-apps-and-desktops-tech-preview/).
 
-3.  Check out our On-demand **August 19 webinar** - ["Why Citrix Cloud migration is easier than ever"](https://bit.ly/CitrixTIPs) recording, where shared more information on the tool and hosted a **Live Q&A session** with a panel of Citrix experts.
+3.  Check out our On-demand **August 19 webinar recording** - ["Why Citrix Cloud migration is easier than ever"](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/technology-in-practice-webinar-august-2020/), where we shared more information on the tool and hosted a **Live Q&A session** with a panel of Citrix experts.
 
 4.  If after consulting the information listed previously you still need assistance, get in touch with your Citrix representatives, Customer Success Manager, or Support.
