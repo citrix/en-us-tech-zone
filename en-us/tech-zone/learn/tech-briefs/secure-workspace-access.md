@@ -14,6 +14,7 @@ description: Copy & paste description from TOC here
 ## Overview
 
 As people consume more SaaS-based applications, organizations must be able to unify access to all apps and simplify login operations while still enforcing authentication standards. It’s also crucial to monitor vendor SLAs and application utilization and security analytics.
+
 Citrix Secure Workspace Access is a set of capabilities that delivers instant Single-Sign On (SSO) access to SaaS and web applications, granular and contextual security policies, app protection policies for all apps, browser isolation and web filtering policies.
 
 Citrix Secure Workspace Access goes beyond basic access and aggregation to provide IT with policy controls, known as cloud app control, that provide conditional access to cloud apps and internet browsing, enhancing the organization’s overall security and compliance posture. The user’s experience remains seamless and integrated because the SaaS and web apps can be accessed alongside their mobile and virtual apps and desktops as an integrated part of Citrix Workspace.
@@ -161,14 +162,15 @@ The App Protection feature makes the text entered by the user indecipherable by 
 
 ### SSO and Security Controls for SaaS Apps
 
-Single sign-on and contextual policies for access to SaaS apps
+Secure Workspace Access offers single sign-on and contextual policies for access to web and SaaS apps. Using Citrix Gateway or Okta as your IdP provides support for all multi-factor authentication mechanisms and contextual controls for accessing for Secure Workspace Access. These integrations protect customers' existing identity ecosystem investment and ease their move to cloud without a rip and replace forklift upgrade.
+
 Although an authorized SaaS app is considered safe, content in the SaaS app actually can be dangerous - constituting a security risk. When a user clicks a hyperlink within a SaaS app, the traffic is routed through the web filtering feature, which provides a risk assessment for the hyperlink. Based on the hyperlink’s risk assessment, and the customized list of URL categories, the web filtering feature allows, denies, or redirects the hyperlink request from the user as follows:
 
 *  Approved: The hyperlink is considered safe and the embedded browser accesses within the Workspace app accesses the hyperlink.
 *  Denied: The hyperlink is considered dangerous and access is denied.
 *  Redirected: The hyperlink request is redirected to the embedded browser or Secure Browser service, where the user’s internet browsing activities are isolated from the endpoint device, the corporate network, and the SaaS app
 
-Enhanced security with App Protection is also available for web and SaaS apps. Referred to as cloud app control, this capability provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying the following controls:
+Enhanced security with App Protection for web and SaaS apps provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying the following controls:
 
 *  Watermarking
 *  Restrict navigating
@@ -180,16 +182,5 @@ Enhanced security with App Protection is also available for web and SaaS apps. R
 
 More remote workers mean more remote meetings and web conferencing through a variety of applications. These meetings usually require employees to share their screens, which opens the possibility of exposing sensitive data by mistake. The App Protection feature protects against screenshot malware and web conference screen capturing by returning a blank screenshot instead of the information on a user’s screen. This also applies to the most common snipping tools, print-screen tools, screen capture and recording tools.
 
-With web filtering and browser isolation, Protection from malicious content on URL links
-
-Browser isolation for all internet traffic
-
-*  Isolate browsing from the company network
-*  Protect user and enterprise from web-based threats
-*  No files or data will reach the corporate network
-*  Copy and paste is controlled by policy
-*  Keep possible attack contained in the cloud
-
-Identity ecosystem protects existing investments
-
-With these new integrations i.e. Using Citrix Gateway or Okta as your IdP, we now support all multi-factor authentication mechanisms and contextual controls for accessing Citrix Workspace. These integrations are to ease your move to cloud and can be the first step you want to take for moving to Citrix Workspace, without rip and replace.
+Browser isolation for internet traffic protects end users and enterprises from web-based threats. With the Embedded Browser and Secure Browser service, admins get a choice to access sites in a local Chrome based browser a cloud hosted virtual machine (VM). With the service, possible attacks are contained in the cloud. Browsers run in isolated environment where the VM is destroyed after use and a new instance is createed for each app access. Functions like "Copy and
+Paste" are controlled by policy and no files or data will reach the corporate network.
