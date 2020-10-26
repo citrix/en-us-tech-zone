@@ -134,3 +134,62 @@ The usage data helps them to understand the user adoption and engagement of a pr
 *  Top SaaS and Web applications
 *  Top domains accessed by the users
 *  Total amount of data uploaded and downloaded across users, applications, and domains
+
+## Use Cases
+
+### VPN-less access
+
+Citrix Secure Workspace Access complements or replaces existing VPN solutions with a Zero Trust solution that allows access for remote users without a VPN. This solution solves many challenges with providing access to internal resources for external users. With Secure Workspace Access there is:
+
+*  No network device to manage, maintain and secure – reducing appliance sprawl
+*  No public IP address required as the cloud services are able to contact internal resources via the cloud connectors
+*  No firewall rules required as the cloud connector and virtual app/desktop resources establish outbound connections to the cloud-based services (no inbound communication required)
+*  A global deployment, organizations are automatically routed/rerouted to the optimal Gateway Service, greatly simplifying configurations required by the organization.
+*  No change to the underlying data center infrastructure.
+
+Workspace is able to create a connection to on-premises web apps without relying on a VPN.  This VPN-less connection utilizes an on-prem deployed connector. The connector creates an outbound control channel to the organization’s Citrix cloud subscription. From there, workspace is able to tunnel connections to the internal web apps while providing SSO. VPN-less access not only improves security and privacy but also improves end user experience.
+
+### Protecting user and corporate data on BYO and unmanaged endpoints
+
+Using Enhanced security policies, Secure Workspace Access gives admins the ability to protect their organizations from data loss and credential theft. Enhanced security policies are even more critical when corporate resources are being accessed by personal devices.
+
+One set of policies is the App Protection feature. App Protection enables Citrix admins to enforce policies to protect endpoints from-screen capture and keylogging. This protects employees from dormant screen-grabbing malware or keyloggers that could potentially capture passwords or personal information.
+
+App protection policies work by controlling access to specific API calls of the underlying OS required to capture screens or keyboard presses. These policies can protect against even the most customized and purpose-built hacker tools. It helps to secure any virtual or web application that employees use within Citrix Workspace, as well as authentication dialog boxes (preventing password leaks) within Workspace.
+
+The App Protection feature makes the text entered by the user indecipherable by encrypting it before keylogging tool can access it. A keylogger installed on the client endpoint reading the data would capture gibberish characters instead of the keystrokes the user is typing.
+
+### SSO and Security Controls for SaaS Apps
+
+Single sign-on and contextual policies for access to SaaS apps
+Although an authorized SaaS app is considered safe, content in the SaaS app actually can be dangerous - constituting a security risk. When a user clicks a hyperlink within a SaaS app, the traffic is routed through the web filtering feature, which provides a risk assessment for the hyperlink. Based on the hyperlink’s risk assessment, and the customized list of URL categories, the web filtering feature allows, denies, or redirects the hyperlink request from the user as follows:
+
+*  Approved: The hyperlink is considered safe and the embedded browser accesses within the Workspace app accesses the hyperlink.
+*  Denied: The hyperlink is considered dangerous and access is denied.
+*  Redirected: The hyperlink request is redirected to the embedded browser or Secure Browser service, where the user’s internet browsing activities are isolated from the endpoint device, the corporate network, and the SaaS app
+
+Enhanced security with App Protection is also available for web and SaaS apps. Referred to as cloud app control, this capability provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying the following controls:
+
+*  Watermarking
+*  Restrict navigating
+*  Restrict downloads
+*  Restrict keylogging
+*  Website filtering
+*  Restrict screen capture
+*  Restrict printing
+
+More remote workers mean more remote meetings and web conferencing through a variety of applications. These meetings usually require employees to share their screens, which opens the possibility of exposing sensitive data by mistake. The App Protection feature protects against screenshot malware and web conference screen capturing by returning a blank screenshot instead of the information on a user’s screen. This also applies to the most common snipping tools, print-screen tools, screen capture and recording tools.
+
+With web filtering and browser isolation, Protection from malicious content on URL links
+
+Browser isolation for all internet traffic
+
+*  Isolate browsing from the company network
+*  Protect user and enterprise from web-based threats
+*  No files or data will reach the corporate network
+*  Copy and paste is controlled by policy
+*  Keep possible attack contained in the cloud
+
+Identity ecosystem protects existing investments
+
+With these new integrations i.e. Using Citrix Gateway or Okta as your IdP, we now support all multi-factor authentication mechanisms and contextual controls for accessing Citrix Workspace. These integrations are to ease your move to cloud and can be the first step you want to take for moving to Citrix Workspace, without rip and replace.
