@@ -93,27 +93,21 @@ The second scenario in this deployment is the connectivity between branches, and
 
 ### Deployment 4: Citrix Virtual Apps and Desktops Standard for Azure
 
-Citrix Virtual Apps and Desktops Standard for Azure (DaaS offering) makes it easy to deliver secure Windows apps, and desktops from Azure. Both management operations and VDA resources run inside virtual machines on the Azure public cloud that Citrix owns, and manages. The following figure is a typical topology with connectivity from branch users.
+Citrix Virtual Apps and Desktops Standard for Azure (DaaS offering) makes it easy to deliver secure Windows apps, and desktops from Azure. Both management operation systems and VDA resources are hosted in Azure, and managed by Citrix. The following figure is a typical topology with connectivity from branch users.
 
 [![Scenarios 4 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios4withoutsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios4withoutsdwan.png)
 
-SD-WAN technology is now integrated in the Citrix Virtual Apps and Desktops Standard for Azure to simplify network connectivity from your cloud-hosted desktops to both:
+SD-WAN technology is now integrated in the Citrix Virtual Apps and Desktops Standard for Azure to simplify network connectivity from your cloud-hosted desktops to On-premises resources such as Active Directory, and data sources.
 
-*  **On-premises resources** such as Active Directory, and data sources
-*  **Branch users** the integrated SD-WAN solution also significantly cuts down the network connectivity cost, and enhances the user experience. In addition, customers connecting to the Citrix Virtual Apps and Desktops Service for Azure can access the below services:
-*  **Connectivity to other important SaaS** applications
-*  **Data Centers** in different clouds
-*  **Use of cloud network** backbones
+For Branches the integrated SD-WAN solution significantly cuts down the network connectivity cost, and enhances the user experience. Clients connect to the Citrix Virtual Apps and Desktops Standard for Azure over a secure virtual path, via available links, with HDX session traffic prioritized by ICA class for optimal user experience.
 
 [![Scenarios 4 - With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios4withsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios4withsdwan.png)
 
 ### Deployment 5: Citrix SD-WAN Cloud Direct service for Citrix Virtual Apps and Desktops Standard for Azure and Citrix Virtual Apps and Desktops Service use cases
 
-SD-WAN Cloud Direct is a service that provides many of the benefits of SD-WAN virtual paths, without the need to install SD-WAN in the cloud. It is a good alternative for customers who are unable to manage their own virtual SD-WAN instances in the cloud. Cloud Direct supports connecting to virtual desktops in the cloud, including Citrix Virtual Apps and Desktops, Citrix Virtual Apps and Desktops Standard for Azure and Microsoft Windows Virtual Desktops. Complementing Cloud Direct, Citrix SD-WAN also supports connectivity from virtual apps to on-prem resources (For example databases, back-end servers).
+SD-WAN Cloud Direct is a service that provides many of the benefits of SD-WAN virtual paths, without the need to install SD-WAN in the cloud. It is a good alternative for customers who are unable to manage their own virtual SD-WAN instances in the cloud. Cloud Direct supports connecting to virtual apps and desktops in the cloud, including Citrix Virtual Apps and Desktops, Citrix Virtual Apps and Desktops Standard for Azure and Microsoft Windows Virtual Desktops. Complementing Cloud Direct, Citrix SD-WAN also supports connectivity from virtual apps and desktop host virtual machines to on-prem resources (For example databases, back-end servers).
 
-[![Scenarios 5 - Azure With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios5azurewithsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios5azurewithsdwan.png)
-
-Citrix has multiple Cloud Direct PoPs around the world that are peered with most public cloud, and SaaS providers. Customers providing access to SaaS applications, Citrix Virtual Apps and Desktops Standard for Azure / Citrix Virtual Apps and Desktops Service / Windows Virtual Desktops, and other cloud providers can use this service to improve application response times. It is especially valuable for organizations accessing applications hosted by third parties. Most cloud providers charge for data leaving the cloud. So, putting SD-WAN in the cloud can add extra cost to the customer. These network bandwidth charges can be avoided using the Cloud Direct service. Here are a few benefits using the Cloud Direct service:
+Citrix has multiple Cloud Direct PoPs around the world that are peered with most public cloud, and SaaS providers. Customers providing access to SaaS applications, Citrix Virtual Apps and Desktops Standard for Azure / Citrix Virtual Apps and Desktops Service / Windows Virtual Desktops, and other cloud providers can use this service to improve application response times. It is especially valuable for organizations accessing applications hosted by third parties. Most cloud providers charge for data leaving the cloud. So, putting SD-WAN in the cloud can add extra cost to the customer. These network bandwidth charges can be avoided using the Cloud Direct service. Here are additional benefits of using the Cloud Direct service:
 
 *  **Improved SaaS performance**: Cloud Direct service can identify your most critical application traffic, and ensure that it’s always prioritized
 *  **VoIP, and UCaaS protection**: Provide a consistent VoIP, and UCaaS connection regardless of outages, lag, packet loss or jitter
@@ -122,29 +116,34 @@ Citrix has multiple Cloud Direct PoPs around the world that are peered with most
 *  **Increased bandwidth**: Via link aggregation/smart load-balancing
 *  **Enterprise-grade QoS**: Bi-directional QoS/app classification
 *  **Extended visibility**: Benefit reporting beyond the edge
-Citrix Virtual Apps and Desktops Standard for Azure is another SaaS application. Here’s how the Cloud Direct service is used for connecting to virtual desktops.
+
+**Citrix Virtual Apps and Desktops Standard for Azure**, being hosted in the cloud, enjoys those same benefits as SaaS applications. Here’s how the Cloud Direct service is used for connecting to virtual desktops.
+
+[![Scenarios 5 - Azure With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios5azurewithsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios5azurewithsdwan.png)
+
+Getting better experience to **Citrix Virtual Apps and Desktops Service** through the Citrix Cloud service is no different. Customers can choose a SD-WAN book-ended solution for network connectivity between Head office, and Cloud DC.
 
 [![Scenarios 5 - Citrix Virtual Apps, and Desktops Service With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios5cvadswithsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios5cvadswithsdwan.png)
 
-Getting better experience to Citrix Virtual Apps and Desktops Service through the Citrix Cloud service is no different. Customers can choose a **SD-WAN book-ended solution** for network connectivity between Head office, and Cloud DC.
-
 #### Solution for Remote Worker
 
-In the wake of recent events, many remote users experiencing poor call, and video conferencing quality in their home offices. Accessing critical SaaS applications, including Unified Communications as a Service, and Citrix virtual applications, and desktops with quality performance, and experience is of the utmost importance. Most home users have a single broadband Internet connection. Citrix SD-WAN Cloud Direct solves some of the most common home networking challenges by using QoS to prioritize business apps. Citrix SD-WAN Cloud Direct has a built-in capability to identify, and prioritize traffic to Citrix Virtual Apps and Desktops Service for Azure and Citrix Virtual Apps and Desktops service. This enables it to significantly improve the user experience. Therefore, by implementing a Citrix SD-WAN appliance in their home office Enterprises can improve Remote Worker’s user experience. For more information see the Citrix SD-WAN Cloud Direct overview Tech Brief.
+In the wake of recent events, many remote users experiencing poor call, and video conferencing quality in their home offices. Accessing critical SaaS applications, including Unified Communications as a Service, and Citrix virtual applications, and desktops with quality performance, and experience is of the utmost importance. Most home users have a single broadband Internet connection. Citrix SD-WAN Cloud Direct solves some of the most common home networking challenges by using QoS to prioritize business apps. Citrix SD-WAN Cloud Direct has a built-in capability to identify, and prioritize traffic to Citrix Virtual Apps and Desktops Service for Azure and Citrix Virtual Apps and Desktops service. This enables it to significantly improve the user experience. Therefore, by implementing a Citrix SD-WAN appliance in their home office Enterprises can improve Remote Worker’s user experience.
+
+For more information see [Citrix SD-WAN Cloud Direct service overview](/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html)
 
 ### Deployment 6: Citrix SD-WAN for Microsoft Azure Virtual WAN
 
-Citrix is one of the preferred Microsoft partners for connecting to Azure Virtual WAN. The Citrix SD-WAN has an integrated, and simplified deployment for connecting to Azure. If customers are already using Microsoft Azure Virtual WAN for connecting to their workload, Citrix SD-WAN can help optimize connectivity from the branches. It can provide resilient tunnels from the branch to Hubs in Azure Regions. Again, providing reliable connectivity without the need to install the SD-WAN in the cloud. Integration between Citrix SD-WAN and Azure Virtual WAN provides the following benefits:
+Citrix is one of the preferred Microsoft partners for connecting to Azure Virtual WAN. Citrix SD-WAN has an integrated, and simplified deployment for connecting to the Azure network. If customers are already using Microsoft Azure Virtual WAN for connecting to their workloads, Citrix SD-WAN can help optimize connectivity from the branches. It provides resilient tunnels from the branch to Hubs in Azure Regions. Again, providing reliable connectivity without the need to install the SD-WAN in the cloud. Integration between Citrix SD-WAN and Azure Virtual WAN provides the following benefits:
 
 *  **Deploy large-scale branch connectivity** between branch locations, and Azure
 *  **Automated provisioning**, and configuration
 *  **Scalability**, and high throughput
-*  **Leverage Microsoft’s global backbone network** in branch to hub (in all Azure regions) communication.
+*  **Leverage Microsoft’s global backbone network** for branch to hub (in all Azure regions) communication.
 *  **Active-Active redundant IPSec tunnels** for failover to Azure vWAN using BGP for faster convergence and scalable management of network prefix changes
 
 [![Scenarios 6 - With SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios6withsdwan.png)](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios6withsdwan.png)
 
 ## Summary
 
-Citrix Workspace customers have diverse network connectivity requirements due to diverse deployments. Citrix SD-WAN offers many connectivity options to meet your unique requirements. It provides simplified, secure, reliable connectivity to Citrix virtual applications and desktop with low cost. No matter how complex the deployments for Citrix Virtual Apps and Desktops service, Citrix Virtual Apps and Desktops Standard for Azure, and Citrix Virtual Apps and Desktops on-premises Citrix SD-WAN has a solution for your network connectivity needs.
+Citrix Workspace customers have diverse network connectivity requirements due to diverse deployment scenarios. Citrix SD-WAN offers many connectivity options to meet your unique requirements. It provides simplified, secure, reliable connectivity to Citrix virtual applications and desktop for low cost. No matter how complex the deployments for Citrix Virtual Apps and Desktops service, Citrix Virtual Apps and Desktops Standard for Azure, and Citrix Virtual Apps and Desktops on-premises Citrix SD-WAN has a solution for your network connectivity needs.
 Visit Citrix.com to learn more about the Citrix Workspace, and Citrix SD-WAN solutions.
