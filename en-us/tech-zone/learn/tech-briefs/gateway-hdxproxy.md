@@ -91,11 +91,14 @@ Once the Citrix Cloud Connectors are installed and up at your Resource Location 
 After the Citrix Workspace is configured in Citrix Cloud the new FQDN can be added to the Workspace app. Users can log in with the same AD credentials they would use with the On-premises Citrix Gateway and have the same apps and desktops enumerated.
 ![Workspace app](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_4c.png)
 
-### Deployment Considerations
+## Deployment Considerations
 
 When a user launches an app within Workspace app a DNS query, for an FQDN hosted on Citrix Gateways, is relayed to the local DNS name server configured on their endpoint. The local DNS name server may make a recursive query for the it or relay that to a local ISP DNS name server. In response to the DNS query Citrix Gateway Service returns the public IP address of the nearest POP based on the location of the IP address of the ISPs name server/s making the recursive query. Therefore it is essential that the local ISP name server is in close proximity to the endpoint. If not challenges can arise.
 
-**Web/SSL Proxy** – exclude Gateway Service FQDNs from any DNS filtering and traffic inspection `(*.nssvc.net / *.g.nssvc.net / *.c.nssvc.net)`
+### Web/SSL Proxy
+
+Exclude Gateway Service FQDNs from any DNS filtering and traffic inspection `(*.nssvc.net / *.g.nssvc.net / *.c.nssvc.net)`
+
 For example Proxies can cause the following issues:
 
 *  Randomize the DNS source IP, which leads to users being directed to a sub-optimal POP
@@ -109,7 +112,9 @@ To implement it with Zscaler:
 
     For more information see [ZPA – Configuring Bypass Settings](https://help.zscaler.com/zpa/configuring-bypass-settings)
 
-**VPN** – do local breakout for Gateway Service domains `(*.nssvc.net / *.g.nssvc.net / *.c.nssvc.net)`
+### VPN
+
+Do local breakout for Gateway Service domains `(*.nssvc.net / *.g.nssvc.net / *.c.nssvc.net)`
 
 *  Enable split tunneling so that the VPN Client sends only traffic destined for internal networks protected by the VPN tunnel
 *  Traffic destined for Citrix Gateway Service would be sent directly via their local internet rather than being backhauled over the VPN tunnel and internal network
