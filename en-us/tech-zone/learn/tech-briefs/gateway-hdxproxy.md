@@ -103,7 +103,9 @@ For example Proxies can cause the following issues:
 *  TLS inspection breaks Gateway Service since we do not support TLS interception
 
 To implement it with Zscaler:
-*  Update your ZPA to bypass certain applications. Under Edit Application Segment enter application entries for Gateway Service FQDNs `(*.nssvc.net / *.g.nssvc.net / *.c.nssvc.net)`
+
+*  Update your ZPA to bypass certain applications
+*  Under `Edit Application Segment` enter application entries for Gateway Service FQDNs `(*.nssvc.net / *.g.nssvc.net / *.c.nssvc.net)`
 
     For more information see [ZPA – Configuring Bypass Settings](https://help.zscaler.com/zpa/configuring-bypass-settings)
 
