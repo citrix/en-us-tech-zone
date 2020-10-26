@@ -107,3 +107,30 @@ The web filtering controller uses a categorization database and URLs list. When 
 Admins can take a cautious approach even for accessing allow list URLs. This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet.
 
 A traditional URL filtering engine that assumes trust for a allow list URL. Secure Workspace Access does not implicitly trust an allow list URL since webpages, deemed safe by URL filtering engines, that can host malicious links. With Secure Workspace Access, URLs on trusted sites are also tested.
+
+## Security Analytics
+
+Security and performance analytics - Users invariably access SaaS apps that have enhanced security inherent in them. Workspace app, the Citrix Gateway service, and the Secure Browser service provide the Security analytics service with information about the following user and application behaviors. These analytics impact the user’s overall risk score:
+
+*  App launch time
+*  App end time
+*  Print action
+*  Clipboard access
+*  URL Access
+*  Data upload
+*  Data download
+
+The web filtering feature evaluates the risk of each hyperlink selected within the SaaS application. Accessing these sites and monitoring changes in user behavior increases the user’s overall risk score because it signals the endpoint device is compromised and started to infect or encrypt data or the user and device are stealing intellectual property.
+
+## Usage analytics
+
+Usage Analytics provides insights into the basic usage data of Secure Workspace Access. Admins get the visibility into how users interact with the SaaS and Web applications that are being used in their organization.
+
+The usage data helps them to understand the user adoption and engagement of a product. The following metrics to determine how the are being used and adding value for users:
+
+*  Number of unique users using the SaaS and Web applications
+*  Top SaaS and Web application users
+*  Number of SaaS and Web applications launched
+*  Top SaaS and Web applications
+*  Top domains accessed by the users
+*  Total amount of data uploaded and downloaded across users, applications, and domains
