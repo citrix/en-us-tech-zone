@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Matthew Brooks, Daniel Feller
+specialThanksTo: Vijaya Raghavan, Kenneth Bell, Jeff Kann, Hrushikesh Paralikar, Simon Jackson, Pradeep Vasu
 description: Provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls.
 ---
 # Citrix Gateway service for HDX Proxy
-
-## Contributors
-
-**Authors:** [Matthew Brooks](https://twitter.com/tweetmattbrooks), [Daniel Feller](https://twitter.com/djfeller)
-
-**Special Thanks:** Vijaya Raghavan, Kenneth Bell, Jeff Kann, Hrushikesh Paralikar, Simon Jackson, and Pradeep Vasu
 
 Citrix Gateway service for HDX Proxy provides users with secure remote access to CVAD without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls. Citrix hosts the entire infrastructure overhead of managing remote access in the cloud.
 

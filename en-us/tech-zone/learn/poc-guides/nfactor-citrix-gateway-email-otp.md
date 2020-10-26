@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Matthew Brooks
+specialThanksTo: Daniel Feller
 description: Learn how to implement an extensible and flexible approach to configuring multi-factor authentication with nFactor for Citrix Gateway authentication with email one-time password.
 ---
 # Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Email OTP
-
-## Contributors
-
-**Author:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
-
-**Special Thanks:** [Daniel Feller](https://twitter.com/djfeller)
 
 ## Introduction
 

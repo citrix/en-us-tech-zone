@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Mayank Singh
+specialThanksTo: Daniel Feller, Rob Beekmans, Loay Shbeilat
 description: Learn about the value add Citrix provides to your Windows Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service and Citrix Managed Desktops service provide a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user experience and enhancing the security posture of our deployment.
 ---
 # Enhancing Windows Virtual Desktop
-
-## Contributors
-
-**Author:** [Mayank Singh](https://twitter.com/techmayank)
-
-**Special Thanks:** [Daniel Feller](https://twitter.com/djfeller), [Rob Beekmans](https://twitter.com/robbeekmans), and [Loay Shbeilat](mailto:loay.shbeilat@citrix.com)
 
 ## Overview
 

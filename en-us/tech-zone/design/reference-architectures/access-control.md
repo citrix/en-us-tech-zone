@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Nagaraj Manoli
+specialThanksTo: Praveen Raghuraman, Pradeep Vasu, Allen Furmanski
 description: Gain knowledge about the Citrix Access Control solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
 ---
 # Citrix Access Control
-
-## Contributors
-
-**Author:** [Nagaraj Manoli](mailto:nagaraj.manoli@citrix.com)
-
-**Special thanks:** [Praveen Raghuraman](mailto:praveen.raghuraman@citrix.com), [Pradeep Vasu](mailto:pradeep.vasu@citrix.com), [Allen Furmanski](https://twitter.com/tekguyallen)
 
 ## Audience
 

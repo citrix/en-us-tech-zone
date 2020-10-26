@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Matt Brooks
+specialThanksTo: Derek Thorslund, Ravisankar Pegada
 description: Optimize YouTube delivery in branch offices with Citrix Virtual Apps and Desktops and Citrix SD-WAN.
 ---
 # YouTube Optimization for Branch Offices
-
-## Contributors
-
-**Author:** [Matt Brooks](https://twitter.com/tweetmattbrooks)
-
-**Special Thanks:** [Derek Thorslund](https://twitter.com/derektcitrix) & Ravisankar Pegada
 
 Learn how the Workspace app and Citrix SD-WAN can fetch YouTube videos from the nearest internet POP and display them in published browsers on branch endpoints.
 

@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Gene Whitaker, Paul Walker
+specialThanksTo: Adrianna Pellitteri
 description: One-page summary of nFactor authentication detailing concepts, how it works, nFactor Visualizer information, configuration steps, and more.
 ---
 # Citrix ADC nFactor Basics Cheat Sheet
-
-## Contributors
-
-**Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com), Paul Walker
-
-**Special thanks:** Adrianna Pellitteri
 
 ## Overview
 

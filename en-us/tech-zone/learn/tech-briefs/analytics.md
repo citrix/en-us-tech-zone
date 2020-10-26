@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Ana Ruiz
+specialThanksTo: Sameer Mehta, Mathew Varghese, Blake Connell
 description: Provide visibility into your environment to protect it from malicious users and to improve the end user experience proactively.
 ---
 # Citrix Analytics
-
-## Contributors
-
-**Author:** [Ana Ruiz](https://twitter.com/mobileruiz)
-
-**Special Thanks:** [Sameer Mehta](https://twitter.com/sameerjme), [Mathew Varghese](https://twitter.com/thirsty_crow), and [Blake Connell](https://twitter.com/bac_66)
 
 Organizations’ IT environments are becoming more complex as they begin to adopt SaaS, cloud, and mobile applications. Administrators need the visibility into their environment not only to protect it from malicious users, but also to improve the user experience proactively. Citrix Analytics pulls together the entire Citrix portfolio to provide visibility into the status and context of individual users. Unlike some of the other monitoring tools that Citrix provides, Citrix Analytics gives you **proactive and prescriptive** insights into your environment to resolve issues before they become a problem. Citrix Analytics is driven through machine-learning to provide you with the necessary insights without information overload.
 
@@ -162,7 +159,7 @@ The Share Links dashboard is the launching point into share event analysis and t
 
 Administrators can create custom reports from the events received in your data sources. Currently, the supported data sources for custom reports include Access Control, Content Collaboration, and Virtual Apps and Desktops. More information on how to create custom reports can be found [here](/en-us/security-analytics/create-custom-report.html).
 
-[![Report](/en-us/tech-zone/learn/media/tech-briefs_analytics_report.png)](/en-us/tech-zone/learn/media/tech-briefs_analytics_repoort.png)
+[![Report](/en-us/tech-zone/learn/media/tech-briefs_analytics_report.png)](/en-us/tech-zone/learn/media/tech-briefs_analytics_report.png)
 
 ## Citrix Analytics for Performance
 

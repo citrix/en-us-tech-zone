@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Vivekananthan Devaraj
+specialThanksTo: Martin Zugec, Allen Furmanski, James Hsu, Carlos Jimenez
 description: Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
 ---
 # Citrix Virtual Apps and Desktops Service Reference Architecture and Deployment Methods
-
-## Contributors
-
-**Author:** [Vivekananthan Devaraj](mailto:Vivekananthan.Devaraj@Citrix.com)
-
-**Special thanks:** [Martin Zugec](https://twitter.com/MartinZugec), [Allen Furmanski](https://twitter.com/tekguyallen), [James Hsu](https://twitter.com/JamesHsu2Go), and [Carlos Jimenez](https://twitter.com/itmobility)
 
 ## Audience
 

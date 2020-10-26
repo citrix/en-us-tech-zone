@@ -1,14 +1,11 @@
 ---
 layout: doc
-description: Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Push Token
+h3InToc: true
+contributedBy: Matthew Brooks
+specialThanksTo: Daniel Feller
+description: Learn how to implement an extensible and flexible approach to configuring multi-factor authentication with nFactor for Citrix Gateway authentication with Push Tokens.
 ---
 # Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Push Token
-
-## Contributors
-
-**Author:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
-
-**Special Thanks:** [Daniel Feller](https://twitter.com/djfeller)
 
 ## Introduction
 
@@ -206,7 +203,7 @@ Now we test PUSH by registering a mobile device and authenticating into our Citr
 1.  Select Aim your camera at the QR Code and once it`s captured select Add
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssoscanqrcode.png)
 1.  Select Save to store the token
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_poc-guides_nfactor-citrix-gateway-push-token_regssosave.png)
+![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssosave.png)
 1.  The Token is now active and begins displaying OTP codes at 30 second intervals
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssotoken.png)
 1.  Select Done and you will see confirmation that the device was added successfully

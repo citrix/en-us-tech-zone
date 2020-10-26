@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
 description: Extend an on-premises TOTP deployment with Push authentication, eliminating the need for users to manually enter the temporary token.
 ---
 # Authentication - Push
-
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
 
 Incorporating a Time-based One-Time Password (TOTP) into the authentication policy is an easy way to improve authentication security. Extending TOTP to include push authentication allows organizations to provide a better user experience by eliminating the need to manually enter the temporary token. The following Tech Insight video demonstrates how to:
 

@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Sarah Steinhoff
 description: Learn about the different decisions involved when aggregating and de-duplicating applications and desktops from multiple sites.
 ---
 # Designing StoreFront Multi-Site Aggregation
-
-## Contributors
-
-**Author:** [Sarah Steinhoff](https://www.citrix.com/blogs/author/sarahst)
 
 A core functionality of StoreFront is the ability to aggregate and de-duplicate "common" application and desktop resources from multiple Citrix Virtual Apps and Desktops (CVAD) Sites. This functionality is commonly referred to as multi-site aggregation. Duplicate applications and desktops are identified based on matching `Application Display Name` and `Application Category` properties. This functionality has been available in the console as of version 3.5 and was previously a config file edit. The purpose of multi-site aggregation is to allow Citrix administrators to build redundant CVAD Sites (for scalability or failure domain reasons), yet present a single application or desktop icon to users instead of per-Site duplicates (as would be displayed without this feature). StoreFront then controls how application and desktop launches are distributed across the multiple Sites supporting that resource.
 

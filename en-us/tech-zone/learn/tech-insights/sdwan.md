@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Matt Brooks
 description: Optimize delivery of Citrix Virtual Apps and Desktops traffic with Citrix SD-WAN.
 ---
 # SD-WAN Single-port Multi-stream AutoQOS
-
-## Contributors
-
-**Author:** [Matt Brooks](https://twitter.com/tweetmattbrooks)
 
 Learn how to optimize delivery of Citrix Virtual Apps and Desktops traffic with Citrix SD-WAN using its feature to prioritize ICA channels on a single port into multi-streams using AutoQos with no configuration changes required on your delivery controllers.
 

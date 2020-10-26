@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Martin Zugec, Mayank Singh
 description: App protection policies protect application data from attacks based on keyloggers and screen capture tools. Allow companies to embrace BYOD, and extend resources to remote workers, contractors, and gig economy workers.
 ---
 # App protection policies
-
-## Contributors
-
-**Author:** [Martin Zugec](https://twitter.com/MartinZugec) & [Mayank Singh](https://twitter.com/techmayank)
 
 In recent years, we have seen an increase in advance persistent threat (APT) attacks in all industries. Instead of a typical select & run attack (for example ransomware), the goal for attackers is to stay inside your network and remain undetected for an extended period. According to research from FireEye, mean dwell-time for 2018 in the Americas is 71 days, EMEA is 177 days, and APAC is 204 days. [2019 Data Breach Investigations Report](https://enterprise.verizon.com/resources/reports/dbir/) concludes that most security breaches took months or longer to discover. This gives attackers a significant time to proceed with their attack, propagate, harvest sensitive data and exfiltrate it before they are discovered (or if at all).
 

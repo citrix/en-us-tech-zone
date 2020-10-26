@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Mayank Singh
 description: Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Windows Virtual Desktop in Microsoft Azure.
 ---
 # Citrix Managed Desktops
-
-## Contributors
-
-**Author:** [Mayank Singh](https://twitter.com/techmayank)
 
 Citrix Managed Desktops (our Desktop-as-a-Service offering) is the simplest and fastest way to deliver Windows desktops from the cloud to any device. Citrix Managed Desktops are authorized by Microsoft to provide users with the benefits of the Windows **Virtual Desktop**.
 

@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Mayank Singh
+specialThanksTo: Nitin D. Mehta, Daniel Feller
 description: Explore the various ways Citrix enables admins to save on cost when hosting workloads in the cloud. Learn about different load balancing algorithms and scaling methodologies and how much they can save in an environment based on our tests.
 ---
 # Autoscale
-
-## Contributors
-
-**Author:** [Mayank Singh](https://twitter.com/techmayank)
-
-**Special Thanks:** [Nitin D. Mehta](https://twitter.com/nitinme1) and [Daniel Feller](https://twitter.com/djfeller)
 
 ## Overview
 

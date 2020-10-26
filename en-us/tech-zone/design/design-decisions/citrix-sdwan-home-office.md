@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Shoaib Yusuf
+specialThanksTo: Matthew Brooks
 description: Understand the design decisions required to implement the Citrix SD-WAN 110 in a Home Office to provide secure, enhanced, and resilient connectivity.
 ---
 # Citrix SD-WAN for Home Offices Design Decisions
-
-## Contributors
-
-**Author:** [Shoaib Yusuf](https://twitter.com/Shoaibys)
-
-**Special Thanks** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
 
 ## Overview
 

@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
 description: Utilize Okta as the user's primary identity for Citrix Workspace
 ---
 # Authentication - Okta
-
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
 
 Citrix Workspace provides organizations with a choice in selecting their primary identity provider. With the integration of Okta, the user's Okta identity provides them with authorization to access apps, desktops and content within Citrix Workspace. The Citrix Workspace and Okta integration provides the following:
 

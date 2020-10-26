@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Allen Furmanski
+specialThanksTo: Derek Thorslund, Fernando Klurfan
 description: Learn how to optimize the voice, video, and other capabilities of unified communication solutions in virtualized Citrix environments.
 ---
 # Optimizing Unified Communications Solutions with Citrix Technologies
-
-## Contributors
-
-**Author:** [Allen Furmanski](mailto:allen.furmanski@citrix.com)
-
-**Special Thanks:** [Derek Thorslund](https://twitter.com/derektcitrix), [Fernando Klurfan](https://twitter.com/citrixferk)
 
 ## Audience
 
