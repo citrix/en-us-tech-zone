@@ -13,16 +13,16 @@ This Tech Brief explains how to optimize user experience with Citrix Workspace b
 
 ## Overview
 
-Citrix Workspace has been used successfully by enterprises of all sizes for nearly three decades. Customers have choices in how they license, deploy, integrate, and manage these technologies. This flexibility allows Citrix technologies to serve various use cases, business types, integration requirements, and deployment models. Broad enterprise adoption has led to a diverse set of deployments to meet use cases, and the evolution of networking technologies. Many different factors drive deployment selection including location of data centers (on-prem, clouds or hybrid model), users, branches, management service, and choices for networking connectivity.
+Citrix Workspace has been used successfully by enterprises of all sizes for nearly three decades. Customers have choices in how they license, deploy, integrate, and manage these technologies. This flexibility allows Citrix technologies to serve various use cases, business types, integration requirements, and deployment models. Broad enterprise adoption has led to a diverse set of deployments to meet use cases, and the evolution of networking technologies. Many different factors drive deployment selection including location of data centers (on-prem, cloud or hybrid model), users, branches, management service, and choices for networking connectivity.
 
 Enterprises continue to look for ways to improve the application experience for users in geographically dispersed locations. Networking technologies used for connecting to virtual apps, and desktops can make a huge difference in a user’s experience. Existing customers looking to modernize their infrastructure, and new customers deploying Citrix virtualization are seeking better connectivity options.
 There are three main factors that customers consider:
 
-*  **Value**: Includes reliability, security, and Quality of Service, and more
-*  **Cost**: Customers are looking for a better solution but with a reasonable cost
+*  **Value**: Includes reliability, security, Quality of Service, and more
+*  **Cost**: Customers are looking for a better solution, but with a reasonable cost
 *  **Ease of deployments**: Simplified deployment, and management of network service
 
-Citrix SD-WAN is a proven, cost-effective solution that has helped companies around the globe in improving the user experience, and delivering virtualized desktops, and apps in a secure, and reliable way. SD-WAN gives IT control, and choice of robust connectivity options including Virtual Paths, Cloud Direct Service, Microsoft Azure Virtual WAN, or Direct Internet breakouts. In this brief, we cover how to choose the best way to deploy Citrix SD-WAN to suit your unique network connectivity needs.
+Citrix SD-WAN is a proven, cost-effective solution that has helped companies around the globe improve the user experience, and deliver virtualized desktops, and apps in a secure, and reliable way. SD-WAN gives IT control, and choice of robust connectivity options including Virtual Paths, Cloud Direct Service, Microsoft Azure Virtual WAN, or Direct Internet breakouts. In this brief, we cover how to choose the best way to deploy Citrix SD-WAN to suit your unique network connectivity needs.
 
 ## Scenarios
 
@@ -34,7 +34,7 @@ Until recently, you'd find that all of the resources (VDAs, AD, and data servers
 
 Normally, a branch was connected to the data center through MPLS links. MPLS links are reliable. However, costs are significantly higher than broadband connections, and MPLS links take longer to implement. Citrix SD-WAN helps reduce the cost by allowing you to use broadband alongside or instead of your MPLS while ensuring the reliability, and security of your private WAN. This use case can be implemented rapidly, and it provides many benefits:
 
-*  **Reduced connectivity cost**: Replace MPLS with multiple broadband links
+*  **Reduced connectivity cost**: Replace, or augment, MPLS with multiple broadband links
 *  **Reliability**: Multi-link redundancy with active failover/brownout detection
 *  **Increased bandwidth**: Multi-link aggregation with smart load balancing options
 *  **Enterprise-grade QoS**: Bi-directional QoS with HDX-specific classification, and Multi-stream ICA QoS
@@ -46,7 +46,7 @@ HDX sessions can receive these benefits when they traverse the SD-WAN overlay ne
 
 When a User's Workspace App registers with Enterprise Citrix Virtual Apps and Desktops FQDN StoreFront sends a provisioning file with connectivity guidance. It contains a set of internal, and external URLs to test reachability. If it can reach the internal URLs it directs the Workspace App to authenticate directly to StoreFront. Otherwise, provided it can reach the external URLs, it directs Workspace App to authenticate via Citrix Gateway.
 
-To reach the StoreFront FQDN, the endpoint resolves an internal IP address. It is routed, across the internal network, via the SD-WAN overlay network. Subsequently when the user's launch apps, enumerated by StoreFront, session ICA files include the internal IP address of the VDA/s. Therefore virtual apps, and desktops sessions are also accessed, and delivered across the internal network, via the SD-WAN overlay network.
+To reach the StoreFront FQDN, the endpoint resolves an internal IP address. It is routed, across the internal network, via the SD-WAN overlay network. Subsequently when the user's launch apps, enumerated by StoreFront, session ICA files include the internal IP address of the VDA/s. Therefore virtual app, and desktop   sessions are also accessed, and delivered across the internal network, via the SD-WAN overlay network.
 
 For more information see the [Citrix Virtual Apps and Desktops - Component Architecture](/en-us/tech-zone/learn/downloads/diagrams-posters_virtual-apps-and-desktops_poster.png)
 
@@ -58,7 +58,7 @@ As Citrix customers move to the cloud, their first step is often to use the Citr
 
 ![Scenarios 2 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios2withoutsdwan.png)
 
-Although, in this scenario, while managing operations through the Citrix Cloud service is simplified, network connectivity may not be. Session traffic is directed to the nearest Gateway service PoP. From there, it is proxied to the resource locations. While there are many PoP locations around the world, for endpoints in Remote Branches on the WAN this step can add latency.
+Although, in this scenario, while managing operations through the Citrix Cloud service is simplified, network connectivity may not be. Session traffic is directed to the nearest Citrix Gateway service PoP. From there, it is proxied to the resource locations. While there are many PoP locations around the world, for endpoints in Remote Branches on the WAN, this step can add latency.
 
 To address this scenario Citrix introduced [Direct Workload Connection](/en-us/citrix-workspace/workspace-network-location.html) via a new Network Location Service (NLS). It enables session flows from Remote Branch hosted endpoints to access VDAs directly across the WAN. It identifies endpoints located on the Internal Network IP address ranges, and provides them with connection information to access VDAs directly on the Internal Network.
 
@@ -66,12 +66,10 @@ However, NLS requires branch public IP address ranges to be preconfigured. Branc
 
 Citrix SD-WAN offers a solution to these issues, and provides other benefits in this scenario including:
 
-*  **Providing direct internet breakout** for traffic destined to the Gateway service in Citrix Cloud and reliability using multiple links with Citrix Gateway service, and Citrix Cloud Optimization
-*  **Providing replacement of the high-cost MPLS** links to HQ/data centers
-*  **Reducing latency through NLS** and updating the NLS automatically through
-Citrix SD-WAN, helping to resolve issues where dynamic IP addresses are used
+*  **Reducing latency through NLS** and resolving issues where dynamic IP addresses are used by detecting endpoint public IP addresses and updating the NLS automatically
+*  **Providing replacement of the high-cost MPLS** links to Head Offices / Data Centers
 *  **Providing deep visibility into HDX traffic** enabling IT to monitor User Experience, and proactively act in the event there is degradation
-*  **Citrix Cloud and Gateway Service breakout policy** allowing First Packet Classification, facilitating direct internet breakout from the SD-WAN branch, which reduces the latency
+*  **Citrix Cloud and Gateway Service internet breakout policy** allowing First Packet Classification, facilitating direct internet breakout from the SD-WAN branch, which reduces latency for endpoints that are unable to access StoreFront and VDAs directly over the Internal Network
 
 ![Scenarios 2 - Without SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_sdwan-deployment-scenarios_scenarios2withsdwan.png)
 
@@ -85,7 +83,7 @@ Citrix SD-WAN offers two solutions to the scenario above:
 
 #### Public cloud to data centers
 
-It takes time, and costs to deploy MPLS-based connectivity options such as Microsoft Azure ExpressRoute, and AWS Direct Connect. Most customers are looking for quick, and inexpensive connectivity from HQ data centers to public clouds. When using SD-WAN, these benefits can be achieved in a few hours, rather than months in many cases. SD-WAN management operations provide auto provisioning of SD-WAN in popular clouds such as Azure.
+It takes time, and costs to deploy Cloud platform connectivity options such as Microsoft Azure ExpressRoute, and AWS Direct Connect. Most customers are looking for quick, and inexpensive connectivity from HQ data centers to public clouds. When using SD-WAN, these benefits can be achieved in a few hours, rather than months in many cases. SD-WAN management operations provide auto provisioning of SD-WAN in popular clouds such as Azure.
 
 #### Branch to VDAs in public clouds
 
