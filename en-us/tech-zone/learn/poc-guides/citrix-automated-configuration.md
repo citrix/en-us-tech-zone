@@ -49,7 +49,7 @@ This code is not limited to migrations, it is the future for creating configurat
 
 ### This proof of concept guide demonstrates how to
 
-1.  [Complete the On-Premises pre-requisites](#complete-prerequisites-for-exporting-from-on-premises-site)
+1.  [Complete the On-Premises pre-requisites](#complete-pre-requisites-for-exporting-from-on-premises-site)
 2.  [Export your On-Premises site configuration into YAML (*.yml*) files](#export-your-on-premises-site-configuration)
 3.  [Complete the cloud pre-requisites](#complete-prerequisites-in-cloud)
 4.  [Complete the requisites for importing site configuration when using different provisioning methods (Provisioning Services (PVS) and Machine Creation Services (MCS))](#dealing-with-provisioning-services-pvs-machine-catalogs-delivery-and-application-groups-and-policies)
@@ -156,7 +156,7 @@ Follow these steps to prepare your environment, before proceeding to import the 
 
 ## Dealing with Machine Creation Services (MCS): Static Assigned Machines
 
-**Note:** A separate section is available with instructions for Pooled and RDS Machines. Refer to the steps mentioned on the [MCS Pooled VDI and RDS Machines](#dealing-with-machine-creation-services-mcs-pooled-vdi-and-rds-machines)
+**Note:** A separate section is available with instructions for Pooled and RDS Machines. Refer to the steps mentioned on the [MCS Pooled VDI and RDS Machines](#dealing-with-machine-creation-services-mcs-pooled-random-and-rds-machine-catalogs)
 
 Currently, static assigned Machine Catalogs cannot be migrated as is to the CVADS cloud account. You can import other configuration such as Applications and policies automatically using this tool.
 
@@ -241,25 +241,25 @@ During this step, you obtain the **customer connection details**, manually creat
 Administrators must edit the ```CustomerInfo.yml``` file and add the corresponding **CustomerName**, **CustomerID,** and **SecretKey** values to it. These values can be obtained and generated from the **Cloud portal**, as shown in the following steps.
 
 1.  First, open your ```CustomerInfo.yml``` file using a text editor application, such as **Notepad**. The following screenshot shows the ```CustomerInfo.yml``` file values that must be edited (underlined in red):
-[![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-importing-connection-details-001.png)
+![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-001.png)
 
 2.  On your [Cloud portal](https://citrix.cloud.com) click the **hamburger menu** again and go to **Identity and Access Management**:
-[![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-importing-connection-details-002.png)
+![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-002.png)
 
 3.  Go to the **API Access** tab and copy the **Customer ID** value, which can be found next to the ```customer ID``` text as seen on the following screenshot (red rectangle):
-[![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-importing-connection-details-003.png)
+![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-003.png)
 
 4.  Paste the retrieved value **between the quotes** that follow the **CustomerId field** in your ```CustomerInfo.yml``` file, between the ```“”``` (quotes):
-[![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-importing-connection-details-004.png)
+![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-004.png)
 
 5.  Back on your **Cloud portal**, under the **Identity and Access Management** portal and **API Access** tab, enter the name you want to identify this API key with on the **Name your Secure Client** box. Then click the **Create Client** button. **Note:** This action generates the ```Client ID``` and the ```Secret Key```.
-[![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-005.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-importing-connection-details-005.png)
+![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-005.png)
 
 6.  Copy the ```ID``` and the ```Secret``` values, one by one (paste them on the ```CustomerInfo.yml``` file as shown in the following step). Then click **Download** to save the file for later reference.
-[![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-006.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-importing-connection-details-006.png)
+![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-006.png)
 
 7.  Paste the ```ID``` and ```Secret``` values onto the corresponding fields in the ```CustomerInfo.yml``` file:
-[![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-007.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-importing-connection-details-007.png)
+![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-007.png)
 
 ### Manually create the Zone Mapping file (ZoneMapping.yml)
 
