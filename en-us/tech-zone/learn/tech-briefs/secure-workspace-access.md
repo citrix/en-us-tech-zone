@@ -55,6 +55,8 @@ Some organizations might have already standardized on an SSO provider. Citrix Wo
 
 Once the user is authenticated to Citrix Workspace Secure Access with a primary identity, subsequent authentication challenges to SaaS and web apps are automatically fulfilled by the single sign-on feature in the Citrix Cloud using SAML assertions.  There are 300+ SAML SSO templates available for quick configuration for web and SaaS apps. If the app doesn’t have a pre-existing template, it will only take a few more clicks to configure.
 
+[SSO](/en-us/tech-zone/design/media/tech-briefs_secure-workspace-access_SaaSSSO.gif)
+
 ## Browser Isolation
 
 Citrix Secure Workspace Access enables end users to safely browse the internet. When an end user launches a SaaS application from Citrix Workspace, several decisions are dynamically made to decide how best to serve this SaaS application. Citrix Secure Workspace Access provides three ways to serve this application to the end-user:
