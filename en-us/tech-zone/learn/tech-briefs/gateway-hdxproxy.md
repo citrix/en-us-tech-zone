@@ -78,7 +78,7 @@ Citrix Gateway service operates in multiple POPs around the world with ITM, whic
 
 ### Initial Setup
 
-Transitioning access from your On-premises Gateway to Citrix Gateway service begins with creating [your Citrix Cloud environment](https://onboarding.cloud.com/). Afterwards you log in to your environment from Windows Server instances, with network access to your Citrix Virtual Apps and Desktops controllers. Then you can [install Citrix Cloud Connectors]( /en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html) to provide connectivity to Citrix Cloud.
+Transitioning access from your On-premises Gateway to Citrix Gateway service begins with creating [your Citrix Cloud environment](https://onboarding.cloud.com/). Afterwards you log in to your environment from Windows Server instances, with network access to your Citrix Virtual Apps and Desktops controllers. Then you can [install Citrix Cloud Connectors](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html) to provide connectivity to Citrix Cloud.
 ![Cloud Connector](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_4a.png)
 
 ### Initial Configuration
