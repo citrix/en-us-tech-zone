@@ -39,6 +39,8 @@ Having primary and secondary identities allows Secure Workspace Access to use a 
 
 ![Any Identity](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_anyidentity.gif)
 
+Figure 1: Using multiple identity providers
+
 ## Single Sign-On
 
 Secure Workspace Access is able to create a connection to on-premises web apps without relying on a VPN. This VPN-less connection utilizes an on-prem deployed connector. The connector creates an outbound control channel to the organization’s Citrix Cloud subscription. From there, Secure Workspace Access is able to tunnel connections to the internal web apps while providing SSO.
@@ -48,6 +50,8 @@ Some organizations might have already standardized on an SSO provider. Secure Wo
 Once the user is authenticated to Secure Workspace Access with a primary identity, subsequent authentication challenges to SaaS and web apps are automatically fulfilled by the single sign-on feature in the Citrix Cloud using SAML assertions.  There are 300+ SAML SSO templates available for quick configuration for web and SaaS apps. If the app doesn’t have a pre-existing template, it will only take a few more clicks to configure.
 
 ![Single Sign-On](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_saassso.gif)
+
+Figure 2: SSO to web apps without relying on a VPN
 
 ## Browser Isolation
 
@@ -69,6 +73,8 @@ Secure Workspace Access has a very large database of URIs that are risk scored. 
 
 ![Browser Isolation](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_browseiso.gif)
 
+Figure 3: Web browser isolation with the Citrix Workpspace-embedded browser and Secure Browser Service
+
 ## Enhanced Security
 
 To protect content, Secure Workspace Access incorporates enhanced security policies within SaaS applications. Each policy enforces a restriction on the embedded browser when using the Workspace app or on the Secure Browser service when using Workspace app web or mobile.
@@ -83,6 +89,8 @@ Referred to as Cloud App Control, this capability provides IT with a way to enfo
 *  Display watermark: Overlays a screen-based watermark showing the user name and IP address of the endpoint. If a user tries to print or take a screenshot, the watermark appears as displayed on the screen.
 
 ![Enhanced Security](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsecweb.gif)
+
+Figure 4: Ehanced Security policies with a SaaS app
 
 ## App Protection
 
@@ -99,6 +107,8 @@ A less malicious but equally dangerous risk is accidental screen sharing. The li
 
 ![App Protection](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_appprotslack.gif)
 
+Figure 5: App Protection policies protecting Citrix Workspace privacy while using a screen sharing app
+
 ## Web Filtering
 
  Secure Workspace Access includes a URL filtering engine. By using the information contained in URLs, this feature helps admins monitor and control user access to malicious websites on the internet. Together, with the aforementioned browser isolation options, web filtering gives admins the choice to completely block a URL, access a URL in the embedded browser, or access a URL in a Secure Browser session.
@@ -110,6 +120,8 @@ Admins can take a cautious approach even for accessing allow list URLs. This app
 A traditional URL filtering engine that assumes trust for a allow list URL. Secure Workspace Access does not implicitly trust an allow list URL since webpages, deemed safe by URL filtering engines, can host malicious links. With Secure Workspace Access, URLs on trusted sites are also tested.
 
 ![Web Filtering](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_websitefilter.gif)
+
+Figure 6: Web filtering policies protecting end users who inadvertantly access sites on the block list
 
 ## Security Analytics
 
