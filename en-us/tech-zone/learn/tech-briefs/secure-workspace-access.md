@@ -73,7 +73,7 @@ Secure Workspace Access has a very large database of URIs that are risk scored. 
 
 ![Browser Isolation](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_browseiso.gif)
 
-Figure 3: Web browser isolation with the Citrix Workpspace-embedded browser and Secure Browser Service
+Figure 3: Web browser isolation with the Citrix Workspace-embedded browser and Secure Browser Service
 
 ## Enhanced Security
 
@@ -90,7 +90,7 @@ Referred to as Cloud App Control, this capability provides IT with a way to enfo
 
 ![Enhanced Security](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsecweb.gif)
 
-Figure 4: Ehanced Security policies with a SaaS app
+Figure 4: Enhanced Security policies with a SaaS app
 
 ## App Protection
 
@@ -121,7 +121,7 @@ A traditional URL filtering engine that assumes trust for a allow list URL. Secu
 
 ![Web Filtering](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_websitefilter.gif)
 
-Figure 6: Web filtering policies protecting end users who inadvertantly access sites on the block list
+Figure 6: Web filtering policies protecting end users who inadvertently access sites on the block list
 
 ## Security Analytics
 
