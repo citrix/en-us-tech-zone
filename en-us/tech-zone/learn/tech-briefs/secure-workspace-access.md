@@ -90,6 +90,8 @@ Referred to as cloud app control, this capability provides IT with a way to enfo
 *  Restrict downloads: Disables the user’s ability to download from within the SaaS app.
 *  Display watermark: Overlays a screen-based watermark showing the user name and IP address of the endpoint. If a user tries to print or take a screenshot, the watermark appears as displayed on the screen.
 
+![Ehanced Security](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_EnhSecWeb.gif)
+
 ## App Protection
 
 One risk that must be mitigated when end users use their personal devices for work is malware. Two of the most dangerous types are keylogging and screen shot malware, which can be used to both exfiltrate and harvest sensitive information like user credentials or personally identifiable information.
