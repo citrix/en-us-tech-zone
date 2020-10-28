@@ -51,7 +51,7 @@ Some organizations might have already standardized on an SSO provider. Secure Wo
 
 Once the user is authenticated to Secure Workspace Access with a primary identity, subsequent authentication challenges to SaaS and web apps are automatically fulfilled by the single sign-on feature in the Citrix Cloud using SAML assertions.  There are 300+ SAML SSO templates available for quick configuration for web and SaaS apps. If the app doesn’t have a pre-existing template, it will only take a few more clicks to configure.
 
-![Single Sign-On](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_saasso.gif)
+![Single Sign-On](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_saassso.gif)
 
 ## Browser Isolation
 
@@ -86,7 +86,7 @@ Referred to as Cloud App Control, this capability provides IT with a way to enfo
 *  Restrict downloads: Disables the user’s ability to download from within the SaaS app.
 *  Display watermark: Overlays a screen-based watermark showing the user name and IP address of the endpoint. If a user tries to print or take a screenshot, the watermark appears as displayed on the screen.
 
-![Ehanced Security](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsecweb.gif)
+![Enhanced Security](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsecweb.gif)
 
 ## App Protection
 
