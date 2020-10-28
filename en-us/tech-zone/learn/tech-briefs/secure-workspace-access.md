@@ -117,6 +117,8 @@ Admins can take a cautious approach even for accessing allow list URLs. This app
 
 A traditional URL filtering engine that assumes trust for a allow list URL. Secure Workspace Access does not implicitly trust an allow list URL since webpages, deemed safe by URL filtering engines, that can host malicious links. With Secure Workspace Access, URLs on trusted sites are also tested.
 
+![Web Filtering](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_WebsiteFilter.gif)
+
 ## Security Analytics
 
 Security and performance analytics - Users invariably access SaaS apps that have enhanced security inherent in them. Workspace app, the Citrix Gateway service, and the Secure Browser service provide the Security analytics service with information about the following user and application behaviors. These analytics impact the user’s overall risk score:
