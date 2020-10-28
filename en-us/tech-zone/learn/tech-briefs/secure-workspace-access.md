@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: First Last, First2 Last2
-specialThanksTo: Frank Srp
+specialThanksTo: Frank Srp, Martin Zugec
 description: Copy & paste description from TOC here
 ---
 # Secure Workspace Access
@@ -155,6 +155,8 @@ Citrix Secure Workspace Access complements or replaces existing VPN solutions wi
 *  No change to the underlying data center infrastructure.
 
 Workspace is able to create a connection to on-premises web apps without relying on a VPN.  This VPN-less connection utilizes an on-prem deployed connector. The connector creates an outbound control channel to the organization’s Citrix cloud subscription. From there, workspace is able to tunnel connections to the internal web apps while providing SSO. VPN-less access not only improves security and privacy but also improves end user experience.
+
+![VPN-less Acccess](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_VPNlessDiag.gif)
 
 ### Protecting user and corporate data on BYO and unmanaged endpoints
 
