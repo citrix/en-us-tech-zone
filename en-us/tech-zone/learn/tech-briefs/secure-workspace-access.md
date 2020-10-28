@@ -75,6 +75,8 @@ Citrix Secure Workspace Access has a very large database of URIs that are risk s
 
 Web links to unknown or risky websites can be automatically redirected to the Citrix Workspace embedded browser or the Secure Browser service to protect end-users from potentially malicious web sites. This transition is completely transparent for the end-user and keeps organizations safe while allowing employees to get their job done.
 
+![Browser Isolation](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_BrowseIso.gif)
+
 ## Enhanced Security
 
 To protect content, Secure Workspace Access incorporates enhanced security policies within the SaaS applications. Each policy enforces a restriction on the embedded browser when using Workspace app or on the Secure Browser service when using Workspace app web or mobile.
