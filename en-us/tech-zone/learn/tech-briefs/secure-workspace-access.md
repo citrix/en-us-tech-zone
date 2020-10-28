@@ -13,9 +13,9 @@ description: With Secure Workspace Access, organizations go beyond access and ag
 
 ## Overview
 
-As people consume more SaaS-based applications, organizations must be able to unify access to all apps and simplify end user authentication while still enforcing security and privacy standards. It’s also crucial to monitor vendor SLAs, application utilization, and security analytics. Citrix Secure Workspace Access delivers on those requirements.
+As people consume more SaaS-based applications, organizations must be able to unify access to all apps and simplify end user authentication while still enforcing security and privacy standards. It’s also crucial to monitor vendor SLAs, application utilization, and security analytics. Citrix Secure Workspace Access delivers on those requirements and more.
 
-Secure Workspace Access provides instant Single-Sign On (SSO) access to SaaS and web applications, granular and contextual security policies, app protection policies for all apps, browser isolation, and web filtering policies. Secure Workspace Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators:
+Secure Workspace Access provides instant Single-Sign On (SSO) access to SaaS and web applications, granular and contextual security policies, app protection policies for all apps, web browser isolation, and web filtering policies. Secure Workspace Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators:
 
 *  Web and SaaS SSO
 *  Web filtering policies
@@ -27,7 +27,7 @@ Secure Workspace Access provides instant Single-Sign On (SSO) access to SaaS and
 
 ## Preferred Primary Identity
 
-Every organization can select its own unique identity provider for end users’ initial logons to Citrix Workspace. With Workspace, end users authenticate with strong authentication policies using their primary user identity.
+Every organization can select its own unique identity provider for end users’ initial authentication to Citrix Workspace. With Workspace, end users login with strong authentication policies using their primary user identity.
 
 Workspace uses the primary identity to authorize the user to a set of resources, each will most likely have additional identities. Accounts associated with the set of authorized resources are secondary identities.
 
@@ -40,6 +40,8 @@ Examples of primary identities include:
 *  Okta: Organizations can use Okta as the primary user directory for Citrix Workspace.
 
 Having primary and secondary identities allows Secure Workspace Access to use a 3rd party to provide single sign-on to SaaS apps. Secure Workspace Access then treats the 3rd party as a service provider to provide an identity chain back to the primary user directory. This enables customers to stay on their current SSO provider without requiring major changes and layer on enhanced security policies and analytics.
+
+![Any Identity](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_AnyIdentity.gif)
 
 ## Single Sign-On
 
