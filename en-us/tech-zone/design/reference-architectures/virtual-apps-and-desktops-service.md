@@ -29,7 +29,7 @@ At the time of writing, Citrix Cloud offers the below services:
 *  Web AppFirewall
 *  ADC VPX
 *  Content Collaboration
-*  Access Control
+*  Secure Workspace Access
 *  Analytics
 *  App Layering
 *  ITSM Adapter
