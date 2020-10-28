@@ -29,8 +29,6 @@ Secure Workspace Access combines elements of several Citrix Cloud services to de
 *  Contextual and granular security policies
 *  Workspace app
 
-Citrix Workspace aggregates all resources into a single, personalized user interface. End users can either opt for a locally installed Workspace App (desktop and mobile) or use their local browsers to access a web-based workspace. Regardless of the selected approach and the chosen device, the experience remains familiar and consistent.
-
 ## Preferred Primary Identity
 
 Every organization can select its own unique identity provider for end users’ initial logons to Citrix Workspace. With Workspace, end users authenticate with strong authentication policies using their primary user identity.
@@ -197,3 +195,7 @@ More remote workers mean more remote meetings and web conferencing through a var
 Browser isolation for internet traffic protects end users and enterprises from web-based threats. With the Embedded Browser and Secure Browser service, admins get a choice to access sites in a local Chrome based browser a cloud hosted virtual machine (VM). With the service, possible attacks are contained in the cloud. Browsers run in isolated environment where the VM is destroyed after use and a new instance is createed for each app access. Functions like "Copy and Paste" are controlled by policy and no files or data will reach the corporate network.
 
 ## Summary
+
+In conclusion, Citrix Workspace aggregates all resources into a single, personalized user interface. End users can either opt for a locally installed Workspace App (desktop and mobile) or use their local browsers to access a web-based workspace. Regardless of the selected approach and the chosen device, the experience remains familiar and consistent.
+
+With Secure Workspace Access, organizations go beyond access and aggregation to provide IT with policy controls that provide conditional access to cloud apps and internet browsing, enhancing the organization’s overall security and compliance posture. The user’s experience remains seamless and integrated because the SaaS and web apps can be accessed alongside their mobile and virtual apps and desktops as an integrated part of Citrix Workspace.
