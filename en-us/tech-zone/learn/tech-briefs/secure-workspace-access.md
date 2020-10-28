@@ -103,6 +103,8 @@ App protection policies are rules applied while enabling enhanced security to an
 
 A less malicious but equally dangerous risk is accidental screen sharing. The line between personal and work usage on devices has been blurred, so it’s become common for end users to move from working on a business app to a virtual hangout with friends or family on that device. In these scenarios, accidental screen sharing of sensitive data in the business app could result in significant issues, especially for those in highly regulated industries.
 
+![App Protection](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_AppProtSlack.gif)
+
 ## Web Filtering
 
 Citrix Secure Workspace Access includes a URL filtering engine. By using the information contained in URLs, this feature helps admins monitor and control user access to malicious websites on the internet. Together, with the aforementioned browser isolation options, web filtering gives admins the choice to completely block a URL or access a URL in the embedded browswer or in a Secure Browser session.
