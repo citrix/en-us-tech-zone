@@ -142,7 +142,7 @@ The usage data helps them to understand the user adoption and engagement of a pr
 *  Top domains accessed by the users
 *  Total amount of data uploaded and downloaded across users, applications, and domains
 
-Learn more [here] (https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/analytics.html)
+Learn more [here](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/analytics.html)
 
 ## Use Cases
 
