@@ -28,6 +28,8 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [SD-WAN Cloud Direct service](/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html) - Optimize SaaS access for branch users by tunneling session traffic to Internet Exchanges with direct connectivity to popular sites.
 
+[SD-WAN Deployment Scenarios](/en-us/tech-zone/learn/tech-briefs/sdwan-deployment-scenarios.html) - Learn about different scenarios to optimize user experience with Citrix Workspace by deploying Citrix SD-WAN.
+
 [SD-WAN Edge Security](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-edge-security.html) - Learn how Citrix SD-WAN Advanced Edition provides Edge Security for your Enterprise network.
 
 [SD-WAN for Home Offices](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-home-office.html) - Learn how to work from home with secure, enhanced, and resilient connectivity using the Citrix SD-WAN 110 appliance.
