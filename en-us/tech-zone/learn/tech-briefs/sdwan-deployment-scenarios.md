@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Daljit Singh, Matthew Brooks
 specialThanksTo: Dan Feller, Karthick Srivatsan, Derek Thorslund, Shoaib Yusuf
-description: Learn about the Scenarios to deploy Citrix SD-WAN to enhance Workspace performance optimally
+description: Learn about the scenarios to deploy Citrix SD-WAN to enhance Workspace performance optimally
 ---
 # Tech Brief: Citrix SD-WAN Deployment Scenarios
 
