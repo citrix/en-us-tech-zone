@@ -15,12 +15,11 @@ Secure Workspace Access provides instant Single-Sign On (SSO) access to SaaS and
 
 *  MFA and Device Trust
 *  Web and SaaS SSO
-*  Access Proxy
-*  Web filtering
+*  Gateway
 *  Cloud App Control
+*  Web filtering
 *  Secure Browser
 *  App protection
-*  Contextual and granular security policies
 *  Analytics
 
 ![SWA High level](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_diag.png)
