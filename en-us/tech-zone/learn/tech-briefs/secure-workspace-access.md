@@ -14,16 +14,16 @@ As people consume more SaaS-based applications, organizations must be able to un
 Secure Workspace Access provides instant Single-Sign On (SSO) access to SaaS and web applications, granular and contextual security policies, app protection policies for all apps, web browser isolation, and web filtering policies. Secure Workspace Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators:
 
 *  Web and SaaS SSO
-*  Web filtering policies
+*  Web filtering
 *  Cloud App Control
-*  Secure Browser service
-*  App protection policies
+*  Secure Browser
+*  App protection
 *  Contextual and granular security policies
 *  Workspace app
 
 ![SWA Highlevel](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_diag.png)
 
-Figure 1: Secure Workspace Access high level diagram
+Figure 1: Secure Workspace Access capabilities
 
 ## Preferred Primary Identity
 
