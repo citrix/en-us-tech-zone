@@ -163,7 +163,7 @@ Learn more [here](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/anal
 
 ## Use Cases
 
-### VPN-less access
+### VPN-less Access
 
 Citrix Secure Workspace Access complements or replaces existing VPN solutions with a Zero Trust solution that allows access for remote users without a VPN. This solution solves many challenges with providing access to internal resources for external users. With Secure Workspace Access there is:
 
@@ -174,6 +174,10 @@ Citrix Secure Workspace Access complements or replaces existing VPN solutions wi
 *  No change to the underlying data center infrastructure.
 
 Workspace is able to create a connection to on-premises web apps without relying on a VPN. This VPN-less connection utilizes an on-prem deployed connector. The connector creates an outbound control channel to the organization’s Citrix Cloud subscription. From there, Workspace is able to tunnel connections to the internal web apps while providing SSO. VPN-less access not only improves security and privacy but also improves end user experience.
+
+![VPN-less Access](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_usecase1.png)
+
+Figure 8: Use Case 1: VPN-less Access
 
 ### SSO and Security Controls for SaaS Apps
 
@@ -199,7 +203,11 @@ More remote workers mean more remote meetings and web conferencing through vario
 
 Browser isolation for internet traffic protects end users and enterprises from web-based threats. With the Embedded Browser and Secure Browser service, admins get a choice to access sites in a local Chrome based browser a cloud hosted virtual machine (VM). With the service, possible attacks are contained in the cloud. Browsers run in an isolated environment where the VM is destroyed after use and a new instance is created for each app access. Policies control functions like "Copy and Paste" so that no files or data can reach the corporate network.
 
-### Protecting user and corporate data on BYO and unmanaged endpoints
+![SSO and Security Controls for SaaS Apps](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_usecase2.png)
+
+Figure 9: Use Case 2: SSO and Security Controls for SaaS Apps
+
+### Protecting User and Corporate Data on BYO and Unmanaged Endpoints
 
 Using Enhanced security policies, Secure Workspace Access gives admins the ability to protect their organizations from data loss and credential theft. Enhanced security policies are even more critical when employees use personal devices to access corporate resources.
 
@@ -208,6 +216,10 @@ One set of policies is the App Protection feature. App Protection enables Citrix
 App protection policies work by controlling access to specific API calls of the underlying OS required to capture screens or keyboard presses. These policies can protect against even the most customized and purpose-built hacker tools. It helps to secure any virtual or web application that employees use within Citrix Workspace and authentication dialog boxes (preventing password leaks) within Workspace.
 
 The App Protection feature makes the text entered by the user indecipherable by encrypting it before a keylogging tool can access it. A keylogger installed on the client endpoint reading the data would capture gibberish characters instead of the keystrokes the user is typing.
+
+![Protecting User and Corporate Data on BYO and Unmanaged Devices](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_usecase3.png)
+
+Figure 10: Use Case 3: Protecting user and Corporate Data on BYO and Unmanaged Devices
 
 ## Summary
 
