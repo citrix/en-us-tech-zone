@@ -5,9 +5,9 @@ layout: doc
 
 Just as buildings have blueprints that include details about their structure and inner workings, enterprise software solutions also need blueprints that define technical components and interactions. Citrix reference architectures are comprehensive guides that assist organizations in planning their Citrix Workspace implementations complete with use cases, recommendations, and more.
 
-## Citrix Access Control
+## Citrix Secure Workspace Access
 
-[Access Control](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Access Control solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
+[Secure Workspace Access](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Secure Workspace Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
 
 ## Citrix Analytics
 

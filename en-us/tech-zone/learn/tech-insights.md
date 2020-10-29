@@ -5,11 +5,11 @@ layout: doc
 
 Short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
 
-## Citrix Access Control
+## Citrix Secure Workspace Access
 
-[Access Control for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
+[Secure Workspace Access for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
 
-[Access Control for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
+[Secure Workspace Access for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 
 ## Citrix Analytics
 
