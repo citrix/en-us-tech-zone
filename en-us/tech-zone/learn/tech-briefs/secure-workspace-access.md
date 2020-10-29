@@ -46,6 +46,8 @@ Having primary and secondary identities allows Secure Workspace Access to use a 
 
 Figure 2: Using multiple identity providers
 
+Learn more [here](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html)
+
 ## Single Sign-On
 
 Secure Workspace Access is able to create a connection to on-premises web apps without relying on a VPN. This VPN-less connection utilizes an on-prem deployed connector. The connector creates an outbound control channel to the organization’s Citrix Cloud subscription. From there, Secure Workspace Access is able to tunnel connections to the internal web apps while providing SSO.
