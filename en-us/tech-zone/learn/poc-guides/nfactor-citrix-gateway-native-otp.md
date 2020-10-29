@@ -1,12 +1,12 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Matthew Brooks, Alyssa Ramella
+specialThanksTo: Himanshu Shukla
 description: Learn how to implement an extensible and flexible approach to configuring multi-factor authentication with nFactor for Citrix Gateway authentication with Native OTP 
 ---
+
 # Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Native OTP
-
-## Contributors
-
-**Author:** Alyssa Ramella, [Matthew Brooks](https://twitter.com/tweetmattbrooks)
 
 ## Introduction
 
@@ -88,7 +88,7 @@ Refer to Citrix Documentation for the latest product version and license require
 We will now create the second authentication policy for validation.
 
 1.  While you are in Authentication Policies, click `Add` again
-1.  Name this new Authentication Policy and select the Action Type `LDAP`
+1.  Enter `nOTP_authserverldap_valid` for the policy name select the Action Type `LDAP`
 1.  Select `Add` under Action
 1.  Enter your new LDAP server, this time deselecting the `Authentication` check box as seen below
 ![Second LDAP Policy](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_secondpolicy.png)
@@ -137,14 +137,14 @@ Similarly, we will create a second login schema by clicking `Add` again.
 1.  Now beneath Binding Details, under `Select Next Factor` select `Add`
 1.  Give your Authentication PolicyLabel a name. We enter `nOTP_factor`
 1.  Click `Continue`
-1.  Under Policy Binding, click 'Click to Select' and choose the second advanced authentication policy. In this example, it is called 'nOTP_validation'
+1.  Under Policy Binding, click the right arrow and select the second advanced authentication policy `nOTP_authserverldap_valid` and click `Select`
 1.  Click 'Bind', 'Done', then 'Bind" again for the original authentication policy
 
 Next we bind our Login Schemas.
 
 1.  Under 'Advanced Settings' on the right hand side, click Login Schemas to add it to your Authentication Virtual Server
-1.  Under 'Login Schema' click 'No Login Schema'
-1.  Click to Select the policy and choose your otp_management policy
+1.  Under 'Login Schema' click 'No Login Schema' (you may need to scroll down)
+1.  Under `Select Policy` click the right arrow and choose your `otp_management` policy
 ![Bind Login Schema](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_binding.png)
 1.  Click 'Bind'
 1.  In a similar fashion, bind your other login schema
