@@ -9,34 +9,6 @@ Citrix Tech Zone is home for technical, in-depth articles that are inspired and 
 
 Here you will learn from experts and gain insights into Citrix technologies and integrations for successful deployments of your Citrix environment through articles, tech best practices, videos, and much more.
 
-## Citrix Access Control
-
-### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
-
-[Secure Access to Azure-managed SaaS Applications and Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Access Control environment that provides enhanced security to Microsoft Azure SaaS Apps.
-
-[Secure Access to Internal Web Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Access Control, utilizing Citrix-provided SSO.
-
-[Secure Access to Office 365 with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html) - Learn how to set up a Citrix Access Control environment that provides single sign-on and enhanced security to Office 365.
-
-[Secure Access to SaaS Applications with Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to set up a Citrix Access Control environment that uses Citrix as the single sign-on provider for SaaS applications.
-
-[Secure Access to SaaS Applications with Okta and Citrix Access Control](/en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html) - Learn how to set up a Citrix Access Control environment that is able to use Okta as the single sign-on provider for SaaS applications.
-
-### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
-
-[Access Control](/en-us/tech-zone/learn/tech-briefs/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
-
-### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)
-
-[Access Control for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
-
-[Access Control for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
-
-### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
-
-[Access Control](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Access Control solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
-
 ## Citrix Analytics
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
@@ -180,6 +152,34 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [SD-WAN Multi-Region](/en-us/tech-zone/design/reference-architectures/sd-wan-multi-region.html) - Discover the framework, design, and architecture for Citrix SD-WAN multi-region deployment with SD-WAN Orchestrator.
 
 [SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan.html) - Learn about the framework, design, and architecture for Citrix SD-WAN with SD-WAN Orchestrator for single region deployment.
+
+## Citrix Secure Workspace Access
+
+### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
+
+[Secure Access to Azure-managed SaaS Applications and Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Secure Workspace Access environment that provides enhanced security to Microsoft Azure SaaS Apps.
+
+[Secure Access to Internal Web Applications with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Secure Workspace Access, utilizing Citrix-provided SSO.
+
+[Secure Access to Office 365 with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html) - Learn how to set up a Citrix Secure Workspace Access environment that provides single sign-on and enhanced security to Office 365.
+
+[Secure Access to SaaS Applications with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to set up a Citrix Secure Workspace Access environment that uses Citrix as the single sign-on provider for SaaS applications.
+
+[Secure Access to SaaS Applications with Okta and Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html) - Learn how to set up a Citrix Secure Workspace Access environment that is able to use Okta as the single sign-on provider for SaaS applications.
+
+### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
+
+[Secure Workspace Access](/en-us/tech-zone/learn/tech-briefs/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
+
+### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)
+
+[Secure Workspace Access for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
+
+[Secure Workspace Access for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
+
+### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
+
+[Secure Workspace Access](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Secure Workspace Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
 
 ## Citrix Service Providers
 
