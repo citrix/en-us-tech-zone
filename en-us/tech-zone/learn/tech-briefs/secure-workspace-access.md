@@ -60,6 +60,8 @@ Once the user is authenticated with a primary identity, the single sign-on featu
 
 Figure 3: SSO to SaaS app without relying on a VPN
 
+Learn more [here](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
+
 ## Browser Isolation
 
  Secure Workspace Access enables end users to safely browse the internet. When an end user launches a SaaS application from Citrix Workspace, several decisions are dynamically made to decide how best to serve this SaaS application. Secure Workspace Access provides three ways to serve this application to the end-user:
