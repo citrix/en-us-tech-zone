@@ -21,6 +21,10 @@ Secure Workspace Access provides instant Single-Sign On (SSO) access to SaaS and
 *  Contextual and granular security policies
 *  Workspace app
 
+![SWA Highlevel](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_diag.png)
+
+Figure 1: Secure Workspace Access high level diagram
+
 ## Preferred Primary Identity
 
 Every organization can select its own unique identity provider for end users’ initial authentication to Citrix Workspace. With Workspace, end users login with strong authentication policies using their primary user identity.
@@ -39,7 +43,7 @@ Having primary and secondary identities allows Secure Workspace Access to use a 
 
 ![Any Identity](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_anyidentity.gif)
 
-Figure 1: Using multiple identity providers
+Figure 2: Using multiple identity providers
 
 ## Single Sign-On
 
@@ -51,7 +55,7 @@ Once the user is authenticated with a primary identity, the single sign-on featu
 
 ![Single Sign-On](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_saassso.gif)
 
-Figure 2: SSO to web apps without relying on a VPN
+Figure 3: SSO to web apps without relying on a VPN
 
 ## Browser Isolation
 
@@ -73,7 +77,7 @@ Secure Workspace Access has a large database of URIs that are risk scored and ad
 
 ![Browser Isolation](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_browseiso.gif)
 
-Figure 3: Web browser isolation with the Citrix Workspace-embedded browser and Secure Browser Service
+Figure 4: Web browser isolation with the Citrix Workspace-embedded browser and Secure Browser Service
 
 ## Enhanced Security
 
@@ -90,7 +94,7 @@ Referred to as Cloud App Control, this capability provides IT with a way to enfo
 
 ![Enhanced Security](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsecweb.gif)
 
-Figure 4: Enhanced Security policies with a SaaS app
+Figure 5: Enhanced Security policies with a SaaS app
 
 ## App Protection
 
@@ -107,7 +111,7 @@ A less malicious but equally dangerous risk is accidental screen sharing. The li
 
 ![App Protection](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_appprotslack.gif)
 
-Figure 5: App Protection policies protecting Citrix Workspace privacy while using a screen sharing app
+Figure 6: App Protection policies protecting Citrix Workspace privacy while using a screen sharing app
 
 ## Web Filtering
 
@@ -121,7 +125,7 @@ A traditional URL filtering engine that assumes trust for a allow list URL. Secu
 
 ![Web Filtering](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_websitefilter.gif)
 
-Figure 6: Web filtering policies protecting end users who inadvertently access sites on the block list
+Figure 7: Web filtering policies protecting end users who inadvertently access sites on the block list
 
 ## Security Analytics
 
