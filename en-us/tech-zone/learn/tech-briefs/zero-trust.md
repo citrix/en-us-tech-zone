@@ -47,7 +47,7 @@ Zero trust is achieved through an intentional implementation of the framework. U
 
 Citrix sees Zero Trust as a strategy that applies not only just to networking, but across the organization in users, devices, networks, applications – and how people work.
 
-Citrix Zero Trust Architecture focuses on protecting resources and is designed and deployed adhering to tenets modeled after the National Institute of Standards and Technology (NIST) [Zero Trust tenets](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207-draft2.pdf):
+Citrix Zero Trust Architecture focuses on protecting resources and is designed and deployed adhering to tenets modeled after the National Institute of Standards and Technology (NIST) [Zero Trust tenets](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf):
 
 1.  All data sources and computing services are considered resources
 2.  All communication is secured regardless of network location because every network, both enterprise and remote, is innately hostile and not trustworthy
