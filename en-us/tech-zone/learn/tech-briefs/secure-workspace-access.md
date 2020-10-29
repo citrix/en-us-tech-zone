@@ -175,16 +175,6 @@ Citrix Secure Workspace Access complements or replaces existing VPN solutions wi
 
 Workspace is able to create a connection to on-premises web apps without relying on a VPN. This VPN-less connection utilizes an on-prem deployed connector. The connector creates an outbound control channel to the organization’s Citrix Cloud subscription. From there, Workspace is able to tunnel connections to the internal web apps while providing SSO. VPN-less access not only improves security and privacy but also improves end user experience.
 
-### Protecting user and corporate data on BYO and unmanaged endpoints
-
-Using Enhanced security policies, Secure Workspace Access gives admins the ability to protect their organizations from data loss and credential theft. Enhanced security policies are even more critical when employees use personal devices to access corporate resources.
-
-One set of policies is the App Protection feature. App Protection enables Citrix admins to enforce policies to protect endpoints from-screen capture and keylogging. The feature protects employees from dormant screen-grabbing malware or keyloggers that can potentially capture passwords or personal information.
-
-App protection policies work by controlling access to specific API calls of the underlying OS required to capture screens or keyboard presses. These policies can protect against even the most customized and purpose-built hacker tools. It helps to secure any virtual or web application that employees use within Citrix Workspace and authentication dialog boxes (preventing password leaks) within Workspace.
-
-The App Protection feature makes the text entered by the user indecipherable by encrypting it before a keylogging tool can access it. A keylogger installed on the client endpoint reading the data would capture gibberish characters instead of the keystrokes the user is typing.
-
 ### SSO and Security Controls for SaaS Apps
 
 Secure Workspace Access offers single sign-on and contextual policies for access to web and SaaS apps. Using Citrix Gateway or Okta as the IdP provides support for all multifactor authentication mechanisms and contextual controls. These integrations protect customers' existing identity ecosystem investment and ease their move to cloud without a rip and replace forklift upgrade.
@@ -208,6 +198,16 @@ Enhanced security with App Protection provides IT with a way to enforce security
 More remote workers mean more remote meetings and web conferencing through various applications. These meetings usually require employees to share their screen, which opens the possibility of exposing sensitive data by mistake. The App Protection feature protects against screenshot malware and web conference screen capturing by returning a blank screenshot instead of the information on a user’s screen. This protetction also applies to the most common snipping tools, print-screen tools, screen capture, and recording tools.
 
 Browser isolation for internet traffic protects end users and enterprises from web-based threats. With the Embedded Browser and Secure Browser service, admins get a choice to access sites in a local Chrome based browser a cloud hosted virtual machine (VM). With the service, possible attacks are contained in the cloud. Browsers run in an isolated environment where the VM is destroyed after use and a new instance is created for each app access. Policies control functions like "Copy and Paste" so that no files or data can reach the corporate network.
+
+### Protecting user and corporate data on BYO and unmanaged endpoints
+
+Using Enhanced security policies, Secure Workspace Access gives admins the ability to protect their organizations from data loss and credential theft. Enhanced security policies are even more critical when employees use personal devices to access corporate resources.
+
+One set of policies is the App Protection feature. App Protection enables Citrix admins to enforce policies to protect endpoints from-screen capture and keylogging. The feature protects employees from dormant screen-grabbing malware or keyloggers that can potentially capture passwords or personal information.
+
+App protection policies work by controlling access to specific API calls of the underlying OS required to capture screens or keyboard presses. These policies can protect against even the most customized and purpose-built hacker tools. It helps to secure any virtual or web application that employees use within Citrix Workspace and authentication dialog boxes (preventing password leaks) within Workspace.
+
+The App Protection feature makes the text entered by the user indecipherable by encrypting it before a keylogging tool can access it. A keylogger installed on the client endpoint reading the data would capture gibberish characters instead of the keystrokes the user is typing.
 
 ## Summary
 
