@@ -120,7 +120,7 @@ Figure 6: App Protection policies protecting Citrix Workspace privacy while usin
 
 ## Web Filtering
 
- Secure Workspace Access includes a URL filtering engine. By using the information contained in URLs, this feature helps admins monitor and control user access to malicious websites on the internet. Together with the previously mentioned browser isolation options, web filtering gives admins options to choose from. They can completely block a URL, require to access a URL in the embedded browser, or requrire access a URL in a Secure Browser session.
+ Secure Workspace Access includes a URL filtering engine. By using the information contained in URLs, this feature helps admins monitor and control user access to malicious websites on the internet. Together with the previously mentioned browser isolation options, web filtering gives admins options to choose from. They can completely block a URL, require to access a URL in the embedded browser, or require access a URL in a Secure Browser session.
 
 The web filtering controller uses a categorization database and URLs list. When the request comes to the web filtering controller, it first checks the global allow list which also contains critical Citrix Cloud URLs. Then it checks to "Lists and Categorization" and verifies with blocked and allowed and redirect to Secure Browser URLs. If none of the URLs match, then by default it falls back to the default list.
 
@@ -199,7 +199,7 @@ Enhanced security with App Protection provides IT with a way to enforce security
 *  Restrict screen capture
 *  Restrict printing
 
-More remote workers mean more remote meetings and web conferencing through various applications. These meetings usually require employees to share their screen, which opens the possibility of exposing sensitive data by mistake. The App Protection feature protects against screenshot malware and web conference screen capturing by returning a blank screenshot instead of the information on a user’s screen. This protetction also applies to the most common snipping tools, print-screen tools, screen capture, and recording tools.
+More remote workers mean more remote meetings and web conferencing through various applications. These meetings usually require employees to share their screen, which opens the possibility of exposing sensitive data by mistake. The App Protection feature protects against screenshot malware and web conference screen capturing by returning a blank screenshot instead of the information on a user’s screen. This protection also applies to the most common snipping tools, print-screen tools, screen capture, and recording tools.
 
 Browser isolation for internet traffic protects end users and enterprises from web-based threats. With the Embedded Browser and Secure Browser service, admins get a choice to access sites in a local Chrome based browser a cloud hosted virtual machine (VM). With the service, possible attacks are contained in the cloud. Browsers run in an isolated environment where the VM is destroyed after use and a new instance is created for each app access. Policies control functions like "Copy and Paste" so that no files or data can reach the corporate network.
 
