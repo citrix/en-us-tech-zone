@@ -58,7 +58,7 @@ Once the user is authenticated with a primary identity, the single sign-on featu
 
 ![Single Sign-On](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_saassso.gif)
 
-Figure 3: SSO to SaaS app without relying on a VPN
+Figure 3: SSO to SaaS using SAML
 
 Learn more [here](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
 
