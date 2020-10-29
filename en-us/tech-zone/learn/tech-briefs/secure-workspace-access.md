@@ -99,7 +99,7 @@ Referred to as Cloud App Control, this capability provides IT with a way to enfo
 
 ![Enhanced Security](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsecweb.gif)
 
-Figure 5: Enhanced Security policies with a SaaS app
+Figure 5: Enhanced Security policies with an internal web app
 
 ## App Protection
 
