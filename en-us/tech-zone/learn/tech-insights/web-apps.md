@@ -7,7 +7,7 @@ description: Access enterprise hosted web apps seamlessly and securely through C
 ---
 # Enterprise web apps
 
-Learn how Citrix Workspace can deliver enterprise web apps via Citrix Gateway with single sign-on, Access Control, and a great user experience.
+Learn how Citrix Workspace can deliver enterprise web apps via Citrix Gateway with single sign-on, Secure Workspace Access, and a great user experience.
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=jJ069pxDNHA):**
 

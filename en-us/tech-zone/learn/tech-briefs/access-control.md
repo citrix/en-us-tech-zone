@@ -4,7 +4,7 @@ h3InToc: true
 contributedBy: Daniel Feller
 description: Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 ---
-# Access Control
+# Secure Workspace Access
 
 As users consume more SaaS-based applications, organizations must be able to unify all sanctioned apps, simplify login operations while still enforcing authentication standards, and capture user behavior. Is also been crucial to monitor vendor SLAs and application utilization analytics.
 
@@ -31,7 +31,7 @@ Once the user is authenticated to Citrix Workspace with a primary identity, subs
 
 By default, the SAML assertion utilizes the email address associated with the user’s Active Directory account (identity provider) with the email address associated with the user's SaaS or web app account (service provider).
 
-[![Citrix Access Control SSO](/en-us/tech-zone/learn/media/tech-briefs_access-control_sso.png)](/en-us/tech-zone/learn/media/tech-briefs_access-control_sso.png)
+[![Citrix Secure Workspace Access SSO](/en-us/tech-zone/learn/media/tech-briefs_access-control_sso.png)](/en-us/tech-zone/learn/media/tech-briefs_access-control_sso.png)
 
 ## Content Control
 
@@ -44,7 +44,7 @@ To protect content, organizations incorporate enhanced security policies within 
 -  Restrict downloads: Disables the user's ability to download from within the SaaS app.
 -  Display watermark: Overlays a screen-based watermark showing the user name and IP address of the endpoint. If a user tries to print or take a screenshot, the watermark appears as displayed on the screen.
 
-[![Citrix Access Control SSO Enhanced Security](/en-us/tech-zone/learn/media/tech-briefs_access-control_sso-enhanced-security.png)](/en-us/tech-zone/learn/media/tech-briefs_access-control_sso-enhanced-security.png)
+[![Citrix Secure Workspace Access SSO Enhanced Security](/en-us/tech-zone/learn/media/tech-briefs_access-control_sso-enhanced-security.png)](/en-us/tech-zone/learn/media/tech-briefs_access-control_sso-enhanced-security.png)
 
 ## Contextual Access
 
@@ -54,7 +54,7 @@ Although an authorized SaaS app is considered safe, content in the SaaS app actu
 -  Denied: the hyperlink is considered dangerous and access is denied
 -  Redirected: the hyperlink request is redirected to the Secure Browser service, where the user’s internet browsing activities are isolated from the endpoint device, the corporate network and the SaaS app.
 
-[![Citrix Access Control URL Filtering](/en-us/tech-zone/learn/media/tech-briefs_access-control_url-filtering.png)](/en-us/tech-zone/learn/media/tech-briefs_access-control_url-filtering.png)
+[![Citrix Secure Workspace Access URL Filtering](/en-us/tech-zone/learn/media/tech-briefs_access-control_url-filtering.png)](/en-us/tech-zone/learn/media/tech-briefs_access-control_url-filtering.png)
 
 Most SaaS applications consume content from multiple websites. When utilizing web filtering, the SaaS application must be thoroughly tested to validate secondary sources of content are not being blocked or redirected. The time it takes for the user to select a URL and the browser to load the page might take slightly longer with enhanced security because each URL accessed within the SaaS application gets analyzed by the web filtering µ-service, which runs in Citrix Cloud.
 

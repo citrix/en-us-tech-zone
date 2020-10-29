@@ -6,9 +6,9 @@ description: Short overview documents explaining a technology, a feature, a func
 
 Short overview documents explaining a technology, a feature, a function next to a technical diagram.
 
-## Citrix Access Control
+## Citrix Secure Workspace Access
 
-[Access Control](/en-us/tech-zone/learn/tech-briefs/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
+[Secure Workspace Access](/en-us/tech-zone/learn/tech-briefs/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 
 ## Citrix Analytics
 
