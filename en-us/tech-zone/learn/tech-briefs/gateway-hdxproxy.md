@@ -93,7 +93,7 @@ After the Citrix Workspace is configured in Citrix Cloud the new FQDN can be add
 
 ## Deployment Considerations
 
-When a user launches an app within Workspace app a DNS query, for an FQDN hosted on Citrix Gateways, is relayed to the local DNS name server configured on their endpoint. The local DNS name server may make a recursive query for the it or relay that to a local ISP DNS name server. In response to the DNS query Citrix Gateway Service returns the public IP address of the nearest POP based on the location of the IP address of the ISPs name server/s making the recursive query. Therefore it is essential that the local ISP name server is in close proximity to the endpoint. If not challenges can arise.
+When a user launches an app within Workspace app, a DNS query, for a FQDN hosted on Citrix Gateways, is relayed to the endpoint's local DNS name server. The local DNS name server may make a recursive query for the it or relay that to a local ISP DNS name server. In response to the DNS query Citrix Gateway Service returns the public IP address of the nearest POP based on the location of the IP address of the ISPs name server/s making the recursive query. Therefore it is essential that name server is in close proximity to the endpoint. If not sessions may incur performance issues.
 
 ### Web/SSL Proxy
 
@@ -102,8 +102,8 @@ Exclude Gateway Service FQDNs from any DNS filtering and traffic inspection `(*.
 For example Proxies can cause the following issues:
 
 *  Randomize the DNS source IP, which leads to users being directed to a sub-optimal POP
-*  Add latency to connections that do go to wrong POP (100ms+, with excessive jitter)
-*  TLS inspection breaks Gateway Service since we do not support TLS interception
+*  Add latency to connections that are directed to the wrong POP (100ms+, with excessive jitter)
+*  TLS inspection breaks Gateway Service since it does not support TLS interception
 
 To implement it with Zscaler:
 
