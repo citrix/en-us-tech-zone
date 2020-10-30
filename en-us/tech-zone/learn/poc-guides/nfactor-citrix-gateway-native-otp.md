@@ -130,7 +130,7 @@ This registration login schema corresponds to the dual factor authentication whe
 1.  Select `Add Policy`
 1.  Select `Add` next to `Select Policy`
 1.  Enter name `polfactor0-notpmanage`
-1.  Set the `Action Type` to NO_AUTHN
+1.  Set the `Action Type` to `NO_AUTHN`
 1.  Paste in `HTTP.REQ.COOKIE.VALUE(“NSC_TASS”).EQ(“manageotp”)` for the expression
 OR build it with Expression builder
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_polfactor0-notpmanageexpr.png)
@@ -192,7 +192,7 @@ Now we will create a traffic policy to relay the LDAP password to StoreFront, in
 1.  Navigate to '**Citrix Gateway > Virtual Servers > Policies > Traffic**'
 1.  Select the `Traffic Profiles` Tab and click Add
 1.  Enter the name `notp_trafficprofile`
-1.  Select HTTP
+1.  Select `HTTP`
 1.  In the SSO Password Expression enter `http.REQ.USER.ATTRIBUTE(1)`
 1.  Click Create
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_notp-trafficprofile.png)
