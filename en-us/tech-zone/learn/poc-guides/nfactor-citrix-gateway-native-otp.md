@@ -210,7 +210,7 @@ The Gateway Virtual Server is bound to the Native OTP AAA Virtual Server to prov
 1.  Navigate to '**Citrix Gateway > Virtual Servers**'
 1.  Select your current Gateway and click `Edit`
 1.  Select Authentication Profile from the Advanced Settings panel on the right hand side
-1.  Select Add
+1.  Select `Add`
 1.  Enter a profile name. We enter `nativeotp_authprofile`
 1.  Under Policy select the arrow and select the Native OTP AAA Virtual Server `nativeotp_authvserver`
 1.  Click `Create`
