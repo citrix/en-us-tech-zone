@@ -170,7 +170,7 @@ We recommend evaluating your environment to identify any risks and requirements 
 Teams traffic flows via Transport Relay on UDP 3478-3481, TCP 443 (fallback) and the clients need access to these address ranges: 13.107.64.0/18, 52.112.0.0/14, 52.120.0.0/14
 Optimized traffic for peer to peer connections is routed on higher ports (40 K+ UDP) at random, if they are open. For more info [read](https://docs.microsoft.com/en-us/office365/enterprise/urls-and-ip-address-ranges#skype-for-business-online-and-microsoft-teams).
 
-Be sure that all computers running the Workspace app client with Teams optimization can resolve external DNS queries to discover the TURN/STUN services provided by Microsoft 365 (e.g. worldaz.turn.teams.microsoft.com) and that your firewalls are not preventing access.
+Be sure that all computers running the Workspace app client with Teams optimization can resolve external DNS queries to discover the TURN/STUN services provided by Microsoft 365 (e.g. `worldaz.turn.teams.microsoft.com`) and that your firewalls are not preventing access.
 
 For support information, see [Support](/en-us/citrix-virtual-apps-desktops/multimedia/opt-for-ms-teams/teams-monitor-ts-support.html#support) section of our documentation.
 
