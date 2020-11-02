@@ -158,7 +158,7 @@ Read more about the testing and results [here](/en-us/tech-zone/design/design-de
 
 ## Choice - Monitoring and Analytics
 
-The setup and design of an environment is just the first part of getting VDI infrastructure for an organization. For that reason, it gets the most focus from cloud providers. But the Day 2 and onwards of running and maintainence of a large environment in my opinion is as important. Hosting VMs in public clouds obfuscate the running of the machines, but the admin must still ensure that the user experience is consistent and high performing day in and day out.
+The setup and design of an environment is just the first part of getting VDI infrastructure for an organization. For that reason, it gets the most focus from cloud providers. But the Day 2 and onwards of running and maintenance of a large environment in my opinion is as important. Hosting VMs in public clouds obfuscate the running of the machines, but the admin must still ensure that the user experience is consistent and high performing day in and day out.
 
 Citrix gives full help desk visibility into user sessions, for both real-time debugging of specific user issues and performance, and broad visibility into the environment and trends.
 
@@ -204,7 +204,7 @@ Learn about the analytics capabilities, visit the [Analytics Tech Brief](/en-us/
 
 ## Experience
 
-In this section, the features that enhance the user expereince when accessing their Windows Virtual Desktop resoures are showcased.
+In this section, the features that enhance the user experience when accessing their Windows Virtual Desktop resources are showcased.
 
 ## Experience - HDX
 
@@ -355,6 +355,25 @@ CPU optimization with WEM, involves real-time monitoring of the process running 
 
 ![WEM CPU Optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_25-wem-cpu-optimization.gif)
 
+Each Citrix Virtual Apps and Desktops release build is tested to validate the expected scale improvements, using LoginVSI. To validate the effect of CPU optimization by WEM, in a noisy neighbor scenario, these scale tests were extended. To simulate a noisy neighbor, a user not part of the LoginVSI knowledge worker test run, is added to the test setup. This user’s session is configured, to launch a process that consumes 3 CPU cores for an average of 50 to 70% of total CPU, based on the number of cores in the Azure VM.
+
+Windows 10 2004 multi-session VMs, were tested with Citrix Virtual Apps and Desktops 2006 installed and the Citrix Optimizer applied and WEM agent over HDX. To baseline the test results, the same test was run with Microsoft RDP as the connection protocol and the VMs had Out of the Box optimizations from Microsoft.
+
+As can be seen from the below table, the inclusion of WEM, suppresses the effect of the CPU consuming noisy neighbor, and increases the VSImax (no of users that can be supported on the machine) from 20 to 43%. Resulting in a higher number of users that can run on a single VM, even in this stress scenario.
+
+**Scale breakdown with Noisy Neighbor scenario**:
+| Azure Size  |  MS RDP | Citrix HDX  | % WEM Scalability Improvement  |
+|---|---|---|---|
+| D4V3  | 7.3  | 11.3  | **43.0%**  |
+| D3V2  | 12  | 16  | **28.6%**  |
+| D4V2  | 28  | 34.5  | **20.8%**  |
+
+As WEM reduces CPU spikes, another important inference from the results is, that the response time for the user is much better. Citrix Virtual Apps and Desktops sessions have an almost 1000 ms lower response time when compared to MS RDP (at the instant VSImax is reached) for the same number of users.
+
+Similarly, the latency observed in the session is between 25 to 50% lesser on both the machines with 4 vCPUs. Both these results point to a much smoother and snappier use experience when WEM is in the picture.
+
+![WEM Latency Improvement Graph](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_31-WEM-Latency-improvement-graph.png)
+
 ### Logon Time Optimization
 
 To deliver the best possible logon performance, Workspace Environment Management replaces commonly used Windows Group Policy Object objects, logon scripts, and preferences with an agent which is deployed on each virtual machine or server. The agent is multi-threaded and applies changes to user environments only when required, ensuring users always have access to their desktop as fast as possible.
@@ -417,7 +436,7 @@ Learn more about how to set up the same [here](/en-us/tech-zone/build/deployment
 
 ### Citrix Gateway and Citrix Secure Workspace Access
 
-Citrix Gateway is the preferred app delivery solution for reverse proxy to Citrix resources, providing VPN-less access to resoruces for end users.
+Citrix Gateway is the preferred app delivery solution for reverse proxy to Citrix resources, providing VPN-less access to resources for end users.
 
 Citrix Gateway Service has dozens of Points of Presence (POP) globally, connecting through the nearest Citrix Gateway POP improves performance. With Citrix VAD service and Citrix Gateway service enterprises now may provide remote access to apps and desktops without additional VPN requirements along with following benefits:
 
