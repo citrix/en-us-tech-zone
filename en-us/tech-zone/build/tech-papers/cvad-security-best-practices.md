@@ -100,61 +100,29 @@ Every device in your network should not be able to manage your Citrix ADC applia
 
 -  You must also ensure that any Subnet IPs (SNIPs) and Mapped IPs (MIPs) should not have management enabled on them. This could lead to your DMZ network having access to the management console via this SNIP or MIP because it was unintentionally checked.
 -  To check just browse your SNIP or MIP via HTTP and HTTPS. Or within the console navigate to System – Network – IPs and select the IP and you will see if the management check box is selected also.
--  You can also use Access Control Lists within the Citrix ADC to limit access to the management of the appliance to specific hosts or subnets without the management being placed behind a firewall.
-
-    1. [https://support.citrix.com/article/CTX228148](https://support.citrix.com/article/CTX228148)
-    2. [https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#configuration-guidelines#Network-security](https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#configuration-guidelines#Network-security)
-
--  If your Citrix ADCs will be placed behind a firewall you will need to plan based on the services the appliance is delivering along with access to the management to each device along with any supporting maintenance or security devices like Citrix ADM and Citrix Analytics.
-
-    1. Ports used by Citrix Services [CTX101810](https://support.citrix.com/article/CTX101810)
-    2. Sample DMZ Configuration [CTX113250](https://support.citrix.com/article/CTX113250)
-
--  In higher security deployments to also change the management ports from the default HTTP (TCP80) and HTTPS (TCP443) to a custom port to create obfuscation and help prevent identification from typical scans. This must be done on each appliance.
-
-    1. [https://docs.citrix.com/en-us/citrix-adc/current-release/system/basic-operations/configure-http-https-management-ports.html](https://docs.citrix.com/en-us/citrix-adc/current-release/system/basic-operations/configure-http-https-management-ports.html)
-
+-  You can also use Access Control Lists within the Citrix ADC to limit access to the management of the appliance to specific hosts or subnets without the management being placed behind a firewall. You can find more information in [CTX228148 - How to Lock Down Citrix ADC Management Interfaces with ACLs](https://support.citrix.com/article/CTX228148) and [Citrix ADC product documentation - Network security](https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#network-security).
+-  If your Citrix ADCs will be placed behind a firewall you will need to plan based on the services the appliance is delivering along with access to the management to each device along with any supporting maintenance or security devices like Citrix ADM and Citrix Analytics. You can find more information in [CTX101810 - Ports used by Citrix Services](https://support.citrix.com/article/CTX101810) and [CTX113250 - Sample DMZ Configuration](https://support.citrix.com/article/CTX113250).
+-  In higher security deployments to also change the management ports from the default HTTP (TCP80) and HTTPS (TCP443) to a custom port to create obfuscation and help prevent identification from typical scans. This must be done on each appliance. You can find more information in [Citrix ADC product documentation](https://docs.citrix.com/en-us/citrix-adc/current-release/system/basic-operations.html#how-to-configure-http-and-https-management-ports-for-internal-services).
 -  Limiting Egress (outbound) and Ingress (inbound) from the management networks that the Citrix ADC will be deployed onto. Having unlimited and monitored network access from any device to anywhere is an inherent risk. Limiting external exposure to external assets is a great step outside of even the Citrix ADC control plane. There should also be limitations of what can access these management resources so that only specified devices or ranges can manage your Citrix ADCs.
 -  It is a common practice to keep all the NISIPs, LOMs and SVMs on a separate network from other networking equipment. Depending on your policy standards you may put the LOMs on physical/out-of-band management networks with other similar systems and the NSIPs and SVMs on another network. It can also be helpful to have a subnet for them to make a standard
 
-    1. In many deployments all the NSIPs
-
 ### Bind Citrix ADC to LDAPs
 
-Using generic login accounts for day-to-day administration post setup is not recommended. When configuration changes are done by nsroot in an IT team of 20+ people who have access to the password manager, you will not be able to easily track who logged in and made the change. We recommend once the nsroot accounts password has been changed that the system is immediately bound to LDAPs to track usage to a specific user account. This will also allow you to have better delegated control so you can create View only groups for auditing and application teams and allow full admin rights to specific AD groups also. We do not recommend binding using unencrypted LDAP as credentials could be collected with packet captures. [CTX212422](https://support.citrix.com/article/CTX212422)
+Using generic login accounts for day-to-day administration post setup is not recommended. When configuration changes are done by nsroot in an IT team of 20+ people who have access to the password manager, you will not be able to easily track who logged in and made the change. We recommend once the nsroot accounts password has been changed that the system is immediately bound to LDAPS to track usage to a specific user account. This will also allow you to have better delegated control so you can create View only groups for auditing and application teams and allow full admin rights to specific AD groups also. We do not recommend binding using unencrypted LDAP as credentials could be collected with packet captures. You can find more information in [CTX212422](https://support.citrix.com/article/CTX212422).
 
 If binding to Windows Active Directory we recommend ensuring you are only using LDAPs as the protocol. It is also important are ensuring NTLMv2 is the only hashing method for credentials and even network sessions too. This is an AD security best practice to ensure that credentials are as protected as possible while in transit for authentication requests and network sessions. These should not be turned out without proper testing and knowing how old your Windows clients are and how compliant their patches are as there can be incompatibilities to older versions of Windows.
 
-1. LAN Manager Policies –
-
-    1. Recommended Policy – Send NTLMv2 responses only. Refuse LM &amp; NTLM
-    2. [https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-lan-manager-authentication-level](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-lan-manager-authentication-level)
-
-2. Network Sessions
-
-    1. Recommended Policy – Require NTLMv2 session security. The connection fails if the NTLMv2 protocol is not negotiated.
-    2. [https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-minimum-session-security-for-ntlm-ssp-based-including-secure-rpc-servers](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-minimum-session-security-for-ntlm-ssp-based-including-secure-rpc-servers)
-
-When binding to any external authentication source you should either disable local authentication for local accounts like &quot;nsroot&quot; or only enable specific local accounts to use local authentication. Depending on your deployment requirements may require one path or another. Most deployments will not have requirement to have an account that must use local authentication because if there is a service account needed in most cases you can just create and delegate a LDAP user. This guide below will go over setting up both methods, one method should be deployed.
-
-    1. [https://www.citrix.com/blogs/2020/09/23/how-to-secure-restrict-citrix-adc-management-access/](https://www.citrix.com/blogs/2020/09/23/how-to-secure-restrict-citrix-adc-management-access/)
+When binding to any external authentication source you should either disable local authentication for local accounts like "nsroot" or only enable specific local accounts to use local authentication. Depending on your deployment requirements may require one path or another. Most deployments will not have requirement to have an account that must use local authentication because if there is a service account needed in most cases you can just create and delegate a LDAP user. [This guide](https://www.citrix.com/blogs/2020/09/23/how-to-secure-restrict-citrix-adc-management-access/) covers setting up both methods, one method should be deployed.
 
 ### Logging and Alerting
 
-Having the Syslog logs forwarded is critical to be able to provide incident response along with more advanced troubleshooting. These logs will allow you see login attempts to the ADC system and to the Citrix Gateway if used, actions taken by policies such as GeoIP &amp; BadIP blocking, AppQoE Protection, Responder Policy Actions and other packet and system operations. This information can be invaluable during troubleshooting issues along with understanding your current attack situation and to be able to react to either with actionable data to fix problems or stop\mitigate an attack. Without a Syslog target configured on your Citrix ADC you can get in a situation where there logs you need for a troubleshooting or security investigation is not possible because the logs were rolled off to save space for the system to stay operational.
-
-    1. https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#Logging-and-monitoring
+Having the Syslog logs forwarded is critical to be able to provide incident response along with more advanced troubleshooting. These logs will allow you see login attempts to the ADC system and to the Citrix Gateway if used, actions taken by policies such as GeoIP & BadIP blocking, AppQoE Protection, Responder Policy Actions and other packet and system operations. This information can be invaluable during troubleshooting issues along with understanding your current attack situation and to be able to react to either with actionable data to fix problems or stop\mitigate an attack. Without a Syslog target configured on your Citrix ADC you can get in a situation where there logs you need for a troubleshooting or security investigation is not possible because the logs were rolled off to save space for the system to stay operational. You can find more information in [Citrix ADC product documentation - Logging and monitoring](https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#logging-and-monitoring).
 
 There are many Syslog servers\collectors available that have licenses that are free or paid subscriptions. Many of these systems will be priced by the number of messages per day, storage space of messages per day or some are just a continuous subscription. These solutions should be planned as they will require a sizable amount of storage space to be allocated based on the number and size of the events each day. Your Syslog server\collector should also be sized based on the number of events from other critical services like Active Directory, Database and File Servers, VDAs, Desktops and other application Servers too.
 
-Citrix offers the Citrix Application Delivery Management service as a Syslog collector which can allow you to have some off-device retention. The Citrix ADM is also a great tool to be able to search and view these logs and also use its events dashboards for many great default views of this log data to help you troubleshoot and view hardware failures, authentication failures, configuration changes and many others.
+Citrix offers the Citrix Application Delivery Management service as a Syslog collector which can allow you to have some off-device retention. The Citrix ADM is also a great tool to be able to search and view these logs and also use its events dashboards for many great default views of this log data to help you troubleshoot and view hardware failures, authentication failures, configuration changes and many others. You can find more information in Citrix ADM product documentation - [Configuring syslog on instances](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/setting-up/configuring-syslog-on-instances.html) and [View and Export syslog messages](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/networks/events/how-to-export-syslog-messages.html).
 
-    1. [https://docs.citrix.com/en-us/citrix-application-delivery-management-service/setting-up/configuring-syslog-on-instances.html](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/setting-up/configuring-syslog-on-instances.html)
-    2. [https://docs.citrix.com/en-us/citrix-application-delivery-management-service/networks/events/how-to-export-syslog-messages.html](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/networks/events/how-to-export-syslog-messages.html)
-
-We recommend using this list of messages to create your alerts based on what features of the Citrix ADC are in use. Just having the logs retained and searchable will be very valuable to troubleshooting and auditing security events. It is important to ensure you are alerting based on threshold for bad logins along with any logins using the default nsroot accounts.
-
-    1. [https://developer-docs.citrix.com/projects/netscaler-syslog-message-reference/en/12.0/](https://developer-docs.citrix.com/projects/netscaler-syslog-message-reference/en/12.0/)
+We recommend using this list of messages to create your alerts based on what features of the Citrix ADC are in use. Just having the logs retained and searchable will be very valuable to troubleshooting and auditing security events. It is important to ensure you are alerting based on threshold for bad logins along with any logins using the default nsroot accounts. You can find more information in [Developer Docs - Syslog Message Reference](https://developer-docs.citrix.com/projects/citrix-adc-syslog-message-reference/en/latest/).
 
 SNMP should also be configured to your monitoring solution to ensure you have service and physical that type of monitoring enabled to ensure services and/or the appliance are up.
 
@@ -164,21 +132,11 @@ Configuring Email can be very help to allow for system notifications to be sent 
 
 Planning what services you will be using on your Citrix ADC will help you understand what features may be applied to those IP addresses. The main three items that the Citrix ADC are commonly used for are. This is a good point to also know if you will have IPs assigned to test. It is highly recommended that you validate all the other security settings on a Test VIP before applying the responder and other policies to your Production Items. This could require more DNS records, SSL Certificates, IP Address and other configurations to make it work.
 
-    1. Load Balancing (to include SSL Offload)
-    2. Global Server Load Balancing
-    3. Citrix Gateway
+-  Load Balancing (to include SSL Offload)
+-  Global Server Load Balancing
+-  Citrix Gateway
 
 We recommend organizing all the planned VIPs by Internal and External because we may not need many of the security features on the internal assets, but they may be a must have for all external assets. Evaluating which countries may need to access external resources is a good planning step if you plan on using the GeoIP features below. Working with the business leadership and applications owners are a great place to find out if you could restrict countries.
-
-Before you can pick which of the features below you could use to further secure your deployment you must know what edition your appliance is. Below is a list of the licensed editions and their security features based on this checklist features that could be enabled.
-
-    1. Standard
-      1. AppQoE
-    2. Advanced
-    3. Premium
-      1. Bot Protection
-      2. IP Reputation (BadIP)
-      3. Web Application Firewall
 
 If you can we recommend deploying Citrix ADM before you start making configuration changes based on its ability to back up the appliances on a regular basis along with some better log visibility along with some other metrics. There are other more advanced features that can be added to a Citrix ADC deployment to provide even more visibility and security. Citrix ADM has paid editions along with Citrix Analytics that can go beyond just a monitoring solution to an automatic security response system.
 
@@ -186,73 +144,41 @@ If you can we recommend deploying Citrix ADM before you start making configurati
 
 When default certificates are left on anything managed or access over the web all modern browsers will warn you that the certificate is invalid and could be a security risk. If you are accepting this error every day you could be accepting a true man-in-the-middle attack where someone could be seeing what your typing because they are in the TLS stream. Replacing the Certificate can be very easy depending on if you host your own Internal Certificate Authority, use a third-party service (possible cost associated) or self-signed certificates. Once you have done this your browser should trust this certificate and should not give you any errors while accessing the device, and if it ever does again you should check the expiration and check to see if it has been replaced without your knowledge.
 
-NSIP – Changing this certificate should be done first, as it is where all management for the appliance will happen. This process will need to be completed on each appliance.
-
-    1. [https://support.citrix.com/article/CTX122521](https://support.citrix.com/article/CTX122521)
-
-LOM – Changing these certificates should be the next goal once the NSIP management Certificates has been changed from default. This process will need to be completed on each appliance.
-
-    1. https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#htsts
-    2. LOM-configuration
-
-SDX SVM – If you are an SDX customer then you will want to ensure you also that this certificate has been replaced as this will be your primary method to manage the appliances along with managing the instances themselves. This process will need to be completed on each appliance.
-
-    1. [https://support.citrix.com/article/CTX200284](https://support.citrix.com/article/CTX200284)
+-  **NSIP** – Changing this certificate should be done first, as it is where all management for the appliance will happen. This process will need to be completed on each appliance. You can find more information in [CTX122521](https://support.citrix.com/article/CTX122521).
+-  **LOM** – Changing these certificates should be the next goal once the NSIP management Certificates has been changed from default. This process will need to be completed on each appliance. You can find more information in [product documentation](https://docs.citrix.com/en-us/citrix-hardware-platforms/mpx/netscaler-mpx-lights-out-management-port-lom/installing-a-certificate-key-on-lom-gui.html).
+-  **SDX SVM** – If you are an SDX customer then you will want to ensure you also that this certificate has been replaced as this will be your primary method to manage the appliances along with managing the instances themselves. This process will need to be completed on each appliance. You can find more information in [CTX200284](https://support.citrix.com/article/CTX200284).
 
 ### Firmware Update
 
-1. Initial Deployment
+1.  **Initial Deployment** - Use the latest released version for each Citrix ADC platform and the chosen Firmware Build after reviewing the release notes and to see if there are any "known issues" that may prevent you from being able to deploy. In many deployments they use the N-1 methodology to always be just one version behind from the latest released to help ensure there are no major known issues and that the version has been deployed at other customers in that time period also. Firmware updates will be done on each instance no matter which platform you are using like CPX, MPX, SDX or VPX.
+1.  **LOM\IPMI Firmware Updates** - We recommend also ensuring that this is updated at the time of deployment to ensure you will have the latest features and fixes. You can find more information in [product documentation](https://docs.citrix.com/en-us/citrix-hardware-platforms/mpx/netscaler-mpx-lights-out-management-port-lom/upgrading-the-lom-firmware.html).
+1.  **Ongoing Updates** - [Sign up for alerts](https://support.citrix.com/user/alerts) for Citrix Security Bulletins and Update notifications for the Citrix ADC, Citrix ADM and Citrix Web Application Firewall.
 
-1. We recommend always using the latest released version for each Citrix ADC platform and the chosen Firmware Build after reviewing the release notes and to see if there are any &quot;known issues&quot; that may prevent you from being able to deploy. In many deployments they use the N-1 methodology to always be just one version behind from the latest released to help ensure there are no major known issues and that the version has been deployed at other customers in that time period also. Firmware updates will be done on each instance no matter which platform you are using like CPX, MPX, SDX or VPX.
-
-1. LOM\IPMI Firmware Updates
-
-1. We recommend also ensuring that this is updated at the time of deployment to ensure you will have the latest features and fixes
-
-      1. [https://docs.citrix.com/en-us/citrix-hardware-platforms/mpx/netscaler-mpx-lights-out-management-port-lom/upgrading-the-lom-firmware.html](https://docs.citrix.com/en-us/citrix-hardware-platforms/mpx/netscaler-mpx-lights-out-management-port-lom/upgrading-the-lom-firmware.html)
-
-1. Ongoing Updates
-
-1. We first recommend signing up for alerts for Citrix Security Bulletins and Update notifications for the Citrix ADC, Citrix ADM and Citrix Web Application Firewall if in use to know when there are releases or relevant news pertaining to your Citrix ADC deployment. It is also recommended to sign up for other Citrix products and services to get information on their updates also.
-
-      1. [https://support.citrix.com/user/alerts](https://support.citrix.com/user/alerts)
-
-1. We recommend coming up with a plan on how often and when you will update your Citrix ADCs each year. Depending on the features deployed and your IT organization policies will determine how you may schedule these updates. We typically see updates happening 2-4 times per year with two updates being feature updates and two updates for known issues they may be experiencing and security issues. There are guides that will help you plan and schedule these upgrades in a way to ensure no service interruption. This policy should also go to other supporting systems if in use like Citrix ADM too as keeping version parity is always recommended.
-
-      1. [https://docs.citrix.com/en-us/citrix-adc/current-release/upgrade-downgrade-citrix-adc-appliance/upgrade-downgrade-ha-pair.html](https://docs.citrix.com/en-us/citrix-adc/current-release/upgrade-downgrade-citrix-adc-appliance/upgrade-downgrade-ha-pair.html)
+Plan on how often and when you will update your Citrix ADCs each year. Depending on the features deployed and your IT organization policies will determine how you may schedule these updates. We typically see updates happening 2-4 times per year with two updates being feature updates and two updates for known issues they may be experiencing and security issues. There are guides that will help you plan and schedule these upgrades in a way to ensure no service interruption. This policy should also go to other supporting systems if in use like Citrix ADM too as keeping version parity is always recommended. Learn more about [upgrading a high availability pair](https://docs.citrix.com/en-us/citrix-adc/current-release/upgrade-downgrade-citrix-adc-appliance/upgrade-downgrade-ha-pair.html).
 
 ### Data Protection with KEK
 
 We recommend enabling further data protection on each appliance pair by creating a KEK key pair. This will encrypt the configuration in key password related areas so that if someone or something gained access to your ns.conf file they would not be able to read those areas of the configuration related to passwords. The two key files that will be at the root of the \flash\nsconfig\ folder should be classified as sensitive and protected accordingly with backups and secure storage of them.
 
-This also means that migrations from one appliance to another appliance will require more steps as the KEK key must be added to the new deployment before those items will work again as those items of the configuration are encrypted.
-
-    1. https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#Create-the-system-masterkey-for-data-protection
-  1. There should be a more in-depth guide on this with some details similar to this blog, top match for Citrix ADC KEK. [https://www.ferroquesystems.com/resource/citrix-adc-security-kek-files/](https://www.ferroquesystems.com/resource/citrix-adc-security-kek-files/)
+This also means that migrations from one appliance to another appliance will require more steps as the KEK key must be added to the new deployment before those items will work again as those items of the configuration are encrypted. [Learn more](https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html) about creating a master key for data protection (search for string `Create the system master key for data protection`).
 
 ### Backup
 
-We recommend deploying Citrix ADM appliance to users
+TODO - We recommend deploying Citrix ADM appliance to users.
 
-1. Validate TLS Ciphers and SSL Score for all External VIPs (Citrix Gateway)
-  1. There have been many vulnerabilities in the SSL and TLS protocols over the past couple years and ensuring you are using all the TLS best practices as they are ever changing. We know we want to ensure older protocols are disabled like SSLv3 and TLS 1.0 and TLS 1.1. This will require a 4-10 settings to be enabled on the system and this article below is the most up to date recommended settings.
-    1. [https://docs.citrix.com/en-us/tech-zone/build/tech-papers/networking-tls-best-practices.html](https://docs.citrix.com/en-us/tech-zone/build/tech-papers/networking-tls-best-practices.html)
-  2. Creating a custom Cipher is recommended with the strongest hashing and encryption methods for each secure protocol. This is a recommendation that will change as new protocols come out and those ciphers are deployed at the Server (Citrix ADC) and the Endpoint level with its operating system and possibly it's Citrix Workspace App version if using Citrix Apps and Virtual Desktops.
-    1. [https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#Citrix-DC-recommended-cipher-suites](https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#Citrix-DC-recommended-cipher-suites):
+### SSL/TLS Ciphers
+
+Validate TLS Ciphers and SSL Score for all External VIPs (Citrix Gateway). There have been many vulnerabilities in the SSL and TLS protocols over the past couple years and ensuring you are using all the TLS best practices as they are ever changing. We know we want to ensure older protocols are disabled like SSLv3 and TLS 1.0 and TLS 1.1. Read [Citrix Networking SSL/TLS Best Practices](https://docs.citrix.com/en-us/tech-zone/build/tech-papers/networking-tls-best-practices.html) for latest recommendations.
 
 Choosing between a Wildcard or SAN certificate is another aspect of this process. Wildcards can be very cost effective, but also can be more complicated based on the number of hosts that will be impacted with expiration and deployments. A SAN certificate can effectively be a restricted wildcard for just 2-5 sites, along with the ability to use more than one TLD in the same certificate too depending on the provider.
 
 ### Configure Bot Network Protection
 
-Citrix Bot Management is feature that is similar to IP Reputation services, but it's focused on bots which are becoming more and more advanced and malicious over the past 10 years. This feature will look through a allow and block list, then through IP reputation, rate limiting, bot signatures and device fingerprinting checks that are done within this solution. Configuring this solution can help consolidate the configuration of many of these features like BadIP, AppQoE into the same configuration.
-
-  1. [https://docs.citrix.com/en-us/citrix-adc/current-release/bot-management.html](https://docs.citrix.com/en-us/citrix-adc/current-release/bot-management.html)
+Citrix Bot Management is feature that is similar to IP Reputation services, but it's focused on bots which are becoming more and more advanced and malicious over the past 10 years. This feature will look through a allow and block list, then through IP reputation, rate limiting, bot signatures and device fingerprinting checks that are done within this solution. Configuring this solution can help consolidate the configuration of many of these features like BadIP, AppQoE into the same configuration. You can find more information in [product documentation](https://docs.citrix.com/en-us/citrix-adc/current-release/bot-management.html).
 
 ### Configure GeoIP
 
-This feature can allow you to prevent unnecessary countries from accessing resources behind your Citrix ADCs. Depending on where users needed access to these resources you can lower your possible attack surface by thousands to billions of IPs from being able to connect to those resources. There are many companies that only do business with users in certain specific countries and it can be possible to block certain countries. This should be planned to help prevent GeoIP restrictions affecting traveling employees, in some cases you may need to put users into groups that could bypass this default behavior for this IP. It is important to check with your network team because in some cases they may be doing some blocking at the firewall level and you could get conflicting results if both are in play and using different IP definitions or rules.
-
-  1. [https://support.citrix.com/article/CTX130701](https://support.citrix.com/article/CTX130701)
+This feature can allow you to prevent unnecessary countries from accessing resources behind your Citrix ADCs. Depending on where users needed access to these resources you can lower your possible attack surface by thousands to billions of IPs from being able to connect to those resources. There are many companies that only do business with users in certain specific countries and it can be possible to block certain countries. This should be planned to help prevent GeoIP restrictions affecting traveling employees, in some cases you may need to put users into groups that could bypass this default behavior for this IP. It is important to check with your network team because in some cases they may be doing some blocking at the firewall level and you could get conflicting results if both are in play and using different IP definitions or rules. You can find more information in [CTX130701](https://support.citrix.com/article/CTX130701).
 
 ### Configure IP Reputation (BadIP)
 
@@ -260,15 +186,16 @@ IP reputation is a feature that will look at source IP addresses against a datab
 
 Types of traffic sources that are blocked
 
-    1. Virus Infected personal computers
-    2. Centrally managed and automated botnet
-    3. Compromised webserver
-    4. Windows Exploits
-    5. Known spammers and hackers
-    6. Mass e-mail marketing campaigns
-    7. Phishing Proxies
-    8. Anonymous proxies
-  1. [https://docs.citrix.com/en-us/citrix-adc/current-release/reputation/ip-reputation.html](https://docs.citrix.com/en-us/citrix-adc/current-release/reputation/ip-reputation.html)
+-  Virus Infected personal computers
+-  Centrally managed and automated botnet
+-  Compromised webserver
+-  Windows Exploits
+-  Known spammers and hackers
+-  Mass e-mail marketing campaigns
+-  Phishing Proxies
+-  Anonymous proxies
+
+You can find more information in [product documentation](https://docs.citrix.com/en-us/citrix-adc/current-release/reputation/ip-reputation.html).
 
 ### Configure Application level Quality of Experience (AppQoE)
 
@@ -276,99 +203,25 @@ This feature will limit the amount of throughput to resources behind a Citrix AD
 
 We recommend looking at the metrics for the VIP in scope to understand what limits you may want to set. We recommend also adding some overhead for growth to these metrics to ensure there is enough throughput.
 
-    1. What is the average and maximum throughput or amount of data to your application?
-      1. This is the most important metric to gather about your application as this will be what will limit the throughput in an attempted DoS attack.
-    2. How many responses per second does that backend support and what is its average and maximum?
-      1. The responses per second is part of the AppQoE settings will look for to detect a possible attack. This is the second most important metric to detect a possible DoS attack.
-    3. What is the maximum and average number of usersfor this application\site?
-      1. This will help determine if there are any per user metrics gathered how many users we should multiply those counts by.
-    4. What is the maximum amount of bandwidth from the edge to the Citrix ADC?
-      1. This will help give you a maximum bandwidth\throughput possible to the device overall outside of what is expected per application.
-    5. How are clients connecting? Multiple Branch offices or from all over the internet?
-      1. If we have an application that is coming primarily over a remote link that only has a specific amount of bandwidth that is lower than your internet connection. This could be the limiting factor for certain applications and the maximum bandwidth to the internet may not be applicable.
-
 Another important note overall is that the more features that are enabled the less throughput and processing power you may have. Watch the utilization of their uplinks, CPU and Memory as you enable more and more features and put the Citrix ADC in a more central role to more applications.
 
-      1. [https://support.citrix.com/article/CTX126853](https://support.citrix.com/article/CTX126853)
+You can find more information in [CTX126853](https://support.citrix.com/article/CTX126853).
 
 ### Ensure Drop Invalid Packets is Enabled
 
 There are many invalid packets that are sent every day to your Citrix ADC device and some are benign, but most are used for fingerprinting purposes along with protocol-based attacks. Turning this feature on will save on CPU and Memory on your device by not sending the partial packet to the backend application that is being proxied by the Citrix ADC. By dropping these types of packets it will prevent many protocol attacks known today and some that will be discovered in the future that are passed on packet manipulation which is deemed invalid.
 
-    1. https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#Applications-and-services
-    2. [https://support.citrix.com/article/CTX227979](https://support.citrix.com/article/CTX227979)
-    3. [https://support.citrix.com/article/CTX121149](https://support.citrix.com/article/CTX121149)
+You can find more information in [product documentation](https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#applications-and-services), [CTX227979](https://support.citrix.com/article/CTX227979) and [CTX121149](https://support.citrix.com/article/CTX121149).
 
 ### Ensure HSTS Is configured on all SSL VIPs
 
 HTTP Strict Transport Security main goal is to protect applications by various attack methods like Downgrade attacks, Cookie Hijacking and SSL Strip. This is similar to Drop Invalid Packets but is based on HTTP\HTTPS based standards found in RFC 6797 by using an entry into the HTTP header. This will add yet another layer of defense to applications behind the Citrix ADC.
 
-    1. https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#HSTS-(enable-HTTP-Strict-Transport-Security-(HSTS)):
-    2. [https://support.citrix.com/article/CTX205221](https://support.citrix.com/article/CTX205221)
-
-If possible after testing it is recommended to force secure cookie support. This will force the web browsers to return only the cookie value when the transmission is encrypted by SSL. This option can be used to prevent cookie theft through connection eavesdropping.
-
-    1. https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#Session-fixation-protection-(by-enabling-the-HttpOnly-flag-or-by-adding-a-rewrite-policy):
-    2. [https://support.citrix.com/article/CTX138055](https://support.citrix.com/article/CTX138055) (Are these still valid in the 13.x days, with defaults and such?)
-
-Disabling HTTP compression is another security barrier depending on the application in use . There was a category of vulnerabilities that fall under the &quot;BREACH&quot; name that uses HTTP compressions and other response-based items to attack vulnerable systems. (Are these still valid in the 13.x days, with defaults and such?)
-
-    1. [https://docs.citrix.com/en-us/netscaler/11-1/optimization/http-compression.html](https://docs.citrix.com/en-us/netscaler/11-1/optimization/http-compression.html)
-    2. [http://breachattack.com](http://breachattack.com/) (Not sure if we should just reference Wikipedia or SANs or other Cyber Security or Search Results, maybe there was a Citrix article on this I couldn't find today.)
-
-There are also other settings that will help protect you from TCP Spoofing and other protocol-based attacks here. This will require creating a new TCP Profile and then applying that policy on resources especially externally facing ones.
-
-    1. https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#Applications-and-services#Configure-Citrix-ADC-to-defend-against-TCP-spoofing-attacks
-    2. [https://docs.citrix.com/en-us/netscaler/11-1/system/tcp-configurations.html](https://docs.citrix.com/en-us/netscaler/11-1/system/tcp-configurations.html) (Are these still valid in the 13.x days, with defaults and such?)
-
 ### Citrix Gateway Configure MFA is possible
 
 This highly recommend for at least all external connections to any internal system. With the number of usernames and passwords that are searchable by attackers from breaches and leaks over 12.3 billion records it continually increases the risks of a breach into you company as those records grow. With password reuse is so common with almost everyone in the world, your business is at risk based on your user's password habits. A user name and password should not be your only defense to your applications, and we should not inherently trust people will just two pieces of information that is globally available to sensitive business information and applications. Adding Multi-factor authentication to all applications may not be feasible with the user's workflow, but we do recommend deploying wherever possible especially for unrestricted source external access. This layer of defense will not stop all attacks as social engineering attacks could convince the user to give a person their one-time code or accept the push notification for testing purposes as an example. What multi-factor authentication gains you is more time for detection, and it will require the attacker to be more advanced and persistent.
 
-  1. [https://docs.citrix.com/en-us/netscaler-gateway/12/authentication-authorization/configure-multifactor-authentication/ng-multifactor-auth-double-source-tsk.html](https://docs.citrix.com/en-us/netscaler-gateway/12/authentication-authorization/configure-multifactor-authentication/ng-multifactor-auth-double-source-tsk.html)
-  2. [https://docs.citrix.com/en-us/netscaler/12/aaa-tm/multi-factor-nfactor-authentication.html](https://docs.citrix.com/en-us/netscaler/12/aaa-tm/multi-factor-nfactor-authentication.html)
-
-### Configure Web Application Firewall (WAF)
-
-This is the most powerful single security feature that the Citrix ADC offers. This should be the last thing on your security checklist for a resource behind a Citrix ADC as it will require the most testing and will require ongoing maintenance as your application is updated. This uses a combination of attack prevention methods on their own or used together for the most effective protection. This is not just for Web Applications this is also for APIs and other services that may use XML, SOAP, REST and other protocols too. The goal of a Web Application firewall is to inspect the traffic and typically compare it to a list of known bad signatures and drop those items that are classified that way and also learn what good traffic is and drop those items too. This can prevent zero-day attacks by only knowing what &quot;normal\good&quot; traffic is and anything that is a different request type it will be dropped. Firewalls typically allow any traffic to go across the specific port to communicate using any method that matches that rule, an application firewall looks at the actual traffic to look for malicious (negative) or never before seen patterns (learned). These features can be enabled in a Blocking mode to drop the traffic and/or a Logging mode to just audit the traffic that could have been classified to be dropped by signatures and/or learning mode.
-
-    1. Note – Once you start using any Web Application Firewall you will need to consistently test your applications after updates and configuration changes as there may be new traffic patterns that may be categorized as malicious based on the built-in signatures along with the learned traffic. This is where having a testing system is very important for each application and having matching Citrix ADC VIP and policies to ensure everything works before promoting changes into production.
-
-The Negative Security Model is the most common starting point in this WAF deployment process. This will use signatures of known attack methods to look for those traffic patterns to block those patterns. There are ~15 categories of signatures that in total have ~1,718 rules within them, new items can be added in newer firmware builds.
-
-    1. Miscellaneous
-      1. Apache, Tomcat, IBM Domino, Oracle, WebBlog, Executable File Access, Samba, HP OpenView NMM, Novell E Directory and many others.
-    2. CGI
-    3. ColdFusion
-    4. FrontPage
-    5. Microsoft IIS
-    6. PHP
-    7. Client Side
-      1. Internet Explorer, Mozilla Adobe Flash, Adobe Acrobat, Image Access and many others.
-    8. ActiveX
-    9. WordPress
-    10. Apache Struts
-    11. Drupal
-    12. sys
-    13. Web-Shel-shock
-    14. SQL
-    15. XSS
-
-The Positive Security Model refers to the process where the device learns what good traffic is. This will be referred Learning Mode is used as the next step of protecting any application behind a Citrix ADC. This will be a coordinated effort with your application owners during the deployment process. Once enabled you will want to get your users to use the application going through all their workflows, and through this process the Citrix ADC will learn what is good behavior is. Depending on the complexity of the application you may have multiple learning sessions to capture items and once it has completed you will configure &quot;relaxations&quot; as needed if it blocks normal traffic. Application updates could cause the WAF to block the different traffic.
-
-The Hybrid Security Model is the final phase in the Web Application Firewall deployment where it uses the Negative Signatures along with what was learned in the Positive Security Model to provide the most security. When both detection methods are in use the application benefits from both security models to protect it against zero-days and other known attack methods in the signatures on the system.
-
-  1. [https://www.citrix.com/products/citrix-web-app-firewall/](https://www.citrix.com/products/citrix-web-app-firewall/)
-  2. [https://docs.citrix.com/en-us/netscaler/12/application-firewall/introduction/how-application-firewall-works.html](https://docs.citrix.com/en-us/netscaler/12/application-firewall/introduction/how-application-firewall-works.html)
-  3. [https://www.citrix.com/content/dam/citrix/en\_us/documents/products-solutions/deploying-netscaler-appfirewall.pdf](https://www.citrix.com/content/dam/citrix/en_us/documents/products-solutions/deploying-netscaler-appfirewall.pdf)
-
-### Other Recommendations
-
-  1. Ensure your NTP source is configured as expected to ensure your logs match your time source.
-  2. Overall Tips **(Could this be auto added for Security related Citrix ADC Blogs?)**
-    1. [https://www.citrix.com/blogs/2019/06/12/citrix-tips-networking-recommendations-from-security-assessments/](https://www.citrix.com/blogs/2019/06/12/citrix-tips-networking-recommendations-from-security-assessments/)
-  3. SDX
-    1. We recommend changing the SDX communication to just HTTPS only to the instances. [https://docs.citrix.com/en-us/sdx/current-release/provision-netscaler-instances.html](https://docs.citrix.com/en-us/sdx/current-release/provision-netscaler-instances.html)
+You can find more information in [product documentation](https://docs.citrix.com/en-us/citrix-adc/current-release/aaa-tm/authentication-methods/multi-factor-nfactor-authentication.html).
 
 ### ICA encryption
 
