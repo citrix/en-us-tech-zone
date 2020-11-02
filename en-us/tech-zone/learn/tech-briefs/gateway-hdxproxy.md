@@ -123,7 +123,7 @@ To implement it with Citrix Gateway VPN make the following changes:
 
 *  Enable spit tunneling under the VPN session policy Client Experience tab by setting the “Split Tunnel” field to “ON”.
 *  Configure transparent Intranet Application entries with the Internal Network IP address ranges.
-*  Under the Client Experience tab, advanced setting, ensure that “Split DNS” is set to BOTH so the endpoint will attempt a local DNS query first.
+*  Under the Client Experience tab, advanced setting, ensure that “Split DNS” is set to Local. Also configure the DNS Suffix List under **Traffic Management > DNS > DNS Suffix**. Matching queries will be forwarded to the gateway, while others will be forwarded to the local DNS.
 
     For more information see [configuring split tunneling in a full VPN setup on Citrix Gateway](/en-us/citrix-gateway/current-release/vpn-user-config/configure-full-vpn-setup.html#to-configure-split-tunneling)
 
