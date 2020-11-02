@@ -46,7 +46,7 @@ Having primary and secondary identities allows Secure Workspace Access to use a 
 
 Figure 2: Using multiple identity providers
 
-Learn more [here](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html)
+Learn more [here](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html)
 
 ## Single Sign-On
 
@@ -60,7 +60,7 @@ Once the user is authenticated with a primary identity, the single sign-on featu
 
 Figure 3: SSO to SaaS using SAML
 
-Learn more [here](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
+Learn more [here](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
 
 ## Browser Isolation
 
@@ -159,7 +159,7 @@ The usage data helps them to understand the user adoption and engagement of a pr
 *  Top domains accessed by the users
 *  Total amount of data uploaded and downloaded across users, applications, and domains
 
-Learn more [here](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/analytics.html)
+Learn more [here](/en-us/tech-zone/learn/tech-briefs/analytics.html)
 
 ## Use Cases
 
