@@ -117,7 +117,7 @@ This registration login schema corresponds to the dual factor authentication whe
 1.  Click `Create`
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_prolschema-notpdual.png)
 
-### Native OTP Authentication, Authorization,and Auditing Visualizer Flow
+### Native OTP `AAA` Virtual Server - Visualizer Flow
 
 1.  Next navigate to `Security > AAA - Application Traffic > nFactor Visualizer > nFactor Flows`
 1.  Click `Add`
@@ -142,12 +142,12 @@ OR build it with Expression builder
 1.  In the new factor box, select `Add Schema`
 1.  Select `prolschema_notpsingle`, and click `Ok`
 1.  Select `Add Policy`
-1.  From the drop-down under `Select Policy` select `polldap_notpauth`, and click `Add`
+1.  From the drop-down list under `Select Policy` select `polldap_notpauth`, and click `Add`
 1.  Select the green `+` to the right of the `polldap_notpauth` policy
 1.  Enter `factor2-notpmanage`, and click `Create`
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_factor2-notpmanage.png)
 1.  In the new factor box, select `Add Policy`
-1.  From the drop-down  under `Select Policy` select `polldap_notpmanage`, and click `Add`
+1.  From the drop-down list under `Select Policy` select `polldap_notpmanage`, and click `Add`
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_nfactorflow-manage.png)
 
 #### Authentication Flow
@@ -164,11 +164,11 @@ OR build it with Expression builder
 1.  In the new factor box, select `Add Schema`
 1.  Select `prolschema_notpdual`, and click `Ok`
 1.  Select `Add Policy`
-1.  From the drop-down under `Select Policy` select `polldap_notpauth`, and click `Add`
+1.  From the drop-down list under `Select Policy` select `polldap_notpauth`, and click `Add`
 1.  Select `Done`
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_nfactorflow-auth.png)
 
-### Native OTP Authentication, Authorization,and Auditing Virtual Server
+### Native OTP `AAA` Virtual Server
 
 This `AAA` Virtual Server is where the policies and schema are bound with the appropriate priority.
 
@@ -205,7 +205,7 @@ Now we create a traffic policy to relay the LDAP password to StoreFront, instead
 
 ### Gateway Virtual Server
 
-The Gateway Virtual Server is bound to the Native OTP Authentication, Authorization,and Auditing Virtual Server to provide authentication for Citrix Virtual Apps and Desktops.
+The Gateway Virtual Server is bound to the Native OTP `AAA` Virtual Server to provide authentication for Citrix Virtual Apps and Desktops.
 
 1.  Navigate to `Citrix Gateway > Virtual Servers`
 1.  Select your current Gateway, and click `Edit`
