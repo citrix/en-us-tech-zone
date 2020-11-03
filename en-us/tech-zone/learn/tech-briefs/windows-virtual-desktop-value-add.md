@@ -362,6 +362,7 @@ Windows 10 2004 multi-session VMs, were tested with Citrix Virtual Apps and Desk
 As can be seen from the below table, the inclusion of WEM, suppresses the effect of the CPU consuming noisy neighbor, and increases the VSImax (no of users that can be supported on the machine) from 20 to 43%. Resulting in a higher number of users that can run on a single VM, even in this stress scenario.
 
 **Scale breakdown with Noisy Neighbor scenario**:
+
 | Azure Size  |  MS RDP | Citrix HDX  | % WEM Scalability Improvement  |
 |---|---|---|---|
 | D4V3  | 7.3  | 11.3  | **43.0%**  |
