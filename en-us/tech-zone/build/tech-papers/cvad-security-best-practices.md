@@ -16,7 +16,7 @@ In the following article, we aim to cover off the main components to help secure
 ![Layered Approach](/en-us/tech-zone/build/media/tech-papers_cvad-security-best-practices_001.png)
 _Citrix Consulting Layered Approach_
 
-As shown in the diagram, security does not have its own layer. Any security process or functionality is intertwined with all the layers and is crucial that its covered throughout an infrastructure, including the processes surrounding it.
+As shown in the diagram, security does not have its own layer. Any security process or functionality is intertwined with all the layers and is crucial that it is covered throughout an infrastructure, including the processes surrounding it.
 
 First, one of the key factors as to what security controls are implemented into a Citrix environment comes down to risk. What are the chances of something happening and what would be the implications if the 'something that happened' did happen? Implications of a breach can, of course, vary from financial loses, data breaches, data leakage, brand loyalty and the worst-case scenario; loss of life. Hopefully, with any of the above risk outcomes, business sponsors and risk managers have carried out some level of risk analysis of the assets involved and therefore this provides some quantifiable value to the asset the business is protecting. Now given this value then depends on how much effort and of course expenditure is invested in protecting such assets. Ideally, the security controls in place do not outprice the asset that is to be protected; from this one can understand what suitable security controls can be implemented into an infrastructure. If the control outweighs the cost of the asset; then this is ultimately a waste of time and cost on security products or controls. We include time here as with some controls the time invested in operational procedures can increase, and usually with the increase of operational procedures comes at employing more support personnel to run the environment.
 
@@ -30,7 +30,7 @@ When a business is considering how to enable their end users to connect to virtu
 
 The following may be additional requirements or lockdowns to be considered when considering the endpoints:
 
-Device Lockdown
+### Device Lockdown
 
 The endpoint device that a user consumes has potential to be used as an attack vector; including such attacks as keyloggers or points of ingress into the network. One major benefit instantly when running Citrix technologies like Virtual Apps and Desktops, the ingress point is significantly reduced with only mouse, keyboard and screen refreshes being a necessity for a user to carry out their work. If, however, users require additional functionality such as accessing local client drives, printing facilities and clipboard functionality these can be enabled on a case by case basis. As capabilities increase Citrix does have controls to reduce the risk of these attack vectors such as anti-keylogging and disabling any points of ingress/egress.
 
@@ -54,7 +54,7 @@ Even if a user can or cannot install software of any kind on the endpoint, ensur
 
 In some scenarios thin client devices are perfect to be deployed into any environment and of course high-risk environments. Thin clients run a cut down version of operating systems only having enough of an operating system and application to connect to a Citrix session. These have other benefits such as patching, there are limited applications that need to be patched and maintained, and usually the operating systems are reduced footprint, it only takes a few minutes to update the devices. Due to the devices having a simplified and purpose build operating system, there is limited data at rest on the endpoint allowing the business to deliver business critical applications to endpoints that may have a different security posture on the network with a level of assurance. For thin client terminals that run a full operating system, the use of write filters to stop the persistence of data are useful. Resetting the terminals when reboot occurs reduces the chance of an attacker persisting data on the endpoint that could be used to formulate an attack. Thin Client terminals have the added benefit of usually being cheaper to purchase and maintain than traditional desktops or laptops.
 
-### Citrix Workspace App and HTML5
+### Citrix Workspace app and HTML5
 
 Both receivers enable users to connect to published desktops and applications. There is a difference between the two receiver types as to the footprint on the endpoint client. HTML5 receiver in recent releases has increased in functionality with additional features such as copy and paste; local printing. The plus side to this is that all
 
@@ -62,11 +62,11 @@ Both receivers enable users to connect to published desktops and applications. T
 
 As part of this article patching has already been mentioned, patch management should be one of the first considerations to any endpoint. How does the business get security fixes applied to the endpoints? In traditional environments machines have patches pushed to them through Windows Services Update Service (WSUS), System Center Configuration Manager (SCCM) or through other automated services. This is great if the endpoint is managed by the corporate IT teams. What about BYOD, who patches those and ensure they are up to date. With work from home growing quickly endpoint patching becomes more complicated to ensure the endpoints are reporting in on a regular basis along with possible scheduling changes based on the adjusted hours. This is where clear responsibilities of the users are called out when such schemes are undertaken to ensure that users know how to patch and update their systems. Simple notifications on the login page suggesting a new update has been released and they should patch as soon as possible is one method. Or, to place Endpoint Analysis Scans (EPA) on the endpoint to not allow them to access the infrastructure unless they are running up to date software. Both provide the answer in asking users to upgrade, but one certainly forces the user to update especially if they want to access the data.
 
-As much as its important to keep the operating system patched and up to date, it is equally as important to ensure that the Citrix Workspace App is patched and up to date on the endpoint client as Citrix will incorporate not only feature enhancements, but also security fixes into releases.
+As much as its important to keep the operating system patched and up to date, it is equally as important to ensure that the Citrix Workspace app is patched and up to date on the endpoint client as Citrix will incorporate not only feature enhancements, but also security fixes into releases.
 
 ### Identity Creation/decommissioning
 
-Through the user and device layer there has been much focus on the device security element. How user accounts are created to allow users to Authenticate and Authorise them to resources needs to be centrally managed and efficient. Ideally linking such tools into Human Resource (HR) systems to automate the creation and removal of accounts eases this process. Many times, accounts are 'copied' from similar roles; as much as this does ease things it also creates creep in terms of permissions and unauthorised group additions in the central directory. Copying a user's permissions from a previous account could lead to the unauthorised access to data. Ideally any group request or access should be authorised by the data owner before being permitted to gain access.
+Through the user and device layer there has been much focus on the device security element. How user accounts are created to allow users to Authenticate and Authorize them to resources needs to be centrally managed and efficient. Ideally linking such tools into Human Resource (HR) systems to automate the creation and removal of accounts eases this process. Many times, accounts are 'copied' from similar roles; as much as this does ease things it also creates creep in terms of permissions and unauthorized group additions in the central directory. Copying a user's permissions from a previous account could lead to the unauthorized access to data. Ideally any group request or access should be authorized by the data owner before being permitted to gain access.
 
 Of course, with the creation of any identity comes the decommissioning of it, if user provisioning tools are integrated with HR systems then this could be relatively simple. There are times though when business need to flex resources in and out from 3rd parties including vendors, additional support for busy periods or when outsourcing elements of the business. How do those accounts get decommissioned and ultimately deleted? Ideally the business has a procedure for both onboarding and offboarding any contracting resource with end dates set to at least disable the account and moved into an 'holding OU' within Active Directory, then deleted when the resource is confirmed as no longer being required. Ultimately, we do not want these contractors having the ability to log in months after they have left the business, or alternatively reenabling of an account when the user has been offboarded without the relevant approvals.
 
@@ -75,6 +75,16 @@ Of course, with the creation of any identity comes the decommissioning of it, if
 Within the Citrix design process, the Access layer is where users authenticate, the necessary policies are applied and if configured; dynamic contextual based access is evaluated. Therefore, ensuring that the access tier is designed with a strong level of security in mind.
 
 In the following article, we aim to cover the main tasks to help further secure a Citrix ADC deployment. There are usually two major deployment types for Citrix ADCs, it is used as a proxy for Citrix Virtual Apps and Desktop deployments and/or load balancing other applications to make them more highly available and secure. Most of these resources are typically very sensitive too and their overall security should be a high priority. These items in this checklist will help lower your risk and exposure for items that the Citrix ADC is interacting with.
+
+### Multifactor authentication
+
+Strongly recommended for at least all external connections to any internal system. With the number of user names and passwords that are searchable by attackers from breaches and leaks over 12.3 billion records it continually increases the risks of a breach into your company as those records grow. With password reuse is so common with almost everyone in the world, your business is at risk based on your user's password habits. A user name and password should not be your only defense to your applications, and we should not inherently trust people will just two pieces of information that is globally available to sensitive business information and applications. Adding multifactor authentication to all applications may not be feasible with the user's workflow, but we do recommend deploying wherever possible especially for unrestricted source external access. This layer of defense will not stop all attacks as social engineering attacks could convince the user to give a person their one-time code or accept the push notification for testing purposes as an example. What multifactor authentication gains you is more time for detection, and it will require the attacker to be more advanced and persistent.
+
+You can find more information in [product documentation](https://docs.citrix.com/en-us/citrix-adc/current-release/aaa-tm/authentication-methods/multi-factor-nfactor-authentication.html).
+
+### ICA encryption
+
+It has been a long since standard for enabling RC5 – 128bit as the security encryption for the ICA stream. This does provide some level of security on the ICA stream, however; for those who are looking to gain that extra level of encryption on the ICA stream between either the endpoint and the VDA, or between the ADC and the VDA, enabling VDA SSL is recommended. This binds a certificate to the Desktop service encrypting the ICA stream to the given standard of the certificate bound. For more information on how to carry out this process, read [CTX220062](https://support.citrix.com/article/CTX220062).
 
 ### Control Physical Access
 
@@ -88,11 +98,11 @@ Having any admin default standard password that is known by the IT community is 
 
 We recommend changing the default as soon as you start the configuration process of the device. This account allows full administrative access and protecting this password should be the number one priority when deploying this system. If you are deploying a new Citrix ADC system in 2020 it will have the Serial Number of the appliance as the default password.
 
--  We also recommend creating another superuser that will be used in emergency situations when external authentication is down instead of the default nsroot account. Find more information in [Citrix ADC product documentation - Create an alternative superuser account](https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#administration-and-management)
+-  We also recommend creating another superuser that will be used in emergency situations when external authentication is down instead of the default `nsroot` account. Find more information in [Citrix ADC product documentation - Create an alternative superuser account](https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#administration-and-management)
 -  SDX users must also create an admin profile to configure the default admin password for each VPX instance provisioned. We recommend creating a different Admin Profile for each Instance so each HA pair will have the same password but will be unique to the other instances. Find more information in [knowledge base article CTX215678](https://support.citrix.com/article/CTX215678)
 -  **Lights on Management (LOM)** –  common in many physical Citrix ADC platforms. This account allows access to the command line of the appliances along with power control of the device. These also have default passwords that should be changed upon initial configuration to help prevent unauthorized remote access.
 -  **Key-Encryption-Key (KEK) Password** – This is an optional configuration that will encrypt your configuration for sensitive password areas locally on each appliance. This is covered in just a couple sections below Hyperlink Here
--  **SVM Admin Account** – This account and password change will only apply to Citrix ADC SDX platforms. This will have the default nsroot password and will not use the serial number like physical appliances. This should be changed upon its initial configuration to help prevent unauthorized remote access.
+-  **SVM Admin Account** – This account and password change will only apply to Citrix ADC SDX platforms. This will have the default `nsroot` password and will not use the serial number like physical appliances. This should be changed upon its initial configuration to help prevent unauthorized remote access.
 
 ### Secure NSIP traffic from all network access
 
@@ -108,11 +118,11 @@ Every device in your network should not be able to manage your Citrix ADC applia
 
 ### Bind Citrix ADC to LDAPs
 
-Using generic login accounts for day-to-day administration post setup is not recommended. When configuration changes are done by nsroot in an IT team of 20+ people who have access to the password manager, you will not be able to easily track who logged in and made the change. We recommend once the nsroot accounts password has been changed that the system is immediately bound to LDAPS to track usage to a specific user account. This will also allow you to have better delegated control so you can create View only groups for auditing and application teams and allow full admin rights to specific AD groups also. We do not recommend binding using unencrypted LDAP as credentials could be collected with packet captures. You can find more information in [CTX212422](https://support.citrix.com/article/CTX212422).
+Using generic login accounts for day-to-day administration post setup is not recommended. When configuration changes are done by ns root in an IT team of 20+ people who have access to the password manager, you will not be able to easily track who logged in and made the change. We recommend once the `nsroot` accounts password has been changed that the system is immediately bound to LDAPS to track usage to a specific user account. This will also allow you to have better delegated control so you can create View only groups for auditing and application teams and allow full admin rights to specific AD groups also. We do not recommend binding using unencrypted LDAP as credentials could be collected with packet captures. You can find more information in [CTX212422](https://support.citrix.com/article/CTX212422).
 
 If binding to Windows Active Directory we recommend ensuring you are only using LDAPs as the protocol. It is also important are ensuring NTLMv2 is the only hashing method for credentials and even network sessions too. This is an AD security best practice to ensure that credentials are as protected as possible while in transit for authentication requests and network sessions. These should not be turned out without proper testing and knowing how old your Windows clients are and how compliant their patches are as there can be incompatibilities to older versions of Windows.
 
-When binding to any external authentication source you should either disable local authentication for local accounts like "nsroot" or only enable specific local accounts to use local authentication. Depending on your deployment requirements may require one path or another. Most deployments will not have requirement to have an account that must use local authentication because if there is a service account needed in most cases you can just create and delegate a LDAP user. [This guide](https://www.citrix.com/blogs/2020/09/23/how-to-secure-restrict-citrix-adc-management-access/) covers setting up both methods, one method should be deployed.
+When binding to any external authentication source you should either disable local authentication for local accounts like `nsroot` or only enable specific local accounts to use local authentication. Depending on your deployment requirements may require one path or another. Most deployments will not have requirement to have an account that must use local authentication because if there is a service account needed in most cases you can just create and delegate an LDAP user. [This guide](https://www.citrix.com/blogs/2020/09/23/how-to-secure-restrict-citrix-adc-management-access/) covers setting up both methods, one method should be deployed.
 
 ### Logging and Alerting
 
@@ -122,7 +132,7 @@ There are many Syslog servers\collectors available that have licenses that are f
 
 Citrix offers the Citrix Application Delivery Management service as a Syslog collector which can allow you to have some off-device retention. The Citrix ADM is also a great tool to be able to search and view these logs and also use its events dashboards for many great default views of this log data to help you troubleshoot and view hardware failures, authentication failures, configuration changes and many others. You can find more information in Citrix ADM product documentation - [Configuring syslog on instances](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/setting-up/configuring-syslog-on-instances.html) and [View and Export syslog messages](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/networks/events/how-to-export-syslog-messages.html).
 
-We recommend using this list of messages to create your alerts based on what features of the Citrix ADC are in use. Just having the logs retained and searchable will be very valuable to troubleshooting and auditing security events. It is important to ensure you are alerting based on threshold for bad logins along with any logins using the default nsroot accounts. You can find more information in [Developer Docs - Syslog Message Reference](https://developer-docs.citrix.com/projects/citrix-adc-syslog-message-reference/en/latest/).
+We recommend using this list of messages to create your alerts based on what features of the Citrix ADC are in use. Just having the logs retained and searchable will be very valuable to troubleshooting and auditing security events. It is important to ensure you are alerting based on threshold for bad logins along with any logins using the default `nsroot` accounts. You can find more information in [Developer Docs - Syslog Message Reference](https://developer-docs.citrix.com/projects/citrix-adc-syslog-message-reference/en/latest/).
 
 SNMP should also be configured to your monitoring solution to ensure you have service and physical that type of monitoring enabled to ensure services and/or the appliance are up.
 
@@ -130,7 +140,7 @@ Configuring Email can be very help to allow for system notifications to be sent 
 
 ### Plan Services to Monitor and Protect
 
-Planning what services you will be using on your Citrix ADC will help you understand what features may be applied to those IP addresses. The main three items that the Citrix ADC are commonly used for are. This is a good point to also know if you will have IPs assigned to test. It is highly recommended that you validate all the other security settings on a Test VIP before applying the responder and other policies to your Production Items. This could require more DNS records, SSL Certificates, IP Address and other configurations to make it work.
+Planning what services you will be using on your Citrix ADC will help you understand what features may be applied to those IP addresses.  This is a good point to also know if you will have IPs assigned to test. It is highly recommended that you validate all the other security settings on a Test VIP before applying the responder and other policies to your Production Items. This could require more DNS records, SSL Certificates, IP Address and other configurations to make it work. The main three items that the Citrix ADC are commonly used for are following.
 
 -  Load Balancing (to include SSL Offload)
 -  Global Server Load Balancing
@@ -162,10 +172,6 @@ We recommend enabling further data protection on each appliance pair by creating
 
 This also means that migrations from one appliance to another appliance will require more steps as the KEK key must be added to the new deployment before those items will work again as those items of the configuration are encrypted. [Learn more](https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html) about creating a master key for data protection (search for string `Create the system master key for data protection`).
 
-### Backup
-
-TODO - We recommend deploying Citrix ADM appliance to users.
-
 ### SSL/TLS Ciphers
 
 Validate TLS Ciphers and SSL Score for all External VIPs (Citrix Gateway). There have been many vulnerabilities in the SSL and TLS protocols over the past couple years and ensuring you are using all the TLS best practices as they are ever changing. We know we want to ensure older protocols are disabled like SSLv3 and TLS 1.0 and TLS 1.1. Read [Citrix Networking SSL/TLS Best Practices](https://docs.citrix.com/en-us/tech-zone/build/tech-papers/networking-tls-best-practices.html) for latest recommendations.
@@ -186,12 +192,12 @@ IP reputation is a feature that will look at source IP addresses against a datab
 
 Types of traffic sources that are blocked
 
--  Virus Infected personal computers
+-  Virus infected machines
 -  Centrally managed and automated botnet
 -  Compromised webserver
 -  Windows Exploits
 -  Known spammers and hackers
--  Mass e-mail marketing campaigns
+-  Mass email marketing campaigns
 -  Phishing Proxies
 -  Anonymous proxies
 
@@ -209,7 +215,7 @@ You can find more information in [CTX126853](https://support.citrix.com/article/
 
 ### Ensure Drop Invalid Packets is Enabled
 
-There are many invalid packets that are sent every day to your Citrix ADC device and some are benign, but most are used for fingerprinting purposes along with protocol-based attacks. Turning this feature on will save on CPU and Memory on your device by not sending the partial packet to the backend application that is being proxied by the Citrix ADC. By dropping these types of packets it will prevent many protocol attacks known today and some that will be discovered in the future that are passed on packet manipulation which is deemed invalid.
+There are many invalid packets that are sent every day to your Citrix ADC device and some are benign, but most are used for fingerprinting purposes along with protocol-based attacks. Turning this feature on will save on CPU and Memory on your device by not sending the partial packet to the back end application that is being proxied by the Citrix ADC. By dropping these types of packets it will prevent many protocol attacks known today and some that will be discovered in the future that are passed on packet manipulation which is deemed invalid.
 
 You can find more information in [product documentation](https://docs.citrix.com/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#applications-and-services), [CTX227979](https://support.citrix.com/article/CTX227979) and [CTX121149](https://support.citrix.com/article/CTX121149).
 
@@ -217,23 +223,13 @@ You can find more information in [product documentation](https://docs.citrix.com
 
 HTTP Strict Transport Security main goal is to protect applications by various attack methods like Downgrade attacks, Cookie Hijacking and SSL Strip. This is similar to Drop Invalid Packets but is based on HTTP\HTTPS based standards found in RFC 6797 by using an entry into the HTTP header. This will add yet another layer of defense to applications behind the Citrix ADC.
 
-### Citrix Gateway Configure MFA is possible
-
-This highly recommend for at least all external connections to any internal system. With the number of usernames and passwords that are searchable by attackers from breaches and leaks over 12.3 billion records it continually increases the risks of a breach into you company as those records grow. With password reuse is so common with almost everyone in the world, your business is at risk based on your user's password habits. A user name and password should not be your only defense to your applications, and we should not inherently trust people will just two pieces of information that is globally available to sensitive business information and applications. Adding Multi-factor authentication to all applications may not be feasible with the user's workflow, but we do recommend deploying wherever possible especially for unrestricted source external access. This layer of defense will not stop all attacks as social engineering attacks could convince the user to give a person their one-time code or accept the push notification for testing purposes as an example. What multi-factor authentication gains you is more time for detection, and it will require the attacker to be more advanced and persistent.
-
-You can find more information in [product documentation](https://docs.citrix.com/en-us/citrix-adc/current-release/aaa-tm/authentication-methods/multi-factor-nfactor-authentication.html).
-
-### ICA encryption
-
-It has been a long since standard for enabling RC5 – 128bit as the security encryption for the ICA stream. This does provide some level of security on the ICA stream, however; for those who are looking to gain that extra level of encryption on the ICA stream between either the endpoint and the VDA, or between the ADC and the VDA, enabling VDA SSL is recommended. This binds a certificate to the Desktop service encrypting the ICA stream to the given standard of the certificate bound. For more information on how to carry out this process, please review: [https://support.citrix.com/article/CTX220062](https://support.citrix.com/article/CTX220062)
-
 ## Resource Layer
 
-The resources that host the user session themselves can present an additional level of risk to compromise. A user running a VDI session is as good as having a computer on their desk connected to the corporate network. Utilising a well-designed access and control layers allows the business to move towards a zero-trust models; dynamically adjusting access to the resources presented to the end user dependent upon a given set of variables. The following guidance will provide additional levels of control in protecting the corporate assets from users.
+The resources that host the user session themselves can present an additional level of risk to compromise. A user running a VDI session is as good as having a computer on their desk connected to the corporate network. Utilizing a well-designed access and control layers allows the business to move towards a zero-trust models; dynamically adjusting access to the resources presented to the end user dependent upon a given set of variables. The following guidance will provide additional levels of control in protecting the corporate assets from users.
 
 ### Build Hardening
 
-Hardening operating system builds can be very complex and difficult to achieve, with the trade-off of user experience, usability and security all being a fine balance. Many customers usually follow the Center for Internet Security (CIS) baselines for hardening virtual machines across the varying roles. Microsoft also provide hardening guides for similar workloads and even the ADMX files to implement directly into group policy. Proceed with caution and make sure to test thoroughly first, as these initial policies may be overly restrictive, and disable required features for other software to run. If features are genuinely required and justified to be enabled for functionality, then a relaxation of policy may be considered acceptable from the security teams to allow features to be enabled and any user execution of such software or feature is logged. These baselines are a starting point for hardening and are not meant to be exhaustive for all scenarios. The key to lock down is to test thoroughly and encourage 3rd party penetration testing engagements to validate your security controls and their effectiveness against the latest attack methods.
+Hardening operating system builds can be very complex and difficult to achieve, with the trade-off of user experience, usability and security all being a fine balance. Many customers usually follow the Center for Internet Security (CIS) baselines for hardening virtual machines across the varying roles. Microsoft also provides hardening guides for similar workloads and even the ADMX files to implement directly into group policy. Proceed with caution and make sure to test thoroughly first, as these initial policies may be overly restrictive, and disable required features for other software to run. If features are genuinely required and justified to be enabled for functionality, then a relaxation of policy may be considered acceptable from the security teams to allow features to be enabled and any user execution of such software or feature is logged. These baselines are a starting point for hardening and are not meant to be exhaustive for all scenarios. The key to lock down is to test thoroughly and encourage 3rd party penetration testing engagements to validate your security controls and their effectiveness against the latest attack methods.
 
 ### Workload separation
 
@@ -250,17 +246,17 @@ Ask any support engineer when it comes to implementing application control techn
 Windows policies when applied to a session host whether it be a VDI based workload or server based, play two major roles:
 
 -  Hardening the operating system
--  Optimising the user experience
+-  Optimizing the user experience
 
-To ease the management of operating systems these should be applied through Microsoft Group Policy which eases the image creation process. However, some hardening and optimisations may need to be required during the build process and these should be automated along with the full build process.
+To ease the management of operating systems these should be applied through Microsoft Group Policy which eases the image creation process. However, some hardening and optimizations may need to be required during the build process and these should be automated along with the full build process.
 
-Ensuring that the operating system is hardened prior to users gaining access limits the unauthorised execution of processes or applications. Users should only be able to carry out the minimal number of tasks that are required to perform their role, any administrative based applications should be locked down and access disabled for users. This reduces the risk of a user being able to 'break out' out their session and potentially either gaining access to unauthorised data or perform malicious acts on the operating system.
+Ensuring that the operating system is hardened prior to users gaining access limits the unauthorized execution of processes or applications. Users should only be able to carry out the minimal number of tasks that are required to perform their role, any administrative based applications should be locked down and access disabled for users. This reduces the risk of a user being able to 'break out' out their session and potentially either gaining access to unauthorized data or perform malicious acts on the operating system.
 
-As part of hardening the system, it is recommended that administrators spend some time optimising the underlying operating system, services and scheduled tasks to remove any unnecessary processes from the underlying system. This improves the responsiveness of the session host and provides an improved user experience to the end user. Citrix provides the optimizer tool [Citrix Optimizer](https://support.citrix.com/article/CTX224676) that optimises many elements of the operating system automatically for administrators. It is recommended to review what the Citrix optimiser is going to adjust to ensure there is no negative impact within your environment.
+As part of hardening the system, it is recommended that administrators spend some time optimizing the underlying operating system, services and scheduled tasks to remove any unnecessary processes from the underlying system. This improves the responsiveness of the session host and provides an improved user experience to the end user. Citrix provides the optimizer tool [Citrix Optimizer](https://support.citrix.com/article/CTX224676) that optimizes many elements of the operating system automatically for administrators. It is recommended to review what the Citrix Optimizer is going to adjust to ensure there is no negative impact within your environment.
 
 ### Citrix Policies
 
-Policies are applied and enforce behaviours dependent upon the user scenario. Typical Citrix session evaluations include, turning off clipboard access or client drive mapping if this is deemed necessary; or even enabling one-way clipboard to allow data to be copied into a session, but not out of a session. There are several policies that can assist with controlling unauthorised egress of data from the system session; and each need to be carefully planned and understood.
+Policies are applied and enforce behaviors dependent upon the user scenario. Typical Citrix session evaluations include, turning off clipboard access or client drive mapping if this is deemed necessary; or even enabling one-way clipboard to allow data to be copied into a session, but not out of a session. There are several policies that can assist with controlling unauthorized egress of data from the system session; and each need to be carefully planned and understood.
 
 Many of the hardening configurations that were discussed under system hardening of this article can be applied in group policies. Allowing for a consistent application across all servers that are applied at boot up before the user logs on. This will allow for a consistent user experience across the infrastructure; which allows IT administrators to troubleshoot issues too along with ensuring security controls are consistent between all users using the system unless they are have been excluded from some controls based on their job role.
 
@@ -276,13 +272,13 @@ Session recording is an interesting topic and may bring some overhead in terms o
 
 ### App Protection Policies
 
-Recently Citrix have released additional controls that can be implemented to provide additional level of security control when users are accessing the environment. App Control policies that include anti-key logging and anti-screen capture provide reassurance that should attempts be made to egress data during sessions that some level of due diligence has been carried out the IT teams to deter users from doing this. What about a camera I hear you ask? Well, Citrix offer watermarking functionality which doesn't stop an individual taking the picture, but it does watermark the session with key details so that the screen shot can be traced back to its origin. Although it may not entirely stop someone from taking a picture, at least it can be traced back to the source of egress.
+Recently Citrix has released additional controls that can be implemented to provide additional level of security control when users are accessing the environment. App Protection policies that include anti-keylogging and anti-screen capture provide reassurance that should attempts be made to egress data during sessions that some level of due diligence has been carried out the IT teams to deter users from doing this. What about a camera I hear you ask? Well, Citrix offer watermarking functionality which doesn't stop an individual taking the picture, but it does watermark the session with key details so that the screenshot can be traced back to its origin. Although it may not entirely stop someone from taking a picture, at least it can be traced back to the source of egress.
 
 ### Operating System
 
-A more contentious topic has been the use of multi-session hosts vs single user VDI. Having multiple user's logon to a single server can cause issues, especially if a disgruntled user has been able to execute software or code to commence hiving up other credentials or browsing into other user directories there is a security risk. If a 1:1 mapping of user to desktop is achieved, then this risk is completely mitigated. Running solid virtual desktop infrastructures does come at an additional cost. Again, threat modelling our users and selecting the most efficient delivery mechanism in terms of a multiuser session host or single user session host can be chosen. One size does not fit all users, finding a trade-off of cost and security is key.
+A more contentious topic has been the use of multi-session hosts vs single user VDI. Having multiple user's logon to a single server can cause issues, especially if a disgruntled user has been able to execute software or code to commence hiving up other credentials or browsing into other user directories there is a security risk. If a 1:1 mapping of user to desktop is achieved, then this risk is completely mitigated. Running solid virtual desktop infrastructures does come at an additional cost. Again, threat modeling our users and selecting the most efficient delivery mechanism in terms of a multiuser session host or single user session host can be chosen. One size does not fit all users, finding a trade-off of cost and security is key.
 
-### Microsoft Virtualisation Based Security (VBS)
+### Microsoft Virtualization Based Security (VBS)
 
 Microsoft VBS essentially uses a secure portion of memory to store secure assets from the session. This feature requires a Trusted Platform Module (TPM) or Virtual Trusted Platform Module (vTPM) running on a supported platform to provide the secure integration. This essential means that even if malware were successfully deployed into the kernel, the user stored secrets remain protected. Code that can run in the secured environment requires to be signed and approved by Microsoft to execute providing an additional layer of control. Microsoft VBS can be enabled in both Windows Desktop and Server operating systems. Microsoft VBS is built up from a suite of technologies including credential guard and application guard. For more information please review the following URL: [https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-vbs](https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-vbs)
 
@@ -296,7 +292,7 @@ As previously discussed in the Resource Layer, it is recommended to harden the o
 
 ### Service Account Hardening
 
-Some elements of a Citrix solution require the use of service accounts, service accounts allow for automated functions to progress with some level of authentication and authorisation. A service account should only be permissioned to carry out the task that is required and most certainly should not have any elevated access on the network. Ideally a service accounts are created for each automated function to narrow down the authorisation elements and ensure that no privilege creep occurs on the service. We recommend ensuring service account passwords are reset at least yearly or earlier based on your compliance requirements. These accounts and or groups should also be in Protected Users within Active Directory for extra protection and logging.
+Some elements of a Citrix solution require the use of service accounts, service accounts allow for automated functions to progress with some level of authentication and authorization. A service account should only be permitted to carry out the task that is required and most certainly should not have any elevated access on the network. Ideally service accounts are created for each automated function to narrow down the authorization elements and ensure that no privilege creep occurs on the service. We recommend ensuring service account passwords are reset at least yearly or earlier based on your compliance requirements. These accounts and or groups should also be in Protected Users within Active Directory for extra protection and logging.
 
 ### Least Privilege
 
@@ -304,13 +300,13 @@ As discussed, this framework is applied to any account on the network. This ensu
 
 ### Application Control
 
-Application controls has been covered in the Resource Layer, however; a similar approach can be completed for the control tier. Permitting the executables specific to an application further reduces the attack surface on running machines. Any executables that have not been authorised will not be permitted to run. This does come at an administrative overhead, but is an extra layer of control that can be applied to the applications that have been deployed.
+Application controls has been covered in the Resource Layer, however; a similar approach can be completed for the control tier. Permitting the executables specific to an application further reduces the attack surface on running machines. Any executables that have not been authorized will not be permitted to run. This does come at an administrative overhead, but is an extra layer of control that can be applied to the applications that have been deployed.
 
 The main problem with this approach is that any update that changes files or executables running on the system need to be re-approved to allow them to run post the update.
 
 ### Host Based Firewall
 
-One of the most common and probably the first thing that most administrators disable is the host-based firewall. As much as this may be ok for certain scenarios such as troubleshooting. Leaving such services disabled permanently does leave the environment at high risk of compromise. The firewall is designed to stop attackers from gaining access to the server through unknown or spurious tools or applications. Ensuring that the firewall is configured to stop any unauthorised elements from running, it is needed to be configured to allow applications to function and communicate to one another. When the Citrix VDA Installs it will automatically make the rules needed for basic VDA communications, but it also can add Windows Remote Assistance and the required RealTime Audio ports also. Environments such as test environments are required to allow administrators to understand how the application functions to correctly configure firewalls and services correctly within the production environments without negative affect to the application or user experience. For ports required to allow Citrix environments to function, please review: [https://support.citrix.com/article/CTX101810](https://support.citrix.com/article/CTX101810)
+One of the most common and probably the first thing that most administrators disable is the host-based firewall. As much as this may be ok for certain scenarios such as troubleshooting. Leaving such services disabled permanently does leave the environment at high risk of compromise. The firewall is designed to stop attackers from gaining access to the server through unknown or spurious tools or applications. Ensuring that the firewall is configured to stop any unauthorized elements from running, it is needed to be configured to allow applications to function and communicate to one another. When the Citrix VDA Installs it will automatically make the rules needed for basic VDA communications, but it also can add Windows Remote Assistance and the required RealTime Audio ports also. Environments such as test environments are required to allow administrators to understand how the application functions to correctly configure firewalls and services correctly within the production environments without negative affect to the application or user experience. For ports required to allow Citrix environments to function, please review: [https://support.citrix.com/article/CTX101810](https://support.citrix.com/article/CTX101810)
 
 ### Transport Layer Security
 
@@ -329,7 +325,7 @@ The hardware layer in virtual environments compromises of components such as sto
 
 ### Hardware separation
 
-In the cloud era this has slowly being forgotten about and more and more business and companies are looking for a greater return on investment by ensuring that all hardware is full utilised. In cloud provider examples, this is something which is not even possible. However, in on-premise infrastructures separating up resources onto separate physical hosting infrastructure. Such attacks as hyper jacking where the attacker can drill down through a VM and the virtual machine tools running the OS through into the hypervisor. Although many of the documented attacks are theoretical, the mere fact its documented suggests that there may be a method if such an attack could be effective - or one day it may be possible. Given this, and again, it comes back to the data you are protecting; separating workloads into separate clusters and ensuring that workloads hosting the same data classification are retained within their own clusters. Therefore, if an attacker were to break out into the hypervisor layer, that higher classifications of data is not compromised.
+In the cloud era this has slowly being forgotten about and more and more business and companies are looking for a greater return on investment by ensuring that all hardware is full utilized. In cloud provider examples, this is something which is not even possible. However, in on-premise infrastructures separating up resources onto separate physical hosting infrastructure. Such attacks as hyper jacking where the attacker can drill down through a VM and the virtual machine tools running the OS through into the hypervisor. Although many of the documented attacks are theoretical, the mere fact its documented suggests that there may be a method if such an attack could be effective - or one day it may be possible. Given this, and again, it comes back to the data you are protecting; separating workloads into separate clusters and ensuring that workloads hosting the same data classification are retained within their own clusters. Therefore, if an attacker were to break out into the hypervisor layer, that higher classifications of data is not compromised.
 
 ### Network Separation
 
@@ -358,7 +354,7 @@ The operational procedures in building a secure environment are as crucial as th
 
 ### User Training
 
-Providing training to users and administrators to promote a good security practice and awareness is one of the easiest to cover. Ensuring that users are aware of what is normal behaviour of a login page, what details support staff will and will not request, how to handle pop-ups and of course email phishing attempts. Users should be aware of how to respond to and understand where to report security related issues to security operational centres.
+Providing training to users and administrators to promote a good security practice and awareness is one of the easiest to cover. Ensuring that users are aware of what is normal behavior of a login page, what details support staff will and will not request, how to handle pop-ups and of course email phishing attempts. Users should be aware of how to respond to and understand where to report security related issues to security operational centers.
 
 ### User Monitoring
 
@@ -370,7 +366,7 @@ Ensuring logging of all actions of both IT administrators and users are logged t
 
 ### Segregation of Duties
 
-Whilst ensuring good role-based access control mechanisms are implemented, it is an approach to ensure that no single administrator could act alone to turn on a feature or egress point. Ideally implementing separation of duties forces two administrators to act independently to enable a feature. A good example would be enabling Client Drive Mapping into a Citrix session. This could be controlled using Citrix policy to be controlled by the Citrix administrators, and then enabling in Citrix ADC from a Smart Control policy. Therefore, requiring two separate changes to enable CDM.
+Whilst ensuring good role-based access control mechanisms are implemented, it is an approach to ensure that no single administrator could act alone to turn on a feature or egress point. Ideally implementing separation of duties forces two administrators to act independently to enable a feature. A good example would be enabling Client Drive Mapping into a Citrix session. This could be controlled using Citrix policy to be controlled by the Citrix administrators, and then enabling in Citrix ADC from a SmartControl policy. Therefore, requiring two separate changes to enable CDM.
 
 As much as it is important to have two administrators to potential enable a functionality, administrators should have separated accounts from their normal user account for performing administrative changes. This then reduces the attack vector of phishing attacks, if an administrator were to have their normal user credentials hived up, and these credentials had domain administrator permissions, there could be a significant impact on the environment; vs the administrator losing their normal user account that is unable to carry out an administrative tasks. As an additional note, users should not have global admin rights across a network or domain; ideally the use of role-based access controls (RBAC) groups are used to provide permission administrative based functions at a granule level.
 
@@ -379,8 +375,8 @@ As much as it is important to have two administrators to potential enable a func
 One of the common things that customers do not consider is the importance of test and development environments. These environments are crucial in being able to thoroughly test updates, changes and how they could potentially impact the user environments. These environments should be closely interlinked with change control processes to encourage administrators to make changes in test/development environment before moving into production. As part of testing the installation or upgrade of changes in development environments, it is equally as important to thoroughly test the roll back of changes then the administrators are familiar with the process should then need to invoke the roll back plan within production. This thorough testing and roll out plans protect the production environment from unnecessary outages. Ideally a through route to live would relate to the following:
 
 -  **Test**. An environment loosely controlled and a more sandpit area for admins to get to grips with the software and any new features.
--  **Pre-Production**. Pre-Production should be treated in a very similar manner to production, closely protected by change control and kept in lock step with production. This provides a strong reassurance that the behaviour of upgrades within this environment will be equal to that of production albeit on a smaller scale.
--  **Production**. Production goes without saying, its production. No unauthorised changes without Change Control.
+-  **Pre-Production**. Pre-Production should be treated in a very similar manner to production, closely protected by change control and kept in lock step with production. This provides a strong reassurance that the behavior of upgrades within this environment will be equal to that of production albeit on a smaller scale.
+-  **Production**. Production goes without saying, it's production. No unauthorized changes without Change Control.
 
 ### Windows Patching
 
@@ -388,11 +384,11 @@ Ensuring IT systems are patched and up to date is a standard practice for all so
 
 ### Anti-malware
 
-Anti-malware or antivirus is always recommended to be deployed on all servers throughout the infrastructure. Although can potentially be bypassed; antivirus does provide a good first line of defence against known malware, viruses and many other types of viruses. One of the more complex aspects of Antivirus is ensuring that the virus definitions are updated regularly, especially in non-persistent VDI workloads. There are many articles on redirecting antivirus definitions to persistent drives and ensuring that the machines are identified as individual objects in the antivirus management suite. These all need to be followed to ensure that Antivirus is deployed and installed correctly. Antivirus vendors may also have their own recommended practices for deploying their antimalware software, it is recommended to follow their guidelines for correct integration.
+Anti-malware or antivirus is always recommended to be deployed on all servers throughout the infrastructure. Although can potentially be bypassed; antivirus does provide a good first line of defense against known malware, viruses and many other types of viruses. One of the more complex aspects of Antivirus is ensuring that the virus definitions are updated regularly, especially in non-persistent VDI workloads. There are many articles on redirecting antivirus definitions to persistent drives and ensuring that the machines are identified as individual objects in the antivirus management suite. These all need to be followed to ensure that Antivirus is deployed and installed correctly. Antivirus vendors may also have their own recommended practices for deploying their antimalware software, it is recommended to follow their guidelines for correct integration.
 
 ### Physical security
 
-Not much is going to be provided on physical security within this document, as it very much depends on the data that is being protected, building location, access, shared office spaces and then extending to datacentre physical security. It is recommended that the guidance from the security teams are followed and acted upon. Citrix does recommend ensuring a physical security plan and protections is in place for your servers if self-hosted and then even your endpoints. Physical access to any computing device can eventually lead to compromise.
+Not much is going to be provided on physical security within this document, as it very much depends on the data that is being protected, building location, access, shared office spaces and then extending to datacenter physical security. It is recommended that the guidance from the security teams are followed and acted upon. Citrix does recommend ensuring a physical security plan and protections is in place for your servers if self-hosted and then even your endpoints. Physical access to any computing device can eventually lead to compromise.
 
 ### FIPS compliance
 
@@ -400,7 +396,7 @@ The Federal Information Processing Standard (FIPS) provides a level of assurance
 
 ### Security Insights
 
-Citrix does offer a cloud service as part of the analytics service that can in the event of a risk scoring of a user increasing, disconnect or lock the account. These events can then enable elements such as session recording automatically as discussed in this article, disable Citrix features and even, disconnect the session until an administrator has reviewed the actions of that user. This can correlate user behavioural analytics and applied security controls in an automated fashion.
+Citrix does offer a cloud service as part of the analytics service that can in the event of a risk scoring of a user increasing, disconnect or lock the account. These events can then enable elements such as session recording automatically as discussed in this article, disable Citrix features and even, disconnect the session until an administrator has reviewed the actions of that user. This can correlate user behavioral analytics and applied security controls in an automated fashion.
 
 ### Cloud Security
 
@@ -412,4 +408,4 @@ It is good practice when downloading software from vendor websites to validate t
 
 ### Security Operations
 
-Security Operations is a wide encompassing topic and includes many elements including user documentation, legal documentation, sign off of any environment including many more. As much as the technical elements of any infrastructure is crucial. it is also important to keep in mind that the supporting documentation, legalities and IT Health Checks leading to sign off various uses or holding of data such as Personal Identifiable Information (PII) or Payment Card Industry (PCI) is just as crucial. Ensuring you have regular security audits and penetration tests to validate your security operations and controls.
+Security Operations is a wide encompassing topic and includes many elements including user documentation, legal documentation, sign off of any environment including many more. As much as the technical elements of any infrastructure is crucial. It is also important to keep in mind that the supporting documentation, legalities and IT Health Checks leading to sign off various uses or holding of data such as Personal Identifiable Information (PII) or Payment Card Industry (PCI) is just as crucial. Ensuring you have regular security audits and penetration tests to validate your security operations and controls.
