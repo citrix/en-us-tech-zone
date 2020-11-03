@@ -371,7 +371,7 @@ As can be seen from the below table, the inclusion of WEM, suppresses the effect
 
 As WEM reduces CPU spikes, another important inference from the results is, that the response time for the user is much better. Citrix Virtual Apps and Desktops sessions have an almost 1000 ms lower response time when compared to MS RDP (at the instant VSImax is reached) for the same number of users.
 
-Similarly, the latency observed in the session is between 25 to 50% lesser on both the machines with 4 vCPUs. Both these results point to a much smoother and snappier use experience when WEM is in the picture.
+Similarly, the latency observed in the session is between 25 to 50% lesser on both the machines with 4 vCPUs. Both these results point to a much smoother and snappier user experience when WEM is in the picture.
 
 ![WEM Latency Improvement Graph](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_31-wem-latency-improvement-graph.png)
 
