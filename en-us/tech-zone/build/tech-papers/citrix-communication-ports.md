@@ -2,11 +2,11 @@
 layout: doc
 h3InToc: true
 contributedBy: Martin Zugec
-description: Copy & paste description from TOC here
+description: TODO
 ---
 # Communication Ports Used by Citrix Technologies
 
-TODO - Review and redistribute to other sections `https://support.citrix.com/article/CTX101810#Common`.
+This article provides an overview of ports that are used by Citrix components and must be considered as part of networking architecture, especially if communication traffic traverses network components such as firewalls or proxy servers where ports must be opened to ensure communication flow..
 
 ## Citrix Cloud
 
@@ -96,7 +96,7 @@ Use the following information for configuration of firewalls when you place Stor
 
   >**Note:**
   >
-  >The Microsoft CA accepts communication using Kerberos authenticated DCOM, which can be configured to use a fixed TCP port. To learn more about it, see [Federated Authentication Service certificate authority configuration](https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/secure/federated-authentication-service/fas-config-manage/fas-ca-configuration.html).
+  >The Microsoft CA accepts communication using Kerberos authenticated DCOM, which can be configured to use a fixed TCP port. To learn more about it, see [Federated Authentication Service certificate authority configuration](/en-us/federated-authentication-service/config-manage/ca-configuration.html).
 
 ### Provisioning Services
 
