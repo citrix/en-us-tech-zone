@@ -12,6 +12,7 @@ This article provides an overview of ports that are used by Citrix components an
 ## Citrix ADC
 
   >**Note:**
+  >
   >Depending on the Citrix ADC configuration, network traffic can originate from SNIP, MIP or NSIP interfaces.
 
 | Source            | Destination                                  | Type     | Port            | Details                                                                                                                                                               |
