@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Andy Mills, Patrick Coble, Martin Zugec
-specialThanksTo: Eric Beiers
+specialThanksTo: Eric Beiers, Steven Wright
 description: Copy & paste description from TOC here
 ---
 # Security best practices for Citrix Virtual Apps and Desktops
@@ -11,11 +11,9 @@ TODO: Disclaimer
 
 ## Introduction
 
-Global organizations including healthcare, government and financial services rely on Citrix Virtual Apps and Desktops to provide secure remote access to environments and applications. When properly configured, Citrix Virtual Apps and Desktops provide security measures that extend beyond what is natively available in an enterprise operating system by providing additional controls
-enabled through virtualization.
+Global organizations including healthcare, government and financial services rely on Citrix Virtual Apps and Desktops to provide secure remote access to environments and applications. When properly configured, Citrix Virtual Apps and Desktops provide security measures that extend beyond what is natively available in an enterprise operating system by providing additional controls enabled through virtualization.
 
-This tech paper outlines recommendations and resources for establishing a security baseline for your virtualized environment and highlights some of the most important security improvements you can do. All changes must be implemented in a test or development environment before modifying the
-production environment in order to avoid any unexpected side effects.
+This tech paper outlines recommendations and resources for establishing a security baseline for your virtualized environment and highlights some of the most important security improvements you can do. All changes must be implemented in a test or development environment before modifying the production environment in order to avoid any unexpected side effects.
 
 To provide further context, the information is provided in the traditional Citrix methodology used by professional services as shown below:
 
@@ -30,15 +28,15 @@ Your organization may need to meet specific security standards to satisfy regula
 
 ## User and Device Layer
 
-When a business is considering how to enable their end users to connect to virtual desktops, varying schemes such as Bring Your Own Device (BYOD) or corporate issued devices are available; both come with their operational overhead. Implementation of such initiatives may change many factors; including decisions around what features can be offloaded onto the endpoint. A user connecting from a BYOD device may have no access to clipboard, client drive mapping (CDM) or printing. Whereas a user accessing from a corporate owned device where additional controls and 'trusted' build procedures have been carried out, clipboard and local drive access may be permitted. There is no 'one size fits all' when it comes to endpoint devices. End point clients need to be selected dependent upon the end user use case.
+When a business is considering how to enable their end users to connect to virtual desktops, varying schemes such as Bring Your Own Device (BYOD) or corporate issued devices are available; both come with their own operational overhead. Implementation of such initiatives may change many factors; including decisions around what features can be offloaded onto the endpoint. A user connecting from a BYOD device may have no access to clipboard, client drive mapping (CDM) or printing. Whereas a user accessing from a corporate owned device where additional controls and 'trusted' build procedures have been carried out such as encrypting the local hard drive, clipboard and local drive access may be permitted. There is no 'one size fits all' when it comes to endpoint devices. End point clients need to be selected dependent upon the end user use case, mobility, performance and of course security requirements.
 
-The following may be additional requirements or lockdowns to be considered when considering the endpoints:
+The following may be considered when locking down or securing the endpoints:
 
 ### Device Lockdown
 
 The endpoint device that a user consumes has potential to be used as an attack vector; including such attacks as keyloggers or points of ingress into the network. One major benefit instantly when running Citrix technologies like Virtual Apps and Desktops, the ingress point is reduced with only mouse, keyboard and screen refreshes being a necessity for a user to carry out their work. If, however, users require additional functionality such as accessing local client drives, printing facilities and clipboard functionality these can be enabled on a case by case basis. As capabilities increase Citrix does have controls to reduce the risk of these attack vectors such as anti-keylogging and disabling any points of ingress/egress.
 
-Device lockdown is more than just what functionality a user may have when roaming between devices, as many users may have several. Understanding what level of risk each endpoint device poses may adjust the above functionality. But, there are such configurations outside of Citrix that can make a difference.
+Device lockdown is more than just what functionality a user may have when roaming between devices, as many users may have several that they use on a day to day basis. Understanding what level of risk each endpoint device poses may adjust the above functionality. But, there are such configurations outside of Citrix that can make a difference.
 
 -  Do users require local administrative permissions on the device?
 -  What other software is running on the endpoint?
@@ -50,17 +48,17 @@ Device lockdown is more than just what functionality a user may have when roamin
 
 These are all questions for the IT support teams to consider when deploying devices to the end users.
 
-### Endpoint Logs
+### Endpoint Logging
 
 Even if a user can or cannot install software of any kind on the endpoint, ensuring logs are enabled and centrally captured so that they cannot be intercepted assists in understanding what may have occurred in a breach or providing to the forensic analyst for further review. Logging is a crucial element to any environment security monitoring process. There is a trade-off though, first it's easy to turn on all the logging and have no process or system to process the data, second; you can have too many logs to trawl through and try and decipher. This comes back to enabling just enough logs to fit within any response process or logging system to be able to decipher and respond to a potential alert. It may also be beneficial to forward all logs to your security information and event management (SIEM) and then set alerts to notify you known attack methods or other key events based on your logging strategy.
 
 ### Thin Client terminals
 
-In some scenarios thin client devices are perfect to be deployed into any environment and of course high-risk environments. Thin clients run a cut down version of operating systems only having enough of an operating system and application to connect to a Citrix session. These have other benefits such as patching, there are limited applications that need to be patched and maintained, and usually the operating systems are reduced footprint, it only takes a few minutes to update the devices. Due to the devices having a simplified and purpose build operating system, there is limited data at rest on the endpoint allowing the business to deliver business critical applications to endpoints that may have a different security posture on the network with a level of assurance. For thin client terminals that run a full operating system, the use of write filters to stop the persistence of data are useful. Resetting the terminals when reboot occurs reduces the chance of an attacker persisting data on the endpoint that could be used to formulate an attack. Thin Client terminals have the added benefit of usually being cheaper to purchase and maintain than traditional desktops or laptops.
+In some scenarios thin client devices are perfect to be deployed into any environment and of course high-risk environments. Thin clients run a cut down version of operating systems only having enough of an operating system and application to connect to a Citrix session. These have other benefits such as patching, there are limited applications that need to be patched and maintained, and usually the operating systems are reduced footprint, it only takes a few minutes to update the devices. Due to the devices having a simplified and purpose built operating system, there is limited data at rest on the endpoint allowing the business to deliver business critical applications to endpoints that may have a different security posture on the network with a level of assurance. For thin client terminals that run a full operating system, the use of write filters to stop the persistence of data are useful. Resetting the terminals when reboot occurs reduces the chance of an attacker persisting data on the endpoint that could be used to formulate an attack. Thin Client terminals have the added benefit of usually being cheaper to purchase and maintain than traditional desktops or laptops.
 
 ### Patching
 
-As part of this article patching has already been mentioned, patch management should be one of the first considerations to any endpoint. How does the business get security fixes applied to the endpoints? In traditional environments machines have patches pushed to them through Windows Services Update Service (WSUS), System Center Configuration Manager (SCCM) or through other automated services. This is great if the endpoint is managed by the corporate IT teams. What about BYOD, who patches those and ensure they are up to date. With work from home growing quickly endpoint patching becomes more complicated to ensure the endpoints are reporting in on a regular basis along with possible scheduling changes based on the adjusted hours. This is where clear responsibilities of the users are called out when such schemes are undertaken to ensure that users know how to patch and update their systems. Simple notifications on the login page suggesting a new update has been released and they should patch as soon as possible is one method. Or, to place Endpoint Analysis Scans (EPA) on the endpoint to not allow them to access the infrastructure unless they are running up to date software. Both provide the answer in asking users to upgrade, but one certainly forces the user to update especially if they want to access the data.
+Patch management should be one of the first considerations to any endpoint. How does the business get security fixes applied to the endpoints? In traditional environments machines have patches pushed to them through Windows Services Update Service (WSUS), System Center Configuration Manager (SCCM) or through other automated services. This is great if the endpoint is managed by the corporate IT teams. What about BYOD, who patches those and ensure they are up to date. With work from home growing quickly endpoint patching becomes more complicated. This is where clear responsibilities of the users are called out when such schemes are undertaken to ensure that users know how to patch and update their systems. Simple notifications on the login page suggesting a new update has been released and they should patch as soon as possible is one method. Or, to place Endpoint Analysis Scans (EPA) on the endpoint to not allow them to access the infrastructure unless they are running up to date software. Both provide the answer in asking users to upgrade, but one certainly forces the user to update especially if they want to access the data.
 
 As much as its important to keep the operating system patched and up to date, it is equally as important to ensure that the Citrix Workspace app is patched and up to date on the endpoint client as Citrix will incorporate not only feature enhancements, but also security fixes into releases.
 
