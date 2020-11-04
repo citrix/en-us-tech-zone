@@ -90,7 +90,7 @@ Refer to the following link for Citrix Endpoint Management (XenMobile) Ports –
 |                        |                                       | TCP      | 22               | SSH Access                                                                                                                                                            |
 | Citrix Gateway         | DNS                                   | TCP, UDP | 53               | Communication with the DNS server                                                                                                                                     |
 
-For more information about required ports for Citrix Gateway in DMZ setup, refer to [CTX113250](http://support.citrix.com/article/CTX113250).
+For more information about required ports for Citrix Gateway in DMZ setup, refer to [CTX113250](https://support.citrix.com/article/CTX113250).
 
 ## Citrix Hypervisor
 
