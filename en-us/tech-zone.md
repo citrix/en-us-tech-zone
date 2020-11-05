@@ -359,6 +359,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Evaluating Application Delivery Methods](/en-us/tech-zone/design/design-decisions/application-delivery-methods.html) - Learn about the different decision factors involved in choosing the optimal application delivery method.
 
+### [Build - Tech Papers](/en-us/tech-zone/build/tech-papers.html)
+
+[Communication Ports Used by Citrix Technologies](/en-us/tech-zone/build/tech-papers/citrix-communication-ports.html) - Overview of ports that are used by Citrix components and must be considered as part of networking architecture.
+
 ## Security
 
 ### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
