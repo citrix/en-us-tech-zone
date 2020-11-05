@@ -54,6 +54,8 @@ This article provides an overview of ports that are used by Citrix components an
 | Citrix ADM license server | Citrix ADC CPX instance               | TCP    | 27000            | License port for communication between Citrix ADM license server and CPX instance.                                                                            |
 |                           |                                       | TCP    | 7279             | Citrix vendor daemon port.                                                                                                                                    |
 | Citrix ADC                | Citrix ADM                            | TCP    | 5563             | To receive ADC metrics (counters), system events, and Audit Log messages from Citrix ADC instance to Citrix ADM                                               |
+|                           |                                       | TCP    | 5557, 5558       | To receive ADC analytics log data using logstream protocol                                                                                                    |
+|                           |                                       | UDP    | 4739             | To receive ADC analytics log data using IPFIX protocol                                                                                                        |
 
 ## Citrix Cloud
 
