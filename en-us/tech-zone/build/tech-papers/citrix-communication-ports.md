@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Martin Zugec
 specialThanksTo: Bjorn Paulson
-description: Overview of ports that are used by Citrix components and must be considered as part of networking architecture
+description: Overview of ports that are used by Citrix components and must be considered as part of networking architecture.
 ---
 # Communication Ports Used by Citrix Technologies
 
