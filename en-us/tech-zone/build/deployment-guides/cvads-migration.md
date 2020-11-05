@@ -326,7 +326,7 @@ That completes the deployment guide to migrate an on-premises Citrix Virtual App
 
 Request a trial of Citrix Virtual Apps and Desktops service, click [here](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/inquiry/).
 
-Try the Automated Configuration tool, click [here](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html).
+Try the Automated Configuration tool, click [here](https://www.citrix.com/downloads/citrix-cloud/product-software/automated-configuration.html).
 
 ## References
 
