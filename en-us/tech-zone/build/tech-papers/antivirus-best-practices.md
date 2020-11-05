@@ -144,7 +144,8 @@ Processes:
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\HdxTeams.exe` (Optimization for Microsoft Teams)
 
     >**Note:**
-    >These exclusions for the Receiver typically are not needed. We have only seen a need for these in environments when the antivirus is configured with policies that are more strict than usual, or in situations in which multiple security agents are in use simultaneously (AV, DLP, HIP, and so on)
+    >
+    >These exclusions for the Citrix Workspace app are typically not required. We have only seen a need for these in environments when the antivirus is configured with policies that are more strict than usual, or in situations in which multiple security agents are in use simultaneously (AV, DLP, HIP, and so on).
 
 ### Provisioning
 
