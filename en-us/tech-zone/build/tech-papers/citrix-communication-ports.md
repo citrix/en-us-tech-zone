@@ -8,6 +8,7 @@ description: Overview of ports that are used by Citrix components and must be co
 # Communication Ports Used by Citrix Technologies
 
 This article provides an overview of common ports that are used by Citrix components and must be considered as part of networking architecture, especially if communication traffic traverses network components such as firewalls or proxy servers where ports must be opened to ensure communication flow.
+
 However, you will not need all the ports to be opened, it will depend on your deployment and requirements.
 
 ## Citrix ADC
