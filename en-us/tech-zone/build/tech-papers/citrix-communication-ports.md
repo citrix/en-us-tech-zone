@@ -17,7 +17,7 @@ This article provides an overview of ports that are used by Citrix components an
 
 | Source            | Destination                                  | Type     | Port            | Details                                                                                                                                                               |
 | ----------------- | -------------------------------------------- | -------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Citrix ADC        | Citrix ADC Appliances in cluster setup       | UDP      | 7000            | Cluster heart beat exchange                                                                                                                                           |
+| Citrix ADC NSIP   | Citrix ADC Appliances in cluster setup       | UDP      | 7000            | Cluster heart beat exchange                                                                                                                                           |
 |                   | Citrix ADC Appliance (for High Availability) | UDP      | 3003            | Exchange of hello packets for communicating UP/DOWN status (heartbeat)                                                                                                |
 |                   |                                              | TCP      | 3008            | Secure High Availability configuration synchronization                                                                                                                |
 |                   |                                              | TCP      | 3009            | For secure MEP.                                                                                                                                                       |
@@ -33,7 +33,7 @@ This article provides an overview of ports that are used by Citrix components an
 |                   |                                              | SNMP     | 161, 162        | To send SNMP events                                                                                                                                                   |
 |                   |                                              | Syslog   | 514             | To receive syslog messages in Citrix ADM                                                                                                                              |
 |                   |                                              | TCP      | 5557            | For logstream communication from Citrix ADC to Citrix ADM.                                                                                                            |
-| Admin Workstation | Citrix ADC                                   | TCP      | 80, 443         | HTTP(s) - GUI Administration                                                                                                                                          |
+| Admin Workstation | Citrix ADC NSIP                              | TCP      | 80, 443         | HTTP(s) - GUI Administration                                                                                                                                          |
 |                   |                                              | TCP      | 8443            | If an HTML client is used, then only 8443 port needs to be open between client and Command Center server. Citrix recommends using an HTML client as much as possible. |
 |                   |                                              | TCP      | 22              | SSH Access                                                                                                                                                            |
 
@@ -41,7 +41,7 @@ This article provides an overview of ports that are used by Citrix components an
 
 | Source                    | Destination                           | Type   | Port             | Details                                                                                                                                                       |
 | ------------------------- | ------------------------------------- | ------ | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Citrix ADM                | Citrix ADC or Citrix SD-WAN instance  | TCP    | 80, 443          | For NITRO communication                                                                                                                                       |
+| Citrix ADM                | Citrix ADC NSIP or Citrix SD-WAN instance  | TCP    | 80, 443          | For NITRO communication                                                                                                                                       |
 |                           |                                       | TCP    | 22               | For SSH communication                                                                                                                                         |
 |                           |                                       | ICMP   | No reserved port | To detect network reachability between Citrix ADM and ADC instances, SD-WAN instances, or the secondary Citrix ADM server deployed in high availability mode. |
 |                           | Citrix ADM                            | TCP    | 22               | For synchronization between Citrix ADM servers deployed in high availability mode.                                                                            |
@@ -73,10 +73,10 @@ Refer to the following link for Citrix Endpoint Management (XenMobile) Ports –
 
 | Source                 | Destination                           | Type     | Port             | Details                                                                                                                                                               |
 | ---------------------- | ------------------------------------- | -------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Citrix Gateway         | LDAP Server                           | TCP      | 636              | LDAP SSL connection                                                                                                                                                   |
+| Citrix Gateway SNIP    | LDAP Server                           | TCP      | 636              | LDAP SSL connection                                                                                                                                                   |
 |                        |                                       | TCP      | 3268             | LDAP connection to Global Catalog                                                                                                                                     |
 |                        |                                       | TCP      | 3269             | LDAP connection to Global Catalog over SSL                                                                                                                            |
-|                        |                                       | TCP      | 389              | LDAP plain text                                                                                                                                                       |
+|                        |                                       | TCP      | 389              | LDAP plaintext or TLS                                                                                                                                                       |
 |                        | RADIUS Server                         | UDP      | 1813             | RADIUS accounting                                                                                                                                                     |
 |                        |                                       | UDP      | 1645, 1812       | RADIUS connection                                                                                                                                                     |
 |                        | Secure Ticketing Authority (STA)      | TCP      | 80, 8080, 443    | Secure Ticketing Authority (embedded into XML Service)                                                                                                                |
@@ -94,6 +94,10 @@ Refer to the following link for Citrix Endpoint Management (XenMobile) Ports –
 | Citrix Gateway         | DNS                                   | TCP, UDP | 53               | Communication with the DNS server                                                                                                                                     |
 
 For more information about required ports for Citrix Gateway in DMZ setup, refer to [CTX113250](https://support.citrix.com/article/CTX113250).
+
+  >**Note:**
+  >
+  >All the above ports are not mandatory, it will depend on your own configuration.
 
 ## Citrix Hypervisor
 
