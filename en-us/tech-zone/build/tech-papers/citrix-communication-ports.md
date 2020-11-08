@@ -61,7 +61,53 @@ The only Citrix component needed to serve as a channel for communication between
 
 Host management and Machine Creation Management capabilities of Citrix Cloud also require TCP 9350–9354 opened for communications to the Citrix-managed control plane.
 
+Cloud Connectors must be able to connect to Digicert for for certificate revocation checks.
+| Source                        | Destination                   | Type         | Port        | Details                                                                  |
+| ----------------------------- | ----------------------------- | ------------ | ----------- | ------------------------------------------------------------------------ |
+| Cloud Connectors              |  <http://*.digicert.com>      | HTTP         | 80          | Periodic Certificate Revocation List checks                              |
+|                               |  <https://*.digicert.com>     | HTTPS        | 443         |                              |
+|                               |  <https://dl.cacerts.digicert.com/DigiCertAssuredIDRootCA.crt>     | HTTPS         | 443          |                                   |
+|                               |  <https://dl.cacerts.digicert.com/DigiCertSHA2AssuredIDCodeSigningCA.crt>     | HTTPS         | 443          |                        |
+
 To find the list of addresses that are common to most Citrix Cloud services and their function, refer to [product documentation](/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html#service-connectivity-requirements).
+
+## Citrix Cloud - Virtual Apps and Desktops Service
+
+| Source                        | Destination                   | Type         | Port        | Details                                                                  |
+| ----------------------------- | ----------------------------- | ------------ | ----------- | ------------------------------------------------------------------------ |
+| VDA                           | Gateway Service               | TCP          | 443         | Rendezvous Protocol                                                      |
+| Provisioning Servers          | Cloud Connectors              | HTTPS        | 443         | Provisioning Server integration with Citrix Cloud Studio                 |
+| Citrix Licence Server         | Citrix Cloud                  | HTTPS        | 443         | Citrix Licence Server integration with Citrix Cloud                      |
+
+ Read more about Citrix Licence Server integration [here](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/citrix-cloud-on-premises-registration.html#connectivity-requirements).
+ Read more about Citrix Provisioning Server integration [here](https://docs.citrix.com/en-us/provisioning/current-release/configure/cloud-connector.html#firewall-considerations).
+
+## Citrix Cloud - Gateway Service
+
+By default, the Gateway Service will proxy HDX connections via the Citrix Cloud Connectors, however Rendezvous Protocol will change change the flow of HDX connections in an attempt to directly connect the VDA to the Gateway Service bypassing the Citrix Cloud Connectors
+
+### Rendezvous Protocol and HDX Enlightened Data Transport Protocol (EDT)
+
+| Source                        | Destination                   | Type         | Port        | Details                                                                  |
+| ----------------------------- | ----------------------------- | ------------ | ----------- | ------------------------------------------------------------------------ |
+| VDA                           | Gateway Service               | TCP          | 443         |  The VDAs must have access to <https://*.nssvc.net>, including all subdomains. Or <https://*.c.nssvc.net> and <https://*.g.nssvc.net>  |
+| VDA                           | Gateway Service               | UDP          | 443         |  EDT UDP over 443 to Gateway Service                                     |
+| Gateway Service               | VDA                           | UDP          | 1494/2598   |  EDT UDP over 1494/2598 from Gateway Service to VDA                      |
+
+  >**Note:**
+  >
+  >if using EDT in Microsoft Azure, UDP must be specifically defined on the NSG protecting the VDA
+
+Read more about Rendezvous Protocol and HDX Enlightened Data Transport Protocol (EDT) requirements [here](#https://docs.citrix.com/en-us/citrix-gateway-service/hdx-edt-support-for-gateway-service.html).
+
+## Citrix Cloud - Workspace Environnment Management Service
+
+| Source                        | Destination                   | Type         | Port        | Details                                                                  |
+| ----------------------------- | ----------------------------- | ------------ | ----------- | ------------------------------------------------------------------------ |
+| WEM Agent                     | WEM Service                   | HTTPS        | 443         |  HTTPS based communication between the WEM Agent and the WEM Service     |
+| WEM Agent                     | Cloud Connector               | TCP          | 443         |  Registration Traffic for WEM Agents                                     |
+
+Read more about Citrix Workspace Environment Management Service requirements [here](#https://docs.citrix.com/en-us/workspace-environment-management/service.html).
 
 ## Citrix Endpoint Management
 
