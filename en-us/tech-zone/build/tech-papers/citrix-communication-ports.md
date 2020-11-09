@@ -13,10 +13,6 @@ However, you will not need all the ports to be opened, it will depend on your de
 
 ## Citrix ADC
 
-  >**Note:**
-  >
-  >Depending on the Citrix ADC configuration, network traffic can originate from SNIP, MIP or NSIP interfaces.
-
 | Source            | Destination                                  | Type     | Port            | Details                                                                                                                                                               |
 | ----------------- | -------------------------------------------- | -------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Citrix ADC NSIP   | Citrix ADC Appliances in cluster setup       | UDP      | 7000            | Cluster heart beat exchange                                                                                                                                           |
@@ -25,19 +21,29 @@ However, you will not need all the ports to be opened, it will depend on your de
 |                   |                                              | TCP      | 3009            | For secure MEP.                                                                                                                                                       |
 |                   |                                              | TCP      | 3010            | Non-secure high availability configuration synchronization.                                                                                                           |
 |                   |                                              | TCP      | 3011            | For non-secure MEP.                                                                                                                                                   |
-|                   |                                              | UDP      | 162             | Traps from ADC to Citrix ADM Center                                                                                                                                      |
+|                   |                                              | UDP      | 162             | Traps from ADC to Citrix ADM Center                                                                                                                                   |
 |                   |                                              | TCP      | 22              | Used by the rsync process during file synchronization in high availability setup                                                                                      |
 |                   | DNS Server                                   | TCP, UDP | 53              | DNS name resolution                                                                                                                                                   |
+|                   | Application Firewall signature URL           | TCP      | 443             | Hosted signature updates in Amazon web services (AWS)                                                                                                                                       |
+|                   | Bot Management signature URL                 | TCP      | 443             | Hosted signature updates in Amazon web services (AWS)                                                                                                                                       |
 |                   | ADC lights out management                    | TCP      | 4001, 5900, 623 | Daemon which offers complete and unified configuration management of all the routing protocols                                                                        |
 |                   | Integrated Management Interface              | TCP, UDP | 389             | LDAP connection                                                                                                                                                       |
 |                   | Thales HSM                                   | TCP      | 9004            | RFS and Thales HSM                                                                                                                                                    |
 |                   | Citrix ADM                                   | UDP      | 4739            | For AppFlow communication                                                                                                                                             |
 |                   |                                              | SNMP     | 161, 162        | To send SNMP events                                                                                                                                                   |
 |                   |                                              | Syslog   | 514             | To receive syslog messages in Citrix ADM                                                                                                                              |
-|                   |                                              | TCP      | 5557            | For logstream communication from Citrix ADC to Citrix ADM.                                                                                                            |
+|                   |                                              | TCP      | 5557, 5558      | For logstream communication from Citrix ADC to Citrix ADM.                                                                                                            |
 | Admin Workstation | Citrix ADC NSIP                              | TCP      | 80, 443         | HTTP(s) - GUI Administration                                                                                                                                          |
 |                   |                                              | TCP      | 8443            | If an HTML client is used, then only 8443 port needs to be open between client and Command Center server. Citrix recommends using an HTML client as much as possible. |
 |                   |                                              | TCP      | 22              | SSH Access                                                                                                                                                            |
+
+  >**Note:**
+  >
+  >Depending on the Citrix ADC configuration, network traffic can originate from SNIP, MIP or NSIP interfaces.
+  >
+  >The URL for Application firewall signatures is <https://s3.amazonaws.com/NSAppFwSignatures/SignaturesMapping.xml>
+  >
+  >The URL for Bot management signatures is <https://nsbotsignatures.s3.amazonaws.com/BotSignatureMapping.json>
 
 ## Citrix ADM
 
