@@ -9,7 +9,7 @@ description: Overview of ports that are used by Citrix components and must be co
 
 This article provides an overview of common ports that are used by Citrix components and must be considered as part of networking architecture, especially if communication traffic traverses network components such as firewalls or proxy servers where ports must be opened to ensure communication flow.
 
-However, you will not need all the ports to be opened, it will depend on your deployment and requirements.
+Not all ports need to be open, depending on your deployment and requirements.
 
 ## Citrix ADC
 
@@ -24,8 +24,8 @@ However, you will not need all the ports to be opened, it will depend on your de
 |                   |                                              | UDP      | 162             | Traps from ADC to Citrix ADM Center                                                                                                                                   |
 |                   |                                              | TCP      | 22              | Used by the rsync process during file synchronization in high availability setup                                                                                      |
 |                   | DNS Server                                   | TCP, UDP | 53              | DNS name resolution                                                                                                                                                   |
-|                   | Application Firewall signature URL           | TCP      | 443             | Hosted signature updates on Amazon web services (AWS)                                                                                                                 |
-|                   | Bot Management signature URL                 | TCP      | 443             | Hosted signature updates on Amazon web services (AWS)                                                                                                                 |
+|                   | Application Firewall signature URL           | TCP      | 443             | Hosted signature updates on AWS (AWS)                                                                                                                                 |
+|                   | Bot Management signature URL                 | TCP      | 443             | Hosted signature updates on AWS (AWS)                                                                                                                                 |
 |                   | ADC lights out management                    | TCP      | 4001, 5900, 623 | Daemon which offers complete and unified configuration management of all the routing protocols                                                                        |
 |                   | Integrated Management Interface              | TCP, UDP | 389             | LDAP connection                                                                                                                                                       |
 |                   | Thales HSM                                   | TCP      | 9004            | RFS and Thales HSM                                                                                                                                                    |
@@ -39,7 +39,7 @@ However, you will not need all the ports to be opened, it will depend on your de
 
   >**Note:**
   >
-  >Depending on the Citrix ADC configuration, network traffic can originate from SNIP, MIP or NSIP interfaces.
+  >Depending on the Citrix ADC configuration, network traffic can originate from SNIP, MIP, or NSIP interfaces.
   >
   >[Link to application firewall signatures](https://s3.amazonaws.com/NSAppFwSignatures/SignaturesMapping.xml)
   >
@@ -72,50 +72,50 @@ The only Citrix component needed to serve as a channel for communication between
 Host management and Machine Creation Management capabilities of Citrix Cloud also require TCP 9350–9354 opened for communications to the Citrix-managed control plane.
 
 Cloud Connectors must be able to connect to Digicert for for certificate revocation checks.
-| Source                        | Destination                   | Type         | Port        | Details                                                                  |
-| ----------------------------- | ----------------------------- | ------------ | ----------- | ------------------------------------------------------------------------ |
-| Cloud Connectors              |  <http://*.digicert.com>      | HTTP         | 80          | Periodic Certificate Revocation List checks                              |
-|                               |  <https://*.digicert.com>     | HTTPS        | 443         |                              |
-|                               |  <https://dl.cacerts.digicert.com/DigiCertAssuredIDRootCA.crt>     | HTTPS         | 443          |                                   |
-|                               |  <https://dl.cacerts.digicert.com/DigiCertSHA2AssuredIDCodeSigningCA.crt>     | HTTPS         | 443          |                        |
+| Source           | Destination                                                              | Type  | Port | Details                                     |
+| ---------------- | ------------------------------------------------------------------------ | ----- | ---- | ------------------------------------------- |
+| Cloud Connectors | <http://*.digicert.com>                                                  | HTTP  | 80   | Periodic Certificate Revocation List checks |
+|                  | <https://*.digicert.com>                                                 | HTTPS | 443  |                                             |
+|                  | <https://dl.cacerts.digicert.com/DigiCertAssuredIDRootCA.crt>            | HTTPS | 443  |                                             |
+|                  | <https://dl.cacerts.digicert.com/DigiCertSHA2AssuredIDCodeSigningCA.crt> | HTTPS | 443  |                                             |
 
 To find the list of addresses that are common to most Citrix Cloud services and their function, refer to [product documentation](/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html#service-connectivity-requirements).
 
 ## Citrix Cloud - Virtual Apps and Desktops Service
 
-| Source                        | Destination                   | Type         | Port        | Details                                                                  |
-| ----------------------------- | ----------------------------- | ------------ | ----------- | ------------------------------------------------------------------------ |
-| VDA                           | Gateway Service               | TCP          | 443         | Rendezvous Protocol                                                      |
-| Provisioning Servers          | Cloud Connectors              | HTTPS        | 443         | Provisioning Server integration with Citrix Cloud Studio                 |
-| Citrix Licence Server         | Citrix Cloud                  | HTTPS        | 443         | Citrix Licence Server integration with Citrix Cloud                      |
+| Source                | Destination      | Type  | Port | Details                                                  |
+| --------------------- | ---------------- | ----- | ---- | -------------------------------------------------------- |
+| VDA                   | Gateway Service  | TCP   | 443  | Rendezvous Protocol                                      |
+| Provisioning Servers  | Cloud Connectors | HTTPS | 443  | Provisioning Server integration with Citrix Cloud Studio |
+| Citrix License Server | Citrix Cloud     | HTTPS | 443  | Citrix License Server integration with Citrix Cloud      |
 
- Read more about Citrix Licence Server integration [here](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/citrix-cloud-on-premises-registration.html#connectivity-requirements).
+ Read more about Citrix License Server integration [here](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/citrix-cloud-on-premises-registration.html#connectivity-requirements).
  Read more about Citrix Provisioning Server integration [here](https://docs.citrix.com/en-us/provisioning/current-release/configure/cloud-connector.html#firewall-considerations).
 
 ## Citrix Cloud - Gateway Service
 
-By default, the Gateway Service will proxy HDX connections via the Citrix Cloud Connectors, however Rendezvous Protocol will change change the flow of HDX connections in an attempt to directly connect the VDA to the Gateway Service bypassing the Citrix Cloud Connectors
+By default, the Gateway Service will proxy HDX connections via the Citrix Cloud Connectors, however Rendezvous Protocol changes the flow of HDX connections in an attempt to directly connect the VDA to the Gateway Service bypassing the Citrix Cloud Connectors
 
 ### Rendezvous Protocol and HDX Enlightened Data Transport Protocol (EDT)
 
-| Source                        | Destination                   | Type         | Port        | Details                                                                  |
-| ----------------------------- | ----------------------------- | ------------ | ----------- | ------------------------------------------------------------------------ |
-| VDA                           | Gateway Service               | TCP          | 443         |  The VDAs must have access to <https://*.nssvc.net>, including all subdomains. Or <https://*.c.nssvc.net> and <https://*.g.nssvc.net>  |
-| VDA                           | Gateway Service               | UDP          | 443         |  EDT UDP over 443 to Gateway Service                                     |
-| Gateway Service               | VDA                           | UDP          | 1494/2598   |  EDT UDP over 1494/2598 from Gateway Service to VDA                      |
+| Source          | Destination     | Type | Port      | Details                                                                                                                              |
+| --------------- | --------------- | ---- | --------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| VDA             | Gateway Service | TCP  | 443       | The VDAs must have access to <https://*.nssvc.net>, including all subdomains. Or <https://*.c.nssvc.net> and <https://*.g.nssvc.net> |
+| VDA             | Gateway Service | UDP  | 443       | EDT UDP over 443 to Gateway Service                                                                                                  |
+| Gateway Service | VDA             | UDP  | 1494/2598 | EDT UDP over 1494/2598 from Gateway Service to VDA                                                                                   |
 
   >**Note:**
   >
-  >if using EDT in Microsoft Azure, UDP must be specifically defined on the NSG protecting the VDA
+  >If using EDT in Microsoft Azure, UDP must be defined on the Citrix Gateway protecting the VDA
 
 Read more about Rendezvous Protocol and HDX Enlightened Data Transport Protocol (EDT) requirements [here](#https://docs.citrix.com/en-us/citrix-gateway-service/hdx-edt-support-for-gateway-service.html).
 
-## Citrix Cloud - Workspace Environnment Management Service
+## Citrix Cloud - Workspace Environment Management Service
 
-| Source                        | Destination                   | Type         | Port        | Details                                                                  |
-| ----------------------------- | ----------------------------- | ------------ | ----------- | ------------------------------------------------------------------------ |
-| WEM Agent                     | WEM Service                   | HTTPS        | 443         |  HTTPS based communication between the WEM Agent and the WEM Service     |
-| WEM Agent                     | Cloud Connector               | TCP          | 443         |  Registration Traffic for WEM Agents                                     |
+| Source    | Destination     | Type  | Port | Details                                                             |
+| --------- | --------------- | ----- | ---- | ------------------------------------------------------------------- |
+| WEM Agent | WEM Service     | HTTPS | 443  | HTTPS based communication between the WEM Agent and the WEM Service |
+| WEM Agent | Cloud Connector | TCP   | 443  | Registration Traffic for WEM Agents                                 |
 
 Read more about Citrix Workspace Environment Management Service requirements [here](#https://docs.citrix.com/en-us/workspace-environment-management/service.html).
 
@@ -142,7 +142,7 @@ Refer to the following link for Citrix Endpoint Management (XenMobile) Ports –
 |                        | StoreFront                            | TCP      | 80, 443          | Citrix Gateway communication with StoreFront                                                                                                                          |
 | Citrix Gateway Plug-in | VPN/CVAD                              | UDP      | 3108, 3168, 3188 | For VPN tunnel with secure ICA connections                                                                                                                            |
 |                        |                                       | TCP, UDP | 3148             | For VPN tunnel with secure ICA connections                                                                                                                            |
-| Admin Workstation      | Citrix Gateway                        | TCP      | 80, 443          | HTTP(s) - GUI Administration                                                                                                                                          |
+| Admin Workstation      | Citrix Gateway                        | TCP      | 80, 443          | HTTPS - GUI Administration                                                                                                                                            |
 |                        |                                       | TCP      | 8443             | If an HTML client is used, then only 8443 port needs to be open between client and Command Center server. Citrix recommends using an HTML client as much as possible. |
 |                        |                                       | TCP      | 22               | SSH Access                                                                                                                                                            |
 | Citrix Gateway         | DNS                                   | TCP, UDP | 53               | Communication with the DNS server                                                                                                                                     |
@@ -151,7 +151,7 @@ For more information about required ports for Citrix Gateway in DMZ setup, refer
 
   >**Note:**
   >
-  >All the above ports are not mandatory, it will depend on your own configuration.
+  >All the above ports are not mandatory, depending on your own configuration.
 
 ## Citrix Hypervisor
 
@@ -222,11 +222,11 @@ Read more about Citrix License Server requirements [here](#citrix-license-server
 |                                       | VMware vCenter Server                  | TCP      | 443                                            | Communication with vSphere infrastructure                                                                                                                                                                                                                                                                                                                                                                        |
 |                                       | Microsoft SQL Server                   | TCP      | 1433                                           | Microsoft SQL Server                                                                                                                                                                                                                                                                                                                                                                                             |
 |                                       |                                        | TCP      | 1434                                           | Microsoft SQL Server. Note: Named instance connection requires UDP 1434                                                                                                                                                                                                                                                                                                                                          |
-|                                       | Virtual Delivery Agent                 | TCP      | 80 (Bidirectional)                             | DDC Controller initiates the connection when discovering local applications or for gathering information about local processes, performance data,and so on                                                                                                                                                                                                                                                       |
+|                                       | Virtual Delivery Agent                 | TCP      | 80 (Bidirectional)                             | DDC Controller initiates the connection when discovering local applications or for gathering information about local processes, performance data, and so on                                                                                                                                                                                                                                                      |
 |                                       | DDC Controller                         | TCP      | 80                                             | Communication between Controllers.                                                                                                                                                                                                                                                                                                                                                                               |
 | Citrix Director and Admin Workstation | Virtual Delivery Agent                 | TCP      | 135, 3389                                      | Communication between Citrix Director and Virtual Delivery Agent for Remote Assistance                                                                                                                                                                                                                                                                                                                           |
 |                                       |                                        | TCP      | 389                                            | LDAP Note: For the logon step, Citrix Director does not contact the AD but does a local logon using the native Windows API– LogonUser (which might internally be contacting the AD).                                                                                                                                                                                                                             |
-| Citrix Workspace app                  | Storefront                             | TCP      | 80, 443                                        | Communication with StoreFront                                                                                                                                                                                                                                                                                                                                                                                    |
+| Citrix Workspace app                  | StoreFront                             | TCP      | 80, 443                                        | Communication with StoreFront                                                                                                                                                                                                                                                                                                                                                                                    |
 |                                       | Virtual Delivery Agent                 | TCP, UDP | 2598                                           | Access to applications and virtual desktops by ICA/HDX with Session Reliability. EDT protocol requires 2598 to be open for UDP.                                                                                                                                                                                                                                                                                  |
 |                                       |                                        | TCP, UDP | 1494                                           | Access to applications and virtual desktops by ICA/HDX. EDT protocol requires 1494 to be open for UDP.                                                                                                                                                                                                                                                                                                           |
 |                                       |                                        | TCP      | 443                                            | Access to applications and virtual desktops by ICA/HDX over SSL                                                                                                                                                                                                                                                                                                                                                  |
@@ -268,8 +268,8 @@ Refer to the following link for Citrix App Layering ports – [Firewall Ports](/
 |                                                                                                                      | Domain Controller     | TCP  | 389          | Communication with Active Directory                                                                                                                                                                                           |
 | Target Device (PVS outbound communication on ports 6901, 6902 and 6905 for Target Devices starting with version 6.0) | Broadcast/DHCPServer  | UDP  | 67, 4011     | Optional: Obtaining network boot information in case DHCP options 66-TFTP Server Name (Bootstrap Protocol Server) and 67-Boot file name (Bootstrap Protocol Client) are not configured or boot from ISO/ local disk not used. |
 |                                                                                                                      | Broadcast/ PXEService | UDP  | 69           | Trivial File Transfer (TFTP) for Bootstrap delivery                                                                                                                                                                           |
-|                                                                                                                      | TFTP Server           | UDP  | 6910         | Target Device logon at Provisioning Services                                                                                                                                                                                  |
-|                                                                                                                      | Provisioning Server   | UDP  | 6910..6930   | vDisk Streaming (Streaming Service) (configurable)                                                                                                                                                                            |
+|                                                                                                                      | TFTP Server           | UDP  | 6910         | Target Device log on at Provisioning Services                                                                                                                                                                                 |
+|                                                                                                                      | Provisioning Server   | UDP  | 6910..6930   | Virtual disk Streaming (Streaming Service) (configurable)                                                                                                                                                                     |
 |                                                                                                                      |                       | UDP  | 6969, 2071   | Two Stage Boot (BDM). Used in boot from ISO or USB scenarios only.                                                                                                                                                            |
 |                                                                                                                      |                       | TCP  | 54321..54323 | SOAP Service – Used by Imaging Wizards                                                                                                                                                                                        |
 | Admin Workstation                                                                                                    | Provisioning Server   | TCP  | 54321..54323 | SOAP Service – Used by Console and APIs (MCLI, PowerShell, etc.)                                                                                                                                                              |
