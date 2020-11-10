@@ -71,7 +71,7 @@ The only Citrix component needed to serve as a channel for communication between
 
 Host management and Machine Creation Management capabilities of Citrix Cloud also require TCP 9350–9354 opened for communications to the Citrix-managed control plane.
 
-Cloud Connectors must be able to connect to Digicert for for certificate revocation checks.
+Cloud Connectors must be able to connect to Digicert for certificate revocation checks.
 
 | Source           | Destination                                                              | Type  | Port | Details                                     |
 | ---------------- | ------------------------------------------------------------------------ | ----- | ---- | ------------------------------------------- |
