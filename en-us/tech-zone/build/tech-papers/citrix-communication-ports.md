@@ -72,6 +72,7 @@ The only Citrix component needed to serve as a channel for communication between
 Host management and Machine Creation Management capabilities of Citrix Cloud also require TCP 9350–9354 opened for communications to the Citrix-managed control plane.
 
 Cloud Connectors must be able to connect to Digicert for for certificate revocation checks.
+
 | Source           | Destination                                                              | Type  | Port | Details                                     |
 | ---------------- | ------------------------------------------------------------------------ | ----- | ---- | ------------------------------------------- |
 | Cloud Connectors | `http://*.digicert.com`                                                  | HTTP  | 80   | Periodic Certificate Revocation List checks |
@@ -96,7 +97,7 @@ To find the list of addresses that are common to most Citrix Cloud services and 
 
 By default, the Gateway Service will proxy HDX connections via the Citrix Cloud Connectors, however Rendezvous Protocol changes the flow of HDX connections in an attempt to directly connect the VDA to the Gateway Service bypassing the Citrix Cloud Connectors
 
-### Rendezvous Protocol and HDX Enlightened Data Transport Protocol (EDT)
+#### Rendezvous Protocol and HDX Enlightened Data Transport Protocol (EDT)
 
 | Source          | Destination     | Type | Port      | Details                                                                                                                              |
 | --------------- | --------------- | ---- | --------- | ------------------------------------------------------------------------------------------------------------------------------------ |
