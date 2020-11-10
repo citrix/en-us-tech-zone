@@ -74,10 +74,10 @@ Host management and Machine Creation Management capabilities of Citrix Cloud als
 Cloud Connectors must be able to connect to Digicert for for certificate revocation checks.
 | Source           | Destination                                                              | Type  | Port | Details                                     |
 | ---------------- | ------------------------------------------------------------------------ | ----- | ---- | ------------------------------------------- |
-| Cloud Connectors | <http://*.digicert.com>                                                  | HTTP  | 80   | Periodic Certificate Revocation List checks |
-|                  | <https://*.digicert.com>                                                 | HTTPS | 443  |                                             |
-|                  | <https://dl.cacerts.digicert.com/DigiCertAssuredIDRootCA.crt>            | HTTPS | 443  |                                             |
-|                  | <https://dl.cacerts.digicert.com/DigiCertSHA2AssuredIDCodeSigningCA.crt> | HTTPS | 443  |                                             |
+| Cloud Connectors | `http://*.digicert.com`                                                  | HTTP  | 80   | Periodic Certificate Revocation List checks |
+|                  | `https://*.digicert.com`                                                 | HTTPS | 443  |                                             |
+|                  | `https://dl.cacerts.digicert.com/DigiCertAssuredIDRootCA.crt`            | HTTPS | 443  |                                             |
+|                  | `https://dl.cacerts.digicert.com/DigiCertSHA2AssuredIDCodeSigningCA.crt` | HTTPS | 443  |                                             |
 
 To find the list of addresses that are common to most Citrix Cloud services and their function, refer to [product documentation](/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html#service-connectivity-requirements).
 
