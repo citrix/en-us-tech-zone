@@ -24,8 +24,8 @@ Not all ports need to be open, depending on your deployment and requirements.
 |                   |                                              | UDP      | 162             | Traps from ADC to Citrix ADM Center                                                                                                                                   |
 |                   |                                              | TCP      | 22              | Used by the rsync process during file synchronization in high availability setup                                                                                      |
 |                   | DNS Server                                   | TCP, UDP | 53              | DNS name resolution                                                                                                                                                   |
-|                   | Application Firewall signature URL           | TCP      | 443             | Hosted signature updates on AWS (AWS)                                                                                                                                 |
-|                   | Bot Management signature URL                 | TCP      | 443             | Hosted signature updates on AWS (AWS)                                                                                                                                 |
+|                   | Application Firewall signature URL           | TCP      | 443             | Hosted signature updates on AWS                                                                                                                                       |
+|                   | Bot Management signature URL                 | TCP      | 443             | Hosted signature updates on AWS                                                                                                                                       |
 |                   | ADC lights out management                    | TCP      | 4001, 5900, 623 | Daemon which offers complete and unified configuration management of all the routing protocols                                                                        |
 |                   | Integrated Management Interface              | TCP, UDP | 389             | LDAP connection                                                                                                                                                       |
 |                   | Thales HSM                                   | TCP      | 9004            | RFS and Thales HSM                                                                                                                                                    |
@@ -81,7 +81,7 @@ Cloud Connectors must be able to connect to Digicert for for certificate revocat
 
 To find the list of addresses that are common to most Citrix Cloud services and their function, refer to [product documentation](/en-us/citrix-cloud/overview/requirements/internet-connectivity-requirements.html#service-connectivity-requirements).
 
-## Citrix Cloud - Virtual Apps and Desktops Service
+### Citrix Cloud - Virtual Apps and Desktops Service
 
 | Source                | Destination      | Type  | Port | Details                                                  |
 | --------------------- | ---------------- | ----- | ---- | -------------------------------------------------------- |
@@ -89,10 +89,10 @@ To find the list of addresses that are common to most Citrix Cloud services and 
 | Provisioning Servers  | Cloud Connectors | HTTPS | 443  | Provisioning Server integration with Citrix Cloud Studio |
 | Citrix License Server | Citrix Cloud     | HTTPS | 443  | Citrix License Server integration with Citrix Cloud      |
 
- Read more about Citrix License Server integration [here](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/citrix-cloud-on-premises-registration.html#connectivity-requirements).
- Read more about Citrix Provisioning Server integration [here](https://docs.citrix.com/en-us/provisioning/current-release/configure/cloud-connector.html#firewall-considerations).
+ Read more about Citrix License Server integration [here](/en-us/citrix-cloud/citrix-cloud-management/citrix-cloud-on-premises-registration.html#connectivity-requirements).
+ Read more about Citrix Provisioning Server integration [here](/en-us/provisioning/current-release/configure/cloud-connector.html#firewall-considerations).
 
-## Citrix Cloud - Gateway Service
+### Citrix Cloud - Gateway Service
 
 By default, the Gateway Service will proxy HDX connections via the Citrix Cloud Connectors, however Rendezvous Protocol changes the flow of HDX connections in an attempt to directly connect the VDA to the Gateway Service bypassing the Citrix Cloud Connectors
 
@@ -108,16 +108,16 @@ By default, the Gateway Service will proxy HDX connections via the Citrix Cloud 
   >
   >If using EDT in Microsoft Azure, UDP must be defined on the Citrix Gateway protecting the VDA
 
-Read more about Rendezvous Protocol and HDX Enlightened Data Transport Protocol (EDT) requirements [here](#https://docs.citrix.com/en-us/citrix-gateway-service/hdx-edt-support-for-gateway-service.html).
+Read more about Rendezvous Protocol and HDX Enlightened Data Transport Protocol (EDT) requirements [here](/en-us/citrix-gateway-service/hdx-edt-support-for-gateway-service.html).
 
-## Citrix Cloud - Workspace Environment Management Service
+### Citrix Cloud - Workspace Environment Management Service
 
 | Source    | Destination     | Type  | Port | Details                                                             |
 | --------- | --------------- | ----- | ---- | ------------------------------------------------------------------- |
 | WEM Agent | WEM Service     | HTTPS | 443  | HTTPS based communication between the WEM Agent and the WEM Service |
 | WEM Agent | Cloud Connector | TCP   | 443  | Registration Traffic for WEM Agents                                 |
 
-Read more about Citrix Workspace Environment Management Service requirements [here](#https://docs.citrix.com/en-us/workspace-environment-management/service.html).
+Read more about Citrix Workspace Environment Management Service requirements [here](/en-us/workspace-environment-management/service.html).
 
 ## Citrix Endpoint Management
 
