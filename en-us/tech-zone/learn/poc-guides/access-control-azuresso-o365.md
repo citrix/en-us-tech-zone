@@ -237,7 +237,7 @@ SP-Initiated Validation
 
 *  Launch a browser
 *  Go to the company-defined URL for the SaaS application
-*  The browser redirects to SaaS app then to Citrix Workspace for authentication
+*  The browser redirects to Azure Active Directory then to Citrix Workspace for authentication
 *  Once the user authenticates with the primary user directory, the SaaS app launches with Citrix providing single sign-on
 
 ## Define website filtering policies
