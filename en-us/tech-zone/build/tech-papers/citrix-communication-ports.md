@@ -56,8 +56,11 @@ However, you will not need all the ports to be opened, it will depend on your de
 | Citrix ADM license server | Citrix ADC CPX instance               | TCP    | 27000            | License port for communication between Citrix ADM license server and CPX instance.                                                                            |
 |                           |                                       | TCP    | 7279             | Citrix vendor daemon port.                                                                                                                                    |
 | Citrix ADC                | Citrix ADM                            | TCP    | 5563             | To receive ADC metrics (counters), system events, and Audit Log messages from Citrix ADC instance to Citrix ADM                                               |
-|                           |                                       | TCP    | 5557, 5558       | To receive ADC analytics log data using logstream protocol                                                                                                    |
+|                           |                                       | TCP    | 5557, 5558       | For logstream communication (for Security Insight, Web Insight, and HDX Insight) fron Citrix ADC |
+|                           |                                       | UDP    | 162              | To receive SNMP events from Citrix ADC |
+|                           |                                       | UDP    | 514              | To receive syslog messages from Citrix ADC or Citrix SD-WAN instance |
 |                           |                                       | UDP    | 4739             | To receive ADC analytics log data using IPFIX protocol                                                                                                        |
+| Citrix ADM                | Citrix ADM Agent                      | TCP    | 443, 8443, 7443  | Port for communication between Citrix ADC agent and Citrix ADM |
 
 ## Citrix Cloud
 
