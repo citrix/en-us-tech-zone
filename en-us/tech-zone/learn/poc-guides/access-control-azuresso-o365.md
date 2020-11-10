@@ -237,8 +237,8 @@ SP-Initiated Validation
 
 *  Launch a browser
 *  Go to the company-defined URL for the SaaS application
-*  The browser redirects to Okta then to Citrix Workspace for authentication
-*  Once the user authenticates with the primary user directory, the SaaS app launches with Okta providing single sign-on
+*  The browser redirects to SaaS app then to Citrix Workspace for authentication
+*  Once the user authenticates with the primary user directory, the SaaS app launches with Citrix providing single sign-on
 
 ## Define website filtering policies
 
@@ -246,7 +246,7 @@ Citrix Secure Workspace Access service provides website filtering within SaaS an
 
 *  From Citrix Cloud, **Manage** within the Secure Workspace Access tile
 
-[![Citrix Secure Workspace Access 1](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_access-control-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_access-control-01.png)
+[![Citrix Secure Workspace Access 1](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_secure-workspace-access-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_secure-workspace-access-01.png)
 
 *  If this guide was followed, the **Set up end user authentication** step and the **Configure end user access to SaaS, web and virtual applciations** steps are complete. Select **Configure Content Access**
 *  Select **Edit**
