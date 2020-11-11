@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Frank Srp
 specialThanksTo: Daniel Feller
-description: Securely access corporate web, and SaaS applications, with advanced security controls and website filtering for managed, unmanaged, and BYO devices
+description: Securely access corporate web, and SaaS applications, with advanced security controls and website filtering for managed, unmanaged, and BYO devices.
 ---
 # Secure Workspace Access User Experience
 
