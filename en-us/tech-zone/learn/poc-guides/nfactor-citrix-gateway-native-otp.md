@@ -130,9 +130,9 @@ This registration login schema corresponds to the dual factor authentication whe
 1.  Select `Add` next to `Select Policy`
 1.  Enter name `polfactor0-notpmanage`
 1.  Set the `Action Type` to `NO_AUTHN`
-1.  Paste in `HTTP.REQ.COOKIE.VALUE(“NSC_TASS”).EQ(“manageotp”)` for the expression
-OR build it with Expression builder
+1.  Paste in `HTTP.REQ.COOKIE.VALUE(“NSC_TASS”).EQ(“manageotp”)` for the expression OR build it with Expression builder
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_polfactor0-notpmanageexpr.png)
+**You can optionally limit registration to endpoints on the internal network by adding a source IP address criteria such as** `http.req.cookie.value("NSC_TASS").eq("manageotp") && client.IP.SRC.IN_SUBNET(10.0.0.0/8)`
 1.  Click `Create`, followed by `Add`
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_polfactor0-notpmanage.png)
 1.  Select the green `+` to the right of the `polfactor0-notpmanage` policy you just created
