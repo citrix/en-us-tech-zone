@@ -1,4 +1,4 @@
-# Citrix Tech Zone readmes
+# Citrix Tech Zone readme
 
 ## Welcome to Tech Zone
 
