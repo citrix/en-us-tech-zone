@@ -104,7 +104,7 @@ By default, the Gateway Service will proxy HDX connections via the Citrix Cloud 
 
 | Source          | Destination     | Type | Port      | Details                                                                                                                              |
 | --------------- | --------------- | ---- | --------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| VDA             | Gateway Service | TCP  | 443       | The VDAs must have access to <https://*.nssvc.net>, including all subdomains. Or <https://*.c.nssvc.net> and <https://*.g.nssvc.net> |
+| VDA             | Gateway Service | TCP  | 443       | The VDAs must have access to `https://*.nssvc.net`, including all subdomains. Or `https://*.c.nssvc.net` and `https://*.g.nssvc.net` |
 | VDA             | Gateway Service | UDP  | 443       | EDT UDP over 443 to Gateway Service                                                                                                  |
 | Gateway Service | VDA             | UDP  | 1494/2598 | EDT UDP over 1494/2598 from Gateway Service to VDA                                                                                   |
 
