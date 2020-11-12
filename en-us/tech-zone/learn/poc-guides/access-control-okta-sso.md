@@ -216,7 +216,7 @@ Citrix Secure Workspace Access service provides website filtering within SaaS an
 
 *  From Citrix Cloud, **Manage** within the Secure Workspace Access tile
 
-[![Citrix Secure Workspace Access 1](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_access-control-01.png)
+[![Citrix Secure Workspace Access 1](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_secure-workspace-access-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-okta-sso_secure-workspace-access-01.png)
 
 *  If this guide was followed the **Set up end user authentication** step and the **Configure end user access to SaaS, web and virtual applciations** steps are complete. Select **Configure Content Access**
 *  Select **Edit**
