@@ -58,7 +58,7 @@ Populate the following fields to create the LDAP action and paste the completed 
 *  `alternateEmailAttr` - enter the user domain object attribute where their email address can be retrieved. We enter `otherMailbox`
 
 Once you have constructed the full string for your environment copy and paste it into the CLI:
-`add authentication ldapAction authAct_LDAP_eotp -serverIP 192.168.64.50 -serverPort 636 -ldapBase "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword your_service_account_password -ldapLoginName sAMAccountName -groupAttrName memberOf -subAttributeName cn -secType SSL -ssoNameAttribute userPrincipalName -defaultAuthenticationGroup Email-OTP -alternateEmailAttr otherMailbox`
+`add authentication ldapAction authAct_LDAP_eotp -serverIP 192.168.64.50 -serverPort 636 -ldapBase "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword your_service_account_password -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -ssoNameAttribute userPrincipalName -defaultAuthenticationGroup Email-OTP -alternateEmailAttr otherMailbox`
 
 A variety of tools exist that may be used to populate Active Directory user object attributes. For the POC we use ADSI edit, from 'Server Manager > Tools', to manually add an email address for user1 to it's 'otherMailbox' attribute.
 
@@ -89,7 +89,7 @@ Populate the following fields to create the Email action and paste the completed
 *  `emailAddress` - enter the LDAP object to query for the user email address. We enter `"aaa.user.attribute(\"alternate_mail\")"`
 
 Once you have constructed the full string for your environment copy and paste it into the CLI:
-`add authentication emailAction authAct_Email_eotp -userName admin_matt@workspaces.wwco.net -password your_service_account_password -serverURL "smtps://192.168.64.40:587" -content "Your OTP is $code" -time out 60 -emailAddress "aaa.user.attribute(\"alternate_mail\")"`
+`add authentication emailAction authAct_Email_eotp -userName admin_matt@workspaces.wwco.net -password your_service_account_password -serverURL "smtps://192.168.64.40:587" -content "Your OTP is $code" -timeout 60 -emailAddress "aaa.user.attribute(\"alternate_mail\")"`
 
 #### Email policy
 
@@ -141,6 +141,7 @@ For more information see [Email authentication policies](/en-us/citrix-adc/curre
 1.  Under Select nFactor Flow click the right arrow, select the `nFactor_EmailOTP` flow created earlier
 1.  Click Select, followed by Bind
 ![EMAIL OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_authenticationvserver.png)
+1.  Click Continue, followed by Done
 
 ### Citrix Gateway - virtual server
 
@@ -177,7 +178,11 @@ Now we test Email OTP by authenticating into our Citrix Virtual Apps and Desktop
 
 The Citrix Gateway must be able to authenticate to a mail server with a user name and password in order to originate the client email with the OTP code. If the Citrix Gateway cannot send the email, completion of the first factor will time out after the user submits their user name and password.
 
-*  If your exchange server is configured for Kerberos only by default the Citrix Gateway will not be able to log in.
+*  If your exchange server is configured for NTLM only, by default, the Citrix Gateway will not be able to authenticate. The Citrix Gateway must be able to login with a username and password to compose and send an email with the OTP code. To verify, SSH to the Citrix Gateway, or access the console.
+    *  Enter the `shell` and telnet to the mail server TCP port 25. For example `telnet ipoct1.ipoct2.ipoct3.ipoct4 25`
+    *  Then enter `ehlo`. The result should show `AUTH LOGIN` or `AUTH NTLM LOGIN`.
+![Email OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_ehlo.png)
+If it does not show `LOGIN` for more information see [enable login based authentication on the SMTP server.](/en-us/citrix-adc/current-release/aaa-tm/sspr-support.html#configure-user-logon-page)
 *  You can also use public email servers such as Gmail. When configuring the Email OTP policy enter `smtps://smtp.gmail.com:587` in the email server field.  However, you must configure your firewalls to allow outbound SMTPS on TCP port 587.
 
 ## Summary
