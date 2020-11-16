@@ -57,7 +57,7 @@ This LDAP registration policy is used to exchange, and store the key used to gen
     *  Confirm / Administrator Password - enter / confirm the admin / service account password
     *  Click Test Network Connectivity to ensure connection
     *  Server Logon Name Attribute - in the second field below this field enter `userPrincipalName`
-    *  OTP Secret - Enter `userParameters` **This is the User`s LDAP object that will get updated with the key that`s used with hash to generate the time based OTP code**
+    *  OTP Secret - Enter `userParameters` **This is the User's LDAP object that will get updated with the key that`s used with hash to generate the time based OTP code**
 1.  Select Create
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_actldap-notpmanage.png)
 1.  Enter the expression `true`, and click `OK`
@@ -88,7 +88,7 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 
 ### Login Schemas
 
-Login Schemas are used when data needs to be gathered on behalf of a policy
+Login Schemas are used when data needs to be gathered on behalf of a policy.
 
 #### Native OTP lSchema - Single Authentication
 
@@ -130,9 +130,9 @@ This registration login schema corresponds to the dual factor authentication whe
 1.  Select `Add` next to `Select Policy`
 1.  Enter name `polfactor0-notpmanage`
 1.  Set the `Action Type` to `NO_AUTHN`
-1.  Paste in `HTTP.REQ.COOKIE.VALUE(“NSC_TASS”).EQ(“manageotp”)` for the expression
-OR build it with Expression builder
+1.  Paste in `HTTP.REQ.COOKIE.VALUE(“NSC_TASS”).EQ(“manageotp”)` for the expression OR build it with Expression builder
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_polfactor0-notpmanageexpr.png)
+**You can optionally limit registration to endpoints on the internal network by adding a source IP address criteria such as** `http.req.cookie.value("NSC_TASS").eq("manageotp") && client.IP.SRC.IN_SUBNET(10.0.0.0/8)`
 1.  Click `Create`, followed by `Add`
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_polfactor0-notpmanage.png)
 1.  Select the green `+` to the right of the `polfactor0-notpmanage` policy you just created
@@ -156,7 +156,7 @@ OR build it with Expression builder
 1.  Enter name `polfactor0-notpauth`
 1.  Set the `Action Type` to NO_AUTHN
 1.  Enter `true` for the expression
-1.  Click `Create`, followed by `Add` **Notice that the policy priority has increased to 110 meaning it will be executed only if the above policy `polfactor0-notpmanage` at 100 is not a match**
+1.  Click `Create`, followed by `Add` **Notice that the policy priority has increased to 110 meaning it will be executed only if the above policy `polfactor0-notpmanage` at 100 is not a match.**
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_polfactor0-notpauth.png)
 1.  Select the green `+` to the right of the `polfactor0-notpauth` policy you just created
 1.  Enter `factor1-notpauth`, and click `Create`
@@ -171,7 +171,8 @@ OR build it with Expression builder
 
 This `AAA` Virtual Server is where the policies and schema are bound with the appropriate priority.
 
-1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
+1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain.
+See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
 1.  Next navigate to `Security > AAA - Application Traffic > Virtual Servers`, and select Add
 1.  Enter the following fields:
     *  Name - a unique value. We enter `nativeotp_authvserver`
@@ -254,7 +255,7 @@ Then the user enters their UserPrincipalName, Password, and the OTP Passcode fro
 
 1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://citrixadc5.workspaces.wwco.net`
 1.  After your browser is redirected to a login screen enter user UserPrincipalName, and password
-1.  Open the Citrix SSO app enter the OTP code in the passcode field
+1.  Open the Citrix SSO app enter the OTP code in the passcode field for the `iPhone7_nOTP` device entry
 ![Native OTP Registration](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_notplogins.png)
 1.  Verify the users virtual apps, and desktops are enumerated, and launch once logged in
 ![Native OTP Registration](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_cvadlogin.png)
@@ -273,16 +274,16 @@ Upon login with your OTP code the page may post a message advising you to verify
 
 ### Authentication Errors
 
-*  `Cannot complete your request.` - if this error message occurs after successful authentication it indicates an error passing user credentials to StoreFront. Verify the Dual Authentication schema and Traffic Policy settings.
+*  `Cannot complete your request.` - if this error message occurs after successful authentication it likely indicates an error passing user credentials to StoreFront. Verify the Dual Authentication schema and Traffic Policy settings.
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_cannotcompleteyourrequest.png)
-*  `Try again or contact your help desk` - this error message indicates a LDAP login failure.
+*  `Try again or contact your help desk` - this error message often indicates a LDAP login failure.
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_tryagainorcontactyourhelpdesk.png)
-If you have verified the password is correct verify the Administrator bind password has been set. You may have had an existing LDAP authentication policy, and created the manage policy by selecting it, followed by selecting add. This step saves time by populating existing settings like the `Base DN`, and you may see the Administrator password filed appears to be populated, but you MUST reenter the password.
+If you have verified the password is correct verify the Administrator bind password has been set. You may have had an existing LDAP authentication policy, and created the manage policy by selecting it, followed by selecting add. This step saves time by populating existing settings like the `Base DN`, and you may see the Administrator password field appears to be populated, but you MUST reenter the password.
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_blankadministratorpassword.png)
 
 ## Summary
 
-With Citrix Workspace, and Citrix Gateway Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Users can get access to their Citrix Virtual Apps and Desktops, by entering their standard domain user, and password, and simply confirming their identity by entering a One Time Password from their authenticator app.
+With Citrix Workspace, and Citrix Gateway, Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Users can gain access to their Citrix Virtual Apps and Desktops, by entering their domain username, and password, and then simply confirming their identity by entering a One Time Password from their registered authenticator app.
 
 ## References
 
