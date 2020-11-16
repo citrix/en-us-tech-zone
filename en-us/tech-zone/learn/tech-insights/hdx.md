@@ -1,7 +1,7 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: [Daniel Feller](https://twitter.com/djfeller)
+contributedBy: Daniel Feller
 description: A set of technologies ensuring an unparalleled user experience when accessing virtual Windows/Linux applications and desktops.
 ---
 # HDX
