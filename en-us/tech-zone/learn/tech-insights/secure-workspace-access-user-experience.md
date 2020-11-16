@@ -5,7 +5,7 @@ contributedBy: Frank Srp
 specialThanksTo: Daniel Feller
 description: Securely access corporate web, and SaaS applications, with advanced security controls and website filtering for managed, unmanaged, and BYO devices.
 ---
-# Secure Workspace Access User Experience
+# Secure Workspace Access User Experienc
 
 Citrix introduces Citrix Secure Workspace Access which unlike a traditional VPN, provides a zero trust approach to securely access corporate web, SaaS, and virtual applications. With advanced security controls for managed, unmanaged, and BYO devices, it’s ideal for IT and employees alike.
 
