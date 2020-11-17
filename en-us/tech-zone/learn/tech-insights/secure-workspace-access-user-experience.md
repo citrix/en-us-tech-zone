@@ -37,7 +37,7 @@ See how Citrix Secure Workspaces Access provides Enhanced Security for Web and S
 
 ## Citrix Secure Workspace Access Website Filtering Demo
 
-See how Citrix Secure Workspaces Access provides Website Filtering for Web and SaaS Applications and the end user experience.
+See how Citrix Secure Workspaces Access provides Website Filtering for Web and SaaS Applications and the end user experience
 
 **Watch this video to [see demo](https://youtu.be/KxxNA8Efuh0):**
 
