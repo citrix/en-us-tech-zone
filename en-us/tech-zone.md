@@ -177,6 +177,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Secure Workspace Access for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 
+[Secure Workspace Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-workspace-access-user-experience.html) - Securely access corporate web, and SaaS applications, with advanced security controls and website filtering for managed, unmanaged, and BYO devices.
+
 ### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
 
 [Secure Workspace Access](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Secure Workspace Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
