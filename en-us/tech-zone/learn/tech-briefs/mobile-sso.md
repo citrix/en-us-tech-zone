@@ -19,6 +19,8 @@ As users consume more SaaS-based applications, organizations must be able to uni
 
 Citrix Workspace aggregates all resources into a single, personalized user interface. Users can either opt for a locally installed Workspace App (desktop and mobile) or use their local browsers to access a web-based workspace. Regardless of the selected approach and the chosen device, the experience remains familiar and consistent.
 
+![Citrix Workspace app overview](/en-us/tech-zone/learn/media/tech-briefs_mobile-sso_workspaceapp-overview.png)
+
 ### Citrix Endpoint Management Enrollment via the Citrix Workspace
 
 With the Citrix Endpoint Management Service and Workspace integration turned on, the enrollment process is slightly different. The user can now start off enrolling in or authenticating to the Workspace app. Once the user has authenticated, Secure Hub pulls the enrollment URL and use the existing authentication to enroll the device. Secure Hub is still used to install any required certificates, policies, and application on to the device. However, the unified app store is now located within the Workspace app.
