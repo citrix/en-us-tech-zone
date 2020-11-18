@@ -93,13 +93,13 @@ After the Citrix Workspace is configured in Citrix Cloud the new FQDN can be add
 
 ## Deployment Considerations
 
-When a user launches an app within Workspace app, a DNS query, for a FQDN hosted on Citrix Gateways, is relayed to the endpoint's local DNS name server. The local DNS name server may make a recursive query for the it or relay that to a local ISP DNS name server. In response to the DNS query Citrix Gateway Service returns the public IP address of the nearest POP based on the location of the IP address of the ISPs name server/s making the recursive query. Therefore it is essential that name server is in close proximity to the endpoint. If not sessions may incur performance issues.
+When a user launches an app within Workspace app, a DNS query for a FQDN hosted on Citrix Gateways, is relayed to the endpoint's local DNS name server. It typically relays it to an ISP DNS name server which makes a recursive query. As the authoritative name server Citrix Gateway Service returns the public IP address of the nearest POP based on the location of the IP address of the ISPs name server/s making the recursive query. Therefore it is essential that the name server is in close proximity to the endpoint. If not sessions may incur performance issues.
 
 ### Web/SSL Proxy
 
-Exclude Gateway Service FQDNs from any DNS filtering and traffic inspection `(*.nssvc.net / *.g.nssvc.net / *.c.nssvc.net)`
+It is recommended to exclude Gateway Service FQDNs from any DNS filtering and traffic inspection `(*.nssvc.net / *.g.nssvc.net / *.c.nssvc.net)`
 
-For example Proxies can cause the following issues:
+Proxies can cause the following issues:
 
 *  Randomize the DNS source IP, which leads to users being directed to a sub-optimal POP
 *  Add latency to connections that are directed to the wrong POP (100ms+, with excessive jitter)
@@ -114,7 +114,7 @@ To implement it with Zscaler:
 
 ### VPN
 
-Do local breakout for Gateway Service domains `(*.nssvc.net / *.g.nssvc.net / *.c.nssvc.net)`
+It is also recommended for VPNs to do local breakout for Gateway Service domains `(*.nssvc.net / *.g.nssvc.net / *.c.nssvc.net)`
 
 *  Enable split tunneling so that the VPN Client sends only traffic destined for internal networks protected by the VPN tunnel
 *  Traffic destined for Citrix Gateway Service would be sent directly via their local internet rather than being backhauled over the VPN tunnel and internal network
