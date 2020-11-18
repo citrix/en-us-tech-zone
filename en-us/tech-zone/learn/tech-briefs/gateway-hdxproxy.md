@@ -7,7 +7,7 @@ description: Provides users with secure remote access to Citrix Virtual Apps and
 ---
 # Citrix Gateway service for HDX Proxy
 
-Citrix Gateway service for HDX Proxy provides users with secure remote access to CVAD without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls. Citrix hosts the entire infrastructure overhead of managing remote access in the cloud.
+Citrix Gateway service for HDX Proxy provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls. Citrix hosts the entire infrastructure overhead of managing remote access in the cloud.
 
 ## On-Premises vs. Cloud
 
@@ -78,7 +78,7 @@ Citrix Gateway service operates in multiple POPs around the world with ITM, whic
 
 ### Initial Setup
 
-Transitioning access from your On-premises Gateway to Citrix Gateway service begins with creating [your Citrix Cloud environment](https://onboarding.cloud.com/). Afterwards you log in to your environment from Windows Server instances, with network access to your Citrix Virtual Apps and Desktops controllers. Then you can [install Citrix Cloud Connectors]( /en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html) to provide connectivity to Citrix Cloud.
+Transitioning access from your On-premises Gateway to Citrix Gateway service begins with creating [your Citrix Cloud environment](https://onboarding.cloud.com/). Afterwards you log in to your environment from Windows Server instances, with network access to your Citrix Virtual Apps and Desktops controllers. Then you can [install Citrix Cloud Connectors](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html) to provide connectivity to Citrix Cloud.
 ![Cloud Connector](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_4a.png)
 
 ### Initial Configuration
@@ -90,6 +90,42 @@ Once the Citrix Cloud Connectors are installed and up at your Resource Location 
 
 After the Citrix Workspace is configured in Citrix Cloud the new FQDN can be added to the Workspace app. Users can log in with the same AD credentials they would use with the On-premises Citrix Gateway and have the same apps and desktops enumerated.
 ![Workspace app](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_4c.png)
+
+## Deployment Considerations
+
+When a user launches an app within Workspace app, a DNS query for a FQDN hosted on Citrix Gateways, is relayed to the endpoint's local DNS name server. It typically relays it to an ISP DNS name server which makes a recursive query. As the authoritative name server Citrix Gateway Service returns the public IP address of the nearest POP based on the location of the IP address of the ISPs name server/s that made the recursive query. Therefore it is essential that the name server is in close proximity to the endpoint. If not sessions may incur performance issues.
+
+### Web/SSL Proxy
+
+It is recommended to exclude Gateway Service FQDNs from any DNS filtering and traffic inspection `(*.nssvc.net / *.g.nssvc.net / *.c.nssvc.net)`
+
+Proxies can cause the following issues:
+
+*  Randomize the DNS source IP, which leads to users being directed to a sub-optimal POP
+*  Add latency to connections that are directed to the wrong POP (100ms+, with excessive jitter)
+*  TLS inspection breaks Gateway Service since it does not support TLS interception
+
+To implement it with Zscaler:
+
+*  Update your ZPA to bypass certain applications
+*  Under `Edit Application Segment` enter application entries for Gateway Service FQDNs `(*.nssvc.net / *.g.nssvc.net / *.c.nssvc.net)`
+
+    For more information see [ZPA – Configuring Bypass Settings](https://help.zscaler.com/zpa/configuring-bypass-settings)
+
+### VPN
+
+It is recommended for VPNs to implement local breakout for Gateway Service domains `(*.nssvc.net / *.g.nssvc.net / *.c.nssvc.net)`
+
+*  Enable split tunneling, so that the VPN Client sends only traffic destined for internal networks protected by the VPN tunnel
+*  Traffic destined for Citrix Gateway Service would be sent directly via their local internet, rather than being backhauled over the VPN tunnel and internal network
+
+To implement it with Citrix Gateway VPN make the following changes:
+
+*  Enable spit tunneling under the VPN session policy Client Experience tab by setting the “Split Tunnel” field to “ON”
+*  Configure transparent Intranet Application entries with the Internal Network IP address ranges
+*  Under the Client Experience tab, advanced setting, ensure that “Split DNS” is set to Local. Also configure the DNS Suffix List under **Traffic Management > DNS > DNS Suffix**. Matching queries will be forwarded to the gateway, while others will be forwarded to the local DNS
+
+    For more information see [configuring split tunneling in a full VPN setup on Citrix Gateway](/en-us/citrix-gateway/current-release/vpn-user-config/configure-full-vpn-setup.html#to-configure-split-tunneling)
 
 ## Manageability
 
