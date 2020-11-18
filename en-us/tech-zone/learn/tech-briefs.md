@@ -8,7 +8,7 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 ## Citrix Secure Workspace Access
 
-[Secure Workspace Access](/en-us/tech-zone/learn/tech-briefs/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
+[Secure Workspace Access](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html) - With Secure Workspace Access, organizations go beyond access and aggregation to provide IT with policy controls that provide conditional access to cloud apps and internet browsing, enhancing the organization's overall security and compliance posture.
 
 ## Citrix Analytics
 
