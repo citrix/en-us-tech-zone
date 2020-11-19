@@ -33,6 +33,20 @@ A delivery group contains users that have similar requirements for apps and desk
 The users in the delivery group are allocated resources running on pools of machines (machine catalogs) that can service their requests.
 To make accurate decisions about powering on and off machines in a pool, Autoscale must know the capacity of the delivery group. To ensure that Autoscale has an accurate view of hosts that can accept session requests, Autoscale includes only machines that are registered with the service when determining the capacity for a given delivery group.
 
+The following are the benefits that customers gain from Autoscale:
+
+*  **Hybrid multi-cloud load balancing** - Support for selective power management of resources that are only hosted in a resource location or cost more to run, while resources that are on-premises or reserved instances can be kept running 24x7. Enables on demand burst to cloud-based resources and disaster recovery use cases.
+*  **Service Integration** - Autoscale is integrated into the Citrix Cloud console and requires no extra components, apps, scripts to be deployed. Enabled easily from the UI with a few clicks and configured per delivery group.
+*  **Subscription wide support** - Power manages machines throughout a subscription, enabling DR to another region.
+*  **Schedule-based scaling** – Enables a defined number of machines to be kept powered on during peak hours and this schedule is configurable for different days in the week.
+*  **Buffer capacity** - Predefined number of VMs can be powered on before expected concurrent logon time slots, like weekday mornings, to ensure a quick and smooth logon for all users. Buffer capacity is configurable and can be set separately for peak and off peak hours.
+*  **VDI Support** - Support for both single session and multi-session delivery groups.
+*  **Drain mode** – Can isolate VMs that have low user count and not assign new sessions to the them so that they can be shutdown even during peak hours.
+*  **Dynamic Provisioning** - Machines can be created and deleted using Citrix Machine Creation Services, providing additional storage cost savings by deallocating the disk when the machine is not needed.
+*  **More decision parameters** - Power management decision rules can be customized as any combination of CPU, memory, disk utilization and number of sessions.
+*  **Director reporting** - Capacity planning and power management cost savings reported in the monitoring console.
+*  **Power off delay** – Ensures machines don’t keep flapping between on and off states. The period after a powered on machine can be switched off is configurable.
+
 Autoscale enables the admin to perform power management based on the following two settings:
 
 1.  Schedule-based scaling
