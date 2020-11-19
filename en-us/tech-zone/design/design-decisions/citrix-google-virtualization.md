@@ -491,7 +491,7 @@ Some resources are unique, highly scalable, and must be available for a Citrix v
 
 For VDA instances, the choice isn’t quite as simple, but the more clearly you understand your demand patterns, the more clear the choice will be. It all boils down to how long the VDA will need to be powered on for. Consider the following chart (specific to **N1 instance types**), which is reproducible with a bit of back-of-the-envelope math:
 
-![break-even](/en-us-tech-zone/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_break-even.png)
+![break-even](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_break-even.png)
 
 This diagram shows that if a resource (running on an N1 instance type) will be on for over 50% of the time during a given billing cycle, you start saving money if you can leverage 3 year committed use discounting. The break even point on a 1 year committed use discount is approximately 82% - if a resource is going to be powered on for more than that during a billing cycle (and 3 year committed use isn’t available) then 1 year committed use makes sense.
 
