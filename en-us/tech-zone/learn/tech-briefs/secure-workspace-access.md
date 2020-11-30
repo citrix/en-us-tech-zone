@@ -42,13 +42,13 @@ Examples of primary identities include:
 
 ![Authentication](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_auth.png)
 
-Figure x: Multiple identity providers
+Figure 2: Multiple identity providers
 
 Having primary and secondary identities allows Secure Workspace Access to use a third party to provide single sign-on to SaaS apps. Secure Workspace Access treats the third party as a service provider to provide an identity chain back to the primary user directory. This identity chaining enables customers to stay on their current SSO provider without requiring major changes and layer on enhanced security policies and analytics.
 
 ![Any Identity](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_anyidentity.gif)
 
-Figure 2: Using multiple identity providers
+Figure 3: Using multiple identity providers
 
 Learn more [here](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html)
 
@@ -62,7 +62,7 @@ Once the user is authenticated with a primary identity, the single sign-on featu
 
 ![Single Sign-On](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_saassso.gif)
 
-Figure 3: SSO to SaaS using SAML
+Figure 4: SSO to SaaS using SAML
 
 Learn more [here](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
 
@@ -76,11 +76,15 @@ Learn more [here](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
 
 ![Browser Options ](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsec.png)
 
-Figure x: Multiple browser options
+Figure 5: Multiple browser options
 
 Beside using the local web browser, Citrix offers two alternatives to accessing apps within Workspace.
 
 First, the Citrix Workspace-embedded browser is a Chrome-based browser running on the client machine embedded in the Citrix Workspace security sandbox. Running locally gives end users the best performance for rendering webpages of SaaS applications. The secure sandbox protects the end user and the enterprise against malware, performance degradation, data loss, and unintended end user behavior.
+
+![Workspace App](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_workspaceapp.png)
+
+Figure 6: Citrix Workspace-embedded browser
 
 Second, the Citrix Secure Browser Service is a cloud hosted browser service that does not require any browser to be installed on end user devices. The Secure Browser service is essentially a virtualized browser running in Citrix Cloud. This hosted browser service provides a secure way to access internet and corporate browser-based applications. It creates an air gap between the browser and users, devices, and networks, protecting them from dangerous malware.
 
@@ -90,13 +94,13 @@ Secure Workspace Access has a large database of URIs that are risk scored and ad
 
 ![Browser Isolation](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_browseiso.gif)
 
-Figure 4: Web browser isolation with the Citrix Workspace-embedded browser and Secure Browser Service
+Figure 7: Web browser isolation with the Citrix Workspace-embedded browser and Secure Browser Service
 
 The following diagram contrasts the communication flow to sanctioned SaaS apps when using Workspace App with embedded browser versus a local browser.
 
 ![Enhanced Security Flow Diagram](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsecdiag.png)
 
-Figure x: Enhanced Security Flow Diagram
+Figure 8: Enhanced Security Flow Diagram
 
 ## Enhanced Security
 
@@ -113,7 +117,7 @@ Referred to as Cloud App Control, this capability provides IT with a way to enfo
 
 ![Enhanced Security](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsecweb.gif)
 
-Figure 5: Enhanced Security policies with an internal web app
+Figure 9: Enhanced Security policies with an internal web app
 
 ## App Protection
 
@@ -130,7 +134,7 @@ A less malicious but equally dangerous risk is accidental screen sharing. The li
 
 ![App Protection](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_appprotslack.gif)
 
-Figure 6: App Protection policies protecting Citrix Workspace privacy while using a screen sharing app
+Figure 10: App Protection policies protecting Citrix Workspace privacy while using a screen sharing app
 
 ## Web Filtering
 
@@ -140,7 +144,7 @@ The web filtering controller uses a categorization database and URLs list. When 
 
 ![Web Filtering](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_urlfilter.png)
 
-Figure x: Web Filtering Process
+Figure 11: Web Filtering Process
 
 Admins can take a cautious approach even for accessing allow list URLs. This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet.
 
@@ -148,13 +152,13 @@ A traditional URL filtering engine that assumes trust for a allow list URL. Secu
 
 ![Web Filtering](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_websitefilter.gif)
 
-Figure 7: Web filtering policies protecting end users who inadvertently access sites on the block list
+Figure 12: Web filtering policies protecting end users who inadvertently access sites on the block list
 
 The following diagram contrasts the communication flow to URLs within sanctioned SaaS apps when using Workspace App with embedded browser versus a local browser.
 
 ![Enhanced Security Flow Diagram](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_urlfilterdiag.png)
 
-Figure x: URL Filter Flow Diagram
+Figure 13: URL Filter Flow Diagram
 
 ## Security Analytics
 
@@ -201,7 +205,7 @@ Workspace is able to create a connection to on-premises web apps without relying
 
 ![VPN-less Access](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_usecase1.png)
 
-Figure 8: Use Case 1: VPN-less Access
+Figure 14: Use Case 1: VPN-less Access
 
 ### SSO and Security Controls for SaaS Apps
 
@@ -229,7 +233,7 @@ Browser isolation for internet traffic protects end users and enterprises from w
 
 ![SSO and Security Controls for SaaS Apps](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_usecase2.png)
 
-Figure 9: Use Case 2: SSO and Security Controls for SaaS Apps
+Figure 15: Use Case 2: SSO and Security Controls for SaaS Apps
 
 ### Protecting User and Corporate Data on BYO and Unmanaged Endpoints
 
@@ -243,7 +247,7 @@ The App Protection feature makes the text entered by the user indecipherable by 
 
 ![Protecting User and Corporate Data on BYO and Unmanaged Devices](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_usecase3.png)
 
-Figure 10: Use Case 3: Protecting user and Corporate Data on BYO and Unmanaged Devices
+Figure 16: Use Case 3: Protecting user and Corporate Data on BYO and Unmanaged Devices
 
 ## Summary
 
