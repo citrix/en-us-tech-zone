@@ -132,6 +132,10 @@ Figure 6: App Protection policies protecting Citrix Workspace privacy while usin
 
 The web filtering controller uses a categorization database and URLs list. When the request comes to the web filtering controller, it first checks the global allow list which also contains critical Citrix Cloud URLs. Then it checks to "Lists and Categorization" and verifies with blocked and allowed and redirect to Secure Browser URLs. If none of the URLs match, then by default it falls back to the default list.
 
+![Web Filtering](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_urlfilter.png)
+
+Figure x: Web Filtering Process
+
 Admins can take a cautious approach even for accessing allow list URLs. This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet.
 
 A traditional URL filtering engine that assumes trust for a allow list URL. Secure Workspace Access does not implicitly trust an allow list URL since webpages, deemed safe by URL filtering engines, can host malicious links. With Secure Workspace Access, URLs on trusted sites are also tested.
