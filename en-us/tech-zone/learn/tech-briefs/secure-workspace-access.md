@@ -40,7 +40,7 @@ Examples of primary identities include:
 *  Citrix Gateway: Organizations can utilize an on-premises Citrix Gateway to act as an identity provider for Citrix Workspace.
 *  Okta: Organizations can use Okta as the primary user directory for Citrix Workspace.
 
-![Authentication](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-auth.png)
+![Authentication](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_auth.png)
 
 Figure x: Multiple identity providers
 
