@@ -40,6 +40,10 @@ Examples of primary identities include:
 *  Citrix Gateway: Organizations can utilize an on-premises Citrix Gateway to act as an identity provider for Citrix Workspace.
 *  Okta: Organizations can use Okta as the primary user directory for Citrix Workspace.
 
+![Authentication](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-auth.png)
+
+Figure x: Multiple identity providers
+
 Having primary and secondary identities allows Secure Workspace Access to use a third party to provide single sign-on to SaaS apps. Secure Workspace Access treats the third party as a service provider to provide an identity chain back to the primary user directory. This identity chaining enables customers to stay on their current SSO provider without requiring major changes and layer on enhanced security policies and analytics.
 
 ![Any Identity](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_anyidentity.gif)
