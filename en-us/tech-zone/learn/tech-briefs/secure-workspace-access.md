@@ -74,6 +74,10 @@ Learn more [here](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
 *  Launch the application in the embedded browser within Citrix Workspace
 *  Launch the application in a Secure Browser session — a virtualized browser
 
+![Browser Options ](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsec.png)
+
+Figure x: Multiple browser options
+
 Beside using the local web browser, Citrix offers two alternatives to accessing apps within Workspace.
 
 First, the Citrix Workspace-embedded browser is a Chrome-based browser running on the client machine embedded in the Citrix Workspace security sandbox. Running locally gives end users the best performance for rendering webpages of SaaS applications. The secure sandbox protects the end user and the enterprise against malware, performance degradation, data loss, and unintended end user behavior.
