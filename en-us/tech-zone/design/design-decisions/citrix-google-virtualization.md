@@ -11,20 +11,20 @@ contributedBy: JP Alfaro, Jeff Allen, Stefano Castelli, Gavin Connolly, Kishore 
 
 The goal of this document is to provide targeted, real world guidance for customers and partners looking to find success with Citrix virtualization tech on Google Cloud.
 
-In this guide, we’ll walk you through designing a Citrix virtualization system on GCP. As the journey progresses, we’ll be discussing the implications of the decisions you’ll need to make, and curating additional reference resources along the way. This guide is designed to be a living document, so you’ll want to bookmark it and come back to it periodically to see how things change over time.
+In this guide, we walk you through designing a Citrix virtualization system on GCP. As the journey progresses, we’ll be discussing the implications of the decisions you need to make, and curating more reference resources along the way. This guide is a living document, so you’ll want to bookmark it and check back periodically to see how things change over time.
 
-We’ll start by reviewing the common [design patterns](https://word-view.officeapps.live.com/wv/WordViewer/Document.pdf) for Citrix virtualization technologies on Google Cloud. Some may think of these as ‘reference architectures’, but when we’re working with infrastructure as code and cloud services, ‘design patterns’ make a lot more sense.
+We start by reviewing the common [design patterns](https://word-view.officeapps.live.com/wv/WordViewer/Document.pdf) for Citrix virtualization technologies on Google Cloud. Some may think of these as ‘reference architectures’, but when we’re working with infrastructure as code and cloud services, ‘design patterns’ make a lot more sense.
 
-Next we’ll explore the [Solution Components and Requirements](#solution-components-and-requirements). We’ll lay out the solution prerequisites and give you an overview of what services/components are required to create a Citrix Cloud ‘[resource location](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html)’.
+Next we explore the [Solution Components and Requirements](#solution-components-and-requirements). We lay out the solution prerequisites and give you an overview of what services/components are required to create a Citrix Cloud ‘[resource location](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html)’.
 
-We’ll then re-visit and dig more [deeply into the design patterns](#design-patterns---going-deeper), armed with a greater understanding of the services/components of a Citrix virtualization system on Google Cloud. Finally, we dive deeper into specific topic areas, including [VDA Design and Management](#vda-design-and-management-considerations), [Citrix ADC/Gateway on Google Cloud](#citrix-adc/gateway-vpx-on-google-cloud), and [Citrix StoreFront on Google Cloud](#citrix-storeFront-on-google-cloud).
+We’ll then revisit and dig more [deeply into the design patterns](#design-patterns---going-deeper), armed with a greater understanding of the services/components of a Citrix virtualization system on Google Cloud. Finally, we dive deeper into specific topic areas, including [VDA Design and Management](#vda-design-and-management-considerations), [Citrix ADC/Gateway on Google Cloud](#citrix-adc/gateway-vpx-on-google-cloud), and [Citrix StoreFront on Google Cloud](#citrix-storeFront-on-google-cloud).
 
 As you take this journey with us, we encourage you to share your comments, contributions, questions, suggestions, and feedback along the way. Drop us a line via email to [the Citrix on Google SME working group](mailto:caceb231.citrix.onmicrosoft.com@amer.teams.ms).
 Enough intro for you? Fair enough! Let’s get after this.
 
 ## Design Patterns for Citrix virtualization on Google Cloud
 
-Recognizing that different customers will be at different stages on their journey to “the cloud”, we’ve outlined three design patterns that represent a spectrum from “we’re all in” to “we’ll get there but it may take us a while”. Observant technologists will see the common elements between all three, and start to see how they can mix and match customer managed and cloud services to meet different business needs and environmental influences. We’ll explore this modularity of subsystems when we revisit these [three design patterns later](#design-patterns---going-deeper) in this guide.
+Recognizing that different customers are at different stages on their journey to “the cloud”, we’ve outlined three design patterns that represent a spectrum from “we’re all in” to “we’ll get there but it may take us a while”. Observant technologists will see the common elements between all three, and start to see how they can mix and match customer managed and cloud services to meet different business needs and environmental influences. We explore this modularity of subsystems when we revisit these [three design patterns later](#design-patterns---going-deeper) in this guide.
 
 ### The Cloud Forward Design Pattern
 
@@ -36,7 +36,7 @@ Organizations of all shapes and sizes are making the move to “the cloud” and
 -  Provides high availability of all critical services.  
 -  Creates a Citrix Cloud “[resource location](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html)” - the foundation of the other two patterns outlined here.  
 
-All you need to get started is a GCP Project and access to a Citrix [Cloud Virtual Apps and Desktops service](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/) (“CVADS”) subscription. Evaluation subscriptions to Citrix Cloud are available through Citrix and Citrix authorized resellers, and Google offers new customers a [free trial](https://cloud.google.com/free) which includes $300 of Google Cloud credit.
+All you need to get started is a GCP Project and access to a Citrix [Cloud Virtual Apps and Desktops service](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/) (CVADS) subscription. Evaluation subscriptions to Citrix Cloud are available through Citrix and Citrix authorized resellers, and Google offers new customers a [free trial](https://cloud.google.com/free) which includes $300 of Google Cloud credit.
 
 > **Note:**
 >
@@ -142,7 +142,7 @@ When deploying Active Directory on Google Cloud, customers can build/maintain th
 
 For customers looking to minimize the administrative overhead required to build and maintain functional Active Directory services, the Google [Managed Service for Microsoft Active Directory](https://cloud.google.com/managed-microsoft-ad) (Managed Microsoft AD for short) is an option worth considering. This service provides you with a fully functional Active Directory forest/domain without the overhead of building and maintaining Windows Server VM instances. The Managed Microsoft AD service is built on highly available, Google-managed infrastructure, and delivered as a managed service. Each directory is deployed across multiple GCP zones, and monitoring automatically detects and replaces domain controllers that fail. You do not have to install software, and Google handles all patching and software updates. With Google's Managed Service for Microsoft Active Directory, you can use native Microsoft administrative tools, manage Windows machines and users with Microsoft Group Policy, join VM instances to it, and even setup Active Directory trusts with existing AD instances to support various complex Enterprise scenarios.
 
-Customers who choose to use Google’s Managed AD Service with Citrix virtualization technologies can expect these technologies to just work, though there are a few important things to consider before doing so. For starters - you won't have Domain Administrator, Enterprise Administrator, or other 'super user' type access to the AD instance. You do, however, have full control of your own container at the root of the directory where you can create users, computers, groups, OU's, and group policies. You can also setup and leverage various types of trust relationships with other directories.
+Customers who choose to use Google’s Managed AD Service with Citrix virtualization technologies can expect these technologies to just work, though there are a few important things to consider before doing so. For starters - you won't have Domain Administrator, Enterprise Administrator, or other 'super user' type access to the AD instance. You do, however, have full control of your own container at the root of the directory where you can create users, computers, groups, OU's, and group policies. You can also set up and leverage various types of trust relationships with other directories.
 
 A few other things you CAN NOT do:
 
@@ -210,7 +210,7 @@ Earlier in this document we introduced three different yet related design patter
 
 We mentioned that this is the foundational design pattern for Citrix virtualization on Google Cloud. It should now be clear that the architecture of the cloud forward design pattern creates a Citrix Cloud resource location - this is the common foundation shared across all three patterns presented here. The differences between the patterns lie in which technologies are used to service the five components of a Citrix virtualization system (table below). With the cloud forward design pattern, cloud services are used for all five components:
 
-| Session brokering and administration | Citrix Virtual App and Desktop Service \- ‘CVADS’ \(cloud service\) |
+| Session brokering and administration | Citrix Virtual App and Desktop Service \- (CVADS) \(cloud service\) |
 |--------------------------------------|---------------------------------------------------------------------|
 | User interface \(UI\) services       | Citrix Workspace service \(cloud service\)                          |
 | Authentication                       | Citrix Workspace service, Active Directory as IdP                   |
@@ -231,13 +231,13 @@ To put the hybrid design pattern into the context of the five components of a Ci
 
 | Virtualization system function:      | Provided by:                                                                                                                                          |
 |--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Session brokering and administration | Citrix Virtual App and Desktop Service, ‘CVADS’ \(cloud service\)                                                                                     |
+| Session brokering and administration | Citrix Virtual App and Desktop Service, (CVADS) \(cloud service\)                                                                                     |
 | User interface \(UI\) services       | Citrix Workspace service \(cloud service\) OR Citrix StoreFront \(customer managed\)                                                                  |
 | Authentication                       | Many combinations available to Citrix Workspace service \(cloud service\) OR Citrix StoreFront by introducing Citrix ADC/Gateway \(customer managed\) |
 | HDX session proxy                    | Citrix Gateway Service \(cloud service\) OR Citrix ADC/Gateway \(customer managed\)                                                                   |
 | Analytics                            | Citrix Analytics Service \(cloud service\)                                                                                                            |
 
-Earlier we gave you the high points of when the introduction of Citrix ADC/Gateway and Citrix StoreFront are useful to introduce into the Citrix virtualization system on Google Cloud:
+Earlier we gave you the high points of when the introduction of Citrix ADC/Gateway and Citrix StoreFront is useful to introduce into the Citrix virtualization system on Google Cloud:
 
 -  [Citrix ADC/Gateway](https://www.citrix.com/networking/)(❷): deployed as virtual appliances on GCP, this component is often used for use cases requiring one or more of the following:
     -  Advanced authentication scenarios, such as SAML/OAUTH 2/OpenID federation, RADIUS, smart card, and conditional access requirements.
@@ -251,7 +251,7 @@ Earlier we gave you the high points of when the introduction of Citrix ADC/Gatew
     -  The need to provide multiple ‘stores’ with different configuration properties to support very diverse use cases on the same system.
     -  The need for highly customized and/or branded, HTML based user interfaces.
 
-Note that these are the high points - there are many other functional items you may also find important to consider before choosing between the cloud service or customer managed components. We’ll provide you with a deeper dive into Citrix ADC/Gateway and Citrix Storefront on GCP in later sections but you can leverage different combinations of technologies at each layer to achieve specific outcomes or meet specific needs - at the expense of simplicity.
+Note that these are the high points - there are many other functional items you may also find important to consider before choosing between the cloud service or customer managed components. We’ll provide you with a deeper dive into Citrix ADC/Gateway and Citrix StoreFront on GCP in later sections but you can leverage different combinations of technologies at each layer to achieve specific outcomes or meet specific needs - at the expense of simplicity.
 
 For example: Citrix ADC/Gateway VPX appliances can be added to a system and leveraged for Authentication and/or HDX proxy functionality while leveraging Citrix Workspace for UI services. This gives the system the ability to support almost any identity and authentication strategy (including federation scenarios), plus the ability to leverage HDX’s [Enlightened Data Transport](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/adaptive-transport.html) for the best session performance over sub-optimal networks.
 
@@ -289,7 +289,7 @@ When customers spin up a VCF based SDDC using Google VMware Engine, the SDDC (wh
 >
 > Customers who have a firm requirement for full Citrix App Layering or PVS support should consider running their Citrix Cloud resource location on Google Cloud VMware Engine, as both are currently available on VMware-based platforms.
 
-While design and implementation of a Citrix virtualization solution on Google VMware Engine is outside the scope of this design guide, most of the concepts and components described in this guide still apply. For more information regarding setting up a Citrix Cloud resource location on VMware (Cloud Foundation), see [Citrix Virtual Apps and Desktops service documentation](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/vmware.html).
+While a design and implementation of a Citrix virtualization solution on Google VMware Engine is outside the scope of this design guide, most of the concepts and components described in this guide still apply. For more information regarding setting up a Citrix Cloud resource location on VMware (Cloud Foundation), see [Citrix Virtual Apps and Desktops service documentation](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/vmware.html).
 
 #### Summary
 
@@ -415,7 +415,7 @@ With the appropriate NVIDIA GRID driver installed on the instance, Citrix’s VD
 
 > **Tip:**
 >
-> Citrix’s HDX display protocol stack does a lot of auto-detecting and adapting on the fly to provide the best possible user experience, however it also tries to balance performance, responsiveness, and richness of the UX with bandwidth consumption. As such, graphics intensive workloads often benefit from some fine tuning to get the balance just right. See [HDX Graphics Overview](/en-us/tech-zone/design/design-decisions/hdx-graphics.html) for more information. Note that Citrix does provide a policy template called “Very High Definition User Experience” (as outlined in [Baseline Policy Design](/en-us/tech-zone/design/design-decisions/baseline-policy-design.html)). This template can be used as the starting point for fine tuning to your specific environment.
+> Citrix’s HDX display protocol stack does a lot of auto-detecting and adapting on the fly to provide the best possible user experience, however it also tries to balance performance, responsiveness, and richness of the UX with bandwidth consumption. As such, graphics intensive workloads often benefit from some fine-tuning to get the balance just right. See [HDX Graphics Overview](/en-us/tech-zone/design/design-decisions/hdx-graphics.html) for more information. Note that Citrix does provide a policy template called “Very High Definition User Experience” (as outlined in [Baseline Policy Design](/en-us/tech-zone/design/design-decisions/baseline-policy-design.html)). This template can be used as the starting point for fine-tuning to your specific environment.
 
 ### Fleet and Image Management
 
@@ -497,7 +497,7 @@ Below is a simplified chart illustrating sustained use vs committed use discount
 
 Some resources are unique, highly scalable, and must be available for a Citrix virtualization system to function. As such, they’re commonly run 24/7 and deployed N+1 for availability, and are great candidates for committed use discounting. This includes Active Directory, Citrix Cloud Connectors, Citrix ADC/Gateway VPX, and Citrix StoreFront VM instances.
 
-For VDA instances, the choice isn’t quite as simple, but the more clearly you understand your demand patterns, the more clear the choice will be. It all boils down to how long the VDA will need to be powered on for. Consider the following chart (specific to **N1 instance types**), which is reproducible with a bit of back-of-the-envelope math:
+For VDA instances, the choice isn’t quite as simple, but the more clearly you understand your demand patterns, the clearer the choice will be. It all boils down to how long the VDA will need to be powered on for. Consider the following chart (specific to **N1 instance types**), which is reproducible with a bit of back-of-the-envelope math:
 
 ![break-even](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_break-even.png)
 
@@ -509,11 +509,11 @@ Many factors can contribute to the perception of performance users get on your C
 
 **User environment and settings management choices**: Policies are your friend when it comes to managing and optimizing performance for your users. Policies control the configuration of Windows, applications, sessions, and much more. To further complicate things, there are multiple policy engines you can potentially use, each with their own impact on the user experience. Choosing the right policy engine and establishing consistent baselines are important, and fortunately are covered in depth in [Baseline Policy Design](/en-us/tech-zone/design/design-decisions/baseline-policy-design.html). Additionally, the [Citrix Workspace Environment Management service](/en-us/workspace-environment-management/service.html) can be leveraged to optimize the user experience and simplify management in a diverse environment.
 
-**Optimizing Windows**: Windows is a general purpose operating system, and is designed to cover a broad variety of use cases, hardware types, etc. Many of the default settings in Windows are unnecessary in a Citrix virtualization environment. Fortunately [Citrix Optimizer](https://support.citrix.com/article/CTX224676) is available to help, and includes many comprehensive templates you can apply to your VDA’s to get the best possible performance and lowest overall resource utilization.
+**Optimizing Windows**: Windows is a general purpose operating system, and is designed to cover a broad variety of use cases, hardware types, and so on. Many of the default settings in Windows are unnecessary in a Citrix virtualization environment. Fortunately [Citrix Optimizer](https://support.citrix.com/article/CTX224676) is available to help, and includes many comprehensive templates you can apply to your VDA’s to get the best possible performance and lowest overall resource utilization.
 
 **Antivirus tuning**: Running antivirus software on Citrix VDA’s and supporting infrastructure is a solid and recommended practice, however if incorrectly installed/configured, it can wreak havoc on the user experience. See [Endpoint Security and Antivirus Best Practices](/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html) for a great primer on how to get it right.
 
-**HDX Protocol Optimization**: Citrix’s HDX display protocol stack does a lot of auto-detecting and adapting on the fly to provide the best possible user experience. It attempts to balance performance, responsiveness, and richness of the UX with bandwidth consumption. For some use cases (such as graphics intensive workloads, or low/poor quality network connections) often benefit from some fine tuning to get the balance just right. See [HDX Graphics Overview](/en-us/tech-zone/design/design-decisions/hdx-graphics.html) for more information. Citrix’s SD-WAN can also help optimize and [measure the HDX User Experience](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html).
+**HDX Protocol Optimization**: Citrix’s HDX display protocol stack does a lot of auto-detecting and adapting on the fly to provide the best possible user experience. It attempts to balance performance, responsiveness, and richness of the UX with bandwidth consumption. For some use cases (such as graphics intensive workloads, or low/poor quality network connections) often benefit from some fine-tuning to get the balance just right. See [HDX Graphics Overview](/en-us/tech-zone/design/design-decisions/hdx-graphics.html) for more information. Citrix’s SD-WAN can also help optimize and [measure the HDX User Experience](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html).
 
 Additionally, Citrix provides a number of pre-built session policy templates which can be used to flexibly match settings to your specific use case(s). These policies are configured and managed in Citrix Cloud Studio, and can be applied using a number of filters - this allows you to make sure the right policy is applied to optimize specific scenarios.
 
