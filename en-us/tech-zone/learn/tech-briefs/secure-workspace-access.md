@@ -22,7 +22,7 @@ Secure Workspace Access provides instant Single-Sign On (SSO) access to SaaS and
 *  App protection
 *  Analytics
 
-![SWA High level](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_diag.png)
+![Secure Workspace Access High level](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_diag.png)
 
 Figure 1: Secure Workspace Access capabilities
 
@@ -92,6 +92,12 @@ Secure Workspace Access has a large database of URIs that are risk scored and ad
 
 Figure 4: Web browser isolation with the Citrix Workspace-embedded browser and Secure Browser Service
 
+The following diagram contrasts the communication flow to sanctioned SaaS apps when using Workspace App with embedded browser versus a local browser.
+
+![Enhanced Security Flow Diagram](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsecdiag.png)
+
+Figure x: Enhanced Security Flow Diagram
+
 ## Enhanced Security
 
 To protect content, Secure Workspace Access incorporates enhanced security policies within SaaS applications. Each policy enforces a restriction on the embedded browser when using the Workspace app or on the Secure Browser service when using the Workspace on web or mobile.
@@ -143,6 +149,12 @@ A traditional URL filtering engine that assumes trust for a allow list URL. Secu
 ![Web Filtering](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_websitefilter.gif)
 
 Figure 7: Web filtering policies protecting end users who inadvertently access sites on the block list
+
+The following diagram contrasts the communication flow to URLs within sanctioned SaaS apps when using Workspace App with embedded browser versus a local browser.
+
+![Enhanced Security Flow Diagram](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_urlfilterdiag.png)
+
+Figure x: URL Filter Flow Diagram
 
 ## Security Analytics
 
