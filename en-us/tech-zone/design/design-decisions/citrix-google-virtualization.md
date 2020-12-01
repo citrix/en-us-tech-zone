@@ -24,7 +24,7 @@ Enough intro for you? Fair enough! Let’s get after this.
 
 ## Design Patterns for Citrix virtualization on Google Cloud
 
-We recognize that different customers are at different stages on their journey to “the cloud”. As such, we outline three design patterns that represent a spectrum from “we’re all in” to “we'll get there but it can take us a while”. Observant technologists see the common elements between all three, and start to see how they can mix and match customer managed and cloud services to meet different business needs and environmental influences. We explore this modularity of subsystems when we revisit these [three design patterns later](#design-patterns---going-deeper) in this guide.
+We recognize that different customers are at different stages on their journey to “the cloud”. As such, we outline three design patterns that represent a spectrum from “we’re all in” to “we'll get there but it can take us a while”. Observant technologists see the common elements between all three. They start to see how they can mix and match customer managed and cloud services to meet different business needs and environmental influences. We explore this modularity of subsystems when we revisit these [three design patterns later](#design-patterns---going-deeper) in this guide.
 
 ### The Cloud Forward Design Pattern
 
@@ -40,11 +40,11 @@ All you need to get started is a GCP Project and access to a Citrix [Cloud Virtu
 
 > **Note:**
 >
->The GCP free trial does not include the use of Windows Server images, as noted in the [Google Cloud Free Tier document](https://cloud.google.com/free/docs/gcp-free-tier#free-trial). To use Windows Server images you must upgrade to a paid account in GCP. Your free credits still apply when you upgrade to a paid account as noted in the [Upgrading to a paid account section](https://cloud.google.com/free/docs/gcp-free-tier#how-to-upgrade) within the Google Cloud Free Tier document.
+>The GCP free trial does not include the use of Windows Server images, as noted in the [Google Cloud Free Tier document](https://cloud.google.com/free/docs/gcp-free-tier#free-trial). To use Windows Server images you must upgrade to a paid account in GCP. Your free credits still apply when you upgrade to a paid account as noted in the [Upgrading to a paid account section](https://cloud.google.com/free/docs/gcp-free-tier#how-to-upgrade) Google Cloud Free Tier document.
 
-![cloud-forward-design-patern](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_cloud-forward-design-patern.png)
+![Cloud Forward Design Pattern](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_cloud-forward-design-pattern.png)
 
-This design pattern utilizes more than one of all key resources (➊) deployed in separate zones in a given Google Cloud region for high availability.
+This design pattern uses more than one of all key resources (➊) deployed in separate zones in a given Google Cloud region for high availability.
 
 Citrix Cloud Connectors (❷) are responsible for communications to and from Citrix Cloud (❻), using outbound TLS connections to Citrix Cloud services over the Internet. Once installed on domain-joined Windows Server VM instances, the Cloud Connector software is automatically updated and maintained by Citrix Cloud.
 
@@ -65,7 +65,7 @@ This design pattern can also be paired with a Google Cloud VPN/Interconnect, or 
 
 ### The Hybrid Design Pattern
 
-The Hybrid design pattern builds upon the Cloud Forward design pattern, introducing customer-managed access layer components from Citrix (➊) to flexibly meet the needs of specific customer demographics/use cases. These customer-managed components include the following:
+The Hybrid design pattern builds upon the Cloud Forward design pattern. It introduces customer-managed access layer components from Citrix (➊) to flexibly meet the needs of specific customer demographics and use cases. These customer-managed components include the following:
 
 -  [Citrix ADC/Gateway](https://www.citrix.com/networking/)(❷): deployed as virtual appliances on GCP, this component is often used for use cases requiring one or more of the following:  
     -  Advanced authentication scenarios, such as SAML/OAUTH 2/OpenID federation, RADIUS, smart card, and conditional access requirements.  
@@ -81,21 +81,21 @@ The Hybrid design pattern builds upon the Cloud Forward design pattern, introduc
 
 ![hybrid-design-pattern](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_hybrid-design-pattern.png)
 
-With the Hybrid design pattern, Citrix access layer components are deployed in the customer’s Google Cloud environment (➊), typically in pairs spread across multiple zones for high availability.
+With the Hybrid design pattern, Citrix access layer components are deployed in the customer’s Google Cloud environment (➊). The components are typically deployed in pairs spread across multiple zones for high availability.
 
-This pattern uses Citrix’s ADC/Gateway VPX (virtual) appliances to securely proxy HDX sessions into the VDAs in the customer’s environment (❷). Citrix ADC/Gateway appliances can be used with the Citrix Workspace service for simple session proxy services or complex authentication scenarios, or both (UI option A), or it can be paired with Citrix StoreFront (UI option B).
+This pattern uses Citrix’s ADC/Gateway VPX (virtual) appliances to securely proxy HDX sessions into the VDAs in the customer’s environment (❷). Citrix ADC/Gateway appliances can be used with the Citrix Workspace service for simple session proxy services or complex authentication scenarios, or both (UI option A). It can also be paired with Citrix StoreFront (UI option B).
 
 This pattern optionally uses Citrix StoreFront (❸) for UI services, allowing the system to meet the requirements for more complex use cases as outlined above. It pairs with Citrix ADC/Gateway, which handles authentication in addition to UI and HDX session proxy services.
 
 ### The Cloud Migration Design Pattern
 
-The Cloud Migration design pattern further builds upon the Hybrid design pattern, allowing customers with existing investments in Citrix technologies to systematically modernize their infrastructure, seamlessly migrating workloads to the cloud at a pace that doesn't disrupt existing/critical systems and use cases. It allows technologically conservative customers to ‘wade’ into the Cloud, workload by workload, mitigating risk along the way on the customer’s terms. It also allows the customer to systematically reskill staff on the latest, most capable technologies from Citrix and Google, and build their organizational cloud readiness at a manageable pace while using their existing investments in technology, infrastructure, knowledge, processes, and operationalization procedures.
+The Cloud Migration design pattern further builds upon the Hybrid design pattern. It allows customers with existing investments in Citrix technologies to systematically modernize their infrastructure, while seamlessly migrating workloads to the cloud. This migration can be done at a pace that doesn't disrupt existing/critical systems and use cases. It allows technologically conservative customers to ‘wade’ into the Cloud, workload by workload, mitigating risk along the way on the customer’s terms. It also allows the customer to systematically reskill staff on the latest, most capable technologies from Citrix and Google, and build their organizational cloud readiness at a manageable pace while using their existing investments in technology, infrastructure, knowledge, processes, and operationalization procedures.
 
 The cloud migration design pattern starts with the hybrid pattern described in the preceding section. The system built with the hybrid pattern becomes the new, state of the art environment where new workloads are deployed. The cloud migration pattern uses Citrix StoreFront(➊) or the Citrix Workspace (❷) user interface, or both to connect legacy Citrix environments (❸) to the new environment, as both UIs can present multiple brokering environments in a single view with a single login. This provides users with a single UI (❹) they can use to access both environments. This allows the customer to deploy new workloads onto Google Cloud (❺), while systematically migrating existing workloads to Google Cloud as the businesses opportunities and constraints dictate.
 
 ![cloud-migration-design-pattern](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_cloud-migration-design-pattern.png)
 
-Now that you’ve reviewed the design patterns, let’s peel back the layers a bit and explore what it takes to build a Citrix virtualization system on Google Cloud.
+Now that you’ve reviewed the design patterns, let’s peel back the layers a bit. Let's explore what it takes to build a Citrix virtualization system on Google Cloud.
 
 ## Solution Components and Requirements
 
@@ -122,9 +122,9 @@ The foundation of a Citrix virtualization system on Google Cloud is a Citrix Clo
 
 > **Tip:**
 >
-> One key rule of thumb for delivering virtualized applications to be aware of - you want to put the apps (running on the Citrix VDAs) near the data (infrastructure required for the apps). Not having apps and data local to each other can result in increased latency and slower applications, which can ultimately cause a degraded user experience.
+> One key rule of thumb for delivering virtualized applications to be aware of. You want to put the apps (running on the Citrix VDAs) near the data (infrastructure required for the apps). Not having apps and data local to each other can result in increased latency and slower applications, which can ultimately cause a degraded user experience.
 
-Resource locations are typically built to be highly available, meaning your key services are spread across zones in the GCP region, and where applicable, more than one VM instance for key services are deployed for availability and manageability purposes. The key services you need to have in a resource location are:
+Resource locations are typically built to be highly available, meaning your key services are spread across zones in the GCP region. Where applicable, more than one VM instance for key services are deployed for availability and manageability purposes. The key services you need to have in a resource location are:
 
 -  *Microsoft Active Directory
 -  *Citrix Cloud Connectors
@@ -142,15 +142,15 @@ When deploying Active Directory on Google Cloud, customers can build/maintain th
 
 For customers looking to minimize the administrative overhead required to build and maintain functional Active Directory services, the Google [Managed Service for Microsoft Active Directory](https://cloud.google.com/managed-microsoft-ad) (Managed Microsoft AD for short) is an option worth considering. This service provides you with a fully functional Active Directory forest/domain without the overhead of building and maintaining Windows Server VM instances. The Managed Microsoft AD service is built on highly available, Google-managed infrastructure, and delivered as a managed service. Each directory is deployed across multiple GCP zones, and monitoring automatically detects and replaces domain controllers that fail. You do not have to install software, and Google handles all patching and software updates. With Google's Managed Service for Microsoft Active Directory, you can use native Microsoft administrative tools, manage Windows machines and users with Microsoft Group Policy. You can also join VM instances to it, and even setup Active Directory trusts with existing AD instances to support various complex Enterprise scenarios.
 
-Customers who choose to use Google’s Managed AD Service with Citrix virtualization technologies can expect these technologies to work, though there are a few important things to consider before doing so. For starters - you won't have Domain Administrator, Enterprise Administrator, or other 'super user' type access to the AD instance. You do, however, have full control of your own container at the root of the directory where you can create users, computers, groups, OU's, and group policies. You can also set up and use various types of trust relationships with other directories.
+Customers who choose to use Google’s Managed AD Service with Citrix virtualization technologies can expect these technologies to work, with a few important things to consider before doing so. For starters - you won't have Domain Administrator, Enterprise Administrator, or other 'super user' type access to the AD instance. You do, however, have full control of your own container at the root of the directory where you can create users, computers, groups, OU's, and group policies. You can also set up and use various types of trust relationships with other directories.
 
 A few other things you CAN NOT do:
 
--  Create AD objects in any of the default containers (such as /Computers): they're read-only. This brings up a common mistake some customers make when using Citrix's Machine Creation Services (MCS) provisioning technology: you must choose to create the machine accounts for your MCS managed VDAs in a container/OU that's writeable - if you don't choose such a location, MCS is not able to create the machine accounts.
--  Install and configure some AD integrated features such as Certificate Services. As such, this impacts customers who plan to use Citrix's Federated Authentication Services ("FAS") technology (which requires AD integrated Certificate Services): these customers must build and manage their own Active Directory on Google Cloud using Windows Server VM instances.
+-  Create AD objects in any of the default containers (such as /Computers): they're read-only. This brings up a common mistake some customers make when using Citrix's Machine Creation Services (MCS) provisioning technology: you must choose to create the machine accounts for your MCS managed VDAs in a container/OU that's writeable. If you don't choose such a location, MCS is not able to create the machine accounts.
+-  Install and configure some AD integrated features such as Certificate Services. As such, this impacts customers who plan to use Citrix's Federated Authentication Services (FAS) technology, which requires AD integrated Certificate Services. These customers must build and manage their own Active Directory on Google Cloud using Windows Server VM instances.
 -  Have local Server Administrator equivalence by default. In an 'out of the box' Active Directory installation, the Domain Administrators group is added to the local Server Administrators group by default. If you're using the Google Managed Service for Microsoft AD, you may have to create your own server administrators' group, add your own users to it, create and apply a group policy to add your group to the built-in Server Administrators group on member servers/workstations.
 
-While trust relationships, site/service configuration, replication, and other AD related topics are not covered in this paper, Citrix has provided extensive documentation on these topics applicable to all three deployment models.
+While trust relationships, site/service configuration, replication, and other AD related topics are not covered here, Citrix has provided extensive documentation on these topics applicable to all three deployment models.
 
 > **Note:**
 >
@@ -160,13 +160,13 @@ While trust relationships, site/service configuration, replication, and other AD
 
 > **Important:**
 >
-> DNS name resolution is important for a properly functioning system. DHCP on GCP always uses Google’s name servers. For VM instances to ‘find’ and join your Active Directory instance on GCP, you want to implement [private managed DNS zones](https://cloud.google.com/dns/docs/overview#dns-private-zones), though this is not necessary if using the Managed Microsoft AD service. See Google [Cloud DNS overview](https://cloud.google.com/dns/docs/overview) for more information.
+> DNS name resolution is important for a properly functioning system. DHCP on GCP always uses Google’s name servers. For VM instances to ‘find’ and join your Active Directory instance on GCP, you want to implement [private managed DNS zones](https://cloud.google.com/dns/docs/overview#dns-private-zones), though not necessary if using the Managed Microsoft AD service. See Google [Cloud DNS overview](https://cloud.google.com/dns/docs/overview) for more information.
 >
 > DNS name resolution is also important when implementing Citrix’s Rendezvous feature for HDX session proxy, including usage of [EDT/Citrix adaptive transport](/en-us/citrix-virtual-apps-desktops-service/hdx/adaptive-transport.html). See [Rendezvous protocol](/en-us/citrix-virtual-apps-desktops-service/hdx/rendezvous-protocol.html) documentation for more details.
 
 ### Citrix Cloud Connectors
 
-Citrix Cloud Connectors, which install on dedicated, domain joined Windows Server instances in separate zones in the region, function as a secure, cloud managed proxy for the Citrix virtualization system. It also functions as an offline session broker if Internet access is interrupted (“local host cache mode’) - useful for mission critical deployments with extreme availability requirements. We discuss this function in more detail as we get into the Hybrid design pattern later on in this document.
+Citrix Cloud Connectors function as a secure, cloud managed proxy for the Citrix virtualization system. Cloud Connectors are dedicated, domain joined Windows Server instances in seperate zones within a region. It also functions as an offline session broker if Internet access is interrupted (“local host cache mode’) - useful for mission critical deployments with extreme availability requirements. We discuss this function in more detail as we get into the Hybrid design pattern later on in this document.
 
 Cloud Connectors are typically deployed as an N+1 resource, using VM instances spread across multiple zones in a given region. This enables a resource location to scale and facilitates the automatic update of the Cloud Connector software.
 
@@ -182,7 +182,7 @@ Cloud Connectors can sit on any VPC where they can reach Active Directory and th
 
 ### Citrix VDAs
 
-The last resource type you need to have a functional Citrix virtualization system are called VDAs - and they’re the actual workload you’re delivering. As mentioned earlier, these are Windows or Linux VM instances running Citrix’s “Virtual Delivery Agent” software, which enables the desktop or application user interfaces to be remoted to client devices using Citrix’s HDX display protocol. VDAs can be created and managed outside of the system using any provisioning mechanism you’d like (Google Deployment Manager templates, for example), but for any type of scale, you want to use Citrix’s MCS technology.
+The last resource type you need to have a functional Citrix virtualization system are called VDAs - and they’re the actual workload you’re delivering. As mentioned earlier, these are Windows or Linux VM instances running Citrix’s “Virtual Delivery Agent” software, which enables the desktop or application user interfaces to be remoted to client devices using Citrix’s HDX display protocol. VDAs can be created and managed outside of the system using any provisioning mechanism you’d like. For example, you can use Google Deployment Manager templates, but for any type of scale, you want to use Citrix’s MCS technology.
 
 MCS automates the creation of ‘machine catalogs’ - groups of identically configured VDAs built from one or more ‘golden master’ VM instances. MCS uses snapshots of the persistent disk to capture the state of the operating system and application stack installed. It also uses the instance attributes of your ‘golden master’ VM instance to create instance templates, which apply these attributes to VDAs under MCS management. MCS also automates the updating of the system disk on the VDAs using similar snapshots of the ‘golden master’ disk, and orchestrates the Autoscale feature’s efforts to automatically manage cost and capacity.
 
@@ -208,7 +208,7 @@ Earlier in this document we introduced three different yet related design patter
 
 ### The Cloud Forward Design Pattern
 
-We mentioned that this is the foundational design pattern for Citrix virtualization on Google Cloud. It ought to be clear that the architecture of the cloud forward design pattern creates a Citrix Cloud resource location - this is the common foundation shared across all three patterns presented here. The differences between the patterns lie in which technologies are used to service the five components of a Citrix virtualization system outlined in the following table. With the cloud forward design pattern, cloud services are used for all five components:
+We mentioned that this is the foundational design pattern for Citrix virtualization on Google Cloud. It ought to be clear that the architecture of the cloud forward design pattern creates a Citrix Cloud resource location. This is the common foundation shared across all three patterns presented here. The differences between the patterns lie in which technologies are used to service the five components of a Citrix virtualization system outlined in the following table. With the cloud forward design pattern, cloud services are used for all five components:
 
 | Session brokering and administration | Citrix Virtual App and Desktop Service \- (CVADS) \(cloud service\) |
 |--------------------------------------|---------------------------------------------------------------------|
@@ -217,9 +217,9 @@ We mentioned that this is the foundational design pattern for Citrix virtualizat
 | HDX session proxy                    | Citrix Gateway Service \(cloud service\)                            |
 | Analytics                            | Citrix Analytics Service \(cloud service\)                          |
 
-![cloud-forward-design-patern](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_cloud-forward-design-patern.png)
+![Cloud Forward Design Pattern](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_cloud-forward-design-pattern.png)
 
-The cloud forward design pattern can be replicated, using the same Active Directory (or not) in different Google Cloud regions. This makes the pattern useful for deployments with geographically distributed applications and data. This pattern, for production deployments, is often extended by connecting the resource location in GCP to customer managed data centers using [Google Cloud VPN](https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview), [Google Cloud Interconnect](https://cloud.google.com/network-connectivity/docs/interconnect/concepts/overview), or a purpose built product like [Citrix’s SD-WAN](https://www.citrix.com/products/citrix-sd-wan/). Such a private network connection allows you to extend key services (such as Microsoft Active Directory) up into Google Cloud. This can also provide VDAs with access to applications and resources that have not yet been migrated, and act as a conduit to migrate apps and data up into Google Cloud. While not shown in the preceding diagram, the [Citrix Workspace Environment Management service](/en-us/workspace-environment-management/service.html) is commonly used, especially as systems make their way to production. The Workspace Environment Management service uses intelligent resource management and Profile Management technologies to deliver the best possible performance, desktop logon, and application response times for Citrix Virtual Apps and Desktops deployments. See [User Environment/Settings Management](#user-environment/settings-management) later in this guide for more details.
+The cloud forward design pattern can be replicated, using the same Active Directory (or not) in different Google Cloud regions. This makes the pattern useful for deployments with geographically distributed applications and data. This pattern, for production deployments, is often extended by connecting the resource location in GCP to customer managed data centers using [Google Cloud VPN](https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview), [Google Cloud Interconnect](https://cloud.google.com/network-connectivity/docs/interconnect/concepts/overview), or a purpose built product like [Citrix’s SD-WAN](https://www.citrix.com/products/citrix-sd-wan/). Such a private network connection allows you to extend key services (such as Microsoft Active Directory) up into Google Cloud. This can provide VDAs with access to applications and resources that have not yet been migrated. It can also act as a conduit to migrate apps and data up into Google Cloud. While not shown in the preceding diagram, the [Citrix Workspace Environment Management service](/en-us/workspace-environment-management/service.html) is commonly used, especially as systems make their way to production. The Workspace Environment Management service uses intelligent resource management and Profile Management technologies to deliver the best possible performance, desktop logon, and application response times for Citrix Virtual Apps and Desktops deployments. See [User Environment/Settings Management](#user-environment/settings-management) later in this guide for more details.
 
 ### The Hybrid Design Pattern
 
@@ -251,7 +251,7 @@ Earlier we gave you the high points of when the introduction of Citrix ADC/Gatew
     -  The need to provide multiple ‘stores’ with different configuration properties to support diverse use cases on the same system.
     -  The need for highly customized or branded, HTML based user interfaces.
 
-These are the high points - there are many other functional items you may also find important to consider before choosing between the cloud service or customer managed components. We provide you with a deeper dive into Citrix ADC/Gateway and Citrix StoreFront on GCP in later sections but you can use different combinations of technologies at each layer to achieve specific outcomes or meet specific needs - at the expense of simplicity.
+These are the high points - there are many other functional items you may also find important to consider before choosing between the cloud service or customer managed components. We provide you with a deeper dive into Citrix ADC/Gateway and Citrix StoreFront on GCP in later sections. You can use different combinations of technologies at each layer to achieve specific outcomes or meet specific needs - at the expense of simplicity.
 
 For example: Citrix ADC/Gateway VPX appliances can be added to a system and used for Authentication or HDX proxy functionality while using Citrix Workspace for UI services. This gives the system the ability to support almost any identity and authentication strategy (including federation scenarios), plus the ability to use HDX’s [Enlightened Data Transport](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/adaptive-transport.html) for the best session performance over suboptimal networks.
 
@@ -279,7 +279,7 @@ Using [Site Aggregation](/en-us/citrix-workspace/add-on-premises-site.html), cus
 
 If you’re considering the Cloud Migration design pattern, there’s probably a good chance you’re running Citrix on VMware today. For some customers, the option of extending their existing VMware based infrastructure to Google Cloud can be appealing. For these customers, this path promises to expedite workload migrations, using existing knowledge and process investments to get there sooner. With [Google Cloud VMware Engine](https://cloud.google.com/vmware-engine), customers can provision and run [VMware Cloud Foundation](https://www.vmware.com/products/cloud-foundation.html) (VCF) based Software-Defined data centers ([SDDCs](https://www.vmware.com/solutions/software-defined-datacenter/in-depth.html#compute)) on Google Cloud.
 
-Citrix’s Virtual App and Desktops service enables provisioning and image management of VDAs on VMware VCF-based public clouds. Prior to launch, Google Cloud VMware Engine underwent a comprehensive compatibility test to become [Citrix Ready Verified](https://www.citrix.com/blogs/2020/07/30/accelerate-your-move-to-cloud-with-citrix-and-google-cloud/). Both Citrix Provisioning platforms (MCS and PVS) were tested and functioned as expected. For more information, see [Google Cloud VMware Engine on Citrix Ready](https://citrixready.citrix.com/google-inc/google-cloud-vmware-engine.html).
+Citrix’s Virtual App and Desktops service enables provisioning and image management of VDAs on VMware VCF-based public clouds. Before launch, Google Cloud VMware Engine underwent a comprehensive compatibility test to become [Citrix Ready Verified](https://www.citrix.com/blogs/2020/07/30/accelerate-your-move-to-cloud-with-citrix-and-google-cloud/). Both Citrix Provisioning platforms (MCS and PVS) were tested and functioned as expected. For more information, see [Google Cloud VMware Engine on Citrix Ready](https://citrixready.citrix.com/google-inc/google-cloud-vmware-engine.html).
 
 When customers spin up a VCF based SDDC using Google VMware Engine, the SDDC (which includes compute, storage, and networking plus management) is peered to VPC networks on Google Compute Engine. This allows you to run workloads on the SDDC or Google Compute Engine, providing customers with options for various workloads. The following logical diagram depicts the relationship between Google Cloud, Citrix Cloud, and a managed SDDC instance:
 
@@ -287,13 +287,13 @@ When customers spin up a VCF based SDDC using Google VMware Engine, the SDDC (wh
 
 > **Note:**
 >
-> Customers who have a firm requirement for full Citrix App Layering or PVS support ought to consider running their Citrix Cloud resource location on Google Cloud VMware Engine, as both are currently available on VMware-based platforms.
+> Customers who have a firm requirement for full Citrix App Layering or PVS support ought to consider running their Citrix Cloud resource location on Google Cloud VMware Engine. Both Citrix App Layering and PVS are currently available on VMware-based platforms.
 
 While a design and implementation of a Citrix virtualization solution on Google VMware Engine is outside the scope of this design guide, most of the concepts and components described in this guide still apply. For more information regarding setting up a Citrix Cloud resource location on VMware (Cloud Foundation), see [Citrix Virtual Apps and Desktops service documentation](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/vmware.html).
 
 #### Summary
 
-As you can see, these patterns provide maximum flexibility for existing Citrix customers, and allows them to journey to the cloud on their terms. There is no single prescriptive approach, instead, Citrix customers can design a solution and migration approach that best suits their business. To support this, customers who purchase Citrix Cloud Licensing also receive hybrid-use rights, and many also have a Citrix Customer Success Manager assigned to guide them through the process. Ask your Citrix Sales representative for more information.
+As you can see, these patterns provide maximum flexibility for existing Citrix customers, and allows them to journey to the cloud on their terms. There is no single prescriptive approach, instead, Citrix customers can design a solution and migration approach that best suits their business. To support this, customers who purchase Citrix Cloud Licensing also receive hybrid-use rights. Many customers also have a Citrix Customer Success Manager assigned to guide them through the process. Ask your Citrix Sales representative for more information.
 
 Now that we’ve peeled back a couple layers in the context of the design patterns for Citrix virtualization on Google Cloud, let’s dig more deeply into a few more topics.
 
@@ -309,7 +309,7 @@ This is an ambitious amount of knowledge to distill - let’s get after it!
 
 ### Workload Delivery Options and Considerations
 
-As you begin your workload delivery journey, it’s important we start it on the right foot - that means touching on a couple non-VDA specific elements that need to be considered first. One of the most important conversations a good Citrix consultant has with a new customer is about the use cases you’re going to be servicing. These conversations (more than one, because customer needs, business climate, and technology evolve over time) typically lead to the definition of reasonably well-defined groups of users and apps - we call them Delivery Groups. Most of the options we’re going to break down in this section are re-evaluated for each Delivery Group and use case, and it’s common for customers to have quite a bit of variation and even overlap between Delivery Groups. At the end of the day, however, the most foundational element of each Delivery Group is the mix of applications, data, and services to be provided. Once you have that defined, you can begin to evaluate the decisions laid out in this section.
+As you begin your workload delivery journey, it’s important we start it on the right foot. That means touching on a couple non-VDA specific elements that need to be considered first. One of the most important conversations a good Citrix consultant has with a new customer is about the use cases you’re going to be servicing. These conversations (more than one, because customer needs, business climate, and technology evolve over time) typically lead to the definition of reasonably well-defined groups of users and apps - we call them Delivery Groups. Most of the options we’re going to break down in this section are re-evaluated for each Delivery Group and use case. It’s common for customers to have quite a bit of variation and even overlap between Delivery Groups. At the end of the day, however, the most foundational element of each Delivery Group is the mix of applications, data, and services to be provided. Once you have that defined, you can begin to evaluate the decisions laid out in this section.
 
 > **Important:**
 >
@@ -331,7 +331,7 @@ Business applications are often built upon Windows, so a large percentage of Cit
 
 ##### Server or desktop OS?
 
-If you can use Linux as the OS, the choice of ‘server or desktop’ is relatively simple. You need to pick a version that has a GUI, can run [on Google Cloud](https://cloud.google.com/compute/docs/images), and is supported by the [Citrix Linux VDA](/en-us/linux-virtual-delivery-agent/current-release/system-requirements.html).
+If you can use Linux as the OS, the choice of ‘server or desktop’ is relatively simple. You must pick a version that has a GUI, can run [on Google Cloud](https://cloud.google.com/compute/docs/images), and is supported by the [Citrix Linux VDA](/en-us/linux-virtual-delivery-agent/current-release/system-requirements.html).
 
 If you deploy Windows, the choice of server vs. desktop OS gets a bit more complicated. Both options share a common GUI, and both can present users with a virtual desktop. In fact, most Windows applications run on both Windows Server and Windows 10 desktop operating systems, though often application vendors won’t call out Windows Server support in their documentation. The most major implication of Windows Server vs. Windows 10 desktop is licensing - and it’s a large one.
 
@@ -344,7 +344,7 @@ If you’re running Windows on GCP, Windows Server serves most use cases and app
 
 #### Shared OS (multi-user) or single user (“VDI”)?
 
-One common misconception is that Windows Server cannot serve desktop use cases, regardless of whether you are sharing the OS between multiple users or have one OS/VM instance per user - this is false! When deployed in Multi-user mode (that is, RDSH role is installed), Windows Server can present users with a ‘hosted shared’ desktop. Windows Server can also be used for “VDI” use cases, and while not as cost effective or scalable as the multi-user/shared OS option, it’s a legitimate option for a single user desktop. We call this delivery model “Server VDI”.
+One common misconception is that Windows Server cannot serve desktop use cases, regardless of whether you are sharing the OS between multiple users or have one OS/VM instance per user. This misconception is false! When deployed in Multi-user mode (that is, RDSH role is installed), Windows Server can present users with a ‘hosted shared’ desktop. Windows Server can also be used for “VDI” use cases, and while not as cost effective or scalable as the multi-user/shared OS option, it’s a legitimate option for a single user desktop. We call this delivery model “Server VDI”.
 
 To summarize, the following combinations of options/operating systems can be used depending upon the use case:
 
@@ -364,7 +364,7 @@ Most flavors of Linux are multi-user capable out of the box. As such, they can b
 
 #### Published desktops or published apps?
 
-At the end of the day, the virtualized apps you deliver to users in a Citrix virtualization system run on VDAs. You have options for how you present them, which determines how users interact with them. You can present the user with (or “publish”) individual applications and files, or you can present them with a desktop on which they interact with applications and data.
+At the end of the day, the virtualized apps you deliver to users in a Citrix virtualization system run on VDAs. You have options for how you present them, which determines how users interact with them. You can present the user with, or “publish” individual applications and files. You can also present them with a desktop on which they interact with applications and data.
 
 ![published-desktops-published-apps](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_published-desktops-published-apps.png)
 
@@ -391,13 +391,13 @@ There’s more to this choice (and many customers use both), but here’s an att
 
 #### Pooled or persistent?
 
-This choice is another property of the machine catalog and is defined upon catalog creation. The hosted shared delivery model usually uses pooled/non-persistent VDAs, but both VDI models can use either pooled or persistent machine catalogs. With the pooled model, OS instances are reset by MCS on logoff or reboot of the VDA. This ensures that users get a ‘clean’ system image, which is in turn based on your template or ‘golden image’ VM instance(s) and snapshots of it’s persistent disk. They’re referred to as ‘pooled’ as a pool of VDAs are maintained and users are dynamically connected to an available/unused VDA in the pool. User settings and data can be managed several different ways, but with pooled VDAs, they’re handled such that the user gets the same configuration and experience regardless of which VDA they’re logged into. See user environment/settings management in this document for more details on this topic.
+This choice is another property of the machine catalog and is defined upon catalog creation. The hosted shared delivery model usually uses pooled/non-persistent VDAs, but both VDI models can use either pooled or persistent machine catalogs. With the pooled model, OS instances are reset by MCS on logoff or reboot of the VDA. This model ensures that users get a ‘clean’ system image, which is in turn based on your template or ‘golden image’ VM instance(s) and snapshots of it’s persistent disk. They’re referred to as ‘pooled’ as a pool of VDAs are maintained and users are dynamically connected to an available/unused VDA in the pool. User settings and data can be managed several different ways. With pooled VDAs, they’re handled such that the user gets the same configuration and experience regardless of which VDA they’re logged into. See user environment/settings management in this document for more details on this topic.
 
 Persistent machine catalogs contain VDA instances which are assigned to individual users, and they persist between reboots. This model is useful for scenarios where users need to install their own applications (such as developer environments) and use cases where necessary applications are not multi-user compatible.
 
-Pooled instances tend to be the easiest to manage over time since Citrix’s MCS can update the system disks attached to pooled instances with a few clicks. Capacity and cost management also tends to be more effective since an idle pool of instances can serve many users. Pooled instances are a bit less flexible than dedicated since changes to pooled instances don't usually persist between reboots, though technologies such as [Citrix User Personalization Layer](/en-us/citrix-virtual-apps-desktops-service/install-configure/user-personalization-layer.html) can be used to persist user initiated changes across sessions on different pooled VDAs, though it’s only compatible with single user “VDI” use cases.
+Pooled instances tend to be the easiest to manage over time since Citrix’s MCS can update the system disks attached to pooled instances with a few clicks. Capacity and cost management also tends to be more effective since an idle pool of instances can serve many users. Pooled instances are a bit less flexible than dedicated since changes to pooled instances don't usually persist between reboots. Technologies such as [Citrix User Personalization Layer](/en-us/citrix-virtual-apps-desktops-service/install-configure/user-personalization-layer.html) can be used to persist user initiated changes across sessions on different pooled VDAs, though it’s only compatible with single user “VDI” use cases.
 
-Persistent instances can be simpler to deploy, but tougher to manage over time since you have to handle OS/application patching, upgrading, and maintenance inside the VM. It can also be more expensive from a cost/capacity perspective as it is often tough to predict when a user will log on. This means that users must either wait while their instance is started, or administrators must keep them running during time windows where each user is expected to log on.
+Persistent instances can be simpler to deploy, but tougher to manage over time since you have to handle OS/application patching, upgrading, and maintenance inside the VM. It can also be more expensive from a cost/capacity perspective as it is often tough to predict when a user will log on. This means that users must wait while their instance is started, or administrators must keep them running during time windows where each user is expected to log on.
 
 #### Managed or unmanaged?
 
@@ -405,7 +405,7 @@ Catalogs created and managed by MCS can contain persistent or non-persistent clo
 
 ![managed-unmanaged](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_managed-unmanaged.png)
 
-If you don’t use power managed machine catalogs, key features such as Citrix Autoscale will not work, and you won’t have help managing costs and capacity. Using MCS for VDA fleet provisioning and management brings a host of useful benefits to administrators (which we cover in [Fleet and Image Management](#fleet-and-image-management) later in this guide) but ‘unmanaged’ VDAs - those provisioned outside of Citrix - can also be used.
+If you don’t use power managed machine catalogs, key features such as Citrix Autoscale will not work, and you won’t have help managing costs and capacity. Using MCS for VDA fleet provisioning and management brings a host of useful benefits to administrators, but ‘unmanaged’ VDAs - those provisioned outside of Citrix - can also be used. We cover those benefits in [Fleet and Image Management](#fleet-and-image-management) later in this guide.
 
 #### GPU Acceleration?
 
@@ -415,7 +415,7 @@ With the appropriate NVIDIA GRID driver installed on the instance, Citrix’s VD
 
 > **Tip:**
 >
-> Citrix’s HDX display protocol stack does lots of auto-detecting and adapting on the fly to provide the best possible user experience, however it also tries to balance performance, responsiveness, and richness of the UX with bandwidth consumption. As such, graphics intensive workloads often benefit from some fine-tuning to get the balance right. See [HDX Graphics Overview](/en-us/tech-zone/design/design-decisions/hdx-graphics.html) for more information. Note that Citrix does provide a policy template called “Very High Definition User Experience” (as outlined in [Baseline Policy Design](/en-us/tech-zone/design/design-decisions/baseline-policy-design.html)). This template can be used as the starting point for fine-tuning to your specific environment.
+> Citrix’s HDX display protocol stack does lots of auto-detecting and adapting on the fly to provide the best possible user experience. However, it also tries to balance performance, responsiveness, and richness of the UX with bandwidth consumption. As such, graphics intensive workloads often benefit from some fine-tuning to get the balance right. See [HDX Graphics Overview](/en-us/tech-zone/design/design-decisions/hdx-graphics.html) for more information. Note that Citrix does provide a policy template called “Very High Definition User Experience” (as outlined in [Baseline Policy Design](/en-us/tech-zone/design/design-decisions/baseline-policy-design.html)). This template can be used as the starting point for fine-tuning to your specific environment.
 
 ### Fleet and Image Management
 
@@ -427,7 +427,7 @@ Citrix virtualization on Google Cloud includes built in features which are desig
 
 #### MCS Issues and Limitations
 
-MCS has a couple of important limitations you need to know about before deploying a Citrix virtualization system on GCP today. As the MCS feature set is delivered as a cloud service, you can expect this list to change over time as the service evolves, but in the interim, you need to know about them so you can adjust your design and execution plan accordingly.
+MCS has a couple of important limitations you need to know about before deploying a Citrix virtualization system on GCP today. As the MCS feature set is delivered as a cloud service, you can expect this list to change over time as the service evolves. In the interim, you need to know about them so you can adjust your design and execution plan accordingly.
 
 The current known issues/limitations are:
 
@@ -447,7 +447,7 @@ Google Cloud has a feature called sole-tenant nodes which are useful for various
 
  > **Note:**
  >
- > For a good tutorial on deploying Windows 10 on GCP, see the [GCP Windows 10 Sole Tenant with Optional Shared VPC Catalog Creation POC](/en-us/tech-zone/learn/poc-guides/gcp-win10-catalog-creation.html) guide - it covers both custom image import and sole-tenant node usage on GCP.
+ > For a good tutorial on deploying Windows 10 on GCP, see the [GCP Windows 10 Sole Tenant with Optional Shared VPC Catalog Creation POC](/en-us/tech-zone/learn/poc-guides/gcp-win10-catalog-creation.html) guide. The article covers both custom image import and sole-tenant node usage on GCP.
 
 ### Cost Optimization and Capacity Management
 
@@ -465,21 +465,21 @@ When you use MCS to create non-persistent machine catalogs in Compute Engine, MC
 
 #### Rightsizing VDA Instances
 
-Now that you’ve gotten some insight into the important decisions related to workload delivery options, let’s dig into right-sizing your VDA instances. For [VDI based delivery models](#shared-os-(multi-user)-or-single-user-(“vdi”)?), selecting the right instance type is straightforward - assuming you’ve done some homework and have a decent understanding of the resource requirements of the OS, apps, and users of the VDI instances, you can simply map these requirements to the [instance types available in the Google Cloud region](https://cloud.google.com/compute/docs/regions-zones#available) of your choice. Don’t worry if you don’t have a perfect match between available instance types and workload requirements - Google Cloud supports [custom instance types](https://cloud.google.com/custom-machine-types), which allow you to tweak the shapes of your VDA instances as you go. Sustained use and committed use discounts still apply to custom instance types, so don’t let that deter you from adjusting as needed to get the right size up front.
+Now that you’ve gotten some insight into the important decisions related to workload delivery options, let’s dig into right-sizing your VDA instances. For [VDI based delivery models](#shared-os-(multi-user)-or-single-user-(“vdi”)?), selecting the right instance type is straightforward. Assuming you’ve done some homework and have a decent understanding of the resource requirements of the OS, apps, and users of the VDI instances, you can simply map these requirements to the [instance types available in the Google Cloud region](https://cloud.google.com/compute/docs/regions-zones#available) of your choice. Don’t worry if you don’t have a perfect match between available instance types and workload requirements. Google Cloud supports [custom instance types](https://cloud.google.com/custom-machine-types), which allow you to tweak the shape of your VDA instances as you go. Sustained use and committed use discounts still apply to custom instance types, so don’t let that deter you from adjusting as needed to get the right size up front.
 
 Also - Google Cloud’s [sizing recommendations](https://cloud.google.com/compute/docs/instances/apply-sizing-recommendations-for-instances) feature can be used to identify adjustments to VDA shapes you may want to make over time.
 
-![rightsizing-vda-instances](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_rightsizing-vda-instances.png)
+![Rightsizing VDA Instances](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_rightsizing-vda-instances.png)
 
 > **Note:**
 >
-> One important thing to note - workload resource consumption can change over time. Sometimes events/activities reduce resource requirements - like when an administrator applies optimizations to the environment. Conversely, sometimes these requirements go up - like when an OS or app vulnerability is patched or an update is applied. Find your baseline, but it’s important to monitor consumption trends over time and adjust as necessary to find the optimal balance between user performance and costs.
+> One important thing to note - workload resource consumption can change over time. Sometimes events/activities reduce resource requirements - like when an administrator applies optimizations to the environment. Conversely, sometimes these requirements go up, like when an OS or app vulnerability is patched, or an update is applied. Find your baseline, but it’s important to monitor consumption trends over time and adjust as necessary to find the optimal balance between user performance and costs.
 
-When selecting the right instance size for hosted shared VDAs, things get a bit more complicated. What you’re ultimately searching for is a moving target - the right balance of performance, cost, and manageability. To further complicate things, every workload is different - variances between OS, applications, settings, tuning, and user expectations make it tough to nail down the right shapes for your VDAs, and it also tends to change over time too.
+When selecting the right instance size for hosted shared VDAs, things get a bit more complicated. What you’re ultimately searching for is a moving target - the right balance of performance, cost, and manageability. To further complicate things, every workload is different. Variances between OS, applications, settings, tuning, and user expectations make it tough to nail down the right shapes for your VDAs. It also tends to change over time as well.
 
 Fortunately, the tools and techniques for finding that ‘goldilocks’ balance between performance, cost, and manageability are well known and thoroughly documented. One excellent article we’d recommend starting with is [Citrix Scalability in a Cloud World 2018 Edition](https://www.citrix.com/blogs/2018/08/16/citrix-scalability-in-a-cloud-world-2018-edition/). This article is still relevant today as it discusses leading practices regarding instance selection based on performance, manageability, cost, available pricing models, and LoginVSI scalability testing. These concepts and considerations are still valid today, even though instance choices and pricing have likely changed since its initial publication.
 
-Another article worth mentioning is [Right-sizing Citrix on Google Cloud Platform](https://www.citrix.com/blogs/2018/07/23/right-sizing-citrix-xenapp-on-google-cloud-platform/). This article, while also a bit dated, digs even deeper into the considerations and provides an example of how to find the most cost effective instance type based on single VDA scaling and your instance costs.
+Another article worth mentioning is [Right-sizing Citrix on Google Cloud Platform](https://www.citrix.com/blogs/2018/07/23/right-sizing-citrix-xenapp-on-google-cloud-platform/). Although a bit dates, this article digs even deeper into the considerations and provides an example of how to find the most cost effective instance type based on single VDA scaling and your instance costs.
 
 Finally, for extra insight into strategies for optimizing VDA costs, see this [Autoscale tech brief](/en-us/tech-zone/learn/tech-briefs/autoscale.html) on Citrix TechZone. It helps align your instance cost estimates with the capabilities of the [Citrix Autoscale](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html) feature, including the use of vertical load balancing.
 
@@ -501,7 +501,7 @@ For VDA instances, the choice isn’t quite as simple, but the more clearly you 
 
 ![break-even](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_break-even.png)
 
-This diagram shows that if a resource (running on an N1 instance type) will be on for over 50% of the time during a given billing cycle, you start saving money if you can apply 3 year committed use discounting. The break even point on a 1 year committed use discount is approximately 82% - if a resource is going to be powered on for more than that during a billing cycle (and 3 year committed use isn’t available) then 1 year committed use makes sense.
+This diagram shows that if a resource (running on an N1 instance type) will be on for over 50% of the time during a given billing cycle, you start saving money if you can apply 3 year committed use discounting. The break even point on a 1 year committed use discount is approximately 82%. If a resource is going to be powered on for more than that during a billing cycle, and 3 year committed use isn’t available, then a 1 year committed use makes sense.
 
 ### Performance Tuning Considerations
 
@@ -511,17 +511,17 @@ Many factors can contribute to the perception of performance users get on your C
 
 **Optimizing Windows**: Windows is a general purpose operating system, and is designed to cover a broad variety of use cases, hardware types, and so on. Many of the default settings in Windows are unnecessary in a Citrix virtualization environment. Fortunately [Citrix Optimizer](https://support.citrix.com/article/CTX224676) is available to help, and includes many comprehensive templates you can apply to your VDAs to get the best possible performance and lowest overall resource utilization.
 
-**Antivirus tuning**: Running antivirus software on Citrix VDAs and supporting infrastructure is a solid and recommended practice, however if incorrectly installed/configured, it can wreak havoc on the user experience. See [Endpoint Security and Antivirus Best Practices](/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html) for a great primer on how to get it right.
+**Antivirus tuning**: Running antivirus software on Citrix VDAs and supporting infrastructure is a solid and recommended practice. However if incorrectly installed/configured, it can wreak havoc on the user experience. See [Endpoint Security and Antivirus Best Practices](/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html) for a great primer on how to get it right.
 
 **HDX Protocol Optimization**: Citrix’s HDX display protocol stack does many auto-detecting and adapting on the fly to provide the best possible user experience. It attempts to balance performance, responsiveness, and richness of the UX with bandwidth consumption. For some use cases (such as graphics intensive workloads, or low/poor quality network connections) often benefit from some fine-tuning to get the balance right. See [HDX Graphics Overview](/en-us/tech-zone/design/design-decisions/hdx-graphics.html) for more information. Citrix’s SD-WAN can also help optimize and [measure the HDX User Experience](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html).
 
-Also, Citrix provides several pre-built session policy templates which can be used to flexibly match settings to your specific use cases. These policies are configured and managed in Citrix Cloud Studio, and can be applied using various filters - this allows you to make sure the right policy is applied to optimize specific scenarios.
+Also, Citrix provides several pre-built session policy templates which can be used to flexibly match settings to your specific use cases. These policies are configured and managed in Citrix Cloud Studio, and can be applied using various filters. These filters allow you to make sure the right policy is applied to optimize specific scenarios.
 
-![hdx-protocol-optimization](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_hdx-protocol-optimization.png)
+![HDX Protocol Optimization](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_hdx-protocol-optimization.png)
 
 ### User Environment/Settings Management
 
-Designing and managing user settings and data is one of the more complex (and important) elements of a Citrix virtualization system. Done right, session logon/logoff is fast and reliable, apps are pre-configured for users, and users get a consistent, predictable experience regardless of the VDA they log into. Done wrong or ignored, the user experience can suffer dramatically.
+Designing and managing user settings and data is one of the more complex, and important elements of a Citrix virtualization system. When done right, session logon/logoff is fast and reliable. Apps are pre-configured for users, and users get a consistent, predictable experience regardless of the VDA they log into. When done wrong or ignored, the user experience can suffer dramatically.
 
 Fortunately user environment and settings management decisions are common across Citrix virtualization systems, regardless of the platform VDAs are deployed on. They’re also thoroughly documented. These decisions are highly dependent on user location, end user connectivity, and security requirements. As such, we’re not going to cover this topic in depth here, but we get you started with some references. There are many options available that can be tailored to your specific needs.
 
@@ -533,11 +533,11 @@ The following are some links to get you started:
 | [Baseline Policy Design](/en-us/tech-zone/design/design-decisions/baseline-policy-design.html) | This article outlines various policy decisions to be made when using Citrix policies. |
 | [Profile Management](/en-us/profile-management/current-release/profile-management-best-practice.html) | An article outlining some best practices when it comes to Profile Management. |
 | [Plan your deployment](/en-us/profile-management/current-release/plan.html) | A great resource to help plan for Profile Management in a Citrix virtualization system. |
-| [Citrix user personalization layer](/en-us/citrix-virtual-apps-desktops-service/install-configure/user-personalization-layer.html) | For VDI use cases (single user, single OS instance) Citrix’s user personalization layer technology can be used to dramatically simplify system management. Citrix UPL allows administrators to utilize pooled/non-persistent machine catalogs while providing users with a consistent and personalized user experience across VDA instances. The user layer (retained as a virtual hard disk file on a Windows file share) is mounted to the VDA at logon time, and captures user changes inside the session, including user installed applications. The user layer is mounted to the VDA at logon and detached at logoff. |
+| [Citrix user personalization layer](/en-us/citrix-virtual-apps-desktops-service/install-configure/user-personalization-layer.html) | For VDI use cases (single user, single OS instance) Citrix’s user personalization layer technology can be used to dramatically simplify system management. Citrix UPL allows administrators to use pooled/non-persistent machine catalogs while providing users with a consistent and personalized user experience across VDA instances. The user layer is retained as a virtual hard disk file on a Windows file share. It is mounted to the VDA at logon time, and captures user changes inside the session, including user installed applications. The user layer is mounted to the VDA at logon and detached at logoff. |
 
 ### File Storage and Data Replication
 
-Most Citrix virtualization systems on GCP require at least basic access to a Windows compatible file share to persist user settings, user data, and application data. Windows file shares are also used to store [Citrix user personalization layers](/en-us/citrix-virtual-apps-desktops-service/install-configure/user-personalization-layer.html). When these shares are not available, the user experience and application functionality suffer, so it is important to ensure that whatever solution you choose to provide Windows compatible file shares is highly available and data is regularly backed up.
+Most Citrix virtualization systems on GCP require at least basic access to a Windows compatible file share to persist user settings, user data, and application data. Windows file shares are also used to store [Citrix user personalization layers](/en-us/citrix-virtual-apps-desktops-service/install-configure/user-personalization-layer.html). When these shares are not available, the user experience and application functionality suffer. It is important to ensure that whatever solution you choose to provide, Windows compatible file shares are highly available and data is regularly backed up.
 
 For multi-site deployments, reliable and performant data replication may also be necessary to meet availability, RPO, and RTO needs. This is especially true for environments where users can connect to desktops/apps in 2 or more regions, and application data/user settings must be available in the region where the apps/desktops run. The following section describes some solutions to consider for providing file storage and data replication services on GCP.
 
@@ -547,7 +547,7 @@ While non-Windows solutions for providing Windows file shares exist, most of the
 
 The first solution many customers consider for providing Windows compatible file services on GCP is building their own Windows file servers on Compute Engine to serve each resource location on GCP. Since Windows file servers are needed by various different types of applications and workloads, many IT shops can gravitate towards building and managing their own since this is something they know how to do. At the most basic level, the customer creates one or more Windows instances, attaches more persistent disks, joins the instances to their Active Directory, and finishes configuring Windows File Services.
 
-This option, as you might imagine, provides customers with the most control and flexibility. While this is very appealing to certain types of customers and certain verticals, it also comes at a cost: the responsibility to size, scale, build, manage, patch, secure, and maintain everything from the Windows OS up. Customers electing to go this route ought to also ensure these file servers are highly available. This is often accomplished using file servers in multiple zones, and using Windows DFS-N/DFS-R, [Windows failover clusters](https://cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering), or storage spaces direct, though it’s easy to end up in an unsupported configuration (per Microsoft) if you’re not careful.
+This option, as you might imagine, provides customers with the most control and flexibility. While this is very appealing to certain types of customers and certain verticals, it also comes at a cost: the responsibility to size, scale, build, manage, patch, secure, and maintain everything from the Windows OS up. Customers electing to go this route ought to also ensure these file servers are highly available. This is often accomplished using file servers in multiple zones, and using Windows DFS-N/DFS-R, [Windows failover clusters](https://cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering), or storage spaces direct. It’s easy to end up in an unsupported configuration (per Microsoft) if you’re not careful.
 
 > **Note:**
 >
@@ -559,11 +559,11 @@ An alternative solution is using third party solutions such as [NetApp Cloud Vol
 
 ## Citrix ADC/Gateway VPX on Google Cloud
 
-Deploying the Citrix ADC/Gateway on GCP is different than deploying it on-premises, though in the end you’re managing them yourself. Fortunately deploying Citrix ADC/Gateway on GCP is thoroughly documented, so we recommend reviewing the following resources before you solidify your design and begin implementation:
+Deploying the Citrix ADC/Gateway on GCP is different than deploying it on-premises, though in the end you’re managing them yourself. Fortunately deploying Citrix ADC/Gateway on GCP is thoroughly documented. We recommend reviewing the following resources before you solidify your design and begin implementation:
 
 -  [Citrix ADC VPX on GCP in Citrix Docs](/en-us/citrix-adc/13/deploying-vpx/deploy-vpx-google-cloud.html): Provides a comprehensive overview of Citrix ADC on GCP, including supported VPX models, GCP regions, Computer Engine instance types, and other resource references.
 -  [Citrix ADC VPX GCP Marketplace Deployments](https://console.cloud.google.com/marketplace/partners/citrix-public): All available Citrix networking deployment solutions available in the GCP Marketplace. Functional and relevant for Citrix Gateway deployments with CVAD/CVADS also.
--  [Citrix ADC GDM Templates](https://github.com/citrix/citrix-adc-gdm-templates/blob/master/README.md): A GitHub repository for Citrix ADC GDM templates - an excellent reference for a repository that hosts Citrix ADC templates for deploying a Citrix ADC VPX instance on the Google Cloud Platform.
+-  [Citrix ADC GDM Templates](https://github.com/citrix/citrix-adc-gdm-templates/blob/master/README.md): A GitHub repository for Citrix ADC GDM templates. This is an excellent reference for a repository that hosts Citrix ADC templates for deploying a Citrix ADC VPX instance on the Google Cloud Platform.
 
 As discussed in [Citrix ADC VPX on GCP](/en-us/citrix-adc/13/deploying-vpx/deploy-vpx-google-cloud.html) on Citrix Docs, there are two primary deployment options available. They are:
 
@@ -572,13 +572,13 @@ As discussed in [Citrix ADC VPX on GCP](/en-us/citrix-adc/13/deploying-vpx/deplo
 
 > **Best practice:**
 >
-> **When you deploy Citrix ADC/Gateway appliances on GCP, we recommend using Premium tier (regional) external IP addresses.** When using premium tier external IP’s, traffic ingresses and egresses at the Edge network location nearest the user, then traverses Google’s private network to get to the region where the resource is deployed. This provides better throughput, lower latency, and more consistent performance (lower jitter) as compared to Standard tier external IP addresses. For more information, see Google Cloud [Network Service tiers](https://cloud.google.com/network-tiers/docs/overview).
+> **When you deploy Citrix ADC/Gateway appliances on GCP, we recommend using Premium tier (regional) external IP addresses.** When using premium tier external IP’s, traffic ingresses and egresses at the Edge network location nearest the user. Traffic then traverses Google’s private network to get to the region where the resource is deployed. This provides better throughput, lower latency, and more consistent performance (lower jitter) as compared to Standard tier external IP addresses. For more information, see Google Cloud [Network Service tiers](https://cloud.google.com/network-tiers/docs/overview).
 
 ### ADC Standalone
 
 While Citrix ADC VPX generally supports single, dual, or multiple NIC deployment types, Citrix recommends using at least three VPC networks for each ADC when deployed on GCP, with a network interface in each VPC for optimum throughput and data separation. When deployed to support Citrix Virtual Apps and Desktops, the management interface ([NSIP](/en-us/citrix-adc/current-release/networking/ip-addressing/configuring-citrix-adc-owned-ip-addresses/configuring-citrix-adc-ip-address.html)) is typically attached to the “Private Citrix Infrastructure Subnet,” the subnet IP ([SNIP](/en-us/citrix-adc/current-release/networking/ip-addressing/configuring-citrix-adc-owned-ip-addresses/configuring-subnet-ip-addresses-snips.html)) is attached to the “Private Citrix VDA Subnet,” and the Citrix Gateway virtual IP ([VIP](/en-us/citrix-adc/current-release/networking/ip-addressing/configuring-citrix-adc-owned-ip-addresses/configuring-and-managing-virtual-ip-addresses-vips.html)) to the “Public Subnet.” The following simplified conceptual diagram depicts this configuration. It shows a single VPX instance in a single zone - this design pattern would be duplicated (likely in a second zone) for a High Availability configuration:
 
-![adc-standalone](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_adc-standalone.png)
+![ADC Standalone](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_adc-standalone.png)
 
 The following is a table showcasing the purpose of each NIC along with the associated VPC network:
 
@@ -594,7 +594,7 @@ The following is a table showcasing the purpose of each NIC along with the assoc
 
 ### ADC High Availability across Zones
 
-As mentioned earlier, this is the most common deployment model for Citrix virtualization systems. This model uses a pair of Citrix ADC VPXs in a single region deployed across multiple zones. High availability (active/passive) is achieved by using a GCP HTTPS Load Balancer with the ADCs configured independent of each other or by using Citrix ADCs HA configured in Independent Network Configuration (INC) mode. The latter option/architecture is expected to be popular for public cloud deployments, so we focus on that here.
+As mentioned earlier, this is the most common deployment model for Citrix virtualization systems. This model uses a pair of Citrix ADC VPXs in a single region deployed across multiple zones. High availability (active/passive) can be achieved multiple ways. You can use a GCP HTTPS Load Balancer with the ADCs configured independent of each other or by using Citrix ADCs HA configured in Independent Network Configuration (INC) mode. The latter option/architecture is expected to be popular for public cloud deployments, so we focus on that here.
 
 While there are potential variants for a Citrix ADC/Gateway VPX architecture on GCP, the following diagram depicts a three NIC Citrix ADC HA solution. This solution can be deployed by the [Google Deployment Manager template](https://github.com/citrix/citrix-adc-gdm-templates/tree/master/high-availability-templates/3nic) with pre-configured VPC networks and subnets:
 
@@ -604,7 +604,7 @@ When using the Google Deployment Manager template, you must configure the VPC ne
 
 ![traffic-flow](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_traffic-flow.png)
 
-In the preceding diagram, we can see that each ADC has a different Gateway virtual IP (VIP). This is a characteristic of an [Independent Network Configuration (INC)](/en-us/citrix-gateway/13/high-availability/ng-ha-routed-networks-con.html). When VPXs in an HA pair reside in different zones, the secondary ADC must have an INC, as they cannot share mapped IP addresses, virtual LANs, or network routes. The NSIP and SNIP are different for each ADC in this configuration, while the Citrix Gateway VIP uses a special [Citrix ADC feature called IPset](/en-us/citrix-adc/13/load-balancing/load-balancing-customizing/multi-ip-virtual-servers.html), or Multi-IP virtual servers. This feature can be used for clients in different subnets to connect to the same set of servers. With IPset, you can associate a private IP to each of the primary and secondary instances. A public IP can then be mapped to the primary ADC in the pair. In the case of failover, the public IP mapping changes dynamically to the new primary.
+In the preceding diagram, we can see that each ADC has a different Gateway virtual IP (VIP). This is a characteristic of an [Independent Network Configuration (INC)](/en-us/citrix-gateway/13/high-availability/ng-ha-routed-networks-con.html). When VPXs in an HA pair reside in different zones, the secondary ADC must have an INC, as they cannot share mapped IP addresses, virtual LANs, or network routes. The NSIP and SNIP are different for each ADC in this configuration, while the Citrix Gateway VIP uses a [Citrix ADC feature called IPset](/en-us/citrix-adc/13/load-balancing/load-balancing-customizing/multi-ip-virtual-servers.html), or Multi-IP virtual servers. This feature can be used for clients in different subnets to connect to the same set of servers. With IPset, you can associate a private IP to each of the primary and secondary instances. A public IP can then be mapped to the primary ADC in the pair. In the case of failover, the public IP mapping changes dynamically to the new primary.
 
 For more information on adding a remote node to an ADC to create an INC-based HA pair, see [Citrix docs](/en-us/citrix-gateway/13/high-availability/ng-ha-routed-networks-con/ng-ha-add-remote-node-tsk.html). For general HA deployment information for ADC on Google cloud, see [Deploy a VPX high-availability pair on Google Cloud Platform](/en-us/citrix-adc/current-release/deploying-vpx/deploy-vpx-google-cloud/deploy-vpx-google-cloud-ha.html).
 
