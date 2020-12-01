@@ -9,9 +9,9 @@ contributedBy: JP Alfaro, Jeff Allen, Stefano Castelli, Gavin Connolly, Kishore 
 
 ## Introduction
 
-The goal of this document is to provide targeted, real world guidance for customers and partners looking to find success with Citrix virtualization tech on Google Cloud.
+The goal of this document is to provide targeted real world guidance for customers and partners looking to find success with Citrix virtualization tech on Google Cloud.
 
-In this guide, we walk you through designing a Citrix virtualization system on GCP. As the journey progresses, we’ll be discussing the implications of the decisions you need to make, and curating more reference resources along the way. This guide is a living document, so you’ll want to bookmark it and check back periodically to see how things change over time.
+In this guide, we walk you through designing a Citrix virtualization system on GCP. As the journey progresses, we discuss the implications of the decisions you need to make, and curating more reference resources along the way. This guide is a living document, so you’ll want to bookmark it and check back periodically to see how things change over time.
 
 We start by reviewing the common [design patterns](https://word-view.officeapps.live.com/wv/WordViewer/Document.pdf) for Citrix virtualization technologies on Google Cloud. Some may think of these as ‘reference architectures’, but when we’re working with infrastructure as code and cloud services, ‘design patterns’ make a lot more sense.
 
@@ -443,7 +443,7 @@ Custom VDA images are something many customers may already have and want to use 
 
 #### Using Sole-Tenant Nodes on GCP
 
-Google Cloud has a feature called sole-tenant nodes which is useful for various use cases, including [bringing your own license for Windows OS](https://cloud.google.com/compute/docs/instances/windows/bring-your-own-license/bringing-your-own-license-sole-tenant-nodes), and deploying Windows client VDAs on GCP. When configuring sole-tenant nodes, you can configure them in one or more zones within a GCP region. Citrix MCS fully supports provisioning VDAs on sole-tenant nodes, but is not automatically aware of which GCP zones your sole-tenant nodes are deployed in. If you intend to deploy VDAs to sole-tenant nodes, be sure to check out the [GCP Zone Selection](/en-us/tech-zone/learn/poc-guides/gcp-sole-tenant.html) documentation for details.
+Google Cloud has a feature called sole-tenant nodes which are useful for various use cases, including [bringing your own license for Windows OS](https://cloud.google.com/compute/docs/instances/windows/bring-your-own-license/bringing-your-own-license-sole-tenant-nodes), and deploying Windows client VDAs on GCP. When configuring sole-tenant nodes, you can configure them in one or more zones within a GCP region. Citrix MCS fully supports provisioning VDAs on sole-tenant nodes, but is not automatically aware of which GCP zones your sole-tenant nodes are deployed in. If you intend to deploy VDAs to sole-tenant nodes, be sure to check out the [GCP Zone Selection](/en-us/tech-zone/learn/poc-guides/gcp-sole-tenant.html) documentation for details.
 
  > **Note:**
  >
