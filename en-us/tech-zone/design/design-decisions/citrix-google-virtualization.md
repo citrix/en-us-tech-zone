@@ -166,7 +166,7 @@ While trust relationships, site/service configuration, replication, and other AD
 
 ### Citrix Cloud Connectors
 
-Citrix Cloud Connectors function as a secure, cloud managed proxy for the Citrix virtualization system. Cloud Connectors are dedicated, domain joined Windows Server instances in seperate zones within a region. It also functions as an offline session broker if Internet access is interrupted (“local host cache mode’) - useful for mission critical deployments with extreme availability requirements. We discuss this function in more detail as we get into the Hybrid design pattern later on in this document.
+Citrix Cloud Connectors function as a secure, cloud managed proxy for the Citrix virtualization system. Cloud Connectors are dedicated, domain joined Windows Server instances in separate zones within a region. It also functions as an offline session broker if Internet access is interrupted (“local host cache mode’) - useful for mission critical deployments with extreme availability requirements. We discuss this function in more detail as we get into the Hybrid design pattern later on in this document.
 
 Cloud Connectors are typically deployed as an N+1 resource, using VM instances spread across multiple zones in a given region. This enables a resource location to scale and facilitates the automatic update of the Cloud Connector software.
 
