@@ -17,7 +17,7 @@ Enterprises initially turned to **Mobile Device Management (MDM)** solutions to 
 
 **Mobile Application Management (MAM)** emerged soon after MDM and focused on securing and managing applications as individual components. MAM offers a similar set of policies and user experience management as MDM, but at a different application level rather than the device level. Since then, MAM has expanded to encompass app-level control of secured (Micro) VPN, inter-container communication, and secure containers.
 
-![Evolution of MDM](/en-us/tech-zone/design/media/tech-briefs_citrix-endpoint-management_evolution-of-mdm.png)
+![Evolution of MDM](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_evolution-of-mdm.png)
 
 **Unified Endpoint Management (UEM)** has recently emerged as the market standard for securing and controlling any corporate or personal devices, including any other devices like Iot and wearables. Unified Endpoint Management provides the ability to centrally and over the air, to discover, provision, manage, deploy, update and maintain all in a cohesive manner from a single console. **Citrix Endpoint Management Service (CEM)** is the Unified Endpoint Management technology from Citrix that transforms the workspace experience to support every endpoint and brings unification in IT administration.
 
@@ -34,7 +34,7 @@ Initial Unified Endpoint Management consist of the following fundamental compone
 
 Additional Monitoring, Business Insights, Remote Control and Support are elements of the current UEM offerings, but Unified Endpoint Management is not limited to these as the market is constantly evolving and expanding. 
 
-![Elements of Unified Endpoint Management](/en-us/tech-zone/design/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-elements.png)
+![Elements of Unified Endpoint Management](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-elements.png)
 
 
 <hr />
@@ -42,9 +42,9 @@ Additional Monitoring, Business Insights, Remote Control and Support are element
 **Note** 
 
 To get started with Citrix Endpoint Management Service you must signup or allready have a Citrix Cloud account. 
-You can sign up for a Citrix Cloud account by following the instructions on this page: [Sign up for Citrix Cloud](https://docs.citrix.com/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html).
+You can sign up for a Citrix Cloud account by following the instructions here: [Sign up for Citrix Cloud](https://docs.citrix.com/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html).
 
 
-Once, you have access to Citrix Cloud you can request access to a Citrix Endpoint Management trial by following the instructions on this page: [Request a Citrix Endpoint Management Demo](https://docs.citrix.com/en-us/citrix-endpoint-management/onboarding-and-resource-setup.html#for-new-citrix-customers)
+Once, you have access to Citrix Cloud you can request access to a Citrix Endpoint Management trial by following the instructions here: [Request a Citrix Endpoint Management Demo](https://docs.citrix.com/en-us/citrix-endpoint-management/onboarding-and-resource-setup.html#for-new-citrix-customers)
 
 <hr />
