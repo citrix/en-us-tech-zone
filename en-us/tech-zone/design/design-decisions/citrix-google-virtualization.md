@@ -493,7 +493,7 @@ Google Cloud offers various different [pricing](https://cloud.google.com/pricing
 
 The following is a simplified chart illustrating sustained use vs committed use discounts **for N1 instance types:**
 
-![optimizing-cost](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_optimizing-cost.png )
+![optimizing-cost](/en-us/tech-zone/design/media/design-decisions_citrix-google-virtualization_optimizing-cost.png)
 
 Some resources are unique, highly scalable, and must be available for a Citrix virtualization system to function. As such, they’re commonly run 24/7 and deployed N+1 for availability, and are great candidates for committed use discounting. This includes Active Directory, Citrix Cloud Connectors, Citrix ADC/Gateway VPX, and Citrix StoreFront VM instances.
 
