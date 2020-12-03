@@ -4,7 +4,6 @@ h3InToc: true
 author: Rick Dehlinger
 contributedBy: JP Alfaro, Jeff Allen, Stefano Castelli, Gavin Connolly, Kishore Kunisetty, Dan Lazar, Rich Meesters, John Moody, Mads Petersen, Michael Shuster, Anthony Zepeda
 ---
-
 # Design Guide - Citrix virtualization on Google Cloud
 
 ## Introduction
