@@ -279,14 +279,6 @@ Autoscale is a feature exclusive to the Citrix Virtual Apps and Desktops service
 | **Desktop OS** machines hosting static persistent (dedicated) VDI desktops | Supported. During periods when machines are powered off (for example, after working hours), users can trigger machines to power on through the Citrix Receiver. You can set Autoscale’s Power Off Delay so Autoscale does not automatically power machines off before the user can establish a session. | Supported only for unassigned machines. | Supported only for unassigned machines. |
 | **Desktop OS** - machines hosting - random non-persistent VDI desktops (pooled VDI desktops) | Supported | Supported. Use the Session Count scaling metric and set the maximum number of sessions to 1. | Supported. Use the Session Count scaling metric and set the minimum number of machines to 1. |
 
-Autoscale supports power managing Sites using Virtual Apps and Desktops, the Virtual Apps and Desktops service, Virtual Apps Essentials, and Virtual Desktops Essentials.
-
-Power management for a single Site using one of these services is supported as follows:
-
-*  Up to 2,000 VDAs or VDIs per Site can be power managed.
-*  Up to 120 Delivery Groups can be power managed.
-*  Up to 1,000 VDAs or VDIs per Delivery Group can be power managed.
-
 [![Azure-RA-Image-4](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_004.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_004.png)
 
 Diagram-4: Citrix Autoscale Flow
