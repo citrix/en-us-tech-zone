@@ -32,7 +32,7 @@ The three most common scenarios for delivering Citrix Apps and Desktops through 
 
 *  Greenfield deployment with Citrix Cloud delivering resource locations in Azure. This scenario is delivered via the Citrix Virtual Apps and Desktops service and used when customers prefer to go to a subscription model and outsource control plane infrastructure to Citrix.
 *  Extending an on-premises deployment into Azure. In this scenario, the customer has a current on-premises control layer and would like to add Azure as a Citrix resource location for new deployments or migration.
-*  Lift and shift. With this scenario, customers deploy their Citrix Management infrastructure into Azure and treat Azure as a site, using Citrix NetScaler and StoreFront to aggregate resources from multiple sites.
+*  Lift and shift. With this scenario, customers deploy their Citrix Management infrastructure into Azure and treat Azure as a site, using Citrix ADC and StoreFront to aggregate resources from multiple sites.
 
 This document focuses on the Citrix Cloud deployment model. Customers can plan and adopt these services based on their organization needs:
 
@@ -190,11 +190,11 @@ Azure can provide a highly cost-effective DR solution for Citrix customers looki
 
 Under this topology, the management infrastructure remains on-premises, but workloads are deployed to Azure. If the on-premises data center is not reachable, existing connected users remain connected, but new connections will not be possible because the management infrastructure is unavailable.
 
-To protect the management infrastructure, pre-configure Azure Site Recovery to recover the management infrastructure into Azure. This is a manual process and once recovered, your environment can be made operational. This option is not seamless and cannot recover components such as NetScaler VPX, however for organizations with more a more flexible recovery time objective (RTO) it can reduce the operational costs.
+To protect the management infrastructure, pre-configure Azure Site Recovery to recover the management infrastructure into Azure. This is a manual process and once recovered, your environment can be made operational. This option is not seamless and cannot recover components such as ADC VPX, however for organizations with more a more flexible recovery time objective (RTO) it can reduce the operational costs.
 
 ### Hosting Architecture
 
-When deploying this topology, the Citrix Management infrastructure is deployed into Azure and treated as a separate site. This provides functional isolation from on-premises deployment in the event of a site failure. Use Citrix NetScaler and StoreFront to aggregate resources and provide users a near instant failover between Production and Disaster Recovery resources.
+When deploying this topology, the Citrix Management infrastructure is deployed into Azure and treated as a separate site. This provides functional isolation from on-premises deployment in the event of a site failure. Use Citrix ADC and StoreFront to aggregate resources and provide users a near instant failover between Production and Disaster Recovery resources.
 
 The presence of the Citrix Infrastructure in Azure means that no manual processes need to be invoked and no systems need to be restored before users can access their core workspace.
 
@@ -305,7 +305,7 @@ Each Citrix component uses an associated virtual machine type in Azure. Each VM 
 
 Most Citrix deployments use the D-Series and F-Series instance types. The D-Series are commonly used for the Citrix infrastructure components and sometimes for the user workloads when they require extra memory beyond what is found in the F-Series instance types. F-Series instance types are the most common in the field for user workloads because of their faster processors which bring with them the perception of responsiveness.
 
-**Why D-Series or F-Series?** From a Citrix perspective, most infrastructure components (Cloud Connectors, StoreFront, NetScaler, and so on) use CPU to run core processes. These VM types have a balanced CPU to Memory ratio, are hosted on uniform hardware (unlike the A-Series) for more consistent performance and support premium storage. Certainly, customers can and should adjust their instance types to meet their needs and their budget.
+**Why D-Series or F-Series?** From a Citrix perspective, most infrastructure components (Cloud Connectors, StoreFront, ADC, and so on) use CPU to run core processes. These VM types have a balanced CPU to Memory ratio, are hosted on uniform hardware (unlike the A-Series) for more consistent performance and support premium storage. Certainly, customers can and should adjust their instance types to meet their needs and their budget.
 
 The size and number of components within a customer’s infrastructure will always depend on customer’s requirements, scale, and workloads. However, with Azure we have the ability to scale dynamically and on-demand! For cost-conscious customers, starting smaller and scaling up is the best approach. Azure VMs require a reboot when changing size so plan these events within scheduled maintenance windows only and under established change control policies.
 
@@ -336,7 +336,7 @@ Azure Disks are designed to deliver enterprise-grade durability. Three performan
 
 Managed Disks are recommended over the unmanaged disk by Microsoft. Unmanaged disks should be considered by exception only. Standard Storage (HDD and SSD) includes transaction costs (storage I/O) that must be considered but have lower costs per disk. Premium Storage has no transaction costs but have higher per disk costs and offers an improved user experience.
 
-The disks offer no SLA unless an Availability Set is used. Availability Sets are not supported with Citrix MCS but should be included with Citrix Cloud Connector, NetScaler, and StoreFront.
+The disks offer no SLA unless an Availability Set is used. Availability Sets are not supported with Citrix MCS but should be included with Citrix Cloud Connector, ADC, and StoreFront.
 
 ## Identity
 
@@ -505,7 +505,7 @@ Express Routes are dedicated private connections and not over the internet. This
 
 Typically these connections are shared across multiple services (database replication, domain traffic, application traffic, and so on) In a hybrid cloud deployment there may be scenarios where internal users require their ICA traffic to go through this connection to get to their Citrix apps in Azure, therefore monitoring its bandwidth is critical.
 
-With NetScaler and traditional StoreFront optimal gateway routing may also be used to direct a user’s connection to a NetScaler using an office’s ISP rather than the Express Route or VPN to Azure.
+With ADC and traditional StoreFront optimal gateway routing may also be used to direct a user’s connection to a ADC using an office’s ISP rather than the Express Route or VPN to Azure.
 
 ### User-Defined Routes (UDRs)
 
