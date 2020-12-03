@@ -215,8 +215,6 @@ Resource Groups (RG) in Azure is a collection of assets in logical groups for ea
 
 The key to having a successful design of resource groups is understanding the lifecycle of the resources that are included in them.
 
-One or more Resource Groups can be applied to a Machine Catalog during initial creation. These Resource Groups cannot be shared across Machine Catalogs. Resource Groups are limited to 240. Citrix MCS VMs due to the 800 Resource Count limitation per type of resource within a Resource Group.
-
 Resource Groups are tied to Machine Catalogs at creation time and cannot be added or changed later. To add extra Resource Groups to a Machine Catalog, the Machine Catalog must be removed and recreated.
 
 ### Image Management
