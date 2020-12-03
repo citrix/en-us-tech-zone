@@ -456,16 +456,13 @@ As stated previously, MCS is the service (within CVAD) responsible for spinning 
 
 For some organizations keeping the Storage account endpoint public is a concern.  Below is an analysis of the assets created and stored when deploying VMs with managed disk (the default behavior).
 
-*  Table Storage.
-
+*  Table Storage:
 We maintain machine configuration and state data in table storage in the primary storage account (or a secondary one, if the primary one is being used for Premium disks) for the catalog.  There is no sensitive information within the tables.
-*  Locks
-
+*  Locks:
 For certain operations (allocating machines to storage accounts, replicating disks), we use a lock object to synchronize operations from multiple plug-in instances.  Those files are empty blobs and include no sensitive data.
 
 For machine catalogs created before Oct 15 2020, MCS creates an additional storage account for identity disks:
-*  Disk Import
-
+*  Disk Import:
 When importing disks (identity, instruction), we upload the disk as a page blob.  We then create a managed disk from the page blob and delete the page blob. The transient data does include sensitive data for computer object names and password. This does not apply for all machine catalogs created post Oct 15 2020.
 
 Using a narrow Scope Service Principal applied to the specific resource groups is recommended to limit the permissions only to the permissions required by the service. This adheres to the security concept of "least privilege". Refer to [CTX219243](https://support.citrix.com/article/CTX219243) and [CTX224110](https://support.citrix.com/article/CTX224110) for more details.
