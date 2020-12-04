@@ -2,9 +2,11 @@
 layout: doc
 h3InToc: true
 author: Rick Dehlinger
-contributedBy: JP Alfaro, Jeff Allen, Stefano Castelli, Gavin Connolly, Kishore Kunisetty, Dan Lazar, Rich Meesters, John Moody, Mads Petersen, Michael Shuster, Anthony Zepeda
 ---
 # Design Guide - Citrix virtualization on Google Cloud
+
+Contributed by:
+[JP Alfaro](https://www.linkedin.com/in/jp-alfaro-b2bb03b2/), [Jeff Allen](https://www.linkedin.com/in/jeff-d-allen/), [Stefano Castelli](https://www.linkedin.com/in/stefano-castelli-908a113/), [Gavin Connolly](https://www.linkedin.com/in/gavinconnolly/), [Kishore Kunisetty](mailto:kishore.kunisetty@citrix.com), [Dan Lazar](https://www.linkedin.com/in/djlazar/), [Rich Meesters](https://www.linkedin.com/in/rich-meesters-2039a1/), [John Moody](https://www.linkedin.com/in/johnrichardmoody/), [Mads Petersen](https://www.linkedin.com/in/mads-behrendt-petersen-43049613/), [Michael Shuster](https://www.linkedin.com/in/iammichaelshuster/), [Anthony Zepeda](https://www.linkedin.com/in/anthony-zepeda-0504bb60/)
 
 ## Introduction
 
@@ -12,7 +14,7 @@ The goal of this document is to provide targeted real world guidance for custome
 
 In this guide, we walk you through designing a Citrix virtualization system on GCP. As the journey progresses, we discuss the implications of the decisions you need to make, and curating more reference resources along the way. This guide is a living document. Be sure to bookmark it and check back periodically to see how things change over time.
 
-We start by reviewing the common [design patterns](https://word-view.officeapps.live.com/wv/WordViewer/Document.pdf) for Citrix virtualization technologies on Google Cloud. Some think of these 'design patterns' as ‘reference architectures’, but when we’re working with infrastructure as code and cloud services, ‘design patterns’ make a lot more sense.
+We start by reviewing the common [design patterns](#design-patterns-for-citrix-virtualization-on-google-cloud) for Citrix virtualization technologies on Google Cloud. Some think of these 'design patterns' as ‘reference architectures’, but when we’re working with infrastructure as code and cloud services, ‘design patterns’ make a lot more sense.
 
 Next we explore the [Solution Components and Requirements](#solution-components-and-requirements). We lay out the solution prerequisites and give you an overview of what services/components are required to create a Citrix Cloud ‘[resource location](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html)’.
 
