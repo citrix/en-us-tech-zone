@@ -265,7 +265,7 @@ Azure Reserved VM Instances (RIs) significantly reduce costs—up to 72 percent 
 
 While Azure Reserved Instances require making upfront commitments on **compute** capacity, they also provide flexibility to exchange or cancel reserved instances at any time. A reservation only covers the virtual machine compute costs. It does not reduce any of the additional software, networking, or storage charges. This is good for the Citrix infrastructure and minimum capacity needed for a use case (on and off hours).
 
-Citrix Autoscale feature can work with reserved instances as well to further reduce your costs - you can now use Autoscale for bursting in the cloud. In a delivery group you can tag machines that need to be autoscaled and exclude your reserved instances (or on-premises workloads) - you can find more info here: [Restrict Autoscale to certain machines in a Delivery Group](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html#restrict-autoscale-to-certain-machines-in-a-delivery-group).
+Citrix Autoscale feature supports reserved instances as well to further reduce your costs - you can now use Autoscale for bursting in the cloud. In a delivery group you can tag machines that need to be autoscaled and exclude your reserved instances (or on-premises workloads) - you can find more info here: [Restrict Autoscale to certain machines in a Delivery Group](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html#restrict-autoscale-to-certain-machines-in-a-delivery-group).
 
 ### Citrix Autoscale
 
@@ -439,10 +439,10 @@ Security is integrated into every aspect of Azure. Azure offers unique security 
 
 ### Securing storage accounts provisioning by CVAD service
 
-As stated previously, MCS is the service (within CVAD) responsible for spinning up machines in the customer subscription. MCS utilizes uses an AAD identity – Application service principal for access to Azure resource groups to perform different actions.  For storage account type of resources, MCS requires the listkeys permission to acquire the key when needed for different actions (write/read/delete).  Per our current implementation, an MCS requirement for:
+As stated previously, MCS is the service (within CVAD) responsible for spinning up machines in the customer subscription. MCS utilizes uses an AAD identity – Application service principal for access to Azure resource groups to perform different actions.  For storage account type of resources, MCS requires the `listkeys` permission to acquire the key when needed for different actions (write/read/delete).  Per our current implementation, an MCS requirement for:
 
 *  Storage account network is access from the public internet.
-*  Storage account RBAC is listkeys permission
+*  Storage account RBAC is `listkeys` permission
 
 For some organizations keeping the Storage account endpoint public is a concern.  Below is an analysis of the assets created and stored when deploying VMs with managed disk (the default behavior).
 
@@ -452,6 +452,7 @@ We maintain machine configuration and state data in table storage in the primary
 For certain operations (allocating machines to storage accounts, replicating disks), we use a lock object to synchronize operations from multiple plug-in instances.  Those files are empty blobs and include no sensitive data.
 
 For machine catalogs created before Oct 15 2020, MCS creates an additional storage account for identity disks:
+
 *  Disk Import:
 When importing disks (identity, instruction), we upload the disk as a page blob.  We then create a managed disk from the page blob and delete the page blob. The transient data does include sensitive data for computer object names and password. This does not apply for all machine catalogs created post Oct 15 2020.
 
