@@ -39,6 +39,30 @@ Additional Monitoring, Business Insights, Remote Control and Support are element
 
 ![Elements of Unified Endpoint Management](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-elements.png)
 
+## Endpoint Management Architecture Frameworks
+
+The Architecture Frameworks section contains the graphical representations of architecture concepts including conceptual point of views, principles, components, data flows, communication ports and other architecture representations that are part of the Citrix Endpoint Management solution offered by Citrix.
+
+### Endpoint Management Service Architecture
+
+The Citrix Endpoint Management service architecture diagram identifies the system components and the interconnections between components. Additional key communication paths are described.
+
+![Service Architecture of Unified Endpoint Management](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-service-architecture.png)
+
+### Conceptual Service Ownership and Management Architecture
+
+The Citrix Endpoint Management ownership and management architecture diagram identifies and highlights the system or service components, locations and the management responsibilities between Citrix and the IT management team.
+
+#### Citrix Endpoint Management Service
+
+![Citrix Unified Endpoint Management Service Ownership and Management](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-ownership-and-management-cem-service.png).
+
+#### Citrix XenMobile Server Current Release (on-premises)
+
+Citrix XenMobile Server Current Release is the initial Citrix on-premises Unified Endpoint Management solution. Citrix advise for new customers is to start their Unified Endpoint Management journey directly using the Citrix Endpoint Management Service. A cloud first designed Unified Endpoint Management Service. If you’re using XenMobile Server on-premises, our free XenMobile Migration Service can get you started with Endpoint Management. Migration from XenMobile Server to Citrix Endpoint Management doesn’t require you to re-enroll devices.
+
+![Citrix Xenmobile Current Release Ownership and Management](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-ownership-and-management-xenmobile.png).
+
 ### **Note**
 
 To get started with Citrix Endpoint Management Service you must signup or allready have a Citrix Cloud account.
