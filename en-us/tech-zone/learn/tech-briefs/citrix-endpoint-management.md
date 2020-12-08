@@ -9,9 +9,9 @@ description: Get a quick sneak peek on what Unified Endpoint Management is and w
 
 ## About Citrix Endpoint Management
 
-Citrix Endpoint Management is an industry acknowledged Unified Endpoint Management aka UEM solution offered through the Citrix Cloud as a Service. Unified Endpoint Management solutions offer a single uniform over-the-air management interface for mobile, laptops, personal computers and other devices like wearables and IoT endpoints. Citrix Endpoint Management provides a flexible choice in platform management, ownership models (Bring Your Own Device, Choose Your Own Device, Company Owned - Personally Enabled and Company Owned – Business Only) and delivery models for securing the endpoint, applications, the connections and data.
+Citrix Endpoint Management is an industry acknowledged Unified Endpoint Management aka UEM solution offered through the Citrix Cloud as a Service. Unified Endpoint Management solutions offer a single uniform over-the-air management interface for mobile, laptops, PCs, and other devices like wearables and IoT endpoints. Citrix Endpoint Management provides a flexible choice in platform management, ownership models (Bring Your Own Device, Choose Your Own Device, Company Owned - Personally Enabled and Company Owned – Business Only) and delivery models for securing the endpoint, applications, the connections, and data.
 
-Thereby enabling user’s productivity for current and future business use cases (Frontline Worker, Single-Purpose, Office Worker, Signage/Kiosk). Unified Endpoint Management is one of the fundamental pillars in the Zero Trust framework and Future Ready Secure Workspaces initiatives to providing insights to the device compliance and health posture, applications and connections used. This information is fed into analytics systems so that Risk profiles can be created and Continues Adaptive Risk and Assessment can take place. Unified Endpoint Management embeds cross-platform security into organizations onboarding processes of users, endpoints and applications helping to streamline modern workspace strategies and cloud security.
+Thereby enabling users productivity for current and future business use cases (Frontline Worker, Single-Purpose, Office Worker, Signage/Kiosk). Unified Endpoint Management is one of the fundamental pillars in the Zero Trust Framework and Future Ready Secure Workspaces initiatives to providing insights to the device compliance and health posture, applications, and connections used. This information is fed into analytics systems so that Risk profiles can be created and Continues Adaptive Risk and Assessments can take place. Unified Endpoint Management embeds cross-platform security into organizations onboarding processes of users, endpoints and applications helping to streamline modern workspace strategies and cloud security.
 
 ## The Evolution of Device Management
 
@@ -26,7 +26,7 @@ Enterprises initially turned to **Mobile Device Management (MDM)** solutions to 
 ## Unified Endpoint Management Elements
 
 What are the main elements for a Unified Endpoint Management solution and what do they do?
-Initial Unified Endpoint Management consist of the following fundamental components ;
+Initial Unified Endpoint Management consists of the following fundamental components ;
 
 *  Endpoint Management
 *  Application Management
@@ -35,23 +35,23 @@ Initial Unified Endpoint Management consist of the following fundamental compone
 *  Security Management
 *  Connectivity Management
 
-Additional Monitoring, Business Insights, Remote Control and Support are elements of the current UEM offerings, but Unified Endpoint Management is not limited to these as the market is constantly evolving and expanding.
+Additional Monitoring, Business Insights, Remote Control, and Support are elements of the current UEM offerings. Unified Endpoint Management is not limited to these as the market is constantly evolving and expanding.
 
 ![Elements of Unified Endpoint Management](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-elements.png)
 
 ## Endpoint Management Architecture Frameworks
 
-The Architecture Frameworks section contains the graphical representations of architecture concepts including conceptual point of views, principles, components, data flows, communication ports and other architecture representations that are part of the Citrix Endpoint Management solution offered by Citrix.
+The **Architecture Frameworks** section contains the graphical representations of architecture concepts including conceptual point of views, principles, components, data flows, communication ports, and other architecture representations that are part of the Citrix Endpoint Management solution offered by Citrix.
 
 ### Endpoint Management Service Architecture
 
-The Citrix Endpoint Management service architecture diagram identifies the system components and the interconnections between components. Additional key communication paths are described.
+The Citrix Endpoint Management service architecture diagram identifies the system components and the interconnections between components. Other key communication paths are described.
 
 ![Service Architecture of Unified Endpoint Management](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-service-architecture.png)
 
 ### Conceptual Service Ownership and Management Architecture
 
-The Citrix Endpoint Management ownership and management architecture diagram identifies and highlights the system or service components, locations and the management responsibilities between Citrix and the IT management team.
+The Citrix Endpoint Management ownership and management architecture diagram identifies and highlights the system components, service components, locations and the management responsibilities between Citrix and the IT management team.
 
 #### Citrix Endpoint Management Service
 
@@ -59,7 +59,7 @@ The Citrix Endpoint Management ownership and management architecture diagram ide
 
 #### Citrix XenMobile Server Current Release (on-premises)
 
-Citrix XenMobile Server Current Release is the initial Citrix on-premises Unified Endpoint Management solution. Citrix advise for new customers is to start their Unified Endpoint Management journey directly using the Citrix Endpoint Management Service. A cloud first designed Unified Endpoint Management Service. If you’re using XenMobile Server on-premises, our free XenMobile Migration Service can get you started with Citrix Endpoint Management Service. Migration from XenMobile Server to Citrix Endpoint Management doesn’t require you to re-enroll devices.
+Citrix XenMobile Server Current Release is the initial Citrix on-premises Unified Endpoint Management solution. Citrix advises for new customers to start their Unified Endpoint Management journey directly using the Citrix Endpoint Management Service. A cloud first designed Unified Endpoint Management Service. If you’re using XenMobile Server on-premises, our free XenMobile Migration Service can get you started with Citrix Endpoint Management Service. Migration from XenMobile Server to Citrix Endpoint Management doesn’t require you to re-enroll devices.
 [More information on the XenMobile Migration Service](https://docs.citrix.com/en-us/xenmobile/server.html#xenmobile-migration-service)
 
 ![Citrix Xenmobile Current Release Ownership and Management](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-ownership-and-management-xenmobile.png)
@@ -96,7 +96,7 @@ Company Owned, Business Only **(COBO)** is the business model where companies su
 
 ##### **Note**
 
-To get started with Citrix Endpoint Management Service you must signup or allready have a Citrix Cloud account.
+To get started with Citrix Endpoint Management Service you must sign up or already have a Citrix Cloud account.
 You can sign up for a Citrix Cloud account by following the instructions here: [Sign up for Citrix Cloud](https://docs.citrix.com/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html).
 
 Once, you have access to Citrix Cloud you can request access to a Citrix Endpoint Management trial by following the instructions here: [Request a Citrix Endpoint Management Demo](https://docs.citrix.com/en-us/citrix-endpoint-management/onboarding-and-resource-setup.html#for-new-citrix-customers)
