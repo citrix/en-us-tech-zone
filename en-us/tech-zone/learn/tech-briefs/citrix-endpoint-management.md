@@ -11,7 +11,7 @@ description: Get a quick sneak peek on what Unified Endpoint Management is and w
 
 Citrix Endpoint Management is an industry acknowledged Unified Endpoint Management aka UEM solution offered through the Citrix Cloud as a Service. Unified Endpoint Management solutions offer a single uniform over-the-air management interface for mobile, laptops, PCs, and other devices like wearables and IoT endpoints. Citrix Endpoint Management provides a flexible choice in platform management, ownership models (Bring Your Own Device, Choose Your Own Device, Company Owned - Personally Enabled and Company Owned – Business Only) and delivery models for securing the endpoint, applications, the connections, and data.
 
-Thereby enabling users productivity for current and future business use cases (Frontline Worker, Single-Purpose, Office Worker, Signage/Kiosk). Unified Endpoint Management is one of the fundamental pillars in the Zero Trust Framework and Future Ready Secure Workspaces initiatives to providing insights to the device compliance and health posture, applications, and connections used. This information is fed into analytics systems so that Risk profiles can be created and Continues Adaptive Risk and Assessments can take place. Unified Endpoint Management embeds cross-platform security into organizations onboarding processes of users, endpoints and applications helping to streamline modern workspace strategies and cloud security.
+By that enabling users productivity for current and future business use cases (Frontline Worker, Single-Purpose, Office Worker, Signage/Kiosk). Unified Endpoint Management is one of the fundamental pillars in the Zero Trust Framework and Future Ready Secure Workspaces initiatives to providing insights to the device compliance and health posture, applications, and connections used. This information is fed into analytics systems so that Risk profiles can be created and Continues Adaptive Risk and Assessments can take place. Unified Endpoint Management embeds cross-platform security into organizations onboarding processes of users, endpoints and applications helping to streamline modern workspace strategies and cloud security.
 
 ## The Evolution of Device Management
 
@@ -21,7 +21,7 @@ Enterprises initially turned to **Mobile Device Management (MDM)** solutions to 
 
 ![Evolution of MDM](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_evolution-of-mdm.png)
 
-**Unified Endpoint Management (UEM)** has recently emerged as the market standard for securing and controlling any corporate or personal devices, including any other devices like Iot and wearables. Unified Endpoint Management provides the ability to centrally and over the air, to discover, provision, manage, deploy, update and maintain all in a cohesive manner from a single console. **Citrix Endpoint Management Service (CEM)** is the Unified Endpoint Management technology from Citrix that transforms the workspace experience to support every endpoint and brings unification in IT administration.
+**Unified Endpoint Management (UEM)** has recently emerged as the market standard for securing and controlling any corporate or personal devices, including any other devices like IoT and wearables. Unified Endpoint Management provides the ability to centrally and over the air, to discover, provision, manage, deploy, update and, maintain all in a cohesive manner from a single console. **Citrix Endpoint Management Service (CEM)** is the Unified Endpoint Management technology from Citrix that transforms the workspace experience to support every endpoint and brings unification in IT administration.
 
 ## Unified Endpoint Management Elements
 
@@ -35,7 +35,7 @@ Initial Unified Endpoint Management consists of the following fundamental compon
 *  Security Management
 *  Connectivity Management
 
-Additional Monitoring, Business Insights, Remote Control, and Support are elements of the current UEM offerings. Unified Endpoint Management is not limited to these as the market is constantly evolving and expanding.
+Additional Monitoring, Business Insights, Remote Control, and Support are elements of the current UEM offerings. Unified Endpoint Management is not limited to these elements as the market is constantly evolving and expanding.
 
 ![Elements of Unified Endpoint Management](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-elements.png)
 
@@ -60,15 +60,15 @@ The Citrix Endpoint Management ownership and management architecture diagram ide
 #### Citrix XenMobile Server Current Release (on-premises)
 
 Citrix XenMobile Server Current Release is the initial Citrix on-premises Unified Endpoint Management solution. Citrix advices for new customers to start their Unified Endpoint Management journey directly using the Citrix Endpoint Management Service. A cloud first designed Unified Endpoint Management Service. If you’re using XenMobile Server on-premises, our free XenMobile Migration Service can get you started with Citrix Endpoint Management Service. Migration from XenMobile Server to Citrix Endpoint Management doesn’t require you to re-enroll devices.
-[More information on the XenMobile Migration Service](https://docs.citrix.com/en-us/xenmobile/server.html#xenmobile-migration-service)
+[More information on the XenMobile Migration Service](/en-us/xenmobile/server.html#xenmobile-migration-service)
 
-![Citrix Xenmobile Current Release Ownership and Management](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-ownership-and-management-xenmobile.png)
+![Citrix XenMobile Current Release Ownership and Management](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-ownership-and-management-xenmobile.png)
 
 ## Unified Endpoint Management Ownership Models
 
 ### Business Ownership Models
 
-Starting with Unified Endpoint Management means that you need to have information on business ownership models and management options. Most important are the business ownership models and the technical related management options of these ownership models. A Business Ownership Model describes in basics who owns the device and what and who manages the device partially or fully from an IT management perspective. A business ownership model can also use to correlate into security needs, responsibility, and liability of the data and apps used on a device. All the different business needs, personal, or business usage of apps and data have resulted into the following most common business ownership models used.
+Starting with Unified Endpoint Management means that you need to have information on business ownership models and management options. Most important are the business ownership models and the technical related management options of these ownership models. A Business Ownership Model describes in basics who owns the device and what and who manages the device partially or fully from an IT management perspective. A business ownership model can also be used to correlate into security needs, responsibility, and liability of the data and apps used on a device. All the different business needs, personal, or business usage of apps and data have resulted into the following most common business ownership models used.
 
 #### Bring Your Own Device (BYOD)
 
@@ -78,7 +78,7 @@ Bring Your Own Device **(BYOD)** means that employees can use their own smartpho
 
 #### Choose Your Own Device (CYOD)
 
-Choose Your Own Device **(CYOD)** means that employees can choose a device from a pre-approved list of devices types and models by the employer. With this approach, not only the IT department will be satisfied, as it makes managing the devices very easy; the employee will also be satisfied with it, because there is still a certain freedom of choice in the devices they need for their work.
+Choose Your Own Device **(CYOD)** means that employees can choose a device from a pre-approved list of devices types and models by the employer. With this approach, not only the IT department is satisfied, as it makes managing the devices very easy. The employee will also be satisfied with it, because there is still a certain freedom of choice on the devices they need for their work.
 
 ![Bring Your Own Device](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management-business-ownership-models_cyod.png)
 
