@@ -26,7 +26,7 @@ Enterprises initially turned to **Mobile Device Management (MDM)** solutions to 
 ## Unified Endpoint Management Elements
 
 What are the main elements for a Unified Endpoint Management solution and what do they do?
-Initial Unified Endpoint Management consists of the following fundamental components ;
+Initial Unified Endpoint Management consists of the following fundamental components;
 
 *  Endpoint Management
 *  Application Management
@@ -51,7 +51,7 @@ The Citrix Endpoint Management service architecture diagram identifies the syste
 
 ### Conceptual Service Ownership and Management Architecture
 
-The Citrix Endpoint Management ownership and management architecture diagram identifies and highlights the system components, service components, locations and the management responsibilities between Citrix and the IT management team.
+The Citrix Endpoint Management ownership and management architecture diagram identifies and highlights the system components, service components, locations, and the management responsibilities between Citrix and the IT management team.
 
 #### Citrix Endpoint Management Service
 
@@ -59,7 +59,7 @@ The Citrix Endpoint Management ownership and management architecture diagram ide
 
 #### Citrix XenMobile Server Current Release (on-premises)
 
-Citrix XenMobile Server Current Release is the initial Citrix on-premises Unified Endpoint Management solution. Citrix advises for new customers to start their Unified Endpoint Management journey directly using the Citrix Endpoint Management Service. A cloud first designed Unified Endpoint Management Service. If you’re using XenMobile Server on-premises, our free XenMobile Migration Service can get you started with Citrix Endpoint Management Service. Migration from XenMobile Server to Citrix Endpoint Management doesn’t require you to re-enroll devices.
+Citrix XenMobile Server Current Release is the initial Citrix on-premises Unified Endpoint Management solution. Citrix advices for new customers to start their Unified Endpoint Management journey directly using the Citrix Endpoint Management Service. A cloud first designed Unified Endpoint Management Service. If you’re using XenMobile Server on-premises, our free XenMobile Migration Service can get you started with Citrix Endpoint Management Service. Migration from XenMobile Server to Citrix Endpoint Management doesn’t require you to re-enroll devices.
 [More information on the XenMobile Migration Service](https://docs.citrix.com/en-us/xenmobile/server.html#xenmobile-migration-service)
 
 ![Citrix Xenmobile Current Release Ownership and Management](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-ownership-and-management-xenmobile.png)
@@ -68,11 +68,11 @@ Citrix XenMobile Server Current Release is the initial Citrix on-premises Unifie
 
 ### Business Ownership Models
 
-Starting with Unified Endpoint Management will mean that you need to have information on business ownership models and management options. Most important are the business ownership models and the technical related management options of these ownership models. A Business Ownership Model describes in basics who owns the device and what and who manages the device partially or fully from an IT management perspective. A business ownership model can also use to correlate into security needs, responsibility and liability of the data and apps used on a device. All the different business needs, personal or business usage of apps and data have resulted into the following most common business ownership models used.
+Starting with Unified Endpoint Management means that you need to have information on business ownership models and management options. Most important are the business ownership models and the technical related management options of these ownership models. A Business Ownership Model describes in basics who owns the device and what and who manages the device partially or fully from an IT management perspective. A business ownership model can also use to correlate into security needs, responsibility, and liability of the data and apps used on a device. All the different business needs, personal, or business usage of apps and data have resulted into the following most common business ownership models used.
 
 #### Bring Your Own Device (BYOD)
 
-Bring Your Own Device **(BYOD)** means that employees can use their own smartphones, laptop and tablets for their work. With BYOD there can be some Legal Complications in the event of a loss, virus or data breach, the use of your own device also causes legal complications. For example, who is responsible where appropriate? And is the company allowed to maintain its ICT policy in full on private devices?
+Bring Your Own Device **(BYOD)** means that employees can use their own smartphones, laptop, and tablets for their work. With BYOD there can be some Legal Complications in the event of a loss, virus, or data breach, the use of your own device also causes legal complications. For example, who is responsible where appropriate? And is the company allowed to maintain its ICT policy in full on private devices?
 
 ![Bring Your Own Device](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management-business-ownership-models_byod.png)
 
@@ -97,6 +97,6 @@ Company Owned, Business Only **(COBO)** is the business model where companies su
 ##### **Note**
 
 To get started with Citrix Endpoint Management Service you must sign up or already have a Citrix Cloud account.
-You can sign up for a Citrix Cloud account by following the instructions here: [Sign up for Citrix Cloud](https://docs.citrix.com/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html).
+You can sign up for a Citrix Cloud account by following the instructions here: [Sign up for Citrix Cloud](/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html).
 
-Once, you have access to Citrix Cloud you can request access to a Citrix Endpoint Management trial by following the instructions here: [Request a Citrix Endpoint Management Demo](https://docs.citrix.com/en-us/citrix-endpoint-management/onboarding-and-resource-setup.html#for-new-citrix-customers)
+Once, you have access to Citrix Cloud you can request access to a Citrix Endpoint Management trial by following the instructions here: [Request a Citrix Endpoint Management Demo](/en-us/citrix-endpoint-management/onboarding-and-resource-setup.html#for-new-citrix-customers)
