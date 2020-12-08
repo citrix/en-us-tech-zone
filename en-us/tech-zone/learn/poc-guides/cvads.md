@@ -96,7 +96,7 @@ If you agree then check the **“I’ve read, understand and agree to the Terms 
 9.  Once the account is confirmed, **Enter and Confirm the password.** Click **Create Account**.
 [![Citrix Virtual Apps and Desktops Password](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc8.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc8.png)
 
-### *Optional* Enable Multifactor Authentication for Citrix Cloud Administrators
+### Enable Multifactor Authentication for Citrix Cloud Administrators
 
 1.  Click the admin name in the top right corner of Citrix Cloud. Click **My Profile**
 [![Citrix Virtual Apps and Desktops Citrix Cloud Profile](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa1.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa1.png)
