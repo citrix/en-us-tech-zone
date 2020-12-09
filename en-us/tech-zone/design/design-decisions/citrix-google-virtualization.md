@@ -1,16 +1,12 @@
 ---
 layout: doc
 h3InToc: true
-author: Rick Dehlinger
+contributedBy: Rick Dehlinger
+description: The goal of this document is to provide targeted real world guidance for customers, and partners looking to find success with Citrix virtualization tech on Google Cloud.
 ---
 # Design Guide - Citrix virtualization on Google Cloud
 
-Contributed by:
-[JP Alfaro](https://www.linkedin.com/in/jp-alfaro-b2bb03b2/), [Jeff Allen](https://www.linkedin.com/in/jeff-d-allen/), [Stefano Castelli](https://www.linkedin.com/in/stefano-castelli-908a113/), [Gavin Connolly](https://www.linkedin.com/in/gavinconnolly/), [Kishore Kunisetty](mailto:kishore.kunisetty@citrix.com), [Dan Lazar](https://www.linkedin.com/in/djlazar/), [Rich Meesters](https://www.linkedin.com/in/rich-meesters-2039a1/), [John Moody](https://www.linkedin.com/in/johnrichardmoody/), [Mads Petersen](https://www.linkedin.com/in/mads-behrendt-petersen-43049613/), [Michael Shuster](https://www.linkedin.com/in/iammichaelshuster/), [Anthony Zepeda](https://www.linkedin.com/in/anthony-zepeda-0504bb60/)
-
 ## Introduction
-
-The goal of this document is to provide targeted real world guidance for customers, and partners looking to find success with Citrix virtualization tech on Google Cloud.
 
 In this guide, we walk you through designing a Citrix virtualization system on GCP. As the journey progresses, we discuss the implications of the decisions you need to make, and curating more reference resources along the way. This guide is a living document. Be sure to bookmark it and check back periodically to see how things change over time.
 
@@ -19,6 +15,8 @@ We start by reviewing the common [design patterns](#design-patterns-for-citrix-v
 Next we explore the [Solution Components and Requirements](#solution-components-and-requirements). We lay out the solution prerequisites and give you an overview of what services/components are required to create a Citrix Cloud ‘[resource location](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html)’.
 
 We then revisit and dig more [deeply into the design patterns](#design-patterns---going-deeper), armed with a greater understanding of the services/components of a Citrix virtualization system on Google Cloud. Finally, we dive deeper into specific topic areas, including [Virtual Delivery Agent (VDA) Design and Management](#vda-design-and-management-considerations), [Citrix ADC/Gateway on Google Cloud](#citrix-adc/gateway-vpx-on-google-cloud), and [Citrix StoreFront on Google Cloud](#citrix-storeFront-on-google-cloud).
+
+Note that this design guide is not the product of one person's experiences. It is very much a community effort! The [author](https://www.linkedin.com/in/rickdehlinger/) would like to recognize and thank the following people for their valuable contributions to this comprehensive work: [JP Alfaro](https://www.linkedin.com/in/jp-alfaro-b2bb03b2/), [Jeff Allen](https://www.linkedin.com/in/jeff-d-allen/), [Stefano Castelli](https://www.linkedin.com/in/stefano-castelli-908a113/), [Gavin Connolly](https://www.linkedin.com/in/gavinconnolly/), [Kishore Kunisetty](mailto:kishore.kunisetty@citrix.com), [Dan Lazar](https://www.linkedin.com/in/djlazar/), [Rich Meesters](https://www.linkedin.com/in/rich-meesters-2039a1/), [John Moody](https://www.linkedin.com/in/johnrichardmoody/), [Mads Petersen](https://www.linkedin.com/in/mads-behrendt-petersen-43049613/), [Michael Shuster](https://www.linkedin.com/in/iammichaelshuster/), and [Anthony Zepeda](https://www.linkedin.com/in/anthony-zepeda-0504bb60/). Cheers!
 
 As you take this journey with us, we encourage you to share your comments, contributions, questions, suggestions, and feedback along the way. Drop us a line via email to [the Citrix on Google SME working group](mailto:caceb231.citrix.onmicrosoft.com@amer.teams.ms).
 Enough intro for you? Fair enough! Let’s get after this.
