@@ -44,7 +44,7 @@ This guide assumes that the reader has a basic understanding of Citrix Cloud, CV
 
 1.  From within the Azure Portal, select Virtual Machines & Add Virtual Machine
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-001.png)](/en-us/tech-zone/build/media/Win10-001.png)
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-101.png)](/en-us/tech-zone/build/media/Win10-101.png)
 
 2.  Add Basic Details
 *  Subscription (Default)
@@ -61,19 +61,19 @@ This guide assumes that the reader has a basic understanding of Citrix Cloud, CV
 *  Select Next: Disk
 3.  Add Disk Details
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-002.png)](/en-us/tech-zone/build/media/Win10-002.png)
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-102.png)](/en-us/tech-zone/build/media/Win10-102.png)
 
 4.  Add Network Details
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-003.png)](/en-us/tech-zone/build/media/Win10-003.png)
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-103.png)](/en-us/tech-zone/build/media/Win10-103.png)
 
 5.  Enter Management Details
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-004.png)](/en-us/tech-zone/build/media/Win10-004.png)
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-104.png)](/en-us/tech-zone/build/media/Win10-104.png)
 
 6.  Enter Advanced Details
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-005.png)](/en-us/tech-zone/build/media/Win10-005.png)
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-105.png)](/en-us/tech-zone/build/media/Win10-105.png)
 
 7.  Next: Review & Create
 
