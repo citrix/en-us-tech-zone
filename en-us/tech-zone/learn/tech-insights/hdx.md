@@ -16,7 +16,7 @@ Adaptive Display analyzes and segments the display into unique parts based on co
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=xvzWWKhrGwE):**
 
-[![Tech Insight-Microapp Overview](/en-us/tech-zone/learn/media/tech-insights_hdx_adaptive-display.png)](https://www.youtube.com/watch?v=xvzWWKhrGwE)
+[![Tech Insight-Adaptive Display](/en-us/tech-zone/learn/media/tech-insights_hdx_adaptive-display.png)](https://www.youtube.com/watch?v=xvzWWKhrGwE)
 
 ## Adaptive Throughput
 
@@ -26,7 +26,7 @@ Citrix Virtual Apps and Desktops incorporates adaptive throughput to automatical
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=tsq8petwsMw):**
 
-[![Tech Insight-Microapp Overview](/en-us/tech-zone/learn/media/tech-insights_hdx_adaptive-throughput.png)](https://www.youtube.com/watch?v=tsq8petwsMw)
+[![Tech Insight-Adaptive Throughput](/en-us/tech-zone/learn/media/tech-insights_hdx_adaptive-throughput.png)](https://www.youtube.com/watch?v=tsq8petwsMw)
 
 ## Adaptive Transport
 
@@ -36,7 +36,17 @@ Citrix Virtual Apps and Desktops utilizes an adaptive transport that automatical
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=FyM47FDGw_4):**
 
-[![Tech Insight-Microapp Overview](/en-us/tech-zone/learn/media/tech-insights_hdx_adaptive-transport.png)](https://www.youtube.com/watch?v=FyM47FDGw_4)
+[![Tech Insight-Adaptive Transport](/en-us/tech-zone/learn/media/tech-insights_hdx_adaptive-transport.png)](https://www.youtube.com/watch?v=FyM47FDGw_4)
+
+## Browser Content Redirection
+
+The browser is one of the most used and most dynamic applications in any virtual desktop implementation. HDX applies different encoding algorithms to efficiently transport the content to the endpoint. However, certain public websites delivering high definition video content can be more efficiently delivered and rendered directly on the endpoint instead of on the virtual desktop.  
+
+Browser content redirection provides administrators with the ability to decide how different websites should be fetched and rendered.
+
+**Watch this video to [learn more](https://www.youtube.com/watch?v=zYNE73utPQs):**
+
+[![Tech Insight-Browser Content Redirection](/en-us/tech-zone/learn/media/tech-insights_hdx_browser-content-redirection.png)](https://www.youtube.com/watch?v=zYNE73utPQs)
 
 ## Microsoft Teams Optimization
 
@@ -46,4 +56,4 @@ By optimizing the way Microsoft Teams voice and video communication packets cros
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=BYzeltxcYJw):**
 
-[![Tech Insight-Microapp Overview](/en-us/tech-zone/learn/media/tech-insights_hdx_microsoft-teams-optimization.png)](https://www.youtube.com/watch?v=BYzeltxcYJw)
+[![Tech Insight-Microsoft Teams Optimization](/en-us/tech-zone/learn/media/tech-insights_hdx_microsoft-teams-optimization.png)](https://www.youtube.com/watch?v=BYzeltxcYJw)
