@@ -6,6 +6,8 @@ description: Learn how to install the Citrix VDA into a WIndows 10 platform & pr
 
 ## Contributors
 
+Russ
+
 **Author:** [Russell Peters](URL)
 
 ## Overview
