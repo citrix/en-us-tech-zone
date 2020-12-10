@@ -118,7 +118,6 @@ This guide assumes that the reader has a basic understanding of Citrix Cloud, CV
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-012.png)](/en-us/tech-zone/build/media/Win10-012.png)
 
-      [![Azure VM](/en-us/tech-zone/build/media/Win10-013.png)](/en-us/tech-zone/build/media/Win10-013.png)
 
 12.  Depending on your Windows 10 configuration management, select either Automatically or Manually to configure the local Windows 10 firewall
 
@@ -215,11 +214,35 @@ This guide assumes that the reader has a basic understanding of Citrix Cloud, CV
          
 ## Create Delivery Group
 
-## Citrix Workspace App
+[![Azure VM](/en-us/tech-zone/build/media/Win10-031.png)](/en-us/tech-zone/build/media/Win10-031.png)
+[![Azure VM](/en-us/tech-zone/build/media/Win10-032.png)](/en-us/tech-zone/build/media/Win10-032.png)
+[![Azure VM](/en-us/tech-zone/build/media/Win10-033.png)](/en-us/tech-zone/build/media/Win10-033.png)
+[![Azure VM](/en-us/tech-zone/build/media/Win10-034.png)](/en-us/tech-zone/build/media/Win10-034.png)
+[![Azure VM](/en-us/tech-zone/build/media/Win10-035.png)](/en-us/tech-zone/build/media/Win10-035.png)
+[![Azure VM](/en-us/tech-zone/build/media/Win10-036.png)](/en-us/tech-zone/build/media/Win10-036.png)
+
+## Assign Users to Published Desktop
+
+Login to Citrix Cloud & select appropriate customer where resource resides
+
+Select View Library
+ 
+[![Azure VM](/en-us/tech-zone/build/media/Win10-037.png)](/en-us/tech-zone/build/media/Win10-037.png)
+
+Find resource in the Library, hit the 3 dot menu in the top right corner & select Manage Subscribers.
+
+[![Azure VM](/en-us/tech-zone/build/media/Win10-044.png)](/en-us/tech-zone/build/media/Win10-044.png)
+
+Add users or groups to assign desktop
+
+[![Azure VM](/en-us/tech-zone/build/media/Win10-045.png)](/en-us/tech-zone/build/media/Win10-045.png)
+
+## Client Configuration
 
   >**Note:**
-    > For domain joined VMs best practice would be to populate Workspace & Files configuration via GPO
+    > For domain joined VMs, best practice would be to populate Citrix application configuration via GPO
 
+## Citrix Workspace App
 
 1.  From the start menu launch Citrix Workspace
 
@@ -231,6 +254,9 @@ This guide assumes that the reader has a basic understanding of Citrix Cloud, CV
 [![Citrix Workspace](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-2.png)
 
 4.  Add your username & password
+5.  Once logged into your Citrix Workspace you will see the assigned resource unser Desktops
+
+[![Azure VM](/en-us/tech-zone/build/media/Win10-047.png)](/en-us/tech-zone/build/media/Win10-047.png)
 
 
 ## Citrix Files
