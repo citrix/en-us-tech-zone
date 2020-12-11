@@ -159,13 +159,15 @@ This guide assumes that the reader has a basic understanding of Citrix Cloud, CV
 
 ## Assign Users to Desktop
 
-Login to Citrix Cloud & select appropriate customer where resource resides
+Login to Citrix Cloud & select appropriate customer where resource reside
 
-Select View Library
+[![Azure VM](/en-us/tech-zone/build/media/Win10--37.png)](/en-us/tech-zone/build/media/Win10--37.png)
+
+From the landing page select View Library
  
-[![Azure VM](/en-us/tech-zone/build/media/Win10-037.png)](/en-us/tech-zone/build/media/Win10-037.png)
+[![Azure VM](/en-us/tech-zone/build/media/Win10--36.png)](/en-us/tech-zone/build/media/Win10--36.png)
 
-Find resource in the Library, hit the 3 dot menu in the top right corner & select Manage Subscribers.
+Find the resource in the Library, hit the 3 dot menu in the top right corner & select Manage Subscribers.
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-044.png)](/en-us/tech-zone/build/media/Win10-044.png)
 
