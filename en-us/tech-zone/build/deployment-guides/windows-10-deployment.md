@@ -122,31 +122,62 @@ This guide assumes that the reader has a basic understanding of Citrix Cloud, CV
 
 ## Create Machine Catalog & Delploy VMs
 
+1. Log into Citrix Cloud & select the Virtual Apps & Desktop tile
+
+[![Azure VM](/en-us/tech-zone/build/media/Win10-051.png)](/en-us/tech-zone/build/media/Win10-051.png)
+
+2. Select manage, then Web Studio
+3. From within Web Studio, select Machine Catalogs, then create Machine Catalog
+   
 [![Azure VM](/en-us/tech-zone/build/media/Win10-018.png)](/en-us/tech-zone/build/media/Win10-018.png)
+
+4. Select Multi-session OS for WVD, for Windows 10 select Single-session OS
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-019.png)](/en-us/tech-zone/build/media/Win10-019.png)
 
-[![Azure VM](/en-us/tech-zone/build/media/Win10-020.png)](/en-us/tech-zone/build/media/Win10-020.png)
+5. Select Machines that are power managed.
+6. Deploy machines using Machine Creation Services & select Resource location
 
+[![Azure VM](/en-us/tech-zone/build/media/Win10-020.png)](/en-us/tech-zone/build/media/Win10-020.png)
+7.  Select master image created in Azure (See Create Machine in Azure below)
+8.  Select the minimum functionsal level. This should be the latestfesion that you have in your environment)
+   
 [![Azure VM](/en-us/tech-zone/build/media/Win10-021.png)](/en-us/tech-zone/build/media/Win10-021.png)
+
+9. Select Storage & License Types based on your environment
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-022.png)](/en-us/tech-zone/build/media/Win10-022.png)
 
+10.   Enter the nmuber of mchines you would like to provision.
+11.   Select machine size
+
 [![Azure VM](/en-us/tech-zone/build/media/Win10-023.png)](/en-us/tech-zone/build/media/Win10-023.png)
+
+12. Configure Write Back Cache as appropriate
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-024.png)](/en-us/tech-zone/build/media/Win10-024.png)
 
+13. Select Resource Group Provisioning
+
 [![Azure VM](/en-us/tech-zone/build/media/Win10-025.png)](/en-us/tech-zone/build/media/Win10-025.png)
 
-[![Azure VM](/en-us/tech-zone/build/media/Win10-026.png)](/en-us/tech-zone/build/media/Win10-026.png)
+14.   Select Network Interface to be assossiated with the VM
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-027.png)](/en-us/tech-zone/build/media/Win10-027.png)
 
+15.   Select whether to create new AD accounts, where to create them & the naming convention to be used.
+
 [![Azure VM](/en-us/tech-zone/build/media/Win10-028.png)](/en-us/tech-zone/build/media/Win10-028.png)
+
+16. Add domain credential to be used to oreform the account operation
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-029.png)](/en-us/tech-zone/build/media/Win10-029.png)
 
+17.   Machine Catalog Name in acordance with your corporate naming convention
+
 [![Azure VM](/en-us/tech-zone/build/media/Win10-030.png)](/en-us/tech-zone/build/media/Win10-030.png)
+
+1.    Click Finish & wait for the machine catalog to ctreate and the new VM disk to be created. Time will obviously depend on the amount of VMs specified.
          
 ## Create Delivery Group
 
