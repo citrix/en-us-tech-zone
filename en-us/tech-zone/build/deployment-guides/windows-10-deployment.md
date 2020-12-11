@@ -10,15 +10,17 @@ description: Learn how to install the Citrix VDA into a WIndows 10 platform & pr
 
 ## Overview
 
-This guide provides high level, guide to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Mchines (VMs) via Machine Creation Services (MCS) in Citrix Cloud Virtual Appps & Desktop (CVAD) Service.
-*  Create a Machine Catalog
+This guide provides high level, guide to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Mchines (VMs) via Machine Creation Services (MCS) in Citrix Cloud Virtual Apps & Desktop (CVAD) Service.
+*  Install Virtual Delivery Agent
+*  Create a Machine Catalog & Deploy VMs
 *  Create a Delivery Group
 *  Assign Resources in Citrix Cloud Library
 
 Also covers:
-*  Create Azure VM to build WVD Tempate for Citrix MCS
+*  Create Azure VM to be used as a  WVD Tempate for Citrix MCS
 *  Optimization Windows 10 for MCS Image
 
+ 
 >**Note:**
   >
   > The Citrix VDA is the client software that registers the resource with the CVAD service enabling the delivery of applications & desktops.
@@ -28,56 +30,14 @@ It will also cover the Citrix Optimiser, Citrix Workspace, Citrix Files & and ot
 
 This guide assumes that the reader has a basic understanding of Citrix Cloud, CVAD Service, basic Windows administration & Microsoft Azure.
 
-1   A Microsoft Azure tennant & ability to create a VM, or an on-prem virtual environment with a windows 10 VM
+   1. A Microsoft Azure tennant & ability to create a VM, or an on-prem virtual environment with a windows 10 VM
 
-2   A Citrix Cloud Admin Account
+2. A Citrix Cloud Admin Account
 
-3   A Citrix.com account to download the software
+3. A Citrix.com account to download the software
 
-*  Citrix VDA
-*  Citrix Optimiser
-
-## Create Virtual Machine in Microsoft Azure
- >**Note:**
-    >
-    >If not using Azure go to next section, Windows VM Preperation
-
-1.  From within the Azure Portal, select Virtual Machines & Add Virtual Machine
-
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-101.png)](/en-us/tech-zone/build/media/Win10-101.png)
-
-2.  Add Basic Details
-*  Subscription (Default)
-*  Resource Group – In accordance with corporate naming convention
-*  VM Name - In accordance with corporate naming convention
-*  Region – Defaults to your current location, change as appropriate
-*  Availability Options (None as creating a template VM)
-*  Image – Select image as per requirement.
-   *  For the purpose of this guide:	Windows 10 Enterprise Multi-session, Version 20H2 + Microsoft 365 Apps
-*  Select Size - Select size as per requirement.
-   *  For the purpose of this guide:	Standard_D4s_v3 – 4 vcpus, 16 GiB memory
-*  Enter Administrator Account Details
-*  Enter Public Inbound Ports Details
-*  Select Next: Disk
-3.  Add Disk Details
-
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-102.png)](/en-us/tech-zone/build/media/Win10-102.png)
-
-4.  Add Network Details
-
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-103.png)](/en-us/tech-zone/build/media/Win10-103.png)
-
-5.  Enter Management Details
-
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-104.png)](/en-us/tech-zone/build/media/Win10-104.png)
-
-6.  Enter Advanced Details
-
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-105.png)](/en-us/tech-zone/build/media/Win10-105.png)
-
-7.  Next: Review & Create
-
-
+      *  Citrix VDA
+      *  Citrix Optimiser
 
 ## Windows VM Preperation
 
@@ -111,26 +71,22 @@ This guide assumes that the reader has a basic understanding of Citrix Cloud, CV
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-010.png)](/en-us/tech-zone/build/media/Win10-010.png)
 
-9.  If you know your Cloud controllers, select do it manually.
 
-10.  Enter the FQD name of each Cloud controller (At lease two are recomended)
-11.  Select Test Connection & if successfull select Add the controller
+9.   Enter the FQD name of each Cloud Connector (At lease two are recomended)
+10.  Select Test Connection & if successfull select Add the connector
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-012.png)](/en-us/tech-zone/build/media/Win10-012.png)
 
 
-12.  Depending on your Windows 10 configuration management, select either Automatically or Manually to configure the local Windows 10 firewall
+11.  Depending on your specific requirements, select the firewall configuration accordingly.
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-014.png)](/en-us/tech-zone/build/media/Win10-014.png)
 
-13.  Review the summary & select install
+12.  Review the summary & select install
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-015.png)](/en-us/tech-zone/build/media/Win10-015.png)
 
-      [![Azure VM](/en-us/tech-zone/build/media/Win10-016.png)](/en-us/tech-zone/build/media/Win10-016.png)
-
-
-14.  Confirm everything was installed successfully, check the box to restart machine & select Finish
+13.  Confirm everything was installed successfully, check the box to restart machine & select Finish
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-017.png)](/en-us/tech-zone/build/media/Win10-017.png)
 
@@ -154,35 +110,15 @@ This guide assumes that the reader has a basic understanding of Citrix Cloud, CV
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)
 
-1.  Once analysesd, view the results.
+5.  Once analysesd, view the results.
 
-2.  Select all the desired optimisations & Select Optimise
+6.  Select all the desired optimisations & Select Optimise
 
-3.  View the results & select Done
+7.  View the results & select Done
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)
 
-## HDX Monitor - Optional
 
-1.  From Citrix Insight Services - <https://cis.citrix.com/hdx/download/>
-
-2.  Select Current Version, Online install (if for this instance only) and select Download
-
-[![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-1.png)
-
-3.  Agree to the license terms
-4.  Select Install
-
-[![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-3.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-3.png)
-
-5.  Leave the default local hostname & select open
-
-[![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-4.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-4.png)
-
-6.  Review the HDX Settings & Performance
-7.  Click on each item for more information
-
-[![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-5.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_hdx-5.png)
 
 ## Create Machine Catalog & Delploy VMs
 
@@ -221,7 +157,7 @@ This guide assumes that the reader has a basic understanding of Citrix Cloud, CV
 [![Azure VM](/en-us/tech-zone/build/media/Win10-035.png)](/en-us/tech-zone/build/media/Win10-035.png)
 [![Azure VM](/en-us/tech-zone/build/media/Win10-036.png)](/en-us/tech-zone/build/media/Win10-036.png)
 
-## Assign Users to Published Desktop
+## Assign Users to Desktop
 
 Login to Citrix Cloud & select appropriate customer where resource resides
 
@@ -254,7 +190,7 @@ Add users or groups to assign desktop
 [![Citrix Workspace](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-2.png)
 
 4.  Add your username & password
-5.  Once logged into your Citrix Workspace you will see the assigned resource unser Desktops
+5.  Once logged into your Citrix Workspace you will see the assigned resource under Desktops
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-047.png)](/en-us/tech-zone/build/media/Win10-047.png)
 
@@ -288,3 +224,43 @@ Add users or groups to assign desktop
 2.  Select the icon to view the default settings. Best practice would be to have these settings deployed centraly from Citrix Content & Collaboration Service
 
 [![Citrix Files for Outlook](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-2.png)
+
+## Create Virtual Machine in Microsoft Azure
+ >**Note:**
+    >
+    >
+
+1.  From within the Azure Portal, select the appropriate Subscription, Virtual Machines Resource & then select Add Virtual Machine
+
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-101.png)](/en-us/tech-zone/build/media/Win10-101.png)
+
+2.  Add Basic Details
+*  Subscription (Default)
+*  Resource Group – In accordance with corporate naming convention
+*  VM Name - In accordance with corporate naming convention
+*  Region – Defaults to your current Region, change as appropriate
+*  Availability Options (None as creating a template VM)
+*  Image – Select image as per requirement.
+   *  For the purpose of this guide:	Windows 10 Enterprise Multi-session, Version 20H2 + Microsoft 365 Apps
+*  Select Size - Select size as per requirement.
+   *  For the purpose of this guide:	Standard_D4s_v3 – 4 vcpus, 16 GiB memory
+*  Enter Administrator Account Details
+*  Enter Public Inbound Ports Details
+*  Select Next: Disk
+1.  Add Disk Details
+
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-102.png)](/en-us/tech-zone/build/media/Win10-102.png)
+
+4.  Add Network Details
+
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-103.png)](/en-us/tech-zone/build/media/Win10-103.png)
+
+5.  Enter Management Details
+
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-104.png)](/en-us/tech-zone/build/media/Win10-104.png)
+
+6.  Enter Advanced Details
+
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-105.png)](/en-us/tech-zone/build/media/Win10-105.png)
+
+7.  Next: Review & Create
