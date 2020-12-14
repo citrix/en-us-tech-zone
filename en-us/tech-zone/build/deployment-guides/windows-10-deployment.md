@@ -24,8 +24,8 @@ Also covers:
 ## Prerequisites
 
  >**Note:**
-    >
-    >This guide assumes that the reader has a basic understanding of Citrix Cloud, CVAD Service, basic Windows administration & Microsoft Azure.
+   >
+    > This guide assumes that the reader has a basic understanding of Citrix > Cloud, CVAD Service, basic Windows administration & Microsoft Azure.
 
    1. A Microsoft Azure tennant & ability to create a VM, or an on-prem virtual environment with a windows 10 VM
 
@@ -47,8 +47,8 @@ Also covers:
 1.  Login to Citrix.com/downloads and download the latest version of the virtual delivery agent.
 
  >**Note:**
-    >
-    >At time of writing, Virtual Delivery Agent 2009 was the latest version. We recommend using the latest version available for optimal performance, security, and functionality.
+   >
+    > At time of writing, Virtual Delivery Agent 2009 was the latest>version. We recommend using the latest version available for optimal performance, security, and functionality.
 
 2.  As an administrator run the instal file "VDAWorkstationSetup_xxxx.exe"
 3.  Select Create a master MCS image
@@ -63,8 +63,8 @@ Also covers:
 
   >**Note:**
     >
-    > For a full list of VDA install options check here :
-    <https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html>
+      > For a full list of VDA install options check here :
+      <https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html>
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-010.png)](/en-us/tech-zone/build/media/Win10-010.png)
 
@@ -282,7 +282,7 @@ Also covers:
 
 1.  From within the Azure Portal, select the appropriate Subscription, Virtual Machines Resource & then select Add Virtual Machine
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-101.png)](/en-us/tech-zone/build/media/Win10-101.png)
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-063.png)](/en-us/tech-zone/build/media/Win10-063.png)
 
 2.  Add Basic Details
 *  Subscription (Default)
@@ -299,18 +299,18 @@ Also covers:
 *  Select Next: Disk
 3.  Add Disk Details
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-102.png)](/en-us/tech-zone/build/media/Win10-102.png)
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-064.png)](/en-us/tech-zone/build/media/Win10-064.png)
 
 4.  Add Network Details
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-103.png)](/en-us/tech-zone/build/media/Win10-103.png)
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-065.png)](/en-us/tech-zone/build/media/Win10-065.png)
 
 5.  Enter Management Details
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-104.png)](/en-us/tech-zone/build/media/Win10-104.png)
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-066.png)](/en-us/tech-zone/build/media/Win10-066.png)
 
 6.  Enter Advanced Details
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-105.png)](/en-us/tech-zone/build/media/Win10-105.png)
+   [![Azure VM](/en-us/tech-zone/build/media/Win10-067.png)](/en-us/tech-zone/build/media/Win10-067.png)
 
 7.  Next: Review & Create
