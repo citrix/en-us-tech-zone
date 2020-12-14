@@ -11,6 +11,8 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Secure Workspace Access for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 
+[Secure Workspace Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-workspace-access-user-experience.html) - Securely access corporate web, and SaaS applications, with advanced security controls and website filtering for managed, unmanaged, and BYO devices.
+
 ## Citrix Analytics
 
 [Performance Analytics](/en-us/tech-zone/learn/tech-insights/performance-analytics.html) - Gain visibility into your environment through user-centric experience scores, application & infrastructure performance scores with Performance Analytics.
@@ -51,7 +53,7 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Federated Authentication Service](/en-us/tech-zone/learn/tech-insights/federated-authentication-service.html) - Single Sign-on to Windows-based virtual apps and desktops when using a non-Active Directory based Citrix Workspace identity.
 
-[HDX - Display and Adaptive Technologies](/en-us/tech-zone/learn/tech-insights/hdx-adaptive-display.html) - Technologies that ensure an unparalleled user experience when connecting to remote Citrix resources.
+[HDX](/en-us/tech-zone/learn/tech-insights/hdx.html) - A set of technologies ensuring an unparalleled user experience when accessing virtual Windows/Linux applications and desktops.
 
 [Remote PC Access](/en-us/tech-zone/learn/tech-insights/remote-pc-access.html) - Remote PC Access allows users to access their physical, office-based Windows PC from remote locations.
 

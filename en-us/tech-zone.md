@@ -97,6 +97,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [nFactor for Citrix Gateway Authentication with Email OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-email-otp.html) - Learn how to implement an extensible and flexible approach to configuring multi-factor authentication with nFactor for Citrix Gateway authentication with email one-time password.
 
+[nFactor for Citrix Gateway Authentication with Native OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-native-otp.html) - Learn how to implement an extensible and flexible approach to configuring multi-factor authentication with nFactor for Citrix Gateway authentication with Native OTP.
+
 [nFactor for Citrix Gateway Authentication with Push Token](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-push-token.html) - Learn how to implement an extensible and flexible approach to configuring multi-factor authentication with nFactor for Citrix Gateway authentication with Push Tokens.
 
 [SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html) - Learn how to implement Citrix SD-WAN rapidly to provide secure, enhanced, and resilient connectivity between your public cloud and data center environments.
@@ -169,13 +171,15 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
-[Secure Workspace Access](/en-us/tech-zone/learn/tech-briefs/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
+[Secure Workspace Access](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html) - With Secure Workspace Access, organizations go beyond access and aggregation to provide IT with policy controls that provide conditional access to cloud apps and internet browsing, enhancing the organization's overall security and compliance posture.
 
 ### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)
 
 [Secure Workspace Access for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
 
 [Secure Workspace Access for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
+
+[Secure Workspace Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-workspace-access-user-experience.html) - Securely access corporate web, and SaaS applications, with advanced security controls and website filtering for managed, unmanaged, and BYO devices.
 
 ### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
 
@@ -227,7 +231,7 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Federated Authentication Service](/en-us/tech-zone/learn/tech-insights/federated-authentication-service.html) - Single Sign-on to Windows-based virtual apps and desktops when using a non-Active Directory based Citrix Workspace identity.
 
-[HDX - Display and Adaptive Technologies](/en-us/tech-zone/learn/tech-insights/hdx-adaptive-display.html) - Technologies that ensure an unparalleled user experience when connecting to remote Citrix resources.
+[HDX](/en-us/tech-zone/learn/tech-insights/hdx.html) - A set of technologies ensuring an unparalleled user experience when accessing virtual Windows/Linux applications and desktops.
 
 [Remote PC Access](/en-us/tech-zone/learn/tech-insights/remote-pc-access.html) - Remote PC Access allows users to access their physical, office-based Windows PC from remote locations.
 
@@ -358,6 +362,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 ### [Design - Design Decisions](/en-us/tech-zone/design/design-decisions.html)
 
 [Evaluating Application Delivery Methods](/en-us/tech-zone/design/design-decisions/application-delivery-methods.html) - Learn about the different decision factors involved in choosing the optimal application delivery method.
+
+### [Build - Tech Papers](/en-us/tech-zone/build/tech-papers.html)
+
+[Communication Ports Used by Citrix Technologies](/en-us/tech-zone/build/tech-papers/citrix-communication-ports.html) - Overview of ports that are used by Citrix components and must be considered as part of networking architecture.
 
 ## Security
 

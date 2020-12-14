@@ -13,6 +13,20 @@ A poorly designed power-management scheme can increase cloud computing costs by 
 
 The Citrix Virtual Apps and Desktops service uses Autoscale with vertical load balancing as one of the ways to help lower cloud costs. These capabilities allow organizations to fully utilize virtual desktops, identify usage trends, and convert those trends into schedule and load-based rules that dynamically allocate and deallocate resources to maintain a positive user experience.
 
+The following are some key benefits that customers gain from Autoscale in a Citrix environment:
+
+*  **Hybrid multi-cloud load balancing** - Support for selective power management of resources that are only hosted in a resource location or cost more to run, while resources that are on-premises or reserved instances can be kept running 24x7. Enables on demand burst to cloud-based resources and disaster recovery use cases.
+*  **Service Integration** - Autoscale is integrated into the Citrix Cloud console and requires no extra components, apps, scripts to be deployed. Enabled easily from the UI with a few clicks and configured per delivery group.
+*  **Subscription wide support** - Power manages machines throughout a subscription, enabling DR to another region.
+*  **Schedule-based scaling** – Enables a defined number of machines to be kept powered on during peak hours and this schedule is configurable for different days in the week.
+*  **Buffer capacity** - Predefined number of VMs can be powered on before expected concurrent logon time slots, like weekday mornings, to ensure a quick and smooth logon for all users. Buffer capacity is configurable and can be set separately for peak and off peak hours.
+*  **VDI Support** - Support for both single session and multi-session delivery groups.
+*  **Drain mode** – Can isolate VMs that have low user count and not assign new sessions to the them so that they can be shutdown even during peak hours.
+*  **Dynamic Provisioning** - Machines can be created and deleted using Citrix Machine Creation Services, providing additional storage cost savings by deallocating the disk when the machine is not needed.
+*  **More decision parameters** - Power management decision rules can be customized as any combination of CPU, memory, disk utilization and number of sessions.
+*  **Director reporting** - Capacity planning and power management cost savings reported in the monitoring console.
+*  **Power off delay** – Ensures machines don’t keep flapping between on and off states. The period after a powered on machine can be switched off is configurable.
+
 ## Cost vs Experience
 
 The main impact of power managing machines on user experience is in the time taken to connect a user to the requested session. If the power management is too aggressive and any machine that is not hosting sessions is shut down, the pool capacity (from running machines) depletes. When another user requests a session and the powered on machines have no available capacity, the user must wait for a machine to be powered-on. The wait affects the user experience negatively, adding up to a few minutes to the session launch time. When many users log in simultaneously, for example at the beginning of a shift, the boot time can be even longer as several machines need to be powered on at the same time.
