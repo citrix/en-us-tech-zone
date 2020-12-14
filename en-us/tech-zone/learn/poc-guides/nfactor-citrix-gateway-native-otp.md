@@ -84,7 +84,7 @@ This LDAP authentication policy is used to do the first factor authentication.
 1.  Enter the expression `true`, and click `OK`
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_polldap-notpauth.png)
 
-For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-ldap-tsk.html)
+For more information see [LDAP authentication policies](/en-us/citrix-adc/current-release/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-ldap-tsk.html)
 
 ### Login Schemas
 
@@ -172,7 +172,7 @@ This registration login schema corresponds to the dual factor authentication whe
 This `AAA` Virtual Server is where the policies and schema are bound with the appropriate priority.
 
 1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain.
-See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
+See [Citrix ADC SSL certificates](/en-us/citrix-adc/current-release/ssl/ssl-certificates.html) for more information.
 1.  Next navigate to `Security > AAA - Application Traffic > Virtual Servers`, and select Add
 1.  Enter the following fields:
     *  Name - a unique value. We enter `nativeotp_authvserver`
