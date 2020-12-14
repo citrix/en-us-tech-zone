@@ -10,7 +10,7 @@ description: Learn how to install the Citrix VDA into a WIndows 10 platform & pr
 
 ## Overview
 
-This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Mchines (VMs) via Machine Creation Services (MCS) in Citrix Cloud Virtual Apps & Desktop (CVAD) Service.
+This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Mchines (VMs) via Machine Creation Services (MCS) in Citrix Cloud, Virtual Apps & Desktop (CVAD) Service.
 *  Install Virtual Delivery Agent
 *  Create a Machine Catalog & Deploy VMs
 *  Create a Delivery Group
@@ -21,14 +21,11 @@ Also covers:
 *  Optimization Windows 10 for MCS Image
 *  Citrix Workspace & Citrix Files configuration
 
- 
->**Note:**
-  >
-  > The Citrix VDA is the client software that registers the resource with the CVAD service enabling the delivery of applications & desktops.
-
 ## Prerequisites
 
-This guide assumes that the reader has a basic understanding of Citrix Cloud, CVAD Service, basic Windows administration & Microsoft Azure.
+ >**Note:**
+    >
+    >This guide assumes that the reader has a basic understanding of Citrix Cloud, CVAD Service, basic Windows administration & Microsoft Azure.
 
    1. A Microsoft Azure tennant & ability to create a VM, or an on-prem virtual environment with a windows 10 VM
 
@@ -249,10 +246,7 @@ This guide assumes that the reader has a basic understanding of Citrix Cloud, CV
 [![Citrix Workspace](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-2.png)
 
 4.  Add your username & password
-5.  Once logged into your Citrix Workspace you will see the assigned resource under Desktops
-
-[![Azure VM](/en-us/tech-zone/build/media/Win10-047.png)](/en-us/tech-zone/build/media/Win10-047.png)
-
+5.  Once autheniticated you will see any assigned resources available in the workspace or from your start menu
 
 ## Citrix Files
 
