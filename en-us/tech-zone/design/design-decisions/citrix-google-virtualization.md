@@ -1,16 +1,13 @@
 ---
 layout: doc
 h3InToc: true
-author: Rick Dehlinger
+contributedBy: Rick Dehlinger, Jeff Allen, Rich Meesters, Anthony Zepeda
+specialThanksTo: JP Alfaro, Stefano Castelli, Gavin Connolly, Kishore Kunisetty, Dan Lazar, John Moody, Mads Petersen, Michael Shuster
+description: The goal of this document is to provide targeted real world guidance for customers, and partners looking to find success with Citrix virtualization tech on Google Cloud.
 ---
 # Design Guide - Citrix virtualization on Google Cloud
 
-Contributed by:
-[JP Alfaro](https://www.linkedin.com/in/jp-alfaro-b2bb03b2/), [Jeff Allen](https://www.linkedin.com/in/jeff-d-allen/), [Stefano Castelli](https://www.linkedin.com/in/stefano-castelli-908a113/), [Gavin Connolly](https://www.linkedin.com/in/gavinconnolly/), [Kishore Kunisetty](mailto:kishore.kunisetty@citrix.com), [Dan Lazar](https://www.linkedin.com/in/djlazar/), [Rich Meesters](https://www.linkedin.com/in/rich-meesters-2039a1/), [John Moody](https://www.linkedin.com/in/johnrichardmoody/), [Mads Petersen](https://www.linkedin.com/in/mads-behrendt-petersen-43049613/), [Michael Shuster](https://www.linkedin.com/in/iammichaelshuster/), [Anthony Zepeda](https://www.linkedin.com/in/anthony-zepeda-0504bb60/)
-
 ## Introduction
-
-The goal of this document is to provide targeted real world guidance for customers, and partners looking to find success with Citrix virtualization tech on Google Cloud.
 
 In this guide, we walk you through designing a Citrix virtualization system on GCP. As the journey progresses, we discuss the implications of the decisions you need to make, and curating more reference resources along the way. This guide is a living document. Be sure to bookmark it and check back periodically to see how things change over time.
 
