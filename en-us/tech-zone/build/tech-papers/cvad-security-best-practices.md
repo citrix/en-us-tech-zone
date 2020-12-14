@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Andy Mills, Patrick Coble, Martin Zugec
 specialThanksTo: Eric Beiers, Steven Wright
-description: Copy & paste description from TOC here
+description: Tech paper focused on security recommendations and security practices for administrators.  Use this guide to navigate security planning, implementation, and ongoing operation.
 ---
 # Security best practices for Citrix Virtual Apps and Desktops
 
@@ -191,7 +191,7 @@ This caveat here means that migrations from one appliance to another requires mo
 
 ### Drop Invalid Packets
 
-Many invalid packets are sent every day to your Citrix ADC device. Some are benign, but most are used for fingerprinting purposes along with protocol-based attacks. Enabling this feature saves CPU and memory resources on your device. The result of not sending a partial or bad packet to the back-end Application thats proxied by the Citrix ADC prevents most known protocol attacks. This may even block potential future attacks that rely on packet manipulation.
+Many invalid packets are sent every day to your Citrix ADC device. Some are benign, but most are used for fingerprinting purposes along with protocol-based attacks. Enabling this feature saves CPU and memory resources on your device. The result of not sending a partial or bad packet to the back-end Application that's proxied by the Citrix ADC prevents most known protocol attacks. This may even block potential future attacks that rely on packet manipulation.
 
 You can find more information in [product documentation](/en-us/citrix-adc/citrix-adc-secure-deployment/secure-deployment-guide.html#applications-and-services), [CTX227979](https://support.citrix.com/article/CTX227979) and [CTX121149](https://support.citrix.com/article/CTX121149).
 
