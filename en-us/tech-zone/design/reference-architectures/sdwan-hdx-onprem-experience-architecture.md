@@ -136,7 +136,7 @@ Multi-stream ICA virtual channels types are assigned to the 4 classes shown belo
 
 ![SD-WAN HDX OnPrem Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-onprem-experience-architecture_virtualchannels.png)
 
-By default, HDX sessions are sent by the VDA on UDP (EDT) port 1494 or 2598 or TCP 1494 or 2598 depending on the session protocol established. (2598 is used when session reliability is configured. Ports can be customized as needed.). The SD-WAN appliance select the single HDX session and identify the virtual channel by inspecting the uncompressed NSAP channel, and prepare it for transmission over a Virtual Path. It is supported on most [Workspace App platforms](/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf).
+By default, HDX sessions are sent by the VDA on UDP (EDT) port 1494 or 2598 or TCP 1494 or 2598 depending on the session protocol established. (2598 is used when session reliability is configured. Ports can be customized as needed.). The SD-WAN appliance select the single HDX session and identify the virtual channel by inspecting the uncompressed NSAP channel, and prepare it for transmission over a Virtual Path. It is supported on most [Workspace App platforms](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf).
 
 The streams Virtual Path packets are assigned a tag according to class of service and then are sent to the far end. The tag is used by the SD-WAN appliance to prioritize use outbound transmission queues, and for path selection which the are monitored in real time for quality. When sent over MPLS, Differentiated Services Code Point (DSCP) tags can be mapped to pertinent [queues](/en-us/citrix-sd-wan/11-2/quality-of-service/mpls-queues.html) allow prioritization in transit across the packet switched network. Typically, Real Time traffic is assigned with an Expedited Forwarding (EF) tag, while other traffic is assigned to an Assured Forwarding (AF) tags in the IP header [https://en.wikipedia.org/wiki/Type_of_service](Type of Service (TOS) field)
 
@@ -184,7 +184,7 @@ Citrix SD-WAN appliances come in various form factors to extend the overlay netw
     *  Azure
     *  GCP
 *  **Hardware** – Citrix SD-WAN appliances come in various hardware models with support for various throughput and virtual paths quantity based on requirements.
-For more information see the [Citrix SD-WAN data sheet](/en_us/documents/data-sheet/citrix-sd-wan-data-sheet.pdf)
+For more information see the [Citrix SD-WAN data sheet](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-sd-wan-data-sheet.pdf)
 
 ##### Configuration Overview
 
@@ -198,7 +198,7 @@ Here we discuss Citrix Gateway appliances and pertinent configuration details.
 ##### Gateway Appliances
 
 Citrix Gateway appliances also come in various form factors to extend the overlay network between clients and VDAs whether they’re hosted in private cloud, public cloud, or on-premises data centers.
-For more information see the [Citrix ADC hardware data sheet](/en_us/documents/data-sheet/citrix-adc-hardware-platforms.pdf)
+For more information see the [Citrix ADC hardware data sheet](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-adc-hardware-platforms.pdf)
 Or the [Citrix ADC VPX data sheet](https://www.citrix.com/products/citrix-adc/resources/citrix-adc-vpx.html)
 
 ##### Configuration Overview
@@ -249,6 +249,6 @@ Citrix SD-WAN securely tunnels traffic across virtual paths between appliances, 
 
 Citrix SD-WAN can be deployed in various topologies to suit the location in the Enterprise network. For example, it can be used in Gateway mode in a branch to route all LAN traffic, or it can be deployed in Virtual Inline mode in a data center to have edge routers forward the desired traffic. For more information see [Citrix SD-WAN deployment topologies](/en-us/citrix-sd-wan/11-2/use-cases-sd-wan-virtual-routing/checklist-and-how-to-deploy.html)
 
-Citrix SD-WAN can allow all LAN traffic, or filter according to Enterprise security policy with an onboard firewall. It can also be used to do full stack inspection if necessary. For more information see [Citrix SD-WAN Security](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-edge-security.html)
+Citrix SD-WAN can allow all LAN traffic, or filter according to Enterprise security policy with an onboard firewall. It can also be used to do full stack inspection if . For more information see [Citrix SD-WAN Security](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-edge-security.html)
 
 ![SD-WAN HDX OnPrem Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-onprem-experience-architecture_ports.png)
