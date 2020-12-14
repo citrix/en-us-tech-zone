@@ -189,7 +189,7 @@ For more information see the [Citrix SD-WAN datasheet](https://www.citrix.com/co
 ##### Configuration Overview
 
 Citrix SD-WAN may be deployed in a variety of topologies for a variety of use cases. To ensure it can deliver, and enhance the performance of virtual app and desktops sessions, the overlay network must be designed so that the internal beacon points are reachable, by all branch clients.
-For comprehensive guidance on planning implementations complete with use cases, and recommendations see [Citrix SD-WAN Reference Architectures](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures.html#citrix-networking)
+For comprehensive guidance on planning implementations complete with use cases, and recommendations see [Citrix SD-WAN Reference Architectures](/en-us/tech-zone/design/reference-architectures.html#citrix-networking)
 
 #### Citrix Gateway
 
@@ -205,7 +205,7 @@ Or the [Citrix ADC VPX datasheet](https://www.citrix.com/products/citrix-adc/res
 
 Integrating Citrix Gateway with Citrix Virtual Apps and Desktops has been developed optimally for over a decade and is well documented.
 For more information see:
-[Integrate Citrix Gateway with StoreFront](https://docs.citrix.com/en-us/citrix-gateway/current-release/integrate-with-storefront.html)
+[Integrate Citrix Gateway with StoreFront](/en-us/citrix-gateway/current-release/integrate-with-storefront.html)
 
 #### Citrix Virtual Apps and Desktops
 
@@ -215,19 +215,19 @@ Here we discuss pertinent Storefront, and Citrix Virtual Apps and Desktops envir
 
 Storefront is also a well-documented component of Citrix Virtual Apps and Desktops environments. It is typically hosted on a hypervisor, in the data center, on the internal network. Most environments will have a store configured for internal users and external users integrated with Citrix Gateway. We will make this assumption, therefore there are limited configuration changes to consider integrating with the Citrix SD-WAN network.
 
-*  **Beacon Points** – Under Manage [Beacons Points](https://docs.citrix.com/en-us/storefront/1912-ltsr/integrate-with-citrix-gateway-and-citrix-adc/configure-beacon.html) specify the internal beacon point as a URL that will be reachable from all branches. This URL may use the Storefront server FQDN or another highly available service hosted in the same Data Center LAN.
-*  **Authentication** – Under [Manage Authentication Methods]( https://docs.citrix.com/en-us/storefront/1912-ltsr/configure-authentication-and-delegation/configure-authentication-service.html) specify the desired authentication methods. Remote Users will rely on “Pass-through from Citrix Gateway”. Whereas domain joined Branch Users will rely on “Domain pass-through” or non-domain joined may be authenticated again using another method such as “Username and Password”
+*  **Beacon Points** – Under Manage [Beacons Points](/en-us/storefront/1912-ltsr/integrate-with-citrix-gateway-and-citrix-adc/configure-beacon.html) specify the internal beacon point as a URL that will be reachable from all branches. This URL may use the Storefront server FQDN or another highly available service hosted in the same Data Center LAN.
+*  **Authentication** – Under [Manage Authentication Methods](/en-us/storefront/1912-ltsr/configure-authentication-and-delegation/configure-authentication-service.html) specify the desired authentication methods. Remote Users will rely on “Pass-through from Citrix Gateway”. Whereas domain joined Branch Users will rely on “Domain pass-through” or non-domain joined may be authenticated again using another method such as “Username and Password”
 For more information see:
-[Plan your StoreFront deployment](https://docs.citrix.com/en-us/storefront/1912-ltsr/plan.html)
-[Integrate with Citrix Gateway and Citrix ADC](https://docs.citrix.com/en-us/storefront/1912-ltsr/integrate-with-citrix-gateway-and-citrix-adc.html)
+[Plan your StoreFront deployment](/en-us/storefront/1912-ltsr/plan.html)
+[Integrate with Citrix Gateway and Citrix ADC](/en-us/storefront/1912-ltsr/integrate-with-citrix-gateway-and-citrix-adc.html)
 
 ##### Configuration Overview
 
 Citrix Virtual Apps and Desktops features and functionality has expanded over several decades and are well documented.
 
-Citrix Design Decision helps guide through the decision process to configure, optimize, and deploy your solution in its best way. For more information see [Citrix Virtual Apps and Desktops Design Decisions](https://docs.citrix.com/en-us/tech-zone/design/design-decisions.html#citrix-virtual-apps-and-desktops)
+Citrix Design Decision helps guide through the decision process to configure, optimize, and deploy your solution in its best way. For more information see [Citrix Virtual Apps and Desktops Design Decisions](/en-us/tech-zone/design/design-decisions.html#citrix-virtual-apps-and-desktops)
 
-Citrix reference architectures are comprehensive guides that assist organizations in planning their implementations complete with use cases, recommendations, and more. See [Citrix Virtual Apps and Desktops Reference Architectures](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures.html#citrix-virtual-apps-and-desktops)
+Citrix reference architectures are comprehensive guides that assist organizations in planning their implementations complete with use cases, recommendations, and more. See [Citrix Virtual Apps and Desktops Reference Architectures](/en-us/tech-zone/design/reference-architectures.html#citrix-virtual-apps-and-desktops)
 
 ### Network Considerations
 
@@ -237,7 +237,7 @@ Here well discuss bandwidth considerations and pertinent ports utilized by Citri
 
 Citrix SD-WAN appliances deployed in Gateway mode, in a branch, manage internal-intranet, and external-internet bandwidth allocation for all available links. New deployments should plan to allocate, and existing deployments should reallocate accordingly.
 
-Citrix SD-WAN bandwidth is allocated by delivery services according to link type groups. For more information see [Delivery services](https://docs.citrix.com/en-us/citrix-sd-wan-orchestrator/network-level-configuration/delivery-services.html)
+Citrix SD-WAN bandwidth is allocated by delivery services according to link type groups. For more information see [Delivery services](/en-us/citrix-sd-wan-orchestrator/network-level-configuration/delivery-services.html)
 
 Citrix Virtual App and Desktop session bandwidth usage varies broadly by usage scenarios.  For more information see [Citrix Virtual Apps and Desktops Bandwidth](https://virtualfeller.com/2020/02/19/citrix-virtual-apps-and-desktops-bandwidth/)
 
@@ -245,10 +245,10 @@ Citrix Virtual App and Desktop session bandwidth usage varies broadly by usage s
 
 Citrix Virtual Apps and Desktops uses well defined ports to communicate between modular components. Citrix SD-WAN extends LAN like access to the User Layer components. (For more information see the diagram below.)
 
-Citrix SD-WAN securely tunnels traffic across virtual paths between appliances, setup on UDP port 4980, using AES 128/256 bit ciphers. For more information regarding see [Configure Virtual WAN Service](https://docs.citrix.com/en-us/citrix-sd-wan/11-2/security/configure-virtual-wan.html)
+Citrix SD-WAN securely tunnels traffic across virtual paths between appliances, setup on UDP port 4980, using AES 128/256 bit ciphers. For more information regarding see [Configure Virtual WAN Service](/en-us/citrix-sd-wan/11-2/security/configure-virtual-wan.html)
 
-Citrix SD-WAN can be deployed in a variety of topologies to suit the location in the Enterprise network. For example, it may be used in Gateway mode in a branch to route all LAN traffic, or it may be deployed in Virtual Inline mode in a data center to have edge routers forward desired traffic. For more information see [Citrix SD-WAN deployment topologies](https://docs.citrix.com/en-us/citrix-sd-wan/11-2/use-cases-sd-wan-virtual-routing/checklist-and-how-to-deploy.html)
+Citrix SD-WAN can be deployed in a variety of topologies to suit the location in the Enterprise network. For example, it may be used in Gateway mode in a branch to route all LAN traffic, or it may be deployed in Virtual Inline mode in a data center to have edge routers forward desired traffic. For more information see [Citrix SD-WAN deployment topologies](/en-us/citrix-sd-wan/11-2/use-cases-sd-wan-virtual-routing/checklist-and-how-to-deploy.html)
 
-Citrix SD-WAN can allow all LAN traffic, or filter according to Enterprise security policy with an onboard firewall. It can also be used to do full stack inspection if required. For more information see [Citrix SD-WAN Security](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-edge-security.html)
+Citrix SD-WAN can allow all LAN traffic, or filter according to Enterprise security policy with an onboard firewall. It can also be used to do full stack inspection if required. For more information see [Citrix SD-WAN Security](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-edge-security.html)
 
 ![SD-WAN HDX OnPrem Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-onprem-experience-architecture_ports.png)
