@@ -223,7 +223,7 @@ For more information see:
 
 ##### Configuration Overview
 
-Citrix Virtual Apps and Desktops features and functionality has expanded over several decades and are well documented.
+Citrix Virtual Apps and Desktops features and functionality has expanded over several decades and is well documented.
 
 Citrix Design Decision helps guide through the decision process to configure, optimize, and deploy your solution in its best way. For more information see [Citrix Virtual Apps and Desktops Design Decisions](/en-us/tech-zone/design/design-decisions.html#citrix-virtual-apps-and-desktops)
 
@@ -231,7 +231,7 @@ Citrix reference architectures are comprehensive guides that assist organization
 
 ### Network Considerations
 
-Here well discuss bandwidth considerations and pertinent ports utilized by Citrix SD-WAN, Citrix Gateway, and Citrix Virtual Apps and Desktops.
+Here we discuss bandwidth considerations and pertinent ports utilized by Citrix SD-WAN, Citrix Gateway, and Citrix Virtual Apps and Desktops.
 
 #### Bandwidth
 
