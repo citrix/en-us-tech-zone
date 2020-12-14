@@ -19,7 +19,7 @@ Citrix SD-WAN is a software defined approach to managing enterprise WANs to prov
 
 Yet, to provide this functionality, Edge SD-WAN appliances must be able to inspect the HDX stream unencrypted. The Workspace client connects to Citrix Gateway, encrypted with HTTPs, for session management including authentication and resource enumeration. However, for app delivery the client must connect directly to StoreFront, and the Virtual Delivery Agent (VDA) it assigns, via the SD-WAN overlay network.
 
-With Citrix [Beacons Points](https://docs.citrix.com/en-us/storefront/1912-ltsr/integrate-with-citrix-gateway-and-citrix-adc/configure-beacon.html), endpoints are provided with a provisioning file including links to test reachability. When “internal” links are reachable they connect directly to StoreFront. It provides the client with the internal address of the target VDA, and subsequently directs the HDX session via the SD-WAN overlay network.
+With Citrix [Beacons Points](/en-us/storefront/1912-ltsr/integrate-with-citrix-gateway-and-citrix-adc/configure-beacon.html), endpoints are provided with a provisioning file including links to test reachability. When “internal” links are reachable they connect directly to StoreFront. It provides the client with the internal address of the target VDA, and subsequently directs the HDX session via the SD-WAN overlay network.
 
 ![SD-WAN HDX OnPrem Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-onprem-experience-architecture_overview.png)
 
@@ -45,7 +45,7 @@ The User Layer is where the supported devices host the Workspace App and users a
     *  Reduced Latency – Citrix SD-WAN appliances automatically build virtual paths between each other across all available paths. They also monitor path performance in real time, and route traffic over the path with the least latency.
     *  Resiliency – Citrix SD-WAN integrates with MPLS circuits, or the internet over various media including cable or DSL. If a link fails, with real time traffic monitoring Citrix SD-WAN is able to reroute traffic, with minimal user impact and often without session layer timeouts.
     *  Bandwidth Maximization – Traditional routers are typically limited to routing over a single “best” path. Citrix SD-WAN can take advantage of all available links and simultaneously. It routes traffic on them, provided Quality is maintained, based on real time performance metrics.
-    *  Quality of User Experience – available through [Citrix Orchestrator]( https://docs.citrix.com/en-us/citrix-sd-wan-orchestrator), QOE monitors HDX quality, and quantifies experience by session, user, or site. It assigns scores and reports in ranges including, Good (71-100), Fair (51-70), Poor (0-50), which allow for admins to prioritize focus.
+    *  Quality of User Experience – available through [Citrix Orchestrator](/en-us/citrix-sd-wan-orchestrator), QOE monitors HDX quality, and quantifies experience by session, user, or site. It assigns scores and reports in ranges including, Good (71-100), Fair (51-70), Poor (0-50), which allow for admins to prioritize focus.
 
 #### Access Layer Components
 
@@ -120,7 +120,7 @@ In this section we discuss detailed design elements of the SD-WAN Overlay Networ
 
 ### SD-WAN Overlay Network
 
-The SD-WAN Overlay Network is built over the available paths between each appliance. A secure tunnel is established on UDP port 4980 and LAN routes are exchanged.  Routes can be directly attached or learned, from the underlay network, through routing protocols. SD-WAN routes correspond to [service types](https://docs.citrix.com/en-us/citrix-sd-wan-orchestrator/network-level-configuration/delivery-services.html) and, in addition to “virtual path” service routes they typically include “internet breakout” service routes to direct traffic identified by business application rules to ISP learned internet default routes.
+The SD-WAN Overlay Network is built over the available paths between each appliance. A secure tunnel is established on UDP port 4980 and LAN routes are exchanged.  Routes can be directly attached or learned, from the underlay network, through routing protocols. SD-WAN routes correspond to [service types](/en-us/citrix-sd-wan-orchestrator/network-level-configuration/delivery-services.html) and, in addition to “virtual path” service routes they typically include “internet breakout” service routes to direct traffic identified by business application rules to ISP learned internet default routes.
 
 In our example following Branch endpoints contact the Gateway directly through an Internet breakout service and are directed to ISP default routes by SD-WAN appliances. Branch endpoints contact the virtual environment over virtual paths that are routed over the Internet and MPLS Network which are utilized according to Real-time performance.
 
@@ -136,11 +136,11 @@ Multi-stream ICA virtual channels types are assigned to the 4 classes shown belo
 
 ![SD-WAN HDX OnPrem Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-onprem-experience-architecture_virtualchannels.png)
 
-By default, HDX sessions are sent by the VDA on UDP (EDT) port 1494 or 2598 or TCP 1494 or 2598 depending on the session protocol established. (2598 is used when session reliability is configured. Ports can be customized as needed.). The SD-WAN appliance select the single HDX session and identify the virtual channel by inspecting the uncompressed NSAP channel, and prepare it for transmission over a Virtual Path. It is supported on most [Workspace App platforms](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf).
+By default, HDX sessions are sent by the VDA on UDP (EDT) port 1494 or 2598 or TCP 1494 or 2598 depending on the session protocol established. (2598 is used when session reliability is configured. Ports can be customized as needed.). The SD-WAN appliance select the single HDX session and identify the virtual channel by inspecting the uncompressed NSAP channel, and prepare it for transmission over a Virtual Path. It is supported on most [Workspace App platforms](/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf).
 
-The streams Virtual Path packets are assigned a tag according to class of service and then are sent to the far end. The tag is used by the SD-WAN appliance to prioritize use outbound transmission queues, and for path selection which the are monitored in real time for quality. When sent over MPLS, Differentiated Services Code Point (DSCP) tags can be mapped to pertinent [queues](https://docs.citrix.com/en-us/citrix-sd-wan/11-2/quality-of-service/mpls-queues.html) allow prioritization in transit across the packet switched network. Typically, Real Time traffic is assigned with an Expedited Forwarding (EF) tag, while other traffic is assigned to an Assured Forwarding (AF) tags in the IP header [https://en.wikipedia.org/wiki/Type_of_service](Type of Service (TOS) field)
+The streams Virtual Path packets are assigned a tag according to class of service and then are sent to the far end. The tag is used by the SD-WAN appliance to prioritize use outbound transmission queues, and for path selection which the are monitored in real time for quality. When sent over MPLS, Differentiated Services Code Point (DSCP) tags can be mapped to pertinent [queues](/en-us/citrix-sd-wan/11-2/quality-of-service/mpls-queues.html) allow prioritization in transit across the packet switched network. Typically, Real Time traffic is assigned with an Expedited Forwarding (EF) tag, while other traffic is assigned to an Assured Forwarding (AF) tags in the IP header [https://en.wikipedia.org/wiki/Type_of_service](Type of Service (TOS) field)
 
-Using Citrix SD-WAN Single Port MS Auto QOS can provide significant performance improvement for Citrix Virtual Apps and Desktops HDX sessions during congestion. Lab testing identified greater than 500% improvement in ICA Round Trip Time under severe congestion. For more information see [Measuring HDX User Experience Improvements from Citrix SD-WAN Network Performance Enhancements](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html)
+Using Citrix SD-WAN Single Port MS Auto QOS can provide significant performance improvement for Citrix Virtual Apps and Desktops HDX sessions during congestion. Lab testing identified greater than 500% improvement in ICA Round Trip Time under severe congestion. For more information see [Measuring HDX User Experience Improvements from Citrix SD-WAN Network Performance Enhancements](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html)
 
 ### Beacon Points
 
@@ -184,7 +184,7 @@ Citrix SD-WAN appliances come in various form factors to extend the overlay netw
     *  Azure
     *  GCP
 *  **Hardware** – Citrix SD-WAN appliances come in various hardware models with support for various throughput and virtual paths quantity based on requirements.
-For more information see the [Citrix SD-WAN data sheet](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-sd-wan-data-sheet.pdf)
+For more information see the [Citrix SD-WAN data sheet](/en_us/documents/data-sheet/citrix-sd-wan-data-sheet.pdf)
 
 ##### Configuration Overview
 
@@ -198,7 +198,7 @@ Here we discuss Citrix Gateway appliances and pertinent configuration details.
 ##### Gateway Appliances
 
 Citrix Gateway appliances also come in various form factors to extend the overlay network between clients and VDAs whether they’re hosted in private cloud, public cloud, or on-premises data centers.
-For more information see the [Citrix ADC hardware data sheet](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-adc-hardware-platforms.pdf)
+For more information see the [Citrix ADC hardware data sheet](/en_us/documents/data-sheet/citrix-adc-hardware-platforms.pdf)
 Or the [Citrix ADC VPX data sheet](https://www.citrix.com/products/citrix-adc/resources/citrix-adc-vpx.html)
 
 ##### Configuration Overview
