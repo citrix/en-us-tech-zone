@@ -25,7 +25,7 @@ Also covers:
 
  >**Note:**
    >
-    > This guide assumes that the reader has a basic understanding of Citrix > Cloud, CVAD Service, basic Windows administration & Microsoft Azure.
+    > This guide assumes that the reader has a basic understanding of Citrix Cloud, CVAD Service, basic Windows administration & Microsoft Azure.
 
    1. A Microsoft Azure tennant & ability to create a VM, or an on-prem virtual environment with a windows 10 VM
 
@@ -48,7 +48,7 @@ Also covers:
 
  >**Note:**
    >
-    > At time of writing, Virtual Delivery Agent 2009 was the latest>version. We recommend using the latest version available for optimal performance, security, and functionality.
+    > At time of writing, Virtual Delivery Agent 2009 was the latest version. We recommend using the latest version available for optimal performance, security, and functionality.
 
 2.  As an administrator run the instal file "VDAWorkstationSetup_xxxx.exe"
 3.  Select Create a master MCS image
@@ -63,7 +63,7 @@ Also covers:
 
   >**Note:**
     >
-      > For a full list of VDA install options check here :
+      >For a full list of VDA install options check here :
       <https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html>
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-010.png)](/en-us/tech-zone/build/media/Win10-010.png)
@@ -136,6 +136,7 @@ Also covers:
 6. Deploy machines using Machine Creation Services & select Resource location
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-020.png)](/en-us/tech-zone/build/media/Win10-020.png)
+
 7.  Select master image created in Azure (See Create Machine in Azure below)
 8.  Select the minimum functionsal level. This should be the latestfesion that you have in your environment)
    
@@ -174,7 +175,7 @@ Also covers:
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-030.png)](/en-us/tech-zone/build/media/Win10-030.png)
 
-1.    Click Finish & wait for the machine catalog to ctreate and the new VM disk to be created. Time will obviously depend on the amount of VMs specified.
+18.    Click Finish & wait for the machine catalog to ctreate and the new VM disk to be created. Time will obviously depend on the amount of VMs specified.
          
 ## Create Delivery Group
 
