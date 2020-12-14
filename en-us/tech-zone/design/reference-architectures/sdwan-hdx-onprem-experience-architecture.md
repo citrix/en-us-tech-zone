@@ -150,7 +150,7 @@ Beacons Points enable Workspace clients to determine whether they are on the int
 
 Beacon points are configured in the Storefront admin interface under **Stores > Manage Beacons**. They are entered as a URL.
 
-![SD-WAN HDX OnPrem Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-onprem-experience-architecture_ managebeacons.png)
+![SD-WAN HDX OnPrem Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-onprem-experience-architecture_managebeacons.png)
 
 Provisioning files represent the Beacons Points in XML format. In our example they are delivered from Storefront, via the Gateway, to the endpoint and consumed by Workspace app to utilize Beacon Point instructions.
 
