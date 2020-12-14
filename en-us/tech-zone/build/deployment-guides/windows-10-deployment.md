@@ -10,7 +10,7 @@ description: Learn how to install the Citrix VDA into a WIndows 10 platform & pr
 
 ## Overview
 
-This guide provides high level, guide to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Mchines (VMs) via Machine Creation Services (MCS) in Citrix Cloud Virtual Apps & Desktop (CVAD) Service.
+This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Mchines (VMs) via Machine Creation Services (MCS) in Citrix Cloud Virtual Apps & Desktop (CVAD) Service.
 *  Install Virtual Delivery Agent
 *  Create a Machine Catalog & Deploy VMs
 *  Create a Delivery Group
@@ -19,12 +19,12 @@ This guide provides high level, guide to install the Citrix Virtual Delivery Age
 Also covers:
 *  Create Azure VM to be used as a  WVD Tempate for Citrix MCS
 *  Optimization Windows 10 for MCS Image
+*  Citrix Workspace & Citrix Files configuration
 
  
 >**Note:**
   >
   > The Citrix VDA is the client software that registers the resource with the CVAD service enabling the delivery of applications & desktops.
-It will also cover the Citrix Optimiser, Citrix Workspace, Citrix Files & and other basic best practices
 
 ## Prerequisites
 
@@ -181,30 +181,56 @@ This guide assumes that the reader has a basic understanding of Citrix Cloud, CV
          
 ## Create Delivery Group
 
+1. Log into Citrix Cloud & select the Virtual Apps & Desktop tile
+
+[![Azure VM](/en-us/tech-zone/build/media/Win10-051.png)](/en-us/tech-zone/build/media/Win10-051.png)
+
+2. Select manage, then Web Studio
+3. From within Web Studio, select Delivery Group, then create Delivery Group
+
 [![Azure VM](/en-us/tech-zone/build/media/Win10-031.png)](/en-us/tech-zone/build/media/Win10-031.png)
+
+4. Select the Machine Catalog you just cretaed (above)
+5. Choose the number of machiens you created or want to add
+
 [![Azure VM](/en-us/tech-zone/build/media/Win10-032.png)](/en-us/tech-zone/build/media/Win10-032.png)
+
+6.  Select you user assignment method. Using Citroc Cloud for assignment in this scenario.
+
 [![Azure VM](/en-us/tech-zone/build/media/Win10-033.png)](/en-us/tech-zone/build/media/Win10-033.png)
+
+7. If adding applications to be published seperatly add these here. We are just publishing a WVD desktop in this scenario.
+
 [![Azure VM](/en-us/tech-zone/build/media/Win10-034.png)](/en-us/tech-zone/build/media/Win10-034.png)
+
+8.  Give the Delivery Group a name & the display name the users will see in their Workspace
+9.  Finish
+
 [![Azure VM](/en-us/tech-zone/build/media/Win10-035.png)](/en-us/tech-zone/build/media/Win10-035.png)
+
+10.   Once created, view the machines & check their registration status.
+
 [![Azure VM](/en-us/tech-zone/build/media/Win10-036.png)](/en-us/tech-zone/build/media/Win10-036.png)
+
 
 ## Assign Users to Desktop
 
-Login to Citrix Cloud & select appropriate customer where resource reside
+1. Login to Citrix Cloud & select appropriate customer where resource reside
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10--37.png)](/en-us/tech-zone/build/media/Win10--37.png)
 
-From the landing page select View Library
+2. From the landing page select View Library
  
 [![Azure VM](/en-us/tech-zone/build/media/Win10--36.png)](/en-us/tech-zone/build/media/Win10--36.png)
 
-Find the resource in the Library, hit the 3 dot menu in the top right corner & select Manage Subscribers.
+3. Find the resource in the Library, hit the 3 dot menu in the top right corner & select Manage Subscribers.
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-044.png)](/en-us/tech-zone/build/media/Win10-044.png)
 
-Add users or groups to assign desktop
+4. Add users or groups to assign desktop
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-045.png)](/en-us/tech-zone/build/media/Win10-045.png)
+
 
 ## Client Configuration
 
@@ -259,9 +285,6 @@ Add users or groups to assign desktop
 [![Citrix Files for Outlook](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-2.png)
 
 ## Create Virtual Machine in Microsoft Azure
- >**Note:**
-    >
-    >
 
 1.  From within the Azure Portal, select the appropriate Subscription, Virtual Machines Resource & then select Add Virtual Machine
 
@@ -280,7 +303,7 @@ Add users or groups to assign desktop
 *  Enter Administrator Account Details
 *  Enter Public Inbound Ports Details
 *  Select Next: Disk
-1.  Add Disk Details
+3.  Add Disk Details
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-102.png)](/en-us/tech-zone/build/media/Win10-102.png)
 
