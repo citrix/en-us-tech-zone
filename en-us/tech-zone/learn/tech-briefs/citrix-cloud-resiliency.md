@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Mayank Singh
 specialThanksTo: Fernando Klurfan, Rick Feijoo, Kenneth Bell, Ashsish Gujrati, Himanshu Agarwal, Dan Feller
-description: 
+description: Learn how cloud service architecture is designed and built for resiliency. Understand how Service Continuity features enable users to connect to the resources that are accessible even if some or all of the cloud services are unreachable.
 ---
 # Citrix Cloud Resiliency
 
@@ -219,7 +219,7 @@ The Day 2 and onward upkeep of a CVAD service environment relies on the ability 
 
 The Citrix Gateway service is built to be highly available with multiple instances of the service, deployed on multiple Points of Presence (PoP) across various locations in the world. Also, the service is hosted on different cloud providers. Find the list of PoPs [here](https://support.citrix.com/article/CTX270584).
 
-Within a Citrix Gateway service PoP, the micro services and tenants are deployed in a fully redundant active-active model. This funcionality allows any component to switch over to the standby if there is a failure. Only in rare cases, if all the services of a component within a PoP fail, does the Gateway service mark itself as down.
+Within a Citrix Gateway service PoP, the micro services and tenants are deployed in a fully redundant active-active model. This functionality allows any component to switch over to the standby if there is a failure. Only in rare cases, if all the services of a component within a PoP fail, does the Gateway service mark itself as down.
 
 Citrix uses the Intelligent Traffic Manager to monitor PoP health and automatically uses DNS to switch traffic to an alternate PoP if necessary.
 
