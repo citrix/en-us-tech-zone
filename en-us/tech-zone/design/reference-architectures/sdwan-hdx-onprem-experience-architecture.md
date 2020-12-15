@@ -11,11 +11,11 @@ description: This Reference Architecture explains how to optimize the delivery o
 
 This Reference Architecture explains how to optimize the delivery of Citrix Virtual Apps and Desktops from on-premises servers to users at locations with a Citrix SD-WAN appliance, by minimizing latency and improving session responsiveness during network issues.
 
-Citrix Virtual Apps and Desktops can deliver virtual apps and desktops sessions to remote user endpoints via Citrix Gateway. When users select a virtual app or desktop in their Workspace App their endpoint is directed to resolve an FQDN. With the public IP address they connect to the Gateway via the Internet or VPN.
+Citrix Virtual Apps and Desktops can deliver virtual apps and desktops sessions to remote user endpoints via Citrix Gateway. When users select a virtual app or desktop in their Workspace App their endpoint is directed to resolve an FQDN. With the public IP address returned they connect to the Gateway via the Internet or VPN.
 
 However, users connecting from a branch with a high speed connection to the Data Center where the virtual workload is hosted typically have a better path with less latency directly over the Enterprise intranet. At the same time, to provide the best user experience Citrix Virtual Apps and Desktops sessions need Quality of Service applied. Depending on the tasks the user is performing, the High Definition User Experience (HDX) sessions can be delivered using separate streams by Class of Service.
 
-Citrix SD-WAN is a software defined approach to managing enterprise WANs to provide optimal network connectivity between Enterprise branch offices and workloads hosted on-premises or in the Cloud. Citrix SD-WAN can automatically disseminate an HDX session in streams according to Class of Service between appliance virtual paths and deliver them according to their Quality of Service requirements.
+Citrix SD-WAN is a software defined approach to managing enterprise WANs to provide optimal network connectivity between Enterprise branch offices and workloads hosted on-premises or in the Cloud. Citrix SD-WAN can automatically disseminate an HDX session in streams according to class of service between appliance virtual paths and deliver them according to their Quality of Service (QOS)requirements.
 
 Yet, to provide this functionality, Edge SD-WAN appliances must be able to inspect the HDX stream unencrypted. The Workspace client connects to Citrix Gateway, encrypted with HTTPs, for session management including authentication and resource enumeration. However, for app delivery the client must connect directly to StoreFront, and the Virtual Delivery Agent (VDA) it assigns, via the SD-WAN overlay network.
 
