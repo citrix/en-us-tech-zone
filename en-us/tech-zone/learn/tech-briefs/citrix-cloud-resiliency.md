@@ -7,17 +7,17 @@ description:
 ---
 # Citrix Cloud Resiliency
 
-## Introducion
+## Introduction
 
-Digital transformation initiatives are currently top of mind for a large section of enterprises. Moving their apps and desktops delivery infrastructure to the cloud is one of the major considerations of CIOs. Cloud providers are bringing cloud only solutions or cloud-based resources bundled with attractive pricing, with the added benefit of simplified operations and lower management costs. A couple of the first things to evaluate for the IT departments, when considering a move to the cloud, are uptime and fault tolerance of the proposed cloud-based solution. This equally applies to a prospective or existing Citrix customer, who wants to utilize Citrix Cloud as their Workspace solution.
+Digital transformation initiatives are currently top of mind for a large section of enterprises. Moving their apps and desktops delivery infrastructure to the cloud is one of the major considerations of CIOs. Cloud providers are bringing cloud only solutions or cloud-based resources bundled with attractive pricing, with the added benefit of simplified operations and lower management costs. A couple of the first things to evaluate for the IT departments, when considering a move to the cloud, are the uptime and the fault tolerance of the proposed cloud-based solution. This consideration equally applies to a prospective or existing Citrix customer, who wants to utilize Citrix Cloud as their Workspace solution.
 
-This brief is designed to address these reliability considerations and layout the various ways in which Citrix is working towards making Citrix Cloud and the services offered progressively more resilient to failure. The document also addresses how Citrix Cloud is deployed in a way that in the rare case a service(s) is unreachable, the end user continues to have access to resources that are not affected by the unavailability of the service(s). The document also describes how Citrix Cloud is leveraging the technologies exposed by cloud providers, that Citrix Cloud services run on to make the services highly available and fault tolerant.
+This brief is designed to address these reliability considerations and lay out the various ways in which Citrix is working towards making Citrix Cloud and the services offered progressively more resilient to failure. The document also addresses how Citrix Cloud is deployed in a way that in the rare case a service(s) is unreachable, the end user continues to have access to resources that are not affected by the unavailability of the service(s). The document also describes how Citrix Cloud is using the technologies exposed by cloud providers, that Citrix Cloud services run on to make the services highly available and fault tolerant.
 
 The important thing to note is that all the items covered in the document work together as a combined solution to form multiple layers of a net that protects the organization from an outage and enables access during one.
 
 ## High availability
 
-Let’s first look at improvements being made to the Cloud services and the underlying infrastructure to ensure that services don’t fail. This is achieved by building highly available services, that can be scaled up easily to meet customer demand.
+Let’s first look at improvements being made to the Cloud services and the underlying infrastructure to ensure that services don’t fail. This resiliency is achieved by building highly available services, that can be scaled up easily to meet customer demand.
 
 Utilization of Azure Availability zones ensures that the broker and the associated databases are resilient to a cloud outage.
 
@@ -35,11 +35,11 @@ Even if an entire Azure region is not reachable, the platform services would be 
 
 ## Citrix Virtual Apps and Desktops Service
 
-For the Citrix Virtual Apps and Desktops(CVAD) service, there are a number of different features implemented to make it resilient and fault tolerant. Some of the features are:
+For the Citrix Virtual Apps and Desktops(CVAD) service, there are many different features implemented to make it resilient and fault tolerant. Some of the features are:
 
 ### Rendezvous protocol
 
-To ensure greater scalability of the Citrix Cloud Connectors, the HDX protocol was modified in CVAD version 1912. The Rendezvous protocol enables HDX sessions to bypass the Citrix Cloud Connector and connect directly and securely to the Citrix Gateway service. This frees up bandwidth and compute resources on the Cloud Connector to handle connection requests and increases the number of resources that a single Cloud Connector can manage.
+To ensure greater scalability of the Citrix Cloud Connectors, the HDX protocol was modified in CVAD version 1912. The Rendezvous protocol enables HDX sessions to bypass the Citrix Cloud Connector and connect directly and securely to the Citrix Gateway service. Bypassing the HDX traffic, frees up bandwidth and compute resources on the Cloud Connector. Enabling the Connector to handle more connection requests and increase the number of resources that a single Cloud Connector can manage.
 
 Learn more about the Rendezvous Protocol and how to enable it via policies [here](/en-us/citrix-virtual-apps-desktops-service/hdx/rendezvous-protocol.html).
 
@@ -51,7 +51,7 @@ Admins, using PowerShell, can define a fallback StoreFront HTTP(S) URL, that res
 
 ![Citrix Cloud Resiliency - Fall back to StoreFront](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_3-fallback-to-storefront.png)
 
-When a user attempts to log in or launches a resource and the Workspace Platform returns an error, the Workspace app will present the StoreFront URL to the users. This occurs when the Workspace service is not reachable, or authentication failure occurs resulting in resource launch failure.
+When a user attempts to log in or launches a resource and the Workspace Platform returns an error, the Workspace app presents the StoreFront URL to the users. This occurs when the Workspace service is not reachable, or authentication failure occurs resulting in resource launch failure.
 
 The user can then use the StoreFront URL to connect to directly to the on-premises store and access resources that are published from it.
 
@@ -60,7 +60,7 @@ The user can then use the StoreFront URL to connect to directly to the on-premis
 Having seen the different ways in which Citrix is ramping up the supported scale limits to make your Cloud deployment resilient, let us shift our attention to how Citrix ensures, in an unlikely event of a cloud service failure or outage, the user is able to continue accessing their resources from multiple resource locations.
 With a goal to make resources available even when Citrix Cloud services are not reachable, teams at Citrix have implemented many improvements, from the ground up, under the umbrella of Service Continuity.
 
-The set of functionalities implemented under Service Continuity includes but are not limited to:
+The set of functionalities implemented under Service Continuity include but are not limited to:
 
 1.  A mechanism to create and distribute Workspace connection leases to each client endpoint, that has at least authenticated once to the Workspace. The Workspace connection lease files tell that endpoint (per-user) what apps and desktop resources are available from which locations managed by which Cloud connector. Essentially eliminating the single resource location limitation.
 
@@ -76,7 +76,7 @@ Before the deep dive into how these solutions work, let’s look at how differen
 
 1.  Citrix Virtual Apps and Desktops / Broker Service only
 
-    In the scenario, only the CVAD or Broker Service is experiencing an outage, the user would continue to have access to the Web and SaaS apps, in additions to the virtual apps and desktops resources. This is because the Workspace app UI (empowered by PWA) can aggregate all the resources from the service feeds and rely on Workspace connection leases for CVAD apps only (see per-feed in-app cache diagram below).
+    In the scenario, only the CVAD or Broker Service is experiencing an outage, the user would continue to have access to the Web and SaaS apps, in additions to the virtual apps and desktops resources. The Workspace app UI (empowered by PWA) aggregates all the resources from the service feeds and relies on Workspace connection leases for CVAD apps only (see per-feed in-app cache diagram).
 
     ![Citrix Cloud Resiliency - Workspace unreachable banner](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_4-workspace-unreachable-banner.png)
 
@@ -86,13 +86,13 @@ Before the deep dive into how these solutions work, let’s look at how differen
 
     In the scenario where the identity service is not reachable, the user would continue to have access to all the CVAD service resources reachable from the Cloud Connectors. The connection leases (explained a little later) contain the authorization tokens for the resources and the user
 
-1.  Internet – (Only internal resources will be accessible if there is connectivity)
+1.  Internet – (Only internal resources are accessible if there is connectivity)
 
     In the scenario where the client endpoints are not able to reach the internet, but still have network connectivity to Cloud Connectors and VDAs (on the internal network). All virtual apps and desktop resources accessible on the internal network are available during the loss of Internet access.
 
 1.  Gateway or Secure Workspace Access service – Fail over to a different PoP
 
-    The Citrix Gateway service is built to be highly available with multiple instances of the service, deployed on multiple Points of Presence (PoP) across various locations in the world. Additionally, the service is hosted on different cloud providers. Find the list of PoPs [here](https://support.citrix.com/article/CTX270584).
+    The Citrix Gateway service is built to be highly available with multiple instances of the service, deployed on multiple Points of Presence (PoP) across various locations in the world. Also, the service is hosted on different cloud providers. Find the list of PoPs [here](https://support.citrix.com/article/CTX270584).
 
 ### Progressive Web app
 
@@ -100,7 +100,7 @@ A progressive web app differs from a normal web app by including background proc
 
 ![Citrix Cloud Resiliency - Progressive Web app per feed cache](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_5-pwa-per-feed-cache.png)
 
-The Citrix Workspace app uses the new CLXMTP (Connection Lease Exchange & Mutual Trust Protocol) to talk to the Cloud Connector or Gateway service. For internal users it runs on Citrix Common Gateway Protocol (CGP) TCP port 2598 and for external users on CGS TCP port 443. All this is transparent to the user.
+The Citrix Workspace app uses the new CLXMTP (Connection Lease Exchange & Mutual Trust Protocol) to talk to the Cloud Connector or Gateway service. For internal users it runs on Citrix Common Gateway Protocol (CGP) TCP port 2598 and for external users on CGS TCP port 443. This entire process is transparent to the user.
 
 ### Changes in user experience
 
@@ -118,7 +118,7 @@ Once connectivity is reestablished, the Workspace app gives the user, the abilit
 
 ![Citrix Cloud Resiliency - Unable to connect to resources banner](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_8-unable-to-connect-to-resources-banner.png)
 
-For the user to be able to access the resources, when the Workspace identity service is not accessible for authentication, the connection lease behaves like a long-lived authorization token. The user will be required to authenticate with the resource when launched to get access to the apps or desktops, using his/her AD credentials or SmartCard PIN.
+For the user to be able to access the resources, when the Workspace identity service is not accessible for authentication, the connection lease behaves like a long-lived authorization token. The user is required to authenticate with the resource when launched to get access to the apps or desktops, using their AD credentials or SmartCard PIN.
 
 If Citrix Workspace app and the VDA are joined to the same domain and the SSO pass-through plug-in is configured in Workspace app, SSO is achieved. Session sharing is also supported, so if a subsequent app is launched via Workspace Connection Lease from the same VDA where the user has an existing session also launched via Workspace Connection Lease, SSO is achieved.
 
@@ -126,19 +126,19 @@ If Citrix Workspace app and the VDA are joined to the same domain and the SSO pa
 
 ### Workspace connection leases and how they work
 
-When all services are reachable, a `.ICA` file is generated that enables the client to connect to the app or desktop by providing a one-time short-lived access ticket. This ticket contains information of the resource that should be connected to. The `.ICA` file is generated by Workspace, by retrieving the list of resources that are assigned to the user (a.k.a enumeration) and then identifying which VDA can host the session (a.k.a resolution).
+When all services are reachable, a `.ICA` file is generated that enables the client to connect to the app or desktop by providing a one-time short-lived access ticket. This ticket contains information of the resource that the user would connect to. The `.ICA` file is generated by Workspace, by retrieving the list of resources that are assigned to the user (a.k.a enumeration) and then identifying which VDA can host the session (a.k.a resolution).
 
 [![Citrix Cloud Resiliency - .ICA file creation process](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_10-ica-file-creation.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_10-ica-file-creation-large.png)
 
-In the case of any of the required services not being reachable the `.ICA` file cannot be generated. To overcome this per launch/reconnect requirement, the Workspace connection lease was designed.
+In the case of any of the required services being unreachable the `.ICA` file cannot be generated. To overcome this per launch/reconnect requirement, the Workspace connection lease was designed.
 
-A Workspace connection lease by default is valid for 7 days (configurable from 1 to 30 days) and is a long lived authorization token for ALL the resources the user is assigned to, and contains a list of Cloud Connectors that can be used to reach it (either directly or via the Citrix Gateway Service). In case CGS is involved, the Workspace connection lease also contains a global Citrix Gateway service FQDN address that can be used to connect to the resources.
+A Workspace connection lease by default is valid for 7 days (configurable from 1 to 30 days). It is a long lived authorization token for ALL the resources the user is assigned to. It contains a list of Cloud Connectors that can be used to reach the resources (either directly or via the Citrix Gateway Service). In case CGS is involved, the Workspace connection lease also contains a global Citrix Gateway service FQDN address that can be used to connect to the resources.
 
 A Workspace connection lease is a per user, per endpoint set of tokens which contain a cache of all the resources that the user is entitled to. They contain information of the Citrix Gateway service, and all Cloud Connectors that can service the connection request. As the connection lease is bound to the user and endpoint, it cannot be copied over to another device and used to launch sessions.
 
-For Workspace connection leases to be created, the user must sign in at least once into Citrix Workspace using the Citrix Workspace app natively (and not via browsers). One the user signs in, the Connection Lease Issuing Service (CLIS) in Citrix Cloud receives a request to generate the leases for the user and endpoint combination. The Connection Lease Issuing service will queue this request and forward it to the cloud broker (to not overload it). As the connection lease contains all combinations of the Cloud Connectors and resources that can service a user’s session request this process is done asynchronously and once the leases are generated, they are pushed onto the endpoint. This process can take up to 10 mins depending on the load on the broker.
+For Workspace connection leases to be created, the user must sign in at least once into Citrix Workspace using the Citrix Workspace app natively (and not via browsers). One the user signs in, the Connection Lease Issuing Service (CLIS) in Citrix Cloud receives a request to generate the leases for the user and endpoint combination. The Connection Lease Issuing service queues this request and forward it to the cloud broker (to not overload it). As the connection lease contains all combinations of the Cloud Connectors and resources that can service a user’s session request this process is done asynchronously and once the leases are generated, they are pushed onto the endpoint. This process can take up to 10 mins depending on the load on the broker.
 
-The Workspace connection lease(s) are made up of three concatenated files that are encrypted and signed by Citrix Cloud and stored securely on the endpoint. The three files are Metadata, Common Parameters and Resource location. On a windows endpoint, they are stored in each user’s AppData\Local folder. The path is `%LOCALAPPDATA%\Citrix\SelfService\ConnectionLeases\<StoreName>\<SiteName>\<username>\leases`
+The Workspace connection lease is made up of three concatenated files that are encrypted and signed by Citrix Cloud and stored securely on the endpoint. The three files are Metadata, Common Parameters and Resource location. On a windows endpoint, they are stored in each user’s AppData\Local folder. The path is `%LOCALAPPDATA%\Citrix\SelfService\ConnectionLeases\<StoreName>\<SiteName>\<username>\leases`
 
 As seen in the following image the user is entitled to 6 resources and so there are 18 files, in the folder.
 
@@ -156,7 +156,7 @@ The following is the process that occurs in the scenario when some of the Citrix
 
 To enable a larger subset of the current customer base, with VDA versions as far back as the Citrix Virtual Apps and Desktops 7.15 LTSR, the Cloud Connector with Local Host Cache is used when the Cloud broker is not accessible. Else changes to enable Service Continuity would have required the VDAs to be upgraded.
 
-Note: In the scenario where the Citrix Cloud Broker Service is reachable (regardless of whether the Workspace store is accessible or not), the Cloud Connector will always rely on the Broker Service for brokering.
+Note: In the scenario where the Citrix Cloud Broker Service is reachable (regardless of whether the Workspace store is accessible or not), the Cloud Connector always relies on the Broker Service for brokering.
 
 The process is the same when the Resource Location is configured as “Internal only”, except in this case the Workspace app directly talks to the Cloud connector in the Resource location where the desired app is hosted.
 
@@ -217,10 +217,10 @@ The Day 2 and onward upkeep of a CVAD service environment relies on the ability 
 
 ## Citrix Gateway service
 
-The Citrix Gateway service is built to be highly available with multiple instances of the service, deployed on multiple Points of Presence (PoP) across various locations in the world. Additionally, the service is hosted on different cloud providers. Find the list of PoPs [here](https://support.citrix.com/article/CTX270584).
+The Citrix Gateway service is built to be highly available with multiple instances of the service, deployed on multiple Points of Presence (PoP) across various locations in the world. Also, the service is hosted on different cloud providers. Find the list of PoPs [here](https://support.citrix.com/article/CTX270584).
 
-Within a Citrix Gateway service PoP, the micro services and tenants are deployed in a fully-redundant active-active model. This allows any component to switch over to the standby in case of failure. Only in rare cases, if all the services of a component within a PoP fail, does the Gateway service mark itself as down.
+Within a Citrix Gateway service PoP, the micro services and tenants are deployed in a fully redundant active-active model. This funcionality allows any component to switch over to the standby if there is a failure. Only in rare cases, if all the services of a component within a PoP fail, does the Gateway service mark itself as down.
 
-Citrix uses the Intelligent Traffic Manager to monitor PoP health and automatically uses DNS to switch traffic to an alternate PoP if required.
+Citrix uses the Intelligent Traffic Manager to monitor PoP health and automatically uses DNS to switch traffic to an alternate PoP if necessary.
 
 Combined with the resiliency of the Gateway service, Service Continuity enables access to virtual apps and desktops resources, as long as the Gateway service and / or the Resource Location can be reached from the clients.
