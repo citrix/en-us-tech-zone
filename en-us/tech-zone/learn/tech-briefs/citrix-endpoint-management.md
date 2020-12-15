@@ -74,25 +74,25 @@ Starting with Unified Endpoint Management means that you need to have informatio
 
 Bring Your Own Device **(BYOD)** means that employees can use their own smartphones, laptop, and tablets for their work. With BYOD there can be some Legal Complications in the event of a loss, virus, or data breach, the use of your own device also causes legal complications. For example, who is responsible where appropriate? And is the company allowed to maintain its ICT policy in full on private devices?
 
-![Bring Your Own Device](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-business-ownership-models_byod.png)
+![Bring Your Own Device](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-business-ownership-models-byod.png)
 
 #### Choose Your Own Device (CYOD)
 
 Choose Your Own Device **(CYOD)** means that employees can choose a device from a pre-approved list of devices types and models by the employer. With this approach, not only the IT department is satisfied, as it makes managing the devices very easy. The employee will also be satisfied with it, because there is still a certain freedom of choice on the devices they need for their work.
 
-![Choose Your Own Device](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-business-ownership-models_cyod.png)
+![Choose Your Own Device](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-business-ownership-models-cyod.png)
 
 #### Company Owned, Personally Enabled (COPE)
 
 Company Owned, Personally Enabled **(COPE)** is one of the two policies that an organization can implement for a Choose-Your-Own-Device policy. The employee may choose from a list of devices selected in advance by the organization. The device is purchased and managed by the organization but may also be used by the employee for private purposes.
 
-![Company Owned Personally Enabled](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-business-ownership-models_cope.png)
+![Company Owned Personally Enabled](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-business-ownership-models-cope.png)
 
 #### Company Owned, Business Only (COBO)
 
 Company Owned, Business Only **(COBO)** is the business model where companies supply the employee with a device purchased and managed by the company to use and restrict this hardware for business use only, private use is prohibited. Employees often weren’t given a choice for what device they would have.
 
-![Company Owned Business Only](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-business-ownership-models_cobo.png)
+![Company Owned Business Only](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-business-ownership-models-cobo.png)
 
 ##### **Note**
 
