@@ -75,6 +75,10 @@ Just as buildings have blueprints that include details about their structure and
 
 [SD-WAN Multi-Region](/en-us/tech-zone/design/reference-architectures/sd-wan-multi-region.html) - Discover the framework, design, and architecture for Citrix SD-WAN multi-region deployment with SD-WAN Orchestrator.
 
+## Google Cloud Platform
+
+[Citrix virtualization on Google Cloud](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) - Learn the architecture and deployment considerations for Citrix solutions on Google Cloud Platform.
+
 ## Security
 
 [Architectural Considerations for the General Data Protection Regulation - GDPR](/en-us/tech-zone/design/reference-architectures/gdpr.html) - Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.

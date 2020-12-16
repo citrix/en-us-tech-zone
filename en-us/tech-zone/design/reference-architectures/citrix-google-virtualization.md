@@ -27,11 +27,11 @@ We recognize that different customers are at different stages on their journey t
 
 Organizations of all shapes and sizes are making the move to "the cloud" and subscription based managed services. For customers who are all in on "the cloud" (or interested in experiencing the best of what the cloud has to offer), the Cloud Forward design pattern is a great match. The Cloud Forward design pattern:
 
--  Uses state of the art, cloud-delivered services from Citrix and Google.  
--  Is commonly used for new deployments, in addition to technology evaluation, proofing, training, and other use cases that value simplicity, flexibility, and speed of deployment.  
--  Requires no existing infrastructure or licenses, and can be built in less than 30 minutes using Google Deployment Manager templates such as the [Citrix on GCP GitHub project](https://github.com/GoogleCloudPlatform/citrix-on-gcp).  
--  Provides high availability of all critical services.  
--  Creates a Citrix Cloud "[resource location](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html)" - the foundation of the other two patterns outlined here.  
+-  Uses state of the art, cloud-delivered services from Citrix and Google.
+-  Is commonly used for new deployments, in addition to technology evaluation, proofing, training, and other use cases that value simplicity, flexibility, and speed of deployment.
+-  Requires no existing infrastructure or licenses, and can be built in less than 30 minutes using Google Deployment Manager templates such as the [Citrix on GCP GitHub project](https://github.com/GoogleCloudPlatform/citrix-on-gcp).
+-  Provides high availability of all critical services.
+-  Creates a Citrix Cloud "[resource location](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html)" - the foundation of the other two patterns outlined here.
 
 All you need to get started is a GCP Project and access to a Citrix [Cloud Virtual Apps and Desktops service](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/) (CVADS) subscription. Evaluation subscriptions to Citrix Cloud are available through Citrix and Citrix authorized resellers. Google also offers new customers a [free trial](https://cloud.google.com/free) which includes $300 of Google Cloud credit.
 
@@ -53,9 +53,9 @@ End-users use the [Citrix Workspace app](https://www.citrix.com/downloads/worksp
 
 This pattern uses the following cloud services (❻) from Citrix, which are secure and highly available by design:
 
--  [Citrix Virtual Apps and Desktop Service:](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/) provides session brokering, load management, single instance image management, monitoring, and cost/capacity management services.  
--  [Citrix Workspace service:](https://www.citrix.com/products/citrix-workspace/) the user interface of the solution. This web service provides multifactor authentication, content presentation, and launching services for the Citrix Workspace app. This service consolidates access to virtualized applications and desktops, web, and SaaS applications, in addition to Enterprise file stores.  
--  [Citrix Gateway Service:](https://www.citrix.com/products/citrix-gateway/) provides secure access to virtualized applications and desktops, in addition to Enterprise web applications, to devices on public networks.  
+-  [Citrix Virtual Apps and Desktop Service:](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/) provides session brokering, load management, single instance image management, monitoring, and cost/capacity management services.
+-  [Citrix Workspace service:](https://www.citrix.com/products/citrix-workspace/) the user interface of the solution. This web service provides multifactor authentication, content presentation, and launching services for the Citrix Workspace app. This service consolidates access to virtualized applications and desktops, web, and SaaS applications, in addition to Enterprise file stores.
+-  [Citrix Gateway Service:](https://www.citrix.com/products/citrix-gateway/) provides secure access to virtualized applications and desktops, in addition to Enterprise web applications, to devices on public networks.
 -  [Citrix Analytics Service:](https://www.citrix.com/products/citrix-analytics-security/) uses advanced machine learning technologies to provide enterprise-grade security, performance, and user behavioral analytics and reporting.
 
 This design pattern can also be paired with a Google Cloud VPN/Interconnect, or a purpose built solution like Citrix SD-WAN (❼) to extend existing Active Directory investments (❽) into Google Cloud or to provide access to traditional, on-premises, customer managed applications and infrastructure.
@@ -64,16 +64,16 @@ This design pattern can also be paired with a Google Cloud VPN/Interconnect, or 
 
 The Hybrid design pattern builds upon the Cloud Forward design pattern. It introduces customer-managed access layer components from Citrix (➊) to flexibly meet the needs of specific customer demographics and use cases. These customer-managed components include the following:
 
--  [Citrix ADC/Gateway](https://www.citrix.com/networking/)(❷): deployed as virtual appliances on GCP, this component is often used for use cases requiring one or more of the following:  
-    -  Advanced authentication scenarios, such as SAML/OAUTH 2/OpenID federation, RADIUS, smart card, and conditional access requirements.  
-    -  Highly optimized and flexible session access for end user devices on public networks.  
-    -  Advanced networking services such as content switching, web app firewall, integrated web caching, attack mitigation, application load balancing, and SSL offload.  
-    -  Ability to direct specific users/devices to specific ‘stores’ based on advanced, highly flexible, and contextually aware policies. Policy decisions can be based on user profile attributes, location, device type, device health, authentication results, and more.  
--  [Citrix StoreFront](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/citrix-storefront.html)(❸): The predecessor of the Citrix Workspace service, StoreFront is Citrix’s ‘classic’ provider of UI services. Installed on customer-managed Windows Server instances, StoreFront is often used for use cases requiring one or more of the following:  
-    -  Extreme high availability, capable of surviving a broader range of failure scenarios, particularly when deployed in a highly available configuration.  
-    -  Flexible session routing, with the ability to route internal user session traffic directly to VDAs while sending external users through Citrix Gateways.  
-    -  Single sign-on from customer-managed, on-premises devices.  
-    -  The need to provide multiple ‘stores’ with different configuration properties to support diverse use cases on the same system.  
+-  [Citrix ADC/Gateway](https://www.citrix.com/networking/)(❷): deployed as virtual appliances on GCP, this component is often used for use cases requiring one or more of the following:
+    -  Advanced authentication scenarios, such as SAML/OAUTH 2/OpenID federation, RADIUS, smart card, and conditional access requirements.
+    -  Highly optimized and flexible session access for end user devices on public networks.
+    -  Advanced networking services such as content switching, web app firewall, integrated web caching, attack mitigation, application load balancing, and SSL offload.
+    -  Ability to direct specific users/devices to specific ‘stores’ based on advanced, highly flexible, and contextually aware policies. Policy decisions can be based on user profile attributes, location, device type, device health, authentication results, and more.
+-  [Citrix StoreFront](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/citrix-storefront.html)(❸): The predecessor of the Citrix Workspace service, StoreFront is Citrix’s ‘classic’ provider of UI services. Installed on customer-managed Windows Server instances, StoreFront is often used for use cases requiring one or more of the following:
+    -  Extreme high availability, capable of surviving a broader range of failure scenarios, particularly when deployed in a highly available configuration.
+    -  Flexible session routing, with the ability to route internal user session traffic directly to VDAs while sending external users through Citrix Gateways.
+    -  Single sign-on from customer-managed, on-premises devices.
+    -  The need to provide multiple ‘stores’ with different configuration properties to support diverse use cases on the same system.
     -  The need for highly customized or branded, HTML based user interfaces.
 
 ![hybrid-design-pattern](/en-us/tech-zone/design/media/reference-architectures_citrix-google-virtualization_hybrid-design-pattern.png)
@@ -348,7 +348,7 @@ To summarize, the following combinations of options/operating systems can be use
 | Delivery Model | Single or multi\-user | Common OS versions/components                                               | Relative cost to run on Google Cloud |
 |----------------|-----------------------|-----------------------------------------------------------------------------|--------------------------------------|
 | Hosted Shared  | Multi\-user           | Windows Server \(2016 or 2019\), RDSH role and Desktop Experience enabled\. | ⭐                                    |
-| Server VDI     | Single user           | Windows Server \(2016 or 2019\), Desktop Experience enabled\.               | ⭐⭐⭐                                  |
+| Server VDI     | Single user           | Windows Server \(2016 or 2019\), Desktop Experience enabled\.             | ⭐⭐⭐                                  |
 | Desktop VDI    | Single user           | Windows 10 \(BYO licensing and STN required\)                               | ⭐⭐⭐⭐⭐                                |
 
 Another common mis-conception is that Google Cloud’s sole-tenant nodes (STN) are required to serve ‘desktop’ use cases. Sole tenant nodes are required to comply with Microsoft’s BYO licensing scenarios such as Windows 10 (desktop) OS. As mentioned above, Windows Server can be used to deliver a single-user desktop ("Server VDI") in addition to a multi-user desktop (Hosted Shared). Sole tenant nodes can also be used for Windows Server instances when you’re bringing your own Windows Server licensing.
