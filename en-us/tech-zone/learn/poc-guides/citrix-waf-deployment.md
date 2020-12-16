@@ -69,7 +69,7 @@ These security checks can usually be enabled in the WAF profile. Most of these c
     -  Cookie Consistency prevents a malicious actor from tampering with cookies
     -  Cookie Consistency is an **Advanced** protection
     -  **NOTE: Do NOT enable this setting when users are actively using the application, as any non-encrypted session cookies sent will not be allowed**
-    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/top-level-protections/cookie-consistency-check.html)
+    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/cookie-protection.html)
 -  Buffer Overflow
     -  Prevents attacks against insecure OS or web server software that can behave unpredictably when receiving data that is larger than it can handle
     -  Buffer Overflow detects if the URL, cookies, or headers are longer than the specified maximum size

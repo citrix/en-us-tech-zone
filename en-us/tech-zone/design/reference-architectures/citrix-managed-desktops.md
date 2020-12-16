@@ -494,7 +494,7 @@ From the Monitor dashboard, administrators can apply filters to log off or disco
 
 Single session or multi-session machines are displayed by applying the filtered search. By clicking Power Control action on the portal the administrator gets an option to restart, force restart, shutdown, force shutdown, and start the machines running on the Citrix Managed Desktops environment.
 
-Reference: [Monitor](/en-us/citrix-managed-desktops/monitor.html)
+Reference: [Monitor](/en-us/citrix-virtual-apps-desktops-standard-azure/monitor.html)
 
 ## User Access and Authentication
 
@@ -518,7 +518,7 @@ Azure AD Connect sync takes care of all the operation that is related to synchro
 
 Another option is to use **customer-managed Azure AD** with a non-domain joined catalog. In this scenario, the customer-managed Azure AD would be entirely in the cloud with no on-premises connection or synchronization. This method is ideal for customers who do not have any legacy Active Directory or on-premises infrastructure.
 
-Reference: [User Authentication](/en-us/citrix-managed-desktops/users.html#add-and-delete-users-in-managed-azure-ad)
+Reference: [User Authentication](/en-us/citrix-virtual-apps-desktops-standard-azure/users.html#add-and-delete-users-in-managed-azure-ad)
 
 ### Connect Citrix Cloud to Azure AD
 
@@ -566,9 +566,9 @@ Citrix runs the validation test on the imported image. The administrator has to 
 
 Note: Before importing a master image from Azure, administrator makes sure that the Azure Virtual Machine Agent is installed on the image.
 
-Learn more about importing a master image from Azure and installation of VDA on the master image, at this [link](/en-us/citrix-managed-desktops/master-images.html).
+Learn more about importing a master image from Azure and installation of VDA on the master image, at this [link](/en-us/citrix-virtual-apps-desktops-standard-azure/master-images.html).
 
-To create and managed master images refer to the [link](/en-us/citrix-managed-desktops/master-images.html#prepare-a-new-image).
+To create and managed master images refer to [product documentation](/en-us/citrix-virtual-apps-desktops-standard-azure/master-images.html#prepare-a-new-image).
 
 ### Optimization of the image
 
@@ -616,7 +616,7 @@ There are a few limitations on the BYO Azure subscription model that are describ
 
 With the BYO Azure subscription model, the customer has full control over the VDAs running on their subscription. Also, image management becomes easier in terms of importing the image and managing the existing images.
 
-Reference: [Bring-your-own Azure Subscription](/en-us/citrix-managed-desktops/subscriptions.html)
+Reference: [Bring-your-own Azure Subscription](/en-us/citrix-virtual-apps-desktops-standard-azure/subscriptions.html)
 
 ### Windows 10 EVD licensing
 
@@ -680,7 +680,7 @@ The administrator has an option to set the working hours depending on the time z
 
 To create a power management schedule, refer to the reference section.
 
-Reference: [Power Management](/en-us/citrix-managed-desktops/catalogs-manage.html#manage-power-management-schedules).
+Reference: [Power Management](/en-us/citrix-virtual-apps-desktops-standard-azure/catalogs-manage.html#manage-power-management-schedules).
 
 ### Security
 
@@ -694,7 +694,7 @@ Azure multifactor authentication helps safeguard access to Citrix Managed Deskto
 
 For more information on security refer to the technical security overview documentation.
 
-Reference: [Technical security overview](/en-us/citrix-managed-desktops/security.html)
+Reference: [Technical security overview](/en-us/citrix-virtual-apps-desktops-standard-azure/security.html)
 
 ### Profile Management
 
@@ -714,4 +714,4 @@ The following resources are referenced for a better understanding of Citrix Mana
 
 [Citrix Managed Desktops](/en-us/citrix-managed-desktops.html)
 
-[CMD Architecture](/en-us/citrix-managed-desktops/security.html)
+[CMD Architecture](/en-us/citrix-virtual-apps-desktops-standard-azure/security.html)

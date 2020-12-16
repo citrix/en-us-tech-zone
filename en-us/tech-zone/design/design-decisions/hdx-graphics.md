@@ -231,7 +231,7 @@ If you manage thick client endpoints in your environment, consider the following
 *  Browser: Citrix Workspace app for HTML5
 *  Citrix Receiver/ Workspace app version: Feature Support Matrix can be found [here](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf).
 *  GPU Offload Capability
-    *  Requires additional configuration for [Citrix Workspace app for Windows](/en-us/receiver/windows/current-release/improve.html#hardware-decoding) and [Citrix Workspace app for Linux](/en-us/citrix-workspace-app-for-linux/configure-xenapp.html#h264) to enable Hardware Acceleration for Graphics with compatible GPU.
+    *  Requires additional configuration for [Citrix Workspace app for Windows](/en-us/citrix-workspace-app-for-windows/configure.html#hardware-decoding) and [Citrix Workspace app for Linux](/en-us/citrix-workspace-app-for-linux/configure-xenapp.html#h264) to enable Hardware Acceleration for Graphics with compatible GPU.
 
 ## Tools
 

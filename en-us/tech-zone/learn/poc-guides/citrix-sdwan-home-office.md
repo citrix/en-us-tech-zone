@@ -122,7 +122,7 @@ Site Profiles allow for selection of the in-band management IP that meets those 
 
 ![Summary](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorinterfacessummary.png)
 
-Find more detail on [in-band management](/en-us/citrix-sd-wan/current-release/inband-and-backup-management.html)
+Find more detail on [in-band management](/en-us/citrix-sd-wan/11-2/inband-and-backup-management.html)
 
 4.Next, create WAN links to match the desired design:
 
@@ -248,12 +248,12 @@ For an SD-WAN Administrator, remotely managing SD-WAN devices sprawled across di
 ### In-band Management
 
 In-band management capabilities allow for the data interfaces to carry data and management traffic without having to configure an out-of-band management interface. The in-band management capabilities are used to make the Zero Touch Deployment procedure easier, eliminating the need for on-site installers from having to configure separate management access, or even eliminating the need to access the local web interfaces at all. In-band provisioning was recently introduced to the SD-WAN 110-SE and VPX platforms starting with R11.1.1. This capability will be expanded to the remainder of the product portfolio in the future. (For more detail refer to
-[Orchestrator In-band Management](/en-us/citrix-sd-wan/current-release/inband-and-backup-management.html))
+[Orchestrator In-band Management](/en-us/citrix-sd-wan/11-2/inband-and-backup-management.html))
 
 ### Fallback Configuration
 
 Fallback configuration is another important feature to help maintain connectivity from the SD-WAN device to Citrix Cloud Services in the event of failures such as link failure, configuration mismatch, or software mismatch. Fallback configuration is enabled by default on appliances that have a default configuration profile with a factory image of R11.1.1, or greater. (For more detail refer to
-[Orchestrator Fallback Configuration](/en-us/citrix-sd-wan/current-release/inband-and-backup-management.html))
+[Orchestrator Fallback Configuration](/en-us/citrix-sd-wan/11-2/inband-and-backup-management.html))
 
 ### Delivery Services
 
