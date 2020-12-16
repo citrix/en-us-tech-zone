@@ -37,8 +37,6 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [AlwaysOn VPN](/en-us/tech-zone/learn/tech-insights/citrix-gateway-alwayson.html) - Manage remote domain joined Windows endpoints 24x7 by providing LAN-like access with AlwaysOn VPN.
 
-[Intelligent Traffic Management - Radar](/en-us/tech-zone/learn/tech-insights/itm.html) - Learn how Citrix ITM can direct users to cloud service mirror sites with the most bandwidth available between them.
-
 [Microsoft Teams Optimization](/en-us/tech-zone/learn/tech-insights/microsoft-teams-optimization.html) - Learn how Citrix Virtual Apps and Desktops, along with Citrix SD-WAN, can optimize Microsoft Teams and provide a great user experience.
 
 [Office 365 Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/office365-optimization.html) - Learn how Citrix SD-WAN implements Microsoft Connectivity Principles to support Office 365 Optimization for Branch Offices.
