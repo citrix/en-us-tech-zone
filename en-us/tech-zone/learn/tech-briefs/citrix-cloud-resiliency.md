@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Mayank Singh
 specialThanksTo: Fernando Klurfan, Rick Feijoo, Kenneth Bell, Ashsish Gujrati, Himanshu Agarwal, Dan Feller
-description: Learn how cloud service architecture is designed and built for resiliency. Understand how Service Continuity features enable users to connect to the resources that are accessible even if some or all of the cloud services are unreachable.
+description: Learn how Citrix Cloud services are architected and built for resiliency. Understand how Service Continuity features enable users to connect to the resources that are accessible even if some or all of the cloud services are unreachable.
 ---
 # Citrix Cloud Resiliency
 
@@ -27,7 +27,7 @@ The cloud services delivered by Citrix are built on top of various platforms tha
 
 ![Citrix Cloud Resiliency - Geographic nodes based deployment model](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_1-geographic-nodes-deployment-model.png)
 
-In a **geo**graphic no**de** pattern, platforms are spread across multiple deployments in different geodes that are globally diverse and utilize the storage replication in other deployments. Within each geode the fully self-contained platform services are deployed in different Azure fault domains. Most critical services can failover between these deployments.
+In a geographic node pattern, platforms are spread across multiple deployments in different nodes that are globally diverse and utilize the storage replication in other deployments. Within each geode the fully self-contained platform services are deployed in different Azure fault domains. Most critical services can failover between these deployments.
 
 Even if an entire Azure region is not reachable, the platform services would be able to service requests from another geode from a different region. For organizations that have regulatory requirements concerning data sovereignty, the platforms are deployed so that servers are deployed within the required geographic location. Organizations can choose between different Citrix Cloud instances to guarantee their data sovereignty needs.
 
@@ -80,11 +80,11 @@ Before the deep dive into how these solutions work, let’s look at how differen
 
     ![Citrix Cloud Resiliency - Workspace unreachable banner](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_4-workspace-unreachable-banner.png)
 
-    Citrix Cloud Connectors now take over all the brokering responsibilities for the Resource Location – VDA re-registrations to the primary Cloud Connector are triggered.
+    Citrix Cloud Connectors now take over all the brokering responsibilities for the Resource Location – VDA re-registrations to the primary Cloud Connector are triggered. Load management and other operations are handled by the Cloud Connector as well. Read more about VDA power management during outages [here](/en-us/citrix-workspace/service-continuity.html#power-management-of-vdas-during-outages).
 
 1.  Identity Service
 
-    In the scenario where the identity service is not reachable, the user would continue to have access to all the CVAD service resources reachable from the Cloud Connectors. The connection leases (explained a little later) contain the authorization tokens for the resources and the user
+    In the scenario where the identity service is not reachable, the user would continue to have access to all the CVAD service resources reachable from the Cloud Connectors. The connection leases (explained a little later) contain the authorization tokens for the resources and the user. The user will be asked by the VDA to authenticate and log in at the desktop or app, (unless the machine is sharing a session for the same user and they are already authenticated from a previous connection lease based launch).
 
 1.  Internet – (Only internal resources are accessible if there is connectivity)
 
@@ -144,7 +144,7 @@ As seen in the following image the user is entitled to 6 resources and so there 
 
 ![Citrix Cloud Resiliency - Workspace connection leases](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_11-workspace-connection-leases.png)
 
-The connection leases are tamper-proof. A bad actor would be unable to edit the lease, to say extend the duration of the lease. Soon as any tampering is detected, the connection lease hash is invalidated. The connection lease can be blocked by the IT Admin using the CVAD remote PowerShell SDK, in situations such as closed or compromised user account, stolen endpoint or device deallocation.
+The connection leases are tamper-proof. A bad actor would be unable to edit the lease, to say extend the duration of the lease. Soon as any tampering is detected, the connection lease hash is invalidated. The connection lease can be blocked by the IT Admin using the CVAD remote PowerShell SDK, in situations such as closed or compromised user account, stolen endpoint or device deallocation. Read about how to apply these policies [here](/en-us/citrix-workspace/service-continuity.html#block-connections-to-compromised-user-accounts).
 
 The following is the process diagram for the creation of the connection leases, when the user authenticates for the first time from an end point and launches a session.
 
@@ -170,13 +170,13 @@ This behavior can be modified via remote PowerShell commands against their cloud
 
 #### System requirements
 
-For a list of current requirements visit the [docs page](/en-us/citrix-workspace/service-continuity.html).
+For a list of current requirements visit the [docs page](/en-us/citrix-workspace/service-continuity.html#requirements-and-limitations).
 
 *  Customer is using Citrix Virtual Apps and Desktops service and Workspace experience.
 
 *  Workspace UI must be accessed via native Citrix Workspace app for Windows 2012 and for Mac 2011.X or later only, and not via Browsers (a.k.a Workspace app for Web)
 
-*  VDAs (7.15 and above, LTSR or CR)
+*  Citrix Virtual Delivery Agent (VDA) version 7.15 and above, LTSR or one of the current CRs
 
 *  Up-to-date Cloud Connector. Since service continuity relies on Local Host Cache functionality (but without requiring any on-prem access layer), we recommend sizing the Connectors with the same size we recommend for LHC.
 
@@ -193,7 +193,9 @@ Caveat: if the Resource Location is using Citrix Hypervisor or vSphere, the [Clo
 
     *  Citrix Gateway Service (TCP 443)
 
-The procedure to configure Service Continuity can be found [here](/en-us/citrix-workspace/service-continuity.html).
+The procedure to configure Service Continuity can be found [here](/en-us/citrix-workspace/service-continuity.html#configure-service-continuity).
+
+**Service Continuity is currently in public Tech Preview and you can sign up to try it using this [link](https://podio.com/webforms/25148648/1854298).**
 
 ### Monitor scalability improvements
 
