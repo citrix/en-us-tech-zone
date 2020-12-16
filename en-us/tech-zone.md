@@ -349,6 +349,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Google Cloud Platform (GCP) Zone Selection Support with Citrix Virtual Apps and Desktops service](/en-us/tech-zone/learn/poc-guides/gcp-sole-tenant.html) - Learn how to configure zone selection on Google Cloud Platform to enable sole tenancy in Citrix Virtual Apps and Desktop Service.
 
+### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
+
+[Citrix virtualization on Google Cloud](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) - Learn the architecture and deployment considerations for Citrix solutions on Google Cloud Platform.
+
 ## Other
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
