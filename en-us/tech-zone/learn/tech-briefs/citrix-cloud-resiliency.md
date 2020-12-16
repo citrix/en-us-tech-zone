@@ -76,7 +76,7 @@ Before the deep dive into how these solutions work, let’s look at how differen
 
 1.  Citrix Virtual Apps and Desktops / Broker Service only
 
-    In the scenario, only the CVAD or Broker Service is experiencing an outage, the user would continue to have access to the Web and SaaS apps, in additions to the virtual apps and desktops resources. The Workspace app UI (empowered by PWA) aggregates all the resources from the service feeds and relies on Workspace connection leases for CVAD apps only (see per-feed in-app cache diagram). 
+    In the scenario, only the CVAD or Broker Service is experiencing an outage, the user would continue to have access to the Web and SaaS apps, in additions to the virtual apps and desktops resources. The Workspace app UI (empowered by PWA) aggregates all the resources from the service feeds and relies on Workspace connection leases for CVAD apps only (see per-feed in-app cache diagram).
 
     ![Citrix Cloud Resiliency - Workspace unreachable banner](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_4-workspace-unreachable-banner.png)
 
