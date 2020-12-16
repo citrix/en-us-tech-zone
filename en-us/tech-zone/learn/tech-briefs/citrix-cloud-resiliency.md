@@ -11,7 +11,11 @@ description: Learn how Citrix Cloud services are architected and built for resil
 
 Digital transformation initiatives are currently top of mind for a large section of enterprises. Moving their apps and desktops delivery infrastructure to the cloud is one of the major considerations of CIOs. Cloud providers are bringing cloud only solutions or cloud-based resources bundled with attractive pricing, with the added benefit of simplified operations and lower management costs. A couple of the first things to evaluate for the IT departments, when considering a move to the cloud, are the uptime and the fault tolerance of the proposed cloud-based solution. This consideration equally applies to a prospective or existing Citrix customer, who wants to utilize Citrix Cloud as their Workspace solution.
 
-This brief is designed to address these reliability considerations and lay out the various ways in which Citrix is working towards making Citrix Cloud and the services offered progressively more resilient to failure. The document also addresses how Citrix Cloud is deployed in a way that in the rare case a service(s) is unreachable, the end user continues to have access to resources that are not affected by the unavailability of the service(s). The document also describes how Citrix Cloud is using the technologies exposed by cloud providers, that Citrix Cloud services run on to make the services highly available and fault tolerant.
+This brief is designed to address:
+
+1.  These reliability considerations and lay out the various ways in which Citrix is working towards making Citrix Cloud and the services offered progressively more resilient to failure.
+1.  How Citrix Cloud is deployed in a way that in the rare case a service(s) is unreachable, the end user continues to have access to resources that are not affected by the unavailability of the service(s).
+1.  How Citrix Cloud is using the technologies exposed by cloud providers, that Citrix Cloud services run on to make the services highly available and fault tolerant.
 
 The important thing to note is that all the items covered in the document work together as a combined solution to form multiple layers of a net that protects the organization from an outage and enables access during one.
 
@@ -35,11 +39,11 @@ Even if an entire Azure region is not reachable, the platform services would be 
 
 ## Citrix Virtual Apps and Desktops Service
 
-For the Citrix Virtual Apps and Desktops(CVAD) service, there are many different features implemented to make it resilient and fault tolerant. Some of the features are:
+For the Citrix Virtual Apps and Desktops (CVAD) service, there are many different features implemented to make it resilient and fault tolerant. Some of the features are:
 
 ### Rendezvous protocol
 
-To ensure greater scalability of the Citrix Cloud Connectors, the HDX protocol was modified in CVAD version 1912. The Rendezvous protocol enables HDX sessions to bypass the Citrix Cloud Connector and connect directly and securely to the Citrix Gateway service. Bypassing the HDX traffic, frees up bandwidth and compute resources on the Cloud Connector. Enabling the Connector to handle more connection requests and increase the number of resources that a single Cloud Connector can manage.
+To ensure greater scalability of the Citrix Cloud Connectors, the HDX protocol was modified in CVAD version 1912. The Rendezvous protocol enables HDX sessions to bypass the Citrix Cloud Connector and connect directly and securely to the Citrix Gateway service. Bypassing the HDX traffic, frees up bandwidth and compute resources on the Cloud Connector. Enabling the Connector to handle more connection requests and increase the number of resources that a Cloud Connector can manage.
 
 Learn more about the Rendezvous Protocol and how to enable it via policies [here](/en-us/citrix-virtual-apps-desktops-service/hdx/rendezvous-protocol.html).
 
@@ -53,7 +57,7 @@ Admins, using PowerShell, can define a fallback StoreFront HTTP(S) URL, that res
 
 When a user attempts to log in or launches a resource and the Workspace Platform returns an error, the Workspace app presents the StoreFront URL to the users. This occurs when the Workspace service is not reachable, or authentication failure occurs resulting in resource launch failure.
 
-The user can then use the StoreFront URL to connect to directly to the on-premises store and access resources that are published from it.
+The user can then use the StoreFront URL to connect directly to the on-premises store and access resources that are published from it.
 
 ## Service Continuity
 
