@@ -92,7 +92,7 @@ For this POC we assume you have a Certificate Authority, including Web Enrollmen
 To configure the Citrix ADC perform the following steps:
 
 1.  Log in to the Citrix ADC UI
-1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
+1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/current-release/ssl/ssl-certificates.html) for more information.
 1.  Navigate to **Security > AAA - Application Traffic > Virtual Servers** and select Add
 1.  Enter the following fields and click OK:
     *  Name - a unique value
@@ -125,7 +125,7 @@ To configure the Citrix ADC perform the following steps:
     *  Under Client Experience from the Credential Index drop-down list select Secondary
 1.  Repeat those steps for the Workspace for web policy with the "Citrix Receiver").NOT expression ![ADC Gateway Session Policies](/en-us/tech-zone/learn/media/poc-guides_cvad-azuread-federation_000-adcgatewaysessionpolicies.png)
 
-See [Citrix ADC](/en-us/citrix-adc/13.html) for more information.
+See [Citrix ADC](/en-us/citrix-adc/current-release.html) for more information.
 
 ## Citrix Virtual Apps and Desktops Config
 

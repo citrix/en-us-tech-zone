@@ -274,7 +274,7 @@ The following are policies that an administrator can create to take actions base
 
 *  Unusual Upload Volume: The amount of data uploaded by the user from an app or sites has surpassed the limit set implicitly by Citrix Analytics
 
-To learn more about Citrix Analytics integration with Citrix Secure Workspace Access, refer to the following [link](/en-us/citrix-access-control/analytics.html).
+To learn more about Citrix Analytics integration with Citrix Secure Workspace Access, refer to the following [link](/en-us/citrix-secure-workspace-access/monitor-user-activity-and-manage-settings-with-analytics.html).
 
 ### Citrix Analytics and Citrix Content Collaboration
 
