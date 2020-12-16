@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Rick Dehlinger, Jeff Allen, Rich Meesters, Anthony Zepeda
 specialThanksTo: JP Alfaro, Stefano Castelli, Gavin Connolly, Kishore Kunisetty, Dan Lazar, John Moody, Mads Petersen, Michael Shuster
-description: The goal of this document is to provide targeted real world guidance for customers, and partners looking to find success with Citrix virtualization tech on Google Cloud.
+description: Learn the architecture and deployment considerations for Citrix solutions on Google Cloud Platform.
 ---
 # Citrix virtualization on Google Cloud
 
