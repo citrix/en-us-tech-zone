@@ -74,7 +74,7 @@ Populate the following fields to create the LDAP action and paste the completed 
 Once you have constructed the full string for your environment copy and paste it into the CLI:
 `add authentication Policy authPol_LDAP_eotp -rule true -action authAct_LDAP_eotp`
 ![LDAP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_ldapactpolcli.png)
-For more information see [LDAP authentication policies](/en-us/citrix-adc/current-release/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-LDAP-tsk.html)
+For more information see [LDAP authentication policies](/en-us/citrix-adc/current-release/aaa-tm/authentication-methods/citrix-adc-aaa-ldap-authentication-policies.html)
 
 #### Email action
 
