@@ -225,7 +225,7 @@ Citrix services and products send data to Citrix Analytics-referred to as data s
 
 The Citrix Secure Workspace Access service delivers security and operations dashboards. Under security, it provides user’s risk profiles, user access summary activity performed by the users, such as URL or domain visited and the bandwidth used. App access summarizes the details of domains, URLs, and apps accessed by the users.
 
-Reference: [Citrix Secure Workspace Access and Analytics](/en-us/citrix-cloud/access-control/analytics.html)
+Reference: [Citrix Secure Workspace Access and Analytics](/en-us/citrix-secure-workspace-access/monitor-user-activity-and-manage-settings-with-analytics.html)
 
 [![AC-Image-10](/en-us/tech-zone/design/media/reference-architectures_access-control_010.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_010.png)
 
@@ -238,7 +238,7 @@ The administrator creates a rule based on the user’s activity by applying cond
 *  **Unusual download volume.** Indicates that the volume of data downloaded by the user from applications or websites has exceeded the threshold defined implicitly by Citrix Analytics.
 *  **Unusual upload volume.** Indicates that the volume of data uploaded by the user from applications or websites has exceeded the threshold defined implicitly by Citrix Analytics.
 
-Reference: [Secure Workspace Access and Analytics](/en-us/citrix-cloud/access-control/analytics.html)
+Reference: [Secure Workspace Access and Analytics](/en-us/citrix-secure-workspace-access/monitor-user-activity-and-manage-settings-with-analytics.html)
 
 ## Citrix Secure Workspace Access End-User experience
 
