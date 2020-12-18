@@ -17,7 +17,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 *  Assign Resources in Citrix Cloud Library
 
 Also covers:
-*  Create Azure VM to be used as a  WVD Tempate for Citrix MCS
+*  Create Azure VM to be used as a WVD Template for Citrix MCS
 *  Optimization Windows 10 for MCS Image
 *  Citrix Workspace & Citrix Files configuration
 
@@ -25,7 +25,7 @@ Also covers:
 
  >**Note:**
    >
-    > This guide assumes that the reader has a basic understanding of Citrix Cloud, CVAD Service, basic Windows administration & Microsoft Azure.
+    > This guide assumes that the reader has a basic understanding of the following technologies: Citrix Cloud, CVAD Service, basic Windows administration & Microsoft Azure.
 
    1. A Microsoft Azure tennant & ability to create a VM, or an on-prem virtual environment with a windows 10 VM
 
@@ -36,11 +36,11 @@ Also covers:
       *  Citrix VDA
       *  Citrix Optimiser
 
-## Windows VM Preperation
+## Windows VM Preparation
 
 1.  Join VM to the domain
 2.  Launch windows settings & check for updates
-3.  Install Basic applications required for the image template & any OS configuration.
+3.  Install applications required for the image template & any OS configuration.
 
 ## Citrix Virtual Delivery Agent
 
@@ -50,40 +50,40 @@ Also covers:
    >
     > At time of writing, Virtual Delivery Agent 2009 was the latest version. We recommend using the latest version available for optimal performance, security, and functionality.
 
-2.  As an administrator run the instal file "VDAWorkstationSetup_xxxx.exe"
+2.  Run the VDA setup file "VDAWorkstationSetup_xxxx.exe" as an administrator.
 3.  Select Create a master MCS image
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-007.png)](/en-us/tech-zone/build/media/Win10-007.png)
 
-4.  If you require to deliver virtal applications or would like to utlise the benifits of Citrix Workspace, select the Citrix Workspace App
+4.  If you would like the full workspace experience or deliver virtal applications, select the Citrix Workspace App.
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-008.png)](/en-us/tech-zone/build/media/Win10-008.png)
 
-8.  If you require access to Citrix Files/Content & Colaboration select the Citrix Files for windows & for Outlook option.
+5.  If you require access to Citrix Files/Content & Colaboration select the Citrix Files for Windows (optional Outlook integration option is additionally available).
 
   >**Note:**
     >
-      >For a full list of VDA install options check here :
+      >For a full list of VDA install options check here:
       <https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html>
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-010.png)](/en-us/tech-zone/build/media/Win10-010.png)
 
 
-9.   Enter the FQD name of each Cloud Connector (At lease two are recomended)
-10.  Select Test Connection & if successfull select Add the connector
+6.   Enter the Fully Qualified Domain Name (FQDN) of each Cloud Connector (at least two are recommended for tolerance)
+7.  Select Test Connection & if successfull select Add the connector
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-012.png)](/en-us/tech-zone/build/media/Win10-012.png)
 
 
-11.  Depending on your specific requirements, select the firewall configuration accordingly.
+8.  Depending on your specific requirements, select the firewall configuration accordingly.
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-014.png)](/en-us/tech-zone/build/media/Win10-014.png)
 
-12.  Review the summary & select install
+9.  Review the summary & select install
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-015.png)](/en-us/tech-zone/build/media/Win10-015.png)
 
-13.  Confirm everything was installed successfully, check the box to restart machine & select Finish
+10.  Confirm everything was installed successfully, check the box to restart machine & select Finish
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-017.png)](/en-us/tech-zone/build/media/Win10-017.png)
 
@@ -98,16 +98,16 @@ Also covers:
 
 1.  Login & download Citrix Optimizer from Citrix Support Knowledge Center
 <https://support.citrix.com/article/CTX224676>
-2.  Run CitrixOptimizer as an administrator
+2.  Run Citrix Optimizer as an administrator
 3.  Select the latest Windows 10 Build from Citrix
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-1.png)
 
-4.  Run the alalysis option
+4.  Run the analysis option
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)
 
-5.  Once analysesd, view the results.
+5.  Once analysed, view the results.
 
 6.  Select all the desired optimisations & Select Optimise
 
@@ -116,8 +116,7 @@ Also covers:
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)
 
 
-
-## Create Machine Catalog & Delploy VMs
+## Create Machine Catalog & Deploy VMs
 
 1. Log into Citrix Cloud & select the Virtual Apps & Desktop tile
 
@@ -146,7 +145,7 @@ Also covers:
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-022.png)](/en-us/tech-zone/build/media/Win10-022.png)
 
-10.   Enter the nmuber of mchines you would like to provision.
+10.   Enter the number of machines you would like to provision.
 11.   Select machine size
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-023.png)](/en-us/tech-zone/build/media/Win10-023.png)
@@ -159,7 +158,7 @@ Also covers:
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-025.png)](/en-us/tech-zone/build/media/Win10-025.png)
 
-14.   Select Network Interface to be assossiated with the VM
+14.   Select Network Interface to be associated with the VM
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-027.png)](/en-us/tech-zone/build/media/Win10-027.png)
 
@@ -188,8 +187,8 @@ Also covers:
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-031.png)](/en-us/tech-zone/build/media/Win10-031.png)
 
-4. Select the Machine Catalog you just cretaed (above)
-5. Choose the number of machiens you created or want to add
+4. Select the Machine Catalog you just created (above)
+5. Choose the number of machines you created or want to add
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-032.png)](/en-us/tech-zone/build/media/Win10-032.png)
 
@@ -221,7 +220,7 @@ Also covers:
  
 [![Azure VM](/en-us/tech-zone/build/media/Win10--36.png)](/en-us/tech-zone/build/media/Win10--36.png)
 
-3. Find the resource in the Library, hit the 3 dot menu in the top right corner & select Manage Subscribers.
+3. Find the resource in the Library, hit the 3-dot menu in the top right corner & select Manage Subscribers.
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-044.png)](/en-us/tech-zone/build/media/Win10-044.png)
 
@@ -271,7 +270,7 @@ Also covers:
   >This asumes the option to install Citrix Files for Outlook was selected when installing the VDA above.
   >If not that latest version can be downloaded from <https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html>
 
-1.  Open outlook & the Citrix files plug-in will be visable along the Outlook tool bar. If you are logged onto the WIndows 10 machine with an account with a valid Citrix Files account the authentication will pass through and enable the fles functionailty
+1.  Open outlook & the Citrix files plug-in will be visable along the Outlook tool bar. If you are logged onto the WIndows 10 VM with a valid Citrix Files account, the authentication will pass through and enable the fles functionailty.
 
 [![Citrix Files for Outlook](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)
 
