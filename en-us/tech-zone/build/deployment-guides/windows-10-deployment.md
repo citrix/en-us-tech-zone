@@ -70,7 +70,7 @@ Also covers:
 
 
 6.   Enter the Fully Qualified Domain Name (FQDN) of each Cloud Connector (at least two are recommended for tolerance)
-7.  Select Test Connection & if successfull select Add the connector
+7.  Select Test Connection & if successfull select Add
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-012.png)](/en-us/tech-zone/build/media/Win10-012.png)
 
@@ -79,11 +79,11 @@ Also covers:
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-014.png)](/en-us/tech-zone/build/media/Win10-014.png)
 
-9.  Review the summary & select install
+9.  Review the summary & select Install
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-015.png)](/en-us/tech-zone/build/media/Win10-015.png)
 
-10.  Confirm everything was installed successfully, check the box to restart machine & select Finish
+10.  Confirm everything was installed successfully, check the box to restart machine & select finish.
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-017.png)](/en-us/tech-zone/build/media/Win10-017.png)
 
@@ -92,26 +92,26 @@ Also covers:
 
 >**Note:**
  >
-  >For information on Citrix optimizer see the latest Citrix article.
+  >For information on Citrix optimizer see the below Citrix article.
   >
   > Latest at time of writing: <https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/>
 
 1.  Login & download Citrix Optimizer from Citrix Support Knowledge Center
 <https://support.citrix.com/article/CTX224676>
 2.  Run Citrix Optimizer as an administrator
-3.  Select the latest Windows 10 Build from Citrix
+3.  Select the appropriate Windows 10 Build
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-1.png)
 
-4.  Run the analysis option
+4.  Select the Analyse option
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)
 
-5.  Once analysed, view the results.
+5.  Once the analyses is complete, view the results.
 
-6.  Select all the desired optimisations & Select Optimise
+6.  Select all the desired optimisations & select optimise
 
-7.  View the results & select Done
+7.  View the results & select done
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)
 
@@ -127,17 +127,21 @@ Also covers:
    
 [![Azure VM](/en-us/tech-zone/build/media/Win10-018.png)](/en-us/tech-zone/build/media/Win10-018.png)
 
-4. Select Multi-session OS for WVD, for Windows 10 select Single-session OS
+4. Select Multi-session OS for Windows 10 WVD or Single-session OS for a non-WVD Windows 10 OS
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-019.png)](/en-us/tech-zone/build/media/Win10-019.png)
 
 5. Select Machines that are power managed.
-6. Deploy machines using Machine Creation Services & select Resource location
+6. Deploy machines using Machine Creation Services & select the appropriate Resource
+
+>  Note: The available resources are based on the hosting connections previously set in studio.
+Creating CVAD Hosting connections: https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html
+
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-020.png)](/en-us/tech-zone/build/media/Win10-020.png)
 
 7.  Select master image created in Azure (See Create Machine in Azure below)
-8.  Select the minimum functionsal level. This should be the latestfesion that you have in your environment)
+8.  Select the minimum functional level (This should be the latest version you have in your environment).
    
 [![Azure VM](/en-us/tech-zone/build/media/Win10-021.png)](/en-us/tech-zone/build/media/Win10-021.png)
 
@@ -145,36 +149,35 @@ Also covers:
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-022.png)](/en-us/tech-zone/build/media/Win10-022.png)
 
-10.   Enter the number of machines you would like to provision.
-11.   Select machine size
+10.   Enter the number of machines you would like to provision, along with the machine size.
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-023.png)](/en-us/tech-zone/build/media/Win10-023.png)
 
-12. Configure Write Back Cache as appropriate
+11. Configure Write Back Cache as appropriate
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-024.png)](/en-us/tech-zone/build/media/Win10-024.png)
 
-13. Select Resource Group Provisioning
+12. Select Resource Group Provisioning
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-025.png)](/en-us/tech-zone/build/media/Win10-025.png)
 
-14.   Select Network Interface to be associated with the VM
+13.   Select Network Interface to be associated with the VM
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-027.png)](/en-us/tech-zone/build/media/Win10-027.png)
 
-15.   Select whether to create new AD accounts, where to create them & the naming convention to be used.
+14.   Select whether to create new AD accounts, where to create them & the naming convention to be used.
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-028.png)](/en-us/tech-zone/build/media/Win10-028.png)
 
-16. Add domain credential to be used to oreform the account operation
+15. Add the domain credentials to be used to perform the account operations.
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-029.png)](/en-us/tech-zone/build/media/Win10-029.png)
 
-17.   Machine Catalog Name in acordance with your corporate naming convention
+16.   Verify the summary, add a Machine Catalog name and description,  and click Finish (wait for the machine catalog to create and the new VM disk. Time will depend on the amount of VMs specified)
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-030.png)](/en-us/tech-zone/build/media/Win10-030.png)
 
-18.    Click Finish & wait for the machine catalog to ctreate and the new VM disk to be created. Time will obviously depend on the amount of VMs specified.
+17.    Click Finish & wait for the machine catalog to ctreate and the new VM disk to be created. Time will obviously depend on the amount of VMs specified.
          
 ## Create Delivery Group
 
@@ -192,20 +195,19 @@ Also covers:
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-032.png)](/en-us/tech-zone/build/media/Win10-032.png)
 
-6.  Select you user assignment method. Using Citroc Cloud for assignment in this scenario.
+6.  Select you user assignment method. Using Citrix Cloud for assignment in this scenario.
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-033.png)](/en-us/tech-zone/build/media/Win10-033.png)
 
-7. If adding applications to be published seperatly add these here. We are just publishing a WVD desktop in this scenario.
+7. If adding applications to be published seperatly add these here. We are just publishing a desktop in this scenario.
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-034.png)](/en-us/tech-zone/build/media/Win10-034.png)
 
-8.  Give the Delivery Group a name & the display name the users will see in their Workspace
-9.  Finish
+8.  Provide the Delivery Group name and Display name, click Finish.
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-035.png)](/en-us/tech-zone/build/media/Win10-035.png)
 
-10.   Once created, view the machines & check their registration status.
+9.   Once created, view the machines & check their registration status.
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-036.png)](/en-us/tech-zone/build/media/Win10-036.png)
 
@@ -220,7 +222,7 @@ Also covers:
  
 [![Azure VM](/en-us/tech-zone/build/media/Win10--36.png)](/en-us/tech-zone/build/media/Win10--36.png)
 
-3. Find the resource in the Library, hit the 3-dot menu in the top right corner & select Manage Subscribers.
+3. Locate the new Windows 10 Desktop resource in the Library, select the ellipsis (3 dot menu item in the top right corner), and select Manage Subscribers.
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-044.png)](/en-us/tech-zone/build/media/Win10-044.png)
 
@@ -232,7 +234,7 @@ Also covers:
 ## Client Configuration
 
   >**Note:**
-    > For domain joined VMs, best practice would be to populate Citrix application configuration via GPO
+    > Best practice would be to automate the configuration of the Citrix Workspace & Files applications.
 
 ## Citrix Workspace App
 
