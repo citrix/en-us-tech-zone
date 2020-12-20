@@ -21,15 +21,15 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
  >**Note:**
    >
-    > This guide assumes that the reader has a basic understanding of the following technologies:
-    > Citrix Cloud, CVAD Service & basic Windows administration
+>    This guide assumes that the reader has a basic understanding of the following technologies:
+>  Citrix Cloud, CVAD Service & basic Windows administration
 
 1. A Windows 10 VM in Microsoft Azure, Google Cloud Platform (GCP) or an on premises virtual environment
 
 2. A Citrix Cloud admin account
 3. A domain admin account with the ability to create machine accounts in the desired OU
 
-4. A Citrix.com account to download the software
+4. A Citrix.com account to download software
 
       *  Citrix VDA
       *  Citrix Optimiser
@@ -144,7 +144,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 [![Azure VM](/en-us/tech-zone/build/media/Win10-020.png)](/en-us/tech-zone/build/media/Win10-020.png)
 
 7.  Select master image previously created
-8.  Select the minimum functional level (This should be the latest VDA version you have in your environment)
+8.  Select the minimum functional level (This should be the latest VDA version you wish to include in this Machine Catalog)
    
 [![Azure VM](/en-us/tech-zone/build/media/Win10-021.png)](/en-us/tech-zone/build/media/Win10-021.png)
 
@@ -160,7 +160,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-024.png)](/en-us/tech-zone/build/media/Win10-024.png)
 
-12. Select Resource Group Provisioning
+12. Select Resource Group provisioning
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-025.png)](/en-us/tech-zone/build/media/Win10-025.png)
 
@@ -196,7 +196,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-032.png)](/en-us/tech-zone/build/media/Win10-032.png)
 
-6.  Select the user assignment method. Using Citrix Cloud for assignment in this scenario
+6.  Select the user assignment method. We are using Citrix Cloud for assignment in this scenario
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-033.png)](/en-us/tech-zone/build/media/Win10-033.png)
 
@@ -250,7 +250,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 >**Note:**
  >
-  >This asumes the option to install Citrix Files was selected when installing the VDA above
+  >This assumes the option to install Citrix Files was selected when installing the VDA above.
   >If not that latest version can be downloaded from <https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-windows.html>
   
 1.  Check Citrix Files status from the icon in the system tray. If offline, right click & select login
@@ -265,10 +265,10 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 >**Note:**
  >
-  >This asumes the option to install Citrix Files for Outlook was selected when installing the VDA above.
+  >This assumes the option to install Citrix Files for Outlook was selected when installing the VDA above.
   >If not that latest version can be downloaded from <https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html>
 
-1.  Open outlook & the Citrix files plug-in will be visable along the Outlook tool bar. If you are logged onto the VM with a valid Citrix Files account, the authentication will pass through and enable the files functionailty
+1.  Open Outlook & the Citrix files plug-in will be visable along the Outlook tool bar. If you are logged onto the VM with a valid Citrix Files account, the authentication will pass through and enable the files functionailty
 
 [![Citrix Files for Outlook](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)
 
