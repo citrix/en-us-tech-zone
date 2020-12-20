@@ -14,15 +14,15 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 *  Install VDA
 *  Optimization Windows 10 for MCS Image
 *  Create a Machine Catalog & Deploy VMs
-*  Create a Delivery Group
-*  Assign Resources in Citrix Cloud Library
-*  Citrix Workspace & Citrix Files configuration
+*  Create a Delivery Group & assign VMs
+*  Citrix Workspace & Citrix Files client configuration
 
 ## Prerequisites
 
  >**Note:**
    >
-    > This guide assumes that the reader has a basic understanding of the following technologies: Citrix Cloud, CVAD Service, basic Windows administration & Microsoft Azure
+    > This guide assumes that the reader has a basic understanding of the following technologies:
+    > Citrix Cloud, CVAD Service, basic Windows administration & Microsoft Azure
 
 1. A Windows 10 VM in Microsoft Azure, GCP or an on premises virtual environment
 
