@@ -13,7 +13,7 @@ description: Learn how to install the Citrix VDA into a WIndows 10 platform & pr
 This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Machines (VMs) via Machine Creation Services (MCS) in Citrix Virtual Apps & Desktop (CVAD) Service
 *  Install VDA
 *  Optimize Windows 10 for MCS
-*  Create a Machine Catalog & Deploy VMs
+*  Create a Machine Catalog & deploy VMs
 *  Create a Delivery Group & assign VMs
 *  Citrix Workspace & Citrix Files client configuration
 
@@ -101,7 +101,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-1.png)
 
-4.  Select the Analyse option
+4.  Select the Analyze option
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)
 
@@ -116,7 +116,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 ## Create Machine Catalog & Deploy VMs
 
-1. Log into Citrix Cloud & select the customer where the resources reside (if more than one)
+1. Log into Citrix Cloud
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10--37.png)](/en-us/tech-zone/build/media/Win10--37.png)
 
@@ -219,11 +219,11 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10--36.png)](/en-us/tech-zone/build/media/Win10--36.png)
 
-3. Locate the new Windows 10 Desktop resource in the Library, select the ellipsis (3 dot menu item in the top right corner), and select Manage Subscribers
+2. Locate the new Windows 10 Desktop resource in the Library, select the ellipsis (3 dot menu item in the top right corner), and select Manage Subscribers
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-044.png)](/en-us/tech-zone/build/media/Win10-044.png)
 
-4. Add users or groups to assign desktop
+3. Add users or groups to assign desktop
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-045.png)](/en-us/tech-zone/build/media/Win10-045.png)
 
@@ -236,16 +236,15 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 ## Citrix Workspace App
 
 1.  From the start menu launch Citrix Workspace
+2.  Add the URL to your Citrix environment
 
 [![Citrix Workspace](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-1.png)
 
-2.  Add the URL to your Citrix environment
-3.  Select the check box to not show this at sign-in
+3.  Enter your username & password
 
 [![Citrix Workspace](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-2.png)
 
-4.  Add your username & password
-5.  Once autheniticated you will see any assigned resources available in the workspace or from your start menu
+4.  Once autheniticated you will see any assigned resources in the workspace or populated in the start menu
 
 ## Citrix Files
 
@@ -254,7 +253,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
   >This asumes the option to install Citrix Files was selected when installing the VDA above
   >If not that latest version can be downloaded from <https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-windows.html>
   
-1.  Check Citrix Files status from the icon in the taskbar. If offline, right click & select login
+1.  Check Citrix Files status from the icon in the system tray. If offline, right click & select login
 
 [![Citrix Files](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Files-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Files-1.png)
 
@@ -266,10 +265,10 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 >**Note:**
  >
-  >This asumes the option to install Citrix Files for Outlook was selected when installing the VDA above
+  >This asumes the option to install Citrix Files for Outlook was selected when installing the VDA above.
   >If not that latest version can be downloaded from <https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html>
 
-1.  Open outlook & the Citrix files plug-in will be visable along the Outlook tool bar. If you are logged onto the WIndows 10 VM with a valid Citrix Files account, the authentication will pass through and enable the fles functionailty
+1.  Open outlook & the Citrix files plug-in will be visable along the Outlook tool bar. If you are logged onto the VM with a valid Citrix Files account, the authentication will pass through and enable the files functionailty
 
 [![Citrix Files for Outlook](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)
 
