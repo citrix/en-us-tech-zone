@@ -42,12 +42,11 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 ## Citrix Virtual Delivery Agent
 
-1.  Login to Citrix.com/downloads and download the latest version of the virtual delivery agent
-
  >**Note:**
    >
 >  At time of writing, Virtual Delivery Agent 2009 was the latest version. It is recommended to use the latest version available for optimal performance, security, and functionality
 
+1.  Login to Citrix.com/downloads and download the latest version of the virtual delivery agent
 2.  Run the VDA setup file "VDAWorkstationSetup_xxxx.exe" as an administrator.
 3.  Select Create a master MCS image
 
@@ -59,13 +58,12 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 5.  If you require access to Citrix Files/Content & Colaboration select the Citrix Files for Windows (Outlook integration option is also available)
 
-  >**Note:**
-    >
-      >For a full list of VDA install options check here:
-      <https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html>
-
    [![Azure VM](/en-us/tech-zone/build/media/Win10-010.png)](/en-us/tech-zone/build/media/Win10-010.png)
 
+  >**Note:**
+    >
+>  For a full list of VDA install options check here:
+<https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html>
 
 6.   Enter the Fully Qualified Domain Name (FQDN) of each Cloud Connector (at least two are recommended for tolerance)
 7.  Select Test Connection & if successful select Add
@@ -90,9 +88,8 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 >**Note:**
  >
-  >For information on Citrix optimizer see the below Citrix article
-  >
-  > Latest at time of writing: <https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/>
+>  For information on Citrix optimizer see the below Citrix article
+(Latest at time of writing): <https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/>
 
 1.  Login & download Citrix Optimizer from Citrix Support Knowledge Center
 <https://support.citrix.com/article/CTX224676>
@@ -136,8 +133,9 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 6. Select Machines that are power managed
 7. Deploy machines using Machine Creation Services & select the appropriate Resource
 
->  Note: The available resources are based on the hosting connections previously set in studio
->
+>**Note:**
+ >
+>  The available resources are based on the hosting connections previously set in studio.
 >  See the following article for information on creating CVAD hosting connections: https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html
 
 
@@ -250,8 +248,8 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 >**Note:**
  >
-  >This assumes the option to install Citrix Files was selected when installing the VDA above.
-  >If not that latest version can be downloaded from <https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-windows.html>
+>  This assumes the option to install Citrix Files was selected when installing the VDA above.
+>  If not that latest version can be downloaded from <https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-windows.html>
   
 1.  Check Citrix Files status from the icon in the system tray. If offline, right click & select login
 
@@ -265,8 +263,8 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 >**Note:**
  >
-  >This assumes the option to install Citrix Files for Outlook was selected when installing the VDA above.
-  >If not that latest version can be downloaded from <https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html>
+>  This assumes the option to install Citrix Files for Outlook was selected when installing the VDA above.
+>  If not that latest version can be downloaded from <https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html>
 
 1.  Open Outlook & the Citrix files plug-in will be visable along the Outlook tool bar. If you are logged onto the VM with a valid Citrix Files account, the authentication will pass through and enable the files functionailty
 
