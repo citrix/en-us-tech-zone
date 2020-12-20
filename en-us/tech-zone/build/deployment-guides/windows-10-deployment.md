@@ -10,15 +10,12 @@ description: Learn how to install the Citrix VDA into a WIndows 10 platform & pr
 
 ## Overview
 
-This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Mchines (VMs) via Machine Creation Services (MCS) in Citrix Cloud, Virtual Apps & Desktop (CVAD) Service.
-*  Install Virtual Delivery Agent
+This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Machines (VMs) via Machine Creation Services (MCS) in Citrix Virtual Apps & Desktop (CVAD) Service
+*  Install VDA
+*  Optimization Windows 10 for MCS Image
 *  Create a Machine Catalog & Deploy VMs
 *  Create a Delivery Group
 *  Assign Resources in Citrix Cloud Library
-
-Also covers:
-*  Create Azure VM to be used as a WVD Template for Citrix MCS
-*  Optimization Windows 10 for MCS Image
 *  Citrix Workspace & Citrix Files configuration
 
 ## Prerequisites
@@ -27,11 +24,12 @@ Also covers:
    >
     > This guide assumes that the reader has a basic understanding of the following technologies: Citrix Cloud, CVAD Service, basic Windows administration & Microsoft Azure
 
-   1. A Microsoft Azure tennant & ability to create a VM, or an on-prem virtual environment with a windows 10 VM
+1. A Windows 10 VM in Microsoft Azure, GCP or an on premises virtual environment
 
-2. A Citrix Cloud Admin Account
+2. A Citrix Cloud admin account
+3. A domain admin account with the ability to create machine accounts in the desired OU
 
-3. A Citrix.com account to download the software
+4. A Citrix.com account to download the software
 
       *  Citrix VDA
       *  Citrix Optimiser
@@ -48,18 +46,18 @@ Also covers:
 
  >**Note:**
    >
-    > At time of writing, Virtual Delivery Agent 2009 was the latest version. We recommend using the latest version available for optimal performance, security, and functionality
+    > At time of writing, Virtual Delivery Agent 2009 was the latest version. It is recommended to use the latest version available for optimal performance, security, and functionality
 
 2.  Run the VDA setup file "VDAWorkstationSetup_xxxx.exe" as an administrator.
 3.  Select Create a master MCS image
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-007.png)](/en-us/tech-zone/build/media/Win10-007.png)
 
-4.  If you would like the full workspace experience or deliver virtal applications, select the Citrix Workspace App
+4.  If you would like the full workspace experience or to deliver virtal applications, select the Citrix Workspace App
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-008.png)](/en-us/tech-zone/build/media/Win10-008.png)
 
-5.  If you require access to Citrix Files/Content & Colaboration select the Citrix Files for Windows (optional Outlook integration option is additionally available)
+5.  If you require access to Citrix Files/Content & Colaboration select the Citrix Files for Windows (Outlook integration option is also available)
 
   >**Note:**
     >
@@ -109,7 +107,7 @@ Also covers:
 
 5.  Once the analyses are complete, view the results
 
-6.  Select all the desired optimisations & select optimise
+6.  Select all the desired optimisations & click optimize
 
 7.  View the results & select done
 
@@ -135,12 +133,13 @@ Also covers:
 6. Deploy machines using Machine Creation Services & select the appropriate Resource
 
 >  Note: The available resources are based on the hosting connections previously set in studio
-Creating CVAD Hosting connections: https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html
+>
+>  See the following article for information on creating CVAD hosting connections: https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html
 
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-020.png)](/en-us/tech-zone/build/media/Win10-020.png)
 
-7.  Select master image created in Azure (See Create Machine in Azure below)
+7.  Select master image previously created
 8.  Select the minimum functional level (This should be the latest version you have in your environment)
    
 [![Azure VM](/en-us/tech-zone/build/media/Win10-021.png)](/en-us/tech-zone/build/media/Win10-021.png)
@@ -173,12 +172,10 @@ Creating CVAD Hosting connections: https://docs.citrix.com/en-us/citrix-virtual-
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-029.png)](/en-us/tech-zone/build/media/Win10-029.png)
 
-16.   Verify the summary, add a Machine Catalog name and description, and click Finish (wait for the machine catalog to create and the new VM disk. Time will depend on the amount of VMs specified)
+16.   Verify the summary, add a Machine Catalog name and description, then click Finish (wait for the machine catalog to create and the new VM disk. Time will depend on the amount of VMs specified)
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-030.png)](/en-us/tech-zone/build/media/Win10-030.png)
-
-17.    Click Finish & wait for the machine catalog to ctreate and the new VM disk to be created. Time will obviously depend on the amount of VMs specified
-         
+    
 ## Create Delivery Group
 
 1. Log into Citrix Cloud & select the Virtual Apps & Desktop tile
@@ -186,7 +183,7 @@ Creating CVAD Hosting connections: https://docs.citrix.com/en-us/citrix-virtual-
 [![Azure VM](/en-us/tech-zone/build/media/Win10-051.png)](/en-us/tech-zone/build/media/Win10-051.png)
 
 2. Select manage, then Web Studio
-3. From within Web Studio, select Delivery Group, then create Delivery Group
+3. From within Web Studio, select Delivery Group, then Create Delivery Group
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-031.png)](/en-us/tech-zone/build/media/Win10-031.png)
 
@@ -195,7 +192,7 @@ Creating CVAD Hosting connections: https://docs.citrix.com/en-us/citrix-virtual-
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-032.png)](/en-us/tech-zone/build/media/Win10-032.png)
 
-6.  Select you user assignment method. Using Citrix Cloud for assignment in this scenario
+6.  Select the user assignment method. Using Citrix Cloud for assignment in this scenario
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-033.png)](/en-us/tech-zone/build/media/Win10-033.png)
 
