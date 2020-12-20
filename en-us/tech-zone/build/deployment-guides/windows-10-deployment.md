@@ -15,7 +15,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 *  Optimize Windows 10 for MCS
 *  Create a Machine Catalog & deploy VMs
 *  Create a Delivery Group & assign VMs
-*  Citrix Workspace & Citrix Files client configuration
+*  Configure Citrix Workspace & Citrix Files clients
 
 ## Prerequisites
 
@@ -44,15 +44,15 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
  >**Note:**
    >
->  At time of writing, Virtual Delivery Agent 2009 was the latest version. It is recommended to use the latest version available for optimal performance, security, and functionality
+>  At time of writing, VDA 2009 was the latest version. It is recommended to use the latest version available for optimal performance, security, and functionality
 
-1.  Login to Citrix.com/downloads and download the latest version of the virtual delivery agent
+1.  Login to Citrix.com/downloads and download the latest version of the VDA
 2.  Run the VDA setup file "VDAWorkstationSetup_xxxx.exe" as an administrator.
 3.  Select Create a master MCS image
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-007.png)](/en-us/tech-zone/build/media/Win10-007.png)
 
-4.  If you would like the full workspace experience or to deliver virtal applications, select the Citrix Workspace App
+4.  If you would like the full workspace experience or to deliver virtual applications, select the Citrix Workspace App
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-008.png)](/en-us/tech-zone/build/media/Win10-008.png)
 
@@ -63,7 +63,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
   >**Note:**
     >
 >  For a full list of VDA install options check here:
-<https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html>
+>  <https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html>
 
 6.   Enter the Fully Qualified Domain Name (FQDN) of each Cloud Connector (at least two are recommended for tolerance)
 7.  Select Test Connection & if successful select Add
@@ -88,7 +88,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 >**Note:**
  >
->  For information on Citrix optimizer see the below Citrix article
+>  For information on Citrix optimizer see the following Citrix article
 (Latest at time of writing): <https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/>
 
 1.  Login & download Citrix Optimizer from Citrix Support Knowledge Center
@@ -158,7 +158,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-024.png)](/en-us/tech-zone/build/media/Win10-024.png)
 
-12. Select Resource Group provisioning
+12. Select the appropriate Resource Group provisioning method
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-025.png)](/en-us/tech-zone/build/media/Win10-025.png)
 
@@ -190,7 +190,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 [![Azure VM](/en-us/tech-zone/build/media/Win10-031.png)](/en-us/tech-zone/build/media/Win10-031.png)
 
 4. Select the Machine Catalog you just created (above)
-5. Choose the number of machines you created or want to add
+5. Choose the number of machines you created or want to add to the Delivery Group
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-032.png)](/en-us/tech-zone/build/media/Win10-032.png)
 
@@ -228,8 +228,9 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 ## Client Configuration
 
-  >**Note:**
-    > Best practice would be to automate the configuration of the Citrix Workspace & Files applications
+>**Note:**
+   >  
+>  Best practice would be to automate the configuration of the Citrix Workspace & Files applications
 
 ## Citrix Workspace App
 
