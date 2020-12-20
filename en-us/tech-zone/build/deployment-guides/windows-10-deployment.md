@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: Learn how to install the Citrix VDA into a WIndows 10 platform & prep it to be used in a CVAD environment, including related components, tips and best practices.
+description: Learn how to install the Citrix VDA into a WIndows 10 platform & prep it to be used in a CVAD environment, including related components, tips and best practices
 ---
 # Windows 10 Deployment Guide
 
@@ -25,7 +25,7 @@ Also covers:
 
  >**Note:**
    >
-    > This guide assumes that the reader has a basic understanding of the following technologies: Citrix Cloud, CVAD Service, basic Windows administration & Microsoft Azure.
+    > This guide assumes that the reader has a basic understanding of the following technologies: Citrix Cloud, CVAD Service, basic Windows administration & Microsoft Azure
 
    1. A Microsoft Azure tennant & ability to create a VM, or an on-prem virtual environment with a windows 10 VM
 
@@ -40,26 +40,26 @@ Also covers:
 
 1.  Join VM to the domain
 2.  Launch windows settings & check for updates
-3.  Install applications required for the image template & any OS configuration.
+3.  Install applications required for the image template & any OS configuration
 
 ## Citrix Virtual Delivery Agent
 
-1.  Login to Citrix.com/downloads and download the latest version of the virtual delivery agent.
+1.  Login to Citrix.com/downloads and download the latest version of the virtual delivery agent
 
  >**Note:**
    >
-    > At time of writing, Virtual Delivery Agent 2009 was the latest version. We recommend using the latest version available for optimal performance, security, and functionality.
+    > At time of writing, Virtual Delivery Agent 2009 was the latest version. We recommend using the latest version available for optimal performance, security, and functionality
 
 2.  Run the VDA setup file "VDAWorkstationSetup_xxxx.exe" as an administrator.
 3.  Select Create a master MCS image
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-007.png)](/en-us/tech-zone/build/media/Win10-007.png)
 
-4.  If you would like the full workspace experience or deliver virtal applications, select the Citrix Workspace App.
+4.  If you would like the full workspace experience or deliver virtal applications, select the Citrix Workspace App
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-008.png)](/en-us/tech-zone/build/media/Win10-008.png)
 
-5.  If you require access to Citrix Files/Content & Colaboration select the Citrix Files for Windows (optional Outlook integration option is additionally available).
+5.  If you require access to Citrix Files/Content & Colaboration select the Citrix Files for Windows (optional Outlook integration option is additionally available)
 
   >**Note:**
     >
@@ -70,12 +70,12 @@ Also covers:
 
 
 6.   Enter the Fully Qualified Domain Name (FQDN) of each Cloud Connector (at least two are recommended for tolerance)
-7.  Select Test Connection & if successfull select Add
+7.  Select Test Connection & if successful select Add
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-012.png)](/en-us/tech-zone/build/media/Win10-012.png)
 
 
-8.  Depending on your specific requirements, select the firewall configuration accordingly.
+8.  Depending on your specific requirements, select the firewall configuration accordingly
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-014.png)](/en-us/tech-zone/build/media/Win10-014.png)
 
@@ -83,7 +83,7 @@ Also covers:
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-015.png)](/en-us/tech-zone/build/media/Win10-015.png)
 
-10.  Confirm everything was installed successfully, check the box to restart machine & select finish.
+10.  Confirm everything was installed successfully, check the box to restart machine & select finish
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-017.png)](/en-us/tech-zone/build/media/Win10-017.png)
 
@@ -92,7 +92,7 @@ Also covers:
 
 >**Note:**
  >
-  >For information on Citrix optimizer see the below Citrix article.
+  >For information on Citrix optimizer see the below Citrix article
   >
   > Latest at time of writing: <https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/>
 
@@ -107,7 +107,7 @@ Also covers:
 
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)
 
-5.  Once the analyses is complete, view the results.
+5.  Once the analyses are complete, view the results
 
 6.  Select all the desired optimisations & select optimise
 
@@ -131,17 +131,17 @@ Also covers:
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-019.png)](/en-us/tech-zone/build/media/Win10-019.png)
 
-5. Select Machines that are power managed.
+5. Select Machines that are power managed
 6. Deploy machines using Machine Creation Services & select the appropriate Resource
 
->  Note: The available resources are based on the hosting connections previously set in studio.
+>  Note: The available resources are based on the hosting connections previously set in studio
 Creating CVAD Hosting connections: https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html
 
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-020.png)](/en-us/tech-zone/build/media/Win10-020.png)
 
 7.  Select master image created in Azure (See Create Machine in Azure below)
-8.  Select the minimum functional level (This should be the latest version you have in your environment).
+8.  Select the minimum functional level (This should be the latest version you have in your environment)
    
 [![Azure VM](/en-us/tech-zone/build/media/Win10-021.png)](/en-us/tech-zone/build/media/Win10-021.png)
 
@@ -149,7 +149,7 @@ Creating CVAD Hosting connections: https://docs.citrix.com/en-us/citrix-virtual-
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-022.png)](/en-us/tech-zone/build/media/Win10-022.png)
 
-10.   Enter the number of machines you would like to provision, along with the machine size.
+10.   Enter the number of machines you would like to provision, along with the machine size
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-023.png)](/en-us/tech-zone/build/media/Win10-023.png)
 
@@ -165,19 +165,19 @@ Creating CVAD Hosting connections: https://docs.citrix.com/en-us/citrix-virtual-
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-027.png)](/en-us/tech-zone/build/media/Win10-027.png)
 
-14.   Select whether to create new AD accounts, where to create them & the naming convention to be used.
+14.   Select whether to create new AD accounts, where to create them & the naming convention to be used
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-028.png)](/en-us/tech-zone/build/media/Win10-028.png)
 
-15. Add the domain credentials to be used to perform the account operations.
+15. Add the domain credentials to be used to perform the account operations
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-029.png)](/en-us/tech-zone/build/media/Win10-029.png)
 
-16.   Verify the summary, add a Machine Catalog name and description,  and click Finish (wait for the machine catalog to create and the new VM disk. Time will depend on the amount of VMs specified)
+16.   Verify the summary, add a Machine Catalog name and description, and click Finish (wait for the machine catalog to create and the new VM disk. Time will depend on the amount of VMs specified)
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-030.png)](/en-us/tech-zone/build/media/Win10-030.png)
 
-17.    Click Finish & wait for the machine catalog to ctreate and the new VM disk to be created. Time will obviously depend on the amount of VMs specified.
+17.    Click Finish & wait for the machine catalog to ctreate and the new VM disk to be created. Time will obviously depend on the amount of VMs specified
          
 ## Create Delivery Group
 
@@ -195,19 +195,19 @@ Creating CVAD Hosting connections: https://docs.citrix.com/en-us/citrix-virtual-
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-032.png)](/en-us/tech-zone/build/media/Win10-032.png)
 
-6.  Select you user assignment method. Using Citrix Cloud for assignment in this scenario.
+6.  Select you user assignment method. Using Citrix Cloud for assignment in this scenario
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-033.png)](/en-us/tech-zone/build/media/Win10-033.png)
 
-7. If adding applications to be published seperatly add these here. We are just publishing a desktop in this scenario.
+7. If adding applications to be published seperatly add these here. We are just publishing a desktop in this scenario
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-034.png)](/en-us/tech-zone/build/media/Win10-034.png)
 
-8.  Provide the Delivery Group name and Display name, click Finish.
+8.  Provide the Delivery Group name and Display name, click Finish
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-035.png)](/en-us/tech-zone/build/media/Win10-035.png)
 
-9.   Once created, view the machines & check their registration status.
+9.   Once created, view the machines & check their registration status
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-036.png)](/en-us/tech-zone/build/media/Win10-036.png)
 
@@ -222,7 +222,7 @@ Creating CVAD Hosting connections: https://docs.citrix.com/en-us/citrix-virtual-
  
 [![Azure VM](/en-us/tech-zone/build/media/Win10--36.png)](/en-us/tech-zone/build/media/Win10--36.png)
 
-3. Locate the new Windows 10 Desktop resource in the Library, select the ellipsis (3 dot menu item in the top right corner), and select Manage Subscribers.
+3. Locate the new Windows 10 Desktop resource in the Library, select the ellipsis (3 dot menu item in the top right corner), and select Manage Subscribers
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-044.png)](/en-us/tech-zone/build/media/Win10-044.png)
 
@@ -234,7 +234,7 @@ Creating CVAD Hosting connections: https://docs.citrix.com/en-us/citrix-virtual-
 ## Client Configuration
 
   >**Note:**
-    > Best practice would be to automate the configuration of the Citrix Workspace & Files applications.
+    > Best practice would be to automate the configuration of the Citrix Workspace & Files applications
 
 ## Citrix Workspace App
 
@@ -254,10 +254,10 @@ Creating CVAD Hosting connections: https://docs.citrix.com/en-us/citrix-virtual-
 
 >**Note:**
  >
-  >This asumes the option to install Citrix Files was selected when installing the VDA above.
+  >This asumes the option to install Citrix Files was selected when installing the VDA above
   >If not that latest version can be downloaded from <https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-windows.html>
   
-1.  Check Citrix Files status from the icon in the taskbar. If offline, right click & select login.
+1.  Check Citrix Files status from the icon in the taskbar. If offline, right click & select login
 
 [![Citrix Files](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Files-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Files-1.png)
 
@@ -269,10 +269,10 @@ Creating CVAD Hosting connections: https://docs.citrix.com/en-us/citrix-virtual-
 
 >**Note:**
  >
-  >This asumes the option to install Citrix Files for Outlook was selected when installing the VDA above.
+  >This asumes the option to install Citrix Files for Outlook was selected when installing the VDA above
   >If not that latest version can be downloaded from <https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html>
 
-1.  Open outlook & the Citrix files plug-in will be visable along the Outlook tool bar. If you are logged onto the WIndows 10 VM with a valid Citrix Files account, the authentication will pass through and enable the fles functionailty.
+1.  Open outlook & the Citrix files plug-in will be visable along the Outlook tool bar. If you are logged onto the WIndows 10 VM with a valid Citrix Files account, the authentication will pass through and enable the fles functionailty
 
 [![Citrix Files for Outlook](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)
 
