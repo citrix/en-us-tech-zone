@@ -12,7 +12,7 @@ description: Learn how to install the Citrix VDA into a WIndows 10 platform & pr
 
 This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Machines (VMs) via Machine Creation Services (MCS) in Citrix Virtual Apps & Desktop (CVAD) Service
 *  Install VDA
-*  Optimization Windows 10 for MCS Image
+*  Optimize Windows 10 for MCS
 *  Create a Machine Catalog & Deploy VMs
 *  Create a Delivery Group & assign VMs
 *  Citrix Workspace & Citrix Files client configuration
@@ -22,9 +22,9 @@ This guide provides high level instructions to install the Citrix Virtual Delive
  >**Note:**
    >
     > This guide assumes that the reader has a basic understanding of the following technologies:
-    > Citrix Cloud, CVAD Service, basic Windows administration & Microsoft Azure
+    > Citrix Cloud, CVAD Service & basic Windows administration
 
-1. A Windows 10 VM in Microsoft Azure, GCP or an on premises virtual environment
+1. A Windows 10 VM in Microsoft Azure, Google Cloud Platform (GCP) or an on premises virtual environment
 
 2. A Citrix Cloud admin account
 3. A domain admin account with the ability to create machine accounts in the desired OU
@@ -107,7 +107,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 5.  Once the analyses are complete, view the results
 
-6.  Select all the desired optimisations & click optimize
+6.  Select all the desired optimizations & click optimize
 
 7.  View the results & select done
 
@@ -116,21 +116,25 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 ## Create Machine Catalog & Deploy VMs
 
-1. Log into Citrix Cloud & select the Virtual Apps & Desktop tile
+1. Log into Citrix Cloud & select the customer where the resources reside (if more than one)
+
+[![Azure VM](/en-us/tech-zone/build/media/Win10--37.png)](/en-us/tech-zone/build/media/Win10--37.png)
+
+2. Select the Virtual Apps & Desktop tile
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-051.png)](/en-us/tech-zone/build/media/Win10-051.png)
 
-2. Select manage, then Web Studio
-3. From within Web Studio, select Machine Catalogs, then create Machine Catalog
+3. Select manage, then Web Studio
+4. From within Web Studio, select Machine Catalogs, then create Machine Catalog
    
 [![Azure VM](/en-us/tech-zone/build/media/Win10-018.png)](/en-us/tech-zone/build/media/Win10-018.png)
 
-4. Select Multi-session OS for Windows 10 WVD or Single-session OS for a non-WVD Windows 10 OS
+5. Select Multi-session OS for Windows 10 WVD or Single-session OS for a non-WVD Windows 10 OS
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-019.png)](/en-us/tech-zone/build/media/Win10-019.png)
 
-5. Select Machines that are power managed
-6. Deploy machines using Machine Creation Services & select the appropriate Resource
+6. Select Machines that are power managed
+7. Deploy machines using Machine Creation Services & select the appropriate Resource
 
 >  Note: The available resources are based on the hosting connections previously set in studio
 >
@@ -140,7 +144,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 [![Azure VM](/en-us/tech-zone/build/media/Win10-020.png)](/en-us/tech-zone/build/media/Win10-020.png)
 
 7.  Select master image previously created
-8.  Select the minimum functional level (This should be the latest version you have in your environment)
+8.  Select the minimum functional level (This should be the latest VDA version you have in your environment)
    
 [![Azure VM](/en-us/tech-zone/build/media/Win10-021.png)](/en-us/tech-zone/build/media/Win10-021.png)
 
@@ -211,12 +215,8 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 ## Assign Users to Desktop
 
-1. Login to Citrix Cloud & select appropriate customer where resource reside
+1. Login to Citrix Cloud & from the landing page select View Library
 
-[![Azure VM](/en-us/tech-zone/build/media/Win10--37.png)](/en-us/tech-zone/build/media/Win10--37.png)
-
-2. From the landing page select View Library
- 
 [![Azure VM](/en-us/tech-zone/build/media/Win10--36.png)](/en-us/tech-zone/build/media/Win10--36.png)
 
 3. Locate the new Windows 10 Desktop resource in the Library, select the ellipsis (3 dot menu item in the top right corner), and select Manage Subscribers
