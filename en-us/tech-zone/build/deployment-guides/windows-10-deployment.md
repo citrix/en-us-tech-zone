@@ -46,7 +46,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
  >**Note:**
    >
-    > At time of writing, Virtual Delivery Agent 2009 was the latest version. It is recommended to use the latest version available for optimal performance, security, and functionality
+>  At time of writing, Virtual Delivery Agent 2009 was the latest version. It is recommended to use the latest version available for optimal performance, security, and functionality
 
 2.  Run the VDA setup file "VDAWorkstationSetup_xxxx.exe" as an administrator.
 3.  Select Create a master MCS image
