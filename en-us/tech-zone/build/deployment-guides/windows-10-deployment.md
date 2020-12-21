@@ -198,7 +198,7 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-033.png)](/en-us/tech-zone/build/media/Win10-033.png)
 
-7. If adding applications to be published seperatly add these here. We are just publishing a desktop in this scenario
+7. If adding applications to be published seperatly add these here. We are only publishing a desktop in this scenario
 
 [![Azure VM](/en-us/tech-zone/build/media/Win10-034.png)](/en-us/tech-zone/build/media/Win10-034.png)
 
