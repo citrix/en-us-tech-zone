@@ -60,10 +60,9 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
    [![Azure VM](/en-us/tech-zone/build/media/Win10-010.png)](/en-us/tech-zone/build/media/Win10-010.png)
 
-  >**Note:**
-    >
->  For a full list of VDA install options check here:
->  <https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html>
+>**Note:**
+   >
+>  For a full list of VDA install options check here: <https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html>
 
 6.   Enter the Fully Qualified Domain Name (FQDN) of each Cloud Connector (at least two are recommended for tolerance)
 7.  Select Test Connection & if successful select Add
