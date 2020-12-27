@@ -478,18 +478,18 @@ profile load time for the users during the test runs. The table below
 provides a brief overview of the average profile load times based on the
 run data collected from Citrix Director.
 
-  Run                Avg Load Time (seconds)
-  ------------------ -------------------------
-  Premium-20K        8.00
-  Premium-40K        5.34
-  Premium-60K        9.10
-  Premium-80K        5.31
-  Premium-100K       8.47
-  Transaction-20K    15.30
-  Transaction-40K    19.12
-  Transaction-60K    14.09
-  Transaction-80K    18.58
-  Transaction-100K   12.09
+  |Run                |Avg Load Time (seconds)|
+  |------------------ |------------------------|
+  ||Premium-20K       |8.00|
+  |Premium-40K        |5.34|
+  |Premium-60K        |9.10|
+  |Premium-80K        |5.31|
+  |Premium-100K       |8.47|
+  |Transaction-20K    |15.30|
+  |Transaction-40K    |19.12|
+  |Transaction-60K    |14.09|
+  |Transaction-80K    |18.58|
+  |Transaction-100K   |12.09|
 
 ![](media/image12.png){width="4.892361111111111in"
 height="5.182638888888889in"}As expected, the premium tier was provided
