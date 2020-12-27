@@ -413,6 +413,8 @@ benefit performance when used with Profile Services.
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_009.png)
 
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_010.png)
+
 Transactions are recorded as part of the
 Azure Files metrics. The charts below show a rather consistent amount of
 IOPS being used across all of the test runs. Regardless of type of file
@@ -443,10 +445,10 @@ amounts of 675MiB/sec egress and 450MiB/sec ingress. The premium share
 should be able to handle approximately 15 times the workload as our test
 before throughput starts to become an issue.
 
-![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_010.png)
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_011.png)
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_012.png)
 
-The
-transaction file share limit is significantly higher at 300MiB/sec so
+The transaction file share limit is significantly higher at 300MiB/sec so
 theoretically, the transactional file share could handle 5x the workload
 before the throughput becomes a bottleneck.
 
@@ -465,16 +467,12 @@ or in the world of user profiles, FSLogix or Citrix Profile Manager VHD
 container. Using container files improves the performance of Azure Files
 because the number of file open/read/write/close requests are reduced.
 
-![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_011.png)
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_013.png)
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_014.png)
 
-Focusing on the premium file share, we see
-that latency remains relatively steady at around 4 milliseconds (ms).
-Reviewing the transaction optimized file share, latency stays pretty
-consistent across the different test runs. The latency stays pretty much
-in the 7-10ms range, with only occasional spikes outside of that range.
-These longer latencies translate into longer profile load times as the
-later users logon. These are discussed further in the Profile Load Time
-section.
+Focusing on the premium file share, we see that latency remains relatively steady at around 4 milliseconds (ms).
+Reviewing the transaction optimized file share, latency stays pretty consistent across the different test runs. The latency stays pretty much in the 7-10ms range, with only occasional spikes outside of that range.
+These longer latencies translate into longer profile load times as the later users logon. These are discussed further in the Profile Load Time section.
 
 ### Profile Load Time
 
@@ -497,7 +495,8 @@ run data collected from Citrix Director.
   |Transaction-80K    |18.58|
   |Transaction-100K   |12.09|
 
-![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_012.png)
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_015.png)
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_016.png)
 
 As expected, the premium tier was provided
 the best load times over all. The interesting thing is that the
@@ -533,7 +532,7 @@ users have multiple sessions open. However, when using Azure Files with
 Citrix, a few other features are recommended to improve the user
 experience.
 
-![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_013.png)
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_017.png)
 
 You should always enable Folder
 Redirection when possible. As the chart shows, enabling folder
@@ -548,7 +547,7 @@ is minimal and the user experience is not impacted. When Citrix hosts
 are on-premise, the redirection saves on the chargeable egress traffic
 leaving Azure.
 
-![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_014.png)
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_018.png)
 
 Enabling the Large File Handling feature of
 Citrix Profile Manager is a fantastic way to improve the logon
