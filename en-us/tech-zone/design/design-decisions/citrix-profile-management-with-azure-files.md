@@ -235,31 +235,21 @@ Additional Components screen, both the *Citrix User Profile Manager* and
 The following GPO settings for Profile Management were configured and
 the GPO was assigned to all the Citrix hosts being used for the tests.
 
-+----------------------------------------------+----------------------+
+
 | GPO Setting                                  | Value                |
-+==============================================+======================+
+|----------------------------------------------|----------------------|
 | Active write back                            | Enabled              |
-+----------------------------------------------+----------------------+
 | Active write back registry                   | Enabled              |
-+----------------------------------------------+----------------------+
 | Enable profile management                    | Enabled              |
-+----------------------------------------------+----------------------+
 | Path to user store                           |                      |
-+----------------------------------------------+----------------------+
 | Customer Experience Improvement Program      | Disabled             |
-+----------------------------------------------+----------------------+
 | Enable Default Exclusion List -- Directories | Enabled              |
-+----------------------------------------------+----------------------+
 | Delete locally cached profiles on logoff     | Enabled              |
-+----------------------------------------------+----------------------+
 | Local profile conflict handling              | Delete local profile |
-+----------------------------------------------+----------------------+
 | Enable Default Exclusion List -- Registry    | Enabled              |
-+----------------------------------------------+----------------------+
 | Large File Handling -- files to be created   | OSTFolder\\\*.ost    |
-| as symbolic links                            |                      |
-|                                              | PSTFolder\\\*.pst    |
-+----------------------------------------------+----------------------+
+| as symbolic links                            | PSTFolder\\\*.pst    |
+|----------------------------------------------|----------------------|
 
 ### Monitoring
 
