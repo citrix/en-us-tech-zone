@@ -117,8 +117,6 @@ in the Azure portal select the storage account and then select Metrics
 from the Storage Account blade. The key metrics we used to monitor the
 performance of Azure Files during the test are as follows:
 
-![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_001.png)
-
 ***Ingress (Sum)***: The aggregated sum of
 inbound data in bytes to Azure Files during the time period, with a
 minimum granularity of one minute. To determine the average ingress
@@ -128,7 +126,7 @@ metric and set the scope to the storage account name, set the namespace
 to Account, then choose Ingress as the metric and Sum as the Aggregation
 type.
 
-![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_002.png)
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_001.png)
 
 ***Egress (Sum)***: The aggregated sum of
 the outbound data in bytes from Azure Files during the time period, with
@@ -138,6 +136,8 @@ for a minute and divide it by 60. To add this metric, click Add metric
 and set the scope to the storage account name, set the namespace to
 Account then choose Egress as the metric and Sum as the Aggregation
 type.
+
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_002.png)
 
 ***Transactions (Sum)***: The number of requests, both successful and
 failed, made to Azure Files, during the time period, with a minimum
@@ -251,8 +251,6 @@ the GPO was assigned to all the Citrix hosts being used for the tests.
 
 ### Monitoring
 
-![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_007.png)
-
 Monitoring the performance can be done
 through the Citrix Director. The key metric to watch for performance is
 the profile load time. The profile load time provides the number of
@@ -268,6 +266,8 @@ Service, select **Monitor** \>\> **Trends** \>\> **Logon**
 
 The profile load time is available by hovering over the time period
 being monitored or viewed in the table below the chart.
+
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_007.png)
 
 ## Test methodology
 
