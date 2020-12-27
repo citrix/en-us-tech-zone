@@ -117,8 +117,8 @@ in the Azure portal select the storage account and then select Metrics
 from the Storage Account blade. The key metrics we used to monitor the
 performance of Azure Files during the test are as follows:
 
-![](media/image1.png){width="4.458333333333333in"
-height="0.9444444444444444in"}***Ingress (Sum)***: The aggregated sum of
+![8-Core Performance](/en-us/tech-zone/design/media/design-decisions_azure-instance-scalability_001.png)
+***Ingress (Sum)***: The aggregated sum of
 inbound data in bytes to Azure Files during the time period, with a
 minimum granularity of one minute. To determine the average ingress
 throughput per second, you would need to take the sum of the ingress
