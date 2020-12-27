@@ -246,8 +246,7 @@ the GPO was assigned to all the Citrix hosts being used for the tests.
 | Delete locally cached profiles on logoff     | Enabled              |
 | Local profile conflict handling              | Delete local profile |
 | Enable Default Exclusion List -- Registry    | Enabled              |
-| Large File Handling -- files to be created as symbolic links     | OSTFolder\\\*.ost 
- PSTFolder\\\*.pst    |
+| Large File Handling -- files to be created as symbolic links     | OSTFolder\\\*.ost PSTFolder\\\*.pst    |
 
 ### Monitoring
 
@@ -358,18 +357,18 @@ Based on the variables identified earlier, the following test matrix was
 executed, and the performance data was gathered from Azure Monitor and
 Citrix Director for each of the runs.
 
-  Run Name           Azure File Tier         File Share Quota   Files Updated
-  ------------------ ----------------------- ------------------ ---------------
-  Premium-20K        Premium                 10 TB              20,000
-  Premium-40K        Premium                 10 TB              40,000
-  Premium-60K        Premium                 10 TB              60,000
-  Premium-80K        Premium                 10 TB              80,000
-  Premium-100K       Premium                 10 TB              100,000
-  Transaction-20K    Transaction optimized   10 TB              20,000
-  Transaction-40K    Transaction optimized   10 TB              40,000
-  Transaction-60K    Transaction optimized   10 TB              60,000
-  Transaction-80K    Transaction optimized   10 TB              80,000
-  Transaction-100K   Transaction optimized   10 TB              100,000
+  |Run Name           |Azure File Tier         |File Share Quota   |Files Updated|
+  |------------------ |----------------------- |------------------ |-------------|
+  |Premium-20K        |Premium                 |10 TB              |20,000|
+  |Premium-40K        |Premium                 |10 TB              |40,000|
+  |Premium-60K        |Premium                 |10 TB              |60,000|
+  |Premium-80K        |Premium                 |10 TB              |80,000|
+  |Premium-100K       |Premium                 |10 TB              |100,000|
+  |Transaction-20K    |Transaction optimized   |10 TB              |20,000|
+  |Transaction-40K    |Transaction optimized   |10 TB              |40,000|
+  |Transaction-60K    |Transaction optimized   |10 TB              |60,000|
+  |Transaction-80K    |Transaction optimized   |10 TB              |80,000|
+  |Transaction-100K   |Transaction optimized   |10 TB              |100,000|
 
 After the warm-up test run, each test run consisted of the following
 steps
