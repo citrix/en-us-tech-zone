@@ -771,8 +771,6 @@ document and are suggested reading for those who want to know more.
 
 -  https://docs.microsoft.com/en-us/azure/storage/files/storage-files-planning\#understanding-provisioning-for-premium-file-shares
 
--  
-
 -  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring?tabs=azure-portal#monitoring-data>
 
 -  https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring-reference
