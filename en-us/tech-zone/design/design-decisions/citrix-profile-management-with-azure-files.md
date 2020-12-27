@@ -246,7 +246,8 @@ the GPO was assigned to all the Citrix hosts being used for the tests.
 | Delete locally cached profiles on logoff     | Enabled              |
 | Local profile conflict handling              | Delete local profile |
 | Enable Default Exclusion List -- Registry    | Enabled              |
-| Large File Handling -- files to be created as symbolic links     | OSTFolder\\\*.ost  PSTFolder\\\*.pst    |
+| Large File Handling -- files to be created as symbolic links     | OSTFolder\\\*.ost 
+ PSTFolder\\\*.pst    |
 
 ### Monitoring
 
