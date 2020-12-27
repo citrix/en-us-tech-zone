@@ -480,7 +480,7 @@ run data collected from Citrix Director.
 
   |Run                |Avg Load Time (seconds)|
   |------------------ |------------------------|
-  ||Premium-20K       |8.00|
+  |Premium-20K       |8.00|
   |Premium-40K        |5.34|
   |Premium-60K        |9.10|
   |Premium-80K        |5.31|
@@ -577,7 +577,7 @@ the longer latency is not a performance issue.
 optimized file share to a single storage account, because to transaction
 file shares under normal use are easily capable of reaching the maximum
 limits on a single storage account. For more information see*
-https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets\#file-share-and-file-scale-targets
+<https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets\#file-share-and-file-scale-targets>
 
 If using the higher performance premium tier for consistent performance
 and lower latency, do some benchmarking before you settle on a final
@@ -769,13 +769,13 @@ document and are suggested reading for those who want to know more.
 
 -  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-how-to-create-large-file-share?tabs=azure-portal>
 
--  https://docs.microsoft.com/en-us/azure/storage/files/storage-files-planning\#understanding-provisioning-for-premium-file-shares
+-  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-planning\#understanding-provisioning-for-premium-file-shares>
 
 -  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring?tabs=azure-portal#monitoring-data>
 
--  https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring-reference
+-  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring-reference>
 
--  https://docs.microsoft.com/en-us/azure/backup/azure-file-share-backup-overview
+-  <https://docs.microsoft.com/en-us/azure/backup/azure-file-share-backup-overview>
 
 -  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-enable-soft-delete?tabs=azure-portal>
 
@@ -787,10 +787,10 @@ document and are suggested reading for those who want to know more.
 
 -  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-introduction>
 
--  https://docs.microsoft.com/en-us/azure/storage/files/storage-files-planning\#storage-tiers
+-  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-planning\#storage-tiers>
 
 -  <https://docs.citrix.com/en-us/profile-management/current-release/policies/descriptions-and-defaults.html>
 
 -  <https://www.citrix.com/go/jmp/upm.html>
 
--  https://docs.citrix.com/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html
+-  <https://docs.citrix.com/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html>
