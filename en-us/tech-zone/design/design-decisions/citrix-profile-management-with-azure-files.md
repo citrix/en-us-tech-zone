@@ -117,7 +117,8 @@ in the Azure portal select the storage account and then select Metrics
 from the Storage Account blade. The key metrics we used to monitor the
 performance of Azure Files during the test are as follows:
 
-![8-Core Performance](/en-us/tech-zone/design/media/design-decisions_azure-instance-scalability_001.png)
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_001.png)
+
 ***Ingress (Sum)***: The aggregated sum of
 inbound data in bytes to Azure Files during the time period, with a
 minimum granularity of one minute. To determine the average ingress
@@ -127,8 +128,9 @@ metric and set the scope to the storage account name, set the namespace
 to Account, then choose Ingress as the metric and Sum as the Aggregation
 type.
 
-![](media/image2.png){width="4.541666666666667in"
-height="1.1111111111111112in"}***Egress (Sum)***: The aggregated sum of
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_002.png)
+
+***Egress (Sum)***: The aggregated sum of
 the outbound data in bytes from Azure Files during the time period, with
 a minimum granularity of one minute. To determine the average egress
 throughput per second, you would need to take the sum of the egress data
@@ -145,8 +147,9 @@ during a one-minute time period, you would take the Sum of Transactions
 for that minute and divide it by 60. To add this metric, click Add
 metric and set the scope to the storage account name, set the namespace
 to Account, then choose Transactions as the metric and Sum as the
-Aggregation ![](media/image3.png){width="4.430555555555555in"
-height="0.9305555555555556in"}type.
+Aggregation type.
+
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_003.png)
 
 ***Transactions Success with Throttling (Sum)***: This represents the
 aggregated number of requests that failed due to provisioned limits on
@@ -165,8 +168,7 @@ throughput is throttled. For more information on the metrics dimensions,
 please see the Microsoft website at
 <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring-reference#metrics-dimensions>
 
-![](media/image4.png){width="4.666666666666667in"
-height="0.9027777777777778in"}
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_004.png)
 
 ***Success Server Latency (Avg)***: The average amount of time that
 Azure Files required to complete the request. This value does not
@@ -176,7 +178,7 @@ To add this metric, click Add metric and set the scope to the storage
 account name, set the namespace to Account, then choose Success Server
 Latency as the metric and Avg as the Aggregation.
 
-![](media/image5.png){width="4.625in" height="1.0138888888888888in"}
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_005.png)
 
 ***Success E2E Latency (Avg)***: The average end-to-end latency required
 to complete a successful transaction with Azure Files. This value
@@ -187,8 +189,7 @@ the scope to the storage account name, set the namespace to Account,
 then choose Success E2E Latency as the metric and Avg as the
 Aggregation.
 
-![](media/image6.png){width="4.486111111111111in"
-height="0.9444444444444444in"}
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_006.png)
 
 ## Citrix Profile Management
 
@@ -250,8 +251,9 @@ the GPO was assigned to all the Citrix hosts being used for the tests.
 
 ### Monitoring
 
-![](media/image7.png){width="6.5in"
-height="0.7222222222222222in"}Monitoring the performance can be done
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_007.png)
+
+Monitoring the performance can be done
 through the Citrix Director. The key metric to watch for performance is
 the profile load time. The profile load time provides the number of
 seconds it takes for the user's profile to load into the Citrix session.
@@ -349,7 +351,7 @@ StoreFront server and the Citrix Cloud Connectors were on the subnet
 with the LoginVSI infrastructure, the Citrix hosts resided on a
 different subnet.
 
-![](media/image8.png){width="6.5in" height="4.670833333333333in"}
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_008.png)
 
 ### Test Runs
 
@@ -409,8 +411,9 @@ benefit performance when used with Profile Services.
 
 ### Transactions
 
-![](media/image9.png){width="4.934722222222222in"
-height="5.267361111111111in"}Transactions are recorded as part of the
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_009.png)
+
+Transactions are recorded as part of the
 Azure Files metrics. The charts below show a rather consistent amount of
 IOPS being used across all of the test runs. Regardless of type of file
 share, the average IOPS per second are under about 3300. The consistent
@@ -440,7 +443,9 @@ amounts of 675MiB/sec egress and 450MiB/sec ingress. The premium share
 should be able to handle approximately 15 times the workload as our test
 before throughput starts to become an issue.
 
-![](media/image10.png){width="4.653472222222222in" height="6.4375in"}The
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_010.png)
+
+The
 transaction file share limit is significantly higher at 300MiB/sec so
 theoretically, the transactional file share could handle 5x the workload
 before the throughput becomes a bottleneck.
@@ -460,8 +465,9 @@ or in the world of user profiles, FSLogix or Citrix Profile Manager VHD
 container. Using container files improves the performance of Azure Files
 because the number of file open/read/write/close requests are reduced.
 
-![](media/image11.png){width="5.103472222222222in"
-height="5.3284722222222225in"}Focusing on the premium file share, we see
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_011.png)
+
+Focusing on the premium file share, we see
 that latency remains relatively steady at around 4 milliseconds (ms).
 Reviewing the transaction optimized file share, latency stays pretty
 consistent across the different test runs. The latency stays pretty much
@@ -491,8 +497,9 @@ run data collected from Citrix Director.
   |Transaction-80K    |18.58|
   |Transaction-100K   |12.09|
 
-![](media/image12.png){width="4.892361111111111in"
-height="5.182638888888889in"}As expected, the premium tier was provided
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_012.png)
+
+As expected, the premium tier was provided
 the best load times over all. The interesting thing is that the
 Premium-80K run had the best load times on average followed by the
 Premium-40K. While the Premium-20K, which had the lightest load, is in
@@ -526,8 +533,9 @@ users have multiple sessions open. However, when using Azure Files with
 Citrix, a few other features are recommended to improve the user
 experience.
 
-![](media/image13.png){width="5.0055555555555555in"
-height="3.8881944444444443in"}You should always enable Folder
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_013.png)
+
+You should always enable Folder
 Redirection when possible. As the chart shows, enabling folder
 redirection prevents a significant amount of data from being copied from
 Azure Files to the Citrix host. Folder redirection was designed to
@@ -540,8 +548,9 @@ is minimal and the user experience is not impacted. When Citrix hosts
 are on-premise, the redirection saves on the chargeable egress traffic
 leaving Azure.
 
-![](media/image14.png){width="4.820833333333334in"
-height="3.691666666666667in"}Enabling the Large File Handling feature of
+![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_014.png)
+
+Enabling the Large File Handling feature of
 Citrix Profile Manager is a fantastic way to improve the logon
 experience for large files that would normally be copied down from the
 profile store at logon. Since Microsoft does not recommend storing PST
