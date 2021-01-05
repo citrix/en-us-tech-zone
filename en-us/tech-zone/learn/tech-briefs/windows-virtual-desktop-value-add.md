@@ -230,7 +230,7 @@ Applied in different combinations, they optimize the user experience, decrease b
 
 1.  **Intelligent redirection** - Intelligent redirection examines screen activity, application commands, endpoint device, and network and server capabilities to instantly determine how and where to render an application or desktop activity. Rendering can occur on either the endpoint device or the hosting server.
 
-1.  **Adaptive compression** - Adaptive compression allows rich multimedia displays to be delivered even on constrained network connections. HDX first evaluates several variables, such as the type of input (text, video, voice, and multimedia), device, and display quality. It chooses the optimal compression codec and the best proportion of CPU and GPU usage. It then intelligently adapts based on each unique user and session characteristics basis.
+1.  **Adaptive compression** - Adaptive compression allows rich multimedia displays to be delivered even on constrained network connections. HDX first evaluates several variables, such as the type of input (text, video, voice, and multimedia), device, and display quality. It chooses the optimal compression codec and the best proportion of CPU and GPU usage. It then intelligently adapts based on each unique user and session characteristics basis. See the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/hdx.html#adaptive-display).
 
 1.  **Data De-Duplication** - De-duplication of network traffic reduces the aggregate data sent between client and server. It does so by taking advantage of repeated patterns in commonly accessed data such as bitmap graphics, documents, print jobs, and streamed media. Caching these patterns allows only the changes to be transmitted across the network, eliminating duplicate traffic. HDX also supports multicasting of multimedia streams, where a single transmission from the source is viewed by multiple subscribers at one location, rather than a one-to-one connection for each user.
 
@@ -242,7 +242,9 @@ Session interactivity is constantly measured to determine whether any data strea
 
 ![HDX Adaptive Throughput](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_15-hdx-adaptive-throughput.gif)
 
-Read more about optimizing HDX bandwidth over high latency connections [here](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/bandwidth-connections.html)
+For more info, see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/hdx.html#adaptive-throughput).
+
+Read more about optimizing HDX bandwidth over high latency connections [here](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/bandwidth-connections.html).
 
 ### HDX 3D Pro
 
@@ -270,7 +272,7 @@ To learn more see the video [here](https://www.youtube.com/watch?v=aVhhy4Ms4r0)
 
 The rich set of policies available to fine-tune the delivery of the app or desktop are extremely useful. The policies can be applied based on various criteria, such as group of users, a set of resources, a set of tagged objects and many more. The policies ensure the widest range of supported endpoints and devices while giving maximum control over the delivery of the session and what can and cannot be accessed by the user. Some examples are
 
-1.  QoS for managing multiple connections on supported routers (see [Multi-stream connections policy settings](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/multistream-connections-policy-settings.html) for details)
+1.  QoS for managing multiple connections on supported routers (see [Multi-stream connections policy settings](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/multistream-connections-policy-settings.html) for details).
 1.  Managing the image quality on the endpoint like settings for Visual Quality, Target frame rate and display memory limit (video buffer size in kilo bytes).
 1.  [Session reliability](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-reliability-policy-settings.html) and [Auto client reconnect](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/auto-client-reconnect-policy-settings.html) settings that ensure smooth session reconnection when a network interruption may occur.
 1.  Various inputs devices including but not limited to specialty keyboards, mice, recording equipment, identification devices, and so on.
@@ -301,7 +303,7 @@ The following were screenshots taken during our tests
 
 [![BCR comparison screenshot](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-bcr-comparison-screenshot-large.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-bcr-comparison-screenshot.png)
 
-To learn more about Browser Content Redirection, visit this [link](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html)
+To learn more about Browser Content Redirection, see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/hdx.html#browser-content-redirection) or visit the [docs page](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html).
 
 ### Teams Optimization
 
@@ -322,7 +324,7 @@ When Teams optimization is enabled, the improvement in the image in the call is 
 And CPU consumption on the machines hosting the Teams call is also drastically reduced.
 Microsoft has released their own Teams optimizations solution, currently it only supports Windows 10 on the endpoints, Citrix's value add is that, not only are Windows OS based clients supported, but also Linux endpoints.
 
-To learn more about Teams optimization, see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/microsoft-teams-optimization.html) or read the [Proof of Concept guide](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html)
+To learn more about Teams optimization, see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/hdx.html#microsoft-teams-optimization) or read the [Proof of Concept guide](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html).
 
 ## Experience - Resource Optimization
 
@@ -381,7 +383,7 @@ To deliver the best possible logon performance, Workspace Environment Management
 
 ![Log on process with and without optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_26-wem-logon-process-optimization.png)
 
-Find more information about WEM and its benefits [here](/en-us/workspace-environment-management/current-release.html)
+Find more information about WEM and its benefits [here](/en-us/workspace-environment-management/current-release.html).
 
 ## Experience - Personalization
 
@@ -405,7 +407,7 @@ The user personalization layer VHD is mounted on the VMs at logon over the netwo
 
 Note: It is not necessary for the entire OS image to be layered using App Layering to utilize this feature.
 
-To learn more about the user personalization layer feature see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html)
+To learn more about the user personalization layer feature see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html).
 
 ### Multi-session support for FSLogix containers
 
@@ -431,7 +433,7 @@ Citrix has built integrations to use Azure Files’ SMB based storage to host Ci
 
 Azure Files alleviates the need to set up, manage, and update the SMB store infrastructure (physical or virtual windows machines). Azure Files can be used to move the data that is hosted in your data center to the cloud and then be accessed by machines in your hybrid environment.
 
-Learn more about how to set up the same [here](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html)
+Learn more about how to set up the same [here](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html).
 
 ## Experience - App Delivery solutions
 
@@ -486,7 +488,7 @@ Integrations with Citrix Managed Desktops can provision the SD-WAN instances in 
 Citrix Workspace extends the capabilities that WVD sessions provide by encompassing them with a holistic workspace. It is not just the place to provide single sign-on access to apps and desktops.
 The Workspace helps the user by organizing their work, guiding them to the important tasks and automating the repetitive tasks to enable them to complete tasks without having to leave the workspace.
 
-Citrix Workspace with Intelligence organizes work by funneling in notifications from various sources and then enables users to action on them by integrating actions and workflows into the Workspace by using microapps. Learn more about Workspace Microapps [here](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html)
+Citrix Workspace with Intelligence organizes work by funneling in notifications from various sources and then enables users to action on them by integrating actions and workflows into the Workspace by using microapps. Learn more about Workspace Microapps [here](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html).
 
 Citrix Workspace adds universal search capabilities to all the data sources the workspace has been tied into including your on-premises SharePoint or SMB share, all the way to OneDrive in the cloud and everything in between. Increasing productivity by saving you time and the hassle of searching for that file you need right now but don't know where it is stored.
 
@@ -516,7 +518,7 @@ Citrix extends the Azure multifactor authentication capabilities with support fo
 1.  Smart Card / Proximity Card support
     *  Supported (Imprivata, Gemalto, and so on)
 
-Read more about how the Citrix Workspace enables SSO with MFA in the [tech brief](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
+Read more about how the Citrix Workspace enables SSO with MFA in the [tech brief](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html).
 
 ### Session Watermarking
 
@@ -524,7 +526,7 @@ For sessions that have a user accessing sensitive data, a great deterrent to hav
 
 ![Session Watermarking](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_27-session-watermarking.png)
 
-Learn more about session watermarking [here](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-watermark-policy-setting.html). Watch a short video to see the feature in action [here](https://youtu.be/XHEQlvpAZKs)
+Learn more about session watermarking [here](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-watermark-policy-setting.html). Watch a short video to see the feature in action [here](https://youtu.be/XHEQlvpAZKs).
 
 ### Session Recording
 
