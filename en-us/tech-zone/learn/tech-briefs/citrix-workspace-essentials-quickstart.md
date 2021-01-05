@@ -36,7 +36,7 @@ Figure 3:
 
 ### Multifactor authentication (MFA) using one-time password (TOTP)
 
-Citrix Workspace Essentials provides a cloud-hosted Time-based One-Time Password (TOTP) option for organizations using a Windows Active Directory as the primary identity. TOTP is a simple two factor auth inside workspace experience, using a time-sensitive One-Time-Password generated for the user on their registered device. Watch this video to learn more.
+Citrix Workspace Essentials provides a cloud-hosted Time-based One-Time Password (TOTP) option for organizations using a Windows Active Directory as the primary identity. TOTP is a simple two factor auth inside workspace experience, using a time-sensitive One-Time-Password generated for the user on their registered device. Watch this [video](https://www.youtube.com/watch?v=R8xwG_k2v78) to learn more.
 
 Users are able to request and install a new token and admins can enable and disable TOTP multifactor authentication with minimal effort. When Two Factor Auth is enabled inside workspace experience, it will be enforced for all users on all access points.
 
@@ -55,7 +55,7 @@ Citrix Workspace Essentials leverages all the benefits provided by Workspace exp
 
 Figure 5:
 
-Read this Workspace App Tech Insight to learn more.
+Read this Workspace App [Tech Insight](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-app.html) to learn more.
 
 ### Global POP network
 
@@ -93,25 +93,27 @@ Figure 7:
 
 Pre-requisites for configuring app access
 
-*  Getting Started with Citrix Cloud (link)
+*  Getting Started with [Citrix Cloud](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-app.html)
 *  Make sure you have the right entitlements and / or trial enabled
 *  Workspace Platform configurations required to setup the solution
- * Setting up the Workspace
- *  User Authentication
- *  Tech Brief with all the different types of authentication methods to Workspace
+    *  Setting up the Workspace
+    *  User Authentication
+    *  [Tech Brief](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) with all the different types of authentication methods to Workspace
 
 ## Use case 1: Secure access to internal web apps
 
-Citrix Workspace Essentials provides secure access to intranet web apps with SSO. Follow the SSO to Web Configuration Steps in the article to deploy this feature.
+Citrix Workspace Essentials provides secure access to intranet web apps with SSO. Follow the [SSO to Web Configuration Steps](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) in the article to deploy this feature.
 
 Figure 8:
 
 ## Use case 2: Secure access to SaaS apps
 
+Citrix Workspace Essentials provides secure access to sanctioned SaaS apps with SSO. Follow the [SSO to SaaS Configuration Steps](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) in the article to deploy this feature.
+
 Figure 9:
 
 ## Use case 3: Configuring second factor authentication to Citrix Workspace
 
-Citrix Workspace Essentials enables second factor authentication during user login to Citrix Workspace. Follow the steps in the  Configuring AD + token in Identity and Access Management and Deploying Citrix Cloud connector guides to deploy this feature.
+Citrix Workspace Essentials enables second factor authentication during user login to Citrix Workspace. Follow the steps in the [Configuring AD + token in Identity and Access Management](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-ad.html) and [Deploying Citrix Cloud connector](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html) guides to deploy this feature.
 
 Figure 10:
