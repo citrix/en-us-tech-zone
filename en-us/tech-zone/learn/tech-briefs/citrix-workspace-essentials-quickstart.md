@@ -96,9 +96,9 @@ Pre-requisites for configuring app access
 *  Getting Started with Citrix Cloud (link)
 *  Make sure you have the right entitlements and / or trial enabled
 *  Workspace Platform configurations required to setup the solution
-*    Setting up the Workspace
-*    User Authentication
-*    Tech Brief with all the different types of authentication methods to Workspace
+  *  Setting up the Workspace
+  *  User Authentication
+  *  Tech Brief with all the different types of authentication methods to Workspace
 
 ## Use case 1: Secure access to internal web apps
 
