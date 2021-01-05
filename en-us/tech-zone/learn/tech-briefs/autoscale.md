@@ -168,8 +168,8 @@ The scalability numbers are used to provide sizing guidance for the following th
 *  User Count during Off Peak Weekend Time: 0 users
 *  Peak Logon Time: 9AM
 *  Peak Log off Time: 5PM
-*  Peek Start Time: 8:30AM
-*  Peek End Time: 5:30PM
+*  Peak Start Time: 8:30AM
+*  Peak End Time: 5:30PM
 *  Active per Day: 9 hours
 *  Active per Month: 198 hours
 *  Load Balancing Algorithm: Horizontal
@@ -203,8 +203,8 @@ From the table, the cost of machines powered on all the time is over 350% the co
 *  User Count during Off Peak Weekend Time: 0 users
 *  Peak Logon Time: 9AM
 *  Peak Log off Time: 5PM
-*  Peek Start Time: 8:30AM
-*  Peek End Time: 5:30PM
+*  Peak Start Time: 8:30AM
+*  Peak End Time: 5:30PM
 *  Active per Day: 9 hours
 *  Active per Month: 198 hours
 *  Load Balancing Algorithm: Horizontal
@@ -238,8 +238,8 @@ From the table, the cost of machines powered on all the time is over 300% the co
 *  User Count during Off Peak Weekend Time: 0 users
 *  Peak Logon Time: 9AM
 *  Peak Log off Time: 5PM
-*  Peek Start Time: 8:30AM
-*  Peek End Time: 5:30PM
+*  Peak Start Time: 8:30AM
+*  Peak End Time: 5:30PM
 *  Active per Day: 9 hours
 *  Active per Month: 198 hours
 *  Load Balancing Algorithm: Vertical (different than scenario 2)
