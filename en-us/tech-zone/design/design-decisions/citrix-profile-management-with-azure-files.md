@@ -10,7 +10,7 @@ description: Copy & paste description from TOC here
 ## Introduction
 
 The article covers guidance and best practices for using Citrix User
-Profile Manager to manage user profiles on Azure Files as the backend
+Profile Manager to manage user profiles on Azure Files as the back-end
 storage location. The primary objective of this article is to provide
 you the necessary information to determine the best way to deploy User
 Profile Manager with Azure Files.
@@ -31,7 +31,7 @@ permissions and is accessible from Windows, Mac and Linux clients.
 Azure Files can be used for a variety of enterprise purposes, including
 
 -  File Servers. Azure Files can directly be mounted from all popular
-    operating systems across the world and also can be deployed in an
+    operating systems across the world and also can be deployed in a
     hybrid scenario, where data can be replicated to on-premises Windows
     servers via Azure File Sync.
 
@@ -62,15 +62,15 @@ premium, are evaluated and recommended for storing user profile data
 performance offers up to 100 TB of storage in a single file share with a
 maximum throughput of 300 MiB/sec. The transaction performance level is
 designed to support workloads that do not need high-performance. When
-using transaction for user profile workloads, be sure to enable the
+using the transaction optimized option for user profile workloads, be sure to enable the
 "large file shares" setting. The maximum IOPS supported for a
 transaction file share with "large file shares" enabled is 10,000 IOPS.
-This is true for a 10 TiB share as well as a 100 TiB share.
+This is true for a 10 TiB share and a 100 TiB share.
 
-Transaction storage accounts without large file shares enabled (\<
+Transaction storage accounts without "large file shares" enabled (\<
 5TiB), support multiple redundancy options, these include locally
 redundant, zone-redundant, and geo-redundant options with read-only and
-hot or cold tiering available. When large file shares is enabled, only
+hot or cold tiering available. When support for "large file shares" is enabled, only
 the locally-redundant storage and zone redundant storage options are
 available.
 
@@ -94,7 +94,7 @@ mode allows up to 3 times the allocated IOPS to be used but requires the
 file share be running at less than the allocated IOPS for a period of
 time to regenerate. In other words, you cannot run in burst mode all the
 time. If there are enough credits available, the shares can burst up to
-30,720 IOPS for up to maximum of 60 minutes of duration.
+30,720 IOPS for up to a maximum of 60 minutes of duration.
 
 Both performance tiers are acceptable options for storing user profile
 data. Selecting between the performance tiers depends primarily on the
@@ -102,7 +102,7 @@ user workload and the goal is always to provide the end user their
 required performance and data protection for the lowest cost. For user
 profiles where response time is the highest priority, premium file
 shares are the best candidates. For more information on the performance
-of the different tiers, please visit Microsoft's storage performance
+of the different tiers, visit Microsoft's storage performance
 webpage at
 <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets>.
 To determine what performance tier is best starts with monitoring key
@@ -111,7 +111,7 @@ metrics.
 ### Monitoring
 
 You can use Azure Monitor to view the key metrics on your Azure File
-shares and make adjustments. For storage, you should closely monitor
+shares and make adjustments. For storage, closely monitor
 throughput, transactions, and latency metrics. To enable these metrics,
 in the Azure portal select the storage account and then select Metrics
 from the Storage Account blade. The key metrics we used to monitor the
@@ -156,7 +156,7 @@ aggregated number of requests that failed due to provisioned limits on
 the first attempt but were successful after retries. This is an API
 filter on Response Type and is only valid for the premium tier where
 resources are provisioned. If this number is significant when compared
-to the sum of transactions, your file share size should be increased. To
+to the sum of transactions, increase your file share size. To
 add this filter, you must first add the Transactions metric. Then click
 Add filter, choose the Response type property, operator of = and select
 one of the filters in the Values field. This filter will not be visible
@@ -165,7 +165,7 @@ shares, you can also look at specific response types
 (SuccessWithShareIopsThrottling, SuccessWithShareEgressThrottling,
 SuccessWithShareIngressThrottling) to determine whether IOPS or
 throughput is throttled. For more information on the metrics dimensions,
-please see the Microsoft website at
+check the Microsoft website at
 <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring-reference#metrics-dimensions>
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_004.png)
@@ -197,12 +197,12 @@ The use of Citrix Profile Management (CPM) greatly enhanced the end-user
 experience during our testing. Citrix Profile Management is designed to
 remove profile bloat and significantly speed logon times, while reducing
 profile corruption. Citrix Profile Management is a feature of Citrix
-Virtual Apps and Desktops Service (CVADS).
+Virtual Apps and Desktops Service.
 
 ### Key Features
 
 The key features of CPM that provide a great end-user experience when
-Azure Files is used for the backend storage are as follows:
+Azure Files is used for the back-end storage are as follows:
 
 ***Profile Streaming***: Files and folders contained in a profile are
 fetched from the user store to the local computer only when they are
@@ -216,7 +216,7 @@ data leaving Azure Files, reducing costs and improving logon time.
 synchronized to the user store in the middle of a session, before
 logoff. Usually, these mid-session writes occur about every 5 minutes.
 Enabling this setting provides Azure Files with a more consistent stream
-of write traffic, instead of having it all hit at logoff. This frequent
+of write traffic, instead of having all the writes occur at logoff. This frequent
 write-back resolves the "last writer wins" issue when users are
 accessing their profile from multiple devices simultaneously.
 
@@ -231,7 +231,7 @@ transactional tier and highly recommended for the premium tier.
 For the testing, each of the Citrix hosts had the Multi-session OS
 Virtual Delivery Agent (VDA) 2006 installed. During installation, on the
 Additional Components screen, both the *Citrix User Profile Manager* and
-*Citrix User Profile Manager WMI Plugin* were enabled.
+*Citrix User Profile Manager WMI Plug-in* were enabled.
 
 The following GPO settings for Profile Management were configured and
 the GPO was assigned to all the Citrix hosts being used for the tests.
@@ -240,7 +240,7 @@ the GPO was assigned to all the Citrix hosts being used for the tests.
 |----------------------------------------------|----------------------|
 | Active write back                            | Enabled              |
 | Active write back registry                   | Enabled              |
-| Enable profile management                    | Enabled              |
+| Enable Profile Management                    | Enabled              |
 | Path to user store                           |                      |
 | Customer Experience Improvement Program      | Disabled             |
 | Enable Default Exclusion List -- Directories | Enabled              |
@@ -262,7 +262,7 @@ experience and profile load times of greater than 30 seconds usually
 result in a poor user experience. The profile load time is available
 through the Citrix Director. From Citrix Cloud Virtual Apps and Desktops
 Service, select **Monitor** \>\> **Trends** \>\> **Logon**
-**Performance** as shown in the screen shot below:
+**Performance** as shown in the screenshot below:
 
 The profile load time is available by hovering over the time period
 being monitored or viewed in the table below the chart.
@@ -276,14 +276,14 @@ determine for a specific workload how the transaction optimized and
 premium tiers would perform with CPM configured on the Citrix hosts. The
 following settings were kept static during the test runs
 
-  Static Configuration    Value
-  ----------------------- ---------------------------------------------------
-  Number of users         1000
-  File Share Quota Size   10 TB
-  Folder Redirection      Enabled for Desktop, Documents, and Pictures
-  Large File Handling     4 GB OST file updated with CPM large file enabled
-  Logon Rate              1000 users per hour, or 1 user every 3.6 seconds
-  User Profile Size       4.7 GB, 400 Files
+  |Static Configuration   | Value|
+  |-----------------------|---------------------------------------------------|
+  |Number of users        | 1000|
+  |File Share Quota Size  | 10 TB|
+  |Folder Redirection     | Enabled for Desktop, Documents, and Pictures|
+  |Large File Handling    | 4 GB OST file updated with CPM large file enabled|
+  |Logon Rate             | 1000 users per hour, or 1 user every 3.6 seconds|
+  |User Profile Size      | 4.7 GB, 400 Files|
 
 The following test variables were decided upon after assessing
 performance during a wide variety of test runs of different
@@ -309,7 +309,7 @@ updating the 4 GB OST file stored in the local profile folder.
 
 To control the launch rate and provide random wait times during the
 session, we leveraged LoginVSI for test framework. The random waits
-helped prevent the prevent predictable spikes in network traffic caused
+helped prevent predictable spikes in network traffic caused
 by users logging on simultaneously and helps simulate a better workload.
 The user would logon and access the required files before logging off.
 To ensure any logoff traffic was excluded from the results, all users
@@ -356,7 +356,7 @@ different subnet.
 ### Test Runs
 
 Based on the variables identified earlier, the following test matrix was
-executed, and the performance data was gathered from Azure Monitor and
+run, and the performance data was gathered from Azure Monitor and
 Citrix Director for each of the runs.
 
   |Run Name           |Azure File Tier         |File Share Quota   |Files Updated|
@@ -383,7 +383,7 @@ steps
 
 3.  Restart the Citrix Servers
 
-4.  Set the Powershell script to update the correct number of files (20,
+4.  Set the PowerShell script to update the correct number of files (20,
     40, 60, 80, 100)
 
 5.  Configure the test run to launch all 1000 user sessions within 60
@@ -403,11 +403,8 @@ steps
 
 ## Test Results
 
-The test results are best displayed by categorizing them by key metrics
-discussed earlier: Transactions (IOPS), Throughput (egress and ingress),
-Latency, and Profile Load Time. Please note these tests were run before
-SMB Multichannel was released. Azure Files' SMB Multichannel will
-benefit performance when used with Profile Services.
+The test results are displayed by the key metrics discussed earlier: Transactions (IOPS), Throughput (egress and ingress),
+Latency, and Profile Load Time. Note these tests were run before SMB Multichannel was released. Azure Files' SMB Multichannel will benefit performance when used with Profile Services.
 
 ### Transactions
 
@@ -425,7 +422,7 @@ the same for every user profile.
 
 Since both file shares support 10,000 IOPS in the configuration for the
 test, the IOPS required by our workload is well within the limits,
-suggesting that Azure Files could support 3X this workload before IOPS
+suggesting that Azure Files can support 3X this workload before IOPS
 became a bottleneck.
 
 ### Throughput
@@ -438,18 +435,18 @@ changing a portion of the files. If profile streaming was not enabled as
 part of Citrix Profile Manager, the entire profile would be read and
 copied down to the local host. As the number of files updated during the
 run increases, the egress throughput also increases since the entire
-file is streamed down to the local host changed, and written back up.
+file is streamed down to the local host changed, and written back to the share.
 
 The throughput for the premium share is well within the provisioned
 amounts of 675MiB/sec egress and 450MiB/sec ingress. The premium share
-should be able to handle approximately 15 times the workload as our test
+is able to handle approximately 15 times the workload as our test
 before throughput starts to become an issue.
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_011.png)
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_012.png)
 
 The transaction file share limit is significantly higher at 300MiB/sec so
-theoretically, the transactional file share could handle 5x the workload
+theoretically, the transactional file share can handle 5x the workload
 before the throughput becomes a bottleneck.
 
 Keep in mind that these results are writing to the 4GB OST file, but
@@ -459,13 +456,7 @@ Files share, much like the folder redirection writes.
 
 ### Latency
 
-Latency is available as part of the Azure Files metrics. The chart below
-shows the Success Server Latency metric from the premium and transaction
-optimized test runs. Premium tier file shares do best with a fewer
-number of files that are larger, such as you might find with databases
-or in the world of user profiles, FSLogix or Citrix Profile Manager VHD
-container. Using container files improves the performance of Azure Files
-because the number of file open/read/write/close requests are reduced.
+Latency is available as part of the Azure Files metrics. The chart below shows the Success Server Latency metric from the premium and transaction optimized test runs. Premium tier file shares do best with fewer files that are larger, such as you might find with databases or in the world of user profiles, FSLogix or Citrix Profile Manager VHD container. Using container files improves the performance of Azure Files because the number of file open/read/write/close requests are reduced.
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_013.png)
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_014.png)
@@ -484,7 +475,7 @@ run data collected from Citrix Director.
 
   |Run                |Avg Load Time (seconds)|
   |------------------ |------------------------|
-  |Premium-20K       |8.00|
+  |Premium-20K        |8.00|
   |Premium-40K        |5.34|
   |Premium-60K        |9.10|
   |Premium-80K        |5.31|
@@ -534,8 +525,7 @@ experience.
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_017.png)
 
-You should always enable Folder
-Redirection when possible. As the chart shows, enabling folder
+Always enable Folder Redirection when possible. As the chart shows, enabling folder
 redirection prevents a significant amount of data from being copied from
 Azure Files to the Citrix host. Folder redirection was designed to
 reduce the amount of network traffic at logon/logoff and this greatly
@@ -544,7 +534,7 @@ data being copied to the Citrix host means smaller (and less expensive)
 storage attached to the Citrix host for storing the user profiles. When
 Citrix hosts reside in Azure, the latency for connecting to Azure Files
 is minimal and the user experience is not impacted. When Citrix hosts
-are on-premise, the redirection saves on the chargeable egress traffic
+are on-premises, the redirection saves on the chargeable egress traffic
 leaving Azure.
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_018.png)
@@ -569,7 +559,7 @@ downloaded to the Citrix host at logon. Instead, only a list of the
 files residing on the profile are enumerated and that list is available
 to the operating system. When a file is actually requested, then it is
 fetched from the user store and brought to the Citrix host. This process
-reduces the amount of file copies that happen at logon and improves the
+reduces the number of file copies that happen at logon and improves the
 user logon experience.
 
 ### Selecting A Performance Tier
@@ -596,7 +586,7 @@ amount of provisioned storage for the required performance level.
 
 *NOTE: If the file share has a significant number of small files being
 updated on a frequent basis, Azure Files may have delays reading and
-writing the file due to excessive metadata This delays could also happen
+writing the file due to excessive metadata. This delay can also happen
 if there is a throttling observed on the file shares. If you are
 experiencing this, the Success Server Latency metric on the Azure Files
 share will show a steady increase. Once that metric exceeds 15
@@ -611,9 +601,7 @@ with a response time of over 10ms then you can select the more
 cost-efficient transaction optimized file share. To provide the best
 user experience use multiple storage accounts to distribute the load.
 
-You can use the data provided in this article to determine what the an
-optimal configuration might look like for your organization and then
-test the performance of Azure Files with your own user workloads.
+You can use the data provided in this article to determine what the optimal configuration might look like for your organization and then test the performance of Azure Files with your own user workloads.
 
 ## Securing Access via Private Endpoint and RBAC Permissions
 
@@ -631,14 +619,13 @@ Considering the file share is used for the user profile and data, we
 recommend that it is only accessible from within the Azure VNET via
 [private
 endpoints](https://docs.microsoft.com/en-us/azure/storage/common/storage-private-endpoints).
-For detailed instructions, please follow the link below:
+For detailed instructions, follow the link below:
 
 <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-networking-endpoints?tabs=azure-portal#endpoint-configurations>
 
-Once the private endpoint is configured validated accessibility from a
-VM within the Azure VNET as outlined in the document.
+Once the private endpoint is configured, validate accessibility from a VM within the Azure VNET as outlined in the document.
 
-Next step is to lock down the permissions via RBAC. Please follow the
+Next step is to lock down the permissions via RBAC. Follow the
 guidance in [Set up Azure Files storage for User personalization layers
 and Citrix Profile
 Management](https://docs.citrix.com/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html#assign-share-level-permissions-to-users).
@@ -710,7 +697,7 @@ employing more than one method to achieve the desired migration.
     cutover easier on end-users.
 
 -  ***Microsoft Data Box Disk:*** Microsoft Data Box Disk is an 8 TB
-    SSD flash drive that be stacked up to 5x for a total of 40 TB and
+    SSD flash drive that can be stacked up to 5x for a total of 40 TB and
     used as either a USB or SATA II/III disk drive. The Data Box Disk
     supports AES-128 encryption and relies on file copy utilities such
     as Robocopy to transfer the data.
@@ -721,7 +708,7 @@ employing more than one method to achieve the desired migration.
     which is then shipped to Microsoft and uploaded directly to Azure
     Files. Microsoft Data boxes come in two sizes, 100 TB and 1 PB. Both
     devices store the data encrypted (AES-256) to protect it while in
-    transit between the on-premise data center and the Azure data
+    transit between the on-premises data center and the Azure data
     center. Microsoft Data Box supports the SMB and NFS NAS protocols.
 
 -  ***Data Box Gateway:*** A virtual appliance running on either
@@ -729,7 +716,7 @@ employing more than one method to achieve the desired migration.
     Azure Files. Local users access it over SMB or NFS protocols and the
     gateway accepts the data and transfers it to Azure Files over the
     internet. The Data Box Gateway provides for continuous data flow
-    from the on-premise servers to Azure Files.
+    from the on-premises servers to Azure Files.
 
 -  ***Storage Explorer:*** The latest version of Storage Explorer
     leverages AZCOPY to speed the file transfers significantly. Storage
@@ -737,7 +724,7 @@ employing more than one method to achieve the desired migration.
     inclined to automate the data transfer.
 
 -  ***AZCOPY:*** An Azure command-line utility that allows you to move
-    data between storage locations, including on-premise file servers
+    data between storage locations, including on-premises file servers
     and storage accounts within Azure.
 
 -  ***RoboCopy:*** Tried and true file copy utility that preserves all
@@ -762,7 +749,7 @@ large file handling to reduce the amount of data copied from the user
 profile store to the Citrix host.
 
 In most cases, the use of the transaction optimized tier for Azure Files
-will be sufficient, especially if you can distribute load across
+will be sufficient, especially if you can distribute the load across
 multiple shares and accounts, and target workloads that keep the number
 of files updated per hour to around 100,000 for a single share. For low
 latency, high response time requirements, where users need latency to be
