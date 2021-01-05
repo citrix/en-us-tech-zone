@@ -28,11 +28,15 @@ Figure 1:
 
 A user’s primary Workspace identity authorizes them to access SaaS and on premises web apps. Many authorized resources require another authentication, often with an identity different from the user’s primary workspace identity. Citrix Workspace provides users with a seamless experience by providing single sign-on to these secondary resources.
 
+![Single Sign-On](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_sso.png)
+
 Figure 2:
 
 For additional information on primary identity options for Citrix Workspace, refer to the [Workspace - Primary Identity](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) Tech Brief.
 
 The first thing you will notice is the ease of use. There are 300+ SAML SSO templates available for quick configuration of your web and SaaS apps. If you have an app that doesn’t have a pre-existing template, it will only take you a few more clicks to configure.
+
+![SaaS Templates](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_template.png)
 
 Figure 3:
 
@@ -49,11 +53,15 @@ Users are able to request and install a new token and admins can enable and disa
 *  Self-service
 *  Citrix SSO app, Google authenticator, Microsoft authenticator app
 
+![Multifactor Authentication](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_mfa.png)
+
 Figure 4:
 
 ### Support for Workspace experience (Workspace app)
 
 Citrix Workspace Essentials leverages all the benefits provided by Workspace experience through Workspace app including:
+
+![Workspace App](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_app.png)
 
 Figure 5:
 
@@ -68,6 +76,8 @@ Every PoP is highly available and have redundant services running within a PoP i
 ### Usage Analytics for SaaS and Web Apps
 
 Citrix Workspace Essentials includes Usage Analytics to provide end-to-end usage visibility across your SaaS and web app infrastructure. IT can track user login failures and gain insight into user adoption of applications, high usage periods, and data uploaded and downloaded by each user and application. This empowers IT to scale demand and reduce costs by deprecating low usage applications.
+
+![Usage Analytics](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_analyt.png)
 
 Figure 6:
 
@@ -91,6 +101,8 @@ The recommended architecture below has the following components:
 *  Okta and Azure AD are the SAML IdP for SaaS & Web apps (optional)
 *  Access to Content Collaboration (when licensed)
 
+![Architecture](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_arch.png)
+
 Figure 7:
 
 Pre-requisites for configuring app access
@@ -106,16 +118,22 @@ Pre-requisites for configuring app access
 
 Citrix Workspace Essentials provides secure access to intranet web apps with SSO. Follow the [SSO to Web Configuration Steps](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) in the article to deploy this feature.
 
+![Single Sign-On to Web](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_ssoweb.png)
+
 Figure 8:
 
 ## Use case 2: Secure access to SaaS apps
 
 Citrix Workspace Essentials provides secure access to sanctioned SaaS apps with SSO. Follow the [SSO to SaaS Configuration Steps](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) in the article to deploy this feature.
 
+![Single Sign-On to SaaS](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_ssosaas.png)
+
 Figure 9:
 
 ## Use case 3: Configuring second factor authentication to Citrix Workspace
 
 Citrix Workspace Essentials enables second factor authentication during user login to Citrix Workspace. Follow the steps in the [Configuring AD + token in Identity and Access Management](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-ad.html) and [Deploying Citrix Cloud connector](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html) guides to deploy this feature.
+
+![Time-based One-time Password](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_totp.png)
 
 Figure 10:
