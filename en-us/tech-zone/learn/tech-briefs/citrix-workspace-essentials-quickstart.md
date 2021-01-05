@@ -28,7 +28,7 @@ A user’s primary Workspace identity authorizes them to access SaaS and on prem
 
 Figure 2:
 
-For additional information on primary identity options for Citrix Workspace, refer to the [Workspace - Primary Identity]ttps://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) Tech Brief.
+For additional information on primary identity options for Citrix Workspace, refer to the [Workspace - Primary Identity](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) Tech Brief.
 
 The first thing you will notice is the ease of use. There are 300+ SAML SSO templates available for quick configuration of your web and SaaS apps. If you have an app that doesn’t have a pre-existing template, it will only take you a few more clicks to configure.
 
