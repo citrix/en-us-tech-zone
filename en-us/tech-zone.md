@@ -217,6 +217,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Autoscale](/en-us/tech-zone/learn/tech-briefs/autoscale.html) - Explore the various ways Citrix enables admins to save on cost when hosting workloads in the cloud. Learn about different load balancing algorithms and scaling methodologies and how much they can save in an environment based on our tests.
 
+[Citrix Cloud Resiliency](/en-us/tech-zone/learn/tech-briefs/citrix-cloud-resiliency.html) - Learn how Citrix Cloud services are architected and built for resiliency. Understand how Service Continuity features enable users to connect to the resources that are accessible even if some or all of the cloud services are unreachable.
+
 [Citrix Virtual Apps and Desktops service](/en-us/tech-zone/learn/tech-briefs/cvads.html) - Learn how Citrix Virtual Apps and Desktop service enables you to deliver virtual apps and desktops to your end users, while offloading the management plane to Citrix Cloud ensuring your environment is always up to date.
 
 [Enhancing Windows Virtual Desktop](/en-us/tech-zone/learn/tech-briefs/windows-virtual-desktop-value-add.html) - Learn about the value add Citrix provides to your Windows Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service and Citrix Managed Desktops service provide a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user experience and enhancing the security posture of our deployment.
