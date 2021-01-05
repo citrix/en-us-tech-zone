@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Florin Lazurca
-specialThanksTo: First Last, First2 Last2
+specialThanksTo: Daniel Jim, Andre Leibovici
 description: Copy & paste description from TOC here
 ---
 # Citrix Workspace Essentials Getting Started Guide
@@ -19,6 +19,8 @@ This guide demonstrates how to configure SaaS and internal web apps with single 
 ## Solution Overview
 
 Citrix Workspace Essentials provides end users with simplified, secure, and VPN-less access to SaaS, Web Apps, and data that IT delivers, using single sign-on and multi-factor authentication.
+
+![Solution Overview](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_over.png)
 
 Figure 1:
 
