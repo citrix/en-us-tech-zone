@@ -5,7 +5,7 @@ contributedBy: Florin Lazurca
 specialThanksTo: Daniel Jim, Andre Leibovici
 description: Copy & paste description from TOC here
 ---
-# Citrix Workspace Essentials Getting Started Guide
+# Citrix Workspace Essentials and Secure Workspace Access Getting Started Guide
 
 ## Introduction
 
