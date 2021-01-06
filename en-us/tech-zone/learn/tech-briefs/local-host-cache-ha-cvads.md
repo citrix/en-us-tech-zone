@@ -23,9 +23,9 @@ There are several components within the Citrix Cloud Connector which are require
 -  **LocalDB:** The connector includes an installation of SQL Server Express LocalDB where a local copy of the configuration is stored (through CSS). A new instance of the database is created for every sync operation. Once the sync is completed successfully, the latest DB instance replaces the prior DB instance.
 -  **High Availability Service** : The High Availability Service (HA Service)is a specialized Broker service that provides the runtime brokering functionality during an outage. The HA Service is also referred to as the secondary broker.
 -  **Remote Broker Provider:** The Remote Broker Provider performs several important functions:
--  It acts as a proxy relaying communication between the Citrix Virtual Desktop Agent (VDA) and the Cloud Broker
--  It acts as a proxy relaying communication between an on-premises StoreFront or an on-premises ADC and the various Citrix Cloud services
--  It determines when to switch a resource location between HA mode and normal operation
+    -  It acts as a proxy relaying communication between the Citrix Virtual Desktop Agent (VDA) and the Cloud Broker
+    -  It acts as a proxy relaying communication between an on-premises StoreFront or an on-premises ADC and the various Citrix Cloud services
+    -  It determines when to switch a resource location between HA mode and normal operation
 
 [![Citrix Virtual Apps and Desktops - Normal Operations](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_citrix-cloud-regular.png)](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_citrix-cloud-regular.png)
 
@@ -73,7 +73,7 @@ While the elected secondary broker is handling connections, the remote broker pr
 
 Citrix recommends a minimum of 2 connectors in every resource location / zone. In each zone, there is an election process constantly running to make sure the HA Services know which connector machine would take over brokering responsibilities in case of an interruption. This election happens at all times – both during normal operations and when running in HA mode.
 
-The CSS routinely provides the secondary broker with information about all Cloud Connectors in the resource location. Having that information, each connector knows about all peer connectors running in the resource location. The secondary brokers communicate with each other on a separate channel. Those services use an alphabetical list of FQDN names of the machines they&#39;re running on to elect which secondary broker will broker operations in the zone if an outage occurs. When in HA mode, the elected secondary broker takes over brokering responsibilities while the other secondary brokers in the zone actively reject incoming connection and VDA registration requests.
+The CSS routinely provides the secondary broker with information about all Cloud Connectors in the resource location. Having that information, each connector knows about all peer connectors running in the resource location. The secondary brokers communicate with each other on a separate channel. Those services use an alphabetical list of FQDN names of the machines they're running on to elect which secondary broker will broker operations in the zone if an outage occurs. When in HA mode, the elected secondary broker takes over brokering responsibilities while the other secondary brokers in the zone actively reject incoming connection and VDA registration requests.
 
 If an elected secondary broker fails during an outage, another secondary broker is elected to take over, and VDAs register with the newly elected secondary broker. During HA mode, if a connector is restarted:
 
@@ -108,7 +108,7 @@ The StoreFront enumerates applications and desktops from Cloud Connectors in any
 
 ### Monitoring
 
-The Citrix ADC appliance provides a built-in monitor, CITRIX-XD-DDC monitor, which monitors the Citrix Virtual Apps and Desktop Delivery Controller servers. In the context of Citrix Virtual Apps and Desktops service, the Cloud Connectors are equivalent to the Delivery Controller servers. The monitor sends a probe to the configured controller/connector servers in the form of an XML message. If the server responds to the probe with the identity of the farm, the probe is considered to be successful and the server&#39;s status is marked as UP. If the response does not have a success code or the identity of the server farm is not present in the response, the probe is considered to be a failure and the server&#39;s status is marked as DOWN.
+The Citrix ADC appliance provides a built-in monitor, CITRIX-XD-DDC monitor, which monitors the Citrix Virtual Apps and Desktop Delivery Controller servers. In the context of Citrix Virtual Apps and Desktops service, the Cloud Connectors are equivalent to the Delivery Controller servers. The monitor sends a probe to the configured controller/connector servers in the form of an XML message. If the server responds to the probe with the identity of the farm, the probe is considered to be successful and the server's status is marked as UP. If the response does not have a success code or the identity of the server farm is not present in the response, the probe is considered to be a failure and the server's status is marked as DOWN.
 
 More information about the CITRIX-XD-DDC monitor is available in [Citrix ADC documentation](/en-us/citrix-adc/current-release/load-balancing/load-balancing-builtin-monitors/monitor-xd-delivery-controller-services.html).
 
@@ -126,7 +126,7 @@ For architectures involving Citrix ADC in conjunction with resource locations pu
 
 ## Pooled Desktop VDA Workload Considerations
 
-When a user logs off a pooled desktop VDA, the VDA&#39;s image is reset to remove any user specific data from the last user who was using the VDA. When a site is running in HA mode, the reset operation is not available. And hence when a user logs off from a pooled desktop VDA, the machine is placed into maintenance mode. This prevents a tainted image being made available to another user.
+When a user logs off a pooled desktop VDA, the VDA's image is reset to remove any user specific data from the last user who was using the VDA. When a site is running in HA mode, the reset operation is not available. And hence when a user logs off from a pooled desktop VDA, the machine is placed into maintenance mode. This prevents a tainted image being made available to another user.
 
 Depending on the security needs for an implementation, this behavior can be modified by applying a site-wide as well as a per-delivery-group update. More information about how to override the default behavior is available in the [product documentation](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/local-host-cache.html#application-and-desktop-support).
 

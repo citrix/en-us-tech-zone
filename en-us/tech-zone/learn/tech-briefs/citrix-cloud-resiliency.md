@@ -158,7 +158,7 @@ The following is the process that occurs in the scenario when some of the Citrix
 
 [![Citrix Cloud Resiliency - Citrix Cloud unreachable - Workspace connection leases based launch](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_13-connection-lease-based-launch-external-user.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_13-connection-lease-based-launch-external-user-large.png)
 
-To enable a larger subset of the current customer base, with VDA versions as far back as the Citrix Virtual Apps and Desktops 7.15 LTSR, the Cloud Connector with Local Host Cache is used when the Cloud broker is not accessible. Else changes to enable Service Continuity would have required the VDAs to be upgraded.
+To enable a larger subset of the current customer base, with VDA versions as far back as the Citrix Virtual Apps and Desktops 7.15 LTSR, the Cloud Connector with Local Host Cache (LHC) is used when the Cloud broker is not accessible. Else changes to enable Service Continuity would have required the VDAs to be upgraded. To know more read the [LHC Tech Brief](/en-us/tech-zone/learn/tech-briefs/local-host-cache-ha-cvads.html).
 
 Note: In the scenario where the Citrix Cloud Broker Service is reachable (regardless of whether the Workspace store is accessible or not), the Cloud Connector always relies on the Broker Service for brokering.
 
@@ -182,7 +182,7 @@ For a list of current requirements visit the [docs page](/en-us/citrix-workspace
 
 *  Citrix Virtual Delivery Agent (VDA) version 7.15 and above, LTSR or one of the current CRs
 
-*  Up-to-date Cloud Connector. Since service continuity relies on Local Host Cache functionality (but without requiring any on-prem access layer), we recommend sizing the Connectors with the same size we recommend for LHC.
+*  Up-to-date Cloud Connector. Since service continuity relies on Local Host Cache functionality (but without requiring any on-prem access layer), we recommend sizing the Connectors with the same size we recommend for LHC. Review [LHC scale and size considerations](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/local-host-cache-size-and-scale.html) for more info.
 
 *  Workspace Identity: AD (or with Azure AD Connect sync); AD + Token (OTP); AD + RADIUS, Azure AD; Citrix Gateway on-prem where the primary claim is based on AD based authentication. Policy based authentication is not compatible with Service Continuity and they are mutually exclusive.
 
