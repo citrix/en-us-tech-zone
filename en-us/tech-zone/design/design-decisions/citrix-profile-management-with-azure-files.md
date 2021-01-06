@@ -15,25 +15,15 @@ storage location. The primary objective of this article is to provide
 you the necessary information to determine the best way to deploy User
 Profile Manager with Azure Files.
 
-The article will discuss the Citrix and Microsoft components, describe
-the test methodology, and report the test results along with an analysis
-of the findings then provide guidance around key deployment decisions.
-Finally, additional information around securing, protecting, and
-migrating your user profile data will be provided.
+The article discusses the Citrix and Microsoft components, describe the test methodology, and report the test results. The article also provides an analysis of the findings and guidance around key deployment decisions. Finally, additional information around securing, protecting, and migrating your user profile data is provided.
 
 ## Azure Files
 
-Azure Files is a secure, publicly-hosted Server Message Block (SMB) or
-Network File System (NFS) file share with low latency access. Azure
-Files supports both Active Directory integration and NTFS file-level
-permissions and is accessible from Windows, Mac and Linux clients.
+Azure Files is a secure, publicly hosted Server Message Block (SMB) or Network File System (NFS) file share with low latency access. Azure Files supports both Active Directory integration and NTFS file-level permissions and is accessible from Windows, Mac and Linux clients.
 
-Azure Files can be used for a variety of enterprise purposes, including
+Azure Files can be used for various enterprise purposes, including
 
--  File Servers. Azure Files can directly be mounted from all popular
-    operating systems across the world and also can be deployed in a
-    hybrid scenario, where data can be replicated to on-premises Windows
-    servers via Azure File Sync.
+-  File Servers. Azure Files can directly be mounted from all popular operating systems across the world. Azure Files can also be deployed in a hybrid scenario, where data can be replicated to on-premises Windows servers via Azure File Sync.
 
 -  Application migration. Move both the user applications and their
     data to the cloud simultaneously or move the user data first and run
