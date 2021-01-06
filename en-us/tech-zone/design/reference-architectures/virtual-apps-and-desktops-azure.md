@@ -613,8 +613,6 @@ Citrix ADC is limited to 500 Mbps per Azure NIC. Multiple NICs are recommended t
 
     *  [Topologies for Azure AAD Connect for Ad Sync/ ADFS](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnect-topologies)
 
-    *  [Demystifying Azure AD Authentication](https://www.citrix.com/blogs/2016/09/30/demystifying-azure-ad-authentication/)
-
     *  [XenApp and XenDesktop Service support for Azure AD DS](https://www.citrix.com/blogs/2017/04/11/xenapp-xendesktop-services-support-azure-ad-domain-services/)
 
     *  [Azure Active Directory and Citrix XenApp and XenDesktop](https://support.citrix.com/article/CTX224111)
