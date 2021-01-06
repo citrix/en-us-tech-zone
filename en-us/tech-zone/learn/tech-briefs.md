@@ -48,6 +48,8 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [Enhancing Windows Virtual Desktop](/en-us/tech-zone/learn/tech-briefs/windows-virtual-desktop-value-add.html) - Learn about the value add Citrix provides to your Windows Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service and Citrix Managed Desktops service provide a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user experience and enhancing the security posture of our deployment.
 
+[Local Host Cache / High Availability mode for Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/learn/tech-briefs/local-host-cache-ha-cvads.html) Inside view on how Local Host Cache (LHC) works with Citrix Virtual Apps and Desktops Service. Learn how the different components of LHC come into play to keep you in control of your uptimes.
+
 ## Citrix Workspace
 
 [Workspace app](/en-us/tech-zone/learn/tech-briefs/workspace-app.html) - Personalized interface that provides access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
