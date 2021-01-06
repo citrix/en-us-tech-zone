@@ -265,6 +265,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [App Layering](/en-us/tech-zone/design/reference-architectures/app-layering.html) - Gain a deep understanding of the Citrix Layering technology that simplifies the image management for VDI and hosted-shared environments including use cases and technical concepts.
 
+[Citrix SD-WAN HDX performance improvements for Citrix Virtual Apps and Desktops on-premises environments](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-onprem-experience-architecture.html) - Learn how to optimize the delivery of Citrix Virtual Apps and Desktops from on-premises servers to users at locations with a Citrix SD-WAN appliance by minimizing latency and improving session responsiveness during network issues.
+
 [Image Management](/en-us/tech-zone/design/reference-architectures/image-management.html) - Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering, and maintaining virtual machine images in your environment.
 
 [Measuring HDX User Experience Performance Improvements with Citrix SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html) - Citrix SD-WAN can significantly improve the network performance of Citrix Virtual Apps and Desktops HDX sessions. Learn about the reference architecture we used to measure quantitative benefits.
