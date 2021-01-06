@@ -8,6 +8,8 @@ description: Zero Trust is the most important End User Computing movement since 
 
 ## Overview
 
+  >New to Zero Trust? Learn [what is Zero Trust Security](https://www.citrix.com/glossary/what-is-zero-trust-security.html) and about [Citrix solution for Zero Trust](https://www.citrix.com/digital-workspace/zero-trust.html).
+
 Traditional, perimeter-based approaches to protecting information systems and data are inadequate.
 
 For many years, the cybersecurity paradigm has emulated a familiar form of physical security from the middle ages: the castle and the moat. It’s an approach many enterprises have adopted and are finding insufficient in the world of cloud.
