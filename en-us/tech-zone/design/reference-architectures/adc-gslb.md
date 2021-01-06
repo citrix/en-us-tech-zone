@@ -232,8 +232,6 @@ Citrix Online Product Documentation [Load Balancing](/en-us/citrix-adc/current-r
 
 Citrix Online Product Documentation [SSL Offload and Acceleration](/en-us/citrix-adc/current-release/ssl.html)
 
-Citrix Community Blog [StoreFront Remote Access Part 1: The Subnet IP Demystified](https://www.citrix.com/blogs/2013/07/08/storefront-remote-access-part-1-the-subnet-ip-demystified/)
-
 Citrix Community Blog [Gateway Integration with StoreFront Lessons Learned](https://www.citrix.com/blogs/2014/10/15/gateway-integration-with-storefront-lessons-learned/)
 
 Citrix Community Blog [StoreFront and Citrix Gateway GSLB considerations](https://www.citrix.com/blogs/2018/05/25/storefront-and-citrix-gateway-gslb-considerations/)

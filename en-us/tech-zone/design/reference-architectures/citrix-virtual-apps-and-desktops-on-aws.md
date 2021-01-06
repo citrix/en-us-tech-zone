@@ -731,7 +731,7 @@ Confused yet? If so, don't be alarmed: this can well be the start of your Citrix
 
 The following resources can be used to help more about Citrix virtualization on AWS requirements and leading practices:
 
--  [Communication Ports Used by Citrix Technologies](https://support.citrix.com/article/CTX101810): a good global reference for the communication ports used by different components of the Citrix virtualization stack.
+-  [Communication Ports Used by Citrix Technologies](/en-us/tech-zone/build/tech-papers/citrix-communication-ports.html): a good global reference for the communication ports used by different components of the Citrix virtualization stack.
 
 ## Operations Layer Considerations
 
