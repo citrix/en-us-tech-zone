@@ -137,3 +137,28 @@ Citrix Workspace Essentials enables second factor authentication during user log
 ![Time-based One-time Password](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_totp.png)
 
 Figure 10: Second factor authentication during user login to Citrix Workspace
+
+## SWA Use Case 1
+
+Applying Enhanced Security to SaaS and Web Apps
+
+## SWA Use Case 2
+
+Protecting BYO and Unmanaged Devices
+
+## SWA Use Case 3
+
+Using Secure Browser Policy and Isolation
+
+## SWA Use Case 4
+
+Security Analytics for SaaS and Web Apps
+
+video
+https://youtu.be/F0x26hN7ZOM
+
+https://youtu.be/pIqfoUwsbwY
+
+https://youtu.be/9rT-0IIKw6M
+
+https://youtu.be/KxxNA8Efuh0
