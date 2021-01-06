@@ -9,11 +9,7 @@ description: Copy & paste description from TOC here
 
 ## Introduction
 
-The article covers guidance and best practices for using Citrix User
-Profile Manager to manage user profiles on Azure Files as the back-end
-storage location. The primary objective of this article is to provide
-you the necessary information to determine the best way to deploy User
-Profile Manager with Azure Files.
+The article covers guidance and best practices for using Citrix User Profile Manager to manage user profiles on Azure Files as the back-end storage location. The primary objective of this article is to provide you the necessary information to determine the best way to deploy User Profile Manager with Azure Files.
 
 The article discusses the Citrix and Microsoft components, describe the test methodology, and report the test results. The article also provides an analysis of the findings and guidance around key deployment decisions. Finally, additional information around securing, protecting, and migrating your user profile data is provided.
 
@@ -25,22 +21,13 @@ Azure Files can be used for various enterprise purposes, including
 
 -  File Servers. Azure Files can directly be mounted from all popular operating systems across the world. Azure Files can also be deployed in a hybrid scenario, where data can be replicated to on-premises Windows servers via Azure File Sync.
 
--  Application migration. Move both the user applications and their
-    data to the cloud simultaneously or move the user data first and run
-    in a hybrid configuration until the applications can be moved into
-    the cloud.
+-  Application migration. Move both the user applications and their data to the cloud simultaneously. Alternatively you can move the user data first and run in a hybrid configuration until the applications can be moved into the cloud.
 
--  Simplifying cloud development. Use Azure files to store shared
-    application settings, diagnostic logs, metrics, or developer
-    utilities.
+-  Simplifying cloud development. Use Azure files to store shared application settings, diagnostic logs, metrics, or developer utilities.
 
--  Containerization. Use Azure Files for persistent storage of
-    containers or as a shared storage file system.
+-  Containerization. Use Azure Files for persistent storage of containers or as a shared storage file system.
 
-With a shared access capable, fully-managed, resilient file share, Azure
-Files is an excellent place to store user profile data for your Citrix
-users. Azure Files uses SMB 3.0 so all the data transferred is protected
-by encryption while in-transit.
+With a shared access capable, fully managed, resilient file share, Azure Files is an excellent place to store user profile data for your Citrix users. Azure Files uses SMB 3.0 so all the data transferred is protected by encryption while in-transit.
 
 ### Performance Tiers
 
@@ -58,29 +45,29 @@ transaction file share with "large file shares" enabled is 10,000 IOPS.
 This is true for a 10 TiB share and a 100 TiB share.
 
 Transaction storage accounts without "large file shares" enabled (\<
-5TiB), support multiple redundancy options, these include locally
-redundant, zone-redundant, and geo-redundant options with read-only and
+5 TiB), support multiple redundancy options. These options include locally
+redundant, zone redundant, and geo-redundant with read-only and
 hot or cold tiering available. When support for "large file shares" is enabled, only
-the locally-redundant storage and zone redundant storage options are
+the locally redundant storage and zone redundant storage options are
 available.
 
 ***Premium*** performance offers up to 100 TiB of storage in a single
-file share with 100,000 IOPS and throughput that varies based on the
+file share with 100,000 IOPS and throughput based on the
 provisioned size of the file share. A premium file share is provided a
-base ingress of 40MiB/sec + (0.04 \* provisioned GiB) while the base
-egress rate is 60MiB/sec + (0.06 \* provisioned GiB). For a 10 TiB
-share, this equates to an ingress rate of 450MiB/sec and an egress rate
-of 675MiB/sec. The premium performance level is designed to support I/O
+base ingress of 40 MiB/sec + (0.04 \* provisioned GiB) while the base
+egress rate is 60 MiB/sec + (0.06 \* provisioned GiB). For a 10 TiB
+share, the throughput equates to an ingress rate of 450 MiB/sec and an egress rate
+of 675 MiB/sec. The premium performance level is designed to support I/O
 intensive workloads while delivering latency of under 10 milliseconds.
 
 The IOPS and throughput are provisioned based on the size of the file
-share, so be sure to provision a size that covers the IOPS and
-throughput your users will need. For a premium file share, the base IOPS
+share. Be sure to provision a size that covers the IOPS and
+throughput your users need. For a premium file share, the base IOPS
 allocated is 400 + 1 IOPS for each GiB of provisioned space, with a
 maximum of 100,000 IOPS. A premium share is allowed to burst up to
 greater of 4000 IOPS or 3 times of base IOPS allocated. A 10 TiB files
 share would be allocated 10,240 IOPS. With the premium file share, burst
-mode allows up to 3 times the allocated IOPS to be used but requires the
+mode allows up to 3 times the allocated IOPS to be used. However burst mode requires the
 file share be running at less than the allocated IOPS for a period of
 time to regenerate. In other words, you cannot run in burst mode all the
 time. If there are enough credits available, the shares can burst up to
@@ -88,8 +75,8 @@ time. If there are enough credits available, the shares can burst up to
 
 Both performance tiers are acceptable options for storing user profile
 data. Selecting between the performance tiers depends primarily on the
-user workload and the goal is always to provide the end user their
-required performance and data protection for the lowest cost. For user
+user workload. The goal is always to provide the end user with their
+required performance and data protection at the lowest cost. For user
 profiles where response time is the highest priority, premium file
 shares are the best candidates. For more information on the performance
 of the different tiers, visit Microsoft's storage performance
@@ -103,17 +90,17 @@ metrics.
 You can use Azure Monitor to view the key metrics on your Azure File
 shares and make adjustments. For storage, closely monitor
 throughput, transactions, and latency metrics. To enable these metrics,
-in the Azure portal select the storage account and then select Metrics
-from the Storage Account blade. The key metrics we used to monitor the
+in the **Azure portal** select the storage account and then select **Metrics**
+from the **Storage Account** blade. The key metrics we used to monitor the
 performance of Azure Files during the test are as follows:
 
 ***Ingress (Sum)***: The aggregated sum of
 inbound data in bytes to Azure Files during the time period, with a
 minimum granularity of one minute. To determine the average ingress
 throughput per second, you would need to take the sum of the ingress
-data for a minute and divide it by 60. To add this metric, click Add
-metric and set the scope to the storage account name, set the namespace
-to Account, then choose Ingress as the metric and Sum as the Aggregation
+data for a minute and divide it by 60. To add this metric, click **Add
+metric** and set the **scope** to the storage account name. Set the **namespace**
+to Account, then choose Ingress as the **metric** and Sum as the **aggregation**
 type.
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_001.png)
@@ -122,9 +109,9 @@ type.
 the outbound data in bytes from Azure Files during the time period, with
 a minimum granularity of one minute. To determine the average egress
 throughput per second, you would need to take the sum of the egress data
-for a minute and divide it by 60. To add this metric, click Add metric
-and set the scope to the storage account name, set the namespace to
-Account then choose Egress as the metric and Sum as the Aggregation
+for a minute and divide it by 60. To add this metric, click **Add metric**
+and set the **scope** to the storage account name. Set the **namespace** to
+Account then choose Egress as the **metric** and Sum as the **aggregation**
 type.
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_002.png)
@@ -134,22 +121,19 @@ failed, made to Azure Files, during the time period, with a minimum
 granularity of one minute. This metric is loosely analogous to
 input/output operations per second (IOPS). To determine the average IOPS
 during a one-minute time period, you would take the Sum of Transactions
-for that minute and divide it by 60. To add this metric, click Add
-metric and set the scope to the storage account name, set the namespace
-to Account, then choose Transactions as the metric and Sum as the
-Aggregation type.
+for that minute and divide it by 60. To add this metric, click **Add metric** and set the scope to the storage account name. Set the **namespace** to Account, then choose Transactions as the **metric** and Sum as the **aggregation** type.
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_003.png)
 
-***Transactions Success with Throttling (Sum)***: This represents the
+***Transactions Success with Throttling (Sum)***: The
 aggregated number of requests that failed due to provisioned limits on
 the first attempt but were successful after retries. This is an API
 filter on Response Type and is only valid for the premium tier where
 resources are provisioned. If this number is significant when compared
 to the sum of transactions, increase your file share size. To
 add this filter, you must first add the Transactions metric. Then click
-Add filter, choose the Response type property, operator of = and select
-one of the filters in the Values field. This filter will not be visible
+**Add filter**, choose the **Response type** property, **operator** of = and select
+one of the filters in the **values** field. This filter is not visible
 as a selection unless you are seeing throttled transactions. For premium
 shares, you can also look at specific response types
 (SuccessWithShareIopsThrottling, SuccessWithShareEgressThrottling,
@@ -164,9 +148,9 @@ check the Microsoft website at
 Azure Files required to complete the request. This value does not
 contain any network latency. If this value is increasing, the Azure
 Files infrastructure is working at maximum capacity and falling behind.
-To add this metric, click Add metric and set the scope to the storage
-account name, set the namespace to Account, then choose Success Server
-Latency as the metric and Avg as the Aggregation.
+To add this metric, click **Add metric** and set the **scope** to the storage
+account name. Set the **namespace** to Account, then choose Success Server
+Latency as the **metric** and Avg as the **aggregation**.
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_005.png)
 
@@ -174,10 +158,10 @@ Latency as the metric and Avg as the Aggregation.
 to complete a successful transaction with Azure Files. This value
 includes the network latency between the client and Azure Files. If this
 number is increasing when compared to the success server latency value,
-investigate the network. To add this metric, click Add metric and set
-the scope to the storage account name, set the namespace to Account,
-then choose Success E2E Latency as the metric and Avg as the
-Aggregation.
+investigate the network. To add this metric, click **Add metric** and set
+the **scope** to the storage account name. Set the **namespace** to Account,
+then choose Success E2E Latency as the **metric** and Avg as the
+**aggregation**.
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_006.png)
 
@@ -195,12 +179,12 @@ The key features of CPM that provide a great end-user experience when
 Azure Files is used for the back-end storage are as follows:
 
 ***Profile Streaming***: Files and folders contained in a profile are
-fetched from the user store to the local computer only when they are
-accessed by users after they have logged on. Profile streaming
+fetched from the user store to the local computer only when users
+access the files after they have logged on. Profile streaming
 significantly reduces the logon time by reducing the amount of data that
 is copied down to the local profile at user logon. This setting is
 enabled by default and decreases the amount of transactions and egress
-data leaving Azure Files, reducing costs and improving logon time.
+data leaving Azure Files, reducing costs, and improving logon time.
 
 ***Active Write-back***: Files and folders that are modified can be
 synchronized to the user store in the middle of a session, before
@@ -212,7 +196,7 @@ accessing their profile from multiple devices simultaneously.
 
 ***Large File Handling***: To improve logon performance and to process
 large-size files, a symbolic link is created instead of copying files in
-this list. You have to configure the paths where the files are stored
+this list. You must configure the paths where the files are stored
 but you can use wildcards. This setting is a must when using the
 transactional tier and highly recommended for the premium tier.
 
@@ -220,7 +204,7 @@ transactional tier and highly recommended for the premium tier.
 
 For the testing, each of the Citrix hosts had the Multi-session OS
 Virtual Delivery Agent (VDA) 2006 installed. During installation, on the
-Additional Components screen, both the *Citrix User Profile Manager* and
+**Additional Components** screen, both the *Citrix User Profile Manager* and
 *Citrix User Profile Manager WMI Plug-in* were enabled.
 
 The following GPO settings for Profile Management were configured and
@@ -248,11 +232,11 @@ seconds it takes for the user's profile to load into the Citrix session.
 Profile load time includes the amount of time it takes to copy the
 user's profile down from the profile storage, in this case from Azure
 Files. The user profile load time has a significant impact on the user
-experience and profile load times of greater than 30 seconds usually
+experience. Profile load times of greater than 30 seconds usually
 result in a poor user experience. The profile load time is available
 through the Citrix Director. From Citrix Cloud Virtual Apps and Desktops
 Service, select **Monitor** \>\> **Trends** \>\> **Logon**
-**Performance** as shown in the screenshot below:
+**Performance** as shown in the following screenshot:
 
 The profile load time is available by hovering over the time period
 being monitored or viewed in the table below the chart.
@@ -289,20 +273,20 @@ configurations.
 |                        | 80,000 files          |
 |                        | 100,000 files         |
 
-To simulate a large number of users with a small number of resources, we
-designed a test that used a custom PowerShell script which randomly
-updated a number of files stored either in the user's redirected folder
+To simulate a 1000 users with a few resources, we
+designed a test that used a custom PowerShell script. The script randomly
+updated several files stored either in the user's redirected folder
 (87.5%) or in the user's local profile (12.5%). This script when run by
 a single-user would be updating between 20 and 100 files (depending on
-the number of files per hour to update) in the session along with
-updating the 4 GB OST file stored in the local profile folder.
+the number of files per hour to update) in the session. The script also
+updated the 4 GB OST file stored in the local profile folder.
 
 To control the launch rate and provide random wait times during the
-session, we leveraged LoginVSI for test framework. The random waits
+session, we used LoginVSI for test framework. The random waits
 helped prevent predictable spikes in network traffic caused
 by users logging on simultaneously and helps simulate a better workload.
 The user would logon and access the required files before logging off.
-To ensure any logoff traffic was excluded from the results, all users
+To exclude logoff traffic from the results, all users
 were logged on and the files accessed before any user logged off. The
 graphs show the metrics from the first one hour of the test while users
 were logging on.
