@@ -15,7 +15,7 @@ Let us first look at the WVD architecture:
 
 [![Windows Virtual Desktop architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_1-wvd-architecture.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_1-wvd-architecture.png)
 
-It consists of the core level compute, networking, and storage that makes up the physical infrastructure that the Azure cloud runs on (managed by Microsoft). Then there are the virtual machines that run on the cloud hardware – Windows single-session and multi session desktops / server OS machines and remote apps. And the shared storage exposed to the machines like Azure Files and Azure AD and related services. The customer manages their Azure subscription. And finally, the services that run to manage and provide access to the desktops and applications.
+It consists of the core level compute, networking, and storage that makes up the physical infrastructure that the Azure cloud runs on (managed by Microsoft). Then there are the virtual machines that run on the cloud hardware – Windows single session and multi-session desktops / server OS machines and remote apps. And the shared storage exposed to the machines like Azure Files and Azure AD and related services. The customer manages their Azure subscription. And finally, the services that run to manage and provide access to the desktops and applications.
 
 For organizations to utilize the value add that Citrix provides, the bottom two layers of the WVD platform are retained. Citrix virtualization cloud services including Citrix Virtual Apps and Desktops (VAD) service or Citrix Managed Desktops service replace the top layer.
 
@@ -36,7 +36,7 @@ The Citrix value add is tabulated in the following table:
 | 7  | Experience  | [Personalization](#experience---personalization), [WEM](#experience---resource-optimization), and [Azure Files Integration](#azure-files-integration)  | Extend FSLogix profile containers for multi-session access using Citrix Profile Management. Workspace Environment Management (WEM) helps control compute costs by automatically managing applications. Accelerates logon to WVD and increases single server scalability.  |
 | 8  | Experience  | [Citrix Gateway and SD-WAN](#experience---app-delivery-solutions)  | Citrix Gateway POPs improve performance by connecting through the nearest gateway POP. Citrix SD-WAN allows the WVD environment to connect back to the on-premises data / environment and enables break out of Internet based traffic and HDX content optimizations to reduce data ingress and egress costs and improving user experience.  |
 | 9  | Experience  | [Citrix Workspace](#experience---citrix-workspace)  | Citrix Workspace adds intelligent capabilities to organize, guide, and automate work in a single place, using microapps, universal search, relevant notifications and so on.  |
-| 10  | Security  | [Multifactor authentication](#multifactor-authentication), [Session Watermarking](#session-watermarking), [Session Recording](#session-recording), and Smart card support   | Compliance and regulatory requirements met. MFA extended to several IDPs natively and others via SAML. Smart card support. Endpoint Analysis scans and granular policy control over the content and the user can access.  |
+| 10  | Security  | [Multi-factor authentication](#multi-factor-authentication), [Session Watermarking](#session-watermarking), [Session Recording](#session-recording), and Smart card support   | Compliance and regulatory requirements met. MFA extended to several IDPs natively and others via SAML. Smart card support. Endpoint Analysis scans and granular policy control over the content and the user can access.  |
 
 This tech brief showcases the value add provided under the 3 themes of [Choice / Management](#choice--management), [Experience](#experience), [Security](#security) in Citrix products when setting up a workspace and using WVD based resources hosted in Azure.
 
@@ -114,7 +114,7 @@ Going forward the day to day management of these machines is simplified with the
 
 Autoscale helps to reduce cost in the cloud by shutting down machines that are not needed during off peak times or when there is low load on the catalog. On the flip side Autoscale helps to power on the required machines before a shift or workday morning (logon storms) to handle the anticipated load so that user experience is not affected by long logon times when VMs boot as the users log in during these times. Admins can also define disconnection and logoff time outs to ensure idle machines can be shut down.
 
-![Autoscale configuration dialog](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_9-cmd-autscale-config-dialog.png)
+![Autoscale configuration dialog](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_9-cmd-autoscale-config-dialog.png)
 
 Another advantage is the ability to identify primary (lower cost resources, such as on-prem desktops or reserved instances) and secondary (pay-as-you-go instances) resources. Resources in the primary zone, are booted up first before trying to consume resources from the more expensive secondary zone. Secondary zone resources can be used for burst usage or during a business continuity or disaster recovery event. Hosts in the secondary zone would be turned off first as well when demand drops.
 
@@ -417,13 +417,13 @@ With a VHD based profile solution, such as the FSLogix Profile Container or the 
 
 So, when a user has a desktop session running and launches an app which writes to their profile, the changes made in the app are discarded.
 
-![Multi Session FSLogix](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_13-multi-session-fslogix.png)
+![Multi-session FSLogix](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_13-multi-session-fslogix.png)
 
 For example, consider a physician working from home, they launch Outlook from their corporate Windows 10 device and a few minutes later launch’s the hospital’s EMR system on an iPad, to quickly check up on a few patients. That’s two simultaneous sessions, the first session that the physician logged into has the VHD mounted in Read/Write mode, while the EMR app session would have the VHD mounted as Read-Only. The changes made to the setting of the EMR app (default schemes, macros, favorites, and so on), are not written to the profile when they log off from it.
 
 Citrix profile manager helps to synchronize files and settings that are changed in a Read-Only session. The centralized profile storage (user store) acts as the temporary storage for writes in the Read-Only sessions.
 
-![Multi Session Citrix Profile Management](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_14-multi-session-citrix-profile-management.png)
+![Multi-session Citrix Profile Management](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_14-multi-session-citrix-profile-management.png)
 
 This allows each session to write changed files back and those changes are merge using the last writer win strategy at file level. Changes to registry hive files like NTUSER.DAT, are merged at registry key level. More information about this feature can be found at this [link](/en-us/profile-management/current-release/configure/enable-multi-session-write-back-for-fslogix-profile-container.html)
 
@@ -500,13 +500,13 @@ Delegated administration and configuration logging don’t just enhance change t
 
 The following are some features of note to bolster the security of your WVD deployment:
 
-*  [Multifactor authentication extension](#multifactor-authentication)
+*  [Multi-factor authentication extension](#multi-factor-authentication)
 *  [Session Watermarking](#session-watermarking)
 *  [Session Recording](#session-recording)
 
-### Multifactor authentication
+### Multi-factor authentication
 
-Citrix extends the Azure multifactor authentication capabilities with support for the following:
+Citrix extends the Azure multi-factor authentication capabilities with support for the following:
 
 1.  MFA for Citrix VAD service Administrators (TOTP)
 1.  Citrix Gateway Service Active Directory + Token (Citrix SSO, MS Authenticator, Google Authenticator)
@@ -553,10 +553,10 @@ The following is a list of the features that were discussed in the detail in the
 1.  Experience
     1.  HDX technologies allow for the most optimized and customizable delivery of remote sessions with support for the richest set of peripherals.
     1.  Performance, Single server scalability and compute consumption optimization – Workspace Environment Manager, Optimization for UCE solutions including Microsoft Teams, Browser Content Redirection, and SD-WAN based network optimization.
-    1.  Profile Management extension for multi session scenarios, support for Azure Files.
+    1.  Profile Management extension for multi-session scenarios, support for Azure Files.
     1.  App Delivery solutions – Gateway enhances security with SSO and MFA, reduces latency to the resources and increase the resiliency of the environment, while enabling VPN-less access. SD-WAN provides QoS, reliability, out-of-band traffic for internet content, and optimizes connectivity between the cloud and on-premises data center. SD-WAN traffic optimization for UCE, Web, and SaaS apps delivers the best experience possible.
     1.  Workspace – Enhances the user experience by integrating the WVD based resources into a Workspace that helps, organize, guide, and automate work for the user.
-1.  Security – Session Watermarking, Session Recording, expanded multifactor authentication capabilities, Security Analytics, Citrix Gateway service, and Citrix Secure Workspace Access service all add to layers of extra security to your environment.
+1.  Security – Session Watermarking, Session Recording, expanded multi-factor authentication capabilities, Security Analytics, Citrix Gateway service, and Citrix Secure Workspace Access service all add to layers of extra security to your environment.
 
 Call to action:
 
