@@ -293,21 +293,10 @@ were logging on.
 
 ### Test Environment Setup
 
-To reach the need for 100,000 files to be tested, the environment was
-designed to support 1,000 user sessions logging on within a 60-minute
-window. We did not want any of the test infrastructure or the Citrix
-host servers to become a bottleneck, so the host servers were
-deliberately oversized to move any performance issues to the Azure Files
-share.
+For the 100,000 files to be tested, we built an environment that supported 1,000 user sessions logging on within a 60-minute
+window. To avoid the test infrastructure from becoming a bottleneck, the citrix host servers were deliberately oversized to move the performance issues to the Azure Files share.
 
-We had two peered virtual networks configured in the Azure US West 2
-region. One virtual network contained the LoginVSI infrastructure used
-to manage the sessions and report on progress. The other virtual
-networks contained the 30 Citrix hosts running on a Standard FS16_v2
-instance with 1 TB Premium SSD drive. The Citrix servers hosted the
-sessions that required user profiles to be loaded from and written to
-Azure Files. Citrix Profile Management was configured by GPO to be
-enabled and to use the Azure Files SMB share as the path store.
+We had two peered virtual networks configured in the Azure US West 2 region. One virtual network contained the LoginVSI infrastructure used to manage the sessions and report on progress. The other virtual networks contained the 30 Citrix hosts running on a Standard FS16_v2 instance with 1 TB Premium SSD drive. The Citrix servers hosted the sessions that required user profiles to be loaded from and written to Azure Files. We enabled and configured Citrix Profile Management to use the Azure Files SMB share as the path store.
 
 Two Azure storage accounts were created, one with a transaction
 optimized tier SMB share and one with a premium tier SMB share. Large
@@ -329,9 +318,7 @@ different subnet.
 
 ### Test Runs
 
-Based on the variables identified earlier, the following test matrix was
-run, and the performance data was gathered from Azure Monitor and
-Citrix Director for each of the runs.
+Based on the variables identified earlier, the following test matrix was run, and the performance data was gathered from Azure Monitor and Citrix Director on each runs.
 
   |Run Name           |Azure File Tier         |File Share Quota   |Files Updated|
   |------------------ |----------------------- |------------------ |-------------|
@@ -367,7 +354,7 @@ steps
 
 7.  Record the start date/time
 
-8.  Each session will run at least 60-minutes before logging off
+8.  Each session ran at least 60 minutes before logging off
 
 9.  Record the stop date/time after all sessions are logged off
 
@@ -378,7 +365,7 @@ steps
 ## Test Results
 
 The test results are displayed by the key metrics discussed earlier: Transactions (IOPS), Throughput (egress and ingress),
-Latency, and Profile Load Time. Note these tests were run before SMB Multichannel was released. Azure Files' SMB Multichannel will benefit performance when used with Profile Services.
+Latency, and Profile Load Time. Note these tests were run before SMB Multichannel was released. Azure Files' SMB Multichannel benefits performance when used with Profile Services.
 
 ### Transactions
 
@@ -387,29 +374,22 @@ Latency, and Profile Load Time. Note these tests were run before SMB Multichanne
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_010.png)
 
 Transactions are recorded as part of the
-Azure Files metrics. The charts below show a rather consistent amount of
-IOPS being used across all of the test runs. Regardless of type of file
+Azure Files metrics. The preceeding charts show a rather consistent amount of
+IOPS being used across all test runs. Regardless of type of file
 share, the average IOPS per second are under about 3300. The consistent
 results are expected since the test was only varying the number of files
-touched between the two file share types and the files themselves were
+touched between the two file share types. The files themselves were
 the same for every user profile.
 
 Since both file shares support 10,000 IOPS in the configuration for the
-test, the IOPS required by our workload is well within the limits,
-suggesting that Azure Files can support 3X this workload before IOPS
+test, the IOPS required by our workload is well within the limits.
+This suggests that Azure Files can support 3X this workload before IOPS
 became a bottleneck.
 
 ### Throughput
 
-Throughput is available as part of the Azure Files metrics. The charts
-below show the egress and ingress traffic for the different tiers. As
-expected, the egress traffic is higher than the ingress traffic because
-Citrix Profile Manager is scanning the full profile at logon but only
-changing a portion of the files. If profile streaming was not enabled as
-part of Citrix Profile Manager, the entire profile would be read and
-copied down to the local host. As the number of files updated during the
-run increases, the egress throughput also increases since the entire
-file is streamed down to the local host changed, and written back to the share.
+Throughput is available as part of the Azure Files metrics. The following charts show the egress and ingress traffic for the different tiers. The egress traffic is higher than the ingress traffic because Citrix Profile Manager is scanning the full profile at logon but only changing a portion of the files. If profile streaming was not enabled as part of Citrix Profile Manager, the entire profile would be read and
+copied down to the local host. As the number of files updated during the run increases, the egress throughput also increases. This behavior is because the entire file is streamed down to the local host, changed, and written back to the share.
 
 The throughput for the premium share is well within the provisioned
 amounts of 675MiB/sec egress and 450MiB/sec ingress. The premium share
@@ -419,7 +399,7 @@ before throughput starts to become an issue.
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_011.png)
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_012.png)
 
-The transaction file share limit is significantly higher at 300MiB/sec so
+The transaction file share limit is higher at 300 MiB/sec so
 theoretically, the transactional file share can handle 5x the workload
 before the throughput becomes a bottleneck.
 
