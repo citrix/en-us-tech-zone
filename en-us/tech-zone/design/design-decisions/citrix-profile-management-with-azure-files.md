@@ -403,29 +403,26 @@ The transaction file share limit is higher at 300 MiB/sec so
 theoretically, the transactional file share can handle 5x the workload
 before the throughput becomes a bottleneck.
 
-Keep in mind that these results are writing to the 4GB OST file, but
+These results are writing to the 4 GiB OST file, but
 that file is not read down to the local host because Large File Handling
 is enabled. The writes to the OST files are made directly on the Azure
 Files share, much like the folder redirection writes.
 
 ### Latency
 
-Latency is available as part of the Azure Files metrics. The chart below shows the Success Server Latency metric from the premium and transaction optimized test runs. Premium tier file shares do best with fewer files that are larger, such as you might find with databases or in the world of user profiles, FSLogix or Citrix Profile Manager VHD container. Using container files improves the performance of Azure Files because the number of file open/read/write/close requests are reduced.
+Latency is available as part of the Azure Files metrics. The following chart shows the Success Server Latency metric from the premium and transaction optimized test runs. Premium tier file shares do best with fewer large files, such as user profile technologies like FSLogix and Citrix Profile Manager VHD container. Using container files improves the performance of Azure Files because the number of file open/read/write/close requests are reduced.
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_013.png)
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_014.png)
 
 Focusing on the premium file share, we see that latency remains relatively steady at around 4 milliseconds (ms).
-Reviewing the transaction optimized file share, latency stays pretty consistent across the different test runs. The latency stays pretty much in the 7-10ms range, with only occasional spikes outside of that range.
+Reviewing the transaction optimized file share, latency stays consistent across the different test runs. The latency stays in the 7-10 ms range, with only occasional spikes outside of that range.
 These longer latencies translate into longer profile load times as the later users logon. These are discussed further in the Profile Load Time section.
 
 ### Profile Load Time
 
-Profile load time is part of the Citrix Director trend analysis. The
-charts below shows a moving average over the previous minute for the
-profile load time for the users during the test runs. The table below
-provides a brief overview of the average profile load times based on the
-run data collected from Citrix Director.
+Profile load time is part of the Citrix Director trend analysis. The following table
+provides a brief overview of the average profile load times based on the run data collected from Citrix Director.
 
   |Run                |Avg Load Time (seconds)|
   |------------------ |------------------------|
@@ -439,6 +436,8 @@ run data collected from Citrix Director.
   |Transaction-60K    |14.09|
   |Transaction-80K    |18.58|
   |Transaction-100K   |12.09|
+
+The following charts shows a moving average over the previous minute for the profile load time for the users during the test runs.
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_015.png)
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_016.png)
@@ -455,7 +454,7 @@ seconds.
 The transaction file share seemed to fair well, with profile load times
 averaging under 20 seconds for the users with a slight variability in
 the load times. Some users did have longer load times, but the overall
-average for the standard file share was about 15.84, or just over double
+average for the standard file share was about 15.84. This load time is just over double
 the overall premium load time average of 7.25 seconds.
 
 ## Analysis of the Results
@@ -463,16 +462,16 @@ the overall premium load time average of 7.25 seconds.
 Azure Files does an excellent job of managing end user profiles when
 configured correctly. The results of the testing indicate with our
 workload, the premium file share seems to provide the best overall
-consistent performance at different levels, but comes with the added
+consistent performance at different levels. This performance comes with the added
 cost of premium tier pricing. While the premium file share does perform
 well, it would probably perform better using profile container
-technologies. Below find the recommendations from our testing.
+technologies.
 
 ### Citrix Profile Manager Configuration Options
 
-Citrix Profile Manager is best used when users may have multiple
+Citrix Profile Manager is best used when users have multiple
 profiles open from different devices to protect against the "last write
-wins" scenario and keep the profiles consistent between logins when
+wins" scenario. This feature keeps the profiles consistent between logins when
 users have multiple sessions open. However, when using Azure Files with
 Citrix, a few other features are recommended to improve the user
 experience.
@@ -493,25 +492,15 @@ leaving Azure.
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_018.png)
 
-Enabling the Large File Handling feature of
-Citrix Profile Manager is a fantastic way to improve the logon
-experience for large files that would normally be copied down from the
-profile store at logon. Since Microsoft does not recommend storing PST
-and OST files in a redirected folder, you can use large file handling to
-provide the same benefits as folder redirection, but on a per file
-basis. Instead of redirecting the folder or file, CPM creates a symbolic
-link to the file, so when it is opened or updated, the file operations
-are redirected to the user store in Azure Files. This feature allows PST
-files and OST files to remain in the user's profile and be treated as
-local files, even though they reside on a remote file share. The chart
-shows the difference in egress traffic between enabling and disabling
-large file support with the transaction and premium file shares.
+Enabling the Large File Handling feature of Citrix Profile Manager is a fantastic way to improve the logon
+experience for users. The improved logon time is achieved by updating large files directly on the profile store instead of copying them down at logon. Since Microsoft does not recommend storing PST and OST files in a redirected folder, use large file handling to provide the same benefits as folder redirection. Citrix Profile Manager creates a symbolic link to the file, so when it is opened or updated, the file operations
+are redirected to the user store in Azure Files. This feature allows PST and OST files to remain in the user's profile on a remote file share while being treated as local files. The preceeding chart shows the difference in egress traffic between enabling and disabling large file support with the transaction and premium file shares.
 
 The later versions of CPM enable profile streaming by default on Citrix
 servers. This technology prevents the entire user profile from being
 downloaded to the Citrix host at logon. Instead, only a list of the
 files residing on the profile are enumerated and that list is available
-to the operating system. When a file is actually requested, then it is
+to the operating system. When a file is requested, then it is
 fetched from the user store and brought to the Citrix host. This process
 reduces the number of file copies that happen at logon and improves the
 user logon experience.
@@ -520,15 +509,9 @@ user logon experience.
 
 The results support using a transaction optimized file share when your
 throughput and IOPS requirements are below the supported levels of
-300MiB/sec and 10,000 IOPS respectively. Breaking the user profile data
-up into multiple file shares, each in their own storage account will
-help distribute the load and will be acceptable to end users as long as
-the longer latency is not a performance issue.
+300 MiB/sec and 10,000 IOPS respectively. Creating multiple file shares across different storage accounts to host the user's profile data, distributes the load.
 
-*NOTE: The recommended best practice is to always deploy a transaction
-optimized file share to a single storage account, because to transaction
-file shares under normal use are easily capable of reaching the maximum
-limits on a single storage account. For more information see*
+*NOTE: The recommended best practice is to have only one transaction optimized file share per storage account. This recommendation is because two or more transaction optimized file shares under normal use can exceed the maximum limits on a single storage account. For more information see*
 <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets\#file-share-and-file-scale-targets>
 
 If using the higher performance premium tier for consistent performance
@@ -538,24 +521,18 @@ tests with a 100 TiB premium file share and monitor the transactions,
 throughput, and latency metrics. Use that information to determine the
 amount of provisioned storage for the required performance level.
 
-*NOTE: If the file share has a significant number of small files being
-updated on a frequent basis, Azure Files may have delays reading and
-writing the file due to excessive metadata. This delay can also happen
-if there is a throttling observed on the file shares. If you are
-experiencing this, the Success Server Latency metric on the Azure Files
-share will show a steady increase. Once that metric exceeds 15
-milliseconds, the user experience will noticeably degrade.*
+*NOTE: If the file share has a significant number of small files being updated on a frequent basis, Azure Files may have delays reading and writing the file due to excessive metadata. This delay can also happen if there is a throttling observed on the file shares. If you are experiencing throttling, the Success Server Latency metric on the Azure Files share shows a steady increase. Once that metric exceeds 15 milliseconds, the user experience noticeably degrades.*
 
 In the end, selecting a performance tier comes down to determining your
 expected response time and redundancy requirements. If the user response
-time needs to be under 10ms, the premium tier file shares will provide a
-consistent response time, which in our testing configuration translated
+time needs to be under 10 ms, the premium tier file shares provide a
+consistent response time. This response time, in our testing configuration, translates
 into a profile load time of under 10 seconds. If your users are okay
-with a response time of over 10ms then you can select the more
+with a response time of over 10 ms then you can select the more
 cost-efficient transaction optimized file share. To provide the best
 user experience use multiple storage accounts to distribute the load.
 
-You can use the data provided in this article to determine what the optimal configuration might look like for your organization and then test the performance of Azure Files with your own user workloads.
+Use the data provided in this article to determine the optimal configuration for your organization and test the performance of Azure Files with your own workloads.
 
 ## Securing Access via Private Endpoint and RBAC Permissions
 
@@ -573,7 +550,7 @@ Considering the file share is used for the user profile and data, we
 recommend that it is only accessible from within the Azure VNET via
 [private
 endpoints](https://docs.microsoft.com/en-us/azure/storage/common/storage-private-endpoints).
-For detailed instructions, follow the link below:
+For detailed instructions, use the following link:
 
 <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-networking-endpoints?tabs=azure-portal#endpoint-configurations>
 
@@ -586,7 +563,7 @@ Management](https://docs.citrix.com/en-us/tech-zone/build/deployment-guides/citr
 
 ## Protecting Data
 
-Once the user data is stored in Azure Files, you will need to protect
+Once the user data is stored in Azure Files, you need to protect
 from backup and loss. This section provides guidance for the two
 built-in features: Soft Delete and Azure Backup, that offer data
 protection, in addition to the storage account redundancy options that
@@ -594,30 +571,19 @@ are available when the storage account is created.
 
 ### Soft Delete
 
-Soft delete is a feature currently in preview with Azure that allows you
-to recover files accidentally deleted by a user without the need to go
-through a complex restore process. Soft delete can be enabled in the
-file service section of the storage account. Along with enabling soft
-delete, you can set the number of days the deleted file will be
+Soft delete is an Azure feature that allows you to recover files accidentally deleted by a user without the need to go through a complex restore process. Soft delete can be enabled in the file service section of the storage account. Along with enabling soft delete, you can set the number of days the deleted file will be
 available through the soft delete feature.
 
 ### Azure Backup
 
-When large file shares are enabled on a transaction optimized or premium
-tier file shares, the data replication option is limited to only Locally
-Redundant Storage (LRS) and Zone Redundant Storage (ZRS). Without large
-files shares you can also use Geo Redundant Storage (GRS), but this will
-limit your max share size and performance to 5 TiB, 60 MiB/s, and 1000
-IOPS. Azure Backup also provides a reliable way to protect your data via
-Azure File snapshots. You can use Azure Backup to set up retention
-schedules through the configuration options in the Azure Backup vault.
+When using premium tier or when large file shares are enabled on a transaction optimized, the data replication is limited to Locally Redundant Storage and Zone Redundant Storage. Without large files shares you can also use Geo Redundant Storage, but this limits the share to 5 TiB, 60 MiB/s, and 1000 IOPS. Azure Backup also provides a reliable way to protect your data via Azure File snapshots. You can use Azure Backup to set up retention schedules through the configuration options in the Azure Backup vault.
 
 Since Azure Backup is using snapshots to protect your data, do not
 delete those snapshots or you may lose your recovery points and be
 unable to restore. To prevent against accidental deletion, Azure Backup
-will lock the storage account. If you delete that lock and the share is
+locks the storage account. If you delete that lock and the share is
 deleted, all the backups and snapshots are also deleted and all your
-data will be lost.
+data are lost.
 
 In addition to these, many third-party vendors also offer solutions that
 can be used to backup your Azure Files data.
@@ -626,14 +592,14 @@ can be used to backup your Azure Files data.
 
 Getting your user data files migrated into Azure Files can be
 accomplished through several different methods. Before selecting a
-migration strategy, you will need to determine the amount of data, the
-number of files shares you will need, and the target structure for the
+migration strategy, you need to determine the amount of data, the
+target number of files shares, and the target structure for the
 user data store.
 
 Which method works best for you depends on where the data currently
-resides within your network. No enterprise is exactly the same and the
-process to migrate files will vary greatly between enterprises. Several
-methods exist to move the files; in most cases, you will end up
+resides within your network. No enterprise is the same and the
+process to migrate files varies greatly between enterprises. Several
+methods exist to move the files; usually, you end up
 employing more than one method to achieve the desired migration.
 
 -  ***Azure File Sync:*** Any Windows server running Windows Server
@@ -651,16 +617,15 @@ employing more than one method to achieve the desired migration.
     cutover easier on end-users.
 
 -  ***Microsoft Data Box Disk:*** Microsoft Data Box Disk is an 8 TB
-    SSD flash drive that can be stacked up to 5x for a total of 40 TB and
-    used as either a USB or SATA II/III disk drive. The Data Box Disk
+    SSD flash drive that can be stacked up to 5x for a total of 40 TB. The Data Box Disk
     supports AES-128 encryption and relies on file copy utilities such
     as Robocopy to transfer the data.
 
 -  ***Microsoft Data Box:*** Microsoft Data Box is an offline file
     transfer solution that uses common file transfer utilities such as
-    Robocopy to move data securely from your servers to the Data Box,
-    which is then shipped to Microsoft and uploaded directly to Azure
-    Files. Microsoft Data boxes come in two sizes, 100 TB and 1 PB. Both
+    Robocopy to move data securely from your servers to the Data Box. The Data Box
+    is then shipped to Microsoft and uploaded directly to Azure
+    Files. Microsoft Data boxes come in 2 sizes, 100 TB and 1 PB. Both
     devices store the data encrypted (AES-256) to protect it while in
     transit between the on-premises data center and the Azure data
     center. Microsoft Data Box supports the SMB and NFS NAS protocols.
@@ -673,7 +638,7 @@ employing more than one method to achieve the desired migration.
     from the on-premises servers to Azure Files.
 
 -  ***Storage Explorer:*** The latest version of Storage Explorer
-    leverages AZCOPY to speed the file transfers significantly. Storage
+    uses AZCOPY to speed the file transfers significantly. Storage
     Explorer can even provide you the AZCOPY command strings if you feel
     inclined to automate the data transfer.
 
@@ -681,7 +646,7 @@ employing more than one method to achieve the desired migration.
     data between storage locations, including on-premises file servers
     and storage accounts within Azure.
 
--  ***RoboCopy:*** Tried and true file copy utility that preserves all
+-  ***RoboCopy:*** Reliable file copy utility that preserves all
     the files attributes, permissions, and ACLs during the transfer.
 
 In addition to these file transfer/copy solutions, many third-party
@@ -694,25 +659,21 @@ Azure Files. For more information on the best migration path see
 Using Azure Files with Citrix deployments in Azure is highly
 recommended. Azure Files provides that high-availability of user profile
 data without the complicated infrastructure. Azure Files can also be
-used by on-premises deployments if the latency and networking
+used with on-premises deployments if the latency and networking
 performance is acceptable for users.
 
-Citrix Profile Manager provides several benefits when used in
-conjunction with Azure Files, including the use of profile streaming and
-large file handling to reduce the amount of data copied from the user
-profile store to the Citrix host.
+Citrix Profile Manager provides several benefits when used with Azure Files. These benefits include the use of profile streaming and large file handling to reduce the amount of data copied from the user profile store to the Citrix host.
 
 In most cases, the use of the transaction optimized tier for Azure Files
-will be sufficient, especially if you can distribute the load across
-multiple shares and accounts, and target workloads that keep the number
+is sufficient. Especially, if you can distribute the load across
+multiple shares and target workloads that keep the number
 of files updated per hour to around 100,000 for a single share. For low
 latency, high response time requirements, where users need latency to be
-consistently under 10ms, look at using the premium tier of Azure Files.
+consistently under 10 ms, look at using the premium tier of Azure Files.
 
 ## References
 
-The following documents provided information to the author's of this
-document and are suggested reading for those who want to know more.
+Content from the following documents has been referenced in this article:
 
 -  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets>
 
