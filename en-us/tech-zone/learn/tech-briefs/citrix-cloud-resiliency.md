@@ -126,7 +126,7 @@ For the user to be able to access the resources, when the Workspace identity ser
 
 If Citrix Workspace app and the VDA are joined to the same domain and the SSO pass-through plug-in is configured in Workspace app, SSO is achieved. Session sharing is also supported, so if a subsequent app is launched via Workspace Connection Lease from the same VDA where the user has an existing session also launched via Workspace Connection Lease, SSO is achieved.
 
-![Citrix Cloud Resiliency - Desktop authentication needed with Service Continuity](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_9-auhtentication-dialog.png)
+![Citrix Cloud Resiliency - Desktop authentication needed with Service Continuity](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_9-authentication-dialog.png)
 
 ### Workspace connection leases and how they work
 
