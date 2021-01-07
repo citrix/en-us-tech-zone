@@ -150,11 +150,22 @@ For more information about Citrix Secure Workspace Access, see [Citrix Secure Wo
 
 ## SWA Use Case 1 - Applying Enhanced Security to SaaS and Web Apps
 
+Enhanced security with App Protection provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying the following controls.
+
+[Ehanced Security](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#enhanced-security)
+
 ## SWA Use Case 2 - Protecting BYO and Unmanaged Devices
+
+Using Enhanced security policies, Secure Workspace Access gives admins the ability to protect their organizations from data loss and credential theft. Enhanced security policies are even more critical when employees use personal devices to access corporate resources.
 
 ## SWA Use Case 3 - Using Secure Browser Policy and Isolation
 
+
 ## SWA Use Case 4 - Security Analytics for SaaS and Web Apps
+
+[Security Anlytics](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#security-analytics)
+
+Usage Analytics provides insights into the basic usage data of Secure Workspace Access. Admins get the visibility into how users interact with the SaaS and Web applications that are being used in their organization.
 
 ## Citrix Secure Workspace Access Enhanced Security Demo
 
