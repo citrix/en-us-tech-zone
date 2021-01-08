@@ -10,7 +10,8 @@ description: Learn how to install the Citrix VDA into a WIndows 10 platform & pr
 
 ## Overview
 
-This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Machines (VMs) via Machine Creation Services (MCS) in Citrix Virtual Apps & Desktop (CVAD) Service
+This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Machines (VMs) via Machine Creation Services (MCS) in Citrix Virtual Apps & Desktops (CVAD) Service
+
 *  Install VDA
 *  Optimize Windows 10 for MCS
 *  Create a Machine Catalog & deploy VMs
@@ -21,73 +22,77 @@ This guide provides high level instructions to install the Citrix Virtual Delive
 
  >**Note:**
    >
->    This guide assumes that the reader has a basic understanding of the following technologies:
->  Citrix Cloud, CVAD Service & basic Windows administration
+ > This guide assumes that the reader has a basic understanding of the following technologies:
+ > Citrix Cloud, CVAD Service & basic Windows administration
 
-1. A Windows 10 VM in Microsoft Azure, Google Cloud Platform (GCP) or an on premises virtual environment
+1.  A Windows 10 VM in Microsoft Azure, Google Cloud Platform (GCP) or an on premises virtual environment
 
-2. A Citrix Cloud admin account
-3. A domain admin account with the ability to create machine accounts in the desired OU
+1.  A Citrix Cloud admin account
 
-4. A Citrix.com account to download software
+1.  A domain admin account with the ability to create machine accounts in the desired OU
+
+1.  A Citrix.com account to download software
 
       *  Citrix VDA
-      *  Citrix Optimiser
+      *  Citrix Optimizer
 
 ## Windows VM Preparation
 
 1.  Join VM to the domain
-2.  Launch windows settings & check for updates
-3.  Install applications required for the image template & any OS configuration
+
+1.  Launch windows settings & check for updates
+
+1.  Install applications required for the image template & any OS configuration
 
 ## Citrix Virtual Delivery Agent
 
- >**Note:**
+   >**Note:**
    >
->  At time of writing, VDA 2009 was the latest version. It is recommended to use the latest version available for optimal performance, security, and functionality
+   > At time of writing, VDA 2009 was the latest version. It is recommended to use the latest version available for optimal performance, security, and functionality
 
 1.  Login to Citrix.com/downloads and download the latest version of the VDA
-2.  Run the VDA setup file "VDAWorkstationSetup_xxxx.exe" as an administrator.
-3.  Select Create a master MCS image
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-007.png)](/en-us/tech-zone/build/media/Win10-007.png)
+1.  Run the VDA setup file "VDAWorkstationSetup_xxxx.exe" as an administrator.
 
-4.  If you would like the full workspace experience or to deliver virtual applications, select the Citrix Workspace App
+1.  Select **Create a master MCS image**
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-008.png)](/en-us/tech-zone/build/media/Win10-008.png)
+    [![Azure VM](/en-us/tech-zone/build/media/Win10-007.png)](/en-us/tech-zone/build/media/Win10-007.png)
 
-5.  If you require access to Citrix Files/Content & Colaboration select the Citrix Files for Windows (Outlook integration option is also available)
+1.  If you would like the full workspace experience or to deliver virtual applications, select the **Citrix Workspace App**
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-010.png)](/en-us/tech-zone/build/media/Win10-010.png)
+    [![Azure VM](/en-us/tech-zone/build/media/Win10-008.png)](/en-us/tech-zone/build/media/Win10-008.png)
 
->**Note:**
-   >
->  For a full list of VDA install options check here: <https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html>
+1.  If you require access to Citrix Files/Content & Collaboration select the **Citrix Files for Windows** (Outlook integration option is also available)
 
-6.   Enter the Fully Qualified Domain Name (FQDN) of each Cloud Connector (at least two are recommended for tolerance)
-7.  Select Test Connection & if successful select Add
+    [![Azure VM](/en-us/tech-zone/build/media/Win10-010.png)](/en-us/tech-zone/build/media/Win10-010.png)
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-012.png)](/en-us/tech-zone/build/media/Win10-012.png)
+    >**Note:**
+    >
+    > For a full list of VDA install options check here: <https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html>
 
+1.  Enter the **Fully Qualified Domain Name (FQDN) of each Cloud Connector** (at least two are recommended for tolerance)
 
-8.  Depending on your specific requirements, select the firewall configuration accordingly
+1.  Select **Test Connection** & if successful select **Add**
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-014.png)](/en-us/tech-zone/build/media/Win10-014.png)
+    [![Azure VM](/en-us/tech-zone/build/media/Win10-012.png)](/en-us/tech-zone/build/media/Win10-012.png)
 
-9.  Review the summary & select Install
+1.  Depending on your specific requirements, select the firewall configuration accordingly
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-015.png)](/en-us/tech-zone/build/media/Win10-015.png)
+    [![Azure VM](/en-us/tech-zone/build/media/Win10-014.png)](/en-us/tech-zone/build/media/Win10-014.png)
 
-10.  Confirm everything was installed successfully, check the box to restart machine & select finish
+1.  Review the summary & select **Install**
 
-   [![Azure VM](/en-us/tech-zone/build/media/Win10-017.png)](/en-us/tech-zone/build/media/Win10-017.png)
+    [![Azure VM](/en-us/tech-zone/build/media/Win10-015.png)](/en-us/tech-zone/build/media/Win10-015.png)
 
+1.  Confirm everything was installed successfully, **check the box to restart machine** & select **Finish**
+
+    [![Azure VM](/en-us/tech-zone/build/media/Win10-017.png)](/en-us/tech-zone/build/media/Win10-017.png)
 
 ## Citrix Optimizer
 
 >**Note:**
  >
->  For information on Citrix optimizer see the following Citrix article
+> For information on Citrix optimizer see the following Citrix article
 (Latest at time of writing): <https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/>
 
 1.  Login & download Citrix Optimizer from Citrix Support Knowledge Center
