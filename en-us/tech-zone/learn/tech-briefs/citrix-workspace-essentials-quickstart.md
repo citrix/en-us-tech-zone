@@ -138,7 +138,7 @@ Citrix Workspace Essentials enables second factor authentication during user log
 
 Figure 10: Second factor authentication during user login to Citrix Workspace
 
-## Secure Workspace Access
+## Citrix Secure Workspace Access
 
 Citrix Secure Workspace Access introduces additional security features on top of the instant Single-Sign On (SSO) access to SaaS and web applications provided by Citrix Workspace Essentials. Unlike a traditional VPN, Secure Workspace Access provides a zero trust approach to securely access corporate web, SaaS, and virtual applications. With advanced security controls for managed, unmanaged, and BYO devices, it’s ideal for IT and employees alike.
 
@@ -146,23 +146,23 @@ Secure Workspace Access combines elements of several Citrix Cloud services to de
 
 For more information about Citrix Secure Workspace Access, see [Citrix Secure Workspace Access](/en-us/citrix-secure-workspace-access.html) in Citrix product documentation and [Citrix Secure Workspace Access Tech Brief](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html)
 
-## SWA Use Case 1 - Applying Enhanced Security to SaaS and Web Apps
+### Secure Workspace Access Use Case 1 - Applying Enhanced Security to SaaS and Web Apps
 
 Enhanced security with App Protection provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying security controls detailed in [Ehanced Security](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#enhanced-security).
 
-## SWA Use Case 2 - Protecting BYO and Unmanaged Devices
+### Secure Workspace Access Use Case 2 - Protecting BYO and Unmanaged Devices
 
 Using Enhanced security policies, Secure Workspace Access gives admins the ability to protect their organizations from data loss and credential theft. Enhanced security policies are even more critical when employees use personal devices to access corporate resources. Read more here: [Protecting BYO](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#protecting-user-and-corporate-data-on-byo-and-unmanaged-endpoints)
 
-## SWA Use Case 3 - Using Secure Browser Policy and Isolation
+### Secure Workspace Access Use Case 3 - Using Secure Browser Policy and Isolation
 
 Secure Workspace Access enables end users to safely browse the internet. When an end user launches a SaaS application from Citrix Workspace, several decisions are dynamically made to decide how best to serve this SaaS application. Secure Workspace Access provides three ways to serve this application to the end-user. Read more here: [Browser Isolation](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#browser-isolation)
 
-## SWA Use Case 4 - Security Analytics for SaaS and Web Apps
+### Secure Workspace Access Use Case 4 - Security Analytics for SaaS and Web Apps
 
 End users invariably access SaaS apps that have enhanced security enabled. Workspace app, the Citrix Gateway service, and the Secure Browser service provide the Security analytics service with information about the following user and application behaviors. Usage Analytics provides insights into the basic usage data of Secure Workspace Access. Admins get the visibility into how users interact with the SaaS and Web applications that are being used in their organization. Read more here: [Security Anlytics](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#security-analytics)
 
-## Citrix Secure Workspace Access Enhanced Security Demo
+### Secure Workspace Access Enhanced Security Demo
 
 See how Citrix Secure Workspaces Access provides Enhanced Security for Web and SaaS Applications and the end user experience.
 
@@ -170,7 +170,7 @@ See how Citrix Secure Workspaces Access provides Enhanced Security for Web and S
 
 [![Citrix Tech Insight - Citrix Secure Workspace Access Enhanced Security](/en-us/tech-zone/learn/media/tech-insights_secure-workspace-access-user-experience_enhanced-security.png)](https://youtu.be/9rT-0IIKw6M)
 
-## Citrix Secure Workspace Access SSO to SaaS Apps Demo
+### Citrix Secure Workspace Access SSO to SaaS Apps Demo
 
 See how Citrix Secure Workspaces Access provides Single Sign On to SaaS Applications and the end user experience.
 
@@ -178,7 +178,7 @@ See how Citrix Secure Workspaces Access provides Single Sign On to SaaS Applicat
 
 [![Citrix Tech Insight - Citrix Secure Workspace Access SSO to SaaS Apps](/en-us/tech-zone/learn/media/tech-insights_secure-workspace-access-user-experience_saas-sso.png)](https://youtu.be/F0x26hN7ZOM)
 
-## Citrix Secure Workspace Access VPN-less access Demo
+### Citrix Secure Workspace Access VPN-less access Demo
 
 See how Citrix Secure Workspaces Access provides VPN-less access to Web Applications and the end user experience.
 
@@ -186,7 +186,7 @@ See how Citrix Secure Workspaces Access provides VPN-less access to Web Applicat
 
 [![Citrix Tech Insight - Citrix Secure Workspace Access VPN-less access](/en-us/tech-zone/learn/media/tech-insights_secure-workspace-access-user-experience_vpn-less.png)](https://youtu.be/pIqfoUwsbwY)
 
-## Citrix Secure Workspace Access Website Filtering Demo
+### Citrix Secure Workspace Access Website Filtering Demo
 
 See how Citrix Secure Workspaces Access provides Website Filtering for Web and SaaS Applications and the end user experience.
 
