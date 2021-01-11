@@ -337,44 +337,19 @@ Which method works best for you depends on where the data currently resides with
 
 -  ***Azure File Sync:*** Any Windows server running Windows Server     2012 R2 or later can have the Azure File Sync agent installed. The agent will then upload the user data files from the Windows serve to Azure Files. The agent can typically move about 1 TB every two days if the outbound network is not throttled. With Azure File Sync the NTFS permissions, access control lists (ACLs) and file metadata are preserved.
 
--  ***Storage Migration Service:*** Storage Migration Service (SMS) is
-    designed specifically to help you migrate data from Windows Servers
-    into Azure. The service can inventory existing servers, transfer
-    data and even assume the identity of the source servers to make
-    cutover easier on end-users.
+-  ***Storage Migration Service:*** Storage Migration Service (SMS) is    designed specifically to help you migrate data from Windows Servers into Azure. The service can inventory existing servers, transfer data and even assume the identity of the source servers to make cutover easier on end-users.
 
--  ***Microsoft Data Box Disk:*** Microsoft Data Box Disk is an 8 TB
-    SSD flash drive that can be stacked up to 5x for a total of 40 TB. The Data Box Disk
-    supports AES-128 encryption and relies on file copy utilities such
-    as Robocopy to transfer the data.
+-  ***Microsoft Data Box Disk:*** Microsoft Data Box Disk is an 8 TB SSD flash drive that can be stacked up to 5x for a total of 40 TB. The Data Box Disk supports AES-128 encryption and relies on file copy utilities such as Robocopy to transfer the data.
 
--  ***Microsoft Data Box:*** Microsoft Data Box is an offline file
-    transfer solution that uses common file transfer utilities such as
-    Robocopy to move data securely from your servers to the Data Box. The Data Box
-    is then shipped to Microsoft and uploaded directly to Azure
-    Files. Microsoft Data boxes come in 2 sizes, 100 TB and 1 PB. Both
-    devices store the data encrypted (AES-256) to protect it while in
-    transit between the on-premises data center and the Azure data
-    center. Microsoft Data Box supports the SMB and NFS NAS protocols.
+-  ***Microsoft Data Box:*** Microsoft Data Box is an offline file transfer solution that uses common file transfer utilities such as Robocopy to move data securely from your servers to the Data Box. The Data Box is then shipped to Microsoft and uploaded directly to Azure Files. Microsoft Data boxes come in 2 sizes, 100 TB and 1 PB. Both devices store the data encrypted (AES-256) to protect it while in transit between the on-premises data center and the Azure data center. Microsoft Data Box supports the SMB and NFS NAS protocols.
 
--  ***Data Box Gateway:*** A virtual appliance running on either
-    Hyper-V or VMware that acts as a storage proxy server backed by
-    Azure Files. Local users access it over SMB or NFS protocols and the
-    gateway accepts the data and transfers it to Azure Files over the
-    internet. The Data Box Gateway provides for continuous data flow
-    from the on-premises servers to Azure Files.
+-  ***Data Box Gateway:*** A virtual appliance running on either Hyper-V or VMware that acts as a storage proxy server backed by Azure Files. Local users access it over SMB or NFS protocols and the gateway accepts the data and transfers it to Azure Files over the internet. The Data Box Gateway provides for continuous data flow from the on-premises servers to Azure Files.
 
--  ***Storage Explorer:*** The latest version of Storage Explorer
-    uses AZCOPY to speed the file transfers significantly. Storage
-    Explorer can even provide you the AZCOPY command strings if you feel
-    inclined to automate the data transfer.
+-  ***Storage Explorer:*** The latest version of Storage Explorer uses AZCOPY to speed the file transfers significantly. Storage Explorer can even provide you the AZCOPY command strings if you feel inclined to automate the data transfer.
 
--  ***AZCOPY:*** An Azure command-line utility that allows you to move
-    data between storage locations, including on-premises file servers
-    and storage accounts within Azure.
+-  ***AZCOPY:*** An Azure command-line utility that allows you to move data between storage locations, including on-premises file servers and storage accounts within Azure.
 
--  ***RoboCopy:*** Reliable file copy utility that preserves all
-    the files attributes, permissions, and ACLs during the transfer.
+-  ***RoboCopy:*** Reliable file copy utility that preserves all the files attributes, permissions, and ACLs during the transfer.
 
 In addition to these file transfer/copy solutions, many third-party vendors also offer solutions that can be used to migrate your data into Azure Files. For more information on the best migration path see <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-migration-overview>.
 
