@@ -389,8 +389,8 @@ Content from the following documents has been referenced in this article:
 
 -  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-planning\#storage-tiers>
 
--  [https://docs.citrix.com/en-us/profile-management/current-release/policies/descriptions-and-defaults.html]</en-us/profile-management/current-release/policies/descriptions-and-defaults.html>
+-  [https://docs.citrix.com/en-us/profile-management/current-release/policies/descriptions-and-defaults.html](</en-us/profile-management/current-release/policies/descriptions-and-defaults.html>)
 
 -  <https://www.citrix.com/go/jmp/upm.html>
 
--  [https://docs.citrix.com/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html]</en-us/tech-zone/build/deployment-guides/citrix-azure-files.html>
+-  [https://docs.citrix.com/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html](</en-us/tech-zone/build/deployment-guides/citrix-azure-files.html>)
