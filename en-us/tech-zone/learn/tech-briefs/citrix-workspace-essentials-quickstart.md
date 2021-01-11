@@ -22,6 +22,8 @@ Citrix Workspace Essentials provides end users with simplified, secure, and VPN-
 
 ![Solution Overview](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_over.png)
 
+Citrix Secure Workspace Access introduces additional security features on top of the instant Single-Sign On (SSO) access to SaaS and web applications provided by Citrix Workspace Essentials. Unlike a traditional VPN, Secure Workspace Access provides a zero trust approach to securely access corporate web, SaaS, and virtual applications. With advanced security controls for managed, unmanaged, and BYO devices, it’s ideal for IT and employees alike.
+
 Figure 1: Citrix Workspace Essentials overview
 
 ### Single Sign-on to all applications
@@ -139,8 +141,6 @@ Citrix Workspace Essentials enables second factor authentication during user log
 Figure 10: Second factor authentication during user login to Citrix Workspace
 
 ## Citrix Secure Workspace Access
-
-Citrix Secure Workspace Access introduces additional security features on top of the instant Single-Sign On (SSO) access to SaaS and web applications provided by Citrix Workspace Essentials. Unlike a traditional VPN, Secure Workspace Access provides a zero trust approach to securely access corporate web, SaaS, and virtual applications. With advanced security controls for managed, unmanaged, and BYO devices, it’s ideal for IT and employees alike.
 
 Secure Workspace Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators. These include granular and contextual security policies, app protection policies for all apps, web browser isolation, and web filtering policies.
 
