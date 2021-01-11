@@ -311,7 +311,7 @@ Considering the file share is used for the user profile and data, we recommend t
 
 Once the private endpoint is configured, validate accessibility from a VM within the Azure VNET as outlined in the document.
 
-Next step is to lock down the permissions via RBAC. Follow the guidance in [Set up Azure Files storage for User personalization layers and Citrix Profile Management](https://docs.citrix.com/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html#assign-share-level-permissions-to-users).
+Next step is to lock down the permissions via RBAC. Follow the guidance in [Set up Azure Files storage for User personalization layers and Citrix Profile Management](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html#assign-share-level-permissions-to-users).
 
 ## Protecting Data
 
@@ -389,8 +389,8 @@ Content from the following documents has been referenced in this article:
 
 -  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-planning\#storage-tiers>
 
--  <https://docs.citrix.com/en-us/profile-management/current-release/policies/descriptions-and-defaults.html>
+-  </en-us/profile-management/current-release/policies/descriptions-and-defaults.html>
 
 -  <https://www.citrix.com/go/jmp/upm.html>
 
--  <https://docs.citrix.com/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html>
+-  </en-us/tech-zone/build/deployment-guides/citrix-azure-files.html>
