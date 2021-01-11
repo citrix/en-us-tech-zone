@@ -22,9 +22,13 @@ Citrix Workspace Essentials provides end users with simplified, secure, and VPN-
 
 ![Solution Overview](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_over.png)
 
+Figure 1: Citrix Workspace Essentials overview
+
 Citrix Secure Workspace Access introduces additional security features on top of the instant Single-Sign On (SSO) access to SaaS and web applications provided by Citrix Workspace Essentials. Unlike a traditional VPN, Secure Workspace Access provides a zero trust approach to securely access corporate web, SaaS, and virtual applications. With advanced security controls for managed, unmanaged, and BYO devices, it’s ideal for IT and employees alike.
 
-Figure 1: Citrix Workspace Essentials overview
+![Secure Workspace Access](/en-us/tech-zone/learn/mediatech-briefs_citrix-workspace-essentials-quickstart_diag.png)
+
+Figure 2: Citrix Secure Workspace Access Overview
 
 ### Single Sign-on to all applications
 
@@ -32,7 +36,7 @@ A user’s primary Workspace identity authorizes them to access SaaS and on prem
 
 ![Single Sign-On](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_sso.png)
 
-Figure 2: Access to SaaS and on premises web apps
+Figure 3: Access to SaaS and on premises web apps
 
 For additional information on primary identity options for Citrix Workspace, refer to the [Workspace - Primary Identity](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) Tech Brief.
 
@@ -40,7 +44,7 @@ The first thing you will notice is the ease of use. There are 300+ SAML SSO temp
 
 ![SaaS Templates](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_template.png)
 
-Figure 3: SAML SSO templates available for quick configuration
+Figure 4: SAML SSO templates available for quick configuration
 
 ### Multifactor authentication (MFA) using one-time password (TOTP)
 
@@ -57,7 +61,7 @@ Users are able to request and install a new token and admins can enable and disa
 
 ![Multifactor Authentication](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_mfa.png)
 
-Figure 4: Natively generated One-Time Password
+Figure 5: Natively generated One-Time Password
 
 ### Support for Workspace experience (Workspace app)
 
@@ -65,7 +69,7 @@ Citrix Workspace Essentials leverages all the benefits provided by Workspace exp
 
 ![Workspace App](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_app.png)
 
-Figure 5: Benefits provided by Workspace experience
+Figure 6: Benefits provided by Workspace experience
 
 Read this Workspace App [Tech Insight](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-app.html) to learn more.
 
@@ -81,7 +85,7 @@ Citrix Workspace Essentials includes Usage Analytics to provide end-to-end usage
 
 ![Usage Analytics](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_analyt.png)
 
-Figure 6: Usage Analytics provides end-to-end usage visibility
+Figure 7: Usage Analytics provides end-to-end usage visibility
 
 The SaaS and Web Apps dashboard provides Citrix Analytics administrators insight into SaaS and web apps published in Citrix Workspace. The following information can be found within the SaaS and Web Apps Dashboard:
 
@@ -105,7 +109,7 @@ The recommended architecture below has the following components:
 
 ![Architecture](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_arch.png)
 
-Figure 7: Recommended architecture and components
+Figure 8: Recommended architecture and components
 
 Pre-requisites for configuring app access
 
@@ -122,7 +126,7 @@ Citrix Workspace Essentials provides secure access to intranet web apps with SSO
 
 ![Single Sign-On to Web](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_ssoweb.png)
 
-Figure 8: Secure access to intranet web apps with SSO
+Figure 9: Secure access to intranet web apps with SSO
 
 ## Use case 2: Secure access to SaaS apps
 
@@ -130,7 +134,7 @@ Citrix Workspace Essentials provides secure access to sanctioned SaaS apps with 
 
 ![Single Sign-On to SaaS](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_ssosaas.png)
 
-Figure 9: Secure access to sanctioned SaaS apps with SSO
+Figure 10: Secure access to sanctioned SaaS apps with SSO
 
 ## Use case 3: Configuring second factor authentication to Citrix Workspace
 
@@ -138,7 +142,7 @@ Citrix Workspace Essentials enables second factor authentication during user log
 
 ![Time-based One-time Password](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_totp.png)
 
-Figure 10: Second factor authentication during user login to Citrix Workspace
+Figure 11: Second factor authentication during user login to Citrix Workspace
 
 ## Citrix Secure Workspace Access
 
