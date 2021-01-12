@@ -335,9 +335,9 @@ Getting your user data files migrated into Azure Files can be accomplished throu
 
 Which method works best for you depends on where the data currently resides within your network. No enterprise is the same and the process to migrate files varies greatly between enterprises. Several methods exist to move the files; usually, you end up employing more than one method to achieve the desired migration.
 
--  ***Azure File Sync:*** Any Windows server running Windows Server     2012 R2 or later can have the Azure File Sync agent installed. The agent will then upload the user data files from the Windows serve to Azure Files. The agent can typically move about 1 TB every two days if the outbound network is not throttled. With Azure File Sync the NTFS permissions, access control lists (ACLs) and file metadata are preserved.
+-  ***Azure File Sync:*** Any Windows server running Windows Server 2012 R2 or later can have the Azure File Sync agent installed. The agent will then upload the user data files from the Windows serve to Azure Files. The agent can typically move about 1 TB every two days if the outbound network is not throttled. With Azure File Sync the NTFS permissions, access control lists (ACLs) and file metadata are preserved.
 
--  ***Storage Migration Service:*** Storage Migration Service (SMS) is    designed specifically to help you migrate data from Windows Servers into Azure. The service can inventory existing servers, transfer data and even assume the identity of the source servers to make cutover easier on end-users.
+-  ***Storage Migration Service:*** Storage Migration Service (SMS) is designed specifically to help you migrate data from Windows Servers into Azure. The service can inventory existing servers, transfer data and even assume the identity of the source servers to make cutover easier on end-users.
 
 -  ***Microsoft Data Box Disk:*** Microsoft Data Box Disk is an 8 TB SSD flash drive that can be stacked up to 5x for a total of 40 TB. The Data Box Disk supports AES-128 encryption and relies on file copy utilities such as Robocopy to transfer the data.
 
@@ -365,32 +365,32 @@ In most cases, the use of the transaction optimized tier for Azure Files is suff
 
 Content from the following documents has been referenced in this article:
 
--  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets>
+-  [Azure Files scalability and performance targets](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets)
 
--  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-how-to-create-large-file-share?tabs=azure-portal>
+-  [Enable and create large file shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-how-to-create-large-file-share?tabs=azure-portal)
 
--  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-planning\#understanding-provisioning-for-premium-file-shares>
+-  [Planning for an Azure Files deployment](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-planning\#understanding-provisioning-for-premium-file-shares)
 
--  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring?tabs=azure-portal#monitoring-data>
+-  [Monitoring Azure Files](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring?tabs=azure-portal#monitoring-data)
 
--  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring-reference>
+-  [Azure Files monitoring data reference](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring-reference)
 
--  <https://docs.microsoft.com/en-us/azure/backup/azure-file-share-backup-overview>
+-  [About Azure file share backup](https://docs.microsoft.com/en-us/azure/backup/azure-file-share-backup-overview)
 
--  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-enable-soft-delete?tabs=azure-portal>
+-  [Enable soft delete on Azure file shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-enable-soft-delete?tabs=azure-portal)
 
--  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-migration-overview>
+-  [Migrate to Azure file shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-migration-overview)
 
--  <https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10>
+-  [Get started with AzCopy](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10)
 
--  <https://docs.microsoft.com/en-us/windows-server/storage/storage-migration-service/overview>
+-  [Storage Migration Service overview](https://docs.microsoft.com/en-us/windows-server/storage/storage-migration-service/overview)
 
--  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-introduction>
+-  [Azure Files Introduction](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-introduction)
 
--  <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-planning\#storage-tiers>
+-  [Planning for an Azure Files deployment](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-planning\#storage-tiers)
 
--  [https://docs.citrix.com/en-us/profile-management/current-release/policies/descriptions-and-defaults.html](/en-us/profile-management/current-release/policies/descriptions-and-defaults.html)
+-  [Citrix Product Documentation - Profile Management policy descriptions and defaults](/en-us/profile-management/current-release/policies/descriptions-and-defaults.html)
 
--  <https://www.citrix.com/go/jmp/upm.html>
+-  [Citrix Product Documentation - Profile Management](https://www.citrix.com/go/jmp/upm.html)
 
--  [https://docs.citrix.com/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html)
+-  [Citrix Tech Zone - Set up Azure Files storage for User personalization layers and Citrix Profile Management](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html)
