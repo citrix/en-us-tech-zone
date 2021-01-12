@@ -63,20 +63,6 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Migration from Android Device Administrator to Android Enterprise with Citrix Endpoint Management](/en-us/tech-zone/build/deployment-guides/android-device-administrator-to-android-enterprise.html) - Learn how to migrate your Citrix Endpoint Management policies and apps step by step. Take your Endpoint Management from a legacy Android Device Administrator deployment to Android Enterprise by using a managed Google Play account.
 
-## Citrix Managed Desktops
-
-### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
-
-[Citrix Managed Desktops](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Managed Desktops offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
-
-### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)
-
-[Citrix Managed Desktops](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html) - Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Windows Virtual Desktop in Microsoft Azure.
-
-### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
-
-[Citrix Managed Desktops](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) - Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
-
 ## Citrix Networking
 
 ### [Learn - Diagrams and Posters](/en-us/tech-zone/learn/diagrams-posters.html)
@@ -192,6 +178,20 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [Citrix Service Provider Virtual Apps and Desktops service Reference Architecture with Azure Active Directory](/en-us/tech-zone/design/reference-architectures/csp-cvads-aad.html) - Citrix Virtual Apps and Desktops service implementation with Azure Active Directory Domain Services for CSPs Reference Architecture aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and implementation steps to use Azure AD Domain Services.
 
 [Citrix Service Provider Virtual Apps and Desktops service Reference Architecture](/en-us/tech-zone/design/reference-architectures/csp-cvads.html) - The CSP Reference Architecture, provides architectural guidance for Citrix Service Providers to utilize the Virtual Apps and Desktops Service, and Citrix Cloud technologies to offer services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base shared across multiple tenants and multiple geographies, using a single pane of glass.
+
+## Citrix Virtual Apps and Desktops Standard for Azure
+
+### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
+
+[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
+
+### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)
+
+[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html) - Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Windows Virtual Desktop in Microsoft Azure.
+
+### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
+
+[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) - Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
 
 ## Citrix Virtual Apps and Desktops
 
