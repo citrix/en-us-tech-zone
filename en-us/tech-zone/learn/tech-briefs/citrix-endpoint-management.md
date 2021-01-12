@@ -5,7 +5,7 @@ contributedBy: Jeroen J.V Lebon
 specialThanksTo: Citrix Endpoint Management Team
 description: Get a quick sneak peek on what Unified Endpoint Management is and work from here through all that Citrix Endpoint Management has to offer for your organisation.
 ---
-# Unified Endpoint Management
+# Citrix Endpoint Management
 
 ## About Citrix Endpoint Management
 
@@ -94,9 +94,6 @@ Company Owned, Business Only **(COBO)** is the business model where companies su
 
 ![Company Owned Business Only](/en-us/tech-zone/learn/media/tech-briefs_citrix-endpoint-management_unified-endpoint-management-business-ownership-models-cobo.png)
 
-##### **Note**
-
-To get started with Citrix Endpoint Management Service you must sign up or already have a Citrix Cloud account.
-You can sign up for a Citrix Cloud account by following the instructions here: [Sign up for Citrix Cloud](/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html).
+To get started with Citrix Endpoint Management Service you must sign up or already have a Citrix Cloud account. You can sign up for a Citrix Cloud account by following the instructions here: [Sign up for Citrix Cloud](/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html).
 
 Once, you have access to Citrix Cloud you can request access to a Citrix Endpoint Management trial by following the instructions here: [Request a Citrix Endpoint Management Demo](/en-us/citrix-endpoint-management/onboarding-and-resource-setup.html#for-new-citrix-customers)
