@@ -41,6 +41,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Learn - Tech Brief](/en-us/tech-zone/learn/tech-briefs.html)
 
+[Citrix Endpoint Management](/en-us/tech-zone/learn/tech-briefs/citrix-endpoint-management.html) -  Learn about Unified Endpoint Management and let employees work how, when and where they want with the power to manage every app, device and platform in one central location.
+
 [Mobile SSO](/en-us/tech-zone/learn/tech-briefs/mobile-sso.html) - Native mobile app single sign-on for iOS and Android SaaS applications.
 
 ### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)

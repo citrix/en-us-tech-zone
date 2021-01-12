@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Jeroen J.V Lebon
 specialThanksTo: Citrix Endpoint Management Team
-description: Get a quick sneak peek on what Unified Endpoint Management is and work from here through all that Citrix Endpoint Management has to offer for your organisation.
+description: Learn about Unified Endpoint Management and let employees work how, when and where they want with the power to manage every app, device and platform in one central location.
 ---
 # Citrix Endpoint Management
 
