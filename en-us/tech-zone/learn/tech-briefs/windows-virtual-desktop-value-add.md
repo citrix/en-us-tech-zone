@@ -104,7 +104,7 @@ The use of a delta disk gives an admin the flexibility to use the image for non-
 
 With CVAD Standard, Citrix has made the creation of a catalog (using MCS) very simple.
 
-![CMD - Catalog Creation](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_8-cmd-create-catalog.png)
+![CVAD Standard - Catalog Creation](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_8-cmd-create-catalog.png)
 
 Admins have options to choose the **type of catalog**, select the **Azure subscription** that the VMs are going to be created in. Next they choose the **network connectivity** back to the corporate network, the **region** the VMs are to be hosted in and whether an **Azure Hub** is to be used. For the machine, admins get to choose the **storage type**, the anticipated **workload profile**, and the **number of machines**. Then an admin selects the **master image** that is to be used to create the VMs and provides a name. Lastly the admin can set a **power schedule**, which will power on and power-off the VMs in the catalog using our Autoscale technology.
 

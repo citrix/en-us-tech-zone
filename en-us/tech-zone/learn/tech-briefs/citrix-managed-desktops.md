@@ -27,7 +27,7 @@ Users connect to their Workspace via their endpoint devices that have the corres
 
 The authentication flows from the user’s device (where the credentials are provided) to the Gateway Service, which validates the same against the Azure Active Directory in the Customer’s Azure subscription. (The identity might also be based on an on-premises Active Directory. Usually the admin would sync the on-prem AD with the Azure AD using Azure AD Connect.)
 
-Once the user authenticates the Gateway service redirects the user to the appropriate Workspace. If the user then selects a resource from a Citrix Managed Desktop catalog, the user’s request is routed via the Managed Desktops service and the cloud connector to the appropriate VM. The user is then single signed-on to the VM in Azure and the user is logged in to the session. The session is redirected to the user using the HDX protocol.
+Once the user authenticates the Gateway service redirects the user to the appropriate Workspace. If the user then selects a resource from a CVAD Standard catalog, the user’s request is routed via the Managed Desktops service and the cloud connector to the appropriate VM. The user is then single signed-on to the VM in Azure and the user is logged in to the session. The session is redirected to the user using the HDX protocol.
 
 ## Deployment Scenarios
 

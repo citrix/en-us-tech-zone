@@ -213,7 +213,7 @@ In most instances, an organization synchronizes the on-premises Active Directory
 
 ### Data Center Connectivity
 
-To be effective, users need to access files and back end resources from their Citrix Managed Desktop. Unless these items are transitioned to Azure, connectivity between Azure and the data center must be established.
+To be effective, users need to access files and back end resources from their CVAD Standard. Unless these items are transitioned to Azure, connectivity between Azure and the data center must be established.
 
 Using Citrix SD-WAN, organizations create a secure tunnel between Azure and the data center. SD-WAN understands the data traversing the tunnel and can properly optimize the traffic to improve application response time and user experience.
 
