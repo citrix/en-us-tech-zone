@@ -14,8 +14,7 @@ Local Host Cache (LHC), in the context of the Citrix Virtual Apps and Desktops (
 Local Host Cache is a combination of several services and components which come together to take over the brokering responsibilities until the connection to the cloud broker can be reestablished.
 
 [![Citrix Virtual Apps and Desktops - Normal Operations](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_citrix-cloud-conceptual-lowres.png)](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_citrix-cloud-conceptual-originalres.png)
-
-*Figure 1: Conceptual representation of CVAD service showcasing components relevant for HA mode*
+> *Figure 1: Conceptual representation of CVAD service showcasing components relevant for HA mode*
 
 ## Cloud Connector Components
 
@@ -30,8 +29,7 @@ There are several components within the Citrix Cloud Connector which are require
     -  It determines when to switch a resource location between HA mode and normal operation
 
 [![Citrix Virtual Apps and Desktops - Normal Operations](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_citrix-cloud-regular-lowres.png)](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_citrix-cloud-regular-originalres.png)
-
-*Figure 2: Connector components and services that play a part with HA mode*
+> *Figure 2: Connector components and services that play a part with HA mode*
 
 Proper sizing of the cloud connector machines is an important step to ensure that appropriate resources are available for the services when in High Availability mode. Review [scale and size considerations](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/local-host-cache-size-and-scale.html) article to learn more.
 
@@ -46,8 +44,7 @@ Citrix Cloud Connectors are capable of entering or exiting HA mode automatically
 During HA mode, the HA Service takes over several important brokering functions, it enumerates resources, brokers session launches, and accepts VDA registrations. In addition, the HA Service acts as a STA provider. In a resource location with multiple Cloud Connectors, the HA Services communicate with one another as part of an [election process](#multiple-connectors-in-a-resource-location). This election process determines which instance of the HA Service takes over if HA mode is triggered.
 
 [![Citrix Virtual Apps and Desktops - High Availability Mode](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_citrix-cloud-ha-lowres.png)](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_citrix-cloud-ha-originalres.png)
-
-*Fig: Resource Location operating in HA mode*
+> *Figure 3: Resource Location operating in HA mode*
 
 ## Entering/Exiting High Availability Mode
 
@@ -58,8 +55,7 @@ There are several states during the entire cycle of entering and exiting HA mode
 In case some of the components fail to report healthy, the connector transitions to the **Pending HA** state. When in this state, a comprehensive health check is initiated to determine the next course of action. The connectors interact with other connectors in the resource location to determine their health status. The decision to move from Pending HA to Initial HA is based on the health status of all the connectors in a given resource location. If the health checks are successful, the connectors transition back to the Working Normally state. Alternatively if the health checks continue to fail, the connectors transition to the Initial HA state.
 
 [![LHC State Diagram](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_ha-state-diagram-lowres.png)](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_ha-state-diagram-originalres.png)
-
-*Fig: Connector states for entering/existing HA mode*
+> *Figure 4: Connector states for entering/existing HA mode*
 
 During the **Initial HA** state, the High Availability Service on the connector takes over brokering responsibilities. All VDAs in the current resource location that were registered with the cloud broker will register with the HA Service / secondary broker on the connector. At the end of Initial HA, health checks are initiated. If all health checks succeed, the state transitions to Pending Recovery, otherwise the state transitions to Extended HA.
 
@@ -97,8 +93,7 @@ The event log provides information about elections. For more information on the 
 The on-premises StoreFront sends a heartbeat message to all the Cloud Connectors configured in its store every 60 seconds by default. Only healthy Cloud Connectors (that respond successfully to the heartbeat) are considered for load balancing app enumeration and launch requests. The same heartbeat request to the Cloud Connectors also activates the connector to participate in the HA mode algorithm described in the preceding sections. To ensure that all resource locations are enabled to perform in HA mode, it is critical to ensure that the on-premises StoreFront has all the Cloud Connectors identified as Delivery Controllers in the StoreFront configuration. Failure to have appropriate StoreFront configurations might result in loss of capacity when the site enters HA mode.
 
 [![Citrix Virtual Apps and Desktops - Normal Operations](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_lhc-multiple-resource-locations-lowres.png)](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_lhc-multiple-resource-locations-originalres.png)
-
-*Fig: Deployment with multiple Resource Locations where one RL is not HA ready due to missing configurations*
+> *Figure 5: Deployment with multiple Resource Locations where one RL is not HA ready due to missing configurations*
 
 ### HA mode for resource locations publishing the same apps/desktops
 
@@ -133,8 +128,7 @@ For architectures involving Citrix ADC with resource locations publishing differ
 -  Set up the ADC load balancer to monitor the Cloud Connectors in each resource location via the CITRIX-XD-DDC monitor.
 
 [![Citrix Virtual Apps and Desktops - Normal Operations](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_lhc-adc-lowres.png)](/en-us/tech-zone/learn/media/tech-briefs_local-host-cache-ha-cvads_lhc-adc-originalres.png)
-
-*Fig: Deployment with multiple Resource Locations and Citrix ADC*
+> *Figure 6: Deployment with multiple Resource Locations and Citrix ADC*
 
 ## Pooled Desktop VDA Workload Considerations
 
