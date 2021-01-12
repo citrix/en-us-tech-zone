@@ -17,11 +17,11 @@ Let us first look at the WVD architecture:
 
 It consists of the core level compute, networking, and storage that makes up the physical infrastructure that the Azure cloud runs on (managed by Microsoft). Then there are the virtual machines that run on the cloud hardware – Windows single session and multi-session desktops / server OS machines and remote apps. And the shared storage exposed to the machines like Azure Files and Azure AD and related services. The customer manages their Azure subscription. And finally, the services that run to manage and provide access to the desktops and applications.
 
-For organizations to utilize the value add that Citrix provides, the bottom two layers of the WVD platform are retained. Citrix virtualization cloud services including Citrix Virtual Apps and Desktops (VAD) service or Citrix Managed Desktops service replace the top layer.
+For organizations to utilize the value add that Citrix provides, the bottom two layers of the WVD platform are retained. Citrix virtualization cloud services including Citrix Virtual Apps and Desktops (CVAD) service or Citrix Virtual Apps and Desktops Standard for Azure (CVAD Standard) service replace the top layer.
 
 [![Windows Virtual Desktop Citrix Value Add architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.gif)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.gif)
 
-The on-premises data center resources are now included in the deployment and Remote PC Access enables connectivity to physical machines from the same environment / leveraging existing security. Citrix VAD service unifies external access and identity management.
+The on-premises data center resources are now included in the deployment and Remote PC Access enables connectivity to physical machines from the same environment / leveraging existing security. CVAD service unifies external access and identity management.
 
 The Citrix value add is tabulated in the following table:
 
@@ -54,11 +54,11 @@ Effective management of Windows Virtual Desktop resources is important to be abl
 
 ### Hybrid Cloud management
 
-Any organization that is not creating their environment from scratch in the cloud, is going to have a transition period where existing resources reside in the on-premises data center, while new resources are brought up in the cloud. Additionally, some on-premises resources may never move to the cloud due to security / compliance / business / data affinity reasons. This is where Citrix VAD service with the ability to seamlessly manage any deployment, whether it be the on-premises data center or the Azure based WVD resources. And management of your entire environment from the same Citrix VAD console, makes the life of the administrator so much easier.
+Any organization that is not creating their environment from scratch in the cloud, is going to have a transition period where existing resources reside in the on-premises data center, while new resources are brought up in the cloud. Additionally, some on-premises resources may never move to the cloud due to security / compliance / business / data affinity reasons. This is where CVAD service with the ability to seamlessly manage any deployment, whether it be the on-premises data center or the Azure based WVD resources. And management of your entire environment from the same CVAD console, makes the life of the administrator so much easier.
 
-Citrix VAD service also supports a multi-cloud deployment – allowing admins to manage their resources in other clouds as well. The ability to host resources in different clouds is often used for geographic, performance, or reliability benefits. The console is functional and very easy to use. Everything is within reach without overwhelming administrators or help desk staff with choices.
+CVAD service also supports a multi-cloud deployment – allowing admins to manage their resources in other clouds as well. The ability to host resources in different clouds is often used for geographic, performance, or reliability benefits. The console is functional and very easy to use. Everything is within reach without overwhelming administrators or help desk staff with choices.
 
-Even simpler - The Citrix Managed Desktops console, which uses Citrix VAD service technology, is a DaaS offering to allow the admin to deploy Azure based workloads without being an Azure expert. It includes searchability for users and groups when assigning workloads.
+Even simpler - The CVAD Standard console, which uses CVAD service technology, is a DaaS offering to allow the admin to deploy Azure based workloads without being an Azure expert. It includes searchability for users and groups when assigning workloads.
 
 Let’s dig right into it with the first step needed to be performed in the process of getting a cloud-based Desktop environment running.
 
@@ -102,13 +102,13 @@ Taking a snapshot of the golden image allows an admin to easily test future chan
 
 The use of a delta disk gives an admin the flexibility to use the image for non-persistent desktops as the delta disk can be discarded easily to revert the virtual machine back to its original state after the end of the session. This also helps with resetting desktops to keep the disk from increasing to a very large size.
 
-With Citrix Managed Desktops, Citrix has made the creation of a catalog (using MCS) very simple.
+With CVAD Standard, Citrix has made the creation of a catalog (using MCS) very simple.
 
-![CMD - Catalog Creation](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_8-cmd-create-catalog.png)
+![CVAD Standard - Catalog Creation](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_8-cmd-create-catalog.png)
 
 Admins have options to choose the **type of catalog**, select the **Azure subscription** that the VMs are going to be created in. Next they choose the **network connectivity** back to the corporate network, the **region** the VMs are to be hosted in and whether an **Azure Hub** is to be used. For the machine, admins get to choose the **storage type**, the anticipated **workload profile**, and the **number of machines**. Then an admin selects the **master image** that is to be used to create the VMs and provides a name. Lastly the admin can set a **power schedule**, which will power on and power-off the VMs in the catalog using our Autoscale technology.
 
-Going forward the day to day management of these machines is simplified with the Citrix VAD service console, which not only gives admins a feature rich brokering console to manage the resources, but also apply granular policy controls.
+Going forward the day to day management of these machines is simplified with the CVAD service console, which not only gives admins a feature rich brokering console to manage the resources, but also apply granular policy controls.
 
 ### Autoscale
 
@@ -122,7 +122,7 @@ To learn more about Autoscale read the [Autoscale Tech Brief](/en-us/tech-zone/l
 
 ### Azure On-Demand Provisioning
 
-With Autoscale the machines can be shut down to reduce compute costs. But the machine still exists in Azure and therefore the organization would be charged for the all the static costs including storage costs. Another feature that is available in only the Citrix VAD service is the Azure On-Demand Provisioning. This feature allows MCS to create the virtual machine only when a power on command is given and deletes the virtual machine when it is shut down. Resulting in no components of a machine being present when the machine is shut down, including the storage disks. Requires the use of Azure Managed disks.
+With Autoscale the machines can be shut down to reduce compute costs. But the machine still exists in Azure and therefore the organization would be charged for the all the static costs including storage costs. Another feature that is available in only the CVAD service is the Azure On-Demand Provisioning. This feature allows MCS to create the virtual machine only when a power on command is given and deletes the virtual machine when it is shut down. Resulting in no components of a machine being present when the machine is shut down, including the storage disks. Requires the use of Azure Managed disks.
 
 ### MCS I/O optimization
 
@@ -198,7 +198,7 @@ The following is a list of some of the great features that Citrix brings to bear
     *  Monitor session responsiveness and latency
     *  Multi-product user behavior scoring to help admins evaluate security risks
 
-Read more about the monitoring features available in the Citrix VAD service [here](/en-us/citrix-virtual-apps-desktops-service/monitor.html), and in the Citrix Managed Desktops monitor [here](/en-us/citrix-managed-desktops/monitor.html)
+Read more about the monitoring features available in the CVAD service [here](/en-us/citrix-virtual-apps-desktops-service/monitor.html), and in the CVAD Standard monitor [here](/en-us/citrix-managed-desktops/monitor.html)
 
 Learn about the analytics capabilities, visit the [Analytics Tech Brief](/en-us/tech-zone/learn/tech-briefs/analytics.html), or visit the [website](https://www.citrix.com/analytics/)
 
@@ -441,7 +441,7 @@ Learn more about how to set up the same [here](/en-us/tech-zone/build/deployment
 
 Citrix Gateway is the preferred app delivery solution for reverse proxy to Citrix resources, providing VPN-less access to resources for end users.
 
-Citrix Gateway Service has dozens of Points of Presence (POP) globally, connecting through the nearest Citrix Gateway POP improves performance. With Citrix VAD service and Citrix Gateway service enterprises now may provide remote access to apps and desktops without additional VPN requirements along with following benefits:
+Citrix Gateway Service has dozens of Points of Presence (POP) globally, connecting through the nearest Citrix Gateway POP improves performance. With CVAD service and Citrix Gateway service enterprises now may provide remote access to apps and desktops without additional VPN requirements along with following benefits:
 
 *  Multiple sites are implemented and maintained globally by Citrix
 *  Public IP addresses are implemented and maintained by Citrix
@@ -459,7 +459,7 @@ Citrix Analytics service using all these services as data sources provides compr
 
 ### SD-WAN
 
-Citrix SD-WAN optimizes all the network connections needed by machines running in WVD. Working in concert with the HDX technologies, Citrix SD-WAN provides quality-of-service and connection reliability for ICA and out-of-band Citrix Virtual Apps and Desktops or Citrix Managed Desktops traffic. It also helps bridge the WVD deployment in Azure with the on-premises data center and other office locations.
+Citrix SD-WAN optimizes all the network connections needed by machines running in WVD. Working in concert with the HDX technologies, Citrix SD-WAN provides quality-of-service and connection reliability for ICA and out-of-band Citrix Virtual Apps and Desktops or Citrix Virtual Apps and Desktops Standard for Azure traffic. It also helps bridge the WVD deployment in Azure with the on-premises data center and other office locations.
 
 ![SD-WAN Architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_29-sd-wan-architecture.png)
 
@@ -481,7 +481,7 @@ Citrix SD-WAN provides optimized connectivity including:
 
 The breakout of internet traffic directly from the end point reduces the latency and ensure faster load times. Optimization of Unified Communications traffic including Microsoft Teams, make the conference audio and video the best-in-class. Citrix SD-WAN helps reduce the amount of data that needs to be sent to the WVD resources, consequently reducing the ingress and egress of data to your Azure subscription.
 
-Integrations with Citrix Managed Desktops can provision the SD-WAN instances in the Azure Tenant, by the using the Citrix SD-WAN Orchestrator service.
+Integrations with Citrix Virtual Apps and Desktops Standard for Azure can provision the SD-WAN instances in the Azure Tenant, by the using the Citrix SD-WAN Orchestrator service.
 
 ## Experience - Citrix Workspace
 
@@ -508,7 +508,7 @@ The following are some features of note to bolster the security of your WVD depl
 
 Citrix extends the Azure multi-factor authentication capabilities with support for the following:
 
-1.  MFA for Citrix VAD service Administrators (TOTP)
+1.  MFA for CVAD service Administrators (TOTP)
 1.  Citrix Gateway Service Active Directory + Token (Citrix SSO, MS Authenticator, Google Authenticator)
 1.  Citrix Gateway Service with AAD MFA
 1.  Citrix Gateway Service with Okta
@@ -530,7 +530,7 @@ Learn more about session watermarking [here](/en-us/citrix-virtual-apps-desktops
 
 ### Session Recording
 
-Citrix provides the ability to record all or part of a desktop or app session. The recording can be intelligently stopped when sensitive information is being displayed. The admin is also able to initiate recording of a session from the **Manage** tab in the Citrix VAD service console to be able to help troubleshoot issues being experienced by users.
+Citrix provides the ability to record all or part of a desktop or app session. The recording can be intelligently stopped when sensitive information is being displayed. The admin is also able to initiate recording of a session from the **Manage** tab in the CVAD service console to be able to help troubleshoot issues being experienced by users.
 
 Session Recording provides flexible policies to trigger recordings of application and desktop sessions automatically. This enables regulatory compliance and an audit trail of what was done during a session. Playback can have events inserted in them to allow for easy seeking of the recording.
 
@@ -562,4 +562,4 @@ Call to action:
 
 For a trial of Citrix Virtual Apps and Desktops service click [here](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/inquiry/).
 
-For a trial of Citrix Managed Desktops service click [here](https://www.citrix.com/products/citrix-managed-desktops/form/inquiry/).
+For a trial of Citrix Virtual Apps and Desktops Standard for Azure service click [here](https://www.citrix.com/products/citrix-managed-desktops/form/inquiry/).

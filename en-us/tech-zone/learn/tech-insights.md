@@ -29,9 +29,9 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Mobile SSO](/en-us/tech-zone/learn/tech-insights/mobile-sso.html) - Single sign-on to native mobile applications via Citrix Gateway.
 
-## Citrix Managed Desktops
+## Citrix Virtual Apps and Desktops Standard for Azure
 
-[Citrix Managed Desktops](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html) - Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Windows Virtual Desktop in Microsoft Azure.
+[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html) - Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Windows Virtual Desktop in Microsoft Azure.
 
 ## Citrix Networking
 
