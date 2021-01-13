@@ -145,6 +145,7 @@ Citrix Secure Workspace Access introduces additional security features on top of
 ![Secure Workspace Access](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_diag.png)
 
 Figure 11: Citrix Secure Workspace Access Overview
+
 Secure Workspace Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators. These include granular and contextual security policies, app protection policies for all apps, web browser isolation, and web filtering policies.
 
 For more information about Citrix Secure Workspace Access, see [Citrix Secure Workspace Access](/en-us/citrix-secure-workspace-access.html) in Citrix product documentation and [Citrix Secure Workspace Access Tech Brief](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html)
