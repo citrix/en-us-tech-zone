@@ -151,7 +151,7 @@ Below are the steps covered in this Guide
 [![Azure VM](/en-us/tech-zone/build/media/Win10-028.png)](/en-us/tech-zone/build/media/Win10-028.png)
 1. Add the **Domain credentials** to be used to perform the account operations, click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-029.png)](/en-us/tech-zone/build/media/Win10-029.png)
-1.   Verify the **Summary**, add a **Machine Catalog name** and **Machine Catalog description88, then click **Finish**
+1.   Verify the **Summary**, add a **Machine Catalog name** and **Machine Catalog description**, then click **Finish**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-030.png)](/en-us/tech-zone/build/media/Win10-030.png)
     
 >**Note:**
