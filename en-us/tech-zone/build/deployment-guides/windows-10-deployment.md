@@ -10,7 +10,7 @@ description: Learn how to install the Citrix VDA into a WIndows 10 platform & pr
 
 ## Overview
 
-This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Machines (VMs) via Machine Creation Services (MCS) in Citrix Virtual Apps & Desktops (CVAD) Service
+This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Machines (VMs) via Citrix Machine Creation Services (MCS) in Citrix Virtual Apps & Desktops (CVAD) Service
 
 Below are the steps covered in this Guide
 *  Install VDA
@@ -119,7 +119,7 @@ Below are the steps covered in this Guide
 >  
 >   **Hosting Connections**
 >
->   The available resources are based on the hosting connections set in studio. See the following article for information on creating [CVAD hosting connections](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
+>   The available resources are based on the hosting connections already added in Citrix Studio. See the following article for information on creating [CVAD hosting connections](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
 
 1. Log into Citrix Cloud
 [![Azure VM](/en-us/tech-zone/build/media/Win10--37.png)](/en-us/tech-zone/build/media/Win10--37.png)
@@ -167,11 +167,11 @@ Below are the steps covered in this Guide
 1. Select the **Machine Catalog** you just created (above)
 1. Choose the number of machines you created or want to add to the Delivery Group, click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-032.png)](/en-us/tech-zone/build/media/Win10-032.png)
-1.  Select the **Users** assignment method. (We are using Citrix Cloud for assignment in this scenario) Click **Next**
+1.  Select the **Users** assignment method (We are using Citrix Cloud for assignment in this scenario). Click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-033.png)](/en-us/tech-zone/build/media/Win10-033.png)
-1. If adding applications to be published separately add these here (We are only publishing a desktop in this scenario) Click **Next**
+1. If adding applications to be published separately add these here (We are only publishing a desktop in this scenario). Click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-034.png)](/en-us/tech-zone/build/media/Win10-034.png)
-1.  Provide the **Delivery Group name** and **Display name** click **Finish**
+1.  Provide the **Delivery Group name** and **Display name**, click **Finish**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-035.png)](/en-us/tech-zone/build/media/Win10-035.png)
 1.   Once created, view the machines & check their registration status
 [![Azure VM](/en-us/tech-zone/build/media/Win10-036.png)](/en-us/tech-zone/build/media/Win10-036.png)
