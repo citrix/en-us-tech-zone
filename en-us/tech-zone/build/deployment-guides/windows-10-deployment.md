@@ -124,6 +124,7 @@ Below are the steps covered in this Guide
 1. Log into Citrix Cloud
 [![Azure VM](/en-us/tech-zone/build/media/Win10--37.png)](/en-us/tech-zone/build/media/Win10--37.png)
 1. Select the **Virtual Apps & Desktops** tile
+[![Azure VM](/en-us/tech-zone/build/media/Win10-052.png)](/en-us/tech-zone/build/media/Win10-052.png)
 1. Select **Manage**, then **Web Studio**
 1. From within Web Studio, select **Machine Catalogs**, then **Create Machine Catalog**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-018.png)](/en-us/tech-zone/build/media/Win10-018.png)
@@ -179,8 +180,9 @@ Below are the steps covered in this Guide
 ## Assign Users to Desktop
 
 1. Login to Citrix Cloud & from the landing page select **View Library**
-[![Azure VM](/en-us/tech-zone/build/media/Win10--36.png)](/en-us/tech-zone/build/media/Win10--36.png)
+[![Azure VM](/en-us/tech-zone/build/media/Win10-053.png)](/en-us/tech-zone/build/media/Win10-053.png)
 1. Locate the new Windows 10 Desktop resource in the Library, select the **ellipsis** (3 dot menu item in the top right corner), and select **Manage Subscribers**
+[![Azure VM](/en-us/tech-zone/build/media/Win10-054.png)](/en-us/tech-zone/build/media/Win10-054.png)
 1. Add users or groups to assign desktop
 [![Azure VM](/en-us/tech-zone/build/media/Win10-045.png)](/en-us/tech-zone/build/media/Win10-045.png)
 
@@ -196,10 +198,11 @@ Once the user has launched the desktop resource & logged in they will be able to
 ## Citrix Workspace App
 
 1.  From the start menu launch **Citrix Workspace**
+[![Azure VM](/en-us/tech-zone/build/media/Win10-057.png)](/en-us/tech-zone/build/media/Win10-057.png)
 1.  Add the URL to your Citrix environment
-[![Citrix Workspace](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-1.png)
+[![Azure VM](/en-us/tech-zone/build/media/Win10-058.png)](/en-us/tech-zone/build/media/Win10-058.png)
 1.  Enter your **User name** & **Password**
-[![Citrix Workspace](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Workspace-2.png)
+[![Azure VM](/en-us/tech-zone/build/media/Win10-059.png)](/en-us/tech-zone/build/media/Win10-059.png)
 1.  Once authenticated you will see any assigned resources in the workspace or populated in the start menu
 
 ## Citrix Files
@@ -209,10 +212,10 @@ Once the user has launched the desktop resource & logged in they will be able to
 >  This assumes the option to install Citrix Files was selected when installing the VDA above.
 >  If not the latest version can be downloaded from [Citrix Files for Windows](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-windows.html)
   
-1.  Check Citrix Files status from the icon in the system tray. If offline, right click & select login
-[![Citrix Files](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Files-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Files-1.png)
+1.  Check Citrix Files status from the icon in the system tray. If offline, right click the icon & select login
+[![Azure VM](/en-us/tech-zone/build/media/Win10-049.png)](/en-us/tech-zone/build/media/Win10-049.png)
 1.  Open Windows Explorer & check Citrix Files S: drive is available
-[![Citrix Files](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Files-3.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Files-3.png)
+[![Azure VM](/en-us/tech-zone/build/media/Win10-060.png)](/en-us/tech-zone/build/media/Win10-060.png)
 
 ## Citrix Files For Outlook
 >  This assumes the option to install Citrix Files for Outlook was selected when installing the VDA above.
