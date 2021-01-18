@@ -182,7 +182,7 @@ Below are the steps covered in this Guide
 1. Login to Citrix Cloud & from the landing page select **View Library**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-053.png)](/en-us/tech-zone/build/media/Win10-053.png)
 1. Locate the new Windows 10 Desktop resource in the Library, select the **ellipsis** (3 dot menu item in the top right corner), and select **Manage Subscribers**
-[![Azure VM](/en-us/tech-zone/build/media/Win10-106.png)](/en-us/tech-zone/build/media/Win10-106.png)
+[![Azure VM](/en-us/tech-zone/build/media/Win10-110.png)](/en-us/tech-zone/build/media/Win10-110.png)
 1. Add users or groups to assign desktop
 [![Azure VM](/en-us/tech-zone/build/media/Win10-045.png)](/en-us/tech-zone/build/media/Win10-045.png)
 
@@ -202,7 +202,7 @@ Once the user has launched the desktop resource & logged in they will be able to
 1.  Add the URL to your Citrix environment
 [![Azure VM](/en-us/tech-zone/build/media/Win10-107.png)](/en-us/tech-zone/build/media/Win10-107.png)
 1.  Enter your **User name** & **Password**
-[![Azure VM](/en-us/tech-zone/build/media/Win10-108.png)](/en-us/tech-zone/build/media/Win10-108.png)
+[![Azure VM](/en-us/tech-zone/build/media/Win10-111.png)](/en-us/tech-zone/build/media/Win10-111.png)
 1.  Once authenticated you will see any assigned resources in the workspace or populated in the start menu
 
 ## Citrix Files
