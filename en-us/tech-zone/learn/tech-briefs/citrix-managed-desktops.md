@@ -15,13 +15,13 @@ For companies undertaking a merger or acquisition, supporting the on-boarding of
 
 As it is a Desktop-as-a-Service that can be subscribed to on a monthly subscription. Citrix provides a single bill for the service and the Azure resource consumption, if the organization chooses to use Citrix managed Azure for the workloads.
 
-With this option, organizations in the U.S., the E.U., and Asia/Pacific can deploy the VMs in four Azure locations globally: U.S. East, U.S. West, West Europe, and Australia East (and more to come soon). The workload locations combined with [11 global points of presence of Citrix Gateway service in Azure](https://www.citrix.com/about/trust-center/privacy-compliance.html) helps optimize the experience of HDX delivery. Once the user reaches the Gateway PoP, then the traffic is redirected to the closest workload location over the superfast Azure backbone.
+With this option, organizations in the U.S., the E.U., and Asia/Pacific can deploy the VMs in four Azure locations globally: U.S. East, U.S. West, West Europe, and Australia East (and more to come soon). The workload locations combined with [11 global points of presence of Citrix Gateway service in Azure](https://www.citrix.com/about/trust-center/privacy-compliance.html) helps optimize the experience of HDX delivery. Once the user reaches the Gateway PoP, then the traffic is redirected to the closest workload location over the super fast Azure backbone.
 
 Citrix is now enabling customers and partners with the capability to use their own Azure subscription along with Citrix Virtual Apps and Desktops Standard for Azure. Now customers and partners alike have the flexibility to use any Azure region or VM type in addition to the option of applying reserved instance pricing from Microsoft.
 
 The standard deployment model and authentication flow would be as follows:
 
-[![Citrix_Managed_Desktops_Authentication_Flow](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_1-authentication-flow-diagram.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_1-authentication-flow-diagram.png)
+[![Citrix Virtual Apps and Desktops Standard for Azure service Authentication Flow](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_1-authentication-flow-diagram.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_1-authentication-flow-diagram-large.png)
 
 Users connect to their Workspace via their endpoint devices that have the corresponding Citrix Workspace app installed on them. Or use the Citrix Workspace app for HTML5 from a browser, by logging into the Workspace URL.
 
@@ -50,19 +50,19 @@ In a non-domain joined workload deployment model, there are 3 options for user a
 
 In this scenario, the users’ accounts reside in the Azure Active Directory subscription that Citrix created for the particular deployment. The user accounts are administered by the admins in the organization via URL (that gives access to Azure AD). The URL is available in the **Identity and Access Management** section of the Citrix Cloud console. Users’ Azure account user names (managed by the organization) are used to log in to the Workspace. This deployment model helps in performing quick PoCs, where the entire environment can be stood up quickly. Used to showcase the ease with which an admin can set up the solution.
 
-![Deployment_Scenario_1](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_2-deployment-scenario-1.png)
+[![Deployment Scenario 1](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_2-deployment-scenario-1.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_2-deployment-scenario-1-large.png)
 
 ### 2) User accounts in Customer’s Azure Active Directory
 
-In this scenario, the user accounts are in the Customer’s Azure AD subscription. This scenario is common in Banking, Financial Services, and Insurance sector and highly regulated industries. In this sector, the customer wants to give access to a contractor or a temporary third party user without utilizing the organization’s corporate domain, helping to create a barrier between the contractor environment and employee environment. Multifactor authentication is enabled by using Azure MFA. The administration of the user’s accounts are done by the organization’s Azure AD admins.
+In this scenario, the user accounts are in the Customer’s Azure AD subscription. This scenario is common in Banking, Financial Services, and Insurance sector and highly regulated industries. In this sector, the customer wants to give access to a contractor or a temporary third party user without utilizing the organization’s corporate domain, helping to create a barrier between the contractor environment and employee environment. Multi-factor authentication is enabled by using Azure MFA. The administration of the user’s accounts are done by the organization’s Azure AD admins.
 
-![Deployment_Scenario_2](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_3-deployment-scenario-2.png)
+[![Deployment Scenario 2](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_3-deployment-scenario-2.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_3-deployment-scenario-2-large.png)
 
 ### 3) User accounts in organization’s on-premises Active Directory
 
 In this scenario, the users’ accounts are in the Customer’s Active Directory within their on-premises data center. To establish connectivity between the service and the organization’s AD, a Windows 2012 R2/2016 server virtual machine (deployed in an HA pair) is installed in the customer’s data center, called Citrix Cloud Connector. Software that allows for outbound TCP 443 based connection to Citrix Virtual Apps and Desktops Standard for Azure service is installed on it. In this scenario, the users are not able to access any profile data and file servers in the company’s on-premises data center. Native two-factor authentication is available using Time-based One Time Password.
 
-![Deployment_Scenario_3](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_4-deployment-scenario-3.png)
+[![Deployment Scenario 3](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_4-deployment-scenario-3.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_4-deployment-scenario-3-large.png)
 
 ## Domain joined workloads
 
@@ -72,29 +72,29 @@ In this category the machines (that is, Windows machines running in Azure) are j
 
 Here the users’ accounts are in the organization’s Azure Active Directory and the machines are joined to the Azure Active Directory Domain Services (AADDS) within the customer’s Azure subscription. For the machines to be able to connect to the AADDS, the customer needs to set up Azure VNet Peering from the network in Citrix Virtual Apps and Desktops Standard's Azure subscription to their own Azure network in their subscription. Admins can manage the user and machine accounts via the organization’s Azure Active Directory.
 
-![Deployment_Scenario_4](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_5-deployment-scenario-4.png)
+[![Deployment Scenario 4](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_5-deployment-scenario-4.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_5-deployment-scenario-4-large.png)
 
 ### 2) Domain Joined to organization’s on-premises Active Directory via Azure Active Directory Domain Services and users’ accounts in organization’s on-premises Active Directory
 
 Here the users’ accounts are in the organization’s on-premises Active Directory. The Active directory is synced with the Azure AD in the customer’s Azure subscription using Azure AD Connect. This setup allows the user’s identity to be authenticated from the synced Azure AD. For the machines to be able to connect to the on-premises AD, the customer needs to set up Azure VNet Peering from the network in Citrix Virtual Apps and Desktops Standard's Azure subscription to their own Azure network in their subscription. Another connection to the data center for access to profile and app data and file servers is needed. The second connection requires SDWAN or a site-to-site VPN or an Express Route. We recommend the use of SDWAN as it is a more reliable and cost effective solution.
 
-![Deployment_Scenario_5](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_6-deployment-scenario-5.png)
+[![Deployment Scenario 5](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_6-deployment-scenario-5.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_6-deployment-scenario-5-large.png)
 
 ### 3) Domain Joined to and users’ accounts in organization’s on-premises Active Directory
 
 Here both the machines’ and users’ accounts are in the organization’s on-premises Active Directory. The Citrix Virtual Apps and Desktops Standard's Azure subscription (SD-WAN virtual appliance installed) and the customer’s on-premises (SD-WAN branch appliance installed) locations are connected to each other using SD-WAN. These appliances are managed by the customer using the SD-WAN Orchestrator in Citrix Cloud. This deployment is the simplest (as there is no need for syncing the on-prem Active Directory with the customer’s Azure AD) and utilizes the optimizations built into SD-WAN to help ensure that the user gets the best experience possible.
 
-![Deployment_Scenario_6](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_6-deployment-scenario-6.png)
+[![Deployment Scenario 6](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_7-deployment-scenario-6.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_7-deployment-scenario-6-large.png)
 
 Now that we have seen the various deployment options, let’s look at the other main concepts.
 
 ## Image Management
 
-Machine Creation Services (MCS) is used to provision the workload VMs in the console. MCS configures, starts, stops, and deletes virtual machines (VMs). MCS uses copies of the master image, called linked clones, to provision virtual desktops quickly. These clones can be updated easily by updating the image and then using that image as the master for the catalog. At the time of writing this brief, master images available are for Win 10 Multi-session, Win 10, and Windows Server 2012 R2 and 2016.
+Machine Creation Services (MCS) is used to provision the workload VMs in the console. MCS configures, starts, stops, and deletes virtual machines (VMs). MCS uses copies of the master image, called linked clones, to provision virtual desktops quickly. These clones can be updated easily by updating the image and then using that image as the master for the catalog. At the time of writing this brief, master images available are for Win 10 multi-session, Win 10, and Windows Server 2012 R2 and 2016.
 
 1)  Windows 10 and Windows 7 ESU are the standard single session desktop operating systems. They are used to give access to an entire Windows desktop to a user. The compute resources may or may not be fully consumed by the single user.
 
-2)  The Windows 10 multi-session is new OS made available in Azure that allows more than one user to log in to a Windows 10 machine. This OS helps with reducing the number of machines that must be brought up in Azure to serve the same set of users. This OS also helps with fully utilizing the compute resources of the machines that are deployed. This type of machine does not require RDS CALs for allowing multiuser access.
+2)  The Windows 10 multi-session is new OS made available in Azure that allows more than one user to log in to a Windows 10 machine. This OS helps with reducing the number of machines that must be brought up in Azure to serve the same set of users. This OS also helps with fully utilizing the compute resources of the machines that are deployed. This type of machine does not require RDS CALs for allowing multi-user access.
 
 3)  The Windows Server 2008 R2 / 2012 R2 / 2016 / 2019 are server operating systems that allow multiple users to connect to a single machine. One of these OSs can be used to serve applications to users or provide access to desktop sessions (which can be skinned to look like desktop operating system sessions). These OSs are a cheaper option to deliver desktops than option 1.
 Note: Each user connecting to this machine requires an RDS CAL or RDS SAL.
