@@ -3,8 +3,8 @@ docs_list_title: Citrix Tech Zone
 docs:
 
 - title: Home
-  url: /en-us/tech-zone/
-- title: The Click Down Podcast
+  url: /en-us/tech-zone
+- title: The Click-Down Podcast
   url: https://www.citrix.com/fieldwork/flexible-work/virtual-series.html
 - title: Tech Zone Live
   url: /en-us/tech-zone/tech-zone-live.html
@@ -33,6 +33,35 @@ docs:
       url: /en-us/tech-zone/build/deployment-guides.html
     - title: Tech Papers
       url: /en-us/tech-zone/build/tech-papers.html
+- title: By Product
+  url: /en-us/tech-zone
+  subfolderlist:
+    - title: Citrix Analytics
+      url: /en-us/tech-zone#citrix-analytics
+    - title: Citrix Content Collaboration
+      url: /en-us/tech-zone#citrix-content-collaboration
+    - title: Citrix Endpoint Management
+      url: /en-us/tech-zone#citrix-endpoint-management
+    - title: Citrix Networking
+      url: /en-us/tech-zone#citrix-networking
+    - title: Citrix Secure Workspace Access
+      url: /en-us/tech-zone#citrix-secure-workspace-access
+    - title: Citrix Service Providers
+      url: /en-us/tech-zone#citrix-service-providers
+    - title: Citrix Virtual Apps and Desktops Standard for Azure
+      url: /en-us/tech-zone#citrix-virtual-apps-and-desktops-standard-for-azure
+    - title: Citrix Virtual Apps and Desktops
+      url: /en-us/tech-zone#citrix-virtual-apps-and-desktops
+    - title: Citrix Workspace
+      url: /en-us/tech-zone#citrix-workspace
+    - title: Google Cloud Platform
+      url: /en-us/tech-zone#google-cloud-platform
+    - title: Other
+      url: /en-us/tech-zone#other
+    - title: Security
+      url: /en-us/tech-zone#security
+    - title: Third Party Content
+      url: /en-us/tech-zone#third-party-content
 - title: Citrix Blogs
   url: https://www.citrix.com/blogs/
 - title: Citrix User Groups
