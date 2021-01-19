@@ -40,7 +40,7 @@ Worldwide Co. defined a list of success criteria that formed the basis for the o
 
 Based on their requirements above, Worldwide Co. created the following architecture. This architecture will not only meet all of the above requirements, but it will give Worldwide Co. the foundation they need to expand to other use cases as they are identified in the future.
 
-[![Conceptual Architecture](/en-us/tech-zone/learn/media/Reference-architectures_virtual-apps-and-desktops-service_image1.png)](/en-us/tech-zone/learn/media/Reference-architectures_virtual-apps-and-desktops-service_image1.png)
+[![Conceptual Architecture](/en-us/tech-zone/learn/media/reference-architectures_virtual-apps-and-desktops-service_image1.png)](/en-us/tech-zone/learn/media/reference-architectures_virtual-apps-and-desktops-service_image1.png)
 
 The Citrix Virtual Apps and Desktops architecture is divided up into layers. This framework provides a foundation to understand the technical architecture for the most common virtual desktop/application deployment scenarios. All layers flow together to create a complete, end-to-end solution for an organization.
 
@@ -106,11 +106,11 @@ Users need access to their resources, whether those resources are desktops or ap
 -  **Minimize Hardware costs:**
     -  [Remote PC Access](/en-us/tech-zone/learn/tech-insights/remote-pc-access.html): Remote PC Access allows users to access their office-based, physical PCs.
 
-    [![Remote PC Access](/en-us/tech-zone/learn/media/Reference-architectures_virtual-apps-and-desktops-service_image2.png)](/en-us/tech-zone/learn/media/reference-architectures_virtual-apps-and-desktops-service_image2.png)
+    [![Remote PC Access](/en-us/tech-zone/learn/media/reference-architectures_virtual-apps-and-desktops-service_image2.png)](/en-us/tech-zone/learn/media/reference-architectures_virtual-apps-and-desktops-service_image2.png)
 
     Users access through their own personal device and access through Workspace App. After authentication, users would have access to their physical windows desktops. Worldwide Co. followed the best practices found here (/en-us/tech-zone/design/design-decisions/remote-pc-access.html) for their Remote PC Access VDAs.
 -  **Minimize Data Center Footprint:** Worldwide Co. has chosen Azure as their other resource location. This allows them to quickly spin up new resources as needed without having to add new infrastructure. It gives them the flexibility to scale quickly and easily.
-[![Azure](/en-us/tech-zone/learn/media/Reference-architectures_virtual-apps-and-desktops-service_image3.png)](/en-us/tech-zone/learn/media/reference-architectures_virtual-apps-and-desktops-service_image3.png)
+[![Azure](/en-us/tech-zone/learn/media/reference-architectures_virtual-apps-and-desktops-service_image3.png)](/en-us/tech-zone/learn/media/reference-architectures_virtual-apps-and-desktops-service_image3.png)
 Worldwide Co. used the following [Design Decision guide](/en-us/tech-zone/design/design-decisions/azure-instance-scalability.html) when considering which instance series to deploy. Ultimately, they have chosen a D13_v2 instance with standard HDD disks and a 2GB MCSIO cache with a Windows 10 multisession OS. Worldwide Co. has chosen to have these be domain joined to their on-premises Active Directory via Azure Active Directory Domain Services and users’ accounts in the organization’s on-premises Active Directory. More information can be found [here](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html).
 -  **Optimize the images proviced to the end users:** Worldwide Co. has chosen to use the Citrix Optimizer to optimize their VDAs. Information on the Citrix Optimizer can be found [here](https://support.citrix.com/article/CTX224676).
 -  **Adaptive session:** Worldwide Co. used the [baseline policies](/en-us/citrix-virtual-apps-desktops/policies/policies-default-settings.html), however they turned on “Adaptive Transport”. Adaptive Transport allows the session to respond to changing network conditions. With remote workers, adaptive transport allows them to have an optimal user experience. They have also taken advantage of other [HDX technologies](/en-us/tech-zone/learn/tech-insights/hdx.html) to improve the overall experience.
