@@ -301,7 +301,7 @@ Enabling Browser content redirection, offloads the media rendering from the CPU 
 
 The following were screenshots taken during our tests
 
-[![BCR comparison screenshot](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-bcr-comparison-screenshot-large.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-bcr-comparison-screenshot.png)
+![BCR comparison screenshot](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-bcr-comparison-screenshot-large.png)
 
 To learn more about Browser Content Redirection, see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/hdx.html#browser-content-redirection) or visit the [docs page](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html).
 
