@@ -91,8 +91,8 @@ Providing access to the environment includes more than simply making a connectio
 -  **Optimal Routing- Gateway Service:** Because Gateway service is globally distributed, it allows the user to connect via the fastest access point which creates the best user experience.
 -  **Secure Resources:** All users authenticate with Workspace and Gateway service provides vpn-less access to their physical PCs and cloud-hosted VDI desktops. While this Reference Architecture only shows the users accessing virtual apps and desktops, Workspace gives organizations the flexibility to provide end users with SaaS, web, mobile, files, and microapps all from one unified location. Also, it provides SSO so users don’t have to constantly reauthenticate over and over again.
 -  **Business Continuity:** Worldwide Co. also has taken advantage of the latest Service Continuity functionality within Citrix Workspace. Service Continuity further expands the Citrix Virtual Apps and Desktop service resiliency in case there is an outage with any of the following:
-    -  Citrix Cloud platform
     -  Citrix Workspace Portal
+    -  Citrix Cloud platform
     -  Citrix Identity Provider Service
     -  Citrix Virtual App and Desktop control plane
     -  AWS and Azure platform
