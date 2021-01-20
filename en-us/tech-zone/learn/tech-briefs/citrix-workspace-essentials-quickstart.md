@@ -152,17 +152,45 @@ For more information about Citrix Secure Workspace Access, see [Citrix Secure Wo
 
 ### Secure Workspace Access Use Case 1 - Applying Enhanced Security to SaaS and Web Apps
 
+SaaS apps have grown in popularity because of their simplicity and zero dependencies on managed infrastructure. However, many lack the security controls and governance that IT needs to meet corporate security standards. Additionally, many organizations welcome the opportunity to add layers of security to their on-premises web apps.
+
+Citrix Secure Workspace Access enables IT to apply these added security controls to both SaaS and web apps to prevent data exfiltration. This includes policies to restrict copying and pasting, printing, downloads, navigation, watermarking (overlays a screen-based watermark showing the username and IP address of the endpoint), and more. 
+
+Each policy enforces a restriction on an embedded browser when using the Citrix Workspace app for desktop or Citrix Secure Browser service when using the Workspace app web or mobile.
+
 Enhanced security with App Protection provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying security controls detailed in [Ehanced Security](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#enhanced-security).
 
 ### Secure Workspace Access Use Case 2 - Protecting BYO and Unmanaged Devices
+
+The increase in flexible work and the use of personal devices for work have created new security challenges. IT cannot defend against devices infected with malware with no insight into device health, especially those with keyloggers or screenshot malwares that can enable attackers to exfiltrate sensitive corporate data.
+
+Corporate-managed devices go through regular health checks to ensure that devices meet safety requirements. However, most end users won’t take the same care with personal devices. So if a user accesses corporate resources like apps or document repositories, the malware can exfiltrate login information and any data presented on the user’s screen.
+
+App protection secures unmanaged devices by scrambling keystrokes and returning screenshots as blank screens, protecting corporate data from keyloggers, or screenshot malware.
 
 Using Enhanced security policies, Secure Workspace Access gives admins the ability to protect their organizations from data loss and credential theft. Enhanced security policies are even more critical when employees use personal devices to access corporate resources. Read more here: [Protecting BYO](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#protecting-user-and-corporate-data-on-byo-and-unmanaged-endpoints)
 
 ### Secure Workspace Access Use Case 3 - Using Secure Browser Policy and Isolation
 
+Browsing the internet poses another risk to enterprises, exposing them to vulnerabilities in websites, browsers, and browser plug-ins. Malware that might live on employees’ devices can also pose a serious risk to corporate resources.
+
+While most users understand they shouldn’t visit potentially risky websites on their corporate-issued devices, they may not take the same care with their personal ones. In response, some organizations even completely disallow internet browsing, severely affecting productivity.
+
+Citrix Secure Workspace Access includes a secure embedded browser capable of applying enhanced security policies, and whenever enhanced security policies are enabled, the embedded browser is used. But suppose the user is not using Citrix Workspace, but rather a native browser. Then a more secure mechanism is required.
+
+Citrix Secure Browser service, a Chromium-based browser hosted in Microsoft Azure, enables users to navigate the web and apps securely without introducing risk to the corporate environment. Threats that may be introduced by visiting malicious websites are isolated off the corporate network and devices. The browser is stateless and discarded at the end of each session, ensuring that any malicious software encountered while browsing the web never reaches your corporate infrastructure.
+
 Secure Workspace Access enables end users to safely browse the internet. When an end user launches a SaaS application from Citrix Workspace, several decisions are dynamically made to decide how best to serve this SaaS application. Secure Workspace Access provides three ways to serve this application to the end-user. Read more here: [Browser Isolation](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#browser-isolation)
 
 ### Secure Workspace Access Use Case 4 - Security Analytics for SaaS and Web Apps
+
+The Citrix product portfolio is extensive, and the cloud services are designed from the ground up to interact and amplify each other. As part of this portfolio, you will find Citrix Analytics for Security. Citrix Analytics for Security natively integrates with Citrix Secure Workspace Access to provide continuous monitoring, risk assessment, and mitigation to protect organizations during and after the initial user log in, across different applications and clouds, for both compliance and governance.
+
+Using this continuous monitoring, the system can identify inconsistent and suspicious activities, providing actionable insights into user behavior across Identity, Devices, Locations, Networks, Apps, and Files.
+
+For example, assume a user is downloading excessive amounts of data via the VPN-less connection. In that case, an action can be triggered to request a user’s response to validate his/her identity or email the user to verify their activity and put them on a watch list. And based on the user’s reply response, a secondary action could be initiated.
+
+These rules can be configured to trigger user accounts’ specific actions based on continuously assessed user risk score thresholds. For example, an end-user session authenticated into Citrix Workspace can be logged off based on a change in risk score in real-time.
 
 End users invariably access SaaS apps that have enhanced security enabled. Workspace app, the Citrix Gateway service, and the Secure Browser service provide the Security analytics service with information about the following user and application behaviors. Usage Analytics provides insights into the basic usage data of Secure Workspace Access. Admins get the visibility into how users interact with the SaaS and Web applications that are being used in their organization. Read more here: [Security Analytics](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#security-analytics)
 
