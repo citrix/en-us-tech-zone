@@ -154,7 +154,7 @@ For more information about Citrix Secure Workspace Access, see [Citrix Secure Wo
 
 SaaS apps have grown in popularity because of their simplicity and zero dependencies on managed infrastructure. However, many lack the security controls and governance that IT needs to meet corporate security standards. Additionally, many organizations welcome the opportunity to add layers of security to their on-premises web apps.
 
-Citrix Secure Workspace Access enables IT to apply these added security controls to both SaaS and web apps to prevent data exfiltration. This includes policies to restrict copying and pasting, printing, downloads, navigation, watermarking (overlays a screen-based watermark showing the username and IP address of the endpoint), and more. 
+Citrix Secure Workspace Access enables IT to apply these added security controls to both SaaS and web apps to prevent data exfiltration. This includes policies to restrict copying and pasting, printing, downloads, navigation, watermarking (overlays a screen-based watermark showing the username and IP address of the endpoint), and more.
 
 Each policy enforces a restriction on an embedded browser when using the Citrix Workspace app for desktop or Citrix Secure Browser service when using the Workspace app web or mobile.
 
@@ -162,7 +162,7 @@ Enhanced security with App Protection provides IT with a way to enforce security
 
 ### Secure Workspace Access Use Case 2 - Protecting BYO and Unmanaged Devices
 
-The increase in flexible work and the use of personal devices for work have created new security challenges. IT cannot defend against devices infected with malware with no insight into device health, especially those with keyloggers or screenshot malwares that can enable attackers to exfiltrate sensitive corporate data.
+The increase in flexible work and the use of personal devices for work have created new security challenges. IT cannot defend against devices infected with malware with no insight into device health, especially those with keyloggers or screenshot malware that can enable attackers to exfiltrate sensitive corporate data.
 
 Corporate-managed devices go through regular health checks to ensure that devices meet safety requirements. However, most end users won’t take the same care with personal devices. So if a user accesses corporate resources like apps or document repositories, the malware can exfiltrate login information and any data presented on the user’s screen.
 
