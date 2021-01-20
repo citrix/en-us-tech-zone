@@ -158,7 +158,7 @@ Citrix Secure Workspace Access enables IT to apply these added security controls
 
 Each policy enforces a restriction on an embedded browser when using the Citrix Workspace app for desktop or Citrix Secure Browser service when using the Workspace app web or mobile.
 
-Enhanced security with App Protection provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying security controls detailed in [Ehanced Security](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#enhanced-security).
+Enhanced security with App Protection provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying security controls detailed in [Enhanced Security](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#enhanced-security).
 
 ### Secure Workspace Access Use Case 2 - Protecting BYO and Unmanaged Devices
 
