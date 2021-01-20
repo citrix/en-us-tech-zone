@@ -47,15 +47,15 @@ Assuming the CSP partner already has the multitenant Virtual Apps and Desktops S
 
 To add the Virtual Apps and Desktops Standard for Azure Service to a customer, created and located in the Customer Dashboard. To do this navigate to the Customer Dashboard. Locate the customer.
 
-[![CSP-Image-009](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_009.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_009.png)
+[![CSP-Image-009](./en-us/tech-zone/design/media/csp-cvad-standard-azure_009.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_009.png)
 
 Choose Add Service, and select Virtual Apps and Desktops Standard for Azure
 
-[![CSP-Image-010](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_010.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_010.png)
+[![CSP-Image-010](./en-us/tech-zone/design/media/csp-cvad-standard-azure_010.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_010.png)
 
 After the service has been added, it will take a few minutes to complete on the back end.
 
-[![CSP-Image-011](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_011.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_011.png)
+[![CSP-Image-011](./en-us/tech-zone/design/media/csp-cvad-standard-azure_011.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_011.png)
 
 ## Deployment Options
 
@@ -150,25 +150,25 @@ Citrix Manged Azure Standard for Azure Administrators and Operations teams have 
 
 To manage your customers, on the Virtual Apps and Desktops Standard for Azure service page, select the Monitor Tab:
 
-[![CSP-Image-020](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_020.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_020.png)
+[![CSP-Image-020](./en-us/tech-zone/design/media/csp-cvad-standard-azure_020.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_020.png)
 
 The information can be viewed per Customer Catalog
 
-[![CSP-Image-021](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_021.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_021.png)
+[![CSP-Image-021](./en-us/tech-zone/design/media/csp-cvad-standard-azure_021.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_021.png)
 
 Ore Time Period
 
-[![CSP-Image-022](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_022.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_022.png)
+[![CSP-Image-022](./en-us/tech-zone/design/media/csp-cvad-standard-azure_022.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_022.png)
 
 Monitoring can also be filtered per customer
 
-[![CSP-Image-019](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_019.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_019.png)
+[![CSP-Image-019](./en-us/tech-zone/design/media/csp-cvad-standard-azure_019.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_019.png)
 
 ## Managing CSP Single and multitenant Customers
 
 A CSP can manage Single and multitenant customers under the same Cloud Account. With multitenancy the CSP has the advantage of manging all of their customers using the same Cloud Console with the advantages of reduced management time and also aggregation of resources. For a CSP to manage s Single Tenant with a dedicated CVADS4A subscription they can navigate to Customers, selecting the three-dot menu, expanding Manage services and selecting CVADS4A
 
-[![CSP-Image-023](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_023.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_023.png)
+[![CSP-Image-023](./en-us/tech-zone/design/media/csp-cvad-standard-azure_023.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_023.png)
 
 The Admin will then be redirected to the Customers Dedicated CVAD4A instance.
 
@@ -185,7 +185,7 @@ Create a Domain Joined Custom Catalog
 
 Select create a Catalog
 
-[![CSP-Image-001](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_001.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_001.png)
+[![CSP-Image-001](./en-us/tech-zone/design/media/csp-cvad-standard-azure_001.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_001.png)
 
 Select Custom Create
 Choose the Customer
@@ -194,31 +194,31 @@ Choose an Azure subscription
 Select a Master Image
 Select the resource group
 
-[![CSP-Image-002](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_002.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_002.png)
+[![CSP-Image-002](./en-us/tech-zone/design/media/csp-cvad-standard-azure_002.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_002.png)
 
 The Partner can also choose a Partner Managed or Citrix Managed Azure Subscription
 
-[![CSP-Image-024](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_024.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_024.png)
+[![CSP-Image-024](./en-us/tech-zone/design/media/csp-cvad-standard-azure_024.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_024.png)
 
 Add the domain credentials and select the Organisational Unit for the Catalog
 
-[![CSP-Image-003](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_003.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_003.png)
+[![CSP-Image-003](./en-us/tech-zone/design/media/csp-cvad-standard-azure_003.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_003.png)
 
 Choose the Azure Virtual Machine Type
 
-[![CSP-Image-004](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_004.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_004.png)
+[![CSP-Image-004](./en-us/tech-zone/design/media/csp-cvad-standard-azure_004.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_004.png)
 
 And Name the catalog according to your nomenclature
 
-[![CSP-Image-005](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_005.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_005.png)
+[![CSP-Image-005](./en-us/tech-zone/design/media/csp-cvad-standard-azure_005.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_005.png)
 
 To reduce Azure costs, it is advisable to set a power schedule according to the customers usage schedule
 
-[![CSP-Image-006](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_006.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_006.png)
+[![CSP-Image-006](./en-us/tech-zone/design/media/csp-cvad-standard-azure_006.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_006.png)
 
-[![CSP-Image-007](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_007.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_007.png)
+[![CSP-Image-007](./en-us/tech-zone/design/media/csp-cvad-standard-azure_007.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_007.png)
 
-[![CSP-Image-002](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_002.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_002.png)
+[![CSP-Image-002](./en-us/tech-zone/design/media/csp-cvad-standard-azure_002.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_002.png)
 
 ### Non-Domain Joined with Citrix Managed Azure subscription
 
@@ -234,13 +234,13 @@ Chose a master Image
 
 and the network connection will be the vNet connected to the Citrix Managed Azure
 
-[![CSP-Image-012](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_012.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_012.png)
+[![CSP-Image-012](./en-us/tech-zone/design/media/csp-cvad-standard-azure_012.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_012.png)
 
 No domain credentials are needed for the creation of the catalog
 
 Choose an Azure machine Type, select the number of machines needed and Create the catalog
 
-[![CSP-Image-013](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_013.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_013.png)
+[![CSP-Image-013](./en-us/tech-zone/design/media/csp-cvad-standard-azure_013.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_013.png)
 
 ### Adding Apps to a Catalog
 
@@ -248,23 +248,23 @@ Choose an Azure machine Type, select the number of machines needed and Create th
 
 When a catalog is ready the Desktop Subscription is created automatically, to also add application subscriptions chose the calatlog to edit and select the three button menu
 
-[![CSP-Image-014](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_014.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_014.png)
+[![CSP-Image-014](./en-us/tech-zone/design/media/csp-cvad-standard-azure_014.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_014.png)
 
 On the catalog page select Desktop and Apps
 
-[![CSP-Image-015](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_015.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_015.png)
+[![CSP-Image-015](./en-us/tech-zone/design/media/csp-cvad-standard-azure_015.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_015.png)
 
 Select Manage Apps
 
-[![CSP-Image-016](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_016.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_016.png)
+[![CSP-Image-016](./en-us/tech-zone/design/media/csp-cvad-standard-azure_016.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_016.png)
 
 Select how the Apps are going to be added, either from the Start Menu (Automatically detected) or via a custom path
 
-[![CSP-Image-017](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_017.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_017.png)
+[![CSP-Image-017](./en-us/tech-zone/design/media/csp-cvad-standard-azure_017.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_017.png)
 
 Select the apps and use the Right Arrow to add them to the list of Added Apps
 
-[![CSP-Image-018](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_018.png)](./en-us/tech-zone/design/media/reference-architectures_csp-cvads_018.png)
+[![CSP-Image-018](./en-us/tech-zone/design/media/csp-cvad-standard-azure_018.png)](./en-us/tech-zone/design/media/csp-cvad-standard-azure_018.png)
 
 Close manage Apps
 
