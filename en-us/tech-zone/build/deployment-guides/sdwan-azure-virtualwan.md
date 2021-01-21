@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Anudeep Athlur
 specialThanksTo: Jaskirat Chauhan, Karthick Srivatsan
-description: Copy & paste description from TOC here
+description: Learn how to deploy Azure VWAN and with Citrix SD-WAN
 ---
 # Citrix SD-WAN + Azure Virtual WAN Blueprint: Introduction and Use Cases
 
