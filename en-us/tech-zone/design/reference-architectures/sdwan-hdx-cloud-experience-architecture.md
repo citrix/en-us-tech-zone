@@ -1,6 +1,7 @@
 ---
 layout: doc
 h3InToc: true
+contributedBy: Matthew Brooks
 specialThanksTo: Dan Feller, Derek Thoslund, Jaskirat Singh Chauhan, Karthick Srivatsan
 description: Learn how to optimize the delivery of the Citrix Virtual Apps and Desktops service from cloud Resource Locations to users at branches or home offices, with a Citrix SD-WAN appliance, by minimizing latency, and improving session responsiveness during network issues.
 ---
