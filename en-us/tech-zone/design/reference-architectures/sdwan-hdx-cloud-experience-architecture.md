@@ -163,7 +163,7 @@ Focusing on the goal of the document to provide guidance on optimal use of Citri
 
 The environment setup includes components in 3 distinct areas.
 
-*  **Branch Office (Home Office)** – the home office or branch office has 1 or more endpoints with the Workspace App installed. It communicates with Citrix Cloud, and the Data Center via the SD-WAN appliance most likely in Gateway mode, included a dedicated public IP address with direct access to the internet via ISP/s.
+*  **Branch Office (Home Office)** – the home office or branch office has 1 or more endpoints with the Workspace App installed. It communicates with Citrix Cloud, and the Data Center via the SD-WAN appliance most likely in Gateway mode, included a dedicated public IP address with direct access to the internet via ISPs.
 *  **Resource Location** – the Resource Location houses components needed to deliver virtual apps, and desktops. It hosts a SD-WAN appliance to communicate with internal endpoints, and communicates with Citrix Cloud via Cloud Connector/s. The appliance can be in Gateway mode or other deployment scenario.
 *  **Citrix Cloud** – the Citrix Cloud service components Workspace, Citrix Virtual Apps & Desktops, and Citrix Gateway work in conjunction to manage virtual app, and desktop setup. Citrix Orchestrator manages the SD-WAN overlay network, and configures the Network Location service to route sessions directly to VDAs.
 
@@ -242,7 +242,7 @@ Citrix Cloud hosts the Workspace service, and the Citrix Virtual Apps and Deskto
     *  _NOTES:_
 To enable NLS in the Citrix Orchestrator service, at the network level, navigate to **Configuration > Delivery Services > Network Location Service**.
 
-        The NLS PowerShell script submits public IP address ranges used in dynamic NAT, at Edge devices, when Enterprise clients access the Internet. For example, when a user enters “what is my IPaddress” in their web browser there are various sites that extract, and report the public IP carried in their HTTP request header. That public IP is typically from the range that would be configured in the PowerShell script. Enter a Client ID, and Secret from your Citrix Cloud instance to give the script access to it through an API.
+        The NLS PowerShell script submits public IP address ranges used in dynamic NAT, at Edge devices, when Enterprise clients access the Internet. For example, when a user enters “what is my IP address” in their web browser there are various sites that extract, and report the public IP carried in their HTTP request header. That public IP is typically from the range that would be configured in the PowerShell script. Enter a Client ID, and Secret from your Citrix Cloud instance to give the script access to it through an API.
 
 ### Network Considerations
 
