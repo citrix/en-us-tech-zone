@@ -13,6 +13,7 @@ description: Learn how to install the Citrix VDA into a WIndows 10 platform & pr
 This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Machines (VMs) via Citrix Machine Creation Services (MCS) in Citrix Virtual Apps & Desktops (CVAD) Service
 
 Below are the steps covered in this Guide
+
 *  Install VDA
 *  Optimize Windows 10 for MCS
 *  Create a Machine Catalog & deploy VMs
@@ -74,7 +75,7 @@ Below are the steps covered in this Guide
 1.  Enter the **Fully Qualified Domain Name (FQDN) of each Cloud Connector** (at least two are recommended for tolerance)
 
 1.  Select **Test Connection** & if successful select **Add**
-1. Click **Next**
+1.  Click **Next**
 
     [![Azure VM](/en-us/tech-zone/build/media/Win10-012.png)](/en-us/tech-zone/build/media/Win10-012.png)
 
@@ -96,7 +97,6 @@ Below are the steps covered in this Guide
  >
 > For information on Citrix Optimizer see [Citrix Optimizer – What’s new](https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/)
 
-
 1.  Login & download Citrix Optimizer from [Citrix Optimizer](https://support.citrix.com/article/CTX224676)
 1.  Run Citrix Optimizer as an administrator
 1.  Select the appropriate Windows 10 Build
@@ -108,84 +108,82 @@ Below are the steps covered in this Guide
 1.  View the results & click **Done**
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)
 
-
 ## Create Machine Catalog & Deploy VMs
 
 >**Note:**
  >
 > **Resources**
 >
->   We will be using **Microsoft Azure** as a resource location in this scenario. For a full list of supported Hypervisors & Clouds see [Hosts / virtualization resources](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/system-requirements.html#hosts--virtualization-resources)
+> We will be using **Microsoft Azure** as a resource location in this scenario. For a full list of supported Hypervisors & Clouds see [Hosts / virtualization resources](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/system-requirements.html#hosts--virtualization-resources)
 >  
->   **Hosting Connections**
+> **Hosting Connections**
 >
->   The available resources are based on the hosting connections already added in Citrix Studio. See the following article for information on creating [CVAD hosting connections](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
+> The available resources are based on the hosting connections already added in Citrix Studio. See the following article for information on creating [CVAD hosting connections](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
 
-1. Log into Citrix Cloud
+1.  Log into Citrix Cloud
 [![Azure VM](/en-us/tech-zone/build/media/Win10--37.png)](/en-us/tech-zone/build/media/Win10--37.png)
-1. Select the **Virtual Apps & Desktops** tile
+1.  Select the **Virtual Apps & Desktops** tile
 [![Azure VM](/en-us/tech-zone/build/media/Win10-052.png)](/en-us/tech-zone/build/media/Win10-052.png)
-1. Select **Manage**, then **Web Studio**
-1. From within Web Studio, select **Machine Catalogs**, then **Create Machine Catalog**
+1.  Select **Manage**, then **Web Studio**
+1.  From within Web Studio, select **Machine Catalogs**, then **Create Machine Catalog**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-018.png)](/en-us/tech-zone/build/media/Win10-018.png)
 
-1. Select **Multi-session OS** for Windows 10 WVD or Operating System as appropriate based on your deployment, click **Next**
+1.  Select **Multi-session OS** for Windows 10 WVD or Operating System as appropriate based on your deployment, click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-019.png)](/en-us/tech-zone/build/media/Win10-019.png)
 
-1. Select **Machines that are power managed**
-1. Deploy machines using **Citrix Machine Creation Services**, select the appropriate Resource, click **Next**
+1.  Select **Machines that are power managed**
+1.  Deploy machines using **Citrix Machine Creation Services**, select the appropriate Resource, click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-020.png)](/en-us/tech-zone/build/media/Win10-020.png)
 1.  Select **Master Image** previously created
 1.  Select the minimum functional level & click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-021.png)](/en-us/tech-zone/build/media/Win10-021.png)
-1. Select **Storage & License Types** based on your environment
+1.  Select **Storage & License Types** based on your environment
 [![Azure VM](/en-us/tech-zone/build/media/Win10-022.png)](/en-us/tech-zone/build/media/Win10-022.png)
-1.   Enter the number of **Virtual Machines** you would like to create, along with the machine size, click **Next**
+1.  Enter the number of **Virtual Machines** you would like to create, along with the machine size, click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-023.png)](/en-us/tech-zone/build/media/Win10-023.png)
-1. Configure **Write Back Cache** as appropriate, click **Next**
+1.  Configure **Write Back Cache** as appropriate, click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-024.png)](/en-us/tech-zone/build/media/Win10-024.png)
-1. Select the appropriate **Resource Group** provisioning method, click **Next**
+1.  Select the appropriate **Resource Group** provisioning method, click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-025.png)](/en-us/tech-zone/build/media/Win10-025.png)
-1.   Select **Network Interface Card** to be associated with the VM, click **Next**
+1.  Select **Network Interface Card** to be associated with the VM, click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-027.png)](/en-us/tech-zone/build/media/Win10-027.png)
-1.   Select whether to create new AD accounts, where to create them & the naming convention to be used, click **Next**
+1.  Select whether to create new AD accounts, where to create them & the naming convention to be used, click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-028.png)](/en-us/tech-zone/build/media/Win10-028.png)
-1. Add the **Domain credentials** to be used to perform the account operations, click **Next**
+1.  Add the **Domain credentials** to be used to perform the account operations, click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-029.png)](/en-us/tech-zone/build/media/Win10-029.png)
-1.   Verify the **Summary**, add a **Machine Catalog name** and **Machine Catalog description**, then click **Finish**
+1.  Verify the **Summary**, add a **Machine Catalog name** and **Machine Catalog description**, then click **Finish**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-030.png)](/en-us/tech-zone/build/media/Win10-030.png)
-    
+
 >**Note:**
  >
->   Wait for the machine catalog to create and the new VM disk. Time will depend on the number of VMs specified
+> Wait for the machine catalog to create and the new VM disk. Time will depend on the number of VMs specified
 
 ## Create Delivery Group
 
-1. Log into Citrix Cloud & select the **Virtual Apps & Desktops** tile
-1. Select **Manage**, then **Web Studio**
-1. From within Web Studio, select **Delivery Group**, then **Create Delivery Group**, click **Next**
+1.  Log into Citrix Cloud & select the **Virtual Apps & Desktops** tile
+1.  Select **Manage**, then **Web Studio**
+1.  From within Web Studio, select **Delivery Group**, then **Create Delivery Group**, click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-031.png)](/en-us/tech-zone/build/media/Win10-031.png)
-1. Select the **Machine Catalog** you just created (above)
-1. Choose the number of machines you created or want to add to the Delivery Group, click **Next**
+1.  Select the **Machine Catalog** you just created (above)
+1.  Choose the number of machines you created or want to add to the Delivery Group, click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-032.png)](/en-us/tech-zone/build/media/Win10-032.png)
 1.  Select the **Users** assignment method (We are using Citrix Cloud for assignment in this scenario). Click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-033.png)](/en-us/tech-zone/build/media/Win10-033.png)
-1. If adding applications to be published separately add these here (We are only publishing a desktop in this scenario). Click **Next**
+1.  If adding applications to be published separately add these here (We are only publishing a desktop in this scenario). Click **Next**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-034.png)](/en-us/tech-zone/build/media/Win10-034.png)
 1.  Provide the **Delivery Group name** and **Display name**, click **Finish**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-035.png)](/en-us/tech-zone/build/media/Win10-035.png)
-1.   Once created, view the machines & check their registration status
+1.  Once created, view the machines & check their registration status
 [![Azure VM](/en-us/tech-zone/build/media/Win10-036.png)](/en-us/tech-zone/build/media/Win10-036.png)
 
 ## Assign Users to Desktop
 
-1. Login to Citrix Cloud & from the landing page select **View Library**
+1.  Login to Citrix Cloud & from the landing page select **View Library**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-053.png)](/en-us/tech-zone/build/media/Win10-053.png)
-1. Locate the new Windows 10 Desktop resource in the Library, select the **ellipsis** (3 dot menu item in the top right corner), and select **Manage Subscribers**
+1.  Locate the new Windows 10 Desktop resource in the Library, select the **ellipsis** (3 dot menu item in the top right corner), and select **Manage Subscribers**
 [![Azure VM](/en-us/tech-zone/build/media/Win10-112.png)](/en-us/tech-zone/build/media/Win10-112.png)
-1. Add users or groups to assign desktop
+1.  Add users or groups to assign desktop
 [![Azure VM](/en-us/tech-zone/build/media/Win10-045.png)](/en-us/tech-zone/build/media/Win10-045.png)
-
 
 ## Client Configuration
 
@@ -193,7 +191,7 @@ Once the user has launched the desktop resource & logged in they will be able to
 
 >**Note:**
    >  
->  Best practice would be to automate the configuration of the **Citrix Workspace** & **Citrix Files** clients
+> Best practice would be to automate the configuration of the **Citrix Workspace** & **Citrix Files** clients
 
 ## Citrix Workspace App
 
@@ -209,8 +207,8 @@ Once the user has launched the desktop resource & logged in they will be able to
 
 >**Note:**
  >
->  This assumes the option to install Citrix Files was selected when installing the VDA above.
->  If not the latest version can be downloaded from [Citrix Files for Windows](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-windows.html)
+> This assumes the option to install Citrix Files was selected when installing the VDA above.
+> If not the latest version can be downloaded from [Citrix Files for Windows](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-windows.html)
   
 1.  Check Citrix Files status from the icon in the system tray. If offline, right click the icon & select login
 [![Azure VM](/en-us/tech-zone/build/media/Win10-049.png)](/en-us/tech-zone/build/media/Win10-049.png)
@@ -218,12 +216,15 @@ Once the user has launched the desktop resource & logged in they will be able to
 [![Azure VM](/en-us/tech-zone/build/media/Win10-060.png)](/en-us/tech-zone/build/media/Win10-060.png)
 
 ## Citrix Files For Outlook
->  This assumes the option to install Citrix Files for Outlook was selected when installing the VDA above.
->  If not that latest version can be downloaded from [Citrix Files for Outlook](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html)
+
+> This assumes the option to install Citrix Files for Outlook was selected when installing the VDA above.
+> If not that latest version can be downloaded from [Citrix Files for Outlook](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html)
+
 1.  Open Outlook & the Citrix files plug-in will be visible along the Outlook tool bar. If you are logged onto the VM with a valid Citrix Files account, the authentication will pass through and enable the files functionality
 [![Citrix Files for Outlook](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)
 1.  Select the icon to view the default settings
 [![Azure VM](/en-us/tech-zone/build/media/Win10-109.png)](/en-us/tech-zone/build/media/Win10-109.png)
+
 >**Note:**
  >
->   Best practice would be to have these settings deployed centrally from **Citrix Content & Collaboration** Service
+> Best practice would be to have these settings deployed centrally from **Citrix Content & Collaboration** Service
