@@ -32,7 +32,7 @@ A user’s primary Workspace identity authorizes them to access SaaS and on-prem
 
 Figure 2: Access to SaaS and on-premises web apps
 
-For additional information on primary identity options for Citrix Workspace, refer to the [Workspace - Primary Identity](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) Tech Brief.
+For additional information on primary identity options for Citrix Workspace, refer to the [Workspace - Primary Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) Tech Brief.
 
 The first thing you notice is the ease of use. There are 300+ SAML SSO templates available for quick configuration of your web and SaaS apps. If you have an app that doesn’t have a pre-existing template, it only takes you a few more clicks to configure.
 
@@ -65,7 +65,7 @@ Citrix Workspace Essentials has all the benefits provided by Citrix Workspace ex
 
 Figure 5: Benefits provided by Citrix Workspace experience
 
-Read this Citrix Workspace App [Tech Insight](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-app.html) to learn more.
+Read this Citrix Workspace App [Tech Insight](/en-us/tech-zone/learn/tech-briefs/workspace-app.html) to learn more.
 
 ### Global POP network
 
@@ -107,16 +107,16 @@ Figure 7: Recommended architecture and components
 
 Pre-requisites for configuring app access
 
-*  Getting Started with [Citrix Cloud](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-app.html)
+*  Getting Started with [Citrix Cloud](/en-us/tech-zone/learn/tech-briefs/workspace-app.html)
 *  Make sure you have the right entitlements and / or trial enabled
 *  Citrix Workspace Platform configurations required to setup the solution
     *  Setting up Citrix Workspace
     *  User Authentication
-    *  [Tech Brief](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) with all the different types of authentication methods to Citrix Workspace
+    *  [Tech Brief](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) with all the different types of authentication methods to Citrix Workspace
 
 ## Use case 1: Secure access to internal web apps
 
-Citrix Workspace Essentials provides secure access to intranet web apps with SSO. Follow the [SSO to Web Configuration Steps](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) in the article to deploy this feature.
+Citrix Workspace Essentials provides secure access to intranet web apps with SSO. Follow the [SSO to Web Configuration Steps](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) in the article to deploy this feature.
 
 ![Single sign-On to Web](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_ssoweb.png)
 
@@ -124,7 +124,7 @@ Figure 8: Secure access to intranet web apps with SSO
 
 ## Use case 2: Secure access to SaaS apps
 
-Citrix Workspace Essentials provides secure access to sanctioned SaaS apps with SSO. Follow the [SSO to SaaS Configuration Steps](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) in the article to deploy this feature.
+Citrix Workspace Essentials provides secure access to sanctioned SaaS apps with SSO. Follow the [SSO to SaaS Configuration Steps](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) in the article to deploy this feature.
 
 ![Single sign-On to SaaS](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_ssosaas.png)
 
@@ -132,7 +132,7 @@ Figure 9: Secure access to sanctioned SaaS apps with SSO
 
 ## Use case 3: Configuring second factor authentication to Citrix Workspace
 
-Citrix Workspace Essentials enables second factor authentication during user login to Citrix Workspace. Follow the steps in the [Configuring AD + token in Identity and Access Management](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-ad.html) and [Deploying Citrix Cloud Connector](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html) guides to deploy this feature.
+Citrix Workspace Essentials enables second factor authentication during user login to Citrix Workspace. Follow the steps in the [Configuring AD + token in Identity and Access Management](/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-ad.html) and [Deploying Citrix Cloud Connector](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html) guides to deploy this feature.
 
 ![Time-based one-time password](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_totp.png)
 
@@ -148,7 +148,7 @@ Figure 11: Citrix Secure Workspace Access Overview
 
 Secure Workspace Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators. These include granular and contextual security policies, app protection policies for all apps, web browser isolation, and web filtering policies.
 
-For more information about Citrix Secure Workspace Access, see [Citrix Secure Workspace Access](/en-us/citrix-secure-workspace-access.html) in Citrix product documentation and [Citrix Secure Workspace Access Tech Brief](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html)
+For more information about Citrix Secure Workspace Access, see [Citrix Secure Workspace Access](/en-us/citrix-secure-workspace-access.html) in Citrix product documentation and [Citrix Secure Workspace Access Tech Brief](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html)
 
 ### Secure Workspace Access Use Case 1 - Applying Enhanced Security to SaaS and Web Apps
 
@@ -158,7 +158,7 @@ Citrix Secure Workspace Access enables IT to apply these added security controls
 
 Each policy enforces a restriction on an embedded browser when using the Citrix Workspace app for desktop or Citrix Secure Browser Service when using the Citrix Workspace app web or mobile.
 
-Enhanced security with App Protection provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying the security controls detailed in [Enhanced Security](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#enhanced-security).
+Enhanced security with App Protection provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying the security controls detailed in [Enhanced Security](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#enhanced-security).
 
 ### Secure Workspace Access Use Case 2 - Protecting BYO and Unmanaged Devices
 
@@ -168,7 +168,7 @@ Corporate-managed devices go through regular health checks to ensure that device
 
 App protection secures unmanaged devices by scrambling keystrokes and returning screenshots as blank screens, protecting corporate data from keyloggers, or screenshot malware.
 
-Using Enhanced security policies, Secure Workspace Access gives admins the ability to protect their organizations from data loss and credential theft. Enhanced security policies are even more critical when employees use personal devices to access corporate resources. Read more here: [Protecting BYO](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#protecting-user-and-corporate-data-on-byo-and-unmanaged-endpoints)
+Using Enhanced security policies, Secure Workspace Access gives admins the ability to protect their organizations from data loss and credential theft. Enhanced security policies are even more critical when employees use personal devices to access corporate resources. Read more here: [Protecting BYO](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#protecting-user-and-corporate-data-on-byo-and-unmanaged-endpoints)
 
 ### Secure Workspace Access Use Case 3 - Using Secure Browser Policy and Isolation
 
@@ -180,7 +180,7 @@ Citrix Secure Workspace Access includes a secure embedded browser capable of app
 
 Citrix Secure Browser Service, a Chromium-based browser hosted in Microsoft Azure, enables users to navigate the web and apps securely without introducing risk to the corporate environment. Threats that can be introduced by visiting malicious websites are isolated off the corporate network and devices. The browser is stateless and discarded at the end of each session, ensuring that any malicious software encountered while browsing the web never reaches your corporate infrastructure.
 
-Secure Workspace Access enables end users to safely browse the internet. When an end user launches a SaaS application from Citrix Workspace, several decisions are dynamically made to decide how best to serve this SaaS application. Secure Workspace Access provides three ways to serve this application to the end-user. Read more here: [Browser Isolation](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#browser-isolation)
+Secure Workspace Access enables end users to safely browse the internet. When an end user launches a SaaS application from Citrix Workspace, several decisions are dynamically made to decide how best to serve this SaaS application. Secure Workspace Access provides three ways to serve this application to the end-user. Read more here: [Browser Isolation](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#browser-isolation)
 
 ### Secure Workspace Access Use Case 4 - Security Analytics for SaaS and Web Apps
 
@@ -192,7 +192,7 @@ For example, assume a user is downloading excessive amounts of data via the VPN-
 
 These rules can be configured to trigger user accounts’ specific actions based on continuously assessed user risk score thresholds. For example, an end-user session authenticated into Citrix Workspace can be logged off based on a change in risk score in real-time.
 
-End users invariably access SaaS apps that have enhanced security enabled. The Citrix Workspace app, the Citrix Gateway service, and the Secure Browser service provide the Security analytics service with information about the following user and application behaviors. Usage Analytics provides insights into the basic usage data of Secure Workspace Access. Admins get the visibility into how users interact with the SaaS and Web applications that are being used in their organization. Read more here: [Security Analytics](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#security-analytics)
+End users invariably access SaaS apps that have enhanced security enabled. The Citrix Workspace app, the Citrix Gateway service, and the Secure Browser service provide the Security analytics service with information about the following user and application behaviors. Usage Analytics provides insights into the basic usage data of Secure Workspace Access. Admins get the visibility into how users interact with the SaaS and Web applications that are being used in their organization. Read more here: [Security Analytics](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#security-analytics)
 
 ### Secure Workspace Access Enhanced Security Demo
 
