@@ -563,3 +563,5 @@ Call to action:
 For a trial of Citrix Virtual Apps and Desktops service click [here](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/inquiry/).
 
 For a trial of Citrix Virtual Apps and Desktops Standard for Azure service click [here](https://www.citrix.com/products/citrix-managed-desktops/form/inquiry/).
+
+Learn how to achieve more with [Citrix and Windows Virtual Desktop](https://www.citrix.com/global-partners/microsoft/resources/windows-virtual-desktop-wvd.html).
