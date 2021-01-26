@@ -8,7 +8,7 @@ description: Copy & paste description from TOC here
 
 When deploying any operating system, the settings are always targeted for the most compatible settings to ensure the device works along with it is the most backwards compatibility. The Windows Operating system is no different, even the latest Windows releases have settings to allow it to work with releases from 20+ years ago along with very few restrictions of what can be done within the operating system. Windows does have its built in Firewall, Antivirus and Update settings that will allow some protections, but a user can launch anything they have access to and by default they have access to most everything besides what is protected by local administrative access.
 
-In the following sections we will cover the ten recommended areas from how to planning to get started, how to configure some recommended policies, control privileged access and even configure some security based windows features. Most of these sections will be broken into these three sections minimum, recommended and high security. The minimum recommendations are just that a starting point at default or just beyond default settings, this will provide some protections, but should provide the most application compatibility and usability also. The recommended settings will start to secure the system further that will be able to start preventing some common attack methods while allowing the most common application compatibility and usability requirements too. The high security recommendations will provide the most secure deployment options with the most restrictive usability and the most targeted application compatibility also.
+In the following sections we will cover the most recommended areas from how to planning to get started, how to configure some recommended policies, control privileged access and even configure some security based windows features. Most of these sections will be broken into these three sections minimum, recommended and high security. The minimum recommendations are just that a starting point at default or just beyond default settings, this will provide some protections, but should provide the most application compatibility and usability also. The recommended settings will start to secure the system further that will be able to start preventing some common attack methods while allowing the most common application compatibility and usability requirements too. The high security recommendations will provide the most secure deployment options with the most restrictive usability and the most targeted application compatibility also.
 
 All these settings should be deployed in a test scenario and validated by your IT team and then scheduled and promoted to your test users before finally being promoted into production. With each level of recommendations, the risk of causing a useability or application compatibility issue will increase and should require further testing and tuning.
 
@@ -221,7 +221,7 @@ These settings can allow you to manipulate the settings withing File and Interne
 
 This is a common jailbreak point in many applications. There group policy will allow you to enter a list of comma deiminated executables that anything launched from help will be prevented from running. We recommend entering at least these common administrative executables to prevent their execution. If you have other browsers installed on the system, we recommend adding those executable names also. Most applications can have their help launches restricted with this policy without issue because they are not typically needed for the workflow
 
--  exe,cmd.exe,regedit.exe,mmc.exe,powershell.exe,powershell\_ise.exe
+-  exe,cmd.exe,regedit.exe,mmc.exe,powershell.exe,PowerShell_ISE.exe
 
 #### Windows Logging – Windows Event Log Forwarding
 
@@ -253,37 +253,24 @@ This is the link of the default policies for reference and a list of the policie
 
 ### Default Policy
 
-Clipboard Redirection Allowed
-
-Clipboard Formats No Restriction
-
-Audio Out Allowed
-
-Microphone Allowed
-
-Auto Connect Client Drives Allowed
-
-Client Drive Redirection Allowed
-
-Client Fixed Drives Allowed
-
-Client Floppy Drives Allowed
-
-Client Network Drives Allowed
-
-Client Optical Drives Allowed
-
-Client Removable Drives Allowed
-
-Auto Connect LPT Prohibited
-
-Auto Connect COM Prohibited
-
-Client Printing Allowed
-
-Client TWAIN Devices Allowed
-
-Client USB Devices Prohibited
+| Policy Name                | Default Setting |
+| -------------------------- | --------------- |
+| Clipboard Redirection      | Allowed         |
+| Clipboard Formats          | No Restriction  |
+| Audio Out                  | Allowed         |
+| Microphone                 | Allowed         |
+| Auto Connect Client Drives | Allowed         |
+| Client Drive Redirection   | Allowed         |
+| Client Fixed Drives        | Allowed         |
+| Client Floppy Drives       | Allowed         |
+| Client Network Drives      | Allowed         |
+| Client Optical Drives      | Allowed         |
+| Client Removable Drives    | Allowed         |
+| Auto Connect LPT           | Prohibited      |
+| Auto Connect COM           | Prohibited      |
+| Client Printing            | Allowed         |
+| Client TWAIN Devices       | Allowed         |
+| Client USB Devices         | Prohibited      |
 
 We recommend using this detailed session policy questionnaire to determine which job profiles may require which virtual channels. The most common requirements are having access to Print, Copy\Paste and access to other devices within the session. Each one of these session items have corresponding policies within Citrix and also some OS policies too.
 
@@ -321,11 +308,9 @@ Do you require COM or LPT Ports? These are becoming less prevalent but in certai
 
 Example:
 
-Published Application-EMR Image Session Requirements: Copy\Paste within the Session Only, Client Printing (Default Printer Set no need for the Control Panel)
-
-Published Desktop-EMR Image Session Requirements: Copy\Paste into the Session Only, Client Printing (Default Printer Set no need for the Control Panel)
-
-Remote PC Access Session Requirements: Copy\Paste into the Session, Client Printing (Default Printer Set no need for the Control Panel)
+-  Published Application-EMR Image Session Requirements: Copy\Paste within the Session Only, Client Printing (Default Printer Set no need for the Control Panel)
+-  Published Desktop-EMR Image Session Requirements: Copy\Paste into the Session Only, Client Printing (Default Printer Set no need for the Control Panel)
+-  Remote PC Access Session Requirements: Copy\Paste into the Session, Client Printing (Default Printer Set no need for the Control Panel)
 
 ## Operations
 
@@ -345,11 +330,9 @@ We recommend creating a process for implementing and promoting image updates tha
 
 Example:
 
-Published Application-EMR Image (90 Users, 30 Users Per Server, 4x VDAs, 1x Delivery Group with 3x Prod Machine Catalog, 1x PreProd Machine Catalog and one Test Delivery Group (Master Image) and one QA Delivery Group with a single VDA)
-
-Published Desktop-EMR Image (90 Users, 30 Users Per Server, 4x VDAs, 1x Delivery Group with 3x Prod Machine Catalog, 1x PreProd Machine Catalog and one Test Delivery Group (Master Image) and one QA Delivery Group with a single VDA)
-
-Remote PC Access SCCM Patches Systems 7 Days after Patch Tuesday over the weekend with follow up on Monday and Tuesday.
+-  Published Application-EMR Image (90 Users, 30 Users Per Server, 4x VDAs, 1x Delivery Group with 3x Prod Machine Catalog, 1x PreProd Machine Catalog and one Test Delivery Group (Master Image) and one QA Delivery Group with a single VDA)
+-  Published Desktop-EMR Image (90 Users, 30 Users Per Server, 4x VDAs, 1x Delivery Group with 3x Prod Machine Catalog, 1x PreProd Machine Catalog and one Test Delivery Group (Master Image) and one QA Delivery Group with a single VDA)
+-  Remote PC Access SCCM Patches Systems 7 Days after Patch Tuesday over the weekend with follow up on Monday and Tuesday.
 
 ## Application Control
 
@@ -399,7 +382,7 @@ Most deployments don't require users access to the PowerShell command line or th
 
 PowerShell.exe
 
-PowerShell\_ISE.exe
+PowerShell_ISE.exe
 
 ### High Security
 
@@ -409,11 +392,9 @@ After testing and validation we recommend setting your solution to just allow ex
 
 Example:
 
-Published Application EMR (Only, Filtered by Delivery Group)
-
-Published Desktop EMR + Microsoft Office (Filtered by Delivery Group)
-
-Remote PC Access Accounting Application (Only, Filtered by Delivery Group)
+-  Published Application EMR (Only, Filtered by Delivery Group)
+-  Published Desktop EMR + Microsoft Office (Filtered by Delivery Group)
+-  Remote PC Access Accounting Application (Only, Filtered by Delivery Group)
 
 ## Endpoint Protection
 
@@ -429,11 +410,9 @@ We recommend having a EDR based solution deployed if possible, to gain some of t
 
 Example:
 
-Published Application-EMR Image Microsoft Defender Antivirus
-
-Published Desktop-EMR Image Microsoft Defender Antivirus
-
-Remote PC Access Microsoft Defender Antivirus
+-  Published Application-EMR Image Microsoft Defender Antivirus
+-  Published Desktop-EMR Image Microsoft Defender Antivirus
+-  Remote PC Access Microsoft Defender Antivirus
 
 ## Logging
 
@@ -471,34 +450,34 @@ Reference
 
 [https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)
 
-| Event ID | Description  | Impact |
-| --- | --- | --- |
-| 1102/517 | Event log cleared | Attackers may clear Windows event logs to cover their tracks. This also relates to windows event log forwarding too. |
-| 4610, 4611, 4614, 4622, 4697 | Local Security Authority modification | Attackers may modify LSA for escalation/persistence in many common attack methods. |
-| 4648 | Explicit credential logon | Typically, when a logged-on user provides different credentials to access a resource. Requires filtering of "normal". |
-| 4661 | A handle to an object was requested | SAM/DSA Access. Requires filtering of "normal" to not overload the number of events logged. |
-| 4672 | Special privileges assigned to new logon | Monitor when someone with admin rights logs on. Is this an account that should have admin rights?  Knowing when someone or something is getting new privileges should be a cause of concern. |
-| 4723 | Account password change attempted | Who or what attempted to change the password of this user? |
-| 4964 | Custom Special Group logon tracking | Track admin &amp; "users of interest" logons. This relates to privileged account management for service accounts and normal privileged accounts to know when they are getting used. |
-| 7045, 4697 | New service was installed | Attackers often install a new service for persistence and if someone is installing something as a service you should know. |
-| 4698, 4699, 4702 | Scheduled task creation/modification | Attackers often create/modify scheduled tasks for persistence. Pull all events in Microsoft-Windows-TaskScheduler/Operational |
-| 4719, 612 | A system audit policy was changed | Attackers may modify the system's audit policy. |
-| 4732 | A member was added to a (security-enabled) local group | Attackers may create a new local account &amp; add it to the local Administrators group. Restricted groups come into play here to ensure that their elevation will not last beyond a GPO refresh. |
-| 4720 | A (local) user account was created | Attackers may create a new local account for persistence. |
-| 3065, 3066 | LSASS Auditing – Code Integrity Checking | This monitors LSA drivers &amp; plugins. Test extensively before deploying! |
-| 3033, 3063 | LSA Protection – Failed to Load Drivers and Plugins | This monitors the LSA drivers &amp; plugins and blocks any that are not properly signed. |
-| 4798 | A user's group membership was enumerated | This can potentially detect recon activity of local group membership enumeration which may lead to privilege escalation typical with Bloodhound. You may need to filter out normal activity. |
-| 4768, 4771 | Account Logon / Kerberos Authentication Service | Depending on your applications deployed this may be chatty or completely quiet until an attack or specific event triggers it. This is recommended because many attack methods use Kerberos as the authentication vehicle. |
-| 4769 | Account Logon / Kerberos Service Ticket Operations | Depending on your applications deployed this may be chatty or completely quiet until an attack or specific event triggers it. This is recommended because many attack methods use Kerberos as the authentication vehicle. |
-| 4741, 4742 | Account Management / Computer Account Management | Knowing when something is created or modified on a Domain Computer account it needs to be logged to be able to find out if it is a problem. |
-| 4728, 4732, 4756 | Account Management / Security Group Management | Knowing when something is created or modified on a Domain Group it needs to be logged to be able to find out if it is a problem. |
-| 4720, 22, 23, 38, 65, 66, 80, 94 | Account Management / User Account Management | Knowing when something is created or modified on a Domain user it needs to be logged to be able to find out if it is a problem. |
-| 4692 | Detailed Tracking / DPAPI Activity | This is to track the export of the DPAPI backup key used for AD backup and restores. This is needed to take the AD database offline to crack the passwords along with other password related AD attacks also. |
-| 4688 | Detailed Tracking / Process Creation | Tracking what is running can be very noisy, but once filtered it can be the best way to track what is going on specific computers. This may be harder to do on workstations but on servers it should be much less noise and when something is logged you most likely need to investigate it. |
-| 4634 | Collect events for account logoff | This can be noisy but is worth knowing when accounts logoff especially on servers and even on workstations based on your threat landscape. |
-| 4624, 4625, 4648 | Collect events for account logon | This can be noisy but is worth knowing when accounts logon especially on servers and even on workstations based on your threat landscape. |
-| 4964 | Collect events for special group attributed at logon | Knowing when special accounts are logging in is a key indicator of these accounts being misused. |
-| 4713, 4716, 4739 | Collect events related to trust modifications | No trust should be setup or modifying an existing trust from a one-way to a two-way one without you knowing |
+| Event ID                         | Description                                            | Impact                                                                                                                                                                                                                                                                                       |
+| -------------------------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1102/517                         | Event log cleared                                      | Attackers may clear Windows event logs to cover their tracks. This also relates to windows event log forwarding too.                                                                                                                                                                         |
+| 4610, 4611, 4614, 4622, 4697     | Local Security Authority modification                  | Attackers may modify LSA for escalation/persistence in many common attack methods.                                                                                                                                                                                                           |
+| 4648                             | Explicit credential logon                              | Typically, when a logged-on user provides different credentials to access a resource. Requires filtering of "normal".                                                                                                                                                                        |
+| 4661                             | A handle to an object was requested                    | SAM/DSA Access. Requires filtering of "normal" to not overload the number of events logged.                                                                                                                                                                                                  |
+| 4672                             | Special privileges assigned to new logon               | Monitor when someone with admin rights logs on. Is this an account that should have admin rights?  Knowing when someone or something is getting new privileges should be a cause of concern.                                                                                                 |
+| 4723                             | Account password change attempted                      | Who or what attempted to change the password of this user?                                                                                                                                                                                                                                   |
+| 4964                             | Custom Special Group logon tracking                    | Track admin &amp; "users of interest" logons. This relates to privileged account management for service accounts and normal privileged accounts to know when they are getting used.                                                                                                          |
+| 7045, 4697                       | New service was installed                              | Attackers often install a new service for persistence and if someone is installing something as a service you should know.                                                                                                                                                                   |
+| 4698, 4699, 4702                 | Scheduled task creation/modification                   | Attackers often create/modify scheduled tasks for persistence. Pull all events in Microsoft-Windows-TaskScheduler/Operational                                                                                                                                                                |
+| 4719, 612                        | A system audit policy was changed                      | Attackers may modify the system's audit policy.                                                                                                                                                                                                                                              |
+| 4732                             | A member was added to a (security-enabled) local group | Attackers may create a new local account &amp; add it to the local Administrators group. Restricted groups come into play here to ensure that their elevation will not last beyond a GPO refresh.                                                                                            |
+| 4720                             | A (local) user account was created                     | Attackers may create a new local account for persistence.                                                                                                                                                                                                                                    |
+| 3065, 3066                       | LSASS Auditing – Code Integrity Checking               | This monitors LSA drivers &amp; plugins. Test extensively before deploying!                                                                                                                                                                                                                  |
+| 3033, 3063                       | LSA Protection – Failed to Load Drivers and Plugins    | This monitors the LSA drivers &amp; plugins and blocks any that are not properly signed.                                                                                                                                                                                                     |
+| 4798                             | A user's group membership was enumerated               | This can potentially detect recon activity of local group membership enumeration which may lead to privilege escalation typical with Bloodhound. You may need to filter out normal activity.                                                                                                 |
+| 4768, 4771                       | Account Logon / Kerberos Authentication Service        | Depending on your applications deployed this may be chatty or completely quiet until an attack or specific event triggers it. This is recommended because many attack methods use Kerberos as the authentication vehicle.                                                                    |
+| 4769                             | Account Logon / Kerberos Service Ticket Operations     | Depending on your applications deployed this may be chatty or completely quiet until an attack or specific event triggers it. This is recommended because many attack methods use Kerberos as the authentication vehicle.                                                                    |
+| 4741, 4742                       | Account Management / Computer Account Management       | Knowing when something is created or modified on a Domain Computer account it needs to be logged to be able to find out if it is a problem.                                                                                                                                                  |
+| 4728, 4732, 4756                 | Account Management / Security Group Management         | Knowing when something is created or modified on a Domain Group it needs to be logged to be able to find out if it is a problem.                                                                                                                                                             |
+| 4720, 22, 23, 38, 65, 66, 80, 94 | Account Management / User Account Management           | Knowing when something is created or modified on a Domain user it needs to be logged to be able to find out if it is a problem.                                                                                                                                                              |
+| 4692                             | Detailed Tracking / DPAPI Activity                     | This is to track the export of the DPAPI backup key used for AD backup and restores. This is needed to take the AD database offline to crack the passwords along with other password related AD attacks also.                                                                                |
+| 4688                             | Detailed Tracking / Process Creation                   | Tracking what is running can be very noisy, but once filtered it can be the best way to track what is going on specific computers. This may be harder to do on workstations but on servers it should be much less noise and when something is logged you most likely need to investigate it. |
+| 4634                             | Collect events for account logoff                      | This can be noisy but is worth knowing when accounts logoff especially on servers and even on workstations based on your threat landscape.                                                                                                                                                   |
+| 4624, 4625, 4648                 | Collect events for account logon                       | This can be noisy but is worth knowing when accounts logon especially on servers and even on workstations based on your threat landscape.                                                                                                                                                    |
+| 4964                             | Collect events for special group attributed at logon   | Knowing when special accounts are logging in is a key indicator of these accounts being misused.                                                                                                                                                                                             |
+| 4713, 4716, 4739                 | Collect events related to trust modifications          | No trust should be setup or modifying an existing trust from a one-way to a two-way one without you knowing                                                                                                                                                                                  |
 
 If you also are using a Citrix ADC for load balancing, web application firewall, Citrix Gateway or other services we recommend visiting this reference Tech Zone Citrix ADC Security Guide along with the Syslog configuration guide
 
