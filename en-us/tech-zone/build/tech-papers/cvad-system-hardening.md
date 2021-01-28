@@ -4,13 +4,15 @@ h3InToc: true
 contributedBy: Patrick Coble, Martin Zugec
 description: Copy & paste description from TOC here
 ---
-# Citrix Virtual Apps and Desktops System Hardening Guide
+# Citrix Virtual Apps and Desktops VDA Hardening Guide
 
 When deploying any operating system, the settings are always targeted for the most compatible settings to ensure the device works along with it is the most backwards compatibility. The Windows Operating system is no different, even the latest Windows releases have settings to allow it to work with releases from 20+ years ago along with very few restrictions of what can be done within the operating system. Windows does have its built in Firewall, Antivirus and Update settings that will allow some protections, but a user can launch anything they have access to and by default they have access to most everything besides what is protected by local administrative access.
 
 In the following sections we will cover the most recommended areas from how to planning to get started, how to configure some recommended policies, control privileged access and even configure some security based windows features. Most of these sections will be broken into these three sections minimum, recommended and high security. The minimum recommendations are just that a starting point at default or just beyond default settings, this will provide some protections, but should provide the most application compatibility and usability also. The recommended settings will start to secure the system further that will be able to start preventing some common attack methods while allowing the most common application compatibility and usability requirements too. The high security recommendations will provide the most secure deployment options with the most restrictive usability and the most targeted application compatibility also.
 
 All these settings should be deployed in a test scenario and validated by your IT team and then scheduled and promoted to your test users before finally being promoted into production. With each level of recommendations, the risk of causing a useability or application compatibility issue will increase and should require further testing and tuning.
+
+TODO Disclaimer from legal
 
 ## Planning
 
@@ -633,10 +635,6 @@ We recommend if you do not have a SIEM to configure Windows Event Log Forwarding
 
 This is designed to provide applications like SQL and Exchange to have an automatic password management. It will also simplify Service Principal Names management for these accounts which can help mitigate Kerberoast attacks.
 
-Managed Service Account Step-by-Step Guide
+[Managed Service Account Step-by-Step Guide](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10)?redirectedfrom=MSDN)
 
-[https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10)?redirectedfrom=MSDN](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10)?redirectedfrom=MSDN)
-
-Top 10
-
-[https://docs.microsoft.com/en-us/windows/security/threat-protection/overview-of-threat-mitigations-in-windows-10](https://docs.microsoft.com/en-us/windows/security/threat-protection/overview-of-threat-mitigations-in-windows-10)
+[Top 10](https://docs.microsoft.com/en-us/windows/security/threat-protection/overview-of-threat-mitigations-in-windows-10)
