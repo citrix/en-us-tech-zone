@@ -9,7 +9,7 @@ description: Learn how to implement a POC of the Citrix SD-WAN 110 appliance to 
 
 ## Overview
 
-This proof of concept (PoC) guide is designed to help you quickly deploy a Citrix SD-WAN Home Office environment using the Citrix SD-WAN Orchestrator service as the management tool. The [Citrix SD-WAN Home Office Design Decisions Guide](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) outlined WAN topology decisions to integrate Citrix SD-WAN in a Home Office. Below The ISP Router needs use the ISP + LTE option, which includes a primary WAN link provided by an ISP. It is augmented with an LTE service, to review implementation considerations.
+This proof of concept (PoC) guide is designed to help you quickly deploy a Citrix SD-WAN Home Office environment using the Citrix SD-WAN Orchestrator service as the management tool. The [Citrix SD-WAN Home Office Design Decisions guide](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) outlined WAN topology decisions to integrate Citrix SD-WAN in a Home Office. Below The ISP Router needs use the ISP + LTE option, which includes a primary WAN link provided by an ISP. It is augmented with an LTE service, to review implementation considerations.
 
 ![ISP + LTE Home Office Topology](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_ispplusltehomeofficetopology.png)]
 
