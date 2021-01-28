@@ -5,7 +5,7 @@ contributedBy: Anudeep Athlur
 specialThanksTo: Jaskirat Chauhan, Karthick Srivatsan
 description: Learn how to establish connectivity between SD-WAN and Azure Virtual WAN, and connect workloads on Azure with on-premises infrastructure.
 ---
-# Citrix SD-WAN + Azure Virtual WAN Blueprint: Introduction and Use Cases
+# Citrix SD-WAN + Azure Virtual WAN Blueprint: Deployment Guide
 
 ## Audience
 
@@ -15,7 +15,7 @@ This document is intended for cloud solution architects, network designers, tech
 
 This document highlights the advantages offered by Azure Virtual WAN, the benefits of a joint Azure VWAN and Citrix SD-WAN solution, the use-cases they cater to, and corresponding configuration guidance.
 
-Broadly, the configuration guide covers how to:
+Broadly, the deployment guide covers how to:
 
 1.  Establish connectivity in Azure Virtual WAN
 
@@ -70,7 +70,9 @@ It augments the benefits of Azure Virtual WAN by providing a high level of redun
     While it is possible to connect a branch-office to Azure VWAN through native IPsec, a single IPsec tunnel may be prone to packet loss and link congestion and cannot mitigate the risks of outages. Any network outage can in cases lead to millions of dollars of productivity and revenue losses.
 
     Taking the alternative approach of deploying a Citrix SD-WAN VPX Network Virtual Appliance (NVA) on Azure to form a book-ended solution with an on-premises SD-WAN appliance, brings benefits such as link bonding and load balancing, subsecond failover, selective packet replication, and bi-directional QoS among others to make the network more resilient and improve application experience for users.
+
 1.  **Benefit 5: SD-WAN Orchestrator for enhanced visibility**
+
     Citrix SD-WAN orchestrator provides a single pane of glass to manage and track your network health and usage. Orchestrator’s template-based cloning simplifies large-scale deployments of SD-WAN and network expansions, helping scale changes to an entire fleet of branch-offices, and save time.
     SD-WAN Orchestrator also provides automated on-ramps to Microsoft Azure through point-and-click provisioning of SD-WAN VPX instances in new or existing VNets.
 
@@ -605,7 +607,7 @@ In this step, we verify that the routes are being propagated from West VNet to t
 
 In case, you haven’t tried Azure Virtual WAN yet, head over to [portal.azure.com](http://www.portal.azure.com/). If you want to experience the benefits of an SD-WAN solution first-hand, feel free to request a free-trial [here](https://www.citrix.com/en-in/products/citrix-sd-wan/form/request-a-demo/).
 
-## Annexure
+## Appendix
 
 ### Create an Azure Service Principal
 
