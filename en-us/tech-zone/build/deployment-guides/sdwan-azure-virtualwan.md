@@ -474,7 +474,7 @@ Note that if you have made it this far, you MUST have created the Azure Virtual 
 
     [![Site Provisioning Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_43.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_43.png)
 
-## Verify Virtual WAN Service status on sites configured
+## Verify Virtual WAN Service status
 
 **Note:** Click the *‘info’* icon on the Azure Virtual WAN Site to obtain details about the Azure Virtual WAN Tunnel configuration and status.
 
