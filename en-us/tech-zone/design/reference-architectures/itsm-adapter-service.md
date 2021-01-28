@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Nagaraj Manoli
+specialThanksTo: Arvind SankaraSubramanian, Kiran Kumar
 description: Learn how to integrate ServiceNow within your Citrix Virtual Apps and Desktops environment including key technical concepts and use cases.
 ---
 # Integrating ServiceNow with Citrix Virtual Apps and Desktops
-
-## Contributors
-
-**Author:** [Nagaraj Manoli](mailto:nagaraj.manoli@citrix.com)
-
-**Special Thanks:** [Arvind SankaraSubramanian](mailto:arvind.sankarasubramanian@citrix.com), [Kiran Kumar](mailto:kiran.kumar2@citrix.com)
 
 ## Audience
 

@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Rajendra Soebhag, Albert Lee
+specialThanksTo: Brendan Lin, Sarah Steinhoff
 description: Learn the architecture and deployment considerations for Global Server Load Balancing configuration with Citrix Application Delivery Controller.
 ---
 # Citrix Application Delivery Controller (ADC) Global Server Load Balancing (GSLB)
-
-## Contributors
-
-**Author:** [Rajendra Soebhag](mailto:rajendra.soebhag@citrix.com) and [Albert Lee](mailto:albert.leej@Citrix.com)
-
-**Special thanks:** [Brendan Lin](mailto:brendan.lin@citrix.com) and [Sarah Steinhoff](mailto:sarah.steinhoff@citrix.com)
 
 ## Overview
 
@@ -18,9 +15,9 @@ Citrix Application Delivery Controller (ADC) Global Server Load Balancing (GSLB)
 
 The following includes fundamental design factors during an assessment and design phase that affects the formation of the design to cater for requirements. It highlights those considerations and provides background information and insight to support these.
 
-*  **Multi-site Geo-dispersed Data center deployment with ADC** -  Customer operates Citrix ADC appliances deployed across data center sites (that is, data center 1 and data center 2). A Citrix ADC high availability pair deployment consisting of two appliances commonly shares physical peripheral hardware components placed within the same data center site. It is intended to protect against Citrix ADC services outages caused by Citrix ADC appliance or peripheral hardware component failures (that is, network switches, power distribution units, etc.). As Citrix ADC appliances are deployed to two different sites (that is, data center 1 and data center 2) not physically sharing peripheral hardware components (that is, network switches, power distribution units, etc.), the design caters for a deployment that uses Citrix ADC GSLB to provide for resilience and redundancy.
+*  **Multi-site Geo-dispersed Data center deployment with ADC** -  Customer operates Citrix ADC appliances deployed across data center sites (that is, data center 1 and data center 2). A Citrix ADC high availability pair deployment consisting of two appliances commonly shares physical peripheral hardware components placed within the same data center site. It is intended to protect against Citrix ADC services outages caused by Citrix ADC appliance or peripheral hardware component failures (that is, network switches, power distribution units, and so on). As Citrix ADC appliances are deployed to two different sites (that is, data center 1 and data center 2) not physically sharing peripheral hardware components (that is, network switches, power distribution units, and so on), the design caters for a deployment that uses Citrix ADC GSLB to provide for resilience and redundancy.
 
-*  **Business continuity** - For component resilience and redundancy, business requirements exist for the design to cater for single systems failure within and across data center sites without affecting services availability and performance. A disaster may involve a single data center failure or failure of individual services within a single data center site resulting in failing over services and client connections to another data center site. Citrix ADC GSLB is used to cater to network traffic distribution, high availability, and failover services across both data center 1 and data center 2 sites.
+*  **Business continuity** - For component resilience and redundancy, business requirements exist for the design to cater for single systems failure within and across data center sites without affecting services availability and performance. A disaster can involve a single data center failure or failure of individual services within a single data center site resulting in failing over services and client connections to another data center site. Citrix ADC GSLB is used to cater to network traffic distribution, high availability, and failover services across both data center 1 and data center 2 sites.
 
 *  **Network traffic flow efficiency** - The design incorporates network traffic flows involving multiple serial hops to access individual services within the customer infrastructure. To ensure network traffic flow efficiency and eliminate routing inefficiency, network traffic flows are designed to remain within each local data center site. As such, the design caters to primary traffic flows to use back-end systems within the same data center site, and secondary (backup) traffic flows use back-end systems within the opposite data center site.
 
@@ -41,7 +38,7 @@ To ensure the various pieces of information are in place, the ADC system makes u
 
 *  Via explicit monitors that check for availability of remote resources by accessing the resource itself
 *  Via Metric Exchange Protocol (MEP), which is a channel of communication between distinct NetScaler devices, and provides a mechanism for one ADC to provide state information about resources to another ADC
-*  Through SNMP based load monitors, which poll a remote resource for statistics such as CPU load, network load, and so on
+*  Through SNMP based load monitors, which poll a remote resource for statistics such as CPU load, network load
 
 [![Citrix-ADC-GSLB-Image-1](/en-us/tech-zone/design/media/reference-architectures_adc-gslb_001.png)](/en-us/tech-zone/design/media/reference-architectures_adc-gslb_001.png)
 
@@ -95,7 +92,7 @@ If the appliance that manages a site is the only Citrix ADC appliance in that da
 
 ##### Relationships among GSLB Sites
 
-The concept of sites is central to Citrix ADC GSLB implementations. Unless otherwise specified, sites form a peer relationship among themselves. This relationship is used first to exchange health information and then to distribute load as determined by the selected algorithm. In many situations, however, a peer relationship among all GSLB sites is not desirable. Reasons for not having an all-peer implementation could be:
+The concept of sites is central to Citrix ADC GSLB implementations. Unless otherwise specified, sites form a peer relationship among themselves. This relationship is used first to exchange health information and then to distribute load as determined by the selected algorithm. In many situations, however, a peer relationship among all GSLB sites is not desirable. Reasons for not having an all-peer implementation can be:
 
 *  To clearly separate GSLB sites. For example, to separate sites that participate in resolving DNS queries from the traffic management sites.
 *  To reduce the volume of MEP traffic, which increases exponentially with an increasing number of peer sites.
@@ -124,7 +121,7 @@ A DNS virtual IP is a virtual IP (VIP) address that represents a load balancing 
 
 ##### Metrics Exchange Protocol (MEP)
 
-The data centers in a GSLB setup exchange metric with each other through the MEP, which is a proprietary protocol for Citrix ADC appliance. The exchange of the metric information begins when you create a GSLB site. These metrics comprise load, network, and persistence information.
+The data centers in a GSLB setup exchange metric with each other through the MEP, which is a proprietary protocol for the Citrix ADC appliance. The exchange of the metric information begins when you create a GSLB site. These metrics comprise load, network, and persistence information.
 
 MEP is required for health checking of data centers to ensure their availability. A connection for exchanging network metric (round-trip time) can be initiated by either of the data centers involved in the exchange, but a connection for exchanging site metrics is always initiated by the data center with the lower IP address. By default, the data center uses a subnet IP address (SNIP) to establish a connection to the IP address of a different data center. However, you can configure a specific SNIP, virtual IP (VIP) address, or the NSIP address, as the source IP address for metrics exchange. The communication process between GSLB sites uses TCP port 3011 or 3009, so this port must be open on firewalls that are between the Citrix ADC appliances.
 
@@ -152,7 +149,7 @@ For GSLB methods to work with a remote site, either MEP must be enabled, or expl
 
 When you bind a remote service to a GSLB virtual server, the GSLB sites exchange metric information, including network metric Information, which is the round-trip-time and persistence Information.
 
-If a metric exchange connection is momentarily lost between any of the participating sites, the remote site is marked as DOWN, and load balancing is performed on the remaining sites that are UP. When metric exchange for a site is DOWN, the remote services belonging to the site are marked DOWN as well.
+If a metric exchange connection is momentarily lost between any of the participating sites, the remote site is marked as DOWN, and load balancing is performed on the remaining sites that are UP. When the metric exchange for a site is DOWN, the remote services belonging to the site are marked DOWN as well.
 
 The Citrix ADC appliance periodically evaluates the state of the remote GSLB services by using either MEP or monitors that are explicitly bound to the remote services. Binding explicit monitors to local services is not required, because the state of the local GSLB service is updated by default using the MEP. However, you can bind explicit monitors to a remote service. When monitors are explicitly bound, the state of the remote service is not controlled by the metric exchange.
 
@@ -217,9 +214,9 @@ The deliverable provides guidelines for the implementation and configuration ref
 
 Citrix Online Product Documentation [Citrix ADC](/en-us/citrix-adc.html)
 
-Citrix Online Product Documentation [Citrix ADC VPX Virtual Machines](/en-us/citrix-adc/13/deploying-vpx.html)
+Citrix Online Product Documentation [Citrix ADC VPX Virtual Machines](/en-us/citrix-adc/current-release/deploying-vpx.html)
 
-Citrix Online Product Documentation [Global Server Load Balancing](/en-us/citrix-adc/13/global-server-load-balancing.html)
+Citrix Online Product Documentation [Global Server Load Balancing](/en-us/citrix-adc/current-release/global-server-load-balancing.html)
 
 Citrix Whitepaper [CTX129514](https://support.citrix.com/article/CTX129514) – Secure Deployment Guide for Citrix ADC MPX, VPX, and SDX Appliances
 
@@ -231,11 +228,9 @@ Citrix Knowledgebase Article [CTX121713](https://support.citrix.com/article/CTX1
 
 Citrix Knowledgebase Article [CTX110488](https://support.citrix.com/article/CTX110488) – Delegating DNS Subdomains to the GSLB Setup of the Citrix ADC Appliances
 
-Citrix Online Product Documentation [Load Balancing](/en-us/citrix-adc/13/load-balancing.html)
+Citrix Online Product Documentation [Load Balancing](/en-us/citrix-adc/current-release/load-balancing.html)
 
-Citrix Online Product Documentation [SSL Offload and Acceleration](/en-us/citrix-adc/13/ssl.html)
-
-Citrix Community Blog [StoreFront Remote Access Part 1: The Subnet IP Demystified](https://www.citrix.com/blogs/2013/07/08/storefront-remote-access-part-1-the-subnet-ip-demystified/)
+Citrix Online Product Documentation [SSL Offload and Acceleration](/en-us/citrix-adc/current-release/ssl.html)
 
 Citrix Community Blog [Gateway Integration with StoreFront Lessons Learned](https://www.citrix.com/blogs/2014/10/15/gateway-integration-with-storefront-lessons-learned/)
 

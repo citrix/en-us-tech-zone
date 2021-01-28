@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Elaine Welch, Loay Shbeilat
 description: Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management.
 ---
 # Set up Azure Files storage for User personalization layers and Citrix Profile Management
-
-## Contributors
-
-**Author:** [Elaine Welch](mailto:Elaine.Welch@citrix.com), [Loay Shbeilat](mailto:loay.shbeilat@citrix.com)
 
 Azure Files offers fully managed file shares in the cloud, and accessible using Server Message Block (SMB) protocol. Azure Files shares can be mounted simultaneously in the cloud and on-premises, on Windows, Linux, or macOS.
 
@@ -70,10 +68,10 @@ For further details, refer to [Create an Azure file share](https://docs.microsof
 
 ## Step 3: Enable Azure Files AD Authentication
 
-Use the instructions in this section to enable Azure Files AD Authentication on a machine that's already domain-joined.
+Use the instructions in this section to enable Azure Files AD Authentication. You need to run these commands from any machine that is already domain-joined. This action is a one-time task. The VM used to run the process is not needed for the solution once the task is complete.
 
 1.  Use Remote Desktop Protocol (RDP) to connect to the **domain-joined** virtual machine.
-1.  To install the **AzFilesHybrid** module and enable authentication, follow the instructions in [Enable Azure AD DS authentication for your Azure file shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable).
+2.  To install the **AzFilesHybrid** module and enable authentication, follow the instructions in [Enable AD DS authentication for your Azure file shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable).
 
 Before proceeding to the next step, validate that Azure Files AD Authentication is enabled as follows:
 

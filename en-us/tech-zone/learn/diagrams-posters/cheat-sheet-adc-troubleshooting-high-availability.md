@@ -1,20 +1,17 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Gene Whitaker
+specialThanksTo: Adrianna Pellitteri
 description: One-page summary of high availability and troubleshooting tips.
 ---
 # Troubleshooting Citrix ADC High Availability Cheat Sheet
 
-## Contributors
-
-**Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com)
-
-**Special thanks:** Adrianna Pellitteri
-
 ## Overview
 
-A high availability (HA) deployment of two Citrix ADC appliances can provide uninterrupted operation in any transaction. With one appliance configured as the primary node and the other as the secondary node, the primary node accepts connections and manages servers while the secondary node monitors the primary. If for any reason the primary node is unable to accept connections, the secondary node takes over.
+A high availability (HA) deployment of two Citrix ADC appliances can provide uninterrupted operation in any transaction. One appliance configured as the primary node and the other as the secondary node. The primary node accepts connections and manages servers. The secondary node monitors the primary. If for any reason the primary node is unable to accept connections, the secondary node takes over.
 
-By default, Citrix ADC sends heartbeats every 200 ms and dead interval is 3 sec. After three seconds, a peer node is marked DOWN if heartbeat messages are not received from the peer node.
+By default, the Citrix ADC sends heartbeats every 200 ms. A dead interval is sent every 3 sec. After three seconds, a peer node is marked DOWN if heartbeat messages are not received from the peer node.
 
 The Citrix ADC high availability and sync cheat sheet provides you with the most commonly used resources to troubleshoot Citrix ADC high availability and sync issues.
 

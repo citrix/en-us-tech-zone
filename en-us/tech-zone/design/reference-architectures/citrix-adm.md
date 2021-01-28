@@ -1,18 +1,15 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Albert Lee
+specialThanksTo: Andrew Gravett
 description: See how the Citrix Application Delivery Management software is deployed to simplify management and monitoring of your application delivery infrastructure.
 ---
 # Citrix Application Delivery Management
 
-## Contributors
-
-**Author:** [Albert Lee](mailto:Albert.lee@citrix.com)
-
-**Special thanks:** [Andrew Gravett](mailto:Andrew.Gravett@citrix.com)
-
 ## Overview
 
-Citrix Application Delivery Management (ADM) is a centralized management solution. It simplifies operations by providing administrators with enterprise-wide visibility and automating management jobs that are getting executed across multiple instances. You can manage and monitor Citrix application networking products including Citrix Application Delivery Controllers (ADC) MPX, VPX, SDX, CPX, BLX, Citrix Gateway, Citrix Web Application Firewall (WAF), and Citrix SD-WAN. You can use ADM to manage, monitor, and troubleshoot the entire global application delivery infrastructure from a single, unified console.
+Citrix Application Delivery Management (ADM) is a centralized management solution. It simplifies operations by providing administrators with enterprise-wide visibility and automating management jobs that are getting ran across multiple instances. You can manage and monitor Citrix application networking products including Citrix Application Delivery Controllers (ADC) MPX, VPX, SDX, CPX, BLX, Citrix Gateway, Citrix Web Application Firewall (WAF), and Citrix SD-WAN. You can use ADM to manage, monitor, and troubleshoot the entire global application delivery infrastructure from a single, unified console.
 
 ADM also addresses the application visibility challenge by collecting detailed information about web-application and virtual-desktop traffic including application flow, security events, user-session-level information, webpage performance data, and database information flowing through the managed Citrix Appliances, and providing actionable reports. This approach enables administrators to troubleshoot and proactively monitor customer issues in a matter of minutes.
 
@@ -23,7 +20,7 @@ Citrix ADM Software virtual appliances can be deployed in several deployment mod
 *  Disaster Recovery Mode
 *  ADM Agent Deployment (for adding remote Sites)
 
-This ADM Reference document defines a set of architectural building blocks for delivering Citrix Application Delivery Management (Citrix ADM) 12.1MR. The target audiences are technical professionals and architects seeking knowledge on how to key components to support the following objectives.
+This ADM Reference document defines a set of architectural building blocks for delivering Citrix Application Delivery Management (Citrix ADM). The target audiences are technical professionals and architects seeking knowledge on how to key components to support the following objectives.
 
 ## ADM Appliance Software Architecture
 
@@ -33,11 +30,11 @@ The following image shows the different internal and external subsystem componen
 
 [![Citrix-ADM-Image-1](/en-us/tech-zone/design/media/reference-architectures_citrix-adm_001.PNG)](/en-us/tech-zone/design/media/reference-architectures_citrix-adm_001.PNG)
 
-The Citrix ADM NITRO Service acts as a web server handling HTTP requests and responses sent to other subsystems within the appliance from the management GUI or APIs/SDKs, using ports 80 and 443. These requests travel via the Message Bus (message processing system) by using the inter-process communication (IPC) mechanism. Initially, the HTTP requests sent to the Control subsystem, which either processes the information or sends it to another, more appropriate subsystem. Each of the other subsystems including Inventory, Stylebooks, Data Collector, Configuration, AppFlow Decoder, AppFlow Analytics, Performance, Events, Entities, SLA Manager, Provisioner, Journal, and daemons (aaad/snmpd/ntpd/syslogd/monit/sshd/pitboss), have specific roles.
+The Citrix ADM NITRO Service acts as a web server handling HTTP requests and responses sent to other subsystems within the appliance from the management GUI or APIs/SDKs, using ports 80 and 443. These requests travel via the Message Bus (message processing system) by using the inter-process communication (IPC) mechanism. Initially, the HTTP requests sent to the Control subsystem, which either processes the information or sends it to another, more appropriate subsystem. Each of the other subsystems including Inventory, StyleBooks, Data Collector, Configuration, AppFlow Decoder, AppFlow Analytics, Performance, Events, Entities, SLA Manager, Provisioner, Journal, and daemons (aaad/snmpd/ntpd/syslogd/monit/sshd/pitboss), have specific roles.
 
 ## ADM Systems Design
 
-Citrix ADM is a centralized management solution that simplifies operations by providing administrators with enterprise-wide visibility and automating management jobs that are getting executed across multiple instances.
+Citrix ADM is a centralized management solution that simplifies operations by providing administrators with enterprise-wide visibility and automating management jobs that are getting ran across multiple instances.
 
 To manage and monitor applications and the network infrastructure, you must first install Citrix ADM on one of the hypervisors. You can deploy Citrix ADM either as a single server or in a high availability mode. When using Citrix ADC Insight Center, you can migrate to Citrix ADM and avail of the management, monitoring, orchestration, and application management features in addition to the analytics features.
 
@@ -56,9 +53,9 @@ Before importing a Citrix ADM appliance to your current platform (that is, Hyper
 
 Citrix ADM requires a verified Citrix ADC license to manage and monitor the Citrix ADC instances.
 
-You can manage and monitor any number of supported instances and entities without a license. However, you can select and configure Analytics for an initial 30 discovered applications on the App Dashboard and view analytics data for 30 virtual servers without applying for additional licenses. To collect Analytics for more than 30 discovered applications (30 virtual servers), you must purchase and apply the desired licenses.
+You can manage and monitor any number of supported instances and entities without a license. However, you can select and configure Analytics for an initial 30 discovered applications on the App Dashboard and view analytics data for 30 virtual servers without applying for extra licenses. To collect Analytics for more than 30 discovered applications (30 virtual servers), you must purchase and apply the desired licenses.
 
-Full information on licensing is available in the Citrix ADM product documentation about [licensing](/en-us/citrix-application-delivery-management-software/12-1/licensing.html).
+Full information on licensing is available in the Citrix ADM product documentation about [licensing](/en-us/citrix-application-delivery-management-software/current-release/licensing.html).
 
 ### Supported Hypervisors
 
@@ -68,10 +65,10 @@ The following table lists the hypervisors supported by Citrix ADM.
 
 | **Hypervisor**    | **Versions**              | **Product Documentation**                                  |
 | ----------------- | ------------------------- | ------------------------------------------------------------ |
-| Citrix Hypervisor | 7.1 and 7.4               | [Citrix ADM with Citrix Hypervisor](/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-xenserver.html) |
-| VMware ESXi       | 6.0 and 6.5               | [Citrix ADM with VMware ESXi](/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-esxi.html) |
-| Microsoft Hyper-V | 2012 R2 and 2016          | [Citrix ADM with Microsoft Hyper-V](/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-hyper-v.html) |
-| Generic KVM       | RHEL 7.4 and Ubuntu 16.04 | [Citrix ADM with Linux KVM server](/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-kvm.html) |
+| Citrix Hypervisor | 7.1 and 7.4               | [Citrix ADM with Citrix Hypervisor](/en-us/citrix-application-delivery-management-software/current-release/deploy/install-mas-on-xenserver.html) |
+| VMware ESXi       | 6.0 and 6.5               | [Citrix ADM with VMware ESXi](/en-us/citrix-application-delivery-management-software/current-release/deploy/install-mas-on-esxi.html) |
+| Microsoft Hyper-V | 2012 R2 and 2016          | [Citrix ADM with Microsoft Hyper-V](/en-us/citrix-application-delivery-management-software/current-release/deploy/install-mas-on-hyper-v.html) |
+| Generic KVM       | RHEL 7.4 and Ubuntu 16.04 | [Citrix ADM with Linux KVM server](/en-us/citrix-application-delivery-management-software/current-release/deploy/install-mas-on-kvm.html) |
 
 ### Requirements for ADM appliance and agent Images
 
@@ -80,7 +77,7 @@ Citrix ADC instances deployed in remote data centers can be managed and monitore
 Customers have their data centers located across the globe. Agents play a vital role in following scenarios where the customers can choose:
 
 *  To install agents in remote data centers so that there is a reduction in WAN bandwidth consumption.
-*  To limit the number of instances directly sending traffic to primary Citrix ADM for data processing.
+*  To limit the amount of instances directly sending traffic to primary Citrix ADM for data processing.
 
 #### Requirements for Citrix ADM appliance
 
@@ -118,7 +115,7 @@ The primary site has the Citrix ADM nodes deployed in a high availability config
 
 In the secondary site, agents are deployed and registered with the Citrix ADM server in the primary site. These agents work in a cluster handling a continuous flow of traffic in case an agent failover — the Citrix ADC instances at the secondary site registered with the primary Citrix ADM server through agents. The instances send data directly to agents instead of primary Citrix ADM. The agents process the data received from the instances and send it to the primary Citrix ADM in a compressed format. Agents communicate with the Citrix ADM server over a secure channel, and the data sent over the channel compressed for bandwidth efficiency.
 
-### Minimum Citrix ADC versions required for Citrix ADM features
+### Minimum Citrix ADC versions required for Citrix ADM feature
 
 Diverse Citrix ADM features supported on different Citrix ADC software versions. Review the following table to make sure you have upgraded your Citrix ADC instances to the correct version.
 
@@ -144,24 +141,24 @@ Diverse Citrix ADM features supported on different Citrix ADC software versions.
 
 ### Sizing Settings
 
-Citrix Application Delivery Management (ADM) storage requirement is determined based on your Citrix ADM sizing estimation. By default, Citrix ADM provides you a storage capacity of 120 GB. If you need more than 120 GB for storing your data, you can attach an extra disk (Max additional disk per ADM is 3TB).
+Citrix Application Delivery Management (ADM) storage requirement is determined based on your Citrix ADM sizing estimation. By default, Citrix ADM provides you a storage capacity of 120 GB. If you need more than 120 GB for storing your data, you can attach an extra disk (Max extra disk per ADM is 3 TB).
 
 Notes:
 
-*  Estimate storage requirements and attach an additional disk to the server at the time of the initial deployment of Citrix ADM.
+*  Estimate storage requirements and attach an extra disk to the server at the time of the initial deployment of Citrix ADM.
 *  For a Citrix ADM single-server deployment, you can attach only one disk to the server in addition to the default disk.
-*  For a Citrix ADM high availability deployment, you must attach an additional disk to each node. The size of both disks should be identical.
+*  For a Citrix ADM high availability deployment, you must attach an extra disk to each node. The size of both disks should be identical.
 *  If you had earlier attached an external disk of lower capacity, you must remove the disk before attaching a new disk.
-*  You can attach an additional disk of capacity higher than 2 terabytes. If necessary, the size of the disk can be smaller than 2 terabytes also.
+*  You can attach an extra disk of capacity higher than 2 terabytes. If necessary, the size of the disk can be smaller than 2 terabytes also.
 *  Citrix recommends using solid-state drive (SSD) technology for Citrix ADM deployments.
 
 ### Prune Settings
 
-To limit the amount of reporting data stored in your Citrix ADM server’s database, you can prune it. You can specify the interval for which you want Citrix ADM to retain network reporting data, events, audit logs, and task logs. By default, this data is pruned every 24 hours (at 00.00 hours). More details can found [here](/en-us/citrix-application-delivery-management-software/12-1/manage-system-settings/configure-system-prune-settings-mas.html).
+To limit the amount of reporting data stored in your Citrix ADM server’s database, you can prune it. You can specify the interval for which you want Citrix ADM to retain network reporting data, events, audit logs, and task logs. By default, this data is pruned every 24 hours (at 00.00 hours). More details can found [here](/en-us/citrix-application-delivery-management-software/current-release/manage-system-settings/configure-system-prune-settings-mas.html).
 
 ### Backup Settings
 
-Citrix devices can be backed up automatically to the Citrix ADM server. Also, those backed up data forwarded to an external server for historical trending and auditing. Refer to the [link](/en-us/citrix-application-delivery-management-software/12-1/manage-system-settings/configure-system-backup-settings.html) for more details.
+Citrix devices can be backed up automatically to the Citrix ADM server. Also, those backed-up data forwarded to an external server for historical trending and auditing. Refer to the [link](/en-us/citrix-application-delivery-management-software/current-release/manage-system-settings/configure-system-backup-settings.html) for more details.
 
 ## ADM Deployment Scenarios
 
@@ -205,7 +202,7 @@ The following table describes the terms used while configuring disaster recovery
 | ----------------------------- | ------------------------------------------------------------ |
 | Primary site (Data Center A)  | The primary site has Citrix ADM nodes deployed in high availability mode. |
 | Recovery site (Data Center B) | The recovery site has a disaster recovery node deployed in standalone mode. This node is in read-only mode and is not operational until the primary site is down. |
-| Disaster recovery node        | The recovery node is a standalone node deployed in the recovery site. This node is made operational (to the new primary) in case a disaster hits the primary site, and it is non-functional. |
+| Disaster recovery node        | The recovery node is a standalone node deployed in the recovery site. This node is made operational (to the new primary) in case a disaster select the primary site, and it is non-functional. |
 
 **Note:** The primary site and DR site communicate with each other through ports 5454 and 22, which are enabled by default.
 
@@ -223,7 +220,7 @@ The recovery site has a standalone Citrix ADM disaster recovery node deployed re
 
 After the initiation of the script at the DR site, the DR site now becomes the new primary site. You can also access the DR user interface.
 
-Full information about the disaster recovery (DR) feature is available in the Citrix ADM product documentation article [Configure disaster recovery for high availability](/en-us/citrix-application-delivery-management-software/12-1/deploy/disaster-recovery.html).
+Full information about the disaster recovery (DR) feature is available in the Citrix ADM product documentation article [Configure disaster recovery for high availability](/en-us/citrix-application-delivery-management-software/current-release/deploy/disaster-recovery.html).
 
 ## ADM Agent Deployment
 
@@ -258,9 +255,9 @@ The following ports must be open between the agent and Citrix ADC Instances.
 
 ## References
 
-[Citrix Application Delivery Management 12.1 Product Documentation](/en-us/citrix-application-delivery-management-software/12-1/get-started.html)
+[Citrix Application Delivery Management Product Documentation](/en-us/citrix-application-delivery-management-software/current-release/get-started.html)
 
- [Citrix ADC 13.0 Product Documentation](/en-us/citrix-adc/13.html)
+ [Citrix ADC Product Documentation](/en-us/citrix-adc/current-release.html)
 
 [Citrix Analytics Platform](/en-us/citrix-analytics.html)
 
@@ -286,17 +283,17 @@ The VPX provides the full functionality of the Citrix Networking product line, w
 
 Citrix ADC VPX in Azure is deployed in a Virtual Network (VNET) and is available from the Azure Marketplace in subscription-based, check-in/check-out, or Bring Your Own License (BYOL) editions. The recommended configuration includes three NICs: management, client-side, and server-side subnets. All on-premises Citrix Networking features are available in Azure, except for the following: clustering, IPv6, gratuitous ARP (GARP), L2 mode, tagged VLANs, dynamic routing, virtual MAC (VMAC), USIP, and jumbo frames.
 
-More details on Citrix ADC VPX in Azure can be found [here](/en-us/netscaler/12-1/deploying-vpx/deploy-vpx-on-azure.html).
+More details on Citrix ADC VPX in Azure can be found [here](/en-us/citrix-adc/current-release/deploying-vpx/deploy-vpx-on-azure.html).
 
 #### Citrix ADC VPX in AWS
 
 Citrix ADC VPX in AWS is deployed in a Virtual Private Cloud (VPC) and is available as an Amazon Machine Image (AMI) from the AWS Marketplace in subscription-based or bring you to own license (BYOL) editions. The recommended configuration includes three Elastic Network Interfaces (ENIs): management, client-facing, and back-end subnets. All on-premises Citrix Networking features are available in AWS, except for the following: IPv6, gratuitous ARP (GARP), L2 mode, tagged VLAN, dynamic routing, virtual MAC (VMAC).
 
-More details on Citrix ADC VPX in AWS can be found [here](/en-us/netscaler/12-1/deploying-vpx/deploy-aws.html).
+More details on Citrix ADC VPX in AWS can be found [here](/en-us/citrix-adc/current-release/deploying-vpx/deploy-aws.html).
 
 #### MPX Overview
 
-Citrix ADC MPX is a hardware-based, highly performant platform that provides industry-leading delivery of applications over the Internet and private networks, combining application-level security, optimization, and traffic management into a single, integrated appliance. All MPX appliances support Citrix nCore technology, which enables them to leverage their multi-core CPU systems for multi-gigabit performance and massive scalability for all application workloads.
+Citrix ADC MPX is a hardware-based, highly performant platform that provides industry-leading delivery of applications over the Internet and private networks, combining application-level security, optimization, and traffic management into a single, integrated appliance. All MPX appliances support Citrix nCore technology, which enables them to use their multi-core CPU systems for multi-gigabit performance and massive scalability for all application workloads.
 
 An MPX can be integrated into any network as a complement to existing load balancers, servers, caches, and firewalls. It requires no additional client or server-side software and can be configured using the web-based GUI and CLI configuration utilities. Flexible Pay-As-You-Grow licensing helps customers protect their investment, avoid costly hardware upgrades, and reduce overall TCO.
 
@@ -307,8 +304,8 @@ The Citrix ADC SDX platform delivers fully isolated network instances running on
 A Citrix ADC can be connected to a network using various of methods such as one arm mode or two-arm mode. Citrix ADC requires multiple IP addresses to function on a network. The most important IP addresses are:
 
 *  **NSIP (ADC IP):** There must be only one NSIP assigned to each instance, used for management. NSIP addresses are not shared between a High Availability (HA) Pair.
-*  **VIP (Virtual Server IP):** Virtual Server IP's are used to host services on Citrix ADCs. Examples would be a Load Balancing Virtual Server, SSL VPN Virtual Server, and so on. VIP addresses are shared between a High Availability (HA) Pair.
-*  **SNIP (Subnet IP):** This IP address is used to access a particular subnet. This IP is used as the source address on the network when accessing resources on the particular subnet configured for use with the subnet IP. SNIP's are shared between a High Availability (HA) pair.
+*  **VIP (Virtual Server IP):** Virtual Server IPs are used to host services on Citrix ADCs. Examples would be a Load Balancing Virtual Server, SSL VPN Virtual Server, and so on. VIP addresses are shared between a High Availability (HA) Pair.
+*  **SNIP (Subnet IP):** This IP address is used to access a particular subnet. This IP is used as the source address on the network when accessing resources on the particular subnet configured for use with the subnet IP. SNIPs are shared between a High Availability (HA) pair.
 
 ## Citrix Application Delivery Management Analytics (Insight) Overview
 
@@ -342,4 +339,4 @@ The Video Insight feature provides a secure and scalable solution for monitoring
 
 ### WAN Insight
 
-WAN Insight analytics enables administrators to easily monitor the accelerated and unaccelerated WAN traffic that flows between the data center and branch WAN optimization appliances. WAN Insight also provides visibility into clients, applications and branches on the network to help troubleshoot network issues effectively.
+WAN Insight analytics enables administrators to easily monitor the accelerated and unaccelerated WAN traffic that flows between the data center and branch WAN optimization appliances. WAN Insight also provides visibility into clients, applications, and branches on the network to help troubleshoot network issues effectively.

@@ -1,22 +1,19 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Dennis Span
+specialThanksTo: Martin Zugec
 description: Tech Paper focused on installation, configuration, and various optimizations for Google Chrome browser running on Citrix Virtual Apps and Desktops.
 ---
 # Running Google Chrome on Virtual Apps and Desktop
 
-## Contributors
-
-**Author:** [Dennis Span](https://twitter.com/dennisspan)
-
-**Special thanks:** [Martin Zugec](https://twitter.com/MartinZugec)
-
 ## Overview
 
-One of the most popular browsers today, Google Chrome, is a must-have for many Citrix Virtual Apps and Desktops environments. Google Chrome was primarily oriented at consumers and desktop operating systems when launched, but today, it is common in the Enterprise and more and more administrators are deploying this browser in their Virtual Apps and Desktops environments. This led Google to release a new Chrome Enterprise Bundle package in 2017 that is much friendlier to enterprise deployments than past iterations. To properly install and configure Google Chrome, there are some details you need to be aware of. This article will show you the recommended steps to a successful deployment, configuration, and optimization of Google Chrome in your organization.
+One of the most popular browsers today, Google Chrome, is a must-have for many Citrix Virtual Apps and Desktops environments. Google Chrome was primarily oriented at consumers and desktop operating systems when launched, but today, it is common in the Enterprise and more administrators are deploying this browser in their Virtual Apps and Desktops environments. This led Google to release a new Chrome Enterprise Bundle package in 2017 that is much friendlier to enterprise deployments than past iterations. To properly install and configure Google Chrome, there are some details you need to be aware of. This article shows you the recommended steps to a successful deployment, configuration, and optimization of Google Chrome in your organization.
 
 ## Installation
 
-First, download the [latest version of Google Chrome](https://chrome.com/enterprise). You can choose to download either the Enterprise Bundle or the stand-alone version. The Enterprise Bundle includes the installers for the Chrome browser and the Chrome Legacy Browser, as well as the Microsoft Group Policy template (ADMX) files. Choose either the 32-bit or 64-bit version. Extract the ZIP file after download.
+First, download the [latest version of Google Chrome](https://chrome.com/enterprise). You can choose to download either the Enterprise Bundle or the stand-alone version. The Enterprise Bundle includes the installers for the Chrome browser and the Chrome Legacy Browser, and the Microsoft Group Policy template (ADMX) files. Choose either the 32-bit or 64-bit version. Extract the ZIP file after download.
 
 **NOTE:** The [Chrome Legacy Browser Support extension](https://support.google.com/chrome/a/answer/3019558?hl=en) allows users to switch automatically between Chrome and another browser. When a user clicks a link that requires a legacy browser to open (such as a site that requires ActiveX), the URL will automatically open in the legacy browser from Chrome.
 
@@ -33,7 +30,7 @@ The installation directory is the same for both 32-bit and 64-bit installations.
 
 It is no longer necessary to add the parameters `–allow-no-sandbox-job –disable-gpu` to the command line.
 
-However, there still remains an issue in combination with the Citrix API hooks. Google Chrome may not launch properly and you may have to exclude the Chrome processes chrome.exe and nacl64.exe from these hooks. The Google article [Run Chrome as a virtual application](https://support.google.com/chrome/a/answer/7380899?vid=0-1331563052758-1499416367347) describes this issue in more detail. The Citrix article [How to Disable Citrix API Hooks on a Per-application](https://support.citrix.com/article/CTX107825) provides step-by-step instructions on how to disable the hooks for individual processes (applications). Just be aware that from XenApp and XenDesktop version 7.9 and newer, changes to API hooks configuration must be followed by a reboot.
+However, there remains an issue with the Citrix API hooks. Google Chrome can not launch properly and you can have to exclude the Chrome processes chrome.exe and nacl64.exe from these hooks. The Google article [Run Chrome as a virtual application](https://support.google.com/chrome/a/answer/7380899?vid=0-1331563052758-1499416367347) describes this issue in more detail. The Citrix article [How to Disable Citrix API Hooks on a Per-application](https://support.citrix.com/article/CTX107825) provides step-by-step instructions on how to disable the hooks for individual processes (applications). Be aware that from XenApp and XenDesktop version 7.9 and newer, changes to API hooks configuration must be followed by a reboot.
 
 The Citrix article [Chrome fails to launch in a published desktop](https://support.citrix.com/article/CTX226044) deals with Chrome errors such as “Aw, Snap!” page crashes and gray screens without any message. The solution for these errors is the same as mentioned above; the processes `chrome.exe` and `nacl64.exe` need to be excluded from the Citrix API hooks.
 
@@ -41,7 +38,7 @@ The Citrix article [Chrome fails to launch in a published desktop](https://suppo
 
 ### Manage Google Chrome using Group Policies
 
-Google Chrome can be managed using Microsoft Group Policy. As mentioned, the Enterprise Bundle includes the ADMX files. Copy the ADMX files and the language files (*.ADML) to your central store for Group Policy administrative templates (e.g. `\\contoso.com\SYSVOL\contoso.com\policies\PolicyDefinitions`). You find all Chrome related policies in the section Computer Configuration \ Policies \ Administrative Templates \ Google.
+Google Chrome can be managed using Microsoft Group Policy. As mentioned, the Enterprise Bundle includes the ADMX files. Copy the ADMX files and the language files (*.ADML) to your central store for Group Policy administrative templates (for example `\\contoso.com\SYSVOL\contoso.com\policies\PolicyDefinitions`). You find all Chrome related policies in the section Computer Configuration \ Policies \ Administrative Templates \ Google.
 
 ### Manage the master_preferences file
 
@@ -100,11 +97,11 @@ There are three methods how to change the default directory of the profile.pb fi
 
 So, what happens if the user is not signed in with a Google account or a Chrome roaming profile ("profile.pb") has not been configured? In cases such as these, Google Chrome stores all user data in the directory `C:\Users\%UserName%\**AppData\Local**\Google\Chrome\User Data` (see also the Chromium article [User Data Directory](https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md)). This directory is synchronized by default by the Citrix Profile Management.
 
-This method has its drawbacks and should be used carefully. As stated in the article [Common Problems and Solutions](https://www.chromium.org/administrators/common-problems-and-solutions), Chrome user profiles are not backward-compatible. If you try to use mismatched profiles and Chrome versions, you may experience crashes or data loss. This mismatch can often occur if a Chrome profile is synced to a roaming profile or network drive across multiple machines that have different versions of Chrome.
+This method has its drawbacks and should be used carefully. As stated in the article [Common Problems and Solutions](https://www.chromium.org/administrators/common-problems-and-solutions), Chrome user profiles are not backward-compatible. If you try to use mismatched profiles and Chrome versions, you can experience crashes or data loss. This mismatch can often occur if a Chrome profile is synced to a roaming profile or network drive across multiple machines that have different versions of Chrome.
 
-In short, it is important not to mix different versions of Chrome into a single roaming profile. If you want to use this method to synchronize your user’s settings, make sure to create separate roaming profiles for each environment or device type. This method may work for your organization, but you do so at your own risk.
+In short, it is important not to mix different versions of Chrome into a single roaming profile. If you want to use this method to synchronize your user’s settings, make sure to create separate roaming profiles for each environment or device type. This method can work for your organization, but you do so at your own risk.
 
-Please note that [Citrix recommends](/en-us/profile-management/current-release/configure/include-and-exclude-items/defaults.html) excluding the following four subfolders:
+Note that [Citrix recommends](/en-us/profile-management/current-release/configure/include-and-exclude-items/defaults.html) excluding the following four subfolders:
 
 -  `!ctx_localappdata!\Google\Chrome\User Data\Default\Cache=`
 -  `!ctx_localappdata!\Google\Chrome\User Data\Default\Cached Theme Images=`
@@ -117,7 +114,7 @@ Please note that [Citrix recommends](/en-us/profile-management/current-release/c
 
 On non-persistent machines, Chrome should not be allowed to update itself automatically. Installing updates should only be allowed when modifying or creating the master image or when updating the application layer (Citrix App Layering). To disable automatic updates, proceed as follows:
 
--  Disable the Group Policy setting Update policy override in the section Computer Configuration \ Policies \ Administrative Templates \ Google \ Google Update \ Applications \ Google Chrome on the Organization Unit in Active Directory that contains your productive workers.
+-  Disable the Group Policy setting Update policy override in the section Computer Configuration \ Policies \ Administrative Templates \ Google \ Google Update \ Applications \ Google Chrome on the Organization Unit in the Active Directory that contains your productive workers.
 -  Disable the following services and scheduled tasks (responsible for automatic updates):
 -  Google Update Service (gupdate)
 -  Google Update Service (gupdatem)
@@ -126,11 +123,11 @@ On non-persistent machines, Chrome should not be allowed to update itself automa
 
 ### Disable Active Setup
 
-Chrome also creates an Active Setup item. As explained by Citrix CTP Helge Klein: **"Active Setup is a mechanism for executing commands once per user early during logon. Active Setup is used by some operating system components like Internet Explorer to set up an initial configuration for new users logging on for the first time."** Active Setup is executed at logon by the explorer.exe process, which means that it does not work with published applications. As a general rule, I recommend disabling Active Setup completely to improve user logon time. In case you would like to execute the Chrome Active Setup command once at user logon, I recommend using a logon script that automatically reads the command line from the stubpath registry value and executes the command.
+Chrome also creates an Active Setup item. As explained by Citrix CTP Helge Klein: **"Active Setup is a mechanism for executing commands once per user early during logon. Active Setup is used by some operating system components like Internet Explorer to set up an initial configuration for new users logging on for the first time."** Active Setup is ran at logon by the explorer.exe process, which means that it does not work with published applications. As a rule, I recommend disabling Active Setup completely to improve user logon time. In case you would like to run the Chrome Active Setup command once at user logon, I recommend using a logon script that automatically reads the command line from the stubpath registry value and run the command.
 
 ### Remove the Chrome desktop icon
 
-One last item you may want to configure is removing the automatically created desktop icon. This requires two steps:
+One last item you can configure is removing the automatically created desktop icon. This requires two steps:
 
 -  Delete the shortcut file `Google Chrome.lnk`, located in the directory `%Public%\Desktop`, which by default points to `C:\Users\Public`.
 -  Add the following lines to Chrome’s master_preferences file (explained previously in the Configuration section) to prevent shortcuts from being created for new users:
@@ -140,22 +137,22 @@ One last item you may want to configure is removing the automatically created de
 
 ### Memory and CPU Optimization
 
-Browsers can be quite RAM- and CPU-intensive and Chrome is no exception. On a native client, this might not be much of a problem, but it is in a Citrix Virtual Apps and Desktops environment where (in most cases) all workers are virtual machines, sharing the underlying hardware. Resource-intensive applications reduce the maximum user density per physical host.
+Browsers can be quite RAM- and CPU-intensive and Chrome is no exception. On a native client, this might not be much of a problem, but it is in a Citrix Virtual Apps and Desktops environment where (usually) all workers are virtual machines, sharing the underlying hardware. Resource-intensive applications reduce the maximum user density per physical host.
 
-**Did you know that Chrome comes with its own task manager that allows you to see the resource consumption for each individual tab?** To access the Chrome task manager, either use the shortcut SHIFT+ESC or go to the menu (the three vertical dots), and navigate to More tools \ Task manager. The task manager allows you to identify which web pages consume the most resources.
+**Did you know that Chrome comes with its own task manager that allows you to see the resource consumption for each individual tab?** To access the Chrome task manager, either use the shortcut SHIFT+ESC or go to the menu (the three vertical dots), and navigate to More tools \ Task manager. The task manager allows you to identify which webpages consume the most resources.
 
 It is possible to reduce the memory and CPU utilization of Chrome:
 
 -  First of all, use Citrix Workspace Environment Manager (WEM). The features [CPU Management](/en-us/workspace-environment-management/current-release/user-interface-description/system-optimization/cpu-management.html) and [Memory Management](/en-us/workspace-environment-management/current-release/user-interface-description/system-optimization/memory-management.html) reduce the memory and CPU utilization for many processes and applications, Chrome included.
--  Another way of reducing Chrome’s footprint is by using a Chrome extension, such as the [The Great Suspender](https://chrome.google.com/webstore/detail/the-great-suspender/klbibkeccnjlkjkiokjodocebajanakg?hl=en), to manage tabs to free up system resources. This extension suspends unused tabs, thus reducing memory and (especially!) CPU consumption. Each user can customize the extension (eg. which URLs never to suspend, the time-out after which tabs are suspended and more). Test this plugin and use the Chrome task manager to see how the resource consumption of each suspended tab reduces significantly.
+-  Another way of reducing Chrome’s footprint is by using a Chrome extension, such as [The Great Suspender](https://chrome.google.com/webstore/detail/the-great-suspender/klbibkeccnjlkjkiokjodocebajanakg?hl=en), to manage tabs to free up system resources. This extension suspends unused tabs, thus reducing memory and (especially!) CPU consumption. Each user can customize the extension (for example which URLs never to suspend, the time-out after which tabs are suspended and more). Test this plug-in and use the Chrome task manager to see how the resource consumption of each suspended tab reduces significantly.
 -  In case your physical hosts come with a Graphics Processing Unit (GPU), certain processing tasks are offloaded to the GPU, thus freeing up the CPU. Citrix CTP Helge Klein wrote two great articles on this topic: [Impact of GPU Acceleration on Browser CPU Usage](https://helgeklein.com/blog/2014/12/impact-gpu-acceleration-browser-cpu-usage/) and [Comparison: CPU & GPU Usage of 4 Browsers](https://helgeklein.com/blog/2016/06/comparison-cpu-gpu-usage-4-browsers/).
 
 ### Manage Chrome extensions
 
-When building your worker master image, whether hosted-shared or VDI, you may be inclined to include the required Google Chrome extensions. Don’t! Chrome extensions can be managed and deployed using Microsoft Group Policy. More importantly, Chrome extensions are installed on a per-user basis! You do not need to update your image to add or remove an extension. If you are adding a lot of extensions through policy, you should be aware that this can have a negative impact on the startup times of Google Chrome.
+When building your worker master image, whether hosted-shared or VDI, you may be inclined to include the required Google Chrome extensions. Don’t! Chrome extensions can be managed and deployed using Microsoft Group Policy. More importantly, Chrome extensions are installed on a per-user basis! You do not need to update your image to add or remove an extension. If you are adding numerous extensions through policy, you should be aware that this can have a negative impact on the startup times of Google Chrome.
 
 The installation directory is: `C:\Users\%UserName%\AppData\Local\Google\Chrome\User Data\Default\Extensions`
 
-Using Microsoft Group Policy to manage your extensions also works when using Citrix Provisioning Server (PVS) to deploy your images, not just with Machine Creation Services (MCS).
+Using Microsoft Group Policy to manage your extensions also works when using the Citrix Provisioning Server (PVS) to deploy your images, not just with Machine Creation Services (MCS).
 
 For more detailed information on how to manage Chrome extensions using Microsoft Group Policy, please see the article [Deploying Google Chrome extensions using Group Policy](https://dennisspan.com/deploying-google-chrome-extensions-using-group-policy/).

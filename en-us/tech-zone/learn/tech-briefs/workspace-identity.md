@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
 description: Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.
 ---
 # Workspace Identity
-
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
 
 A user’s primary workspace identity authorizes access to all workspace resource feeds including microapps, mobile apps, virtual apps, virtual desktops, and content. Citrix Workspace provides organizations with a choice in selecting the user’s primary identity provider.
 
@@ -216,7 +214,7 @@ If Endpoint Management Service uses group membership, Active Directory is the so
 *  Microapps Service: For microapp applications, the Microapps Service uses Okta as the source of truth. The Microapps Service is able to use Okta user accounts or an Okta user group membership to authorize access to resources.
 *  Virtual Apps and Desktops Service: Because Windows-based resources (VDI) requires an Active Directory-based user identity, the source of truth is dependent on the underlying Active Directory and Okta integration.
     *  Okta user identities must contain specific Active Directory claims (SID, UPN, and GUID).  These claims associate an Okta identity with an Active Directory identity. For a specific user identity, Okta is the source of truth.
-    *  If authorization decisions are based on group membership, the source of truth is based on the synchronization parameters between Active Directory and Okta. If any Active Directory group gets synchronized with Okta and includes Active Directory claims (SID), then Okta becomes the source of truth for groups.  If Okta groups do not include Active Directory claims (SID), then Active Directory becomes the source of truth. Workspace subsequently sends group membership requests to Active Directory via the cloud connector.
+    *  If authorization decisions are based on group membership, the source of truth is based on the synchronization parameters between Active Directory and Okta. If any Active Directory group gets synchronized with Okta and includes Active Directory claims (SID), then Okta becomes the source of truth for groups using the objectSID attribute.  This Okta attribute is only returned for Active Directory groups as defined by the [Okta specifications](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-group-types.htm).  Native Okta groups will not have this attribute set resulting in Active Directory becoming the source of truth. Workspace subsequently sends group membership requests to Active Directory via the cloud connector.
 
 The process for linking Active Directory parameters with an Okta ID is greatly simplified with the use of the Okta Active Directory synchronization tool. The Active Directory claims must adhere to the following naming standard within Okta.
 

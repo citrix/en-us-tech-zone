@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Mayank Singh
 description: Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from anywhere and on any device.
 ---
 # Proof of Concept guide for Remote PC Access with Citrix Virtual Desktops service
-
-## Contributors
-
-**Author:** [Mayank Singh](https://twitter.com/techmayank)
 
 ## Overview
 
@@ -206,7 +204,7 @@ We now install the Citrix Virtual Desktops, Virtual Delivery Agent on the physic
 
     ![Citrix Virtual Desktops service - Change directory to download folder](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-35.png)
 
-1.  Run the following command. (Replace the name of the executable with the one you downloaded and the cloud connector FQDN).
+1.  Run the following command. (Replace the name of the executable with the one you downloaded and the cloud connector FQDN). **Note**: The Citrix UPM and the Citrix UPM WMI Plugin are essential for monitoring and Citrix Analytics to collect data from the endpoint, so that logon duration, session resilliency and UX score can be reported.
 **VDAWorkstationSetup_*version*.exe /quiet /remotepc /includeadditional “Citrix User Profile Manager”,“Citrix User Profile Manager WMI Plugin” /controllers “cloudconnecotrFQDN” /enable_hdx_ports /noresume /noreboot**
 
     ![Citrix Virtual Desktops service - Run installer](/en-us/tech-zone/learn/media/poc-guides_remote-pc-access_cvd-36.png)

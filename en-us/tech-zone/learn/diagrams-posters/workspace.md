@@ -1,14 +1,12 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
 description: Conceptual architecture drawing for Citrix Workspace.
 ---
 # Citrix Workspace
 
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
-
-## User Experience
+## Diagrams
 
 Users are continuously blocked from getting work done because they are forced to remember which application they need, how to access it, how to authenticate to it and where to go within it. Citrix Workspaces improves the overall user experience by removing these challenges with the integration of multiple cloud-based services.
 
@@ -20,7 +18,7 @@ The Citrix Workspace - User Experience poster provides an overview focusing on
 *  Single Sign-On
 *  Optimized Fabric
 
-To show in full size, click on the image below:
+To show in full size, click the image found below:
 
 [![Citrix Workspace - User Experience Poster](/en-us/tech-zone/learn/media/diagrams-posters_workspace_user-experience-poster.png)](/en-us/tech-zone/learn/downloads/diagrams-posters_workspace_user-experience-poster.png)
 
@@ -32,7 +30,6 @@ We would like to provide you with source diagrams that you can adapt for your ow
 
 *  [Workspace Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html)
 *  [Workspace Intelligence - Microapps](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html)
-*  [Workspace Intelligence - Virtual Assistant](/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html)
 *  [Workspace Single Sign-On](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
 *  [Workspace Fabric - Cloud Direct](/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html)
 *  [Workspace Fabric - SD-WAN](/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html)

@@ -1,12 +1,10 @@
 ---
 layout: doc
-description: Learn how to enhance security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
+h3InToc: true
+contributedBy: Martin Zugec, Alvin Raagas
+description: Learn how to enhance the security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
 ---
 # App Protection Policies
-
-## Contributors
-
-**Author:** [Martin Zugec](https://twitter.com/MartinZugec) & [Alvin Raagas](https://twitter.com/AlvinRaagas)
 
 ## Overview
 
@@ -32,6 +30,7 @@ Operating Systems Supported:
 Server operating systems (for example Windows Server 2019) are not supported.
 
   >**Note:**
+  >
   >These operating systems are supported where Citrix Workspace app is installed (typically endpoint). The VDA supports all operating systems, including server OS.
 
 ### Licenses
@@ -50,9 +49,20 @@ Following server components are required:
 
 ## Installation - Delivery Controller
 
-1.  After you purchase the app protection feature, download the `FeatureTable.OnPrem.AppProtection.xml` file from the Citrix Virtual Apps and Desktops 1912 or later download page
+  >**Note:**
+  >
+  >Following steps are only required for Citrix Virtual Apps and Desktops versions 1912, 2003 and 2006, app protection feature is automatically included in newer releases. Only required step on newer releases is to enable XML trust (first step).
+
+1.  Enable XML Trust by running the following command:
+
+    `Set-BrokerSite -TrustRequestsSentToTheXmlServicePort $true`
+
+    ![Set XML trust](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_21.png)
+
+1.  After you purchase the app protection feature, download the `FeatureTable.OnPrem.AppProtection.xml` file from the Citrix Virtual Apps and Desktops 1912 or later download page.
 
     >**Note:**
+    >
     >App Protection Policies XML file is located under Components
 
     ![Download](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_13.png)
@@ -80,28 +90,10 @@ Following server components are required:
 
     ![Get feature](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_17.png)
 
-1.  Enable XML Trust by running the following command:
-
-    `Set-BrokerSite -TrustRequestsSentToTheXmlServicePort $true`
-
-    ![Set XML trust](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_21.png)
-
 ## Installation - Licensing
 
 1.  Download the license file and import it into the Citrix License Server alongside an existing Citrix Virtual Desktops license
-2.  Use the Citrix Licensing Manager to import the license file (preferred method) or copy the license file to `C:\Program Files (x86)\Citrix\Licensing\MyFiles` on the License Server and restart the Citrix Licensing service. For more information, see [Import license files](/en-us/licensing/current-release/manage/import-license-files.html)
-
-## Installation - StoreFront
-
-1.  On StoreFront server, run the following PowerShell command:
-
-    `Add-STFFeatureState -Name "Citrix.StoreFront.AppProtectionPolicy.Control" -IsEnabled $True`
-1.  In a multiple-server StoreFront deployment, you must manually propagate these changes to all the other servers in the server group
-1.  Verify that the feature is enabled on StoreFront by running the following PowerShell command
-
-    `Get-STFFeatureState -Name "Citrix.StoreFront.AppProtectionPolicy.Control"`
-
-    ![Get STF feature](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_18.png)
+2.  Use the Citrix Licensing Manager to import the license file. For more information, see [Install licenses](/en-us/licensing/current-release/citrix-licensing-manager/install.html)
 
 ## Installation - Citrix Workspace app
 
@@ -114,6 +106,7 @@ Following server components are required:
     **For macOS:** App protection requires no specific installation or configuration on Citrix Workspace for Mac.
 
     >**Note:**
+    >
     >It is not possible to add App protection support to older clients. Uninstall old version of Citrix Receiver / Citrix Workspace app and install new version with App protection component.
 
 1.  Click **Finish**
@@ -158,11 +151,12 @@ Following steps provides guidance for anti screen sharing testing only. To test 
 
     ![Launch resource](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_26.png)
 
-1.  (Optional) If App protection is not installed, you get the following popup when trying to launch a protected virtual app or desktop.  Click **Yes**
+1.  (Optional) If App protection is not installed, you get the following popup when trying to launch a protected virtual app or desktop. Click **Yes**
 
     ![Optional download](/en-us/tech-zone/learn/media/poc-guides_app-protection-policies_8.png)
 
     >**Note:**
+    >
     >This option is not available with older versions of Citrix Receiver / Citrix Workspace app
 
 1.  Try to perform a screen capture

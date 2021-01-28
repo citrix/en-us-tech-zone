@@ -1,20 +1,17 @@
 ---
 layout: doc
-description: Discover the use cases and learn about the detailed architecture of Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.
+h3InToc: true
+contributedBy: Vivekananthan Devaraj
+specialThanksTo: Gabe Carrejo, Miguel Contreras
+description: Discover the use cases and learn about the detailed architecture of the Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.
 ---
 # Reference Architecture for Citrix Remote PC Access Solution
-
-## Contributors
-
-**Author:** [Vivekananthan Devaraj](mailto:Vivekananthan.Devaraj@Citrix.com)
-
-**Special thanks:** Gabe Carrejo, [Miguel Contreras](https://twitter.com/ctxmigs)
 
 ## Overview of Remote PC Access
 
 The Citrix Remote PC Access solution enables end users to securely access their physical windows desktops and laptops in their office from anywhere and from any device using the full stack of HDX capabilities for the best user experience.
 
-The Virtual Delivery Agent (VDA) which is installed on the office PC, registers its states with the Cloud Connector (Citrix Cloud) or Delivery Controller (on-premises). It allows administrators to manage the physical PCs within the VDI implementation including access, policy and full HDX stack of user experience capabilities.
+The Virtual Delivery Agent (VDA) which is installed on the office PC, registers its states with the Cloud Connector (Citrix Cloud) or Delivery Controller (on-premises). It allows administrators to manage the physical PCs within the VDI implementation including access, policy, and full HDX stack of user experience capabilities.
 
 A user can have access to multiple desktops, including more than one Remote PC Access or a combination of Remote PC Access and VDI desktops. This solution is an extension of Citrix Virtual Apps and Desktops, so providing and managing remote access for users to their office PCs is as simple as it is for virtual applications and desktops.
 
@@ -30,9 +27,9 @@ The customer can replace the restrictive RDP proxy solution with the Remote PC A
 
 ## Use-Case #2
 
-An enterprise organization has a VPN solution to allow their employees to access the enterprise network remotely. To achieve this requirement, the network administrator has enabled VPN tunnels with dual-factor authentication. After the VPN authentication, users then create their own RDP links to access the machines which reside on the LAN. Users access the remote desktop and applications via the VPN secure connection. In this solution, administrators need to apply Network Access Controls to ensure users are connecting from allowed systems and apply policies to enable/disable certain protocols to restrict the data access. Organization security policy insists that the user connection will be allowed only when pre-authentication scans are valid in remote user’s PCs, and in some cases require certain OS patch levels to maintain a secure perimeter from viruses and malware. The organization has found that the users are unhappy with the VPN solution due to frequent disconnection and rejection of VPN connections when antivirus updates occur as well as other security failures.
+An enterprise organization has a VPN solution to allow their employees to access the enterprise network remotely. To achieve this requirement, the network administrator has enabled VPN tunnels with dual-factor authentication. After the VPN authentication, users then create their own RDP links to access the machines which reside on the LAN. Users access the remote desktop and applications via the VPN secure connection. In this solution, administrators need to apply Network Access Controls to ensure users are connecting from allowed systems and apply policies to enable/disable certain protocols to restrict the data access. Organization security policy insists that the user connection will be allowed only when pre-authentication scans are valid in remote user’s PCs, and sometimes require certain OS patch levels to maintain a secure perimeter from viruses and malware. The organization has found that the users are unhappy with the VPN solution due to frequent disconnection and rejection of VPN connections when antivirus updates occur and other security failures.
 
-The IT team can implement the Citrix Remote PC Access solution to replace the VPN/RDP solution. They can deploy a dedicated Remote PC Access site for allowing users to access their allocated office physical PCs. Using Remote PC Access, users will be able to seamlessly access their Office PCs over an HDX connection with the adequate SmartAccess security policies which disable the client drive, clipboard mapping and printer connections. The Citrix HDX policies allow the enterprise administrators to control the user access to the desktop and their data by preventing the Key-logging and screen capture technologies.
+The IT team can implement the Citrix Remote PC Access solution to replace the VPN/RDP solution. They can deploy a dedicated Remote PC Access site for allowing users to access their allocated office physical PCs. Using Remote PC Access, users are able to seamlessly access their Office PCs over an HDX connection with the adequate SmartAccess security policies which disable the client drive, clipboard mapping and printer connections. The Citrix HDX policies allow the enterprise administrators to control the user access to the desktop and their data by preventing the Key-logging and screen capture technologies.
 
 ## Use-Case #3
 
@@ -44,7 +41,7 @@ To achieve the above requirement, the IT administrator can deploy the Remote PC 
 
 An enterprise customer opted to deploy the Remote PC Access solution to provide access to office PCs. Citrix Remote PC Access was considered since it is easier to migrate their office PCs to Citrix VDI during the PC refresh cycle so that the organization can save capex costs.
 
-With VDI, organizations can avoid upgrade or hardware acquisition costs associated with a PC refresh by extending the use of current hardware and eliminating countless IT hours spent on managing them. Migrating to cloud-based VDI (DaaS) has the additional benefit of helping to improve cost savings, reduce administrative investments and provide a workspace of the future.
+With VDI, organizations can avoid an upgrade or hardware acquisition costs associated with a PC refresh by extending the use of current hardware and eliminating countless IT hours spent on managing them. Migrating to cloud-based VDI (DaaS) has the additional benefit of helping to improve cost savings, reduce administrative investments and provide a workspace of the future.
 
 ## Conceptual architectures for Remote PC Access on Citrix Cloud
 
@@ -52,7 +49,7 @@ With VDI, organizations can avoid upgrade or hardware acquisition costs associat
 
 In this architecture, the control plane is hosted on Citrix Cloud and managed by Citrix along with the Workspace and Gateway Service which enables the users to connect the Remote PC Access via the Citrix Cloud environment.
 
-The conceptual architecture for the Citrix Remote PC Access deployment is shown below. Let’s review the design framework of the Remote PC Access solution for both Citrix Cloud and on-premises deployments with respect to each layer on this architecture to understand the workflow of the Remote PC Access solution.
+The conceptual architecture for the Citrix Remote PC Access deployment is shown below. Let’s review the design framework of the Remote PC Access solution for both Citrix Cloud and on-premises deployments regarding each layer on this architecture to understand the workflow of the Remote PC Access solution.
 
 [![RemotePC-RA-Image-1](/en-us/tech-zone/design/media/reference-architectures_remote-pc_001.png)](/en-us/tech-zone/design/media/reference-architectures_remote-pc_001.png)
 
@@ -68,7 +65,7 @@ In this architecture, the control plane is hosted on Citrix Cloud and managed by
 
 [![RemotePC-RA-Image-3](/en-us/tech-zone/design/media/reference-architectures_remote-pc_003.png)](/en-us/tech-zone/design/media/reference-architectures_remote-pc_003.png)
 
-The conceptual architecture for the Citrix Remote PC Access deployment was discussed above. Let’s review the design framework of the Remote PC Access solution for Citrix Cloud with respect to each layer on this architecture to understand the workflow of Remote PC Access.
+The conceptual architecture for the Citrix Remote PC Access deployment was discussed above. Let’s review the design framework of the Remote PC Access solution for Citrix Cloud regarding each layer on this architecture to understand the workflow of Remote PC Access.
 
 ### User Layer
 
@@ -76,7 +73,7 @@ This layer describes the end user for the Citrix environment and the end-point d
 
 Users connect to their office PCs remotely over the Internet by using the Citrix Remote PC Access solution. Users use their personal devices like desktops, laptops, and tablet devices to connect to their office PC hence it is recommended to install the latest Citrix Workspace app client on the personal endpoint devices. Also, users can utilize the HTML5 version of Workspace in cases where they cannot install the full version of Workspace app on the devices.
 
-Users navigate to the Citrix Cloud Workspace URL `https://customer.cloud.com` via the browser to access the office PC from their endpoint device over the internet. The login page is presented to the user to validate their identity using various authentication methods. Once authenticated, the user is presented with the resources page where the assigned applications and desktop are shown. The user clicks the Remote PC Access Desktop icon to launch the desktop. Citrix Workspace app which is installed on their endpoint device launches the desktop and provides the seamless and optimal HDX experience as if the user was working from the office.
+Users navigate to the Citrix Cloud Workspace URL `https://customer.cloud.com` via the browser to access the office PC from their endpoint device over the internet. The login page is presented to the user to validate their identity using various authentication methods. Once authenticated, the user is presented with the resources page where the assigned applications and desktop are shown. The user clicks the **Remote PC Access Desktop** icon to launch the desktop. Citrix Workspace app which is installed on their endpoint device launches the desktop and provides the seamless and optimal HDX experience as if the user was working from the office.
 
 [![RemotePC-RA-Image-4](/en-us/tech-zone/design/media/reference-architectures_remote-pc_004.png)](/en-us/tech-zone/design/media/reference-architectures_remote-pc_004.png)
 
@@ -88,13 +85,13 @@ This layer describes how the end users connect to the Citrix Remote PC Access en
 
 Workspace supports various authentication methods: Active Directory, two-factor authentication with Active Directory + one-time password, and Azure AD. More authentication options are being added in the future. For more details, refer to the Workspace [documentation](/en-us/citrix-cloud/workspace-configuration.html).
 
-The Cloud Connector is a component that is installed at the resource location to connect the resources up to Citrix Cloud. A set of Cloud Connectors installed at the resource location enables access to the customer’s Active Directory domain on Citrix Cloud for authentication. Workspace configuration has multiple options to configure various authentication methods and access flow for the users that includes traditional on-premises Citrix Gateway and StoreFront that can be used to access the environment.
+The Cloud Connector is a component that is installed at the resource location to connect the resources up to Citrix Cloud. A set of Cloud Connectors installed at the resource location enables access to the customer’s Active Directory domain on Citrix Cloud for authentication. Workspace configuration has multiple options to configure various authentication methods and access flow for the users that includes the traditional on-premises Citrix Gateway and StoreFront that can be used to access the environment.
 
 When the users access the Citrix Cloud workspace URL (`https://customer.cloud.com`), they are asked to enter the Active Directory domain credentials along with the various authentication methods, then it is validated against their on-premises Active Directory domain via Cloud Connector.
 
 [![RemotePC-RA-Image-5](/en-us/tech-zone/design/media/reference-architectures_remote-pc_005.png)](/en-us/tech-zone/design/media/reference-architectures_remote-pc_005.png)
 
-Once the credentials are validated, users are then presented with the workspace resources page, where they can access the virtual apps, desktops, and Remote PC Access resources which are assigned. When the user selects the Remote PC Access Desktop (Office PC) to launch, the user connects using the Workspace app though SSL to the Gateway with HDX. The HDX connection is established from the user’s personal device to the Citrix Gateway Service on the Citrix Cloud.
+Once the credentials are validated, users are then presented with the workspace resources page, where they can access the virtual apps, desktops, and Remote PC Access resources which are assigned. When the user selects the Remote PC Access Desktop (Office PC) to launch, the user connects using the Workspace app through SSL to the Gateway with HDX. The HDX connection is established from the user’s personal device to the Citrix Gateway Service on the Citrix Cloud.
 
 **Citrix Gateway Service** provides a secure remote access solution with diverse Identity and Access Management (IdAM) capabilities, delivering a unified experience into SaaS apps, heterogeneous Virtual Apps and Desktops, Remote PC Access and so forth. The Gateway service then establishes the connection to on-premises Cloud Connectors via SSL and it connects to the Remote PC Access Desktop via TCP port 1494/2598 to provide a seamless HDX experience.
 
@@ -108,7 +105,7 @@ The cloud-provisioned delivery controllers communicate with on-premises Cloud Co
 
 [![RemotePC-RA-Image-7](/en-us/tech-zone/design/media/reference-architectures_remote-pc_007.png)](/en-us/tech-zone/design/media/reference-architectures_remote-pc_007.png)
 
-The “Monitor” tab in the Citrix Cloud portal allows Citrix admins to access the Citrix Director console to monitor the app and desktop infrastructure with session control, reporting, alerting and more.
+The “Monitor” tab in the Citrix Cloud portal allows Citrix admins to access the Citrix Director console to monitor the app and desktop infrastructure with session control, reporting, alerting, and more.
 
 ### Resource Layer
 
@@ -126,7 +123,7 @@ The Citrix Administrator can create multiple Machine Catalogs and Delivery Group
 
 This layer describes the components and cloud provisioning methods that are used for the Citrix environment focusing on hardware, storage, and virtualization details.
 
-In this architecture for Remote PC Access, the core control infrastructure components are residing within the Citrix Cloud and managed by Citrix hence the requirement is to deploy only the Cloud Connectors in the data center so that the VDAs (Office PCs) can communicate with Cloud Connector to register its state with Citrix Cloud.
+In this architecture for Remote PC Access, the core control infrastructure components are residing within the Citrix Cloud and managed by Citrix hence the requirement is to deploy only the Cloud Connectors in the data center so that the VDAs (Office PCs) can communicate with Cloud Connector to register its state with the Citrix Cloud.
 
 To host the Cloud Connector virtual machines, the administrator deploys the server hardware with the required amount of resources. The Citrix administrator installs and configures the Citrix Hypervisor on the server hardware to create the Virtual Machines for Cloud Connectors. Once the Virtual Machine is created, the Citrix Admin accesses the Citrix Cloud portal from the virtual machine and installs the Cloud Connectors using their subscription account.
 
@@ -146,15 +143,15 @@ The conceptual architecture for the Citrix Remote PC Access with on-premises dep
 
 [![RemotePC-RA-Image-10](/en-us/tech-zone/design/media/reference-architectures_remote-pc_010.png)](/en-us/tech-zone/design/media/reference-architectures_remote-pc_010.png)
 
-Let’s review the design framework of the Remote PC Access solution for on-premises deployments with respect to each layer on this architecture to understand the workflow.
+Let’s review the design framework of the Remote PC Access solution for on-premises deployments regarding each layer on this architecture to understand the workflow.
 
 ### User Layer
 
 This layer describes the end user for the Citrix environment and the end-point devices that are used to connect to office resources.
 
-Users connect to their office PCs remotely over the Internet by using the Citrix Remote PC Access solution. Users use their personal devices like desktops, laptops, and tablet devices to connect to their office PC hence it is recommended to install the latest Citrix Workspace app client on the personal endpoint devices. Also, users can utilize the HTML5 version of Workspace where they cannot install the full version of Workspace app on the devices.
+Users connect to their office PCs remotely over the Internet by using the Citrix Remote PC Access solution. Users use their personal devices like desktops, laptops, and tablet devices to connect to their office PC hence it is recommended to install the latest Citrix Workspace app client on the personal endpoint devices. Also, users can utilize the HTML5 version of Workspace where they cannot install the full version of the Workspace app on the devices.
 
-Users navigate to the on-premises Citrix Gateway URL `https://citrix.company.com` via the browser to access the office PC and other resources from their endpoint device over the internet. The login page is presented to the user to validate their identity using multifactor authentication. Once authenticated the user is presented with the resources page where the assigned applications and desktops are shown. The user clicks the Remote PC Access Office Desktop icon to launch the desktop. Citrix Workspace app which is installed on their endpoint device launches the desktop and provides the seamless and optimal HDX experience as if the user was working from the office.
+Users navigate to the on-premises Citrix Gateway URL `https://citrix.company.com` via the browser to access the office PC and other resources from their endpoint device over the internet. The login page is presented to the user to validate their identity using multifactor authentication. Once authenticated the user is presented with the resources page where the assigned applications and desktops are shown. The user clicks the **Remote PC Access Office Desktop** icon to launch the desktop. Citrix Workspace app which is installed on their endpoint device launches the desktop and provides the seamless and optimal HDX experience as if the user was working from the office.
 
 [![RemotePC-RA-Image-11](/en-us/tech-zone/design/media/reference-architectures_remote-pc_011.png)](/en-us/tech-zone/design/media/reference-architectures_remote-pc_011.png)
 
@@ -166,7 +163,7 @@ Users access the existing Citrix Gateway URL (`https://citrix.company.com`) whic
 
 [![RemotePC-RA-Image-12](/en-us/tech-zone/design/media/reference-architectures_remote-pc_012.png)](/en-us/tech-zone/design/media/reference-architectures_remote-pc_012.png)
 
-Once the credentials are validated, users are then presented with the traditional Citrix StoreFront/Workspace resources page where they can access the Virtual Apps, Desktops, and Remote PC Access which are assigned. When the user selects the Remote PC Access (Office PC) to launch, the user connects using the Workspace app though SSL to the Gateway with HDX. The HDX connection is established from the user’s personal device to the on-premises Citrix Gateway with SSL and then it connects to the Office PC via TCP port 1494/2598 to provide a seamless HDX experience.
+Once the credentials are validated, users are then presented with the traditional Citrix StoreFront/Workspace resources page where they can access the Virtual Apps, Desktops, and Remote PC Access which are assigned. When the user selects the Remote PC Access (Office PC) to launch, the user connects using the Workspace app through SSL to the Gateway with HDX. The HDX connection is established from the user’s personal device to the on-premises Citrix Gateway with SSL and then it connects to the Office PC via TCP port 1494/2598 to provide a seamless HDX experience.
 
 ### Control Layer
 
@@ -188,7 +185,7 @@ The Resource Layer captures the information about where the Office PCs reside in
 
 In this architecture, the Office PC resides on the LAN segment at the customer environment. Those Office PCs are installed with Virtual Delivery Agents (VDAs) to register with on-premises Delivery Controllers. The Citrix Administrator can configure a Remote PC Access Machine Catalog and Delivery Group to enable access for the end users.
 
-Deploying the VDA can be managed by existing Electronic Software Delivery (ESD) systems, like Microsoft System Center Configuration Manager (SCCM). Best practice for upgrades is to reboot, uninstall the VDA software, reboot, install the latest VDA, then reboot a final time.
+Deploying the VDA can be managed by existing Electronic Software Delivery (ESD) systems, like a Microsoft System Center Configuration Manager (SCCM). Best practice for upgrades is to reboot, uninstall the VDA software, reboot, install the latest VDA, then reboot a final time.
 
 [![RemotePC-RA-Image-15](/en-us/tech-zone/design/media/reference-architectures_remote-pc_015.png)](/en-us/tech-zone/design/media/reference-architectures_remote-pc_015.png)
 

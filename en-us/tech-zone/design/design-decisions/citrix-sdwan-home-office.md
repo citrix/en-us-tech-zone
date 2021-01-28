@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Shoaib Yusuf
+specialThanksTo: Matthew Brooks
 description: Understand the design decisions required to implement the Citrix SD-WAN 110 in a Home Office to provide secure, enhanced, and resilient connectivity.
 ---
 # Citrix SD-WAN for Home Offices Design Decisions
-
-## Contributors
-
-**Author:** [Shoaib Yusuf](https://twitter.com/Shoaibys)
-
-**Special Thanks** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
 
 ## Overview
 
@@ -36,7 +33,7 @@ Enabling corporate network access to home users opens potential attack vectors, 
 
 ## DECISION: Citrix Virtual Apps and Desktops delivery
 
-For optimal security in extending the corporate network to remote resources, it is always recommended to use Citrix technologies, such as Citrix Virtual Apps and Desktops. This technology has led in Virtual Client Computing for many years and can help in the design of a secure network. Here you can find more information on [Citrix Virtual Apps and Desktops security](/en-us/citrix-virtual-apps-desktops/1912-ltsr/secure/best-practices.html).  Citrix SD-WAN can be coupled with this solution to better deliver to remote locations where the WAN may not always be reliable.
+For optimal security in extending the corporate network to remote resources, it is always recommended to use Citrix technologies, such as Citrix Virtual Apps and Desktops. This technology has led in Virtual Client Computing for many years and can help in the design of a secure network. Here you can find more information on [Citrix Virtual Apps and Desktops security](/en-us/citrix-virtual-apps-desktops/1912-ltsr/secure/best-practices.html). Citrix SD-WAN can be coupled with this solution to better deliver to remote locations where the WAN may not always be reliable.
 
 One secure approach is to place SD-WAN in the path of Citrix Workspace traffic that is delivered through Citrix Gateway. In the Data Center network, the incoming front-end traffic is isolated from back-end traffic, between the CVAD infrastructure servers and services. This approach allows the use of separate demilitarized zones (DMZs) to isolate front-end and back-end traffic flows along with granular firewall control and monitoring.
 
@@ -54,7 +51,7 @@ In a deployment involving Citrix Virtual Apps and Desktop, CVAD keeps data and w
 
 ### Limit Home User Networks through Firewall DMZ
 
-Another option would be to backhaul Home User traffic and limit resource and connectivity to the Corporate Network through Firewalled DMZs. Further, firewall policies on the SD-WAN devices can be centrally pushed to all SD-WAN devices in remote Home User networks. These policies limits the traffic allowed on the “New WAN Overlay” to only certain applications, protocols, and or Server IPs, etc.
+Another option would be to backhaul Home User traffic and limit resource and connectivity to the Corporate Network through Firewalled DMZs. Further, firewall policies on the SD-WAN devices can be centrally pushed to all SD-WAN devices in remote Home User networks. These policies limit the traffic allowed on the “New WAN Overlay” to only certain applications, protocols, and or Server IPs, etc.
 
 ![Firewall DMZ](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_firewalldmz.png)
 
@@ -64,7 +61,7 @@ Selection of the network topology is central to planning the remote access archi
 
 Citrix SD-WAN allows segmenting the SD-WAN deployment for more security and manageability by using Virtual Routing and Forwarding. This capability on Citrix SD-WAN is called Routing Domains. An existing Citrix SD-WAN deployment, connecting remote offices to data centers, can introduce a new Home User Routing Domain to separate Home User network traffic from Corporate network traffic. Each routing domain maintains its own unique route table on the SD-WAN devices. A Virtual Path can communicate all routing domains. On ingress of a packet into the tunnel, the packet is tagged based on the routing domain associated with the interface used to enter the system. Within the tunnel, each packet is tagged with its associated routing domain, and upon egress of the tunnel the associated routing table is used for proper delivery. The existing SD-WAN site deployment can use the Default Routing Domain. The new routing domain can be added to the head-end SD-WAN device leveraging a dedicated interface. This domain can provide access to limited Home User resources in the corporate network, as illustrated following.
 
-![Routing Domains](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_routingdomains.png
+![Routing Domains](/en-us/tech-zone/design/media/design-decisions_citrix-sdwan-home-office_routingdomains.png)
 
 Here you can find more information on [Citrix SD-WAN Routing Domains](/en-us/citrix-sd-wan/11-1/routing/virtual-routing-and-forwarding.html)
 
@@ -116,7 +113,7 @@ Rapid deployment of thousands of endpoints is easily accomplished through centra
 
 *  Considerations:
     *  Extra cost of second ISP WAN link
-    *  Time and effort to setup ISP #2
+    *  Time and effort to set up ISP #2
     *  Requires extra hardware (Modem for ISP #2)
 
 ### ISP + LTE
