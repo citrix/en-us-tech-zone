@@ -35,7 +35,7 @@ This document focuses on achieving three use-cases designed to meet an organizat
 
 **Use Case # 1:** Securely connect to resources deployed in a single Azure region from globally distributed branches.
 
-**Use Case # 2:** On-premise infrastructure securely connecting to resources deployed in different Azure regions.
+**Use Case # 2:** On-premises infrastructure securely connecting to resources deployed in different Azure regions.
 
 **Use Case # 3:** Globally distributed branch locations communicating with each other over the Azure backbone.
 
@@ -264,7 +264,7 @@ Select the Virtual WAN Resource created in the previous step – *“EastUSVWANA
 
 ### 1. Peering the East VNet to East Hub
 
-*  Within the Virtual WAN resource "EastUSVWANANDHub", click  *“Virtual Network Connections”* and click *“+Add connection”*.
+*  Within the Virtual WAN resource "EastUSVWANANDHub", click *“Virtual Network Connections”* and click *“+Add connection”*.
 
     [![Add Connection](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_22.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_22.png)
 
@@ -371,7 +371,7 @@ Next Steps:
 
 Create an Azure Service principal in the subscription to enable a programmatic way of managing deployments (Automation) from SD-WAN Orchestrator. Microsoft Azure mandates that every resource that needs to be programmatically managed by a third party, associate an IAM role and create an app registration to take advantage of automating the resources externally.
 
-To do so, follow the steps outlined [here](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal). For more details, you can refer to this segment in the [Annexures](#Annexures) section.
+To do so, follow the steps outlined [here](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal). For more details, you can refer to this segment in the [Annexure](#Annexure) section.
 
 ### 6. Fill in Azure Authentication credentials in SD-WAN Orchestrator
 
@@ -605,7 +605,7 @@ In this step, we verify that the routes are being propagated from West VNet to t
 
 In case, you haven’t tried Azure Virtual WAN yet, head over to [portal.azure.com](http://www.portal.azure.com/). If you want to experience the benefits of an SD-WAN solution first-hand, feel free to request a free-trial [here](https://www.citrix.com/en-in/products/citrix-sd-wan/form/request-a-demo/).
 
-## Annexures
+## Annexure
 
 ### Create an Azure Service Principal
 
@@ -640,7 +640,7 @@ Note: Once you have created the Client Secret for the App, please note it down o
 *  Go to the Virtual WAN Resource *“EastUSVWANANDHub”*
 *  Go to *Access control (IAM)*
 *  Click *“Add”* button of the *Add a role assignment* section highlighted below
-*  You can also click  Role assignments section (nearby Check access) and click *“+ Add”* (next to *Download role assignments*) to add the IAM role to the service principal.
+*  You can also click Role assignments section (nearby Check access) and click *“+ Add”* (next to *Download role assignments*) to add the IAM role to the service principal.
 
 [![Copy Azure Principal details](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_63.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_63.png)
 
@@ -649,6 +649,6 @@ Note: Once you have created the Client Secret for the App, please note it down o
     *  Leave *Assign access* to as Default (Azure AD user, group or service principal)
     *  In the *Select* section, you can search for the Application you created, called “orchestrator”. (Note that this is just a string and we can custom name this. No confusion must exist using a string called “orchestrator” as an Azure principal when automating the provisioning via Orchestrator).
         *  Once you do this, you should be able to find and select the app (once search is successful)
-    *  Then hit the “Save” button. (This concludes Azure Service Principal creation and association to the resource)
+    *  Then select the “Save” button. (This concludes Azure Service Principal creation and association to the resource)
 
 [![Copy Azure Principal details](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_64.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_64.png)
