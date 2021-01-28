@@ -37,7 +37,7 @@ Design Citrix Virtual Apps and Desktops service environments with the Network Lo
 
 ## Conceptual Architecture
 
-![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitecture.png)(/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitecture.png)
+![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitecture.png)
 
 ### Components
 
@@ -71,7 +71,7 @@ The User Layer is where the supported devices host the Workspace App, and users 
 The Access Layer coordinates, and directs user sessions to the Control, and Resource components.
 
 *  **Citrix Gateway service** – The Citrix Gateway service proxies secure HTTPs access to Citrix Virtual Apps and Desktops service environments. It includes a DNS location service to direct users to the nearest POP among dozens hosted around the world. For more information see [the Citrix Gateway service – Points-of-Presence (PoPs)](https://support.citrix.com/article/CTX270584)
-Citrix Gateway service establishes HDX sessions from the user endpoints to VDAs, in their Resource Location via Cloud Connectors. Updated VDAs running Version 1912 or later can enable Rendezvous protocol. It allows HDX sessions to bypass the Citrix Cloud Connector and connect directly and securely to the Citrix Gateway service for increased scalability. For more information see [the Citrix Gateway service – Rendezvous protocol](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/hdx/rendezvous-protocol.html)
+Citrix Gateway service establishes HDX sessions from the user endpoints to VDAs, in their Resource Location via Cloud Connectors. Updated VDAs running Version 1912 or later can enable Rendezvous protocol. It allows HDX sessions to bypass the Citrix Cloud Connector and connect directly and securely to the Citrix Gateway service for increased scalability. For more information see [the Citrix Gateway service – Rendezvous protocol](/en-us/citrix-virtual-apps-desktops-service/hdx/rendezvous-protocol.html)
 
 *  **Workspace service** – It is the front door for clients accessing Citrix Cloud services. It acts as a hub communicating with access, control, and resource layers to present, and help deliver sessions. Both Branch Users, and Remote Users are authenticated by the Workspace service, and it populates their available resources.
 *  **Citrix SD-WAN (Resource Location)** – Typically the SD-WAN `Master Control Node` (MCN) is deployed in the primary Resource Location.  It is used to coordinate the overlay network, and establishes secure tunnels to the branch appliances. VDAs can be collocated with delivery components in the data center, or be accessible from public, private, or hybrid cloud via a tunnel or dedicated circuit. For more information on utilizing SD-WAN to provide access to Azure hosted VDAs see [Proof of Concept Guide: Citrix SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html).
@@ -106,7 +106,7 @@ Here we discuss Citrix Virtual Apps and Desktops service flows for two use cases
 #### Remote Users (External)
 
 Remote Users (not on the internal network) connect to the Workspace service, from their remote location, to authenticate, and obtain their list of resources. Their sessions are delivered via the Citrix Gateway service.
-![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitectureremoteusers.png)(/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitectureremoteusers.png)
+![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitectureremoteusers.png)
 
 #### Branch Users (Internal)
 
@@ -114,7 +114,7 @@ Branch users connect to the Workspace service, via the local Citrix SD-WAN appli
 
 Upon selecting a virtual app or desktop, the Citrix Virtual Apps and Desktops service verifies whether the source IP address, extracted from the connecting client HTTP header, is in the NLS IP address range. Provided it is the ICA connection information sent back to the client contains the direct private IP address of a VDA. When the Workspace App sends a connection request to that address it is routed via the SD-WAN overlay network. Multi-steam QOS is automatically applied to the established HDX session, across the virtual path between the Branch, and Resource Location Citrix SD-WAN appliances.
 
-![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitectureinternalusers.png)(/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitectureinternalusers.png)
+![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitectureinternalusers.png)
 
 ## Detailed Design
 
@@ -168,7 +168,7 @@ The environment setup includes components in 3 distinct areas.
 *  **Resource Location** – the Resource Location houses components needed to deliver virtual apps, and desktops. It hosts a SD-WAN appliance to communicate with internal endpoints, and communicates with Citrix Cloud via Cloud Connector/s. The appliance can be in Gateway mode or other deployment scenario.
 *  **Citrix Cloud** – the Citrix Cloud service components Workspace, Citrix Virtual Apps & Desktops, and Citrix Gateway work in conjunction to manage virtual app, and desktop setup. Citrix Orchestrator manages the SD-WAN overlay network, and configures the Network Location service to route sessions directly to VDAs.
 
-![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_cvadsdwandeploymentrecommendations.png)(/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_cvadsdwandeploymentrecommendations.png)
+![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_cvadsdwandeploymentrecommendations.png)
 
 #### Branch Office (Home Office)
 
