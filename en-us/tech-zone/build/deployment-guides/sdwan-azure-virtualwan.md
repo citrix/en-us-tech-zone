@@ -53,7 +53,7 @@ It augments the benefits of Azure Virtual WAN by providing a high level of redun
 1.  **Benefit 1: SD-WAN to automate network deployments to connect hundreds of branch offices to Azure hub**
 
     Setting up site-to-site VPN tunnels from hundreds of on-premises locations to Azure can be very time consuming and error prone. Citrix SD-WAN’s integration with Azure virtual WAN can speed that process up by orders of magnitude. Citrix SD-WAN Orchestrator provides a single pane of glass management to connect on-premises Citrix SD-WAN appliances to Azure virtual WAN by the virtue of API integration.
-    An alternative architecture is to deploy Citrix SD-WAN VPX on Azure (instead of leveraging Azure Hubs) to form a book-ended solution with an on-premises SD-WAN appliance; it can bring benefits such as link bonding and load balancing, subsecond failover owing to industry leading per packet load balancing technology, selective packet duplication, and bi-directional QoS among others to make the network more resilient and improve application-experience for users.  The SD-WAN VPX instance approach may be bandwidth limited (i.e. maximum 2Gbps), in which case the Azure VWAN solution provides higher throughput capabilities.
+    An alternative architecture is to deploy Citrix SD-WAN VPX on Azure (instead of using Azure Hubs) to form a book-ended solution with an on-premises SD-WAN appliance; it can bring benefits such as link bonding and load balancing, subsecond failover owing to industry leading per packet load balancing technology, selective packet duplication, and bi-directional QoS among others to make the network more resilient and improve application-experience for users.  The SD-WAN VPX instance approach may be bandwidth limited (i.e. maximum 2Gbps), in which case the Azure VWAN solution provides higher throughput capabilities.
 
 1.  **Benefit 2: SD-WAN to lower WAN Operational Costs**
 
@@ -93,7 +93,7 @@ The document below walks you through the steps needed to set up Azure Virtual WA
 
 ## Azure Provisioning & Networking
 
-Before deploying Azure Virtual WAN from SD-WAN Orchestrator, ensure that resources related to Azure Virtual WAN have been provisioned and network design has been finalized. This simplifies configuring Azure Virtual WAN from the SD-WAN Orchestrator management console.
+Before deploying Azure Virtual WAN from the Orchestrator, ensure that the resources related to Azure Virtual WAN have been provisioned, and that the network design has been finalized. This simplifies configuring Azure Virtual WAN from the SD-WAN Orchestrator management console.
 
 This is a flowchart of how you can go about creating resources related to Azure Virtual WAN.
 
@@ -112,7 +112,7 @@ This is a flowchart of how you can go about creating resources related to Azure 
     *  Create Hub in the East region.
     *  Create Hub in the West region.
 1.  Peer the VNet’s of East and West regions (created in step2) with their respective Hubs.
-    *  For instance a VNet in East will Peer with the Hub in the East region so that it gets visibility to the SD-WAN subnets (that connect from on-premises to SD-WAN VPX in the Azure which eventually connects to the Hub providing the subnets via BGP)
+    *  For instance, a VNet in the East region will Peer with the Hub in the East region, so that it gets visibility to the SD-WAN subnets (that connect from on-premises to SD-WAN VPX in the Azure which eventually connects to the Hub providing the subnets via BGP)
 
 ## Create Resource Groups
 
@@ -211,7 +211,7 @@ Select the Virtual WAN Resource created in the previous step – *“EastUSVWANA
 
     [![Configure Virtual Hub](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_15.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_15.png)
 
-    *  You can click the *EastUSHub* link under the Geo MAP which will take you into Hub’s details. You should verify the attributes below in the Hub details:
+    *  Click the *EastUSHub* link under the Geo map, and verify the attributes below:
         *  Routing Status – Provisioned
         *  Hub Status – Succeeded
         *  Location – East US2
@@ -239,7 +239,7 @@ Select the Virtual WAN Resource created in the previous step – *“EastUSVWANA
     *  Select “Yes” for Do you want to create a site to site (VPN Gateway)
     *  The ASN is automatically populated and for this Hub it will be 65515
     *  Choose the Gateway Scale Units as per your choice (Definition of throughput)
-        *  In this it is selected as 1 Scale Unit – 500 Mbps x 2.
+        *  Here, we have selected *1 Scale Unit – 500 Mbps x 2*.
 
     **Note: Leave every other section as default.**
 
@@ -250,7 +250,7 @@ Select the Virtual WAN Resource created in the previous step – *“EastUSVWANA
 
     [![Review and Create hub](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_20.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_20.png)
 
-*  After the resource gets completely created, you can check the status of the WestHubUS like below
+*  After the resource gets created, you can check the status of the WestHubUS like below
 *  You can click the *WestUSHub* link under the Geo MAP which will take you into the Hub’s details section. You should verify the attributes below in the Hub details section:
 
     *  Routing Status – Provisioned
@@ -287,7 +287,7 @@ Select the Virtual WAN Resource created in the previous step – *“EastUSVWANA
 
     [![Verify Connection](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_24.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_24.png)
 
-### 2. Peering the East VNet to West Hub
+### 2. Peering the East VNet to the West Hub
 
 *  Within the Virtual WAN resource EastUSVWANANDHub, click *“Virtual Network Connections”* and click *“+Add connection”*.
 
@@ -377,8 +377,8 @@ To do so, follow the steps outlined [here](https://docs.microsoft.com/en-us/azur
 
 *  Create an Azure Principal in the subscription to enable a programmatic way of managing deployments.
 *  Note down the Azure Principal’s CLIENT ID, CLIENT SECRET, and TENANT/DIRECTORY ID, including your Azure Subscription details.
-*  On Global settings of orchestrator, click *Configuration -> Delivery Services -> Azure Virtual WAN -> Click the Settings icon of the service*
-*  Click the Authentication link. It will pop-up the details you have ready with you now
+*  Undere Global settings, click *Configuration -> Delivery Services -> Azure Virtual WAN -> Click the Settings icon of the service*.
+*  Click the Authentication link. It will pop up the details you have ready with you now.
 *  Enter the details carefully and save. If SAVE is successful, you should see the Virtual WAN and the Hubs configured in your subscription in the next step. If you are unable to see, double check the details, clear the authentication details, and try again.
 
     [![Azure Authentication Credentials](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_32.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_32.png)
@@ -542,8 +542,8 @@ Most importantly, the next-hop type indicates how the routes were learned and in
 
 *  **If the next hop type is : Remote Hub**
     *  This would be all the routes propagated by the WestHubUS Hub (Which was created under the same Azure Virtual WAN instance).
-    *  We can also see that the Remote Hub type routes have the Origin and the AS path appended appropriately to avoid routing loops
-    *  This contains all the distinct VNets peered at the West region with the West Hub that are propagated to be reached via the WestHubUS hub from the EastUSHub.
+    *  We can also see that the Remote Hub type routes have the Origin and the AS path appended appropriately to avoid routing loops.
+    *  This table contains all the distinct VNets (peered at the West region with the West Hub) that are propagated from the EastUSHub via the WestHubUS hub.
 
     [![EastUSHub Routing](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_52.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_52.png)
 
@@ -565,7 +565,7 @@ Most importantly, the next-hop type indicates how the routes were learned and in
 *  **If the next hop type is : Remote Hub**
     *  This would contain all the routes propagated by the WestHubUS Hub (which was created under the same Azure Virtual WAN instance).
     *  We can also see that the Remote Hub type routes have the Origin and the AS path appended appropriately to avoid routing loops.
-    *  This contains all the distinct VNets peered at the East region with the East Hub that are propagated to be reached via the EastUSHub hub from the WestHubUS.
+    *  This table contains all the distinct VNets (peered at the East region with the East Hub) that are propagated from the WestHubUS via the EastUSHub hub.
 
     [![WestHubUS Routing](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_53.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_53.png)
 
@@ -640,7 +640,7 @@ Note: Once you have created the Client Secret for the App, please note it down o
 *  Go to the Virtual WAN Resource *“EastUSVWANANDHub”*
 *  Go to *Access control (IAM)*
 *  Click *“Add”* button of the *Add a role assignment* section highlighted below
-*  You can also click Role assignments section (nearby Check access) and click *“+ Add”* (next to *Download role assignments*) to add the IAM role to the service principal.
+*  You can also click the *Role assignments* section, and click *“+ Add”* (next to *Download role assignments*) to add the IAM role to the service principal.
 
 [![Copy Azure Principal details](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_63.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_63.png)
 
