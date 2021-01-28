@@ -15,17 +15,17 @@ Citrix Virtual Apps and Desktops service can deliver virtual apps, and desktops 
 
 However, users connecting from a branch with a direct connection to the Resource Location where the virtual workload is hosted typically have a better path with less latency. At the same time, to provide the best user experience Citrix Virtual Apps and Desktops service sessions need to have Quality of Service (QOS) applied. Depending on the tasks the user is performing, the High Definition User Experience (HDX) sessions can be delivered using separate streams by Class of Service.
 
-Citrix SD-WAN is a software defined approach to managing enterprise WANs to provide optimal network connectivity between Enterprise branch offices, and workloads hosted in public, private, or hybrid cloud Resource Locations. Citrix SD-WAN can automatically disseminate an HDX session in streams according to Class of Service between appliance virtual paths, and deliver them according to their Quality of Service requirements.
+Citrix SD-WAN is a software defined approach to managing enterprise WANs to provide optimal network connectivity between Enterprise branch offices, and workloads hosted in public, private, or hybrid cloud Resource Locations. Citrix SD-WAN can automatically disseminate an HDX session into streams according to Class of Service between appliance virtual paths, and prioritize their delivery according to their Quality of Service requirements.
 
 However, to provide this functionality, edge SD-WAN appliances must be able to inspect the HDX stream unencrypted. The Workspace client connects to the Citrix Gateway service, encrypted with HTTPs, for session management including authentication and resource enumeration. However, for app delivery the client must connect directly to the Virtual Delivery Agent (VDA), assigned by the Citrix Virtual Apps and Desktops service, via the SD-WAN overlay network.
 
-With the Citrix Network Location Service (NLS) endpoints can Optimize connectivity to virtual apps, and desktops with Direct Workload Connection. It maintains a database of the public IP address ranges that are assigned dynamically as the source IP address of clients the internal network, through Network Address Translation (NAT), on egress upon connecting to the Internet.
+With the Citrix Network Location Service (NLS) endpoints can Optimize connectivity to virtual apps, and desktops with Direct Workload Connection. It maintains a database of the public IP address ranges that are assigned dynamically as the source IP address of clients on the internal network, through Network Address Translation (NAT), on egress upon connecting to the Internet.
 
 Enterprises with Citrix SD-WAN environment can automate the configuration. The Citrix Cloud hosted Orchestrator service, used to manage, and monitor Citrix SD-WAN environments, relays its network configuration details to the NLS. Otherwise, admins are able configure NLS manually using a PowerShell script that populates it through a Citrix Cloud API.
 
 Then when a Workspace client contacts the Citrix Virtual Apps and Desktops service, to launch a virtual app or desktop, it queries the NLS to determine the endpoint’s location on the network. When the Citrix Virtual Apps and Desktops service is aware the client is hosted on the internal network it replies with the IP address of the target VDA, on the internal network. The address is included in session details provided for virtual app, and desktop launch requests, and with this directs the HDX session via the SD-WAN overlay network.
 
-VDAs can be hosted in a resource location collated in a data center.
+VDAs can be hosted in a Resource Location collated in a data center.
 ![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_overviewcollocated.png)
 
 Alternatively, VDAs can be hosted in the public, private, or hybrid cloud Resource Location with access to the data center via a Citrix SD-WAN overlay network or other network path.
@@ -70,9 +70,11 @@ The User Layer is where the supported devices host the Workspace App, and users 
 
 The Access Layer coordinates, and directs user sessions to the Control, and Resource components.
 
-*  **Citrix Gateway service** – The Citrix Gateway service proxies secure HTTPs access to Citrix Virtual Apps and Desktops service environments. It includes a DNS location service to direct users to the nearest POP among dozens hosted around the world. For more information see [the Citrix Gateway service – Points-of-Presence (PoPs)](https://support.citrix.com/article/CTX270584) For remote users it also proxies session delivery..
-*  **Workspace service** – It is the front door for clients accessing Citrix Cloud services. It acts as a hub communicating with access, control, and resource layers to present, and deliver sessions. Both Branch Users, and Remote Users are authenticated by the Workspace service, and it populates their available resources.
-*  **Citrix SD-WAN (Resource Location)** – Typically the SD-WAN `Master Control Node` (MCN) is deployed in the primary resource location.  It is used to coordinate the overlay network, and establishes secure tunnels to the branch appliances. VDAs can be collocated with delivery components in the data center, or be accessible from public, private, or hybrid cloud via a tunnel or dedicated circuit. For more information on utilizing SD-WAN to provide access to Azure hosted VDAs see [Proof of Concept Guide: Citrix SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html).
+*  **Citrix Gateway service** – The Citrix Gateway service proxies secure HTTPs access to Citrix Virtual Apps and Desktops service environments. It includes a DNS location service to direct users to the nearest POP among dozens hosted around the world. For more information see [the Citrix Gateway service – Points-of-Presence (PoPs)](https://support.citrix.com/article/CTX270584)
+Citrix Gateway service establishes HDX sessions from the user endpoints to VDAs, in their Resource Location via Cloud Connectors. Updated VDAs running Version 1912 or later can enable Rendezvous protocol. It allows HDX sessions to bypass the Citrix Cloud Connector and connect directly and securely to the Citrix Gateway service for increased scalability. For more information see [the Citrix Gateway service – Rendezvous protocol](/en-us/citrix-virtual-apps-desktops-service/hdx/rendezvous-protocol.html)
+
+*  **Workspace service** – It is the front door for clients accessing Citrix Cloud services. It acts as a hub communicating with access, control, and resource layers to present, and help deliver sessions. Both Branch Users, and Remote Users are authenticated by the Workspace service, and it populates their available resources.
+*  **Citrix SD-WAN (Resource Location)** – Typically the SD-WAN `Master Control Node` (MCN) is deployed in the primary Resource Location.  It is used to coordinate the overlay network, and establishes secure tunnels to the branch appliances. VDAs can be collocated with delivery components in the data center, or be accessible from public, private, or hybrid cloud via a tunnel or dedicated circuit. For more information on utilizing SD-WAN to provide access to Azure hosted VDAs see [Proof of Concept Guide: Citrix SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html).
 
 #### Control Layer Components
 
@@ -80,19 +82,19 @@ The Control Layer includes essential management components to coordinate the del
 
 *  **Network Location Service** – stores the range of public IP addresses that internal clients are `natted` to when they access the internet.
 *  **Orchestrator** – provides central management, and monitoring of the entire SD-WAN network. It also populates with NLS with SD-WAN appliance public IP addresses.
-*  **Citrix Virtual Apps and Desktops service** – provides a unique role coordinating virtual app, and desktop delivery from Citrix Cloud. When Remote Users select a virtual app or desktop, it is proxied via the Citrix Gateway service for session delivery. When Branch Users select a virtual app or desktop the Citrix Virtual Apps and Desktops service checks with the NLS to verifies whether its source IP address extracted from the HTTP header it is located on the internal network. Thereafter endpoints are provided with an ICA file, with the internal IP address of their target VDA, that can be accessed via the SD-WAN overlay network.
+*  **Citrix Virtual Apps and Desktops service** – provides a unique role coordinating virtual app, and desktop delivery from Citrix Cloud. When Remote Users select a virtual app or desktop, it is proxied via the Citrix Gateway service for session delivery. When Branch Users select a virtual app or desktop the Citrix Virtual Apps and Desktops service checks with the NLS to verifies whether its source IP address, extracted from the HTTP header, is located on the internal network. Thereafter endpoints are provided with an ICA file, with the internal IP address of their target VDA, that can be accessed via the SD-WAN overlay network.
 
 #### Resources Layer Components
 
 Citrix Virtual Apps and Desktops service resources come in various shapes, and sizes depending on requirements like the operating system, and capacity.
 
-*  **Virtual Delivery Agent (VDA)** – all resource types rely on the VDA to delivery their content as a session. Thanks to the modular architecture VDAs can be collocated with Control components or hosted elsewhere such a public, private hybrid cloud.
-*  **Cloud Connector** – provides a reverse tunnel between the resource location, and Citrix Cloud for communication with the VDA (and, Active Directory if used as the Identity Provider).
+*  **Virtual Delivery Agent (VDA)** – all resource types rely on the VDA to deliver their content as a session. They may be hosted in public, private hybrid cloud Resource Locations.
+*  **Cloud Connector** – provides a reverse tunnel between the Resource Location, and Citrix Cloud for communication with the VDA (and, Active Directory if used as the Identity Provider).
 
 #### Host Layer Components
 
 Resource components can be hosted on public, private, or hybrid cloud locations.
-For more information on [Citrix Virtual Apps and Desktops service component architecture see](/en-us/tech-zone/learn/downloads/diagrams-posters_virtual-apps-and-desktops_poster.png)
+For more information see [Citrix Virtual Apps and Desktops service component architecture see](/en-us/tech-zone/learn/downloads/diagrams-posters_virtual-apps-and-desktops_poster.png)
 
 ### Use Case Flows
 
@@ -128,15 +130,15 @@ In our example below Branch endpoints contact the Gateway direct through Interne
 
 ### Quality of Service with Citrix SD-WAN, and Citrix Virtual Apps and Desktops service
 
-A key differentiator of using Citrix SD-WAN with Citrix Virtual Apps and Desktops service environments is its ability to automatically apply Quality of Service to HDX sessions. SD-WAN appliances identify, tag, prioritize, and stream them by class of service.
+A key differentiator of using Citrix SD-WAN with Citrix Virtual Apps and Desktops service environments is its ability to automatically apply Quality of Service to HDX sessions. SD-WAN appliances identify, tag, prioritize, and streams them by class of service.
 
 ![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_cvadqos.png)
 
-Multi-stream ICA virtual channels types are assigned to the 4 classes shown below by default. In the latest versions of Citrix Virtual Apps and Desktops service by default sessions are established using the Enlightened Data Transport (EDT) Protocol. EDT is a UDP based session transport protocol that efficiently adapts transmission according to available bandwidth. It falls back to TCP, and utilize its built-in flow control, automatically as needed.
+Multi-stream ICA virtual channels types are assigned to the 4 classes shown below by default. In the latest versions of Citrix Virtual Apps and Desktops service by default sessions are established using the Enlightened Data Transport (EDT) Protocol. EDT is a UDP based session transport protocol that efficiently adapts transmission according to available bandwidth. It falls back to TCP, and utilizes its built-in flow control, automatically as needed.
 
 ![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_virtualchannels.png)
 
-By default, HDX sessions are sent by the VDA on UDP (EDT) port 1494 or 2598 or TCP 1494 or 2598 depending on the session protocol established. (2598 is used when session reliability is configured. Ports can be customized as needed.). The SD-WAN appliance select the single HDX session, and identify the virtual channel by inspecting the uncompressed NSAP channel, and prepare it for transmission over a Virtual Path. It is supported on most [Workspace App platforms](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf).
+By default, HDX sessions are sent by the VDA on UDP (EDT) port 1494 or 2598 or TCP 1494 or 2598 depending on the session protocol established. (2598 is used when session reliability is configured. Ports can be customized as needed.). The SD-WAN appliance selects the single HDX session, and identify the virtual channel by inspecting the uncompressed NSAP channel, and prepares it for transmission over a Virtual Path. It is supported on most [Workspace App platforms](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf).
 
 The streams Virtual Path packets are assigned a tag according to class of service, and subsequently sent to the far end. The tag is used by the SD-WAN appliance to prioritize use outbound transmission queues, and for path selection which the are monitored in real time for quality. When sent over MPLS, Differentiated Services Code Point (DSCP) tags can be mapped to pertinent [queues](/en-us/citrix-sd-wan/11-2/quality-of-service/mpls-queues.html) allow prioritization in transit across the packet switched network. Typically, Real Time traffic is assigned with an Expedited Forwarding (EF) tag, while other traffic is assigned to an Assured Forwarding (AF) tags in the IP header [Type of Service (TOS) field](https://en.wikipedia.org/wiki/Type_of_service).
 
@@ -222,7 +224,7 @@ Citrix Cloud hosts the Workspace service, and the Citrix Virtual Apps and Deskto
 *  **Citrix Virtual Apps and Desktops service**
     *  From your Citrix Cloud account, under Citrix Virtual Apps and Desktops, select “Request Trial” to speak to a Citrix sales representative regarding enabling the service for a trial.
     *  For more information see Proof of Concept guide for [Getting Started with Citrix Virtual Apps and Desktop Service – Obtain a Citrix Virtual Apps and Desktops Trial Account](/tech-zone/learn/poc-guides/cvads.html#obtain-a-citrix-virtual-apps-and-desktops-trial-account)
-    *  _NOTES:_ After installing your Cloud Connector server/VM/s install your VDA/s to complete your resource location setup. Then select “Manage” in the Citrix Virtual Apps and Desktops service pane from the Citrix Cloud console to get access to the management studio. You enter a “machine catalog” including the FQDN/s of the VDA/s in your Resource Location. You also specify a “delivery group” which lists the virtual desktops, and or virtual apps from those VDA/s to publish to user groups.
+    *  _NOTES:_ After installing your Cloud Connector server/VM/s install your VDA/s to complete your Resource Location setup. Then select “Manage” in the Citrix Virtual Apps and Desktops service pane from the Citrix Cloud console to get access to the management studio. You enter a “machine catalog” including the FQDN/s of the VDA/s in your Resource Location. You also specify a “delivery group” which lists the virtual desktops, and or virtual apps from those VDA/s to publish to user groups.
 *  **Citrix Gateway service**
     *  From your Citrix Cloud account, select “Request Trial” (if not already available), and a 60 day Gateway service trial is provisioned automatically.
     *  For more information see [Citrix Gateway support for Citrix Virtual Apps and Desktops](/en-us/citrix-gateway-service/support-for-citrix-virtual-apps-and-desktops.html)
