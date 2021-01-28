@@ -37,7 +37,7 @@ Design Citrix Virtual Apps and Desktops service environments with the Network Lo
 
 ## Conceptual Architecture
 
-![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitecture.png)
+[![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitecture.png)](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitecture.png)
 
 ### Components
 
@@ -106,7 +106,7 @@ Here we discuss Citrix Virtual Apps and Desktops service flows for two use cases
 #### Remote Users (External)
 
 Remote Users (not on the internal network) connect to the Workspace service, from their remote location, to authenticate, and obtain their list of resources. Their sessions are delivered via the Citrix Gateway service.
-![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitectureremoteusers.png)
+[![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitectureremoteusers.png)](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitectureremoteusers.png)
 
 #### Branch Users (Internal)
 
@@ -114,7 +114,7 @@ Branch users connect to the Workspace service, via the local Citrix SD-WAN appli
 
 Upon selecting a virtual app or desktop, the Citrix Virtual Apps and Desktops service verifies whether the source IP address, extracted from the connecting client HTTP header, is in the NLS IP address range. Provided it is the ICA connection information sent back to the client contains the direct private IP address of a VDA. When the Workspace App sends a connection request to that address it is routed via the SD-WAN overlay network. Multi-steam QOS is automatically applied to the established HDX session, across the virtual path between the Branch, and Resource Location Citrix SD-WAN appliances.
 
-![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitectureinternalusers.png)
+[![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitectureinternalusers.png)](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_conceptualarchitectureinternalusers.png)
 
 ## Detailed Design
 
@@ -168,7 +168,7 @@ The environment setup includes components in 3 distinct areas.
 *  **Resource Location** – the Resource Location houses components needed to deliver virtual apps, and desktops. It hosts a SD-WAN appliance to communicate with internal endpoints, and communicates with Citrix Cloud via Cloud Connector/s. The appliance can be in Gateway mode or other deployment scenario.
 *  **Citrix Cloud** – the Citrix Cloud service components Workspace, Citrix Virtual Apps & Desktops, and Citrix Gateway work in conjunction to manage virtual app, and desktop setup. Citrix Orchestrator manages the SD-WAN overlay network, and configures the Network Location service to route sessions directly to VDAs.
 
-![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_cvadsdwandeploymentrecommendations.png)
+[![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_cvadsdwandeploymentrecommendations.png)](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_cvadsdwandeploymentrecommendations.png)
 
 #### Branch Office (Home Office)
 
@@ -266,4 +266,4 @@ Citrix SD-WAN securely tunnels traffic across virtual paths between appliances, 
 Citrix SD-WAN can be deployed in various topologies to suit the location in the Enterprise network. For example, it can be used in Gateway mode in a branch to route all LAN traffic, or it can be deployed in Virtual Inline mode in a data center to have edge routers forward the desired traffic. For more information see [Citrix SD-WAN deployment topologies](/en-us/citrix-sd-wan/11-2/use-cases-sd-wan-virtual-routing/checklist-and-how-to-deploy.html)
 
 Citrix SD-WAN can allow all LAN traffic, or filter according to Enterprise security policy with an onboard firewall. It can also be used to do full stack inspection if required. For more information see [Citrix SD-WAN Security](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-edge-security.html)
-![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_ports.png)
+[![SD-WAN HDX Cloud Experience Architecture](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_ports.png)](/en-us/tech-zone/design/media/reference-architectures_sdwan-hdx-cloud-experience-architecture_ports.png)
