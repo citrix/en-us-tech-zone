@@ -19,9 +19,9 @@ Broadly, the configuration guide covers how to:
 
 1.  Establish connectivity in Azure Virtual WAN
 
-    *  Hub-to-Hub connectivity
+    *  `Hub-to-Hub` connectivity
 
-    *  VNet-to-Hub peering
+    *  `VNet-to-Hub` peering
 
 1.  Establish connectivity between SD-WAN and Azure VWAN.
 
