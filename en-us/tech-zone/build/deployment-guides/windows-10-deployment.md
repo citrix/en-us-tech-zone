@@ -23,7 +23,7 @@ Below are the steps covered in this Guide
 ## Prerequisites
 
 >**Note:**
->
+    >
     >This guide assumes that the reader has a basic understanding of the following technologies:
     >
     > Citrix Cloud, CVAD Service & basic Windows administration
