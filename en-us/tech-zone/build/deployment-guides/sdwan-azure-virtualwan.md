@@ -57,7 +57,7 @@ It augments the benefits of Azure Virtual WAN by providing a high level of redun
 
 1.  **Benefit 2: SD-WAN to lower WAN Operational Costs**
 
-    MPLS and ExpressRoute can provide a private, high-speed, and secure channel to connect to the Azure VWAN. However, they are typically expensive solutions, especially when having to consider all the branch sites that would require connectivity to the private intranet. SD-WAN, by aggregating multiple cost-effective connection types (4G/LTE, DSL, Internet, etc.) can help lower WAN operational costs, in addition to providing higher resiliency to connect to Azure resources from the branch.
+    MPLS and ExpressRoute can provide a private, high-speed, and secure channel to connect to the Azure VWAN. However, they are typically expensive solutions, especially when having to consider all the branch sites that would require connectivity to the private intranet. SD-WAN, by aggregating multiple cost-effective connection types (such as 4G/LTE, DSL, Internet) can help lower WAN operational costs, in addition to providing higher resiliency to connect to Azure resources from the branch.
     Depending on an enterprise’s security requirements, traffic from one branch may have to be back-hauled to the enterprise-HQ to ensure security-compliance, straining the circuit and leading to added latency. Deploying a virtual Citrix SD-WAN appliance on Azure can provide local internet breakout by processing security policies created with the built-in L2-L7 firewall within the Citrix SD-WAN appliance. This would limit the need to backhaul traffic to the HQ, and hence reduce the egress data charges incurred on metered plans and also help preserve user experience.
 
 1.  **Benefit 3: SD-WAN to improve last-mile connectivity**
@@ -378,7 +378,7 @@ To do so, follow the steps outlined [here](https://docs.microsoft.com/en-us/azur
 
 *  Create an Azure Principal in the subscription to enable a programmatic way of managing deployments.
 *  Note down the Azure Principal’s CLIENT ID, CLIENT SECRET, and TENANT/DIRECTORY ID, including your Azure Subscription details.
-*  Undere Global settings, click *Configuration -> Delivery Services -> Azure Virtual WAN -> Click the Settings icon of the service*.
+*  Under Global settings, click *Configuration -> Delivery Services -> Azure Virtual WAN -> Click the Settings icon of the service*.
 *  Click the Authentication link. It will pop up the details you have ready with you now.
 *  Enter the details carefully and save. If SAVE is successful, you will see the Virtual WAN and the Hubs configured in your subscription in the next step. If you are unable to see, double check the details, clear the authentication details, and try again.
 
