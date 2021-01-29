@@ -98,14 +98,22 @@ Below are the steps covered in this Guide
 > For information on Citrix Optimizer see [Citrix Optimizer – What’s new](https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/)
 
 1.  Login & download Citrix Optimizer from [Citrix Optimizer](https://support.citrix.com/article/CTX224676)
+
 1.  Run Citrix Optimizer as an administrator
+
 1.  Select the appropriate Windows 10 Build
-[![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-1.png)
+
+    [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-1.png)
+
 1.  Select **Analyze**
-[![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)
-1.  Once the analyses are complete **View results**
-1.  Select all the desired optimizations & select **Optimize**
-1.  View the results & click **Done**
+
+    [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)
+3.  Once the analyses are complete **View results**
+
+4.  Select all the desired optimizations & select **Optimize**
+
+5.  View the results & click **Done**
+
 [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)
 
 ## Create Machine Catalog & Deploy VMs
