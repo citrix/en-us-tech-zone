@@ -317,7 +317,7 @@ Select the Virtual WAN Resource created in the previous step – *“EastUSVWANA
 
     Note that the Primary MCN and Secondary/Geo MCN serve a specific use-case (per our reference topology). However, the SD-WAN VPX can be deployed in branch mode as well.
 
-    The MCN acts as a controller in the SD-WAN network and ingests Azure APIs to establish site-to-site connectivity with Azure Virtual WAN resources. The MCN acts ¬as the master controller for the SD-WAN overlay. The Secondary/Geo MCN provides redundancy for this controller function by taking over the role of the controller, if and when the Primary MCN goes down.
+    The MCN acts as a controller in the SD-WAN network and ingests Azure APIs to establish site-to-site connectivity with Azure Virtual WAN resources. The MCN acts ¬as the main controller for the SD-WAN overlay. The Secondary/Geo MCN provides redundancy for this controller function by taking over the role of the controller, if and when the Primary MCN goes down.
 
 *  To provision Citrix SD-WAN VPX on Azure, you may refer this [document](https://docs.citrix.com/en-us/citrix-sd-wan-platforms/vpx-models/vpx-se/sd-wan-se-on-azure-10-2.html).
 
