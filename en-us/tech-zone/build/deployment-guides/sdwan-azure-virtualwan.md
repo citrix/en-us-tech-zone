@@ -41,7 +41,7 @@ This document focuses on achieving three use-cases designed to meet an organizat
 
 ## Azure Virtual WAN: Overview
 
-Azure Virtual WAN (VWAN) is a networking service from Microsoft that provides a high-speed global transit network and enables secure any-to-any connectivity across branches, data-centers, hubs and users. It supports site-to-site VPN (branch-to-Azure), user VPN (Point-to-Site), and ExpressRoute connectivity. It automates Hub-to-VNet connectivity (between the VNet/workload virtual network and the Hub). Customers can also leverage the Azure VWAN to connect branches across regions using the private Azure backbone.
+Azure Virtual WAN (VWAN) is a networking service from Microsoft that provides a high-speed global transit network and enables secure any-to-any connectivity across branches, data-centers, hubs, and users. It supports site-to-site VPN (branch-to-Azure), user VPN (Point-to-Site), and ExpressRoute connectivity. It automates `Hub-to-VNet` connectivity (between the VNet/workload virtual network and the Hub). Customers can also use the Azure VWAN to connect branches across regions using the private Azure backbone.
 
 ![Azure VWAN](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_01.png)
 
@@ -53,23 +53,25 @@ It augments the benefits of Azure Virtual WAN by providing a high level of redun
 1.  **Benefit 1: SD-WAN to automate network deployments to connect hundreds of branch offices to Azure hub**
 
     Setting up site-to-site VPN tunnels from hundreds of on-premises locations to Azure can be very time consuming and error prone. Citrix SD-WAN’s integration with Azure virtual WAN can speed that process up by orders of magnitude. Citrix SD-WAN Orchestrator provides a single pane of glass management to connect on-premises Citrix SD-WAN appliances to Azure virtual WAN by the virtue of API integration.
-    An alternative architecture is to deploy Citrix SD-WAN VPX on Azure (instead of using Azure Hubs) to form a book-ended solution with an on-premises SD-WAN appliance; it can bring benefits such as link bonding and load balancing, subsecond failover owing to industry leading per packet load balancing technology, selective packet duplication, and bi-directional QoS among others to make the network more resilient and improve application-experience for users.  The SD-WAN VPX instance approach may be bandwidth limited (i.e. maximum 2Gbps), in which case the Azure VWAN solution provides higher throughput capabilities.
+    An alternative architecture is to deploy a Citrix SD-WAN VPX on Azure (instead of using Azure Hubs). This forms a book-ended solution with an on-premises SD-WAN appliance. It can bring benefits to make the network more resilient and improve application-experience for users. Benefits include link bonding and load balancing, subsecond failover owing to industry leading per packet load balancing technology, and selective packet duplication
+    bi-directional QoS
+    The SD-WAN VPX instance approach may be bandwidth limited (that is maximum 2Gbps), in which case the Azure VWAN solution provides higher throughput capabilities.
 
 1.  **Benefit 2: SD-WAN to lower WAN Operational Costs**
 
-    MPLS and ExpressRoute can provide a private, high-speed, and secure channel to connect to the Azure VWAN. However, they are typically expensive solutions, especially when having to consider all the branch sites that would require connectivity to the private intranet. SD-WAN, by aggregating multiple cost-effective connection types (4G/LTE, DSL, Internet, etc.) can help lower WAN operational costs, in addition to providing higher resiliency to connect to Azure resources from the branch.
+    MPLS and ExpressRoute can provide a private, high-speed, and secure channel to connect to the Azure VWAN. However, they are typically expensive solutions, especially when having to consider all the branch sites that would require connectivity to the private intranet. SD-WAN, by aggregating multiple cost-effective connection types (4G/LTE, DSL, Internet, an so on) can help lower WAN operational costs, in addition to providing higher resiliency to connect to Azure resources from the branch.
     Depending on an enterprise’s security requirements, traffic from one branch may have to be back-hauled to the enterprise-HQ to ensure security-compliance, straining the circuit and leading to added latency. Deploying a virtual Citrix SD-WAN appliance on Azure can provide local internet breakout by processing security policies created with the built-in L2-L7 firewall within the Citrix SD-WAN appliance. This would limit the need to backhaul traffic to the HQ, and hence reduce the egress data charges incurred on metered plans and also help preserve user experience.
 
 1.  **Benefit 3: SD-WAN to improve last-mile connectivity**
 
-    As more workloads move to the cloud, last mile connectivity to-and-from remote offices becomes all the more important. It may not always be possible to provide MPLS/ExpressRoute connectivity to remote branches – over and above purely economic reasons, provisioning MPLS/Express Route network takes time and may not be feasible to implement.
+    As more workloads move to the cloud, last mile connectivity to-and-from remote offices becomes all the more important. It may not always be possible to provide MPLS or ExpressRoute connectivity to remote branches – over and above purely economic reasons, provisioning MPLS or Express Route network takes time and may not be feasible to implement.
     An SD-WAN deployment on a remote branch-site can help improve last-mile connectivity experience to Azure by aggregating multiple network links (which can be configured as primary and secondary) and identifying the closest Azure/Microsoft POP. By constantly monitoring the network, SD-WAN can automatically steer traffic from one link to another depending on the link quality, providing an optimal experience to remote-users.
 
 1.  **Benefit 4: A book-ended solution to provide network resiliency and optimized WAN experience**
 
     While it is possible to connect a branch-office to Azure VWAN through native IPsec, a single IPsec tunnel may be prone to packet loss and link congestion and cannot mitigate the risks of outages. Any network outage can in cases lead to millions of dollars of productivity and revenue losses.
 
-    Taking the alternative approach of deploying a Citrix SD-WAN VPX Network Virtual Appliance (NVA) on Azure to form a book-ended solution with an on-premises SD-WAN appliance, brings benefits such as link bonding and load balancing, subsecond failover, selective packet replication, and bi-directional QoS among others to make the network more resilient and improve application experience for users.
+    Taking the alternative approach of deploying a Citrix SD-WAN VPX Network Virtual Appliance (NVA) on Azure to form a book-ended solution with an on-premises SD-WAN appliance brings many benefits. These benefits include link bonding and load balancing, subsecond failover, selective packet replication, and bi-directional QoS among others to make the network more resilient and improve application experience for users.
 
 1.  **Benefit 5: SD-WAN Orchestrator for enhanced visibility**
 
@@ -90,8 +92,7 @@ To achieve the use-cases outlined above, we need to establish connectivity/pairi
 
 1.  SD-WAN branch appliances and SD-WAN VPX (on Azure) using Virtual Paths
 
-Of the three, establishing connectivity between the SD-WAN branch appliance and SD-WAN VPX (3) over Citrix SD-WAN’s proprietary virtual path technology is what brings capabilities such as per-packet load balancing, selective packet replication, and bi-directional QoS and provides the benefits of the joint solution.  
-The document below walks you through the steps needed to set up Azure Virtual WAN and deploy an SD-WAN virtual appliance alongside.
+Of the three, establishing connectivity between the SD-WAN branch appliance and SD-WAN VPX (3) over Citrix SD-WAN’s proprietary virtual path technology is what brings several capabilities. These features include per-packet load balancing, selective packet replication, and bi-directional QoS and provides the benefits of the joint solution. The document below walks you through the steps needed to set up Azure Virtual WAN and deploy an SD-WAN virtual appliance alongside.
 
 ## Azure Provisioning & Networking
 
@@ -101,7 +102,7 @@ This is a flowchart of how you can go about creating resources related to Azure 
 
 [![Summary of Steps](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_03.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_03.png)
 
-**Please note** that while we have followed this flow, you can create VNet’s before creating resource groups. Here’s a summary of the steps undertaken while building this topology. Each step is covered in detail in subsequent sections.
+**Note** that while we have followed this flow, you can create VNet’s before creating resource groups. Here’s a summary of the steps undertaken while building this topology. Each step is covered in detail in subsequent sections.
 
 ### Summary of steps
 
@@ -121,7 +122,7 @@ This is a flowchart of how you can go about creating resources related to Azure 
 ### 1. Create Resource Group in East region
 
 *  Create a Resource Group for the region. In this architecture, we have named it AzureVWANEastRescGrp.
-*  Make sure to select the region as US East (this is for the East region workloads/VNet’s). You can choose to provision it in any region per your topology.
+*  Make sure to select the region as US East (for the East region workloads/VNet’s). You can choose to provision it in any region per your topology.
 *  Review and Create the resource group.
 
     [![Create Resource Group in East](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_04.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_04.png)
@@ -129,7 +130,7 @@ This is a flowchart of how you can go about creating resources related to Azure 
 ### 2. Create Resource Group in West region
 
 *  Create a Resource Group with a name. In this architecture we have used AzureVWANWestRescGrp.
-*  Make sure to select the region as US West (this is for the West region workloads/VNet’s).
+*  Make sure to select the region as US West (for the West region workloads/VNet’s).
 *  Review and Create the resource group.
 
     [![Create Resource Group in West](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_05.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_05.png)
@@ -150,11 +151,11 @@ You may follow this [link](https://docs.microsoft.com/en-us/azure/virtual-networ
 
 1.  Start filling out the basic details of Azure Virtual WAN
 
-    *  We have selected the East Resource group created at the start of the document, named *AzureVWANEastRescGrp*
+    *  We have selected the East Resource group created at the start of the document, named `AzureVWANEastRescGrp`
     *  Select location as US East (per the topology above)
-    *  Provide a name to the Azure Virtual WAN resource being created. In this document we’ve named it *“EastUSVWANANDHub”*
+    *  Provide a name to the Azure Virtual WAN resource being created. In this document we’ve named it `EastUSVWANANDHub`
 
-    **Note: Please select the SKU as “STANDARD” to ensure the ability to achieve hub to hub communication across regions. However, if you don’t require inter-hub communication capabilities, you may choose the “BASIC” SKU.**
+    **Note: Select the SKU as “STANDARD” to ensure the ability to achieve hub to hub communication across regions. However, if you don’t require inter-hub communication capabilities, you may choose the “BASIC” SKU.**
 
     [![Create WAN](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_08.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_08.png)
 
@@ -167,7 +168,7 @@ You may follow this [link](https://docs.microsoft.com/en-us/azure/virtual-networ
 
     [![Confirmation](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_10.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_10.png)
 
-**Note: Please note that while the Azure Virtual WAN Resource has been deployed in the East resource group in the East US 2 region, you may choose to deploy it in just about any region/resource group per your network topology.**
+**Note: While the Azure Virtual WAN Resource has been deployed in the East resource group in the East US 2 region, you may choose to deploy it in just about any region/resource group per your network topology.**
 
 ## Create Azure VWAN Hubs in each region
 
@@ -207,7 +208,7 @@ Select the Virtual WAN Resource created in the previous step – *“EastUSVWANA
     [![Configure Virtual Hub](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_14.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_14.png)
 
     *  After the resource gets created, in the Hub section under Virtual WAN, you will see a new entry under the Geo map, with the name of the Hub we created.
-        *  The Hub Status should reflect as “Succeeded”.
+        *  The Hub Status reflects as “Succeeded”.
         *  Address space must be as we configured.
         *  Since there are No VPN sites still connected, the count is ‘0’. We will connect the VPN sites in subsequent steps.
 
@@ -263,7 +264,7 @@ Select the Virtual WAN Resource created in the previous step – *“EastUSVWANA
 
 ## Peer VNet to the Hub
 
-### 1. Peering the East VNet to East Hub
+### 1. Peering the East VNet to the East Hub
 
 *  Within the Virtual WAN resource "EastUSVWANANDHub", click *“Virtual Network Connections”* and click *“+Add connection”*.
 
@@ -315,9 +316,9 @@ Select the Virtual WAN Resource created in the previous step – *“EastUSVWANA
 
 *  Provision an SD-WAN virtual appliance on Azure as Primary MCN (Main Control Node) and Secondary/Geo MCN on the East-US2 and West-US2 regions, respectively.
 
-    Note that the Primary MCN and Secondary/Geo MCN serve a specific use-case (per our reference topology). However, the SD-WAN VPX can be deployed in branch mode as well.
+    The Primary MCN and Secondary/Geo MCN serve a specific use-case (per our reference topology). However, the SD-WAN VPX can be deployed in branch mode as well.
 
-    The MCN acts as a controller in the SD-WAN network and ingests Azure APIs to establish site-to-site connectivity with Azure Virtual WAN resources. The MCN acts ¬as the master controller for the SD-WAN overlay. The Secondary/Geo MCN provides redundancy for this controller function by taking over the role of the controller, if and when the Primary MCN goes down.
+    The MCN acts as a controller in the SD-WAN network and ingests Azure APIs to establish site-to-site connectivity with Azure Virtual WAN resources. The MCN acts as the main controller for the SD-WAN overlay. The Secondary/Geo MCN provides redundancy for this controller function by taking over the role of the controller, if and when the Primary MCN goes down.
 
 *  To provision Citrix SD-WAN VPX on Azure, you may refer this [document](https://docs.citrix.com/en-us/citrix-sd-wan-platforms/vpx-models/vpx-se/sd-wan-se-on-azure-10-2.html).
 
@@ -337,9 +338,9 @@ Select the Virtual WAN Resource created in the previous step – *“EastUSVWANA
 *  After getting the public IP, you can access the appliance, access it in any browser (CHROME/FIREFOX/SAFARI) using `https://<public_IP>` and provide the admin credentials to log in.
 *  The dashboard of the appliance will open. Note the serial number for future use.
 
-### 3. Obtain the LAN and WAN Interface IP’s of VPXs from Azure
+### 3. Obtain the LAN and WAN Interface IPs of VPXs from Azure
 
-*  Obtain the LAN and WAN Interface IP’s while the provisioning the Primary MCN and Secondary/Geo MCN IP’s
+*  Obtain the LAN and WAN Interface IPs while the provisioning the Primary MCN and Secondary/Geo MCN IPs
 *  You can get the same information from “Networking” section of each Azure Primary MCN and Secondary/Geo MCN
 *  For instance, the Primary MCN LAN IP is 10.1.1.4 (as per the snapshot below)
     *  Perform the same for the Secondary/Geo MCN and note its LAN IP as well
@@ -356,11 +357,11 @@ Select the Virtual WAN Resource created in the previous step – *“EastUSVWANA
 
 *  You can get this information in the WAN interface of the virtual machine (MCN/Geo MCN) in the Networking section.
 
-*  **Controllers like the Primary MCN and the Secondary/Geo MCN MUST be configured with STATIC PUBLIC IP address during the appliance’s WAN Link creation, on any management infrastructure. Note that, if however, you have deployed the VPX in branch mode, the IP address may also be obtained dynamically.**
+*  **Controllers like the Primary MCN and the Secondary/Geo MCN MUST be configured with STATIC PUBLIC IP address during the appliance’s WAN Link creation, on any management infrastructure. If however, you have deployed the VPX in branch mode, the IP address may also be obtained dynamically.**
 
     [![Obtain the Primary MCN Public WAN IP](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_30.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_30.png)
 
-*  At this point, we should have the following information handy.
+*  At this point, we have the following information handy.
 
     [![Flowchart](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_31.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_31.png)
 
@@ -378,7 +379,7 @@ To do so, follow the steps outlined [here](https://docs.microsoft.com/en-us/azur
 
 *  Create an Azure Principal in the subscription to enable a programmatic way of managing deployments.
 *  Note down the Azure Principal’s CLIENT ID, CLIENT SECRET, and TENANT/DIRECTORY ID, including your Azure Subscription details.
-*  Undere Global settings, click *Configuration -> Delivery Services -> Azure Virtual WAN -> Click the Settings icon of the service*.
+*  Under Global settings, click **Configuration -> Delivery Services -> Azure Virtual WAN** Click the Settings icon of the service.
 *  Click the Authentication link. It will pop up the details you have ready with you now.
 *  Enter the details carefully and save. If SAVE is successful, you will see the Virtual WAN and the Hubs configured in your subscription in the next step. If you are unable to see, double check the details, clear the authentication details, and try again.
 
@@ -388,7 +389,7 @@ To do so, follow the steps outlined [here](https://docs.microsoft.com/en-us/azur
 
 ### 1. Pre-Requisites
 
-Note that if you have made it this far, you MUST have created the Azure Virtual WAN and the Virtual Hub’s inside the Virtual WAN to which you want the SD-WAN Sites to form the connectivity with. It is NOT recommended to come to this section, prior to completing the pre-requisites.
+If you have made it this far, you MUST have created the Azure Virtual WAN and the Virtual Hub’s inside the Virtual WAN to which you want the SD-WAN Sites to form the connectivity with. It is NOT recommended to come to this section, prior to completing the pre-requisites.
 
 ### 2. Associate DCMCN site with the Virtual WAN Resource and Virtual Hub
 
@@ -413,7 +414,7 @@ Note that if you have made it this far, you MUST have created the Azure Virtual 
     [![Nominate DCMCN Site](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_35.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_35.png)
 
 *  Select the Site as “DCMCN”
-    *  Note that the sites are seen in this because the sites are already part of the configuration, staged and activated
+    *  The sites are seen in this because the sites are already part of the configuration, staged and activated
 *  Review and save the information
 
     [![Review Sites](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_36.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_36.png)
@@ -502,7 +503,7 @@ Go to *All Sites -> Configuration -> Delivery Services -> Azure Virtual WAN ->* 
     [![East US Hub Overview](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_46.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_46.png)
 
 *  Click the *EastUSHub* link. It will take us to the drill-down of the Hub for the East Geo.
-*  Click *‘Overview’* to see the number of VPN connected sites. We should see 1 connected site (with our MCN).
+*  Click *‘Overview’* to see the number of VPN connected sites. We see 1 connected site (with our MCN).
 
     [![East US Hub Stats](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_47.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_47.png)
 
@@ -534,7 +535,7 @@ Go to *All Sites -> Configuration -> Delivery Services -> Azure Virtual WAN ->* 
 Most importantly, the next-hop type indicates how the routes were learned and installed in the routing table
 
 *  **If the next hop type is : VPN_S2S_Gateway**
-    *  Note that all the routes received via VPN_S2S_Gateway are the ones that have the IPsec+BGP integration with SD-WAN, where the Azure automation was deployed.
+    *  All the routes received via VPN_S2S_Gateway are the ones that have the IPsec+BGP integration with SD-WAN, where the Azure automation was deployed.
     *  Verify the EastUSHub routing table and check if BGP propagated SD-WAN learned routes from the MCN are as appropriate.
     *  In the EastUSHub routing, the major routes are installed via the MCN via the AS Number of the SD-WAN configured as 42472 (taken care of automatically during automation)
 
@@ -556,7 +557,7 @@ Verify the WestHubUS routing table, and check whether BGP propagated SD-WAN lear
 Most importantly, the next-hop type indicates how the routes were learned and installed in the routing table.
 
 *  **If the next hop type is : VPN_S2S_Gateway**
-    *  Note that all the routes received via VPN_S2S_Gateway are the ones that have the IPsec+BGP integration with the SD-WAN where the Azure automation was deployed.
+    *  All the routes received via VPN_S2S_Gateway are the ones that have the IPsec+BGP integration with the SD-WAN where the Azure automation was deployed.
     *  Verify the WestHubUS routing table and check whether BGP propagated SD-WAN learned routes from the Secondary MCN are appropriate.
     *  In the WestHubUS routing, the major routes are installed via the MCN via the AS Number of the SD-WAN configured as 22338 (taken care of automatically during automation).
 
@@ -577,7 +578,7 @@ In this step, we verify that the routes are being propagated from East VNet to t
 *  Verify that EastUSHub has provided the visibility of MCN learned prefixes from its default route table to the VNet peered to it in the East US2 region
 *  Check the routing table of EastUS2 VNet and verify routing is in-tact
 *  The VNet’s are the actual origination and destination of the workloads in Azure and it is imperative that we understand that the VNets have converged to contain the right routing flow/information to reach the subnets/prefixes of SD-WAN remotely
-*  Note that Majority of the routes on the VNets themselves will be directly routed via the Virtual Network Gateway which is the Hub they are connected to
+*  The majority of the routes on the VNets themselves will be directly routed via the Virtual Network Gateway which is the Hub they are connected to
 *  In this case the EastUSHub is the origin of all the routes in the routing table of the East VNet
 *  VNet peering Next hop type would be the actual prefix of the Azure Virtual WAN prefix that was created of the VNet peering with.
 *  Virtual Network will be the local address of the VNet itself
@@ -593,7 +594,7 @@ In this step, we verify that the routes are being propagated from West VNet to t
 *  Verify that WestHubUS has provided the visibility of GEOMCN learned prefixes from its default route table to the VNet peered to it in the West US2 region
 *  Check the routing table of WestUS2 VNet and verify routing is in-tact
 *  The VNet’s are the actual origination and destination of the workloads in Azure and it is imperative that we understand that the VNets have converged to contain the right routing flow/information to reach the subnets/prefixes of SD-WAN remotely
-*  Note that Majority of the routes on the VNets themselves will be directly routed via the Virtual Network Gateway which is the Hub they are connected to
+*  The majority of the routes on the VNets themselves will be directly routed via the Virtual Network Gateway which is the Hub they are connected to
 *  In this case the WestHubUS is the origin of all the routes in the routing table of the West VNet
 *  VNet peering Next hop type would be the actual prefix of the Azure Virtual WAN prefix that was created of the VNet peering with
 *  Virtual Network will be the local address of the VNet itself
@@ -620,7 +621,7 @@ Create an Azure Service principal in the subscription for enabling programmatic 
 
 [![Add client secret](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_60.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_60.png)
 
-Note: Once you have created the Client Secret for the App, please note it down or copy it immediately to some place that you can refer later.
+Note: Once you have created the Client Secret for the App, note it down or copy it immediately to some place that you can refer later.
 
 ### 2. Note down the Azure Service Principal details
 
@@ -632,7 +633,7 @@ Note: Once you have created the Client Secret for the App, please note it down o
 
 [![Copy Azure Principal details](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_61.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_61.png)
 
-*  Client Secret – Please note or copy the client secret as soon as you create it. This step is very important for authenticating the subscription account and verifying that the App created is eligible to manage programmability of the resource you want automation enabled on (in Azure).
+*  Client Secret – note or copy the client secret as soon as you create it. This step is very important for authenticating the subscription account and verifying that the App created is eligible to manage programmability of the resource you want automation enabled on (in Azure).
 
 [![Copy Azure Principal details](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_62.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_62.png)
 
@@ -648,7 +649,7 @@ Note: Once you have created the Client Secret for the App, please note it down o
 *  Once you click *"Add"*, you will get a popup pane on the right, to add the role
     *  Choose the *ROLE* type as “Contributor”
     *  Leave *Assign access* to as Default (Azure AD user, group or service principal)
-    *  In the *Select* section, you can search for the Application you created, called “orchestrator”. (Note that this is just a string and we can custom name this. No confusion must exist using a string called “orchestrator” as an Azure principal when automating the provisioning via Orchestrator).
+    *  In the *Select* section, you can search for the Application you created, called “orchestrator”. (This is just a string and we can custom name this. No confusion must exist using a string called “orchestrator” as an Azure principal when automating the provisioning via Orchestrator).
         *  Once the search is successful, you can select the app.
     *  Select the “Save” button. (This concludes Azure Service Principal creation and association to the resource)
 
