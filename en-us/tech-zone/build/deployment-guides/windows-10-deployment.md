@@ -24,7 +24,7 @@ Below are the steps covered in this Guide
 
 >**Note:**
     >
-    >This guide assumes that the reader has a basic understanding of the following technologies:
+    > This guide assumes that the reader has a basic understanding of the following technologies:
     >
     > Citrix Cloud, CVAD Service & basic Windows administration
 
