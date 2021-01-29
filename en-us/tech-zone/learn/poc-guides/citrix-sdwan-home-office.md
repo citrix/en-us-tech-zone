@@ -5,7 +5,7 @@ contributedBy: Shoaib Yusuf
 specialThanksTo: Matthew Brooks
 description: Learn how to implement a POC of the Citrix SD-WAN 110 appliance to demonstrate how to work from home with secure, enhanced, and resilient connectivity.
 ---
-# Citrix SD-WAN for Home Offices
+# Citrix SD-WAN for Home Offices POC Guide
 
 ## Overview
 
