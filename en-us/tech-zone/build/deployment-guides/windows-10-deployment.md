@@ -23,8 +23,8 @@ Below are the steps covered in this Guide
 ## Prerequisites
 
 >**Note:**
-    >
-    > This guide assumes that the reader has a basic understanding of the following technologies:
+>
+    >This guide assumes that the reader has a basic understanding of the following technologies:
     >
     > Citrix Cloud, CVAD Service & basic Windows administration
 
@@ -50,7 +50,7 @@ Below are the steps covered in this Guide
 ## Citrix Virtual Delivery Agent
 
 >**Note:**
-   >
+>
    > It is recommended to use the latest VDA version for optimal performance, security, and functionality
 
 1.  Login to Citrix.com/downloads and download the latest version of the VDA
@@ -70,7 +70,7 @@ Below are the steps covered in this Guide
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-010.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-010.png)
 
     >**Note:**
-    >
+>
     > For a full list of VDA install options see [Install VDA](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html)
 
 1.  Enter the **Fully Qualified Domain Name (FQDN) of each Cloud Connector** (at least two are recommended for tolerance)
@@ -96,7 +96,7 @@ Below are the steps covered in this Guide
 ## Citrix Optimizer
 
 >**Note:**
-    >
+>
     > For information on Citrix Optimizer see [Citrix Optimizer – What’s new](https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/)
 
 1.  Login & download Citrix Optimizer from [Citrix Optimizer](https://support.citrix.com/article/CTX224676)
