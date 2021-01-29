@@ -22,10 +22,11 @@ Below are the steps covered in this Guide
 
 ## Prerequisites
 
- >**Note:**
-   >
- > This guide assumes that the reader has a basic understanding of the following technologies:
- > Citrix Cloud, CVAD Service & basic Windows administration
+>**Note:**
+    >
+    > This guide assumes that the reader has a basic understanding of the following technologies:
+    >
+    > Citrix Cloud, CVAD Service & basic Windows administration
 
 1.  A Windows 10 VM in Microsoft Azure, Google Cloud Platform (GCP) or an on premises virtual environment
 
@@ -48,7 +49,7 @@ Below are the steps covered in this Guide
 
 ## Citrix Virtual Delivery Agent
 
-   >**Note:**
+>**Note:**
    >
    > It is recommended to use the latest VDA version for optimal performance, security, and functionality
 
@@ -75,6 +76,7 @@ Below are the steps covered in this Guide
 1.  Enter the **Fully Qualified Domain Name (FQDN) of each Cloud Connector** (at least two are recommended for tolerance)
 
 1.  Select **Test Connection** & if successful select **Add**
+
 1.  Click **Next**
 
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-012.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-012.png)
@@ -94,8 +96,8 @@ Below are the steps covered in this Guide
 ## Citrix Optimizer
 
 >**Note:**
- >
-> For information on Citrix Optimizer see [Citrix Optimizer – What’s new](https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/)
+    >
+    > For information on Citrix Optimizer see [Citrix Optimizer – What’s new](https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/)
 
 1.  Login & download Citrix Optimizer from [Citrix Optimizer](https://support.citrix.com/article/CTX224676)
 
@@ -108,131 +110,191 @@ Below are the steps covered in this Guide
 1.  Select **Analyze**
 
     [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-2.png)
-3.  Once the analyses are complete **View results**
 
-4.  Select all the desired optimizations & select **Optimize**
+1.  Once the analyses are complete **View results**
 
-5.  View the results & click **Done**
+1.  Select all the desired optimizations & select **Optimize**
 
-[![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)
+1.  View the results & click **Done**
+
+    [![Citrix Optimizer](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_optimizer-3.png)
 
 ## Create Machine Catalog & Deploy VMs
 
 >**Note:**
- >
-> **Resources**
->
-> We will be using **Microsoft Azure** as a resource location in this scenario. For a full list of supported Hypervisors & Clouds see [Hosts / virtualization resources](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/system-requirements.html#hosts--virtualization-resources)
->  
-> **Hosting Connections**
->
-> The available resources are based on the hosting connections already added in Citrix Studio. See the following article for information on creating [CVAD hosting connections](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
+    >
+    > **Resources**
+    >
+    > We will be using **Microsoft Azure** as a resource location in this scenario. For a full list of supported Hypervisors & Clouds see [Hosts / virtualization resources](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/system-requirements.html#hosts--virtualization-resources)
+    >  
+    > **Hosting Connections**
+    >
+    > The available resources are based on the hosting connections already added in Citrix Studio. See the following article for information on creating [CVAD hosting connections](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
 
 1.  Log into Citrix Cloud
-[![Azure VM](/en-us/tech-zone/build/media/Win10--37.png)](/en-us/tech-zone/build/media/Win10--37.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-051.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-051.png)
+
 1.  Select the **Virtual Apps & Desktops** tile
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-052.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-052.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-052.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-052.png)
+
 1.  Select **Manage**, then **Web Studio**
+
 1.  From within Web Studio, select **Machine Catalogs**, then **Create Machine Catalog**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-018.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-018.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-018.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-018.png)
 
 1.  Select **Multi-session OS** for Windows 10 WVD or Operating System as appropriate based on your deployment, click **Next**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-019.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-019.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-019.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-019.png)
 
 1.  Select **Machines that are power managed**
 1.  Deploy machines using **Citrix Machine Creation Services**, select the appropriate Resource, click **Next**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-020.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-020.png)
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-020.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-020.png)
+
 1.  Select **Master Image** previously created
+
 1.  Select the minimum functional level & click **Next**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-021.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-021.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-021.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-021.png)
+
 1.  Select **Storage & License Types** based on your environment
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-022.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-022.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-022.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-022.png)
+
 1.  Enter the number of **Virtual Machines** you would like to create, along with the machine size, click **Next**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-023.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-023.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-023.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-023.png)
+
 1.  Configure **Write Back Cache** as appropriate, click **Next**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-024.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-024.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-024.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-024.png)
+
 1.  Select the appropriate **Resource Group** provisioning method, click **Next**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-025.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-025.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-025.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-025.png)
+
 1.  Select **Network Interface Card** to be associated with the VM, click **Next**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-027.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-027.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-027.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-027.png)
+
 1.  Select whether to create new AD accounts, where to create them & the naming convention to be used, click **Next**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-028.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-028.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-028.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-028.png)
+
 1.  Add the **Domain credentials** to be used to perform the account operations, click **Next**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-029.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-029.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-029.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-029.png)
+
 1.  Verify the **Summary**, add a **Machine Catalog name** and **Machine Catalog description**, then click **Finish**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-030.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-030.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-030.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-030.png)
 
 >**Note:**
- >
-> Wait for the machine catalog to create and the new VM disk. Time will depend on the number of VMs specified
+    >
+    > Wait for the machine catalog to create and the new VM disk. Time will depend on the number of VMs specified
 
 ## Create Delivery Group
 
 1.  Log into Citrix Cloud & select the **Virtual Apps & Desktops** tile
+
 1.  Select **Manage**, then **Web Studio**
+
 1.  From within Web Studio, select **Delivery Group**, then **Create Delivery Group**, click **Next**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-031.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-031.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-031.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-031.png)
+
 1.  Select the **Machine Catalog** you just created (above)
+
 1.  Choose the number of machines you created or want to add to the Delivery Group, click **Next**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-032.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-032.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-032.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-032.png)
+
 1.  Select the **Users** assignment method (We are using Citrix Cloud for assignment in this scenario). Click **Next**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-033.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-033.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-033.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-033.png)
+
 1.  If adding applications to be published separately add these here (We are only publishing a desktop in this scenario). Click **Next**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-034.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-034.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-034.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-034.png)
+
 1.  Provide the **Delivery Group name** and **Display name**, click **Finish**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-035.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-035.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-035.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-035.png)
+
 1.  Once created, view the machines & check their registration status
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-036.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-036.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-036.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-036.png)
 
 ## Assign Users to Desktop
 
 1.  Login to Citrix Cloud & from the landing page select **View Library**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-053.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-053.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-053.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-053.png)
+
 1.  Locate the new Windows 10 Desktop resource in the Library, select the **ellipsis** (3 dot menu item in the top right corner), and select **Manage Subscribers**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-112.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-112.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-112.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-112.png)
+
 1.  Add users or groups to assign desktop
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-045.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-045.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-045.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-045.png)
 
 ## Client Configuration
 
-Once the user has launched the desktop resource & logged in they will be able to carry out the below tasks
-
 >**Note:**
-   >  
-> Best practice would be to automate the configuration of the **Citrix Workspace** & **Citrix Files** clients
+    >  
+    > Best practice would be to automate the configuration of the **Citrix Workspace** & **Citrix Files** clients
+
+Once the user has launched the virtual desktop & logged in they will be able to carry out the below tasks
 
 ## Citrix Workspace App
 
 1.  From the start menu launch **Citrix Workspace**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-057.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-057.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-057.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-057.png)
+
 1.  Add the URL to your Citrix environment
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-107.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-107.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-107.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-107.png)
+
 1.  Enter your **User name** & **Password**
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-113.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-113.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-113.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-113.png)
+
 1.  Once authenticated you will see any assigned resources in the workspace or populated in the start menu
 
 ## Citrix Files
 
 >**Note:**
- >
-> This assumes the option to install Citrix Files was selected when installing the VDA above.
-> If not the latest version can be downloaded from [Citrix Files for Windows](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-windows.html)
+    >
+    > This assumes the option to install Citrix Files was selected when installing the VDA above
+    >
+    > If not the latest version can be downloaded from [Citrix Files for Windows](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-windows.html)
   
 1.  Check Citrix Files status from the icon in the system tray. If offline, right click the icon & select login
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-049.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-049.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-049.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-049.png)
+
 1.  Open Windows Explorer & check Citrix Files S: drive is available
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-060.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-060.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-060.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-060.png)
 
 ## Citrix Files For Outlook
-
-> This assumes the option to install Citrix Files for Outlook was selected when installing the VDA above.
-> If not that latest version can be downloaded from [Citrix Files for Outlook](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html)
+>
+    > This assumes the option to install Citrix Files for Outlook was selected when installing the VDA above
+    >
+    > If not that latest version can be downloaded from [Citrix Files for Outlook](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html)
 
 1.  Open Outlook & the Citrix files plug-in will be visible along the Outlook tool bar. If you are logged onto the VM with a valid Citrix Files account, the authentication will pass through and enable the files functionality
-[![Citrix Files for Outlook](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)
+
+    [![Citrix Files for Outlook](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)
+
 1.  Select the icon to view the default settings
-[![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-109.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-109.png)
+
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-109.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-109.png)
 
 >**Note:**
- >
-> Best practice would be to have these settings deployed centrally from **Citrix Content & Collaboration** Service
+    >
+    > Best practice would be to have **Citrix Files** & **Citrix Files for Outlook** settings configured centrally from **Citrix Content & Collaboration** Service
