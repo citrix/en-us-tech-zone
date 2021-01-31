@@ -22,11 +22,11 @@ Below are the steps covered in this Guide
 
 ## Prerequisites
 
->**Note:**
+> #### Note
 >
-    >This guide assumes that the reader has a basic understanding of the following technologies:
-    >
-    > Citrix Cloud, CVAD Service & basic Windows administration
+> This guide assumes that the reader has a basic understanding of the following technologies:
+>
+> Citrix Cloud, CVAD Service & basic Windows administration
 
 1.  A Windows 10 VM in Microsoft Azure, Google Cloud Platform (GCP) or an on premises virtual environment
 
