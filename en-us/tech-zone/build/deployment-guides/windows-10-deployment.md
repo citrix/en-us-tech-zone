@@ -150,7 +150,9 @@ Below are the steps covered in this Guide
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-019.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-019.png)
 
 1.  Select **Machines that are power managed**
+
 1.  Deploy machines using **Citrix Machine Creation Services**, select the appropriate Resource, click **Next**
+
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-020.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-020.png)
 
 1.  Select **Master Image** previously created
