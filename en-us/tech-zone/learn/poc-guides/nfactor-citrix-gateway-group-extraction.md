@@ -1,32 +1,35 @@
 ---
 layout: doc
-description: Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Device Certificate
+h3InToc: true
+contributedBy: Matt Brooks
+specialThanksTo: Dan Feller
+description: Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Group Extraction
 ---
-# Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Device Certificate
-
-## Contributors
-
-**Author:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
-
-**Special Thanks:** [Daniel Feller](https://twitter.com/djfeller)
+# Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Group Extraction
 
 ## Introduction
 
-Device Certificates may be securely issued to a variety of types of mobile devices to provide an additional security factor reliably. Once issued the Citrix Gateway can seamlessly validate the certificate maintaining a good user experience while increasing security posture.
+Large Enterprise environments require flexible authentication options to meet the needs of a variety of user personas. With Group Extraction user AD group membership determines the number and type of nFactor authentication methods users are required to complete to verify their identity and access their applications and data.
 
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_conceptualarchitecture.png)
+Examples of user groups include:
+
+*  LOW-SECURITY-GROUP for individuals that may have lower security requirements by the nature of their job or limited data access. This group may only require 1 factor.
+*  MEDIUM-SECURITY-GROUP for third party workers or contractors who may not have had background checks done and have higher security requirements. This group may require 2 or more factors.
+*  HIGH-SECURITY-GROUP for employees that perform critical jobs, require special government clearance, or industry approval. This group may require 2 or more factors and contextual verifications such as source IP address.
+
+![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_conceptualarchitecture.png)
 
 ## Overview
 
-This guide demonstrates how to implement a Proof of Concept environment using two factor authentication with Citrix Gateway. It uses LDAP to validate Active Directory credentials as the first factor and use Device Certificate as the second factor. It uses a Citrix Virtual Apps and Desktops published virtual desktop to validate connectivity.
+This guide demonstrates how to implement a Proof of Concept environment using two factor authentication with Citrix Gateway. It uses LDAP only to validate Active Directory credentials if the user's endpoint is on a private subnet, indicating they are on the corporate intranet, or if they are a member of a "VIP" AD group such as a CXO. Otherwise, it is assumed they are located external to the perimeter of the Enterprise network and not a member of a group with lower security requirements, and are required to complete a second factor in the form of entering an email One Time Password (OTP). It uses a Citrix Virtual Apps and Desktops published virtual desktop to validate connectivity.
 
 It makes assumptions about the completed installation and configuration of the following components:
 
-*  Citrix Gateway installed, licensed, and configure with an externally reachable virtual server bound to a wildcard certificate.
+*  Citrix Gateway installed, licensed, and configure with an externally reachable virtual server bound to a wildcard certificate
 *  Citrix Gateway integrated with a Citrix Virtual Apps and Desktops environment which uses LDAP for authentication
-*  Citrix Cloud account established
 *  Endpoint with Citrix Workspace app installed
 *  Active Directory (AD) is available in the environment
+*  Access to an SMTP server to originate emails
 
 ## Citrix Gateway
 
@@ -47,7 +50,7 @@ It makes assumptions about the completed installation and configuration of the f
     *  Confirm / Administrator Password - enter / confirm the admin / service account password
     *  Server Logon Name Attribute - in the second field below this field enter 'userPrincipalName'
 1.  Select Create
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_ldapaction.png)
+![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_ldapaction.png)
 For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-ldap-tsk.html)
 
 /*:
@@ -67,7 +70,7 @@ UPDATE HERE
 1.  Next navigate to 'Security > AAA - Application Traffic > nFactor Visualizer > nFactor Flows'
 1.  Select Add and select the plus sign in the Factor box
 1.  Enter nFactor_OTP and select create
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_nfactorotp.png)
+![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_nfactorotp.png)
 
 /*:
 UPDATE HERE
@@ -110,7 +113,7 @@ UPDATE HERE
 1.  Select the policy 'authPol_OTPAuthDevice' that we created during setup of the Registration flow
 1.  Select Add
 1.  Now we've completed the nFactor flow setup and can click Done
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_nfactorflow.png)
+![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_nfactorflow.png)
 
 /*:
 UPDATE HERE
@@ -122,12 +125,12 @@ UPDATE HERE
 1.  Enter the following fields and click Ok:
     *  Name - a unique value
     *  IP Address Type - 'Non Addressable'
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_aaavserver.png)
+![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_aaavserver.png)
 1.  Select No Server Certificate, select the domain certificate, click Select, Bind, and Continue
 1.  Select No nFactor Flow
 1.  Under Select nFactor Flow click the right arrow, select the 'nFactor_OTP' flow created earlier
 1.  Click Select, followed by Bind
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_authenticationvserver.png)
+![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_authenticationvserver.png)
 
 /*:
 UPDATE HERE
@@ -142,11 +145,11 @@ UPDATE HERE
 1.  Check the policy, select Unbind, select Yes to confirm, and select Close
 1.  Under the Advanced Settings menu on the right select Authentication Profile
 1.  Select Add
-1.  Enter a name.  We enter 'PUSH_auth_profile'
-1.  Under Authentication virtual server click the right arrow, and select the Citrix ADC AAA virtual server we created 'PUSH_Auth_Vserver'
+1.  Enter a name.  We enter 'GE_auth_profile'
+1.  Under Authentication virtual server click the right arrow, and select the Citrix ADC AAA virtual server we created 'GE_Auth_Vserver'
 1.  Click Select, and Create
 1.  Click Ok and verify the virtual server now has an authentication profile selected while the basic authentication policy has been removed
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_gatewayvserver.png)
+![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_gatewayvserver.png)
 1.  Click Done
 
 /*:
@@ -168,19 +171,19 @@ UPDATE HERE
 
 ### Citrix Virtual Apps and Desktops Authentication, Publication, and Launch
 
-1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use 'https://citrixadc5.workspaces.wwco.net'
-1.  After the your browser is redirected to a login screen enter user UPN and password.
-
-/*:
-UPDATE HERE
-*/
+1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://citrixadc5.workspaces.wwco.net`
+1.  After the your browser is redirected to a login screen. First enter a username. We use `wsuser@workspaces.wwco.net`
+1.  nFactor will determine that the user is not local, nor a member of the VIP group, you will submit the user password.
+1.  The nFactor will then present a form requesting the OTP pin. We copy the pin from the wsuser email account.
+1.  Now the user is logged into their Workspace page.
+1.  Select a virtual desktop and verify launch.
 
 ## Summary
 
-With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multi-factor authentication without making the user experience complex. Users can get access to all of their Workspaces resources by entering their standard domain user and password and seamlessly have a certificate validated.
+With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multi-factor authentication without making the user experience complex. Group Extraction allows Enterprise to cater the depth of their multi-factor use, along with contextual authentication, according to user group persona requirements.
 
 ## References
 
 For more information refer to:
 
-[Authentication - On-Premises Citrix Gateway](/en-us/tech-zone/learn/tech-insights/gateway-idp.html) – watch a Tech Insight video regarding integrating with On Premises Citrix Gateway to improve authentication security for your Citrix Workspace
+[Citrix ADC Commands to Find the Policy Hits for Citrix Gateway Session Policies](https://support.citrix.com/article/CTX1388400) - learn more about cli commands like `nsconmsg -d current -g _hits` to track policy hits to help troubleshoot.
