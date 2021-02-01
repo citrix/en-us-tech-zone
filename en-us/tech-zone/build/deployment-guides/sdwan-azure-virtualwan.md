@@ -320,7 +320,7 @@ Select the Virtual WAN Resource created in the previous step – *“EastUSVWANA
 
     The MCN acts as a controller in the SD-WAN network and ingests Azure APIs to establish site-to-site connectivity with Azure Virtual WAN resources. The MCN acts as the main controller for the SD-WAN overlay. The Secondary/Geo MCN provides redundancy for this controller function by taking over the role of the controller, if and when the Primary MCN goes down.
 
-*  To provision Citrix SD-WAN VPX on Azure, you may refer this [document](https://docs.citrix.com/en-us/citrix-sd-wan-platforms/vpx-models/vpx-se/sd-wan-se-on-azure-10-2.html).
+*  To provision Citrix SD-WAN VPX on Azure, you may refer this [document](/en-us/citrix-sd-wan-platforms/vpx-models/vpx-se/sd-wan-se-on-azure-10-2.html).
 
     **NOTE: While going through the above document, you can see that 10.2 is mentioned, but when searching in the market place, you’ll find “Citrix SD-WAN Standard Edition 10.2.5” or “Citrix SD-WAN Standard Edition 11.0.3”. You may choose either of these versions based on the firmware version of the rest of your Citrix SD-WAN network.**
 
@@ -605,7 +605,7 @@ In this step, we verify that the routes are being propagated from West VNet to t
 
 ## Call to Action
 
-In case, you haven’t tried Azure Virtual WAN yet, head over to [portal.azure.com](http://www.portal.azure.com/). If you want to experience the benefits of an SD-WAN solution first-hand, feel free to request a free-trial [here](https://www.citrix.com/en-in/products/citrix-sd-wan/form/request-a-demo/).
+In case, you haven’t tried Azure Virtual WAN yet, head over to [portal.azure.com](http://www.portal.azure.com/). If you want to experience the benefits of an SD-WAN solution first-hand, feel free to request a free-trial [here](/en-us/products/citrix-sd-wan/form/request-a-demo/).
 
 ## Appendix
 
