@@ -289,7 +289,7 @@ Once the user has launched the virtual desktop & logged in they will be able to 
 >
 > This assumes the option to install Citrix Files for Outlook was selected when installing the VDA above
 >
-> If not that latest version can be downloaded from [Citrix Files for Outlook](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html)
+> If not the latest version can be downloaded from [Citrix Files for Outlook](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html)
 
 1.  Open Outlook & the Citrix files plug-in will be visible along the Outlook tool bar. If you are logged onto the VM with a valid Citrix Files account, the authentication will pass through and enable the files functionality
 
@@ -301,4 +301,6 @@ Once the user has launched the virtual desktop & logged in they will be able to 
 
 > **Note**
 >
-> Best practice would be to have **Citrix Files** & **Citrix Files for Outlook** settings configured centrally from **Citrix Content & Collaboration** Service
+> Best practice would be to have **Citrix Files** & **Citrix Files for Outlook** settings configured centrally
+>
+> For information on deploying & configuring **Citrix Content & collaboration** see the following article [Citrix Content & collaboration](/en-us/citrix-content-collaboration.html)
