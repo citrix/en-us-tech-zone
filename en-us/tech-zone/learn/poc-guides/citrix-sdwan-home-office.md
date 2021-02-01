@@ -172,7 +172,7 @@ With the sites created and each referencing the desired site profile, clicking i
 
 1.  **Site Details**:
 Here sites can be associated to a specific **Region** when deployed in a multi-region architecture, or leave it in the default-region if deploying in the default single-region deployment.
-![Batch Site Details](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorbatchsitedetails2.png)
+![Batch Site Details](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorbatchsitedetails.png)
 1.  **Device Details**:
 Here a **unique serial number**, specifically the serial number of the device shipped to the Office Site, is inputted. The serial number is used to authenticate the appliance as it calls home and retrieves this specific site configuration during the zero-touch deployment process.
 ![Batch Device Details](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorbatchdevicedetails.png)
