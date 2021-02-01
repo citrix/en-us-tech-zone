@@ -71,7 +71,7 @@ Below are the steps covered in this Guide
 
     > **Note**
     >
-    > For a full list of VDA install options see [Install VDA](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html)
+    > For a full list of VDA install options see [Install VDA](/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html)
 
 1.  Enter the **Fully Qualified Domain Name (FQDN) of each Cloud Connector** (at least two are recommended for tolerance)
 
@@ -125,11 +125,11 @@ Below are the steps covered in this Guide
 >
 > *Resources*
 >
-> We will be using **Microsoft Azure** as a resource location in this scenario. For a full list of supported Hypervisors & Clouds see [Hosts / virtualization resources](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/system-requirements.html#hosts--virtualization-resources)
+> We will be using **Microsoft Azure** as a resource location in this scenario. For a full list of supported Hypervisors & Clouds see [Hosts / virtualization resources](/en-us/citrix-virtual-apps-desktops-service/system-requirements.html#hosts--virtualization-resources)
 >  
 > *Hosting Connections*
 >
-> The available resources are based on the hosting connections already added in Citrix Studio. See the following article for information on creating [CVAD hosting connections](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
+> The available resources are based on the hosting connections already added in Citrix Studio. See the following article for information on creating [CVAD hosting connections](/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
 
 1.  Log into Citrix Cloud
 
