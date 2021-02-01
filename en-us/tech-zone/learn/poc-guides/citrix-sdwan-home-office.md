@@ -192,7 +192,7 @@ Verify the LTE WAN interface is enabled for DHCP Client, to automatically obtain
      *  iv. Edit Interface 1/4 -MGMT LAN.
 Each site needs to be uniquely defined with a management IP address, which serves the purpose for continued connectivity to Cloud Services and web interface access by the remote Admin through the Virtual Path. Input the subnet to be allocated for this specific remote site. The Primary IP address entered serves as the **Management IP** (for instance 172.17.36.1/32) for this remote work network.
 ![Batch Interfaces Mgmt](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorbatchinterfacesmgmt.png)
-Select the InBand Management IP (for instance 172.17.36.1) from the drop-down menu. For more information see [in-band management](https://docs.citrix.com/en-us/citrix-sd-wan/11-1/inband-and-backup-management.html).
+Select the InBand Management IP (for instance 172.17.36.1) from the drop-down menu. For more information see [in-band management](/en-us/citrix-sd-wan/11-1/inband-and-backup-management.html).
 ![Management IPs](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_orchestratorbatchinterfacesmgmtip.png)
 1.  WAN Links:
     *  i. Edit WAN Link #1, for instance Internet-ISP-1, that uses interface 1/2:
