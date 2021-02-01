@@ -22,7 +22,7 @@ Below are the steps covered in this Guide
 
 ## Prerequisites
 
-> #### Note
+> **Note**
 >
 > This guide assumes that the reader has a basic understanding of the following technologies:
 >
@@ -49,7 +49,7 @@ Below are the steps covered in this Guide
 
 ## Citrix Virtual Delivery Agent
 
-> #### Note
+> **Note**
 >
 > It is recommended to use the latest VDA version for optimal performance, security, and functionality
 
@@ -69,9 +69,9 @@ Below are the steps covered in this Guide
 
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-010.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-010.png)
 
-> #### Note
->
-> For a full list of VDA install options see [Install VDA](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html)
+    > **Note**
+    >
+    > For a full list of VDA install options see [Install VDA](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html)
 
 1.  Enter the **Fully Qualified Domain Name (FQDN) of each Cloud Connector** (at least two are recommended for tolerance)
 
@@ -95,7 +95,7 @@ Below are the steps covered in this Guide
 
 ## Citrix Optimizer
 
-> #### Note
+> **Note**
 >
 > For information on Citrix Optimizer see [Citrix Optimizer – What’s new](https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/)
 
@@ -121,7 +121,7 @@ Below are the steps covered in this Guide
 
 ## Create Machine Catalog & Deploy VMs
 
-> #### Note
+> **Note**
 >
 > *Resources*
 >
@@ -193,7 +193,7 @@ Below are the steps covered in this Guide
 
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-030.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-030.png)
 
-> #### Note
+> **Note**
 >
 > Wait for the machine catalog to create and the new VM disk. Time will depend on the number of VMs specified
 
@@ -245,7 +245,7 @@ Below are the steps covered in this Guide
 
 ## Client Configuration
 
-> #### Note
+> **Note**
 >  
 > Best practice would be to automate the configuration of the **Citrix Workspace** & **Citrix Files** clients
 
@@ -269,7 +269,7 @@ Once the user has launched the virtual desktop & logged in they will be able to 
 
 ## Citrix Files
 
-> #### Note
+> **Note**
 >
 > This assumes the option to install Citrix Files was selected when installing the VDA above
 >
@@ -285,7 +285,7 @@ Once the user has launched the virtual desktop & logged in they will be able to 
 
 ## Citrix Files For Outlook
 
-> #### Note
+> **Note**
 >
 > This assumes the option to install Citrix Files for Outlook was selected when installing the VDA above
 >
@@ -299,6 +299,6 @@ Once the user has launched the virtual desktop & logged in they will be able to 
 
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-109.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-109.png)
 
-> #### Note
+> **Note**
 >
 > Best practice would be to have **Citrix Files** & **Citrix Files for Outlook** settings configured centrally from **Citrix Content & Collaboration** Service
