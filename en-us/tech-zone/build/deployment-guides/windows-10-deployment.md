@@ -303,4 +303,4 @@ Once the user has launched the virtual desktop & logged in they will be able to 
 >
 > Best practice would be to have **Citrix Files** & **Citrix Files for Outlook** settings configured centrally
 >
-> For information on deploying & configuring **Citrix Content & collaboration** see the following article [Citrix Content & collaboration](/en-us/citrix-content-collaboration.html)
+> For information on deploying & configuring **Citrix Content & collaboration** see the following article [Citrix Content & Collaboration](/en-us/citrix-content-collaboration.html)
