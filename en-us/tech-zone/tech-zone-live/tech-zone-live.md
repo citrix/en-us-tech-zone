@@ -1,6 +1,6 @@
 ---
 layout: doc
-description: TODO
+description: Join forces with Master Class and TIPs experts for a quarterly webinar showing how to successfully integrate Citrix solutions into your environment.  
 ---
 # Tech Zone Live
 
