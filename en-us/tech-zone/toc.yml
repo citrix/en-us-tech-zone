@@ -2,12 +2,8 @@ docs_list_title: Citrix Tech Zone
 
 docs:
 
-- title: Home
-  url: /en-us/tech-zone
-- title: The Click-Down Podcast
-  url: https://www.citrix.com/fieldwork/flexible-work/virtual-series.html
 - title: Tech Zone Live
-  url: /en-us/tech-zone/tech-zone-live.html
+  url: /en-us/tech-zone/tech-zone-live/tech-zone-live.html
 - title: Learn
   url: /en-us/tech-zone/learn.html
   subfolderlist:
