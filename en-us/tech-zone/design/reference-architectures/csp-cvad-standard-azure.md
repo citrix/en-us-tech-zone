@@ -70,13 +70,6 @@ Non-Domain joined workloads using Citrix managed Azure Active Directory, or conn
 
 NDJ workloads are a simple use case for quick creating unmanaged virtual machines that are not managed by Active Directory and can be used for several use cases.
 
-### Dedicating a single tenant instance
-
-***where does this go***
-Using a ST CMD instance for Non-domain Joined or Active Directory
-
-Citrix Virtual Apps and Desktops Service for Azure Service has on-premises connectivity options for authentication with Active Directory or to access resources. All user traffic uses the Citrix Gateway Service, preferring an Azure Gateway Point of Presence.
-
 [Citrix Gateway Service – Points-of-presence](https://support.citrix.com/article/CTX270584)
 
 ## Azure Architecture
