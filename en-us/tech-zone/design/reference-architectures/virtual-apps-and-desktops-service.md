@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Ana Ruiz
 specialThanksTo: Dan Feller
-description: Through a detailed use case, learn the architecture of Citrix Virtual Apps and Desktops service.
+description: Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
 ---
 # Citrix Virtual Apps and Desktops Service Reference Architecture
 
