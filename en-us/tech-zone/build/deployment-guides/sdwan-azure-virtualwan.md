@@ -395,12 +395,12 @@ If you have made it this far, you MUST have created the Azure Virtual WAN and th
 
 *  On Global configuration, click *Configuration -> Delivery Services -> click the Settings icon of Azure Virtual WAN*.
 
-    [![Add site](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_33.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_33.png)
+    [![Add site](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-33.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-33.png)
 
 *  Once the service is selected, you will be taken to the Virtual WAN Automated configuration page.
 *  Click *“+ Site”.*
 
-    [![VWAN Creation Verification](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_34.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_34.png)
+    [![VWAN Creation Verification](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-34.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-34.png)
 
 *  Based on whether the authentication of Azure subscription and other principal details was successful, you will now see the Azure Virtual WAN populated with ALL VWANs configured as part of the subscription.
 
@@ -411,13 +411,13 @@ If you have made it this far, you MUST have created the Azure Virtual WAN and th
 *  Select EastUSVWANANDHub which is the Virtual WAN where we created the East and West Hubs.
 *  Select the EastUSHub
 
-    [![Nominate DCMCN Site](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_35.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_35.png)
+    [![Nominate DCMCN Site](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-35.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-35.png)
 
 *  Select the Site as “DCMCN”
     *  The sites are seen in this because the sites are already part of the configuration, staged and activated
 *  Review and save the information
 
-    [![Review Sites](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_36.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_36.png)
+    [![Review Sites](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-36.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-36.png)
 
     *  Once after you save, you will start seeing the automation kick-in and the SD-WAN will prepare the site by pushing the configuration information and configure both SD-WAN side and the Azure side for successful VPN site establishment.
 
@@ -425,7 +425,7 @@ If you have made it this far, you MUST have created the Azure Virtual WAN and th
         *  When everything is successful, it will indicate *Site Provisioning Success*.
         *  At this point, the Azure Virtual WAN configuration is automated and complete. Next, we have to activate the same on the appliance to initiate the IPsec tunnel.
 
-    [![Review Configuration](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_37.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_37.png)
+    [![Review Configuration](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-37.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-37.png)
 
     *  As part of Azure Virtual WAN Automation, SD-WAN Orchestrator starts using the Azure API’s and prepares the SD-WAN Appliance in configuration focus (DCMCN) for automation.
 
@@ -449,31 +449,31 @@ If you have made it this far, you MUST have created the Azure Virtual WAN and th
 
 *  The Hub uses standard IPsec/IKE parameters that is obtained from Azure so that the local endpoint DCMCN can also be prepared with similar attributes to enable the formation of the IPsec tunnel post successful negotiation.
 
-    [![Azure VWAN Tunnel Configuration Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_38.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_38.png)
+    [![Azure VWAN Tunnel Configuration Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-38.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-38.png)
 
 ### 3. Prepare SD-WAN Virtual WAN Automated configuration to connect MCN to Virtual WAN Hub
 
 *  After finishing the configuration for MCN and Secondary / Geo-MCN with their respective hubs, it is time to enable them to be automatically deployed on Azure-Virtual WAN in one shot.
 
-    [![Azure VWAN and Site Config Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_39.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_39.png)
+    [![Azure VWAN and Site Config Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-39.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-39.png)
 
 *  You can see that the sites (post addition of the hubs) are in "Site provisioning success" state.
 
-    [![Site Provisioning Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_40.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_40.png)
+    [![Site Provisioning Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-40.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-40.png)
 
 ### 4. Activate the Configuration from SD-WAN Orchestrator to enable Azure Virtual WAN automation
 
 *  Select *Configuration > Network Configuration Home*
 
-    [![Site Provisioning Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_41.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_41.png)
+    [![Site Provisioning Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-41.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-41.png)
 
 *  Select *Deploy Config/Software > Stage*
 
-    [![Site Provisioning Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_42.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_42.png)
+    [![Site Provisioning Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-42.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-42.png)
 
 *  Select *Activate*
 
-    [![Site Provisioning Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_43.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_43.png)
+    [![Site Provisioning Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-43.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-43.png)
 
 ## Verify Virtual WAN Service status
 
@@ -486,11 +486,11 @@ Go to *All Sites -> Configuration -> Delivery Services -> Azure Virtual WAN ->* 
     *  The Azure Virtual WAN automation takes care of enabling the IPsec tunnel with the two instances by default so that there is no manual intervention needed at all.
     *  Also note that, although both the tunnels are up and running, there is always only ONE active tunnel processing the connections and packets on the data-path.
 
-    [![Verify Tunnel on MCN](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_44.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_44.png)
+    [![Verify Tunnel on MCN](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-44.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-44.png)
 
 *  **Verify IPsec TUNNEL is UP and running on Secondary MCN (WestHubUS)**
 
-    [![Verify Tunnel on Secondary MCN](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_45.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_45.png)
+    [![Verify Tunnel on Secondary MCN](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-45.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-45.png)
 
 ## Verify IPsec tunnels between SD-WAN and Hub post automated deployment
 
@@ -500,16 +500,16 @@ Go to *All Sites -> Configuration -> Delivery Services -> Azure Virtual WAN ->* 
 
 *  **Note** that we see the “VPN sites” section table under the geo map indicating that the EastUSHub has 1 VPN sites connected which is our MCN device.
 
-    [![East US Hub Overview](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_46.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_46.png)
+    [![East US Hub Overview](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-46.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-46.png)
 
 *  Click the *EastUSHub* link. It will take us to the drill-down of the Hub for the East Geo.
 *  Click *‘Overview’* to see the number of VPN connected sites. We see 1 connected site (with our MCN).
 
-    [![East US Hub Stats](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_47.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_47.png)
+    [![East US Hub Stats](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-47.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-47.png)
 
 *  Click *VPN (Site to Site)* and check that the connection status is *“Successful”* and “Connected” to DCMCN (SD-WAN MCN)
 
-    [![Connectivity Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_48.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_48.png)
+    [![Connectivity Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-48.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-48.png)
 
 ### 2. Verify VPN Site creation in WestHubUS
 
@@ -517,17 +517,17 @@ Go to *All Sites -> Configuration -> Delivery Services -> Azure Virtual WAN ->* 
 
 *  **Note** that we see the “VPN sites” section table under the geo map indicating that the WestHubUS has 1 VPN sites connected which is our Geo-MCN device “DCGEOMCN".
 
-    [![West US Hub Overview](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_49.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_49.png)
+    [![West US Hub Overview](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-49.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-49.png)
 
 *  Click the *WestHubUS* link which will take us to the drill-down of the Hub for the West Geo
 
 *  In this, we can see that ‘Overview’ states number of VPN connected sites which is 1 at present (with our MCN)
 
-    [![West US Hub Stats](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_50.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_50.png)
+    [![West US Hub Stats](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-50.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-50.png)
 
 *  Click *VPN (Site to Site)* and check that connection status is *“Successful"* and “Connected” to Secondary MCN (SD-WAN Geo MCN).
 
-    [![Connectivity Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_51.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_51.png)
+    [![Connectivity Status](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-51.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-51.png)
 
 ## SD-WAN MCN to EastUSHub ROUTING
 
@@ -547,7 +547,7 @@ Most importantly, the next-hop type indicates how the routes were learned and in
     *  We can also see that the Remote Hub type routes have the Origin and the AS path appended appropriately to avoid routing loops.
     *  This table contains all the distinct VNets (peered at the West region with the West Hub) that are propagated from the EastUSHub via the WestHubUS hub.
 
-    [![EastUSHub Routing](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_52.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_52.png)
+    [![EastUSHub Routing](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-52.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-52.png)
 
 ## SD-WAN GEOMCN to WestHubUS ROUTING
 
@@ -569,7 +569,7 @@ Most importantly, the next-hop type indicates how the routes were learned and in
     *  We can also see that the Remote Hub type routes have the Origin and the AS path appended appropriately to avoid routing loops.
     *  This table contains all the distinct VNets (peered at the East region with the East Hub) that are propagated from the WestHubUS via the EastUSHub hub.
 
-    [![WestHubUS Routing](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_53.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_53.png)
+    [![WestHubUS Routing](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-53.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-53.png)
 
 ## Verify Route Propagation from East VNet to EastTUSHub
 
@@ -583,9 +583,9 @@ In this step, we verify that the routes are being propagated from East VNet to t
 *  VNet peering Next hop type would be the actual prefix of the Azure Virtual WAN prefix that was created of the VNet peering with.
 *  Virtual Network will be the local address of the VNet itself
 
-    [![Verify EastHub Route Propagation](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_54.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_54.png)
+    [![Verify EastHub Route Propagation](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-54.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-54.png)
 
-    [![Verify EastHub Route Propagation](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_55.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_55.png)
+    [![Verify EastHub Route Propagation](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-55.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-55.png)
 
 ## Verify Route Propagation from West VNet to WestHubUS
 
@@ -599,9 +599,9 @@ In this step, we verify that the routes are being propagated from West VNet to t
 *  VNet peering Next hop type would be the actual prefix of the Azure Virtual WAN prefix that was created of the VNet peering with
 *  Virtual Network will be the local address of the VNet itself
 
-    [![Verify WestHub Route Propagation](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_56.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_56.png)
+    [![Verify WestHub Route Propagation](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-56.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-56.png)
 
-    [![Verify WestHub Route Propagation](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_57.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_57.png)
+    [![Verify WestHub Route Propagation](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-57.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-57.png)
 
 ## Call to Action
 
@@ -615,11 +615,11 @@ In case, you haven’t tried Azure Virtual WAN yet, head over to [portal.azure.c
 
 Create an Azure Service principal in the subscription for enabling programmatic way of managing deployments (Automation) from SD-WAN Orchestrator. Microsoft Azure mandates that every resource that needs to be programmatically managed by a third party associate an IAM role and create an app registration to take advantage of automating the resources externally.
 
-[![App Registration](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_58.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_58.png)
+[![App Registration](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-58.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-58.png)
 
-[![Register application](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_59.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_59.png)
+[![Register application](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-59.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-59.png)
 
-[![Add client secret](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_60.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_60.png)
+[![Add client secret](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-60.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-60.png)
 
 Note: Once you have created the Client Secret for the App, note it down or copy it immediately to some place that you can refer later.
 
@@ -631,11 +631,11 @@ Note: Once you have created the Client Secret for the App, note it down or copy 
 *  Client ID – Also called the Application ID which you can get from the Overview section of your newly registered App below
 *  Directory ID – Also called the Tenant ID which you can get from the Overview section of your newly registered App below
 
-[![Copy Azure Principal details](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_61.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_61.png)
+[![Copy Azure Principal details](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-61.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-61.png)
 
 *  Client Secret – note or copy the client secret as soon as you create it. This step is very important for authenticating the subscription account and verifying that the App created is eligible to manage programmability of the resource you want automation enabled on (in Azure).
 
-[![Copy Azure Principal details](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_62.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_62.png)
+[![Copy Azure Principal details](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-62.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-62.png)
 
 ### 3. Associate the Azure Service Principal to the resource
 
@@ -644,7 +644,7 @@ Note: Once you have created the Client Secret for the App, note it down or copy 
 *  Click *“Add”* button of the *Add a role assignment* section highlighted below
 *  You can also click the *Role assignments* section, and click *“+ Add”* (next to *Download role assignments*) to add the IAM role to the service principal.
 
-[![Copy Azure Principal details](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_63.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_63.png)
+[![Copy Azure Principal details](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-63.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-63.png)
 
 *  Once you click *"Add"*, you will get a popup pane on the right, to add the role
     *  Choose the *ROLE* type as “Contributor”
@@ -653,4 +653,4 @@ Note: Once you have created the Client Secret for the App, note it down or copy 
         *  Once the search is successful, you can select the app.
     *  Select the “Save” button. (This concludes Azure Service Principal creation and association to the resource)
 
-[![Copy Azure Principal details](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_64.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_64.png)
+[![Copy Azure Principal details](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-64.png)](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan-64.png)
