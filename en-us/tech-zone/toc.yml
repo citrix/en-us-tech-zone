@@ -2,6 +2,8 @@ docs_list_title: Citrix Tech Zone
 
 docs:
 
+- title: Tech Zone Live
+  url: /en-us/tech-zone/tech-zone-live/tech-zone-live.html
 - title: Learn
   url: /en-us/tech-zone/learn.html
   subfolderlist:
