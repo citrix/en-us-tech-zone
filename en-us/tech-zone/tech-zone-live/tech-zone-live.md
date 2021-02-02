@@ -8,7 +8,7 @@ description: TODO
 
 Did 2020 feel like the sky was falling? Did it feel like we were under attack?  Did it compel your organization to take a hard look at your IT infrastructure? Crisis situations often reveal hidden weaknesses and shortcomings – but they can also lead to unexpected successes.
 
-Now is a great time to apply lessons learned last year, both positive and negative, to three key IT issues – improving your users’ virtual desktop experience, strengthening your security posture, and simplifying flexible work scenarios.
+Now is a great time to apply lessons learned from 2020, both positive and negative, to three key IT issues – improving your users’ virtual desktop experience, strengthening your security posture, and simplifying flexible work scenarios.
 
 Join us on February 17 for Tech Zone Live, a virtual event presented by our technical experts and some of our best Citrix Consulting architects. This three hour event consists of nine separate 20 minute sessions where we skip the marketing and get right to the details on how to make your world better. Each session focuses on one of these key topics:
 
