@@ -38,7 +38,7 @@ A Partner can mix and match these features with in the Citrix Virtual Apps and D
 
 ### Where to use Multitenancy
 
-A CSP can manage single or multitenant Citrix Virtual Apps and Desktops Standard for Azure under their Partner account. The deployment depends on the accompanying services offered to the end customer. Generally if a customer only uses applications and desktops they are better suited in a multitenant environment. However if they would also like to add other workspace services. Such as Citrix Endpoint Management, or Federated Authentication Services to authenticate to Citrix Cloud, they should be managed as a single tenant.
+A CSP can manage single or multitenant Citrix Virtual Apps and Desktops Standard for Azure under their Partner account. The deployment depends on the accompanying services offered to the end customer. Generally if a customer only uses applications and desktops they are better suited in a multitenant environment. However if they would also like to add other workspace services. Such as Citrix Endpoint Management, or Federated Authentication Services to authenticate to Citrix Cloud, it is preferable to manage them as a single tenant.
 
 ### Citrix Managed Azure
 
@@ -149,7 +149,7 @@ You can choose from four cost saving pre-sets to generate a generic plan that ca
 
 ## Getting started
 
-Before starting a new Virtual Apps and Desktops Standard for Azure deployment we should consider the costs and limitations of the architecture.
+Before starting a new Virtual Apps and Desktops Standard for Azure deployment we need to consider the costs and limitations of the architecture.
 
 To start to understand the overall costs, the Citrix team has created a Cost Calculator. This calculator helps CSPs plan and compare before committing to a Citrix managed Azure or Partner Managed Azure subscription:
 
