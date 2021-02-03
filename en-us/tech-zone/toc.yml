@@ -2,6 +2,8 @@ docs_list_title: Citrix Tech Zone
 
 docs:
 
+- title: Home
+  url: /en-us/tech-zone
 - title: Learn
   url: /en-us/tech-zone/learn.html
   subfolderlist:
@@ -27,5 +29,7 @@ docs:
       url: /en-us/tech-zone/build/deployment-guides.html
     - title: Tech Papers
       url: /en-us/tech-zone/build/tech-papers.html
+- title: Tech Zone Live
+  url: /en-us/tech-zone/tech-zone-live/tech-zone-live.html
 - title: About
   url: /en-us/tech-zone/about.html
