@@ -31,6 +31,10 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 [Remote PC Access with Citrix Virtual Desktops service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html) - Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from anywhere and on any device.
 
+## Citrix Secure Internet Access
+
+[Citrix Secure Internet Access with Citrix Virtual Apps and Desktop](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html) - Learn how to set up Citrix Secure Internet Access within a Citrix Virtual Apps and Desktop enviornment that provides Secure access to all applications, anywhere, from any device.
+
 ## Citrix Networking
 
 [nFactor for Citrix Gateway Authentication with Email OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-email-otp.html) - Learn how to implement an extensible and flexible approach to configuring multi-factor authentication with nFactor for Citrix Gateway authentication with email one-time password.
