@@ -605,7 +605,7 @@ In this step, we verify that the routes are being propagated from West VNet to t
 
 ## Call to Action
 
-In case, you haven’t tried Azure Virtual WAN yet, head over to [portal.azure.com](http://www.portal.azure.com/). If you want to experience the benefits of an SD-WAN solution first-hand, feel free to request a free-trial [here](/en-us/products/citrix-sd-wan/form/request-a-demo/).
+In case, you haven’t tried Azure Virtual WAN yet, head over to [portal.azure.com](https://www.portal.azure.com/). If you want to experience the benefits of an SD-WAN solution first-hand, feel free to request a free-trial [here](/en-us/products/citrix-sd-wan/form/request-a-demo/).
 
 ## Appendix
 
