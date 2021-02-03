@@ -1,14 +1,28 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: First Last, First2 Last2
-specialThanksTo: First Last, First2 Last2
-description: Copy & paste description from TOC here
+contributedBy: Frank Srp
+specialThanksTo: Daniel Feller, Martin Zugec
+description: Secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience
 ---
-# Title
+# Secure Internet Access User Experience
 
-TEXT
+Citrix introduces Citrix Secure Internet Access which unlike datacenter-based security, provides secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=ID):**
+For more information about Citrix Secure Internet Access, see [Citrix Secure Internet Access](/en-us/citrix-secure-internet-access.html) in Citrix product documentation.
 
-[![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=ID)
+## Citrix Secure Internet Access with Citrix Virtual Apps and Desktop Demo
+
+See how Citrix Secure Internet Access provides secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
+
+**Watch this video to [see demo](https://youtu.be/7ZtWKgTZipc):**
+
+[![Citrix Tech Insight - Citrix Secure Internet Access Integration with Citrix CVAD](/en-us/tech-zone/learn/media/tech-insights_secure-workspace-access-user-experience_vpn-less.png)](https://youtu.be/7ZtWKgTZipc)
+
+## Citrix Secure Internet Access with Citrix Secure Workspace Access Demo
+
+See how Citrix Secure Internet Access provides secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
+
+**Watch this video to [see demo](https://youtu.be/w3nY5iB4vhY):**
+
+[![Citrix Tech Insight - Citrix Secure Internet Access Integration with Citrix SWA](/en-us/tech-zone/learn/media/tech-insights_secure-workspace-access-user-experience_vpn-less.png)](https://youtu.be/w3nY5iB4vhY)
