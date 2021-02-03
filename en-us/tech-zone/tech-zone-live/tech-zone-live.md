@@ -4,7 +4,7 @@ description: Join forces with Master Class and TIPs experts for a quarterly webi
 ---
 # Tech Zone Live
 
-[![Tech Zone Live - Registration](/en-us/tech-zone/tech-zone-live/media/tech-zone-live_registration-banner.png)](https://citrix.webcasts.com/starthere.jsp?ei=1424964&tp_key=5068fa62fa)
+[![Tech Zone Live - Registration](/en-us/tech-zone/tech-zone-live/media/tech-zone-live_tech-zone-live_registration-banner.png)](https://citrix.webcasts.com/starthere.jsp?ei=1424964&tp_key=5068fa62fa)
 
 Did 2020 feel like the sky was falling? Did it feel like we were under attack?  Did it compel your organization to take a hard look at your IT infrastructure? Crisis situations often reveal hidden weaknesses and shortcomings – but they can also lead to unexpected successes.
 
