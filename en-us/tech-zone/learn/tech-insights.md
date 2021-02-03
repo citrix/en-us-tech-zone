@@ -45,6 +45,10 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [YouTube Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/youtube-optimizations.html) - Optimize YouTube delivery in branch offices with Citrix Virtual Apps and Desktops and Citrix SD-WAN.
 
+## Citrix Secure Internet Access
+
+[Secure Internet Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-internet-access-user-experience.html) - Secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
+
 ## Citrix Virtual Apps and Desktops
 
 [App Layering - User Layers](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html) - User layers persist user profile settings, data, and user-installed applications in non-persistent VDI environments.
