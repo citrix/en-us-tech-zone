@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Frank Srp
 specialThanksTo: Eric Beiers, Martin Zugec, Daniel Feller
-description: Learn how to set up Citrix Secure Internet Access in conjuntion with Citrix Secure Workspace Access to provide Secure access to all applications, anywhere, from any device.
+description: Learn how to set up Citrix Secure Internet Access in conjunction with Citrix Secure Workspace Access to provide secure access to SaaS and web applications, anywhere, from any device.
 ---
 # Proof of Concept: Citrix Secure Internet Access with Citrix Secure Workspace Access
 

@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Frank Srp
 specialThanksTo: Daniel Feller, Martin Zugec
-description: Secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience
+description: Secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
 ---
 # Secure Internet Access User Experience
 
