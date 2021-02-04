@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Matthew Brooks, Alyssa Ramella
 specialThanksTo: Himanshu Shukla
-description: Learn how to implement an extensible and flexible approach to configuring multi-factor authentication with nFactor for Citrix Gateway authentication with Native OTP.
+description: Learn how to implement an extensible and flexible approach to configuring multifactor authentication with nFactor for Citrix Gateway authentication with Native OTP.
 ---
 # Proof of Concept Guide: nFactor for Citrix Gateway with Native OTP Authentication
 
