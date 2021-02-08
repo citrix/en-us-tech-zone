@@ -50,23 +50,15 @@ Citrix Cloud Connector runs on Windows Server instances hosted in Resource Locat
 
 ### Citrix Gateway service
 
-The Citrix Gateway service is a part of the Citrix Cloud Services to provide secure remote access. It has been developed upon for more than a decade, all the while being used by the largest companies in the world. It relies on the Citrix Intelligent Traffic Management (ITM) service to direct clients to the closest global Citrix Gateway service POP. From there, it coordinates secure connectivity between Citrix Workspace clients and virtualization resources to deliver sessions with the lowest latency and the best user experience possible.
+The Citrix Gateway service is a part of the Citrix Cloud Services to provide secure remote access. It has been developed upon for more than a decade, all the while being used by the largest companies in the world. It relies on the Citrix Optimal Gateway Routing to direct clients to the closest global Citrix Gateway service POP. From there, it coordinates secure connectivity between Citrix Workspace clients and virtualization resources to deliver sessions with the lowest latency and the best user experience possible.
 
 ### Rendezvous protocol
 
 Each Cloud Connector supports a limit of 1,000 concurrent sessions, and while adding more connectors grows capacity Citrix provides a more efficient solution to scale. [Rendezvous protocol](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/rendezvous-protocol.html) enables HDX sessions to be set up, through secure TLS transport, directly from the Virtual Delivery Agent (VDA) to the Citrix Gateway service without going through the Cloud Connector first. It is available in Citrix Virtual Apps and Desktops release 1912+ and can be enabled through a Citrix Policy setting. If the Rendezvous protocol is enabled and it cannot reach the Gateway service for any reason, it falls back to proxying traffic through the Cloud Connector.
 
-### Citrix Intelligent Traffic Management (ITM) service
-
-The Citrix Gateway service uses the Citrix Intelligent Traffic Management (ITM) service to help provide fast and reliable sessions. Developed to use a broad set of monitoring sources and robust algorithms,Citrix ITM directs workspace users from anywhere in the world to their nearest Citrix POP to help deliver the most efficient and reliable sessions possible.
-
-Citrix ITM provides resiliency and a better user experience by directing workspace endpoints and Virtual Delivery Agents (VDAs) to the closest Citrix POP. ITM acts as the authoritative DNS for Citrix Gateway service Fully Qualified Domain Names (FQDNs), yet instead of providing static IP addresses to Citrix POPs, and following simple load balancing methods like round robin, it provides dynamic responses based on near real-time traffic analysis from various sources including active users of the FQDN. Based on analysis of data sources, Citrix ITM responds to each DNS query with the nearest, fastest, most reliable POP available at the moment. Using proprietary collectors and analysis algorithms ITM can adapt to various factors that can affect user experience such as CDN caching issues, ISP congestion, International Internet backbone outages.
-
-![Citrix Intelligent Traffic Management (ITM)](/en-us/tech-zone/learn/media/tech-briefs_gateway-hdxproxy_3.png)
-
 ## Resiliency
 
-Citrix Gateway service operates in multiple POPs around the world with ITM, which monitors the health of each site. If for any reason a POP goes down or connectivity is degraded past thresholds, Citrix ITM responds to subsequent DNS queries with the public IP address of the next closest POP. The Workspace app and the Citrix Virtual Apps and Desktops controller will initiate retries and timeouts based on session [connection](/en-us/citrix-virtual-apps-desktops/manage-deployment/connections.html) and [timer](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-limits-policy-settings.html) settings.
+Citrix Gateway service operates in multiple POPs. If for any reason a POP goes down or connectivity is degraded past thresholds, Citrix Optimal Gateway Routing responds to subsequent DNS queries with the public IP address of the next closest POP. The Workspace app and the Citrix Virtual Apps and Desktops controller will initiate retries and timeouts based on session [connection](/en-us/citrix-virtual-apps-desktops/manage-deployment/connections.html) and [timer](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-limits-policy-settings.html) settings.
 
 *  Each POP is configured for High Availability
 *  Four 9 s of reliability
