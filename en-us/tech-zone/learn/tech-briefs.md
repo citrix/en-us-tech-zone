@@ -8,6 +8,8 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 ## Citrix Secure Workspace Access
 
+[Citrix Workspace Essentials and Secure Workspace Access Getting Started Guide](/en-us/tech-zone/learn/tech-briefs/citrix-workspace-essentials-quickstart.html) - This guide demonstrates how to configure SaaS and internal web apps with single sign-on (SSO) in Citrix Workspace.
+
 [Secure Workspace Access](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html) - With Secure Workspace Access, organizations go beyond access and aggregation to provide IT with policy controls that provide conditional access to cloud apps and internet browsing, enhancing the organization's overall security and compliance posture.
 
 ## Citrix Analytics

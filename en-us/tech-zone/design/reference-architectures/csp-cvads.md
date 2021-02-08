@@ -448,9 +448,7 @@ To securely isolate customers in a multitenant setup, a delivery group is only b
 
 ### Configure Federated Domain for the New Customer
 
-Even though the nomenclature is very similar, the CSP Domain Federation is not the same as the Federated Authentication Service (FAS)
-
-[Citrix Federated Authentication Service](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html#preparing-for-citrix-cloud)
+Even though the nomenclature is very similar, the CSP Domain Federation is not the same as the Federated Authentication Service (FAS).
 
 For large customers under the single tenant (private workspace) architecture model, this step is not required. Domains and resource locations are configured directly within the customer’s cloud account.
 

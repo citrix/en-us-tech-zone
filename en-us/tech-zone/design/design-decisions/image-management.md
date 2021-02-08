@@ -123,9 +123,11 @@ Citrix PVS is sensitive to a properly working network environment - whether it's
 
 ### Requires Persistent Disk
 
-With PVS, it is possible to store persistent data on write cache disk. This capability is possible with MCS as well, however it requires more scripting and automation skills. If you are not willing to automate this procedure or don't have the required skills, using an out-of-box functionality of PVS might be a better option.
+There is a common requirement to keep some data persistent between reboots - for example event logs or configuration that needs to be restored after machine changes are deleted (for example unique machine identifiers used by [anti-malware](/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html#agent-registrations) or software deployment tools to identify target machine).
 
-**Recommended mode:** PVS preferred
+With PVS and newer versions of MCS IO drivers (introduced in version 7.9), it is possible to store persistent data on write cache disk. This capability is possible with older versions of MCS, however it requires more scripting and automation skills. If you are not willing to automate this procedure or don't have the required skills, using an out-of-box functionality might be a better option. Be careful when redirecting data to a write cache disk - not properly planning and monitoring free capacity can lead to stability issues and needs to be carefully considered before implementation. Best candidates for redirections are smaller files with fixed size (e.g. log files with maximum size or small text files), it is not recommended to redirect large or unpredictable amount of data.
+
+**Recommended mode:** PVS or new version of MCS IO preferred
 
 ### Optimized Hypervisor and Storage
 
