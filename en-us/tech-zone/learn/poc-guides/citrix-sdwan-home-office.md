@@ -13,7 +13,7 @@ This proof of concept (PoC) guide is designed to help you quickly deploy a Citri
 
 Reviewing the following use-case for the ISP + LTE option, which includes a primary WAN link provided by an ISP. It is augmented with an LTE service, to review implementation considerations.
 
-![ISP + LTE Home Office Topology](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_ispplusltehomeofficetopology.png)]
+![ISP + LTE Home Office Topology](/en-us/tech-zone/learn/media/poc-guides_citrix-sdwan-home-office_ispplusltehomeofficetopology.png)
 
 In this use-case (ISP+LTE), an Administrator must first validate that the targeted Home Office network meets the following prerequisites:
 
