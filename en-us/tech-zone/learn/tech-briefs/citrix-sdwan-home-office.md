@@ -5,7 +5,7 @@ contributedBy: Shoaib Yusuf
 specialThanksTo: Matthew Brooks
 description: Learn how to work from home with secure, enhanced, and resilient connectivity using the Citrix SD-WAN 110 appliance.
 ---
-# Citrix SD-WAN for Home Offices Brief
+# Citrix SD-WAN for Home Offices Tech Brief
 
 ## Introduction
 
@@ -33,11 +33,11 @@ Citrix solutions enable business continuity. As the definition of workforce chan
 
 Traditional remote branch offices are an extension of the Data Center network, connected over Private Intranet links (for instance MPLS). In the use-case of remote branch offices, Private Intranet circuits are reliable, and secure. However, depending on the location of the branch office, ensuring availability, and paying for a high bandwidth WAN becomes challenging. Issues with either can be a detriment to a good user-experience.
 
-[![Branch MPLS Topology](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_branchmplstopology.png)](tech-briefs_citrix-sdwan-home-office_branchmplstopology.png)
+![Branch MPLS Topology](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_branchmplstopology.png)
 
 Home Workers / Teleworkers traditionally connect into the network over Public Internet links. Like a traditional VPN solution, one option would be to utilize Citrix Gateway. It provides users with secure remote access to Citrix Virtual Apps and Desktops across a range of devices. In a VPN use-case, Public Internet links are often unreliable, and of poor quality. The quality depends on the geographic location of the teleworker, and the conditions of the last mile. Ensuring a high end-user experience across a questionable WAN becomes a challenge as teleworkers, and home workers are introduced to the workforce.
 
-[![Home Office Internet Topology](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_homeofficeinternettopology.png)](tech-briefs_citrix-sdwan-home-office_homeofficeinternettopology.png)
+![Home Office Internet Topology](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_homeofficeinternettopology.png)
 
 ## Introducing SD-WAN 110-LTE-Wi-Fi-SE
 
@@ -58,7 +58,7 @@ Citrix SD-WAN is a book ended solution providing reliable, and high bandwidth co
 
 Concerns regarding the WAN for the Home Office use-case can be solved with the Citrix SD-WAN solution. The book ended solution can strategically be placed on the segment of the network that typically impacts user experience the most. It provides a new WAN overlay, designed to increase end-user experience, and performance.
 
-[![Citrix SD-WAN Home Office Use Case](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeusecase.png)](tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeusecase.png)
+![Citrix SD-WAN Home Office Use Case](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_wanhomeofficeusecase.png)
 
 Generally, you find more benefits with the SD-WAN solution by introducing more WAN transports. These include DLS, Broadband Internet, or LTE links to augment any existing WAN transports. Diversifying the ISPs can significantly increase network reliability. In the preceding scenario, SD-WAN devices (physical, or virtual) can be placed directly in the path of the existing network. With more WAN transports it increases user experience, and productivity. The benefits include:
 
@@ -80,7 +80,7 @@ The availability of these benefits can vary based on the available WAN transport
 It is important Home Office requirements are based on local network conditions. Some Home Offices have access to multiple Internet providers (for instance DSL, and Broadband). Others might be limited to LTE service in their area (for instance AT&T, and Verizon). Most often, Home Offices have the flexibility of having both wired, and wireless transport options. Network Administrators can centrally control which of the Home Office use-case deployments are supported through site profiles, and templates.
 Let us cover some different use-cases based on some variances of local network availability of Home Offices:
 
-[![Citrix SD-WAN Home Office Use Cases Comparison](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeuseasescomparison.png)](tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeuseasescomparison.png)
+![Citrix SD-WAN Home Office Use Cases Comparison](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_wanhomeofficeuseasescomparison.png)
 
 We’ll dive into more detail on the roles and responsibilities of a Network Administrator in the [Citrix SD-WAN Home Office POC Guide](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html), in addition to cover the varying benefits depending on local network connectivity options in [Citrix SD-WAN Home Office Design Decisions](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html).
 
@@ -97,11 +97,11 @@ Enterprises with Citrix SD-WAN already deployed can use the same workflow as add
 
 As an example, illustrated below is a more detailed look at one of the Home Office use-cases which uses available local networks of “ISP + LTE” and makes use of the SD-WAN interface 1/1 to physically connect LAN devices and Wi-Fi to connect wireless devices.
 
-[![Citrix SD-WAN Home Office Use Case Topology](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeusecasetopology.png)](tech-briefs_citrix-sdwan-home-office_citrixsd-wanhomeofficeusecasetopology.png)
+![Citrix SD-WAN Home Office Use Case Topology](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_wanhomeofficeusecasetopology.png)
 
 In this scenario, the SD-WAN configuration can be limited to handle only the remote worker’s traffic. The SD-WAN delivers traffic from any device connected physically or wirelessly through the SD-WAN overlay, leveraging the Internet service provided by the ISP as the primary form of connectivity. At the same time it uses LTE for a boost when there are reliability issues with the primary (shared) Internet, or when more bandwidth is needed. Existing home network users, for instance family or kids, would connect normally to the existing home network, and share the available bandwidth with the encrypted UDP 4980 tunnel created by the SD-WAN device. If the ISP Router supports QOS, otherwise known as traffic shaping, then it is recommended that the UDP 4980 traffic be prioritized above Home Office traffic for optimal SD-WAN performance. A new policy can be created categorizing the UDP 4980 traffic as High Priority.
 
-[![Home ISP Router QOS](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_homeisprouterqos.png)](tech-briefs_citrix-sdwan-home-office_homeisprouterqos.png)
+![Home ISP Router QOS](/en-us/tech-zone/learn/media/tech-briefs_citrix-sdwan-home-office_homeisprouterqos.png)
 
 After the Network Administrator has pushed the new configuration, and it is actively running on the existing SD-WAN deployment, the Home Office workflow can begin. Once the home worker receives their SD-WAN appliance they can run through one of the installation workflows to stand up their SD-WAN device using Zero Touch Deployment. Depending on the availability of an active LTE SIM card, an installer can opt to choose the Zero-touch deployment method using the WAN interface instead of the LTE interface. Both methods are detailed following as separate Quick Start Guides.
 
