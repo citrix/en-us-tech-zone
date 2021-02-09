@@ -141,7 +141,8 @@ Processes:
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\AuthManager\AuthManSvr.exe`
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\SelfServicePlugin\SelfService.exe`
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\SelfServicePlugin\SelfServicePlugin.exe`
--  `%ProgramFiles(x86)%\Citrix\ICA Client\HdxTeams.exe` (Optimization for Microsoft Teams)
+-  `%ProgramFiles(x86)%\Citrix\ICA Client\HdxTeams.exe` (Optimization for Microsoft Teams for Workspace app 2009.5 or older)
+-  `%ProgramFiles(x86)%\Citrix\ICA Client\HdxRtcEngine.exe` (Optimization for Microsoft Teams for Workspace app 2009.6 or higher)
 
     >**Note:**
     >
