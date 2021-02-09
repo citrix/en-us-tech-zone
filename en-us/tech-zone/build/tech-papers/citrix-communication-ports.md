@@ -87,14 +87,16 @@ To find the list of addresses that are common to most Citrix Cloud services and 
 
 ### Citrix Cloud - Virtual Apps and Desktops Service
 
-| Source                | Destination      | Type  | Port | Details                                                  |
-| --------------------- | ---------------- | ----- | ---- | -------------------------------------------------------- |
-| VDA                   | Gateway Service  | TCP   | 443  | Rendezvous Protocol                                      |
-| Provisioning Servers  | Cloud Connectors | HTTPS | 443  | Provisioning Server integration with Citrix Cloud Studio |
-| Citrix License Server | Citrix Cloud     | HTTPS | 443  | Citrix License Server integration with Citrix Cloud      |
+| Source                             | Destination      | Type  | Port | Details                                                            |
+| ---------------------------------- | ---------------- | ----- | ---- | ------------------------------------------------------------------ |
+| VDA                                | Gateway Service  | TCP   | 443  | Rendezvous Protocol                                                |
+| Citrix Provisioning Server Console | Cloud Connectors | HTTPS | 443  | Provisioning Server integration with Citrix Cloud Studio           |
+| Citrix License Server              | Citrix Cloud     | HTTPS | 443  | Citrix License Server integration with Citrix Cloud                |
+| CVAD Remote Powershell SDK         | Citrix Cloud     | HTTPS | 443  | Any system running scripts based on the CVAD Remote Powershell SDK |
 
  Read more about Citrix License Server integration [here](/en-us/citrix-cloud/citrix-cloud-management/citrix-cloud-on-premises-registration.html#connectivity-requirements).
  Read more about Citrix Provisioning Server integration [here](/en-us/provisioning/current-release/configure/cloud-connector.html#firewall-considerations).
+ Read more about the CVAD Remote Powershell SDK [here](/en-us/citrix-virtual-apps-desktops-service/sdk-api.html)
 
 ### Citrix Cloud - Gateway Service
 
@@ -280,6 +282,8 @@ Refer to the following link for Citrix App Layering ports – [Firewall Ports](/
 |                                                                                                                      |                       | UDP  | 6969, 2071   | Two Stage Boot (BDM). Used in boot from ISO or USB scenarios only.                                                                                                                                                            |
 |                                                                                                                      |                       | TCP  | 54321..54323 | SOAP Service – Used by Imaging Wizards                                                                                                                                                                                        |
 | Admin Workstation                                                                                                    | Provisioning Server   | TCP  | 54321..54323 | SOAP Service – Used by Console and APIs (MCLI, PowerShell, etc.)                                                                                                                                                              |
+|                                                                                                                      | DDC Controller        | TCP  | 80           | When using on-prem CVAD - used by Console wizards when creating Broker Catalogs                                                                                                                                               |
+|                                                                                                                      | CVAD Service          | TCP  | 443          | When using CVADS - used by Console wizards when creating Broker Catalogs                                                                                                                                                      |
 
 ### Session Recording
 
