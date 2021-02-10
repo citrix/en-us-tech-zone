@@ -139,6 +139,10 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan.html) - Learn about the framework, design, and architecture for Citrix SD-WAN with SD-WAN Orchestrator for single region deployment.
 
+### [Build - Deployment Guides](/en-us/tech-zone/build/deployment-guides.html)
+
+[Citrix SD-WAN with Azure Virtual WAN](/en-us/tech-zone/build/deployment-guides/sdwan-azure-virtualwan.html) - Learn how to establish connectivity between SD-WAN and Azure Virtual WAN, and connect workloads on Azure with on-premises infrastructure.
+
 ## Citrix Secure Internet Access
 
 ### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
