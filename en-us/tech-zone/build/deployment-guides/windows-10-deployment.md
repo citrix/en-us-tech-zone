@@ -1,18 +1,16 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Russell Peters
 description: Learn how to install the Citrix VDA into a WIndows 10 platform & prep it to be used in a CVAD environment, including related components, tips and best practices
 ---
 # Windows 10 Deployment Guide
 
-## Contributors
-
-**Author:** [Russell Peters](URL)
-
 ## Overview
 
-This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10 & deploy Virtual Machines (VMs) via Citrix Machine Creation Services (MCS) in Citrix Virtual Apps & Desktops (CVAD) Service
+This guide provides high level instructions to install the Citrix Virtual Delivery Agent (VDA) on Windows 10. Deploy Virtual Machines (VMs) with Citrix Machine Creation Services (MCS) via Citrix Virtual Apps & Desktops (CVAD) Service
 
-Below are the steps covered in this Guide
+The following steps covered in this Guide
 
 *  Install VDA
 *  Optimize Windows 10 for MCS
@@ -28,7 +26,7 @@ Below are the steps covered in this Guide
 >
 > Citrix Cloud, CVAD Service & basic Windows administration
 
-1.  A Windows 10 VM in Microsoft Azure, Google Cloud Platform (GCP) or an on premises virtual environment
+1.  A Windows 10 VM in Microsoft Azure, Google Cloud Platform (GCP) or an on-premises virtual environment
 
 1.  A Citrix Cloud account with CVAD Service permissions
 
@@ -53,7 +51,7 @@ Below are the steps covered in this Guide
 >
 > It is recommended to use the latest VDA version for optimal performance, security, and functionality
 
-1.  Login to Citrix.com/downloads and download the latest version of the VDA
+1.  Log in to Citrix.com/downloads and download the latest version of the VDA
 
 1.  Run the VDA setup file "VDAWorkstationSetup_xxxx.exe" as an administrator.
 
@@ -99,7 +97,7 @@ Below are the steps covered in this Guide
 >
 > For information on Citrix Optimizer see [Citrix Optimizer – What’s new](https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/)
 
-1.  Login & download Citrix Optimizer from [Citrix Optimizer](https://support.citrix.com/article/CTX224676)
+1.  Log in & download Citrix Optimizer from [Citrix Optimizer](https://support.citrix.com/article/CTX224676)
 
 1.  Run Citrix Optimizer as an administrator
 
@@ -125,7 +123,7 @@ Below are the steps covered in this Guide
 >
 > *Resources*
 >
-> We will be using **Microsoft Azure** as a resource location in this scenario. For a full list of supported Hypervisors & Clouds see [Hosts / virtualization resources](/en-us/citrix-virtual-apps-desktops-service/system-requirements.html#hosts--virtualization-resources)
+> We are using **Microsoft Azure** as a resource location in this scenario. For a full list of supported Hypervisors & Clouds see [Hosts / virtualization resources](/en-us/citrix-virtual-apps-desktops-service/system-requirements.html#hosts--virtualization-resources)
 >  
 > *Hosting Connections*
 >
@@ -195,7 +193,7 @@ Below are the steps covered in this Guide
 
 > **Note**
 >
-> Wait for the machine catalog to create and the new VM disk. Time will depend on the number of VMs specified
+> Wait for the machine catalog to create and the new VM disk. Time depends on the number of VMs specified
 
 ## Create Delivery Group
 
@@ -207,7 +205,7 @@ Below are the steps covered in this Guide
 
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-031.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-031.png)
 
-1.  Select the **Machine Catalog** you just created (above)
+1.  Select the **Machine Catalog** you created (above)
 
 1.  Choose the number of machines you created or want to add to the Delivery Group, click **Next**
 
@@ -231,7 +229,7 @@ Below are the steps covered in this Guide
 
 ## Assign Users to Desktop
 
-1.  Login to Citrix Cloud & from the landing page select **View Library**
+1.  Log in to Citrix Cloud & from the landing page select **View Library**
 
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-053.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-053.png)
 
@@ -249,7 +247,7 @@ Below are the steps covered in this Guide
 >  
 > Best practice would be to automate the configuration of the **Citrix Workspace** & **Citrix Files** clients
 
-Once the user has launched the virtual desktop & logged in they will be able to carry out the below tasks
+Once the user has launched the virtual desktop & logged in they are able to carry out the following tasks
 
 ## Citrix Workspace App
 
@@ -265,7 +263,7 @@ Once the user has launched the virtual desktop & logged in they will be able to 
 
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-113.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-113.png)
 
-1.  Once authenticated you will see any assigned resources in the workspace or populated in the start menu
+1.  Once authenticated you see any assigned resources in the workspace or populated in the start menu
 
 ## Citrix Files
 
@@ -275,7 +273,7 @@ Once the user has launched the virtual desktop & logged in they will be able to 
 >
 > If not the latest version can be downloaded from [Citrix Files for Windows](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-windows.html)
   
-1.  Check Citrix Files status from the icon in the system tray. If offline, right click the icon & select login
+1.  Check Citrix Files status from the icon in the system tray. If offline, right-click the icon & select login
 
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-049.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-049.png)
 
@@ -291,7 +289,7 @@ Once the user has launched the virtual desktop & logged in they will be able to 
 >
 > If not the latest version can be downloaded from [Citrix Files for Outlook](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/citrix-files-for-outlook.html)
 
-1.  Open Outlook & the Citrix files plug-in will be visible along the Outlook tool bar. If you are logged onto the VM with a valid Citrix Files account, the authentication will pass through and enable the files functionality
+1.  Open Outlook & the Citrix files plug-in is visible along the Outlook tool bar. If you are logged on to the VM with a valid Citrix Files account, the authentication passes through and enables Citrix files functionality
 
     [![Citrix Files for Outlook](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Outlook-1.png)
 
