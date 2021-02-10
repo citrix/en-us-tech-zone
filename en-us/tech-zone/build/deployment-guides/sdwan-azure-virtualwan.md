@@ -45,6 +45,8 @@ Azure Virtual WAN (VWAN) is a networking service from Microsoft that provides a 
 
 ![Azure VWAN](/en-us/tech-zone/build/media/deployment-guides_sdwan-azure-virtualwan_01.png)
 
+Reference: [Azure Virtual WAN traffic paths](https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-global-transit-network-architecture)
+
 ## Better together: Benefits of a joint Azure VWAN and Citrix SD-WAN Solution
 
 Citrix SD-WAN provides a secure and reliable WAN edge solution that reduces the cost, complexity, and time to connect branch offices to Azure by automating network deployments.
