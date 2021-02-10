@@ -13,6 +13,10 @@ Deployment guides provide step-by-step instruction on how to perform key tasks a
 
 [Migration from Android Device Administrator to Android Enterprise with Citrix Endpoint Management](/en-us/tech-zone/build/deployment-guides/android-device-administrator-to-android-enterprise.html) - Learn how to migrate your Citrix Endpoint Management policies and apps step by step. Take your Endpoint Management from a legacy Android Device Administrator deployment to Android Enterprise by using a managed Google Play account.
 
+## Citrix Networking
+
+[Citrix SD-WAN with Azure Virtual WAN](/en-us/tech-zone/build/deployment-guides/sdwan-azure-virtualwan.html) - Learn how to establish connectivity between SD-WAN and Azure Virtual WAN, and connect workloads on Azure with on-premises infrastructure.
+
 ## Citrix Virtual Apps and Desktops
 
 [Deploying Azure Files for Citrix Profile Management and Citrix User personalization layers](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html) - Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management.
