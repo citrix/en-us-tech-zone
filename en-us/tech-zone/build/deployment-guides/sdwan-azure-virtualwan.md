@@ -375,7 +375,7 @@ Next Steps:
 
 Create an Azure Service principal in the subscription to enable a programmatic way of managing deployments (Automation) from SD-WAN Orchestrator. Microsoft Azure mandates that every resource that needs to be programmatically managed by a third party, associate an IAM role and create an app registration to take advantage of automating the resources externally.
 
-To do so, follow the steps outlined [here](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal). For more details, you can refer to this segment in the [Appendix](#Appendix) section.
+To do so, follow the steps outlined [here](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal). For more details, you can refer to this segment in the [Appendix](#appendix) section.
 
 ### 6. Fill in Azure Authentication credentials in SD-WAN Orchestrator
 
@@ -607,7 +607,7 @@ In this step, we verify that the routes are being propagated from West VNet to t
 
 ## Call to Action
 
-In case, you haven’t tried Azure Virtual WAN yet, head over to [portal.azure.com](https://www.portal.azure.com/). If you want to experience the benefits of an SD-WAN solution first-hand, feel free to request a free-trial [here](/en-us/products/citrix-sd-wan/form/request-a-demo/).
+In case, you haven’t tried Azure Virtual WAN yet, head over to [portal.azure.com](https://www.portal.azure.com/). If you want to experience the benefits of an SD-WAN solution first-hand, feel free to request a free-trial [here](https://www.citrix.com/products/citrix-sd-wan/form/request-a-demo/).
 
 ## Appendix
 
