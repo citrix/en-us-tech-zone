@@ -25,151 +25,255 @@ This guide demonstrates how to implement a Proof of Concept environment using tw
 
 It makes assumptions about the completed installation and configuration of the following components:
 
-*  Citrix Gateway installed, licensed, and configure with an externally reachable virtual server bound to a wildcard certificate
+*  Citrix ADC installed, and licensed
+*  Citrix Gateway configured with an externally reachable virtual server bound to a wildcard certificate
 *  Citrix Gateway integrated with a Citrix Virtual Apps and Desktops environment which uses LDAP for authentication
 *  Endpoint with Citrix Workspace app installed
 *  Active Directory (AD) is available in the environment
-*  Access to an SMTP server to originate emails
+*  Access to an SMTP server to originate email
 
-## Citrix Gateway
+## nFactor
+
+First, we will log in to the CLI on our Citrix ADC and enter the authentication actions and associated policies for LDAP and email respectively. Then we will log in to our GUI to build our nFactor flow in the visualizer tool and complete the multifactor authentication configuration.
+
+### LDAP Authentication policies
+
+We create the LDAP actions, and the policies that references them. We will also create the Email action, and the policy that references it, which is the multi-factor authentication method for users that are not members of the VIP group or on a local subnet.
+
+1.  First connect to the CLI by opening an SSH session the NSIP address of the Citrix ADC and log in as the nsroot administrator.
+
+For LDAP Actions populate the required fields to create the LDAP action in a string and paste it into the CLI:
+
+*  `ldapAction` - enter the action name.
+*  `serverIP` - enter the domain server/s fqdn or IP address.
+*  `serverPort` - enter the LDAP port.
+*  `ldapBase` - enter the string of domain objects and containers where pertinent users are stored in your directory.
+*  `ldapBindDn` - enter the service account used to query domain users.
+*  `ldapBindDnPassword` - enter your service account password.
+*  `ldapLoginName` - enter the user object type.
+*  `groupAttrName` - enter the group attribute name.
+*  `subAttributeName` - enter the sub attribute name.
+*  `secType` - enter the security type.
+*  `ssoNameAttribute` - enter the single sign-on name attribute.
+*  `defaultAuthenticationGroup` - enter the default authentication group.
+*  `alternateEmailAttr` - enter the user domain object attribute where their email address can be retrieved.
+
+For LDAP Policies populate the required fields to reference the LDAP Action in a string and paste it into the CLI:
+
+*  `Policy` - enter the policy name. We enter `authPol_LDAP_eotp`
+*  `action` - enter the name of the Email action we created above. We enter `authAct_LDAP_eotp`
+
+For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-LDAP-tsk.html)
+
+#### LDAP action 1 - authAct_GroupExtract_genf
+
+Update the fields below for your environment and copy and paste the string into the CLI:
+`add authentication ldapAction authAct_GroupExtract_genf -serverIP 192.168.64.50 -ldapBase "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword 550356b4a5de310e0a285b18f6d9108920408b402277acf6099cc935549a682d -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -authentication DISABLED`
+
+#### LDAP policy 1 - authPol_GroupExtract_genf
+
+Update the fields below for your environment and copy and paste the string into the CLI:
+`add authentication Policy authPol_GroupExtract_genf -rule true -action authAct_GroupExtract_genf`
+
+![LDAP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_cli.png)
+
+#### LDAP policy 2A - authPol_LdapOnly_genf
+
+Update the fields below for your environment and copy and paste the string into the CLI:
+`add authentication Policy authPol_LdapOnly_genf -rule "AAA.USER.IS_MEMBER_OF(\"LDAP\") || client.IP.SRC.IN_SUBNET(10.0.0.0/8)" -action NO_AUTHN`
+
+#### LDAP policy 2B - authPol_TwoFactor_genf
+
+Update the fields below for your environment and copy and paste the string into the CLI:
+`add authentication Policy authPol_TwoFactor_genf -rule "client.IP.SRC.IN_SUBNET(10.0.0.0/8).NOT" -action NO_AUTHN`
+
+#### LDAP action 3A - authAct_Ldap_genf
+
+Update the fields below for your environment and copy and paste the string into the CLI:
+`add authentication ldapAction authAct_Ldap_genf -serverIP 192.168.64.50 -ldapBase "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword 550356b4a5de310e0a285b18f6d9108920408b402277acf6099cc935549a682d -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -passwdChange ENABLED`
+
+#### LDAP policy 3A - authPol_GroupExtract_genf
+
+Update the fields below for your environment and copy and paste the string into the CLI:
+`add authentication Policy authPol_Ldap_genf -rule true -action authAct_Ldap_genf`
+
+#### LDAP action 3B - authAct_LDAP_eotp_genf
+
+Update the fields below for your environment and copy and paste the string into the CLI:
+`add authentication ldapAction authAct_LDAP_eotp_genf -serverIP 192.168.64.50 -serverPort 636 -ldapBase "DC=workspaces,DC=wwco,DC=net" -ldapBindDn wsadmin@workspaces.wwco.net -ldapBindDnPassword aff08e86dcf9ad35b06d3eb76335faccfe091b8b3b9c912b0f8b537736404002 -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -ssoNameAttribute userPrincipalName -defaultAuthenticationGroup Email-OTP -alternateEmailAttr otherMailbox`
+
+#### LDAP policy 3B - authPol_LDAP_eotp_genf
+
+Update the fields below for your environment and copy and paste the string into the CLI:
+`add authentication Policy authPol_LdapEtop_genf -rule true -action authAct_LDAP_eotp_genf`
+
+### Email Authentication policy
+
+Populate the following fields to create the Email action and paste the completed string into the CLI:
+
+*  `emailAction` - enter the action name.
+*  `userName` - enter the user, or service account, that will log in to the mail server.
+*  `password` - enter your service account password to log in to the mail server. (The password will be encrypted by the Citrix ADC by default)
+*  `serverURL` - enter the fqdn or IP address of the mail server.
+*  `content` - enter the user message next to the field to enter the email code.
+*  `time out` - enter the number of seconds the email code is valid.
+*  `emailAddress` - enter the LDAP object to query for the user email address.
+
+For the Email policy populate the required fields to reference the Email Action in a string and paste it into the CLI:
+
+*  `Policy` - enter the policy name.
+*  `action` - enter the name of the Email action we created above.
+
+For more information see [Email OTP authentication policy](/en-us/citrix-adc/current-release/aaa-tm/authentication-methods/email-otp.html)
+
+#### Email action 4B - authAct_Email_eotp_genf
+
+Once you have constructed the full string for your environment copy and paste it into the CLI:
+
+`add authentication emailAction authAct_Email_eotp_genf -userName admin_matt@workspaces.wwco.net -password 3488bd3b269d5f7a87d81cec459167cf0e4b10ff9927934e53ccb5596a7d749c -encrypted -encryptmethod ENCMTHD_3 -serverURL "smtps://192.168.64.40:587" -content "Your OTP is $code" -timeout 60 -emailAddress "aaa.user.attribute(\"alternate_mail\")"`
+
+#### Email policy 4B - authPol_Email_eotp_genf
+
+Once you have constructed the full string for your environment copy and paste it into the CLI:
+
+`add authentication Policy authPol_Email_eotp_genf -rule true -action authAct_Email_eotp`
+
+### Login Schema
+
+#### lSchema 1 - lSchema_GroupExtract_genf
+
+Update the fields below for your environment and copy and paste the string into the CLI:
+add authentication loginSchema lSchema_GroupExtract_genf -authenticationSchema "/nsconfig/loginschema/LoginSchema/OnlyUsername.xml"
+
+#### lSchema 2 - CheckAuthType_genf
+
+The 2nd factor does not require a Login Schema. It just has policies with expressions to check which factor to do next.
+
+#### lSchema 3A - lSchema_LDAPPasswordOnly_genf
+
+Update the fields below for your environment and copy and paste the string into the CLI:
+add authentication loginSchema lSchema_LDAPPasswordOnly_genf -authenticationSchema "/nsconfig/loginschema/PrefilUserFromExpr.xml"
+**Here you may receive a warning that http.req.user has been replaced with aaa.user. You must edit the xml file from the cli.**
+
+1.  Log in to the Citrix ADC Cli
+1.  Enter `shell`
+1.  Enter `cd /nsconfig/loginschema/LoginSchema`
+1.  Enter 'vi PrefilUserFromExpr.xml'
+1.  Enter `/http.req`
+1.  Press x 8 times to delete the http.req string
+1.  Press the escape key
+1.  Press i and enter `aaa', press the escape key again
+1.  Press the colon key ':', enter `wq` and press enter
+
+#### lSchema 3B - lSchema_EOTPPasswordOnly_genf
+
+Update the fields below for your environment and copy and paste the string into the CLI:
+add authentication loginSchema lSchema_EOTPPasswordOnly_genf -authenticationSchema "/nsconfig/loginschema/PrefilUserFromExpr.xml"
+NOTE: The 3B factor also uses the PrefilUserFromExpr.xml schema, but we will label the policy differently for the EOTP path
+
+#### lSchema 4 - EOTP_genf
+
+The 4th factor does not require a Login Schema. It generates the email with the One Time Passcode.
 
 ### nFactor
 
-1.  Log in to the Citrix ADC UI
+1.  Log in to the Citrix ADC GUI
 1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
-
-### LDAP - authentication policy
-
-1.  Next navigate to 'Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Actions > LDAP'
-1.  Select Add
-1.  Populate the following fields
-    *  Name - a unique value
-    *  Server Name / IP address - select an FQDN or IP address for AD server/(s). We enter '192.168.64.50_LDAP'
-    *  Base DN - enter the path to the AD user container. We enter 'OU=Team Accounts, DC=workspaces, DC=wwco, DC=net'
-    *  Administrator Bind DN - enter the admin/service account to query AD to authenticate users. We enter 'workspacesserviceaccount@workspaces.wwco.net'
-    *  Confirm / Administrator Password - enter / confirm the admin / service account password
-    *  Server Logon Name Attribute - in the second field below this field enter 'userPrincipalName'
-1.  Select Create
-![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_ldapaction.png)
-For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-ldap-tsk.html)
-
-/*:
-UPDATE HERE
-*/
-
-### Device Certificate - authentication policy
-
-1.  Next navigate to 'Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Actions > CERT'
-
-/*:
-UPDATE HERE
-*/
-
-### nFactor
-
-1.  Next navigate to 'Security > AAA - Application Traffic > nFactor Visualizer > nFactor Flows'
+1.  Next navigate to `Security > AAA - Application Traffic > nFactor Visualizer > nFactor Flows`
 1.  Select Add and select the plus sign in the Factor box
-1.  Enter nFactor_OTP and select create
-![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_nfactorotp.png)
 
-/*:
-UPDATE HERE
-*/
+### Visualizer
 
-#### nFactor - Ldap Flow
+#### Factor1_GroupExtract_genf
 
-1.  Select Add Policy and select Add again next to Select Policy
-1.  Enter 'authPol_Ldap'
-1.  Under Action Type select 'NO_AUTHN'
-1.  Select Expression Editor and build the expression by selecting the following in the drop-down menus offered:
-    *  'HTTP'
-    *  'REQ'
-
-/*:
-UPDATE HERE
-*/
-
-#### nFactor - Cert Flow
-
-1.  Select the blue plus sign under the 'authPol_OTPReg' policy
-1.  Enter 'authPol_Cert'
-1.  Under Action Type select 'NO_AUTHN'
-1.  Under Expression enter true
-1.  Select Create
-1.  Select the green plus sign next to the 'authPol_OTPAuth' policy to create a factor
-1.  Enter 'AuthCert'
-1.  Select Create
-1.  In the box created select Add Schema
-1.  Select Add and enter 'lschema_DualAuthOTP'
-1.  Under Schema Files navigate to LoginSchema, and select 'DualAuthPushOrOTP.xml'
-1.  Select the blue select button, followed by Create, followed by Ok
+1.  Enter `Factor1_GroupExtract_genf` and select create
+![Email OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_cli.png)
+1.  Select Add Schema
+1.  Select the Login Schema lSchema_GroupExtract_genf
+1.  Select OK
 1.  In the same box select Add Policy
-1.  Select the policy we created during the setup of the Registration flow that maps to your first LDAP authentication action. We use 'authPol_LDAP'
+1.  Select the LDAP policy `authPol_GroupExtract_genf`
 1.  Select Add
-1.  Select the green plus sign next to the 'authPol_Ldap' policy to create a factor
-1.  Enter 'OTPAuthDevice' **This Factor will use the OTP token to perform the 2nd factor authentication**
+1.  Select the green plus sign next to the `authPol_GroupExtract_genf` policy to create a factor
+
+#### Factor2_CheckAuthType_genf
+
+1.  Enter `Factor2_CheckAuthType_genf` **This Factor will be used to verify the authentication required**
 1.  Select Create
 1.  In the same box select Add Policy
-1.  Select the policy 'authPol_OTPAuthDevice' that we created during setup of the Registration flow
+1.  Enter `authPol_LdapOnly_genf`
+1.  Under Goto Expression select `END`
 1.  Select Add
-1.  Now we've completed the nFactor flow setup and can click Done
-![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_nfactorflow.png)
+![Email OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_nfactorflowdone.png)
+1.  Select the blue plus sign under the `authPol_LdapOnly_genf` policy to add a 2nd policy
+1.  Select the policy `authPol_TwoFactor_genf`
+1.  Select Add
 
-/*:
-UPDATE HERE
-*/
+#### Factor3A_LDAPPasswordAuth_genf
 
-### Citrix ADC Authentication, Authorization,and Auditing (Citrix ADC AAA) virtual server
+1.  Back next to the `authPol_GroupExtract_genf` policy select the green plus sign to to create another factor
+1.  Enter `Factor3A_LDAPPasswordAuth_genf`
+1.  Select Create
+1.  In the same box select Add Policy
+1.  Enter `authPol_Ldap_genf`
+1.  Under Goto Expression select `END`
+1.  Select Add
+1.  Select Add Schema
+1.  Select the Login Schema `lSchema_LDAPPasswordOnly_genf`
+1.  Select OK
 
-1.  Next navigate to 'Security > AAA - Application Traffic > Virtual Servers' and select Add
-1.  Enter the following fields and click Ok:
-    *  Name - a unique value
-    *  IP Address Type - 'Non Addressable'
-![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_aaavserver.png)
+#### Factor3B_EOTPPasswordAuth_genf
+
+1.  Back next to the `authPol_TwoFactor_genf` policy select the green plus sign to to create another factor
+1.  Enter `Factor3B_EOTPPasswordAuth_genf`
+1.  Select Create
+1.  In the same box select Add Policy
+1.  Enter `authPol_LdapEtop_genf`
+1.  Select Add
+1.  Select Add Schema
+1.  Select the Login Schema `lSchema_EOTPPasswordOnly_genf`
+1.  Select OK
+
+#### Factor4B_EOTP_genf
+
+1.  Next to the `authPol_LdapEtop_genf` policy select the green plus sign to to create another factor
+1.  Enter `Factor4B_EOTP_genf`
+1.  Select Create
+1.  In the same box select Add Policy
+1.  Enter `authPol_Email_eotp_genf`
+1.  Select Add
+1.  Select Done and the nFactor flow is complete
+
+### Citrix ADC authentication, authorization, and auditing (Citrix ADC AAA) virtual server
+
+1.  Next navigate to **Security > AAA - Application Traffic > Virtual Servers** and select Add
+1.  Enter the following fields and click OK:
+    *  Name - a unique value. We enter 'GroupExtraction_AuthVserver'
+    *  IP Address Type - `Non Addressable`
 1.  Select No Server Certificate, select the domain certificate, click Select, Bind, and Continue
 1.  Select No nFactor Flow
-1.  Under Select nFactor Flow click the right arrow, select the 'nFactor_OTP' flow created earlier
-1.  Click Select, followed by Bind
-![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_authenticationvserver.png)
-
-/*:
-UPDATE HERE
-*/
+1.  Under Select nFactor Flow click the right arrow, select the `Factor1_GroupExtract_genf` flow created earlier
+1.  Click Select, followed by Bind, followed by Continue
+![EMAIL OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_authenticationvserver.png)
 
 ### Citrix Gateway - virtual server
 
-1.  Next navigate to 'Citrix Gateway > Virtual Servers'
+1.  Next navigate to **Citrix Gateway > Virtual Servers**
 1.  Select your existing virtual server that provides proxy access to your Citrix Virtual Apps and Desktops environment
 1.  Select Edit
-1.  Under Basic Authentication - Primary Authentication select LDAP Policy
-1.  Check the policy, select Unbind, select Yes to confirm, and select Close
+1.  If you currently have an LDAP policy bound navigate under Basic Authentication - Primary Authentication select LDAP Policy. Then check the policy, select Unbind, select Yes to confirm, and select Close
 1.  Under the Advanced Settings menu on the right select Authentication Profile
 1.  Select Add
-1.  Enter a name.  We enter 'GE_auth_profile'
-1.  Under Authentication virtual server click the right arrow, and select the Citrix ADC AAA virtual server we created 'GE_Auth_Vserver'
+1.  Enter a name.  We enter `GroupExtract_AuthProfile`
+1.  Under Authentication virtual server click the right arrow, and select the Citrix ADC AAA virtual server we created `GroupExtraction_AuthVserver`
 1.  Click Select, and Create
-1.  Click Ok and verify the virtual server now has an authentication profile selected while the basic authentication policy has been removed
-![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_gatewayvserver.png)
+1.  Click OK and verify the virtual server now has an authentication profile selected while the basic authentication policy has been removed
+![Email OTP Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_gatewayvserver.png)
 1.  Click Done
-
-/*:
-UPDATE HERE
-*/
 
 ## User Endpoint
 
-Now we test PUSH by registering a mobile device and authenticating into our Citrix Virtual Apps and Desktops environment.
-
-### Deploy Device Certificate
-
-1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway 'https://citrixadc5.workspaces.wwco.net'
-1.  After your browser is redirected to a login screen enter user UPN
-
-/*:
-UPDATE HERE
-*/
-
-### Citrix Virtual Apps and Desktops Authentication, Publication, and Launch
+Now we test Email OTP by authenticating into our Citrix Virtual Apps and Desktops environment.
 
 1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://citrixadc5.workspaces.wwco.net`
 1.  After the your browser is redirected to a login screen. First enter a username. We use `wsuser@workspaces.wwco.net`
