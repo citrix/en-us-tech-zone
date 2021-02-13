@@ -75,12 +75,14 @@ Update the fields below for your environment and copy and paste the string into 
 Update the fields below for your environment and copy and paste the string into the CLI:
 `add authentication Policy authPol_GroupExtract_genf -rule true -action authAct_GroupExtract_genf`
 
-![LDAP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_cli.png)
+![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_cli.png)
 
 #### LDAP policy 2A - authPol_LdapOnly_genf
 
 Update the fields below for your environment and copy and paste the string into the CLI:
 `add authentication Policy authPol_LdapOnly_genf -rule "AAA.USER.IS_MEMBER_OF(\"LDAP\") || client.IP.SRC.IN_SUBNET(10.0.0.0/8)" -action NO_AUTHN`
+
+![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_authpolldaponlygenf.png)
 
 #### LDAP policy 2B - authPol_TwoFactor_genf
 
@@ -155,6 +157,8 @@ Update the fields below for your environment and copy and paste the string into 
 add authentication loginSchema lSchema_LDAPPasswordOnly_genf -authenticationSchema "/nsconfig/loginschema/PrefilUserFromExpr.xml"
 **Here you may receive a warning that http.req.user has been replaced with aaa.user. You must edit the xml file from the cli.**
 
+![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_httprequserdeprecated.png)
+
 1.  Log in to the Citrix ADC Cli
 1.  Enter `shell`
 1.  Enter `cd /nsconfig/loginschema/LoginSchema`
@@ -187,7 +191,7 @@ The 4th factor does not require a Login Schema. It generates the email with the 
 #### Factor1_GroupExtract_genf
 
 1.  Enter `Factor1_GroupExtract_genf` and select create
-![Email OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_cli.png)
+![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_factor1groupextractgenf.png)
 1.  Select Add Schema
 1.  Select the Login Schema lSchema_GroupExtract_genf
 1.  Select OK
@@ -204,7 +208,7 @@ The 4th factor does not require a Login Schema. It generates the email with the 
 1.  Enter `authPol_LdapOnly_genf`
 1.  Under Goto Expression select `END`
 1.  Select Add
-![Email OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_nfactorflowdone.png)
+![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_nfactorflow.png)
 1.  Select the blue plus sign under the `authPol_LdapOnly_genf` policy to add a 2nd policy
 1.  Select the policy `authPol_TwoFactor_genf`
 1.  Select Add
@@ -254,7 +258,7 @@ The 4th factor does not require a Login Schema. It generates the email with the 
 1.  Select No nFactor Flow
 1.  Under Select nFactor Flow click the right arrow, select the `Factor1_GroupExtract_genf` flow created earlier
 1.  Click Select, followed by Bind, followed by Continue
-![EMAIL OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_authenticationvserver.png)
+![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_authvserver.png)
 
 ### Citrix Gateway - virtual server
 
@@ -268,7 +272,7 @@ The 4th factor does not require a Login Schema. It generates the email with the 
 1.  Under Authentication virtual server click the right arrow, and select the Citrix ADC AAA virtual server we created `GroupExtraction_AuthVserver`
 1.  Click Select, and Create
 1.  Click OK and verify the virtual server now has an authentication profile selected while the basic authentication policy has been removed
-![Email OTP Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-email-otp_gatewayvserver.png)
+![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_gatewayvserver.png)
 1.  Click Done
 
 ## User Endpoint
