@@ -110,7 +110,7 @@ By default, the Gateway Service will proxy HDX connections via the Citrix Cloud 
 
   >**Note:**
   >
-  >If using EDT in Microsoft Azure, UDP must be defined on the Citrix Gateway protecting the VDA
+  >If using EDT in Microsoft Azure, UDP must be defined on the Network Security Group (NSG) protecting the VDA
 
 Read more about Rendezvous Protocol and HDX Enlightened Data Transport Protocol (EDT) requirements [here](/en-us/citrix-gateway-service/hdx-edt-support-for-gateway-service.html).
 
