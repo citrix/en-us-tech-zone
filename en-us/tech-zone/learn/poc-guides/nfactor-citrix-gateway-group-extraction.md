@@ -9,7 +9,7 @@ description: Learn how to implement a Proof of Concept environment consisting of
 
 ## Introduction
 
-Large Enterprise environments require flexible authentication options to meet the needs of a variety of user personas. With Group Extraction user AD group membership determines the number and type of nFactor authentication methods users are required to complete to verify their identity and access their applications and data.
+Large Enterprise environments require flexible authentication options to meet the needs of a variety of user personas. With Group Extraction user AD group membership determines the number, and type of nFactor authentication methods users are required to complete to verify their identity and access their applications and data.
 
 Examples of user groups include:
 
