@@ -70,7 +70,7 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 #### LDAP action 1 - authAct_GroupExtract_genf
 
 Update the following fields for your environment and copy and paste the string into the CLI:
-`add authentication ldapAction authAct_GroupExtract_genf -serverIP 192.168.64.50 -ldapBase "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword 550356b4a5de310e0a285b18f6d9108920408b402277acf6099cc935549a682d -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -authentication DISABLED`
+`add authentication ldapAction authAct_GroupExtract_genf -serverIP 192.168.64.50 -ldapBase "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword 123xyz -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -authentication DISABLED`
 
 #### LDAP policy 1 - authPol_GroupExtract_genf
 
@@ -92,7 +92,7 @@ Update the following fields for your environment and copy and paste the string i
 #### LDAP action 3A - authAct_Ldap_genf
 
 Update the following fields for your environment and copy and paste the string into the CLI:
-`add authentication ldapAction authAct_Ldap_genf -serverIP 192.168.64.50 -ldapBase "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword 550356b4a5de310e0a285b18f6d9108920408b402277acf6099cc935549a682d -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -passwdChange ENABLED`
+`add authentication ldapAction authAct_Ldap_genf -serverIP 192.168.64.50 -ldapBase "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword 123xyz -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -passwdChange ENABLED`
 
 #### LDAP policy 3A - authPol_GroupExtract_genf
 
@@ -102,7 +102,7 @@ Update the following fields for your environment and copy and paste the string i
 #### LDAP action 3B - authAct_LDAP_eotp_genf
 
 Update the following fields for your environment and copy and paste the string into the CLI:
-`add authentication ldapAction authAct_LDAP_eotp_genf -serverIP 192.168.64.50 -serverPort 636 -ldapBase "DC=workspaces,DC=wwco,DC=net" -ldapBindDn wsadmin@workspaces.wwco.net -ldapBindDnPassword aff08e86dcf9ad35b06d3eb76335faccfe091b8b3b9c912b0f8b537736404002 -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -ssoNameAttribute userPrincipalName -defaultAuthenticationGroup Email-OTP -alternateEmailAttr otherMailbox`
+`add authentication ldapAction authAct_LDAP_eotp_genf -serverIP 192.168.64.50 -serverPort 636 -ldapBase "DC=workspaces,DC=wwco,DC=net" -ldapBindDn wsadmin@workspaces.wwco.net -ldapBindDnPassword 123xyz -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -ssoNameAttribute userPrincipalName -defaultAuthenticationGroup Email-OTP -alternateEmailAttr otherMailbox`
 
 #### LDAP policy 3B - authPol_LDAP_eotp_genf
 
@@ -132,7 +132,7 @@ For more information see [Email OTP authentication policy](/en-us/citrix-adc/cur
 
 Once you have constructed the full string for your environment copy and paste it into the CLI:
 
-`add authentication emailAction authAct_Email_eotp_genf -userName admin_matt@workspaces.wwco.net -password 3488bd3b269d5f7a87d81cec459167cf0e4b10ff9927934e53ccb5596a7d749c -encrypted -encryptmethod ENCMTHD_3 -serverURL "smtps://192.168.64.40:587" -content "Your OTP is $code" -timeout 60 -emailAddress "aaa.user.attribute(\"alternate_mail\")"`
+`add authentication emailAction authAct_Email_eotp_genf -userName admin_matt@workspaces.wwco.net -password 123xyz -encrypted -encryptmethod ENCMTHD_3 -serverURL "smtps://192.168.64.40:587" -content "Your OTP is $code" -timeout 60 -emailAddress "aaa.user.attribute(\"alternate_mail\")"`
 
 #### Email policy 4B - authPol_Email_eotp_genf
 
