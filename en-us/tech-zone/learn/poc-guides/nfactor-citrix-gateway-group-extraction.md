@@ -174,6 +174,7 @@ Update the following fields for your environment and copy and paste the string i
 
 Update the following fields for your environment and copy and paste the string into the CLI:
 `add authentication loginSchema lSchema_EOTPPasswordOnly_genf -authenticationSchema "/nsconfig/loginschema/PrefilUserFromExpr.xml"`
+
 NOTE: The 3B factor also uses the PrefilUserFromExpr.xml schema, but we label the policy differently for the EOTP path.
 
 #### lSchema 4 - EOTP_genf
@@ -199,21 +200,21 @@ The fourth factor does not require a Login Schema. It generates the email with t
 1.  In the same box select Add Policy
 1.  Select the LDAP policy `authPol_GroupExtract_genf`
 1.  Select Add
-1.  Select the green plus sign next to the `authPol_GroupExtract_genf` policy to create a factor
+1.  Select the green plus sign next to the `authPol_GroupExtract_genf` policy to create another factor
 
 #### Factor2_CheckAuthType_genf
 
-1.  Enter `Factor2_CheckAuthType_genf` **This Factor is used to verify the authentication required**
+1.  Enter `Factor2_CheckAuthType_genf` **This Factor is used to verify the authentication requirements**
 1.  Select Create
 1.  In the same box select Add Policy
-1.  Enter `authPol_LdapOnly_genf`
+1.  Select `authPol_LdapOnly_genf`
 1.  Under Goto Expression select `END`
 1.  Select Add
 ![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_authpolldaponlygenf.png)
 1.  Select the blue plus sign under the `authPol_LdapOnly_genf` policy to add a second policy
 1.  Select the policy `authPol_TwoFactor_genf`
-**Next we make the Two Factor policy occur prior to the LDAP only policy by lowering the priority to 90 which is less than the default of 100. This ensures that remote users in the VIP group are identified for LDAP only authentication.**
 1.  Enter `90` for the Priority
+**Here we make the Two Factor policy occur prior to the LDAP only policy by lowering the priority to 90 which is less than the default of 100. This ensures that remote users in the VIP group are identified for LDAP only authentication.**
 1.  Select Add
 
 #### Factor3A_LDAPPasswordAuth_genf
@@ -222,7 +223,7 @@ The fourth factor does not require a Login Schema. It generates the email with t
 1.  Enter `Factor3A_LDAPPasswordAuth_genf`
 1.  Select Create
 1.  In the same box select Add Policy
-1.  Enter `authPol_Ldap_genf`
+1.  Select `authPol_Ldap_genf`
 1.  Under Goto Expression select `END`
 1.  Select Add
 1.  Select Add Schema
@@ -235,7 +236,7 @@ The fourth factor does not require a Login Schema. It generates the email with t
 1.  Enter `Factor3B_EOTPPasswordAuth_genf`
 1.  Select Create
 1.  In the same box select Add Policy
-1.  Enter `authPol_LdapEtop_genf`
+1.  Select `authPol_LdapEtop_genf`
 1.  Select Add
 1.  Select Add Schema
 1.  Select the Login Schema `lSchema_EOTPPasswordOnly_genf`
@@ -247,7 +248,7 @@ The fourth factor does not require a Login Schema. It generates the email with t
 1.  Enter `Factor4B_EOTP_genf`
 1.  Select Create
 1.  In the same box select Add Policy
-1.  Enter `authPol_Email_eotp_genf`
+1.  Select `authPol_Email_eotp_genf`
 1.  Select Add
 1.  Select Done and the nFactor flow is complete
 ![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_nfactorflow.png)
@@ -256,7 +257,7 @@ The fourth factor does not require a Login Schema. It generates the email with t
 
 1.  Next navigate to **Security > AAA - Application Traffic > Virtual Servers** and select Add
 1.  Enter the following fields and click OK:
-    *  Name - a unique value. We enter 'GroupExtraction_AuthVserver'
+    *  Name - a unique value. We enter `GroupExtraction_AuthVserver`
     *  IP Address Type - `Non Addressable`
 1.  Select No Server Certificate, select the domain certificate, click Select, Bind, and Continue
 1.  Select No nFactor Flow
@@ -287,7 +288,7 @@ First we test whether One Factor authentication is applied to VIP users by authe
 ![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_wsvipuser-username.png)
 1.  After your browser is redirected to a login screen. First enter a user name. We use `wsvipuser@workspaces.wwco.net`
 **This user must be a member of the AD group `VIP`**
-1.  nFactor determines that the user is a member of the VIP group and you are promoted to submit the user password.
+1.  nFactor determines that the user is a member of the VIP group and you are prompted to submit the user password.
 ![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_wsvipuser-password.png)
 1.  Now the user is logged into their Workspace page.
 1.  Select a virtual desktop and verify launch.
