@@ -56,7 +56,7 @@ The following steps covered in this Guide
 
 1.  Select **Create a master MCS image**, click **Next**
 
-    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_win10-007.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_win10-007.png)
+    [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-007.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_Win10-007.png)
 
 1.  If you would like the full workspace experience or to deliver virtual applications, select the **Citrix Workspace App**, click **Next**
 
