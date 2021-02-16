@@ -309,7 +309,7 @@ Now we test Two Factor authentication with Email OTP by authenticating into our 
 
 ## Summary
 
-With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Group Extraction allows Enterprise to customize the depth of their multifactor use, along with contextual authentication, according to user group persona requirements.
+With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Group Extraction allows Enterprises to customize the depth of their multifactor use, along with contextual authentication, according to user group persona requirements.
 
 ## References
 
