@@ -82,8 +82,6 @@ Update the fields below for your environment and copy and paste the string into 
 Update the fields below for your environment and copy and paste the string into the CLI:
 `add authentication Policy authPol_LdapOnly_genf -rule "AAA.USER.IS_MEMBER_OF(\"VIP\") || client.IP.SRC.IN_SUBNET(10.0.0.0/8)" -action NO_AUTHN`
 
-![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_authpolldaponlygenf.png)
-
 #### LDAP policy 2B - authPol_TwoFactor_genf
 
 Update the fields below for your environment and copy and paste the string into the CLI:
@@ -209,7 +207,7 @@ The 4th factor does not require a Login Schema. It generates the email with the 
 1.  Enter `authPol_LdapOnly_genf`
 1.  Under Goto Expression select `END`
 1.  Select Add
-![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_nfactorflow.png)
+![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_authpolldaponlygenf.png)
 1.  Select the blue plus sign under the `authPol_LdapOnly_genf` policy to add a 2nd policy
 1.  Select the policy `authPol_TwoFactor_genf`
 **Next we make the Two Factor policy occur prior to the LDAP only policy by lowering the priority to 90 which is less than the default of 100. This ensures that remote users in the VIP group are identified for LDAP only authentication.**
@@ -250,6 +248,7 @@ The 4th factor does not require a Login Schema. It generates the email with the 
 1.  Enter `authPol_Email_eotp_genf`
 1.  Select Add
 1.  Select Done and the nFactor flow is complete
+![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_nfactorflow.png)
 
 ### Citrix ADC authentication, authorization, and auditing (Citrix ADC AAA) virtual server
 
