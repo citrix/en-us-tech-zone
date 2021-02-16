@@ -124,19 +124,19 @@ Populate the following fields to create the Email action and paste the completed
 For the Email policy populate the required fields to reference the Email Action in a string and paste it into the CLI:
 
 *  `Policy` - enter the policy name.
-*  `action` - enter the name of the Email action we created above.
+*  `action` - enter the name of the Email action
 
 For more information see [Email OTP authentication policy](/en-us/citrix-adc/current-release/aaa-tm/authentication-methods/email-otp.html)
 
 #### Email action 4B - authAct_Email_eotp_genf
 
-Once you have constructed the full string for your environment copy and paste it into the CLI:
+Update the following fields for your environment and copy and paste the string into the CLI:
 
 `add authentication emailAction authAct_Email_eotp_genf -userName admin_matt@workspaces.wwco.net -password 123xyz -encrypted -encryptmethod ENCMTHD_3 -serverURL "smtps://192.168.64.40:587" -content "Your OTP is $code" -timeout 60 -emailAddress "aaa.user.attribute(\"alternate_mail\")"`
 
 #### Email policy 4B - authPol_Email_eotp_genf
 
-Once you have constructed the full string for your environment copy and paste it into the CLI:
+Update the following fields for your environment and copy and paste the string into the CLI:
 
 `add authentication Policy authPol_Email_eotp_genf -rule true -action authAct_Email_eotp`
 
@@ -145,7 +145,7 @@ Once you have constructed the full string for your environment copy and paste it
 #### lSchema 1 - lSchema_GroupExtract_genf
 
 Update the following fields for your environment and copy and paste the string into the CLI:
-add authentication loginSchema lSchema_GroupExtract_genf -authenticationSchema "/nsconfig/loginschema/LoginSchema/OnlyUsername.xml"
+`add authentication loginSchema lSchema_GroupExtract_genf -authenticationSchema "/nsconfig/loginschema/LoginSchema/OnlyUsername.xml"`
 
 #### lSchema 2 - CheckAuthType_genf
 
@@ -154,7 +154,7 @@ The second factor does not require a Login Schema. It just has policies with exp
 #### lSchema 3A - lSchema_LDAPPasswordOnly_genf
 
 Update the following fields for your environment and copy and paste the string into the CLI:
-add authentication loginSchema lSchema_LDAPPasswordOnly_genf -authenticationSchema "/nsconfig/loginschema/PrefilUserFromExpr.xml"
+`add authentication loginSchema lSchema_LDAPPasswordOnly_genf -authenticationSchema "/nsconfig/loginschema/PrefilUserFromExpr.xml"`
    **Here you may receive a warning that http.req.user has been replaced with aaa.user. You must edit the xml file from the cli.**
 
 ![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_httprequserdeprecated.png)
@@ -173,7 +173,7 @@ add authentication loginSchema lSchema_LDAPPasswordOnly_genf -authenticationSche
 #### lSchema 3B - lSchema_EOTPPasswordOnly_genf
 
 Update the following fields for your environment and copy and paste the string into the CLI:
-add authentication loginSchema lSchema_EOTPPasswordOnly_genf -authenticationSchema "/nsconfig/loginschema/PrefilUserFromExpr.xml"
+`add authentication loginSchema lSchema_EOTPPasswordOnly_genf -authenticationSchema "/nsconfig/loginschema/PrefilUserFromExpr.xml"`
 NOTE: The 3B factor also uses the PrefilUserFromExpr.xml schema, but we label the policy differently for the EOTP path.
 
 #### lSchema 4 - EOTP_genf
