@@ -13,7 +13,7 @@ Large Enterprise environments require flexible authentication options to meet th
 
 Examples of user groups include:
 
-*  normal-security-group for individuals that may have lower security requirements by the nature of their job or limited data access. This group may only require 1 factor.
+*  normal-security-group for individuals that may have lower security requirements by the nature of their job or limited data access and are located within the bounds of the corporate security perimeter. This group may only require 1 factor.
 *  elevated-security-group for third party workers or contractors who may not have had background checks done and have higher security requirements. This group may require 2 or more factors.
 *  high-security-group for employees that perform critical jobs, require special government clearance, or industry approval. This group may require 2 or more factors and contextual verifications such as source IP address.
 
@@ -31,6 +31,8 @@ It makes assumptions about the completed installation and configuration of the f
 *  Endpoint with Citrix Workspace app installed
 *  Active Directory (AD) is available in the environment
 *  Access to an SMTP server to originate email
+
+Refer to Citrix Documentation for the latest product version, and license requirements: [nFactor Group Extraction](/en-us/citrix-adc/current-release/aaa-tm/configure-two-passwords-group-extraction.html)
 
 ## nFactor
 
