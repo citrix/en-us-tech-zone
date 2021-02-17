@@ -177,7 +177,7 @@ Update the following fields for your environment and copy and paste the string i
 
 NOTE: The 3B factor also uses the PrefilUserFromExpr.xml schema, but we label the policy differently for the EOTP path.
 
-#### lSchema 4 - EOTP_genf
+#### lSchema 4B - EOTP_genf
 
 The fourth factor does not require a Login Schema. It generates the email with the One Time Passcode.
 
@@ -315,6 +315,6 @@ With Citrix Workspace and Citrix Gateway Enterprises can improve their security 
 
 For more information refer to:
 
-[Citrix ADC Commands to Find the Policy `Hits` for Citrix Gateway Session Policies](https://support.citrix.com/article/CTX1388400) - learn more about CLI commands like `nsconmsg -d current -g _hits` to track policy hits to help troubleshoot.
+[Citrix ADC Commands to Find the Policy `Hits` for Citrix Gateway Session Policies](https://support.citrix.com/article/CTX1388400) - learn more about CLI commands like `nsconmsg -d current -g _hits` to track policy `hits` to help troubleshoot.
 
 [nFactor for Citrix Gateway Authentication with Email OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-email-otp.html) - learn how to implement an extensible and flexible approach to configuring multifactor authentication with nFactor for Citrix Gateway authentication with email one-time password.
