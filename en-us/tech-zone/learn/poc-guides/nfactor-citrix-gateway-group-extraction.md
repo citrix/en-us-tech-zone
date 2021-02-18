@@ -17,7 +17,7 @@ Examples of user groups include:
 *  elevated-security-group for third party workers or contractors who may not have had background checks done and have higher security requirements. This group may require 2 or more factors.
 *  high-security-group for employees that perform critical jobs, and require special government clearance, or industry approval. This group may require 2 or more factors and contextual verifications such as source IP address.
 
-![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_conceptualarchitecture.png)
+[![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_conceptualarchitecture.png)](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_conceptualarchitecture.png)
 
 ## Overview
 
