@@ -345,6 +345,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Authentication - Push](/en-us/tech-zone/learn/tech-insights/authentication-push.html) - Extend an on-premises TOTP deployment with Push authentication, eliminating the need for users to manually enter the temporary token.
 
+[Authentication - SAML](/en-us/tech-zone/learn/tech-insights/authentication-saml.html) - Utilize a SAML provider as the user's primary identity for Citrix Workspace
+
 [Authentication - TOTP](/en-us/tech-zone/learn/tech-insights/authentication-totp.html) - Time-based One-Time Password (TOTP) provides multifactor authentication to the user's Workspace experience.
 
 [Microapps Custom Integrations](/en-us/tech-zone/learn/tech-insights/microapps-custom-integrations.html) - Create custom integrations with the microapp builder through the HTTP connector.
