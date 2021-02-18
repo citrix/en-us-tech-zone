@@ -17,7 +17,7 @@ Examples of user groups include:
 *  elevated-security-group for third party workers or contractors who may not have had background checks done and have higher security requirements. This group may require 2 or more factors.
 *  high-security-group for employees that perform critical jobs, and require special government clearance, or industry approval. This group may require 2 or more factors and contextual verifications such as source IP address.
 
-![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_conceptualarchitecture.png)
+[![Group Extraction Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_conceptualarchitecture.png)](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_conceptualarchitecture.png)
 
 ## Overview
 
@@ -42,8 +42,6 @@ First, we log in to the CLI on our Citrix ADC and enter the authentication actio
 
 We create the LDAP actions, and the policies that reference them. We also create the Email action, and the policy that references it, which is the multifactor authentication method for users that are not members of the VIP group or on a local subnet.
 
-1.  First connect to the CLI by opening an SSH session to the NSIP address of the Citrix ADC and log in as the `nsroot` administrator or equivalent admin user.
-
 For LDAP Actions populate the required fields to create the LDAP action in a string and paste it into the CLI:
 
 *  `ldapAction` - enter the action name.
@@ -66,6 +64,8 @@ For LDAP Policies populate the required fields to reference the LDAP Action in a
 *  `action` - enter the name of the Email action we created above.
 
 For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-LDAP-tsk.html)
+
+1.  First connect to the CLI by opening an SSH session to the NSIP address of the Citrix ADC and log in as the `nsroot` administrator or equivalent admin user.
 
 #### LDAP action 1 - authAct_GroupExtract_genf
 
