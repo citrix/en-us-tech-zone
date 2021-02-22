@@ -49,6 +49,10 @@ Learn more about the Rendezvous Protocol and how to enable it via policies [here
 
 ### Fall back to StoreFront
 
+  >**Tech Preview Disclaimer**
+  >
+  >**This feature is currently in tech preview.** The information in this article is for information purposes only, provided “AS IS” without warranty, and is subject to change at Citrix’s discretion without notice. Any terms governing Citrix products or services shall be contained in a written agreement ran by the parties.
+
 The Workspace platform allows customers with a hybrid deployment, to display the URL of the on-premises StoreFront (when they are unable to launch sessions via the Workspace service). So, users accessing their Citrix Workspace via a browser can access resources in the on-premises environment through the StoreFront URL.
 
 Admins, using PowerShell, can define a fallback StoreFront HTTP(S) URL, that resolves to an internal StoreFront or an external Citrix Gateway server.
