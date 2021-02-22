@@ -41,6 +41,8 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 [nFactor for Citrix Gateway Authentication with Email OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-email-otp.html) - Learn how to implement an extensible and flexible approach to configuring multifactor authentication with nFactor for Citrix Gateway authentication with email one-time password.
 
+[nFactor for Citrix Gateway Authentication with Group Extraction](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-group-extraction.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Group Extraction.
+
 [nFactor for Citrix Gateway Authentication with Native OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-native-otp.html) - Learn how to implement an extensible and flexible approach to configuring multifactor authentication with nFactor for Citrix Gateway authentication with Native OTP.
 
 [nFactor for Citrix Gateway Authentication with Push Token](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-push-token.html) - Learn how to implement an extensible and flexible approach to configuring multifactor authentication with nFactor for Citrix Gateway authentication with Push Tokens.
