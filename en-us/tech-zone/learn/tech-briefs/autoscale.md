@@ -127,7 +127,7 @@ Admins must use tag restriction along with Zone preference to let Autoscale know
 
 [![Autoscale - Tagging](/en-us/tech-zone/learn/media/tech-briefs_autoscale_8-tags.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_8-tags.png)
 
-For more information, see [Zone Preference](/en-us/citrix-virtual-apps-desktops/manage-deployment/zones.html#zone-preference) and [Tags](/en-us/citrix-virtual-apps-desktops/manage-deployment/tags.html#manage-tags-and-tag-restrictions)
+For more information, see [Zone Preference](/en-us/citrix-virtual-apps-desktops/manage-deployment/zones.html#zone-preference) and [Tags](/en-us/citrix-virtual-apps-desktops/manage-deployment/tags.html#manage-tags-and-tag-restrictions). Follow instructions [here to configure autoscale restrictions](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale/restrict-autoscale.html).
 
 ## Autoscale cost savings with Schedule-based scaling
 
