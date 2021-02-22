@@ -85,6 +85,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [nFactor for Citrix Gateway Authentication with Email OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-email-otp.html) - Learn how to implement an extensible and flexible approach to configuring multifactor authentication with nFactor for Citrix Gateway authentication with email one-time password.
 
+[nFactor for Citrix Gateway Authentication with Group Extraction](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-group-extraction.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Group Extraction.
+
 [nFactor for Citrix Gateway Authentication with Native OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-native-otp.html) - Learn how to implement an extensible and flexible approach to configuring multifactor authentication with nFactor for Citrix Gateway authentication with Native OTP.
 
 [nFactor for Citrix Gateway Authentication with Push Token](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-push-token.html) - Learn how to implement an extensible and flexible approach to configuring multifactor authentication with nFactor for Citrix Gateway authentication with Push Tokens.
@@ -262,6 +264,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [Baseline Policy Design](/en-us/tech-zone/design/design-decisions/baseline-policy-design.html) - Policies provide the basis to configure and fine-tune Citrix Virtual Apps and Desktops environments, allowing organizations to control connection, security, and bandwidth settings based on various combinations of users, devices, or connection types. Learn about the different decisions related to the baseline policy design.
 
 [Baseline Printing Design](/en-us/tech-zone/design/design-decisions/baseline-printing-design.html) - Citrix Virtual Apps and Desktops supports various printing solutions. It is essential to understand the available technologies and their benefits and limitations to plan and successfully implement the proper printing solution.
+
+[Citrix Profile Management with Azure Files](/en-us/tech-zone/design/design-decisions/citrix-profile-management-with-azure-files.html) - The article covers guidance and best practices for using Citrix Profile Management to manage user profiles on Azure Files as the back-end storage location.
 
 [Delivery Model Comparison](/en-us/tech-zone/design/design-decisions/delivery-model-comparison.html) - A Citrix Virtual Apps and Desktops solution can take on many delivery forms. The organization's business objectives help select the right approach as the different models impact the local IT team's management scope. Learn how Citrix Virtual Apps and Desktops management scope changes based on using a locally managed deployment, a cloud service deployment and a cloud managed deployment.
 
