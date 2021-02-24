@@ -6,21 +6,21 @@ description: Copy & paste description from TOC here
 ---
 # Citrix Virtual Apps and Desktops VDA Hardening Guide
 
-When deploying any operating system, the settings are always targeted for the most compatible settings to ensure the device works along with it is the most backwards compatibility. The Windows Operating system is no different, even the latest Windows releases have settings to allow it to work with releases from 20+ years ago along with very few restrictions of what can be done within the operating system. Windows does have its built in Firewall, Antivirus and Update settings that will allow some protections, but a user can launch anything they have access to and by default they have access to most everything besides what is protected by local administrative access.
+When deploying any operating system, the settings are always targeted for the most compatible settings to ensure the device works along with it is the most backwards compatibility. The Windows operating system is no different, even the latest Windows releases have settings to allow it to work with releases from 20+ years ago along with very few restrictions of what can be done within the operating system. Windows does have its built-in Firewall, antivirus and auto-update settings that will provide some protection, but a user can launch anything they have access to and by default they have access to almost everything besides what is protected by local administrative access.
 
-In the following sections we will cover the most recommended areas from how to planning to get started, how to configure some recommended policies, control privileged access and even configure some security based windows features. Most of these sections will be broken into these three sections minimum, recommended and high security. The minimum recommendations are just that a starting point at default or just beyond default settings, this will provide some protections, but should provide the most application compatibility and usability also. The recommended settings will start to secure the system further that will be able to start preventing some common attack methods while allowing the most common application compatibility and usability requirements too. The high security recommendations will provide the most secure deployment options with the most restrictive usability and the most targeted application compatibility also.
+In the following sections we will cover the recommended security hardening areas from how to planning to get started, how to configure some recommended policies, control privileged access and even configure some security based windows features. Most of these sections will be broken into these three sections **minimum**, **recommended** and **high security**. The minimum recommendations are just that a starting point at default or just beyond default settings that  provide some protections, but also provide the most application compatibility and usability. The recommended settings will start to secure the system further that will be able to start preventing some common attack methods while allowing the most common application compatibility and usability requirements. The high security recommendations will provide the most secure deployment options with the most restrictive usability and the most targeted application compatibility also.
 
-All these settings should be deployed in a test scenario and validated by your IT team and then scheduled and promoted to your test users before finally being promoted into production. With each level of recommendations, the risk of causing a useability or application compatibility issue will increase and should require further testing and tuning.
+Security is a continous process - recommendations should be reviewed on a regular basis and security hardening should not be considered a one-off task. All these settings should be deployed in a staging environment and validated by your IT team and then scheduled and promoted to your test users before finally being promoted into production. With each level of recommendations, the risk of causing a useability or application compatibility issue will increase and should require further testing and tuning. Increased security can also impact user experience and productivity - it is important to find the right balance and understand use case requirements.
 
 TODO Disclaimer from legal
 
 ## Planning
 
-Planning is the one of the most crucial steps before starting to harden your VDAs operating system. These items below will apply to all three levels of recommendations (Minimum, Recommended and High Security) as planning is foundational to any successful and secure deployment.
+Planning is the one of the most crucial steps before starting to harden your virtual delivery agent (VDA) operating system. These items below will apply to all three levels of recommendations (Minimum, Recommended and High Security) as planning is foundational to any successful and secure deployment.
 
 ### What will be published?
 
-There are three main options in Citrix to deliver resources with Published Applications (Single Application), Published Desktops (Virtual Desktop) and Remote PC Access (Secure Connection to an existing VDA). With each of these publishing methods we recommend applying the same policies to each of these systems since they will be accessed remotely.
+There are three main options in Citrix to deliver resources with published applications (single application), published desktops (Virtual Desktop) and Remote PC Access (secure connection to an existing machine). With each of these publishing methods we recommend applying the same policies to each of these systems since they will be accessed remotely.
 
 #### Minimum, Recommended and High Security
 
@@ -34,7 +34,7 @@ Example:
 
 ### Which Operating System Version
 
-Each operating system will have generic security recommendations, but they will also have specific recommendations based on specific features that are only in those specific versions.
+Each operating system will have generic security recommendations, but they will also have specific recommendations based on specific features that are only in those specific versions. This is especially important when comparing different builds of Windows 10 - it is important to review all available security features and improvements and have good strategy for using current releases.
 
 #### Minimum, Recommended and High Security
 
@@ -85,6 +85,10 @@ Example:
 
 Depending on what compliance bodies your business or application can drastically change the recommended settings as many are required by certain compliance bodies for specific operating systems and applications. Many compliance bodies are focused on change control procedures, logging, incident response and other IT business operations, but many also will require very specific settings to be deployed and for those same settings to be auditable by configured policies and possible Red Team testing of those controls.
 
+It is important to remember that compliance does not equal security. Compliance usually specifies minimum required level of security and compliance requirements are often based on older "trust, but verify" methodology. Consider compliance requirements as a minimum (not recommended) security level.
+
+You can find more information about Citrix and compliance in [Citrix Trust Center](https://www.citrix.com/about/trust-center/privacy-compliance/).
+
 #### Common Compliance Bodies
 
 -  NIST (National Institute of Standards and Technology)
@@ -109,13 +113,22 @@ Depending on what compliance bodies your business or application can drastically
 
 We recommend following the guidelines from each compliance body at a minimum, but if possible, depending on those requirements we recommend evaluating other common frameworks from Microsoft, NIST and even third parties like CIS and HyTrust for very specific recommendations for Domains, Desktops, Servers and more. These frameworks have many options to make the deployment much more secure and reduce your attack surface along with helping accelerate your audits and reduce your findings.
 
+### Workload Segmentation
+
+Workload segmentation defines how many different images you need to build, how many catalogs / delivery groups are required, which applications are hosted together and what kind of backend access is needed. While compatibility is a more common reason why applications are not running on the same image, security is even more important. Understanding the size of treasure that you are protecting will help you adequately size your limited resources.
+
+This is one of those design requirements where reduction of images (or delivery groups) is not always desirable and can potentially lead to security incident or security breach. While segmented access like this is complicated for traditional endpoint deployment, it is one of advantages for virtualized desktop deployments. Access to the backend infrastructure should be adequate to the level of security of application servers. It is common to implement few different tiers of security requirements that are required from servers before access to backend is provided.
+
+Another factor when thinking about separating workloads is identifying how much you can "trust" each of your applications. Application that uses vulnerable runtime and has't been updated in years should not be hosted on the same server as secure application with access to more sensitive data.
+
+TODO - diagram with access to more secure backends
+TODO MINIMUM - document sensitivity of backend requirements (to understand where most critical data flows).
+
 ## Reducing Attack Surface
 
-One of the first steps to reducing the attack surface is to remove unnecessary software and services to help reduce the attack surface. The easiest way to accomplish this is a twofold approach.
+One of the first steps to reducing the attack surface is to remove unnecessary software and services to help reduce the attack surface. The best way to accomplish this is a twofold approach - remove existing components that are not needed (for example services that are not useful on virtualized machines) and apply security hardening to remaining applications (for example remove a virtual printer that is used for exporting PDF files). Another example of reducing attack surface for instaled applications is to review if any local users are created or scheduled tasks that are using stored privileged domain accounts. Publishing applications instead of desktops is another effective method to reduce the attack surface.
 
-Optimization is great for User and Resource performance but it also a very important to security as the less running software the more secure the system will be.
-
-Reference Citrix Optimizer and write some on the type of Software (UWP), Scheduled Tasks and some of the other things that can be directly tied to security performance too.
+Optimization is great for user and resource performance but it is also a very important to security as the less running software the more secure the system will be. [Citrix Optimizer](https://support.citrix.com/article/CTX224676) is an easy to use tool that removes all unnecessary components from Windows OS image. Having an automated, consistent image build process is important to prevent misconfiguration, one of the most common causes for security incidents.
 
 ### Minimum, Recommended and High Security
 
@@ -127,7 +140,7 @@ We then want to ensure that any necessary services are disabled from the operati
 
 ## Windows Policies
 
-This is the core to any securing any Windows Operating System. The default policies for the operating system are focused on compatibility and useability first and security settings must be added to the configuration. This section will focus on Windows over Linux VDAs as Windows is still the majority of Citrix Virtual Apps and Desktops deployments. There are thousands of Group Policy Settings and working on them in sections based on your users' requirements is the best approach. Below are some of the types of Applications and areas you should focus on, but we also recommend making decisions on each of these settings and validating it will meet your users' requirements. The sections below will just point to the areas of the Group Policy that should be evaluated with some recommendations and not each specific policy. Having a standard for all Desktops and Servers is recommended so that all your systems can have a similar effective policy, there will be deviations that can be architected by other policies or device placement in specific OUs. Administrative deviations are possible by using an AD group with "Deny Policy" advanced permissions, so these settings don't apply to admins.
+This is the core to any securing any Windows Operating System. The default policies for the operating system are focused on compatibility and useability first and security settings must be added to the configuration. There are thousands of Group Policy sSettings and working on them in sections based on your users' requirements is the best approach. Below are some of the types of Applications and areas you should focus on, but we also recommend making decisions on each of these settings and validating it will meet your users' requirements. The sections below will just point to the areas of the Group Policy that should be evaluated with some recommendations. Having a standard for all Desktops and Servers is recommended so that all your systems can have a similar effective policy. Deviations from these default policies can be architected by other policy objects or device placement in specific OUs. Administrative deviations are also possible by using an AD group with "Deny Policy" advanced permissions, so these settings don't apply to admins. Common problem is applying corporate-approved set of policies designed to secure all servers to remote desktop servers. While these servers are technically running server OS, their security model is more similar to securing traditional desktop OS.
 
 ### Minimum
 
@@ -247,13 +260,17 @@ We recommend evaluating the many other security settings within the Office group
 
 ## Session Policies
 
-We recommend creating a session requirements matrix for each use case to control what session policies will need to be configured per job profile. We recommend creating a Zero Trust Policy for all session policies by using the "Security and Control" Policy Template to start any Citrix Virtual Apps and Desktop deployment to ensure that all session channels are blocked by default. If any session policies need to be adjusted, we recommend creating a policy for each policy deviation and using Active Directory groups to nest your delivery group entitlement groups in to make a seamless single group entitlement for the users.
+We recommend creating a session requirements matrix for each use case to control what session policies will need to be configured per job profile. We recommend creating a Zero Trust Policy for all session policies by using the "Security and Control" Policy Template to start any Citrix Virtual Apps and Desktop deployment to ensure that all session channels are blocked by default. If any session policies need to be adjusted, we recommend creating a policy for each policy deviation and using Active Directory groups to nest your delivery group entitlement groups in to make a seamless single group entitlement for the users. You can read more about [policy settings](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings.html) in product documentation.
 
-This is the link of the default policies for reference and a list of the policies we focus on when it comes to the recommended Security Sections
+When deciding policy delivery mechanism (using Studio or Group Policy Objects), we recommend to chose only one method and don't mix policies from Studio and GPO. Conflicts can lead to misconfiguration and potential security incident.
 
-[https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/policies-default-settings.html](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/policies-default-settings.html)
+One of the most important design aspect is identifying who is more trusted - endpoint or virtual session. When one side is less trusted than the other one, this can be reflected in applied restrictions and redirection policies. Endpoint is typically less trusted than VDA, however there are scenarios where opposite is true - for example remote internet access use case where internal endpoint is more trusted than remote session running published desktop.
+
+What do you need outside of just your keyboard and mouse in application X/desktop Y? This question should start your users thinking about their workflow beyond asking questions for each virtual channel below. We recommend using this detailed session policy questionnaire to determine which job profiles may require which virtual channels. The most common requirements are having access to printing, copy\paste functionality and access to other devices within the session. Each one of these session items have corresponding policies within Citrix and also some OS policies too.
 
 ### Default Policy
+
+Start by reviewing [default policy settings](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/policies-default-settings.html) to understand which settings are applied to your environment and review all of them.
 
 | Policy Name                | Default Setting |
 | -------------------------- | --------------- |
@@ -274,31 +291,21 @@ This is the link of the default policies for reference and a list of the policie
 | Client TWAIN Devices       | Allowed         |
 | Client USB Devices         | Prohibited      |
 
-We recommend using this detailed session policy questionnaire to determine which job profiles may require which virtual channels. The most common requirements are having access to Print, Copy\Paste and access to other devices within the session. Each one of these session items have corresponding policies within Citrix and also some OS policies too.
-
-### High Level Session Policy Question
-
-What do you need outside of just your keyboard and mouse in Application X/Desktop Y?
-
-This question should start your users thinking about their workflow beyond asking questions for each virtual channel below.
-
 ### Clipboard
 
-Do you need to copy and paste things in and or out of the Session? If the clipboard is needed, do you need just text or other format types and then which directionality is required in and out of the session or just within the session only.
-
-Just out of the Session?
+Do you need to copy and paste things in and or out of the session? If the clipboard is needed, do you need just text or other format types and then which directionality is required, in and out of the session or just within the session only. Common mistake is to see clipboard configuration as a yes/no decision and unecessarily reducing usability by applying controls that are too restrictive. [Clipboard redirection settings](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings.html#client-clipboard-redirection) are customizable and you might avoid impacting users productivity by applying more flexible range of policies.
 
 ### Drive Mappings
 
-Do you need to Copy/Move anything from and drives on your computer in and or out of the Session? Local C Drive, Network Drives Mapped to the Computer, Removable Media, Optical or Floppy
+Do you need to Copy/Move anything from and drives on your computer in and or out of the Session? Access to endpoint drives is controlled through a set of customizable [File redirection policies](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/file-redirection-policy-settings.html) - you can control access to local drives, mapped network drives or removable drives. Optical and floppy drives are less common today, but can be also controlled through policy.
 
 ### USB Devices
 
-Do you have to use any USB devices with your session? If a USB device is needed, we recommend collecting the VID and PID for those devices instead of just enabling all USB device types.
+Do you have to use any USB devices with your session? If a USB device is needed, we recommend collecting the VID and PID for those devices instead of just enabling all USB device types. You can read more about USB devices policy settings and policy rules in [product documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/usb-devices-policy-settings.html).
 
 ### Printing
 
-Do you need to Print? Most customers need it but, there are instances where it should be disabled for Contractors\Third Parties or just different business units.
+Do you need to Print? Most customers need it but, there are instances where it should be disabled for Contractors\Third Parties or just different business units. As a compromise, local printer redirection is often disabled and session-mapped printers are used instead.
 
 ### Audio
 
@@ -316,7 +323,7 @@ Example:
 
 ## Operations
 
-Missing operating system patches are one of the most prolific finding in security audits. There are typically two reasons why patches are not done regularly, first there isn't a set schedule and time set aside each month for them and that there have been application compatibility issues in the past with patches.
+Missing operating system patches are one of the most prolific finding in security audits. There are typically two reasons why patches are not done regularly, first there isn't a set schedule and time set aside each month for them and that there have been application compatibility issues in the past with patches. Prompt and consistent patching is critical to minimize the window of opportunity for attackers. Time to weaponization of new exploits is shorter than ever and it is a good idea to have not only well established process for regular patching, but also emergency patching procedures prepared and tested.
 
 ### Minimum
 
@@ -327,6 +334,8 @@ Based on the Windows release cycle we can expect to update the operating system 
 ### Recommended
 
 #### Purpose Built Updatable Image Design
+
+TODO
 
 We recommend creating a process for implementing and promoting image updates that can lower the risk and impact if issues arise. Depending on your Machine Catalog, Delivery Group and hosting design will determine what will be possible. We recommend having a Test Machine Catalog and Delivery Group that initial updates are applied to and then promoted to a Quality Assurance (QA) Catalog and Group for Application Owner testing and validation. Then if you are able to have a Pre-Production Machine Catalog in a Production Delivery Group to reduce the impact in the same Production delivery group. Using more than one Machine Catalog in the same Delivery Group will allow you to have a percentage of your VDAs on the new version and the others will be on the existing version. This may not be possible depending on the application update requirements but shouldn't be impacted by OS updates. There have been issues with OS updates that are not found until they are rolled out and have more than one user or they are load based issues so if you can afford to have the extra capacity it will help lower your risk while increasing your security.
 
