@@ -12,7 +12,14 @@ In the following sections we will cover the recommended security hardening areas
 
 Security is a continous process - recommendations should be reviewed on a regular basis and security hardening should not be considered a one-off task. All these settings should be deployed in a staging environment and validated by your IT team and then scheduled and promoted to your test users before finally being promoted into production. With each level of recommendations, the risk of causing a useability or application compatibility issue will increase and should require further testing and tuning. Increased security can also impact user experience and productivity - it is important to find the right balance and understand use case requirements.
 
+TODO - Note about security as a continuous process, recommend red/blue team exercises and pen testing by external company
+
 TODO Disclaimer from legal
+
+## Anatomy of Attack
+
+TODO - cover stages, from establishing a session, to escape from application, privilege escalation to lateral movement
+TODO - Establish a session, escape from app, escalate privileges, lateral movement
 
 ## Planning
 
@@ -101,7 +108,39 @@ You can find more information about Citrix and compliance in [Citrix Trust Cente
 
 We recommend following the guidelines from each compliance body at a minimum, but if possible, depending on those requirements we recommend evaluating other common frameworks from Microsoft, NIST and even third parties like CIS and HyTrust for very specific recommendations for Domains, Desktops, Servers and more. These frameworks have many options to make the deployment much more secure and reduce your attack surface along with helping accelerate your audits and reduce your findings.
 
-### Workload Segmentation
+## Application Breakout
+
+TODO - Privilege Escalation - application jailbreak / escape, lolbins
+
+TODO - task manager, keyboard shortcuts, help features etc...
+
+## Privilege Escalation
+
+TODO - Limit sensitive information on local and remote drives – One of the easiest methods an attacker uses to escalate privileges is by finding a clear-text file with credentials. This could either be on the local computer or remote shares that do not require authentication. It is common for attackers to find credentials hard coded in scripts that can be executed without a human supplying a username and password.
+
+TODO - local service or user accounts, shared passwords
+
+## Lateral Movement
+
+TODO - shared passwords (LAPS)
+
+TODO - lateral movement - Bloodhound / pass-the-hash attacks
+
+TODO - hijacking other high-privilege account
+
+### Local Administrator Password Solution (LAPS)
+
+In most deployments the administrator password is the same for all desktops and servers because it may have been defined in the "Default Domain Policy" only. In many cases there may not be a local admin password standard as the desktops or servers built by different people or images use a different password and there isn't a set standard. With LAPs deployed each machine under that policy will have a unique password that is then stored within active directory and protected by an ACL. Having dedicated privileged accounts with proper delegation between roles is key when deploying this solution to ensure only authorized users are able to view and use the password. This can be rolled out in phases based on your OU structure to ensure everything is working as expected. This is can reduce the risk of Pass-the-Hash (PtH) credential replay attacks.
+
+[https://social.technet.microsoft.com/wiki/contents/articles/4683.how-to-change-a-local-administrator-password-with-group-policy.aspx](https://social.technet.microsoft.com/wiki/contents/articles/4683.how-to-change-a-local-administrator-password-with-group-policy.aspx)
+
+[https://www.microsoft.com/en-us/download/details.aspx?id=46899](https://www.microsoft.com/en-us/download/details.aspx?id=46899)
+
+## Extortion
+
+TODO - accessing backend data
+
+## Workload Segmentation
 
 Workload segmentation defines how many different images you need to build, how many catalogs / delivery groups are required, which applications are hosted together and what kind of backend access is needed. While compatibility is a more common reason why applications are not running on the same image, security is even more important. Understanding the size of treasure that you are protecting will help you adequately size your limited resources.
 
@@ -111,52 +150,18 @@ Another factor when thinking about separating workloads is identifying how much 
 
 TODO - another aspect for workload segmentation are user accounts! For example you shouldn't mix account with high-compromise potential (temporary workers) with high-privileged accounts (e.g. administrators)
 
-#### Isolate applications on the same server
+### Isolate applications on the same server
 
 TODO
 
-#### Separate applications on different servers
+### Separate applications on different servers
 
 TODO
 
-#### Backend Connectivity
+### Backend Connectivity
 
 TODO - diagram with access to more secure backends
 TODO MINIMUM - document sensitivity of backend requirements (to understand where most critical data flows).
-
-## Anatomy of Attack
-
-### Application Breakout
-
-TODO - Privilege Escalation - application jailbreak / escape, lolbins
-
-TODO - task manager, keyboard shortcuts, help features etc...
-
-### Privilege Escalation
-
-TODO - Limit sensitive information on local and remote drives – One of the easiest methods an attacker uses to escalate privileges is by finding a clear-text file with credentials. This could either be on the local computer or remote shares that do not require authentication. It is common for attackers to find credentials hard coded in scripts that can be executed without a human supplying a username and password.
-
-TODO - local service or user accounts, shared passwords
-
-### Lateral Movement
-
-TODO - shared passwords (LAPS)
-
-TODO - lateral movement - Bloodhound / pass-the-hash attacks
-
-TODO - hijacking other high-privilege account
-
-#### Local Administrator Password Solution (LAPS)
-
-In most deployments the administrator password is the same for all desktops and servers because it may have been defined in the "Default Domain Policy" only. In many cases there may not be a local admin password standard as the desktops or servers built by different people or images use a different password and there isn't a set standard. With LAPs deployed each machine under that policy will have a unique password that is then stored within active directory and protected by an ACL. Having dedicated privileged accounts with proper delegation between roles is key when deploying this solution to ensure only authorized users are able to view and use the password. This can be rolled out in phases based on your OU structure to ensure everything is working as expected. This is can reduce the risk of Pass-the-Hash (PtH) credential replay attacks.
-
-#### How to Change a Local Administrator Password with Group Policy
-
-[https://social.technet.microsoft.com/wiki/contents/articles/4683.how-to-change-a-local-administrator-password-with-group-policy.aspx](https://social.technet.microsoft.com/wiki/contents/articles/4683.how-to-change-a-local-administrator-password-with-group-policy.aspx)
-
-#### LAPs Tool Download
-
-[https://www.microsoft.com/en-us/download/details.aspx?id=46899](https://www.microsoft.com/en-us/download/details.aspx?id=46899)
 
 ## Reducing Attack Surface
 
