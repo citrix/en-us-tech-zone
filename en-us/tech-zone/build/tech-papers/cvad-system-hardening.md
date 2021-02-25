@@ -8,7 +8,7 @@ description: Copy & paste description from TOC here
 
 When deploying any operating system, the settings are always targeted for the most compatible settings to ensure the device works along with it is the most backwards compatibility. The Windows operating system is no different, even the latest Windows releases have settings to allow it to work with releases from 20+ years ago along with very few restrictions of what can be done within the operating system. Windows does have its built-in Firewall, antivirus and auto-update settings that will provide some protection, but a user can launch anything they have access to and by default they have access to almost everything besides what is protected by local administrative access.
 
-In the following sections we will cover the recommended security hardening areas from how to planning to get started, how to configure some recommended policies, control privileged access and even configure some security based windows features. Most of these sections will be broken into these three sections **minimum**, **recommended** and **high security**. The minimum recommendations are just that a starting point at default or just beyond default settings that  provide some protections, but also provide the most application compatibility and usability. The recommended settings will start to secure the system further that will be able to start preventing some common attack methods while allowing the most common application compatibility and usability requirements. The high security recommendations will provide the most secure deployment options with the most restrictive usability and the most targeted application compatibility also.
+In the following sections we will cover the recommended security hardening areas from how to planning to get started, how to configure some recommended policies, control privileged access and even configure some security based windows features. Most of these sections will be broken into these three sections **Minimum**, **Recommended** and **High Security**. The minimum recommendations are just that a starting point at default or just beyond default settings that  provide some protections, but also provide the most application compatibility and usability. The recommended settings will start to secure the system further that will be able to start preventing some common attack methods while allowing the most common application compatibility and usability requirements. The high security recommendations will provide the most secure deployment options with the most restrictive usability and the most targeted application compatibility also.
 
 Security is a continous process - recommendations should be reviewed on a regular basis and security hardening should not be considered a one-off task. All these settings should be deployed in a staging environment and validated by your IT team and then scheduled and promoted to your test users before finally being promoted into production. With each level of recommendations, the risk of causing a useability or application compatibility issue will increase and should require further testing and tuning. Increased security can also impact user experience and productivity - it is important to find the right balance and understand use case requirements.
 
@@ -32,25 +32,13 @@ Example:
 -  Published Desktop EMR + Microsoft Office
 -  Remote PC Access Accounting Application
 
-### Which Operating System Version
+### Software Requirements
 
-Each operating system will have generic security recommendations, but they will also have specific recommendations based on specific features that are only in those specific versions. This is especially important when comparing different builds of Windows 10 - it is important to review all available security features and improvements and have good strategy for using current releases.
+Each operating system will have generic security recommendations, but they will also have specific recommendations based on specific features that are only in those specific versions. This is especially important when comparing different builds of Windows 10 - it is important to review all available security features and improvements and have good strategy for using current releases. The version of the software deployed in any operating system will also affect the recommend deployment and security settings that should be deployed.
 
 #### Minimum, Recommended and High Security
 
 We recommend creating a list of each operating system and build number for each published resource. Typically, there will be some overlap as the same VDA image may be used for multiple use cases along with even multiple publishing methods too. This will help you also collect information below that will be helpful for further hardening of the system too.
-
-Example:
-
--  Published Application Windows Server 2019, Build 1809 (EMR Image)
--  Published Desktop Windows Server 2019, Build 1809 (EMR Image)
--  Remote PC Access Windows 10, Build 1909 (Finance Desktops)
-
-### Software Requirements
-
-The version of the software deployed in any operating system will also affect the recommend deployment and security settings that should be deployed.
-
-#### Minimum, Recommended and High Security
 
 Is the software supported by the vendor? This will dictate if there is support from the vendor if there is an issue along with if updates and security updates are being released. There are some instances where legacy software has to be used and the risk of using it has already been accepted by the business.
 
@@ -119,10 +107,52 @@ Workload segmentation defines how many different images you need to build, how m
 
 This is one of those design requirements where reduction of images (or delivery groups) is not always desirable and can potentially lead to security incident or security breach. While segmented access like this is complicated for traditional endpoint deployment, it is one of advantages for virtualized desktop deployments. Access to the backend infrastructure should be adequate to the level of security of application servers. It is common to implement few different tiers of security requirements that are required from servers before access to backend is provided.
 
-Another factor when thinking about separating workloads is identifying how much you can "trust" each of your applications. Application that uses vulnerable runtime and has't been updated in years should not be hosted on the same server as secure application with access to more sensitive data.
+Another factor when thinking about separating workloads is identifying how much you can "trust" each of your applications. Application that uses vulnerable runtime and has't been updated in years should not be hosted on the same server as secure application with access to more sensitive data. Applications that can interpret code (macros) and applications with support for add-ons represent popular target and opportunity for attackers - for example Visual Basic for Applications (.vba) in Microsoft Office.
+
+#### Isolate applications on the same server
+
+TODO
+
+#### Separate applications on different servers
+
+TODO
+
+#### Backend Connectivity
 
 TODO - diagram with access to more secure backends
 TODO MINIMUM - document sensitivity of backend requirements (to understand where most critical data flows).
+
+## Anatomy of Attack
+
+### Application Breakout
+
+TODO - Privilege Escalation - application jailbreak / escape, lolbins
+
+### Privilege Escalation
+
+TODO - Limit sensitive information on local and remote drives – One of the easiest methods an attacker uses to escalate privileges is by finding a clear-text file with credentials. This could either be on the local computer or remote shares that do not require authentication. It is common for attackers to find credentials hard coded in scripts that can be executed without a human supplying a username and password.
+
+TODO - local service or user accounts, shared passwords
+
+### Lateral Movement
+
+TODO - shared passwords (LAPS)
+
+TODO - lateral movement - Bloodhound / pass-the-hash attacks
+
+TODO - hijacking other high-privilege account
+
+### Local Administrator Password Solution (LAPS)
+
+In most deployments the administrator password is the same for all desktops and servers because it may have been defined in the "Default Domain Policy" only. In many cases there may not be a local admin password standard as the desktops or servers built by different people or images use a different password and there isn't a set standard. With LAPs deployed each machine under that policy will have a unique password that is then stored within active directory and protected by an ACL. Having dedicated privileged accounts with proper delegation between roles is key when deploying this solution to ensure only authorized users are able to view and use the password. This can be rolled out in phases based on your OU structure to ensure everything is working as expected. This is can reduce the risk of Pass-the-Hash (PtH) credential replay attacks.
+
+#### How to Change a Local Administrator Password with Group Policy
+
+[https://social.technet.microsoft.com/wiki/contents/articles/4683.how-to-change-a-local-administrator-password-with-group-policy.aspx](https://social.technet.microsoft.com/wiki/contents/articles/4683.how-to-change-a-local-administrator-password-with-group-policy.aspx)
+
+#### LAPs Tool Download
+
+[https://www.microsoft.com/en-us/download/details.aspx?id=46899](https://www.microsoft.com/en-us/download/details.aspx?id=46899)
 
 ## Reducing Attack Surface
 
@@ -137,6 +167,122 @@ We first want to ensure that only required software is installed. Each piece of 
 We want to also ensure that the version of software is the latest version if possible and is supported by that vendor. Most pieces of software will have security vulnerabilities discovered and eventually remediated with a patch and/or software revision.
 
 We then want to ensure that any necessary services are disabled from the operating system by using an OS optimizer. Most optimizations will help with the user density by disabling and configuring items that are not needed in a VDI deployment, but there are also security benefits by removing and configuring these same components. The highest percentage of density benefits comes from removing Windows Programs (UWP) and disabling scheduled tasks in Windows 10 operating systems. We recommend using Citrix Optimizer as it has been tuned to provide the most benefits with the least impact to the user's workflow in our experience. You can download this software here [https://support.citrix.com/article/CTX224676](https://support.citrix.com/article/CTX224676).
+
+## Privilege of Least Privilege
+
+We recommend defining your IT roles and permissions for your VDI deployment along with your overall privileged accounts. The goal with any privilege delegation is to ensure administrators have the appropriate permissions needed to fulfill their assigned job roles. Depending on the products deployed you may have more or less groups based on your needs. These are just examples of some of the common delegation points. The recommended items below are done outside of the VDA OS hardening tasks itself. Without some of these core principals deployed your company will be at and increased risk.
+
+### Minimum
+
+#### Separate Administrative Accounts
+
+We recommend ensuring that any user with more than Domain User rights to have a separate account. Too many attacks have started and or escalated due to administrators using their account to check email or browse the web. We recommend putting these in a protected OU with delegated permissions to prevent editing these users accounts other than a few individuals in your domain in a custom delegation group. It is also recommended to have a naming standard with a common suffix of prefix to help with auditing. The most common is using prefixes like "adm-", "admin-", "sa-" and "p".
+
+##### Microsoft Privileged Access Accounts Overview
+
+[https://docs.microsoft.com/en-us/security/compass/privileged-access-accounts](https://docs.microsoft.com/en-us/security/compass/privileged-access-accounts)
+
+#### Service Account Naming Standard
+
+Naming Standards should be used for all service accounts to separate them from normal accounts when doing account reviews. These accounts should also be in a separate OU to limit access to edit these accounts. The most common is using prefixes like "svc-", "service-", "s-" and "s". It is also recommended that within the account description or on a shared document a list of what each service does for easy reference for password resets.
+
+#### Use Custom Groups for each Administrative Delegation
+
+We recommend using custom AD groups to delegate all administrative roles within your deployment. Default Groups like Domain Admins should not be used to give access to remote into systems, manage privileged systems, manage accounts in AD, manage Citrix and other systems. Using groups with a naming standard will also help organize these groups for easy auditing and application on those systems, a common prefix is most common with other naming standards for each system group also. When common names are used to describe these roles, it will allow you to search for all groups for the Service Desk, VDI, AD and other systems. It can also be helpful for specific permissions like "Read Only" and "Full Control" to search and apply these roles on multiple systems. There may need to be multiple groups within each system that must be shared for each major role delegation. The complexity of delegation will increase the number of systems and permissions needed but this will also increase the security and flexibility of your deployment.
+
+##### Example Citrix Custom Groups and Delegations
+
+###### ADM-VDI-Full-Admins
+
+These users will typically be local admins on all the Citrix Infrastructures Server Roles and VDAs, have full control of the profile share and be entitled to the Administrator roles within each Citrix Component. They will also have at least VM Administrator rights on the hypervisor hosting there in scope VMs.
+
+###### ADM-VDI-Image-Admins
+
+May only be local admins on the master image and may just be the patching that is responsible for updates of the image. If this is for an application team then we recommend a custom group per team that needs to maintain the applications per image. They may also have at least VM User rights on the hypervisor hosting these image VMs
+
+###### ADM-VDI-ServiceDesk
+
+Will have the roles of Help Desk or Service Desk in the Citrix Studio and Director. This will allow them to manage sessions and troubleshoot within Director and view configuration settings within Citrix Studio. For most deployments the Service Desk may not need access to any other Citrix Server role components like StoreFront Server, License Server, SQL, FAS Servers and others. Read only rights to things like WEM and Provisioning Server could be helpful for troubleshooting or spotting issues. The amount of privileged you will give you service desk will be based only our policies and their expertise. There may also be multiple levels of sub permissions also for each of these functions.
+
+###### ADM-VDI-ReadOnly-Director
+
+Allows this user the rights to just view items within Citrix Director. This can be helpful for an Application Owner to see the usage of their system along with the leadership team to track usage of the system.
+
+###### ADM-VDI-ReadOnly-Studio
+
+This may be needed just for Configuration Validations from other teams or Application Owners.
+
+### Recommended
+
+#### Migrate away from the AD Default Privileged Groups
+
+Using the default groups for administrative elevation gives more permission than most need. It is very common that people and service accounts are just added to Domain Admins because it works and is easy. Many of these default groups have inherited and explicit rights on all machines and throughout the domain structure also. We recommend auditing the default privileged groups to identify all users, contractors and service accounts that may reside in them. The administrator account should not be removed from any default groups as this can cause issues and this should also be used as a highly sensitive privileged account and its password should be changed often along with it stored in secure manner.
+
+#### Continual Account Review Audits
+
+We recommend setting a schedule to regular account reviews with your Active Employee list along with your AD account listings to ensure only Active employees have accounts. We also recommend ensuring checking your third-parties accounts also based on active agreements with these vendors. Service accounts should also be audited regularly to ensure they are still needed, and they have just the required permissions for those roles.
+
+#### Define Account Policy Requirements
+
+We recommend setting an account policy standard in accordance with your compliance bodies. These settings are critical to the account security of the domain and should be as secure as possible along with a balance of usability. There are many standards for Password Age, Password Complexity, Length Requirements, Password History, Lockout Thresholds and Duration, Kerberos Ticket Settings, Logon Restrictions and many more items. These policies are normally defined at the root of the domain for all users and accounts and there may be other policies for privileged accounts and key employees to ensure they have a more secure standard.
+
+##### Account Policy Policy Links
+
+[https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/account-policies](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/account-policies)
+
+##### Domain Password Requirements
+
+[https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements)
+
+##### Office 365 Password Policies (MFA Required)
+
+[https://docs.microsoft.com/en-us/microsoft-365/admin/misc/password-policy-recommendations?view=o365-worldwide](https://docs.microsoft.com/en-us/microsoft-365/admin/misc/password-policy-recommendations?view=o365-worldwide)
+
+#### Define User Rights Assignments
+
+We recommend auditing your Default Domain Policies User Rights assignment. There are many settings that at default settings that are built for backwards compatibility and ease of use without any custom settings deployed. Just like the Windows policies it is important to know the oldest systems to ensure that these systems will still function. These options should also be tied to your custom privileged groups to ensure only specified users can join computers to the domain, access the system remotely, log into specified systems and more. It can be helpful to make AD groups per user right assignment so that they can be nested into privilege group to allow specific permissions to specific users. User Rights Assignment decisions should be made for the root of your domain along with the location of your desktops and servers.
+
+##### Microsoft User Rights Assignments Overview and Details
+
+[https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment)
+
+#### Define Security Options
+
+We recommend reviewing your Default Domain Policy to audit these Security Options. These options are central to the security of any domain. These settings control the behavior of the local machine with settings like renaming the guest and administrator accounts, permissions within the system from print driver install to SMB versions and many other settings. Each of these settings has a recommended setting beyond default but they will also be based on your oldest operating system you must support.
+
+Security Options Overview
+
+[https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/security-options](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/security-options)
+
+### High Security
+
+#### Managed Service Accounts
+
+This is designed to provide applications like SQL and Exchange to have an automatic password management. It will also simplify Service Principal Names management for these accounts which can help mitigate Kerberoast attacks.
+
+[Managed Service Account Step-by-Step Guide](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10)?redirectedfrom=MSDN)
+
+[Top 10](https://docs.microsoft.com/en-us/windows/security/threat-protection/overview-of-threat-mitigations-in-windows-10)
+
+#### Use Privileged Workstations
+
+All administrative work should be done from dedicated machines and not from each administrator's workstation. This will allow more thorough logging from these systems which will allow better visibility to the changes made in your deployment. There are third-party Privileged Account Management systems that will help build this system out and audit and control access to these machines to with even screen recording and log correlation depending on the vendor chosen. We recommend if you cannot afford a PAM solution to work in phases to deploy your own system. We recommend deploying a highly available set of servers/desktops that only defined administrators can remote into, these should be on a dedicated VLAN with ingress and egress control available. If available, we highly recommend requiring multifactor authentication to log into these systems. Once these systems are deployed you will want to install all the administrative tools that are needed for the targeted administrators. We want to then ensure these systems have logs retained locally and forwarded to your SIEM to have log retention and visibility so alerts can eventually be setup. Then the final steps will be implementing access control lists to limit source administrator from sensitive systems from this VLAN and also another highly controlled VLAN that machines could be put on in an emergency virtually or physically in the event of a failure of these systems. The primary and secondary privileged account workstation (PAW) VLANs should be audited and alerts should be sent if any devices are added to all responsible team members. With this final phase we can only administer these systems from these PAWs so that normal users will not be able to even get to the management UIs for these systems on their typical client networks or from a VDA.
+
+##### Microsoft Overview of Privileged Account Workstations
+
+[https://docs.microsoft.com/en-us/security/compass/concept-azure-managed-workstation](https://docs.microsoft.com/en-us/security/compass/concept-azure-managed-workstation)
+
+#### Obfuscation
+
+When your deployment is attack and there is an initial foothold there are benefits of using obfuscation to slow the attacker down so that you are logging and alerting systems can hopefully catch them before the next pivot. Having a password manager or another system is highly recommended before starting any obfuscation to be able to track the association. This obfuscation can start with privileged accounts that are not the same name of the user in AD. Privileged account obfuscation can be using the same unique last name in most cases or other unique name combinations so they can still be audited. Service accounts can also be obfuscated by using different prefixes or using names of people also, just remember you want to be able to audit these accounts. Sensitive server names can also be obfuscated with test and development prefixes or names that do not correlate to the role. The most powerful obfuscation is user obfuscation where their first and last name are not used for the account name, which normally is a combination of characters and numbers. User obfuscation is the most disruptive, but it can also be rolled out to just new users and slowly phased into and this is usually one of the last steps of a security remediation plan.
+
+##### Local Groups
+
+[https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/appendix-h--securing-local-administrator-accounts-and-groups](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/appendix-h--securing-local-administrator-accounts-and-groups)
+
+##### Privileged Account Groups
+
+[https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/manage/component-updates/appendix-i--creating-management-accounts-for-protected-accounts-and-groups-in-active-directory](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/manage/component-updates/appendix-i--creating-management-accounts-for-protected-accounts-and-groups-in-active-directory)
 
 ## Windows Policies
 
@@ -321,55 +467,18 @@ Example:
 -  Published Desktop-EMR Image Session Requirements: Copy\Paste into the Session Only, Client Printing (Default Printer Set no need for the Control Panel)
 -  Remote PC Access Session Requirements: Copy\Paste into the Session, Client Printing (Default Printer Set no need for the Control Panel)
 
-## Operations
-
-Missing operating system patches are one of the most prolific finding in security audits. There are typically two reasons why patches are not done regularly, first there isn't a set schedule and time set aside each month for them and that there have been application compatibility issues in the past with patches. Prompt and consistent patching is critical to minimize the window of opportunity for attackers. Time to weaponization of new exploits is shorter than ever and it is a good idea to have not only well established process for regular patching, but also emergency patching procedures prepared and tested.
-
-### Minimum
-
-#### OS and Application Patching Schedule
-
-Based on the Windows release cycle we can expect to update the operating system at least every month and at around 2 times a year a critical patch must be applied along with the OS will now need to be upgraded every 30-60 months depending on the version chosen. This means we should plan for at least 12 updates a year and have a process to deploy at least one other patch per day. With these anticipated updates for the operating system, it can be very helpful to provide application owners access to that same time window for testing and promotion of these changes. Working with your IT team to create a process and time will increase the security of your deployment.
-
-### Recommended
-
-#### Purpose Built Updatable Image Design
-
-TODO
-
-We recommend creating a process for implementing and promoting image updates that can lower the risk and impact if issues arise. Depending on your Machine Catalog, Delivery Group and hosting design will determine what will be possible. We recommend having a Test Machine Catalog and Delivery Group that initial updates are applied to and then promoted to a Quality Assurance (QA) Catalog and Group for Application Owner testing and validation. Then if you are able to have a Pre-Production Machine Catalog in a Production Delivery Group to reduce the impact in the same Production delivery group. Using more than one Machine Catalog in the same Delivery Group will allow you to have a percentage of your VDAs on the new version and the others will be on the existing version. This may not be possible depending on the application update requirements but shouldn't be impacted by OS updates. There have been issues with OS updates that are not found until they are rolled out and have more than one user or they are load based issues so if you can afford to have the extra capacity it will help lower your risk while increasing your security.
-
-Example:
-
--  Published Application-EMR Image (90 Users, 30 Users Per Server, 4x VDAs, 1x Delivery Group with 3x Prod Machine Catalog, 1x PreProd Machine Catalog and one Test Delivery Group (Master Image) and one QA Delivery Group with a single VDA)
--  Published Desktop-EMR Image (90 Users, 30 Users Per Server, 4x VDAs, 1x Delivery Group with 3x Prod Machine Catalog, 1x PreProd Machine Catalog and one Test Delivery Group (Master Image) and one QA Delivery Group with a single VDA)
--  Remote PC Access SCCM Patches Systems 7 Days after Patch Tuesday over the weekend with follow up on Monday and Tuesday.
-
 ## Application Control
 
-Having an Application Control solution is imperative in the current cyber threat climate. Ensuring that not just any application can be launched is a cornerstone to OS security. A user being able to execute anything they can access is very risky and we recommend deploying an application control solution. There are many options when it comes to an Application Control solution that are included with Windows or are paid addons. When we publish a specific application or a desktop to access a specific application or applications most users only need to run that specific program or programs. There are some applications that will launch other supporting applications and must be included in an application control solution. In the planning phase you should have a list of primary executables and supporting executables to start this testing a solution listed below.
+Having an application control solution is one of the best way to secure your virtualized operating system. While no one is questioning the value of application control solutions (such as AppLocker or older Software Restriction Policies), these solutions are relatively hard to implement in traditional desktop deployments where user behavior is hard to predict. In virtualized environments, especially with published applications, user behavior and processes are more predictable and easier to control. This is important to remember when designing your [workload segments](#workload-segmentation) - if you are hosting only a limited subset of highly-sensitive application on an image, it is easy to configure allow/block rules for execution. With increasing number of applications installed in the same image, rules are becoming less explicit and security of often relaxed.
 
-### Microsoft Windows AppLocker
+A user being able to execute anything they can access is potential risk and we recommend deploying an application control solution. There are various application control solutions included with Windows or available from various 3rd party vendors. When definiting which processes are allowed and which ones are not, it is important to review not only your application, but also all dependencies and potential integrations (for example opening PDF attachments).
 
-Policy based with Allow Lists and Block Lists. You will use Group Policy to create and edit these policies and apply them to OUs and/or filter based on AD groups to meet your application control needs.
+There are various tools available:
 
-### Windows Defender Application Control
-
-This Requires Windows Defender to Run Script runs on the system to mark trusted and installed files and only those files will be allowed to run
-
-### WEM
-
-Uses the native Microsoft Windows AppLocker system but allows you to configure these settings in the same context
-
-### Third Party
-
-#### Antivirus
-
-Most Antivirus solutions have the ability to control applications launches. This can provide the benefit depending on who is managing the system that the same console can be used to manage these policies also.
-
-#### PolicyPak, Ivanti and Others
-
-These solutions can also be used as an Application Control solution and they also provide other benefits too.
+-  **Microsoft Windows AppLocker** - Policy-based with Allow Lists and Block Lists. Use Group Policy to create and edit these policies and apply them to OUs and/or filter based on AD groups to meet your application control needs.
+-  **Windows Defender Application Control** - While AppLocker will continue to receive security fixes, it is no longer getting new feature improvements. Windows Defender Application Control is successor of AppLocker and is recomended tool for application control. You can learn more in [Windows Defender Application Control and AppLocker Overview](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-and-applocker-overview).
+-  **Citrix Workspace Environment Management - Application Security** - You can also use Workspace Environment Management (WEM) to manage AppLocker rules. Read more about this option in [product documentation](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/security.html).
+-  **3rd Party** - Most of modern antimalware solutions have the ability to control application launches. This might be preferred option if already used in the rest of organization.
 
 ### Minimum
 
@@ -381,13 +490,17 @@ The first step is to choose which Application Control solution will work best fo
 
 If your solution supports an audit only mode, we recommend deploying it to existing VDAs to understand what will need to be in the allow list. In many cases may catch other executables that were not noted in the planning phase. This may require Windows Event Log Forwarding depending on the solution selected. With the list of executables that could be discovered this may also change which solution you may want to deploy based on the numbers of applications to define or the number of groups they must each be delegated to.
 
-### Recommended
-
-#### Enable Solution – Block Admin Applications
+#### Block Admin Applications
 
 We recommend enabling the block ability from your Application Control Solution for just administrative programs.
 
-#### Recommend Admin Applications to Block
+### Recommended
+
+#### Prevent execution from writeable locations
+
+As a general rule - always try to prevent execution from locations that are writeable by non-trusted accounts such as end users - disallow execution from user profiles or temporary folders and preferably allow execution only from read-only locations (such as `C:\Program Files` or `C:\Windows`).
+
+#### Recommended Admin Applications to Block
 
 Most deployments don't require users access to the PowerShell command line or the editor. Currently there isn't a single GPO that will prohibit access to PowerShell that is equivalent to the command prompt. If there are other programs in use we recommend disabling those too.
 
@@ -407,6 +520,14 @@ Example:
 -  Published Desktop EMR + Microsoft Office (Filtered by Delivery Group)
 -  Remote PC Access Accounting Application (Only, Filtered by Delivery Group)
 
+#### NTFS Permissions
+
+TODO
+
+#### Living of the land binaries
+
+TODO Lolbins, powershell etc...
+
 ## Endpoint Protection
 
 Endpoint protection is paramount on any operating system. With the amount of malware consistently growing daily which puts any system without any endpoint protection from any vendor at an increased risk level. There are many vendors in this space and now with the creation of the Endpoint detection and response systems there are even more choices with more traditional systems and more EDR based systems.
@@ -415,7 +536,7 @@ Endpoint protection is paramount on any operating system. With the amount of mal
 
 Deploy a solution on all VDAs along with any Citrix Infrastructure Servers and to all other systems if possible. It is also recommended to ensure it is the latest client paired for your operating system build. Ensure that the exclusions and best practices are applied from this article below. [https://docs.citrix.com/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html](https://docs.citrix.com/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html)
 
-High Security
+### High Security
 
 We recommend having a EDR based solution deployed if possible, to gain some of the features that most EDRs have. Most EDR solutions will look for known malicious files and processes but may also look for unusual data movement on the network and locally over even USB.
 
@@ -453,7 +574,15 @@ Without good proper logging you will not be able to provide a proper incident re
 1.  Managers and Team Leads
 1.  All Other Systems
 
-### BASIC AD SECURITY RELATED EVENT LOG EVENTS TO MONITOR & ALERT
+### Session Recording
+
+TODO
+
+### Collecting breach indicators
+
+TODO - it's not only important to implement security controls, but also pro-actively monitor when they are triggered. For example frequent authentication failures can help to detect ongoing security breach. Goal of security controls is stop the attacker - but without prompt detection of ongoing attack, security controls are just slowing attackers down instead of stoping them.
+
+### Basic Active Directory events to monitor
 
 Below in this table are some known Windows Event IDs that are typically associated with alerts as they could indicate compromise of systems via the normal attack paths most choose.
 
@@ -500,130 +629,6 @@ Citrix ADC SYSLOG Guide
 
 [https://docs.citrix.com/en-us/citrix-adc/13/system/audit-logging/configuring-audit-logging.html](https://docs.citrix.com/en-us/citrix-adc/13/system/audit-logging/configuring-audit-logging.html)
 
-## Privilege Delegation
-
-We recommend defining your IT roles and permissions for your VDI deployment along with your overall privileged accounts. The goal with any privilege delegation is to ensure administrators have the appropriate permissions needed to fulfill their assigned job roles. Depending on the products deployed you may have more or less groups based on your needs. These are just examples of some of the common delegation points. The recommended items below are done outside of the VDA OS hardening tasks itself. Without some of these core principals deployed your company will be at and increased risk.
-
-### Minimum
-
-#### Separate Administrative Accounts
-
-We recommend ensuring that any user with more than Domain User rights to have a separate account. Too many attacks have started and or escalated due to administrators using their account to check email or browse the web. We recommend putting these in a protected OU with delegated permissions to prevent editing these users accounts other than a few individuals in your domain in a custom delegation group. It is also recommended to have a naming standard with a common suffix of prefix to help with auditing. The most common is using prefixes like "adm-", "admin-", "sa-" and "p".
-
-##### Microsoft Privileged Access Accounts Overview
-
-[https://docs.microsoft.com/en-us/security/compass/privileged-access-accounts](https://docs.microsoft.com/en-us/security/compass/privileged-access-accounts)
-
-#### Service Account Naming Standard
-
-Naming Standards should be used for all service accounts to separate them from normal accounts when doing account reviews. These accounts should also be in a separate OU to limit access to edit these accounts. The most common is using prefixes like "svc-", "service-", "s-" and "s". It is also recommended that within the account description or on a shared document a list of what each service does for easy reference for password resets.
-
-#### Use Custom Groups for each Administrative Delegation
-
-We recommend using custom AD groups to delegate all administrative roles within your deployment. Default Groups like Domain Admins should not be used to give access to remote into systems, manage privileged systems, manage accounts in AD, manage Citrix and other systems. Using groups with a naming standard will also help organize these groups for easy auditing and application on those systems, a common prefix is most common with other naming standards for each system group also. When common names are used to describe these roles, it will allow you to search for all groups for the Service Desk, VDI, AD and other systems. It can also be helpful for specific permissions like "Read Only" and "Full Control" to search and apply these roles on multiple systems. There may need to be multiple groups within each system that must be shared for each major role delegation. The complexity of delegation will increase the number of systems and permissions needed but this will also increase the security and flexibility of your deployment.
-
-##### Example Citrix Custom Groups and Delegations
-
-###### ADM-VDI-Full-Admins
-
-These users will typically be local admins on all the Citrix Infrastructures Server Roles and VDAs, have full control of the profile share and be entitled to the Administrator roles within each Citrix Component. They will also have at least VM Administrator rights on the hypervisor hosting there in scope VMs.
-
-###### ADM-VDI-Image-Admins
-
-May only be local admins on the master image and may just be the patching that is responsible for updates of the image. If this is for an application team then we recommend a custom group per team that needs to maintain the applications per image. They may also have at least VM User rights on the hypervisor hosting these image VMs
-
-###### ADM-VDI-ServiceDesk
-
-Will have the roles of Help Desk or Service Desk in the Citrix Studio and Director. This will allow them to manage sessions and troubleshoot within Director and view configuration settings within Citrix Studio. For most deployments the Service Desk may not need access to any other Citrix Server role components like StoreFront Server, License Server, SQL, FAS Servers and others. Read only rights to things like WEM and Provisioning Server could be helpful for troubleshooting or spotting issues. The amount of privileged you will give you service desk will be based only our policies and their expertise. There may also be multiple levels of sub permissions also for each of these functions.
-
-###### ADM-VDI-ReadOnly-Director
-
-Allows this user the rights to just view items within Citrix Director. This can be helpful for an Application Owner to see the usage of their system along with the leadership team to track usage of the system.
-
-###### ADM-VDI-ReadOnly-Studio
-
-This may be needed just for Configuration Validations from other teams or Application Owners.
-
-### Recommended
-
-#### Migrate away from the AD Default Privileged Groups
-
-Using the default groups for administrative elevation gives more permission than most need. It is very common that people and service accounts are just added to Domain Admins because it works and is easy. Many of these default groups have inherited and explicit rights on all machines and throughout the domain structure also. We recommend auditing the default privileged groups to identify all users, contractors and service accounts that may reside in them. The administrator account should not be removed from any default groups as this can cause issues and this should also be used as a highly sensitive privileged account and its password should be changed often along with it stored in secure manner.
-
-#### Continual Account Review Audits
-
-We recommend setting a schedule to regular account reviews with your Active Employee list along with your AD account listings to ensure only Active employees have accounts. We also recommend ensuring checking your third-parties accounts also based on active agreements with these vendors. Service accounts should also be audited regularly to ensure they are still needed, and they have just the required permissions for those roles.
-
-#### Define Account Policy Requirements
-
-We recommend setting an account policy standard in accordance with your compliance bodies. These settings are critical to the account security of the domain and should be as secure as possible along with a balance of usability. There are many standards for Password Age, Password Complexity, Length Requirements, Password History, Lockout Thresholds and Duration, Kerberos Ticket Settings, Logon Restrictions and many more items. These policies are normally defined at the root of the domain for all users and accounts and there may be other policies for privileged accounts and key employees to ensure they have a more secure standard.
-
-##### Account Policy Policy Links
-
-[https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/account-policies](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/account-policies)
-
-##### Domain Password Requirements
-
-[https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements)
-
-##### Office 365 Password Policies (MFA Required)
-
-[https://docs.microsoft.com/en-us/microsoft-365/admin/misc/password-policy-recommendations?view=o365-worldwide](https://docs.microsoft.com/en-us/microsoft-365/admin/misc/password-policy-recommendations?view=o365-worldwide)
-
-#### Define User Rights Assignments
-
-We recommend auditing your Default Domain Policies User Rights assignment. There are many settings that at default settings that are built for backwards compatibility and ease of use without any custom settings deployed. Just like the Windows policies it is important to know the oldest systems to ensure that these systems will still function. These options should also be tied to your custom privileged groups to ensure only specified users can join computers to the domain, access the system remotely, log into specified systems and more. It can be helpful to make AD groups per user right assignment so that they can be nested into privilege group to allow specific permissions to specific users. User Rights Assignment decisions should be made for the root of your domain along with the location of your desktops and servers.
-
-##### Microsoft User Rights Assignments Overview and Details
-
-[https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment)
-
-#### Define Security Options
-
-We recommend reviewing your Default Domain Policy to audit these Security Options. These options are central to the security of any domain. These settings control the behavior of the local machine with settings like renaming the guest and administrator accounts, permissions within the system from print driver install to SMB versions and many other settings. Each of these settings has a recommended setting beyond default but they will also be based on your oldest operating system you must support.
-
-Security Options Overview
-
-[https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/security-options](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/security-options)
-
-### High Security
-
-#### Use Privileged Workstations
-
-All administrative work should be done from dedicated machines and not from each administrator's workstation. This will allow more thorough logging from these systems which will allow better visibility to the changes made in your deployment. There are third-party Privileged Account Management systems that will help build this system out and audit and control access to these machines to with even screen recording and log correlation depending on the vendor chosen. We recommend if you cannot afford a PAM solution to work in phases to deploy your own system. We recommend deploying a highly available set of servers/desktops that only defined administrators can remote into, these should be on a dedicated VLAN with ingress and egress control available. If available, we highly recommend requiring multifactor authentication to log into these systems. Once these systems are deployed you will want to install all the administrative tools that are needed for the targeted administrators. We want to then ensure these systems have logs retained locally and forwarded to your SIEM to have log retention and visibility so alerts can eventually be setup. Then the final steps will be implementing access control lists to limit source administrator from sensitive systems from this VLAN and also another highly controlled VLAN that machines could be put on in an emergency virtually or physically in the event of a failure of these systems. The primary and secondary privileged account workstation (PAW) VLANs should be audited and alerts should be sent if any devices are added to all responsible team members. With this final phase we can only administer these systems from these PAWs so that normal users will not be able to even get to the management UIs for these systems on their typical client networks or from a VDA.
-
-##### Microsoft Overview of Privileged Account Workstations
-
-[https://docs.microsoft.com/en-us/security/compass/concept-azure-managed-workstation](https://docs.microsoft.com/en-us/security/compass/concept-azure-managed-workstation)
-
-#### Obfuscation
-
-When your deployment is attack and there is an initial foothold there are benefits of using obfuscation to slow the attacker down so that you are logging and alerting systems can hopefully catch them before the next pivot. Having a password manager or another system is highly recommended before starting any obfuscation to be able to track the association. This obfuscation can start with privileged accounts that are not the same name of the user in AD. Privileged account obfuscation can be using the same unique last name in most cases or other unique name combinations so they can still be audited. Service accounts can also be obfuscated by using different prefixes or using names of people also, just remember you want to be able to audit these accounts. Sensitive server names can also be obfuscated with test and development prefixes or names that do not correlate to the role. The most powerful obfuscation is user obfuscation where their first and last name are not used for the account name, which normally is a combination of characters and numbers. User obfuscation is the most disruptive, but it can also be rolled out to just new users and slowly phased into and this is usually one of the last steps of a security remediation plan.
-
-##### Local Groups
-
-[https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/appendix-h--securing-local-administrator-accounts-and-groups](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/appendix-h--securing-local-administrator-accounts-and-groups)
-
-##### Privileged Account Groups
-
-[https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/manage/component-updates/appendix-i--creating-management-accounts-for-protected-accounts-and-groups-in-active-directory](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/manage/component-updates/appendix-i--creating-management-accounts-for-protected-accounts-and-groups-in-active-directory)
-
-## Windows Features
-
-There are many security features that are built into Windows that we recommend evaluating for deployment. This list will only be able to highlight a fraction of the features, we will try to showcase the ones that provide the biggest security impact to Citrix Virtual Apps and Desktops deployments.
-
-### Local Administrator Password Solution (LAPS)
-
-In most deployments the administrator password is the same for all desktops and servers because it may have been defined in the "Default Domain Policy" only. In many cases there may not be a local admin password standard as the desktops or servers built by different people or images use a different password and there isn't a set standard. With LAPs deployed each machine under that policy will have a unique password that is then stored within active directory and protected by an ACL. Having dedicated privileged accounts with proper delegation between roles is key when deploying this solution to ensure only authorized users are able to view and use the password. This can be rolled out in phases based on your OU structure to ensure everything is working as expected. This is can reduce the risk of Pass-the-Hash (PtH) credential replay attacks.
-
-#### How to Change a Local Administrator Password with Group Policy
-
-[https://social.technet.microsoft.com/wiki/contents/articles/4683.how-to-change-a-local-administrator-password-with-group-policy.aspx](https://social.technet.microsoft.com/wiki/contents/articles/4683.how-to-change-a-local-administrator-password-with-group-policy.aspx)
-
-#### LAPs Tool Download
-
-[https://www.microsoft.com/en-us/download/details.aspx?id=46899](https://www.microsoft.com/en-us/download/details.aspx?id=46899)
-
 ### Windows Event Log Forwarding
 
 We recommend if you do not have a SIEM to configure Windows Event Log Forwarding as this solution is free with a license of Windows. The main requirement will be disk space and some Windows Event Collector servers depending on the number of events per second. We recommend enabling this on all Domain Controllers first as this information will be instrumental in any incident response investigations and also for troubleshooting. Tuning can be required based on the number of WEC servers for availability and stability and the number of events and disk space and I/O. These systems will only collect logs that are specified by Group Policies for Audit Policies and Advanced Audit Policies
@@ -640,10 +645,28 @@ We recommend if you do not have a SIEM to configure Windows Event Log Forwarding
 
 [https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/advanced-security-audit-policy-settings](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/advanced-security-audit-policy-settings)
 
-### Managed Service Accounts
+## Operations
 
-This is designed to provide applications like SQL and Exchange to have an automatic password management. It will also simplify Service Principal Names management for these accounts which can help mitigate Kerberoast attacks.
+Missing operating system patches are one of the most prolific finding in security audits. There are typically two reasons why patches are not done regularly, first there isn't a set schedule and time set aside each month for them and that there have been application compatibility issues in the past with patches. Prompt and consistent patching is critical to minimize the window of opportunity for attackers. Time to weaponization of new exploits is shorter than ever and it is a good idea to have not only well established process for regular patching, but also emergency patching procedures prepared and tested.
 
-[Managed Service Account Step-by-Step Guide](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10)?redirectedfrom=MSDN)
+### Minimum
 
-[Top 10](https://docs.microsoft.com/en-us/windows/security/threat-protection/overview-of-threat-mitigations-in-windows-10)
+#### OS and Application Patching Schedule
+
+Based on the Windows release cycle we can expect to update the operating system at least every month and at around 2 times a year a critical patch must be applied along with the OS will now need to be upgraded every 30-60 months depending on the version chosen. This means we should plan for at least 12 updates a year and have a process to deploy at least one other patch per day. With these anticipated updates for the operating system, it can be very helpful to provide application owners access to that same time window for testing and promotion of these changes. Working with your IT team to create a process and time will increase the security of your deployment. When defining your patching strategy, it is important to include not only your operating system, but also updates to applications and runtimes running on your servers.
+
+### Recommended
+
+#### Change Management
+
+Inconsistent defensive measures or misconfigurations are often creating window of opportunity for attacker without alerting the defender. This is especially dangerous when defender thinks servers are secured, but is not aware that defense mechanism is not active due to configuration mistake or not applied consistently.
+
+We recommend creating a process for implementing and promoting image updates that can lower the risk and impact if issues arise. Change management process can help you to identify potential compatibility, availability, usability or security issues before they can negatively impact your end users. At minimum, you should test all your changes in test environment before applying them to production. To minimize the risk of business disruptions, we recommend not only testing environment (often hosted in the its own, isolated test environment), but also user acceptance environment. This pre-production environment should reflect the real production environment as closely as possible. Staged rollout is preferrable and rollback plan should be available if rollout causes any disruptions.
+
+Automated image build process is critical when trying to minimize deviations between these environments. Change management is ineffective when it requires a lot of manual labor and this often leads to shortcuts. It's no surprise that human error is the most common cause of security incidents.
+
+Example:
+
+-  Published Application-EMR Image (90 Users, 30 Users Per Server, 4x VDAs, 1x Delivery Group with 3x Prod Machine Catalog, 1x PreProd Machine Catalog and one Test Delivery Group (Master Image) and one QA Delivery Group with a single VDA)
+-  Published Desktop-EMR Image (90 Users, 30 Users Per Server, 4x VDAs, 1x Delivery Group with 3x Prod Machine Catalog, 1x PreProd Machine Catalog and one Test Delivery Group (Master Image) and one QA Delivery Group with a single VDA)
+-  Remote PC Access SCCM Patches Systems 7 Days after Patch Tuesday over the weekend with follow up on Monday and Tuesday.
