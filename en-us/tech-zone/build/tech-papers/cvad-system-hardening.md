@@ -168,7 +168,7 @@ We want to also ensure that the version of software is the latest version if pos
 
 We then want to ensure that any necessary services are disabled from the operating system by using an OS optimizer. Most optimizations will help with the user density by disabling and configuring items that are not needed in a VDI deployment, but there are also security benefits by removing and configuring these same components. The highest percentage of density benefits comes from removing Windows Programs (UWP) and disabling scheduled tasks in Windows 10 operating systems. We recommend using Citrix Optimizer as it has been tuned to provide the most benefits with the least impact to the user's workflow in our experience. You can download this software here [https://support.citrix.com/article/CTX224676](https://support.citrix.com/article/CTX224676).
 
-## Privilege of Least Privilege
+## Principle of Least Privilege
 
 We recommend defining your IT roles and permissions for your VDI deployment along with your overall privileged accounts. The goal with any privilege delegation is to ensure administrators have the appropriate permissions needed to fulfill their assigned job roles. Depending on the products deployed you may have more or less groups based on your needs. These are just examples of some of the common delegation points. The recommended items below are done outside of the VDA OS hardening tasks itself. Without some of these core principals deployed your company will be at and increased risk.
 
@@ -213,6 +213,10 @@ Allows this user the rights to just view items within Citrix Director. This can 
 This may be needed just for Configuration Validations from other teams or Application Owners.
 
 ### Recommended
+
+#### Timeouts for privileged accounts
+
+TODO - add information about different timeouts. Administrators (and other highly privileged accounts) should not be allowed to have idle / disconnected sessions on servers
 
 #### Migrate away from the AD Default Privileged Groups
 
