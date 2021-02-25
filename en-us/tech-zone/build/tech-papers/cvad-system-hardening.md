@@ -109,6 +109,8 @@ This is one of those design requirements where reduction of images (or delivery 
 
 Another factor when thinking about separating workloads is identifying how much you can "trust" each of your applications. Application that uses vulnerable runtime and has't been updated in years should not be hosted on the same server as secure application with access to more sensitive data. Applications that can interpret code (macros) and applications with support for add-ons represent popular target and opportunity for attackers - for example Visual Basic for Applications (.vba) in Microsoft Office.
 
+TODO - another aspect for workload segmentation are user accounts! For example you shouldn't mix account with high-compromise potential (temporary workers) with high-privileged accounts (e.g. administrators)
+
 #### Isolate applications on the same server
 
 TODO
@@ -127,6 +129,8 @@ TODO MINIMUM - document sensitivity of backend requirements (to understand where
 ### Application Breakout
 
 TODO - Privilege Escalation - application jailbreak / escape, lolbins
+
+TODO - task manager, keyboard shortcuts, help features etc...
 
 ### Privilege Escalation
 
@@ -535,6 +539,10 @@ TODO Lolbins, powershell etc...
 ## Endpoint Protection
 
 Endpoint protection is paramount on any operating system. With the amount of malware consistently growing daily which puts any system without any endpoint protection from any vendor at an increased risk level. There are many vendors in this space and now with the creation of the Endpoint detection and response systems there are even more choices with more traditional systems and more EDR based systems.
+
+TODO App protection policies
+
+TODO SmartAccess / SmartControl contextual access
 
 ### Minimum
 
