@@ -142,7 +142,7 @@ TODO - lateral movement - Bloodhound / pass-the-hash attacks
 
 TODO - hijacking other high-privilege account
 
-### Local Administrator Password Solution (LAPS)
+#### Local Administrator Password Solution (LAPS)
 
 In most deployments the administrator password is the same for all desktops and servers because it may have been defined in the "Default Domain Policy" only. In many cases there may not be a local admin password standard as the desktops or servers built by different people or images use a different password and there isn't a set standard. With LAPs deployed each machine under that policy will have a unique password that is then stored within active directory and protected by an ACL. Having dedicated privileged accounts with proper delegation between roles is key when deploying this solution to ensure only authorized users are able to view and use the password. This can be rolled out in phases based on your OU structure to ensure everything is working as expected. This is can reduce the risk of Pass-the-Hash (PtH) credential replay attacks.
 
