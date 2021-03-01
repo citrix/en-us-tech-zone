@@ -30,7 +30,7 @@ Citrix has worked with the vendors of the following unified communications solut
 -  [HDX RealTime Optimization Pack for Skype for Business](/en-us/hdx-optimization/current-release.html)
 -  [Cisco Jabber Softphone for VDI](https://citrixready.citrix.com/cisco-systems-inc/cisco-jabber-vdi.html)
 -  [Avaya Equinox VDI](https://support.avaya.com/products/P1706/avaya-equinox-vdi)
--  [Zoom Meetings optimization](https://citrixready.citrix.com/zoom-video-communications/zoom-meetings.html)
+-  [Zoom Meetings optimization](https://citrixready.citrix.com/zoom-video-communications/zoom-meetings-for-vdi.html)
 
 The preceding solutions ensure the best possible user experience and server scalability when used with supported Citrix versions and endpoint client devices. When the requirements are not met (such as connecting from an unsupported platform or client device) or using a different unified communications solution, a generic fallback approach can be used. This provides optimization of audio and video for sessions. We discuss this approach later in the document.
 
