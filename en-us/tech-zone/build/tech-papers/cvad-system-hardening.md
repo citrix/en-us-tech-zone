@@ -378,15 +378,15 @@ TODO
 
 TODO Lolbins, powershell etc...
 
-## Antimalware
+### Antimalware
 
 Endpoint protection is paramount on any operating system. With the amount of malware consistently growing daily which puts any system without any endpoint protection from any vendor at an increased risk level. There are many vendors in this space and now with the creation of the Endpoint detection and response systems there are even more choices with more traditional systems and more EDR based systems.
 
-### Minimum
+#### Minimum
 
 Deploy a solution on all VDAs along with any Citrix Infrastructure Servers and to all other systems if possible. It is also recommended to ensure it is the latest client paired for your operating system build. Ensure that the exclusions and best practices are applied from this article below. [https://docs.citrix.com/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html](https://docs.citrix.com/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html)
 
-### High Security
+#### High Security
 
 We recommend having a EDR based solution deployed if possible, to gain some of the features that most EDRs have. Most EDR solutions will look for known malicious files and processes but may also look for unusual data movement on the network and locally over even USB.
 
