@@ -75,10 +75,11 @@ The [Cloud Connector Connectivity Check Utility](https://support.citrix.com/arti
 
 If you are an existing Citrix Cloud customer, skip to the next section: [Obtain Citrix Virtual Apps and Desktops Trial](#obtain-a-citrix-virtual-apps-and-desktops-trial-account). Ensure that you have an active Citrix Cloud account. If your account has expired, contact your account manager to enable it.
 
-1.  Go to the [Citrix Cloud](https://citrix.cloud.com).
-2.  If you are new to Citrix Cloud click **Sign up and try it free** in the bottom left.
+1.  Go to the [Onboarding Citrix Cloud](https://onboarding.cloud.com).
+2.  If you are an existing Citrix customer or have a Citrix.com or My Citrix account, select  **Use a Citrix.com or My Citrix Account**.
 [![Citrix Virtual Apps and Desktops Create Cloud Account](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc1.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc1.png)
-3.  **Enter your business details** and Check the **“I’ve read, understand and agree to the Terms of Service”** check box, if you agree. Click **Continue**.
+Enter your username and password (also known as your web login) or the email address and password associated with your Citrix.com account.
+3.  If you are new to Citrix and Citrix Cloud **Enter your business details**. Click **Continue**.
 [![Citrix Virtual Apps and Desktops Enter Business Details](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc2.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc2.png)
 4.  **Select an appropriate region** to host your Citrix Cloud deployment. Click **Continue**
 [![Citrix Virtual Apps and Desktops Select Region](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc3.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc3.png)
