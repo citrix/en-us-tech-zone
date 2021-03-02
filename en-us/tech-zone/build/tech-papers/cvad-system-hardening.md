@@ -6,42 +6,43 @@ description: Copy & paste description from TOC here
 ---
 # Citrix Virtual Apps and Desktops VDA Hardening Guide
 
-When deploying any operating system, the settings are always targeted for the most compatible settings to ensure the device works along with it is the most backwards compatibility. The Windows operating system is no different, even the latest Windows releases have settings to allow it to work with releases from 20+ years ago along with very few restrictions of what can be done within the operating system. Windows does have its built-in Firewall, antivirus and auto-update settings that will provide some protection, but a user can launch anything they have access to and by default they have access to almost everything besides what is protected by local administrative access.
+When deploying any operating system, the settings are always targeted for the most compatible settings to ensure the device works along with it is the most backwards compatibility. The Windows operating system is no different, even the latest Windows releases have default settings to work with releases from 20+ years ago with few restrictions of what can be done within the operating system. Windows does have its built-in firewall, antivirus and auto-update features that will provide some protection, but a user can launch anything they have access to and by default they have access to almost everything besides what is protected by local administrative rights.
 
-In the following sections we will cover the recommended security hardening areas from how to planning to get started, how to configure some recommended policies, control privileged access and even configure some security based windows features. Most of these sections will be broken into these three sections **Minimum**, **Recommended** and **High Security**. The minimum recommendations are just that a starting point at default or just beyond default settings that  provide some protections, but also provide the most application compatibility and usability. The recommended settings will start to secure the system further that will be able to start preventing some common attack methods while allowing the most common application compatibility and usability requirements. The high security recommendations will provide the most secure deployment options with the most restrictive usability and the most targeted application compatibility also.
+In the following sections we will cover the recommended security hardening areas from how to planning to get started, how to configure some recommended policies, control privileged access and even configure some security based windows features. Most of these sections include recommendations organized into **Minimum**, **Recommended** and **High Security** group. The minimum recommendations are just that a starting point at default or just beyond default settings that  provide some protections, but also provide the most application compatibility and usability. The recommended settings will start to secure the system further that will be able to start preventing some common attack methods while allowing the most common application compatibility and usability requirements. The high security recommendations will provide the most secure deployment, however can potentially increase complexity or impact usability or compatibility. These settings should be deployed in environments where security is top priority.
 
-Security is a continous process - recommendations should be reviewed on a regular basis and security hardening should not be considered a one-off task. All these settings should be deployed in a staging environment and validated by your IT team and then scheduled and promoted to your test users before finally being promoted into production. With each level of recommendations, the risk of causing a useability or application compatibility issue will increase and should require further testing and tuning. Increased security can also impact user experience and productivity - it is important to find the right balance and understand use case requirements.
+Most of our recommendations in this guide are identical to securing more traditional desktop deployments, however virtualized desktops provide you with additional security benefits. Policies are more granular (for example you can disable copy & paste functionality), single image management with centralized controls provide you much better control in recovery and overall you have more flexibility in securing your data.
 
-TODO - Note about security as a continuous process, recommend red/blue team exercises and pen testing by external company
+Security is a continous process - recommendations should be reviewed on a regular basis and security hardening should not be considered a one-off task. Regular red / blue team exercises and penetration testing by external company is proven way to keep your security up to date. We recommend to review this guide and recommendations with your security team (experts on both security and your specific environment) - you can learn more about processes, security tools and controls that are available for your environment. At the same time, your security team can learn more about virtualized desktops and new security controls they can use when protecting data. With each level of recommendations, the risk of causing a useability or application compatibility issue will increase and can require further testing and tuning.
 
-TODO Disclaimer from legal
+TODO MZ - Disclaimer from legal
 
-## Anatomy of Attack
+## Anatomy of Attacks
 
-TODO - cover stages, from establishing a session, to escape from application, privilege escalation to lateral movement
-TODO - Establish a session, escape from app, escalate privileges, lateral movement
+TODO PC - Goal of this section is to explain to security team (NOT Citrix team) how are virtualized desktops / applications different than regular desktops and how typical attack looks like. Explain all stages, from establishing a session, to escape from application, privilege escalation to lateral movement. Also, focus on added benefits of virtualized desktops. Explain that only mouse/keyboard/screen are transferred, that most deployments are using single image management etc, flexible policies are available etc... IMPORTANT - target audience for this section is NOT typical Citrix administrator, it's typical security engineer.
 
 ## Planning
 
-Planning is the one of the most crucial steps before starting to harden your virtual delivery agent (VDA) operating system. These items below will apply to all three levels of recommendations (Minimum, Recommended and High Security) as planning is foundational to any successful and secure deployment.
+Planning is the one of the most crucial steps before starting to harden your Virtual Delivery Agent (VDA) operating system. Recommendations below apply to all three levels of recommendations (Minimum, Recommended and High Security) as planning is foundational to any successful and secure deployment. During planning, your goal is to visualize and understand security "score" of each of your applications, images and running virtual machines.
 
 ### What will be published?
 
-There are three main options in Citrix to deliver resources with published applications (single application), published desktops (Virtual Desktop) and Remote PC Access (secure connection to an existing machine). With each of these publishing methods we recommend applying the same policies to each of these systems since they will be accessed remotely.
+There are three main options in Citrix to deliver resources with published applications (single application), published desktops (Virtual desktop) and Remote PC Access (secure connection to an existing machine). With each of these publishing methods we recommend applying the same policies to each of these systems since they are accessed remotely.
 
 #### Minimum, Recommended and High Security
 
-We recommend creating a list of all resources that will need to be published and therefore installed into the VDA to create a usable system for your users. This will help you also collect information below that will be helpful for further hardening of the system too.
+We recommend creating a list of all resources that will need to be published and therefore installed into the VDA to create a usable system for your users. This will help you also collect information below that will be helpful for further hardening of the system too. This exercise is often combined with user segmentation (defining your end users as task workers / power users and defining their requirements).
 
 Example:
 
--  Published Application EMR
--  Published Desktop EMR + Microsoft Office
--  Remote PC Access Accounting Application
+-  Published application EMR
+-  Published desktop EMR + Microsoft Office
+-  Remote PC Access for Home Office users
 
 ### Software Requirements
 
-Each operating system will have generic security recommendations, but they will also have specific recommendations based on specific features that are only in those specific versions. This is especially important when comparing different builds of Windows 10 - it is important to review all available security features and improvements and have good strategy for using current releases. The version of the software deployed in any operating system will also affect the recommend deployment and security settings that should be deployed.
+Each operating system have generic security features, but can also have unique security features that are available only in specific versions This is especially important when comparing different builds of Windows 10 - review all available security features and improvements and have good strategy for using current releases. The requirements and version of the software deployed in any operating system also affects the recommend deployment and security settings that can be deployed.
+
+TODO link to workload segmentation
 
 #### Minimum, Recommended and High Security
 
@@ -58,7 +59,9 @@ Example:
 
 ### User Requirements
 
-These will encompass what the user needs outside of the application and within the actual Citrix remote session. Many recommended settings could impact the usability of the system and the applications that are required within the session. This level of planning will help with the sections below as it will determine what settings can be configured based on the possible impact to the user workflow. We want to ensure that these items are documented so when there is an audit, or a new deployment is needed the user requirements are documented.
+User requirements focuses what the user needs outside of the application and within the actual Citrix remote session. Some of recommended security settings can impact the usability of the system and the applications that are required within the session. Do your users need to print from application? Do they require access to endpoint peripherals? Do they require access to local disks? Do they need full desktops, or only one published application? Do we need to remember their personalization between sessions? These are few examples of questions to ask.
+
+This level of planning will help with the sections below as it will determine what settings can be configured based on the possible impact to the user workflow. We want to ensure that these items are documented so when there is an audit, or a new deployment is needed the user requirements are documented.
 
 #### Minimum, Recommended and High Security
 
@@ -82,9 +85,7 @@ Depending on what compliance bodies your business or application can drastically
 
 It is important to remember that compliance does not equal security. Compliance usually specifies minimum required level of security and compliance requirements are often based on older "trust, but verify" methodology. Consider compliance requirements as a minimum (not recommended) security level.
 
-You can find more information about Citrix and compliance in [Citrix Trust Center](https://www.citrix.com/about/trust-center/privacy-compliance/).
-
-#### Common Compliance Bodies
+Following are few common compliance regulations and certifications
 
 -  NIST (National Institute of Standards and Technology)
 -  CIS Controls (Center for Internet Security Controls)
@@ -104,15 +105,45 @@ You can find more information about Citrix and compliance in [Citrix Trust Cente
 -  COPPA (Children's Online Privacy Protection Rule)
 -  NERC CIP Standards (NERC Critical Infrastructure Protection Standards
 
+You can find more information about Citrix and compliance in [Citrix Trust Center](https://www.citrix.com/about/trust-center/privacy-compliance/).
+
 #### Minimum, Recommended and High Security
 
 We recommend following the guidelines from each compliance body at a minimum, but if possible, depending on those requirements we recommend evaluating other common frameworks from Microsoft, NIST and even third parties like CIS and HyTrust for very specific recommendations for Domains, Desktops, Servers and more. These frameworks have many options to make the deployment much more secure and reduce your attack surface along with helping accelerate your audits and reduce your findings.
 
 ## Application Control
 
-TODO - Application Breakout Privilege Escalation - application jailbreak / escape, lolbins
+Application control is a unique security benefit of published applications. In traditional desktop deployments, starting point for attacker (after obtaining user credentials) is usually full desktop (Explorer shell). This is different in typical Citrix deployments. With published applications, attacker can only control mouse, keyboard and his access is limited to visible user interface of the published application. First step for attacker is to break out from published application (also known as application escape or application jailbreak) and get access to shell (or more powerful tools like command prompt or PowerShell).
 
-TODO - task manager, keyboard shortcuts, help features etc...
+How hard it is to prevent application escape depends on specific application. For some applications (for example self-developed enterprise applications), it can be fairly easy to block an app escape attempt. For others (for example browsers or Microsoft Office), it is significantly harder to secure them. In this section, we will talk about few most common app escape techniques. Even for applications that are very hard to secure (for example Microsoft Office, especially if VBA support is required), implementing controls to prevent app breakout is benefitial, as it gives you an opportunity to regonize a compromised account by detecting failed attempts to break out.
+
+### Using default shortcuts
+
+TODO - task manager, run
+
+### Using filesystem prompt
+
+TODO - including printers
+
+### Using protocol handlers
+
+TODO - HTTP/FILE/HTTPS
+
+### Using Help subsystem
+
+TODO
+
+### TODO - Recommendations
+
+-  Block Task Manager
+-  Block keyboard shortcuts in ICA file
+-  Block Run dialog (also removes from Task Manager)
+-  Implement user behavior analytics to detect unexpected processes
+-  Block browser if not necessary
+-  Block Microsoft Office if not necessary
+-  Honey pot - for example PowerShell.exe or printer that acts as a trigger
+-  Monitor process hierarchy
+-  Block all custom coding functionality (macros, VBA)
 
 ## Reducing Attack Surface
 
