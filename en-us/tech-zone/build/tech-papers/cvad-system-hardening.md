@@ -131,19 +131,21 @@ TODO - HTTP/FILE/HTTPS
 
 ### Using Help subsystem
 
-TODO
+TODO - two parts, should recommend to disable .chm format (compiled HTML help) and also to remove (if possible) Help functionality (as they typically include HTTP links)
 
 ### TODO - Recommendations
 
 -  Block Task Manager
 -  Block keyboard shortcuts in ICA file
--  Block Run dialog (also removes from Task Manager)
--  Implement user behavior analytics to detect unexpected processes
--  Block browser if not necessary
--  Block Microsoft Office if not necessary
--  Honey pot - for example PowerShell.exe or printer that acts as a trigger
--  Monitor process hierarchy
+-  Block Run dialog (also removes `File -> Run new task` from Task Manager)
+-  Block/remove browser if not necessary
+-  Remove Microsoft Office if not necessary
+-  Block .chm format
+-  Disable Help functionality in application (if possible)
 -  Block all custom coding functionality (macros, VBA)
+-  Implement user behavior analytics to detect unexpected processes
+-  TODO MZ - Monitor process hierarchy
+-  Honey pot - for example PowerShell.exe or printer that acts as a trigger
 
 ## Reducing Attack Surface
 
