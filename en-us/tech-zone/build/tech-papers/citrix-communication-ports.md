@@ -47,26 +47,26 @@ Not all ports need to be open, depending on your deployment and requirements.
 
 ## Citrix ADM
 
-| Source                    | Destination                               | Type   | Port             | Details                                                                                                                                                       |
-| ------------------------- | ----------------------------------------- | ------ | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Citrix ADM                | Citrix ADC NSIP or Citrix SD-WAN instance | TCP    | 80, 443          | For NITRO communication                                                                                                                                       |
-|                           |                                           | TCP    | 22               | For SSH communication                                                                                                                                         |
-|                           |                                           | ICMP   | No reserved port | To detect network reachability between Citrix ADM and ADC instances, SD-WAN instances, or the secondary Citrix ADM server deployed in high availability mode. |
-|                           | Citrix ADM                                | TCP    | 22               | For synchronization between Citrix ADM servers deployed in high availability mode.                                                                            |
-|                           |                                           | TCP    | 5454             | Default port for communication, and database synchronization in between Citrix ADM nodes in high availability mode.                                           |
-|                           | Users                                     | TCP    | 25               | To send SMTP notifications from Citrix ADM to users.                                                                                                          |
-|                           | LDAP external authentication server       | TCP    | 389, 636         | Default port for authentication protocol. For communication between Citrix ADM and LDAP external authentication server.                                       |
-|                           | NTP Server                                | UDP    | 123              | Default NTP server port for synchronizing with multiple time sources.                                                                                         |
-|                           | RADIUS external authentication server     | RADIUS | 1812             | Default port for authentication protocol. For communication between Citrix ADM and RADIUS external authentication server.                                     |
-|                           | TACACS external authentication server     | TACACS | 49               | Default port for authentication protocol. For communication between Citrix ADM and TACACS external authentication server.                                     |
-| Citrix ADM license server | Citrix ADC CPX instance                   | TCP    | 27000            | License port for communication between Citrix ADM license server and CPX instance.                                                                            |
-|                           |                                           | TCP    | 7279             | Citrix vendor daemon port.                                                                                                                                    |
-| Citrix ADC                | Citrix ADM                                | TCP    | 5563             | To receive ADC metrics (counters), system events, and Audit Log messages from Citrix ADC instance to Citrix ADM                                               |
-|                           |                                           | TCP    | 5557, 5558       | For logstream communication (for Security Insight, Web Insight, and HDX Insight) fron Citrix ADC                                                              |
-|                           |                                           | UDP    | 162              | To receive SNMP events from Citrix ADC                                                                                                                        |
-|                           |                                           | UDP    | 514              | To receive syslog messages from Citrix ADC or Citrix SD-WAN instance                                                                                          |
-|                           |                                           | UDP    | 4739             | To receive ADC analytics log data using IPFIX protocol                                                                                                        |
-| Citrix ADM                | Citrix ADM Agent                          | TCP    | 443, 8443, 7443  | Port for communication between Citrix ADC agent and Citrix ADM                                                                                                |
+| Source                  | Destination                               | Type   | Port             | Details                                                                                                                                                       |
+| ----------------------- | ----------------------------------------- | ------ | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Citrix ADM              | Citrix ADC NSIP or Citrix SD-WAN instance | TCP    | 80, 443          | For NITRO communication                                                                                                                                       |
+|                         |                                           | TCP    | 22               | For SSH communication                                                                                                                                         |
+|                         |                                           | ICMP   | No reserved port | To detect network reachability between Citrix ADM and ADC instances, SD-WAN instances, or the secondary Citrix ADM server deployed in high availability mode. |
+|                         | Citrix ADM                                | TCP    | 22               | For synchronization between Citrix ADM servers deployed in high availability mode.                                                                            |
+|                         |                                           | TCP    | 5454             | Default port for communication, and database synchronization in between Citrix ADM nodes in high availability mode.                                           |
+|                         | Users                                     | TCP    | 25               | To send SMTP notifications from Citrix ADM to users.                                                                                                          |
+|                         | LDAP external authentication server       | TCP    | 389, 636         | Default port for authentication protocol. For communication between Citrix ADM and LDAP external authentication server.                                       |
+|                         | NTP Server                                | UDP    | 123              | Default NTP server port for synchronizing with multiple time sources.                                                                                         |
+|                         | RADIUS external authentication server     | RADIUS | 1812             | Default port for authentication protocol. For communication between Citrix ADM and RADIUS external authentication server.                                     |
+|                         | TACACS external authentication server     | TACACS | 49               | Default port for authentication protocol. For communication between Citrix ADM and TACACS external authentication server.                                     |
+| Citrix ADC CPX instance | Citrix ADM license server                 | TCP    | 27000            | License port for communication between Citrix ADM license server and CPX instance.                                                                            |
+|                         |                                           | TCP    | 7279             | Citrix vendor daemon port.                                                                                                                                    |
+| Citrix ADC              | Citrix ADM                                | TCP    | 5563             | To receive ADC metrics (counters), system events, and Audit Log messages from Citrix ADC instance to Citrix ADM                                               |
+|                         |                                           | TCP    | 5557, 5558       | For logstream communication (for Security Insight, Web Insight, and HDX Insight) fron Citrix ADC                                                              |
+|                         |                                           | UDP    | 162              | To receive SNMP events from Citrix ADC                                                                                                                        |
+|                         |                                           | UDP    | 514              | To receive syslog messages from Citrix ADC or Citrix SD-WAN instance                                                                                          |
+|                         |                                           | UDP    | 4739             | To receive ADC analytics log data using IPFIX protocol                                                                                                        |
+| Citrix ADM              | Citrix ADM Agent                          | TCP    | 443, 8443, 7443  | Port for communication between Citrix ADC agent and Citrix ADM                                                                                                |
 
 ## Citrix Cloud
 
@@ -110,7 +110,7 @@ By default, the Gateway Service will proxy HDX connections via the Citrix Cloud 
 
   >**Note:**
   >
-  >If using EDT in Microsoft Azure, UDP must be defined on the Network Security Group (NSG) protecting the VDA
+  >If using EDT in Microsoft Azure, UDP must be defined on the Azure Network Security Group (NSG) protecting the VDA
 
 Read more about Rendezvous Protocol and HDX Enlightened Data Transport Protocol (EDT) requirements [here](/en-us/citrix-gateway-service/hdx-edt-support-for-gateway-service.html).
 
