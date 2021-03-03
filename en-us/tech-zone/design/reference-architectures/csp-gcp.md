@@ -31,8 +31,8 @@ While several services will provide similar functionality across the different p
 *  **Shared VPC:** A shared VPC can be spanned across multiple projects, eliminating the requirement to create separate VPCs for each project, or the utilization of VPC peering.
 *  **GCP Organzation:** An organizations represents the root node in the GCP resource hierarchy. In order to create an organization, GCP Cloud Identity or Google Workspace (formerly G-Suite) will be required. An organization is not required for this architecture, but it is highly recommended to deploy one for your production environments in order to properly organize and manage your resources.
 *  **Folders:** A folder is utilized to organize resources within GCP, they can contain more folders, or projects. For example, you can create folders to separate projects by department, environment type, etc. A folder is not required for this implementation, but in general terms, they are recommended for proper resource organization.
-*  **Project:** A project provides an abstract grouping of resources within GCP, all resources in this deployment need to belong to a GCP project. Under normal circumstances, VM instances from one project cannot communicate with VM instances in another project, unless VPC peering or Shared VPC are utilized. 
-*  **Billing Account:** Billing accounts represent the payment profile to be utilized to pay for GCP consumption. A billing account can be linked to multiple projects, but a project can only be linked to a single billing account. 
+*  **Project:** A project provides an abstract grouping of resources within GCP, all resources in this deployment need to belong to a GCP project. Under normal circumstances, VM instances from one project cannot communicate with VM instances in another project, unless VPC peering or Shared VPC are utilized.
+*  **Billing Account:** Billing accounts represent the payment profile to be utilized to pay for GCP consumption. A billing account can be linked to multiple projects, but a project can only be linked to a single billing account.
 *  **IAM:** GCP’s Identity and Access Management platform. It is utilized to grant user permissions to perform actions on GCP resources. This platform is also utilized to deploy and manage Service Accounts. We will utilize IAM to configure various permissions.
 *  **Service Account:** A service account is a GCP account that is not connected to an actual user, but instead represents a VM instance or an application. Service accounts can be granted permissions to perform different actions on the various GCP APIs. A service account will be created to connect Citrix Cloud to GCP and enable Machine Creation Services.
 *  **GCE:** Google Compute Engine is the GCP platform in which you deploy compute resources, including VM instances, disks, instance templates, instance groups, etc.
@@ -92,7 +92,7 @@ Additionally, we’re also assuming that you understand the Citrix Cloud multi-t
 
 The Managed Service for Active Directory for CSPs design pattern focuses on the combination of the different architecture models available to Citrix Service providers in conjunction with GCP managed resource locations, while leveraging the Managed Service for Active Directory service.
 
-Partners deploying their managed DaaS offerings with Citrix Cloud can leverage the exclusive customer management and multi-tenancy features available to CSPs. These multi-tenancy features allow CSPs to locate different customers on a shared Citrix Cloud control plane / tenant or provide them with their dedicated control plane / tenant. 
+Partners deploying their managed DaaS offerings with Citrix Cloud can leverage the exclusive customer management and multi-tenancy features available to CSPs. These multi-tenancy features allow CSPs to locate different customers on a shared Citrix Cloud control plane / tenant or provide them with their dedicated control plane / tenant.
 
 Citrix Cloud can be deployed in conjunction with shared or dedicated resource locations on GCP; different metrics can help a CSP determine which model better aligns to the specific requirements of each customer, and they can be based on end customer size, security and compliance requirements, or more.
 
@@ -116,7 +116,7 @@ Additionally, no resources should be deployed on the host project (**7**), which
 
 A shared Citrix Cloud tenant (**8**) will be provisioned to deploy and manage the resources from multiple customers. These customers will share the Citrix Virtual Apps and Desktop Service components, like the Delivery Controllers, Databases, Director, Studio, Licensing, and APIs.
 
-A dedicated [Citrix Workspace Experience](/en-us/citrix-workspace/experience.html) (**9**) will be deployed for each customer, this will allow for the CSP to customize the look of the workspace, along with a dedicated access URL for each customer. Each customer will leverage their own Citrix Gateway Service for authentication and HDX connections to their resources. 
+A dedicated [Citrix Workspace Experience](/en-us/citrix-workspace/experience.html) (**9**) will be deployed for each customer, this will allow for the CSP to customize the look of the workspace, along with a dedicated access URL for each customer. Each customer will leverage their own Citrix Gateway Service for authentication and HDX connections to their resources.
 
 A dedicated Citrix Cloud tenant (**10**) can be provisioned for the bigger, most complex customers. This dedicated environment will provide a completely isolated Citrix Virtual Apps and Desktop service, along with all of its components, and a dedicated Citrix Workspace Experience.
 
