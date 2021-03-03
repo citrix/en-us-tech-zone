@@ -72,8 +72,6 @@ Not all ports need to be open, depending on your deployment and requirements.
 
 The only Citrix component needed to serve as a channel for communication between Citrix Cloud and your resource locations is Citrix Cloud Connector. All connections are established from the Cloud Connector to the cloud using the standard HTTPS port (443) and the TCP protocol. No incoming connections are accepted.
 
-Host management and Machine Creation Management capabilities of Citrix Cloud also require TCP 9350–9354 opened for communications to the Citrix-managed control plane.
-
 Cloud Connectors must be able to connect to Digicert for certificate revocation checks.
 
 | Source           | Destination                                                              | Type  | Port | Details                                     |
