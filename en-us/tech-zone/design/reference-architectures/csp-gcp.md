@@ -12,7 +12,7 @@ description: Citrix Virtual Apps and Desktops Service Google Cloud Platform (GCP
 
 The purpose of this document is to provide design and architectural guidance for Citrix Service Providers (CSPs) looking to use the Google Cloud Platform (GCP) as a Citrix Virtual Apps and Desktops Service resource location with the **Managed Service for Microsoft Active Directory**.
 
-This document does not intend to provide step-by-step guidance on how todeploy the Citrix Virtual Apps and Desktops service for CSPs. It assumes understanding of the [CSP Virtual Apps and Desktops Reference Architecture](/en-us/tech-zone/design/reference-architectures/csp-cvads.html), which provides in-depth design and deployment considerations for a Citrix Virtual Apps and Desktops service environment for CSPs.
+This document does not intend to provide step-by-step guidance on how to deploy the Citrix Virtual Apps and Desktops service for CSPs. It assumes understanding of the [CSP Virtual Apps and Desktops Reference Architecture](/en-us/tech-zone/design/reference-architectures/csp-cvads.html), which provides in-depth design and deployment considerations for a Citrix Virtual Apps and Desktops service environment for CSPs.
 
 On the other hand, for detailed guidance on design considerations to architect the Citrix Virtual Apps and Desktops Service on GCP, refer to the [Citrix Virtualization on Google Cloud](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) reference architecture.
 
