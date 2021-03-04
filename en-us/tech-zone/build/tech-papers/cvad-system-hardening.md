@@ -28,56 +28,17 @@ Planning is the one of the most crucial steps before starting to harden your Vir
 
 There are three main options in Citrix to deliver resources with published applications (single application), published desktops (Virtual desktop) and Remote PC Access (secure connection to an existing machine). With each of these publishing methods we recommend applying the same policies to each of these systems since they are accessed remotely.
 
-#### Minimum, Recommended and High Security
-
-We recommend creating a list of all resources that will need to be published and therefore installed into the VDA to create a usable system for your users. This will help you also collect information below that will be helpful for further hardening of the system too. This exercise is often combined with user segmentation (defining your end users as task workers / power users and defining their requirements).
-
-Example:
-
--  Published application EMR
--  Published desktop EMR + Microsoft Office
--  Remote PC Access for Home Office users
-
 ### Software Requirements
 
 Each operating system have generic security features, but can also have unique security features that are available only in specific versions This is especially important when comparing different builds of Windows 10 - review all available security features and improvements and have good strategy for using current releases. The requirements and version of the software deployed in any operating system also affects the recommend deployment and security settings that can be deployed.
 
 TODO link to workload segmentation
 
-#### Minimum, Recommended and High Security
-
-We recommend creating a list of each operating system and build number for each published resource. Typically, there will be some overlap as the same VDA image may be used for multiple use cases along with even multiple publishing methods too. This will help you also collect information below that will be helpful for further hardening of the system too.
-
-Is the software supported by the vendor? This will dictate if there is support from the vendor if there is an issue along with if updates and security updates are being released. There are some instances where legacy software has to be used and the risk of using it has already been accepted by the business.
-
-Is the software supported on your targeted operating system? This is another level of support that will also dictate what version of operating system you must use along with if you will be running a supported operating system too. Having an unsupported operating system is one of the riskiest items a deployment can have. Without having support from the operating system vendor, you may not have access to support if there is an issue, but most importantly you may not have access to security patches which can leave the system vulnerable to attacks. This could allow an attacker to more easily compromise the system and without support of the operating system the vendor will not be accountable. This can also impact the effectiveness of Cyber Security Insurance and other legal implications if an attack happens due to this weakness.
-
-Example:
-
--  EMR Supported on Windows Server 2019 1809 to Windows 10 1909 or newer with known issues with 20H2 at this time. Requires Office 2016 or Newer. Requires Internet Explorer.
--  Office Supported on Windows Server 2019 1809 to Windows 10 1909 or newer with no known issues with the latest version of Windows 10 or Windows Server
-
 ### User Requirements
 
 User requirements focuses what the user needs outside of the application and within the actual Citrix remote session. Some of recommended security settings can impact the usability of the system and the applications that are required within the session. Do your users need to print from application? Do they require access to endpoint peripherals? Do they require access to local disks? Do they need full desktops, or only one published application? Do we need to remember their personalization between sessions? These are few examples of questions to ask.
 
 This level of planning will help with the sections below as it will determine what settings can be configured based on the possible impact to the user workflow. We want to ensure that these items are documented so when there is an audit, or a new deployment is needed the user requirements are documented.
-
-#### Minimum, Recommended and High Security
-
-What does the user need to do within this application that must be allowed within the operating system? This will include core windows systems\applications like Windows Explorer to include mapped drives, control panel applets, start menu and desktop shortcuts and many others.
-
-Does the application require administrative rights? There are some applications that require access to core operating system files or registry items. We recommend auditing these requirements from the vendor or from debugging using tools like Microsoft Process Monitor [https://docs.microsoft.com/en-us/sysinternals/downloads/procmon](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) to see the programs, .DLLs and registry items that are being accessed and what is getting "Access Denied" so that permissions can be adjusted. It is recommended to either use the same delivery group entitlement group or create AD groups to give access to these specific items.
-
-Does the application open other applications? Many applications will require other applications to be launched for the workflow of the application to be useable. Some will require core operating system items and other will just open other installed applications. Documenting these dependencies will also help understand the requirements and possible support implications of those application relationships.
-
-What session channels will they need access to? The most common requirements are having access to Print, Copy\Paste and access to other devices within the session. Each one of these session items have corresponding policies within Citrix and also some OS policies too.
-
-Example:
-
--  Published Application-EMR Image Application Requirements: Microsoft Excel, Internet Explorer) OS Requirements File Explorer for File Shares
--  Published Desktop-EMR Image Same as above
--  Remote PC Access Application Requirements: Microsoft Office, Web Browser (No Specific Required) OS Requirements File Explorer for File Shares
 
 ### Compliance Requirements
 
@@ -107,31 +68,64 @@ Following are few common compliance regulations and certifications
 
 You can find more information about Citrix and compliance in [Citrix Trust Center](https://www.citrix.com/about/trust-center/privacy-compliance/).
 
-#### Minimum, Recommended and High Security
+#### TODO - Recommendations
+
+We recommend creating a list of all resources that will need to be published and therefore installed into the VDA to create a usable system for your users. This will help you also collect information below that will be helpful for further hardening of the system too. This exercise is often combined with user segmentation (defining your end users as task workers / power users and defining their requirements).
+
+Example:
+
+-  Published application EMR
+-  Published desktop EMR + Microsoft Office
+-  Remote PC Access for Home Office users
+
+We recommend creating a list of each operating system and build number for each published resource. Typically, there will be some overlap as the same VDA image may be used for multiple use cases along with even multiple publishing methods too. This will help you also collect information below that will be helpful for further hardening of the system too.
+
+Is the software supported by the vendor? This will dictate if there is support from the vendor if there is an issue along with if updates and security updates are being released. There are some instances where legacy software has to be used and the risk of using it has already been accepted by the business.
+
+Is the software supported on your targeted operating system? This is another level of support that will also dictate what version of operating system you must use along with if you will be running a supported operating system too. Having an unsupported operating system is one of the riskiest items a deployment can have. Without having support from the operating system vendor, you may not have access to support if there is an issue, but most importantly you may not have access to security patches which can leave the system vulnerable to attacks. This could allow an attacker to more easily compromise the system and without support of the operating system the vendor will not be accountable. This can also impact the effectiveness of Cyber Security Insurance and other legal implications if an attack happens due to this weakness.
+
+Example:
+
+-  EMR Supported on Windows Server 2019 1809 to Windows 10 1909 or newer with known issues with 20H2 at this time. Requires Office 2016 or Newer. Requires Internet Explorer.
+-  Office Supported on Windows Server 2019 1809 to Windows 10 1909 or newer with no known issues with the latest version of Windows 10 or Windows Server
+
+What does the user need to do within this application that must be allowed within the operating system? This will include core windows systems\applications like Windows Explorer to include mapped drives, control panel applets, start menu and desktop shortcuts and many others.
+
+Does the application require administrative rights? There are some applications that require access to core operating system files or registry items. We recommend auditing these requirements from the vendor or from debugging using tools like Microsoft Process Monitor [https://docs.microsoft.com/en-us/sysinternals/downloads/procmon](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) to see the programs, .DLLs and registry items that are being accessed and what is getting "Access Denied" so that permissions can be adjusted. It is recommended to either use the same delivery group entitlement group or create AD groups to give access to these specific items.
+
+Does the application open other applications? Many applications will require other applications to be launched for the workflow of the application to be useable. Some will require core operating system items and other will just open other installed applications. Documenting these dependencies will also help understand the requirements and possible support implications of those application relationships.
+
+What session channels will they need access to? The most common requirements are having access to Print, Copy\Paste and access to other devices within the session. Each one of these session items have corresponding policies within Citrix and also some OS policies too.
+
+Example:
+
+-  Published Application-EMR Image Application Requirements: Microsoft Excel, Internet Explorer) OS Requirements File Explorer for File Shares
+-  Published Desktop-EMR Image Same as above
+-  Remote PC Access Application Requirements: Microsoft Office, Web Browser (No Specific Required) OS Requirements File Explorer for File Shares
 
 We recommend following the guidelines from each compliance body at a minimum, but if possible, depending on those requirements we recommend evaluating other common frameworks from Microsoft, NIST and even third parties like CIS and HyTrust for very specific recommendations for Domains, Desktops, Servers and more. These frameworks have many options to make the deployment much more secure and reduce your attack surface along with helping accelerate your audits and reduce your findings.
 
 ## Application Control
 
-Application control is a unique security benefit of published applications. In traditional desktop deployments, starting point for attacker (after obtaining user credentials) is usually full desktop (Explorer shell). This is different in typical Citrix deployments. With published applications, attacker can only control mouse, keyboard and his access is limited to visible user interface of the published application. First step for attacker is to break out from published application (also known as application escape or application jailbreak) and get access to shell (or more powerful tools like command prompt or PowerShell).
+Application control is a unique security benefit of published applications. In traditional desktop deployments, starting point for an attacker (after obtaining user credentials) is usually a full desktop access (Explorer shell). This is different in a typical Citrix deployments. With published applications, attacker can only control mouse, keyboard and his access is limited to visible user interface of the published application - he does not have an access to underlying operating system or any other application installed on the same machine. First step for attacker is to escape from published application (also known as application breakout or application jailbreak) and get access to the shell or more powerful tools like command prompt or PowerShell.
 
 How hard it is to prevent application escape depends on specific application. For some applications (for example self-developed enterprise applications), it can be fairly easy to block an app escape attempt. For others (for example browsers or Microsoft Office), it is significantly harder to secure them. In this section, we will talk about few most common app escape techniques. Even for applications that are very hard to secure (for example Microsoft Office, especially if VBA support is required), implementing controls to prevent app breakout is benefitial, as it gives you an opportunity to regonize a compromised account by detecting failed attempts to break out.
 
 ### Using default shortcuts
 
-TODO - task manager, run
+In default deployment, app escape is very straightforward task. You just need to start Task Manager (`Ctrl + Shift + Esc` or `Ctrl + Alt + Del -> Task Manager`) and escape using `File -> Run new task`. You can prevent this basic (and universal) escape by disabling access to Task Manager and disabling access to `Run new task` menu item. TODO - add links to "Remove Run menu from Start Menu" and "Remove Task Manager"
+
+Another common approach is to disable access to `Ctrl + Alt + Del` combination. In virtual session, this can be achieved by blocking (default) hotkey `Ctrl + F``. You can read more about disabling hotkeys in [CTX140219](https://support.citrix.com/article/CTX140219) article.
 
 ### Using filesystem prompt
+
+Another common method how to perform an application escape is to try and abuse the open or save dialogs. Default dialogs used in Windows OS (`OpenFileDialog` and `SaveFileDialog`) not only allow you to browse through filesystem, but also provide access to default context menu from Explorer.
 
 TODO - including printers
 
 ### Using protocol handlers
 
-TODO - HTTP/FILE/HTTPS
-
-### Using Help subsystem
-
-TODO - two parts, should recommend to disable .chm format (compiled HTML help) and also to remove (if possible) Help functionality (as they typically include HTTP links)
+TODO - HTTP/FILE/HTTPS. Often used with Help or About. Recommend to disable .chm format (compiled HTML help) and also to remove (if possible) Help functionality (as they typically include HTTP links)
 
 ### TODO - Recommendations
 
