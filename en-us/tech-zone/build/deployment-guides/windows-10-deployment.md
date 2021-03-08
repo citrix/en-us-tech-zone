@@ -69,9 +69,9 @@ The following steps covered in this Guide
 
     > **Note**
     >
-    > For a full list of VDA install options see [Install VDA](/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html)
+    > For a full list of VDA install options see [Install VDA](/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html) or use [Citrix VDA Commandline Helper Tool](https://support.citrix.com/article/CTX234824).
 
-1.  Enter the **Fully Qualified Domain Name (FQDN) of each Cloud Connector** (at least two are recommended for tolerance)
+1.  Enter the **Fully Qualified Domain Name (FQDN) of each Cloud Connector** (at least two are recommended for tolerance). After initial registration, VDA retrieves a list of remaining controllers (read more about [VDA Registration - Auto-Update](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html#auto-update) functionality).
 
 1.  Select **Test Connection** & if successful select **Add**
 
@@ -91,11 +91,7 @@ The following steps covered in this Guide
 
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_win10-017.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_win10-017.png)
 
-## Citrix Optimizer
-
-> **Note**
->
-> For information on Citrix Optimizer see [Citrix Optimizer – What’s new](https://www.citrix.com/blogs/2020/04/09/citrix-optimizer-2-7-whats-new/)
+### Citrix Optimizer
 
 1.  Log in & download Citrix Optimizer from [Citrix Optimizer](https://support.citrix.com/article/CTX224676)
 
