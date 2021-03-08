@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Mayank Singh
 specialThanksTo: Wayne Liu
-description: Learn how Workspace Environment Management using intelligent resource management and Profile Management technologies delivers the best possible performance, desktop logon, and application response times for Citrix Virtual Apps and Desktops sessions, as well as enhances the security of the deployment.
+description: Learn how Workspace Environment Management uses intelligent resource management and Profile Management technologies to deliver the best possible performance, desktop logon, and application response times for Citrix Virtual Apps and Desktops sessions, as well as enhances the security of the deployment.
 ---
 # Workspace Environment Management
 
@@ -43,7 +43,7 @@ When the Citrix Cloud hosted **WEM service** is used, the control and database c
 
 **Cloud Connectors** – A Citrix Cloud Connector is the conduit for communication from entities in a resource location with the Citrix Cloud services. For resiliency we suggest that at least a pair of cloud connectors is installed in each resource location. The WEM service uses the Cloud Connectors to access the customer Active Directory and authenticate the WEM agents in the resource location.
 
-**WEM agent** - It interacts with the WEM services over HTTPS using the Citrix Cloud Messaging Service. The agents maintain a local cache of the settings to be resilient to network interruptions and service outages. As of writing of this article, a single service instance can support 100,000 WEM agents. Check [the limits page](https://docs.citrix.com/en-us/workspace-environment-management/service/limits.html) to get the current number of supported WEM agents per WEM service instance.
+**WEM agent** - It interacts with the WEM services over HTTPS using the Citrix Cloud Messaging Service. The agents maintain a local cache of the settings to be resilient to network interruptions and service outages. As of writing of this article, a single service instance can support 100,000 WEM agents. Check [the limits page](/en-us/workspace-environment-management/service/limits.html) to get the current number of supported WEM agents per WEM service instance.
 
 ### Migrating WEM on-premises to the WEM service
 
