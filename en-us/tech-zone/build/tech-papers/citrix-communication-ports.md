@@ -85,12 +85,14 @@ To find the list of addresses that are common to most Citrix Cloud services and 
 
 ### Citrix Cloud - Virtual Apps and Desktops Service
 
-| Source                             | Destination      | Type  | Port | Details                                                            |
-| ---------------------------------- | ---------------- | ----- | ---- | ------------------------------------------------------------------ |
-| VDA                                | Gateway Service  | TCP   | 443  | Rendezvous Protocol                                                |
-| Citrix Provisioning Server Console | Cloud Connectors | HTTPS | 443  | Provisioning Server integration with Citrix Cloud Studio           |
-| Citrix License Server              | Citrix Cloud     | HTTPS | 443  | Citrix License Server integration with Citrix Cloud                |
-| CVAD Remote Powershell SDK         | Citrix Cloud     | HTTPS | 443  | Any system running scripts based on the CVAD Remote Powershell SDK |
+| Source                             | Destination      | Type     | Port | Details                                                                                                                         |
+| ---------------------------------- | ---------------- | -------- | ---- | ------------------------------------------------------------------------------------------------------------------------------- |
+| VDA                                | Gateway Service  | TCP      | 443  | Rendezvous Protocol                                                                                                             |
+| Cloud Connectors                   | VDA              | TCP, UDP | 1494 | Access to applications and virtual desktops by ICA/HDX. EDT protocol requires 1494 to be open for UDP.                          |
+|                                    |                  | TCP, UDP | 2598 | Access to applications and virtual desktops by ICA/HDX with Session Reliability. EDT protocol requires 2598 to be open for UDP. |
+| Citrix Provisioning Server Console | Cloud Connectors | HTTPS    | 443  | Provisioning Server integration with Citrix Cloud Studio                                                                        |
+| Citrix License Server              | Citrix Cloud     | HTTPS    | 443  | Citrix License Server integration with Citrix Cloud                                                                             |
+| CVAD Remote Powershell SDK         | Citrix Cloud     | HTTPS    | 443  | Any system running scripts based on the CVAD Remote Powershell SDK                                                              |
 
  Read more about Citrix License Server integration [here](/en-us/citrix-cloud/citrix-cloud-management/citrix-cloud-on-premises-registration.html#connectivity-requirements).
  Read more about Citrix Provisioning Server integration [here](/en-us/provisioning/current-release/configure/cloud-connector.html#firewall-considerations).
