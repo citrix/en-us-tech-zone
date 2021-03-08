@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Mayank Singh
 specialThanksTo: Wayne Liu
-description: Learn how Workspace Environment Management using intelligent resource management and Profile Management technologies to deliver the best possible performance, desktop logon, and application response times for Citrix Virtual Apps and Desktops sessions, as well as enhances the security of the deployment.
+description: Learn how Workspace Environment Management using intelligent resource management and Profile Management technologies delivers the best possible performance, desktop logon, and application response times for Citrix Virtual Apps and Desktops sessions, as well as enhances the security of the deployment.
 ---
 # Workspace Environment Management
 
@@ -75,7 +75,7 @@ To validate the effect of CPU optimization by WEM, in a noisy neighbor scenario,
 
 Windows 10 2004 multi-session VMs, were tested with CVAD 2006 installed and the Citrix Optimizer applied and WEM agent over HDX. To baseline the test results, the same test was run with Microsoft RDP as the connection protocol and the VMs had Out of the Box optimizations from Microsoft.
 
-As can be seen from the following table, the inclusion of WEM, suppresses the effect of the CPU consuming noisy neighbor. WEm inclusion increases the VSImax (no of users that can be supported on the machine) from 20% to 43%. Resulting in a higher number of users that can run on a single VM, even in the stress scenario.
+As can be seen from the following table, the inclusion of WEM, suppresses the effect of the CPU consuming noisy neighbor. WEM inclusion increases the VSImax (no of users that can be supported on the machine) from 20% to 43%. Resulting in a higher number of users that can run on a single VM, even in the stress scenario.
 
 **Scale breakdown with Noisy Neighbor scenario**:
 
