@@ -51,9 +51,17 @@ The migration involves exporting the on-premises SQL server contents and uploadi
 
 ## WEM Features
 
+Having understood the architecture of both the on-premises and service offerings of WEM, lets take a look at the features that WEM makes available to organizations. There are three main feature sets:
+
+1.  [Resource Management](#resource-management)
+
+1.  [Profile Management](#profile-management)
+
+1.  [Security features](#security-features)
+
 ## Resource Management
 
-To provide the best experience for users the WEM agent monitors and analyzes user and application behavior in real time. It then intelligently adjusts RAM, CPU, and I/O in the user workspace environment.
+To provide the best experience for users the WEM agent monitors and analyzes user and application behavior within the session, in real time. It then intelligently adjusts RAM, CPU, and I/O in the user workspace environment.
 
 ### RAM optimization
 
