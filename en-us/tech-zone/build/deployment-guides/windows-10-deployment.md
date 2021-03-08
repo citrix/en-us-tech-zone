@@ -71,7 +71,7 @@ The following steps covered in this Guide
     >
     > For a full list of VDA install options see [Install VDA](/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html) or use [Citrix VDA Commandline Helper Tool](https://support.citrix.com/article/CTX234824).
 
-1.  Enter the **Fully Qualified Domain Name (FQDN) of each Cloud Connector** (at least two are recommended for tolerance). After initial registration, VDA retrieves a list of remaining controllers (read more about [VDA Registration - Auto-Update](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html#auto-update) functionality).
+1.  Enter the **Fully Qualified Domain Name (FQDN) of each Cloud Connector** (at least two are recommended for tolerance). After initial registration, VDA retrieves a list of remaining controllers (read more about [VDA Registration - Auto-Update](/en-us/citrix-virtual-apps-desktops/manage-deployment/vda-registration.html#auto-update) functionality).
 
 1.  Select **Test Connection** & if successful select **Add**
 
