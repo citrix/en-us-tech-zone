@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Russell Peters
-description: Learn how to install the Citrix VDA into a WIndows 10 platform & prep it to be used in a CVAD environment, including related components, tips and best practices
+description: Learn how to deploy Windows 10 with Citrix Virtual Apps and Desktops.
 ---
 # Windows 10 Deployment Guide
 
