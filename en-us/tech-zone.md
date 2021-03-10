@@ -321,6 +321,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Migrating Citrix Virtual Apps and Desktops from VMware vSphere to Citrix Virtual Apps and Desktops service on Microsoft Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html) - Learn how to migrate your on-premises Citrix Virtual Apps and Desktops to Citrix Cloud and your on-premises VMware vSphere to Microsoft Azure.
 
+[Windows 10 Deployment Guide](/en-us/tech-zone/build/deployment-guides/windows-10-deployment.html) - Learn how to deploy Windows 10 with Citrix Virtual Apps and Desktops.
+
 ### [Build - Tech Papers](/en-us/tech-zone/build/tech-papers.html)
 
 [Deploying Google Chrome](/en-us/tech-zone/build/tech-papers/google-chrome.html) - Tech Paper focused on installation, configuration, and various optimizations for Google Chrome browser running on Citrix Virtual Apps and Desktops.
