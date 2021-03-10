@@ -70,7 +70,7 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 #### LDAP action 1 - authAct_GroupExtract_genf
 
 Update the following fields for your environment and copy and paste the string into the CLI:
-`add authentication ldapAction authAct_GroupExtract_genf -serverIP 192.168.64.50 -ldapBase "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword 123xyz -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -authentication DISABLED`
+`add authentication ldapAction authAct_GroupExtract_genf -serverIP 192.0.2.50 -ldapBase "OU=Team M,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword 123xyz -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -authentication DISABLED`
 
 #### LDAP policy 1 - authPol_GroupExtract_genf
 
@@ -92,7 +92,7 @@ Update the following fields for your environment and copy and paste the string i
 #### LDAP action 3A - authAct_Ldap_genf
 
 Update the following fields for your environment and copy and paste the string into the CLI:
-`add authentication ldapAction authAct_Ldap_genf -serverIP 192.168.64.50 -ldapBase "OU=Team Matt,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword 123xyz -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -passwdChange ENABLED`
+`add authentication ldapAction authAct_Ldap_genf -serverIP 192.0.2.50 -ldapBase "OU=Team M,OU=Team Accounts,OU=Demo Accounts,OU=Workspaces Users,DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword 123xyz -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -passwdChange ENABLED`
 
 #### LDAP policy 3A - authPol_GroupExtract_genf
 
@@ -102,7 +102,7 @@ Update the following fields for your environment and copy and paste the string i
 #### LDAP action 3B - authAct_LDAP_eotp_genf
 
 Update the following fields for your environment and copy and paste the string into the CLI:
-`add authentication ldapAction authAct_LDAP_eotp_genf -serverIP 192.168.64.50 -serverPort 636 -ldapBase "DC=workspaces,DC=wwco,DC=net" -ldapBindDn wsadmin@workspaces.wwco.net -ldapBindDnPassword 123xyz -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -ssoNameAttribute userPrincipalName -defaultAuthenticationGroup Email-OTP -alternateEmailAttr otherMailbox`
+`add authentication ldapAction authAct_LDAP_eotp_genf -serverIP 192.0.2.50 -serverPort 636 -ldapBase "DC=workspaces,DC=wwco,DC=net" -ldapBindDn workspacessrv@workspaces.wwco.net -ldapBindDnPassword 123xyz -encrypted -encryptmethod ENCMTHD_3 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -ssoNameAttribute userPrincipalName -defaultAuthenticationGroup Email-OTP -alternateEmailAttr otherMailbox`
 
 #### LDAP policy 3B - authPol_LDAP_eotp_genf
 
@@ -132,7 +132,7 @@ For more information see [Email OTP authentication policy](/en-us/citrix-adc/cur
 
 Update the following fields for your environment and copy and paste the string into the CLI:
 
-`add authentication emailAction authAct_Email_eotp_genf -userName admin_matt@workspaces.wwco.net -password 123xyz -encrypted -encryptmethod ENCMTHD_3 -serverURL "smtps://192.168.64.40:587" -content "Your OTP is $code" -timeout 60 -emailAddress "aaa.user.attribute(\"alternate_mail\")"`
+`add authentication emailAction authAct_Email_eotp_genf -userName workspacessrv@workspaces.wwco.net -password 123xyz -encrypted -encryptmethod ENCMTHD_3 -serverURL "smtps://192.0.2.40:587" -content "Your OTP is $code" -timeout 60 -emailAddress "aaa.user.attribute(\"alternate_mail\")"`
 
 #### Email policy 4B - authPol_Email_eotp_genf
 
@@ -284,7 +284,7 @@ The fourth factor does not require a Login Schema. It generates the email with t
 
 First we test whether One Factor authentication is applied to VIP users by authenticating into our Citrix Virtual Apps and Desktops environment.
 
-1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://citrixadc5.workspaces.wwco.net`
+1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://gateway.workspaces.wwco.net`
 ![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_wsvipuser-username.png)
 1.  After your browser is redirected to a login screen. First enter a user name. We use `wsvipuser@workspaces.wwco.net`
 **This user must be a member of the AD group `VIP`**
@@ -296,7 +296,7 @@ First we test whether One Factor authentication is applied to VIP users by authe
 
 Now we test Two Factor authentication with Email OTP by authenticating into our Citrix Virtual Apps and Desktops environment again.
 
-1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://citrixadc5.workspaces.wwco.net`
+1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://gateway.workspaces.wwco.net`
 1.  After your browser is redirected to a login screen. First enter a user name. We use `wsuser@workspaces.wwco.net`
 ![Group Extraction](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-group-extraction_wsuser-username.png)
 1.  nFactor determines that the user is not local, nor a member of the VIP group, you are be prompted to submit the user password.
