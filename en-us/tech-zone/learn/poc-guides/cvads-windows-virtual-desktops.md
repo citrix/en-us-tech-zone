@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Mayank Singh
 description: Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
 ---
 # Proof of Concept guide for Citrix Virtual Apps and Desktops service with Windows Virtual Desktop
-
-## Contributors
-
-**Author:** [Mayank Singh](https://twitter.com/techmayank)
 
 ## Overview
 
@@ -36,7 +34,7 @@ This guide showcases how to perform the following actions:
 12.  Utilize your Citrix Virtual Apps and Desktops service account (Citrix Cloud account) to connect to your on-premises resources using the Citrix Cloud Connector
 13.  Let your users connect to the WVD or on premises sessions via Citrix Workspace
 
-There is a requirement from Microsoft that the WVD session hosts must be joined to a Windows Active Directory (AD) domain that has been synchronized with either Azure AD using Azure AD Connect or with Azure AD Domain Services. This would require you to connect your on-premises Active Directory to your organization’s Azure subscription. This is out-of-scope for this guide but if you are also a Citrix Networking or Citrix SD-WAN customer then you can use [Site-to-Site VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal) with [Citrix ADC](/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) (which requires a public IP) or [Citrix SD-WAN](/en-us/citrix-sd-wan-center/10-2/azure-virtual-wan.html). The two preceding options are creating IPsec tunnels between your on-premises environment and the WVD network in Azure.
+There is a requirement from Microsoft that the WVD session hosts must be joined to a Windows Active Directory (AD) domain that has been synchronized with either Azure AD using Azure AD Connect or with Azure AD Domain Services. This would require you to connect your on-premises Active Directory to your organization’s Azure subscription. This is out-of-scope for this guide but if you are also a Citrix Networking or Citrix SD-WAN customer then you can use [Site-to-Site VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal) with [Citrix ADC](/en-us/citrix-adc/current-release/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) (which requires a public IP) or [Citrix SD-WAN](/en-us/citrix-sd-wan-center/11-2/azure-virtual-wan.html). The two preceding options are creating IPsec tunnels between your on-premises environment and the WVD network in Azure.
 
 If you are looking for a solution that does much more than just set-up a link between these 2 locations, then we suggest considering creating an end to end SDWAN solution. The main advantages this gives you are integrated security, orchestration, and policy based configuration. SDWAN has further benefits:
 
@@ -47,11 +45,11 @@ If you are looking for a solution that does much more than just set-up a link be
 
 To set up an end to end SDWAN solution you can follow these guides:
 
-[Configuring SDWAN to connect to Azure virtual network](/en-us/citrix-sd-wan/10-2/configuration/configuring-virtual-path-service-between-mcn-client-sites.html)
+[Configuring SDWAN to connect to Azure virtual network](/en-us/citrix-sd-wan/11-2/configuration/configuring-virtual-path-service-between-mcn-client-sites.html)
 
 [Deplopy SDWAN on Azure](/en-us/citrix-sd-wan-platforms/vpx-models/vpx-se/sd-wan-se-on-azure-10-2.html)
 
-[Deploy SDWAN on Azure using SDWAN Center](/en-us/citrix-sd-wan-center/11/deploying-sd-wan-appliance/deploy-citrix-sd-wan-on-azure-from-citrix-sd-wan-center.html)
+[Deploy SDWAN on Azure using SDWAN Center](/en-us/citrix-sd-wan-center/11-2/deploying-sd-wan-appliance/deploy-citrix-sd-wan-on-azure-from-citrix-sd-wan-center.html)
 
 [Express route](https://azure.microsoft.com/en-in/services/expressroute/) or [Point-to-Site VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal) which doesn’t require a public IP are other options to establish the connectivity.
 

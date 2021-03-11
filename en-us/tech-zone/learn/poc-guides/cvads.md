@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Ana Ruiz
+specialThanksTo: Mayank Singh
 description: Learn how to get started with Citrix Virtual Apps and Desktop Service to deliver virtual apps and desktops to your end users while having the management plane hosted on Citrix Cloud.
 ---
 # Proof of Concept guide for Getting Started with Citrix Virtual Apps and Desktop Service
-
-## Contributors
-
-**Author:** [Ana Ruiz](https://twitter.com/mobileruiz)
-
-**Special Thanks:** [Mayank Singh](https://twitter.com/techmayank)
 
 ## Overview
 
@@ -76,7 +73,7 @@ The [Cloud Connector Connectivity Check Utility](https://support.citrix.com/arti
 
 ### Create Citrix Cloud Account
 
-If you are an existing Citrix Cloud customer, skip to the next section: [Obtain Citrix Virtual Apps and Desktops Trial](#obtain-a-citrix-virtual-apps-and-desktops-trial-account). Ensure that you have an active Citrix Cloud account. If your account has expired, please contact your account manager to enable it.
+If you are an existing Citrix Cloud customer, skip to the next section: [Obtain Citrix Virtual Apps and Desktops Trial](#obtain-a-citrix-virtual-apps-and-desktops-trial-account). Ensure that you have an active Citrix Cloud account. If your account has expired, contact your account manager to enable it.
 
 1.  Go to the [Citrix Cloud](https://citrix.cloud.com).
 2.  If you are new to Citrix Cloud click **Sign up and try it free** in the bottom left.
@@ -95,9 +92,35 @@ If you agree then check the **“I’ve read, understand and agree to the Terms 
 [![Citrix Virtual Apps and Desktops Sign In](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc6.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc6.png)
 8.  Verify your email id, by clicking **Sign in to Get Started** in the email you received from Citrix Cloud.
 [![Citrix Virtual Apps and Desktops Email](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc7.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc7.png)
-*Note: If you are unable to locate this email, please search your spam folder. The subject of the email is: Complete your Account Setup from: donotreplynotifications@citrix.com*
+*Note: If you are unable to locate this email, search your spam folder. The subject of the email is: Complete your Account Setup from: donotreplynotifications@citrix.com*
 9.  Once the account is confirmed, **Enter and Confirm the password.** Click **Create Account**.
 [![Citrix Virtual Apps and Desktops Password](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc8.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_ccc8.png)
+
+### Enable Multifactor Authentication for Citrix Cloud Administrators
+
+1.  Click the admin name in the top right corner of Citrix Cloud. Click **My Profile**
+[![Citrix Virtual Apps and Desktops Citrix Cloud Profile](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa1.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa1.png)
+2.  Click **Set up an authenticator app** on your device to start the device enrollment process. This app can be on your mobile device, laptop, or desktop.
+[![Citrix Virtual Apps and Desktops Authenticator App](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa2.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa2.png)
+3.  You will receive an email with a verification code.
+[![Citrix Virtual Apps and Desktops Device Registration Email](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa3.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa3.png)
+4.  Enter this code and your account password. Click **Verify**.
+[![Citrix Virtual Apps and Desktops Code Verification](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa4.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa4.png)
+5.  **Download an authenticator app** that supports time-based, one-time passwords (TOTP). Options include Citrix SSO, Google Authenticator, Microsoft Authenticator, and more.
+6.  **Scan the QR code** or enter the key into your authenticator app. An entry will show up for Citrix and will start generating six-digit TOTP codes.
+[![Citrix Virtual Apps and Desktops QR code](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa5.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa5.png)
+7.  To verify proper configuration, enter the six-digit code from the app and click **Verify**.
+[![Citrix Virtual Apps and Desktops QR code verification](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa6.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa6.png)
+8.  If you lose your device or delete your authenticator app, you’ll need to use a recovery method to regain access to your account. Citrix will require two recovery methods to ensure you’ll always be able to securely access your Citrix Cloud account. First, choose **“Recovery Phone”**.
+[![Citrix Virtual Apps and Desktops recovery phone](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa7.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa7.png)
+9.  **Enter your recovery phone information**. In the case that you lose or replace your device, lose your backup codes, or delete your authenticator app, a Citrix representative will call you to verify your identity. We will never ask you for your password or back up codes.
+[![Citrix Virtual Apps and Desktops phone info](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa8.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa8.png)
+10.  Get your backup codes by clicking **“Generate backup codes”**.
+[![Citrix Virtual Apps and Desktops backup codes](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa9.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa9.png)
+11.  Click **Download Codes** to download a text file with your backup codes. Store these securely as you’ll need them if you lose your device or delete the app that was generating your one-time passwords.
+[![Citrix Virtual Apps and Desktops download codes](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa10.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa10.png)
+12.  Acknowledge the backup codes have been downloaded and click **Finish**.
+[![Citrix Virtual Apps and Desktops MFA finish](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa11.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_mfa11.png)
 
 ### Obtain a Citrix Virtual Apps and Desktops Trial Account
 
@@ -105,7 +128,7 @@ If you agree then check the **“I’ve read, understand and agree to the Terms 
 [![Citrix Virtual Apps and Desktops Cloud Sign In](/en-us/tech-zone/learn/media/poc-guides_cvads_trial1.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_trial1.png)
 2.  Click **Citrix Cloud** on top of the page. Search for the Citrix Virtual Desktops Service Tile. Click **Request Trial**.
 [![Citrix Virtual Apps and Desktops Cloud Request Demo](/en-us/tech-zone/learn/media/poc-guides_cvads_trial2.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_trial2.png)
-3.  If you know who your account team is, contact them to get the trial approved. If you are unsure who your account team is, please continue to the next step.
+3.  If you know who your account team is, contact them to get the trial approved. If you are unsure who your account team is, continue to the next step.
 4.  Click **Request a Call**
 [![Citrix Virtual Apps and Desktops Request Call](/en-us/tech-zone/learn/media/poc-guides_cvads_trial3.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_trial3.png)
 5.  **Enter your details** and in Comments section specify **“Citrix Virtual Desktops service trial”**. Click **Submit**.
@@ -129,14 +152,14 @@ Resource locations contain the resources required to deliver applications and de
 [![Citrix Virtual Apps and Desktops Cloud Connectors](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location5.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location5.png)
 7.  Click **Download**. Click **Run** once the download finishes
 [![Citrix Virtual Apps and Desktops Run](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location6.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location6.png)
-8.  Citrix Cloud connectivity test successful message should be displayed. Click Close.
+8.  Citrix Cloud connectivity test successful message will be displayed. Click Close.
 If the test fails, check the following [link](https://support.citrix.com/article/CTX224133) to resolve the issue. You may also use the [Cloud Connector Connectivity Check Utility](https://support.citrix.com/article/CTX260337) tool to verify all addresses are reachable
 [![Citrix Virtual Apps and Desktops Connection Test](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location7.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location7.png)
 9.  Click **Sign In** and **Sign in to Citrix Cloud**
 [![Citrix Virtual Apps and Desktops Sign In Connector](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location8.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location8.png)
 10.  From the drop-down menu select the appropriate **Customer and Resource Location** (Resource location drop-down menu will not be displayed if there is only one resource location). Click **Install**
 [![Citrix Virtual Apps and Desktops Chose Region](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location9.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location9.png)
-11.  Once the installation completes, a service connectivity test runs. Let it complete and you should again see a successful result. Click **Close**
+11.  Once the installation completes, a service connectivity test runs. Let it complete and you will see a successful result. Click **Close**
 [![Citrix Virtual Apps and Desktops Test Connectivity](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location10.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location10.png)
 12.  Refresh the Resource Location page in Citrix Cloud.
 [![Citrix Virtual Apps and Desktops Refresh](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location11.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_resource-location11.png)
@@ -161,7 +184,7 @@ The Virtual Delivery Agent must be installed on all physical or virtual machines
 [![Citrix Virtual Apps and Desktops Product Download](/en-us/tech-zone/learn/media/poc-guides_cvads_vda5.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_vda5.png)
 6.  Scroll down to **Components that are on the product ISO but also packaged separately**. Click the **chevron** to expand the section. Click **Download File** on the appropriate iso (depending on if you’re installing in a single or multi-session OS)
 [![Citrix Virtual Apps and Desktops Product iso](/en-us/tech-zone/learn/media/poc-guides_cvads_vda6.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_vda6.png)
-7.  Check **“I have read and certify that I comply with the above Export Control Laws”** check box, if you agree. Click **Accept**. The download should begin.
+7.  Check **“I have read and certify that I comply with the above Export Control Laws”** check box, if you agree. Click **Accept**. The download will begin.
 [![Citrix Virtual Apps and Desktops Product terms and conditions](/en-us/tech-zone/learn/media/poc-guides_cvads_vda7.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_vda7.png)
 8.  **Save** the file. When the download completes, Click **Open Folder**
 [![Citrix Virtual Apps and Desktops Product Open Folder](/en-us/tech-zone/learn/media/poc-guides_cvads_vda8.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_vda8.png)
@@ -225,7 +248,7 @@ Use Citrix Virtual Apps & Desktop service to create a catalog of the virtual mac
 [![Citrix Virtual Apps and Desktops Create Machine Catalog](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog2.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog2.png)
 3.  In the Machine Catalog Setup dialog, click **Next**
 [![Citrix Virtual Apps and Desktops Intro](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog3.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog3.png)
-4.  Select the **appropriate operating system for your machine catalog**. This should match the operating system of the virtual machine where you installed the VDA
+4.  Select the **appropriate operating system for your machine catalog**. This needs to match the operating system of the virtual machine where you installed the VDA
 [![Citrix Virtual Apps and Desktops Operating System](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog4.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog4.png)
 5.  Choose how you want to deploy your machines. In this POC guide, we are going to have **Machines that are powered managed** and deployed through **Citrix Machine Creation Services**. Click **Next**
 [![Citrix Virtual Apps and Desktops Machine Management](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog5.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_machine-catalog5.png)
@@ -281,7 +304,7 @@ Use Citrix Virtual Apps & Desktop service to create a catalog of the virtual mac
 [![Citrix Virtual Apps and Desktops Detect Workspace](/en-us/tech-zone/learn/media/poc-guides_cvads_launch2.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_launch2.png)
 3.  Click **View all Desktops**. You will now see the desktop that we assigned in the previous section
 [![Citrix Virtual Apps and Desktops Start Session](/en-us/tech-zone/learn/media/poc-guides_cvads_launch3.png)](/en-us/tech-zone/learn/media/poc-guides_cvads_launch3.png)
-4.  The session should launch giving the user access to their virtual desktop
+4.  The session launches giving the user access to their virtual desktop
 
 ## Additional Information
 

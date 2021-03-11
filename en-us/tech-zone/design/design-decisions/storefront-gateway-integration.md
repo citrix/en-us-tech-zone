@@ -1,13 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Sarah Steinhoff
 description: Learn about the different integration decisions involved when integrating StoreFront with Citrix Gateway for secure remote access.
 ---
 
 # Designing StoreFront and Gateway Integration
-
-## Contributors
-
-**Author:** [Sarah Steinhoff](https://www.citrix.com/blogs/author/sarahst/)
 
 The purpose of this article is to dive a little deeper into Citrix Gateway integration with StoreFront: what the settings mean and design considerations for how to configure them.
 

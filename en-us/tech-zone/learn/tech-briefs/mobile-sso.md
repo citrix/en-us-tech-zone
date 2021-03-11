@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Frank Srp
+specialThanksTo: Alex Rubio
 description: Native mobile app single sign-on for iOS and Android SaaS applications.
 ---
 # Mobile SSO
-
-## Contributors
-
-**Author:** [Frank Srp](https://twitter.com/UEMSRP)
-
-**Special Thanks:** Alex Rubio
 
   >**Tech Preview Disclaimer**
   >
@@ -22,7 +19,7 @@ As users consume more SaaS-based applications, organizations must be able to uni
 
 Citrix Workspace aggregates all resources into a single, personalized user interface. Users can either opt for a locally installed Workspace App (desktop and mobile) or use their local browsers to access a web-based workspace. Regardless of the selected approach and the chosen device, the experience remains familiar and consistent.
 
-![Citrix Workspace app Overview](/en-us/tech-zone/learn/media/tech-briefs_access-control_workspaceapp-overview.png)
+![Citrix Workspace app overview](/en-us/tech-zone/learn/media/tech-briefs_mobile-sso_workspaceapp-overview.png)
 
 ### Citrix Endpoint Management Enrollment via the Citrix Workspace
 

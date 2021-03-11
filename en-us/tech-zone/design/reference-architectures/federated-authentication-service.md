@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Vivekananthan Devaraj
+specialThanksTo: Roger LaMarca
 description: Learn about Federated Authentication Service, authentication delegation and how to use seamless web authentication methods to log in to Windows environments for both Citrix Cloud and on-premises deployments.
 ---
 # Federated Authentication Service for Citrix Cloud and on-Premises environments
-
-## Contributors
-
-**Author:** [Vivekananthan Devaraj](mailto:Vivekananthan.Devaraj@citrix.com)
-
-**Special thanks:** [Roger LaMarca](mailto:roger.lamarca@citrix.com)
 
 ## Overview
 

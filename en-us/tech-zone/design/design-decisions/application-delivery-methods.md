@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Sasa Petrovic
+specialThanksTo: Holger Marggrander, Jeff Qiu, Maria Chang, Martin Latteier, Martin Zugec, Rico Projer, Robert Wolfer, Sarah Steinhoff
 description: Learn about the different decision factors involved in choosing the optimal application delivery method.
 ---
 # Evaluating Application Delivery Methods
-
-## Contributors
-
-**Author:** [Saša Petrović](https://twitter.com/petrovicsasa)
-
-**Special thanks:** [Holger Marggrander](https://twitter.com/hmarggrander), [Jeff Qiu](https://www.linkedin.com/in/jeff-qiu-722b8122), [Maria Chang](https://www.linkedin.com/in/maria-chang-5084a822), [Martin Latteier](https://twitter.com/MartinLatteier), [Martin Zugec](https://twitter.com/MartinZugec), [Rico Projer](https://twitter.com/RProjer), [Robert Wölfer](https://www.linkedin.com/in/robert-woelfer-83b37483), [Sarah Steinhoff](https://www.linkedin.com/in/sarah-steinhoff-71336650/)
 
 ## Overview
 
@@ -41,7 +38,7 @@ For more resources on the different delivery methods, see [Citrix Docs](/en-us/c
 
 **Traditional**: Traditional means an application is installed directly on the user’s endpoint and / or Citrix Virtual Apps and Desktops workload. This type is also referred to as classic application. Calling them legacy application would not be accurate since most of the applications today still have to be installed and are not available as SaaS applications.
 
-From a technical perspective, SaaS applications are preferred. The code is run on a web server hosted in a cloud environment, which typically causes less resource usage on the client / front-end side. In addition, scalability and maintenance of the back-end system is no longer your concern as it is taken care of by the application provider. In this model, the application is also kept in an "evergreen" state without major impacts to your environment. On the client / front-end only a browser is needed to access the application. Hence, little to no maintenance work related to the application is needed here either. This setup also enables you to use any device of your choosing since there is no dependency on the operating system. [Citrix Workspace](https://www.citrix.com/products/citrix-workspace/) is the ideal platform to deliver and manage SaaS applications in a secure manner. Features and solutions like [Access Control](/en-us/tech-zone/design/reference-architectures/access-control.html), [Security Analytics](/en-us/citrix-analytics/security-analytics/about.html), Single-Sign-On to SaaS applications and the incorporation of [microapps](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html) through [Workspace intelligence](https://www.citrix.com/digital-workspace/intelligent-workspace-solution.html) provide a unified and therefore best user experience with the highest security possible.
+From a technical perspective, SaaS applications are preferred. The code is run on a web server hosted in a cloud environment, which typically causes less resource usage on the client / front-end side. In addition, scalability and maintenance of the back-end system is no longer your concern as it is taken care of by the application provider. In this model, the application is also kept in an "evergreen" state without major impacts to your environment. On the client / front-end only a browser is needed to access the application. Hence, little to no maintenance work related to the application is needed here either. This setup also enables you to use any device of your choosing since there is no dependency on the operating system. [Citrix Workspace](https://www.citrix.com/products/citrix-workspace/) is the ideal platform to deliver and manage SaaS applications in a secure manner. Features and solutions like [Secure Workspace Access](/en-us/tech-zone/design/reference-architectures/access-control.html), [Security Analytics](/en-us/citrix-analytics/security-analytics/about.html), Single-Sign-On to SaaS applications and the incorporation of [microapps](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html) through [Workspace intelligence](https://www.citrix.com/digital-workspace/intelligent-workspace-solution.html) provide a unified and therefore best user experience with the highest security possible.
 
 However, there are reasons why SaaS applications cannot be used. For instance, if technical, legal and / or security requirements can’t be met, a traditional approach needs to be considered. In such a scenario, it’s best to identify the exact reasons why the usage of SaaS is not possible. Once identified, it's recommended to clarify if a partial integration or a transition in stages is possible, to benefit from the advantages offered by SaaS technologies.
 

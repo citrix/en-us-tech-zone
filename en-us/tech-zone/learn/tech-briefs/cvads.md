@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Ana Ruiz
+specialThanksTo: Adam Lotz, Daniel Feller
 description: Learn how Citrix Virtual Apps and Desktop service enables you to deliver virtual apps and desktops to your end users, while offloading the management plane to Citrix Cloud ensuring your environment is always up to date.
 ---
 # Citrix Virtual Apps and Desktop service
-
-## Contributors
-
-**Author:** [Ana Ruiz](https://twitter.com/mobileruiz)
-
-**Special Thanks:** Adam Lotz & [Daniel Feller](https://twitter.com/djfeller)
 
 ## Overview
 
@@ -30,7 +27,7 @@ Citrix Virtual Apps and Desktop service is cloud and hypervisor agnostic. You av
 
 ### Global Availability
 
-Citrix Cloud is deployed in multiple regions worldwide and has a Service Level Agreement (SLA) of 99.5% monthly uptime. To ensure the best user experience, Citrix Virtual Apps and Desktop service can be deployed with Citrix Gateway service. Citrix Intelligent Traffic Management (ITM) ensures fast and reliable sessions.
+Citrix Cloud is deployed in multiple regions worldwide and is designed using industry best practices to achieve a high degree of service availability (you can [read more about current SLA in product documentation](/en-us/citrix-cloud/overview/service-level-agreement.html)). To ensure the best user experience, Citrix Virtual Apps and Desktop service can be deployed with Citrix Gateway service. Citrix Intelligent Traffic Management (ITM) ensures fast and reliable sessions.
 
 In a traditional on-prem environment, customers architect and design the environment to include multiple sites. This ensures end-users can access their applications and desktops even if there is an outage. Because Citrix Cloud is available in multiple points of presence (POPs) around the world, it delivers optimal uptime and eliminates the need for administrators to deploy in multiple sites.
   

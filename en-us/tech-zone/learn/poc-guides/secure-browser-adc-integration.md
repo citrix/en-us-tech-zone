@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Nagapandu Potti, Alejandra Roca
 description: Learn how to provide the dynamic delivery of resources by redirecting browsing to a Secure Browser service protecting the company network without sacrificing user experience.
 ---
 # Proof of Concept Guide: URL Redirection to Secure Browser with Citrix ADC in Azure
-
-## Contributors
-
-**Author:** [Nagapandu Potti](https://www.linkedin.com/in/nagapandupotti/), [Alejandra Roca](https://www.linkedin.com/in/alejandra-roca-65a763108/)
 
 ## Overview
 
@@ -266,9 +264,9 @@ SSL interception uses a policy that specifies which traffic to intercept, block,
 
 References:
 
-[SSL Interception](/en-us/citrix-adc/13/forward-proxy/ssl-interception.html)
+[SSL Interception](/en-us/citrix-adc/current-release/forward-proxy/ssl-interception.html)
 
-[URL categories](/en-us/citrix-adc/13/forward-proxy/url-filtering-for-ssl-forward-proxy/url-categorization.html)
+[URL categories](/en-us/citrix-adc/current-release/forward-proxy/url-filtering-for-ssl-forward-proxy/url-categorization.html)
 
 [Video example of configuration](https://citrix.sharefile.com/d-s74bb5855411495bb)
 
@@ -477,7 +475,7 @@ References:
 
 A rewrite policy consists of a rule and action. The rule determines the traffic on which rewrite is applied and the action determines the action to be taken by the Citrix ADC. The rewrite policy is necessary for URL redirection to happen to Secure Browser based on the category of the URL entered in the browser, in this example "News".
 
-[Reference](/en-us/netscaler/12/appexpert/rewrite.html)
+[Reference](/en-us/citrix-adc/current-release/appexpert/rewrite.html)
 
 #### Create rewrite policy and action
 

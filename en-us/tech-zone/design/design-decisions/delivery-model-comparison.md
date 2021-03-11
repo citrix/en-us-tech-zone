@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
 description: A Citrix Virtual Apps and Desktops solution can take on many delivery forms. The organization's business objectives help select the right approach as the different models impact the local IT team's management scope. Learn how Citrix Virtual Apps and Desktops management scope changes based on using a locally managed deployment, a cloud service deployment and a cloud managed deployment.
 ---
 # Evaluating Delivery Models
-
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
 
 ## Overview
 
@@ -31,9 +29,9 @@ Even though the infrastructure remains the same for all delivery models, the loc
 
 ![Citrix Virtual Apps and Desktops Service Architecture](/en-us/tech-zone/design/media/design-decisions_delivery-model-comparison_cvads-architecture.png)
 
-*  Citrix Managed Desktops - Not only manages the access and control layer components (similar to the cloud service offering), but it also manages the hardware layer.
+*  Citrix Virtual Apps and Desktops Standard for Azure - Not only manages the access and control layer components (similar to the cloud service offering), but it also manages the hardware layer.
 
-![Citrix Managed Desktops Architecture](/en-us/tech-zone/design/media/design-decisions_delivery-model-comparison_cmd-architecture.png)
+![Citrix Virtual Apps and Desktops Standard for Azure Architecture](/en-us/tech-zone/design/media/design-decisions_delivery-model-comparison_cmd-architecture.png)
 
 *  Citrix Service Provider - A hosted service offering where third party organizations design, build, and manage a Citrix Virtual Apps and Desktops environment on behalf of the organization. The Citrix Service Provider program is an outsourced IT management service that can handle solution deployments, updates, and management.
 

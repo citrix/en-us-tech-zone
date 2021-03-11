@@ -28,14 +28,14 @@ It makes assumptions about the completed installation and configuration of the f
 *  Mobile device with Citrix SSO app installed
 *  Active Directory (AD) is available in the environment
 
-Refer to Citrix Documentation for the latest product version and license requirements. [PUSH Authentication](/en-us/citrix-gateway/13/push-notification-otp.html)
+Refer to Citrix Documentation for the latest product version and license requirements. [PUSH Authentication](/en-us/citrix-gateway/current-release/push-notification-otp.html)
 
 ## Citrix Gateway
 
 ### nFactor
 
 1.  Log in to the Citrix ADC UI
-1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
+1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate installed. In this POC example we used a wildcard certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/current-release/ssl/ssl-certificates.html) for more information.
 
 ### Push service action
 
@@ -69,7 +69,7 @@ Refer to Citrix Documentation for the latest product version and license require
     *  Server Logon Name Attribute - in the second field below this field enter `userPrincipalName`
 1.  Select Create
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_ldapaction.png)
-For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-ldap-tsk.html)
+For more information see [LDAP authentication policies](/en-us/citrix-adc/current-release/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-ldap-tsk.html)
 
 ### LDAP - token storage action
 
@@ -203,7 +203,7 @@ Now we test PUSH by registering a mobile device and authenticating into our Citr
 1.  Select Aim your camera at the QR Code and once it`s captured select Add
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssoscanqrcode.png)
 1.  Select Save to store the token
-![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_poc-guides_nfactor-citrix-gateway-push-token_regssosave.png)
+![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssosave.png)
 1.  The Token is now active and begins displaying OTP codes at 30 second intervals
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssotoken.png)
 1.  Select Done and you will see confirmation that the device was added successfully

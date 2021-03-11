@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Michael Shuster
+specialThanksTo: Kevin Nardone, Martin Zugec
 description: Learn more about different decision factors and recommendations for business continuity and disaster recovery planning.
 ---
 # Citrix Virtual Apps and Desktops - Disaster Recovery Planning
-
-## Contributors
-
-**Author:** [Michael Shuster](mailto:michael.shuster@citrix.com)
-
-**Special thanks:** [Kevin Nardone](https://www.linkedin.com/in/kevinrnardone/), [Martin Zugec](https://twitter.com/MartinZugec)
 
 ## Overview
 

@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Mayank Singh
+specialThanksTo: Vivekananthan Devaraj, Martin Zugec, Allen Furmanski, Harsh Gupta, Nitin Mehta, Victor Cataluna
 description: Learn how to migrate your on-premises Citrix Virtual Apps and Desktops (CVAD) environment to CVAD service on Citrix Cloud using the Automated Configuration tool.
 ---
 # Migrating Citrix Virtual Apps and Desktops from on-premises to Citrix Cloud
-
-## Contributors
-
-**Author:** [Mayank Singh](https://twitter.com/techmayank)
-
-**Special thanks:**  [Vivekananthan Devaraj](mailto:Vivekananthan.Devaraj@Citrix.com), [Martin Zugec](https://twitter.com/MartinZugec), [Allen Furmanski](https://twitter.com/tekguyallen), [Harsh Gupta](https://twitter.com/harshgupta80), [Nitin Mehta](https://twitter.com/nitinme1) & [Victor Cataluna](https://twitter.com/VictorCataluna)
 
 ## Overview
 
@@ -329,7 +326,7 @@ That completes the deployment guide to migrate an on-premises Citrix Virtual App
 
 Request a trial of Citrix Virtual Apps and Desktops service, click [here](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/inquiry/).
 
-Try the Automated Configuration tool, click [here](https://www.citrix.com/downloads/citrix-cloud/betas-and-tech-previews/automated-configuration-technology-preview.html).
+Try the Automated Configuration tool, click [here](https://www.citrix.com/downloads/citrix-cloud/product-software/automated-configuration.html).
 
 ## References
 

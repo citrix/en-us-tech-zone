@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Loay Shbeilat
+specialThanksTo: Nitin Mehta
 description: Learn the detailed architecture and deployment model of Citrix Virtual Apps and Desktops on Microsoft Azure with five key architectural principles.
 ---
 # Citrix Virtual Apps and Desktops Service on Azure
-
-## Contributors
-
-**Author:** [Loay Shbeilat](mailto:Loay.Shbeilat@Citrix.com)
-
-**Special Thanks:** [Nitin Mehta](https://twitter.com/nitinme1)
 
 ## Introduction
 
@@ -35,7 +32,7 @@ The three most common scenarios for delivering Citrix Apps and Desktops through 
 
 *  Greenfield deployment with Citrix Cloud delivering resource locations in Azure. This scenario is delivered via the Citrix Virtual Apps and Desktops service and used when customers prefer to go to a subscription model and outsource control plane infrastructure to Citrix.
 *  Extending an on-premises deployment into Azure. In this scenario, the customer has a current on-premises control layer and would like to add Azure as a Citrix resource location for new deployments or migration.
-*  Lift and shift. With this scenario, customers deploy their Citrix Management infrastructure into Azure and treat Azure as a site, using Citrix NetScaler and StoreFront to aggregate resources from multiple sites.
+*  Lift and shift. With this scenario, customers deploy their Citrix Management infrastructure into Azure and treat Azure as a site, using Citrix ADC and StoreFront to aggregate resources from multiple sites.
 
 This document focuses on the Citrix Cloud deployment model. Customers can plan and adopt these services based on their organization needs:
 
@@ -116,7 +113,7 @@ Selecting a subscription model is a complex decision that involves understanding
 
 #### Single Subscription workspace model
 
-In a single subscription model, all core infrastructure and Citrix infrastructure are located in the same subscription. This is the configuration recommended for deployments that require up to 1,000 Citrix VDAs (can be session, pooled VDI, or persistent VDI). Refer to the following [blog](https://www.citrix.com/blogs/2020/05/06/improving-azure-performance-with-machine-creation-services/) for the latest start-shutdown scale numbers within a single subscription,
+In a single subscription model, all core infrastructure and Citrix infrastructure are located in the same subscription. This is the configuration recommended for deployments that require up to 1,200 Citrix VDAs (can be session, pooled VDI, or persistent VDI). The limits are subject to change, check the following for most [up to date VDA limits](/en-us/citrix-virtual-apps-desktops-service/limits.html). Refer to the following [blog](https://www.citrix.com/blogs/2020/05/06/improving-azure-performance-with-machine-creation-services/) for the latest start-shutdown scale numbers within a single subscription,
 
 Diagram-2: Azure Single Subscription workspace model
 [![Azure-RA-Image-2](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_002.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_002.png)
@@ -193,11 +190,11 @@ Azure can provide a highly cost-effective DR solution for Citrix customers looki
 
 Under this topology, the management infrastructure remains on-premises, but workloads are deployed to Azure. If the on-premises data center is not reachable, existing connected users remain connected, but new connections will not be possible because the management infrastructure is unavailable.
 
-To protect the management infrastructure, pre-configure Azure Site Recovery to recover the management infrastructure into Azure. This is a manual process and once recovered, your environment can be made operational. This option is not seamless and cannot recover components such as NetScaler VPX, however for organizations with more a more flexible recovery time objective (RTO) it can reduce the operational costs.
+To protect the management infrastructure, pre-configure Azure Site Recovery to recover the management infrastructure into Azure. This is a manual process and once recovered, your environment can be made operational. This option is not seamless and cannot recover components such as ADC VPX, however for organizations with more a more flexible recovery time objective (RTO) it can reduce the operational costs.
 
 ### Hosting Architecture
 
-When deploying this topology, the Citrix Management infrastructure is deployed into Azure and treated as a separate site. This provides functional isolation from on-premises deployment in the event of a site failure. Use Citrix NetScaler and StoreFront to aggregate resources and provide users a near instant failover between Production and Disaster Recovery resources.
+When deploying this topology, the Citrix Management infrastructure is deployed into Azure and treated as a separate site. This provides functional isolation from on-premises deployment in the event of a site failure. Use Citrix ADC and StoreFront to aggregate resources and provide users a near instant failover between Production and Disaster Recovery resources.
 
 The presence of the Citrix Infrastructure in Azure means that no manual processes need to be invoked and no systems need to be restored before users can access their core workspace.
 
@@ -217,8 +214,6 @@ The items in the following table help the customer with their DR planning:
 Resource Groups (RG) in Azure is a collection of assets in logical groups for easy or even automatic provisioning, monitoring, and access control, and for more effective management of their costs. The benefit of using RGs in Azure is grouping related resources that belong to an application together, as they share a unified lifecycle from creation to usage and finally, de-provisioning.
 
 The key to having a successful design of resource groups is understanding the lifecycle of the resources that are included in them.
-
-One or more Resource Groups can be applied to a Machine Catalog during initial creation. These Resource Groups cannot be shared across Machine Catalogs. Resource Groups are limited to 240. Citrix MCS VMs due to the 800 Resource Count limitation per type of resource within a Resource Group.
 
 Resource Groups are tied to Machine Catalogs at creation time and cannot be added or changed later. To add extra Resource Groups to a Machine Catalog, the Machine Catalog must be removed and recreated.
 
@@ -270,7 +265,7 @@ Azure Reserved VM Instances (RIs) significantly reduce costs—up to 72 percent 
 
 While Azure Reserved Instances require making upfront commitments on **compute** capacity, they also provide flexibility to exchange or cancel reserved instances at any time. A reservation only covers the virtual machine compute costs. It does not reduce any of the additional software, networking, or storage charges. This is good for the Citrix infrastructure and minimum capacity needed for a use case (on and off hours).
 
-Citrix Autoscale feature can work with reserved instances as well to further reduce your costs - you can now use Autoscale for bursting in the cloud. In a delivery group you can tag machines that need to be autoscaled and exclude your reserved instances (or on-premises workloads) - you can find more info here: [Restrict Autoscale to certain machines in a Delivery Group](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html#restrict-autoscale-to-certain-machines-in-a-delivery-group).
+Citrix Autoscale feature supports reserved instances as well to further reduce your costs - you can now use Autoscale for bursting in the cloud. In a delivery group you can tag machines that need to be autoscaled and exclude your reserved instances (or on-premises workloads) - you can find more info here: [Restrict Autoscale to certain machines in a Delivery Group](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale/restrict-autoscale.html#restrict-autoscale-to-certain-machines-in-a-delivery-group).
 
 ### Citrix Autoscale
 
@@ -281,14 +276,6 @@ Autoscale is a feature exclusive to the Citrix Virtual Apps and Desktops service
 | **Server OS** machines hosting published applications or hosted shared desktops (Server VDI) | Supported | Supported | Supported |
 | **Desktop OS** machines hosting static persistent (dedicated) VDI desktops | Supported. During periods when machines are powered off (for example, after working hours), users can trigger machines to power on through the Citrix Receiver. You can set Autoscale’s Power Off Delay so Autoscale does not automatically power machines off before the user can establish a session. | Supported only for unassigned machines. | Supported only for unassigned machines. |
 | **Desktop OS** - machines hosting - random non-persistent VDI desktops (pooled VDI desktops) | Supported | Supported. Use the Session Count scaling metric and set the maximum number of sessions to 1. | Supported. Use the Session Count scaling metric and set the minimum number of machines to 1. |
-
-Autoscale supports power managing Sites using Virtual Apps and Desktops, the Virtual Apps and Desktops service, Virtual Apps Essentials, and Virtual Desktops Essentials.
-
-Power management for a single Site using one of these services is supported as follows:
-
-*  Up to 2,000 VDAs or VDIs per Site can be power managed.
-*  Up to 120 Delivery Groups can be power managed.
-*  Up to 1,000 VDAs or VDIs per Delivery Group can be power managed.
 
 [![Azure-RA-Image-4](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_004.png)](/en-us/tech-zone/design/media/reference-architectures_virtual-apps-and-desktops-azure_004.png)
 
@@ -318,7 +305,7 @@ Each Citrix component uses an associated virtual machine type in Azure. Each VM 
 
 Most Citrix deployments use the D-Series and F-Series instance types. The D-Series are commonly used for the Citrix infrastructure components and sometimes for the user workloads when they require extra memory beyond what is found in the F-Series instance types. F-Series instance types are the most common in the field for user workloads because of their faster processors which bring with them the perception of responsiveness.
 
-**Why D-Series or F-Series?** From a Citrix perspective, most infrastructure components (Cloud Connectors, StoreFront, NetScaler, and so on) use CPU to run core processes. These VM types have a balanced CPU to Memory ratio, are hosted on uniform hardware (unlike the A-Series) for more consistent performance and support premium storage. Certainly, customers can and should adjust their instance types to meet their needs and their budget.
+**Why D-Series or F-Series?** From a Citrix perspective, most infrastructure components (Cloud Connectors, StoreFront, ADC, and so on) use CPU to run core processes. These VM types have a balanced CPU to Memory ratio, are hosted on uniform hardware (unlike the A-Series) for more consistent performance and support premium storage. Certainly, customers can and should adjust their instance types to meet their needs and their budget.
 
 The size and number of components within a customer’s infrastructure will always depend on customer’s requirements, scale, and workloads. However, with Azure we have the ability to scale dynamically and on-demand! For cost-conscious customers, starting smaller and scaling up is the best approach. Azure VMs require a reboot when changing size so plan these events within scheduled maintenance windows only and under established change control policies.
 
@@ -349,7 +336,7 @@ Azure Disks are designed to deliver enterprise-grade durability. Three performan
 
 Managed Disks are recommended over the unmanaged disk by Microsoft. Unmanaged disks should be considered by exception only. Standard Storage (HDD and SSD) includes transaction costs (storage I/O) that must be considered but have lower costs per disk. Premium Storage has no transaction costs but have higher per disk costs and offers an improved user experience.
 
-The disks offer no SLA unless an Availability Set is used. Availability Sets are not supported with Citrix MCS but should be included with Citrix Cloud Connector, NetScaler, and StoreFront.
+The disks offer no SLA unless an Availability Set is used. Availability Sets are not supported with Citrix MCS but should be included with Citrix Cloud Connector, ADC, and StoreFront.
 
 ## Identity
 
@@ -452,19 +439,22 @@ Security is integrated into every aspect of Azure. Azure offers unique security 
 
 ### Securing storage accounts provisioning by CVAD service
 
-As stated previously, MCS is the service (within CVAD) responsible for spinning up machines in the customer subscription. MCS utilizes uses an AAD identity – Application service principal for access to Azure resource groups to perform different actions.  For storage account type of resources, MCS requires the listkeys permission to acquire the key when needed for different actions (write/read/delete).  Per our current implementation, an MCS requirement for:
+As stated previously, MCS is the service (within CVAD) responsible for spinning up machines in the customer subscription. MCS utilizes uses an AAD identity – Application service principal for access to Azure resource groups to perform different actions.  For storage account type of resources, MCS requires the `listkeys` permission to acquire the key when needed for different actions (write/read/delete).  Per our current implementation, an MCS requirement for:
 
 *  Storage account network is access from the public internet.
-*  Storage account RBAC is listkeys permission
+*  Storage account RBAC is `listkeys` permission
 
 For some organizations keeping the Storage account endpoint public is a concern.  Below is an analysis of the assets created and stored when deploying VMs with managed disk (the default behavior).
 
-*  Table Storage.
+*  Table Storage:
 We maintain machine configuration and state data in table storage in the primary storage account (or a secondary one, if the primary one is being used for Premium disks) for the catalog.  There is no sensitive information within the tables.
-*  Disk Import
-When importing disks (identity, instruction), we upload the disk as a page blob.  We then create a managed disk from the page blob and delete the page blob. The transient data does include sensitive data for computer object names and password.
-*  Locks
+*  Locks:
 For certain operations (allocating machines to storage accounts, replicating disks), we use a lock object to synchronize operations from multiple plug-in instances.  Those files are empty blobs and include no sensitive data.
+
+For machine catalogs created before Oct 15 2020, MCS creates an additional storage account for identity disks:
+
+*  Disk Import:
+When importing disks (identity, instruction), we upload the disk as a page blob.  We then create a managed disk from the page blob and delete the page blob. The transient data does include sensitive data for computer object names and password. This does not apply for all machine catalogs created post Oct 15 2020.
 
 Using a narrow Scope Service Principal applied to the specific resource groups is recommended to limit the permissions only to the permissions required by the service. This adheres to the security concept of "least privilege". Refer to [CTX219243](https://support.citrix.com/article/CTX219243) and [CTX224110](https://support.citrix.com/article/CTX224110) for more details.
 
@@ -516,7 +506,7 @@ Express Routes are dedicated private connections and not over the internet. This
 
 Typically these connections are shared across multiple services (database replication, domain traffic, application traffic, and so on) In a hybrid cloud deployment there may be scenarios where internal users require their ICA traffic to go through this connection to get to their Citrix apps in Azure, therefore monitoring its bandwidth is critical.
 
-With NetScaler and traditional StoreFront optimal gateway routing may also be used to direct a user’s connection to a NetScaler using an office’s ISP rather than the Express Route or VPN to Azure.
+With ADC and traditional StoreFront optimal gateway routing may also be used to direct a user’s connection to a ADC using an office’s ISP rather than the Express Route or VPN to Azure.
 
 ### User-Defined Routes (UDRs)
 
@@ -622,8 +612,6 @@ Citrix ADC is limited to 500 Mbps per Azure NIC. Multiple NICs are recommended t
     *  [Privileged Identity Management for Azure Resources](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/azure-pim-resource-rbac)
 
     *  [Topologies for Azure AAD Connect for Ad Sync/ ADFS](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnect-topologies)
-
-    *  [Demystifying Azure AD Authentication](https://www.citrix.com/blogs/2016/09/30/demystifying-azure-ad-authentication/)
 
     *  [XenApp and XenDesktop Service support for Azure AD DS](https://www.citrix.com/blogs/2017/04/11/xenapp-xendesktop-services-support-azure-ad-domain-services/)
 

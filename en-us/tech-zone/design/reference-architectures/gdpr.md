@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Matthew Brooks, Florin Lazurca, Rob Sanders, Martin Zugec, Allen Furmanski
 description: Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.
 ---
 # Architectural Considerations for the General Data Protection Regulation (GDPR)
-
-## Contributors
-
-**Authors:** [Matthew Brooks](https://twitter.com/tweetmattbrooks), [Florin Lazurca](https://twitter.com/florinlaz), [Rob Sanders](https://twitter.com/robsanders), [Martin Zugec](https://twitter.com/MartinZugec), [Allen Furmanski](https://twitter.com/TekGuyAllen)
 
 ## General Data Protection Regulation (GDPR) Overview
 
@@ -200,7 +198,7 @@ Citrix ADC can ensure that traffic coming to and from the browser is always encr
 [![Citrix ADC Encryption Options](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-adc-encryption-options.png)](/en-us/tech-zone/design/media/reference-architectures_gdpr_web-apps-adc-encryption-options.png)
 
 As a proxy between the browser and the web app, Citrix ADC protects the data flowing through it. That includes protecting from
-attacks against databases, attacks against the web app, and other users using its built-in application firewall. Citrix ADC protects against common web attacks including SQL Injection and cross-site scripting. You can read more about the Web App Firewall in our [product documentation](/en-us/citrix-adc/13/application-firewall.html).
+attacks against databases, attacks against the web app, and other users using its built-in application firewall. Citrix ADC protects against common web attacks including SQL Injection and cross-site scripting. You can read more about the Web App Firewall in our [product documentation](/en-us/citrix-adc/current-release/application-firewall.html).
 
 Protecting data also includes maximizing availability through Denial of Service (DoS/DDoS) attack protections. Combination attacks hit at all layers—so Citrix ADC provides Application layer defense (Layer 7), Transport layer defense (Layer 4) and Network layer
 defense (Layer 3). Citrix ADC not only provides a multi-layer approach to DDoS protection but it is coupled with a built-in IP Reputation service. It is an effective tool in identifying the IP address that is sending unwanted requests. Since most malware comes from compromised sites, you can use the IP reputation list to preemptively reject requests that are coming from the IP with the bad reputation. Citrix ADC's forward proxy, Secure Web Gateway, can filter out connections going out to the internet based on reputational risk. This enforces security policies on outgoing web traffic, while blocking access to inappropriate sites on a per user/group basis.

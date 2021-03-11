@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Ana Ruiz
 description: The Citrix Assistant guides users to information and allows them to interact with back-end applications to complete simple requests.
 ---
 # Workspace Intelligence Features - Citrix Assistant
-
-## Contributors
-
-**Author:** [Ana Ruiz](https://twitter.com/mobileruiz)
 
 Consumers have rapidly adopted voice assistants to do simple searches, requests, or questions. In 2018, there were over 2.5 billion assistants in use—this number is estimated to grow over 3 times in the next 4 years. It is estimated that by 2023, there will be over 8 billion digital voice assistants. Whether it’s on their smart phones, smart tvs, or speakers, consumers expect the ability to interact and search with virtual assistants.
 

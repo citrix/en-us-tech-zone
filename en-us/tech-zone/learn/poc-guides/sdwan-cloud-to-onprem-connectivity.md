@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Matt Brooks
+specialThanksTo: Karthick Srivatsan
 description: Learn how to implement Citrix SD-WAN rapidly to provide secure, enhanced, and resilient connectivity between your public cloud and data center environments.
 ---
 # Proof of Concept Guide: Citrix SD-WAN Cloud-to-Data Center Connectivity
-
-## Contributors
-
-**Author:** [Matt Brooks](https://twitter.com/tweetmattbrooks)
-
-**Special Thanks:** Karthick Srivatsan
 
 ## Overview
 
@@ -269,7 +266,7 @@ Click Next
 [![Orchestrator - Cloud - Wan Links](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudwanlinks.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudwanlinks.png)
 Click Next
 [![Orchestrator - Cloud - Wan Links Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudwanlinkssummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudwanlinkssummary.png)
-1.  Routes – we leave routes blank.  For this POC the `sdwan-vpx-nic-lan` subnets will automatically be exchanged by the SD-WAN instances to establish connectivity between our test servers. To extend routing beyond the LANs discuss the requirements for static or dynamic routing with your network team and refer to the SD-WAN [routing](/en-us/citrix-sd-wan/11-1/routing.html) documentation.
+1.  Routes – we leave routes blank.  For this POC the `sdwan-vpx-nic-lan` subnets will automatically be exchanged by the SD-WAN instances to establish connectivity between our test servers. To extend routing beyond the LANs discuss the requirements for static or dynamic routing with your network team and refer to the SD-WAN [routing](/en-us/citrix-sd-wan/11-2/routing.html) documentation.
 1.  Verify the configuration details on the Summary page, then click Save and Done.
 [![Orchestrator - Cloud - Summary](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudsummary.png)](/en-us/tech-zone/learn/media/poc-guides_sdwan-cloud-to-onprem-connectivity_citrixcloudorchestratorcloudsummary.png)
 1.  In the Network Configuration Home, you see the entry for the `sdwanamercloud` site Cloud Connectivity column change from a gray circle that says “offline” to a green circle that says “online”. If this change does not happen within 1 minute refer to the Troubleshooting section to investigate.
@@ -366,7 +363,7 @@ Now that our sites are upgraded, configured, and online we can verify connectivi
 
 Note that for this POC Guide we focused on establishing connectivity between endpoints located on the SD-WAN appliances local LANs. Both Citrix SD-WAN and Cloud platforms like Azure have many diverse options to extend routing across networks dynamically as required.
 
-See the Citrix SD-WAN documentation for more information regarding dynamic [routing](/en-us/citrix-sd-wan/11-1/routing.html).
+See the Citrix SD-WAN documentation for more information regarding dynamic [routing](/en-us/citrix-sd-wan/11-2/routing.html).
 
 See Azure documentation for more information regarding [virtual network traffic routing](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview).
 
@@ -376,9 +373,9 @@ The Orchestrator service dashboard provides a summary of the overall network hea
 
 ### Orchestrator Connectivity
 
-Verify that [Citrix SD-WAN system requirements](/en-us/citrix-sd-wan/11-1/updating-upgrading/system-requirements.html) have been met and check external firewall rules to ensure required ports are open.
+Verify that [Citrix SD-WAN system requirements](/en-us/citrix-sd-wan/11-2/updating-upgrading/system-requirements.html) have been met and check external firewall rules to ensure required ports are open.
 
-*  Cloud Connectivity – if the “Cloud Connectivity” state is not green for a site verify that it can send outbound traffic via the internet to TCP 443 and verify the primary DNS can resolve [Zero-Touch Deployment](/en-us/citrix-sd-wan/11-1/use-cases-sd-wan-virtual-routing/zero-touch-deployment-service.html) service domains.
+*  Cloud Connectivity – if the “Cloud Connectivity” state is not green for a site verify that it can send outbound traffic via the internet to TCP 443 and verify the primary DNS can resolve [Zero-Touch Deployment](/en-us/citrix-sd-wan/11-2/use-cases-sd-wan-virtual-routing/zero-touch-deployment-service.html) service domains.
 *  Virtual Paths – if the Availability state is not green for a site verify that it can send and receive UDP traffic on port 4980. This path is an essential requirement to set up virtual paths and establish the overlay network.
 
 ### Orchestrator Reports

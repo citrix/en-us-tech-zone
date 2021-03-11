@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Gene Whitaker
+specialThanksTo: Adrianna Pellitteri
 description: One-page summary of GSLB, MEP protocol and troubleshooting tips.
 ---
 # Troubleshooting Citrix GSLB MEP Cheat Sheet
-
-## Contributors
-
-**Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com)
-
-**Special thanks:** Adrianna Pellitteri
 
 ## Overview
 

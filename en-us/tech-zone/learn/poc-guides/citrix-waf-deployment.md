@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Jacob Rutski
+specialThanksTo: Ronan O'Brien, Jen Sheerin, Paul Stansel, Patrick Coble, Carl Stalhood
 description: Learn how to deploy Citrix Web Application Firewall (WAF) standalone or as a part of a Citrix ADC deployment. Protect web servers or applications from various attacks including Cross Site Scripting, SQL Injection, Buffer Overflow, Forceful Browsing and more. Deploy in any public cloud or your on-premises environment.
 ---
 # Proof of Concept deployment guide for Citrix Web Application Firewall
-
-## Contributors
-
-**Author:** [Jacob Rutski](https://twitter.com/jrutski)
-
-**Special Thanks:** [Ronan O'Brien](https://twitter.com/obrienronan), [Jen Sheerin](https://twitter.com/jensheerin), [Paul Stansel](https://twitter.com/pstansel), [Patrick Coble](https://twitter.com/VDIHacker), [Carl Stalhood](https://twitter.com/cstalhood)
 
 ## Overview
 
@@ -72,31 +69,31 @@ These security checks can usually be enabled in the WAF profile. Most of these c
     -  Cookie Consistency prevents a malicious actor from tampering with cookies
     -  Cookie Consistency is an **Advanced** protection
     -  **NOTE: Do NOT enable this setting when users are actively using the application, as any non-encrypted session cookies sent will not be allowed**
-    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/13/application-firewall/top-level-protections/cookie-consistency-check.html)
+    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/cookie-protection.html)
 -  Buffer Overflow
     -  Prevents attacks against insecure OS or web server software that can behave unpredictably when receiving data that is larger than it can handle
     -  Buffer Overflow detects if the URL, cookies, or headers are longer than the specified maximum size
-    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/13/application-firewall/top-level-protections/buffer-over-flow-check.html)
+    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/top-level-protections/buffer-over-flow-check.html)
 -  Form Field Consistency Check
     -  Validates that web forms returned by users have not been modified before being sent to the server
     -  Form Field Consistency is an **Advanced** protection with sessionless support
-    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/13/application-firewall/form-protections/form-field-consistency-check.html)
+    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/form-protections/form-field-consistency-check.html)
 -  SQL Injection
     -  Blocks or transforms SQL special keywords and characters from the POST body, header, and cookies
     -  Only applicable if the web application uses an SQL database
-    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/13/application-firewall/top-level-protections/html-sql-injection-check.html)
+    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/top-level-protections/html-sql-injection-check.html)
 -  Cross-Site Scripting Check (XSS)
     -  Checks the headers and POST bodies of requests for cross-site script attacks
     -  WAF can either block the request completely or transform the offending scripts to prevent them from running
-    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/13/application-firewall/top-level-protections/html-cross-site-scripting-check.html)
+    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/top-level-protections/html-cross-site-scripting-check.html)
 -  Deny URL
     -  Blocks connections to URLs that are commonly accessed by hackers and malicious code or scripts
     -  Custom Deny URL Rules can be added in the **Relaxation Rules > Deny URL** UI, by clicking **Edit** then **Add**
-    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/13/application-firewall/url-protections/denyurl-check.html)
+    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/url-protections/denyurl-check.html)
 -  Start URL (URL Closure)
     -  Prevents direct access to random URLs on a site (forceful browsing) through bookmarks, external links, page jumping, or manually entering URLs
     -  Start URL is an **Advanced** protection with sessionless support; learned rules **MUST** be deployed before blocking based on Start URL
-    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/13/application-firewall/url-protections/starturl-check.html)
+    -  [More information in Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/url-protections/starturl-check.html)
 
 ## Initial WAF Configuration
 
@@ -179,7 +176,7 @@ The system should return an **HTTP/1.1 200 OK**
 
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_30.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_30.png)
 
-The most recent signature update documentation is available on [Citrix Prod Docs](/en-us/citrix-adc/13/application-firewall/signature-alerts.html) - updates via RSS are also available.
+The most recent signature update documentation is available on [Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/signature-alerts.html) - updates via RSS are also available.
 
 ## Clone Virtual Server Configuration
 
@@ -382,9 +379,9 @@ Lastly, if the PoC is being run on a test platform that has different resources 
 
 ## References
 
-[Citrix Product Documentation - Web App Firewall](/en-us/citrix-adc/13/application-firewall)
+[Citrix Product Documentation - Web App Firewall](/en-us/citrix-adc/current-release/application-firewall)
 
-[Citrix Product Documentation WAF - FAQ](/en-us/citrix-adc/13/application-firewall/DeploymentGuide.html)
+[Citrix Product Documentation WAF - FAQ](/en-us/citrix-adc/current-release/application-firewall/DeploymentGuide.html)
 
 [How Citrix Application Firewall Modifies Application Data Traffic](https://support.citrix.com/article/CTX131488)
 

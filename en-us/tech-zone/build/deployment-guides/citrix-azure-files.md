@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Elaine Welch, Loay Shbeilat
 description: Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management.
 ---
 # Set up Azure Files storage for User personalization layers and Citrix Profile Management
-
-## Contributors
-
-**Author:** [Elaine Welch](mailto:Elaine.Welch@citrix.com), [Loay Shbeilat](mailto:loay.shbeilat@citrix.com)
 
 Azure Files offers fully managed file shares in the cloud, and accessible using Server Message Block (SMB) protocol. Azure Files shares can be mounted simultaneously in the cloud and on-premises, on Windows, Linux, or macOS.
 
@@ -40,7 +38,7 @@ After the Synchronization completes, give it some time for Users and Groups to b
 
 This procedure explains how to create an Azure Files file share for storing your user layers and profiles.
 
-Currently, there are two tiers of Azure Files, Standard and Premium. Choose the appropriate tier based on your performance requirements. For more about Azure Files performance, refer to [Azure Files scalability and performance targets](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets).
+Currently, there are two tiers of Azure Files, Standard and Premium. Choose the appropriate tier based on your performance requirements. For more about Azure Files performance, refer to [Azure Files scalability and performance targets](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets).
 
 This document explains how to set up Standard storage as an example.
 

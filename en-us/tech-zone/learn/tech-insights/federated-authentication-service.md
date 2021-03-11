@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller
 description: Single Sign-on to Windows-based virtual apps and desktops when using a non-Active Directory based Citrix Workspace identity.
 ---
 # Federated Authentication Service
-
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller)
 
 Citrix Workspace allows organizations to standardize on a non-Active Directory based Identity Provider (IdP), like Okta. However, Windows-based desktops and apps require an Active Directory account for authentication.
 

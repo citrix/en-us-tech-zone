@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Gene Whitaker, Ian Guiterrez
+specialThanksTo: Adrianna Pellitteri
 description: One-page summary of the ADM Platform detailing system requirements, deployment modes, protocols and ports, common log files, common issues/failures, and more.
 ---
 # Citrix Application Delivery Management (ADM) Overview Cheat Sheet
-
-## Contributors
-
-**Author:** [Gene Whitaker](mailto:gene.whitaker@citrix.com), Ian Guiterrez
-
-**Special thanks:** Adrianna Pellitteri
 
 ## Overview
 

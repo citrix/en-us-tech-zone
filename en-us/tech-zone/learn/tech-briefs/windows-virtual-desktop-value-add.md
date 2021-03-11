@@ -1,14 +1,11 @@
 ---
 layout: doc
-description: Learn about the value add Citrix provides to your Windows Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service and Citrix Managed Desktops service provide a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user experience and enhancing the security posture of our deployment.
+h3InToc: true
+contributedBy: Mayank Singh
+specialThanksTo: Daniel Feller, Rob Beekmans, Loay Shbeilat
+description: Learn about the value add Citrix provides to your Windows Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service provides a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user experience and enhancing the security posture of our deployment.
 ---
 # Enhancing Windows Virtual Desktop
-
-## Contributors
-
-**Author:** [Mayank Singh](https://twitter.com/techmayank)
-
-**Special Thanks:** [Daniel Feller](https://twitter.com/djfeller), [Rob Beekmans](https://twitter.com/robbeekmans), and [Loay Shbeilat](mailto:loay.shbeilat@citrix.com)
 
 ## Overview
 
@@ -18,13 +15,13 @@ Let us first look at the WVD architecture:
 
 [![Windows Virtual Desktop architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_1-wvd-architecture.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_1-wvd-architecture.png)
 
-It consists of the core level compute, networking, and storage that makes up the physical infrastructure that the Azure cloud runs on (managed by Microsoft). Then there are the virtual machines that run on the cloud hardware – Windows single-session and multi session desktops / server OS machines and remote apps. And the shared storage exposed to the machines like Azure Files and Azure AD and related services. The customer manages their Azure subscription. And finally, the services that run to manage and provide access to the desktops and applications.
+It consists of the core level compute, networking, and storage that makes up the physical infrastructure that the Azure cloud runs on (managed by Microsoft). Then there are the virtual machines that run on the cloud hardware – Windows single session and multi-session desktops / server OS machines and remote apps. And the shared storage exposed to the machines like Azure Files and Azure AD and related services. The customer manages their Azure subscription. And finally, the services that run to manage and provide access to the desktops and applications.
 
-For organizations to utilize the value add that Citrix provides, the bottom two layers of the WVD platform are retained. Citrix virtualization cloud services including Citrix Virtual Apps and Desktops (VAD) service or Citrix Managed Desktops service replace the top layer.
+For organizations to utilize the value add that Citrix provides, the bottom two layers of the WVD platform are retained. Citrix virtualization cloud services including Citrix Virtual Apps and Desktops (CVAD) service or Citrix Virtual Apps and Desktops Standard for Azure (CVAD Standard) service replace the top layer.
 
 [![Windows Virtual Desktop Citrix Value Add architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.gif)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.gif)
 
-The on-premises data center resources are now included in the deployment and Remote PC Access enables connectivity to physical machines from the same environment / leveraging existing security. Citrix VAD service unifies external access and identity management.
+The on-premises data center resources are now included in the deployment and Remote PC Access enables connectivity to physical machines from the same environment / leveraging existing security. CVAD service unifies external access and identity management.
 
 The Citrix value add is tabulated in the following table:
 
@@ -39,7 +36,7 @@ The Citrix value add is tabulated in the following table:
 | 7  | Experience  | [Personalization](#experience---personalization), [WEM](#experience---resource-optimization), and [Azure Files Integration](#azure-files-integration)  | Extend FSLogix profile containers for multi-session access using Citrix Profile Management. Workspace Environment Management (WEM) helps control compute costs by automatically managing applications. Accelerates logon to WVD and increases single server scalability.  |
 | 8  | Experience  | [Citrix Gateway and SD-WAN](#experience---app-delivery-solutions)  | Citrix Gateway POPs improve performance by connecting through the nearest gateway POP. Citrix SD-WAN allows the WVD environment to connect back to the on-premises data / environment and enables break out of Internet based traffic and HDX content optimizations to reduce data ingress and egress costs and improving user experience.  |
 | 9  | Experience  | [Citrix Workspace](#experience---citrix-workspace)  | Citrix Workspace adds intelligent capabilities to organize, guide, and automate work in a single place, using microapps, universal search, relevant notifications and so on.  |
-| 10  | Security  | [Multifactor authentication](#multifactor-authentication), [Session Watermarking](#session-watermarking), [Session Recording](#session-recording), and Smart card support   | Compliance and regulatory requirements met. MFA extended to several IDPs natively and others via SAML. Smart card support. Endpoint Analysis scans and granular policy control over the content and the user can access.  |
+| 10  | Security  | [Multi-factor authentication](#multi-factor-authentication), [Session Watermarking](#session-watermarking), [Session Recording](#session-recording), and Smart card support   | Compliance and regulatory requirements met. MFA extended to several IDPs natively and others via SAML. Smart card support. Endpoint Analysis scans and granular policy control over the content and the user can access.  |
 
 This tech brief showcases the value add provided under the 3 themes of [Choice / Management](#choice--management), [Experience](#experience), [Security](#security) in Citrix products when setting up a workspace and using WVD based resources hosted in Azure.
 
@@ -57,11 +54,11 @@ Effective management of Windows Virtual Desktop resources is important to be abl
 
 ### Hybrid Cloud management
 
-Any organization that is not creating their environment from scratch in the cloud, is going to have a transition period where existing resources reside in the on-premises data center, while new resources are brought up in the cloud. Additionally, some on-premises resources may never move to the cloud due to security / compliance / business / data affinity reasons. This is where Citrix VAD service with the ability to seamlessly manage any deployment, whether it be the on-premises data center or the Azure based WVD resources. And management of your entire environment from the same Citrix VAD console, makes the life of the administrator so much easier.
+Any organization that is not creating their environment from scratch in the cloud, is going to have a transition period where existing resources reside in the on-premises data center, while new resources are brought up in the cloud. Additionally, some on-premises resources may never move to the cloud due to security / compliance / business / data affinity reasons. This is where CVAD service with the ability to seamlessly manage any deployment, whether it be the on-premises data center or the Azure based WVD resources. And management of your entire environment from the same CVAD console, makes the life of the administrator so much easier.
 
-Citrix VAD service also supports a multi-cloud deployment – allowing admins to manage their resources in other clouds as well. The ability to host resources in different clouds is often used for geographic, performance, or reliability benefits. The console is functional and very easy to use. Everything is within reach without overwhelming administrators or help desk staff with choices.
+CVAD service also supports a multi-cloud deployment – allowing admins to manage their resources in other clouds as well. The ability to host resources in different clouds is often used for geographic, performance, or reliability benefits. The console is functional and very easy to use. Everything is within reach without overwhelming administrators or help desk staff with choices.
 
-Even simpler - The Citrix Managed Desktops console, which uses Citrix VAD service technology, is a DaaS offering to allow the admin to deploy Azure based workloads without being an Azure expert. It includes searchability for users and groups when assigning workloads.
+Even simpler - The CVAD Standard console, which uses CVAD service technology, is a DaaS offering to allow the admin to deploy Azure based workloads without being an Azure expert. It includes searchability for users and groups when assigning workloads.
 
 Let’s dig right into it with the first step needed to be performed in the process of getting a cloud-based Desktop environment running.
 
@@ -105,19 +102,19 @@ Taking a snapshot of the golden image allows an admin to easily test future chan
 
 The use of a delta disk gives an admin the flexibility to use the image for non-persistent desktops as the delta disk can be discarded easily to revert the virtual machine back to its original state after the end of the session. This also helps with resetting desktops to keep the disk from increasing to a very large size.
 
-With Citrix Managed Desktops, Citrix has made the creation of a catalog (using MCS) very simple.
+With CVAD Standard, Citrix has made the creation of a catalog (using MCS) very simple.
 
-![CMD - Catalog Creation](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_8-cmd-create-catalog.png)
+![CVAD Standard - Catalog Creation](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_8-cmd-create-catalog.png)
 
 Admins have options to choose the **type of catalog**, select the **Azure subscription** that the VMs are going to be created in. Next they choose the **network connectivity** back to the corporate network, the **region** the VMs are to be hosted in and whether an **Azure Hub** is to be used. For the machine, admins get to choose the **storage type**, the anticipated **workload profile**, and the **number of machines**. Then an admin selects the **master image** that is to be used to create the VMs and provides a name. Lastly the admin can set a **power schedule**, which will power on and power-off the VMs in the catalog using our Autoscale technology.
 
-Going forward the day to day management of these machines is simplified with the Citrix VAD service console, which not only gives admins a feature rich brokering console to manage the resources, but also apply granular policy controls.
+Going forward the day to day management of these machines is simplified with the CVAD service console, which not only gives admins a feature rich brokering console to manage the resources, but also apply granular policy controls.
 
 ### Autoscale
 
 Autoscale helps to reduce cost in the cloud by shutting down machines that are not needed during off peak times or when there is low load on the catalog. On the flip side Autoscale helps to power on the required machines before a shift or workday morning (logon storms) to handle the anticipated load so that user experience is not affected by long logon times when VMs boot as the users log in during these times. Admins can also define disconnection and logoff time outs to ensure idle machines can be shut down.
 
-![Autoscale configuration dialog](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_9-cmd-autscale-config-dialog.png)
+![Autoscale configuration dialog](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_9-cmd-autoscale-config-dialog.png)
 
 Another advantage is the ability to identify primary (lower cost resources, such as on-prem desktops or reserved instances) and secondary (pay-as-you-go instances) resources. Resources in the primary zone, are booted up first before trying to consume resources from the more expensive secondary zone. Secondary zone resources can be used for burst usage or during a business continuity or disaster recovery event. Hosts in the secondary zone would be turned off first as well when demand drops.
 
@@ -125,7 +122,7 @@ To learn more about Autoscale read the [Autoscale Tech Brief](/en-us/tech-zone/l
 
 ### Azure On-Demand Provisioning
 
-With Autoscale the machines can be shut down to reduce compute costs. But the machine still exists in Azure and therefore the organization would be charged for the all the static costs including storage costs. Another feature that is available in only the Citrix VAD service is the Azure On-Demand Provisioning. This feature allows MCS to create the virtual machine only when a power on command is given and deletes the virtual machine when it is shut down. Resulting in no components of a machine being present when the machine is shut down, including the storage disks. Requires the use of Azure Managed disks.
+With Autoscale the machines can be shut down to reduce compute costs. But the machine still exists in Azure and therefore the organization would be charged for the all the static costs including storage costs. Another feature that is available in only the CVAD service is the Azure On-Demand Provisioning. This feature allows MCS to create the virtual machine only when a power on command is given and deletes the virtual machine when it is shut down. Resulting in no components of a machine being present when the machine is shut down, including the storage disks. Requires the use of Azure Managed disks.
 
 ### MCS I/O optimization
 
@@ -161,7 +158,7 @@ Read more about the testing and results [here](/en-us/tech-zone/design/design-de
 
 ## Choice - Monitoring and Analytics
 
-The setup and design of an environment is just the first part of getting VDI infrastructure for an organization. For that reason, it gets the most focus from cloud providers. But the Day 2 and onwards of running and maintainence of a large environment in my opinion is as important. Hosting VMs in public clouds obfuscate the running of the machines, but the admin must still ensure that the user experience is consistent and high performing day in and day out.
+The setup and design of an environment is just the first part of getting VDI infrastructure for an organization. For that reason, it gets the most focus from cloud providers. But the Day 2 and onwards of running and maintenance of a large environment in my opinion is as important. Hosting VMs in public clouds obfuscate the running of the machines, but the admin must still ensure that the user experience is consistent and high performing day in and day out.
 
 Citrix gives full help desk visibility into user sessions, for both real-time debugging of specific user issues and performance, and broad visibility into the environment and trends.
 
@@ -201,13 +198,13 @@ The following is a list of some of the great features that Citrix brings to bear
     *  Monitor session responsiveness and latency
     *  Multi-product user behavior scoring to help admins evaluate security risks
 
-Read more about the monitoring features available in the Citrix VAD service [here](/en-us/citrix-virtual-apps-desktops-service/monitor.html), and in the Citrix Managed Desktops monitor [here](/en-us/citrix-managed-desktops/monitor.html)
+Read more about the monitoring features available in the CVAD service [here](/en-us/citrix-virtual-apps-desktops-service/monitor.html), and in the CVAD Standard monitor [here](/en-us/citrix-managed-desktops/monitor.html)
 
 Learn about the analytics capabilities, visit the [Analytics Tech Brief](/en-us/tech-zone/learn/tech-briefs/analytics.html), or visit the [website](https://www.citrix.com/analytics/)
 
 ## Experience
 
-In this section, the features that enhance the user expereince when accessing their Windows Virtual Desktop resoures are showcased.
+In this section, the features that enhance the user experience when accessing their Windows Virtual Desktop resources are showcased.
 
 ## Experience - HDX
 
@@ -233,7 +230,7 @@ Applied in different combinations, they optimize the user experience, decrease b
 
 1.  **Intelligent redirection** - Intelligent redirection examines screen activity, application commands, endpoint device, and network and server capabilities to instantly determine how and where to render an application or desktop activity. Rendering can occur on either the endpoint device or the hosting server.
 
-1.  **Adaptive compression** - Adaptive compression allows rich multimedia displays to be delivered even on constrained network connections. HDX first evaluates several variables, such as the type of input (text, video, voice, and multimedia), device, and display quality. It chooses the optimal compression codec and the best proportion of CPU and GPU usage. It then intelligently adapts based on each unique user and session characteristics basis.
+1.  **Adaptive compression** - Adaptive compression allows rich multimedia displays to be delivered even on constrained network connections. HDX first evaluates several variables, such as the type of input (text, video, voice, and multimedia), device, and display quality. It chooses the optimal compression codec and the best proportion of CPU and GPU usage. It then intelligently adapts based on each unique user and session characteristics basis. See the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/hdx.html#adaptive-display).
 
 1.  **Data De-Duplication** - De-duplication of network traffic reduces the aggregate data sent between client and server. It does so by taking advantage of repeated patterns in commonly accessed data such as bitmap graphics, documents, print jobs, and streamed media. Caching these patterns allows only the changes to be transmitted across the network, eliminating duplicate traffic. HDX also supports multicasting of multimedia streams, where a single transmission from the source is viewed by multiple subscribers at one location, rather than a one-to-one connection for each user.
 
@@ -245,7 +242,9 @@ Session interactivity is constantly measured to determine whether any data strea
 
 ![HDX Adaptive Throughput](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_15-hdx-adaptive-throughput.gif)
 
-Read more about optimizing HDX bandwidth over high latency connections [here](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/bandwidth-connections.html)
+For more info, see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/hdx.html#adaptive-throughput).
+
+Read more about optimizing HDX bandwidth over high latency connections [here](/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/bandwidth-connections.html).
 
 ### HDX 3D Pro
 
@@ -273,7 +272,7 @@ To learn more see the video [here](https://www.youtube.com/watch?v=aVhhy4Ms4r0)
 
 The rich set of policies available to fine-tune the delivery of the app or desktop are extremely useful. The policies can be applied based on various criteria, such as group of users, a set of resources, a set of tagged objects and many more. The policies ensure the widest range of supported endpoints and devices while giving maximum control over the delivery of the session and what can and cannot be accessed by the user. Some examples are
 
-1.  QoS for managing multiple connections on supported routers (see [Multi-stream connections policy settings](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/multistream-connections-policy-settings.html) for details)
+1.  QoS for managing multiple connections on supported routers (see [Multi-stream connections policy settings](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/multistream-connections-policy-settings.html) for details).
 1.  Managing the image quality on the endpoint like settings for Visual Quality, Target frame rate and display memory limit (video buffer size in kilo bytes).
 1.  [Session reliability](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-reliability-policy-settings.html) and [Auto client reconnect](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/auto-client-reconnect-policy-settings.html) settings that ensure smooth session reconnection when a network interruption may occur.
 1.  Various inputs devices including but not limited to specialty keyboards, mice, recording equipment, identification devices, and so on.
@@ -302,9 +301,9 @@ Enabling Browser content redirection, offloads the media rendering from the CPU 
 
 The following were screenshots taken during our tests
 
-[![BCR comparison screenshot](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-bcr-comparison-screenshot-large.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-bcr-comparison-screenshot.png)
+![BCR comparison screenshot](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_20-bcr-comparison-screenshot-large.png)
 
-To learn more about Browser Content Redirection, visit this [link](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html)
+To learn more about Browser Content Redirection, see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/hdx.html#browser-content-redirection) or visit the [docs page](/en-us/citrix-virtual-apps-desktops/multimedia/browser-content-redirection.html).
 
 ### Teams Optimization
 
@@ -325,7 +324,7 @@ When Teams optimization is enabled, the improvement in the image in the call is 
 And CPU consumption on the machines hosting the Teams call is also drastically reduced.
 Microsoft has released their own Teams optimizations solution, currently it only supports Windows 10 on the endpoints, Citrix's value add is that, not only are Windows OS based clients supported, but also Linux endpoints.
 
-To learn more about Teams optimization, see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/microsoft-teams-optimization.html) or read the [Proof of Concept guide](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html)
+To learn more about Teams optimization, see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/hdx.html#microsoft-teams-optimization) or read the [Proof of Concept guide](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html).
 
 ## Experience - Resource Optimization
 
@@ -346,7 +345,7 @@ Workspace Environment Management (WEM) uses intelligent resource management and 
 
 **RAM optimization** - When a new process is launched, it takes up more RAM than it needs for its normal running. But generally, processes will not relinquish these resources once they are allocated to them.
 
-WEM in real time detects which processes are in the focus of the user. A portion of the RAM working set of apps that are not in focus can then be reclaimed. It is observed that even if these apps come back into focus, they do not need the smaller subset of the amount of RAM that was reclaimed from them. This optimizes RAM consumption in the cloud and increases single server scalability.
+WEM in real time detects which processes are in the focus of the user. A portion of the RAM working set of apps that are not in focus can then be reclaimed. It is observed that even if these apps come back into focus, they generally need a smaller subset of the amount of RAM that was reclaimed from them. These actions optimize RAM consumption in the cloud and increase single server scalability.
 
 The following graph shows the amount of memory consumed by a set of sessions, with and without WEM.
 
@@ -354,9 +353,29 @@ The following graph shows the amount of memory consumed by a set of sessions, wi
 
 **CPU Optimization** - If a process is detected to be hogging CPU resources, it might negatively affect not only the session that it is running in, but also slow down other sessions running on the same machine and even impact logon times for other users.
 
-CPU optimization with WEM, involves real-time monitoring of the process running on each VM. When a process is detected to be hogging CPU resources (for a defined amount of time), it automatically reduces the priority of the process, allowing other processes to use the CPU and alleviate the server load. When the process is seen to have returned to low CPU consumption overtime, then its priority is reset back to normal.
+CPU optimization with WEM, involves real-time monitoring of the process running on each VM. When a process is detected to be hogging CPU resources (for a defined amount of time), WEM automatically reduces the priority of the process. THis action allows other processes to use the CPU and alleviates server load. When the process is seen to have returned to low CPU consumption overtime, then its priority is reset back to normal.
 
 ![WEM CPU Optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_25-wem-cpu-optimization.gif)
+
+Each Citrix Virtual Apps and Desktops release build is tested to validate the expected scale improvements, using LoginVSI. To validate the effect of CPU optimization by WEM, in a noisy neighbor scenario, these scale tests were extended. To simulate a noisy neighbor, a user not part of the LoginVSI knowledge worker test run, is added to the test setup. This user’s session is configured, to launch a process that consumes 3 CPU cores for an average of 50%-70% of total CPU, based on the number of cores in the Azure VM.
+
+Windows 10 2004 multi-session VMs, were tested with Citrix Virtual Apps and Desktops 2006 installed and the Citrix Optimizer applied and WEM agent over HDX. To baseline the test results, the same test was run with Microsoft RDP as the connection protocol and the VMs had Out of the Box optimizations from Microsoft.
+
+As can be seen from the following table, the inclusion of WEM, suppresses the effect of the CPU consuming noisy neighbor. The inclusion also increases the VSImax (no of users that can be supported on the machine) from 20% to 43%. Resulting in a higher number of users that can run on a single VM, even in this stress scenario.
+
+**Scale breakdown with Noisy Neighbor scenario**:
+
+| Azure Size  |  MS RDP | Citrix HDX  | % WEM Scalability Improvement  |
+|---|---|---|---|
+| D4V3  | 7.3  | 11.3  | **43.0%**  |
+| D3V2  | 12  | 16  | **28.6%**  |
+| D4V2  | 28  | 34.5  | **20.8%**  |
+
+As WEM reduces CPU spikes, another important inference from the results is, that the response time for the user is much better. Citrix Virtual Apps and Desktops sessions have an almost 1000 ms lower response time when compared to MS RDP (at the instant VSImax is reached) for the same number of users.
+
+Similarly, the latency observed in the session is between 25%-50% lesser on both the machines with 4 vCPUs. Both these results point to a much smoother and snappier user experience when WEM is in the picture.
+
+![WEM Latency Improvement Graph](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_31-wem-latency-improvement-graph.png)
 
 ### Logon Time Optimization
 
@@ -364,7 +383,7 @@ To deliver the best possible logon performance, Workspace Environment Management
 
 ![Log on process with and without optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_26-wem-logon-process-optimization.png)
 
-Find more information about WEM and its benefits [here](/en-us/workspace-environment-management/current-release.html)
+Find more information about WEM and its benefits [here](/en-us/workspace-environment-management/current-release.html).
 
 ## Experience - Personalization
 
@@ -388,7 +407,7 @@ The user personalization layer VHD is mounted on the VMs at logon over the netwo
 
 Note: It is not necessary for the entire OS image to be layered using App Layering to utilize this feature.
 
-To learn more about the user personalization layer feature see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html)
+To learn more about the user personalization layer feature see the [Tech Insight video](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html).
 
 ### Multi-session support for FSLogix containers
 
@@ -398,13 +417,13 @@ With a VHD based profile solution, such as the FSLogix Profile Container or the 
 
 So, when a user has a desktop session running and launches an app which writes to their profile, the changes made in the app are discarded.
 
-![Multi Session FSLogix](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_13-multi-session-fslogix.png)
+![Multi-session FSLogix](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_13-multi-session-fslogix.png)
 
 For example, consider a physician working from home, they launch Outlook from their corporate Windows 10 device and a few minutes later launch’s the hospital’s EMR system on an iPad, to quickly check up on a few patients. That’s two simultaneous sessions, the first session that the physician logged into has the VHD mounted in Read/Write mode, while the EMR app session would have the VHD mounted as Read-Only. The changes made to the setting of the EMR app (default schemes, macros, favorites, and so on), are not written to the profile when they log off from it.
 
 Citrix profile manager helps to synchronize files and settings that are changed in a Read-Only session. The centralized profile storage (user store) acts as the temporary storage for writes in the Read-Only sessions.
 
-![Multi Session Citrix Profile Management](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_14-multi-session-citrix-profile-management.png)
+![Multi-session Citrix Profile Management](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_14-multi-session-citrix-profile-management.png)
 
 This allows each session to write changed files back and those changes are merge using the last writer win strategy at file level. Changes to registry hive files like NTUSER.DAT, are merged at registry key level. More information about this feature can be found at this [link](/en-us/profile-management/current-release/configure/enable-multi-session-write-back-for-fslogix-profile-container.html)
 
@@ -414,15 +433,15 @@ Citrix has built integrations to use Azure Files’ SMB based storage to host Ci
 
 Azure Files alleviates the need to set up, manage, and update the SMB store infrastructure (physical or virtual windows machines). Azure Files can be used to move the data that is hosted in your data center to the cloud and then be accessed by machines in your hybrid environment.
 
-Learn more about how to set up the same [here](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html)
+Learn more about how to set up the same [here](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html).
 
 ## Experience - App Delivery solutions
 
-### Citrix Gateway and Citrix Access Control
+### Citrix Gateway and Citrix Secure Workspace Access
 
-Citrix Gateway is the preferred app delivery solution for reverse proxy to Citrix resources, providing VPN-less access to resoruces for end users.
+Citrix Gateway is the preferred app delivery solution for reverse proxy to Citrix resources, providing VPN-less access to resources for end users.
 
-Citrix Gateway Service has dozens of Points of Presence (POP) globally, connecting through the nearest Citrix Gateway POP improves performance. With Citrix VAD service and Citrix Gateway service enterprises now may provide remote access to apps and desktops without additional VPN requirements along with following benefits:
+Citrix Gateway Service has dozens of Points of Presence (POP) globally, connecting through the nearest Citrix Gateway POP improves performance. With CVAD service and Citrix Gateway service enterprises now may provide remote access to apps and desktops without additional VPN requirements along with following benefits:
 
 *  Multiple sites are implemented and maintained globally by Citrix
 *  Public IP addresses are implemented and maintained by Citrix
@@ -432,7 +451,7 @@ Citrix Gateway Service has dozens of Points of Presence (POP) globally, connecti
 *  Enterprises pay as they grow and reduce operating expenses
 *  Faster onboarding for new customers
 
-Furthermore, Citrix Access Control combines the capabilities of instant secure access to SaaS and web applications through single sign-on (SSO), along with browser and cloud-based app controls, web-filtering policies and integrated user-behavior analytics to add an extra layer of security.
+Furthermore, Citrix Secure Workspace Access combines the capabilities of instant secure access to SaaS and web applications through single sign-on (SSO), along with browser and cloud-based app controls, web-filtering policies and integrated user-behavior analytics to add an extra layer of security.
 
 Endpoint Point Access scans and contextual access help to determine the level of security that a URL would need. Based on the result the system automatically determines whether the user can access the URL directly or the user must be redirected to a Secure Browser session where the URL is opened safely, or the URL needs to be blocked.
 
@@ -440,7 +459,7 @@ Citrix Analytics service using all these services as data sources provides compr
 
 ### SD-WAN
 
-Citrix SD-WAN optimizes all the network connections needed by machines running in WVD. Working in concert with the HDX technologies, Citrix SD-WAN provides quality-of-service and connection reliability for ICA and out-of-band Citrix Virtual Apps and Desktops or Citrix Managed Desktops traffic. It also helps bridge the WVD deployment in Azure with the on-premises data center and other office locations.
+Citrix SD-WAN optimizes all the network connections needed by machines running in WVD. Working in concert with the HDX technologies, Citrix SD-WAN provides quality-of-service and connection reliability for ICA and out-of-band Citrix Virtual Apps and Desktops or Citrix Virtual Apps and Desktops Standard for Azure traffic. It also helps bridge the WVD deployment in Azure with the on-premises data center and other office locations.
 
 ![SD-WAN Architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_29-sd-wan-architecture.png)
 
@@ -462,14 +481,14 @@ Citrix SD-WAN provides optimized connectivity including:
 
 The breakout of internet traffic directly from the end point reduces the latency and ensure faster load times. Optimization of Unified Communications traffic including Microsoft Teams, make the conference audio and video the best-in-class. Citrix SD-WAN helps reduce the amount of data that needs to be sent to the WVD resources, consequently reducing the ingress and egress of data to your Azure subscription.
 
-Integrations with Citrix Managed Desktops can provision the SD-WAN instances in the Azure Tenant, by the using the Citrix SD-WAN Orchestrator service.
+Integrations with Citrix Virtual Apps and Desktops Standard for Azure can provision the SD-WAN instances in the Azure Tenant, by the using the Citrix SD-WAN Orchestrator service.
 
 ## Experience - Citrix Workspace
 
 Citrix Workspace extends the capabilities that WVD sessions provide by encompassing them with a holistic workspace. It is not just the place to provide single sign-on access to apps and desktops.
 The Workspace helps the user by organizing their work, guiding them to the important tasks and automating the repetitive tasks to enable them to complete tasks without having to leave the workspace.
 
-Citrix Workspace with Intelligence organizes work by funneling in notifications from various sources and then enables users to action on them by integrating actions and workflows into the Workspace by using microapps. Learn more about Workspace Microapps [here](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html)
+Citrix Workspace with Intelligence organizes work by funneling in notifications from various sources and then enables users to action on them by integrating actions and workflows into the Workspace by using microapps. Learn more about Workspace Microapps [here](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html).
 
 Citrix Workspace adds universal search capabilities to all the data sources the workspace has been tied into including your on-premises SharePoint or SMB share, all the way to OneDrive in the cloud and everything in between. Increasing productivity by saving you time and the hassle of searching for that file you need right now but don't know where it is stored.
 
@@ -481,15 +500,15 @@ Delegated administration and configuration logging don’t just enhance change t
 
 The following are some features of note to bolster the security of your WVD deployment:
 
-*  [Multifactor authentication extension](#multifactor-authentication)
+*  [Multi-factor authentication extension](#multi-factor-authentication)
 *  [Session Watermarking](#session-watermarking)
 *  [Session Recording](#session-recording)
 
-### Multifactor authentication
+### Multi-factor authentication
 
-Citrix extends the Azure multifactor authentication capabilities with support for the following:
+Citrix extends the Azure multi-factor authentication capabilities with support for the following:
 
-1.  MFA for Citrix VAD service Administrators (TOTP)
+1.  MFA for CVAD service Administrators (TOTP)
 1.  Citrix Gateway Service Active Directory + Token (Citrix SSO, MS Authenticator, Google Authenticator)
 1.  Citrix Gateway Service with AAD MFA
 1.  Citrix Gateway Service with Okta
@@ -499,7 +518,7 @@ Citrix extends the Azure multifactor authentication capabilities with support fo
 1.  Smart Card / Proximity Card support
     *  Supported (Imprivata, Gemalto, and so on)
 
-Read more about how the Citrix Workspace enables SSO with MFA in the [tech brief](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
+Read more about how the Citrix Workspace enables SSO with MFA in the [tech brief](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html).
 
 ### Session Watermarking
 
@@ -507,11 +526,11 @@ For sessions that have a user accessing sensitive data, a great deterrent to hav
 
 ![Session Watermarking](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_27-session-watermarking.png)
 
-Learn more about session watermarking [here](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-watermark-policy-setting.html). Watch a short video to see the feature in action [here](https://youtu.be/XHEQlvpAZKs)
+Learn more about session watermarking [here](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/session-watermark-policy-setting.html). Watch a short video to see the feature in action [here](https://youtu.be/XHEQlvpAZKs).
 
 ### Session Recording
 
-Citrix provides the ability to record all or part of a desktop or app session. The recording can be intelligently stopped when sensitive information is being displayed. The admin is also able to initiate recording of a session from the **Manage** tab in the Citrix VAD service console to be able to help troubleshoot issues being experienced by users.
+Citrix provides the ability to record all or part of a desktop or app session. The recording can be intelligently stopped when sensitive information is being displayed. The admin is also able to initiate recording of a session from the **Manage** tab in the CVAD service console to be able to help troubleshoot issues being experienced by users.
 
 Session Recording provides flexible policies to trigger recordings of application and desktop sessions automatically. This enables regulatory compliance and an audit trail of what was done during a session. Playback can have events inserted in them to allow for easy seeking of the recording.
 
@@ -534,13 +553,15 @@ The following is a list of the features that were discussed in the detail in the
 1.  Experience
     1.  HDX technologies allow for the most optimized and customizable delivery of remote sessions with support for the richest set of peripherals.
     1.  Performance, Single server scalability and compute consumption optimization – Workspace Environment Manager, Optimization for UCE solutions including Microsoft Teams, Browser Content Redirection, and SD-WAN based network optimization.
-    1.  Profile Management extension for multi session scenarios, support for Azure Files.
+    1.  Profile Management extension for multi-session scenarios, support for Azure Files.
     1.  App Delivery solutions – Gateway enhances security with SSO and MFA, reduces latency to the resources and increase the resiliency of the environment, while enabling VPN-less access. SD-WAN provides QoS, reliability, out-of-band traffic for internet content, and optimizes connectivity between the cloud and on-premises data center. SD-WAN traffic optimization for UCE, Web, and SaaS apps delivers the best experience possible.
     1.  Workspace – Enhances the user experience by integrating the WVD based resources into a Workspace that helps, organize, guide, and automate work for the user.
-1.  Security – Session Watermarking, Session Recording, expanded multifactor authentication capabilities, Security Analytics, Citrix Gateway service, and Citrix Access Control service all add to layers of extra security to your environment.
+1.  Security – Session Watermarking, Session Recording, expanded multi-factor authentication capabilities, Security Analytics, Citrix Gateway service, and Citrix Secure Workspace Access service all add to layers of extra security to your environment.
 
 Call to action:
 
 For a trial of Citrix Virtual Apps and Desktops service click [here](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/inquiry/).
 
-For a trial of Citrix Managed Desktops service click [here](https://www.citrix.com/products/citrix-managed-desktops/form/inquiry/).
+For a trial of Citrix Virtual Apps and Desktops Standard for Azure service click [here](https://www.citrix.com/products/citrix-managed-desktops/form/inquiry/).
+
+Learn how to achieve more with [Citrix and Windows Virtual Desktop](https://www.citrix.com/global-partners/microsoft/resources/windows-virtual-desktop-wvd.html).

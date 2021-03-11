@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Mayank Singh
 description: User layers persist user profile settings, data, and user-installed applications in non-persistent VDI environments.
 ---
 # Citrix App Layering - User Layers
-
-## Contributors
-
-**Author:** [Mayank Singh](https://twitter.com/techmayank)
 
 Citrix App Layering user layers provide a better experience for administrators and users in a virtual app and desktop environment.
 

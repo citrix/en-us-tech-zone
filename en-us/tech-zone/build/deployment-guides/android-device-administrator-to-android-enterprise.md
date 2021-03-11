@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Hubert Krautter
+specialThanksTo: Martin Zugec, Chetan Takker, Johnathan Campos, Jeroen J.V Lebon
 description: Learn how to migrate your Citrix Endpoint Management policies and apps step by step. Take your Endpoint Management from a legacy Android Device Administrator deployment to Android Enterprise by using a managed Google Play account.
 ---
 # Migration from Android Device Administrator to Android Enterprise with Citrix Endpoint Management
-
-## Contributors
-
-**Author:** [Hubert Krautter](https://www.linkedin.com/in/hubert-krautter-813a1572/)
-
-**Special thanks:**  [Martin Zugec](https://twitter.com/MartinZugec), Chetan Takker, Johnathan Campos, Jeroen J.V Lebon
 
 ## Introduction
 
@@ -152,7 +149,7 @@ Your output is:
 -  Upload the .apk to Google Play (similar to the non-mdx apps above)
 -  Goto **publish MDX app** and upload the mdx file
 
-For more details and wrapping example [visit](/en-us/citrix-endpoint-management/apps.html#add-private-android-enterprise-apps-as-mdx-enabled-enterprise-apps)
+For more details and wrapping example [visit](/en-us/citrix-endpoint-management/apps.html#add-an-enterprise-app)
 
 ## Editing Existing Policies for the Correct Device Type Android (Legacy DA) and Android Enterprise (AE
 

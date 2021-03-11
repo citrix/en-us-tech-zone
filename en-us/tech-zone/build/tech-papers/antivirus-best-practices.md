@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Martin Zugec, Miguel Contreras
+specialThanksTo: Judong Liao, James Kindon, Dmytro Bozhko, Dai Li
 description: Tech Paper focused on proper configuration, and recommendations for running an antivirus solution in Citrix Virtual Apps & Desktops environments. Recommended exclusions, configuration, and leading practices.
 ---
 # Endpoint Security and Antivirus Best Practices
-
-## Contributors
-
-**Author:** [Martin Zugec](https://twitter.com/MartinZugec), [Miguel Contreras](https://twitter.com/ctxmigs)
-
-**Special thanks:** Judong Liao, [James Kindon](https://twitter.com/james_kindon), Dmytro Bozhko, Dai Li
 
 ## Overview
 
@@ -144,10 +141,12 @@ Processes:
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\AuthManager\AuthManSvr.exe`
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\SelfServicePlugin\SelfService.exe`
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\SelfServicePlugin\SelfServicePlugin.exe`
--  `%ProgramFiles(x86)%\Citrix\ICA Client\HdxTeams.exe` (Optimization for Microsoft Teams)
+-  `%ProgramFiles(x86)%\Citrix\ICA Client\HdxTeams.exe` (Optimization for Microsoft Teams for Workspace app 2009.5 or older)
+-  `%ProgramFiles(x86)%\Citrix\ICA Client\HdxRtcEngine.exe` (Optimization for Microsoft Teams for Workspace app 2009.6 or higher)
 
     >**Note:**
-    >These exclusions for the Receiver typically are not needed. We have only seen a need for these in environments when the antivirus is configured with policies that are more strict than usual, or in situations in which multiple security agents are in use simultaneously (AV, DLP, HIP, and so on)
+    >
+    >These exclusions for the Citrix Workspace app are typically not required. We have only seen a need for these in environments when the antivirus is configured with policies that are more strict than usual, or in situations in which multiple security agents are in use simultaneously (AV, DLP, HIP, and so on).
 
 ### Provisioning
 

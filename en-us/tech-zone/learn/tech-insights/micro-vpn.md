@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Matt Brooks
 description: On-demand, per-app VPN that gives access to a specific app back end resource without the risk of opening a full tunnel to your data center.
 ---
 # Micro VPN
-
-## Contributors
-
-**Author:** [Matt Brooks](https://twitter.com/tweetmattbrooks)
 
 Traditional VPNs grant the entire device access to backend resources. With the micro VPN, which is part of Citrix Endpoint Management, a single, per-app VPN gives access to a specific app backend resource.
 

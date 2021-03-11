@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Frank Srp
 description: Single sign-on to native mobile applications via Citrix Gateway.
 ---
 # Mobile SSO
-
-## Contributors
-
-**Author:** [Frank Srp](https://twitter.com/UEMSRP)
 
 Learn how to configure Endpoint Management and Citrix Gateway to deliver single sign-on to native SaaS apps. Here, you can find information for iOS and Android devices that are enrolled into the Citrix Workspace.  
 

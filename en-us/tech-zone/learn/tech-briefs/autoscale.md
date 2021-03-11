@@ -1,20 +1,31 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Mayank Singh
+specialThanksTo: Nitin D. Mehta, Daniel Feller
 description: Explore the various ways Citrix enables admins to save on cost when hosting workloads in the cloud. Learn about different load balancing algorithms and scaling methodologies and how much they can save in an environment based on our tests.
 ---
 # Autoscale
-
-## Contributors
-
-**Author:** [Mayank Singh](https://twitter.com/techmayank)
-
-**Special Thanks:** [Nitin D. Mehta](https://twitter.com/nitinme1) and [Daniel Feller](https://twitter.com/djfeller)
 
 ## Overview
 
 A poorly designed power-management scheme can increase cloud computing costs by 70%+ over what the organization requires to support the users. Cloud-based services often use a pay-as-you-go model where organizations are billed, sometimes every second, for compute time, network throughput, storage consumption, and transactions. To minimize costs, organizations need to intelligently utilize, allocate, and deallocate resources, which are in stark contrast from a traditional, on-premises model where organizations leave resources allocated indefinitely. In a virtual desktop deployment, organizations must consider the cost of permanently allocating hundreds or thousands of virtual machines that are utilized. This approach makes the solution too expensive to be feasible.
 
 The Citrix Virtual Apps and Desktops service uses Autoscale with vertical load balancing as one of the ways to help lower cloud costs. These capabilities allow organizations to fully utilize virtual desktops, identify usage trends, and convert those trends into schedule and load-based rules that dynamically allocate and deallocate resources to maintain a positive user experience.
+
+The following are some key benefits that customers gain from Autoscale in a Citrix environment:
+
+*  **Hybrid multi-cloud load balancing** - Support for selective power management of resources that are only hosted in a resource location or cost more to run, while resources that are on-premises or reserved instances can be kept running 24x7. Enables on demand burst to cloud-based resources and disaster recovery use cases.
+*  **Service Integration** - Autoscale is integrated into the Citrix Cloud console and requires no extra components, apps, scripts to be deployed. Enabled easily from the UI with a few clicks and configured per delivery group.
+*  **Subscription wide support** - Power manages machines throughout a subscription, enabling DR to another region.
+*  **Schedule-based scaling** – Enables a defined number of machines to be kept powered on during peak hours and this schedule is configurable for different days in the week.
+*  **Buffer capacity** - Predefined number of VMs can be powered on before expected concurrent logon time slots, like weekday mornings, to ensure a quick and smooth logon for all users. Buffer capacity is configurable and can be set separately for peak and off peak hours.
+*  **VDI Support** - Support for both single session and multi-session delivery groups.
+*  **Drain mode** – Can isolate VMs that have low user count and not assign new sessions to the them so that they can be shutdown even during peak hours.
+*  **Dynamic Provisioning** - Machines can be created and deleted using Citrix Machine Creation Services, providing additional storage cost savings by deallocating the disk when the machine is not needed.
+*  **More decision parameters** - Power management decision rules can be customized as any combination of CPU, memory, disk utilization and number of sessions.
+*  **Director reporting** - Capacity planning and power management cost savings reported in the monitoring console.
+*  **Power off delay** – Ensures machines don’t keep flapping between on and off states. The period after a powered on machine can be switched off is configurable.
 
 ## Cost vs Experience
 
@@ -116,7 +127,7 @@ Admins must use tag restriction along with Zone preference to let Autoscale know
 
 [![Autoscale - Tagging](/en-us/tech-zone/learn/media/tech-briefs_autoscale_8-tags.png)](/en-us/tech-zone/learn/media/tech-briefs_autoscale_8-tags.png)
 
-For more information, see [Zone Preference](/en-us/citrix-virtual-apps-desktops/manage-deployment/zones.html#zone-preference) and [Tags](/en-us/citrix-virtual-apps-desktops/manage-deployment/tags.html#manage-tags-and-tag-restrictions)
+For more information, see [Zone Preference](/en-us/citrix-virtual-apps-desktops/manage-deployment/zones.html#zone-preference) and [Tags](/en-us/citrix-virtual-apps-desktops/manage-deployment/tags.html#manage-tags-and-tag-restrictions). Follow instructions [here to configure autoscale restrictions](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale/restrict-autoscale.html).
 
 ## Autoscale cost savings with Schedule-based scaling
 
@@ -157,8 +168,8 @@ The scalability numbers are used to provide sizing guidance for the following th
 *  User Count during Off Peak Weekend Time: 0 users
 *  Peak Logon Time: 9AM
 *  Peak Log off Time: 5PM
-*  Peek Start Time: 8:30AM
-*  Peek End Time: 5:30PM
+*  Peak Start Time: 8:30AM
+*  Peak End Time: 5:30PM
 *  Active per Day: 9 hours
 *  Active per Month: 198 hours
 *  Load Balancing Algorithm: Horizontal
@@ -192,8 +203,8 @@ From the table, the cost of machines powered on all the time is over 350% the co
 *  User Count during Off Peak Weekend Time: 0 users
 *  Peak Logon Time: 9AM
 *  Peak Log off Time: 5PM
-*  Peek Start Time: 8:30AM
-*  Peek End Time: 5:30PM
+*  Peak Start Time: 8:30AM
+*  Peak End Time: 5:30PM
 *  Active per Day: 9 hours
 *  Active per Month: 198 hours
 *  Load Balancing Algorithm: Horizontal
@@ -227,8 +238,8 @@ From the table, the cost of machines powered on all the time is over 300% the co
 *  User Count during Off Peak Weekend Time: 0 users
 *  Peak Logon Time: 9AM
 *  Peak Log off Time: 5PM
-*  Peek Start Time: 8:30AM
-*  Peek End Time: 5:30PM
+*  Peak Start Time: 8:30AM
+*  Peak End Time: 5:30PM
 *  Active per Day: 9 hours
 *  Active per Month: 198 hours
 *  Load Balancing Algorithm: Vertical (different than scenario 2)

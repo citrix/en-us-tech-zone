@@ -3,7 +3,7 @@
 # Examples:
 # /home.html /index
 # /en-us/old-aem-page.html      /en-us/new-bitbucket-page
-#
+# cache:3
 
 # Workspace and CVAD posters renamed to proper names (2/27/2020)
 /en-us/tech-zone/learn/downloads/citrix-workspace-poster.png /en-us/tech-zone/learn/downloads/diagrams-posters_workspace_user-experience-poster.png
@@ -13,11 +13,16 @@
 # secure-access-saas-apps renamed to access-control-okta-sso
 /en-us/tech-zone/learn/poc-guides/secure-access-saas-apps.html /en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html
 
-# temporarily disable virtual assistant (9/14/2020)
-/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html /en-us/tech-zone/learn/tech-briefs.html
+# temporarily disable virtual assistant (9/14/2020). Added 302! to force redirect
+/en-us/tech-zone/learn/tech-briefs/virtual-assistant.html /en-us/tech-zone/learn/tech-briefs.html 302!
 
-# Redirect all Access Control for StoreFront articles
-
-/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html /en-us/tech-zone.html#citrix-access-control
-/en-us/tech-zone/learn/tech-insights/access-control-storefront.html /en-us/tech-zone.html#citrix-access-control
+# Redirect all Access Control for StoreFront articles to landing page (Citrix Secure Workspace Access)
+/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html /en-us/tech-zone.html#citrix-secure-workspace-access
+/en-us/tech-zone/learn/tech-insights/access-control-storefront.html /en-us/tech-zone.html#citrix-secure-workspace-access
+ 
+ # Redirect all Access Control content to Citrix Secure Workspace Access (11/18/2020)
+ /en-us/tech-zone/learn/tech-briefs/access-control.html /en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html
+ 
+ # Redirect HDX to new aggregate page (11/18/2020)
+ /en-us/tech-zone/learn/tech-insights/hdx-adaptive-display.html /en-us/tech-zone/learn/tech-insights/hdx.html
  

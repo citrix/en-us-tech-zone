@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Loay Shbeilat, Krishna Swarup
+specialThanksTo: Crystal Ricevuto, Allen Furmanski
 description: Learn about the architecture and design considerations for deploying a customer-managed storage zone in Azure to provide the best user experience and security for Citrix Content Collaboration.
 ---
 # Content Collaboration with storage zones on Azure IaaS
-
-## Contributors
-
-**Authors:** Loay Shbeilat, Krishna Swarup
-
-**Special thanks:** Crystal Ricevuto, Allen Furmanski
 
 ## Audience
 

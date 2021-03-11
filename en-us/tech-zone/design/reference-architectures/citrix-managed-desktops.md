@@ -1,46 +1,43 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Nagaraj Manoli
+specialThanksTo: Kireeti Valicherla, Swaroop JV, Alan Goldman, Derek Thorslund
 description: Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
 ---
-# Citrix Managed Desktops
-
-## Contributors
-
-**Author:** [Nagaraj Manoli](mailto:nagaraj.manoli@citrix.com)
-
-**Special Thanks:** [Kireeti Valicherla](mailto:kireeti.valicherla@citrix.com), [Swaroop JV](mailto:Swaroop.JosephVarghese@citrix.com), [Alan Goldman](mailto:alan.goldman@citrix.com), [Derek Thorslund](https://twitter.com/derektcitrix)
+# Citrix Virtual Apps and Desktops Standard for Azure
 
 ## Audience
 
-This document is intended for technical professionals, IT decision-makers, partners, and system-integrators. This document also allows the administrator to explore, and adopt Citrix Managed Desktops to provide cloud-based workspaces to their employees. The reader must have a basic understanding of Citrix products, Citrix Cloud, and Microsoft® Azure services.
+This document is intended for technical professionals, IT decision-makers, partners, and system-integrators. This document also allows the administrator to explore, and adopt Citrix Virtual Apps and Desktops Standard for Azure to provide cloud-based workspaces to their employees. The reader must have a basic understanding of Citrix products, Citrix Cloud, and Microsoft® Azure services.
 
 ## Objective of this document
 
-This document comprises of a technical overview, architectural concepts, and adoption methodology on Citrix Managed Desktops. Multiple use cases on different verticals with conceptual architecture are also included to allow readers to understand and formulate the cloud-based virtual desktop solution.
+This document comprises of a technical overview, architectural concepts, and adoption methodology on Citrix Virtual Apps and Desktops Standard for Azure. Multiple use cases on different verticals with conceptual architecture are also included to allow readers to understand and formulate the cloud-based virtual desktop solution.
 
-## Introduction to Citrix Managed Desktops
+## Introduction to Citrix Virtual Apps and Desktops Standard for Azure
 
-Citrix Managed Desktops (CMD) is a cloud-based virtual apps and desktops solution. It enables businesses to deliver cloud-hosted virtual apps and desktops to any device, over the network, from any location. The operating system runs inside virtual machines on the Azure public cloud. All the necessary infrastructure (IaaS) support is provided from Citrix. Citrix managed Azure subscription is owned and managed by Citrix where Virtual Delivery Agents (VDAs) are running. The virtual apps and desktops are presented over the secured network to a customer’s endpoint devices where end-users access them through the Citrix Workspace app or a web browser.
+Citrix Virtual Apps and Desktops Standard for Azure (CVAD Standard) is a cloud-based virtual apps and desktops solution. It enables businesses to deliver cloud-hosted virtual apps and desktops to any device, over the network, from any location. The operating system runs inside virtual machines on the Azure public cloud. All the necessary infrastructure (IaaS) support is provided from Citrix. Citrix managed Azure subscription is owned and managed by Citrix where Virtual Delivery Agents (VDAs) are running. The virtual apps and desktops are presented over the secured network to a customer’s endpoint devices where end-users access them through the Citrix Workspace app or a web browser.
 
-[![CMD-Image-1](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_001.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_001.png)
+[![CVAD Standard 1](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_001.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_001.png)
 
-The Citrix Managed Desktops architecture is divided up into multiple segments. All segments flow together to create a complete, end-to-end cloud-based virtual desktop solution for an organization.
+The CVAD Standard architecture is divided up into multiple segments. All segments flow together to create a complete, end-to-end cloud-based virtual desktop solution for an organization.
 
 *  **Users segment-** This section describes the end-user environment and end-point devices that are used to connect to resources. This section covers the end-point devices and Citrix Workspace app.
 
 *  **Access segment-** This section describes external connectivity to devices in the user segment. This section covers the Citrix Gateway service and Workspace configuration details.
 
-*  **Control segment-** This section describes components used to support the rest of the environment, which includes site design for the Citrix Cloud service, image management, and monitoring of Citrix Managed Desktops.
+*  **Control segment-** This section describes components used to support the rest of the environment, which includes site design for the Citrix Cloud service, image management, and monitoring of CVAD Standard.
 
-*  **Resource segment-** This section captures information for the users personalization, applications, and images for the CMD environment.
+*  **Resource segment-** This section captures information for the users personalization, applications, and images for the CVAD Standard environment.
 
 *  **Platform segment-** This section describes the cloud platform used to provision catalogs. Citrix Managed Azure Platform is based on Microsoft® Azure platform for Citrix VDAs, that is completely managed by Citrix. Customer-managed Azure subscriptions are used to provide hybrid connectivity to additional resources as required.
 
 *  **Operations segment-** This section contains customer-managed components such as Windows Active Directory service, Azure Active Directory, file servers, and Windows license servers. It is possible to provision file servers and license servers on customer-managed Azure subscription or in a customer data center with hybrid connectivity between Azure to an on-premises data center.
 
-The layered picture gives a holistic view of the Citrix Managed Desktops services. The details and internal architectures of Citrix Managed Azure Platform, hybrid connectivity, image management approach, and multiple deployment methodologies are explained in upcoming sections.
+The layered picture gives a holistic view of the CVAD Standard services. The details and internal architectures of Citrix Managed Azure Platform, hybrid connectivity, image management approach, and multiple deployment methodologies are explained in upcoming sections.
 
-### Citrix Managed Desktops and traditional desktop solution
+### Citrix Virtual Apps and Desktops Standard for Azure and traditional desktop solution
 
 Organizations typically adopt virtual desktop solutions based on their business needs. As companies expand their global footprint and increase productivity, IT is often left with the challenge to meet the growing demands and use cases. Organizations have started to adopt digital workspace solutions based on traditional desktop solutions. The virtual desktop solution has been around for a long time and traditionally was the only way to run a virtual desktop. This is cost-effective for companies that have a large employee base in a single region or geographic location.
 
@@ -48,15 +45,15 @@ The traditional virtual desktop solution requires substantial support from IT pr
 
 In a traditional virtual desktop infrastructure solution, IT administrators are responsible for the management of the implementations. Organizations often require a significant investment in capex for infrastructure. Apart from this process, the additional investment in securing the infrastructure must be in place, for example, localized threat detection solutions must be implemented to avoid any data breaches.
 
-Most of the cloud service providers have observed these challenges faced by customers. To overcome this problem many leading vendors introduced Desktop as a Service (DaaS) to the market. DaaS solutions allow customers to quickly realize the benefits of VDI, switch from a capex to opex model, and reduce the required ongoing management effort. Citrix, one of the pioneers in the desktop virtualization field, has introduced the DaaS solution called “**Citrix Managed Desktops**.”
+Most of the cloud service providers have observed these challenges faced by customers. To overcome this problem many leading vendors introduced Desktop as a Service (DaaS) to the market. DaaS solutions allow customers to quickly realize the benefits of VDI, switch from a capex to opex model, and reduce the required ongoing management effort. Citrix, one of the pioneers in the desktop virtualization field, has introduced the DaaS solution called “**Citrix Virtual Apps and Desktops Standard for Azure**.”
 
-Citrix Managed Desktops (CMD) is similar to a VDI solution. It offers the same user experience, and flexibility with greater visibility to the infrastructure and overcomes initial deployment haul and investments. CMD differs from the traditional desktop solution because instead of hosting desktops in an on-premises data center or even a public cloud location with full infrastructure management required, CMD uses a cloud-based back end from the Microsoft® Azure cloud platform while greatly simplifying setup and management tasks in a simple, turnkey solution.
+CVAD Standard is similar to a VDI solution. It offers the same user experience, and flexibility with greater visibility to the infrastructure and overcomes initial deployment haul and investments. CVAD Standard differs from the traditional desktop solution because instead of hosting desktops in an on-premises data center or even a public cloud location with full infrastructure management required, CVAD Standard uses a cloud-based back end from the Microsoft® Azure cloud platform while greatly simplifying setup and management tasks in a simple, turnkey solution.
 
-Citrix Managed Desktops requires only a minimal investment to start, which is a good fit for small and medium-sized businesses. The organization does not need to invest in VDI or virtualization experts - CMD is well-suited for IT generalists to handle.
+CVAD Standard requires only a minimal investment to start, which is a good fit for small and medium-sized businesses. The organization does not need to invest in VDI or virtualization experts - CVAD Standard is well-suited for IT generalists to handle.
 
-The following table compares the Citrix Managed Desktops solution with a traditional virtual desktop solution:
+The following table compares the CVAD Standard solution with a traditional virtual desktop solution:
 
-| **Benefits**                              | **CMD**                                                      | **Traditional virtual desktop solution**              |
+| **Benefits**                              | **CVAD Standard**                                                      | **Traditional virtual desktop solution**              |
 | ----------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------ |
 | Simplified virtual desktop implementation | Easy to deploy                                          | Moderate deployment steps                              |
 | Centralized desktop management            | Complete centralized management solution                     | Multiple silos of infrastructure to manage             |
@@ -69,17 +66,17 @@ The following table compares the Citrix Managed Desktops solution with a traditi
 | Pay-as-you-go model                     | Highly applicable                                            | Not applicable                                         |
 | Skilled resource requirement              | Basic IT generalists                                         | Skilled specialists often required                     |
 
-## Why organizations adopt a Citrix Managed Desktops solution
+## Why organizations adopt a Citrix Virtual Apps and Desktops Standard for Azure solution
 
 Many organizations desire to benefit from this era of the digital workspace. Their workforce expects a different set of work culture which means accessing their work from anywhere on any device at any time. Meanwhile, management wants to control IT spending. Cloud-based virtual apps and desktop solutions are the better choices when companies are looking for a cost-effective, simple solution to securely deliver the apps and desktops to their workforce.
 
-Citrix Managed Desktops is a viable solution for customers looking for centralized management with standardized virtual desktop infrastructure. In the era of the digital workspace, Citrix enables an organization to deliver do-it-yourself cloud-based apps and desktop.
+CVAD Standard is a viable solution for customers looking for centralized management with standardized virtual desktop infrastructure. In the era of the digital workspace, Citrix enables an organization to deliver do-it-yourself cloud-based apps and desktop.
 
-[![CMD-Image-2](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_002.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_002.png)
+[![CVAD Standard 2](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_002.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_002.png)
 
-The above diagram shows a high-level skeleton view for Citrix Managed Desktops. The control plane is hosted in Citrix Cloud and all the resources are provisioned on the Microsoft® Azure platform which is managed by Citrix. CMD customers have an option to choose the workload region (supported by Citrix) depending on their requirements.
+The above diagram shows a high-level skeleton view for CVAD Standard. The control plane is hosted in Citrix Cloud and all the resources are provisioned on the Microsoft® Azure platform which is managed by Citrix. CVAD Standard customers have an option to choose the workload region (supported by Citrix) depending on their requirements.
 
-Citrix Managed Desktops offers many advantages to IT by simplifying operations and delivering Windows desktops and apps securely to its workforce. Citrix Managed Desktops has many benefits including:
+CVAD Standard offers many advantages to IT by simplifying operations and delivering Windows desktops and apps securely to its workforce:
 
 *  Windows Virtual Desktop (WVD) instances hosted on a Citrix Managed Azure platform
 
@@ -91,33 +88,33 @@ Citrix Managed Desktops offers many advantages to IT by simplifying operations a
 
 *  Citrix Virtual Delivery Agents (VDAs) running within the Microsoft® Azure platform (Citrix Managed). The administrator can bring multiple Azure services including ExpressRoute, VPN services, Azure Files from customer-managed Azure subscription.
 
-## Citrix Managed Desktops use cases
+## Citrix Virtual Apps and Desktops Standard for Azure use cases
 
-Citrix Managed Desktops has the ability to manage unforeseen business shifts in IT infrastructure on different vertical segments. Citrix Managed Desktops gives liberty to businesses from the complex act of implementation and management of the IT infrastructure. Complexity in terms of purchasing, supporting, upgrading, and most important is security.
+CVAD Standard has the ability to manage unforeseen business shifts in IT infrastructure on different vertical segments. CVAD Standard gives liberty to businesses from the complex act of implementation and management of the IT infrastructure. Complexity in terms of purchasing, supporting, upgrading, and most important is security.
 
 In this section, some of the useful and constructive use cases on different verticals are discussed.
 
-### Citrix Managed Desktops in Education services
+### Citrix Virtual Apps and Desktops Standard for Azure in Education services
 
 Today most of the universities are transforming their learning paths and skill development engagements. Students and lecturers must be there at the campus to access software and services required for their studies. This process may hamper or decrease overall time efficiency. With the current IT infrastructures, many education services are facing the challenges to meet the demand. Usually IT organizations purchase and build out an infrastructure that sits unused much of the year.
 
-To overcome all the challenges faced by universities, Citrix has seen the opportunity to improve student productivity and engagements by hosting all necessary software and tools on the Citrix Managed Desktops service. Students can access their necessary resources anytime, anywhere, and from any device.
+To overcome all the challenges faced by universities, Citrix has seen the opportunity to improve student productivity and engagements by hosting all necessary software and tools on the CVAD Standard service. Students can access their necessary resources anytime, anywhere, and from any device.
 
-[![CMD-Image-11](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_011.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_011.png)
+[![CVAD Standard 11](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_011.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_011.png)
 
-The above diagram shows a conceptual Citrix Managed Desktops usage in universities. The administrator has to create the catalogs for individual machine types. The Student catalog uses a non-domain joined catalog. The administrator has to install the required application during the master image creation. For the Lecturers catalog, the separate image can be used to provision the VDAs which are domain joined desktops. If the university is already utilizing Azure AD with Office 365, no VNet peering or customer-managed components are necessary.
+The above diagram shows a conceptual CVAD Standard usage in universities. The administrator has to create the catalogs for individual machine types. The Student catalog uses a non-domain joined catalog. The administrator has to install the required application during the master image creation. For the Lecturers catalog, the separate image can be used to provision the VDAs which are domain joined desktops. If the university is already utilizing Azure AD with Office 365, no VNet peering or customer-managed components are necessary.
 
 Here multiple catalogs share a resource location and virtual network. A virtual network is a unique per-connection for domain-joined catalogs, and per region for non-domain joined catalogs.
 
-### Healthcare Solution using Citrix Managed Desktops
+### Healthcare Solution using Citrix Virtual Apps and Desktops Standard for Azure
 
-In healthcare, field professionals have a pressing need to access real-time patient data and applications remotely and from multiple devices. Today many healthcare institutes are facing regulatory burdens and shrinking IT budgets which made their hands tied to traditional desktop technology. Citrix Managed Desktops offers a straightforward way to increase technological presence without a major refurbishment of a company’s systems and processes.
+In healthcare, field professionals have a pressing need to access real-time patient data and applications remotely and from multiple devices. Today many healthcare institutes are facing regulatory burdens and shrinking IT budgets which made their hands tied to traditional desktop technology. CVAD Standard offers a straightforward way to increase technological presence without a major refurbishment of a company’s systems and processes.
 
-[![CMD-Image-12](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_012.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_012.png)
+[![CVAD Standard 12](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_012.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_012.png)
 
-Overall cost reduction is the top challenge. Citrix Managed Desktops generally saves money and time and there is no cost associated with the implementations. The above diagram shows the healthcare institutes using Citrix Managed Desktops in multiple resource locations and providing anywhere access, centralized management, and flexible working are the key drivers for this solution.
+Overall cost reduction is the top challenge. CVAD Standard generally saves money and time and there is no cost associated with the implementations. The above diagram shows the healthcare institutes using CVAD Standard in multiple resource locations and providing anywhere access, centralized management, and flexible working are the key drivers for this solution.
 
-Key benefits of using Citrix Managed Desktops in healthcare institutes:
+Key benefits of using CVAD Standard in healthcare institutes:
 
 *  Access file and patient’s data from anywhere
 
@@ -131,13 +128,13 @@ Key benefits of using Citrix Managed Desktops in healthcare institutes:
 
 *  Focus on the primary mission, delivering the best care to patients
 
-### Citrix Managed Desktops for the Logistic industry
+### Citrix Virtual Apps and Desktops Standard for Azure for the Logistic industry
 
 The logistic company workforce always faces challenges in accessing the mission-critical data from anywhere and anytime. This data includes an inventory list from the warehouse, tracking orders, billing information, and so on. These kinds of circumstances always recede productivity.
 
-By hosting their desktops and applications in the Citrix Managed Desktops, customers can focus on their core business without having to waste time and money on procurement and managing the infrastructure.
+By hosting their desktops and applications in the CVAD Standard, customers can focus on their core business without having to waste time and money on procurement and managing the infrastructure.
 
-Key benefits by adopting Citrix Managed Desktops:
+Key benefits of adopting CVAD Standard include:
 
 *  Low TCO
 
@@ -155,13 +152,13 @@ Today there are huge barriers when brining two separate companies’ assets into
 
 Positioning the IT infrastructure of two separate entities needs future infrastructure planning, utilization, and the management of legacy applications with their infrastructures.
 
-[![CMD-Image-13](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_013.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_013.png)
+[![CVAD Standard 13](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_013.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_013.png)
 
 In the case organizations have multiple forests and multiple exchange servers, it is more cumbersome to consolidate.
 
 The above diagram depicts the multiple Active Directory forest present on-premises when the merger or acquisitions take place. When organizations have multiple forests, all forests must be reachable by a single Azure AD Connect sync server. It is not necessary to join the server to a domain. In a case where it is necessary to reach all forests, the administrator can place the server in a perimeter network such as the DMZ. The goal of this solution is that a user is represented only once in Azure AD.
 
-The advantage of Citrix Managed Desktops is, the administrator can easily consolidate two forests with a single Azure AD. The new demand and requirement of desktops are easily provisioned on Citrix Managed Desktops. This solution enhances user productivity.
+The advantage of CVAD Standard is, the administrator can easily consolidate two forests with a single Azure AD. The new demand and requirement of desktops are easily provisioned on CVAD Standard. This solution enhances user productivity.
 
 There are other topologies available for Azure AD Connect and those are:
 
@@ -175,23 +172,23 @@ For more information on different topologies for Azure AD Connect refer to the f
 
 ### Non-Domain Joined Desktops for DevOps and seasonal workers
 
-In Citrix Managed Desktops a virtual desktop can be domain joined or non-domain joined. When there is an urgent requirement to involve third-party developers in the project it is hard to provide a desktop with reliable connectivity. For example, a seasonal worker or contractor whose involvement in the project is as required as organization employees. Apart from this task, the administrator has to make sure that they are accessing resources securely.
+In CVAD Standard a virtual desktop can be domain joined or non-domain joined. When there is an urgent requirement to involve third-party developers in the project it is hard to provide a desktop with reliable connectivity. For example, a seasonal worker or contractor whose involvement in the project is as required as organization employees. Apart from this task, the administrator has to make sure that they are accessing resources securely.
 
-[![CMD-Image-14](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_014.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_014.png)
+[![CVAD Standard 14](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_014.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_014.png)
 
 The above diagram shows a non-domain-joined desktop provisioned for contractors and any dev-ops worker. The administrator creates a catalog for the dev-ops team and provisions a desktop with a necessary application that is not joined to the corporate domain. The administrator can provide or use Azure multifactor authentication to add one more layer of security.
 
 The end-user has to access their desktop through Citrix Workspace app using URL the provided by the Citrix administrator.
 
-## Technical Overview of Citrix Managed Desktops architecture
+## Technical Overview of Citrix Virtual Apps and Desktops Standard for Azure architecture
 
-Citrix Managed Desktops is the simplest, fastest way to deliver Windows apps and desktops hosted in Microsoft® Azure. The Citrix Managed Desktops solution is managed through Citrix Cloud. The resource provisioning, capacity management, and workspace configuration are all done through the Citrix Cloud web-based tools.
+CVAD Standard is the simplest, fastest way to deliver Windows apps and desktops hosted in Microsoft® Azure. The CVAD Standard solution is managed through Citrix Cloud. The resource provisioning, capacity management, and workspace configuration are all done through the Citrix Cloud web-based tools.
 
-[![CMD-Image-3](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_003.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_003.png)
+[![CVAD Standard 3](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_003.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_003.png)
 
-The above diagram depicts the architecture for Citrix Managed Desktops. In the Citrix Managed Desktops solution, Azure subscription is managed by Citrix. Customer-managed Azure subscriptions and customer data center resources are owned and managed by the customer. The administrators have the power to provision and monitor VDAs from Citrix Cloud. End-users can access their desktops from anywhere, and any device. The above diagram is divided into four sections:
+The above diagram depicts the architecture for CVAD Standard. In the CVAD Standard solution, Azure subscription is managed by Citrix. Customer-managed Azure subscriptions and customer data center resources are owned and managed by the customer. The administrators have the power to provision and monitor VDAs from Citrix Cloud. End-users can access their desktops from anywhere, and any device. The above diagram is divided into four sections:
 
-**Citrix Cloud:** The Citrix Cloud hosts a complete control plane for Citrix Managed Desktops. Delivery Controllers, database instances, monitoring tools, and other infrastructure components are part of CMD. Apart from Citrix Managed Desktops, other services including Citrix Gateway service, Access Control, SD-WAN orchestrator, Content Collaboration, and other services are hosted on Citrix Cloud.
+**Citrix Cloud:** The Citrix Cloud hosts a complete control plane for CVAD Standard. Delivery Controllers, database instances, monitoring tools, and other infrastructure components are part of CVAD Standard. Apart from CVAD Standard, other services including Citrix Gateway service, Secure Workspace Access, SD-WAN orchestrator, Content Collaboration, and other services are hosted on Citrix Cloud.
 
 **Citrix-Managed Azure Platform:** Citrix VDAs are provisioned on this platform. Windows server and client operating systems are hosted on this platform. This platform communicates with Citrix Cloud through Citrix Cloud Connectors. A pair of Cloud Connectors is hosted within a virtual network in each resource location. End-customers do not have access to the Citrix managed Azure subscription including Cloud Connectors. Therefore, Citrix is responsible for the performance and management of the Cloud Connectors.
 
@@ -199,11 +196,11 @@ In case customers want to communicate with existing resources on their Azure pla
 
 **Customer-Managed Azure Platform:** This platform is completely owned by the customer. This Azure platform is the home for multiple Azure services provisioned by the customer. These services are applied by providing high throughput connectivity to the Citrix Managed Azure platform using VNet peering. Currently, VNet peering is scoped to a single region.
 
-**Customer Data Center:** The resources in the data center are completely managed by the customer. In case the organization needs to use services that are running to Citrix Managed Desktops, the customer has to establish connectivity between the Azure Platform (owned by the customer) and data center by using site-to-site VPN or SD-WAN network services.
+**Customer Data Center:** The resources in the data center are completely managed by the customer. In case the organization needs to use services that are running to CVAD Standard, the customer has to establish connectivity between the Azure Platform (owned by the customer) and data center by using site-to-site VPN or SD-WAN network services.
 
-### Citrix Managed Desktops instance types
+### Citrix Virtual Apps and Desktops Standard for Azure instance types
 
-Citrix Managed Desktops uses general-purpose compute power from the Azure platform to provide different types of catalogs. A catalog is a group of identical virtual machines. CMD utilizes the D-series of VMs from Azure. The D-series VMs feature with fast CPUs and optimal CPU-to-memory configuration making them suitable for desktop workloads.
+CVAD Standard uses general-purpose compute power from the Azure platform to provide different types of catalogs. A catalog is a group of identical virtual machines. CVAD Standard utilizes the D-series of VMs from Azure. The D-series VMs feature with fast CPUs and optimal CPU-to-memory configuration making them suitable for desktop workloads.
 
 The administrator has the option to select a machine (a combination of CPU and memory) during catalog creation. Available machine types are as follows:
 
@@ -227,27 +224,27 @@ The administrator has the option to select a machine (a combination of CPU and m
 | D4s v3             | 4               | 16                |
 | D8s v3             | 8               | 32                |
 
-## Citrix Managed Desktops Networking
+## Citrix Virtual Apps and Desktops Standard for Azure Networking
 
-To provide users with best possible experience, Citrix Managed Desktops supports a hybrid or all-in cloud strategy using networking services. The administrators have an option to connect with their existing cloud and on-premises infrastructure and services through VNet peering only if a customer has Azure subscription present in that workload region.
+To provide users with best possible experience, CVAD Standard supports a hybrid or all-in cloud strategy using networking services. The administrators have an option to connect with their existing cloud and on-premises infrastructure and services through VNet peering only if a customer has Azure subscription present in that workload region.
 
 To set up a connection to the corporate data center or other resources, the administrators have to make use of the Azure VNet Peering feature. This process requires Microsoft® Azure Subscription Owner privileges.
 
 ### Azure VNet Peering
 
-Virtual Network (VNet) is the fundamental building block for the private network in the Azure platform. Virtual machines can securely communicate with each other, the Internet, and on-premises networks. The Citrix Managed Azure platform is completely managed by Citrix including creating VNets, applying the policies, and so on. Customers only have visibility of the machines provisioned for them which makes Citrix Managed Desktops a pure DaaS solution.
+Virtual Network (VNet) is the fundamental building block for the private network in the Azure platform. Virtual machines can securely communicate with each other, the Internet, and on-premises networks. The Citrix Managed Azure platform is completely managed by Citrix including creating VNets, applying the policies, and so on. Customers only have visibility of the machines provisioned for them which makes CVAD Standard a pure DaaS solution.
 
-The Citrix Managed Desktops portal gives an option to connect a customer’s existing Azure resources by configuring a VNet peering between Citrix Managed to Customer Managed Azure Virtual Networks. VNet peering is scoped to a single region.
+The CVAD Standard portal gives an option to connect a customer’s existing Azure resources by configuring a VNet peering between Citrix Managed to Customer Managed Azure Virtual Networks. VNet peering is scoped to a single region.
 
-[![CMD-Image-4](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_004.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_004.png)
+[![CVAD Standard 4](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_004.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_004.png)
 
-The VNet Peering is required for VDAs in Citrix Managed Desktops to contact on-premises domain controllers, file shares, and other resources. The customer’s Azure Platform needs to have connectivity to their on-premises resources using ExpressRoute, IPsec tunnels, SD-WAN, and other site-to-site VPN technologies.
+The VNet Peering is required for VDAs in CVAD Standard to contact on-premises domain controllers, file shares, and other resources. The customer’s Azure Platform needs to have connectivity to their on-premises resources using ExpressRoute, IPsec tunnels, SD-WAN, and other site-to-site VPN technologies.
 
 Learn more about VNet concepts, and VNet Peering by visiting the [link](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview).
 
 ### Hybrid Connectivity to on-premises resources
 
-To enable VDAs running on Citrix Managed Desktops to communicate with on-premises resources, customers have to make a hybrid connection between a customer-managed Azure platform to their on-premises resources. Microsoft® Azure gives multiple options for hybrid connectivity. This section outlines a feasible solution for connecting an on-premises network to Azure.
+To enable VDAs running on CVAD Standard to communicate with on-premises resources, customers have to make a hybrid connection between a customer-managed Azure platform to their on-premises resources. Microsoft® Azure gives multiple options for hybrid connectivity. This section outlines a feasible solution for connecting an on-premises network to Azure.
 
 ### VPN connection
 
@@ -259,43 +256,43 @@ This service is more suitable when the customer is using on-premises Active Dire
 
 ### Azure ExpressRoute
 
-The on-premises networks to Microsoft® Azure cloud connection are extended over a private connection provided by the service provider using Azure ExpressRoute. With this connection, the organization can utilize on-premises resources effectively for Citrix Managed Desktops. For example, it is possible to store their profiles on-premises file server, share point, or existing storage for content collaboration services, and so on.
+The on-premises networks to Microsoft® Azure cloud connection are extended over a private connection provided by the service provider using Azure ExpressRoute. With this connection, the organization can utilize on-premises resources effectively for CVAD Standard. For example, it is possible to store their profiles on-premises file server, share point, or existing storage for content collaboration services, and so on.
 
 The key benefits for deploying ExpressRoute are layer 3 connectivity between the on-premises network and Azure cloud, higher reliability, dynamic routing, and global connection to Microsoft® services across all regions.
 
 ExpressRoute circuits are available in a wide range of bandwidth from 50 Mbps to 10 Gbps. Customers need to check with their local service provider.
 
-## Citrix SD-WAN for Citrix Managed Desktops
+## Citrix SD-WAN for Citrix Virtual Apps and Desktops Standard for Azure
 
-An organization using virtual desktops often struggles to obtain a high-quality user experience and always-on connectivity. Reliable, high-performance connectivity is even more important if the virtual desktops are used with cloud-based VOIP or video conferencing. The Citrix Managed Desktops solution offers various hybrid connectivity options to end customers with Citrix SD-WAN providing a sound choice for optimum user experience and cost-effective connectivity.
+An organization using virtual desktops often struggles to obtain a high-quality user experience and always-on connectivity. Reliable, high-performance connectivity is even more important if the virtual desktops are used with cloud-based VOIP or video conferencing. The CVAD Standard solution offers various hybrid connectivity options to end customers with Citrix SD-WAN providing a sound choice for optimum user experience and cost-effective connectivity.
 
 ### Citrix SD-WAN Architecture
 
 Let’s review the Citrix SD-WAN architecture that helps an organization to benefit from reliable network connectivity.
 
-[![CMD-Image-15](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_015.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_015.png)
+[![CVAD Standard 15](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_015.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_015.png)
 
-The preceding diagram represents the Citrix SD-WAN architecture along with the Citrix Managed Desktops solution.
+The preceding diagram represents the Citrix SD-WAN architecture along with the CVAD Standard solution.
 
 ### Overview of Citrix SD-WAN Architecture
 
 Citrix SD-WAN provides the flexibility that it can be deployed in several deployment modes and to integrate the appliances, both physical and virtual, into the customer’s existing networking design and with Cloud deployments. Refer to the [Citrix Tech Zone link](/en-us/tech-zone/design/reference-architectures/sdwan.html) for the SD-WAN overview.
 
-The solution demonstrates that the SD-WAN fits well with a customer’s existing network design and how it eases the integration process in the Azure platform for Citrix Managed Desktops. The administrator deploys a Citrix SD-WAN VPX (virtual appliance) that utilizes the internet path to establish the network connectivity from the Azure environment to a data center and branch office networks.
+The solution demonstrates that the SD-WAN fits well with a customer’s existing network design and how it eases the integration process in the Azure platform for CVAD Standard. The administrator deploys a Citrix SD-WAN VPX (virtual appliance) that utilizes the internet path to establish the network connectivity from the Azure environment to a data center and branch office networks.
 
 The Master Control Node (MCN) establishes a virtual path with Azure environment VPX using the available Internet links. This eliminates the need for establishing direct connectivity from the customer’s hosted location to Azure subscription.
 
-Citrix recommends implementing a Citrix SD-WAN solution for Citrix Managed Desktops to improve the network connectivity and performance, required to deliver the DaaS offering and all associated applications. Also, the virtual desktop access via Citrix SD-WAN is specially optimized for **Citrix HDX technologies** thus providing the best user experience.
+Citrix recommends implementing a Citrix SD-WAN solution for CVAD Standard to improve the network connectivity and performance, required to deliver the DaaS offering and all associated applications. Also, the virtual desktop access via Citrix SD-WAN is specially optimized for **Citrix HDX technologies** thus providing the best user experience.
 
-Citrix SD-WAN offers an always-on experience, changing network paths within 10 milliseconds when there’s a failure in a specific path ensuring highly available connectivity to Citrix Managed Desktops.
+Citrix SD-WAN offers an always-on experience, changing network paths within 10 milliseconds when there’s a failure in a specific path ensuring highly available connectivity to CVAD Standard.
 
-[![CMD-Image-16](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_016.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_016.png)
+[![CVAD Standard 16](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_016.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_016.png)
 
-The preceding diagram depicts the deployment architecture of a Citrix SD-WAN solution for optimizing every connection needed to deliver a great user experience for Citrix Managed Desktops and applications. The Zscaler cloud security platform (or other SWG) is an optional component.
+The preceding diagram depicts the deployment architecture of a Citrix SD-WAN solution for optimizing every connection needed to deliver a great user experience for CVAD Standard and applications. The Zscaler cloud security platform (or other SWG) is an optional component.
 
 ### How Citrix SD-WAN helps in establishing connectivity to customer hosted locations
 
-Citrix SD-WAN virtual appliances hosted on a virtual network within Azure for Citrix Managed Desktops establishes virtual network connectivity with on-premises SD-WAN appliances at office locations and, if applicable, an on-premises data center. The connectivity begins over the inexpensive internet where customers can use broadband, landline, or 4G/LTE of their choice. The Citrix SD-WAN solution is much cheaper than other hybrid connectivity options when achieving low latency and QoS features.
+Citrix SD-WAN virtual appliances hosted on a virtual network within Azure for CVAD Standard establishes virtual network connectivity with on-premises SD-WAN appliances at office locations and, if applicable, an on-premises data center. The connectivity begins over the inexpensive internet where customers can use broadband, landline, or 4G/LTE of their choice. The Citrix SD-WAN solution is much cheaper than other hybrid connectivity options when achieving low latency and QoS features.
 
 Citrix SD-WAN is faster and cheaper to deploy when compared to Azure ExpressRoute
 
@@ -305,7 +302,7 @@ Citrix SD-WAN is faster and cheaper to deploy when compared to Azure ExpressRout
 
 *  Eliminate long timelines associated with the deployment of MPLS and ExpressRoute
 
-*  No licensing cost for Citrix SD-WAN VPX (included with Citrix Managed Desktops)
+*  No licensing cost for Citrix SD-WAN VPX (included with CVAD Standard)
 
 Citrix SD-WAN features can help:
 
@@ -313,25 +310,25 @@ Citrix SD-WAN features can help:
 
 *  Internet access from the virtual desktops and applications to websites, SaaS apps, and other cloud resources
 
-*  Access from the Citrix Managed Desktops back to on-premises resources such as Windows Active Directory Services and database servers
+*  Access from the CVAD Standard back to on-premises resources such as Windows Active Directory Services and database servers
 
 *  Real-Time Transport Protocol from the media engine in the Citrix Workspace app to cloud-hosted unified communications services such as Microsoft® Teams
 
 *  Client-side fetching of videos from sites like YouTube and Vimeo and filtering the access using Secure Web Gateway and third party (Zscaler, Palo Alto, Symantec, or Check Point) cloud security solution
 
-[![CMD-Image-17](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_017.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_017.png)
+[![CVAD Standard 17](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_017.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_017.png)
 
-The preceding diagram depicts a skeleton view of Citrix SD-WAN integration with Citrix Managed Desktops. The Citrix SD-WAN solution offers the easiest and best way to deliver Citrix Managed Desktops and all associated Windows, SaaS, and cloud applications. It also enables the best virtualized **Microsoft® Office 365 experience**.
+The preceding diagram depicts a skeleton view of Citrix SD-WAN integration with CVAD Standard. The Citrix SD-WAN solution offers the easiest and best way to deliver CVAD Standard and all associated Windows, SaaS, and cloud applications. It also enables the best virtualized **Microsoft® Office 365 experience**.
 
 *  HDX real-time media processing performed directly on the user device for Microsoft® Teams
 
-*  Local breakout of audio-video traffic from Citrix Managed Desktops go through Azure SD-WAN VPX and then steer to nearest Microsoft® Office 365 PoP
+*  Local breakout of audio-video traffic from CVAD Standard go through Azure SD-WAN VPX and then steer to nearest Microsoft® Office 365 PoP
 
 *  Unified communications and video breakout to the internet
 
-### The Key Benefits of Integrating Citrix SD-WAN with Citrix Managed Desktops
+### The Key Benefits of Integrating Citrix SD-WAN with Citrix Virtual Apps and Desktops Standard for Azure
 
-The Citrix SD-WAN solution, when used with Citrix Managed Desktops, provides various benefits compared to different hybrid connectivity solutions. A few of them are described below.
+The Citrix SD-WAN solution, when used with CVAD Standard, provides various benefits compared to different hybrid connectivity solutions. A few of them are described below.
 
 Citrix SD-WAN offers the best end-user experience
 
@@ -349,7 +346,7 @@ Citrix SD-WAN offers the best end-user experience
 
 *  Traffic management: QoS across HDX traffic stream, HDX fair sharing between users and QoS between HDX and other traffic
 
-Reference: [Citrix SD-WAN integration with Citrix Managed Desktops](https://www.citrix.com/blogs/2019/10/02/network-connectivity-options-for-citrix-managed-desktops/)
+Reference: [Citrix SD-WAN integration with Citrix Virtual Apps and Desktops Standard for Azure](https://www.citrix.com/blogs/2019/10/02/network-connectivity-options-for-citrix-managed-desktops/)
 
 ## Citrix SD-WAN for Microsoft® Azure
 
@@ -357,7 +354,7 @@ Citrix SD-WAN and Azure cloud enable an organization to redesign their existing 
 
 Citrix SD-WAN offers several benefits over Azure ExpressRoute. The primary advantage of SD-WAN is security. Many organizations prefer network architectures that integrate security, orchestration, and policy. Citrix SD-WAN covers all these factors with secured connectivity.
 
-Benefits of Citrix SD-WAN for delivery with Citrix Managed Desktops.
+Benefits of Citrix SD-WAN for delivery with CVAD Standard.
 
 *  SD-WAN provides economical and highly reliable connectivity
 
@@ -367,9 +364,9 @@ Benefits of Citrix SD-WAN for delivery with Citrix Managed Desktops.
 
 *  VoIP and real-time video traffic are navigated from the corporate data center
 
-[![CMD-Image-5](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_005.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_005.png)
+[![CVAD Standard 5](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_005.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_005.png)
 
-The above diagram depicts SD-WAN usage in a Citrix Managed Desktops environment using the customers Azure platform. Citrix SD-WAN provides two secure connectivity options:
+The above diagram depicts SD-WAN usage in a CVAD Standard environment using the customers Azure platform. Citrix SD-WAN provides two secure connectivity options:
 
 *  Standard-based high-speed IPsec
 
@@ -377,19 +374,19 @@ The above diagram depicts SD-WAN usage in a Citrix Managed Desktops environment 
 
 Citrix SD-WAN is available directly from the Azure Marketplace. Customers can bring their own license and use it with a subscription or perpetual licensing options.
 
-## Citrix Managed Desktops Deployment scenarios
+## Citrix Virtual Apps and Desktops Standard for Azure Deployment scenarios
 
-Citrix Managed Desktops support multiple deployment frameworks along with user authentication. In a simplified way, these are based on either the Active Directory service or Azure Active Directory Domain service usage.
+CVAD Standard support multiple deployment frameworks along with user authentication. In a simplified way, these are based on either the Active Directory service or Azure Active Directory Domain service usage.
 
 ### Non-domain-joined catalogs
 
 All non-domain joined catalogs feature VDAs which are not joined to a domain. In addition, the VDAs cannot have any access to an on-premises network.
 
-Typical uses for non-domain-joined VDAs are DevOps and providing access to third-party users for code development and testing activities. In a normal workgroup, the client machine administrator does not have control over managing the users, deploy updates, and so on. But in Citrix Managed Desktops administrators have control over the machines and users the are authenticated. For user authentication there are three options:
+Typical uses for non-domain-joined VDAs are DevOps and providing access to third-party users for code development and testing activities. In a normal workgroup, the client machine administrator does not have control over managing the users, deploy updates, and so on. But in Citrix Virtual Apps and Desktops Standard for Azure administrators have control over the machines and users the are authenticated. For user authentication there are three options:
 
 1.  Non-domain-joined catalogs with Citrix managed Azure AD
 
-    Citrix-managed Azure AD is used to manage users. Here customers don’t must access resources from the on-premises network. This deployment is the simplest way to conduct POCs for non-domain-joined VDAs. Limited user management is performed through the CMD UI. The Citrix managed Azure AD does not offer all the options of Azure AD authentication, for example, MFA is not configurable with the Citrix managed Azure AD.
+    Citrix-managed Azure AD is used to manage users. Here customers don’t must access resources from the on-premises network. This deployment is the simplest way to conduct POCs for non-domain-joined VDAs. Limited user management is performed through the CVAD Standard UI. The Citrix managed Azure AD does not offer all the options of Azure AD authentication, for example, MFA is not configurable with the Citrix managed Azure AD.
 
 2.  Non-domain-joined catalogs with customer-managed Azure AD
 
@@ -411,11 +408,11 @@ Domain-joined catalogs feature domain-joined VDAs that have access to a customer
 
 2.  Domain Joined VDAs using customer on-premises Active Directory Domain Services
 
-    In this type of deployment, all VDAs are domain-joined. For end-user authentication, customers can use Windows Active Directory Domain services hosted in their on-premises environment. Here Citrix Managed Desktops is running in any part of the Azure region (within CMD scope).
+    In this type of deployment, all VDAs are domain-joined. For end-user authentication, customers can use Windows Active Directory Domain services hosted in their on-premises environment. Here CVAD Standard is running in any part of the Azure region (within CVAD Standard scope).
 
-[![CMD-Image-6](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_006.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_006.png)
+[![CVAD Standard 6](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_006.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_006.png)
 
-In case the customer is using Azure Active Directory authentication, the customer has to install Azure AD connect. The organization must run Azure AD connect on their data center which will be synced with Azure AD. Azure AD is hosted on Azure by the customer using their Azure Subscription. There will be a VNet peering required with the Citrix Managed Desktops environment. For authentication, this type of deployment uses the customer AD hosted within their data center.
+In case the customer is using Azure Active Directory authentication, the customer has to install Azure AD connect. The organization must run Azure AD connect on their data center which will be synced with Azure AD. Azure AD is hosted on Azure by the customer using their Azure Subscription. There will be a VNet peering required with the CVAD Standard environment. For authentication, this type of deployment uses the customer AD hosted within their data center.
 
 Reference: [Deployment scenarios](/en-us/citrix-managed-desktops.html)
 
@@ -425,9 +422,9 @@ The user’s personal settings that are applied to the user’s virtual desktop 
 
 The Active Directory Group Policy Objects allow the administrators to control the behavior of the Citrix user profiles. Profile Management optimizes profiles in an easy and reliable way. During the logoff and at interim stages, registry changes, files, and folders in the profile are saved to the user store for each user.
 
-Citrix Managed Desktops offers multiple catalogs including multi-session, random-desktops supported by Windows 10 EVD and Windows 2016 servers. Customers have to create a user store in their Azure Subscription and profiles are fetched and written to the customer’s file share. The administrators have to make sure there is reliable network connectivity between Citrix Managed Desktops (multi-session and random catalog) and the file servers storing the user profiles.
+CVAD Standard offers multiple catalogs including multi-session, random-desktops supported by Windows 10 EVD and Windows 2016 servers. Customers have to create a user store in their Azure Subscription and profiles are fetched and written to the customer’s file share. The administrators have to make sure there is reliable network connectivity between CVAD Standard (multi-session and random catalog) and the file servers storing the user profiles.
 
-[![CMD-Image-7](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_007.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_007.png)
+[![CVAD Standard 7](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_007.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_007.png)
 
 The user store is the central network location for storing Citrix user profiles. File servers are created in customer’s Azure Subscription with Availability set. For a user store, any SMB or CIFS files share that can be used. Make sure that the shared path is accessible by the accounts used with Citrix user profiles.
 
@@ -443,7 +440,7 @@ To overcome these problems Microsoft® introduced the FSLogix container solution
 
 ### FSLogix Profile Containers
 
-In Citrix Managed Desktops, multi-session and random desktop catalogs will have user profiles that are not retained after logoff. FSLogix is designed to roam profiles in a Citrix Managed Desktops environment. This solution is accomplished by allowing the complete user profile to be stored in a single container.
+In CVAD Standard, multi-session and random desktop catalogs will have user profiles that are not retained after logoff. FSLogix is designed to roam profiles in a CVAD Standard environment. This solution is accomplished by allowing the complete user profile to be stored in a single container.
 
 During logon, the container is dynamically attached to the machine (VDA) that is running on the Citrix Managed Azure Subscription using VHD or VHDX Microsoft® services. These profiles are available to the user’s system as a native-like user profile. The large files are elegantly handled by the FSLogix Profile Containers solution to help ensure optimal user experience.
 
@@ -459,7 +456,7 @@ As previously stated, the user profile is stored as a container and this contain
 
 Azure Files are easily managed through the Azure portal, providing greater resiliency (LRS, ZRS). In terms of scalability, it can grow to 100 TB with multiple partitions. There are also advantages of performance factors given that Azure files provide 10,000 to 100,000 IOPS.
 
-[![CMD-Image-8](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_008.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_008.png)
+[![CVAD Standard 8](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_008.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_008.png)
 
 The administrator has to create Azure Files for storing profiles in customer-managed Azure subscription. The above picture shows Citrix Managed VDAs are fetching the profiles from Azure Files over the network. The customer has to set up the VNet peering between the subscriptions.
 
@@ -469,13 +466,13 @@ Learn more about the FSLogix Profile container solution, at this [link](https://
 
 Reference: [FSLogix](https://docs.fslogix.com/)
 
-## Monitoring of Citrix Managed Desktops
+## Monitoring of Citrix Virtual Apps and Desktops Standard for Azure
 
-The Citrix Managed Desktops **Monitor** dashboard gives the details of desktop usage, sessions, and machines in the deployment. The administrators can also control sessions, power-managed machines, end-user running applications, and end-user running processes.
+The CVAD Standard **Monitor** dashboard gives the details of desktop usage, sessions, and machines in the deployment. The administrators can also control sessions, power-managed machines, end-user running applications, and end-user running processes.
 
 Monitor provides:
 
-*  Real-time data from the CMD services running in the background
+*  Real-time data from the CVAD Standard services running in the background
 
 *  Historical data stored in the Monitor database to access the usage report
 
@@ -485,7 +482,7 @@ Monitor provides:
 
 *  Also provides session control capability with power management options
 
-[![CMD-Image-9](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_009.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_009.png)
+[![CVAD Standard 9](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_009.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_009.png)
 
 The Managed Desktop usage page appears when the administrator selects the **Monitor** tab. Here it gives complete information about all catalogs. It also gives graphs with the number of powered-on machines and peaks concurrent sessions at regular points during the time period selected.
 
@@ -495,13 +492,13 @@ From the Monitor dashboard, administrators can apply filters to log off or disco
 
 ### Power-control machines
 
-Single session or multi-session machines are displayed by applying the filtered search. By clicking Power Control action on the portal the administrator gets an option to restart, force restart, shutdown, force shutdown, and start the machines running on the Citrix Managed Desktops environment.
+Single session or multi-session machines are displayed by applying the filtered search. By clicking Power Control action on the portal the administrator gets an option to restart, force restart, shutdown, force shutdown, and start the machines running on the CVAD Standard environment.
 
-Reference: [Monitor](/en-us/citrix-managed-desktops/monitor.html)
+Reference: [Monitor](/en-us/citrix-virtual-apps-desktops-standard-azure/monitor.html)
 
 ## User Access and Authentication
 
-Citrix Workspace app is the entry point to access desktops and apps running on the Citrix Managed Desktops platform. The user has to first be authenticated when they log in to Citrix Workspace. Citrix Managed Desktops supports the following user authentication methods:
+Citrix Workspace app is the entry point to access desktops and apps running on the CVAD Standard platform. The user has to first be authenticated when they log in to Citrix Workspace. CVAD Standard supports the following user authentication methods:
 
 *  Citrix Managed Azure AD (AAD)
 
@@ -509,19 +506,19 @@ Citrix Workspace app is the entry point to access desktops and apps running on t
 
 *  Customer Managed Azure AD
 
-**Citrix Managed Azure AD:** Azure Active Directory service is provided and managed by Citrix. Here the administrator does not need to provide or own any Azure infrastructure. Citrix has made it simple to manage, the admins have to add their users to the directory using the CMD UI.
+**Citrix Managed Azure AD:** Azure Active Directory service is provided and managed by Citrix. Here the administrator does not need to provide or own any Azure infrastructure. Citrix has made it simple to manage, the admins have to add their users to the directory using the CVAD Standard UI.
 
 **Customer Managed Active Directory:** In this authentication method, customers are using their on-premises Active Directory services or using the Azure Active Directory service.
 
-[![CMD-Image-10](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_010.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_010.png)
+[![CVAD Standard 10](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_010.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_010.png)
 
-One option is to synchronize user identities between cloud and local directories so that Citrix Managed Desktops users can access their resources from Citrix Cloud. Using a single set of credentials users are able to access their CMD resources through Citrix Workspace App. To achieve this, customers have to install and configure Azure AD Connect on their on-premises.
+One option is to synchronize user identities between cloud and local directories so that CVAD Standard users can access their resources from Citrix Cloud. Using a single set of credentials users are able to access their CVAD Standard resources through Citrix Workspace App. To achieve this, customers have to install and configure Azure AD Connect on their on-premises.
 
 Azure AD Connect sync takes care of all the operation that is related to synchronize identity data between the on-premises environment and Azure AD.
 
 Another option is to use **customer-managed Azure AD** with a non-domain joined catalog. In this scenario, the customer-managed Azure AD would be entirely in the cloud with no on-premises connection or synchronization. This method is ideal for customers who do not have any legacy Active Directory or on-premises infrastructure.
 
-Reference: [User Authentication](/en-us/citrix-managed-desktops/users.html#add-and-delete-users-in-managed-azure-ad)
+Reference: [User Authentication](/en-us/citrix-virtual-apps-desktops-standard-azure/users.html#add-and-delete-users-in-managed-azure-ad)
 
 ### Connect Citrix Cloud to Azure AD
 
@@ -535,15 +532,15 @@ Advanced multifactor authentication is provided by Azure AD. Turn-on the availab
 
 ## Image Management
 
-Image Management is the process of creating a master or golden image that contains the operating systems and all the required applications. A single image is delivered to multiple target virtual machines by the image provisioning mechanism. The Citrix Managed Desktops solution uses Citrix proven Machine Creation Service (MCS) technology to provision virtual machines on the Citrix Managed Azure Subscription.
+Image Management is the process of creating a master or golden image that contains the operating systems and all the required applications. A single image is delivered to multiple target virtual machines by the image provisioning mechanism. The CVAD Standard solution uses Citrix proven Machine Creation Service (MCS) technology to provision virtual machines on the Citrix Managed Azure Subscription.
 
-Machine Creation Services configures, starts, stops, and deletes virtual machines using Microsoft® Azure APIs. MCS is a disk-based provisioning approach that integrates well within the Microsoft® Azure cloud platform. Citrix Managed Desktops provides several Citrix-managed master images:
+Machine Creation Services configures, starts, stops, and deletes virtual machines using Microsoft® Azure APIs. MCS is a disk-based provisioning approach that integrates well within the Microsoft® Azure cloud platform. CVAD Standard provides several Citrix-managed master images:
 
 *  Windows 10 Enterprise (single session)
 
 *  Windows 10 EVD and Windows Server 2016 (multi-session)
 
-Citrix Managed Desktops supports both server and desktops OS environments. Citrix administrators can create three types of machine catalogs using Citrix Machine Creation Services. Machine types are:
+CVAD Standard supports both server and desktops OS environments. Citrix administrators can create three types of machine catalogs using Citrix Machine Creation Services. Machine types are:
 
 *  **Multi-session** - Windows 10 EVD (Multi-session) or Windows Server 2016 with latest VDA
 
@@ -551,13 +548,13 @@ Citrix Managed Desktops supports both server and desktops OS environments. Citri
 
 *  **Random (pooled desktops)** - Windows 10 Pro with latest VDA
 
-Citrix offers customers an option to build their own image by using existing master images. These master images are used by the administrator to create a virtual machine to build their customized image for Citrix Managed Desktops.
+Citrix offers customers an option to build their own image by using existing master images. These master images are used by the administrator to create a virtual machine to build their customized image for CVAD Standard.
 
 ### Import a master image from Azure
 
-In the case customer has their customized images available in their Azure Subscription, images are directly imported to CMD. The administrator has to enter the **Azure-generated URL** for the Virtual Hard Disk (VHD).
+In the case customer has their customized images available in their Azure Subscription, images are directly imported to CVAD Standard. The administrator has to enter the **Azure-generated URL** for the Virtual Hard Disk (VHD).
 
-Citrix runs the validation test on the imported image. The administrator has to make sure the image has all the requirements to run on Citrix Managed Desktops. The requirement is:
+Citrix runs the validation test on the imported image. The administrator has to make sure the image has all the requirements to run on CVAD Standard. The requirement is:
 
 *  Operating system support (Windows 10 Enterprise, Windows 10 Enterprise Virtual Desktop preview, or Windows Server 2016)
 
@@ -569,13 +566,13 @@ Citrix runs the validation test on the imported image. The administrator has to 
 
 Note: Before importing a master image from Azure, administrator makes sure that the Azure Virtual Machine Agent is installed on the image.
 
-Learn more about importing a master image from Azure and installation of VDA on the master image, at this [link](/en-us/citrix-managed-desktops/master-images.html).
+Learn more about importing a master image from Azure and installation of VDA on the master image, at this [link](/en-us/citrix-virtual-apps-desktops-standard-azure/master-images.html).
 
-To create and managed master images refer to the [link](/en-us/citrix-managed-desktops/master-images.html#prepare-a-new-image).
+To create and managed master images refer to [product documentation](/en-us/citrix-virtual-apps-desktops-standard-azure/master-images.html#prepare-a-new-image).
 
 ### Optimization of the image
 
-The image may contain multiple unused services that used to create the machine catalog on Citrix Managed Desktops. OS optimization helps to remove or disable unwanted services running on an image. Citrix has developed an optimization tool called “Citrix Optimizer.” This tool helps Citrix administrators to optimize various components in an environment. The tool is PowerShell based and also includes a graphical UI.
+The image may contain multiple unused services that used to create the machine catalog on CVAD Standard. OS optimization helps to remove or disable unwanted services running on an image. Citrix has developed an optimization tool called “Citrix Optimizer.” This tool helps Citrix administrators to optimize various components in an environment. The tool is PowerShell based and also includes a graphical UI.
 
 Citrix Optimizer runs in three different modes:
 
@@ -591,7 +588,7 @@ Learn more about the installation and updates of Citrix Optimizer [CTX224676](ht
 
 ## Licensing and Azure Subscription
 
-Licensing for Citrix Managed Desktops handled by Citrix. The administrator has privileges to set up a Microsoft® RDS license server for Windows Server workloads.
+Licensing for CVAD Standard handled by Citrix. The administrator has privileges to set up a Microsoft® RDS license server for Windows Server workloads.
 
 The multi-session catalog requires a Remote Desktop Services client access license (RDS CAL). The Remote Desktop Services license server issues client access licenses to devices and users. The administrator can activate the license server by using the Remote Desktop Licensing Manager.
 
@@ -605,9 +602,9 @@ Customer Managed Azure Subscription: This subscription owned by a customer runni
 
 ### Bring-Your-Own Azure Subscription
 
-The Citrix Managed Desktops solution allows customers to use Citrix’s Azure subscription or a customer’s Azure subscription. Customers can bring their own Azure subscription which in turn allows any existing Microsoft® Azure customer to easily adopt Citrix Managed Desktops as part of their overall Azure cloud strategy.
+The CVAD Standard solution allows customers to use Citrix’s Azure subscription or a customer’s Azure subscription. Customers can bring their own Azure subscription which in turn allows any existing Microsoft® Azure customer to easily adopt CVAD Standard as part of their overall Azure cloud strategy.
 
-To enable BYO Azure flexibility, a customer must add one or more existing Azure subscriptions to Citrix Managed Desktops.  This action authorizes Citrix Managed Desktops to access customer subscriptions.
+To enable BYO Azure flexibility, a customer must add one or more existing Azure subscriptions to CVAD Standard.  This action authorizes CVAD Standard to access customer subscriptions.
 
 There are a few limitations on the BYO Azure subscription model that are described below:
 
@@ -619,23 +616,23 @@ There are a few limitations on the BYO Azure subscription model that are describ
 
 With the BYO Azure subscription model, the customer has full control over the VDAs running on their subscription. Also, image management becomes easier in terms of importing the image and managing the existing images.
 
-Reference: [Bring-your-own Azure Subscription](/en-us/citrix-managed-desktops/subscriptions.html)
+Reference: [Bring-your-own Azure Subscription](/en-us/citrix-virtual-apps-desktops-standard-azure/subscriptions.html)
 
 ### Windows 10 EVD licensing
 
-Windows Virtual Desktops (WVD) also known as Windows 10 Enterprise Virtual Desktops service and capabilities are extended and enriched by Citrix Managed Desktops through Citrix Cloud. This progression of remote desktop service available only on the Microsoft® Azure platform.
+Windows Virtual Desktops (WVD) also known as Windows 10 Enterprise Virtual Desktops service and capabilities are extended and enriched by CVAD Standard through Citrix Cloud. This progression of remote desktop service available only on the Microsoft® Azure platform.
 
 To deploy and manage a multi-session catalog using Windows Virtual Desktops customer gets a Windows 10 Enterprise E3 entitlement. A new Windows 10 EVD operating system licensed as part of Windows Virtual Desktops in Azure.
 
 Extra benefits of Windows Virtual Desktop are customer gets Windows 7 virtual desktop with free Extended Security Updates. WVD offers flexible service allowing administrators to virtualize both desktops and apps.
 
-## Best Practices and Design Considerations for Citrix Managed Desktops
+## Best Practices and Design Considerations for Citrix Virtual Apps and Desktops Standard for Azure
 
-While adopting the Citrix Managed Desktops service for an organization, solution architects and administrators have to consider best practices and design considerations. It is important to align these with business needs.
+While adopting the CVAD Standard service for an organization, solution architects and administrators have to consider best practices and design considerations. It is important to align these with business needs.
 
-The Citrix Managed Desktops service components computing, storage, and networking (in Citrix managed Azure subscription) are all managed by Citrix. The architects do not need to worry about the infrastructure side unless on-premises connectivity is required. There are a few important points to considered though:
+The CVAD Standard service components computing, storage, and networking (in Citrix managed Azure subscription) are all managed by Citrix. The architects do not need to worry about the infrastructure side unless on-premises connectivity is required. There are a few important points to considered though:
 
-*  Conducting a pre-assessment before moving to CMD
+*  Conducting a pre-assessment before moving to CVAD Standard
 
 *  Deployment considerations and image optimization
 
@@ -649,17 +646,17 @@ The Citrix Managed Desktops service components computing, storage, and networkin
 
 *  Profile Management
 
-### Conducting a pre-assessment before moving to Citrix Managed Desktops
+### Conducting a pre-assessment before moving to Citrix Virtual Apps and Desktops Standard for Azure
 
-To gain an understanding of the workloads, the solution architect has to do pre-assessment of the desktops and applications that run in the Citrix Managed Desktops environment. It is critically imperative to design and gather resource requirement data for CMD.
+To gain an understanding of the workloads, the solution architect has to do pre-assessment of the desktops and applications that run in the CVAD Standard environment. It is critically imperative to design and gather resource requirement data for CVAD Standard.
 
-Pre-assessment is useful to determine the specific applications required for the users, the licensing requirement, and calculate the cost associated with the deployment. Citrix provides the Citrix Managed Desktops cost calculator to understand cost estimation for the deployment. Actual prices may vary depending upon other factors including date of purchase, type of agreement with Citrix, and so on.
+Pre-assessment is useful to determine the specific applications required for the users, the licensing requirement, and calculate the cost associated with the deployment. Citrix provides the CVAD Standard cost calculator to understand cost estimation for the deployment. Actual prices may vary depending upon other factors including date of purchase, type of agreement with Citrix, and so on.
 
-Citrix Managed Desktop Cost Calculator [link](https://costcalculator.apps.cloud.com/daas/advanced).
+CVAD Standard Cost Calculator [link](https://costcalculator.apps.cloud.com/daas/advanced).
 
 ### Deployment considerations and image optimization
 
-Many organizations confront the challenge of effectively scaling resources to meet demand. In case merger and acquisition take place then the organization faces challenges when the data center is under-resourced. Citrix Managed Desktops makes it possible to mitigate the scalability constraints. Customers can provision compute on an availability region nearest to their data center situated with reliable connectivity.
+Many organizations confront the challenge of effectively scaling resources to meet demand. In case merger and acquisition take place then the organization faces challenges when the data center is under-resourced. CVAD Standard makes it possible to mitigate the scalability constraints. Customers can provision compute on an availability region nearest to their data center situated with reliable connectivity.
 
 All the end-users use Citrix Workspace app to access their resources and that is the only single-point of entry. In case customers are using a file server or any other services running on their Azure Subscription, it is the customer’s responsibility to implement VNet peering between subscriptions. At the back-end, the Azure backbone network with a bandwidth of 25 Gbps used to link between subscriptions.
 
@@ -683,21 +680,21 @@ The administrator has an option to set the working hours depending on the time z
 
 To create a power management schedule, refer to the reference section.
 
-Reference: [Power Management](/en-us/citrix-managed-desktops/catalogs-manage.html#manage-power-management-schedules).
+Reference: [Power Management](/en-us/citrix-virtual-apps-desktops-standard-azure/catalogs-manage.html#manage-power-management-schedules).
 
 ### Security
 
-Secure virtual desktops significantly mitigate risks to a company by being within the protected network. Network-level isolation secures the Citrix Managed Desktops from external threats. Only outbound connectivity to the Internet is enabled by default in virtual machines. To access these machines Citrix Workspace app is the single entry point for end-users. The administrators can use the support and troubleshoot option for machines that are domain-joined. Citrix prepared images to have Windows Defender Antivirus enabled by default. The customer has the option to make their images more secure during the master image preparation by installing different antivirus software. There are other considering factors an administrator need to take into the account when considering security:
+Secure virtual desktops significantly mitigate risks to a company by being within the protected network. Network-level isolation secures the CVAD Standard from external threats. Only outbound connectivity to the Internet is enabled by default in virtual machines. To access these machines Citrix Workspace app is the single entry point for end-users. The administrators can use the support and troubleshoot option for machines that are domain-joined. Citrix prepared images to have Windows Defender Antivirus enabled by default. The customer has the option to make their images more secure during the master image preparation by installing different antivirus software. There are other considering factors an administrator need to take into the account when considering security:
 
 *  Applying patches and antivirus software: During the master image creation, it is best practice to apply relevant patches. This process makes the environment safe from malicious users that exploit vulnerabilities left open when operating systems are not kept up-to-date
 
-*  Multifactor authentication: This layer of security in the form of multifactor authentication protects critical corporate resources accessed via Citrix Managed Desktops solutions. Most of the data breaches arising from credentials compromised by enabling MFA it mitigates the risk
+*  Multifactor authentication: This layer of security in the form of multifactor authentication protects critical corporate resources accessed via CVAD Standard solutions. Most of the data breaches arising from credentials compromised by enabling MFA it mitigates the risk
 
-Azure multifactor authentication helps safeguard access to Citrix Managed Desktops. With Conditional Access, the administrator can implement automated access control for accessing Citrix Managed Desktops based on conditions. To learn more about Azure MFA follow the Microsoft® documentation.
+Azure multifactor authentication helps safeguard access to CVAD Standard. With Conditional Access, the administrator can implement automated access control for accessing CVAD Standard based on conditions. To learn more about Azure MFA follow the Microsoft® documentation.
 
 For more information on security refer to the technical security overview documentation.
 
-Reference: [Technical security overview](/en-us/citrix-managed-desktops/security.html)
+Reference: [Technical security overview](/en-us/citrix-virtual-apps-desktops-standard-azure/security.html)
 
 ### Profile Management
 
@@ -713,8 +710,8 @@ Goal of this reference architecture is to assist you with planning your own impl
 
 ## References
 
-The following resources are referenced for a better understanding of Citrix Managed Desktops:
+The following resources are referenced for a better understanding of CVAD Standard:
 
-[Citrix Managed Desktops](/en-us/citrix-managed-desktops.html)
+[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/citrix-managed-desktops.html)
 
-[CMD Architecture](/en-us/citrix-managed-desktops/security.html)
+[CVAD Standard Architecture](/en-us/citrix-virtual-apps-desktops-standard-azure/security.html)

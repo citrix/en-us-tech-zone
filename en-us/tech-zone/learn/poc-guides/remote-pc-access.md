@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Mayank Singh
 description: Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from anywhere and on any device.
 ---
 # Proof of Concept guide for Remote PC Access with Citrix Virtual Desktops service
-
-## Contributors
-
-**Author:** [Mayank Singh](https://twitter.com/techmayank)
 
 ## Overview
 

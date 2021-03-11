@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Mayank Singh
 description: Technologies that ensure an unparalleled user experience when connecting to remote Citrix resources.
 ---
 # High Deinition eXperience (HDX) - Display and Adaptive Technologies
-
-## Contributors
-
-**Author:** [Mayank Singh](https://twitter.com/techmayank)
 
 Citrix HDX is a set of technologies that ensures an unparalleled user experience when connecting to a remote Citrix resource.
 With the HDX engine in the Citrix Workspace app and the HDX protocol, Citrix HDX lets users interact seamlessly with resources even in challenging network conditions using

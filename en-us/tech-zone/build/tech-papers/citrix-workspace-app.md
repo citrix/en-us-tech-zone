@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Dennis Span
+specialThanksTo: Santosh Sampath, Martin Zugec, Nick Rintalan
 description: Quick start guide for Citrix Workspace app - everything you need to know in one place, including installation, configuration, and optimizations.
 ---
 # Citrix Workspace app for Windows - Quick start guide
-
-## Contributors
-
-**Author:** [Dennis Span](https://twitter.com/dennisspan)
-
-**Special thanks:** Santosh Sampath, [Martin Zugec](https://twitter.com/MartinZugec), Nick Rintalan
 
 ## Overview
 

@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Nagaraj Manoli
+specialThanksTo: Rob Zylowski, Dan Morgan
 description: Gain a deep understanding of the Citrix Layering technology that simplifies the image management for VDI and hosted-shared environments including use cases and technical concepts.
 ---
 # Citrix App Layering
-
-## Contributors
-
-**Author:** [Nagaraj Manoli](mailto:nagaraj.manoli@citrix.com)
-
-**Special Thanks:** [Rob Zylowski](https://twitter.com/rzylowski), [Dan Morgan](mailto:Dan.Morgan@citrix.com)
 
 ## Audience
 
@@ -155,11 +152,11 @@ The Citrix App Layering management console is a web-based application hosted on 
 
 ### Compositing Engines
 
-New to version 1910 and later is a feature called Composting Engines. Compositing Engines offload most of the packaging and publishing tasks that can also be performed by the App Layering Appliance. By offloading these tasks the packaging and publishing processes scale much better and due to the advantages of the technologies used, performance of the process is also significantly enhanced.
+New to version 1910 and later is a feature called Compositing Engines. Compositing Engines offload most of the packaging and publishing tasks that can also be performed by the App Layering Appliance. By offloading these tasks the packaging and publishing processes scale much better and due to the advantages of the technologies used, performance of the process is also significantly enhanced.
 
-A Compositing Engine is built by a Hypervisor connector as a Windows PE virtual machine that carries out a set of publishing tasks, then reboots itself into a packaging machine or published image. The Compositing Engine is used to create cached layer disks, create packaging machines and publish images. At the time of writing of this reference architecture, there are Composting Engines for HyperV and vSphere introduced in versions 1910 and 1911, respectively.
+A Compositing Engine is built by a Hypervisor connector as a Windows PE virtual machine that carries out a set of publishing tasks, then reboots itself into a packaging machine or published image. The Compositing Engine is used to create cached layer disks, create packaging machines and publish images. At the time of writing of this reference architecture, there are Compositing Engines for HyperV and vSphere introduced in versions 1910 and 1911, respectively.
 
-Composting Engines have the following characteristics:
+Compositing Engines have the following characteristics:
 
 *  Lightweight, ephemeral appliance running Windows PE
 *  Self compositing
@@ -174,7 +171,7 @@ Composting Engines have the following characteristics:
 
 Use of Compositing Engines is a choice. In the HyperV Connector and the vSphere Connector there is a checkbox to enable "Offload Compositing". This setting is also available in the Machine Creation for vSphere and the VMware Horizon View connectors. The significant advantage to the Compositing Engine is that it is running on a Windows device with direct access to hypervisor disks. This provides the mechanisms to support GEN2 machines in HyperV, native ESX VMDK formats with Thin Provisioning in vSphere and UEFI in both. Packaging and Publishing performance is enhanced because the large layer files are processed less and written directly into disks on the hypervisor by the Compositing Engine which attaches back to the App Layering Appliance to access the layers using iSCSI connections.
 
-Note: PVS publishing cannot yet be performed using a Composting Engine, therefore it is still not possible to directly publish a VHDX file or GEN2 virtual machine to PVS.
+Note: PVS publishing cannot yet be performed using a Compositing Engine, therefore it is still not possible to directly publish a VHDX file or GEN2 virtual machine to PVS.
 
 ### Layer Delivery
 
@@ -587,7 +584,7 @@ For vSphere file uploads, and downloads are not performed by communicating with 
 
 ### Compositing Engines
 
-Compositing Engines connect back to the App Layering Appliance for iSCSI connections on port 3260 and they make API calls to the appliance on port 443. The App Layering Appliance performs API calls to the Composting Engines also on port 443.
+Compositing Engines connect back to the App Layering Appliance for iSCSI connections on port 3260 and they make API calls to the appliance on port 443. The App Layering Appliance performs API calls to the Compositing Engines also on port 443.
 
 ## Availability, Backup, and Recovery
 

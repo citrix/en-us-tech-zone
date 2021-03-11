@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Dennis Span
+specialThanksTo: Martin Zugec
 description: Tech Paper focused on installation, configuration, and various optimizations for Google Chrome browser running on Citrix Virtual Apps and Desktops.
 ---
 # Running Google Chrome on Virtual Apps and Desktop
-
-## Contributors
-
-**Author:** [Dennis Span](https://twitter.com/dennisspan)
-
-**Special thanks:** [Martin Zugec](https://twitter.com/MartinZugec)
 
 ## Overview
 
@@ -147,7 +144,7 @@ Browsers can be quite RAM- and CPU-intensive and Chrome is no exception. On a na
 It is possible to reduce the memory and CPU utilization of Chrome:
 
 -  First of all, use Citrix Workspace Environment Manager (WEM). The features [CPU Management](/en-us/workspace-environment-management/current-release/user-interface-description/system-optimization/cpu-management.html) and [Memory Management](/en-us/workspace-environment-management/current-release/user-interface-description/system-optimization/memory-management.html) reduce the memory and CPU utilization for many processes and applications, Chrome included.
--  Another way of reducing Chrome’s footprint is by using a Chrome extension, such as [The Great Suspender](https://chrome.google.com/webstore/detail/the-great-suspender/klbibkeccnjlkjkiokjodocebajanakg?hl=en), to manage tabs to free up system resources. This extension suspends unused tabs, thus reducing memory and (especially!) CPU consumption. Each user can customize the extension (for example which URLs never to suspend, the time-out after which tabs are suspended and more). Test this plug-in and use the Chrome task manager to see how the resource consumption of each suspended tab reduces significantly.
+-  Another way of reducing Chrome’s footprint is by using a Chrome extension to manage tabs to free up system resources. These extensions suspend unused tabs, thus reducing memory and (especially!) CPU consumption. Test these plug-in and use the Chrome task manager to see how the resource consumption of each suspended tab reduces significantly.
 -  In case your physical hosts come with a Graphics Processing Unit (GPU), certain processing tasks are offloaded to the GPU, thus freeing up the CPU. Citrix CTP Helge Klein wrote two great articles on this topic: [Impact of GPU Acceleration on Browser CPU Usage](https://helgeklein.com/blog/2014/12/impact-gpu-acceleration-browser-cpu-usage/) and [Comparison: CPU & GPU Usage of 4 Browsers](https://helgeklein.com/blog/2016/06/comparison-cpu-gpu-usage-4-browsers/).
 
 ### Manage Chrome extensions

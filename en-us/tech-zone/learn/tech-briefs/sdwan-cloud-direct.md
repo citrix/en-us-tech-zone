@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Matthew Brooks
+specialThanksTo: Karthick Srivatsan, Mark King, Daniel Feller
 description: Optimize SaaS access for branch users by tunneling session traffic to Internet Exchanges with direct connectivity to popular sites.
 ---
 # Citrix SD-WAN Cloud Direct overview
-
-## Contributors
-
-**Author:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
-
-**Special Thanks:**  Karthick Srivatsan, Mark King, Daniel Feller
 
 Citrix SD-WAN Cloud Direct extends Citrix SD-WAN optimal routing and delivery optimization benefits to SaaS. The service tunnels branch office endpoint traffic, to the front door of popular SaaS sites, via PoPs hosted at major Internet Exchanges.
 
@@ -233,6 +230,6 @@ UCaaS includes VoIP based communication solutions such as Microsoft Teams and Sk
 
 ### DaaS
 
-Citrix SD-WAN Cloud Direct provides several benefits for [Citrix Virtual Apps and Desktops service](/en-us/citrix-virtual-apps-desktops.html) and [Citrix Managed Desktops](/en-us/citrix-managed-desktops.html) users to improve user experience. The service provides better user experience when links are congested. It also aggregates and steers traffic to avoid session outages when local access links fail.
+Citrix SD-WAN Cloud Direct provides several benefits for [Citrix Virtual Apps and Desktops service](/en-us/citrix-virtual-apps-desktops.html) and [Citrix Virtual Apps and Desktops Standard for Azure](/en-us/citrix-managed-desktops.html) users to improve user experience. The service provides better user experience when links are congested. It also aggregates and steers traffic to avoid session outages when local access links fail.
 
-Citrix Virtual Apps and Desktops and Citrix Managed Desktops VDAs may be hosted in various hybrid cloud locations. After a Citrix SD-WAN appliance identifies an HDX session (the delivery protocol) it checks all available virtual paths for the optimal route. If the session is mapped to Citrix SD-WAN Cloud Direct, its traffic is tagged as interactive. Then the session is prioritized and transported accordingly. Citrix SD-WAN with Cloud Direct service is the ideal solution to route and deliver Citrix Virtual Apps and Desktops and Citrix Managed Desktops optimally across the public internet.
+Citrix Virtual Apps and Desktops VDAs may be hosted in various hybrid cloud locations. After a Citrix SD-WAN appliance identifies an HDX session (the delivery protocol) it checks all available virtual paths for the optimal route. If the session is mapped to Citrix SD-WAN Cloud Direct, its traffic is tagged as interactive. Then the session is prioritized and transported accordingly. Citrix SD-WAN with Cloud Direct service is the ideal solution to route and deliver Citrix Virtual Apps and Desktops optimally across the public internet.

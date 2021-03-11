@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Daniel Feller, Mayank Singh
 description: Business continuity events can have a regional or global impact. Learn about the different ways Citrix allows users to remain productive when making it to the office is not possible.
 ---
 # Business Continuity
-
-## Contributors
-
-**Author:** [Daniel Feller](https://twitter.com/djfeller) and [Mayank Singh](https://twitter.com/techmayank)
 
 Most organizations have defined business continuity plans. The success of a business continuity plan is based on how much it impacts the user experience, how well it scales to overcome global issues, and how well it maintains corporate security policies.
 
@@ -97,9 +95,9 @@ Because users simply access their physical work PC, the organization only needs 
 
 ### Identity
 
-Users continue to authenticate with Active Directory, but this authentication happens when the user initiates a connection to the organization's public fully qualified domain name for Citrix Gateway. Because the site is external, organizations require stronger authentication than a simple Active Directory user name and password. Incorporating multifactor authentication, like a time-based one-time password token, can greatly improve authentication security.
+Users continue to authenticate with Active Directory, but this authentication happens when the user initiates a connection to the organization's public fully qualified domain name for Citrix Gateway. Because the site is external, organizations require stronger authentication than a simple Active Directory user name and password. Incorporating multi-factor authentication, like a time-based one-time password token, can greatly improve authentication security.
 
-Citrix Gateway provides organizations with numerous multifactor authentication options, which include:
+Citrix Gateway provides organizations with numerous multi-factor authentication options, which include:
 
 *  [One Time Password](/en-us/citrix-gateway/13/authentication-authorization/configure-onetime-passwords.html)
 *  [RADIUS](/en-us/citrix-gateway/13/authentication-authorization/configure-radius.html)
@@ -179,7 +177,7 @@ The diagram shows how Citrix Virtual Desktops service is deployed with virtual d
 To expand the deployment, the admin performs the following steps:
 
 *  Sets up Citrix Cloud Connectors (at least two) in the cloud resource location and adds the new resource location in the service.
-*  Deploys and configures the SDWAN instances to be able to connect the on-premises data center.
+*  Deploys and configures the SD-WAN instances to be able to connect the on-premises data center.
 
 With the service configuration done, the administrator can perform the following to enable access to the virtual machines:
 
@@ -198,15 +196,15 @@ Once deployed, users authenticate to the environment and receive a cloud-hosted 
 *  The user connects to the session over the internet for the last mile (from the nearest Citrix Gateway PoP), the ICA protocol adjusts based on network conditions to provide the most responsive experience possible.
 *  Citrix session policies secure the environment by blocking untrusted endpoints from transferring data to and from the Remote PC Access or the virtual desktop
 
-## Citrix Managed Desktops
+## Citrix Virtual Apps and Desktops Standard for Azure
 
-Customers who want to exclusively use cloud to host their business continuity environment can use Citrix Managed Desktops, a Desktop-as-a-Service (DaaS) offering. This deployment option also works when an administrator does not have time to setup or does not want to manage an on-premises Citrix Virtual Apps and Desktops environment.
+Customers who want to exclusively use cloud to host their business continuity environment can use Citrix Virtual Apps and Desktops Standard for Azure, a Desktop-as-a-Service (DaaS) offering. This deployment option also works when an administrator does not have time to setup or does not want to manage an on-premises Citrix Virtual Apps and Desktops environment.
 
-The entire Citrix Managed Desktops environment is hosted in Microsoft Azure. The Citrix Managed Desktops service can be spun up quickly when the business continuity event occurs. With the monthly pay-as-you-go billing (which includes Azure consumption), the environment can be shut down when no longer needed.
+The entire Citrix Virtual Apps and Desktops Standard for Azure environment is hosted in Microsoft Azure. This service can be spun up quickly when the business continuity event occurs. With the monthly pay-as-you-go billing (which includes Azure consumption), the environment can be shut down when no longer needed.
 
 ### Identity
 
-To maintain a user experience similar to the traditional, on-premises model, the user's identity continues to use Active Directory. Domain-joined, Active-Directory based deployments of Citrix Managed Desktops allow users to use either of the following options:
+To maintain a user experience similar to the traditional, on-premises model, the user's identity continues to use Active Directory. Domain-joined, Active-Directory based deployments of Citrix Virtual Apps and Desktops Standard for Azure allow users to use either of the following options:
 
 *  Option 1: Users authenticate to the organization's Azure Active Directory, which is synchronized from the organization's on-premises Active Directory domain.
 *  Option 2: Users authenticate to the on-premises Active Directory domain by using an Azure-to-Data Center tunnel created with Citrix SD-WAN.
@@ -215,25 +213,25 @@ In most instances, an organization synchronizes the on-premises Active Directory
 
 ### Data Center Connectivity
 
-To be effective, users need to access files and back end resources from their Citrix Managed Desktop. Unless these items are transitioned to Azure, connectivity between Azure and the data center must be established.
+To be effective, users need to access files and back end resources from their CVAD Standard. Unless these items are transitioned to Azure, connectivity between Azure and the data center must be established.
 
 Using Citrix SD-WAN, organizations create a secure tunnel between Azure and the data center. SD-WAN understands the data traversing the tunnel and can properly optimize the traffic to improve application response time and user experience.
 
 ### Deployment
 
-Organizations can easily deploy Citrix Managed Desktops with a minimal deployment footprint, as seen in the following conceptual diagrams.
+Organizations can easily deploy Citrix Virtual Apps and Desktops Standard for Azure with a minimal deployment footprint, as seen in the following conceptual diagrams.
 
-The first diagram shows how Citrix Managed Desktops are deployed with workloads in Citrix managed Azure and authenticating to Active Directory for user authentication and connected to on-prem with SD WAN:
+The first diagram shows how Citrix Virtual Apps and Desktops Standard for Azure are deployed with workloads in Citrix managed Azure and authenticating to Active Directory for user authentication and connected to on-prem with SD-WAN:
 
-[![Citrix Managed Desktops - Citrix Managed Azure and Active Directory authentication with SDWAN](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-citrix-managed-desktops-ad-auth.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-citrix-managed-desktops-ad-auth.png)
+[![Citrix Virtual Apps and Desktops Standard for Azure - Citrix Managed Azure and Active Directory authentication with SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_cvadsfas-deployment-citrix-managed-desktops-ad-auth.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_cvadsfas-deployment-citrix-managed-desktops-ad-auth.png)
 
-The second diagram shows how Citrix Managed Desktops are deployed with workloads in Citrix managed Azure and authenticating users to an Azure Active Directory or Active Directory Domain Services instance which syncs to or has trust with (respectively) an on-premises Active Directory.
+The second diagram shows how Citrix Virtual Apps and Desktops Standard for Azure are deployed with workloads in Citrix managed Azure and authenticating users to an Azure Active Directory or Active Directory Domain Services instance which syncs to or has trust with (respectively) an on-premises Active Directory.
 
-[![Citrix Managed Desktops - Citrix Managed Azure and Azure Active Directory authentication with AD sync](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-citrix-managed-desktops-aad-auth.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-citrix-managed-desktops-aad-auth.png)
+[![Citrix Virtual Apps and Desktops Standard for Azure - Citrix Managed Azure and Azure Active Directory authentication with AD sync](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_cvadsfas-deployment-citrix-managed-desktops-aad-auth.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_cvadsfas-deployment-citrix-managed-desktops-aad-auth.png)
 
-The third diagram shows how Citrix Managed Desktops are deployed with workloads in Customer managed Azure and authenticating users to an Azure Active Directory or Active Directory Domain Services instance which syncs to or has trust with (respectively) an on-premises Active Directory. Connection to the on-prem location via SDWAN, Site to Site VPN or Express Route.
+The third diagram shows how Citrix Virtual Apps and Desktops Standard for Azure are deployed with workloads in Customer managed Azure and authenticating users to an Azure Active Directory or Active Directory Domain Services instance which syncs to or has trust with (respectively) an on-premises Active Directory. Connection to the on-prem location via SD-WAN, Site to Site VPN or Express Route.
 
-[![Citrix Managed Desktops - Customer Managed Azure and Azure Active Directory authentication with AD sync](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-customer-managed-desktops-aad-auth.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_citrix-managed-desktops-deployment-customer-managed-desktops-aad-auth.png)
+[![Citrix Virtual Apps and Desktops Standard for Azure - Customer Managed Azure and Azure Active Directory authentication with AD sync](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_cvadsfas-deployment-customer-managed-desktops-aad-auth.png)](/en-us/tech-zone/learn/media/tech-briefs_business-continuity_cvadsfas-deployment-customer-managed-desktops-aad-auth.png)
 
 To add a new deployment, the admin performs the following steps:
 

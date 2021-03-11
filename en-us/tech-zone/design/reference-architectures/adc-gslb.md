@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Rajendra Soebhag, Albert Lee
+specialThanksTo: Brendan Lin, Sarah Steinhoff
 description: Learn the architecture and deployment considerations for Global Server Load Balancing configuration with Citrix Application Delivery Controller.
 ---
 # Citrix Application Delivery Controller (ADC) Global Server Load Balancing (GSLB)
-
-## Contributors
-
-**Author:** [Rajendra Soebhag](mailto:rajendra.soebhag@citrix.com) and [Albert Lee](mailto:albert.leej@Citrix.com)
-
-**Special thanks:** [Brendan Lin](mailto:brendan.lin@citrix.com) and [Sarah Steinhoff](mailto:sarah.steinhoff@citrix.com)
 
 ## Overview
 
@@ -217,9 +214,9 @@ The deliverable provides guidelines for the implementation and configuration ref
 
 Citrix Online Product Documentation [Citrix ADC](/en-us/citrix-adc.html)
 
-Citrix Online Product Documentation [Citrix ADC VPX Virtual Machines](/en-us/citrix-adc/13/deploying-vpx.html)
+Citrix Online Product Documentation [Citrix ADC VPX Virtual Machines](/en-us/citrix-adc/current-release/deploying-vpx.html)
 
-Citrix Online Product Documentation [Global Server Load Balancing](/en-us/citrix-adc/13/global-server-load-balancing.html)
+Citrix Online Product Documentation [Global Server Load Balancing](/en-us/citrix-adc/current-release/global-server-load-balancing.html)
 
 Citrix Whitepaper [CTX129514](https://support.citrix.com/article/CTX129514) – Secure Deployment Guide for Citrix ADC MPX, VPX, and SDX Appliances
 
@@ -231,11 +228,9 @@ Citrix Knowledgebase Article [CTX121713](https://support.citrix.com/article/CTX1
 
 Citrix Knowledgebase Article [CTX110488](https://support.citrix.com/article/CTX110488) – Delegating DNS Subdomains to the GSLB Setup of the Citrix ADC Appliances
 
-Citrix Online Product Documentation [Load Balancing](/en-us/citrix-adc/13/load-balancing.html)
+Citrix Online Product Documentation [Load Balancing](/en-us/citrix-adc/current-release/load-balancing.html)
 
-Citrix Online Product Documentation [SSL Offload and Acceleration](/en-us/citrix-adc/13/ssl.html)
-
-Citrix Community Blog [StoreFront Remote Access Part 1: The Subnet IP Demystified](https://www.citrix.com/blogs/2013/07/08/storefront-remote-access-part-1-the-subnet-ip-demystified/)
+Citrix Online Product Documentation [SSL Offload and Acceleration](/en-us/citrix-adc/current-release/ssl.html)
 
 Citrix Community Blog [Gateway Integration with StoreFront Lessons Learned](https://www.citrix.com/blogs/2014/10/15/gateway-integration-with-storefront-lessons-learned/)
 

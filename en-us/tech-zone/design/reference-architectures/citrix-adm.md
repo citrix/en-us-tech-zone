@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Albert Lee
+specialThanksTo: Andrew Gravett
 description: See how the Citrix Application Delivery Management software is deployed to simplify management and monitoring of your application delivery infrastructure.
 ---
 # Citrix Application Delivery Management
-
-## Contributors
-
-**Author:** [Albert Lee](mailto:Albert.lee@citrix.com)
-
-**Special thanks:** [Andrew Gravett](mailto:Andrew.Gravett@citrix.com)
 
 ## Overview
 
@@ -23,7 +20,7 @@ Citrix ADM Software virtual appliances can be deployed in several deployment mod
 *  Disaster Recovery Mode
 *  ADM Agent Deployment (for adding remote Sites)
 
-This ADM Reference document defines a set of architectural building blocks for delivering Citrix Application Delivery Management (Citrix ADM) 12.1MR. The target audiences are technical professionals and architects seeking knowledge on how to key components to support the following objectives.
+This ADM Reference document defines a set of architectural building blocks for delivering Citrix Application Delivery Management (Citrix ADM). The target audiences are technical professionals and architects seeking knowledge on how to key components to support the following objectives.
 
 ## ADM Appliance Software Architecture
 
@@ -58,7 +55,7 @@ Citrix ADM requires a verified Citrix ADC license to manage and monitor the Citr
 
 You can manage and monitor any number of supported instances and entities without a license. However, you can select and configure Analytics for an initial 30 discovered applications on the App Dashboard and view analytics data for 30 virtual servers without applying for extra licenses. To collect Analytics for more than 30 discovered applications (30 virtual servers), you must purchase and apply the desired licenses.
 
-Full information on licensing is available in the Citrix ADM product documentation about [licensing](/en-us/citrix-application-delivery-management-software/12-1/licensing.html).
+Full information on licensing is available in the Citrix ADM product documentation about [licensing](/en-us/citrix-application-delivery-management-software/current-release/licensing.html).
 
 ### Supported Hypervisors
 
@@ -68,10 +65,10 @@ The following table lists the hypervisors supported by Citrix ADM.
 
 | **Hypervisor**    | **Versions**              | **Product Documentation**                                  |
 | ----------------- | ------------------------- | ------------------------------------------------------------ |
-| Citrix Hypervisor | 7.1 and 7.4               | [Citrix ADM with Citrix Hypervisor](/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-xenserver.html) |
-| VMware ESXi       | 6.0 and 6.5               | [Citrix ADM with VMware ESXi](/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-esxi.html) |
-| Microsoft Hyper-V | 2012 R2 and 2016          | [Citrix ADM with Microsoft Hyper-V](/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-hyper-v.html) |
-| Generic KVM       | RHEL 7.4 and Ubuntu 16.04 | [Citrix ADM with Linux KVM server](/en-us/citrix-application-delivery-management-software/12-1/deploy/install-mas-on-kvm.html) |
+| Citrix Hypervisor | 7.1 and 7.4               | [Citrix ADM with Citrix Hypervisor](/en-us/citrix-application-delivery-management-software/current-release/deploy/install-mas-on-xenserver.html) |
+| VMware ESXi       | 6.0 and 6.5               | [Citrix ADM with VMware ESXi](/en-us/citrix-application-delivery-management-software/current-release/deploy/install-mas-on-esxi.html) |
+| Microsoft Hyper-V | 2012 R2 and 2016          | [Citrix ADM with Microsoft Hyper-V](/en-us/citrix-application-delivery-management-software/current-release/deploy/install-mas-on-hyper-v.html) |
+| Generic KVM       | RHEL 7.4 and Ubuntu 16.04 | [Citrix ADM with Linux KVM server](/en-us/citrix-application-delivery-management-software/current-release/deploy/install-mas-on-kvm.html) |
 
 ### Requirements for ADM appliance and agent Images
 
@@ -157,11 +154,11 @@ Notes:
 
 ### Prune Settings
 
-To limit the amount of reporting data stored in your Citrix ADM server’s database, you can prune it. You can specify the interval for which you want Citrix ADM to retain network reporting data, events, audit logs, and task logs. By default, this data is pruned every 24 hours (at 00.00 hours). More details can found [here](/en-us/citrix-application-delivery-management-software/12-1/manage-system-settings/configure-system-prune-settings-mas.html).
+To limit the amount of reporting data stored in your Citrix ADM server’s database, you can prune it. You can specify the interval for which you want Citrix ADM to retain network reporting data, events, audit logs, and task logs. By default, this data is pruned every 24 hours (at 00.00 hours). More details can found [here](/en-us/citrix-application-delivery-management-software/current-release/manage-system-settings/configure-system-prune-settings-mas.html).
 
 ### Backup Settings
 
-Citrix devices can be backed up automatically to the Citrix ADM server. Also, those backed-up data forwarded to an external server for historical trending and auditing. Refer to the [link](/en-us/citrix-application-delivery-management-software/12-1/manage-system-settings/configure-system-backup-settings.html) for more details.
+Citrix devices can be backed up automatically to the Citrix ADM server. Also, those backed-up data forwarded to an external server for historical trending and auditing. Refer to the [link](/en-us/citrix-application-delivery-management-software/current-release/manage-system-settings/configure-system-backup-settings.html) for more details.
 
 ## ADM Deployment Scenarios
 
@@ -223,7 +220,7 @@ The recovery site has a standalone Citrix ADM disaster recovery node deployed re
 
 After the initiation of the script at the DR site, the DR site now becomes the new primary site. You can also access the DR user interface.
 
-Full information about the disaster recovery (DR) feature is available in the Citrix ADM product documentation article [Configure disaster recovery for high availability](/en-us/citrix-application-delivery-management-software/12-1/deploy/disaster-recovery.html).
+Full information about the disaster recovery (DR) feature is available in the Citrix ADM product documentation article [Configure disaster recovery for high availability](/en-us/citrix-application-delivery-management-software/current-release/deploy/disaster-recovery.html).
 
 ## ADM Agent Deployment
 
@@ -258,9 +255,9 @@ The following ports must be open between the agent and Citrix ADC Instances.
 
 ## References
 
-[Citrix Application Delivery Management 12.1 Product Documentation](/en-us/citrix-application-delivery-management-software/12-1/get-started.html)
+[Citrix Application Delivery Management Product Documentation](/en-us/citrix-application-delivery-management-software/current-release/get-started.html)
 
- [Citrix ADC 13.0 Product Documentation](/en-us/citrix-adc/13.html)
+ [Citrix ADC Product Documentation](/en-us/citrix-adc/current-release.html)
 
 [Citrix Analytics Platform](/en-us/citrix-analytics.html)
 
@@ -286,13 +283,13 @@ The VPX provides the full functionality of the Citrix Networking product line, w
 
 Citrix ADC VPX in Azure is deployed in a Virtual Network (VNET) and is available from the Azure Marketplace in subscription-based, check-in/check-out, or Bring Your Own License (BYOL) editions. The recommended configuration includes three NICs: management, client-side, and server-side subnets. All on-premises Citrix Networking features are available in Azure, except for the following: clustering, IPv6, gratuitous ARP (GARP), L2 mode, tagged VLANs, dynamic routing, virtual MAC (VMAC), USIP, and jumbo frames.
 
-More details on Citrix ADC VPX in Azure can be found [here](/en-us/netscaler/12-1/deploying-vpx/deploy-vpx-on-azure.html).
+More details on Citrix ADC VPX in Azure can be found [here](/en-us/citrix-adc/current-release/deploying-vpx/deploy-vpx-on-azure.html).
 
 #### Citrix ADC VPX in AWS
 
 Citrix ADC VPX in AWS is deployed in a Virtual Private Cloud (VPC) and is available as an Amazon Machine Image (AMI) from the AWS Marketplace in subscription-based or bring you to own license (BYOL) editions. The recommended configuration includes three Elastic Network Interfaces (ENIs): management, client-facing, and back-end subnets. All on-premises Citrix Networking features are available in AWS, except for the following: IPv6, gratuitous ARP (GARP), L2 mode, tagged VLAN, dynamic routing, virtual MAC (VMAC).
 
-More details on Citrix ADC VPX in AWS can be found [here](/en-us/netscaler/12-1/deploying-vpx/deploy-aws.html).
+More details on Citrix ADC VPX in AWS can be found [here](/en-us/citrix-adc/current-release/deploying-vpx/deploy-aws.html).
 
 #### MPX Overview
 

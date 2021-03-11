@@ -1,14 +1,16 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Florin Lazurca
 description: Zero Trust is the most important End User Computing movement since Mobile and Cloud. The Citrix Zero Trust Architecture enables the “any-any-any” vision that Citrix has been espousing for years and is secured by access policies that take trust into context.
 ---
 # Zero Trust Architecture
 
-## Contributors
-
-**Author:** Florin Lazurca
-
 ## Overview
+
+  >**Note:**
+  >
+  >New to Zero Trust? Learn [what is Zero Trust Security](https://www.citrix.com/glossary/what-is-zero-trust-security.html) and about [Citrix solution for Zero Trust](https://www.citrix.com/digital-workspace/zero-trust.html).
 
 Traditional, perimeter-based approaches to protecting information systems and data are inadequate.
 
@@ -49,7 +51,7 @@ Zero trust is achieved through an intentional implementation of the framework. U
 
 Citrix sees Zero Trust as a strategy that applies not only just to networking, but across the organization in users, devices, networks, applications – and how people work.
 
-Citrix Zero Trust Architecture focuses on protecting resources and is designed and deployed adhering to tenets modeled after the National Institute of Standards and Technology (NIST) [Zero Trust tenets](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207-draft2.pdf):
+Citrix Zero Trust Architecture focuses on protecting resources and is designed and deployed adhering to tenets modeled after the National Institute of Standards and Technology (NIST) [Zero Trust tenets](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf):
 
 1.  All data sources and computing services are considered resources
 2.  All communication is secured regardless of network location because every network, both enterprise and remote, is innately hostile and not trustworthy
@@ -144,15 +146,15 @@ Citrix’s identity approach allows enterprises to preserve their investments. I
 
 Citrix Gateway provides SmartAccess and SmartControl policies that provide flexibility to balance user convenience with risk. Based on the result of a SmartAccess scan, a user can be granted full access, reduced access, quarantine, or no access at all. For example, a user who fails a device compliance check can get access to a reduced set of applications. Sensitive applications can have restricted functionality like blocking printing and downloading. SmartControl centralizes policy management on Citrix Gateway, strengthening access control at the network layer before the user reaches the back-end resource.
 
-### Citrix Access Control
+### Citrix Secure Workspace Access
 
-Citrix Workspace offers an integrated approach to secure access to the internet. In addition to managing user devices, Access Control focuses on protecting a user’s workspace on both managed and unmanaged BYO devices. User information is always protected, whether accessing allow list or block list URLs or URL categories.
+Citrix Workspace offers an integrated approach to secure access to the internet. In addition to managing user devices, Secure Workspace Access focuses on protecting a user’s workspace on both managed and unmanaged BYO devices. User information is always protected, whether accessing allow list or block list URLs or URL categories.
 
-Citrix Access Control offers a URL filtering engine and an integrated browser isolation service. Together, they give an admin the choice to completely block a URL or access any URL in a sandbox environment. Also, admins can take a cautious approach even for accessing allow list URLs. This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet.
+Citrix Secure Workspace Access offers a URL filtering engine and an integrated browser isolation service. Together, they give an admin the choice to completely block a URL or access any URL in a sandbox environment. Also, admins can take a cautious approach even for accessing allow list URLs. This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet.
 
-A traditional URL filtering engine that assumes trust for a allow list URL. Access Control does not implicitly trust an allow list URL since webpages, deemed safe by URL filtering engines, that can host malicious links. With Access Control URLs within the trusted URL are also tested.
+A traditional URL filtering engine that assumes trust for a allow list URL. Secure Workspace Access does not implicitly trust an allow list URL since webpages, deemed safe by URL filtering engines, that can host malicious links. With Secure Workspace Access URLs within the trusted URL are also tested.
 
-Access Control also addresses “gray status URLs” by offering the isolated browser. Users can securely access sites that fall between URLs blacklisted or whitelisted. Access Control doesn’t require a device to be managed making it ideal for BYO type environments. Most URL filtering engines push a PAC file on the end user’s device that is either managed or must be connected to a domain.
+Secure Workspace Access also addresses “gray status URLs” by offering the isolated browser. Users can securely access sites that fall between URLs blacklisted or whitelisted. Secure Workspace Access doesn’t require a device to be managed making it ideal for BYO type environments. Most URL filtering engines push a PAC file on the end user’s device that is either managed or must be connected to a domain.
 
 ### Citrix Content Collaboration
 

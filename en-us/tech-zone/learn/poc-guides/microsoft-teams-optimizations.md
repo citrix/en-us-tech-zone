@@ -1,14 +1,11 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: Mayank Singh
+specialThanksTo: Fernando Klurfan
 description: Learn how to deliver the Citrix® HDX™ Optimization for Microsoft® Teams in a Citrix environment. The optimization offers clear, crisp high-definition video calls, audio-video or audio-only calls to and from other Teams users, optimized Teams’ users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
 ---
 # Proof of Concept guide for Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments
-
-## Contributors
-
-**Author:** [Mayank Singh](https://twitter.com/techmayank)
-
-**Special Thanks:** Fernando Klurfan
 
 ## Overview
 
@@ -21,7 +18,7 @@ This document guides administrators in evaluating the Teams delivery solution in
 
 This choice is often what causes the most confusion about delivering a Microsoft Teams experience in a Citrix environment. The main reason is that without optimization the media must “hairpin” from your client to the server in the data center and then back to the endpoint. This additional traffic can put significant load on the server (especially for video) and can cause delay and an overall degraded experience, especially if the other party in a Teams call is originating from a user in a similar virtualized experience. This method for delivering a Microsoft Teams experience is referred to as “Generic” delivery.
 
-The preferred method of delivery is the “Optimized” method. In this case, the architect and/or administrator uses Optimization for Microsoft Teams in their environment. The “Optimized” method is like splitting the Teams client in two, as illustrated in the following comparison diagram. The user interface lives inside the virtual host, and is seen completely in the virtual desktop or application display. However, the media rendering, or media engine is separated off to run on the endpoint. This method allows for an exquisite rendering of the audio and video and a great desktop sharing experience.
+The preferred method of delivery is the “Optimized” method. In this case, the architect or administrator uses Optimization for Microsoft Teams in their environment. The “Optimized” method is like splitting the Teams client in two, as illustrated in the following comparison diagram. The user interface lives inside the virtual host, and is seen completely in the virtual desktop or application display. However, the media rendering, or media engine is separated off to run on the endpoint. This method allows for an exquisite rendering of the audio and video and a great desktop sharing experience.
 
 ![Optimized vs Fallback mode of delivery for Microsoft Teams](/en-us/tech-zone/learn/media/poc-guides_microsoft-teams-optimizations_1.png)
 
@@ -137,7 +134,7 @@ Using this image, create the appropriate machine catalogs and delivery groups in
 
 ## Windows client device – Citrix Workspace app 1909 for Windows install
 
-The Citrix Workspace app 1909 for Windows has the optimization components built into it. When you install the application on your client, they should already be present.
+The Citrix Workspace app 1909 for Windows has the optimization components built into it. When you install the application on your client, the components are already present.
 
 ### System Requirements
 
@@ -170,8 +167,11 @@ We recommend evaluating your environment to identify any risks and requirements 
 
 ### Port / Firewall settings
 
-Teams traffic flows via Transport Relay on TCP and UDP 80, 443, UDP 3478-3481.
-Optimized traffic for peer to peer connections is routed on higher ports (40 K+ UDP) at random, if they are open. For more info [read](https://docs.microsoft.com/en-us/office365/enterprise/urls-and-ip-address-ranges#skype-for-business-online-and-microsoft-teams)
+Teams traffic flows via Transport Relay on UDP 3478-3481, TCP 443 (fallback) and the clients need access to these address ranges: 13.107.64.0/18, 52.112.0.0/14, 52.120.0.0/14.
+
+Optimized traffic for peer to peer connections is routed on higher ports (40 K+ UDP) at random, if they are open. For more info [read](https://docs.microsoft.com/en-us/office365/enterprise/urls-and-ip-address-ranges#skype-for-business-online-and-microsoft-teams).
+
+Be sure that all computers running the Workspace app client with Teams optimization can resolve external DNS queries to discover the TURN/STUN services provided by Microsoft 365 (for example, `worldaz.turn.teams.microsoft.com`) and that your firewalls are not preventing access.
 
 For support information, see [Support](/en-us/citrix-virtual-apps-desktops/multimedia/opt-for-ms-teams/teams-monitor-ts-support.html#support) section of our documentation.
 

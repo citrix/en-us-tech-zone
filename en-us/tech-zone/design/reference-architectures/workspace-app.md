@@ -1,12 +1,10 @@
 ---
 layout: doc
+h3InToc: true
+contributedBy: James Hsu
 description: Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
 ---
 # Workspace App Reference Architecture
-
-## Contributors
-
-**Author:** [James Hsu](mailto:James.Hsu@Citrix.com)
 
 ## Audience
 
@@ -89,9 +87,9 @@ Part of the Citrix Gateway Service (cloud services only) is single sign-on to Sa
 
 [![WSAPP-Image-9](/en-us/tech-zone/design/media/reference-architectures_workspace-app_009.png)](/en-us/tech-zone/design/media/reference-architectures_workspace-app_009.png)
 
-### Step5 Enable Access Control service to monitor and block malicious, dangerous, or unknown websites
+### Step5 Enable Secure Workspace Access service to monitor and block malicious, dangerous, or unknown websites
 
-The Access Control Service allows administrators to gain visibility of the user activities on the Workspace App and add enhanced securities to SaaS apps such as Watermark, copy-paste restriction, and preventing downloads.
+The Secure Workspace Access Service allows administrators to gain visibility of the user activities on the Workspace App and add enhanced securities to SaaS apps such as Watermark, copy-paste restriction, and preventing downloads.
 
 Administrators can enable Enhanced Security when configuring a SaaS application SSO or publishing process. (Note: Enhanced Security setting needs to be configured in the “Add a Web/SaaS App” UI)
 
@@ -99,10 +97,10 @@ Administrators can enable Enhanced Security when configuring a SaaS application 
 
 [![WSAPP-Image-11](/en-us/tech-zone/design/media/reference-architectures_workspace-app_011.png)](/en-us/tech-zone/design/media/reference-architectures_workspace-app_011.png)
 
-After configuring Gateway and SaaS application publishing, the administrator can extend the security control of the Workspace App SaaS app access by configuring web filtering to allow/block end user access and redirect them to the Citrix Secure Browser Service. Most importantly, combining Access control and Workspace App client software, administrators can review valuable user insights through Analytic services tracking user SaaS application usage and application usage pattern.
-With Citrix Access control, administrators are able to control how a SaaS Application can be accessed by the end user via Citrix Workspace Experience web UI or native Citrix Workspace app client.
+After configuring Gateway and SaaS application publishing, the administrator can extend the security control of the Workspace App SaaS app access by configuring web filtering to allow/block end user access and redirect them to the Citrix Secure Browser Service. Most importantly, combining Secure Workspace Access and Workspace App client software, administrators can review valuable user insights through Analytic services tracking user SaaS application usage and application usage pattern.
+With Citrix Secure Workspace Access, administrators are able to control how a SaaS Application can be accessed by the end user via Citrix Workspace Experience web UI or native Citrix Workspace app client.
 
-To learn more about how the Access Control Service works with the Workspace app see this Video. For how to configure Access Control see [here](/en-us/citrix-cloud/access-control/get-started.html).
+To learn more about how the Secure Workspace Access Service works with the Workspace app see this Video. For how to configure Secure Workspace Access see [here](/en-us/citrix-cloud/access-control/get-started.html).
 
 [![WSAPP-Image-12](/en-us/tech-zone/design/media/reference-architectures_workspace-app_012.png)](/en-us/tech-zone/design/media/reference-architectures_workspace-app_012.png)
 
@@ -134,7 +132,7 @@ Administrator can also create more rules to automate some actions.
 
 After completing these 7 steps, the administrator will be able to monitor user activities across multiple resource locations and increase security control on information access with Workspace App users.
 
-End users are able to enjoy an integrated user experience from Local and Mobile apps delivered by the Endpoint Management and Workspace hub, Securely access SaaS and Web Applications through Access Control and SSO too. Existing Citrix Virtual Apps and Desktops sites can be aggregated together along with Citrix Virtual Apps and Desktops resource locations through the Gateway Service. Reduce external web application access risks by redirect them to Secure Browser. Apply Content Collaboration with external users using local Storage Zones or public cloud storage platforms.
+End users are able to enjoy an integrated user experience from Local and Mobile apps delivered by the Endpoint Management and Workspace hub, Securely access SaaS and Web Applications through Secure Workspace Access and SSO too. Existing Citrix Virtual Apps and Desktops sites can be aggregated together along with Citrix Virtual Apps and Desktops resource locations through the Gateway Service. Reduce external web application access risks by redirect them to Secure Browser. Apply Content Collaboration with external users using local Storage Zones or public cloud storage platforms.
 
 ## Citrix Workspace app Use Cases
 
@@ -145,7 +143,7 @@ The modern work environment is rapidly changing from traditional client/server a
 *  Deliver Citrix Workspace using Citrix Cloud Services to maintain an evergreen environment.
 *  Use the Gateway Service single sign-on to SaaS applications to reduce multiple user password complexities. Simplify support and improve user productivity.
 *  Enable enhanced security policies to allow Workspace App to restrict web app and published applications and desktops.
-*  Enable Advanced Access Control to better protect SaaS application security and use web filtering to block access to blacklisted or redirect high risk URLs to Secure Browser to reduce risk.
+*  Enable Advanced Secure Workspace Access to better protect SaaS application security and use web filtering to block access to blacklisted or redirect high risk URLs to Secure Browser to reduce risk.
 *  Deliver the Content Collaboration Service to aggregate cloud content in one place.
 *  Enable Endpoint Management to enforce endpoint device compliance and manage and deploy mobile apps on the endpoint.
 *  Use Analytics services to improve visibility to user behavior activities and enforce policies when anomalies are detected.
@@ -158,7 +156,7 @@ Citrix Workspace app is the unified front-end application for the end user. To t
 
 Citrix Virtual Apps and Desktops provides comprehensive Windows and Linux application and desktop virtualization.
 
-Citrix Access Control provides consolidation of point products that offer SSO, web filtering and secure browsing as separate offerings. It provides a single solution to meet your requirements for SSO and forward-proxy functionality with web filtering and secure browser services. For customers looking to implement just SSO, Citrix is the only vendor that offers SSO to Citrix Virtual Apps, Citrix Virtual Desktops, SaaS, and web applications. This helps consolidate your existing ICA Proxy with any third-party SSO solution you can be using today.
+Citrix Secure Workspace Access provides consolidation of point products that offer SSO, web filtering and secure browsing as separate offerings. It provides a single solution to meet your requirements for SSO and forward-proxy functionality with web filtering and secure browser services. For customers looking to implement just SSO, Citrix is the only vendor that offers SSO to Citrix Virtual Apps, Citrix Virtual Desktops, SaaS, and web applications. This helps consolidate your existing ICA Proxy with any third-party SSO solution you can be using today.
 
 Content Collaboration allows users to share, sync, and secure content from the cloud and on-premises storage services.
 
