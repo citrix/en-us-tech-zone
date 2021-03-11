@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
-description: Workspace Environment Management monitors and analyzes user and application behavior in real time, then intelligently adjusts system resources.
+description: Workspace Environment Management monitors and analyzes user and application behavior in real time, then intelligently adjusts system resources to improve the user experience.
 ---
 # Workspace Environment Management
 
