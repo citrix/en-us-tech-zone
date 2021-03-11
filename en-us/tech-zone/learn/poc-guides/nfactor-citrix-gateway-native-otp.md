@@ -283,7 +283,7 @@ If you have verified the password is correct verify the Administrator bind passw
 
 ## Summary
 
-With Citrix Workspace, and Citrix Gateway, Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Users can gain access to their Citrix Virtual Apps and Desktops, by entering their domain username, and password, and then simply confirming their identity by entering a One Time Password from their registered authenticator app.
+With Citrix Workspace, and Citrix Gateway, Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Users can gain access to their Citrix Virtual Apps and Desktops, by entering their domain user name, and password, and then simply confirming their identity by entering a One Time Password from their registered authenticator app.
 
 ## References
 
