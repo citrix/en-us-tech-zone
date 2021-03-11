@@ -1,14 +1,11 @@
 ---
 layout: doc
-description: Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Push Token
+h3InToc: true
+contributedBy: Matt Brooks
+specialThanksTo: Dan Feller
+description: Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Push Token.
 ---
 # Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Push Token
-
-## Contributors
-
-**Author:** [Matthew Brooks](https://twitter.com/tweetmattbrooks)
-
-**Special Thanks:** [Daniel Feller](https://twitter.com/djfeller)
 
 ## Introduction
 
@@ -65,7 +62,7 @@ Refer to Citrix Documentation for the latest product version and license require
 1.  Select Add
 1.  Populate the following fields
     *  Name - a unique value
-    *  Server Name / IP address - select an FQDN or IP address for AD server/(s). We enter `192.168.64.50_LDAP`
+    *  Server Name / IP address - select an FQDN or IP address for AD server/(s). We enter `192.0.2.50_LDAP`
     *  Base DN - enter the path to the AD user container. We enter `OU=Team Accounts, DC=workspaces, DC=wwco, DC=net`
     *  Administrator Bind DN - enter the admin/service account to query AD to authenticate users. We enter `workspacesserviceaccount@workspaces.wwco.net`
     *  Confirm / Administrator Password - enter / confirm the admin / service account password
@@ -117,7 +114,7 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 1.  In the same box select Add Policy and select Add again next to Select Policy
 1.  Enter authPol_LDAP for the name
 1.  Under Action Type select LDAP
-1.  Under Action select your first LDAP authentication action. We use `192.168.64.50_LDAP`
+1.  Under Action select your first LDAP authentication action. We use `192.0.2.50_LDAP`
 1.  Under Expression enter true
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_nfactorauthpolldap.png)
 1.  Select Create followed by Add
@@ -126,7 +123,7 @@ For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa
 1.  In the same box select Add Policy and select Add again next to Select Policy
 1.  Enter `authPol_OTPAuthDevice` for the name
 1.  Under Action Type select LDAP
-1.  Under Action select your newly created (second) LDAP authentication action. We use `192.168.64.50_LDAP_OTP`
+1.  Under Action select your newly created (second) LDAP authentication action. We use `192.0.2.50_LDAP_OTP`
 1.  Under Expression enter true
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_nfactorotppolldap.png)
 1.  Select Create followed by Add
@@ -192,7 +189,7 @@ Now we test PUSH by registering a mobile device and authenticating into our Citr
 
 ### Registration with Citrix SSO app
 
-1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway with /manageotp appended to the end of the FQDN. We use `https://citrixadc5.workspaces.wwco.net/manageotp`
+1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway with /manageotp appended to the end of the FQDN. We use `https://gateway.workspaces.wwco.net/manageotp`
 1.  After your browser is redirected to a login screen enter user UPN and password
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regldaplogin.png)
 1.  On the next screen select Add Device, enter a name. We use `iPhone7`
@@ -213,7 +210,7 @@ Now we test PUSH by registering a mobile device and authenticating into our Citr
 
 ### Citrix Virtual Apps and Desktops Authentication, Publication, and Launch
 
-1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://citrixadc5.workspaces.wwco.net`
+1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://gateway.workspaces.wwco.net`
 1.  After the your browser is redirected to a login screen enter user UPN and password. On this screen you see the option to Click to input OTP manually if for some reason your camera is not working
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regldaplogin1f.png)
 1.  On your mobile device in your Citrix SSO app select OK to confirm PUSH authentication
