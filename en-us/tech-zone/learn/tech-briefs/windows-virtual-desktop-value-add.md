@@ -345,7 +345,7 @@ Workspace Environment Management (WEM) uses intelligent resource management and 
 
 **RAM optimization** - When a new process is launched, it takes up more RAM than it needs for its normal running. But generally, processes will not relinquish these resources once they are allocated to them.
 
-WEM in real time detects which processes are in the focus of the user. A portion of the RAM working set of apps that are not in focus can then be reclaimed. It is observed that even if these apps come back into focus, they do not need the smaller subset of the amount of RAM that was reclaimed from them. This optimizes RAM consumption in the cloud and increases single server scalability.
+WEM in real time detects which processes are in the focus of the user. A portion of the RAM working set of apps that are not in focus can then be reclaimed. It is observed that even if these apps come back into focus, they generally need a smaller subset of the amount of RAM that was reclaimed from them. These actions optimize RAM consumption in the cloud and increase single server scalability.
 
 The following graph shows the amount of memory consumed by a set of sessions, with and without WEM.
 
@@ -353,15 +353,15 @@ The following graph shows the amount of memory consumed by a set of sessions, wi
 
 **CPU Optimization** - If a process is detected to be hogging CPU resources, it might negatively affect not only the session that it is running in, but also slow down other sessions running on the same machine and even impact logon times for other users.
 
-CPU optimization with WEM, involves real-time monitoring of the process running on each VM. When a process is detected to be hogging CPU resources (for a defined amount of time), it automatically reduces the priority of the process, allowing other processes to use the CPU and alleviate the server load. When the process is seen to have returned to low CPU consumption overtime, then its priority is reset back to normal.
+CPU optimization with WEM, involves real-time monitoring of the process running on each VM. When a process is detected to be hogging CPU resources (for a defined amount of time), WEM automatically reduces the priority of the process. THis action allows other processes to use the CPU and alleviates server load. When the process is seen to have returned to low CPU consumption overtime, then its priority is reset back to normal.
 
 ![WEM CPU Optimization](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_25-wem-cpu-optimization.gif)
 
-Each Citrix Virtual Apps and Desktops release build is tested to validate the expected scale improvements, using LoginVSI. To validate the effect of CPU optimization by WEM, in a noisy neighbor scenario, these scale tests were extended. To simulate a noisy neighbor, a user not part of the LoginVSI knowledge worker test run, is added to the test setup. This user’s session is configured, to launch a process that consumes 3 CPU cores for an average of 50 to 70% of total CPU, based on the number of cores in the Azure VM.
+Each Citrix Virtual Apps and Desktops release build is tested to validate the expected scale improvements, using LoginVSI. To validate the effect of CPU optimization by WEM, in a noisy neighbor scenario, these scale tests were extended. To simulate a noisy neighbor, a user not part of the LoginVSI knowledge worker test run, is added to the test setup. This user’s session is configured, to launch a process that consumes 3 CPU cores for an average of 50%-70% of total CPU, based on the number of cores in the Azure VM.
 
 Windows 10 2004 multi-session VMs, were tested with Citrix Virtual Apps and Desktops 2006 installed and the Citrix Optimizer applied and WEM agent over HDX. To baseline the test results, the same test was run with Microsoft RDP as the connection protocol and the VMs had Out of the Box optimizations from Microsoft.
 
-As can be seen from the below table, the inclusion of WEM, suppresses the effect of the CPU consuming noisy neighbor, and increases the VSImax (no of users that can be supported on the machine) from 20 to 43%. Resulting in a higher number of users that can run on a single VM, even in this stress scenario.
+As can be seen from the following table, the inclusion of WEM, suppresses the effect of the CPU consuming noisy neighbor. The inclusion also increases the VSImax (no of users that can be supported on the machine) from 20% to 43%. Resulting in a higher number of users that can run on a single VM, even in this stress scenario.
 
 **Scale breakdown with Noisy Neighbor scenario**:
 
@@ -373,7 +373,7 @@ As can be seen from the below table, the inclusion of WEM, suppresses the effect
 
 As WEM reduces CPU spikes, another important inference from the results is, that the response time for the user is much better. Citrix Virtual Apps and Desktops sessions have an almost 1000 ms lower response time when compared to MS RDP (at the instant VSImax is reached) for the same number of users.
 
-Similarly, the latency observed in the session is between 25 to 50% lesser on both the machines with 4 vCPUs. Both these results point to a much smoother and snappier user experience when WEM is in the picture.
+Similarly, the latency observed in the session is between 25%-50% lesser on both the machines with 4 vCPUs. Both these results point to a much smoother and snappier user experience when WEM is in the picture.
 
 ![WEM Latency Improvement Graph](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_31-wem-latency-improvement-graph.png)
 
