@@ -156,7 +156,7 @@ As seen in the following image the user is entitled to 6 resources and so there 
 
 ![Citrix Cloud Resiliency - Workspace connection leases](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_11-workspace-connection-leases.png)
 
-The connection leases are tamper-proof. A bad actor would be unable to edit the lease, to say extend the duration of the lease. Soon as any tampering is detected, the connection lease hash is invalidated. The connection lease can be blocked by the IT Admin using the CVAD remote PowerShell SDK, in situations such as closed or compromised user account, stolen endpoint or device deallocation. Read about how to apply these policies [here](/en-us/citrix-workspace/service-continuity.html#block-connections-to-compromised-user-accounts).
+The connection leases are tamper-proof. A bad actor would be unable to edit the lease, to say extend the duration of the lease. Soon as any tampering is detected, the connection lease hash is invalidated. The connection lease can be blocked by the IT Admin using the CVAD remote PowerShell SDK, in situations such as closed or compromised user account, stolen endpoint or device deallocation. Read about how to apply these policies [here](/en-us/citrix-workspace/service-continuity.html#what-makes-it-secure).
 
 The following is the process diagram for the creation of the connection leases, when the user authenticates for the first time from an end point and launches a session.
 
