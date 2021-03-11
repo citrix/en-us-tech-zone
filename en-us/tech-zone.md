@@ -247,6 +247,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Local Host Cache / High Availability mode for Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/learn/tech-briefs/local-host-cache-ha-cvads.html) - Inside view on how Local Host Cache (LHC) works with Citrix Virtual Apps and Desktops Service. Learn how the different components of LHC come into play to keep you in control of your uptimes.
 
+[Workspace Environment Management](/en-us/tech-zone/learn/tech-briefs/workspace-environment-mgmt.html) - Learn how Workspace Environment Management uses intelligent resource management and Profile Management technologies to deliver the best possible performance, desktop logon, and application response times for Citrix Virtual Apps and Desktops sessions, as well as enhances the security of the deployment.
+
 ### [Learn - Tech Insight](/en-us/tech-zone/learn/tech-insights.html)
 
 [App Layering - User Layers](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html) - User layers persist user profile settings, data, and user-installed applications in non-persistent VDI environments.
@@ -320,6 +322,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [Migrating Citrix Virtual Apps and Desktops from on-premises to Citrix Cloud](/en-us/tech-zone/build/deployment-guides/cvads-migration.html) - Learn how to migrate your on-premises Citrix Virtual Apps and Desktops (CVAD) environment to CVAD service on Citrix Cloud using the Automated Configuration tool.
 
 [Migrating Citrix Virtual Apps and Desktops from VMware vSphere to Citrix Virtual Apps and Desktops service on Microsoft Azure](/en-us/tech-zone/build/deployment-guides/azure-citrix-migration.html) - Learn how to migrate your on-premises Citrix Virtual Apps and Desktops to Citrix Cloud and your on-premises VMware vSphere to Microsoft Azure.
+
+[Windows 10 Deployment Guide](/en-us/tech-zone/build/deployment-guides/windows-10-deployment.html) - Learn how to deploy Windows 10 with Citrix Virtual Apps and Desktops.
 
 ### [Build - Tech Papers](/en-us/tech-zone/build/tech-papers.html)
 
