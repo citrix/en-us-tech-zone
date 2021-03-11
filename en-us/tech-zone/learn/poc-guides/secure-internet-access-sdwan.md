@@ -73,11 +73,14 @@ This guide showcases how to perform the following actions:
 
     Recommended Best Practice:
 
-    It is a recommended best practice that the SIA agent traffic from corporate managed devices be bypassed from the local IPSec tunnel of the SD-WAN in the branch edge. This allows direct proxy to the Citrix SIA where enterprise OU’s or security groups can be exercised directly via cloud connectors on the managed devices.
+    It is a recommended best practice that the SIA agent traffic from corporate managed devices be bypassed from the local IPSec tunnel 
+    of the SD-WAN in the branch edge. This allows direct proxy to the Citrix SIA where enterprise OU’s or security groups can be exercised directly
+    via cloud connectors on the managed devices.
 
 To allow for the Citrix SIA agent to seamlessly call home to the Citrix SIA gateway cluster and PoP’s, it is critical to bypass the cloud connector based traffic from the IPSec tunnel so that the registration of the cloud connector happens and the proxy is made available directly from the connector.
 
-    Note : It is NOT desired to have the SIA agent traffic go through the IPSec tunnel as there are some issues with agent registration and policies to be exercised on the initiated traffic from the endpoint with the SIA agent
+    Note : It is NOT desired to have the SIA agent traffic go through the IPSec tunnel as there are some issues with agent registration 
+    and policies to be exercised on the initiated traffic from the endpoint with the SIA agent
 
 **Points to consider in creation of the SD-WAN Bypass custom application:**
 
@@ -96,7 +99,10 @@ All the bypassed specific IP/Protocols tagged as a custom application in the SD-
 
 **Node(s) in Green –** Cloud PoP nodes part of a CSIA gateway cluster with IPs 104.225.164.53 and 104.225.181.63 with the globe icon. A CSIA gateway cluster is an aggregate of two or more CSIA gateway nodes.
 
-**Note :** When doing your PoC, check the nodes as per your account and apply the Orchestrator bypass rules accordingly. The accounts almost usually always have a reporter node but the gateway ndoes can be one or more. Ensure to place bypass to all gateway nodes so that they are accounted during the bypass (since the traffic can go to any cloud gateway node).
+    Note :
+    When doing your PoC, check the nodes as per your account and apply the Orchestrator bypass rules accordingly.
+    The accounts almost usually always have a reporter node but the gateway ndoes can be one or more. 
+    Ensure to place bypass to all gateway nodes so that they are accounted during the bypass (since the traffic can go to any cloud gateway node).
 
 ![Bypass CSIA Agent Orchestrator Policy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_orchestratorbypasspolicy.png)
 
@@ -114,7 +120,9 @@ The administrator can either route “ALL APPS” or specific applications throu
 
 ![Route Specific Apps via Citrix SIA from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_specificappsrouteviasiaservice.png)
 
-**Note** If specific apps are chosen, then only specific application routes are created with the Citrix SIA as the service type to be steered through the IPSec Tunnel. The Citrix SIA service is INTRANET type service by default
+    Note
+    If specific apps are chosen, then only specific application routes are created with the Citrix SIA as the service type to be steered through the IPSec Tunnel. 
+    The Citrix SIA service is INTRANET type service by default
 
 **Important Recommendation when using Citrix SIA service for ALL APPS routing along with Internet Service**
 If an administrator chooses “ALL APPS” to be routed via Citrix SIA, then this means that there is a DEFAULT route 0.0.0.0/0 created with Citrix SIA service with a cost of 45 ( Note that the Citrix SIA service-based routes are with cost 45)
@@ -129,9 +137,9 @@ An Internet service may have already been created or may need to be created on t
 
 **Issues you may face if "ALL APPS" is chosen for routing via both CSIA and Internet service and how to overcome that:**
 
-    Sometimes you may have missed to add specific apps to either services. This means you have configured both CSIA and Internet service with "ALL APPS" which installs a default route with the services. Since by design, Internet Service cost is 5 and the CSIA service cost is 45, ALL traffic prefers to be routed over Internet service and you might see that CSIA service may not function as expected.
+Sometimes you may have missed to add specific apps to either services. This means you have configured both CSIA and Internet service with "ALL APPS" which installs a default route with the services. Since by design, Internet Service cost is 5 and the CSIA service cost is 45, ALL traffic prefers to be routed over Internet service and you might see that CSIA service may not function as expected.
 
-    To avoid this, it is recommended to use one of the above 2 recommendations. Or you could modify the internet service cost as “50” so that CSIA service is more preferred (with a cost of 45)
+ To avoid this, it is recommended to use one of the above 2 recommendations. Or you could modify the internet service cost as “50” so that CSIA service is more preferred (with a cost of 45)
 
 ![Route Specific Apps via Citrix SIA from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_inetcostchangeforallapps.png)
 
