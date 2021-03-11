@@ -61,6 +61,8 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Virtual Apps and Desktops Service](/en-us/tech-zone/learn/tech-insights/virtual-apps-and-desktops-service.html) - Citrix Virtual Apps and Desktops Service provides a fast, low-impact deployment option for on-premises/cloud-hosted, Windows/Linux, desktops/apps.
 
+[Workspace Environment Management](/en-us/tech-zone/learn/tech-insights/workspace-environment-mgmt.html) - Workspace Environment Management monitors and analyzes user and application behavior in real time, then intelligently adjusts system resources to improve the user experience.
+
 ## Citrix Workspace
 
 [Authentication - Citrix Gateway](/en-us/tech-zone/learn/tech-insights/gateway-idp.html) - Utilize an on-premises Citrix Gateway as an identity provider for Citrix Workspace.
