@@ -203,6 +203,7 @@ Now we test PUSH by registering a mobile device and authenticating into our Citr
 1.  Select Aim your camera at the QR Code and once it`s captured select Add
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssoscanqrcode.png)
 1.  Select Save to store the token
+![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_poc-guides_nfactor-citrix-gateway-push-token_regssosave.png)
 1.  The Token is now active and begins displaying OTP codes at 30 second intervals
 ![PUSH Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-push-token_regssotoken.png)
 1.  Select Done and you will see confirmation that the device was added successfully
