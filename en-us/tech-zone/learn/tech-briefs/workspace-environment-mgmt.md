@@ -63,7 +63,7 @@ Having understood the architecture of both the on-premises and service offerings
 
 To provide the best experience for users the WEM agent monitors and analyzes user and application behavior within the session, in real time. It then intelligently adjusts RAM, CPU, and I/O in the user workspace environment.
 
-### RAM optimization
+### RAM Optimization
 
 When a new process is launched, it takes up more RAM than it needs for its normal running. But generally, the process does not relinquish these resources once they are allocated to it. WEM in real time detects which processes are in focus of the user. A portion of the RAM working set of apps that are not in focus can then be reclaimed. It is observed that even if these apps come back into focus, they generally need a smaller subset of the amount of RAM that was reclaimed from them. These actions optimize RAM consumption in the cloud and increase single server scalability.
 
@@ -71,13 +71,17 @@ The following graph shows the amount of memory consumed by a set of sessions, wi
 
 ![WEM RAM optimization](/en-us/tech-zone/learn/media/tech-briefs_workspace-environment-mgmt_ram-optimization.png)
 
-### CPU optimization
+Watch the Tech Insight video about RAM optimization [here](/en-us/tech-zone/learn/tech-insights/workspace-environment-mgmt.html#ram-optimization).
+
+### CPU Optimization
 
 If a process is detected to be hogging CPU resources, this can negatively affect not only the session that it is running in, but also slow down other sessions running on the same machine and even impact log on times for other users.
 
 CPU optimization with WEM, involves real-time monitoring of the process running on each VM. When a process is detected to be hogging CPU resources (for a defined amount of time), WEM automatically reduces the priority of the process. This action allows other process to use the CPU and alleviates server load. When the process is seen to have returned to low CPU consumption overtime, then its priority is reset back to normal.
 
 ![WEM CPU Optimization](/en-us/tech-zone/learn/media/tech-briefs_workspace-environment-mgmt_cpu-optimization.gif)
+
+Watch the Tech Insight video about CPU Optimization [here](/en-us/tech-zone/learn/tech-insights/workspace-environment-mgmt.html#cpu-optimization).
 
 To validate the effect of CPU optimization by WEM, in a noisy neighbor scenario, these scale tests were extended. To simulate a noisy neighbor, a user not part of the LoginVSI knowledge worker test run, is added to the test setup. This user’s session is configured, to launch a process that consumes 3 CPU cores for an average of 50%-70% of total CPU, based on the number of cores in the Azure VM.
 
@@ -101,7 +105,11 @@ Similarly, the latency observed in the session is between 25%-50% lesser on both
 
 ### Logon Optimization
 
-To deliver the best possible logon performance, WEM service replaces commonly used Windows Group Policy Object objects, logon scripts, and preferences with an agent, which is deployed on each virtual machine or server. The agent is multi-threaded and applies changes to user environments only when required, ensuring that users always have access to their desktop as quickly as possible.
+To deliver the best possible logon performance, WEM service replaces commonly used Windows Group Policy Object objects, logon scripts, and preferences with an agent, which is deployed on each virtual machine or server. The agent is multi-threaded and applies changes to user environments only when required, ensuring that users always have access to their desktop as quickly as possible. Time consuming processes are handled out of sync with the initial logon process.
+
+![WEM Logon process optimization](/en-us/tech-zone/learn/media/tech-briefs_workspace-environment-mgmt_logon-process-optimization.png)
+
+Watch the Tech Insight video about Logon optimization [here](/en-us/tech-zone/learn/tech-insights/workspace-environment-mgmt.html#logon-optimization).
 
 ## Profile Management
 
