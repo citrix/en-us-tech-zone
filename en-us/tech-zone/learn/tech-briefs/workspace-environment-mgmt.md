@@ -51,7 +51,7 @@ The migration involves exporting the on-premises SQL server contents and uploadi
 
 ## WEM Features
 
-Having understood the architecture of both the on-premises and service offerings of WEM, lets take a look at the features that WEM makes available to organizations. There are three main feature sets:
+Having understood the architecture of both the on-premises and service offerings of WEM, lets look at the features that WEM makes available to organizations. There are three main feature sets:
 
 1.  [Resource Management](#resource-management)
 
