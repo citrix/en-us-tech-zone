@@ -15,6 +15,10 @@ Technical articles, videos, architectural diagrams, reference architectures, des
 
 Citrix experts and enthusiasts from across the globe who are passionate about Citrix technologies. Here, these experts share their insights on what they can design, build, and deploy in a secure digital workspace. These experts are Technical Marketing Engineers, Citrix Consultants, Sales Engineers, Citrix Technology Professionals, Citrix Technology Advocates, or any other technologists.
 
+## Who can contribute?
+
+We are always looking for Tech Zone contributions! If you are interested in becoming one of the contributors, [visit our contributors page](https://citrix.github.io/tech-marketing/projects/tech-zone/role-contributor.html) to read more.
+
 ## Contact us
 
 You have questions or feedback about published articles? Or even new content ideas? We want to know and welcome your feedback and ideas. Use the forms outlined below:

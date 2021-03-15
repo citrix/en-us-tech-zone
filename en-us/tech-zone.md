@@ -261,6 +261,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Virtual Apps and Desktops Service](/en-us/tech-zone/learn/tech-insights/virtual-apps-and-desktops-service.html) - Citrix Virtual Apps and Desktops Service provides a fast, low-impact deployment option for on-premises/cloud-hosted, Windows/Linux, desktops/apps.
 
+[Workspace Environment Management](/en-us/tech-zone/learn/tech-insights/workspace-environment-mgmt.html) - Workspace Environment Management monitors and analyzes user and application behavior in real time, then intelligently adjusts system resources to improve the user experience.
+
 ### [Design - Design Decisions](/en-us/tech-zone/design/design-decisions.html)
 
 [Baseline Policy Design](/en-us/tech-zone/design/design-decisions/baseline-policy-design.html) - Policies provide the basis to configure and fine-tune Citrix Virtual Apps and Desktops environments, allowing organizations to control connection, security, and bandwidth settings based on various combinations of users, devices, or connection types. Learn about the different decisions related to the baseline policy design.
