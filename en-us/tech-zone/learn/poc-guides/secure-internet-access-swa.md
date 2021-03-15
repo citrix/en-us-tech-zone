@@ -46,7 +46,7 @@ This guide showcases how to perform the following actions:
 **CSIA --> Outbound**
 | Protocol  | Port  | Description  | Destination  |
 |--- |--- |--- |--- |
-| TCP  | 80  | Proxy connections & Custom block pages  | ibosscloud.com  |
+| TCP  | 80  | Proxy connections<br>Custom block pages  | ibosscloud.com  |
 | TCP  | 80  | Proxy connections & Custom block pages  | api.ibosscloud.com  |
 | TCP  | 80  | Proxy connections & Custom block pages  | accounts.iboss.com  |
 | TCP  | 80  | Proxy connections & Custom block pages  | **Customer CSIA Node**-reports.ibosscloud.com  |
