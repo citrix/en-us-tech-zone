@@ -46,48 +46,14 @@ This guide showcases how to perform the following actions:
 **CSIA --> Outbound**
 | Protocol  | Port  | Description  | Destination  |
 |--- |--- |--- |--- |
-| TCP  | 80  | Proxy connections<br>Custom block pages  | ibosscloud.com  |
-| TCP  | 80  | Proxy connections & Custom block pages  | api.ibosscloud.com  |
-| TCP  | 80  | Proxy connections & Custom block pages  | accounts.iboss.com  |
-| TCP  | 80  | Proxy connections & Custom block pages  | **Customer CSIA Node**-reports.ibosscloud.com  |
-| TCP  | 80  | Proxy connections & Custom block pages  | **Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 443  | PAC script retrieval over HTTPS | ibosscloud.com  |
-| TCP  | 443  | PAC script retrieval over HTTPS  | api.ibosscloud.com  |
-| TCP  | 443  | PAC script retrieval over HTTPS  | accounts.iboss.com  |
-| TCP  | 443  | PAC script retrieval over HTTPS | **Customer CSIA Node**-reports.ibosscloud.com  |
-| TCP  | 443  | PAC script retrieval over HTTPS  | **Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  | ibosscloud.com  |
-| TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  | api.ibosscloud.com  |
-| TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  | accounts.iboss.com  |
-| TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  | **Customer CSIA Node**-reports.ibosscloud.com  |
-| TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  | **Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 8009  | Alternative port for proxy connections  | ibosscloud.com  |
-| TCP  | 8009  | Alternative port for proxy connections  | api.ibosscloud.com  |
-| TCP  | 8009  | Alternative port for proxy connections  | accounts.iboss.com  |
-| TCP  | 8009  | Alternative port for proxy connections  | **Customer CSIA Node**-reports.ibosscloud.com  |
-| TCP  | 8009  | Alternative port for proxy connections  | **Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 8015  | Proxy authentication over HTTP  | ibosscloud.com  |
-| TCP  | 8015  | Proxy authentication over HTTP  | api.ibosscloud.com  |
-| TCP  | 8015  | Proxy authentication over HTTP  | accounts.iboss.com  |
-| TCP  | 8015  | Proxy authentication over HTTP  | **Customer CSIA Node**-reports.ibosscloud.com  |
-| TCP  | 8015  | Proxy authentication over HTTP  | **Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 8016  | Alternative port for proxy authentication  | ibosscloud.com  |
-| TCP  | 8016  | Alternative port for proxy authentication  | api.ibosscloud.com  |
-| TCP  | 8016  | Alternative port for proxy authentication  | accounts.iboss.com  |
-| TCP  | 8016  | Alternative port for proxy authentication  | **Customer CSIA Node**-reports.ibosscloud.com  |
-| TCP  | 8016  | Alternative port for proxy authentication  |**Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 8080  | Default block page  | ibosscloud.com  |
-| TCP  | 8080  | Default block page  | api.ibosscloud.com  |
-| TCP  | 8080  | Default block page  | accounts.iboss.com  |
-| TCP  | 8080  | Default block page  | **Customer CSIA Node**-reports.ibosscloud.com  |
-| TCP  | 8080  | Default block page  | **Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 10080  | PAC script retrieval over HTTP  | ibosscloud.com  |
-| TCP  | 10080  | PAC script retrieval over HTTP  | api.ibosscloud.com  |
-| TCP  | 10080  | PAC script retrieval over HTTP  | **Customer CSIA Node**-reports.ibosscloud.com  |
-| TCP  | 10080  | PAC script retrieval over HTTP  | **Customer CSIA Node**-swg.ibosscloud.com  |
-|  |  |
-|  |  |
-
+| TCP  | 80  | Proxy connections<br>Custom block pages  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
+| TCP  | 443  | PAC script retrieval over HTTPS | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
+| TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
+| TCP  | 8009  | Alternative port for proxy connections  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
+| TCP  | 8015  | Proxy authentication over HTTP  | ibosscloud.com  ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
+| TCP  | 8016  | Alternative port for proxy authentication  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
+| TCP  | 8080  | Default block page  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
+| TCP  | 10080  | PAC script retrieval over HTTP  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node-swg.ibosscloud.com  |
 ## Citrix Secure Internet Access (CSIA) Cloud Configuration
 
 In this section we will focus on the configuration of CSIA within the administration console.
