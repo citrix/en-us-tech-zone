@@ -41,8 +41,9 @@ This guide showcases how to perform the following actions:
 
 ### Network Requirements
 
-#### Port / Firewall settings: CSIA --> Outbound
+#### Port / Firewall settings
 
+**CSIA --> Outbound**
 | Protocol  | Port  | Description  | Destination  |
 |--- |--- |--- |--- |
 | TCP  | 80  | Proxy connections & Custom block pages  | ibosscloud.com  |
@@ -332,6 +333,7 @@ Orca.msi is available in the Windows Cloud Connector “Download All” option
 2.  Each property can be edited by double-clicking the property's **Value** field.
 
 #### Recommended Settings for Corporate Owned Devices
+
 | Setting  | Recommended Value  |
 |---  |---  |
 | Multi-User Mode: (PARAM_MULTI_USER_SUPPORT)  | (0): Disable multi-user mode.  Enable to support multiple user sessions when running a terminal server. This should be enabled for terminal servers even if users are not logged in simultaneously.  |
@@ -341,7 +343,7 @@ Orca.msi is available in the Windows Cloud Connector “Download All” option
 | Bypass Private Subnets: (PARAM_BYPASS_PRIVATE_SUBNETS)  | (1): Enable bypass  |
 | Captive Portal Detection: (PARAM_CAPTIVE_PORTAL_DETECTION)  | (0): Disabled  |
 | Auto-Update Enabled: (PARAM_AUTO_UPDATE_ENABLE)  | (1): Enabled – The cloud connector to be updated automatically.  |
-| Restart After Upgrade: (PARAM_RESTART_AFTER_UPGRADE)  | (0): Disabled - Will not prompt a restart.   	|
+| Restart After Upgrade: (PARAM_RESTART_AFTER_UPGRADE)  | (0): Disabled - Will not prompt a restart.    |
 |  |  |
 |  |  |
 
