@@ -53,7 +53,7 @@ This guide showcases how to perform the following actions:
 | TCP  | 8015  | Proxy authentication over HTTP  | ibosscloud.com  ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
 | TCP  | 8016  | Alternative port for proxy authentication  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
 | TCP  | 8080  | Default block page  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 10080  | PAC script retrieval over HTTP  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node-swg.ibosscloud.com  |
+| TCP  | 10080  | PAC script retrieval over HTTP  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
 ## Citrix Secure Internet Access (CSIA) Cloud Configuration
 
 In this section we will focus on the configuration of CSIA within the administration console.
@@ -140,8 +140,6 @@ You can associate actions with web categories. This enables you to deploy securi
 | SSL Decryption  | Disable this option to turn off SSL Decryption for a specific category. This ensures privacy compliance and concerns with specific categories like Finance or Health. The priority value for this category does NOT apply to this setting. If a site belongs to multiple categories, and any of those categories has the "SSL Decryption Disabled" option on, that site will not be decrypted.  |
 | Lock  | When a category is locked by the primary administrator into either an Allowed or Blocked state, delegated administrators cannot log in to the web gateway management interface and change the status of that category.  |
 | Category Override  | When you activate a category override, a delegated administrator cannot log in to the web gateway management interface and add a URL to the allow list that would contradict the rule for this category. For example, the "Art" category is blocked and set to "Overrides," so delegated administrators cannot add art.com to the Allow List for that group.  |
-|  |  |
-|  |  |
 
 2.  Click each icon to toggle the action for the respective web category.
 3.  Actions that you want to generally apply to all web categories can be implemented with the Actions drop-down menu.
@@ -168,8 +166,6 @@ Settings relevant to web categories are configured with toggles under **Addition
 | Enable ID Theft / IP Address URL Blocking  | Protects against potential identity theft attempts by notifying you when someone is trying to steal your personal information through Internet Phishing. Enabling this feature will also block users from navigating to websites using IP address URLs.  |
 | Enable Blocked Site Override  | Enabling this feature will activate a soft override action, allowing users to proceed to the site belonging to a blocked category. When this setting is active, the user will be warned that a page is blocked but will provide a button to proceed anyway.  |
 | Auto Categorize Uncategorized Sites  | When this toggle is switched to Yes, any sites that are not categorized are automatically submitted for categorization. Note: When this toggle is set to Yes, uncategorized sites may be assigned a Web Category of "Informational" or other such designation. This will only be in effect while the category is being appropriately categorized. When this switch is set to No, uncategorized are automatically designated as "Not Rated," which is controlled as its own Web Category.  |
-|  |  |
-|  |  |
 
 #### Category Scheduling
 
@@ -274,8 +270,6 @@ The .msi installation packages can be downloaded directly from the CSIA admin co
 | Allow End Users to Disable Security:  | Disable Setting  |
 | Require Password to Disable Security:  | Enable Setting  |
 | Require Password to View Diag Info:  | Enable Setting  |
-|  |  |
-|  |  |
 
 6.  Click on **Dynamic Linking** and select the Groups you wish to assign the policy too.
 7.  Click **Save**.
@@ -310,8 +304,6 @@ Orca.msi is available in the Windows Cloud Connector “Download All” option
 | Captive Portal Detection: (PARAM_CAPTIVE_PORTAL_DETECTION)  | (0): Disabled  |
 | Auto-Update Enabled: (PARAM_AUTO_UPDATE_ENABLE)  | (1): Enabled – The cloud connector to be updated automatically.  |
 | Restart After Upgrade: (PARAM_RESTART_AFTER_UPGRADE)  | (0): Disabled - Will not prompt a restart.    |
-|  |  |
-|  |  |
 
 3.  Within Orca, click the **Save** icon to save changes made to the parameters of the Windows Cloud Connector.  
 **Note:** _Ensure files are saved within Orca only using this method **(not using Save As)**. This will cause issues with the functionality of the Windows cloud connector if it is not saved in this manner._
@@ -463,7 +455,7 @@ There is a multitude of policies and variables within and surrounding the operat
 
 ### Conflicting Actions from Pre-defined Keyword Lists
 
-    In some situations, a word in one of the built-in lists of keywords may inadvertently block content unexpectedly. To correct this action, edit the specific pre-defined keyword list. When you click the pencil icon to edit a built-in list, the CSIA cloud platform interface will present a page of keywords with checkboxes next to them. To remove the keyword from the built-in list, uncheck the box next to the keyword you would like to remove and click **Save**. To apply this action to all groups, check the box that is labeled **Apply to All Groups**.
+In some situations, a word in one of the built-in lists of keywords may inadvertently block content unexpectedly. To correct this action, edit the specific pre-defined keyword list. When you click the pencil icon to edit a built-in list, the CSIA cloud platform interface will present a page of keywords with checkboxes next to them. To remove the keyword from the built-in list, uncheck the box next to the keyword you would like to remove and click **Save**. To apply this action to all groups, check the box that is labeled **Apply to All Groups**.
 
 ### Identifying the Customer’s Citrix Secure Internet Access Node
 
@@ -513,8 +505,8 @@ _**All other ports are an acceptable alternative to the default port.**_
 
 _**Note:** Be careful with the “Not Rated” category, as it will match against many sites that are not categorized._
 
-| Category                 | Description|
-|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Category  | Description  |
+|---  |---  |
 | Abortion* | Sites related to abortion |
 | Ads | Sites used to distribute advertising graphics or content as well as online coupons, advertising sales, voucher, deals, and offers |
 | Adult Content | Sites that contain adult-oriented material. Sites in this category do not contain any nudity but do feature profane and vulgar content. Sites that self-identify as being inappropriate for those under 18 falls under this category. |
