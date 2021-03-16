@@ -11,7 +11,7 @@ description: Learn how to set up Citrix Secure Internet Access in conjuntion wit
 
 Citrix Secure Internet Access provides a full cloud-delivered security stack to protect users, apps, and data against all threats without compromising the employee experience. This proof of concept (PoC) guide is designed to help you quickly configure Citrix Secure Internet Access within your Citrix Cloud environment. At the end of this PoC guide you will be able to protect your Citrix Secure Workspace Access deployment with Citrix Secure Internet Access. You will be able to allow your users access applications using Direct Internet Access (DIA) without compromising on performance.
 
-![Overview](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_overview.png)
+![Overview](en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_1.png)
 
 ## Scope
 
