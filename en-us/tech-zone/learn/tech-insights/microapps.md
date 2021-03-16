@@ -35,6 +35,16 @@ IT Self-Service workflows enable employees to quickly find the IT resources that
 
 For more information about IT Self-Service, see [IT Self-Service](/en-us/citrix-microapps/deliver-workflows/it-self-service.html) in Citrix product documentation.
 
+## Citrix Virtual Apps and Desktops service (CVADs) Microapps Demo
+
+Self-Service microapp templates for the Citrix Virtual Apps and Desktops service enable employees to view status and manage their Virtual Apps and Desktops, directly from Citrix Workspace. With the My Desktops and My Sessions microapp templates, employees can take actions on Sessions and Desktops, including Log Off, Disconnect, and Restart. And with the Administrator Mode microapp, Administrators can search Desktops by machine name and associated user, restart desktops, and toggle maintenance mode.
+
+**Watch this video to [see demo](https://www.youtube.com/watch?v=PqCgX5k4E0g&feature=youtu.be&ab_channel=Citrix):**
+
+[![Tech Insight-CVAD service microapps](/en-us/tech-zone/learn/media/tech-insights_microapps_cvads.png)](https://www.youtube.com/watch?v=PqCgX5k4E0g&feature=youtu.be&ab_channel=Citrix)
+
+For more information about microapps for CVAD service see [CVAD service microapps](/en-us/citrix-microapps/set-up-template-integrations/integrate-cvads.html) in Citrix product documentation.
+
 ## HR Self-Service Microapp Demo
 
 It is more essential than ever that businesses rethink their people strategies, placing new emphasis on delivering a best-in-class employee experience that differentiates and elevates the business. With a new portfolio of HR self-service microapps within Citrix Workspace, organizations can improve process efficiency, save time, and reduce HR case volume. Available via our out-of-the-box template integrations with Workday and SAP SuccessFactors.
