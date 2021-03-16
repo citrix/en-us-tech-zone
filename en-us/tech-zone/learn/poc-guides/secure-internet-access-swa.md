@@ -133,12 +133,17 @@ In this section we will focus on the configuration of CSIA Web Security Policies
 4.  Clicking **Save** will save the current policy's configuration only to the currently selected security group from the **Group** drop-down menu.  
    ![Citrix SIA WEB SECURITY GROUP SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_18.png)
    ⋅ **_Note:_ If you are looking to apply these settings to multiple groups**  
-Click **Save to Multiple Groups** will open a window that will allow you to assign the current policy's configuration to multiple security groups simultaneously.  
-Click the **corresponding checkbox** for any security group you want to apply the current policy configuration.  
-Click **Add** to add the selected security groups to the configure group.  
-Groups can either be reconfigured to accept only configuration changes that have currently been applied or accept and overwrite all configuration settings for the current policy.  
-The default selection is **Apply Changed Settings** which will only apply changes you have configured. Select to overwrite all configured settings for the designated security groups.  
-Individual groups can be removed by clicking **Remove** or **remove all groups** selected for configuration by clicking **Remove All**. Click **Save** to confirm the configuration being applied to all designated security groups.
+5.  **(Optional)** Click **Save to Multiple Groups** will open a window that will allow you to assign the current policy's configuration to multiple security groups simultaneously.  
+   ![Citrix SIA WEB SECURITY MULTI GROUP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_19.png)
+6.  Click the **corresponding checkbox** for any security group you want to apply the current policy configuration.  
+   ![Citrix SIA WEB SECURITY MULTI GROUP 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_20.png)
+7.  Click **Add** to add the selected security groups to the configure group.  
+   ![Citrix SIA WEB SECURITY MULTI GROUP ADD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_21.png)
+   Groups can either be reconfigured to accept only configuration changes that have currently been applied or accept and overwrite all configuration settings for the current policy.  
+8.  The default selection is **Apply Changed Settings** which will only apply changes you have configured. Select to overwrite all configured settings for the designated security groups.  
+   ![Citrix SIA WEB SECURITY MULTI GROUP APPLY](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_22.png)
+9.  Individual groups can be removed by clicking **Remove** or **remove all groups** selected for configuration by clicking **Remove All**. Click **Save** to confirm the configuration being applied to all designated security groups.  
+   ![Citrix SIA WEB SECURITY MULTI GROUP SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_23.png)
 
 ### Web Categories
 
