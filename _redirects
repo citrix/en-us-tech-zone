@@ -2,7 +2,7 @@
 # Spacing between origin and target URL should be at least one space
 # Examples:
 # /home.html /index
-# /en-us/old-aem-page.html      /en-us/new-bitbucket-page
+# /en-us/old-aem-page.html  /en-us/new-bitbucket-page
 # cache:3
 
 # Workspace and CVAD posters renamed to proper names (2/27/2020)
