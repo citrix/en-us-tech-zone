@@ -165,8 +165,13 @@ You can associate actions with web categories. This enables you to deploy securi
 | Lock  | When a category is locked by the primary administrator into either an Allowed or Blocked state, delegated administrators cannot log in to the web gateway management interface and change the status of that category.  |
 | Category Override  | When you activate a category override, a delegated administrator cannot log in to the web gateway management interface and add a URL to the allow list that would contradict the rule for this category. For example, the "Art" category is blocked and set to "Overrides," so delegated administrators cannot add art.com to the Allow List for that group.  |
 
-2.  Click each icon to toggle the action for the respective web category.
-3.  Actions that you want to generally apply to all web categories can be implemented with the Actions drop-down menu.
+2.  Click each icon to toggle the action for the respective web category.  
+   ![Citrix SIA WEB CAT 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_24.png)
+   ![Citrix SIA WEB CAT 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_25.png)
+   ![Citrix SIA WEB CAT 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_26.png)
+3.  Actions that you want to generally apply to all web categories can be implemented with the Actions drop-down menu.  
+   ![Citrix SIA WEB CAT 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_27.png)  
+**NOTE:** _Be careful with the “Not Rated” category, as it will match against many sites that are not categorized_
 
 #### Category Priorities
 
@@ -175,6 +180,7 @@ If a domain is associated with multiple categories, the action is determined by 
 Example:
 
 1.  A domain is categorized as both government and hacking. In the web categories configuration, the government is allowed with a weight of 100 while hacking is blocked with a weight of 200.
+   ![Citrix SIA EXAMPLE 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_28.png)
 2.  This domain would be blocked when visited by a user due to the block action of the hacking web category possessing a higher priority value.
 3.  Click the priority value field and enter a numerical value to reconfigure a category's priority level. The priority value has a configurable range of 0-65535.
 
@@ -195,11 +201,15 @@ Settings relevant to web categories are configured with toggles under **Addition
 
 Block events can also be configured on an advanced weekly schedule to allow access during particular times.
 
-1.  Set Category Scheduling to **Allow Selected Categories Using an Advanced Schedule** to enable the scheduling feature. Click **Advanced Scheduling** to begin scheduling blocked categories.
-2.  The current advanced schedule can either be configured to apply to all blocked categories or only to a particular blocked category.
-3.  Each day during the week can be delegated specific periods of time that the category will be allowed. These particular periods of time are indicated by a blue rectangle.
+1.  Set Category Scheduling to **Allow Selected Categories Using an Advanced Schedule** to enable the scheduling feature. Click **Advanced Scheduling** to begin scheduling blocked categories.  
+   ![Citrix SIA CATEGORY SCHEDULING 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_29.png)
+2.  The current advanced schedule can either be configured to apply to all blocked categories or only to a particular blocked category.  
+   ![Citrix SIA CATEGORY SCHEDULING 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_30.png)
+3.  Each day during the week can be delegated specific periods of time that the category will be allowed. These particular periods of time are indicated by a blue rectangle.  
+   ![Citrix SIA CATEGORY SCHEDULING 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_31.png)
 4.  After finalizing the schedule for a particular category, you can click the category drop-down menu once again and select a new category to configure.
-5.  Click **Save** to confirm all schedule configurations.
+5.  Click **Save** to confirm all schedule configurations.  
+   ![Citrix SIA CATEGORY SCHEDULING SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_32.png)
 
 ### Allow List
 
@@ -208,8 +218,10 @@ The allow lists selectively provides access to a specific website or network res
 #### Adding a URL to an Allow List
 
 1.  Navigate to **Web Security Policies**.
-2.  On the drop down click on **Allow List**.
-3.  From above the list section, click **URL/IP Range**.
+2.  On the drop down click on **Allow List**.  
+   ![Citrix SIA ALLOW LIST](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_33.png)
+3.  From above the list section, click **URL/IP Range**.  
+   ![Citrix SIA ALLOW LIST URL/IP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_34.png)
 4.  Type a **domain, subdomain, URL, IP address, or IP Range**. This is the only required field, but many other criteria can be specified.
 5.  From the right side of the list, click **+Add**. The entry is now added to the list.
 
@@ -219,9 +231,12 @@ The Allow List section includes the handy Scrape Tool. Use this to quickly ident
 
 Another use for the Scrape Tool is to selectively only allow portions of a website, while not allowing unwanted content, such as ad servers.
 
-1.  From above the list section, click **Scrape**.
-2.  Enter the URL to Scrape and click **Scan**.
-3.  Select domains to add to Allow List and click Add Selected to Allow List.
+1.  From above the list section, click **Scrape**.  
+   ![Citrix SIA SCRAPE TOOL](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_35.png)
+2.  Enter the URL to Scrape and click **Scan**.  
+   ![Citrix SIA SCRAPE SCAN](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_36.png)
+3.  Select domains to add to Allow List and click Add Selected to Allow List.  
+   ![Citrix SIA SCRAPE ADD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_37.png)
 
 ### Keyword Block List / Allow List
 
@@ -230,8 +245,17 @@ Keyword filtering is used to inspect URLs for specific words. If a keyword is id
 #### Adding a URL to a Block List / Allow List
 
 1.  Navigate to **Web Security Policies**.
-2.  On the drop down click on **Keywords**.
-3.  Enter the **keyword** that you would like to block in the **Keyword** field and specify the designations that will apply to this keyword. Click **Add**.
+2.  On the drop down click on **Keywords**.  
+   ![Citrix SIA KEYWORD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_38.png)
+3.  Enter the **keyword** that you would like to block in the **Keyword** field and specify the designations that will apply to this keyword. Click **Add**.  
+   ![Citrix SIA KEYWORD ALLOW](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_39.png)
+
+| Option  | Description  |
+|---  |----  |
+| Allow Keyword  | Checking this option will allow the word if it is in the URL within a keyword parameter.  |
+| High Risk  | When any words designated as "High Risk" are searched, an email notification will be sent to the administrator of the group.  |
+| Wildcard Match  | When enabled, keywords are filtered even when they are just substrings of a larger word. For example, a wildcard match for the keyword "base" blocks searches that include "base" or "baseball." Without wildcard matching, it only blocks "base."  |
+| Global  | This option will span across all Security groups when selected. When removing a “Global" entry, it will remove the entry from all filtering groups. |
 
 #### Pre-defined Keyword Lists
 
