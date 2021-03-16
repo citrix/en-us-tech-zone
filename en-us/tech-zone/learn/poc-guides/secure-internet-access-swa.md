@@ -73,8 +73,10 @@ In this section we will focus on the configuration of CSIA within the administra
    ![Citrix SIA PAC Configuration](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_4.png)
 2.  On the **Zones** tab click on **Edit Default Zone**.  
    ![Citrix SIA PAC EDIT](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_5.png)
-3.  Click on **PAC Settings**.
-4.  If you need to bypass a domain, use the **Add a Function**.
+3.  Click on **PAC Settings**.  
+   ![Citrix SIA PAC SETTINGS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_6.png)
+4.  If you need to bypass a domain, use the **Add a Function**.  
+   ![Citrix SIA PAC ADD A FUNTION](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_7.png)
 5.  These are the recommended Citrix Domain and Sub-domains to be added to the PAC File:  
 ⋅ cloud.com & \*.cloud.com  
 ⋅ citrixdata.com &*.citrixdata.com  
@@ -85,7 +87,8 @@ In this section we will focus on the configuration of CSIA within the administra
 ⋅ xendesktop.net & \*.xendesktop.net  
 ⋅ cloudapp.net & \*.cloudapp.net  
 ⋅ netscalergateway.net & \*.netscalergateway.net  
-6.  Note the node shown "**node-clusterxxxxxx-swg.ibosscloud.com:80**". This should match the customer’s SWG node in Node Collection Management
+6.  Note the node shown "**node-clusterxxxxxx-swg.ibosscloud.com:80**". This should match the customer’s SWG node in Node Collection Management  
+   ![Citrix SIA PAC NODE SHOWN](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_8.png)
 
 ### Interfacing CSIA Security Groups with Groups from Domain Integration
 
