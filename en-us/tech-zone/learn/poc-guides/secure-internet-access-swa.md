@@ -102,15 +102,21 @@ To demonstrate the execution of this concept, let's map the domain credentials o
 
 1.  Open command prompt on the target computer, and execute the command "net user (username) /domain"  
 2.  Gather the aliases of groups reported back by the domain controller.  
+   ![Citrix SIA AD ALIASES OR GROUPS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_9.png)
 3.  Go to the CSIA cloud platform and edit either the **Group Name** or the **Alias Name** to correspond to one of the groups reported by the domain user.  
+   ![Citrix SIA AD ADD ALIAS OR GROUP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_10.png)
 4.  Now when users from the integrated domain group authenticate to the CSIA cloud platform, they will be assigned automatically to their corresponding security group.
 
 ### Configuring the Proxy settings of the CSIA cloud platform
 
-1.  Navigate to the **Proxy & Caching** module.
-2.  Set **Enable Proxy Settings** to **YES**.
-3.  Set **User Authentication Method** to **Local User Credentials + Cloud Connections**.
-4.  Click **Save**.
+1.  Navigate to the **Proxy & Caching** module.  
+   ![Citrix SIA PROXY & CACHING](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_11.png)
+2.  Set **Enable Proxy Settings** to **YES**.  
+   ![Citrix SIA PROXY & CACHING ENABLE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_12.png)
+3.  Set **User Authentication Method** to **Local User Credentials + Cloud Connections**.  
+   ![Citrix SIA PROXY & CACHING AUTH](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_13.png)
+4.  Click **Save**.  
+   ![Citrix SIA PROXY & CACHING SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_14.png)
 
 ## Configure Web Security Policies
 
@@ -118,10 +124,14 @@ In this section we will focus on the configuration of CSIA Web Security Policies
 
 ### Applying Policies to Security Groups
 
-1.  Navigate to the **Web Security** module.
-2.  For web security policies that have a group-based implementation available a drop-down will be present at the top of the page above the configuration form for the policy. The current status of this drop-down menu will indicate the which group's policy configuration you are currently viewing.
-3.  Click the **Group** drop-down menu and then **select group** that you want to reconfigure for the current web security policy.
+1.  Navigate to the **Web Security** module.  
+   ![Citrix SIA WEB SECURITY](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_15.png)
+2.  For web security policies that have a group-based implementation available a drop-down will be present at the top of the page above the configuration form for the policy. The current status of this drop-down menu will indicate the which group's policy configuration you are currently viewing.  
+   ![Citrix SIA WEB SECURITY GROUP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_16.png)
+3.  Click the **Group** drop-down menu and then **select group** that you want to reconfigure for the current web security policy.  
+   ![Citrix SIA WEB SECURITY GROUP 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_17.png)
 4.  Clicking **Save** will save the current policy's configuration only to the currently selected security group from the **Group** drop-down menu.  
+   ![Citrix SIA WEB SECURITY GROUP SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_18.png)
    ⋅ **_Note:_ If you are looking to apply these settings to multiple groups**  
 Click **Save to Multiple Groups** will open a window that will allow you to assign the current policy's configuration to multiple security groups simultaneously.  
 Click the **corresponding checkbox** for any security group you want to apply the current policy configuration.  
