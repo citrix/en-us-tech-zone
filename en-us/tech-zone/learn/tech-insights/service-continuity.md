@@ -1,14 +1,14 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: First Last, First2 Last2
-specialThanksTo: First Last, First2 Last2
-description: Copy & paste description from TOC here
+contributedBy: Phil Wiffen
+specialThanksTo: Mayank Singh
+description: Service Continuity helps ensure that end-users are still able to launch their virtual apps and desktops, even when cloud services are down.
 ---
-# Title
+# Service Continuity
 
-TEXT
+Service Continuity helps ensure that end-users are still able to launch their virtual apps and desktops, even when cloud services are down.
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=ID):**
+**Watch this video to [learn more](https://www.youtube.com/watch?v=844-fR_A14k):**
 
-[![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=ID)
+[![Service Continuity Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=844-fR_A14k)
