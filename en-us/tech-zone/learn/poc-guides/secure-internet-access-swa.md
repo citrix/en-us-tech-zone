@@ -61,7 +61,9 @@ In this section we will focus on the configuration of CSIA within the administra
 ### Log into Citrix Secure Internet Access
 
 1.  Log into Citrix Cloud and Access the Secure Internet Access tile
+![Log into Citrix Cloud](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_2.png)
 2.  Select the **Configuration** tab and Click **Open Citrix SIA Configuration** to access the Configuration Console.
+![Citrix SIA Configuration](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_3.png)
 
 ### Configure the Citrix Secure Internet Access PAC Settings
 
