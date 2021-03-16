@@ -16,7 +16,7 @@ The guidance documented here is based on a deployment in a Citrix approved lab e
 
 In our experience and testing, the best migration path follows these steps:
 
-1.  [Set up a basic Citrix Cloud environment and complete ADM service sign up](/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html#set-up-a-basic-citrix-cloud-environment).
+1.  [Set up a basic Citrix Cloud environment and complete ADM service sign-up](/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html#set-up-a-basic-citrix-cloud-environment).
 2.  [Deploy ADM service agent](/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html#deploy-adm-agent).
 3.  [Migrate to ADM Service](/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html#migrate-to-adm-service).
 4.  [Validation](/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html#validation).
@@ -63,7 +63,7 @@ More details can be found [here](https://docs.citrix.com/en-us/citrix-applicatio
 
 ## Migrate to ADM service
 
-After the ADM service agent basic configuratio is done, the next step is to upgrade the ADM to a Firmware that includes the script that will be used to migrate.
+After the ADM service agent basic configuration is done, the next step is to upgrade the ADM to a Firmware that includes the script that will be used to migrate.
 You can migrate on-premises Citrix **ADM 13.0 64.35 or a later version** to Citrix Cloud. If your ADM has 12.1 or an earlier version, you must first upgrade to **13.0 64.35 or a later version** and then migrate to Citrix Cloud. For more information, see the [Upgrade section](https://docs.citrix.com/en-us/citrix-application-delivery-management-software/current-release/upgrade.html).
 
 >**Note:**
@@ -94,7 +94,7 @@ For more information on configuring an agent, see the [Getting Started](https://
 
 ### License
 
-If you use your on-premises ADM deployment as a Pooled license server for ADC instances, you will need before the migration to reallocate your licenses to ADM service.
+If you use your on-premises ADM deployment as a Pooled license server for ADC instances, you will need, before the migration, to reallocate your licenses to ADM service.
 In fact, during the migration process, the ADC license configuration is updated to point to ADM service agent instead of your ADM on-premises.
 
 1.  Connect to Citrix Cloud ADM service.
@@ -107,7 +107,7 @@ In fact, during the migration process, the ADC license configuration is updated 
 
 ### Migrate
 
-The secureclient.csv download from previous steps need to be uploaded to primary ADM, this can be done using a tool like winscp. Copy the client ID and secret CSV file, for example, in the /var directory.
+The secureclient.csv downloaded from previous steps needs to be uploaded to primary ADM. Copy the client ID and secret CSV file, for example, in the /var directory.
 
 >**Note:**
 >
@@ -176,6 +176,6 @@ After successful migration, the on-premises Citrix ADM stops processing the foll
 
 ![Migration end](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_24.png)
 
-You can connect to Citrix ADM service and ensure you see your ADC(s) instance.
+You can connect to Citrix ADM service and ensure you see your ADC instance.
 
 ![Validation](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_25.png)
