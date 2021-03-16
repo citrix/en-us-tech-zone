@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Jacob Rutski
-specialThanksTo: First Last, First2 Last2
+specialThanksTo: Dileep Reddem
 description: Learn how to use the security tools built in to the Citrix ADC to protect VPN and Gateway virtual servers, including Web Application Firewall (WAF), Bot Security, and Advanced Authentication Policies. 
 ---
 # Protecting Gateway Virtual Servers with WAF, Bot, and Advanced Authentication Policies
@@ -29,29 +29,29 @@ This guide assumes a working knowledge of Citrix WAF deployment, Bot Security de
 
 From Security > Citrix Bot Management > Signatures, select the Default Bot Signatures and click the **Clone** button. Apply a descriptive name, then click create.
 
-![Bot Profile Signatures](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botSigClone.png)
+![Bot Profile Signatures](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botsigclone.png)
 
 **Create a Bot Management Profile and Policy**
 
 From Security > Citrix Bot Management > Profiles, select Add to create a new Bot Management Profile. Give the profile a descriptive name and select the previously created signature set.
 
-![Bot Profile](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botProfile.png)
+![Bot Profile](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botprofile.png)
 
 Once the profile is created, select it to edit the advanced profile settings.
 
 Add **IP Reputation** from the right column and check the box to enable it.
 
-![Bot Profile IP Reputation](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botProfileIPRep.png)
+![Bot Profile IP Reputation](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botProfileiprep.png)
 
 Next, choose 'Add' under categories, select IP for the Type, check the box for Enabled, set the action to Drop, check the box for 'Log' and set the log message to something descriptive.
 
-![Bot Profile IP Reputation 2](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botProfileIPRep2.png)
+![Bot Profile IP Reputation 2](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botprofileiprep2.png)
 
-![Bot Profile IP Reputation 3](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botProfileIPRep3.png)
+![Bot Profile IP Reputation 3](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botprofileiprep3.png)
 
 Select **Device Fingerprint** from the right column, ensure that the 'Enabled' check box is **NOT** checked and click Update.
 
-![Bot Profile Device Fingerprint](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botDeviceFingerprint.png)
+![Bot Profile Device Fingerprint](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botdevicefingerprint.png)
 
 The last setting for the Bot Profile is to enable rate limiting, select **Rate Limit** from the right column and check the box for enabled. Click 'Add' under Configure Resources, and add three URL type rate limit bindings for the following URLs:
 
@@ -61,11 +61,11 @@ The last setting for the Bot Profile is to enable rate limiting, select **Rate L
 
 These rate limits should be enabled, with a rate of 5, period of 1000, action of Drop, log set to be enabled, and Log Message with a descriptive message title.
 
-![Bot Profile Rate Limit](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botRateLimit.png)
+![Bot Profile Rate Limit](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botratelimit.png)
 
 The Bot Profile should now be configured as follows:
 
-![Bot Profile Final](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botProfileFin.png)
+![Bot Profile Final](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botprofilefin.png)
 
 Create a Bot **Management Policy** by going to Security > Citrix Bot Management > Bot Policies and choosing Add. Select the previously created Bot Profile, with an expression as follows:
 
@@ -87,7 +87,7 @@ Navigate to AppExpert > Pattern Sets and select 'Add'. Give the new Pattern Set 
 *  /cgi/login (index 1)
 *  /nf/auth/doAuthentication.do (index 2)
 
-![Pattern Set](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_PatSet.png)
+![Pattern Set](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_patset.png)
 
 Alternatively, the Patset can be created from the CLI:
 
@@ -104,11 +104,11 @@ A dummy virtual server is used for the HTTP Callout. This virtual server does no
 
 Go to Traffic Management > Load Balancing > Services and select 'Add'. Give the service a descriptive name, set the protocol to HTTP and port to 80. Enter the IP address of the server and choose OK. Alternatively, an existing server may be used to create the service. All of the default settings may be used, including monitors that are bound to the service.
 
-![Load Balancing Service](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_LBService.png)
+![Load Balancing Service](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_lbservice.png)
 
 Next create the load balancing virtual server by going to Traffic Management > Load Balancing > Virtual Servers and select 'Add'. Give the server a descriptive name, set the protocol to HTTP, and set the IP address type to 'Non Addressable'. Bind the previously created service to this virtual server by selecting 'No Load Balancing Virtual Server Service Binding' then 'Click to select' and selecting the service. There is now 1 service bound to the virtual server and the state is 'UP'.
 
-![Load Balancing Virtual Server](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_LBVirtualServer.png)
+![Load Balancing Virtual Server](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_lbvirtualserver.png)
 
 **HTTP Callout**
 
@@ -122,7 +122,7 @@ HTTP.REQ.FULL_HEADER.BEFORE_STR("\r\n\r\n")+"\r\nGW_VPN-WAF_Callout:abc\r\n\r\n"
 
 In the Server Response section, set the return type to **BOOL** and set the expression to 'true'.
 
-![HTTP Callout](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_HTTPCallout.png)
+![HTTP Callout](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_httpcallout.png)
 
 Alternatively, the HTTP Callout can be created from the CLI:
 
@@ -140,7 +140,7 @@ An existing LDAP authentication policy will be modified to leverage the HTTP Cal
 HTTP.REQ.URL.CONTAINS_ANY("GW_VPN_Patset") && SYS.HTTP_CALLOUT(GW_VPN_WAF_Callout)
 ```
 
-![Authentication Policy WAF Binding](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_AuthenticationPolicy.png)
+![Authentication Policy WAF Binding](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_authenticationpolicy.png)
 
 **Note: this expression can be used with any authentication policy where you want to protect the form fields on the logon page.**
 
@@ -155,7 +155,7 @@ Ensure that only the following security checks are enabled (all others should be
 *  HTML Cross-Site Scripting - Block, Log, Stats
 *  HTML SQL Injection - Block, Log, Stats
 
-![WAF Security Checks](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_WAFSecurityChecks.png)
+![WAF Security Checks](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_wafsecuritychecks.png)
 
 Next select 'Profile Settings' from the right hand column and ensure that the Default Response is set to:
 
@@ -166,7 +166,7 @@ application/octet-stream
 
 Then check the box for 'Log Every Policy Hit'.
 
-![WAF Profile Settings](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_WAFProfileSettings.png)
+![WAF Profile Settings](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_wafprofilesettings.png)
 
 Next, configure the WAF policy by going to Security > Citrix Web Application Firewall > Policies > Firewall and choose 'Add'. Give the policy a descriptive name and select the profile created in the previous step. For the expression, enter the following:
 
@@ -180,7 +180,7 @@ Last, bind the WAF policy to the dummy load balancing virtual server created ear
 
 From the right hand column, select 'Policies' then click the '+' plus to add a policy. Select policy App Firewall and type Request. Select the policy created previously then select 'Bind' and 'Done'.
 
-![WAF Policy Binding](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_WAFPolBinding.png)
+![WAF Policy Binding](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_wafpolbinding.png)
 
 Alternatively, the WAF configuration can be created using the CLI as follows:
 
@@ -201,7 +201,7 @@ There are two configurations related to authentication - encrypting user credent
 
 The following setting enables the ADC to encrypt the credential set when the user submits the form data using ECDHE algorithms. To enable this setting, navigate to Citrix Gateway > Global Settings > Authentication Settings > Change Authentication AAA settings and set 'Login Encryption' to **ENABLED**. 
 
-![AAA Login Encryption](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_AAALoginEnc.png)
+![AAA Login Encryption](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaaloginenc.png)
 
 Alternatively, this can be done from the CLI as follows:
 
@@ -220,13 +220,13 @@ IP Reputation can be built into the advanced authentication flow to prompt the u
 
 A data set need to be created by going to AppExpert > Data Sets and selecting 'Add'. Create a data set with a descriptive name, a type of 'ipv4' and click 'Create'. 
 
-![Malicious IP Data Set](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_AAA_dataset.png)
+![Malicious IP Data Set](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_dataset.png)
 
 Next, two advanced authentication policies need to be created by going to Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Policy and select 'Add'.
 
 Create the first policy with a descriptive name, action type of **NO_AUTHN** and expression of 'true'.
 
-![Advanced Policy Good IP](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_AAA_advpol_good.png)
+![Advanced Policy Good IP](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_advpol_good.png)
 
 Create the second policy with a descriptive name, action type of **NO_AUTHN** and expression as follows:
 
@@ -239,21 +239,21 @@ CLIENT.IP.SRC.IPREP_IS_MALICIOUS || CLIENT.IP.SRC.TYPECAST_TEXT_T.CONTAINS_ANY("
 
 Next, a CAPTCHA login schema profile is created by going to Security > AAA - Application Traffic > Login Schema > Profiles Tab and selecting 'Add'. Give the profile a descriptive name then edit the Authentication Schema by selecting the 'pencil' edit icon. Browse to the LoginSchema directory, highlight **SingleAuthCaptcha.xml** and choose **Select**.
 
-![Captcha Login Schema](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_AAA_captchaschema.png)
+![Captcha Login Schema](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_captchaschema.png)
 
 Next, create an authentication policy label for the Captcha schema by going to Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Policy Label and selecting 'Add'. Give the PL a descriptive name and select the previously created captcha login schema. Bind the required LDAP action policy.
 
 **Note: this example is re-using a previously created LDAP authentication action.**
 
-![Captcha Policy Label](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_AAA_captchaPL.png)
+![Captcha Policy Label](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_captchapl.png)
 
 Create another policy label by selecting 'Add'. Give this PL a descriptive name, and set the login schema to LSCHEMA_INT. Next, bind the two previously created NO_AUTHN authentication policies.
 
-![IP Check Policy Label](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_AAA_ipcheckPL.png)
+![IP Check Policy Label](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_ipcheckpl.png)
 
 Last, this IP Reputation check policy label needs to be set as the next factor of the previously created authentication policy that is already bound to a AAA or Gateway virtual server. Highlight the authentication policy, select 'edit binding' then set the new policy label as the 'Select Next Factor' field.
 
-![Final Authentication Policy](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_AAA_authpolicyfinal.png)
+![Final Authentication Policy](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_authpolicyfinal.png)
 
 ## Summary
 
