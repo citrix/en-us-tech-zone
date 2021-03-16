@@ -40,38 +40,25 @@ During the initial configuration of the ADM service agent , you need to provide 
 >
 >As we migrate from on-premises ADM, we do not need to continue the Agent configuration and can click **Skip**.
 
-## Deploy ADM Agent
+## Deploy ADM service agent
 
 More details can be found [here](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/getting-started/install-agent-on-premises.html).
 
 1.  Download the agent image as instructed in [Getting Started](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/getting-started.html).
 1.  Import the agent image file to VMware vSphere.
 1.  From the Console, configure the initial network configuration options as show in the below example:
-
 ![ADM Agent Network](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_02.png)
-
-4.  After completing the initial network configuration, save the configuration settings.
-
+1.  After completing the initial network configuration, save the configuration settings.
 ![ADM Agent Save](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_03.png)
-
-5.  When prompted, log on using the default (**nsrecover/nsroot**) credentials.
-
+1.  When prompted, log on using the default (**nsrecover/nsroot**) credentials.
 ![ADM Agent Log](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_04.png)
-
-6.  Run the script **/mps/register_agent_cloud.py**.
-
+1.  Run the script **/mps/register_agent_cloud.py**.
 ![ADM Agent register](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_05.png)
-
-7.  Enter the **Service URL** and the **Activation Code** that was provided in Citrix Cloud during initial configuration.
-
+1.  Enter the **Service URL** and the **Activation Code** that was provided in Citrix Cloud during initial configuration.
 ![ADM Agent Service URL and Activation Code](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_06.png)
-
-8.  You are prompted to change ADM (Application Delivery Management) Agent default password.
-
+1.  You are prompted to change ADM (Application Delivery Management) Agent default password.
 ![ADM ns root password change](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_07.png)
-
-9.  After update of the Agent Password and successful registration, the agent will restart to complete the installation process.
-
+1.  After update of the Agent Password and successful registration, the agent will restart to complete the installation process.
 ![ADM Agent restart](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_08.png)
 
 ## Migrate to ADM service
@@ -95,23 +82,14 @@ To enable communications between Citrix ADC instances and Citrix ADM, you must c
 For more information on configuring an agent, see the [Getting Started](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/getting-started.html) section.
 
 1.  Connect to Citrix Cloud.
-
 ![Citrix Cloud](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_09.png)
-
 1.  Click **Home** icon and select **Identity and Access Management**.
-
 ![Citrix Cloud IAM](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_10.png)
-
 1.  Click **API Access** tab.
-
 ![Citrix Cloud API](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_11.png)
-
-4.  Provide a **name** for Secure client and click **Create Client**.
-
+1.  Provide a **name** for Secure client and click **Create Client**.
 ![ADM Create Client](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_12.png)
-
-5.  Click **Download**.
-
+1.  Click **Download**.
 ![ADM Secure Client Download](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_13.png)
 
 ### License
@@ -121,10 +99,8 @@ In fact, during the migration process, the ADC license configuration is updated 
 
 1.  Connect to Citrix Cloud ADM service.
 1.  Navigate to **Networks > Licenses**.
-
 ![ADM License 1](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_14.png)
-
-3.  Take not of your Host ID and go to [http://www.mycitrix.com](http://www.mycitrix.com) to reallocate your licenses.
+1.  Take not of your Host ID and go to [http://www.mycitrix.com](http://www.mycitrix.com) to reallocate your licenses.
 1.  Ensure your licenses are present in ADM service before starting the migration.
 
 ![ADM License 2](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_15.png)
@@ -144,28 +120,21 @@ We recommend to updating to ADM 76.x or later builds as the migration scripts (*
 >**Note:**
 >
 >Ensure that the on-premises ADM has internet connectivity during migration.
-
-1.  Using an SSH client, log on to the on-premises ADM.
-
-![ADM SSH](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_17.png)
-
-2.  Enter in **Shell**
-
->**Note:**
+>
 >For an ADM HA pair, log on to the primary node.
 
-3.  Validate if the CSV file is present.
-
+1.  Using an SSH client, log on to the on-premises ADM.
+![ADM SSH](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_17.png)
+1.  Enter in **Shell**
+1.  Validate if the CSV file is present.
 ![ADM SSH validation](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_18.png)
+1.  Run the following commands to complete the migration:
 
-4.  Run the following commands to complete the migration:
- 
     a. CD /mps/scripts
 
     b. python servicemigrationtool.py
 
 For example: **python servicemigrationtool.py** **/var/secureclient.csv**
-
 ![ADM Migration](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_19.png)
 
 After you run the script, it checks the prerequisites and then proceeds with the migration. The script first checks for the license availability. The following message is displayed only if you have lesser ADM service license than the on-premises license.
