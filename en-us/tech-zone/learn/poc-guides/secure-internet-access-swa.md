@@ -54,6 +54,7 @@ This guide showcases how to perform the following actions:
 | TCP  | 8016  | Alternative port for proxy authentication  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
 | TCP  | 8080  | Default block page  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
 | TCP  | 10080  | PAC script retrieval over HTTP  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
+
 ## Citrix Secure Internet Access (CSIA) Cloud Configuration
 
 In this section we will focus on the configuration of CSIA within the administration console.
@@ -61,12 +62,10 @@ In this section we will focus on the configuration of CSIA within the administra
 ### Log into Citrix Secure Internet Access
 
 1.  Log into Citrix Cloud and Access the Secure Internet Access tile
+   ![Log into Citrix Cloud](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_2.png)
 
-![Log into Citrix Cloud](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_2.png)
-
-1.  Select the **Configuration** tab and Click **Open Citrix SIA Configuration** to access the Configuration Console.
-
-![Citrix SIA Configuration](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_3.png)
+2.  Select the **Configuration** tab and Click **Open Citrix SIA Configuration** to access the Configuration Console.
+   ![Citrix SIA Configuration](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_3.png)
 
 ### Configure the Citrix Secure Internet Access PAC Settings
 
