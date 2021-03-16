@@ -69,8 +69,10 @@ In this section we will focus on the configuration of CSIA within the administra
 
 ### Configure the Citrix Secure Internet Access PAC Settings
 
-1.  From the **Configuration** tab navigate to **Locations & Geomapping**.
-2.  On the **Zones** tab click on **Edit Default Zone**.
+1.  From the **Configuration** tab navigate to **Locations & Geomapping**.  
+   ![Citrix SIA PAC Configuration](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_4.png)
+2.  On the **Zones** tab click on **Edit Default Zone**.  
+   ![Citrix SIA PAC EDIT](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_5.png)
 3.  Click on **PAC Settings**.
 4.  If you need to bypass a domain, use the **Add a Function**.
 5.  These are the recommended Citrix Domain and Sub-domains to be added to the PAC File:  
