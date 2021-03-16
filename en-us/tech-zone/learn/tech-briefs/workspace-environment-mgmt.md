@@ -83,7 +83,7 @@ CPU optimization with WEM, involves real-time monitoring of the process running 
 
 Watch the Tech Insight video about CPU Optimization [here](/en-us/tech-zone/learn/tech-insights/workspace-environment-mgmt.html#cpu-optimization).
 
-To validate the effect of CPU optimization by WEM, in a noisy neighbor scenario, these scale tests were extended. To simulate a noisy neighbor, a user not part of the LoginVSI knowledge worker test run, is added to the test setup. This user’s session is configured, to launch a process that consumes 3 CPU cores for an average of 50%-70% of total CPU, based on the number of cores in the Azure VM.
+To validate the effect of CPU optimization by WEM, in a noisy neighbor scenario, Login VSI based scale tests were conducted. To simulate a noisy neighbor, a user not part of the LoginVSI knowledge worker test run, is added to the test setup. This user’s session is configured, to launch a process that consumes 3 CPU cores for an average of 50%-70% of total CPU, based on the number of cores in the Azure VM.
 
 Windows 10 2004 multi-session VMs, were tested with CVAD 2006 installed and the Citrix Optimizer applied and WEM agent over HDX. To baseline the test results, the same test was run with Microsoft RDP as the connection protocol and the VMs had Out of the Box optimizations from Microsoft.
 
@@ -91,13 +91,13 @@ As can be seen from the following table, the inclusion of WEM, suppresses the ef
 
 **Scale breakdown with Noisy Neighbor scenario**:
 
-| Azure Size  |  MS RDP | Citrix HDX  | % WEM Scalability Improvement  |
+| Azure Size  |  Baseline | Citrix HDX  | % WEM Scalability Improvement  |
 |---|---|---|---|
 | D4V3  | 7.3  | 11.3  | **43.0%**  |
 | D3V2  | 12  | 16  | **28.6%**  |
 | D4V2  | 28  | 34.5  | **20.8%**  |
 
-As WEM reduces CPU spikes, another important inference from the results is, that the response time for the user is much better. Citrix Virtual Apps and Desktops sessions have an almost 1000 ms lower response time when compared to MS RDP (at the instant VSImax is reached) for the same number of users.
+As WEM reduces CPU spikes, another important inference from the results is, that the response time for the user is much better. Citrix Virtual Apps and Desktops sessions have an almost 1000 ms lower response time when compared to the baseline (at the instant VSImax is reached) for the same number of users.
 
 Similarly, the latency observed in the session is between 25%-50% lesser on both the machines with 4 vCPUs. Both these results point to a much smoother and snappier user experience when WEM is in the picture.
 
