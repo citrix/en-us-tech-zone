@@ -9,7 +9,7 @@ description: Learn how to set up Citrix Secure Internet Access in conjuntion wit
 
 ## Overview
 
-Citrix Secure Internet Access provides a full cloud-delivered security stack to protect users, apps, and data against all threats without compromising the employee experience. This proof of concept (PoC) guide is designed to help you quickly configure Citrix Secure Internet Access within your Citrix Cloud environment. At the end of this PoC guide you will be able to protect your Citrix Secure Workspace Access deployment with Citrix Secure Internet Access. You will be able to allow your users access applications using Direct Internet Access (DIA) without compromising on performance.
+Citrix Secure Internet Access provides a full cloud-delivered security stack to protect users, apps, and data against all threats without compromising the employee experience. This proof of concept (PoC) guide is designed to help you quickly configure Citrix Secure Internet Access within your Citrix Cloud environment. At the end of this PoC guide you are able to protect your Citrix Secure Workspace Access deployment with Citrix Secure Internet Access. You are able to allow your users access applications using Direct Internet Access (DIA) without compromising on performance.
 
 ![Citrix SIA OVERVIEW](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_1.png)
 
@@ -43,21 +43,50 @@ This guide showcases how to perform the following actions:
 
 #### Port / Firewall settings
 
-**CSIA --> Outbound**
-| Protocol  | Port  | Description  | Destination  |
-|--- |--- |--- |--- |
-| TCP  | 80  | Proxy connections<br>Custom block pages  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 443  | PAC script retrieval over HTTPS | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 8009  | Alternative port for proxy connections  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 8015  | Proxy authentication over HTTP  | ibosscloud.com  ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 8016  | Alternative port for proxy authentication  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 8080  | Default block page  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
-| TCP  | 10080  | PAC script retrieval over HTTP  | ibosscloud.com<br>api.ibosscloud.com<br>accounts.iboss.com<br>**Customer CSIA Node**-reports.ibosscloud.com<br>**Customer CSIA Node**-swg.ibosscloud.com  |
+#### CSIA --> Outbound
+
+| Source  | Destination  | Protocol  | Port  | Description  |
+|- |- |- |- |- |
+| CSIA  | ibosscloud.com  | TCP  | 80  | Proxy connections & Custom block pages  |
+|   |   | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
+|   |   | TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  |
+|   |   | TCP  | 8009  | Alternative port for proxy connections  |
+|   |   | TCP  | 8015  | Proxy authentication over HTTP  |
+|   |   | TCP  | 8016  | Alternative port for proxy authentication  |
+|   |   | TCP  | 8080  | Default block page  |
+|   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
+|   | api.ibosscloud.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
+|   |   | TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  |
+|   |   | TCP  | 8009  | Alternative port for proxy connections  |
+|   |   | TCP  | 8015  | Proxy authentication over HTTP  |
+|   |   | TCP  | 8016  | Alternative port for proxy authentication  |
+|   |   | TCP  | 8080  | Default block page  |
+|   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
+|   | accounts.iboss.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
+|   |   | TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  |
+|   |   | TCP  | 8009  | Alternative port for proxy connections  |
+|   |   | TCP  | 8015  | Proxy authentication over HTTP  |
+|   |   | TCP  | 8016  | Alternative port for proxy authentication  |
+|   |   | TCP  | 8080  | Default block page  |
+|   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
+|   | **Customer CSIA Node**-swg.ibosscloud.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
+|   |   | TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  |
+|   |   | TCP  | 8009  | Alternative port for proxy connections  |
+|   |   | TCP  | 8015  | Proxy authentication over HTTP  |
+|   |   | TCP  | 8016  | Alternative port for proxy authentication  |
+|   |   | TCP  | 8080  | Default block page  |
+|   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
+|   | **Customer CSIA Node**-reports.ibosscloud.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
+|   |   | TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  |
+|   |   | TCP  | 8009  | Alternative port for proxy connections  |
+|   |   | TCP  | 8015  | Proxy authentication over HTTP  |
+|   |   | TCP  | 8016  | Alternative port for proxy authentication  |
+|   |   | TCP  | 8080  | Default block page  |
+|   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
 
 ## Citrix Secure Internet Access (CSIA) Cloud Configuration
 
-In this section we will focus on the configuration of CSIA within the administration console.
+In this section we focus on the configuration of CSIA within the administration console.
 
 ### Log into Citrix Secure Internet Access
 
@@ -71,13 +100,13 @@ In this section we will focus on the configuration of CSIA within the administra
 
 1.  From the **Configuration** tab navigate to **Locations & Geomapping**.  
    ![Citrix SIA PAC Configuration](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_4.png)
-2.  On the **Zones** tab click on **Edit Default Zone**.  
+2.  On the **Zones** tab click **Edit Default Zone**.  
    ![Citrix SIA PAC EDIT](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_5.png)
-3.  Click on **PAC Settings**.  
+3.  Click **PAC Settings**.  
    ![Citrix SIA PAC SETTINGS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_6.png)
-4.  If you need to bypass a domain, use the **Add a Function**.  
+4.  If you must bypass a domain, use the **Add a Function**.  
    ![Citrix SIA PAC ADD A FUNTION](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_7.png)
-5.  These are the recommended Citrix Domain and Sub-domains to be added to the PAC File:  
+5.  These are the recommended Citrix Domain and Subdomains to be added to the PAC File:  
 ⋅ cloud.com & \*.cloud.com  
 ⋅ citrixdata.com &*.citrixdata.com  
 ⋅ citrixworkspaceapi.net & \*.citrixworkspaceapi.net  
@@ -100,12 +129,12 @@ The strategy for integrating domain group information into the CSIA cloud platfo
 
 To demonstrate the execution of this concept, let's map the domain credentials of a Windows user into a security group on the CSIA cloud platform.
 
-1.  Open command prompt on the target computer, and execute the command "net user (username) /domain"  
+1.  Open command prompt on the target computer, and run the command "net user (user name) /domain"  
 2.  Gather the aliases of groups reported back by the domain controller.  
    ![Citrix SIA AD ALIASES OR GROUPS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_9.png)
 3.  Go to the CSIA cloud platform and edit either the **Group Name** or the **Alias Name** to correspond to one of the groups reported by the domain user.  
    ![Citrix SIA AD ADD ALIAS OR GROUP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_10.png)
-4.  Now when users from the integrated domain group authenticate to the CSIA cloud platform, they will be assigned automatically to their corresponding security group.
+4.  Now when users from the integrated domain group authenticate to the CSIA cloud platform, they are assigned automatically to their corresponding security group.
 
 ### Configuring the Proxy settings of the CSIA cloud platform
 
@@ -120,22 +149,22 @@ To demonstrate the execution of this concept, let's map the domain credentials o
 
 ## Configure Web Security Policies
 
-In this section we will focus on the configuration of CSIA Web Security Policies within the administration console. This is the main place where we set actions on web categories.
+In this section we focus on the configuration of CSIA Web Security Policies within the administration console. This is the main place where we set actions on web categories.
 
 ### Applying Policies to Security Groups
 
 1.  Navigate to the **Web Security** module.  
    ![Citrix SIA WEB SECURITY](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_15.png)
-2.  For web security policies that have a group-based implementation available a drop-down will be present at the top of the page above the configuration form for the policy. The current status of this drop-down menu will indicate the which group's policy configuration you are currently viewing.  
+2.  For web security policies that have a group-based implementation available a drop-down list will be present at the top of the page above the configuration form for the policy. The current status of this drop-down list menu will indicate the which group's policy configuration you are currently viewing.  
    ![Citrix SIA WEB SECURITY GROUP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_16.png)
-3.  Click the **Group** drop-down menu and then **select group** that you want to reconfigure for the current web security policy.  
+3.  Click the **Group** drop-down list menu and then **select group** that you want to reconfigure for the current web security policy.  
    ![Citrix SIA WEB SECURITY GROUP 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_17.png)
-4.  Clicking **Save** will save the current policy's configuration only to the currently selected security group from the **Group** drop-down menu.  
+4.  Clicking **Save** will save the current policy's configuration only to the currently selected security group from the **Group** drop-down list menu.  
    ![Citrix SIA WEB SECURITY GROUP SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_18.png)
    ⋅ **_Note:_ If you are looking to apply these settings to multiple groups**  
-5.  **(Optional)** Click **Save to Multiple Groups** will open a window that will allow you to assign the current policy's configuration to multiple security groups simultaneously.  
+5.  **(Optional)** Click **Save to Multiple Groups** will open a window that allows you to assign the current policy's configuration to multiple security groups simultaneously.  
    ![Citrix SIA WEB SECURITY MULTI GROUP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_19.png)
-6.  Click the **corresponding checkbox** for any security group you want to apply the current policy configuration.  
+6.  Click the **corresponding check box** for any security group you want to apply the current policy configuration.  
    ![Citrix SIA WEB SECURITY MULTI GROUP 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_20.png)
 7.  Click **Add** to add the selected security groups to the configure group.  
    ![Citrix SIA WEB SECURITY MULTI GROUP ADD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_21.png)
@@ -155,23 +184,24 @@ You can associate actions with web categories. This enables you to deploy securi
 
 1.  Each category can have actions that are applied independently from the other categories.
 
-| Action  | Description  |
-|--- |--- |
-| Allow  | Allows users to access sites of this category. Allow is the default state for all categories. |
-| Block  | Blocks access to sites of a particular category. |
-| Stealth  | Flags traffic to that category as violations in the logs but will still allow access to the site.  |
-| Soft Override  | Presents a block page to the user but includes an option to bypass the block temporarily. This allows users to access blocked content without requiring immediate administrator intervention.Soft overrides last until the next day at 2:00 AM in the time zone configured for the gateway. Any block page presented with a soft override will appear in Reporting & Analytics as "soft-blocked." After a user has requested a soft override, any traffic to that URL will show as "allowed" until the override has expired.   |
-| SSL Decryption  | Disable this option to turn off SSL Decryption for a specific category. This ensures privacy compliance and concerns with specific categories like Finance or Health. The priority value for this category does NOT apply to this setting. If a site belongs to multiple categories, and any of those categories has the "SSL Decryption Disabled" option on, that site will not be decrypted.  |
-| Lock  | When a category is locked by the primary administrator into either an Allowed or Blocked state, delegated administrators cannot log in to the web gateway management interface and change the status of that category.  |
-| Category Override  | When you activate a category override, a delegated administrator cannot log in to the web gateway management interface and add a URL to the allow list that would contradict the rule for this category. For example, the "Art" category is blocked and set to "Overrides," so delegated administrators cannot add art.com to the Allow List for that group.  |
+    | Action  | Description  |
+    |--- |--- |
+    | Allow  | Allows users to access sites of this category. Allow is the default state for all categories. |
+    | Block  | Blocks access to sites of a particular category. |
+    | Stealth  | Flags traffic to that category as violations in the logs but will still allow access to the site.  |
+    | Soft Override  | Presents a block page to the user but includes an option to bypass the block temporarily. This allows users to access blocked content without requiring immediate administrator intervention. Soft overrides last until the next day at 2:00 AM in the time zone configured for the gateway. Any block page presented with a soft override appears in Reporting & Analytics as "soft-blocked." After a user has requested a soft override, any traffic to that URL will show as "allowed" until the override has expired.  |
+    | SSL Decryption  | Disable this option to clear SSL Decryption for a specific category. This ensures privacy compliance and concerns with specific categories like Finance or Health. The priority value for this category does NOT apply to this setting. If a site belongs to multiple categories, and any of those categories has the "SSL Decryption Disabled" option on, that site will not be decrypted.  |
+    | Lock  | When a category is locked by the primary administrator into either an Allowed or Blocked state, delegated administrators cannot log in to the web gateway management interface and change the status of that category.  |
+    | Category Override  | When you activate a category override, a delegated administrator cannot log in to the web gateway management interface and add a URL to the allow list that would contradict the rule for this category. For example, the "Art" category is blocked and set to "Overrides," so delegated administrators cannot add art.com to the Allow List for that group.  |
 
 2.  Click each icon to toggle the action for the respective web category.  
    ![Citrix SIA WEB CAT 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_24.png)
    ![Citrix SIA WEB CAT 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_25.png)
    ![Citrix SIA WEB CAT 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_26.png)
-3.  Actions that you want to generally apply to all web categories can be implemented with the Actions drop-down menu.  
+
+3.  Actions that you want to generally apply to all web categories can be implemented with the Actions drop-down list menu.  
    ![Citrix SIA WEB CAT 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_27.png)  
-**NOTE:** _Be careful with the “Not Rated” category, as it will match against many sites that are not categorized_
+**NOTE:** _Be careful with the “Not Rated” category, as it matches against many sites that are not categorized_
 
 #### Category Priorities
 
@@ -190,11 +220,11 @@ Settings relevant to web categories are configured with toggles under **Addition
 | Feature  | Description  |
 |---  |---  |
 | Enable Logging  | Enable and disable logging of violation attempts for the current set of blocked website categories. Log reports may be viewed on the CSIA Reports page. The report information includes date, time, user, website address, and category of the violation.  |
-| Enable Stealth Mode  | It allows you to stealthily monitor Internet activity without blocking access to forbidden sites. With both Logging and Stealth Mode enabled, you can monitor Internet web surfing activity by viewing the log reports on the CSIA Reports page while remaining unnoticed by Internet users on the network.  Note: Web sites and online applications will not be blocked when the action for the web category is configured to Stealth Mode.  |
-| Enable HTTP Scanning on Non-Standard Ports  | If this feature is enabled, CSIA will scan for HTTP web requests on non-standard ports.  |
-| Allow Legacy HTTP 1.0 Requests  | If this feature is enabled, CSIA will allow HTTP 1.0 requests that are missing the "HOST" header. Disabling this feature provides a higher level of Security and makes bypassing the Security more difficult. If this feature is enabled, it may offer more compatibility with older non-HTTP 1.1 compliant software.  |
+| Enable Stealth Mode  | It allows you to stealthily monitor Internet activity without blocking access to forbidden sites. With both Logging and Stealth Mode enabled, you can monitor Internet web surfing activity by viewing the log reports on the CSIA Reports page while remaining unnoticed by Internet users on the network.  Note: Websites and online applications will not be blocked when the action for the web category is configured to Stealth Mode.  |
+| Enable HTTP Scanning on Non-Standard Ports  | If this feature is enabled, CSIA scans for HTTP web requests on non-standard ports.  |
+| Allow Legacy HTTP 1.0 Requests  | If this feature is enabled, CSIA allows HTTP 1.0 requests that are missing the "HOST" header. Disabling this feature provides a higher level of Security and makes bypassing the Security more difficult. If this feature is enabled, it may offer more compatibility with older non-HTTP 1.1 compliant software.  |
 | Enable ID Theft / IP Address URL Blocking  | Protects against potential identity theft attempts by notifying you when someone is trying to steal your personal information through Internet Phishing. Enabling this feature will also block users from navigating to websites using IP address URLs.  |
-| Enable Blocked Site Override  | Enabling this feature will activate a soft override action, allowing users to proceed to the site belonging to a blocked category. When this setting is active, the user will be warned that a page is blocked but will provide a button to proceed anyway.  |
+| Enable Blocked Site Override  | Enabling this feature activates a soft override action, allowing users to proceed to the site belonging to a blocked category. When this setting is active, the user is warned that a page is blocked but will provide a button to proceed anyway.  |
 | Auto Categorize Uncategorized Sites  | When this toggle is switched to Yes, any sites that are not categorized are automatically submitted for categorization. Note: When this toggle is set to Yes, uncategorized sites may be assigned a Web Category of "Informational" or other such designation. This will only be in effect while the category is being appropriately categorized. When this switch is set to No, uncategorized are automatically designated as "Not Rated," which is controlled as its own Web Category.  |
 
 #### Category Scheduling
@@ -207,7 +237,7 @@ Block events can also be configured on an advanced weekly schedule to allow acce
    ![Citrix SIA CATEGORY SCHEDULING 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_30.png)
 3.  Each day during the week can be delegated specific periods of time that the category will be allowed. These particular periods of time are indicated by a blue rectangle.  
    ![Citrix SIA CATEGORY SCHEDULING 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_31.png)
-4.  After finalizing the schedule for a particular category, you can click the category drop-down menu once again and select a new category to configure.
+4.  After finalizing the schedule for a particular category, you can click the category drop-down list menu once again and select a new category to configure.
 5.  Click **Save** to confirm all schedule configurations.  
    ![Citrix SIA CATEGORY SCHEDULING SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_32.png)
 
@@ -218,7 +248,7 @@ The allow lists selectively provides access to a specific website or network res
 #### Adding a URL to an Allow List
 
 1.  Navigate to **Web Security Policies**.
-2.  On the drop down click on **Allow List**.  
+2.  On the drop-down list click **Allow List**.  
    ![Citrix SIA ALLOW LIST](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_33.png)
 3.  From above the list section, click **URL/IP Range**.  
    ![Citrix SIA ALLOW LIST URL/IP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_34.png)
@@ -245,30 +275,30 @@ Keyword filtering is used to inspect URLs for specific words. If a keyword is id
 #### Adding a URL to a Block List / Allow List
 
 1.  Navigate to **Web Security Policies**.
-2.  On the drop down click on **Keywords**.  
+2.  On the drop-down list click **Keywords**.  
    ![Citrix SIA KEYWORD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_38.png)
-3.  Enter the **keyword** that you would like to block in the **Keyword** field and specify the designations that will apply to this keyword. Click **Add**.  
+3.  Enter the **keyword** that you would like to block in the **Keyword** field and specify the designations that apply to this keyword. Click **Add**.  
    ![Citrix SIA KEYWORD ALLOW](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_39.png)
 
 | Option  | Description  |
 |---  |----  |
-| Allow Keyword  | Checking this option will allow the word if it is in the URL within a keyword parameter.  |
-| High Risk  | When any words designated as "High Risk" are searched, an email notification will be sent to the administrator of the group.  |
+| Allow Keyword  | Checking this option allows the word if it is in the URL within a keyword parameter.  |
+| High Risk  | When any words designated as "High Risk" are searched, an email notification is sent to the administrator of the group.  |
 | Wildcard Match  | When enabled, keywords are filtered even when they are just substrings of a larger word. For example, a wildcard match for the keyword "base" blocks searches that include "base" or "baseball." Without wildcard matching, it only blocks "base."  |
-| Global  | This option will span across all Security groups when selected. When removing a “Global" entry, it will remove the entry from all filtering groups. |
+| Global  | This option spans across all Security groups when selected. When removing a “Global" entry, it will remove the entry from all filtering groups. |
 
 #### Pre-defined Keyword Lists
 
 You can enable filtering for pre-defined lists of Adult and High-Risk keywords or add more keywords manually.
 
-The Pre-defined Keyword Lists contain common Adult and High-Risk keywords. Wildcard matching is applied to all keywords in these lists. A wildcard match will recognize the keyword's sequence of characters anywhere in the URL, including the hostname. The High-Risk list generates an email to the recipient of alert emails when a High-Risk keyword is detected by the Reporting & Analytics functionality of the CSIA cloud platform.
+The Pre-defined Keyword Lists contain common Adult and High-Risk keywords. Wildcard matching is applied to all keywords in these lists. A wildcard match recognizes the keyword's sequence of characters anywhere in the URL, including the hostname. The High-Risk list generates an email to the recipient of alert emails when a High-Risk keyword is detected by the Reporting & Analytics functionality of the CSIA cloud platform.
 
 1.  To enable either one of the keyword lists, set the Adult or High-Risk toggle to **Yes**. Click **Save**.  
    ![Citrix SIA KEYWORD ALLOW](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_40.png)
 
 ## Citrix Secure Internet Access Agent Configuration
 
-In this section we will focus on the configuration and the installation of the Citrix Secure Internet Access (CSIA) Agent.
+In this section we focus on the configuration and the installation of the Citrix Secure Internet Access (CSIA) Agent.
 
 ### Configure the CSIA Agent Download (Cloud Connector)
 
@@ -276,7 +306,7 @@ In this section we will focus on the configuration and the installation of the C
    ![Citrix SIA AGENT](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_41.png)
 2.  Click **Configure Connector Download**.  
    ![Citrix SIA AGENT DOWNLOAD CONFIGURE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_42.png)
-3.  Click the **Use HTTP PAC** dropdown menu and select **No**.  
+3.  Click the **Use HTTP PAC** drop-down menu and select **No**.  
 (**Note:** Use HTTP PAC to **"No"** if you want to use **_HTTPS_** for PAC download)  
    ![Citrix SIA AGENT HTTP PAC](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_43.png)
 4.  Click **Security Group** and select the desired default security group for this particular installation file download.  
@@ -288,7 +318,7 @@ In this section we will focus on the configuration and the installation of the C
 
 1.  From the CSIA admin console, go to **Connect Device to Cloud > Cloud Connectors > Advanced Connector Settings**.  
    ![Citrix SIA AGENT ADV SETTINGS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_46.png)
-2.  Under Global Settings Enable the below:  
+2.  Under Global Settings Enable the following:  
 ⋅ **Enable Security Cloud Connector Filtering**  
 ⋅ **Configure Auto Login Cloud Connectors to use Key for Group**  
 ⋅ **Use Session Encryption**
@@ -300,16 +330,16 @@ In this section we will focus on the configuration and the installation of the C
 
 1.  From the CSIA admin console, go to **Connect Device to Cloud > Cloud Connectors > Download Connectors**.  
    ![Citrix SIA AGENT DOWNLOAD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_48.png)
-2.  Under Windows Cloud Connector, click **Download** and **Download All**.  
+2.  Under Windows **Cloud Connector**, click **Download** and **Download All**.  
    ![Citrix SIA AGENT DOWNLOAD ALL](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_49.png)  
 The .msi installation packages can be downloaded directly from the CSIA admin console. Before starting the installation, be sure that you are using the correct package for the version of Windows and processor architecture.
 
 | Platform  | Package  |
 |---  |--- |
 | Windows 10 ARM64 | ibsa64-win10-arm64.msi |
-| Windows 10 x64<br>Windows 8 x64<br>Windows Server 2019<br>Windows Server 2016 	| ibsa64-win8.msi |
-| Windows 10 x86<br>Windows 8 x86 | ibsa32-win8.msi |
-| Windows 7 x64<br>Windows Server 2012<br>Windows Server 2008R2 | ibsa64.msi |
+| Windows 10 x64 or Windows 8 x64 or Windows Server 2019 or Windows Server 2016  | ibsa64-win8.msi |
+| Windows 10 x86 or Windows 8 x86 | ibsa32-win8.msi |
+| Windows 7 x64 or Windows Server 2012 or Windows Server 2008R2 | ibsa64.msi |
 | Windows 7 x86 | ibsa32.msi |
 
 ### Configure the CSIA Agent Policies in the CSIA Admin Console
@@ -322,36 +352,36 @@ The .msi installation packages can be downloaded directly from the CSIA admin co
    ![Citrix SIA AGENT POLICIES NAME](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_52.png)
 4.  To configure the policy, click **Edit Agent Policy**.  
    ![Citrix SIA AGENT POLICIES EDIT](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_53.png)
-5.  Click on **Agent Settings** and set the recommended settings.  
+5.  Click **Agent Settings** and set the recommended settings.  
    ![Citrix SIA AGENT POLICIES SETTINGS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_54.png)
 
-#### Recommended Settings for Corporate Owned Devices
+    **Recommended Settings for Corporate Owned Devices**
 
-| Setting  | Recommended Value  |
-|---  |---  |
-| Multi-User Mode:  | Disable Multi-User/Terminal Server Mode - Enable to support multiple user sessions when running a terminal server. This should be enabled for terminal servers even if users are not logged in simultaneously.  |
-| Use Machine Name for Username:  | Disable Setting - Use the user account name as the username.  |
-| Use UPN for Username:   | Disable Setting - Use the Security Account Manager (SAM) account name, such as DOMAIN\username.  |
-| Redirect All Ports:  | Enable Setting  |
-| Bypass Private Subnets:  | Enable Setting  |
-| Captive Portal Detection:  | Disable Setting  |
-| Auto-Update Enabled:  | Enable Setting  |
-| Auto-Update Release Level:  | Level 1 - Mature  |
-| Enable Windows Desktop App: (Agent will not run-on Multi-User Deployments)  | Enable Setting  |
-| Allow End Users to Disable Security:  | Disable Setting  |
-| Require Password to Disable Security:  | Enable Setting  |
-| Require Password to View Diag Info:  | Enable Setting  |
+    | Setting  | Recommended Value  |
+    |---  |---  |
+    | Multi-User Mode:  | Disable Multi-User/Terminal Server Mode - Enable to support multiple user sessions when running a terminal server. This should be enabled for terminal servers even if users are not logged in simultaneously.  |
+    | Use Machine Name for User name:  | Disable Setting - Use the user account name as the user name.  |
+    | Use UPN for User name:   | Disable Setting - Use the Security Account Manager (SAM) account name, such as DOMAIN\user name.  |
+    | Redirect All Ports:  | Enable Setting  |
+    | Bypass Private Subnets:  | Enable Setting  |
+    | Captive Portal Detection:  | Disable Setting  |
+    | Auto-Update Enabled:  | Enable Setting  |
+    | Auto-Update Release Level:  | Level 1 - Mature  |
+    | Enable Windows Desktop App: (Agent will not run-on Multi-User Deployments)  | Enable Setting  |
+    | Allow End Users to Disable Security:  | Disable Setting  |
+    |   Require Password to Disable Security:  | Enable Setting  |
+    | Require Password to View Diag Info:  | Enable Setting  |
 
-6.  Click on **Dynamic Linking** and select the Groups you wish to assign the policy too.  
+6.  Click **Dynamic Linking** and select the Groups you want to assign the policy too.  
    ![Citrix SIA AGENT POLICIES DYNAMIC LINKING](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_55.png)
 7.  Click **Save**.  
    ![Citrix SIA AGENT POLICIES SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_56.png)
 
-### **(OPTIONAL)** Manual Configuration of the of the Citrix Secure Internet Access Agent
+### **(OPTIONAL)** Manual Configuration of the Citrix Secure Internet Access Agent
 
 The CSIA Agent for Windows .msi editing via Orca is only recommended for troubleshooting.
 
-Orca.msi is available in the Windows Cloud Connector “Download All” option
+Orca.msi is available in the Windows **Cloud Connector** “Download All” option
 
 #### Opening an .MSI File with Orca
 
@@ -369,22 +399,22 @@ Orca.msi is available in the Windows Cloud Connector “Download All” option
 2.  Each property can be edited by double-clicking the property's **Value** field.  
    ![Citrix SIA AGENT MSI PROPERTY VALUE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_60.png)
 
-#### Recommended Settings for Corporate Owned Devices
+    **Recommended Settings for Corporate Owned Devices**
 
-| Setting  | Recommended Value  |
-|---  |---  |
-| Multi-User Mode: (PARAM_MULTI_USER_SUPPORT)  | (0): Disable multi-user mode.  Enable to support multiple user sessions when running a terminal server. This should be enabled for terminal servers even if users are not logged in simultaneously.  |
-| Terminal Server Mode: (PARAM_TERMINAL_SERVER_MODE)  | (0): Disabled - this appears to be deprecated in favor of Multi-User Support  |
-| Use Machine Name for Username: (PARAM_USE_MACHINE_NAME_FOR_USERNAME)  | (0): Disabled - Use the user account name as the username.  |
-| Redirect All Ports: (PARAM_REDIRECT_ALL_PORTS)  | (1): Enabled - Redirect all ports to the proxy.  |
-| Bypass Private Subnets: (PARAM_BYPASS_PRIVATE_SUBNETS)  | (1): Enable bypass  |
-| Captive Portal Detection: (PARAM_CAPTIVE_PORTAL_DETECTION)  | (0): Disabled  |
-| Auto-Update Enabled: (PARAM_AUTO_UPDATE_ENABLE)  | (1): Enabled – The cloud connector to be updated automatically.  |
-| Restart After Upgrade: (PARAM_RESTART_AFTER_UPGRADE)  | (0): Disabled - Will not prompt a restart.    |
+    | Setting  | Recommended Value  |
+    |---  |---  |
+    | Multi-User Mode: (PARAM_MULTI_USER_SUPPORT)  | (0): Disable multi-user mode.  Enable to support multiple user sessions when running a terminal server. This should be enabled for terminal servers even if users are not logged in simultaneously.  |
+    | Terminal Server Mode: (PARAM_TERMINAL_SERVER_MODE)  | (0): Disabled - this appears to be deprecated in favor of Multi-User Support  |
+    | Use Machine Name for User name: (PARAM_USE_MACHINE_NAME_FOR_USERNAME)  | (0): Disabled - Use the user account name as the user name.  |
+    | Redirect All Ports: (PARAM_REDIRECT_ALL_PORTS)  | (1): Enabled - Redirect all ports to the proxy.  |
+    | Bypass Private Subnets: (PARAM_BYPASS_PRIVATE_SUBNETS)  | (1): Enable bypass  |
+    | Captive Portal Detection: (PARAM_CAPTIVE_PORTAL_DETECTION)  | (0): Disabled  |
+    | Auto-Update Enabled: (PARAM_AUTO_UPDATE_ENABLE)  | (1): Enabled – The cloud connector to be updated automatically.  |
+    | Restart After Upgrade: (PARAM_RESTART_AFTER_UPGRADE)  | (0): Disabled - Will not prompt a restart.    |
 
 3.  Within Orca, click the **Save** icon to save changes made to the parameters of the Windows Cloud Connector.  
    ![Citrix SIA AGENT MSI PROPERTY SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_61.png)  
-**Note:** _Ensure files are saved within Orca only using this method **(not using Save As)**. This will cause issues with the functionality of the Windows cloud connector if it is not saved in this manner._
+**Note:** _Ensure files are saved within Orca only using this method **(not using Save As)**. This causes issues with the functionality of the Windows cloud connector if it is not saved in this manner._
 
 ## Citrix Secure Internet Access Agent (Cloud Connector) Deployment
 
@@ -445,7 +475,7 @@ Citrix recommends that for a CSIA PoC you only install the CSIA Agent to Corpora
    ![Citrix SIA AGENT DEPLOY CEM REQ APPS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_64.png)
 12.  On the Summary page, Click **Save**.
 
-#### For Deploying the CSIA Agent via a 3rd Party UEM
+#### For Deploying the CSIA Agent via a third Party UEM
 
 See your Unified Endpoint Management Documentation for deploying .MSI file.
 
@@ -468,7 +498,7 @@ See your Unified Endpoint Management Documentation for deploying .MSI file.
    ![Citrix SIA AGENT MAC DEPLOY CEM RWQ APPS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_64.png)
 10.  On the Summary page, Click **Save**.
 
-#### For Deploying the CSIA Agent via a 3rd Party UEM
+#### For Deploying the CSIA Agent via a third Party UEM
 
 See your Unified Endpoint Management Documentation for deploying .PKG file.
 
@@ -490,7 +520,7 @@ See your Unified Endpoint Management Documentation for deploying .PKG file.
 
 ### CSIA Website Filtering via the CSIA Agent
 
-#### Citrix Workspace App Launching a
+#### Citrix Workspace app Launching a
 
 1.  SaaS app without enhanced security enabled is protected via the CSIA Policies
 2.  SaaS app with enhanced security enabled is protected via the CSIA Policies
@@ -522,9 +552,9 @@ See your Unified Endpoint Management Documentation for deploying .PKG file.
 5.  Registration Information for Connected Devices **(Users, Groups & Devices > Cloud Connected Device > Info)**
 6.  URL Lookup Tool **(Tools > URL Lookup)**
 7.  Enhanced Logging  
- ⋅ To set this, the following registry key needs to be altered, varying from 0 to 4, the higher giving more verbose logging.  
+ ⋅ To set this, the following registry key must be altered, varying from 0 to 4, the higher giving more verbose logging.  
  ⋅  **HKEY_LOCAL_MACHINE\SOFTWARE\IBoss\IBSA\Parameters\LogLevel**  
-⋅ Once the registry key has been set, the IBSA service under Windows Services will need to be restarted for the setting to take effect. Checking windows event viewer, you will see many entries being logged depending log level set.
+⋅ Once the registry key has been set, the IBSA service under Windows Services needs to be restarted for the setting to take effect. Checking windows event viewer, you see many entries being logged depending on log level set.
 8.  Windows Agent Logs (C:\Windows\SysWOW64\ibsa_0.log)
 
 ### A Keyword is not Being Blocked
@@ -532,21 +562,21 @@ See your Unified Endpoint Management Documentation for deploying .PKG file.
 There is a multitude of policies and variables within and surrounding the operations of the CSIA cloud platform that can interfere with properly blocking configured keywords. Refer to the following;
 
 1.  Ensure that SSL decryption is active for this website. Keywords cannot be observed or controlled for HTTPS websites.
-2.  If the source IP of the client workstation or the destination IP of the webserver has been added to the Network > Bypass IP Ranges list, web security controls will not be enforced.
-3.  Keywords configured to block will not take effect if the website is added to the Web Security > Allow List without the Keyword / Safesearch option enabled. With the Keyword / SafeSearch checkbox selected, Web Gateway will allow access to the website but still to enforce Keyword controls and Safesearch.
+2.  If the source IP of the client workstation or the destination IP of the webserver has been added to the **Network > Bypass IP Ranges** list, web security controls is not be enforced.
+3.  Keywords configured to block will not take effect if the website is added to the **Web Security > Allow List without the Keyword/Safesearch** option enabled. With the Keyword / SafeSearch check box selected, Web Gateway allows access to the website but still to enforce Keyword controls and Safesearch.
 4.  The keyword contains asterisks, instead remove the asterisks and activate Wildcard matching for the keyword if that is the desired effect.
 5.  The keyword has multiple words, and Wildcard Matching is not enabled, or the spaces were not indicated with a plus sign ("+").
 6.  The user is not associated with the expected web security group that has the keyword control enabled.
 
 ### Conflicting Actions from Pre-defined Keyword Lists
 
-In some situations, a word in one of the built-in lists of keywords may inadvertently block content unexpectedly. To correct this action, edit the specific pre-defined keyword list. When you click the pencil icon to edit a built-in list, the CSIA cloud platform interface will present a page of keywords with checkboxes next to them. To remove the keyword from the built-in list, uncheck the box next to the keyword you would like to remove and click **Save**. To apply this action to all groups, check the box that is labeled **Apply to All Groups**.
+In some situations, a word in one of the built-in lists of keywords may inadvertently block content unexpectedly. To correct this action, edit the specific pre-defined keyword list. When you click the pencil icon to edit a built-in list, the CSIA cloud platform interface will present a page of keywords with check boxes next to them. To remove the keyword from the built-in list, clear the box next to the keyword you would like to remove and click **Save**. To apply this action to all groups, check the box that is labeled **Apply to All Groups**.
 
 ### Identifying the Customer’s Citrix Secure Internet Access Node
 
 1.  From the **Home** navigate to the **Node Collection Management**.  
    ![Citrix SIA NODE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_68.png)
-2.  Click on **Node Groups**.  
+2.  Click **Node Groups**.  
    ![Citrix SIA NODE 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_69.png)
 3.  This will provide you with both the **_Customer CSIA Node_**-reports.ibosscloud.com and the **_Customer CSIA Node_**-swg.ibosscloud.com Node Clusters.
 
@@ -554,7 +584,7 @@ In some situations, a word in one of the built-in lists of keywords may inadvert
 
 #### Splunk Server Setup
 
-1.  Navigate to the Splunk Server instance and click on the **Settings** link at the top of the page, followed by the **Data inputs** link under the “Data” subsection.  
+1.  Navigate to the Splunk Server instance and click the **Settings** link at the top of the page, followed by the **Data inputs** link under the “Data” subsection.  
    ![Citrix SIA SPLUNK](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_70.png)
 2.  Click the Add new link to the right of the “UDP” section.  
    ![Citrix SIA SPLUNK 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_71.png)
@@ -575,15 +605,15 @@ In some situations, a word in one of the built-in lists of keywords may inadvert
    ![Citrix SIA REPORTING](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_77.png)
 2.  Under **Splunk Integration**, click **Actions**, then click **Add Server**.  
    ![Citrix SIA REPORTING 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_78.png)
-3.  Add the Address/Hostname of the Splunk Server to the “Hostname” and the port number chosen on the Splunk server. Next, in the dropdown box “Splunk Integration Protocol,” choose a protocol.
+3.  Add the Address/Host name of the Splunk Server to the “Hostname” and the port number chosen on the Splunk server. Next, in the dropdown box “Splunk Integration Protocol,” choose a protocol.
 The options available when adding a Splunk server appear as follows:  
    ![Citrix SIA REPORTING 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_79.png)
-4.  You can also configure the Splunk server's integration protocol as HEC. Configuring integration with a Splunk server using the HEC protocol requires the acquisition of the HEC token from the configuration of the Splunk server. Place the retrieved token into the Token field below the Splunk Integration Protocol selection drop-down menu.  
+4.  You can also configure the Splunk server's integration protocol as HEC. Configuring integration with a Splunk server using the HEC protocol requires the acquisition of the HEC token from the configuration of the Splunk server. Place the retrieved token into the Token field below the Splunk Integration Protocol selection drop-down list menu.  
    ![Citrix SIA REPORTING 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_80.png)
-5.  If implementing an **ELFF** log format for Splunk logging the **Splunk Integration ELFF Batch Size** field will become available for configuration. The default value for configuration is **100**.  
+5.  If implementing an **ELFF** log format for Splunk logging the **Splunk Integration ELFF Batch Size** field becomes available for configuration. The default value for configuration is **100**.  
    ![Citrix SIA REPORTING 4](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_81.png)
 6.  A toggle called “Accept All SSL Certs” is available under the "Splunk Integration" section within **Settings > External Logging**; if a non-standard SSL Certificate such as a Self-Signed certificate or a certificate signed by a non-trusted root CA is used, switch this toggle to "YES" to bypass SSL certificate verification, otherwise leave the switch off.
-7.  Select the format in which the log data will be delivered from the "Log Format" drop-down. Finally, switch one or more of the toggles at the bottom of the interface to select the desired logging information types. Click the **Save** button to update the changes. The logging will begin immediately. Perform a search on the Splunk instance to check data is being sent and indexed properly. See the sample output below.  
+7.  Select the format in which the log data will be delivered from the "Log Format" drop-down list. Finally, switch one or more of the toggles at the bottom of the interface to select the desired logging information types. Click the **Save** button to update the changes. The logging begins immediately. Perform a search on the Splunk instance to check data is being sent and indexed properly. See the sample output below.  
    ![Citrix SIA REPORTING 5](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_82.png)
 
 ### Changing the Proxy Port
@@ -596,8 +626,8 @@ _**All other ports are an acceptable alternative to the default port.**_
 
 1.  Navigate to **Proxy & Caching > Proxy Settings**  
    ![Citrix SIA PROXY CHANGE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_83.png)
-2.  Under the **Settings tab**, enter the desired port number on which the proxy will listen for traffic into the Proxy Port field.  
-**Note:** The port configured for this setting will be used when configuring proxy settings in other platform functionalities. Some ports may not be available for assignment to this setting due to pre-configured gateway services.  
+2.  Under the **Settings tab**, enter the desired port number on which the proxy listens for traffic into the Proxy Port field.  
+**Note:** The port configured for this setting is used when configuring proxy settings in other platform functionalities. Some ports may not be available for assignment to this setting due to pre-configured gateway services.  
    ![Citrix SIA PROXY CHANGE 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_84.png)
 3.  Click **Save** to apply this change.  
    ![Citrix SIA PROXY CHANGE 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_85.png)
@@ -606,30 +636,30 @@ _**All other ports are an acceptable alternative to the default port.**_
 
 ### Main Category List
 
-_**Note:** Be careful with the “Not Rated” category, as it will match against many sites that are not categorized._
+_**Note:** Be careful with the “Not Rated” category, as it matches against many sites that are not categorized._
 
 | Category  | Description  |
 |---  |---  |
 | Abortion* | Sites related to abortion |
-| Ads | Sites used to distribute advertising graphics or content as well as online coupons, advertising sales, voucher, deals, and offers |
+| Ads | Sites used to distribute advertising graphics or content in addition to online coupons, advertising sales, voucher, deals, and offers |
 | Adult Content | Sites that contain adult-oriented material. Sites in this category do not contain any nudity but do feature profane and vulgar content. Sites that self-identify as being inappropriate for those under 18 falls under this category. |
 | Alcohol/Tobacco | Sites that contain alcohol and tobacco content. Also includes sites related to alcohol such as bars. Sites in this category do not contain illegal drugs, but may discuss, encourage, promote, offer, sell, supply, or otherwise advocate the use or creation of alcohol/tobacco. |
 | Art | Sites that contain art or discuss art, including museums. May also include printable coloring books, sculptures, mosaic, tattoos, calligraphy, fonts, painting, graffiti, Christian or religious designs, animation drawing, artistic design|
 | Auctions | Sites related to auctions and bidding on goods and services, both online and live |
-| Audio & Video | Sites that contain streaming or downloadable audio/video content such as mp3s, movie clips, and TV shows, as well as sites that sell this content. |
+| Audio & Video | Sites that contain streaming or downloadable audio/video content such as mp3s, movie clips, and TV shows, in addition to sites that sell this content. |
 | Business | Sites that represent a business's online presence. May be engaged in commerce or the activity of buying and selling products and services between the company and consumer. Includes Manufacturers, Producers, Suppliers, Dealers, Distributors, Wholesalers, Retailers, Family-owned businesses, and any other business-oriented entities. |
 | CDN* | Content Delivery Networks (CDNs) and sites related to CDNs |
 | Dating & Personals | Sites that offer dating services or aid in the establishment of romantic relationships |
-| Dictionary | Sites containing extensive collections of information and knowledge. Includes resources such as wikis, lexical dictionaries, maps, censuses, almanacs, library catalogs, genealogy-related sites, scientific information, and directories as well as utilities like clocks, calculators, timers, and templates. |
-| Drugs | Sites containing content relating to illegal drugs such as Amphetamines, Barbiturates, Benzodiazepines, Cocaine, Designer Drugs, Ecstasy, Heroin, etc. Does not refer to Cannabis/Marijuana |
+| Dictionary | Sites containing extensive collections of information and knowledge. Includes resources such as wikis, lexical dictionaries, maps, censuses, almanacs, library catalogs, genealogy-related sites, scientific information, and directories in addition to utilities like clocks, calculators, timers, and templates. |
+| Drugs | Sites containing content relating to illegal drugs such as Amphetamines, Barbiturates, Benzodiazepines, Cocaine, Designer Drugs, Ecstasy, Heroin, and so on. Does not refer to Cannabis/Marijuana |
 | Drugs - Controlled* | Sites related to controlled drugs and substances |
 | Dynamic DNS* | Sites that utilize dynamic DNS services to map their domain names to dynamic IP addresses. |
-| Education | Sites that provide educational services such as schools and universities, as well as sites that offer educational materials for sale or reference. Includes websites that offer information on education or trade/vocational/career schools and programs. Also includes sites that are sponsored by schools, educational facilities, faculty, or alumni groups. |
-| Entertainment | Sites that contain or promote television, movies, magazines, radio, books, food, fashion, and lifestyle. More specifically, sites that provide information about or promote popular culture including (but not limited to) film, film critiques, and discussions, film trailers, box office, television, home entertainment, music, comics, graphic novels, literary news, and reviews, as well as other entertainment-oriented periodicals, interviews, fan clubs, celebrity gossip, podcasts, and music and film charts, show, events, quotes, memes, lyrics, musicians, bands, theatre arts, drama, opera, orchestra. |
+| Education | Sites that provide educational services such as schools and universities, in addition to sites that offer educational materials for sale or reference. Includes websites that offer information on education or trade/vocational/career schools and programs. Also includes sites that are sponsored by schools, educational facilities, faculty, or alumni groups. |
+| Entertainment | Sites that contain or promote television, movies, magazines, radio, books, food, fashion, and lifestyle. More specifically, sites that provide information about or promote popular culture including (but not limited to) film, film critiques, and discussions, film trailers, box office, television, home entertainment, music, comics, graphic novels, literary news, and reviews, in addition to other entertainment-oriented periodicals, interviews, fan clubs, celebrity gossip, podcasts, and music and film charts, show, events, quotes, memes, lyrics, musicians, bands, theater arts, drama, opera, orchestra. |
 | Extreme* | Sites containing intensely vulgar, graphic, shocking, or disgusting content that would be considered highly offensive to most individuals. |
 | File Sharing | Sites for services that provide online file storage, file sharing, synchronization of files between devices, and/or network-based data backup and restoration. These services may provide the means to upload, download, paste, organize, post, and share documents, files, computer code, text, non-copyright-restricted videos, music, and other electronically formatted information in virtual data storage. Additionally, this category covers services that distribute software to facilitate the direct exchange of files between users. |
 | Finance | Sites that contain content about banking, financial news and tips, the stock market, investing, credit cards, insurance, and lending. |
-| Food | Sites that contain content related to restaurants, food, dining, as well as sites that list, review, discuss, advertise and promote food, catering, dining services, cooking, and recipes. |
+| Food | Sites that contain content related to restaurants, food, dining, in addition to sites that list, review, discuss, advertise and promote food, catering, dining services, cooking, and recipes. |
 | Forums | Sites containing message boards, online chat rooms, and discussion forums |
 | Freeware / Shareware* | Sites related to distributing freeware and shareware software |
 | Friendship | Sites that contain platonic friendship related materials and social networking sites. |
@@ -641,7 +671,7 @@ _**Note:** Be careful with the “Not Rated” category, as it will match agains
 | Health | Sites that contain content related to health, illnesses, and ailments, including hospitals, doctors, and prescription drugs, including sites primarily focusing on health research. Also, sites that provide advice and information on general health such as fitness and well-being, personal health, medical services, over-the-counter and prescription medications, health effects of both legal and illegal drug use, alternative and complementary therapies, dentistry, optometry, and psychiatry. Additionally, includes self-help and support organizations dedicated to a disease or health conditions. |
 | Humor* | Sites primarily related to jokes, humor, or comedy |
 | Illegal Activity* | Sites related to illicit activities or activities illegal in most countries |
-| Image/Video Search | Sites for image and video searching, including sharing of media (e.g., photo sharing) and have a low risk of including objectionable content such as adult or pornographic material. |
+| Image/Video Search | Sites for image and video searching, including sharing of media (for instance, photo sharing) and have a low risk of including objectionable content such as adult or porno graphic material. |
 | Informational | Sites containing informational content such as regional information or advice |
 | Infosec* | Sites featuring content related to Information Security |
 | Internet Communication | Sites Related to internet communication and VOIP |
@@ -657,7 +687,7 @@ _**Note:** Be careful with the “Not Rated” category, as it will match agains
 | Online Meetings* | Sites related to software for online meetings or hosting online meetings |
 | Organizations | Sites that contain content related to organizations that foster volunteerism for charity such as non-profits, foundations, societies, associations, communities, institutions. Also includes recognized pageants (Miss Earth), boys/girls scouts, and bodies that cultivate philanthropic or relief efforts. |
 | P2P* | Sites related to Peer-to-Peer (P2P) file sharing |
-| Parked Domains | Sites that are parked, meaning the domain is not associated with any service such as email or a website. These domains are often are very often listed "for sale." |
+| Parked Domains | Sites that are parked, meaning the domain is not associated with any service such as email or a website. These domains are very often listed "for sale." |
 | Phishing* | Sites and sites used in phishing and spearfishing campaigns |
 | Piracy* | Sites related to digital piracy |
 | Political | Sites that contain political content, including those representing political organizations or organizations promoting political views |
@@ -673,11 +703,11 @@ _**Note:** Be careful with the “Not Rated” category, as it will match agains
 | Sex Ed | Sites that contain content relating to sexual education. Content may be graphic but is designed to inform about the reproductive process, sexual development, safe sex practices, sexuality, birth control, tips for better sex, and sexual enhancement products. |
 | Shopping | Sites that are used to purchase consumer goods, including online auctions and classifieds. Includes event tickets |
 | Spam* | Sites related to spam or used in spam email campaigns |
-| Sports | Sites relating to sports and active hobbies. This includes organized, professional, and competitive sports as well as active hobbies such as fishing, golf, hunting, jogging, canoeing, archery, chess, etc. |
+| Sports | Sites relating to sports and active hobbies. This includes organized, professional, and competitive sports in addition to active hobbies such as fishing, golf, hunting, jogging, canoeing, archery, chess, and so on. |
 | Streaming Radio/TV | Sites that contain streaming radio or television content |
 | Suicide* | Sites related to suicide, including suicide information |
 | Suspicious* | Sites that do not necessarily contain malware or malicious content, but, due to certain attributes, have been flagged as questionable. iboss' Malware Analysis will classify these sites as "Unsafe", even if no malware is detected. The Web Request Heuristic Protection, if active, will also flag sites categorized as suspicious. |
-| Swimsuit | Sites that contain sexually revealing content, but no nudity. Includes shopping sites for bikini, swimsuits,  lingerie, and other intimate apparel.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Swimsuit | Sites that contain sexually revealing content, but no nudity. Includes shopping sites for bikini, swimsuits, lingerie, and other intimate apparel.  |
 | Technology | Sites that contain content related technology, including software, computer hardware, technology companies, and technical computer help. Also, sites that sponsor or provide information, news, reviews, opinions, and coverage of computing, computing devices and technology, consumer electronics, and general technology. |
 | Terrorism/Radicalization | Sites that feature radical groups or movements with aggressive anti-government convictions or beliefs. |
 | Tech Infrastructure* | Sites Related to technology infrastructure |
