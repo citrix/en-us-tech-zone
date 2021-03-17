@@ -74,13 +74,14 @@ This guide showcases how to perform the following actions:
     Recommended Best Practice:
 
     It is a recommended best practice that the SIA agent traffic from corporate managed devices be bypassed from the local IPSec tunnel 
-    of the SD-WAN in the branch edge. This allows direct proxy to the Citrix SIA where enterprise OU’s or security groups can be exercised directly
+    of the SD-WAN in the branch edge. 
+    This allows direct proxy to the Citrix SIA where enterprise OU’s or security groups can be exercised directly
     via cloud connectors on the managed devices.
 
 To allow for the Citrix SIA agent to seamlessly call home to the Citrix SIA gateway cluster and PoP’s, it is critical to bypass the cloud connector based traffic from the IPSec tunnel so that the registration of the cloud connector happens and the proxy is made available directly from the connector.
 
-    Note : It is NOT desired to have the SIA agent traffic go through the IPSec tunnel as there are some issues with agent registration 
-    and policies to be exercised on the initiated traffic from the endpoint with the SIA agent
+    Note : 
+    It is NOT desired to have the SIA agent traffic go through the IPSec tunnel.
 
 **Points to consider in creation of the SD-WAN Bypass custom application:**
 
@@ -100,9 +101,9 @@ All the bypassed specific IP/Protocols tagged as a custom application in the SD-
 **Node(s) in Green –** Cloud PoP nodes part of a CSIA gateway cluster with IPs 104.225.164.53 and 104.225.181.63 with the globe icon. A CSIA gateway cluster is an aggregate of two or more CSIA gateway nodes.
 
     Note :
-    When doing your PoC, check the nodes as per your account and apply the Orchestrator bypass rules accordingly.
-    The accounts almost usually always have a reporter node but the gateway ndoes can be one or more. 
-    Ensure to place bypass to all gateway nodes so that they are accounted during the bypass (since the traffic can go to any cloud gateway node).
+    1. When doing your PoC, check the nodes as per your account and apply the Orchestrator bypass rules accordingly.
+    2. The accounts almost usually always have a reporter node but the gateway ndoes can be one or more. 
+    3. Ensure bypass to all gateway nodes so that they are accounted during the bypass (traffic can go to any cloud gateway node).
 
 ![Bypass CSIA Agent Orchestrator Policy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_orchestratorbypasspolicy.png)
 
@@ -181,7 +182,7 @@ Sometimes you may have missed to add specific apps to either services. This mean
     *  Enter the LAN IP as 192.168.9.118
     *  Apply Done and Save
 
-    ![210 new site Interface creation details from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_laninterface210.png)
+    ![210 LAN Interface creation details from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_laninterface210.png)
 
     WAN Link 1 - Interface definition
     *  Select Deployment mode as Edge (Gateway)
@@ -190,7 +191,7 @@ Sometimes you may have missed to add specific apps to either services. This mean
     *  Enter the WAN IP as 192.168.1.199
     *  Apply Done and Save
 
-    ![210 new site Interface creation details from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_waninterface210.png)
+    ![210 WAN Link 1 Interface creation details from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_waninterface210.png)
 
     WAN Link 2 - Interface definition
     *  Select Deployment mode as Edge (Gateway)
@@ -199,7 +200,7 @@ Sometimes you may have missed to add specific apps to either services. This mean
     *  Select DHCP Client so the WAN link gets auto addressed
     *  Apply Done and Save
 
-    ![210 new site Interface creation details from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_wan2interface210.png)
+    ![210 WAN Link 2 Interface creation details from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_wan2interface210.png)
 
     WAN Link 1 - Access Interface definition
     *  Select access type as Public Internet
@@ -208,7 +209,7 @@ Sometimes you may have missed to add specific apps to either services. This mean
     *  15 Mbps Upload/Download
     *  Select the WAN1 interface and provide the Gateway (Access Interface IP is auto populated)
 
-    ![210 new site Interface creation details from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_wan2interface21.png)
+    ![210 WAN Link 1 Access Interface creation details from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_wan1accessint.png)
 
     WAN Link 2 - Access Interface definition
 
@@ -218,7 +219,7 @@ Sometimes you may have missed to add specific apps to either services. This mean
     *  10 Mbps Upload/Download
     *  Select the WAN2 interface and the Access interface is auto populated (as it is a DHCP link)
 
-    ![210 new site Interface creation details from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_wan2accinterface210.png)
+    ![210 Wan Link 2 Access Interface creation details from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_wan2accessint.png)
 
     Deploy Config/Software to initiate Change management and activation
 
@@ -279,21 +280,21 @@ Sometimes you may have missed to add specific apps to either services. This mean
     *  Region Count: 2 (If you have 2 or more PoPs available in your account. If your account has ONLY 1 PoP, then you may see only 1 here)
     *  Status: Site Provisioning Success
 
-        ![Citrix SIA Service Tunnel save](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaverifyprovisioning.png)
+        ![Citrix SIA Service Verify Provisioning](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaverifyprovisioning.png)
 
 ### Steering of traffic via Citrix SIA Tunnel (IPSec Type)
 
 *  Click on “Default SIA Group”
 
-    ![Citrix SIA Service Tunnel save](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiasaveprovisioning.png)
+    ![Citrix SIA Service Routing Group](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiasaveprovisioning.png)
 
 *  **Routing "ALL APPS" via Citrix SIA service –** If ALL Internet traffic is to go through the Citrix SIA IPSec tunnel. A default 0.0.0.0/0 is created via Citrix SIA service in this case
 
-    ![Citrix SIA Service Tunnel save](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaallapps.png)
+    ![Citrix SIA Service Routing for All Apps](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaallapps.png)
 
 *  **Application/Custom Application/Group Specific –** If there are only specific applications that need to be routed through the SIA service. In this case app routes are created in the SD-WAN
 
-    ![Citrix SIA Service Tunnel save](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaspecificapps.png)
+    ![Citrix SIA Service Routing for Specific Apps](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaspecificapps.png)
 
 ### Verify what automation is done as part of IPSec tunnel provisioning in Orchestrator
 
@@ -311,13 +312,15 @@ Click on the Info icon to know what details have been automated for the IPSec tu
     *  MD5/Auth HASH – SHA256
     *  PFS/IKE Group – Modp 1024 (Group2)
   
-      ![Citrix SIA Service Tunnel save](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaspecificapps.png)
+      ![Citrix SIA Service Tunnel automated data](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiatunnelautodata.png)
 
 ### Perform the Deploy Config/Software
 
 *  Stage and Activate the configuration to enable the IPSec tunnel establishment between the Citrix SD-WAN and the Citrix SIA cloud PoP
   
-    ![Citrix SIA Service Tunnel save](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaspecificapps.png)
+    ![Citrix SIA Service Tunnel Change Staging](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiatunnelstageactivate.png)
+
+   ![Citrix SIA Service Tunnel Change Activate](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiatunnelstageactivate2.png)
 
 ## How to verify Citrix SD-WAN and Citrix SIA IPSec tunnel formation
 
@@ -330,7 +333,7 @@ From Citrix SIA side, for establishing a tunnel, we need two things. The creatio
     The IPSec Tunnel Name, IKE/IPSec encryption and Authentication settings, IKE Version2, Local and Remote ID including the 
     Pre-Shared Key are auto generated by the API without the need of any manual intervention
 
-![Citrix SIA Service Tunnel save](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaspecificapps.png)
+![Citrix SIA Service IPSec Tunnel Config Verify](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiatunnelconfig.png)
 
 The Local subnets are also automatically created, and the tunnel newly created in the SIA cloud is attributed to the local subnet appropriately.
 Note:  
@@ -340,7 +343,7 @@ The policy (Security Group) enabled is “Default” and we can change the polic
     1. SSL Decryption is disabled by Default
     2. Default Policy is “Default”
 
-![Citrix SIA Service Tunnel save](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaspecificapps.png)
+![Citrix SIA Service Tunnel Local Subnets](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiatunnellocalsubnets.png)
 
 ### From Orchestrator
 
@@ -349,7 +352,7 @@ The policy (Security Group) enabled is “Default” and we can change the polic
     *  You can verify the Tunnel state with local and remote endpoint IPs
     *  Status of the Tunnel with statistics of packets inbound and outbound
 
-![Citrix SIA Service Tunnel save](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaspecificapps.png)
+![Citrix SIA Service Post Deploy Orchestrator Status](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_postdeploysdwotunnelstats.png)
 
 You can also verify the status of the IPSec tunnel by going to :
 
@@ -382,7 +385,7 @@ If you are either using a Citrix SIA Cloud Connector (SIA Agent) or through an I
 
     For instance, in this case we are modifying Group 7 (Not taken and still default) and making changes to the Group name “PoC_Demo_Group”
 
-![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+![Citrix SIA Security Group Creation](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_siasecuritygroupnameforpoc.png)
 
 *  **Connector configuration pre-requisite for Proxy**
 
@@ -392,13 +395,13 @@ If you are either using a Citrix SIA Cloud Connector (SIA Agent) or through an I
     *  Ensure the Connector registration method is “Standard Registration + SAML”
     *  Leave others as default
 
-        ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+        ![Citrix SIA Agent Proxy Settings](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_cisaagentproxysettings.png)
 
 *  **Click on Connect Device to Cloud -> Cloud Connectors**
   
     *  Click on Configure Connector Download
 
-        ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+        ![Citrix SIA Agent Download Settings](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaagentdownloadsettings.png)
 
     *  Select the below values.
   
@@ -408,28 +411,28 @@ If you are either using a Citrix SIA Cloud Connector (SIA Agent) or through an I
         *  Captive Portal – Yes
         *  Gateway Admin - Enabled
 
-        ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+        ![Citrix SIA Agent Set Values Before Download](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiadownloadvalues.png)
 
 *  **Click on Windows Cloud Connector Download Button and choose Windows 8/10 64 bit**
 
         Note :
         Please ensure you perform the access of Citrix SIA Cloud platform via Google Chrome browser. With Firefox, the installer may not download as a .msi (in which case you need to manually change the name of the file removing .html from the file)
 
-    ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+    ![Citrix SIA Agent Download Installer](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_downloadcsiaagentwindows.png)
 
     *  Let the installer download and then double click the installer in the download pane or from the downloads folder where it got stored
 
-        ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+        ![Citrix SIA Agent Install CSIA Agent on Windows](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-installcsiaagent.png)
 
     *  After double click, a PoP up is presented. Click on “More Info” and then click on “Run Anyway”
         *  Clicking on Run Anyway starts installing the msi file
         *  Finish the MSI file installation allowing all further administrative operations
 
-        ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+        ![Citrix SIA Agent run installer](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_runcisaagentinstaller.png)
 
     *  Once the msi installation is complete, search for “services” in windows and then search for a service by name IBSA (This is the Citrix SIA Agent service running on the host machine now)
 
-        ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+        ![Verify Citrix SIA Agent status From Windows Services](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_verifycsiaservicestatus.png)
 
     *  Verify that with the Cloud Agent Service running, the proxy IP accessing www.ipchicken.com  or www.whatsmyip.com is that of cloud gateway nodes of the Citrix SIA account
 
@@ -438,7 +441,7 @@ If you are either using a Citrix SIA Cloud Connector (SIA Agent) or through an I
 
             If the IP you have got is that of the service provider NAT IP, you may debug why the SIA agent/Cloud Connector failed.
 
-        ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+        ![Citrix SIA Service Host Proxy After CSIA Agent Install](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
 
     *  If the Cloud registration is successful from the Cloud Connector (SIA Agent), notice the username and all other details with a successful agent registration
 
@@ -447,14 +450,14 @@ If you are either using a Citrix SIA Cloud Connector (SIA Agent) or through an I
 
         *  Goto Users Groups and Devices -> Cloud Connected Devices
 
-            ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+            ![Citrix SIA Agent Registration Successfull](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaagentregistrationsuccess.png)
 
     *  With successful Agent registration, notice the agent traffic on the Citrix SIA Reporter under Realtime Dashboard or Events logs
 
            Note: 
             If you have an Agent installed, notice the username to explicitly show up with the Group that was set during the agent download/install including the Private Source IP
 
-        ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+        ![Citrix SIA Agent Traffic Reporting](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaagentrafficreporting.png)
 
 ## PoC use-case 1: Users with Cloud Connector (SIA Agent) + Citrix SD-WAN in a branch
 
@@ -470,33 +473,31 @@ With Citrix SIA, the backhaul is no longer necessary and the agent helps proxy t
 
 *  Create a new Custom APP with the below IP/PORT/Protocol Lists
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Citrix SIA Agent Bypass from IPSec tunnel App in Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaagentbypasstraffictunnel.png)
 
 *  Associate the custom App to INTERNET Breakout so that the SIA/Cloud Connector agent traffic can be bypassed from the tunnel and sent directly via Internet Service
-
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
 
 ### Web Security (Category) - Configuration of Web Security Category Policies from Citrix SIA portal
 
 *  Click on : Web Security -> Web Security Policies -> Web/SSL Categories
 *  Choose the Group as "PoC_Demo_Group" (Since Cloud Connector/SIA Agent is installed for that group)
 
-    ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+    ![Associate Security Group to Web Security](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_associatesecgrptowebseccisa.png)
 
 *  Enable Blocking of Friendship and Gambling Categories
 
-    ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+    ![Enable Web Security for Category](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_enablewebsecforcategory.png)
 
 *  SAVE the settings to PoC_Demo_Group ONLY
 
-    ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+    ![Save Web Security Settings](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_savewebsecuritysettings.png)
 
 ### Verification of Web Security Category Policy enforcement and Reporting to check traffic status
 
 *  Open an Incognito window of a browser
 *  Access 777.com (A gambling site)
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Access 777 website from Gambling](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_access777website.png)
 
 As soon as the site is accessed, the splash page comes up blocking the traffic (as enforced by the administrator on the PoC_Demo_Group policy
 
@@ -504,11 +505,11 @@ You can also see that the Group name is visible including the end host private l
 
 *  The description also states the category accessed
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![777 Website Blocked Gambling](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_777websiteblocked.png)
 
 *  The reporting event logs indicate the block of access to the Gambling site
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![777 Website Blocked Reporting Dashboard](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_777trafficreporting.png)
 
 *  Open an Incognito window of a browser
 *  Access facebook.com (A Friendship Category site)
