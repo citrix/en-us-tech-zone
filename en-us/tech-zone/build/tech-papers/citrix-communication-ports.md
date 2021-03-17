@@ -29,7 +29,7 @@ Not all ports need to be open, depending on your deployment and requirements.
 |                   | ADC lights out management                    | TCP      | 4001, 5900, 623 | Daemon which offers complete and unified configuration management of all the routing protocols                                                                        |
 |                   | Integrated Management Interface              | TCP, UDP | 389             | LDAP connection                                                                                                                                                       |
 |                   | Thales HSM                                   | TCP      | 9004            | RFS and Thales HSM                                                                                                                                                    |
-|                   | Citrix ADM                                   | UDP      | 4739            | For AppFlow communication                                                                                                                                             |
+| Citrix ADC SNIP   | Citrix ADM                                   | UDP      | 4739            | For AppFlow communication                                                                                                                                             |
 |                   |                                              | SNMP     | 161, 162        | To send SNMP events                                                                                                                                                   |
 |                   |                                              | Syslog   | 514             | To receive syslog messages in Citrix ADM                                                                                                                              |
 |                   |                                              | TCP      | 5557, 5558      | For logstream communication from Citrix ADC to Citrix ADM.                                                                                                            |
@@ -40,6 +40,7 @@ Not all ports need to be open, depending on your deployment and requirements.
   >**Note:**
   >
   >Depending on the Citrix ADC configuration, network traffic can originate from SNIP, MIP, or NSIP interfaces.
+  >If you have configured Citrix ADCs in High Availability mode, Citrix ADM uses the Citrix ADC subnet IP (Management SNIP) address to communicate with Citrix ADC.
   >
   >[Link to application firewall signatures](https://s3.amazonaws.com/NSAppFwSignatures/SignaturesMapping.xml)
   >
@@ -61,12 +62,17 @@ Not all ports need to be open, depending on your deployment and requirements.
 |                         | TACACS external authentication server     | TACACS | 49               | Default port for authentication protocol. For communication between Citrix ADM and TACACS external authentication server.                                     |
 | Citrix ADC CPX instance | Citrix ADM license server                 | TCP    | 27000            | License port for communication between Citrix ADM license server and CPX instance.                                                                            |
 |                         |                                           | TCP    | 7279             | Citrix vendor daemon port.                                                                                                                                    |
-| Citrix ADC              | Citrix ADM                                | TCP    | 5563             | To receive ADC metrics (counters), system events, and Audit Log messages from Citrix ADC instance to Citrix ADM                                               |
+| Citrix ADC SNIP         | Citrix ADM                                | TCP    | 5563             | To receive ADC metrics (counters), system events, and Audit Log messages from Citrix ADC instance to Citrix ADM                                               |
 |                         |                                           | TCP    | 5557, 5558       | For logstream communication (for Security Insight, Web Insight, and HDX Insight) fron Citrix ADC                                                              |
 |                         |                                           | UDP    | 162              | To receive SNMP events from Citrix ADC                                                                                                                        |
 |                         |                                           | UDP    | 514              | To receive syslog messages from Citrix ADC or Citrix SD-WAN instance                                                                                          |
 |                         |                                           | UDP    | 4739             | To receive ADC analytics log data using IPFIX protocol                                                                                                        |
 | Citrix ADM              | Citrix ADM Agent                          | TCP    | 443, 8443, 7443  | Port for communication between Citrix ADC agent and Citrix ADM                                                                                                |
+
+>**Note:**
+>
+>If you have configured Citrix ADCs in High Availability mode, Citrix ADM uses the Citrix ADC subnet IP (Management SNIP) address to communicate with Citrix ADC.
+>
 
 ## Citrix Cloud
 
@@ -270,20 +276,32 @@ Refer to the following link for Citrix App Layering ports – [Firewall Ports](/
 
 ### Provisioning Services
 
-| Source                                                                                                               | Destination           | Type | Port         | Details                                                                                                                                                                                                                       |
-| -------------------------------------------------------------------------------------------------------------------- | --------------------- | ---- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Provisioning Server                                                                                                  | Provisioning Server   | UDP  | 6890..6909   | Inter-server communication                                                                                                                                                                                                    |
-|                                                                                                                      | Microsoft SQL Server  | TCP  | 1433         | Communication with Microsoft SQL Server                                                                                                                                                                                       |
-|                                                                                                                      | Domain Controller     | TCP  | 389          | Communication with Active Directory                                                                                                                                                                                           |
-| Target Device (PVS outbound communication on ports 6901, 6902 and 6905 for Target Devices starting with version 6.0) | Broadcast/DHCPServer  | UDP  | 67, 4011     | Optional: Obtaining network boot information in case DHCP options 66-TFTP Server Name (Bootstrap Protocol Server) and 67-Boot file name (Bootstrap Protocol Client) are not configured or boot from ISO/ local disk not used. |
-|                                                                                                                      | Broadcast/ PXEService | UDP  | 69           | Trivial File Transfer (TFTP) for Bootstrap delivery                                                                                                                                                                           |
-|                                                                                                                      | TFTP Server           | UDP  | 6910         | Target Device log on at Provisioning Services                                                                                                                                                                                 |
-|                                                                                                                      | Provisioning Server   | UDP  | 6910..6930   | Virtual disk Streaming (Streaming Service) (configurable)                                                                                                                                                                     |
-|                                                                                                                      |                       | UDP  | 6969, 2071   | Two Stage Boot (BDM). Used in boot from ISO or USB scenarios only.                                                                                                                                                            |
-|                                                                                                                      |                       | TCP  | 54321..54323 | SOAP Service – Used by Imaging Wizards                                                                                                                                                                                        |
-| Admin Workstation                                                                                                    | Provisioning Server   | TCP  | 54321..54323 | SOAP Service – Used by Console and APIs (MCLI, PowerShell, etc.)                                                                                                                                                              |
-|                                                                                                                      | DDC Controller        | TCP  | 80           | When using on-prem CVAD - used by Console wizards when creating Broker Catalogs                                                                                                                                               |
-|                                                                                                                      | CVAD Service          | TCP  | 443          | When using CVADS - used by Console wizards when creating Broker Catalogs                                                                                                                                                      |
+| Source              | Destination          | Type | Port             | Details                                                                                                                                                   |
+| ------------------- | -------------------- | ---- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Provisioning Server | Provisioning Server  | UDP  | 6890..6909       | Inter-server communication                                                                                                                                |
+|                     | Microsoft SQL Server | TCP  | 1433             | Communication with Microsoft SQL Server                                                                                                                   |
+|                     | Domain Controller    | TCP  | 389              | Communication with Active Directory                                                                                                                       |
+| Target Device       | Broadcast/DHCPServer | UDP  | 66, 67           | Only DHCP options: Obtaining network boot DHCP options 66-TFTP Server Name (Bootstrap Protocol Server) and 67-Boot file name (Bootstrap Protocol Client). |
+|                     | Broadcast/PXEService | UDP  | 69               | Trivial File Transfer (TFTP) for Bootstrap delivery                                                                                                       |
+|                     | TFTP Server          | UDP  | 6910             | Target Device login at Provisioning Services                                                                                                              |
+|                     | Provisioning Server  | UDP  | 6910..6930       | Virtual disk Streaming (Streaming Service) (configurable)                                                                                                 |
+|                     |                      | UDP  | 6901, 6902, 6905 | Target device to Citrix Provisioning communication (not configurable)                                                                                     |
+|                     |                      | UDP  | 6969, 2071       | Only BDM: Two Stage Boot (BDM). Used in boot from ISO or USB scenarios only.                                                                              |
+|                     |                      | TCP  | 54321..54323     | SOAP Service – Used by Imaging Wizards                                                                                                                    |
+| Admin Workstation   | Provisioning Server  | TCP  | 54321..54323     | SOAP Service – Used by Console and APIs (MCLI, PowerShell, etc.)                                                                                          |
+|                     | DDC Controller       | TCP  | 80               | When using on-prem CVAD - used by Console wizards when creating Broker Catalogs                                                                           |
+|                     | CVAD Service         | TCP  | 443              | When using CVADS - used by Console wizards when creating Broker Catalogs                                                                                  |
+
+### Remote PC Access
+
+| Source            | Destination | Type | Port | Details                                             |
+| ----------------- | ----------- | ---- | ---- | --------------------------------------------------- |
+| Admin Workstation | VDA         | UDP  | 9    | Wake On LAN for Remote PC Access power management   |
+| WOL Proxy         | VDA         | TCP  | 135  | Wake Up Proxy for Remote PC Access power management |
+
+  >**Note:**
+  >
+  >Remote PC Access is using the same VDA ports as regular virtual desktops
 
 ### Session Recording
 
