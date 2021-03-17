@@ -520,11 +520,11 @@ You can also see that the Group name is visible including the end host private l
 
 *  The description also states the category accessed
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Facebook Website Blocked Friendship Category](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_facebookaccessblockedfriendshipcategory.png)
 
 *  The reporter also shows that Facebook from Friendship category is BLOCKED
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Facebook Website Reporting Stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_facebookblockedreportingstats.png)
 
 ### ALLOW LIST: Configuration of Allow List (Web Security) Policies from Citrix SIA portal
 
@@ -532,15 +532,15 @@ Create a simple ALLOW List to allow ONLY Facebook from the entire Friendship cat
 
 *  Go to Web Security -> Web Security Policies -> Allow List
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Allow List Section](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_allowlistcreation.png)
 
 *  Add an allow list in URL/IP Range stating facebook.com and click in “+Add”
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Allow List Rule Add](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_allowlistruleadd.png)
 
 *  Notice the Allow list showing the URL added to be allowed
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Allow List Rule Addition Confirmation](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_ruleaddConfirm.png)
 
 ### Verification of Web Security Allow List Policy enforcement and Reporting to check traffic status
 
@@ -551,7 +551,7 @@ Create a simple ALLOW List to allow ONLY Facebook from the entire Friendship cat
         Best Practice :
         For Allow/Block List – SCRAPE and add all domains if being allowed
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Facebook Block Without Scrape](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_facebookblockwithoutscrape.png)
 
 *  Go to the Allow List under Web Security
     *  Web Security -> Web Security Policies -> Allow List
@@ -559,16 +559,16 @@ Create a simple ALLOW List to allow ONLY Facebook from the entire Friendship cat
     *  Type facebook.com and click on Scan
     *  Add all domains to the ALLOW List
 
-       ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+       ![How to Scrape Allow List](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_scrapeallowlist.png)
 
 *  Now open facebook.com in an incognito browser and it opens fully
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Post Scrape Allow List works well for Facebook](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_facebookopenswellpostscrape.png)
 
 *  Notice from the reporter event logs the Facebook.com is NOW allowed and no more blocked as it was added to the allow list
 *  Allow list takes more precedence than the Category blocking
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Allow List Traffic Reporting Stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_allowlistreportingstats.png)
 
 ### CASB - Configuration of CASB Policies from Citrix SIA portal
 
@@ -582,7 +582,7 @@ Create a CASB rule to enable safe search on Google Browser and disable gmail.com
         *  Enable Block Google Drive
     *  Click “SAVE”
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![CASB App Controls](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_casbappcontrols.png)
 
 ### Verification of CASB Policy enforcement and Reporting to check traffic status
 
@@ -591,12 +591,12 @@ Google Drive Blocking control:
 *  Access drive.google.com in an incognito browser tab
 *  Soon as we hit enter, a splash page pops up indicating the access to google drive is blocked. This is due to the CASB control exercised in the PoC_Demo_Group Security Group
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![CASB Google Drive Blocked](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_casbgoogledriveblockedaccess.png)
 
 *  The reporter event logs also indicate access to google drive blocked
 *  Category states “Google Drive Blocked” as it comes from CASB controls
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![CASB access traffic reporting stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_googlesafesaerch.png)
 
 Google Browser Safe Search enablement:
 
@@ -605,7 +605,7 @@ Google Browser Safe Search enablement:
 *  Enter Citrix or any keyword and hit enter
 *  Notice that the search results are filtered, as the safe search is ON and is indicated as soon as the keyword is entered in the engine
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Google Safe Search CASB Control](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
 
 ### MALWARE Defense - Configuration of Anti Malware Policies from Citrix SIA portal
 
@@ -615,24 +615,24 @@ Google Browser Safe Search enablement:
 *  The Content engine needs to be ready
 *  Click Block on Scan error to be Enabled
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Malware Defense Settings Check](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_malwaredefensesettingscheck.png)
 
 ### Verification of Anti Malware Policy enforcement and Reporting to check traffic status
 
 *  Access <https://www.eicar.org/?page_id=3950>
 *  Scroll down and click download the 68-byte file
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Prepare Malware DOwnload Eicar](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_preparemalwaredownloadeicar.png)
 
 *  Once the file download is initiated, a spalsh screen pops up indicating Virus detected and page is blocked
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Malware Download Blocked Access](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_malwaredownloadblockedaccess.png)
 
 Verifying via CSIA Reporting Section
 
 *  Reporter also indicates the Malware protection enforced
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Malware Reporting Stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_malwarereportingstats.png)
 
 ### DLP (Data Loss Prevention)- Configuration of DLP Policies from Citrix SIA portal  
 
@@ -641,7 +641,7 @@ Verifying via CSIA Reporting Section
     *  Ensure that content analysis engine is ready
     *  For the PoC, allow default selection for Content Engines and Analysis engines
 
-    ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+    ![DLP Settings Check](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_dlpsettingscheck.png)
 
 *  Create a DLP rule so that Data Loss Prevention can be enforced on unauthorized content upload/download/both
     *  Go to Data Loss Prevention tab
@@ -653,14 +653,14 @@ Verifying via CSIA Reporting Section
     *  Enable HTTP Methods of PUT a POST so we can enforce DLP on uploads
     *  Leave content engines default
 
-    ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+    ![DLP Rule Create](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_dlprulecreate.png)
 
 *  Under DLP tabs from Network Sources to Content Types (change only policy as below):
     *  Choose policy as “Include All except selected items”
     *  Allow Defaults in Search Criteria tab
     *  Select Action as “BLOCK”
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![DLP Action to Block](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_dlpactiontoblock.png)
 
 ### Verification of DLP (Data Loss Prevention) Policy enforcement and Reporting to check traffic status
 
@@ -668,38 +668,33 @@ Verifying via CSIA Reporting Section
 *  Click on Sample Data and view some sample information
 *  Click on XLS File (This downloads the file)
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![DLPTest site download Excel](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_downloaddlpsensitivefiletotest.png)
 
 *  See the file gets downloaded with the name “sample-data.xls” under Downloads folder (or folder you have selected)
 *  Use this file to test DLP in a new site next
-
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
 
 *  Now open a new browser incognito tab and type <http://dataleaktest.com>
     *  Click on Upload Test
     *  In the Upload test page, scroll down and click on “SSL ON”
     *  After clickin on SSL ON, you can see the message on the black screen “System Ready for Next DLP Test with SSL ON”
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Dataleak site DLP test with SSL ON](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_dataleaksitesslondlptest.png)
 
 *  Now click on Browse
     *  Select the file we previously downloaded in step “d” with filename sample-data.xls and UPLOAD
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![Upload DLP sensitive File](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_uploaddlpsensitivefile.png)
 
 *  Once the dataleaktest to test HTTPS upload of SSN contained file, a spalsh screen pops up indicating Unauthorized content detected and page is blocked (because DLP kicked in)
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![DLP Sensitive Data Access Restricted](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_dlpsensitivedatarestricted.png)
 
 *  Verify Reporter Logs for DLP events:
     *  Click on More Filters
-
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
-
     *  Choose log Type as DLP and Hit “Search”
     *  Notice that the DLP upload gets blocked
 
-   ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+   ![DLP Reporting Stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_dlpreportingstats.png)
 
 ## PoC use-case 2:  Pre-Requisite - Uninstall the Cloud Connector
 
