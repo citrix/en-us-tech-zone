@@ -79,6 +79,8 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Microapps Custom Integrations](/en-us/tech-zone/learn/tech-insights/microapps-custom-integrations.html) - Create custom integrations with the microapp builder through the HTTP connector.
 
+[Service Continuity](/en-us/tech-zone/learn/tech-insights/service-continuity.html) - Helps ensure that end-users are still able to launch their virtual apps and desktops, even when cloud services are down.
+
 [Site Aggregation](/en-us/tech-zone/learn/tech-insights/site-aggregation.html) - Hybrid deployment that allows your on-premises Citrix Virtual Apps & Desktops environments to be part of Citrix Workspace.
 
 [VPN-Less Access to Web, Windows and Linux Resources](/en-us/tech-zone/learn/tech-insights/vpn-less-access.html) - Learn how users can access internal web apps, Windows/Linux apps and Windows/Linux desktops without a VPN.
