@@ -29,7 +29,7 @@ Not all ports need to be open, depending on your deployment and requirements.
 |                   | ADC lights out management                    | TCP      | 4001, 5900, 623 | Daemon which offers complete and unified configuration management of all the routing protocols                                                                        |
 |                   | Integrated Management Interface              | TCP, UDP | 389             | LDAP connection                                                                                                                                                       |
 |                   | Thales HSM                                   | TCP      | 9004            | RFS and Thales HSM                                                                                                                                                    |
-|                   | Citrix ADM                                   | UDP      | 4739            | For AppFlow communication                                                                                                                                             |
+| Citrix ADC SNIP   | Citrix ADM                                   | UDP      | 4739            | For AppFlow communication                                                                                                                                             |
 |                   |                                              | SNMP     | 161, 162        | To send SNMP events                                                                                                                                                   |
 |                   |                                              | Syslog   | 514             | To receive syslog messages in Citrix ADM                                                                                                                              |
 |                   |                                              | TCP      | 5557, 5558      | For logstream communication from Citrix ADC to Citrix ADM.                                                                                                            |
@@ -40,6 +40,7 @@ Not all ports need to be open, depending on your deployment and requirements.
   >**Note:**
   >
   >Depending on the Citrix ADC configuration, network traffic can originate from SNIP, MIP, or NSIP interfaces.
+  >If you have configured Citrix ADCs in High Availability mode, Citrix ADM uses the Citrix ADC subnet IP (Management SNIP) address to communicate with Citrix ADC.
   >
   >[Link to application firewall signatures](https://s3.amazonaws.com/NSAppFwSignatures/SignaturesMapping.xml)
   >
@@ -61,12 +62,17 @@ Not all ports need to be open, depending on your deployment and requirements.
 |                         | TACACS external authentication server     | TACACS | 49               | Default port for authentication protocol. For communication between Citrix ADM and TACACS external authentication server.                                     |
 | Citrix ADC CPX instance | Citrix ADM license server                 | TCP    | 27000            | License port for communication between Citrix ADM license server and CPX instance.                                                                            |
 |                         |                                           | TCP    | 7279             | Citrix vendor daemon port.                                                                                                                                    |
-| Citrix ADC              | Citrix ADM                                | TCP    | 5563             | To receive ADC metrics (counters), system events, and Audit Log messages from Citrix ADC instance to Citrix ADM                                               |
+| Citrix ADC SNIP         | Citrix ADM                                | TCP    | 5563             | To receive ADC metrics (counters), system events, and Audit Log messages from Citrix ADC instance to Citrix ADM                                               |
 |                         |                                           | TCP    | 5557, 5558       | For logstream communication (for Security Insight, Web Insight, and HDX Insight) fron Citrix ADC                                                              |
 |                         |                                           | UDP    | 162              | To receive SNMP events from Citrix ADC                                                                                                                        |
 |                         |                                           | UDP    | 514              | To receive syslog messages from Citrix ADC or Citrix SD-WAN instance                                                                                          |
 |                         |                                           | UDP    | 4739             | To receive ADC analytics log data using IPFIX protocol                                                                                                        |
 | Citrix ADM              | Citrix ADM Agent                          | TCP    | 443, 8443, 7443  | Port for communication between Citrix ADC agent and Citrix ADM                                                                                                |
+
+>**Note:**
+>
+>If you have configured Citrix ADCs in High Availability mode, Citrix ADM uses the Citrix ADC subnet IP (Management SNIP) address to communicate with Citrix ADC.
+>
 
 ## Citrix Cloud
 
