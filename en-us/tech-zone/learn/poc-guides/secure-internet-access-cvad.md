@@ -245,7 +245,7 @@ Keyword filtering is used to inspect URLs for specific words. If a keyword is id
 
 1.  Navigate to **Web Security Policies**.
 2.  On the drop down click on **Keywords**.  
-   ![Citrix SIA KEYWORD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvda_38.png)
+   ![Citrix SIA KEYWORD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_38.png)
 3.  Enter the **keyword** that you would like to block in the **Keyword** field and specify the designations that will apply to this keyword. Click **Add**.  
    ![Citrix SIA KEYWORD ALLOW](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_39.png)
 
@@ -476,94 +476,86 @@ To prepare and roll out the update to all machines in a catalog:
 14.  Under Deployment select **Uninstall This Application when…**. (this means next time the endpoint runs a gpupdate and the SIA Agent has been removed it will be removed from the endpoint as well).
 15.  Select **OK** and **Close**.
 
-### Deploy CSIA agent via Citrix Endpoint Management Solution to Corporate Devices
+#### Scenario 1: Static VDA with user data stored in local disk
 
-#### Installing the Windows Agent
+1.  On your hypervisor or cloud service provider, take a snapshot of the VDAs and give the snapshot a meaningful name.
+2.  In your Group Policy Management, expand your domain.
+3.  Right click the location of your Static VDAs, then select “Link an existing GPO”.
+4.  Select the Deploy CSIA Agent GPO that was created.
+5.  Select OK.
+6.  Once the Group Policy is applied you will need to reboot the VDAs.
 
-1.  In the Endpoint Management console, navigate to **Configure > Apps**. Click **Add**.
-2.  Click **Enterprise**.  
-   ![Citrix SIA AGENT DEPLOY CEM](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_62.png)
-3.  On the App information page, configure the following:  
-⋅ **Name:** Type a descriptive name for the app. The name appears under App Name on the Apps table.  
-⋅ **Description:** Type an optional description of the app.  
-⋅ **App category:** Optionally, in the list, click the category to which you want to add the app.
-4.  Click **Next**. The **App Platforms** page appears.
-5.  Select the platform: **Windows Desktop/Tablet**.
-6.  On the Windows Desktop/Tablet Enterprise App page, click **Upload** and navigate to the file.
-7.  Configure these settings:  
-   ![Citrix SIA AGENT DEPLOY CEM APP SETTINGS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_63.png)
-8.  Specify **deployment rules** and **store configuration** as needed.
-9.  Click **Next** until you get to the Summary page and then click **Save**.
-10.  In the Endpoint Management console, navigate to **Configure > Delivery Groups**. Select the delivery group to configure and click the **Apps page**.
-11.  Drag the desired apps to the **Required Apps** box.  
-   ![Citrix SIA AGENT DEPLOY CEM REQ APPS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_64.png)
-12.  On the Summary page, Click **Save**.
+#### Scenario 2: Static VDA with user data discarded on log out
 
-#### For Deploying the CSIA Agent via a 3rd Party UEM
+1.  On your hypervisor or cloud service provider, take a snapshot of the current VM and give the snapshot a meaningful name. This snapshot can be used to revert (roll back) machines in the catalog, if needed.
+2.  In your Group Policy Management, expand your domain.
+3.  Right click the location of your Master Image, then select “Link an existing GPO”.
+4.  Select the Deploy CSIA Agent GPO that was created.
+5.  Select OK.
+6.  Once the Group Policy is applied you will need to reboot the machines.
+7.  Take a snapshot of the VM and give the snapshot a meaningful name that will be recognized when the catalog is updated in Studio. Although Studio can create a snapshot, Citrix recommends that you create a snapshot using the hypervisor management console, and then select that snapshot in Studio. This enables you to provide a meaningful name and description rather than an automatically generated name.
+8.  Update your Machine Catalogs in the Studio navigation pane. (See the Update the catalog section above)
 
-See your Unified Endpoint Management Documentation for deploying .MSI file.
+#### Scenario 3: non-MCS Static VDA with user data stored in local disk
 
-#### Installing the macOS Agent
-
-1.  In the Endpoint Management console, navigate to **Configure > Apps**. Click **Add**.
-2.  Click **Enterprise**.  
-   ![Citrix SIA AGENT MAC DEPLOY CEM](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_65.png)
-3.  On the App information page, configure the following:  
-⋅ **Name:** Type a descriptive name for the app. The name appears under App Name on the Apps table.  
-⋅ **Description:** Type an optional description of the app.  
-⋅ **App category:** Optionally, in the list, click the category to which you want to add the app.
-4.  Click **Next**. The **App Platforms** page appears.
-5.  Select the platform: **macOS**.
-6.  **Upload** the PKG file (macOS) and complete the configuration. Click **Next**.  
-   ![Citrix SIA AGENT MAC DEPLOY CEM UPLOAD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_66.png)
-7.  Click **Next** until you get to the Summary page and then click Save.
-8.  In the Endpoint Management console, navigate to **Configure > Delivery Groups**. Select the delivery group to configure and click the **Apps page**.
-9.  Drag the desired apps to the **Required Apps** box.  
-   ![Citrix SIA AGENT MAC DEPLOY CEM RWQ APPS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_64.png)
-10.  On the Summary page, Click **Save**.
-
-#### For Deploying the CSIA Agent via a 3rd Party UEM
-
-See your Unified Endpoint Management Documentation for deploying .PKG file.
-
-### Deploy CSIA agent via manually to Corporate Devices
-
-#### Installing the Windows Agent
-
-1.  **Power on** the Windows Machine and log on.
-2.  **Install** the appropriate SIA Agent .msi package for your platform.  
-   ![Citrix SIA AGENT DEPLOY MANUAL](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_67.png)
-
-#### Installing the macOS Agent
-
-1.  Navigate to and open the downloaded archive in Finder.
-2.  Open the installation package file.
-3.  Complete the installation process.
+1.  On your hypervisor or cloud service provider, take a snapshot of the current VM and give the snapshot a meaningful name. This snapshot can be used to revert (roll back) machines in the catalog, if needed.
+2.  In your Group Policy Management, expand your domain.
+3.  Right click the location of your Master Image, then select “Link an existing GPO”.
+4.  Select the Deploy CSIA Agent GPO that was created.
+5.  Select OK.
+6.  Once the Group Policy is applied you will need to reboot the machines.
 
 ## Validated Use Cases
 
-### CSIA Website Filtering via the CSIA Agent
+### Deployed CSIA agent (Cloud Connector) manually to VDA master image
 
-#### Citrix Workspace App Launching a
+#### MCS: Pooled-random desktop
 
-1.  SaaS app without enhanced security enabled is protected via the CSIA Policies
-2.  SaaS app with enhanced security enabled is protected via the CSIA Policies
-3.  Internal Web app without enhanced security enabled is protected via the CSIA Policies
-4.  Internal Web app with enhanced security enabled is protected via the CSIA Policies
+*  Windows 10 Enterprise (Single-Session)
+*  Windows Server 2019 (Multi-Session)
 
-#### Citrix Workspace HTML Launching a
+#### MCS: Pooled-static desktop
 
-1.  SaaS app without enhanced security enabled is protected via the CSIA Policies
-2.  SaaS app with enhanced security enabled is **_NOT_** protected via the CSIA Policies
-3.  Internal Web app without enhanced security enabled is protected via the CSIA Policies
-4.  Internal Web app with enhanced security enabled is **_NOT_** protected via the CSIA Policies
+*  Windows 10 Enterprise (Single-Session)
 
-#### Citrix Workspace via Browser Extension
+#### MCS: Dedicated desktop
 
-1.  SaaS app without enhanced security enabled is protected via the SIA Policies
-2.  SaaS app with enhanced security enabled is **_NOT_** protected via the SIA Policies
-3.  Internal Web app without enhanced security enabled is protected via the SIA Policies
-4.  Internal Web app with enhanced security enabled is **_NOT_** protected via the SIA Policies
+*  Windows 10 Enterprise (Single-Session)
+
+#### PVS: Pooled-random desktop
+
+*  Windows 10 Enterprise (Single-Session)
+*  Windows Server 2019 (Multi-Session)
+
+#### PVS: Pooled-static desktop
+
+*  Windows 10 Enterprise (Single-Session)
+
+#### PVS: Dedicated desktop
+
+*  Windows 10 Enterprise (Single-Session)
+
+#### Non-MCS: Random desktop
+
+*  Windows 10 Enterprise (Single-Session)
+*  Windows Server 2019 (Multi-Session)
+
+#### Non-MCS: Static desktop
+
+*  Windows 10 Enterprise (Single-Session)
+
+### Deployed CSIA agent (Cloud Connector) via AD group policy to Static VDA images
+
+#### MCS
+
+*  Static VDA with user data stored in local disk
+*  Static VDA with user data discarded on logout
+
+#### Non-MCS
+
+*  Static VDA with user data saved into local disk
+
+### VDA’s in Different Regions
 
 ## Troubleshooting
 
@@ -599,9 +591,9 @@ In some situations, a word in one of the built-in lists of keywords may inadvert
 ### Identifying the Customer’s Citrix Secure Internet Access Node
 
 1.  From the **Home** navigate to the **Node Collection Management**.  
-   ![Citrix SIA NODE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_68.png)
+   ![Citrix SIA NODE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_68.png)
 2.  Click on **Node Groups**.  
-   ![Citrix SIA NODE 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_69.png)
+   ![Citrix SIA NODE 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_69.png)
 3.  This will provide you with both the **_Customer SIA Node_**-reports.ibosscloud.com and the **_Customer SIA Node_**-swg.ibosscloud.com Node Clusters.
 
 ### Splunk Integration with Citrix Secure Internet Access Node
@@ -609,36 +601,36 @@ In some situations, a word in one of the built-in lists of keywords may inadvert
 #### Splunk Server Setup
 
 1.  Navigate to the Splunk Server instance and click on the **Settings** link at the top of the page, followed by the **Data inputs** link under the “Data” subsection.  
-   ![Citrix SIA SPLUNK](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_70.png)
+   ![Citrix SIA SPLUNK](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_70.png)
 2.  Click the Add new link to the right of the “UDP” section.  
-   ![Citrix SIA SPLUNK 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_71.png)
+   ![Citrix SIA SPLUNK 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_71.png)
 3.  Enter a port into the "port" field (above 1023, if possible, to avoid security restrictions with the operating system). In the “Only accept connection from” field, enter your CSIA Reporter Node's IP address. If nothing is entered in this field, connections from all hosts will be accepted. When done, click **Next**.  
-   ![Citrix SIA SPLUNK 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_72.png)
+   ![Citrix SIA SPLUNK 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_72.png)
 4.  On the next page, click **Select Source Type** and type **"syslog,"** then select it.  
-   ![Citrix SIA SPLUNK 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_73.png)
+   ![Citrix SIA SPLUNK 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_73.png)
 5.  Change the App Context to **Search & Reporting (search)**.  
-   ![Citrix SIA SPLUNK 4](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_74.png)
+   ![Citrix SIA SPLUNK 4](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_74.png)
 6.  Change the Host Method to **IP**.  
-   ![Citrix SIA SPLUNK 5](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_75.png)
+   ![Citrix SIA SPLUNK 5](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cavd_75.png)
 7.  Click **Review** (review current configuration), then click **Submit**.  
-   ![Citrix SIA SPLUNK 6](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_76.png)
+   ![Citrix SIA SPLUNK 6](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_76.png)
 
 #### CSIA Reporting & Analytics Module Setup
 
 1.  Navigate to **Reporting & Analytics > Log Forwarding > Forward From Reporter** in the iboss cloud platform interface.  
-   ![Citrix SIA REPORTING](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_77.png)
+   ![Citrix SIA REPORTING](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_77.png)
 2.  Under **Splunk Integration**, click **Actions**, then click **Add Server**.  
-   ![Citrix SIA REPORTING 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_78.png)
+   ![Citrix SIA REPORTING 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_78.png)
 3.  Add the Address/Hostname of the Splunk Server to the “Hostname” and the port number chosen on the Splunk server. Next, in the dropdown box “Splunk Integration Protocol,” choose a protocol.
 The options available when adding a Splunk server appear as follows:  
-   ![Citrix SIA REPORTING 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_79.png)
+   ![Citrix SIA REPORTING 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_79.png)
 4.  You can also configure the Splunk server's integration protocol as HEC. Configuring integration with a Splunk server using the HEC protocol requires the acquisition of the HEC token from the configuration of the Splunk server. Place the retrieved token into the Token field below the Splunk Integration Protocol selection drop-down menu.  
-   ![Citrix SIA REPORTING 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_80.png)
+   ![Citrix SIA REPORTING 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_80.png)
 5.  If implementing an **ELFF** log format for Splunk logging the **Splunk Integration ELFF Batch Size** field will become available for configuration. The default value for configuration is **100**.  
-   ![Citrix SIA REPORTING 4](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_81.png)
+   ![Citrix SIA REPORTING 4](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_81.png)
 6.  A toggle called “Accept All SSL Certs” is available under the "Splunk Integration" section within **Settings > External Logging**; if a non-standard SSL Certificate such as a Self-Signed certificate or a certificate signed by a non-trusted root CA is used, switch this toggle to "YES" to bypass SSL certificate verification, otherwise leave the switch off.
 7.  Select the format in which the log data will be delivered from the "Log Format" drop-down. Finally, switch one or more of the toggles at the bottom of the interface to select the desired logging information types. Click the **Save** button to update the changes. The logging will begin immediately. Perform a search on the Splunk instance to check data is being sent and indexed properly. See the sample output below.  
-   ![Citrix SIA REPORTING 5](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_82.png)
+   ![Citrix SIA REPORTING 5](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_82.png)
 
 ### Changing the Proxy Port
 
@@ -649,12 +641,12 @@ Ports that should **not** be used include: 53, 139, 199, 443, 445, 953, 1080, 13
 _**All other ports are an acceptable alternative to the default port.**_
 
 1.  Navigate to **Proxy & Caching > Proxy Settings**  
-   ![Citrix SIA PROXY CHANGE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_83.png)
+   ![Citrix SIA PROXY CHANGE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_83.png)
 2.  Under the **Settings tab**, enter the desired port number on which the proxy will listen for traffic into the Proxy Port field.  
 **Note:** The port configured for this setting will be used when configuring proxy settings in other platform functionalities. Some ports may not be available for assignment to this setting due to pre-configured gateway services.  
-   ![Citrix SIA PROXY CHANGE 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_84.png)
+   ![Citrix SIA PROXY CHANGE 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_84.png)
 3.  Click **Save** to apply this change.  
-   ![Citrix SIA PROXY CHANGE 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_85.png)
+   ![Citrix SIA PROXY CHANGE 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_85.png)
 
 ## Appendix
 
