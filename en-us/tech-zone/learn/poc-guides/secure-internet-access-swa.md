@@ -55,28 +55,28 @@ This guide showcases how to perform the following actions:
 |   |   | TCP  | 8016  | Alternative port for proxy authentication  |
 |   |   | TCP  | 8080  | Default block page  |
 |   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
-|   | api.ibosscloud.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
+| CSIA  | api.ibosscloud.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
 |   |   | TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  |
 |   |   | TCP  | 8009  | Alternative port for proxy connections  |
 |   |   | TCP  | 8015  | Proxy authentication over HTTP  |
 |   |   | TCP  | 8016  | Alternative port for proxy authentication  |
 |   |   | TCP  | 8080  | Default block page  |
 |   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
-|   | accounts.iboss.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
+| CSIA  | accounts.iboss.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
 |   |   | TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  |
 |   |   | TCP  | 8009  | Alternative port for proxy connections  |
 |   |   | TCP  | 8015  | Proxy authentication over HTTP  |
 |   |   | TCP  | 8016  | Alternative port for proxy authentication  |
 |   |   | TCP  | 8080  | Default block page  |
 |   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
-|   | **Customer CSIA Node**-swg.ibosscloud.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
+| CSIA  | **Customer CSIA Node**-swg.ibosscloud.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
 |   |   | TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  |
 |   |   | TCP  | 8009  | Alternative port for proxy connections  |
 |   |   | TCP  | 8015  | Proxy authentication over HTTP  |
 |   |   | TCP  | 8016  | Alternative port for proxy authentication  |
 |   |   | TCP  | 8080  | Default block page  |
 |   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
-|   | **Customer CSIA Node**-reports.ibosscloud.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
+| CSIA  | **Customer CSIA Node**-reports.ibosscloud.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
 |   |   | TCP  | 7443  | Alternative port for PAC script retrieval over HTTPS  |
 |   |   | TCP  | 8009  | Alternative port for proxy connections  |
 |   |   | TCP  | 8015  | Proxy authentication over HTTP  |
