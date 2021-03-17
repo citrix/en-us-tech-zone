@@ -449,12 +449,12 @@ To prepare and roll out the update to all machines in a catalog:
 #### Create a Distribution Point
 
 1.  **Create folder** on an AD joined computer that will act as the file server.
-2.  **Save** the SIA Agent .msi package inside that folder.
+2.  **Save** the CSIA Agent .msi package inside that folder.
 3.  **Right Click** the newly created folder, **select properties**.
 4.  Go to **“Sharing”** tab.
 5.  Select **“Advanced Sharing”**.
 6.  Enable **“Share this Folder”**.
-7.  In Settings under Share name add a **$** after the SIA Agent folder name. (Example. CSIA_Agent$).
+7.  In Settings under Share name add a **$** after the CSIA Agent folder name. (Example. CSIA_Agent$).
 8.  Select **Apply**.
 9.  Then **Close**.
 
@@ -462,18 +462,18 @@ To prepare and roll out the update to all machines in a catalog:
 
 1.  **Open** Group Policy Management.
 2.  **Right click** Group Policy Object.
-3.  Select **New**, and name new GPO (Example: Deploy SIA Agent).
+3.  Select **New**, and name new GPO (Example: Deploy CSIA Agent).
 4.  **Right click** the newly created Group Policy Object from above, Select Edit.
 5.  **Expand** Software Settings folder.
 6.  Select **software installation**.
 7.  **Right click** in the right panel.
 8.  Select **New**.
 9.  Select **Package**.
-10.  In the corresponding window, type in the location (file path) of your SIA Agent folder containing the SIA Agent .msi package.
+10.  In the corresponding window, type in the location (file path) of your CSIA Agent folder containing the CSIA Agent .msi package.
 11.  Select the **MSI**.
 12.  Select **Open**.
 13.  In the Deploy Software window, choose **“Advanced”** underneath Select Deployment Method.
-14.  Under Deployment select **Uninstall This Application when…**. (this means next time the endpoint runs a gpupdate and the SIA Agent has been removed it will be removed from the endpoint as well).
+14.  Under Deployment select **Uninstall This Application when…**. (this means next time the endpoint runs a gpupdate and the CSIA Agent has been removed it will be removed from the endpoint as well).
 15.  Select **OK** and **Close**.
 
 #### Scenario 1: Static VDA with user data stored in local disk
@@ -594,7 +594,7 @@ In some situations, a word in one of the built-in lists of keywords may inadvert
    ![Citrix SIA NODE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_68.png)
 2.  Click on **Node Groups**.  
    ![Citrix SIA NODE 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_69.png)
-3.  This will provide you with both the **_Customer SIA Node_**-reports.ibosscloud.com and the **_Customer SIA Node_**-swg.ibosscloud.com Node Clusters.
+3.  This will provide you with both the **_Customer CSIA Node_**-reports.ibosscloud.com and the **_Customer CSIA Node_**-swg.ibosscloud.com Node Clusters.
 
 ### Splunk Integration with Citrix Secure Internet Access Node
 
