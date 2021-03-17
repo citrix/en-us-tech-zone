@@ -34,7 +34,6 @@ The most important aspect of a flexible work solution is to meet the needs of th
 |**Virtual App and Desktop Access**|Users must be able to access authorized Windows apps and desktops on any approved device.|Citrix Virtual Apps and Desktops Service|
 |**Direct Virtual App and Desktop routing**|Users working from the local, office environment should be able to utilize a direct route to the resource without compromising security policies.|Citrix Virtual Apps and Desktops Service with Direct Workload Connection|
 |**Virtual Meeting Support**|As users are no longer constrained to working within the same location, the use of virtual meeting solutions, like Microsoft Teams, is a necessity. Every user should be able to access the application and use local webcams/microphones.|Citrix Virtual Apps and Desktops Service with multimedia conferencing policies|
-||||
 
 ### Security
 
@@ -107,7 +106,6 @@ From a connectivity perspective, CompanyA has four main types of users, which re
 |Finance|Secure home network|Option 2: Secured Network - Citrix SD-WAN 110|
 |Call Center|Redundant connections|Option 3: Secured, Redundant Network - Citrix SD-WAN 110 with LTE|
 |Everyone|Baseline|Option 1: Shared Network|
-||||
 
 Certain users within the organization deal with sensitive information, like financial data.  To better protect the network communication, those users require a separate, protected home network.  This user group deploys an SD-WAN 110 appliance into their home network.  Although they still share the primary ISP connection, the work devices use the protected home network. The separate network allows CompanyA to apply security policies to the remote work network without impacting the rest of the home network.  
 
@@ -141,7 +139,6 @@ Enrollment of the devices uses the following enrollment policies
 ||Device owner mode|Fully managed with work profile|
 ||BYOD work profile|Disabled|
 ||Citrix MAM|Enabled|
-|||
 
 ### Endpoint Security Policies
 
@@ -225,7 +222,6 @@ As a baseline policy, CompanyA defined the following (with the ability to relax 
 |Watermark|Enabled|Enabled|Enabled|Not Applicable|
 |Keylogging Prevention|Enabled|Enabled|Enabled|Not Applicable|
 |Screenshot Prevention|Enabled|Enabled|Enabled|Not Applicable|
-||||
 
 The [App Protection Policies Tech Brief](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/app-protection-policies.html) contains additional information regarding the keylogging and screenshot prevention policies.
 
@@ -268,7 +264,6 @@ By default, all categories are decrypted and allowed.  CompanyA made the followi
 |Porn/Nudity|Block|
 |Virus & Malware|Block|
 |Violence/Hate|Block|
-|||
 
 In addition to global security controls, CompanyA also has a need to implement additional internet controls for a subset of the environment.
 
@@ -292,7 +287,6 @@ CompanyA developed the following initial security policies:
 |Unusual access|Logon from suspicious IP and access from an unusual location|Lock user|If a user logs in from an unusual location and a suspicious IP, there is a strong indication the user was compromised.|
 |Unusual app behavior|Unusual time of app usage and access from unusual location|Start session recording|If a user accesses a virtual app at a strange time and location, there is the potential the user is compromised. Security analytics will record the session to have the admin verify legitimacy.|
 |Potential credential exploit|Excessive authentication failures and access from unusual location|Add to watchlist|If a user has many authentication failures from an unusual location, it can indicate someone is trying to break into the system. However, the attacker has yet to succeed.  Only need to add the user to the watchlist.|
-||||
 
 The [Citrix User Risk Indicators](https://docs.citrix.com/en-us/security-analytics/risk-indicators.html) document contains additional information regarding the various risk indicators provided to Citrix Security Analytics.
 
