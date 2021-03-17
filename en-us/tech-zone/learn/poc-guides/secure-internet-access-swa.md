@@ -388,19 +388,19 @@ Orca.msi is available in the Windows Cloud Connector “Download All” option
 
 ## Citrix Secure Internet Access Agent (Cloud Connector) Deployment
 
-Citrix recommends that for a CSIA PoC you only install the SIA Agent to Corporate Devices.
+Citrix recommends that for a CSIA PoC you only install the CSIA Agent to Corporate Devices.
 
 ### Deploy CSIA agent via AD group policy to Corporate Windows Devices
 
 #### Create a Distribution Point
 
 1.  **Create folder** on an AD joined computer that will act as the file server.
-2.  **Save** the SIA Agent .msi package inside that folder.
+2.  **Save** the CSIA Agent .msi package inside that folder.
 3.  **Right Click** the newly created folder, **select properties**.
 4.  Go to **“Sharing”** tab.
 5.  Select **“Advanced Sharing”**.
 6.  Enable **“Share this Folder”**.
-7.  In Settings under Share name add a **$** after the SIA Agent folder name. (Example. SIA_Agent$).
+7.  In Settings under Share name add a **$** after the CSIA Agent folder name. (Example. SIA_Agent$).
 8.  Select **Apply**.
 9.  Then **Close**.
 
@@ -408,18 +408,18 @@ Citrix recommends that for a CSIA PoC you only install the SIA Agent to Corporat
 
 1.  **Open** Group Policy Management.
 2.  **Right click** Group Policy Object.
-3.  Select **New**, and name new GPO (Example: Deploy SIA Agent).
+3.  Select **New**, and name new GPO (Example: Deploy CSIA Agent).
 4.  **Right click** the newly created Group Policy Object from above, Select Edit.
 5.  **Expand** Software Settings folder.
 6.  Select **software installation**.
 7.  **Right click** in the right panel.
 8.  Select **New**.
 9.  Select **Package**.
-10.  In the corresponding window, type in the location (file path) of your SIA Agent folder containing the SIA Agent .msi package.
+10.  In the corresponding window, type in the location (file path) of your CSIA Agent folder containing the CSIA Agent .msi package.
 11.  Select the **MSI**.
 12.  Select **Open**.
 13.  In the Deploy Software window, choose **“Advanced”** underneath Select Deployment Method.
-14.  Under Deployment select **Uninstall This Application when…**. (this means next time the endpoint runs a gpupdate and the SIA Agent has been removed it will be removed from the endpoint as well).
+14.  Under Deployment select **Uninstall This Application when…**. (this means next time the endpoint runs a gpupdate and the CSIA Agent has been removed it will be removed from the endpoint as well).
 15.  Select **OK** and **Close**.
 
 ### Deploy CSIA agent via Citrix Endpoint Management Solution to Corporate Devices
@@ -477,7 +477,7 @@ See your Unified Endpoint Management Documentation for deploying .PKG file.
 #### Installing the Windows Agent
 
 1.  **Power on** the Windows Machine and log on.
-2.  **Install** the appropriate SIA Agent .msi package for your platform.  
+2.  **Install** the appropriate CSIA Agent .msi package for your platform.  
    ![Citrix SIA AGENT DEPLOY MANUAL](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_67.png)
 
 #### Installing the macOS Agent
@@ -506,10 +506,10 @@ See your Unified Endpoint Management Documentation for deploying .PKG file.
 
 #### Citrix Workspace via Browser Extension
 
-1.  SaaS app without enhanced security enabled is protected via the SIA Policies
-2.  SaaS app with enhanced security enabled is **_NOT_** protected via the SIA Policies
-3.  Internal Web app without enhanced security enabled is protected via the SIA Policies
-4.  Internal Web app with enhanced security enabled is **_NOT_** protected via the SIA Policies
+1.  SaaS app without enhanced security enabled is protected via the CSIA Policies
+2.  SaaS app with enhanced security enabled is **_NOT_** protected via the CSIA Policies
+3.  Internal Web app without enhanced security enabled is protected via the CSIA Policies
+4.  Internal Web app with enhanced security enabled is **_NOT_** protected via the CSIA Policies
 
 ## Troubleshooting
 
@@ -548,7 +548,7 @@ In some situations, a word in one of the built-in lists of keywords may inadvert
    ![Citrix SIA NODE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_68.png)
 2.  Click on **Node Groups**.  
    ![Citrix SIA NODE 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_69.png)
-3.  This will provide you with both the **_Customer SIA Node_**-reports.ibosscloud.com and the **_Customer SIA Node_**-swg.ibosscloud.com Node Clusters.
+3.  This will provide you with both the **_Customer CSIA Node_**-reports.ibosscloud.com and the **_Customer CSIA Node_**-swg.ibosscloud.com Node Clusters.
 
 ### Splunk Integration with Citrix Secure Internet Access Node
 
