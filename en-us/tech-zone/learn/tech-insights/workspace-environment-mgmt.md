@@ -8,6 +8,8 @@ description: Workspace Environment Management monitors and analyzes user and app
 
 To provide the best experience for users, Workspace Environment Management monitors and analyzes user and application behavior in real time. Workspace Environment Management then intelligently adjusts system resources in the user workspace environment. These capabilities improve the user experience and better utilize system resources for active processes.
 
+The [Workspace Environment Management Tech Brief](/en-us/tech-zone/learn/tech-briefs/workspace-environment-mgmt.html) provides additional details on the communication and architecture.
+
 To see how these capabilities improve the overall experience, watch the following videos.
 
 ## CPU Optimization
