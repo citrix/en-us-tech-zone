@@ -57,7 +57,7 @@ This guide showcases how to perform the following actions:
 
 ### General Pre-Requisites
 
-*  Citrix SD-WAN 110/210 for an on-premises hardware based PoC.
+*  Citrix SD-WAN 110/210 for an On-Premises hardware based PoC.
     *  Can be any appliance you choose for the PoC. All Citrix SD-WAN appliances support Citrix SIA offering.
     *  **Note:** PoC can also be performed on an Azure VPX based SD-WAN with a windows VM behind the VM on the LAN with/without a Citrix SIA agent (also known as Citrix SIA Cloud Connector)
 *  A Windows or MAC Laptop
@@ -142,7 +142,7 @@ An Internet service may have already been created or may need to be created on t
 
 Sometimes you may have missed adding specific apps to either services. This means you have configured both CSIA and Internet service with "ALL APPS" which installs a default route with the services. Since by design, the Internet Service cost is 5 and the CSIA service cost is 45, ALL traffic prefers to be routed over Internet service and you might see that CSIA service may not function as expected.
 
- To avoid this, it is recommended to use one of the above 2 recommendations. Or you could modify the internet service cost as “50” so that CSIA service is more preferred (with a cost of 45)
+ To avoid this, it is recommended to use one of the above 2 recommendations. Or you can modify the internet service cost as “50” so that CSIA service is more preferred (with a cost of 45)
 
 ![Route Specific Apps via Citrix SIA from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_inetallappschangecost.png)
 
@@ -154,7 +154,7 @@ Sometimes you may have missed adding specific apps to either services. This mean
 
 1.  Create a new site in the Orchestrator and provide:
     *  Site Name
-    *  Choose on-premisess
+    *  Choose On-Premises
     *  Provide the site address (Location from where the PoC is done)
 
     ![Route Specific Apps via Citrix SIA from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_110sitecreationdetails.png)
