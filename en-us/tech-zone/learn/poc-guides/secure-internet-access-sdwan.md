@@ -374,7 +374,7 @@ In Citrix SIA Portal, Go to **Home -> Node Collection Management -> Node Groups 
 
 ### Verify that HOST traffic is proxied to Citrix SIA via IPsec Tunnel
 
-After the tunnel is up and running, you can verify by either using <https://ipchicken.com> or <https://whatsmyip.com> to verify the Internet visible IP from the end device
+After the tunnel is up and running, you can verify by either using `http://ipchicken.com` or `http://whatsmyip.com` to verify the Internet visible IP from the end device
 
 If you are either using a Citrix SIA Cloud Connector (SIA Agent) or through an IPsec tunnel (without agent), the proxy IP shows up as ONE of the Cloud Nodes provided by the Citrix SIA Platform
 
@@ -689,7 +689,7 @@ Verifying via CSIA Reporting Section
 *  See the file gets downloaded with the name “sample-data.xls” under Downloads folder (or folder you have selected)
 *  Use this file to test DLP in a new site next
 
-*  Now open a new browser incognito tab and type <http://dataleaktest.com>
+*  Now open a new browser incognito tab and type `http://dataleaktest.com`
     *  Click Upload Test
     *  In the Upload test page, scroll down and Click “SSL ON”
     *  After clicking on SSL ON, you can see the message on the black screen “System Ready for Next DLP Test with SSL ON”
@@ -701,7 +701,7 @@ Verifying via CSIA Reporting Section
 
    ![Upload DLP sensitive File](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_uploaddlpsensitivefile.png)
 
-*  Once the dataleaktest to test HTTPS upload of SSN contained file, a splash screen pops up indicating Unauthorized content detected and page is blocked (because DLP kicked in)
+*  On uploading the sensitive file (containing SSN), a splash screen pops up indicating Unauthorized content detected and page is blocked (because DLP kicked in)
 
    ![DLP Sensitive Data Access Restricted](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_dlpsensitivedatarestricted.png)
 
@@ -1074,7 +1074,7 @@ Data Loss Prevention Configuration
 
 *  See the file gets downloaded with the name “sample-data.xls” under Downloads folder (or folder you have selected)
 
-*  Now open a new browser incognito tab and type <http://dataleaktest.com>
+*  Now open a new browser incognito tab and type `http://dataleaktest.com`
     *  Click Upload Test
     *  In the Upload test page, scroll down and Click “SSL ON”
     *  After clicking on SSL ON, you can see the message on the black screen “System Ready for Next DLP Test with SSL ON”
@@ -1086,7 +1086,7 @@ Data Loss Prevention Configuration
 
    ![Upload DLP sensitive File](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_uploaddlpsensitivefile.png)
 
-*  Once the dataleaktest to test HTTPS upload of SSN contained file, a splash screen pops up indicating Unauthorized content detected and page is blocked (because DLP kicked in)
+*  On uploading the sensitive file (containing SSN), a splash screen pops up indicating Unauthorized content detected and page is blocked (because DLP kicked in)
 
    ![DLP Sensitive Data Block via SSL enabled IPSec Tunnel](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_dlpblockedviasslenabledtunnel.png)
 
