@@ -93,7 +93,7 @@ Follow the guidelines below to reduce troubleshooting:
 -  Define and enforce an email retention policy for the entire company, rather than granting exceptions for their .pst files.
 -  If .pst files cannot be prohibited, do not configure Profile Management or roaming profiles on your Exchange servers.
 
-When using Cached Exchange Mode, the .OST file can grow large. We recommend avoiding storing Microsoft Outlook data locally or on shared drives. Use the Enable native Outlook search experience to feature instead. With this feature, the Outlook offline folder file (*.OST) and the Microsoft search database specific to the user roam along with the user profile. This feature improves the user experience when searching mail in Microsoft Outlook. A step by step guide on how to turn on the Outlook search experience can be found [here](https://docs.citrix.com/en-us/profile-management/current-release/configure/enable-native-outlook-search-experience.html). Make sure to consider this when sizing the user store.
+When using Cached Exchange Mode, the .OST file can grow large. We recommend avoiding storing Microsoft Outlook data locally or on shared drives. Use the Enable native Outlook search experience to feature instead. With this feature, the Outlook offline folder file (*.OST) and the Microsoft search database specific to the user roam along with the user profile. This feature improves the user experience when searching mail in Microsoft Outlook. A step by step guide on how to turn on the Outlook search experience can be found [here](/en-us/profile-management/current-release/configure/enable-native-outlook-search-experience.html). Make sure to consider this when sizing the user store.
 
 To increase the stability of the Enable search index roaming for Outlook feature, Profile Management saves a backup of the last known good copy of the search index database in case it becomes corrupted. Citrix recommends the following two policies (see image below) to be configured within Citrix Studio:
 
@@ -114,7 +114,7 @@ User layers allow profile settings, data, and locally installed applications in 
 
 User personalization layers offer user-based customizations in non-persistent virtual environments. User layers provide users with an experience that mimics that of a dedicated desktop while offering the management and cost savings of a non-persistent Windows image.
 
-Make sure that there is enough bandwidth and enough storage space allocated for the user layer. More information on requirements and how to configure user layers can be found [here](https://docs.citrix.com/en-us/citrix-app-layering/4/layer/enable-user-layers.html).
+Make sure that there is enough bandwidth and enough storage space allocated for the user layer. More information on requirements and how to configure user layers can be found [here](/en-us/citrix-app-layering/4/layer/enable-user-layers.html).
 
 Information on App Layering with FSLogix can be found [here](https://www.citrix.com/blogs/2020/01/07/citrix-app-layering-and-fslogix-profile-containers/)
 
@@ -151,7 +151,7 @@ Following are a couple of considerations to think about when delivering Skype fo
 -  HDX RealTime Optimization Pack is only supported on server and client operating system versions that are supported by their manufacturer and only with Skype for Business versions that are still supported by Microsoft under mainstream or extended support.
 -  HDX RealTime Optimization Pack 2.9 LTSR is the last version of the RealTime Optimization Pack released and is supported until October 2025.
 
-More information on the HDX RealTime Optimization Pack can be found [here](https://docs.citrix.com/en-us/hdx-optimization/2-9-ltsr/).
+More information on the HDX RealTime Optimization Pack can be found [here](/en-us/hdx-optimization/2-9-ltsr/).
 
 ## Microsoft Teams
 
@@ -171,7 +171,7 @@ Following are a couple of recommendations and things to consider when deploying 
 
 If Microsoft Teams fails to load in an optimized VDI mode, the VDA utilizes legacy HDX technologies like webcam, client audio, and microphone redirection.
 
-More information on system requirements, on recommended exclusions, network requirements, and process flow information can be found [here](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html).
+More information on system requirements, on recommended exclusions, network requirements, and process flow information can be found [here](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html).
 
 ## OneDrive for Business
 
@@ -244,9 +244,9 @@ It does this by automating the implementation of [Microsoft Office 365 Network C
 
 With this information deployed to a deep packet inspection engine, Citrix SD-WAN appliances automatically identify M365 application flows, resolve the nearest service POP, and direct endpoint sessions to it. This ensures minimal latency and maximum user experience for the M365 application.
 
-For more information see [M365 Optimization](https://docs.citrix.com/en-us/citrix-sd-wan/11-3/office-365-optimization.html)
+For more information see [M365 Optimization](/en-us/citrix-sd-wan/11-3/office-365-optimization.html)
 
-Also to gain more insight about the Citrix SD-WAN implementation see [M365 Optimization for Branch Offices](https://docs.citrix.com/en-us/tech-zone/learn/tech-insights/office365-optimization.html)
+Also to gain more insight about the Citrix SD-WAN implementation see [M365 Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/office365-optimization.html)
 
 ## Appendix A: Profile Configuration Testing
 
