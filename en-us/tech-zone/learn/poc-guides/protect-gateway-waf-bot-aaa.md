@@ -9,11 +9,15 @@ description: Learn how to use the security tools built in to the Citrix ADC to p
 
 ## Overview 
 
-Many VPN and Citrix Gateway deployments are hosted by Citrix ADC appliances that are also providing security protections to other web applications. This PoC guide is designed to help protect VPN and Gateway virtual servers using tools already available on the Citrx ADC appliance. This guide covers protecting the portal login page with Bot security and WAF capabilities, as well as using advanced authentication policies to add context to user logons. 
+Many VPN and Citrix Gateway deployments are hosted by Citrix ADC appliances that are also providing security protections to other web applications. This PoC guide is designed to help protect VPN and Gateway virtual servers using tools already available on the Citrx ADC appliance. This guide covers protecting the portal login page with Bot security, protecting the credential form with WAF capabilities, as well as using advanced authentication policies to add context to user logons. 
+
+The flow of this configuration diagrammed as follows as follows:
+
+![Config Flow](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_configflow.png)
 
 ## Configuration Options
 
-This is not an exclusive list of protections, nor is it the only way to configure them. For example, IP Reputation can be deployed using a responder policy on a Gateway virtual server. This is a supported method of deployment but has a different outcome of dropping or resetting any connection from an entry in the IP reputation database. 
+This is not an exclusive list of protections, nor is it the only way to configure them. For example, both IP Reputation and rate limiting can be deployed using a responder policy on a Gateway virtual server. This is a supported method of deployment but has a different outcome of dropping or resetting connections before the gateway login page is rendered. 
 
 Additionally, the WAF profile does not have every protection enabled. This is done to prevent complex configuration, custom tuning, and potential issues. Further configuration to the WAF profile is possible, please see the links in the references section for guidance.
 
