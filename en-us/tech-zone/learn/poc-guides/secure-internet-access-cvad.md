@@ -640,7 +640,7 @@ In some situations, a word in one of the built-in lists of keywords may inadvert
 5.  Change the App Context to **Search & Reporting (search)**.  
    ![Citrix SIA SPLUNK 4](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_74.png)
 6.  Change the Host Method to **IP**.  
-   ![Citrix SIA SPLUNK 5](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cavd_75.png)
+   ![Citrix SIA SPLUNK 5](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_75.png)
 7.  Click **Review** (review current configuration), then click **Submit**.  
    ![Citrix SIA SPLUNK 6](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_76.png)
 
