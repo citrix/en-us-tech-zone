@@ -434,7 +434,7 @@ If you are either using a Citrix SIA Cloud Connector (SIA Agent) or through an I
         ![Citrix SIA Agent Install CSIA Agent on Windows](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-installcsiaagent.png)
 
     *  After double-click, a PoP up is presented. Click “More Info” and then Click “Run Anyway”
-        *  clickingg on Run Anyway starts installing the msi file
+        *  clicking on Run Anyway starts installing the msi file
         *  Finish the MSI file installation allowing all further administrative operations
 
         ![Citrix SIA Agent run installer](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_runcisaagentinstaller.png)
