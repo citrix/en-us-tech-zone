@@ -22,7 +22,7 @@ This guide showcases how to perform the following actions:
 *  Logging into Citrix Secure Internet Access (CSIA)
 *  Interfacing CSIA Security Groups with Groups from Domain Integration
 *  Configuring the Proxy settings of the CSIA cloud platform
-*  Configure web security policies to allow/deny access to certain websites or categories via CSIA Console.
+*  Configure web security policies to allow/deny access to certain websites or categories via the CSIA Console.
 *  Applying Policies to Security Groups
 *  Download the CSIA agent (Cloud Connector)
 *  Configure the CSIA agent (Cloud Connector) via Agent Policy
@@ -103,7 +103,7 @@ In this section we focus on the configuration of CSIA within the administration 
    ![Citrix SIA PAC EDIT](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_5.png)
 3.  Click **PAC Settings**.  
    ![Citrix SIA PAC SETTINGS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_6.png)
-4.  If you need to bypass a domain, use the **Add a Function**.  
+4.  If you must bypass a domain, use the **Add a Function**.  
    ![Citrix SIA PAC ADD A FUNTION](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_7.png)
 5.  These are the recommended Citrix Domain and Subdomains to be added to the PAC File:  
 ⋅ cloud.com & \*.cloud.com  
@@ -115,7 +115,7 @@ In this section we focus on the configuration of CSIA within the administration 
 ⋅ xendesktop.net & \*.xendesktop.net  
 ⋅ cloudapp.net & \*.cloudapp.net  
 ⋅ netscalergateway.net & \*.netscalergateway.net  
-6.  Note the node shown "**node-clusterxxxxxx-swg.ibosscloud.com:80**". This should match the customer’s SWG node in Node Collection Management  
+6.  Note the node shown "**node-clusterxxxxxx-swg.ibosscloud.com:80**". This must match the customer’s SWG node in Node Collection Management  
    ![Citrix SIA PAC NODE SHOWN](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_8.png)
 
 ### Interfacing CSIA Security Groups with Groups from Domain Integration
@@ -128,7 +128,7 @@ The strategy for integrating domain group information into the CSIA cloud platfo
 
 To demonstrate the execution of this concept, let's map the domain credentials of a Windows user into a security group on the CSIA cloud platform.
 
-1.  Open command prompt on the target computer, and run the command "net user (user name) /domain"  
+1.  Open a command prompt on the target computer, and run the command "net user (user name) /domain"  
 2.  Gather the aliases of groups reported back by the domain controller.  
    ![Citrix SIA AD ALIASES OR GROUPS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_9.png)
 3.  Go to the CSIA cloud platform and edit either the **Group Name** or the **Alias Name** to correspond to one of the groups reported by the domain user.  
@@ -154,7 +154,7 @@ In this section we focus on the configuration of CSIA Web Security Policies with
 
 1.  Navigate to the **Web Security** module.  
    ![Citrix SIA WEB SECURITY](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_15.png)
-2.  For web security policies that have a group-based implementation available a drop-down menu is present at the top of the page above the configuration form for the policy. The current status of this drop-down menu indicates the which group's policy configuration you are currently viewing.  
+2.  For web security policies that have a group-based implementation available a drop-down menu is present at the top of the page above the configuration form for the policy. The status of this drop-down menu indicates which group's policy configuration you are currently viewing.  
    ![Citrix SIA WEB SECURITY GROUP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_16.png)
 3.  Click the **Group** drop-down menu and then **select group** that you want to reconfigure for the current web security policy.  
    ![Citrix SIA WEB SECURITY GROUP 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_17.png)
@@ -188,7 +188,7 @@ You can associate actions with web categories. This enables you to deploy securi
     | Allow  | Allows users to access sites of this category. Allow is the default state for all categories. |
     | Block  | Blocks access to sites of a particular category. |
     | Stealth  | Flags traffic to that category as violations in the logs but still allow access to the site.  |
-    | Soft Override  | Presents a block page to the user but includes an option to bypass the block temporarily. This allows users to access blocked content without requiring immediate administrator intervention.Soft overrides last until the next day at 2:00 AM in the time zone configured for the gateway. Any block page presented with a soft override appears in Reporting & Analytics as "soft-blocked." After a user has requested a soft override, any traffic to that URL shows as "allowed" until the override has expired.   |
+    | Soft Override  | Presents a block page to the user but includes an option to bypass the block temporarily. This allows users to access blocked content without requiring immediate administrator intervention. Soft overrides last until the next day at 2:00 AM in the time zone configured for the gateway. Any block page presented with a soft override appears in Reporting & Analytics as "soft-blocked." After a user has requested a soft override, any traffic to that URL shows as "allowed" until the override has expired.   |
     | SSL Decryption  | Disable this option to clear SSL Decryption for a specific category. This ensures privacy compliance and concerns with specific categories like Finance or Health. The priority value for this category does NOT apply to this setting. If a site belongs to multiple categories, and any of those categories has the "SSL Decryption Disabled" option on, that site is not be decrypted.  |
     | Lock  | When a category is locked by the primary administrator into either an Allowed or Blocked state, delegated administrators cannot log in to the web gateway management interface and change the status of that category.  |
     | Category Override  | When you activate a category override, a delegated administrator cannot log in to the web gateway management interface and add a URL to the allow list that would contradict the rule for this category. For example, the "Art" category is blocked and set to "Overrides," so delegated administrators cannot add art.com to the Allow List for that group.  |
@@ -199,7 +199,7 @@ You can associate actions with web categories. This enables you to deploy securi
    ![Citrix SIA WEB CAT 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_26.png)
 3.  Actions that you want to generally apply to all web categories can be implemented with the Actions drop-down menu.  
    ![Citrix SIA WEB CAT 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_27.png)  
-**NOTE:** _Be careful with the “Not Rated” category, as it matchs against many sites that are not categorized_
+**NOTE:** _Be careful with the “Not Rated” category, as it matches against many sites that are not categorized_
 
 #### Category Priorities
 
@@ -217,13 +217,13 @@ Example:
 Settings relevant to web categories are configured with toggles under **Additional Settings**. Configuring a toggle to **Yes** enables the setting while configuring a toggle to **No** disables the setting. For a full set of descriptions for all available web category settings refer to the following table:
 | Feature  | Description  |
 |---  |---  |
-| Enable Logging  | Enable and disable logging of violation attempts for the current set of blocked website categories. Log reports may be viewed on the CSIA Reports page. The report information includes date, time, user, website address, and category of the violation.  |
-| Enable Stealth Mode  | It allows you to stealthily monitor Internet activity without blocking access to forbidden sites. With both Logging and Stealth Mode enabled, you can monitor Internet web surfing activity by viewing the log reports on the CSIA Reports page while remaining unnoticed by Internet users on the network.  Note: Web sites and online applications are not blocked when the action for the web category is configured to Stealth Mode.  |
+| Enable Logging  | Enable and disable logging of violation attempts for the current set of blocked website categories. Log reports may be viewed on the CSIA Reports page. The report information includes the date, time, user, website address, and category of the violation.  |
+| Enable Stealth Mode  | It allows you to stealthily monitor Internet activity without blocking access to forbidden sites. With both Logging and Stealth Mode enabled, you can monitor Internet web surfing activity by viewing the log reports on the CSIA Reports page while remaining unnoticed by Internet users on the network.  Note: Websites and online applications are not blocked when the action for the web category is configured to Stealth Mode.  |
 | Enable HTTP Scanning on Non-Standard Ports  | If this feature is enabled, CSIA scans for HTTP web requests on non-standard ports.  |
 | Allow Legacy HTTP 1.0 Requests  | If this feature is enabled, CSIA allows HTTP 1.0 requests that are missing the "HOST" header. Disabling this feature provides a higher level of Security and makes bypassing the Security more difficult. If this feature is enabled, it may offer more compatibility with older non-HTTP 1.1 compliant software.  |
 | Enable ID Theft / IP Address URL Blocking  | Protects against potential identity theft attempts by notifying you when someone is trying to steal your personal information through Internet Phishing. Enabling this feature also blocks users from navigating to websites using IP address URLs.  |
 | Enable Blocked Site Override  | Enabling this feature activates a soft override action, allowing users to proceed to the site belonging to a blocked category. When this setting is active, the user is warned that a page is blocked but provides a button to proceed anyway.  |
-| Auto Categorize Uncategorized Sites  | When this toggle is switched to Yes, any sites that are not categorized are automatically submitted for categorization. Note: When this toggle is set to Yes, uncategorized sites are assigned a Web Category of "Informational" or other such designation. This is only be in effect while the category is being appropriately categorized. When this switch is set to No, uncategorized are automatically designated as "Not Rated," which is controlled as its own Web Category.  |
+| Auto Categorize Uncategorized Sites  | When this toggle is switched to Yes, any sites that are not categorized are automatically submitted for categorization. Note: When this toggle is set to Yes, uncategorized sites are assigned a Web Category of "Informational" or other such designation. This is only in effect while the category is being appropriately categorized. When this switch is set to No, uncategorized are automatically designated as "Not Rated," which is controlled as its own Web Category.  |
 
 #### Category Scheduling
 
@@ -275,7 +275,7 @@ Keyword filtering is used to inspect URLs for specific words. If a keyword is id
 1.  Navigate to **Web Security Policies**.
 2.  On the drop-down menu click **Keywords**.  
    ![Citrix SIA KEYWORD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_38.png)
-3.  Enter the **keyword** that you would like to block in the **Keyword** field and specify the designations that applies to this keyword. Click **Add**.  
+3.  Enter the **keyword** that you would like to block in the **Keyword** field and specify the designations that apply to this keyword. Click **Add**.  
    ![Citrix SIA KEYWORD ALLOW](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_39.png)
 
 | Option  | Description  |
@@ -357,7 +357,7 @@ The .msi installation packages can be downloaded directly from the CSIA admin co
 
     | Setting  | Recommended Value  |
     |---  |---  |
-    | Multi-User Mode:  | **Enable** Multi-User/Terminal Server Mode - Enable to support multiple user sessions when running a terminal server. This should be enabled for terminal servers even if users are not logged in simultaneously.  |
+    | Multi-User Mode:  | **Enable** Multi-User/Terminal Server Mode - Enable to support multiple user sessions when running a terminal server. This must be enabled for terminal servers even if users are not logged in simultaneously.  |
     | Use Machine Name for User name:  | **Disable** Setting - Use the user account name as the user name.  |
     | Use UPN for User name:  | **Disable** Setting - Use the Security Account Manager (SAM) account name, such as DOMAIN\user name.  |
     | Redirect All Ports:  | **Enable** Setting  |
@@ -371,7 +371,7 @@ The .msi installation packages can be downloaded directly from the CSIA admin co
 
     | Setting  | Recommended Value  |
     |---  |---  |
-    | Multi-User Mode:  | **Disable** Multi-User/Terminal Server Mode - Enable to support multiple user sessions when running a terminal server. This should be enabled for terminal servers even if users are not logged in simultaneously.  |
+    | Multi-User Mode:  | **Disable** Multi-User/Terminal Server Mode - Enable to support multiple user sessions when running a terminal server. This must be enabled for terminal servers even if users are not logged in simultaneously.  |
     | Use Machine Name for User name:  | **Disable** Setting - Use the user account name as the user name.  |
     | Use UPN for User name:  | **Disable** Setting - Use the Security Account Manager (SAM) account name, such as DOMAIN\user name.  |
     | Redirect All Ports:  | **Enable** Setting  |
@@ -382,7 +382,7 @@ The .msi installation packages can be downloaded directly from the CSIA admin co
     | Enable Windows Desktop App: (Agent is not supported on Multi-User Deployments)  | **Enable** Setting  |
     | Allow End Users to Disable Security:  | **Disable** Setting  |
     | Require Password to Disable Security:  | **Enable** Setting  |
-    | Require Password to View Diag Info:  | **Enable** Setting  |
+    | Require Password to View Diagonstics Info:  | **Enable** Setting  |
 
 6.  Click **Dynamic Linking** and select the Groups you want to assign the policy too.  
    ![Citrix SIA AGENT POLICIES DYNAMIC LINKING](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_55.png)
@@ -415,7 +415,7 @@ Orca.msi is available in the Windows **Cloud Connector** “Download All” opti
 
       | Setting  | Recommended Value  |
       |---  |---  |
-      | Multi-User Mode: (PARAM_MULTI_USER_SUPPORT)  | **(1): Enable multi-user mode.** Enable to support multiple user sessions when running a terminal server. This should be enabled for terminal servers even if users are not logged in simultaneously.  |
+      | Multi-User Mode: (PARAM_MULTI_USER_SUPPORT)  | **(1): Enable multi-user mode.** Enable to support multiple user sessions when running a terminal server. This must be enabled for terminal servers even if users are not logged in simultaneously.  |
       | Terminal Server Mode: (PARAM_TERMINAL_SERVER_MODE)  | **(0): Disabled** - this appears to be deprecated in favor of Multi-User Support  |
       | Use Machine Name for User name: (PARAM_USE_MACHINE_NAME_FOR_USER NAME)  | **(0): Disabled** - Use the user account name as the user name.  |
       | Redirect All Ports: (PARAM_REDIRECT_ALL_PORTS)  | **(1): Enabled** - Redirect all ports to the proxy.  |
@@ -428,7 +428,7 @@ Orca.msi is available in the Windows **Cloud Connector** “Download All” opti
 
       | Setting  | Recommended Value  |
       |---  |---  |
-      | Multi-User Mode: (PARAM_MULTI_USER_SUPPORT)  | **(0): Disable multi-user mode.**  Enable to support multiple user sessions when running a terminal server. This should be enabled for terminal servers even if users are not logged in simultaneously.  |
+      | Multi-User Mode: (PARAM_MULTI_USER_SUPPORT)  | **(0): Disable multi-user mode.**  Enable to support multiple user sessions when running a terminal server. This must be enabled for terminal servers even if users are not logged in simultaneously.  |
       | Terminal Server Mode: (PARAM_TERMINAL_SERVER_MODE)  | **(0): Disabled** - this appears to be deprecated in favor of Multi-User Support  |
       | Use Machine Name for User name: (PARAM_USE_MACHINE_NAME_FOR_USER NAME)  | **(0): Disabled** - Use the user account name as the user name.  |
       | Redirect All Ports: (PARAM_REDIRECT_ALL_PORTS)  | **(1): Enabled** - Redirect all ports to the proxy.  |
@@ -443,7 +443,7 @@ Orca.msi is available in the Windows **Cloud Connector** “Download All” opti
 
 ## Deployment of the Citrix Secure Internet Access Agent to Main Image
 
-Citrix recommends you save copies or snapshots of main images before you update the machines in the catalog. The database keeps an historical record of the main images used with each machine catalog. You can roll back (revert) machines in a catalog to use the previous version of the main image if users encounter problems with updates you deployed to their desktops, thereby minimizing user downtime. Do not delete, move, or rename main images; otherwise, you cannot be able to revert a catalog to use them.
+Citrix recommends you save copies or snapshots of main images before you update the machines in the catalog. The database keeps a historical record of the main images used with each machine catalog. You can roll back (revert) machines in a catalog to use the previous version of the main image if users encounter problems with updates you deployed to their desktops, thereby minimizing user downtime. Do not delete, move, or rename main images; otherwise, you cannot be able to revert a catalog to use them.
 
 For catalogs that use Provisioning Services, you must publish a new virtual disk to apply changes to the catalog. For details, see the Provisioning Services documentation.
 
@@ -479,7 +479,7 @@ To prepare and roll out the update to all machines in a catalog:
 
 1.  **Create folder** on an AD joined computer that acts as the file server.
 2.  **Save** the CSIA Agent .msi package inside that folder.
-3.  **Right Click** the newly created folder, **select properties**.
+3.  **Right-Click** the newly created folder, **select properties**.
 4.  Go to **“Sharing”** tab.
 5.  Select **“Advanced Sharing”**.
 6.  Enable **“Share this Folder”**.
@@ -490,12 +490,12 @@ To prepare and roll out the update to all machines in a catalog:
 #### Create Group Policy Object
 
 1.  **Open** Group Policy Management.
-2.  **Right click** Group Policy Object.
+2.  **Right-click** Group Policy Object.
 3.  Select **New**, and name new GPO (Example: Deploy CSIA Agent).
-4.  **Right click** the newly created Group Policy Object from above, Select Edit.
+4.  **Right-click** the newly created Group Policy Object from above, Select Edit.
 5.  **Expand** Software Settings folder.
 6.  Select **software installation**.
-7.  **Right click** in the right panel.
+7.  **Right-click** in the right panel.
 8.  Select **New**.
 9.  Select **Package**.
 10.  In the corresponding window, type in the location (file path) of your CSIA Agent folder containing the CSIA Agent .msi package.
@@ -509,30 +509,30 @@ To prepare and roll out the update to all machines in a catalog:
 
 1.  On your hypervisor or cloud service provider, take a snapshot of the VDAs and give the snapshot a meaningful name.
 2.  In your Group Policy Management, expand your domain.
-3.  Right click the location of your Static VDAs, then select “Link an existing GPO”.
+3.  Right-click the location of your Static VDAs, then select “Link an existing GPO”.
 4.  Select the Deploy CSIA Agent GPO that was created.
 5.  Select OK.
-6.  Once the Group Policy is applied you need to reboot the VDAs.
+6.  Once the Group Policy is applied you must reboot the VDAs.
 
-#### Scenario 2: Static VDA with user data discarded on log out
+#### Scenario 2: Static VDA with user data discarded on logout
 
 1.  On your hypervisor or cloud service provider, take a snapshot of the current VM and give the snapshot a meaningful name. This snapshot can be used to revert (roll back) machines in the catalog, if needed.
 2.  In your Group Policy Management, expand your domain.
-3.  Right click the location of your Main Image, then select “Link an existing GPO”.
+3.  Right-click the location of your Main Image, then select “Link an existing GPO”.
 4.  Select the Deploy CSIA Agent GPO that was created.
 5.  Select OK.
-6.  Once the Group Policy is applied you need to reboot the machines.
-7.  Take a snapshot of the VM and give the snapshot a meaningful name that are recognized when the catalog is updated in Studio. Although Studio can create a snapshot, Citrix recommends that you create a snapshot using the hypervisor management console, and then select that snapshot in Studio. This enables you to provide a meaningful name and description rather than an automatically generated name.
+6.  Once the Group Policy is applied you must reboot the machines.
+7.  Take a snapshot of the VM and give the snapshot a meaningful name that is recognized when the catalog is updated in Studio. Although Studio can create a snapshot, Citrix recommends that you create a snapshot using the hypervisor management console, and then select that snapshot in Studio. This enables you to provide a meaningful name and description rather than an automatically generated name.
 8.  Update your Machine Catalogs in the Studio navigation pane. (See the Update the catalog section above)
 
 #### Scenario 3: non-MCS Static VDA with user data stored in local disk
 
 1.  On your hypervisor or cloud service provider, take a snapshot of the current VM and give the snapshot a meaningful name. This snapshot can be used to revert (roll back) machines in the catalog, if needed.
 2.  In your Group Policy Management, expand your domain.
-3.  Right click the location of your Main Image, then select “Link an existing GPO”.
+3.  Right-click the location of your Main Image, then select “Link an existing GPO”.
 4.  Select the Deploy CSIA Agent GPO that was created.
 5.  Select OK.
-6.  Once the Group Policy is applied you need to reboot the machines.
+6.  Once the Group Policy is applied you must reboot the machines.
 
 ## Validated Use Cases
 
@@ -584,7 +584,7 @@ To prepare and roll out the update to all machines in a catalog:
 
 *  Static VDA with user data saved into local disk
 
-### VDA’s in Different Regions
+### VDAs in Different Regions
 
 ## Troubleshooting
 
@@ -597,9 +597,9 @@ To prepare and roll out the update to all machines in a catalog:
 5.  Registration Information for Connected Devices **(Users, Groups & Devices > Cloud Connected Device > Info)**
 6.  URL Lookup Tool **(Tools > URL Lookup)**
 7.  Enhanced Logging  
- ⋅ To set this, the following registry key needs to be altered, varying from 0 to 4, the higher giving more verbose logging.  
+ ⋅ To set this, the following registry key must be altered, varying from 0 to 4, the higher giving more verbose logging.  
  ⋅  **HKEY_LOCAL_MACHINE\SOFTWARE\IBoss\IBSA\Parameters\LogLevel**  
- ⋅ Once the registry key has been set, the IBSA service under Windows Services needs to be restarted for the setting to take effect. Checking windows event viewer, you see many entries being logged depending log level set.
+ ⋅ Once the registry key has been set, the IBSA service under Windows Services must be restarted for the setting to take effect. Checking windows event viewer, you see many entries being logged depending on the log level set.
 8.  Windows Agent Logs (C:\Windows\SysWOW64\ibsa_0.log)
 
 ### A Keyword is not Being Blocked
@@ -607,8 +607,8 @@ To prepare and roll out the update to all machines in a catalog:
 There is a multitude of policies and variables within and surrounding the operations of the CSIA cloud platform that can interfere with properly blocking configured keywords. Refer to the following;
 
 1.  Ensure that SSL decryption is active for this website. Keywords cannot be observed or controlled for HTTPS websites.
-2.  If the source IP of the client workstation or the destination IP of the webserver has been added to the Network > Bypass IP Ranges list, web security controls are not enforced.
-3.  Keywords configured to block does not take effect if the website is added to the Web Security > Allow List without the Keyword / Safesearch option enabled. With the Keyword / SafeSearch check box selected, Web Gateway allows access to the website but still to enforce Keyword controls and Safesearch.
+2.  If the source IP of the client workstation or the destination IP of the webserver has been added to the **Network > Bypass IP Ranges** list, web security controls are not enforced.
+3.  Keywords configured to block do not take effect if the website is added to the **Web Security > Allow List without the Keyword/Safesearch** option enabled. With the Keyword / SafeSearch check box selected, Web Gateway allows access to the website but still to enforce Keyword controls and Safesearch.
 4.  The keyword contains asterisks, instead remove the asterisks and activate Wildcard matching for the keyword if that is the desired effect.
 5.  The keyword has multiple words, and Wildcard Matching is not enabled, or the spaces were not indicated with a plus sign ("+").
 6.  The user is not associated with the expected web security group that has the keyword control enabled.
@@ -650,14 +650,14 @@ In some situations, a word in one of the built-in lists of keywords may inadvert
    ![Citrix SIA REPORTING](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_77.png)
 2.  Under **Splunk Integration**, click **Actions**, then click **Add Server**.  
    ![Citrix SIA REPORTING 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_78.png)
-3.  Add the Address/Host name of the Splunk Server to the “Host name” and the port number chosen on the Splunk server. Next, in the drop-down box “Splunk Integration Protocol,” choose a protocol.
+3.  Add the Address/Host name of the Splunk Server to the “Host name” and the port number chosen on the Splunk server. Next, in the drop-down menu “Splunk Integration Protocol,” choose a protocol.
 The options available when adding a Splunk server appear as follows:  
    ![Citrix SIA REPORTING 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_79.png)
 4.  You can also configure the Splunk server's integration protocol as HEC. Configuring integration with a Splunk server using the HEC protocol requires the acquisition of the HEC token from the configuration of the Splunk server. Place the retrieved token into the Token field below the Splunk Integration Protocol selection drop-down menu.  
    ![Citrix SIA REPORTING 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_80.png)
 5.  If implementing an **ELFF** log format for Splunk logging the **Splunk Integration ELFF Batch Size** field becomes available for configuration. The default value for configuration is **100**.  
    ![Citrix SIA REPORTING 4](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_81.png)
-6.  A toggle called “Accept All SSL Certs” is available under the "Splunk Integration" section within **Settings > External Logging**; if a non-standard SSL Certificate such as a Self-Signed certificate or a certificate signed by a non-trusted root CA is used, switch this toggle to "YES" to bypass SSL certificate verification, otherwise leave the switch off.
+6.  A toggle called “Accept All SSL Certs” is available under the "Splunk Integration" section within **Settings > External Logging**. If a non-standard SSL Certificate such as a Self-Signed certificate or a certificate signed by a non-trusted root CA is used, switch this toggle to "YES" to bypass SSL certificate verification, otherwise leave the switch off.
 7.  Select the format in which the log data is delivered from the "Log Format" drop-down menu. Finally, switch one or more of the toggles at the bottom of the interface to select the desired logging information types. Click the **Save** button to update the changes. The logging begins immediately. Perform a search on the Splunk instance to check data is being sent and indexed properly. See the sample output below.  
    ![Citrix SIA REPORTING 5](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-cvad_82.png)
 
@@ -665,7 +665,7 @@ The options available when adding a Splunk server appear as follows:
 
 The CSIA proxy port may be changed, but you mustn't attempt to change the proxy port to one that the gateway uses for other services.
 
-Ports that should **not** be used include: 53, 139, 199, 443, 445, 953, 1080, 1344, 5432, 6001, 7009, 7080, 7443, 8008 ,8015, 8016, 8025, 8026, 8035, 8036, 8080, 8200, 8201, 9080, 9443, 17500, 22022
+Ports that **cannot** be used include: 53, 139, 199, 443, 445, 953, 1080, 1344, 5432, 6001, 7009, 7080, 7443, 8008 ,8015, 8016, 8025, 8026, 8035, 8036, 8080, 8200, 8201, 9080, 9443, 17500, 22022
 
 _**All other ports are an acceptable alternative to the default port.**_
 
@@ -696,13 +696,13 @@ _**Note:** Be careful with the “Not Rated” category, as it matches against m
 | CDN* | Content Delivery Networks (CDNs) and sites related to CDNs |
 | Dating & Personals | Sites that offer dating services or aid in the establishment of romantic relationships |
 | Dictionary | Sites containing extensive collections of information and knowledge. Includes resources such as wikis, lexical dictionaries, maps, censuses, almanacs, library catalogs, genealogy-related sites, scientific information, and directories in addition to utilities like clocks, calculators, timers, and templates. |
-| Drugs | Sites containing content relating to illegal drugs such as Amphetamines, Barbiturates, Benzodiazepines, Cocaine, Designer Drugs, Ecstasy, Heroin, and so on Does not refer to Cannabis/Marijuana |
+| Drugs | Sites containing content relating to illegal drugs such as Amphetamines, Barbiturates, Benzodiazepines, Cocaine, Designer Drugs, Ecstasy, and Heroin. Does not refer to Cannabis/Marijuana |
 | Drugs - Controlled* | Sites related to controlled drugs and substances |
 | Dynamic DNS* | Sites that utilize dynamic DNS services to map their domain names to dynamic IP addresses. |
 | Education | Sites that provide educational services such as schools and universities, in addition to sites that offer educational materials for sale or reference. Includes websites that offer information on education or trade/vocational/career schools and programs. Also includes sites that are sponsored by schools, educational facilities, faculty, or alumni groups. |
 | Entertainment | Sites that contain or promote television, movies, magazines, radio, books, food, fashion, and lifestyle. More specifically, sites that provide information about or promote popular culture including (but not limited to) film, film critiques, and discussions, film trailers, box office, television, home entertainment, music, comics, graphic novels, literary news, and reviews, in addition to other entertainment-oriented periodicals, interviews, fan clubs, celebrity gossip, podcasts, and music and film charts, show, events, quotes, memes, lyrics, musicians, bands, theater arts, drama, opera, orchestra. |
 | Extreme* | Sites containing intensely vulgar, graphic, shocking, or disgusting content that would be considered highly offensive to most individuals. |
-| File Sharing | Sites for services that provide online file storage, file sharing, synchronization of files between devices, and/or network-based data backup and restoration. These services may provide the means to upload, download, paste, organize, post, and share documents, files, computer code, text, non-copyright-restricted videos, music, and other electronically formatted information in virtual data storage. Additionally, this category covers services that distribute software to facilitate the direct exchange of files between users. |
+| File Sharing | Sites for services that provide online file storage, file sharing, synchronization of files between devices, and or network-based data backup and restoration. These services may provide the means to upload, download, paste, organize, post, and share documents, files, computer code, text, non-copyright-restricted videos, music, and other electronically formatted information in virtual data storage. Also, this category covers services that distribute software to facilitate the direct exchange of files between users. |
 | Finance | Sites that contain content about banking, financial news and tips, the stock market, investing, credit cards, insurance, and lending. |
 | Food | Sites that contain content related to restaurants, food, dining, in addition to sites that list, review, discuss, advertise and promote food, catering, dining services, cooking, and recipes. |
 | Forums | Sites containing message boards, online chat rooms, and discussion forums |
@@ -713,7 +713,7 @@ _**Note:** Be careful with the “Not Rated” category, as it matches against m
 | Government | Sites sponsored by or representing government agencies, including military and political organizations. May provide information on taxation, emergency services, and laws of various governmental entities. Also includes sites that provide adoption services, information about adoption, immigration information, and immigration services. |
 | Guns & Weapons | Sites that promote, sell, or provide information regarding firearms, knives, and other weapons |
 | Hacking* | Sites related to hacking and hacking tools |
-| Health | Sites that contain content related to health, illnesses, and ailments, including hospitals, doctors, and prescription drugs, including sites primarily focusing on health research. Also, sites that provide advice and information on general health such as fitness and well-being, personal health, medical services, over-the-counter and prescription medications, health effects of both legal and illegal drug use, alternative and complementary therapies, dentistry, optometry, and psychiatry. Additionally, includes self-help and support organizations dedicated to a disease or health conditions. |
+| Health | Sites that contain content related to health, illnesses, and ailments, including hospitals, doctors, and prescription drugs, including sites primarily focusing on health research. Also, sites that provide advice and information on general health such as fitness and well-being, personal health, medical services, over-the-counter and prescription medications, health effects of both legal and illegal drug use, alternative and complementary therapies, dentistry, optometry, and psychiatry. Also, includes self-help and support organizations dedicated to a disease or health conditions. |
 | Humor* | Sites primarily related to jokes, humor, or comedy |
 | Illegal Activity* | Sites related to illicit activities or activities illegal in most countries |
 | Image/Video Search | Sites for image and video searching, including sharing of media (for instance, photo sharing) and have a low risk of including objectionable content such as adult or porno graphic material. |
@@ -722,9 +722,9 @@ _**Note:** Be careful with the “Not Rated” category, as it matches against m
 | Internet Communication | Sites Related to internet communication and VOIP |
 | IoT* | Sites related to the Internet of Things and IoT devices |
 | Jobs | Sites that contain job search engines and other materials such as advice and strategies for seeking employment. |
-| Kids* | Sites primarily related to kids and very young adults |
+| Kids* | Sites primarily related to kids and young adults |
 | Malware Content* | Sites containing malicious software, viruses or malware, software hacks, illegal codes, and computer hacker-related material A common practice is to block the Malware category for all groups. |
-| Marijuana* | Sites related to the production, use or sale of marijuana |
+| Marijuana* | Sites related to the production, use, or sale of marijuana |
 | Messaging* | Site related to instant messaging and chat |
 | Mobile Phones | Sites that sell or provide information and services about mobile (cellular) phones |
 | News | Sites that provide current news and events, including online newspapers. Sites that primarily report information or comments on current events or contemporary issues of the day.  Also includes news radio stations and news magazines. May not include sites that can be better captured by other categories. |
@@ -732,14 +732,14 @@ _**Note:** Be careful with the “Not Rated” category, as it matches against m
 | Online Meetings* | Sites related to software for online meetings or hosting online meetings |
 | Organizations | Sites that contain content related to organizations that foster volunteerism for charity such as non-profits, foundations, societies, associations, communities, institutions. Also includes recognized pageants (Miss Earth), boys/girls scouts, and bodies that cultivate philanthropic or relief efforts. |
 | P2P* | Sites related to Peer-to-Peer (P2P) file sharing |
-| Parked Domains | Sites that are parked, meaning the domain is not associated with any service such as email or a website. These domains are often are very often listed "for sale." |
+| Parked Domains | Sites that are parked, meaning the domain is not associated with any service such as email or a website. These domains are often listed "for sale." |
 | Phishing* | Sites and sites used in phishing and spearfishing campaigns |
 | Piracy* | Sites related to digital piracy |
 | Political | Sites that contain political content, including those representing political organizations or organizations promoting political views |
 | Porn - Child | Sites that contain adult-oriented content, including sexually explicit graphics and material featuring children, or appearing to feature children. |
 | Porn/Nudity | Sites that contain adult-oriented content, including sexually explicit graphics and material. Includes art with nudity, sex shops, and websites with ads showing nudity, games with nudity |
 | Private Websites | Sites created by individuals containing personal expressions such as blogs, personal diaries, experiences or interest |
-| Professional Services | Sites offering professional, intangible products, or expertise (as opposed to material goods). Includes sites for services performed expertly by an individual or team for the benefit of its customers. The typical services include cleaning, repairs, accounting, banking, consulting, landscaping, education, insurance, treatment, and transportation services. Additionally, includes online tutoring, dance, driving, martial arts, musical instrument lessons, and essay writing. |
+| Professional Services | Sites offering professional, intangible products, or expertise (as opposed to material goods). Includes sites for services performed expertly by an individual or team for the benefit of its customers. The typical services include cleaning, repairs, accounting, banking, consulting, landscaping, education, insurance, treatment, and transportation services. Also, includes online tutoring, dance, driving, martial arts, musical instrument lessons, and essay writing. |
 | Real Estate | Sites focusing on real estate including agents, renting and leasing residences and offices, and other real estate information |
 | Religion | Sites that promote or provide information regarding religious beliefs and practices |
 | Remote Access Tools* | Remote access tools such as screen sharing services |
@@ -752,7 +752,7 @@ _**Note:** Be careful with the “Not Rated” category, as it matches against m
 | Streaming Radio/TV | Sites that contain streaming radio or television content |
 | Suicide* | Sites related to suicide, including suicide information |
 | Suspicious* | Sites that do not necessarily contain malware or malicious content, but, due to certain attributes, have been flagged as questionable. iboss' Malware Analysis classifies these sites as "Unsafe", even if no malware is detected. The Web Request Heuristic Protection, if active, also flags sites categorized as suspicious. |
-| Swimsuit | Sites that contain sexually revealing content, but no nudity. Includes shopping sites for bikini, swimsuits,  lingerie, and other intimate apparel.  |
+| Swimsuit | Sites that contain sexually revealing content, but no nudity. Includes shopping sites for bikini, swimsuits, lingerie, and other intimate apparel.  |
 | Technology | Sites that contain content related technology, including software, computer hardware, technology companies, and technical computer help. Also, sites that sponsor or provide information, news, reviews, opinions, and coverage of computing, computing devices and technology, consumer electronics, and general technology. |
 | Terrorism/Radicalization | Sites that feature radical groups or movements with aggressive anti-government convictions or beliefs. |
 | Tech Infrastructure* | Sites Related to technology infrastructure |
