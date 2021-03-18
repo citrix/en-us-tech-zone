@@ -130,7 +130,7 @@ The administrator can either route “ALL APPS” or specific applications throu
 **Important Recommendation when using Citrix SIA service for ALL APPS routing along with Internet Service**
 If an administrator chooses “ALL APPS” to be routed via Citrix SIA, then this means that there is a DEFAULT route 0.0.0.0/0 created with Citrix SIA service with a cost of 45 ( Note that the Citrix SIA service-based routes are with cost 45)
 
-An Internet service may have already been created or may need to be created on the SD-WAN for a specific usecase. For instance - Internet service to breakout CSIA agent related traffic, Internet service to breakout Orchestrator traffic or a brownfield deployment where the administrator may have internet service already for some scenarios to which SIA is being configured. The administrator has to importantly note the routing here.
+An Internet service may have already been created or may need to be created on the SD-WAN for a specific use case. For instance - Internet service to breakout CSIA agent related traffic, Internet service to breakout Orchestrator traffic or a brownfield deployment where the administrator may have internet service already for some scenarios to which SIA is being configured. The administrator has to importantly note the routing here.
 
 **General Recommendation :**
 
@@ -255,12 +255,12 @@ Sometimes you may have missed adding specific apps to either services. This mean
 
 ### Create a Secure Internet Access Service
 
-*  Add a site by clickingg the “+Site” button
+*  Add a site by clicking the “+Site” button
 *  After you add the new site, configure the sections, like below.
     *  Select the Tunnel Type as “IPsec”
     *  You can create an IPsec tunnel with the Citrix SIA cloud nodes but for the purpose of this PoC, we use an IPsec tunnel automated configuration
 
-        ![Citrix SIA Service Tunnel Type](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaIPsectunneltype.png)
+        ![Citrix SIA Service Tunnel Type](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaipsectunneltype.png)
 
 ### Let AUTO be the default PoP selection and select sites to create the Citrix SIA tunnel with
 
@@ -271,11 +271,11 @@ Sometimes you may have missed adding specific apps to either services. This mean
 *  Select the site that needs to be automatically provisioned from the SD-WAN site to the SIA Cloud PoP(s)
 *  Click “Review”
 
-    ![Citrix SIA Service Tunnel site selection](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaIPsectunnelpopsiteselect.png)
+    ![Citrix SIA Service Tunnel site selection](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaipsectunnelpopsiteselect.png)
 
 *  Click “Save”
 
-    ![Citrix SIA Service Tunnel and Save](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaIPsectunnelsave.png)
+    ![Citrix SIA Service Tunnel and Save](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaipsectunnelsave.png)
 
 ### Verify service provisioning
 
@@ -309,7 +309,7 @@ Click the Info icon to know what details have been automated for the IPsec tunne
     tunnel endpoint addresses, IKE/IPsec authentication and encryption settings and the WAN Links on which the Citrix SIA 
     IPsec tunnel should be enabled
 
-*  Some of the below attributes are displayed on clickingg the "i" icon on the tunnel once provisioned
+*  Some of the below attributes are displayed by clicking the "i" icon on the tunnel once provisioned
     *  Local IPs: Static WAN IP address of the 2 WAN Links is listed
     *  Peer Node IP’s displayed - with which the tunnel will be formed (Auto Selected during tunnel creation based on Geo Location of the site)
     *  Local LAN subnet displayed - which is the Local VIP subnet of LAN interface of the SD-WAN
@@ -353,7 +353,7 @@ The policy (Security Group) enabled is “Default” and we can change the polic
 
 ### From Orchestrator
 
-*  Goto All Sites -> Network Config Home -> Delivery Services -> Secure Internet Access Service
+*  Goto **All Sites -> Network Config Home -> Delivery Services -> Secure Internet Access Service**
 *  Click the Info icon
     *  You can verify the Tunnel state with local and remote endpoint IPs
     *  Status of the Tunnel with statistics of packets inbound and outbound
@@ -362,13 +362,13 @@ The policy (Security Group) enabled is “Default” and we can change the polic
 
 You can also verify the status of the IPsec tunnel by going to:
 
- Specific site -> Reports -> Reatime -> IPsec Tunnel -> Retrieve Latest Data
+*  **Specific site -> Reports -> Real Time -> IPsec Tunnel -> Retrieve Latest Data**
 
  ![Citrix SIA Service IPsec tunnel stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaIPSectunnstats.png)
 
 ### To verify what Cloud IP’s are hosted by your account in the Citrix SIA Portal (Which is the Proxy IP for hosts using a CSIA agent or IPsec tunnel)
 
-In Citrix SIA Portal, Go to Home -> Node Collection Management -> Node Groups -> Node-Cluster with Gateway Type
+In Citrix SIA Portal, Go to **Home -> Node Collection Management -> Node Groups -> Node-Cluster with Gateway Type**
 
  ![Citrix SIA View Cloud Nodes](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaviewcloudnodes.png)
 
@@ -494,7 +494,7 @@ With Citrix SIA, the backhaul is no longer necessary and the agent helps proxy t
 
 ### Web Security (Category) - Configuration of Web Security Category Policies from Citrix SIA portal
 
-*  Click : Web Security -> Web Security Policies -> Web/SSL Categories
+*  Click : **Web Security -> Web Security Policies -> Web/SSL Categories**
 *  Choose the Group as "PoC_Demo_Group" (Since Cloud Connector/SIA Agent is installed for that group)
 
     ![Associate Security Group to Web Security](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_associatesecgrptowebseccisa.png)
@@ -503,7 +503,7 @@ With Citrix SIA, the backhaul is no longer necessary and the agent helps proxy t
 
     ![Enable Web Security for Category](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_enablewebsecforcategory.png)
 
-*  SAVE the settings to PoC_Demo_Group ONLY
+*  SAVE the settings to "PoC_Demo_Group" ONLY
 
     ![Save Web Security Settings](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_savewebsecuritysettings.png)
 
@@ -545,7 +545,7 @@ You can also see that the Group name is visible including the end host private l
 
 Create a simple allow list to allow ONLY Facebook from the entire Friendship category that is currently BLOCKED
 
-*  Go to Web Security -> Web Security Policies -> allow list
+*  Go to **Web Security -> Web Security Policies -> Allow List**
 
    ![allow list Section](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_allowlistcreation.png)
 
@@ -569,7 +569,7 @@ Create a simple allow list to allow ONLY Facebook from the entire Friendship cat
    ![Facebook Block Without Scrape](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_facebookblockwithoutscrape.png)
 
 *  Go to the allow list under Web Security
-    *  Web Security -> Web Security Policies -> allow list
+    *  **Web Security -> Web Security Policies -> allow list**
     *  Click Scrape
     *  Type facebook.com and Click Scan
     *  Add all domains to the allow list
@@ -589,9 +589,9 @@ Create a simple allow list to allow ONLY Facebook from the entire Friendship cat
 
 Create a CASB rule to enable safe search on Google Browser and disable gmail.com access
 
-*  Go to CASB -> CASB App Controls -> Cloud App Controls
+*  Go to **CASB -> CASB App Controls -> Cloud App Controls**
     *  Select Group as “PoC_Demo_Group”
-    *  Under Search Engine Controls -> Google Safe Search Enforcement
+    *  Under **Search Engine Controls -> Google Safe Search Enforcement**
     *  Select “Enforce Safe Search for Current Group”
     *  Under Google Controls
         *  Enable Block Google Drive
@@ -627,7 +627,7 @@ Google Browser Safe Search enablement:
     Note: SSL Decryption needs to be enabled (If Cloud connector is used and configured to auto install the root certificate as part of 
     agent installation, this feature is enabled by default)
 
-*  Goto Web Security -> Malware Defense -> Cloud Malware Protection
+*  Go to **Web Security -> Malware Defense -> Cloud Malware Protection**
 *  The Content engine needs to be ready
 *  Click Block on Scan error to be Enabled
 
@@ -697,7 +697,7 @@ Verifying via CSIA Reporting Section
    ![Dataleak site DLP test with SSL ON](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_dataleaksitesslondlptest.png)
 
 *  Now Click Browse
-    *  Select the file we previously downloaded in step “d” with filename sample-data.xls and UPLOAD
+    *  Select the file we previously downloaded file sample-data.xls and UPLOAD
 
    ![Upload DLP sensitive File](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_uploaddlpsensitivefile.png)
 
@@ -757,7 +757,7 @@ SSL decryption via tunnel is covered in the next PoC use case for exercising ful
 
 Before verification of policy enforcement via IPsec tunnel, create the security policies in the Citrix SIA cloud portal
 
-*  Go to Web Security -> Web Security Policies -> Web/SSL Categories
+*  Go to **Web Security -> Web Security Policies -> Web/SSL Categories**
 *  Click Default Security Group as the IPsec tunnel is created in general with Default Security Group
 
         Note:
@@ -783,10 +783,10 @@ Before verification of policy enforcement via IPsec tunnel, create the security 
 
 ### Web Security (Block List) – Configure Block list for specific URL
 
-*  Configure a specific BLOCK list via URL web filtering for a site like notpurple.com
+*  Configure a specific block list via URL web filtering for a site like notpurple.com
 
-    *  Go to Web Security -> Web Security Policies -> Block List
-    *  Add a web URL “notpurple.com” to the BLOCK List
+    *  Go to **Web Security -> Web Security Policies -> Block List**
+    *  Add a web URL “notpurple.com” to the block List
 
    ![Block List Use Case 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_blockedlistcase2.png)
 
@@ -801,7 +801,7 @@ Before verification of policy enforcement via IPsec tunnel, create the security 
 *  From the reporter we can see in even logs that the access to 777.com is categorically Blocked due to GAMBLING section
     *  Click Reporting and Analytics -> Logs -> Event Logs
     *  Click Search
-    *  If needed, Click More Filters, and select Action -> Blocked to check ALL logs with BLOCKED action
+    *  If needed, **Click More Filters**, and select **Action -> Blocked** to filter all the logged events that are blocked
 
    ![Web Category 777 blocked via IPsec Tunnel Reporting Stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_blockedreportingstatsviatunnel.png)
 
@@ -814,7 +814,7 @@ Before verification of policy enforcement via IPsec tunnel, create the security 
 
     *  Click Reporting and Analytics -> Logs -> Event Logs
     *  Click Search
-    *  If needed, Click More Filters, and select Action -> Blocked to check ALL logs with BLOCKED action
+    *  If needed, Click **Click More Filters**, and select **Action -> Blocked** to filter all the logged events that are blocked
 
    ![Web Category Facebook Blocked Reporting Stats Use Case 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_reportingfacebookblockstats.png)
 
@@ -838,7 +838,7 @@ Before verification of policy enforcement via IPsec tunnel, create the security 
 
    ![Blocked List Use Case 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_blockedlistnotpurpleviatunnel.png)
 
-*  The reporter also shows the traffic to be BLOCKED as it is explicitly configured as part of the BLOCK LIST
+*  The reporter also shows the traffic to be BLOCKED as it is explicitly configured as part of the block LIST
 
    ![Blocked List Use Case 2 Reporter Stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_blockedlistviatunnelreporterstats.png)
 
@@ -850,7 +850,7 @@ However, there are a few pre-requisites, without which Advanced security CANNOT 
 
     Important 3 pre-requisites:
 
-    1. Enable Transparent SSL Proxy under Proxy/Caching -> SSL Decryption -> General Settings
+    1. Enable Transparent SSL Proxy under "Proxy/Caching -> SSL Decryption -> General Settings"
     2. Enable SSL decryption on the IPsec tunnel in the Local Subnets
     3. Download and Install the ROOT Certificate from the Citrix SIA Cloud and install on the end user device under trusted root 
     authorities (To enable SSL decryption by the platform)
@@ -881,20 +881,20 @@ For the purpose of this demo PoC, we enable an explicit tunnel with SSL decrypti
 
     The workaround is to enable the decryption on the tunnel after it is configured in the SIA portal (In Orchestrator)
 
-*  Click Network -> Local Subnets -> Quick Edit Local Subnets (As displayed in the snapshot below)
+*  Click **Network -> Local Subnets -> Quick Edit Local Subnets** (As displayed in the snapshot below)
 
    ![Quick Edit Local Subnet](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_quickeditlocalsubnettunnel.png)
 
 *  All IPsec tunnels created need local subnet that defines the local LAN subnet of the end hosts that will be protected with IPsec.
 *  Choose the tunnel depending on the name and the local subnet (would be an auto created tunnel via Orchestrator with IP Address representing the local LAN subnet of the device needed to be protected with IPsec tunnel)
-*  Click the checkbox SSL to enable SSL decryption
+*  Click the check box SSL to enable SSL decryption
 
    ![Enable Decryption](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_enabletunnelssldecryption.png)
 
 *  While in Quick edit window, double-click Default policy
 *  Default policy indicates the security group that is applied to ALL the traffic falling under the Local Subnet (with LAN network defined)
-*  Select PoC_Demo_Group
-*  Also, double-click Login Group and select PoC_Demo_Group
+*  Select "PoC_Demo_Group"
+*  Also, double click Login Group and select "PoC_Demo_Group"
 
    ![Select Non Default Security Group for PoC](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_selectcustomsecuritygroupfortunnel.png)
 
@@ -907,11 +907,11 @@ SSL decryption is needed for applying advanced security capabilities like CASB, 
     Installation of the ROOT certificate is a MANUAL process or needs to be performed via GPO (Group policy object) or MDM 
     or the enterprise presenting a splash page determining how to install the root certificate on the initiating devices
 
-*  Go to Proxy & Caching -> SSL Decryption -> Actions -> Generate and Download New MITM Root Certificate
+*  Go to **Proxy & Caching -> SSL Decryption -> Actions -> Generate and Download New MITM Root Certificate**
 
    ![Generate and Download Root SSL Certificate](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_generatedownloadcert.png)
 
-*  A cert is downloaded. Click the downloaded New MITM Root Certificate
+*  A certificate is downloaded. Click the downloaded New MITM Root Certificate
 
    ![Install SSL Certificate on Unmanaged Device](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_installsslcertonunmanageddevice.png)
 
@@ -923,7 +923,7 @@ SSL decryption is needed for applying advanced security capabilities like CASB, 
 
    ![Verify Issuer on SSL Certificate](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_verifyissueronsslcert.png)
 
-*  This takes us to the wizard. Under Store location, select “Current User” and Click “Next”
+*  This takes us to the wizard. Under **Store location, select “Current User” and Click “Next”**
 
    ![Select Current User](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_selectcurrentsersslcert.png)
 
@@ -971,9 +971,9 @@ Citrix SIA IPsec tunnel allows for unmanaged devices like BYOD/Personal and Gues
 
 We create a CASB rule to enable safe search on Google Browser and also disable gmail.com access
 
-*  Go to CASB -> CASB App Controls -> Cloud App Controls
+*  Go to **CASB -> CASB App Controls -> Cloud App Controls**
     *  Select Group as “PoC_Demo_Group”
-    *  Under Search Engine Controls -> Google Safe Search Enforcement
+    *  Under **Search Engine Controls -> Google Safe Search Enforcement**
 *  Select “Enforce Safe Search for Current Group”
 *  Under Google Controls
     *  Enable Block Google Drive
@@ -1082,7 +1082,7 @@ Data Loss Prevention Configuration
    ![Dataleak site DLP test with SSL ON](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_dataleaksitesslondlptest.png)
 
 *  Now Click Browse
-    *  Select the file we previously downloaded with filename sample-data.xls and UPLOAD
+    *  Select the file we previously downloaded file sample-data.xls and UPLOAD
 
    ![Upload DLP sensitive File](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_uploaddlpsensitivefile.png)
 
