@@ -370,7 +370,7 @@ The .msi installation packages can be downloaded directly from the CSIA admin co
     | Enable Windows Desktop App: (Agent do not run-on Multi-User Deployments)  | Enable Setting  |
     | Allow End Users to Disable Security:  | Disable Setting  |
     |   Require Password to Disable Security:  | Enable Setting  |
-    | Require Password to View Diagonstics Info:  | Enable Setting  |
+    | Require Password to View Diagnostics Info:  | Enable Setting  |
 
 6.  Click **Dynamic Linking** and select the Groups you want to assign the policy too.  
    ![Citrix SIA AGENT POLICIES DYNAMIC LINKING](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_55.png)
