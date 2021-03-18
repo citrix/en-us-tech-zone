@@ -123,7 +123,8 @@ The administrator can either route “ALL APPS” or specific applications throu
 ![Route Specific Apps via Citrix SIA from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_specificappsrouteviasiaservice.png)
 
     Note
-    If specific apps are chosen, then only specific application routes are created with the Citrix SIA as the service type to be steered through the IPsec Tunnel. 
+    If specific apps are chosen, then only specific application routes are created with the Citrix SIA as the service type to be 
+    steered through the IPsec Tunnel. 
     The Citrix SIA service is INTRANET type service by default
 
 **Important Recommendation when using Citrix SIA service for ALL APPS routing along with Internet Service**
@@ -242,11 +243,13 @@ Sometimes you may have missed adding specific apps to either services. This mean
 
 *  Provide some provisioning percentage on the Internet link for the Secure Internet Access service: For this demo we give 30%
 
-        BEST PRACTICE : Without this percentage provisioning, the site provisioning fails. So, it is recommended that we provide the percentage before creating the site for SIA service
+        BEST PRACTICE : Without this percentage provisioning, the site provisioning fails. So, it is recommended that we provide the 
+        percentage before creating the site for SIA service
 
 *  Click the gear icon to add the new site for Citrix SIA service
 
-        Note : Creating an SIA service internally creates an automatic INTRANET service with the routing domain chosen during the SIA site configuration and PRESERVE ROUTE TO INTRANET SERVICE which is the IGNORE WAN LINK status knob automatically
+        Note : Creating an SIA service internally creates an automatic INTRANET service with the routing domain chosen during the SIA 
+        site configuration and PRESERVE ROUTE TO INTRANET SERVICE which is the IGNORE WAN LINK status knob automatically
 
 ![Citrix SIA Service Creation Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaservicecreation.png)
 
@@ -291,18 +294,20 @@ Sometimes you may have missed adding specific apps to either services. This mean
 
 *  **Routing "ALL APPS" via Citrix SIA service –** If ALL Internet traffic is to go through the Citrix SIA IPsec tunnel. A default 0.0.0.0/0 is created via the Citrix SIA service in this case
 
-    ![Citrix SIA Service Routing for All Apps](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaallapps.png)
+    ![Citrix SIA Service Routing for All Apps](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_allappsrouteviasiaservice.png)
 
 *  **Application/Custom Application/Group Specific –** If there are only specific applications that need to be routed through the SIA service. In this case app routes are created in the SD-WAN
 
-    ![Citrix SIA Service Routing for Specific Apps](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaspecificapps.png)
+    ![Citrix SIA Service Routing for Specific Apps](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_specificappsrouteviasiaservice.png)
 
 ### Verify what automation is done as part of IPsec tunnel provisioning in Orchestrator
 
 Click the Info icon to know what details have been automated for the IPsec tunnel from the SD-WAN side
 
     Note : 
-    Once the Citrix SIA IPsec tunnel is provisioned and saved, the Citrix SD-WAN Orchestrator configures the Citrix SIA IPsec tunnel with tunnel endpoint addresses, IKE/IPsec authentication and encryption settings and the WAN Links on which the Citrix SIA IPsec tunnel should be enabled
+    Once the Citrix SIA IPsec tunnel is provisioned and saved, the Citrix SD-WAN Orchestrator configures the Citrix SIA IPsec tunnel with 
+    tunnel endpoint addresses, IKE/IPsec authentication and encryption settings and the WAN Links on which the Citrix SIA 
+    IPsec tunnel should be enabled
 
 *  Some of the below attributes are displayed on clickingg the "i" icon on the tunnel once provisioned
     *  Local IPs: Static WAN IP address of the 2 WAN Links is listed
@@ -359,7 +364,7 @@ You can also verify the status of the IPsec tunnel by going to:
 
  Specific site -> Reports -> Reatime -> IPsec Tunnel -> Retrieve Latest Data
 
- ![Citrix SIA Service IPsec tunnel stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaIPsectunnstats.png)
+ ![Citrix SIA Service IPsec tunnel stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaIPSectunnstats.png)
 
 ### To verify what Cloud IP’s are hosted by your account in the Citrix SIA Portal (Which is the Proxy IP for hosts using a CSIA agent or IPsec tunnel)
 
@@ -382,9 +387,11 @@ If you are either using a Citrix SIA Cloud Connector (SIA Agent) or through an I
 ### Download and Install Cloud connector (SIA Agent) with a specific Security Group (Windows Connector)
 
     Note: 
-    You cannot create a new Security Group but only modify the default ones and change the names to create and apply the security policies to a specific group
+    You cannot create a new Security Group but only modify the default ones and change the names to create and apply the security
+     policies to a specific group
 
-    For instance, in this case we are modifying Group 7 (Not taken and still default) and making changes to the Group name “PoC_Demo_Group”
+    For instance, in this case we are modifying Group 7 (Not taken and still default) and making changes to the Group name
+     “PoC_Demo_Group”
 
 ![Citrix SIA Security Group Creation](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_siasecuritygroupnameforpoc.png)
 
@@ -417,7 +424,8 @@ If you are either using a Citrix SIA Cloud Connector (SIA Agent) or through an I
 *  **Click Windows Cloud Connector Download Button and choose Windows 8/10 64 bit**
 
         Note :
-        Please ensure you perform the access of Citrix SIA Cloud platform via Google Chrome browser. With Firefox, the installer may not download as a .msi (in which case you need to manually change the name of the file removing .html from the file)
+        Please ensure you perform the access of Citrix SIA Cloud platform via Google Chrome browser. With Firefox, the installer 
+        may not download as a .msi (in which case you need to manually change the name of the file removing .html from the file)
 
     ![Citrix SIA Agent Download Installer](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_downloadcsiaagentwindows.png)
 
@@ -457,7 +465,8 @@ If you are either using a Citrix SIA Cloud Connector (SIA Agent) or through an I
     *  With successful Agent registration, notice the agent traffic on the Citrix SIA Reporter under Real-time Dashboard or Events logs
 
            Note: 
-            If you have an Agent installed, notice the user name to explicitly show up with the Group that was set during the agent download/install including the Private Source IP
+            If you have an Agent installed, notice the user name to explicitly show up with the Group that was set during the agent 
+            download/install including the Private Source IP
 
         ![Citrix SIA Agent Traffic Reporting](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaagentrafficreporting.png)
 
@@ -470,9 +479,12 @@ Without Citrix SIA, we would need to backhaul enterprise sensitive SaaS applicat
 With Citrix SIA, the backhaul is no longer necessary and the agent helps proxy the enterprise SaaS connections to Citrix SIA Cloud directly. The Citrix SIA then applies the enterprise security posture on the traffic, creating a secure service edge infrastructure at the Branch/Edge and enhancing application delivery.
 
     Recommended Best Practice:
-    It is a recommended best practice that the Cloud connector traffic from corporate managed devices be bypassed from the local IPsec tunnel of the Citrix SD-WAN in the branch edge. This allows direct proxy to the Citrix SIA where enterprise OU’s or security groups can be exercised directly via cloud connectors on the managed devices.
+    It is a recommended best practice that the Cloud connector traffic from corporate managed devices be bypassed from the local IPsec 
+    tunnel of the Citrix SD-WAN in the branch edge.
+    This allows direct proxy to the Citrix SIA where enterprise OU’s or security groups can be exercised directly via cloud connectors on the managed devices.
 
-    To allow for the Citrix SIA cloud connector to seamlessly Call Home to the Citrix SIA gateway cluster and PoP’s, it is critical to bypass the cloud connector based traffic from the IPsec tunnel so that the registration of the cloud connector happens and the proxy is made available directly from the connector.
+    To allow for the Citrix SIA cloud connector to seamlessly Call Home to the Citrix SIA gateway cluster and PoP’s, it is critical to 
+    bypass the cloud connector based traffic from the IPsec tunnel.
 
 *  Create a new Custom APP with the below IP/PORT/Protocol Lists
 
@@ -612,7 +624,8 @@ Google Browser Safe Search enablement:
 
 ### MALWARE Defense - Configuration of Anti Malware Policies from Citrix SIA portal
 
-    Note: SSL Decryption needs to be enabled (If Cloud connector is used and configured to auto install the root certificate as part of agent installation, this feature is enabled by default)
+    Note: SSL Decryption needs to be enabled (If Cloud connector is used and configured to auto install the root certificate as part of 
+    agent installation, this feature is enabled by default)
 
 *  Goto Web Security -> Malware Defense -> Cloud Malware Protection
 *  The Content engine needs to be ready
@@ -727,10 +740,12 @@ In this use-case, we use the Citrix SIA IPsec tunnel to breakout and proxy to th
 
 ### Recommended Best Practice for IPsec Tunnel
 
-      It is a recommended best practice that the in case where there are no Cloud Connector agents in devices, a branch managed by Citrix SD-WAN uses the IPsec tunnel to manage the security policies for those devices securely with the Citrix SIA platform.
+      It is a recommended best practice that the in case where there are no Cloud Connector agents in devices, a branch managed by Citrix 
+      SD-WAN uses the IPsec tunnel to manage the security policies for those devices securely with the Citrix SIA platform.
 
     Note:
-    The tunnels that get configured generally come disabled with SSL decryption, unless explicitly set. Also, with just the plain IPsec tunnel, we get features that do not involve SSL decryption but based on URL’s (full or regex-based URL’s) like below:
+    The tunnels that get configured generally come disabled with SSL decryption, unless explicitly set. Also, with just the plain IPsec 
+    tunnel, we get features that do not involve SSL decryption but based on URL’s (full or regex-based URL’s) like below:
 
 *  Web Security (Category based)
 *  allow list
@@ -759,7 +774,8 @@ Before verification of policy enforcement via IPsec tunnel, create the security 
 *  Add an allow list to Friendship category to allow Linkedin ONLY but block all other social media categories
 
         Note:
-        As defined best practice, scrape and resolve other URL dependencies before adding to an ALLOW/BLOCK list to completely exercise the functionality of URL web filtering
+        As defined best practice, scrape and resolve other URL dependencies before adding to an ALLOW/BLOCK list to completely 
+        exercise the functionality of URL web filtering
 
    ![Allow List Use Case 2 Configuration](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_allowlist2linkedin.png)
 
@@ -836,14 +852,16 @@ However, there are a few pre-requisites, without which Advanced security CANNOT 
 
     1. Enable Transparent SSL Proxy under Proxy/Caching -> SSL Decryption -> General Settings
     2. Enable SSL decryption on the IPsec tunnel in the Local Subnets
-    3. Download and Install the ROOT Certificate from the Citrix SIA Cloud and install on the end user device under trusted root authorities (To enable SSL decryption by the platform)
+    3. Download and Install the ROOT Certificate from the Citrix SIA Cloud and install on the end user device under trusted root 
+    authorities (To enable SSL decryption by the platform)
 
 ### Enable Transparent SSL Decryption under Proxy/Caching -> SSL Decryption
 
 For enabling IPsec tunnel to allow for SSL decryption, the transparent SSL decryption must be enabled.
 
     Note: 
-    SSL decryption can be applied for ALL IPsec tunnels depending on how we administer it. We can either choose SSL decryption for ALL subnets or manually enable SSL decryption per Local Subnet of an IPsec tunnel.
+    SSL decryption can be applied for ALL IPsec tunnels depending on how we administer it. We can either choose SSL decryption for ALL 
+    subnets or manually enable SSL decryption per Local Subnet of an IPsec tunnel.
 
 For the purpose of this demo PoC, we enable an explicit tunnel with SSL decryption and choose from General settings the value “Local subnets with SSL decryption enabled”
 
@@ -858,7 +876,8 @@ For the purpose of this demo PoC, we enable an explicit tunnel with SSL decrypti
 ### Enable SSL decryption on the IPsec tunnel in the Local Subnets
 
     Note: 
-    Selection of SSL decryption in an IPsec tunnel is already raised as an enhancement which will be available while configuring the Secure Internet Access service. 
+    Selection of SSL decryption in an IPsec tunnel is already raised as an enhancement which will be available while configuring the 
+    Secure Internet Access service. 
 
     The workaround is to enable the decryption on the tunnel after it is configured in the SIA portal (In Orchestrator)
 
@@ -885,7 +904,8 @@ Installing the Citrix SIA SSL root certificate on the browser of unmanaged devic
 SSL decryption is needed for applying advanced security capabilities like CASB, Malware defense, DLP an so on.
 
     Note:
-    Installation of the ROOT certificate is a MANUAL process or needs to be performed via GPO (Group policy object) or MDM or the enterprise presenting a splash page determining how to facilitate install of the root certificate on the end devices
+    Installation of the ROOT certificate is a MANUAL process or needs to be performed via GPO (Group policy object) or MDM 
+    or the enterprise presenting a splash page determining how to install the root certificate on the initiating devices
 
 *  Go to Proxy & Caching -> SSL Decryption -> Actions -> Generate and Download New MITM Root Certificate
 
@@ -944,7 +964,8 @@ In this use-case, we will use the Citrix SIA IPsec tunnel along with SSL decrypt
 Citrix SIA IPsec tunnel allows for unmanaged devices like BYOD/Personal and Guest devices to be managed and enforced of enterprise security policies when they connect in a branch. The devices with the agent bypass the tunnel and get enforced of policies.
 
     Recommended Best Practice for IPsec Tunnel
-    It is a recommended best practice that the in case where there are no Cloud Connector agents in devices, a branch managed by Citrix SD-WAN uses the IPsec tunnel to manage the security policies for those devices securely with the Citrix SIA platform.
+    It is a recommended best practice that the in case where there are no Cloud Connector agents in devices, a branch managed by Citrix 
+    SD-WAN uses the IPsec tunnel to manage the security policies for those devices securely with the Citrix SIA platform.
 
 ### CASB – Configuration of CASB policies from Citrix SIA Portal (Orchestrator)
 
