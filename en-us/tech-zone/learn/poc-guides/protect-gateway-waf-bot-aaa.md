@@ -15,9 +15,9 @@ Many VPN and Citrix Gateway deployments are hosted by Citrix ADC appliances that
 
 This is not an exclusive list of protections, nor is it the only way to configure them. For example, IP Reputation can be deployed using a responder policy on a Gateway virtual server. This is a supported method of deployment but has a different outcome of dropping or resetting any connection from an entry in the IP reputation database. 
 
-Additionally, the WAF profile does not have every protection enabled. This is done to prevent complex configuration, custom tuning, and potential issues. Further configuration to the WAF profile is possible, please see the links in the recommendations section for guidance.
+Additionally, the WAF profile does not have every protection enabled. This is done to prevent complex configuration, custom tuning, and potential issues. Further configuration to the WAF profile is possible, please see the links in the references section for guidance.
 
-Regarding authentication, CAPTCHA is not the most secure option for an additional factor, it was only used for simplicity in explanation. Other MFA options such as TOTP or PUSH are recommended - see the recommendations section for links to assist in deploying these options.
+Regarding authentication, CAPTCHA is not the most secure option for an additional factor, it was only used for simplicity in explanation. Other MFA options such as TOTP or PUSH are recommended - see the references section for links to assist in deploying these options.
 
 ## Prerequisites
 
@@ -273,7 +273,7 @@ Citrix ADC provides many built-in security protections that can be applied to pr
 
 ## References
 
-For more information refer to:
+For additional information and configuration options, please refer to the following articles:
 
 [CTX216091](https://support.citrix.com/article/CTX216091) - supporting reCaptcha with nFactor
 
