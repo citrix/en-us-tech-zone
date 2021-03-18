@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Jacob Rutski
-specialThanksTo: Dileep Reddem
+specialThanksTo: Dileep Reddem, Michael Shuster, Matt Brooks, Martin Zugec
 description: Learn how to use the security tools built in to the Citrix ADC to protect VPN and Gateway virtual servers, including Web Application Firewall (WAF), Bot Security, and Advanced Authentication Policies. 
 ---
 # Protecting Gateway Virtual Servers with WAF, Bot, and Advanced Authentication Policies
@@ -10,6 +10,14 @@ description: Learn how to use the security tools built in to the Citrix ADC to p
 ## Overview 
 
 Many VPN and Citrix Gateway deployments are hosted by Citrix ADC appliances that are also providing security protections to other web applications. This PoC guide is designed to help protect VPN and Gateway virtual servers using tools already available on the Citrx ADC appliance. This guide covers protecting the portal login page with Bot security and WAF capabilities, as well as using advanced authentication policies to add context to user logons. 
+
+## Configuration Options
+
+This is not an exclusive list of protections, nor is it the only way to configure them. For example, IP Reputation can be deployed using a responder policy on a Gateway virtual server. This is a supported method of deployment but has a different outcome of dropping or resetting any connection from an entry in the IP reputation database. 
+
+Additionally, the WAF profile does not have every protection enabled. This is done to prevent complex configuration, custom tuning, and potential issues. Further configuration to the WAF profile is possible, please see the links in the recommendations section for guidance.
+
+Regarding authentication, CAPTCHA is not the most secure option for an additional factor, it was only used for simplicity in explanation. Other MFA options such as TOTP or PUSH are recommended - see the recommendations section for links to assist in deploying these options.
 
 ## Prerequisites
 
@@ -73,6 +81,10 @@ Create a Bot **Management Policy** by going to Security > Citrix Bot Management 
 
 HTTP.REQ.URL.CONTAINS("/vpn")||HTTP.REQ.URL.CONTAINS("/logon")
 ```
+
+Finally, the bot policy is bound by selecting 'Policy Manager'. Select a Bind Point of 'Default Global', select 'Click to select' to select the policy. Highlight the previously created policy, and choose 'Select'. Select 'Bind' then 'Done'.
+
+![Bot Policy Bind](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botpolicybind.png)
 
 ## WAF Protection
 
