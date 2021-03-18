@@ -113,10 +113,10 @@ Certain user groups require fault tolerant connections. Those users deploy an SD
 
 Although the SD-WAN 110 appliances are deployed within the user’s home, they are centrally managed. Centrally managing the devices allows CompanyA to institute a zero touch deployment approach for home users following these guides:
 
-*  [SD-WAN 110 Zero Touch Deployment via LTE]( https://support.citrix.com/article/CTX272228)
-*  [SD-WAN 110 Zero Touch Deployment with Broadband]( https://support.citrix.com/article/CTX272229)
+*  [SD-WAN 110 Zero Touch Deployment via LTE](https://support.citrix.com/article/CTX272228)
+*  [SD-WAN 110 Zero Touch Deployment with Broadband](https://support.citrix.com/article/CTX272229)
 
-Learn more about [SD-WAN 110 for Home Office Users](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-home-office.html).
+Learn more about [SD-WAN 110 for Home Office Users](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-home-office.html).
 
 ### Endpoint Security
 
@@ -125,7 +125,7 @@ CompanyA has two different strategies for endpoint devices based on the form fac
 1.  Traditional Devices: For traditional devices like desktops, PCs, and laptops, CompanyA uses Mobile Device Management (MDM) with a Choose Your Own Device (CYOD) strategy. With this approach, CompanyA is responsible for purchasing, securing, and maintaining the device. To make the overall management easier while still allowing end user satisfaction, CompanyA has a list of approved devices ranging from Windows to Mac. Users are able to access personal resources from the device, but the device is managed, secured, monitored, and audited by CompanyA.
 2.  Mobile Devices: For mobile devices like iPhones and Android phones, CompanyA uses Mobile App Management (MAM) with a Company Owned, Personally Enabled (COPE) strategy. Just like the Choose Your Own Device strategy, the Company Owned, Personally Enabled strategy provides the user with a list of approved mobile devices. The device is purchased and secured by CompanyA, while still allowing users to access personal apps that are not protected or audited by the organization. Work-related applications are containerized, helping to protect work-related apps and content from personal apps installed locally.
 
-Learn more about [Endpoint Management Ownership Models](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/citrix-endpoint-management.html#unified-endpoint-management-ownership-models)
+Learn more about [Endpoint Management Ownership Models](/en-us/tech-zone/learn/tech-briefs/citrix-endpoint-management.html#unified-endpoint-management-ownership-models)
 
 Enrollment of the devices uses the following enrollment policies
 
@@ -160,8 +160,8 @@ With a distributed workforce, CompanyA relies more heavily on virtual conferenci
 
 To learn more about Microsoft Teams integration and optimization, review the following:
 
-*  [Microsoft Teams Tech Insight Video](https://docs.citrix.com/en-us/tech-zone/learn/tech-insights/hdx.html#microsoft-teams-optimization)
-*  [Microsoft Teams Proof of Concept Guide for Citrix Virtual Apps and Desktops](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html)
+*  [Microsoft Teams Tech Insight Video](/en-us/tech-zone/learn/tech-insights/hdx.html#microsoft-teams-optimization)
+*  [Microsoft Teams Proof of Concept Guide for Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html)
 
 ## Access Layer
 
@@ -181,7 +181,7 @@ The stage 2 authentication scheme focuses on the secondary resources (SaaS apps,
 *  Web Apps: The inventory of web applications in CompanyA all use the user’s Active Directory credentials. For web applications, CompanyA uses a combination of forms, Kerberos, and SAML-based authentication to provide single sign-on. The choice between the options is based on the unique aspects of each Web application.
 *  Virtual Apps/Desktops: For the virtual apps and desktops, CompanyA uses pass-through authentication from Citrix Workspace, eliminating the secondary authentication challenge.
 
-The [Workspace Single Sign-On Tech Brief](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) contains additional information regarding single sign-on for SaaS, web, virtual apps, virtual desktops, and IdP chaining options.
+The [Workspace Single Sign-On Tech Brief](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) contains additional information regarding single sign-on for SaaS, web, virtual apps, virtual desktops, and IdP chaining options.
 
 ### Resource Access
 
@@ -223,7 +223,7 @@ As a baseline policy, CompanyA defined the following (with the ability to relax 
 |Keylogging Prevention|Enabled|Enabled|Enabled|Not Applicable|
 |Screenshot Prevention|Enabled|Enabled|Enabled|Not Applicable|
 
-The [App Protection Policies Tech Brief](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/app-protection-policies.html) contains additional information regarding the keylogging and screenshot prevention policies.
+The [App Protection Policies Tech Brief](/en-us/tech-zone/learn/tech-briefs/app-protection-policies.html) contains additional information regarding the keylogging and screenshot prevention policies.
 
 ## Control Layer
 
@@ -288,9 +288,9 @@ CompanyA developed the following initial security policies:
 |Unusual app behavior|Unusual time of app usage and access from unusual location|Start session recording|If a user accesses a virtual app at a strange time and location, there is the potential the user is compromised. Security analytics records the session to have the admin verify legitimacy.|
 |Potential credential exploits|Excessive authentication failures and access from an unusual location|Add to watchlist|If a user has many authentication failures from an unusual location, it can indicate someone is trying to break into the system. However, the attacker has yet to succeed. Only need to add the user to the watchlist.|
 
-The [Citrix User Risk Indicators](https://docs.citrix.com/en-us/security-analytics/risk-indicators.html) document contains additional information regarding the various risk indicators provided to Citrix Security Analytics.
+The [Citrix User Risk Indicators](/en-us/security-analytics/risk-indicators.html) document contains additional information regarding the various risk indicators provided to Citrix Security Analytics.
 
-The [Citrix Policies and Actions](https://docs.citrix.com/en-us/security-analytics/policies-and-actions.html) page contains information about the remediation steps Citrix Security Analytics can perform.
+The [Citrix Policies and Actions](/en-us/security-analytics/policies-and-actions.html) page contains information about the remediation steps Citrix Security Analytics can perform.
 
 ### Citrix SD-WAN Orchestrator
 
