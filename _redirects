@@ -3,7 +3,7 @@
 # Examples:
 # /home.html /index
 # /en-us/old-aem-page.html  /en-us/new-bitbucket-page
-# cache:3
+# cache:4
 
 # Workspace and CVAD posters renamed to proper names (2/27/2020)
 /en-us/tech-zone/learn/downloads/citrix-workspace-poster.png /en-us/tech-zone/learn/downloads/diagrams-posters_workspace_user-experience-poster.png
