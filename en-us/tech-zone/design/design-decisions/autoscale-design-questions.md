@@ -83,4 +83,4 @@ How can an admin configure Autoscale to save storage costs apart from compute?
 
 ### How do I see my **cost savings**?
 
--  The Monitor > Trends > Machine Usage page also displays the estimated [cost savings](en-us/citrix-virtual-apps-desktops-service/monitor/site-analytics/autoscale-managed-machines.html#estimated-savings). achieved by enabling Autoscale in the selected delivery group. Both $ saved and % savings using Autoscale are displayed. These savings can be sent as monthly savings reports to higher management.
+-  The Monitor > Trends > Machine Usage page also displays the estimated [cost savings](/en-us/citrix-virtual-apps-desktops-service/monitor/site-analytics/autoscale-managed-machines.html#estimated-savings). achieved by enabling Autoscale in the selected delivery group. Both $ saved and % savings using Autoscale are displayed. These savings can be sent as monthly savings reports to higher management.
