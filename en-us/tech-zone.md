@@ -373,6 +373,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 ### [Design - Reference Architectures](/en-us/tech-zone/design/reference-architectures.html)
 
+[Flexible Work](/en-us/tech-zone/design/reference-architectures/flexible-work.html) - Learn how to design an environment to support a flexible work style without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Virtual Apps and Desktops, SD-WAN, Endpoint Management and Security Analytics.
+
 [Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the microapps platform service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
 
 [Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
