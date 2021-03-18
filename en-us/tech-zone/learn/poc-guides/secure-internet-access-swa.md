@@ -22,7 +22,7 @@ This guide showcases how to perform the following actions:
 *  Logging into Citrix Secure Internet Access (CSIA)
 *  Interfacing CSIA Security Groups with Groups from Domain Integration
 *  Configuring the Proxy settings of the CSIA cloud platform
-*  Configure web security policies to allow/deny access to certain websites or categories via CSIA Console.
+*  Configure web security policies to allow/deny access to certain websites or categories via the CSIA Console.
 *  Applying Policies to Security Groups
 *  Download the CSIA agent (Cloud Connector)
 *  Configure the CSIA agent (Cloud Connector) via Agent Policy
@@ -116,7 +116,7 @@ In this section we focus on the configuration of CSIA within the administration 
 ⋅ xendesktop.net & \*.xendesktop.net  
 ⋅ cloudapp.net & \*.cloudapp.net  
 ⋅ netscalergateway.net & \*.netscalergateway.net  
-6.  Note the node shown "**node-clusterxxxxxx-swg.ibosscloud.com:80**". This should match the customer’s SWG node in Node Collection Management  
+6.  Note the node shown "**node-clusterxxxxxx-swg.ibosscloud.com:80**". This must match the customer’s SWG node in Node Collection Management  
    ![Citrix SIA PAC NODE SHOWN](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_8.png)
 
 ### Interfacing CSIA Security Groups with Groups from Domain Integration
@@ -129,7 +129,7 @@ The strategy for integrating domain group information into the CSIA cloud platfo
 
 To demonstrate the execution of this concept, let's map the domain credentials of a Windows user into a security group on the CSIA cloud platform.
 
-1.  Open command prompt on the target computer, and run the command "net user (user name) /domain"  
+1.  Open a command prompt on the target computer, and run the command "net user (user name) /domain"  
 2.  Gather the aliases of groups reported back by the domain controller.  
    ![Citrix SIA AD ALIASES OR GROUPS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_9.png)
 3.  Go to the CSIA cloud platform and edit either the **Group Name** or the **Alias Name** to correspond to one of the groups reported by the domain user.  
@@ -155,7 +155,7 @@ In this section we focus on the configuration of CSIA Web Security Policies with
 
 1.  Navigate to the **Web Security** module.  
    ![Citrix SIA WEB SECURITY](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_15.png)
-2.  For web security policies that have a group-based implementation available a drop-down list will be present at the top of the page above the configuration form for the policy. The current status of this drop-down list menu will indicate the which group's policy configuration you are currently viewing.  
+2.  For web security policies that have a group-based implementation available a drop-down list will be present at the top of the page above the configuration form for the policy. The current status of this drop-down list menu will indicate which group's policy configuration you are currently viewing.  
    ![Citrix SIA WEB SECURITY GROUP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_16.png)
 3.  Click the **Group** drop-down list menu and then **select group** that you want to reconfigure for the current web security policy.  
    ![Citrix SIA WEB SECURITY GROUP 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_17.png)
@@ -219,7 +219,7 @@ Example:
 Settings relevant to web categories are configured with toggles under **Additional Settings**. Configuring a toggle to **Yes** will enable the setting while configuring a toggle to **No** will disable the setting. For a full set of descriptions for all available web category settings refer to the following table:
 | Feature  | Description  |
 |---  |---  |
-| Enable Logging  | Enable and disable logging of violation attempts for the current set of blocked website categories. Log reports may be viewed on the CSIA Reports page. The report information includes date, time, user, website address, and category of the violation.  |
+| Enable Logging  | Enable and disable logging of violation attempts for the current set of blocked website categories. Log reports may be viewed on the CSIA Reports page. The report information includes the date, time, user, website address, and category of the violation.  |
 | Enable Stealth Mode  | It allows you to stealthily monitor Internet activity without blocking access to forbidden sites. With both Logging and Stealth Mode enabled, you can monitor Internet web surfing activity by viewing the log reports on the CSIA Reports page while remaining unnoticed by Internet users on the network.  Note: Websites and online applications will not be blocked when the action for the web category is configured to Stealth Mode.  |
 | Enable HTTP Scanning on Non-Standard Ports  | If this feature is enabled, CSIA scans for HTTP web requests on non-standard ports.  |
 | Allow Legacy HTTP 1.0 Requests  | If this feature is enabled, CSIA allows HTTP 1.0 requests that are missing the "HOST" header. Disabling this feature provides a higher level of Security and makes bypassing the Security more difficult. If this feature is enabled, it may offer more compatibility with older non-HTTP 1.1 compliant software.  |
@@ -291,7 +291,7 @@ Keyword filtering is used to inspect URLs for specific words. If a keyword is id
 
 You can enable filtering for pre-defined lists of Adult and High-Risk keywords or add more keywords manually.
 
-The Pre-defined Keyword Lists contain common Adult and High-Risk keywords. Wildcard matching is applied to all keywords in these lists. A wildcard match recognizes the keyword's sequence of characters anywhere in the URL, including the hostname. The High-Risk list generates an email to the recipient of alert emails when a High-Risk keyword is detected by the Reporting & Analytics functionality of the CSIA cloud platform.
+The Pre-defined Keyword Lists contain common Adult and High-Risk keywords. Wildcard matching is applied to all keywords in these lists. A wildcard match recognizes the keyword's sequence of characters anywhere in the URL, including the host name. The High-Risk list generates an email to the recipient of alert emails when a High-Risk keyword is detected by the Reporting & Analytics functionality of the CSIA cloud platform.
 
 1.  To enable either one of the keyword lists, set the Adult or High-Risk toggle to **Yes**. Click **Save**.  
    ![Citrix SIA KEYWORD ALLOW](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_40.png)
@@ -359,7 +359,7 @@ The .msi installation packages can be downloaded directly from the CSIA admin co
 
     | Setting  | Recommended Value  |
     |---  |---  |
-    | Multi-User Mode:  | Disable Multi-User/Terminal Server Mode - Enable to support multiple user sessions when running a terminal server. This should be enabled for terminal servers even if users are not logged in simultaneously.  |
+    | Multi-User Mode:  | Disable Multi-User/Terminal Server Mode - Enable to support multiple user sessions when running a terminal server. This needs to be enabled for terminal servers even if users are not logged in simultaneously.  |
     | Use Machine Name for User name:  | Disable Setting - Use the user account name as the user name.  |
     | Use UPN for User name:   | Disable Setting - Use the Security Account Manager (SAM) account name, such as DOMAIN\user name.  |
     | Redirect All Ports:  | Enable Setting  |
@@ -370,7 +370,7 @@ The .msi installation packages can be downloaded directly from the CSIA admin co
     | Enable Windows Desktop App: (Agent will not run-on Multi-User Deployments)  | Enable Setting  |
     | Allow End Users to Disable Security:  | Disable Setting  |
     |   Require Password to Disable Security:  | Enable Setting  |
-    | Require Password to View Diag Info:  | Enable Setting  |
+    | Require Password to View Diagonstics Info:  | Enable Setting  |
 
 6.  Click **Dynamic Linking** and select the Groups you want to assign the policy too.  
    ![Citrix SIA AGENT POLICIES DYNAMIC LINKING](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_55.png)
@@ -403,7 +403,7 @@ Orca.msi is available in the Windows **Cloud Connector** “Download All” opti
 
     | Setting  | Recommended Value  |
     |---  |---  |
-    | Multi-User Mode: (PARAM_MULTI_USER_SUPPORT)  | (0): Disable multi-user mode.  Enable to support multiple user sessions when running a terminal server. This should be enabled for terminal servers even if users are not logged in simultaneously.  |
+    | Multi-User Mode: (PARAM_MULTI_USER_SUPPORT)  | (0): Disable multi-user mode.  Enable to support multiple user sessions when running a terminal server. This needs to be enabled for terminal servers even if users are not logged in simultaneously.  |
     | Terminal Server Mode: (PARAM_TERMINAL_SERVER_MODE)  | (0): Disabled - this appears to be deprecated in favor of Multi-User Support  |
     | Use Machine Name for User name: (PARAM_USE_MACHINE_NAME_FOR_USERNAME)  | (0): Disabled - Use the user account name as the user name.  |
     | Redirect All Ports: (PARAM_REDIRECT_ALL_PORTS)  | (1): Enabled - Redirect all ports to the proxy.  |
@@ -562,7 +562,7 @@ See your Unified Endpoint Management Documentation for deploying .PKG file.
 There is a multitude of policies and variables within and surrounding the operations of the CSIA cloud platform that can interfere with properly blocking configured keywords. Refer to the following;
 
 1.  Ensure that SSL decryption is active for this website. Keywords cannot be observed or controlled for HTTPS websites.
-2.  If the source IP of the client workstation or the destination IP of the webserver has been added to the **Network > Bypass IP Ranges** list, web security controls is not be enforced.
+2.  If the source IP of the client workstation or the destination IP of the webserver has been added to the **Network > Bypass IP Ranges** list, web security controls will not be enforced.
 3.  Keywords configured to block will not take effect if the website is added to the **Web Security > Allow List without the Keyword/Safesearch** option enabled. With the Keyword / SafeSearch check box selected, Web Gateway allows access to the website but still to enforce Keyword controls and Safesearch.
 4.  The keyword contains asterisks, instead remove the asterisks and activate Wildcard matching for the keyword if that is the desired effect.
 5.  The keyword has multiple words, and Wildcard Matching is not enabled, or the spaces were not indicated with a plus sign ("+").
@@ -605,7 +605,7 @@ In some situations, a word in one of the built-in lists of keywords may inadvert
    ![Citrix SIA REPORTING](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_77.png)
 2.  Under **Splunk Integration**, click **Actions**, then click **Add Server**.  
    ![Citrix SIA REPORTING 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_78.png)
-3.  Add the Address/Host name of the Splunk Server to the “Hostname” and the port number chosen on the Splunk server. Next, in the dropdown box “Splunk Integration Protocol,” choose a protocol.
+3.  Add the Address/Host name of the Splunk Server to the “Host name” and the port number chosen on the Splunk server. Next, in the drop-down menu “Splunk Integration Protocol,” choose a protocol.
 The options available when adding a Splunk server appear as follows:  
    ![Citrix SIA REPORTING 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_79.png)
 4.  You can also configure the Splunk server's integration protocol as HEC. Configuring integration with a Splunk server using the HEC protocol requires the acquisition of the HEC token from the configuration of the Splunk server. Place the retrieved token into the Token field below the Splunk Integration Protocol selection drop-down list menu.  
@@ -620,7 +620,7 @@ The options available when adding a Splunk server appear as follows:
 
 The CSIA proxy port may be changed, but you mustn't attempt to change the proxy port to one that the gateway uses for other services.
 
-Ports that should **not** be used include: 53, 139, 199, 443, 445, 953, 1080, 1344, 5432, 6001, 7009, 7080, 7443, 8008 ,8015, 8016, 8025, 8026, 8035, 8036, 8080, 8200, 8201, 9080, 9443, 17500, 22022
+Ports that **cannot** be used include: 53, 139, 199, 443, 445, 953, 1080, 1344, 5432, 6001, 7009, 7080, 7443, 8008 ,8015, 8016, 8025, 8026, 8035, 8036, 8080, 8200, 8201, 9080, 9443, 17500, 22022
 
 _**All other ports are an acceptable alternative to the default port.**_
 
@@ -657,7 +657,7 @@ _**Note:** Be careful with the “Not Rated” category, as it matches against m
 | Education | Sites that provide educational services such as schools and universities, in addition to sites that offer educational materials for sale or reference. Includes websites that offer information on education or trade/vocational/career schools and programs. Also includes sites that are sponsored by schools, educational facilities, faculty, or alumni groups. |
 | Entertainment | Sites that contain or promote television, movies, magazines, radio, books, food, fashion, and lifestyle. More specifically, sites that provide information about or promote popular culture including (but not limited to) film, film critiques, and discussions, film trailers, box office, television, home entertainment, music, comics, graphic novels, literary news, and reviews, in addition to other entertainment-oriented periodicals, interviews, fan clubs, celebrity gossip, podcasts, and music and film charts, show, events, quotes, memes, lyrics, musicians, bands, theater arts, drama, opera, orchestra. |
 | Extreme* | Sites containing intensely vulgar, graphic, shocking, or disgusting content that would be considered highly offensive to most individuals. |
-| File Sharing | Sites for services that provide online file storage, file sharing, synchronization of files between devices, and/or network-based data backup and restoration. These services may provide the means to upload, download, paste, organize, post, and share documents, files, computer code, text, non-copyright-restricted videos, music, and other electronically formatted information in virtual data storage. Additionally, this category covers services that distribute software to facilitate the direct exchange of files between users. |
+| File Sharing | Sites for services that provide online file storage, file sharing, synchronization of files between devices, and or network-based data backup and restoration. These services may provide the means to upload, download, paste, organize, post, and share documents, files, computer code, text, non-copyright-restricted videos, music, and other electronically formatted information in virtual data storage. Additionally, this category covers services that distribute software to facilitate the direct exchange of files between users. |
 | Finance | Sites that contain content about banking, financial news and tips, the stock market, investing, credit cards, insurance, and lending. |
 | Food | Sites that contain content related to restaurants, food, dining, in addition to sites that list, review, discuss, advertise and promote food, catering, dining services, cooking, and recipes. |
 | Forums | Sites containing message boards, online chat rooms, and discussion forums |
