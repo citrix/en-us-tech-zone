@@ -86,11 +86,9 @@ At a high-level:
 
 The subsequent sections provide greater detail into specific design decisions for CompanyA’s flexible work reference architecture.
 
-## Detailed Architecture
+## User Layer
 
-### User Layer
-
-#### Home Network Connectivity
+### Home Network Connectivity
 
 For many users, accessing their Workspace is simply a matter of connecting to their home network, which will be shared between work and personal use. However, based on certain end user requirements, CompanyA  requires either redundant connections or a secured home network.
 
@@ -303,3 +301,7 @@ To manage management easier for the distributed SD-WAN deployment, CompanyA will
 With Orchestrator, the administrator makes all necessary configuration settings within the cloud service. Once connected to the network, the SD-WAN 110 appliances registers with the cloud service and receives the configuration information.
 
 The cloud-based service makes managing the distributed SD-WAN environment easier for the administrator.
+
+## Sources
+
+To make it easier for you to plan a flexible work solution, we would like to provide you with [source diagrams](https://citrix.sharefile.com/d-sa8ea1c024deb43109baca85856907c64) that you can adapt.
