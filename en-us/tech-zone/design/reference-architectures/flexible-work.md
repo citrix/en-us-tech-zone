@@ -86,11 +86,9 @@ At a high-level:
 
 The subsequent sections provide greater detail into specific design decisions for CompanyA’s flexible work reference architecture.
 
-## Detailed Architecture
+## User Layer
 
-### User Layer
-
-#### Home Network Connectivity
+### Home Network Connectivity
 
 For many users, accessing their Workspace is simply a matter of connecting to their home network, which will be shared between work and personal use. However, based on certain end user requirements, CompanyA  requires either redundant connections or a secured home network.
 
