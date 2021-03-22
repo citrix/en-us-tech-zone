@@ -22,17 +22,19 @@ TODO PC - Goal of this section is to explain to security team (NOT Citrix team) 
 
 ## Planning
 
-Planning is the one of the most crucial steps before starting to harden your Virtual Delivery Agent (VDA) operating system. Recommendations below apply to all three levels of recommendations (Minimum, Recommended and High Security) as planning is foundational to any successful and secure deployment. During planning, your goal is to visualize and understand security "score" of each of your applications, images and running virtual machines.
+Planning is the one of the most crucial steps before you start to harden your Virtual Delivery Agent (VDA) images. During planning, your goal is to visualize and understand security "score" of each of your applications, images and running virtual machines, understand capabilities that are required by your users and backends that you are connected to. This assessment can help to better identify which applications should be hosted together, provide clear picture of network segmentation and security requirements for each of the planned images.
+
+While you might be tempted to simply skip this phase and jump right to the securing of your images, don't underestimate importance of proper planning.
 
 ### What will be published?
 
-There are three main options in Citrix to deliver resources with published applications (single application), published desktops (Virtual desktop) and Remote PC Access (secure connection to an existing machine). With each of these publishing methods we recommend applying the same policies to each of these systems since they are accessed remotely.
+There are three main options in Citrix to deliver resources with published applications (single application), published desktops (Virtual desktop) and Remote PC Access (secure connection to an existing machine). With each of these publishing methods we recommend applying the same policies to each of these systems since they are accessed remotely. Each of these models have different security implications.
 
 ### Software Requirements
 
 Each operating system have generic security features, but can also have unique security features that are available only in specific versions This is especially important when comparing different builds of Windows 10 - review all available security features and improvements and have good strategy for using current releases. The requirements and version of the software deployed in any operating system also affects the recommend deployment and security settings that can be deployed.
 
-TODO link to workload segmentation
+TODO MZ - link to workload segmentation
 
 ### User Requirements
 
@@ -105,9 +107,9 @@ Example:
 
 We recommend following the guidelines from each compliance body at a minimum, but if possible, depending on those requirements we recommend evaluating other common frameworks from Microsoft, NIST and even third parties like CIS and HyTrust for very specific recommendations for Domains, Desktops, Servers and more. These frameworks have many options to make the deployment much more secure and reduce your attack surface along with helping accelerate your audits and reduce your findings.
 
-## Application Control
+## Application Escape Control
 
-Application control is a unique security benefit of published applications. In traditional desktop deployments, starting point for an attacker (after obtaining user credentials) is usually a full desktop access (Explorer shell). This is different in a typical Citrix deployments. With published applications, attacker can only control mouse, keyboard and his access is limited to visible user interface of the published application - he does not have an access to underlying operating system or any other application installed on the same machine. First step for attacker is to escape from published application (also known as application breakout or application jailbreak) and get access to the shell or more powerful tools like command prompt or PowerShell.
+Application escape control is a unique security benefit of published applications. In traditional desktop deployments, starting point for an attacker (after obtaining user credentials) is usually a full desktop access (Explorer shell). This is different in a typical Citrix deployments. With published applications, attacker can only control mouse, keyboard and his access is limited to visible user interface of the published application - he does not have an access to underlying operating system or any other application installed on the same machine. First step for attacker is to escape from published application (also known as application breakout or application jailbreak) and get access to the shell or more powerful tools like command prompt or PowerShell.
 
 How hard it is to prevent application escape depends on specific application. For some applications (for example self-developed enterprise applications), it can be fairly easy to block an app escape attempt. For others (for example browsers or Microsoft Office), it is significantly harder to secure them. In this section, we will talk about few most common app escape techniques. Even for applications that are very hard to secure (for example Microsoft Office, especially if VBA support is required), implementing controls to prevent app breakout is benefitial, as it gives you an opportunity to regonize a compromised account by detecting failed attempts to break out.
 
@@ -121,9 +123,13 @@ Another common approach is to disable access to `Ctrl + Alt + Del` combination. 
 
 Another common method how to perform an application escape is to try and abuse the open or save dialogs. Default dialogs used in Windows OS (`OpenFileDialog` and `SaveFileDialog`) not only allow you to browse through filesystem, but also provide access to default context menu from Explorer.
 
-TODO - including printers
+TODO - Insert picture showing cmd.exe in PDF save dialog.
+
+TODO - including printers, disable right-click (context menu)
 
 ### Using protocol handlers
+
+TODO - Insert picture showing file:// URL in Excel cell
 
 TODO - HTTP/FILE/HTTPS. Often used with Help or About. Recommend to disable .chm format (compiled HTML help) and also to remove (if possible) Help functionality (as they typically include HTTP links)
 
