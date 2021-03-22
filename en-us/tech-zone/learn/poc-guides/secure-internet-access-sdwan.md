@@ -374,7 +374,7 @@ In Citrix SIA Portal, Go to **Home -> Node Collection Management -> Node Groups 
 
 ### Verify that HOST traffic is proxied to Citrix SIA via IPsec Tunnel
 
-After the tunnel is up and running, verify the proxy IP using `http://ipchicken.com` or `http://whatsmyip.com`
+After the tunnel is up and running, verify the proxy IP using [https://ipchicken.com](https://ipchicken.com) or [https://whatsmyip.com](https://whatsmyip.com)
 
 If you are either using a Citrix SIA Cloud Connector (SIA Agent) or an IPsec tunnel (without agent), the proxy IP is ONE of the Cloud Nodes provided by the Citrix SIA Platform for the account used
 
@@ -635,7 +635,7 @@ Google Browser Safe Search enablement:
 
 ### Verification of Anti Malware Policy enforcement and Reporting to check traffic status
 
-*  Access <https://www.eicar.org/?page_id=3950>
+*  Access [https://www.eicar.org/?page_id=3950](https://www.eicar.org/?page_id=3950)
 *  Scroll down and click download the 68-byte file
 
    ![Prepare Malware Download Eicar](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_preparemalwaredownloadeicar.png)
@@ -680,7 +680,7 @@ Verifying via CSIA Reporting Section
 
 ### Verification of DLP (Data Loss Prevention) Policy enforcement and Reporting to check traffic status
 
-*  Goto <https://dlptest.com> (a site to verify Data Loss Prevention tests)
+*  Goto [https://dlptest.com](https://dlptest.com) (a site to verify Data Loss Prevention tests)
 *  Click Sample Data and view some sample information
 *  Click XLS File (This downloads the file)
 
@@ -689,7 +689,7 @@ Verifying via CSIA Reporting Section
 *  See the file gets downloaded with the name “sample-data.xls” under Downloads folder (or folder you have selected)
 *  Use this file to test DLP in a new site next
 
-*  Now open a new browser incognito tab and type `http://dataleaktest.com`
+*  Now open a new browser incognito tab and type [https://dataleaktest.com](https://dataleaktest.com)
     *  Click Upload Test
     *  In the Upload test page, scroll down and Click “SSL ON”
     *  After clicking on SSL ON, you can see the message on the black screen “System Ready for Next DLP Test with SSL ON”
@@ -1016,7 +1016,7 @@ MALWARE Protection Configuration:
 
 ### Verification of Anti Malware Policy enforcement and Reporting to check traffic status
 
-*  Access <https://www.eicar.org/?page_id=3950>
+*  Access [https://www.eicar.org/?page_id=3950](https://www.eicar.org/?page_id=3950)
 *  Scroll down and click download the 68 byte file
 
    ![Prepare Malware Download Eicar](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_preparemalwaredownloadeicar.png)
@@ -1063,7 +1063,7 @@ Data Loss Prevention Configuration
 
 ### Verification of DLP (Data Loss Prevention) Policy enforcement and Reporting to check traffic status
 
-*  Goto <https://dlptest.com> (a site to verify Data Loss Prevention tests)
+*  Goto [https://dlptest.com](https://dlptest.com) (a site to verify Data Loss Prevention tests)
 *  Click Sample Data and view some sample information
 *  Click XLS File (This downloads the file)
 
@@ -1071,7 +1071,7 @@ Data Loss Prevention Configuration
 
 *  See the file gets downloaded with the name “sample-data.xls” under Downloads folder (or folder you have selected)
 
-*  Now open a new browser incognito tab and type `http://dataleaktest.com`
+*  Now open a new browser incognito tab and type [https://dataleaktest.com](https://dataleaktest.com)
     *  Click Upload Test
     *  In the Upload test page, scroll down and Click “SSL ON”
     *  After clicking on SSL ON, you can see the message on the black screen “System Ready for Next DLP Test with SSL ON”
