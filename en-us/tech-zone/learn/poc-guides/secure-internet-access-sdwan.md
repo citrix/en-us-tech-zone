@@ -50,7 +50,7 @@ This guide showcases how to perform the following actions:
 Following you see a flow diagram for 3 primary use cases:
 
 1)  Branch Users
-2)  Remote Users WITHOUT Workspace Service 
+2)  Remote Users WITHOUT Workspace Service
 3)  Remote Users WITH Workspace Service
 
 ![Topology - Simplified Operations for Day N](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_integrationtopology.png)
