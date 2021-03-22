@@ -9,7 +9,7 @@ description: Learn how to set up Citrix Secure Internet Access in conjunction wi
 
 ## Introduction
 
-This Tech Brief explains how to deploy Citrix SIA with Citrix SD-WAN
+This Tech Brief explains how to deploy Citrix SIA with Citrix SD-WAN.
 
 ## Overview
 
@@ -38,7 +38,7 @@ This guide showcases how to perform the following actions:
 
 *  **SD-WAN’s multi-wan link reliable IPsec tunnel for local subnets based Secure Internet access of agentless devices** BYOD or personal laptops that are not managed by the enterprise can be secured via Citrix SD-WAN + Citrix SIA's highly reliable IPsec tunnel. The reliability is achieved via the tunnel having multiple wan links.
 
-*  **Simple security posture for Guest domains in a branch via DNS redirection or IPsec tunnel** With a separate tunnel/Local subnet for guest domains and related security group mapping
+*  **Simple security posture for Guest domains in a branch via DNS redirection or IPsec tunnel** With a separate tunnel/Local subnet for guest domains and related security group mapping.
 
 ### Benefits of Integration/Automation/Management between Citrix SIA and SD-WAN
 
@@ -47,9 +47,19 @@ This guide showcases how to perform the following actions:
 
 ## Citrix SD-WAN + SIA Overall Topology
 
+Following you see a flow diagram for 3 primary use cases:
+
+1)  Branch Users
+2)  Remote Users WITHOUT Workspace Service 
+3)  Remote Users WITH Workspace Service
+
 ![Topology - Simplified Operations for Day N](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_integrationtopology.png)
 
 ## Citrix SD-WAN + SIA Integration Use cases
+
+Citrix SD-WAN and Citrix SIA integration offers flexibility and choice for a mixed profile of Branch users in an enterprise. An enterprise typically has a mix of managed and unmanaged devices in the Branch where a Citrix SD-WAN exists.
+With the integration, Citrix SIA agent allows to securely breakout managed devices traffic to the Citrix SIA cloud via the SD-WAN using Internet service (with Load Balancing).
+The unmanaged devices like BYOD and Guest users are secured using the IPsec tunnel between Citrix SD-WAN and Citrix SIA as the tunnel endpoints.
 
 ![Use Cases Illustration - Simplified Operations for Day N](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_integrationusecases.png)
 
@@ -59,9 +69,9 @@ This guide showcases how to perform the following actions:
 
 *  Citrix SD-WAN 110/210 for an On-Premises hardware based PoC.
     *  Can be any appliance you choose for the PoC. All Citrix SD-WAN appliances support the Citrix SIA offering.
-    *  **Note:** PoC can also be performed on an Azure VPX based SD-WAN with a windows VM behind the VM on the LAN with/without a Citrix SIA agent (also known as Citrix SIA Cloud Connector)
-*  A Windows or MAC Laptop
-*  Agent Windows/MAC MSI download from Citrix SIA cloud platform
+    *  **Note:** PoC can also be performed on an Azure VPX based SD-WAN with a windows VM behind the VM on the LAN with/without a Citrix SIA agent (also known as Citrix SIA Cloud Connector).
+*  A Windows or MAC Laptop.
+*  Agent Windows/MAC MSI download from Citrix SIA cloud platform.
 
 ### Network Requirements
 
@@ -73,7 +83,7 @@ This guide showcases how to perform the following actions:
 
     Recommended Best Practice:
 
-    It is a recommended best practice that the SIA agent traffic from corporate managed devices be bypassed from the local IPsec tunnel 
+    It is a recommended best practice that the SIA agent traffic from corporate managed devices be bypassed from the local IPsec tunnel.
     of the SD-WAN in the branch edge. 
     This allows direct proxy to the Citrix SIA where enterprise OU’s or security groups can be exercised directly
     via cloud connectors on the managed devices.
@@ -91,9 +101,9 @@ All the specific IP/Protocols in the Orchestrator bypass custom application, is 
 **Few things to get handy from the Citrix SIA platform are:**
 
 *  Citrix SIA CloudGateway node IP’s part of the gateway cluster
-    *  The Citrix SIA agent connects to the gateway nodes over port 443. Our configuration of bypass custom application ensures that the agent traffic is sent via the Internet service and bypassed from the IPsec tunnel
+    *  The Citrix SIA agent connects to the gateway nodes over port 443. Our configuration of bypass custom application ensures that the agent traffic is sent via the Internet service and bypassed from the IPsec tunnel.
 
-*  Citrix SIA Reporter node IP is part of the node group management. The reporter is contacted for sending stats/reporting from the cloud connector (SIA Agent)
+*  Citrix SIA Reporter node IP is part of the node group management. The reporter is contacted for sending stats/reporting from the cloud connector (SIA Agent).
 
 ![Bypass CSIA Agent Orchestrator Policy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_ccbypassorchestrator.png)
 
@@ -125,12 +135,12 @@ The administrator can either route “ALL APPS” or specific applications throu
     Note
     If specific apps are chosen, then only specific application routes are created with the Citrix SIA as the service type to be 
     steered through the IPsec Tunnel. 
-    The Citrix SIA service is INTRANET type service by default
+    The Citrix SIA service is INTRANET type service by default.
 
 **Important Recommendation when using Citrix SIA service for ALL APPS routing along with Internet Service**
-If an administrator chooses “ALL APPS” to be routed via Citrix SIA, a DEFAULT route 0.0.0.0/0 created with Citrix SIA service with a cost of 45 by default
+If an administrator chooses “ALL APPS” to be routed via Citrix SIA, a DEFAULT route 0.0.0.0/0 created with Citrix SIA service with a cost of 45 by default.
 
-An Internet service exists or is created on the SD-WAN for a specific use case. For instance - Internet service to breakout CSIA agent related traffic, Internet service to breakout Orchestrator traffic or a brownfield deployment where an internet service exists already for some scenarios. Note this, when creating the SIA service with the Internet service (for proper routing)
+An Internet service exists or is created on the SD-WAN for a specific use case. For instance - Internet service to breakout CSIA agent related traffic, Internet service to breakout Orchestrator traffic or a brownfield deployment where an internet service exists already for some scenarios. Note this, when creating the SIA service with the Internet service (for proper routing).
 
 **General Recommendation :**
 
@@ -142,7 +152,7 @@ An Internet service exists or is created on the SD-WAN for a specific use case. 
 
 Since by design, the Internet Service cost is 5 and the CSIA service cost is 45, ALL traffic prefers to be routed over Internet service instead of CISA service. So it is good to be aware of routing when Internet and CSIA services co-exist in the deployment.
 
- Use one of the preceding 2 recommendations. Or you can modify the internet service cost as “50” so that CSIA service is more preferred (with a cost of 45)
+ Use one of the preceding 2 recommendations. Or you can modify the internet service cost as “50” so that CSIA service is more preferred (with a cost of 45).
 
 ![Route Specific Apps via Citrix SIA from Orchestrator](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_inetallappschangecost.png)
 
@@ -1094,3 +1104,7 @@ Verify Reporter Logs for DLP events:
 *  The DLP upload gets blocked and a splash page is presented to the user
 
    ![DLP reporter stats via SSL enabled Tunnel](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_repoterdlpsslenabledtunnel.png)
+
+## Summary
+
+In this Proof-of-Concept guide, you learned how to integrate an organization’s edge SD-WAN devices with Citrix SIA Cloud. Together Citrix SD-WAN and Citrix SIA provide Enterprises with performance improvements and security benefits along with a great user experience.
