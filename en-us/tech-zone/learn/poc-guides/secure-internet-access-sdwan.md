@@ -431,7 +431,7 @@ If you are either using a Citrix SIA Cloud Connector (SIA Agent) or an IPsec tun
 
     *  Let the installer download and then double-click the installer in the download pane or from the downloads folder where it got stored
 
-        ![Citrix SIA Agent Install CSIA Agent on Windows](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-installcsiaagent.png)
+        ![Citrix SIA Agent Install CSIA Agent on Windows](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_installcsiaagent.png)
 
     *  After double-click, a PoP up is presented. Click “More Info” and then Click “Run Anyway”
         *  clicking on Run Anyway starts installing the msi file
@@ -555,7 +555,7 @@ Create a simple allow list to allow ONLY Facebook from the entire Friendship cat
 
 *  Notice the allow list showing the URL added to be allowed
 
-   ![allow list Rule Addition Confirmation](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_ruleaddConfirm.png)
+   ![allow list Rule Addition Confirmation](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_ruleaddverify.png)
 
 ### Verification of Web Security allow list Policy enforcement and Reporting to check traffic status
 
@@ -794,7 +794,7 @@ Before verification of policy enforcement via the IPsec tunnel, create the secur
 *  Open an incognito browser tab and access Gambling site 777.com from the Gambling category
 *  A splash page is presented due to the block list policy enforcement
 
-   ![Web Category 777 blocked via IPsec Tunnel](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-webcategoryblockviatunnel.png)
+   ![Web Category 777 blocked via IPsec Tunnel](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_webcategoryblockviatunnel.png)
 
 *  From the reporter we can see in even logs that the access to 777.com is categorically Blocked due to GAMBLING section
     *  Click Reporting and Analytics -> Logs -> Event Logs
@@ -1029,7 +1029,7 @@ Verification
 
 *  Reporter also indicates the Malware protection enforced
 
-   ![Malware Reporter Stats via SSL Enabled IPsec Tunnel](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-reportermalwaresslipsectunnel.png)
+   ![Malware Reporter Stats via SSL Enabled IPsec Tunnel](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_reportermalwaresslipsectunnel.png)
 
 ### DLP (Data Loss Prevention)- Configuration of DLP Policies from Citrix SIA portal
 
