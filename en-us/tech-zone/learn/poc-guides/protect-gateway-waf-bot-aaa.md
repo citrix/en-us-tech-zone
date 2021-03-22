@@ -37,13 +37,13 @@ This guide assumes a working knowledge of Citrix WAF deployment, Bot Security de
 
 ## Bot Protection
 
-### Bot Signatures ###
+### Bot Signatures
 
 From Security > Citrix Bot Management > Signatures, select the Default Bot Signatures and click the **Clone** button. Apply a descriptive name, then click create.
 
 ![Bot Profile Signatures](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botsigclone.png)
 
-### Create a Bot Management Profile and Policy ###
+### Create a Bot Management Profile and Policy
 
 From Security > Citrix Bot Management > Profiles, select Add to create a new Bot Management Profile. Give the profile a descriptive name and select the previously created signature set.
 
@@ -96,7 +96,7 @@ It is not possible to bind a WAF policy directly to a Gateway or AAA virtual ser
 
 The WAF protection policy uses an HTTP Callout to protect the logon page and invalidate the authentication flow if a WAF exception is caught. This configuration requires a pattern set (Patset) containing the login URLs, a dummy service and load balancing virtual server, an HTTP callout, and the WAF policy and configuration.
 
-### Patset ###
+### Patset
 
 Navigate to AppExpert > Pattern Sets and select 'Add'. Give the new Pattern Set a name, then select 'Insert' and add the following patterns:
 
@@ -114,7 +114,7 @@ bind policy patset GW_VPN_Patset "/cgi/login" -index 1
 bind policy patset GW_VPN_Patset "/nf/auth/doAuthentication.do" -index 2
 ```
 
-### Dummy Virtual Server and Service ###
+### Dummy Virtual Server and Service
 
 A dummy virtual server is used for the HTTP Callout. This virtual server does not need to be publicly available, so it can be non-addressable. The virtual server DOES need to be up, thus the backend server needs to be up and responding on port 80. A new service and virtual server will be created in this guide, but a pre-existing virtual server can be used.
 
@@ -126,7 +126,7 @@ Next create the load balancing virtual server by going to Traffic Management > L
 
 ![Load Balancing Virtual Server](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_lbvirtualserver.png)
 
-### HTTP Callout ###
+### HTTP Callout
 
 Navigate to AppExpert > HTTP Callouts and select 'Add'. Give the HTTP Callout a descriptive name, select 'Virtual Server' to receive the callout request, and select the dummy virtual server. In the Request to send to the server, select the type as Expression-Based, set the scheme to 'http' and set the Full Expression to the following:
 
@@ -148,7 +148,7 @@ Alternatively, the HTTP Callout can be created from the CLI:
 add policy httpCallout GW_VPN_WAF_Callout -vServer dummy-vserver-here -returnType BOOL -fullReqExpr HTTP.REQ.FULL_HEADER.BEFORE_STR("\r\n\r\n")+"\r\nGW_VPN-WAF_Callout:abc\r\n\r\n"+HTTP.REQ.BODY(2048) -scheme http -resultExpr true
 ```
 
-### Authentication Policy ###
+### Authentication Policy
 
 An existing LDAP authentication policy will be modified to leverage the HTTP Callout. Open the existing authentication policy by going to Security > AAA Aplication Traffic > Policies > Authentication > Advanced Policies > Policy, select the existing policy and choose 'Edit'. Modify the existing expression to the following:
 
@@ -161,7 +161,7 @@ HTTP.REQ.URL.CONTAINS_ANY("GW_VPN_Patset") && SYS.HTTP_CALLOUT(GW_VPN_WAF_Callou
 
 **Note: this expression can be used with any authentication policy where you want to protect the form fields on the logon page.**
 
-### WAF Profile and Policy ###
+### WAF Profile and Policy
 
 To build the WAF profile go to Security > Citrix Web Application Firewall > Profiles and choose 'Add'. Give the profile a descriptive name and select Web Application (HTML) and Basic Defaults. Open the newly created profile by choosing 'Edit' then select 'Security Checks' from the right hand column.
 
@@ -215,7 +215,7 @@ bind lb vserver dummy-vserver-here -policyName gw_appfw_policy -priority 100 -go
 
 There are two configurations related to authentication - encrypting user credentials from the client to the ADC within nFactor and IP reputation based MFA.
 
-### Encrypting User Credentials ###
+### Encrypting User Credentials
 
 The following setting enables the ADC to encrypt the credential set when the user submits the form data using ECDHE algorithms. To enable this setting, navigate to Citrix Gateway > Global Settings > Authentication Settings > Change Authentication AAA settings and set 'Login Encryption' to **ENABLED**.
 
@@ -228,7 +228,7 @@ Alternatively, this can be done from the CLI as follows:
 set aaa parameter -loginEncryption ENABLED
 ```
 
-### IP Reputation Based MFA ###
+### IP Reputation Based MFA
 
 IP Reputation can be built into the advanced authentication flow to prompt the user for an additional factor if the source address is flagged in the IP Reputation database or in a manually maintained dataset of addresses.
 
