@@ -45,7 +45,7 @@ The goal of the document is to help answer FAQs on Autoscale to achieve best cos
 
 ### How can the admin choose the number of **reserved instances (RI)** to purchase?
 
--  Observe the [capacity utilization](/en-us/citrix-virtual-apps-desktops-service/monitor/site-analytics/autoscale-managed-machines.html) data under Monitor > Trends > Machine Usage over a time period (that covers all variations such as seasonality, work force changes and so on.) in the environment. The minimum capacity that is powered on for this time period can be a good indication of the minimum reserved instances you might buy. Some other parameters that define this are:
+-  Observe the [capacity utilization](/en-us/citrix-virtual-apps-desktops-service/monitor/site-analytics/autoscale-managed-machines.html) data under **Monitor > Trends > Machine Usage** over a time period (that covers all variations such as seasonality, work force changes and so on.) in the environment. The minimum capacity that is powered on for this time period can be a good indication of the minimum reserved instances you might buy. Some other parameters that define this are:
 
     -  Is there a fixed schedule say 9 AM - 5 PM? That schedule would mean machines can be shut down 66% of the time and achieve close to reserved instances cost savings of ~70%.
     -  More RIs than the minimum capacity usage can be bought depending on workload usage and savings. For instance, say if there are 10% more machines running more than 50% of the time.
