@@ -555,7 +555,7 @@ Create a simple allow list to allow ONLY Facebook from the entire Friendship cat
 
 *  Notice the allow list showing the URL added to be allowed
 
-   ![allow list Rule Addition Confirmation](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_ruleaddConfirm.png)
+   ![allow list Rule Addition Confirmation](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_ruleaddverify.png)
 
 ### Verification of Web Security allow list Policy enforcement and Reporting to check traffic status
 
