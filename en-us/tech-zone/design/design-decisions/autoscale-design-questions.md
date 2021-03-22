@@ -35,23 +35,27 @@ The goal of the document is to help answer FAQs on Autoscale to achieve best cos
 
 ### How can the admin configure Autoscale if they are **using heavy machine instances**?
 
--  If the organization provides static desktops to its users, there might be a use case where the admin wants the machines to be started when the user clicks the desktop icon (say for knowledge workers who occasionally work on those large machines) but shut them down at a specific time of the day say at 6 PM. In this case the admin can define the property AutomaticPowerOnForAssigned to false
-How can an admin configure Autoscale to save storage costs apart from compute?
+-  If the organization provides static desktops to its users, there might be a use case where the admin wants the machines to be started when the user clicks the desktop icon (say for knowledge workers who occasionally work on those large machines) but shut them down at a specific time of the day say at 6 PM. In this case the admin can define the property **AutomaticPowerOnForAssigned** to false.
+  
+### How can an admin configure Autoscale to save storage costs apart from compute?
+
+-  With dynamic provisioning machines can be created and deleted using Citrix Machine Creation Services. This provides additional storage cost savings by de-allocating the disk when the machine is not needed.
 
 ## Infrastructure questions
 
 ### How can the admin choose the number of **reserved instances (RI)** to purchase?
 
--  Observe the [capacity utilization](/en-us/citrix-virtual-apps-desktops-service/monitor/site-analytics/autoscale-managed-machines.html) data under Monitor > Trends > Machine Usage over a time period (that covers all variations such as seasonality, work force changes and so on.) in the environment. The minimum capacity that is powered on for this time period can be a good indication of the minimum reserved instances you might buy. Some other parameters that define this are.
+-  Observe the [capacity utilization](/en-us/citrix-virtual-apps-desktops-service/monitor/site-analytics/autoscale-managed-machines.html) data under Monitor > Trends > Machine Usage over a time period (that covers all variations such as seasonality, work force changes and so on.) in the environment. The minimum capacity that is powered on for this time period can be a good indication of the minimum reserved instances you might buy. Some other parameters that define this are:
 
--  Is there a fixed schedule say 9 AM - 5 PM? That schedule would mean machines can be shut down 66% of the time and achieve close to reserved instances cost savings of ~70%.
--  More RIs than the minimum capacity usage can be bought depending on workload usage and savings. For instance, say if there are 10% more machines running more than 50% of the time.
--  The organizations expansion plan must also be factored in.
--  It can save up to 70% costs compared to pay as you go machines over a three years duration.
+    -  Is there a fixed schedule say 9 AM - 5 PM? That schedule would mean machines can be shut down 66% of the time and achieve close to reserved instances cost savings of ~70%.
+    -  More RIs than the minimum capacity usage can be bought depending on workload usage and savings. For instance, say if there are 10% more machines running more than 50% of the time.
+    -  The organizations expansion plan must also be factored in.
+  
+-  Using Reserved Instances can save up to 70% costs compared to pay as you go machines over a three year duration.
 
 ### How can the admin choose the number of **burstable instances** to purchase?
 
--  For virtual desktop users with high memory consumption (For instance applications such as chrome browser, Office applications) but low CPU consumption, admins can consider using burstable VMs. These VMs might be half the cost of their peer machines (as is the case in Azure for B series and D series). In Citrix Director, check Resource utilization and average CPU consumption and match it with the base CPU% guarantee of the burstable VMs. It is recommended to use these machines for single session machines only. The reason for this is that the impact is limited compared to a multi-session machine where many users can be impacted if the CPU gets throttled.
+-  For virtual desktop users with high memory consumption (For instance applications such as Chrome browser, Office applications) but low CPU consumption, admins can consider using burstable VMs. These VMs might be half the cost of their peer machines (as is the case in Azure for B series and D series). In Citrix Director, check Resource utilization and average CPU consumption and match it with the base CPU% guarantee of the burstable VMs. It is recommended to use these machines for single session machines only. The reason for this is that the impact is limited compared to a multi-session machine where many users can be impacted if the CPU gets throttled.
 -  This mechanism can be used to lower costs by ~50% from the regular pay as you go model.
 
 ### How can the admin choose the **right instance size**?
@@ -61,7 +65,7 @@ How can an admin configure Autoscale to save storage costs apart from compute?
 ### What **scale limits** can the admin operate under?
 
 -  It depends on the limits of the chosen cloud platform and the provisioning technique. For example, if the cloud platform is Azure and the provisioning technique is MCS (Machine Creation Services) then the [guidance](/en-us/citrix-virtual-apps-desktops-service/limits.html#machine-creation-services-mcs-limits) is ~1200 machines per subscription.
--  Note that this is an evolving page. It is also recommended to evaluate other limits like # of machines in a resource location, hosting connections and so on. /en-us/citrix-virtual-apps-desktops-service/limits.html
+-  It is also recommended to evaluate other limits like # of machines in a resource location, hosting connections and so on. Visit the [Limits page](/en-us/citrix-virtual-apps-desktops-service/limits.html) for more info. Note that this is an evolving page.
 
 ## Technical questions
 
@@ -83,4 +87,4 @@ How can an admin configure Autoscale to save storage costs apart from compute?
 
 ### How do I see my **cost savings**?
 
--  The Monitor > Trends > Machine Usage page also displays the estimated [cost savings](/en-us/citrix-virtual-apps-desktops-service/monitor/site-analytics/autoscale-managed-machines.html#estimated-savings). achieved by enabling Autoscale in the selected delivery group. Both $ saved and % savings using Autoscale are displayed. These savings can be sent as monthly savings reports to higher management.
+-  The **Monitor > Trends > Machine Usage** page also displays the estimated [cost savings](/en-us/citrix-virtual-apps-desktops-service/monitor/site-analytics/autoscale-managed-machines.html#estimated-savings) achieved by enabling Autoscale in the selected delivery group. Both $ saved and % savings using Autoscale are displayed. These savings can be sent as monthly savings reports to higher management.
