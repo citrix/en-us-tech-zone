@@ -77,7 +77,7 @@ Select the larger instance sizes when either of these conditions exist:
 
 The instance types used for testing were configured with standard storage rather than more expensive SSD storage for the system drive on the virtual machine. Because the instance types with SSD storage have smaller ephemeral disks where the page file is stored, even though the disks were faster, the scalability was lower because the instance did not have enough swapfile space available to support the need virtual memory under a higher load.
 
-At the disk sizes that we are using, the HDD and SDD disks have similar IOPS performance (500). While the SSD disks have a more consistent performance, the additional cost is not always justified.
+At the disk sizes that we are using, the HDD and SSD disks have similar IOPS performance (500). While the SSD disks have a more consistent performance, the additional cost is not always justified.
 
 We decided then to consider the Machine Creation Services I/O (MCSIO) cache, as a way to achieve SSD-like performance with the larger standard disks. The tests were completed using the Citrix VDA version 1903.1 and Windows Server 2016 on a D5\_v2 (16 vCPU, 56 GB of RAM) instance type. The chart below shows the increase in user density gained by enabling the MCSIO cache with the Knowledge worker load.
 
