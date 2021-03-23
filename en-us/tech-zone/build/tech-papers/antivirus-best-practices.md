@@ -297,6 +297,8 @@ Folders:
 
 [Microsoft - Windows Defender in VDI environments](https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/deployment-vdi-microsoft-defender-antivirus)
 
+[Microsoft - FSLogix Antivirus Exclusions](https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#antivirus-exclusions)
+
 [Trend Micro - Deep Security Recommended Exclusions](https://success.trendmicro.com/solution/1102554-citrix-recommended-exclusions-on-deep-security)
 
 ## References
