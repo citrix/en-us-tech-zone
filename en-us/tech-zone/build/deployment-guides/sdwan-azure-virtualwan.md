@@ -316,7 +316,7 @@ Select the Virtual WAN Resource created in the previous step – *“EastUSVWANA
 
 ### 1. Provision SD-WAN instances in Azure
 
-*  Provision an SD-WAN virtual appliance on Azure as Primary MCN (Main Control Node) and Secondary/Geo MCN on the East-US2 and West-US2 regions, respectively.
+*  Provision an SD-WAN virtual appliance on Azure as Primary MCN (Master Control Node) and Secondary/Geo MCN on the East-US2 and West-US2 regions, respectively.
 
     The Primary MCN and Secondary/Geo MCN serve a specific use-case (per our reference topology). However, the SD-WAN VPX can be deployed in branch mode as well.
 
