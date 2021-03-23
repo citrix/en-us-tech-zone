@@ -16,16 +16,11 @@ The guidance documented here is based on a deployment in a Citrix approved lab e
 
 In our experience and testing, the best migration path follows these steps:
 
-1.  [Set up a basic Citrix Cloud environment and complete ADM service sign-up](/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html#set-up-a-basic-citrix-cloud-environment).
-2.  [Deploy ADM service agent](/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html#deploy-adm-agent).
-3.  [Migrate to ADM Service](/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html#migrate-to-adm-service).
-4.  [Validation](/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html#validation).
-
 ### Audience
 
 We've written this document for users who are
 
-*  Familiar with the administration of a Citrix ADM (Application Delivery Management).
+*  Familiar with the administration of a Citrix ADM
 
 It's also helpful if you know Citrix Cloud fundamentals and understand Citrix ADM service.
 
@@ -64,11 +59,7 @@ More details can be found [here](/en-us/citrix-application-delivery-management-s
 ## Migrate to ADM service
 
 After the ADM service agent basic configuration is done, the next step is to upgrade the ADM to a Firmware that includes the script that will be used to migrate.
-You can migrate on-premises Citrix **ADM 13.0 64.35 or a later version** to Citrix Cloud. If your ADM has 12.1 or an earlier version, you must first upgrade to **13.0 64.35 or a later version** and then migrate to Citrix Cloud. For more information, see the [Upgrade section](/en-us/citrix-application-delivery-management-software/current-release/upgrade.html).
-
->**Note:**
->
->At the time of writing this documentation, the latest version is 13.0 Build 76.29.
+You can migrate on-premises Citrix **ADM 13.0 76.29 or a later version** to Citrix Cloud. If your ADM has 12.1 or an earlier version, you must first upgrade to **13.0 76.29 or a later version** and then migrate to Citrix Cloud. For more information, see the [Upgrade section](/en-us/citrix-application-delivery-management-software/current-release/upgrade.html).
 
 Once your ADM is on the required version, you can start the process for the migration, the next step is to configure the on-premises ADM service agent.
 
@@ -130,23 +121,23 @@ We recommend to updating to ADM 76.x or later builds as the migration scripts (*
 ![ADM SSH validation](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_18.png)
 1.  Run the following commands to complete the migration:
 
-    a. CD /mps/scripts
+    a. `cd /mps/scripts`
 
-    b. python servicemigrationtool.py
+    b. `python servicemigrationtool.py`
 
-For example: **python servicemigrationtool.py** **/var/secureclient.csv**
+For example: `python servicemigrationtool.py /var/secureclient.csv`
 ![ADM Migration](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_19.png)
 
 After you run the script, it checks the prerequisites and then proceeds with the migration. The script first checks for the license availability. The following message is displayed only if you have lesser ADM service license than the on-premises license.
 
 ![Migration fewer licenses](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_20.png)
 
-If you select **Y**, the migration continues by licensing the VIP randomly. If you select **N**, the script stops the migration.
+If you select `Y`, the migration continues by licensing the VIP randomly. If you select `N`, the script stops the migration.
 If you have the unsupported ADC instance version for the pooled license server, the following message is displayed:
 
 ![Migration Unsupported](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_21.png)
 
-If you select **Y**, the migration process continues by changing the license server. If you select **N**, the script prompts if you want to proceed with rest of the migration. The script stops the migration if you select **N**.
+If you select `Y`, the migration process continues by changing the license server. If you select `N`, the script prompts if you want to proceed with rest of the migration. The script stops the migration if you select `N`.
 If you have the supported ADC instance version for the pooled license server, the following message is displayed:
 
 ![Migration License change](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_22.png)
@@ -155,14 +146,14 @@ If you have the supported ADC instance version for the pooled license server, th
 >
 >You will only see above the Primary Node IP Address.
 
-If you select **Y**, the migration process continues by changing the license server.
+If you select `Y`, the migration process continues by changing the license server.
 Depending upon the on-premises configuration, the approximate time for the migration to complete is between a few minutes and a few hours. After the migration is complete, you see the following message:
 
 ![Migration Finished](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_23.png)
 
 The migration is successful once all the ADC and SD-WAN WANOP instances and their respective configurations are successfully moved to ADM service.
 
-## Validation
+## Validate
 
 After successful migration, the on-premises Citrix ADM stops processing the following instance events:
 
