@@ -1,7 +1,7 @@
 ---
 layout: doc
 h3InToc: true
-Author: Arnaud Pain
+contributedBy: Arnaud Pain
 description: Learn how to migrate your on-premises Citrix ADM (Application Delivery Management) to Citrix Cloud.
 ---
 # Migrating Citrix ADM (Application Delivery Management) from on-premises to Citrix ADM service
@@ -31,7 +31,7 @@ It's also helpful if you know Citrix Cloud fundamentals and understand Citrix AD
 
 ## Set up a basic Citrix Cloud environment
 
-For more information on onboarding process see the [Getting Started](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/getting-started.html) section.
+For more information on onboarding process see the [Getting Started](/en-us/citrix-application-delivery-management-service/getting-started.html) section.
 During the initial configuration of the ADM service agent , you need to provide the **Service URL** and **Activation Code** that are provided during the initial configuration in Citrix Cloud.
 
  ![Activation Code](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_01.png)
@@ -42,9 +42,9 @@ During the initial configuration of the ADM service agent , you need to provide 
 
 ## Deploy ADM service agent
 
-More details can be found [here](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/getting-started/install-agent-on-premises.html).
+More details can be found [here](/en-us/citrix-application-delivery-management-service/getting-started/install-agent-on-premises.html).
 
-1.  Download the agent image as instructed in [Getting Started](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/getting-started.html).
+1.  Download the agent image as instructed in [Getting Started](/en-us/citrix-application-delivery-management-service/getting-started.html).
 1.  Import the agent image file to VMware vSphere.
 1.  From the Console, configure the initial network configuration options as show in the below example:
 ![ADM Agent Network](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_02.png)
@@ -64,7 +64,7 @@ More details can be found [here](https://docs.citrix.com/en-us/citrix-applicatio
 ## Migrate to ADM service
 
 After the ADM service agent basic configuration is done, the next step is to upgrade the ADM to a Firmware that includes the script that will be used to migrate.
-You can migrate on-premises Citrix **ADM 13.0 64.35 or a later version** to Citrix Cloud. If your ADM has 12.1 or an earlier version, you must first upgrade to **13.0 64.35 or a later version** and then migrate to Citrix Cloud. For more information, see the [Upgrade section](https://docs.citrix.com/en-us/citrix-application-delivery-management-software/current-release/upgrade.html).
+You can migrate on-premises Citrix **ADM 13.0 64.35 or a later version** to Citrix Cloud. If your ADM has 12.1 or an earlier version, you must first upgrade to **13.0 64.35 or a later version** and then migrate to Citrix Cloud. For more information, see the [Upgrade section](/en-us/citrix-application-delivery-management-software/current-release/upgrade.html).
 
 >**Note:**
 >
@@ -74,12 +74,12 @@ Once your ADM is on the required version, you can start the process for the migr
 
 ### Configure ADM service agent
 
-To enable communications between Citrix ADC instances and Citrix ADM, you must configure an agent. Citrix ADM agents are, by default, automatically upgraded to latest build. You can also select a specific time for the agent upgrade. For more information, see [Configuring agent upgrade settings](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/setting-up/configuring-agent-upgrade-settings.html).
+To enable communications between Citrix ADC instances and Citrix ADM, you must configure an agent. Citrix ADM agents are, by default, automatically upgraded to latest build. You can also select a specific time for the agent upgrade. For more information, see [Configuring agent upgrade settings](/en-us/citrix-application-delivery-management-service/setting-up/configuring-agent-upgrade-settings.html).
 
 *  If your existing on-premises ADM, standalone or HA pair, has no on-premises agents configured, you must configure at least one agent for ADM service.
 *  If your existing on-premises ADM, standalone or HA pair, has configured with on-premises agents for multisite deployments, it is advised to configure the same number of agents for ADM service.
   
-For more information on configuring an agent, see the [Getting Started](https://docs.citrix.com/en-us/citrix-application-delivery-management-service/getting-started.html) section.
+For more information on configuring an agent, see the [Getting Started](/en-us/citrix-application-delivery-management-service/getting-started.html) section.
 
 1.  Connect to Citrix Cloud.
 ![Citrix Cloud](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_09.png)
@@ -100,7 +100,7 @@ In fact, during the migration process, the ADC license configuration is updated 
 1.  Connect to Citrix Cloud ADM service.
 1.  Navigate to **Networks > Licenses**.
 ![ADM License 1](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_14.png)
-1.  Take not of your Host ID and go to [http://www.mycitrix.com](http://www.mycitrix.com) to reallocate your licenses.
+1.  Take not of your Host ID and go to [https://www.mycitrix.com](https://www.mycitrix.com) to reallocate your licenses.
 1.  Ensure your licenses are present in ADM service before starting the migration.
 
 ![ADM License 2](/en-us/tech-zone/build/media/deployment-guides_citrix-adm-service-migration_15.png)
