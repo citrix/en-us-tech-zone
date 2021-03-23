@@ -12,10 +12,6 @@ In this document, you'll discover how to migrate Citrix ADM (Application Deliver
 
 The guidance documented here is based on a deployment in a Citrix approved lab environment running on VMware vSphere Hypervisor. The initial and final deployments represent typical customer environments.
 
-### The best migration path
-
-In our experience and testing, the best migration path follows these steps:
-
 ### Audience
 
 We've written this document for users who are
