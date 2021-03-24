@@ -50,7 +50,7 @@ This guide showcases how to perform the following actions:
 Following you see a flow diagram for 3 primary use cases:
 
 1)  Branch Users
-2)  Remote Users WITHOUT Workspace Service 
+2)  Remote Users WITHOUT Workspace Service
 3)  Remote Users WITH Workspace Service
 
 ![Topology - Simplified Operations for Day N](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_integrationtopology.png)
@@ -107,14 +107,20 @@ All the specific IP/Protocols in the Orchestrator bypass custom application, is 
 
 ![Bypass CSIA Agent Orchestrator Policy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_ccbypassorchestrator.png)
 
-**Node in Orange –** Reporter Node with IP – 104.225.171.47 and represented with a different icon (before node name).
+**Node in Orange –** Reporter Node with IP displayed in "Public IP" column and represented with a different icon (before node name).
 
-**Node(s) in Green –** Cloud PoP nodes part of a CSIA gateway cluster with IPs 104.225.164.53 and 104.225.181.63 with the globe icon. A CSIA gateway cluster is an aggregate of two or more CSIA gateway nodes.
+**Node(s) in Green –** Cloud PoP nodes part of a CSIA gateway cluster with IPs displayed in "Public IP" column and represented with the globe icon. A CSIA gateway cluster is an aggregate of two or more CSIA gateway nodes.
 
     Note :
     1. When doing your PoC, check the nodes as per your account and apply the Orchestrator bypass rules accordingly.
     2. The accounts almost usually always have a reporter node but the gateway ndoes can be one or more. 
     3. Ensure bypass to all gateway nodes so that they are accounted during the bypass (traffic can go to any CloudGateway node).
+
+Create a Custom application in the Orchestrator -  "Exclude_CloudConn_IPsecTunn"
+
+*  Create tbe below entries using IPs and Ports
+*  The IPs will be the Citrix SIA Reporter Cloud Node and the Gateway Cloud Node IPs with port 443
+*  There will be explicit port based entries which is used by the Citrix SIA agent for registration, traffic processing and reporting.
 
 ![Bypass CSIA Agent Orchestrator Policy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_orchestratorbypasspolicy.png)
 
@@ -387,8 +393,6 @@ In Citrix SIA Portal, Go to **Home -> Node Collection Management -> Node Groups 
 After the tunnel is up and running, verify the proxy IP using [https://ipchicken.com](https://ipchicken.com) or [https://whatsmyip.com](https://whatsmyip.com)
 
 If you are either using a Citrix SIA Cloud Connector (SIA Agent) or an IPsec tunnel (without agent), the proxy IP is ONE of the Cloud Nodes provided by the Citrix SIA Platform for the account used
-
-    Note:   Here in this case it is 104.225.181.63 
 
 ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
 
