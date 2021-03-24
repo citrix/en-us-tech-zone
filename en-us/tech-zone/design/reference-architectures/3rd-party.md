@@ -40,6 +40,8 @@ description: View reference architectures created by our industry partners on jo
 
 [HPE Reference Configuration for NVIDIA GPUs with Citrix XenDesktop on HPE Synergy](https://h20195.www2.hpe.com/V2/GetPDF.aspx/a00009296enw.pdf) - Facilitating multiple use cases on HPE Composable Infrastructure
 
+[HPE Reference Architecture / hyper-converged solution for CVAD 7 on HPE SimpliVity 325 Gen10](https://h20195.www2.hpe.com/V2/GetDocument.aspx?docname=a50003875enw) - HPE hyper-converged solution for Citrix Virtual Apps and Desktop 7 with HPE SimpliVity 325 Gen10.
+
 ## Lenovo
 
 [Reference Architecture for Workloads using Lenovo ThinkAgile HX Series](https://lenovopress.com/lp0665-reference-architecture-thinkagile-hx-series) - Lenovo ThinkAgile HX hyper-converged infrastructure with Citrix XenDesktop 7.15 LTSR
