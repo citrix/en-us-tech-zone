@@ -9,7 +9,7 @@ description: Learn how to use the security tools built in to the Citrix ADC to p
 
 ## Overview
 
-Many VPN and Citrix Gateway deployments are hosted by Citrix ADC appliances that are also providing security protections to other web applications. This PoC guide is designed to help protect VPN and Gateway virtual servers using tools already available on the Citrix ADC appliance. This guide covers protecting the portal login page with Bot security and protecting the credential form submission with WAF capabilities. Additionally, advanced authentication policies are used to add context to user logons and add multi-factor authentication.
+Many VPN and Citrix Gateway deployments are hosted by Citrix ADC appliances that are also providing security protections to other web applications. This PoC guide is designed to help protect VPN and Gateway virtual servers using tools already available on the Citrix ADC appliance. This guide covers protecting the portal login page with Bot security and protecting the credential form submission with WAF capabilities. Additionally, advanced authentication policies are used to add context to user logons and add multifactor authentication.
 
 The flow of this configuration diagrammed as follows:
 
@@ -269,19 +269,19 @@ Create another policy label by selecting 'Add'. Give this PL a descriptive name,
 
 ![IP Check Policy Label](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_ipcheckpl.png)
 
-Last, this IP Reputation check policy label needs to be set as the next factor of the previously created authentication policy that is already bound to a authentication or Gateway virtual server. Highlight the authentication policy, select 'edit binding' then set the new policy label as the 'Select Next Factor' field.
+Last, this IP Reputation check policy label needs to be set as the next factor of the previously created authentication policy that is already bound to an authentication or Gateway virtual server. Highlight the authentication policy, select 'edit binding' then set the new policy label as the 'Select Next Factor' field.
 
 ![Final Authentication Policy](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_authpolicyfinal.png)
 
 ## Summary
 
-Citrix ADC provides many built-in security protections that can be applied to protect Gateway or Authentication virtual servers running on the same appliance. These protections have no impact on typical users as they try to login to Citrix Gateway.
+Citrix ADC provides many built-in security protections that can be applied to protect Gateway or Authentication virtual servers running on the same appliance. These protections have no impact on typical users as they try to log in to Citrix Gateway.
 
 ## References
 
 For additional information and configuration options, refer to the following articles:
 
-[CTX216091](https://support.citrix.com/article/CTX216091) - supporting reCaptcha with nFactor
+[CTX216091](https://support.citrix.com/article/CTX216091) - supporting re-Captcha with nFactor
 
 [Citrix Web Application Firewall PoC Guide](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) – proof of concept deployment guide for Citrix Web Application Firewall
 
