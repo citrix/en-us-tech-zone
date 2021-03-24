@@ -17,7 +17,7 @@ Deployment guides provide step-by-step instruction on how to perform key tasks a
 
 [Citrix SD-WAN with Azure Virtual WAN](/en-us/tech-zone/build/deployment-guides/sdwan-azure-virtualwan.html) - Learn how to establish connectivity between SD-WAN and Azure Virtual WAN, and connect workloads on Azure with on-premises infrastructure.
 
-[Migrating Citrix ADM to Citrix ADM service](https://docs.citrix.com/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html) - Learn how to migrate your on-premises Citrix ADM (Application Delivery Management) to Citrix Cloud.
+[Migrating Citrix ADM to Citrix ADM service](/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html) - Learn how to migrate your on-premises Citrix ADM (Application Delivery Management) to Citrix Cloud.
 
 ## Citrix Virtual Apps and Desktops
 
