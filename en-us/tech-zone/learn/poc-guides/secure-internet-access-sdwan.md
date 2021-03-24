@@ -321,7 +321,7 @@ Ensure to provide the proper location of the branch in the Orchestrator so that 
 
     ![Citrix SIA Service Routing for Specific Apps](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_specificappsrouteviasiaservice.png)
 
-### Verify what automation is done as part of IPsec tunnel provisioning in Orchestrator
+### Automation verification
 
 Click the Info icon to know what details have been automated for the IPsec tunnel from the SD-WAN side
 
@@ -396,7 +396,9 @@ If you are either using a Citrix SIA Cloud Connector (SIA Agent) or an IPsec tun
 
 ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
 
-## PoC use-case 1: Pre-Requisites
+## PoC use-case 1
+
+### UC1 Pre-Requisites
 
 First download and install Cloud connector (SIA Agent) with a specific Security Group (Windows Connector).
 
@@ -461,25 +463,25 @@ Note:
 At this point, with the Cloud agent successfully registered, the IP must change to one of the Cloud Node PoP IPs.
 If the IP you have got is that of the service provider NAT IP, you may debug why the SIA agent/Cloud Connector failed.
 
-        ![Citrix SIA Service Host Proxy After CSIA Agent Install](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
+![Citrix SIA Service Host Proxy After CSIA Agent Install](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
 
-    *  If the Cloud registration is successful from the Cloud Connector (SIA Agent), notice the user name and all other details with a successful agent registration
+*  If the Cloud registration is successful from the Cloud Connector (SIA Agent), notice the user name and all other details with a successful agent registration
 
-            Note:
-            If you are NOT seeing your user name and other details, the User agent registration must have some issues
+Note:
+If you are NOT seeing your user name and other details, the User agent registration must have some issues.
 
-        *  Goto Users Groups and Devices -> Cloud Connected Devices
+*  Goto Users Groups and Devices -> Cloud Connected Devices
 
-            ![Citrix SIA Agent Registration Successful](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaagentregistrationsuccess.png)
+![Citrix SIA Agent Registration Successful](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaagentregistrationsuccess.png)
 
-    *  With successful Agent registration, notice the agent traffic on the Citrix SIA Reporter under Real-time Dashboard or Events logs
+*  With successful Agent registration, notice the agent traffic on the Citrix SIA Reporter under Real-time Dashboard or Events logs
 
 Note:
 If you have an Agent installed, notice the user name to explicitly show up with the Group that was set during the agent download/install including the Private Source IP.
 
-        ![Citrix SIA Agent Traffic Reporting](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaagentrafficreporting.png)
+![Citrix SIA Agent Traffic Reporting](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaagentrafficreporting.png)
 
-## PoC use-case 1: Users with Cloud Connector (SIA Agent) + Citrix SD-WAN in a branch
+### UC1 Users with Cloud Connector (SIA Agent) + Citrix SD-WAN in a branch
 
 In this use-case, we use the Citrix SIA Cloud Connector (SIA Agent) to breakout and proxy to the Citrix SIA Cloud directly using the Internet service so that the DC workloads can be accessed reliably via the Overlay Virtual Path of Citrix SD-WAN
 
@@ -499,7 +501,7 @@ To allow for the Citrix SIA cloud connector to seamlessly Call Home to the Citri
 
 *  Associate the custom App to INTERNET Breakout so that the SIA or Cloud Connector agent traffic can be bypassed from the tunnel and sent directly via Internet Service
 
-### Web Security (Category) - Configuration of Web Security Category Policies from Citrix SIA portal
+### Web Security - Category Policies
 
 *  Click **Web Security -> Web Security Policies -> Web/SSL Categories**
 *  Choose the Group as "PoC_Demo_Group" as the SIA Agent is installed for that group)
@@ -514,7 +516,7 @@ To allow for the Citrix SIA cloud connector to seamlessly Call Home to the Citri
 
     ![Save Web Security Settings](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_savewebsecuritysettings.png)
 
-### Verification of Web Security Category Policy enforcement and Reporting to check traffic status
+### Web Security - Category Policy Verification
 
 *  Open an Incognito window of a browser
 *  Access 777.com (A gambling site)
