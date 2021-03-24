@@ -743,7 +743,7 @@ Verifying via CSIA Reporting Section
   
     *  Once the agent is uninstalled all the traffic goes through the IPsec tunnel
 
-## PoC use-case 2: Endpoints without SIA Agent + Citrix SD-WAN
+## PoC use-case 2: Unmanaged Endpoints without SIA Agent + Citrix SD-WAN
 
 In this use-case, we use the Citrix SIA IPsec tunnel to secure for unmanaged devices like BYOD, Personal and Guest devices behind a branch SD-WAN. Managed devices with the Citrix SIA in the branch agent bypass the tunnel and connect directly to the Citrix SIA platform.
 
@@ -957,7 +957,7 @@ If the certificate is found, then the installation is successful and the pre-req
 
    ![SSL Certificate in Windows Certificate Manager](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_sslcertinwindowsmanager.png)
 
-## PoC use-case 3: Endpoints without SIA Agent + Citrix SD-WAN
+## PoC use-case 3: Unmanaged Endpoints without SIA Agent + Citrix SD-WAN with SSL encryption
 
 In this use-case, we will use the Citrix SIA IPsec tunnel with SSL decryption and exercise Advanced security features from the Citrix SIA cloud like CASB, Malware Defense, DLP and so on.
 
