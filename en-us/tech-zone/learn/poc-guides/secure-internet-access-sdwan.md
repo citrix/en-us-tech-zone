@@ -77,8 +77,6 @@ The unmanaged devices like BYOD and Guest users are secured using the IPsec tunn
 
 *  Port / Firewall settings to SIA – Outbound connections
 
-![Network Pre-Requisites](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_networkprereqs.png)
-
 | Protocol            | Port   | Description                      |
 | ----------------- | ------ | --------------------------------- |
 | TCP   | 53   | DNS Filtering                   |
