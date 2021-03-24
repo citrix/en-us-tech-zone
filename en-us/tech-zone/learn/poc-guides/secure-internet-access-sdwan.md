@@ -75,7 +75,7 @@ The unmanaged devices like BYOD and Guest users are secured using the IPsec tunn
 
 ### Network Requirements
 
-*  Port / Firewall settings to SIA – Outbound connections
+Port / Firewall settings to SIA – Outbound connections:
 
 | Protocol            | Port   | Description                      |
 | ----------------- | ------ | --------------------------------- |
