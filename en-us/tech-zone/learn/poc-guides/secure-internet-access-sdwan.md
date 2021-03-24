@@ -92,7 +92,6 @@ The unmanaged devices like BYOD and Guest users are secured using the IPsec tunn
 | TCP   | 8080   | Default block page                     |
 | TCP   | 8082   | Cloud Connector for iOS (Default additional proxy port)                     |
 | TCP   | 10080 | PAC script retrieval over HTTP                     |  
-|
 
 ### Orchestrator - Custom Application
 
