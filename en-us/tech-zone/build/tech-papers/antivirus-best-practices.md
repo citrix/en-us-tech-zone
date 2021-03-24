@@ -141,7 +141,8 @@ Processes:
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\AuthManager\AuthManSvr.exe`
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\SelfServicePlugin\SelfService.exe`
 -  `%ProgramFiles(x86)%\Citrix\ICA Client\SelfServicePlugin\SelfServicePlugin.exe`
--  `%ProgramFiles(x86)%\Citrix\ICA Client\HdxTeams.exe` (Optimization for Microsoft Teams)
+-  `%ProgramFiles(x86)%\Citrix\ICA Client\HdxTeams.exe` (Optimization for Microsoft Teams for Workspace app 2009.5 or older)
+-  `%ProgramFiles(x86)%\Citrix\ICA Client\HdxRtcEngine.exe` (Optimization for Microsoft Teams for Workspace app 2009.6 or higher)
 
     >**Note:**
     >
@@ -295,6 +296,8 @@ Folders:
 [Bitdefender - Implementing Security Best Practices in the Virtual Data Center](https://businessinsights.bitdefender.com/implementing-security-best-practices-in-the-virtual-data-center)
 
 [Microsoft - Windows Defender in VDI environments](https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/deployment-vdi-microsoft-defender-antivirus)
+
+[Microsoft - FSLogix Antivirus Exclusions](https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#antivirus-exclusions)
 
 [Trend Micro - Deep Security Recommended Exclusions](https://success.trendmicro.com/solution/1102554-citrix-recommended-exclusions-on-deep-security)
 

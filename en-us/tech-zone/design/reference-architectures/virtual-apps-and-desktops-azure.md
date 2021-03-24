@@ -265,7 +265,7 @@ Azure Reserved VM Instances (RIs) significantly reduce costs—up to 72 percent 
 
 While Azure Reserved Instances require making upfront commitments on **compute** capacity, they also provide flexibility to exchange or cancel reserved instances at any time. A reservation only covers the virtual machine compute costs. It does not reduce any of the additional software, networking, or storage charges. This is good for the Citrix infrastructure and minimum capacity needed for a use case (on and off hours).
 
-Citrix Autoscale feature supports reserved instances as well to further reduce your costs - you can now use Autoscale for bursting in the cloud. In a delivery group you can tag machines that need to be autoscaled and exclude your reserved instances (or on-premises workloads) - you can find more info here: [Restrict Autoscale to certain machines in a Delivery Group](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale.html#restrict-autoscale-to-certain-machines-in-a-delivery-group).
+Citrix Autoscale feature supports reserved instances as well to further reduce your costs - you can now use Autoscale for bursting in the cloud. In a delivery group you can tag machines that need to be autoscaled and exclude your reserved instances (or on-premises workloads) - you can find more info here: [Restrict Autoscale to certain machines in a Delivery Group](/en-us/citrix-virtual-apps-desktops-service/manage-deployment/autoscale/restrict-autoscale.html#restrict-autoscale-to-certain-machines-in-a-delivery-group).
 
 ### Citrix Autoscale
 

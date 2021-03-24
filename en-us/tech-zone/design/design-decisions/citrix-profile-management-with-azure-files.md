@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Loay Shbeilat
 specialThanksTo: Paul Wilson
-description: The article covers guidance and best practices for using Citrix User Profile Manager to manage user profiles on Azure Files as the back-end storage location.
+description: The article covers guidance and best practices for using Citrix Profile Management to manage user profiles on Azure Files as the back-end storage location.
 ---
 # Citrix Profile Management with Azure Files
 
@@ -41,7 +41,7 @@ Transaction storage accounts without "large file shares" enabled (\< 5 TiB), sup
 
 The IOPS and throughput are provisioned based on the size of the file share. Be sure to provision a size that covers the IOPS and throughput your users need. For a premium file share, the base IOPS allocated is 400 + 1 IOPS for each GiB of provisioned space, with a maximum of 100,000 IOPS. A premium share is allowed to burst up to greater of 4000 IOPS or 3 times of base IOPS allocated. A 10 TiB files share would be allocated 10,240 IOPS. With the premium file share, burst mode allows up to 3 times the allocated IOPS to be used. However burst mode requires the file share be running at less than the allocated IOPS for a period of time to regenerate. In other words, you cannot run in burst mode all the time. If there are enough credits available, the shares can burst up to 30,720 IOPS for up to a maximum of 60 minutes of duration.
 
-Both performance tiers are acceptable options for storing user profile data. Selecting between the performance tiers depends primarily on the user workload. The goal is always to provide the end user with their required performance and data protection at the lowest cost. For user profiles where response time is the highest priority, premium file shares are the best candidates. For more information on the performance of the different tiers, visit Microsoft's storage performance webpage at <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets>. To determine what performance tier is best starts with monitoring key metrics.
+Both performance tiers are acceptable options for storing user profile data. Selecting between the performance tiers depends primarily on the user workload. The goal is always to provide the end user with their required performance and data protection at the lowest cost. For user profiles where response time is the highest priority, premium file shares are the best candidates. For more information on the performance of the different tiers, visit [Microsoft's storage performance webpage](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets). To determine what performance tier is best starts with monitoring key metrics.
 
 ### Monitoring
 
@@ -59,7 +59,7 @@ You can use Azure Monitor to view the key metrics on your Azure File shares and 
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_003.png)
 
-***Transactions Success with Throttling (Sum)***: The aggregated number of requests that failed due to provisioned limits on the first attempt but were successful after retries. This metric is an API filter on Response Type and is only valid for the premium tier where resources are provisioned. If this number is significant when compared to the sum of transactions, increase your file share size. To add this filter, you must first add the Transactions metric. Then click **Add filter**, choose the **Response type** property, **operator** of = and select one of the filters in the **values** field. This filter is not visible as a selection unless you are seeing throttled transactions. For premium shares, you can also look at specific response types (SuccessWithShareIopsThrottling, SuccessWithShareEgressThrottling, SuccessWithShareIngressThrottling) to determine whether IOPS or throughput is throttled. For more information on the metrics dimensions, check the Microsoft website at <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring-reference#metrics-dimensions>
+***Transactions Success with Throttling (Sum)***: The aggregated number of requests that failed due to provisioned limits on the first attempt but were successful after retries. This metric is an API filter on Response Type and is only valid for the premium tier where resources are provisioned. If this number is significant when compared to the sum of transactions, increase your file share size. To add this filter, you must first add the Transactions metric. Then click **Add filter**, choose the **Response type** property, **operator** of = and select one of the filters in the **values** field. This filter is not visible as a selection unless you are seeing throttled transactions. For premium shares, you can also look at specific response types (SuccessWithShareIopsThrottling, SuccessWithShareEgressThrottling, SuccessWithShareIngressThrottling) to determine whether IOPS or throughput is throttled. For more information on the metrics dimensions, check the [Microsoft website](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring-reference#metrics-dimensions).
 
 ![Azure files](/en-us/tech-zone/design/media/design-decisions_citrix-profile-management-with-azure-files_004.png)
 
@@ -282,8 +282,7 @@ The later versions of CPM enable profile streaming by default on Citrix servers.
 
 The results support using a transaction optimized file share when your throughput and IOPS requirements are below the supported levels of 300 MiB/sec and 10,000 IOPS respectively. Creating multiple file shares across different storage accounts to host the user's profile data, distributes the load.
 
-*NOTE: The recommended best practice is to have only one transaction optimized file share per storage account. This recommendation is because two or more transaction optimized file shares under normal use can exceed the maximum limits on a single storage account. For more information see*
-<https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets\#file-share-and-file-scale-targets>
+*NOTE: The recommended best practice is to have only one transaction optimized file share per storage account. This recommendation is because two or more transaction optimized file shares under normal use can exceed the maximum limits on a single storage account. For more information see [Scalability and performance targets](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets)*
 
 If using the higher performance premium tier for consistent performance and lower latency, do some benchmarking before you settle on a final size. The best way to benchmark is to run the most intensive benchmark tests with a 100 TiB premium file share and monitor the transactions, throughput, and latency metrics. Use that information to determine the amount of provisioned storage for the required performance level.
 
@@ -305,9 +304,7 @@ file shares:
     private IP address from within the address space of that virtual
     network.
 
-Considering the file share is used for the user profile and data, we recommend that it is only accessible from within the Azure VNET via [private endpoints](https://docs.microsoft.com/en-us/azure/storage/common/storage-private-endpoints). For detailed instructions, use the following link:
-
-<https://docs.microsoft.com/en-us/azure/storage/files/storage-files-networking-endpoints?tabs=azure-portal#endpoint-configurations>
+Considering the file share is used for the user profile and data, we recommend that it is only accessible from within the Azure VNET via [private endpoints](https://docs.microsoft.com/en-us/azure/storage/common/storage-private-endpoints). For detailed instructions, use the [following link](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-networking-endpoints?tabs=azure-portal#endpoint-configurations).
 
 Once the private endpoint is configured, validate accessibility from a VM within the Azure VNET as outlined in the document.
 
@@ -351,7 +348,7 @@ Which method works best for you depends on where the data currently resides with
 
 -  ***RoboCopy:*** Reliable file copy utility that preserves all the files attributes, permissions, and ACLs during the transfer.
 
-In addition to these file transfer/copy solutions, many third-party vendors also offer solutions that can be used to migrate your data into Azure Files. For more information on the best migration path see <https://docs.microsoft.com/en-us/azure/storage/files/storage-files-migration-overview>.
+In addition to these file transfer/copy solutions, many third-party vendors also offer solutions that can be used to migrate your data into Azure Files. For more information on the best migration path see [Migrate to Azure file shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-migration-overview).
 
 ## Conclusion
 
@@ -365,11 +362,11 @@ In most cases, the use of the transaction optimized tier for Azure Files is suff
 
 Content from the following documents has been referenced in this article:
 
--  [Azure Files scalability and performance targets](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets)
+-  [Azure Files scalability and performance targets](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets)
 
 -  [Enable and create large file shares](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-how-to-create-large-file-share?tabs=azure-portal)
 
--  [Planning for an Azure Files deployment](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-planning\#understanding-provisioning-for-premium-file-shares)
+-  [Planning for an Azure Files deployment](https://docs.microsoft.com/en-us/azure/storage/files/understanding-billing#provisioned-model)
 
 -  [Monitoring Azure Files](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-monitoring?tabs=azure-portal#monitoring-data)
 

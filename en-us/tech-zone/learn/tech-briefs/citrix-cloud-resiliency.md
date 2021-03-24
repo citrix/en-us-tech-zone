@@ -49,13 +49,21 @@ Learn more about the Rendezvous Protocol and how to enable it via policies [here
 
 ### Fall back to StoreFront
 
+  >**Tech Preview Disclaimer**
+  >
+  >**This feature is currently in tech preview.** The information in this article is for information purposes only, provided “AS IS” without warranty, and is subject to change at Citrix’s discretion without notice. Any terms governing Citrix products or services shall be contained in a written agreement ran by the parties. Contact your account manager to request access to this tech preview.
+
 The Workspace platform allows customers with a hybrid deployment, to display the URL of the on-premises StoreFront (when they are unable to launch sessions via the Workspace service). So, users accessing their Citrix Workspace via a browser can access resources in the on-premises environment through the StoreFront URL.
 
-Admins, using PowerShell, can define a fallback StoreFront HTTP(S) URL, that resolves to an internal StoreFront or an external Citrix Gateway server.
+Admins, using PowerShell, can define a fallback StoreFront HTTP(S) URL, that resolves to an internal StoreFront or an external Citrix Gateway server. Required steps are included in the private tech preview documentation.
 
 ![Citrix Cloud Resiliency - Fall back to StoreFront](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_3-fallback-to-storefront.png)
 
-When a user attempts to log in or launches a resource and the Workspace Platform returns an error, the Workspace app presents the StoreFront URL to the users. This occurs when the Workspace service is not reachable, or authentication failure occurs resulting in resource launch failure.
+When a user attempts to log in or launches a resource and the Workspace Platform returns an error, the Workspace app presents the StoreFront URL to the users. This occurs when the Workspace service is not reachable, there was a CVAD launch failure, or authentication failure occurs resulting in resource launch failure.
+
+  >**Note:**
+  >
+  >If you have Service Continuity configured, it is going to ‘win’ and show the offline UI, as opposed to the error screen with fallback URLs you would see with fallback enabled.
 
 The user can then use the StoreFront URL to connect directly to the on-premises store and access resources that are published from it.
 
@@ -148,7 +156,7 @@ As seen in the following image the user is entitled to 6 resources and so there 
 
 ![Citrix Cloud Resiliency - Workspace connection leases](/en-us/tech-zone/learn/media/tech-briefs_citrix-cloud-resiliency_11-workspace-connection-leases.png)
 
-The connection leases are tamper-proof. A bad actor would be unable to edit the lease, to say extend the duration of the lease. Soon as any tampering is detected, the connection lease hash is invalidated. The connection lease can be blocked by the IT Admin using the CVAD remote PowerShell SDK, in situations such as closed or compromised user account, stolen endpoint or device deallocation. Read about how to apply these policies [here](/en-us/citrix-workspace/service-continuity.html#block-connections-to-compromised-user-accounts).
+The connection leases are tamper-proof. A bad actor would be unable to edit the lease, to say extend the duration of the lease. Soon as any tampering is detected, the connection lease hash is invalidated. The connection lease can be blocked by the IT Admin using the CVAD remote PowerShell SDK, in situations such as closed or compromised user account, stolen endpoint or device deallocation. Read about how to apply these policies [here](/en-us/citrix-workspace/service-continuity.html#what-makes-it-secure).
 
 The following is the process diagram for the creation of the connection leases, when the user authenticates for the first time from an end point and launches a session.
 
