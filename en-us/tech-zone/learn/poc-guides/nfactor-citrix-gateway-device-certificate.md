@@ -1,10 +1,186 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: First Last, First2 Last2
-specialThanksTo: First Last, First2 Last2
-description: Copy & paste description from TOC here
+contributedBy: Matt Brooks
+specialThanksTo: Dan Feller
+description: Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Device Certificates.
 ---
-# Title
+# Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Device Certificate
 
-## Header1
+## Introduction
+
+Large Enterprise environments require flexible authentication options to meet the needs of a variety of user personas. With Device Certificate, coupled with LDAP credentials, Enterprises get "something you have" and "something you know" multifactor authentication seamlessly to verify their identity and securely access their applications and data.
+
+[![Device Certificate Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_conceptualarchitecture.png)](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-certificate_conceptualarchitecture.png)
+
+## Overview
+
+This guide demonstrates how to implement a Proof of Concept environment using two factor authentication with Citrix Gateway. It validates a Device Certificate as the first factor using Endpoint Analysis (EPA). Then the user Active Directory credentials as the second factor. It uses a Citrix Virtual Apps and Desktops published virtual desktop to validate connectivity.
+
+It makes assumptions about the completed installation and configuration of the following components:
+
+*  Citrix ADC installed, and licensed
+*  Citrix Gateway configured with an externally reachable virtual server bound to a wildcard Certificate
+*  Citrix Gateway virtual server bound with the CA Certificate, that issued the endpoint/s Device Certificates
+*  Citrix Gateway integrated with a Citrix Virtual Apps and Desktops environment which uses LDAP for authentication
+*  Active Directory (AD) is available in the environment
+*  Endpoint with Citrix Workspace app installed
+*  Endpoint with a computer certificate installed
+
+Refer to Citrix Documentation for the latest product version, and license requirements: [Device certificate in nFactor as an EPA component](/en-us/citrix-gateway/current-release/vpn-user-config/endpoint-policies/device-certificate-in-nfactor-as-an-epa-component.html)
+
+## nFactor
+
+First, we log in to the CLI on our Citrix ADC and enter the authentication actions and associated policies for LDAP and EPA respectively. Then we log in to our GUI to build our nFactor flow in the visualizer tool and complete the multifactor authentication configuration.
+
+### LDAP Authentication policies
+
+We create the LDAP actions, and the policies that reference them.
+
+For LDAP Actions populate the required fields to create the LDAP action in a string and paste it into the CLI:
+
+*  `ldapAction` - enter the action name.
+*  `serverIP` - enter the domain server/s FQDN or IP address.
+*  `serverPort` - enter the LDAP port.
+*  `ldapBase` - enter the string of domain objects and containers where pertinent users are stored in your directory.
+*  `ldapBindDn` - enter the service account used to query domain users.
+*  `ldapBindDnPassword` - enter your service account password.
+*  `ldapLoginName` - enter the user object type.
+*  `groupAttrName` - enter the group attribute name.
+*  `subAttributeName` - enter the sub attribute name.
+*  `secType` - enter the security type.
+*  `ssoNameAttribute` - enter the single sign-on name attribute.
+
+For LDAP Policies populate the required fields to reference the LDAP Action in a string and paste it into the CLI:
+
+*  `Policy` - enter the policy name.
+*  `action` - enter the name of the Email action we created above.
+
+For more information see [LDAP authentication policies](/en-us/citrix-adc/13/aaa-tm/configure-aaa-policies/ns-aaa-setup-policies-authntcn-tsk/ns-aaa-setup-policies-auth-LDAP-tsk.html)
+
+1.  First connect to the CLI by opening an SSH session to the NSIP address of the Citrix ADC and log in as the `nsroot` administrator or equivalent admin user.
+
+#### LDAP action 1 - authAct_LDAP_dcnf
+
+Update the following fields for your environment and copy and paste the string into the CLI:
+`add authentication ldapAction authAct_Ldap_dcnf -serverIP 192.0.2.50 -serverPort 636 -ldapBase "DC=workspaces,DC=wwco,DC=net" -ldapBindDn wsadmin@workspaces.wwco.net -ldapBindDnPassword xyz123 -encrypted -encryptmethod ENCMTHD_3 -kek -suffix 2021_03_23_19_58 -ldapLoginName userPrincipalName -groupAttrName memberOf -subAttributeName cn -secType SSL -passwdChange ENABLED`
+
+#### LDAP policy 1 - authPol_LDAP_dcnf
+
+Update the following fields for your environment and copy and paste the string into the CLI:
+`add authentication Policy authPol_LDAP_dcnf -rule true -action authAct_Ldap_dcnf`
+
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_cli.png)
+
+### EPA Authentication policies
+
+Next we create the EPA action to check the device certificate, and the policy that references it.
+
+#### EPA action 1 - authAct_EPA_dcnf
+
+Update the following fields for your environment and copy and paste the string into the CLI:
+`add authentication epaAction authAct_EPA_dcnf -csecexpr "sys.client_expr(\"device-cert_0_0\")"`
+
+#### EPA policy 1 - authPol_EPA_dcnf
+
+Update the following fields for your environment and copy and paste the string into the CLI:
+`add authentication Policy authPol_EPA_dcnf -rule true -action authAct_EPA_dcnf`
+
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_cli.png)
+
+### Login Schema
+
+Next we create Login Schemas used with each factor.
+
+#### lSchema 1 - lSchema_LDAP_dcnf
+
+Update the following fields for your environment and copy and paste the string into the CLI:
+`add authentication loginSchema ls_ldap_dcnf -authenticationSchema "/nsconfig/loginschema/LoginSchema/SingleAuth.xml"`
+
+#### lSchema 2 - lSchema_EPA_dcnf
+
+The EPA factor does not require a Login Schema.
+
+### nFactor
+
+1.  Log in to the Citrix ADC GUI
+1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain Device Certificate installed. In this POC example we used a wildcard Device Certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
+1.  Next navigate to `Security > AAA - Application Traffic > nFactor Visualizer > nFactor Flows`
+1.  Select Add and select the plus sign in the Factor box
+
+### Visualizer
+
+#### Factor1_EPADC_dcnf
+
+1.  Enter `Factor1_EPADC_dcnf` and select create
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_factor1.png)
+1.  In the same box select Add Policy
+1.  Select the EPA policy `authPol_EPA_dcnf`
+1.  Select Add
+1.  Select the green plus sign next to the `authPol_EPA_dcnf` policy to create another factor
+
+#### Factor2_Ldap_dcnf
+
+1.  Enter `Factor2_Ldap_dcnf`
+1.  Select Create
+1.  In the same box select Add Schema
+1.  Select `ls_ldap_dcnf`
+1.  In the same box select Add Policy
+1.  Select `authPol_LDAP_dcnf`
+1.  Under Goto Expression select `END`
+
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_nfactorflow.png)
+
+### Citrix ADC authentication, authorization, and auditing (Citrix ADC AAA) virtual server
+
+1.  Next navigate to **Security > AAA - Application Traffic > Virtual Servers** and select Add
+1.  Enter the following fields and click OK:
+    *  Name - a unique value. We enter `DC_AuthVserver`
+    *  IP Address Type - `Non Addressable`
+1.  Select No Server Device Certificate, select the domain Device Certificate, click Select, Bind, and Continue
+1.  Select No nFactor Flow
+1.  Under Select nFactor Flow click the right arrow, select the `Factor1_DeviceCertificate_dcnf` flow created earlier
+1.  Click Select, followed by Bind, followed by Continue
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_authvserver.png)
+
+### Citrix Gateway - virtual server
+
+1.  Next navigate to **Citrix Gateway > Virtual Servers**
+1.  Select your existing virtual server that provides proxy access to your Citrix Virtual Apps and Desktops environment
+1.  Select Edit
+1.  Under Basic Settings select the pencil icon to edit, then select more at the bottom
+1.  At the bottom right, under Device Cert CA select the plus (+) sign followed by Ok
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_devicecertca.png)
+1.  If you currently have an LDAP policy bound navigate under Basic Authentication - Primary Authentication select LDAP Policy. Then check the policy, select Unbind, select Yes to confirm, and select Close
+1.  Under the Advanced Settings menu on the right select Authentication Profile
+1.  Select Add
+1.  Enter a name.  We enter `DC_AuthProfile`
+1.  Under Authentication virtual server click the right arrow, and select the Citrix ADC AAA virtual server we created `DC_AuthVserver`
+1.  Click Select, and Create
+1.  Click OK and verify the virtual server now has an authentication profile selected while the basic authentication policy has been removed
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_gatewayvserver.png)
+1.  Click Done
+
+## User Endpoint
+
+We test authentication by authenticating into our Citrix Virtual Apps and Desktops environment.
+
+1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://gateway.workspaces.wwco.net`
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_gatewayfqdn.png)
+1.  Select download if the EPA plugin has not been installed. Thereafter it scans for device certificates.
+1.  If you have multiple device certificates it prompts you to select the appropriate one to authentiate with otherwise it presents a log on prompt.
+1.  Enter the domain username and password.
+1.  Select the virtual desktop from the available resources in their workspace and verify a successful launch.
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_cvad.png)
+
+## Summary
+
+With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Device Certificates allow Enterprises to seamlessly add a 2nd authentication factor to user credentials maintaining a good user experience while improving security posture.
+
+## References
+
+For more information refer to:
+
+[Device certificate in nFactor as an EPA component](/en-us/citrix-gateway/current-release/vpn-user-config/endpoint-policies/device-certificate-in-nfactor-as-an-epa-component.html)
+
+[Citrix ADC Commands to Find the Policy `Hits` for Citrix Gateway Session Policies](https://support.citrix.com/article/CTX1388400) - learn more about CLI commands like `nsconmsg -d current -g _hits` to track policy `hits` to help troubleshoot.
