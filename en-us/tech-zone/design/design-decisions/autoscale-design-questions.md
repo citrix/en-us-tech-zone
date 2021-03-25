@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Nitin Mehta
 specialThanksTo: Mayank Singh, Kevin Nardone, Harsh Gupta
-description: The goal of the document is to help answer FAQs on Autoscale to achieve best cost optimization. It provides guidance for configuring Autoscale for different admin use cases and their infrastructure and technical requirements. This document will keep evolving as more use cases and capabilities are introduced within Autoscale.
+description: Helps answer FAQs on Autoscale to achieve best cost optimization. Provides guidance for configuring Autoscale for different admin use cases and their infrastructure and technical requirements.
 ---
 # Autoscale design questions / FAQ
 

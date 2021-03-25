@@ -145,9 +145,13 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 
 [Citrix SD-WAN with Azure Virtual WAN](/en-us/tech-zone/build/deployment-guides/sdwan-azure-virtualwan.html) - Learn how to establish connectivity between SD-WAN and Azure Virtual WAN, and connect workloads on Azure with on-premises infrastructure.
 
+[Migrating Citrix ADM to Citrix ADM service](/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html) - Learn how to migrate your on-premises Citrix ADM (Application Delivery Management) to Citrix Cloud.
+
 ## Citrix Secure Internet Access
 
 ### [Learn - PoC Guides](/en-us/tech-zone/learn/poc-guides.html)
+
+[Citrix Secure Internet Access with Citrix SD-WAN](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix SD-WAN to provide secure access to SaaS and Web applications anywhere, reliably and securely.
 
 [Citrix Secure Internet Access with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/secure-internet-access-swa.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix Secure Workspace Access to provide secure access to SaaS and web applications, anywhere, from any device.
 
@@ -264,6 +268,8 @@ Here you will learn from experts and gain insights into Citrix technologies and 
 [Workspace Environment Management](/en-us/tech-zone/learn/tech-insights/workspace-environment-mgmt.html) - Workspace Environment Management monitors and analyzes user and application behavior in real time, then intelligently adjusts system resources to improve the user experience.
 
 ### [Design - Design Decisions](/en-us/tech-zone/design/design-decisions.html)
+
+[Autoscale Design](/en-us/tech-zone/design/design-decisions/autoscale-design-questions.html) - Helps answer FAQs on Autoscale to achieve best cost optimization. Provides guidance for configuring Autoscale for different admin use cases and their infrastructure and technical requirements.
 
 [Baseline Policy Design](/en-us/tech-zone/design/design-decisions/baseline-policy-design.html) - Policies provide the basis to configure and fine-tune Citrix Virtual Apps and Desktops environments, allowing organizations to control connection, security, and bandwidth settings based on various combinations of users, devices, or connection types. Learn about the different decisions related to the baseline policy design.
 
