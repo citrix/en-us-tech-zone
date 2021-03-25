@@ -5,11 +5,7 @@ contributedBy: Karthick Srivatsan
 specialThanksTo: Matthew Brooks
 description: Learn how to set up Citrix Secure Internet Access in conjunction with Citrix SD-WAN to provide secure access to SaaS and Web applications anywhere, reliably and securely.
 ---
-# Tech Brief: Deploy Citrix SIA with Citrix SD-WAN
-
-## Introduction
-
-This Tech Brief explains how to deploy Citrix SIA with Citrix SD-WAN.
+# Proof of Concept: Citrix Secure Internet Access with Citrix SD-WAN
 
 ## Overview
 
