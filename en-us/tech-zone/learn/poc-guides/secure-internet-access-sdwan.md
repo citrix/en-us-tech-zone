@@ -396,9 +396,9 @@ If you are either using a Citrix SIA Cloud Connector (SIA Agent) or an IPsec tun
 
 ![Citrix SIA Service Host Proxy](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_hostproxyipviacsiatunnel.png)
 
-## PoC use-case 1
+## PoC use-case 1 - SIA Agent + Citrix SD-WAN in a branch
 
-### UC1 Pre-Requisites
+### Pre-Requisites
 
 First download and install Cloud connector (SIA Agent) with a specific Security Group (Windows Connector).
 
@@ -481,7 +481,7 @@ If you have an Agent installed, notice the user name to explicitly show up with 
 
 ![Citrix SIA Agent Traffic Reporting](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_csiaagentrafficreporting.png)
 
-### UC1 Users with Cloud Connector (SIA Agent) + Citrix SD-WAN in a branch
+### Configuration
 
 In this use-case, we use the Citrix SIA Cloud Connector (SIA Agent) to breakout and proxy to the Citrix SIA Cloud directly using the Internet service so that the DC workloads can be accessed reliably via the Overlay Virtual Path of Citrix SD-WAN
 
@@ -550,7 +550,7 @@ You can also see that the Group name is visible including the end host private l
 
    ![Facebook Website Reporting Stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_facebookblockedreportingstats.png)
 
-### Allow list: Configuration of allow list (Web Security) Policies from Citrix SIA portal
+### Web Security - Allow list
 
 Create a simple allow list to allow ONLY Facebook from the entire Friendship category that is currently BLOCKED
 
@@ -566,7 +566,7 @@ Create a simple allow list to allow ONLY Facebook from the entire Friendship cat
 
    ![allow list Rule Addition Confirmation](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_ruleaddverify.png)
 
-### Verification of Web Security allow list Policy enforcement and Reporting to check traffic status
+### Web Security - Reporting
 
 *  Open an incognito browser tab and access facebook.com
 *  Facebook seems allowed, but you can see that it is NOT fully loaded as a page
@@ -596,7 +596,7 @@ For Allow/Block List – SCRAPE and add all domains if being allowed.
 
    ![allow list Traffic Reporting Stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_allowlistreportingstats.png)
 
-### CASB - Configuration of CASB Policies from Citrix SIA portal
+### CASB - Policies
 
 Create a CASB rule to enable safe search on Google Browser and disable gmail.com access
 
@@ -610,7 +610,7 @@ Create a CASB rule to enable safe search on Google Browser and disable gmail.com
 
    ![CASB App Controls](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_casbappcontrols.png)
 
-### Verification of CASB Policy enforcement and Reporting to check traffic status
+### CASB Reporting
 
 Google Drive Blocking control:
 
@@ -633,7 +633,7 @@ Google Browser Safe Search enablement:
 
    ![Google Safe Search CASB Control](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_googlesafesaerch.png)
 
-### MALWARE Defense - Configuration of Anti Malware Policies from Citrix SIA portal
+### Anti Malware Defense - Configuration
 
 Note: SSL Decryption must be enabled (If Cloud connector is used and configured to auto install the root certificate as part of agent installation, this feature is enabled by default).
 
@@ -643,7 +643,7 @@ Note: SSL Decryption must be enabled (If Cloud connector is used and configured 
 
    ![Malware Defense Settings Check](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_malwaredefensesettingscheck.png)
 
-### Verification of Anti Malware
+### Anti Malware - Verification
 
 *  Access [https://www.eicar.org/?page_id=3950](https://www.eicar.org/?page_id=3950)
 *  Scroll down and click download the 68-byte file
@@ -660,7 +660,7 @@ Verifying via CSIA Reporting Section
 
    ![Malware Reporting Stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_malwarereportingstats.png)
 
-### DLP (Data Loss Prevention)- Configuration of DLP Policies from Citrix SIA portal  
+### DLP - Configuration  
 
 *  Ensure that that DLP Content and Analysis engine is ready and config is done appropriately
     *  Click “Yes” for content analysis and data loss prevention
@@ -688,7 +688,7 @@ Verifying via CSIA Reporting Section
 
    ![DLP Action to Block](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_dlpactiontoblock.png)
 
-### Verification of DLP (Data Loss Prevention) Policy enforcement and Reporting to check traffic status
+### DLP - Reporting
 
 *  Goto [https://dlptest.com](https://dlptest.com) (a site to verify Data Loss Prevention tests)
 *  Click Sample Data and view some sample information
@@ -722,7 +722,7 @@ Verifying via CSIA Reporting Section
 
    ![DLP Reporting Stats](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_dlpreportingstats.png)
 
-## Pre-Requisite - Uninstall the Cloud Connector uninstall
+## SIA Agent uninstall
 
 *  To start the Citrix SIA agent uninstallation process, right-click the previously downloaded Citrix SIA installer (from the folder it was downloaded)
     *  Select uninstall
@@ -761,7 +761,7 @@ With just the IPsec tunnel, we only get the following features:
 
 SSL decryption via tunnel is covered in the next PoC use case for exercising full security via IPsec tunnel
 
-### Web Security (Category Block)
+### Web Security - Category Block
 
 Before verification of policy enforcement via the IPsec tunnel, create the security policies in the Citrix SIA cloud portal
 
@@ -777,7 +777,7 @@ If you want to change the group, you must manually do it in Local Subnets for th
 
   ![Enable Web Security for Category Use case 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_enablewebsecforcategory.png)
 
-### Web Security (Allow list)
+### Web Security - Allow list
 
 *  Add an allow list to Friendship category to allow Linkedin ONLY but block all other social media categories
 
@@ -788,7 +788,7 @@ As defined best practice, scrape and resolve other URL dependencies before addin
 
    ![Allow List Saved Config Use Case 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_postconfigallowlinkedinlist.png)
 
-### Web Security (Block List)
+### Web Security - Block List
 
 *  Configure a specific block list via URL web filtering for a site like notpurple.com
 
@@ -824,7 +824,7 @@ As defined best practice, scrape and resolve other URL dependencies before addin
 
    ![Web Category Facebook Blocked Reporting Stats Use Case 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_reportingfacebookblockstats.png)
 
-### Web Security verification via the IPsec Tunnel
+### Web Security - IPsec Tunnel Verification
 
 *  We had initially configured LinkedIn to be exempt from the Friendship category to be blocked via selective allow list configuration.
 *  Access linkedin.com from the Friendship category in an incognito browser tab
@@ -875,7 +875,7 @@ For this demo PoC, we enable an explicit tunnel with SSL decryption and choose f
 
    ![Proxy and SSL Decryption Settings for IPsec Tunnel](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_ssldecryptionsettingsviatunnel.png)
 
-### Enable SSL decryption on the IPsec tunnel in the Local Subnets
+### IPsec Tunnel decryption for Local Subnets
 
 Note:
 Enable the decryption on the tunnel after it is configured in the SIA portal (From Orchestrator).
@@ -980,7 +980,7 @@ We create a CASB rule to enable safe search on the Google Browser and also disab
 
    ![CASB App Controls](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_casbappcontrols.png)
 
-### Verification of CASB Policy
+### CASB - Verification
 
 Google Browser Safe Search enablement
 
@@ -1003,7 +1003,7 @@ Google Drive Blocking control
 
    ![CASB Google Drive Blocked via SSL tunnel IPsec](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_repoterstatsssltunnelipsec.png)
 
-### MALWARE Defense - Configuration
+### Anti Malware - Configuration
 
 Note:
 SSL Decryption must be enabled (If Cloud connector is used and configured to auto install the root certificate as part of agent installation and this feature is be enabled by default)
@@ -1014,7 +1014,7 @@ SSL Decryption must be enabled (If Cloud connector is used and configured to aut
 
    ![Malware Config via SSL Enabled IPsec Tunnel](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_malwareconfigviasslenabledtunnel.png)
 
-### Verification of Anti Malware
+### Anti Malware - Verification
 
 *  Access [https://www.eicar.org/?page_id=3950](https://www.eicar.org/?page_id=3950)
 *  Scroll down and click download the 68 byte file
@@ -1031,7 +1031,7 @@ Verification
 
    ![Malware Reporter Stats via SSL Enabled IPsec Tunnel](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_reportermalwaresslipsectunnel.png)
 
-### DLP Policy Configuration
+### DLP - Configuration
 
 Data Loss Prevention Configuration
 
@@ -1061,7 +1061,7 @@ Data Loss Prevention Configuration
 
    ![DLP Action to Block](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-sdwan_dlpactiontoblock.png)
 
-### Verification of DLP
+### DLP - Verification
 
 *  Goto [https://dlptest.com](https://dlptest.com) (a site to verify Data Loss Prevention tests)
 *  Click Sample Data and view some sample information
