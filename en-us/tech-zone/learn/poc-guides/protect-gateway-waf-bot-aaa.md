@@ -238,13 +238,13 @@ IP Reputation can be built into the advanced authentication flow to prompt the u
 
 A data set need to be created by going to AppExpert > Data Sets and selecting 'Add'. Create a data set with a descriptive name, a type of 'ipv4' and click 'Create'.
 
-![Malicious IP Data Set](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_dataset.png)
+![Malicious IP Data Set](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa-dataset.png)
 
 Next, two advanced authentication policies need to be created by going to **Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Policy** and select 'Add'.
 
 Create the first policy with a descriptive name, an action type of **NO_AUTHN** and the expression set to 'true'.
 
-![Advanced Policy Good IP](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_advpol_good.png)
+![Advanced Policy Good IP](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa-advpol_good.png)
 
 Create the second policy with a descriptive name, action type of **NO_AUTHN** and expression as follows:
 
@@ -257,21 +257,21 @@ CLIENT.IP.SRC.IPREP_IS_MALICIOUS || CLIENT.IP.SRC.TYPECAST_TEXT_T.CONTAINS_ANY("
 
 Next, a CAPTCHA login schema profile is created by going to **Security > AAA - Application Traffic > Login Schema > Profiles Tab** and selecting 'Add'. Give the profile a descriptive name then edit the Authentication Schema by selecting the 'pencil' edit icon. Browse to the LoginSchema directory, highlight **SingleAuthCaptcha.xml** and choose **Select**.
 
-![Captcha Login Schema](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_captchaschema.png)
+![Captcha Login Schema](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa-captchaschema.png)
 
 Next, create an authentication policy label for the Captcha schema by going to **Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Policy Label** and selecting 'Add'. Give the PL a descriptive name and select the previously created captcha login schema. Bind the required LDAP action policy.
 
 **Note: this example is re-using a previously created LDAP authentication action.**
 
-![Captcha Policy Label](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_captchapl.png)
+![Captcha Policy Label](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa-captchapl.png)
 
 Create another policy label by selecting 'Add'. Give this PL a descriptive name, and set the login schema to LSCHEMA_INT. Next, bind the two previously created NO_AUTHN authentication policies.
 
-![IP Check Policy Label](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_ipcheckpl.png)
+![IP Check Policy Label](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa-ipcheckpl.png)
 
 Last, this IP Reputation check policy label needs to be set as the next factor of the previously created authentication policy that is already bound to an authentication or Gateway virtual server. Highlight the authentication policy, select 'edit binding' then set the new policy label as the 'Select Next Factor' field.
 
-![Final Authentication Policy](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa_authpolicyfinal.png)
+![Final Authentication Policy](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa-authpolicyfinal.png)
 
 ## Summary
 
