@@ -156,7 +156,7 @@ There are many systems and option for user and device certificate management. In
     *  IP Address Type - `Non Addressable`
 1.  Select No Server Certificate, select the domain certificate, click Select, Bind, and Continue
 1.  Select No nFactor Flow
-1.  Under Select nFactor Flow click the right arrow, select the `Factor1_DeviceCertificate_dcnf` flow created earlier
+1.  Under Select nFactor Flow click the right arrow, select the `Factor1_Epa_dcnf` flow created earlier
 1.  Click Select, followed by Bind, followed by Continue
 ![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_authvserver.png)
 
