@@ -31,7 +31,21 @@ Refer to Citrix Documentation for the latest product version, and license requir
 
 ## nFactor
 
-First, we log in to the CLI on our Citrix ADC and enter the authentication actions and associated policies for LDAP and EPA respectively. Then we log in to our GUI to build our nFactor flow in the visualizer tool and complete the multifactor authentication configuration.
+First, we log in to the CLI on our Citrix ADC and enter the authentication actions and associated policies for EPA and LDAP respectively along with login schema. Then we log in to our GUI to build our nFactor flow in the visualizer tool and complete the multifactor authentication configuration.
+
+### EPA Authentication policies
+
+Next we create the EPA action to check the device certificate, and the policy that references it.
+
+#### EPA action 1 - authAct_EPA_dcnf
+
+Update the following fields for your environment and copy and paste the string into the CLI:
+`add authentication epaAction authAct_EPA_dcnf -csecexpr "sys.client_expr(\"device-cert_0_0\")"`
+
+#### EPA policy 1 - authPol_EPA_dcnf
+
+Update the following fields for your environment and copy and paste the string into the CLI:
+`add authentication Policy authPol_EPA_dcnf -rule true -action authAct_EPA_dcnf`
 
 ### LDAP Authentication policies
 
@@ -70,32 +84,18 @@ Update the following fields for your environment and copy and paste the string i
 Update the following fields for your environment and copy and paste the string into the CLI:
 `add authentication Policy authPol_LDAP_dcnf -rule true -action authAct_Ldap_dcnf`
 
-### EPA Authentication policies
-
-Next we create the EPA action to check the device certificate, and the policy that references it.
-
-#### EPA action 1 - authAct_EPA_dcnf
-
-Update the following fields for your environment and copy and paste the string into the CLI:
-`add authentication epaAction authAct_EPA_dcnf -csecexpr "sys.client_expr(\"device-cert_0_0\")"`
-
-#### EPA policy 1 - authPol_EPA_dcnf
-
-Update the following fields for your environment and copy and paste the string into the CLI:
-`add authentication Policy authPol_EPA_dcnf -rule true -action authAct_EPA_dcnf`
-
 ### Login Schema
 
 Next we create Login Schemas used with each factor.
 
-#### lSchema 1 - lSchema_LDAP_dcnf
+#### lSchema 1 - lSchema_EPA_dcnf
+
+The EPA factor does not require a Login Schema.
+
+#### lSchema 2 - lSchema_LDAP_dcnf
 
 Update the following fields for your environment and copy and paste the string into the CLI:
 `add authentication loginSchema ls_ldap_dcnf -authenticationSchema "/nsconfig/loginschema/LoginSchema/SingleAuth.xml"`
-
-#### lSchema 2 - lSchema_EPA_dcnf
-
-The EPA factor does not require a Login Schema.
 
 ### nFactor
 
