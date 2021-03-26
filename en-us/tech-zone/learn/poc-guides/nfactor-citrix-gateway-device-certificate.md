@@ -9,7 +9,7 @@ description: Learn how to implement a Proof of Concept environment consisting of
 
 ## Introduction
 
-Large Enterprise environments require flexible authentication options to meet the needs of various user personas. With Device Certificate, coupled with LDAP credentials, Enterprises get "something you have" and "something you know" multifactor authentication seamlessly to verify their identity and securely access their applications and data.
+Large Enterprise environments require flexible authentication options to meet the needs of various user personas. With Device Certificate, coupled with LDAP credentials, Enterprises get "something you have" and "something you know" multifactor authentication. This allows users to seamlessly verify their identity and securely access their applications and data.
 
 [![Device Certificate Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_conceptualarchitecture.png)](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-certificate_conceptualarchitecture.png)
 
@@ -70,8 +70,6 @@ Update the following fields for your environment and copy and paste the string i
 Update the following fields for your environment and copy and paste the string into the CLI:
 `add authentication Policy authPol_LDAP_dcnf -rule true -action authAct_Ldap_dcnf`
 
-![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_cli.png)
-
 ### EPA Authentication policies
 
 Next we create the EPA action to check the device certificate, and the policy that references it.
@@ -85,8 +83,6 @@ Update the following fields for your environment and copy and paste the string i
 
 Update the following fields for your environment and copy and paste the string into the CLI:
 `add authentication Policy authPol_EPA_dcnf -rule true -action authAct_EPA_dcnf`
-
-![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_cli.png)
 
 ### Login Schema
 
@@ -117,24 +113,24 @@ There are many systems and option for user and device certificate management. In
 1.  From the start menu on our domain joined Windows 10 endpoint we enter `mmc`, right-click and run as administrator
 1.  Select File > Add/Remove, select Certificates, select the arrove to move it to the Selected snap-in pane and, click OK
 1.  Open the Personal folder, right-click the Certificates folder > All Tasks > Request New Certificate
-[![Device Certificate Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_requestnew certificate.png)](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-certificate_requestnew certificate.png)
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_requestnewcert.png)
 1.  Click next until you are offered certificate types, select Computer, and click Enroll, followed by Finish
 1.  Double-click the certificate it installed, select the Certification Path tab, select the root CA on the top, and click View Certificate. (Note: We could export the CA from the Active Directory server, yet for the POC we can eliminate steps by doing it here)
 1.  In the popup select the Details tab, select Copy to File, click Next, click Next (to accept DER encoding)
 1.  Select browse, and enter a filename, select save, select next, and select finish to store the CA certificate file.
-[![Device Certificate Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_requestnew certificate.png)](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-certificate_requestnew certificate.png)
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_exportdevicecacert.png)
 1.  Now we will import it into the ADC by navigating to **Traffic Management > SSL> Certificates > CA Certificates
 1.  Click Install, we enter the name `DeviceCertificateCA`, select Chose File, Local, and select the file, Open and click Install
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_installca.png)
 
 ### Visualizer
 
 1.  Next navigate to `Security > AAA - Application Traffic > nFactor Visualizer > nFactor Flows`
 1.  Select Add and select the plus sign in the Factor box
 
-#### Factor1_EPADC_dcnf
+#### Factor1_Epa_dcnf
 
-1.  Enter `Factor1_EPADC_dcnf` and select create
-![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_factor1.png)
+1.  Enter `Factor1_Epa_dcnf` and select create
 1.  In the same box select Add Policy
 1.  Select the EPA policy `authPol_EPA_dcnf`
 1.  Select Add
@@ -173,6 +169,7 @@ There are many systems and option for user and device certificate management. In
 1.  At the bottom right, under Device Cert CA select Add, and click the plus (+) sign next to the DeviceCertificateCA followed by OK
 ![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_devicecertca1.png)
 1.  Now under Certificate, select CA Certificate, Add Binding, select the right arrow under Select CA Cert and select DeviceCertificateCA followed by Bind and Close
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_devicecertca2.png)
 1.  If you currently have an LDAP policy bound navigate under Basic Authentication - Primary Authentication select LDAP Policy. Then check the policy, select Unbind, select Yes to confirm, and select Close
 1.  Under the Advanced Settings menu on the right select Authentication Profile
 1.  Select Add
@@ -188,10 +185,12 @@ There are many systems and option for user and device certificate management. In
 We test authentication by authenticating into our Citrix Virtual Apps and Desktops environment.
 
 1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://gateway.workspaces.wwco.net`
-![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_gatewayfqdn.png)
-1.  Select download if the EPA plug-in has not been installed. Thereafter it scans for device certificates.
+1.  Select download if the EPA plug-in has not been installed.
+1.  Otherwise select Yes when the EPA plug-in prompts you to scan (you can also select Always to automatically scan). Thereafter it scans for device certificates.
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_epalogin.png)
 1.  If you have multiple device certificates it prompts you to select the appropriate one to authenticate with otherwise it presents a logon prompt.
 1.  Enter the domain user name and password.
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_ldaplogin.png)
 1.  Select the virtual desktop from the available resources in their workspace and verify a successful launch.
 ![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_cvad.png)
 
