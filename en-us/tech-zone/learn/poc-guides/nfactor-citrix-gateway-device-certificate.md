@@ -9,7 +9,7 @@ description: Learn how to implement a Proof of Concept environment consisting of
 
 ## Introduction
 
-Large Enterprise environments require flexible authentication options to meet the needs of a variety of user personas. With Device Certificate, coupled with LDAP credentials, Enterprises get "something you have" and "something you know" multifactor authentication seamlessly to verify their identity and securely access their applications and data.
+Large Enterprise environments require flexible authentication options to meet the needs of various user personas. With Device Certificate, coupled with LDAP credentials, Enterprises get "something you have" and "something you know" multifactor authentication seamlessly to verify their identity and securely access their applications and data.
 
 [![Device Certificate Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_conceptualarchitecture.png)](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-certificate_conceptualarchitecture.png)
 
@@ -103,12 +103,33 @@ The EPA factor does not require a Login Schema.
 
 ### nFactor
 
+#### Domain Certificate
+
+In this POC we used a wildcard certificate corresponding to our Active Directory domain and it also corresponds to the fqdn we use to access to Gateway virtual server (gateway.workspaces.wwco.net)
+
 1.  Log in to the Citrix ADC GUI
-1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain Device Certificate installed. In this POC example we used a wildcard Device Certificate corresponding to our Active Directory domain. See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
-1.  Next navigate to `Security > AAA - Application Traffic > nFactor Visualizer > nFactor Flows`
-1.  Select Add and select the plus sign in the Factor box
+1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate and CAs installed and linked.  See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
+
+#### Device Certificate
+
+There are many systems and option for user and device certificate management. In this POC we use the Microsoft Certificate Authority installed on our Active Directory server.
+
+1.  From the start menu on our domain joined Windows 10 endpoint we enter `mmc`, right-click and run as administrator
+1.  Select File > Add/Remove, select Certificates, select the arrove to move it to the Selected snap-in pane and, click OK
+1.  Open the Personal folder, right-click the Certificates folder > All Tasks > Request New Certificate
+[![Device Certificate Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_requestnew certificate.png)](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-certificate_requestnew certificate.png)
+1.  Click next until you are offered certificate types, select Computer, and click Enroll, followed by Finish
+1.  Double-click the certificate it installed, select the Certification Path tab, select the root CA on the top, and click View Certificate. (Note: We could export the CA from the Active Directory server, yet for the POC we can eliminate steps by doing it here)
+1.  In the popup select the Details tab, select Copy to File, click Next, click Next (to accept DER encoding)
+1.  Select browse, and enter a filename, select save, select next, and select finish to store the CA certificate file.
+[![Device Certificate Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_requestnew certificate.png)](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-certificate_requestnew certificate.png)
+1.  Now we will import it into the ADC by navigating to **Traffic Management > SSL> Certificates > CA Certificates
+1.  Click Install, we enter the name `DeviceCertificateCA`, select Chose File, Local, and select the file, Open and click Install
 
 ### Visualizer
+
+1.  Next navigate to `Security > AAA - Application Traffic > nFactor Visualizer > nFactor Flows`
+1.  Select Add and select the plus sign in the Factor box
 
 #### Factor1_EPADC_dcnf
 
@@ -137,7 +158,7 @@ The EPA factor does not require a Login Schema.
 1.  Enter the following fields and click OK:
     *  Name - a unique value. We enter `DC_AuthVserver`
     *  IP Address Type - `Non Addressable`
-1.  Select No Server Device Certificate, select the domain Device Certificate, click Select, Bind, and Continue
+1.  Select No Server Certificate, select the domain certificate, click Select, Bind, and Continue
 1.  Select No nFactor Flow
 1.  Under Select nFactor Flow click the right arrow, select the `Factor1_DeviceCertificate_dcnf` flow created earlier
 1.  Click Select, followed by Bind, followed by Continue
@@ -149,8 +170,9 @@ The EPA factor does not require a Login Schema.
 1.  Select your existing virtual server that provides proxy access to your Citrix Virtual Apps and Desktops environment
 1.  Select Edit
 1.  Under Basic Settings select the pencil icon to edit, then select more at the bottom
-1.  At the bottom right, under Device Cert CA select the plus (+) sign followed by Ok
-![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_devicecertca.png)
+1.  At the bottom right, under Device Cert CA select Add, and click the plus (+) sign next to the DeviceCertificateCA followed by OK
+![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_devicecertca1.png)
+1.  Now under Certificate, select CA Certificate, Add Binding, select the right arrow under Select CA Cert and select DeviceCertificateCA followed by Bind and Close
 1.  If you currently have an LDAP policy bound navigate under Basic Authentication - Primary Authentication select LDAP Policy. Then check the policy, select Unbind, select Yes to confirm, and select Close
 1.  Under the Advanced Settings menu on the right select Authentication Profile
 1.  Select Add
@@ -167,9 +189,9 @@ We test authentication by authenticating into our Citrix Virtual Apps and Deskto
 
 1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://gateway.workspaces.wwco.net`
 ![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_gatewayfqdn.png)
-1.  Select download if the EPA plugin has not been installed. Thereafter it scans for device certificates.
-1.  If you have multiple device certificates it prompts you to select the appropriate one to authentiate with otherwise it presents a log on prompt.
-1.  Enter the domain username and password.
+1.  Select download if the EPA plug-in has not been installed. Thereafter it scans for device certificates.
+1.  If you have multiple device certificates it prompts you to select the appropriate one to authenticate with otherwise it presents a logon prompt.
+1.  Enter the domain user name and password.
 1.  Select the virtual desktop from the available resources in their workspace and verify a successful launch.
 ![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_cvad.png)
 
