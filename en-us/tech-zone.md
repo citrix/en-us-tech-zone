@@ -1,7 +1,7 @@
 ---
 layout: doc
 ---
-# Citrix Tech Zone
+## Citrix Tech Zone
 
 ![Tech Zone logo](/en-us/tech-zone/learn/media/shared_banner.png)
 
