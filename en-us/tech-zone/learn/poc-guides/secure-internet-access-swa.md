@@ -53,6 +53,7 @@ This guide showcases how to perform the following actions:
 |   |   | TCP  | 8009  | Alternative port for proxy connections  |
 |   |   | TCP  | 8015  | Proxy authentication over HTTP  |
 |   |   | TCP  | 8016  | Alternative port for proxy authentication  |
+|   |   | TCP  | 8026  | Cloud categorization port for Android Enterprise  |
 |   |   | TCP  | 8080  | Default block page  |
 |   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
 | CSIA  | api.ibosscloud.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
@@ -60,6 +61,7 @@ This guide showcases how to perform the following actions:
 |   |   | TCP  | 8009  | Alternative port for proxy connections  |
 |   |   | TCP  | 8015  | Proxy authentication over HTTP  |
 |   |   | TCP  | 8016  | Alternative port for proxy authentication  |
+|   |   | TCP  | 8026  | Cloud categorization port for Android Enterprise  |
 |   |   | TCP  | 8080  | Default block page  |
 |   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
 | CSIA  | accounts.iboss.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
@@ -67,6 +69,7 @@ This guide showcases how to perform the following actions:
 |   |   | TCP  | 8009  | Alternative port for proxy connections  |
 |   |   | TCP  | 8015  | Proxy authentication over HTTP  |
 |   |   | TCP  | 8016  | Alternative port for proxy authentication  |
+|   |   | TCP  | 8026  | Cloud categorization port for Android Enterprise  |
 |   |   | TCP  | 8080  | Default block page  |
 |   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
 | CSIA  | **Customer CSIA Node**-swg.ibosscloud.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
@@ -74,6 +77,7 @@ This guide showcases how to perform the following actions:
 |   |   | TCP  | 8009  | Alternative port for proxy connections  |
 |   |   | TCP  | 8015  | Proxy authentication over HTTP  |
 |   |   | TCP  | 8016  | Alternative port for proxy authentication  |
+|   |   | TCP  | 8026  | Cloud categorization port for Android Enterprise  |
 |   |   | TCP  | 8080  | Default block page  |
 |   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
 | CSIA  | **Customer CSIA Node**-reports.ibosscloud.com  | TCP  | 443  | PAC script retrieval over HTTPS & Proxy authentication over HTTPS  |
@@ -81,6 +85,7 @@ This guide showcases how to perform the following actions:
 |   |   | TCP  | 8009  | Alternative port for proxy connections  |
 |   |   | TCP  | 8015  | Proxy authentication over HTTP  |
 |   |   | TCP  | 8016  | Alternative port for proxy authentication  |
+|   |   | TCP  | 8026  | Cloud categorization port for Android Enterprise  |
 |   |   | TCP  | 8080  | Default block page  |
 |   |   | TCP  | 10080  | PAC script retrieval over HTTP  |
 
@@ -217,6 +222,7 @@ Example:
 #### Additional Settings
 
 Settings relevant to web categories are configured with toggles under **Additional Settings**. Configuring a toggle to **Yes** enables the setting while configuring a toggle to **No** disables the setting. For a full set of descriptions for all available web category settings refer to the following table:
+
 | Feature  | Description  |
 |---  |---  |
 | Enable Logging  | Enable and disable logging of violation attempts for the current set of blocked website categories. Log reports may be viewed on the CSIA Reports page. The report information includes the date, time, user, website address, and category of the violation.  |
