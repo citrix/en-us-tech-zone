@@ -8,15 +8,15 @@ description: Learn how to design an environment to support a mergers and acquisi
 
 ## Overview
 
-CompanyA is a food manufacturer located in the northern plains of the United States.  To continue growing and expand into new types of food, CompanyA plans to acquire additional food manufacturers across different climates. As part of the acquisition process, CompanyA needs a repeatable strategy to integrate acquired company systems into a single, unified experience.
+CompanyA is a food manufacturer located in the northern plains of the United States. To continue growing and expand into new types of food, CompanyA plans to acquire additional food manufacturers across different climates. As part of the acquisition process, CompanyA needs a repeatable strategy to integrate acquired company systems into a single, unified experience.
 
-The integration across multiple independent organizations introduces many technical challenges, mostly focused on granting access to external users (CompanyA users) to private resources (CompanyB applications) that are authorized by separate, independent identity providers.
+The integration across multiple independent organizations introduces many technical challenges. The challenges mostly focused on granting access to external users (CompanyA users) to private resources (CompanyB applications) that are authorized by separate, independent identity providers.
 
-CompanyA decided to use Citrix Workspace as the cornerstone for their mergers & acquisition strategy as they are looking to use the same strategy for acquiring CompanyC, CompanyD and CompanyE.
+CompanyA decided to use Citrix Workspace as the cornerstone for their mergers & acquisition strategy. They are looking to use the same strategy for acquiring CompanyC, CompanyD and CompanyE.
 
 ## Success Criteria
 
-As part of the acquisition strategy, CompanyA needs a solution that can quickly and securely allow users access to CompanyA and CompanyB resources. In order to be successful, CompanyA defined a list of success criteria that forms the basis for the overarching design.
+As part of the acquisition strategy, CompanyA needs a solution that can quickly and securely allow users access to CompanyA and CompanyB resources. To be successful, CompanyA defined a list of success criteria that forms the basis for the overarching design.
 
 ### User Experience
 
@@ -25,9 +25,9 @@ The first aspect of a mergers and acquisitions solution is to meet the needs of 
 | **Success Criteria** | **Description** | **Solution**
 ---|---|---|
 |**Application Library**|Users from CompanyA and CompanyB need a centralized way to access resources from the other company.|Citrix Workspace|
-|**Web App Single Sign-On**|When accessing private web resources from the other company, users should not be required to remember and enter additional user accounts or passwords. |Citrix Secure Workspace Access Service|
-|**Virtual App Single Sign-On**|When accessing virtual Windows apps from the other company, users should not be required to remember and enter additional user accounts or passwords. |Citrix  Virtual Apps and Desktops Service – Federated Authentications Service|
-|**Unified Experience**|Regardless of the user’s original company, all users should have the same authentication experience.|Citrix Application Delivery Controller – nFactor authentication policies|
+|**Web App Single Sign-On**|When accessing private web resources from the other company, users are not  required to remember and enter another user accounts or passwords.|Citrix Secure Workspace Access service|
+|**Virtual App Single Sign-On**|When accessing virtual Windows apps from the other company, users are not  required to remember and enter another user accounts or passwords.|Citrix Virtual Apps and Desktops service – Federated Authentications Service|
+|**Unified Experience**|Regardless of the user’s original company, all users have the same authentication experience.|Citrix Application Delivery Controller – nFactor authentication policies|
 
 ### Security
 
@@ -35,15 +35,15 @@ The first aspect of a mergers and acquisitions solution is to meet the needs of 
 
 | **Success Criteria** | **Description** | **Solution**
 ---|---|---|
-|**Identity Providers**|Each acquired organization will maintain a separate identity provider until such a time when it can be integrated with CompanyA’s primary identity provider.|Citrix Application Delivery Controller|
-|**Multi-factor authentication**|With security being top of mind, MFA is required to ensure another layer of authentication protection of corporate resources.|Integrate currently deployed solution or require Time-Based One-Time Password with Push|
-|**VPN-less Access**|Corporate resources must be protected from untrusted and unsecured locations. To help prevent malware intrusion, devices should not be allowed direct access to the internal network. |Citrix Secure Workspace Access Service and Citrix Virtual Apps and Desktops Service|
+|**Identity Providers**|Each acquired organization maintains a separate identity provider until such a time when it can be integrated with CompanyA’s primary identity provider.|Citrix Application Delivery Controller|
+|**Multifactor authentication**|With security being top of mind, MFA is required to ensure another layer of authentication protection of corporate resources.|Integrate currently deployed solution or require Time-Based One-Time Password with Push|
+|**VPN-less Access**|Corporate resources must be protected from untrusted and unsecured locations. To help prevent malware intrusion, devices are not be allowed direct access to the internal network. |Citrix Secure Workspace Access aervice and Citrix Virtual Apps and Desktops service|
 |**Internal Threats**|There are documented cases where internal users who are unhappy with the acquisition steal customer data and intellectual property. Capturing and storing data must be restricted|Enhanced Security Policies, App Protection Policies, and Security Analytics|
-|**External Threats**|To handle multi-directory authentication, the Citrix Application Delivery Controller presents Workspace with an authentication web app. CompanyA must add additional layers of protection for public facing web apps.|Citrix Application Delivery Controller with Bot Management and Web App Firewall|
+|**External Threats**|To handle multi-directory authentication, the Citrix Application Delivery Controller presents Workspace with an authentication web app. CompanyA must add extra layers of protection for public facing web apps.|Citrix Application Delivery Controller with Bot Management and Web App Firewall|
 
 ## Conceptual Architecture
 
-Based on their requirements above, CompanyA created the following high-level, conceptual architecture for their acquisition strategy. This not only meets all of the above requirements, but it gives CompanyA the foundation they need to expand to additional use cases as identified in the future.
+Based on their defined requirements, CompanyA created the following high-level, conceptual architecture for their acquisition strategy. The conceptual architecture not only meets all of the requirements, but it gives CompanyA the foundation they need to expand to additional use cases as identified in the future.
 
 [![Conceptual Architecture](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_conceptual.png)](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_conceptual.png)
 
@@ -54,59 +54,59 @@ At a high-level:
 **User Layer**: The user layer describes the end-user environment and end-point devices that are used to connect to resources.
 
 *  Regardless of device, users access resources from Workspace app, resulting in an experience that is identical across every form factor and device platform.
-*  To maintain a level of continuity, the user’s workspace experience will include proper branding and logos for the user’s pre-acquisition company.
-  
+*  To maintain a level of continuity, the user’s workspace experience includes proper branding and logos for the user’s pre-acquisition company.
+
 **Access Layer**: The access layer describes details surrounding how users authenticate to their Workspace and secondary resources.
 
 *  Users continue to authenticate with their pre-acquisition primary identity.
-*  Users continue to use their pre-acquisition multi-factor authentication solution. If the company does not currently utilize multi-factor authentication, CompanyA will provide phone-based, TOTP tokens that support push-based authentication.
+*  Users continue to use their pre-acquisition multifactor authentication solution. If the company does not currently utilize multifactor authentication, CompanyA provides phone-based, TOTP tokens that support push-based authentication.
 
-**Resource Layer**: The resource layer authorizes specific SaaS, web and virtual resources for defined users and groups as well as the security policies associated with the resource.
+**Resource Layer**: The resource layer authorizes specific SaaS, web and virtual resources for defined users and groups and the security policies associated with the resource.
 
-*  Regardless of user’s originating company, the user must be allowed seamless access to any authorized resource hosted by other companies.
+*  Regardless of a user’s originating company, the user must be allowed seamless access to any authorized resource hosted by other companies.
 *  To better protect data, CompanyA requires policies that disable the ability to print, download, and copy/paste content from the managed resource to and from the endpoint. CompanyA also requires restricting screen scraping\capturing applications and keylogging malware.
 *  Due to the unknown nature of the endpoint security status, CompanyA requires VPN-less access to resources with the use of isolated browsers or virtualized sessions.
 
 **Control Layer**: The control layer defines how the underlying solution adjusts based on the underlying activities of the user.
 
-*  With all of the policies in place to protect the users and company data, there are still risks. CompanyA uses the Security Analytics service to identify compromised users or insider threats and automatically take actions to maintain a secure environment.
+*  With the policies in place to protect the users and company data, there are still risks. CompanyA uses the Security Analytics service to identify compromised users or insider threats and automatically take actions to maintain a secure environment.
 *  The platform unifying multi-directory authentication must be secured from external threats and attacks. CompanyA enables the integrated Web App Firewall and Bot Management to protect the authentication point into the environment.
 
 Hosting Layer: The hosting layer details how components are deployed on hardware, whether that is on-premises, cloud, or hybrid cloud.
 
 *  Citrix Workspace must be able to access every company’s identity provider, whether that is an on-premises Active Directory domain or a cloud-based offering from Okta, via a single Workspace site.
 
-The subsequent sections provides greater detail into specific design decisions for CompanyA’s mergers and acquisitions strategy reference architecture.
+The subsequent sections provide greater detail into specific design decisions for CompanyA’s mergers and acquisitions strategy reference architecture.
 
 ## User Layer
 
 ### Workspace Branding
 
-To maintain an initial level of pre-acquisition and post-acquisition identity between the different companies, CompanyA will implement policy-based branding for the user’s workspace experience.
+To maintain an initial level of pre-acquisition and post-acquisition identity between the different companies, CompanyA plans to implement policy-based branding for the user’s workspace experience.
 
-Based on the user’s identity provider and domain name, CompanyA will apply a different color scheme and logo to the overall Workspace theme.
+Based on the user’s identity provider and domain name, CompanyA applies a different color scheme and logo to the overall Workspace theme.
 
 ## Access Layer
 
 ### Authentication
 
-One of the challenges CompanyA experienced with previous acquisitions was how to integrate identity providers. The process of merging identity providers can take a significant amount of time.  With the new strategy, CompanyA will utilize a Citrix Application Delivery Controller to handle all authentication requests.
+One of the challenges CompanyA experienced with previous acquisitions was how to integrate identity providers. The process of merging identity providers can take a significant amount of time. With the new strategy, CompanyA utilizes a Citrix Application Delivery Controller to handle all authentication requests.
 
 [![Primary Authentication](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_primary-authentication.png)](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_primary-authentication.png)
 
-authentication process works by the Application Delivery Controller evaluating the user’s company and then applying the correct authentication request.  As CompanyA has standardized on Okta for primary authentication, the request is forwarded to Okta. Once Okta completes user authentication, Okta replies to the Application Delivery Controller with a token identifying successful authentication.
+The authentication process works by the Application Delivery Controller evaluating the user’s company and then applying the correct authentication request. As CompanyA has standardized on Okta for primary authentication, the request is forwarded to Okta. Once Okta completes user authentication, Okta replies to the Application Delivery Controller with a token identifying successful authentication.
 
-But not every company that CompanyA acquires will use Okta.  Instead, if the Application Delivery Controller identifies the user is from CompanyB, the user is asked for their Active Directory username and password.  Those credentials are validated against CompanyB’s Active Directory domain.  If CompanyB already integrated a multifactor authentication solution, users will continue to user their registered tokens.
+But not every company that CompanyA acquires uses Okta. Instead, if the Application Delivery Controller identifies the user is from CompanyB, the user is asked for their Active Directory user name and password. Those credentials are validated against CompanyB’s Active Directory domain. If CompanyB already integrated a multifactor authentication solution, users continue to user their registered tokens.
 
 Because strong authentication is a critical first step to security, CompanyA wants to have a solution ready for organizations that are not currently using multifactor authentication. In this instance, after the user authenticates with their company’s Active Directory domain, the Application Delivery Controller uses the native time-based one-time password engine to provide multifactor authentication for the user. Once registered to the user’s device, the user can either enter the code manually or use the push notification service. Push notifications simply require the user to select “Yes” from their registered mobile device to fulfill multifactor authentication.
 
 ### nFactor Policy
 
-For primary authentication, the Citrix Application Delivery Controller plays a critical part.  To make the authentication decisions, the Application Delivery Controller utilizes an nFactor policy.
+For primary authentication, the Citrix Application Delivery Controller plays a critical part. To make the authentication decisions, the Application Delivery Controller utilizes an nFactor policy.
 
 [![nFactor Policy](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_nfactor-policy.png)](/en-us/tech-zone/design/media/reference-architectures_mergers--acquisitions_nfactor-policy.png)
 
-The nFactor policy must know what company the user belongs to in order to process authentication requests properly. Once the correct company identifier is selected, nFactor forwards the request to the correct branch of the authentication policy.
+To process authentication requests properly, the nFactor policy must know what company the user belongs to. Once the correct company identifier is selected, nFactor forwards the request to the correct branch of the authentication policy.
 
 Once the nFactor policy is defined, CompanyA can continue to expand it to incorporate additional organizations it acquires in the future. The nFactor policy allows CompanyA to create additional flows utilizing authentication standards that include LDAP, RADIUS, SAML, client certificates, OAuth OpenID Connect, Kerberos, and more. The nFactor policy engine provides CompanyA with the flexibility to continue integrating additional acquisitions without a redesign.
 
@@ -116,7 +116,7 @@ To provide access to internal resources like private web apps, virtual apps, and
 
 [![Zero Trust Network Access](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_zero-trust-network-access.png)](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_zero-trust-network-access.png)
 
-The Secure Workspace Service and the Virtual Apps and Desktops Service uses the outbound control channel connections established by the cloud connectors. Those connections allow the user to remotely access internal resources. However, those connections are
+The Secure Workspace Access service and the Virtual Apps and Desktops service uses the outbound control channel connections established by the cloud connectors. Those connections allow the user to remotely access internal resources. However, those connections are
 
 *  Limited in scope so that only the defined resource is accessible
 *  Based on the user’s primary, secured identity
@@ -126,7 +126,7 @@ The Secure Workspace Service and the Virtual Apps and Desktops Service uses the 
 
 ### Federated Authentication Services
 
-Users authenticate to Citrix Workspace with a primary identity. The primary identity is based on their company’s identity provider.  One of the challenges with mergers and acquisitions is access to secondary resources that are based on a secondary identity.  For example, CompanyA allows certain users from CompanyB and CompanyC to access virtual Windows applications. To access a virtual Windows application, the user must have a user account (secondary identity) within the domain containing the virtual resource. A CompanyB user’s account (primary identity) will not work with a CompanyA resource (secondary identity).  To translate credentials between a primary and secondary identity and provide single sign-on to virtual Windows applications, CompanyA will use the Federated Authentication Service within Citrix Cloud.
+Users authenticate to Citrix Workspace with a primary identity. The primary identity is based on their company’s identity provider. One of the challenges with mergers and acquisitions is access to secondary resources that are based on a secondary identity. For example, CompanyA allows certain users from CompanyB and CompanyC to access virtual Windows applications. To access a virtual Windows application, the user must have a user account (secondary identity) within the domain containing the virtual resource. A CompanyB user’s account (primary identity) will not authenticate to a CompanyA resource (secondary identity). To translate credentials between a primary and secondary identity and provide single sign-on to virtual Windows applications, CompanyA uses the Federated Authentication Service within Citrix Cloud.
 
 The [Workspace Single Sign-On Tech Brief](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-sso.html#sso-virtual-apps-and-desktops) contains additional information related to the Federated Authentication Service.
 
@@ -152,19 +152,19 @@ The [App Protection Policies Tech Brief](/en-us/tech-zone/learn/tech-briefs/app-
 
 ### Web App Firewall
 
-When users authenticate to Citrix Workspace, they will access a custom authentication form in order to support the mergers and acquisitions strategy.  The authentication form, hosted on the Citrix Application Delivery Controller, is a public web page that must be protected from bots and attacks. To better protect the public web app, CompanyA will use the Bot Management and Web App Firewall components of the Citrix Application Delivery Controller solution.
+When users authenticate to Citrix Workspace, they access a custom authentication form that supports the mergers and acquisitions strategy. The authentication form, hosted on the Citrix Application Delivery Controller, is a public webpage that must be protected from bots and attacks. To better protect the public web app, CompanyA uses the Bot Management and Web App Firewall components of the Citrix Application Delivery Controller solution.
 
 [![Web App Firewall](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_web-app-firewall.png)](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_web-app-firewall.png)
 
 The first line of defense is Bot Management. Bots can easily crash or slow a public web app by overwhelming the service with fraudulent requests. The bot management component of the Application Delivery Controller is able to detect a bot request and prevent it from inundating the system.
 
-The second line of defense is the Web App Firewall. With the Web App Firewall, the policy engine that handles the submitted credentials is protected from attack. These types of attacks would typically be buffer overflow, SQL injection, and cross site scripting. Web App Firewall will detect and deny these attacks from impacting the authentication policy engine.
+The second line of defense is the Web App Firewall. With the Web App Firewall, the policy engine that handles the submitted credentials is protected from attack. These types of attacks would typically be buffer overflow, SQL injection, and cross site scripting. Web App Firewall detects and deny these attacks from impacting the authentication policy engine.
 
 ### Security Analytics
 
 CompanyA needs to identify and stop insider threats to the environment before the impact is too great.
 
-To help protect the environment, CompanyA uses Citrix Security Analytics to identity insider threats, compromised users and compromised endpoints. In many cases, a single instance of a threat does not warrant drastic action, but a series of threats can indicate a security breach.  
+To help protect the environment, CompanyA uses Citrix Security Analytics to identity insider threats, compromised users and compromised endpoints. In many cases, a single instance of a threat does not warrant drastic action, but a series of threats can indicate a security breach.
 
 CompanyA developed the following initial security policies:
 
