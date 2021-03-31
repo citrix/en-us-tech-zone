@@ -165,19 +165,184 @@ Web policies in Citrix SIA are enforced based upon the security group associatio
 
 #### Blocking or Allowing a website
 
+Block List
+
+Website browsing can be blocked using a Block List. Block Lists can be used to restrict access to network resources selectively. Allow Lists allow access to URLS that may be blocked by a web category policy. Allow Lists can be used to grant access to specific resources. Allow Lists are configured much the same as 
+
+Block
+Below are the various ways to configure Block Lists:
+
+*  URL matching: URLs can be matched using domains, subdomains, IP addresses, IP ranges, and ports
+*  Wildcards: Wildcard entries can be used in the block list by omitting the trailing forward slash from the path i.e. “mywebsite-parent-domain.com”
+*  Explicit: These are non-wildcard entries; they can be created by appending a trailing forward slash to the pathi.e. “mywebsite-parent-domain.com/”
+*  Regular Expressions: Regular expressions can be used to match complex patterns
+
+Domains are tagged with web categories based on their content. The categories of visited websites are recorded in Reporting Analytics.
+
+Citrix SIA has a Scrape Tool that can be used to identify all the domains associated with a website, which then can be used to be added to the Block List.
+URL Look Up Tool
+Citrix SIA platform has a URL Look Up Tool can be used to:
+Check to see how a website is categorized
+Check to see if a website is associated with malware
+The URL Look Up tool is useful when creating Web Security policies. Additionally, if the tool is unable to categorize the entered URL, it can be submitted for categorization to the platform.
+
 #### Custom Block Pages
+
+A Custom Block Page can be created for users who attempt to access blocked content. In addition, the block page can also apply for those users who try to access the intent while in Sleep Mode. Custom Block pages have the following associated actions:
+
+*  Redirect: Send users to a specific URL
+*  Silent Drop: prevents access without responding
+*  Allow user to login: bypass block page by logging into an account that is created on the gateway
 
 #### Keywords
 
+Keyword filtering can be used to inspect URLs to find specific words.
+
+*  The Web Gateway can take action to allow or block the user's activity depending on the associated behavior of their searched keyword.
+*  The platform includes predefined Adult and High-Risk keyword lists.
+*  Administrators can choose to enable the predefine lists on a per-group basis.
+*  Alter the predefined lists by enabling or disabling a subset of the words.
+*  Elect not to use the predefined lists and instead compile their own list of words.
+
 ### Data Loss Prevention
+
+The Data Loss Prevention (DLP) module is an advanced analysis engine that inspects data for potential loss and sensitive information. It includes built-in detection of Personally Identifiable Information (PII), Credit Card information including stripe data, and other content. In addition, custom patterns can be defined to detect content such as data from CRM or database systems.
+
+The DLP module provides protection against unauthorized cloud use and sensitive data loss. This includes protection for the use of cloud services as to ensure sensitive data is secured and maintained within organizationally approved cloud services.
+Deep file-based data loss prevention capabilities to detect, alert, and stop the transfer of sensitive data. Advanced detection capabilities detect and protect sensitive information within content by analyzing numerous file types including compressed files.
 
 ### Cloud Access Security Broker
 
+The web security module has extensive social media and cloud application controls. Using the Cloud Access Security Broker (CASB) App Controls allow you to manage access to common online applications and social media. Cloud App Controls can be used to restrict activity on popular social media and cloud services. Cloud App Controls can be applied to specific security groups to allow or block items such as posting, liking, following etc.
+
+*  Cloud app control can be used to manage the use of social streaming radio, Pinterest, Facebook, Twitter, LinkedIn, search engines, YouTube, and Google Apps
+*  Controls for each of these can be adjusted on a per-group basis
+*  Specific Cloud & SaaS services and social media sites require SSL decryption to be enabled
+
+Search Engine Controls allow you to set SafeSearch settings on various search engines. These settings can also be applied globally or to specific groups. Google, Yahoo, and Bing web browser search engines are supported.
+You can prevent user from uploading files to a variety of Cloud Services. File upload can be blocked for Dropbox, Box, OneDrive, Google Drive and Generic file uploads
+YouTube Manager can restrict content, hide comments, and create a library of whitelisted videos. YouTube Manager settings can be applied globally or to specific security group(s).
+Other actions that can be performed by the YouTube manager are:
+
+*  Home Page: You can redirect a user to the Organizations YouTube channel.
+*  Bandwidth Preservation: You can force videos to play in Standard Definition
+*  Whitelist libraries: You allow access to specific videos that are blocked by the SafeSearch option into a video library
+
+Microsoft CASB integration enables traffic policy control for unsanctioned Apps and CASB reporting visibility all within the Citrix SIA platform. Integration with “Microsoft Cloud App” platform and the platform provides granular traffic policy control and assignments for blocking Unsanctioned Apps as well as CASB reporting within a single pane of glass. Real-time traffic logging and statistics are shipped via API integration to the “Microsoft Cloud App Security” platform. The integration between the platform and Microsoft configuration is achieved by simply entering Microsoft subscription info into the platform 
+Note: a majority of social media and cloud services will require SSL decryption to be enabled in order to perform Cloud App Controls, YouTube Manager controls, and Search Engine Controls.
+
 ### SSL/TLS Decryption
+
+Without SSL Decryption, reporting and analytics become limited. For example, when searching on google without the setting enabled – the SIA platform can report on google.com but not on any of the keywords used in the search query. SSL is not required for block, allow, or monitoring basic HTTP access. With SSL Decryption enabled, the SIA platform can inspect HTTPS traffic thus offering more granular actions and visibility. With SSL Decryption enabled, the connected devices will need the certificate from the platform. The certificate can be distributed during the Cloud Connector install. To verify this, when navigating to a site, the trusted certificate should be seen as being issued by Citrix SIA and not by the site.
+
+Many if not most sites and services on the internet are encrypting their communications with users, with SSL/TLS being the most common protocol used to do so. This makes the ability to inspect SSL/TLS traffic essential for effective internet security. Without doing so, a growing majority of an organization’s traffic will go unsecured, allowing for malware or internal bad actors to exfiltrate corporate data unseen to the gateway.
+As a critical but process-intensive task, SSL/TLS decryption can easily overburden traditional security appliances attempting to achieve full SSL/TLS visibility into content and cloud app usage. Citrix SIA has a scalable cloud architecture that expands and contracts as needed. Each customer’s resources are fully containerized. Citrix SIA keeps each organizations’ decryption keys completely isolated from others.
+SSL/TLS Decryption is the ability to view inside of a secure HTTPS traffic. Citrix SIA SSL/TLS decryption works by having the Citrix SIA act as a man in the middle between the client machine and SSL/TLS secured site. The Citrix SIA acts as a root certification authority, intercepting SSL requests to legitimate sites, requesting them, signing the received data with its own CA certificate and sending the data to the client.
+SSL/TLS Decryption on the CSIA platform works by implementing a “Man in the Middle” security procedure. SSL/TLS decryption can be performed transparently or through a proxy connection, with the only requirement being that the SSL/TLS certificate is deployed on the Cloud Connected device. SSL/TLS certificates can be pushed down through the installer or manually installed.
+SSL/TLS Decryption relies on a MITM certificate. The certificate can be generated from the console or can be inputted in PEM format. The certificate is automatically included in the Windows and MacOS cloud connector download. Certificates can also be deployed out by a trusted root CA via any typical method
+Prior to enabling SSL decryption, a certificate must be downloaded from the platform and installed on the clients machine.
+Decrypting all destinations
+Note: When configuring SSL decryption for the first time, it is recommended to start with selective SSL decryption as not all websites will accept SSL decryption.
+
+*  SSL Decryption can be enabled for all destinations are user travels to on the internet. On the other hand, for websites that do not accept SSL decryption, a bypass can set to only selectively decrypt certain destinations. Below are the various types of bypasses that can be set.
+*  Bypassing SSL Decryption: Domains
+*  Domain bypass can be configured if the site does support SSL Decryption or it is not desirable to set up SSL Decryption for the site. Certain sites can be bypassed by adding the domain to the Selective SSL Decryption.
+*  Note: Bypass for a domain includes all of its subdomains as well.
+*  Bypassing SSL Decryption: Web Categories
+*  It may not be desirable to allow SSL Decryption for certain web categories, especially when it pertains to the privacy of users. If a site belongs to multiple Web Categories, SSL Decryption will be bypassed if any of the Web Categories have the setting for bypass enabled.
+*  Bypassing SSL Decryption: Groups
+*  SSL Decryption bypass can be configured for specific users/groups from the Group Management section of the console.
+*  Bypassing SSL Decryption: IP Address
+*  SSL Decryption Bypass can be enabled for devices dependent upon their IP address. IP addresses and IP ranges, public or private, can be added to the bypass list.
 
 ### Advanced Web Security
 
+**Keyword filtering** is used for to inspect URLs for certain keywords as well as restrict user searches and phrases. Depending on the outcome of the inspection, content can be allowed or blocked. Keywords can be manually added or be sourced from a pre-defined list within the platform. A Wildcard option can be enabled for multi-word searches/keywords that are substrings of larger words that may violate blocked keywords.
+Wildcard example: The keyword is “base.” A wildcard match for “base” will block both the search word “base” and “baseball.”
+Port Blocking
+Connectivity to network resources can be restricted by certain ports for both UDP and TCP based protocols as well as direction – inbound, outbound, or both. In addition, a Port Block schedule can be applied to restrict access only during particular time(s) of the day.
+Port blocking control blocks internet traffic on specified ports, or port ranges.
+
+*  Any traffic using the specified ports will be blocked completely.
+*  To clear the Port Blocking controls, switch the enabled toggles for the port ranges you would like to disable to NO.
+*  You can choose to always block the port ranges for the selected group or block ports using an Advanced Schedule.
+
+**Browser and OS**
+
+Connectivity to network resources can be restricted by Browser and OSes to specific versions. The following actions can be applied to Browser and OS restrictions:
+*  Block the following: Blocks internet access for specific browsers and OS versions
+*  Allow only the following: Allows internet access for specific browsers and OS versions
+*  Move user: Move a user to another security group (if they violated the restrictions) for a particular period of time
+
+**Content and MIME Type**
+The Multipurpose Internet Mail Extensions (MIME) type is a standardized way to indicate the nature and format of a document.
+
+*  Browsers often use the MIME type (and not the file extension) to determine how to process a document or domain.
+*  The general structure of a MIME type consists of a type and subtype in the format [type]/[subtype].
+*  When entering a MIME type, ensure you have no spaces between the type and subtype, for example, "audio/mpeg“
+Content type is used to indicate the media type of the requested resource. MIME types help browsers understand how to process files it recovers from a web server. A browser matches its content type to the MIME type. You can control the type of content that can be accessed when browsing. Common types of restrictions include:
+
+*  Image/jpeg
+*  Image/gif
+*  Image/webp
+*  Image/png
+
+**File Extensions** can be restricted to prevent users from downloading files that have specific extensions.
+
+*  The File Extension control block specific file extensions from being downloaded on your network.
+*  Each extension may be a maximum of 15 characters in length
+*  To remove an extension from the Block list, check the box next to the extension.
+
+For example, an ‘.exe’ file may cause harm if executed by a user and therefore can be restricted from downloading.
+
+**Domain Extension**
+
+The domain extension control allows you to block or allow specific domain extensions from being accessed on a per-group basis.
+
+*  Manage the Domain Extensions list for each group by
+*  Blocking the domain extensions in the list
+*  Only Allow the extensions in the list via the Block or Only Allow Domain Extensions
+*  Each extension may be a maximum of 15 characters in length.
+*  For example, you may choose to allow only domains that end in ".com" and ".net". Any domains that do not end in those extensions will be blocked
+Restrictions can be put in place to prevent users from browsing to specific Top-Level Domains
+
+Note: setting the Top-Level Domain restriction does not prevent a user from brute force browsing by IP address
+
+Policy layers offer more advanced control over Web Security Policies. You can apply Allow Lists, Block
+Lists, Web Category Filters, SSL Decryption, and other settings based on a variety of preconfigured criteria. This criterion includes but is not limited to:
+
+*  Username
+*  Security group
+*  IP ranges
+*  GeoIP
+
+Policy Layers contain the concept of dynamic linking, whereby the policies will only be applied if all or any of the criteria conditions are triggered. In addition, the policy layer can be set on advanced schedule – similar to that of the Internet Sleep Mode.
+Proxy Rules to trigger actions in response to certain types of network activity.
+
+*  Proxy rules are created by associating them with match patterns
+*  Match patterns and rules are defined independently of each other
+*  This logical separation frees them to be associated with each other in many different combinations, maximizing the logical possibilities
+*  A rule is triggered when the state of the match patterns specified by the rule is evaluated as “true"
+*  Actions include domain redirection, bypassing or enforcing proxy authentication, and even modifying HTTP Request headers
+
 ### Flow
+
+Citrix SIA allows you to route network data to the cloud to perform network security functions without the need for in-line appliances. The diagram below details the process flow from beginning to end.
+
+1.  User selects a link or enters a URL in local web browser
+2.  CSIA agent identifies the user’s and Active Directory group membership
+3.  CSIA analyzes whether the domain or URL is to be bypassed in the PAC script or agent. If so, the request is bypassed from cloud security.
+4.  CSIA analyzes whether the request is blocked by the IPS. If so, the request is blocked.
+5.  CSIA tags the username and policy group to the request.
+6.  CSIA analyzes whether the request should be decrypted. If so, the request is decrypted, and a certificate is added to the traffic flow.
+7.  CSIA analyzes whether the request matches a proxy block rule. If so, the request is blocked.
+8.  CSIA analyzes whether the request matches an App-ID CASB block rule. If so, the request is blocked.
+9.  CSIA analyzes whether the request matches a DLP block rule. If so, the request is blocked.
+10.  CSIA analyzes whether the destination matches an entry in the Allow List. If so, the request is checked against the Block List. If a higher weight Block List rule exists, the request is blocked. If not, the request is allowed.
+11.  CSIA analyzes whether the destination matches an entry in the Block List. If so, the request is blocked.
+12.  CSIA analyzes whether the destination matches a blocked web category. If so, the request is blocked.
+13.  CSIA analyzes whether the destination’s IP address is blocked by GEO IP rules. If so, the request is blocked.
+14.  CSIA analyzes whether the request matches any remaining web security policies. If so, the request is blocked. If not, the request is allowed.
 
 ## Citrix SDWAN
 
