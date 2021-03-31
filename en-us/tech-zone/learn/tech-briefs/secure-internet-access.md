@@ -25,7 +25,7 @@ Citrix SIA delivers comprehensive internet security to all users in all location
 *  SSL/TLS traffic management
 *  Cloud Access Security Broker (CASB) for cloud apps & social media controls
 *  Advanced, real-time reporting
-*  Flexible data traffic redirection for any device, anywhere
+*  Flexible data traffic redirection for any device and anywhere
 
 ## Architecture
 
@@ -37,7 +37,7 @@ Citrix SIA allows administrators to explicitly define cloud zones directly withi
 
 ### Redirecting Flow
 
-Traditionally, internet application traffic from remote users is sent through slow and overloaded VPNs to provide network security for compliance, malware defense, and data loss protection. Often this results in slow connections or downed networks preventing users from working safely and effectively. Furthermore, against the tenants of Zero Trust, access is typically provided to networks instead of to specific applications.  The result is excessive privileges, especially for users who only require targeted access to a handful of resources.
+Traditionally, internet application traffic from remote users is sent through slow and overloaded VPNs to provide network security for compliance, malware defense, and data loss protection. Often this results in slow connections or downed networks preventing users from working safely and effectively. Furthermore, against the tenants of Zero Trust, access is typically provided to networks instead of to specific applications.  The result is excessive privileges especially for users who only require targeted access to a handful of resources.
 
 Citrix SIA eliminates the need for slow and overloaded VPN connections and sends traffic directly from the users to the necessary cloud resources or applications. Citrix SIA also reduces the risk of data loss and further segments the network by allowing users access only to specific resources and applications.
 
@@ -54,7 +54,7 @@ Cloud Connector are the most popular deployment method, used most often with org
 *  Windows via GPO, MDM, SCCM deployment
 *  MacOS/iOS via MDM deployment
 *  Chromebook via Google admin console deployment
-*  Android via native integration with Android VPN network or Always VPN
+*  Android via native integration with Android VPN network or Always On VPN
 *  Linux with RedHat Fedora and Ubuntu support
 *  Windows Terminal Server
 
@@ -64,8 +64,8 @@ Cloud Connectors ensure users are always connected Citrix SIA. The connectors ta
 *  Transparently redirect all data on a device, across all ports
 *  Automatically and transparently deploy via Group Policy or MDM of your choice
 *  Support GEO-Zoning dynamic traffic redirection, automatic load balancing and fail-over
-*  Eliminate the need to have branch offices and remote users “backhaul” traffic to a data center before being sent to the internet.
-*  Create security policies that “follow” users as they move to different locations or switch to different devices.
+*  Eliminate the need to have branch offices and remote users “backhaul” traffic to a data center before being sent to the internet
+*  Create security policies that “follow” users as they move to different locations or switch to different devices
 
 This provides a consistent experience without needing to tailor policies to specific networks or locations
 Cloud Connectors use a proxy redirection method which takes advantage of a proxy PAC file
@@ -103,7 +103,7 @@ Citrix SIA can use four different types of authentication using the Cloud Connec
 **A note on Citrix SIA groups.** Organizations should associate their current security group structure to Citrix SIA groups. It is best practice to keep Citrix SIA groups to a minimum.
 
 Aliases: Aliases can be added to a security group to capture multiple user groups under one larger Citrix SIA group
-Multiple groups - When you have users that fall into multiple groups, priority is important. The higher the priority on the group, is what takes precedence for policy enforcement.
+Multiple groups: When you have users that fall into multiple groups, priority is important. The higher the priority on the group, is what takes precedence for policy enforcement.
 
 Policy Engines: There are 3 different policy engines. When a packet traverses the platform, determining which policy should be applied to the packet occurs in the following order:
 
@@ -119,9 +119,9 @@ The containerized gateways scan data in the cloud and perform web filtering, pre
 
 Citrix SIA uses many different layers of security when it comes to Malware Protection. Malware Protection includes:
 
-*  malware identification and mitigation from the top signature databases
-*  a proprietary malware registry
-*  real-time threat information with instant database updates.
+*  Malware identification and mitigation from the top signature databases
+*  A proprietary malware registry
+*  Real-time threat information with instant database updates
 
 Administrators can enable both reputation-based defenses as well as malware protection which utilize advanced content analysis and sand-boxing capabilities.
 Streaming Malware Reputation will process URL’s that users are accessing against a signature database and Citrix SIA’s proprietary malware registry as well as up-to-the-minute threat information with synchronous database updates. Advanced Malware Analysis Defense will auto deposit user downloaded files for behavioral analysis.
