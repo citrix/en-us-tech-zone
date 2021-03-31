@@ -31,7 +31,7 @@ Refer to Citrix Documentation for the latest product version, and license requir
 
 ## nFactor
 
-First, we log in to the CLI on our Citrix ADC and enter the authentication actions and associated policies for EPA and LDAP respectively along with login schema. Then we log in to our GUI to build our nFactor flow in the visualizer tool and complete the multifactor authentication configuration.
+First, we log in to the CLI on our Citrix ADC and enter the authentication actions and associated policies for EPA and LDAP respectively along with the login schema. Then we log in to our GUI to build our nFactor flow in the visualizer tool and complete the multifactor authentication configuration.
 
 ### EPA Authentication policies
 
@@ -101,23 +101,23 @@ Update the following fields for your environment and copy and paste the string i
 
 #### Domain Certificate
 
-In this POC we used a wildcard certificate corresponding to our Active Directory domain and it also corresponds to the fqdn we use to access to Gateway virtual server (gateway.workspaces.wwco.net)
+In this POC we used a wildcard certificate corresponding to our Active Directory domain and it also corresponds to the fully qualified domain name we use to access to the Gateway virtual server (gateway.workspaces.wwco.net)
 
 1.  Log in to the Citrix ADC GUI
 1.  Navigate to **Traffic Management > SSL> Certificates > All Certificates** to verify you have your domain certificate and CAs installed and linked.  See [Citrix ADC SSL certificates](/en-us/citrix-adc/13/ssl/ssl-certificates.html) for more information.
 
 #### Device Certificate
 
-There are many systems and option for user and device certificate management. In this POC we use the Microsoft Certificate Authority installed on our Active Directory server.
+There are many systems and options for user and device certificate management. In this POC we use the Microsoft Certificate Authority installed on our Active Directory server.
 
 1.  From the start menu on our domain joined Windows 10 endpoint we enter `mmc`, right-click and run as administrator
-1.  Select File > Add/Remove, select Certificates, select the arrove to move it to the Selected snap-in pane and, click OK
+1.  Select File > Add/Remove, select Certificates, select the arrow to move it to the Selected snap-in pane, select Computer account, Next, Local computer, Finish and, click OK
 1.  Open the Personal folder, right-click the Certificates folder > All Tasks > Request New Certificate
 ![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_requestnewcert.png)
 1.  Click next until you are offered certificate types, select Computer, and click Enroll, followed by Finish
-1.  Double-click the certificate it installed, select the Certification Path tab, select the root CA on the top, and click View Certificate. (Note: We could export the CA from the Active Directory server, yet for the POC we can eliminate steps by doing it here)
+1.  Double-click the certificate it installed, select the Certification Path tab, select the root CA on the top, and click View Certificate. (Note: We can export the CA from the Active Directory server, yet for the POC we can eliminate steps by doing it here)
 1.  In the popup select the Details tab, select Copy to File, click Next, click Next (to accept DER encoding)
-1.  Select browse, and enter a filename, select save, select next, and select finish to store the CA certificate file.
+1.  Select browse, and enter a file name, select save, select next, and select finish to store the CA certificate file.
 ![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_exportdevicecacert.png)
 1.  Now we will import it into the ADC by navigating to **Traffic Management > SSL> Certificates > CA Certificates
 1.  Click Install, we enter the name `DeviceCertificateCA`, select Chose File, Local, and select the file, Open and click Install
@@ -203,5 +203,7 @@ With Citrix Workspace and Citrix Gateway Enterprises can improve their security 
 For more information refer to:
 
 [Device certificate in nFactor as an EPA component](/en-us/citrix-gateway/current-release/vpn-user-config/endpoint-policies/device-certificate-in-nfactor-as-an-epa-component.html)
+
+[Understanding and Configuring EPA Verbose Logging on NetScaler Gateway](https://support.citrix.com/article/CTX209148) - verify the nsepa.txt on the endpoint logs the correct CA in the list that is downloaded. "Netscaler has sent list of allowed CA for device certificate." If not verify you imported and bound the correct one, that issued the device certificate, to the Gateway vServer.
 
 [Citrix ADC Commands to Find the Policy `Hits` for Citrix Gateway Session Policies](https://support.citrix.com/article/CTX1388400) - learn more about CLI commands like `nsconmsg -d current -g _hits` to track policy `hits` to help troubleshoot
