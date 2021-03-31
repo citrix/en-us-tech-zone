@@ -84,9 +84,7 @@ User Authentication diagram
 
 There are 4 different types of authentication using the Cloud Connector, Cloud Identity, SAML, and Active Directory plugin.
 
-Cloud Connector: Authentication is handled transparently by the Cloud Connector through a session key sent over to Citrix SIA. Cloud Connectors leverage the user identity on the device an additional authentication is, therefore, not required when accessing the internet. 
-When a user browses the internet, policies are applied based upon the security group mapping within the Citrix SIA. Security groups in Citrix SIA can be matched to the existing groups and OUs in your existing LDAP service.  Citrix SIA extracts what local group a user is a part of when the Cloud Connector pulls the information from a GP Result and sends that to Citrix SIA.
-Citrix SIA uses that information to create an encrypted session key, which is sent back to the device. very web request gets the session key appended to the request. The request details can be seen when using Wire Shark. That information is used for policy matching.
+Cloud Connector: Authentication is handled transparently by the Cloud Connector through a session key sent over to Citrix SIA. Cloud Connectors leverage the user identity on the device an additional authentication is, therefore, not required when accessing the internet. When a user browses the internet, policies are applied based upon the security group mapping within the Citrix SIA. Security groups in Citrix SIA can be matched to the existing groups and OUs in your existing LDAP service.  Citrix SIA extracts what local group a user is a part of when the Cloud Connector pulls the information from a GP Result and sends that to Citrix SIA. Citrix SIA uses that information to create an encrypted session key, which is sent back to the device. very web request gets the session key appended to the request. The request details can be seen when using Wire Shark. That information is used for policy matching.
 
 Cloud Identity: Cloud Connectors can synchronize user groups with cloud identity providers (IdP). Currently Citrix SIA supports Google, Azure, and Okta. Configurations differ between each provider but typically consists of specifying:
 
@@ -127,8 +125,7 @@ Citrix SIA uses many different layers of security when it comes to Malware Prote
 Administrators can enable both reputation-based defenses as well as malware protection which utilize advanced content analysis and sand-boxing capabilities.
 Streaming Malware Reputation will process URL’s that users are accessing against a signature database and Citrix SIA’s proprietary malware registry as well as up-to-the-minute threat information with synchronous database updates. Advanced Malware Analysis Defense will auto deposit user downloaded files for behavioral analysis.
 
-Malware rules can apply when certain criteria are met and are based off of the Malware settings. When applying malware rules to content, rules are checked from the top to the bottom of the list. As soon as a match is found, the rule is chosen, and no further rules are considered. Higher priority rules should be at the top of the list. Rules can easily be moved up and down to ensure the priority is set to the appropriate order.
-Websites are given a risk score between 1-100 by analyzing various aspects of a request, including the URL, HTTP headers, and site content. Based on that score, the page is either blocked or allowed depending on the thresholds for Low Risk, Medium Risk, and High Risk.
+Malware rules can apply when certain criteria are met and are based off of the Malware settings. When applying malware rules to content, rules are checked from the top to the bottom of the list. As soon as a match is found, the rule is chosen, and no further rules are considered. Higher priority rules should be at the top of the list. Rules can easily be moved up and down to ensure the priority is set to the appropriate order. Websites are given a risk score between 1-100 by analyzing various aspects of a request, including the URL, HTTP headers, and site content. Based on that score, the page is either blocked or allowed depending on the thresholds for Low Risk, Medium Risk, and High Risk.
 A Risk Request Action of Allow or Block can be set separately for each risk threshold. For most configurations, the default settings provide the best balance between performance and security.
 
 *  Advanced malware detection and prevention for polymorphic threats
@@ -167,7 +164,7 @@ Web policies in Citrix SIA are enforced based upon the security group associatio
 
 Block List
 
-Website browsing can be blocked using a Block List. Block Lists can be used to restrict access to network resources selectively. Allow Lists allow access to URLS that may be blocked by a web category policy. Allow Lists can be used to grant access to specific resources. Allow Lists are configured much the same as 
+Website browsing can be blocked using a Block List. Block Lists can be used to restrict access to network resources selectively. Allow Lists allow access to URLS that may be blocked by a web category policy. Allow Lists can be used to grant access to specific resources. Allow Lists are configured much the same as
 
 Block
 Below are the various ways to configure Block Lists:
@@ -228,7 +225,7 @@ Other actions that can be performed by the YouTube manager are:
 *  Bandwidth Preservation: You can force videos to play in Standard Definition
 *  Whitelist libraries: You allow access to specific videos that are blocked by the SafeSearch option into a video library
 
-Microsoft CASB integration enables traffic policy control for unsanctioned Apps and CASB reporting visibility all within the Citrix SIA platform. Integration with “Microsoft Cloud App” platform and the platform provides granular traffic policy control and assignments for blocking Unsanctioned Apps as well as CASB reporting within a single pane of glass. Real-time traffic logging and statistics are shipped via API integration to the “Microsoft Cloud App Security” platform. The integration between the platform and Microsoft configuration is achieved by simply entering Microsoft subscription info into the platform 
+Microsoft CASB integration enables traffic policy control for unsanctioned Apps and CASB reporting visibility all within the Citrix SIA platform. Integration with “Microsoft Cloud App” platform and the platform provides granular traffic policy control and assignments for blocking Unsanctioned Apps as well as CASB reporting within a single pane of glass. Real-time traffic logging and statistics are shipped via API integration to the “Microsoft Cloud App Security” platform. The integration between the platform and Microsoft configuration is achieved by simply entering Microsoft subscription info into the platform
 Note: a majority of social media and cloud services will require SSL decryption to be enabled in order to perform Cloud App Controls, YouTube Manager controls, and Search Engine Controls.
 
 ### SSL/TLS Decryption
@@ -267,9 +264,8 @@ Port blocking control blocks internet traffic on specified ports, or port ranges
 *  To clear the Port Blocking controls, switch the enabled toggles for the port ranges you would like to disable to NO.
 *  You can choose to always block the port ranges for the selected group or block ports using an Advanced Schedule.
 
-**Browser and OS**
+**Browser and OS** Connectivity to network resources can be restricted by Browser and OSes to specific versions. The following actions can be applied to Browser and OS restrictions:
 
-Connectivity to network resources can be restricted by Browser and OSes to specific versions. The following actions can be applied to Browser and OS restrictions:
 *  Block the following: Blocks internet access for specific browsers and OS versions
 *  Allow only the following: Allows internet access for specific browsers and OS versions
 *  Move user: Move a user to another security group (if they violated the restrictions) for a particular period of time
@@ -295,9 +291,7 @@ Content type is used to indicate the media type of the requested resource. MIME 
 
 For example, an ‘.exe’ file may cause harm if executed by a user and therefore can be restricted from downloading.
 
-**Domain Extension**
-
-The domain extension control allows you to block or allow specific domain extensions from being accessed on a per-group basis.
+**Domain Extension** The domain extension control allows you to block or allow specific domain extensions from being accessed on a per-group basis.
 
 *  Manage the Domain Extensions list for each group by
 *  Blocking the domain extensions in the list
@@ -344,8 +338,25 @@ Citrix SIA allows you to route network data to the cloud to perform network secu
 13.  CSIA analyzes whether the destination’s IP address is blocked by GEO IP rules. If so, the request is blocked.
 14.  CSIA analyzes whether the request matches any remaining web security policies. If so, the request is blocked. If not, the request is allowed.
 
-## Citrix SDWAN
+## Citrix SD-WAN + SIA Integration Use cases
+
+Citrix SD-WAN and Citrix SIA integration offers flexibility and choice for a mixed profile of Branch users in an enterprise. An enterprise typically has a mix of managed and unmanaged devices in the Branch where a Citrix SD-WAN exists. With the integration, Citrix SIA agent allows to securely breakout managed devices traffic to the Citrix SIA cloud via the SD-WAN using Internet service (with Load Balancing). The unmanaged devices like BYOD and Guest users are secured using the IPsec tunnel between Citrix SD-WAN and Citrix SIA as the tunnel endpoints.
+For more information, please read the following PoC guide.
+
+[CSIA and SDWAN PoC Guide](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html)
 
 ## Integration with CVAD
 
 ## Reporting
+
+Reporting
+UAT
+
+UAT is an important part of the deployment process after the Cloud Connector agents have been deployed out. The reporter is helpful for validating configurations and looking into any issues.
+
+Users groups and device management
+
+The need to stream log event data to external SIEMs or logging databases is a typical requirement for organizations. The SIEMs typically have processes built around them that are extensive and required. Since users are always connected to Citrix SIA, regardless of location, their internet data is always secure and log events are continuously generated. Those log events are displayed in the included reporting dashboards
+of Citrix SIA but can also be streamed in real-time to any external SIEM
+
+security framework will provide unique centralized reporting of threat information with username, IP, and computer name identifiers. The Threat Console reporter will provide threat and network information in an efficient and effective manner
