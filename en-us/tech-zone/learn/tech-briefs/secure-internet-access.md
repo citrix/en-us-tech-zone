@@ -104,7 +104,7 @@ Policy Engines: There are 3 different policy engines. When a packet traverses th
 
 The containerized gateways scan data in the cloud and perform web filtering, prevent malware, detect infections and prevent data loss as data moves to and from users and the Internet.
 
-![CSIA with Citrix Workspace](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_capa.png)
+![CSIA Capabilities](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_capa.png)
 
 ### Malware Protection
 
@@ -334,6 +334,8 @@ Citrix SIA allows you to route network data to the cloud to perform network secu
 ## Citrix SD-WAN + SIA Integration Use cases
 
 Citrix SD-WAN and Citrix SIA integration offers flexibility and choice for a mixed profile of branch users in an enterprise. An enterprise typically has a mix of managed and unmanaged devices in the branch where a Citrix SD-WAN exists. With the integration, the Citrix SIA agent allows to securely breakout managed devices traffic to the Citrix SIA cloud via the SD-WAN using the internet service (with Load Balancing). The unmanaged devices like BYOD and Guest users are secured using the IPsec tunnel between Citrix SD-WAN and Citrix SIA as the tunnel endpoints.
+
+![CSIA with SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_sdwan.png)
 
 There several ways to secure users as they access cloud and SaaS apps and those methods cover cases where the user sits behind an SD-WAN appliance weather at the branch and at home or whether the user is fully mobile, working for example from a coffee shop.
 
