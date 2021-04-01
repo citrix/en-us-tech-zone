@@ -309,7 +309,10 @@ Proxy Rules to trigger actions in response to certain types of network activity.
 
 Citrix SIA allows you to route network data to the cloud to perform network security functions without the need for in-line appliances. The diagram below details the process flow from beginning to end.
 
-[CSIA process flow](/en-us/tech-zone/learn/media/secure-internet-access-flow.png)
+![CSIA process flow](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_flow.png)
+
+![Authentication](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_auth.png)
+
 
 1.  User selects a link or enters a URL in local web browser
 2.  CSIA agent identifies the user’s and Active Directory group membership
