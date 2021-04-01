@@ -342,7 +342,7 @@ For configuration information, please read the following PoC guide.
 
 ## Integration with CVAD
 
-Citrix Virtual Apps & Desktop deployment can be integrated with Citrix Secure Internet Access. Users within the virtual sessions will 
+Citrix Virtual Apps & Desktop deployment can be integrated with Citrix Secure Internet Access. Users within the virtual sessions will
 For configuration information, please read the following PoC guide.
 
 [CSIA and CVAD PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html)
