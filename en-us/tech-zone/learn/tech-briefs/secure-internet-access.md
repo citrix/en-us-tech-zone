@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Florin Lazurca
-specialThanksTo: First Last, First2 Last2
+specialThanksTo: Eric Beiers, First2 Last2
 description: Copy & paste description from TOC here
 ---
 # Citrix Secure Internet Access
@@ -32,7 +32,7 @@ Citrix SIA uses a “Zero Trust” role-based policy model. One of the core goal
 
 ## Architecture
 
-Citrix SIA is a cloud native technology that operates in any cloud and in over 100 data centers around the globe. The architecture provides not only a delivery mechanism for connections but can also attach to other solutions to improve performance and security. For example, Citrix SIA can take signatures from other threat intel technologies and route them through our cloud as well.
+Citrix SIA is a cloud native technology that operates in any cloud and in over 106 PoPs in 50 data centers around the globe. The architecture provides not only a delivery mechanism for connections but can also attach to other solutions to improve performance and security. For example, Citrix SIA can take signatures from other threat intel technologies and route them through our cloud as well.
 
 Through the use of containerized gateways, the data plane is separated for each customer. Private keys for decrypting traffic are kept specific to the customer and not shared amongst others. Every work unit processing or storing data is fully dedicated to the customer who does not need to manage any of the components. Work units can scale horizontally elastically.
 
@@ -47,6 +47,8 @@ Citrix SIA eliminates the need for slow and overloaded VPN connections and sends
 Another challenge that Citrix SIA solves is applying stream-based intrusion prevention when end users travel outside the internal perimeter and move from place to place to work from networks outside of the control of the organization. Citrix SIA's containerized architecture allows flow-based IP’s to be applied to users wherever they roam. This includes networks that are owned by the organization and networks that are not. The architecture of the Citrix SIA allows every customer to receive dedicated IP addresses that can be used in the same way local IP Addresses are used.
 
 Citrix SIA follows users as they move in and out of the physical network perimeter, resulting in dedicated IP addresses for users regardless of location. This capability can be applied to require that users access business applications only through connections that are secured by the gateway, even when working outside of the office or on personal devices. This source IP address can be used to restrict access to resources such as admin portals by using the source IP address as a requirement for login.
+
+**DNS**
 
 ### Cloud Connector
 
@@ -76,13 +78,11 @@ If your device has a non-standard OS, you can configured agentless data redirect
 
 Citrix SIA can use local user identities, Microsoft Active Directory (AD), or another type of modern IdP (such as Azure AD). When using traditional AD, the security groups on Citrix SIA must match what is in AD. The platform will periodically check for group membership, on the device, when using the agent-based Cloud Connector deployment. When a user belongs to multiple security groups in AD, a priority can be set for what policies get enacted. Higher priority numbers take precedence over lower ones.
 
-It is important to understand the user and group structure of your organization and how it will relate to Citrix SIA security groups. It is important to keep SIA groups down to a minimum of what is needed. It is advisable to group together similar users who need similar access. Policy layers can be utilized in situations where individual users within a single group have different needs.
-
 You can associate current Active Directory security groups to Citrix SIA security groups by using the same names for both. SIA security groups can be assigned a priority number for the case in which a particular user is part of multiple groups. Citrix SIA places a user into the group that has the higher priority number. Group aliases can be assigned to associate multiple Active Directory groups to a single Citrix SIA security group.
 
 Citrix SIA can use four different types of authentication using the Cloud Connector, Cloud Identity, SAML, or Active Directory plugin.
 
-**Cloud Connector**: Authentication is handled transparently by the Cloud Connector through a session key sent over to Citrix SIA. Cloud Connectors leverage the user identity on the device an additional authentication is, therefore, not required when accessing the internet. When a user browses the internet, policies are applied based upon the security group mapping within the Citrix SIA. Security groups in Citrix SIA can be matched to the existing groups and OUs in your existing LDAP service.  Citrix SIA extracts what local group a user is a part of when the Cloud Connector pulls the information from a GP Result and sends that to Citrix SIA. Citrix SIA uses that information to create an encrypted session key, which is sent back to the device. very web request gets the session key appended to the request. The request details can be seen when using Wire Shark. That information is used for policy matching.
+**Cloud Connector**: Authentication is handled transparently by the Cloud Connector through a session key sent over to Citrix SIA. Cloud Connectors leverage the user identity on the device an additional authentication is, therefore, not required when accessing the internet. When a user browses the internet, policies are applied based upon the security group mapping within the Citrix SIA. Security groups in Citrix SIA can be matched to the existing groups and OUs. Citrix SIA extracts what local group a user is a part of when the Cloud Connector pulls the information from a GP Result and sends that to Citrix SIA. Citrix SIA uses that information to create an encrypted session key, which is sent back to the device. very web request gets the session key appended to the request. The request details can be seen when using Wire Shark. That information is used for policy matching.
 
 **Cloud Identity**: Cloud Connectors can synchronize user groups with cloud identity providers (IdP). Currently Citrix SIA supports Google, Azure, and Okta. Configurations differ between each provider but typically consists of specifying the refresh interval, client ID, secret, and domain.
 
@@ -155,26 +155,14 @@ Web policies in Citrix SIA are enforced based upon the security group associatio
 
 #### Blocking or Allowing a website
 
-Block List
-
 Website browsing can be blocked using a Block List. Block Lists can be used to restrict access to network resources selectively. Allow Lists allow access to URLS that may be blocked by a web category policy. Allow Lists can be used to grant access to specific resources. Allow Lists are configured much the same as
 
-Block
 Below are the various ways to configure Block Lists:
 
 *  URL matching: URLs can be matched using domains, subdomains, IP addresses, IP ranges, and ports
 *  Wildcards: Wildcard entries can be used in the block list by omitting the trailing forward slash from the path i.e. “mywebsite-parent-domain.com”
 *  Explicit: These are non-wildcard entries; they can be created by appending a trailing forward slash to the pathi.e. “mywebsite-parent-domain.com/”
 *  Regular Expressions: Regular expressions can be used to match complex patterns
-
-Domains are tagged with web categories based on their content. The categories of visited websites are recorded in Reporting Analytics.
-
-Citrix SIA has a Scrape Tool that can be used to identify all the domains associated with a website, which then can be used to be added to the Block List.
-URL Look Up Tool
-Citrix SIA platform has a URL Look Up Tool can be used to:
-Check to see how a website is categorized
-Check to see if a website is associated with malware
-The URL Look Up tool is useful when creating Web Security policies. Additionally, if the tool is unable to categorize the entered URL, it can be submitted for categorization to the platform.
 
 #### Custom Block Pages
 
