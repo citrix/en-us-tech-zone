@@ -9,13 +9,11 @@ description: Copy & paste description from TOC here
 
 ## Overview
 
-The expansive requirement for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user internet access. And since users and devices are the new network perimeter, it must be done in the cloud.
+The expansive requirement for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user internet access. And since users and devices are the new network perimeter, securing internet access must be done in the cloud.
 
 The demand for remote work has made appliance-based network security strategies unsustainable as the projected increases in bandwidth consumption combined with backhauled mobile traffic will quickly saturate the maximum capacity of any on-prem appliance architecture.
 
 The erosion of the network perimeter due to increased use of cloud apps and services further accelerates this backhauling, resulting in a poor end-user experience and lower productivity due to latency. Citrix Secure Internet Access (Citrix SIA) shifts the focus from defending perimeters to following users to ensure internet access is secure regardless of location.
-
-Citrix SIA uses a “Zero Trust” role-based policy model. One of the core goals of Zero Trust is to assign policies and manage access to resources based on a user’s role and identity. This foundational concept is built into Citrix SIA's policy engine.
 
 Citrix SIA delivers comprehensive internet security to all users in all locations with:
 
@@ -24,8 +22,10 @@ Citrix SIA delivers comprehensive internet security to all users in all location
 *  Protection for outdated browsers and operating systems
 *  SSL/TLS traffic management
 *  Cloud Access Security Broker (CASB) for cloud apps & social media controls
-*  Advanced, real-time reporting
+*  Real-time advanced reporting
 *  Flexible data traffic redirection for any device and anywhere
+
+Citrix SIA uses a “Zero Trust” role-based policy model. One of the core goals of Zero Trust is to assign policies and manage access to resources based on a user’s role and identity. This foundational concept is built into Citrix SIA's policy engine.
 
 ## Architecture
 
@@ -44,8 +44,6 @@ Citrix SIA eliminates the need for slow and overloaded VPN connections and sends
 Another challenge that Citrix SIA solves is applying stream-based intrusion prevention when end users travel outside the internal perimeter and move from place to place to work from networks outside of the control of the organization. Citrix SIA's containerized architecture allows flow-based IP’s to be applied to users wherever they roam. This includes networks that are owned by the organization and networks that are not. The architecture of the Citrix SIA allows every customer to receive dedicated IP addresses that can be used in the same way local IP Addresses are used.
 
 Citrix SIA follows users as they move in and out of the physical network perimeter, resulting in dedicated IP addresses for users regardless of location. This capability can be applied to require that users access business applications only through connections that are secured by the gateway, even when working outside of the office or on personal devices. This source IP address can be used to restrict access to resources such as admin portals by using the source IP address as a requirement for login.
-
-There are two main methods for data redirection using either the Citrix SIA Cloud Connector (Cloud Connector) or Proxy method.
 
 ### Cloud Connector
 
