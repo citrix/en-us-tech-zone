@@ -15,6 +15,8 @@ The demand for remote work has made appliance-based network security strategies 
 
 The erosion of the network perimeter due to increased use of cloud apps and services further accelerates this backhauling, resulting in a poor end-user experience and lower productivity due to latency.
 
+![CSIA Unified Approach](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_traffic.png)
+
 Citrix SIA delivers comprehensive internet security to all users in all locations with:
 
 *  Complete web & content filtering
@@ -64,6 +66,8 @@ Cloud Connectors ensure users are always connected Citrix SIA. The connectors ta
 *  Support GEO-Zoning dynamic traffic redirection, automatic load balancing and fail-over
 *  Eliminate the need to have branch offices and remote users “backhaul” traffic to a data center before being sent to the internet
 *  Create security policies that “follow” users as they move to different locations or switch to different devices
+
+![CSIA Cloud Connectors](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_agent.png)
 
 If your device has a non-standard OS, you can configured agentless data redirection by automatically generating Proxy PAC files. For example, a client connects to the Citrix SIA proxy server, requesting some service such as accessing Google Services, the Citrix SIA proxy server evaluates the requests and determines whether the client is allowed or blocked from accessing this resource. SAML can be used for authentication and this is the preferred method for IoT devices.
 
@@ -241,8 +245,8 @@ SSL Decryption can be enabled for all destinations a user travels to on the inte
 
 **Keyword filtering** is used for to inspect URLs for certain keywords as well as restrict user searches and phrases. Depending on the outcome of the inspection, content can be allowed or blocked. Keywords can be manually added or be sourced from a pre-defined list within the platform. A Wildcard option can be enabled for multi-word searches/keywords that are substrings of larger words that may violate blocked keywords.
 Wildcard example: The keyword is “base.” A wildcard match for “base” will block both the search word “base” and “baseball.”
-Port Blocking
-Connectivity to network resources can be restricted by certain ports for both UDP and TCP based protocols as well as direction – inbound, outbound, or both. In addition, a Port Block schedule can be applied to restrict access only during particular time(s) of the day.
+
+**Port Blocking** Connectivity to network resources can be restricted by certain ports for both UDP and TCP based protocols as well as direction – inbound, outbound, or both. In addition, a Port Block schedule can be applied to restrict access only during particular time(s) of the day.
 Port blocking control blocks internet traffic on specified ports, or port ranges.
 
 *  Any traffic using the specified ports will be blocked completely.
@@ -335,7 +339,7 @@ For a user sitting at a corporate office, SD-WAN automatically creates secure co
 
 If a user leaves the corporate perimeter and sits at a coffee shops for example, working off of her tablet, the Cloud Connector installed on the device takes care of redirecting traffic to the Citrix SIA cloud. The connector also serves the purpse of authenticating the user as well as installing appropriate certificates for SSL decryption.
 
-For configuration information, please read the following PoC guide.[CSIA and SD-WAN PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html)
+For configuration information, please read the following PoC guide: [CSIA and SD-WAN PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html)
 
 ## Integration with CVAD
 
@@ -347,18 +351,6 @@ Users sign into Citrix Workspace with single sign on. Once inside, users have ac
 
 Now, let's say the same user decides to log off Citrix Workspace and access SaaS apps by simply opening a browser from their laptop device. Or perhaps the user decides to access a video sharing website or a personal file sharing website through a browser on their laptop device. In all those and similar instances when the user is accessing Internet and SaaS, the user continues to be protected by Citrix SIA even when they are outside Citrix Workspace.
 
+![CSIA with Citrix Workspace](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_workspace.png)
+
 For configuration information, please read the following PoC guide. [CSIA and CVAD PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html)
-
-## Reporting
-
-Reporting
-UAT
-
-UAT is an important part of the deployment process after the Cloud Connector agents have been deployed out. The reporter is helpful for validating configurations and looking into any issues.
-
-Users groups and device management
-
-The need to stream log event data to external SIEMs or logging databases is a typical requirement for organizations. The SIEMs typically have processes built around them that are extensive and required. Since users are always connected to Citrix SIA, regardless of location, their internet data is always secure and log events are continuously generated. Those log events are displayed in the included reporting dashboards
-of Citrix SIA but can also be streamed in real-time to any external SIEM
-
-security framework will provide unique centralized reporting of threat information with username, IP, and computer name identifiers. The Threat Console reporter will provide threat and network information in an efficient and effective manner
