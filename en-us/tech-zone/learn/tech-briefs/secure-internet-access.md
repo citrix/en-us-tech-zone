@@ -65,11 +65,7 @@ Cloud Connectors ensure users are always connected Citrix SIA. The connectors ta
 *  Eliminate the need to have branch offices and remote users “backhaul” traffic to a data center before being sent to the internet
 *  Create security policies that “follow” users as they move to different locations or switch to different devices
 
-This provides a consistent experience without needing to tailor policies to specific networks or locations
-Cloud Connectors use a proxy redirection method which takes advantage of a proxy PAC file
-
-Proxy method: The device makes requests directly to the Citrix SIA platform
-A proxy server is a server that acts as a third party for requests from clients seeking resources from other servers. For example, a client connects to the Citrix SIA proxy server, requesting some service such as accessing Google Services, the Citrix SIA proxy server evaluates the requests and determines whether the client is allowed or blocked from accessing this resource.
+If your device has a non-standard OS, you can configured agentless data redirection by automatically generating Proxy PAC files. For example, a client connects to the Citrix SIA proxy server, requesting some service such as accessing Google Services, the Citrix SIA proxy server evaluates the requests and determines whether the client is allowed or blocked from accessing this resource. SAML can be used for authentication and this is the preferred method for IoT devices.
 
 ### Authentication
 
@@ -330,12 +326,24 @@ Citrix SIA allows you to route network data to the cloud to perform network secu
 
 ## Citrix SD-WAN + SIA Integration Use cases
 
-Citrix SD-WAN and Citrix SIA integration offers flexibility and choice for a mixed profile of Branch users in an enterprise. An enterprise typically has a mix of managed and unmanaged devices in the Branch where a Citrix SD-WAN exists. With the integration, Citrix SIA agent allows to securely breakout managed devices traffic to the Citrix SIA cloud via the SD-WAN using Internet service (with Load Balancing). The unmanaged devices like BYOD and Guest users are secured using the IPsec tunnel between Citrix SD-WAN and Citrix SIA as the tunnel endpoints.
-For more information, please read the following PoC guide.
+Citrix SD-WAN and Citrix SIA integration offers flexibility and choice for a mixed profile of branch users in an enterprise. An enterprise typically has a mix of managed and unmanaged devices in the branch where a Citrix SD-WAN exists. With the integration, the Citrix SIA agent allows to securely breakout managed devices traffic to the Citrix SIA cloud via the SD-WAN using the internet service (with Load Balancing). The unmanaged devices like BYOD and Guest users are secured using the IPsec tunnel between Citrix SD-WAN and Citrix SIA as the tunnel endpoints.
 
-[CSIA and SDWAN PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html)
+There several ways to secure users as they access cloud and SaaS apps and those methods cover cases where the user sits behind an SD-WAN appliance weather at the branch and at home or whether the user is fully mobile, working for example from a coffee shop.
+
+For a user sitting at a corporate office, SD-WAN automatically creates secure connecivity to the closest Citrix SIA point of presence. Traffic is tunnelled via a GRE or IPsec tunnel and redundancy is achieved both a the tunnel level as well as via multiple links to primary and secondary pops.
+
+If a user leaves the corporate perimeter and sits at a coffee shops for example, working off of her tablet, the Cloud Connector installed on the device takes care of redirecting traffic to the Citrix SIA cloud. The connector also serves the purpse of authenticating the user as well as installing appropriate certificates for SSL decryption.
+
+For configuration information, please read the following PoC guide.
+
+[CSIA and SD-WAN PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html)
 
 ## Integration with CVAD
+
+Citrix Virtual Apps & Desktop deployment can be integrated with Citrix Secure Internet Access. Users within the virtual sessions will 
+For configuration information, please read the following PoC guide.
+
+[CSIA and CVAD PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html)
 
 ## Reporting
 
