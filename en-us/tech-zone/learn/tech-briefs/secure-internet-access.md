@@ -9,11 +9,11 @@ description: Copy & paste description from TOC here
 
 ## Overview
 
-The expansive demand for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user internet access. And since users and devices are the new network perimeter, securing internet access must be done in the cloud.
+The expansive demand for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user internet access. And since users and devices are the new network perimeter, securing internet access must be done in the cloud. Citrix Secure Internet Access (Citrix SIA) shifts the focus from defending perimeters to following users to ensure internet access is secure regardless of location.
 
 The demand for remote work has made appliance-based network security strategies unsustainable as the projected increases in bandwidth consumption combined with backhauled mobile traffic will quickly saturate the maximum capacity of any on-prem appliance architecture.
 
-The erosion of the network perimeter due to increased use of cloud apps and services further accelerates this backhauling, resulting in a poor end-user experience and lower productivity due to latency. Citrix Secure Internet Access (Citrix SIA) shifts the focus from defending perimeters to following users to ensure internet access is secure regardless of location.
+The erosion of the network perimeter due to increased use of cloud apps and services further accelerates this backhauling, resulting in a poor end-user experience and lower productivity due to latency.
 
 Citrix SIA delivers comprehensive internet security to all users in all locations with:
 
@@ -335,9 +335,7 @@ For a user sitting at a corporate office, SD-WAN automatically creates secure co
 
 If a user leaves the corporate perimeter and sits at a coffee shops for example, working off of her tablet, the Cloud Connector installed on the device takes care of redirecting traffic to the Citrix SIA cloud. The connector also serves the purpse of authenticating the user as well as installing appropriate certificates for SSL decryption.
 
-For configuration information, please read the following PoC guide.
-
-[CSIA and SD-WAN PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html)
+For configuration information, please read the following PoC guide.[CSIA and SD-WAN PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html)
 
 ## Integration with CVAD
 
