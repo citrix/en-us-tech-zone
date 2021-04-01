@@ -54,7 +54,6 @@ At a high-level:
 **User Layer**: The user layer describes the end-user environment and end-point devices that are used to connect to resources.
 
 *  Regardless of device, users access resources from Workspace app, resulting in an experience that is identical across every form factor and device platform.
-*  To maintain a level of continuity, the user’s workspace experience includes proper branding and logos for the user’s pre-acquisition company.
 
 **Access Layer**: The access layer describes details surrounding how users authenticate to their Workspace and secondary resources.
 
@@ -77,14 +76,6 @@ Hosting Layer: The hosting layer details how components are deployed on hardware
 *  Citrix Workspace must be able to access every company’s identity provider, whether that is an on-premises Active Directory domain or a cloud-based offering from Okta, via a single Workspace site.
 
 The subsequent sections provide greater detail into specific design decisions for CompanyA’s mergers and acquisitions strategy reference architecture.
-
-## User Layer
-
-### Workspace Branding
-
-To maintain an initial level of pre-acquisition and post-acquisition identity between the different companies, CompanyA plans to implement policy-based branding for the user’s workspace experience.
-
-Based on the user’s identity provider and domain name, CompanyA applies a different color scheme and logo to the overall Workspace theme.
 
 ## Access Layer
 
