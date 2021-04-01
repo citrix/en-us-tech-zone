@@ -104,6 +104,8 @@ Policy Engines: There are 3 different policy engines. When a packet traverses th
 
 The containerized gateways scan data in the cloud and perform web filtering, prevent malware, detect infections and prevent data loss as data moves to and from users and the Internet.
 
+![CSIA with Citrix Workspace](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_capa.png)
+
 ### Malware Protection
 
 Citrix SIA uses many different layers of security when it comes to Malware Protection. Malware Protection includes:
