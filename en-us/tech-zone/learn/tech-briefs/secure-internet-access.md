@@ -343,6 +343,8 @@ Citrix Virtual Apps & Desktop deployment can be integrated with Citrix SIA. When
 
 Users sign into Citrix Workspace with single sign on. Once inside, users have access to all published apps and desktops, including SaaS apps and browsers like Chrome. Secure Workspace Access provides secure, identity-aware, zero trust access to internal apps. Citrix SIA provides secure access to Internet and SaaS apps from within published apps and desktops.
 
+![CSIA process flow](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_cvadsia.png)
+
 Now, let's say the same user decides to log off Citrix Workspace and access SaaS apps by simply opening a browser from their laptop device. Or perhaps the user decides to access a video sharing website or a personal file sharing website through a browser on their laptop device. In all those and similar instances when the user is accessing Internet and SaaS, the user continues to be protected by Citrix SIA even when they are outside Citrix Workspace.
 
 For configuration information, please read the following PoC guide. [CSIA and CVAD PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html)
