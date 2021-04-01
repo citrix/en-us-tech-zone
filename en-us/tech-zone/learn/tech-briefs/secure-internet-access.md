@@ -341,10 +341,13 @@ For configuration information, please read the following PoC guide.
 
 ## Integration with CVAD
 
-Citrix Virtual Apps & Desktop deployment can be integrated with Citrix Secure Internet Access. Users within the virtual sessions will
-For configuration information, please read the following PoC guide.
+Citrix Virtual Apps & Desktop deployment can be integrated with Citrix SIA. When accessing from inside Citrix Workspace, users receive a unified experience that allows them to access all business relevant apps and desktops through a streamlined interface.
 
-[CSIA and CVAD PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html)
+Users sign into Citrix Workspace with single sign on. Once inside, users have access to all published apps and desktops, including SaaS apps and browsers like Chrome. Secure Workspace Access provides secure, identity-aware, zero trust access to internal apps. Citrix SIA provides secure access to Internet and SaaS apps from within published apps and desktops.
+
+Now, let's say the same user decides to log off Citrix Workspace and access SaaS apps by simply opening a browser from their laptop device. Or perhaps the user decides to access a video sharing website or a personal file sharing website through a browser on their laptop device. In all those and similar instances when the user is accessing Internet and SaaS, the user continues to be protected by Citrix SIA even when they are outside Citrix Workspace.
+
+For configuration information, please read the following PoC guide. [CSIA and CVAD PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html)
 
 ## Reporting
 
