@@ -216,26 +216,25 @@ Note: a majority of social media and cloud services will require SSL decryption 
 
 ### SSL/TLS Decryption
 
-Without SSL Decryption, reporting and analytics become limited. For example, when searching on google without the setting enabled – the SIA platform can report on google.com but not on any of the keywords used in the search query. SSL is not required for block, allow, or monitoring basic HTTP access. With SSL Decryption enabled, the SIA platform can inspect HTTPS traffic thus offering more granular actions and visibility. With SSL Decryption enabled, the connected devices will need the certificate from the platform. The certificate can be distributed during the Cloud Connector install. To verify this, when navigating to a site, the trusted certificate should be seen as being issued by Citrix SIA and not by the site.
-
 Many if not most sites and services on the internet are encrypting their communications with users, with SSL/TLS being the most common protocol used to do so. This makes the ability to inspect SSL/TLS traffic essential for effective internet security. Without doing so, a growing majority of an organization’s traffic will go unsecured, allowing for malware or internal bad actors to exfiltrate corporate data unseen to the gateway.
-As a critical but process-intensive task, SSL/TLS decryption can easily overburden traditional security appliances attempting to achieve full SSL/TLS visibility into content and cloud app usage. Citrix SIA has a scalable cloud architecture that expands and contracts as needed. Each customer’s resources are fully containerized. Citrix SIA keeps each organizations’ decryption keys completely isolated from others.
-SSL/TLS Decryption is the ability to view inside of a secure HTTPS traffic. Citrix SIA SSL/TLS decryption works by having the Citrix SIA act as a man in the middle between the client machine and SSL/TLS secured site. The Citrix SIA acts as a root certification authority, intercepting SSL requests to legitimate sites, requesting them, signing the received data with its own CA certificate and sending the data to the client.
-SSL/TLS Decryption on the CSIA platform works by implementing a “Man in the Middle” security procedure. SSL/TLS decryption can be performed transparently or through a proxy connection, with the only requirement being that the SSL/TLS certificate is deployed on the Cloud Connected device. SSL/TLS certificates can be pushed down through the installer or manually installed.
-SSL/TLS Decryption relies on a MITM certificate. The certificate can be generated from the console or can be inputted in PEM format. The certificate is automatically included in the Windows and MacOS cloud connector download. Certificates can also be deployed out by a trusted root CA via any typical method
-Prior to enabling SSL decryption, a certificate must be downloaded from the platform and installed on the clients machine.
-Decrypting all destinations
-Note: When configuring SSL decryption for the first time, it is recommended to start with selective SSL decryption as not all websites will accept SSL decryption.
 
-*  SSL Decryption can be enabled for all destinations are user travels to on the internet. On the other hand, for websites that do not accept SSL decryption, a bypass can set to only selectively decrypt certain destinations. Below are the various types of bypasses that can be set.
-*  Bypassing SSL Decryption: Domains
-*  Domain bypass can be configured if the site does support SSL Decryption or it is not desirable to set up SSL Decryption for the site. Certain sites can be bypassed by adding the domain to the Selective SSL Decryption.
+As a critical but process-intensive task, SSL/TLS decryption can easily overburden traditional security appliances attempting to achieve full SSL/TLS visibility into content and cloud app usage. Citrix SIA has a scalable cloud architecture that expands and contracts as needed. Each customer’s resources are fully containerized. Citrix SIA keeps each organizations’ decryption keys completely isolated from others.
+
+Without SSL/TLS decryption, reporting and analytics become limited. For example, when searching the internet without the setting enabled – the Citrix SIA can report on the search site but not on any of the keywords used in the search query. SSL/TLS decryption is not required for block, allow, or monitoring basic HTTP access. With SSL/TLS decryption enabled, Citrix SIA can inspect HTTPS traffic thus offering more granular actions and visibility.
+
+SSL/TLS decryption on the CSIA platform works by implementing a “Man in the Middle” security procedure. SSL/TLS decryption can be performed transparently or through a proxy connection, with the only requirement being that the SSL/TLS certificate is deployed on the cloud connected device. The Citrix SIA acts as a root certification authority, intercepting SSL/TLS requests to legitimate sites, requesting them, signing the received data with its own CA certificate and sending the data to the client.
+
+The connected devices will need the certificate from Citrix SIA. The certificate can be distributed during the cloud connector install. To verify this, when navigating to a site, the trusted certificate should be seen as being issued by Citrix SIA and not by the site. SSL/TLS certificates can be pushed down through the installer, manually installed, or pushed through at root CA via any typical method.
+
+**Decrypting all destinations note**: When configuring SSL decryption for the first time, it is recommended to start with selective SSL decryption as not all websites will accept SSL decryption.
+
+SSL Decryption can be enabled for all destinations a user travels to on the internet. On the other hand, for websites that do not accept SSL decryption, a bypass can set to only selectively decrypt certain destinations. Below are the various types of bypasses that can be set.
+
+*  Domains including all subdomains if not desirable for the site.
 *  Note: Bypass for a domain includes all of its subdomains as well.
-*  Bypassing SSL Decryption: Web Categories
-*  It may not be desirable to allow SSL Decryption for certain web categories, especially when it pertains to the privacy of users. If a site belongs to multiple Web Categories, SSL Decryption will be bypassed if any of the Web Categories have the setting for bypass enabled.
-*  Bypassing SSL Decryption: Groups
-*  SSL Decryption bypass can be configured for specific users/groups from the Group Management section of the console.
-*  Bypassing SSL Decryption: IP Address
+*  Web Categories if not desirable for the catergory
+*  Groups if not desirable for specific users/groups
+*  IP address if not desirable for speficic IPs
 *  SSL Decryption Bypass can be enabled for devices dependent upon their IP address. IP addresses and IP ranges, public or private, can be added to the bypass list.
 
 ### Advanced Web Security
