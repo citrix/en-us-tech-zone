@@ -48,7 +48,7 @@ Another challenge that Citrix SIA solves is applying stream-based intrusion prev
 
 Citrix SIA follows users as they move in and out of the physical network perimeter, resulting in dedicated IP addresses for users regardless of location. This capability can be applied to require that users access business applications only through connections that are secured by the gateway, even when working outside of the office or on personal devices. This source IP address can be used to restrict access to resources such as admin portals by using the source IP address as a requirement for login.
 
-**DNS**
+DNS
 
 ### Cloud Connector
 
