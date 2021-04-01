@@ -5,7 +5,7 @@ contributedBy: Florin Lazurca
 specialThanksTo: First Last, First2 Last2
 description: Copy & paste description from TOC here
 ---
-# Secure Internet Access
+# Citrix Secure Internet Access
 
 ## Overview
 
