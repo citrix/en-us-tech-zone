@@ -311,9 +311,6 @@ Citrix SIA allows you to route network data to the cloud to perform network secu
 
 ![CSIA process flow](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_flow.png)
 
-![Authentication](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_auth.png)
-
-
 1.  User selects a link or enters a URL in local web browser
 2.  CSIA agent identifies the user’s and Active Directory group membership
 3.  CSIA analyzes whether the domain or URL is to be bypassed in the PAC script or agent. If so, the request is bypassed from cloud security.
