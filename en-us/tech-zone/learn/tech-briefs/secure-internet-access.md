@@ -26,6 +26,7 @@ Citrix SIA delivers comprehensive internet security to all users in all location
 *  Cloud Access Security Broker (CASB) for cloud apps & social media controls
 *  Real-time advanced reporting
 *  Flexible data traffic redirection for any device and anywhere
+*  Integration with Citrix Virtual Apps and Desktops and SD-WAN
 
 Citrix SIA uses a “Zero Trust” role-based policy model. One of the core goals of Zero Trust is to assign policies and manage access to resources based on a user’s role and identity. This foundational concept is built into Citrix SIA's policy engine.
 
