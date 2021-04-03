@@ -311,14 +311,17 @@ Citrix SIA allows you to route network data to the cloud to perform network secu
 4.  CSIA analyzes whether the request is blocked by the IPS. If so, the request is blocked.
 5.  CSIA tags the username and policy group to the request.
 6.  CSIA analyzes whether the request should be decrypted. If so, the request is decrypted, and a certificate is added to the traffic flow.
-7.  CSIA analyzes whether the request matches a proxy block rule. If so, the request is blocked.
-8.  CSIA analyzes whether the request matches an App-ID CASB block rule. If so, the request is blocked.
-9.  CSIA analyzes whether the request matches a DLP block rule. If so, the request is blocked.
-10.  CSIA analyzes whether the destination matches an entry in the Allow List. If so, the request is checked against the Block List. If a higher weight Block List rule exists, the request is blocked. If not, the request is allowed.
-11.  CSIA analyzes whether the destination matches an entry in the Block List. If so, the request is blocked.
-12.  CSIA analyzes whether the destination matches a blocked web category. If so, the request is blocked.
-13.  CSIA analyzes whether the destination’s IP address is blocked by GEO IP rules. If so, the request is blocked.
-14.  CSIA analyzes whether the request matches any remaining web security policies. If so, the request is blocked. If not, the request is allowed.
+7.  CSIA analyzes whether the request matches a proxy block rule. If no, it proceeds to the CASB rules. If yes, the request is checked against the Allow and Block lists. If a higher weight Block List rule exists, the request is blocked. If not, the request is allowed.
+8.  CSIA analyzes whether the request matches a CASB block rule. If so, the request is blocked.
+9.  CSIA analyzes whether the destination matches an entry in the Allow List.
+10. CSIA analyzes whether the destination matches an entry in the Block List.
+11.  CSIA analyzes whether the destination matches a  malware block rule. If so, the request is blocked.
+12.  CSIA analyzes whether the request matches a DLP block rule. If so, the request is blocked.
+13.  CSIA analyzes whether the destination matches an entry in the YouTube Manager rule. If so, the request is blocked.
+14.  CSIA analyzes whether the destination matches a blocked web category. If so, the request is blocked.
+15.  CSIA analyzes whether the destination’s IP address is blocked by GEO IP rules. If so, the request is blocked.
+16.  CSIA analyzes whether the request matches any remaining web security policies. If so, the request is blocked. If not, the request is allowed.
+17.  CSIA analyzes whether the request matches synchornized Microsoft MCAS line signatures. If no, then the request is allowed by cloud security.  If yes, then the request is checked against MCAS block policies and allowed or blocked based on the result.
 
 ## Citrix SD-WAN + SIA Integration Use cases
 
