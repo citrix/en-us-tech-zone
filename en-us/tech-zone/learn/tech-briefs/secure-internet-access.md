@@ -46,9 +46,7 @@ Citrix SIA eliminates the need for slow and overloaded VPN connections and sends
 
 Another challenge that Citrix SIA solves is applying stream-based intrusion prevention when end users travel outside the internal perimeter and move from place to place to work from networks outside of the control of the organization. Citrix SIA's containerized architecture allows flow-based IP’s to be applied to users wherever they roam. This includes networks that are owned by the organization and networks that are not. The architecture of the Citrix SIA allows every customer to receive dedicated IP addresses that can be used in the same way local IP Addresses are used.
 
-Citrix SIA follows users as they move in and out of the physical network perimeter, resulting in dedicated IP addresses for users regardless of location. This capability can be applied to require that users access business applications only through connections that are secured by the gateway, even when working outside of the office or on personal devices. This source IP address can be used to restrict access to resources such as admin portals by using the source IP address as a requirement for login.
-
-DNS
+Citrix SIA follows users as they move in and out of the physical network perimeter, resulting in dedicated IP addresses for users regardless of location. This capability can be applied to require that users access business applications only through connections that are secured by the gateway, even when working outside of the office or on personal devices. The source IP address can be used to restrict access to resources such as admin portals by using the source IP address as a requirement for login.
 
 ### Cloud Connector
 
@@ -73,6 +71,10 @@ Cloud Connectors ensure users are always connected Citrix SIA. The connectors ta
 ![CSIA Cloud Connectors](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_agent.png)
 
 If your device has a non-standard OS, you can configured agentless data redirection by automatically generating Proxy PAC files. For example, a client connects to the Citrix SIA proxy server, requesting some service such as accessing Google Services, the Citrix SIA proxy server evaluates the requests and determines whether the client is allowed or blocked from accessing this resource. SAML can be used for authentication and this is the preferred method for IoT devices.
+
+### DNS
+
+For situation where the end user doesn't use a Cloud Connector, proxy PAC or SD-WAN, Citrix SIA applies the categories and policies to DNS records, and which it forwards DNS from the on prem DNS service.
 
 ### Authentication
 
