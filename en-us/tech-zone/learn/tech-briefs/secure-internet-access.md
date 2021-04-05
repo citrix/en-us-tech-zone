@@ -40,13 +40,15 @@ Citrix SIA allows administrators to explicitly define cloud zones directly withi
 
 ### Redirecting Flow
 
-Traditionally, Internet application traffic from remote users is sent through slow and overloaded VPNs to provide network security for compliance, malware defense, and data loss protection. Often this results in slow connections or downed networks preventing users from working safely and effectively. Furthermore, against the tenants of Zero Trust, access is typically provided to networks instead of to specific applications. The result is excessive privileges especially for users who only require targeted access to a handful of resources.
+Traditionally, Internet application traffic from remote users is sent through slow and overloaded VPNs to provide network security for compliance, malware defense, and data loss protection. Often this results in slow connections or downed networks preventing users from working safely and effectively. Furthermore, against the tenants of Zero Trust, [Zero Trust Architecture](en-us/tech-zone/learn/tech-briefs/zero-trust.html) access is typically provided to networks instead of to specific applications. The result is excessive privileges especially for users who only require targeted access to a handful of resources.
 
 Citrix SIA eliminates the need for slow and overloaded VPN connections and sends traffic directly from the users to the necessary cloud resources or applications. Citrix SIA also reduces the risk of data loss and further segments the network by allowing users access only to specific resources and applications.
 
 Another challenge that Citrix SIA solves is applying stream-based intrusion prevention when end users travel outside the internal perimeter and move from place to place to work from networks outside of the control of the organization. Citrix SIA's containerized architecture allows flow-based IP’s to be applied to users wherever they roam. This includes networks that are owned by the organization and networks that are not. The architecture of the Citrix SIA allows every customer to receive dedicated IP addresses that can be used in the same way local IP Addresses are used.
 
-![CSIA Cloud Connectors](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_agent.png)
+CSIA routes network data to the cloud to perform network security functions without the need for in-line appliances. This can be accomplished using Proxy settings, Endpoint Agents/Connectors, GRE Tunnels, or IPsec Tunnels.
+
+![Redirecting Traffic Flow](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_agent.png)
 
 Citrix SIA follows users as they move in and out of the physical network perimeter, resulting in dedicated IP addresses for users regardless of location. This capability can be applied to require that users access business applications only through connections that are secured by the gateway, even when working outside of the office or on personal devices. The source IP address can be used to restrict access to resources such as admin portals by using the source IP address as a requirement for login.
 
