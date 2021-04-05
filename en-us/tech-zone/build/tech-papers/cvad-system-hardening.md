@@ -283,7 +283,7 @@ We recommend evaluating the many other security settings within the Office group
 
 ### Session Policies
 
-We recommend creating a session requirements matrix for each use case to control what session policies will need to be configured per job profile. We recommend creating a Zero Trust Policy for all session policies by using the "Security and Control" Policy Template to start any Citrix Virtual Apps and Desktop deployment to ensure that all session channels are blocked by default. If any session policies need to be adjusted, we recommend creating a policy for each policy deviation and using Active Directory groups to nest your delivery group entitlement groups in to make a seamless single group entitlement for the users. You can read more about [policy settings](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings.html) in product documentation.
+We recommend creating a session requirements matrix for each use case to control what session policies will need to be configured per job profile. We recommend creating a Zero Trust Policy for all session policies by using the "Security and Control" Policy Template to start any Citrix Virtual Apps and Desktop deployment to ensure that all session channels are blocked by default. If any session policies need to be adjusted, we recommend creating a policy for each policy deviation and using Active Directory groups to nest your delivery group entitlement groups in to make a seamless single group entitlement for the users. You can read more about [policy settings](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings.html) in product documentation.
 
 When deciding policy delivery mechanism (using Studio or Group Policy Objects), we recommend to chose only one method and don't mix policies from Studio and GPO. Conflicts can lead to misconfiguration and potential security incident.
 
@@ -293,7 +293,7 @@ What do you need outside of just your keyboard and mouse in application X/deskto
 
 #### Default Policy
 
-Start by reviewing [default policy settings](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/policies-default-settings.html) to understand which settings are applied to your environment and review all of them.
+Start by reviewing [default policy settings](/en-us/citrix-virtual-apps-desktops/policies/policies-default-settings.html) to understand which settings are applied to your environment and review all of them.
 
 | Policy Name                | Default Setting |
 | -------------------------- | --------------- |
@@ -316,15 +316,15 @@ Start by reviewing [default policy settings](https://docs.citrix.com/en-us/citri
 
 #### Clipboard
 
-Do you need to copy and paste things in and or out of the session? If the clipboard is needed, do you need just text or other format types and then which directionality is required, in and out of the session or just within the session only. Common mistake is to see clipboard configuration as a yes/no decision and unecessarily reducing usability by applying controls that are too restrictive. [Clipboard redirection settings](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings.html#client-clipboard-redirection) are customizable and you might avoid impacting users productivity by applying more flexible range of policies.
+Do you need to copy and paste things in and or out of the session? If the clipboard is needed, do you need just text or other format types and then which directionality is required, in and out of the session or just within the session only. Common mistake is to see clipboard configuration as a yes/no decision and unecessarily reducing usability by applying controls that are too restrictive. [Clipboard redirection settings](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings.html#client-clipboard-redirection) are customizable and you might avoid impacting users productivity by applying more flexible range of policies.
 
 #### Drive Mappings
 
-Do you need to Copy/Move anything from and drives on your computer in and or out of the Session? Access to endpoint drives is controlled through a set of customizable [File redirection policies](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/file-redirection-policy-settings.html) - you can control access to local drives, mapped network drives or removable drives. Optical and floppy drives are less common today, but can be also controlled through policy.
+Do you need to Copy/Move anything from and drives on your computer in and or out of the Session? Access to endpoint drives is controlled through a set of customizable [File redirection policies](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/file-redirection-policy-settings.html) - you can control access to local drives, mapped network drives or removable drives. Optical and floppy drives are less common today, but can be also controlled through policy.
 
 #### USB Devices
 
-Do you have to use any USB devices with your session? If a USB device is needed, we recommend collecting the VID and PID for those devices instead of just enabling all USB device types. You can read more about USB devices policy settings and policy rules in [product documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/usb-devices-policy-settings.html).
+Do you have to use any USB devices with your session? If a USB device is needed, we recommend collecting the VID and PID for those devices instead of just enabling all USB device types. You can read more about USB devices policy settings and policy rules in [product documentation](/en-us/citrix-virtual-apps-desktops/policies/reference/ica-policy-settings/usb-devices-policy-settings.html).
 
 #### Printing
 
@@ -360,7 +360,7 @@ There are various tools available:
 
 -  **Microsoft Windows AppLocker** - Policy-based with Allow Lists and Block Lists. Use Group Policy to create and edit these policies and apply them to OUs and/or filter based on AD groups to meet your application control needs.
 -  **Windows Defender Application Control** - While AppLocker will continue to receive security fixes, it is no longer getting new feature improvements. Windows Defender Application Control is successor of AppLocker and is recomended tool for application control. You can learn more in [Windows Defender Application Control and AppLocker Overview](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-and-applocker-overview).
--  **Citrix Workspace Environment Management - Application Security** - You can also use Workspace Environment Management (WEM) to manage AppLocker rules. Read more about this option in [product documentation](https://docs.citrix.com/en-us/workspace-environment-management/current-release/user-interface-description/security.html).
+-  **Citrix Workspace Environment Management - Application Security** - You can also use Workspace Environment Management (WEM) to manage AppLocker rules. Read more about this option in [product documentation](/en-us/workspace-environment-management/current-release/user-interface-description/security.html).
 -  **3rd Party** - Most of modern antimalware solutions have the ability to control application launches. This might be preferred option if already used in the rest of organization.
 
 #### Minimum
@@ -417,7 +417,7 @@ Endpoint protection is paramount on any operating system. With the amount of mal
 
 #### Minimum
 
-Deploy a solution on all VDAs along with any Citrix Infrastructure Servers and to all other systems if possible. It is also recommended to ensure it is the latest client paired for your operating system build. Ensure that the exclusions and best practices are applied from this article below. [https://docs.citrix.com/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html](https://docs.citrix.com/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html)
+Deploy a solution on all VDAs along with any Citrix Infrastructure Servers and to all other systems if possible. It is also recommended to ensure it is the latest client paired for your operating system build. Ensure that the exclusions and best practices are applied from this article below. [/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html](/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html)
 
 #### High Security
 
@@ -649,7 +649,7 @@ TBD-One Published
 
 Citrix ADC SYSLOG Guide
 
-[https://docs.citrix.com/en-us/citrix-adc/13/system/audit-logging/configuring-audit-logging.html](https://docs.citrix.com/en-us/citrix-adc/13/system/audit-logging/configuring-audit-logging.html)
+[/en-us/citrix-adc/13/system/audit-logging/configuring-audit-logging.html](/en-us/citrix-adc/13/system/audit-logging/configuring-audit-logging.html)
 
 #### Windows Event Log Forwarding
 
