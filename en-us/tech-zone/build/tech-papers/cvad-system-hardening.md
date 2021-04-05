@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Patrick Coble, Martin Zugec
-description: Copy & paste description from TOC here
+description: Security hardening guidance for Citrix Virtual Apps and Desktops images
 ---
 # Citrix Virtual Apps and Desktops VDA Hardening Guide
 
