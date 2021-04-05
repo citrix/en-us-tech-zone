@@ -9,7 +9,7 @@ description: Copy & paste description from TOC here
 
 ## Overview
 
-The expansive demand for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user internet access. And since users and devices are the new network perimeter, securing internet access must be done in the cloud. Citrix Secure Internet Access (Citrix SIA) shifts the focus from defending perimeters to following users to ensure internet access is secure regardless of location.
+The expansive demand for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user internet access. And since users and devices are the new network perimeter, securing internet access must be done in the cloud. Citrix Secure Internet Access (CSIA) shifts the focus from defending perimeters to following users to ensure internet access is secure regardless of location.
 
 The demand for remote work has made appliance-based network security strategies unsustainable as the projected increases in bandwidth consumption combined with backhauled mobile traffic will quickly saturate the maximum capacity of any on-prem appliance architecture.
 
@@ -17,7 +17,7 @@ The erosion of the network perimeter due to increased use of cloud apps and serv
 
 ![CSIA Unified Approach](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_traffic.png)
 
-Citrix SIA delivers comprehensive internet security to all users in all locations with:
+CSIA delivers comprehensive internet security to all users in all locations with:
 
 *  Complete web & content filtering
 *  Malware protection
@@ -316,7 +316,7 @@ Citrix SIA allows you to route network data to the cloud to perform network secu
 7.  CSIA analyzes whether the request matches a proxy block rule. If no, it proceeds to the CASB rules. If yes, the request is checked against the Allow and Block lists. If a higher weight Block List rule exists, the request is blocked. If not, the request is allowed.
 8.  CSIA analyzes whether the request matches a CASB block rule. If so, the request is blocked.
 9.  CSIA analyzes whether the destination matches an entry in the Allow List.
-10. CSIA analyzes whether the destination matches an entry in the Block List.
+10.  CSIA analyzes whether the destination matches an entry in the Block List.
 11.  CSIA analyzes whether the destination matches a  malware block rule. If so, the request is blocked.
 12.  CSIA analyzes whether the request matches a DLP block rule. If so, the request is blocked.
 13.  CSIA analyzes whether the destination matches an entry in the YouTube Manager rule. If so, the request is blocked.
