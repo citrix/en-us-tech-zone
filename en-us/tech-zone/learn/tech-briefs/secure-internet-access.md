@@ -198,7 +198,7 @@ Deep file-based data loss prevention capabilities to detect, alert, and stop the
 
 The web security module has extensive social media and cloud application controls. Using the Cloud Access Security Broker (CASB) App Controls allow you to manage access to common online applications and social media. Cloud App Controls can be used to restrict activity on popular social media and cloud services. Cloud App Controls can be applied to specific security groups to allow or block items such as posting, liking, following etc.
 
-*  Cloud app control can be used to manage the use of social streaming radio, Pinterest, Facebook, Twitter, LinkedIn, search engines, YouTube, and Google Apps
+*  Cloud app control can be used to manage the use of social media services such as Pinterest, Facebook, Twitter, LinkedIn, search engines, YouTube, and Google Apps
 *  Controls for each of these can be adjusted on a per-group basis
 *  Specific Cloud & SaaS services and social media sites require SSL decryption to be enabled
 
@@ -209,22 +209,21 @@ Other actions that can be performed by the YouTube manager are:
 
 *  Home Page: You can redirect a user to the Organizations YouTube channel.
 *  Bandwidth Preservation: You can force videos to play in Standard Definition
-*  Whitelist libraries: You allow access to specific videos that are blocked by the SafeSearch option into a video library
+*  Allowed video libraries: You can allow access to specific videos that are blocked by the YouTube restricted search settings.
 
-Microsoft CASB integration enables traffic policy control for unsanctioned Apps and CASB reporting visibility all within the Citrix SIA platform. Integration with “Microsoft Cloud App” platform and the platform provides granular traffic policy control and assignments for blocking Unsanctioned Apps as well as CASB reporting within a single pane of glass. Real-time traffic logging and statistics are shipped via API integration to the “Microsoft Cloud App Security” platform. The integration between the platform and Microsoft configuration is achieved by simply entering Microsoft subscription info into the platform
-Note: a majority of social media and cloud services will require SSL decryption to be enabled in order to perform Cloud App Controls, YouTube Manager controls, and Search Engine Controls.
+Microsoft CASB integration enables traffic policy control for unsanctioned Apps and CASB reporting visibility all within CSIA. Integration with “Microsoft Cloud App” platform and the platform provides granular traffic policy control and assignments for blocking Unsanctioned Apps as well as CASB reporting within a single pane of glass. Real-time traffic logging and statistics are shipped via API integration to the “Microsoft Cloud App Security” platform. The integration between the platform and Microsoft configuration is achieved by simply entering Microsoft subscription info into CSIA.
 
 ### SSL/TLS Decryption
 
 Many if not most sites and services on the Internet are encrypting their communications with users, with SSL/TLS being the most common protocol used to do so. This makes the ability to inspect SSL/TLS traffic essential for effective Internet security. Without doing so, a growing majority of an organization’s traffic will go unsecured, allowing for malware or internal bad actors to exfiltrate corporate data unseen to the gateway.
 
-As a critical but process-intensive task, SSL/TLS decryption can easily overburden traditional security appliances attempting to achieve full SSL/TLS visibility into content and cloud app usage. Citrix SIA has a scalable cloud architecture that expands and contracts as needed. Each customer’s resources are fully containerized. Citrix SIA keeps each organizations’ decryption keys completely isolated from others.
+As a critical but process-intensive task, SSL/TLS decryption can easily overburden traditional security appliances attempting to achieve full SSL/TLS visibility into content and cloud app usage. Citrix SIA has a scalable cloud architecture that expands and contracts as needed. Each customer’s resources are fully containerized. CSIA keeps each organizations’ decryption keys completely isolated from others.
 
 Without SSL/TLS decryption, reporting and analytics become limited. For example, when searching the Internet without the setting enabled – the Citrix SIA can report on the search site but not on any of the keywords used in the search query. SSL/TLS decryption is not required for block, allow, or monitoring basic HTTP access. With SSL/TLS decryption enabled, Citrix SIA can inspect HTTPS traffic thus offering more granular actions and visibility.
 
-SSL/TLS decryption on the CSIA platform works by implementing a “Man in the Middle” security procedure. SSL/TLS decryption can be performed transparently or through a proxy connection, with the only requirement being that the SSL/TLS certificate is deployed on the cloud connected device. The Citrix SIA acts as a root certification authority, intercepting SSL/TLS requests to legitimate sites, requesting them, signing the received data with its own CA certificate and sending the data to the client.
+CSIA's SSL/TLS decryption works by implementing a “Man in the Middle” security procedure. SSL/TLS decryption can be performed transparently or through a proxy connection, with the only requirement being that the SSL/TLS certificate is deployed on the cloud connected device. The Citrix SIA acts as a root certification authority, intercepting SSL/TLS requests to legitimate sites, requesting them, signing the received data with its own CA certificate and sending the data to the client.
 
-The connected devices will need the certificate from Citrix SIA. The certificate can be distributed during the cloud connector install. To verify this, when navigating to a site, the trusted certificate should be seen as being issued by Citrix SIA and not by the site. SSL/TLS certificates can be pushed down through the installer, manually installed, or pushed through at root CA via any typical method.
+To avoid client security warnings, connected devices will need the certificate from Citrix SIA. The certificate can be distributed during the cloud connector install. To verify this, when navigating to a site, the trusted certificate should be seen as being issued by Citrix SIA and not by the site. SSL/TLS certificates can be pushed down through the installer, manually installed, or pushed through at root CA via any typical method.
 
 **Decrypting all destinations note**: When configuring SSL decryption for the first time, it is recommended to start with selective SSL decryption as not all websites will accept SSL decryption.
 
@@ -232,9 +231,9 @@ SSL Decryption can be enabled for all destinations a user travels to on the Inte
 
 *  Domains including all subdomains if not desirable for the site.
 *  Note: Bypass for a domain includes all of its subdomains as well.
-*  Web Categories if not desirable for the catergory
+*  Web Categories if not desirable for the category
 *  Groups if not desirable for specific users/groups
-*  IP address if not desirable for speficic IPs
+*  IP address if not desirable for specific IPs
 *  SSL Decryption Bypass can be enabled for devices dependent upon their IP address. IP addresses and IP ranges, public or private, can be added to the bypass list.
 
 ### Advanced Web Security
@@ -258,15 +257,9 @@ Port blocking control blocks Internet traffic on specified ports, or port ranges
 **Content and MIME Type**
 The Multipurpose Internet Mail Extensions (MIME) type is a standardized way to indicate the nature and format of a document.
 
-*  Browsers often use the MIME type (and not the file extension) to determine how to process a document or domain.
-*  The general structure of a MIME type consists of a type and subtype in the format [type]/[subtype].
-*  When entering a MIME type, ensure you have no spaces between the type and subtype, for example, "audio/mpeg“
-Content type is used to indicate the media type of the requested resource. MIME types help browsers understand how to process files it recovers from a web server. A browser matches its content type to the MIME type. You can control the type of content that can be accessed when browsing. Common types of restrictions include:
+*  MIME types help browsers understand how to proces files it recovers from a web server. A browser matches its content type to the MIME type. You can control the type of content that can be accessed when browsing.
 
-*  Image/jpeg
-*  Image/gif
-*  Image/webp
-*  Image/png
+*  The general structure of a MIME type consists of a type and subtype in the format [type]/[subtype]. Examples include Image/jpeg, Image/gif, Image/mpeg.
 
 **File Extensions** can be restricted to prevent users from downloading files that have specific extensions.
 
@@ -274,18 +267,17 @@ Content type is used to indicate the media type of the requested resource. MIME 
 *  Each extension may be a maximum of 15 characters in length
 *  To remove an extension from the Block list, check the box next to the extension.
 
-For example, an ‘.exe’ file may cause harm if executed by a user and therefore can be restricted from downloading.
+For example, a file with the ‘.exe’ extension may cause harm if executed by a user and therefore can be restricted from downloading.
 
-**Domain Extension** The domain extension control allows you to block or allow specific domain extensions from being accessed on a per-group basis.
+**Domain Extension** The domain extension control allows you to block or allow specific domain extensions from being accessed on a per-group basis. Manage the Domain Extensions list for each group by:
 
-*  Manage the Domain Extensions list for each group by
 *  Blocking the domain extensions in the list
 *  Only Allow the extensions in the list via the Block or Only Allow Domain Extensions
-*  Each extension may be a maximum of 15 characters in length.
+*  Each extension may be a maximum of 15 characters in length
 *  For example, you may choose to allow only domains that end in ".com" and ".net". Any domains that do not end in those extensions will be blocked
 Restrictions can be put in place to prevent users from browsing to specific Top-Level Domains
 
-Note: setting the Top-Level Domain restriction does not prevent a user from brute force browsing by IP address
+Note: Setting the Top-Level Domain restriction does not prevent a user from brute force browsing by IP address
 
 Policy layers offer more advanced control over Web Security Policies. You can apply Allow Lists, Block
 Lists, Web Category Filters, SSL Decryption, and other settings based on a variety of preconfigured criteria. This criterion includes but is not limited to:
@@ -326,7 +318,7 @@ Citrix SIA allows you to route network data to the cloud to perform network secu
 14.  CSIA analyzes whether the destination matches a blocked web category. If so, the request is blocked.
 15.  CSIA analyzes whether the destination’s IP address is blocked by GEO IP rules. If so, the request is blocked.
 16.  CSIA analyzes whether the request matches any remaining web security policies. If so, the request is blocked. If not, the request is allowed.
-17.  CSIA analyzes whether the request matches synchornized Microsoft MCAS line signatures. If no, then the request is allowed by cloud security.  If yes, then the request is checked against MCAS block policies and allowed or blocked based on the result.
+17.  CSIA analyzes whether the request matches synchronized Microsoft MCAS line signatures. If no, then the request is allowed by cloud security.  If yes, then the request is checked against MCAS block policies and allowed or blocked based on the result.
 
 ## Citrix SD-WAN + SIA Integration Use cases
 
@@ -336,21 +328,23 @@ Citrix SD-WAN and Citrix SIA integration offers flexibility and choice for a mix
 
 There several ways to secure users as they access cloud and SaaS apps and those methods cover cases where the user sits behind an SD-WAN appliance weather at the branch and at home or whether the user is fully mobile, working for example from a coffee shop.
 
-For a user sitting at a corporate office, SD-WAN automatically creates secure connecivity to the closest Citrix SIA point of presence. Traffic is tunnelled via a GRE or IPsec tunnel and redundancy is achieved both a the tunnel level as well as via multiple links to primary and secondary pops.
+For a user sitting at a corporate office, SD-WAN automatically creates secure connectivity to the closest CSIA point of presence. Traffic is tunneled via a GRE or IPsec tunnel and redundancy is achieved both vi the tunnel level as well as via multiple links to primary and secondary pops.
 
-If a user leaves the corporate perimeter and sits at a coffee shops for example, working off of her tablet, the Cloud Connector installed on the device takes care of redirecting traffic to the Citrix SIA cloud. The connector also serves the purpse of authenticating the user as well as installing appropriate certificates for SSL decryption.
+If a user leaves the corporate perimeter and sits at a coffee shops for example, working off of her tablet, the Cloud Connector installed on the device takes care of redirecting traffic to the Citrix SIA cloud. The connector also serves the purpose of authenticating the user as well as installing appropriate certificates for SSL decryption.
 
 For configuration information, please read the following PoC guide: [CSIA and SD-WAN PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html)
 
 ## Integration with CVAD
 
-Citrix Virtual Apps & Desktop deployment can be integrated with Citrix SIA. When accessing from inside Citrix Workspace, users receive a unified experience that allows them to access all business relevant apps and desktops through a streamlined interface.
+Citrix Virtual Apps & Desktops deployments can be integrated with  CSIA. When accessing from inside Citrix Workspace, users receive a unified experience that allows them to access all business relevant apps and desktops through a streamlined interface.
+
+CSIA's Cloud Connectors can be configured in multiuser mode. Administrators can apply different policies to different users on multiuser systems such as Citrix Virtual Apps and Desktops and others. Instead of having users be seen as a single user, they are seen and logged as individuals.
 
 Users sign into Citrix Workspace with single sign on. Once inside, users have access to all published apps and desktops, including SaaS apps and browsers like Chrome. Secure Workspace Access provides secure, identity-aware, zero trust access to internal apps. Citrix SIA provides secure access to Internet and SaaS apps from within published apps and desktops.
 
 ![CSIA process flow](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_cvadsia.png)
 
-Now, let's say the same user decides to log off Citrix Workspace and access SaaS apps by simply opening a browser from their laptop device. Or perhaps the user decides to access a video sharing website or a personal file sharing website through a browser on their laptop device. In all those and similar instances when the user is accessing Internet and SaaS, the user continues to be protected by Citrix SIA even when they are outside Citrix Workspace.
+Now, let's say the same user decides to log off Citrix Workspace and access SaaS apps by simply opening a browser from their laptop device. Or perhaps the user decides to access a video sharing website or a personal file sharing website through a browser on their laptop device. In all those and similar instances when the user is accessing Internet and SaaS, the user continues to be protected by CSIA even when they are outside Citrix Workspace.
 
 ![CSIA with Citrix Workspace](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_workspace.png)
 
