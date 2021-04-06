@@ -74,11 +74,11 @@ If your device has a non-standard OS, you can configured agentless data redirect
 
 **Proxy PAC** files are used for agentless data redirection that redirects traffic based on the user location (source IP). The PAC file supports geo-location to connect users closest gateways automatically and supports GDPR zoning. It is dynamically generated on a user-by-user basis. Proxy PAC supports load balancing and horizontal scaling and authentication via SAML.
 
-**DNS** is used for situations where the end user doesn't use a Cloud Connector, proxy PAC or SD-WAN. CSIA applies the categories and policies to DNS records, and which it forwards DNS from the on premises DNS service. The network at each branch location redirects DNS traffic to CSIA and receives a unique security policy. Both policies and reporting logs are based on a per-location basis.
-
 **IPSec/GRE** use edge routers and firewalls to create tunnels and redirect all traffic at each location to CSIA. The tunnels point to a single CSIA DNS destination which routes traffic to gateways. The choice to use GRE or IPSec depends on what the existing edge router/firewall support. Authentication is achieved via connectors and SAML.
 
 **SD-WANs** and CSIA can be used together with IPSec and GRE tunneling. Citrix SD-WAN integrates with CSIA by using application knowledge to intelligently steer Internet, cloud, or SaaS traffic to the CSIA  via a GRE or IPsec tunnel for comprehensive security.
+
+**DNS** is used for situations where the end user doesn't use a Cloud Connector, proxy PAC or SD-WAN. CSIA applies the categories and policies to DNS records, and which it forwards DNS from the on premises DNS service. The network at each branch location redirects DNS traffic to CSIA and receives a unique security policy. Both policies and reporting logs are based on a per-location basis.
 
 ## Authentication
 
