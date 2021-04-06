@@ -105,8 +105,9 @@ tunnels point to single CSIA DNS destination which routes traffic to gateways
 choice between GRE and IPSec depends on what the edge router/firewall supports
 Authentication via connectors, SAML or NTLM/Kerberos
 
+### SD-WAN
 
-### SDWAN
+SD-WAN
 
 ### Authentication
 
