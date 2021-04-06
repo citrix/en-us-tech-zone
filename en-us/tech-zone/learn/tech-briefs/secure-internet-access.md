@@ -160,24 +160,24 @@ When the IPS detects a threat, the Threat Rules determine the action it takes. T
 
 ### Web Filtering
 
-Web Categories are a quick and useful way to filter web access and traffic based on Security Group mappings. Depending upon the domain, it has one or multiple categories associated with it based off its domain. Web Categories settings set the baseline access for a particular group. Allow/block lists and policy layers can be configured to get more granular. You can choose from several action options for each individual category. Actions can be applied to a web category and are independent from one another. Web policies in CSIA are enforced based upon the security group association of the user. A majority of the web security policies on CSIA can be applied to security groups selectively or to multiple groups.
+Web Categories are a quick and useful way to filter web access and traffic based on Security Group mappings. Depending upon the domain, it has one or multiple categories associated with it based off its domain. Web Categories settings set the baseline access for a particular group. Allow/block lists and policy layers can be configured to get more granular. You can choose from several action options for each individual category. Actions can be applied to a web category and are independent from one another. Web policies in CSIA are enforced based on the security group association of the user. Most of the web security policies on CSIA can be applied to security groups selectively or to multiple groups.
 
-*  Domains are categorized based upon the content of their sites
+*  Domains are categorized based on the content of their sites
 *  Each category has its own set of actions that are independently configured from the other categories
-*  Domains with multiple categories assigned to it are subject to category priorities that will determine the action the user encounters
+*  Domains with multiple categories assigned to it are subject to category priorities that determine the action the user encounters
 *  There are four primary actions you can assign to a web category: Allow, Block, Stealth, or Soft Override
 *  SSL Decryption enabled/disabled
-*  If a domain is associated with multiple categories, the action applied to it is determined by the priority number associated for the categories. Categories with higher priority values will take precedence.
+*  If a domain is associated with multiple categories, the action applied to it is determined by the priority number associated for the categories. Categories with higher priority values take precedence.
 *  Web Category – Soft Overrides
 *  Presents the user with a block page for the category but will allow the user to choose a soft override command
     *  Allows the user to access the URL until the next day
-    *  Any block page presented with a soft override will show in reporting & analytics as soft-blocked
+    *  Any block page presented with a soft override shows in reporting & analytics as soft-blocked
 
 #### Blocking or Allowing a website
 
-Website browsing can be blocked using a Block List. Block Lists can be used to restrict access to network resources selectively. Allow Lists allow access to URLS that may be blocked by a web category policy. Allow Lists can be used to grant access to specific resources. Allow Lists are configured much the same as
+Website browsing can be blocked using a Block List. Block Lists can be used to restrict access to network resources selectively. Allow Lists allow access to URLS that are blocked by a web category policy. Allow Lists can be used to grant access to specific resources. Allow Lists are configured much the same as
 
-Below are the various ways to configure Block Lists:
+Following are the various ways to configure Block Lists:
 
 *  URL matching: URLs can be matched using domains, subdomains, IP addresses, IP ranges, and ports
 *  Wildcards: Wildcard entries can be used in the block list by omitting the trailing forward slash from the path i.e. “mywebsite-parent-domain.com”
@@ -217,9 +217,9 @@ The web security module has extensive social media and cloud application control
 
 Search Engine Controls allow you to set SafeSearch settings on various search engines. These settings can also be applied globally or to specific groups. Google, Yahoo, and Bing web browser search engines are supported.
 
-You can prevent users from uploading files to a variety of Cloud Services. File upload can be blocked for Dropbox, Box, OneDrive, Google Drive and Generic file uploads
-YouTube Manager can restrict content, hide comments, and create a library of whitelisted videos. YouTube Manager settings can be applied globally or to specific security group(s).
-Other actions that can be performed by the YouTube manager are:
+You can prevent users from uploading files to various cloud services. File upload can be blocked for Dropbox, Box, OneDrive, Google Drive and Generic file uploads. YouTube manager can restrict content, hide comments, and create a library of allow listed videos. YouTube manager settings can be applied globally or to specific security groups.
+
+YouTube manager can perform other actions such as:
 
 *  Home Page: You can redirect a user to the Organizations YouTube channel.
 *  Bandwidth Preservation: You can force videos to play in Standard Definition
@@ -229,13 +229,12 @@ Microsoft CASB integration enables traffic policy control for unsanctioned Apps 
 
 ### Advanced Web Security
 
-**Keyword filtering** is used for to inspect URLs for certain keywords and restrict user searches and phrases. Depending on the outcome of the inspection, content can be allowed or blocked. Keywords can be manually added or be sourced from a pre-defined list within CSIA. A Wildcard option can be enabled for multi-word searches/keywords that are substrings of larger words that may violate blocked keywords.
-Wildcard example: The keyword is “base.” A wildcard match for “base” will block both the search word “base” and “baseball.”
+**Keyword filtering** is used for to inspect URLs for certain keywords and restrict user searches and phrases. Depending on the outcome of the inspection, content can be allowed or blocked. Keywords can be manually added or be sourced from a pre-defined list within CSIA. A Wildcard option can be enabled for multi-word searches/keywords that are substrings of larger words that can violate blocked keywords. Wildcard example: The keyword is “base.” A wildcard match for “base” will block both the search word “base” and “baseball.”
 
-**Port Blocking** Connectivity to network resources can be restricted by certain ports for both UDP and TCP based protocols and direction – inbound, outbound, or both. In addition, a Port Block schedule can be applied to restrict access only during particular time(s) of the day.
+**Port Blocking** Connectivity to network resources can be restricted by certain ports for both UDP and TCP based protocols and direction – inbound, outbound, or both. In addition, a Port Block schedule can be applied to restrict access only during particular times of the day.
 Port blocking control blocks Internet traffic on specified ports, or port ranges.
 
-*  Any traffic using the specified ports will be blocked completely.
+*  Any traffic using the specified ports are blocked completely.
 *  To clear the Port Blocking controls, switch the enabled toggles for the port ranges you would like to disable to NO.
 *  You can choose to always block the port ranges for the selected group or block ports using an Advanced Schedule.
 
@@ -243,7 +242,7 @@ Port blocking control blocks Internet traffic on specified ports, or port ranges
 
 *  Block the following: Blocks Internet access for specific browsers and OS versions
 *  Allow only the following: Allows Internet access for specific browsers and OS versions
-*  Move user: Move a user to another security group (if they violated the restrictions) for a particular period of time
+*  Move user: Move a user to another security group (if they violated the restrictions) for a particular period
 
 **Content and MIME Type**
 The Multipurpose Internet Mail Extensions (MIME) type is a standardized way to indicate the nature and format of a document.
@@ -271,14 +270,14 @@ For example, you may choose to allow only domains that end in ".com" and ".net".
 Note: Setting the Top-Level Domain restriction does not prevent a user from brute force browsing by IP address
 
 Policy layers offer more advanced control over Web Security Policies. You can apply Allow Lists, Block
-Lists, Web Category Filters, SSL Decryption, and other settings based on a variety of preconfigured criteria. This criterion includes but is not limited to:
+Lists, Web Category Filters, SSL Decryption, and other settings based on various preconfigured criteria. This criterion includes but is not limited to:
 
 *  User name
 *  Security group
 *  IP ranges
 *  GeoIP
 
-Policy Layers contain the concept of dynamic linking, whereby the policies will only be applied if all or any of the criteria conditions are triggered. In addition, the policy layer can be set on advanced schedule – similar to that of the Internet Sleep Mode.
+Policy Layers contain the concept of dynamic linking, whereby the policies are only applied if all or any of the criteria conditions are triggered. In addition, the policy layer can be set on advanced schedule – similar to that of the Internet Sleep Mode.
 Proxy Rules to trigger actions in response to certain types of network activity.
 
 *  Proxy rules are created by associating them with match patterns
@@ -289,14 +288,14 @@ Proxy Rules to trigger actions in response to certain types of network activity.
 
 ### Flow
 
-CSIA allows you to route network data to the cloud to perform network security functions without the need for in-line appliances. The diagram below details the process flow from beginning to end.
+CSIA allows you to route network data to the cloud to perform network security functions without the need for in-line appliances. The following diagram details the process flow from beginning to end.
 
 ![CSIA process flow](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_flow.png)
 
 1.  User selects a link or enters a URL in local web browser
 2.  CSIA agent identifies the user’s and Active Directory group membership
 3.  CSIA analyzes whether the domain or URL is to be bypassed in the PAC script or agent. If so, the request is bypassed from cloud security.
-4.  CSIA analyzes whether the request is blocked by the IPS. If so, the request is blocked.
+4.  CSIA analyzes whether the request is to be blocked by the IPS. If so, the request is blocked.
 5.  CSIA tags the username and policy group to the request.
 6.  CSIA analyzes whether the request will be decrypted. If so, the request is decrypted, and a certificate is added to the traffic flow.
 7.  CSIA analyzes whether the request matches a proxy block rule. If no, it proceeds to the CASB rules. If yes, the request is checked against the Allow and Block lists. If a higher weight Block List rule exists, the request is blocked. If not, the request is allowed.
@@ -307,7 +306,7 @@ CSIA allows you to route network data to the cloud to perform network security f
 12.  CSIA analyzes whether the request matches a DLP block rule. If so, the request is blocked.
 13.  CSIA analyzes whether the destination matches an entry in the YouTube Manager rule. If so, the request is blocked.
 14.  CSIA analyzes whether the destination matches a blocked web category. If so, the request is blocked.
-15.  CSIA analyzes whether the destination’s IP address is blocked by GEO IP rules. If so, the request is blocked.
+15.  CSIA analyzes whether the destination’s IP address is to be blocked by GEO IP rules. If so, the request is blocked.
 16.  CSIA analyzes whether the request matches any remaining web security policies. If so, the request is blocked. If not, the request is allowed.
 17.  CSIA analyzes whether the request matches synchronized Microsoft MCAS line signatures. If no, then the request is allowed by cloud security.  If yes, then the request is checked against MCAS block policies and allowed or blocked based on the result.
 
@@ -317,11 +316,11 @@ Citrix SD-WAN and CSIA integration offers flexibility and choice for a mixed pro
 
 ![CSIA with SD-WAN](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_sdwan.png)
 
-There are several ways to secure users as they access cloud and SaaS apps and those methods cover cases where the user sits behind an SD-WAN appliance weather at the branch and at home or whether the user is fully mobile, working for example from a coffee shop.
+There are several ways to secure users as they access cloud and SaaS apps. The methods cover use cases where the user sits behind an SD-WAN appliance at the branch, or at home, or whether the user is fully mobile.
 
-For a user sitting at a corporate office, SD-WAN automatically creates secure connectivity to the closest CSIA point of presence. Traffic is tunneled via a GRE or IPsec tunnel and redundancy is achieved both vi the tunnel level and via multiple links to primary and secondary pops.
+For a user sitting at a corporate office, SD-WAN automatically creates secure connectivity to the closest CSIA point of presence. Traffic is tunneled via a GRE or IPsec tunnel. Redundancy is achieved both via the tunnel level and via multiple links to primary and secondary Points of Presence.
 
-If a user leaves the corporate perimeter and sits at a coffee shop for example, working off of her tablet, the Cloud Connector installed on the device takes care of redirecting traffic to the CSIA cloud. The connector also serves the purpose of authenticating the user and installing appropriate certificates for SSL decryption.
+If a user leaves the corporate perimeter, the Cloud Connector installed on the device takes care of redirecting traffic to the CSIA cloud. The connector also serves the purpose of authenticating the user and installing appropriate certificates for SSL decryption.
 
 For configuration information, please read the following PoC guide: [CSIA and SD-WAN PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html)
 
