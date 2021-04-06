@@ -24,7 +24,7 @@ It makes assumptions about the completed installation and configuration of the f
 *  Citrix Gateway integrated with a Citrix Virtual Apps and Desktops environment which uses LDAP for authentication
 *  Active Directory (AD) is available in the environment
 *  Endpoint with Citrix Workspace app installed
-*  The user must have local admin rights or have the Citrix Gateway Plug-in installed
+*  The endpoint user must have local admin rights or have the Citrix Gateway Plug-in installed
 
 Refer to Citrix Documentation for the latest product version, licensing, and requirement details: [Device certificate in nFactor as an EPA component](/en-us/citrix-gateway/current-release/vpn-user-config/endpoint-policies/device-certificate-in-nfactor-as-an-epa-component.html)
 
