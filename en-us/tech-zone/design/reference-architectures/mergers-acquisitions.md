@@ -120,7 +120,7 @@ The Secure Workspace Access service and the Virtual Apps and Desktops service us
 
 Users authenticate to Citrix Workspace with a primary identity. The primary identity is based on their company’s identity provider. One of the challenges with mergers and acquisitions is access to secondary resources that are based on a secondary identity. For example, CompanyA allows certain users from CompanyB and CompanyC to access virtual Windows applications. To access a virtual Windows application, the user must have a user account (secondary identity) within the domain containing the virtual resource. A CompanyB user’s account (primary identity) will not authenticate to a CompanyA resource (secondary identity). To translate credentials between a primary and secondary identity and provide single sign-on to virtual Windows applications, CompanyA uses the Federated Authentication Service within Citrix Cloud.
 
-The [Workspace Single Sign-On Tech Brief](https://docs.citrix.com/en-us/tech-zone/learn/tech-briefs/workspace-sso.html#sso-virtual-apps-and-desktops) contains additional information related to the Federated Authentication Service.
+The [Workspace Single Sign-On Tech Brief](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html#sso-virtual-apps-and-desktops) contains additional information related to the Federated Authentication Service.
 
 ### Resource Security Policies
 
