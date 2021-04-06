@@ -96,11 +96,7 @@ CSIA can use four different types of authentication using the Cloud Connector, C
 
 **AD plugin**: a server-side agent that can be installed across the Domain Controllers to provide logon services within the domain. Organziational Units, security groups, and machines are gathered from the DCs and sent back to CSIA for policy assignment.
 
-**Aliases**: Aliases can be added to a security group to capture multiple user groups under one larger CSIA group.
-
-**Multiple groups**: When you have users that fall into multiple groups, priority is important. The higher the priority on the group, is what takes precedence for policy enforcement.
-
-**Policy Engines**: There are 3 different policy engines. When a packet traverses the platform, determining which policy should be applied to the packet occurs in the following order:
+Aliases can be added to a security group to capture multiple user groups under one larger CSIA group. When you have users that fall into multiple groups, priority is important. The higher the priority on the group, is what takes precedence for policy enforcement. There are 3 different policy engines. When a packet traverses the platform, determining which policy should be applied to the packet occurs in the following order:
 
 *  Step 1 - IP Subnet: The packet is checked against the Local Subnets configured in the network settings based on the packet’s source IP address. If a match is found, the policy group is saved before moving on.
 *  Step 2 - Device: The source IP is compared to the list of static and dynamic computers. If a match is found, the policy group from step 1 is replaced with the one found here.
