@@ -128,12 +128,11 @@ To avoid client security warnings, connected devices will need the certificate f
 
 SSL Decryption can be enabled for all destinations a user travels to on the Internet. On the other hand, for websites that do not accept SSL decryption, a bypass can set to only selectively decrypt certain destinations. Below are the various types of bypasses that can be set.
 
-*  Domains including all subdomains if not desirable for the site.
-*  Note: Bypass for a domain includes all of its subdomains as well.
+*  Domains including all subdomains if not desirable for the site
+*  Note: Bypass for a domain includes all of its subdomains as well
 *  Web Categories if not desirable for the category
 *  Groups if not desirable for specific users/groups
-*  IP address if not desirable for specific IPs
-*  SSL Decryption Bypass can be enabled for devices dependent upon their IP address. IP addresses and IP ranges, public or private, can be added to the bypass list.
+*  IP addresses and ranges if not desirable
 
 ### Malware Protection
 
