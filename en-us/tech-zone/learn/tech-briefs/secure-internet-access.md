@@ -103,7 +103,7 @@ edge routers and firewalls create tunnels to CSIA redirecting all traffic at loc
 GRE/IPSec tunnel created between firewall and CSIA at each location
 tunnels point to single CSIA DNS destination which routes traffic to gateways
 choice between GRE and IPSec depends on what the edge router/firewall supports
-Authentication via connectors, SAML or NTLM/Kerberos
+Authentication via connectors and SAML
 
 ### SD-WAN
 
@@ -113,7 +113,7 @@ SD-WAN
 
 CSIA can use local user identities, Microsoft Active Directory (AD), or another type of modern IdP (such as Azure AD). When using traditional AD, the security groups on CSIA must match what is in AD. The platform will periodically check for group membership, on the device, when using the agent-based Cloud Connector deployment. When a user belongs to multiple security groups in AD, a priority can be set for what policies get enacted. Higher priority numbers take precedence over lower ones.
 
-You can associate current Active Directory security groups to CSIA security groups by using the same names for both. CSIA security groups can be assigned a priority number for the case in which a particular user is part of multiple groups.  CSIA places a user into the group that has the higher priority number. Group aliases can be assigned to associate multiple Active Directory groups to a single CSIA security group.
+You can associate current Active Directory security groups to CSIA security groups by using the same names for both. CSIA security groups can be assigned a priority number for the case in which a particular user is part of multiple groups. CSIA places a user into the group that has the higher priority number. Group aliases can be assigned to associate multiple Active Directory groups to a single CSIA security group.
 
 CSIA can use four different types of authentication using the Cloud Connector, Cloud Identity, SAML, or Active Directory plugin.
 
