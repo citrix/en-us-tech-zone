@@ -15,20 +15,18 @@ Large Enterprise environments require flexible authentication options to meet th
 
 ## Overview
 
-This guide demonstrates how to implement a Proof of Concept environment using two factor authentication with Citrix Gateway. It validates a Device Certificate as the first factor using Endpoint Analysis (EPA). Then the user Active Directory credentials as the second factor. It uses a Citrix Virtual Apps and Desktops published virtual desktop to validate connectivity.
+This guide demonstrates how to implement a Proof of Concept environment using two factor authentication with Citrix Gateway. It validates a Device Certificate as the first factor using Endpoint Analysis (EPA). Then it uses the user's domain credentials as the second factor. It uses a Citrix Virtual Apps and Desktops published virtual desktop to validate connectivity.
 
 It makes assumptions about the completed installation and configuration of the following components:
 
 *  Citrix ADC installed, and licensed
 *  Citrix Gateway configured with an externally reachable virtual server bound to a wildcard Certificate
-*  Citrix Gateway virtual server bound with the CA Certificate, that issued the endpoint/s Device Certificates
 *  Citrix Gateway integrated with a Citrix Virtual Apps and Desktops environment which uses LDAP for authentication
 *  Active Directory (AD) is available in the environment
 *  Endpoint with Citrix Workspace app installed
-*  Endpoint with a computer certificate installed
-*  The user must be a local admin or have the Citrix Gateway Plug-in installed
+*  The user must have local admin rights or have the Citrix Gateway Plug-in installed
 
-Refer to Citrix Documentation for the latest product version, and license requirements: [Device certificate in nFactor as an EPA component](/en-us/citrix-gateway/current-release/vpn-user-config/endpoint-policies/device-certificate-in-nfactor-as-an-epa-component.html)
+Refer to Citrix Documentation for the latest product version, licensing, and requirement details: [Device certificate in nFactor as an EPA component](/en-us/citrix-gateway/current-release/vpn-user-config/endpoint-policies/device-certificate-in-nfactor-as-an-epa-component.html)
 
 ## nFactor
 
