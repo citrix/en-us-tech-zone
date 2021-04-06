@@ -26,6 +26,7 @@ It makes assumptions about the completed installation and configuration of the f
 *  Active Directory (AD) is available in the environment
 *  Endpoint with Citrix Workspace app installed
 *  Endpoint with a computer certificate installed
+*  The user must be a local admin or have the Citrix Gateway Plug-in installed
 
 Refer to Citrix Documentation for the latest product version, and license requirements: [Device certificate in nFactor as an EPA component](/en-us/citrix-gateway/current-release/vpn-user-config/endpoint-policies/device-certificate-in-nfactor-as-an-epa-component.html)
 
@@ -202,8 +203,8 @@ With Citrix Workspace and Citrix Gateway Enterprises can improve their security 
 
 For more information refer to:
 
-[Device certificate in nFactor as an EPA component](/en-us/citrix-gateway/current-release/vpn-user-config/endpoint-policies/device-certificate-in-nfactor-as-an-epa-component.html)
+[How to Configure Device Certificate on Citrix Gateway for Authentication](https://support.citrix.com/article/CTX200290) - learn how to implement an OSCP responder to verify certificate revocation status.
 
 [Understanding and Configuring EPA Verbose Logging on NetScaler Gateway](https://support.citrix.com/article/CTX209148) - verify the nsepa.txt on the endpoint logs the correct CA in the list that is downloaded. "Netscaler has sent list of allowed CA for device certificate." If not verify you imported and bound the correct one, that issued the device certificate, to the Gateway vServer.
 
-[Citrix ADC Commands to Find the Policy `Hits` for Citrix Gateway Session Policies](https://support.citrix.com/article/CTX1388400) - learn more about CLI commands like `nsconmsg -d current -g _hits` to track policy `hits` to help troubleshoot
+[Citrix ADC Commands to Find the Policy `Hits` for Citrix Gateway Session Policies](https://support.citrix.com/article/CTX1388400) - learn more about CLI commands like `nsconmsg -d current -g _hits` to track policy `hits` to help troubleshoot.
