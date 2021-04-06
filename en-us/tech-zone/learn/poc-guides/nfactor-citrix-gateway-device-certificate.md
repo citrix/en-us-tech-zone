@@ -195,7 +195,7 @@ We test authentication by authenticating into our Citrix Virtual Apps and Deskto
 
 ## Summary
 
-With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Device Certificates allow Enterprises to seamlessly add a 2nd authentication factor to user credentials maintaining a good user experience while improving security posture.
+With Citrix Workspace and Citrix Gateway Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Device Certificates allow Enterprises to seamlessly add a 2nd authentication factor to user credentials, maintaining a good user experience while improving security posture.
 
 ## References
 
