@@ -211,8 +211,8 @@ CompanyA wants to limit the risk of data loss due to theft of an endpoint device
 
 As a baseline policy, CompanyA defined the following (with the ability to relax policies as needed based on user and application).
 
-|SaaS Apps|Web Apps|Virtual Apps/Desktops|Mobile Apps|
----|---|---|---|
+|Category|SaaS Apps|Web Apps|Virtual Apps/Desktops|Mobile Apps|
+---|---|---|---|---|
 |Clipboard access|Denied|Denied|Client to Server only|Only enabled between protected apps|
 |Printing|Denied|Denied|Denied|Denied|
 |Navigation|Denied|Denied|Not Applicable|Not Applicable|
