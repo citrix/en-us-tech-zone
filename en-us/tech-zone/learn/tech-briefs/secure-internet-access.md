@@ -38,7 +38,7 @@ Through the use of containerized gateways, the data plane is separated for each 
 
 CSIA allows administrators to explicitly define cloud zones directly within the cloud admin portal. These zones ensure users within a given region will be secured within the region and that log events generated within a given region to stay within the region. This is important for regulations such as GDPR, which require data to stay within national boundaries. Additionally, cloud zones can be used to define how users connect to the cloud, depending on location. For example, when users move from office to office, these admin-defined zones enable the dynamic bypassing of local printers and servers that apply to each office.
 
-### Redirecting Flow
+## Redirecting Flow
 
 Traditionally, Internet application traffic from remote users is sent through slow and overloaded VPNs to provide network security for compliance, malware defense, and data loss protection. Often this results in slow connections or downed networks preventing users from working safely and effectively. Furthermore, against the tenants of [Zero Trust Architecture](en-us/tech-zone/learn/tech-briefs/zero-trust.html), access is typically provided to networks instead of to specific applications. The result is excessive privileges especially for users who only require targeted access to a handful of resources.
 
@@ -76,26 +76,11 @@ If your device has a non-standard OS, you can configured agentless data redirect
 
 ### Proxy PAC
 
-Proxy PAC redirects traffic based on location (source IP)
-
-Agentless data redirection
-PAC file supports geo-location to conncet users closest gateways automatically
-PAC file is dynamically generated on a user-by-user basis.
-Support load balancing and horizontal scaling
-authentication via SAML
-Supports GDPR zoning
+Proxy PAC is an agentless data redirection mode that redirects traffic based on the user location (source IP). The PAC file supports geo-location to connect users closest gateways automatically and supports GDPR zoning. It is dynamically generated on a user-by-user basis. Proxy PAC supports load balancing and horizontal scaling and authentication via SAML.
 
 ### DNS
 
-For situation where the end user doesn't use a Cloud Connector, proxy PAC or SD-WAN, CSIA applies the categories and policies to DNS records, and which it forwards DNS from the on prem DNS service.
-
-Network redirects DNS traffic to CSIA from branch locations
-
-Network redirects all DNS traffic to CSIA
-Policies are based on a per-location basis
-Each location redirects DNS traffic to CSIA
-Each location revieves a unique security policy
-Reporting logs available by location
+For situations where the end user doesn't use a Cloud Connector, proxy PAC or SD-WAN, CSIA applies the categories and policies to DNS records, and which it forwards DNS from the on premises DNS service. The network at each branch location redirects DNS traffic to CSIA and receives a unique security policy. Both policies and reporting logs are based on a per-location basis.
 
 ### IPSEC/GRE
 
@@ -109,7 +94,7 @@ Authentication via connectors and SAML
 
 SD-WAN
 
-### Authentication
+## Authentication
 
 CSIA can use local user identities, Microsoft Active Directory (AD), or another type of modern IdP (such as Azure AD). When using traditional AD, the security groups on CSIA must match what is in AD. The platform will periodically check for group membership, on the device, when using the agent-based Cloud Connector deployment. When a user belongs to multiple security groups in AD, a priority can be set for what policies get enacted. Higher priority numbers take precedence over lower ones.
 
