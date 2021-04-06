@@ -52,9 +52,7 @@ CSIA routes network data to the cloud to perform network security functions with
 
 CSIA follows users as they move in and out of the physical network perimeter, resulting in dedicated IP addresses for users regardless of location. This capability can be applied to require that users access business applications only through connections that are secured by the gateway, even when working outside of the office or on personal devices. The source IP address can be used to restrict access to resources such as admin portals by using the source IP address as a requirement for login.
 
-### Cloud Connector
-
-Cloud Connectors are the most popular deployment method, used most often with organizations that have managed devices. Cloud Connectors are the agents that assist CSIA configuration with registration, authentication, and certificate management on endpoints.
+**Cloud Connectors** are the most popular deployment method, used most often with organizations that have managed devices. Cloud Connectors are the agents that assist CSIA configuration with registration, authentication, and certificate management on endpoints.
 
 Installs can be pushed remotely through a variety of methods such as:
 
@@ -74,25 +72,13 @@ Cloud Connectors assist users connecting to CSIA. The connectors take a mobile a
 
 If your device has a non-standard OS, you can configured agentless data redirection by automatically generating Proxy PAC files.
 
-### Proxy PAC
+**Proxy PAC** files are used for agentless data redirection that redirects traffic based on the user location (source IP). The PAC file supports geo-location to connect users closest gateways automatically and supports GDPR zoning. It is dynamically generated on a user-by-user basis. Proxy PAC supports load balancing and horizontal scaling and authentication via SAML.
 
-Proxy PAC is an agentless data redirection mode that redirects traffic based on the user location (source IP). The PAC file supports geo-location to connect users closest gateways automatically and supports GDPR zoning. It is dynamically generated on a user-by-user basis. Proxy PAC supports load balancing and horizontal scaling and authentication via SAML.
+**DNS** is used for situations where the end user doesn't use a Cloud Connector, proxy PAC or SD-WAN. CSIA applies the categories and policies to DNS records, and which it forwards DNS from the on premises DNS service. The network at each branch location redirects DNS traffic to CSIA and receives a unique security policy. Both policies and reporting logs are based on a per-location basis.
 
-### DNS
+**IPSEC/GRE** use edge routers and firewalls to create tunnels and redirect all traffic at each location to CSIA. The tunnels point to a single CSIA DNS destination which routes traffic to gateways. The choice to use GRE or IPSec depends on what the existing edge router/firewall support. Authentication is achieved via connectors and SAML.
 
-For situations where the end user doesn't use a Cloud Connector, proxy PAC or SD-WAN, CSIA applies the categories and policies to DNS records, and which it forwards DNS from the on premises DNS service. The network at each branch location redirects DNS traffic to CSIA and receives a unique security policy. Both policies and reporting logs are based on a per-location basis.
-
-### IPSEC/GRE
-
-edge routers and firewalls create tunnels to CSIA redirecting all traffic at location
-GRE/IPSec tunnel created between firewall and CSIA at each location
-tunnels point to single CSIA DNS destination which routes traffic to gateways
-choice between GRE and IPSec depends on what the edge router/firewall supports
-Authentication via connectors and SAML
-
-### SD-WAN
-
-SD-WAN
+**SD-WAN** steer traffic by
 
 ## Authentication
 
@@ -125,6 +111,29 @@ CSIA can use four different types of authentication using the Cloud Connector, C
 The containerized gateways scan data in the cloud and perform web filtering, prevent malware, detect  and prevent data loss as data moves to and from users and the Internet.
 
 ![CSIA Capabilities](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_capa.png)
+
+### SSL/TLS Decryption
+
+Many if not most sites and services on the Internet are encrypting their communications with users, with SSL/TLS being the most common protocol used to do so. This makes the ability to inspect SSL/TLS traffic essential for effective Internet security. Without doing so, a growing majority of an organization’s traffic will go unsecured, allowing for malware or internal bad actors to exfiltrate corporate data unseen to the gateway.
+
+As a critical but process-intensive task, SSL/TLS decryption can easily overburden traditional security appliances attempting to achieve full SSL/TLS visibility into content and cloud app usage. CSIA has a scalable cloud architecture that expands and contracts as needed. Each customer’s resources are fully containerized. CSIA keeps each organizations’ decryption keys completely isolated from others.
+
+Without SSL/TLS decryption, reporting and analytics become limited. For example, when searching the Internet without the setting enabled – the CSIA can report on the search site but not on any of the keywords used in the search query. SSL/TLS decryption is not required for block, allow, or monitoring basic HTTP access. With SSL/TLS decryption enabled, CSIA can inspect HTTPS traffic thus offering more granular actions and visibility.
+
+CSIA's SSL/TLS decryption works by implementing a “Man in the Middle” security procedure. SSL/TLS decryption can be performed transparently or through a proxy connection, with the only requirement being that the SSL/TLS certificate is deployed on the cloud connected device. The CSIA acts as a root certification authority, intercepting SSL/TLS requests to legitimate sites, requesting them, signing the received data with its own CA certificate and sending the data to the client.
+
+To avoid client security warnings, connected devices will need the certificate from CSIA. The certificate can be distributed during the cloud connector install. To verify this, when navigating to a site, the trusted certificate should be seen as being issued by CSIA and not by the site. SSL/TLS certificates can be pushed down through the installer, manually installed, or pushed through at root CA via any typical method.
+
+**Decrypting all destinations note**: When configuring SSL decryption for the first time, it is recommended to start with selective SSL decryption as not all websites will accept SSL decryption.
+
+SSL Decryption can be enabled for all destinations a user travels to on the Internet. On the other hand, for websites that do not accept SSL decryption, a bypass can set to only selectively decrypt certain destinations. Below are the various types of bypasses that can be set.
+
+*  Domains including all subdomains if not desirable for the site.
+*  Note: Bypass for a domain includes all of its subdomains as well.
+*  Web Categories if not desirable for the category
+*  Groups if not desirable for specific users/groups
+*  IP address if not desirable for specific IPs
+*  SSL Decryption Bypass can be enabled for devices dependent upon their IP address. IP addresses and IP ranges, public or private, can be added to the bypass list.
 
 ### Malware Protection
 
@@ -224,29 +233,6 @@ Other actions that can be performed by the YouTube manager are:
 *  Allowed video libraries: You can allow access to specific videos that are blocked by the YouTube restricted search settings.
 
 Microsoft CASB integration enables traffic policy control for unsanctioned Apps and CASB reporting visibility all within CSIA. Integration with “Microsoft Cloud App” platform and the platform provides granular traffic policy control and assignments for blocking Unsanctioned Apps as well as CASB reporting within a single pane of glass. Real-time traffic logging and statistics are shipped via API integration to the “Microsoft Cloud App Security” platform. The integration between the platform and Microsoft configuration is achieved by simply entering Microsoft subscription info into CSIA.
-
-### SSL/TLS Decryption
-
-Many if not most sites and services on the Internet are encrypting their communications with users, with SSL/TLS being the most common protocol used to do so. This makes the ability to inspect SSL/TLS traffic essential for effective Internet security. Without doing so, a growing majority of an organization’s traffic will go unsecured, allowing for malware or internal bad actors to exfiltrate corporate data unseen to the gateway.
-
-As a critical but process-intensive task, SSL/TLS decryption can easily overburden traditional security appliances attempting to achieve full SSL/TLS visibility into content and cloud app usage. CSIA has a scalable cloud architecture that expands and contracts as needed. Each customer’s resources are fully containerized. CSIA keeps each organizations’ decryption keys completely isolated from others.
-
-Without SSL/TLS decryption, reporting and analytics become limited. For example, when searching the Internet without the setting enabled – the CSIA can report on the search site but not on any of the keywords used in the search query. SSL/TLS decryption is not required for block, allow, or monitoring basic HTTP access. With SSL/TLS decryption enabled, CSIA can inspect HTTPS traffic thus offering more granular actions and visibility.
-
-CSIA's SSL/TLS decryption works by implementing a “Man in the Middle” security procedure. SSL/TLS decryption can be performed transparently or through a proxy connection, with the only requirement being that the SSL/TLS certificate is deployed on the cloud connected device. The CSIA acts as a root certification authority, intercepting SSL/TLS requests to legitimate sites, requesting them, signing the received data with its own CA certificate and sending the data to the client.
-
-To avoid client security warnings, connected devices will need the certificate from CSIA. The certificate can be distributed during the cloud connector install. To verify this, when navigating to a site, the trusted certificate should be seen as being issued by CSIA and not by the site. SSL/TLS certificates can be pushed down through the installer, manually installed, or pushed through at root CA via any typical method.
-
-**Decrypting all destinations note**: When configuring SSL decryption for the first time, it is recommended to start with selective SSL decryption as not all websites will accept SSL decryption.
-
-SSL Decryption can be enabled for all destinations a user travels to on the Internet. On the other hand, for websites that do not accept SSL decryption, a bypass can set to only selectively decrypt certain destinations. Below are the various types of bypasses that can be set.
-
-*  Domains including all subdomains if not desirable for the site.
-*  Note: Bypass for a domain includes all of its subdomains as well.
-*  Web Categories if not desirable for the category
-*  Groups if not desirable for specific users/groups
-*  IP address if not desirable for specific IPs
-*  SSL Decryption Bypass can be enabled for devices dependent upon their IP address. IP addresses and IP ranges, public or private, can be added to the bypass list.
 
 ### Advanced Web Security
 
