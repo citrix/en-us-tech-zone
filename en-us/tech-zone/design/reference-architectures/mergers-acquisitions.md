@@ -96,7 +96,7 @@ Because strong authentication is a critical first step to security, CompanyA wan
 
 For primary authentication, the Citrix Application Delivery Controller plays a critical part. To make the authentication decisions, the Application Delivery Controller utilizes an nFactor policy.
 
-[![nFactor Policy](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_nfactor-policy.png)](/en-us/tech-zone/design/media/reference-architectures_mergers--acquisitions_nfactor-policy.png)
+[![nFactor Policy](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_nfactor-policy.png)](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_nfactor-policy.png)
 
 To process authentication requests properly, the nFactor policy must know what company the user belongs to. Once the correct company identifier is selected, nFactor forwards the request to the correct branch of the authentication policy.
 
