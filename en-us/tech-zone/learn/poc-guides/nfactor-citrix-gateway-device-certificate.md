@@ -22,8 +22,8 @@ It makes assumptions about the completed installation and configuration of the f
 *  Citrix ADC installed, and licensed
 *  Citrix Gateway configured with an externally reachable virtual server bound to a wildcard Certificate
 *  Citrix Gateway integrated with a Citrix Virtual Apps and Desktops environment which uses LDAP for authentication
-*  Active Directory (AD) is available in the environment
-*  Windows 10 endpoint with Citrix Workspace app installed
+*  Active Directory (AD) is available in the environment with Microsoft Certificate Authority installed
+*  A Windows 10 endpoint is domain joined, and has Citrix Workspace app installed
 *  The endpoint user must have local admin rights or have the Citrix Gateway Plug-in installed
 
 Refer to Citrix Documentation for the latest product version, licensing, and requirement details: [Device certificate in nFactor as an EPA component](/en-us/citrix-gateway/current-release/vpn-user-config/endpoint-policies/device-certificate-in-nfactor-as-an-epa-component.html)
@@ -107,7 +107,7 @@ In this POC we used a wildcard certificate corresponding to our Active Directory
 
 #### Device Certificate
 
-There are many systems and options for user and device certificate management. In this POC we use the Microsoft Certificate Authority installed on our Active Directory server.
+There are many systems and options for user and device certificate management. In this POC we use the Microsoft Certificate Authority installed on our Active Directory server. We also have our Windows 10 endpoint joined to the domain.
 
 1.  From the start menu on our domain joined Windows 10 endpoint we enter `mmc`, right-click and run as administrator
 1.  Select File > Add/Remove, select Certificates, select the arrow to move it to the Selected snap-in pane, select Computer account, Next, Local computer, Finish and, click OK
