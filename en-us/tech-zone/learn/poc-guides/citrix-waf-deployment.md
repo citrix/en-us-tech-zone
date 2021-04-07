@@ -178,6 +178,13 @@ The system should return an **HTTP/1.1 200 OK**
 
 The most recent signature update documentation is available on [Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/signature-alerts.html) - updates via RSS are also available.
 
+By default, Common Event Format (CEF) logging is not enabled, with the WAF using native logging format. Additionally, the WAF enginge can include GeoLocation information for requests. For ease of troubleshooting, it is recommended to enable CEF logging and GeoLocation by navigating to **Security > Citrix Web App Firewall > Change Engine Settings**. Check the boxes for **CEF Logging** and **Geo-Location Logging**. Alternatively, these settings can be enabled in via the CLI as follows:
+
+```bash
+
+set appfw settings GeoLocationLogging ON CEFLogging ON
+```
+
 ## Clone Virtual Server Configuration
 
 Once the Web App Firewall Profile and Policy have been created, it needs to be bound to the load balancing virtual server. If the application or service is not already configured on the ADC, it needs to be configured from scratch. If the application is already configured, it needs to be cloned.
@@ -349,6 +356,23 @@ To view the learned data using the UI, do the following:
 
 Once the learned rules have been deployed to relaxation rules, the security check can be set to **Block** - **Note: if enough traffic has not been processed or all of the application paths have not been seen by the WAF engine, there will likely be false positive blocks. The learned rule process can be repeated until the application behaves as expected.**
 
+## Import Export
+
+The entire configuration of a Web Application Firewall profile can be replicated across multiple appliances. This process will capture all bound objects such as the HTML error object, XML error object, WSDL\XML schema, signatures, relaxation rules and so on. This can be particularly useful when migrating from a test\dev environment to a production environment or to back up the WAF configuration before making changes.
+
+**Note: exported configurations require that both appliances be on the same build.**
+
+To export the WAF profile using the GUI, on the source appliance, navigate to **Security > Citrix Web App Firewall > Profiles > Select the WAF profile, then choose Action > Export** The export process may take some time to generate the export file. Once it has been archived, a **WAFProfile.tgz** file is downloaded to the client computer.
+
+To import the WAF profile using the GUI, on the destination appliance, navigate to **Security > Citrix Web App Firewall > Profiles > Select Action > Import**. Select 'Import From' File, then select 'Choose File' to locate the previously downloaded archive. Any issues with the import process are logged to:
+
+```bash
+
+/var/log/ns.log
+```
+
+**Note: the import process does NOT create a WAF policy or binding.**
+
 ## Dynamic Profiling
 
 The Dynamic Profiling feature was added to the WAF Engine in version 13.0 and allows for learned data to be automatically deployed to relaxation rules automatically after a configured threshold. An alert is sent to administrators to allow them to skip the data if it is not valid, otherwise it is added automatically. By default, dynamic profiling is disabled for all supported security checks - to enable it and configure the settings, do the following:
@@ -386,3 +410,7 @@ Lastly, if the PoC is being run on a test platform that has different resources 
 [How Citrix Application Firewall Modifies Application Data Traffic](https://support.citrix.com/article/CTX131488)
 
 [WAF Basic VS Advanced Protections](https://support.citrix.com/article/CTX130546)
+
+[Common Event Format (CEF) Logging Support in the Application Firewall](https://support.citrix.com/article/CTX136146)
+
+[Exporting and importing an Web App Firewall profile](https://docs.citrix.com/en-us/citrix-adc/current-release/application-firewall/profiles/import-export-profiles.html)
