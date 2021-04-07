@@ -7,7 +7,7 @@ description: Learn how to deploy Microsoft 365 in a Citrix Virtual Apps and Desk
 ---
 # Microsoft 365 with Citrix Virtual Apps and Desktop Deployment Guide
 
-Microsoft 365(previously known as Office 365) is a bundled software plus subscription-based offering focused on user productivity-based applications. Microsoft 365 includes a combination of online based applications that are accessed from anywhere via a web browser, in addition to the latest traditional, locally installed version of Microsoft Office. Included with Microsoft 365 is an online email account that has 50 GB of mail storage and 1 TB of file storage per user licensed for OneDrive for Business. Microsoft 365 Business comes in three different editions: Basic, Standard, and Premium. You can find more information on what is included in each edition [here](https://www.microsoft.com/en-us/microsoft-365/business/compare-all-microsoft-365-business-products).
+Microsoft 365, previously known as Office 365, is a bundled software plus subscription-based offering focused on user productivity-based applications. Microsoft 365 includes a combination of online based applications that are accessed from anywhere via a web browser, in addition to the latest traditional, locally installed version of Microsoft Office. Included with Microsoft 365 is an online email account that has 50 GB of mail storage and 1 TB of file storage per user licensed for OneDrive for Business. Microsoft 365 Business comes in three different editions: Basic, Standard, and Premium. You can find more information on what is included in each edition [here](https://www.microsoft.com/en-us/microsoft-365/business/compare-all-microsoft-365-business-products).
 
 Microsoft 365 is a great solution for any organization. But due to user, application and business requirements, there is often a requirement for a locally installed version of the Office applications in addition to the online versions. Typically, organizations require the locally installed versions for the following reasons:
 
@@ -43,10 +43,8 @@ The following policies are recommended for Active Directory:
 -  **Use Cached Exchange Mode**: Included in the Outlook 2016 Active Directory group policy template. This policy enables Cached Exchange Mode for new and existing Outlook profiles. Without this policy enabled, Outlook is configured in Online Mode. This policy is set to Enabled.
 -  **Cache File**: According to this Microsoft knowledgebase article, the cache file can be located on a network drive if the following three criteria are met:
     -  A high bandwidth/low latency network connection is used.
-    -  There is single client access per file (one Outlook client per .pst or .OST).
+    -  There is single client access per file (one Outlook client per .PST or .OST).
     -  Either Windows Server 2008 R2 or later Remote Desktop Session Host (for example: Citrix Virtual Apps), or Windows 7 or later virtual desktop infrastructure (for example: Citrix Virtual Apps and Desktop) is used to run Outlook remotely.
-
-Although Microsoft supports a network mapped cache file, Microsoft might not agree to troubleshoot performance-related issues in this configuration. Regardless of this caveat, a network attached cache file is the recommended approach for a Citrix Virtual Apps and Desktop.
 
 ## Azure Files
 
@@ -74,8 +72,9 @@ The following Citrix policies are recommended (see image following):
     -  **Path to user store**: Policy must specify the unique path for the user profile location
     -  **Profile Streaming**: Files and folders contained in a profile are fetched from the user store to the local computer. They are fetched only when they are accessed by users after they have logged on. Profile streaming significantly reduces the logon time by reducing the amount of data that is copied down to the local profile at user logon. This setting is enabled by default and decreases the amount of transactions and egress data leaving Azure Files, reducing costs, and improving logon time.
     -  **Active Write-back**: Files and folders that are modified can be synchronized to the user store in the middle of a session, before logoff. Usually, these mid-session writes occur about every 5 minutes. Enabling this setting provides Azure Files with a more consistent stream of write traffic, instead of having it all at logoff. This frequent write-back resolves the “last writer wins” issue when users are accessing their profile from multiple devices simultaneously.
-    -  **Large File Handling**: This policy is not recommended when using FSLogix containers. This policy improves logon performance and to process large-size files, a symbolic link is created instead of copying files in this list. You have to configure the paths where the files are stored but you can use wildcards.
+    -  **Large File Handling**: This policy improves logon performance and to process large-size files, a symbolic link is created instead of copying files in this list. You have to configure the paths where the files are stored but you can use wildcards.
     Enabling the Large File Handling feature of Citrix Profile Manager is a fantastic way to improve the logon experience for large files that would normally be copied down from the profile store at logon. Since Microsoft does not recommend storing PST and OST files in a redirected folder, you can use large file handling. Large file handling provides the same benefits as folder redirection, but on a per file basis. Instead of redirecting the folder or file, Citrix Profile Manager (CPM) creates a symbolic link to the file. When the file is opened or updated, the file operations are redirected to the user store in Azure Files. This feature allows PST files and OST files to remain in the user’s profile and be treated as local files, even though they reside on a remote file share.
+    This policy is not recommended when using FSLogix containers.
 
 [![Policies1](/en-us/tech-zone/build/media/deployment-guides_microsoft-365-citrix_image1.png)](/en-us/tech-zone/build/media/deployment-guides_microsoft-365-citrix_image1.png)
 
@@ -83,17 +82,15 @@ Together, these configuration settings help to ensure a better user experience f
 
 The later versions of CPM enable profile streaming by default on Citrix servers. This technology prevents the entire user profile from being downloaded to the Citrix host at logon. Instead, only a list of the files residing on the profile are enumerated and that list is available to the operating system. When a file is requested, then it is fetched from the user store and brought to the Citrix host. This process reduces the number of file copies that happen at logon and improves the user logon experience.
 
-For this article, we configured Profile Management through Microsoft Group Policy. Minimum recommended version for using Profile Containers is Citrix Virtual Apps and Desktops 7 2012 (2012.0.0.28051), and that version was used for this article.
-
-When roaming profiles is turned on, %UserProfile%\LocalSettings does not roam with users. This behavior affects Outlook users because some Outlook data (.OST, .pst, and .pab files) is created in non-roaming folders. This is due to these files being large and hindering roaming profile performance.
+When roaming profiles is turned on, %UserProfile%\LocalSettings does not roam with users. This behavior affects Outlook users because some Outlook data (.OST, .PST, and .PAB files) is created in non-roaming folders. This is due to these files being large and hindering roaming profile performance.
 Follow the guidelines below to reduce troubleshooting:
 
--  Use an ADM template for Microsoft Office that prohibits the use of .pst files
+-  Use an ADM template for Microsoft Office that prohibits the use of .PST files
 -  When users run out of space, increase the storage on the Microsoft Exchange servers rather than the network share
--  Define and enforce an email retention policy for the entire company, rather than granting exceptions for their .pst files.
--  If .pst files cannot be prohibited, do not configure Profile Management or roaming profiles on your Exchange servers.
+-  Define and enforce an email retention policy for the entire company, rather than granting exceptions for their .PST files.
+-  If .PST files cannot be prohibited, do not configure Profile Management or roaming profiles on your Exchange servers.
 
-When using Cached Exchange Mode, the .OST file can grow large. We recommend avoiding storing Microsoft Outlook data locally or on shared drives. Use the Enable native Outlook search experience to feature instead. With this feature, the Outlook offline folder file (*.OST) and the Microsoft search database specific to the user roam along with the user profile. This feature improves the user experience when searching mail in Microsoft Outlook. A step by step guide on how to turn on the Outlook search experience can be found [here](/en-us/profile-management/current-release/configure/enable-native-outlook-search-experience.html). Make sure to consider this when sizing the user store.
+When using Cached Exchange Mode, the .OST file can grow large. Use the Enable native Outlook search experience to feature instead. With this feature, the Outlook offline folder file (*.OST) and the Microsoft search database specific to the user roam along with the user profile. This feature improves the user experience when searching mail in Microsoft Outlook. A step by step guide on how to turn on the Outlook search experience can be found [here](/en-us/profile-management/current-release/configure/enable-native-outlook-search-experience.html). Make sure to consider this when sizing the user store.
 
 To increase the stability of the Enable search index roaming for Outlook feature, Profile Management saves a backup of the last known good copy of the search index database in case it becomes corrupted. Citrix recommends the following two policies (see image below) to be configured within Citrix Studio:
 
@@ -313,7 +310,7 @@ This section includes recommendations for common scenarios when hosting users wi
 
 #### Multiple Simultaneous Sessions per user
 
-When users have multiple simultaneous windows sessions, such as when using Citrix Virtual Applications, Citrix Profile Manager with Large File Handling and folder redirection is recommended. Neither OneDrive or FSLogix support this configuration and data loss was experienced in the lab during the testing with these solutions. Citrix Profile Manager provides a great balance between user logon performance and efficient use of the storage and scales well. OneDrive or Citrix ShareFile can be leveraged to store personal or department data that is not stored in user profile folders managed by CPM.
+When users have multiple simultaneous windows sessions, such as when using Citrix Virtual Applications, Citrix Profile Manager with Large File Handling and folder redirection is recommended. Neither OneDrive nor FSLogix support this configuration and data loss was experienced in the lab during the testing with these solutions. Citrix Profile Manager provides a great balance between user logon performance and efficient use of the storage and scales well. OneDrive or Citrix ShareFile can be leveraged to store personal or department data that is not stored in user profile folders managed by CPM.
 
 #### Multi-session, Non-persistent Hosts without Simultaneous Sessions
 
@@ -351,6 +348,8 @@ The following Citrix policies were configured when using the CPM Profiles with L
 |     Large File Handling – files to   be created as symbolic links      |     %userprofile%\AppData\Local\Microsoft\Outlook\*.OST     %userprofile%\AppData\Local\Microsoft\Outlook\*.pst    |
 |     Enable multi-session write-back for FSLogix Profile   Container    |     Enabled (when using with FSLogix)                                                                              |
 |     Folder Redirection                                                 |     Enabled for all folders that will not be stored in the  Profile                                           |
+
+For this article, we configured Profile Management through Microsoft Group Policy. Minimum recommended version for using Profile Containers is Citrix Virtual Apps and Desktops 7 2012 (2012.0.0.28051), and that version was used for this article.
 
 ### FSLOGIX Configuration on Azure Files
 
