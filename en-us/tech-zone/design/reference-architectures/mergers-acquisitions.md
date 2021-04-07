@@ -32,7 +32,7 @@ The first aspect of a mergers and acquisitions solution is to meet the needs of 
 
 ### Security
 
-The first aspect of a mergers and acquisitions solution is to meet the needs of the user. CompanyA identified the following user-related criteria for a successful design.
+The second aspect of a mergers and acquisitions solution is to meet the security needs . CompanyA identified the following security-related criteria for a successful design.
 
 | **Success Criteria** | **Description** | **Solution**
 ---|---|---|
@@ -169,3 +169,7 @@ CompanyA developed the following initial security policies:
 The [Citrix User Risk Indicators](/en-us/security-analytics/risk-indicators.html) document contains additional information regarding the various risk indicators provided to Citrix Security Analytics.
 
 The [Citrix Policies and Actions](/en-us/security-analytics/policies-and-actions.html) page contains information about the remediation steps Citrix Security Analytics can perform.
+
+## Sources
+
+To make it easier for you to plan a mergers and acquisition strategy, we would like to provide you with [source diagrams](https://citrix.sharefile.com/d-s7094444fd7644e39a6b6cb957bf649c9) that you can adapt.
