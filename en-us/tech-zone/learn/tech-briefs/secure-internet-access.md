@@ -60,7 +60,7 @@ Installs can be pushed remotely through various methods such as:
 *  MacOS/iOS via MDM deployment
 *  Chromebook via Google admin console deployment
 *  Android via native integration with Android VPN network or Always On VPN
-*  Linux with RedHat Fedora and Ubuntu support
+*  Linux with Red Hat Fedora and Ubuntu support
 *  Windows Terminal Server
 
 Cloud Connectors assist users connecting to CSIA. The connectors take a mobile and cloud-first approach to connect users’ devices to cloud security regardless of whether they are in the office or on the road. There is no need to backhaul traffic through the data center as policies follow wherever the user is. They link your devices directly to CSIA, providing secure access from any location and:
@@ -154,7 +154,7 @@ When applying malware rules to content, the rules are checked from the top to th
 The Intrusion Prevention Systems (IPS) enables you to protect your network from malicious threats in packet streams, also known as "data in motion". Malware defense settings for items such as files and archives handle “data at rest”. The IPS policy engine runs in CSIA. IPS allows you to choose the types of threats that are processed and recorded in the logs. Changes made to these settings are automatically synchronized across a node cluster. For most configurations, both of these options are enabled:
 
 *  Enable Real-Time Intrusion, Malware, & Virus Protection: Enables packet or stream-based threat inspection and prevention
-*  Exclude Private Subnets:  Enable if you wish to ignore local to local traffic.
+*  Exclude Private Subnets:  Enable if you want to ignore local to local traffic.
 
 When the IPS detects a threat, the Threat Rules determine the action it takes. Threat Rules have one of three actions take place:  Monitor, Block, and Disabled.
 
@@ -296,7 +296,7 @@ CSIA allows you to route network data to the cloud to perform network security f
 2.  CSIA agent identifies the user’s and Active Directory group membership
 3.  CSIA analyzes whether the domain or URL is to be bypassed in the PAC script or agent. If so, the request is bypassed from cloud security.
 4.  CSIA analyzes whether the request is to be blocked by the IPS. If so, the request is blocked.
-5.  CSIA tags the username and policy group to the request.
+5.  CSIA tags the user name and policy group to the request.
 6.  CSIA analyzes whether the request will be decrypted. If so, the request is decrypted, and a certificate is added to the traffic flow.
 7.  CSIA analyzes whether the request matches a proxy block rule. If no, it proceeds to the CASB rules. If yes, the request is checked against the Allow and Block lists. If a higher weight Block List rule exists, the request is blocked. If not, the request is allowed.
 8.  CSIA analyzes whether the request matches a CASB block rule. If so, the request is blocked.
@@ -322,9 +322,9 @@ For a user sitting at a corporate office, SD-WAN automatically creates secure co
 
 If a user leaves the corporate perimeter, the Cloud Connector installed on the device takes care of redirecting traffic to the CSIA cloud. The connector also serves the purpose of authenticating the user and installing appropriate certificates for SSL decryption.
 
-For configuration information, please read the following PoC guide: [CSIA and SD-WAN PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html)
+For configuration information, read the following PoC guide: [CSIA and SD-WAN PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html)
 
-## Integration with CVAD
+## Integration with Citrix Virtual Apps and Desktops
 
 Citrix Virtual Apps & Desktops deployments can be integrated with CSIA. When accessing from inside Citrix Workspace, users receive a unified experience that allows them to access all business relevant apps and desktops through a streamlined interface.
 
@@ -338,4 +338,4 @@ Now, let's say the same user decides to log off Citrix Workspace and access SaaS
 
 ![CSIA with Citrix Workspace](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_workspace.png)
 
-For configuration information, please read the following PoC guide. [CSIA and CVAD PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html)
+For configuration information, read the following PoC guide. [CSIA and Citrix Virtual Apps and Desktops PoC Guide](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html)
