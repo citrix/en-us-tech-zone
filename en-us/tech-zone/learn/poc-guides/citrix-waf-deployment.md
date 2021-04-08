@@ -15,7 +15,7 @@ These instructions cover cloning an application or server that is already being 
 
 ## Conceptual Architecture
 
-[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_1.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_1.png)
+[![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_0.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_0.png)
 
 A Web Application Firewall operates at Layer 7, the application layer, unlike traditional network firewalls that operate at Layer 3 or Layer 4. It understands web and application protocols like HTTP, XML, SQL, and HTML.
 
@@ -36,7 +36,12 @@ This guide assumes the following is already configured on your Citrix ADC or sta
 3.  A suitable license has been applied - either standalone WAF or for ADC, a **Premium** license is required
 4.  An NSIP has been assigned, and is accessible for management
 5.  A SNIP has been assigned and can communicate with one or more services that are protected
-6.  An _internal only_ IP address and DNS entry for another VIP (the service may already be load balanced by the ADC, ensure that a separate IP and DNS are available) **Note: using a different DNS name and URL to access an application MAY require adding configuration to the application to make it aware of the new name**
+6.  An _internal only_ IP address and DNS entry for another VIP (the service may already be load balanced by the ADC, ensure that a separate IP and DNS are available)
+
+    >**Note:**
+    >
+    >Using a different DNS name and URL to access an application MAY require adding configuration to the application to make it aware of the new name
+
 7.  A Basic understanding of the architecture and structure of the application or service that you are protecting. _For example, if the site processes credit card information determines if credit card protections are enabled, or if the application uses an SQL database for storage determines if SQLi protections are used_
 8.  A basic understanding of web protocols and technologies such as HTTP, HTML, regular expressions, JavaScript and more, depending on the application that is being protected
 9.  A Basic understanding of layer 4 load balancing and configuration on the Citrix ADC
@@ -62,13 +67,21 @@ As an example, an appliance with _Advanced_ policies is able to process approxim
 
 ## Recommended Protections
 
-These security checks can usually be enabled in the WAF profile. Most of these checks **require learned rules** to be applied before enabling blocking; do NOT enable **BLOCK** by default, without deploying learned rules first. **NOTE: This list is NOT exhaustive. Some protections are not compatible with some applications and some protections do not add any benefit to other applications.**
+These security checks can usually be enabled in the WAF profile. Most of these checks **require learned rules** to be applied before enabling blocking; do NOT enable **BLOCK** by default, without deploying learned rules first.
+
+>**NOTE:**
+>
+>This list is NOT exhaustive. Some protections are not compatible with some applications and some protections do not add any benefit to other applications.
 
 -  Cookie Consistency
     -  Allows session cookies from the application to be encrypted or proxied by the WAF engine
     -  Cookie Consistency prevents a malicious actor from tampering with cookies
     -  Cookie Consistency is an **Advanced** protection
-    -  **NOTE: Do NOT enable this setting when users are actively using the application, as any non-encrypted session cookies sent will not be allowed**
+
+       >**NOTE:**
+       >
+       >Do NOT enable this setting when users are actively using the application, as any non-encrypted session cookies sent will not be allowed
+
     -  [More information in Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/cookie-protection.html)
 -  Buffer Overflow
     -  Prevents attacks against insecure OS or web server software that can behave unpredictably when receiving data that is larger than it can handle
@@ -125,11 +138,13 @@ There are two options when configuring WAF protection:
 
         [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_11.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_11.png)
 
-    -  **IMPORTANT: If the WAF wizard is used to create a profile and policy, it does become bound GLOBALLY! If the filtering expression is left as default (true) then ALL traffic is processed by the WAF engine, likely leading to applications misbehaving. The recommended action is to unbind the policy from the _Default Global_ bind point and instead bind to the LB virtual server that is created later.** To unbind a WAF policy from the Global bind point, do the following:
-
-        -  Navigate to **Security > Citrix Web App Firewall > Policies > Firewall**
-        -  Choose **Policy Manager**, then choose **Default Global**
-        -  Highlight the WAF policy listed, and choose **Unbind**
+        >**IMPORTANT:**
+        >
+        >If the WAF wizard is used to create a profile and policy, it does become bound GLOBALLY! If the filtering expression is left as default (true) then ALL traffic is processed by the WAF engine, likely leading to applications misbehaving. The recommended action is to unbind the policy from the _Default Global_ bind point and instead bind to the LB virtual server that is created later.** To unbind a WAF policy from the Global bind point, do the following:
+        >
+        >-  Navigate to **Security > Citrix Web App Firewall > Policies > Firewall**
+        >-  Choose **Policy Manager**, then choose **Default Global**
+        >-  Highlight the WAF policy listed, and choose **Unbind**
 
     [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_12.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_12.png)
 
@@ -158,7 +173,11 @@ Regardless of the method used, a basic Web App Firewall configuration is now ava
 
 -  Navigate to Security > Citrix Web App Firewall > Signatures
 -  Highlight the newly created signature set and press **Select Action > Auto Update Settings**
--  Enable _Signatures Auto Update_ and ensure that the update URL is populated **Note: signature update requires that the ADC can resolve DNS names and access the public internet from the NSIP**
+-  Enable _Signatures Auto Update_ and ensure that the update URL is populated
+
+   >**Note:**
+   >
+   >Signature update requires that the ADC can resolve DNS names and access the public internet from the NSIP
 
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_14.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_14.png)
 
@@ -177,6 +196,13 @@ The system should return an **HTTP/1.1 200 OK**
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_30.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_30.png)
 
 The most recent signature update documentation is available on [Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/signature-alerts.html) - updates via RSS are also available.
+
+By default, Common Event Format (CEF) logging is not enabled, with the WAF using native logging format. Additionally, the WAF enginge can include GeoLocation information for requests. For ease of troubleshooting, it is recommended to enable CEF logging and GeoLocation by navigating to **Security > Citrix Web App Firewall > Change Engine Settings**. Check the boxes for **CEF Logging** and **Geo-Location Logging**. Alternatively, these settings can be enabled in via the CLI as follows:
+
+```bash
+
+set appfw settings GeoLocationLogging ON CEFLogging ON
+```
 
 ## Clone Virtual Server Configuration
 
@@ -216,7 +242,11 @@ Next, the WAF policy needs to be bound to this new virtual server:
 
 At this point, users can begin testing the application using the new URL, accessing the web application with WAF policies bound. Depending on the complexity of the application, multiple users across different business units need to use the application to generate an acceptable amount of traffic. This traffic is used by the learning engine to see all parts of the application and to ensure there are no false positive blocks that prevent application functionality.
 
-During initial testing, information pertaining to the offending request can be difficult to find, but there a few settings that assist with this. The first is to set a custom HTML Error Object that presents diagnostic information whenever a request is blocked. If an error object is not set, a user is often be presented with a blank page that does not provide any information. **Note: this is recommended to be removed or changed once the WAF protected application is exposed to a non-testing audience.**
+During initial testing, information pertaining to the offending request can be difficult to find, but there a few settings that assist with this. The first is to set a custom HTML Error Object that presents diagnostic information whenever a request is blocked. If an error object is not set, a user is often be presented with a blank page that does not provide any information.
+
+>**Note:**
+>
+>This is recommended to be removed or changed once the WAF protected application is exposed to a non-testing audience.
 
 -  Set the **HTML Error Object** to present diagnostic information
     -  Go to the **WAF Profile**, then expand **Profile Settings**
@@ -247,7 +277,9 @@ The resulting error page presents valuable diagnostic information, including the
 
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_5.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_5.png)
 
-**Important: Some WAF blocks only prevent certain elements of the page from loading, for example an image, CSS formatting, script or button\form functionality may not work. These blocks are still considered issues, though the diagnostic error page do not show. Use the syslog viewer (see the example below) to find the offending signature or security check that is causing the issue.**
+>**Important:**
+>
+>Some WAF blocks only prevent certain elements of the page from loading, for example an image, CSS formatting, script or button\form functionality may not work. These blocks are still considered issues, though the diagnostic error page does not show. Use the syslog viewer (see the example below) to find the offending signature or security check that is causing the issue.
 
 The **Syslog Messages** that are generated by the WAF engine help understand blocked sessions when the diagnostic error page is not available
 
@@ -269,7 +301,9 @@ Some violations can be immediately relaxed from the **Syslog** viewer if there a
 
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_7.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_7.png)
 
-**Note: A false-positive block from a signature violation often means that the web application is not following standards or is written poorly. The immediate action to allow the application to function is to apply a relaxation rule, but the long term goal is to fix the application itself. Relaxation rules on poorly written applications can allow malicious content through by means of allowing the application to function.**
+>**Note:**
+>
+>A false-positive block from a signature violation often means that the web application is not following standards or is written poorly. The immediate action to allow the application to function is to apply a relaxation rule, but the long term goal is to fix the application itself. Relaxation rules on poorly written applications can allow malicious content through by means of allowing the application to function.
 
 By turning on **stats** for all items, the appliance gathers counters anytime a rule or signature is violated. This is useful in the initially as it allows counters to be cleared to see if any new blocked requests occurred as a result of the WAF policy.
 
@@ -290,7 +324,9 @@ Be aware that the Web Application Firewall follows web standards and by default,
 -  By default invalid, non-RFC compliant HTTP requests are **blocked**
     -  To modify non-RFC compliant request handling, go to **Security > Citrix Web App Firewall** then **Change Engine Settings**
     -  See the following code for the CLI method to set only logging and stat generation for malformed requests
-    -  **Note:** This setting is global. _**If you disable the block option, the WAF engine bypasses application firewall processing for any non-RFC compliant requests. This is not recommended.**_
+    >**Note:**
+    >
+    >This setting is global. _**If you disable the block option, the WAF engine bypasses application firewall processing for any non-RFC compliant requests. This is not recommended.**_
 
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_8.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_8.png)
 
@@ -347,7 +383,32 @@ To view the learned data using the UI, do the following:
 
 [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_24.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_24.png)
 
-Once the learned rules have been deployed to relaxation rules, the security check can be set to **Block** - **Note: if enough traffic has not been processed or all of the application paths have not been seen by the WAF engine, there will likely be false positive blocks. The learned rule process can be repeated until the application behaves as expected.**
+Once the learned rules have been deployed to relaxation rules, the security check can be set to **Block**.
+
+>**Note:**
+>
+>If enough traffic has not been processed or all of the application paths have not been seen by the WAF engine, there will likely be false positive blocks. The learned rule process can be repeated until the application behaves as expected.**
+
+## Import Export
+
+The entire configuration of a Web Application Firewall profile can be replicated across multiple appliances. This process will capture all bound objects such as the HTML error object, XML error object, WSDL\XML schema, signatures, relaxation rules and so on. This can be particularly useful when migrating from a test\dev environment to a production environment or to back up the WAF configuration before making changes.
+
+>**Note:**
+>
+>Exported configurations require that both appliances be on the same build.
+
+To export the WAF profile using the GUI, on the source appliance, navigate to **Security > Citrix Web App Firewall > Profiles > Select the WAF profile, then choose Action > Export** The export process may take some time to generate the export file. Once it has been archived, a **WAFProfile.tgz** file is downloaded to the client computer.
+
+To import the WAF profile using the GUI, on the destination appliance, navigate to **Security > Citrix Web App Firewall > Profiles > Select Action > Import**. Select 'Import From' File, then select 'Choose File' to locate the previously downloaded archive. Any issues with the import process are logged to:
+
+```bash
+
+/var/log/ns.log
+```
+
+>**Note:**
+>
+>The import process does NOT create a WAF policy or binding.
 
 ## Dynamic Profiling
 
@@ -386,3 +447,7 @@ Lastly, if the PoC is being run on a test platform that has different resources 
 [How Citrix Application Firewall Modifies Application Data Traffic](https://support.citrix.com/article/CTX131488)
 
 [WAF Basic VS Advanced Protections](https://support.citrix.com/article/CTX130546)
+
+[Common Event Format (CEF) Logging Support in the Application Firewall](https://support.citrix.com/article/CTX136146)
+
+[Exporting and importing an Web App Firewall profile](/en-us/citrix-adc/current-release/application-firewall/profiles/import-export-profiles.html)
