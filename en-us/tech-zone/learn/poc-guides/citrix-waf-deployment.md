@@ -69,7 +69,7 @@ As an example, an appliance with _Advanced_ policies is able to process approxim
 
 These security checks can usually be enabled in the WAF profile. Most of these checks **require learned rules** to be applied before enabling blocking; do NOT enable **BLOCK** by default, without deploying learned rules first.
 
->**NOTE:**
+>**Note:**
 >
 >This list is NOT exhaustive. Some protections are not compatible with some applications and some protections do not add any benefit to other applications.
 
@@ -78,7 +78,7 @@ These security checks can usually be enabled in the WAF profile. Most of these c
     -  Cookie Consistency prevents a malicious actor from tampering with cookies
     -  Cookie Consistency is an **Advanced** protection
 
-       >**NOTE:**
+       >**Note:**
        >
        >Do NOT enable this setting when users are actively using the application, as any non-encrypted session cookies sent will not be allowed
 
@@ -128,7 +128,11 @@ There are two options when configuring WAF protection:
 
         -  Select the signatures that apply protections for known vulnerabilities - there are options to use an existing signature set or create a new set. To choose which signatures to apply to this protection profile, there are two editor options offering basic or advanced capabilities.
 
-        -  There are navigation options on both editors to select the signatures then enable, block, log, or stats. Watch out for multiple pages of signatures and ensure that all are selected. The Basic editor is easier to get started with, while the advanced editor offers more capabilities **NOTE: Ensure that the signatures are marked as ENABLED prior to moving on to the next step**
+        -  There are navigation options on both editors to select the signatures then enable, block, log, or stats. Watch out for multiple pages of signatures and ensure that all are selected. The Basic editor is easier to get started with, while the advanced editor offers more capabilities
+
+        >**Note:**
+        >
+        >Ensure that the signatures are marked as ENABLED prior to moving on to the next step
 
         [![Citrix Web Application Firewall and Apps Architecture](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_10.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-waf-deployment_10.png)
 
@@ -140,7 +144,7 @@ There are two options when configuring WAF protection:
 
         >**IMPORTANT:**
         >
-        >If the WAF wizard is used to create a profile and policy, it does become bound GLOBALLY! If the filtering expression is left as default (true) then ALL traffic is processed by the WAF engine, likely leading to applications misbehaving. The recommended action is to unbind the policy from the _Default Global_ bind point and instead bind to the LB virtual server that is created later.** To unbind a WAF policy from the Global bind point, do the following:
+        >If the WAF wizard is used to create a profile and policy, it does become bound GLOBALLY! If the filtering expression is left as default (true) then ALL traffic is processed by the WAF engine, likely leading to applications misbehaving. The recommended action is to unbind the policy from the _Default Global_ bind point and instead bind to the LB virtual server that is created later. To unbind a WAF policy from the Global bind point, do the following:
         >
         >-  Navigate to **Security > Citrix Web App Firewall > Policies > Firewall**
         >-  Choose **Policy Manager**, then choose **Default Global**
@@ -387,7 +391,7 @@ Once the learned rules have been deployed to relaxation rules, the security chec
 
 >**Note:**
 >
->If enough traffic has not been processed or all of the application paths have not been seen by the WAF engine, there will likely be false positive blocks. The learned rule process can be repeated until the application behaves as expected.**
+>If enough traffic has not been processed or all of the application paths have not been seen by the WAF engine, there will likely be false positive blocks. The learned rule process can be repeated until the application behaves as expected.
 
 ## Import Export
 
