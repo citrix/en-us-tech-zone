@@ -77,7 +77,7 @@ These security checks can usually be enabled in the WAF profile. Most of these c
     -  Allows session cookies from the application to be encrypted or proxied by the WAF engine
     -  Cookie Consistency prevents a malicious actor from tampering with cookies
     -  Cookie Consistency is an **Advanced** protection
-    
+
        >**NOTE:**
        >
        >Do NOT enable this setting when users are actively using the application, as any non-encrypted session cookies sent will not be allowed
@@ -324,7 +324,7 @@ Be aware that the Web Application Firewall follows web standards and by default,
 -  By default invalid, non-RFC compliant HTTP requests are **blocked**
     -  To modify non-RFC compliant request handling, go to **Security > Citrix Web App Firewall** then **Change Engine Settings**
     -  See the following code for the CLI method to set only logging and stat generation for malformed requests
-    >**Note:** 
+    >**Note:**
     >
     >This setting is global. _**If you disable the block option, the WAF engine bypasses application firewall processing for any non-RFC compliant requests. This is not recommended.**_
 
