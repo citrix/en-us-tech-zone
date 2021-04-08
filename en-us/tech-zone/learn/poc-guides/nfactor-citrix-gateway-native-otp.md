@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Matthew Brooks, Alyssa Ramella
 specialThanksTo: Himanshu Shukla
-description: Learn how to implement an extensible and flexible approach to configuring multifactor authentication with nFactor for Citrix Gateway authentication with Native OTP.
+description: Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Native OTP.
 ---
 # Proof of Concept Guide: nFactor for Citrix Gateway with Native OTP Authentication
 
@@ -50,10 +50,10 @@ This LDAP registration policy is used to exchange, and store the key used to gen
 1.  Click `Add` under Action
 1.  Populate the following fields:
     *  Name - enter `actldap_notpmanage`
-    *  Server Name / IP address - select an FQDN or IP address for AD server/(s). We enter `192.168.64.50`
+    *  Server Name / IP address - select an FQDN or IP address for AD server/(s). We enter `192.0.2.50`
     *  Clear `Authentication` **This setting along with the OTP Secret below indicate the policy will set, rather than get, object attributes**
     *  Base DN - enter the path to the AD user container. We enter `DC=workspaces, DC=wwco, DC=net`
-    *  Administrator Bind DN - enter the admin/service account to query AD to authenticate users. We enter `wsadmin@workspaces.wwco.net`
+    *  Administrator Bind DN - enter the admin/service account to query AD to authenticate users. We enter `workspacessrv@workspaces.wwco.net`
     *  Confirm / Administrator Password - enter / confirm the admin / service account password
     *  Click Test Network Connectivity to ensure connection
     *  Server Logon Name Attribute - in the second field below this field enter `userPrincipalName`
@@ -73,9 +73,9 @@ This LDAP authentication policy is used to do the first factor authentication.
 1.  Click `Add` under Action
 1.  Populate the following fields:
     *  Name - enter `actldap_notpauth`
-    *  Server Name / IP address - select an FQDN or IP address for AD server/(s). We enter `192.168.64.50`
+    *  Server Name / IP address - select an FQDN or IP address for AD server/(s). We enter `192.0.2.50`
     *  Base DN - enter the path to the AD user container. We enter `DC=workspaces, DC=wwco, DC=net`
-    *  Administrator Bind DN - enter the admin/service account to query AD to authenticate users. We enter `wsadmin@workspaces.wwco.net`
+    *  Administrator Bind DN - enter the admin/service account to query AD to authenticate users. We enter `workspacessrv@workspaces.wwco.net`
     *  Confirm / Administrator Password - enter / confirm the admin / service account password
     *  Click Test Network Connectivity to ensure connection
     *  Server Logon Name Attribute - in the second field below this field enter `userPrincipalName`
@@ -229,7 +229,7 @@ Now we test Native OTP by authenticating into our Citrix Virtual Apps and Deskto
 
 First the user registers their device for Native OTP using the Citrix SSO app.
 
-1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway with `/manageotp` appended to the end of the FQDN. We use `https://citrixadc5.workspaces.wwco.net/manageotp`
+1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway with `/manageotp` appended to the end of the FQDN. We use `https://gateway.workspaces.wwco.net/manageotp`
 1.  After your browser is redirected to a login screen enter user UPN, and password
 ![Native OTP Registration](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_userregistration.png)
 1.  On the next screen select Add Device, enter a name. We use `iPhone7_nOTP`
@@ -253,7 +253,7 @@ First the user registers their device for Native OTP using the Citrix SSO app.
 
 Then the user enters their UserPrincipalName, Password, and the OTP Passcode from the Citrix SSO app to access their virtual apps, and desktops.
 
-1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://citrixadc5.workspaces.wwco.net`
+1.  Open a browser, and navigate to the domain FQDN managed by the Citrix Gateway. We use `https://gateway.workspaces.wwco.net`
 1.  After your browser is redirected to a login screen enter user UserPrincipalName, and password
 1.  Open the Citrix SSO app enter the OTP code in the passcode field for the `iPhone7_nOTP` device entry
 ![Native OTP Registration](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_notplogins.png)
@@ -283,7 +283,7 @@ If you have verified the password is correct verify the Administrator bind passw
 
 ## Summary
 
-With Citrix Workspace, and Citrix Gateway, Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Users can gain access to their Citrix Virtual Apps and Desktops, by entering their domain username, and password, and then simply confirming their identity by entering a One Time Password from their registered authenticator app.
+With Citrix Workspace, and Citrix Gateway, Enterprises can improve their security posture by implementing multifactor authentication without making the user experience complex. Users can gain access to their Citrix Virtual Apps and Desktops, by entering their domain user name, and password, and then simply confirming their identity by entering a One Time Password from their registered authenticator app.
 
 ## References
 
