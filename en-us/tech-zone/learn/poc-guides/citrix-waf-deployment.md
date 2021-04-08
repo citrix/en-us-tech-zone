@@ -77,7 +77,11 @@ These security checks can usually be enabled in the WAF profile. Most of these c
     -  Allows session cookies from the application to be encrypted or proxied by the WAF engine
     -  Cookie Consistency prevents a malicious actor from tampering with cookies
     -  Cookie Consistency is an **Advanced** protection
-    -  **NOTE: Do NOT enable this setting when users are actively using the application, as any non-encrypted session cookies sent will not be allowed**
+    
+       >**NOTE:**
+       >
+       >Do NOT enable this setting when users are actively using the application, as any non-encrypted session cookies sent will not be allowed
+
     -  [More information in Citrix Prod Docs](/en-us/citrix-adc/current-release/application-firewall/cookie-protection.html)
 -  Buffer Overflow
     -  Prevents attacks against insecure OS or web server software that can behave unpredictably when receiving data that is larger than it can handle
@@ -389,7 +393,9 @@ Once the learned rules have been deployed to relaxation rules, the security chec
 
 The entire configuration of a Web Application Firewall profile can be replicated across multiple appliances. This process will capture all bound objects such as the HTML error object, XML error object, WSDL\XML schema, signatures, relaxation rules and so on. This can be particularly useful when migrating from a test\dev environment to a production environment or to back up the WAF configuration before making changes.
 
-**Note: exported configurations require that both appliances be on the same build.**
+>**Note:**
+>
+>Exported configurations require that both appliances be on the same build.
 
 To export the WAF profile using the GUI, on the source appliance, navigate to **Security > Citrix Web App Firewall > Profiles > Select the WAF profile, then choose Action > Export** The export process may take some time to generate the export file. Once it has been archived, a **WAFProfile.tgz** file is downloaded to the client computer.
 
