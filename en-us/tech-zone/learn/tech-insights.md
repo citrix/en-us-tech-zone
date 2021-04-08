@@ -61,6 +61,8 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Virtual Apps and Desktops Service](/en-us/tech-zone/learn/tech-insights/virtual-apps-and-desktops-service.html) - Citrix Virtual Apps and Desktops Service provides a fast, low-impact deployment option for on-premises/cloud-hosted, Windows/Linux, desktops/apps.
 
+[Workspace Environment Management](/en-us/tech-zone/learn/tech-insights/workspace-environment-mgmt.html) - Workspace Environment Management monitors and analyzes user and application behavior in real time, then intelligently adjusts system resources to improve the user experience.
+
 ## Citrix Workspace
 
 [Authentication - Citrix Gateway](/en-us/tech-zone/learn/tech-insights/gateway-idp.html) - Utilize an on-premises Citrix Gateway as an identity provider for Citrix Workspace.
@@ -76,6 +78,8 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 [Microapps](/en-us/tech-zone/learn/tech-insights/microapps.html) - Increase productivity by adding microapps to Citrix Workspace. Microapps allow users to view information and perform actions without launching the full application.
 
 [Microapps Custom Integrations](/en-us/tech-zone/learn/tech-insights/microapps-custom-integrations.html) - Create custom integrations with the microapp builder through the HTTP connector.
+
+[Service Continuity](/en-us/tech-zone/learn/tech-insights/service-continuity.html) - Helps ensure that end-users are still able to launch their virtual apps and desktops, even when cloud services are down.
 
 [Site Aggregation](/en-us/tech-zone/learn/tech-insights/site-aggregation.html) - Hybrid deployment that allows your on-premises Citrix Virtual Apps & Desktops environments to be part of Citrix Workspace.
 

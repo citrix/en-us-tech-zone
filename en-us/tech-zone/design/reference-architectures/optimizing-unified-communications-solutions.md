@@ -29,6 +29,7 @@ Citrix has worked with the vendors of the following unified communications solut
 -  [Optimization for Microsoft Teams](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html)
 -  [HDX RealTime Optimization Pack for Skype for Business](/en-us/hdx-optimization/current-release.html)
 -  [Cisco Jabber Softphone for VDI](https://citrixready.citrix.com/cisco-systems-inc/cisco-jabber-vdi.html)
+-  [Cisco Webex Meetings for Virtual Desktop Environments](https://www.cisco.com/c/en/us/td/docs/collaboration/meeting_center/wvdi/wvdi-b-admin-guide/wvdi-b-admin-guide_chapter_01.html)
 -  [Avaya Equinox VDI](https://support.avaya.com/products/P1706/avaya-equinox-vdi)
 -  [Zoom Meetings optimization](https://citrixready.citrix.com/zoom-video-communications/zoom-meetings-for-vdi.html)
 

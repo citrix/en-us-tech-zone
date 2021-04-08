@@ -33,7 +33,7 @@ Many IT departments do not have a fully defined strategy for managing SaaS appli
 
 *  **Deploying web filtering to control or shut down external browsing:** This solution helps user to protect from visiting malicious websites. However, features stop short of security policies for SaaS apps, leading many customers to deploy multiple solutions in addition to a web gateway.
 
-*  **Publishing Browsers for each SaaS application:** Publishing a web browser with Citrix Virtual Apps and Desktops is a time-tested method for controlling access to unsanctioned SaaS applications. The “unknown” category of websites on the internet, and presenting a user with a single portal for SaaS and virtual apps. However, it does require another IT resources to manage and is not the same user experience as directly connecting to a SaaS app via a browser.
+*  **Publishing Browsers for each SaaS application:** Publishing a web browser with Citrix Virtual Apps and Desktops is a time-tested method for controlling access to unsanctioned SaaS applications. However, it does require another IT resources to manage and is not the same user experience as directly connecting to a SaaS app via a browser.
 
 *  **Relinquish management of SaaS applications to departmental control within the enterprise:** Opens up security and compliance gaps and misses the opportunity to understand user behavior and app usage, yet but it is often the default strategy for IT when faced with limited resources.
 
