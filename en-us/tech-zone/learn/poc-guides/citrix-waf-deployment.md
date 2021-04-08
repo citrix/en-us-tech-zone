@@ -413,4 +413,4 @@ Lastly, if the PoC is being run on a test platform that has different resources 
 
 [Common Event Format (CEF) Logging Support in the Application Firewall](https://support.citrix.com/article/CTX136146)
 
-[Exporting and importing an Web App Firewall profile](https://docs.citrix.com/en-us/citrix-adc/current-release/application-firewall/profiles/import-export-profiles.html)
+[Exporting and importing an Web App Firewall profile](/en-us/citrix-adc/current-release/application-firewall/profiles/import-export-profiles.html)
