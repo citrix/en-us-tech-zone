@@ -28,7 +28,7 @@ It makes assumptions about the completed installation and configuration of the f
 
 Refer to Citrix Documentation for the latest product version, licensing, and requirement details: [Device certificate in nFactor as an EPA component](/en-us/citrix-gateway/current-release/vpn-user-config/endpoint-policies/device-certificate-in-nfactor-as-an-epa-component.html)
 
-## nFactor
+## Configuration
 
 First, we log in to the CLI on our Citrix ADC and enter the authentication actions and associated policies for EPA and LDAP respectively along with the login schema. Then we log in to our GUI to build our nFactor flow in the visualizer tool and complete the multifactor authentication configuration.
 
@@ -96,7 +96,7 @@ The EPA factor does not require a Login Schema.
 Update the following fields for your environment and copy and paste the string into the CLI:
 `add authentication loginSchema ls_ldap_dcnf -authenticationSchema "/nsconfig/loginschema/LoginSchema/SingleAuth.xml"`
 
-### nFactor
+### Certificates
 
 #### Domain Certificate
 
@@ -122,7 +122,7 @@ There are many systems and options for user and device certificate management. I
 1.  Click Install, we enter the name `DeviceCertificateCA`, select Chose File, Local, and select the file, Open and click Install
 ![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_installca.png)
 
-### Visualizer
+### nFactor Visualizer
 
 1.  Next navigate to `Security > AAA - Application Traffic > nFactor Visualizer > nFactor Flows`
 1.  Select Add and select the plus sign in the Factor box
@@ -179,7 +179,7 @@ There are many systems and options for user and device certificate management. I
 ![Device Certificate](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_gatewayvserver.png)
 1.  Click Done
 
-## User Endpoint
+## User Endpoint Verification
 
 We test authentication by authenticating into our Citrix Virtual Apps and Desktops environment.
 
