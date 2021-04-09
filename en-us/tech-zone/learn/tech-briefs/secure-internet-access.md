@@ -168,8 +168,7 @@ Web Categories are a quick and useful way to filter web access and traffic based
 *  There are four primary actions you can assign to a web category: Allow, Block, Stealth, or Soft Override
 *  SSL Decryption enabled/disabled
 *  If a domain is associated with multiple categories, the action applied to it is determined by the priority number associated for the categories. Categories with higher priority values take precedence.
-*  Web Category – Soft Overrides
-*  Presents the user with a block page for the category but will allow the user to choose a soft override command
+*  Soft Overrides - Presents the user with a block page for the category but will allow the user to choose a soft override command
     *  Allows the user to access the URL until the next day
     *  Any block page presented with a soft override shows in reporting & analytics as soft-blocked
 
