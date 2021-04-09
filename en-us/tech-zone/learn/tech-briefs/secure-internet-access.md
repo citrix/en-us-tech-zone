@@ -174,7 +174,7 @@ Web Categories are a quick and useful way to filter web access and traffic based
 
 #### Blocking or Allowing a website
 
-Website browsing can be blocked using a Block List. Block Lists can be used to restrict access to network resources selectively. Allow Lists allow access to URLS that are blocked by a web category policy. Allow Lists can be used to grant access to specific resources. Allow Lists are configured much the same as
+Website browsing can be blocked using a Block List. Block Lists can be used to restrict access to network resources selectively. Allow Lists allow access to URLS that are blocked by a web category policy. Allow Lists can be used to grant access to specific resources.
 
 Following are the various ways to configure Block Lists:
 
