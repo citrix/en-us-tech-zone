@@ -41,6 +41,8 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 ## Citrix Networking
 
+[nFactor for Citrix Gateway Authentication with Device Certificate](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-device-certificate.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Device Certificate.
+
 [nFactor for Citrix Gateway Authentication with Email OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-email-otp.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with email one-time password.
 
 [nFactor for Citrix Gateway Authentication with Group Extraction](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-group-extraction.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Group Extraction.
