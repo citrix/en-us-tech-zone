@@ -135,7 +135,9 @@ Navigate to **AppExpert > HTTP Callouts** and select 'Add'. Give the HTTP Callou
 HTTP.REQ.FULL_HEADER.BEFORE_STR("\r\n\r\n")+"\r\nGW_VPN-WAF_Callout:abc\r\n\r\n"+HTTP.REQ.BODY(2048)
 ```
 
-**Note: the name of the header here is 'GW_VPN-WAF_Callout' - this will be used later in the application firewall filtering expression. If it is changed, it must also be changed in the WAF header expression as well.**
+>**Note:**
+>
+>The name of the header here is 'GW_VPN-WAF_Callout' - this will be used later in the application firewall filtering expression. If it is changed, it must also be changed in the WAF header expression as well.
 
 In the Server Response section, set the return type to **BOOL** and set the expression to 'true'.
 
@@ -159,7 +161,9 @@ HTTP.REQ.URL.CONTAINS_ANY("GW_VPN_Patset") && SYS.HTTP_CALLOUT(GW_VPN_WAF_Callou
 
 ![Authentication Policy WAF Binding](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_authenticationpolicy.png)
 
-**Note: this expression can be used with any authentication policy where you want to protect the form fields on the logon page.**
+>**Note:**
+>
+>This expression can be used with any authentication policy where you want to protect the form fields on the logon page.
 
 ### WAF Profile and Policy
 
@@ -192,7 +196,9 @@ Next, configure the WAF policy by going to **Security > Citrix Web Application F
 HTTP.REQ.HEADER("GW_VPN-WAF_Callout").EXISTS
 ```
 
-**Note: the name of the header here must match the header in the HTTP Callout created earlier.**
+>**Note:**
+>
+>The name of the header here must match the header in the HTTP Callout created earlier.
 
 Last, bind the WAF policy to the dummy load balancing virtual server created earlier by going to Traffic Management > Load Balancing > Virtual Servers and selecting the virtual server then choosing 'Edit'.
 
@@ -232,9 +238,11 @@ set aaa parameter -loginEncryption ENABLED
 
 IP Reputation can be built into the advanced authentication flow to prompt the user for an additional factor if the source address is flagged in the IP Reputation database. A manually maintained dataset of addresses will also be created.
 
-**Important: the following configuration example uses CAPTCHA as a means to provide another factor of authentication, but any other MFA tool can be used. As with all nFactor configurations, the policies, schemas, and policy labels shown here are simple examples - additional configuration can be added to meet any specific login use case.**
-
-**See the references section for additional details on configuring TOTP PUSH as a factor and additional CAPTCHA configurations.**
+>**Important:**
+>
+>The following configuration example uses CAPTCHA as a means to provide another factor of authentication, but any other MFA tool can be used. As with all nFactor configurations, the policies, schemas, and policy labels shown here are simple examples - additional configuration can be added to meet any specific login use case.
+>
+>**See the references section for additional details on configuring TOTP PUSH as a factor and additional CAPTCHA configurations.**
 
 A data set need to be created by going to AppExpert > Data Sets and selecting 'Add'. Create a data set with a descriptive name, a type of 'ipv4' and click 'Create'.
 
@@ -244,7 +252,7 @@ Next, two advanced authentication policies need to be created by going to **Secu
 
 Create the first policy with a descriptive name, an action type of **NO_AUTHN** and the expression set to 'true'.
 
-![Advanced Policy Good IP](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa-advpol_good.png)
+![Advanced Policy Good IP](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa-advpol-good.png)
 
 Create the second policy with a descriptive name, action type of **NO_AUTHN** and expression as follows:
 
@@ -253,7 +261,9 @@ Create the second policy with a descriptive name, action type of **NO_AUTHN** an
 CLIENT.IP.SRC.IPREP_IS_MALICIOUS || CLIENT.IP.SRC.TYPECAST_TEXT_T.CONTAINS_ANY("suspicious_ips")
 ```
 
-**NOTE: the name of the previously created data set is used here.**
+>**Note:**
+>
+>The name of the previously created data set is used here.
 
 Next, a CAPTCHA login schema profile is created by going to **Security > AAA - Application Traffic > Login Schema > Profiles Tab** and selecting 'Add'. Give the profile a descriptive name then edit the Authentication Schema by selecting the 'pencil' edit icon. Browse to the LoginSchema directory, highlight **SingleAuthCaptcha.xml** and choose **Select**.
 
@@ -261,7 +271,9 @@ Next, a CAPTCHA login schema profile is created by going to **Security > AAA - A
 
 Next, create an authentication policy label for the Captcha schema by going to **Security > AAA - Application Traffic > Policies > Authentication > Advanced Policies > Policy Label** and selecting 'Add'. Give the PL a descriptive name and select the previously created captcha login schema. Bind the required LDAP action policy.
 
-**Note: this example is re-using a previously created LDAP authentication action.**
+>**Note:**
+>
+>This example is re-using a previously created LDAP authentication action.
 
 ![Captcha Policy Label](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa-captchapl.png)
 
