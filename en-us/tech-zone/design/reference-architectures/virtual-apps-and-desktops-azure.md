@@ -390,7 +390,7 @@ By using Azure AD with Citrix Cloud, Customers can:
 
 Citrix Cloud includes an Azure AD app that allows Citrix Cloud to connect with Azure AD without the need for you to be logged in to an active Azure AD session. Citrix Cloud Administrator Login allows Azure AD identities to be used in the customers Citrix Cloud tenant.
 
-*  Determine if Citrix Cloud administrators use their Citrix Identity or Azure AD to access the Citrix Cloud the URL will follow the format "<https://citrix.cloud.com/go/{Customer> Determined}"
+*  Determine if Citrix Cloud administrators use their Citrix Identity or Azure AD to access the Citrix Cloud the URL will follow the format `https://citrix.cloud.com/go/{Customer Determined}`
 *  Identify the Authentication URL for Azure AD authentication into Citrix Cloud
 
 ## Governance
