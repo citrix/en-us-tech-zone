@@ -31,20 +31,7 @@ Citrix has leveraged industry standard configuration as code to provide a mechan
 
 This code is not limited to migrations, it is the future for creating configuration for Citrix sites, and as such, applicable for **many different use cases**. Disaster recovery, Development/Testing/Staging to Production site synchronization, Geographic (GEO) moves, and several other scenarios are supported. For administrators using public cloud providers, this can help create a combination of objects automatically (parallel to Microsoft Azure ARM templates and AWS CloudFormation).
 
-The tool also allows administrators to merge multiple on-premises sites into a single site, while avoiding name collisions. Administrators can control whether the On-Premises or Cloud controls resources, and also place files in a secure network file share that requires authentication.
-
-### Latest additions and enhancements
-
-Version 2 includes the following enhancements:
-
-*  Site Merging: Merge multiple On-Premises sites into a single site while avoiding name collisions.
-*  Site Activation: Control whether the On-Premises or Cloud controls resources.
-*  New Migration inclusions: Admin Roles and Scopes can now be migrated.
-*  New Filters: Filter by Machine Name in Machine Catalogs and Delivery Groups.
-*  Security: New SecurityFileFolder parameter pointing to the CvadAcSecurity.yml file allows placing the file in a secure network file share which requires authentication.
-*  New support cmdlet: New-CvadAcZipInfoForSupport allows zipping all log files for transfer to Citrix for support.
-*  Support for supressing console logging: Quiet parameter can be included now to suppress console logging.
-*  Component selection parameters improvements: best-practice Switch Parameter method eliminates the need to add a $true after the component name.
+The tool also allows administrators to merge multiple on-premises sites into a single site, while avoiding name collisions. Administrators can control whether the On-Premises or Cloud controls resources, and also place files in a secure network file share that requires authentication, through the use of the SecurityFileFolder parameter which points to the CvadAcSecurity.yml file.
 
 ## Pre-requisites
 
