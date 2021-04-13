@@ -15,7 +15,7 @@ Administrators can easily test and explore the **Citrix Virtual Apps and Desktop
 
 ### What is the Automated Configuration tool for Citrix Virtual Apps and Desktops?
 
-This tool is designed to help automate the migration of **CVAD** configuration (policies, applications, catalogs, and others) from one or more On-Premises site(s) to the **Citrix Virtual Apps and Desktop service** (CVADS) hosted on Citrix Cloud. It can also be used to migrate information between **different Cloud regions** or **tenants**.
+This tool is designed to help automate the migration of **CVAD** configuration (policies, applications, catalogs, admin roles, scopes and others) from one or more On-Premises site(s) to the **Citrix Virtual Apps and Desktop service** (CVADS) hosted on Citrix Cloud. It can also be used to migrate information between **different Cloud regions** or **tenants**.
 
 The migration can be performed in stages by running the tool multiple times, allowing administrators to easily achieve the desired configuration state.
 
@@ -30,6 +30,21 @@ Citrix wants to help ease this process by providing a tool that addresses use ca
 Citrix has leveraged industry standard configuration as code to provide a mechanism to help automate migration processes. This tool discovers and exports one or more on-premises sites as **a collection of configuration files**, which administrators can optionally edit, and then import these files' configuration into CVADS.
 
 This code is not limited to migrations, it is the future for creating configuration for Citrix sites, and as such, applicable for **many different use cases**. Disaster recovery, Development/Testing/Staging to Production site synchronization, Geographic (GEO) moves, and several other scenarios are supported. For administrators using public cloud providers, this can help create a combination of objects automatically (parallel to Microsoft Azure ARM templates and AWS CloudFormation).
+
+The tool also allows administrators to merge multiple on-premises sites into a single site, while avoiding name collisions. Administrators can control whether the On-Premises or Cloud controls resources, and also place files in a secure network file share that requires authentication.
+
+### Latest additions and enhancements
+
+Version 2 includes the following enhancements:
+
+*  Site Merging: Merge multiple On-Premises sites into a single site while avoiding name collisions.
+*  Site Activation: Control whether the On-Premises or Cloud controls resources.
+*  New Migration inclusions: Admin Roles and Scopes can now be migrated.
+*  New Filters: Filter by Machine Name in Machine Catalogs and Delivery Groups.
+*  Security: New SecurityFileFolder parameter pointing to the CvadAcSecurity.yml file allows placing the file in a secure network file share which requires authentication.
+*  New support cmdlet: New-CvadAcZipInfoForSupport allows zipping all log files for transfer to Citrix for support.
+*  Support for supressing console logging: Quiet parameter can be included now to suppress console logging.
+*  Component selection parameters improvements: best-practice Switch Parameter method eliminates the need to add a $true after the component name.
 
 ## Pre-requisites
 
@@ -75,7 +90,7 @@ These steps must be run in your DDC or the domain-joined machine where you want 
 Using an ```export``` PowerShell command, you can export your existing On-Premises configuration and obtain the necessary *.yml* files. These files are used to import your desired configuration into **Citrix Cloud**.
 
 1.  After running the **MSI** installer on the previous step, you get an **Auto Config** shortcut automatically created on the Desktop. Right-click this shortcut and click **Run as Administrator.**
-2.  Run the ```Export-CvadAcToFile``` command. This command exports policies, manually provisioned catalogs, and delivery groups. It also exports applications, application folders, icons, zone mappings, tags, and other items. **Note:** For **MCS** and **PVS** machine catalogs and delivery groups, refer to the steps on [Requisites for Importing Site Configuration using different Provisioning Methods section](#requisites-for-importing-site-configuration-using-different-provisioning-methods) in this guide.
+2.  Run the ```Export-CvadAcToFile``` command. This command exports policies, manually provisioned catalogs, and delivery groups. It also exports applications, application folders, icons, zone mappings, tags, admin roles and scopes, and other items. **Note:** For **MCS** and **PVS** machine catalogs and delivery groups, refer to the steps on [Requisites for Importing Site Configuration using different Provisioning Methods section](#requisites-for-importing-site-configuration-using-different-provisioning-methods) in this guide.
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002-1.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002-1.png)
 
 3.  Once the tool finishes running, the **Overall status** shows as **True** and the export process is completed (the output lines shown match the following illustration). **Note:** If there are any errors, diagnostic files are created in the action-specific subfolders ```(Export, Import, Merge, Restore, Sync, Backup, Compare)```, which can be found under ```%HOMEPATH%\Documents\Citrix\AutoConfig```. Refer to the [Troubleshooting Tips section](#troubleshooting-tips) if you encounter any errors.
@@ -185,7 +200,7 @@ Follow these steps to prepare your environment, before proceeding to import the 
 2.  Click the **Groups** node to confirm the groups the app in question belongs to:
 [![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-002.png)
 
-3.  Back on the **PowerShell console**, run the **Merge** command and use the **byDeliveryGroupName** flag, which filters the **Applications** by **Delivery Group** name. Complete Syntax example: ```Merge-CvadAcToSite –Applications $true –ByDeliveryGroupName <DG_name>```
+3.  Back on the **PowerShell console**, run the **Merge** command and use the **byDeliveryGroupName** flag, which filters the **Applications** by **Delivery Group** name. Complete Syntax example: ```Merge-CvadAcToSite –Applications –ByDeliveryGroupName <DG_name>```
 [![Provisioning Method MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-process-003.png)
 
 4.  Press **Return (Enter)** on your keyboard to run the command and type ```yes``` to continue.
@@ -212,7 +227,7 @@ Follow these steps to prepare your environment, before proceeding to import the 
 
 Once you’ve performed the previous actions, if you need to import policies associated with your **MCS Machine Catalogs** and your **Delivery groups**, follow these instructions:
 
-1.  Run the ```Merge-CvadAcToSite -GroupPolicies $true``` command in the **PowerShell console** and type ```yes``` to continue, as shown in the following screenshot, and then press **Return (Enter)** on your keyboard:
+1.  Run the ```Merge-CvadAcToSite -GroupPolicies``` command in the **PowerShell console** and type ```yes``` to continue, as shown in the following screenshot, and then press **Return (Enter)** on your keyboard:
 [![Policies for MCS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-policies-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-mcs-policies-001.png)
 
 2.  Successful execution shows a similar output (```Added``` values). The following screenshot also shows the result of a line for which there were no changes ```(No Change)```:
@@ -325,6 +340,8 @@ If everything looks as expected, your CVADS migration is complete.
 *  The **master history log** is located in ```%HOMEPATH%\Documents\Citrix\AutoConfig```, in the file named ```History.Log```.*  All operation log files are placed in a **backup folder**.
 *  All log file names begin with ```CitrixLog```, then show the ```auto-config``` operation and the **date** and **timestamp** of the cmdlet execution.
 *  Logs **do not** auto-delete.
+*  Console logging can be suppressed by using the -quiet parameter
+*  New support cmdlet to zip all log files for transfer to Citrix for support. To do this, backup the cloud’s current state by running the Backup-CvadAcToFile command, collect all log and yml files into a single zip (no customer security information is included) by running New-CvadAcZipInfoForSupport . Forward the zip file at the following location %HOMEPATH%\Documents\Citrix\AutoConfig\CvadAcSupport_yyyy_mm_dd_hh_mm_ss.zipNew-CvadAcZipInfoForSupport
 
 **For more information:**
 
