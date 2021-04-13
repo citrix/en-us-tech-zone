@@ -161,7 +161,7 @@ See [Enable the FAS plug-in on StoreFront stores](/en-us/federated-authenticatio
 Next configure the Desktops Delivery Controller to trust the StoreFront servers that can connect to it.
 
 *  Open PowerShell as an administrator, and run
-    *  `Add-PSSnapin Citrix*` (provided you do not have all Citrix snap-ins loaded) See [Install and set up FAS](/en-us/linux-virtual-delivery-agent/current-release/configuration/federated-authentication-service.html#install-and-set-up-fas) for more information
+    *  `Add-PSSnapin Citrix*` (provided you do not have all Citrix snap-ins loaded) See [Install and set up FAS](/en-us/federated-authentication-service/install-configure.html#configure-the-delivery-controller) for more information
     *  `Set-BrokerSite -TrustRequestsSentToTheXmlServicePort $true`
 
 See [Configure the Delivery Controller](/en-us/federated-authentication-service/install-configure.html#configure-the-delivery-controller) for more information.
