@@ -11,7 +11,7 @@ description: Learn how to implement a Proof of Concept environment consisting of
 
 Large Enterprise environments require flexible authentication options to meet the needs of various user personas. With Device Certificate, coupled with LDAP credentials, Enterprises get "something you have" and "something you know" multifactor authentication. This allows users to seamlessly verify their identity and securely access their applications and data.
 
-[![Device Certificate Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_conceptualarchitecture.png)](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-certificate_conceptualarchitecture.png)
+[![Device Certificate Authentication](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_conceptualarchitecture.png)](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-device-certificate_conceptualarchitecture.png)
 
 ## Overview
 
