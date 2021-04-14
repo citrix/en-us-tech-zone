@@ -50,7 +50,7 @@ nFactor can be configured through the CLI, through the GUI manually, or through 
 
 ## Methods
 
-Citrix ADC supports many authentication methods. For more information see: [Citrix ADC Authentication Methods](https://docs.citrix.com/en-us/citrix-adc/current-release/aaa-tm/authentication-methods.html) In this brief we focus on using domain credentials, representing something the user knows, with variations of something the user has.
+Citrix ADC supports many authentication methods. For more information see: [Citrix ADC Authentication Methods](/en-us/citrix-adc/current-release/aaa-tm/authentication-methods.html) In this brief we focus on using domain credentials, representing something the user knows, with variations of something the user has.
 
 1)  Native OTP
 2)  Push Token
@@ -66,7 +66,7 @@ In our scenario in order to successfully authenticate the user enters their doma
 
 [![Citrix nFactor MFA](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_nativeotp.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_nativeotp.png)
 
-For more information regarding how to try it out in your environment see: [Proof of Concept Guide: nFactor for Citrix Gateway with Native OTP Authentication](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-native-otp.html)
+For more information regarding how to try it out in your environment see: [Proof of Concept Guide: nFactor for Citrix Gateway with Native OTP Authentication](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-native-otp.html)
 
 ### Push Token
 
@@ -74,7 +74,7 @@ With Push Token the user also does an initial registration with the Citrix ADC. 
 
 [![Citrix nFactor MFA](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_pushtoken.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_pushtoken.png)
 
-For more information regarding how to try it out in your environment see: [Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Push Token](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-push-token.html)
+For more information regarding how to try it out in your environment see: [Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Push Token](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-push-token.html)
 
 ### Email OTP
 
@@ -82,7 +82,7 @@ Email OTP works like Native OTP, yet the OTP code is sent as an email rather tha
 
 [![Citrix nFactor MFA](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_emailotp.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_emailotp.png)
 
-For more information regarding how to try it out in your environment see: [Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Email OTP](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-email-otp.html)
+For more information regarding how to try it out in your environment see: [Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Email OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-email-otp.html)
 
 ### Group Extraction
 
@@ -98,7 +98,7 @@ Examples of user groups include:
 
 [![Citrix nFactor MFA](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_groupextraction.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_groupextraction.png)
 
-For more information regarding how to try it out in your environment see: [Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Group Extraction](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-group-extraction.html)
+For more information regarding how to try it out in your environment see: [Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Group Extraction](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-group-extraction.html)
 
 ### Device Certificate
 
@@ -106,7 +106,7 @@ Device Certificate relies on availability of a unique certificate on the endpoin
 
 [![Citrix nFactor MFA](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_devicecertificate.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_devicecertificate.png)
 
-For more information regarding how to try it out in your environment see: [Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Device Certificate](https://docs.citrix.com/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-device-certificate.html)
+For more information regarding how to try it out in your environment see: [Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Device Certificate](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-device-certificate.html)
 
 ## Summary
 
