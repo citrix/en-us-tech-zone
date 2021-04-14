@@ -19,7 +19,7 @@ Typically there are 3 types of authentication used to identify users:
 
 3)  Something you are (for example finger print scanner) - this is a third method that focuses on using biometrics to uniquely identify a user. Historically it has seen slower mainstream adoption due to expense to implement and complexity, yet is a powerful option for high security environments.
 
-Multifactor authentication pertains to using two or more of these types of authentication to verify user identity and prevent bad actors from obtaining access.
+Multifactor authentication pertains to using two or more of these types of authentication to verify user identity, and mitigate the risk of bad actors obtaining access to Enterprise environments.
 
 [![Citrix nFactor MFA](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_intro.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_intro.png)
 
