@@ -328,7 +328,7 @@ If everything looks as expected, your CVADS migration is complete.
 *  All log file names begin with ```CitrixLog```, then show the ```auto-config``` operation and the **date** and **timestamp** of the cmdlet execution.
 *  Logs **do not** auto-delete.
 *  Console logging can be suppressed by using the -quiet parameter
-*  New support cmdlet to zip all log files for transfer to Citrix for support. To do this, backup the cloud’s current state by running the Backup-CvadAcToFile command, collect all log and yml files into a single zip (no customer security information is included) by running New-CvadAcZipInfoForSupport . Forward the zip file at the following location %HOMEPATH%\Documents\Citrix\AutoConfig\CvadAcSupport_yyyy_mm_dd_hh_mm_ss.zipNew-CvadAcZipInfoForSupport
+*  New support cmdlet to zip all log files for transfer to Citrix for support. To do this, backup the cloud’s current state by running the Backup-CvadAcToFile command, collect all log and *.yml files into a single zip (no customer security information is included) by running New-CvadAcZipInfoForSupport . Forward the zip file at the following location %HOMEPATH%\Documents\Citrix\AutoConfig\CvadAcSupport_yyyy_mm_dd_hh_mm_ss.zipNew-CvadAcZipInfoForSupport
 
 **For more information:**
 
