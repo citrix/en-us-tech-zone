@@ -13,7 +13,7 @@ Many VPN and Citrix Gateway deployments are hosted by Citrix ADC appliances that
 
 The flow of this configuration diagrammed as follows:
 
-![Config Flow](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_configflow.png)
+![Config Flow](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_trafficflow.png)
 
 ## Configuration Options
 
