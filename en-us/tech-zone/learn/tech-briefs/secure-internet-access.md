@@ -4,7 +4,6 @@ h3InToc: true
 contributedBy: Florin Lazurca
 specialThanksTo: Eric Beiers
 description: The expansive demand for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user Internet access. Citrix Secure Internet Access (CSIA) shifts the focus from defending perimeters to following users to ensure Internet access is secure regardless of location.
-
 ---
 # Citrix Secure Internet Access
 
