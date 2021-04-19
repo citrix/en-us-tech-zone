@@ -40,7 +40,7 @@ CSIA allows administrators to explicitly define cloud zones directly within the 
 
 ## Redirecting Flow
 
-Traditionally, Internet application traffic from remote users is sent through slow and overloaded VPNs to provide network security for compliance, malware defense, and data loss protection. Often this results in slow connections or downed networks preventing users from working safely and effectively. Furthermore, against the tenants of [Zero Trust Architecture](en-us/tech-zone/learn/tech-briefs/zero-trust.html), access is typically provided to networks instead of to specific applications. The result is excessive privileges especially for users who only require targeted access to a handful of resources.
+Traditionally, Internet application traffic from remote users is sent through slow and overloaded VPNs to provide network security for compliance, malware defense, and data loss protection. Often this results in slow connections or downed networks preventing users from working safely and effectively. Furthermore, against the tenants of [Zero Trust Architecture](/en-us/tech-zone/learn/tech-briefs/zero-trust.html), access is typically provided to networks instead of to specific applications. The result is excessive privileges especially for users who only require targeted access to a handful of resources.
 
 CSIA eliminates the need for slow and overloaded VPN connections and sends traffic directly from the users to the necessary cloud resources or applications. CSIA also reduces the risk of data loss and further segments the network by allowing users access only to specific resources and applications.
 
