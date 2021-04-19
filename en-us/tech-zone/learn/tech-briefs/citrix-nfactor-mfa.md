@@ -108,6 +108,10 @@ Device Certificate relies on availability of a unique certificate on the endpoin
 
 For more information regarding how to try it out in your environment see: [Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Device Certificate](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-device-certificate.html)
 
+## Workspace service
+
+Once you have an nFactor flow setup you can integrate with Workspace service by configurating and binding an Oauth policy.
+
 ## Summary
 
 With Citrix nFactor Enterprises can implement reliable multifactor authentication and fortify the primary entrance to their environments. They can implement this security improvement all while maintaining a good user experience.
