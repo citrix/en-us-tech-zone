@@ -114,7 +114,7 @@ Once you have a nFactor flow setup, you can integrate with Workspace service. Wi
 
 1.) Citrix Workspace - configure the Citrix Gateway service to point to the Citrix ADC Virtual Server. Change the Workspace authentication method to Citrix Gateway
 
-For more information regarding how to try it out in your environment, see: [Tech Insight video: Authentication - On-Premises Citrix Gateway]([/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-native-otp.html](https://docs.citrix.com/en-us/tech-zone/learn/tech-insights/gateway-idp.html))
+For more information regarding how to try it out in your environment, see: [Tech Insight video: Authentication - On-Premises Citrix Gateway](/en-us/tech-zone/learn/tech-insights/gateway-idp.html)
 
 [![Citrix nFactor MFA](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_citrixworkspaceiam.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_citrixworkspaceiam.png)
 
