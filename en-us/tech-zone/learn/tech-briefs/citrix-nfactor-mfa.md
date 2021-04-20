@@ -130,4 +130,4 @@ Once configured, users continue to access their Workspace service domain (for ex
 
 ## Summary
 
-With Citrix, nFactor Enterprises can implement reliable multifactor authentication and fortify the primary entrance to their environments. They can implement this security improvement all while maintaining a good user experience.
+With Citrix nFactor, Enterprises can implement reliable multifactor authentication and fortify the primary entrance to their environments. They can implement this security improvement all while maintaining a good user experience.
