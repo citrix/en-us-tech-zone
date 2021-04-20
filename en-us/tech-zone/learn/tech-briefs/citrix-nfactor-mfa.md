@@ -116,11 +116,17 @@ Once you have a nFactor flow setup, you can integrate with Workspace service. Wi
 
 For more information regarding how to try it out in your environment, see: [Tech Insight video: Authentication - On-Premises Citrix Gateway]([/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-native-otp.html](https://docs.citrix.com/en-us/tech-zone/learn/tech-insights/gateway-idp.html))
 
+[![Citrix nFactor MFA](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_citrixworkspaceiam.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_citrixworkspaceiam.png)
+
 2.) Citrix ADC nFactor - create an Oauth policy using tenant information obtained from Workspace service. Bind it to the pertinent AAA Virtual Server with a higher priority than the nFactor flow. Update the "Logon Point" landing page theme with the Citrix Workspace look and feel.
 
 For more information regarding how to try it out in your environment, see: [Customizing the on-premises Citrix Gateway authentication page to look identical to Citrix Cloud logon page](https://support.citrix.com/article/CTX258331)
 
+[![Citrix nFactor MFA](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_citrixadcoauth.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_citrixadcoauth.png)
+
 Once configured, users continue to access their Workspace service domain (for example, `https://<customerdomain>.cloud.com`) and are automatically redirected to the Citrix ADC FQDN. Upon successful authentication, Citrix ADC relays the status for the user name back to the Workspace, and the user is presented with their resources.
+
+[![Citrix nFactor MFA](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_workspace.png)](/en-us/tech-zone/learn/media/tech-briefs_citrix-nfactor-mfa_workspace.png)
 
 ## Summary
 
