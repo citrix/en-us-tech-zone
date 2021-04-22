@@ -52,15 +52,11 @@ nFactor can be configured through the CLI, through the GUI manually, or through 
 
 Citrix ADC supports many authentication methods. For more information, see [Citrix ADC Authentication Methods](/en-us/citrix-adc/current-release/aaa-tm/authentication-methods.html). In this brief, we focus on using domain credentials, representing something the user knows, with five variations of something the user has.
 
-1)  Native OTP
-
-1)  Push Token
-
-1)  Email OTP
-
-1)  Group Extraction
-
-1)  Device Certificate
+1.  Native OTP
+2.  Push Token
+3.  Email OTP
+4.  Group Extraction
+5.  Device Certificate
 
 ### Native OTP
 
