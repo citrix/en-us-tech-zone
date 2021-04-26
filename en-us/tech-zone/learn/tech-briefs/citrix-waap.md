@@ -10,13 +10,13 @@ description: With cyberthreats rising and modern application architectures getti
 
 Enterprises continue to move their apps and data to the cloud to support work from home employees, fueled by the pandemic. At the same time bad actors continue to develop new ways to attack those apps and data to support their illicit activities.
 
-Citrix Web App and Api Protection (CWAAP) guards against their attempts to exfiltrate, manipulate or destroy apps and data. CWAAP technology, based on Machine Learning and Artificial Intelligence, does this by constantly evolving to stay ahead of these increasingly complex attacks.
+Citrix Web App and Api Protection (CWAAP) guards against their attempts to exfiltrate, manipulate or destroy these business critical apps and data. CWAAP technology, based on Machine Learning and Artificial Intelligence, does this by constantly evolving to stay ahead of these increasingly complex attacks.
 
 ## Overview
 
 It includes 3 distinct sets of protection technology that work together to provide dynamic protection:
 
-1.  Web Application Firewall (WAF) - short for web application firewall, "WAF" origins are in protecting web sites hosted on premises, but now as sites are expaned or migrated to hybrid cloud or public cloud environment they have a broader attack surface to protect.
+1.  Web Application Firewall - short for web application firewall, "WAF" origins are in protecting web sites hosted on premises, but now as sites are expaned or migrated to hybrid cloud or public cloud environment they have a broader attack surface to protect.
 2.  API Protection - short for application programming interface, "APIs" have been around since the early days of digital computing, yet now in the Cloud Era have taken on a new signficance. Cloud native systems are designed to distribute functions to operate independently in containers and communicate over APIs. Also know as microservices, this form of development is more efficent in many ways than traditional monolithic architecture, yet by nature is primarily hosted in the cloud and subsequently APIs are vulerable to attack.
 3.  BOT Protection - short for robot, a "BOT" bot simulates human activity. There are good ones such as crawler bots run by Google to categorize their search engine content. There are also bad ones such as hacker bots that incessantly probe sites for vulnerabilities, scraper bots that steal and or manipuate content in an attempt to profit illegally, or botnets that attempt to deny service to users to hurt a company financially or otherwise.
 
