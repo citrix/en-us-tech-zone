@@ -31,7 +31,7 @@ Citrix has leveraged industry standard configuration as code to provide a mechan
 
 This code is not limited to migrations, it is the future for creating configuration for Citrix sites, and as such, applicable for **many different use cases**. Disaster recovery, Development/Testing/Staging to Production site synchronization, Geographic (GEO) moves, and several other scenarios are supported. For administrators using public cloud providers, this can help create a combination of objects automatically (parallel to Microsoft Azure ARM templates and AWS CloudFormation).
 
-The tool also allows administrators to merge multiple on-premises sites into a single site, while avoiding name collisions. Administrators can control whether the On-Premises or Cloud controls resources, and also place files in a secure network file share that requires authentication, through the use of the SecurityFileFolder parameter which points to the CvadAcSecurity.yml file.
+The tool also allows administrators to **merge multiple on-premises sites into a single site**, while avoiding name collisions. Administrators can control whether the On-Premises or Cloud controls resources, and also **place files in a secure network file share** that requires authentication, through the use of the **SecurityFileFolder** parameter which points to the *CvadAcSecurity.yml* file.
 
 ## Pre-requisites
 
@@ -327,8 +327,8 @@ If everything looks as expected, your CVADS migration is complete.
 *  The **master history log** is located in ```%HOMEPATH%\Documents\Citrix\AutoConfig```, in the file named ```History.Log```.*  All operation log files are placed in a **backup folder**.
 *  All log file names begin with ```CitrixLog```, then show the ```auto-config``` operation and the **date** and **timestamp** of the cmdlet execution.
 *  Logs **do not** auto-delete.
-*  Console logging can be suppressed by using the -quiet parameter
-*  New support cmdlet to zip all log files for transfer to Citrix for support. To do this, backup the cloud’s current state by running the Backup-CvadAcToFile command, collect all log and *.yml files into a single zip (no customer security information is included) by running New-CvadAcZipInfoForSupport . Forward the zip file at the following location %HOMEPATH%\Documents\Citrix\AutoConfig\CvadAcSupport_yyyy_mm_dd_hh_mm_ss.zipNew-CvadAcZipInfoForSupport
+*  Console logging can be suppressed by using the ```-quiet``` parameter
+*  New support cmdlet to zip all log files for transfer to Citrix for support. To do this, backup the cloud’s current state by running the ```Backup-CvadAcToFile``` command, collect all log and ```*.yml``` files into a single zip (no customer security information is included) by running ```New-CvadAcZipInfoForSupport```. Forward the zip file at the following location ```%HOMEPATH%\Documents\Citrix\AutoConfig\CvadAcSupport_yyyy_mm_dd_hh_mm_ss.zipNew-CvadAcZipInfoForSupport```.
 
 **For more information:**
 
