@@ -40,7 +40,7 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 ## Citrix Secure Internet Access
 
-[Citrix Secure Internet Access](https://stage-docs.citrix.com/en-us/tech-zone/learn/tech-briefs/secure-internet-access.html) - The expansive demand for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user Internet access. Citrix Secure Internet Access (CSIA) shifts the focus from defending perimeters to following users to ensure Internet access is secure regardless of location.
+[Citrix Secure Internet Access](/en-us/tech-zone/learn/tech-briefs/secure-internet-access.html) - The expansive demand for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user Internet access. Citrix Secure Internet Access (CSIA) shifts the focus from defending perimeters to following users to ensure Internet access is secure regardless of location.
 
 ## Citrix Virtual Apps and Desktops
 
