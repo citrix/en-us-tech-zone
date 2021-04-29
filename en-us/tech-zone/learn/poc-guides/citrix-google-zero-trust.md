@@ -181,7 +181,7 @@ Finally, we test our work! After completing this step, our test user will be abl
 
 We called these prerequisites out in the previous section, but it’s worth calling out again as you need them to complete this build. Those prerequisites are:
 
--  An online Citrix Cloud resource Location, with at least one Cloud Connector installed. The Windows Server(s) with the Cloud Connector installed must be a member of an Active Directory domain.
+-  An online Citrix Cloud resource location, with at least one Cloud Connector installed. The Windows Server(s) with the Cloud Connector installed must be a member of an Active Directory domain.
 -  Google Cloud Directory Sync installed/configured/run, with sample users and groups synchronized between Active Directory and Google Cloud Identity. For a walk-through of configuring/using GCDS, [see Federating Google Cloud with Active Directory: Provisioning user accounts](https://cloud.google.com/architecture/identity/federating-gcp-with-active-directory-synchronizing-user-accounts). For more details on the GCDS sync profile we used for this build, see [Appendix 1: Sample Google Cloud Directory Sync configuration](#Appendix-1:-Sample-Google-Cloud-Directory-Sync-configuration).
 -  To verify that you’ve got a resource location up, and that AD is available to your Workspace tenant, log into the Citrix Cloud console. Click the hamburger icon in the top left corner, and navigate to Identity and Access Management/Domains. You will see at least 1 resource location and one forest/domain.
 
@@ -446,7 +446,7 @@ BeyondCorp allows us to further restrict access to an IAP-secured app by using [
 IAM Conditions are implemented by binding them to an IAM Role assignment. IAM conditions can be created based on the following ‘out of the box”:
 
 -  [resource attributes](https://cloud.google.com/iam/docs/conditions-resource-attributes) (that is, the resource being accessed. Type, Service, or name). See [Configuring resource-based access](https://cloud.google.com/iam/docs/configuring-resource-based-access) for more information.
--  [request attributes](https://cloud.google.com/iam/docs/conditions-overview#request_attributes) (that is, date/time, host/path).  See Con[figuring temporary access](https://cloud.google.com/iam/docs/configuring-temporary-access) and [Using hostname and path conditions](https://cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto#using_hostname_and_path_conditions) to learn more.
+-  [request attributes](https://cloud.google.com/iam/docs/conditions-overview#request_attributes) (that is, date/time, host/path).  See [Configuring temporary access](https://cloud.google.com/iam/docs/configuring-temporary-access) and [Using host name and path conditions](https://cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto#using_hostname_and_path_conditions) to learn more.
 
 BeyondCorp can also utilize [Access levels](https://cloud.google.com/access-context-manager/docs/overview#access-levels) as IAM conditions. Access levels are created/managed at the GCP Organizational level under Security/[Access Context Manager](https://cloud.google.com/access-context-manager/docs/overview). Once created, they can be applied to resources inside the GCP Organization, such as IAP-protected resources, using IAM Conditions.
 
@@ -506,7 +506,7 @@ After selecting the IAP-secured Web App User role, the **Access Levels** drop-do
 
 >**Note**
 >
-> Not seeing the Access Levels drop down? Check your admin user’s IAM role bindings in the project. Select your IAP Project, then navigate to Security/IAM. Your admin user must have have the **Access Context Manager Admin** role and the **IAP Policy Admin** roles assigned either directly or via policy inheritance.
+> Not seeing the Access Levels drop down list? Check your admin user’s IAM role bindings in the project. Select your IAP Project, then navigate to Security/IAM. Your admin user must have have the **Access Context Manager Admin** role and the **IAP Policy Admin** roles assigned either directly or via policy inheritance.
 
 Start by binding **on_authorized_network** and save the binding. This process is repeated later to validate our second access level policy.
 
@@ -592,7 +592,7 @@ For our first test, we try launching our IAP-protected resource directly from Ch
 
 This launch was denied for a couple reasons. For starters - we haven’t yet approved this device for accessing corporate resources. Also, we tried the launch from an Incognito window. But BeyondCorp doesn’t allow access from Incognito windows when we’re enforcing access policy that is based on device attributes
 
-Let’s try that again, but this time we don’t use Incognito mode. Also, we log into Chrome as our test user first. After logging into Chrome, we can click on the **Extensions** icon and see that Endpoint Verification was automatically installed for us:
+Let’s try that again, but this time we don’t use Incognito mode. Also, we log into Chrome as our test user first. After logging into Chrome, we can click the **Extensions** icon and see that Endpoint Verification was automatically installed for us:
 
 ![Endpoint Verification was automatically installed](/en-us/tech-zone/learn/media/citrix-google-zero-trust_5e-endpoint-verification-automatically-installed.png)
 
