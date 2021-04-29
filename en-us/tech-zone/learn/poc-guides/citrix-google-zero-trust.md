@@ -17,15 +17,15 @@ As mentioned in the [Solution Brief](https://www.citrix.com/content/dam/citrix/e
 
 ## Solution Details
 
-As you start to dig more deeply into how this solution or any zero trust solution works, you can quickly get overwhelmed with technical details. This is especially true with regards to authentication, configuration options, and possible access scenarios. To better understand how this unique ZeroTrust Access solution works, let’s look at a few different options or scenarios. These will help us better understand how and where this solution works.
+As you start to dig more deeply into how this solution or any zero trust solution works, you can quickly get overwhelmed with technical details. This is especially true with regard to authentication, configuration options, and possible access scenarios. To better understand how this unique ZeroTrust Access solution works, let’s look at a few different options or scenarios. These will help us better understand how and where this solution works.
 
-Before we dive in, we need to establish some common ground on terminology. Specifically, we’ll cover Google Cloud Identity and its relationship with Google Workspace (G Suite), and Google Cloud. Google Cloud Identity, as a technology stack, has been around for many years. It’s most recognized as the identity ‘engine’ behind Gmail, G Suite or Google Workspace, where it’s been used for years. This was well before it ever became a product offering that is standalone and could be used independently of G Suite (now called Google Workspace). It’s also used with Google Cloud, regardless of whether a Google Cloud customer also uses Google Workspace.
+Before we dive in, we need to establish some common ground on terminology. Specifically, we’ll cover Google Cloud Identity and its relationship with Google Workspace (G Suite), and Google Cloud. Google Cloud Identity, as a technology stack, has been around for many years. It’s most recognized as the identity ‘engine’ behind Gmail, G Suite or Google Workspace, where it’s been used for years. This was well before it ever became a standalone product offering can be used independently of G Suite (now called Google Workspace). It’s also used with Google Cloud, regardless of whether a Google Cloud customer also uses Google Workspace.
 
 Consider the following diagram, which represents the structure/relationship between Google Cloud Identity, Google Workspace, and Google Cloud:
 
 ![google-cloud-identity](/en-us/tech-zone/learn/media/citrix-google-zero-trust_google-cloud-identity.png)
 
-Google Cloud Identity, as a set of services, underpins all the services shown above. It’s a multi-tenant cloud service, and the primary domain uniquely represents each tenant. In the case of the lab we used to build this guide, that primary domain is *silvertonhcl.citrix.com*.
+Google Cloud Identity, as a set of services, underpins all the services shown above. It’s a multitenant cloud service, and the primary domain uniquely represents each tenant. In the case of the lab we used to build this guide, that primary domain is *silvertonhcl.citrix.com*.
 
 The Google Admin Console manages the GCID (Google Cloud Identity) tenant. It also manages numerous other services. This includes Google Workspace, Chrome Enterprise device management, and management of the users, groups, and OUs inside the identity tree.
 
@@ -41,7 +41,7 @@ Cloud IAP requires Google Cloud Identity, and applies users/groups defined in Cl
 
 It’s important to note that while GCID can be configured to trust a third party SAML IdP, **you can only configure one provider**. That provider is then used as the IdP for the entire GCID domain. It is also used for all Google services which rely on GCID. These include Google Workspace, IAP, IAM, and third party applications or services which are configured to trust GCID as SAML IdP.
 
-It’s also important to note that a single Citrix Workspace (Citrix Cloud tenant) supports **one active IdP at a time**. However, for solution proofing you can toggle between configured IdPs. Each Workspace has a unique, customer configurable FQDN (https://< ucid >.cloud.com). This toggle impacts all users who use the Citrix Workspace instance on that unique FQDN. If you’re evaluating different IdP’s for Citrix Workspace, make sure you use a non-production Citrix Cloud tenant so you don’t adversely impact production users.
+It’s also important to note that a single Citrix Workspace (Citrix Cloud tenant) supports **one active IdP at a time**. However, for solution proofing you can toggle between configured IdPs. Each Workspace has a unique, customer configurable FQDN (https://< customer-FQDN >.cloud.com). This toggle impacts all users who use the Citrix Workspace instance on that unique FQDN. If you’re evaluating different IdP’s for Citrix Workspace, make sure you use a non-production Citrix Cloud tenant so you don’t adversely impact production users.
 
 This PoC Guide introduces the following identity federation architectures:
 
@@ -51,7 +51,7 @@ In this common scenario, the customer chooses to use their own instance of Micro
 
 Citrix Workspace also provides you with integrated, time-based one-time password functionality. The functionality can be enabled for this scenario. This functionality provides customers with a two-factor authentication solution without purchasing any additional software, providing an extra layer of security on top of this industry leading solution. For more information on how to enable Active Directory plus token authentication in Citrix Workspace, see [Connect Active Directory to Citrix Cloud](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/identity-access-management/connect-ad.html).
 
-This Proof of Concept Guide focuses on the Active Directory as IdP authentication scenario, providing detailed guidance on setup and configuration. It’s simple to set up, does not require any additional, third party software, and provides the best user experience for most access scenarios. It allows Citrix Workspace users to single sign-on to Google products and services (Google Workspace, Google Cloud console, etc.). It also provides rich signals to Citrix Analytics, further strengthening the security posture and manageability of the solution.
+This Proof of Concept Guide focuses on the Active Directory as IdP authentication scenario, providing detailed guidance on setup and configuration. It’s simple to set up, does not require any additional, third party software, and provides the best user experience for most access scenarios. It allows Citrix Workspace users to single sign-on to Google products and services (such as Google Workspace and the Google Cloud console). It also provides rich signals to Citrix Analytics, further strengthening the security posture and manageability of the solution.
 
 #### Scenario 2 - Okta as primary IdP
 
@@ -65,7 +65,7 @@ While this authentication scenario is beyond the scope of this PoC Guide, furthe
 
 In this scenario, the customer chooses to use [Google Cloud Identity](https://cloud.google.com/identity) as their primary IdP. Google Cloud Identity (GCID) is used for access to Google Workspace, Chrome, Chrome OS, Android, and potentially other SaaS applications which are configured to use Google Cloud Identity as the IdP. Citrix Workspace is also configured to use Google Cloud Identity as the IdP. If the customer also deploys virtualized applications via Citrix Workspace, Google Cloud Directory Sync ensures appropriate user objects exist in Active Directory. It also synchronizes specific active directory user attributes back to GCID, enabling Citrix Federated Authentication Services to single sign-on users to virtualized applications and desktops.
 
-This scenario allows the customer to take advantage of Google Cloud Identity’s advanced features, such as multi-factor authentication. It also provides access to Google’s library of pre-integrated SAML 2.0 and OpenID Connect apps, and the ability to look into threats with Security Center.
+This scenario allows the customer to take advantage of Google Cloud Identity’s advanced features, such as multifactor authentication. It also provides access to Google’s library of pre-integrated SAML 2.0 and OpenID Connect apps, and the ability to look into threats with Security Center.
 
 This scenario does not currently allow Citrix Workspace to provide you with single sign-on to Google products and services. Although with Google Chrome on the endpoint, Chrome handles the SSO directly. This scenario also currently reduces the quantity of threat intelligence signals fed to Citrix Analytics. It requires the use of Citrix Federated Authentication Services to provide SSO to virtualized applications and desktops.
 
@@ -76,14 +76,12 @@ Both Google BeyondCorp and Citrix Workspace provide several advanced mechanisms 
 Policy Definition (with BeyondCorp)  
 Both platforms control who has access to web apps by authorizing (or subscribing) users based on group membership, though individual user accounts can also be used. In the integrated solution, they also use a common identity provider for authentication and the same groups for authorization.
 
-BeyondCorp allows us to further restrict access to an IAP-secured app by using [IAM Conditions](https://cloud.google.com/iam/docs/conditions-overview). Think of IAM Conditions as a flexible
-
-IAM Conditions are implemented by binding them to an IAM Role assignment. IAM conditions can be created based on the following ‘out of the box”:
+BeyondCorp allows us to further restrict access to an IAP-secured app by using [IAM Conditions](https://cloud.google.com/iam/docs/conditions-overview). IAM Conditions are implemented by binding them to an IAM Role assignment. IAM conditions can be created based on the following ‘out of the box”:
 
 -  [resource attributes](https://cloud.google.com/iam/docs/conditions-resource-attributes) (that is, the resource being accessed. Type, Service, or name). See [Configuring resource-based access](https://cloud.google.com/iam/docs/configuring-resource-based-access) for more information.
--  [request attributes](https://cloud.google.com/iam/docs/conditions-overview#request_attributes) (that is, date/time, host/path).  See [Configuring temporary access](https://cloud.google.com/iam/docs/configuring-temporary-access) and [Using hostname and path conditions](https://cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto#using_hostname_and_path_conditions) to learn more.
+-  [request attributes](https://cloud.google.com/iam/docs/conditions-overview#request_attributes) (that is, date/time, host/path).  See [Configuring temporary access](https://cloud.google.com/iam/docs/configuring-temporary-access) and [Using host name and path conditions](https://cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto#using_hostname_and_path_conditions) to learn more.
 
-BeyondCorp can also use Access levels which are created and managed at the GCP Organizational level under Security/Access Context Manager. These can be flexibly applied to IAP-protected resources using IAM Conditions. Access levels can be set up based on
+BeyondCorp can also use Access levels which are created and managed at the GCP Organizational level under Security/Access Context Manager. These can be flexibly applied to IAP-protected resources using IAM Conditions. Access levels can be set up based on a number of different [Access level attributes](https://cloud.google.com/access-context-manager/docs/access-level-attributes) including IP subnetwork, request origin (region), user identity, and device attributes. Access levels can also be combined or nested together to create granularly enforce corporate policy across a variety of access scenarios.
 
 As we pointed out earlier, the Authentication and Authorization configuration has a direct impact upon the user experience. It also affects the quantity and richness of threat signals that are captured. Regardless of the AA configuration chosen, users get a streamlined login experience including single sign-on. Users also get a curated access experience, with all the applications and information being presented through the Citrix Workspace and Google Chrome.
 
@@ -123,15 +121,15 @@ To build this solution, you need the following:
 -  One or more test user accounts which are NOT super-admins.
 Why? Super-admins always bypass third party IdP configurations and authenticate directly to Google Cloud ID. As such, they’re not so useful for evaluating the user experience.
 -  A [Google Cloud organization resource](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#organizations) (created automatically when a Google Cloud Identity user logs into the [Google Cloud Console](https://console.cloud.google.com)). You also need an account that has the rights to administer Access Context Manager. See [IAM Roles for Administering Access Context Manager](https://cloud.google.com/access-context-manager/docs/access-control) for more information.
--  A GCP Project associated with the Google Cloud organization, with billing enabled. You also need a user with Project Owner rights. The IAP-protected resource resides in this project, as well as some IAP specific settings such as OAuth consent/credentials.
+-  A GCP Project associated with the Google Cloud organization, with billing enabled. You also need a user with Project Owner rights. The IAP-protected resource resides in this project, as do some IAP specific settings such as OAuth consent/credentials.
 -  A Citrix Cloud tenant, with full Administrator rights. You’ll also need an active trial or paid subscription for Citrix Workspace Premium or Citrix Workspace Premium Plus.
 -  For the Authentication and Authorization scenario we’re going to cover here, you need:
-    -  An online Citrix Cloud resource Location, with at least one Cloud Connector installed. The Windows Server(s) with the Cloud Connector installed must be a member of an Active Directory domain. This is how Citrix Cloud communicates with the AD we use for federation. For an overview of how to set up a Citrix Cloud ‘Resource Location’, see [Set up resource locations](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html).
+    -  An online Citrix Cloud resource location, with at least one Cloud Connector installed. The Windows Server(s) with the Cloud Connector installed must be a member of an Active Directory domain. This is how Citrix Cloud communicates with the AD we use for federation. For an overview of how to set up a Citrix Cloud ‘Resource Location’, see [Set up resource locations](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html).
     -  Google Cloud Directory Sync installed/configured/run, with sample users and groups synchronized between Active Directory and Google Cloud Identity. For a walk-through of configuring/using GCDS, see [Federating Google Cloud with Active Directory: Provisioning user accounts](https://cloud.google.com/architecture/identity/federating-gcp-with-active-directory-synchronizing-user-accounts). To examine a functional GCDS configuration, see [Appendix 1: Sample Google Cloud Directory Sync configuration](#Appendix-1:-Sample-Google-Cloud-Directory-Sync-configuration).
 
 ### Basic Setup
 
-Once you’ve collected and/or created the solution prerequisites, you can move on to configuring the basic integrations needed for the BeyondCorp/Citrix Workspace Zero Trust Access solution. These steps lay the foundation for exploring the advanced capabilities in the **Advanced Setup** section that follows. Before you begin the Advanced Setup, you need to complete the following steps:
+Once you’ve collected or created the solution prerequisites, you can move on to configuring the basic integrations needed for the BeyondCorp/Citrix Workspace Zero Trust Access solution. These steps lay the foundation for exploring the advanced capabilities in the **Advanced Setup** section that follows. Before you begin the Advanced Setup, you need to complete the following steps:
 
 #### Step 1: Create a basic Google Cloud IAP sample application
 
@@ -157,7 +155,7 @@ Once you’ve got the “IAP sample app” created, let’s check our work! Chec
     >
     > ![iap-example-1](/en-us/tech-zone/learn/media/citrix-google-zero-trust_iap-example-1.png)
 
--  Launch an incognito window in Chrome, connect to the FQDN on your load balancer (that is, [https://app.domain](https://app.domain)). You should be redirected to and greeted by the Google sign-in dialog:
+-  Launch an incognito window in Chrome, connect to the FQDN on your load balancer (that is, [https://app.domain](https://app.domain)). You will be redirected to and greeted by the Google sign-in dialog:
 
     ![“sign in dialog](/en-us/tech-zone/learn/media/citrix-google-zero-trust_sign-in-dialog.png)
 
@@ -165,7 +163,7 @@ Once you’ve got the “IAP sample app” created, let’s check our work! Chec
     >
     > In our lab environment, the FQDN we configured for our IAP sample app was <https://iapsample1.silvertonhcl.com>. We used “BeyondCorp-Citrix IAP Validation” as the OAUTH consent screen title:![consent-screen-title](/en-us/tech-zone/learn/media/citrix-google-zero-trust_consent-screen-title.png)
 
--  From that sign-in dialog, you should be able to log in with a user that’s a member of the group you assigned the “IAP-secured Web App User” role to. It should log you into your sample app successfully:
+-  From that sign-in dialog, you will be able to log in with a user that’s a member of the group you assigned the “IAP-secured Web App User” role to. It will log you into your sample app successfully:
 
     ![consent-screen-title](/en-us/tech-zone/learn/media/citrix-google-zero-trust_sample-app.png)
 
@@ -177,15 +175,15 @@ In this step, you create a ‘special’ application in the Citrix Cloud Library
 
 Once it’s configured, we’re going to use the ‘special’ application’s SSO properties to configure Google Cloud ID to use Citrix Workspace as it’s IdP.
 
-Finally, we test our work! After completing this step, our test user should be able to log directly into our sample IAP-secured web app. This is done by providing valid Active Directory credentials to Citrix Workspace’s authentication flow. Our test user should also be able to log into Citrix Workspace and see/launch the ‘special’ application we created in the Citrix Cloud Library.
+Finally, we test our work! After completing this step, our test user will be able to log directly into our sample IAP-secured web app. This is done by providing valid Active Directory credentials to Citrix Workspace’s authentication flow. Our test user will also be able to log into Citrix Workspace and see/launch the ‘special’ application we created in the Citrix Cloud Library.
 
-##### 2a: Verify prerequisites are in place for the Active Directory as IdP auth scenario
+##### 2a: Verify prerequisites are in place for the Active Directory as IdP authentication scenario
 
 We called these prerequisites out in the previous section, but it’s worth calling out again as you need them to complete this build. Those prerequisites are:
 
 -  An online Citrix Cloud resource Location, with at least one Cloud Connector installed. The Windows Server(s) with the Cloud Connector installed must be a member of an Active Directory domain.
 -  Google Cloud Directory Sync installed/configured/run, with sample users and groups synchronized between Active Directory and Google Cloud Identity. For a walk-through of configuring/using GCDS, [see Federating Google Cloud with Active Directory: Provisioning user accounts](https://cloud.google.com/architecture/identity/federating-gcp-with-active-directory-synchronizing-user-accounts). For more details on the GCDS sync profile we used for this build, see [Appendix 1: Sample Google Cloud Directory Sync configuration](#Appendix-1:-Sample-Google-Cloud-Directory-Sync-configuration).
--  To verify that you’ve got a resource location up, and that AD is available to your Workspace tenant, log into the Citrix Cloud console. Click the hamburger icon in the top left corner, and navigate to Identity and Access Management/Domains. You should see at least 1 resource location and one forest/domain.
+-  To verify that you’ve got a resource location up, and that AD is available to your Workspace tenant, log into the Citrix Cloud console. Click the hamburger icon in the top left corner, and navigate to Identity and Access Management/Domains. You will see at least 1 resource location and one forest/domain.
 
     > **For context:**
     >
@@ -193,13 +191,13 @@ We called these prerequisites out in the previous section, but it’s worth call
     >
     > ![resource location](/en-us/tech-zone/learn/media/citrix-google-zero-trust_resource-location.png)
 
--  To verify that GCDS has synchronized AD with Google Cloud ID, inspect your test users and the groups you are using side by side between the two identity stores. They should both exist in both identity stores, and share common attributes.
+-  To verify that GCDS has synchronized AD with Google Cloud ID, inspect your test users and the groups you are using side by side between the two identity stores. They must both exist in both identity stores, and share common attributes.
 
     > **For context:**
     >
     > Our test user is bcuser@silvertonhcl.com. The user has both **email** and **UPN** attributes set, giving us flexibility in what attribute we’re keying off of to trigger GCDS to synchronize the user object. We’re expecting users to apply UPN/email address for login.
     >
-    > ![verify that gcds](/en-us/tech-zone/learn/media/citrix-google-zero-trust_verify-that-gcds.png)
+    > ![verify account synchronization](/en-us/tech-zone/learn/media/citrix-google-zero-trust_verify-that-gcds.png)
     >
     > We’re using two groups for this system build - Citrix Workspace Users and IAP BeyondCorp Users. The groups also have an email attribute set - we’re keying off this attribute to trigger GCDS synchronization. Google Cloud also uses the group email address when assigning IAM permissions in the Google Cloud Console:
     >
@@ -246,11 +244,11 @@ Click **Save**, and Finish to create our ‘special’ app.
 
 In the Citrix Cloud console, navigate back to the Library, find your special app, and **authorize users** for access. This authorization is done by clicking the ellipsis (three dots) and choosing ‘Manage Subscribers’:
 
-![G suite](/en-us/tech-zone/learn/media/citrix-google-zero-trust_gsuit.png)
+![G Suite](/en-us/tech-zone/learn/media/citrix-google-zero-trust_gsuit.png)
 
 Make sure you select your domain, and pick your users or group(s) to authorize them for this app. Pick carefully! We’re using the SAML properties/auth point from this Library app to configure GCID to trust Workspace as IdP. **Workspace won’t authorize users to log into other Google services (such as Google Workspace) without being subscribed to this ‘special’ Library app**.
 
-![G suite hub](/en-us/tech-zone/learn/media/citrix-google-zero-trust_g-suit-hub.png)
+![G Suite hub](/en-us/tech-zone/learn/media/citrix-google-zero-trust_g-suit-hub.png)
 
 > **Note**
 >
@@ -260,7 +258,7 @@ Make sure you select your domain, and pick your users or group(s) to authorize t
 
 We have our ‘special’ Library app configured, and we’ve got the SAML configuration information - Login URL and Certificate. We can now configure GCID to trust Workspace as third Party IdP. To accomplish this, log into the Google Admin console ([https://admin.google.com](https://admin.google.com)) as a superadmin for your GCID domain. Navigate to Security, Settings, then find and click the Set-up single sign-on (SSO) with a third party IdP topic. Configure the URL values appropriately, upload the certificate, tick 'Use a domain specific issuer', and click Save (bottom right corner of the page):
 
-![party IDP](/en-us/tech-zone/learn/media/citrix-google-zero-trust_party-idp.png)
+![3rd party IdP](/en-us/tech-zone/learn/media/citrix-google-zero-trust_party-idp.png)
 
 > **Note**
 >
@@ -272,7 +270,7 @@ We have our ‘special’ Library app configured, and we’ve got the SAML confi
 
 >**Note**
 >
->Citrix Workspace, when operating as an IdP, does not currently provide a change password URL. See [404 error on Chrome signout](#issue:-404-error-on-chrome-logout) for details.
+>Citrix Workspace, when operating as an IdP, does not currently provide a change password URL. See [404 error on Chrome sign out](#issue:-404-error-on-chrome-logout) for details.
 
 Once you’ve got GCID setup to trust Workspace as third party IdP, you’re ready to move on!
 
@@ -288,11 +286,11 @@ To start verifying, open a Chrome incognito window and connect to our ‘special
 >
 >Want to simplify the logon experience for IAP-protected resources? Consider setting access_settings.oauth_settings.login_hint - it can save some clicks and improve the access experience for your users. See [Authenticating using a Google Workspace domain](https://cloud.google.com/iap/docs/customizing#authenticating_using_a_domain) in the IAP documentation.
 
-As long as your test user is NOT a GCID super admin, you should be directed into the Citrix Workspace authentication flow. (Remember that [GCID ‘super admins’ are ‘exempt’](https://support.google.com/a/answer/6341409?hl=en) from using the third party IdP authentication flow!) Click **Sign In** for Employee Users:
+As long as your test user is NOT a GCID super admin, you will be directed into the Citrix Workspace authentication flow. (Remember that [GCID ‘super admins’ are ‘exempt’](https://support.google.com/a/answer/6341409?hl=en) from using the third party IdP authentication flow!) Click **Sign In** for Employee Users:
 
 ![Employee Users](/en-us/tech-zone/learn/media/citrix-google-zero-trust_employee-users.png)
 
-You should be directed to the Citrix Workspace authentication form. Here’ we’ve applied [custom branding to our Workspace](https://docs.citrix.com/en-us/citrix-workspace/configure.html#customize-the-appearance-of-workspaces) - the Google Cloud logo is a good visual indication that we’re on the right track! We’ll log in with our test user account:
+You will be directed to the Citrix Workspace authentication form. Here’ we’ve applied [custom branding to our Workspace](https://docs.citrix.com/en-us/citrix-workspace/configure.html#customize-the-appearance-of-workspaces) - the Google Cloud logo is a good visual indication that we’re on the right track! We’ll log in with our test user account:
 
 ![authentication form](/en-us/tech-zone/learn/media/citrix-google-zero-trust_authentication-form.png)
 
@@ -300,22 +298,22 @@ If all goes to plan, our ‘special’ app comes up, and our test user is logged
 
 ![Dashboard](/en-us/tech-zone/learn/media/citrix-google-zero-trust_dashboard.png)
 
-Assuming your first test was successful, we can now test the same app launch through the Citrix Workspace app. If you don’t have the Citrix Workspace app installed, you can download it from the [Workspace app download page](https://www.citrix.com/downloads/workspace-app/). Configure it to use your test Workspace URL (<https://silvertonhcl.cloud.com> in our case) on first use. Then you should see the same (possibly customized) login dialog. Go ahead and sign in.
+Assuming your first test was successful, we can now test the same app launch through the Citrix Workspace app. If you don’t have the Citrix Workspace app installed, you can download it from the [Workspace app download page](https://www.citrix.com/downloads/workspace-app/). Configure it to use your test Workspace URL (<https://silvertonhcl.cloud.com> in our case) on first use. Then you will see the same (possibly customized) login dialog. Go ahead and sign in.
 
 ![login dialog](/en-us/tech-zone/learn/media/citrix-google-zero-trust_login-dialog.png)
 
-After a successful login, we should be able to find and click to launch our ‘special’ app:
+After a successful login, we will be able to find and click to launch our ‘special’ app:
 
 ![click to launch](/en-us/tech-zone/learn/media/citrix-google-zero-trust_click-to-launch.png)
 
-Assuming we’re not already logged into Chrome, we should see a verification dialog similar to the one below:
+Assuming we’re not already logged into Chrome, we will see a verification dialog similar to the one below:
 ![verification dialog](/en-us/tech-zone/learn/media/citrix-google-zero-trust_verification-dialog.png)
 
 >**Note**
 >
 >The user sign-on experience can get more complicated if you are already logged into Chrome as a different user. This is also true if you’ve got multiple users logged into Chrome. For simplicity/clarity, we test with no users logged in.
 
-After clicking **Continue** at the ‘speed bump’, we should be logged into both our ‘special’ app and Chrome as our test user:
+After clicking **Continue** at the ‘speed bump’, we will be logged into both our ‘special’ app and Chrome as our test user:
 
 ![speed bump](/en-us/tech-zone/learn/media/citrix-google-zero-trust_speed-bump.png)
 
@@ -347,7 +345,7 @@ After you’ve configured the **SSO** properties correctly (including enabling S
 
 ##### 3b: Authorize users/groups to use the IAP-protected Library application
 
-This step uses the same flow as we executed in [this earlier step](#2c:-authorize-users/groups-to-use-the-‘special’-app), though we’re going to use a different user group this time. In our lab, we’re using this group specifically to authorize users to access IAP-protected applications, but your authorization strategy may differ:
+This step uses the same flow as we ran in [this earlier step](#2c:-authorize-users/groups-to-use-the-‘special’-app), though we’re going to use a different user group this time. In our lab, we’re using this group specifically to authorize users to access IAP-protected applications, but your authorization strategy may differ:
 
 ![manage subscribers](/en-us/tech-zone/learn/media/citrix-google-zero-trust_manage-subscribers.png)
 
@@ -355,21 +353,21 @@ This step uses the same flow as we executed in [this earlier step](#2c:-authoriz
 
 ##### 3c: Retest access to the IAP-protected app
 
-Now that we’ve published our IAP-protected app as a Citrix Library app, we can test our work! We start with a Chrome incognito window and work our way up the stack. Open a fresh Chrome incognito window and direct it to the IAP-protected app URL. In our lab, that’s <https://iapsample1.silvertonhcl.com>. You should see the same ‘speed bump’ dialog we saw when we tested the IAP-protected app earlier. It should show the title you configured for your **OAUTH consent** screen. In our case, we used “BeyondCorp-Citrix IAP Validation” as the **OAUTH consent** screen title:
+Now that we’ve published our IAP-protected app as a Citrix Library app, we can test our work! We start with a Chrome incognito window and work our way up the stack. Open a fresh Chrome incognito window and direct it to the IAP-protected app URL. In our lab, that’s <https://iapsample1.silvertonhcl.com>. You will see the same ‘speed bump’ dialog we saw when we tested the IAP-protected app earlier. It will show the title you configured for your **OAUTH consent** screen. In our case, we used “BeyondCorp-Citrix IAP Validation” as the **OAUTH consent** screen title:
 
 ![“BeyondCorp-Citrix IAP Validation](/en-us/tech-zone/learn/media/citrix-google-zero-trust_beyondcorp-citrix-iap-validation.png)
 
-This time, however, we should be redirected through the Citrix Workspace authentication flow, ultimately entering our test user credentials into the Workspace login form:
+This time, however, we will be redirected through the Citrix Workspace authentication flow, ultimately entering our test user credentials into the Workspace login form:
 
 ![Workspace login form](/en-us/tech-zone/learn/media/citrix-google-zero-trust_workspace-login-form.png)
 
 ![Workspace login form](/en-us/tech-zone/learn/media/citrix-google-zero-trust_workspace-login-form-next.png)
 
-We should now be connected to the IAP-protected sample application, authenticated as our test user:
+We will now be connected to the IAP-protected sample application, authenticated as our test user:
 
 ![test user](/en-us/tech-zone/learn/media/citrix-google-zero-trust_test-user.png)
 
-Now let’s proceed with testing the launch from the **Citrix Workspace app**. Log into the Citrix Workspace app as your sample user, if you haven’t already done so. Find the IAP-protected sample app and launch it. You may need to refresh your Workspace to see the IAP-protected sample app, but once you find it, click to launch it. You should see a similar ‘speed bump’ dialog we saw earlier:
+Now let’s proceed with testing the launch from the **Citrix Workspace app**. Log into the Citrix Workspace app as your sample user, if you haven’t already done so. Find the IAP-protected sample app and launch it. You may need to refresh your Workspace to see the IAP-protected sample app, but once you find it, click to launch it. You will see a similar ‘speed bump’ dialog we saw earlier:
 
 ![test the launch](/en-us/tech-zone/learn/media/citrix-google-zero-trust_test-the-launch.png)
 
@@ -377,7 +375,7 @@ Now let’s proceed with testing the launch from the **Citrix Workspace app**. L
 >
 >The access experience can get more complicated if you’re logged into Chrome as a different user. This is also true if you’ve got multiple users logged in. For simplicity while testing, remove all cookies and sign out of Chrome before launching the IAP-protected app from Citrix Workspace.
 
-After a few authentication redirects, you should be logged into both Chrome and the IAP-protected app - without signing in again:
+After a few authentication redirects, you will be logged into both Chrome and the IAP-protected app - without signing in again:
 
 ![without signing in again](/en-us/tech-zone/learn/media/citrix-google-zero-trust_without-signing-in-again.png)
 
@@ -387,15 +385,15 @@ Finally, let’s test accessing the IAP-protected app from **Citrix Workspace we
 
 > The URL for our lab Citrix Workspace is <https://silvertonhcl.cloud.com>. Yours will be different.
 
-Upon login, your test user is presented with its authorized apps. Click on your IAP-protected sample app to launch it. You should see the same results you saw when launching your IAP-protected app directly from Chrome earlier.
+Upon login, your test user is presented with its authorized apps. Click your IAP-protected sample app to launch it. You will see the same results you saw when launching your IAP-protected app directly from Chrome earlier.
 
 ### Advanced Setup
 
-You’ve successfully built and tested a basic Zero Trust Access solution with BeyondCorp/Citrix Workspace. Now it’s time to get into some more advanced topics. Both platforms provide mechanisms for defining and/or enforcing corporate access policies in this Zero Trust Access solution. In this section, we’re going to explore these policy mechanisms by building upon the foundation we’ve already created. We’ll then run through our access scenarios, checking/validating the user experience.
+You’ve successfully built and tested a basic Zero Trust Access solution with BeyondCorp/Citrix Workspace. Now it’s time to get into some more advanced topics. Both platforms provide mechanisms for defining and enforcing corporate access policies in this Zero Trust Access solution. In this section, we’re going to explore these policy mechanisms by building upon the foundation we’ve already created. We’ll then run through our access scenarios, checking/validating the user experience.
 
 #### Step 4: Applying DLP controls using Citrix Enhanced Security on IAP-protected web apps
 
-Citrix Workspace provides extra security features which can be optionally enabled for **web and SaaS apps** on an application by application basis. The Enhanced security features are a property of the app in the Library, and include options to restrict clipboard access, printing, navigation, and downloads. It can also display a watermark of the user name and IP address to help deter users from collecting screen shots of sensitive data. In this step, you enable Enhanced security on your Library app, then test the user experience.
+Citrix Workspace provides extra security features which can be optionally enabled for **web and SaaS apps** on an application by application basis. The Enhanced security features are a property of the app in the Library, and include options to restrict clipboard access, printing, navigation, and downloads. It can also display a watermark of the user name and IP address to help deter users from collecting screenshots of sensitive data. In this step, you enable Enhanced security on your Library app, then test the user experience.
 
 ##### 4a: Enable Enhanced Security
 
@@ -423,7 +421,7 @@ For clarity of the UX, notice that our test user is not signed into Chrome, even
 
 ![clarity of the UX](/en-us/tech-zone/learn/media/citrix-google-zero-trust_clarity-of-the-ux.png)
 
-You notice a slightly different user experience with this test - we’ve highlighted some of the differences in UX above. The UX differs when the web application with Citrix Enhanced Security enabled launches from Workspace web. It could also be from Workspace app on end user devices that run something other than Windows or OSX. This is because the app launches in a separate browser tab using Citrix’s Secure Browser service. The Secure Browser service provides a virtualized browser instance that runs inside the local browser tab. It enforces the Enhanced Security options in the virtualized browser.
+You notice a slightly different user experience with this test - we’ve highlighted some of the differences in UX above. The UX differs when the web application with Citrix Enhanced Security enabled launches from Workspace web. It might also be from Workspace app on end user devices that run something other than Windows or OSX. This is because the app launches in a separate browser tab using Citrix’s Secure Browser Service. The Secure Browser Service provides a virtualized browser instance that runs inside the local browser tab. It enforces the Enhanced Security options in the virtualized browser.
 
 When we click through the ‘speed bump’ logon flow, our IAP-protected app comes up and the same DLP controls we saw/enabled earlier are applied:
 
@@ -433,7 +431,7 @@ You’ve worked with Citrix Workspace’s Enhanced Security options. Now let’s
 
 #### Step 5: Explore advanced access policy controls in BeyondCorp
 
-In [Step 1 of this guide](#step-1:-Create-a-basic-Google-Cloud-IAP-sample-application), we created a basic IAP-protected sample web application. We saw how IAP works with GCID to authorize access based on group membership, using an IAM policy and the “IAP-secured Web App User” IAM role. To help understand what we built earlier, consider the following screenshot. It shows the properties of the IAP-secured sample app we created earlier:
+In [Step 1 of this guide](#step-1:-Create-a-basic-Google-Cloud-IAP-sample-application), we created a basic IAP-protected sample web application. We saw how IAP uses GCID to authorize access based on group membership, using an IAM policy and the “IAP-secured Web App User” IAM role. To help understand what we built earlier, consider the following screenshot. It shows the properties of the IAP-secured sample app we created earlier:
 
 ![Step 1 of this guide](/en-us/tech-zone/learn/media/citrix-google-zero-trust_step-1-of-this-guide.png)
 
@@ -484,13 +482,13 @@ Now let’s create a second Access level using the properties shown below:
 
 We call this one **on_authorized_device**. We configure this access level to use a Device Policy, which means we are deploying and using the Endpoint Verification extension with Chrome. We use a [simple policy attribute](https://cloud.google.com/endpoint-verification/docs/setting-up-device-approvals) which requires Admin intervention, providing us with an opportunity to explore the user experience end to end. Click save when you’re done.
 
-You should now see the two access levels in Access Context Manager:
+You will now see the two access levels in Access Context Manager:
 
 ![Access Context Manager](/en-us/tech-zone/learn/media/citrix-google-zero-trust_5a-access-context-manager.png)
 
 ##### 5b: Bind Access levels to IAP-protected resource
 
-Now that we’ve got a couple access levels defined, it’s time to bind them to our IAP-protected resource. Start by selecting the project that contains your IAP-protected resource, navigating down to Security/Identity-Aware Proxy. You should see your IAP resource object. It is likely to have the unconditional IAM policy binding we created in Step 1.
+Now that we’ve got a couple access levels defined, it’s time to bind them to our IAP-protected resource. Start by selecting the project that contains your IAP-protected resource, navigating down to Security/Identity-Aware Proxy. You will see your IAP resource object. It is likely to have the unconditional IAM policy binding we created in Step 1.
 
 >**Note**
 >
@@ -504,11 +502,11 @@ After clicking **Add Member**, re-create the policy binding by identifying your 
 
 ![selecting role](/en-us/tech-zone/learn/media/citrix-google-zero-trust_5b-selecting-role.png)
 
-After selecting the IAP-secured Web App User role, the **Access Levels** drop-down should appear. Click the down arrow to see the access levels we created earlier. You should be able to select one or more access levels to restrict the policy binding further.
+After selecting the IAP-secured Web App User role, the **Access Levels** drop-down list will appear. Click the down arrow to see the access levels we created earlier. You will be able to select one or more access levels to restrict the policy binding further.
 
 >**Note**
 >
-> Not seeing the Access Levels drop down? Check your admin user’s IAM role bindings in the project. Select your IAP Project, then navigate to Security/IAM. Your admin user should have the **Access Context Manager Admin** role and the **IAP Policy Admin** roles assigned either directly or via policy inheritance.
+> Not seeing the Access Levels drop down? Check your admin user’s IAM role bindings in the project. Select your IAP Project, then navigate to Security/IAM. Your admin user must have have the **Access Context Manager Admin** role and the **IAP Policy Admin** roles assigned either directly or via policy inheritance.
 
 Start by binding **on_authorized_network** and save the binding. This process is repeated later to validate our second access level policy.
 
@@ -516,9 +514,9 @@ Start by binding **on_authorized_network** and save the binding. This process is
 
 >**Note**
 >
-> Policy bindings should be replicated and active in 60 seconds or less. Although certain policies can take up to 7 minutes to replicate and become active.
+> Policy bindings are usually replicated and active in 60 seconds or less. Although certain policies can take up to 7 minutes to replicate and become active.
 
-##### 5c: Test on_authorized_network access level bindin
+##### 5c: Test on_authorized_network access level binding
 
 Now that we have our first access level bound to the IAP-protected app, let’s proceed with testing the UX.
 
@@ -542,15 +540,15 @@ Now we try the launch from Citrix Workspace web:
 
 ![launch from Citrix Workspace web](/en-us/tech-zone/learn/media/citrix-google-zero-trust_5c-launch-from-citrix-workspace-web.png)
 
-As we’d expect, access is denied again. Our IAP-protected app was launched in a separate tab using Citrix’s Secure Browser service. Notice also the Citrix Enhance Security DLP controls activated. There’s a watermark over the top of the UI. You see the IP address identified is different: why? In the previous screenshot, the IAP-protected app is processed and presented using Citrix Workspace’s embedded browser that runs on the client device. This has a local IP address of 192.168.42.x. In the screenshot above, the IAP-protected app is processed and presented from a virtualized browser in the cloud. That browser has both a different private and public IP address.
+As we’d expect, access is denied again. Our IAP-protected app was launched in a separate tab using Citrix’s Secure Browser Service. Notice also the Citrix Enhance Security DLP controls activated. There’s a watermark over the top of the UI. You see the IP address identified is different: why? In the previous screenshot, the IAP-protected app is processed and presented using Citrix Workspace’s embedded browser that runs on the client device. This has a local IP address of 192.168.42.x. In the screenshot above, the IAP-protected app is processed and presented from a virtualized browser in the cloud. That browser has both a different private and public IP address.
 
 Now let’s test from our device that IS on the IP network we’d previously defined as ‘authorized’. First up - a direct launch from Chrome:
 
 ![direct launch from Chrome](/en-us/tech-zone/learn/media/citrix-google-zero-trust_5c-direct-launch-from-chrome.png)
 
-No surprises there. Now let’s try launching from Citrix Workspace App:
+No surprises there. Now let’s try launching from Citrix Workspace app:
 
-![try launching from Citrix Workspace App](/en-us/tech-zone/learn/media/citrix-google-zero-trust_5c-try-launching-from-citrix-workspace-app.png)
+![try launching from Citrix Workspace app](/en-us/tech-zone/learn/media/citrix-google-zero-trust_5c-try-launching-from-citrix-workspace-app.png)
 
 Again no surprises. ...or is there one? Since Enhanced security is still enabled, we’d expect it to launch using the Workspace embedded browser, but notice the IP address in the watermark: it doesn’t match our ‘authorized network’, so what’s up? The IP address in the watermark is the local private IP address on the client, but outbound Internet access goes through Cloud NAT in this case. The NAT’d external IP address IS in the ‘authorized’ CIDR block we used when defining our currently bound access level. Since IAP ‘sees’ our traffic coming from the NAT’d external IP, it’s allowed through.
 
@@ -558,7 +556,7 @@ Finally, a launch through Citrix Workspace web:
 
 ![launch through Citrix Workspace web](/en-us/tech-zone/learn/media/citrix-google-zero-trust_5c-launch-through-citrix-workspace-web.png)
 
-Since we launched the IAP-protected app through Workspace web, we’d expect it to launch in a separate tab and use the Secure Browser service. Since the virtualized browser is actually running in the cloud, we’d expect it to have a different IP address. This isn’t going to match our ‘authorized’ CIDR block.
+Since we launched the IAP-protected app through Workspace web, we’d expect it to launch in a separate tab and use the Secure Browser Service. Since the virtualized browser is actually running in the cloud, we’d expect it to have a different IP address. This isn’t going to match our ‘authorized’ CIDR block.
 
 ##### 5d: Enable Endpoint Verification extension (and optionally deploy with Chrome Enterprise policy)
 
@@ -566,7 +564,7 @@ For our last scenario, we’re going to apply an access level (policy) that inco
 
 To get started, let’s first make sure that Endpoint Verification is enabled. Turn endpoint verification on or off describes how to enable EV if needed, though it’s enabled by default. Here’s a quick snip of the instructions:
 
-![Endpoint Verificatio](/en-us/tech-zone/learn/media/citrix-google-zero-trust_5d-endpoint-verification.png)
+![Endpoint Verification](/en-us/tech-zone/learn/media/citrix-google-zero-trust_5d-endpoint-verification.png)
 
 A quick check in our Admin console shows that Endpoint Verification is indeed already enabled:
 
@@ -582,7 +580,7 @@ Following the guide, we found and enabled device approvals. We also added an adm
 
 ![enabled device approvals](/en-us/tech-zone/learn/media/citrix-google-zero-trust_5d-enabled-device-approvals.png)
 
-Finally, we need to reconfigure our IAM policy binding on the IAP-protected resource so that it’s using the **on_authorized_device** condition. This process is the same as we used in step 5b of this guide, but we’re choosing a different access level. Once complete, it should look something like this:
+Finally, we need to reconfigure our IAM policy binding on the IAP-protected resource so that it’s using the **on_authorized_device** condition. This process is the same as we used in step 5b of this guide, but we’re choosing a different access level. Once complete, it will look something like this:
 
 ![reconfigure our IAM policy](/en-us/tech-zone/learn/media/citrix-google-zero-trust_5d-reconfigure-iam-policy.png)
 
@@ -614,7 +612,7 @@ Now let’s try launching our IAP-protected app from Citrix Workspace app. Remem
 
 ![launching our IAP-protected app](/en-us/tech-zone/learn/media/citrix-google-zero-trust_5e-launching-iap-protected-app .png)
 
-Denied. Why? The Citrix Workspace embedded browser doesn’t have the Endpoint Verification extension installed, so it doesn’t come back as an ‘Approved’ device. We see the same behavior if we try launching the IAP-protected app from Citrix Workspace web. This is because the Secure Browser service also doesn’t have the Endpoint Verification installed.
+Denied. Why? The Citrix Workspace embedded browser doesn’t have the Endpoint Verification extension installed, so it doesn’t come back as an ‘Approved’ device. We see the same behavior if we try launching the IAP-protected app from Citrix Workspace web. This is because the Secure Browser Service also doesn’t have the Endpoint Verification installed.
 
 For one last test, let’s go back to our IAP sample app in the Citrix Cloud Library and disable Advanced security. Once our work is saved, let’s rerun our Workspace App and Workspace web launch tests.
 
@@ -635,7 +633,7 @@ Now that we’ve set up and tested the Citrix Workspace + BeyondCorp zero trust 
 -  With the right authentication and authorization scenario, IAP-protected web apps can be defined, presented, and launched from Citrix Workspace. It can provide the user with a single sign-on experience.
 -  When configuring IAP-protected apps for SSO in Citrix Workspace, you must enable the service provider initiated SSO flow.
 -  Most of BeyondCorp’s access policies can be used to further restrict access when used with Citrix Workspace, even with Citrix’s Advanced security features (DLP controls) enabled.
--  When using BeyondCorp’s device state policies to restrict access, Citrix’s Advanced security cannot be enabled. This is because the BeyondCorp device state policies require the Endpoint Verification extension. This extension is not currently there inside either Citrix Workspace embedded browser or Citrix Secure Browser service.
+-  When using BeyondCorp’s device state policies to restrict access, Citrix’s Advanced security cannot be enabled. This is because the BeyondCorp device state policies require the Endpoint Verification extension. This extension is not currently there inside either Citrix Workspace embedded browser or Citrix Secure Browser Service.
 
 ## Known Issues and Workarounds
 
@@ -651,7 +649,7 @@ This error message appears because Citrix Workspace, when used as an IdP, doesn�
 
 **Workaround**: None currently identified. This is a usability issue and does not compromise the security or functionality of the solution. Citrix Engineering is aware of the issue and is evaluating ways to improve the UX in this scenario.
 
-## Frequently Asked Questions
+## FAQ
 
 Q: What IAP/BC features are available to apply to Google applications (such as Google Workspace)?
 
