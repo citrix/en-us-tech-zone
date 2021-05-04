@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Nagaraj Manoli
 specialThanksTo: Praveen Raghuraman, Pradeep Vasu, Allen Furmanski
-description: Gain knowledge about the Citrix Secure Workspace Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
+description: Gain knowledge about the Citrix Secure Workspace Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization's apps and data.
 ---
 # Citrix Secure Workspace Access
 
