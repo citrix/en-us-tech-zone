@@ -93,7 +93,7 @@ The integration of Citrix Secure Workspace Access results in several benefits:
 
 Citrix Secure Workspace Access is one of the services offered by Citrix Cloud. To access these services an administrator must have a Citrix account (also known as Citrix.com or My Citrix account) to manage licenses and access the environment.
 
-A Citrix account uses an organization ID(OrgID) as a unique identifier. The administrator can access their Citrix account by logging in at <https://www.citrix.com> with the user name or email address linked to the account. To begin with, Citrix Cloud navigates to <https://citrix.cloud.com> and create an account or sign in with an existing Citrix account to activate the trail of the Cloud Services.
+A Citrix account uses an organization ID(OrgID) as a unique identifier. The administrator can access their Citrix account by logging in at [citrix.com](https://www.citrix.com) with the user name or email address linked to the account. To begin with, Citrix Cloud navigates to [https://citrix.cloud.com](https://citrix.cloud.com) and create an account or sign in with an existing Citrix account to activate the trail of the Cloud Services.
 
 A Citrix Cloud account allows admins to have broad administrative access on the services, therefore Citrix expects that the first admin who creates the Citrix Cloud account has to explicitly give access to other admins as required even if the other admin is already a member of the existing MyCitrix account.
 
@@ -463,13 +463,13 @@ The Citrix Gateway Service offers authentication, single sign-on, and enables fa
 
 **Name the application:** “Citrix Files”
 
-**Enter the URL:** `<https://xxxxx.sharefile.com/>`
+**Enter the URL:** `https://xxxxx.sharefile.com/`
 
 Similarly, on the SSO page ensuring SAML is selected, assuming SAML/SSO setting for Citrix Files has already been completed for the back-end.
 
-**The Assertion URL is:** `<https://xxxxx.sharefile.com/saml/xxxx>`
+**The Assertion URL is:** `https://xxxxx.sharefile.com/saml/xxxx`
 
-**Audience:** `<https://xxxxx.sharefile.com>`
+**Audience:** `https://xxxxx.sharefile.com`
 
 **Name ID format:** Email address
 

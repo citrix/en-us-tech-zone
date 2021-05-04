@@ -112,7 +112,7 @@ ICA RTT was configured for measurement every second by the VDA. For the Interact
 | Bulk BW      | 1) Within the virtual desktop running on LON_Client open **File Explorer** 2) Navigate to the C:\FILES (on NYC_VDA) and copy “LARGE_FILE.mp4” to the C:\inside-HDX-download on LON_Client 3) OBSERVE the Video on the LON_Client 4) RECORD ICA RTT on NYC-VDA | 3486 | 465 | 62 |
 | Loss      | 1) Open **Google Chrome** from the NYC_Util server and navigate to 192.168.10.26/WANem 2) Select “Advanced Mode” > eth1 3) Set the “Loss” field to 25 and select “Apply Setting” toward the bottom of the screen 4) OBSERVE the Video on the LON_Client 5) RECORD ICA RTT on NYC-VDA | 4243 | 536 | 64 |
 
-**NOTE**: Find a worksheet with a detailed compilation of results [here]( https://citrix.sharefile.com/d-sbb3fd2296334c7c9).
+**NOTE**: Find a worksheet with a detailed compilation of results [here](https://citrix.sharefile.com/d-sbb3fd2296334c7c9).
 
 ## Conceptual Architecture
 

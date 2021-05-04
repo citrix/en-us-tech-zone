@@ -1,10 +1,12 @@
 ---
 layout: doc
 description: View reference architectures created by our industry partners on joint technical solutions.
-tz_title: Third Party Reference Architectures
-tz_products: third-party-content;
+h3InToc: true
+contributedBy: Martin Zugec
+tz_title: Third Party
+tz_products: other;
 ---
-# Reference Architecture: Third Party Reference Architectures
+# Reference Architecture: Third Party
 
 ## Amazon
 

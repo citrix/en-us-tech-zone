@@ -519,7 +519,7 @@ Customized branding and appearance often help the end user experience. From Cust
 
 ### User Log in to Workspace
 
-When the users of a customer login to the Workspace via the customized URL. For example <https://selwfashion.cloud.com,> same set of credentials of UPN and password (for example email address and password that match their Office 365 accounts) are used.
+When the users of a customer login to the Workspace via the customized URL. For example `https://selwfashion.cloud.com`, same set of credentials of UPN and password (for example email address and password that match their Office 365 accounts) are used.
 
 [![CSP-Image-046](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_046.png)](/en-us/tech-zone/design/media/reference-architectures_csp-cvads_046.png)
 
