@@ -1,6 +1,6 @@
 # Citrix Tech Zone readme
 
-## Welcome to Tech Zone
+## Welcome to Tech Zone.
 
 Welcome to the documentation project for [techzone.citrix.com](https://techzone.citrix.come)! Citrix Tech Zone is home for technical, in-depth articles that are inspired and driven by technical communities and enthusiasts. Whether you are an architect, consultant, engineer, or technical IT manager, you have come to the right place!
 
