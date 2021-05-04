@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Ana Ruiz
 specialThanksTo: Adam Lotz, Daniel Feller
 description: Learn how Citrix Virtual Apps and Desktop service enables you to deliver virtual apps and desktops to your end users, while offloading the management plane to Citrix Cloud ensuring your environment is always up to date.
+tz_title: Citrix Virtual Apps and Desktops service
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Citrix Virtual Apps and Desktop service
+# Tech Brief: Citrix Virtual Apps and Desktops service
 
 ## Overview
 

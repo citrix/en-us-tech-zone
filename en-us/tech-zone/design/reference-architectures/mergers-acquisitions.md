@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Daniel Feller
 specialThanksTo: Brian Olsen
 description: Learn how to design an environment to support a mergers and acquisition strategy without compromising IT security. The reference architecture incorporates Citrix Workspace, Secure Workspace Access, Virtual Apps and Desktops, Application Delivery Controller, Federated Authentication Service and Security Analytics.
+tz_title: Mergers and Acquisitions
+tz_products: citrix-workspace;
 ---
-# Mergers and Acquisitions
+# Reference Architecture: Mergers and Acquisitions
 
 ## Overview
 

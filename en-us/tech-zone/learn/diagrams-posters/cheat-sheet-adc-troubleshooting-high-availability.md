@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Gene Whitaker
 specialThanksTo: Adrianna Pellitteri
 description: One-page summary of high availability and troubleshooting tips.
+tz_title: Citrix ADC - Troubleshooting High Availability Cheat Sheet
+tz_products: citrix-networking;
 ---
-# Troubleshooting Citrix ADC High Availability Cheat Sheet
+# Diagrams and Poster: Citrix ADC - Troubleshooting High Availability Cheat Sheet
 
 ## Overview
 

@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Matt Brooks
 specialThanksTo: Dan Feller
 description: Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Group Extraction.
+tz_title: nFactor for Citrix Gateway Authentication with Group Extraction
+tz_products: citrix-networking;
 ---
-# Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Group Extraction
+# PoC Guide: nFactor for Citrix Gateway Authentication with Group Extraction
 
 ## Introduction
 

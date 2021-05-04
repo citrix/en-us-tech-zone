@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Mayank Singh
 specialThanksTo: Kireeti Valicherla, Swaroop Joseph Varghese, Alan Goldman
 description: Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
+tz_title: Citrix Virtual Apps and Desktops Standard for Azure
+tz_products: citrix-virtual-apps-and-desktops-standard-for-azure;
 ---
-# Citrix Virtual Apps and Desktops Standard for Azure
+# Tech Brief: Citrix Virtual Apps and Desktops Standard for Azure
 
 Citrix Virtual Apps and Desktops Standard for Azure is a turnkey Microsoft Azure hosted solution to deliver virtual desktops and apps. The admin can deliver Windows 10 multi-session desktops, Windows 10 Enterprise and Windows 7 ESU single session desktops. Also, Windows Server 2008 R2, 2012 R2, 2016, and 2019 OS sessions or apps running on any of the above OS using a GUI interface in just a few clicks.
 

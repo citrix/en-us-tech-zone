@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
 description: Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.
+tz_title: Workspace Identity
+tz_products: citrix-workspace;
 ---
-# Workspace Identity
+# Tech Brief: Workspace Identity
 
 A user’s primary workspace identity authorizes access to all workspace resource feeds including microapps, mobile apps, virtual apps, virtual desktops, and content. Citrix Workspace provides organizations with a choice in selecting the user’s primary identity provider.
 

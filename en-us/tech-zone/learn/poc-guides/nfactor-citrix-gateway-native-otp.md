@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Matthew Brooks, Alyssa Ramella
 specialThanksTo: Himanshu Shukla
 description: Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Native OTP.
+tz_title: nFactor for Citrix Gateway Authentication with Native OTP
+tz_products: citrix-networking;
 ---
-# Proof of Concept Guide: nFactor for Citrix Gateway with Native OTP Authentication
+# PoC Guide: nFactor for Citrix Gateway Authentication with Native OTP
 
 ## Introduction
 

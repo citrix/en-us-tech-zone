@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Loay Shbeilat
 specialThanksTo: Paul Wilson
 description: The article covers guidance and best practices for using Citrix Profile Management to manage user profiles on Azure Files as the back-end storage location.
+tz_title: Citrix Profile Management with Azure Files
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Citrix Profile Management with Azure Files
+# Design Decision: Citrix Profile Management with Azure Files
 
 ## Introduction
 

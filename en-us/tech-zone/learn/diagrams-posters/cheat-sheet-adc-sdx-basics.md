@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Gene Whitaker
 specialThanksTo: Adrianna Pellitteri
 description: One-page summary of SDX components and how to access them, common SVM ports, LOM configuration, Link Aggregation on the SDX, and Common Log files for both SVM and Citrix Hypervisor.
+tz_title: Citrix ADC - SDX Basics and Log File Cheat Sheet
+tz_products: citrix-networking;
 ---
-# Citrix ADC SDX Basics and Log File Cheat Sheet
+# Diagrams and Poster: Citrix ADC - SDX Basics and Log File Cheat Sheet
 
 ## Overview
 

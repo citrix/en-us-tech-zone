@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Matthew Brooks
 specialThanksTo: Dan Feller, Derek Thoslund, Jaskirat Singh Chauhan
 description: Learn how to optimize the delivery of Citrix Virtual Apps and Desktops from on-premises servers to users at locations with a Citrix SD-WAN appliance by minimizing latency and improving session responsiveness during network issues.
+tz_title: Citrix SD-WAN HDX performance improvements for Citrix Virtual Apps and Desktops on-premises environments
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Citrix SD-WAN HDX performance improvement architecture for Citrix Virtual Apps and Desktops on-premises environments
+# Reference Architecture: Citrix SD-WAN HDX performance improvements for Citrix Virtual Apps and Desktops on-premises environments
 
 ## Overview
 

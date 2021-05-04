@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Vivekananthan Devaraj
 specialThanksTo: David Egan, Chetan Thakker, Vikas Nambiar
 description: Learn about the architecture and integration with Microsoft EMS/Intune and Android Enterprise to deliver applications securely to any device and how it enables security and productivity benefits for both Microsoft EMS/Intune and Citrix customers.
+tz_title: Citrix Endpoint Management with Microsoft EMS/Intune and Android Enterprise Integration
+tz_products: citrix-endpoint-management;
 ---
-# Reference Architecture on Citrix Endpoint Management integration with Microsoft Intune/EMS and Android Enterprise
+# Reference Architecture: Citrix Endpoint Management with Microsoft EMS/Intune and Android Enterprise Integration
 
 ## Citrix Endpoint Management Overview
 

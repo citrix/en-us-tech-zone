@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
 description: Conceptual architecture drawing for Citrix Workspace.
+tz_title: Citrix Workspace
+tz_products: citrix-workspace;
 ---
-# Citrix Workspace
+# Diagrams and Poster: Citrix Workspace
 
 ## Diagrams
 

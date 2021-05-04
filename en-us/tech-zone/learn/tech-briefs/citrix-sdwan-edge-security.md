@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Matthew Brooks
 specialThanksTo: Ravi Pegada, Valerie DiMartino, Reshma Padmanabha
 description: Learn how Citrix SD-WAN Advanced Edition provides Edge Security for your Enterprise network.
+tz_title: SD-WAN Edge Security
+tz_products: citrix-networking;
 ---
-# Citrix SD-WAN Edge Security
+# Tech Brief: SD-WAN Edge Security
 
 ## Introduction
 

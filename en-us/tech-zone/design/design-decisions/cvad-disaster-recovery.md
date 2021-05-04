@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Michael Shuster
 specialThanksTo: Kevin Nardone, Martin Zugec
 description: Learn more about different decision factors and recommendations for business continuity and disaster recovery planning.
+tz_title: Disaster Recovery Planning
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Citrix Virtual Apps and Desktops - Disaster Recovery Planning
+# Design Decision: Disaster Recovery Planning
 
 ## Overview
 

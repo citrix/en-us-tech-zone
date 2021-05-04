@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Gene Whitaker
 specialThanksTo: Adrianna Pellitteri
 description: One-page summary of nsconmsg syntax and troubleshooting tips.
+tz_title: Citrix ADC - nsconmsg Commands Cheat Sheet
+tz_products: citrix-networking;
 ---
-# Citrix ADC nsconmsg Commands Cheat Sheet
+# Diagrams and Poster: Citrix ADC - nsconmsg Commands Cheat Sheet
 
 ## Overview
 

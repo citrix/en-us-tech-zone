@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Jian Luo, Cheng Zhang, Jack Zhou
 description: Learn about the architecture and deployment considerations for this cloud-based service of Workspace Environment Management.
+tz_title: Workspace Environment Management service
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Reference Architecture for Citrix Workspace Environment Management Service
+# Reference Architecture: Workspace Environment Management service
 
 ## Introduction
 

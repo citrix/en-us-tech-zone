@@ -4,6 +4,8 @@ h3InToc: true
 contributedBy: Matt Brooks
 specialThanksTo: Dan Feller
 description: Learn how you can implement various Multifactor Authentication methods with Citrix ADC nFactor Authentication.
+tz_title: Multifactor Authentication with Citrix nFactor
+tz_products: citrix-networking;
 ---
 # Tech Brief: Multifactor Authentication with Citrix nFactor
 

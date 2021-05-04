@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Matthew Brooks
 specialThanksTo: Daniel Feller
 description: Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with email one-time password.
+tz_title: nFactor for Citrix Gateway Authentication with Email OTP
+tz_products: citrix-networking;
 ---
-# Proof of Concept Guide: nFactor for Citrix Gateway Authentication with Email OTP
+# PoC Guide: nFactor for Citrix Gateway Authentication with Email OTP
 
 ## Introduction
 

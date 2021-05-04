@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Florin Lazurca
 specialThanksTo: Frank Srp, Martin Zugec
 description: With Secure Workspace Access, organizations go beyond access and aggregation to provide IT with policy controls that provide conditional access to cloud apps and internet browsing, enhancing the organization's overall security and compliance posture.
+tz_title: Secure Workspace Access
+tz_products: citrix-secure-workspace-access;
 ---
-# Secure Workspace Access
+# Tech Brief: Secure Workspace Access
 
 ## Overview
 

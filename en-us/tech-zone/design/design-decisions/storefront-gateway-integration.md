@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Sarah Steinhoff
 description: Learn about the different integration decisions involved when integrating StoreFront with Citrix Gateway for secure remote access.
 ---
+tz_title: Designing StoreFront and Gateway Integration
+tz_products: citrix-virtual-apps-and-desktops;
 
-# Designing StoreFront and Gateway Integration
+# Design Decision: Designing StoreFront and Gateway Integration
 
 The purpose of this article is to dive a little deeper into Citrix Gateway integration with StoreFront: what the settings mean and design considerations for how to configure them.
 
