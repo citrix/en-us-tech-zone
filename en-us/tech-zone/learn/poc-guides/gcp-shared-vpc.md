@@ -4,7 +4,6 @@ h3InToc: true
 contributedBy: Matthew Harper
 specialThanksTo: Josh Penick, Elaine Welch
 description: Learn how to use Machine Creation Services (MCS) to provision machines in a Shared VPC on Google Cloud Platform (GCP). Then, learn to manage the machines using Citrix Studio.
-
 tz_title: Google Cloud Platform (GCP) Shared VPC Support with Citrix Virtual Apps and Desktops
 tz_products: google-cloud-platform;
 ---

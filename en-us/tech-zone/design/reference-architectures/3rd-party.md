@@ -1,8 +1,6 @@
 ---
 layout: doc
 description: View reference architectures created by our industry partners on joint technical solutions.
-tz_title: Third Party Reference Architectures
-tz_products: third-party-content;
 ---
 # Reference Architecture: Third Party Reference Architectures
 
