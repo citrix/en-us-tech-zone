@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Jeroen J.V Lebon
 specialThanksTo: Citrix Endpoint Management Team
 description: Learn about Unified Endpoint Management and let employees work how, when and where they want with the power to manage every app, device and platform in one central location.
+tz_title: Citrix Endpoint Management
+tz_products: citrix-endpoint-management;
 ---
-# Citrix Endpoint Management
+# Tech Brief: Citrix Endpoint Management
 
 ## About Citrix Endpoint Management
 

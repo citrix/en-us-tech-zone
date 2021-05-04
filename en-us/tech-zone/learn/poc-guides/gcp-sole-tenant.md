@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Matthew Harper
 specialThanksTo: Josh Penick, Elaine Welch
 description: Learn how to configure zone selection on Google Cloud Platform to enable sole tenancy in Citrix Virtual Apps and Desktop Service.
+tz_title: Google Cloud Platform (GCP) Zone Selection Support with Citrix Virtual Apps and Desktops service
+tz_products: google-cloud-platform;
 ---
-# Google Cloud Platform (GCP) Zone Selection Support with Citrix Virtual Apps and Desktops service
+# PoC Guide: Google Cloud Platform (GCP) Zone Selection Support with Citrix Virtual Apps and Desktops service
 
 ## Overview
 

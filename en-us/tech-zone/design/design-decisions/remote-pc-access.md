@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Matthew Greenbaum, Simon Jackson, Nick Rintalan, Daniel Feller
 description: Remote PC Access is easy to deploy. These design decisions help maintain security, availability, and performance.
+tz_title: Remote PC Access
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Remote PC Access Design Decisions
+# Design Decision: Remote PC Access
 
 ## Overview
 

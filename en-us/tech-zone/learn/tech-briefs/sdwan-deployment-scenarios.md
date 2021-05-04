@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Daljit Singh, Matthew Brooks
 specialThanksTo: Dan Feller, Karthick Srivatsan, Derek Thorslund, Shoaib Yusuf
 description: Learn about different scenarios to optimize user experience with Citrix Workspace by deploying Citrix SD-WAN.
+tz_title: SD-WAN Deployment Scenarios
+tz_products: citrix-networking;
 ---
-# Tech Brief: Citrix SD-WAN Deployment Scenarios
+# Tech Brief: SD-WAN Deployment Scenarios
 
 ## Introduction
 

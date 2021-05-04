@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Vivekananthan Devaraj
 specialThanksTo: Dan Feller, Allen Furmanski, Radovan Hrabcak
 description: Learn about the microapps platform service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
+tz_title: Microapps Service with Citrix Workspace
+tz_products: citrix-workspace;
 ---
-# Reference Architecture on Microapps service with Citrix Workspace
+# Reference Architecture: Microapps Service with Citrix Workspace
 
 ## Executive Summary
 

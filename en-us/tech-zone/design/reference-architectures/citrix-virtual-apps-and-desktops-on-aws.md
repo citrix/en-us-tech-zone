@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Rick Dehlinger, Jill Fetscher, Allen Furmanski, Faubricio Gutierrez, David Johnson, Joanne Lei
 specialThanksTo: Nick Czabaranek, Josh Fleming, Matt Lull, Ryan McLure, Rich Meesters, Arnaud Pain, James Richards, Neil Spellings
 description: Learn the architecture and deployment considerations of Citrix Virtual Apps and Desktops on an Amazon Web Services cloud platform.
+tz_title: Virtual Apps and Desktops Service - AWS
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Reference Architecture for Citrix Virtual Apps and Desktops on AWS
+# Reference Architecture: Virtual Apps and Desktops Service - AWS
 
 ## Audience and Objective
 

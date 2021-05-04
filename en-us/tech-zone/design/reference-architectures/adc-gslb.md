@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Rajendra Soebhag, Albert Lee
 specialThanksTo: Brendan Lin, Sarah Steinhoff
 description: Learn the architecture and deployment considerations for Global Server Load Balancing configuration with Citrix Application Delivery Controller.
+tz_title: Application Delivery Controller - Global Server Load Balancing
+tz_products: citrix-networking;
 ---
-# Citrix Application Delivery Controller (ADC) Global Server Load Balancing (GSLB)
+# Reference Architecture: Application Delivery Controller - Global Server Load Balancing
 
 ## Overview
 

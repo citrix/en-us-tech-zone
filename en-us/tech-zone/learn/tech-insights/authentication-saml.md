@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
 description: Utilize a SAML provider as the user's primary identity for Citrix Workspace
+tz_title: Authentication - SAML
+tz_products: citrix-workspace;
 ---
-# Authentication - SAML
+# Tech Insight: Authentication - SAML
 
 Citrix Workspace provides organizations with a choice in selecting their primary identity provider (IdP). With the integration of SAML, an organization can use a SAML-based identity provider like OneLogin, Ping and SecureAuth as examples.
 

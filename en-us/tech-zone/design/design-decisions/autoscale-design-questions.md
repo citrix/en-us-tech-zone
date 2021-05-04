@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Nitin Mehta
 specialThanksTo: Mayank Singh, Kevin Nardone, Harsh Gupta
 description: Helps answer FAQs on Autoscale to achieve best cost optimization. Provides guidance for configuring Autoscale for different admin use cases and their infrastructure and technical requirements.
+tz_title: Autoscale Design
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Autoscale design questions / FAQ
+# Design Decision: Autoscale Design
 
 ## Overview
 

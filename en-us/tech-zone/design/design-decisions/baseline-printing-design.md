@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Floris van der Ploeg
 description: Citrix Virtual Apps and Desktops supports various printing solutions. It is essential to understand the available technologies and their benefits and limitations to plan and successfully implement the proper printing solution.
+tz_title: Baseline Printing Design
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Baseline Printing Design
+# Design Decision: Baseline Printing Design
 
 ## Overview
 

@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Daniel Feller
 specialThanksTo: Krishna Kumar
 description: Learn how to set up a Citrix Secure Workspace Access environment that provides enhanced security to Microsoft Azure SaaS Apps.
+tz_title: Secure Access to Azure-managed SaaS Applications and Citrix Secure Workspace Access
+tz_products: citrix-secure-workspace-access;
 ---
-# Proof of Concept: Secure Access to SaaS Apps with Microsoft Azure SSO and Citrix Secure Workspace Access
+# PoC Guide: Secure Access to Azure-managed SaaS Applications and Citrix Secure Workspace Access
 
 ## Overview
 

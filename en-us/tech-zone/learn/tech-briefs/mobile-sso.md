@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Frank Srp
 specialThanksTo: Alex Rubio
 description: Native mobile app single sign-on for iOS and Android SaaS applications.
+tz_title: Mobile SSO
+tz_products: citrix-endpoint-management;
 ---
-# Mobile SSO
+# Tech Brief: Mobile SSO
 
   >**Tech Preview Disclaimer**
   >

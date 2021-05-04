@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Matthew Brooks
 specialThanksTo: Sachin Shetty, John Ashman
 description: Learn how to use Microsoft Azure Active Directory as an identity provider for Citrix Virtual Apps and Desktops with Citrix ADC using SAML.
+tz_title: Microsoft Azure Active Directory Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Proof of Concept Guide: Microsoft Azure Active Directory Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC
+# PoC Guide: Microsoft Azure Active Directory Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC
 
 ## Introduction
 

@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Ana Ruiz
 specialThanksTo: Sameer Mehta, Mathew Varghese, Blake Connell
 description: Provide visibility into your environment to protect it from malicious users and to improve the end user experience proactively.
+tz_title: Analytics
+tz_products: citrix-analytics;
 ---
-# Citrix Analytics
+# Tech Brief: Analytics
 
 Organizations’ IT environments are becoming more complex as they begin to adopt SaaS, cloud, and mobile applications. Administrators need the visibility into their environment not only to protect it from malicious users, but also to improve the user experience proactively. Citrix Analytics pulls together the entire Citrix portfolio to provide visibility into the status and context of individual users. Unlike some of the other monitoring tools that Citrix provides, Citrix Analytics gives you **proactive and prescriptive** insights into your environment to resolve issues before they become a problem. Citrix Analytics is driven through machine-learning to provide you with the necessary insights without information overload.
 

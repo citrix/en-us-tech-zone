@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Anudeep Athlur
 specialThanksTo: Jaskirat Chauhan, Karthick Srivatsan, Matt Brooks
 description: Learn how to establish connectivity between SD-WAN and Azure Virtual WAN, and connect workloads on Azure with on-premises infrastructure.
+tz_title: Citrix SD-WAN with Azure Virtual WAN
+tz_products: citrix-networking;
 ---
-# Citrix SD-WAN + Azure Virtual WAN Blueprint: Deployment Guide
+# Deployment Guide: Citrix SD-WAN with Azure Virtual WAN
 
 ## Audience
 

@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Jose Augustin
 specialThanksTo: Bala Swaminathan
 description: Inside view on how Local Host Cache (LHC) works with Citrix Virtual Apps and Desktops Service. Learn how the different components of LHC come into play to keep you in control of your uptimes.
+tz_title: Local Host Cache / High Availability mode for Citrix Virtual Apps and Desktops Service
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Local Host Cache / High Availability mode for Citrix Virtual Apps and Desktops Service
+# Tech Brief: Local Host Cache / High Availability mode for Citrix Virtual Apps and Desktops Service
 
 ## Overview
 

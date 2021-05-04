@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Jacob Rutski
 specialThanksTo: Ronan O'Brien, Jen Sheerin, Paul Stansel, Patrick Coble, Carl Stalhood
 description: Learn how to deploy Citrix Web Application Firewall (WAF) standalone or as a part of a Citrix ADC deployment. Protect web servers or applications from various attacks including Cross Site Scripting, SQL Injection, Buffer Overflow, Forceful Browsing and more. Deploy in any public cloud or your on-premises environment.
+tz_title: Web Application Firewall Deployment
+tz_products: citrix-networking;
 ---
-# Proof of Concept deployment guide for Citrix Web Application Firewall
+# PoC Guide: Web Application Firewall Deployment
 
 ## Overview
 

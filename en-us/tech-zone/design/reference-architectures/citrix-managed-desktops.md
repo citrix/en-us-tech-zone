@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Nagaraj Manoli
 specialThanksTo: Kireeti Valicherla, Swaroop JV, Alan Goldman, Derek Thorslund
 description: Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
+tz_title: Citrix Virtual Apps and Desktops Standard for Azure
+tz_products: citrix-virtual-apps-and-desktops-standard-for-azure;
 ---
-# Citrix Virtual Apps and Desktops Standard for Azure
+# Reference Architecture: Citrix Virtual Apps and Desktops Standard for Azure
 
 ## Audience
 

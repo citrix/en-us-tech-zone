@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Matthew Brooks
 specialThanksTo: Shoaib Yusuf
 description: Provides optimal network connectivity between Enterprise branch offices and their Workspace hosted in data resource locations on-premises or in the cloud.
+tz_title: SD-WAN for Workspace
+tz_products: citrix-networking;
 ---
-# Introduction to Citrix SD-WAN for Citrix Workspace
+# Tech Brief: SD-WAN for Workspace
 
 ## SD-WAN Overview
 

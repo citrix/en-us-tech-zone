@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Daniel Feller
 specialThanksTo: Oscar Day
 description: Utilize an on-premises Citrix Gateway as an identity provider for Citrix Workspace.
+tz_title: Authentication - Citrix Gateway
+tz_products: citrix-workspace;
 ---
-# Authentication - On-Premises Citrix Gateway
+# Tech Insight: Authentication - Citrix Gateway
 
 Utilizing an on-premises Citrix Gateway as the identity provider for Citrix Workspace allows organizations to incorporate custom authentication profiles into Citrix Cloud services. An on-premises Citrix Gateway allows organizations to have the following capabilities:
 

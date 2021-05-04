@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: JP Alfaro
 specialThanksTo: Darren Harding, Selma Wei, Armando Rodriguez, Daniel Lugo
 description: Citrix Virtual Apps and Desktops service implementation with Azure Active Directory Domain Services for CSPs Reference Architecture aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and implementation steps to use Azure AD Domain Services.
+tz_title: Virtual Apps and Desktops service with Google Cloud Platform for Citrix Service Providers
+tz_products: citrix-service-providers;
 ---
-# Citrix Virtual Apps and Desktops Service – Azure Implementation with Azure Active Directory Domain Services for CSPs
+# Reference Architecture: Virtual Apps and Desktops service with Google Cloud Platform for Citrix Service Providers
 
 ## Architecture
 

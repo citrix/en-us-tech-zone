@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Vivekananthan Devaraj
 specialThanksTo: Glenn Williams, Ravisankar Pegada, Karthick Srivatsan, Shoaib Yusuf
 description: Discover the framework, design, and architecture for Citrix SD-WAN multi-region deployment with SD-WAN Orchestrator.
+tz_title: SD-WAN Multi-Region
+tz_products: citrix-networking;
 ---
-# Reference Architecture for Citrix SD-WAN Multi-Region Deployment
+# Reference Architecture: SD-WAN Multi-Region
 
 ## Audience
 

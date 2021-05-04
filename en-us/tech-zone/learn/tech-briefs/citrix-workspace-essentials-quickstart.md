@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Florin Lazurca
 specialThanksTo: Daniel Jim, Andre Leibovici
 description: This guide demonstrates how to configure SaaS and internal web apps with single sign-on (SSO) in Citrix Workspace.
+tz_title: Citrix Workspace Essentials and Secure Workspace Access Getting Started Guide
+tz_products: citrix-secure-workspace-access;
 ---
-# Citrix Workspace Essentials and Secure Workspace Access Getting Started Guide
+# Tech Brief: Citrix Workspace Essentials and Secure Workspace Access Getting Started Guide
 
 ## Introduction
 

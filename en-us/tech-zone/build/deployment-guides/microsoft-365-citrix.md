@@ -3,9 +3,11 @@ layout: doc
 h3InToc: true
 contributedBy: Ana Ruiz, Paul Wilson
 specialThanksTo: Loay Shbeilat
-description: Learn how to deploy Microsoft 365 in a Citrix Virtual Apps and Desktop environment.
+description: Learn how to deploy Microsoft 365 in a Citrix Virtual Apps and Desktops environment.
+tz_title: Microsoft 365 with Citrix Virtual Apps and Desktops
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Microsoft 365 with Citrix Virtual Apps and Desktop Deployment Guide
+# Deployment Guide: Microsoft 365 with Citrix Virtual Apps and Desktops
 
 Microsoft 365, previously known as Office 365, is a bundled software plus subscription-based offering focused on user productivity-based applications. Microsoft 365 includes a combination of online based applications that are accessed from anywhere via a web browser, in addition to the latest traditional, locally installed version of Microsoft Office. Included with Microsoft 365 is an online email account that has 50 GB of mail storage and 1 TB of file storage per user licensed for OneDrive for Business. Microsoft 365 Business comes in three different editions: Basic, Standard, and Premium. You can find more information on what is included in each edition [here](https://www.microsoft.com/en-us/microsoft-365/business/compare-all-microsoft-365-business-products).
 

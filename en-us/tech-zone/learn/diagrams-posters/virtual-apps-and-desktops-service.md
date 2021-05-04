@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
 description: Conceptual architecture drawing for Citrix Virtual Apps and Desktop deployment in Citrix Cloud.
+tz_title: Virtual Apps and Desktops Service
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Virtual Apps and Desktops Service
+# Diagrams and Poster: Virtual Apps and Desktops Service
 
 ## Diagrams
 

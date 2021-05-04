@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Ana Ruiz
 specialThanksTo: Dan Feller
 description: Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
+tz_title: Virtual Apps and Desktops Service
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Citrix Virtual Apps and Desktops Service Reference Architecture
+# Reference Architecture: Virtual Apps and Desktops Service
 
 ## Overview
 

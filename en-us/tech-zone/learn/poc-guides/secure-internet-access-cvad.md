@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Frank Srp
 specialThanksTo: Eric Beiers, Martin Zugec, Daniel Feller
 description: Learn how to set up Citrix Secure Internet Access within a Citrix Virtual Apps and Desktops environment that provides secure access to virtual desktops and applications, anywhere, from any device.
+tz_title: Citrix Secure Internet Access with Citrix Virtual Apps and Desktops
+tz_products: citrix-secure-internet-access;
 ---
-# Proof of Concept: Citrix Secure Internet Access with Citrix Virtual Apps and Desktops
+# PoC Guide: Citrix Secure Internet Access with Citrix Virtual Apps and Desktops
 
 ## Overview
 

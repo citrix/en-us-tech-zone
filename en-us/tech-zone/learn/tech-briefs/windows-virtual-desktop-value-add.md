@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Mayank Singh
 specialThanksTo: Daniel Feller, Rob Beekmans, Loay Shbeilat
 description: Learn about the value add Citrix provides to your Windows Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service provides a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user experience and enhancing the security posture of our deployment.
+tz_title: Enhancing Windows Virtual Desktop
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Enhancing Windows Virtual Desktop
+# Tech Brief: Enhancing Windows Virtual Desktop
 
 ## Overview
 

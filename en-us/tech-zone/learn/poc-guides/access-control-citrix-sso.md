@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Daniel Feller
 description: Learn how to set up a Citrix Secure Workspace Access environment that uses Citrix as the single sign-on provider for SaaS applications.
 
+tz_title: Secure Access to SaaS Applications with Citrix Secure Workspace Access
+tz_products: citrix-secure-workspace-access;
 ---
-# Proof of Concept: Secure Access to SaaS Applications with Citrix Secure Workspace Access
+# PoC Guide: Secure Access to SaaS Applications with Citrix Secure Workspace Access
 
 ## Overview
 
