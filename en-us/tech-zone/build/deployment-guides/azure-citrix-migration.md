@@ -743,7 +743,7 @@ The size and number of components within your infrastructure always depends on y
 
 ### Storage
 
-Just like any other computer, the virtual machines in Azure use disks as a place to store an operating system, applications, and data. All Azure virtual machines have at least two disks – a Windows operating system disk and a temporary disk. The operating system disk is created from an image, and both the operating system disk and the image are stored within Azure as virtual hard disks (VHDs). Virtual machines may also have other disks attached as data disks, also stored as VHDs.   <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-types>
+Just like any other computer, the virtual machines in Azure use disks as a place to store an operating system, applications, and data. All Azure virtual machines have at least two disks – a Windows operating system disk and a temporary disk. The operating system disk is created from an image, and both the operating system disk and the image are stored within Azure as virtual hard disks (VHDs). Virtual machines may also have other disks attached as data disks, also stored as [VHDs](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-types).
 
 Azure Disks are designed to deliver enterprise-grade durability. You can select from two performance tiers for storage exist when you create disks: Premium SSD Disks and Standard HDD Storage. The disks may be either managed or unmanaged. Managed disks are the default and are not subject to the storage account limitations like the unmanaged disks.
 
