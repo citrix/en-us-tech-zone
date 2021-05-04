@@ -1,6 +1,3 @@
----
-layout: doc
----
 # Citrix Tech Zone readme
 
 ## Welcome to Tech Zone
