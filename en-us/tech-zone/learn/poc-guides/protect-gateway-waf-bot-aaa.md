@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Jacob Rutski
 specialThanksTo: Dileep Reddem, Michael Shuster, Matt Brooks, Martin Zugec
-description: Learn how to use the security tools built in to the Citrix ADC to protect VPN and Gateway virtual servers, including Web Application Firewall (WAF), Bot Security, and Advanced Authentication Policies. 
+description: Learn how to use the security tools built in to the Citrix ADC to protect VPN and Gateway virtual servers, including Web Application Firewall (WAF), Bot Security, and Advanced Authentication Policies.
 tz_title: Protecting Gateway Virtual Servers with WAF, Bot, and Advanced Authentication Policies
 tz_products: citrix-networking;
 ---
