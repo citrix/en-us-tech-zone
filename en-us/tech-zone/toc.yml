@@ -9,6 +9,9 @@ docs:
   subfolderlist:
     - title: Diagrams & Posters
       url: /en-us/tech-zone/learn/diagrams-posters.html
+      subfolderlist:
+        - title: Posters & Diagrams
+          url: /en-us/tech-zone/learn/diagrams-posters.html
     - title: PoC Guides
       url: /en-us/tech-zone/learn/poc-guides.html
     - title: Tech Briefs
