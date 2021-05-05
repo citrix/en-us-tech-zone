@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Frank Srp
 specialThanksTo: Daniel Feller, Martin Zugec
 description: Secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
+tz_title: Secure Internet Access User Experience
+tz_products: citrix-secure-internet-access;
 ---
-# Secure Internet Access User Experience
+# Tech Insight: Secure Internet Access User Experience
 
 Citrix introduces Citrix Secure Internet Access which unlike datacenter-based security, provides secure access to all applications, anywhere, from any device. Without compromising the employee experience.
 

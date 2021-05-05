@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Martin Zugec
 description: Learn about the different decision factors involved in choosing the right provisioning model for image management. Learn more about Citrix Provisioning and Machine Creation Services solutions.
+tz_title: Provisioning Model for Image Management
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Choosing the **Provisioning Model** for Image Management
+# Design Decision: Provisioning Model for Image Management
 
 One of the most common design decisions that needs to be done for every Citrix Virtual Apps and Desktops (CVAD) project is which provisioning model meets the business and operational requirements. The goal of this article is to describe the most common decision factors, recommendations, and different scenarios where certain provisioning model might be a better candidate. For image management, there are two provisioning models that are commonly used by Citrix administrators to manage their Citrix environment efficiently:
 

@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
 description: Learn how to set up VPN-less access to an internal web application with Citrix Secure Workspace Access, utilizing Citrix-provided SSO.
+tz_title: Secure Access to Internal Web Applications with Citrix Secure Workspace Access
+tz_products: citrix-secure-workspace-access;
 ---
-# Proof of Concept: Secure Access to Internal Web Applications with Citrix Secure Workspace Access
+# PoC Guide: Secure Access to Internal Web Applications with Citrix Secure Workspace Access
 
 ## Overview
 

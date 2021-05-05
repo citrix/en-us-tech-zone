@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Gene Whitaker
 specialThanksTo: Adrianna Pellitteri
 description: One-page summary of GSLB, MEP protocol and troubleshooting tips.
+tz_title: Citrix ADC - Troubleshooting GSLB MEP Cheat Sheet
+tz_products: citrix-networking;
 ---
-# Troubleshooting Citrix GSLB MEP Cheat Sheet
+# Diagrams and Poster: Citrix ADC - Troubleshooting GSLB MEP Cheat Sheet
 
 ## Overview
 

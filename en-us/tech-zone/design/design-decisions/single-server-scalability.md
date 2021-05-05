@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Nick Rintalan
 description: Learn about the magic formula to calculate how many users you can have on a single server, what are the different variables that have an impact on scalability and recommendations to improve it.
+tz_title: Single Server Scalability
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Citrix Virtual Apps and Desktops Single-Server Scalability
+# Design Decision: Single Server Scalability
 
 ## Overview
 

@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Daniel Feller
 specialThanksTo: Krishna Kumar
 description: Learn how to set up a Citrix Secure Workspace Access environment that provides single sign-on and enhanced security to Office 365.
+tz_title: Secure Access to Office 365 with Citrix Secure Workspace Access
+tz_products: citrix-secure-workspace-access;
 ---
-# Proof of Concept: Secure Access to Microsoft 365 with Citrix Secure Workspace Access
+# PoC Guide: Secure Access to Office 365 with Citrix Secure Workspace Access
 
 ## Overview
 

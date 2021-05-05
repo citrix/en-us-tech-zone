@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Elaine Welch, Loay Shbeilat
 description: Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management.
+tz_title: Deploying Azure Files for Citrix Profile Management and Citrix User personalization layers
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Set up Azure Files storage for User personalization layers and Citrix Profile Management
+# Deployment Guide: Deploying Azure Files for Citrix Profile Management and Citrix User personalization layers
 
 Azure Files offers fully managed file shares in the cloud, and accessible using Server Message Block (SMB) protocol. Azure Files shares can be mounted simultaneously in the cloud and on-premises, on Windows, Linux, or macOS.
 

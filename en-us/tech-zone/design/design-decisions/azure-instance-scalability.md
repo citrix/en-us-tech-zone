@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Loay Shbeilat
 description: Learn about the different Azure instance type scale characteristics and how MSC I/O enhances the response time for your users. The document guides you through choosing the ideal Azure instance type for your workload and touches upon cost per user.
+tz_title: The scalability and economics of delivering Citrix Virtual App and Desktop services on Azure
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# The scalability and economics of delivering Citrix Virtual App and Desktop services on Azure
+# Design Decision: The scalability and economics of delivering Citrix Virtual App and Desktop services on Azure
 
 The goal of this document is to provide guidance to enterprises that are moving towards deploying Citrix Virtual Applications and Desktops (CVAD) in the Microsoft Azure cloud. To provide the best possible advice to our customers, we decided to determine the answer to four key questions that impact Citrix architecture and design decisions
 

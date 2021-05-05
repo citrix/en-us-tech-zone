@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Ana Ruiz
 description: Generate actionable insights about your environment, enabling administrators to proactively handle user and application security threats.
+tz_title: Security Analytics
+tz_products: citrix-analytics;
 ---
-# Citrix Analytics for Security
+# Tech Insight: Security Analytics
 
 Security Analytics generates actionable insights, enabling administrators to proactively handle user and application security threats. It allows you to monitor and identify inconsistent or suspicious activity within your environment.
 

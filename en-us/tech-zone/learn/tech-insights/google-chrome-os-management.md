@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Frank Srp
 description: Manage Chrome OS devices with Citrix Endpoint Management.
+tz_title: Google Chrome OS Management
+tz_products: citrix-endpoint-management;
 ---
-# Google Chrome OS Management
+# Tech Insight: Google Chrome OS Management
 
 Learn how to manage Chrome OS device with Citrix Endpoint Management Service and deploy the Citrix Workspace app.
 

@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Albert Lee
 specialThanksTo: Andrew Gravett
 description: See how the Citrix Application Delivery Management software is deployed to simplify management and monitoring of your application delivery infrastructure.
+tz_title: Application Delivery Management
+tz_products: citrix-networking;
 ---
-# Citrix Application Delivery Management
+# Reference Architecture: Application Delivery Management
 
 ## Overview
 

@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
 description: Learn how to design an environment to support a flexible work style without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Virtual Apps and Desktops, SD-WAN, Endpoint Management and Security Analytics.
+tz_title: Flexible Work
+tz_products: citrix-workspace;
 ---
-# Flexible Work
+# Reference Architecture: Flexible Work
 
 ## Overview
 

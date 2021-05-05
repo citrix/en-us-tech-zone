@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Darren Harding
 description: The CSP Content Collaboration Service and Workspace integration simplifies the Citrix Cloud reseller management, customer deployment and provides real-time file sync to data in one secure centrally managed platform.
+tz_title: Citrix Service Provider Content Collaboration Workspace Integration
+tz_products: citrix-service-providers;
 ---
-# Citrix Service Provider Content Collaboration Workspace Integration
+# Reference Architecture: Citrix Service Provider Content Collaboration Workspace Integration
 
 ## Audience
 

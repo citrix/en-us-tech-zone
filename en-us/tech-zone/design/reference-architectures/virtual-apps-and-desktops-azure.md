@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Loay Shbeilat
 specialThanksTo: Nitin Mehta
 description: Learn the detailed architecture and deployment model of Citrix Virtual Apps and Desktops on Microsoft Azure with five key architectural principles.
+tz_title: Virtual Apps and Desktops Service - Azure
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Citrix Virtual Apps and Desktops Service on Azure
+# Reference Architecture: Virtual Apps and Desktops Service - Azure
 
 ## Introduction
 

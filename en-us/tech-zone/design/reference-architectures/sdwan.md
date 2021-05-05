@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Vivekananthan Devaraj
 specialThanksTo: Glenn Williams, Shoaib Yusuf
 description: Learn about the framework, design, and architecture for Citrix SD-WAN with SD-WAN Orchestrator for single region deployment.
+tz_title: SD-WAN
+tz_products: citrix-networking;
 ---
-# Citrix SD-WAN Reference Architecture
+# Reference Architecture: SD-WAN
 
 ## Audience
 

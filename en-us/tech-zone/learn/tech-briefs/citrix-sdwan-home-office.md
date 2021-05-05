@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Shoaib Yusuf
 specialThanksTo: Matthew Brooks
 description: Learn how to work from home with secure, enhanced, and resilient connectivity using the Citrix SD-WAN 110 appliance.
+tz_title: SD-WAN for Home Offices
+tz_products: citrix-networking;
 ---
-# Citrix SD-WAN for Home Offices Tech Brief
+# Tech Brief: SD-WAN for Home Offices
 
 ## Introduction
 

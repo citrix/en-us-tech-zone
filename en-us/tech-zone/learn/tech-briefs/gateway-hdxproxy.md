@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Matthew Brooks, Daniel Feller
 specialThanksTo: Vijaya Raghavan, Kenneth Bell, Jeff Kann, Hrushikesh Paralikar, Simon Jackson, Pradeep Vasu
 description: Provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls.
+tz_title: Gateway service for HDX Proxy
+tz_products: citrix-networking;
 ---
-# Citrix Gateway service for HDX Proxy
+# Tech Brief: Gateway service for HDX Proxy
 
 Citrix Gateway service for HDX Proxy provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls. Citrix hosts the entire infrastructure overhead of managing remote access in the cloud.
 

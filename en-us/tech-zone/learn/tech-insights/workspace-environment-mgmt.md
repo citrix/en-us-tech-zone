@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
 description: Workspace Environment Management monitors and analyzes user and application behavior in real time, then intelligently adjusts system resources to improve the user experience.
+tz_title: Workspace Environment Management
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Workspace Environment Management
+# Tech Insight: Workspace Environment Management
 
 To provide the best experience for users, Workspace Environment Management monitors and analyzes user and application behavior in real time. Workspace Environment Management then intelligently adjusts system resources in the user workspace environment. These capabilities improve the user experience and better utilize system resources for active processes.
 

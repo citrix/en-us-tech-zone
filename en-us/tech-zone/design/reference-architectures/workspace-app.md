@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: James Hsu
 description: Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
+tz_title: Workspace app
+tz_products: citrix-workspace;
 ---
-# Workspace App Reference Architecture
+# Reference Architecture: Workspace app
 
 ## Audience
 
