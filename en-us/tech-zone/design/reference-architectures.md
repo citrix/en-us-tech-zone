@@ -5,63 +5,9 @@ layout: doc
 
 Just as buildings have blueprints that include details about their structure and inner workings, enterprise software solutions also need blueprints that define technical components and interactions. Citrix reference architectures are comprehensive guides that assist organizations in planning their Citrix Workspace implementations complete with use cases, recommendations, and more.
 
-## Citrix Secure Workspace Access
-
-[Secure Workspace Access](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Secure Workspace Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization’s apps and data.
-
 ## Citrix Analytics
 
 [Citrix Analytics](/en-us/tech-zone/design/reference-architectures/citrix-analytics.html) - Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
-
-## Citrix Endpoint Management
-
-[Citrix Endpoint Management with Microsoft EMS/Intune and Android Enterprise Integration](/en-us/tech-zone/design/reference-architectures/citrix-endpoint-management.html) - Learn about the architecture and integration with Microsoft EMS/Intune and Android Enterprise to deliver applications securely to any device and how it enables security and productivity benefits for both Microsoft EMS/Intune and Citrix customers.
-
-## Citrix Workspace
-
-[Flexible Work](/en-us/tech-zone/design/reference-architectures/flexible-work.html) - Learn how to design an environment to support a flexible work style without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Virtual Apps and Desktops, SD-WAN, Endpoint Management and Security Analytics.
-
-[Mergers and Acquisitions](/en-us/tech-zone/design/reference-architectures/mergers-acquisitions.html) - Learn how to design an environment to support a mergers and acquisition strategy without compromising IT security. The reference architecture incorporates Citrix Workspace, Secure Workspace Access, Virtual Apps and Desktops, Application Delivery Controller, Federated Authentication Service and Security Analytics.
-
-[Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the microapps platform service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
-
-[Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
-
-## Citrix Virtual Apps and Desktops
-
-[App Layering](/en-us/tech-zone/design/reference-architectures/app-layering.html) - Gain a deep understanding of the Citrix Layering technology that simplifies the image management for VDI and hosted-shared environments including use cases and technical concepts.
-
-[Citrix SD-WAN HDX performance improvements for Citrix Virtual Apps and Desktops cloud environments](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-cloud-experience-architecture.html) - Learn how to optimize the delivery of the Citrix Virtual Apps and Desktops service from cloud Resource Locations to users at branches or home offices, with a Citrix SD-WAN appliance, by minimizing latency, and improving session responsiveness during network issues.
-
-[Citrix SD-WAN HDX performance improvements for Citrix Virtual Apps and Desktops on-premises environments](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-onprem-experience-architecture.html) - Learn how to optimize the delivery of Citrix Virtual Apps and Desktops from on-premises servers to users at locations with a Citrix SD-WAN appliance by minimizing latency and improving session responsiveness during network issues.
-
-[Image Management](/en-us/tech-zone/design/reference-architectures/image-management.html) - Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering, and maintaining virtual machine images in your environment.
-
-[Measuring HDX User Experience Performance Improvements with Citrix SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html) - Citrix SD-WAN can significantly improve the network performance of Citrix Virtual Apps and Desktops HDX sessions. Learn about the reference architecture we used to measure quantitative benefits.
-
-[Optimizing Unified Communications Solutions](/en-us/tech-zone/design/reference-architectures/optimizing-unified-communications-solutions.html) - Learn how to optimize the voice, video, and other capabilities of unified communication solutions in virtualized Citrix environments.
-
-[Remote PC Access](/en-us/tech-zone/design/reference-architectures/remote-pc.html) - Discover the use cases and learn about the detailed architecture of the Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.  
-
-[ServiceNow with Citrix Virtual Apps and Desktops](/en-us/tech-zone/design/reference-architectures/itsm-adapter-service.html) - Learn how to integrate ServiceNow within your Citrix Virtual Apps and Desktops environment including key technical concepts and use cases.
-
-[Virtual Apps and Desktops Service](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html) - Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
-
-[Virtual Apps and Desktops Service - AWS](/en-us/tech-zone/design/reference-architectures/citrix-virtual-apps-and-desktops-on-aws.html) - Learn the architecture and deployment considerations of Citrix Virtual Apps and Desktops on an Amazon Web Services cloud platform.
-
-[Virtual Apps and Desktops Service - Azure](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-azure.html) - Learn the detailed architecture and deployment model of Citrix Virtual Apps and Desktops on Microsoft Azure with five key architectural principles.
-
-[Workspace Environment Management service](/en-us/tech-zone/design/reference-architectures/citrix-workspace-environment-management-service.html) - Learn about the architecture and deployment considerations for this cloud-based service of Workspace Environment Management.
-
-## Citrix Service Providers
-
-[Citrix Service Provider Content Collaboration Workspace Integration](/en-us/tech-zone/design/reference-architectures/csp-cc.html) - The CSP Content Collaboration Service and Workspace integration simplifies the Citrix Cloud reseller management, customer deployment and provides real-time file sync to data in one secure centrally managed platform.
-
-[Citrix Service Provider Virtual Apps and Desktops service](/en-us/tech-zone/design/reference-architectures/csp-cvads.html) - The CSP Reference Architecture, provides architectural guidance for Citrix Service Providers to utilize the Virtual Apps and Desktops Service, and Citrix Cloud technologies to offer services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base shared across multiple tenants and multiple geographies, using a single pane of glass.
-
-[Virtual Apps and Desktops service with Azure Active Directory for Citrix Service Providers](/en-us/tech-zone/design/reference-architectures/csp-cvads-aad.html) - Citrix Virtual Apps and Desktops service implementation with Azure Active Directory Domain Services for CSPs Reference Architecture aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and implementation steps to use Azure AD Domain Services.
-
-[Virtual Apps and Desktops service with Google Cloud Platform for Citrix Service Providers](/en-us/tech-zone/design/reference-architectures/csp-cvads-aad.html) - Citrix Virtual Apps and Desktops Service for Google Cloud Platform (GCP) architecture with the managed service for Microsoft Active Directory for Citrix Service Providers (CSPs) aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and design considerations to leverage GCP's Managed AD Service.
 
 ## Citrix Content Collaboration
 
@@ -69,9 +15,9 @@ Just as buildings have blueprints that include details about their structure and
 
 [Content Collaboration with storage zones on Azure IaaS](/en-us/tech-zone/design/reference-architectures/storage-zones-azure-iaas.html) - Learn about the architecture and design considerations for deploying a customer-managed storage zone in Azure to provide the best user experience and security for Citrix Content Collaboration.
 
-## Citrix Virtual Apps and Desktops Standard for Azure
+## Citrix Endpoint Management
 
-[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) - Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
+[Citrix Endpoint Management with Microsoft EMS/Intune and Android Enterprise Integration](/en-us/tech-zone/design/reference-architectures/citrix-endpoint-management.html) - Learn about the architecture and integration with Microsoft EMS/Intune and Android Enterprise to deliver applications securely to any device and how it enables security and productivity benefits for both Microsoft EMS/Intune and Citrix customers.
 
 ## Citrix Networking
 
@@ -85,6 +31,60 @@ Just as buildings have blueprints that include details about their structure and
 
 [SD-WAN Multi-Region](/en-us/tech-zone/design/reference-architectures/sd-wan-multi-region.html) - Discover the framework, design, and architecture for Citrix SD-WAN multi-region deployment with SD-WAN Orchestrator.
 
+## Citrix Secure Workspace Access
+
+[Secure Workspace Access](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Secure Workspace Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization's apps and data.
+
+## Citrix Service Providers
+
+[Citrix Service Provider Content Collaboration Workspace Integration](/en-us/tech-zone/design/reference-architectures/csp-cc.html) - The CSP Content Collaboration Service and Workspace integration simplifies the Citrix Cloud reseller management, customer deployment and provides real-time file sync to data in one secure centrally managed platform.
+
+[Citrix Service Provider Virtual Apps and Desktops service](/en-us/tech-zone/design/reference-architectures/csp-cvads.html) - The CSP Reference Architecture, provides architectural guidance for Citrix Service Providers to utilize the Virtual Apps and Desktops Service, and Citrix Cloud technologies to offer services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base shared across multiple tenants and multiple geographies, using a single pane of glass.
+
+[Virtual Apps and Desktops service with Google Cloud Platform for Citrix Service Providers](/en-us/tech-zone/design/reference-architectures/csp-cvads-aad.html) - Citrix Virtual Apps and Desktops service implementation with Azure Active Directory Domain Services for CSPs Reference Architecture aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and implementation steps to use Azure AD Domain Services.
+
+## Citrix Virtual Apps and Desktops
+
+[App Layering](/en-us/tech-zone/design/reference-architectures/app-layering.html) - Gain a deep understanding of the Citrix Layering technology that simplifies the image management for VDI and hosted-shared environments including use cases and technical concepts.
+
+[Citrix SD-WAN HDX performance improvements for Citrix Virtual Apps and Desktops cloud environments](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-cloud-experience-architecture.html) - Learn how to optimize the delivery of the Citrix Virtual Apps and Desktops service from cloud Resource Locations to users at branches or home offices, with a Citrix SD-WAN appliance, by minimizing latency, and improving session responsiveness during network issues.
+
+[Citrix SD-WAN HDX performance improvements for Citrix Virtual Apps and Desktops on-premises environments](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-onprem-experience-architecture.html) - Learn how to optimize the delivery of Citrix Virtual Apps and Desktops from on-premises servers to users at locations with a Citrix SD-WAN appliance by minimizing latency and improving session responsiveness during network issues.
+
+[Citrix Virtual Apps and Desktops Service – GCP Architecture with the Managed Service for Microsoft Active Directory for CSPs](/en-us/tech-zone/design/reference-architectures/csp-gcp.html) - Citrix Virtual Apps and Desktops Service Google Cloud Platform (GCP) Architecture with the Managed Service for Microsoft Active Directory for Citrix Service Providers (CSPs) aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and design considerations to leverage GCP Managed AD Service.
+
+[Image Management](/en-us/tech-zone/design/reference-architectures/image-management.html) - Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering, and maintaining virtual machine images in your environment.
+
+[Measuring HDX User Experience Performance Improvements with Citrix SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html) - Citrix SD-WAN can significantly improve the network performance of Citrix Virtual Apps and Desktops HDX sessions. Learn about the reference architecture we used to measure quantitative benefits.
+
+[Optimizing Unified Communications Solutions](/en-us/tech-zone/design/reference-architectures/optimizing-unified-communications-solutions.html) - Learn how to optimize the voice, video, and other capabilities of unified communication solutions in virtualized Citrix environments.
+
+[Remote PC Access](/en-us/tech-zone/design/reference-architectures/remote-pc.html) - Discover the use cases and learn about the detailed architecture of the Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.
+
+[ServiceNow with Citrix Virtual Apps and Desktops](/en-us/tech-zone/design/reference-architectures/itsm-adapter-service.html) - Learn how to integrate ServiceNow within your Citrix Virtual Apps and Desktops environment including key technical concepts and use cases.
+
+[Virtual Apps and Desktops Service](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-service.html) - Learn the architecture and deployment considerations for this cloud-based service of secure app and desktop delivery.
+
+[Virtual Apps and Desktops Service - AWS](/en-us/tech-zone/design/reference-architectures/citrix-virtual-apps-and-desktops-on-aws.html) - Learn the architecture and deployment considerations of Citrix Virtual Apps and Desktops on an Amazon Web Services cloud platform.
+
+[Virtual Apps and Desktops Service - Azure](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-azure.html) - Learn the detailed architecture and deployment model of Citrix Virtual Apps and Desktops on Microsoft Azure with five key architectural principles.
+
+[Workspace Environment Management service](/en-us/tech-zone/design/reference-architectures/citrix-workspace-environment-management-service.html) - Learn about the architecture and deployment considerations for this cloud-based service of Workspace Environment Management.
+
+## Citrix Virtual Apps and Desktops Standard for Azure
+
+[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) - Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
+
+## Citrix Workspace
+
+[Flexible Work](/en-us/tech-zone/design/reference-architectures/flexible-work.html) - Learn how to design an environment to support a flexible work style without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Virtual Apps and Desktops, SD-WAN, Endpoint Management and Security Analytics.
+
+[Mergers and Acquisitions](/en-us/tech-zone/design/reference-architectures/mergers-acquisitions.html) - Learn how to design an environment to support a mergers and acquisition strategy without compromising IT security. The reference architecture incorporates Citrix Workspace, Secure Workspace Access, Virtual Apps and Desktops, Application Delivery Controller, Federated Authentication Service and Security Analytics.
+
+[Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the microapps platform service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
+
+[Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
+
 ## Google Cloud Platform
 
 [Citrix virtualization on Google Cloud](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) - Learn the architecture and deployment considerations for Citrix solutions on Google Cloud Platform.
@@ -97,4 +97,4 @@ Just as buildings have blueprints that include details about their structure and
 
 ## Third Party Content
 
-[Third Party Reference Architectures](/en-us/tech-zone/design/reference-architectures/3rd-party.html) - View reference architectures created by our industry partners on joint technical solutions.
+[Third Party](/en-us/tech-zone/design/reference-architectures/3rd-party.html) - View reference architectures created by our industry partners on joint technical solutions.

@@ -4,7 +4,7 @@ description: View reference architectures created by our industry partners on jo
 h3InToc: true
 contributedBy: Martin Zugec
 tz_title: Third Party
-tz_products: other;
+tz_products: third-party-content;
 ---
 # Reference Architecture: Third Party
 
