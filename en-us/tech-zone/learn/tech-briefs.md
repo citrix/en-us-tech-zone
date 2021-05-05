@@ -6,15 +6,15 @@ description: Short overview documents explaining a technology, a feature, a func
 
 Short overview documents explaining a technology, a feature, a function next to a technical diagram.
 
-## Citrix Secure Workspace Access
-
-[Citrix Workspace Essentials and Secure Workspace Access Getting Started Guide](/en-us/tech-zone/learn/tech-briefs/citrix-workspace-essentials-quickstart.html) - This guide demonstrates how to configure SaaS and internal web apps with single sign-on (SSO) in Citrix Workspace.
-
-[Secure Workspace Access](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html) - With Secure Workspace Access, organizations go beyond access and aggregation to provide IT with policy controls that provide conditional access to cloud apps and internet browsing, enhancing the organization's overall security and compliance posture.
-
 ## Citrix Analytics
 
 [Analytics](/en-us/tech-zone/learn/tech-briefs/analytics.html) - Provide visibility into your environment to protect it from malicious users and to improve the end user experience proactively.
+
+## Citrix Endpoint Management
+
+[Citrix Endpoint Management](/en-us/tech-zone/learn/tech-briefs/citrix-endpoint-management.html) - Learn about Unified Endpoint Management and let employees work how, when and where they want with the power to manage every app, device and platform in one central location.
+
+[Mobile SSO](/en-us/tech-zone/learn/tech-briefs/mobile-sso.html) - Native mobile app single sign-on for iOS and Android SaaS applications.
 
 ## Citrix Networking
 
@@ -22,7 +22,7 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [Gateway service for HDX Proxy](/en-us/tech-zone/learn/tech-briefs/gateway-hdxproxy.html) - Provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls.
 
-[Multifactor Authentication with Citrix nFactor](/en-us/tech-zone/learn/tech-briefs/citrix-nfactor-mfa.html) - Learn how you can implement various multifactor authentication methods with Citrix ADC nFactor authentication.
+[Multifactor Authentication with Citrix nFactor](/en-us/tech-zone/learn/tech-briefs/citrix-nfactor-mfa.html) - Learn how you can implement various Multifactor Authentication methods with Citrix ADC nFactor Authentication.
 
 [SD-WAN Cloud Direct service](/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html) - Optimize SaaS access for branch users by tunneling session traffic to Internet Exchanges with direct connectivity to popular sites.
 
@@ -34,15 +34,15 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [SD-WAN for Workspace](/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html) - Provides optimal network connectivity between Enterprise branch offices and their Workspace hosted in data resource locations on-premises or in the cloud.
 
-## Citrix Endpoint Management
-
-[Citrix Endpoint Management](/en-us/tech-zone/learn/tech-briefs/citrix-endpoint-management.html) -  Learn about Unified Endpoint Management and let employees work how, when and where they want with the power to manage every app, device and platform in one central location.
-
-[Mobile SSO](/en-us/tech-zone/learn/tech-briefs/mobile-sso.html) - Native mobile app single sign-on for iOS and Android SaaS applications.
-
 ## Citrix Secure Internet Access
 
 [Citrix Secure Internet Access](/en-us/tech-zone/learn/tech-briefs/secure-internet-access.html) - The expansive demand for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user Internet access. Citrix Secure Internet Access (CSIA) shifts the focus from defending perimeters to following users to ensure Internet access is secure regardless of location.
+
+## Citrix Secure Workspace Access
+
+[Citrix Workspace Essentials and Secure Workspace Access Getting Started Guide](/en-us/tech-zone/learn/tech-briefs/citrix-workspace-essentials-quickstart.html) - This guide demonstrates how to configure SaaS and internal web apps with single sign-on (SSO) in Citrix Workspace.
+
+[Secure Workspace Access](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html) - With Secure Workspace Access, organizations go beyond access and aggregation to provide IT with policy controls that provide conditional access to cloud apps and internet browsing, enhancing the organization's overall security and compliance posture.
 
 ## Citrix Virtual Apps and Desktops
 
@@ -72,12 +72,12 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [Workspace Single Sign-On](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) - Learn how Citrix Workspace provides single sign-on capabilities to SaaS apps, web apps, mobile apps, Windows virtual apps and Windows virtual desktops. In addition, learn how Workspace single sign-on can support IdP chaining configurations.
 
+## Other
+
+[Business Continuity](/en-us/tech-zone/learn/tech-briefs/business-continuity.html) - Business continuity events can have a regional or global impact. Learn about the different ways Citrix allows users to remain productive when making it to the office is not possible.
+
 ## Security
 
 [App protection](/en-us/tech-zone/learn/tech-briefs/app-protection-policies.html) - App protection policies protect application data from attacks based on keyloggers and screen capture tools. Allow companies to embrace BYOD, and extend resources to remote workers, contractors, and gig economy workers.
 
-[Zero Trust](/en-us/tech-zone/learn/tech-briefs/zero-trust.html) - Zero Trust is the most important End User Computing movement since Mobile and Cloud. The Citrix Zero Trust Architecture enables the “any-any-any” vision that Citrix has been espousing for years and is secured by access policies that take trust into context.
-
-## Other
-
-[Business Continuity](/en-us/tech-zone/learn/tech-briefs/business-continuity.html) - Business continuity events can have a regional or global impact. Learn about the different ways Citrix allows users to remain productive when making it to the office is not possible.
+[Zero Trust](/en-us/tech-zone/learn/tech-briefs/zero-trust.html) - Zero Trust is the most important End User Computing movement since Mobile and Cloud. The Citrix Zero Trust Architecture enables the "any-any-any" vision that Citrix has been espousing for years and is secured by access policies that take trust into context.

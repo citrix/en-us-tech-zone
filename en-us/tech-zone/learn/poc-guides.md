@@ -5,6 +5,34 @@ layout: doc
 
 Learn firsthand, the functionality of the solution by following these guides within your test environment.
 
+## Citrix Networking
+
+[nFactor for Citrix Gateway Authentication with Device Certificate](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-device-certificate.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Device Certificates.
+
+[nFactor for Citrix Gateway Authentication with Email OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-email-otp.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with email one-time password.
+
+[nFactor for Citrix Gateway Authentication with Group Extraction](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-group-extraction.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Group Extraction.
+
+[nFactor for Citrix Gateway Authentication with Native OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-native-otp.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Native OTP.
+
+[nFactor for Citrix Gateway Authentication with Push Token](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-push-token.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Push Token.
+
+[Protecting Gateway Virtual Servers with WAF, Bot, and Advanced Authentication Policies](/en-us/tech-zone/learn/poc-guides/protect-gateway-waf-bot-aaa.html) - Learn how to use the security tools built in to the Citrix ADC to protect VPN and Gateway virtual servers, including Web Application Firewall (WAF), Bot Security, and Advanced Authentication Policies.
+
+[SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html) - Learn how to implement Citrix SD-WAN rapidly to provide secure, enhanced, and resilient connectivity between your public cloud and data center environments.
+
+[SD-WAN for Home Offices](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html) - Learn how to implement a POC of the Citrix SD-WAN 110 appliance to demonstrate how to work from home with secure, enhanced, and resilient connectivity.
+
+[Web Application Firewall Deployment](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) - Learn how to deploy Citrix Web Application Firewall (WAF) standalone or as a part of a Citrix ADC deployment. Protect web servers or applications from various attacks including Cross Site Scripting, SQL Injection, Buffer Overflow, Forceful Browsing and more. Deploy in any public cloud or your on-premises environment.
+
+## Citrix Secure Internet Access
+
+[Citrix Secure Internet Access with Citrix SD-WAN](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix SD-WAN to provide secure access to SaaS and Web applications anywhere, reliably and securely.
+
+[Citrix Secure Internet Access with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/secure-internet-access-swa.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix Secure Workspace Access to provide secure access to SaaS and web applications, anywhere, from any device.
+
+[Citrix Secure Internet Access with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html) - Learn how to set up Citrix Secure Internet Access within a Citrix Virtual Apps and Desktops environment that provides secure access to virtual desktops and applications, anywhere, from any device.
+
 ## Citrix Secure Workspace Access
 
 [Secure Access to Azure-managed SaaS Applications and Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Secure Workspace Access environment that provides enhanced security to Microsoft Azure SaaS Apps.
@@ -27,37 +55,9 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 [Microsoft Azure Active Directory Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC](/en-us/tech-zone/learn/poc-guides/cvad-azuread-federation.html) - Learn how to use Microsoft Azure Active Directory as an identity provider for Citrix Virtual Apps and Desktops with Citrix ADC using SAML.
 
-[Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html) - Learn how to deliver the Citrix® HDX™ Optimization for Microsoft® Teams in a Citrix environment. The optimization offers clear, crisp high-definition video calls, audio-video or audio-only calls to and from other Teams users, optimized Teams’ users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
+[Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html) - Learn how to deliver the Citrix HDX Optimization for Microsoft Teams in a Citrix environment. The optimization offers clear, crisp high-definition video calls, audio-video or audio-only calls to and from other Teams users, optimized Teams users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
 
 [Remote PC Access with Citrix Virtual Desktops service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html) - Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from anywhere and on any device.
-
-## Citrix Secure Internet Access
-
-[Citrix Secure Internet Access with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html) - Learn how to set up Citrix Secure Internet Access within a Citrix Virtual Apps and Desktops environment that provides secure access to virtual desktops and applications, anywhere, from any device.
-
-[Citrix Secure Internet Access with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/secure-internet-access-swa.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix Secure Workspace Access to provide secure access to SaaS and web applications, anywhere, from any device.
-
-[Citrix Secure Internet Access with Citrix SD-WAN](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix SD-WAN to provide secure access to SaaS and Web applications anywhere, reliably and securely.
-
-## Citrix Networking
-
-[nFactor for Citrix Gateway Authentication with Device Certificate](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-device-certificate.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Device Certificate.
-
-[nFactor for Citrix Gateway Authentication with Email OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-email-otp.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with email one-time password.
-
-[nFactor for Citrix Gateway Authentication with Group Extraction](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-group-extraction.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Group Extraction.
-
-[nFactor for Citrix Gateway Authentication with Native OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-native-otp.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Native OTP.
-
-[nFactor for Citrix Gateway Authentication with Push Token](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-push-token.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Push Token.
-
-[Protecting Gateway Virtual Servers with WAF, Bot, and Advanced Authentication Policies](/en-us/tech-zone/learn/poc-guides/protect-gateway-waf-bot-aaa.html) - Learn how to use Citrix Web Application Firewall, Bot Security, and Advanced Authentication Policies to protect Citrix Gateway virtual servers running on the same ADC appliance.
-
-[SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html) - Learn how to implement Citrix SD-WAN rapidly to provide secure, enhanced, and resilient connectivity between your public cloud and data center environments.
-
-[SD-WAN for Home Offices](/en-us/tech-zone/learn/poc-guides/citrix-sdwan-home-office.html) - Learn how to implement a POC of the Citrix SD-WAN 110 appliance to demonstrate how to work from home with secure, enhanced, and resilient connectivity.
-
-[Web Application Firewall Deployment](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) - Learn how to deploy Citrix Web Application Firewall (WAF) standalone or as a part of a Citrix ADC deployment. Protect web servers or applications from various attacks including Cross Site Scripting, SQL Injection, Buffer Overflow, Forceful Browsing and more. Deploy in any public cloud or your on-premises environment.
 
 ## Google Cloud Platform
 

@@ -21,8 +21,6 @@ Any architectural design effort confronts decisions that need to be made to ensu
 
 [Delivery Model Comparison](/en-us/tech-zone/design/design-decisions/delivery-model-comparison.html) - A Citrix Virtual Apps and Desktops solution can take on many delivery forms. The organization's business objectives help select the right approach as the different models impact the local IT team's management scope. Learn how Citrix Virtual Apps and Desktops management scope changes based on using a locally managed deployment, a cloud service deployment and a cloud managed deployment.
 
-[VDI Model Comparison](/en-us/tech-zone/design/design-decisions/vdi-model-comparison.html) - Selecting the best VDI model starts with properly defining user groups and aligning the requirements with the capabilities of the VDI models. Learn how different factors play a role in selecting the correct VDI model for a user group.
-
 [Designing StoreFront and Gateway Integration](/en-us/tech-zone/design/design-decisions/storefront-gateway-integration.html) - Learn about the different integration decisions involved when integrating StoreFront with Citrix Gateway for secure remote access.
 
 [Designing StoreFront and Multi-Site Aggregation](/en-us/tech-zone/design/design-decisions/storefront-multisite-aggregation.html) - Learn about the different decisions involved when aggregating and de-duplicating applications and desktops from multiple sites.
@@ -38,6 +36,8 @@ Any architectural design effort confronts decisions that need to be made to ensu
 [Single Server Scalability](/en-us/tech-zone/design/design-decisions/single-server-scalability.html) - Learn about the magic formula to calculate how many users you can have on a single server, what are the different variables that have an impact on scalability and recommendations to improve it.
 
 [The scalability and economics of delivering Citrix Virtual App and Desktop services on Azure](/en-us/tech-zone/design/design-decisions/azure-instance-scalability.html) - Learn about the different Azure instance type scale characteristics and how MSC I/O enhances the response time for your users. The document guides you through choosing the ideal Azure instance type for your workload and touches upon cost per user.
+
+[VDI Model Comparison](/en-us/tech-zone/design/design-decisions/vdi-model-comparison.html) - Selecting the best VDI model starts with properly defining user groups and aligning the requirements with the capabilities of the VDI models. Learn how different factors play a role in selecting the correct VDI model for a user group.
 
 ## Other
 
