@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Nagaraj Manoli
 specialThanksTo: George Tsolis, Vikramjeet Singh, Arun Pons
 description: Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
+tz_title: Citrix Analytics
+tz_products: citrix-analytics;
 ---
-# Citrix Analytics Service
+# Reference Architecture: Citrix Analytics
 
 ## Audience
 

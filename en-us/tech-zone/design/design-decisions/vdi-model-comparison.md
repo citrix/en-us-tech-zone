@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
 description: Selecting the best VDI model starts with properly defining user groups and aligning the requirements with the capabilities of the VDI models. Learn how different factors play a role in selecting the correct VDI model for a user group.
+tz_title: VDI Model Comparison
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Evaluating VDI Models
+# Design Decision: VDI Model Comparison
 
 ## Overview
 

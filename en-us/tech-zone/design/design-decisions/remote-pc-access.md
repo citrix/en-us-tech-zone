@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Matthew Greenbaum, Simon Jackson, Nick Rintalan, Daniel Feller
 description: Remote PC Access is easy to deploy. These design decisions help maintain security, availability, and performance.
+tz_title: Remote PC Access
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Remote PC Access Design Decisions
+# Design Decision: Remote PC Access
 
 ## Overview
 
@@ -208,7 +210,7 @@ For example: `VDAWorkstationCoreSetup.exe /quiet /controllers “control.domain.
 
 ## Common Network Ports
 
-Similar to any other Citrix VDA, there are a handful of key network ports to be mindful of opening for the system to function. As a reminder, ICA traffic needs to reach the Remote PC Access from the Citrix ADC hosting the external Citrix Gateway. A comprehensive list of ports can be found in [Communication Ports Used by Citrix Technologies](https://docs.citrix.com/en-us/tech-zone/build/tech-papers/citrix-communication-ports.html).
+Similar to any other Citrix VDA, there are a handful of key network ports to be mindful of opening for the system to function. As a reminder, ICA traffic needs to reach the Remote PC Access from the Citrix ADC hosting the external Citrix Gateway. A comprehensive list of ports can be found in [Communication Ports Used by Citrix Technologies](/en-us/tech-zone/build/tech-papers/citrix-communication-ports.html).
 
 ## VDA Registration
 

@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Ana Ruiz
 specialThanksTo: Omar ElNaggar, Ingmar Verheij, Laura Kaminski
 description: Streamline functionality from complex enterprise applications creating simple actions users can complete right within their feed.
+tz_title: Workspace Microapps
+tz_products: citrix-workspace;
 ---
-# Citrix Workspace Microapps Service
+# Tech Brief: Workspace Microapps
 
 Organizations understand that when employees are forced to use complex, hard-to-use applications, they become frustrated and less productive. Employees spend 20% of their time searching for information while utilizing 4 or 5 key functions in about 80% of all business applications. [Citrix Workspace](/en-us/tech-zone/learn/tech-briefs/workspace-app.html/) allows users to access all their resources—SaaS apps, web apps, Windows Apps, Linux apps, desktops, and data through a single pane of glass. Citrix introduces intelligent features to the workspace which extend these capabilities by adding machine learning-fueled microapps and workflows, and universal search.
 

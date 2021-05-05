@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Nagapandu Potti, Alejandra Roca
 description: Learn how to provide the dynamic delivery of resources by redirecting browsing to a Secure Browser service protecting the company network without sacrificing user experience.
+tz_title: URL Redirection with Secure Browser and Citrix ADC in Azure
+tz_products: security;
 ---
-# Proof of Concept Guide: URL Redirection to Secure Browser with Citrix ADC in Azure
+# PoC Guide: URL Redirection with Secure Browser and Citrix ADC in Azure
 
 ## Overview
 

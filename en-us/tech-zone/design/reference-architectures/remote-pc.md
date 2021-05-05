@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Vivekananthan Devaraj
 specialThanksTo: Gabe Carrejo, Miguel Contreras
 description: Discover the use cases and learn about the detailed architecture of the Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.
+tz_title: Remote PC Access
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Reference Architecture for Citrix Remote PC Access Solution
+# Reference Architecture: Remote PC Access
 
 ## Overview of Remote PC Access
 

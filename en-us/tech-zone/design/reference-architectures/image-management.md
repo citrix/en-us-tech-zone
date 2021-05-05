@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Nagaraj Manoli
 specialThanksTo: Martin Zugec, Allen Furmanski, James Hsu
 description: Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering, and maintaining virtual machine images in your environment.
+tz_title: Image Management
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Citrix Virtual Apps and Desktops Image Management
+# Reference Architecture: Image Management
 
 ## Audience
 

@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Mayank Singh
 specialThanksTo: Fernando Klurfan, Rick Feijoo, Kenneth Bell, Ashish Gujrathi, Himanshu Agarwal, Dan Feller
 description: Learn how Citrix Cloud services are architected and built for resiliency. Understand how Service Continuity features enable users to connect to the resources that are accessible even if some or all of the cloud services are unreachable.
+tz_title: Citrix Cloud Resiliency
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Citrix Cloud Resiliency
+# Tech Brief: Citrix Cloud Resiliency
 
 ## Introduction
 

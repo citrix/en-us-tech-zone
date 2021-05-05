@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
 description: A set of technologies ensuring an unparalleled user experience when accessing virtual Windows/Linux applications and desktops.
+tz_title: HDX
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# HDX
+# Tech Insight: HDX
 
 HDX is a set of remoting technologies providing the user with the best possible virtual application and desktop experience. The technologies within HDX include things like the ICA protocol, adaptive display, adaptive throughput, browser content redirection and more. Each technology within HDX focuses on a unique part of the overall virtual app and desktop session delivery approach. To see how these capabilities improve the overall experience, watch the following videos.
 

@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Russell Peters
 description: Learn how to deploy Windows 10 with Citrix Virtual Apps and Desktops.
+tz_title: Windows 10 Deployment Guide
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Windows 10 Deployment Guide
+# Deployment Guide: Windows 10 Deployment Guide
 
 ## Overview
 

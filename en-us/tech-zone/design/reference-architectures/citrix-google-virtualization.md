@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Rick Dehlinger, Jeff Allen, Rich Meesters, Anthony Zepeda
 specialThanksTo: JP Alfaro, Stefano Castelli, Gavin Connolly, Kishore Kunisetty, Dan Lazar, John Moody, Mads Petersen, Michael Shuster
 description: Learn the architecture and deployment considerations for Citrix solutions on Google Cloud Platform.
+tz_title: Citrix virtualization on Google Cloud
+tz_products: google-cloud-platform;
 ---
-# Citrix virtualization on Google Cloud
+# Reference Architecture: Citrix virtualization on Google Cloud
 
 ## Introduction
 

@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Karthick Srivatsan
 specialThanksTo: Matthew Brooks
 description: Learn how to set up Citrix Secure Internet Access in conjunction with Citrix SD-WAN to provide secure access to SaaS and Web applications anywhere, reliably and securely.
+tz_title: Citrix Secure Internet Access with Citrix SD-WAN
+tz_products: citrix-secure-internet-access;
 ---
-# Proof of Concept: Citrix Secure Internet Access with Citrix SD-WAN
+# PoC Guide: Citrix Secure Internet Access with Citrix SD-WAN
 
 ## Overview
 

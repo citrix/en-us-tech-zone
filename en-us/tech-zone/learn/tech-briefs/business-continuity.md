@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller, Mayank Singh
 description: Business continuity events can have a regional or global impact. Learn about the different ways Citrix allows users to remain productive when making it to the office is not possible.
+tz_title: Business Continuity
+tz_products: other;
 ---
-# Business Continuity
+# Tech Brief: Business Continuity
 
 Most organizations have defined business continuity plans. The success of a business continuity plan is based on how much it impacts the user experience, how well it scales to overcome global issues, and how well it maintains corporate security policies.
 

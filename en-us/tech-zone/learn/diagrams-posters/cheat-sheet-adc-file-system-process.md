@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Gene Whitaker
 specialThanksTo: Adrianna Pellitteri
 description: One-page summary of most common system directories, files, processes/daemons and logs.
+tz_title: Citrix ADC - File System and Process Cheat Sheet
+tz_products: citrix-networking;
 ---
-# Citrix ADC File System and Process Cheat Sheet
+# Diagrams and Poster: Citrix ADC - File System and Process Cheat Sheet
 
 ## Overview
 

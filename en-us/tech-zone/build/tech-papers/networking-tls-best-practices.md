@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Jake Rutski, Steven Wright
 specialThanksTo: Joe Shonk
 description: Tech Paper focused on SSL / TLS best practices for Citrix Networking deployments. We cover configuration items such as the certificate chain bound to the virtual server, cipher suite settings, and disabling older protocols that are vulnerable to attack.
+tz_title: Networking SSL / TLS Best Practices
+tz_products: security;
 ---
-# Citrix Networking SSL / TLS Best Practices
+# Tech Paper: Networking SSL / TLS Best Practices
 
 ## Overview
 

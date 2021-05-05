@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Mayank Singh
 specialThanksTo: Wayne Liu
 description: Learn how Workspace Environment Management uses intelligent resource management and Profile Management technologies to deliver the best possible performance, desktop logon, and application response times for Citrix Virtual Apps and Desktops sessions, as well as enhances the security of the deployment.
+tz_title: Workspace Environment Management
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Workspace Environment Management
+# Tech Brief: Workspace Environment Management
 
 ## Introduction
 

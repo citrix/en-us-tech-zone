@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Dennis Span
 specialThanksTo: Martin Zugec
 description: Tech Paper focused on installation, configuration, and various optimizations for Google Chrome browser running on Citrix Virtual Apps and Desktops.
+tz_title: Deploying Google Chrome
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Running Google Chrome on Virtual Apps and Desktop
+# Tech Paper: Deploying Google Chrome
 
 ## Overview
 

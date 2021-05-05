@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
 description: Personalized interface that provides access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
+tz_title: Workspace app
+tz_products: citrix-workspace;
 ---
-# Workspace app
+# Tech Brief: Workspace app
 
 As users access their resources -- SaaS apps, web apps, Windows apps, Linux apps, desktops, and data -- from numerous corporate and personal devices, they need a simple and unified experience that enables them to seamlessly gain access to everything. Organizations also must make it easy for users to onboard new devices while ensuring that centralizing security controls do not negatively impact the users’ experiences.
 

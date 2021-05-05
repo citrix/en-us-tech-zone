@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Ana Ruiz
 description: Increase productivity by adding microapps to Citrix Workspace. Microapps allow users to view information and perform actions without launching the full application.
+tz_title: Microapps
+tz_products: citrix-workspace;
 ---
-# Microapps Overview
+# Tech Insight: Microapps
 
 Citrix introduces intelligent features to the workspace which extend its capabilities by adding machine learning-fueled microapps. Microapps provide users with a streamlined workflow by unbundling applications to provide the end user with simple actions right within their feed. Microapps utilize APIs available within SaaS, web, or home-grown applications allowing users to see content without needing the full launch of the application. Microapps enhance and improve end-user productivity.
 

@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
 description: Learn how to set up a Citrix Secure Workspace Access environment that is able to use Okta as the single sign-on provider for SaaS applications.
+tz_title: Secure Access to SaaS Applications with Okta and Citrix Secure Workspace Access
+tz_products: citrix-secure-workspace-access;
 ---
-# Proof of Concept: Secure Access to SaaS Applications with Okta and Citrix Secure Workspace Access
+# PoC Guide: Secure Access to SaaS Applications with Okta and Citrix Secure Workspace Access
 
 ## Overview
 

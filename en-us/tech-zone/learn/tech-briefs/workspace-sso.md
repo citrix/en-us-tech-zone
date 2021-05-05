@@ -3,8 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
 description: Learn how Citrix Workspace provides single sign-on capabilities to SaaS apps, web apps, mobile apps, Windows virtual apps and Windows virtual desktops. In addition, learn how Workspace single sign-on can support IdP chaining configurations.
+tz_title: Workspace Single Sign-On
+tz_products: citrix-workspace;
 ---
-# Workspace - Single Sign-On
+# Tech Brief: Workspace Single Sign-On
 
 A user’s primary Workspace identity authorizes them to access SaaS, mobile, web, virtual apps, and virtual desktops. Many authorized resources require another authentication, often with an identity different from the user’s primary workspace identity. Citrix Workspace provides users with a seamless experience by providing single sign-on to secondary resources.
 

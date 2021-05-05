@@ -4,8 +4,10 @@ h3InToc: true
 contributedBy: Rico Projer, Jason Delgado
 specialThanksTo: Sasa Petrovic, Muhammad Dawood, Nick Czabaranek, Martin Zugec, Martin Latteier
 description: To meet different user requirements, the Citrix HDX protocol allows for different graphics modes to be configured. Learn about the different HDX modes and how they are configured.
+tz_title: HDX Graphics Overview
+tz_products: citrix-virtual-apps-and-desktops;
 ---
-# HDX Graphics Overview
+# Design Decision: HDX Graphics Overview
 
 ## Introduction
 
