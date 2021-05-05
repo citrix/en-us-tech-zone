@@ -4,8 +4,8 @@ docs:
 
 - title: Home
   url: /en-us/tech-zone
-- title: Learn
-  url: /en-us/tech-zone/learn.html
+- title: By Content Type
+  url: /en-us/tech-zone/toc/by-content-type.html
   subfolderlist:
     - title: Diagrams & Posters
       url: /en-us/tech-zone/learn/diagrams-posters.html
@@ -15,16 +15,10 @@ docs:
       url: /en-us/tech-zone/learn/tech-briefs.html
     - title: Tech Insights
       url: /en-us/tech-zone/learn/tech-insights.html
-- title: Design
-  url: /en-us/tech-zone/design.html
-  subfolderlist:
     - title: Design Decisions
       url: /en-us/tech-zone/design/design-decisions.html
     - title: Reference Architectures
       url: /en-us/tech-zone/design/reference-architectures.html
-- title: Build
-  url: /en-us/tech-zone/build.html
-  subfolderlist:
     - title: Deployment Guides
       url: /en-us/tech-zone/build/deployment-guides.html
     - title: Tech Papers
