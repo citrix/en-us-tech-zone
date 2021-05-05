@@ -9,9 +9,6 @@ docs:
   subfolderlist:
     - title: Diagrams & Posters
       url: /en-us/tech-zone/learn/diagrams-posters.html
-      subfolderlist:
-        - title: Posters & Diagrams
-          url: /en-us/tech-zone/learn/diagrams-posters.html
     - title: PoC Guides
       url: /en-us/tech-zone/learn/poc-guides.html
     - title: Tech Briefs
@@ -45,6 +42,23 @@ docs:
       url: /en-us/tech-zone/toc/by-product/citrix-service-providers.html
     - title: Citrix Virtual Apps and Desktops
       url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops.html
+      subfolderlist:
+        - title: Overview
+          url: /en-us/tech-zone/learn/diagrams-posters.html
+        - title: Getting Started
+          url: /en-us/tech-zone/learn/diagrams-posters.html
+        - title: Deploying
+          url: /en-us/tech-zone/learn/diagrams-posters.html
+        - title: Integrating
+          url: /en-us/tech-zone/learn/diagrams-posters.html
+        - title: Securing
+          url: /en-us/tech-zone/learn/diagrams-posters.html
+        - title: Troubleshooting
+          url: /en-us/tech-zone/learn/diagrams-posters.html
+        - title: Advanced Design Concepts
+          url: /en-us/tech-zone/learn/diagrams-posters.html
+        - title: Blogs
+          url: https://www.citrix.com/blogs/
     - title: Citrix Virtual Apps and Desktops Standard for Azure
       url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops-standard-for-azure.html
     - title: Citrix Workspace
