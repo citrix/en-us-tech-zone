@@ -42,23 +42,6 @@ docs:
       url: /en-us/tech-zone/toc/by-product/citrix-service-providers.html
     - title: Citrix Virtual Apps and Desktops
       url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops.html
-      subfolderlist:
-        - title: Overview
-          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/overview.html
-        - title: Getting Started
-          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/getting-started.html
-        - title: Deploying
-          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/deploying.html
-        - title: Integrating
-          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/integrating.html
-        - title: Securing
-          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/securing.html
-        - title: Troubleshooting
-          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/troubleshooting.html
-        - title: Advanced Design Concepts
-          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/advanced-design-concepts.html
-        - title: Blogs
-          url: https://www.citrix.com/blogs/
     - title: Citrix Virtual Apps and Desktops Standard for Azure
       url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops-standard-for-azure.html
     - title: Citrix Workspace
