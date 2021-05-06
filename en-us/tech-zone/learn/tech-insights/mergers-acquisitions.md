@@ -15,6 +15,7 @@ With Citrix Workspace, organizations can create a zero-trust strategy for merger
 *  With contextual authorization, users can access only approved applications and desktop resources.
 *  Contextual access policies place restrictions on user activities within the application and desktop resources.
 *  User behavior analysis adds real-time security analytics helping to prevent insider threats, compromised endpoints, and compromised user accounts.
+*  VPN-less access to internal resources to authorized users from either organization.
 
 **Watch this video to [learn more](https://youtu.be/QurmF0ZVV3M):**
 
