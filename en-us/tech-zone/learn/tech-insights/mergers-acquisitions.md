@@ -1,14 +1,31 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: First Last, First2 Last2
-specialThanksTo: First Last, First2 Last2
-description: Copy & paste description from TOC here
+contributedBy: Daniel Feller
+specialThanksTo: Brian Olsen
+description: See how Citrix Workspace can help create a zero trust strategy for mergers and acquisitions through the use of Citrix Application Delivery Controller, Citrix Virtual Apps and Desktops Service, Citrix Secure Workspace Access, and Citrix Analytics for Security. 
 ---
-# Title
+# Zero Trust Strategy for Mergers and Acquisitions
 
-TEXT
+Mergers and acquisitions require an extensive amount of time to integrate the underlying infrastructure. Enabling collaboration between both companies often requires creating and expanding VPN-based solutions, which can be risky.
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=ID):**
+With Citrix Workspace, organizations can create a zero-trust strategy for mergers and acquisitions. The zero-trust approach enables the following:
 
-[![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=ID)
+*  With contextual authentication policies, users maintain their current identity and identity provider.
+*  With contextual authorization, users can access only approved applications and desktop resources.
+*  Contextual access policies place restrictions on user activities within the application and desktop resources.
+*  User behavior analysis adds real-time security analytics helping to prevent insider threats, compromised endpoints, and compromised user accounts.
+
+**Watch this video to [learn more](https://youtu.be/QurmF0ZVV3M):**
+
+[![Zero-Trust Strategy for Mergers and Acquisitions](/en-us/tech-zone/learn/media/tech-insights_mergers-acquisitions.png)](https://youtu.be/QurmF0ZVV3M)
+
+The zero-trust strategy for mergers and acquisitions integrates the following
+
+*  Citrix Workspace
+*  Citrix Analytics for Security
+*  Citrix Application Delivery Controller
+*  Citrix Secure Workspace Access Service
+*  Citrix Virtual Apps and Desktops Service
+
+To learn more about this solution, please review the [Reference Architecture: Zero-Trust Strategy for Mergers and Acquisitions](/en-us/tech-zone/design/reference-architectures/mergers-acquisitions.html).
