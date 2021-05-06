@@ -8,21 +8,21 @@ docs:
   url: /en-us/tech-zone/toc/by-content-type.html
   subfolderlist:
     - title: Diagrams & Posters
-      url: /en-us/tech-zone/learn/diagrams-posters.html
+      url: /en-us/tech-zone/toc/by-content-type/diagrams-posters.html
     - title: PoC Guides
-      url: /en-us/tech-zone/learn/poc-guides.html
+      url: /en-us/tech-zone/toc/by-content-type/poc-guides.html
     - title: Tech Briefs
-      url: /en-us/tech-zone/learn/tech-briefs.html
+      url: /en-us/tech-zone/toc/by-content-type/tech-briefs.html
     - title: Tech Insights
-      url: /en-us/tech-zone/learn/tech-insights.html
+      url: /en-us/tech-zone/toc/by-content-type/tech-insights.html
     - title: Design Decisions
-      url: /en-us/tech-zone/design/design-decisions.html
+      url: /en-us/tech-zone/toc/by-content-type/design-decisions.html
     - title: Reference Architectures
-      url: /en-us/tech-zone/design/reference-architectures.html
+      url: /en-us/tech-zone/toc/by-content-type/reference-architectures.html
     - title: Deployment Guides
-      url: /en-us/tech-zone/build/deployment-guides.html
+      url: /en-us/tech-zone/toc/by-content-type/deployment-guides.html
     - title: Tech Papers
-      url: /en-us/tech-zone/build/tech-papers.html
+      url: /en-us/tech-zone/toc/by-content-type/tech-papers.html
 - title: By Product
   url: /en-us/tech-zone/toc/by-product.html
   subfolderlist:
@@ -44,19 +44,19 @@ docs:
       url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops.html
       subfolderlist:
         - title: Overview
-          url: /en-us/tech-zone/learn/diagrams-posters.html
+          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/overview.html
         - title: Getting Started
-          url: /en-us/tech-zone/learn/diagrams-posters.html
+          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/getting-started.html
         - title: Deploying
-          url: /en-us/tech-zone/learn/diagrams-posters.html
+          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/deploying.html
         - title: Integrating
-          url: /en-us/tech-zone/learn/diagrams-posters.html
+          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/integrating.html
         - title: Securing
-          url: /en-us/tech-zone/learn/diagrams-posters.html
+          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/securing.html
         - title: Troubleshooting
-          url: /en-us/tech-zone/learn/diagrams-posters.html
+          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/troubleshooting.html
         - title: Advanced Design Concepts
-          url: /en-us/tech-zone/learn/diagrams-posters.html
+          url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops/advanced-design-concepts.html
         - title: Blogs
           url: https://www.citrix.com/blogs/
     - title: Citrix Virtual Apps and Desktops Standard for Azure
