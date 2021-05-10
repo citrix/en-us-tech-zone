@@ -26,3 +26,15 @@
  # Redirect HDX to new aggregate page (11/18/2020)
  /en-us/tech-zone/learn/tech-insights/hdx-adaptive-display.html /en-us/tech-zone/learn/tech-insights/hdx.html
  
+# Redirecting from Tech Zone v2 format to v3 format (with dedicated /toc/ folder) (05/10/2021)
+/en-us/tech-zone/learn.html /en-us/tech-zone/toc/by-content-type.html
+/en-us/tech-zone/design.html /en-us/tech-zone/toc/by-content-type.html
+/en-us/tech-zone/build.html /en-us/tech-zone/toc/by-content-type.html
+/en-us/tech-zone/learn/diagrams-posters.html /en-us/tech-zone/toc/by-content-type/diagrams-posters.html
+/en-us/tech-zone/learn/poc-guides.html /en-us/tech-zone/toc/by-content-type/poc-guides.html
+/en-us/tech-zone/learn/tech-briefs.html /en-us/tech-zone/toc/by-content-type/tech-briefs.html
+/en-us/tech-zone/learn/tech-insights.html /en-us/tech-zone/toc/by-content-type/tech-insights.html
+/en-us/tech-zone/design/design-decisions.html /en-us/tech-zone/toc/by-content-type/design-decisions.html
+/en-us/tech-zone/design/reference-architectures.html /en-us/tech-zone/toc/by-content-type/reference-architectures.html
+/en-us/tech-zone/build/deployment-guides.html /en-us/tech-zone/toc/by-content-type/deployment-guides.html
+/en-us/tech-zone/build/tech-papers.html /en-us/tech-zone/toc/by-content-type/tech-papers.html
