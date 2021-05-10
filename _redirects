@@ -27,6 +27,9 @@
 /en-us/tech-zone/learn/tech-insights/hdx-adaptive-display.html /en-us/tech-zone/learn/tech-insights/hdx.html
  
 # Redirecting from Tech Zone v2 format to v3 format with dedicated toc folder (05/10/2021)
+/en-us/tech-zone/learn.html /en-us/tech-zone/toc/by-content-type.html
+/en-us/tech-zone/desing.html /en-us/tech-zone/toc/by-content-type.html
+/en-us/tech-zone/build.html /en-us/tech-zone/toc/by-content-type.html
 /en-us/tech-zone/learn/diagrams-posters.html /en-us/tech-zone/toc/by-content-type/diagrams-posters.html
 /en-us/tech-zone/learn/poc-guides.html /en-us/tech-zone/toc/by-content-type/poc-guides.html
 /en-us/tech-zone/learn/tech-briefs.html /en-us/tech-zone/toc/by-content-type/tech-briefs.html
