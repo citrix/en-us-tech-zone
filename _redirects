@@ -20,14 +20,13 @@
 /en-us/tech-zone/learn/tech-briefs/access-control-storefront.html /en-us/tech-zone.html#citrix-secure-workspace-access
 /en-us/tech-zone/learn/tech-insights/access-control-storefront.html /en-us/tech-zone.html#citrix-secure-workspace-access
  
- # Redirect all Access Control content to Citrix Secure Workspace Access (11/18/2020)
- /en-us/tech-zone/learn/tech-briefs/access-control.html /en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html
+# Redirect all Access Control content to Citrix Secure Workspace Access (11/18/2020)
+/en-us/tech-zone/learn/tech-briefs/access-control.html /en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html
  
- # Redirect HDX to new aggregate page (11/18/2020)
- /en-us/tech-zone/learn/tech-insights/hdx-adaptive-display.html /en-us/tech-zone/learn/tech-insights/hdx.html
+# Redirect HDX to new aggregate page (11/18/2020)
+/en-us/tech-zone/learn/tech-insights/hdx-adaptive-display.html /en-us/tech-zone/learn/tech-insights/hdx.html
  
-# Redirecting from Tech Zone v2 format to v3 format (with dedicated /toc/ folder) (05/10/2021)
-# /en-us/tech-zone/learn.html /en-us/tech-zone/toc/by-content-type.html
+# Redirecting from Tech Zone v2 format to v3 format with dedicated toc folder (05/10/2021)
 /en-us/tech-zone/learn/diagrams-posters.html /en-us/tech-zone/toc/by-content-type/diagrams-posters.html
 /en-us/tech-zone/learn/poc-guides.html /en-us/tech-zone/toc/by-content-type/poc-guides.html
 /en-us/tech-zone/learn/tech-briefs.html /en-us/tech-zone/toc/by-content-type/tech-briefs.html
