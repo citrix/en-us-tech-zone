@@ -4,31 +4,56 @@ docs:
 
 - title: Home
   url: /en-us/tech-zone
-- title: Learn
-  url: /en-us/tech-zone/learn.html
+- title: By Content Type
+  url: /en-us/tech-zone/toc/by-content-type.html
   subfolderlist:
     - title: Diagrams & Posters
-      url: /en-us/tech-zone/learn/diagrams-posters.html
+      url: /en-us/tech-zone/toc/by-content-type/diagrams-posters.html
     - title: PoC Guides
-      url: /en-us/tech-zone/learn/poc-guides.html
+      url: /en-us/tech-zone/toc/by-content-type/poc-guides.html
     - title: Tech Briefs
-      url: /en-us/tech-zone/learn/tech-briefs.html
+      url: /en-us/tech-zone/toc/by-content-type/tech-briefs.html
     - title: Tech Insights
-      url: /en-us/tech-zone/learn/tech-insights.html
-- title: Design
-  url: /en-us/tech-zone/design.html
-  subfolderlist:
+      url: /en-us/tech-zone/toc/by-content-type/tech-insights.html
     - title: Design Decisions
-      url: /en-us/tech-zone/design/design-decisions.html
+      url: /en-us/tech-zone/toc/by-content-type/design-decisions.html
     - title: Reference Architectures
-      url: /en-us/tech-zone/design/reference-architectures.html
-- title: Build
-  url: /en-us/tech-zone/build.html
-  subfolderlist:
+      url: /en-us/tech-zone/toc/by-content-type/reference-architectures.html
     - title: Deployment Guides
-      url: /en-us/tech-zone/build/deployment-guides.html
+      url: /en-us/tech-zone/toc/by-content-type/deployment-guides.html
     - title: Tech Papers
-      url: /en-us/tech-zone/build/tech-papers.html
+      url: /en-us/tech-zone/toc/by-content-type/tech-papers.html
+- title: By Product
+  url: /en-us/tech-zone/toc/by-product.html
+  subfolderlist:
+    - title: Citrix Analytics
+      url: /en-us/tech-zone/toc/by-product/citrix-analytics.html
+    - title: Citrix Content Collaboration
+      url: /en-us/tech-zone/toc/by-product/citrix-content-collaboration.html
+    - title: Citrix Endpoint Management
+      url: /en-us/tech-zone/toc/by-product/citrix-endpoint-management.html
+    - title: Citrix Networking
+      url: /en-us/tech-zone/toc/by-product/citrix-networking.html
+    - title: Citrix Secure Internet Access
+      url: /en-us/tech-zone/toc/by-product/citrix-secure-internet-access.html
+    - title: Citrix Secure Workspace Access
+      url: /en-us/tech-zone/toc/by-product/citrix-secure-workspace-access.html
+    - title: Citrix Service Providers
+      url: /en-us/tech-zone/toc/by-product/citrix-service-providers.html
+    - title: Citrix Virtual Apps and Desktops
+      url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops.html
+    - title: Citrix Virtual Apps and Desktops Standard for Azure
+      url: /en-us/tech-zone/toc/by-product/citrix-virtual-apps-and-desktops-standard-for-azure.html
+    - title: Citrix Workspace
+      url: /en-us/tech-zone/toc/by-product/citrix-workspace.html
+    - title: Google Cloud Platform
+      url: /en-us/tech-zone/toc/by-product/google-cloud-platform.html
+    - title: Security
+      url: /en-us/tech-zone/toc/by-product/security.html
+    - title: Third Party Content
+      url: /en-us/tech-zone/toc/by-product/third-party-content.html
+    - title: Other
+      url: /en-us/tech-zone/toc/by-product/other.html
 - title: The Click-Down Podcast
   url: https://www.citrix.com/lp/the-click-down.html
 - title: Tech Zone Live
