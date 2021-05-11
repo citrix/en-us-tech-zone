@@ -5,7 +5,7 @@ tz_title: Zero Trust Strategy for Mergers and Acquisitions
 tz_products: citrix-workspace;
 contributedBy: Daniel Feller
 specialThanksTo: Brian Olsen
-description: See how Citrix Workspace can help create a zero trust strategy for mergers and acquisitions through the use of Citrix Application Delivery Controller, Citrix Virtual Apps and Desktops Service, Citrix Secure Workspace Access, and Citrix Analytics for Security. 
+description: See how Citrix Workspace can help create a zero trust strategy for mergers and acquisitions through the use of Citrix Application Delivery Controller, Citrix Virtual Apps and Desktops Service, Citrix Secure Workspace Access, and Citrix Analytics for Security.
 ---
 # Tech Insight: Zero Trust Strategy for Mergers and Acquisitions
 
