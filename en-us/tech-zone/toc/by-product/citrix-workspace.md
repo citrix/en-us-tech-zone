@@ -5,21 +5,9 @@ layout: doc
 
 List of articles related to Citrix Workspace.
 
-## Learn - Diagrams and Posters
-
-[Citrix Workspace](/en-us/tech-zone/learn/diagrams-posters/workspace.html) - Conceptual architecture drawing for Citrix Workspace.
-
-## Learn - Tech Briefs
-
-[Workspace app](/en-us/tech-zone/learn/tech-briefs/workspace-app.html) - Personalized interface that provides access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
-
-[Workspace Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) - Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.
-
-[Workspace Microapps](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html) - Streamline functionality from complex enterprise applications creating simple actions users can complete right within their feed.
-
-[Workspace Single Sign-On](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) - Learn how Citrix Workspace provides single sign-on capabilities to SaaS apps, web apps, mobile apps, Windows virtual apps and Windows virtual desktops. In addition, learn how Workspace single sign-on can support IdP chaining configurations.
-
 ## Learn - Tech Insights
+
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
 
 [Authentication - Citrix Gateway](/en-us/tech-zone/learn/tech-insights/gateway-idp.html) - Utilize an on-premises Citrix Gateway as an identity provider for Citrix Workspace.
 
@@ -43,7 +31,25 @@ List of articles related to Citrix Workspace.
 
 [Workspace app](/en-us/tech-zone/learn/tech-insights/workspace-app.html) - Personalized interface to provide access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
 
+## Learn - Tech Briefs
+
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
+
+[Workspace app](/en-us/tech-zone/learn/tech-briefs/workspace-app.html) - Personalized interface that provides access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
+
+[Workspace Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) - Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.
+
+[Workspace Microapps](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html) - Streamline functionality from complex enterprise applications creating simple actions users can complete right within their feed.
+
+[Workspace Single Sign-On](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) - Learn how Citrix Workspace provides single sign-on capabilities to SaaS apps, web apps, mobile apps, Windows virtual apps and Windows virtual desktops. In addition, learn how Workspace single sign-on can support IdP chaining configurations.
+
+## Learn - Diagrams and Posters
+
+[Citrix Workspace](/en-us/tech-zone/learn/diagrams-posters/workspace.html) - Conceptual architecture drawing for Citrix Workspace.
+
 ## Design - Reference Architectures
+
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
 
 [Flexible Work](/en-us/tech-zone/design/reference-architectures/flexible-work.html) - Learn how to design an environment to support a flexible work style without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Virtual Apps and Desktops, SD-WAN, Endpoint Management and Security Analytics.
 
@@ -54,5 +60,7 @@ List of articles related to Citrix Workspace.
 [Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
 
 ## Build - Tech Papers
+
+Tech papers are deep dives into specific problem, technology or solution providing details, leading practices and architectural insights.
 
 [Citrix Workspace app quick start guide](/en-us/tech-zone/build/tech-papers/citrix-workspace-app.html) - Quick start guide for Citrix Workspace app - everything you need to know in one place, including installation, configuration, and optimizations.
