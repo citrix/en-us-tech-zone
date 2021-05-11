@@ -86,3 +86,5 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 [VPN-Less Access to Web, Windows and Linux Resources](/en-us/tech-zone/learn/tech-insights/vpn-less-access.html) - Learn how users can access internal web apps, Windows/Linux apps and Windows/Linux desktops without a VPN.
 
 [Workspace app](/en-us/tech-zone/learn/tech-insights/workspace-app.html) - Personalized interface to provide access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
+
+[Zero Trust Strategy for Mergers and Acquisitions](/en-us/tech-zone/learn/tech-insights/mergers-acquisitions.html) - See how Citrix Workspace can help create a zero trust strategy for mergers and acquisitions through the use of Citrix Application Delivery Controller, Citrix Virtual Apps and Desktops Service, Citrix Secure Workspace Access, and Citrix Analytics for Security.
