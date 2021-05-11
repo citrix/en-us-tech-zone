@@ -7,6 +7,8 @@ List of Tech Zone articles, organized by content type.
 
 ## Tech Insights
 
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
+
 ### Citrix Analytics
 
 [Performance Analytics](/en-us/tech-zone/learn/tech-insights/performance-analytics.html) - Gain visibility into your environment through user-centric experience scores, application & infrastructure performance scores with Performance Analytics.
@@ -91,6 +93,8 @@ List of Tech Zone articles, organized by content type.
 
 ## Tech Briefs
 
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
+
 ### Citrix Analytics
 
 [Analytics](/en-us/tech-zone/learn/tech-briefs/analytics.html) - Provide visibility into your environment to protect it from malicious users and to improve the end user experience proactively.
@@ -168,6 +172,8 @@ List of Tech Zone articles, organized by content type.
 [Business Continuity](/en-us/tech-zone/learn/tech-briefs/business-continuity.html) - Business continuity events can have a regional or global impact. Learn about the different ways Citrix allows users to remain productive when making it to the office is not possible.
 
 ## PoC Guides
+
+PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
 
 ### Citrix Networking
 
@@ -267,6 +273,8 @@ List of Tech Zone articles, organized by content type.
 
 ## Reference Architectures
 
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
 ### Citrix Analytics
 
 [Citrix Analytics](/en-us/tech-zone/design/reference-architectures/citrix-analytics.html) - Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
@@ -363,6 +371,8 @@ List of Tech Zone articles, organized by content type.
 
 ## Design Decisions
 
+Design decisions helps you guide through the decision process to configure, optimize, and deploy your solution in its best way.
+
 ### Citrix Networking
 
 [Citrix SD-WAN for Home Offices](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) - Understand the design decisions required to implement the Citrix SD-WAN 110 in a Home Office to provide secure, enhanced, and resilient connectivity.
@@ -403,6 +413,8 @@ List of Tech Zone articles, organized by content type.
 
 ## Deployment Guides
 
+Deployment guides provide step-by-step instruction on how to perform key tasks around the installation and configuration of real-world Citrix solutions.
+
 ### Citrix Content Collaboration
 
 [Citrix Files with Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/build/deployment-guides/citrix-files.html) - Learn how to deploy the Citrix Files Client for Windows in a virtual app and desktop environment. This article includes related components, tips, and leading practices for optimal performance and management.
@@ -430,6 +442,8 @@ List of Tech Zone articles, organized by content type.
 [Windows 10 Deployment Guide](/en-us/tech-zone/build/deployment-guides/windows-10-deployment.html) - Learn how to deploy Windows 10 with Citrix Virtual Apps and Desktops.
 
 ## Tech Papers
+
+Tech papers are deep dives into specific problem, technology or solution providing details, leading practices and architectural insights.
 
 ### Citrix Virtual Apps and Desktops
 

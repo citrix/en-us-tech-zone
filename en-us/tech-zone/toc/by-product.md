@@ -5,71 +5,11 @@ layout: doc
 
 List of Tech Zone articles, organized by main product.
 
-## Security
-
-### Learn - Tech Briefs
-
-[App protection](/en-us/tech-zone/learn/tech-briefs/app-protection-policies.html) - App protection policies protect application data from attacks based on keyloggers and screen capture tools. Allow companies to embrace BYOD, and extend resources to remote workers, contractors, and gig economy workers.
-
-[Zero Trust](/en-us/tech-zone/learn/tech-briefs/zero-trust.html) - Zero Trust is the most important End User Computing movement since Mobile and Cloud. The Citrix Zero Trust Architecture enables the "any-any-any" vision that Citrix has been espousing for years and is secured by access policies that take trust into context.
-
-### Learn - PoC Guides
-
-[App protection policies](/en-us/tech-zone/learn/poc-guides/app-protection-policies.html) - Learn how to enhance the security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
-
-[URL Redirection with Secure Browser and Citrix ADC in Azure](/en-us/tech-zone/learn/poc-guides/secure-browser-adc-integration.html) - Learn how to provide the dynamic delivery of resources by redirecting browsing to a Secure Browser service protecting the company network without sacrificing user experience.
-
-### Design - Reference Architectures
-
-[Architectural Considerations for the General Data Protection Regulation - GDPR](/en-us/tech-zone/design/reference-architectures/gdpr.html) - Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.
-
-[Federated Authentication Service](/en-us/tech-zone/design/reference-architectures/federated-authentication-service.html) - Learn about Federated Authentication Service, authentication delegation and how to use seamless web authentication methods to log in to Windows environments for both Citrix Cloud and on-premises deployments.
-
-### Build - Tech Papers
-
-[Endpoint Security, Antivirus, and Antimalware Best Practices](/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html) - Tech Paper focused on proper configuration, and recommendations for running an antivirus solution in Citrix Virtual Apps & Desktops environments. Recommended exclusions, configuration, and leading practices.
-
-[Networking SSL / TLS Best Practices](/en-us/tech-zone/build/tech-papers/networking-tls-best-practices.html) - Tech Paper focused on SSL / TLS best practices for Citrix Networking deployments. We cover configuration items such as the certificate chain bound to the virtual server, cipher suite settings, and disabling older protocols that are vulnerable to attack.
-
-## Citrix Content Collaboration
-
-### Design - Reference Architectures
-
-[Content Collaboration with on-premises storage zones](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html) - Learn about the architecture and design considerations for deploying an on-premises customer-managed storage zone to provide the best user experience and security for Citrix Content Collaboration.
-
-[Content Collaboration with storage zones on Azure IaaS](/en-us/tech-zone/design/reference-architectures/storage-zones-azure-iaas.html) - Learn about the architecture and design considerations for deploying a customer-managed storage zone in Azure to provide the best user experience and security for Citrix Content Collaboration.
-
-### Build - Deployment Guides
-
-[Citrix Files with Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/build/deployment-guides/citrix-files.html) - Learn how to deploy the Citrix Files Client for Windows in a virtual app and desktop environment. This article includes related components, tips, and leading practices for optimal performance and management.
-
-## Citrix Virtual Apps and Desktops Standard for Azure
-
-### Learn - Tech Insights
-
-[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html) - Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Windows Virtual Desktop in Microsoft Azure.
-
-### Learn - Tech Briefs
-
-[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
-
-### Design - Reference Architectures
-
-[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) - Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
-
-## Citrix Service Providers
-
-### Design - Reference Architectures
-
-[Citrix Service Provider Content Collaboration Workspace Integration](/en-us/tech-zone/design/reference-architectures/csp-cc.html) - The CSP Content Collaboration Service and Workspace integration simplifies the Citrix Cloud reseller management, customer deployment and provides real-time file sync to data in one secure centrally managed platform.
-
-[Citrix Service Provider Virtual Apps and Desktops service](/en-us/tech-zone/design/reference-architectures/csp-cvads.html) - The CSP Reference Architecture, provides architectural guidance for Citrix Service Providers to utilize the Virtual Apps and Desktops Service, and Citrix Cloud technologies to offer services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base shared across multiple tenants and multiple geographies, using a single pane of glass.
-
-[Virtual Apps and Desktops service with Google Cloud Platform for Citrix Service Providers](/en-us/tech-zone/design/reference-architectures/csp-cvads-aad.html) - Citrix Virtual Apps and Desktops service implementation with Azure Active Directory Domain Services for CSPs Reference Architecture aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and implementation steps to use Azure AD Domain Services.
-
 ## Citrix Analytics
 
 ### Learn - Tech Insights
+
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
 
 [Performance Analytics](/en-us/tech-zone/learn/tech-insights/performance-analytics.html) - Gain visibility into your environment through user-centric experience scores, application & infrastructure performance scores with Performance Analytics.
 
@@ -77,15 +17,71 @@ List of Tech Zone articles, organized by main product.
 
 ### Learn - Tech Briefs
 
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
+
 [Analytics](/en-us/tech-zone/learn/tech-briefs/analytics.html) - Provide visibility into your environment to protect it from malicious users and to improve the end user experience proactively.
 
 ### Design - Reference Architectures
 
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
 [Citrix Analytics](/en-us/tech-zone/design/reference-architectures/citrix-analytics.html) - Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
+
+## Citrix Content Collaboration
+
+### Design - Reference Architectures
+
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
+[Content Collaboration with on-premises storage zones](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html) - Learn about the architecture and design considerations for deploying an on-premises customer-managed storage zone to provide the best user experience and security for Citrix Content Collaboration.
+
+[Content Collaboration with storage zones on Azure IaaS](/en-us/tech-zone/design/reference-architectures/storage-zones-azure-iaas.html) - Learn about the architecture and design considerations for deploying a customer-managed storage zone in Azure to provide the best user experience and security for Citrix Content Collaboration.
+
+### Build - Deployment Guides
+
+Deployment guides provide step-by-step instruction on how to perform key tasks around the installation and configuration of real-world Citrix solutions.
+
+[Citrix Files with Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/build/deployment-guides/citrix-files.html) - Learn how to deploy the Citrix Files Client for Windows in a virtual app and desktop environment. This article includes related components, tips, and leading practices for optimal performance and management.
+
+## Citrix Endpoint Management
+
+### Learn - Tech Insights
+
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
+
+[Google Chrome OS Management](/en-us/tech-zone/learn/tech-insights/google-chrome-os-management.html) - Manage Chrome OS devices with Citrix Endpoint Management.
+
+[MDX Containers for iOS](/en-us/tech-zone/learn/tech-insights/mdx-containers.html) - Citrix Endpoint Management MDX containers protect mobile apps and control their access to device resources through policy mitigating the risk of unwanted enterprise data loss.
+
+[Micro VPN](/en-us/tech-zone/learn/tech-insights/micro-vpn.html) - On-demand, per-app VPN that gives access to a specific app back end resource without the risk of opening a full tunnel to your data center.
+
+[Mobile SSO](/en-us/tech-zone/learn/tech-insights/mobile-sso.html) - Single sign-on to native mobile applications via Citrix Gateway.
+
+### Learn - Tech Briefs
+
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
+
+[Citrix Endpoint Management](/en-us/tech-zone/learn/tech-briefs/citrix-endpoint-management.html) - Learn about Unified Endpoint Management and let employees work how, when and where they want with the power to manage every app, device and platform in one central location.
+
+[Mobile SSO](/en-us/tech-zone/learn/tech-briefs/mobile-sso.html) - Native mobile app single sign-on for iOS and Android SaaS applications.
+
+### Design - Reference Architectures
+
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
+[Citrix Endpoint Management with Microsoft EMS/Intune and Android Enterprise Integration](/en-us/tech-zone/design/reference-architectures/citrix-endpoint-management.html) - Learn about the architecture and integration with Microsoft EMS/Intune and Android Enterprise to deliver applications securely to any device and how it enables security and productivity benefits for both Microsoft EMS/Intune and Citrix customers.
+
+### Build - Deployment Guides
+
+Deployment guides provide step-by-step instruction on how to perform key tasks around the installation and configuration of real-world Citrix solutions.
+
+[Migration from Android Device Administrator to Android Enterprise with Citrix Endpoint Management](/en-us/tech-zone/build/deployment-guides/android-device-administrator-to-android-enterprise.html) - Learn how to migrate your Citrix Endpoint Management policies and apps step by step. Take your Endpoint Management from a legacy Android Device Administrator deployment to Android Enterprise by using a managed Google Play account.
 
 ## Citrix Networking
 
 ### Learn - Tech Insights
+
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
 
 [AlwaysOn VPN](/en-us/tech-zone/learn/tech-insights/citrix-gateway-alwayson.html) - Manage remote domain joined Windows endpoints 24x7 by providing LAN-like access with AlwaysOn VPN.
 
@@ -98,6 +94,8 @@ List of Tech Zone articles, organized by main product.
 [YouTube Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/youtube-optimizations.html) - Optimize YouTube delivery in branch offices with Citrix Virtual Apps and Desktops and Citrix SD-WAN.
 
 ### Learn - Tech Briefs
+
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
 
 [Citrix Gateway and Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/tech-briefs/citrix-gateway-virtual-apps-desktops.html) - Learn why Citrix Gateway is the best secure remote access solution for Citrix Virtual Apps and Desktops.
 
@@ -116,6 +114,8 @@ List of Tech Zone articles, organized by main product.
 [SD-WAN for Workspace](/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html) - Provides optimal network connectivity between Enterprise branch offices and their Workspace hosted in data resource locations on-premises or in the cloud.
 
 ### Learn - PoC Guides
+
+PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
 
 [nFactor for Citrix Gateway Authentication with Device Certificate](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-device-certificate.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Device Certificates.
 
@@ -153,6 +153,8 @@ List of Tech Zone articles, organized by main product.
 
 ### Design - Reference Architectures
 
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
 [Application Delivery Controller - Global Server Load Balancing](/en-us/tech-zone/design/reference-architectures/adc-gslb.html) - Learn the architecture and deployment considerations for Global Server Load Balancing configuration with Citrix Application Delivery Controller.
 
 [Application Delivery Management](/en-us/tech-zone/design/reference-architectures/citrix-adm.html) - See how the Citrix Application Delivery Management software is deployed to simplify management and monitoring of your application delivery infrastructure.
@@ -165,71 +167,47 @@ List of Tech Zone articles, organized by main product.
 
 ### Design - Design Decisions
 
+Design decisions helps you guide through the decision process to configure, optimize, and deploy your solution in its best way.
+
 [Citrix SD-WAN for Home Offices](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) - Understand the design decisions required to implement the Citrix SD-WAN 110 in a Home Office to provide secure, enhanced, and resilient connectivity.
 
 ### Build - Deployment Guides
+
+Deployment guides provide step-by-step instruction on how to perform key tasks around the installation and configuration of real-world Citrix solutions.
 
 [Citrix SD-WAN with Azure Virtual WAN](/en-us/tech-zone/build/deployment-guides/sdwan-azure-virtualwan.html) - Learn how to establish connectivity between SD-WAN and Azure Virtual WAN, and connect workloads on Azure with on-premises infrastructure.
 
 [Migrating Citrix ADM to Citrix ADM service](/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html) - Learn how to migrate your on-premises Citrix ADM (Application Delivery Management) to Citrix Cloud.
 
-## Other
-
-### Learn - Tech Briefs
-
-[Business Continuity](/en-us/tech-zone/learn/tech-briefs/business-continuity.html) - Business continuity events can have a regional or global impact. Learn about the different ways Citrix allows users to remain productive when making it to the office is not possible.
-
-### Design - Design Decisions
-
-[Evaluating Application Delivery Methods](/en-us/tech-zone/design/design-decisions/application-delivery-methods.html) - Learn about the different decision factors involved in choosing the optimal application delivery method.
-
-### Build - Tech Papers
-
-[Communication Ports Used by Citrix Technologies](/en-us/tech-zone/build/tech-papers/citrix-communication-ports.html) - Overview of ports that are used by Citrix components and must be considered as part of networking architecture.
-
-## Google Cloud Platform
-
-### Learn - PoC Guides
-
-[Google Cloud Platform (GCP) Shared VPC Support with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/gcp-shared-vpc.html) - Learn how to use Machine Creation Services (MCS) to provision machines in a Shared VPC on Google Cloud Platform (GCP). Then, learn to manage the machines using Citrix Studio.
-
-[Google Cloud Platform (GCP) Windows 10 Sole Tenant with Optional Shared VPC Catalog Creation](/en-us/tech-zone/learn/poc-guides/gcp-win10-catalog-creation.html) - Learn to deploy provisioned Windows 10 catalogs to GCP Sole Tenant nodes in Citrix Virtual Apps and Desktop Service.
-
-[Google Cloud Platform (GCP) Zone Selection Support with Citrix Virtual Apps and Desktops service](/en-us/tech-zone/learn/poc-guides/gcp-sole-tenant.html) - Learn how to configure zone selection on Google Cloud Platform to enable sole tenancy in Citrix Virtual Apps and Desktop Service.
-
-### Design - Reference Architectures
-
-[Citrix virtualization on Google Cloud](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) - Learn the architecture and deployment considerations for Citrix solutions on Google Cloud Platform.
-
-## Citrix Endpoint Management
+## Citrix Secure Internet Access
 
 ### Learn - Tech Insights
 
-[Google Chrome OS Management](/en-us/tech-zone/learn/tech-insights/google-chrome-os-management.html) - Manage Chrome OS devices with Citrix Endpoint Management.
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
 
-[MDX Containers for iOS](/en-us/tech-zone/learn/tech-insights/mdx-containers.html) - Citrix Endpoint Management MDX containers protect mobile apps and control their access to device resources through policy mitigating the risk of unwanted enterprise data loss.
-
-[Micro VPN](/en-us/tech-zone/learn/tech-insights/micro-vpn.html) - On-demand, per-app VPN that gives access to a specific app back end resource without the risk of opening a full tunnel to your data center.
-
-[Mobile SSO](/en-us/tech-zone/learn/tech-insights/mobile-sso.html) - Single sign-on to native mobile applications via Citrix Gateway.
+[Secure Internet Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-internet-access-user-experience.html) - Secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
 
 ### Learn - Tech Briefs
 
-[Citrix Endpoint Management](/en-us/tech-zone/learn/tech-briefs/citrix-endpoint-management.html) - Learn about Unified Endpoint Management and let employees work how, when and where they want with the power to manage every app, device and platform in one central location.
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
 
-[Mobile SSO](/en-us/tech-zone/learn/tech-briefs/mobile-sso.html) - Native mobile app single sign-on for iOS and Android SaaS applications.
+[Citrix Secure Internet Access](/en-us/tech-zone/learn/tech-briefs/secure-internet-access.html) - The expansive demand for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user Internet access. Citrix Secure Internet Access (CSIA) shifts the focus from defending perimeters to following users to ensure Internet access is secure regardless of location.
 
-### Design - Reference Architectures
+### Learn - PoC Guides
 
-[Citrix Endpoint Management with Microsoft EMS/Intune and Android Enterprise Integration](/en-us/tech-zone/design/reference-architectures/citrix-endpoint-management.html) - Learn about the architecture and integration with Microsoft EMS/Intune and Android Enterprise to deliver applications securely to any device and how it enables security and productivity benefits for both Microsoft EMS/Intune and Citrix customers.
+PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
 
-### Build - Deployment Guides
+[Citrix Secure Internet Access with Citrix SD-WAN](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix SD-WAN to provide secure access to SaaS and Web applications anywhere, reliably and securely.
 
-[Migration from Android Device Administrator to Android Enterprise with Citrix Endpoint Management](/en-us/tech-zone/build/deployment-guides/android-device-administrator-to-android-enterprise.html) - Learn how to migrate your Citrix Endpoint Management policies and apps step by step. Take your Endpoint Management from a legacy Android Device Administrator deployment to Android Enterprise by using a managed Google Play account.
+[Citrix Secure Internet Access with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/secure-internet-access-swa.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix Secure Workspace Access to provide secure access to SaaS and web applications, anywhere, from any device.
+
+[Citrix Secure Internet Access with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html) - Learn how to set up Citrix Secure Internet Access within a Citrix Virtual Apps and Desktops environment that provides secure access to virtual desktops and applications, anywhere, from any device.
 
 ## Citrix Secure Workspace Access
 
 ### Learn - Tech Insights
+
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
 
 [Secure Workspace Access for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
 
@@ -239,11 +217,15 @@ List of Tech Zone articles, organized by main product.
 
 ### Learn - Tech Briefs
 
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
+
 [Citrix Workspace Essentials and Secure Workspace Access Getting Started Guide](/en-us/tech-zone/learn/tech-briefs/citrix-workspace-essentials-quickstart.html) - This guide demonstrates how to configure SaaS and internal web apps with single sign-on (SSO) in Citrix Workspace.
 
 [Secure Workspace Access](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html) - With Secure Workspace Access, organizations go beyond access and aggregation to provide IT with policy controls that provide conditional access to cloud apps and internet browsing, enhancing the organization's overall security and compliance posture.
 
 ### Learn - PoC Guides
+
+PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
 
 [Secure Access to Azure-managed SaaS Applications and Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Secure Workspace Access environment that provides enhanced security to Microsoft Azure SaaS Apps.
 
@@ -257,11 +239,27 @@ List of Tech Zone articles, organized by main product.
 
 ### Design - Reference Architectures
 
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
 [Secure Workspace Access](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Secure Workspace Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization's apps and data.
+
+## Citrix Service Providers
+
+### Design - Reference Architectures
+
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
+[Citrix Service Provider Content Collaboration Workspace Integration](/en-us/tech-zone/design/reference-architectures/csp-cc.html) - The CSP Content Collaboration Service and Workspace integration simplifies the Citrix Cloud reseller management, customer deployment and provides real-time file sync to data in one secure centrally managed platform.
+
+[Citrix Service Provider Virtual Apps and Desktops service](/en-us/tech-zone/design/reference-architectures/csp-cvads.html) - The CSP Reference Architecture, provides architectural guidance for Citrix Service Providers to utilize the Virtual Apps and Desktops Service, and Citrix Cloud technologies to offer services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base shared across multiple tenants and multiple geographies, using a single pane of glass.
+
+[Virtual Apps and Desktops service with Google Cloud Platform for Citrix Service Providers](/en-us/tech-zone/design/reference-architectures/csp-cvads-aad.html) - Citrix Virtual Apps and Desktops service implementation with Azure Active Directory Domain Services for CSPs Reference Architecture aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and implementation steps to use Azure AD Domain Services.
 
 ## Citrix Virtual Apps and Desktops
 
 ### Learn - Tech Insights
+
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
 
 [App Layering - User Layers](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html) - User layers persist user profile settings, data, and user-installed applications in non-persistent VDI environments.
 
@@ -277,6 +275,8 @@ List of Tech Zone articles, organized by main product.
 
 ### Learn - Tech Briefs
 
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
+
 [Autoscale](/en-us/tech-zone/learn/tech-briefs/autoscale.html) - Explore the various ways Citrix enables admins to save on cost when hosting workloads in the cloud. Learn about different load balancing algorithms and scaling methodologies and how much they can save in an environment based on our tests.
 
 [Citrix Cloud Resiliency](/en-us/tech-zone/learn/tech-briefs/citrix-cloud-resiliency.html) - Learn how Citrix Cloud services are architected and built for resiliency. Understand how Service Continuity features enable users to connect to the resources that are accessible even if some or all of the cloud services are unreachable.
@@ -290,6 +290,8 @@ List of Tech Zone articles, organized by main product.
 [Workspace Environment Management](/en-us/tech-zone/learn/tech-briefs/workspace-environment-mgmt.html) - Learn how Workspace Environment Management uses intelligent resource management and Profile Management technologies to deliver the best possible performance, desktop logon, and application response times for Citrix Virtual Apps and Desktops sessions, as well as enhances the security of the deployment.
 
 ### Learn - PoC Guides
+
+PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
 
 [Automated Configuration Tool](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html) - This Proof of Concept guide provides instructions on using an Automated Configuration tool to automate moving your Citrix Virtual Apps and Desktops configuration to your Citrix Virtual Apps and Desktops Service deployment. The tool also supports the use case of moving your configuration between Citrix Virtual Apps and Desktops Service deployments.
 
@@ -310,6 +312,8 @@ List of Tech Zone articles, organized by main product.
 [Virtual Apps and Desktops Service](/en-us/tech-zone/learn/diagrams-posters/virtual-apps-and-desktops-service.html) - Conceptual architecture drawing for Citrix Virtual Apps and Desktop deployment in Citrix Cloud.
 
 ### Design - Reference Architectures
+
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
 
 [App Layering](/en-us/tech-zone/design/reference-architectures/app-layering.html) - Gain a deep understanding of the Citrix Layering technology that simplifies the image management for VDI and hosted-shared environments including use cases and technical concepts.
 
@@ -338,6 +342,8 @@ List of Tech Zone articles, organized by main product.
 [Workspace Environment Management service](/en-us/tech-zone/design/reference-architectures/citrix-workspace-environment-management-service.html) - Learn about the architecture and deployment considerations for this cloud-based service of Workspace Environment Management.
 
 ### Design - Design Decisions
+
+Design decisions helps you guide through the decision process to configure, optimize, and deploy your solution in its best way.
 
 [Autoscale Design](/en-us/tech-zone/design/design-decisions/autoscale-design-questions.html) - Helps answer FAQs on Autoscale to achieve best cost optimization. Provides guidance for configuring Autoscale for different admin use cases and their infrastructure and technical requirements.
 
@@ -369,6 +375,8 @@ List of Tech Zone articles, organized by main product.
 
 ### Build - Deployment Guides
 
+Deployment guides provide step-by-step instruction on how to perform key tasks around the installation and configuration of real-world Citrix solutions.
+
 [Deploying Azure Files for Citrix Profile Management and Citrix User personalization layers](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html) - Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management.
 
 [Microsoft 365 with Citrix Virtual Apps and Desktops](/en-us/tech-zone/build/deployment-guides/microsoft-365-citrix.html) - Learn how to deploy Microsoft 365 in a Citrix Virtual Apps and Desktops environment.
@@ -381,29 +389,35 @@ List of Tech Zone articles, organized by main product.
 
 ### Build - Tech Papers
 
+Tech papers are deep dives into specific problem, technology or solution providing details, leading practices and architectural insights.
+
 [Deploying Google Chrome](/en-us/tech-zone/build/tech-papers/google-chrome.html) - Tech Paper focused on installation, configuration, and various optimizations for Google Chrome browser running on Citrix Virtual Apps and Desktops.
 
-## Citrix Secure Internet Access
+## Citrix Virtual Apps and Desktops Standard for Azure
 
 ### Learn - Tech Insights
 
-[Secure Internet Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-internet-access-user-experience.html) - Secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
+
+[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html) - Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Windows Virtual Desktop in Microsoft Azure.
 
 ### Learn - Tech Briefs
 
-[Citrix Secure Internet Access](/en-us/tech-zone/learn/tech-briefs/secure-internet-access.html) - The expansive demand for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user Internet access. Citrix Secure Internet Access (CSIA) shifts the focus from defending perimeters to following users to ensure Internet access is secure regardless of location.
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
 
-### Learn - PoC Guides
+[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
 
-[Citrix Secure Internet Access with Citrix SD-WAN](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix SD-WAN to provide secure access to SaaS and Web applications anywhere, reliably and securely.
+### Design - Reference Architectures
 
-[Citrix Secure Internet Access with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/secure-internet-access-swa.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix Secure Workspace Access to provide secure access to SaaS and web applications, anywhere, from any device.
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
 
-[Citrix Secure Internet Access with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html) - Learn how to set up Citrix Secure Internet Access within a Citrix Virtual Apps and Desktops environment that provides secure access to virtual desktops and applications, anywhere, from any device.
+[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) - Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
 
 ## Citrix Workspace
 
 ### Learn - Tech Insights
+
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
 
 [Authentication - Citrix Gateway](/en-us/tech-zone/learn/tech-insights/gateway-idp.html) - Utilize an on-premises Citrix Gateway as an identity provider for Citrix Workspace.
 
@@ -429,6 +443,8 @@ List of Tech Zone articles, organized by main product.
 
 ### Learn - Tech Briefs
 
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
+
 [Workspace app](/en-us/tech-zone/learn/tech-briefs/workspace-app.html) - Personalized interface that provides access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
 
 [Workspace Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) - Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.
@@ -443,6 +459,8 @@ List of Tech Zone articles, organized by main product.
 
 ### Design - Reference Architectures
 
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
 [Flexible Work](/en-us/tech-zone/design/reference-architectures/flexible-work.html) - Learn how to design an environment to support a flexible work style without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Virtual Apps and Desktops, SD-WAN, Endpoint Management and Security Analytics.
 
 [Mergers and Acquisitions](/en-us/tech-zone/design/reference-architectures/mergers-acquisitions.html) - Learn how to design an environment to support a mergers and acquisition strategy without compromising IT security. The reference architecture incorporates Citrix Workspace, Secure Workspace Access, Virtual Apps and Desktops, Application Delivery Controller, Federated Authentication Service and Security Analytics.
@@ -453,10 +471,86 @@ List of Tech Zone articles, organized by main product.
 
 ### Build - Tech Papers
 
+Tech papers are deep dives into specific problem, technology or solution providing details, leading practices and architectural insights.
+
 [Citrix Workspace app quick start guide](/en-us/tech-zone/build/tech-papers/citrix-workspace-app.html) - Quick start guide for Citrix Workspace app - everything you need to know in one place, including installation, configuration, and optimizations.
+
+## Security
+
+### Learn - Tech Briefs
+
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
+
+[App protection](/en-us/tech-zone/learn/tech-briefs/app-protection-policies.html) - App protection policies protect application data from attacks based on keyloggers and screen capture tools. Allow companies to embrace BYOD, and extend resources to remote workers, contractors, and gig economy workers.
+
+[Zero Trust](/en-us/tech-zone/learn/tech-briefs/zero-trust.html) - Zero Trust is the most important End User Computing movement since Mobile and Cloud. The Citrix Zero Trust Architecture enables the "any-any-any" vision that Citrix has been espousing for years and is secured by access policies that take trust into context.
+
+### Learn - PoC Guides
+
+PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
+
+[App protection policies](/en-us/tech-zone/learn/poc-guides/app-protection-policies.html) - Learn how to enhance the security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
+
+[URL Redirection with Secure Browser and Citrix ADC in Azure](/en-us/tech-zone/learn/poc-guides/secure-browser-adc-integration.html) - Learn how to provide the dynamic delivery of resources by redirecting browsing to a Secure Browser service protecting the company network without sacrificing user experience.
+
+### Design - Reference Architectures
+
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
+[Architectural Considerations for the General Data Protection Regulation - GDPR](/en-us/tech-zone/design/reference-architectures/gdpr.html) - Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.
+
+[Federated Authentication Service](/en-us/tech-zone/design/reference-architectures/federated-authentication-service.html) - Learn about Federated Authentication Service, authentication delegation and how to use seamless web authentication methods to log in to Windows environments for both Citrix Cloud and on-premises deployments.
+
+### Build - Tech Papers
+
+Tech papers are deep dives into specific problem, technology or solution providing details, leading practices and architectural insights.
+
+[Endpoint Security, Antivirus, and Antimalware Best Practices](/en-us/tech-zone/build/tech-papers/antivirus-best-practices.html) - Tech Paper focused on proper configuration, and recommendations for running an antivirus solution in Citrix Virtual Apps & Desktops environments. Recommended exclusions, configuration, and leading practices.
+
+[Networking SSL / TLS Best Practices](/en-us/tech-zone/build/tech-papers/networking-tls-best-practices.html) - Tech Paper focused on SSL / TLS best practices for Citrix Networking deployments. We cover configuration items such as the certificate chain bound to the virtual server, cipher suite settings, and disabling older protocols that are vulnerable to attack.
+
+## Google Cloud Platform
+
+### Learn - PoC Guides
+
+PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
+
+[Google Cloud Platform (GCP) Shared VPC Support with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/gcp-shared-vpc.html) - Learn how to use Machine Creation Services (MCS) to provision machines in a Shared VPC on Google Cloud Platform (GCP). Then, learn to manage the machines using Citrix Studio.
+
+[Google Cloud Platform (GCP) Windows 10 Sole Tenant with Optional Shared VPC Catalog Creation](/en-us/tech-zone/learn/poc-guides/gcp-win10-catalog-creation.html) - Learn to deploy provisioned Windows 10 catalogs to GCP Sole Tenant nodes in Citrix Virtual Apps and Desktop Service.
+
+[Google Cloud Platform (GCP) Zone Selection Support with Citrix Virtual Apps and Desktops service](/en-us/tech-zone/learn/poc-guides/gcp-sole-tenant.html) - Learn how to configure zone selection on Google Cloud Platform to enable sole tenancy in Citrix Virtual Apps and Desktop Service.
+
+### Design - Reference Architectures
+
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
+[Citrix virtualization on Google Cloud](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) - Learn the architecture and deployment considerations for Citrix solutions on Google Cloud Platform.
 
 ## Third Party Content
 
 ### Design - Reference Architectures
 
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
 [Third Party](/en-us/tech-zone/design/reference-architectures/3rd-party.html) - View reference architectures created by our industry partners on joint technical solutions.
+
+## Other
+
+### Learn - Tech Briefs
+
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
+
+[Business Continuity](/en-us/tech-zone/learn/tech-briefs/business-continuity.html) - Business continuity events can have a regional or global impact. Learn about the different ways Citrix allows users to remain productive when making it to the office is not possible.
+
+### Design - Design Decisions
+
+Design decisions helps you guide through the decision process to configure, optimize, and deploy your solution in its best way.
+
+[Evaluating Application Delivery Methods](/en-us/tech-zone/design/design-decisions/application-delivery-methods.html) - Learn about the different decision factors involved in choosing the optimal application delivery method.
+
+### Build - Tech Papers
+
+Tech papers are deep dives into specific problem, technology or solution providing details, leading practices and architectural insights.
+
+[Communication Ports Used by Citrix Technologies](/en-us/tech-zone/build/tech-papers/citrix-communication-ports.html) - Overview of ports that are used by Citrix components and must be considered as part of networking architecture.

@@ -7,6 +7,8 @@ List of articles related to Citrix Virtual Apps and Desktops.
 
 ## Learn - Tech Insights
 
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
+
 [App Layering - User Layers](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html) - User layers persist user profile settings, data, and user-installed applications in non-persistent VDI environments.
 
 [Federated Authentication Service](/en-us/tech-zone/learn/tech-insights/federated-authentication-service.html) - Single Sign-on to Windows-based virtual apps and desktops when using a non-Active Directory based Citrix Workspace identity.
@@ -21,6 +23,8 @@ List of articles related to Citrix Virtual Apps and Desktops.
 
 ## Learn - Tech Briefs
 
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
+
 [Autoscale](/en-us/tech-zone/learn/tech-briefs/autoscale.html) - Explore the various ways Citrix enables admins to save on cost when hosting workloads in the cloud. Learn about different load balancing algorithms and scaling methodologies and how much they can save in an environment based on our tests.
 
 [Citrix Cloud Resiliency](/en-us/tech-zone/learn/tech-briefs/citrix-cloud-resiliency.html) - Learn how Citrix Cloud services are architected and built for resiliency. Understand how Service Continuity features enable users to connect to the resources that are accessible even if some or all of the cloud services are unreachable.
@@ -34,6 +38,8 @@ List of articles related to Citrix Virtual Apps and Desktops.
 [Workspace Environment Management](/en-us/tech-zone/learn/tech-briefs/workspace-environment-mgmt.html) - Learn how Workspace Environment Management uses intelligent resource management and Profile Management technologies to deliver the best possible performance, desktop logon, and application response times for Citrix Virtual Apps and Desktops sessions, as well as enhances the security of the deployment.
 
 ## Learn - PoC Guides
+
+PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
 
 [Automated Configuration Tool](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html) - This Proof of Concept guide provides instructions on using an Automated Configuration tool to automate moving your Citrix Virtual Apps and Desktops configuration to your Citrix Virtual Apps and Desktops Service deployment. The tool also supports the use case of moving your configuration between Citrix Virtual Apps and Desktops Service deployments.
 
@@ -54,6 +60,8 @@ List of articles related to Citrix Virtual Apps and Desktops.
 [Virtual Apps and Desktops Service](/en-us/tech-zone/learn/diagrams-posters/virtual-apps-and-desktops-service.html) - Conceptual architecture drawing for Citrix Virtual Apps and Desktop deployment in Citrix Cloud.
 
 ## Design - Reference Architectures
+
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
 
 [App Layering](/en-us/tech-zone/design/reference-architectures/app-layering.html) - Gain a deep understanding of the Citrix Layering technology that simplifies the image management for VDI and hosted-shared environments including use cases and technical concepts.
 
@@ -82,6 +90,8 @@ List of articles related to Citrix Virtual Apps and Desktops.
 [Workspace Environment Management service](/en-us/tech-zone/design/reference-architectures/citrix-workspace-environment-management-service.html) - Learn about the architecture and deployment considerations for this cloud-based service of Workspace Environment Management.
 
 ## Design - Design Decisions
+
+Design decisions helps you guide through the decision process to configure, optimize, and deploy your solution in its best way.
 
 [Autoscale Design](/en-us/tech-zone/design/design-decisions/autoscale-design-questions.html) - Helps answer FAQs on Autoscale to achieve best cost optimization. Provides guidance for configuring Autoscale for different admin use cases and their infrastructure and technical requirements.
 
@@ -113,6 +123,8 @@ List of articles related to Citrix Virtual Apps and Desktops.
 
 ## Build - Deployment Guides
 
+Deployment guides provide step-by-step instruction on how to perform key tasks around the installation and configuration of real-world Citrix solutions.
+
 [Deploying Azure Files for Citrix Profile Management and Citrix User personalization layers](/en-us/tech-zone/build/deployment-guides/citrix-azure-files.html) - Learn how to deploy Azure Files for use with Citrix User personalization layers and Citrix Profile Management.
 
 [Microsoft 365 with Citrix Virtual Apps and Desktops](/en-us/tech-zone/build/deployment-guides/microsoft-365-citrix.html) - Learn how to deploy Microsoft 365 in a Citrix Virtual Apps and Desktops environment.
@@ -124,5 +136,7 @@ List of articles related to Citrix Virtual Apps and Desktops.
 [Windows 10 Deployment Guide](/en-us/tech-zone/build/deployment-guides/windows-10-deployment.html) - Learn how to deploy Windows 10 with Citrix Virtual Apps and Desktops.
 
 ## Build - Tech Papers
+
+Tech papers are deep dives into specific problem, technology or solution providing details, leading practices and architectural insights.
 
 [Deploying Google Chrome](/en-us/tech-zone/build/tech-papers/google-chrome.html) - Tech Paper focused on installation, configuration, and various optimizations for Google Chrome browser running on Citrix Virtual Apps and Desktops.

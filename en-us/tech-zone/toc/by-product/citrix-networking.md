@@ -7,6 +7,8 @@ List of articles related to Citrix Networking.
 
 ## Learn - Tech Insights
 
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
+
 [AlwaysOn VPN](/en-us/tech-zone/learn/tech-insights/citrix-gateway-alwayson.html) - Manage remote domain joined Windows endpoints 24x7 by providing LAN-like access with AlwaysOn VPN.
 
 [Microsoft Teams Optimization](/en-us/tech-zone/learn/tech-insights/microsoft-teams-optimization.html) - Learn how Citrix Virtual Apps and Desktops, along with Citrix SD-WAN, can optimize Microsoft Teams and provide a great user experience.
@@ -18,6 +20,8 @@ List of articles related to Citrix Networking.
 [YouTube Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/youtube-optimizations.html) - Optimize YouTube delivery in branch offices with Citrix Virtual Apps and Desktops and Citrix SD-WAN.
 
 ## Learn - Tech Briefs
+
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
 
 [Citrix Gateway and Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/tech-briefs/citrix-gateway-virtual-apps-desktops.html) - Learn why Citrix Gateway is the best secure remote access solution for Citrix Virtual Apps and Desktops.
 
@@ -36,6 +40,8 @@ List of articles related to Citrix Networking.
 [SD-WAN for Workspace](/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html) - Provides optimal network connectivity between Enterprise branch offices and their Workspace hosted in data resource locations on-premises or in the cloud.
 
 ## Learn - PoC Guides
+
+PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
 
 [nFactor for Citrix Gateway Authentication with Device Certificate](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-device-certificate.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Device Certificates.
 
@@ -73,6 +79,8 @@ List of articles related to Citrix Networking.
 
 ## Design - Reference Architectures
 
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
 [Application Delivery Controller - Global Server Load Balancing](/en-us/tech-zone/design/reference-architectures/adc-gslb.html) - Learn the architecture and deployment considerations for Global Server Load Balancing configuration with Citrix Application Delivery Controller.
 
 [Application Delivery Management](/en-us/tech-zone/design/reference-architectures/citrix-adm.html) - See how the Citrix Application Delivery Management software is deployed to simplify management and monitoring of your application delivery infrastructure.
@@ -85,9 +93,13 @@ List of articles related to Citrix Networking.
 
 ## Design - Design Decisions
 
+Design decisions helps you guide through the decision process to configure, optimize, and deploy your solution in its best way.
+
 [Citrix SD-WAN for Home Offices](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) - Understand the design decisions required to implement the Citrix SD-WAN 110 in a Home Office to provide secure, enhanced, and resilient connectivity.
 
 ## Build - Deployment Guides
+
+Deployment guides provide step-by-step instruction on how to perform key tasks around the installation and configuration of real-world Citrix solutions.
 
 [Citrix SD-WAN with Azure Virtual WAN](/en-us/tech-zone/build/deployment-guides/sdwan-azure-virtualwan.html) - Learn how to establish connectivity between SD-WAN and Azure Virtual WAN, and connect workloads on Azure with on-premises infrastructure.
 
