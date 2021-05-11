@@ -7,6 +7,8 @@ List of articles related to Citrix Service Providers.
 
 ## Design - Reference Architectures
 
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
 [Citrix Service Provider Content Collaboration Workspace Integration](/en-us/tech-zone/design/reference-architectures/csp-cc.html) - The CSP Content Collaboration Service and Workspace integration simplifies the Citrix Cloud reseller management, customer deployment and provides real-time file sync to data in one secure centrally managed platform.
 
 [Citrix Service Provider Virtual Apps and Desktops service](/en-us/tech-zone/design/reference-architectures/csp-cvads.html) - The CSP Reference Architecture, provides architectural guidance for Citrix Service Providers to utilize the Virtual Apps and Desktops Service, and Citrix Cloud technologies to offer services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base shared across multiple tenants and multiple geographies, using a single pane of glass.
