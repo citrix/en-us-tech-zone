@@ -5,12 +5,6 @@ layout: doc
 
 List of articles related to Citrix Endpoint Management.
 
-## Learn - Tech Briefs
-
-[Citrix Endpoint Management](/en-us/tech-zone/learn/tech-briefs/citrix-endpoint-management.html) - Learn about Unified Endpoint Management and let employees work how, when and where they want with the power to manage every app, device and platform in one central location.
-
-[Mobile SSO](/en-us/tech-zone/learn/tech-briefs/mobile-sso.html) - Native mobile app single sign-on for iOS and Android SaaS applications.
-
 ## Learn - Tech Insights
 
 [Google Chrome OS Management](/en-us/tech-zone/learn/tech-insights/google-chrome-os-management.html) - Manage Chrome OS devices with Citrix Endpoint Management.
@@ -20,6 +14,12 @@ List of articles related to Citrix Endpoint Management.
 [Micro VPN](/en-us/tech-zone/learn/tech-insights/micro-vpn.html) - On-demand, per-app VPN that gives access to a specific app back end resource without the risk of opening a full tunnel to your data center.
 
 [Mobile SSO](/en-us/tech-zone/learn/tech-insights/mobile-sso.html) - Single sign-on to native mobile applications via Citrix Gateway.
+
+## Learn - Tech Briefs
+
+[Citrix Endpoint Management](/en-us/tech-zone/learn/tech-briefs/citrix-endpoint-management.html) - Learn about Unified Endpoint Management and let employees work how, when and where they want with the power to manage every app, device and platform in one central location.
+
+[Mobile SSO](/en-us/tech-zone/learn/tech-briefs/mobile-sso.html) - Native mobile app single sign-on for iOS and Android SaaS applications.
 
 ## Design - Reference Architectures
 
