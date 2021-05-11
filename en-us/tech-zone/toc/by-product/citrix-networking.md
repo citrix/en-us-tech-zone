@@ -5,23 +5,43 @@ layout: doc
 
 List of articles related to Citrix Networking.
 
-## Learn - Diagrams and Posters
+## Learn - Tech Insights
 
-[Citrix ADC - File System and Process Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-file-system-process.html) - One-page summary of most common system directories, files, processes/daemons and logs.
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
 
-[Citrix ADC - nFactor Basics Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-nfactor.html) - One-page summary of nFactor authentication detailing concepts, how it works, nFactor Visualizer information, configuration steps, and more.
+[AlwaysOn VPN](/en-us/tech-zone/learn/tech-insights/citrix-gateway-alwayson.html) - Manage remote domain joined Windows endpoints 24x7 by providing LAN-like access with AlwaysOn VPN.
 
-[Citrix ADC - nsconmsg Commands Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-nsconmsg.html) - One-page summary of nsconmsg syntax and troubleshooting tips.
+[Microsoft Teams Optimization](/en-us/tech-zone/learn/tech-insights/microsoft-teams-optimization.html) - Learn how Citrix Virtual Apps and Desktops, along with Citrix SD-WAN, can optimize Microsoft Teams and provide a great user experience.
 
-[Citrix ADC - SDX Basics and Log File Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-sdx-basics.html) - One-page summary of SDX components and how to access them, common SVM ports, LOM configuration, Link Aggregation on the SDX, and Common Log files for both SVM and Citrix Hypervisor.
+[Office 365 Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/office365-optimization.html) - Learn how Citrix SD-WAN implements Microsoft Connectivity Principles to support Office 365 Optimization for Branch Offices.
 
-[Citrix ADC - Troubleshooting GSLB MEP Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-troubleshooting-gslb.html) - One-page summary of GSLB, MEP protocol and troubleshooting tips.
+[SD-WAN](/en-us/tech-zone/learn/tech-insights/sdwan.html) - Optimize delivery of Citrix Virtual Apps and Desktops traffic with Citrix SD-WAN.
 
-[Citrix ADC - Troubleshooting High Availability Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-troubleshooting-high-availability.html) - One-page summary of high availability and troubleshooting tips.
+[YouTube Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/youtube-optimizations.html) - Optimize YouTube delivery in branch offices with Citrix Virtual Apps and Desktops and Citrix SD-WAN.
 
-[Citrix ADM - Overview Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adm.html) - One-page summary of the ADM Platform detailing system requirements, deployment modes, protocols and ports, common log files, common issues/failures, and more.
+## Learn - Tech Briefs
+
+Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
+
+[Citrix Gateway and Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/tech-briefs/citrix-gateway-virtual-apps-desktops.html) - Learn why Citrix Gateway is the best secure remote access solution for Citrix Virtual Apps and Desktops.
+
+[Gateway service for HDX Proxy](/en-us/tech-zone/learn/tech-briefs/gateway-hdxproxy.html) - Provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls.
+
+[Multifactor Authentication with Citrix nFactor](/en-us/tech-zone/learn/tech-briefs/citrix-nfactor-mfa.html) - Learn how you can implement various Multifactor Authentication methods with Citrix ADC nFactor Authentication.
+
+[SD-WAN Cloud Direct service](/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html) - Optimize SaaS access for branch users by tunneling session traffic to Internet Exchanges with direct connectivity to popular sites.
+
+[SD-WAN Deployment Scenarios](/en-us/tech-zone/learn/tech-briefs/sdwan-deployment-scenarios.html) - Learn about different scenarios to optimize user experience with Citrix Workspace by deploying Citrix SD-WAN.
+
+[SD-WAN Edge Security](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-edge-security.html) - Learn how Citrix SD-WAN Advanced Edition provides Edge Security for your Enterprise network.
+
+[SD-WAN for Home Offices](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-home-office.html) - Learn how to work from home with secure, enhanced, and resilient connectivity using the Citrix SD-WAN 110 appliance.
+
+[SD-WAN for Workspace](/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html) - Provides optimal network connectivity between Enterprise branch offices and their Workspace hosted in data resource locations on-premises or in the cloud.
 
 ## Learn - PoC Guides
+
+PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
 
 [nFactor for Citrix Gateway Authentication with Device Certificate](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-device-certificate.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Device Certificates.
 
@@ -41,41 +61,25 @@ List of articles related to Citrix Networking.
 
 [Web Application Firewall Deployment](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) - Learn how to deploy Citrix Web Application Firewall (WAF) standalone or as a part of a Citrix ADC deployment. Protect web servers or applications from various attacks including Cross Site Scripting, SQL Injection, Buffer Overflow, Forceful Browsing and more. Deploy in any public cloud or your on-premises environment.
 
-## Learn - Tech Briefs
+## Learn - Diagrams and Posters
 
-[Citrix Gateway and Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/tech-briefs/citrix-gateway-virtual-apps-desktops.html) - Learn why Citrix Gateway is the best secure remote access solution for Citrix Virtual Apps and Desktops.
+[Citrix ADC - File System and Process Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-file-system-process.html) - One-page summary of most common system directories, files, processes/daemons and logs.
 
-[Gateway service for HDX Proxy](/en-us/tech-zone/learn/tech-briefs/gateway-hdxproxy.html) - Provides users with secure remote access to Citrix Virtual Apps and Desktops without having to deploy Citrix Gateway in the on-premises DMZ or reconfigure firewalls.
+[Citrix ADC - nFactor Basics Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-nfactor.html) - One-page summary of nFactor authentication detailing concepts, how it works, nFactor Visualizer information, configuration steps, and more.
 
-[Multifactor Authentication with Citrix nFactor](/en-us/tech-zone/learn/tech-briefs/citrix-nfactor-mfa.html) - Learn how you can implement various Multifactor Authentication methods with Citrix ADC nFactor Authentication.
+[Citrix ADC - nsconmsg Commands Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-nsconmsg.html) - One-page summary of nsconmsg syntax and troubleshooting tips.
 
-[SD-WAN Cloud Direct service](/en-us/tech-zone/learn/tech-briefs/sdwan-cloud-direct.html) - Optimize SaaS access for branch users by tunneling session traffic to Internet Exchanges with direct connectivity to popular sites.
+[Citrix ADC - SDX Basics and Log File Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-sdx-basics.html) - One-page summary of SDX components and how to access them, common SVM ports, LOM configuration, Link Aggregation on the SDX, and Common Log files for both SVM and Citrix Hypervisor.
 
-[SD-WAN Deployment Scenarios](/en-us/tech-zone/learn/tech-briefs/sdwan-deployment-scenarios.html) - Learn about different scenarios to optimize user experience with Citrix Workspace by deploying Citrix SD-WAN.
+[Citrix ADC - Troubleshooting GSLB MEP Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-troubleshooting-gslb.html) - One-page summary of GSLB, MEP protocol and troubleshooting tips.
 
-[SD-WAN Edge Security](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-edge-security.html) - Learn how Citrix SD-WAN Advanced Edition provides Edge Security for your Enterprise network.
+[Citrix ADC - Troubleshooting High Availability Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-troubleshooting-high-availability.html) - One-page summary of high availability and troubleshooting tips.
 
-[SD-WAN for Home Offices](/en-us/tech-zone/learn/tech-briefs/citrix-sdwan-home-office.html) - Learn how to work from home with secure, enhanced, and resilient connectivity using the Citrix SD-WAN 110 appliance.
-
-[SD-WAN for Workspace](/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html) - Provides optimal network connectivity between Enterprise branch offices and their Workspace hosted in data resource locations on-premises or in the cloud.
-
-## Learn - Tech Insights
-
-[AlwaysOn VPN](/en-us/tech-zone/learn/tech-insights/citrix-gateway-alwayson.html) - Manage remote domain joined Windows endpoints 24x7 by providing LAN-like access with AlwaysOn VPN.
-
-[Microsoft Teams Optimization](/en-us/tech-zone/learn/tech-insights/microsoft-teams-optimization.html) - Learn how Citrix Virtual Apps and Desktops, along with Citrix SD-WAN, can optimize Microsoft Teams and provide a great user experience.
-
-[Office 365 Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/office365-optimization.html) - Learn how Citrix SD-WAN implements Microsoft Connectivity Principles to support Office 365 Optimization for Branch Offices.
-
-[SD-WAN](/en-us/tech-zone/learn/tech-insights/sdwan.html) - Optimize delivery of Citrix Virtual Apps and Desktops traffic with Citrix SD-WAN.
-
-[YouTube Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/youtube-optimizations.html) - Optimize YouTube delivery in branch offices with Citrix Virtual Apps and Desktops and Citrix SD-WAN.
-
-## Design - Design Decisions
-
-[Citrix SD-WAN for Home Offices](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) - Understand the design decisions required to implement the Citrix SD-WAN 110 in a Home Office to provide secure, enhanced, and resilient connectivity.
+[Citrix ADM - Overview Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adm.html) - One-page summary of the ADM Platform detailing system requirements, deployment modes, protocols and ports, common log files, common issues/failures, and more.
 
 ## Design - Reference Architectures
+
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
 
 [Application Delivery Controller - Global Server Load Balancing](/en-us/tech-zone/design/reference-architectures/adc-gslb.html) - Learn the architecture and deployment considerations for Global Server Load Balancing configuration with Citrix Application Delivery Controller.
 
@@ -87,7 +91,15 @@ List of articles related to Citrix Networking.
 
 [SD-WAN Multi-Region](/en-us/tech-zone/design/reference-architectures/sd-wan-multi-region.html) - Discover the framework, design, and architecture for Citrix SD-WAN multi-region deployment with SD-WAN Orchestrator.
 
+## Design - Design Decisions
+
+Design decisions helps you guide through the decision process to configure, optimize, and deploy your solution in its best way.
+
+[Citrix SD-WAN for Home Offices](/en-us/tech-zone/design/design-decisions/citrix-sdwan-home-office.html) - Understand the design decisions required to implement the Citrix SD-WAN 110 in a Home Office to provide secure, enhanced, and resilient connectivity.
+
 ## Build - Deployment Guides
+
+Deployment guides provide step-by-step instruction on how to perform key tasks around the installation and configuration of real-world Citrix solutions.
 
 [Citrix SD-WAN with Azure Virtual WAN](/en-us/tech-zone/build/deployment-guides/sdwan-azure-virtualwan.html) - Learn how to establish connectivity between SD-WAN and Azure Virtual WAN, and connect workloads on Azure with on-premises infrastructure.
 

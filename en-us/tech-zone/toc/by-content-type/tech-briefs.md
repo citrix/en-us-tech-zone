@@ -72,12 +72,12 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [Workspace Single Sign-On](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) - Learn how Citrix Workspace provides single sign-on capabilities to SaaS apps, web apps, mobile apps, Windows virtual apps and Windows virtual desktops. In addition, learn how Workspace single sign-on can support IdP chaining configurations.
 
-## Other
-
-[Business Continuity](/en-us/tech-zone/learn/tech-briefs/business-continuity.html) - Business continuity events can have a regional or global impact. Learn about the different ways Citrix allows users to remain productive when making it to the office is not possible.
-
 ## Security
 
 [App protection](/en-us/tech-zone/learn/tech-briefs/app-protection-policies.html) - App protection policies protect application data from attacks based on keyloggers and screen capture tools. Allow companies to embrace BYOD, and extend resources to remote workers, contractors, and gig economy workers.
 
 [Zero Trust](/en-us/tech-zone/learn/tech-briefs/zero-trust.html) - Zero Trust is the most important End User Computing movement since Mobile and Cloud. The Citrix Zero Trust Architecture enables the "any-any-any" vision that Citrix has been espousing for years and is secured by access policies that take trust into context.
+
+## Other
+
+[Business Continuity](/en-us/tech-zone/learn/tech-briefs/business-continuity.html) - Business continuity events can have a regional or global impact. Learn about the different ways Citrix allows users to remain productive when making it to the office is not possible.

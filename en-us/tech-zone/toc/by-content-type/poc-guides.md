@@ -59,6 +59,12 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 [Remote PC Access with Citrix Virtual Desktops service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html) - Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from anywhere and on any device.
 
+## Security
+
+[App protection policies](/en-us/tech-zone/learn/poc-guides/app-protection-policies.html) - Learn how to enhance the security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
+
+[URL Redirection with Secure Browser and Citrix ADC in Azure](/en-us/tech-zone/learn/poc-guides/secure-browser-adc-integration.html) - Learn how to provide the dynamic delivery of resources by redirecting browsing to a Secure Browser service protecting the company network without sacrificing user experience.
+
 ## Google Cloud Platform
 
 [Google Cloud Platform (GCP) Shared VPC Support with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/gcp-shared-vpc.html) - Learn how to use Machine Creation Services (MCS) to provision machines in a Shared VPC on Google Cloud Platform (GCP). Then, learn to manage the machines using Citrix Studio.
@@ -66,9 +72,3 @@ Learn firsthand, the functionality of the solution by following these guides wit
 [Google Cloud Platform (GCP) Windows 10 Sole Tenant with Optional Shared VPC Catalog Creation](/en-us/tech-zone/learn/poc-guides/gcp-win10-catalog-creation.html) - Learn to deploy provisioned Windows 10 catalogs to GCP Sole Tenant nodes in Citrix Virtual Apps and Desktop Service.
 
 [Google Cloud Platform (GCP) Zone Selection Support with Citrix Virtual Apps and Desktops service](/en-us/tech-zone/learn/poc-guides/gcp-sole-tenant.html) - Learn how to configure zone selection on Google Cloud Platform to enable sole tenancy in Citrix Virtual Apps and Desktop Service.
-
-## Security
-
-[App protection policies](/en-us/tech-zone/learn/poc-guides/app-protection-policies.html) - Learn how to enhance the security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
-
-[URL Redirection with Secure Browser and Citrix ADC in Azure](/en-us/tech-zone/learn/poc-guides/secure-browser-adc-integration.html) - Learn how to provide the dynamic delivery of resources by redirecting browsing to a Secure Browser service protecting the company network without sacrificing user experience.
