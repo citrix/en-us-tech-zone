@@ -2,6 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Matt Brooks
+specialThanksTo: Frank Bunger
 description: With cyber threats rising and modern application architectures getting more complex, organizations need a more straightforward way to defend against bots, DDoS, zero-day exploits, and other attacks. Learn how Citrix Web App and API Protection (CWAAP) service can provide effective security against these attacks.
 ---
 # Citrix Web App and API Protection service
@@ -10,13 +11,13 @@ description: With cyber threats rising and modern application architectures gett
 
 Enterprises continue to migrate their web apps and APIs to the Cloud to better support work from home employees, fueled by the pandemic. At the same time, they still support business-critical web apps hosted On-Premises or in Private Clouds. Along with the growth in these internet-facing services, there has been growth in internet-borne threats.
 
-Bad actors continue to develop new ways to compromise them to support their illicit activities. Protecting applications from attack requires rapid identification of threats and launching of countermeasures. Citrix Web App and API Protection (CWAAP) service provides a consistent security posture and comprehensive Protection for Monolithic applications On-Premises or microservices in the Cloud.
+Bad actors continue to develop new ways to compromise them to support their illicit activities. Protecting applications from attack requires rapid identification of threats and launching of countermeasures. Citrix Web App and API Protection (CWAAP) service provides a consistent security posture and comprehensive protection for Monolithic applications On-Premises or microservices in the Cloud.
 
 ## Overview
 
-CWAAP service guards against their attempts to exfiltrate, manipulate or destroy online Enterprise apps, APIs and data. It includes a comprehensive suite of technology to mitigate the risk to business-critical operations. It contains four distinct sets of protection technology that work together to provide dynamic Protection:
+CWAAP service guards against their attempts to exfiltrate, manipulate or destroy online Enterprise apps, APIs and data. It includes a comprehensive suite of technology to mitigate the risk to business-critical operations.
 
-*  Web Application Firewall - short for web application firewall, "WAF" origins are in protecting web sites hosted on-premises, but now as sites are expanded or migrated to hybrid cloud or public cloud environment, they have a broader attack surface to protect. Protection also extends to APIs used by Cloud-native systems to communicate between distributed functions that operate independently in containers. Also know as microservices, this form of development is more efficient in many ways than traditional monolithic architecture, yet by nature is primarily hosted in the Cloud, and subsequently, APIs are vulnerable to attack.
+*  Web Application Firewall - short for web application firewall, "WAF" origins are in protecting web sites hosted on-premises. However, in the Cloud Era the scope of WAFs are expanded to hybrid cloud or public cloud environments with broader attack surfaces to protect. Protection also extends to APIs used by Cloud-native systems to communicate between distributed functions that operate independently in containers. Also know as microservices, this form of development is more efficient in many ways than traditional monolithic architecture, yet by nature is primarily hosted in the Cloud, and subsequently, APIs are vulnerable to attack.
 *  DDOS Protection - Distributed Denial of Service (DDOS) Protection guards against internet-born attacks that seek to disrupt access to cloud services. Typically initiated by bad actors through BOT armies, DDOS attacks focus on consuming available resources to the point customer access is disrupted or denied.
 
 ![CWAAP](/en-us/tech-zone/learn/media/tech-briefs_citrix-waap_cwaapservice.png)
@@ -25,7 +26,7 @@ CWAAP service guards against their attempts to exfiltrate, manipulate or destroy
 
 Hosted in the Cloud or on Premises Citrix WAF protects against known and unknown attacks, including application-layer and zero-day threats. It includes protections against Top 10 Web Application security risks, defined by the [OWASP Foundation](https://owasp.org/), at its core and expands on those with ever-growing security definitions and countermeasures from multiple threat research sources.
 
-Large enterprises may have hundreds or thousands of applications online that need to be secured. Therefore matching attacks, against unique web app flows to different applications at scale is a challenge.  Citrix WAF automates Protection against internet-borne attacks keeping traffic at the Cloud or On-Premises edge. It detects and mitigates incessant online threats around the clock. This allows Security operations to focus more on strategic security activities and address vulnerabilities elsewhere in the infrastructure.  
+Large enterprises may have hundreds or thousands of applications online that need to be secured. Therefore matching attacks, against unique web app flows to different applications at scale is a challenge.  Citrix WAF automates Protection against internet-borne attacks keeping traffic at the Cloud or On-Premises edge. It detects and mitigates incessant online threats around the clock. This allows Security operations to focus more on strategic security activities and address vulnerabilities elsewhere in the infrastructure.
 
 Citrix WAF works on both a positive and negative attack model. The positive model identifies zero-day threats by looking for abnormal activity patterns. The negative model identifies previously documented attack signatures.
 
@@ -74,7 +75,7 @@ The Citrix DDoS solution provides a holistic solution to DDOS protection buyers.
 
 ## Management
 
-CWAAP is configured and managed through a flexible SaaS portal. The CWAAP service portal is accessible through a browser enables security admins to configure attack protections, monitor attack activity through a dashboard, or report on events.
+CWAAP is configured and managed through a flexible SaaS portal. The CWAAP service portal, accessible through a browser, enables security admins to configure attack protections, monitor attack activity through a dashboard, or report on events.
 
 ### Setup
 
@@ -94,7 +95,7 @@ CWAAP WAF policies and custom rules are configurable through the SaaS portal:
 *  Trusted Sources - admins may configure an allow list of trusted sources that bypass inspection policies.
 *  Assets - admins configure the target site or sites these configured policies should apply to.
 
-![CWAAP](/en-us/tech-zone/learn/media/tech-briefs_citrix-waap_portal_policies.png)
+![CWAAP](/en-us/tech-zone/learn/media/tech-briefs_citrix-waap_portalpolicies.png)
 
 ### Monitoring
 
