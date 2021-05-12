@@ -12,9 +12,9 @@ Tech Zone Live returns on May 19, 2021, and you can register [here](https://www.
 
 ### February 2021
 
-Steps you can take to improve the VDI and WVD experience
+### Steps you can take to improve the VDI and WVD experience
 
-| **Preventing Noisy Neighbors from Ruining Your VDI Experience** | **The Tools Needed for Users to Self-Service Their VDI** | **Tips for a Painless Transition to Cloud-Managed VDI** |
+| **Preventing Noisy Neighbors from Ruining Your VDI Experience** with Allen Furmanski| **The Tools Needed for Users to Self-Service Their VDI** with Phil Wiffen| **Tips for a Painless Transition to Cloud-Managed VDI** with Brendan Lin|
 ---|---|---|
 |[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e01.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e02.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e03.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
 |Allen Furmanksi|Phil Wiffen|Brendan Lin|
