@@ -28,7 +28,7 @@ CWAAP service guards against their attempts to exfiltrate, manipulate or destroy
 
 Hosted in the Cloud or on Premises Citrix WAF protects against known and unknown attacks, including application-layer and zero-day threats. It includes protections against Top 10 Web Application security risks, defined by the [OWASP Foundation](https://owasp.org/), at its core and expands on those with ever-growing security definitions and countermeasures from multiple threat research sources.
 
-Large enterprises may have hundreds or thousands of applications online that need to be secured. Therefore matching attacks, against unique web app flows to different applications at scale is a challenge.  Citrix WAF automates Protection against internet-borne attacks keeping traffic at the Cloud or On-Premises edge. It detects and mitigates incessant online threats around the clock. This allows Security operations to focus more on strategic security activities and address vulnerabilities elsewhere in the infrastructure.
+Large enterprises may have hundreds or thousands of applications online that need to be secured. Therefore matching attacks, against unique web app flows to different applications at scale is a challenge. Citrix WAF automates Protection against internet-borne attacks keeping traffic at the Cloud or On-Premises edge. It detects and mitigates incessant online threats around the clock. This allows Security operations to focus more on strategic security activities and address vulnerabilities elsewhere in the infrastructure.
 
 Citrix WAF works on both a positive and negative attack model. The positive model identifies zero-day threats by looking for abnormal activity patterns. The negative model identifies previously documented attack signatures.
 
@@ -52,7 +52,7 @@ Injection flaws, such as SQL and LDAP injection, have been a perennial favorite 
 *  HTTP RFC - inspects the incoming traffic for HTTP RFC protocol compliance and drops any request with RFC violations.
 *  Deny URL - examines and blocks connections to URLs commonly accessed by hackers and malicious code.
 *  POST Body Limit - Limits the request payload (in bytes) inspected for signatures.
-  
+
 #### XML
 
 *  XML SQL Injection - examines and blocks user requests with injected SQL in XML payloads.
