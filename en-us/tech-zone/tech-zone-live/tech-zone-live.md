@@ -6,7 +6,7 @@ description: Join forces with Master Class and TIPs experts for a quarterly webi
 
 [![Tech Zone Live Banner](/en-us/tech-zone/media/tech-zone-live_banner.png)](https://www.citrix.com/events/2021/tech-zone-live.html)
 
-Tech Zone Live returns on May 19, 2021, so now's the time to register [here](https://www.citrix.com/events/2021/tech-zone-live.html).
+Tech Zone Live returns on May 19, 2021, so now's the time to [register](https://www.citrix.com/events/2021/tech-zone-live.html).
 
 The Tech Zone Live event has something for everyone.  We've broken down the next event into three main topics
 
