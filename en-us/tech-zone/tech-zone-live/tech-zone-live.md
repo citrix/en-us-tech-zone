@@ -4,7 +4,21 @@ description: Join forces with Master Class and TIPs experts for a quarterly webi
 ---
 # Tech Zone Live
 
-Tech Zone Live returns on May 19, 2021 (registration link coming soon).
+Tech Zone Live returns on May 19, 2021, and you can register [here](https://www.citrix.com/events/2021/tech-zone-live.html).
+
+[![2021-Q1-E1](/en-us/tech-zone/tech-zone-live/media/tech-zone-live_tech-zone-live_2021-q1-e1.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)
+
+## Archive
+
+### February 2021
+
+Steps you can take to improve the VDI and WVD experience
+
+| **Title** | **Presenter** | **Link** |
+---|---|---|
+|**Preventing Noisy Neighbors from Ruining Your VDI Experience**|Allen Furmanksi|[![2021-Q1-E1](/en-us/tech-zone/tech-zone-live/media/tech-zone-live_tech-zone-live_2021-q1-e1.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
+|**The Tools Needed for Users to Self-Service Their VDI**|Phil Wiffen|[![2021-Q1-E1](/en-us/tech-zone/tech-zone-live/media/tech-zone-live_tech-zone-live_2021-q1-e2.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
+|**Tips for a Painless Transition to Cloud-Managed VDI**|Brendan Lin|[![2021-Q1-E1](/en-us/tech-zone/tech-zone-live/media/tech-zone-live_tech-zone-live_2021-q1-e13.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
 
 You can still watch the previous [Tech Zone Live sessions on-demand](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/). This includes the following topics:
 
