@@ -4,21 +4,20 @@ h3InToc: true
 contributedBy: Matt Brooks
 description: With cyber threats rising and modern application architectures getting more complex, organizations need a more straightforward way to defend against bots, DDoS, zero-day exploits, and other attacks. Learn how Citrix Web App and API Protection (CWAAP) can provide effective security against these attacks.
 ---
-# Citrix Web App and API Protection (CWAAP)
+# Citrix Web App and API Protection service
 
 ## Introduction
 
 Enterprises continue to migrate their web apps and APIs to the Cloud to better support work from home employees, fueled by the pandemic. At the same time, they still support business-critical web apps hosted On-Premises or in Private Clouds. Along with the growth in these internet-facing services, there has been growth in internet borne threats.
 
-Bad actors continue to develop new ways to compromise them to support their illicit activities. Protecting applications from attack requires rapid identification of threats and launching of countermeasures. CWAAP provides a consistent security posture and comprehensive Protection for Monolithic applications On-Premises or microservices in the Cloud.
+Bad actors continue to develop new ways to compromise them to support their illicit activities. Protecting applications from attack requires rapid identification of threats and launching of countermeasures. Citrix Web App and API Protection (CWAAP) service provides a consistent security posture and comprehensive Protection for Monolithic applications On-Premises or microservices in the Cloud.
 
 ## Overview
 
-Citrix Web App and API Protection (CWAAP) guards against their attempts to exfiltrate, manipulate or destroy online Enterprise apps, APIs and data. It includes a comprehensive suite of technology to mitigate the risk to business-critical operations. It contains four distinct sets of protection technology that work together to provide dynamic Protection:
+CWAAP service guards against their attempts to exfiltrate, manipulate or destroy online Enterprise apps, APIs and data. It includes a comprehensive suite of technology to mitigate the risk to business-critical operations. It contains four distinct sets of protection technology that work together to provide dynamic Protection:
 
-1.  Web Application Firewall - short for web application firewall, "WAF" origins are in protecting web sites hosted on-premises, but now as sites are expanded or migrated to hybrid Cloud or public cloud environment they have a broader attack surface to protect. Protection also extends to APIs used by Cloud-native systems to communicate between distributed functions that operate independently in containers. Also, know as microservices, this form of development is more efficient in many ways than traditional monolithic architecture, yet by nature is primarily hosted in the Cloud, and subsequently, APIs are vulnerable to attack.
-2.  BOT Protection - short for robot, a "BOT" bot simulates a human activity. There are good ones such as crawler bots run by Google to categorize their search engine content. There are also bad ones, such as hacker bots that incessantly probe sites for vulnerabilities, scraper bots that steal and or manipulate content in an attempt to profit illegally, or botnets that attempt to deny service to users to hurt a company financially or otherwise.
-3.  DDOS Protection - Distributed Denial of Service (DDOS) Protection guards against internet born attacks that seek to disrupt access to cloud services. Typically initiated by bad actors through BOT armies, DDOS attacks focus on consuming available resources to the point customer access is disrupted or denied.
+*  Web Application Firewall - short for web application firewall, "WAF" origins are in protecting web sites hosted on-premises, but now as sites are expanded or migrated to hybrid Cloud or public cloud environment they have a broader attack surface to protect. Protection also extends to APIs used by Cloud-native systems to communicate between distributed functions that operate independently in containers. Also, know as microservices, this form of development is more efficient in many ways than traditional monolithic architecture, yet by nature is primarily hosted in the Cloud, and subsequently, APIs are vulnerable to attack.
+*  DDOS Protection - Distributed Denial of Service (DDOS) Protection guards against internet born attacks that seek to disrupt access to cloud services. Typically initiated by bad actors through BOT armies, DDOS attacks focus on consuming available resources to the point customer access is disrupted or denied.
 
 ![CWAAP](/en-us/tech-zone/learn/media/tech-briefs_citrix-waap_cwaapservice.png)
 
@@ -34,39 +33,34 @@ Citrix WAF works on both a postive and negative attack model. The positive model
 
 Injection flaws, such as SQL and LDAP injection, have been a perennial favorite among hackers along with Cross-site scripting attacks. Other web attack protections include:
 
-*  [HTML Cross-Site Scripting Check](https://docs.citrix.com/en-us/citrix-adc/current-release/application-firewall/top-level-protections/html-cross-site-scripting-check.html)
-*  [HTML SQL Injection Checks](https://docs.citrix.com/en-us/citrix-adc/current-release/application-firewall/top-level-protections/html-sql-injection-check.html)
-*  [SQL grammar-based protection for HTML and JSON payload](https://docs.citrix.com/en-us/citrix-adc/current-release/application-firewall/top-level-protections/sql-grammar-based-protection-for-html-and-json-payload.html)
-*  [Relaxation and deny rules for handling HTML SQL injection attacks](https://docs.citrix.com/en-us/citrix-adc/current-release/application-firewall/top-level-protections/relaxtion-and-deny-rules-for-html-sql-injection-attack.html)
-*  [HTML Command Injection Protection](https://docs.citrix.com/en-us/citrix-adc/current-release/application-firewall/top-level-protections/command-injection-protection-check.html)
-*  [JSON Command Injection Protection](https://docs.citrix.com/en-us/citrix-adc/current-release/application-firewall/top-level-protections/json-command-injection-projection-check.html)
-*  [XML External Entity Protection](https://docs.citrix.com/en-us/citrix-adc/current-release/application-firewall/top-level-protections/xml-entity-attack-protection.html)
-*  [Buffer Overflow Check](https://docs.citrix.com/en-us/citrix-adc/current-release/application-firewall/top-level-protections/buffer-over-flow-check.html)
-*  [Web App Firewall Support for Google Web Toolkit](https://docs.citrix.com/en-us/citrix-adc/current-release/application-firewall/top-level-protections/securing-google-web-toolkit-applications.html)
+#### Core
+
+*  HTML SQL Injection - provides defenses against injection of unauthorized SQL code that might break security.
+*  HTML Cross-Site Scripting - examines both the headers and the POST bodies of user requests for possible cross-site scripting attacks.
+*  Cross Site Request Forgery (CSRF) Form Tagging - tags each web form sent by a protected website to users with a unique and unpredictable FormID, and then examines the web forms returned by users to ensure that the supplied FormID is correct.
+*  Buffer Overflow Check - detects attempts to cause a buffer overflow such as URLs, cookies, or headers that are longer than the configured length.
+
+#### Advanced
+
+*  Cookie Consistency - examines cookies returned by users, to verify that they match the cookies that the protected website set for that user. If a modified cookie is found, it is stripped from the request before the request is forwarded to the web server.
+*  Field Consistency - examines the web forms returned by users in response to HTML requests, and verifies that unauthorized changes to the structure were not made.
+*  Field Format - verifies the data that users send including the length and type.
+*  Content Type - ensures the Content-Type headers are either “application/x-www-form-urlencoded”, “multipart/form-data,” or “text/x-gwt-rpc” types. Any request that has any other content type designated is blocked.
+*  HTTP RFC - inspects the incoming traffic for HTTP RFC protocol compliance and drops any request that has RFC violations.
+*  Deny URL - examines and blocks connections to URLs that are commonly accessed by hackers and malicious code.
+*  POST Body Limit - Limits the request payload (in bytes) inspected for signatures.
+  
+#### XML
+
+*  XML SQL Injection - examines and blocks user requests with injected SQL in XML payloads.
+*  XML XSS - examines and blocks user requests with cross-site scripting attacks in XML payloads.
+*  XML Format - examines and blocks incoming requests that are not well formed or that do not meet the specification for properly-formed XML documents.
+*  XML SOAP Fault - examines responses from your protected web services and filters out XML SOAP faults. This prevents leaking of sensitive information to attackers.
+*  Web Service Interoperability - examines and blocks requests and responses that do not adhere to the WS-I standard and might not interact with XML application appropriately.
 
 ### Positive Model
 
-Citrix WAF supports a positive protection model with learning rules that build on the negative model by creating a profile of allowed traffic. This helps ensure Protection against zero-day attacks that are not addressed in existing signatures.
-
-## BOT Management
-
-Bad BOTs with nefarious intentions can be defined in three sets of groups:
-
-1.  Simple (high volume / low risk) - attacks are low hanging fruit for bad actors. They can be identified by the source IP address from reputation lists, HTTP header tags, or signatures. They can be mitigated with rate-limiting or blocked with acls.
-
-2.  Moderate (medium volume / medium risk) - these types of BOT attacks raise the stakes and go beyond simple scripted attempts to repeat attacks that were successful on other sites.
-
-3.  Sophisticated (low volume / high risk) - these BOT attacks are initiated and coordinated by bad actors using intelligent methods and planning. They may create fake accounts, hoard inventory, and attempt password stuffing or spraying.
-
-Citrix protection features to defend against these types of BOTs include:
-
-*  Thousands of BOT signatures
-*  5 Million+ IP addresses in IP reputation database that's updated continuously
-*  Blacklist (for example: specific IP address origin domains)
-*  White list (for example: Google Search Crawler, etc.)
-*  Bot Traps identifies automated BOTs that select a 1-pixel image it injects, that users would not see
-*  Moving averages - uses statistics to define normal traffic and act on abnormal traffic
-*  Machine Learning - to gather and analyze usage data to take predictive steps against coordinated attacks
+Citrix WAF supports a positive protection model with learning rules that build on the negative model by creating a profile of allowed traffic. Advanced heuristics analyze traffic to identify standard behavior and make recommendations for tuning of countermeasures. This helps ensure Protection against zero-day attacks that are not addressed in existing signatures.
 
 ## DDOS Management
 
@@ -76,29 +70,43 @@ DDOS attacks focus on disruption through resource consumption. There are three m
 2.  Protocol-based attacks - focus on the transport layer and take advantage of protocol operations. Packets are typically "spoofed" or sent with fake IP header information to illicit a response to consuming site resources. A typical example is a "SYN" attack. With this type of attack, the bad actor's host, or a BOT, sends a request to establish a TCP layer session. A TCP session is ultimately required for legitimate users to establish an HTTP session to use the web service. However, the initiating host never responds to the site's SYN ACK yet sends more SYNs, steadily consuming memory on the web service as it waits to establish TCP sessions.
 3.  Application layer attacks - these attacks focus on the application layer and seek to overcome resources or take advantage of web server vulnerabilities. The attacks try to illicit, excessive site responses by manipulating protocol communication with crafted GETs or POSTs.
 
-The Citrix DDoS solution provides a holistic solution to DDOS protection buyers. It is an always-on DDoS attack management service. It features one of the world's largest scrubbing networks with 12 Tbps capacity that protects applications from large-scale DDoS attacks.
+The Citrix DDoS solution provides a holistic solution to DDOS protection buyers. It is an always-on DDoS attack management service. It features one of the world's largest scrubbing networks with 14 POPs and 12 Tbps capacity that protects applications from large-scale volumetric DDoS attacks.
 
 ## Management
 
-CWAAP can be configured, and monitored in several flexible ways to meet your On-Premises, Cloud, and Hybrid Cloud requirements. They include directly through the Citrix ADC User Interface, through the Citrix Cloud ADM service, or through the CWAAP service portal.
+CWAAP can be configured, and managed through the a flexible SaaS portal. The CWAAP service portal is accessible through a browser enables security admins to configure attack protections, monitor attack activity through a dashboard, or report on events.
 
-*  Citrix ADC - can be configured through a GUI using a mouse and browser or CLI using text commands. Both are reliable and intuitive options that have been a part of the platform and evolved since its inception over a decade ago.
+### Setup
 
-![CWAAP](/en-us/tech-zone/learn/media/tech-briefs_citrix-waap_adcmgmt.png)
+CWAAP is setup with the help of Citrix using one of two methods:
 
-*  Citrix ADM - is a powerful part of Citrix Analytics technology hosted in Citrix Cloud. It easily scales the management of multiple Citrix ADCs. It also simplifies the configuration and monitoring of WAF, BOT, and API Protections.
+*  DNS - using dns is the most common and easiest method. Customers direct their site A records to a Citrix CWAAP domain setup for their site. With this method customers maintain control and can schedule a quick transition using a low TTL setting for the record.
+*  BGP - using bgp requires customers to transfer control of their pertinent routing block to Citrix. Then Citrix announces the route on behalf of the customer and traffic to target sites without the block are directed to the CWAAP for inspection.
 
-![CWAAP](/en-us/tech-zone/learn/media/tech-briefs_citrix-waap_admmgmt.png)
+### Configuration
 
-*  CWAAP Portal - is a SaaS portal that provides the ability to configure CWAAP in the Cloud. It gives Citrix admins the ability to configure and monitor CWAAP Protections centrally. While with dozens of POPs around the globe, it uses nearby access to have their web requests seamlessly proxied and inspected.
+CWAAP WAF polices and custom rules are configurable through the SaaS portal:
+
+*  WAF Policies - there are three primary sets of policies and when detected administrators can configure them to block, log, or both. Core policies are the most common types of attacks including SQL injection, cross site scripting, and buffer overflow. Advanced are more complex attacks using cookies or trying to take advantage of the http protocol, while the last group pertains to XML specific attacks. Signatures to identify the attacks are continuously developed by a Citrix research team and are updated automatically when published.
+*  Responder Policies - admins may configure custom rules to drop, log, or redirect connections based on specific parameters such as the host name, source IP address, or destination port.
+*  Network Controls - admins may configure ACLs to block specific IP address ranges, or traffic from specific countries.
+*  Alerts - admins may configure custom alerts when the amount of traffic, withing a certain interval, is exceeded from a specific parameter such as the same ASN, country, or User Agent.
+*  Trusted Sources - admins may configure an allow list of trusted sources that bypass inspection policies.
+*  Assets - admins configure the target site or sites these configured policies should apply to.
+
+![CWAAP](/en-us/tech-zone/learn/media/tech-briefs_citrix-waap_portal_policies.png)
+
+### Monitoring
+
+The CWAAP Portal gives Citrix admins the ability to monitor CWAAP Protections centrally. The main dashboard provides an aggregate view of site volume including total traffic, broken down by clean traffic and mitigated traffic.
+
+It also includes a detailed log of attacks including volume, duration, and countermeasures deployed.
 
 ![CWAAP](/en-us/tech-zone/learn/media/tech-briefs_citrix-waap_cwaapsvcmgmt.png)
 
-(`*` Some protections may not available for configuration through all interfaces and are subject to change)
-
 ## Summary
 
-Enterprises' use of cloud services and mobile applications continues to drive the growth of cloud-native web and API traffic while maintaining some business-critical web apps On-Premises. With this growth in apps and APIs online, they are increasingly vulnerable to the persistent attacks that come with being hosted on the public internet. Citrix Web App and API Security (CWAAP) is constantly evolving to stay ahead of these complex attacks. It includes an advanced suite of technology-based on Machine Learning and Artificial Intelligence to protect these critical Enterprise services in the Cloud and On-Premises.
+Enterprises' use of cloud services and mobile applications continues to drive the growth of cloud-native web and API traffic while maintaining some business-critical web apps On-Premises. With this growth in apps and APIs online, they are increasingly vulnerable to the persistent attacks that come with being hosted on the public internet. Citrix Web App and API Security service is constantly evolving to stay ahead of these complex attacks. It includes an advanced suite of technology-based on Machine Learning and Artificial Intelligence to protect these critical Enterprise services in the Cloud and On-Premises.
 
 ## References
 
