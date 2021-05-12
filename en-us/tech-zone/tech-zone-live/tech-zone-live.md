@@ -6,16 +6,29 @@ description: Join forces with Master Class and TIPs experts for a quarterly webi
 
 [![Tech Zone Live Banner](/en-us/tech-zone/media/tech-zone-live_banner.png)](https://www.citrix.com/events/2021/tech-zone-live.html)
 
+Tech Zone Live returns on May 19, 2021, so now's the time to register [here](https://www.citrix.com/events/2021/tech-zone-live.html).
 
-Tech Zone Live returns on May 19, 2021, and you can register [here](https://www.citrix.com/events/2021/tech-zone-live.html).
+The Tech Zone Live event has something for everyone.  We've broken down the next event into three main topics
 
-[![2021-Q1-E1](/en-us/tech-zone/tech-zone-live/media/tech-zone-live_tech-zone-live_2021-q1-e1.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)
+1.  Secure Access Service Edge (SASE)
+2.  Desktops-as-a-Service (DaaS)
+3.  Windows Virtual Desktops (WVD)
+
+In each hour long segment, we break it down into three distinct levels of knowledge
+
+*  Level 1 = Intro: Here we will provide you with a baseline understanding of the tech.
+*  Level 2 = Deep Dive: For those who are looking to expand their knowledge even further.
+*  Level 3 = Case Study: Tech is cool, but where do I use it?  Here we will provide you with real examples/tips.
+
+Join us on May 19, 2021 at [Tech Zone Live](https://www.citrix.com/events/2021/tech-zone-live.html)
 
 ## Archive
 
+If you missed an earlier Tech Zone Live event, you can still watch each session on-demand.
+
 ### February 2021
 
-[Watch On-Demand Now](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/).
+[Watch February 2021 On-Demand Now](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/).
 
 |Session|Segment 1|Segment 2|Segment 3|
 |---|---|---|---|
