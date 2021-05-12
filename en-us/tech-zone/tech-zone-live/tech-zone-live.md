@@ -16,9 +16,9 @@ Steps you can take to improve the VDI and WVD experience
 
 | **Title** | **Presenter** | **Link** |
 ---|---|---|
-|**Preventing Noisy Neighbors from Ruining Your VDI Experience**|Allen Furmanksi|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e1.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
-|**The Tools Needed for Users to Self-Service Their VDI**|Phil Wiffen|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e2.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
-|**Tips for a Painless Transition to Cloud-Managed VDI**|Brendan Lin|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e13.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
+|**Preventing Noisy Neighbors from Ruining Your VDI Experience**|Allen Furmanksi|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e01.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
+|**The Tools Needed for Users to Self-Service Their VDI**|Phil Wiffen|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e02.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
+|**Tips for a Painless Transition to Cloud-Managed VDI**|Brendan Lin|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e03.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
 
 You can still watch the previous [Tech Zone Live sessions on-demand](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/). This includes the following topics:
 
