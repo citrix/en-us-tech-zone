@@ -18,44 +18,4 @@ Tech Zone Live returns on May 19, 2021, and you can register [here](https://www.
 |How the events of 2020 should impact your security plan|The Right Solutions to Protect Users from Phishing Attacks with Florin Lazurca[![2021-Q1-E4](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e04.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|Security Policies to Reduce Fallout from Mis-Delivery Mistakes with Martin Zugec[![2021-Q1-E5](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e05.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|Tips for Preventing Credential Stealing and Ransomware Attacks with Roger LaMarca[![2021-Q1-E6](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e06.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
 |Building a workspace that fits your workstyle|Using Service Continuity to overcome Cloud Service Failures with Mayank Singh[![2021-Q1-E7](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e07.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|Tips on Sizing Your VDI Instances for any Cloud/Host Provider with Brian Jozefat[![2021-Q1-E8](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e08.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|See how to integrate Google with Citrix Workspace with Rick Dehlinger[![2021-Q1-E9](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e09.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
 
-
-
-|**Session 1** - Steps you can take to improve the VDI and WVD Experience|
-| Prevent Noisy Neighbors from Ruining Your VDI Experience (with Allen Furmanski)| The Tools Needed for Users to Self-Service Their VDI (with Phil Wiffen)| Tips for a Painless Transition to Cloud-Managed VDI (with Brendan Lin)|
----|---|---|
-|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e01.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e02.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e03.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
-|**Session 2** - How the events of 2020 should impact your security plan|
-| Solutions to Protect Users from Phishing Attacks (with Florin Lazurca)| Security Policies to Reduce Fallout from Mis-Delivery Mistakes (with Martin Zugec)| Tips for Preventing Credential Stealing and Ransomware Attacks (with Roger LaMarca)|
-|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e01.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e02.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e03.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
-
-*  Solutions to Protect Users from Phishing Attacks
-*  Simple Security Policies to Reduce the Fallout from Mis-Delivery Mistakes
-*  Tips for Preventing Credential Stealing, Resulting in Ransomware Attacks
-
-| **Title** | **Presenter** | **Link** |
----|---|---|
-|**Preventing Noisy Neighbors from Ruining Your VDI Experience**|Allen Furmanksi|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e01.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
-|**The Tools Needed for Users to Self-Service Their VDI**|Phil Wiffen|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e02.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
-|**Tips for a Painless Transition to Cloud-Managed VDI**|Brendan Lin|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e03.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
-
-You can still watch the previous [Tech Zone Live sessions on-demand](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/). This includes the following topics:
-
-Steps you can take to improve the VDI and WVD experience
-
-*  Preventing Noisy Neighbors from Ruining Your Experience
-*  The Tools Needed for Users to Self-Service Their VDI
-*  Tips for a Painless Transition to Cloud-Managed VDI
-
-How the events of 2020 should impact your security plan
-
-*  Solutions to Protect Users from Phishing Attacks
-*  Simple Security Policies to Reduce the Fallout from Mis-Delivery Mistakes
-*  Tips for Preventing Credential Stealing, Resulting in Ransomware Attacks
-
-Building a workspace that fits your workstyle
-
-*  Options for Overcoming Cloud Service Failures
-*  Tips on Correctly Sizing Your VDI Instances for Many Cloud/Host Providers
-*  Integrating Google with Citrix Workspace
-
 [Watch On-Demand Now](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/).
