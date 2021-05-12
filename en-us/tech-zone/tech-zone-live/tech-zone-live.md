@@ -20,7 +20,6 @@ Tech Zone Live returns on May 19, 2021, and you can register [here](https://www.
 |[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e01.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e02.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e03.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
 |**Session 2** - How the events of 2020 should impact your security plan|
 | Solutions to Protect Users from Phishing Attacks (with Florin Lazurca)| Security Policies to Reduce Fallout from Mis-Delivery Mistakes (with Martin Zugec)| Tips for Preventing Credential Stealing and Ransomware Attacks (with Roger LaMarca)|
----|---|---|
 |[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e01.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e02.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|[![2021-Q1-E1](/en-us/tech-zone/media/tech-zone-live_tech-zone-live_2021-q1-e03.png)](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/tech-zone-live-webinar/)|
 
 *  Solutions to Protect Users from Phishing Attacks
