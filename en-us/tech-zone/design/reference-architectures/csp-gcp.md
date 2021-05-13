@@ -4,10 +4,10 @@ h3InToc: true
 contributedBy: JP Alfaro
 specialThanksTo: Darren Harding, Selma Wei, Rick Dehlinger, Neir Benyamin
 description: Citrix Virtual Apps and Desktops Service Google Cloud Platform (GCP) Architecture with the Managed Service for Microsoft Active Directory for Citrix Service Providers (CSPs) aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and design considerations to leverage GCP Managed AD Service.
-tz_title: Citrix Virtual Apps and Desktops Service – GCP Architecture with the Managed Service for Microsoft Active Directory for CSPs
+tz_title: Citrix Virtual Apps and Desktops Service - GCP Architecture with the Managed Service for Microsoft Active Directory for CSPs
 tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Reference Architecture: Citrix Virtual Apps and Desktops Service – GCP Architecture with the Managed Service for Microsoft Active Directory for CSPs
+# Reference Architecture: Citrix Virtual Apps and Desktops Service - GCP Architecture with the Managed Service for Microsoft Active Directory for CSPs
 
 ## Introduction
 
@@ -27,23 +27,23 @@ Finally, we cover the steps required to deploy a Managed AD Service domain in GC
 
 While several services provide a similar functionality across the different public cloud providers, the terminology can be different. The following are the most common GCP elements that you need to understand as you follow through this reference architecture, as described on the GCP documentation.
 
-*  **VPC Network:** GCP’s virtual network object. Virtual Private Cloud networks (VPCs) in GCP are global, meaning you can deploy subnets to a VPC from each GCP region. You can deploy VPCs in auto-mode, which creates all subnets and CIDR ranges automatically, or in custom-mode, which lets you create subnets and CIDR ranges manually. Non-overlapping VPCs from different projects can be connected through VPC peering.
+*  **VPC Network:** GCP's virtual network object. Virtual Private Cloud networks (VPCs) in GCP are global, meaning you can deploy subnets to a VPC from each GCP region. You can deploy VPCs in auto-mode, which creates all subnets and CIDR ranges automatically, or in custom-mode, which lets you create subnets and CIDR ranges manually. Non-overlapping VPCs from different projects can be connected through VPC peering.
 *  **VPC Peering:** A VPC peering allows you to connect VPCs which would otherwise be disconnected. In this case, the GCP Managed AD Service creates a VPC peering automatically to connect our VPC to the Managed AD Service VPC.
 *  **Shared VPC:** A shared VPC can be spanned across multiple projects, eliminating the requirement to create separate VPCs for each project, or the utilization of VPC peering.
 *  **GCP Organization:** An organization represents the root node in the GCP resource hierarchy. To create an organization, GCP Cloud Identity or Google Workspace (formerly G-Suite) are required. An organization is not required, but it is highly recommended to deploy one for your production environments to better organize and manage your resources.
 *  **Folders:** A folder is utilized to organize resources within GCP, and they can contain more folders, or projects. For example, you can create folders to separate projects by department, environment type, or any other criteria. A folder is not always required, but same as with organizations, they are recommended for better resource organization.
 *  **Project:** A project provides an abstract grouping of resources within GCP, and all resources in GCP must belong to a project. Under normal circumstances, VM instances from one project cannot communicate with VM instances in another project, unless a VPC peering or a Shared VPC are utilized.
 *  **Billing Account:** A billing account represents the payment profile to be utilized to pay for GCP consumption. A billing account can be linked to multiple projects, but a project can only be linked to a single billing account.
-*  **IAM:** GCP’s Identity and Access Management platform is utilized to grant user permissions to perform actions on GCP resources. This platform is also utilized to deploy and manage Service Accounts.
+*  **IAM:** GCP's Identity and Access Management platform is utilized to grant user permissions to perform actions on GCP resources. This platform is also utilized to deploy and manage Service Accounts.
 *  **Service Account:** A service account is a GCP account that is not connected to an actual user, but instead represents a VM instance or an application. Service accounts can be granted permissions to perform different actions on the various GCP APIs. A service account is required to connect the Citrix Virtual Apps and Desktops Service to GCP and enable Machine Creation Services.
 *  **GCE:** Google Compute Engine is the GCP platform in which you deploy compute resources, including VM instances, disks, instance templates, instance groups, and more.
 *  **GCE Instance:** A GCE instance is any VM deployed on the GCE platform. Cloud Connectors, golden images, the AD management VM, and any other virtual machine in the environment are considered GCE instances.
-*  **Instance Template:** A “baseline” resource you can utilize to deploy VMs and instance groups in GCP. The Citrix MCS process copies the golden image into an instance template, which is then utilized to deploy catalog machines.
+*  **Instance Template:** A "baseline" resource you can utilize to deploy VMs and instance groups in GCP. The Citrix MCS process copies the golden image into an instance template, which is then utilized to deploy catalog machines.
 *  **Cloud DNS:** The GCP service utilized to manage DNS zones and records. With the creation of the Managed AD Service, Cloud DNS is automatically configured to forward DNS queries to the managed domain controllers.
 
 ## Managed AD Service on GCP
 
-GCP’s [Managed Service for Microsoft Active Directory](https://cloud.google.com/managed-microsoft-ad) is a fully managed Active Directory service on the Google Cloud Platform. This service provides you with a fully functional Active Directory forest/domain without the overhead of building and maintaining Windows Server VM instances.
+GCP's [Managed Service for Microsoft Active Directory](https://cloud.google.com/managed-microsoft-ad) is a fully managed Active Directory service on the Google Cloud Platform. This service provides you with a fully functional Active Directory forest/domain without the overhead of building and maintaining Windows Server VM instances.
 
 The Managed AD Service is built on highly available, Google-managed infrastructure, and delivered as a managed service. Each directory is deployed across multiple GCP zones and monitoring automatically detects and replaces domain controllers that fail. You do not have to install software, and Google handles all patching and software updates.
 
@@ -51,7 +51,7 @@ The Managed AD Service automatically deploys and manages highly available Active
 
 ### Managed AD Service Considerations
 
-While there are many similarities between a traditional Microsoft Active Directory environment and the Managed AD Service in GCP, a few considerations must be kept in mind when deploying GCP’s Managed AD Service.
+While there are many similarities between a traditional Microsoft Active Directory environment and the Managed AD Service in GCP, a few considerations must be kept in mind when deploying GCP's Managed AD Service.
 
 1.  Domain controller access is restricted, and you can only manage your domain by deploying management instances and installing the Remote Server Administration tools.
 2.  A shared VPC must be deployed before adding new customers / projects on the GCP shared resource location. Projects must belong to a shared VPC to be able to reach the managed AD domain. Resources deployed on a project with a VPC that is peered to a shared VPC are not able to reach the Managed AD Service domain. For more details, check the GCP [VPC peering requirements](https://cloud.google.com/vpc/docs/vpc-peering#restrictions) page and the [Google Cloud Platform (GCP) Shared VPC Support with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/gcp-shared-vpc.html) tech-zone PoC guide.
@@ -77,8 +77,8 @@ The second type of forest design model is the resource forest. In this model, a 
 
 As explained before, in this deployment model, the Managed AD Service is the *"trusting"* forest hosting the resources, and the on-premises AD is the *"trusted"* forest where user identities reside. In other words, the Managed AD Service domain allows for users in the on-premises domain to access its resources.
 
-| NOTE: |
-|---|
+| NOTE:                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Keep in mind the [Citrix Cloud Connector Technical Details](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/technical-details.html#deployment-scenarios-for-cloud-connectors-in-active-directory) when designing your Active Directory forest models. Cloud Connectors cannot traverse forest trusts, user accounts from an on-premises Active Directory are not visible in Citrix Cloud unless a set of Cloud Connectors is deployed in that forest. |
 
 [![CSP-Image-002](/en-us/tech-zone/design/media/reference-architectures_csp-gcp_002.png)](/en-us/tech-zone/design/media/reference-architectures_csp-gcp_002.png)
@@ -87,7 +87,7 @@ As explained before, in this deployment model, the Managed AD Service is the *"t
 
 We understand that not all CSPs are at the same stage on their cloud adoption journey. For an in depth explanation of the various design patterns for Citrix on GCP, check [this section](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#design-patterns-for-citrix-virtualization-on-google-cloud) of the Citrix Virtualization on Google Cloud reference architecture.
 
-Also, we’re assuming full understanding of the Citrix Cloud multitenancy and customer management features available to CSPs. Those features are covered in depth on the [CSP Virtual Apps and Desktops Reference Architecture](/en-us/tech-zone/design/reference-architectures/csp-cvads.html).
+Also, we're assuming full understanding of the Citrix Cloud multitenancy and customer management features available to CSPs. Those features are covered in depth on the [CSP Virtual Apps and Desktops Reference Architecture](/en-us/tech-zone/design/reference-architectures/csp-cvads.html).
 
 ### Managed Service for Microsoft Active Directory for CSPs Design Pattern
 
@@ -111,8 +111,8 @@ A separate GCP project is recommended to host each customer's resources (VDAs) o
 
 Also, per leading practices, the shared VPC host project will not host any resources (**7**). This project is only used to deploy the shared VPC and the Managed AD Service domain.
 
-| NOTE: |
-|---|
+| NOTE:                                                                                                                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | While the Managed AD Service domain is deployed from the host project, the actual resources (domain controllers and VPC network) belong to a project managed by Google. You do not have access to this project. |
 
 A shared Citrix Cloud tenant (**8**) is provisioned to deploy and manage the resources of multiple customers. These customers share the Citrix Virtual Apps and Desktop Service components (like Delivery Controllers, Databases, Director, Studio, Licensing, and APIs).
@@ -133,10 +133,10 @@ In this section, we cover the steps required to deploy the Managed AD Service do
 
 [![CSP-Image-005](/en-us/tech-zone/design/media/reference-architectures_csp-gcp_005.png)](/en-us/tech-zone/design/media/reference-architectures_csp-gcp_005.png)
 
-| NOTES: |
-|---|
-|*  Managed domain controllers are deployed with the ADDS and DNS roles. |
-|*  Management VMs must be created separately. |
+| NOTES:                                                                  |
+| ----------------------------------------------------------------------- |
+| *  Managed domain controllers are deployed with the ADDS and DNS roles. |
+| *  Management VMs must be created separately.                           |
 
 3- On the **Create a new domain** screen, enter the following information:
 
@@ -147,10 +147,10 @@ In this section, we cover the steps required to deploy the Managed AD Service do
 
 [![CSP-Image-006](/en-us/tech-zone/design/media/reference-architectures_csp-gcp_006.png)](/en-us/tech-zone/design/media/reference-architectures_csp-gcp_006.png)
 
-| NOTES: |
-|---|
-|*  The VPC that is deployed as part of the service cannot be managed from the GCP console. |
-|*  CIDR range must not overlap with your current subnets. |
+| NOTES:                                                                                     |
+| ------------------------------------------------------------------------------------------ |
+| *  The VPC that is deployed as part of the service cannot be managed from the GCP console. |
+| *  CIDR range must not overlap with your current subnets.                                  |
 
 4- Scroll down and enter the following information:
 
@@ -160,11 +160,11 @@ In this section, we cover the steps required to deploy the Managed AD Service do
 
 [![CSP-Image-007](/en-us/tech-zone/design/media/reference-architectures_csp-gcp_007.png)](/en-us/tech-zone/design/media/reference-architectures_csp-gcp_007.png)
 
-| NOTES: |
-|---|
-|*  The delegated administrator account resides on the Users container. While you can reset its password directly in the ADUC console, you cannot move the object to a different OU. |
-|*  When joining a computer to the domain, its AD account is created under the **Cloud > Computers** OU, not the default Computers container. |
-|*  Service creation can take up to 60 minutes. |
+| NOTES:                                                                                                                                                                              |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| *  The delegated administrator account resides on the Users container. While you can reset its password directly in the ADUC console, you cannot move the object to a different OU. |
+| *  When joining a computer to the domain, its AD account is created under the **Cloud > Computers** OU, not the default Computers container.                                        |
+| *  Service creation can take up to 60 minutes.                                                                                                                                      |
 
 5- Once creation is finalized, select your domain and click **SET PASSWORD**.
 
