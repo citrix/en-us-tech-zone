@@ -69,8 +69,6 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Citrix SD-WAN HDX performance improvements for Citrix Virtual Apps and Desktops on-premises environments](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-onprem-experience-architecture.html) - Learn how to optimize the delivery of Citrix Virtual Apps and Desktops from on-premises servers to users at locations with a Citrix SD-WAN appliance by minimizing latency and improving session responsiveness during network issues.
 
-[Citrix Virtual Apps and Desktops Service – GCP Architecture with the Managed Service for Microsoft Active Directory for CSPs](/en-us/tech-zone/design/reference-architectures/csp-gcp.html) - Citrix Virtual Apps and Desktops Service Google Cloud Platform (GCP) Architecture with the Managed Service for Microsoft Active Directory for Citrix Service Providers (CSPs) aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and design considerations to leverage GCP Managed AD Service.
-
 [Image Management](/en-us/tech-zone/design/reference-architectures/image-management.html) - Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering, and maintaining virtual machine images in your environment.
 
 [Measuring HDX User Experience Performance Improvements with Citrix SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html) - Citrix SD-WAN can significantly improve the network performance of Citrix Virtual Apps and Desktops HDX sessions. Learn about the reference architecture we used to measure quantitative benefits.
