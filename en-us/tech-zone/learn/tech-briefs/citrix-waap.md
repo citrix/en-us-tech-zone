@@ -17,7 +17,7 @@ Bad actors continue to develop new ways to compromise them to support their illi
 
 ## Overview
 
-CWAAP service guards against their attempts to exfiltrate, manipulate or destroy online Enterprise apps, APIs and data. It includes a comprehensive suite of technology to mitigate the risk to business-critical operations.
+CWAAP service guards against their attempts to exfiltrate, manipulate or destroy online Enterprise web apps, APIs and data. It includes a comprehensive suite of technology to mitigate the risk to business-critical operations.
 
 *  Web Application Firewall - short for web application firewall, "WAF" origins are in protecting web sites hosted on-premises. However, in the Cloud Era the scope of WAFs are expanded to hybrid cloud or public cloud environments with broader attack surfaces to protect. Protection also extends to APIs used by Cloud-native systems to communicate between distributed functions that operate independently in containers. Also know as microservices, this form of development is more efficient in many ways than traditional monolithic architecture, yet by nature is primarily hosted in the Cloud, and subsequently, APIs are vulnerable to attack.
 *  DDOS Protection - Distributed Denial of Service (DDOS) Protection guards against internet-born attacks that seek to disrupt access to cloud services. Typically initiated by bad actors through BOT armies, DDOS attacks focus on consuming available resources to the point customer access is disrupted or denied.
@@ -32,7 +32,7 @@ Large enterprises may have hundreds or thousands of applications online that nee
 
 Citrix WAF works on both a positive and negative attack model. The positive model identifies zero-day threats by looking for abnormal activity patterns. The negative model identifies previously documented attack signatures.
 
-### Negative Model
+### Negative Security Model
 
 Injection flaws, such as SQL and LDAP injection, have been a perennial favorite among hackers, along with Cross-site scripting attacks. Other web attack protections include:
 
@@ -61,7 +61,7 @@ Injection flaws, such as SQL and LDAP injection, have been a perennial favorite 
 *  XML SOAP Fault - examines responses from your protected web services and filters out XML SOAP faults. This prevents the leaking of sensitive information to attackers.
 *  Web Service Interoperability - examines and blocks requests and responses that do not adhere to the WS-I standard and might not interact with XML application appropriately.
 
-### Positive Model
+### Positive Security Model
 
 Citrix WAF supports a positive protection model with learning rules that build on the negative model by creating a profile of allowed traffic. Advanced heuristics analyze traffic to identify standard behavior and make recommendations for tuning of countermeasures. This helps ensure Protection against zero-day attacks that are not addressed in existing signatures.
 
