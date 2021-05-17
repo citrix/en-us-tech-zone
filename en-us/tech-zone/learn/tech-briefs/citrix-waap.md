@@ -7,7 +7,7 @@ description: With cyber threats rising and modern application architectures gett
 tz_title: Citrix Web App and API Protection service
 tz_products: citrix-networking;
 ---
-# Citrix Web App and API Protection service
+# Tech Brief: Citrix Web App and API Protection service
 
 ## Introduction
 
