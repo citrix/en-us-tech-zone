@@ -41,6 +41,8 @@ Just as buildings have blueprints that include details about their structure and
 
 [Citrix Service Provider Virtual Apps and Desktops service](/en-us/tech-zone/design/reference-architectures/csp-cvads.html) - The CSP Reference Architecture, provides architectural guidance for Citrix Service Providers to utilize the Virtual Apps and Desktops Service, and Citrix Cloud technologies to offer services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base shared across multiple tenants and multiple geographies, using a single pane of glass.
 
+[Citrix Virtual Apps and Desktops Service - GCP Architecture with the Managed Service for Microsoft Active Directory for CSPs](/en-us/tech-zone/design/reference-architectures/csp-gcp.html) - Citrix Virtual Apps and Desktops Service Google Cloud Platform (GCP) Architecture with the Managed Service for Microsoft Active Directory for Citrix Service Providers (CSPs) aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and design considerations to leverage GCP Managed AD Service.
+
 [Virtual Apps and Desktops service with Google Cloud Platform for Citrix Service Providers](/en-us/tech-zone/design/reference-architectures/csp-cvads-aad.html) - Citrix Virtual Apps and Desktops service implementation with Azure Active Directory Domain Services for CSPs Reference Architecture aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and implementation steps to use Azure AD Domain Services.
 
 ## Citrix Virtual Apps and Desktops
@@ -50,8 +52,6 @@ Just as buildings have blueprints that include details about their structure and
 [Citrix SD-WAN HDX performance improvements for Citrix Virtual Apps and Desktops cloud environments](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-cloud-experience-architecture.html) - Learn how to optimize the delivery of the Citrix Virtual Apps and Desktops service from cloud Resource Locations to users at branches or home offices, with a Citrix SD-WAN appliance, by minimizing latency, and improving session responsiveness during network issues.
 
 [Citrix SD-WAN HDX performance improvements for Citrix Virtual Apps and Desktops on-premises environments](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-onprem-experience-architecture.html) - Learn how to optimize the delivery of Citrix Virtual Apps and Desktops from on-premises servers to users at locations with a Citrix SD-WAN appliance by minimizing latency and improving session responsiveness during network issues.
-
-[Citrix Virtual Apps and Desktops Service – GCP Architecture with the Managed Service for Microsoft Active Directory for CSPs](/en-us/tech-zone/design/reference-architectures/csp-gcp.html) - Citrix Virtual Apps and Desktops Service Google Cloud Platform (GCP) Architecture with the Managed Service for Microsoft Active Directory for Citrix Service Providers (CSPs) aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and design considerations to leverage GCP Managed AD Service.
 
 [Image Management](/en-us/tech-zone/design/reference-architectures/image-management.html) - Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering, and maintaining virtual machine images in your environment.
 
@@ -85,15 +85,15 @@ Just as buildings have blueprints that include details about their structure and
 
 [Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
 
-## Google Cloud Platform
-
-[Citrix virtualization on Google Cloud](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) - Learn the architecture and deployment considerations for Citrix solutions on Google Cloud Platform.
-
 ## Security
 
 [Architectural Considerations for the General Data Protection Regulation - GDPR](/en-us/tech-zone/design/reference-architectures/gdpr.html) - Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.
 
 [Federated Authentication Service](/en-us/tech-zone/design/reference-architectures/federated-authentication-service.html) - Learn about Federated Authentication Service, authentication delegation and how to use seamless web authentication methods to log in to Windows environments for both Citrix Cloud and on-premises deployments.
+
+## Google Cloud Platform
+
+[Citrix virtualization on Google Cloud](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) - Learn the architecture and deployment considerations for Citrix solutions on Google Cloud Platform.
 
 ## Third Party Content
 
