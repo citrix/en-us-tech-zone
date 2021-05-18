@@ -233,7 +233,7 @@ The customer needs to decide the organizational structure for the storing source
 
 ### Image Replication
 
-The customer needs to determine the appropriate process for replicating images across regions and how Citrix App Layering technology might be used within the overall image management strategy. PowerShell scripts cam be used with Azure Automation to schedule image replication. More information on Citrix App Layering can be found [here](/en-us/citrix-app-layering/4.html), but keep in mind that Elastic Layering requires an SMB File share that does not reside on Azure Files. See the **File Servers** section for supported SMB share technologies that support Elastic Layering.
+The customer needs to determine the appropriate process for replicating images across regions and how Citrix App Layering technology might be used within the overall image management strategy. PowerShell scripts can be used with Azure Automation to schedule image replication. More information on Citrix App Layering can be found [here](/en-us/citrix-app-layering/4.html), but keep in mind that Elastic Layering requires an SMB File share that does not reside on Azure Files. See the **File Servers** section for supported SMB share technologies that support Elastic Layering.
 
 ### File Server Technologies
 
