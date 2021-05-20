@@ -86,7 +86,7 @@ If using a Google account to synchronize user settings is not an option for you,
 All profile solutions, including the Citrix Profile Management, synchronize the directory `C:\Users\%UserName%\AppData\Roaming` (= `%AppData%`), thus ensuring that the file profile.pb is synchronized as well. There are three methods how you can enable the creation of the profile.pb file:
 
 -  Enable the Group Policy setting Enable the creation of roaming copies for Google Chrome profile data in User or Computer Configuration \ Policies \ Administrative Templates \ Google \ Google Chrome.
--  Set the registry value RoamingProfileSupportEnabled to 00000001 in the registry key `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome` or `HKEY_CURRENT_USER\Software\Policies\Google\Chrome` as described in the section **RoamingProfileSupportEnabled** in the article [Policy List](https://www.chromium.org/administrators/policy-list-3#RoamingProfileSupportEnabled) on Chromium.org.
+-  Set the registry value RoamingProfileSupportEnabled to 00000001 in the registry key `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome` or `HKEY_CURRENT_USER\Software\Policies\Google\Chrome` as described in the section **RoamingProfileSupportEnabled** in the article [Policy List](https://chromeenterprise.google/policies/#RoamingProfileSupportEnabled) on Chromium.org.
 -  Add the command line flag –enable-local-sync-backend to the Chrome.exe in the Chrome shortcut. See the article [Using Chrome on roaming user profiles](https://support.google.com/chrome/a/answer/7349337?hl=en) for more information.
 
 There are three methods how to change the default directory of the profile.pb file:
