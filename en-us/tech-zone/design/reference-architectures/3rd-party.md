@@ -72,6 +72,10 @@ tz_products: third-party-content;
 
 [Implementing Citrix Virtual Apps and Desktops in Oracle Cloud Infrastructure](https://docs.cloud.oracle.com/iaas/Content/Resources/Assets/whitepapers/implement-citrix-virtual-apps-and-desktops-in-oci.pdf) - Technical whitepaper for deploying Citrix Virtual Apps and Desktops in Oracle Cloud Infrastructure
 
+## RingCentral
+
+[RingCentral Phone Plugin for Citrix app integration](https://www.ringcentral.com/apps/ringcentral-phone-plugin-for-citrix) - This document helps to understand how the RingCentral Phone Plugin that helps RingCentral Phone application acts as any other application running in a virtual host environment.
+
 ## SAP
 
 [Delivering on-premises SAP S/4 HANA workloads over Citrix Virtual Apps and Desktops Service](https://www.sap.com/documents/2019/10/86a6de6a-6b7d-0010-87a3-c30de2ffd8ff.html) - A performance analysis whitepaper for running SAP S/4 HANA using the Citrix Virtual Apps and Desktops Service with on-premises resource locations.
