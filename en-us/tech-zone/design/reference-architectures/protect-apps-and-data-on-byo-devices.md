@@ -153,9 +153,9 @@ placeholder
 
 The Secure Workspace Access service and the Virtual Apps and Desktops service use the cloud connectors' outbound control channel connections. Those connections allow the user to access internal resources remotely. However, those connections are:
 
-**Limited in scope so that only the defined resource is accessible
-** Based on the user's primary, secured identity
-** Only for specific protocols, which disallow network traversal
+*Limited in scope so that only the defined resource is accessible
+*Based on the user's primary, secured identity
+*Only for specific protocols, which disallow network traversal
 
 ## Resource Layer
 
