@@ -96,27 +96,27 @@ At a high level:
 
 **Access Layer**: The access layer describes how users authenticate to their Workspace and secondary resources.
 
-** Citrix Workspace provides the primary authentication broker for all subsequent resources. CompanyA requires multifactor authentication to improve authentication security.
+*  Citrix Workspace provides the primary authentication broker for all subsequent resources. CompanyA requires multifactor authentication to improve authentication security.
 
-** Many of the authorized resources within the environment utilize a different set of credentials than those used for the primary Workspace identity. CompanyA will utilize the single sign-on capabilities of each service to protect these secondary identities better. The applications only allow SAML-based authentication for SaaS apps, which prevents users from accessing the SaaS apps directly and bypassing the security policies.
+*  Many of the authorized resources within the environment utilize a different set of credentials than those used for the primary Workspace identity. CompanyA will utilize the single sign-on capabilities of each service to protect these secondary identities better. The applications only allow SAML-based authentication for SaaS apps, which prevents users from accessing the SaaS apps directly and bypassing the security policies.
 
 **Resource Layer**: The resource layer authorizes specific virtualized, SaaS, and web resources for defined users and groups while defining the security policies associated with the resource.
 
-**  To better protect data, CompanyA requires policies that disable the ability to print, download, and copy/paste content from the managed resource to and from the endpoint.
+*  To better protect data, CompanyA requires policies that disable the ability to print, download, and copy/paste content from the managed resource to and from the endpoint.
 
-** Due to the unknown nature of the endpoint security status, CompanyA requires VPN-less access to resources using isolated browsers or virtualized sessions.
+*  Due to the unknown nature of the endpoint security status, CompanyA requires VPN-less access to resources using isolated browsers or virtualized sessions.
 
-** Similarly, due to unknown endpoint security status, CompanyA requires protection against keylogging and screen scraping malware.
+*  Similarly, due to unknown endpoint security status, CompanyA requires protection against keylogging and screen scraping malware.
 
-** Since CompanyA allows access to internal web apps from unmanaged devices, it must protect the resource from attacks coming from potentially compromised endpoints.
+*  Since CompanyA allows access to internal web apps from unmanaged devices, it must protect the resource from attacks coming from potentially compromised endpoints.
 
 **Control Layer**: The control layer defines how the underlying solution adjusts based on the underlying activities of the user.
 
-** Even within a protected Workspace resource, users can interact with untrusted Internet resources. CompanyA utilizes Secure Internet Access to protect users from external threats from SaaS apps, web apps, virtual apps, mobile apps, and apps on endpoint devices.
+*  Even within a protected Workspace resource, users can interact with untrusted Internet resources. CompanyA utilizes Secure Internet Access to protect users from external threats from SaaS apps, web apps, virtual apps, mobile apps, and apps on endpoint devices.
 
-** Users might need to access personal items on their unmanaged endpoint devices. Appropriate policies are defined to protect users' privacy when accessing personal sites related to health and finance.
+*  Users might need to access personal items on their unmanaged endpoint devices. Appropriate policies are defined to protect users' privacy when accessing personal sites related to health and finance.
 
-** CompanyA requires a Security Analytics service to identify compromised users and automatically maintain a secure environment.
+*  CompanyA requires a Security Analytics service to identify compromised users and automatically maintain a secure environment.
 The subsequent sections provide greater detail into specific design decisions for CompanyA's BYOD protection reference architecture.
 
 The subsequent sections provide greater detail into specific design decisions for CompanyA's BYOD protection reference architecture.
@@ -153,9 +153,9 @@ placeholder
 
 The Secure Workspace Access service and the Virtual Apps and Desktops service use the cloud connectors' outbound control channel connections. Those connections allow the user to access internal resources remotely. However, those connections are:
 
-*Limited in scope so that only the defined resource is accessible
-*Based on the user's primary, secured identity
-*Only for specific protocols, which disallow network traversal
+*  Limited in scope so that only the defined resource is accessible
+*  Based on the user's primary, secured identity
+*  Only for specific protocols, which disallow network traversal
 
 ## Resource Layer
 
