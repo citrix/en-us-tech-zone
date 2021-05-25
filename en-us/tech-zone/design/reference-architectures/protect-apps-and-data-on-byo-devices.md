@@ -37,7 +37,12 @@ In CompanyA's focus on protecting user access, it has identified the following c
 |---|---|---|
 |  Contextual access and contextual auth |  Contextual access and contextual auth for web, SaaS, and CVAD service | Citrix Secure Workspace Access  |
 | End-user monitoring  |  Continuous monitoring and continuous assessment |  Citrix Secure Workspace Access  |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
+| Personal Mobile Devices  | Users can select an unmanaged endpoint devices that fits their usage requirements. These devices are fully are not managed CompanyA.  | xxx |
+|Personal Privacy   |  CompanyA must ensure user privacy while still protecting the user and endpoint from potential threats when using unsanctioned websites. | Citrix Secure Internet Access does not decrypt policies for sites with personal information |
+|  SaaS App Access | Users must access sanctioned SaaS applications with strong authentication that does not impact the experience.  | Citrix Secure Workspace Access  |
+| Web App Access  | Users must be able to access sanctioned internal Web applications on any approved device  | Citrix Secure Workspace Access – Zero Trust Network Access |
+
+### Protecting Data
+CompanyA, like many companies today, has a highly complex infrastructure of layers of applications, systems, and networks in environments consisting of on-premises data centers, public and private clouds. This sprawl has led to a complicated stack of different tools and technologies for protecting data and devices. 
+CompanyA is designing a consolidated, cloud-delivered security stack to meet the demands of their modern workplace. By centralizing device and data security policy across the overall solution – it will minimize redundant tasks, remove overlapping policies, and allow IT to protect data and devices across all locations from a centralized dashboard.
+In CompanyA's focus on protecting data and devices, it has identified the following user-related criteria for a successful design.
