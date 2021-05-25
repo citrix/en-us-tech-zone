@@ -209,14 +209,21 @@ In designing the internet security policy, CompanyA wanted to start with a basel
 
 By default, all categories are decrypted and allowed. CompanyA made the following modifications that are applied globally:
 
-|   |   |
-|---|---|
-|   |   |
-|   |   |
-|   |   |
-|   |   |
-|   |   |
-|   |   |
+| **Category**  | **Change**  |  **Reason** |
+|---|---|---|
+| Financial and Investment | Do not decrypt  | Employee privacy concerns |
+| Health  |  Do not decrypt  | Employee privacy concerns |
+| Adult Content | Block | |
+| Drugs  | Block | |
+| File Sharing  |  Block | |
+| Gambling  |  Block | |
+| Illegal Activity  | Block | |
+| Malicious Sources  |  Block | |
+| Malware Content  | Block | |
+| Porn/Nudity | Block | |
+| Virus & Malware | Block | |
+| Violence/Hate | Block | |
+
 
 ### Security Analytics
 
