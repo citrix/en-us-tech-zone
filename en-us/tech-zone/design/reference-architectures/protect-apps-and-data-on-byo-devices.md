@@ -169,14 +169,15 @@ CompanyA wants to limit the risk of data loss due to an insider threat. Within t
 
 As a baseline policy, CompanyA defined the following (with the ability to relax policies as needed based on user and application).
 
-|   |   |   |
-|---|---|---|
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
+| **Category**  | **SaaS Apps**  | **Web Apps** | **Virtual Apps and Desktops** |
+|---|---|---|---|
+| Clipboard access | Denied | Denied | Client to Server only |
+| Printing | Denied | Denied | Denied |
+| Navigation | Denied | Denied  | Not Applicable |
+| Downloads  | Denied   | Denied  | Denied |
+| Watermark  | Enabled  | Enabled | Enabled |
+| Keylogging Prevention | Enabled | Enabled | Enabled |
+| Screenshot Prevention | Enabled  | Enabled  | Enabled |
 
 The App Protection Policies Tech Brief contains additional information regarding the keylogging and screenshot prevention policies.
 
