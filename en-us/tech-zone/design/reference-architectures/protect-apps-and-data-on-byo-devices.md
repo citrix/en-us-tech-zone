@@ -72,10 +72,10 @@ To be successful, CompanyA must protect and secure its resources while simultane
 | SaaS and Web App Security | The user's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted  | Citrix Secure Workspace Access – Security Policies with App Protection  |
 |  Secure Access | CompanyA must protect internal corporate resources when accessed from untrusted and unsecured locations. Devices are not be allowed direct access to the internal network to help prevent malware intrusion.  | VPN-less access |
 |  SaaS credential protection | The user's credentials to SaaS applications must include strong, multifactor authentication.  |  Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
-| Volumetric DDoS  |  CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. 
-CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks.
- | Citrix Web Application and API Protection | SaaS DLP  | CompanyA requires their SaaS apps to use DLP controls inline. | Citrix Secure Internet Access  |
-|  Protecting apps and application APIs |  Protection from volumetric DDoS, bot attacks, and other application-level attacks such as cross-site scripting | Citrix Web Application and API Protection
+| Volumetric DDoS | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps.
+CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web Application and API Protection |
+| SaaS DLP  | CompanyA requires their SaaS apps to use DLP controls inline. | Citrix Secure Internet Access  |
+|  Protecting apps and application APIs |  Protection from volumetric DDoS, bot attacks, and other application-level attacks such as cross-site scripting | Citrix Web Application and API Protection |
 | API Protection  | Protection from API level attacks | Citrix Web Application and API Protection |
 | Compromised User Protection | IT must be able to quickly identify and mitigate threats posed by a compromised user account.
 IT must protect the entire threat surface and the centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
