@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Jacob Rutski
-specialThanksTo: Dileep Reddem, Michael Shuster, Matt Brooks, Martin Zugec
+specialThanksTo: Dileep Reddem, Michael Shuster, Matt Brooks, Martin Zugec, Anthony Raymer
 description: Learn how to use the security tools built in to the Citrix ADC to protect VPN and Gateway virtual servers, including Web Application Firewall (WAF), Bot Security, and Advanced Authentication Policies.
 tz_title: Protecting Gateway Virtual Servers with WAF, Bot, and Advanced Authentication Policies
 tz_products: citrix-networking;
@@ -94,7 +94,9 @@ Finally, the bot policy is bound by selecting 'Policy Manager'. Select a Bind Po
 
 ## WAF Protection
 
-It is not possible to bind a WAF policy directly to a Gateway or authentication virtual server. Additionally, binding a WAF policy globally with an expression that targets Gateway or authentication virtual servers will likely not function as expected. This is due to the order in which policies are processed - with WAF policies being processed after Gateway and authentication policies.
+It is not possible to bind a WAF policy directly to a Gateway or authentication virtual server. Additionally, binding a WAF policy globally with an expression that targets Gateway or authentication virtual servers will likely not function as expected. This is due to the order in which policies are processed - with WAF policies being processed after Gateway and authentication policies. See the image below for traffic flow clarification.
+
+![Traffic Flow](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_packet-flow.png)
 
 The WAF protection policy uses an HTTP Callout to protect the logon page and invalidate the authentication flow if a WAF exception is caught. This configuration requires a pattern set (**Patset**) containing the login URLs, a dummy service and load balancing virtual server, an HTTP callout, and the WAF policy and configuration.
 
@@ -295,8 +297,24 @@ Citrix ADC provides many built-in security protections that can be applied to pr
 
 For additional information and configuration options, refer to the following articles:
 
-[CTX216091](https://support.citrix.com/article/CTX216091) - supporting re-Captcha with nFactor
+[Introduction to Citrix Web Application Firewall](/en-us/citrix-adc/current-release/application-firewall/introduction-to-citrix-web-app-firewall.html) - Citrix Prod Docs: Introduction to Citrix Web Application Firewall
 
-[Citrix Web Application Firewall PoC Guide](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) – proof of concept deployment guide for Citrix Web Application Firewall
+[Citrix Web Application Firewall PoC Guide](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) - proof of concept deployment guide for Citrix Web Application Firewall
+
+[Citrix Training for Application Delivery and Security](https://training.citrix.com/learning/training/App-Delivery-and-Security) - Citrix Education Training for Application Delivery and Security
+
+[Getting started with Citrix ADC](/en-us/citrix-adc/current-release/getting-started-with-citrix-adc.html#packet-flow) - Citrix Prod Docs: Getting started with Citridx ADC - Packet Flow
+
+[IP Reputation](/en-us/citrix-adc/current-release/reputation/ip-reputation.html) - Citrix Prod Docs: IP Reputation
+
+[Bot Management](/en-us/citrix-adc/current-release/bot-management.html) - Citrix Prod Docs: Bot Management
+
+[Bot Detection](/en-us/citrix-adc/current-release/bot-management/bot-detection.html) - Citrix Prod Docs: Bot Detection
+
+[nFactor Authentication](/en-us/citrix-adc/current-release/aaa-tm/authentication-methods/multi-factor-nfactor-authentication.html) - Citrix Prod Docs: nFactor Authentication
+
+[Citrix ADC - nFactor Basics Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-nfactor.html) - Citrix Tech Zone: Diagrams and Posters Citrix ADC - nFactor Basics Cheat Sheet
+
+[CTX216091](https://support.citrix.com/article/CTX216091) - supporting re-Captcha with nFactor
 
 [nFactor for Citrix Gateway with Push Token](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-push-token.html) - proof of concept deployment guide for TOTP push tokens for Citrix Gateway
