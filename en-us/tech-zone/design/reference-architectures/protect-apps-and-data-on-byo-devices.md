@@ -35,8 +35,8 @@ In CompanyA's focus on protecting user access, it has identified the following c
 
 |  Success Criteria | Description | Solution
 |---|---|---|
-|   |   |   |
-|   |   |   |
+|  Contextual access and contextual auth |  Contextual access and contextual auth for web, SaaS, and CVAD service | Citrix Secure Workspace Access  |
+| End-user monitoring  |  Continuous monitoring and continuous assessment |  Citrix Secure Workspace Access  |
 |   |   |   |
 |   |   |   |
 |   |   |   |
