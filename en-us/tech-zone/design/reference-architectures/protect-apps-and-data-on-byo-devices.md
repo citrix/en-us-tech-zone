@@ -34,7 +34,7 @@ CompanyA must protect user access with a secure, simple, but productive work env
 CompanyA has decided its security strategy is to move away from a traditional "castle and moat" approach to access and security. Instead of using a conventional appliance-based solution like VPNs that assume remote users are trusted and allow complete access to all network resources, CompanyA is taking a Zero Trust approach.
 In CompanyA's focus on protecting user access, it has identified the following criteria for a successful design:
 
-|  Success Criteria | Description | Solution
+|  **Success Criteria** | **Description** | **Solution**
 |---|---|---|
 |  Contextual access and contextual auth |  Contextual access and contextual auth for web, SaaS, and CVAD service | Citrix Secure Workspace Access  |
 | End-user monitoring  |  Continuous monitoring and continuous assessment |  Citrix Secure Workspace Access  |
@@ -50,29 +50,36 @@ CompanyA, like many companies today, has a highly complex infrastructure of laye
 CompanyA is designing a consolidated, cloud-delivered security stack to meet the demands of their modern workplace. By centralizing device and data security policy across the overall solution – it will minimize redundant tasks, remove overlapping policies, and allow IT to protect data and devices across all locations from a centralized dashboard.
 In CompanyA's focus on protecting data and devices, it has identified the following user-related criteria for a successful design.
 
-|   |   |   |
+| **Success Criteria** |  **Description** |  **Solution** |
 |---|---|---|
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
+| Protect Devices  |  Protecting devices and the underlying infrastructure from malware and Zero-Day threats |  Citrix Secure Internet Access |
+| Protect Data  |  Protect data stored in sanctioned and unsanctioned apps |Citrix Secure Internet Access   |
+|  Compliance  | Compliance and protecting users from malicious URLs   | Citrix Secure Internet Access |
+| Unsecured Personal Devices  |  Users trying to access Workspace with an unsecured device must not gain access to any sanctioned resource. | Citrix Application Delivery Controller (ADC) - nFactor policies and endpoint analysis |
+| Protection from keylogger  |  Protection from keylogger / enabling secure access from BYO | Citrix Secure Workspace Access   |
+| Internet Security  | CompanyA must protect its users from potential internet threats hidden within emails, applications, and websites regardless of location. Internet protection must extend to all delivery models, including virtual apps/desktops, local apps, mobile apps, web apps, and SaaS apps.  | Citrix Secure Internet Access  |
 
 ### Protecting Apps and application APIs
 
 CompanyA is investing in risk mitigation and threat prevention. It has determined that its attack surface has increased with apps moving to the cloud, SaaS, and the growing use of BYO and unmanaged devices to access corporate apps. Their on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
+
 CompanyA must create a hybrid solution using both on-prem devices and cloud services for application security. On-premises devices will block app-layer and DDoS attacks on-premises, while a cloud-based protection service will prevent volumetric attacks and app-layer DDoS attacks in the cloud.
+
 To be successful, CompanyA must protect and secure its resources while simultaneously providing a flexible work environment that aligns with the user requirements. CompanyA identified the following security-related criteria for a successful design.
 
-|   |   |   |
+|  **Success Criteria** | **Description**  | **Solution** |
 |---|---|---|
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
+| SaaS and Web App Security | The user's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted  | Citrix Secure Workspace Access – Security Policies with App Protection  |
+|  Secure Access | CompanyA must protect internal corporate resources when accessed from untrusted and unsecured locations. Devices are not be allowed direct access to the internal network to help prevent malware intrusion.  | VPN-less access |
+|  SaaS credential protection | The user's credentials to SaaS applications must include strong, multifactor authentication.  |  Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
+| Volumetric DDoS  |  CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. 
+CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks.
+ | Citrix Web Application and API Protection  |
+| SaaS DLP  | CompanyA requires their SaaS apps to use DLP controls inline. | Citrix Secure Internet Access  |
+|  Protecting apps and application APIs |  Protection from volumetric DDoS, bot attacks, and other application-level attacks such as cross-site scripting | Citrix Web Application and API Protection
+| API Protection  | Protection from API level attacks | Citrix Web Application and API Protection |
+| Compromised User Protection | IT must be able to quickly identify and mitigate threats posed by a compromised user account.
+IT must protect the entire threat surface and the centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
 
 ## Conceptual Architecture
 
