@@ -64,32 +64,35 @@ In CompanyA's focus on protecting data and devices, it has identified the follow
 
 ### Protecting Apps and application APIs
 
-CompanyA is investing in risk mitigation and threat prevention. It has determined that its attack surface has increased with apps moving to the cloud and the use of SaaS apps. The growing use of BYO and unmanaged devices has increased the threat of compromised devices accessing corporate apps. Its on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
+CompanyA is investing in risk mitigation and threat prevention to protect its web apps and APIs.  Its growing use of BYO and unmanaged devices has increased the threat of compromised devices accessing corporate apps. It has also determined that its attack surface has increased due to the company moving apps to the cloud and using SaaS apps. Its on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
 
 CompanyA must create a hybrid solution using both on-prem devices and cloud services for application security. On-premises devices will block app-layer and DDoS attacks on-premises, while a cloud-based protection service will prevent volumetric attacks and app-layer DDoS attacks in the cloud.
 
-To be successful, CompanyA must protect and secure its resources while simultaneously providing a flexible work environment that aligns with the user requirements. CompanyA identified the following security-related criteria for a successful design.
+To be successful, CompanyA must protect and secure its resources while simultaneously providing a work environment that aligns with the user requirements. CompanyA identified the following security-related criteria for a successful design:
 
 |  **Success Criteria** | **Description**  | **Solution** |
 |---|---|---|
 | SaaS and Web App Security | The user's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted  | Citrix Secure Workspace Access – Security Policies with App Protection  |
-|  Secure Access | CompanyA must protect internal corporate resources when accessed from untrusted and unsecured locations. Devices are not be allowed direct access to the internal network to help prevent malware intrusion.  | VPN-less access |
-|  SaaS credential protection | The user's credentials to SaaS applications must include strong, multifactor authentication.  |  Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
+| Secure Access | CompanyA must protect internal corporate resources when accessed from untrusted and unsecured locations. Devices are not be allowed direct access to the internal network to help prevent malware intrusion.  | VPN-less access |
+| SaaS credential protection | The user's credentials to SaaS applications must include strong, multifactor authentication. | Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
 | Volumetric DDoS | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web Application and API Protection |
-| SaaS DLP  | CompanyA requires their SaaS apps to use DLP controls inline. | Citrix Secure Internet Access  |
-|  Protecting apps and application APIs |  Protection from volumetric DDoS, bot attacks, and other application-level attacks such as cross-site scripting | Citrix Web Application and API Protection |
-| API Protection  | Protection from API level attacks | Citrix Web Application and API Protection |
+| SaaS DLP | CompanyA requires their SaaS apps to use DLP controls inline. | Citrix Secure Internet Access  |
+| Protecting apps and application APIs | Protection from volumetric DDoS, bot attacks, and other application-level attacks such as cross-site scripting | Citrix Web Application and API Protection |
+| API Protection | Protection from API level attacks | Citrix Web Application and API Protection |
 | Compromised User Protection | IT must be able to quickly identify and mitigate threats posed by a compromised user account. IT must protect the entire threat surface and the centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
 
 ## Conceptual Architecture
 
-Based on the preceding requirements, CompanyA created the following high-level conceptual architecture. This architecture meets all the preceding requirements while giving CompanyA the foundation to expand to additional use cases in the future.
+Based on the preceding requirements, CompanyA created the following high-level conceptual architecture. The general flow and requirements are that:
 
-User needs to access an internal web app
-Use ADC for contextual auth (can bring in CEM to allow/deny unmanaged devices?)
-Use SWA to provide ZTNA
-Use SIA to protect the internet traffic from the web app
+*  Users will require access SaaS and internal web apps. 
+*  Use ADC for contextual auth (can bring in CEM to allow/deny unmanaged devices?)
+*  Use SWA to provide ZTNA
+*  Use SIA to protect the internet traffic from the web app
+
 Use WAAP to protect the app from the user's compromised endpoint
+
+This architecture meets all the preceding requirements while giving CompanyA the foundation to expand to additional use cases in the future.
 
 **diagram**
 placeholder
