@@ -83,12 +83,12 @@ To be successful, CompanyA must protect and secure its resources while simultane
 
 ## Conceptual Architecture
 
-Based on the preceding requirements, CompanyA created the following high-level conceptual architecture. The general flow and requirements are that:
+Based on the preceding requirements, CompanyA created the high-level conceptual architecture below. The general flow and requirements are that users will require:
 
-*  Users will require access SaaS and internal web apps. 
-*  Use ADC for contextual auth (can bring in CEM to allow/deny unmanaged devices?)
-*  Use SWA to provide ZTNA
-*  Use SIA to protect the internet traffic from the web app
+*  Protected access to SaaS apps and VPN-less access to internal web apps
+*  Contextual authentication before being granted access to external or internal resources
+*  Zero Trust access to specific resources via Citrix Secure Workspace Access
+*  Protected access to the internet traffic from the web app, or vitual apps and desktops via using Citrix Secure Internet Access
 
 Use WAAP to protect the app from the user's compromised endpoint
 
