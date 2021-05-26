@@ -7,7 +7,7 @@ description: Learn how Citrix Desktop-as-a-Service (DaaS) offerings enable custo
 tz_title: Citrix Desktop-as-a-Service (DaaS)
 tz_products: citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;
 ---
-# Citrix Desktop-as-a-Service (DaaS)
+# Tech Insight: Citrix Desktop-as-a-Service (DaaS)
 
 Learn how Citrix Desktop-as-a-Service offerings enable customers to deploy workloads in the cloud within minutes.
 

@@ -74,6 +74,8 @@ tz_products: third-party-content;
 
 ## RingCentral
 
+[RingCentral App for Citrix](https://www.ringcentral.com/apps/ringcentral-app-citrix) - This document helps to understand about the RingCentral App which optimize the telephony delivery in Citrix virtual environments.
+
 [RingCentral Phone Plugin for Citrix app integration](https://www.ringcentral.com/apps/ringcentral-phone-plugin-for-citrix) - This document helps to understand how the RingCentral Phone Plugin that helps RingCentral Phone application acts as any other application running in a virtual host environment.
 
 ## SAP
