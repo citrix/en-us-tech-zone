@@ -11,9 +11,9 @@ tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-manag
 
 ## Overview
 
-CompanyA, as a policy, provides access to internal and cloud resources to a small subset of the overall user base. The users use BYOD and unmanaged devices to access virtual apps and desktops, SaaS, and internal web applications. This policy has led to greater efficiency for their hybrid and distributed workforce; however, it has created a complex delivery model that has also introduced security concerns. Since user devices are unmanaged, CompanyA must mitigate security threats against the apps and data in transit to, in use on, and at rest on the BYOD devices.
+CompanyA provides secure remote access to internal and cloud resources to a small subset of the overall user base. The users use Bring Your Own (BYO) and unmanaged devices to access internal and external resources. These resources include virtual apps and desktops, SaaS, and internal web applications. This policy has led to greater efficiency for their hybrid and distributed workforce; however, it has created a complex delivery model that has also introduced security concerns. Since user devices are unmanaged, CompanyA must mitigate security threats against the apps and data in transit to, in use on, and at rest on the BYO devices.
 
-CompanyA currently uses several unintegrated point products but wants to simplify and provide company-wide access to their virtualized apps and desktops, SaaS, and web internal apps service. Also, CompanyA must protect its internal web services.  To that end, CompanyA is engaging in an initiative to update its app delivery architecture to implement the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Secure Internet Access, and Citrix Web App Firewall. Together they provide end-to-end protection of CompanyA resources.
+CompanyA currently uses several unintegrated point products but wants to provide simpliflied and protected access to their  company-wide access to their resources. Also, CompanyA must protect its internal web services.  To that end, CompanyA is engaging in an initiative to update its app delivery architecture to implement the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Secure Internet Access, and Citrix Web App Firewall. Together they provide end-to-end protection of CompanyA resources.
 
 This reference architecture explains CompanyA's plan to protect access, protect data and devices, and protect apps.
 
@@ -223,21 +223,3 @@ By default, all categories are decrypted and allowed. CompanyA made the followin
 | Porn/Nudity | Block | |
 | Virus & Malware | Block | |
 | Violence/Hate | Block | |
-
-
-### Security Analytics
-
-CompanyA needs to identify and stop insider threats to the environment before the impact is too significant.
-
-To help protect the environment, CompanyA uses Citrix Security Analytics to identify insider threats, compromised users, and compromised endpoints. In many cases, a single instance of a threat does not warrant drastic action, but a series of threats can indicate a security breach.
-CompanyA developed the following initial security policies:
-
-|   |   |   |
-|---|---|---|
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
