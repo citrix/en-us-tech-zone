@@ -40,8 +40,8 @@ In CompanyA's focus on protecting user access, it has identified the following c
 |---|---|---|
 | Contextual access and contextual authentication | Contextual access and contextual authentication for web, SaaS, and CVAD | Citrix Secure Workspace Access  |
 | End-user monitoring  | Continuous monitoring and continuous assessment | Citrix Secure Workspace Access |
-| Personal Mobile Devices | Users can select an endpoint devices that fits their usage requirements. These devices are not managed CompanyA. |  |
-| Personal Privacy | CompanyA must ensure user privacy while still protecting the user and endpoint from potential threats when using unsanctioned websites. | Citrix Secure Internet Access does not decrypt policies for sites with personal information |
+| Personal Mobile Devices | Users can select an endpoint device that fits their usage requirements. These devices are not managed CompanyA. |  |
+| Personal Privacy | CompanyA must ensure user privacy while still protecting the user and endpoint from potential threats when using unsanctioned websites. | Citrix Secure Internet Access with "do not decrypt" policies for sites with personal information |
 | SaaS App Access | Users must access sanctioned SaaS applications with strong authentication that does not impact the experience. | Citrix Secure Workspace Access |
 | Web App Access | Users must be able to access sanctioned internal Web applications on any approved device | Citrix Secure Workspace Access – Zero Trust Network Access |
 
@@ -55,16 +55,16 @@ In CompanyA's focus on protecting data and devices, it has identified the follow
 
 | **Success Criteria** |  **Description** |  **Solution** |
 |---|---|---|
-| Protect Devices  |  Protecting devices and the underlying infrastructure from malware and Zero-Day threats |  Citrix Secure Internet Access |
-| Protect Data  |  Protect data stored in sanctioned and unsanctioned apps |Citrix Secure Internet Access   |
-|  Compliance  | Compliance and protecting users from malicious URLs   | Citrix Secure Internet Access |
-| Unsecured Personal Devices  |  Users trying to access Workspace with an unsecured device must not gain access to any sanctioned resource. | Citrix Application Delivery Controller (ADC) - nFactor policies and endpoint analysis |
-| Protection from keylogger  |  Protection from keylogger / enabling secure access from BYO | Citrix Secure Workspace Access   |
-| Internet Security  | CompanyA must protect its users from potential internet threats hidden within emails, applications, and websites regardless of location. Internet protection must extend to all delivery models, including virtual apps/desktops, local apps, mobile apps, web apps, and SaaS apps.  | Citrix Secure Internet Access  |
+| Protect Devices | Protecting devices and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Internet Access |
+| Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Internet Access |
+| Compliance | Compliance and protecting users from malicious URLs | Citrix Secure Internet Access |
+| Unsecured Personal Devices | Users trying to access Workspace with an unsecured device must not gain access to any sanctioned resource. | Citrix Application Delivery Controller (ADC) - nFactor policies and endpoint analysis |
+| Protection from keylogger | Protection from keylogger / enabling secure access from BYO | Citrix Secure Workspace Access |
+| Internet Security | CompanyA must protect its users from potential internet threats hidden within emails, applications, and websites regardless of location. Internet protection must extend to all delivery models, including virtual apps/desktops, local apps, mobile apps, web apps, and SaaS apps. | Citrix Secure Internet Access |
 
 ### Protecting Apps and application APIs
 
-CompanyA is investing in risk mitigation and threat prevention. It has determined that its attack surface has increased with apps moving to the cloud, SaaS, and the growing use of BYO and unmanaged devices to access corporate apps. Their on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
+CompanyA is investing in risk mitigation and threat prevention. It has determined that its attack surface has increased with apps moving to the cloud and the use of SaaS apps. The growing use of BYO and unmanaged devices has increased the threat of compromised devices accessing corporate apps. Its on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
 
 CompanyA must create a hybrid solution using both on-prem devices and cloud services for application security. On-premises devices will block app-layer and DDoS attacks on-premises, while a cloud-based protection service will prevent volumetric attacks and app-layer DDoS attacks in the cloud.
 
