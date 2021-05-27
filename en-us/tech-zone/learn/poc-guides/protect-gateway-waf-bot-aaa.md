@@ -11,7 +11,7 @@ tz_products: citrix-networking;
 
 ## Overview
 
-Many VPN and Citrix Gateway deployments are hosted on Citrix ADC appliances that are also providing security protections to other web applications. This PoC guide is designed to help protect VPN and Gateway virtual servers using tools already available on the Citrix ADC appliance. This guide covers protecting the portal login page with Bot security and protecting the credential form submission with WAF capabilities. Also, advanced authentication policies add context to user logons and enable multifactor authentication.
+Many Citrix ADC appliances host VPN and Citrix Gateway deployments that also provide security protections to other web applications. This PoC guide is designed to help protect VPN and Gateway virtual servers using tools already available on the Citrix ADC appliance. This guide covers protecting the portal login page with Bot security and protecting the credential form submission with WAF capabilities. Also, advanced authentication policies add context to user logons and enable multifactor authentication.
 
 The flow of this configuration diagrammed as follows:
 
@@ -19,11 +19,13 @@ The flow of this configuration diagrammed as follows:
 
 ## Configuration Options
 
-This guide does not provide an exclusive list of protections, nor is it the only way to configure them. For example, both IP Reputation and rate limiting can be deployed using a responder policy on a Gateway virtual server. This configuration is a supported method of deployment but has a different outcome of dropping or resetting connections before the gateway login page is rendered.
+This guide doesn't provide an exclusive list of protections, nor is it the only way to configure them. For example, deploying both IP Reputation and rate limiting using a responder policy on a Gateway virtual server is common. This configuration is a supported method of deployment. It has a different outcome of dropping or resetting connections before the gateway login page is rendered.
 
-Also, the WAF profile does not have every protection enabled to prevent complex configuration, custom tuning, and potential issues. Further configuration to the WAF profile is possible, see the links in the references section for guidance.
+Also, the WAF profile doesn't have every protection enabled to prevent complex configuration, custom tuning, and potential issues. Further configuration to the WAF profile is possible, see the links in the references section for guidance.
 
-Regarding authentication, CAPTCHA is not the most secure option for an extra factor, it is only used for simplicity in explanation. Other MFA options such as TOTP or PUSH are better options - see the references section for links to help in deploying these options.
+>**Note:**
+>
+>CAPTCHA isn't the most secure option for an extra factor, it's only used for simplicity in explanation. Other MFA options such as TOTP or PUSH are better options - see the references section for links to help in deploying these options.
 
 ## Prerequisites
 
@@ -35,7 +37,7 @@ This guide assumes a working knowledge of Citrix WAF deployment, Bot Security de
 *  Most of the features in this guide require a **premium license**
 *  An existing server or service listening on port 80
 *  An existing Gateway or authentication virtual server, with an existing advanced authentication configuration (advanced authentication or nFactor flow)
-*  The following features must be enabled: **Citrix Web App Firewall, Citrix Bot Management, and Reputation**
+*  Enable the following features: **Citrix Web App Firewall, Citrix Bot Management, and Reputation**
 
 ## Bot Protection
 
@@ -51,7 +53,7 @@ From **Security > Citrix Bot Management > Profiles**, select Add to create a new
 
 ![Bot Profile](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_botprofile.png)
 
-Once the profile is created, select it to edit the advanced profile settings.
+Select the profile to edit the advanced settings.
 
 Add **IP Reputation** from the right column and check the box to enable it.
 
@@ -101,11 +103,11 @@ Finally, the bot policy is bound by selecting 'Policy Manager'. Select a Bind Po
 
 ## WAF Protection
 
-It is not possible to bind a WAF policy directly to a Gateway or authentication virtual server. Additionally, binding a WAF policy globally with an expression that targets Gateway or authentication virtual servers will not function as expected. This malfunction is due of the order in which policies are processed - with WAF policies being processed after Gateway and authentication policies. See the image below for traffic flow clarification.
+It isn't possible to bind a WAF policy directly to a Gateway or authentication virtual server. Also, binding a WAF policy globally with an expression that targets Gateway or authentication virtual servers won't function as expected. The policy processing order causes this malfunction - WAF policies are processed after Gateway and authentication policies. See the image below for a traffic flow clarification.
 
 ![Traffic Flow](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_packet-flow.png)
 
-The WAF protection policy uses an HTTP Callout to protect the logon page and invalidate the authentication flow if a WAF exception is caught. This configuration requires a pattern set (**Patset**) containing the login URLs, a dummy service and load balancing virtual server, an HTTP callout, and the WAF policy and configuration.
+The WAF protection policy uses an HTTP Callout to protect the logon page and invalidate the authentication flow if a WAF exception is caught. This configuration requires a pattern set (**Patset**) that includes the login URLs, a dummy service and load balancing virtual server, an HTTP callout, and the WAF policy and configuration.
 
 ### Pattern Set
 
@@ -127,9 +129,9 @@ bind policy patset GW_VPN_Patset "/nf/auth/doAuthentication.do" -index 2
 
 ### Dummy Virtual Server and Service
 
-The HTTP Callout uses a dummy virtual server. This virtual server does not need to be publicly available, so it can be non-addressable. The virtual server DOES need to be up, thus the back end server needs to be up and responding on port 80. A new service and virtual server will be created in this guide, but a pre-existing virtual server can be used.
+The HTTP Callout uses a dummy virtual server. This virtual server doesn't need to be publicly available, so it can be non-addressable. The virtual server DOES need to be up, so the back end server needs to be up and responding on port 80. A new service and virtual server are created in this guide, but a pre-existing virtual server can be used.
 
-Go to **Traffic Management > Load Balancing > Services** and select 'Add'. Give the service a descriptive name, set the protocol to HTTP and port to 80. Enter the IP address of the server and choose **OK**. Alternatively, create the service with an existing server. All of the default settings are used, including monitors bound to the service.
+Go to **Traffic Management > Load Balancing > Services** and select 'Add'. Give the service a descriptive name, set the protocol to HTTP and port to 80. Enter the IP address of the server and choose **OK**. Alternatively, create the service with an existing server. Use all default settings, including monitors bound to the service.
 
 ![Load Balancing Service](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_lbservice.png)
 
@@ -148,13 +150,13 @@ HTTP.REQ.FULL_HEADER.BEFORE_STR("\r\n\r\n")+"\r\nGW_VPN-WAF_Callout:abc\r\n\r\n"
 
 >**Note:**
 >
->The name of the header here is 'GW_VPN-WAF_Callout' - the application firewall filtering expression will use it later. If the name is changed here, change the WAF header expression as well.
+>The name of the header here is 'GW_VPN-WAF_Callout' - the application firewall filtering expression uses it later. If the name is changed here, change the WAF header expression as well.
 
 In the Server Response section, set the return type to **BOOL** and set the expression to 'true'.
 
 ![HTTP Callout](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_httpcallout.png)
 
-Alternatively, the HTTP Callout can be created from the CLI:
+Alternatively, create the HTTP Callout from the CLI:
 
 ```bash
 
@@ -180,7 +182,7 @@ HTTP.REQ.URL.CONTAINS_ANY("GW_VPN_Patset") && SYS.HTTP_CALLOUT(GW_VPN_WAF_Callou
 
 To build the WAF profile go to **Security > Citrix Web Application Firewall > Profiles** and choose 'Add'. Give the profile a descriptive name and select Web Application (HTML) and Basic Defaults. Open the newly created profile by choosing 'Edit' then select 'Security Checks' from the right hand column.
 
-Enable the following security checks (all other settings are disabled):
+Enable the following security checks (disable all other settings):
 
 *  Buffer Overflow - Log, Stats
 *  Post Body Limit - Block, Log, Stats
@@ -247,15 +249,15 @@ set aaa parameter -loginEncryption ENABLED
 
 ### IP Reputation Based MFA
 
-Leverage IP Reputation with advanced authentication to prompt the user for an extra factor if the database contains the source address. A manually maintained dataset of addresses will also be created.
+Use IP Reputation with advanced authentication to prompt the user for an extra factor if the database includes the source address. Also, creatte a manually maintained dataset of addresses.
 
 >**Important:**
 >
->The following configuration example uses CAPTCHA as a means to provide another factor of authentication, but any other MFA tool can be used. As with all nFactor configurations, the policies, schemas, and policy labels shown here are simple examples - add extra configuration to meet any specific login use case.
+>The following configuration example uses CAPTCHA as a means to provide another factor of authentication, but any other MFA tool can be used. As with all nFactor configurations, the policies, schemas, and policy labels shown here are simple examples - add an extra configuration to meet any specific login use case.
 >
 >**See the references section for additional details on configuring TOTP PUSH as a factor and additional CAPTCHA configurations.**
 
-A data set need to be created by going to **AppExpert > Data Sets** and selecting 'Add'. Create a data set with a descriptive name, a type of 'ipv4' and click 'Create'.
+Create a data set by going to **AppExpert > Data Sets** and selecting 'Add'. Create a data set with a descriptive name, a type of 'ipv4' and click 'Create'.
 
 ![Malicious IP Data Set](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa-dataset.png)
 
@@ -265,7 +267,7 @@ Create the first policy with a descriptive name, an action type of **NO_AUTHN**,
 
 ![Advanced Policy Good IP](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa-advpol-good.png)
 
-Create the second policy with a descriptive name, action type of **NO_AUTHN**, and expression as follows:
+Create the second policy with a descriptive name, action type of **NO_AUTHN**, and an expression as follows:
 
 ```bash
 
@@ -274,7 +276,7 @@ CLIENT.IP.SRC.IPREP_IS_MALICIOUS || CLIENT.IP.SRC.TYPECAST_TEXT_T.CONTAINS_ANY("
 
 >**Note:**
 >
->The name of the previously created data set is used here.
+>Use the name of the previously created data set here.
 
 Next, a CAPTCHA login schema profile is created by going to **Security > AAA - Application Traffic > Login Schema > Profiles Tab** and selecting 'Add'. Give the profile a descriptive name then edit the Authentication Schema by selecting the 'pencil' edit icon. Browse to the LoginSchema directory, highlight **SingleAuthCaptcha.xml**, and choose **Select**.
 
@@ -292,33 +294,33 @@ Create another policy label by selecting 'Add'. Give this PL a descriptive name,
 
 ![IP Check Policy Label](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa-ipcheckpl.png)
 
-Last, set the next factor of the previously created authentication policy as this IP Reputation check policy label. It is already bound to an authentication or Gateway virtual server. Highlight the authentication policy, select 'edit binding' then set the new policy label as the 'Select Next Factor' field.
+Last, set the next factor of the previously created authentication policy as this IP Reputation check policy label. It's already bound to an authentication or Gateway virtual server. Highlight the authentication policy, select 'edit binding' then set the new policy label as the 'Select Next Factor' field.
 
 ![Final Authentication Policy](/en-us/tech-zone/learn/media/poc-guides_protect-gateway-waf-bot-aaa_aaa-authpolicyfinal.png)
 
 ## Summary
 
-Citrix ADC provides many built-in security protections that can be applied to protect Gateway or Authentication virtual servers running on the same appliance. These protections have no impact on typical users as they try to log in to Citrix Gateway.
+Citrix ADC provides many built-in security protections that protect Gateway or Authentication virtual servers running on the same appliance. These protections have no impact on typical users as they try to log in to Citrix Gateway.
 
 ## References
 
-For additional information and configuration options, refer to the following articles:
+For additional information and configuration options, see the following articles:
 
-[Introduction to Citrix Web Application Firewall](/en-us/citrix-adc/current-release/application-firewall/introduction-to-citrix-web-app-firewall.html) - Citrix Prod Docs: Introduction to Citrix Web Application Firewall
+[Introduction to Citrix Web Application Firewall](/en-us/citrix-adc/current-release/application-firewall/introduction-to-citrix-web-app-firewall.html) - Citrix Product Docs: Introduction to Citrix Web Application Firewall
 
 [Citrix Web Application Firewall PoC Guide](/en-us/tech-zone/learn/poc-guides/citrix-waf-deployment.html) - proof of concept deployment guide for Citrix Web Application Firewall
 
 [Citrix Training for Application Delivery and Security](https://training.citrix.com/learning/training/App-Delivery-and-Security) - Citrix Education Training for Application Delivery and Security
 
-[Getting started with Citrix ADC](/en-us/citrix-adc/current-release/getting-started-with-citrix-adc.html#packet-flow) - Citrix Prod Docs: Getting started with Citridx ADC - Packet Flow
+[Getting started with Citrix ADC](/en-us/citrix-adc/current-release/getting-started-with-citrix-adc.html#packet-flow) - Citrix Product Docs: Getting started with Citrix ADC - Packet Flow
 
-[IP Reputation](/en-us/citrix-adc/current-release/reputation/ip-reputation.html) - Citrix Prod Docs: IP Reputation
+[IP Reputation](/en-us/citrix-adc/current-release/reputation/ip-reputation.html) - Citrix Product Docs: IP Reputation
 
-[Bot Management](/en-us/citrix-adc/current-release/bot-management.html) - Citrix Prod Docs: Bot Management
+[Bot Management](/en-us/citrix-adc/current-release/bot-management.html) - Citrix Product Docs: Bot Management
 
-[Bot Detection](/en-us/citrix-adc/current-release/bot-management/bot-detection.html) - Citrix Prod Docs: Bot Detection
+[Bot Detection](/en-us/citrix-adc/current-release/bot-management/bot-detection.html) - Citrix Product Docs: Bot Detection
 
-[nFactor Authentication](/en-us/citrix-adc/current-release/aaa-tm/authentication-methods/multi-factor-nfactor-authentication.html) - Citrix Prod Docs: nFactor Authentication
+[nFactor Authentication](/en-us/citrix-adc/current-release/aaa-tm/authentication-methods/multi-factor-nfactor-authentication.html) - Citrix Product Docs: nFactor Authentication
 
 [Citrix ADC - nFactor Basics Cheat Sheet](/en-us/tech-zone/learn/diagrams-posters/cheat-sheet-adc-nfactor.html) - Citrix Tech Zone: Diagrams and Posters Citrix ADC - nFactor Basics Cheat Sheet
 
