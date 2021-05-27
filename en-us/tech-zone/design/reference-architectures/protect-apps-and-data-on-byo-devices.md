@@ -67,7 +67,7 @@ In CompanyA's focus on protecting data and devices, it has identified the follow
 
 ### Protecting Apps and application APIs
 
-CompanyA is investing in risk mitigation and threat prevention to protect its web apps and APIs.  Its growing use of BYO and unmanaged devices has increased the threat of compromised devices accessing corporate apps. It has also determined that its attack surface has increased due to the company moving apps to the cloud and using SaaS apps. Its on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
+CompanyA is investing in risk mitigation and threat prevention to protect its web apps and APIs. The company's growing use of BYO and unmanaged devices has increased the risk of compromised devices accessing corporate apps. CompanyA has also determined that its attack surface has increased due to the company moving apps to the cloud and using SaaS apps. Its on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
 
 CompanyA must create a hybrid solution using both on-prem devices and cloud services for application security. On-premises devices will block app-layer and DDoS attacks on-premises, while a cloud-based protection service will prevent volumetric attacks and app-layer DDoS attacks in the cloud.
 
@@ -76,7 +76,7 @@ To be successful, CompanyA must protect and secure its resources while simultane
 |  **Success Criteria** | **Description**  | **Solution** |
 |---|---|---|
 | SaaS and Web App Security | The user's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted  | Citrix Secure Workspace Access – Security Policies with App Protection  |
-| Secure Access | CompanyA must protect internal corporate resources when accessed from untrusted and unsecured locations. Devices are not be allowed direct access to the internal network to help prevent malware intrusion.  | VPN-less access |
+| Secure Access | CompanyA must protect internal corporate resources when accessed from untrusted and unsecured locations. Devices are not be allowed direct access to the internal network to help prevent malware intrusion.  | Secure Workspace Access VPN-less access |
 | SaaS credential protection | The user's credentials to SaaS applications must include strong, multifactor authentication. | Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
 | Volumetric DDoS | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web Application and API Protection |
 | SaaS DLP | CompanyA requires their SaaS apps to use DLP controls inline. | Citrix Secure Internet Access  |
@@ -92,20 +92,19 @@ Based on the preceding requirements, CompanyA created the high-level conceptual 
 *  Contextual authentication before being granted access to external or internal resources
 *  Zero Trust access to specific resources via Citrix Secure Workspace Access
 *  Protected access to the internet traffic from the web app, or vitual apps and desktops via using Citrix Secure Internet Access
-
-Use WAAP to protect the app from the user's compromised endpoint
+*  Protect back end apps accessed from unmananged devices with Citrix Web Application Firewall
 
 This architecture meets all the preceding requirements while giving CompanyA the foundation to expand to additional use cases in the future.
 
 **diagram**
 placeholder
 
-CompanyA's architecture framework has multiple layers. The framework provides a foundation for understanding the technical architecture for protecting users and apps deployment scenarios. All layers flow together to create a complete, end-to-end solution.
+CompanyA's architecture framework has multiple layers. The framework provides a foundation for understanding the technical architecture required to protect users and apps. All layers flow together to create a complete and end-to-end solution.
 At a high level:
 
 **User Layer**: The user layer describes the end-user environment and endpoint devices used to connect to resources.
 
-** Regardless of device, users access resources from the Workspace app, resulting in an experience that is identical across every form factor and device platform.
+*  Regardless of device, users access resources from the Workspace app, resulting in an experience that is protected even  on unmanaged devices.
 
 **Access Layer**: The access layer describes how users authenticate to their Workspace and secondary resources.
 
@@ -130,7 +129,6 @@ At a high level:
 *  Users might need to access personal items on their unmanaged endpoint devices. Appropriate policies are defined to protect users' privacy when accessing personal sites related to health and finance.
 
 *  CompanyA requires a Security Analytics service to identify compromised users and automatically maintain a secure environment.
-The subsequent sections provide greater detail into specific design decisions for CompanyA's BYOD protection reference architecture.
 
 The subsequent sections provide greater detail into specific design decisions for CompanyA's BYOD protection reference architecture.
 
