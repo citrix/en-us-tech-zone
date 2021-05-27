@@ -229,3 +229,5 @@ By default, all categories are decrypted and allowed. CompanyA made the followin
 | Porn/Nudity | Block | |
 | Virus & Malware | Block | |
 | Violence/Hate | Block | |
+
+The Secure Internet Access Tech Brief contains additional information regarding the web filtering and protection features.
