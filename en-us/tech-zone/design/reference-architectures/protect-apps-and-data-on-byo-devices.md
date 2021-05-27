@@ -11,7 +11,7 @@ tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-manag
 
 ## Overview
 
-CompanyA provides secure remote access for a small subset of its overall user base to internal and cloud resources. The end users utilize Bring Your Own (BYO) and unmanaged devices. The resources include virtual apps and desktops, SaaS, and internal web applications. CompanyA's secure remote access policy has led to greater efficiency for their hybrid and distributed workforce; however, it has created a complex delivery model that has also introduced security concerns. Since user devices are unmanaged, CompanyA must mitigate security threats against the apps and data in transit to, in use on, and at rest on the BYO devices.
+CompanyA provides secure remote access for a small subset of its overall user base to internal and cloud resources. The end users utilize Bring Your Own (BYO) and unmanaged devices. The resources include virtual apps/desktops, web and SaaS apps. CompanyA's secure remote access policy has led to greater efficiency for their hybrid and distributed workforce; however, it has created a complex delivery model that has also introduced security concerns. Since user devices are unmanaged, CompanyA must mitigate security threats against the apps and data in transit to, in use on, and at rest on the BYO devices.
 
 CompanyA currently uses several unintegrated point products for remote access. It wants to consolidate and expand to a company-wide solution. Also, CompanyA must protect its resources which include internal web apps. To that end, CompanyA is engaging in an initiative to update its app delivery architecture to implement the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Secure Internet Access, and Citrix Web App Firewall. Together they provide end-to-end protection of CompanyA resources.
 
@@ -51,16 +51,19 @@ CompanyA, like many companies today, has a highly complex infrastructure of laye
 
 CompanyA is designing a consolidated, cloud-delivered security stack to meet the demands of their modern workplace. By centralizing device and data security policy across the overall solution – it will minimize redundant tasks, remove overlapping policies, and allow IT to protect data and devices across all locations from a centralized dashboard.
 
-In CompanyA's focus on protecting data and devices, it has identified the following user-related criteria for a successful design.
+CompanyA must protect its data from potential internet threats hidden within emails, applications, and websites regardless of location. Internet protection must extend to all delivery models, including virtual apps/desktops, web apps, and SaaS apps.
+
+In CompanyA's focus on protecting data and devices, it has identified the following user-related criteria for a successful design:
 
 | **Success Criteria** |  **Description** |  **Solution** |
 |---|---|---|
-| Protect Devices | Protecting devices and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Internet Access |
+| Protect Devices | Protect devices and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Internet Access |
 | Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Internet Access |
 | Compliance | Compliance and protecting users from malicious URLs | Citrix Secure Internet Access |
-| Unsecured Personal Devices | Users trying to access Workspace with an unsecured device must not gain access to any sanctioned resource. | Citrix Application Delivery Controller (ADC) - nFactor policies and endpoint analysis |
+| Unsecured Personal Devices | Users trying to access Workspace with an unsecured device must not gain unfettered access to sanctioned resources. | CCitrix Secure Workspace Access |
 | Protection from keylogger | Protection from keylogger / enabling secure access from BYO | Citrix Secure Workspace Access |
-| Internet Security | CompanyA must protect its users from potential internet threats hidden within emails, applications, and websites regardless of location. Internet protection must extend to all delivery models, including virtual apps/desktops, local apps, mobile apps, web apps, and SaaS apps. | Citrix Secure Internet Access |
+| Protection from screen scrapers | Protection from screen scraping malware / enabling secure access from BYO | Citrix Secure Workspace Access |
+| Internet Security | Protect users from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Internet Access |
 
 ### Protecting Apps and application APIs
 
