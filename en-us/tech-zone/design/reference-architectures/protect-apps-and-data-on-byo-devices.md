@@ -111,9 +111,13 @@ At a high level:
 
 **User Layer**: The user layer describes the end-user environment and endpoint devices used to connect to resources.
 
-*  Regardless of device, users access resources from the Workspace app, resulting in an experience that is protected even  on unmanaged devices.
+*  Regardless of device, users access resources from the Workspace app, resulting in an experience that is protected even on unmanaged devices.
 
+*  Data within apps on mobile devices will be protected with Citrix Endpoint Management.
+ 
 **Access Layer**: The access layer describes how users authenticate to their Workspace and secondary resources.
+
+*  Citrix ADC provides contextual authentication - devices which do not have the Citrix Secure Internet Access agent running will not gain access to authenticate.
 
 *  Citrix Workspace provides the primary authentication broker for all subsequent resources. CompanyA requires multifactor authentication to improve authentication security.
 
