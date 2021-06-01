@@ -32,7 +32,7 @@ CompanyA has a deep investment in its existing infrastructure and wants to avoid
 
 CompanyA wishes to enable all users to work from home and remote locations. Post pandemic, employees will continue benefiting from a hybrid and BYOD workforce model. Although some users have VPN access to web and SaaS apps, CompanyA has identified several security challenges that prevent a company-wide deployment. Therefore, CompanyA is implementing a VPN-less approach.
 
-CompanyA does not manage end users's devices and has no way to understand if the devices transfer any malicious content to their application infrastructure. However, CompanyA's security policy does require endpoints to have some agents installed in order t provide secure access to company resources. Consequently, CompanyA has begun a threefold initiative to protect corporate resources accessed by unmanaged devices. To be successful, CompanyA defined a list of success criteria for the initiative. These criteria form the basis for the overarching design.
+CompanyA does not manage end users's devices and has no way to understand if the devices transfer any malicious content to their application infrastructure. However, CompanyA's security policy does require endpoints to have some agents installed in order to provide secure access to company resources. Consequently, CompanyA has begun a threefold initiative to protect corporate resources accessed by unmanaged devices. To be successful, CompanyA defined a list of success criteria for the initiative. These criteria form the basis for the overarching design.
 
 ### Protecting User Access
 
@@ -44,11 +44,11 @@ In CompanyA's focus on protecting user access, it has identified the following c
 
 |  **Success Criteria** | **Description** | **Solution** |
 |---|---|---|
-| Contextual access and contextual authentication | Contextual access and contextual authentication for web, SaaS, and CVAD | Citrix Secure Workspace Access  |
+| Contextual access and contextual authentication | Contextual access and contextual authentication for web, SaaS, and CVAD | Citrix Secure Workspace Access and Citrix ADC |
 | End-user monitoring  | Continuous monitoring and continuous assessment | Citrix Secure Workspace Access |
-| Personal Mobile Devices | Users can select an endpoint device that fits their usage requirements. These devices are not managed CompanyA. |  |
-| Personal Privacy | CompanyA must ensure user privacy while still protecting the user and endpoint from potential threats when using unsanctioned websites. | Citrix Secure Internet Access with "do not decrypt" policies for sites with personal information |
-| SaaS App Access | Users must access sanctioned SaaS applications with strong authentication that does not impact the experience. | Citrix Secure Workspace Access |
+| Personal Mobile Devices | Users can select an endpoint device that fits their usage requirements. These devices are not managed and enrollement is not required, however access apps and data on mobile devices are protected. | Citrix Endpoint Management |
+| Personal Privacy | CompanyA must ensure user privacy while still protecting the user and endpoint from potential threats when using unsanctioned websites | Citrix Secure Internet Access with "do not decrypt" policies for sites with personal information |
+| SaaS App Access | Users must access sanctioned SaaS applications with strong authentication that does not impact the experience | Citrix Secure Workspace Access |
 | Web App Access | Users must be able to access sanctioned internal Web applications on any approved device | Citrix Secure Workspace Access – Zero Trust Network Access |
 
 ### Protecting Data
@@ -57,16 +57,17 @@ CompanyA, like many companies today, has a highly complex infrastructure of laye
 
 CompanyA is designing a consolidated, cloud-delivered security stack to meet the demands of their modern workplace. By centralizing device and data security policy across the overall solution – it will minimize redundant tasks, remove overlapping policies, and allow IT to protect data and devices across all locations from a centralized dashboard.
 
-CompanyA must protect its data from potential internet threats hidden within emails, applications, and websites regardless of location. Internet protection must extend to all delivery models, including virtual apps/desktops, web apps, and SaaS apps.
+CompanyA must protect its data from potential internet threats hidden within emails, applications, and websites regardless of location. Internet protection must extend to all delivery models, including virtual apps/desktops, mobile apps, web apps, and SaaS apps.
 
 In CompanyA's focus on protecting data and devices, it has identified the following user-related criteria for a successful design:
 
 | **Success Criteria** |  **Description** |  **Solution** |
 |---|---|---|
 | Protect Devices | Protect devices and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Internet Access |
+| Personal Mobile Devices | Users can select an endpoint device that fits their usage requirements. These devices are not managed and enrollement is not required, however access apps and data on mobile devices are protected. | Citrix Endpoint Management |
 | Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Internet Access |
 | Compliance | Compliance and protecting users from malicious URLs | Citrix Secure Internet Access |
-| Unsecured Personal Devices | Users trying to access Workspace with an unsecured device must not gain unfettered access to sanctioned resources. | CCitrix Secure Workspace Access |
+| Unsecured Personal Devices | Users trying to access Workspace with an unsecured device must not gain unfettered access to sanctioned resources. | Citrix Secure Workspace Access |
 | Protection from keylogger | Protection from keylogger / enabling secure access from BYO | Citrix Secure Workspace Access |
 | Protection from screen scrapers | Protection from screen scraping malware / enabling secure access from BYO | Citrix Secure Workspace Access |
 | Internet Security | Protect users from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Internet Access |
