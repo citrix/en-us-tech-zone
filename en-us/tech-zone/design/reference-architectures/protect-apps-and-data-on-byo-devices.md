@@ -9,11 +9,17 @@ tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-manag
 ---
 # Reference Architecture : Protect apps and data on BYO devices
 
+CEM for Saas via native app
+ADC for context auth - pre scan
+Workspace app and SIA agent are required
+not adding SDWAN
+waf/cwaap for internal
+
 ## Overview
 
-CompanyA provides secure remote access for a small subset of its overall user base. End users utilize Bring Your Own (BYO) and unmanaged devices to access internal and cloud resources which include virtual apps/desktops, web and SaaS apps. CompanyA's secure remote access policy has led to greater efficiency for its hybrid and distributed workforce; however, the policy has created a complex delivery model and introduced security concerns. Since end user devices are unmanaged, CompanyA must mitigate security threats against the apps and data in transit to, in use on, and at rest on the BYO devices.
+CompanyA provides secure remote access for a small subset of its overall user base. End users utilize Bring Your Own (BYO) and unmanaged devices to access internal and cloud resources which include virtual apps/desktops, web and SaaS apps. CompanyA's secure remote access policy has led to greater efficiency for its hybrid and distributed workforce; however, the policy has created a complex delivery model and introduced security concerns. Since end user devices are unmanaged, CompanyA must mitigate security threats against  apps and the data in transit to, in use on, and at rest on the BYO devices.
 
-CompanyA currently uses several unintegrated point products for remote access. It wants to consolidate and expand to a company-wide solution. Also, CompanyA must protect its resources which include internal web apps. To that end, CompanyA is engaging in an initiative to update its app delivery architecture to implement the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Secure Internet Access, and Citrix Web App Firewall. Together they provide end-to-end protection of CompanyA resources.
+CompanyA currently uses several unintegrated point products for remote access. It wants to consolidate and expand to a company-wide solution while protecting its resources which include internal web apps. To that end, CompanyA is engaging in an initiative to update its app delivery architecture to implement the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Secure Internet Access, and Citrix Web App Firewall. Together they provide end-to-end protection of CompanyA resources.
 
 This reference architecture explains CompanyA's plan to protect user access, protect data and devices, and protect apps.
 
@@ -70,6 +76,8 @@ In CompanyA's focus on protecting data and devices, it has identified the follow
 CompanyA is investing in risk mitigation and threat prevention to protect its web apps and APIs. The company's growing use of BYO and unmanaged devices has increased the risk of compromised devices accessing corporate apps. CompanyA has also determined that its attack surface has increased due to the company moving apps to the cloud and using SaaS apps. Its on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
 
 CompanyA must create a hybrid solution using both on-prem devices and cloud services for application security. On-premises devices will block app-layer and DDoS attacks on-premises, while a cloud-based protection service will prevent volumetric attacks and app-layer DDoS attacks in the cloud.
+
+CEM for saas apps on mobile devices
 
 To be successful, CompanyA must protect and secure its resources while simultaneously providing a work environment that aligns with the user requirements. CompanyA identified the following security-related criteria for a successful design:
 
