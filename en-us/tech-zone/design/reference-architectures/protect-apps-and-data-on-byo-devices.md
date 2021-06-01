@@ -72,13 +72,11 @@ In CompanyA's focus on protecting data and devices, it has identified the follow
 | Protection from screen scrapers | Protection from screen scraping malware / enabling secure access from BYO | Citrix Secure Workspace Access |
 | Internet Security | Protect users from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Internet Access |
 
-### Protecting Apps and application APIs
+### Protecting Apps
 
-CompanyA is investing in risk mitigation and threat prevention to protect its web apps and APIs. The company's growing use of BYO and unmanaged devices has increased the risk of compromised devices accessing corporate apps. CompanyA has also determined that its attack surface has increased due to the company moving apps to the cloud and using SaaS apps. Its on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
+CompanyA is investing in risk mitigation and threat prevention to protect its web apps. The company's growing use of BYO and unmanaged devices has increased the risk of compromised devices accessing corporate apps. CompanyA has also determined that its attack surface has increased due to the company moving apps to the cloud and using SaaS apps. Its on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
 
 CompanyA must create a hybrid solution using both on-prem devices and cloud services for application security. On-premises devices will block app-layer and DDoS attacks on-premises, while a cloud-based protection service will prevent volumetric attacks and app-layer DDoS attacks in the cloud.
-
-CEM for saas apps on mobile devices
 
 To be successful, CompanyA must protect and secure its resources while simultaneously providing a work environment that aligns with the user requirements. CompanyA identified the following security-related criteria for a successful design:
 
