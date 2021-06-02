@@ -104,8 +104,7 @@ Based on the preceding requirements, CompanyA created the high-level conceptual 
 
 This architecture meets all the preceding requirements while giving CompanyA the foundation to expand to additional use cases in the future.
 
-**diagram**
-placeholder
+[!Conceptual Architecture](/en-us/tech-zone/design/reference_architectures_protect-apps-and-data-on-BYO-devices_01.png)](en-us/tech-zone/design/reference_architectures_protect-apps-and-data-on-BYO-devices_01.png)
 
 CompanyA's architecture framework has multiple layers. The framework provides a foundation for understanding the technical architecture required to protect users and apps. All layers flow together to create a complete and end-to-end solution.
 At a high level:
