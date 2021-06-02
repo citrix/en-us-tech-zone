@@ -93,13 +93,14 @@ To be successful, CompanyA must protect and secure its resources while simultane
 
 ## Conceptual Architecture
 
-Based on the preceding requirements, CompanyA created the high-level conceptual architecture below. The general flow and requirements are that users will require:
+Based on the preceding requirements, CompanyA created the high-level conceptual architecture below. The general flow and requirements are that end users will require:
 
 *  Protected access to SaaS apps and VPN-less access to internal web apps via Citrix Workspace Access
 *  Contextual authentication before being granted access to external or internal resources via Citrix ADC and Citrix Workspace Access
 *  Zero Trust access to specific resources via Citrix Secure Workspace Access
-*  Protected access to the internet traffic from the web app, or vitual apps and desktops via using Citrix Secure Internet Access
-*  Protect back end apps accessed from unmananged devices with Citrix Web Application Firewall
+*  Protected access to internet traffic from the web apps, or vitual apps and desktops via using Citrix Secure Internet Access
+*  Protected access to SaaS apps when using mobile device apps with Citrix Endpoint Management
+*  Protected access to back end apps accessed from unmananged devices with Citrix Web Application Firewall
 
 This architecture meets all the preceding requirements while giving CompanyA the foundation to expand to additional use cases in the future.
 
