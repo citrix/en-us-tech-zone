@@ -44,9 +44,10 @@ In CompanyA's focus on protecting user access, it has identified the following c
 
 |  **Success Criteria** | **Description** | **Solution** |
 |---|---|---|
-| Contextual access and contextual authentication | Contextual access and contextual authentication for web, SaaS, and CVAD | Citrix Secure Workspace Access and Citrix ADC |
-| End-user monitoring  | Continuous monitoring and continuous assessment | Citrix Secure Workspace Access |
-| Personal Mobile Devices | Users can select an endpoint device that fits their usage requirements. These devices are not managed and enrollement is not required, however access apps and data on mobile devices are protected. | Citrix Endpoint Management |
+| Contextual access | Contextual access  | Citrix Secure Workspace Access |
+| Contextual authentication | Contextual authentication for web, SaaS, and CVAD o contextual policies will identify if unmanaged devices meet requirments to login | Citrix ADC |
+| End-user monitoring  | Continuous monitoring and continuous assessment to protect against potential threats, web apps are continously monitored for data exfiltration, and, and | Citrix Secure Workspace Access |
+| Personal Mobile Devices | Users can select an endpoint device that fits their usage requirements. These devices are not managed and enrollement is not required, however business related apps and data are secured. | Citrix Endpoint Management |
 | Personal Privacy | CompanyA must ensure user privacy while still protecting the user and endpoint from potential threats when using unsanctioned websites | Citrix Secure Internet Access with "do not decrypt" policies for sites with personal information |
 | SaaS App Access | Users must access sanctioned SaaS applications with strong authentication that does not impact the experience | Citrix Secure Workspace Access |
 | Web App Access | Users must be able to access sanctioned internal Web applications on any approved device | Citrix Secure Workspace Access – Zero Trust Network Access |
@@ -65,12 +66,12 @@ In CompanyA's focus on protecting data and devices, it has identified the follow
 |---|---|---|
 | Protect Devices | Protect devices and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Internet Access |
 | Personal Mobile Devices | Users can select an endpoint device that fits their usage requirements. These devices are not managed and enrollement is not required, however access apps and data on mobile devices are protected. | Citrix Endpoint Management |
-| Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Internet Access |
-| Compliance | Compliance and protecting users from malicious URLs | Citrix Secure Internet Access |
+| Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Internet Access – Security Policies with Web Filtering |
+| Compliance | Compliance and protecting users from malicious URLs | Citrix Secure Internet Access – Security Policies with Web Filtering |
 | Unsecured Personal Devices | Users trying to access Workspace with an unsecured device must not gain unfettered access to sanctioned resources. | Citrix Secure Workspace Access |
-| Protection from keylogger | Protection from keylogger / enabling secure access from BYO | Citrix Secure Workspace Access |
-| Protection from screen scrapers | Protection from screen scraping malware / enabling secure access from BYO | Citrix Secure Workspace Access |
-| Internet Security | Protect users from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Internet Access |
+| Protection from keylogger | Protection from keylogger / enabling secure access from BYO | Citrix Secure Workspace Access – Security Policies with App Protection  |
+| Protection from screen scrapers | Protection from screen scraping malware / enabling secure access from BYO | Citrix Secure Workspace Access – Security Policies with App Protection |
+| Internet Security | Protect users from potential internet threats hidden within emails, applications, and websites regardless of location. |  Citrix Secure Internet Access Security Policies with Malware Protection |
 
 ### Protecting Apps
 
@@ -88,7 +89,6 @@ To be successful, CompanyA must protect and secure its resources while simultane
 | Volumetric DDoS | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web Application and API Protection |
 | SaaS DLP | CompanyA requires their SaaS apps to use DLP controls inline. | Citrix Secure Internet Access  |
 | Protecting apps and application APIs | Protection from volumetric DDoS, bot attacks, and other application-level attacks such as cross-site scripting | Citrix Web Application and API Protection |
-| API Protection | Protection from API level attacks | Citrix Web Application and API Protection |
 | Compromised User Protection | IT must be able to quickly identify and mitigate threats posed by a compromised user account. IT must protect the entire threat surface and the centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
 
 ## Conceptual Architecture
@@ -114,7 +114,7 @@ At a high level:
 *  Regardless of device, users access resources from the Workspace app, resulting in an experience that is protected even on unmanaged devices.
 
 *  Data within apps on mobile devices will be protected with Citrix Endpoint Management.
- 
+
 **Access Layer**: The access layer describes how users authenticate to their Workspace and secondary resources.
 
 *  Citrix ADC provides contextual authentication - devices which do not have the Citrix Secure Internet Access agent running will not gain access to authenticate.
@@ -131,7 +131,7 @@ At a high level:
 
 *  Similarly, due to unknown endpoint security status, CompanyA requires protection against keylogging and screen scraping malware.
 
-*  Since CompanyA allows access to internal web apps from unmanaged devices, it must protect the resource from attacks coming from potentially compromised endpoints.
+*  Since CompanyA allows access to internal web apps from unmanaged devices, Citrix Web App Firewall must protect the resource from attacks coming from potentially compromised endpoints.
 
 **Control Layer**: The control layer defines how the underlying solution adjusts based on the underlying activities of the user.
 
@@ -147,8 +147,9 @@ The subsequent sections provide greater detail into specific design decisions fo
 
 ### Authentication
 
-Adaptive authentication
-One of the challenges CompanyA experienced with previous acquisitions was how to integrate identity providers. The process of merging identity providers can take a significant amount of time. With the new strategy, CompanyA utilizes a Citrix Application Delivery Controller to handle all authentication requests.
+One of the requirements CompanyA has identified is adding a security check before users are presented with the authentication challenge. Allowing integrate identity providers. The process of merging identity providers can take a significant amount of time. With the new strategy.
+
+CompanyA utilizes a Citrix Application Delivery Controller to handle all authentication requests. Citrix ADC provides adaptive authenticaion
 
 **diagram**
 placeholder
