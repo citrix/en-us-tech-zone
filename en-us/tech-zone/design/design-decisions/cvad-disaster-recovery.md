@@ -498,7 +498,7 @@ This section covers key topics to assist customers in defining an appropriate DR
 
 Below is a typical conceptual diagram outlining the conceptual architecture of CVADS, in addition to the separation of responsibility for Citrix-managed components and partner/customer-managed components. Not illustrated here are the WEM, Analytics, and Citrix Gateway “Services” which are elective Citrix Cloud components related to CVADS which would fall under “Managed by Citrix”.
 
-![Disaster Recovery](en-us/tech-zone/learn/media/tech-briefs_cvads_cloud.png)
+![Disaster Recovery](/en-us/tech-zone/learn/media/tech-briefs_cvads_cloud.png)
 
 As illustrated in the diagram, a significant portion of Control components requiring recovery decisions fall under Citrix's management scope. Being a cloud-based service, the CVADS architecture is highly resilient within the [Citrix Cloud region](/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/geographical-considerations.html). It is part of Citrix Cloud's “Secret Sauce” and considered within [Citrix Cloud's SLAs](/en-us/citrix-cloud/overview/service-level-agreement.html).
 
