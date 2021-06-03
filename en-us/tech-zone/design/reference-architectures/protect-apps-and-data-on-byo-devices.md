@@ -174,7 +174,7 @@ For virtual apps and desktops
 
 
 
-[![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_035.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_035.png)
+[![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_035.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_35.png)
 
 As a baseline policy, CompanyA has defined the following policies (with the ability to relax policies as needed based on user and application).
 
