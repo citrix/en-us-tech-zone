@@ -7,7 +7,7 @@ description: TODO insert description of article
 tz_title: TODO insert title of article
 tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops
 ---
-# Reference Architecture : Protect apps and data on BYO devices
+# Reference Architecture: Protect apps and data on BYO devices
 
 ## Overview
 
