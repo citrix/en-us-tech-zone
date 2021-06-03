@@ -167,6 +167,15 @@ The Secure Workspace Access service and the Virtual Apps and Desktops service us
 
 CompanyA wants to limit the risk of data loss due to an insider threat. Within the different application types, CompanyA incorporates numerous restrictions to prevent users from copying, downloading, or printing data.
 
+For web
+For SaaS
+For virtual apps and desktops
+
+
+
+
+[![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_035.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_035.png)
+
 As a baseline policy, CompanyA has defined the following policies (with the ability to relax policies as needed based on user and application).
 
 | **Category**  | **SaaS Apps**  | **Web Apps** | **Virtual Apps and Desktops** |
