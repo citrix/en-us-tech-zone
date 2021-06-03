@@ -122,7 +122,7 @@ At a high level:
 
 *  Due to the unknown nature of the endpoint security status, CompanyA requires VPN-less access to resources using isolated browsers or virtualized sessions.
 
-*  Similarly, due to unknown endpoint security status, CompanyA requires protection against keylogging and screen scraping malware*.
+*  Similarly, due to unknown endpoint security status, CompanyA requires protection against keylogging and screen scraping malware.*
 
 *  Since CompanyA allows access to internal web apps from BYO devices, Citrix Web App Firewall must protect the resource from attacks coming from potentially compromised endpoints.
 
@@ -187,13 +187,15 @@ As a baseline policy, CompanyA has defined the following policies (with the abil
 
 ### Web App and API Protection
 
-When users authenticate to Citrix Workspace, they access public-facing web apps. To better protect the public web app, CompanyA uses the Citrix Application Delivery Controller solution's Bot Management and Web App Firewall components.
-
-[![Citrix Web App and API Protection](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)
+When users authenticate to Citrix Workspace, they access public-facing web apps. To better protect the on prem public web app, CompanyA uses the Citrix Application Delivery Controller solution's Bot Management and Web App Firewall components.
 
 The first line of defense is Bot Management. Bots can easily crash or slow a public web app by overwhelming the service with fraudulent requests. The bot management component of the Application Delivery Controller detects a bot request and prevents it from inundating the system.
 
 The second line of defense is the Web App Firewall. The Web App Firewall protects public-facing apps from attacks. These types of attacks would typically be buffer overflow, SQL injection, and cross-site scripting. Web App Firewall detects and denies these attacks from impacting the data and the app.
+
+CompanyA also uses Citrix Web App and API protection service to prevent volumetric attacks and app-layer DDoS attacks against webs apps that are not on prem.
+
+[![Citrix Web App and API Protection](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)
 
 ### Secure Internet Access
 
@@ -226,6 +228,6 @@ By default, all categories are decrypted and allowed. CompanyA made the followin
 | Virus & Malware | Block | |
 | Violence/Hate | Block | |
 
-The Secure Internet Access Tech Brief contains additional information regarding the web filtering and protection features.
+Refer to the [Citrix Secure Internet Access Tech Brief](/en-us/tech-zone/learn/tech-briefs/secure-internet-access.html) to gain additional information regarding the web filtering and protection features.
 
 *Keylogging and Screenshot prevention enabled with Workspace App
