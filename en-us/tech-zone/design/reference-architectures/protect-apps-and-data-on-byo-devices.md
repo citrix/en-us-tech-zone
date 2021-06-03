@@ -136,7 +136,7 @@ The subsequent sections provide greater detail into specific design decisions fo
 
 ## Access Layer
 
-### Authentication
+## Authentication
 
 CompanyA has determined that providing access to resources with a user name and password does not provide adequate security.
 Multifactor authentication is required for all users. CompanyA will leverage Active Directory + Token for its mulitfactor method and the Citrix Gateway service to handle all authentication requests.
@@ -149,7 +149,7 @@ Refer to the [Citrix Workspace Active Directory with TOTP Tech Brief](/en-us/tec
 
 [![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
 
-**Zero Trust Network Access**
+## Zero Trust Network Access
 To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Secure Workspace Access service and Virtual Apps and Desktops service. These two services utilize a zero trust network access solution, which is a more secure alternative to traditional VPN.
 
 [![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_03.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_03.png)
@@ -182,11 +182,11 @@ As a baseline policy, CompanyA has defined the following policies (with the abil
 
 ## Control Layer
 
-### Web App Firewall
+### Web App and API Protection
 
 When users authenticate to Citrix Workspace, they access public-facing web apps. To better protect the public web app, CompanyA uses the Citrix Application Delivery Controller solution's Bot Management and Web App Firewall components.
 
-[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)
+[![Citrix Web App and API Protection](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)
 
 The first line of defense is Bot Management. Bots can easily crash or slow a public web app by overwhelming the service with fraudulent requests. The bot management component of the Application Delivery Controller detects a bot request and prevents it from inundating the system.
 
@@ -198,7 +198,7 @@ As users interact with SaaS, web, virtual, local, and mobile apps, they often ac
 
 To help protect the users and the organization, CompanyA incorporates the Secure Internet Access service and Security Analytics into the protecting apps and data on BYO devices design.
 
-[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_05.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_05.png)
+[![Citrix Secure Internet Access](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_05.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_05.png)
 
 Any internet traffic to/from the library of apps, desktops, and devices within the organization routes through the Secure Internet Access service. The service scans any URL to verify it is safe. Functionalities within specific public sites are denied or modified. Downloads are automatically scanned and verified.
 
