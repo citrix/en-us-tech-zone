@@ -138,31 +138,19 @@ The subsequent sections provide greater detail into specific design decisions fo
 
 ### Authentication
 
-Multifactor authentication for all users is one of the requirements CompanyA has identified. CompanyA will leverage Active Directory + Token for its mulitfactor method and the Citrix Gateway service to handle all authentication requests.
+CompanyA has determined that providing access to resources with a user name and password does not provide adequate security.
+Multifactor authentication is required for all users. CompanyA will leverage Active Directory + Token for its mulitfactor method and the Citrix Gateway service to handle all authentication requests.
 
-[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
-
-For many organizations, providing access to application and desktop services with a user name and password does not provide adequate security. Citrix Workspace incorporates a cloud-delivered Time-based One-Time Password (TOTP) providing multifactor authentication by introducing a “something you have”, which is the TOTP token, with the “something you know”, which is the password.
-
-TOTP generates a random 6 digit code that changes every 30 seconds. This code is based on a secret key that is shared between the user’s mobile app and the backend infrastructure. The secret key is the “something you have” factor for multifactor authentication. To generate the random code, an industry standard, secure-hash algorithm gets applied to the secret key and the current time. To authenticate, the code in the mobile app is compared against the code from the backend infrastructure.
-
-To register with the TOTP service, each user creates and installs a pre-shared secret key within the authenticator app on a mobile device.
+Citrix Workspace incorporates a cloud-delivered Time-based One-Time Password (TOTP) providing multifactor authentication. Users will register with the TOTP service, create and install a pre-shared secret key within the authenticator app on a mobile device.
 
 Once the user successfully registers with the TOTP micro-service, the user must use the token, along with their Active Directory credentials, to successfully authenticate to Citrix Workspace.
 
+Refer to the [Citrix Workspace Active Directory with TOTP Tech Brief](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#active-directory-with-totp) to gain adequate knowledge on Active Directory with TOTP concepts and terminology.
 
-
-The authentication process works by the Gateway service 
-
-Delivery Controller evaluating the user's company and then applying the correct authentication request. As CompanyA has standardized on Okta for primary authentication, the Application Delivery Controller forwards the request to Okta. Once Okta completes user authentication, Okta replies to the Application Delivery Controller with a token identifying successful authentication.
-
-Refer to the [Citrix Workspace Active Directory with TOTP](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#active-directory-with-totp) Tech Brief to gain adequate knowledge on Active Directory with TOPT concepts and terminology.
-
-
-
+[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
 
 **Zero Trust Network Access**
-To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Secure Workspace Access service and the Virtual Apps and Desktops service. These two services utilize a zero trust network access solution, which is a more secure alternative to traditional VPN.
+To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Secure Workspace Access service and Virtual Apps and Desktops service. These two services utilize a zero trust network access solution, which is a more secure alternative to traditional VPN.
 
 [![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_03.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_03.png)
 
@@ -182,15 +170,15 @@ As a baseline policy, CompanyA has defined the following policies (with the abil
 
 | **Category**  | **SaaS Apps**  | **Web Apps** | **Virtual Apps and Desktops** |
 |---|---|---|---|
-| Clipboard access | Denied | Denied | Client to Server only |
+| Clipboard access | Denied | Denied | Denied |
 | Printing | Denied | Denied | Denied |
 | Navigation | Denied | Denied  | Not Applicable |
 | Downloads  | Denied   | Denied  | Denied |
 | Watermark  | Enabled  | Enabled | Enabled |
-| Keylogging Prevention | Enabled | Enabled | Enabled |
-| Screenshot Prevention | Enabled  | Enabled  | Enabled |
+| Keylogging Prevention* | Enabled | Enabled | Enabled |
+| Screenshot Prevention* | Enabled  | Enabled  | Enabled |
 
-The App Protection Policies Tech Brief contains additional information regarding the keylogging and screenshot prevention policies.
+*Keylogging and Screenshot preventtion enabled with Workspace App
 
 ## Control Layer
 
