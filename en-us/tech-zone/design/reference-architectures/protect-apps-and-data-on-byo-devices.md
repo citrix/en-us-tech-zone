@@ -44,7 +44,6 @@ In CompanyA's focus on protecting user access, it has identified the following c
 
 |  **Success Criteria** | **Description** | **Solution** |
 |---|---|---|
-| Contextual authentication | Contextual authentication for web, SaaS, and CVAD using Citrix ADC identify if unmanaged devices meet requirments to login | Citrix ADC |
 | Contextual access | Contextual access for web, SaaS, and CVAD using Citrix Secure Workspace Access to determine correct level of access | Citrix Secure Workspace Access |
 | End-user monitoring  | Continuous monitoring and continuous assessment to protect against potential threats. Web apps are continously monitored for data exfiltration, abnormal access times and locations.  | Citrix Secure Workspace Access |
 | Personal Mobile Devices | Users can select an endpoint device that fits their usage requirements. These devices are not managed and enrollement is not required, however business related apps and data must be secured. | Citrix Endpoint Management |
@@ -65,7 +64,6 @@ In CompanyA's focus on protecting data and devices, it has identified the follow
 | **Success Criteria** |  **Description** |  **Solution** |
 |---|---|---|
 | Protect Devices | Protect devices and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Internet Access - Security Policies with Malware Protection|
-| Personal Mobile Devices | Users can select an endpoint device that fits their usage requirements. These devices are not managed and enrollement is not required, however access apps and data on mobile devices are protected. | Citrix Endpoint Management |
 | Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Internet Access – Security Policies with Web Filtering |
 | Compliance | Compliance and protecting users from malicious URLs | Citrix Secure Internet Access – Security Policies with Web Filtering |
 | Unsecured Personal Devices | Users trying to access Workspace with an unsecured device must not gain unfettered access to sanctioned resources. | Citrix Secure Workspace Access |
@@ -96,10 +94,9 @@ To be successful, CompanyA must protect and secure its resources while simultane
 Based on the preceding requirements, CompanyA created the high-level conceptual architecture below. The general flow and requirements are that end users will require:
 
 *  Protected access to SaaS apps and VPN-less access to internal web apps via Citrix Workspace Access
-*  Contextual authentication before being granted access to external or internal resources via Citrix ADC and Citrix Workspace Access
+*  Contextual authentication before being granted access to external or internal resources via Citrix Workspace Access
 *  Zero Trust access to specific resources via Citrix Secure Workspace Access
 *  Protected access to internet traffic from the web apps, or vitual apps and desktops via using Citrix Secure Internet Access
-*  Protected access to SaaS apps when using mobile device apps with Citrix Endpoint Management
 *  Protected access to back end apps accessed from unmananged devices with Citrix Web Application Firewall
 
 This architecture meets all the preceding requirements while giving CompanyA the foundation to expand to additional use cases in the future.
@@ -170,7 +167,7 @@ Once the nFactor policy is defined, CompanyA can continue to expand it to incorp
 **Zero Trust Network Access**
 To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Secure Workspace Access service and the Virtual Apps and Desktops service. These two services utilize a zero trust network access solution, which is a more secure alternative to traditional VPN.
 
-[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
+[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_03.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_03.png)
 
 The Secure Workspace Access service and the Virtual Apps and Desktops service use the cloud connectors' outbound control channel connections. Those connections allow the user to access internal resources remotely. However, those connections are:
 
@@ -204,7 +201,7 @@ The App Protection Policies Tech Brief contains additional information regarding
 
 When users authenticate to Citrix Workspace, they access public-facing web apps. To better protect the public web app, CompanyA uses the Citrix Application Delivery Controller solution's Bot Management and Web App Firewall components.
 
-[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
+[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)
 
 The first line of defense is Bot Management. Bots can easily crash or slow a public web app by overwhelming the service with fraudulent requests. The bot management component of the Application Delivery Controller detects a bot request and prevents it from inundating the system.
 The second line of defense is the Web App Firewall. The Web App Firewall protects public-facing apps from attacks. These types of attacks would typically be buffer overflow, SQL injection, and cross-site scripting. Web App Firewall detects and denies these attacks from impacting the data and the app.
@@ -215,7 +212,7 @@ As users interact with SaaS, web, virtual, local, and mobile apps, they often ac
 
 To help protect the users and the organization, CompanyA incorporates the Secure Internet Access service and Security Analytics into the flexible work design.
 
-[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
+[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_05.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_05.png)
 
 Any internet traffic to/from the library of apps, desktops, and devices within the organization routes through the Secure Internet Access service. The service scans any URL to verify it is safe. Functionalities within specific public sites are denied or modified. Downloads are automatically scanned and verified.
 
