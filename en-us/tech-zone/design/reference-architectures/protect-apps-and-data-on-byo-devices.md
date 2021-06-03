@@ -136,7 +136,7 @@ The subsequent sections provide greater detail into specific design decisions fo
 
 ## Access Layer
 
-## Authentication
+### Authentication
 
 CompanyA has determined that providing access to resources with a user name and password does not provide adequate security.
 Multifactor authentication is required for all users. CompanyA will leverage Active Directory + Token for its mulitfactor method and the Citrix Gateway service to handle all authentication requests.
@@ -149,7 +149,7 @@ Refer to the [Citrix Workspace Active Directory with TOTP Tech Brief](/en-us/tec
 
 [![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
 
-## Zero Trust Network Access
+### Zero Trust Network Access
 
 To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Secure Workspace Access service and Virtual Apps and Desktops service. These two services utilize a zero trust network access solution, which is a more secure alternative to traditional VPN.
 
