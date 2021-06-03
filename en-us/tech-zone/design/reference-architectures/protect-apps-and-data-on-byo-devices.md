@@ -9,22 +9,15 @@ tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-manag
 ---
 # Reference Architecture : Protect apps and data on BYO devices
 
-CEM for Saas via native app
-ADC for context auth - pre scan
-Workspace app and SIA agent are required
-not adding SDWAN
-waf/cwaap for internal
-
 ## Overview
 
-CompanyA provides secure remote access for a small subset of its overall user base. End users utilize Bring Your Own (BYO) and unmanaged devices to access internal and cloud resources which include virtual apps/desktops, web and SaaS apps. CompanyA's secure remote access policy has led to greater efficiency for its hybrid and distributed workforce; however, the policy has created a complex delivery model and introduced security concerns. Since end user devices are unmanaged, CompanyA must mitigate security threats against  apps and the data in transit to, in use on, and at rest on the BYO devices.
+CompanyA provides secure remote access for a small subset of its overall user base. End users utilize Bring Your Own (BYO) devices to access internal and cloud resources which include virtual apps/desktops, web and SaaS apps. CompanyA's secure remote access policy has led to greater efficiency for its hybrid and distributed workforce; however, the policy has created a complex delivery model and introduced security concerns. Since end user devices are unmanaged, CompanyA must mitigate security threats against  apps and the data in transit to, in use on, and at rest on the BYO devices.
 
 CompanyA currently uses several unintegrated point products for remote access. It wants to consolidate and expand to a company-wide solution while protecting its resources which include internal web apps. To that end, CompanyA is engaging in an initiative to update its app delivery architecture to implement the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Secure Internet Access, and Citrix Web App Firewall. Together they provide end-to-end protection of CompanyA resources.
 
 This reference architecture explains CompanyA's plan to protect user access, protect data and devices, and protect apps.
 
-**diagram1**
-placeholder
+[![Overview](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_00.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_00.png)
 
 ## Success Criteria
 
@@ -45,6 +38,7 @@ In CompanyA's focus on protecting user access, it has identified the following c
 |  **Success Criteria** | **Description** | **Solution** |
 |---|---|---|
 | Contextual access | Contextual access for web, SaaS, and CVAD using Citrix Secure Workspace Access to determine correct level of access | Citrix Secure Workspace Access |
+| Contextual authentication | Contextual authentication for web, SaaS, and CVAD using Citrix ADC identify if unmanaged devices meet requirments to login | Citrix ADC |
 | End-user monitoring  | Continuous monitoring and continuous assessment to protect against potential threats. Web apps are continously monitored for data exfiltration, abnormal access times and locations.  | Citrix Secure Workspace Access |
 | Personal Mobile Devices | Users can select an endpoint device that fits their usage requirements. These devices are not managed and enrollement is not required, however business related apps and data must be secured. | Citrix Endpoint Management |
 | Personal Privacy | CompanyA must ensure user privacy while still protecting the user and endpoint from potential threats when using unsanctioned websites | Citrix Secure Internet Access with "do not decrypt" policies for sites with personal information |
@@ -56,8 +50,6 @@ In CompanyA's focus on protecting user access, it has identified the following c
 CompanyA, like many companies today, has a highly complex infrastructure of layers of applications, systems, and networks in environments consisting of on-premises data centers, public and private clouds. This sprawl has led to a complicated stack of different tools and technologies for protecting data and devices.
 
 CompanyA is designing a consolidated, cloud-delivered security stack to meet the demands of their modern workplace. By centralizing device and data security policy across the overall solution – it will minimize redundant tasks, remove overlapping policies, and allow IT to protect data and devices across all locations from a centralized dashboard.
-
-CompanyA must protect its data from potential internet threats hidden within emails, applications, and websites regardless of location. Internet protection must extend to all delivery models, including virtual apps/desktops, mobile apps, web apps, and SaaS apps.
 
 In CompanyA's focus on protecting data and devices, it has identified the following user-related criteria for a successful design:
 
@@ -73,7 +65,7 @@ In CompanyA's focus on protecting data and devices, it has identified the follow
 
 ### Protecting Apps
 
-CompanyA is investing in risk mitigation and threat prevention to protect its web apps. The company's use of BYO and unmanaged devices has increased the risk of compromised devices accessing corporate apps. CompanyA has also determined that its attack surface has increased due to the company moving apps to the cloud and using SaaS apps. Its on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
+CompanyA is investing in risk mitigation and threat prevention to protect its web apps. The company's use of BYO devices has increased the risk of compromised devices accessing corporate apps. CompanyA has also determined that its attack surface has increased due to the company moving apps to the cloud and using SaaS apps. Its on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
 
 CompanyA must create a hybrid solution using both on-prem devices and cloud services for application security. On-premises devices will block app-layer and DDoS attacks on-premises, while a cloud-based protection service will prevent volumetric attacks and app-layer DDoS attacks in the cloud.
 
@@ -93,8 +85,8 @@ To be successful, CompanyA must protect and secure its resources while simultane
 
 Based on the preceding requirements, CompanyA created the high-level conceptual architecture below. The general flow and requirements are that end users will require:
 
-*  Protected access to SaaS apps and VPN-less access to internal web apps via Citrix Workspace Access
-*  Contextual authentication before being granted access to external or internal resources via Citrix Workspace Access
+*  Protected access to SaaS apps and VPN-less access to internal web apps via Citrix Secure Workspace Access
+*  Contextual authentication before being granted access to external or internal resources via Citrix Secure Workspace Access
 *  Zero Trust access to specific resources via Citrix Secure Workspace Access
 *  Protected access to internet traffic from the web apps, or vitual apps and desktops via using Citrix Secure Internet Access
 *  Protected access to back end apps accessed from unmananged devices with Citrix Web Application Firewall
@@ -108,31 +100,33 @@ At a high level:
 
 **User Layer**: The user layer describes the end-user environment and endpoint devices used to connect to resources.
 
-*  Regardless of device, users access resources from the Workspace app, resulting in an experience that is protected even on unmanaged devices.
+*  End user devices are BYOD. The device is unmanaged, and CompanyA does not require any agent to be installed on the device.
 
-*  Data within apps on mobile devices will be protected with Citrix Endpoint Management.
+*  End users may install Citrix Workspace App for additional capabilities but are not required to.
+
+*  Regardless of device, users access resources from the Cirtrix Workspace web, resulting in an experience that is protected even on unmanaged devices.
 
 **Access Layer**: The access layer describes how users authenticate to their Workspace and secondary resources.
 
-*  Citrix ADC provides contextual authentication - devices which do not have the Citrix Secure Internet Access agent running will not gain access to authenticate.
-
 *  Citrix Workspace provides the primary authentication broker for all subsequent resources. CompanyA requires multifactor authentication to improve authentication security.
 
-*  Many of the authorized resources within the environment utilize a different set of credentials than those used for the primary Workspace identity. CompanyA will utilize the single sign-on capabilities of each service to protect these secondary identities better. The applications only allow SAML-based authentication for SaaS apps, which prevents users from accessing the SaaS apps directly and bypassing the security policies.
+*  Many of the authorized resources within the environment utilize a different set of credentials than those used for the primary Workspace identity. CompanyA will utilize the single sign-on capabilities of each service to protect these secondary identities better.
+
+*  The applications only allow SAML-based authentication for SaaS apps, which prevents users from accessing the SaaS apps directly and bypassing the security policies.
 
 **Resource Layer**: The resource layer authorizes specific virtualized, SaaS, and web resources for defined users and groups while defining the security policies associated with the resource.
 
-*  To better protect data, CompanyA requires policies that disable the ability to print, download, and copy/paste content from the managed resource to and from the endpoint.
+*  To better protect data, CompanyA requires policies that disable the ability to print, download, and copy/paste content from the managed resource to and from the BYOD endpoint.
 
 *  Due to the unknown nature of the endpoint security status, CompanyA requires VPN-less access to resources using isolated browsers or virtualized sessions.
 
 *  Similarly, due to unknown endpoint security status, CompanyA requires protection against keylogging and screen scraping malware.
 
-*  Since CompanyA allows access to internal web apps from unmanaged devices, Citrix Web App Firewall must protect the resource from attacks coming from potentially compromised endpoints.
+*  Since CompanyA allows access to internal web apps from BYDO devices, Citrix Web App Firewall must protect the resource from attacks coming from potentially compromised endpoints.
 
 **Control Layer**: The control layer defines how the underlying solution adjusts based on the underlying activities of the user.
 
-*  Even within a protected Workspace resource, users can interact with untrusted Internet resources. CompanyA utilizes Secure Internet Access to protect users from external threats from SaaS apps, web apps, virtual apps, mobile apps, and apps on endpoint devices.
+*  Even within a protected Workspace resource, users can interact with untrusted Internet resources. CompanyA utilizes Secure Internet Access to protect users from external threats from SaaS apps, web apps, and virtual apps/desktops.
 
 *  Users might need to access personal items on their unmanaged endpoint devices. Appropriate policies are defined to protect users' privacy when accessing personal sites related to health and finance.
 
@@ -144,25 +138,28 @@ The subsequent sections provide greater detail into specific design decisions fo
 
 ### Authentication
 
-One of the requirements CompanyA has identified is adding a security check before users are presented with the authentication challenge. Allowing integrate identity providers. The process of merging identity providers can take a significant amount of time. With the new strategy.
-
-CompanyA utilizes a Citrix Application Delivery Controller to handle all authentication requests. Citrix ADC provides adaptive authenticaion
+Multifactor authentication for all users is one of the requirements CompanyA has identified. CompanyA will leverage Active Directory + Token for its mulitfactor method and the Citrix Gateway service to handle all authentication requests.
 
 [![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
 
-The authentication process works by the Application Delivery Controller evaluating the user's company and then applying the correct authentication request. As CompanyA has standardized on Okta for primary authentication, the Application Delivery Controller forwards the request to Okta. Once Okta completes user authentication, Okta replies to the Application Delivery Controller with a token identifying successful authentication.
+For many organizations, providing access to application and desktop services with a user name and password does not provide adequate security. Citrix Workspace incorporates a cloud-delivered Time-based One-Time Password (TOTP) providing multifactor authentication by introducing a “something you have”, which is the TOTP token, with the “something you know”, which is the password.
 
-Because strong authentication is a critical first step to security, CompanyA wants to have a solution ready for organizations that are not currently using multifactor authentication. In this instance, after the user authenticates with their Active Directory domain, the Application Delivery Controller uses the native time-based one-time password engine to provide multifactor authentication for the user. Once registered to the user's device, the user can either enter the code manually or use the push notification service. Push notifications simply require the user to select "Yes" from their registered mobile device to fulfill multifactor authentication.
+TOTP generates a random 6 digit code that changes every 30 seconds. This code is based on a secret key that is shared between the user’s mobile app and the backend infrastructure. The secret key is the “something you have” factor for multifactor authentication. To generate the random code, an industry standard, secure-hash algorithm gets applied to the secret key and the current time. To authenticate, the code in the mobile app is compared against the code from the backend infrastructure.
 
-**nFactor Policy**
-For primary authentication, the Citrix Application Delivery Controller plays a critical part. To make the authentication decisions, the Application Delivery Controller utilizes an nFactor policy.
+To register with the TOTP service, each user creates and installs a pre-shared secret key within the authenticator app on a mobile device.
 
-**diagram**
-placeholder
+Once the user successfully registers with the TOTP micro-service, the user must use the token, along with their Active Directory credentials, to successfully authenticate to Citrix Workspace.
 
-The nFactor policy must know to what company the user belongs to process authentication requests properly. Once the correct company identifier is selected, nFactor forwards the request to the correct branch of the authentication policy.
 
-Once the nFactor policy is defined, CompanyA can continue to expand it to incorporate different organizations it acquires in the future. The nFactor policy allows CompanyA to create additional flows utilizing authentication standards that include LDAP, RADIUS, SAML, client certificates, OAuth OpenID Connect, Kerberos, and more. The nFactor policy engine provides CompanyA with the flexibility to continue integrating additional acquisitions without a redesign.
+
+The authentication process works by the Gateway service 
+
+Delivery Controller evaluating the user's company and then applying the correct authentication request. As CompanyA has standardized on Okta for primary authentication, the Application Delivery Controller forwards the request to Okta. Once Okta completes user authentication, Okta replies to the Application Delivery Controller with a token identifying successful authentication.
+
+Refer to the [Citrix Workspace Active Directory with TOTP](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#active-directory-with-totp) Tech Brief to gain adequate knowledge on Active Directory with TOPT concepts and terminology.
+
+
+
 
 **Zero Trust Network Access**
 To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Secure Workspace Access service and the Virtual Apps and Desktops service. These two services utilize a zero trust network access solution, which is a more secure alternative to traditional VPN.
@@ -204,11 +201,12 @@ When users authenticate to Citrix Workspace, they access public-facing web apps.
 [![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)
 
 The first line of defense is Bot Management. Bots can easily crash or slow a public web app by overwhelming the service with fraudulent requests. The bot management component of the Application Delivery Controller detects a bot request and prevents it from inundating the system.
+
 The second line of defense is the Web App Firewall. The Web App Firewall protects public-facing apps from attacks. These types of attacks would typically be buffer overflow, SQL injection, and cross-site scripting. Web App Firewall detects and denies these attacks from impacting the data and the app.
 
 ### Secure Internet Access
 
-As users interact with SaaS, web, virtual, local, and mobile apps, they often access public internet sites. Although CompanyA has an Internet Security Compliance class all users must complete yearly, it has not entirely prevented attacks, most often originating through phishing scams.
+As users interact with SaaS, web, virtual, local, and mobile apps, they often access public internet sites. Although CompanyA has an Internet Security Compliance class that all users must complete yearly, it has not entirely prevented attacks, most often originating through phishing scams.
 
 To help protect the users and the organization, CompanyA incorporates the Secure Internet Access service and Security Analytics into the protecting apps and data on BYO devices design.
 
@@ -218,7 +216,7 @@ Any internet traffic to/from the library of apps, desktops, and devices within t
 
 As many websites are now encrypted, part of this security process is decrypting the traffic and inspecting. CompanyA wants to allow users the flexibility to access personal sites while on company-owned devices. The service will not decrypt specific categories of websites, such as financial and health-related sites, to ensure employee privacy. To have complete transparency, CompanyA plans to make the overall security policy plan available internally.
 
-In designing the internet security policy, CompanyA wanted to start with a baseline policy. As CompanyA continues to assess risks within the organization, they will relax/strengthen the policies as appropriate.
+In designing the internet security policy, CompanyA wanted to start with a baseline policy. As CompanyA continues to assess risks within the organization, it will relax/strengthen the policies as appropriate.
 
 By default, all categories are decrypted and allowed. CompanyA made the following modifications that are applied globally:
 
