@@ -151,8 +151,7 @@ One of the requirements CompanyA has identified is adding a security check befor
 
 CompanyA utilizes a Citrix Application Delivery Controller to handle all authentication requests. Citrix ADC provides adaptive authenticaion
 
-**diagram**
-placeholder
+[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
 
 The authentication process works by the Application Delivery Controller evaluating the user's company and then applying the correct authentication request. As CompanyA has standardized on Okta for primary authentication, the Application Delivery Controller forwards the request to Okta. Once Okta completes user authentication, Okta replies to the Application Delivery Controller with a token identifying successful authentication.
 
@@ -171,8 +170,7 @@ Once the nFactor policy is defined, CompanyA can continue to expand it to incorp
 **Zero Trust Network Access**
 To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Secure Workspace Access service and the Virtual Apps and Desktops service. These two services utilize a zero trust network access solution, which is a more secure alternative to traditional VPN.
 
-**diagram**
-placeholder
+[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
 
 The Secure Workspace Access service and the Virtual Apps and Desktops service use the cloud connectors' outbound control channel connections. Those connections allow the user to access internal resources remotely. However, those connections are:
 
@@ -206,8 +204,7 @@ The App Protection Policies Tech Brief contains additional information regarding
 
 When users authenticate to Citrix Workspace, they access public-facing web apps. To better protect the public web app, CompanyA uses the Citrix Application Delivery Controller solution's Bot Management and Web App Firewall components.
 
-**diagram**
-placeholder
+[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
 
 The first line of defense is Bot Management. Bots can easily crash or slow a public web app by overwhelming the service with fraudulent requests. The bot management component of the Application Delivery Controller detects a bot request and prevents it from inundating the system.
 The second line of defense is the Web App Firewall. The Web App Firewall protects public-facing apps from attacks. These types of attacks would typically be buffer overflow, SQL injection, and cross-site scripting. Web App Firewall detects and denies these attacks from impacting the data and the app.
@@ -215,10 +212,10 @@ The second line of defense is the Web App Firewall. The Web App Firewall protect
 ### Secure Internet Access
 
 As users interact with SaaS, web, virtual, local, and mobile apps, they often access public internet sites. Although CompanyA has an Internet Security Compliance class all users must complete yearly, it has not entirely prevented attacks, most often originating through phishing scams.
+
 To help protect the users and the organization, CompanyA incorporates the Secure Internet Access service and Security Analytics into the flexible work design.
 
-**diagram**
-placeholder
+[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
 
 Any internet traffic to/from the library of apps, desktops, and devices within the organization routes through the Secure Internet Access service. The service scans any URL to verify it is safe. Functionalities within specific public sites are denied or modified. Downloads are automatically scanned and verified.
 
