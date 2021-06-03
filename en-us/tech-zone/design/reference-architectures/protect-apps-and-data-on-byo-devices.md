@@ -25,9 +25,11 @@ This reference architecture explains CompanyA's plan to protect user access, pro
 
 CompanyA has a deep investment in its existing infrastructure and wants to avoid a rip-and-replace approach. The company is concerned about the complexity of replacing everything and losing its existing investments. However, it must build a modern app delivery environment that allows access to and protects its resources.
 
-CompanyA wishes to enable all users to work from home and remote locations. Post pandemic, employees will continue benefiting from a hybrid and BYOD workforce model. Although some users have VPN access to web and SaaS apps, CompanyA has identified several security challenges that prevent a company-wide deployment. Therefore, CompanyA is implementing a VPN-less approach.
+CompanyA wishes to enable all users to work from home and remote locations. Post pandemic, employees will continue benefiting from a hybrid and BYOD workforce model. Although some users currently have VPN access to web and SaaS apps, CompanyA has identified several security challenges that prevent a company-wide deployment. Therefore, CompanyA is implementing a VPN-less approach.
 
-CompanyA does not manage end users's devices and has no way to understand if the devices transfer any malicious content to their application infrastructure. However, CompanyA's security policy does require endpoints to have some agents installed in order to provide secure access to company resources. Consequently, CompanyA has begun a threefold initiative to protect corporate resources accessed by unmanaged devices. To be successful, CompanyA defined a list of success criteria for the initiative. These criteria form the basis for the overarching design.
+CompanyA does not manage end users's devices and has no way to understand if the devices transfer any malicious content to their application infrastructure. CompanyA's security policy does not require endpoints to have agents installed in order to provide secure access to company resources.
+
+Consequently, CompanyA has begun a threefold initiative to protect corporate resources accessed by unmanaged devices. To be successful, CompanyA defined a list of success criteria for the initiative. These criteria form the basis for the overarching design.
 
 ### Protecting User Access
 
