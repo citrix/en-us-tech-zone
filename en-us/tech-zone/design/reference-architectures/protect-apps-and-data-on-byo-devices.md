@@ -210,7 +210,7 @@ The second line of defense is the Web App Firewall. The Web App Firewall protect
 
 As users interact with SaaS, web, virtual, local, and mobile apps, they often access public internet sites. Although CompanyA has an Internet Security Compliance class all users must complete yearly, it has not entirely prevented attacks, most often originating through phishing scams.
 
-To help protect the users and the organization, CompanyA incorporates the Secure Internet Access service and Security Analytics into the flexible work design.
+To help protect the users and the organization, CompanyA incorporates the Secure Internet Access service and Security Analytics into the protecting apps and data on BYO devices design.
 
 [![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_05.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_05.png)
 
