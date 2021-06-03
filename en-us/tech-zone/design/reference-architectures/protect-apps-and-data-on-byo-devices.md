@@ -15,9 +15,9 @@ CompanyA provides secure remote access to a small subset of its overall user bas
 
 CompanyA's secure remote access policy has led to greater efficiency for its hybrid and distributed workforce; however, the policy has created a complex delivery model and introduced security concerns. Since the end user BYO devices are unmanaged, CompanyA must mitigate security threats against apps and the data in transit to, in use on, and at rest on the BYO devices.
 
-CompanyA currently uses several unintegrated point products for remote access. It wants to consolidate and expand to a company-wide solution while protecting its resources. To that end, CompanyA is engaging in an initiative to update its app delivery architecture to implement the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Secure Internet Access, and Citrix Web App and API Protection. Together they provide end-to-end protection of CompanyA resources.
-
 [![Overview](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_00.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_00.png)
+
+CompanyA currently uses several unintegrated point products for remote access. It wants to consolidate and expand to a company-wide solution while protecting its resources. To that end, CompanyA is engaging in an initiative to update its app delivery architecture to implement the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Secure Internet Access, and Citrix Web App and API Protection. Together they provide end-to-end protection of CompanyA resources.
 
 This reference architecture explains CompanyA's plan to protect user access, protect data and devices, and protect apps.
 
