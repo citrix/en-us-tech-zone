@@ -150,6 +150,7 @@ Refer to the [Citrix Workspace Active Directory with TOTP Tech Brief](/en-us/tec
 [![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
 
 ## Zero Trust Network Access
+
 To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Secure Workspace Access service and Virtual Apps and Desktops service. These two services utilize a zero trust network access solution, which is a more secure alternative to traditional VPN.
 
 [![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_03.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_03.png)
