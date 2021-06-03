@@ -189,11 +189,9 @@ As a baseline policy, CompanyA has defined the following policies (with the abil
 
 When users authenticate to Citrix Workspace, they access public-facing web apps. To better protect the on prem public web app, CompanyA uses the Citrix Application Delivery Controller solution's Bot Management and Web App Firewall components.
 
-The first line of defense is Bot Management. Bots can easily crash or slow a public web app by overwhelming the service with fraudulent requests. The bot management component of the Application Delivery Controller detects a bot request and prevents it from inundating the system.
+The bot management component of the Application Delivery Controller detects a bot request and prevents it from inundating the system. The Web App Firewall protects public-facing apps from attacks. These types of attacks would typically be buffer overflow, SQL injection, and cross-site scripting. Web App Firewall detects and denies these attacks from impacting the data and the app.
 
-The second line of defense is the Web App Firewall. The Web App Firewall protects public-facing apps from attacks. These types of attacks would typically be buffer overflow, SQL injection, and cross-site scripting. Web App Firewall detects and denies these attacks from impacting the data and the app.
-
-CompanyA also uses Citrix Web App and API protection service to prevent volumetric attacks and app-layer DDoS attacks against webs apps that are not on prem.
+CompanyA also uses the Citrix Web App and API protection service to prevent volumetric attacks and app-layer DDoS attacks against webs apps that are not on prem.
 
 [![Citrix Web App and API Protection](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)
 
