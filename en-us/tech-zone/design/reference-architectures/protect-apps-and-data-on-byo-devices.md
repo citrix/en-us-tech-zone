@@ -27,9 +27,9 @@ CompanyA has a deep investment in its existing infrastructure and wants to avoid
 
 CompanyA wishes to enable all users to work from home and remote locations. Post pandemic, employees will continue benefiting from a hybrid and BYOD workforce model. Although some users currently have VPN access to web and SaaS apps, CompanyA has identified several security challenges that prevent a company-wide deployment. Therefore, CompanyA is implementing a VPN-less approach.
 
-CompanyA does not manage end users's devices and has no way to understand if the devices transfer any malicious content to their application infrastructure. CompanyA's security policy does not require endpoints to have agents installed in order to provide secure access to company resources.
+CompanyA does not manage end users's devices and has no way to understand if the devices transfer any malicious content to their application infrastructure. Moreover, CompanyA's security policy does not require BYOD endpoints to have agents installed in order to provide access to company resources.
 
-Consequently, CompanyA has begun a threefold initiative to protect corporate resources accessed by unmanaged devices. To be successful, CompanyA defined a list of success criteria for the initiative. These criteria form the basis for the overarching design.
+Consequently, CompanyA has begun a threefold initiative to protect corporate resources accessed by BYOD devices. To be successful, CompanyA defined a list of success criteria for the initiative. These criteria form the basis for the overarching design.
 
 ### Protecting User Access
 
@@ -42,9 +42,7 @@ In CompanyA's focus on protecting user access, it has identified the following c
 |  **Success Criteria** | **Description** | **Solution** |
 |---|---|---|
 | Contextual access | Contextual access for web, SaaS, and CVAD using Citrix Secure Workspace Access to determine correct level of access | Citrix Secure Workspace Access |
-| Contextual authentication | Contextual authentication for web, SaaS, and CVAD using Citrix ADC identify if unmanaged devices meet requirments to login | Citrix ADC |
 | End-user monitoring  | Continuous monitoring and continuous assessment to protect against potential threats. Web apps are continously monitored for data exfiltration, abnormal access times and locations.  | Citrix Secure Workspace Access |
-| Personal Mobile Devices | Users can select an endpoint device that fits their usage requirements. These devices are not managed and enrollement is not required, however business related apps and data must be secured. | Citrix Endpoint Management |
 | Personal Privacy | CompanyA must ensure user privacy while still protecting the user and endpoint from potential threats when using unsanctioned websites | Citrix Secure Internet Access with "do not decrypt" policies for sites with personal information |
 | SaaS App Access | Users must access sanctioned SaaS applications with strong authentication that does not impact the experience | Citrix Secure Workspace Access |
 | Web App Access | Users must be able to access sanctioned internal Web applications on any approved device | Citrix Secure Workspace Access – Zero Trust Network Access |
