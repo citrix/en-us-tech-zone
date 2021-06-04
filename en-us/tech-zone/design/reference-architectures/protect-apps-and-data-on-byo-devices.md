@@ -171,11 +171,11 @@ CompanyA wants to limit the risk of data loss due to an insider threat. Within t
 
 CompanyA has developed prescriptive access models to meet its security requirements:
 
-*  BYO devices **without** Workspace app use Secure Workspace Access to launch a SaaS or web app through an isolated browser using the Secure Browser service. Secure Workspace Access provides SSO and contextual access policies (download, print, copy and paste restrictsions) to web and SaaS apps.
+*  BYO devices **without** Workspace app use Secure Workspace Access to launch a SaaS or web app through an isolated browser using the Secure Browser service. Secure Workspace Access provides SSO and enforces contextual access policies (download, print, copy and paste restrictsions) to web and SaaS apps.
 
-*  BYO devices **with** Workspace app use Secure Workspace Access to  Users access Saas and web apps with a local, containerized browser which creates a connection to the SaaS app or a ZTNA connction to the internal web app. Secure Workspace Access enforces contextual access policies (download, print, copy and paste restrictsions) and app protection policies (screen scraping and key-logger restrictions) to web and SaaS apps.
+*  BYO devices **with** Workspace app use Secure Workspace Access to  Users access Saas and web apps with a local, containerized browser which creates a connection to the SaaS app or a ZTNA connction to the internal web app. Secure Workspace Access provides SSO and enforces contextual access policies (download, print, copy and paste restrictsions) and app protection policies (screen scraping and key-logger restrictions) to web and SaaS apps.
 
-*  Virtual Apps and Desktops are locked down to restrict downloading, printing, and unidirectional and bidirectional copy/paste actions.
+*  When users access virtual apps and desktops, the Virtual Apps and Desktops service provides sso and enforces lockdown policies to restrict downloading, printing, and unidirectional and bidirectional copy/paste actions.
 
 As a baseline policy, CompanyA has defined the following policies (with the ability to relax policies as needed based on user and application).
 
