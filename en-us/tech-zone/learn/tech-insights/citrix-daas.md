@@ -13,6 +13,6 @@ Learn how Citrix Desktop-as-a-Service offerings enable customers to deploy workl
 
 See how using Autoscale and Citrix Policies admins can manage those workloads to reduce cost and secure the deployment while enhancing user experience.
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=IhUhrC0Bu9U):**
+**Watch this video to [learn more](https://www.youtube.com/watch?v=DszXAML-SbQ):**
 
-[![Citrix DaaS](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=IhUhrC0Bu9U)
+[![Citrix DaaS](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=DszXAML-SbQ)
