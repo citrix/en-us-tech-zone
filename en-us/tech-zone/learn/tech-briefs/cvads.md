@@ -32,7 +32,7 @@ Citrix Virtual Apps and Desktop service is cloud and hypervisor agnostic. You av
 Citrix Cloud is deployed in multiple regions worldwide and is designed using industry best practices to achieve a high degree of service availability (you can [read more about current SLA in product documentation](/en-us/citrix-cloud/overview/service-level-agreement.html)). To ensure the best user experience, Citrix Virtual Apps and Desktop service can be deployed with Citrix Gateway service. Citrix Intelligent Traffic Management (ITM) ensures fast and reliable sessions.
 
 In a traditional on-prem environment, customers architect and design the environment to include multiple sites. This ensures end-users can access their applications and desktops even if there is an outage. Because Citrix Cloud is available in multiple points of presence (POPs) around the world, it delivers optimal uptime and eliminates the need for administrators to deploy in multiple sites.
-  
+
 Citrix Gateway service operates with ITM in multiple POPs throughout the world. If for any reason, a POP goes down or if the connectivity is degraded, Citrix ITM responds to subsequent domain name system (DNS) queries from the next closest POP. More information is available [here](/en-us/tech-zone/learn/tech-briefs/gateway-hdxproxy.html).
 
 Citrix Cloud has a global presence. A global footprint enables you to choose a centrally located control plane region to serve your users. You can choose between United States, European Union, or Asia Pacific regions to ensure the best performance. Your published apps and desktops can be hosted in any location worldwide. Policy controls enforce data sovereignty and protect intellectual property.

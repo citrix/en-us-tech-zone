@@ -188,7 +188,7 @@ The following is a list of some of the great features that Citrix brings to bear
 *  Delegated Administration
     *  Granular controls over administrative rights from help desk staff to IT owner
 *  Diagnostics
-    *  Citrix Director utilized to diagnose and resolve user/application issues  
+    *  Citrix Director utilized to diagnose and resolve user/application issues
         1.  Shadow Users
         1.  Send messages to users
         1.  Disconnect/restore desktop and application sessions
