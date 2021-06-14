@@ -36,8 +36,8 @@ The following steps covered in this Guide
 
 1.  A Citrix.com account to download software
 
-      *  Citrix VDA
-      *  Citrix Optimizer
+    *  Citrix VDA
+    *  Citrix Optimizer
 
 ## Windows VM Preparation
 
@@ -122,7 +122,7 @@ The following steps covered in this Guide
 > *Resources*
 >
 > We are using **Microsoft Azure** as a resource location in this scenario. For a full list of supported Hypervisors & Clouds see [Hosts / virtualization resources](/en-us/citrix-virtual-apps-desktops-service/system-requirements.html#hosts--virtualization-resources)
->  
+>
 > *Hosting Connections*
 >
 > The available resources are based on the hosting connections already added in Citrix Studio. See the following article for information on creating [CVAD hosting connections](/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
@@ -141,7 +141,7 @@ The following steps covered in this Guide
 
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_win10-018.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_win10-018.png)
 
-1.  Select **Multi-session OS** for Windows 10 WVD or Operating System as appropriate based on your deployment, click **Next**
+1.  Select **Multi-session OS** for Windows 10 AVD or Operating System as appropriate based on your deployment, click **Next**
 
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_win10-019.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_win10-019.png)
 
@@ -242,7 +242,7 @@ The following steps covered in this Guide
 ## Client Configuration
 
 > **Note**
->  
+>
 > Best practice would be to automate the configuration of the **Citrix Workspace** & **Citrix Files** clients
 
 Once the user has launched the virtual desktop & logged in they are able to carry out the following tasks
