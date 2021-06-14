@@ -228,7 +228,7 @@ Admins can use the **Troubleshoot and Support** section in the right side menu t
 We provide options for different issue scenarios:
 
 ![TroubleShoot_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_19-troubleshoot-ss.png)
- 
+
 In case the admin runs into an issue with the setup, the admin can use a machine called a Bastion host, to troubleshoot the issue. The Bastion host has tools preloaded on it. The Bastion host can be created in the resource location (for machine creation issues). Or the admin can RDP into the machine in question (if it’s a session launch issue) to resolve it.
 
 Watch this video to see Citrix Virtual Apps and Desktops Standard for Azure in action: [Tech Insight Video](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html)
