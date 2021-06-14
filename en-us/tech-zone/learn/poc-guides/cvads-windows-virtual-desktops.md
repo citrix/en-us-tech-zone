@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Mayank Singh
-description: Learn how to deliver Windows Virtual Desktop (WVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the WVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
+description: Learn how to deliver Windows Virtual Desktop (AVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the AVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
 tz_title: Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid
 tz_products: citrix-virtual-apps-and-desktops;
 ---
@@ -18,7 +18,7 @@ Microsoft announced the general availability of Windows Virtual Desktop on 30th 
 
 ## Scope
 
-In this PoC guide, you experience the role of a Citrix Cloud and Microsoft Azure administrator and create a hybrid environment that spans your organization’s on-premises deployment and Azure. You provide access to a virtualization environment consisting of the Windows 10 Multi-Session experience in Windows Virtual Desktop (WVD) and on-premises resources to an end user with Citrix Virtual Apps and Desktops service.
+In this PoC guide, you experience the role of a Citrix Cloud and Microsoft Azure administrator and create a hybrid environment that spans your organization’s on-premises deployment and Azure. You provide access to a virtualization environment consisting of the Windows 10 Multi-Session experience in Windows Virtual Desktop (AVD) and on-premises resources to an end user with Citrix Virtual Apps and Desktops service.
 
 This guide showcases how to perform the following actions:
 
@@ -29,14 +29,14 @@ This guide showcases how to perform the following actions:
 5.  Request a Citrix Virtual Apps and Desktops service trial
 6.  Create a Citrix Virtual Apps and Desktops service account (Citrix Cloud account) and add the Azure tenant as a Resource Location
 7.  Create a Windows Server VM and install the Citrix Cloud Connector in your Azure resource location
-8.  Prepare the Windows Virtual Desktop template for the session host virtual machines (VMs). Install the Citrix Virtual Delivery Agent on the WVD VM
+8.  Prepare the Windows Virtual Desktop template for the session host virtual machines (VMs). Install the Citrix Virtual Delivery Agent on the AVD VM
 9.  Utilize your Citrix Virtual Apps and Desktops service account (Citrix Cloud account) to connect to your Azure subscription using the Citrix Cloud Connector
 10.  Use Citrix Machine Creation Services for deploying a catalog and then create a delivery group
 11.  Create a Windows Server VM and install the Citrix Cloud Connector in on-premises Resource Location and add it as a resource location
 12.  Utilize your Citrix Virtual Apps and Desktops service account (Citrix Cloud account) to connect to your on-premises resources using the Citrix Cloud Connector
-13.  Let your users connect to the WVD or on premises sessions via Citrix Workspace
+13.  Let your users connect to the AVD or on premises sessions via Citrix Workspace
 
-There is a requirement from Microsoft that the WVD session hosts must be joined to a Windows Active Directory (AD) domain that has been synchronized with either Azure AD using Azure AD Connect or with Azure AD Domain Services. This would require you to connect your on-premises Active Directory to your organization’s Azure subscription. This is out-of-scope for this guide but if you are also a Citrix Networking or Citrix SD-WAN customer then you can use [Site-to-Site VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal) with [Citrix ADC](/en-us/citrix-adc/current-release/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) (which requires a public IP) or [Citrix SD-WAN](/en-us/citrix-sd-wan-center/11-2/azure-virtual-wan.html). The two preceding options are creating IPsec tunnels between your on-premises environment and the WVD network in Azure.
+There is a requirement from Microsoft that the AVD session hosts must be joined to a Windows Active Directory (AD) domain that has been synchronized with either Azure AD using Azure AD Connect or with Azure AD Domain Services. This would require you to connect your on-premises Active Directory to your organization’s Azure subscription. This is out-of-scope for this guide but if you are also a Citrix Networking or Citrix SD-WAN customer then you can use [Site-to-Site VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal) with [Citrix ADC](/en-us/citrix-adc/current-release/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) (which requires a public IP) or [Citrix SD-WAN](/en-us/citrix-sd-wan-center/11-2/azure-virtual-wan.html). The two preceding options are creating IPsec tunnels between your on-premises environment and the AVD network in Azure.
 
 If you are looking for a solution that does much more than just set-up a link between these 2 locations, then we suggest considering creating an end to end SDWAN solution. The main advantages this gives you are integrated security, orchestration, and policy based configuration. SDWAN has further benefits:
 
@@ -55,7 +55,7 @@ To set up an end to end SDWAN solution you can follow these guides:
 
 [Express route](https://azure.microsoft.com/en-in/services/expressroute/) or [Point-to-Site VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal) which doesn’t require a public IP are other options to establish the connectivity.
 
-This guide provides detailed instructions on how to deploy and configure your environment including VMs, connecting your AD to Azure AD. As a Citrix and Azure tenant administrator, you create the WVD environment to enable your users to test various scenarios that showcase Citrix Virtual Apps and Desktops service and Windows Virtual Desktop integration.
+This guide provides detailed instructions on how to deploy and configure your environment including VMs, connecting your AD to Azure AD. As a Citrix and Azure tenant administrator, you create the AVD environment to enable your users to test various scenarios that showcase Citrix Virtual Apps and Desktops service and Windows Virtual Desktop integration.
 
 ## Create an Azure Subscription and an Azure Active Directory Tenant
 
@@ -161,7 +161,7 @@ If you are an existing Microsoft O365 customer you should already have an Azure 
 
     ![Master Image - Win10 select](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_26.png)
 
-1.  Select the appropriate **Subscription** and the **Resource group** created for WVD to deploy the machine in. Provide a **name** for the **Master Image VM**. Choose the same **region as the AD VM**. Enter the **credentials for the administrator account**. Click **Next: Disks**
+1.  Select the appropriate **Subscription** and the **Resource group** created for AVD to deploy the machine in. Provide a **name** for the **Master Image VM**. Choose the same **region as the AD VM**. Enter the **credentials for the administrator account**. Click **Next: Disks**
 
     ![Master Image - Basics](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_27.png)
 
@@ -200,7 +200,7 @@ Select **IP Address** as Source, enter the **Public IP Address of the machine** 
 
     ![Cloud Connector - Create](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_34.png)
 
-1.  Select the appropriate **Subscription** and the **Resource group** created for WVD to deploy the machine in. Provide a **name for the Cloud connector VM**. Choose the **same region as the AD** VM. Enter the **credentials for the administrator account**. Click **Next: Disks**
+1.  Select the appropriate **Subscription** and the **Resource group** created for AVD to deploy the machine in. Provide a **name for the Cloud connector VM**. Choose the **same region as the AD** VM. Enter the **credentials for the administrator account**. Click **Next: Disks**
 
     ![Cloud Connector - Basics](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_35.png)
 
@@ -232,7 +232,7 @@ Select **IP Address** as Source, enter the **Public IP Address of the machine** 
 
     ![Cloud Connector - NW Security Group Select](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_42.png)
 
-1.  Select the **Network Security group** of your WVD VM as it already has the port rules to allow access to your machine. Click **Save** *
+1.  Select the **Network Security group** of your AVD VM as it already has the port rules to allow access to your machine. Click **Save** *
 
     ![Cloud Connector - NW Security Group Set](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_43.png)
 
@@ -333,11 +333,11 @@ If the test fails, check the following link to resolve the issue - [CTX224133](h
 
     ![Cloud Trail - Submit](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_65.png)
 
-## Install Virtual Delivery Agent on the WVD host VM
+## Install Virtual Delivery Agent on the AVD host VM
 
 While we wait, we can install the Citrix Virtual Apps and Desktops, Virtual Delivery Agent on the Windows 10 Multiuser VM that we created.
 
-1.  Connect to the **WVD VM via RDP as the domain admin**
+1.  Connect to the **AVD VM via RDP as the domain admin**
 
     ![VDA Install - RDP](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_66.png)
 
@@ -470,11 +470,11 @@ Configure Citrix Virtual Apps and Desktops service to connect to the Azure Subsc
 
     ![Catalog and DG - Power Mgmt & MCS](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_96.png)
 
-1.  Choose the correct **disk that is associated with the WVD VM**. From the minimum functional level drop-down **select 1811 (or newer)**. Click **Next**. A pop-up appears to ask for the VM attached to the VHD to be stopped.
+1.  Choose the correct **disk that is associated with the AVD VM**. From the minimum functional level drop-down **select 1811 (or newer)**. Click **Next**. A pop-up appears to ask for the VM attached to the VHD to be stopped.
 
     ![Catalog and DG - Master Image & Functional Level](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_97.png)
 
-1.  **Log in to the Azure portal** and Under **Virtual Machines**, go to the **WVD VM** and Click the **Stop** button.
+1.  **Log in to the Azure portal** and Under **Virtual Machines**, go to the **AVD VM** and Click the **Stop** button.
 Ignore the warning about losing the Public IP. Wait for **status to show Stopped (deallocated)**. Return to the **Citrix Cloud tab** and click **Close**
 
     ![Catalog and DG - Stop VM](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_98.png)
@@ -523,7 +523,7 @@ Ignore the warning about losing the Public IP. Wait for **status to show Stopped
 
     ![Catalog and DG - Create DG](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_109.png)
 
-1.  Select the **WVD Catalog**. **Increment the number of machines** to the number of VMS you want to add to the delivery group. Click **Next**
+1.  Select the **AVD Catalog**. **Increment the number of machines** to the number of VMS you want to add to the delivery group. Click **Next**
 
     ![Catalog and DG - Select machines](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_110.png)
 
