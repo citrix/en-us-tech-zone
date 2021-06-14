@@ -24,7 +24,7 @@ To determine the performance, we used LoginVSI 4.1.32.1, which creates simulated
 
 The number of users successfully completing the multi-session test provides a key performance indicator under real-world conditions. This value, referred to as the VSImax session count, is used for the comparative analysis. The Login VSI workloads calculate the VSImax session count by observing the response time of a single user on the system. VSImax is reached when the response time has diminished significantly below the expected threshold which was derived from the baseline value taken with only a single user on the system.
 
-To provide conservative numbers which can be replicated consistently without specialized knowledge, all results here reflect test execution using default Citrix policies and unoptimized default settings for Windows and Office products. Both performance and density can be improved by applying Citrix optimization tools such as the [Citrix WEM](/en-us/workspace-environment-management/current-release.html) and [Citrix Optimizer](https://support.citrix.com/article/CTX224676).  
+To provide conservative numbers which can be replicated consistently without specialized knowledge, all results here reflect test execution using default Citrix policies and unoptimized default settings for Windows and Office products. Both performance and density can be improved by applying Citrix optimization tools such as the [Citrix WEM](/en-us/workspace-environment-management/current-release.html) and [Citrix Optimizer](https://support.citrix.com/article/CTX224676).
 
 ## What is the most efficient instance series?
 

@@ -15,7 +15,7 @@ Citrix Virtual Apps and Desktop service (CVADs) enables you to securely deliver 
 
 Users get flexibility and consistency. They are no longer tied to a specific endpoint.
 
-IT gets benefits from this hybrid cloud offering as well. First, you get data security and IP protection since your workloads are hosted and managed by you. You can deploy and manage desktops and applications from Citrix Cloud services, even if all workloads are hosted on-premises. Our set of admin tools enables you to deploy to cloud and on-prem locations as your implementation evolves. You can conveniently host apps depending upon use cases. What’s more, you can move to the cloud as it suits your business needs.  
+IT gets benefits from this hybrid cloud offering as well. First, you get data security and IP protection since your workloads are hosted and managed by you. You can deploy and manage desktops and applications from Citrix Cloud services, even if all workloads are hosted on-premises. Our set of admin tools enables you to deploy to cloud and on-prem locations as your implementation evolves. You can conveniently host apps depending upon use cases. What’s more, you can move to the cloud as it suits your business needs.
 
 Many on-premises Virtual Apps and Desktop environments are outdated because administrators don’t have the time to manually address patches and upgrades. Not only do outdated environments degrade the user experience, but also, they pose security threats to your organization. Citrix Virtual Apps and Desktops service enables you to maintain complete control over your applications, policies, and users. But you offload control plane maintenance, patching, and upgrades to Citrix. This ensures your environment is always up to date.
 

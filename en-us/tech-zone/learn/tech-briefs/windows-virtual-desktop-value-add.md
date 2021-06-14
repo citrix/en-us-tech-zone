@@ -173,7 +173,7 @@ The following is a list of some of the great features that Citrix brings to bear
 *  Full featured integrated monitoring, alerting, and help desk support console
 *  Real time Session Details with drill-down for support actions
     *  Task Manager, process management, latency, user-perceived interaction latency, applied policy set, granular virtual channel status, client details, remoting protocol inspection, and so on.
-*  Always on monitoring of  
+*  Always on monitoring of
     *  User Logons
     *  Connection Failures
     *  Server Resources
