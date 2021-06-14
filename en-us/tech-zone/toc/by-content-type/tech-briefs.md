@@ -54,7 +54,7 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 [Citrix Virtual Apps and Desktops service](/en-us/tech-zone/learn/tech-briefs/cvads.html) - Learn how Citrix Virtual Apps and Desktop service enables you to deliver virtual apps and desktops to your end users, while offloading the management plane to Citrix Cloud ensuring your environment is always up to date.
 
-[Enhancing Windows Virtual Desktop](/en-us/tech-zone/learn/tech-briefs/windows-virtual-desktop-value-add.html) - Learn about the value add Citrix provides to your Windows Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service provides a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user experience and enhancing the security posture of our deployment.
+[Enhancing Azure Virtual Desktop](/en-us/tech-zone/learn/tech-briefs/windows-virtual-desktop-value-add.html) - Learn about the value add Citrix provides to your Azure Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service provides a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user experience and enhancing the security posture of our deployment.
 
 [Local Host Cache / High Availability mode for Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/learn/tech-briefs/local-host-cache-ha-cvads.html) - Inside view on how Local Host Cache (LHC) works with Citrix Virtual Apps and Desktops Service. Learn how the different components of LHC come into play to keep you in control of your uptimes.
 
@@ -62,7 +62,7 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 ## Citrix Virtual Apps and Desktops Standard for Azure
 
-[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
+[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Azure Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
 
 ## Citrix Workspace
 

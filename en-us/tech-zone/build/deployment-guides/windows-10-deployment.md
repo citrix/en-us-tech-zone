@@ -141,7 +141,7 @@ The following steps covered in this Guide
 
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_win10-018.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_win10-018.png)
 
-1.  Select **Multi-session OS** for Windows 10 WVD or Operating System as appropriate based on your deployment, click **Next**
+1.  Select **Multi-session OS** for Windows 10 AVD or Operating System as appropriate based on your deployment, click **Next**
 
     [![Azure VM](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_win10-019.png)](/en-us/tech-zone/build/media/deployment-guides_windows-10-deployment_win10-019.png)
 
