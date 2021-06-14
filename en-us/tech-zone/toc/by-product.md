@@ -289,7 +289,7 @@ Tech Briefs are short overview documents explaining a technology, a feature, a f
 
 [Citrix Virtual Apps and Desktops service](/en-us/tech-zone/learn/tech-briefs/cvads.html) - Learn how Citrix Virtual Apps and Desktop service enables you to deliver virtual apps and desktops to your end users, while offloading the management plane to Citrix Cloud ensuring your environment is always up to date.
 
-[Enhancing Windows Virtual Desktop](/en-us/tech-zone/learn/tech-briefs/windows-virtual-desktop-value-add.html) - Learn about the value add Citrix provides to your Windows Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service provides a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user experience and enhancing the security posture of our deployment.
+[Enhancing Azure Virtual Desktop](/en-us/tech-zone/learn/tech-briefs/windows-virtual-desktop-value-add.html) - Learn about the value add Citrix provides to your Azure Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service provides a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user experience and enhancing the security posture of our deployment.
 
 [Local Host Cache / High Availability mode for Citrix Virtual Apps and Desktops Service](/en-us/tech-zone/learn/tech-briefs/local-host-cache-ha-cvads.html) - Inside view on how Local Host Cache (LHC) works with Citrix Virtual Apps and Desktops Service. Learn how the different components of LHC come into play to keep you in control of your uptimes.
 
@@ -301,7 +301,7 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 [Automated Configuration Tool](/en-us/tech-zone/learn/poc-guides/citrix-automated-configuration.html) - This Proof of Concept guide provides instructions on using an Automated Configuration tool to automate moving your Citrix Virtual Apps and Desktops configuration to your Citrix Virtual Apps and Desktops Service deployment. The tool also supports the use case of moving your configuration between Citrix Virtual Apps and Desktops Service deployments.
 
-[Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Windows Virtual Desktop (AVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the AVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
+[Citrix Virtual Apps and Desktops with Azure Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Azure Virtual Desktop (AVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the AVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
 
 [Getting Started with Citrix Virtual Apps and Desktop Service](/en-us/tech-zone/learn/poc-guides/cvads.html) - Learn how to get started with Citrix Virtual Apps and Desktop Service to deliver virtual apps and desktops to your end users while having the management plane hosted on Citrix Cloud.
 
@@ -405,13 +405,13 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 [Citrix Desktop-as-a-Service (DaaS)](/en-us/tech-zone/learn/tech-insights/citrix-daas.html) - Learn how Citrix Desktop-as-a-Service (DaaS) offerings enable customers to deploy workloads in the cloud within minutes.
 
-[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html) - Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Windows Virtual Desktop in Microsoft Azure.
+[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html) - Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Azure Virtual Desktop in Microsoft Azure.
 
 ### Learn - Tech Briefs
 
 Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
 
-[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
+[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Azure Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
 
 ### Design - Reference Architectures
 

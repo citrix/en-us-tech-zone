@@ -2,23 +2,23 @@
 layout: doc
 h3InToc: true
 contributedBy: Mayank Singh
-description: Learn how to deliver Windows Virtual Desktop (AVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the AVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
-tz_title: Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid
+description: Learn how to deliver Azure Virtual Desktop (AVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the AVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
+tz_title: Citrix Virtual Apps and Desktops with Azure Virtual Desktop Hybrid
 tz_products: citrix-virtual-apps-and-desktops;
 ---
-# PoC Guide: Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid
+# PoC Guide: Citrix Virtual Apps and Desktops with Azure Virtual Desktop Hybrid
 
 ## Overview
 
-Microsoft announced the general availability of Windows Virtual Desktop on 30th Sept 2019. This proof of concept (PoC) guide is designed to help you quickly configure Citrix Virtual Apps and Desktops service with Windows Virtual Desktop for a trial evaluation only, in a hybrid environment. At the end of this PoC guide you will be able to bridge your on-premises Citrix Virtual Apps and Desktops deployment with a Microsoft Azure subscription using Citrix Virtual Apps and Desktops service. You will be able to let your users launch a Windows Virtual Desktop virtual app or desktop utilizing the new Windows 10 Multi-Session experience, while also accessing on-premises resources.
+Microsoft announced the general availability of Azure Virtual Desktop on 30th Sept 2019. This proof of concept (PoC) guide is designed to help you quickly configure Citrix Virtual Apps and Desktops service with Azure Virtual Desktop for a trial evaluation only, in a hybrid environment. At the end of this PoC guide you will be able to bridge your on-premises Citrix Virtual Apps and Desktops deployment with a Microsoft Azure subscription using Citrix Virtual Apps and Desktops service. You will be able to let your users launch a Azure Virtual Desktop virtual app or desktop utilizing the new Windows 10 Multi-Session experience, while also accessing on-premises resources.
 
 ## Conceptual Architecture
 
-[![Citrix Virtual Apps and Desktops Service with Windows Virtual Desktop Architecture](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_2.png)](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_2.png)
+[![Citrix Virtual Apps and Desktops Service with Azure Virtual Desktop Architecture](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_2.png)](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_2.png)
 
 ## Scope
 
-In this PoC guide, you experience the role of a Citrix Cloud and Microsoft Azure administrator and create a hybrid environment that spans your organization’s on-premises deployment and Azure. You provide access to a virtualization environment consisting of the Windows 10 Multi-Session experience in Windows Virtual Desktop (AVD) and on-premises resources to an end user with Citrix Virtual Apps and Desktops service.
+In this PoC guide, you experience the role of a Citrix Cloud and Microsoft Azure administrator and create a hybrid environment that spans your organization’s on-premises deployment and Azure. You provide access to a virtualization environment consisting of the Windows 10 Multi-Session experience in Azure Virtual Desktop (AVD) and on-premises resources to an end user with Citrix Virtual Apps and Desktops service.
 
 This guide showcases how to perform the following actions:
 
@@ -29,7 +29,7 @@ This guide showcases how to perform the following actions:
 5.  Request a Citrix Virtual Apps and Desktops service trial
 6.  Create a Citrix Virtual Apps and Desktops service account (Citrix Cloud account) and add the Azure tenant as a Resource Location
 7.  Create a Windows Server VM and install the Citrix Cloud Connector in your Azure resource location
-8.  Prepare the Windows Virtual Desktop template for the session host virtual machines (VMs). Install the Citrix Virtual Delivery Agent on the AVD VM
+8.  Prepare the Azure Virtual Desktop template for the session host virtual machines (VMs). Install the Citrix Virtual Delivery Agent on the AVD VM
 9.  Utilize your Citrix Virtual Apps and Desktops service account (Citrix Cloud account) to connect to your Azure subscription using the Citrix Cloud Connector
 10.  Use Citrix Machine Creation Services for deploying a catalog and then create a delivery group
 11.  Create a Windows Server VM and install the Citrix Cloud Connector in on-premises Resource Location and add it as a resource location
@@ -55,7 +55,7 @@ To set up an end to end SDWAN solution you can follow these guides:
 
 [Express route](https://azure.microsoft.com/en-in/services/expressroute/) or [Point-to-Site VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal) which doesn’t require a public IP are other options to establish the connectivity.
 
-This guide provides detailed instructions on how to deploy and configure your environment including VMs, connecting your AD to Azure AD. As a Citrix and Azure tenant administrator, you create the AVD environment to enable your users to test various scenarios that showcase Citrix Virtual Apps and Desktops service and Windows Virtual Desktop integration.
+This guide provides detailed instructions on how to deploy and configure your environment including VMs, connecting your AD to Azure AD. As a Citrix and Azure tenant administrator, you create the AVD environment to enable your users to test various scenarios that showcase Citrix Virtual Apps and Desktops service and Azure Virtual Desktop integration.
 
 ## Create an Azure Subscription and an Azure Active Directory Tenant
 
@@ -329,7 +329,7 @@ If the test fails, check the following link to resolve the issue - [CTX224133](h
 
     ![Cloud Trail - Request call](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_64.png)
 
-1.  **Enter your details** and in Comments section specify **“Windows Virtual Desktop Trial”**. Click **Submit**
+1.  **Enter your details** and in Comments section specify **“Azure Virtual Desktop Trial”**. Click **Submit**
 
     ![Cloud Trail - Submit](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_65.png)
 
@@ -405,7 +405,7 @@ While we wait, we can install the Citrix Virtual Apps and Desktops, Virtual Deli
 
 ## Create a hosting connection between Citrix Virtual Apps and Desktops and Azure
 
-Configure Citrix Virtual Apps and Desktops service to connect to the Azure Subscription that hosts the Windows Virtual Desktop VMs.
+Configure Citrix Virtual Apps and Desktops service to connect to the Azure Subscription that hosts the Azure Virtual Desktop VMs.
 
 1.  Once the trial is approved, **Log in to Citrix Cloud** from your local machine. Scroll to **My Services**, and locate **Virtual Apps and Desktops** service tile, click **Manage**
 
@@ -589,12 +589,12 @@ If you want to add your on-premises resources to the Workspace follow the below 
 
     ![Launch Session - Click desktop](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_123.png)
 
-1.  The session should launch giving you access to the Windows Virtual Desktop
+1.  The session should launch giving you access to the Azure Virtual Desktop
 
     ![Launch Session - Launch](/en-us/tech-zone/learn/media/poc-guides_cvads-windows-virtual-desktops_124.png)
 
 ## Summary
 
-The guide walked you through bringing your Azure hosted Windows Virtual Desktop and on premises resources (using Workspace Configuration) together, so users access them in one place. You learned how to create a hybrid setup to manage both Windows Virtual Desktops based VMs and on premises based resources using Citrix VIrtual Apps and Desktops. The process included creating a network conneciton between the Azure virtual network and your on premises data center. Also you learned how to synchronize your on premises Active Directory with Azure Active Directory with Azure AD connect. We even looked at how to create a Citrix Cloud account, if you didn't have one and get access to Citrix Virtual Apps and Desktops service, which makes all this work.
+The guide walked you through bringing your Azure hosted Azure Virtual Desktop and on premises resources (using Workspace Configuration) together, so users access them in one place. You learned how to create a hybrid setup to manage both Azure Virtual Desktops based VMs and on premises based resources using Citrix VIrtual Apps and Desktops. The process included creating a network conneciton between the Azure virtual network and your on premises data center. Also you learned how to synchronize your on premises Active Directory with Azure Active Directory with Azure AD connect. We even looked at how to create a Citrix Cloud account, if you didn't have one and get access to Citrix Virtual Apps and Desktops service, which makes all this work.
 
 To learn more about migrating your on premises Citrix Virtual Apps and Desktops setup to the cloud, read the [deployment guide](/en-us/tech-zone/build/deployment-guides/cvads-migration.html)

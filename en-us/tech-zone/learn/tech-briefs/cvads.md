@@ -61,9 +61,9 @@ You can enable the following user layers:
 
 Find more information on user layers [here](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html).
 
-### Microsoft Windows Virtual Desktop (AVD) in Azure
+### Microsoft Azure Virtual Desktop (AVD) in Azure
 
-If maximizing Microsoft entitlements is your goal, Citrix extends the Microsoft Windows Virtual Desktop platform with enhancements targeted at experience, security, and choice. Windows Virtual Desktop (AVD) includes new multi-user Windows 10 capabilities. End-users get a familiar Windows 10 experience, and IT can still take advantage of the scalability of a multi-user operating system (OS). Citrix administrators can use Windows Virtual Desktop while using Citrix’s robust management tools, optimized HDX, and networking capabilities. The long-standing Citrix partnership with Microsoft affords cost-effective ways for customers to shift capacity into the cloud. Technologies like Citrix Autoscale enable cost savings by balancing workloads between fixed-capacity data centers and consumption-based flexible clouds. Autoscale is designed to automate management of virtual machines in a Citrix environment to reduce cost. You can find more information on Autoscale [here](/en-us/tech-zone/learn/tech-briefs/autoscale.html).
+If maximizing Microsoft entitlements is your goal, Citrix extends the Microsoft Azure Virtual Desktop platform with enhancements targeted at experience, security, and choice. Azure Virtual Desktop (AVD) includes new multi-user Windows 10 capabilities. End-users get a familiar Windows 10 experience, and IT can still take advantage of the scalability of a multi-user operating system (OS). Citrix administrators can use Azure Virtual Desktop while using Citrix’s robust management tools, optimized HDX, and networking capabilities. The long-standing Citrix partnership with Microsoft affords cost-effective ways for customers to shift capacity into the cloud. Technologies like Citrix Autoscale enable cost savings by balancing workloads between fixed-capacity data centers and consumption-based flexible clouds. Autoscale is designed to automate management of virtual machines in a Citrix environment to reduce cost. You can find more information on Autoscale [here](/en-us/tech-zone/learn/tech-briefs/autoscale.html).
 
 ### Agility for Business Continuity and Disaster Recovery
 
@@ -218,5 +218,5 @@ Take an in-depth look at evaluating VDI Models [here](/en-us/tech-zone/design/de
 There are multiple Proof of Concept (PoC) guides available that can help you get started with Citrix Virtual Apps and Desktops service:
 
 -  [Getting Started with Citrix Virtual Apps and Desktop service](/en-us/tech-zone/learn/poc-guides/cvads.html)
--  [Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html)
+-  [Citrix Virtual Apps and Desktops with Azure Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html)
 -  [Remote PC Access with Citrix Virtual Desktop service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html)

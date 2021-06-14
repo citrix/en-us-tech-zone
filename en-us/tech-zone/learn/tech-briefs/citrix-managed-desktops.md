@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Mayank Singh
 specialThanksTo: Kireeti Valicherla, Swaroop Joseph Varghese, Alan Goldman
-description: Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
+description: Delivers Windows apps and desktops from Microsoft Azure based on Azure Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
 tz_title: Citrix Virtual Apps and Desktops Standard for Azure
 tz_products: citrix-virtual-apps-and-desktops-standard-for-azure;
 ---

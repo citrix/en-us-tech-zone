@@ -12,7 +12,7 @@ The Tech Zone Live event has something for everyone.  We've broken down the next
 
 1.  Secure Access Service Edge (SASE)
 2.  Desktops-as-a-Service (DaaS)
-3.  Windows Virtual Desktops (AVD)
+3.  Azure Virtual Desktops (AVD)
 
 In each hour long segment, we break it down into three distinct levels of knowledge
 

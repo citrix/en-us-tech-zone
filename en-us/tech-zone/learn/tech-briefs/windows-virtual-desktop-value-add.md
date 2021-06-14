@@ -3,25 +3,25 @@ layout: doc
 h3InToc: true
 contributedBy: Mayank Singh
 specialThanksTo: Daniel Feller, Rob Beekmans, Loay Shbeilat
-description: Learn about the value add Citrix provides to your Windows Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service provides a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user experience and enhancing the security posture of our deployment.
-tz_title: Enhancing Windows Virtual Desktop
+description: Learn about the value add Citrix provides to your Azure Virtual Desktop environment running in Microsoft Azure. Citrix Virtual Apps and Desktops service provides a cloud-based management, provisioning, and capacity management solution for delivering virtual apps and desktops to any device. See how cost savings can be achieved while delivering a superlative user experience and enhancing the security posture of our deployment.
+tz_title: Enhancing Azure Virtual Desktop
 tz_products: citrix-virtual-apps-and-desktops;
 ---
-# Tech Brief: Enhancing Windows Virtual Desktop
+# Tech Brief: Enhancing Azure Virtual Desktop
 
 ## Overview
 
-Windows Virtual Desktop (AVD) is a platform in Microsoft Azure to host and manage virtual machines. It is not just a set of operating systems that can be run in Azure but a set of services that can be used to deliver the virtual desktops to users. Staying true to Citrix’s track record, our solutions add unique value to this platform. The Citrix Virtual Apps and Desktops service allows our customers to deploy hybrid-cloud environments, making the most of their on-premises investments while embracing new cloud technologies like Windows Virtual Desktop in Azure
+Azure Virtual Desktop (AVD) is a platform in Microsoft Azure to host and manage virtual machines. It is not just a set of operating systems that can be run in Azure but a set of services that can be used to deliver the virtual desktops to users. Staying true to Citrix’s track record, our solutions add unique value to this platform. The Citrix Virtual Apps and Desktops service allows our customers to deploy hybrid-cloud environments, making the most of their on-premises investments while embracing new cloud technologies like Azure Virtual Desktop in Azure
 
 Let us first look at the AVD architecture:
 
-[![Windows Virtual Desktop architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_1-wvd-architecture.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_1-wvd-architecture.png)
+[![Azure Virtual Desktop architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_1-wvd-architecture.png)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_1-wvd-architecture.png)
 
 It consists of the core level compute, networking, and storage that makes up the physical infrastructure that the Azure cloud runs on (managed by Microsoft). Then there are the virtual machines that run on the cloud hardware – Windows single session and multi-session desktops / server OS machines and remote apps. And the shared storage exposed to the machines like Azure Files and Azure AD and related services. The customer manages their Azure subscription. And finally, the services that run to manage and provide access to the desktops and applications.
 
 For organizations to utilize the value add that Citrix provides, the bottom two layers of the AVD platform are retained. Citrix virtualization cloud services including Citrix Virtual Apps and Desktops (CVAD) service or Citrix Virtual Apps and Desktops Standard for Azure (CVAD Standard) service replace the top layer.
 
-[![Windows Virtual Desktop Citrix Value Add architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.gif)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.gif)
+[![Azure Virtual Desktop Citrix Value Add architecture](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.gif)](/en-us/tech-zone/learn/media/tech-briefs_windows-virtual-desktop-value-add_2-wvd-architecture-citrix-value-add.gif)
 
 The on-premises data center resources are now included in the deployment and Remote PC Access enables connectivity to physical machines from the same environment / leveraging existing security. CVAD service unifies external access and identity management.
 
@@ -29,7 +29,7 @@ The Citrix value add is tabulated in the following table:
 
 |   |Theme   |Feature   |Value Add   |
 |---|---|---|---|
-| 1  | Choice / Management  | [Hybrid Platform Management](#hybrid-cloud-management)  | Consume Windows Virtual Desktop as needed (burst capacity, migration to cloud, Disaster Recovery / Business Continuity, and more) while continuing to manage on-premises workloads from a single management plane. Remote PC Access is also managed and secured similarly from the same console. Support of Non-domain joined users.  |
+| 1  | Choice / Management  | [Hybrid Platform Management](#hybrid-cloud-management)  | Consume Azure Virtual Desktop as needed (burst capacity, migration to cloud, Disaster Recovery / Business Continuity, and more) while continuing to manage on-premises workloads from a single management plane. Remote PC Access is also managed and secured similarly from the same console. Support of Non-domain joined users.  |
 | 2  | Choice / Management  | [Provisioning](#image-management-and-brokering)  | Automated GUI based provisioning with versioning and rollback support. Autoscale helps reduce compute cost in the cloud. Machine Creation Services including MCS I/O optimization and On Demand Provisioning, reduce premium disk costs. Zone preference helps with identifying on-prem or reserved instances to be used ahead of pay-as-you-go instances.  |
 | 3  | Choice / Management  | [Director / Monitoring and Citrix Analytics](#choice---monitoring-and-analytics) | A user centric monitoring system that helps pinpoint and resolve user/application issues (Shadows user session, send messages, disconnect / logoff sessions, logon duration drill-down) from one place. Also adding alerting (Session / app launch failures, resource consumption, and predictive analysis) and help desk integration with ITSM. Citrix Analytics enables advanced performance and security issue drill-down with automated real-time remediation.  |
 | 4  | Choice / Management  | Delegated Administration and Configuration Logging  | Granular control over administrative rights from help desk staff to IT owner coupled with full tracking of environment changes with date/time/admin action.  |
@@ -44,11 +44,11 @@ This tech brief showcases the value add provided under the 3 themes of [Choice /
 
 ## Choice / Management
 
-In this section, the features that enhance the admin's ability to control, manage, and provision resources in the Windows Virtual Desktop environment are showcased.
+In this section, the features that enhance the admin's ability to control, manage, and provision resources in the Azure Virtual Desktop environment are showcased.
 
 ## Choice - Environment Management
 
-Effective management of Windows Virtual Desktop resources is important to be able to reduce cost while ensuring the best possible user experience. The simpler it is to manage the environment; the quicker it is to remediate user issues; the easier the administrator’s job is. To that end Citrix provides several features:
+Effective management of Azure Virtual Desktop resources is important to be able to reduce cost while ensuring the best possible user experience. The simpler it is to manage the environment; the quicker it is to remediate user issues; the easier the administrator’s job is. To that end Citrix provides several features:
 
 *  [Hybrid Cloud Management](#hybrid-cloud-management) from a single console
 *  [Image management and brokering](#image-management-and-brokering)
@@ -206,7 +206,7 @@ Learn about the analytics capabilities, visit the [Analytics Tech Brief](/en-us/
 
 ## Experience
 
-In this section, the features that enhance the user experience when accessing their Windows Virtual Desktop resources are showcased.
+In this section, the features that enhance the user experience when accessing their Azure Virtual Desktop resources are showcased.
 
 ## Experience - HDX
 
@@ -542,7 +542,7 @@ Security of the session recordings can be enhanced by encrypting them to ensure 
 
 ## Summary
 
-The value-add Citrix provides to Microsoft Windows Virtual Desktop is multifaceted and can help expand the capabilities of your Microsoft AVD based VDI environment into a full-fledged Workspace.
+The value-add Citrix provides to Microsoft Azure Virtual Desktop is multifaceted and can help expand the capabilities of your Microsoft AVD based VDI environment into a full-fledged Workspace.
 
 Citrix adds value in almost all the steps of the VDI deployment lifecycle in AVD, reducing cost and delivering the best possible user experience. Initial configuration and workload lifecycle tasks are streamlined through our provisioning tools and layering technologies. Day to day tasks are simplified through advanced monitoring, hands on help desk capabilities and performance and security analytics.
 
@@ -566,4 +566,4 @@ For a trial of Citrix Virtual Apps and Desktops service click [here](https://www
 
 For a trial of Citrix Virtual Apps and Desktops Standard for Azure service click [here](https://www.citrix.com/products/citrix-managed-desktops/form/inquiry/).
 
-Learn how to achieve more with [Citrix and Windows Virtual Desktop](https://www.citrix.com/global-partners/microsoft/resources/windows-virtual-desktop-wvd.html).
+Learn how to achieve more with [Citrix and Azure Virtual Desktop](https://www.citrix.com/global-partners/microsoft/resources/windows-virtual-desktop-wvd.html).

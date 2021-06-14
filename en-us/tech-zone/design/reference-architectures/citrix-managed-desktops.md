@@ -80,7 +80,7 @@ The above diagram shows a high-level skeleton view for CVAD Standard. The contro
 
 CVAD Standard offers many advantages to IT by simplifying operations and delivering Windows desktops and apps securely to its workforce:
 
-*  Windows Virtual Desktop (AVD) instances hosted on a Citrix Managed Azure platform
+*  Azure Virtual Desktop (AVD) instances hosted on a Citrix Managed Azure platform
 
 *  Superior user experience which enables users to collaborate with their work culture
 
@@ -622,11 +622,11 @@ Reference: [Bring-your-own Azure Subscription](/en-us/citrix-virtual-apps-deskto
 
 ### Windows 10 EVD licensing
 
-Windows Virtual Desktops (AVD) also known as Windows 10 Enterprise Virtual Desktops service and capabilities are extended and enriched by CVAD Standard through Citrix Cloud. This progression of remote desktop service available only on the Microsoft® Azure platform.
+Azure Virtual Desktops (AVD) also known as Windows 10 Enterprise Virtual Desktops service and capabilities are extended and enriched by CVAD Standard through Citrix Cloud. This progression of remote desktop service available only on the Microsoft® Azure platform.
 
-To deploy and manage a multi-session catalog using Windows Virtual Desktops customer gets a Windows 10 Enterprise E3 entitlement. A new Windows 10 EVD operating system licensed as part of Windows Virtual Desktops in Azure.
+To deploy and manage a multi-session catalog using Azure Virtual Desktops customer gets a Windows 10 Enterprise E3 entitlement. A new Windows 10 EVD operating system licensed as part of Azure Virtual Desktops in Azure.
 
-Extra benefits of Windows Virtual Desktop are customer gets Windows 7 virtual desktop with free Extended Security Updates. AVD offers flexible service allowing administrators to virtualize both desktops and apps.
+Extra benefits of Azure Virtual Desktop are customer gets Windows 7 virtual desktop with free Extended Security Updates. AVD offers flexible service allowing administrators to virtualize both desktops and apps.
 
 ## Best Practices and Design Considerations for Citrix Virtual Apps and Desktops Standard for Azure
 

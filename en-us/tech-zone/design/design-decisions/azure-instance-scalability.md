@@ -99,7 +99,7 @@ If user experience is a driving factor when considering performance, we recommen
 
 ## How does Windows 10 Multisession scalability compare to Windows Server OS?
 
-With the release of both the Windows Server 2019 and Windows 10 Multi-session operating systems, we thought it would be best to provide some guidance about how the client operating system would impact the scalability. Both Windows Server 2019 and Windows 10 Multi-session operating systems require the newer Citrix VDA version 1906.1. Windows 10 Multisession is available with Windows Virtual Desktop (AVD) Entitlement and grants the tenant the base price of the VM (Linux pricing). That entitlement also extends the VM pricing to Windows Server 2016 and Windows Server 2019.
+With the release of both the Windows Server 2019 and Windows 10 Multi-session operating systems, we thought it would be best to provide some guidance about how the client operating system would impact the scalability. Both Windows Server 2019 and Windows 10 Multi-session operating systems require the newer Citrix VDA version 1906.1. Windows 10 Multisession is available with Azure Virtual Desktop (AVD) Entitlement and grants the tenant the base price of the VM (Linux pricing). That entitlement also extends the VM pricing to Windows Server 2016 and Windows Server 2019.
 
 The graph below shows the density changes when compared against the same test runs with Windows Server 2016 using the Citrix VDA version 1906.1 on the same D4\_v2 (8 vCPU, 28 GB of RAM) instance. The prices below are using the Linux VM pricing in line with the AVD Entitlement required.
 
