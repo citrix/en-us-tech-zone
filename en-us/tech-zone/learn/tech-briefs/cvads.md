@@ -39,7 +39,7 @@ Citrix Cloud has a global presence. A global footprint enables you to choose a c
 
 ### Hybrid Cloud
 
-Citrix Virtual Apps and Desktop Service (CVADs) allows you to manage on-premises data center and public cloud workloads together in a hybrid deployment. CVADs allows you to connect to public clouds Microsoft Azure, Amazon (AWS), and Google Cloud, alongside on-premises hypervisors such as Citrix Hypervisor, Microsoft Hyper-V, and VMware vSphere. By allowing a hybrid, multi-cloud approach, Citrix gives you the flexibility to deploy different applications in different resource locations worldwide.  
+Citrix Virtual Apps and Desktop Service (CVADs) allows you to manage on-premises data center and public cloud workloads together in a hybrid deployment. CVADs allows you to connect to public clouds Microsoft Azure, Amazon (AWS), and Google Cloud, alongside on-premises hypervisors such as Citrix Hypervisor, Microsoft Hyper-V, and VMware vSphere. By allowing a hybrid, multi-cloud approach, Citrix gives you the flexibility to deploy different applications in different resource locations worldwide.
 
 You can choose which hosting location or type makes the most sense for your business – by user group, geographic region, cost, or available capacity. A single Workspace end user can seamlessly access applications hosted on different back-end resource locations (for example: cloud or on-prem). The experience is the same regardless of the origin from which the apps launch.
 
@@ -67,7 +67,7 @@ If maximizing Microsoft entitlements is your goal, Citrix extends the Microsoft 
 
 ### Agility for Business Continuity and Disaster Recovery
 
-By using the Citrix Cloud control plane, administrators are able to rapidly scale and use existing images to extend to cloud hosted workloads. This can be done without having to invest in more infrastructure.  
+By using the Citrix Cloud control plane, administrators are able to rapidly scale and use existing images to extend to cloud hosted workloads. This can be done without having to invest in more infrastructure.
 
 Preparation for business interruptions – whether planned or unplanned – often means that end users must work remotely for extended periods of time. With this in mind, business continuity plans need to be designed to scale quickly, to have little impact on the end-user experience, and to fit within the company’s security requirements. With Citrix Virtual Apps and Desktop Service, you can use the control plane and burst more users into a hybrid cloud without having to stand up additional infrastructure. More information on how Citrix can help you with your Business Continuity plans can be found [here](/en-us/tech-zone/learn/tech-briefs/business-continuity.html).
 

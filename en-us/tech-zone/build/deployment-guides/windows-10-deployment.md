@@ -36,8 +36,8 @@ The following steps covered in this Guide
 
 1.  A Citrix.com account to download software
 
-      *  Citrix VDA
-      *  Citrix Optimizer
+    *  Citrix VDA
+    *  Citrix Optimizer
 
 ## Windows VM Preparation
 
