@@ -75,7 +75,7 @@ To be successful, CompanyA must protect and secure its resources while simultane
 
 |  **Success Criteria** | **Description**  | **Solution** |
 |---|---|---|
-| SaaS and Web App Security | The user's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted  | Citrix Secure Workspace Access – Security Policies Enhanced Security |
+| SaaS and Web App Security | The user's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted | Citrix Secure Workspace Access – Security Policies Enhanced Security |
 | Secure Access | CompanyA must protect internal corporate resources when accessed from untrusted and unsecured locations. Devices are not be allowed direct access to the internal network to help prevent malware intrusion. | Secure Workspace Access - VPN-less access |
 | SaaS credential protection | The user's credentials to SaaS applications must include strong, multifactor authentication. | Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
 | Volumetric DDoS | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web App Firewall |
@@ -183,11 +183,11 @@ As a baseline policy, CompanyA has defined the following policies (with the abil
 |---|---|---|---|
 | Clipboard access | Denied | Denied | Denied |
 | Printing | Denied | Denied | Denied |
-| Navigation | Denied | Denied  | Not Applicable |
-| Downloads  | Denied   | Denied  | Denied |
-| Watermark  | Enabled  | Enabled | Enabled |
+| Navigation | Denied | Denied | Not Applicable |
+| Downloads | Denied | Denied | Denied |
+| Watermark | Enabled | Enabled | Enabled |
 | Keylogging Prevention* | Enabled | Enabled | Enabled |
-| Screenshot Prevention* | Enabled  | Enabled  | Enabled |
+| Screenshot Prevention* | Enabled | Enabled | Enabled |
 
 [![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_35.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_35.png)
 
