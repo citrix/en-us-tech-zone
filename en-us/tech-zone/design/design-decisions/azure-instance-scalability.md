@@ -24,7 +24,7 @@ To determine the performance, we used LoginVSI 4.1.32.1, which creates simulated
 
 The number of users successfully completing the multi-session test provides a key performance indicator under real-world conditions. This value, referred to as the VSImax session count, is used for the comparative analysis. The Login VSI workloads calculate the VSImax session count by observing the response time of a single user on the system. VSImax is reached when the response time has diminished significantly below the expected threshold which was derived from the baseline value taken with only a single user on the system.
 
-To provide conservative numbers which can be replicated consistently without specialized knowledge, all results here reflect test execution using default Citrix policies and unoptimized default settings for Windows and Office products. Both performance and density can be improved by applying Citrix optimization tools such as the [Citrix WEM](/en-us/workspace-environment-management/current-release.html) and [Citrix Optimizer](https://support.citrix.com/article/CTX224676).  
+To provide conservative numbers which can be replicated consistently without specialized knowledge, all results here reflect test execution using default Citrix policies and unoptimized default settings for Windows and Office products. Both performance and density can be improved by applying Citrix optimization tools such as the [Citrix WEM](/en-us/workspace-environment-management/current-release.html) and [Citrix Optimizer](https://support.citrix.com/article/CTX224676).
 
 ## What is the most efficient instance series?
 
@@ -99,9 +99,9 @@ If user experience is a driving factor when considering performance, we recommen
 
 ## How does Windows 10 Multisession scalability compare to Windows Server OS?
 
-With the release of both the Windows Server 2019 and Windows 10 Multi-session operating systems, we thought it would be best to provide some guidance about how the client operating system would impact the scalability. Both Windows Server 2019 and Windows 10 Multi-session operating systems require the newer Citrix VDA version 1906.1. Windows 10 Multisession is available with Windows Virtual Desktop (WVD) Entitlement and grants the tenant the base price of the VM (Linux pricing). That entitlement also extends the VM pricing to Windows Server 2016 and Windows Server 2019.
+With the release of both the Windows Server 2019 and Windows 10 Multi-session operating systems, we thought it would be best to provide some guidance about how the client operating system would impact the scalability. Both Windows Server 2019 and Windows 10 Multi-session operating systems require the newer Citrix VDA version 1906.1. Windows 10 Multisession is available with Azure Virtual Desktop (AVD) Entitlement and grants the tenant the base price of the VM (Linux pricing). That entitlement also extends the VM pricing to Windows Server 2016 and Windows Server 2019.
 
-The graph below shows the density changes when compared against the same test runs with Windows Server 2016 using the Citrix VDA version 1906.1 on the same D4\_v2 (8 vCPU, 28 GB of RAM) instance. The prices below are using the Linux VM pricing in line with the WVD Entitlement required.
+The graph below shows the density changes when compared against the same test runs with Windows Server 2016 using the Citrix VDA version 1906.1 on the same D4\_v2 (8 vCPU, 28 GB of RAM) instance. The prices below are using the Linux VM pricing in line with the AVD Entitlement required.
 
 ![Operating System Performance](/en-us/tech-zone/design/media/design-decisions_azure-instance-scalability_005.png)
 
