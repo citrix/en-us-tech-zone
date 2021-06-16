@@ -15,7 +15,7 @@ Citrix Virtual Apps and Desktop service (CVADs) enables you to securely deliver 
 
 Users get flexibility and consistency. They are no longer tied to a specific endpoint.
 
-IT gets benefits from this hybrid cloud offering as well. First, you get data security and IP protection since your workloads are hosted and managed by you. You can deploy and manage desktops and applications from Citrix Cloud services, even if all workloads are hosted on-premises. Our set of admin tools enables you to deploy to cloud and on-prem locations as your implementation evolves. You can conveniently host apps depending upon use cases. What’s more, you can move to the cloud as it suits your business needs.  
+IT gets benefits from this hybrid cloud offering as well. First, you get data security and IP protection since your workloads are hosted and managed by you. You can deploy and manage desktops and applications from Citrix Cloud services, even if all workloads are hosted on-premises. Our set of admin tools enables you to deploy to cloud and on-prem locations as your implementation evolves. You can conveniently host apps depending upon use cases. What’s more, you can move to the cloud as it suits your business needs.
 
 Many on-premises Virtual Apps and Desktop environments are outdated because administrators don’t have the time to manually address patches and upgrades. Not only do outdated environments degrade the user experience, but also, they pose security threats to your organization. Citrix Virtual Apps and Desktops service enables you to maintain complete control over your applications, policies, and users. But you offload control plane maintenance, patching, and upgrades to Citrix. This ensures your environment is always up to date.
 
@@ -32,14 +32,14 @@ Citrix Virtual Apps and Desktop service is cloud and hypervisor agnostic. You av
 Citrix Cloud is deployed in multiple regions worldwide and is designed using industry best practices to achieve a high degree of service availability (you can [read more about current SLA in product documentation](/en-us/citrix-cloud/overview/service-level-agreement.html)). To ensure the best user experience, Citrix Virtual Apps and Desktop service can be deployed with Citrix Gateway service. Citrix Intelligent Traffic Management (ITM) ensures fast and reliable sessions.
 
 In a traditional on-prem environment, customers architect and design the environment to include multiple sites. This ensures end-users can access their applications and desktops even if there is an outage. Because Citrix Cloud is available in multiple points of presence (POPs) around the world, it delivers optimal uptime and eliminates the need for administrators to deploy in multiple sites.
-  
+
 Citrix Gateway service operates with ITM in multiple POPs throughout the world. If for any reason, a POP goes down or if the connectivity is degraded, Citrix ITM responds to subsequent domain name system (DNS) queries from the next closest POP. More information is available [here](/en-us/tech-zone/learn/tech-briefs/gateway-hdxproxy.html).
 
 Citrix Cloud has a global presence. A global footprint enables you to choose a centrally located control plane region to serve your users. You can choose between United States, European Union, or Asia Pacific regions to ensure the best performance. Your published apps and desktops can be hosted in any location worldwide. Policy controls enforce data sovereignty and protect intellectual property.
 
 ### Hybrid Cloud
 
-Citrix Virtual Apps and Desktop Service (CVADs) allows you to manage on-premises data center and public cloud workloads together in a hybrid deployment. CVADs allows you to connect to public clouds Microsoft Azure, Amazon (AWS), and Google Cloud, alongside on-premises hypervisors such as Citrix Hypervisor, Microsoft Hyper-V, and VMware vSphere. By allowing a hybrid, multi-cloud approach, Citrix gives you the flexibility to deploy different applications in different resource locations worldwide.  
+Citrix Virtual Apps and Desktop Service (CVADs) allows you to manage on-premises data center and public cloud workloads together in a hybrid deployment. CVADs allows you to connect to public clouds Microsoft Azure, Amazon (AWS), and Google Cloud, alongside on-premises hypervisors such as Citrix Hypervisor, Microsoft Hyper-V, and VMware vSphere. By allowing a hybrid, multi-cloud approach, Citrix gives you the flexibility to deploy different applications in different resource locations worldwide.
 
 You can choose which hosting location or type makes the most sense for your business – by user group, geographic region, cost, or available capacity. A single Workspace end user can seamlessly access applications hosted on different back-end resource locations (for example: cloud or on-prem). The experience is the same regardless of the origin from which the apps launch.
 
@@ -61,13 +61,13 @@ You can enable the following user layers:
 
 Find more information on user layers [here](/en-us/tech-zone/learn/tech-insights/app-layering-user-layers.html).
 
-### Microsoft Windows Virtual Desktop (WVD) in Azure
+### Microsoft Azure Virtual Desktop (AVD) in Azure
 
-If maximizing Microsoft entitlements is your goal, Citrix extends the Microsoft Windows Virtual Desktop platform with enhancements targeted at experience, security, and choice. Windows Virtual Desktop (WVD) includes new multi-user Windows 10 capabilities. End-users get a familiar Windows 10 experience, and IT can still take advantage of the scalability of a multi-user operating system (OS). Citrix administrators can use Windows Virtual Desktop while using Citrix’s robust management tools, optimized HDX, and networking capabilities. The long-standing Citrix partnership with Microsoft affords cost-effective ways for customers to shift capacity into the cloud. Technologies like Citrix Autoscale enable cost savings by balancing workloads between fixed-capacity data centers and consumption-based flexible clouds. Autoscale is designed to automate management of virtual machines in a Citrix environment to reduce cost. You can find more information on Autoscale [here](/en-us/tech-zone/learn/tech-briefs/autoscale.html).
+If maximizing Microsoft entitlements is your goal, Citrix extends the Microsoft Azure Virtual Desktop platform with enhancements targeted at experience, security, and choice. Azure Virtual Desktop (AVD) includes new multi-user Windows 10 capabilities. End-users get a familiar Windows 10 experience, and IT can still take advantage of the scalability of a multi-user operating system (OS). Citrix administrators can use Azure Virtual Desktop while using Citrix’s robust management tools, optimized HDX, and networking capabilities. The long-standing Citrix partnership with Microsoft affords cost-effective ways for customers to shift capacity into the cloud. Technologies like Citrix Autoscale enable cost savings by balancing workloads between fixed-capacity data centers and consumption-based flexible clouds. Autoscale is designed to automate management of virtual machines in a Citrix environment to reduce cost. You can find more information on Autoscale [here](/en-us/tech-zone/learn/tech-briefs/autoscale.html).
 
 ### Agility for Business Continuity and Disaster Recovery
 
-By using the Citrix Cloud control plane, administrators are able to rapidly scale and use existing images to extend to cloud hosted workloads. This can be done without having to invest in more infrastructure.  
+By using the Citrix Cloud control plane, administrators are able to rapidly scale and use existing images to extend to cloud hosted workloads. This can be done without having to invest in more infrastructure.
 
 Preparation for business interruptions – whether planned or unplanned – often means that end users must work remotely for extended periods of time. With this in mind, business continuity plans need to be designed to scale quickly, to have little impact on the end-user experience, and to fit within the company’s security requirements. With Citrix Virtual Apps and Desktop Service, you can use the control plane and burst more users into a hybrid cloud without having to stand up additional infrastructure. More information on how Citrix can help you with your Business Continuity plans can be found [here](/en-us/tech-zone/learn/tech-briefs/business-continuity.html).
 
@@ -218,5 +218,5 @@ Take an in-depth look at evaluating VDI Models [here](/en-us/tech-zone/design/de
 There are multiple Proof of Concept (PoC) guides available that can help you get started with Citrix Virtual Apps and Desktops service:
 
 -  [Getting Started with Citrix Virtual Apps and Desktop service](/en-us/tech-zone/learn/poc-guides/cvads.html)
--  [Citrix Virtual Apps and Desktops with Windows Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html)
+-  [Citrix Virtual Apps and Desktops with Azure Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html)
 -  [Remote PC Access with Citrix Virtual Desktop service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html)

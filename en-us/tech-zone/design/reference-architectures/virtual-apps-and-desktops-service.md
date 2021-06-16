@@ -49,16 +49,16 @@ The Citrix Virtual Apps and Desktops architecture is divided up into layers. Thi
 At a high-level:
 
 -  **User Layer:** This layer describes the end-user environment and end-point devices that are used to connect to resources.
-    -  External Users: Access Citrix Workspace to gain access to Windows Virtual Desktop hosted in Azure.
+    -  External Users: Access Citrix Workspace to gain access to Azure Virtual Desktop hosted in Azure.
     -  Internal Users: When in the office, continue to utilize their physical PC. When working remotely, they access Citrix Workspace and Remote PC Access to connect to their office-based physical PC.
 -  **Access Layer:** This layer describes details surrounding external and internal access to the Citrix environment.
     -  Citrix Workspace: A complete digital workspace solution that allows you to deliver secure access to the information, apps, and other content that are relevant to a person’s role in your organization.
     -  Gateway Service: This cloud-based service provides secure remote access with Identity and Access Management (IdAM) capabilities, delivering a unified experience to SaaS (Software as a Service) apps and virtual apps and desktops.
 -  **Resource Layer:** This layer defines the virtual desktops, applications, and data provided to each user group.
     -  Remote PC Access: A traditional, local Windows desktop, assigned to a single user and can be physically accessed locally or accessed remotely.
-    -  Windows Virtual Desktop: virtualized Windows 10 multi-session operating system for users to be able to access their desktops and applications remotely.
+    -  Azure Virtual Desktop: virtualized Windows 10 multi-session operating system for users to be able to access their desktops and applications remotely.
 -  **Control Layer:** This layer describes details surrounding the components used to support the rest of the environment.
-    -  Virtual Apps and Desktops Service: This cloud-based service manages the authorization and brokering to Windows Virtual Desktops and Remote PC Access.
+    -  Virtual Apps and Desktops Service: This cloud-based service manages the authorization and brokering to Azure Virtual Desktops and Remote PC Access.
     -  Workspace Environment Management Service: This cloud-based service uses intelligent resource management and Profile Management technologies to deliver the best possible performance, desktop logon, and application response times.
     -  Performance Analytics: This cloud-based service tracks, aggregates, and visualizes key performance indicators of the Citrix Virtual Apps and Desktops environment.
 -  **Host Layer:** This layer describes the hardware components, private, public, and hybrid cloud that are used for the Citrix environment – hardware, storage, and virtualization details.
@@ -76,11 +76,11 @@ Aligning the user requirements with an appropriate virtual desktop is the initia
 | Users need access to...                                             | Users include...               | Endpoints include...                                        | Common locations include...                                                | IT delivers...          |
 |---------------------------------------------------------------------|--------------------------------|-------------------------------------------------------------|----------------------------------------------------------------------------|-------------------------|
 | Standardized desktop environment with line of business applications | Engineers Designers Executives | At the office: Physical corporate PCs  Remote: Personal devices | Predominantly internal local network. Sometimes remote, untrusted network. | Remote PC Access        |
-| Standardized desktop environment with line of business applications | Sales Marketing                | Personal devices Tablets Laptops                            | Remote untrusted network                                                   | Windows Virtual Desktop |
+| Standardized desktop environment with line of business applications | Sales Marketing                | Personal devices Tablets Laptops                            | Remote untrusted network                                                   | Azure Virtual Desktop |
 
 Office workers typically work from the office with their corporate owned PC. When the pandemic happened, they needed a way to securely work from home while still utilizing their PCs that were in the office. Worldwide Co. realized that office workers can be productive as remote workers and want to provide the flexibility of working remote. They continue to use their PCs locally when they work at the office and access them remotely through Citrix Virtual Apps and Desktops Remote PC Access when they work from home.
 
-Employees are predominantly remote employees. Worldwide Co. doesn’t want to provide corporate owned devices, instead they want to provide these employees the choice to use whatever device they want. This can include devices such as personal laptops, smartphones, or tablets. Because Worldwide Co. wants to minimize their data center footprint, they have chosen to deploy Windows Virtual Desktop with Citrix Virtual Apps and Desktop service for this set of employees.
+Employees are predominantly remote employees. Worldwide Co. doesn’t want to provide corporate owned devices, instead they want to provide these employees the choice to use whatever device they want. This can include devices such as personal laptops, smartphones, or tablets. Because Worldwide Co. wants to minimize their data center footprint, they have chosen to deploy Azure Virtual Desktop with Citrix Virtual Apps and Desktop service for this set of employees.
 
 ### Access Layer
 
