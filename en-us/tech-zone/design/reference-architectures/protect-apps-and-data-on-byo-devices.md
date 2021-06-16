@@ -31,7 +31,7 @@ Since CompanyA does not manage end users's devices, it has no way to understand 
 
 Consequently, CompanyA has begun a threefold initiative to protect corporate resources accessed by BYO devices. To be successful, CompanyA defined a list of success criteria for the initiative. These criteria form the basis for the overarching design.
 
-### Protecting User Access
+### Protecting User Access to Web and Saas Apps
 
 CompanyA must protect user access to their work environment. Access must be secure, simple, and flexible to use any device and work from any location. CompanyA must create a simple and safe mode of access to all apps and data that is seamless for end-users.
 
@@ -41,11 +41,18 @@ In CompanyA's focus on protecting user access, it has identified the following c
 
 |  **Success Criteria** | **Description** | **Solution** |
 |---|---|---|
-| Contextual access | Contextual access for web, SaaS, and CVAD using Citrix Secure Workspace Access to determine correct level of access | Citrix Secure Workspace Access |
-| End-user monitoring  | Continuous monitoring and continuous assessment to protect against potential threats. Web apps are continously monitored for data exfiltration, abnormal access times and locations.  | Citrix Secure Workspace Access |
+| Contextual access | Contextual access for web, SaaS using Citrix Secure Workspace Access to determine correct level of access | Citrix Secure Workspace Access |
 | Personal Privacy | CompanyA must ensure user privacy while still protecting the user and endpoint from potential threats when using unsanctioned websites | Citrix Secure Internet Access with "do not decrypt" policies for sites with personal information |
 | SaaS App Access | Users must access sanctioned SaaS applications with strong authentication that does not impact the experience | Citrix Secure Workspace Access |
 | Web App Access | Users must be able to access sanctioned internal Web applications on any approved device | Citrix Secure Workspace Access – Zero Trust Network Access |
+| End-user monitoring  | Continuous monitoring and continuous assessment to protect against potential threats. Web apps are continously monitored for data exfiltration, abnormal access times and locations. | Citrix Analytics |
+
+### Protecting User Access to Client-Server Apps
+
+| Contextual access | Contextual access for Client-Server apps using Citrix Secure Workspace Access and Citrix Virtual
+Apps and Desktops to determine correct level of access | Citrix Secure Workspace Access and Citrix Virtual Apps and Desktops |
+| Client-Server Apps | Users must be able to access sanctioned internal Web applications on any approved device | Citrix Secure Workspace Access – Zero Trust Network Access |
+| End-user monitoring  | Continuous monitoring and continuous assessment to protect against potential threats. Web apps are continously monitored for data exfiltration, abnormal access times and locations. | Citrix Analytics |
 
 ### Protecting Data
 
