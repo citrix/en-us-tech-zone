@@ -58,13 +58,13 @@ In CompanyA's focus on protecting data and devices, it has identified the follow
 
 | **Success Criteria** |  **Description** |  **Solution** |
 |---|---|---|
-| Protect Devices | Protect devices and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection|
+| Protect Devices | Protect devices and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Browser Service with Citrix Secure Internet Access – Security Policies with Web Filtering |
 | Compliance | Compliance and protecting users from malicious URLs | Citrix Secure Browser Service with Citrix Secure Internet Access – Security Policies with Web Filtering |
 | Unsecured Personal Devices | Users trying to access Workspace with an unsecured device must not gain unfettered access to sanctioned resources. | Citrix Secure Workspace Access |
-| Protection from keylogger | Protection from keylogger / enabling secure access from BYO | Citrix Secure Browser Service with Citrix Secure Workspace Access – Security Policies with App Protection  |
+| Protection from keylogger | Protection from keylogger / enabling secure access from BYO | Citrix Secure Browser Service with Citrix Secure Workspace Access – Security Policies with App Protection |
 | Protection from screen scrapers | Protection from screen scraping malware / enabling secure access from BYO | Citrix Secure Workspace Access – Security Policies with App Protection |
-| Internet Security | Protect users from potential internet threats hidden within emails, applications, and websites regardless of location. |  Citrix Secure Internet Access - Security Policies with Malware Protection |
+| Internet Security | Protect users from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Internet Access - Security Policies with Malware Protection |
 
 ### Protecting Apps
 
