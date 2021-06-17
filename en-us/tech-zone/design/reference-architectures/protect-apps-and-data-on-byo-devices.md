@@ -42,9 +42,8 @@ In CompanyA's focus on protecting user access, it has identified the following c
 |  **Success Criteria** | **Description** | **Solution** |
 |---|---|---|
 | Contextual access for web and SaaS apps | Contextual access for web and SaaS apps using Citrix Secure Workspace Access to determine correct level of access | Citrix Secure Workspace Access |
-| Contextual access for Client-Server apps | Contextual access for Client-Server apps using Citrix Secure Workspace Access and Citrix Virtual
-Apps and Desktops to determine correct level of access | Citrix Secure Workspace Access and Citrix Virtual Apps and Desktops |
-| End-user monitoring  | Continuous monitoring and continuous assessment to protect against potential threats. Web apps are continously monitored for data exfiltration, abnormal access times and locations. | Citrix Analytics |
+| Contextual access for Client-Server apps | Contextual access for Client-Server apps using Citrix Secure Workspace Access and Citrix Virtual Apps and Desktops to determine correct level of access | Citrix Secure Workspace Access and Citrix Virtual Apps and Desktops |
+| End-user monitoring | Continuous monitoring and continuous assessment to protect against potential threats. Web apps are continously monitored for data exfiltration, abnormal access times and locations. | Citrix Analytics |
 | SaaS App Access | Users must access sanctioned SaaS applications with strong authentication that does not impact the experience | Citrix Secure Workspace Access |
 | Web App Access | Users must be able to access sanctioned internal Web applications on any approved device  with strong authentication that does not impact the experience | Citrix Secure Workspace Access – Zero Trust Network Access |
 | Personal Privacy | CompanyA must ensure user privacy while still protecting the user and endpoint from potential threats when using unsanctioned websites | Citrix Secure Browser Service with Citrix Secure Internet Access (Using "do not decrypt" policies for sites with personal information) |
