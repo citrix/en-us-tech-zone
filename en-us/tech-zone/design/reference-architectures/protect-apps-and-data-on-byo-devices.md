@@ -11,13 +11,13 @@ tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-manag
 
 ## Overview
 
-CompanyA provides secure remote access to a small subset of its overall user base. These end users, who are part of a hybrid and distributed workforce, utilize Bring Your Own (BYO) devices to access internal and cloud resources including virtual apps/desktops, web, and SaaS apps.
+CompanyA provides secure remote access to a small subset of its overall user base. These end users, who are part of a hybrid and distributed workforce, utilize Bring Your Own (BYO) devices to access internal and cloud resources. Resources include client-server (virtual) apps, desktops, web, and SaaS apps.
 
 CompanyA's secure remote access policy has led to greater efficiency for its hybrid and distributed workforce; however, the policy has created a complex delivery model and introduced security concerns. Since the end user BYO devices are unmanaged, CompanyA must mitigate security threats against apps and the data in transit to, in use on, and at rest on the BYO devices.
 
 [![Overview](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_00.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_00.png)
 
-CompanyA currently uses several unintegrated point products for remote access. It wants to consolidate and expand to a company-wide solution while protecting its resources. To that end, CompanyA is engaging in an initiative to update its app delivery architecture to implement the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Secure Internet Access, and Citrix Web App and API Protection. Citrix provides end-to-end protection of CompanyA resources accessed from BYO devices.
+CompanyA currently uses several unintegrated point products for remote access. It wants to consolidate and expand to a company-wide solution while protecting its resources. To that end, CompanyA is engaging in an initiative to update its app delivery architecture to implement the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Gateway, Citrix Secure Internet Access, and Citrix Web App and API Protection. Citrix provides end-to-end protection of CompanyA resources accessed from BYO devices.
 
 This reference architecture explains CompanyA's plan to protect user access, protect data and devices, and protect apps.
 
@@ -33,7 +33,7 @@ Consequently, CompanyA has begun a threefold initiative to protect corporate res
 
 ### Protecting User Access
 
-CompanyA must protect user access to their work environment. Access must be secure, simple, and flexible to use any device and work from any location. CompanyA must create a simple and safe mode of access to all apps and data that is seamless for end-users.
+CompanyA must protect BYOD user access to their work environment. Access must be secure, simple, and flexible to use any device and work from any location. CompanyA must create a simple and safe mode of access to all apps and data that is seamless for end-users.
 
 CompanyA has decided its security strategy is to move away from a traditional "castle and moat" approach to access and security. Instead of using a conventional appliance-based solution like VPNs that assume remote users are trusted and may allow complete access to all network resources, CompanyA is taking a Zero Trust approach.
 
@@ -50,38 +50,37 @@ In CompanyA's focus on protecting user access, it has identified the following c
 
 ### Protecting Data
 
-CompanyA, like many companies today, has a highly complex infrastructure of layers of applications, systems, and networks in environments consisting of on-premises data centers, public and private clouds. This sprawl has led to a complicated stack of different tools and technologies for protecting data and devices.
+CompanyA must protect its data accessed by BYO devices. Like many companies today, CompanyA has a highly complex infrastructure of layers of applications, systems, and networks in environments consisting of on-premises data centers, public, and private clouds. This sprawl has led to a complicated stack of different tools and technologies for protecting data.
 
-CompanyA is designing a consolidated, cloud-delivered security stack to meet the demands of their modern workplace. By centralizing device and data security policy across the overall solution – it will minimize redundant tasks, remove overlapping policies, and allow IT to protect data and devices across all locations from a centralized dashboard.
+CompanyA is designing a consolidated, cloud-delivered security stack to meet the demands of their modern workplace. By centralizing data security policy across the overall solution – it will minimize redundant tasks, remove overlapping policies, and allow IT to protect data and devices across all locations from a centralized dashboard.
 
-In CompanyA's focus on protecting data and devices, it has identified the following user-related criteria for a successful design:
+In CompanyA's focus on protecting data, it has identified the following criteria for a successful design:
 
 | **Success Criteria** |  **Description** |  **Solution** |
 |---|---|---|
+| BYO Devices | Users access Workspace with a BYO device and must not gain unfettered access to sanctioned resources. | Citrix Secure Workspace Access |
+| SaaS and Web App Security | The user's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted | Citrix Secure Workspace Access – Security Policies Enhanced Security |
+| Protection from keylogger | CompanyA must protect internal corporate resources when accessed from BYO devices. Devices may be compromised and have keylogging malware installed. Key logging must be blocked while using Citrix Workspace | Citrix Secure Workspace Access – Security Policies with App Protection |
+| Protection from screen scrapers | CompanyA must protect internal corporate resources when accessed from BYO devices. Devices may be compromised and have screen scraping malware installed. Screen scraping must be blocked while using Citrix Workspace screen scraping malware | Citrix Secure Workspace Access – Security Policies with App Protection |
+| Internet Security | Protect users from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Devices | Protect devices and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Browser Service with Citrix Secure Internet Access – Security Policies with Web Filtering |
 | Compliance | Compliance and protecting users from malicious URLs | Citrix Secure Browser Service with Citrix Secure Internet Access – Security Policies with Web Filtering |
-| Unsecured Personal Devices | Users trying to access Workspace with an unsecured device must not gain unfettered access to sanctioned resources. | Citrix Secure Workspace Access |
-| Protection from keylogger | Protection from keylogger / enabling secure access from BYO | Citrix Secure Browser Service with Citrix Secure Workspace Access – Security Policies with App Protection |
-| Protection from screen scrapers | Protection from screen scraping malware / enabling secure access from BYO | Citrix Secure Workspace Access – Security Policies with App Protection |
-| Internet Security | Protect users from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Internet Access - Security Policies with Malware Protection |
 
 ### Protecting Apps
 
-CompanyA is investing in risk mitigation and threat prevention to protect its web apps. The company's use of BYO devices has increased the risk of compromised devices accessing corporate apps. CompanyA has also determined that its attack surface has increased due to the company moving apps to the cloud and using SaaS apps. Its on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
+CompanyA must protect its apps accessed by BYO devices. The company's use of BYO devices has increased the risk of compromised devices accessing corporate apps. Also, its attack surface has increased due to the company moving apps to the cloud and using SaaS apps. Its current on-prem secure web gateway and VPN deployments with rigid security policies cannot effectively protect applications in the cloud.
 
 CompanyA must create a hybrid solution using both on-prem devices and cloud services for application security. On-premises devices will block app-layer and DDoS attacks on-premises, while a cloud-based protection service will prevent volumetric attacks and app-layer DDoS attacks in the cloud.
 
-To be successful, CompanyA must protect and secure its resources while simultaneously providing a work environment that aligns with the user requirements. CompanyA identified the following security-related criteria for a successful design:
+In CompanyA's focus on protecting apps, it has identified the following criteria for a successful design:
 
 |  **Success Criteria** | **Description**  | **Solution** |
 |---|---|---|
-| SaaS and Web App Security | The user's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted | Citrix Secure Workspace Access – Security Policies Enhanced Security |
 | Secure Access | CompanyA must protect internal corporate resources when accessed from untrusted and unsecured locations. Devices are not be allowed direct access to the internal network to help prevent malware intrusion. | Secure Workspace Access - VPN-less access |
 | SaaS credential protection | The user's credentials to SaaS applications must include strong, multifactor authentication. | Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
-| Volumetric DDoS | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web App Firewall |
 | SaaS DLP | CompanyA requires their SaaS apps to use DLP controls inline. | Secure Browser Service with Citrix Secure Internet Access |
-| Protecting web apps | Protection from volumetric DDoS, bot attacks, and other application-level attacks such as cross-site scripting | Citrix Web App Firewall |
+| Protect web apps | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web App Firewall |
 | Compromised User Protection | IT must be able to quickly identify and mitigate threats posed by a compromised user account. IT must protect the entire threat surface and the centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
 
 ## Conceptual Architecture
@@ -91,7 +90,7 @@ Based on the preceding requirements, CompanyA created the high-level conceptual 
 *  Protected access to SaaS apps and VPN-less access to internal web apps via Citrix Secure Workspace Access
 *  Contextual authentication before being granted access to external or internal resources via Citrix Secure Workspace Access
 *  Zero Trust access to specific resources via Citrix Secure Workspace Access
-*  Protected access to internet traffic from the web apps, or vitual apps and desktops via using Citrix Secure Internet Access
+*  Protected access to internet traffic from the web apps, or vitual apps and desktops via using Citrix Secure Browser Service with Citrix Secure Internet Access
 *  Protected access to web apps accessed from BYO devices with Citrix Web Application Firewall
 
 This architecture meets all the preceding requirements while giving CompanyA the foundation to expand to additional use cases in the future.
@@ -99,11 +98,12 @@ This architecture meets all the preceding requirements while giving CompanyA the
 [![Conceptual Architecture](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_01.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_01.png)
 
 CompanyA's architecture framework has multiple layers. The framework provides a foundation for understanding the technical architecture required to protect users and apps. All layers flow together to create a complete and end-to-end solution.
+
 At a high level:
 
 **User Layer**: The user layer describes the end-user environment and endpoint devices used to connect to resources.
 
-*  End user devices are BYOD. The device is unmanaged, and CompanyA does not require any agent to be installed on the device.
+*  End user devices are BYOD. The devices are unmanaged, and CompanyA does not require any agent to be installed on the device.
 
 *  End users access resources from the Cirtrix Workspace web, resulting in an experience that is protected even on BYO devices.
 
@@ -117,13 +117,13 @@ At a high level:
 
 *  The applications only allow SAML-based authentication for SaaS apps, which prevents users from accessing the SaaS apps directly and bypassing the security policies.
 
-**Resource Layer**: The resource layer authorizes specific virtualized, SaaS, and web resources for defined users and groups while defining the security policies associated with the resource.
+**Resource Layer**: The resource layer authorizes specific client-server, web, and SaaS resources for defined users and groups while defining the security policies associated with the resource.
 
 *  To better protect data, CompanyA requires policies that disable the ability to print, download, and copy/paste content from the managed resource to and from the BYO device.
 
 *  Due to the unknown nature of the endpoint security status, CompanyA requires VPN-less access to resources using isolated browsers or virtualized sessions.
 
-*  Similarly, due to unknown endpoint security status, CompanyA requires protection against keylogging and screen scraping malware.*
+*  Similarly, due to unknown endpoint security status, CompanyA requires protection against keylogging and screen scraping malware. (*Requires Workspace App)
 
 *  Since CompanyA allows access to internal web apps from BYO devices, Citrix Web App Firewall must protect the resource from attacks coming from potentially compromised endpoints.
 
@@ -131,7 +131,7 @@ At a high level:
 
 *  Even within a protected Workspace resource, users can interact with untrusted Internet resources. CompanyA utilizes Secure Internet Access to protect users from external threats when using SaaS apps, web apps, and virtual apps/desktops.
 
-*  Users might need to access personal items on their unmanaged endpoint devices. Appropriate policies are defined to protect users' privacy when accessing personal sites related to health and finance.
+*  Should users need to access personal web sites (e.g. health and finance) on their BYO devices through CompanyA resource, appropriate policies are defined to protect users' privacy.
 
 *  CompanyA requires a Security Analytics service to identify compromised users and automatically maintain a secure environment.
 
@@ -141,8 +141,7 @@ The subsequent sections provide greater detail into specific design decisions fo
 
 ### Authentication
 
-CompanyA has determined that providing access to resources with a user name and password does not provide adequate security.
-Multifactor authentication is required for all users. CompanyA will leverage Active Directory + Token for its mulitfactor method and the Citrix Gateway service to handle all authentication requests.
+CompanyA has determined that providing access to resources with a user name and password does not provide adequate security. Multifactor authentication is required for all users. CompanyA will leverage Active Directory + Token for its mulitfactor method and the Citrix Gateway service to handle all authentication requests.
 
 Citrix Workspace incorporates a cloud-delivered Time-based One-Time Password (TOTP) providing multifactor authentication. Users will register with the TOTP service and create a pre-shared secret key within the authenticator app on a mobile device.
 
