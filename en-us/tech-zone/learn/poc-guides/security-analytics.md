@@ -34,19 +34,19 @@ Log into Citrix Cloud and click *Manage* under the Analytics console from your S
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_2.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_2.png)
 
-Click *Manage*
+Click **Manage**
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_3.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_3.png)
 
-Click on *settings* and then click on *data sources*
+Click **settings** and then click *data sources*
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_4.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_4.png)
 
-Click the ellipses next to Virtual Apps and Desktops and select *Connect to StoreFront Deployment*
+Click the ellipses next to Virtual Apps and Desktops and select **Connect to StoreFront Deployment**
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_5.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_5.png)
 
-Click *download file*
+Click **download file**
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_6.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_6.png)
 
@@ -54,35 +54,35 @@ Open powershell and run the following command: Import-STFCasConfiguration -Path 
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_7.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_7.png)
 
-You will now be able to see that the StoreFront database has been added
+You can see that the StoreFront database has been added
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_8.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_8.png)
 
 #### Connecting to on-premises sites using Workspace
 
-Site must already be added to Citrix Workspace using [Site Aggregation](/en-us/citrix-workspace/add-on-premises-site)
+Site needs to be added to Citrix Workspace using [Site Aggregation](/en-us/citrix-workspace/add-on-premises-site) beforehand
 
 Log into Citrix Cloud from one of your delivery controllers
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_9.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_9.png)
 
-Select *manage* under Security Analytics
+Select **manage** under Security Analytics
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_10.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_10.png)
 
-Select *Data sources* under *Settings*
+Select **Data sources** under **Settings**
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_11.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_11.png)
 
-Click on *Policy Incomplete* under Virtual Apps and Desktops
+click **Policy Incomplete** under Virtual Apps and Desktops
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_12.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_12.png)
 
-Click on the drop down under your site name and then click *continue*
+click the drop down under your site name and then click **continue**
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_13.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_13.png)
 
-Select *download agent*
+Select **download agent**
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_14.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_14.png)
 
@@ -90,7 +90,7 @@ Complete the installation
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_15.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_15.png)
 
-Click on *Connect to Installed Agent*. This may take a few minutes.
+click **Connect to Installed Agent**. This process can take a few minutes.
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_16.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_16.png)
 
@@ -110,11 +110,11 @@ Click done after reviewing your information
 
 User risk indicators are user activities that look suspicious or can pose a security threat to your organization. User risk indicators span across all Citrix products used in your deployment. The indicators are based on user behavior and are triggered where the user’s behavior deviates from the normal. User risk indicators help in determining the user’s risk score.
 
-Click *Custom Risk Indicators and Policies* under Settings
+Click **Custom Risk Indicators and Policies** under Settings
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_20.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_20.png)
 
-Turn on the risk indicators by clicking the toggle. Then click *Create Indicator*
+Turn on the risk indicators by clicking the toggle. Then click **Create Indicator**
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_21.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_21.png)
 
@@ -122,11 +122,11 @@ Here you can create custom indicators
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_22.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_22.png)
 
-Click on *policies*. A policy is a set of conditions that must be met to apply an action. A policy contains one or more conditions and a single action. You can create a policy with multiple conditions and one action that can be applied to a user’s account.
+Click **policies**. A policy is a set of conditions that must be met to apply an action. A policy contains one or more conditions and a single action. You can create a policy with multiple conditions and one action that can be applied to a user’s account.
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_23.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_23.png)
 
-Click on *Create policy*
+Click **Create policy**
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_24.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_24.png)
 
@@ -134,22 +134,22 @@ Select the condition and then the action you want
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_25.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_25.png)
 
-Make sure that the policy is enabled and click *Create policy*
+Make sure that the policy is enabled and click **Create policy**
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_26.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_26.png)
 
 ## Dashboards
 
 The user dashboard provides visibility into user-behavior patterns across an organization. Using this data, you can proactively monitor, detect, and flag behavior that fall outside the norm, such as phishing or ransomware attacks.
-Click on a specific user
+click a specific user
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_27.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_27.png)
 
-This will provide a risk timeline of what the user is doing and what source it is coming from.
+This dashboard provides a risk timeline of what the user is doing and what source it is coming from.
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_28.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_28.png)
 
-Click on *Access assurance*
+click **Access assurance**
 
 [![Citrix Security Analytics](/en-us/tech-zone/learn/media/poc-guides_security-analytics_29.png)](/en-us/tech-zone/learn/media/poc-guides_security-analytics_29.png)
 
