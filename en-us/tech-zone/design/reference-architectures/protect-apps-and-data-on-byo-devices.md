@@ -201,7 +201,7 @@ To help protect the users and the organization, CompanyA incorporates the Citrix
 
 [![Citrix Secure Internet Access](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_05.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_05.png)
 
-Any ComanyA related internet traffic to/from the library of apps, desktops, and devices within the organization routes through the Secure Internet Access service. The service scans any URL to verify it is safe. Functionalities within specific public sites are denied or modified. Downloads are automatically scanned and verified.
+Any CompanyA related internet traffic to/from the library of apps, desktops, and devices within the organization routes through the Secure Internet Access service. The service scans any URL to verify it is safe. Functionalities within specific public sites are denied or modified. Downloads are automatically scanned and verified.
 
 *  When users access virtual apps and desktops, the Virtual Apps and Desktops infrastructure will have the Citrix Secure Internet Access agent installed to proxy traffic.
 *  When users access web and SaaS resources with the Citrix Secure Browser service, Citrix Secure Internet Access is used as it's Secure Web Gateway.
