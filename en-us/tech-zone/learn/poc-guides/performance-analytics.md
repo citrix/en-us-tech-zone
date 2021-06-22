@@ -37,7 +37,7 @@ Citrix Analytics for Performance allows you to track, aggregate, and visualize k
 ### Connecting Citrix Analytics with on-premises Citrix Virtual Apps and Desktop sites
 
 1.  Log into Director as a full administrator and pick which Site you want to configure with Performance Analytics
-[![Citrix Performance Analytics](/en-us/tech-zone/learn/media/poc-guides_performance-analytics_2.png)](/en-us/tech-zone/learn/media/poc-guides_performance-analytics_2.png)
+[![Citrix Performance Analytics](/en-us/tech-zone/learn/media/poc-guides_performance-analytics_2a.png)](/en-us/tech-zone/learn/media/poc-guides_performance-analytics_2a.png)
 2.  Click the Analytics tab
 [![Citrix Performance Analytics](/en-us/tech-zone/learn/media/poc-guides_performance-analytics_3.png)](/en-us/tech-zone/learn/media/poc-guides_performance-analytics_3.png)
 3.  Select the terms and click *Get Started*
