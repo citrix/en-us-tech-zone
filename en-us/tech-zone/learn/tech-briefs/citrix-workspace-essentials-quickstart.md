@@ -63,8 +63,6 @@ Figure 4: Natively generated one-time password
 
 Citrix Workspace Essentials has all the benefits provided by Citrix Workspace experience through the Citrix Workspace app including:
 
-![Workspace App](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_app.png)
-
 Figure 5: Benefits provided by Citrix Workspace experience
 
 Read this Citrix Workspace App [Tech Insight](/en-us/tech-zone/learn/tech-briefs/workspace-app.html) to learn more.
