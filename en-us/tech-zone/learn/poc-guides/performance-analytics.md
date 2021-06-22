@@ -29,7 +29,7 @@ Citrix Analytics for Performance allows you to track, aggregate, and visualize k
 -  Your StoreFront version must be 1906 or later.
 -  The StoreFront deployment must be able to connect to the following address:
     -  *https://*.cloud.com
-    -  *https://api.analytics.cloud.com
+    -  *https:// api.analytics.cloud.com
 -  The StoreFront deployment must have port 443 open for outbound internet connections. Any proxy servers on the network must allow this communication with Citrix Analytics.
 
 ## Deployment Steps
