@@ -69,8 +69,6 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 [Citrix Desktop-as-a-Service (DaaS)](/en-us/tech-zone/learn/tech-insights/citrix-daas.html) - Learn how Citrix Desktop-as-a-Service (DaaS) offerings enable customers to deploy workloads in the cloud within minutes.
 
-[Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html) - Citrix's Desktop-as-a-Service (DaaS) offering - simplest and fastest way to get desktops based on Azure Virtual Desktop in Microsoft Azure.
-
 ### Citrix Workspace
 
 [Authentication - Citrix Gateway](/en-us/tech-zone/learn/tech-insights/gateway-idp.html) - Utilize an on-premises Citrix Gateway as an identity provider for Citrix Workspace.
@@ -183,6 +181,24 @@ Tech Briefs are short overview documents explaining a technology, a feature, a f
 
 PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
 
+### Citrix Analytics
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
+
+### Citrix Content Collaboration
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
+
+### Citrix Endpoint Management
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
+
 ### Citrix Networking
 
 [nFactor for Citrix Gateway Authentication with Device Certificate](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-device-certificate.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Device Certificates.
@@ -194,6 +210,10 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 [nFactor for Citrix Gateway Authentication with Native OTP](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-native-otp.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Native OTP.
 
 [nFactor for Citrix Gateway Authentication with Push Token](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-push-token.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Push Token.
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
 
 [Protecting Gateway Virtual Servers with WAF, Bot, and Advanced Authentication Policies](/en-us/tech-zone/learn/poc-guides/protect-gateway-waf-bot-aaa.html) - Learn how to use the security tools built in to the Citrix ADC to protect VPN and Gateway virtual servers, including Web Application Firewall (WAF), Bot Security, and Advanced Authentication Policies.
 
@@ -211,7 +231,15 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 [Citrix Secure Internet Access with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html) - Learn how to set up Citrix Secure Internet Access within a Citrix Virtual Apps and Desktops environment that provides secure access to virtual desktops and applications, anywhere, from any device.
 
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
+
 ### Citrix Secure Workspace Access
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
 
 [Secure Access to Azure-managed SaaS Applications and Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Secure Workspace Access environment that provides enhanced security to Microsoft Azure SaaS Apps.
 
@@ -222,6 +250,12 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 [Secure Access to SaaS Applications with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to set up a Citrix Secure Workspace Access environment that uses Citrix as the single sign-on provider for SaaS applications.
 
 [Secure Access to SaaS Applications with Okta and Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html) - Learn how to set up a Citrix Secure Workspace Access environment that is able to use Okta as the single sign-on provider for SaaS applications.
+
+### Citrix Service Providers
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
 
 ### Citrix Virtual Apps and Desktops
 
@@ -235,11 +269,31 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 [Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html) - Learn how to deliver the Citrix HDX Optimization for Microsoft Teams in a Citrix environment. The optimization offers clear, crisp high-definition video calls, audio-video or audio-only calls to and from other Teams users, optimized Teams users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
 
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
+
 [Remote PC Access with Citrix Virtual Desktops service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html) - Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from anywhere and on any device.
+
+### Citrix Virtual Apps and Desktops Standard for Azure
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
+
+### Citrix Workspace
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
 
 ### Security
 
 [App protection policies](/en-us/tech-zone/learn/poc-guides/app-protection-policies.html) - Learn how to enhance the security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
 
 [URL Redirection with Secure Browser and Citrix ADC in Azure](/en-us/tech-zone/learn/poc-guides/secure-browser-adc-integration.html) - Learn how to provide the dynamic delivery of resources by redirecting browsing to a Secure Browser service protecting the company network without sacrificing user experience.
 
@@ -250,6 +304,22 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 [Google Cloud Platform (GCP) Windows 10 Sole Tenant with Optional Shared VPC Catalog Creation](/en-us/tech-zone/learn/poc-guides/gcp-win10-catalog-creation.html) - Learn to deploy provisioned Windows 10 catalogs to GCP Sole Tenant nodes in Citrix Virtual Apps and Desktop Service.
 
 [Google Cloud Platform (GCP) Zone Selection Support with Citrix Virtual Apps and Desktops service](/en-us/tech-zone/learn/poc-guides/gcp-sole-tenant.html) - Learn how to configure zone selection on Google Cloud Platform to enable sole tenancy in Citrix Virtual Apps and Desktop Service.
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
+
+### Third Party Content
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
+
+### Other
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
 
 ## Diagrams and Posters
 
