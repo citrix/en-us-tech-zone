@@ -141,7 +141,7 @@ Refer to the [Citrix Workspace Active Directory with TOTP Tech Brief](/en-us/tec
 
 ### Zero Trust Network Access
 
-To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Citrix Secure Workspace Access service and Virtual Apps and Desktops service. These services are a Zero Trust Network Access solution, which is a more secure alternative to a traditional VPN.
+To provide access to resources such as SaaS apps and internal web apps, virtual apps, and virtual desktops, CompanyA plans to use the Citrix Secure Workspace Access service and Virtual Apps and Desktops service. These services are a Zero Trust Network Access solution, which is a more secure alternative to a traditional VPN.
 
 The Secure Workspace Access service and the Virtual Apps and Desktops service use the cloud connectors' outbound control channel connections. Those connections allow the user to access internal resources remotely. However, those connections are:
 
