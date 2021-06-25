@@ -143,7 +143,7 @@ The import and export commands are supported for this task now. Both the golden 
 
 **Important Considerations:**
 
-*  Since this process is still in preview, you must reach out to Citrix to enable this feature for your org ID. It is not automatically enabled.
+*  Since this process is still in preview, it is not automatically enabled. You must contact Citrix support or your Customer Success Management team to enable this feature for your org ID.
 *  The MCS catalog import process can take a couple of hours based on the size of the master image. Therefore import command within the tool will only start the MCS catalog creation and not wait for it to finish.
 *  After the import has completed, the catalog creation progress can be monitored via Studio in the cloud deployment.
 *  Once the master image is created you can provision machines. **Capacity considerations** must be taken into account, since you will already have capacity consumed from your on-premises usage.
@@ -160,7 +160,7 @@ The import and export commands are supported for this task now. This process imp
 
 **Important Considerations:**
 
-*  Since this process is still in preview, you must reach out to Citrix to enable this feature for your org ID. It is not automatically enabled.
+*  Since this process is still in preview, it is not automatically enabled. You must contact Citrix support or your Customer Success Management team to enable this feature for your org ID.
 *  The VDAs **need** to be pointed to the Cloud Connectors for them to register with **Citrix Cloud**.
 *  Refer to the [**Activating sites**](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/migrate.html#activating-sites) documentation to activate your Cloud site and thus control reboot schedule, power management, and others, via **Citrix Cloud**.
 *  Once the migration is completed, if you want to delete the corresponding catalog from your **on-premises site**, you **must** select the option to **leave VM and AD account**. Otherwise both records will get deleted and the Cloud site left pointing to the deleted virtual machine.
