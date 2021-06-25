@@ -19,6 +19,10 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 [App protection policies](/en-us/tech-zone/learn/poc-guides/app-protection-policies.html) - Learn how to enhance the security of your endpoints with App protection policies as part of Citrix Virtual Apps and Desktops deployment. Protect your users with anti-keylogging and anti screen capture functionality.
 
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
+
 [URL Redirection with Secure Browser and Citrix ADC in Azure](/en-us/tech-zone/learn/poc-guides/secure-browser-adc-integration.html) - Learn how to provide the dynamic delivery of resources by redirecting browsing to a Secure Browser service protecting the company network without sacrificing user experience.
 
 ## Design - Reference Architectures

@@ -55,6 +55,10 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 [nFactor for Citrix Gateway Authentication with Push Token](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-push-token.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Push Token.
 
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
+
 [Protecting Gateway Virtual Servers with WAF, Bot, and Advanced Authentication Policies](/en-us/tech-zone/learn/poc-guides/protect-gateway-waf-bot-aaa.html) - Learn how to use the security tools built in to the Citrix ADC to protect VPN and Gateway virtual servers, including Web Application Firewall (WAF), Bot Security, and Advanced Authentication Policies.
 
 [SD-WAN Cloud-to-Data Center Connectivity](/en-us/tech-zone/learn/poc-guides/sdwan-cloud-to-onprem-connectivity.html) - Learn how to implement Citrix SD-WAN rapidly to provide secure, enhanced, and resilient connectivity between your public cloud and data center environments.

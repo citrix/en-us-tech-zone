@@ -26,3 +26,7 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 [Citrix Secure Internet Access with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/secure-internet-access-swa.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix Secure Workspace Access to provide secure access to SaaS and web applications, anywhere, from any device.
 
 [Citrix Secure Internet Access with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html) - Learn how to set up Citrix Secure Internet Access within a Citrix Virtual Apps and Desktops environment that provides secure access to virtual desktops and applications, anywhere, from any device.
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
