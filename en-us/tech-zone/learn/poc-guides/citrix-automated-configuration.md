@@ -139,7 +139,7 @@ Extra steps are required to import your **PVS Catalogs** and their corresponding
 
 **Note:** A separate section is available with instructions for Static assigned virtual machines. Refer to the steps mentioned on the [MCS Static Assigned VDIs](#dealing-with-machine-creation-services-mcs-static-assigned-machines) section in this guide.
 
-The import and export commands are supported for this task now. Both the golden image and the configuration in Catalogs with **User data: Discard** can be migrated. However the virtual machines in these catalogs will not be migrated, since the life cycle of the virtual machine is maintained by the site you are importing from. When machines are turned on, their state might change, affecting import data for the virtual machines synchronization. Therefore when migrating these catalogs using the tool, it creates a catalog metadata and initiates master image creation, but zero machines are imported.
+The import and export commands are supported for this task now. Both the golden image and the configuration in Catalogs with **User data: Discard** can be migrated. However the virtual machines in these catalogs will not be migrated, since the life cycle of the virtual machine is maintained by the site you are importing from. When machines are turned on, their state might change, affecting import data for the virtual machines synchronization. Therefore when migrating these catalogs using the tool, it creates a catalog metadata and initiates master image creation. However zero machines are imported.
 
 **Important Considerations:**
 
@@ -150,7 +150,7 @@ The import and export commands are supported for this task now. Both the golden 
 *  All other objects (including the Delivery Group, applications, policies, and everything else that use the catalog) can be imported, and do not have to wait for the master image creation. The same commands available within the tool can be used to migrate catalogs and all other objects.
 *  When the catalog has finished creating, machines can be added to the imported catalog, and then users can launch their resources.
 
-**Note:** After reading these considerations and once you've exported your configuration as indicated on [Export your On-Premises site configuration](#export-your-on-premises-site-configuration), follow the steps mentioned on the [Import your Site Configuration into Cloud section](#import-your-site-configuration-into-cloud) in this guide to merge your configuration as needed.
+**Note:** Once your configuration has been exported as indicated on [Export your On-Premises site configuration](#export-your-on-premises-site-configuration), follow [Import your Site Configuration into Cloud section](#import-your-site-configuration-into-cloud) in this guide to merge your configuration as needed.
 
 ## Dealing with Machine Creation Services (MCS): Static Assigned Machines (PREVIEW)
 
@@ -270,6 +270,6 @@ If everything looks as expected, your CVADS migration is complete.
 
 2.  You can also reach out via the [Support Forum](https://discussions.citrix.com/forum/1804-automated-configuration-for-virtual-apps-and-desktops-tech-preview/).
 
-3.  Check out our On-demand **August 19 webinar recording** - ["Why Citrix Cloud migration is easier than ever"](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/technology-in-practice-webinar-august-2020/), where we shared more information on the tool and hosted a **Live Q&A session** with a panel of Citrix experts.
+3.  Check out our On-demand **August 19 webinar recording** - ["Why Citrix Cloud migration is easier than ever"](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/technology-in-practice-webinar-august-2020/). We shared more information on the tool and hosted a **Live Q&A session** with a panel of Citrix experts.
 
 4.  If after consulting the information listed previously you still need assistance, get in touch with your Citrix representatives, Customer Success Manager, or Support.
