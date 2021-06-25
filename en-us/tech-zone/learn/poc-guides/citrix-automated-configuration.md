@@ -139,7 +139,9 @@ Extra steps are required to import your **PVS Catalogs** and their corresponding
 
 **Note:** A separate section is available with instructions for Static assigned virtual machines. Refer to the steps mentioned on the [MCS Static Assigned VDIs](#dealing-with-machine-creation-services-mcs-static-assigned-machines) section in this guide.
 
-The import and export commands are supported for this task now. Both the golden image and the configuration in Catalogs with **User data: Discard** can be migrated. However the virtual machines in these catalogs will not be migrated, since the life cycle of the virtual machine is maintained by the site you are importing from. When machines are turned on, their state might change, affecting import data for the virtual machines synchronization. Therefore when migrating these catalogs using the tool, it creates a catalog metadata and initiates master image creation. However zero machines are imported.
+The import and export commands are supported for this task now. Both the golden image and the configuration in Catalogs with **User data: Discard** can be migrated. However the virtual machines in these catalogs will not be migrated, since the life cycle of the virtual machine is maintained by the site you are importing from.
+
+When machines are turned on, their state might change, affecting import data for the virtual machines synchronization. Therefore when migrating these catalogs using the tool, it creates a catalog metadata and initiates master image creation. However zero machines are imported.
 
 **Important Considerations:**
 
@@ -147,7 +149,7 @@ The import and export commands are supported for this task now. Both the golden 
 *  The MCS catalog import process can take a couple of hours based on the size of the master image. Therefore import command within the tool will only start the MCS catalog creation and not wait for it to finish.
 *  After the import has completed, the catalog creation progress can be monitored via Studio in the cloud deployment.
 *  Once the master image is created you can provision machines. **Capacity considerations** must be taken into account, since you will already have capacity consumed from your on-premises usage.
-*  All other objects (including the Delivery Group, applications, policies, and everything else that use the catalog) can be imported, and do not have to wait for the master image creation. The same commands available within the tool can be used to migrate catalogs and all other objects.
+*  All other objects (including the Delivery Group, applications, policies, and everything that uses the catalog) can be imported, without having to wait for the master image creation. The same commands available within the tool can be used to migrate catalogs and all other objects.
 *  When the catalog has finished creating, machines can be added to the imported catalog, and then users can launch their resources.
 
 **Note:** Once your configuration has been exported as indicated on [Export your On-Premises site configuration](#export-your-on-premises-site-configuration), follow [Import your Site Configuration into Cloud section](#import-your-site-configuration-into-cloud) in this guide to merge your configuration as needed.
