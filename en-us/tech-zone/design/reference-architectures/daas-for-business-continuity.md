@@ -115,7 +115,7 @@ CompanyA migrated to Citrix Virtual Apps and Desktops service to deliver access 
 
 Citrix Virtual Apps and Desktops service allows customers the flexibility to deploy images in their own customer-managed Azure. However, CompanyA has decided to deploy in the Citrix Managed Azure because they wanted a business continuity solution that was fully managed by the vendor. While Citrix provides base images that CompanyA can use, they only include the operating system, and the Virtual Delivery Agent installed on them. Therefore, they decided to import their own images, which include the organization's apps and configurations. CompanyA currently has deployed Windows ten multi-session machines to reduce the number of machines needed with the "medium" workload, which supports ten concurrent sessions.
 
-More in-depth information on Citrix Virtual Apps and Desktops Managed Azure can be found [here](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html)
+More in-depth information on Citrix Virtual Apps and Desktops Managed Azure can be found [here](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html).
 
 ### SD-WAN
 
@@ -133,7 +133,7 @@ More information on SD-WAN can be found [here](/en-us/tech-zone/learn/tech-brief
 
 CompanyA has chosen to use Citrix Virtual Apps and Desktops Service because it gives them the flexibility they need to deploy resources from multiple resource locations from a unified management console. It also reduces the administrative overhead to deploy and manage their virtual apps and desktop environment. It allows them to minimize hardware costs and deploy DaaS resources for a fully managed solution.
 
-More in-depth information on Citrix Virtual Apps and Desktops service can be found [here]( /en-us/tech-zone/learn/tech-briefs/cvads.html).
+More in-depth information on Citrix Virtual Apps and Desktops service can be found [here](/en-us/tech-zone/learn/tech-briefs/cvads.html).
 
 ### Service Continuity
 
