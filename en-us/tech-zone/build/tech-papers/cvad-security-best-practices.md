@@ -59,7 +59,7 @@ For thin client terminals that run a full operating system, the use of write fil
 
 ### Content Redirection
 
-TODO Offloading BCR, Flash redirection etc...
+TODO Offloading BCR, Flash redirection etc... test
 
 ### Patching
 
