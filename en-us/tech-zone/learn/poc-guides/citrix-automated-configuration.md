@@ -17,7 +17,7 @@ Administrators can easily test and explore the **Citrix Virtual Apps and Desktop
 
 ### What is the Automated Configuration tool for Citrix Virtual Apps and Desktops?
 
-This tool is designed to help automate the migration of **CVAD** configuration (policies, applications, catalogs, admin roles, scopes and others) from one or more On-Premises sites to the **Citrix Virtual Apps and Desktop service** (CVADS) hosted on Citrix Cloud. It can also be used to migrate information between **different Cloud regions** or **tenants**.
+This tool is designed to help automate the migration of **CVAD** configuration (policies, applications, catalogs, admin roles, scopes and others) from one or more On-Premises site(s) to the **Citrix Virtual Apps and Desktop service** (CVADS) hosted on Citrix Cloud. It can also be used to migrate information between **different Cloud regions** or **tenants**.
 
 The migration can be performed in stages by running the tool multiple times, allowing administrators to easily achieve the desired configuration state. This [**2-minute video**] provides a quick tour of the Automated Configuration tool.
 
@@ -56,7 +56,7 @@ The tool also allows administrators to **merge multiple on-premises sites into a
 1.  [Complete the On-Premises pre-requisites](#complete-pre-requisites-for-exporting-from-on-premises-site)
 2.  [Export your On-Premises site configuration into YAML (*.yml*) files](#export-your-on-premises-site-configuration)
 3.  [Complete the cloud pre-requisites](#complete-prerequisites-in-cloud)
-4.  [Complete the requisites for importing site configuration when using different provisioning methods (Provisioning Services (PVS) and Machine Creation Services (MCS))](#dealing-with-provisioning-services-pvs-machine-catalogs-delivery-and-application-groups-and-policies)
+4.  [Complete the requisites for importing site configuration when using different provisioning methods (Provisioning Services (PVS), and Machine Creation Services (MCS) for both Pooled and Static Catalogs)](#requisites-for-importing-site-configuration-using-different-provisioning-methods)
 5.  [Import your Site Configuration into Cloud (by editing the required files)](#import-your-site-configuration-into-cloud)
 6.  [Troubleshooting tips and where to find more information](#troubleshooting-tips)
 
@@ -96,7 +96,7 @@ Using an ```export``` PowerShell command, you can export your existing On-Premis
 
 ## Complete Prerequisites in Cloud
 
-Go to your **Resource Location** and make sure that your **Cloud Connectors** are both showing green (Available). **Note:** If you need instructions on how to set up your **Cloud Connectors**, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html).
+Go to your **Resource Location** and make sure your **Cloud Connectors** are both showing green (Available). **Note:** If you need instructions on how to set up your **Cloud Connectors**, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html).
 
 1.  To verify the health status of your **Cloud Connectors**, first log in to your [cloud portal](https://citrix.cloud.com) with your Citrix administrator credentials (or your Azure AD credentials, when applicable).
 [![Cloud Prerequisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_cloud-pre-requisites-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_cloud-pre-requisites-001.png)
@@ -154,7 +154,7 @@ When machines are turned on, their state might change, affecting import data for
 
 **Note:** After these considerations, follow [Import your Site Configuration into Cloud section](#import-your-site-configuration-into-cloud) in this guide to merge your configuration as needed.
 
-## Dealing with Machine Creation Services (MCS): Static Assigned Machines (PREVIEW)
+### Dealing with Machine Creation Services (MCS): Static Assigned Machines (PREVIEW)
 
 **Note:** A separate section is available with instructions for Pooled and RDS Machines. Refer to the steps mentioned on the [MCS Pooled VDI and RDS Machines](#dealing-with-machine-creation-services-mcs-pooled-random-and-rds-machine-catalogs)
 
@@ -162,7 +162,7 @@ The import and export commands are supported for this task now. This process imp
 
 **Important Considerations:**
 
-*  Since this process is still in preview, it is not automatically enabled. You must contact Citrix support or your Customer Success Management team to enable this feature for your org ID.
+*  Since this process is still in preview, you must reach out to Citrix in order to enable this feature for your org ID, since this is not automatically enabled.
 *  The VDAs **need** to be pointed to the Cloud Connectors for them to register with **Citrix Cloud**.
 *  Refer to the [**Activating sites**](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/migrate.html#activating-sites) documentation to activate your Cloud site and thus control reboot schedule, power management, and others, via **Citrix Cloud**.
 *  Once the migration is completed, if you want to delete the corresponding catalog from your **on-premises site**, you **must** select the option to **leave VM and AD account**. Otherwise both records will be deleted and the Cloud site left pointing to the deleted virtual machine.
@@ -215,7 +215,7 @@ Administrators must edit the ```CustomerInfo.yml``` file and add the correspondi
 4.  Copy your **Resource Location name** (Shown as ```My Resource Location``` on the following screenshot):
 [![Zone Mapping](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-004.png)
 
-1.  Paste this value on the ```ZoneMapping.yml``` file instead of the ```Name_Of_Your_Resouce_Zone``` value:
+5.  Paste this value on the ```ZoneMapping.yml``` file instead of the ```Name_Of_Your_Resouce_Zone``` value:
 [![Zone Mapping](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-005.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-005.png)
 
 *  **Note:** Multiple Zones in your On-Premises environment can also map to **one Resource Location** in the cloud. However there always must be one row in the file for **each zone** in the **On-Premises environment**. For **multiple zones on-premises** and **one Resource Location**, the format on this file would look as follows:
@@ -247,7 +247,7 @@ When mapping **Zones** to different **Resource locations**, the file must look l
 1.  Access your Virtual Apps and Desktops service **Manage** tab via the [Cloud Console](https://citrix.cloud.com) > **My Services > Virtual Apps and Desktops service > Manage tab**).
 [![Verifying Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_verifying-config-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_verifying-config-001.png)
 
-1.  Refresh to make sure that the **Machine catalogs**, **Delivery groups**, **policies**, **tags,** and **applications** are now showing as expected. **Note:** Depending on what you import, the results vary as they are specific to your own unique configuration. Review **each section** to confirm that the expected items are listed.
+1.  Refresh to make sure the **Machine catalogs**, **Delivery groups**, **policies**, **tags,** and **applications** are now showing as expected. **Note:** Depending on what you import, the results vary as they are specific to your own unique configuration. Review **each section** to make sure the expected items are listed.
 
 *  **Machine Catalogs list example:**
 
@@ -272,6 +272,6 @@ If everything looks as expected, your CVADS migration is complete.
 
 2.  You can also reach out via the [Support Forum](https://discussions.citrix.com/forum/1804-automated-configuration-for-virtual-apps-and-desktops-tech-preview/).
 
-3.  Check out our On-demand **August 19 webinar recording** - ["Why Citrix Cloud migration is easier than ever"](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/technology-in-practice-webinar-august-2020/). We shared more information on the tool and hosted a **Live Q&A session** with a panel of Citrix experts.
+3.  Check out our On-demand **August 19 webinar recording** - ["Why Citrix Cloud migration is easier than ever"](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/technology-in-practice-webinar-august-2020/), where we shared more information on the tool and hosted a **Live Q&A session** with a panel of Citrix experts.
 
 4.  If after consulting the information listed previously you still need assistance, get in touch with your Citrix representatives, Customer Success Manager, or Support.
