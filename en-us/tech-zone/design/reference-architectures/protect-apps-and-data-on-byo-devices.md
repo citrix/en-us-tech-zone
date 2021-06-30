@@ -195,7 +195,7 @@ CompanyA also uses the Citrix Web App and API protection service to prevent volu
 
 ### Secure Internet Access
 
-As users interact with SaaS, web, and virtual apps they often access non-ConpanyA sanctioned internet sites. Although CompanyA has an Internet Security Compliance class that all users must complete yearly, it has not entirely prevented attacks, most often originating through phishing scams.
+As users interact with SaaS, web, and virtual apps they often access non-CompanyA sanctioned internet sites. Although CompanyA has an Internet Security Compliance class that all users must complete yearly, it has not entirely prevented attacks, most often originating through phishing scams.
 
 To help protect the users and the organization, CompanyA incorporates the Citrix Secure Browser service with Citrix Secure Internet Access and Security Analytics into the BYO devices design to protect apps and data.
 
