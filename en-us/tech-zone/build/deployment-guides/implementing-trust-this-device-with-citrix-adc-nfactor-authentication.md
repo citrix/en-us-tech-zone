@@ -1,13 +1,13 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: First Last, First2 Last2
-specialThanksTo: First Last, First2 Last2
-description: TODO insert description of article
-tz_title: TODO insert title of article
-tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-service-providers;citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;google-cloud-platform;other;security;third-party-content
+contributedBy: Tijl Van den Broeck
+specialThanksTo: Dileep Reddem, Jason Poole, Anurag Gupta, Kiran SA, Amit Arora
+description: Balancing user experience and usability is key to the success of a business application. Citrix ADC enables you to allow users to benefit from “trust this device” functionality, which reduces the amount of reauthentication required and can greatly improve the user experience. This guide describes how to implement the feature to ensure the success of your business critical applications.
+tz_title: Implementing "Trust this device" with Citrix ADC nFactor Authentication
+tz_products: citrix-networking;security
 ---
-# Content Type : tz_title
+# Content Type : Implementing "Trust this device" with Citrix ADC nFactor Authentication
 
 Balancing user experience and usability is key to the success of a business application. Citrix ADC enables you to allow users to benefit from “trust this device” functionality, which reduces the amount of reauthentication required and can greatly improve the user experience. This guide describes how to implement the feature to ensure the success of your business critical applications.
 
@@ -29,6 +29,7 @@ The deployment guide is a technical document that shows how trust this device fu
 * Citrix Gateway with nFactor
 
 ![flowchart](/en-us/tech-zone/build/media/deployment-guides_implementing-trust-this-device-with-citrix-adc-nfactor-authentication_flowchart.png)
+
 **Figure 1: Logic flow of "trust this device" functionality**
 
 At the end of this page there is an appendix with links to additional resources (Example ns.conf file, LoginSchema) which you can use and edit to suit your environment.
@@ -65,6 +66,7 @@ And append the following key/value-pair assignment at the end of the ctxs.core.m
 "KB Questions and Answers not registered":"KB Questions and Answers not registered", Question:" Question",Answer:"Answer",OTPDeleteDevice:"Scan QR Code into the CitrixSSO App",trust_device:"Trust this device for 24h"})})(jQuery);
 ``` 
 ![screenshot 2nd factor](/en-us/tech-zone/build/media/deployment-guides_implementing-trust-this-device-with-citrix-adc-nfactor-authentication_screenshot_2nd_factor.jpg)
+
 **Figure 2: Screen shot of login showing “Trust this device” check box**
 
 To support other languages you can translate and insert similar key/value-pairs using the localization files below – which are already present on the Citrix ADC appliance:
@@ -92,6 +94,7 @@ Figure 4 shows the implementation flow required to enable "Trust this device". T
 1. Lastly, in RADIUS Passthrough the RADIUS authentication is checked, if this is valid the user is successfully authenticated.
 
 ![policylabel logic](/en-us/tech-zone/build/media/deployment-guides_implementing-trust-this-device-with-citrix-adc-nfactor-authentication_policylabel_logic.png)
+
 **Figure 3: Authentication Policy Label Flow Logic** 
 
 **NOTE**: Setting the persistency cookie is not part of the nFactor Flow configuration. This is done later with a Rewrite Policy (see section Persistent Cookie).
@@ -107,9 +110,11 @@ NOTE: in the above configuration example the Key is limited to 12 characters so 
 In this example, there is an expiration timer of 60 seconds. This should be sufficient for a customer to log in, check the box, execute a one time password (OTP) authentication with a RADIUS server and land at a website/application that sets a persistent cookie, but it can be set higher or lower if required.
 
 ![nfactor flow](/en-us/tech-zone/build/media/deployment-guides_implementing-trust-this-device-with-citrix-adc-nfactor-authentication_nfactor_flow.jpg)
+
 **Figure 4: nFactor Flow - visualizing the Trust Device authentication flow**
 
 ![screenshot variable definition](/en-us/tech-zone/build/media/deployment-guides_implementing-trust-this-device-with-citrix-adc-nfactor-authentication_screenshot_variable_definition.png)
+
 **Figure 5: Screen shot of the global variable map dialogue**
 
 The variable map contains a maximum of 1000 entries. This does not mean it will only handle 1000 users, but rather it corresponds to a maximum of 1000 users in the configured 60 second timeframe. After a successful LDAP authentication, the variable is stored. If the variable is not referred to or called upon for 60 seconds the entry is removed. Further, if the map is full then the least frequently used key-value pair is overwritten.
@@ -169,11 +174,11 @@ AAA.USER.NAME.ENCRYPT
 ``` 
 Decryption:
 ``` 
-HTTP.REQ.COOKIE.VALUE(\"nFactor- PersistUser\").DECRYPT
+HTTP.REQ.COOKIE.VALUE(\"nFactor-PersistUser\").DECRYPT
 ``` 
 
 ### Citrix Gateway with nFactor
-The nFactor configuration built here, including the “trust this device” check box, can be linked to a Citrix Gateway virtual server as well. For this, a Citrix ADC Advanced or Premium license is required since a custom loginSchema is being utilized. Whilst nFactor is supported on Citrix ADC Standard Edition since 13.0 build 67.x custom loginSchemas are not supported on this build (see: https://docs.citrix.com/en-us/citrix-gateway/current-release/authentication-authorization/nfactor-for-gateway-authentication.html). The Citrix Gateway Advanced VPX licenses also do not support this type of deployment.
+The nFactor configuration built here, including the “trust this device” check box, can be linked to a Citrix Gateway virtual server as well. For this, a Citrix ADC Advanced or Premium license is required since a custom loginSchema is being utilized. Whilst nFactor is supported on Citrix ADC Standard Edition since 13.0 build 67.x custom loginSchemas are not supported on this license as per [nFactor for Gateway Authentication](https://docs.citrix.com/en-us/citrix-gateway/current-release/authentication-authorization/nfactor-for-gateway-authentication.html) documentation. The Citrix Gateway Advanced VPX licenses also do not support this type of deployment.
 
 You can link the nFactor authentication very simply with the following configuration line:
 ``` 
@@ -182,11 +187,9 @@ add authentication authnProfile prf_auth_nfactor -authnVsName vs_auth_nfactor
 The configuration in the appendix also contains the information to activate this on a Citrix Gateway virtual server behind a Content-Switch.
 
 ## Learn more
-If you want to learn more about nFactor functionality; please visit the documentation site:
-https://docs.citrix.com/en-us/citrix-adc/current-release/aaa-tm/multi-factor-nfactor-authentication.html
+If you want to learn more about nFactor functionality; please visit the documentation site: [Multi Factor nFactor Authentication](https://docs.citrix.com/en-us/citrix-adc/current-release/aaa-tm/multi-factor-nfactor-authentication.html)
 
-To learn more about the encryption/decryption functionality and advanced policy expressions please visit the following site:
-https://docs.citrix.com/en-us/citrix-adc/current-release/appexpert/policies-and-expressions/advanced-policy-exp-evaluation-text/complex-text-operations.html
+To learn more about the encryption/decryption functionality and advanced policy expressions please visit the following site: [Advanced Policy Evaluation with Complex Test Operations](https://docs.citrix.com/en-us/citrix-adc/current-release/appexpert/policies-and-expressions/advanced-policy-exp-evaluation-text/complex-text-operations.html)
 
 ## Appendix
 * [SingleAuthPersist.xml](https://gist.github.com/tijlvdb/6b1c1117dea3ae8dc3a31f6e4af82932 "SingleAuthPersist.xml")
