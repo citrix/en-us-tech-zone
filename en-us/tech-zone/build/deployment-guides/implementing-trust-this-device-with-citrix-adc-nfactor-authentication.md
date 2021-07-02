@@ -73,9 +73,10 @@ And append the following key/value-pair assignment at the end of the ctxs.core.m
 
 ```
 "KB Questions and Answers not registered":"KB Questions and Answers not registered", Question:" Question",Answer:"Answer",OTPDeleteDevice:"Scan QR Code into the CitrixSSO App",trust_device:"Trust this device for 24h"})})(jQuery);
+
 ```
 
-![screenshot 2nd factor](/en-us/tech-zone/build/media/deployment-guides_implementing-trust-this-device-with-citrix-adc-nfactor-authentication_screenshot_2nd_factor.jpg)
+![screenshot 2nd factor](/en-us/tech-zone/build/media/deployment-guides_implementing-trust-this-device-with-citrix-adc-nfactor-authentication_screenshot-2nd-factor.png)
 
 **Figure 2: Screen shot of login showing “Trust this device” check box**
 
@@ -127,7 +128,7 @@ NOTE: in the above configuration example the Key is limited to 12 characters so 
 
 In this example, there is an expiration timer of 60 seconds. This should be sufficient for a customer to log in, check the box, execute a one time password (OTP) authentication with a RADIUS server and land at a website/application that sets a persistent cookie, but it can be set higher or lower if required.
 
-![nfactor flow](/en-us/tech-zone/build/media/deployment-guides_implementing-trust-this-device-with-citrix-adc-nfactor-authentication_nfactor_flow.jpg)
+![nfactor flow](/en-us/tech-zone/build/media/deployment-guides_implementing-trust-this-device-with-citrix-adc-nfactor-authentication_nfactor_flow.png)
 
 **Figure 4: nFactor Flow - visualizing the Trust Device authentication flow**
 
