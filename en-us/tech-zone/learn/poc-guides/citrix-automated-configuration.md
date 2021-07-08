@@ -7,6 +7,7 @@ description: This Proof of Concept guide provides instructions on using an Autom
 tz_title: Automated Configuration Tool
 tz_products: citrix-virtual-apps-and-desktops;
 ---
+
 # PoC Guide: Automated Configuration Tool
 
 ## Overview
