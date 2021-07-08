@@ -275,3 +275,4 @@ If everything looks as expected, your CVADS migration is complete.
 3.  Check out our On-demand **August 19 webinar recording** - ["Why Citrix Cloud migration is easier than ever"](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/technology-in-practice-webinar-august-2020/), where we shared more information on the tool and hosted a **Live Q&A session** with a panel of Citrix experts.
 
 4.  If after consulting the information listed previously you still need assistance, get in touch with your Citrix representatives, Customer Success Manager, or Support.
+
