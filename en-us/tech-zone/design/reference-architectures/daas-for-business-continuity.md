@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Ana Ruiz
-specialThanksTo: Mayank Singh & Matthew Brooks
+specialThanksTo: Mayank Singh, Dan Feller, & Matthew Brooks
 description: Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 tz_title: Reference Architecture- Desktop-as-a-Service for Business Continuity
 tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-service-providers;citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;google-cloud-platform;other;security;third-party-content
@@ -123,7 +123,7 @@ More in-depth information on Citrix Virtual Apps and Desktops Managed Azure can 
 
 When end users access DaaS resources, those resources still need to be able to communicate with app data and file servers in CompanyA's data center. Although CompanyA can connect back to their datacenter using Express Routes, they have chosen to deploy SD-WAN instead to enhance the traffic performance while in transit. They also want to the flexibility to be able to deploy to multiple cloud sites in the future.
 
-High availability and great user experience are important for CompanyA, and SD-WAN can help in both areas. Citrix SD-WAN does per-packet QOS and analyzes traffic in real-time on a per-packet basis, including latency, loss, and jitter. By bonding two relatively inexpensive internet connections (whether two landlines or a landline plus 4G/LTE), Citrix SD-WAN can deliver not only the reliability of much costlier MPLS circuits but also higher bandwidth, lowest possible latency, and various [Quality-of-Service features] (/en-us/citrix-sd-wan/current-release/quality-of-service.html).
+High availability and great user experience are important for CompanyA, and SD-WAN can help in both areas. Citrix SD-WAN does per-packet QOS and analyzes traffic in real-time on a per-packet basis, including latency, loss, and jitter. By bonding two relatively inexpensive internet connections (whether two landlines or a landline plus 4G/LTE), Citrix SD-WAN can deliver not only the reliability of much costlier MPLS circuits but also higher bandwidth, lowest possible latency, and various [Quality-of-Service features](/en-us/citrix-sd-wan/current-release/quality-of-service.html).
 
 More information on SD-WAN can be found [here](/en-us/tech-zone/learn/tech-briefs/sdwan-workspace.html).
 
