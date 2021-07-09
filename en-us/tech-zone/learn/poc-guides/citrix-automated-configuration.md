@@ -162,7 +162,7 @@ The import and export commands are supported for this task now. This process imp
 
 *  Since this process is still in preview, you must reach out to Citrix in order to enable this feature for your org ID, since this is not automatically enabled.
 *  The VDAs **need** to be pointed to the Cloud Connectors for them to register with **Citrix Cloud**.
-*  Refer to the [**Activating sites**](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/migrate.html#activating-sites) documentation to activate your Cloud site and thus control reboot schedule, power management, and others, via **Citrix Cloud**.
+*  Refer to the [**Activating sites**](/en-us/citrix-virtual-apps-desktops-service/migrate.html#activating-sites) documentation to activate your Cloud site and thus control reboot schedule, power management, and others, via **Citrix Cloud**.
 *  Once the migration is completed, if you want to delete the corresponding catalog from your **on-premises site**, you **must** select the option to **leave VM and AD account**, otherwise both records will get deleted and the Cloud site will be left pointing to the deleted virtual machine.
 
 **Note:** After reading these considerations and once you've exported your configuration as indicated on [Export your On-Premises site configuration](#export-your-on-premises-site-configuration), follow the steps mentioned on the [Import your Site Configuration into Cloud section](#import-your-site-configuration-into-cloud) in this guide to merge your configuration as needed.
