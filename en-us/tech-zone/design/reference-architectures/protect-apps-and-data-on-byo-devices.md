@@ -159,9 +159,9 @@ CompanyA wants to limit the risk of data loss and data remanence on BYO devices.
 
 CompanyA has developed prescriptive access models to meet its security requirements:
 
-*  BYO devices **without** Workspace app use Secure Workspace Access to launch a SaaS or web app through an isolated browser using the Citrix Secure Browser service. Secure Workspace Access provides SSO and enforces contextual access policies (download, print, copy and paste restrictsions) to web and SaaS apps.
+*  BYO devices **without** Workspace app use Secure Workspace Access to launch a SaaS or web app through an isolated browser using the Citrix Secure Browser service. Secure Workspace Access provides SSO and enforces adaptive access policies (download, print, copy and paste restrictsions) to web and SaaS apps.
 
-*  BYO devices **with** Workspace app use Secure Workspace Access to launch a Saas or web app using a local, containerized browser. The embedded browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app. Secure Workspace Access provides SSO and enforces contextual access policies (download, print, copy and paste restrictions) and App Protection policies (screen scraping and key-logger restrictions) to web and SaaS apps.
+*  BYO devices **with** Workspace app use Secure Workspace Access to launch a Saas or web app using a local, containerized browser. The embedded browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app. Secure Workspace Access provides SSO and enforces adaptive access policies (download, print, copy and paste restrictions) and App Protection policies (screen scraping and key-logger restrictions) to web and SaaS apps.
 
 *  When users access virtual apps and desktops, the Virtual Apps and Desktops service provides SSO and enforces lockdown policies to restrict downloading, printing, and unidirectional and bidirectional copy/paste actions.
 
@@ -234,7 +234,7 @@ Refer to the [Citrix Secure Internet Access Tech Brief](/en-us/tech-zone/learn/t
 Based on the preceding requirements, CompanyA created the high-level conceptual architecture mentioned above. The general flow and requirements are that end users will require:
 
 *  Protected access to SaaS apps and VPN-less access to internal web apps via Citrix Secure Workspace Access
-*  Contextual authentication before being granted access to external or internal resources via Citrix Secure Workspace Access
+*  Adaptive authentication before being granted access to external or internal resources via Citrix Secure Workspace Access
 *  Zero Trust access to specific resources via Citrix Secure Workspace Access
 *  Protected access to internet traffic from the web apps, or vitual apps and desktops via using Citrix Secure Browser Service with Citrix Secure Internet Access
 *  Protected access to web apps accessed from BYO devices with Citrix Web Application Firewall
