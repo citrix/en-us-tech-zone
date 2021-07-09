@@ -56,7 +56,7 @@ The tool also allows administrators to **merge multiple on-premises sites into a
 1.  [Complete the On-Premises pre-requisites](#complete-pre-requisites-for-exporting-from-on-premises-site)
 2.  [Export your On-Premises site configuration into YAML (*.yml*) files](#export-your-on-premises-site-configuration)
 3.  [Complete the cloud pre-requisites](#complete-prerequisites-in-cloud)
-4.  [Complete the requisites for importing site configuration when using different provisioning methods (Provisioning Services (PVS), and Machine Creation Services (MCS) for both Pooled and Static Catalogs)](#requisites-for-importing-site-configuration-using-different-provisioning-methods)
+4.  [Complete the requisites for importing site configuration when using different provisioning methods (Machine Creation Services (MCS) for both Pooled and Static Catalogs)](#requisites-for-importing-site-configuration-using-different-provisioning-methods)
 5.  [Import your Site Configuration into Cloud (by editing the required files)](#import-your-site-configuration-into-cloud)
 6.  [Troubleshooting tips and where to find more information](#troubleshooting-tips)
 
@@ -79,7 +79,7 @@ These steps must be run in your DDC or the domain-joined machine where you want 
 Using an ```export``` PowerShell command, you can export your existing On-Premises configuration and obtain the necessary *.yml* files. These files are used to import your desired configuration into **Citrix Cloud**.
 
 1.  After running the **MSI** installer on the previous step, you get an **Auto Config** shortcut automatically created on the Desktop. Right-click this shortcut and click **Run as Administrator.**
-2.  Run the ```Export-CvadAcToFile``` command. This command exports policies, manually provisioned catalogs, and delivery groups. It also exports applications, application folders, icons, zone mappings, tags, admin roles and scopes, and other items. **Note:** For **MCS** and **PVS** machine catalogs and delivery groups, refer to the steps on [Requisites for Importing Site Configuration using different Provisioning Methods section](#requisites-for-importing-site-configuration-using-different-provisioning-methods) in this guide.
+2.  Run the ```Export-CvadAcToFile``` command. This command exports policies, manually provisioned catalogs, and delivery groups. It also exports applications, application folders, icons, zone mappings, tags, admin roles and scopes, and other items. **Note:** For **MCS** machine catalogs and delivery groups, refer to the steps on [Requisites for Importing Site Configuration using different Provisioning Methods section](#requisites-for-importing-site-configuration-using-different-provisioning-methods) in this guide.
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002-1.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002-1.png)
 
 3.  Once the tool finishes running, the **Overall status** shows as **True** and the export process is completed (the output lines shown match the following illustration). **Note:** If there are any errors, diagnostic files are created in the action-specific subfolders ```(Export, Import, Merge, Restore, Sync, Backup, Compare)```, which can be found under ```%HOMEPATH%\Documents\Citrix\AutoConfig```. Refer to the [Troubleshooting Tips section](#troubleshooting-tips) if you encounter any errors.
@@ -118,22 +118,7 @@ Go to your **Resource Location** and make sure your **Cloud Connectors** are bot
 
 ### Dealing with Provisioning Services (PVS) Machine Catalogs, Delivery and Application Groups and Policies
 
-Extra steps are required to import your **PVS Catalogs** and their corresponding applications. Follow these instructions to prepare your environment, before proceeding to import the **Application** settings.
-
-**Note:** After performing these actions, follow the steps mentioned on the
-[Import your Site Configuration into Cloud section](#import-your-site-configuration-into-cloud) in this guide.
-
-1.  Run **PowerShell** as an Administrator
-2.  Type the following command ```Export-CvadAcToFile``` and press **Return (Enter)** on your keyboard.
-[![Provisioning Method PVS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-001.png)
-
-3.  Successfully completed items show in green ```OK```. Once the tool finishes running, a screen like the following shows up:
-[![Provisioning Method PVS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-002.png)
-
-4.  Access the ```C:\Users\<username>\Documents\Citrix\AutoConfig``` folder and open up the ```CvadAcSecurity.yml``` file, which you must edit for PVS to work. **Note:** The **UserName** and **Password** fields refer to your **PVS Site Server** credentials. Be sure to specify your logon as ```DOMAIN\Username```, add the password, and save the file when ready.
-[![Provisioning Method PVS](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_other-prov-pvs-process-003.png)
-
-*  After performing these actions, follow the steps mentioned on the [Import your Site Configuration into Cloud](#import-your-site-configuration-into-cloud) section in this guide.
+No extra steps are required to import your **PVS Catalogs** and their corresponding applications at this time. Follow the steps mentioned on the [Import your Site Configuration into Cloud](#import-your-site-configuration-into-cloud) section in this guide.
 
 ### Dealing with Machine Creation Services (MCS): Pooled VDI multi-session (Random) and RDS Machine Catalogs (PREVIEW)
 
@@ -172,7 +157,7 @@ The import and export commands are supported for this task now. This process imp
 ## Import your Site Configuration into Cloud
 
 During this step, you obtain the **customer connection details**, manually create your **Zone mappings,** and **import the configuration** to your Cloud tenant.
-**Note:** For **PVS** and **MCS**, first follow the corresponding subsections under the [Import your Site Configuration into Cloud section](#import-your-site-configuration-into-cloud) in this guide.
+**Note:** For **MCS**, first follow the corresponding subsections under the [Import your Site Configuration into Cloud section](#import-your-site-configuration-into-cloud) in this guide.
 
 ### Obtaining Customer Connection Details
 
