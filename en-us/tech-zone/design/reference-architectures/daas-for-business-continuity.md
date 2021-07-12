@@ -7,7 +7,7 @@ description: Learn how to design an environment that uses Desktop-as-a-Service a
 tz_title: Reference Architecture- Desktop-as-a-Service for Business Continuity
 tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-service-providers;citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;google-cloud-platform;other;security;third-party-content
 ---
-# Reference Architecture: Desktop-as-a-Service for Business Continuity
+# Reference Architecture: Reference Architecture- Desktop-as-a-Service for Business Continuity
 
 ## Overview
 
