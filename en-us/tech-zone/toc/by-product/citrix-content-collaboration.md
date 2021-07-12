@@ -21,6 +21,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Content Collaboration with storage zones on Azure IaaS](/en-us/tech-zone/design/reference-architectures/storage-zones-azure-iaas.html) - Learn about the architecture and design considerations for deploying a customer-managed storage zone in Azure to provide the best user experience and security for Citrix Content Collaboration.
 
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
 ## Build - Deployment Guides
 
 Deployment guides provide step-by-step instruction on how to perform key tasks around the installation and configuration of real-world Citrix solutions.

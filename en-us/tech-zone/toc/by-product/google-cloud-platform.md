@@ -24,3 +24,5 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
 
 [Citrix virtualization on Google Cloud](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) - Learn the architecture and deployment considerations for Citrix solutions on Google Cloud Platform.
+
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.

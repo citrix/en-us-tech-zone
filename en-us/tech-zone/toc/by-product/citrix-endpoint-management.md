@@ -39,6 +39,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Citrix Endpoint Management with Microsoft EMS/Intune and Android Enterprise Integration](/en-us/tech-zone/design/reference-architectures/citrix-endpoint-management.html) - Learn about the architecture and integration with Microsoft EMS/Intune and Android Enterprise to deliver applications securely to any device and how it enables security and productivity benefits for both Microsoft EMS/Intune and Citrix customers.
 
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
 ## Build - Deployment Guides
 
 Deployment guides provide step-by-step instruction on how to perform key tasks around the installation and configuration of real-world Citrix solutions.
