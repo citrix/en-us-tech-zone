@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Mayank Singh
 specialThanksTo: Kireeti Valicherla, Swaroop Joseph Varghese, Alan Goldman
-description: Delivers Windows apps and desktops from Microsoft Azure based on Windows Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
+description: Delivers Windows apps and desktops from Microsoft Azure based on Azure Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
 tz_title: Citrix Virtual Apps and Desktops Standard for Azure
 tz_products: citrix-virtual-apps-and-desktops-standard-for-azure;
 ---
@@ -124,13 +124,13 @@ Admins have a choice of two methods for creating the catalogs – Quick Create a
 **Quick Create** creates a static VM (the data on the VM persists across session launches) from a Citrix Managed Win 10 master image that is joined to the Citrix Managed Azure AD. This catalog has no connection to the organization's corporate network (so corporate apps can't access the data that is hosted there). This type of catalog is more suitable for the PoCs. The admin can only choose the size and number of machines and which region they are to be brought up in.
 
 ![Quick_Create_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_10-quick-create-ss.png)
-  
+
  **Custom Create** provides admins with various options, so the required catalog can be created.
 
 Admins have the options for the catalog type, the subscription where the VMs are being created, setting up connectivity with the corporate network, the Azure region, the storage type, workload, and number of machines in the catalog and which master image to be used in addition to the **Autoscale** settings for the catalog.
 
 ![Custom_Create_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_11-custom-create-ss.png)
-  
+
 Catalog types available are:
 **Multi-session** - This type is for Windows 10 Multi-session or Windows Server 2016 OS machines. More than one user is expected to log in to a single machine. Giving admins the benefit of maximizing usage of machine resources and reducing the no of machines needed to serve a particular number of users.
 
@@ -152,7 +152,7 @@ The Multi-session catalog would provide the workload drop-down list, where we ca
 The **Workload** option allows admins to choose from 4 options, for the workload, that gives admins an idea of the kind of workloads that would be served by each of the machines. They are:
 
 ![Workload_Options_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_12-workload-options-ss.png)
-  
+
 **Light:** The expected workload is light for each user and the machine supports 16 such sessions.
 
 **Medium:** The expected workload is medium for each user and each machine supports 10 such sessions.
@@ -168,7 +168,7 @@ For Static and Random (single session catalogs) in the **Machine Performance** d
 Customers who want to connect their Azure hosted VMs in Citrix’s subscription need to connect them back to their own Azure subscriptions that host Azure AD or app and profile data or both. As seen in the deployment scenarios for domain joined workloads the Citrix Managed Azure subscription (resource location) needs to have VNet peering with the organizations Azure subscription (hosts Azure AD). The connection can be made by using the **Network Connections** item in the right menu.
 
 ![VNet_Peering_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_13-vnet-peering-ss.png)
-  
+
 Existing VNet peered networks are listed here. The admin can add a new VNet peer by clicking + Add Connection. Then click the link for the Easy setup for Azure customers. Simply sign in with the Subscription Owner account and agree to provide the following permissions. The list of networks in the subscription is retrieved and displayed. The admin can choose which of the retrieved connections they need to peer with the Citrix Managed network.
 
 ![VNet_Peering_Permissions_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_14-vnet-peering-perms-ss.png)
@@ -191,7 +191,7 @@ Once the route is added it shows up in the listing of routes for the VNet peerin
 With this feature the admin can ensure workload availability for their users while controlling costs. Costs are lowered by powering machines down with load-based or schedule-based power management, or a combination of both (when the machines are not expected to be in use). Autoscale helps reduce the cost of running the workloads in the cloud. And also makes sure that there are enough VMs booted up to take care of session launch requests when needed.
 
 ![Autoscale_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_15-autoscale-ss.png)
-  
+
 Admins have the ability to power manage the machines that are in a catalog based on the time of the day. Admins can also control the actions that are to be performed on a session that is idle or disconnected and the time-out for those actions to occur.
 
 An admin can set the working hours for a catalog (based on time-zone) and then define how many VMs are needed in off-work hours. Then we can shut down the rest of the VMs to save on the Azure consumption cost. Autoscale also works to bring up the required number of machines to serve the session when the work hours are resumed. Resulting in a great experience when users try to log in again.
@@ -209,7 +209,7 @@ Admins are provided visibility into their Citrix Virtual Apps and Desktops Stand
 The admin can view desktop usage, sessions, and machines.
 
 ![Monitoring_Usage_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_16-monitoring-usage-ss.png)
-  
+
 The default view is the Desktop Usage page. The page contains a real time active machine and session status with a total number of machines in one or more selected catalogs. The following graph is of the machines and sessions that are active for one or more selected catalogs for the selected time period. If the admin hovers over any of the points in the graph, a pop-up reveals the counts at the point in time.
 The time ranges available here are 1 day, 1 week, 1 month, and 3 months going back from the current time.
 
@@ -228,7 +228,7 @@ Admins can use the **Troubleshoot and Support** section in the right side menu t
 We provide options for different issue scenarios:
 
 ![TroubleShoot_SS](/en-us/tech-zone/learn/media/tech-briefs_citrix-managed-desktops_19-troubleshoot-ss.png)
-  
+
 In case the admin runs into an issue with the setup, the admin can use a machine called a Bastion host, to troubleshoot the issue. The Bastion host has tools preloaded on it. The Bastion host can be created in the resource location (for machine creation issues). Or the admin can RDP into the machine in question (if it’s a session launch issue) to resolve it.
 
 Watch this video to see Citrix Virtual Apps and Desktops Standard for Azure in action: [Tech Insight Video](/en-us/tech-zone/learn/tech-insights/citrix-managed-desktops.html)

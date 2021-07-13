@@ -16,7 +16,7 @@ To see how these capabilities improve the overall experience, watch the followin
 
 ## CPU Optimization
 
-Workspace Environment Management continuously monitors process CPU utilization in an attempt to identify processes that are overtaxing the CPU for an extended duration. When working in a multi-user environment, like VDI and Windows Virtual Desktop, a single user can inadvertently impact the experience of every other user. If one user runs a process that consumes a large percentage of CPU resources, it negatively impacts other users.
+Workspace Environment Management continuously monitors process CPU utilization in an attempt to identify processes that are overtaxing the CPU for an extended duration. When working in a multi-user environment, like VDI and Azure Virtual Desktop, a single user can inadvertently impact the experience of every other user. If one user runs a process that consumes a large percentage of CPU resources, it negatively impacts other users.
 
 The CPU optimization capability within Workspace Environment Management can identify and implement corrective action to maintain the user experience.
 
@@ -34,7 +34,7 @@ Logging into a Windows-based machine can easily take 60+ seconds, depending on p
 
 ## RAM Optimization
 
-In a multi-user environment like VDI and Windows Virtual Desktop, it is important that resources are released back to the host when idle. Releasing resources allows the operating system to reallocate to memory starved processes. Many applications, especially web browsers, continue to consume more RAM resources the longer they are running and do not release resources until they are closed.
+In a multi-user environment like VDI and Azure Virtual Desktop, it is important that resources are released back to the host when idle. Releasing resources allows the operating system to reallocate to memory starved processes. Many applications, especially web browsers, continue to consume more RAM resources the longer they are running and do not release resources until they are closed.
 
 With the RAM optimization capability within Workspace Environment Management, RAM is released back to the system if a process remains idle for a configured amount of time.
 

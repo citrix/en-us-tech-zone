@@ -5,6 +5,14 @@ layout: doc
 
 List of articles related to third party content.
 
+## Learn - PoC Guides
+
+PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
+
+[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
+
+[Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
+
 ## Design - Reference Architectures
 
 Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
