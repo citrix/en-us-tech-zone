@@ -30,3 +30,5 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
 
 [Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) - Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
+
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
