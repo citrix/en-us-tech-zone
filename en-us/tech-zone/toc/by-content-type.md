@@ -395,7 +395,6 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
-
 [Secure Workspace Access](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Secure Workspace Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization's apps and data.
 
 ### Citrix Service Providers
