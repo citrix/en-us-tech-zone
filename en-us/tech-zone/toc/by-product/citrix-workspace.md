@@ -61,11 +61,15 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
 
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
 [Flexible Work](/en-us/tech-zone/design/reference-architectures/flexible-work.html) - Learn how to design an environment to support a flexible work style without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Virtual Apps and Desktops, SD-WAN, Endpoint Management and Security Analytics.
 
 [Mergers and Acquisitions](/en-us/tech-zone/design/reference-architectures/mergers-acquisitions.html) - Learn how to design an environment to support a mergers and acquisition strategy without compromising IT security. The reference architecture incorporates Citrix Workspace, Secure Workspace Access, Virtual Apps and Desktops, Application Delivery Controller, Federated Authentication Service and Security Analytics.
 
 [Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the microapps platform service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
+
+[Reference Architecture- Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
 [Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
 

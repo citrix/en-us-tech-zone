@@ -35,6 +35,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Citrix Analytics](/en-us/tech-zone/design/reference-architectures/citrix-analytics.html) - Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
 
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
 ## Citrix Content Collaboration
 
 ### Learn - PoC Guides
@@ -52,6 +54,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 [Content Collaboration with on-premises storage zones](/en-us/tech-zone/design/reference-architectures/customer-storage-zones-on-premises.html) - Learn about the architecture and design considerations for deploying an on-premises customer-managed storage zone to provide the best user experience and security for Citrix Content Collaboration.
 
 [Content Collaboration with storage zones on Azure IaaS](/en-us/tech-zone/design/reference-architectures/storage-zones-azure-iaas.html) - Learn about the architecture and design considerations for deploying a customer-managed storage zone in Azure to provide the best user experience and security for Citrix Content Collaboration.
+
+[Reference Architecture- Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
 ### Build - Deployment Guides
 
@@ -94,6 +98,8 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
 
 [Citrix Endpoint Management with Microsoft EMS/Intune and Android Enterprise Integration](/en-us/tech-zone/design/reference-architectures/citrix-endpoint-management.html) - Learn about the architecture and integration with Microsoft EMS/Intune and Android Enterprise to deliver applications securely to any device and how it enables security and productivity benefits for both Microsoft EMS/Intune and Citrix customers.
+
+[Reference Architecture- Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
 ### Build - Deployment Guides
 
@@ -189,6 +195,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Application Delivery Management](/en-us/tech-zone/design/reference-architectures/citrix-adm.html) - See how the Citrix Application Delivery Management software is deployed to simplify management and monitoring of your application delivery infrastructure.
 
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
 [SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan.html) - Learn about the framework, design, and architecture for Citrix SD-WAN with SD-WAN Orchestrator for single region deployment.
 
 [SD-WAN for Content Collaboration](/en-us/tech-zone/design/reference-architectures/sdwan-content-collaboration.html) - Learn about the deployment architecture and how Citrix SD-WAN WANOP helps to optimize Citrix Content Collaboration for customer-managed storage zones including relevant test data.
@@ -237,6 +245,12 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 [Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
 
+### Design - Reference Architectures
+
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
 ## Citrix Secure Workspace Access
 
 ### Learn - Tech Insights
@@ -279,6 +293,8 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
 
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
 [Secure Workspace Access](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Secure Workspace Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization's apps and data.
 
 ## Citrix Service Providers
@@ -300,6 +316,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 [Citrix Service Provider Virtual Apps and Desktops service](/en-us/tech-zone/design/reference-architectures/csp-cvads.html) - The CSP Reference Architecture, provides architectural guidance for Citrix Service Providers to utilize the Virtual Apps and Desktops Service, and Citrix Cloud technologies to offer services to customers and subscribers. The Reference Architecture is intended to assist Service Providers scale from a small subscriber base to an extensive user base shared across multiple tenants and multiple geographies, using a single pane of glass.
 
 [Citrix Virtual Apps and Desktops Service - GCP Architecture with the Managed Service for Microsoft Active Directory for CSPs](/en-us/tech-zone/design/reference-architectures/csp-gcp.html) - Citrix Virtual Apps and Desktops Service Google Cloud Platform (GCP) Architecture with the Managed Service for Microsoft Active Directory for Citrix Service Providers (CSPs) aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and design considerations to leverage GCP Managed AD Service.
+
+[Reference Architecture- Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
 [Virtual Apps and Desktops service with Google Cloud Platform for Citrix Service Providers](/en-us/tech-zone/design/reference-architectures/csp-cvads-aad.html) - Citrix Virtual Apps and Desktops service implementation with Azure Active Directory Domain Services for CSPs Reference Architecture aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and implementation steps to use Azure AD Domain Services.
 
@@ -375,11 +393,15 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Citrix SD-WAN HDX performance improvements for Citrix Virtual Apps and Desktops on-premises environments](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-onprem-experience-architecture.html) - Learn how to optimize the delivery of Citrix Virtual Apps and Desktops from on-premises servers to users at locations with a Citrix SD-WAN appliance by minimizing latency and improving session responsiveness during network issues.
 
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
 [Image Management](/en-us/tech-zone/design/reference-architectures/image-management.html) - Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering, and maintaining virtual machine images in your environment.
 
 [Measuring HDX User Experience Performance Improvements with Citrix SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-experience.html) - Citrix SD-WAN can significantly improve the network performance of Citrix Virtual Apps and Desktops HDX sessions. Learn about the reference architecture we used to measure quantitative benefits.
 
 [Optimizing Unified Communications Solutions](/en-us/tech-zone/design/reference-architectures/optimizing-unified-communications-solutions.html) - Learn how to optimize the voice, video, and other capabilities of unified communication solutions in virtualized Citrix environments.
+
+[Reference Architecture- Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
 [Remote PC Access](/en-us/tech-zone/design/reference-architectures/remote-pc.html) - Discover the use cases and learn about the detailed architecture of the Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.
 
@@ -473,6 +495,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) - Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
 
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
 ## Citrix Workspace
 
 ### Learn - Tech Insights
@@ -531,11 +555,15 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
 
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
 [Flexible Work](/en-us/tech-zone/design/reference-architectures/flexible-work.html) - Learn how to design an environment to support a flexible work style without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Virtual Apps and Desktops, SD-WAN, Endpoint Management and Security Analytics.
 
 [Mergers and Acquisitions](/en-us/tech-zone/design/reference-architectures/mergers-acquisitions.html) - Learn how to design an environment to support a mergers and acquisition strategy without compromising IT security. The reference architecture incorporates Citrix Workspace, Secure Workspace Access, Virtual Apps and Desktops, Application Delivery Controller, Federated Authentication Service and Security Analytics.
 
 [Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the microapps platform service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
+
+[Reference Architecture- Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
 [Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
 
@@ -573,7 +601,11 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Architectural Considerations for the General Data Protection Regulation - GDPR](/en-us/tech-zone/design/reference-architectures/gdpr.html) - Learn how Citrix solutions enable organizations to meet the European GDPR data privacy laws while also meeting business objectives.
 
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
 [Federated Authentication Service](/en-us/tech-zone/design/reference-architectures/federated-authentication-service.html) - Learn about Federated Authentication Service, authentication delegation and how to use seamless web authentication methods to log in to Windows environments for both Citrix Cloud and on-premises deployments.
+
+[Reference Architecture- Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
 ### Build - Tech Papers
 
@@ -605,6 +637,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Citrix virtualization on Google Cloud](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) - Learn the architecture and deployment considerations for Citrix solutions on Google Cloud Platform.
 
+[Reference Architecture- Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
 ## Third Party Content
 
 ### Learn - PoC Guides
@@ -618,6 +652,8 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 ### Design - Reference Architectures
 
 Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
+[Reference Architecture- Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
 [Third Party](/en-us/tech-zone/design/reference-architectures/3rd-party.html) - View reference architectures created by our industry partners on joint technical solutions.
 
@@ -636,6 +672,12 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 [POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
 
 [Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
+
+### Design - Reference Architectures
+
+Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
+[Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
 ### Design - Design Decisions
 
