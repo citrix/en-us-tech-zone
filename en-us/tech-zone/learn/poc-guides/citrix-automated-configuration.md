@@ -19,7 +19,9 @@ Administrators can easily test and explore the **Citrix Virtual Apps and Desktop
 
 This tool is designed to help automate the migration of **CVAD** configuration (policies, applications, catalogs, admin roles, scopes and others) from one or more On-Premises site(s) to the **Citrix Virtual Apps and Desktop service** (CVADS) hosted on Citrix Cloud. It can also be used to migrate information between **different Cloud regions** or **tenants**.
 
-The migration can be performed in stages by running the tool multiple times, allowing administrators to easily achieve the desired configuration state. This [**2-minute video**] provides a quick tour of the Automated Configuration tool.
+The migration can be performed in stages by running the tool multiple times, allowing administrators to easily achieve the desired configuration state. There is a 2-minute video that provides a [quick tour of the Automated Configuration tool](https://www.youtube.com/watch?v=uyQ9o2L1DXQ&ab_channel=Citrix).
+
+[![Automated Configuration tool quick tour](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=uyQ9o2L1DXQ&ab_channel=Citrix)
 
 ### Why use this tool?
 
