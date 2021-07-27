@@ -45,12 +45,6 @@ Tech Briefs are short overview documents explaining a technology, a feature, a f
 
 [Workspace Single Sign-On](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) - Learn how Citrix Workspace provides single sign-on capabilities to SaaS apps, web apps, mobile apps, Windows virtual apps and Windows virtual desktops. In addition, learn how Workspace single sign-on can support IdP chaining configurations.
 
-## Learn - PoC Guides
-
-PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
-
-[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
-
 ## Learn - Diagrams and Posters
 
 [Citrix Workspace](/en-us/tech-zone/learn/diagrams-posters/workspace.html) - Conceptual architecture drawing for Citrix Workspace.
