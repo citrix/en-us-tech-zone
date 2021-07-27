@@ -95,13 +95,13 @@ At the moment of this writing, the following details need to be considered befor
 4.  Different SAML IDPs have different configuration steps. Those steps aren't covered in this document.
 5.  Active Directory must be configured with the alternate UPN suffixes and shadow accounts for each specific customer.
 6.  The following AD properties must be configured on the AD shadow accounts to be used as claims:
-    a.  Email address
-    b.  Display name
-    c.  Common name
-    d.  SAM account name
-    e.  UPN
-    f.  OID
-    g.  SID.
+    *  Email address
+    *  Display name
+    *  Common name
+    *  SAM account name
+    *  UPN
+    *  OID
+    *  SID.
 7.  Active Directory Certificate Services must be configured and available before configuring FAS.
 8.  While Citrix FAS is integrated with Citrix Workspace, it'sn't a Cloud Service. FAS is deployed on the resource location.
 9.  Initial ADC configuration steps, including IPs, certificates, and network details aren't covered in this document.
