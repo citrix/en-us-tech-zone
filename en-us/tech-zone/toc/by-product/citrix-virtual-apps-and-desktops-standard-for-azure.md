@@ -17,12 +17,6 @@ Tech Briefs are short overview documents explaining a technology, a feature, a f
 
 [Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Azure Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
 
-## Learn - PoC Guides
-
-PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
-
-[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
-
 ## Design - Reference Architectures
 
 Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
