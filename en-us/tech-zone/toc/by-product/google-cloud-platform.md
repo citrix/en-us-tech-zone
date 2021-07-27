@@ -15,8 +15,6 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 [Google Cloud Platform (GCP) Zone Selection Support with Citrix Virtual Apps and Desktops service](/en-us/tech-zone/learn/poc-guides/gcp-sole-tenant.html) - Learn how to configure zone selection on Google Cloud Platform to enable sole tenancy in Citrix Virtual Apps and Desktop Service.
 
-[POC Guide Citrix Analytics for Security](/en-us/tech-zone/learn/poc-guides/security-analytics.html) - Learn how to setup Citrix Analytics for Security.
-
 ## Design - Reference Architectures
 
 Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
