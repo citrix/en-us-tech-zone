@@ -17,7 +17,7 @@ The purpose of this document is to guide Citrix Service Providers (CSPs) impleme
 
 This document isn't intended to provide step-by-step guidance on how to deploy the Citrix Virtual Apps and Desktops service for CSPs. It assumes understanding of the [Virtual Apps and Desktops Reference Architecture for CSPs](/en-us/tech-zone/design/reference-architectures/csp-cvads.html), which provides in-depth design and deployment considerations for a CVADS environment for CSPs.
 
-On the other hand, it assumes understanding of Citrix ADC, single sign-on (SSO), and the Citrix Federated Authentication Service. For further information on these technologies, visit [docs.citrix.com](https://docs.citrix.com/).
+On the other hand, it assumes understanding of Citrix ADC, single sign-on (SSO), and the Citrix Federated Authentication Service. For further information on these technologies, visit docs.citrix.com.
 
 This document starts by reviewing the most common elements you need to understand to comfortably deploy Citrix ADC nFactor authentication. Next, it reviews the authentication flow for the components that make up this solution.
 
@@ -615,10 +615,10 @@ Successful configuration of the previously mentioned components can be achieved 
 
 ### Other Configuration Resources
 
-*  [Citrix ADC Configuration](https://docs.citrix.com/en-us/citrix-adc/current-release.html)
-*  [Cloud Connector installation](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html)
-*  [Hosting Connections (MCS)](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
-*  [VDA installation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html)
-*  [Machine Catalog creation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html)
-*  [Delivery Group creation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/delivery-groups-create.html)
-*  [FAS Integration with Citrix Workspace](https://docs.citrix.com/en-us/citrix-workspace/workspace-federated-authentication.html)
+*  [Citrix ADC Configuration](/en-us/citrix-adc/current-release.html)
+*  [Cloud Connector installation](/en-us/citrix-cloud/citrix-cloud-resource-locations/citrix-cloud-connector/installation.html)
+*  [Hosting Connections (MCS)](/en-us/citrix-virtual-apps-desktops-service/install-configure/connections.html)
+*  [VDA installation](/en-us/citrix-virtual-apps-desktops-service/install-configure/install-vdas.html)
+*  [Machine Catalog creation](/en-us/citrix-virtual-apps-desktops-service/install-configure/machine-catalogs-create.html)
+*  [Delivery Group creation](/en-us/citrix-virtual-apps-desktops-service/install-configure/delivery-groups-create.html)
+*  [FAS Integration with Citrix Workspace](/en-us/citrix-workspace/workspace-federated-authentication.html)
