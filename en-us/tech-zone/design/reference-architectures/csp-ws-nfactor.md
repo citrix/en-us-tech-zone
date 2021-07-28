@@ -31,7 +31,7 @@ The Citrix Virtual Apps and Desktops Service provides secure access of centrally
 
 CVADS supports workloads hosted on multiple resource locations including traditional hypervisors and public cloud platforms like Microsoft Azure. The workloads hosted in these resource locations can be Windows or Linux based, supporting both multi-user and single user deployments.
 
-Users can connect to CVADS via Windows, Mac, and Linux based clients, iOS and Android phones, and more. Citrix Gateway Service is usually in charge of handling external connections. It provides high availability with multiple points of presence around the world. Internal connections can use the new [Direct Workload Connection](/en-us/citrix-workspace/workspace-network-location.html) functionality.
+Users can access their virtual resources via Windows, Mac, and Linux based clients, iOS and Android phones, and more. Citrix Gateway Service is usually in charge of handling external connections. It provides high availability with multiple points of presence around the world. Internal connections can use the new [Direct Workload Connection](/en-us/citrix-workspace/workspace-network-location.html) functionality.
 
 CSPs can follow the [Virtual Apps and Desktops Reference Architecture for CSPs](/en-us/tech-zone/design/reference-architectures/csp-cvads.html) for guidance to architect a hosted DaaS solution powered by CVADS.
 
@@ -66,7 +66,7 @@ The SAML communication flow does not imply direct communication between the SP a
 Citrix ADC nFactor uses a set of entities that allow for the configuration of the different factors required by a specific deployment. The following concepts lay the foundation to understand the policy flows used by Citrix nFactor.
 
 *  **Authentication server (action):** The authentication server (action) defines the specific configuration for a specific IDP, whether it's an on-prem Active Directory, Azure AD, Okta, ADFS, etc. It includes the required details for the Citrix ADC appliance to communicate with the IDP and authenticate the users.
-*  **Authentication policy:** The authentication policies allow for users to be authenticated against the appliance. Policies use expressions under which they are applied. Expressions are used to let the ADC redirect the users to the appropriate IDP based on their UPN. An authentication policy must be linked to an authentication server (action). 
+*  **Authentication policy:** The authentication policies allow for users to be authenticated against the appliance. Policies use expressions under which they are applied. Expressions are used to let the ADC redirect the users to the appropriate IDP based on their UPN. An authentication policy must be linked to an authentication server (action).
     *  The most commonly used expression in these scenarios is **AAA.USER.NAME.SET_TEXT_MODE(IGNORECASE).AFTER_STR("@").EQ("domain.com")**. This expression evaluates the user's UPN suffix after the "@" sign and if it matches a policy, applies the configured SAML server (action) for authentication.
 *  **Login schema:** The login schema is a logical representation of the logon form written in XML, in other words, they represent the user interface. It's an entity that defines what the user sees and specifies how to extract the data from the user. Different schemas (or no schema) can be used for the different authentication factors. Citrix ADC provides several out of the box schema templates for common use cases, which can be customized for other use cases.
 *  **Policy label:** Policy labels specify the authentication policies for a particular factor. Each policy label corresponds to a single authentication factor. They are basically a collection of policies that can be linked together as a single entity. The result of policies in a policy label follows logical "OR" conditions. If the authentication specified by the first policy succeeds, other policies following it are skipped. Policy labels define their view through a login schema.
@@ -142,7 +142,7 @@ The following diagram shows the authentication flow for the different protocols 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  In the SAML flow, the web browser, or Workspace App is referred to as the "User Agent", which is part of the HTTP request header.|
+|In the SAML flow, the web browser, or Workspace App is referred to as the "User Agent", which is part of the HTTP request header.|
 
 ### Policy Flow
 
@@ -152,7 +152,7 @@ The following diagram represents the nFactor policy flow for this architecture. 
 
 1.  The user accesses Citrix Workspace via a web browser or the Citrix Workspace App. The authentication request is forwarded to the Citrix AAA vServer. There's an OAUTH IDP policy configured at Citrix ADC with the expression "TRUE", this means that this policy is applied to ALL requests.
 2.  The authentication request hits a "NO_AUTHN" policy and is presented with the "Username Only" login schema. The NO_AUTHN policy acts as a place holder. NO_AUTHN policies always return "success" as the authentication result.
-3.  When the user enters their username in UPN format, the UPN suffix determines which authentication policy is evaluated. In this architecture, domain1.com is forwarded to an LDAP server, domain2.com is redirected to an Azure AD tenant, and domain3.com is redirected to another Azure AD tenant. All of this functionality is based on the expressions used by each policy. Also notice that these authentication policies are bound to a "No Schema" login schema. This detail means that nothing is presented on the user's web browser.
+3.  When the user enters their username in UPN format, the UPN suffix determines which authentication policy is evaluated. In this architecture, domain1.com is forwarded to an LDAP server, domain2.com is redirected to an Azure AD tenant, and domain3.com is redirected to another Azure AD tenant. All of this functionality is based on the expressions used by each policy. Also notice that these authentication policies are bound to an "No Schema" login schema. This detail means that nothing is presented on the user's web browser.
 4.  If the user enters a username under domain1.com, they are redirected to an LDAP policy (a traditional LDAP policy). This policy evaluates to "TRUE", which means that it affects all the users it evaluates. The login schema in this case is "Password Only", meaning users only enter their AD password in this step. Their username is captured in the previous factor.
 5.  On the other hand, if the user enters a username under either domain2.com or domain3.com, they are redirected to their respective Azure AD tenant for login. In this case, Azure handles all the authentication, which is outside the realm of the Citrix ADC nFactor engine. When the user is authenticated, they are redirected back to the Citrix ADC AAA vServer.
 6.  Once the authentication request is redirected back to Citrix Gateway, it flows through another authentication factor, which is tied to an LDAP policy. However, this policy does not perform authentication. The purpose of this policy is to extract the claims required to authenticate the user back to Citrix Workspace. All SAML policies are redirected to this single LDAP policy. Users aren't presented with a login schema and do not need to enter any information at this point, this process happens automatically.
@@ -161,7 +161,7 @@ The following diagram represents the nFactor policy flow for this architecture. 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  The LDAP "no-authentication" policy is only used after a user is authenticated by another factor. It always evaluates to "Success" as the authentication result.|
+|The LDAP "no-authentication" policy is only used after a user is authenticated by another factor. It always evaluates to "Success" as the authentication result.|
 
 ### Scaling Considerations
 
@@ -175,7 +175,7 @@ The ability to scale this solution in an agile manner as new customers are onboa
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  Duplicate usernames across different UPN suffixes cannot be used. Even though the UPN suffix is different, the pre-Windows 2000 login name would be the same for duplicate users.|
+|Duplicate usernames across different UPN suffixes cannot be used. Even though the UPN suffix is different, the pre-Windows 2000 login name would be the same for duplicate users.|
 
 ## Implementation
 
@@ -213,7 +213,7 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  This step is optional, but highly recommended for support purposes. Create this action to allow environment administrators to log in against the environment with AD credentials.|
+|This step is optional, but highly recommended for support purposes. Create this action to allow environment administrators to log in against the environment with AD credentials.|
 
 #### LDAP User Attributes Action
 
@@ -225,7 +225,7 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  This step is NOT optional. This action is used to extract the user's claims from their shadow accounts in AD after they've been authenticated via their SAML IDP. These claims are necessary for the redirection back to Citrix Workspace to be successful.|
+|This step is NOT optional. This action is used to extract the user's claims from their shadow accounts in AD after they've been authenticated via their SAML IDP. These claims are necessary for the redirection back to Citrix Workspace to be successful.|
 
 #### SAML Actions
 
@@ -251,8 +251,8 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  Repeat these steps to create a separate SAML action for each SAML IDP to be used.|
-|*  The necessary fields to be completed in this page varies depending on the SAML IDP. Consult the specific SAML IDP documentation for additional information.|
+|Repeat these steps to create a separate SAML action for each SAML IDP to be used.|
+|The necessary fields to be completed in this page varies depending on the SAML IDP. Consult the specific SAML IDP documentation for additional information.|
 
 ### Login Schemas
 
@@ -271,7 +271,7 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  Repeat these steps to create the 2 remaining schema profiles with the **OnlyUsername.xml** and the **OnlyPassword.xml** files.|
+|Repeat these steps to create the 2 remaining schema profiles with the **OnlyUsername.xml** and the **OnlyPassword.xml** files.|
 
 #### Login Schema Policies
 
@@ -289,7 +289,7 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  Repeat these steps to create the 2 remaining schema policies by linking them with the **"Username Only"** and **"Password Only"** schema profiles.|
+|Repeat these steps to create the 2 remaining schema policies by linking them with the **"Username Only"** and **"Password Only"** schema profiles.|
 
 ### Authentication Policies
 
@@ -323,9 +323,9 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  This step is optional, but highly recommended for support purposes. Create this policy to allow environment administrators to log in against the environment with AD credentials.|
-|*  Replace "domain1.com" in the expression with the name of the internal AD domain UPN suffix.|
-|*  The **NO_AUTHN** authentication type is used as a place holder to redirect users to the next authentication factor, which is their AD password, handled through another LDAP policy.|
+|This step is optional, but highly recommended for support purposes. Create this policy to allow environment administrators to log in against the environment with AD credentials.|
+|Replace "domain1.com" in the expression with the name of the internal AD domain UPN suffix.|
+|The **NO_AUTHN** authentication type is used as a place holder to redirect users to the next authentication factor, which is their AD password, handled through another LDAP policy.|
 
 #### LDAP Authentication Policy (Optional)
 
@@ -344,9 +344,9 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  This step is optional, but highly recommended for support purposes. Create this policy to allow environment administrators to log in against the environment with AD credentials.|
-|*  The **TRUE** expression in this policy means that this policy is evaluated against every user that is redirected to this authentication factor.|
-|*  This policy is attached to the **Password Only** login schema previously created.|
+|This step is optional, but highly recommended for support purposes. Create this policy to allow environment administrators to log in against the environment with AD credentials.|
+|The **TRUE** expression in this policy means that this policy is evaluated against every user that is redirected to this authentication factor.|
+|This policy is attached to the **Password Only** login schema previously created.|
 
 #### LDAP User Attributes Policy
 
@@ -365,9 +365,9 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  This step is NOT optional. This policy is used to extract the user's claims from their shadow accounts in AD after they've been authenticated via their SAML IDP. These claims are necessary for the redirection back to Citrix Workspace to be successful.|
-|*  The **TRUE** expression in this policy means that this policy is evaluated against every user that is redirected to this authentication factor.|
-|*  This policy is attached to a **NO_SCHEMA** login schema.|
+|This step is NOT optional. This policy is used to extract the user's claims from their shadow accounts in AD after they've been authenticated via their SAML IDP. These claims are necessary for the redirection back to Citrix Workspace to be successful.|
+|The **TRUE** expression in this policy means that this policy is evaluated against every user that is redirected to this authentication factor.|
+|This policy is attached to a **NO_SCHEMA** login schema.|
 
 #### SAML Authentication Policies
 
@@ -386,8 +386,8 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  Replace "domain2.com" in the expression with the customer's domain name.|
-|*  Create a SAML Authentication Policy for each SAML Authentication Action previously created and match them 1:1 with the appropriate domain name in the expression.|
+|Replace "domain2.com" in the expression with the customer's domain name.|
+|Create a SAML Authentication Policy for each SAML Authentication Action previously created and match them 1:1 with the appropriate domain name in the expression.|
 
 ### Authentication Policy Labels
 
@@ -474,7 +474,7 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  When onboarding new customers / IDPs, you need to add their respective SAML authentication policies to this policy label.|
+|When onboarding new customers / IDPs, you need to add their respective SAML authentication policies to this policy label.|
 
 ### AAA vServer
 
@@ -519,7 +519,7 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  At this point, the AAA vServer URL is publicly reachable, and both LDAP and SAML authentication work.|
+|At this point, the AAA vServer URL is publicly reachable, and both LDAP and SAML authentication work.|
 
 ### Global Certificate Binding
 
@@ -531,8 +531,8 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  This command is used by ADC to sign the token that is sent to Citrix Workspace as part of the authentication process.|
-|*  The -certkeyName flag refers to the same SSL certificate used on the AAA vServer.|
+|This command is used by ADC to sign the token that is sent to Citrix Workspace as part of the authentication process.|
+|The -certkeyName flag refers to the same SSL certificate used on the AAA vServer.|
 
 ### Citrix Workspace Integration
 
@@ -554,7 +554,7 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  DO NOT close this page, you must come back to finish the configuration.|
+|DO NOT close this page, you must come back to finish the configuration.|
 
 #### OAUTH IDP Profile
 
@@ -610,8 +610,8 @@ Successful configuration of the previously mentioned components can be achieved 
 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
-|*  At this point, navigating to the Citrix Workspace URL (customer.cloud.com) redirects users to the ADC AAA vServer. Once users log in with their respective IDP, they are redirected back to Citrix Workspace.|
-|*  Single sign-on to virtual apps and desktops resources can be accomplished by integrating Citrix Workspace with Citrix FAS.|
+|At this point, navigating to the Citrix Workspace URL (customer.cloud.com) redirects users to the ADC AAA vServer. Once users log in with their respective IDP, they are redirected back to Citrix Workspace.|
+|Single sign-on to virtual apps and desktops resources can be accomplished by integrating Citrix Workspace with Citrix FAS.|
 
 ### Other Configuration Resources
 
