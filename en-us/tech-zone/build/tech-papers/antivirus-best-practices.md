@@ -104,8 +104,6 @@ Processes:
 
 -  `%ProgramFiles%\Citrix\User Profile Manager\UserProfileManager.exe`
 -  `%ProgramFiles%\Citrix\Virtual Desktop Agent\BrokerAgent.exe`
--  `%SystemRoot%\System32\spoolsv.exe`
--  `%SystemRoot%\System32\winlogon.exe`
 -  `%ProgramFiles%\Citrix\ICAService\picaSvc2.exe` (Desktop OS only)
 -  `%ProgramFiles%\Citrix\ICAService\CpSvc.exe` (Desktop OS only)
 
