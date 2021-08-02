@@ -111,7 +111,7 @@ At a high level:
 
 *  Due to the unknown nature of the endpoint security status, CompanyA requires VPN-less access to resources using isolated browsers or virtualized sessions.
 
-*  Similarly, due to unknown endpoint security status, CompanyA supports protection against keylogging and screen scraping malware. (*Requires Workspace App)
+*  Highly sensitive SaaS apps can be given additional protection provided by the Citrix Workspace app. If the BYO Device does not have app protection available, adaptive access policies prevent the user from launching the app.
 
 *  Since CompanyA allows access to internal web apps from BYO devices, Citrix Web App Firewall must protect the resource from attacks coming from potentially compromised endpoints.
 
@@ -160,23 +160,21 @@ CompanyA wants to limit the risk of data loss and data remanence on BYO devices.
 CompanyA has developed prescriptive access models to meet its security requirements:
 
 *  BYO devices **without** the Workspace app use Secure Workspace Access to launch a SaaS or web app through an isolated browser using the Citrix Secure Browser service. Secure Workspace Access provides SSO and enforces adaptive access policies such as download, print, copy, and paste restrictions to web and SaaS apps.
-
-*  BYO devices **with** the Workspace app use Secure Workspace Access to launch a Saas or web app using a local, containerized browser. The embedded browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app. Secure Workspace Access provides SSO and enforces adaptive access policies (download, print, copy, and paste restrictions). App Protection policies protect web and SaaS apps usin screen scraping and key-logger restrictions.
+*  BYO devices **with** the Workspace app use Secure Workspace Access to launch a Saas or web app using a local, containerized browser. The embedded browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app. Secure Workspace Access provides SSO and enforces adaptive access policies (download, print, copy, and paste restrictions).
+*  App Protection policies protect web and SaaS apps using screen scraping and key-logger restrictions. If the BYO Device does not have app protection available, adaptive access policies prevent the user from launching the app.
 *  When users access virtual apps and desktops, the Virtual Apps and Desktops service provides SSO and enforces lockdown policies. The service restricts downloading, printing, and unidirectional and bidirectional copy & paste actions.
 
-As a baseline policy, CompanyA has defined the following policies (with the ability to relax policies as needed based on user and application).
+CompanyA has both sensitive and regular SaaS and Web apps and will apply adaptive access policies based on their security requirements. As a baseline, CompanyA has defined the following policies (with the ability to relax policies as needed based on user and application).
 
-| **Category**  | **SaaS Apps**  | **Web Apps** | **Virtual Apps and Desktops** |
+| **Category**  | **SaaS Apps** | **Sensitive SaaS Apps** | **Web Apps** | **Sensitive Web Apps** | **Virtual Apps and Desktops** |
 |---|---|---|---|
-| Clipboard access | Denied | Denied | Denied |
-| Printing | Denied | Denied | Denied |
-| Navigation | Denied | Denied | Not Applicable |
-| Downloads | Denied | Denied | Denied |
-| Watermark | Enabled | Enabled | Enabled |
-| Keylogging Prevention* | Enabled | Enabled | Enabled |
-| Screenshot Prevention* | Enabled | Enabled | Enabled |
-
-*Citrix Workspace App required
+| Clipboard access | Allowed | Denied | Allowed | Denied | Denied |
+| Printing | Allowed | Denied | Allowed | Denied | Denied |
+| Navigation | Denied | Denied | Denied | Denied | Not Applicable |
+| Downloads | Allowed | Denied | Allowed | Denied | Denied |
+| Watermark | Disabled | Enabled | Disabled | Enabled | Enabled |
+| Keylogging Prevention* | Disabled | Enabled | Disabled | Enabled | Enabled |
+| Screenshot Prevention* | Disabled | Enabled | Disabled | Enabled | Enabled |
 
 [![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_35.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_35.png)
 
