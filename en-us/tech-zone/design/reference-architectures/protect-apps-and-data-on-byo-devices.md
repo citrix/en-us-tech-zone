@@ -211,16 +211,16 @@ By default, all categories are decrypted and allowed. CompanyA has the following
 |---|---|---|
 | Financial and Investment | Do not decrypt | Employee privacy concerns |
 | Health | Do not decrypt | Employee privacy concerns |
-| Adult Content | Block | |
-| Drugs | Block | |
-| File Sharing | Block | |
-| Gambling | Block | |
-| Illegal Activity | Block | |
-| Malicious Sources | Block | |
-| Malware Content | Block | |
-| Porn/Nudity | Block | |
-| Virus & Malware | Block | |
-| Violence/Hate | Block | |
+| Adult Content | Block | Company Policy |
+| Drugs | Block | Company Policy |
+| File Sharing | Block | Company Policy |
+| Gambling | Block | Company Policy |
+| Illegal Activity | Block | Company Policy |
+| Malicious Sources | Block | Company Policy |
+| Malware Content | Block | Company Policy |
+| Porn/Nudity | Block | Company Policy |
+| Virus & Malware | Block | Company Policy |
+| Violence/Hate | Block | Company Policy |
 
 Refer to the [Citrix Secure Internet Access Tech Brief](/en-us/tech-zone/learn/tech-briefs/secure-internet-access.html) to gain additional information regarding the web filtering and protection features.
 
