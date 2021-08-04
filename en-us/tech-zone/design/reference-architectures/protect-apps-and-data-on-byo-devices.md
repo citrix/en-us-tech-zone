@@ -167,7 +167,7 @@ CompanyA has developed prescriptive access models to meet its security requireme
 CompanyA has both sensitive and regular SaaS and Web apps and will apply adaptive access policies based on their security requirements. As a baseline, CompanyA has defined the following policies (with the ability to relax policies as needed based on user and application).
 
 | **Category**  | **SaaS Apps** | **Sensitive SaaS Apps** | **Web Apps** | **Sensitive Web Apps** | **Virtual Apps and Desktops** |
-|---|---|---|---|
+|---|---|---|---|---|---|
 | Clipboard access | Allowed | Denied | Allowed | Denied | Denied |
 | Printing | Allowed | Denied | Allowed | Denied | Denied |
 | Navigation | Denied | Denied | Denied | Denied | Not Applicable |
