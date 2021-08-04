@@ -164,6 +164,8 @@ CompanyA has developed prescriptive access models to meet its security requireme
 *  App Protection policies protect web and SaaS apps using screen scraping and key-logger restrictions. If the BYO Device does not have app protection available, adaptive access policies prevent the user from launching the app.
 *  When users access virtual apps and desktops, the Virtual Apps and Desktops service provides SSO and enforces lockdown policies. The service restricts downloading, printing, and unidirectional and bidirectional copy & paste actions.
 
+[![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_35.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_35.png)
+
 CompanyA has both sensitive and regular SaaS and Web apps and will apply adaptive access policies based on their security requirements. As a baseline, CompanyA has defined the following policies (with the ability to relax policies as needed based on user and application).
 
 | **Category**  | **SaaS Apps** | **Sensitive SaaS Apps** | **Web Apps** | **Sensitive Web Apps** | **Virtual Apps and Desktops** |
@@ -175,8 +177,6 @@ CompanyA has both sensitive and regular SaaS and Web apps and will apply adaptiv
 | Watermark | Disabled | Enabled | Disabled | Enabled | Enabled |
 | Keylogging Prevention* | Disabled | Enabled | Disabled | Enabled | Enabled |
 | Screenshot Prevention* | Disabled | Enabled | Disabled | Enabled | Enabled |
-
-[![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_35.png)](en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_35.png)
 
 ## Control Layer
 
