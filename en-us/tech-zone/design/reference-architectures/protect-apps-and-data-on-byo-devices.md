@@ -7,7 +7,7 @@ description: Learn how to design an environment to support brin-your-own-devices
 tz_title: Reference Architecture - Protect apps and data on bring-your-own devices
 tz_products: citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops
 ---
-# Reference Architecture: Protect apps and data on bring-your-own devices
+# Reference Architecture: Reference Architecture - Protect apps and data on bring-your-own devices
 
 ## Overview
 
