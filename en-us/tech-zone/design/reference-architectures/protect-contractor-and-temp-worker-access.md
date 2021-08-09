@@ -1,13 +1,13 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: First Last, First2 Last2
-specialThanksTo: First Last, First2 Last2
-description: TODO insert description of article
+contributedBy: Florin Lazurca
+specialThanksTo: Dan Feller
+description: This reference architecture explains CompanyA's plan to protect contractor access to its data and apps
 tz_title: ZTNA for Contractors and Temp Workers
-tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-service-providers;citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;google-cloud-platform;other;security;third-party-content
+tz_products: citrix-analytics;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops;citrix-workspace
 ---
-# Content Type : tz_title
+# Reference Architecture: ZTNA for Contractors and Temp Workers
 
 ## Overview
 
@@ -31,9 +31,9 @@ Therefore, CompanyA has begun a threefold initiative to protect corporate resour
 
 ### Protecting Contractor Access
 
-CompanyA must protect contractor access to their work environment. It must create a safe mode of access to all apps and data that is seamless for end users. Access must be secure, simple, and flexible to use any device and work from any location.
+CompanyA must protect contractor access to their work environment. It must create a safe mode of access to all apps and data that is seamless for contractors. Access must be secure, simple, and flexible to use any device and work from any location.
 
-CompanyA has decided its security strategy is to move away from a traditional "castle and moat" approach to access and security. CompanyA is taking a Zero Trust approach instead of using a conventional appliance-based solution like a VPN that assumes users are trusted.
+CompanyA has decided its security strategy is to move away from a traditional "castle and moat" approach to access and security. CompanyA is taking a Zero Trust approach instead of using a conventional appliance-based solution like a VPN that assumes contractors are trusted.
 
 In CompanyA's focus on protecting contractor and temp worker access, it has identified the following criteria for a successful design:
 
@@ -44,7 +44,7 @@ In CompanyA's focus on protecting contractor and temp worker access, it has iden
 | End-user monitoring | Continuous monitoring and continuous assessment to protect against potential threats. Apps are continuously monitored for data exfiltration, and abnormal access times and locations. | Citrix Analytics |
 | SaaS App Access | Contractors must access sanctioned SaaS applications with strong authentication that does not impact the experience | Citrix Secure Workspace Access |
 | Web App Access | Contractors must be able to access sanctioned internal Web applications with strong authentication that does not impact the experience | Citrix Secure Workspace Access – Zero Trust Network Access |
-| Personal Privacy | CompanyA must ensure contractor privacy while still protecting the user and endpoint from potential threats when using unsanctioned websites | Citrix Secure Browser Service with Citrix Secure Internet Access (Using "do not decrypt" policies for sites with personal information) |
+| Personal Privacy | CompanyA must ensure contractor privacy while still protecting the contractor and endpoint from potential threats when using unsanctioned websites | Citrix Secure Browser Service with Citrix Secure Internet Access (Using "do not decrypt" policies for sites with personal information) |
 
 ### Protecting Data
 
@@ -63,7 +63,7 @@ In CompanyA's focus on protecting data, it has identified the following criteria
 | Internet Security | Protect contractors from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Devices | Protect devices and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Browser Service with Citrix Secure Internet Access – Security Policies with Web Filtering |
-| Compliance | Compliance and protecting users from malicious URLs | Citrix Secure Browser Service with Citrix Secure Internet Access – Security Policies with Web Filtering |
+| Compliance | Compliance and protecting contractors from malicious URLs | Citrix Secure Browser Service with Citrix Secure Internet Access – Security Policies with Web Filtering |
 
 ### Protecting Apps
 
@@ -79,7 +79,7 @@ In CompanyA's focus on protecting apps, it has identified the following criteria
 | SaaS credential protection | The contractor's credentials to SaaS applications must include multifactor authentication. | Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
 | SaaS DLP | CompanyA requires their SaaS apps to use DLP controls inline. | Secure Browser Service with Citrix Secure Internet Access |
 | Protect web apps | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web App Firewall |
-| Compromised User Protection | IT must be able to quickly identify and mitigate threats posed by a compromised user account. IT must protect the entire threat surface with centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
+| Compromised Contractor Protection | IT must be able to quickly identify and mitigate threats posed by a compromised contractor account. IT must protect the entire threat surface with centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
 
 ## Conceptual Architecture
 
@@ -95,22 +95,22 @@ At a high level:
 *  Contractor access resources from the Citrix Workspace web, resulting in an experience that is protected even on contractor and temp worker devices.
 *  Contractor and temp workers can install Citrix Workspace App for more capabilities but are not required to.
 
-**Access Layer**: The access layer describes how users authenticate to their Workspace and secondary resources.
+**Access Layer**: The access layer describes how conctractors authenticate to their Workspace and secondary resources.
 
 *  Citrix Workspace provides the primary authentication broker for all subsequent resources. CompanyA requires multifactor authentication to improve authentication security.
 *  Many of the authorized resources within the environment utilize a different set of credentials than those credentials used for the primary Workspace identity. CompanyA will use the single sign-on capabilities of each service to protect these secondary identities better.
-*  The applications only allow SAML-based authentication for SaaS apps. This prevents users from accessing the SaaS apps directly and bypassing the security policies.
+*  The applications only allow SAML-based authentication for SaaS apps. This prevents contractors from accessing the SaaS apps directly and bypassing the security policies.
 
 **Resource Layer**: The resource layer authorizes specific client-server (virtual), web, and SaaS resources for defined users and groups while defining the security policies associated with the resource.
 
 *  CompanyA requires policies that disable the ability to print, download, copy and paste content from the managed resource to and from the contractor and temp worker device.
 *  Due to the unknown nature of the endpoint security status, CompanyA requires VPN-less access to resources using isolated browsers or virtualized sessions.
-*  Highly sensitive SaaS apps can be given additional protection provided by the Citrix Workspace app. If the contractor device does not have app protection available, adaptive access policies prevent the user from launching the app.
+*  Highly sensitive SaaS apps can be given additional protection provided by the Citrix Workspace app. If the contractor device does not have app protection available, adaptive access policies prevent the contractor from launching the app.
 *  Since CompanyA allows access to internal web apps from contractor and temp worker devices, Citrix Web App Firewall must protect the resource from attacks coming from potentially compromised endpoints.
-Control Layer: The control layer defines how the underlying solution adjusts based on the underlying activities of the user.
-*  Even within a protected Workspace resource, users can interact with untrusted Internet resources. CompanyA uses Secure Internet Access to protect users from external threats when using SaaS apps, web apps, and virtual apps and desktops.
-*  If contractor must access personal web sites such as health and finance on their devices through CompanyA resource, appropriate policies protect users' privacy.
-*  CompanyA requires a Security Analytics service to identify compromised users and automatically maintain a secure environment.
+Control Layer: The control layer defines how the underlying solution adjusts based on the underlying activities of the contractor.
+*  Even within a protected Workspace resource, contractors can interact with untrusted Internet resources. CompanyA uses Secure Internet Access to protect contractors from external threats when using SaaS apps, web apps, and virtual apps and desktops.
+*  If contractor must access personal web sites such as health and finance on their devices through CompanyA resource, appropriate policies protect contractor's privacy.
+*  CompanyA requires a Security Analytics service to identify compromised contractors and automatically maintain a secure environment.
 
 The subsequent sections provide greater detail into specific design decisions for CompanyA's contractor protection reference architecture.
 
@@ -120,7 +120,7 @@ The subsequent sections provide greater detail into specific design decisions fo
 
 CompanyA has determined that providing access to resources with a username and password does not provide adequate security. Multifactor authentication is required for all comtractors. CompanyA uses Active Directory + Token for its multifactor method and the Citrix Gateway service to handle all authentication requests.
 
-Citrix Workspace incorporates a cloud-delivered Time-based One-Time Password (TOTP) providing multifactor authentication. Contractors register with the TOTP service and create a pre-shared secret key within the authenticator app on a mobile device. Once the contractor or temp worker successfully registers with the TOTP micro-service, the user must use the token, along with their Active Directory credentials, to successfully authenticate to Citrix Workspace.
+Citrix Workspace incorporates a cloud-delivered Time-based One-Time Password (TOTP) providing multifactor authentication. Contractors register with the TOTP service and create a pre-shared secret key within the authenticator app on a mobile device. Once the contractor or temp worker successfully registers with the TOTP micro-service, the contractor must use the token, along with their Active Directory credentials, to successfully authenticate to Citrix Workspace.
 
 [![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
 
@@ -148,7 +148,7 @@ CompanyA has developed prescriptive access models to meet its security requireme
 
 *  Contractor devices **without** the Workspace app use Secure Workspace Access to launch a SaaS or web app through an isolated browser using the Citrix Secure Browser service. Secure Workspace Access provides SSO and enforces adaptive access policies such as download, print, copy, and paste restrictions to web and SaaS apps.
 *  Contractor devices **with** the Workspace app use Secure Workspace Access to launch a Saas or web app using a local, containerized browser. The embedded browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app. Secure Workspace Access provides SSO and enforces adaptive access policies (download, print, copy, and paste restrictions).
-*  App Protection policies protect web and SaaS apps using screen scraping and key-logger restrictions. If the contractor device does not have app protection available, adaptive access policies prevent the user from launching the app.
+*  App Protection policies protect web and SaaS apps using screen scraping and key-logger restrictions. If the contractor device does not have app protection available, adaptive access policies prevent the contractor from launching the app.
 *  When contractor and temp worker access virtual apps and desktops, the Virtual Apps and Desktops service provides SSO and enforces lockdown policies. The service restricts downloading, printing, and unidirectional and bidirectional copy & paste actions.
 
 [![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_35.png)](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_35.png)
