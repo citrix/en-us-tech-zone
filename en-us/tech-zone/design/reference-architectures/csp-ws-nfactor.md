@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: JP Alfaro
-specialThanksTo: Darren Harding, Selma Wei, Manny Benitez, Tham Trejos, Amit Arora
+specialThanksTo: Darren Harding, Selma Wei, Manny Benitez, Tham Trejos, Amit Arora, Neir Benyamin
 description: The Citrix Workspace integration with nFactor and Multiple IDPs for CSPs provides guidance to design and implement authentication with multiple IDPs via Citrix ADC while leveraging the capabilities of Citrix Workspace.
 tz_title: Citrix Workspace Integration with nFactor and Multiple IDPs for CSPs
 tz_products: citrix-service-providers;
@@ -29,7 +29,7 @@ Finally, it covers the steps required to deploy Citrix ADC nFactor authenticatio
 
 The Citrix Virtual Apps and Desktops Service provides secure access of centrally managed desktops and applications from any device or network. With the integration between the Federated Authentication Service (FAS) and Citrix Cloud, CSPs can deliver SSO to virtual apps and desktops workloads while supporting external SAML IDPs.
 
-CVADS supports workloads hosted on multiple resource locations including traditional hypervisors and public cloud platforms like Microsoft Azure. The workloads hosted in these resource locations can be Windows or Linux based, supporting both multi-user and single user deployments.
+CVADS supports workloads hosted on multiple resource locations including traditional hypervisors and public cloud platforms like Microsoft Azure, GCP, and AWS. The workloads hosted in these resource locations can be Windows or Linux based, supporting both multi-user and single user deployments.
 
 Users can access their virtual resources via Windows, Mac, and Linux based clients, iOS and Android phones, and more. Citrix Gateway Service is usually in charge of handling external connections. It provides high availability with multiple points of presence around the world. Internal connections can use the new [Direct Workload Connection](/en-us/citrix-workspace/workspace-network-location.html) functionality.
 
@@ -45,7 +45,7 @@ For this architecture, OAUTH IDP policies are configured to allow Citrix ADC to 
 
 ### Citrix Workspace Experience
 
-Workspace Experience is the cloud-based evolution of StoreFront. Through Workspace Experience, CSPs can deliver virtual apps and desktops, SSO to SaaS and on-prem web applications, microapp integrations and actions, and content collaboration. This advanced functionality allows CSPs to deliver their end customers with an integrated experience, from a single pane of glass, focused on employee experience, and increased productivity.
+Workspace Experience is the cloud-based evolution of StoreFront. Through Workspace Experience, CSPs can deliver virtual apps and desktops, SSO to SaaS and on-prem web applications, microapp integrations and actions, content collaboration, endpoint management capabilities, and analytics. This advanced functionality allows CSPs to deliver an integrated experience, from a single pane of glass, focused on employee experience, and increased productivity.
 
 Currently, Citrix Workspace does not support the integration with multiple IDPs. Many CSPs, however, need to provide multiple IDP support while maintaining the advanced features provided by Citrix Workspace.
 
@@ -53,7 +53,7 @@ Currently, Citrix Workspace does not support the integration with multiple IDPs.
 
 Citrix ADC can be configured as an OAUTH Identity Provider (IDP) by using the Open ID Connect (OIDC) protocol. OAUTH is typically not referred to as an authentication protocol, but as an authorization framework instead. OIDC adds a user authentication portion to the typical OAUTH 2.0 flow. In this architecture, Citrix Workspace acts as the OAUTH Service Provider (SP) trusting Citrix ADC (OAUTH IDP).
 
-For this configuration, Citrix Workspace requires for Active Directory shadow accounts to pass a set of "claims" for the authentication processs to be successful. Citrix Cloud requires these properties to establish the user context when subscribers sign in. If these properties aren't populated, subscribers can't sign into their workspace. The list of claims is reviewed in a later section of this document.
+For this configuration, Citrix Workspace requires Active Directory shadow accounts to pass a set of "claims" for the authentication processs to be successful. Citrix Cloud requires these properties to establish the user context when subscribers sign in. If these properties aren't populated, subscribers can't sign into their workspace. The list of claims is reviewed in a later section of this document.
 
 ### SAML Authentication
 
@@ -77,13 +77,13 @@ Citrix ADC nFactor uses a set of entities that allow for the configuration of th
 
 ## Architecture
 
-CSPs are constantly growing and adding new customers to their CVADS based DaaS offering. This growth introduces the requirement to allow end customers to bring their own identity solutions and integrate them with Citrix Workspace, to use CVADS based workloads.
+CSPs are constantly growing and adding new customers to their CVADS based DaaS offerings. This growth introduces the requirement to allow end customers to bring their own identity solutions and integrate them with Citrix Workspace, to use CVADS based workloads.
 
 Citrix Workspace also provides advanced functionality that allows CSPs to integrate more services like SSO to SaaS and on-prem web applications, microapp integrations and actions, and content collaboration. It also provides integration with several IDPs like Azure AD, Okta, and SAML 2.0. However, multiple IDPs from a single Citrix Workspace are currently not supported.
 
 Citrix Gateway Service handles the HDX proxy functionality when launching virtual apps and desktops resources from Citrix Workspace. This functionality might seem unnecessary since Citrix ADC is needed to provide multiple IDP support. However, offloading the HDX proxy significantly simplifies the network bandwidth and availability requirements on the CSP side.
 
-This reference architecture focuses on the design decisions and considerations for integrating multiple IDPs, particularly SAML based, with Citrix Workspace and the CVAD service. This integration is achieved by configuring Citrix Workspace to delegate user authentication to Citrix ADC, which in turn forwards users to their respective IDPs.
+This reference architecture focuses on the design decisions and considerations for integrating multiple IDPs, particularly SAML based, with Citrix Workspace and CVADS. This integration is achieved by configuring Citrix Workspace to delegate user authentication to Citrix ADC, which in turn forwards users to their respective IDPs.
 
 ### Considerations and Requirements
 
@@ -103,7 +103,7 @@ At the moment of this writing, the following details need to be considered befor
     *  OID
     *  SID
 7.  Active Directory Certificate Services must be configured and available before configuring FAS.
-8.  While Citrix FAS is integrated with Citrix Workspace, it isn't a Cloud Service. FAS is deployed on the resource location.
+8.  While Citrix FAS is integrated with Citrix Workspace, it isn't a Cloud Service. FAS is deployed in the resource location.
 9.  Initial ADC configuration steps, including IPs, certificates, and network details aren't covered in this document.
 10.  Duplicate usernames across different UPN suffixes cannot be used. Even though the UPN suffix is different, the pre-Windows 2000 login name is the same for all suffixes.
 
@@ -113,7 +113,7 @@ The following diagram shows the authentication flow from a user experience persp
 
 [![CSP-Image-002](/en-us/tech-zone/design/media/reference-architectures_csp-ws-nfactor_002.png)](/en-us/tech-zone/design/media/reference-architectures_csp-ws-nfactor_002.png)
 
-1.  End users from different customers log in to Citrix Workspace from any device / any network.
+1.  End users from different customers navigate to Citrix Workspace from any device / any network.
 2.  Citrix Workspace automatically redirects the users to the Citrix ADC AAA vServer.
 3.  Citrix ADC AAA vServer presents the user with a Username prompt. Users must enter their UPN.
 4.  User authentication request is forwarded to the appropriate SAML IDP based on the user's UPN suffix.
@@ -153,7 +153,7 @@ The following diagram represents the nFactor policy flow for this architecture. 
 1.  The user accesses Citrix Workspace via a web browser or the Citrix Workspace App. The authentication request is forwarded to the Citrix AAA vServer. There's an OAUTH IDP policy configured at Citrix ADC with the expression "TRUE", this means that this policy is applied to ALL requests.
 2.  The authentication request hits a "NO_AUTHN" policy and is presented with the "Username Only" login schema. The NO_AUTHN policy acts as a place holder. NO_AUTHN policies always return "success" as the authentication result.
 3.  When the user enters their username in UPN format, the UPN suffix determines which authentication policy is evaluated. In this architecture, domain1.com is forwarded to an LDAP server, domain2.com is redirected to an Azure AD tenant, and domain3.com is redirected to another Azure AD tenant. All of this functionality is based on the expressions used by each policy. Also notice that these authentication policies are bound to an "No Schema" login schema. This detail means that nothing is presented on the user's web browser.
-4.  If the user enters a username under domain1.com, they are redirected to an LDAP policy (a traditional LDAP policy). This policy evaluates to "TRUE", which means that it affects all the users it evaluates. The login schema in this case is "Password Only", meaning users only enter their AD password in this step. Their username is captured in the previous factor.
+4.  If the user enters a username under domain1.com, they are redirected to an LDAP policy (a traditional LDAP policy). This policy evaluates to "TRUE", which means that it affects all users it evaluates. The login schema in this case is "Password Only", meaning users only enter their AD password in this step. Their username is captured in the previous factor.
 5.  On the other hand, if the user enters a username under either domain2.com or domain3.com, they are redirected to their respective Azure AD tenant for login. In this case, Azure handles all the authentication, which is outside the realm of the Citrix ADC nFactor engine. When the user is authenticated, they are redirected back to the Citrix ADC AAA vServer.
 6.  Once the authentication request is redirected back to Citrix Gateway, it flows through another authentication factor, which is tied to an LDAP policy. However, this policy does not perform authentication. The purpose of this policy is to extract the claims required to authenticate the user back to Citrix Workspace. All SAML policies are redirected to this single LDAP policy. Users aren't presented with a login schema and do not need to enter any information at this point, this process happens automatically.
 7.  User claims are stored on the Citrix ADC and passed back to Citrix Workspace. These claims are required for Citrix Workspace to accept the authentication from Citrix ADC.
@@ -252,7 +252,7 @@ Successful configuration of the previously mentioned components can be achieved 
 | NOTE:                                                                   |
 | ----------------------------------------------------------------------- |
 |Repeat these steps to create a separate SAML action for each SAML IDP to be used.|
-|The necessary fields to be completed in this page varies depending on the SAML IDP. Consult the specific SAML IDP documentation for additional information.|
+|The necessary fields to be completed in this page vary depending on the SAML IDP. Consult the specific SAML IDP documentation for additional information.|
 
 ### Login Schemas
 
