@@ -1,12 +1,13 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: First Last, First2 Last2
-specialThanksTo: First Last, First2 Last2
-description: TODO insert description of article
-tz_title: TODO insert title of article
-tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-service-providers;citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;google-cloud-platform;other;security;third-party-content
+contributedBy: Phil Wiffen
+description: View deployment guides created by our industry partners on joint technical solutions.
+tz_title: Third Party
+tz_products: third-party-content
 ---
 # Content Type : tz_title
 
-## Header1
+## Microsoft
+
+[Migration Guide: Citrix Cloud with Azure Virtual Desktop](https://azure.microsoft.com/en-gb/resources/migration-guide-citrix-cloud-with-azure-virtual-desktop/) - Get more value from your existing Citrix investments by modernizing your virtual desktop infrastructure (VDI) with Azure Virtual Desktop—previously called Windows Virtual Desktop. Use this guide to learn about migrating your Citrix on-premises virtual desktop and app environment to Citrix Virtual Apps and Desktops for Azure.
