@@ -1,7 +1,7 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: Ana Ruiz
+contributedBy: Ana Ruiz, Phil Wiffen
 description: Increase productivity by adding microapps to Citrix Workspace. Microapps allow users to view information and perform actions without launching the full application.
 tz_title: Microapps
 tz_products: citrix-workspace;
@@ -41,9 +41,7 @@ For more information about IT Self-Service, see [IT Self-Service](/en-us/citrix-
 
 Self-Service microapp templates for the Citrix Virtual Apps and Desktops service enable employees to view status and manage their Virtual Apps and Desktops, directly from Citrix Workspace. With the My Desktops and My Sessions microapp templates, employees can take actions on Sessions and Desktops, including Log Off, Disconnect, and Restart. And with the Administrator Mode microapp, Administrators can search Desktops by machine name and associated user, restart desktops, and toggle maintenance mode.
 
-**Watch this video to [see demo](https://www.youtube.com/watch?v=PqCgX5k4E0g&feature=youtu.be&ab_channel=Citrix):**
-
-[![Tech Insight-CVAD service microapps](/en-us/tech-zone/learn/media/tech-insights_microapps_cvads.png)](https://www.youtube.com/watch?v=PqCgX5k4E0g&feature=youtu.be&ab_channel=Citrix)
+{% include video.html id="PqCgX5k4E0g" type="youtube" %}
 
 For more information about microapps for CVAD service see [CVAD service microapps](/en-us/citrix-microapps/set-up-template-integrations/integrate-cvads.html) in Citrix product documentation.
 
