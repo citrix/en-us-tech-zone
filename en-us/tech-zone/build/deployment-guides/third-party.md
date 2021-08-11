@@ -6,7 +6,7 @@ description: View deployment guides created by our industry partners on joint te
 tz_title: Third Party
 tz_products: third-party-content
 ---
-# Deployment Guides: Third Party
+# Deployment Guide: Third Party
 
 ## Microsoft
 
