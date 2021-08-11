@@ -481,6 +481,10 @@ Deployment guides provide step-by-step instruction on how to perform key tasks a
 
 [Windows 10 Deployment Guide](/en-us/tech-zone/build/deployment-guides/windows-10-deployment.html) - Learn how to deploy Windows 10 with Citrix Virtual Apps and Desktops.
 
+### Third Party Content
+
+[Third Party](/en-us/tech-zone/build/deployment-guides/third-party.html) - View deployment guides created by our industry partners on joint technical solutions.
+
 ## Tech Papers
 
 Tech papers are deep dives into specific problem, technology or solution providing details, leading practices and architectural insights.
