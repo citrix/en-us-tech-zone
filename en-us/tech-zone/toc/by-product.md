@@ -281,6 +281,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Citrix Virtual Apps and Desktops Service - GCP Architecture with the Managed Service for Microsoft Active Directory for CSPs](/en-us/tech-zone/design/reference-architectures/csp-gcp.html) - Citrix Virtual Apps and Desktops Service Google Cloud Platform (GCP) Architecture with the Managed Service for Microsoft Active Directory for Citrix Service Providers (CSPs) aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and design considerations to leverage GCP Managed AD Service.
 
+[Citrix Workspace Integration with nFactor and Multiple IDPs for CSPs](/en-us/tech-zone/design/reference-architectures/csp-ws-nfactor.html) - The Citrix Workspace integration with nFactor and Multiple IDPs for CSPs provides guidance to design and implement authentication with multiple IDPs via Citrix ADC while leveraging the capabilities of Citrix Workspace.
+
 [Virtual Apps and Desktops service with Google Cloud Platform for Citrix Service Providers](/en-us/tech-zone/design/reference-architectures/csp-cvads-aad.html) - Citrix Virtual Apps and Desktops service implementation with Azure Active Directory Domain Services for CSPs Reference Architecture aligns with the use cases described in the CSP Citrix Virtual Apps and Desktops Reference Architecture to provide guidance and implementation steps to use Azure AD Domain Services.
 
 ## Citrix Virtual Apps and Desktops
