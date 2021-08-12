@@ -11,6 +11,8 @@ tz_products: citrix-workspace;
 
 ## Overview
 
+Hi again!
+
 Citrix Workspace app for Windows provides access to a user’s resources using Citrix Virtual Apps and Desktops. These resources include SaaS, web and legacy applications and desktops. Citrix Workspace app provides access from the desktop, start menu, Citrix Workspace user interface and web browsers.
 
 On a side note, it is possible to access resources on a Windows device using the Citrix Workspace app for HTML5, without installing the Citrix Workspace app for Windows. However, there is a significant feature disparity between both clients. For a complete overview of all features supported in each of the available Workspace app versions see the [Citrix Workspace app feature matrix](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/citrix-workspace-app-feature-matrix.pdf?_ga=2.27649141.890901474.1583830777-25366109.1583146462).
