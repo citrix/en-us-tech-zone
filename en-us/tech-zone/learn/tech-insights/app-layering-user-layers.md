@@ -15,4 +15,6 @@ Citrix App Layering user layers provide a better experience for administrators a
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=vd0JoHkCZGs):**
 
-[![Citrix App Layering Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=vd0JoHkCZGs)
+&nbsp;
+
+{% include video.html id="vd0JoHkCZGs" type="youtube" %}

@@ -12,4 +12,6 @@ Security Analytics generates actionable insights, enabling administrators to pro
 
 **Watch this video to [learn more](https://youtu.be/zzceA8GqCkU):**
 
-[![Tech Insight Security Analytics](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://youtu.be/zzceA8GqCkU)
+&nbsp;
+
+{% include video.html id="zzceA8GqCkU" type="youtube" %}

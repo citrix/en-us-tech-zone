@@ -12,4 +12,6 @@ With Citrix Workspace, users can access internal Web apps, Windows apps, Linux a
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=HvF9NpeEG7A):**
 
-[![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=HvF9NpeEG7A)
+&nbsp;
+
+{% include video.html id="HvF9NpeEG7A" type="youtube" %}
