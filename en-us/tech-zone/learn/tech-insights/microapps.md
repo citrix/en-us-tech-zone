@@ -12,7 +12,9 @@ Citrix introduces intelligent features to the workspace which extend its capabil
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=a1W_BEHYUcI&feature=youtu.be):**
 
-[![Tech Insight-Microapp Overview](/en-us/tech-zone/learn/media/tech-insights_microapps_admin.png)](https://www.youtube.com/watch?v=a1W_BEHYUcI&feature=youtu.be)
+&nbsp;
+
+{% include video.html id="a1W_BEHYUcI" type="youtube" %}
 
 For more information about Microapps, see [Microapps](/en-us/citrix-microapps.html) in Citrix product documentation.
 
@@ -23,7 +25,9 @@ With Citrix Workspace, organizations can broadcast good news, offer employee res
 
 **Watch this video to [see demo](https://www.youtube.com/watch?v=1XD2gTK-W1g&feature=youtu.be&ab_channel=Citrix):**
 
-[![Tech Insight-IT Self-Service](/en-us/tech-zone/learn/media/tech-insights_microapps_well-being.png)](https://www.youtube.com/watch?v=1XD2gTK-W1g&feature=youtu.be&ab_channel=Citrix)
+&nbsp;
+
+{% include video.html id="1XD2gTK-W1g" type="youtube" %}
 
 For more information about IT Self-Service, see [Employee Well-being](/en-us/citrix-workspace/optimize-workflows/well-being.html) in Citrix product documentation.
 
@@ -33,7 +37,9 @@ IT Self-Service workflows enable employees to quickly find the IT resources that
 
 **Watch this video to [see demo](https://www.youtube.com/watch?v=9FMzApqIBqA&feature=youtu.be&ab_channel=Citrix):**
 
-[![Tech Insight-IT Self-Service](/en-us/tech-zone/learn/media/tech-insights_microapps_it.png)](https://www.youtube.com/watch?v=9FMzApqIBqA&feature=youtu.be&ab_channel=Citrix)
+&nbsp;
+
+{% include video.html id="9FMzApqIBqA" type="youtube" %}
 
 For more information about IT Self-Service, see [IT Self-Service](/en-us/citrix-microapps/deliver-workflows/it-self-service.html) in Citrix product documentation.
 
@@ -61,6 +67,8 @@ It is more essential than ever that businesses rethink their people strategies, 
 
 **Watch this video to [see demo](https://www.youtube.com/watch?v=1JMdpHt4msk&feature=youtu.be&ab_channel=Citrix):**
 
-[![Tech Insight-HR Self-Service](/en-us/tech-zone/learn/media/tech-insights_microapps_hr.png)](https://www.youtube.com/watch?v=1JMdpHt4msk&feature=youtu.be&ab_channel=Citrix)
+&nbsp;
+
+{% include video.html id="1JMdpHt4msk" type="youtube" %}
 
 For more information about HR Self-Service, see [HR Self-Service](/en-us/citrix-microapps/deliver-workflows/hr-self-service.html) in Citrix product documentation.
