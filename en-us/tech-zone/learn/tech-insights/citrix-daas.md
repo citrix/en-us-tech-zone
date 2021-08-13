@@ -15,4 +15,6 @@ See how using Autoscale and Citrix Policies admins can manage those workloads to
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=DszXAML-SbQ):**
 
-[![Citrix DaaS](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=DszXAML-SbQ)
+&nbsp;
+
+{% include video.html id="DszXAML-SbQ" type="youtube" %}

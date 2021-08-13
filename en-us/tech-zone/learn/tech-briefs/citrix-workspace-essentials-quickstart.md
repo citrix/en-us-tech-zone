@@ -198,7 +198,9 @@ See how Citrix Secure Workspace Access provides Enhanced Security for Web and Sa
 
 **Watch this video to [see demo](https://youtu.be/9rT-0IIKw6M):**
 
-[![Citrix Tech Insight - Citrix Secure Workspace Access Enhanced Security](/en-us/tech-zone/learn/media/tech-insights_secure-workspace-access-user-experience_enhanced-security.png)](https://youtu.be/9rT-0IIKw6M)
+&nbsp;
+
+{% include video.html id="9rT-0IIKw6M" type="youtube" %}
 
 ### Citrix Secure Workspace Access SSO to SaaS Apps Demo
 
@@ -206,7 +208,9 @@ See how Citrix Secure Workspace Access provides single sign-on to SaaS Applicati
 
 **Watch this video to [see demo](https://youtu.be/F0x26hN7ZOM):**
 
-[![Citrix Tech Insight - Citrix Secure Workspace Access SSO to SaaS Apps](/en-us/tech-zone/learn/media/tech-insights_secure-workspace-access-user-experience_saas-sso.png)](https://youtu.be/F0x26hN7ZOM)
+&nbsp;
+
+{% include video.html id="F0x26hN7ZOM" type="youtube" %}
 
 ### Citrix Secure Workspace Access VPN-less access Demo
 
@@ -214,7 +218,9 @@ See how Citrix Secure Workspace Access provides VPN-less access to Web Applicati
 
 **Watch this video to [see demo](https://youtu.be/pIqfoUwsbwY):**
 
-[![Citrix Tech Insight - Citrix Secure Workspace Access VPN-less access](/en-us/tech-zone/learn/media/tech-insights_secure-workspace-access-user-experience_vpn-less.png)](https://youtu.be/pIqfoUwsbwY)
+&nbsp;
+
+{% include video.html id="pIqfoUwsbwY" type="youtube" %}
 
 ### Citrix Secure Workspace Access Website Filtering Demo
 
@@ -222,4 +228,6 @@ See how Citrix Secure Workspace Access provides Website Filtering for Web and Sa
 
 **Watch this video to [see demo](https://youtu.be/KxxNA8Efuh0):**
 
-[![Citrix Tech Insight - Citrix Secure Workspace Access Website Filtering](/en-us/tech-zone/learn/media/tech-insights_secure-workspace-access-user-experience_website-filtering.png)](https://youtu.be/KxxNA8Efuh0)
+&nbsp;
+
+{% include video.html id="KxxNA8Efuh0" type="youtube" %}

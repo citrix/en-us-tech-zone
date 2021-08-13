@@ -12,11 +12,15 @@ Performance Analytics gives you the tools and data to improve the performance of
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=PIoHIM8NGEM&ab_channel=Citrix):**
 
-[![Tech Insight-Performance Analytics Overview](/en-us/tech-zone/learn/media/tech-insights_performance-analytics_overview.png)](https://www.youtube.com/watch?v=PIoHIM8NGEM&ab_channel=Citrix)
+&nbsp;
+
+{% include video.html id="PIoHIM8NGEM" type="youtube" %}
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=nVdtKYY4oBc):**
 
-[![Performance Analytics Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=nVdtKYY4oBc)
+&nbsp;
+
+{% include video.html id="nVdtKYY4oBc" type="youtube" %}
 
 ## Black Hole Machines
 
@@ -24,7 +28,9 @@ Some machines in your environment though registered and appearing healthy might 
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=9tC3vtwR7Hk&ab_channel=Citrix):**
 
-[![Tech Insight-Performance Analytics Black Hole Machines](/en-us/tech-zone/learn/media/tech-insights_performance-analytics_black-hole-machines.png)](https://www.youtube.com/watch?v=9tC3vtwR7Hk&ab_channel=Citrix)
+&nbsp;
+
+{% include video.html id="9tC3vtwR7Hk" type="youtube" %}
 
 ## Overloaded Machines
 
@@ -32,4 +38,6 @@ Machines that have experienced sustained CPU spikes, or high memory usage, or bo
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=e02ZM0UTUwo&ab_channel=Citrix):**
 
-[![Tech Insight-Performance Analytics Overloaded Machines](/en-us/tech-zone/learn/media/tech-insights_performance-analytics_overloaded-machines.png)](https://www.youtube.com/watch?v=e02ZM0UTUwo&ab_channel=Citrix)
+&nbsp;
+
+{% include video.html id="e02ZM0UTUwo" type="youtube" %}

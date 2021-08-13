@@ -12,4 +12,6 @@ With Always On VPN, LAN like access to remote users is provided by having a VPN 
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=4MdNIIFk7z8):**
 
-[![Tech Insight Video](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=4MdNIIFk7z8)
+&nbsp;
+
+{% include video.html id="4MdNIIFk7z8" type="youtube" %}

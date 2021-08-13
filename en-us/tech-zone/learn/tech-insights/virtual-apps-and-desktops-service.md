@@ -12,7 +12,9 @@ The Citrix Virtual Apps and Desktops Service allows organizations to focus on th
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=id6FbiLktco):**
 
-[![Citrix Virtual Apps and Desktops Service - Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=id6FbiLktco)
+&nbsp;
+
+{% include video.html id="id6FbiLktco" type="youtube" %}
 
 ## Referenced Content
 

@@ -8,8 +8,10 @@ tz_products: citrix-endpoint-management;
 ---
 # Tech Insight: Mobile SSO
 
-Learn how to configure Endpoint Management and Citrix Gateway to deliver single sign-on to native SaaS apps. Here, you can find information for iOS and Android devices that are enrolled into the Citrix Workspace.  
+Learn how to configure Endpoint Management and Citrix Gateway to deliver single sign-on to native SaaS apps. Here, you can find information for iOS and Android devices that are enrolled into the Citrix Workspace.
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=VIwxcDI6t9Y&feature=youtu.be):**
+**Watch this video to [learn more](https://www.youtube.com/watch?v=VIwxcDI6t9Y):**
 
-[![TODO Title](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=VIwxcDI6t9Y&feature=youtu.be)
+&nbsp;
+
+{% include video.html id="VIwxcDI6t9Y" type="youtube" %}
