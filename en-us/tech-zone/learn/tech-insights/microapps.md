@@ -47,6 +47,12 @@ See a demonstration of the CVAD service microapps in action, by watching the sho
 
 {% include video.html id="PqCgX5k4E0g" type="youtube" %}
 
+A more in-depth (16-minute) video covering the CVAD service microapps is below:
+
+&nbsp;
+
+{% include video.html id="HJtkxr5S--o" type="youtube" %}
+
 For more information about microapps for CVAD service see [CVAD service microapps](/en-us/citrix-microapps/set-up-template-integrations/integrate-cvads.html) in Citrix product documentation.
 
 ## HR Self-Service Microapp Demo
