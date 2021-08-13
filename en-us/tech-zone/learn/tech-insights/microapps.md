@@ -43,6 +43,8 @@ Self-Service microapp templates for the Citrix Virtual Apps and Desktops service
 
 See a demonstration of the CVAD service microapps in action, by watching the short video below:
 
+&nbsp;
+
 {% include video.html id="PqCgX5k4E0g" type="youtube" %}
 
 For more information about microapps for CVAD service see [CVAD service microapps](/en-us/citrix-microapps/set-up-template-integrations/integrate-cvads.html) in Citrix product documentation.
