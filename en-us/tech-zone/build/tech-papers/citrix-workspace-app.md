@@ -140,6 +140,11 @@ For example, when the prompt **Open Citrix Workspace Launcher** is displayed in 
     -  **Policy setting:** Define a list of allowed URLs -> enable
     -  **Policy value:** receiver://*
 
+The required ADMX files can be downloaded here:
+
+-  Google Chrome: [https://support.google.com/chrome/a/answer/187202?hl=en](https://support.google.com/chrome/a/answer/187202?hl=en)
+-  Microsoft Edge: [https://docs.microsoft.com/en-us/deployedge/configure-microsoft-edge](https://docs.microsoft.com/en-us/deployedge/configure-microsoft-edge)
+
 ## Optimization and security
 
 Working with virtual applications and desktops on remote systems means two things:
@@ -256,7 +261,7 @@ Function WriteToLog {
     } else {
         Add-Content $LogFile -value ($DateTime + " " + $InformationType.ToUpper() + " - " + $Text)
     }
-}  
+}
 
 # Create a new log file (overwriting any existing one)
 New-Item -Path $LogFile -ItemType "file" -force | Out-Null
