@@ -14,8 +14,10 @@ Incorporating a Time-based One-Time Password (TOTP) into the authentication poli
 -  Utilize an API from services within Citrix Cloud
 -  Simplify user authentication
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=r1kq8soTFzU&):**
+**Watch this video to [learn more](https://www.youtube.com/watch?v=r1kq8soTFzU):**
 
-[![TOTP Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=r1kq8soTFzU&)
+&nbsp;
+
+{% include video.html id="r1kq8soTFzU" type="youtube" %}
 
 Once push authentication is configured, organizations can use the on-premises Citrix Gateway with their Citrix Workspace environment by using an OAuth IdP policy, as explained in this [Tech Insight](/en-us/tech-zone/learn/tech-insights/gateway-idp.html) video.

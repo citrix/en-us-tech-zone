@@ -14,6 +14,8 @@ The Secure Workspace Access cloud service provides the following capabilities to
 -  Enhanced SaaS app security
 -  URL filtering within SaaS apps
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=1X9XUadVju8):**
+**Watch this video to [learn more](https://www.youtube.com/watch?v=l-XgBYDn3IE):**
 
-[![Secure Workspace Access Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=l-XgBYDn3IE)
+&nbsp;
+
+{% include video.html id="l-XgBYDn3IE" type="youtube" %}

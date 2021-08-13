@@ -13,4 +13,6 @@ Learn how Citrix Workspace can deliver enterprise web apps via Citrix Gateway wi
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=jJ069pxDNHA):**
 
-[![Web Apps Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=jJ069pxDNHA)
+&nbsp;
+
+{% include video.html id="jJ069pxDNHA" type="youtube" %}

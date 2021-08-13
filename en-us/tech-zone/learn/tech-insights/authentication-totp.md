@@ -16,6 +16,8 @@ Citrix Workspace provides a cloud-hosted [Time-based One-Time Password](/en-us/t
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=R8xwG_k2v78):**
 
-For additional information on primary identity options for Citrix Workspace, refer to the [Workspace - Primary Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) Tech Brief.
+&nbsp;
 
-[![TOTP Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=R8xwG_k2v78)
+{% include video.html id="R8xwG_k2v78" type="youtube" %}
+
+For additional information on primary identity options for Citrix Workspace, refer to the [Workspace - Primary Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) Tech Brief.

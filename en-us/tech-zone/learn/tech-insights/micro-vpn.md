@@ -12,4 +12,6 @@ Traditional VPNs grant the entire device access to backend resources. With the m
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=agvJf0pfkfI):**
 
-[![Micro VPN Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=agvJf0pfkfI)
+&nbsp;
+
+{% include video.html id="agvJf0pfkfI" type="youtube" %}

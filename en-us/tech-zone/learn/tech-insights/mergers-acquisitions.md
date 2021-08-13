@@ -21,7 +21,9 @@ With Citrix Workspace, organizations can create a zero-trust strategy for merger
 
 **Watch this video to [learn more](https://youtu.be/QurmF0ZVV3M):**
 
-[![Zero-Trust Strategy for Mergers and Acquisitions](/en-us/tech-zone/learn/media/tech-insights_mergers-acquisitions_overview.png)](https://youtu.be/QurmF0ZVV3M)
+&nbsp;
+
+{% include video.html id="QurmF0ZVV3M" type="youtube" %}
 
 The zero-trust strategy for mergers and acquisitions integrates the following
 

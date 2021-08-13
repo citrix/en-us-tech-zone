@@ -12,4 +12,6 @@ Learn how to manage Chrome OS device with Citrix Endpoint Management Service and
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=UfPmACMCEk0):**
 
-[![Google Chrome OS Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=UfPmACMCEk0)
+&nbsp;
+
+{% include video.html id="UfPmACMCEk0" type="youtube" %}

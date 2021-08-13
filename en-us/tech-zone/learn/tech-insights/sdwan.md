@@ -12,4 +12,6 @@ Learn how to optimize delivery of Citrix Virtual Apps and Desktops traffic with 
 
 **Watch this video to [learn more](https://youtu.be/yaTe9z0jXRU):**
 
-[![SDWAN Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://youtu.be/yaTe9z0jXRU)
+&nbsp;
+
+{% include video.html id="yaTe9z0jXRU" type="youtube" %}

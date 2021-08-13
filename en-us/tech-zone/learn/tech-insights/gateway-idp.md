@@ -17,4 +17,6 @@ Utilizing an on-premises Citrix Gateway as the identity provider for Citrix Work
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=RGg-lAe99OA):**
 
-[![Citrix Gateway IdP Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=RGg-lAe99OA)
+&nbsp;
+
+{% include video.html id="RGg-lAe99OA" type="youtube" %}

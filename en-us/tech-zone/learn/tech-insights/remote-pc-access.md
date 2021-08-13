@@ -12,4 +12,6 @@ For many users, the work environment centers on a physical Windows 10 PC sitting
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=RyNh3_FWRTM):**
 
-[![Remove PC Access Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=RyNh3_FWRTM)
+&nbsp;
+
+{% include video.html id="RyNh3_FWRTM" type="youtube" %}
