@@ -18,7 +18,9 @@ Adaptive Display analyzes and segments the display into unique parts based on co
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=xvzWWKhrGwE):**
 
-[![Tech Insight-Adaptive Display](/en-us/tech-zone/learn/media/tech-insights_hdx_adaptive-display.png)](https://www.youtube.com/watch?v=xvzWWKhrGwE)
+&nbsp;
+
+{% include video.html id="xvzWWKhrGwE" type="youtube" %}
 
 ## Adaptive Throughput
 
@@ -28,7 +30,9 @@ Citrix Virtual Apps and Desktops incorporates adaptive throughput to automatical
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=tsq8petwsMw):**
 
-[![Tech Insight-Adaptive Throughput](/en-us/tech-zone/learn/media/tech-insights_hdx_adaptive-throughput.png)](https://www.youtube.com/watch?v=tsq8petwsMw)
+&nbsp;
+
+{% include video.html id="tsq8petwsMw" type="youtube" %}
 
 ## Adaptive Transport
 
@@ -38,7 +42,9 @@ Citrix Virtual Apps and Desktops utilizes an adaptive transport that automatical
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=FyM47FDGw_4):**
 
-[![Tech Insight-Adaptive Transport](/en-us/tech-zone/learn/media/tech-insights_hdx_adaptive-transport.png)](https://www.youtube.com/watch?v=FyM47FDGw_4)
+&nbsp;
+
+{% include video.html id="FyM47FDGw_4" type="youtube" %}
 
 ## Browser Content Redirection
 
@@ -48,7 +54,9 @@ Browser content redirection provides administrators with the ability to decide h
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=zYNE73utPQs):**
 
-[![Tech Insight-Browser Content Redirection](/en-us/tech-zone/learn/media/tech-insights_hdx_browser-content-redirection.png)](https://www.youtube.com/watch?v=zYNE73utPQs)
+&nbsp;
+
+{% include video.html id="zYNE73utPQs" type="youtube" %}
 
 ## Microsoft Teams Optimization
 
@@ -58,4 +66,6 @@ By optimizing the way Microsoft Teams voice and video communication packets cros
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=BYzeltxcYJw):**
 
-[![Tech Insight-Microsoft Teams Optimization](/en-us/tech-zone/learn/media/tech-insights_hdx_microsoft-teams-optimization.png)](https://www.youtube.com/watch?v=BYzeltxcYJw)
+&nbsp;
+
+{% include video.html id="BYzeltxcYJw" type="youtube" %}

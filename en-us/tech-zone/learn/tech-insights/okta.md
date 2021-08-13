@@ -16,4 +16,6 @@ Citrix Workspace provides organizations with a choice in selecting their primary
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=nXVp4xzVev0):**
 
-[![Okta IdP Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=nXVp4xzVev0)
+&nbsp;
+
+{% include video.html id="nXVp4xzVev0" type="youtube" %}

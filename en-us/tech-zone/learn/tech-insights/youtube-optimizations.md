@@ -13,4 +13,6 @@ Learn how the Workspace app and Citrix SD-WAN can fetch YouTube videos from the 
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=MgE7tqke4CQ):**
 
-[![Citrix SD-WAN - YouTube access optimization](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=MgE7tqke4CQ)
+&nbsp;
+
+{% include video.html id="MgE7tqke4CQ" type="youtube" %}

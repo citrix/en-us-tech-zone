@@ -12,4 +12,6 @@ Allows organizations to integrate their IT-managed Virtual Apps and Desktops env
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=i9qL3clzPzQ):**
 
-[![Site Aggregation Tech Insight](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=i9qL3clzPzQ)
+&nbsp;
+
+{% include video.html id="i9qL3clzPzQ" type="youtube" %}

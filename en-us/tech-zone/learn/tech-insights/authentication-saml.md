@@ -18,4 +18,6 @@ The user's SAML identity provides them with authorization to access apps, deskto
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=VCfB9spKgGU):**
 
-[![SAML IdP Tech Insight](/en-us/tech-zone/learn/media/tech-insights_authentication-saml_video-image.png)](https://www.youtube.com/watch?v=VCfB9spKgGU)
+&nbsp;
+
+{% include video.html id="VCfB9spKgGU" type="youtube" %}

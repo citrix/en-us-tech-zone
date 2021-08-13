@@ -13,4 +13,6 @@ Citrix Virtual Apps and Desktops can optimize Microsoft Teams to run on any devi
 
 **Watch this video to learn [how Citrix optimizes Microsoft Teams](https://www.youtube.com/watch?v=7bGqF4ai730):**
 
-[![Microsoft Teams Optimization with Citrix](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=7bGqF4ai730)
+&nbsp;
+
+{% include video.html id="7bGqF4ai730" type="youtube" %}
