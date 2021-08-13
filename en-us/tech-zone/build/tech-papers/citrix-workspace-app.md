@@ -261,7 +261,7 @@ Function WriteToLog {
     } else {
         Add-Content $LogFile -value ($DateTime + " " + $InformationType.ToUpper() + " - " + $Text)
     }
-}  
+}
 
 # Create a new log file (overwriting any existing one)
 New-Item -Path $LogFile -ItemType "file" -force | Out-Null
