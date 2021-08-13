@@ -48,7 +48,7 @@ Citrix Virtual Apps and Desktops utilizes an adaptive transport that automatical
 
 ## Browser Content Redirection
 
-The browser is one of the most used and most dynamic applications in any virtual desktop implementation. HDX applies different encoding algorithms to efficiently transport the content to the endpoint. However, certain public websites delivering high definition video content can be more efficiently delivered and rendered directly on the endpoint instead of on the virtual desktop.  
+The browser is one of the most used and most dynamic applications in any virtual desktop implementation. HDX applies different encoding algorithms to efficiently transport the content to the endpoint. However, certain public websites delivering high definition video content can be more efficiently delivered and rendered directly on the endpoint instead of on the virtual desktop.
 
 Browser content redirection provides administrators with the ability to decide how different websites should be fetched and rendered.
 
