@@ -12,4 +12,6 @@ Mobile apps have open access to device platform, network, and storage resources 
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=7apskN8_aqA):**
 
-[![Citrix MDX App Containers for iOS](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=7apskN8_aqA)
+&nbsp;
+
+{% include video.html id="7apskN8_aqA" type="youtube" %}

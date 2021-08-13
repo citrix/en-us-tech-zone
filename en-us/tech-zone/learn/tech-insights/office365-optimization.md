@@ -13,4 +13,6 @@ Learn how Citrix SD-WAN can direct Microsoft Office 365 traffic from Enterprise 
 
 **Watch this video to [learn more](https://youtu.be/DIxVnMM8AOw):**
 
-[![Citrix SD-WAN O365 optimization](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://youtu.be/DIxVnMM8AOw)
+&nbsp;
+
+{% include video.html id="DIxVnMM8AOw" type="youtube" %}

@@ -19,7 +19,9 @@ See how Citrix Secure Internet Access provides secure access to all applications
 
 **Watch this video to [see demo](https://youtu.be/7ZtWKgTZipc):**
 
-[![Citrix Tech Insight - Citrix Secure Internet Access Integration with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/media/tech-insights_secure-workspace-access-user-experience_vpn-less.png)](https://youtu.be/7ZtWKgTZipc)
+&nbsp;
+
+{% include video.html id="7ZtWKgTZipc" type="youtube" %}
 
 ## Citrix Secure Internet Access with Citrix Secure Workspace Access Demo
 
@@ -27,4 +29,6 @@ See how Citrix Secure Internet Access provides secure access to all applications
 
 **Watch this video to [see demo](https://youtu.be/w3nY5iB4vhY):**
 
-[![Citrix Tech Insight - Citrix Secure Internet Access Integration with Citrix SWA](/en-us/tech-zone/learn/media/tech-insights_secure-workspace-access-user-experience_vpn-less.png)](https://youtu.be/w3nY5iB4vhY)
+&nbsp;
+
+{% include video.html id="w3nY5iB4vhY" type="youtube" %}

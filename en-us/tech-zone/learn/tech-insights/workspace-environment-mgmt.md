@@ -22,7 +22,9 @@ The CPU optimization capability within Workspace Environment Management can iden
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=aRyn7JEVkOs):**
 
-[![Tech Insight-CPU Optimization](/en-us/tech-zone/learn/media/tech-insights_workspace-environment-mgmt_cpu-optimization.png)](https://www.youtube.com/watch?v=aRyn7JEVkOs)
+&nbsp;
+
+{% include video.html id="aRyn7JEVkOs" type="youtube" %}
 
 ## Logon Optimization
 
@@ -30,7 +32,9 @@ Logging into a Windows-based machine can easily take 60+ seconds, depending on p
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=j44JzA7d0bM):**
 
-[![Tech Insight-Logon Optimization](/en-us/tech-zone/learn/media/tech-insights_workspace-environment-mgmt_logon-optimization.png)](https://www.youtube.com/watch?v=j44JzA7d0bM)
+&nbsp;
+
+{% include video.html id="j44JzA7d0bM" type="youtube" %}
 
 ## RAM Optimization
 
@@ -40,4 +44,6 @@ With the RAM optimization capability within Workspace Environment Management, RA
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=Ey017aboRQc):**
 
-[![Tech Insight-RAM Optimization](/en-us/tech-zone/learn/media/tech-insights_workspace-environment-mgmt_ram-optimization.png)](https://www.youtube.com/watch?v=Ey017aboRQc)
+&nbsp;
+
+{% include video.html id="Ey017aboRQc" type="youtube" %}
