@@ -141,6 +141,7 @@ For example, when the prompt **Open Citrix Workspace Launcher** is displayed in 
     -  **Policy value:** receiver://*
 
 The required ADMX files can be downloaded here:
+
 -  Google Chrome: [https://support.google.com/chrome/a/answer/187202?hl=en](https://support.google.com/chrome/a/answer/187202?hl=en)
 -  Microsoft Edge: [https://docs.microsoft.com/en-us/deployedge/configure-microsoft-edge](https://docs.microsoft.com/en-us/deployedge/configure-microsoft-edge)
 
