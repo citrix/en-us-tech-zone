@@ -33,7 +33,7 @@ Therefore, CompanyA has begun a threefold initiative to protect corporate resour
 
 CompanyA must protect BYOD user access to their work environment. It must create a safe mode of access to all apps and data that is seamless for end users. Access must be secure, simple, and flexible to use any device and work from any location.
 
-CompanyA has decided its security strategy is to move away from a traditional "castle and moat" approach to access and security. CompanyA is taking a Zero Trust approach instead of using a conventional appliance-based solution like a VPN that assumes users are trusted.
+CompanyA has decided its security strategy is to move away from a traditional "castle and moat" approach to access and security. It is taking a Zero Trust approach instead of using a conventional appliance-based solution like a VPN that assumes users are trusted.
 
 In CompanyA's focus on protecting user access, it has identified the following criteria for a successful design:
 
@@ -57,9 +57,9 @@ In CompanyA's focus on protecting data, it has identified the following criteria
 | **Success Criteria** |  **Description** |  **Solution** |
 |---|---|---|
 | BYO Devices | Users access Workspace with a BYO device and must not gain unfettered access to sanctioned resources. | Citrix Secure Workspace Access |
-| SaaS and Web App Security | The user's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted | Citrix Secure Workspace Access – Security Policies Enhanced Security |
-| Protection from keyloggers | CompanyA must protect internal corporate resources when accessed from BYO devices. Devices can be compromised and have keylogging malware installed. Key logging must be blocked while using Citrix Workspace | Citrix Secure Workspace Access – Security Policies with App Protection |
-| Protection from screen scrapers | CompanyA must protect internal corporate resources when accessed from BYO devices. Devices can be compromised and have screen scraping malware installed. Screen scraping must be blocked while using Citrix Workspace screen scraping malware | Citrix Secure Workspace Access – Security Policies with App Protection |
+| SaaS and Web App Security | The user's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted. | Citrix Secure Workspace Access – Security Policies Enhanced Security |
+| Protection from keyloggers | CompanyA must protect internal corporate resources when accessed from BYO devices. Devices can be compromised and have keylogging malware installed. Key logging must be blocked while using Citrix Workspace. | Citrix Secure Workspace Access – Security Policies with App Protection |
+| Protection from screen scrapers | CompanyA must protect internal corporate resources when accessed from BYO devices. Devices can be compromised and have screen scraping malware installed. Screen scraping must be blocked while using Citrix Workspace. | Citrix Secure Workspace Access – Security Policies with App Protection |
 | Internet Security | Protect users from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Devices | Protect devices and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Browser Service with Citrix Secure Internet Access – Security Policies with Web Filtering |
