@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Florin Lazurca
 specialThanksTo: Dan Feller, Frank Srp
-description: Learn how to design an environment to support brin-your-own-devices without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+description: Learn how to design an environment to support bring-your-own-devices without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
 tz_title: Reference Architecture - Protect apps and data on bring-your-own devices
 tz_products: citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops
 ---
