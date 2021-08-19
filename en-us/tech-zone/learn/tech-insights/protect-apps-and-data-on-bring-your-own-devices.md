@@ -10,7 +10,7 @@ tz_products: citrix-secure-internet-access;citrix-secure-workspace-access;citrix
 
 The integrated Citrix solution using Citrix Secure Workspace Access, Citrix Gateway, Citrix Secure Internet Access, and Citrix Web App and API Protection enforces Zero Trust Network Access and provides end-to-end protection of resources accessed from BYO devices.
 
-**Watch this video to learn [how to protect apps and data on bring-your-own devices](https://www.youtube.com/watch?v=XZ7y6v_152o):**
+**Watch this video to [learn more](https://www.youtube.com/watch?v=XZ7y6v_152o):**
 
 &nbsp;
 
