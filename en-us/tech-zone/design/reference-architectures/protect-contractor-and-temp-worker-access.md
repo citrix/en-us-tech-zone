@@ -2,7 +2,6 @@
 layout: doc
 h3InToc: true
 contributedBy: Florin Lazurca
-specialThanksTo: Dan Feller
 description: This reference architecture explains CompanyA's plan to protect contractor access to its data and apps
 tz_title: ZTNA for Contractors and Temp Workers
 tz_products: citrix-analytics;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops;citrix-workspace
@@ -61,7 +60,7 @@ In CompanyA's focus on protecting data, it has identified the following criteria
 | Contractor devices | Contractors access Workspace with a personal or provisioned device and must not gain unfettered access to sanctioned resources. | Citrix Secure Workspace Access |
 | SaaS and Web App Security | The contractor's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted | Citrix Secure Workspace Access – Security Policies Enhanced Security |
 | Protection from keyloggers | CompanyA must protect internal corporate resources when accessed from contractor devices. Devices can be compromised and have keylogging malware installed. Key logging must be blocked while using Citrix Workspace | Citrix Secure Workspace Access – Security Policies with App Protection |
-| Protection from screen scrapers | CompanyA must protect internal corporate resources when accessed from contractor devices. Devices can be compromised and have screen scraping malware installed. Screen scraping must be blocked while using Citrix Workspace screen scraping malware | Citrix Secure Workspace Access – Security Policies with App Protection |
+| Protection from screen scrapers | CompanyA must protect internal corporate resources when accessed from contractor devices. Devices can be compromised and have screen scraping malware installed. Screen scraping must be blocked while using Citrix Workspace | Citrix Secure Workspace Access – Security Policies with App Protection |
 | Internet Security | Protect contractors from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Devices | Protect devices and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Browser Service with Citrix Secure Internet Access – Security Policies with Web Filtering |
