@@ -86,7 +86,7 @@ In CompanyA's focus on protecting apps, it has identified the following criteria
 
 This architecture meets all the preceding requirements while giving CompanyA the foundation to expand to more use cases in the future.
 
-[![Conceptual Architecture](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_01.png)](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_01.png)
+[![Conceptual Architecture](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_01.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_01.png)
 
 At a high level:
 
@@ -123,7 +123,7 @@ CompanyA has determined that providing access to resources with a username and p
 
 Citrix Workspace incorporates a cloud-delivered Time-based One-Time Password (TOTP) providing multifactor authentication. Contractors register with the TOTP service and create a pre-shared secret key within the authenticator app on a mobile device. Once the contractor successfully registers with the TOTP micro-service, the contractor must use the token, along with their Active Directory credentials, to successfully authenticate to Citrix Workspace.
 
-[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_02.png)
+[![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_02.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_02.png)
 
 Refer to the [Citrix Workspace Active Directory with TOTP Tech Brief](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#active-directory-with-totp) to gain adequate knowledge on Active Directory with TOTP concepts and terminology.
 
@@ -137,7 +137,7 @@ The Secure Workspace Access service and the Virtual Apps and Desktops service us
 *  Based on the contractor’s primary, secured identity
 *  Only for specific protocols, which disallow network traversal
 
-[![ZTNA](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_03.png)](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_03.png)
+[![ZTNA](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_03.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_03.png)
 
 ## Resource Layer
 
@@ -152,7 +152,7 @@ CompanyA has developed prescriptive access models to meet its security requireme
 *  App Protection policies protect web and SaaS apps using screen scraping and key-logger restrictions. If the contractor device does not have app protection available, adaptive access policies prevent the contractor from launching the app.
 *  When contractors access virtual apps and desktops, the Virtual Apps and Desktops service provides SSO and enforces lockdown policies. The service restricts downloading, printing, and unidirectional and bidirectional copy & paste actions.
 
-[![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_35.png)](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_35.png)
+[![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_35.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_35.png)
 
 CompanyA has both sensitive and regular SaaS and Web apps and will apply adaptive access policies based on their security requirements. As a baseline, CompanyA has defined the following policies (with the ability to relax policies as needed based on user and application).
 
@@ -176,13 +176,13 @@ The bot management component of the Application Delivery Controller detects a bo
 
 CompanyA also uses the Citrix Web App and API protection service to prevent volumetric attacks and app-layer DDoS attacks against webs apps which are not on-prem.
 
-[![Citrix Web App and API Protection](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_04.png)
+[![Citrix Web App and API Protection](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_04.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_04.png)
 
 ### Secure Internet Access
 
 As contractors interact with SaaS, web, and virtual apps they often access non-CompanyA sanctioned internet sites. To help protect contractors and organization, CompanyA incorporates the Citrix Secure Browser service with Citrix Secure Internet Access and Security Analytics into the design.
 
-[![Citrix Secure Internet Access](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_05.png)](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_05.png)
+[![Citrix Secure Internet Access](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_05.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_05.png)
 
 Any CompanyA related internet traffic to/from the library of apps, desktops, and devices within the organization routes through the Secure Internet Access service. The service scans any URL to verify it is safe. Functionalities within specific public sites are denied or modified. Downloads are automatically scanned and verified.
 
