@@ -1,16 +1,17 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: First Last, First2 Last2
-specialThanksTo: First Last, First2 Last2
-description: TODO insert description of article
-tz_title: TODO insert title of article
-tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-service-providers;citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;google-cloud-platform;other;security;third-party-content
+contributedBy: Florin Lazurca
+description: See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+tz_title: Protect apps and data on bring-your-own devices
+tz_products: citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops
 ---
-# Content Type : tz_title
+# Tech Insight: Protect apps and data on bring-your-own devices
 
-TEXT
+The integrated Citrix solution using Citrix Secure Workspace Access, Citrix Gateway, Citrix Secure Internet Access, and Citrix Web App and API Protection enforces Zero Trust Network Access and provides end-to-end protection of resources accessed from BYO devices.
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=ID):**
+**Watch this video to learn [how to protect apps and data on bring-your-own devices](https://www.youtube.com/watch?v=XZ7y6v_152o):**
 
-[![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=ID)
+&nbsp;
+
+{% include video.html id="XZ7y6v_152o" type="youtube" %}
