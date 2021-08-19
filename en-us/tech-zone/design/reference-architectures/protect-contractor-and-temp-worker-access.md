@@ -18,7 +18,7 @@ CompanyA currently uses several unintegrated point products for remote access. I
 
 CompanyA chose Citrix since it has expertise in foundational technologies like access, networking, least privilege access and data protection. It is implementing the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Gateway, Citrix Secure Internet Access, and Citrix Web App and API Protection. Together this solution provides end-to-end protection of CompanyA resources accessed from contractor devices.
 
-[![Overview](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_00.png)](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_00.png)
+[![Overview](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_00.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_00.png)
 
 This reference architecture explains CompanyA's plan to protect contractor access to its data and apps.
 
