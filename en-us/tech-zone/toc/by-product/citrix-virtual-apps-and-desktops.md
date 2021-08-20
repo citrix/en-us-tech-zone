@@ -17,6 +17,8 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 [HDX](/en-us/tech-zone/learn/tech-insights/hdx.html) - A set of technologies ensuring an unparalleled user experience when accessing virtual Windows/Linux applications and desktops.
 
+[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+
 [Remote PC Access](/en-us/tech-zone/learn/tech-insights/remote-pc-access.html) - Remote PC Access allows users to access their physical, office-based Windows PC from remote locations.
 
 [Virtual Apps and Desktops Service](/en-us/tech-zone/learn/tech-insights/virtual-apps-and-desktops-service.html) - Citrix Virtual Apps and Desktops Service provides a fast, low-impact deployment option for on-premises/cloud-hosted, Windows/Linux, desktops/apps.
