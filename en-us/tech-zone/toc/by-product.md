@@ -199,6 +199,8 @@ Deployment guides provide step-by-step instruction on how to perform key tasks a
 
 Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
 
+[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+
 [Secure Internet Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-internet-access-user-experience.html) - Secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
 
 ### Learn - Tech Briefs
@@ -230,6 +232,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 ### Learn - Tech Insights
 
 Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
+
+[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
 
 [Secure Workspace Access for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
 
@@ -298,6 +302,8 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 [Federated Authentication Service](/en-us/tech-zone/learn/tech-insights/federated-authentication-service.html) - Single Sign-on to Windows-based virtual apps and desktops when using a non-Active Directory based Citrix Workspace identity.
 
 [HDX](/en-us/tech-zone/learn/tech-insights/hdx.html) - A set of technologies ensuring an unparalleled user experience when accessing virtual Windows/Linux applications and desktops.
+
+[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
 
 [Remote PC Access](/en-us/tech-zone/learn/tech-insights/remote-pc-access.html) - Remote PC Access allows users to access their physical, office-based Windows PC from remote locations.
 

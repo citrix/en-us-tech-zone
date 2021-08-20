@@ -9,6 +9,8 @@ List of articles related to Citrix Secure Internet Access.
 
 Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
 
+[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+
 [Secure Internet Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-internet-access-user-experience.html) - Secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
 
 ## Learn - Tech Briefs
