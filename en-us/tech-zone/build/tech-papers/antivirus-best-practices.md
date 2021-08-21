@@ -67,9 +67,11 @@ The integrity of excluded files and folders needs to be maintained always. Organ
 
 Scan only local drives - or disable network scanning. The assumption is that all remote locations that might include file servers that host user profiles and redirected folders are being monitored by antivirus and data integrity solutions. If not, it is recommended that network shares accessed by all provisioned machines be excluded. An example includes shares hosting redirected folders or user profiles.
 
+Another important consideration is the exclusion of processes. When process exclusions are recommended, the goal is to prevent scanning of any activity performed by such processes rather than preventing the scanning of the exe file. In some security solutions this is referred to as defining trusted processes.
+
 **Recommendation:** Review these recommendations with your vendor and security team.
 
--  Review all files/folders for exclusion and confirm they exist before you create an exclusion policy.
+-  Review all files, folders, and processes for exclusion and confirm they exist before you create an exclusion policy.
 -  Implement multiple exclusion policies for different components instead of creating one large policy for all of them.
 -  To minimize the window of opportunity, implement a combination of real time and scheduled scans.
 
@@ -98,14 +100,14 @@ Processes:
 
 Files:
 
+-  `%SystemRoot%\System32\drivers\CtxUvi.sys`
 -  `%UserProfile%\AppData\Local\Temp\Citrix\HDXRTConnector\*\*.txt`
 
 Processes:
 
 -  `%ProgramFiles%\Citrix\User Profile Manager\UserProfileManager.exe`
 -  `%ProgramFiles%\Citrix\Virtual Desktop Agent\BrokerAgent.exe`
--  `%SystemRoot%\System32\spoolsv.exe`
--  `%SystemRoot%\System32\winlogon.exe`
+-  `%ProgramFiles%\Citrix\HDX\bin\CtxSvcHost.exe`
 -  `%ProgramFiles%\Citrix\ICAService\picaSvc2.exe` (Desktop OS only)
 -  `%ProgramFiles%\Citrix\ICAService\CpSvc.exe` (Desktop OS only)
 
