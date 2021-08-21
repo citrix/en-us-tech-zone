@@ -2,11 +2,11 @@
 layout: doc
 h3InToc: true
 contributedBy: Florin Lazurca
-description: This reference architecture explains CompanyA's plan to protect contractor access to its data and apps
-tz_title: ZTNA for Contractors and Temp Workers
+description: This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
+tz_title: Zero Trust Network Access for Contractors and Temp Workers
 tz_products: citrix-analytics;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops;citrix-workspace
 ---
-# Reference Architecture: ZTNA for Contractors and Temp Workers
+# Reference Architecture: Zero Trust Network Access for Contractors and Temp Workers
 
 ## Overview
 
@@ -24,7 +24,7 @@ This reference architecture explains CompanyA's plan to protect contractor acces
 
 ## Success criteria
 
-CompanyA wishes to enable all contractors to work from home and remote locations. Post pandemic, contractors will continue benefiting from hybrid and distributed workforce. Although some contractors currently have VPN access to web and SaaS apps, CompanyA has identified several security challenges that prevent a company-wide deployment. Therefore, CompanyA is implementing a VPN-less approach.
+CompanyA wishes to enable all contractors to work from home and remote locations. Although some contractors currently have VPN access to web and SaaS apps, CompanyA has identified several security challenges that prevent a company-wide deployment. Therefore, CompanyA is implementing a VPN-less approach.
 
 Since CompanyA does not manage contractor’s devices, it has no way to understand if the devices transfer any malicious content to their application infrastructure. Moreover, CompanyA's security policy does not require contractor devices to have agents installed to provide access to company resources.
 
@@ -43,8 +43,8 @@ In CompanyA's focus on protecting contractor access, it has identified the follo
 | Adaptive access for web and SaaS apps | Adaptive access for web and SaaS apps using Citrix Secure Workspace Access to determine the correct level of access | Citrix Secure Workspace Access |
 | Adaptive access for client-server (virtual) apps | Adaptive access for client-server (virtual) apps using Citrix Secure Workspace Access and Citrix Virtual Apps and Desktops to determine the correct level of access | Citrix Secure Workspace Access and Citrix Virtual Apps and Desktops |
 | End-user monitoring | Continuous monitoring and continuous assessment to protect against potential threats. Apps are continuously monitored for data exfiltration, and abnormal access times and locations. | Citrix Analytics |
-| SaaS App Access | Contractors must access sanctioned SaaS applications with strong authentication that does not impact the experience | Citrix Secure Workspace Access |
-| Web App Access | Contractors must be able to access sanctioned internal Web applications with strong authentication that does not impact the experience | Citrix Secure Workspace Access – Zero Trust Network Access |
+| SaaS App Access | Contractors must access sanctioned SaaS applications with strong authentication that does not impact the user experience | Citrix Secure Workspace Access |
+| Web App Access | Contractors must be able to access sanctioned internal Web applications with strong authentication that does not impact the user experience | Citrix Secure Workspace Access – Zero Trust Network Access |
 | Personal Privacy | CompanyA must ensure contractor privacy while still protecting the contractor and endpoint from potential threats when using unsanctioned websites | Citrix Secure Browser Service with Citrix Secure Internet Access (Using "do not decrypt" policies for sites with personal information) |
 
 ### Protecting Data
