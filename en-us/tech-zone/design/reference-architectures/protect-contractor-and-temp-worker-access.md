@@ -10,9 +10,9 @@ tz_products: citrix-analytics;citrix-networking;citrix-secure-internet-access;ci
 
 ## Overview
 
-CompanyA has been growing its number of contractors and temp workers (contractors) to complement its full-time staff. Using Citrix, the company has realized several productivity benefits as contractors can get on-board and work on business projects quickly with minimal set up time. Since the company’s contractors are typically mobile and have their own devices, they must access resources from anywhere, at any time, and from any device.
+CompanyA has been growing its number of contractors and temp workers to complement its full-time staff. Using Citrix, the company has realized several productivity benefits as contractors can get on-board and work on business projects quickly with minimal set up time. Since the company’s contractors are typically mobile, they must access resources from anywhere, at any time, and from any device.
 
-CompanyA's contractor policy has led to greater efficiency for workforce. However, the policy has created a complex delivery model and introduced security concerns. There are added security risks that come with allowing contractors to use their personal devices. As the line between the office and the outside world continues to blur, certain steps must be taken by CompanyA to protect sensitive company information. Since the contractor’s device is unmanaged, CompanyA must mitigate security threats against apps and the data in transit to, in use on, and at rest on the device. It also does not want contractors leaving the company with important data on their personal devices.
+CompanyA's contractor and temp worker policy has led to greater efficiency for workforce. However, the policy has created a complex delivery model and introduced security concerns. There are added security risks that come with allowing contractors and temp workers to use their personal devices. As the line between the office and the outside world continues to blur, certain steps must be taken by CompanyA to protect sensitive company information.
 
 CompanyA currently uses several unintegrated point products for remote access. It wants to consolidate and expand to a companywide Zero Trust Network Access (ZTNA) solution while protecting its resources. CompanyA needed to take an intelligent, contextual, and adaptive approach to workspace security that protects their contractors and data following the Zero Trust model. To that end, CompanyA is engaging in an initiative to update its app delivery architecture.
 
@@ -20,15 +20,18 @@ CompanyA chose Citrix since it has expertise in foundational technologies like a
 
 [![Overview](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_00.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_00.png)
 
-This reference architecture explains CompanyA's plan to protect contractor access to its data and apps.
+This reference architecture explains CompanyA's plan to protect contractor and temp worker access to its data and apps.
 
 ## Success criteria
 
-CompanyA wishes to enable all contractors to work from home and remote locations. Although some contractors currently have VPN access to web and SaaS apps, CompanyA has identified several security challenges that prevent a company-wide deployment. Therefore, CompanyA is implementing a VPN-less approach.
+CompanyA wishes to enable all contractors and temp workers to work from home and remote locations. Although some contractors and temp workers currently have VPN access to web and SaaS apps, CompanyA has identified several security challenges that prevent a company-wide deployment. Therefore, CompanyA is implementing a VPN-less approach.
 
-Since CompanyA does not manage contractor’s devices, it has no way to understand if the devices transfer any malicious content to their application infrastructure. Moreover, CompanyA's security policy does not require contractor devices to have agents installed to provide access to company resources.
+CompanyA must mitigate security threats against apps and the data in transit to, in use on, and at rest on the endpoint. After careful consideration of its security and IT requirements, CompanyA has decided to implement a hybrid endpoint deplyoment model. Since contractors will be accessing sensitive apps and data, they will be provisioned a managed company endpoint requiring additional sercurity measures. CompanyA's security policy requires the managed endpoints to have agents installed to be granted access to company resources.
 
-Therefore, CompanyA has begun a threefold initiative to protect corporate resources accessed by contractor devices. To be successful, CompanyA defined a list of success criteria for the initiative. These criteria form the basis for the overarching design.
+Temp workers will follow a bring-your-own-device (BYOD) model where they can use personal devices to securely access company resources. CompanyA policy does not allow BYO devices to access the network directly or store company data. Since CompanyA's privacy policy but does not allow BYO devices to have agents installed, temp workers
+
+
+Therefore, CompanyA has begun a threefold initiative to protect corporate resources accessed by contractor and temp worker devices. To be successful, CompanyA defined a list of success criteria for the initiative. These criteria form the basis for the overarching design.
 
 ### Protecting Contractor Access
 
