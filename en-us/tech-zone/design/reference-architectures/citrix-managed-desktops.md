@@ -508,7 +508,7 @@ Citrix Workspace app is the entry point to access desktops and apps running on t
 
 **Citrix Managed Azure AD:** Azure Active Directory service is provided and managed by Citrix. Here the administrator does not need to provide or own any Azure infrastructure. Citrix has made it simple to manage, the admins have to add their users to the directory using the CVAD Standard UI.
 
-**Customer's choice of Identity provider:** In this authentication method, customers can use any available authentication method in Citrix Cloud. Including customer managed Azure Active Directory, Okta and SAML 2.0 based authentication mechanisms.  
+**Customer's choice of Identity provider:** In this authentication method, customers can use any available authentication method in Citrix Cloud. Including customer managed Azure Active Directory, Okta and SAML 2.0 based authentication mechanisms.
 
 [![CVAD Standard 10](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_010.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_010.png)
 
