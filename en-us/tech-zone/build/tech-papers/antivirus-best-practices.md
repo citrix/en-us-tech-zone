@@ -107,16 +107,21 @@ Processes:
 
 -  `%ProgramFiles%\Citrix\User Profile Manager\UserProfileManager.exe`
 -  `%ProgramFiles%\Citrix\Virtual Desktop Agent\BrokerAgent.exe`
--  `%ProgramFiles%\Citrix\HDX\bin\CtxSvcHost.exe`
--  `%ProgramFiles%\Citrix\ICAService\picaSvc2.exe` (Desktop OS only)
--  `%ProgramFiles%\Citrix\ICAService\CpSvc.exe` (Desktop OS only)
+-  CVAD 1912 LTSR
+    -  `%ProgramFiles%\Citrix\ICAService\CtxSvcHost.exe`
+    -  `%ProgramFiles%\Citrix\ICAService\picaSvc2.exe` (Single Session VDA only)
+    -  `%ProgramFiles%\Citrix\ICAService\CpSvc.exe` (Single Session VDA only)
+-  CVAD 2003+
+    -  `%ProgramFiles%\Citrix\HDX\bin\CtxSvcHost.exe`
+    -  `%ProgramFiles%\Citrix\HDX\bin\picaSvc2.exe` (Single Session VDA only)
+    -  `%ProgramFiles%\Citrix\HDX\bin\CpSvc.exe` (Single Session VDA only)
 
 WebSocketService.exe file can be found in different locations in various CVAD versions. Below is a list of supported LTSR releases and the latest CR release. If you are running any other version of CVAD, we recommend confirming the file location first.
 
 -  `%ProgramFiles%\Citrix\HTML5 Video Redirection\WebSocketService.exe` (CVAD 7.15 LTSR - both desktop and server OS)
--  `%ProgramFiles(x86)%\Citrix\System32\WebSocketService.exe` (CVAD 1912 LTSR - Server OS only)
--  `%ProgramFiles%\Citrix\ICAService\WebSocketService.exe` (CVAD 1912 LTSR - Desktop OS only)
--  `%ProgramFiles(x86)%\Citrix\HDX\bin\WebSocketService.exe` (CVAD 2003+ - both desktop and server OS)
+-  `%ProgramFiles(x86)%\Citrix\System32\WebSocketService.exe` (CVAD 1912 LTSR - Multi Session VDA only)
+-  `%ProgramFiles%\Citrix\ICAService\WebSocketService.exe` (CVAD 1912 LTSR - Single Session VDA only)
+-  `%ProgramFiles(x86)%\Citrix\HDX\bin\WebSocketService.exe` (CVAD 2003+ - Single Session and Multi Session VDAs)
 
 #### Virtual Delivery Agents - HDX RealTime Optimization Pack
 
