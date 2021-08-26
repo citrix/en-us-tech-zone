@@ -10,9 +10,9 @@ tz_products: citrix-analytics;citrix-networking;citrix-secure-internet-access;ci
 
 ## Overview
 
-CompanyA has been hiring contractors and temp workers to complement its full-time staff. Using Citrix, the company has realized several productivity benefits as contractors and temp workers can get on-board and work on business projects quickly with minimal set up time. Since the company’s contractors and temp workers are typically mobile, they must access resources from anywhere, at any time, and from any device.
+CompanyA is complementing its full-time staff with contractors and temp workers. Using Citrix, the company has realized several productivity benefits as contractors and temp workers can get on-boarded and work on business projects quickly with minimal set up time. Also, since the company’s contractors and temp workers are typically mobile, they use Citrix to access resources from anywhere, at any time, and from any device.
 
-CompanyA's contractor and temp worker policy has led to greater efficiency for workforce. However, the policy has created a complex delivery model and introduced security concerns. There are added security risks that come with allowing temp workers to use their personal endpoint devices. As the line between the office and the outside world continues to blur, certain steps must be taken by CompanyA to protect sensitive company information.
+CompanyA's contractor and temp worker policy has led to greater efficiency for its workforce. However, the policy has created a complex delivery model and introduced security concerns. As the line between the office and the outside world continues to blur, certain steps must be taken by CompanyA to protect sensitive company information.
 
 CompanyA currently uses several unintegrated point products for remote access. It wants to consolidate and expand to a companywide Zero Trust Network Access (ZTNA) solution while protecting its resources. CompanyA needed to take an intelligent, contextual, and adaptive approach to workspace security that protects their contractors, temp workers, and data following the Zero Trust model. To that end, CompanyA is engaging in an initiative to update its app delivery architecture.
 
@@ -26,15 +26,15 @@ This reference architecture explains CompanyA's plan to protect contractor and t
 
 CompanyA wishes to enable all contractors and temp workers to work from home and remote locations. Although some contractors and temp workers currently have VPN access to web and SaaS apps, CompanyA has identified several security challenges that prevent a company-wide deployment. Therefore, CompanyA is implementing a VPN-less approach.
 
-CompanyA must mitigate security threats against apps and the data in transit to, in use on, and at rest on the endpoint. After careful consideration of its security and IT requirements, CompanyA has decided to implement a hybrid endpoint deplyoment model. Since contractors will be accessing sensitive apps and data, they will be provisioned a managed company endpoint requiring additional security measures. CompanyA's security policy requires that managed endpoints have software agents installed to be granted access to company resources.
+CompanyA must mitigate security threats against apps and the data in transit to, in use on, and at rest on the endpoint. After careful consideration of its security and IT requirements, CompanyA has decided to implement a hybrid endpoint deplyoment model. Since contractors will be accessing sensitive apps and data, they will be provisioned a managed company endpoint requiring additional security measures. CompanyA's security policy requires that managed endpoints have security software agents installed to be granted access to company resources.
 
-Temp workers will follow a bring-your-own-device (BYOD) model where they can use personal devices to securely access company resources. CompanyA's policy does not require BYO devices to have agents installed. It also does not allow BYO devices to access the network directly or store company data.
+Temp workers will follow a bring-your-own-device (BYOD) model where they can use personal devices to securely access company resources. CompanyA's policy does not require BYO devices to have agents installed. It also does not allow BYO devices to access the network directly or store company data. In either use case, the user expierence must not be negativley impacted by the additional security measures.
 
 CompanyA has begun a threefold initiative to protect corporate resources accessed by contractor and temp worker endpoints. To be successful, CompanyA defined a list of success criteria for the initiative. These criteria form the basis for the overarching design.
 
 ### Protecting Contractor and Temp Worker Access
 
-CompanyA must protect contractor and temp worker access to their work environment. It must create a safe mode of access to all apps and data that is seamless. Access must be secure, simple, and flexible to use any device and work from any location.
+CompanyA must protect contractor and temp worker access to their work environment. The company must create a safe mode of access to all apps and data that is seamless. Access must be secure, simple, and flexible to use any device and work from any location.
 
 CompanyA has decided its security strategy is to move away from a traditional "castle and moat" approach to access and security. It is taking a Zero Trust approach instead of using a conventional appliance-based solution like a VPN that assumes contractors and temp workers are trusted.
 
@@ -47,7 +47,7 @@ In CompanyA's focus on protecting contractor and temp worker access, it has iden
 | End-user monitoring | Continuous monitoring and continuous assessment to protect against potential threats. Apps are continuously monitored for data exfiltration, and abnormal access times and locations. | Citrix Analytics |
 | SaaS App Access | Contractors and temp workers must access sanctioned SaaS applications with strong authentication that does not impact the user experience | Citrix Secure Workspace Access |
 | Web App Access | Contractors and temp workers must access sanctioned internal Web applications with strong authentication that does not impact the user experience | Citrix Secure Workspace Access – Zero Trust Network Access |
-| Personal Privacy | CompanyA must ensure contractor and temp privacy while still protecting the contractor and endpoint from potential threats when using unsanctioned websites | Citrix Secure Browser Service with Citrix Secure Internet Access (Using "do not decrypt" policies for sites with personal information) |
+| Personal Privacy | CompanyA must ensure contractor and temp worker privacy while still protecting the endpoints from potential threats when using unsanctioned websites | Citrix Secure Browser Service with Citrix Secure Internet Access (Using "do not decrypt" policies for sites with personal information) |
 
 ### Protecting Data
 
@@ -80,10 +80,10 @@ In CompanyA's focus on protecting apps, it has identified the following criteria
 |  **Success Criteria** | **Description**  | **Solution** |
 |---|---|---|
 | Secure Access | CompanyA must protect internal corporate resources when accessed from untrusted and unsecured locations. Devices are not be allowed direct access to the internal network to help prevent malware intrusion. | Secure Workspace Access - VPN-less access |
-| SaaS credential protection | The contractor's credentials to SaaS applications must include multifactor authentication. | Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
+| SaaS credential protection | The contractor's or temp worker's credentials to SaaS applications must include multifactor authentication. | Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
 | SaaS DLP | CompanyA requires their SaaS apps to use DLP controls inline. | Secure Browser Service with Citrix Secure Internet Access |
 | Protect web apps | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web App Firewall |
-| Compromised Contractor Protection | IT must be able to quickly identify and mitigate threats posed by a compromised contractor account. IT must protect the entire threat surface with centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
+| Compromised Contractor Protection | IT must be able to quickly identify and mitigate threats posed by a compromised contractor or temp worker account. IT must protect the entire threat surface with centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
 
 ## Conceptual Architecture
 
@@ -95,9 +95,9 @@ At a high level:
 
 **User Layer**: The user layer describes the contractor and temp worker environment and endpoint devices used to connect to resources.
 
-*  Contractor devices are unmanaged. The devices are unmanaged and CompanyA does not require any agent to be installed on the device. (can make them require agent)
-*  Contractor access resources from the Citrix Workspace web, resulting in an experience that is protected even on contractor devices.
-*  Contractor can install Citrix Workspace App for more capabilities but are not required to.
+*  Contractor endpoint devices are CompanyA managed 
+and require Citrix Workspace app and the Citrix Secure internet Access agent to be installed.
+*  Contractor access resources from the Citrix Workspace app, resulting in rich experience that is protecs.
 
 **Access Layer**: The access layer describes how conctractors authenticate to their Workspace and secondary resources.
 
