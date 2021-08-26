@@ -147,20 +147,19 @@ The Secure Workspace Access service and the Virtual Apps and Desktops service us
 
 ### Resource Security Policies
 
-CompanyA wants to limit the risk of data loss and data remanence on contractor and temp worker endpoint devices. Within the different application types, CompanyA incorporates numerous restrictions to preventing the copying, downloading, or printing of data.
-
-CompanyA has developed prescriptive access models to meet its security requirements:
+CompanyA wants to limit the risk of data loss and data remanence on contractor and temp worker endpoint devices. CompanyA has both sensitive and regular SaaS and Web apps and will apply adaptive access policies based on their security requirements. Within the different application types, CompanyA incorporates numerous restrictions to preventing the copying, downloading, or printing of data.
 
 *  Contractor endpoint devices are company managed and require Citrix Workspace app to be installed for access to company resources.
-*  Contractor endpoint devices **with** Citrix Workspace app use Secure Workspace Access to launch a Saas or web app using a local, containerized browser. The embedded browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app. Secure Workspace Access provides SSO and enforces adaptive access policies (download, print, copy, and paste restrictions).
-*  As a fall back, contractor endpoint devices **without** Citrix Workspace app use Secure Workspace Access to launch a SaaS or web app through an isolated browser using the Citrix Secure Browser service. Secure Workspace Access provides SSO and enforces adaptive access policies such as download, print, copy, and paste restrictions to web and SaaS apps.
-*  App Protection policies protect web and SaaS apps using screen scraping and key-logger restrictions. CompanyA will require App Protection polices for sensitive SaaS and Web apps. If the contractor device does not have app protection available, adaptive access policies prevent the contractor from launching the app.
-*  Temp worker endpoints are personal BYO devices and will not require Citrix Workspace app to be installed to access company resources. Temp workers will use Secure Workspace Access to launch a SaaS or web app through an isolated browser using the Citrix Secure Browser service. Secure Workspace Access provides SSO and enforces adaptive access policies such as download, print, copy, and paste restrictions to web and SaaS apps.
-*  When contractors and temp workers access virtual apps and desktops, the Virtual Apps and Desktops service provides SSO and enforces lockdown policies. The service restricts downloading, printing, and unidirectional and bidirectional copy & paste actions.
+*  Contractor endpoint devices **with** Citrix Workspace app use Secure Workspace Access to launch a Saas or web app using a local, containerized browser.
+    *  The embedded browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app.
+    *  Secure Workspace Access provides SSO and enforces adaptive access policies (download, print, copy, and paste restrictions).
+*  As a fall back, contractor endpoint devices **without** Citrix Workspace app use Secure Workspace Access to launch a SaaS or web app through an isolated browser using the Citrix Secure Browser service.
+    *  Secure Workspace Access provides SSO and enforces adaptive access policies such as download, print, copy, and paste restrictions to web and SaaS apps.
+*  App Protection policies protect web and SaaS apps using screen scraping and key-logger restrictions.
+    *  CompanyA will require App Protection polices for sensitive SaaS and Web apps.
+    *  If the contractor device does not have app protection available, adaptive access policies prevent the contractor from launching the app.
 
-[![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_35.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_35.png)
-
-CompanyA has both sensitive and regular SaaS and Web apps and will apply adaptive access policies based on their security requirements. As a baseline, CompanyA has defined the following policies (with the ability to relax policies as needed based on user and application).
+CompanyA has developed the following prescriptive access models to meet its contractor security requirements:
 
 | **Category**  | **SaaS Apps** | **Sensitive SaaS Apps** | **Web Apps** | **Sensitive Web Apps** | **Virtual Apps and Desktops** |
 |---|---|---|---|---|---|
@@ -171,6 +170,21 @@ CompanyA has both sensitive and regular SaaS and Web apps and will apply adaptiv
 | Watermark | Disabled | Enabled | Disabled | Enabled | Enabled |
 | Keylogging Prevention | Disabled | Enabled | Disabled | Enabled | Enabled |
 | Screenshot Prevention | Disabled | Enabled | Disabled | Enabled | Enabled |
+
+*  Temp worker endpoints are personal BYO devices and will not require Citrix Workspace app to be installed to access company resources. Temp workers will use Secure Workspace Access to launch a SaaS or web app through an isolated browser using the Citrix Secure Browser service. Secure Workspace Access provides SSO and enforces adaptive access policies such as download, print, copy, and paste restrictions to web and SaaS apps.
+*  When contractors and temp workers access virtual apps and desktops, the Virtual Apps and Desktops service provides SSO and enforces lockdown policies. The service restricts downloading, printing, and unidirectional and bidirectional copy & paste actions.
+
+CompanyA has developed the following prescriptive access models to meet its temp worker requirements:
+
+| **Category**  | **SaaS Apps** | **Sensitive SaaS Apps** | **Web Apps** | **Sensitive Web Apps** | **Virtual Apps and Desktops** |
+|---|---|---|---|---|---|
+| Clipboard access | Allowed | Denied | Allowed | Denied | Denied |
+| Printing | Allowed | Denied | Allowed | Denied | Denied |
+| Navigation | Denied | Denied | Denied | Denied | Not Applicable |
+| Downloads | Allowed | Denied | Allowed | Denied | Denied |
+| Watermark | Disabled | Enabled | Disabled | Enabled | Enabled |
+
+[![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_35.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_35.png)
 
 ## Control Layer
 
