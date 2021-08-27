@@ -32,7 +32,7 @@ Temp workers will follow a bring-your-own-device (BYOD) model where they can use
 
 CompanyA has begun a threefold initiative to protect corporate resources accessed by contractor and temp worker endpoints. To be successful, CompanyA defined a list of success criteria for the initiative. These criteria form the basis for the overarching design.
 
-### Protecting Contractor and Temp Worker Access
+### Protecting Access
 
 CompanyA must protect contractor and temp worker access to their work environment. The company must create a safe mode of access to all apps and data that is seamless. Access must be secure, simple, and flexible to use any device and work from any location.
 
