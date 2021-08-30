@@ -241,7 +241,7 @@ Based on the preceding requirements, CompanyA created the high-level conceptual 
 *  Protected access to SaaS apps and VPN-less access to internal web apps via Citrix Secure Workspace Access
 *  Adaptive authentication before being granted access to external or internal resources via Citrix Secure Workspace Access
 *  Zero Trust access to specific resources via Citrix Secure Workspace Access
-*  Protected access to internet traffic from the web apps, or virtual apps and desktops via using Citrix Secure Browser Service with Citrix Secure Internet Access
+*  Protected access to internet traffic from the web apps, or virtual apps and desktops via Citrix Secure Browser Service with Citrix Secure Internet Access
 *  Protected access to web apps accessed from contractora and temp worker endpoint devices with Citrix Web Application Firewall
 
 CompanyA is using Citrix to build a modern app delivery environment that enforces Zero Trust Network Access and provides end-to-end protection of its resources.
