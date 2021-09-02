@@ -100,7 +100,7 @@ At a high level:
 
 *  **Device certificate check using Citrix ADC**
 
-*  Citrix Gateway will verify the device certificate on the endpint before the logon page appears.
+*  Citrix Gateway will verify that the contractor or temp worker device has a device certificate before the logon page appears.
 *  Citrix Workspace provides the primary authentication broker for all subsequent resources. CompanyA requires multifactor authentication to improve authentication security.
 *  Many of the authorized resources within the environment utilize a different set of credentials than those credentials used for the primary Workspace identity. CompanyA will use the single sign-on capabilities of each service to protect these secondary identities better.
 *  The applications only allow SAML-based authentication for SaaS apps. This prevents contractors and temp workers from accessing the SaaS apps directly and bypassing the security policies.
@@ -128,6 +128,8 @@ CompanyA's authentication policy denies access if the contractor or temp worker 
 
 Citrix Workspace incorporates a cloud-delivered Time-based One-Time Password (TOTP) providing multifactor authentication. Contractors and temp workers register with the TOTP service and create a pre-shared secret key within the authenticator app on a mobile device. Once the contractor ot temp worker successfully registers with the TOTP micro-service, they must use the token, along with their Active Directory credentials, to successfully authenticate to Citrix Workspace.
 
+need to **update diagram**
+
 [![Authentication](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_02.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_02.png)
 
 Refer to the [Citrix Workspace Active Directory with TOTP Tech Brief](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html#active-directory-with-totp) to gain adequate knowledge on Active Directory with TOTP concepts and terminology.
@@ -150,7 +152,7 @@ The Secure Workspace Access service and the Virtual Apps and Desktops service us
 
 CompanyA wants to limit the risk of data loss and data remanence on contractor and temp worker endpoint devices. CompanyA has both sensitive and regular SaaS and Web apps and will apply adaptive access policies based on their security requirements. Within the different application types, CompanyA incorporates numerous restrictions to preventing the copying, downloading, or printing of data.
 
-*  Contractor and temp worker endpoint devices are company managed and require Citrix Workspace app to be installed for access to company resources.
+*  Contractor and temp worker endpoint devices require Citrix Workspace app to be installed for access to company resources.
 *  Contractor and temp worker endpoint devices **with** Citrix Workspace app use Secure Workspace Access to launch a Saas or web app using a local containerized browser local to the endpoint.
     *  The embedded browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app.
     *  Secure Workspace Access provides SSO and enforces adaptive access policies (download, print, copy, and paste restrictions).
@@ -179,7 +181,7 @@ CompanyA has developed the following prescriptive access models to meet its cont
 
 ### Web App and API Protection
 
-**When contractors and temp workers authenticate to Citrix Workspace, they access private web apps on mananged and BYO devices. To better protect the on-prem private web apps, CompanyA uses the Citrix Application Delivery Controller Bot Management and Web App Firewall components.**
+When contractors and temp workers authenticate to Citrix Workspace, they access private internal web apps. To better protect the on-prem web apps, CompanyA uses the Citrix Application Delivery Controller Bot Management and Web App Firewall components.
 
 The bot management component of the Application Delivery Controller detects a bot request and prevents it from inundating the system. The Web App Firewall protects public-facing apps from attacks. These types of attacks would typically be buffer overflow, SQL injection, and cross-site scripting. Web App Firewall detects and denies these attacks from impacting the data and the app.
 
