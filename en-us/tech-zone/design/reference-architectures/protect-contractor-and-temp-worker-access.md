@@ -61,7 +61,7 @@ In CompanyA's focus on protecting data, it has identified the following criteria
 | SaaS and Web App Security | The contractor's and temp worker's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted | Citrix Secure Workspace Access – Security Policies Enhanced Security |
 | Protection from keyloggers | CompanyA must protect internal corporate resources when accessed from both contractor and temp worker endpoints. Endpoints can be compromised and have keylogging malware installed. Key logging must be blocked while using Citrix Workspace | Citrix Secure Workspace Access – Security Policies with App Protection |
 | Protection from screen scrapers | CompanyA must protect internal corporate resources when accessed from contractor and temp worker endpoints. Endpoints can be compromised and have screen scraping malware installed. Screen scraping must be blocked while using Citrix Workspace | Citrix Secure Workspace Access – Security Policies with App Protection |
-| Remote Browser Isolation | For devices without App Protection enabled, sessions will be launched in a remote browser session | Citrix Secure Browser Service |
+| Remote Browser Isolation | Highly sensitive web and SaaS apps will be launched in a remote browser session | Citrix Secure Browser Service |
 | Internet Security | Protect contractors and temp workers from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Devices | Protect endpoints and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Internet Access – Security Policies with Web Filtering |
@@ -80,7 +80,7 @@ In CompanyA's focus on protecting apps, it has identified the following criteria
 | Secure Access | CompanyA must protect internal corporate resources when accessed from contractor and temp worker devices. Devices are not be allowed direct access to the internal network to help prevent malware intrusion. | Secure Workspace Access - VPN-less access |
 | SaaS credential protection | The contractor's or temp worker's credentials to SaaS applications must include multifactor authentication. | Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
 | SaaS DLP | CompanyA requires their SaaS apps to use DLP controls inline. | Secure Browser Service with Citrix Secure Internet Access |
-| Remote Browser Isolation | For devices without App Protection enabled, sessions will be launched in a remote browser session | Citrix Secure Browser Service |
+| Remote Browser Isolation | Web and SaaA apps with higly sensitive data, will be launched in a remote browser session | Citrix Secure Browser Service |
 | Protect web apps | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web App Firewall |
 | Compromised Contractor Protection | IT must be able to quickly identify and mitigate threats posed by a compromised contractor or temp worker account. IT must protect the entire threat surface with centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
 
@@ -101,7 +101,8 @@ At a high level:
 **Access Layer**: The access layer describes how conctractors authenticate to their Workspace and secondary resources.
 
 *  Citrix Gateway will verify that the contractor or temp worker device has a device certificate before the logon page appears.
-*  Citrix Workspace provides the primary authentication broker for all subsequent resources. CompanyA requires multifactor authentication to improve authentication security.
+*  Citrix Workspace provides the primary authentication broker for all subsequent resources.
+*  CompanyA requires multifactor authentication to improve authentication security.
 *  Many of the authorized resources within the environment utilize a different set of credentials than those credentials used for the primary Workspace identity. CompanyA will use the single sign-on capabilities of each service to protect these secondary identities better.
 *  The applications only allow SAML-based authentication for SaaS apps. This prevents contractors and temp workers from accessing the SaaS apps directly and bypassing the security policies.
 
