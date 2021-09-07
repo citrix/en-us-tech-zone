@@ -40,7 +40,7 @@ In CompanyA's focus on protecting contractor and temp worker access, it has iden
 
 |  **Success Criteria** | **Description** | **Solution** |
 |---|---|---|
-| Unmanaged Devices | Contractors and temp workers trying to access Citrix Workspace with an unmanaged device must not gain access to any sanctioned resource | Citrix Application Delivery Controller (ADC) - nFactor policies and endpoint analysis |
+| No Unmanaged Devices | Contractors and temp workers trying to access Citrix Workspace with an unmanaged device must not gain access to any sanctioned resource | Citrix Application Delivery Controller (ADC) - nFactor policies and endpoint analysis |
 | Adaptive access for web and SaaS apps | Adaptive access for web and SaaS apps using Citrix Secure Workspace Access to determine the correct level of access | Citrix Secure Workspace Access |
 | Adaptive access for client-server (virtual) apps | Adaptive access for client-server (virtual) apps using Citrix Secure Workspace Access and Citrix Virtual Apps and Desktops to determine the correct level of access | Citrix Secure Workspace Access and Citrix Virtual Apps and Desktops |
 | End-user monitoring | Continuous monitoring and continuous assessment to protect against potential threats. Apps are continuously monitored for data exfiltration, and abnormal access times and locations. | Citrix Analytics |
@@ -50,7 +50,7 @@ In CompanyA's focus on protecting contractor and temp worker access, it has iden
 
 ### Protecting Data
 
-CompanyA must protect its data accessed by devices belonging to contractors and temp workers. The company has a highly complex infrastructure of layers of applications, systems, and networks in environments consisting of on-premises data centers, public, and private clouds. This sprawl has led to a complicated stack of different tools and technologies for protecting data.
+CompanyA must protect its data accessed by devices used by contractors and temp workers. The company has a highly complex infrastructure of layers of applications, systems, and networks in environments consisting of on-premises data centers, public, and private clouds. This sprawl has led to a complicated stack of different tools and technologies for protecting data.
 
 CompanyA is designing a consolidated, cloud-delivered security stack to meet the demands of their modern workplace. By centralizing data security policy across the overall solution – it minimizes redundant tasks, removes overlapping policies, and allows IT to protect data and devices across all locations.
 
@@ -61,10 +61,11 @@ In CompanyA's focus on protecting data, it has identified the following criteria
 | SaaS and Web App Security | The contractor's and temp worker's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted | Citrix Secure Workspace Access – Security Policies Enhanced Security |
 | Protection from keyloggers | CompanyA must protect internal corporate resources when accessed from both contractor and temp worker endpoints. Endpoints can be compromised and have keylogging malware installed. Key logging must be blocked while using Citrix Workspace | Citrix Secure Workspace Access – Security Policies with App Protection |
 | Protection from screen scrapers | CompanyA must protect internal corporate resources when accessed from contractor and temp worker endpoints. Endpoints can be compromised and have screen scraping malware installed. Screen scraping must be blocked while using Citrix Workspace | Citrix Secure Workspace Access – Security Policies with App Protection |
-| Internet Security | Protect contractors and temp workers from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection |
-| Protect Devices | Protect endpoints and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection |
-| Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Browser Service with Citrix Secure Internet Access – Security Policies with Web Filtering |
-| Compliance | Compliance and protecting contractors from malicious URLs | Citrix Secure Browser Service with Citrix Secure Internet Access – Security Policies with Web Filtering |
+| Remote Browser Isolation | For devices without App Protection enabled, sessions will be launched in a remote browser session | Citrix Secure Browser Service |
+| Internet Security | Protect contractors and temp workers from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Internet Access - Security Policies with Malware Protection |
+| Protect Devices | Protect endpoints and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Internet Access - Security Policies with Malware Protection |
+| Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Internet Access – Security Policies with Web Filtering |
+| Compliance | Compliance and protecting contractors from malicious URLs | Citrix Secure Internet Access – Security Policies with Web Filtering |
 
 ### Protecting Apps
 
@@ -79,6 +80,7 @@ In CompanyA's focus on protecting apps, it has identified the following criteria
 | Secure Access | CompanyA must protect internal corporate resources when accessed from contractor and temp worker devices. Devices are not be allowed direct access to the internal network to help prevent malware intrusion. | Secure Workspace Access - VPN-less access |
 | SaaS credential protection | The contractor's or temp worker's credentials to SaaS applications must include multifactor authentication. | Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
 | SaaS DLP | CompanyA requires their SaaS apps to use DLP controls inline. | Secure Browser Service with Citrix Secure Internet Access |
+| Remote Browser Isolation | For devices without App Protection enabled, sessions will be launched in a remote browser session | Citrix Secure Browser Service |
 | Protect web apps | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web App Firewall |
 | Compromised Contractor Protection | IT must be able to quickly identify and mitigate threats posed by a compromised contractor or temp worker account. IT must protect the entire threat surface with centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
 
