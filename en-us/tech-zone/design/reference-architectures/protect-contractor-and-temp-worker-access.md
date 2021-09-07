@@ -100,8 +100,6 @@ At a high level:
 
 **Access Layer**: The access layer describes how conctractors authenticate to their Workspace and secondary resources.
 
-*  **Device certificate check using Citrix ADC**
-
 *  Citrix Gateway will verify that the contractor or temp worker device has a device certificate before the logon page appears.
 *  Citrix Workspace provides the primary authentication broker for all subsequent resources. CompanyA requires multifactor authentication to improve authentication security.
 *  Many of the authorized resources within the environment utilize a different set of credentials than those credentials used for the primary Workspace identity. CompanyA will use the single sign-on capabilities of each service to protect these secondary identities better.
