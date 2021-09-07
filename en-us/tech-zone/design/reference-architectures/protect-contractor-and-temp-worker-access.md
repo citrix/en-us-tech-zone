@@ -32,7 +32,7 @@ CompanyA has begun a threefold initiative to protect corporate resources accesse
 
 ### Protecting Access
 
-CompanyA must protect contractor and temp worker access to their work environment. The company must create a safe mode of access to all apps and data that is seamless. Access must be secure, simple, and flexible to use any device and work from any location.
+CompanyA must protect contractor and temp worker access to their work environment. The company must create a safe mode of access to all apps and data that is seamless. Access must be secure, simple, and flexible to work from any location.
 
 CompanyA has decided its security strategy is to move away from a traditional "castle and moat" approach to access and security. It is taking a Zero Trust approach instead of using a conventional appliance-based solution like a VPN that assumes contractors and temp workers are trusted.
 
