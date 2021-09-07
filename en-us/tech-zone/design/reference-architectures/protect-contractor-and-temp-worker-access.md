@@ -80,7 +80,7 @@ In CompanyA's focus on protecting apps, it has identified the following criteria
 | Secure Access | CompanyA must protect internal corporate resources when accessed from contractor and temp worker devices. Devices are not be allowed direct access to the internal network to help prevent malware intrusion. | Secure Workspace Access - VPN-less access |
 | SaaS credential protection | The contractor's or temp worker's credentials to SaaS applications must include multifactor authentication. | Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
 | SaaS DLP | CompanyA requires their SaaS apps to use DLP controls inline. | Secure Browser Service with Citrix Secure Internet Access |
-| Remote Browser Isolation | Web and SaaA apps with higly sensitive data, will be launched in a remote browser session | Citrix Secure Browser Service |
+| Remote Browser Isolation | Web and SaaS apps with higly sensitive data, will be launched in a remote browser session | Citrix Secure Browser Service |
 | Protect web apps | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web App Firewall |
 | Compromised Contractor Protection | IT must be able to quickly identify and mitigate threats posed by a compromised contractor or temp worker account. IT must protect the entire threat surface with centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
 
@@ -110,7 +110,8 @@ At a high level:
 
 *  CompanyA requires policies that disable the ability to print, download, copy and paste content from the managed resource to and from the contractor and temp worker endpoint device.
 *  CompanyA requires VPN-less access to resources for contractors and temp workers.
-*  Highly sensitive SaaS apps are given additional protection provided by the Citrix Workspace app. If the contractor or temp worker endpoint device does not have app protection available, adaptive access policies prevent them from launching the app.
+*  Sensitive SaaS apps are given additional protection provided by the Citrix Workspace app. If the contractor or temp worker endpoint device does not have app protection available, adaptive access policies prevent them from launching the app.
+*  Highly sensitive web and SaaS apps will be launched in a remote browser session using the Citrix Secure Browser service.
 *  Since CompanyA allows access to internal web apps from contractor and temp worker endpoint devices, Citrix Web App Firewall must protect the resource from attacks coming from potentially compromised endpoints.
 
 **Control Layer**: The control layer defines how the underlying solution adjusts based on the underlying activities of contractors and temp workers.
