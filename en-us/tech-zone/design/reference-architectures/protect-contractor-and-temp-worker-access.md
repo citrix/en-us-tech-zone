@@ -153,6 +153,8 @@ The Secure Workspace Access service and the Virtual Apps and Desktops service us
 
 CompanyA wants to limit the risk of data loss and data remanence on contractor and temp worker endpoint devices. Since CompanyA has both sensitive and regular virtual, SaaS, and web apps, it will apply adaptive access policies based on its security requirements. Within the different application types, CompanyA incorporates numerous restrictions to preventing the copying, downloading, or printing of data.
 
+[![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_35.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_35.png)
+
 *  Contractor and temp worker endpoint devices require Citrix Workspace app to be installed for access to company resources.
 *  Contractor and temp worker endpoint devices **with** Citrix Workspace app use Secure Workspace Access to launch SaaS or web apps using a local containerized browser local to the endpoint.
     *  The embedded browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app.
@@ -176,8 +178,6 @@ CompanyA has developed the following prescriptive access models to meet its cont
 | Watermark | Disabled | Enabled | Disabled | Enabled | Enabled |
 | Keylogging Prevention | Disabled | Enabled | Disabled | Enabled | Enabled |
 | Screenshot Prevention | Disabled | Enabled | Disabled | Enabled | Enabled |
-
-[![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_35.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_35.png)
 
 ## Control Layer
 
