@@ -10,7 +10,7 @@ tz_products: citrix-analytics;citrix-networking;citrix-secure-internet-access;ci
 
 ## Overview
 
-CompanyA is complementing its full-time staff with contractors and temp workers. Using Citrix, the company has realized several productivity benefits as contractors and temp workers can get on-boarded and work on business projects quickly with minimal set up time. Also, since the company’s contractors and temp workers are typically mobile, they use Citrix to access resources from anywhere, at any time, and from any device.
+CompanyA is complementing its full-time staff with contractors and temp workers. Using Citrix, the company has realized several productivity benefits as contractors and temp workers can get on-boarded and quickly beging work on business projects with minimal set up time. Also, since the company’s contractors and temp workers are typically mobile, they use Citrix to access resources from anywhere, at any time, and from any device.
 
 CompanyA's contractor and temp worker policy has led to greater efficiency for its workforce. However, the policy has created a complex delivery model and introduced security concerns. As the line between the office and the outside world continues to blur, certain steps must be taken by CompanyA to protect sensitive company information.
 
@@ -18,7 +18,7 @@ CompanyA currently uses several unintegrated point products for remote access. I
 
 [![Overview](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_00.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_00.png)
 
-CompanyA chose Citrix for its has expertise in foundational technologies like access, networking, least privilege access and data protection. The company is implementing the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Gateway, Citrix Secure Internet Access, and Citrix Web App and API Protection. Together this solution provides end-to-end protection of CompanyA resources accessed from contractor and temp worker endpoint devices.
+CompanyA chose Citrix for its has expertise in foundational technologies like adaptive access, networking, least privilege and data protection. The company is implementing the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Gateway, Citrix Secure Internet Access, and Citrix Web App and API Protection. Together this solution provides end-to-end protection of CompanyA resources accessed from contractor and temp worker endpoint devices.
 
 This reference architecture explains CompanyA's plan to protect contractor and temp worker access to its data and apps.
 
@@ -61,7 +61,7 @@ In CompanyA's focus on protecting data, it has identified the following criteria
 | SaaS and Web App Security | The contractor's and temp worker's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted | Citrix Secure Workspace Access – Security Policies Enhanced Security |
 | Protection from keyloggers | CompanyA must protect internal corporate resources when accessed from both contractor and temp worker endpoints. Endpoints can be compromised and have keylogging malware installed. Key logging must be blocked while using Citrix Workspace | Citrix Secure Workspace Access – Security Policies with App Protection |
 | Protection from screen scrapers | CompanyA must protect internal corporate resources when accessed from contractor and temp worker endpoints. Endpoints can be compromised and have screen scraping malware installed. Screen scraping must be blocked while using Citrix Workspace | Citrix Secure Workspace Access – Security Policies with App Protection |
-| Remote Browser Isolation | Highly sensitive web and SaaS apps will be launched in a remote browser session | Citrix Secure Browser Service |
+| Remote Browser Isolation | Social Media web site will be launched in a remote browser session | Citrix Secure Browser Service |
 | Internet Security | Protect contractors and temp workers from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Devices | Protect endpoints and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Internet Access – Security Policies with Web Filtering |
@@ -80,7 +80,7 @@ In CompanyA's focus on protecting apps, it has identified the following criteria
 | Secure Access | CompanyA must protect internal corporate resources when accessed from contractor and temp worker devices. Devices are not be allowed direct access to the internal network to help prevent malware intrusion. | Secure Workspace Access - VPN-less access |
 | SaaS credential protection | The contractor's or temp worker's credentials to SaaS applications must include multifactor authentication. | Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
 | SaaS DLP | CompanyA requires its SaaS apps to use DLP controls inline. | Secure Browser Service with Citrix Secure Internet Access |
-| Remote Browser Isolation | Web and SaaS apps with higly sensitive data, will be launched in a remote browser session | Citrix Secure Browser Service |
+| Remote Browser Isolation | Social Media sites will be launched in a remote browser session | Citrix Secure Browser Service |
 | Protect web apps | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web App Firewall |
 | Compromised Contractor Protection | IT must be able to quickly identify and mitigate threats posed by a compromised contractor or temp worker account. IT must protect the entire threat surface with centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
 
@@ -96,6 +96,7 @@ At a high level:
 
 *  Contractor and temp worker endpoint devices are managed by CompanyA using Citrix Endpoint Management.
 *  Contractor and temp worker endpoint devices require Citrix Workspace app to be installed.
+*  Contractor and temp worker endpoint devices must have App Protection enabled in Workspace app.
 *  The Citrix Secure internet Access agent is installed on the Virtual Apps and Desktops infrastructure.
 
 **Access Layer**: The access layer describes how conctractors authenticate to their Workspace and secondary resources.
@@ -111,12 +112,12 @@ At a high level:
 *  CompanyA requires policies that disable the ability to print, download, copy and paste content from the managed resource to and from the contractor and temp worker endpoint device.
 *  CompanyA requires VPN-less access to resources for contractors and temp workers.
 *  Sensitive SaaS apps are given additional protection provided by the Citrix Workspace app. If the contractor or temp worker endpoint device does not have app protection available, adaptive access policies prevent them from launching the app.
-*  Highly sensitive web and SaaS apps will be launched in a remote browser session using the Citrix Secure Browser service.
 *  Since CompanyA allows access to internal web apps from contractor and temp worker endpoint devices, Citrix Web App Firewall must protect the resource from attacks coming from potentially compromised endpoints.
 
 **Control Layer**: The control layer defines how the underlying solution adjusts based on the underlying activities of contractors and temp workers.
 
 *  Even within a protected Workspace resource, contractors and temp workers can interact with untrusted internet resources. CompanyA uses Secure Internet Access to protect contractors and temp workers from external threats when using SaaS apps, web apps, and virtual apps and desktops.
+*  Social Media sites will be launched in a remote browser session using the Citrix Secure Browser service.
 *  If contractor or temp worker must access personal web sites such as health and finance on their devices through CompanyA resource, appropriate policies protect their privacy.
 *  CompanyA requires a Security Analytics service to identify compromised contractors and temp workers and automatically maintain a secure environment.
 
@@ -126,7 +127,7 @@ The subsequent sections provide greater detail into specific design decisions fo
 
 ### Authentication
 
-CompanyA's authentication policy denies access if the contractor or temp worker device does not pass an endpoint security scan. The scan verifies the device is managed by checking for a device certificate.  When the device passes the scan, contractors and temp workers can then log on to the Citrix Gateway. CompanyA has determined that providing access to resources with a username and password does not provide adequate security and will require multifactor authenitication. Contractors and temp workers will use their Active Directory credentials and a TOTP token to authenticate.
+CompanyA's authentication policy denies access if the contractor or temp worker device does not pass an endpoint security scan. The scan verifies the device is managed by checking for a device certificate. When the device passes the scan, contractors and temp workers can then log on to the Citrix Gateway. CompanyA has determined that providing access to resources with a username and password does not provide adequate security and will require multifactor authenitication. Contractors and temp workers will use their Active Directory credentials and a TOTP token to authenticate.
 
 Citrix Workspace incorporates a cloud-delivered Time-based One-Time Password (TOTP) providing multifactor authentication. Contractors and temp workers register with the TOTP service and create a pre-shared secret key within the authenticator app on a mobile device. Once the contractor or temp worker successfully registers with the TOTP micro-service, they must use the token, along with their Active Directory credentials, to successfully authenticate to Citrix Workspace.
 
