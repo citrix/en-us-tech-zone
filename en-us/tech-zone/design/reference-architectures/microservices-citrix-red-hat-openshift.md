@@ -19,3 +19,7 @@ CompanyA decided to build a pair of redundant multi-cloud Red Hat® OpenShift® 
 This reference architecture explains how CompanyA is planning their environment to ensure they can have a cloud native platform to develop new applications, or in the future migrate legacy ones, that is cost-effective and allows end-users to work remotely with good performance.
 Introduction
 Company A decided to develop their cloud native Microservices-Based Application Delivery with Citrix and RHOS to bring several benefits to their enterprise and ultimately increase productivity.
+
+## Cloud Native
+
+Cloud Native applications are developed to take advantage of the distributed and scalable nature of the cloud. It includes many benefits around Enterprise productivity, operational efficiency, and user experience.
