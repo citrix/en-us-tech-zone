@@ -10,7 +10,7 @@ tz_products: citrix-analytics;citrix-networking;citrix-secure-internet-access;ci
 
 ## Overview
 
-CompanyA is complementing its full-time staff with contractors and temp workers. Using Citrix, the company has realized several productivity benefits as contractors and temp workers can get on-boarded and quickly beging work on business projects with minimal set up time. Also, since the company’s contractors and temp workers are typically mobile, they use Citrix to access resources from anywhere, at any time, and from any device.
+CompanyA is complementing its full-time staff with contractors and temp workers. Using Citrix, the company has realized several productivity benefits as contractors and temp workers can get on-boarded quickly and beginning work on business projects with minimal set up time. Also, since the company’s contractors and temp workers are typically mobile, they use Citrix to access resources from anywhere, at any time, and from any device.
 
 CompanyA's contractor and temp worker policy has led to greater efficiency for its workforce. However, the policy has created a complex delivery model and introduced security concerns. As the line between the office and the outside world continues to blur, certain steps must be taken by CompanyA to protect sensitive company information.
 
