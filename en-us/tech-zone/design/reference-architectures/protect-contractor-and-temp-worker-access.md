@@ -162,6 +162,7 @@ CompanyA wants to limit the risk of data loss and data remanence on contractor a
 *  App Protection policies protect web and SaaS apps using screen scraping and key-logger restrictions.
     *  CompanyA will require App Protection polices for sensitive SaaS and Web apps.
     *  If the contractor or temp worker endpoint device does not have app protection available, adaptive access policies prevent the contractor from launching the app.
+*  To further isolate potentially malicous web content and reduce resource consumption on the Virtual Apps and Desktops environment, Social Media sites will be launched in a remote browser session using the Citrix Secure Browser service.
 *  When contractors and temp workers access virtual apps and desktops, the Virtual Apps and Desktops service provides SSO and enforces lockdown policies. The service restricts downloading, printing, and unidirectional and bidirectional copy & paste actions.
 
 CompanyA has developed the following prescriptive access models to meet its contractor and temp worker security requirements:
