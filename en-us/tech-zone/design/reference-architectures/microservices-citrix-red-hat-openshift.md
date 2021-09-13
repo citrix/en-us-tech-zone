@@ -210,13 +210,48 @@ For more information see [Red Hat OpenShift® on AWS – Reference Deployment](h
 
 Many document links are available to better understand Citrix cloud native networking concepts, Kubernetes microservices, and Red Hat® OpenShift® platform.
 
-Find links to pertinent Red Hat References here:
+Find links to pertinent **Red Hat** References here:
 
-[![RHOS References](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_redhatreferences.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_redhatreferences.png)
+* [Red Hat OpenShift®](https://www.RedHat.com/en/technologies/cloud-computing/OpenShift)
 
-Find links to pertinent Citrix References here:
+* [Red Hat® Login](https://cloud.RedHat.com/OpenShift/create)
 
-[![RHOS References](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_citrixreferences.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_citrixreferences.png)
+* [Red Hat OpenShift® on AWS]( https://aws.amazon.com/quickstart/architecture/OpenShift/)
+
+* [Create an Azure Red Hat OpenShift® 4 cluster](https://docs.microsoft.com/en-us/azure/OpenShift/tutorial-create-cluster)
+
+* [Developer Sandbox for Red Hat OpenShift®](https://developers.RedHat.com/developer-sandbox/activities)
+
+* [Red Hat OpenShift® installation resources](https://developers.RedHat.com/products/OpenShift/overview)
+
+* [Microservices-Based Application Delivery with Citrix and Red Hat OpenShift® – blog](https://www.OpenShift.com/blog/microservices-based-application-delivery-with-citrix-and-red-hat-OpenShift)
+
+* [Azure Red Hat OpenShift pricing](https://azure.microsoft.com/en-us/pricing/details/openshift/#pricing)
+
+Find links to pertinent **Citrix** References here:
+
+* [Microservices-Based Application Delivery with Citrix and Red Hat OpenShift®](https://www.OpenShift.com/blog/microservices-based-application-delivery-with-citrix-and-red-hat-OpenShift)
+
+* [Citrix Developer Docs](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/)
+
+* [Citrix ADC and OpenShift® 4 Solution Brief – product documentation](://docs.citrix.com/en-us/advanced-concepts/implementation-guides/citrix-adc-and-OpenShift-solution-brief.html)
+
+* [Enable OpenShift® router sharding support with Citrix ADC](https://www.citrix.com/blogs/2019/09/11/enable-OpenShift-router-sharding-support-with-citrix-adc/)
+
+* [Accelerate your journey to microservices](https://www.citrix.com/solutions/application-delivery-controller/microservices/)
+
+* [Configure Citrix ADC to load balance an OpenShift® control plane](https://www.citrix.com/blogs/2020/08/20/configure-citrix-adc-to-load-balance-an-OpenShift-control-plane/)
+
+* [Deploy Citrix API gateway using Red Hat OpenShift® Operator](://www.citrix.com/blogs/2020/08/27/deploy-citrix-api-gateway-using-red-hat-OpenShift-operator/)
+
+* [Deploy the Citrix ingress controller as an OpenShift® router plug-in](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/deploy/deploy-cic-OpenShift/)
+* [Multi-cluster ingress and load balancing solution using the Citrix ingress controller](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/multicluster/multi-cluster/)
+
+* [Multi-cloud and multi-cluster ingress and load balancing solution with Amazon EKS and Microsoft AKS clusters](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/deploy/multi-cloud-ingress-lb-solution/)
+
+* [Best Practices for Cloud Native Application Delivery with Citrix and Red Hat](://www.youtube.com/watch?v=UNBtcgaIKCA)
+
+* [How to accelerate your journey to microservice- based applications](https://www.youtube.com/watch?v=dnG6TXeVQUY)
 
 ## Appendix
 
