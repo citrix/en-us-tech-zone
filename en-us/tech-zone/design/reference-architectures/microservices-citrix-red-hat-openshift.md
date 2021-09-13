@@ -31,7 +31,8 @@ Benefits of cloud native
 * Scales with cloud host infrastructures
 * Supports efficient software development process
 
-Red Hat® OpenShift®
+## Red Hat® OpenShift®
+
 Red Hat® OpenShift® is an enterprise Kubernetes container platform that helps companies deploy, operate and secure microservice applications across hybrid clouds.
 
 Benefits of Red Hat® OpenShift® (RHOS)
@@ -41,6 +42,20 @@ Benefits of Red Hat® OpenShift® (RHOS)
 * Increases revenue by introducing new services to existing customers in a timely manner
 * Reduces operating expense by spending less time on administration and support
 
-For more information see [What is Red Hat OpenShift®?](https://www.Red Hat.com/en/technologies/cloud-computing/OpenShift)
+For more information see [What is Red Hat OpenShift®?](https://www.RedHat.com/en/technologies/cloud-computing/OpenShift)
+
+## Citrix
+
+Citrix provides flexible topologies for traffic management, in microservices environments, depending on requirements, including Full Mesh, Single-Tier, Dual-Tier and ServiceMesh Lite.
+
+Topologies:
+
+* Full Mesh – full mesh clusters include support for a variety of microservices that need east-west communication between microservices within the cluster as well as north-south communication outside of the cluster.
+* Service Mesh Lite- an Ingress solution typically performs L7 proxy functions for north-south (N-S) traffic. The Service Mesh lite architecture uses the same Ingress solution to manage east-west traffic as well overcoming limitations of Kubernetes built-in service.
+* Single-Tier – single-tier clusters contain microservices that run as redundant replicas and have north-south traffic delivered by external load balancers.
+* Dual-Tier – dual-tier architectures also have north-south traffic delivered by external load balancers, yet also microservices have a networking component attached to support communication using additional networking protocols and optimizations not provided by native cluster services.
+
+For more information see: [How to accelerate your journey to microservice- based applications](https://www.youtube.com/watch?v=dnG6TXeVQUY)
+
 
 [![Overview](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_00.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_00.png)
