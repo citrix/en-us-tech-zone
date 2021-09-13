@@ -147,7 +147,7 @@ CompanyA decided to use the Citrix Ingress Controller (CIC) to manage Citrix clo
 
 CompanyA decided to use the Citrix ADC VPX to manage their North-South traffic flows and to implement Global Server Load Balancing (GSLB) between Azure and AWS clusters.
 
-**North-South** traffic Citrix ADC VPXes hosted at the AWS and Azure cluster sites, respectively. IP addressing information and access secrets are provided in the CIC setup, allowing it to configure load balancing and content switching policies.
+**North-South** traffic will be managed by Citrix ADC VPXes hosted at the AWS and Azure cluster sites, respectively. IP addressing information and access secrets are provided in the CIC setup, allowing it to configure load balancing and content switching policies.
 
 **GSLB** traffic will also be managed by Citrix ADC VPXes hosted at the AWS and Azure cluster sites, respectively.
 
@@ -172,7 +172,9 @@ For more information, see [multi-cluster ingress and load balancing solution usi
 Resources include various microservices applications, available through the RHOS Operator Hub, that may be developed internally or obtained through a third-party vendor, depending on requirements. CompanyA has decided to deploy the Apache web application.
 
 For more information, see [Understanding RHOS Operator Hub](https://docs.openshift.com/container-platform/4.6/operators/understanding/olm-understanding-operatorhub.html)
-Control Layer
+
+## Control Layer
+
 The controller layer includes essential management components to coordinate the delivery of microservices.
 
 Red Hat® OpenShift®
@@ -234,7 +236,7 @@ Find links to pertinent **Citrix** References here:
 
 * [Citrix Developer Docs](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/)
 
-* [Citrix ADC and OpenShift® 4 Solution Brief – product documentation](://docs.citrix.com/en-us/advanced-concepts/implementation-guides/citrix-adc-and-OpenShift-solution-brief.html)
+* [Citrix ADC and OpenShift® 4 Solution Brief – product documentation](https://docs.citrix.com/en-us/advanced-concepts/implementation-guides/citrix-adc-and-OpenShift-solution-brief.html)
 
 * [Enable OpenShift® router sharding support with Citrix ADC](https://www.citrix.com/blogs/2019/09/11/enable-OpenShift-router-sharding-support-with-citrix-adc/)
 
@@ -242,14 +244,14 @@ Find links to pertinent **Citrix** References here:
 
 * [Configure Citrix ADC to load balance an OpenShift® control plane](https://www.citrix.com/blogs/2020/08/20/configure-citrix-adc-to-load-balance-an-OpenShift-control-plane/)
 
-* [Deploy Citrix API gateway using Red Hat OpenShift® Operator](://www.citrix.com/blogs/2020/08/27/deploy-citrix-api-gateway-using-red-hat-OpenShift-operator/)
+* [Deploy Citrix API gateway using Red Hat OpenShift® Operator](https://www.citrix.com/blogs/2020/08/27/deploy-citrix-api-gateway-using-red-hat-OpenShift-operator/)
 
 * [Deploy the Citrix ingress controller as an OpenShift® router plug-in](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/deploy/deploy-cic-OpenShift/)
 * [multi-cluster ingress and load balancing solution using the Citrix ingress controller](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/multicluster/multi-cluster/)
 
 * [Multi-cloud and multi-cluster ingress and load balancing solution with Amazon EKS and Microsoft AKS clusters](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/deploy/multi-cloud-ingress-lb-solution/)
 
-* [Best Practices for Cloud-Native Application Delivery with Citrix and Red Hat](://www.youtube.com/watch?v=UNBtcgaIKCA)
+* [Best Practices for Cloud-Native Application Delivery with Citrix and Red Hat](https://www.youtube.com/watch?v=UNBtcgaIKCA)
 
 * [How to accelerate your journey to microservice-based applications](https://www.youtube.com/watch?v=dnG6TXeVQUY)
 
