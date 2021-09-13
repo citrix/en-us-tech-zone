@@ -31,7 +31,7 @@ Benefits of cloud native
 * Scales with cloud host infrastructures
 * Supports efficient software development process
 
-## Red Hat® OpenShift®
+## Red Hat OpenShift
 
 Red Hat® OpenShift® is an enterprise Kubernetes container platform that helps companies deploy, operate and secure microservice applications across hybrid clouds.
 
@@ -72,7 +72,7 @@ Benefits of Citrix CPX
 * Citrix CPX enables Citrix ADC to be deployed as data plane proxy either as Ingress gateway or sidecar in the xDS-based service mesh.
 * It provides layer 7 traffic management between microservices inside the Kubernetes cluster whereas Kubernetes only supports Layer 4.
 
-For more information see [Citrix Developer Docs] (https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/)
+For more information see [Citrix Developer Docs](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/)
 
 ## Success Criteria
 
@@ -149,7 +149,6 @@ CompanyA decided to use the Citrix ADC VPX to manage their North-South traffic f
 
 **North-South** traffic Citrix ADC VPXes hosted at the AWS and Azure cluster sites respectively. IP addressing information and access secrets are provided in the CIC setup allowing it to configure load balancing and content switching policies.
 
-
 **GSLB** traffic will also be managed by Citrix ADC VPXes hosted at the AWS and Azure cluster sites respectively.
 
 * ADNS – DNS for the Apache micro service will be configured through the company’s global DNS service [AWS Route 53](https://aws.amazon.com/route53/)
@@ -172,7 +171,7 @@ For more information see [Multi-cluster ingress and load balancing solution usin
 
 Resources include a variety of microservices applications, available through the RHOS Operator Hub, that may be developed internally or obtained through a third-party vendor, depending on requirements. CompanyA has decided to deploy the Apache web application.
 
-For more information see [Understanding RHOS Operator Hub] (https://docs.openshift.com/container-platform/4.6/operators/understanding/olm-understanding-operatorhub.html)
+For more information see [Understanding RHOS Operator Hub](https://docs.openshift.com/container-platform/4.6/operators/understanding/olm-understanding-operatorhub.html)
 Control Layer
 The controller layer includes essential management components to coordinate the delivery of microservices.
 
@@ -205,7 +204,23 @@ Key requirements:
 * The tenant must allow provisioning of Amazon EC2 M4.xlarge instance
 * Red Hat entitlement limits and AWS instance limits were set to support deployment of 3 masters instances and 3 worker nodes.
 
-For more information see [Red Hat OpenShift® on AWS – Reference Deployment] ( https://aws.amazon.com/quickstart/architecture/OpenShift/)
+For more information see [Red Hat OpenShift® on AWS – Reference Deployment](https://aws.amazon.com/quickstart/architecture/OpenShift/)
 
+## References
 
-[![Overview](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_00.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_00.png)
+Many document links are available to better understand Citrix cloud native networking concepts, Kubernetes microservices, and Red Hat® OpenShift® platform.
+
+Find links to pertinent Red Hat References here:
+
+[![RHOS References](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_redhatreferences.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_redhatreferences.png)
+
+Find links to pertinent Citrix References here:
+
+[![RHOS References](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_citrixreferences.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_citrixreferences.png)
+
+## Appendix
+
+### Terminology
+
+Find below descriptions of common RHOS and Microservice terminology.
+[![RHOS References](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_rhosterminology.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_rhosterminology.png)
