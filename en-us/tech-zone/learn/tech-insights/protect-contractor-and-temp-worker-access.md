@@ -8,7 +8,7 @@ tz_products: citrix-secure-internet-access;citrix-secure-workspace-access;citrix
 ---
 # Tech Insight: Protect contractor and temp worker access
 
-Support contractors and temp workers without compromising IT security.  See how the integrated Citrix solution enforces Zero Trust Network Access and provides end-to-end protection of resources accessed from contractor and temp worker devices.
+Support contractors and temp workers without compromising IT security. See how the integrated Citrix solution enforces Zero Trust Network Access and provides end-to-end protection of resources accessed from contractor and temp worker devices.
 
 This video includes:
 
