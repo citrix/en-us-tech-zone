@@ -23,3 +23,24 @@ Company A decided to develop their cloud native Microservices-Based Application 
 ## Cloud Native
 
 Cloud Native applications are developed to take advantage of the distributed and scalable nature of the cloud. It includes many benefits around Enterprise productivity, operational efficiency, and user experience.
+
+Benefits of cloud native
+
+* Containerized applications are portable between host infrastructures
+* Allows agile, continuous development and delivery
+* Scales with cloud host infrastructures
+* Supports efficient software development process
+
+Red Hat® OpenShift®
+Red Hat® OpenShift® is an enterprise Kubernetes container platform that helps companies deploy, operate and secure microservice applications across hybrid clouds.
+
+Benefits of Red Hat® OpenShift® (RHOS)
+
+* Efficiently manages Kubernetes cloud native environments for the development and operation of business-critical Enterprise applications
+* Improves the productivity of development teams
+* Increases revenue by introducing new services to existing customers in a timely manner
+* Reduces operating expense by spending less time on administration and support
+
+For more information see [What is Red Hat OpenShift®?](https://www.Red Hat.com/en/technologies/cloud-computing/OpenShift)
+
+[![Overview](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_00.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_00.png)
