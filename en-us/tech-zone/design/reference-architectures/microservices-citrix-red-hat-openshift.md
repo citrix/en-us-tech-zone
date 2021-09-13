@@ -57,5 +57,31 @@ Topologies:
 
 For more information see: [How to accelerate your journey to microservice- based applications](https://www.youtube.com/watch?v=dnG6TXeVQUY)
 
+Benefits of Citrix Ingress Controller (CIC)
+
+* Standard Kubernetes Ingress solutions provide load balancing only at layer 7 (HTTP or HTTPS traffic), while the CIC also supports TCP, TCP-SSL, and UDP traffic
+* The CIC works seamlessly across multiple clouds or on-premises data centers
+
+Benefits of Citrix ADC VPX
+
+* Citrix ADC VPX provides enterprise-grade traffic management policies like rewrite and responder policies for efficiently load balancing traffic at layer 7 which Kubernetes does not provide
+* Citrix ADC VPX also supports GSLB
+
+Benefits of Citrix CPX
+
+* Citrix CPX enables Citrix ADC to be deployed as data plane proxy either as Ingress gateway or sidecar in the xDS-based service mesh.
+* It provides layer 7 traffic management between microservices inside the Kubernetes cluster whereas Kubernetes only supports Layer 4.
+
+For more information see [Citrix Developer Docs] (https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/)
+
+## Success Criteria
+
+Company A has defined a list of success criteria that formed the basis for the overarching design.
+
+Note: Company A will focus on deploying an Apache web service in a production pilot for remote user validate.
+
+[![Success Criteria](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_successcriteria.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_successcriteria.png)
+
+
 
 [![Overview](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_00.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_00.png)
