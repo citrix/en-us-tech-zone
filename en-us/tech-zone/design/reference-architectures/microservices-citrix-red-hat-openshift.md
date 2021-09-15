@@ -14,7 +14,7 @@ tz_products: Citrix-networking;Citrix-service-providers;Citrix-workspace;google-
 
 CompanyA has always used Monolithic architectures to develop system applications predominantly hosted on-premises. They have suffered from issues with uptime and inconsistent performance, particularly for remote users, which was exacerbated during the pandemic. As part of their effort to move to the cloud, they intend to use a Microservices architecture to develop new applications to take advantage of the resiliency and scalability benefits.
 
-CompanyA decided to build a pair of redundant multi-cloud Red Hat® OpenShift® (RHOS) clusters, hosted in Microsoft Azure and Amazon AWS, with Citrix to provide load balancing and route to microservice nodes. This will allow them to offer a resilient environment for remote users to access critical business web services with consistently good performance.
+CompanyA decided to build a pair of redundant multi-cloud Red Hat® OpenShift® (RHOS) clusters, hosted in Microsoft Azure and Amazon AWS, with Citrix to provide load balancing for microservice instances. This will allow them to provide a resilient environment for remote users to access critical business web services with consistently good performance.
 
 This reference architecture explains how CompanyA is planning their environment to ensure they can have a cloud-native platform to develop new applications or migrate legacy ones that are cost-effective and allow end-users to work remotely with good performance.
 Introduction
@@ -65,11 +65,11 @@ Benefits of Citrix Ingress Controller (CIC)
 Benefits of Citrix ADC VPX
 
 * Citrix ADC VPX provides enterprise-grade traffic management policies like rewrite and responder policies for efficiently load balancing traffic at layer 7, which Kubernetes does not provide
-* Citrix ADC VPX also supports GSLB
+* Citrix ADC VPX also supports Global Server Load Balancing (GSLB)
 
 Benefits of Citrix CPX
 
-* Citrix CPX enables Citrix ADC to be deployed as a data plane proxy either as an Ingress gateway or sidecar in the xDS-based service mesh.
+* Citrix CPX enables a Citrix ADC to be deployed as a data plane proxy either as an Ingress gateway or sidecar in the xDS-based service mesh.
 * It provides layer 7 traffic management between microservices inside the Kubernetes cluster, whereas Kubernetes only supports Layer 4.
 
 For more information, see [Citrix Developer Docs](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/)
@@ -78,7 +78,7 @@ For more information, see [Citrix Developer Docs](https://developer-docs.citrix.
 
 Company A has defined a list of success criteria that formed the basis for the overarching design.
 
-Note: Company A will deploy an Apache web service in a production pilot for remote user validation.
+Note: Company A deploys an Apache web service in a production pilot for remote user validation.
 
 [![Success Criteria](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_successcriteria.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_successcriteria.png)
 
@@ -94,12 +94,12 @@ At a high level:
 
 **User Layer:** The user layer describes the end-user environment and endpoint devices used to connect to resources.
 
-Users may connect to the web service securely using the Citrix Workspace app. Alternatively, users may connect to the web service using a standard browser with HTTP/HTTPs transport.
+Users can connect to the web service securely using the Citrix Workspace app. Alternatively, users can connect to the web service using a standard browser with HTTP/HTTPs transport.
 
 **Access Layer:** The access layer describes how users access web services and north-south flows are delivered.
 
 * The primary FQDN of the web service resolves to name servers hosted on the 2 Citrix ADC VPX instances.
-* Citrix ADC VPX run GSLB respond to DNS queries with a public IP address of the Content Switch Virtual Server, which they host, with the least connections.
+* Citrix ADC VPXes running GSLB respond to Domain Name Service (DNS) queries with a public IP address of the Content Switch Virtual Server with the least connections.
 * The Content Switch Virtual Server is configured by the Citrix Ingress Controller to forward connections to the cluster hosted Citrix CPX with the least connections
 * The cluster-hosted Citrix CPX accepts the connections and responds to the Citrix ADC VPX, establishing a flow to the web service over which payload is delivered.
 
@@ -123,12 +123,12 @@ The User Layer is where users request and access target resources on supported e
 
 [![User Layer](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_userlayer.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_userlayer.png)
 
-Users may connect to the web service securely using the Citrix Workspace app.
+Users can connect to the web service securely using the Citrix Workspace app.
 
-* Citrix Workspace – the web service is published as an application in Citrix Workspace. The Citrix Workspace App installed on the user’s endpoint initiates a proxy connection to the published application in Citrix Cloud.
-* Citrix Secure Internet Access – the connection toward the cloud-hosted Citrix ADC VPX is proxied by Citrix Secure Internet Access for full-stack inspection, including SWG, DLP, CASB, and NGFW.
+* Citrix Workspace – the web service is published as an application in Citrix Workspace. The Citrix Workspace App installed on the user’s endpoint initiates a proxy connection to the published application in Citrix Cloud
+* Citrix Secure Internet Access – the connection toward the cloud-hosted Citrix ADC VPX is proxied by Citrix Secure Internet Access for full-stack inspection, including SWG, DLP, CASB, and NGFW
 * Citrix Web Application and API Protection – the connection to the cloud-hosted Citrix ADC VPX is proxied and inspected by Citrix Web Application and API Protection web application firewall signatures.
-Alternatively, users may connect to the web service using a standard browser with HTTP/HTTPs transport.
+Alternatively, users can connect to the web service using a standard browser with HTTP/HTTPs transport
 
 Access Layer
 The Access Layer is where network delivery components are hosted to coordinate and direct user sessions request to Control and Resource components.
@@ -137,11 +137,11 @@ The Access Layer is where network delivery components are hosted to coordinate a
 
 ### Citrix CPX
 
-CompanyA decided to implement a 2-tier architecture and use the Citrix CPX to manage the delivery of service traffic within the cluster. The CPX will receive user traffic requests from the cloud-hosted Citrix ADC VPX and balance the traffic load between microservice instances. The Citrix CPX is deployed through YAML file configuration using RHOS controls cluster admin. A separate Citrix CPX instance is deployed and attached to each of the four apache service instances as a sidecar. The Citrix CPX is deployed in both the AWS and Azure clusters in the same manner.
+CompanyA decided to implement a 2-tier architecture and use the Citrix CPX to manage the delivery of service traffic within the cluster. The CPX will receive user traffic requests from the cloud-hosted Citrix ADC VPX and balance the traffic load between microservice instances. The Citrix CPX is deployed through YAML file configuration using RHOS controls cluster admin. A separate Citrix CPX instance is deployed and attached to each of the four Apache service instances as a sidecar. The Citrix CPX is deployed in both the AWS and Azure clusters in the same manner.
 
 ### Citrix Ingress Controller
 
-CompanyA decided to use the Citrix Ingress Controller (CIC) to manage Citrix cloud-native networking within their RHOS cluster. The Citrix Ingress Controller is used to manage ingress cluster traffic flow. It utilizes global cluster custom resource domains (CRDs) to obtain and monitor Citrix CPX and service status. Based on this information, it dynamically configures the Citrix ADC VPX to load balance and route traffic to Citrix CPXes within the cluster.
+CompanyA decided to use the Citrix Ingress Controller (CIC) to manage Citrix cloud-native networking within their RHOS cluster. The Citrix Ingress Controller is used to manage ingress cluster traffic flow. It uses global cluster custom resource domains (CRDs) to obtain and monitor Citrix CPX and service status. Based on this information, it dynamically configures the Citrix ADC VPX to load balance and route traffic to Citrix CPXes within the cluster.
 
 ### Citrix ADC VPX
 
@@ -151,25 +151,25 @@ CompanyA decided to use the Citrix ADC VPX to manage their North-South traffic f
 
 **GSLB** traffic will also be managed by Citrix ADC VPXes hosted at the AWS and Azure cluster sites, respectively.
 
-* ADNS – DNS for the Apache microservice will be configured through the company’s global DNS service [AWS Route 53](https://aws.amazon.com/route53/)
+* DNS for the Apache microservice will be configured through the company’s global DNS service [AWS Route 53](https://aws.amazon.com/route53/)
 * CNAME records map to respective authoritative DNS (ADNS) services hosted on Citrix ADC VPXes in Azure and AWS, respectively.
   * apacheservice.CompanyA.com
   * apacheservice.AWS.CompanyA.com
   * apacheservice.Azure.CompanyA.com
-* GSLB Load Balancing Method – Citrix ADC GSLB supports a variety of load balancing methods described below. CompanyA has decided to use the Canary method primarily to support high uptime with their continuous development cycle.
-  * Local first: In a local first deployment, when an application wants to communicate with another application, it prefers a local application in the same cluster. When the application is not available locally, the request is directed to other clusters or regions.
-  * Canary: Canary release is a technique to reduce the risk of introducing a new software version in production by first rolling out the change to a small subset of users. In this solution, canary deployment can be used when you want to roll out new versions of the application to selected clusters before moving it to production.
-  * Failover: A failover deployment is used to deploy applications in an active/passive configuration when they cannot be deployed in active/active mode.
-  * Round trip time (RTT): In an RTT deployment, the real-time status of the network is monitored and dynamically directs the client request to the data center with the lowest RTT value.
-  * Static proximity: In a static proximity deployment, an IP-address-based static proximity database is used to determine the proximity between the client’s local DNS server and the GSLB sites. The requests are sent to the site that best matches the proximity criteria.
-  * Round-robin: In a round-robin deployment, the GSLB device continuously rotates a list of the services bound to it. When it receives a request, it assigns the connection to the first service in the list and then moves that service to the bottom of the list.
+* GSLB Load Balancing Method – Citrix ADC GSLB supports a various load balancing methods. CompanyA has decided to use the Canary method primarily to support high uptime with their continuous development cycle.
+  * Local first: In a local first deployment, when an application wants to communicate with another application, it prefers a local application in the same cluster. When the application is not available locally, the request is directed to other clusters or regions
+  * Canary: Canary release is a technique to reduce the risk of introducing a new software version in production by first rolling out the change to a small subset of users. In this solution, canary deployment can be used when you want to roll out new versions of the application to selected clusters before moving it to production
+  * Failover: A failover deployment is used to deploy applications in an active/passive configuration when they cannot be deployed in active/active mode
+  * Round trip time (RTT): In an RTT deployment, the real-time status of the network is monitored and dynamically directs the client request to the data center with the lowest RTT value
+  * Static proximity: In a static proximity deployment, an IP-address-based static proximity database is used to determine the proximity between the client’s local DNS server and the GSLB sites. The requests are sent to the site that best matches the proximity criteria
+  * Round-robin: In a round-robin deployment, the GSLB device continuously rotates a list of the services bound to it. When it receives a request, it assigns the connection to the first service in the list and then moves that service to the bottom of the list
 * GSLB Services – The Citrix ADC VPX, in each site, monitors and manages traffic distribution to the Citrix CPX instances hosted within the respective clusters.
 
 For more information, see [multi-cluster ingress and load balancing solution using the Citrix ingress controller](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/multicluster/multi-cluster/)
 
 ## Resource Layer
 
-Resources include various microservices applications, available through the RHOS Operator Hub, that may be developed internally or obtained through a third-party vendor, depending on requirements. CompanyA has decided to deploy the Apache web application.
+Resources include various microservices applications, available through the RHOS Operator Hub, that can be developed internally or obtained through a third-party vendor, depending on requirements. CompanyA has decided to deploy the Apache web application.
 
 For more information, see [Understanding RHOS Operator Hub](https://docs.openshift.com/container-platform/4.6/operators/understanding/olm-understanding-operatorhub.html)
 
@@ -182,7 +182,7 @@ CompanyA has chosen to use Red Hat® OpenShift®, version 4.7, to deploy and man
 
 ## Host Layer
 
-RHOS clusters are supported on a variety of hosting platforms On-Premises, Cloud, or Hybrid Cloud.
+RHOS clusters are supported on various hosting platforms On-Premises, Cloud, or Hybrid Cloud.
 
 ### Azure
 
@@ -202,9 +202,9 @@ CompanyA decided to host a second RHOS environment in an AWS tenant. The RHOS cl
 
 Key requirements:
 
-* The Quick Start process requires a Red Hat subscription.
-* The tenant must allow provisioning of Amazon EC2 M4.xlarge instance
-* Red Hat entitlement limits and AWS instance limits were set to support the deployment of 3 masters instances and 3 worker nodes.
+* The Quick Start process requires a Red Hat subscription
+* The tenant must allow provisioning of Amazon EC2 `M4.xlarge` instance
+* Red Hat entitlement limits and AWS instance limits were set to support the deployment of 3 masters instances and 3 worker nodes
 
 For more information, see [Red Hat OpenShift® on AWS – Reference Deployment](https://aws.amazon.com/quickstart/architecture/OpenShift/)
 
@@ -259,5 +259,5 @@ Find links to pertinent **Citrix** References here:
 
 ### Terminology
 
-Find below descriptions of common RHOS and Microservice terminology.
+Find descriptions of common RHOS and Microservice terminology.
 [![RHOS References](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_rhosterminology.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_rhosterminology.png)
