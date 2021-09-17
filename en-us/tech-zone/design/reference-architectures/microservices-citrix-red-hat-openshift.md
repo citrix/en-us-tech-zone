@@ -167,7 +167,7 @@ CompanyA decided to use the Citrix ADC VPX to manage their North-South traffic f
     *  Round-robin: In a round-robin deployment, the GSLB device continuously rotates a list of the services bound to it. When it receives a request, it assigns the connection to the first service in the list and then moves that service to the bottom of the list
 *  GSLB Services – The Citrix ADC VPX, in each site, monitors and manages traffic distribution to the Citrix CPX instances hosted within the respective clusters.
 
-For more information, see [multi-cluster ingress and load balancing solution using the Citrix ingress controller](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/multicluster/multi-cluster/)
+For more information, see [Multi-cluster ingress and load balancing solution using the Citrix ingress controller](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/multicluster/multi-cluster/)
 
 ## Resource Layer
 
@@ -188,7 +188,7 @@ RHOS clusters are supported on various hosting platforms On-Premises, Cloud, or 
 
 ### Azure
 
-CompanyA decided to host one of their RHOS environments in a Microsoft Azure tenant. The RHOS cluster used the Azure CLI to build the cluster.  
+CompanyA decided to host one of their RHOS environments in a Microsoft Azure tenant. The RHOS cluster used the Azure CLI to build the cluster.
 
 Key requirements:
 
@@ -220,7 +220,7 @@ Find links to pertinent **Red Hat** References here:
 
 *  [Red Hat® Login](https://cloud.RedHat.com/OpenShift/create)
 
-*  [Red Hat OpenShift® on AWS]( https://aws.amazon.com/quickstart/architecture/OpenShift/)
+*  [Red Hat OpenShift® on AWS](https://aws.amazon.com/quickstart/architecture/OpenShift/)
 
 *  [Create an Azure Red Hat OpenShift® 4 cluster](https://docs.microsoft.com/en-us/azure/OpenShift/tutorial-create-cluster)
 
@@ -249,6 +249,7 @@ Find links to pertinent **Citrix** References here:
 *  [Deploy Citrix API gateway using Red Hat OpenShift® Operator](https://www.citrix.com/blogs/2020/08/27/deploy-citrix-api-gateway-using-red-hat-OpenShift-operator/)
 
 *  [Deploy the Citrix ingress controller as an OpenShift® router plug-in](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/deploy/deploy-cic-OpenShift/)
+
 *  [Multi-cluster ingress and load balancing solution using the Citrix ingress controller](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/multicluster/multi-cluster/)
 
 *  [Multi-cloud and multi-cluster ingress and load balancing solution with Amazon EKS and Microsoft AKS clusters](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/deploy/multi-cloud-ingress-lb-solution/)
