@@ -68,7 +68,7 @@ For Citrix Cloud deployments, Cloud Connector enables the communication between 
 
 Citrix FAS is supported to install on all the latest Windows Server versions. However, Citrix FAS deployment is supported for both Windows and Linux VDA's workloads. It is recommended to install the FAS services on a dedicated server that does not contain any other Citrix components. Install two or more FAS servers for each data center or resource location. Refer to [Citrix FAS installation and configuration](/en-us/federated-authentication-service/install-configure.html) document.
 
-For scalability and high availability, refer to the document [Citrix Federated Authentication Service Scalability](/en-us/tech-zone/design/downloads/citrix-federated-authentication-service-scalability.pdf) and Citrix KB Article [CTX225721](https://support.citrix.com/article/CTX225721). When we are migrating from On-Premises to Citrix Cloud, the existing FAS servers deployed at the On-Premises environment can be utilized and configured to communicate with Citrix Cloud through Cloud Connectors.
+For scalability and high availability, refer to the document [Citrix Federated Authentication Service Scalability](/en-us/tech-zone/media/downloads/citrix-federated-authentication-service-scalability.pdf) and Citrix KB Article [CTX225721](https://support.citrix.com/article/CTX225721). When we are migrating from On-Premises to Citrix Cloud, the existing FAS servers deployed at the On-Premises environment can be utilized and configured to communicate with Citrix Cloud through Cloud Connectors.
 
 The FAS servers should be installed within the secured internal network segment as it needs to access to Active Directory domain controllers, Certificate Services and registration authority certificate, and private key. Refer to the [Advanced configuration](/en-us/federated-authentication-service/config-manage.html) documentation to review the certificate, network, and other security considerations.
 
@@ -362,7 +362,7 @@ The goal of this reference architecture is to assist you with planning your own 
 
 [Citrix FAS installation and configuration](/en-us/federated-authentication-service/install-configure.html)
 
-[Citrix FAS scalability and HA document](/en-us/advanced-concepts/downloads/citrix-federated-authentication-service-scalability.pdf)
+[Citrix FAS scalability and HA document](/en-us/tech-zone/media/downloads/citrix-federated-authentication-service-scalability.pdf)
 
 [Federated Authentication Service High Availability and Scalability - CTX225721](https://support.citrix.com/article/CTX225721)
 
