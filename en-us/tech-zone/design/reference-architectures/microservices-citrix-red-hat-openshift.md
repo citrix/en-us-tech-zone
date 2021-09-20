@@ -196,11 +196,11 @@ Key requirements:
 *  An Azure Red Hat OpenShift cluster consists of 3 master nodes and three or more worker nodes.
 *  Azure CLI version 2.6.0 or later
 
-For more information see [Azure Openshift cluster]( https://docs.microsoft.com/en-us/azure/OpenShift/tutorial-create-cluster)
+For more information see [Azure Openshift cluster](https://docs.microsoft.com/en-us/azure/OpenShift/tutorial-create-cluster)
 
 ### AWS
 
-CompanyA decided to host a second RHOS environment in an AWS tenant. The RHOS cluster used the AWS quick start process to build the cluster.  
+CompanyA decided to host a second RHOS environment in an AWS tenant. The RHOS cluster used the AWS quick start process to build the cluster.
 
 Key requirements:
 
