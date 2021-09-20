@@ -4,17 +4,17 @@ h3InToc: true
 contributedBy: Matt Brooks
 specialThanksTo: Priyanka Sharma
 description: Learn how to design an environment to support cloud-native microservices with Citrix and Redhat Openshift.
-tz_title: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift®
+tz_title: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift
 Reference Architecture
 tz_products: Citrix-networking;Citrix-service-providers;Citrix-workspace;google-cloud-platform;other;security;third-party-content
 ---
-# Content Type: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift® - Reference Architecture
+# Content Type: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift - Reference Architecture
 
 ## Overview
 
 CompanyA has always used Monolithic architectures to develop system applications predominantly hosted on-premises. They have suffered from issues with uptime and inconsistent performance, particularly for remote users, which was exacerbated during the pandemic. As part of their effort to move to the cloud, they intend to use a Microservices architecture. This architecture allows them to develop new applications to take advantage of the resiliency and scalability benefits.
 
-CompanyA decided to build a pair of redundant multi-cloud Red Hat® OpenShift® (RHOS) clusters. They are hosted in Microsoft Azure and Amazon AWS, with Citrix to providing load balancing for microservice instances. This allows them to provide a resilient environment for remote users to access critical business web services with consistently good performance.
+CompanyA decided to build a pair of redundant multi-cloud Red Hat OpenShift (RHOS) clusters. They are hosted in Microsoft Azure and Amazon AWS, with Citrix to providing load balancing for microservice instances. This allows them to provide a resilient environment for remote users to access critical business web services with consistently good performance.
 
 This reference architecture explains how CompanyA is planning their environment to ensure they can have a cloud-native platform to develop new applications or migrate legacy ones that are cost-effective and allow end-users to work remotely with good performance.
 
@@ -35,16 +35,16 @@ Benefits of cloud-native
 
 ### Red Hat OpenShift
 
-Red Hat® OpenShift® is an enterprise Kubernetes container platform that helps companies deploy, operate, and secure microservice applications across hybrid clouds.
+Red Hat OpenShift is an enterprise Kubernetes container platform that helps companies deploy, operate, and secure microservice applications across hybrid clouds.
 
-Benefits of Red Hat® OpenShift® (RHOS)
+Benefits of Red Hat OpenShift (RHOS)
 
 *  Efficiently manages Kubernetes cloud-native environments for the development and operation of business-critical Enterprise applications
 *  Improves the productivity of development teams
 *  Increases revenue by introducing new services to existing customers promptly
 *  Reduces operating expense by spending less time on administration and support
 
-For more information, see [What is Red Hat OpenShift®?](https://www.RedHat.com/en/technologies/cloud-computing/OpenShift)
+For more information, see [What is Red Hat OpenShift?](https://www.RedHat.com/en/technologies/cloud-computing/OpenShift)
 
 ### Citrix
 
@@ -111,13 +111,13 @@ Users can connect to the web service securely using the Citrix Workspace app. In
 
 **Control Layer:** The control layer defines how the resources are managed and monitored.
 
-*  Red Hat® OpenShift® is used to build the cluster and deploy, manage, and monitor the microservice resources.
+*  Red Hat OpenShift is used to build the cluster and deploy, manage, and monitor the microservice resources.
 
 **Host Layer:** The hosting layer defines the underlying infrastructure that hosts the resources, including memory, storage, and compute.
 
 *  Microsoft Azure and Amazon AWS are the public IaaS used to host the RHOS Cluster and microservices.
 
-The next sections provide greater detail into specific design decisions for CompanyAs Microservices-Based Application Delivery with Citrix and Red Hat OpenShift® reference architecture.
+The next sections provide greater detail into specific design decisions for CompanyAs Microservices-Based Application Delivery with Citrix and Red Hat OpenShift reference architecture.
 
 ## User Layer
 
@@ -167,7 +167,7 @@ CompanyA decided to use the Citrix ADC VPX to manage their North-South traffic f
     *  Round-robin: In a round-robin deployment, the GSLB device continuously rotates a list of the services bound to it. When it receives a request, it assigns the connection to the first service in the list and then moves that service to the bottom of the list
 *  GSLB Services – The Citrix ADC VPX, in each site, monitors and manages traffic distribution to the Citrix CPX instances hosted within the respective clusters.
 
-For more information, see [multi-cluster ingress and load balancing solution using the Citrix ingress controller](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/multicluster/multi-cluster/)
+For more information, see [Multi-cluster ingress and load balancing solution using the Citrix ingress controller](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/multicluster/multi-cluster/)
 
 ## Resource Layer
 
@@ -179,8 +179,8 @@ For more information, see [Understanding RHOS Operator Hub](https://docs.openshi
 
 The controller layer includes essential management components to coordinate the delivery of microservices.
 
-Red Hat® OpenShift®
-CompanyA has chosen to use Red Hat® OpenShift®, version 4.7, to deploy and manage their Kubernetes cluster.
+Red Hat OpenShift
+CompanyA has chosen to use Red Hat OpenShift, version 4.7, to deploy and manage their Kubernetes cluster.
 
 ## Host Layer
 
@@ -188,15 +188,15 @@ RHOS clusters are supported on various hosting platforms On-Premises, Cloud, or 
 
 ### Azure
 
-CompanyA decided to host one of their RHOS environments in a Microsoft Azure tenant. The RHOS cluster used the Azure CLI to build the cluster.  
+CompanyA decided to host one of their RHOS environments in a Microsoft Azure tenant. The RHOS cluster used the Azure CLI to build the cluster.
 
 Key requirements:
 
-*  Azure Red Hat OpenShift® requires a minimum of 40 cores to create and run an OpenShift® cluster
+*  Azure Red Hat OpenShift requires a minimum of 40 cores to create and run an OpenShift cluster
 *  An Azure Red Hat OpenShift cluster consists of 3 master nodes and three or more worker nodes.
 *  Azure CLI version 2.6.0 or later
 
-For more information see [https://docs.microsoft.com/en-us/azure/OpenShift®/tutorial-create-cluster]( https://docs.microsoft.com/en-us/azure/OpenShift/tutorial-create-cluster)
+For more information see [Azure Openshift cluster]( https://docs.microsoft.com/en-us/azure/OpenShift/tutorial-create-cluster)
 
 ### AWS
 
@@ -208,47 +208,48 @@ Key requirements:
  The tenant must allow provisioning of Amazon EC2 `M4.xlarge` instance
 *  Red Hat entitlement limits and AWS instance limits were set to support the deployment of 3 masters instances and 3 worker nodes
 
-For more information, see [Red Hat OpenShift® on AWS – Reference Deployment](https://aws.amazon.com/quickstart/architecture/OpenShift/)
+For more information, see [Red Hat OpenShift on AWS – Reference Deployment](https://aws.amazon.com/quickstart/architecture/OpenShift/)
 
 ## References
 
-Many document links are available to understand better Citrix cloud-native networking concepts, Kubernetes microservices, and the Red Hat® OpenShift® platform.
+Many document links are available to understand better Citrix cloud-native networking concepts, Kubernetes microservices, and the Red Hat OpenShift platform.
 
 Find links to pertinent **Red Hat** References here:
 
-*  [Red Hat OpenShift®](https://www.RedHat.com/en/technologies/cloud-computing/OpenShift)
+*  [Red Hat OpenShift](https://www.RedHat.com/en/technologies/cloud-computing/OpenShift)
 
-*  [Red Hat® Login](https://cloud.RedHat.com/OpenShift/create)
+*  [Red Hat Login](https://cloud.RedHat.com/OpenShift/create)
 
-*  [Red Hat OpenShift® on AWS]( https://aws.amazon.com/quickstart/architecture/OpenShift/)
+*  [Red Hat OpenShift on AWS](https://aws.amazon.com/quickstart/architecture/OpenShift/)
 
-*  [Create an Azure Red Hat OpenShift® 4 cluster](https://docs.microsoft.com/en-us/azure/OpenShift/tutorial-create-cluster)
+*  [Create an Azure Red Hat OpenShift 4 cluster](https://docs.microsoft.com/en-us/azure/OpenShift/tutorial-create-cluster)
 
-*  [Developer Sandbox for Red Hat OpenShift®](https://developers.RedHat.com/developer-sandbox/activities)
+*  [Developer Sandbox for Red Hat OpenShift](https://developers.RedHat.com/developer-sandbox/activities)
 
-*  [Red Hat OpenShift® installation resources](https://developers.RedHat.com/products/OpenShift/overview)
+*  [Red Hat OpenShift installation resources](https://developers.RedHat.com/products/OpenShift/overview)
 
-*  [Microservices-Based Application Delivery with Citrix and Red Hat OpenShift® – blog](https://www.OpenShift.com/blog/microservices-based-application-delivery-with-citrix-and-red-hat-OpenShift)
+*  [Microservices-Based Application Delivery with Citrix and Red Hat OpenShift – blog](https://www.OpenShift.com/blog/microservices-based-application-delivery-with-citrix-and-red-hat-OpenShift)
 
 *  [Azure Red Hat OpenShift pricing](https://azure.microsoft.com/en-us/pricing/details/openshift/#pricing)
 
 Find links to pertinent **Citrix** References here:
 
-*  [Microservices-Based Application Delivery with Citrix and Red Hat OpenShift®](https://www.OpenShift.com/blog/microservices-based-application-delivery-with-citrix-and-red-hat-OpenShift)
+*  [Microservices-Based Application Delivery with Citrix and Red Hat OpenShift](https://www.OpenShift.com/blog/microservices-based-application-delivery-with-citrix-and-red-hat-OpenShift)
 
 *  [Citrix Developer Docs](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/)
 
-*  [Citrix ADC and OpenShift® 4 Solution Brief – product documentation](https://docs.citrix.com/en-us/advanced-concepts/implementation-guides/citrix-adc-and-OpenShift-solution-brief.html)
+*  [Citrix ADC and OpenShift 4 Solution Brief – product documentation](https://en-us/advanced-concepts/implementation-guides/citrix-adc-and-OpenShift-solution-brief.html)
 
-*  [Enable OpenShift® router sharding support with Citrix ADC](https://www.citrix.com/blogs/2019/09/11/enable-OpenShift-router-sharding-support-with-citrix-adc/)
+*  [Enable OpenShift router sharding support with Citrix ADC](https://www.citrix.com/blogs/2019/09/11/enable-OpenShift-router-sharding-support-with-citrix-adc/)
 
 *  [Accelerate your journey to microservices](https://www.citrix.com/solutions/application-delivery-controller/microservices/)
 
-*  [Configure Citrix ADC to load balance an OpenShift® control plane](https://www.citrix.com/blogs/2020/08/20/configure-citrix-adc-to-load-balance-an-OpenShift-control-plane/)
+*  [Configure Citrix ADC to load balance an OpenShift control plane](https://www.citrix.com/blogs/2020/08/20/configure-citrix-adc-to-load-balance-an-OpenShift-control-plane/)
 
-*  [Deploy Citrix API gateway using Red Hat OpenShift® Operator](https://www.citrix.com/blogs/2020/08/27/deploy-citrix-api-gateway-using-red-hat-OpenShift-operator/)
+*  [Deploy Citrix API gateway using Red Hat OpenShift Operator](https://www.citrix.com/blogs/2020/08/27/deploy-citrix-api-gateway-using-red-hat-OpenShift-operator/)
 
-*  [Deploy the Citrix ingress controller as an OpenShift® router plug-in](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/deploy/deploy-cic-OpenShift/)
+*  [Deploy the Citrix ingress controller as an OpenShift router plug-in](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/deploy/deploy-cic-OpenShift/)
+
 *  [Multi-cluster ingress and load balancing solution using the Citrix ingress controller](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/multicluster/multi-cluster/)
 
 *  [Multi-cloud and multi-cluster ingress and load balancing solution with Amazon EKS and Microsoft AKS clusters](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/deploy/multi-cloud-ingress-lb-solution/)
