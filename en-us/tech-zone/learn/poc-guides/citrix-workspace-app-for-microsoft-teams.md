@@ -16,15 +16,25 @@ The Citrix Workspace App for Microsoft Teams provides users with the ability to 
 ## Scope
 
 In this Proof of Concept guide you will enable the Citrix Workspace App for Teams.  This guide will showcase how to perform the following actions:
+
 • Create a Citrix Cloud account
+
 • Obtain a Citrix Content Collaboration service trial
+
 • Add files to Citrix ShareFile
+
 • Add the Citrix Workspace App to Microsoft Teams
+
 • Link Citrix Workspace App for Microsoft Teams to Citrix ShareFile
+
 • Share a document via Workspace App for Teams within a 1:1 Chat message
+
 • Share a document via Workspace App for Teams within a Teams channel post
+
 • Open a ShareFile hosted file directly within Teams Chat
+
 • Download a file
+
 • Open a file on a mobile device
 
 ## Prerequisites
