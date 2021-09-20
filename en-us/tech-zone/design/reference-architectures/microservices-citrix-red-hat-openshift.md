@@ -12,15 +12,15 @@ tz_products: Citrix-networking;Citrix-service-providers;Citrix-workspace;google-
 
 ## Overview
 
-CompanyA has always used Monolithic architectures to develop system applications predominantly hosted on-premises. They have suffered from issues with uptime and inconsistent performance, particularly for remote users, which was exacerbated during the pandemic. As part of their effort to move to the cloud, they intend to use a Microservices architecture. This architecture allows them to develop new applications to take advantage of the resiliency and scalability benefits.
+CompanyA has always used Monolithic architectures to develop system applications predominantly hosted on-premises. They have suffered from issues with uptime and inconsistent performance, particularly for remote users, which was exacerbated during the pandemic. As part of their effort to move to the cloud, they intend to use a Microservices architecture. This architecture allows them to develop new applications with greater resiliency and scalability.
 
-CompanyA decided to build a pair of redundant multi-cloud Red Hat OpenShift (RHOS) clusters. They are hosted in Microsoft Azure and Amazon AWS, with Citrix to providing load balancing for microservice instances. This allows them to provide a resilient environment for remote users to access critical business web services with consistently good performance.
+CompanyA decided to build a pair of redundant multi-cloud Red Hat OpenShift (RHOS) clusters. They are hosted in Microsoft Azure and Amazon AWS, with Citrix providing load balancing for microservice instances. This allows them to provide a resilient environment for remote users to access critical business web services with consistently good performance.
 
-This reference architecture explains how CompanyA is planning their environment to ensure they can have a cloud-native platform to develop new applications or migrate legacy ones that are cost-effective and allow end-users to work remotely with good performance.
+This reference architecture explains how CompanyA is planning their environment, to host a cloud-native platform, for developing new applications or migrating legacy ones.
 
 ## Introduction
 
-Company A decided to develop their cloud-native Microservices-Based Application Delivery with Citrix and RHOS to bring several benefits to their enterprise and ultimately increase productivity.
+Company A decided to develop their cloud-native microservices-based application delivery with Citrix and RHOS to bring several benefits to their enterprise and ultimately increase productivity.
 
 ### Cloud Native
 
@@ -48,12 +48,12 @@ For more information, see [What is Red Hat OpenShift?](https://www.RedHat.com/en
 
 ### Citrix
 
-Citrix provides flexible topologies for traffic management in microservices environments, depending on requirements, including Full Mesh, Single-Tier, Dual-Tier, and ServiceMesh Lite.
+Citrix provides flexible topologies for traffic management in microservices environments, depending on requirements, including Full Mesh, ServiceMesh Lite, Single-Tier, and Dual-Tier.
 
 Topologies:
 
-*  Full Mesh – full mesh clusters include support for various microservices that need east-west communication between microservices within the cluster and north-south communication outside of the cluster.
-*  Service Mesh Lite- an Ingress solution typically performs L7 proxy functions for north-south (N-S) traffic. The Service Mesh lite architecture uses the same Ingress solution to manage east-west traffic and overcome the limitations of Kubernetes built-in service.
+*  Full Mesh – full mesh clusters include support for various microservices that need east-west communication between microservices within the cluster and north-south (N-S) communication outside of the cluster.
+*  Service Mesh Lite- an Ingress solution typically performs L7 proxy functions for north-south traffic. The Service Mesh lite architecture uses the same Ingress solution to manage east-west (E-W) traffic and overcome the limitations of Kubernetes built-in service.
 *  Single-Tier – single-tier clusters contain microservices that run as redundant replicas and have north-south traffic delivered by external load balancers.
 *  Dual-Tier – dual-tier architectures also have north-south traffic delivered by external load balancers. Yet, also microservices have a networking component attached to support communication using additional networking protocols and optimizations not provided by native cluster services.
 
@@ -72,7 +72,7 @@ Benefits of Citrix ADC VPX
 Benefits of Citrix CPX
 
 *  Citrix CPX enables a Citrix ADC to be deployed as a data plane proxy either as an Ingress gateway or sidecar in the xDS-based service mesh.
-*  It provides layer 7 traffic management between microservices inside the Kubernetes cluster, but Kubernetes only supports Layer 4.
+*  It provides layer 7 traffic management between microservices inside the Kubernetes cluster, whereas Kubernetes only supports Layer 4.
 
 For more information, see [Citrix Developer Docs](https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/)
 
@@ -96,13 +96,13 @@ At a high level:
 
 **User Layer:** The user layer describes the end-user environment and endpoint devices used to connect to resources.
 
-Users can connect to the web service securely using the Citrix Workspace app. Instead, users can connect to the web service using a standard browser with HTTP/HTTPs transport.
+Users can connect to the web service securely using the Citrix Workspace app. Alternatively, users can connect to the web service using a standard browser with HTTP/HTTPs transport.
 
 **Access Layer:** The access layer describes how users access web services and north-south flows are delivered.
 
-*  The primary FQDN of the web service resolves to name servers hosted on the 2 Citrix ADC VPX instances.
+*  The primary FQDN of the web service resolves to name servers hosted on the Citrix ADC VPX.
 *  Citrix ADC `VPXes` running GSLB respond to Domain Name Service (DNS) queries with a public IP address of the Content Switch Virtual Server with the least connections.
-*  The Content Switch Virtual Server is configured by the Citrix Ingress Controller to forward connections to the cluster hosted Citrix CPX with the least connections
+*  The Virtual Server is configured by the Citrix Ingress Controller to forward connections to the cluster hosted Citrix CPX with the least connections
 *  The cluster-hosted Citrix CPX accepts the connections and responds to the Citrix ADC VPX. It establishes a flow to the web service over which payload is delivered.
 
 **Resource Layer:** The resource layer specifies the applications delivered to users in the form of microservices in this reference architecture.
@@ -117,7 +117,7 @@ Users can connect to the web service securely using the Citrix Workspace app. In
 
 *  Microsoft Azure and Amazon AWS are the public IaaS used to host the RHOS Cluster and microservices.
 
-The next sections provide greater detail into specific design decisions for CompanyAs Microservices-Based Application Delivery with Citrix and Red Hat OpenShift reference architecture.
+The next sections provide greater detail into specific design decisions for CompanyAs microservices-based application eelivery with Citrix and Red Hat OpenShift.
 
 ## User Layer
 
@@ -130,35 +130,35 @@ Users can connect to the web service securely using the Citrix Workspace app.
 *  Citrix Workspace – the web service is published as an application in Citrix Workspace. The Citrix Workspace App installed on the user’s endpoint starts a proxy connection to the published application in Citrix Cloud
 *  Citrix Secure Internet Access – the connection toward the cloud-hosted Citrix ADC VPX is proxied by Citrix Secure Internet Access for full-stack inspection, including SWG, DLP, CASB, and NGFW
 *  Citrix Web Application and API Protection – the connection to the cloud-hosted Citrix ADC VPX is proxied and inspected by Citrix Web Application and API Protection web application firewall signatures.
-Alternatively, users can connect to the web service using a standard browser with HTTP/HTTPs transport
 
-Access Layer
-The Access Layer is where network delivery components are hosted to coordinate and direct user sessions request to Control and Resource components.
+## Access Layer
+
+The Access Layer is where network delivery components are hosted to coordinate and direct user sessions requests to Control and Resource components.
 
 [![Overview](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_accesslayer.png)](/en-us/tech-zone/design/media/reference-architectures_microservices-citrix-red-hat-openshift_accesslayer.png)
 
 ### Citrix CPX
 
-CompanyA decided to implement a 2-tier architecture and use the Citrix CPX to manage the delivery of service traffic within the cluster. The CPX receives user traffic requests from the cloud-hosted Citrix ADC VPX and balances the traffic load between microservice instances. The Citrix CPX is deployed through YAML file configuration using RHOS controls cluster admin. A separate Citrix CPX instance is deployed and attached to each of the four Apache service instances as a sidecar. The Citrix CPX is deployed in both the AWS and Azure clusters in the same manner.
+CompanyA decided to implement a 2-tier architecture and use the Citrix CPX to manage the delivery of service traffic within the cluster. The CPX receives user traffic requests from the cloud-hosted Citrix ADC VPX and balances the traffic load between microservice instances. The Citrix CPX is deployed, by the cluster admin, through YAML file configuration using RHOS controls. The Citrix CPX is deployed in both the AWS and Azure clusters in the same manner.
 
 ### Citrix Ingress Controller
 
-CompanyA decided to use the Citrix Ingress Controller (CIC) to manage Citrix cloud-native networking within their RHOS cluster. The Citrix Ingress Controller is used to manage ingress cluster traffic flow. It uses global cluster custom resource domains (CRDs) to obtain and monitor Citrix CPX and service status. Based on this information, it dynamically configures the Citrix ADC VPX to load balance and route traffic to Citrix `CPXes` within the cluster.
+CompanyA decided to use the Citrix Ingress Controller (CIC) to manage Citrix cloud-native networking within their RHOS cluster. The Citrix Ingress Controller is used to manage ingress cluster traffic flow. It uses global cluster custom resource domains (CRDs) to obtain and monitor Citrix CPX and service status. Based on this information, it dynamically configures the Citrix ADC VPX to load balance and route traffic to Citrix CPXes within the cluster.
 
 ### Citrix ADC VPX
 
 CompanyA decided to use the Citrix ADC VPX to manage their North-South traffic flows and to implement Global Server Load Balancing (GSLB) between Azure and AWS clusters.
 
-**North-South** traffic is managed by Citrix ADC `VPXes` hosted at the AWS and Azure cluster sites, respectively. IP addressing information and access secrets are provided in the CIC setup, allowing it to configure load balancing and content switching policies.
+**North-South** traffic is managed by Citrix ADC VPXes hosted at the AWS and Azure cluster sites, respectively. IP addressing information and access secrets are provided in the CIC setup, allowing it to configure load balancing and content switching policies.
 
-**GSLB** traffic is also be managed by Citrix ADC `VPXes` hosted at the AWS and Azure cluster sites, respectively.
+**GSLB** traffic is also be managed by Citrix ADC VPXes hosted at the AWS and Azure cluster sites, respectively.
 
 *  DNS for the Apache microservice is configured through the company’s global DNS service [AWS Route 53](https://aws.amazon.com/route53/)
-*  CNAME records map to respective authoritative DNS (ADNS) services hosted on Citrix ADC `VPXes` in Azure and AWS, respectively.
+*  CNAME records map to respective authoritative DNS (ADNS) services hosted on Citrix ADC VPXes in Azure and AWS, respectively.
     *  apacheservice.CompanyA.com
     *  apacheservice.AWS.CompanyA.com
     *  apacheservice.Azure.CompanyA.com
-*  GSLB Load Balancing Method – Citrix ADC GSLB supports a various load balancing methods. CompanyA has decided to use the Canary method primarily to support high uptime with their continuous development cycle.
+*  GSLB Load Balancing Method – Citrix ADC GSLB supports a various load balancing methods. CompanyA has decided to use the Canary method primarily to support high uptime with their continuous development cycle. Method options:
     *  Local first: In a local first deployment, when an application wants to communicate with another application, it prefers a local application in the same cluster. When the application is not available locally, the request is directed to other clusters or regions
     *  Canary: Canary release is a technique to reduce the risk of introducing a new software version in production by first rolling out the change to a small subset of users. In this solution, canary deployment can be used when you want to roll out new versions of the application to selected clusters before moving it to production
     *  Failover: A failover deployment is used to deploy applications in an active/passive configuration when they cannot be deployed in active/active mode
