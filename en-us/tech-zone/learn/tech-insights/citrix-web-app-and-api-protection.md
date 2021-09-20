@@ -11,10 +11,9 @@ description: See how Citrix Web App and API Protection (CWAAP) service can provi
 
 With cyber threats rising and modern application architectures getting more complex, organizations need a more straightforward way to defend against bots, DDoS, zero-day exploits, and other attacks. The Citrix Web App and API Protection (CWAAP) service protects agains:
 
-*  BOTs
-*  Distributed Denial of Service (DDOS) attacks
-*  Contextual access policies place restrictions on user activities within the application and desktop resources.
 *  Zero-day exploits
+*  Automated internet driven BOTs
+*  Distributed Denial of Service (DDOS) attacks
 *  Other Internet bourne attacks
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=kF239VdXwz0):**
