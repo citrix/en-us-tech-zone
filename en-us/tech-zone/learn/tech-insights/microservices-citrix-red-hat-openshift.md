@@ -1,16 +1,23 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: First Last, First2 Last2
-specialThanksTo: First Last, First2 Last2
-description: TODO insert description of article
-tz_title: TODO insert title of article
-tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-service-providers;citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;google-cloud-platform;other;security;third-party-content
+tz_title: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift - Reference Architecture overview
+tz_products: citrix-networking;
+contributedBy: Matt Brooks; Priyanka Sharma
+specialThanksTo: 
+description: See how Microservices-Based Application Delivery with Citrix and Red Hat OpenShift can provide reliable, and scalable delivery of Microservices.
 ---
-# Content Type : tz_title
+# Tech Insight: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift overview
 
-TEXT
+With cyber threats rising and modern application architectures getting more complex, organizations need a more straightforward way to defend against attacks. The Citrix Web App and API Protection (CWAAP) service protects agains:
+
+*  Zero-day exploits
+*  Automated internet driven BOTs
+*  Distributed Denial of Service (DDOS) attacks
+*  Other Internet bourne attacks
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=Hp7p8vymBlw):**
 
 [![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=Hp7p8vymBlw)
+
+To learn more about this solution, please review the [Tech Brief: Citrix Web App and API Protection service](/en-us/tech-zone/learn/tech-briefs/citrix-waap.html).
