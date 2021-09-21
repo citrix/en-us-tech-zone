@@ -4,9 +4,8 @@ h3InToc: true
 contributedBy: Matt Brooks
 specialThanksTo: Priyanka Sharma
 description: Learn how to design an environment to support cloud-native microservices with Citrix and Redhat Openshift.
-tz_title: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift
-Reference Architecture
-tz_products: Citrix-networking;Citrix-service-providers;Citrix-workspace;google-cloud-platform;other;security;third-party-content
+tz_title: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift Reference Architecture
+tz_products: citrix-networking;citrix-service-providers;citrix-workspace;google-cloud-platform;other;security;third-party-content
 ---
 # Content Type: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift - Reference Architecture
 
