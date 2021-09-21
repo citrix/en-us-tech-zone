@@ -18,6 +18,8 @@ With cyber threats rising and modern application architectures getting more comp
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=kF239VdXwz0):**
 
-[![Tech Insight: Citrix Web App and Api Protection service overview](/en-us/tech-zone/learn/media/tech-insights_citrix-web-app-and-api-protection_overview.png)](https://www.youtube.com/watch?v=kF239VdXwz0)
+&nbsp;
+
+{% include video.html id="kF239VdXwz0" type="youtube" %}
 
 To learn more about this solution, please review the [Tech Brief: Citrix Web App and API Protection service](/en-us/tech-zone/learn/tech-briefs/citrix-waap.html).
