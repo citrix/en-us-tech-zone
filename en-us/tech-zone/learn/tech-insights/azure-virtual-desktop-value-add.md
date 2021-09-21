@@ -1,16 +1,18 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: First Last, First2 Last2
-specialThanksTo: First Last, First2 Last2
+contributedBy: Allen Furmanski, Ana Ruiz
+specialThanksTo: Mayank Singh, Rob Beekmans, Dan Feller, Alex Grosu
 description: TODO insert description of article
-tz_title: TODO insert title of article
-tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-service-providers;citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;google-cloud-platform;other;security;third-party-content
+tz_title: Citrix Value Adds to Azure Virtual Desktop
+tz_products: citrix-analytics;citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;security
 ---
-# Content Type : tz_title
+# Tech Insight: Citrix Value Adds to Azure Virtual Desktop
 
-TEXT
+Learn about the Azure Virtual Desktop DaaS offering and how Citrix provides key capabilities to increase flexibility, agility, security, and more while also driving down costs.
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=ID):**
+**Watch this video to [learn more](https://www.youtube.com/watch?v=rvHKQmdFWKs):**
 
-[![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=ID)
+&nbsp;
+
+{% include video.html id="rvHKQmdFWKs" type="youtube" %}
