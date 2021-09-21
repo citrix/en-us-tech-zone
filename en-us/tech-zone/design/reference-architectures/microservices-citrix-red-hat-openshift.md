@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Matt Brooks
-specialThanksTo: Priyanka Sharma
+specialThanksTo: Priyanka Sharma; Dhiraj N Gedam
 description: Learn how to design an environment to support cloud-native microservices with Citrix and Redhat Openshift
 tz_title: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift Reference Architecture
 tz_products: citrix-networking
@@ -100,7 +100,7 @@ Users can connect to the web service securely using the Citrix Workspace app. Al
 **Access Layer:** The access layer describes how users access web services and north-south flows are delivered.
 
 *  The primary FQDN of the web service resolves to name servers hosted on the Citrix ADC VPX.
-*  Citrix ADC `VPXes` running GSLB respond to Domain Name Service (DNS) queries with a public IP address of the Content Switch Virtual Server with the least connections.
+*  Citrix ADC VPXes running GSLB respond to Domain Name Service (DNS) queries with a public IP address of the Content Switch Virtual Server with the least connections.
 *  The Virtual Server is configured by the Citrix Ingress Controller to forward connections to the cluster hosted Citrix CPX with the least connections
 *  The cluster-hosted Citrix CPX accepts the connections and responds to the Citrix ADC VPX. It establishes a flow to the web service over which payload is delivered.
 
