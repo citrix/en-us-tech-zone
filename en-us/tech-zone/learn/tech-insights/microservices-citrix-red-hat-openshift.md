@@ -9,15 +9,10 @@ description: See how Microservices-Based Application Delivery with Citrix and Re
 ---
 # Tech Insight: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift overview
 
-With cyber threats rising and modern application architectures getting more complex, organizations need a more straightforward way to defend against attacks. The Citrix Web App and API Protection (CWAAP) service protects agains:
-
-*  Zero-day exploits
-*  Automated internet driven BOTs
-*  Distributed Denial of Service (DDOS) attacks
-*  Other Internet bourne attacks
+Cloud-Native applications are developed to take advantage of the distributed and scalable nature of the cloud. It includes many benefits around Enterprise productivity, operational efficiency, and user experience. Red Hat OpenShift is an enterprise Kubernetes container platform that helps companies deploy, operate, and secure microservice applications across these environments. Citrix provides flexible topologies for traffic management in these environments, depending on requirements, including Full Mesh, ServiceMesh Lite, Single-Tier, and Dual-Tier.
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=Hp7p8vymBlw):**
 
-[![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=Hp7p8vymBlw)
+[![Microservices-Based Application Delivery with Citrix and Red Hat OpenShift overview](/en-us/tech-zone/learn/media/tech-insight_microservices-citrix-red-hat-openshift_overview.png)](https://www.youtube.com/watch?v=Hp7p8vymBlw)
 
-To learn more about this solution, please review the [Tech Brief: Citrix Web App and API Protection service](/en-us/tech-zone/learn/tech-briefs/citrix-waap.html).
+To learn more about this solution, please review the [Reference Architecture: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift](/en-us/tech-zone/design/reference-architectures/microservices-citrix-red-hat-openshift.html)
