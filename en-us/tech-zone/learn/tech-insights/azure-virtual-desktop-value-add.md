@@ -9,7 +9,7 @@ tz_products: citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-
 ---
 # Tech Insight: Citrix Value Adds to Azure Virtual Desktop
 
-Learn about the Azure Virtual Desktop DaaS offering and how Citrix provides key capabilities to increase flexibility, agility, security, and more while also driving down costs.
+Learn about what the Azure Virtual Desktop DaaS offering. Learn about how Citrix provides key capabilities to increase flexibility, agility, security, and more while also driving down costs.
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=rvHKQmdFWKs):**
 
