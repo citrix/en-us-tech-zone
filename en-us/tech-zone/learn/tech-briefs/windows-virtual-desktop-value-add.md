@@ -562,6 +562,8 @@ The following is a list of the features that were discussed in the detail in the
 
 Call to action:
 
+**Watch this video to [learn more](https://www.youtube.com/watch?v=rvHKQmdFWKs).**
+
 For a trial of Citrix Virtual Apps and Desktops service click [here](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/inquiry/).
 
 For a trial of Citrix Virtual Apps and Desktops Standard for Azure service click [here](https://www.citrix.com/products/citrix-managed-desktops/form/inquiry/).
