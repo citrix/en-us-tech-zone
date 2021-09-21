@@ -562,7 +562,7 @@ The following is a list of the features that were discussed in the detail in the
 
 Call to action:
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=rvHKQmdFWKs).**
+**Watch the Citrix Tech Insight video to [learn more](/en-us/tech-zone/learn/tech-insights/azure-virtual-desktop-value-add.html).**
 
 For a trial of Citrix Virtual Apps and Desktops service click [here](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/inquiry/).
 
