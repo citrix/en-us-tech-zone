@@ -8,7 +8,7 @@ tz_title: Microservices-Based Application Delivery with Citrix and Red Hat OpenS
 Reference Architecture
 tz_products: Citrix-networking;Citrix-service-providers;Citrix-workspace;google-cloud-platform;other;security;third-party-content
 ---
-# Content Type: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift - Reference Architecture
+# Reference Architecture: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift
 
 ## Overview
 
