@@ -11,6 +11,6 @@ tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-manag
 
 TEXT
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=ID):**
+**Watch this video to [learn more](https://www.youtube.com/watch?v=Hp7p8vymBlw):**
 
-[![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=ID)
+[![DESCRIPTION](/en-us/tech-zone/learn/media/shared_video-placeholder.png)](https://www.youtube.com/watch?v=Hp7p8vymBlw)
