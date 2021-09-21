@@ -5,7 +5,7 @@ contributedBy: Allen Furmanski, Ana Ruiz
 specialThanksTo: Mayank Singh, Rob Beekmans, Dan Feller, Alex Grosu
 description: TODO insert description of article
 tz_title: Citrix Value Adds to Azure Virtual Desktop
-tz_products: citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;security
+tz_products: citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;security;
 ---
 # Tech Insight: Citrix Value Adds to Azure Virtual Desktop
 
