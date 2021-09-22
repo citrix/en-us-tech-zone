@@ -1,8 +1,8 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: Anudeep Athlur, Karthick Srivatsan
-specialThanksTo: Jaskirat Chauhan, Matthew Brooks
+contributedBy: Anudeep Athlur
+specialThanksTo: Jaskirat Chauhan, Karthick Srivatsan, Matt Brooks
 description: Learn how to establish connectivity between SD-WAN and Azure Virtual WAN, and connect workloads on Azure with on-premises infrastructure.
 tz_title: Citrix SD-WAN with Azure Virtual WAN
 tz_products: citrix-networking;
@@ -21,9 +21,9 @@ Broadly, the deployment guide covers how to:
 
 1.  Establish connectivity in Azure Virtual WAN
 
-    *  Hub-to-Hub connectivity
+    *  `Hub-to-Hub` connectivity
 
-    *  VNet-to-Hub peering
+    *  `VNet-to-Hub` peering
 
 1.  Establish connectivity between SD-WAN and Azure VWAN.
 
@@ -31,15 +31,15 @@ Broadly, the deployment guide covers how to:
 
     *  Configure HA on SD-WAN Expected
 
-## Use cases
+## Use-cases
 
 This document focuses on achieving three use-cases designed to meet an organization’s typical requirements.
 
-**Use case # 1:** Securely connect to resources deployed in a single Azure region from globally distributed branches.
+**Use Case # 1:** Securely connect to resources deployed in a single Azure region from globally distributed branches.
 
-**Use case # 2:** On-premises infrastructure securely connecting to resources deployed in different Azure regions.
+**Use Case # 2:** On-premises infrastructure securely connecting to resources deployed in different Azure regions.
 
-**Use case # 3:** Globally distributed branch locations communicating with each other over the Azure backbone.
+**Use Case # 3:** Globally distributed branch locations communicating with each other over the Azure backbone.
 
 ## Azure Virtual WAN: Overview
 
