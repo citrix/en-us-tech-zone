@@ -13,11 +13,15 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 [Citrix Desktop-as-a-Service (DaaS)](/en-us/tech-zone/learn/tech-insights/citrix-daas.html) - Learn how Citrix Desktop-as-a-Service (DaaS) offerings enable customers to deploy workloads in the cloud within minutes.
 
+[Citrix Value Adds to Azure Virtual Desktop](/en-us/tech-zone/learn/tech-insights/azure-virtual-desktop-value-add.html) - Learn about how Citrix provides key capabilities to increase flexibility, agility, security, and more to Azure Virtual Desktop, while also driving down costs.
+
 [Federated Authentication Service](/en-us/tech-zone/learn/tech-insights/federated-authentication-service.html) - Single Sign-on to Windows-based virtual apps and desktops when using a non-Active Directory based Citrix Workspace identity.
 
 [HDX](/en-us/tech-zone/learn/tech-insights/hdx.html) - A set of technologies ensuring an unparalleled user experience when accessing virtual Windows/Linux applications and desktops.
 
 [Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+
+[Protect contractor and temp worker access](/en-us/tech-zone/learn/tech-insights/protect-contractor-and-temp-worker-access.html) - See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
 
 [Remote PC Access](/en-us/tech-zone/learn/tech-insights/remote-pc-access.html) - Remote PC Access allows users to access their physical, office-based Windows PC from remote locations.
 
@@ -94,6 +98,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 [Virtual Apps and Desktops Service - Azure](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-azure.html) - Learn the detailed architecture and deployment model of Citrix Virtual Apps and Desktops on Microsoft Azure with five key architectural principles.
 
 [Workspace Environment Management service](/en-us/tech-zone/design/reference-architectures/citrix-workspace-environment-management-service.html) - Learn about the architecture and deployment considerations for this cloud-based service of Workspace Environment Management.
+
+[Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
 
 ## Design - Design Decisions
 

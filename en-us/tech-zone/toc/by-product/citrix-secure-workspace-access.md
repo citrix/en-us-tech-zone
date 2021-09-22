@@ -11,6 +11,8 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 [Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
 
+[Protect contractor and temp worker access](/en-us/tech-zone/learn/tech-insights/protect-contractor-and-temp-worker-access.html) - See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+
 [Secure Workspace Access for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
 
 [Secure Workspace Access for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
@@ -48,3 +50,5 @@ Reference architectures are comprehensive guides that assist organizations in pl
 [Reference Architecture - Protect apps and data on bring-your-own devices](/en-us/tech-zone/design/reference-architectures/protect-apps-and-data-on-byo-devices.html) - Learn how to design an environment to support bring-your-own-devices without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
 
 [Secure Workspace Access](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Secure Workspace Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization's apps and data.
+
+[Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.

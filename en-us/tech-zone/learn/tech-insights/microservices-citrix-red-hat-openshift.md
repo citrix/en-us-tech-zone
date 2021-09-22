@@ -7,7 +7,7 @@ contributedBy: Matt Brooks; Priyanka Sharma
 specialThanksTo: Dhiraj N Gedam
 description: See how Microservices-Based Application Delivery with Citrix and Red Hat OpenShift can provide reliable, and scalable delivery of Microservices.
 ---
-# Tech Insight: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift overview
+# Tech Insight: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift - Reference Architecture overview
 
 Cloud-Native applications are developed to take advantage of the distributed and scalable nature of the cloud. It includes many benefits around Enterprise productivity, operational efficiency, and user experience. Red Hat OpenShift is an enterprise Kubernetes container platform that helps companies deploy, operate, and secure microservice applications across these environments. Citrix provides flexible topologies for traffic management in these environments, depending on requirements, including Full Mesh, ServiceMesh Lite, Single-Tier, and Dual-Tier.
 
