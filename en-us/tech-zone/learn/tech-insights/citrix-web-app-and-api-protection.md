@@ -9,7 +9,7 @@ description: See how Citrix Web App and API Protection (CWAAP) service can provi
 ---
 # Tech Insight: Citrix Web App and Api Protection service overview
 
-With cyber threats rising and modern application architectures getting more complex, organizations need a more straightforward way to defend against attacks. The Citrix Web App and API Protection (CWAAP) service protects agains:
+With cyber threats rising and modern application architectures getting more complex, organizations need a more straightforward way to defend against attacks. The Citrix Web App and API Protection (CWAAP) service protects against:
 
 *  Zero-day exploits
 *  Automated internet driven BOTs
