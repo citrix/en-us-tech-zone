@@ -255,7 +255,7 @@ Find links to pertinent **Citrix** References here:
 
 *  [Best Practices for Cloud-Native Application Delivery with Citrix and Red Hat](https://www.youtube.com/watch?v=UNBtcgaIKCA)
 
- [How to accelerate your journey to microservice-based applications](https://www.youtube.com/watch?v=dnG6TXeVQUY)
+*  [How to accelerate your journey to microservice-based applications](https://www.youtube.com/watch?v=dnG6TXeVQUY)
 
 ## Appendix
 
