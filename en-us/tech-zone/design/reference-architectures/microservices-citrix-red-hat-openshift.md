@@ -7,7 +7,7 @@ description: Learn how to design an environment to support cloud-native microser
 tz_title: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift Reference Architecture
 tz_products: citrix-networking
 ---
-# Reference Architecture: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift
+# Reference Architecture: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift Reference Architecture
 
 ## Overview
 

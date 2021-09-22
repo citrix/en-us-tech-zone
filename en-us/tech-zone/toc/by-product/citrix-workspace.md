@@ -19,6 +19,8 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 [Authentication - TOTP](/en-us/tech-zone/learn/tech-insights/authentication-totp.html) - Time-based One-Time Password (TOTP) provides multifactor authentication to the user's Workspace experience.
 
+[Citrix Value Adds to Azure Virtual Desktop](/en-us/tech-zone/learn/tech-insights/azure-virtual-desktop-value-add.html) - Learn about how Citrix provides key capabilities to increase flexibility, agility, security, and more to Azure Virtual Desktop, while also driving down costs.
+
 [Microapps](/en-us/tech-zone/learn/tech-insights/microapps.html) - Increase productivity by adding microapps to Citrix Workspace. Microapps allow users to view information and perform actions without launching the full application.
 
 [Microapps Custom Integrations](/en-us/tech-zone/learn/tech-insights/microapps-custom-integrations.html) - Create custom integrations with the microapp builder through the HTTP connector.
@@ -62,6 +64,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 [Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the microapps platform service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
 
 [Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
+
+[Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
 
 ## Build - Tech Papers
 
