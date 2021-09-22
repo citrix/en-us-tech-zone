@@ -4,7 +4,7 @@ h3InToc: true
 tz_title: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift - Reference Architecture overview
 tz_products: citrix-networking;
 contributedBy: Matt Brooks; Priyanka Sharma
-specialThanksTo: 
+specialThanksTo: Dhiraj N Gedam
 description: See how Microservices-Based Application Delivery with Citrix and Red Hat OpenShift can provide reliable, and scalable delivery of Microservices.
 ---
 # Tech Insight: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift overview
@@ -13,6 +13,8 @@ Cloud-Native applications are developed to take advantage of the distributed and
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=Hp7p8vymBlw):**
 
-[![Microservices-Based Application Delivery with Citrix and Red Hat OpenShift overview](/en-us/tech-zone/learn/media/tech-insight_microservices-citrix-red-hat-openshift_overview.png)](https://www.youtube.com/watch?v=Hp7p8vymBlw)
+&nbsp;
+
+{% include video.html id="Hp7p8vymBlw" type="youtube" %}
 
 To learn more about this solution, please review the [Reference Architecture: Microservices-Based Application Delivery with Citrix and Red Hat OpenShift](/en-us/tech-zone/design/reference-architectures/microservices-citrix-red-hat-openshift.html)
