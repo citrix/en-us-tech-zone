@@ -10,9 +10,9 @@ tz_products: citrix-workspace
 
 ## Overview
 
-Citrix Workspace is a complete digital workspace solution that delivers secure access to the information, apps, and other content that is relevant to a end user's role in your organization. Users subscribe to the services you make available and can access them from anywhere, on any device. Citrix Workspace allows you to deploy applications and desktops faster and helps you organize and automate the most important details that your users need to collaborate, make better decisions, and focus on their work.
+Citrix Workspace is a complete digital workspace solution that delivers secure access to the information, apps, and other content that is relevant to an end user's role in your organization. Users subscribe to the services you make available and can access them from anywhere, on any device. Citrix Workspace allows you to deploy applications and desktops faster and helps you organize and automate the most important details that your users need to collaborate, make better decisions, and focus on their work.
 
-Citrix Workspace contains many features and functionalities to provide users access to their digital workspace.
+Citrix Workspace includes many features to provide users access to their digital workspace.
 
 ![[Citrix Workspace](/en-us/tech-zone/learn/media/tech-briefs_citrixworkspace-user-experience-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_citrixworkspace-user-experience-overview.png)
 
@@ -32,7 +32,7 @@ Citrix Workspace aggregates the [Citrix Content Collaboration Service](/en-us/ci
 
 ### Web and SaaS Aggregation
 
-Web and SaaS applications are integrated into the Citrix Workspace and can be secured by the [Secure Workspace Access Service](https://www.citrix.com/products/citrix-secure-workspace-access/).
+Web and SaaS applications are integrated into the Citrix Workspace and are secured by the [Secure Workspace Access Service](https://www.citrix.com/products/citrix-secure-workspace-access/).
 
 ### Microapp Aggregation
 
@@ -48,11 +48,11 @@ Get insights into your environment with the [Citrix Analytics Service](/en-us/ci
 
 ## User Interface
 
-Citrix Workspace provides several features centered on the user interface to allow Citrix Workspace to be agnostic to device but continue to ensure consistency across these devices.
+Citrix Workspace provides several features centered on the user interface to allow Citrix Workspace to be agnostic to a device but continue to ensure consistency across multiple devices.
 
 ### Cross-platform Client Support
 
-Leveraging the [Citrix Workspace App](/en-us/citrix-workspace-app.html), Citrix Workspace provides a unified, consistent user experience across web, desktop, and mobile devices to end users.
+Using the [Citrix Workspace App](/en-us/citrix-workspace-app.html), Citrix Workspace provides a unified and consistent user experience across web, desktop, and mobile devices to end users.
 
 ### Favorites and Recommendations
 
@@ -68,11 +68,11 @@ Displays [application categories](/en-us/citrix-virtual-apps-desktops/install-co
 
 ### Search
 
-Provides the ability to [search](/en-us/citrix-workspace/experience.html#workspace-features) the Citrix Workspace across all resources provided.
+Provide [search](/en-us/citrix-workspace/experience.html#workspace-features) abilities to the Citrix Workspace across all resources provided.
 
 ### Single-Sign on to All Resources
 
-Many resources require another form of authentication, often with an identity different from the user’s primary workspace identity. Citrix Workspace provides users with a seamless experience with [single sign-on](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) to secondary resources.
+Many resources require another form of authentication, often with an identity different from the users primary workspace identity. Citrix Workspace provides users with a seamless experience with [single sign-on](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) to secondary resources.
 
 ## Customizations
 
@@ -84,7 +84,7 @@ Citrix Admins can [customize](/en-us/citrix-workspace/configure.html#customize-t
 
 ### Policy Driven Themes (preview)
 
-Citrix Admins can [create, customize, and prioritize multiple themes](/en-us/citrix-workspace/configure.html#customize-the-appearance-of-workspaces) for the many business units of their organizations and provide each employee a more personalized workspace experience.
+Citrix Admins can [create, customize, and prioritize multiple themes](/en-us/citrix-workspace/configure.html#customize-the-appearance-of-workspaces) for the many business units of their organizations. Citrix Admins can provide each employee a more personalized workspace experience within the workspace.
 
 ### EULA for Login (preview)
 
@@ -92,15 +92,15 @@ Citrix Workspace enables Citrix Cloud admins to personalize Citrix applications 
 
 ### Resource Filtering
 
-Virual Desktops and applications can be filtered based on client properties, resource type, or keyword through Contextual Access where Citrix ADC is used as the primary identity provider.
+Virtual Desktops and applications can be filtered based on client properties, resource type, or keyword through Contextual Access where Citrix ADC is used as the primary identity provider.
 
 ## Availability and Resiliency
 
-Citrix Cloud services are designed with industry leading practices and offers several features to achieve a high degree of service availability and resiliency. Services are built to use a multi-regional global resource pool by operating in multiple regions and data centers in multiple public cloud providers across the globe.
+Citrix Cloud services are designed with industry leading practices and offer several features to achieve a high degree of service availability and resiliency. Services are built to operate in multiple regions and data centers in multiple public cloud providers across the globe.
 
 ### Offline Resilience
 
-[Service Continuity](/en-us/citrix-workspace/service-continuity.html()) removes or minimizes the dependence on the availability of components involved in the connection process. This allows users to continue to launch their virtual applications and desktops whatever the availability of the Citrix Cloud service.
+[Service Continuity](/en-us/citrix-workspace/service-continuity.html()) removes or minimizes the dependence on the availability of components involved in the connection process. This featureallows users to continue to launch their virtual applications and desktops whatever the availability of the Citrix Cloud service.
 
 ### Service Monitoring
 
@@ -130,7 +130,7 @@ Citrix administrators can publish applications, SaaS applications, and desktops 
 
 ### StoreFront to Workspace Migration (preview)
 
-The Citrix StoreFront to Workspace URL migration feature is available to customers who are currently deploy Citrix StoreFront to deliver Citrix Virtual Applications and Desktops while you transition to Citrix Workspace. Using the [Citrix Global App Configuration Service](https://developer.cloud.com/citrixworkspace/server-integration/global-app-configuration-service/docs/getting-started) for Citrix Workspace, Citrix administrators can deliver the Workspace service URLs and Workspace app settings through a centrally managed service which provides the option to configure [StoreFront URL to Workspace URL](/en-us/citrix-workspace-app-for-windows/configure.html#storefront-to-workspace-url-migration) mapping.
+The Citrix StoreFront to Workspace URL migration feature is available to customers who currently deploy Citrix StoreFront to deliver Citrix Virtual Applications and Desktops. Using the [Citrix Global App Configuration Service](https://developer.cloud.com/citrixworkspace/server-integration/global-app-configuration-service/docs/getting-started) for Citrix Workspace, Citrix administrators can deliver the Workspace service URLs and Workspace app settings through a centrally managed service which provides the option to configure [StoreFront URL to Workspace URL](/en-us/citrix-workspace-app-for-windows/configure.html#storefront-to-workspace-url-migration) mapping.
 
 ## Authentication and Access
 
@@ -148,7 +148,7 @@ Citrix Workspace supports using both [Azure Active Directory](/en-us/citrix-work
 
 ### Smart Card Authentication
 
-Citrix Workspace supports the use of Smart Cards for end user authentication. Please note that Smart Card authentication for Citrix Workspace requires a SAML configuration with an IdP that supports the requirement.
+Citrix Workspace supports the use of Smart Cards for end user authentication. Note that Smart Card authentication for Citrix Workspace requires a SAML configuration with an IdP that supports the requirement.
 
 ### Domain Pass-Through Authentication
 
@@ -156,7 +156,7 @@ When launching an application or desktop from a domain-joined Windows client, us
 
 ### Default Domain
 
-Citrix Workspace pre-populate the Windows domain within the Citrix Workspace logon form.
+Citrix Workspace pre-populates the Windows domain within the Citrix Workspace logon form.
 
 ### Two-Factor Authentication OTP
 
@@ -168,7 +168,7 @@ Citrix Workspace, on launch, can detect if users are accessing the workspace via
 
 ### On-premises Citrix ADC as the IdP
 
-Citrix Workspace can use an on-premises [Citrix Gateway](/en-us/citrix-workspace/secure.html#citrix-gateway) as an identity provider to manage user authentication to end users’ workspaces allowing for [nFactor authentication](/en-us/tech-zone/learn/tech-briefs/citrix-nfactor-mfa.html).
+Citrix Workspace can use an on-premises [Citrix Gateway](/en-us/citrix-workspace/secure.html#citrix-gateway) as an identity provider to manage user authentication to end users workspaces allowing for [nFactor authentication](/en-us/tech-zone/learn/tech-briefs/citrix-nfactor-mfa.html).
 
 ### Federated Authentication Service (FAS)
 
@@ -184,4 +184,4 @@ Citrix Workspace provides the ability for users to reset their password from the
 
 ### Contextual Access (preview)
 
-Citrix Workspace offers [contextual access](/en-us/citrix-gateway-service/contextual-access-to-web-and-saas-apps.html) via the Citrix Gateway Service to enterprise Web and SaaS applications based on the end user network location via an advanced policy infrastructure.
+Citrix Workspace offers [contextual access](/en-us/citrix-gateway-service/contextual-access-to-web-and-saas-apps.html) via the Citrix Gateway Service to enterprise Web and SaaS applications which are based on the end user network location via an advanced policy infrastructure.
