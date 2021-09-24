@@ -57,10 +57,6 @@ In many scenarios, thin client devices are perfect for high-risk environments. T
 
 For thin client terminals that run a full operating system, the use of write filters to stop the persistence of data is useful. Resetting the terminals when a reboot occurs reduces the chance of an attacker persisting data on the endpoint that can be used to formulate an attack. Make sure you are not destroying logs and other critical data, as it may be needed for later forensic analysis. Thin Client terminals have the added benefit of usually being cheaper to purchase and maintain than traditional desktops or laptops.
 
-### Content Redirection - coming as of version 2
-
-TODO Offloading BCR, Flash redirection etc... test
-
 ### Patching
 
 Patch management must be one of the foremost considerations to factor into choosing an endpoint. How does the business get security fixes applied to the endpoints? In most traditional Windows environments, machines have patches pushed to them through Windows Services Update Service (WSUS), System Center Configuration Manager (SCCM), or through other automated services. This is great if the endpoint is managed by the corporate IT teams.
@@ -218,19 +214,19 @@ Ensure HSTS is configured on all SSL VIPs. The primary goal of HTTP Strict Trans
 
 The resources that host the user session can present a higher level of risk to compromise. A user running a VDI session is as good as having a computer on their desk connected to the corporate network. Utilizing well-designed access and control layers allow the business to move towards zero-trust models; dynamically adjusting access to the resources presented to the end-user dependent upon a given set of variables. The following guidance provides higher levels of control in protecting the corporate assets from users.
 
-### Prevent Sessions Breakout - coming as of version 2
-
-TODO
-
 ### Build Hardening
 
 Hardening operating system builds can be complex and difficult to achieve. It comes with the trade-offs between user experience, usability, and security all being a fine balance. Many customers choose to follow the Center for Internet Security (CIS) baselines for hardening virtual machines in varying roles. Microsoft also provides hardening guides for similar workloads. There are even the ADMX files to implement directly into group policy. If you choose this route, proceed with caution. Be sure to test thoroughly first, as these initial policies may be overly restrictive. These baselines are a great starting point for hardening, however they are not meant to be exhaustive for all scenarios. The key to locking down is to test thoroughly and encourage third party penetration testing engagements to validate your security controls and their effectiveness against the latest attack methods.
 
 As part of hardening the system, we recommended that administrators spend some time optimizing the underlying operating systems, services, and scheduled tasks. This removes any unnecessary processes from the underlying systems. This improves the responsiveness of the session host and provides an improved user experience to the end-user. Citrix provides the optimizer tool [Citrix Optimizer](https://support.citrix.com/article/CTX224676) that optimizes many elements of the operating system automatically for administrators. The Citrix Optimizer results to adjust to ensure there is no negative impact within your environment.
 
-TODO reduce the attack surface - Coming as of Version 2
+#### Scheduled Tasks
 
-TODO Avoiding use of privileged accounts for scheduled tasks or scripts where possible
+In some instances we need to utilise scheduled tasks to perform either routine maintenance or to resolve an ongoing issue on the environment. If in the event we need to utilise scehduled tasks, there are a few recommendations that need to be considered beforehand.
+
+- **Privileged Accounts** - Where possible ensure that any scheduled tasks are configured with accounts that have just enough permissions to what they need to do. Running scheduled tasks with domain administrator credentials for example is not recommended practice.
+
+- **Alternatives** - It may be that a scheduled task is being used as a 'plaster' over a wider issue. Is there a better way than using a scheduled task to fix the problem. Ok, it may be resolving a temporary issue, but fix the route cause rather than leaving a scheduled task running. Especially when it comes to image updates, as there is a chance that if it has not been documented or fed into the build procedures. It will be missed from future updates and potentially cause more issues.
 
 ### Patching and Updates
 
@@ -279,7 +275,15 @@ Placing resources into separate silos has long been a recommended practice. Not 
 
 Workloads can be separated on different levels - hardware separation (dedicated hosts), VM separation, or even inside OS separation (for example app masking or strict NTFS rules). As part of separating users into various tiers of risk profiles, the data they access must also be treated similarly. This involves applying the correct file permissions and access rules to data.
 
-TODO workload AND data separation. Consider isolating more critical resources from higher-risk user activities like web browsing and email access. Determine if these resources have varying degrees of criticality to your business. For example, is some data more sensitive than others or does it have higher confidentiality requirements? Minimize open firewall ports or disable routing entirely between network zones of different security levels.
+#### Micro Segmentation
+
+A concept that has now become more prominent as the move to Cloud hosted infrastructure and zero trust architectures are deployed. If an attacker were to be succesful in gaining access to resources, ideally we would want to limit the damage they could potentially cause. Whether this be malicous damage or data leakage.
+
+Therefore, workload and data seperation is a good practice to follow. This will involve some input from Business Analysts (BA) to help highlight key assets and data across the network. Ideally then, each portion of data can be categorised as high, medium or low impact to the business should the data be accessed.
+
+Depending on the impact to the business, each data segment can be treat in a different manner and seperated from one another. For example, a user browsing the internet can be high risk especially if they have the ability to download software, document and save them in their session. Therefore, we would want to consider isolating more critical resources from higher-risk user activities like web browsing and email access from data such as Personally Identifiable Information (PII) or even Personal Health Information (PHI).
+
+This would be carried out by seperating workloads being firewalls and controlling what applications and protocols can traverse those network segments. Workloads in 'high risk' areas may be locked down much more than 'standard' user access machines. The key here is implementing the necessary security controls based on user and data segmentation.
 
 ### Session Recording
 
@@ -295,10 +299,6 @@ Learn more about session watermarking [in product documentation](/en-us/citrix-v
 
 A more contentious topic than Concurrent Usage has been the use of multi-session hosts vs single user VDI sessions. Having multiple users log on to a single server can cause issues, especially if a disgruntled user can run software or code to harvest other credentials or access other user data. Running a solid virtual desktop infrastructure does come at an extra cost and these trade-offs need to be considered. Threat modeling users and selecting the most efficient delivery mechanism in terms of a multiuser session host or single user session host is the ideal path. One size does not fit all. Users and carrying out user profiling in understanding these requirements and then selecting the best delivery method of workloads for the user groups.
 
-### Protect User Credentials
-
-TODO - coming as of version 2; market announcements from MS may evolve this section. 
-
 ### Virtualization-based Security
 
 Virtualization-based security (VBS) uses a secure portion of memory to store secure assets from the session. This feature requires a Trusted Platform Module (TPM) or Virtual Trusted Platform Module (vTPM) running on a supported platform to provide secure integration. This means that even if somehow malware is successfully deployed into the kernel, the user stored secret data remains protected. Any code that can run in the secured environment is required to be signed by Microsoft, providing an extra layer of control. Microsoft VBS can be enabled in both the Windows Desktop and Server operating systems. Microsoft VBS is built up from a suite of technologies that include credential guard and application guard. You can find [more information about virtualization-based security here](https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-vbs).
@@ -309,12 +309,23 @@ The control tier is the layer of the solution that allows administrators to mana
 
 ### Ensure Availability
 
-TODO Consider separating key components (Delivery Controller, SQL Server, StoreFront, Federated Authentication Service, etc.) into individual virtual machines.
-TODO N + 1
+When deploying any solution, components must be deployed in an highly available manner. Having services that are suffering constant outages due to single points of failure is poor practice. Therefore, using the N+1 approach to capacity ensures that there is enough resource available during logon and log off storms. But there is an acceptable level of component loss to retain the 'good' user experience. Now, most customers follow N+1 in terms of planning the amount of resources that need to be available, however; depending on the tolerable level of risk, this may be N+2.
+
+Additionally to ensuring there are enough resources available to handle user load, components should be seperated off onto dedicated virtual machines. It is bad practice to run shared components on virtual machines, not only from a perfomance perspective, but aso security. Key components from a Citrix perspective are as follows, but not limited to:
+
+- StoreFront
+- Delivery Controllers
+- SQL Server
+- Federated Authentication Service
+- Director
+- License Server
+- Cloud Connectors
 
 ### Encrypt Data Flows
 
-TODO - needs to be completed
+As businesses move to a 'Zero Trust' approach to services across their environments, it is more crucial than ever to ensure that all communications between components are secured, and even authenticated where possible. This reduces the changes of attackers being able to read confidential information whilst it is 'inflight' across the network. From a Citrix perspective, this essentially involves binding a certificate to the relevant services from either a private or public Public Key Infrastructure (PKI).
+
+**High-Security Recommendation** - In high-security deployments, the standards set out may suggest that Federal Information Processing Standards (FIPS) may need to be ahered to. This will involve additional changes to virtualised components, and when considering components such as Citrix ADC. This will involve accredited hardware appliances. [Citrix Trust Center](https://www.citrix.com/en-gb/about/trust-center/fips.html)
 
 ### Build Hardening
 
@@ -324,9 +335,9 @@ As discussed in the **Resource Layer** section, it is highly recommended to hard
 
 Some elements of a Citrix solution require the use of service accounts. Service accounts allow for automated functions to progress with some level of authentication and authorization. A service account must only be allowed to carry out the task that is required and must not have any elevated access on the network. Service accounts must be created for each automated function. This inherently narrows down the authorization elements and ensures that no privilege creep occurs within the service. We recommend ensuring service account passwords are reset at least yearly or more frequently based on your compliance requirements. These accounts and or groups must also be in Protected User groups within the Active Directory for extra protection and logging.
 
-TODO Deny interactive logon rights for service accounts where possible.
+To further harden service accounts, it is also recommneded to deny interactive logon rights to such accounts where possible to ensure that the account cannot be re-used to logon to a network device in the event of the password becoming compromised.
 
-TODO Periodically audit account permissions.
+Additional to ensuing the account cannot logon interactively, with any account on the network be it a user account, administrator account or in this case a service accounts. Accounts should be periodically auditted and their permissions verified to ensure that the account is still required, and also there has been no additional 'privilege creep' across the network. Privilege Creeping is when overtime, additional permissions may be assigned to accounts and never retracted. This may initially be for troubleshooting a potential issue, but the account permissions never get reviewed and the concept of least privilege adhered to.
 
 ### Least Privilege
 
