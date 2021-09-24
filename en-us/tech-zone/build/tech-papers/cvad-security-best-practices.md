@@ -9,7 +9,7 @@ tz_products: citrix-virtual-apps-and-desktops
 ---
 # Content Type : tz_title
 
-*Disclaimer: This information is provided on an "AS IS" basis without warranty of any kind, for information purposes only, and is subject to change at any time at Citrix's sole discretion.* test upate
+*Disclaimer: This information is provided on an "AS IS" basis without warranty of any kind, for information purposes only, and is subject to change at any time at Citrix's sole discretion.*
 
 ## Introduction
 
@@ -57,7 +57,7 @@ In many scenarios, thin client devices are perfect for high-risk environments. T
 
 For thin client terminals that run a full operating system, the use of write filters to stop the persistence of data is useful. Resetting the terminals when a reboot occurs reduces the chance of an attacker persisting data on the endpoint that can be used to formulate an attack. Make sure you are not destroying logs and other critical data, as it may be needed for later forensic analysis. Thin Client terminals have the added benefit of usually being cheaper to purchase and maintain than traditional desktops or laptops.
 
-### Content Redirection
+### Content Redirection - coming as of version 2
 
 TODO Offloading BCR, Flash redirection etc... test
 
@@ -218,7 +218,7 @@ Ensure HSTS is configured on all SSL VIPs. The primary goal of HTTP Strict Trans
 
 The resources that host the user session can present a higher level of risk to compromise. A user running a VDI session is as good as having a computer on their desk connected to the corporate network. Utilizing well-designed access and control layers allow the business to move towards zero-trust models; dynamically adjusting access to the resources presented to the end-user dependent upon a given set of variables. The following guidance provides higher levels of control in protecting the corporate assets from users.
 
-### Prevent Sessions Breakout
+### Prevent Sessions Breakout - coming as of version 2
 
 TODO
 
@@ -228,7 +228,7 @@ Hardening operating system builds can be complex and difficult to achieve. It co
 
 As part of hardening the system, we recommended that administrators spend some time optimizing the underlying operating systems, services, and scheduled tasks. This removes any unnecessary processes from the underlying systems. This improves the responsiveness of the session host and provides an improved user experience to the end-user. Citrix provides the optimizer tool [Citrix Optimizer](https://support.citrix.com/article/CTX224676) that optimizes many elements of the operating system automatically for administrators. The Citrix Optimizer results to adjust to ensure there is no negative impact within your environment.
 
-TODO reduce the attack surface
+TODO reduce the attack surface - Coming as of Version 2
 
 TODO Avoiding use of privileged accounts for scheduled tasks or scripts where possible
 
@@ -297,7 +297,7 @@ A more contentious topic than Concurrent Usage has been the use of multi-session
 
 ### Protect User Credentials
 
-TODO
+TODO - coming as of version 2; market announcements from MS may evolve this section. 
 
 ### Virtualization-based Security
 
@@ -314,7 +314,7 @@ TODO N + 1
 
 ### Encrypt Data Flows
 
-TODO
+TODO - needs to be completed
 
 ### Build Hardening
 
