@@ -14,13 +14,13 @@ Citrix Workspace is a complete digital workspace solution that delivers secure a
 
 Citrix Workspace includes many features to provide users access to their digital workspace.
 
-![[Citrix Workspace](/en-us/tech-zone/learn/media/tech-briefs_citrixworkspace-user-experience-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_citrixworkspace-user-experience-overview.png)
+![[Citrix Workspace](/en-us/tech-zone/learn/media/tech-briefs_citrixworkspace-user-experience-overview.png)](/en-us/tech-zone/learn/media/tech-briefs_citrixworkspace-user-experience-overview_001.png)
 
 ## Resource Aggregation
 
 Citrix Workspace integrates Citrix Cloud Services that enables users to access all the desktops, applications, and content available to them. Citrix Workspace provides access from multiple resource or content locations to users from anywhere on any device.
 
-![[Citrix Workspace](/en-us/tech-zone/learn/media/tech-briefs_citrixworkspace-workspaces-unified-resource-feed.png)](/en-us/tech-zone/learn/media/tech-briefs_citrixworkspace-workspaces-unified-resource-feed.png)
+![[Citrix Workspace](/en-us/tech-zone/learn/media/tech-briefs_citrixworkspace-workspaces-unified-resource-feed.png)](/en-us/tech-zone/learn/media/tech-briefs_citrixworkspace-workspaces-unified-resource-feed_001.png)
 
 ### Virtual Applications and Desktops Aggregation
 
