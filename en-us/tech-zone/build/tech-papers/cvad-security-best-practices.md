@@ -9,7 +9,7 @@ tz_products: citrix-virtual-apps-and-desktops
 ---
 # Content Type : tz_title
 
-*Disclaimer: This information is provided on an "AS IS" basis without warranty of any kind, for information purposes only, and is subject to change at any time at Citrix's sole discretion.*
+*Disclaimer: This information is provided on an "AS IS" basis without warranty of any kind, for information purposes only, and is subject to change at any time at Citrix's sole discretion.* test upate
 
 ## Introduction
 
