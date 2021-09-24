@@ -312,13 +312,13 @@ When deploying any solution, components must be deployed in an highly available 
 
 Additionally to ensuring there are enough resources available to handle user load, components should be seperated off onto dedicated virtual machines. It is bad practice to run shared components on virtual machines, not only from a perfomance perspective, but aso security. Key components from a Citrix perspective are as follows, but not limited to:
 
-*  StoreFront
-*  Delivery Controllers
-*  SQL Server
-*  Federated Authentication Service
-*  Director
-*  License Server
-*  Cloud Connectors
+-  StoreFront
+-  Delivery Controllers
+-  SQL Server
+-  Federated Authentication Service
+-  Director
+-  License Server
+-  Cloud Connectors
 
 ### Encrypt Data Flows
 
