@@ -223,9 +223,9 @@ As part of hardening the system, we recommended that administrators spend some t
 
 In some instances we need to utilise scheduled tasks to perform either routine maintenance or to resolve an ongoing issue on the environment. If in the event we need to utilise scehduled tasks, there are a few recommendations that need to be considered beforehand.
 
-- **Privileged Accounts** - Where possible ensure that any scheduled tasks are configured with accounts that have just enough permissions to what they need to do. Running scheduled tasks with domain administrator credentials for example is not recommended practice.
+**Privileged Accounts** - Where possible ensure that any scheduled tasks are configured with accounts that have just enough permissions to what they need to do. Running scheduled tasks with domain administrator credentials for example is not recommended practice.
 
-- **Alternatives** - It may be that a scheduled task is being used as a 'plaster' over a wider issue. Is there a better way than using a scheduled task to fix the problem. Ok, it may be resolving a temporary issue, but fix the route cause rather than leaving a scheduled task running. Especially when it comes to image updates, as there is a chance that if it has not been documented or fed into the build procedures. It will be missed from future updates and potentially cause more issues.
+**Alternatives** - It may be that a scheduled task is being used as a 'plaster' over a wider issue. Is there a better way than using a scheduled task to fix the problem. Ok, it may be resolving a temporary issue, but fix the route cause rather than leaving a scheduled task running. Especially when it comes to image updates, as there is a chance that if it has not been documented or fed into the build procedures. It will be missed from future updates and potentially cause more issues.
 
 ### Patching and Updates
 
@@ -312,13 +312,13 @@ When deploying any solution, components must be deployed in an highly available 
 
 Additionally to ensuring there are enough resources available to handle user load, components should be seperated off onto dedicated virtual machines. It is bad practice to run shared components on virtual machines, not only from a perfomance perspective, but aso security. Key components from a Citrix perspective are as follows, but not limited to:
 
-- StoreFront
-- Delivery Controllers
-- SQL Server
-- Federated Authentication Service
-- Director
-- License Server
-- Cloud Connectors
+*  StoreFront
+*  Delivery Controllers
+*  SQL Server
+*  Federated Authentication Service
+*  Director
+*  License Server
+*  Cloud Connectors
 
 ### Encrypt Data Flows
 
