@@ -19,8 +19,7 @@ This tech paper shares recommendations and resources to help you establish a sec
 
 This tech paper uses the traditional layered methodology developed by Citrix professional services:
 
-![Layered Approach](/en-us/tech-zone/build/media/tech-papers_cvad-security-best-practices_001.png)
-_Citrix Consulting Layered Approach_
+[![Layered Approach](/en-us/tech-zone/build/media/tech-papers_cvad-security-best-practices_001.png)](/en-us/tech-zone/build/media/tech-papers_cvad-security-best-practices_001.png)
 
 In the Citrix layered model, security does not have its own layer. That's because any security process or security functionality is intertwined with all of the layers. It's crucial that security is covered throughout an infrastructure, including the processes surrounding it.
 
