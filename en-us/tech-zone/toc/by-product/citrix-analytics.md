@@ -33,6 +33,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Citrix Analytics](/en-us/tech-zone/design/reference-architectures/citrix-analytics.html) - Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
 
+[DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Workspace Access, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
+
 [Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
 [Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.

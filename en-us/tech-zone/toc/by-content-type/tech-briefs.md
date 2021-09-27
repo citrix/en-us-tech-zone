@@ -66,6 +66,8 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 ## Citrix Workspace
 
+[Citrix Workspace](/en-us/tech-zone/learn/tech-briefs/citrix-workspace.html) - End users should be able to work where, when, and how they want. Citrix Workspace has everything you need to keep people productive and data secure.
+
 [Workspace app](/en-us/tech-zone/learn/tech-briefs/workspace-app.html) - Personalized interface that provides access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
 
 [Workspace Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) - Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.

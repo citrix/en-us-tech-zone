@@ -91,9 +91,11 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Application Delivery Management](/en-us/tech-zone/design/reference-architectures/citrix-adm.html) - See how the Citrix Application Delivery Management software is deployed to simplify management and monitoring of your application delivery infrastructure.
 
+[DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Workspace Access, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
+
 [Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
-[Microservices-Based Application Delivery with Citrix and Red Hat OpenShift Reference Architecture](/en-us/tech-zone/design/reference-architectures/microservices-citrix-red-hat-openshift.html) - Learn how to design an environment to support cloud-native microservices with Citrix and Redhat Openshift
+[Microservices-Based Application Delivery with Citrix and Red Hat OpenShift](/en-us/tech-zone/design/reference-architectures/microservices-citrix-red-hat-openshift.html) - Learn how to design an environment to support cloud-native microservices with Citrix and Redhat Openshift
 
 [SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan.html) - Learn about the framework, design, and architecture for Citrix SD-WAN with SD-WAN Orchestrator for single region deployment.
 

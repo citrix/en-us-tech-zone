@@ -7,7 +7,7 @@ description: Learn how to design an environment that uses Desktop-as-a-Service a
 tz_title: DaaS for Contact Centers Reference Architectures
 tz_products: citrix-analytics;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops;citrix-workspace
 ---
-# Reference Architecture: DaaS for Contact Centers
+# Reference Architecture: DaaS for Contact Centers Reference Architectures
 
 ## Overview
 
