@@ -39,6 +39,8 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
 
+[Citrix Workspace](/en-us/tech-zone/learn/tech-briefs/citrix-workspace.html) - End users should be able to work where, when, and how they want. Citrix Workspace has everything you need to keep people productive and data secure.
+
 [Workspace app](/en-us/tech-zone/learn/tech-briefs/workspace-app.html) - Personalized interface that provides access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
 
 [Workspace Identity](/en-us/tech-zone/learn/tech-briefs/workspace-identity.html) - Learn how Citrix Workspace utilizes a secure primary identity to broker authorization to SaaS, web, mobile and virtual apps.
@@ -54,6 +56,8 @@ Tech Briefs are short overview documents explaining a technology, a feature, a f
 ## Design - Reference Architectures
 
 Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.
+
+[DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Workspace Access, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
 
 [Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
