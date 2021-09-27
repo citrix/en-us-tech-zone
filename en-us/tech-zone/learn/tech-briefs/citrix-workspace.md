@@ -32,7 +32,7 @@ Citrix Workspace aggregates the [Citrix Content Collaboration Service](/en-us/ci
 
 ### Web and SaaS Aggregation
 
-Web and SaaS applications are integrated into the Citrix Workspace and are secured by the [Secure Workspace Access Service](https://www.citrix.com/products/citrix-secure-workspace-access/).
+Web and SaaS applications are integrated into the Citrix Workspace and are secured by the [Secure Workspace Access Service](/en-us/citrix-secure-workspace-access.html).
 
 ### Microapp Aggregation
 
@@ -100,7 +100,7 @@ Citrix Cloud services are designed with industry leading practices and offer sev
 
 ### Offline Resilience
 
-[Service Continuity](/en-us/citrix-workspace/service-continuity.html()) removes or minimizes the dependence on the availability of components involved in the connection process. This featureallows users to continue to launch their virtual applications and desktops whatever the availability of the Citrix Cloud service.
+[Service Continuity](/en-us/citrix-workspace/service-continuity.html) removes or minimizes the dependence on the availability of components involved in the connection process. This featureallows users to continue to launch their virtual applications and desktops whatever the availability of the Citrix Cloud service.
 
 ### Service Monitoring
 
