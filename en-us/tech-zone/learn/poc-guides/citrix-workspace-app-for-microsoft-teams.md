@@ -54,7 +54,7 @@ If you're new to Citrix Cloud and need to create a Citrix Cloud account:
 
 1.  Log into [Citrix Cloud](https://citrix.cloud.com) with your Citrix Cloud username and password
 2.  Once authenticated to Citrix Cloud, find the Content Collaboration service tile, select the drop-down list, and click Request Trial.
-![Citrix Cloud](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_CC_services.png)
+![Citrix Cloud](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_cc_services.png)
 3.  In the GEO Location section, select the service region you want to use. Acknowledge that the location cannot be changed after requesting the trial.
 4.  In the Select a subdomain section, enter the unique subdomain you want to use.
 5.  Click Request Trial. Citrix Cloud sends you an email after your Content Collaboration account is created.
@@ -68,9 +68,9 @@ Employee accounts need to be created to allow users to share cloud hosted files 
 2.  Type the user name, email address, and company info. You can also customize their password.
 3.  You can customize the new employee User Access and File settings. Depending on your account or plan and your own permissions, certain permissions might not be visible or applicable.
 
-![Citrix ShareFile](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_ShareFile_User_Access.png)
+![Citrix ShareFile](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_sharefile_user_access.png)
 4. Assign folders to your user and add the user to Distribution Groups. You can also customize the user’s permissions to various folders on your account. To grant a user access to a folder, choose the check box beside the folder name.
-![Citrix ShareFile](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_ShareFile_Assign_Users_Folder.png)
+![Citrix ShareFile](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_sharefile_assign_users_folder.png)
 5. Send a Welcome Email to your new user or opt to do so later. This email includes a link to activate their new account.
 
 ### Add Files to Citrix ShareFile
@@ -78,15 +78,15 @@ Employee accounts need to be created to allow users to share cloud hosted files 
 1.  Open the URL of your ShareFile account in the form of subdomain.sharefile.com
 2.  Navigate to your Personal Folder, access the blue circular Action button, and choose Upload.
 
-![Citrix ShareFile](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_ShareFile_File_Upload.png)
+![Citrix ShareFile](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_sharefile_file_upload.png)
 
 ### Add the Citrix Workspace App to Microsoft Teams
 
 1.  Open your Microsoft Teams desktop client or sign-in via [Microsoft Teams](https://teams.microsoft.com)
 2.  Once Microsoft Teams has opened, click the Apps icon.
-![Microsoft Teams](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_MSTeams_Add_App.png)
+![Microsoft Teams](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_msteams_add_app.png)
 3.  Search for “Citrix Workspace” and click Add.
-![Microsoft Teams](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_msteams_Search_Workspace.png)
+![Microsoft Teams](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_msteams_search_workspace.png)
 4.  Click Sign in and Authenticate with your Citrix ShareFile.credentials.
 ![Microsoft Teams](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_msteams_authenticate.png)
 5.  Enter your ShareFile Company (subdomain) name.
