@@ -652,7 +652,7 @@ To gain an understanding of the workloads, the solution architect has to do pre-
 
 Pre-assessment is useful to determine the specific applications required for the users, the licensing requirement, and calculate the cost associated with the deployment. Citrix provides the CVAD Standard cost calculator to understand cost estimation for the deployment. Actual prices may vary depending upon other factors including date of purchase, type of agreement with Citrix, and so on.
 
-CVAD Standard Cost Calculator [link](https://costcalculator.apps.cloud.com/daas/advanced).
+Calculate your total DaaS costs with the [CVAD Standard for Azure Cost Calculator](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/resources/citrix-azure-calculator.html).
 
 ### Deployment considerations and image optimization
 
