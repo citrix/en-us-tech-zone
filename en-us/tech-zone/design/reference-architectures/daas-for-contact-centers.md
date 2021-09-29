@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Ana Ruiz
 specialThanksTo: Dan Feller, Manjunatha Gali, Shashidhar Reddy, John Panagulias
-description: Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Workspace Access, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
+description: Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
 tz_title: DaaS for Contact Centers Reference Architectures
 tz_products: citrix-analytics;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops;citrix-workspace
 ---
@@ -28,7 +28,7 @@ Company A has defined a list of success criteria that formed the basis for the o
 | Seamless experience                                      | To reduce user disruption, end users have a similar look and feel                                 | Citrix Workspace                                                        |
 | Easy onboarding                                          | New agents must be able to onboard quickly and efficiently without requiring third party assistance | Citrix Workspace + Google Chromebooks                                   |
 | Flexibility of remote work                               | Work from anywhere, anytime, and on any device                                                    | Citrix Workspace                                                        |
-| Single sign-on                                           | Secure access to all apps (Windows, SaaS, and Web apps) without reauthentication                  | Citrix Secure Workspace Access Citrix Virtual Apps and Desktops service |
+| Single sign-on                                           | Secure access to all apps (Windows, SaaS, and Web apps) without reauthentication                  | Citrix Virtual Apps and Desktops service |
 | Contact Center apps, peripherals, and endpoints supported | Support for the needed contact center applications, endpoints, and peripherals                    | Chromebooks                                                             |
 | Optimized end-user experience                            | Equal or better user experience on virtual apps than they do on local apps                        | HDX                                                                     |
 
@@ -41,7 +41,7 @@ Company A has defined a list of success criteria that formed the basis for the o
 | Network resiliency                  | Ensure network resiliency and call quality even while connecting from a home network | Citrix SD-WAN                                                    |
 | Network Optimization                | Intelligently optimize and prioritize web traffic                                    | Citrix SD-WAN                                                    |
 | Reduce on-premises footprint        | Reduce on-going costs to maintain on-prem environments                               | Citrix Cloud services                                            |
-| Zero Trust Network Access           | Remove VPN dependencies to allow agents to work remotely                             | Secure Workspace Access Citrix Virtual Apps and Desktops service |
+| Zero Trust Network Access           | Remove VPN dependencies to allow agents to work remotely                             | Citrix Virtual Apps and Desktops service |
 | Protect from insider threats        | Protect customers information from zero-day attacks and malicious insiders           | Citrix Analytics for Security                                    |
 | Surge protection                    | Scale quickly and efficiently when surges occur                                      | Citrix Cloud services Autoscale                                  |
 | Managed endpoints                   | Be able to manage the endpoints given to the agents                                  | Citrix Endpoint Management                                       |
@@ -164,8 +164,8 @@ The [Workspace Single Sign-On Tech Brief](/en-us/tech-zone/learn/tech-briefs/wor
 ### Resource Access
 
 CompanyA needs to consider how agents can access internal resources. Internal, corporate resources must be protected from untrusted and unsecured locations. To help prevent malware intrusion, devices are not allowed direct access to the internal network.
-To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Secure Workspace Access service and the Virtual Apps and Desktops service. These two services use a zero-trust network access solution, which is a more secure alternative to traditional VPNs.
-The Secure Workspace Service and the Virtual Apps and Desktops Service both use the outbound control channel connections established by the cloud connectors. Those connections allow the user to remotely access internal resources. However, those connections are
+To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Virtual Apps and Desktops service. These two services use a zero-trust network access solution, which is a more secure alternative to traditional VPNs.
+The Virtual Apps and Desktops Service use the outbound control channel connections established by the cloud connectors. Those connections allow the user to remotely access internal resources. However, those connections are
 
 -  Limited in scope so that only the defined resource is accessible
 -  Based on the user's primary, secured identity
@@ -205,12 +205,6 @@ To accommodate more users, CompanyA also enabled load-based scaling with the fol
 | Weekend  | 20%                    | 5%                         |
 
 More information about Autoscale can be found [here](/en-us/tech-zone/learn/tech-briefs/autoscale.html).
-
-### Secure Workspace Access
-
-Secure Workspace Access is a cloud-based offering that provides secure and contextual VPN-less access with single-sign one to SaaS and web applications. CompanyA has decided to deploy Secure Workspace Access to unify access to all applications and simplify end user authentication while still enforcing security.
-
-More information on Secure Workspace Access can be found [here](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html).
 
 ### Secure Internet Access
 
