@@ -7,7 +7,7 @@ description: Tech paper focused on security recommendations and security practic
 tz_title: Security best practices for Citrix Virtual Apps and Desktops
 tz_products: citrix-virtual-apps-and-desktops
 ---
-# Content Type : tz_title
+# Tech Paper: Security best practices for Citrix Virtual Apps and Desktops
 
 *Disclaimer: This information is provided on an "AS IS" basis without warranty of any kind. It is for information purposes only, and is subject to change at any time at Citrix's sole discretion.*
 
