@@ -154,3 +154,5 @@ Deployment guides provide step-by-step instruction on how to perform key tasks a
 Tech papers are deep dives into specific problem, technology or solution providing details, leading practices and architectural insights.
 
 [Deploying Google Chrome](/en-us/tech-zone/build/tech-papers/google-chrome.html) - Tech Paper focused on installation, configuration, and various optimizations for Google Chrome browser running on Citrix Virtual Apps and Desktops.
+
+[Security best practices for Citrix Virtual Apps and Desktops](/en-us/tech-zone/build/tech-papers/cvad-security-best-practices.html) - Tech paper focused on security recommendations and security practices for administrators.  Use this guide to navigate security planning, implementation, and ongoing operation.
