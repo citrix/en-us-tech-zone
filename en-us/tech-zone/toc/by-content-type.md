@@ -551,6 +551,8 @@ Tech papers are deep dives into specific problem, technology or solution providi
 
 [Deploying Google Chrome](/en-us/tech-zone/build/tech-papers/google-chrome.html) - Tech Paper focused on installation, configuration, and various optimizations for Google Chrome browser running on Citrix Virtual Apps and Desktops.
 
+[Security best practices for Citrix Virtual Apps and Desktops](/en-us/tech-zone/build/tech-papers/cvad-security-best-practices.html) - Tech paper focused on security recommendations and security practices for administrators.  Use this guide to navigate security planning, implementation, and ongoing operation.
+
 ### Citrix Workspace
 
 [Citrix Workspace app quick start guide](/en-us/tech-zone/build/tech-papers/citrix-workspace-app.html) - Quick start guide for Citrix Workspace app - everything you need to know in one place, including installation, configuration, and optimizations.
