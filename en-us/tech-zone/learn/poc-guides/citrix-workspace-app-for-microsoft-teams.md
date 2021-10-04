@@ -101,7 +101,9 @@ For the Citrix Workspace App for Microsoft Teams, employee accounts will be crea
 ![Microsoft Teams](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_msteams_threedots.png)
 
 8.  Select Citrix Workspace or type Citrix Workspace to find the Workspace for Teams app.
+
 ![Microsoft Teams](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_msteams_workspaceapp_select.png)
+
 9.  Right-click the Citrix Workspace for Teams app and select Pin.
 ![Microsoft Teams](/en-us/tech-zone/learn/media/poc-guides_workspace-app-for-teams_msteams_pin.png)
 
