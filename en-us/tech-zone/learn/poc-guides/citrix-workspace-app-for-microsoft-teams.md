@@ -48,7 +48,7 @@ In this Proof of Concept guide you will enable the Citrix Workspace App for Micr
 If you're an existing Citrix Cloud customer, skip to the next section: Obtain a Citrix Content Collaboration Service Trial. Ensure that you have an active Citrix Cloud account. If your account has expired, contact your account manager to enable it.
 
 If you're new to Citrix Cloud and need to create a Citrix Cloud account:
-• Visit the [Sign Up for Citrix Cloud]((https://docs.citrix.com/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html#step-1-visit-the-sign-up-page)) page for step-by-step instructions of creating your Citrix Cloud account.
+• Visit the [Sign Up for Citrix Cloud]((/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html#step-1-visit-the-sign-up-page)) page for step-by-step instructions of creating your Citrix Cloud account.
 
 ### Create Citrix Content Collaboration Service Trial
 
