@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
 specialThanksTo: Brian Olsen
-description: Learn how to design an environment to support a mergers and acquisition strategy without compromising IT security. The reference architecture incorporates Citrix Workspace, Secure Workspace Access, Virtual Apps and Desktops, Application Delivery Controller, Federated Authentication Service and Security Analytics.
+description: Learn how to design an environment to support a mergers and acquisition strategy without compromising IT security. The reference architecture incorporates Citrix Workspace, Secure Private Access, Virtual Apps and Desktops, Application Delivery Controller, Federated Authentication Service and Security Analytics.
 tz_title: Mergers and Acquisitions
 tz_products: citrix-workspace;
 ---
@@ -28,7 +28,7 @@ The first aspect of a mergers and acquisitions solution is to meet the needs of 
 | **Success Criteria** | **Description** | **Solution**
 ---|---|---|
 |**Application Library**|Users from CompanyA and CompanyB need a centralized way to access resources from the other company.|Citrix Workspace|
-|**Web App Single Sign-On**|When accessing private web resources from the other company, users are not  required to remember and enter another user accounts or passwords.|Citrix Secure Workspace Access service|
+|**Web App Single Sign-On**|When accessing private web resources from the other company, users are not  required to remember and enter another user accounts or passwords.|Citrix Secure Private Access service|
 |**Virtual App Single Sign-On**|When accessing virtual Windows apps from the other company, users are not  required to remember and enter another user accounts or passwords.|Citrix Virtual Apps and Desktops service – Federated Authentications Service|
 |**Unified Experience**|Regardless of the user’s original company, all users have the same authentication experience.|Citrix Application Delivery Controller – nFactor authentication policies|
 
@@ -40,7 +40,7 @@ The second aspect of a mergers and acquisitions solution is to meet the security
 ---|---|---|
 |**Identity Providers**|Each acquired organization maintains a separate identity provider until such a time when it can be integrated with CompanyA’s primary identity provider.|Citrix Application Delivery Controller|
 |**Multifactor authentication**|With security being top of mind, MFA is required to ensure another layer of authentication protection of corporate resources.|Integrate currently deployed solution or require Time-Based One-Time Password with Push|
-|**VPN-less Access**|Corporate resources must be protected from untrusted and unsecured locations. To help prevent malware intrusion, devices are not be allowed direct access to the internal network. |Citrix Secure Workspace Access aervice and Citrix Virtual Apps and Desktops service|
+|**VPN-less Access**|Corporate resources must be protected from untrusted and unsecured locations. To help prevent malware intrusion, devices are not be allowed direct access to the internal network. |Citrix Secure Private Access aervice and Citrix Virtual Apps and Desktops service|
 |**Internal Threats**|There are documented cases where internal users who are unhappy with the acquisition steal customer data and intellectual property. Capturing and storing data must be restricted|Enhanced Security Policies, App Protection Policies, and Security Analytics|
 |**External Threats**|To handle multi-directory authentication, the Citrix Application Delivery Controller presents Workspace with an authentication web app. CompanyA must add extra layers of protection for public facing web apps.|Citrix Application Delivery Controller with Bot Management and Web App Firewall|
 
@@ -106,11 +106,11 @@ Once the nFactor policy is defined, CompanyA can continue to expand it to incorp
 
 ### Zero Trust Network Access
 
-To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Secure Workspace Access service and the Virtual Apps and Desktops service. These two services utilize a zero trust network access solution, which is a more secure alternative to traditional VPNs.
+To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Secure Private Access service and the Virtual Apps and Desktops service. These two services utilize a zero trust network access solution, which is a more secure alternative to traditional VPNs.
 
 [![Zero Trust Network Access](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_zero-trust-network-access.png)](/en-us/tech-zone/design/media/reference-architectures_mergers-acquisitions_zero-trust-network-access.png)
 
-The Secure Workspace Access service and the Virtual Apps and Desktops service uses the outbound control channel connections established by the cloud connectors. Those connections allow the user to remotely access internal resources. However, those connections are
+The Secure Private Access service and the Virtual Apps and Desktops service uses the outbound control channel connections established by the cloud connectors. Those connections allow the user to remotely access internal resources. However, those connections are
 
 *  Limited in scope so that only the defined resource is accessible
 *  Based on the user’s primary, secured identity

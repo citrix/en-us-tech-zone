@@ -3,7 +3,7 @@ layout: doc
 h3InToc: true
 contributedBy: Florin Lazurca
 specialThanksTo: Dan Feller, Frank Srp
-description: Learn how to design an environment to support bring-your-own-devices without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+description: Learn how to design an environment to support bring-your-own-devices without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 tz_title: Reference Architecture - Protect apps and data on bring-your-own devices
 tz_products: citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops
 ---
@@ -15,7 +15,7 @@ CompanyA provides remote access to a small subset of its overall user base. Thes
 
 CompanyA's remote access policy has led to greater efficiency for its hybrid and distributed workforce. However, the policy has created a complex delivery model and introduced security concerns. Since the end user devices are unmanaged, CompanyA must mitigate security threats against apps and the data in transit to, in use on, and at rest on the devices.
 
-CompanyA currently uses several unintegrated point products for remote access. It wants to consolidate and expand to a company-wide Zero Trust Network Access (ZTNA) solution while protecting its resources. To that end, CompanyA is engaging in an initiative to update its app delivery architecture. It is implementing the integrated Citrix solution using Citrix Secure Workspace Access, Citrix Gateway, Citrix Secure Internet Access, and Citrix Web App and API Protection. Together this solution provides end-to-end protection of CompanyA resources accessed from BYO devices.
+CompanyA currently uses several unintegrated point products for remote access. It wants to consolidate and expand to a company-wide Zero Trust Network Access (ZTNA) solution while protecting its resources. To that end, CompanyA is engaging in an initiative to update its app delivery architecture. It is implementing the integrated Citrix solution using Citrix Secure Private Access, Citrix Gateway, Citrix Secure Internet Access, and Citrix Web App and API Protection. Together this solution provides end-to-end protection of CompanyA resources accessed from BYO devices.
 
 [![Overview](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_00.png)](/en-us/tech-zone/design/media/reference-architectures_protect-apps-and-data-on-byo-devices_00.png)
 
@@ -39,11 +39,11 @@ In CompanyA's focus on protecting user access, it has identified the following c
 
 |  **Success Criteria** | **Description** | **Solution** |
 |---|---|---|
-| Adaptive access for web and SaaS apps | Adaptive access for web and SaaS apps using Citrix Secure Workspace Access to determine the correct level of access | Citrix Secure Workspace Access |
-| Adaptive access for client-server (virtual) apps | Adaptive access for client-server (virtual) apps using Citrix Secure Workspace Access and Citrix Virtual Apps and Desktops to determine the correct level of access | Citrix Secure Workspace Access and Citrix Virtual Apps and Desktops |
+| Adaptive access for web and SaaS apps | Adaptive access for web and SaaS apps using Citrix Secure Private Access to determine the correct level of access | Citrix Secure Private Access |
+| Adaptive access for client-server (virtual) apps | Adaptive access for client-server (virtual) apps using Citrix Secure Private Access and Citrix Virtual Apps and Desktops to determine the correct level of access | Citrix Secure Private Access and Citrix Virtual Apps and Desktops |
 | End-user monitoring | Continuous monitoring and continuous assessment to protect against potential threats. Apps are continuously monitored for data exfiltration, and abnormal access times and locations. | Citrix Analytics |
-| SaaS App Access | Users must access sanctioned SaaS applications with strong authentication that does not impact the experience | Citrix Secure Workspace Access |
-| Web App Access | Users must be able to access sanctioned internal Web applications with strong authentication that does not impact the experience | Citrix Secure Workspace Access – Zero Trust Network Access |
+| SaaS App Access | Users must access sanctioned SaaS applications with strong authentication that does not impact the experience | Citrix Secure Private Access |
+| Web App Access | Users must be able to access sanctioned internal Web applications with strong authentication that does not impact the experience | Citrix Secure Private Access – Zero Trust Network Access |
 | Personal Privacy | CompanyA must ensure user privacy while still protecting the user and endpoint from potential threats when using unsanctioned websites | Citrix Secure Browser Service with Citrix Secure Internet Access (Using "do not decrypt" policies for sites with personal information) |
 
 ### Protecting Data
@@ -56,10 +56,10 @@ In CompanyA's focus on protecting data, it has identified the following criteria
 
 | **Success Criteria** |  **Description** |  **Solution** |
 |---|---|---|
-| BYO Devices | Users access Workspace with a BYO device and must not gain unfettered access to sanctioned resources. | Citrix Secure Workspace Access |
-| SaaS and Web App Security | The user's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted. | Citrix Secure Workspace Access – Security Policies Enhanced Security |
-| Protection from keyloggers | CompanyA must protect internal corporate resources when accessed from BYO devices. Devices can be compromised and have keylogging malware installed. Key logging must be blocked while using Citrix Workspace. | Citrix Secure Workspace Access – Security Policies with App Protection |
-| Protection from screen scrapers | CompanyA must protect internal corporate resources when accessed from BYO devices. Devices can be compromised and have screen scraping malware installed. Screen scraping must be blocked while using Citrix Workspace. | Citrix Secure Workspace Access – Security Policies with App Protection |
+| BYO Devices | Users access Workspace with a BYO device and must not gain unfettered access to sanctioned resources. | Citrix Secure Private Access |
+| SaaS and Web App Security | The user's ability to download, print, or copy data from SaaS apps containing financial, personal, or other sensitive information must be restricted. | Citrix Secure Private Access – Security Policies Enhanced Security |
+| Protection from keyloggers | CompanyA must protect internal corporate resources when accessed from BYO devices. Devices can be compromised and have keylogging malware installed. Key logging must be blocked while using Citrix Workspace. | Citrix Secure Private Access – Security Policies with App Protection |
+| Protection from screen scrapers | CompanyA must protect internal corporate resources when accessed from BYO devices. Devices can be compromised and have screen scraping malware installed. Screen scraping must be blocked while using Citrix Workspace. | Citrix Secure Private Access – Security Policies with App Protection |
 | Internet Security | Protect users from potential internet threats hidden within emails, applications, and websites regardless of location. | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Devices | Protect devices and the underlying infrastructure from malware and Zero-Day threats | Citrix Secure Browser Service with Citrix Secure Internet Access - Security Policies with Malware Protection |
 | Protect Data | Protect data stored in sanctioned and unsanctioned apps | Citrix Secure Browser Service with Citrix Secure Internet Access – Security Policies with Web Filtering |
@@ -75,8 +75,8 @@ In CompanyA's focus on protecting apps, it has identified the following criteria
 
 |  **Success Criteria** | **Description**  | **Solution** |
 |---|---|---|
-| Secure Access | CompanyA must protect internal corporate resources when accessed from untrusted and unsecured locations. Devices are not be allowed direct access to the internal network to help prevent malware intrusion. | Secure Workspace Access - VPN-less access |
-| SaaS credential protection | The user's credentials to SaaS applications must include multifactor authentication. | Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication |
+| Secure Access | CompanyA must protect internal corporate resources when accessed from untrusted and unsecured locations. Devices are not be allowed direct access to the internal network to help prevent malware intrusion. | Secure Private Access - VPN-less access |
+| SaaS credential protection | The user's credentials to SaaS applications must include multifactor authentication. | Citrix Secure Private Access – Single Sign-On with SAML-only authentication |
 | SaaS DLP | CompanyA requires their SaaS apps to use DLP controls inline. | Secure Browser Service with Citrix Secure Internet Access |
 | Protect web apps | CompanyA must stop volumetric DDoS attacks at the edge before they enter the network. CompanyA must protect both cloud apps and internal apps. CompanyA has apps deployed in multiple locations on cloud-hosted platforms. It must protect these apps from API-level threats like DDoS and Bot attacks, cross-site scripting, and SQL Injection attacks. | Citrix Web App Firewall |
 | Compromised User Protection | IT must be able to quickly identify and mitigate threats posed by a compromised user account. IT must protect the entire threat surface with centralized orchestration capabilities to provide the complete security that the business requires. | Citrix Security Analytics |
@@ -141,9 +141,9 @@ Refer to the [Citrix Workspace Active Directory with TOTP Tech Brief](/en-us/tec
 
 ### Zero Trust Network Access
 
-CompanyA uses the Citrix Secure Workspace Access service and the Virtual Apps and Desktops service to provide access to SaaS and internal web apps, virtual apps, and virtual desktops. These services are a Zero Trust Network Access solution, which is a more secure alternative to a traditional VPN.
+CompanyA uses the Citrix Secure Private Access service and the Virtual Apps and Desktops service to provide access to SaaS and internal web apps, virtual apps, and virtual desktops. These services are a Zero Trust Network Access solution, which is a more secure alternative to a traditional VPN.
 
-The Secure Workspace Access service and the Virtual Apps and Desktops service use the cloud connectors' outbound control channel connections. Those connections allow the user to access internal resources remotely. However, those connections are:
+The Secure Private Access service and the Virtual Apps and Desktops service use the cloud connectors' outbound control channel connections. Those connections allow the user to access internal resources remotely. However, those connections are:
 
 *  Limited in scope so that only the defined resource is accessible
 *  Based on the user's primary, secured identity
@@ -159,8 +159,8 @@ CompanyA wants to limit the risk of data loss and data remanence on BYO devices.
 
 CompanyA has developed prescriptive access models to meet its security requirements:
 
-*  BYO devices **without** the Workspace app use Secure Workspace Access to launch a SaaS or web app through an isolated browser using the Citrix Secure Browser service. Secure Workspace Access provides SSO and enforces adaptive access policies such as download, print, copy, and paste restrictions to web and SaaS apps.
-*  BYO devices **with** the Workspace app use Secure Workspace Access to launch a Saas or web app using a local, containerized browser. The embedded browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app. Secure Workspace Access provides SSO and enforces adaptive access policies (download, print, copy, and paste restrictions).
+*  BYO devices **without** the Workspace app use Secure Private Access to launch a SaaS or web app through an isolated browser using the Citrix Secure Browser service. Secure Private Access provides SSO and enforces adaptive access policies such as download, print, copy, and paste restrictions to web and SaaS apps.
+*  BYO devices **with** the Workspace app use Secure Private Access to launch a Saas or web app using a local, containerized browser. The embedded browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app. Secure Private Access provides SSO and enforces adaptive access policies (download, print, copy, and paste restrictions).
 *  App Protection policies protect web and SaaS apps using screen scraping and key-logger restrictions. If the BYO Device does not have app protection available, adaptive access policies prevent the user from launching the app.
 *  When users access virtual apps and desktops, the Virtual Apps and Desktops service provides SSO and enforces lockdown policies. The service restricts downloading, printing, and unidirectional and bidirectional copy & paste actions.
 
@@ -228,9 +228,9 @@ Refer to the [Citrix Secure Internet Access Tech Brief](/en-us/tech-zone/learn/t
 
 Based on the preceding requirements, CompanyA created the high-level conceptual architecture. The general flow and requirements are that end users require:
 
-*  Protected access to SaaS apps and VPN-less access to internal web apps via Citrix Secure Workspace Access
-*  Adaptive authentication before being granted access to external or internal resources via Citrix Secure Workspace Access
-*  Zero Trust access to specific resources via Citrix Secure Workspace Access
+*  Protected access to SaaS apps and VPN-less access to internal web apps via Citrix Secure Private Access
+*  Adaptive authentication before being granted access to external or internal resources via Citrix Secure Private Access
+*  Zero Trust access to specific resources via Citrix Secure Private Access
 *  Protected access to internet traffic from the web apps, or virtual apps and desktops via using Citrix Secure Browser Service with Citrix Secure Internet Access
 *  Protected access to web apps accessed from BYO devices with Citrix Web Application Firewall
 

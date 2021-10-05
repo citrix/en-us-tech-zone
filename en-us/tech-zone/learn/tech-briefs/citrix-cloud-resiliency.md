@@ -104,7 +104,7 @@ Before the deep dive into how these solutions work, let’s look at how differen
 
     In the scenario where the client endpoints are not able to reach the internet, but still have network connectivity to Cloud Connectors and VDAs (on the internal network). All virtual apps and desktop resources accessible on the internal network are available during the loss of Internet access.
 
-1.  Gateway or Secure Workspace Access service – Fail over to a different PoP
+1.  Gateway or Secure Private Access service – Fail over to a different PoP
 
     The Citrix Gateway service is built to be highly available with multiple instances of the service, deployed on multiple Points of Presence (PoP) across various locations in the world. Also, the service is hosted on different cloud providers. Find the list of PoPs [here](https://support.citrix.com/article/CTX270584).
 

@@ -19,7 +19,7 @@ Citrix Analytics generates actionable insights, enabling administrators to proac
 
 Citrix Analytics for Security collects data across Citrix and third-party products and generates actionable insights. It supports integration with the following:
 
--  Citrix Secure Workspace Access
+-  Citrix Secure Private Access
 -  Citrix Content Collaboration
 -  Citrix Endpoint Management
 -  Citrix Gateway
@@ -30,7 +30,7 @@ Citrix Analytics for Security collects data across Citrix and third-party produc
 
 Citrix Analytics for Security detects anomalous user behavior through its machine learning μ-service. It assigns users a risk score, a value that indicates the aggregate level of risk a user poses through its risk scoring μ-service. This score is a dynamic value that is based on User Behavior Analytics (UBA). Administrators can create policies to automate processes and apply actions based on risk indicators. Citrix Analytics for Security retains data for 13 months. If the administrator turns off data processing for a specific data source, the data that was already captured remains stored for 13 months. More information on what specific logs per data source are collected [here](/en-us/security-analytics/data-governance.html).
 
-Citrix Analytics for Security receives the information in the following manner. For the Citrix Secure Workspace Access service, Citrix Content Collaboration, Citrix Endpoint Management, and Citrix Gateway Service (cloud) it receives its information directly from the control plane of the specific data source. For Citrix Gateway on-prem, it receives the data from the Application Delivery Management agent. For Citrix Virtual Apps and Desktop (cloud & on-prem) it receives its information through Citrix Workspace app. To get active directory data, Citrix Analytics communicates with the Cloud connectors. For Microsoft Graph security, we can get information from Azure AD identity protection and Windows Defender ATP through graph APIs.
+Citrix Analytics for Security receives the information in the following manner. For the Citrix Secure Private Access service, Citrix Content Collaboration, Citrix Endpoint Management, and Citrix Gateway Service (cloud) it receives its information directly from the control plane of the specific data source. For Citrix Gateway on-prem, it receives the data from the Application Delivery Management agent. For Citrix Virtual Apps and Desktop (cloud & on-prem) it receives its information through Citrix Workspace app. To get active directory data, Citrix Analytics communicates with the Cloud connectors. For Microsoft Graph security, we can get information from Azure AD identity protection and Windows Defender ATP through graph APIs.
 
 To get started you must have a Citrix Cloud account. Once, you have access to Citrix Cloud you can request access to a Citrix Analytics for Security trial. Then have the options to enable data processing and beginning receiving information. An in-depth guide on how to get started can be found [here](/en-us/security-analytics/getting-started-security.html).
 
@@ -113,7 +113,7 @@ Currently the following conditions are available when creating a policy:
     -  Excessive downloads
     -  First time access from a new location
     -  Ransomware activity suspected (files updated)
--  Citrix Secure Workspace Access
+-  Citrix Secure Private Access
     -  Attempt to Access Blacklisted URL
     -  Risky website access
     -  Excessive data download
@@ -159,7 +159,7 @@ The Share Links dashboard is the launching point into share event analysis and t
 
 ### Reporting
 
-Administrators can create custom reports from the events received in your data sources. Currently, the supported data sources for custom reports include Secure Workspace Access, Content Collaboration, and Virtual Apps and Desktops. More information on how to create custom reports can be found [here](/en-us/security-analytics/create-custom-report.html).
+Administrators can create custom reports from the events received in your data sources. Currently, the supported data sources for custom reports include Secure Private Access, Content Collaboration, and Virtual Apps and Desktops. More information on how to create custom reports can be found [here](/en-us/security-analytics/create-custom-report.html).
 
 [![Report](/en-us/tech-zone/learn/media/tech-briefs_analytics_report.png)](/en-us/tech-zone/learn/media/tech-briefs_analytics_report.png)
 
@@ -197,7 +197,7 @@ The infrastructure dashboard provides administrators with an overview of their e
 
 ## Usage Analytics
 
-Usage Analytics provides insights into how users interact with various Citrix products to help understand user adoption and engagement. Usage analytics currently supports Secure Workspace Access service, Content Collaboration Service, and Microapps Service.
+Usage Analytics provides insights into how users interact with various Citrix products to help understand user adoption and engagement. Usage analytics currently supports Secure Private Access service, Content Collaboration Service, and Microapps Service.
 
 ### Content Collaboration Dashboard
 
