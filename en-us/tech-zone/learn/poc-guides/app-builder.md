@@ -61,7 +61,7 @@ In this section, a new Podio Workspace will be created, specifically for Citrix 
 
 #### Add the Broadcast Podio app
 
-Add the [Citrix Workspace Broadcast app](https://podio.com/market/apps/192189-citrix-workspace-broadcast) from the [!Podio App Market](https://podio.com/market):
+Add the [Citrix Workspace Broadcast app](https://podio.com/market/apps/192189-citrix-workspace-broadcast) from the [Podio App Market](https://podio.com/market):
 
 1.  Go to [Citrix Workspace Broadcast app](https://podio.com/market/apps/192189-citrix-workspace-broadcast) in the Podio Market
 2.  Click "Get App"
@@ -71,7 +71,7 @@ Add the [Citrix Workspace Broadcast app](https://podio.com/market/apps/192189-ci
 
 #### Add the FAQ Podio app
 
-Next, add the [Citrix Workspace FAQ app](https://podio.com/market/apps/194119-citrix-workspace-faq) from the [!Podio App Market](https://podio.com/market):
+Next, add the [Citrix Workspace FAQ app](https://podio.com/market/apps/194119-citrix-workspace-faq) from the [Podio App Market](https://podio.com/market):
 
 1.  Go to [Citrix Workspace FAQ app](https://podio.com/market/apps/194119-citrix-workspace-faq) in the Podio Market
 2.  Click "Get App"
@@ -129,7 +129,7 @@ Full documentation is [here](/en-us/citrix-microapps/set-up-template-integration
 1.Log in to [API keys](https://podio.com/settings/api). Complete the fields under API Key Generator:
 
 1.  Enter a name for Application name - for this proof of concept, name it **Citrix Microapp Integrations**
-2.  Enter your Microapps instance URL for Full domain (without protocol) of your return URL. This section of the URL {yourmicroappserverurl} is composed of a tenant part, a region part, and an environment part: <https://{tenantID}.{region(us/eu/ap-s)}.iws.cloud.com>. An example might be: mycloudworkspace.us.iws.cloud.com
+2.  Enter your Microapps instance URL for Full domain (without protocol) of your return URL. This section of the URL {yourmicroappserverurl} is composed of a tenant part, a region part, and an environment part: `<https://{tenantID}.{region(us/eu/ap-s)}.iws.cloud.com>`. An example might be: mycloudworkspace.us.iws.cloud.com
 3.  Select Generate API Key.
 4.  Under Your API keys, copy and save the Client ID and Client Secret values for the application you just added. You enter these values when you set up the integration.
 
@@ -228,7 +228,7 @@ To change this, or to force a sync see [Synchronize Data](/en-us/citrix-microapp
 
 Once a data sync occurs, the Notification is displayed in Workspace Activity Feed:
 
-![Activity Feed](/en-us/tech-zone/learn/media/poc-guides_app-builder_activity-feed-broadcast.png)
+[!Activity Feed](/en-us/tech-zone/learn/media/poc-guides_app-builder_activity-feed-broadcast.png)
 
 Note that, because the person logged into Workspace has access to both the Create Broadcast, and the Broadcast microapps, they see both Notifications: for Creation confirmation, and for the Broadcast itself.
 
