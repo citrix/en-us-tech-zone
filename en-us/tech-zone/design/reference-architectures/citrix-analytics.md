@@ -99,7 +99,7 @@ This section discusses the architecture and services offered by Citrix Analytics
 
 Citrix Analytics can be integrated with multiple Citrix and Microsoft® products. It collects metrics on users, applications, endpoints, networks, and data to deliver comprehensive insights into user behavior. Citrix Analytics, as of today, supports the following products:
 
-*  Citrix Secure Workspace Access
+*  Citrix Secure Private Access
 *  Citrix Content Collaboration
 *  Citrix Gateway
 *  Citrix Virtual Apps and Desktops
@@ -170,7 +170,7 @@ Security Analytics supports integration with the following:
 
 *  Citrix Content Collaboration
 *  Citrix Endpoint Management
-*  Citrix Secure Workspace Access
+*  Citrix Secure Private Access
 *  Citrix Gateway
 *  Citrix Virtual Apps and Desktops
 *  Microsoft® Graph Security
@@ -228,7 +228,7 @@ Operations Analytics is a more specific term oriented to business analytics that
 
 To overcome such problems, Citrix has embedded Operations Analytics into an analytics solution. The analytics solution contains machine learning algorithms and delivers actionable insights into the operational data of customers Citrix environments.
 
-For example, if an enterprise is using the Citrix Secure Workspace Access service, admins can use the operations dashboards to get insights into user operations and application operation data. The administrator has thorough visibility of the data consumption (download & upload), domains accessed, and other available metrics according to the data sources. These metrics help in procuring and providing resources and quickly responding to any operations issues.
+For example, if an enterprise is using the Citrix Secure Private Access service, admins can use the operations dashboards to get insights into user operations and application operation data. The administrator has thorough visibility of the data consumption (download & upload), domains accessed, and other available metrics according to the data sources. These metrics help in procuring and providing resources and quickly responding to any operations issues.
 
 In another way, operations analytics support the idea of enterprise resource planning. Operation Analytics aggregates information to enhance the proactive approach towards resource management.
 
@@ -246,7 +246,7 @@ Reference: [Operations Analytics](/en-us/citrix-analytics/operations-analytics.h
 
 Citrix Analytics integrated with the other Citrix components labeled “data sources.” The following products supported by Citrix Analytics service and provides insights about user behavior in the Citrix environment.
 
-*  Citrix Secure Workspace Access
+*  Citrix Secure Private Access
 *  Citrix Content Collaboration
 *  Citrix Endpoint Management
 *  Citrix Gateway
@@ -254,15 +254,15 @@ Citrix Analytics integrated with the other Citrix components labeled “data sou
 
 In this section, the integration of Citrix Analytics with other Citrix products discussed.
 
-### Citrix Analytics and Citrix Secure Workspace Access
+### Citrix Analytics and Citrix Secure Private Access
 
-Citrix Secure Workspace Access service enables the administrators to provide a cohesive experience integrating single sign-on, remote access, and content inspection into a unique solution for end-to-end Secure Workspace Access. Administrators can protect the organization’s network and end-user devices from malware and data leaks by filtering access to specific websites and website categories.
+Citrix Secure Private Access service enables the administrators to provide a cohesive experience integrating single sign-on, remote access, and content inspection into a unique solution for end-to-end Secure Private Access. Administrators can protect the organization’s network and end-user devices from malware and data leaks by filtering access to specific websites and website categories.
 
-Citrix Secure Workspace Access and Citrix Analytics solutions gives clear insights into user behavior and monitors the entire network. The inbuilt capability of Citrix Analytics that uses machine learning helps to take corrective actions. Citrix Analytics uses similar metrics and collected by the Secure Workspace Access service. The parameters of activities of users, such as websites visited, and the bandwidth spent. It also detects malware and phishing sites.
+Citrix Secure Private Access and Citrix Analytics solutions gives clear insights into user behavior and monitors the entire network. The inbuilt capability of Citrix Analytics that uses machine learning helps to take corrective actions. Citrix Analytics uses similar metrics and collected by the Secure Private Access service. The parameters of activities of users, such as websites visited, and the bandwidth spent. It also detects malware and phishing sites.
 
 [![CAS-11](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_011.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-analytics_011.png)
 
-The preceding diagram depicts a holistic view of Citrix Secure Workspace Access integration with the Citrix Analytics service. Citrix Secure Workspace Access and Citrix Analytics Services are hosted on Citrix Cloud. Data processing can be enabled by administrator with few clicks on the Analytics UI. Then Citrix Analytics starts capturing the data from Secure Workspace Access.
+The preceding diagram depicts a holistic view of Citrix Secure Private Access integration with the Citrix Analytics service. Citrix Secure Private Access and Citrix Analytics Services are hosted on Citrix Cloud. Data processing can be enabled by administrator with few clicks on the Analytics UI. Then Citrix Analytics starts capturing the data from Secure Private Access.
 
 Security Analytics
 
@@ -276,7 +276,7 @@ The following are policies that an administrator can create to take actions base
 
 *  Unusual Upload Volume: The amount of data uploaded by the user from an app or sites has surpassed the limit set implicitly by Citrix Analytics
 
-To learn more about Citrix Analytics integration with Citrix Secure Workspace Access, refer to the following [link](/en-us/citrix-secure-workspace-access/monitor-user-activity-and-manage-settings-with-analytics.html).
+To learn more about Citrix Analytics integration with Citrix Secure Private Access, refer to the following [link](/en-us/citrix-secure-workspace-access/monitor-user-activity-and-manage-settings-with-analytics.html).
 
 ### Citrix Analytics and Citrix Content Collaboration
 

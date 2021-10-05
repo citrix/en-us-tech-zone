@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
-description: Learn how to design an environment to support a flexible work style without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Virtual Apps and Desktops, SD-WAN, Endpoint Management and Security Analytics.
+description: Learn how to design an environment to support a flexible work style without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Private Access, Virtual Apps and Desktops, SD-WAN, Endpoint Management and Security Analytics.
 tz_title: Flexible Work
 tz_products: citrix-workspace;
 ---
@@ -31,8 +31,8 @@ The most important aspect of a flexible work solution is to meet the needs of th
 |**Personal PC Devices**|Users are able to select from a list of corporate managed endpoint devices that fits their usage requirements. These devices are fully managed and secured by CompanyA.|Citrix Endpoint Management – Choose Your Own Device (CYOD) |
 |**Redundant Home Network**|Users working from home in a mission critical scenario, must have redundant, highly-available network connections.|Citrix SD-WAN 110 home appliance|
 |**Personal Privacy**|When using unsanctioned websites, the user’s privacy must be ensured while still protecting the user and endpoint from potential threats.|Citrix Secure Internet Access with do not decrypt policies for sites with personal information|
-|**SaaS App Access**|Users must be able to access sanctioned SaaS applications, with strong authentication that does not impact the experience.|Citrix Secure Workspace Access|
-|**Web App Access**|Users must be able to access sanctioned, internal Web applications on any approved device.|Citrix Secure Workspace Access – Zero Trust Network Access|
+|**SaaS App Access**|Users must be able to access sanctioned SaaS applications, with strong authentication that does not impact the experience.|Citrix Secure Private Access|
+|**Web App Access**|Users must be able to access sanctioned, internal Web applications on any approved device.|Citrix Secure Private Access – Zero Trust Network Access|
 |**Virtual App and Desktop Access**|Users must be able to access authorized Windows apps and desktops on any approved device.|Citrix Virtual Apps and Desktops Service|
 |**Direct Virtual App and Desktop routing**|Users working from the local, office environment are be able to utilize a direct route to the resource without compromising security policies.|Citrix Virtual Apps and Desktops Service with Direct Workload Connection|
 |**Virtual Meeting Support**|As users are no longer constrained to working within the same location, the use of virtual meeting solutions, like Microsoft Teams, is a necessity. Every user is able to access the application and use local webcams/microphones.|Citrix Virtual Apps and Desktops Service with multimedia conferencing policies|
@@ -46,11 +46,11 @@ To be successful, CompanyA must be able to protect and secure their resources wh
 |**Unsecured Personal Devices**|Users trying to access Workspace with an unsecured device must be unable to gain access to any sanctioned resource.|Citrix Application Delivery Controller (ADC) - nFactor policies and endpoint analysis|
 |**Secure Home Network** |Users working from home with sensitive financial and personal data must do so from a separate, secured network. |Citrix SD-WAN 110 home appliance|
 |**Internet Security**|Regardless of location, users must be protected from potential Internet threats hidden within emails, applications, and websites. Internet protection must extend to all delivery models, including virtual apps/desktops, local apps, mobile apps, web apps, and SaaS apps. |Citrix Secure Internet Access|
-|**SaaS and Web App Security**|The user’s ability to download, print or copy data from SaaS apps containing financial, personal or other sensitive information must be restricted. |Citrix Secure Workspace Access – Security Policies with App Protection|
+|**SaaS and Web App Security**|The user’s ability to download, print or copy data from SaaS apps containing financial, personal or other sensitive information must be restricted. |Citrix Secure Private Access – Security Policies with App Protection|
 |**Virtual App & Desktop Security**|Users accessing virtual apps and desktops must not be able to copy, download or print financial, personal or other sensitive information. |Citrix Virtual Apps and Desktops – Security Policies with App Protection|
 |**Secure Access**|Internal, corporate resources must be protected from untrusted and unsecured locations. To help prevent malware intrusion, devices are not be allowed direct access to the internal network. |VPN-less access|
 |**Multifactor authentication**|With security being top of mind, MFA is required to ensure another layer of authentication protection of corporate resources.|Citrix ADC - Time-Based One-Time Password with Push|
-|**SaaS credential protection**|The user’s credentials to SaaS applications must include strong, multifactor authentication.|Citrix Secure Workspace Access – Single Sign-On with SAML-only authentication|
+|**SaaS credential protection**|The user’s credentials to SaaS applications must include strong, multifactor authentication.|Citrix Secure Private Access – Single Sign-On with SAML-only authentication|
 |**Compromised User Protection**|IT must be able to quickly identify and mitigate threats posed by a compromised user account.|Citrix Security Analytics|
 
 ## Conceptual Architecture
@@ -187,7 +187,7 @@ The [Workspace Single Sign-On Tech Brief](/en-us/tech-zone/learn/tech-briefs/wor
 
 From a security perspective, all users are considered external. CompanyA needs to consider how external users are able to access internal resources. Internal, corporate resources must be protected from untrusted and unsecured locations. To help prevent malware intrusion, devices are not be allowed direct access to the internal network.
 
-To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Secure Workspace Access service and the Virtual Apps and Desktops service. These two services utilize a zero trust network access solution, which is a more secure alternative to traditional VPNs.
+To provide access to internal resources like private web apps, virtual apps, and virtual desktops, CompanyA plans to use the Secure Private Access service and the Virtual Apps and Desktops service. These two services utilize a zero trust network access solution, which is a more secure alternative to traditional VPNs.
 
 [![Zero Trust Network Access](/en-us/tech-zone/design/media/reference-architectures_flexible-work_zero-trust-network-access.png)](/en-us/tech-zone/design/media/reference-architectures_flexible-work_zero-trust-network-access.png)
 

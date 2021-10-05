@@ -2,11 +2,11 @@
 layout: doc
 h3InToc: true
 contributedBy: Daniel Feller
-description: Learn how to set up VPN-less access to an internal web application with Citrix Secure Workspace Access, utilizing Citrix-provided SSO.
-tz_title: Secure Access to Internal Web Applications with Citrix Secure Workspace Access
+description: Learn how to set up VPN-less access to an internal web application with Citrix Secure Private Access, utilizing Citrix-provided SSO.
+tz_title: Secure Access to Internal Web Applications with Citrix Secure Private Access
 tz_products: citrix-secure-workspace-access;
 ---
-# PoC Guide: Secure Access to Internal Web Applications with Citrix Secure Workspace Access
+# PoC Guide: Secure Access to Internal Web Applications with Citrix Secure Private Access
 
 ## Overview
 
@@ -27,9 +27,9 @@ In this proof of concept scenario, a user authenticates to Citrix Workspace usin
 
 [![Single sign-on Overview](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_identity-brokering-web-app.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_identity-brokering-web-app.png)
 
- If the Citrix Secure Workspace Access service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the web applications.
+ If the Citrix Secure Private Access service is assigned to the Citrix subscription, enhanced security policies, ranging from applying screen-based watermarks, restricting printing/downloading actions, screen grabbing restrictions, keyboard obfuscation, and protecting users from untrustworthy links are applied on top of the web applications.
 
-The animation shows a user accessing a web application with Citrix-provided SSO and secured with Citrix Secure Workspace Access service.
+The animation shows a user accessing a web application with Citrix-provided SSO and secured with Citrix Secure Private Access service.
 
  [![Citrix SSO Demo](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_demo-video.gif)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_demo-video.gif)
 
@@ -177,11 +177,11 @@ SP-Initiated Validation
 
 ## Define website filtering policies
 
-Citrix Secure Workspace Access service provides website filtering within SaaS and Web apps to help protect the user from phishing attacks. The following shows how to set up website filtering policies.
+Citrix Secure Private Access service provides website filtering within SaaS and Web apps to help protect the user from phishing attacks. The following shows how to set up website filtering policies.
 
-*  From Citrix cloud, **Manage** within the Secure Workspace Access tile
+*  From Citrix cloud, **Manage** within the Secure Private Access tile
 
-[![Citrix Secure Workspace Access 1](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_secure-workspace-access-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_secure-workspace-access-01.png)
+[![Citrix Secure Private Access 1](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_secure-workspace-access-01.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_secure-workspace-access-01.png)
 
 *  If this guide was followed, the **Set up end user authentication** step and the **Configure end user access to SaaS, web and virtual applciations** steps are complete. Select **Configure Content Access**
 *  Select **Edit**
@@ -189,11 +189,11 @@ Citrix Secure Workspace Access service provides website filtering within SaaS an
 *  Within the **Blocked categories** box, select **Add**
 *  Select the categories to block users from accessing
 
-[![Citrix Secure Workspace Access 2](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_access-control-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_access-control-02.png)
+[![Citrix Secure Private Access 2](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_access-control-02.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_access-control-02.png)
 
 *  When all applicable categories are selected, select **Add**
 
-[![Citrix Secure Workspace Access 3](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_access-control-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_access-control-03.png)
+[![Citrix Secure Private Access 3](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_access-control-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-web-citrix-sso_access-control-03.png)
 
 *  Do the same for allowed categories
 *  Do the same for redirected categories. These categories redirect to a Secure Browser instance
