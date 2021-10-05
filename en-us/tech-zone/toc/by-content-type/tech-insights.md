@@ -39,23 +39,23 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 ## Citrix Secure Internet Access
 
-[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
-[Protect contractor and temp worker access](/en-us/tech-zone/learn/tech-insights/protect-contractor-and-temp-worker-access.html) - See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+[Protect contractor and temp worker access](/en-us/tech-zone/learn/tech-insights/protect-contractor-and-temp-worker-access.html) - See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
 [Secure Internet Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-internet-access-user-experience.html) - Secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
 
 ## Citrix Secure Workspace Access
 
-[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
-[Protect contractor and temp worker access](/en-us/tech-zone/learn/tech-insights/protect-contractor-and-temp-worker-access.html) - See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+[Protect contractor and temp worker access](/en-us/tech-zone/learn/tech-insights/protect-contractor-and-temp-worker-access.html) - See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
-[Secure Workspace Access for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
+[Secure Private Access for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
 
-[Secure Workspace Access for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
+[Secure Private Access for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 
-[Secure Workspace Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-workspace-access-user-experience.html) - Securely access corporate web, and SaaS applications, with advanced security controls and website filtering for managed, unmanaged, and BYO devices.
+[Secure Private Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-workspace-access-user-experience.html) - Securely access corporate web, and SaaS applications, with advanced security controls and website filtering for managed, unmanaged, and BYO devices.
 
 ## Citrix Virtual Apps and Desktops
 
@@ -69,9 +69,9 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [HDX](/en-us/tech-zone/learn/tech-insights/hdx.html) - A set of technologies ensuring an unparalleled user experience when accessing virtual Windows/Linux applications and desktops.
 
-[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
-[Protect contractor and temp worker access](/en-us/tech-zone/learn/tech-insights/protect-contractor-and-temp-worker-access.html) - See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+[Protect contractor and temp worker access](/en-us/tech-zone/learn/tech-insights/protect-contractor-and-temp-worker-access.html) - See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
 [Remote PC Access](/en-us/tech-zone/learn/tech-insights/remote-pc-access.html) - Remote PC Access allows users to access their physical, office-based Windows PC from remote locations.
 
@@ -111,7 +111,7 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Workspace app](/en-us/tech-zone/learn/tech-insights/workspace-app.html) - Personalized interface to provide access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
 
-[Zero Trust Strategy for Mergers and Acquisitions](/en-us/tech-zone/learn/tech-insights/mergers-acquisitions.html) - See how Citrix Workspace can help create a zero trust strategy for mergers and acquisitions through the use of Citrix Application Delivery Controller, Citrix Virtual Apps and Desktops Service, Citrix Secure Workspace Access, and Citrix Analytics for Security.
+[Zero Trust Strategy for Mergers and Acquisitions](/en-us/tech-zone/learn/tech-insights/mergers-acquisitions.html) - See how Citrix Workspace can help create a zero trust strategy for mergers and acquisitions through the use of Citrix Application Delivery Controller, Citrix Virtual Apps and Desktops Service, Citrix Secure Private Access, and Citrix Analytics for Security.
 
 ## Security
 
