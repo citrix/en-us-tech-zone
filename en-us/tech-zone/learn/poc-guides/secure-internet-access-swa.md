@@ -3,21 +3,21 @@ layout: doc
 h3InToc: true
 contributedBy: Frank Srp
 specialThanksTo: Eric Beiers, Martin Zugec, Daniel Feller
-description: Learn how to set up Citrix Secure Internet Access in conjunction with Citrix Secure Workspace Access to provide secure access to SaaS and web applications, anywhere, from any device.
-tz_title: Citrix Secure Internet Access with Citrix Secure Workspace Access
+description: Learn how to set up Citrix Secure Internet Access in conjunction with Citrix Secure Private Access to provide secure access to SaaS and web applications, anywhere, from any device.
+tz_title: Citrix Secure Internet Access with Citrix Secure Private Access
 tz_products: citrix-secure-internet-access;
 ---
-# PoC Guide: Citrix Secure Internet Access with Citrix Secure Workspace Access
+# PoC Guide: Citrix Secure Internet Access with Citrix Secure Private Access
 
 ## Overview
 
-Citrix Secure Internet Access provides a full cloud-delivered security stack to protect users, apps, and data against all threats without compromising the employee experience. This proof of concept (PoC) guide is designed to help you quickly configure Citrix Secure Internet Access within your Citrix Cloud environment. At the end of this PoC guide you are able to protect your Citrix Secure Workspace Access deployment with Citrix Secure Internet Access. You are able to allow your users access applications using Direct Internet Access (DIA) without compromising on performance.
+Citrix Secure Internet Access provides a full cloud-delivered security stack to protect users, apps, and data against all threats without compromising the employee experience. This proof of concept (PoC) guide is designed to help you quickly configure Citrix Secure Internet Access within your Citrix Cloud environment. At the end of this PoC guide you are able to protect your Citrix Secure Private Access deployment with Citrix Secure Internet Access. You are able to allow your users access applications using Direct Internet Access (DIA) without compromising on performance.
 
 ![Citrix SIA OVERVIEW](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_1.png)
 
 ## Scope
 
-In this Proof-of-Concept guide, you experience the role of a Citrix administrator and you create a connection between your organization’s Secure Workspace Access deployment and Citrix Secure Internet Access for Corporately Owned Devices.
+In this Proof-of-Concept guide, you experience the role of a Citrix administrator and you create a connection between your organization’s Secure Private Access deployment and Citrix Secure Internet Access for Corporately Owned Devices.
 
 This guide showcases how to perform the following actions:
 

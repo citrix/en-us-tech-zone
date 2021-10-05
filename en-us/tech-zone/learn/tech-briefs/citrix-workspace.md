@@ -32,7 +32,7 @@ Citrix Workspace aggregates the [Citrix Content Collaboration Service](/en-us/ci
 
 ### Web and SaaS Aggregation
 
-Web and SaaS applications are integrated into the Citrix Workspace and are secured by the [Secure Workspace Access Service](/en-us/citrix-secure-workspace-access.html).
+Web and SaaS applications are integrated into the Citrix Workspace and are secured by the [Secure Private Access Service](/en-us/citrix-secure-workspace-access.html).
 
 ### Microapp Aggregation
 
