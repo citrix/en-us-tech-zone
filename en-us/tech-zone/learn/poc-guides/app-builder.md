@@ -228,7 +228,7 @@ To change this, or to force a sync see [Synchronize Data](/en-us/citrix-microapp
 
 Once a data sync occurs, the Notification is displayed in Workspace Activity Feed:
 
-[!Activity Feed](/en-us/tech-zone/learn/media/poc-guides_app-builder_activity-feed-broadcast.png)
+![Activity Feed](/en-us/tech-zone/learn/media/poc-guides_app-builder_activity-feed-broadcast.png)
 
 Note that, because the person logged into Workspace has access to both the Create Broadcast, and the Broadcast microapps, they see both Notifications: for Creation confirmation, and for the Broadcast itself.
 
