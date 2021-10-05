@@ -23,7 +23,7 @@ See how Citrix Secure Internet Access provides secure access to all applications
 
 {% include video.html id="7ZtWKgTZipc" type="youtube" %}
 
-## Citrix Secure Internet Access with Citrix Secure Workspace Access Demo
+## Citrix Secure Internet Access with Citrix Secure Private Access Demo
 
 See how Citrix Secure Internet Access provides secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
 

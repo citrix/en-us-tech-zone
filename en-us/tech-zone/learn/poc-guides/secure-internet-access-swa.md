@@ -3,21 +3,21 @@ layout: doc
 h3InToc: true
 contributedBy: Frank Srp
 specialThanksTo: Eric Beiers, Martin Zugec, Daniel Feller
-description: Learn how to set up Citrix Secure Internet Access in conjunction with Citrix Secure Workspace Access to provide secure access to SaaS and web applications, anywhere, from any device.
-tz_title: Citrix Secure Internet Access with Citrix Secure Workspace Access
+description: Learn how to set up Citrix Secure Internet Access in conjunction with Citrix Secure Private Access to provide secure access to SaaS and web applications, anywhere, from any device.
+tz_title: Citrix Secure Internet Access with Citrix Secure Private Access
 tz_products: citrix-secure-internet-access;
 ---
-# PoC Guide: Citrix Secure Internet Access with Citrix Secure Workspace Access
+# PoC Guide: Citrix Secure Internet Access with Citrix Secure Private Access
 
 ## Overview
 
-Citrix Secure Internet Access provides a full cloud-delivered security stack to protect users, apps, and data against all threats without compromising the employee experience. This proof of concept (PoC) guide is designed to help you quickly configure Citrix Secure Internet Access within your Citrix Cloud environment. At the end of this PoC guide you are able to protect your Citrix Secure Workspace Access deployment with Citrix Secure Internet Access. You are able to allow your users access applications using Direct Internet Access (DIA) without compromising on performance.
+Citrix Secure Internet Access provides a full cloud-delivered security stack to protect users, apps, and data against all threats without compromising the employee experience. This proof of concept (PoC) guide is designed to help you quickly configure Citrix Secure Internet Access within your Citrix Cloud environment. At the end of this PoC guide you are able to protect your Citrix Secure Private Access deployment with Citrix Secure Internet Access. You are able to allow your users access applications using Direct Internet Access (DIA) without compromising on performance.
 
 ![Citrix SIA OVERVIEW](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_1.png)
 
 ## Scope
 
-In this Proof-of-Concept guide, you experience the role of a Citrix administrator and you create a connection between your organization’s Secure Workspace Access deployment and Citrix Secure Internet Access for Corporately Owned Devices.
+In this Proof-of-Concept guide, you experience the role of a Citrix administrator and you create a connection between your organization’s Secure Private Access deployment and Citrix Secure Internet Access for Corporately Owned Devices.
 
 This guide showcases how to perform the following actions:
 
@@ -97,33 +97,33 @@ In this section we focus on the configuration of CSIA within the administration 
 
 ### Log into Citrix Secure Internet Access
 
-1.  Log into Citrix Cloud and Access the Secure Internet Access tile.  
+1.  Log into Citrix Cloud and Access the Secure Internet Access tile.
    ![Log into Citrix Cloud](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_2.png)
 
-2.  Select the **Configuration** tab and Click **Open Citrix SIA Configuration** to access the Configuration Console.  
+2.  Select the **Configuration** tab and Click **Open Citrix SIA Configuration** to access the Configuration Console.
    ![Citrix SIA Configuration](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_3.png)
 
 ### Configure the Citrix Secure Internet Access PAC Settings
 
-1.  From the **Configuration** tab navigate to **Locations & Geomapping**.  
+1.  From the **Configuration** tab navigate to **Locations & Geomapping**.
    ![Citrix SIA PAC Configuration](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_4.png)
-2.  On the **Zones** tab click **Edit Default Zone**.  
+2.  On the **Zones** tab click **Edit Default Zone**.
    ![Citrix SIA PAC EDIT](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_5.png)
-3.  Click **PAC Settings**.  
+3.  Click **PAC Settings**.
    ![Citrix SIA PAC SETTINGS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_6.png)
-4.  If you must bypass a domain, use the **Add a Function**.  
+4.  If you must bypass a domain, use the **Add a Function**.
    ![Citrix SIA PAC ADD A FUNTION](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_7.png)
-5.  These are the recommended Citrix Domain and Subdomains to be added to the PAC File:  
-⋅ cloud.com & \*.cloud.com  
-⋅ citrixdata.com &*.citrixdata.com  
-⋅ citrixworkspaceapi.net & \*.citrixworkspaceapi.net  
-⋅ citrixworkspacesapi.net & \*.citrixworkspacesapi.net  
-⋅ citrixnetworkapi.net & \*.citrixnetworkapi.net  
-⋅ nssvc.net & \*.nssvc.net  
-⋅ xendesktop.net & \*.xendesktop.net  
-⋅ cloudapp.net & \*.cloudapp.net  
-⋅ netscalergateway.net & \*.netscalergateway.net  
-6.  Note the node shown "**node-clusterxxxxxx-swg.ibosscloud.com:80**". This must match the customer’s SWG node in Node Collection Management  
+5.  These are the recommended Citrix Domain and Subdomains to be added to the PAC File:
+⋅ cloud.com & \*.cloud.com
+⋅ citrixdata.com &*.citrixdata.com
+⋅ citrixworkspaceapi.net & \*.citrixworkspaceapi.net
+⋅ citrixworkspacesapi.net & \*.citrixworkspacesapi.net
+⋅ citrixnetworkapi.net & \*.citrixnetworkapi.net
+⋅ nssvc.net & \*.nssvc.net
+⋅ xendesktop.net & \*.xendesktop.net
+⋅ cloudapp.net & \*.cloudapp.net
+⋅ netscalergateway.net & \*.netscalergateway.net
+6.  Note the node shown "**node-clusterxxxxxx-swg.ibosscloud.com:80**". This must match the customer’s SWG node in Node Collection Management
    ![Citrix SIA PAC NODE SHOWN](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_8.png)
 
 ### Interfacing CSIA Security Groups with Groups from Domain Integration
@@ -136,22 +136,22 @@ The strategy for integrating domain group information into the CSIA cloud platfo
 
 To demonstrate the execution of this concept, let's map the domain credentials of a Windows user into a security group on the CSIA cloud platform.
 
-1.  Open a command prompt on the target computer, and run the command "net user (user name) /domain"  
-2.  Gather the aliases of groups reported back by the domain controller.  
+1.  Open a command prompt on the target computer, and run the command "net user (user name) /domain"
+2.  Gather the aliases of groups reported back by the domain controller.
    ![Citrix SIA AD ALIASES OR GROUPS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_9.png)
-3.  Go to the CSIA cloud platform and edit either the **Group Name** or the **Alias Name** to correspond to one of the groups reported by the domain user.  
+3.  Go to the CSIA cloud platform and edit either the **Group Name** or the **Alias Name** to correspond to one of the groups reported by the domain user.
    ![Citrix SIA AD ADD ALIAS OR GROUP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_10.png)
 4.  Now when users from the integrated domain group authenticate to the CSIA cloud platform, they are assigned automatically to their corresponding security group.
 
 ### Configuring the Proxy settings of the CSIA cloud platform
 
-1.  Navigate to the **Proxy & Caching** module.  
+1.  Navigate to the **Proxy & Caching** module.
    ![Citrix SIA PROXY & CACHING](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_11.png)
-2.  Set **Enable Proxy Settings** to **YES**.  
+2.  Set **Enable Proxy Settings** to **YES**.
    ![Citrix SIA PROXY & CACHING ENABLE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_12.png)
-3.  Set **User Authentication Method** to **Local User Credentials + Cloud Connections**.  
+3.  Set **User Authentication Method** to **Local User Credentials + Cloud Connections**.
    ![Citrix SIA PROXY & CACHING AUTH](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_13.png)
-4.  Click **Save**.  
+4.  Click **Save**.
    ![Citrix SIA PROXY & CACHING SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_14.png)
 
 ## Configure Web Security Policies
@@ -160,25 +160,25 @@ In this section we focus on the configuration of CSIA Web Security Policies with
 
 ### Applying Policies to Security Groups
 
-1.  Navigate to the **Web Security** module.  
+1.  Navigate to the **Web Security** module.
    ![Citrix SIA WEB SECURITY](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_15.png)
-2.  For web security policies that have a group-based implementation available a drop-down menu presents at the top of the page above the configuration form for the policy. The status of this drop-down menu indicates which group's policy configuration you are currently viewing.  
+2.  For web security policies that have a group-based implementation available a drop-down menu presents at the top of the page above the configuration form for the policy. The status of this drop-down menu indicates which group's policy configuration you are currently viewing.
    ![Citrix SIA WEB SECURITY GROUP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_16.png)
-3.  Click the **Group** drop-down menu and then **select group** that you want to reconfigure for the current web security policy.  
+3.  Click the **Group** drop-down menu and then **select group** that you want to reconfigure for the current web security policy.
    ![Citrix SIA WEB SECURITY GROUP 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_17.png)
-4.  Clicking **Save**, saves the current policy's configuration only to the currently selected security group from the **Group** drop-down menu.  
+4.  Clicking **Save**, saves the current policy's configuration only to the currently selected security group from the **Group** drop-down menu.
    ![Citrix SIA WEB SECURITY GROUP SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_18.png)
-   ⋅ **_Note:_ If you are looking to apply these settings to multiple groups**  
-5.  **(Optional)** Click **Save to Multiple Groups** opens a window that allows you to assign the current policy's configuration to multiple security groups simultaneously.  
+   ⋅ **_Note:_ If you are looking to apply these settings to multiple groups**
+5.  **(Optional)** Click **Save to Multiple Groups** opens a window that allows you to assign the current policy's configuration to multiple security groups simultaneously.
    ![Citrix SIA WEB SECURITY MULTI GROUP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_19.png)
-6.  Click the **corresponding check box** for any security group you want to apply the current policy configuration.  
+6.  Click the **corresponding check box** for any security group you want to apply the current policy configuration.
    ![Citrix SIA WEB SECURITY MULTI GROUP 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_20.png)
-7.  Click **Add** to add the selected security groups to the configure group.  
+7.  Click **Add** to add the selected security groups to the configure group.
    ![Citrix SIA WEB SECURITY MULTI GROUP ADD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_21.png)
-Groups can either be reconfigured to accept only configuration changes that have currently been applied or accept and overwrite all configuration settings for the current policy.  
-8.  The default selection is **Apply Changed Settings** which applies changes you have configured. Select to overwrite all configured settings for the designated security groups.  
+Groups can either be reconfigured to accept only configuration changes that have currently been applied or accept and overwrite all configuration settings for the current policy.
+8.  The default selection is **Apply Changed Settings** which applies changes you have configured. Select to overwrite all configured settings for the designated security groups.
    ![Citrix SIA WEB SECURITY MULTI GROUP APPLY](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_22.png)
-9.  Individual groups can be removed by clicking **Remove** or **remove all groups** selected for configuration by clicking **Remove All**. Click **Save** to confirm the configuration being applied to all designated security groups.  
+9.  Individual groups can be removed by clicking **Remove** or **remove all groups** selected for configuration by clicking **Remove All**. Click **Save** to confirm the configuration being applied to all designated security groups.
    ![Citrix SIA WEB SECURITY MULTI GROUP SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_23.png)
 
 ### Web Categories
@@ -201,13 +201,13 @@ You can associate actions with web categories. This enables you to deploy securi
     | Lock  | When a category is locked by the primary administrator into either an Allowed or Blocked state, delegated administrators cannot log in to the web gateway management interface and change the status of that category.  |
     | Category Override  | When you activate a category override, a delegated administrator cannot log in to the web gateway management interface and add a URL to the allow list that would contradict the rule for this category. For example, the "Art" category is blocked and set to "Overrides," so delegated administrators cannot add art.com to the Allow List for that group.  |
 
-2.  Click each icon to toggle the action for the respective web category.  
+2.  Click each icon to toggle the action for the respective web category.
    ![Citrix SIA WEB CAT 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_24.png)
    ![Citrix SIA WEB CAT 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_25.png)
    ![Citrix SIA WEB CAT 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_26.png)
 
-3.  Actions that you want to generally apply to all web categories can be implemented with the Actions drop-down menu.  
-   ![Citrix SIA WEB CAT 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_27.png)  
+3.  Actions that you want to generally apply to all web categories can be implemented with the Actions drop-down menu.
+   ![Citrix SIA WEB CAT 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_27.png)
 **NOTE:** _Be careful with the “Not Rated” category, as it matches against many sites that are not categorized_
 
 #### Category Priorities
@@ -239,14 +239,14 @@ Settings relevant to web categories are configured with toggles under **Addition
 
 Block events can also be configured on an advanced weekly schedule to allow access during particular times.
 
-1.  Set Category Scheduling to **Allow Selected Categories Using an Advanced Schedule** to enable the scheduling feature. Click **Advanced Scheduling** to begin scheduling blocked categories.  
+1.  Set Category Scheduling to **Allow Selected Categories Using an Advanced Schedule** to enable the scheduling feature. Click **Advanced Scheduling** to begin scheduling blocked categories.
    ![Citrix SIA CATEGORY SCHEDULING 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_29.png)
-2.  The current advanced schedule can either be configured to apply to all blocked categories or only to a particular blocked category.  
+2.  The current advanced schedule can either be configured to apply to all blocked categories or only to a particular blocked category.
    ![Citrix SIA CATEGORY SCHEDULING 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_30.png)
-3.  Each day during the week can be delegated specific periods of time that the category is be allowed. These particular periods of time are indicated by a blue rectangle.  
+3.  Each day during the week can be delegated specific periods of time that the category is be allowed. These particular periods of time are indicated by a blue rectangle.
    ![Citrix SIA CATEGORY SCHEDULING 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_31.png)
 4.  After finalizing the schedule for a particular category, you can click the category drop-down menu once again and select a new category to configure.
-5.  Click **Save** to confirm all schedule configurations.  
+5.  Click **Save** to confirm all schedule configurations.
    ![Citrix SIA CATEGORY SCHEDULING SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_32.png)
 
 ### Allow List
@@ -256,9 +256,9 @@ The allow lists selectively provides access to a specific website or network res
 #### Adding a URL to an Allow List
 
 1.  Navigate to **Web Security Policies**.
-2.  On the drop-down menu click **Allow List**.  
+2.  On the drop-down menu click **Allow List**.
    ![Citrix SIA ALLOW LIST](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_33.png)
-3.  From above the list section, click **URL/IP Range**.  
+3.  From above the list section, click **URL/IP Range**.
    ![Citrix SIA ALLOW LIST URL/IP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_34.png)
 4.  Type a **domain, subdomain, URL, IP address, or IP Range**. This is the only required field, but many other criteria can be specified.
 5.  From the right side of the list, click **+Add**. The entry is now added to the list.
@@ -269,11 +269,11 @@ The **Allow List** section includes the handy Scrape Tool. Use this to quickly i
 
 Another use for the Scrape Tool is to selectively only allow portions of a website, while not allowing unwanted content, such as ad servers.
 
-1.  From above the list section, click **Scrape**.  
+1.  From above the list section, click **Scrape**.
    ![Citrix SIA SCRAPE TOOL](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_35.png)
-2.  Enter the URL to Scrape and click **Scan**.  
+2.  Enter the URL to Scrape and click **Scan**.
    ![Citrix SIA SCRAPE SCAN](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_36.png)
-3.  Select domains to add to Allow List and click Add Selected to Allow List.  
+3.  Select domains to add to Allow List and click Add Selected to Allow List.
    ![Citrix SIA SCRAPE ADD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_37.png)
 
 ### Keyword Block List / Allow List
@@ -283,9 +283,9 @@ Keyword filtering is used to inspect URLs for specific words. If a keyword is id
 #### Adding a URL to a Block List / Allow List
 
 1.  Navigate to **Web Security Policies**.
-2.  On the drop-down menu click **Keywords**.  
+2.  On the drop-down menu click **Keywords**.
    ![Citrix SIA KEYWORD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_38.png)
-3.  Enter the **keyword** that you would like to block in the **Keyword** field and specify the designations that apply to this keyword. Click **Add**.  
+3.  Enter the **keyword** that you would like to block in the **Keyword** field and specify the designations that apply to this keyword. Click **Add**.
    ![Citrix SIA KEYWORD ALLOW](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_39.png)
 
 | Option  | Description  |
@@ -301,7 +301,7 @@ You can enable filtering for pre-defined lists of Adult and High-Risk keywords o
 
 The Pre-defined Keyword Lists contain common Adult and High-Risk keywords. Wildcard matching is applied to all keywords in these lists. A wildcard match recognizes the keyword's sequence of characters anywhere in the URL, including the host name. The High-Risk list generates an email to the recipient of alert emails when a High-Risk keyword is detected by the Reporting & Analytics functionality of the CSIA cloud platform.
 
-1.  To enable either one of the keyword lists, set the Adult or High-Risk toggle to **Yes**. Click **Save**.  
+1.  To enable either one of the keyword lists, set the Adult or High-Risk toggle to **Yes**. Click **Save**.
    ![Citrix SIA KEYWORD ALLOW](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_40.png)
 
 ## Citrix Secure Internet Access Agent Configuration
@@ -310,36 +310,36 @@ In this section we focus on the configuration and the installation of the Citrix
 
 ### Configure the CSIA Agent Download (Cloud Connector)
 
-1.  From the CSIA admin console, go to **Connect Device to Cloud > Cloud Connectors**.  
+1.  From the CSIA admin console, go to **Connect Device to Cloud > Cloud Connectors**.
    ![Citrix SIA AGENT](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_41.png)
-2.  Click **Configure Connector Download**.  
+2.  Click **Configure Connector Download**.
    ![Citrix SIA AGENT DOWNLOAD CONFIGURE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_42.png)
-3.  Click the **Use HTTP PAC** drop-down menu and select **No**.  
-(**Note:** Use HTTP PAC to **"No"** if you want to use **_HTTPS_** for PAC download)  
+3.  Click the **Use HTTP PAC** drop-down menu and select **No**.
+(**Note:** Use HTTP PAC to **"No"** if you want to use **_HTTPS_** for PAC download)
    ![Citrix SIA AGENT HTTP PAC](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_43.png)
-4.  Click **Security Group** and select the desired default security group for this particular installation file download.  
+4.  Click **Security Group** and select the desired default security group for this particular installation file download.
    ![Citrix SIA AGENT SECURITY GROUP](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_44.png)
-5.  Keep the remaining connector download settings as **Default** and Click **Save**.  
+5.  Keep the remaining connector download settings as **Default** and Click **Save**.
    ![Citrix SIA AGENT SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_45.png)
 
 ### Configure the CSIA Agent Advanced Connector Settings (Cloud Connector)
 
-1.  From the CSIA admin console, go to **Connect Device to Cloud > Cloud Connectors > Advanced Connector Settings**.  
+1.  From the CSIA admin console, go to **Connect Device to Cloud > Cloud Connectors > Advanced Connector Settings**.
    ![Citrix SIA AGENT ADV SETTINGS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_46.png)
-2.  Under Global Settings Enable the following:  
-⋅ **Enable Security Cloud Connector Filtering**  
-⋅ **Configure Auto Login Cloud Connectors to use Key for Group**  
+2.  Under Global Settings Enable the following:
+⋅ **Enable Security Cloud Connector Filtering**
+⋅ **Configure Auto Login Cloud Connectors to use Key for Group**
 ⋅ **Use Session Encryption**
 3.  Under Source IP Logging Enable - **Use private source IP of client (if available)**.
-4.  Under Group Specific Settings verify that the **Correct Group** is selected and Click **Save**.  
+4.  Under Group Specific Settings verify that the **Correct Group** is selected and Click **Save**.
    ![Citrix SIA AGENT ADV SETTINGS SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_47.png)
 
 ### Download the Citrix Secure Internet Access Agent (Cloud Connector)
 
-1.  From the CSIA admin console, go to **Connect Device to Cloud > Cloud Connectors > Download Connectors**.  
+1.  From the CSIA admin console, go to **Connect Device to Cloud > Cloud Connectors > Download Connectors**.
    ![Citrix SIA AGENT DOWNLOAD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_48.png)
-2.  Under Windows **Cloud Connector**, click **Download** and **Download All**.  
-   ![Citrix SIA AGENT DOWNLOAD ALL](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_49.png)  
+2.  Under Windows **Cloud Connector**, click **Download** and **Download All**.
+   ![Citrix SIA AGENT DOWNLOAD ALL](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_49.png)
 The .msi installation packages can be downloaded directly from the CSIA admin console. Before starting the installation, be sure that you are using the correct package for the version of Windows and processor architecture.
 
 | Platform  | Package  |
@@ -352,15 +352,15 @@ The .msi installation packages can be downloaded directly from the CSIA admin co
 
 ### Configure the CSIA Agent Policies in the CSIA Admin Console
 
-1.  From the CSIA admin console, go to **Connect Device to Cloud > Agent Policies**.  
+1.  From the CSIA admin console, go to **Connect Device to Cloud > Agent Policies**.
    ![Citrix SIA AGENT POLICIES](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_50.png)
-2.  Click **Add Agent Policies**.  
+2.  Click **Add Agent Policies**.
    ![Citrix SIA AGENT POLICIES ADD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_51.png)
-3.  Provide a **Name** for your Agent Policy and Select **Add Agent Policy**.  
+3.  Provide a **Name** for your Agent Policy and Select **Add Agent Policy**.
    ![Citrix SIA AGENT POLICIES NAME](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_52.png)
-4.  To configure the policy, click **Edit Agent Policy**.  
+4.  To configure the policy, click **Edit Agent Policy**.
    ![Citrix SIA AGENT POLICIES EDIT](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_53.png)
-5.  Click **Agent Settings** and set the recommended settings.  
+5.  Click **Agent Settings** and set the recommended settings.
    ![Citrix SIA AGENT POLICIES SETTINGS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_54.png)
 
     **Recommended Settings for Corporate Owned Devices**
@@ -380,9 +380,9 @@ The .msi installation packages can be downloaded directly from the CSIA admin co
     |   Require Password to Disable Security:  | Enable Setting  |
     | Require Password to View Diagnostics Info:  | Enable Setting  |
 
-6.  Click **Dynamic Linking** and select the Groups you want to assign the policy too.  
+6.  Click **Dynamic Linking** and select the Groups you want to assign the policy too.
    ![Citrix SIA AGENT POLICIES DYNAMIC LINKING](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_55.png)
-7.  Click **Save**.  
+7.  Click **Save**.
    ![Citrix SIA AGENT POLICIES SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_56.png)
 
 ### **(OPTIONAL)** Manual Configuration of the Citrix Secure Internet Access Agent
@@ -393,18 +393,18 @@ Orca.msi is available in the Windows **Cloud Connector** “Download All” opti
 
 #### Opening an .MSI File with Orca
 
-1.  Open Zip file and install Orca.msi  
+1.  Open Zip file and install Orca.msi
    ![Citrix SIA AGENT MSI](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_57.png)
 2.  Locate the desired installation file in a file explorer program.
 3.  Right-click the .msi installation file.
-4.  Click **Edit with Orca**.  
+4.  Click **Edit with Orca**.
    ![Citrix SIA AGENT MSI EDIT](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_58.png)
 
 #### Configuring Properties of an .MSI in Orca
 
-1.  Double-click to open the **Property table**.  
+1.  Double-click to open the **Property table**.
    ![Citrix SIA AGENT MSI PROPERTY](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_59.png)
-2.  Each property can be edited by double-clicking the property's **Value** field.  
+2.  Each property can be edited by double-clicking the property's **Value** field.
    ![Citrix SIA AGENT MSI PROPERTY VALUE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_60.png)
 
     **Recommended Settings for Corporate Owned Devices**
@@ -420,8 +420,8 @@ Orca.msi is available in the Windows **Cloud Connector** “Download All” opti
     | Auto-Update Enabled: (PARAM_AUTO_UPDATE_ENABLE)  | (1): Enabled – The cloud connector to be updated automatically.  |
     | Restart After Upgrade: (PARAM_RESTART_AFTER_UPGRADE)  | (0): Disabled - Does not prompt a restart.    |
 
-3.  Within Orca, click the **Save** icon to save changes made to the parameters of the Windows Cloud Connector.  
-   ![Citrix SIA AGENT MSI PROPERTY SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_61.png)  
+3.  Within Orca, click the **Save** icon to save changes made to the parameters of the Windows Cloud Connector.
+   ![Citrix SIA AGENT MSI PROPERTY SAVE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_61.png)
 **Note:** _Ensure files are saved within Orca only using this method **(not using Save As)**. This causes issues with the functionality of the Windows cloud connector if it is not saved in this manner._
 
 ## Citrix Secure Internet Access Agent (Cloud Connector) Deployment
@@ -465,21 +465,21 @@ Citrix recommends that for a CSIA PoC you only install the CSIA Agent to Corpora
 #### Installing the Windows Agent
 
 1.  In the Endpoint Management console, navigate to **Configure > Apps**. Click **Add**.
-2.  Click **Enterprise**.  
+2.  Click **Enterprise**.
    ![Citrix SIA AGENT DEPLOY CEM](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_62.png)
-3.  On the App information page, configure the following:  
-⋅ **Name:** Type a descriptive name for the app. The name appears under App Name on the Apps table.  
-⋅ **Description:** Type an optional description of the app.  
+3.  On the App information page, configure the following:
+⋅ **Name:** Type a descriptive name for the app. The name appears under App Name on the Apps table.
+⋅ **Description:** Type an optional description of the app.
 ⋅ **App category:** Optionally, in the list, click the category to which you want to add the app.
 4.  Click **Next**. The **App Platforms** page appears.
 5.  Select the platform: **Windows Desktop/Tablet**.
 6.  On the Windows Desktop/Tablet Enterprise App page, click **Upload** and navigate to the file.
-7.  Configure these settings:  
+7.  Configure these settings:
    ![Citrix SIA AGENT DEPLOY CEM APP SETTINGS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_63.png)
 8.  Specify **deployment rules** and **store configuration** as needed.
 9.  Click **Next** until you get to the Summary page and then click **Save**.
 10.  In the Endpoint Management console, navigate to **Configure > Delivery Groups**. Select the delivery group to configure and click the **Apps page**.
-11.  Drag the desired apps to the **Required Apps** box.  
+11.  Drag the desired apps to the **Required Apps** box.
    ![Citrix SIA AGENT DEPLOY CEM REQ APPS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_64.png)
 12.  On the Summary page, Click **Save**.
 
@@ -490,19 +490,19 @@ See your Unified Endpoint Management Documentation for deploying .MSI file.
 #### Installing the macOS Agent
 
 1.  In the Endpoint Management console, navigate to **Configure > Apps**. Click **Add**.
-2.  Click **Enterprise**.  
+2.  Click **Enterprise**.
    ![Citrix SIA AGENT MAC DEPLOY CEM](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_65.png)
-3.  On the App information page, configure the following:  
-⋅ **Name:** Type a descriptive name for the app. The name appears under App Name on the Apps table.  
-⋅ **Description:** Type an optional description of the app.  
+3.  On the App information page, configure the following:
+⋅ **Name:** Type a descriptive name for the app. The name appears under App Name on the Apps table.
+⋅ **Description:** Type an optional description of the app.
 ⋅ **App category:** Optionally, in the list, click the category to which you want to add the app.
 4.  Click **Next**. The **App Platforms** page appears.
 5.  Select the platform: **macOS**.
-6.  **Upload** the PKG file (macOS) and complete the configuration. Click **Next**.  
+6.  **Upload** the PKG file (macOS) and complete the configuration. Click **Next**.
    ![Citrix SIA AGENT MAC DEPLOY CEM UPLOAD](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_66.png)
 7.  Click **Next** until you get to the Summary page and then click Save.
 8.  In the Endpoint Management console, navigate to **Configure > Delivery Groups**. Select the delivery group to configure and click the **Apps page**.
-9.  Drag the desired apps to the **Required Apps** box.  
+9.  Drag the desired apps to the **Required Apps** box.
    ![Citrix SIA AGENT MAC DEPLOY CEM RWQ APPS](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_64.png)
 10.  On the Summary page, Click **Save**.
 
@@ -515,7 +515,7 @@ See your Unified Endpoint Management Documentation for deploying .PKG file.
 #### Installing the Windows Agent
 
 1.  **Power on** the Windows Machine and log on.
-2.  **Install** the appropriate CSIA Agent .msi package for your platform.  
+2.  **Install** the appropriate CSIA Agent .msi package for your platform.
    ![Citrix SIA AGENT DEPLOY MANUAL](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_67.png)
 
 #### Installing the macOS Agent
@@ -559,9 +559,9 @@ See your Unified Endpoint Management Documentation for deploying .PKG file.
 4.  CSIA IPS Logs **(Reporting & Analytics > Logs > IPS Log)**
 5.  Registration Information for Connected Devices **(Users, Groups & Devices > Cloud Connected Device > Info)**
 6.  URL Lookup Tool **(Tools > URL Lookup)**
-7.  Enhanced Logging  
- ⋅ To set this, the following registry key must be altered, varying from 0 to 4, the higher giving more verbose logging.  
- ⋅  **HKEY_LOCAL_MACHINE\SOFTWARE\IBoss\IBSA\Parameters\LogLevel**  
+7.  Enhanced Logging
+ ⋅ To set this, the following registry key must be altered, varying from 0 to 4, the higher giving more verbose logging.
+ ⋅  **HKEY_LOCAL_MACHINE\SOFTWARE\IBoss\IBSA\Parameters\LogLevel**
 ⋅ Once the registry key has been set, the IBSA service under Windows Services must be restarted for the setting to take effect. Checking windows event viewer, you see many entries being logged depending on log level set.
 8.  Windows Agent Logs (C:\Windows\SysWOW64\ibsa_0.log)
 
@@ -582,9 +582,9 @@ In some situations, a word in one of the built-in lists of keywords may inadvert
 
 ### Identifying the Customer’s Citrix Secure Internet Access Node
 
-1.  From the **Home** navigate to the **Node Collection Management**.  
+1.  From the **Home** navigate to the **Node Collection Management**.
    ![Citrix SIA NODE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_68.png)
-2.  Click **Node Groups**.  
+2.  Click **Node Groups**.
    ![Citrix SIA NODE 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_69.png)
 3.  This provides you with both the **_Customer CSIA Node_**-reports.ibosscloud.com and the **_Customer CSIA Node_**-swg.ibosscloud.com Node Clusters.
 
@@ -592,36 +592,36 @@ In some situations, a word in one of the built-in lists of keywords may inadvert
 
 #### Splunk Server Setup
 
-1.  Navigate to the Splunk Server instance and click the **Settings** link at the top of the page, followed by the **Data inputs** link under the “Data” subsection.  
+1.  Navigate to the Splunk Server instance and click the **Settings** link at the top of the page, followed by the **Data inputs** link under the “Data” subsection.
    ![Citrix SIA SPLUNK](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_70.png)
-2.  Click the Add new link to the right of the “UDP” section.  
+2.  Click the Add new link to the right of the “UDP” section.
    ![Citrix SIA SPLUNK 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_71.png)
-3.  Enter a port into the "port" field (above 1023, if possible, to avoid security restrictions with the operating system). In the “Only accept connection from” field, enter your CSIA Reporter Node's IP address. If nothing is entered in this field, connections from all hosts are accepted. When done, click **Next**.  
+3.  Enter a port into the "port" field (above 1023, if possible, to avoid security restrictions with the operating system). In the “Only accept connection from” field, enter your CSIA Reporter Node's IP address. If nothing is entered in this field, connections from all hosts are accepted. When done, click **Next**.
    ![Citrix SIA SPLUNK 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_72.png)
-4.  On the next page, click **Select Source Type** and type **"syslog,"** then select it.  
+4.  On the next page, click **Select Source Type** and type **"syslog,"** then select it.
    ![Citrix SIA SPLUNK 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_73.png)
-5.  Change the App Context to **Search & Reporting (search)**.  
+5.  Change the App Context to **Search & Reporting (search)**.
    ![Citrix SIA SPLUNK 4](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_74.png)
-6.  Change the Host Method to **IP**.  
+6.  Change the Host Method to **IP**.
    ![Citrix SIA SPLUNK 5](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_75.png)
-7.  Click **Review** (review current configuration), then click **Submit**.  
+7.  Click **Review** (review current configuration), then click **Submit**.
    ![Citrix SIA SPLUNK 6](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_76.png)
 
 #### CSIA Reporting & Analytics Module Setup
 
-1.  Navigate to **Reporting & Analytics > Log Forwarding > Forward From Reporter** in the iboss cloud platform interface.  
+1.  Navigate to **Reporting & Analytics > Log Forwarding > Forward From Reporter** in the iboss cloud platform interface.
    ![Citrix SIA REPORTING](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_77.png)
-2.  Under **Splunk Integration**, click **Actions**, then click **Add Server**.  
+2.  Under **Splunk Integration**, click **Actions**, then click **Add Server**.
    ![Citrix SIA REPORTING 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_78.png)
 3.  Add the Address/Host name of the Splunk Server to the “Host name” and the port number chosen on the Splunk server. Next, in the drop-down menu “Splunk Integration Protocol,” choose a protocol.
-The options available when adding a Splunk server appear as follows:  
+The options available when adding a Splunk server appear as follows:
    ![Citrix SIA REPORTING 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_79.png)
-4.  You can also configure the Splunk server's integration protocol as HEC. Configuring integration with a Splunk server using the HEC protocol requires the acquisition of the HEC token from the configuration of the Splunk server. Place the retrieved token into the Token field below the Splunk Integration Protocol selection drop-down menu.  
+4.  You can also configure the Splunk server's integration protocol as HEC. Configuring integration with a Splunk server using the HEC protocol requires the acquisition of the HEC token from the configuration of the Splunk server. Place the retrieved token into the Token field below the Splunk Integration Protocol selection drop-down menu.
    ![Citrix SIA REPORTING 3](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_80.png)
-5.  If implementing an **ELFF** log format for Splunk logging the **Splunk Integration ELFF Batch Size** field becomes available for configuration. The default value for configuration is **100**.  
+5.  If implementing an **ELFF** log format for Splunk logging the **Splunk Integration ELFF Batch Size** field becomes available for configuration. The default value for configuration is **100**.
    ![Citrix SIA REPORTING 4](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_81.png)
 6.  A toggle called “Accept All SSL Certs” is available under the "Splunk Integration" section within **Settings > External Logging**. If a non-standard SSL Certificate such as a Self-Signed certificate or a certificate signed by a non-trusted root CA is used, switch this toggle to "YES" to bypass SSL certificate verification, otherwise leave the switch off.
-7.  Select the format in which the log data is delivered from the "Log Format" drop-down menu. Finally, switch one or more of the toggles at the bottom of the interface to select the desired logging information types. Click the **Save** button to update the changes. The logging begins immediately. Perform a search on the Splunk instance to check data is being sent and indexed properly. See the sample output below.  
+7.  Select the format in which the log data is delivered from the "Log Format" drop-down menu. Finally, switch one or more of the toggles at the bottom of the interface to select the desired logging information types. Click the **Save** button to update the changes. The logging begins immediately. Perform a search on the Splunk instance to check data is being sent and indexed properly. See the sample output below.
    ![Citrix SIA REPORTING 5](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_82.png)
 
 ### Changing the Proxy Port
@@ -632,12 +632,12 @@ Ports that **cannot** be used include: 53, 139, 199, 443, 445, 953, 1080, 1344, 
 
 _**All other ports are an acceptable alternative to the default port.**_
 
-1.  Navigate to **Proxy & Caching > Proxy Settings**  
+1.  Navigate to **Proxy & Caching > Proxy Settings**
    ![Citrix SIA PROXY CHANGE](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_83.png)
-2.  Under the **Settings tab**, enter the desired port number on which the proxy listens for traffic into the Proxy Port field.  
-**Note:** The port configured for this setting is used when configuring proxy settings in other platform functionalities. Some ports may not be available for assignment to this setting due to pre-configured gateway services.  
+2.  Under the **Settings tab**, enter the desired port number on which the proxy listens for traffic into the Proxy Port field.
+**Note:** The port configured for this setting is used when configuring proxy settings in other platform functionalities. Some ports may not be available for assignment to this setting due to pre-configured gateway services.
    ![Citrix SIA PROXY CHANGE 1](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_84.png)
-3.  Click **Save** to apply this change.  
+3.  Click **Save** to apply this change.
    ![Citrix SIA PROXY CHANGE 2](/en-us/tech-zone/learn/media/poc-guides_secure-internet-access-swa_85.png)
 
 ## Appendix

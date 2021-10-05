@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy:  Florin Lazurca
-description: See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+description: See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 tz_title: Protect contractor and temp worker access
 tz_products: citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops
 ---
@@ -12,7 +12,7 @@ Support contractors and temp workers without compromising IT security. See how t
 
 This video includes:
 
-*  Citrix Secure Workspace Access
+*  Citrix Secure Private Access
 *  Citrix Gateway / Citrix ADC
 *  Citrix Secure Internet Access
 *  Citrix Web App and API Protection
