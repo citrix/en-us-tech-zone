@@ -5,7 +5,7 @@ contributedBy: Daniel Feller
 specialThanksTo: Krishna Kumar
 description: Learn how to set up a Citrix Secure Private Access environment that provides enhanced security to Microsoft Azure SaaS Apps.
 tz_title: Secure Access to Azure-managed SaaS Applications and Citrix Secure Private Access
-tz_products: citrix-secure-workspace-access;
+tz_products: citrix-secure-private-access;
 ---
 # PoC Guide: Secure Access to Azure-managed SaaS Applications and Citrix Secure Private Access
 
