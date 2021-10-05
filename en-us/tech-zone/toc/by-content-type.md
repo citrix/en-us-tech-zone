@@ -49,7 +49,7 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 [Secure Internet Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-internet-access-user-experience.html) - Secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
 
-### Citrix Secure Private Access
+### Citrix Secure Workspace Access
 
 [Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
@@ -159,7 +159,7 @@ Tech Briefs are short overview documents explaining a technology, a feature, a f
 
 [Citrix Secure Internet Access](/en-us/tech-zone/learn/tech-briefs/secure-internet-access.html) - The expansive demand for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user Internet access. Citrix Secure Internet Access (CSIA) shifts the focus from defending perimeters to following users to ensure Internet access is secure regardless of location.
 
-### Citrix Secure Private Access
+### Citrix Secure Workspace Access
 
 [Citrix Workspace Essentials and Secure Private Access Getting Started Guide](/en-us/tech-zone/learn/tech-briefs/citrix-workspace-essentials-quickstart.html) - This guide demonstrates how to configure SaaS and internal web apps with single sign-on (SSO) in Citrix Workspace.
 
@@ -243,7 +243,7 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 [Citrix Secure Internet Access with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html) - Learn how to set up Citrix Secure Internet Access within a Citrix Virtual Apps and Desktops environment that provides secure access to virtual desktops and applications, anywhere, from any device.
 
-### Citrix Secure Private Access
+### Citrix Secure Workspace Access
 
 [Secure Access to Azure-managed SaaS Applications and Citrix Secure Private Access](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Secure Private Access environment that provides enhanced security to Microsoft Azure SaaS Apps.
 
@@ -367,7 +367,7 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
 
-### Citrix Secure Private Access
+### Citrix Secure Workspace Access
 
 [DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
 
