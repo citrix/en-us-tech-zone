@@ -35,21 +35,21 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 [Citrix Secure Internet Access with Citrix SD-WAN](/en-us/tech-zone/learn/poc-guides/secure-internet-access-sdwan.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix SD-WAN to provide secure access to SaaS and Web applications anywhere, reliably and securely.
 
-[Citrix Secure Internet Access with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/secure-internet-access-swa.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix Secure Workspace Access to provide secure access to SaaS and web applications, anywhere, from any device.
+[Citrix Secure Internet Access with Citrix Secure Private Access](/en-us/tech-zone/learn/poc-guides/secure-internet-access-swa.html) - Learn how to set up Citrix Secure Internet Access in conjunction with Citrix Secure Private Access to provide secure access to SaaS and web applications, anywhere, from any device.
 
 [Citrix Secure Internet Access with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html) - Learn how to set up Citrix Secure Internet Access within a Citrix Virtual Apps and Desktops environment that provides secure access to virtual desktops and applications, anywhere, from any device.
 
 ## Citrix Secure Workspace Access
 
-[Secure Access to Azure-managed SaaS Applications and Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Secure Workspace Access environment that provides enhanced security to Microsoft Azure SaaS Apps.
+[Secure Access to Azure-managed SaaS Applications and Citrix Secure Private Access](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Secure Private Access environment that provides enhanced security to Microsoft Azure SaaS Apps.
 
-[Secure Access to Internal Web Applications with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Secure Workspace Access, utilizing Citrix-provided SSO.
+[Secure Access to Internal Web Applications with Citrix Secure Private Access](/en-us/tech-zone/learn/poc-guides/access-control-web-citrix-sso.html) - Learn how to set up VPN-less access to an internal web application with Citrix Secure Private Access, utilizing Citrix-provided SSO.
 
-[Secure Access to Office 365 with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html) - Learn how to set up a Citrix Secure Workspace Access environment that provides single sign-on and enhanced security to Office 365.
+[Secure Access to Office 365 with Citrix Secure Private Access](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-o365.html) - Learn how to set up a Citrix Secure Private Access environment that provides single sign-on and enhanced security to Office 365.
 
-[Secure Access to SaaS Applications with Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to set up a Citrix Secure Workspace Access environment that uses Citrix as the single sign-on provider for SaaS applications.
+[Secure Access to SaaS Applications with Citrix Secure Private Access](/en-us/tech-zone/learn/poc-guides/access-control-citrix-sso.html) - Learn how to set up a Citrix Secure Private Access environment that uses Citrix as the single sign-on provider for SaaS applications.
 
-[Secure Access to SaaS Applications with Okta and Citrix Secure Workspace Access](/en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html) - Learn how to set up a Citrix Secure Workspace Access environment that is able to use Okta as the single sign-on provider for SaaS applications.
+[Secure Access to SaaS Applications with Okta and Citrix Secure Private Access](/en-us/tech-zone/learn/poc-guides/access-control-okta-sso.html) - Learn how to set up a Citrix Secure Private Access environment that is able to use Okta as the single sign-on provider for SaaS applications.
 
 ## Citrix Virtual Apps and Desktops
 
