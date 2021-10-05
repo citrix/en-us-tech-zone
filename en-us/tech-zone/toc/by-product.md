@@ -249,7 +249,7 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
 
-## Citrix Secure Private Access
+## Citrix Secure Workspace Access
 
 ### Learn - Tech Insights
 
