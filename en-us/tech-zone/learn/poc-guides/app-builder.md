@@ -129,7 +129,7 @@ Full documentation is [here](/en-us/citrix-microapps/set-up-template-integration
 1.Log in to [API keys](https://podio.com/settings/api). Complete the fields under API Key Generator:
 
 1.  Enter a name for Application name - for this proof of concept, name it **Citrix Microapp Integrations**
-2.  Enter your Microapps instance URL for Full domain (without protocol) of your return URL. This section of the URL {yourmicroappserverurl} is composed of a tenant part, a region part, and an environment part: `<https://{tenantID}.{region(us/eu/ap-s)}.iws.cloud.com>`. An example might be: mycloudworkspace.us.iws.cloud.com
+2.  Enter your Microapps instance URL for Full domain (without protocol) of your return URL. This section of the URL {yourmicroappserverurl} is composed of a tenant part, a region part, and an environment part: `https://{tenantID}.{region(us/eu/ap-s)}.iws.cloud.com`. An example might be: mycloudworkspace.us.iws.cloud.com
 3.  Select Generate API Key.
 4.  Under Your API keys, copy and save the Client ID and Client Secret values for the application you just added. You enter these values when you set up the integration.
 
