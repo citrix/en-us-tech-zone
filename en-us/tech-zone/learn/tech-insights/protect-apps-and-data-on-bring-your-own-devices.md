@@ -4,7 +4,7 @@ h3InToc: true
 contributedBy: Florin Lazurca
 description: See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 tz_title: Protect apps and data on bring-your-own devices
-tz_products: citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops
+tz_products: citrix-secure-internet-access;citrix-secure-private-access;citrix-virtual-apps-and-desktops
 ---
 # Tech Insight: Protect apps and data on bring-your-own devices
 
