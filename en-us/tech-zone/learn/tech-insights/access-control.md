@@ -4,7 +4,7 @@ h3InToc: true
 contributedBy: Daniel Feller
 description: Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 tz_title: Secure Private Access for SaaS Apps
-tz_products: citrix-secure-workspace-access;
+tz_products: citrix-secure-private-access;
 ---
 # Tech Insight: Secure Private Access for SaaS Apps
 

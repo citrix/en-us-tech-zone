@@ -5,7 +5,7 @@ contributedBy: Nagaraj Manoli
 specialThanksTo: Praveen Raghuraman, Pradeep Vasu, Allen Furmanski, Jeff Wisgo
 description: Gain knowledge about the Citrix Secure Private Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization's apps and data.
 tz_title: Secure Private Access
-tz_products: citrix-secure-workspace-access;
+tz_products: citrix-secure-private-access;
 ---
 # Reference Architecture: Secure Private Access
 
