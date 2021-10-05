@@ -331,7 +331,7 @@ Citrix Virtual Apps & Desktops deployments can be integrated with CSIA. When acc
 
 CSIA's Cloud Connectors can be configured in multiuser mode. Administrators can apply different policies to different users on multiuser systems such as Citrix Virtual Apps and Desktops and others. Instead of having users be seen as a single user, they are seen and logged as individuals.
 
-Users sign into Citrix Workspace with single sign-on. Once inside, users have access to all published apps and desktops, including SaaS apps and browsers like Chrome. Secure Workspace Access provides secure, identity-aware, zero trust access to internal apps. CSIA provides secure access to Internet and SaaS apps from within published apps and desktops.
+Users sign into Citrix Workspace with single sign-on. Once inside, users have access to all published apps and desktops, including SaaS apps and browsers like Chrome. Secure Private Access provides secure, identity-aware, zero trust access to internal apps. CSIA provides secure access to Internet and SaaS apps from within published apps and desktops.
 
 ![CSIA process flow](/en-us/tech-zone/learn/media/tech-briefs_secure-internet-access_cvadsia.png)
 

@@ -148,15 +148,15 @@ Citrix’s identity approach allows enterprises to preserve their investments. I
 
 Citrix Gateway provides SmartAccess and SmartControl policies that provide flexibility to balance user convenience with risk. Based on the result of a SmartAccess scan, a user can be granted full access, reduced access, quarantine, or no access at all. For example, a user who fails a device compliance check can get access to a reduced set of applications. Sensitive applications can have restricted functionality like blocking printing and downloading. SmartControl centralizes policy management on Citrix Gateway, strengthening access control at the network layer before the user reaches the back-end resource.
 
-### Citrix Secure Workspace Access
+### Citrix Secure Private Access
 
-Citrix Workspace offers an integrated approach to secure access to the internet. In addition to managing user devices, Secure Workspace Access focuses on protecting a user’s workspace on both managed and unmanaged BYO devices. User information is always protected, whether accessing allow list or block list URLs or URL categories.
+Citrix Workspace offers an integrated approach to secure access to the internet. In addition to managing user devices, Secure Private Access focuses on protecting a user’s workspace on both managed and unmanaged BYO devices. User information is always protected, whether accessing allow list or block list URLs or URL categories.
 
-Citrix Secure Workspace Access offers a URL filtering engine and an integrated browser isolation service. Together, they give an admin the choice to completely block a URL or access any URL in a sandbox environment. Also, admins can take a cautious approach even for accessing allow list URLs. This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet.
+Citrix Secure Private Access offers a URL filtering engine and an integrated browser isolation service. Together, they give an admin the choice to completely block a URL or access any URL in a sandbox environment. Also, admins can take a cautious approach even for accessing allow list URLs. This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet.
 
-A traditional URL filtering engine that assumes trust for a allow list URL. Secure Workspace Access does not implicitly trust an allow list URL since webpages, deemed safe by URL filtering engines, that can host malicious links. With Secure Workspace Access URLs within the trusted URL are also tested.
+A traditional URL filtering engine that assumes trust for a allow list URL. Secure Private Access does not implicitly trust an allow list URL since webpages, deemed safe by URL filtering engines, that can host malicious links. With Secure Private Access URLs within the trusted URL are also tested.
 
-Secure Workspace Access also addresses “gray status URLs” by offering the isolated browser. Users can securely access sites that fall between URLs blacklisted or whitelisted. Secure Workspace Access doesn’t require a device to be managed making it ideal for BYO type environments. Most URL filtering engines push a PAC file on the end user’s device that is either managed or must be connected to a domain.
+Secure Private Access also addresses “gray status URLs” by offering the isolated browser. Users can securely access sites that fall between URLs blacklisted or whitelisted. Secure Private Access doesn’t require a device to be managed making it ideal for BYO type environments. Most URL filtering engines push a PAC file on the end user’s device that is either managed or must be connected to a domain.
 
 ### Citrix Content Collaboration
 
