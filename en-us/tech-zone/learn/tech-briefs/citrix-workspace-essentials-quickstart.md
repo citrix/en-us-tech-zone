@@ -140,10 +140,6 @@ Figure 9: Second factor authentication during user login to Citrix Workspace
 
 Citrix Secure Private Access introduces more security features on top of the instant single-sign on (SSO) access to SaaS and web applications provided by Citrix Workspace Essentials. Unlike a traditional VPN, Secure Private Access provides a zero trust approach to securely access corporate web, SaaS, and virtual applications. With advanced security controls for managed, unmanaged, and BYO devices, it’s ideal for IT and employees alike.
 
-![Secure Private Access](/en-us/tech-zone/learn/media/tech-briefs_citrix-workspace-essentials-quickstart_diag.png)
-
-Figure 10: Citrix Secure Private Access Overview
-
 Secure Private Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators. These include granular and contextual security policies, app protection policies for all apps, web browser isolation, and web filtering policies.
 
 For more information about Citrix Secure Private Access, see [Citrix Secure Private Access](/en-us/citrix-secure-workspace-access.html) in Citrix product documentation and [Citrix Secure Private Access Tech Brief](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html)
