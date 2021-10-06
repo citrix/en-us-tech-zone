@@ -154,7 +154,7 @@ SaaS apps have grown in popularity because of their simplicity and zero dependen
 
 Citrix Secure Private Access enables IT to apply these added security controls to both SaaS and web apps to prevent data exfiltration. The controls include policies to restrict copying and pasting, printing, downloads, navigation, watermarking (overlays a screen-based watermark showing the user name and IP address of the endpoint), and more.
 
-Citrix Secure Private Access includes the Citrix Workspace Browser. It's secure embedded browser capable of applying enhanced security policies. Each policy enforces a restriction through the browser when using the Citrix Workspace app for desktop or Citrix Secure Browser Service when using the Citrix Workspace app web or mobile.
+Citrix Secure Private Access includes the Citrix Workspace Browser. It's a secure embedded browser capable of applying enhanced security policies. Each policy enforces a restriction through the browser when using the Citrix Workspace app for desktop or Citrix Secure Browser Service when using the Citrix Workspace app web or mobile.
 
 Enhanced security with App Protection provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying the security controls detailed in [Enhanced Security](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#enhanced-security).
 
