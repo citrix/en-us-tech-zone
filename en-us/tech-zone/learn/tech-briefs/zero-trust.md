@@ -148,6 +148,22 @@ Citrix’s identity approach allows enterprises to preserve their investments. I
 
 Citrix Gateway provides SmartAccess and SmartControl policies that provide flexibility to balance user convenience with risk. Based on the result of a SmartAccess scan, a user can be granted full access, reduced access, quarantine, or no access at all. For example, a user who fails a device compliance check can get access to a reduced set of applications. Sensitive applications can have restricted functionality like blocking printing and downloading. SmartControl centralizes policy management on Citrix Gateway, strengthening access control at the network layer before the user reaches the back-end resource.
 
+Refer to the [Citrix Gateway Tech Brief](/en-us/tech-zone/learn/tech-briefs/citrix-gateway-virtual-apps-desktops.html) to gain additional information regarding Citrix Gateway.
+
+### Citrix Secure Private Access
+
+Secure Private Access provides instant Single-Sign On (SSO) access to SaaS and web applications, granular and adaptive security policies, app protection policies for all apps, and web browser isolation. Secure Private Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators:
+
+*  MFA and Device Trust
+*  Web and SaaS SSO
+*  Gateway
+*  Cloud App Control
+*  Secure Browser
+*  App protection
+*  Analytics
+
+Refer to the [Citrix Secure Private Access Tech Brief](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html) to gain additional information regarding Citrix Secure Private Access.
+
 ### Citrix Secure Internet Access
 
 Citrix Workspace offers an integrated approach to secure access to the internet. In addition to managing user devices, Secure Internet Access focuses on protecting a user’s workspace. User information is always protected, whether accessing allow list or block list URLs or URL categories.
@@ -157,6 +173,8 @@ Citrix Internet Access offers a URL filtering engine integrated with the browser
 This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet.
 
 A traditional URL filtering engine that assumes trust for a allow list URL. Secure Internet Access does not implicitly trust an allow list URL since webpages, deemed safe by URL filtering engines, that can host malicious links. With Secure Internet Access URLs within the trusted URL are also tested.
+
+Refer to the [Citrix Secure Internet Access Tech Brief](/en-us/tech-zone/learn/tech-briefs/secure-internet-access.html) to gain additional information regarding Citrix Secure Internet Access.
 
 ### Citrix Content Collaboration
 
