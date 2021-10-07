@@ -19,7 +19,6 @@ Secure Private Access provides instant Single-Sign On (SSO) access to SaaS and w
 *  Web and SaaS SSO
 *  Gateway
 *  Cloud App Control
-*  Web filtering
 *  Secure Browser
 *  App protection
 *  Analytics
@@ -134,30 +133,6 @@ A less malicious but equally dangerous risk is accidental screen sharing. The li
 
 Figure 9: App Protection policies protecting Citrix Workspace privacy while using a screen sharing app
 
-## Web Filtering
-
- Secure Private Access includes a URL filtering engine. By using the information contained in URLs, this feature helps admins monitor and control user access to malicious websites on the internet. Together with the previously mentioned browser isolation options, web filtering gives admins options to choose from. They can completely block a URL, require to access a URL in Workspace Browser, or require access a URL in a Secure Browser session.
-
-The web filtering controller uses a categorization database and URLs list. When the request comes to the web filtering controller, it first checks the global allow list which also contains critical Citrix Cloud URLs. Then it checks to "Lists and Categorization" and verifies with blocked and allowed and redirect to Secure Browser URLs. If none of the URLs match, then by default it falls back to the default list.
-
-![Web Filtering](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_urlfilter.png)
-
-Figure 10: Web Filtering Process
-
-Admins can take a cautious approach even for accessing allow list URLs. This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet.
-
-A traditional URL filtering engine that assumes trust for a allow list URL. Secure Private Access does not implicitly trust an allow list URL since webpages, deemed safe by URL filtering engines, can host malicious links. With Secure Private Access, URLs on trusted sites are also tested.
-
-![Web Filtering](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_websitefilter.gif)
-
-Figure 11: Web filtering policies protecting end users who inadvertently access sites on the block list
-
-The following diagram contrasts the communication flow to URLs within sanctioned SaaS apps when using Workspace App with Workspace Browser versus a local browser.
-
-![Enhanced Security Flow Diagram](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_urlfilterdiag.png)
-
-Figure 12: URL Filter Flow Diagram
-
 ## Security Analytics
 
 End users invariably access SaaS apps that have enhanced security enabled. Workspace app, the Citrix Gateway service, and the Secure Browser service provide the Security analytics service with information about the following user and application behaviors. These analytics impact the user’s overall risk score:
@@ -203,7 +178,7 @@ Workspace is able to create a connection to on-premises web apps without relying
 
 ![VPN-less Access](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_usecase1.png)
 
-Figure 13: Use Case 1: VPN-less Access
+Figure 10: Use Case 1: VPN-less Access
 
 ### SSO and Security Controls for SaaS Apps
 
@@ -231,7 +206,7 @@ Browser isolation for internet traffic protects end users and enterprises from w
 
 ![SSO and Security Controls for SaaS Apps](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_usecase2.png)
 
-Figure 15: Use Case 2: SSO and Security Controls for SaaS Apps
+Figure 11: Use Case 2: SSO and Security Controls for SaaS Apps
 
 ### Protecting User and Corporate Data on BYO and Unmanaged Endpoints
 
@@ -245,7 +220,7 @@ The App Protection feature makes the text entered by the user indecipherable by 
 
 ![Protecting User and Corporate Data on BYO and Unmanaged Devices](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_usecase3.png)
 
-Figure 16: Use Case 3: Protecting user and Corporate Data on BYO and Unmanaged Devices
+Figure 12: Use Case 3: Protecting user and Corporate Data on BYO and Unmanaged Devices
 
 ## Summary
 
