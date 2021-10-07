@@ -47,7 +47,7 @@ For the remaining OS and Teams delivery format combinations, the generic deliver
 
 ## Citrix HDX Optimization for Microsoft Teams
 
-These components are by default, bundled into Citrix Workspace app and the Virtual Delivery Agent (VDA)
+These components are by default bundled into Citrix Workspace app and the Virtual Delivery Agent (VDA)
 
 ### Conceptual Architecture
 
@@ -70,12 +70,7 @@ These components are by default, bundled into Citrix Workspace app and the Virtu
 
 ### OS versions supported by the Optimization for Teams with Microsoft Teams desktop app
 
--  VM hosting Teams client – Install Citrix Virtual Delivery Agent (VDA) version 1906.2 or higher
-    -  Single session OS - Microsoft Windows 10 64-bit, minimum version 1607 up to 1909
-    -  Multi-session OS - Microsoft Windows Server 2019, 2016, 2012 R2 (Standard and Datacenter Editions)
-
--  Windows client machine - Install Citrix Workspace app 1907 for Windows or higher
-    -  Microsoft Windows 10, 8, 7 (32-bit & 64-bit editions, including Embedded editions 2016 LTSR or 2019 LTSC)
+For a detailed list of system requirements, please check the Microsoft Teams article in [edocs] (https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html#system-requirements)
 
 ### Supported Teams headsets and handsets
 
@@ -87,7 +82,6 @@ Note: Microsoft Teams does not support iPhone headsets
 
 ### Prerequisites
 
-Note - The Optimization for Teams at GA only applies to Windows Endpoints
 
 1.  Download the latest Citrix Virtual Apps and Desktops VDA installer. On Citrix.com, select the Downloads Tab. Select Citrix Virtual Apps and Desktops as the product and select Product Software as the download type. Select Citrix Virtual Apps and Desktops 1906 or later, it is under Components
 1.  Ensure that the Teams service is reachable, from the client in addition to the VDA
@@ -98,7 +92,7 @@ The installation procedures are simple
 
 ## Microsoft Teams install
 
-The installation must be done on the golden image of your catalog or in the office layer (if you are using App Layering). We recommend you follow the Microsoft Teams installation guidelines. Avoid installing Teams under AppData. Instead, install in **C:\Program Files** by using the **ALLUSER=1** flag.
+The installation must be done on the golden image of your catalog or in the office layer (if you are using App Layering). We recommend you follow the Microsoft Teams installation guidelines. Avoid installing Teams under AppData (unless you are using dedicated/assigned virtual desktops). Instead, install in **C:\Program Files** by using the **ALLUSER=1** flag, which is the recommended mode for pooled VDI/Windows Server/Windows 10 multiuser.
 For more information, see [Install Microsoft Teams using MSI](https://docs.microsoft.com/en-us/MicrosoftTeams/msi-deployment#vdi-installation)
 
 If Teams was installed in user mode before on the image:
@@ -115,6 +109,8 @@ If Teams was installed in user mode before on the image:
 ## Citrix Virtual Apps and Desktops VDA install on the host virtual machines
 
 The HDX Optimization for Teams is bundled as part of VDA in Citrix Virtual Apps and Desktops. It is installed on the hosts or base image of the catalog and Citrix Virtual Apps servers, which may be used to deliver Teams.
+
+Important:  only install Teams after the VDA is installed. Teams installer has a detection logic for underlying VDAs, which is critical for optimization.
 
 ### Application requirements
 
@@ -134,9 +130,9 @@ Ensure that the Microsoft Teams client application is installed in per-machine m
 
 Using this image, create the appropriate machine catalogs and delivery groups in **Citrix Studio / Citrix Cloud Manage** tab before trying to establish sessions and accessing the Teams client.
 
-## Windows client device – Citrix Workspace app 1909 for Windows install
+## Windows client device – Citrix Workspace app for Windows install (latest Current release recommended)
 
-The Citrix Workspace app 1909 for Windows has the optimization components built into it. When you install the application on your client, the components are already present.
+The Citrix Workspace app for Windows has the optimization components built into it. When you install the application on your client, the components are already present.
 
 ### System Requirements
 
