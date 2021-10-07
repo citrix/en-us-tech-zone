@@ -85,7 +85,7 @@ First, the Citrix Workspace Browser is a Chrome-based browser running on the cli
 
 Second, the Citrix Secure Browser Service is a cloud hosted browser service that does not require any browser to be installed on end user devices. The Secure Browser service is essentially a virtualized browser running in Citrix Cloud. This hosted browser service provides a secure way to access internet and corporate browser-based applications. It creates an air gap between the browser and users, devices, and networks, protecting them from dangerous malware.
 
-Web links to unknown or risky websites can be automatically redirected to the Citrix Workspace Browser or the Secure Browser service to protect end-users from potentially malicious websites. This transition is completely transparent for the end-user and keeps organizations safe while allowing employees to get their job done.
+Web links can be automatically redirected to the Citrix Workspace Browser or the Secure Browser service to protect end-users from potentially malicious websites. This transition is completely transparent for the end-user and keeps organizations safe while allowing employees to get their job done.
 
 Secure Private Access has a large database of URIs that are risk scored and administrators can set policies on specific domains to allow or block URIs. Administrators can also set policies on how applications need to be served to end-users.
 
