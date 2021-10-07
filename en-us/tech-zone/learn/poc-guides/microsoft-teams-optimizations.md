@@ -47,7 +47,7 @@ For the remaining OS and Teams delivery format combinations, the generic deliver
 
 ## Citrix HDX Optimization for Microsoft Teams
 
-These components are by default, bundled into Citrix Workspace app and the Virtual Delivery Agent (VDA)
+These components are by default bundled into Citrix Workspace app and the Virtual Delivery Agent (VDA)
 
 ### Conceptual Architecture
 
@@ -68,14 +68,7 @@ These components are by default, bundled into Citrix Workspace app and the Virtu
 1.  Peer A clicks the call button. Teams.exe communicates with the Teams services in Azure establishing an end-to-end signaling path with Peer B. Teams asks HdxTeams for a series of supported call parameters (codecs, resolutions, and so forth, which is known as a Session Description Protocol (SDP) offer). These call parameters are then relayed using the signaling path to the Teams services in Azure and from there to the other peer.
 1.  The SDP offer/answer (single-pass negotiation) and the Interactive Connectivity Establishment (ICE) connectivity checks (NAT and Firewall traversal using Session Traversal Utilities for NAT (STUN) bind requests) complete. Then, Secure Real-time Transport Protocol (SRTP) media flows directly between HdxTeams.exe and the other peer (or O365 conference servers if it is a Meeting).
 
-### OS versions supported by the Optimization for Teams with Microsoft Teams desktop app
-
--  VM hosting Teams client – Install Citrix Virtual Delivery Agent (VDA) version 1906.2 or higher
-    -  Single session OS - Microsoft Windows 10 64-bit, minimum version 1607 up to 1909
-    -  Multi-session OS - Microsoft Windows Server 2019, 2016, 2012 R2 (Standard and Datacenter Editions)
-
--  Windows client machine - Install Citrix Workspace app 1907 for Windows or higher
-    -  Microsoft Windows 10, 8, 7 (32-bit & 64-bit editions, including Embedded editions 2016 LTSR or 2019 LTSC)
+For a detailed list of system requirements, please check the Microsoft Teams article in [edocs](/en-us/citrix-virtual-apps-desktops/multimedia/opt-ms-teams.html#system-requirements).
 
 ### Supported Teams headsets and handsets
 
@@ -87,30 +80,12 @@ Note: Microsoft Teams does not support iPhone headsets
 
 ### Prerequisites
 
-Note - The Optimization for Teams at GA only applies to Windows Endpoints
-
 1.  Download the latest Citrix Virtual Apps and Desktops VDA installer. On Citrix.com, select the Downloads Tab. Select Citrix Virtual Apps and Desktops as the product and select Product Software as the download type. Select Citrix Virtual Apps and Desktops 1906 or later, it is under Components
 1.  Ensure that the Teams service is reachable, from the client in addition to the VDA
 1.  Ensure Microsoft Teams client version 1.2.00.31357 or higher is installed in the Virtual Delivery Agent hosts or base image or on Citrix Virtual Apps servers, which will be used to deliver Microsoft Teams or on both. See instructions on how to install it below
-1.  Download the latest Citrix Workspace app. [Link](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html)
+1.  Download the latest Citrix Workspace app from [here](https://www.citrix.com/downloads/workspace-app/windows/workspace-app-for-windows-latest.html).
 
 The installation procedures are simple
-
-## Microsoft Teams install
-
-The installation must be done on the golden image of your catalog or in the office layer (if you are using App Layering). We recommend you follow the Microsoft Teams installation guidelines. Avoid installing Teams under AppData. Instead, install in **C:\Program Files** by using the **ALLUSER=1** flag.
-For more information, see [Install Microsoft Teams using MSI](https://docs.microsoft.com/en-us/MicrosoftTeams/msi-deployment#vdi-installation)
-
-If Teams was installed in user mode before on the image:
-
--  Users from EXE installer:
-    -  Have all users in the environment manually uninstall from **Control Panel > Programs & Features**
--  Admin from MSI:
-    -  Admin uninstalls in the normal way
-    -  All users in the environment must sign in for uninstallation to be completed
--  Admin from Office Pro Plus:
-    -  Admin may need to uninstall as if MSI were directly installed (above)
-    -  Office Pro Plus must be configured to not include Teams
 
 ## Citrix Virtual Apps and Desktops VDA install on the host virtual machines
 
@@ -130,13 +105,31 @@ For Windows Server, if you did not install and enable the Remote Desktop Service
 
 Ensure that the Microsoft Teams client application is installed in per-machine mode on the VDA
 
-**Install the Citrix Virtual Delivery Agent** on the host or base image, following the instructions [here](/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas.html)
+**Install the Citrix Virtual Delivery Agent** on the host or base image, following the instructions [here](/en-us/citrix-virtual-apps-desktops/install-configure/install-vdas.html).
 
 Using this image, create the appropriate machine catalogs and delivery groups in **Citrix Studio / Citrix Cloud Manage** tab before trying to establish sessions and accessing the Teams client.
 
-## Windows client device – Citrix Workspace app 1909 for Windows install
+## Microsoft Teams install
 
-The Citrix Workspace app 1909 for Windows has the optimization components built into it. When you install the application on your client, the components are already present.
+**Note**: Install Microsoft Teams after the VDA is installed. Teams installer has a detection logic for underlying VDAs, which is critical for optimization.
+
+The installation must be done on the golden image of your catalog or in the office layer (if you are using App Layering). We recommend you follow the Microsoft Teams installation guidelines. Avoid installing Teams under AppData (unless you are using dedicated/assigned virtual desktops). Instead, install in **C:\Program Files** by using the **ALLUSER=1** flag, which is the recommended mode for pooled VDI/Windows Server/Windows 10 multiuser.
+For more information, see [Install Microsoft Teams using MSI](https://docs.microsoft.com/en-us/MicrosoftTeams/msi-deployment#vdi-installation)
+
+If Teams was installed in user mode before on the image:
+
+-  Users from EXE installer:
+    -  Have all users in the environment manually uninstall from **Control Panel > Programs & Features**
+-  Admin from MSI:
+    -  Admin uninstalls in the normal way
+    -  All users in the environment must sign in for uninstallation to be completed
+-  Admin from Office Pro Plus:
+    -  Admin may need to uninstall as if MSI were directly installed (above)
+    -  Office Pro Plus must be configured to not include Teams
+
+## Windows client device – Citrix Workspace app for Windows install (latest Current release recommended)
+
+The Citrix Workspace app for Windows has the optimization components built into it. When you install the application on your client, the components are already present.
 
 ### System Requirements
 
@@ -144,7 +137,7 @@ The Citrix Workspace app 1909 for Windows has the optimization components built 
 -  Citrix Workspace app requires a minimum of 600 MB free disk space and 1 GB RAM.
 -  Microsoft .NET Framework version 4.6.2 or later is installed automatically, if it is not already installed.
 
-Follow the instructions, to install the Citrix Workspace app for Windows [here](/en-us/citrix-workspace-app-for-windows/install.html#using-a-windows-based-installer)
+Follow the instructions, to install the Citrix Workspace app for Windows [here](/en-us/citrix-workspace-app-for-windows/install.html#using-a-windows-based-installer).
 
 ## Policy Settings
 
