@@ -13,7 +13,7 @@ tz_products: citrix-secure-workspace-access;
 
 As people consume more SaaS-based applications, organizations must be able to unify access to all apps and simplify end user authentication while still enforcing security and privacy standards. It’s also crucial to monitor vendor SLAs, application utilization, and security analytics. Citrix Secure Private Access delivers on those requirements and more.
 
-Secure Private Access provides instant Single-Sign On (SSO) access to SaaS and web applications, granular and contextual security policies, app protection policies for all apps, web browser isolation, and web filtering policies. Secure Private Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators:
+Secure Private Access provides instant Single-Sign On (SSO) access to SaaS and web applications, granular and adaptive security policies, app protection policies for all apps, and web browser isolation. Secure Private Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators:
 
 *  MFA and Device Trust
 *  Web and SaaS SSO
@@ -145,8 +145,6 @@ End users invariably access SaaS apps that have enhanced security enabled. Works
 *  Data upload
 *  Data download
 
-The web filtering feature evaluates the risk of each hyperlink selected within the SaaS application. Accessing these sites and monitoring changes in user behavior increases the user’s overall risk score. It signals the endpoint device is compromised and started to infect or encrypt data or the user and device are stealing intellectual property.
-
 ## Usage analytics
 
 Usage Analytics provides insights into the basic usage data of Secure Private Access. Admins get the visibility into how users interact with the SaaS and Web applications that are being used in their organization.
@@ -184,19 +182,12 @@ Figure 10: Use Case 1: VPN-less Access
 
 Secure Private Access offers single sign-on and contextual policies for access to web and SaaS apps. Using Citrix Gateway or Okta as the IdP provides support for all multifactor authentication mechanisms and contextual controls. These integrations protect customers' existing identity ecosystem investment and ease their move to cloud without a rip and replace forklift upgrade.
 
-Although an authorized SaaS app is considered safe, content in the SaaS app actually can be dangerous - constituting a security risk. When a user clicks a hyperlink within a SaaS app, the traffic is routed through the web filtering feature, which provides a risk assessment for the hyperlink. Based on the hyperlink’s risk assessment, and URL categories, the web filtering feature allows, denies, or redirects the request from the user as follows:
-
-*  Approved: The hyperlink is considered safe and Workspace Browser accesses within the Workspace app accesses the hyperlink.
-*  Denied: The hyperlink is considered dangerous and access is denied.
-*  Redirected: The hyperlink request is redirected to the Workspace Browser or Secure Browser service, where the user’s internet browsing activities are isolated from the endpoint device, the corporate network, and the SaaS app
-
-Enhanced security with App Protection provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying the following controls:
+Although an authorized SaaS app is considered safe, content in the SaaS app actually can be dangerous - constituting a security risk. Enhanced security with App Protection provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying the following controls:
 
 *  Watermarking
 *  Restrict navigating
 *  Restrict downloads
 *  Restrict keylogging
-*  Website filtering
 *  Restrict screen capture
 *  Restrict printing
 
