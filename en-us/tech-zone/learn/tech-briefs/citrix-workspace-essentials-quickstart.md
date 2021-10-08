@@ -154,7 +154,7 @@ SaaS apps have grown in popularity because of their simplicity and zero dependen
 
 Citrix Secure Private Access enables IT to apply these added security controls to both SaaS and web apps to prevent data exfiltration. The controls include policies to restrict copying and pasting, printing, downloads, navigation, watermarking (overlays a screen-based watermark showing the user name and IP address of the endpoint), and more.
 
-Each policy enforces a restriction on an embedded browser when using the Citrix Workspace app for desktop or Citrix Secure Browser Service when using the Citrix Workspace app web or mobile.
+Citrix Secure Private Access includes Citrix Workspace Browser. It's a secure embedded browser capable of applying enhanced security policies. Each policy enforces a restriction through the browser when using the Citrix Workspace app for desktop or Citrix Secure Browser Service when using the Citrix Workspace app web or mobile.
 
 Enhanced security with App Protection provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying the security controls detailed in [Enhanced Security](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html#enhanced-security).
 
@@ -174,7 +174,7 @@ Browsing the internet poses another risk to enterprises, exposing them to vulner
 
 While most users understand they shouldn’t visit potentially risky websites on their corporate-issued devices, they might not take the same care with their personal ones. In response, some organizations even completely disallow internet browsing, severely affecting productivity.
 
-Citrix Secure Private Access includes a secure embedded browser capable of applying enhanced security policies, and whenever enhanced security policies are enabled, the embedded browser is used. But suppose the user is not using Citrix Workspace, but rather a native browser. Then a more secure mechanism is required.
+Whenever enhanced security policies are enabled, the Citrix Workspace Browser is used. But suppose the user is not using Citrix Workspace, but rather a native browser. Then a more secure mechanism is required.
 
 Citrix Secure Browser Service, a Chromium-based browser hosted in Microsoft Azure, enables users to navigate the web and apps securely without introducing risk to the corporate environment. Threats that can be introduced by visiting malicious websites are isolated off the corporate network and devices. The browser is stateless and discarded at the end of each session, ensuring that any malicious software encountered while browsing the web never reaches your corporate infrastructure.
 
