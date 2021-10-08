@@ -1,18 +1,17 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: First Last, First2 Last2
-specialThanksTo: First Last, First2 Last2
-description: TODO insert description of article
-tz_title: TODO insert title of article
-tz_products: citrix-analytics;citrix-content-collaboration;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-service-providers;citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;google-cloud-platform;other;security;third-party-content
+contributedBy: Ana Ruiz, Frank Srp
+description: Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. 
+tz_title: Contact Center Solution
+tz_products: citrix-endpoint-management;citrix-secure-internet-access;citrix-virtual-apps-and-desktops;citrix-workspace;google-cloud-platform;
 ---
-# Content Type : tz_title
+# Tech Insight: Citrix & Google Contact Center Solution
 
-TEXT
+Contact Centers are vital with customer interaction and satisfaction. Often customer service agents are the face of a company and represent the only interface between a company and its customers. Learn how Citrix Cloud services and Google Chromebooks provide a reliable, flexible, and secure WFH environment.
 
-**Watch this video to [learn more](https://www.youtube.com/watch?v=YourYouTubeVideoIDHere):**
+**Watch this video to [learn more](https://youtu.be/CUhQ6Rsmp0I):**
 
 &nbsp;
 
-{% include video.html id="YourYouTubeVideoIDHere" type="youtube" %}
+{% include video.html id="CUhQ6Rsmp0I" type="youtube" %}
