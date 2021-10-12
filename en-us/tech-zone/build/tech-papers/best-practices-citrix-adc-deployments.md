@@ -16,7 +16,7 @@ tz_title: Tech Paper: Best practices for Citrix ADC Deployments
 This draft Tech Paper aims to convey what someone skilled in ADC would configure as a generic implementation.
 
 &nbsp;
->**Note:** No single configuration suits all. A consultant or administrator with better knowledge of your needs may deviate from these defaults and record the rationale for such changes in their design documentation.
+>**Note:** It is unlikely that there is a single configuration that suits everyone. A consultant or administrator with a better understanding of your needs may deviate from these defaults and document the reasons for such changes.
 
 \
 &nbsp;
@@ -86,7 +86,7 @@ You can find more information on configuring lights out management cards here:
 ### 1. All physical interfaces connecting the Citrix ADC to your networks are redundant
 
 \
-To ensure that data continues to flow during a cable, switch, or interface failure, connect your ADC to each network with redundant cables.
+To ensure data flow during a cable, switch, or interface failure, connect your ADC to each network with redundant cables. 
 
 To combine the interfaces connecting each network into a single link (known as a channel), you must configure link aggregation on your ADC. Ideally, you will use Link Aggregation Control Protocol (LACP) but, manual aggregated links are possible in the rare event that your network switches do not support LACP.
 
@@ -195,11 +195,11 @@ You can find instructions for configuring routes here:
 ### 9.  Create any Policy Based Routes required
 
 \
-Occasionally, it is impossible to configure a static route that allows for the behavior you require.
+Occasionally, configuring a static route to provide for the behavior you desire is impossible. 
 
-The most common example is an ADC with separate ingress, egress, and dedicated management networks, and with management clients on the egress network.
+An ADC with distinct ingress, egress, and dedicated management networks, as well as management clients on the egress network, is the most frequent example. 
 
-Here, static rules would not be sufficient. Instead, you would require a Policy Based Route (PBR). A PBR to cause traffic from the ADC's management IP to go via the management router and override the static routing table that would otherwise have sent data to the egress network.
+Static rules would not suffice in this case. Instead, a Policy-Based Route would be required (PBR). You can use a PBR to force traffic from the ADC's management IP to travel through the management router, bypassing the static routing table, which would otherwise send data to the egress network.
 
 You can find instructions for configuring Policy Based Routes here:
 <https://docs.citrix.com/en-us/citrix-adc/current-release/networking/ip-routing/configuring-policy-based-routes/configuring-policy-based-routes-pbrs-for-ipv4-traffic.html>
