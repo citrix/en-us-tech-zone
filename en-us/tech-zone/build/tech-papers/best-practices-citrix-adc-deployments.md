@@ -86,7 +86,7 @@ You can find more information on configuring lights out management cards here:
 ### 1. All physical interfaces connecting the Citrix ADC to your networks are redundant
 
 \
-To ensure data flow during a cable, switch, or interface failure, connect your ADC to each network with redundant cables. 
+To ensure data flow during a cable, switch, or interface failure, connect your ADC to each network with redundant cables.
 
 To combine the interfaces connecting each network into a single link (known as a channel), you must configure link aggregation on your ADC. Ideally, you will use Link Aggregation Control Protocol (LACP) but, manual aggregated links are possible in the rare event that your network switches do not support LACP.
 
@@ -195,9 +195,9 @@ You can find instructions for configuring routes here:
 ### 9.  Create any Policy Based Routes required
 
 \
-Occasionally, configuring a static route to provide for the behavior you desire is impossible. 
+Occasionally, configuring a static route to provide for the behavior you desire is impossible.
 
-An ADC with distinct ingress, egress, and dedicated management networks, as well as management clients on the egress network, is the most frequent example. 
+An ADC with distinct ingress, egress, and dedicated management networks, as well as management clients on the egress network, is the most frequent example.
 
 Static rules would not suffice in this case. Instead, a Policy-Based Route would be required (PBR). You can use a PBR to force traffic from the ADC's management IP to travel through the management router, bypassing the static routing table, which would otherwise send data to the egress network.
 
@@ -569,7 +569,7 @@ add snmp trap generic SNMPTRAPDSTIP -communityName public
 ### 15.  Set a remote syslog server
 
 \
-In addition to allowing monitoring platforms to poll the ADC using SNMP, it is helpful to configure audit logging and direct this to an existing server where the logs can be retained and analyzed.
+It is important to configure audit logging on the ADC and to pass the audit logs to an existing server where they can be retained and analyzed.
 
 You can configure the Citrix ADC to send audit logs to a remote Syslog server using the following commands:
 
@@ -595,9 +595,9 @@ set system parameter -timeout 900
 ```
 
 \
-An administrator may have SSH sessions open to multiple ADCs simultaneously. To clarify the node to which a session isconnected, it is helpful to change the ADC's CLI prompt.
+An administrator may open SSH sessions to multiple ADCs at the same time. Changing the ADC's CLI prompt will help clarify the node to which a session is connected.
 
-The following commands will cause the CLI prompt to display their username, the ADC's host name, and the HA state of the instance.
+The following commands will cause the CLI prompt to display their username, the ADC's host name, and the HA status of the instance.
 
 ```
 set system parameter -promptString %u@%h-%s
@@ -619,7 +619,7 @@ Security teams generally consider it better to control management accounts from 
 
 The rationale for centralized authentication and authorization is usually that managing accounts on each device is time-consuming and prone to error. Also, there is the risk that management users not change their passwords frequently and that IT can forget to remove ex-employees' accounts.
 
-To configure centralized authentication, you can use the following commands while noting the LDAP filter controlling which users are able to login.
+Use the following commands to configure centralized authentication, keeping in mind that the LDAP filter controls who is allowed to log in.
 
 ```
 add authentication ldapAction LDAP_mgmt_auth -serverIP <LDAPMANAGEMENTSERVERIP> -serverPort 636 -ldapBase "<dc=mycoolcompany,dc=local>" -ldapBindDn "<serviceaccount@mycoolcompany.local>" -ldapBindDnPassword <LDAPPASSWORD> -ldapLoginName <sAMAccountName> -searchFilter "&(|(memberOf:1.2.840.113556.1.4.1941:<cn=Citrix-ADC-FullAccess,ou=groups,dn=mycoolcompany,dc=local>)(memberOf:1.2.840.113556.1.4.1941:<cn=Citrix-ADC-ReadOnly,ou=groups,dn=mycoolcompany,dc=local>))" -groupAttrName memberOf -subAttributeName cn -secType SSL -passwdChange ENABLED -nestedGroupExtraction ON -maxNestingLevel 5 -groupNameIdentifier samAccountName -groupSearchAttribute memberOf -groupSearchSubAttribute CN
@@ -630,7 +630,7 @@ bind system global LDAP_mgmt_pol -priority 100
 
 While these commands implement authentication, they do not control authorization and, by default, the authenticated user are not able to perform any actions.
 
-To grant the user (or more accurately, the group of which they are a member) the right to perform actions on the ADC, you should use these commands:
+To grant the user (or more accurately, the group of which the user is a member) the right to perform actions on the ADC, you should use the following commands:
 
 ```
 add system group Citrix-ADC-FullAccess -timeout 900
@@ -657,7 +657,7 @@ Further, from ADC firmware version 12.1.51.16 you can configure multifactor auth
 \
 As the Citrix ADC processes authentication and authorization separately, users can authenticate using LDAP, and the ADC grants permissions based on their group membership.
 
-While it would be bad practice, you can create a list of user accounts with permissions on the ADC and authenticate using the password of an Active Directory user with that exact case sensitive name.
+While not a good idea, you could also create user accounts with authorization permissions on the ADC. A password associated with an Active Directory user with the same name could then be used to authenticate these accounts.
 
 To prevent an Active Directory administrator from creating an "nsroot" user and being able to authenticate, you must disable external authentication for the "nsroot" user account.
 
