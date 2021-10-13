@@ -45,7 +45,7 @@ Disable any physical interfaces that you are not using. Disabling unused interfa
 
 You can disable a physical interface by selecting **System, Network, Interfaces**. Then, by ticking the box next to the interface, clicking "**Select Action**", followed by "**Disable**".
 
-### 3.  Set all redundant physical interfaces to be unmonitored for HA within System, Network, Interfaces
+### 3. Set all redundant physical interfaces to be unmonitored for HA within System, Network, Interfaces
 
 As each network has redundant connections, it is not desirable that the ADC initiates an HA failover when a single link fails. Instead, the ADC should rely on the remaining link and only trigger a failover if all links fail.
 
@@ -55,7 +55,7 @@ To mark an interface as unmonitored, select **System, Network, Interfaces**. The
 
 In a virtualized or Cloud environment, you have virtual interfaces and don't need to perform this step as your provider handles interface redundancy.
 
-### 4.  All channels comprising redundant physical interfaces should be monitored for HA within System, Network, Channels
+### 4. All channels comprising redundant physical interfaces should be monitored for HA within System, Network, Channels
 
 The failure of all aggregated links connecting the ADC to a particular network causes the channel representing those links to enter a failed/DOWN state.
 
@@ -63,7 +63,7 @@ Check that monitoring has been enabled for the channel and the ADC will failover
 
 To mark a channel as monitored, select **System, Network, Channels**. Then, select each channel and set the "**HA Monitoring**" radio button to "**ON**".
 
-### 5.  All channels are bound to a separate VLAN and, you have taken care that no untagged channels are accidentally still in VLAN 1
+### 5. All channels are bound to a separate VLAN and, you have taken care that no untagged channels are accidentally still in VLAN 1
 
 Each redundant channel ordinarily represents the aggregate physical links connecting the ADC to a particular logical network.
 
@@ -76,14 +76,14 @@ To prevent this behavior, configure VLANs on the ADC to represent your logic net
 You can find instructions to create VLANs here:
 <https://docs.citrix.com/en-us/citrix-adc/current-release/networking/interfaces/configuring-vlans.html>
 
-### 6.  Create an HA pair between your ADCs within System, High Availability
+### 6. Create an HA pair between your ADCs within System, High Availability
 
 Citrix considers it a best practice to deploy ADCs redundantly. You can achieve redundancy by implementing an HA pair, creating a cluster, or using a technology such as GSLB to split requests between instances. HA pairs comprise two ADC nodes, and clusters can have up to 32-nodes. For a generic implementation, Citrix recommends the creation of a two-node HA pair.
 
 You can find instructions for configuring an HA pair here:
 <https://docs.citrix.com/en-us/citrix-adc/current-release/getting-started-with-citrix-adc/configure-ha-first-time.html>
 
-### 7.  Create and bind one SNIP to every VLAN, ensuring that each SNIP is in the subnet of the connected network
+### 7. Create and bind one SNIP to every VLAN, ensuring that each SNIP is in the subnet of the connected network
 
 Citrix ADC initiates communication from a Subnet IP (called a SNIP) with limited exceptions.
 
@@ -96,7 +96,7 @@ You can find instructions for configuring SNIPs here:
 
 >**Note:** SNIPs host management services by default. To create SNIPs without the management service enabled, append the "-mgmtAccess DISABLED" parameter to the "add ns IP" command.
 
-### 8.  Configure the routes that the ADC requires within System, Network, Routes
+### 8. Configure the routes that the ADC requires within System, Network, Routes
 
 If you have connected multiple logical networks, you likely have routers in each. Therefore, you must now configure all the routes that the ADC requires to reach its clients and back-end servers.
 
@@ -105,7 +105,7 @@ You can find instructions for configuring routes here:
 
 >**Note:** The ADC has a single routing table that applies to all interfaces.
 
-### 9.  Create any Policy Based Routes required
+### 9. Create any Policy Based Routes required
 
 Occasionally, configuring a static route to provide for the behavior you desire is impossible.
 
@@ -123,7 +123,7 @@ add ns pbr Management ALLOW -srcIP = <NSIP_of_first_HA_node>-<NSIP_of_second_HA_
 apply pbrs
 ```
 
-### 10.  Make sure you can ping each SNIP with Mac Based Forwarding (MBF) is disabled or that you understand why you cannot
+### 10. Make sure you can ping each SNIP with Mac Based Forwarding (MBF) is disabled or that you understand why you cannot
 
 Citrix ADC has a mode called Mac Based Forwarding (MBF). MBF causes the ADC to ignore the routing table and to send replies to the MAC address from which it received traffic.
 
@@ -150,8 +150,9 @@ If you do not require MBF, leave it disabled.
 You can find more information of Mac Based Forwarding here:
 <https://support.citrix.com/article/CTX132952>
 
-### 11.  You have installed a new SSL certificate and key for the management GUI within Traffic Management, SSL, Certificates
+### 11. You have installed a new SSL certificate and key for the management GUI within Traffic Management, SSL, Certificates
 
+\
 Web browsers do not trust the Citrix ADC's default SSL certificate. The lack of trust causes browsers to display a warning message when accessing the ADC's management services.
 
 Browser warnings for certificates are intended to alert users when the connection is not secure. Citrix recommends that you replace the default SSL certificate so that management users do not become accustomed to accepting warning messages.
@@ -163,7 +164,7 @@ You can find details of how to replace the management SSL certificate here:
 
 ## Base configuration settings
 
-### 1.  Set the timezone and enable NTP
+### 1. Set the timezone and enable NTP
 
 Having accurate and easily understood timestamps in your log files is vital when troubleshooting or handling a security issue.
 
@@ -200,7 +201,7 @@ You can find details of how to the timezone using the ADC's GUI here:
 You can find details of how to add NTP servers here:
 <https://docs.citrix.com/en-us/citrix-application-delivery-management-software/current-release/configure/configure-ntp-server.html>
 
-### 2.  Create a Key Encryption Key
+### 2. Create a Key Encryption Key
 
 A Key Encryption Key (commonly known as a KEK) is used to encrypt and decrypt credentials that the ADC must store in a reversible form. For example, the ADC must keep its LDAP bind password reversible to retrieve it at authentication time.
 
@@ -212,7 +213,7 @@ On older releases, you can create a KEK with the command:
 create kek <RANDOMSTRING>
 ```
 
-### 3.  Set a non-default nsroot password
+### 3. Set a non-default nsroot password
 
 Recent releases of Citrix ADC firmware prompt you to change the default password for the "nsroot" account when you first log in. Recent firmware builds prompt for the password change as the "**-forcePasswordChange**" system parameter is enabled.
 
@@ -222,8 +223,9 @@ For older releases, you must change the "nsroot" password with the command:
 set system user nsroot -password <NSROOTPASSWORD>
 ```
 
-### 4.  Add an account for ADM with external authentication disabled
+### 4. Add an account for ADM with external authentication disabled
 
+\
 Ideally, connect all of your Citrix ADCs to ADM for centralized licensing and management. The connection to ADM requires a user name and password which can be created with the following commands:
 
 ```
@@ -232,7 +234,7 @@ bind system user admuser superuser 100
 set system user admuser -externalAuth DISABLED
 ```
 
-### 5.  Restrict non-management applications access to the NSIP and only HTTPS access
+### 5. Restrict non-management applications access to the NSIP and only HTTPS access
 
 Prevent non-management services from accessing the management IP and set the management IP to require secure communication access (HTTPS rather than HTTP).
 
@@ -243,7 +245,7 @@ set ns ip NSIP -restrictAccess enabled -gui SECUREONLY
 You can find more details on restricting access to the NSIP:
 <https://support.citrix.com/article/CTX126736>
 
-### 6.  Set a non-default RPC node password
+### 6. Set a non-default RPC node password
 
 Set RPC communication (used for HA and GSLB) to use a non-default password.
 
@@ -253,7 +255,7 @@ set rpcNode <NSIP_OF_SECONDARY_NODE> -password <RPC_SECONDARY_PASSWORD> -secure 
 set rpcNode <NSIP_OF_PRIMARY_NODE> -password <RPC_PRIMARY_PASSWORD> -secure YES
 ```
 
-### 7.  HA failsafe mode is enabled to ensure that the last healthy node continues to provide service
+### 7. HA failsafe mode is enabled to ensure that the last healthy node continues to provide service
 
 If an ADC's monitored HA interfaces or routes indicate an error, the ADC enters an unhealthy state and trigger an HA failover. If the second HA node enters an unhealthy state, both stop providing service.
 
@@ -266,7 +268,7 @@ set HA node -failSafe ON
 You can find more details on HA fail-safe mode here:
 <https://docs.citrix.com/en-us/citrix-adc/current-release/system/high-availability-introduction/configuring-fail-safe-high-availability.html>
 
-### 8.  Restrict HA failovers to 3 in 1200 seconds
+### 8. Restrict HA failovers to 3 in 1200 seconds
 
 In the unlikely event that HA failovers repeatedly occur, there comes the point where you want them to stop and to attempt to provide service.
 
@@ -277,7 +279,7 @@ set ha node -maxFlips 3
 set ha node -maxFlipTime 1200
 ```
 
-### 9.  Disable SSLv3 for management services
+### 9. Disable SSLv3 for management services
 
 The Citrix ADC management GUI has SSLv3 and TLS1.0 enabled by default. To ensure secure communication, we will disable SSLv3.
 
@@ -293,7 +295,7 @@ set ssl service nshttps-::1l-443 -ssl3 disabled -tls1 disabled
 set ssl service nshttps-127.0.0.1-443 -ssl3 disabled -tls1 disabled
 ```
 
-### 10.  Set generic modes and features
+### 10. Set generic modes and features
 
 Citrix ADC has Layer 3 mode enabled by default. Layer 3 mode causes the ADC to act as a router and can normally be safely disabled. Edge mode causes the ADC to dynamically learn details about back-end servers when used in a configuration such as link load balancing.
 
@@ -313,7 +315,7 @@ enable ns feature lb ssl rewrite responder cmp
 You can find more details about modes and features here:
 <https://support.citrix.com/article/CTX122942>
 
-### 11.  Configure one or more DNS nameserver
+### 11. Configure one or more DNS nameserver
 
 The Citrix ADC needs to have access to one or more nameservers for DNS resolution. Citrix ADC checks if the DNS servers are online using an ICMP monitor. To use DNS based monitoring and distribute load, it is usual to implement a local DNS load balancing virtual server.
 
@@ -349,7 +351,7 @@ add dns nameServer DNS_UDP -type UDP
 add dns nameServer DNS_TCP -type TCP
 ```
 
-### 12.  Set TCP and HTTP parameters
+### 12. Set TCP and HTTP parameters
 
 While Window Scaling (WS) and Selective Acknowledgment (SACK) now default to enabled in ADC 13.0 firmware, you must enable these TCP settings in earlier firmware versions.
 
@@ -382,7 +384,7 @@ Internet Explorer 2 included support for version 1 cookies in 1995, and you are 
 set ns param -cookieversion 1
 ```
 
-### 13.  Restrict SNMP queries to select servers
+### 13. Restrict SNMP queries to select servers
 
 It is good practice that the ADC only answers SNMP queries from hosts supposed to make such queries. Limit the hosts that the ADC allows SNMP queries from using the command:
 
@@ -393,7 +395,7 @@ set snmp manager SNMPMANAGERIP
 You can find more details on configuring SNMP here:
 <https://docs.citrix.com/en-us/citrix-adc/current-release/getting-started-with-citrix-adc/configure-system-settings/configure-snmp.html>
 
-### 14.  Set SNMP alarms and traps
+### 14. Set SNMP alarms and traps
 
 It is helpful for the ADC to raise alerts when high CPU or memory usage conditions occur. You can send alerts via trap configuration to your SNMP server. You may also want to trigger alerts when HA failovers occur. You can implement such configuration with the following commands:
 
@@ -407,7 +409,7 @@ add snmp trap generic SNMPTRAPDSTIP -communityName public
 
 >**Note:** Citrix recommends that you consider periodically reviewing threshold values to ensure that the ADC alerts on abnormal behavior that you want to investigate.
 
-### 15.  Set a remote syslog server
+### 15. Set a remote syslog server
 
 Audit logging should be configured on an ADC, and audit logs should be stored and analyzed on a remote server.
 
@@ -422,7 +424,7 @@ bind audit syslogGlobal -policyName RemoteSyslogServerPolicy -priority 100
 You can find more details about audit logging here:
 <https://docs.citrix.com/en-us/citrix-adc/current-release/system/audit-logging.html>
 
-### 16.  Set a timeout and prompt for management sessions
+### 16. Set a timeout and prompt for management sessions
 
 Citrix ADC 13.0 allows a default of 900 seconds (15 minutes) before disconnecting idle management sessions. On older firmware versions, you must ensure that you have configured an appropriate timeout.
 
@@ -430,7 +432,7 @@ Citrix ADC 13.0 allows a default of 900 seconds (15 minutes) before disconnectin
 set system parameter -timeout 900
 ```
 
-An administrator may open SSH sessions to multiple ADCs at the same time. Changing the ADC's CLI prompt helps clarify the node to which a session is connected.
+An administrator can open SSH sessions to multiple ADCs at the same time. Changing the ADC's CLI prompt helps clarify the node to which a session is connected.
 
 The following commands cause the CLI prompt to display their username, the ADC's host name, and the HA status of the instance.
 
@@ -444,7 +446,7 @@ After you run the command, the prompt will be rendered as:
 nsroot@hostname-Primary> 
 ```
 
-### 17.  Centralized authentication for management accounts
+### 17. Centralized authentication for management accounts
 
 Security teams generally consider it better to control management accounts from a central platform such as Active Directory than to create accounts on each device. Usually, these centralized accounts are then granted permissions based on group memberships.
 
@@ -479,7 +481,7 @@ You can also find information about the LDAP filter string used above here:
 Further, from ADC firmware version 12.1.51.16 you can configure multifactor authentication for management users by following the steps here:
 <https://docs.citrix.com/en-us/citrix-adc/current-release/system/authentication-and-authorization-for-system-user/two-factor-authentication-for-system-users-and-external-users.html>
 
-### 18.  Disable LDAP authentication for the nsroot user
+### 18. Disable LDAP authentication for the nsroot user
 
 As the Citrix ADC processes authentication and authorization separately, users can authenticate using LDAP, and the ADC grants permissions based on their group membership.
 
@@ -491,7 +493,7 @@ To prevent an Active Directory administrator from creating an "nsroot" user and 
 set system user nsroot -externalAuth DISABLED
 ```
 
-### 19.  TLS/SSL Best practices
+### 19. TLS/SSL Best practices
 
 You can now follow the TLS/SSL Best Practice document to define a secure cipher suite that can be used to protect your virtual servers.
 
