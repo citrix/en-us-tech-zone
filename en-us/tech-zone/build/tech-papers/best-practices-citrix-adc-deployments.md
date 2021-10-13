@@ -6,8 +6,6 @@ description: Tech Paper focused on the steps that a Citrix ADC administrator sho
 tz_title: Tech Paper: Best practices for Citrix ADC Deployments
 ---
 # Tech Paper: Best practices for Citrix ADC Deployments
-
-11/10/2021
 \
 &nbsp;
 
