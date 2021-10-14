@@ -23,8 +23,7 @@ If you have purchased a Citrix ADC appliance, you should ensure:
 
 1.  The lights out management card (if you have purchased appliances with such a card) are configured.
 
-You can find more information on configuring lights out management cards here:
-<https://docs.citrix.com/en-us/citrix-hardware-platforms/mpx/netscaler-mpx-lights-out-management-port-lom.html>
+[You can find more information on configuring lights out management cards here.](/en-us/citrix-hardware-platforms/mpx/netscaler-mpx-lights-out-management-port-lom.html)
 
 ## Physical network cabling, VLANs, and connectivity
 
@@ -34,8 +33,7 @@ To ensure data flow during a cable, switch, or interface failure, connect your A
 
 To combine the interfaces connecting each network into a single link (known as a channel), you must configure link aggregation on your ADC. When possible, it is preferable to use the Link Aggregation Control Protocol (LACP). However, manual aggregated links are also possible if your network switches do not support LACP.
 
-Instructions for configuring Link Aggregation on your Citrix ADC can be found here:
-<https://docs.citrix.com/en-us/citrix-adc/13/networking/interfaces/configuring-link-aggregation.html>
+[Instructions for configuring Link Aggregation on your Citrix ADC can be found here](/en-us/citrix-adc/13/networking/interfaces/configuring-link-aggregation.html)
 
 In a virtualized or cloud environment, your provider handles interface redundancy, and this step is not required.
 
@@ -73,15 +71,13 @@ By default, the ADC considers all interfaces, channels, and IP addresses as bein
 
 To prevent this behavior, configure VLANs on the ADC to represent your logic networks and appropriately isolate traffic.
 
-You can find instructions to create VLANs here:
-<https://docs.citrix.com/en-us/citrix-adc/current-release/networking/interfaces/configuring-vlans.html>
+[You can find instructions to create VLANs here.](/en-us/citrix-adc/current-release/networking/interfaces/configuring-vlans.html)
 
 ### 6. Create an HA pair between your ADCs within System, High Availability
 
 Citrix considers it a best practice to deploy ADCs redundantly. You can achieve redundancy by implementing an HA pair, creating a cluster, or using a technology such as GSLB to split requests between instances. HA pairs comprise two ADC nodes, and clusters can have up to 32-nodes. For a generic implementation, Citrix recommends the creation of a two-node HA pair.
 
-You can find instructions for configuring an HA pair here:
-<https://docs.citrix.com/en-us/citrix-adc/current-release/getting-started-with-citrix-adc/configure-ha-first-time.html>
+[You can find instructions for configuring an HA pair here](/en-us/citrix-adc/current-release/getting-started-with-citrix-adc/configure-ha-first-time.html)
 
 ### 7. Create and bind one SNIP to every VLAN, ensuring that each SNIP is in the subnet of the connected network
 
@@ -91,8 +87,7 @@ Create one Subnet IP/SNIP for every directly connected logical network. As you h
 
 As each SNIP includes a netmask, the ADC silently identifies Virtual IPs (VIPs) within that subnet and attaches these to the same VLAN. The VLAN configuration then isolates virtual servers within their intended network.
 
-You can find instructions for configuring SNIPs here:
-<https://docs.citrix.com/en-us/citrix-adc/current-release/networking/ip-addressing/configuring-citrix-adc-owned-ip-addresses/configuring-subnet-ip-addresses-snips.html>
+[You can find instructions for configuring SNIPs here.](/en-us/citrix-adc/current-release/networking/ip-addressing/configuring-citrix-adc-owned-ip-addresses/configuring-subnet-ip-addresses-snips.html)
 
 >**Note:** SNIPs host management services by default. To create SNIPs without the management service enabled, append the "-mgmtAccess DISABLED" parameter to the "add ns IP" command.
 
@@ -100,8 +95,7 @@ You can find instructions for configuring SNIPs here:
 
 If you have connected multiple logical networks, you likely have routers in each. Therefore, you must now configure all the routes that the ADC requires to reach its clients and back-end servers.
 
-You can find instructions for configuring routes here:
-<https://docs.citrix.com/en-us/citrix-adc/current-release/networking/ip-routing/configuring-static-routes.html>
+[You can find instructions for configuring routes here.](/en-us/citrix-adc/current-release/networking/ip-routing/configuring-static-routes.html)
 
 >**Note:** The ADC has a single routing table that applies to all interfaces.
 
@@ -113,8 +107,7 @@ An ADC with distinct ingress, egress, and dedicated management networks, as well
 
 Static rules would not suffice in this case. Instead, a Policy-Based Route would be required (PBR). By using a PBR, you can force traffic from the ADC's management IP to travel through the management router. Using a PBR will bypass the static routing table, which would otherwise send data to the egress network.
 
-You can find instructions for configuring Policy Based Routes here:
-<https://docs.citrix.com/en-us/citrix-adc/current-release/networking/ip-routing/configuring-policy-based-routes/configuring-policy-based-routes-pbrs-for-ipv4-traffic.html>
+[You can find instructions for configuring Policy Based Routes here.](/en-us/citrix-adc/current-release/networking/ip-routing/configuring-policy-based-routes/configuring-policy-based-routes-pbrs-for-ipv4-traffic.html)
 
 However, if you have the scenario described in our example, you need the following PBR:
 
@@ -195,11 +188,9 @@ nsroot@StevensADC-Primary> show ntp status
  nsroot@StevensADC-Primary>
 ```
 
-You can find details of how to the timezone using the ADC's GUI here:
-<https://docs.citrix.com/en-us/citrix-application-delivery-management-software/current-release/manage-system-settings.html>
+[You can find details of how to the timezone using the ADC's GUI here.](/en-us/citrix-application-delivery-management-software/current-release/manage-system-settings.html)
 
-You can find details of how to add NTP servers here:
-<https://docs.citrix.com/en-us/citrix-application-delivery-management-software/current-release/configure/configure-ntp-server.html>
+[You can find details of how to add NTP servers here.](/en-us/citrix-application-delivery-management-software/current-release/configure/configure-ntp-server.html)
 
 ### 2. Create a Key Encryption Key
 
@@ -265,8 +256,7 @@ HA fail-safe mode ensures that the last surviving node of a pair continues attem
 set HA node -failSafe ON
 ```
 
-You can find more details on HA fail-safe mode here:
-<https://docs.citrix.com/en-us/citrix-adc/current-release/system/high-availability-introduction/configuring-fail-safe-high-availability.html>
+[You can find more details on HA fail-safe mode here.](/en-us/citrix-adc/current-release/system/high-availability-introduction/configuring-fail-safe-high-availability.html)
 
 ### 8. Restrict HA failovers to 3 in 1200 seconds
 
@@ -303,8 +293,7 @@ Citrix ADC has Layer 3 mode enabled by default. Layer 3 mode causes the ADC to a
 disable ns mode l3 edge
 ```
 
-You can find more details on Layer 3 mode here:
-<https://docs.citrix.com/en-us/citrix-adc/current-release/getting-started-with-citrix-adc/configure-system-settings/configure-modes-packet-forwarding.html>
+[You can find more details on Layer 3 mode here.](/en-us/citrix-adc/current-release/getting-started-with-citrix-adc/configure-system-settings/configure-modes-packet-forwarding.html)
 
 The specific modes and features that you need depend on your use case. However, we can select a list of options that would apply to most installations.
 
@@ -392,8 +381,7 @@ It is good practice that the ADC only answers SNMP queries from hosts supposed t
 set snmp manager SNMPMANAGERIP
 ```
 
-You can find more details on configuring SNMP here:
-<https://docs.citrix.com/en-us/citrix-adc/current-release/getting-started-with-citrix-adc/configure-system-settings/configure-snmp.html>
+[You can find more details on configuring SNMP here.](/en-us/citrix-adc/current-release/getting-started-with-citrix-adc/configure-system-settings/configure-snmp.html)
 
 ### 14. Set SNMP alarms and traps
 
@@ -421,8 +409,8 @@ add audit syslogpolicy RemoteSyslogServerPolicy true RemoteSyslogServerAction
 bind audit syslogGlobal -policyName RemoteSyslogServerPolicy -priority 100
 ```
 
-You can find more details about audit logging here:
-<https://docs.citrix.com/en-us/citrix-adc/current-release/system/audit-logging.html>
+[You can find more details about audit logging here]
+(/en-us/citrix-adc/current-release/system/audit-logging.html)
 
 ### 16. Set a timeout and prompt for management sessions
 
@@ -478,8 +466,7 @@ You can find more information about centralized authentication and authorization
 You can also find information about the LDAP filter string used above here:
 <https://support.citrix.com/article/CTX201948>
 
-Further, from ADC firmware version 12.1.51.16 you can configure multifactor authentication for management users by following the steps here:
-<https://docs.citrix.com/en-us/citrix-adc/current-release/system/authentication-and-authorization-for-system-user/two-factor-authentication-for-system-users-and-external-users.html>
+Further, from ADC firmware version 12.1.51.16 you can configure multifactor authentication for management users by [following the steps here.](/en-us/citrix-adc/current-release/system/authentication-and-authorization-for-system-user/two-factor-authentication-for-system-users-and-external-users.html)
 
 ### 18. Disable LDAP authentication for the nsroot user
 
@@ -497,5 +484,4 @@ set system user nsroot -externalAuth DISABLED
 
 You can now follow the TLS/SSL Best Practice document to define a secure cipher suite that can be used to protect your virtual servers.
 
-You can find the TLS/SSL best practice document here:
-<https://docs.citrix.com/en-us/tech-zone/build/tech-papers/networking-tls-best-practices.html>
+[You can find the TLS/SSL best practice document here.](/en-us/tech-zone/build/tech-papers/networking-tls-best-practices.html)
