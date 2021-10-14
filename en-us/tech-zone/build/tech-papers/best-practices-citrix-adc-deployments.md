@@ -225,6 +225,8 @@ bind system user admuser superuser 100
 set system user admuser -externalAuth DISABLED
 ```
 
+[You can find more details about ADM here.](/en-us/citrix-adc/current-release/adm-service-connect.html)
+
 ### 5. Restrict non-management applications access to the NSIP and only HTTPS access
 
 Prevent non-management services from accessing the management IP and set the management IP to require secure communication access (HTTPS rather than HTTP).
