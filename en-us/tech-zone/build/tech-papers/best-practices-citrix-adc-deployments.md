@@ -85,7 +85,7 @@ Citrix ADC initiates communication from a Subnet IP (called a SNIP) with limited
 
 Create one Subnet IP/SNIP for every directly connected logical network. As you have already isolated each network using VLANs, you must bind each SNIP to its respective VLAN. Take care to ensure that no VLANs are missing a SNIP.
 
-As each SNIP includes a netmask, the ADC silently identifies Virtual IPs (VIPs) within that subnet and attaches these to the same VLAN. The VLAN configuration then isolates virtual servers within their intended network.
+The ADC identifies which VLAN each Virtual IP (VIP) needs to be placed in based on the SNIP's subnets. The VLAN configuration then isolates virtual servers within their intended network.
 
 [You can find instructions for configuring SNIPs here.](/en-us/citrix-adc/current-release/networking/ip-addressing/configuring-citrix-adc-owned-ip-addresses/configuring-subnet-ip-addresses-snips.html)
 
