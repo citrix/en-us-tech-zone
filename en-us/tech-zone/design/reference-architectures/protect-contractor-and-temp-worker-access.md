@@ -156,8 +156,8 @@ CompanyA wants to limit the risk of data loss and data remanence on contractor a
 [![Lockdown](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_35.png)](/en-us/tech-zone/design/media/reference-architectures_protect-contractor-and-temp-worker-access_35.png)
 
 *  Contractor and temp worker endpoint devices require Citrix Workspace app to be installed for access to company resources.
-*  Contractor and temp worker endpoint devices **with** Citrix Workspace app use Secure Private Access to launch SaaS or web apps using a local containerized browser local to the endpoint.
-    *  The embedded browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app.
+*  Contractor and temp worker endpoint devices **with** Citrix Workspace app use Secure Private Access to launch SaaS or web apps using Citrix Workspace Browser - a containerized browser local to the endpoint.
+    *  Citrix Workspace Browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app.
     *  Secure Private Access provides SSO and enforces adaptive access policies (download, print, copy, and paste restrictions).
 *  As a fall back, contractor and temp worker endpoint devices **without** Citrix Workspace app use Secure Private Access to launch a virtua, SaaS, or web app through an isolated browser using the Citrix Secure Browser service.
     *  Secure Private Access provides SSO and enforces adaptive access policies such as download, print, copy, and paste restrictions to web and SaaS apps.
