@@ -140,8 +140,7 @@ enable ns mode mbf
 
 If you do not require MBF, leave it disabled.
 
-You can find more information of Mac Based Forwarding here:
-<https://support.citrix.com/article/CTX132952>
+[You can find more information of Mac Based Forwarding here.](https://support.citrix.com/article/CTX132952)
 
 ### 11. You have installed a new SSL certificate and key for the management GUI within Traffic Management, SSL, Certificates
 
@@ -150,8 +149,7 @@ Web browsers do not trust the Citrix ADC's default SSL certificate. The lack of 
 
 Browser warnings for certificates are intended to alert users when the connection is not secure. Citrix recommends that you replace the default SSL certificate so that management users do not become accustomed to accepting warning messages.
 
-You can find details of how to replace the management SSL certificate here:
-<https://support.citrix.com/article/CTX122521>
+[You can find details of how to replace the management SSL certificate here.](https://support.citrix.com/article/CTX122521)
 
 >**Note:** As Citrix ADC shares the management SSL certificate between HA nodes, your replacement certificate must be trusted for all FQDNs used for management purposes. Citrix recommends using a SAN certificate to include the FQDN of both HA nodes.
 
@@ -235,8 +233,7 @@ Prevent non-management services from accessing the management IP and set the man
 set ns ip NSIP -restrictAccess enabled -gui SECUREONLY
 ```
 
-You can find more details on restricting access to the NSIP:
-<https://support.citrix.com/article/CTX126736>
+[You can find more details on restricting access to the NSIP here.](https://support.citrix.com/article/CTX126736)
 
 ### 6. Set a non-default RPC node password
 
@@ -303,8 +300,7 @@ The specific modes and features that you need depend on your use case. However, 
 enable ns feature lb ssl rewrite responder cmp
 ```
 
-You can find more details about modes and features here:
-<https://support.citrix.com/article/CTX122942>
+[You can find more details about modes and features here.](https://support.citrix.com/article/CTX122942)
 
 ### 11. Configure one or more DNS nameserver
 
@@ -433,7 +429,7 @@ set system parameter -promptString %u@%h-%s
 After you run the command, the prompt will be rendered as:
 
 ```
-nsroot@hostname-Primary> 
+nsroot@hostname-Primary>
 ```
 
 ### 17. Centralized authentication for management accounts
@@ -462,11 +458,9 @@ bind system group Citrix-ADC-FullAccess -policyName superuser 100
 bind system group Citrix-ADC-ReadOnly -policyName read-only 110
 ```
 
-You can find more information about centralized authentication and authorization here:
-<https://support.citrix.com/article/CTX123782>
+[You can find more information about centralized authentication and authorization here.](https://support.citrix.com/article/CTX123782)
 
-You can also find information about the LDAP filter string used above here:
-<https://support.citrix.com/article/CTX201948>
+[You can also find information about the LDAP filter string used above here.](https://support.citrix.com/article/CTX201948)
 
 Further, from ADC firmware version 12.1.51.16 you can configure multifactor authentication for management users by [following the steps here.](/en-us/citrix-adc/current-release/system/authentication-and-authorization-for-system-user/two-factor-authentication-for-system-users-and-external-users.html)
 
