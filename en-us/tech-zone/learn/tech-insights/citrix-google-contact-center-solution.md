@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Ana Ruiz, Frank Srp
-description: Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. 
+description: Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers.
 tz_title: Contact Center Solution
 tz_products: citrix-endpoint-management;citrix-secure-internet-access;citrix-virtual-apps-and-desktops;citrix-workspace;google-cloud-platform;
 ---
