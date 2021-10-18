@@ -190,7 +190,7 @@ CVAD Standard is the simplest, fastest way to deliver Windows apps and desktops 
 
 The above diagram depicts the architecture for CVAD Standard. In the CVAD Standard solution, Azure subscription is managed by Citrix. Customer-managed Azure subscriptions and customer data center resources are owned and managed by the customer. The administrators have the power to provision and monitor VDAs from Citrix Cloud. End-users can access their desktops from anywhere, and any device. The above diagram is divided into four sections:
 
-**Citrix Cloud:** The Citrix Cloud hosts a complete control plane for CVAD Standard. Delivery Controllers, database instances, monitoring tools, and other infrastructure components are part of CVAD Standard. Apart from CVAD Standard, other services including Citrix Gateway service, Secure Workspace Access, SD-WAN orchestrator, Content Collaboration, and other services are hosted on Citrix Cloud.
+**Citrix Cloud:** The Citrix Cloud hosts a complete control plane for CVAD Standard. Delivery Controllers, database instances, monitoring tools, and other infrastructure components are part of CVAD Standard. Apart from CVAD Standard, other services including Citrix Gateway service, Secure Private Access, SD-WAN orchestrator, Content Collaboration, and other services are hosted on Citrix Cloud.
 
 **Citrix-Managed Azure Platform:** Citrix VDAs are provisioned on this platform. Windows server and client operating systems are hosted on this platform. This platform communicates with Citrix Cloud through Citrix Cloud Connectors. A pair of Cloud Connectors is hosted within a virtual network in each resource location. End-customers do not have access to the Citrix managed Azure subscription including Cloud Connectors. Therefore, Citrix is responsible for the performance and management of the Cloud Connectors.
 
@@ -504,13 +504,11 @@ Citrix Workspace app is the entry point to access desktops and apps running on t
 
 *  Citrix Managed Azure AD (AAD)
 
-*  Customer Managed Active Directory
-
-*  Customer Managed Azure AD
+*  Customer's choice of Identity provider
 
 **Citrix Managed Azure AD:** Azure Active Directory service is provided and managed by Citrix. Here the administrator does not need to provide or own any Azure infrastructure. Citrix has made it simple to manage, the admins have to add their users to the directory using the CVAD Standard UI.
 
-**Customer Managed Active Directory:** In this authentication method, customers are using their on-premises Active Directory services or using the Azure Active Directory service.
+**Customer's choice of Identity provider:** In this authentication method, customers can use any available authentication method in Citrix Cloud. Including customer managed Azure Active Directory, Okta and SAML 2.0 based authentication mechanisms.
 
 [![CVAD Standard 10](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_010.png)](/en-us/tech-zone/design/media/reference-architectures_citrix-managed-desktops_010.png)
 
@@ -654,7 +652,7 @@ To gain an understanding of the workloads, the solution architect has to do pre-
 
 Pre-assessment is useful to determine the specific applications required for the users, the licensing requirement, and calculate the cost associated with the deployment. Citrix provides the CVAD Standard cost calculator to understand cost estimation for the deployment. Actual prices may vary depending upon other factors including date of purchase, type of agreement with Citrix, and so on.
 
-CVAD Standard Cost Calculator [link](https://costcalculator.apps.cloud.com/daas/advanced).
+Calculate your total DaaS costs with the [CVAD Standard for Azure Cost Calculator](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/resources/citrix-azure-calculator.html).
 
 ### Deployment considerations and image optimization
 

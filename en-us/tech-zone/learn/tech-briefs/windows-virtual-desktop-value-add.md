@@ -439,7 +439,7 @@ Learn more about how to set up the same [here](/en-us/tech-zone/build/deployment
 
 ## Experience - App Delivery solutions
 
-### Citrix Gateway and Citrix Secure Workspace Access
+### Citrix Gateway and Citrix Secure Private Access
 
 Citrix Gateway is the preferred app delivery solution for reverse proxy to Citrix resources, providing VPN-less access to resources for end users.
 
@@ -453,7 +453,7 @@ Citrix Gateway Service has dozens of Points of Presence (POP) globally, connecti
 *  Enterprises pay as they grow and reduce operating expenses
 *  Faster onboarding for new customers
 
-Furthermore, Citrix Secure Workspace Access combines the capabilities of instant secure access to SaaS and web applications through single sign-on (SSO), along with browser and cloud-based app controls, web-filtering policies and integrated user-behavior analytics to add an extra layer of security.
+Furthermore, Citrix Secure Private Access combines the capabilities of instant secure access to SaaS and web applications through single sign-on (SSO), along with browser and cloud-based app controls, web-filtering policies and integrated user-behavior analytics to add an extra layer of security.
 
 Endpoint Point Access scans and contextual access help to determine the level of security that a URL would need. Based on the result the system automatically determines whether the user can access the URL directly or the user must be redirected to a Secure Browser session where the URL is opened safely, or the URL needs to be blocked.
 
@@ -558,9 +558,11 @@ The following is a list of the features that were discussed in the detail in the
     1.  Profile Management extension for multi-session scenarios, support for Azure Files.
     1.  App Delivery solutions – Gateway enhances security with SSO and MFA, reduces latency to the resources and increase the resiliency of the environment, while enabling VPN-less access. SD-WAN provides QoS, reliability, out-of-band traffic for internet content, and optimizes connectivity between the cloud and on-premises data center. SD-WAN traffic optimization for UCE, Web, and SaaS apps delivers the best experience possible.
     1.  Workspace – Enhances the user experience by integrating the AVD based resources into a Workspace that helps, organize, guide, and automate work for the user.
-1.  Security – Session Watermarking, Session Recording, expanded multi-factor authentication capabilities, Security Analytics, Citrix Gateway service, and Citrix Secure Workspace Access service all add to layers of extra security to your environment.
+1.  Security – Session Watermarking, Session Recording, expanded multi-factor authentication capabilities, Security Analytics, Citrix Gateway service, and Citrix Secure Private Access service all add to layers of extra security to your environment.
 
 Call to action:
+
+**Watch the Citrix Tech Insight video to [learn more](/en-us/tech-zone/learn/tech-insights/azure-virtual-desktop-value-add.html).**
 
 For a trial of Citrix Virtual Apps and Desktops service click [here](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/inquiry/).
 

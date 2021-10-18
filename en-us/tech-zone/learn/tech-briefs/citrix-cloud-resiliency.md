@@ -104,7 +104,7 @@ Before the deep dive into how these solutions work, let’s look at how differen
 
     In the scenario where the client endpoints are not able to reach the internet, but still have network connectivity to Cloud Connectors and VDAs (on the internal network). All virtual apps and desktop resources accessible on the internal network are available during the loss of Internet access.
 
-1.  Gateway or Secure Workspace Access service – Fail over to a different PoP
+1.  Gateway or Secure Private Access service – Fail over to a different PoP
 
     The Citrix Gateway service is built to be highly available with multiple instances of the service, deployed on multiple Points of Presence (PoP) across various locations in the world. Also, the service is hosted on different cloud providers. Find the list of PoPs [here](https://support.citrix.com/article/CTX270584).
 
@@ -188,7 +188,7 @@ For a list of current requirements visit the [docs page](/en-us/citrix-workspace
 
 *  Customer is using Citrix Virtual Apps and Desktops service and Workspace experience.
 
-*  Workspace UI must be accessed via native Citrix Workspace app for Windows 2012 and for Mac 2011.X or later only, and not via Browsers (a.k.a Workspace app for Web)
+*  Workspace UI must be accessed via native Citrix Workspace app for Windows 2106 and for Mac 2106 or later only, and not via Browsers (a.k.a Workspace app for Web)
 
 *  Citrix Virtual Delivery Agent (VDA) version 7.15 and above, LTSR or one of the current CRs
 
@@ -208,8 +208,6 @@ Caveat: if the Resource Location is using Citrix Hypervisor or vSphere, the [Clo
     *  Citrix Gateway Service (TCP 443)
 
 The procedure to configure Service Continuity can be found [here](/en-us/citrix-workspace/service-continuity.html#configure-service-continuity).
-
-**Service Continuity is currently in public Tech Preview and you can sign up to try it using this [link](https://podio.com/webforms/25148648/1854298).**
 
 ### Monitor scalability improvements
 

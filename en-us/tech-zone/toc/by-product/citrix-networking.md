@@ -11,6 +11,10 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 [AlwaysOn VPN](/en-us/tech-zone/learn/tech-insights/citrix-gateway-alwayson.html) - Manage remote domain joined Windows endpoints 24x7 by providing LAN-like access with AlwaysOn VPN.
 
+[Citrix Web App and Api Protection service overview](/en-us/tech-zone/learn/tech-insights/citrix-web-app-and-api-protection.html) - See how Citrix Web App and API Protection (CWAAP) service can provide effective security against BOTs, DDoS, zero-day exploits, and other attacks.
+
+[Microservices-Based Application Delivery with Citrix and Red Hat OpenShift - Reference Architecture overview](/en-us/tech-zone/learn/tech-insights/microservices-citrix-red-hat-openshift.html) - See how Microservices-Based Application Delivery with Citrix and Red Hat OpenShift can provide reliable, and scalable delivery of Microservices.
+
 [Microsoft Teams Optimization](/en-us/tech-zone/learn/tech-insights/microsoft-teams-optimization.html) - Learn how Citrix Virtual Apps and Desktops, along with Citrix SD-WAN, can optimize Microsoft Teams and provide a great user experience.
 
 [Office 365 Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/office365-optimization.html) - Learn how Citrix SD-WAN implements Microsoft Connectivity Principles to support Office 365 Optimization for Branch Offices.
@@ -87,13 +91,19 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Application Delivery Management](/en-us/tech-zone/design/reference-architectures/citrix-adm.html) - See how the Citrix Application Delivery Management software is deployed to simplify management and monitoring of your application delivery infrastructure.
 
+[DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
+
 [Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
+[Microservices-Based Application Delivery with Citrix and Red Hat OpenShift](/en-us/tech-zone/design/reference-architectures/microservices-citrix-red-hat-openshift.html) - Learn how to design an environment to support cloud-native microservices with Citrix and Red Hat Openshift
 
 [SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan.html) - Learn about the framework, design, and architecture for Citrix SD-WAN with SD-WAN Orchestrator for single region deployment.
 
 [SD-WAN for Content Collaboration](/en-us/tech-zone/design/reference-architectures/sdwan-content-collaboration.html) - Learn about the deployment architecture and how Citrix SD-WAN WANOP helps to optimize Citrix Content Collaboration for customer-managed storage zones including relevant test data.
 
 [SD-WAN Multi-Region](/en-us/tech-zone/design/reference-architectures/sd-wan-multi-region.html) - Discover the framework, design, and architecture for Citrix SD-WAN multi-region deployment with SD-WAN Orchestrator.
+
+[Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
 
 ## Design - Design Decisions
 

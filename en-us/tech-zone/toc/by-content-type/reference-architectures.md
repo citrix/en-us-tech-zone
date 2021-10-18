@@ -9,7 +9,11 @@ Just as buildings have blueprints that include details about their structure and
 
 [Citrix Analytics](/en-us/tech-zone/design/reference-architectures/citrix-analytics.html) - Learn about analytics services offered by Citrix Cloud including security analytics, performance analytics, and integration with other Citrix portfolio products.
 
+[DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
+
 [Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
+[Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
 
 ## Citrix Content Collaboration
 
@@ -21,13 +25,19 @@ Just as buildings have blueprints that include details about their structure and
 
 [Citrix Endpoint Management with Microsoft EMS/Intune and Android Enterprise Integration](/en-us/tech-zone/design/reference-architectures/citrix-endpoint-management.html) - Learn about the architecture and integration with Microsoft EMS/Intune and Android Enterprise to deliver applications securely to any device and how it enables security and productivity benefits for both Microsoft EMS/Intune and Citrix customers.
 
+[DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
+
 ## Citrix Networking
 
 [Application Delivery Controller - Global Server Load Balancing](/en-us/tech-zone/design/reference-architectures/adc-gslb.html) - Learn the architecture and deployment considerations for Global Server Load Balancing configuration with Citrix Application Delivery Controller.
 
 [Application Delivery Management](/en-us/tech-zone/design/reference-architectures/citrix-adm.html) - See how the Citrix Application Delivery Management software is deployed to simplify management and monitoring of your application delivery infrastructure.
 
+[DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
+
 [Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
+
+[Microservices-Based Application Delivery with Citrix and Red Hat OpenShift](/en-us/tech-zone/design/reference-architectures/microservices-citrix-red-hat-openshift.html) - Learn how to design an environment to support cloud-native microservices with Citrix and Red Hat Openshift
 
 [SD-WAN](/en-us/tech-zone/design/reference-architectures/sdwan.html) - Learn about the framework, design, and architecture for Citrix SD-WAN with SD-WAN Orchestrator for single region deployment.
 
@@ -35,19 +45,29 @@ Just as buildings have blueprints that include details about their structure and
 
 [SD-WAN Multi-Region](/en-us/tech-zone/design/reference-architectures/sd-wan-multi-region.html) - Discover the framework, design, and architecture for Citrix SD-WAN multi-region deployment with SD-WAN Orchestrator.
 
+[Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
+
 ## Citrix Secure Internet Access
+
+[DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
 
 [Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
-[Reference Architecture - Protect apps and data on bring-your-own devices](/en-us/tech-zone/design/reference-architectures/protect-apps-and-data-on-byo-devices.html) - Learn how to design an environment to support brin-your-own-devices without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+[Reference Architecture - Protect apps and data on bring-your-own devices](/en-us/tech-zone/design/reference-architectures/protect-apps-and-data-on-byo-devices.html) - Learn how to design an environment to support bring-your-own-devices without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
+
+[Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
 
 ## Citrix Secure Workspace Access
 
+[DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
+
 [Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
-[Reference Architecture - Protect apps and data on bring-your-own devices](/en-us/tech-zone/design/reference-architectures/protect-apps-and-data-on-byo-devices.html) - Learn how to design an environment to support brin-your-own-devices without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+[Reference Architecture - Protect apps and data on bring-your-own devices](/en-us/tech-zone/design/reference-architectures/protect-apps-and-data-on-byo-devices.html) - Learn how to design an environment to support bring-your-own-devices without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
-[Secure Workspace Access](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Secure Workspace Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization's apps and data.
+[Secure Private Access](/en-us/tech-zone/design/reference-architectures/access-control.html) - Gain knowledge about the Citrix Secure Private Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization's apps and data.
+
+[Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
 
 ## Citrix Service Providers
 
@@ -69,6 +89,8 @@ Just as buildings have blueprints that include details about their structure and
 
 [Citrix SD-WAN HDX performance improvements for Citrix Virtual Apps and Desktops on-premises environments](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-onprem-experience-architecture.html) - Learn how to optimize the delivery of Citrix Virtual Apps and Desktops from on-premises servers to users at locations with a Citrix SD-WAN appliance by minimizing latency and improving session responsiveness during network issues.
 
+[DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
+
 [Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
 [Image Management](/en-us/tech-zone/design/reference-architectures/image-management.html) - Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering, and maintaining virtual machine images in your environment.
@@ -77,7 +99,7 @@ Just as buildings have blueprints that include details about their structure and
 
 [Optimizing Unified Communications Solutions](/en-us/tech-zone/design/reference-architectures/optimizing-unified-communications-solutions.html) - Learn how to optimize the voice, video, and other capabilities of unified communication solutions in virtualized Citrix environments.
 
-[Reference Architecture - Protect apps and data on bring-your-own devices](/en-us/tech-zone/design/reference-architectures/protect-apps-and-data-on-byo-devices.html) - Learn how to design an environment to support brin-your-own-devices without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+[Reference Architecture - Protect apps and data on bring-your-own devices](/en-us/tech-zone/design/reference-architectures/protect-apps-and-data-on-byo-devices.html) - Learn how to design an environment to support bring-your-own-devices without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
 [Remote PC Access](/en-us/tech-zone/design/reference-architectures/remote-pc.html) - Discover the use cases and learn about the detailed architecture of the Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.
 
@@ -91,6 +113,8 @@ Just as buildings have blueprints that include details about their structure and
 
 [Workspace Environment Management service](/en-us/tech-zone/design/reference-architectures/citrix-workspace-environment-management-service.html) - Learn about the architecture and deployment considerations for this cloud-based service of Workspace Environment Management.
 
+[Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
+
 ## Citrix Virtual Apps and Desktops Standard for Azure
 
 [Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/design/reference-architectures/citrix-managed-desktops.html) - Learn about cloud-based Desktop-as-a-Service offering from Citrix including key technical concepts, networking, and use cases for different verticals.
@@ -99,15 +123,19 @@ Just as buildings have blueprints that include details about their structure and
 
 ## Citrix Workspace
 
+[DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
+
 [Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
-[Flexible Work](/en-us/tech-zone/design/reference-architectures/flexible-work.html) - Learn how to design an environment to support a flexible work style without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Virtual Apps and Desktops, SD-WAN, Endpoint Management and Security Analytics.
+[Flexible Work](/en-us/tech-zone/design/reference-architectures/flexible-work.html) - Learn how to design an environment to support a flexible work style without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Private Access, Virtual Apps and Desktops, SD-WAN, Endpoint Management and Security Analytics.
 
-[Mergers and Acquisitions](/en-us/tech-zone/design/reference-architectures/mergers-acquisitions.html) - Learn how to design an environment to support a mergers and acquisition strategy without compromising IT security. The reference architecture incorporates Citrix Workspace, Secure Workspace Access, Virtual Apps and Desktops, Application Delivery Controller, Federated Authentication Service and Security Analytics.
+[Mergers and Acquisitions](/en-us/tech-zone/design/reference-architectures/mergers-acquisitions.html) - Learn how to design an environment to support a mergers and acquisition strategy without compromising IT security. The reference architecture incorporates Citrix Workspace, Secure Private Access, Virtual Apps and Desktops, Application Delivery Controller, Federated Authentication Service and Security Analytics.
 
 [Microapps Service with Citrix Workspace](/en-us/tech-zone/design/reference-architectures/workspace-intelligence.html) - Learn about the microapps platform service, which brings intelligent features to Citrix Workspace. Component architecture, use cases, and integration strategies for implementing a comprehensive solution are covered.
 
 [Workspace app](/en-us/tech-zone/design/reference-architectures/workspace-app.html) - Discover the technical aspects of Citrix's vision for the secure, modern digital workspace through the Citrix Workspace app - accessible on all your devices.
+
+[Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
 
 ## Security
 

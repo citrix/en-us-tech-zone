@@ -42,9 +42,9 @@ Short overview documents explaining a technology, a feature, a function next to 
 
 ## Citrix Secure Workspace Access
 
-[Citrix Workspace Essentials and Secure Workspace Access Getting Started Guide](/en-us/tech-zone/learn/tech-briefs/citrix-workspace-essentials-quickstart.html) - This guide demonstrates how to configure SaaS and internal web apps with single sign-on (SSO) in Citrix Workspace.
+[Citrix Workspace Essentials and Secure Private Access Getting Started Guide](/en-us/tech-zone/learn/tech-briefs/citrix-workspace-essentials-quickstart.html) - This guide demonstrates how to configure SaaS and internal web apps with single sign-on (SSO) in Citrix Workspace.
 
-[Secure Workspace Access](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html) - With Secure Workspace Access, organizations go beyond access and aggregation to provide IT with policy controls that provide conditional access to cloud apps and internet browsing, enhancing the organization's overall security and compliance posture.
+[Secure Private Access](/en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html) - With Secure Private Access, organizations go beyond access and aggregation to provide IT with policy controls that provide conditional access to cloud apps and internet browsing, enhancing the organization's overall security and compliance posture.
 
 ## Citrix Virtual Apps and Desktops
 
@@ -65,6 +65,8 @@ Short overview documents explaining a technology, a feature, a function next to 
 [Citrix Virtual Apps and Desktops Standard for Azure](/en-us/tech-zone/learn/tech-briefs/citrix-managed-desktops.html) - Delivers Windows apps and desktops from Microsoft Azure based on Azure Virtual Desktop. Citrix Virtual Apps and Desktops Standard for Azure offers cloud-based management, provisioning, and managed capacity for delivering virtual apps and desktops to any device.
 
 ## Citrix Workspace
+
+[Citrix Workspace](/en-us/tech-zone/learn/tech-briefs/citrix-workspace.html) - End users should be able to work where, when, and how they want. Citrix Workspace has everything you need to keep people productive and data secure.
 
 [Workspace app](/en-us/tech-zone/learn/tech-briefs/workspace-app.html) - Personalized interface that provides access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
 

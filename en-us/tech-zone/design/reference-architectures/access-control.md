@@ -3,21 +3,21 @@ layout: doc
 h3InToc: true
 contributedBy: Nagaraj Manoli
 specialThanksTo: Praveen Raghuraman, Pradeep Vasu, Allen Furmanski, Jeff Wisgo
-description: Gain knowledge about the Citrix Secure Workspace Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization's apps and data.
-tz_title: Secure Workspace Access
+description: Gain knowledge about the Citrix Secure Private Access solution including key concepts, use cases, and strategies for implementing this comprehensive security solution for an organization's apps and data.
+tz_title: Secure Private Access
 tz_products: citrix-secure-workspace-access;
 ---
-# Reference Architecture: Secure Workspace Access
+# Reference Architecture: Secure Private Access
 
 ## Audience
 
-This document is for Citrix technical professionals, IT decision makers, partners, and security consultants who want to explore and adopt the Citrix Cloud service of Secure Workspace Access. The reader must have a basic understanding of Citrix products, security, and Citrix Cloud frameworks. For more information on Citrix Cloud and its services, see the official product documentation for [Citrix Cloud](/en-us/citrix-cloud.html).
+This document is for Citrix technical professionals, IT decision makers, partners, and security consultants who want to explore and adopt the Citrix Cloud service of Secure Private Access. The reader must have a basic understanding of Citrix products, security, and Citrix Cloud frameworks. For more information on Citrix Cloud and its services, see the official product documentation for [Citrix Cloud](/en-us/citrix-cloud.html).
 
 ## Objective of this document
 
-This document provides a technical overview and architecture of Citrix Secure Workspace Access that provides conditional access to cloud apps and internet browsing, enhancing the organization's overall security and compliance posture. Citrix Secure Workspace Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators.
+This document provides a technical overview and architecture of Citrix Secure Private Access that provides conditional access to cloud apps and internet browsing, enhancing the organization's overall security and compliance posture. Citrix Secure Private Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators.
 
-The document guides administrators to deliver a secure digital workspace with a consolidated solution using Citrix Secure Workspace Access integrated with multiple Citrix Cloud services, including Citrix Gateway service and Secure Browser service. To monitor user behavior and activity, Citrix Secure Workspace Access integrates with Citrix Analytics service.
+The document guides administrators to deliver a secure digital workspace with a consolidated solution using Citrix Secure Private Access integrated with multiple Citrix Cloud services, including Citrix Gateway service and Secure Browser service. To monitor user behavior and activity, Citrix Secure Private Access integrates with Citrix Analytics service.
 
 ## Security controls and mitigation
 
@@ -49,11 +49,11 @@ Workspace app is a single entry point to access resources from any device. It pr
 
 Security monitoring provides end-user behavior monitoring and threat detection within the network. Data security includes DLP and IRM to keep control of data when users are working with or sharing files. Citrix Cloud web filtering, Citrix Analytics, and Citrix Gateway services offer a consolidated solution to deliver a secure digital workspace to end users.
 
-## Citrix Secure Workspace Access
+## Citrix Secure Private Access
 
-Citrix **Secure Workspace Access** combines the capabilities of instant secure access to SaaS and web applications through single sign-on (SSO), along with browser and cloud-based app controls, web-filtering policies, and integrated user behavior analytics. Citrix Secure Workspace Access goes beyond traditional SSO capabilities by introducing **cloud app control** – a set of enhanced security controls for SaaS and enterprise web apps providing conditional access to cloud apps and protecting user-actions based on admin-governed access policies. This solution enhances the organization's overall security and compliance posture. The user's experience remains seamless and integrated because the SaaS and web apps can be accessed alongside their mobile apps, virtual apps, and desktops as an integrated part of Citrix Workspace.
+Citrix **Secure Private Access** combines the capabilities of instant secure access to SaaS and web applications through single sign-on (SSO), along with browser and cloud-based app controls, web-filtering policies, and integrated user behavior analytics. Citrix Secure Private Access goes beyond traditional SSO capabilities by introducing **cloud app control** – a set of enhanced security controls for SaaS and enterprise web apps providing conditional access to cloud apps and protecting user-actions based on admin-governed access policies. This solution enhances the organization's overall security and compliance posture. The user's experience remains seamless and integrated because the SaaS and web apps can be accessed alongside their mobile apps, virtual apps, and desktops as an integrated part of Citrix Workspace.
 
-Citrix Secure Workspace Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators.
+Citrix Secure Private Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators.
 
 | **Functionality** | **Service/Component providing the functionality** |
 | --- | --- |
@@ -64,7 +64,7 @@ Citrix Secure Workspace Access combines elements of several Citrix Cloud service
 | Secure browsing | Secure Browser service |
 | Visibility into Website access & risky behavior | Citrix Analytics |
 
-## Why Citrix Secure Workspace Access?
+## Why Citrix Secure Private Access?
 
 Data security is delineated by the need to ensure data integrity, confidentiality, and protect the company's intellectual property. Today organizations face various challenges such as:
 
@@ -73,11 +73,11 @@ Data security is delineated by the need to ensure data integrity, confidentialit
 *  Protecting intellectual property stored in cloud and SaaS apps while staying compliant
 *  Gaining visibility into cloud and SaaS apps after SSO and obtaining risk assessments
 
-Citrix Secure Workspace Access helps IT and security admins govern authorized end-user access to sanctioned SaaS and enterprise-hosted web apps. User identities and attributes are used to determine access privileges and Secure Workspace Access policies determine the privileges that are required to perform operations.
+Citrix Secure Private Access helps IT and security admins govern authorized end-user access to sanctioned SaaS and enterprise-hosted web apps. User identities and attributes are used to determine access privileges and Secure Private Access policies determine the privileges that are required to perform operations.
 
 [![AC-Image-2](/en-us/tech-zone/design/media/reference-architectures_access-control_002.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_002.png)
 
-The integration of Citrix Secure Workspace Access results in several benefits:
+The integration of Citrix Secure Private Access results in several benefits:
 
 *  **Seamless user experience with Single-sign on to SaaS and hosted applications:** This capability comes through a combination of the Workspace app and Gateway service
 
@@ -89,21 +89,21 @@ The integration of Citrix Secure Workspace Access results in several benefits:
 
 *  **Visibility into SaaS usage and user web activity:** This capability provides a subset of Citrix Analytics for SaaS and web activity to provide more visibility for security and compliance
 
-## Citrix Secure Workspace Access and Citrix Cloud
+## Citrix Secure Private Access and Citrix Cloud
 
-Citrix Secure Workspace Access is one of the services offered by Citrix Cloud. To access these services an administrator must have a Citrix account (also known as a Citrix.com or My Citrix account) to manage licenses and access the environment.
+Citrix Secure Private Access is one of the services offered by Citrix Cloud. To access these services an administrator must have a Citrix account (also known as a Citrix.com or My Citrix account) to manage licenses and access the environment.
 
 A Citrix account uses an organization ID (OrgID) as a unique identifier. The administrator can access their Citrix account by logging in at [citrix.com](https://www.citrix.com) with the user name or email address linked to the account. Initially, Citrix Cloud redirects to [https://citrix.cloud.com](https://citrix.cloud.com) to create an account or sign in with an existing Citrix account to activate a Cloud services trial.
 
 A Citrix Cloud account allows admins to have broad administrative access on the services, therefore Citrix requires that the first admin who creates the Citrix Cloud account to explicitly give access to other admins as needed, even if the other admin is already a member of the existing MyCitrix account.
 
-Citrix Secure Workspace Access is solution shown as a tile on the Citrix Cloud console, and includes integration across Citrix Gateway service, Web Filtering service, Secure Browser service, and Citrix Analytics service.
+Citrix Secure Private Access is solution shown as a tile on the Citrix Cloud console, and includes integration across Citrix Gateway service, Web Filtering service, Secure Browser service, and Citrix Analytics service.
 
 [![AC-Image-3](/en-us/tech-zone/design/media/reference-architectures_access-control_003.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_003.png)
 
-**Secure Workspace Access:** The Citrix Secure Workspace Access service provides a unified experience integrating single sign-on, remote access, and content inspection into a single solution for end-to-end secure workspace access.
+**Secure Private Access:** The Citrix Secure Private Access service provides a unified experience integrating single sign-on, remote access, and content inspection into a single solution for end-to-end Secure Private Access.
 
-Citrix Secure Workspace Access provides the following capabilities to administrators:
+Citrix Secure Private Access provides the following capabilities to administrators:
 
 *  Configure multifactor authentication for end users
 *  Configure a workspace to securely deliver access to apps from any device, manage, and add SaaS applications from the library
@@ -137,7 +137,7 @@ A subscriber's identity defines the services to which that subscriber has access
 
 On-premises Active Directory communication with Citrix Cloud takes place through highly available Citrix Cloud Connectors. Organizations opting to use Azure Active Directory service have more flexibility in terms of managing the user accounts, audit control, and password policies. Also, the administrator can configure multifactor authentication for a higher level of security.
 
-## Citrix Secure Workspace Access with enhanced security for SaaS apps
+## Citrix Secure Private Access with enhanced security for SaaS apps
 
 Citrix Cloud offers the single sign-on (SSO) capability to SaaS applications through the Citrix Gateway service. SSO delivers a unified user experience for web-based SaaS application SSO and publishing to the Citrix Workspace experience user interface. To enable a single sign-on user experience, a SaaS app trusts the SAML assertion provided by the Citrix Gateway service.
 
@@ -147,7 +147,7 @@ Reference: [Citrix Gateway Connector](/en-us/citrix-gateway-service/gateway-conn
 
 ### Content control
 
-Protecting user data (SaaS app users) is a challenging task for most organizations. By using Citrix Secure Workspace Access, organizations can incorporate enhanced security policies within SaaS applications. Each policy enforces a restriction on the embedded browser when using the Workspace app for desktop, or on Secure Browser when using Workspace app for web or mobile.
+Protecting user data (SaaS app users) is a challenging task for most organizations. By using Citrix Secure Private Access, organizations can incorporate enhanced security policies within SaaS applications. Each policy enforces a restriction on the embedded browser when using the Workspace app for desktop, or on Secure Browser when using Workspace app for web or mobile.
 
 *  **Preferred browser:** Disables local browser use and relies on the embedded browser engine (Workspace app - desktop) or Secure Browser service (Workspace app – mobile and web)
 *  **Restrict clipboard access:** Disables cut/copy/paste operations between the app and endpoint clipboard
@@ -156,7 +156,7 @@ Protecting user data (SaaS app users) is a challenging task for most organizatio
 *  **Restrict downloads:** Disables the user's ability to download from within the SaaS app
 *  **Display watermark:** Overlays a screen-based watermark showing the user name and IP address of the endpoint. If a user tries to print or take a screenshot, the watermark appears as displayed on the screen
 
-## Citrix Secure Workspace Access single sign-on without enhanced security
+## Citrix Secure Private Access single sign-on without enhanced security
 
 [![AC-Image-5](/en-us/tech-zone/design/media/reference-architectures_access-control_005.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_005.png)
 
@@ -172,7 +172,7 @@ Protecting user data (SaaS app users) is a challenging task for most organizatio
 | **8** | The SaaS app contacts the Gateway service to validate the assertion and authenticates the user. | Once authenticated, communication occurs directly between the browser and the SaaS application. |
 | **9** | Once authenticated, communication occurs directly between the browser and the SaaS application. | |
 
-## Secure Workspace Access-single sign on with enhanced security
+## Secure Private Access-single sign on with enhanced security
 
 [![AC-Image-6](/en-us/tech-zone/design/media/reference-architectures_access-control_006.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_006.png)
 
@@ -183,12 +183,12 @@ Protecting user data (SaaS app users) is a challenging task for most organizatio
 | **3** | Workspace app populates with approved resources. | When the user selects a SaaS app, the local browser sends the request to Workspace, which requests a one-time-use URL and redirects browser to the Secure Browser service. |
 | **4** | Workspace app sends the request to Workspace, which requests a one-time-use URL from the Gateway service. | The local browser initiates a Secure Browser connection. |
 | **5** | The embedded browser initiates a connection to the Gateway service. | The Secure Browser initiates a connection to the Gateway service. |
-| **6** | The Gateway service requests an assertion from the single sign-on microservice and enhanced security policies from the Secure Workspace Access service. | The Gateway service requests an assertion from the SSO microservice and enhanced security policies from the Secure Workspace Access service. |
+| **6** | The Gateway service requests an assertion from the single sign-on microservice and enhanced security policies from the Secure Private Access service. | The Gateway service requests an assertion from the SSO microservice and enhanced security policies from the Secure Private Access service. |
 | **7** | The embedded browser is redirected to the SaaS app login page where the assertion is presented. | Secure Browser is redirected to the SaaS app login page where the assertion is presented. |
 | **8** | The SaaS app contacts the Gateway service to validate the assertion and authenticates the user. | The SaaS app contacts the Gateway service to validate the assertion and authenticates the user. |
 | **9** | Once authenticated, communication occurs directly between the browser and SaaS application. | Once authenticated, communication occurs directly between the browser and SaaS application. |
 
-Reference: [Citrix Secure Workspace Access tech brief](/en-us/tech-zone/learn/tech-briefs/access-control.html)
+Reference: [Citrix Secure Private Access tech brief](/en-us/tech-zone/learn/tech-briefs/access-control.html)
 
 ## Contextual access
 
@@ -199,8 +199,8 @@ Most SaaS apps are safe to use, although sometimes when a user clicks a hyperlin
 | **SL NO** | **Workspace App with Enhanced Security** | **Local Browser with Enhanced Security** |
 | --- | --- | --- |
 | **1** | The user selects a hyperlink from within the SaaS app. | The user selects a hyperlink from within the SaaS app. |
-| **2** | The embedded browser within Workspace app sends the URL to the Secure Workspace Access service. | Secure Browser sends the URL to the Secure Workspace Access service. |
-| **3** | The Secure Workspace Access service requests an analysis of the URL by the Web Filtering microservice. | The Secure Workspace Access service requests an analysis of the URL by the Web Filtering microservice. |
+| **2** | The embedded browser within Workspace app sends the URL to the Secure Private Access service. | Secure Browser sends the URL to the Secure Private Access service. |
+| **3** | The Secure Private Access service requests an analysis of the URL by the Web Filtering microservice. | The Secure Private Access service requests an analysis of the URL by the Web Filtering microservice. |
 | **4** | For blocked links, the Web Filtering microservice denies access to the hyperlink. | For blocked links, the Web Filtering microservice denies access to the hyperlink. |
 | **5** | For approved links, the Web Filtering microservice allows the user to access the link with the embedded browser. | For approved links, the Web Filtering microservice allows the user to access the link as a new tab within their current Secure Browser service session. |
 | **6** | For redirected links, the Web Filtering microservice has a Workspace app send the link to Secure Browser service, which starts a new, virtual browser session for the end user. | For redirected links, the Web Filtering microservice allows the user to access the link as a new tab within their current Secure Browser service session. |
@@ -213,21 +213,21 @@ This service release enables web filtering for Citrix Workspace app accessing Sa
 
 [![AC-Image-8](/en-us/tech-zone/design/media/reference-architectures_access-control_008.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_008.png)
 
-The Citrix Secure Workspace Access administrator can block and allow a list of URLs. The web filtering controller uses a categorization database and URL list. When the request comes to the web filtering controller, first it checks the global allow list which also contains critical Citrix Cloud URLs. Then it comes to Lists and Categorization and checks for blocked, allowed, and redirect to Secure Browser URLs. If none of the URLs match, then by default it falls back to the default list.
+The Citrix Secure Private Access administrator can block and allow a list of URLs. The web filtering controller uses a categorization database and URL list. When the request comes to the web filtering controller, first it checks the global allow list which also contains critical Citrix Cloud URLs. Then it comes to Lists and Categorization and checks for blocked, allowed, and redirect to Secure Browser URLs. If none of the URLs match, then by default it falls back to the default list.
 
-## Citrix Secure Workspace Access and Citrix Analytics
+## Citrix Secure Private Access and Citrix Analytics
 
-The Citrix Analytics service is a cloud-based service which facilitates pragmatic insights by collecting data across the Citrix portfolio of products. Citrix Secure Workspace Access organizes and produces information on user activities, such as websites visited and the bandwidth spent. Citrix Secure Workspace Access also monitors malware and phishing sites by looking into bandwidth consumption and reports on this. The administrator can take corrective actions by leveraging these key metrics to monitor the network.
+The Citrix Analytics service is a cloud-based service which facilitates pragmatic insights by collecting data across the Citrix portfolio of products. Citrix Secure Private Access organizes and produces information on user activities, such as websites visited and the bandwidth spent. Citrix Secure Private Access also monitors malware and phishing sites by looking into bandwidth consumption and reports on this. The administrator can take corrective actions by leveraging these key metrics to monitor the network.
 
-Citrix Analytics easily integrates with Citrix Secure Workspace Access, Citrix Gateway service, and other Citrix portfolio products. Citrix Analytics provides comprehensive insights into user behavior. It uses machine learning algorithms to detect anomalous user behavior, troubleshoot user sessions, and view operational metrics for users in an organization that uses Citrix products.
+Citrix Analytics easily integrates with Citrix Secure Private Access, Citrix Gateway service, and other Citrix portfolio products. Citrix Analytics provides comprehensive insights into user behavior. It uses machine learning algorithms to detect anomalous user behavior, troubleshoot user sessions, and view operational metrics for users in an organization that uses Citrix products.
 
-Citrix services and products send data to Citrix Analytics, which are referred to as data sources. The data sources associated with the Citrix Cloud account are discovered by the Citrix Analytics service. Citrix Cloud logs are transmitted securely to Citrix Analytics. The logs are collected from Citrix Secure Workspace Access and maintained separately from the data sources.
+Citrix services and products send data to Citrix Analytics, which are referred to as data sources. The data sources associated with the Citrix Cloud account are discovered by the Citrix Analytics service. Citrix Cloud logs are transmitted securely to Citrix Analytics. The logs are collected from Citrix Secure Private Access and maintained separately from the data sources.
 
 [![AC-Image-9](/en-us/tech-zone/design/media/reference-architectures_access-control_009.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_009.png)
 
-The Citrix Secure Workspace Access service delivers security and operations dashboards. The security dashboard provides user risk profiles and summary of access activity by the users, such as URL or domain visited and the bandwidth used. App access summarizes the details of domains, URLs, and apps accessed by the users.
+The Citrix Secure Private Access service delivers security and operations dashboards. The security dashboard provides user risk profiles and summary of access activity by the users, such as URL or domain visited and the bandwidth used. App access summarizes the details of domains, URLs, and apps accessed by the users.
 
-Reference: [Citrix Secure Workspace Access and Analytics](/en-us/citrix-secure-workspace-access/monitor-user-activity-and-manage-settings-with-analytics.html)
+Reference: [Citrix Secure Private Access and Analytics](/en-us/citrix-secure-workspace-access/monitor-user-activity-and-manage-settings-with-analytics.html)
 
 [![AC-Image-10](/en-us/tech-zone/design/media/reference-architectures_access-control_010.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_010.png)
 
@@ -240,11 +240,11 @@ The administrator creates a rule based on the user's activity by applying condit
 *  **Unusual download volume** Indicates that the volume of data downloaded by the user from applications or websites has exceeded the threshold defined implicitly by Citrix Analytics.
 *  **Unusual upload volume** Indicates that the volume of data uploaded by the user from applications or websites has exceeded the threshold defined implicitly by Citrix Analytics.
 
-Reference: [Secure Workspace Access and Analytics](/en-us/citrix-secure-workspace-access/monitor-user-activity-and-manage-settings-with-analytics.html)
+Reference: [Secure Private Access and Analytics](/en-us/citrix-secure-workspace-access/monitor-user-activity-and-manage-settings-with-analytics.html)
 
-## Citrix Secure Workspace Access end-user experience
+## Citrix Secure Private Access end-user experience
 
-The Citrix administrator has power to extend security control with the help of Citrix Secure Workspace Access. Citrix Workspace app is an entry point to access all resources securely, end users can access virtual apps, desktops, SaaS apps, and files through Citrix Workspace app. With Citrix Secure Workspace Access, administrators are able to control how a SaaS Application can be accessed by the end user via Citrix Workspace Experience web UI or native Citrix Workspace app client.
+The Citrix administrator has power to extend security control with the help of Citrix Secure Private Access. Citrix Workspace app is an entry point to access all resources securely, end users can access virtual apps, desktops, SaaS apps, and files through Citrix Workspace app. With Citrix Secure Private Access, administrators are able to control how a SaaS Application can be accessed by the end user via Citrix Workspace Experience web UI or native Citrix Workspace app client.
 
 For more information refer to the Citrix Workspace app [Reference Architecture](/en-us/tech-zone/design/reference-architectures/workspace-app.html).
 
@@ -258,13 +258,13 @@ When the user launches the Workspace app on the endpoint, they see their applica
 
 Similarly, with Workspace Web portal, when enhanced security it turned off SaaS applications are opened through a standard browser which is natively installed. When enhanced security is turned on, SaaS apps are opened through the Secure Browser. Users are able to access the websites within SaaS apps based on web filtering policies.
 
-## Implementing Citrix Secure Workspace Access
+## Implementing Citrix Secure Private Access
 
-The Citrix Secure Workspace Access service is a cloud-based service. To provide user-centric solutions to organizations and comply with policies, Citrix Secure Workspace Access plays a vital role. Along with Citrix Secure Workspace Access, there are other services that are enabled to provide consolidated solutions to end users. To get started with onboarding and setting up the Citrix Secure Workspace Access service the administrator must set up authentication, configure access to SaaS apps, and specify the content access settings in the Citrix Secure Workspace Access service. The end users can access the service from the Citrix Workspace app or the Workspace URL.
+The Citrix Secure Private Access service is a cloud-based service. To provide user-centric solutions to organizations and comply with policies, Citrix Secure Private Access plays a vital role. Along with Citrix Secure Private Access, there are other services that are enabled to provide consolidated solutions to end users. To get started with onboarding and setting up the Citrix Secure Private Access service the administrator must set up authentication, configure access to SaaS apps, and specify the content access settings in the Citrix Secure Private Access service. The end users can access the service from the Citrix Workspace app or the Workspace URL.
 
 [![AC-Image-13](/en-us/tech-zone/design/media/reference-architectures_access-control_013.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_013.png)
 
-The Citrix administrator logs in to Citrix Cloud using their credentials, and requests the Citrix Secure Workspace Access service. Citrix Secure Workspace Access is integrated with other Citrix portfolio products including Citrix Gateway, Secure Browser, and Citrix Analytics. This solution offers security for SaaS apps.
+The Citrix administrator logs in to Citrix Cloud using their credentials, and requests the Citrix Secure Private Access service. Citrix Secure Private Access is integrated with other Citrix portfolio products including Citrix Gateway, Secure Browser, and Citrix Analytics. This solution offers security for SaaS apps.
 
 [![AC-Image-14](/en-us/tech-zone/design/media/reference-architectures_access-control_014.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_014.png)
 
@@ -272,7 +272,7 @@ The Citrix administrator logs in to Citrix Cloud using their credentials, and re
 
 **Step 2:** The Citrix administrator logs in to Citrix Gateway service to configure single sign-on for SaaS and web applications. The Citrix Gateway service offers a secure login to the company's environment where end-users sign in to applications using SAML single sign-on.
 
-Add a web or SaaS app to the library from the template. To learn more about a list of SaaS applications supported by Citrix Secure Workspace Access, see [SaaS applications supported by the Citrix Secure Workspace Access service](/en-us/citrix-cloud/access-control/saas-apps-supported-by-acs.html)
+Add a web or SaaS app to the library from the template. To learn more about a list of SaaS applications supported by Citrix Secure Private Access, see [SaaS applications supported by the Citrix Secure Private Access service](/en-us/citrix-cloud/access-control/saas-apps-supported-by-acs.html)
 
 **Step 3:** The administrator enters the app details like the name of the application, URL, and domain details. Enhanced security policies can be enabled to prevent data leaks. These policies within the SaaS applications enforce restrictions on the embedded browser when using a Workspace app for desktop or on Secure Browser when using Workspace app web or mobile.
 
@@ -282,7 +282,7 @@ Add a web or SaaS app to the library from the template. To learn more about a li
 
 Under the **Library** section of Citrix Cloud, SaaS and web apps are published. The administrator has to add users after choosing the domain, and only subscribed users can access the application through Workspace app or Workspace web.
 
-**Step 5:** **Filter website lists:** To protect the corporate network from browser-based attacks, Citrix Secure Workspace Access includes a web filtering service. Based on the policies, the web filtering service allows, denies, or redirects the hyperlink request from the user as defined:
+**Step 5:** **Filter website lists:** To protect the corporate network from browser-based attacks, Citrix Secure Private Access includes a web filtering service. Based on the policies, the web filtering service allows, denies, or redirects the hyperlink request from the user as defined:
 
 **Allowed:** The request link is considered safe and access is permitted within the embedded browser of the Workspace app.
 
@@ -300,7 +300,7 @@ Under the **Library** section of Citrix Cloud, SaaS and web apps are published. 
 | **None** | Allows all categories. |
 | **Custom** | Configure custom filtering of categories. |
 
-Reference: [Citrix Secure Workspace Access categories-list](/en-us/citrix-cloud/access-control/categories-list.html)
+Reference: [Citrix Secure Private Access categories-list](/en-us/citrix-cloud/access-control/categories-list.html)
 
 Citrix Workspace app gives users a great experience (secure, contextual, unified workspace) on any device. Users get seamless and secure access through single sign-on to all the apps they need to be productive.
 
@@ -308,45 +308,45 @@ To validate the configuration, end users can launch the SaaS app from Citrix Wor
 
 To learn more about Citrix Workspace app refer to the [Citrix Workspace app Reference Architecture](/en-us/tech-zone/design/reference-architectures/workspace-app.html).
 
-**Step 7:** Citrix Secure Workspace Access service integrates with Citrix Analytics to fetch information on the activities of users, such as websites visited and bandwidth consumed. Citrix Analytics reports threats detected such as malware and phishing sites.
+**Step 7:** Citrix Secure Private Access service integrates with Citrix Analytics to fetch information on the activities of users, such as websites visited and bandwidth consumed. Citrix Analytics reports threats detected such as malware and phishing sites.
 
-The administrator can log in to the Citrix Analytics cloud service and create rules for Citrix Secure Workspace Access and then apply the action plan when the conditions are met. To monitor and analyze user behavior activities, enable "Turn on Data processing" for Citrix Secure Workspace Access for analytics on Citrix Cloud (Data sources are Citrix services and products that send data to Citrix Analytics).
+The administrator can log in to the Citrix Analytics cloud service and create rules for Citrix Secure Private Access and then apply the action plan when the conditions are met. To monitor and analyze user behavior activities, enable "Turn on Data processing" for Citrix Secure Private Access for analytics on Citrix Cloud (Data sources are Citrix services and products that send data to Citrix Analytics).
 
 [![AC-Image-16](/en-us/tech-zone/design/media/reference-architectures_access-control_016.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_016.png)
 
-The Citrix Analytics service monitors user activities and behavior using machine learning and artificial intelligence. Data sources for Citrix Analytics are gathered from Workspace app, Citrix Gateway, Citrix Secure Workspace Access, and Secure Browser service.
+The Citrix Analytics service monitors user activities and behavior using machine learning and artificial intelligence. Data sources for Citrix Analytics are gathered from Workspace app, Citrix Gateway, Citrix Secure Private Access, and Secure Browser service.
 
-## Citrix Secure Workspace Access use cases
+## Citrix Secure Private Access use cases
 
 Today organizations are turning to Software as a Service (SaaS) solutions to address business requirements, yet often without taking the necessary security measures or properly maintaining the applications. Most SaaS application security failures are caused by users, not cloud providers. The organization must regulate its strategies to address these flaws.
 
-Citrix Secure Workspace Access enforces enhanced security policies for SaaS apps (watermark, copy-paste restriction, prevent downloading/uploading sensitive data, and so on). It also defines access policies for website categories and websites to be blocked / allowed in the form of web filtering.
+Citrix Secure Private Access enforces enhanced security policies for SaaS apps (watermark, copy-paste restriction, prevent downloading/uploading sensitive data, and so on). It also defines access policies for website categories and websites to be blocked / allowed in the form of web filtering.
 
-| Existing brownfield deployments | How Citrix Secure Workspace Access fits in |
+| Existing brownfield deployments | How Citrix Secure Private Access fits in |
 | --- | --- |
-| Organizations looking to adopt Citrix Cloud services. | 1) Citrix Secure Workspace Access provides the right fit into their environment, providing security for SaaS, SSO, and web filtering features to end users. 2) To organizations desiring an on-premises model Citrix Gateway helps in providing SSO and enhanced security to end users. |
-| Organizations that have already adopted the Citrix Gateway service. | 1) Citrix Cloud offers several cloud-based services including Citrix Secure Workspace Access, Analytics, and Secure Browser service that provide security control for SaaS and internet-based apps. |
-| Organizations that have already adopted third-party SSO | 1) Citrix Secure Workspace Access provides granular level security controls for SaaS apps, minimizes web-based threats and automatic policy enforcement through analytics based on user behavior. 2) ICA Proxy is supported for both on-premises and Citrix Virtual Apps and Desktops service. |
+| Organizations looking to adopt Citrix Cloud services. | 1) Citrix Secure Private Access provides the right fit into their environment, providing security for SaaS, SSO, and web filtering features to end users. 2) To organizations desiring an on-premises model Citrix Gateway helps in providing SSO and enhanced security to end users. |
+| Organizations that have already adopted the Citrix Gateway service. | 1) Citrix Cloud offers several cloud-based services including Citrix Secure Private Access, Analytics, and Secure Browser service that provide security control for SaaS and internet-based apps. |
+| Organizations that have already adopted third-party SSO | 1) Citrix Secure Private Access provides granular level security controls for SaaS apps, minimizes web-based threats and automatic policy enforcement through analytics based on user behavior. 2) ICA Proxy is supported for both on-premises and Citrix Virtual Apps and Desktops service. |
 
-## Citrix Secure Workspace Access solution for enterprise web apps
+## Citrix Secure Private Access solution for enterprise web apps
 
-Most of on-premises customers still use web apps, including SharePoint, Confluence, Microsoft Office, help desk applications, and so on Enterprise applications are delivered remotely using Citrix Gateway service and necessary security is added using Citrix Secure Workspace Access.
+Most of on-premises customers still use web apps, including SharePoint, Confluence, Microsoft Office, help desk applications, and so on Enterprise applications are delivered remotely using Citrix Gateway service and necessary security is added using Citrix Secure Private Access.
 
 End-users access web apps using Citrix Workspace that leverages Citrix Gateway service. Citrix Gateway service, securely coupled with Citrix Workspace, delivers a unified user experience for configured web apps. Single sign-on and remote accessibility to internal web apps is available through different service packages.
 
 [![AC-Image-20](/en-us/tech-zone/design/media/reference-architectures_access-control_020.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_020.png)
 
-The preceding diagram shows the Citrix Secure Workspace Access solution applied to the on-premises customers using the Citrix Gateway Connector. Citrix Gateway connector acts as a bridge between Enterprise web apps and the Citrix Workspace service.
+The preceding diagram shows the Citrix Secure Private Access solution applied to the on-premises customers using the Citrix Gateway Connector. Citrix Gateway connector acts as a bridge between Enterprise web apps and the Citrix Workspace service.
 
 ### Web app single-sign on with enhanced security
 
-The user launches the Citrix Workspace app and connects with Citrix Workspace using an on-premises Active Directory service. The Citrix Workspace app is used to start a web app. Citrix Gateway service provides the recommended browser and the link. The embedded browser from the Citrix Workspace app makes an application connection with Citrix Gateway service. Also, enhanced security policies are enabled through Citrix Secure Workspace Access service. Furthermore, Citrix Gateway service establishes an outbound connection with Gateway Connector from the resource location. It verifies the login credentials, and Citrix Workspace app secures an end-to-end connection with the internal web app.
+The user launches the Citrix Workspace app and connects with Citrix Workspace using an on-premises Active Directory service. The Citrix Workspace app is used to start a web app. Citrix Gateway service provides the recommended browser and the link. The embedded browser from the Citrix Workspace app makes an application connection with Citrix Gateway service. Also, enhanced security policies are enabled through Citrix Secure Private Access service. Furthermore, Citrix Gateway service establishes an outbound connection with Gateway Connector from the resource location. It verifies the login credentials, and Citrix Workspace app secures an end-to-end connection with the internal web app.
 
-If the user is using a local browser, authentication happens through the Active Directory service, and the local browser makes a secure connection with Secure Browser service. Enhanced security policies are enabled through the Secure Workspace Access service. A secure outbound channel is then established between Gateway Connector and Citrix Gateway service. Next, user credentials are negotiated and single sign-on is established on behalf of the user. Finally, an end-to-end connection is found via the Secure browser for the user.
+If the user is using a local browser, authentication happens through the Active Directory service, and the local browser makes a secure connection with Secure Browser service. Enhanced security policies are enabled through the Secure Private Access service. A secure outbound channel is then established between Gateway Connector and Citrix Gateway service. Next, user credentials are negotiated and single sign-on is established on behalf of the user. Finally, an end-to-end connection is found via the Secure browser for the user.
 
 Reference: [Support for Enterprise web apps](/en-us/citrix-gateway-service/support-web-apps.html)
 
-## Citrix Secure Workspace Access single sign-on for web apps
+## Citrix Secure Private Access single sign-on for web apps
 
 Citrix Gateway Connector and the Citrix Gateway service in the cloud secure the communication with on-premises applications. Web applications are accessed and delivered through Workspace using a VPN-less connection. The administrator must choose the single sign-on method during the web app's configuration.
 
@@ -397,11 +397,11 @@ Kerberos Authentication
 
 To enable Kerberos single sign-on functionality, administrators configure Gateway Connector with credentials for a service account trusted to perform Kerberos Constrained Delegation.
 
-Users may try to access malicious websites that cause severe damage to the enterprise. Also, they may violate enterprise regulations and policies. To overcome these problems, administrators can adopt Citrix Secure Workspace Access to filter risky websites that pose a risk to their organization. A watermark can also be added throughout the session that includes the user's name and IP address.
+Users may try to access malicious websites that cause severe damage to the enterprise. Also, they may violate enterprise regulations and policies. To overcome these problems, administrators can adopt Citrix Secure Private Access to filter risky websites that pose a risk to their organization. A watermark can also be added throughout the session that includes the user's name and IP address.
 
 Reference: [Support for Enterprise web apps](/en-us/citrix-gateway-service/support-web-apps.html)
 
-## Citrix Secure Workspace Access app protection policies
+## Citrix Secure Private Access app protection policies
 
 It is common for a user's login credentials to be stolen, and yet the user may not be aware of this. Cybercriminals use various techniques to apprehend end-user data, and one common technique is using keylogger malware to capture user data. These malware products can be easily installed on a user machine and immediately start trying to obtain user information. Leakage of user information can lead to significant damage to the organization and to the user. To overcome this problem, the organization must invest heavily in protecting user data and create a defensive shield against keyloggers.
 
@@ -409,7 +409,7 @@ Similar to keyloggers are applications that capture screenshots. These malicious
 
 Various types of software can be installed on the user end point to overcome image grabbing of the user desktop. But this can lead to slower performance of user's desktop and environment.
 
-Citrix Secure Workspace Access has advanced policies for protecting enterprise data. Endpoint security is an important security consideration for any organization because the majority of breaches occur at the user endpoint. App protection policies are rules that are applied when enabling enhanced security for a SaaS app. Customers can use two advanced security policies:
+Citrix Secure Private Access has advanced policies for protecting enterprise data. Endpoint security is an important security consideration for any organization because the majority of breaches occur at the user endpoint. App protection policies are rules that are applied when enabling enhanced security for a SaaS app. Customers can use two advanced security policies:
 
 *  Anti-keylogging
 
@@ -417,7 +417,7 @@ Citrix Secure Workspace Access has advanced policies for protecting enterprise d
 
 [![AC-Image-22](/en-us/tech-zone/design/media/reference-architectures_access-control_022.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_022.png)
 
-Citrix App protection policies are enabled via the Citrix Secure Workspace Access solution. The benefits are as follows:
+Citrix App protection policies are enabled via the Citrix Secure Private Access solution. The benefits are as follows:
 
 *  Protecting against keylogging and screen capture
 *  Centralized management for Citrix administrators
@@ -441,15 +441,15 @@ Secure Browser service can be accessed with an HTML5-compatible web browser. The
 
 [![AC-Image-23](/en-us/tech-zone/design/media/reference-architectures_access-control_023.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_023.png)
 
-The preceding diagram shows the integration of Citrix Secure Workspace Access solution, including Citrix Secure Browser service for both cloud and on-premises Citrix environments. Citrix Virtual Apps and Desktops customers with an on-premises StoreFront can easily integrate with the Secure Browser service.
+The preceding diagram shows the integration of Citrix Secure Private Access solution, including Citrix Secure Browser service for both cloud and on-premises Citrix environments. Citrix Virtual Apps and Desktops customers with an on-premises StoreFront can easily integrate with the Secure Browser service.
 
 To learn more about configuring Citrix StoreFront with the Secure Browser service, follow this [link](https://support.citrix.com/article/CTX230272?_ga=2.235378497.1770257565.1575439566-348774687.1571729438&_gac=1.241968438.1575297468.EAIaIQobChMI_eLFrJiX5gIV1AorCh1E7ggkEAAYASAAEgLlCPD_BwE).
 
-## Citrix Secure Workspace Access and content collaboration
+## Citrix Secure Private Access and content collaboration
 
 Most organizations have experienced some kind of ransomware or phishing attempts that have compromised their network. The root cause for such threats is often inadequate protection from web-based threats. There is a lack of visibility into what websites users are accessing on a day-to-day basis.
 
-The Citrix Secure Workspace Access service enables an organization to protect its environment from browser-based attacks and data leaks. When employees access their apps from any device, whether they are in the office, home or traveling, Citrix Secure Workspace Access service provides a cohesive experience integrating SSO, two-factor authentication, remote access, and web filtering into a single solution for end-to-end Secure Workspace Access.
+The Citrix Secure Private Access service enables an organization to protect its environment from browser-based attacks and data leaks. When employees access their apps from any device, whether they are in the office, home or traveling, Citrix Secure Private Access service provides a cohesive experience integrating SSO, two-factor authentication, remote access, and web filtering into a single solution for end-to-end Secure Private Access.
 
 [![AC-Image-17](/en-us/tech-zone/design/media/reference-architectures_access-control_017.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_017.png)
 
@@ -491,33 +491,33 @@ To block unwanted websites that possess security risks to organizations, the Cit
 
 ### User behavior and activities
 
-To monitor user behavior and activities by an administrator, Citrix Secure Workspace Access service is easily integrated with the Citrix Analytics service. The administrator imposes predefined conditions and an action plan to mitigate the risks.
+To monitor user behavior and activities by an administrator, Citrix Secure Private Access service is easily integrated with the Citrix Analytics service. The administrator imposes predefined conditions and an action plan to mitigate the risks.
 
-## Citrix Secure Workspace Access and G Suite
+## Citrix Secure Private Access and G Suite
 
 G Suite (also known as Google Workspace) is a set of SaaS applications that are accessible remotely over the internet. G Suite was formerly known as Google Apps developed by Google. G Suite is comprised of Gmail, Hangouts, and Calendar for communication; Google Drive for storage; Google Docs, Sheets, Slides, Forms, and Sites for collaboration. G Suite provides tremendous productivity advantages, but most networks are not designed properly to deliver the performance and security needed for mobility and cloud use cases.
 
 Google Cloud and Citrix enable end users to expedite pioneering solutions delivering enhanced security with great user experience and much-desired flexibility in an app-centric, mobile-first, and hybrid cloud world.
 
-G Suite, a set of market-leading productivity SaaS apps, can be integrated with Citrix Secure Workspace Access to allow the organization to get increased visibility and control of SaaS applications, which in turn prevents data leaks and unauthorized disclosure of sensitive information.
+G Suite, a set of market-leading productivity SaaS apps, can be integrated with Citrix Secure Private Access to allow the organization to get increased visibility and control of SaaS applications, which in turn prevents data leaks and unauthorized disclosure of sensitive information.
 
 End users can access G Suite applications by simply entering the URL and login credentials through the Citrix Workspace app. Users will have an entire workspace including apps, desktops, and files, keeping in mind that users never have to enter another user name and password. The entire workspace is delivered through a single access point that improves productivity and streamlines common workflows for the end user.
 
 [![AC-Image-18](/en-us/tech-zone/design/media/reference-architectures_access-control_018.png)](/en-us/tech-zone/design/media/reference-architectures_access-control_018.png)
 
-Citrix Secure Workspace Access not only provides a single sign-on feature, but also provides a layer of security controls which are not available in other solutions.
+Citrix Secure Private Access not only provides a single sign-on feature, but also provides a layer of security controls which are not available in other solutions.
 
 ### Deployment
 
 Citrix Cloud Connectors are used to handle all communications between resource locations and Citrix Cloud. For high availability, a minimum of two connectors are deployed at each resource location. The resource locations integrate with Active Directory, allowing end users to seamlessly sign on to their G Suite applications.
 
-Citrix Gateway service with Active Directory can serve as an Identity provider to allow SAML single sign-on to G Suite SaaS applications. Citrix Secure Workspace Access allows end users to launch G Suite SaaS applications in Secure Browser sessions and also allows the administrator to apply five different control policies.
+Citrix Gateway service with Active Directory can serve as an Identity provider to allow SAML single sign-on to G Suite SaaS applications. Citrix Secure Private Access allows end users to launch G Suite SaaS applications in Secure Browser sessions and also allows the administrator to apply five different control policies.
 
 **Scenario 1:** Enhanced security is turned off. When a user launches Gmail within G Suite it opens in a standard browser. Similarly, URLs opened within their Gmail account use a standard browser without any additional security policies or controls. A user has a freedom to navigate from the page, cut, copy, and print the page.
 
-**Scenario 2:** Enhanced security is turned on. When a user launches Gmail within the G Suite it opens in a Secure Browser. Now a layer of control capability is applied through Citrix Secure Workspace Access and the end user does not get a navigation bar to navigate away from the site. Furthermore cut, copy, and paste restrictions are imposed. Apart from this, Citrix Secure Workspace Access provides URL filtering capabilities that prevent users from visiting malicious websites. Alternately, users can be redirected to a Secure Browser based on the policies.
+**Scenario 2:** Enhanced security is turned on. When a user launches Gmail within the G Suite it opens in a Secure Browser. Now a layer of control capability is applied through Citrix Secure Private Access and the end user does not get a navigation bar to navigate away from the site. Furthermore cut, copy, and paste restrictions are imposed. Apart from this, Citrix Secure Private Access provides URL filtering capabilities that prevent users from visiting malicious websites. Alternately, users can be redirected to a Secure Browser based on the policies.
 
-Benefits of using Citrix Secure Workspace Access with G Suite SaaS apps:
+Benefits of using Citrix Secure Private Access with G Suite SaaS apps:
 
 *  Single sign-on
 *  Multifactor authentication
@@ -529,13 +529,13 @@ Benefits of using Citrix Secure Workspace Access with G Suite SaaS apps:
 
 [Citrix Gateway SaaS and O365 Cloud Validated Reference Design](/en-us/advanced-concepts/design-guides/citrix-gateway-o365-saas.html)
 
-[Citrix Gateway service SSO with Secure Workspace Access Validated Reference Design](/en-us/advanced-concepts/design-guides/citrix-gateway-service-sso-access-control.html)
+[Citrix Gateway service SSO with Secure Private Access Validated Reference Design](/en-us/advanced-concepts/design-guides/citrix-gateway-service-sso-access-control.html)
 
 ## Summary
 
-Citrix Secure Workspace Access is a consolidated solution for a secure digital workspace. Most organizations are adopting SaaS and web apps as the digital workspace is changing. Implementing a collaborative solution would significantly improve the security and provide benefits for enterprises, small businesses, and SaaS vendors, providing confidence that their data is protected.
+Citrix Secure Private Access is a consolidated solution for a secure digital workspace. Most organizations are adopting SaaS and web apps as the digital workspace is changing. Implementing a collaborative solution would significantly improve the security and provide benefits for enterprises, small businesses, and SaaS vendors, providing confidence that their data is protected.
 
-The idea of only protecting a network is no longer sufficient. The organization must protect users and apps. This is why Citrix Secure Workspace Access delivers:
+The idea of only protecting a network is no longer sufficient. The organization must protect users and apps. This is why Citrix Secure Private Access delivers:
 
 *  Consolidated access to SaaS, web, and virtual apps
 *  Consistent end-user experience and flexibility to use any endpoint device
@@ -547,7 +547,7 @@ The goal of this reference architecture is to assist you with planning your own 
 
 ## References
 
-[Secure Workspace Access](/en-us/citrix-cloud/access-control.html)
+[Secure Private Access](/en-us/citrix-cloud/access-control.html)
 
 [Tech Brief](/en-us/tech-zone/learn/tech-briefs/access-control.html)
 

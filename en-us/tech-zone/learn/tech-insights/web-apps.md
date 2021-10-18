@@ -4,12 +4,12 @@ h3InToc: true
 contributedBy: Matt Brooks
 specialThanksTo: Daniel Feller
 description: Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
-tz_title: Secure Workspace Access for Enterprise Web Apps
+tz_title: Secure Private Access for Enterprise Web Apps
 tz_products: citrix-secure-workspace-access;
 ---
-# Tech Insight: Secure Workspace Access for Enterprise Web Apps
+# Tech Insight: Secure Private Access for Enterprise Web Apps
 
-Learn how Citrix Workspace can deliver enterprise web apps via Citrix Gateway with single sign-on, Secure Workspace Access, and a great user experience.
+Learn how Citrix Workspace can deliver enterprise web apps via Citrix Gateway with single sign-on, Secure Private Access, and a great user experience.
 
 **Watch this video to [learn more](https://www.youtube.com/watch?v=jJ069pxDNHA):**
 

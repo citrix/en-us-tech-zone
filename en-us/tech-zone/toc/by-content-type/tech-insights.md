@@ -25,6 +25,10 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [AlwaysOn VPN](/en-us/tech-zone/learn/tech-insights/citrix-gateway-alwayson.html) - Manage remote domain joined Windows endpoints 24x7 by providing LAN-like access with AlwaysOn VPN.
 
+[Citrix Web App and Api Protection service overview](/en-us/tech-zone/learn/tech-insights/citrix-web-app-and-api-protection.html) - See how Citrix Web App and API Protection (CWAAP) service can provide effective security against BOTs, DDoS, zero-day exploits, and other attacks.
+
+[Microservices-Based Application Delivery with Citrix and Red Hat OpenShift - Reference Architecture overview](/en-us/tech-zone/learn/tech-insights/microservices-citrix-red-hat-openshift.html) - See how Microservices-Based Application Delivery with Citrix and Red Hat OpenShift can provide reliable, and scalable delivery of Microservices.
+
 [Microsoft Teams Optimization](/en-us/tech-zone/learn/tech-insights/microsoft-teams-optimization.html) - Learn how Citrix Virtual Apps and Desktops, along with Citrix SD-WAN, can optimize Microsoft Teams and provide a great user experience.
 
 [Office 365 Optimization for Branch Offices](/en-us/tech-zone/learn/tech-insights/office365-optimization.html) - Learn how Citrix SD-WAN implements Microsoft Connectivity Principles to support Office 365 Optimization for Branch Offices.
@@ -35,15 +39,23 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 ## Citrix Secure Internet Access
 
+[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
+
+[Protect contractor and temp worker access](/en-us/tech-zone/learn/tech-insights/protect-contractor-and-temp-worker-access.html) - See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
+
 [Secure Internet Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-internet-access-user-experience.html) - Secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
 
 ## Citrix Secure Workspace Access
 
-[Secure Workspace Access for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
+[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
-[Secure Workspace Access for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
+[Protect contractor and temp worker access](/en-us/tech-zone/learn/tech-insights/protect-contractor-and-temp-worker-access.html) - See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
-[Secure Workspace Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-workspace-access-user-experience.html) - Securely access corporate web, and SaaS applications, with advanced security controls and website filtering for managed, unmanaged, and BYO devices.
+[Secure Private Access for Enterprise Web Apps](/en-us/tech-zone/learn/tech-insights/web-apps.html) - Access enterprise hosted web apps seamlessly and securely through Citrix Workspace via Citrix Gateway.
+
+[Secure Private Access for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
+
+[Secure Private Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-workspace-access-user-experience.html) - Securely access corporate web, and SaaS applications, with advanced security controls and website filtering for managed, unmanaged, and BYO devices.
 
 ## Citrix Virtual Apps and Desktops
 
@@ -51,9 +63,15 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Citrix Desktop-as-a-Service (DaaS)](/en-us/tech-zone/learn/tech-insights/citrix-daas.html) - Learn how Citrix Desktop-as-a-Service (DaaS) offerings enable customers to deploy workloads in the cloud within minutes.
 
+[Citrix Value Adds to Azure Virtual Desktop](/en-us/tech-zone/learn/tech-insights/azure-virtual-desktop-value-add.html) - Learn about how Citrix provides key capabilities to increase flexibility, agility, security, and more to Azure Virtual Desktop, while also driving down costs.
+
 [Federated Authentication Service](/en-us/tech-zone/learn/tech-insights/federated-authentication-service.html) - Single Sign-on to Windows-based virtual apps and desktops when using a non-Active Directory based Citrix Workspace identity.
 
 [HDX](/en-us/tech-zone/learn/tech-insights/hdx.html) - A set of technologies ensuring an unparalleled user experience when accessing virtual Windows/Linux applications and desktops.
+
+[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
+
+[Protect contractor and temp worker access](/en-us/tech-zone/learn/tech-insights/protect-contractor-and-temp-worker-access.html) - See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
 [Remote PC Access](/en-us/tech-zone/learn/tech-insights/remote-pc-access.html) - Remote PC Access allows users to access their physical, office-based Windows PC from remote locations.
 
@@ -64,6 +82,8 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 ## Citrix Virtual Apps and Desktops Standard for Azure
 
 [Citrix Desktop-as-a-Service (DaaS)](/en-us/tech-zone/learn/tech-insights/citrix-daas.html) - Learn how Citrix Desktop-as-a-Service (DaaS) offerings enable customers to deploy workloads in the cloud within minutes.
+
+[Citrix Value Adds to Azure Virtual Desktop](/en-us/tech-zone/learn/tech-insights/azure-virtual-desktop-value-add.html) - Learn about how Citrix provides key capabilities to increase flexibility, agility, security, and more to Azure Virtual Desktop, while also driving down costs.
 
 ## Citrix Workspace
 
@@ -77,6 +97,8 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Authentication - TOTP](/en-us/tech-zone/learn/tech-insights/authentication-totp.html) - Time-based One-Time Password (TOTP) provides multifactor authentication to the user's Workspace experience.
 
+[Citrix Value Adds to Azure Virtual Desktop](/en-us/tech-zone/learn/tech-insights/azure-virtual-desktop-value-add.html) - Learn about how Citrix provides key capabilities to increase flexibility, agility, security, and more to Azure Virtual Desktop, while also driving down costs.
+
 [Microapps](/en-us/tech-zone/learn/tech-insights/microapps.html) - Increase productivity by adding microapps to Citrix Workspace. Microapps allow users to view information and perform actions without launching the full application.
 
 [Microapps Custom Integrations](/en-us/tech-zone/learn/tech-insights/microapps-custom-integrations.html) - Create custom integrations with the microapp builder through the HTTP connector.
@@ -89,4 +111,8 @@ Short, 10-15 minutes videos explaining a technology, a feature, a function with 
 
 [Workspace app](/en-us/tech-zone/learn/tech-insights/workspace-app.html) - Personalized interface to provide access to all assigned SaaS apps, web apps, virtual Windows apps, virtual Linux apps, desktops, and data.
 
-[Zero Trust Strategy for Mergers and Acquisitions](/en-us/tech-zone/learn/tech-insights/mergers-acquisitions.html) - See how Citrix Workspace can help create a zero trust strategy for mergers and acquisitions through the use of Citrix Application Delivery Controller, Citrix Virtual Apps and Desktops Service, Citrix Secure Workspace Access, and Citrix Analytics for Security.
+[Zero Trust Strategy for Mergers and Acquisitions](/en-us/tech-zone/learn/tech-insights/mergers-acquisitions.html) - See how Citrix Workspace can help create a zero trust strategy for mergers and acquisitions through the use of Citrix Application Delivery Controller, Citrix Virtual Apps and Desktops Service, Citrix Secure Private Access, and Citrix Analytics for Security.
+
+## Security
+
+[Citrix Value Adds to Azure Virtual Desktop](/en-us/tech-zone/learn/tech-insights/azure-virtual-desktop-value-add.html) - Learn about how Citrix provides key capabilities to increase flexibility, agility, security, and more to Azure Virtual Desktop, while also driving down costs.

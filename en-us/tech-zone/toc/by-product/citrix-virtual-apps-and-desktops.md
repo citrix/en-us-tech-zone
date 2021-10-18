@@ -13,9 +13,15 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 [Citrix Desktop-as-a-Service (DaaS)](/en-us/tech-zone/learn/tech-insights/citrix-daas.html) - Learn how Citrix Desktop-as-a-Service (DaaS) offerings enable customers to deploy workloads in the cloud within minutes.
 
+[Citrix Value Adds to Azure Virtual Desktop](/en-us/tech-zone/learn/tech-insights/azure-virtual-desktop-value-add.html) - Learn about how Citrix provides key capabilities to increase flexibility, agility, security, and more to Azure Virtual Desktop, while also driving down costs.
+
 [Federated Authentication Service](/en-us/tech-zone/learn/tech-insights/federated-authentication-service.html) - Single Sign-on to Windows-based virtual apps and desktops when using a non-Active Directory based Citrix Workspace identity.
 
 [HDX](/en-us/tech-zone/learn/tech-insights/hdx.html) - A set of technologies ensuring an unparalleled user experience when accessing virtual Windows/Linux applications and desktops.
+
+[Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
+
+[Protect contractor and temp worker access](/en-us/tech-zone/learn/tech-insights/protect-contractor-and-temp-worker-access.html) - See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
 [Remote PC Access](/en-us/tech-zone/learn/tech-insights/remote-pc-access.html) - Remote PC Access allows users to access their physical, office-based Windows PC from remote locations.
 
@@ -71,6 +77,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Citrix SD-WAN HDX performance improvements for Citrix Virtual Apps and Desktops on-premises environments](/en-us/tech-zone/design/reference-architectures/sdwan-hdx-onprem-experience-architecture.html) - Learn how to optimize the delivery of Citrix Virtual Apps and Desktops from on-premises servers to users at locations with a Citrix SD-WAN appliance by minimizing latency and improving session responsiveness during network issues.
 
+[DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
+
 [Desktop-as-a-Service for Business Continuity](/en-us/tech-zone/design/reference-architectures/daas-for-business-continuity.html) - Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 
 [Image Management](/en-us/tech-zone/design/reference-architectures/image-management.html) - Gain an understanding of Machine Creation Services (MCS) and Citrix Provisioning (PVS) offerings for building, delivering, and maintaining virtual machine images in your environment.
@@ -79,7 +87,7 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Optimizing Unified Communications Solutions](/en-us/tech-zone/design/reference-architectures/optimizing-unified-communications-solutions.html) - Learn how to optimize the voice, video, and other capabilities of unified communication solutions in virtualized Citrix environments.
 
-[Reference Architecture - Protect apps and data on bring-your-own devices](/en-us/tech-zone/design/reference-architectures/protect-apps-and-data-on-byo-devices.html) - Learn how to design an environment to support brin-your-own-devices without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Workspace Access, Web App Firewall and Virtual Apps and Desktops
+[Reference Architecture - Protect apps and data on bring-your-own devices](/en-us/tech-zone/design/reference-architectures/protect-apps-and-data-on-byo-devices.html) - Learn how to design an environment to support bring-your-own-devices without compromising IT security. The reference architecture incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
 [Remote PC Access](/en-us/tech-zone/design/reference-architectures/remote-pc.html) - Discover the use cases and learn about the detailed architecture of the Citrix Remote PC Access solution with the layered approach for on-premises and Citrix Cloud deployments.
 
@@ -92,6 +100,8 @@ Reference architectures are comprehensive guides that assist organizations in pl
 [Virtual Apps and Desktops Service - Azure](/en-us/tech-zone/design/reference-architectures/virtual-apps-and-desktops-azure.html) - Learn the detailed architecture and deployment model of Citrix Virtual Apps and Desktops on Microsoft Azure with five key architectural principles.
 
 [Workspace Environment Management service](/en-us/tech-zone/design/reference-architectures/citrix-workspace-environment-management-service.html) - Learn about the architecture and deployment considerations for this cloud-based service of Workspace Environment Management.
+
+[Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
 
 ## Design - Design Decisions
 
@@ -144,3 +154,5 @@ Deployment guides provide step-by-step instruction on how to perform key tasks a
 Tech papers are deep dives into specific problem, technology or solution providing details, leading practices and architectural insights.
 
 [Deploying Google Chrome](/en-us/tech-zone/build/tech-papers/google-chrome.html) - Tech Paper focused on installation, configuration, and various optimizations for Google Chrome browser running on Citrix Virtual Apps and Desktops.
+
+[Security best practices for Citrix Virtual Apps and Desktops](/en-us/tech-zone/build/tech-papers/cvad-security-best-practices.html) - Tech paper focused on security recommendations and security practices for administrators.  Use this guide to navigate security planning, implementation, and ongoing operation.

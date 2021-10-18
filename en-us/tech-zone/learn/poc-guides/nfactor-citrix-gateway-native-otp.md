@@ -166,6 +166,10 @@ This registration login schema corresponds to the dual factor authentication whe
 1.  Select `prolschema_notpdual`, and click `Ok`
 1.  Select `Add Policy`
 1.  From the drop-down list under `Select Policy` select `polldap_notpauth`, and click `Add`
+1.  Select the green `+` to the right of the `polldap_notpauth` policy you just created
+1.  Enter `OTPCheck`, and click `Create`
+1.  Select `Add Policy`
+1.  From the drop-down list under `Select Policy` select `polldap_notpmanage`, and click `Add`
 1.  Select `Done`
 ![Native OTP](/en-us/tech-zone/learn/media/poc-guides_nfactor-citrix-gateway-native-otp_nfactorflow-auth.png)
 
