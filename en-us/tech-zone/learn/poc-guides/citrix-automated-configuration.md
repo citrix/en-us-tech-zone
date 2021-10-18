@@ -51,7 +51,7 @@ The tool also allows administrators to **merge multiple on-premises sites into a
 
 ### Cloud-related components
 
-**Note:** If migrating between cloud sites (cloud to cloud migration) refer to the [Official Documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/migrate/migrate-cloud-to-cloud.html) for detailed steps.
+**Note:** If migrating between cloud sites (cloud to cloud migration) refer to the [Official Documentation](/en-us/citrix-virtual-apps-desktops-service/migrate/migrate-cloud-to-cloud.html) for detailed steps.
 
 *  Valid **CVADS** or **Workspace Premium Plus** licenses.
 *  Administrator must be able to log into the [Cloud Portal](https://citrix.cloud.com) and obtain: The **resource location name**, **customer ID**, **client Secret** (**app ID** and **Secret Key**)
@@ -267,7 +267,7 @@ If everything looks as expected, your CVADS migration is complete.
 
 5.  Check out our On-demand **August 19 webinar recording** - ["Why Citrix Cloud migration is easier than ever"](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/technology-in-practice-webinar-august-2020/). We shared more information on the tool and hosted a **Live Q&A session** with a panel of Citrix experts.
 
-6.  Refer to the Citrix Virtual Apps and Desktosp Service **Migrate to cloud** section for more information and the [Official Documentation](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/migrate/migrate-cloud-to-cloud.html).
+6.  Refer to the Citrix Virtual Apps and Desktosp Service **Migrate to cloud** section for more information and the [Official Documentation](/en-us/citrix-virtual-apps-desktops-service/migrate/migrate-cloud-to-cloud.html).
 
 7.  If after consulting the information listed previously you still need assistance, get in touch with your Citrix representatives, Customer Success Manager, or Support.
   
