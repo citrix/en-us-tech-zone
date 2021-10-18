@@ -9,7 +9,7 @@ tz_products: citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-
 ---
 # Tech Insight: Citrix Value Adds to Azure Virtual Desktop
 
-Azure Virtual Desktop offers numerous advantages for [supporting the modern hybrid workforce](https://www.citrix.com/global-partners/microsoft/resources/virtual-desktop-infrastructure-on-azure-e-book.html). Microsoft's desktop as a service (DaaS) offering allows organizations to securely deliver virtual apps and desktops from the Azure cloud. This makes Azure Virtual Desktop a great option for organizations that want to [modernize IT](https://www.citrix.com/global-partners/microsoft/azure-virtual-desktop.html) and reduce capital expenditures.
+Azure Virtual Desktop offers numerous advantages for [supporting the modern hybrid workforce](https://www.citrix.com/global-partners/microsoft/resources/virtual-desktop-infrastructure-on-azure-e-book.html). Microsoft's desktop as a service (DaaS) offering allows organizations to securely deliver virtual apps and desktops from the Azure cloud. Making Azure Virtual Desktop a great option for organizations that want to [modernize IT](https://www.citrix.com/global-partners/microsoft/azure-virtual-desktop.html) and reduce capital expenditures.
 
 However, the benefits don't end there.
 
@@ -21,7 +21,7 @@ By deploying [Azure Virtual Desktop with Citrix](https://www.citrix.com/global-p
 
 *  **All-in-one monitoring:** Rather than relying on third-party vendors for monitoring and analytics, Citrix customers have everything needed. Session details, availability reports, login breakdowns, and even performance and security analytics are all accessible in one place.
 
-There's also Citrix Autoscale to [unlock cost savings](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/resources/windows-virtual-desktop-calculator.html), Workspace Environment Management to reduce help desk calls, and Service Continuity to boost resiliency — plus broad support for optimizing Microsoft Teams in a virtual environment. And that’s all just for starters.
+There's also Citrix Autoscale to [unlock cost savings](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/resources/windows-virtual-desktop-calculator.html), Workspace Environment Management to reduce help desk calls, and Service Continuity to boost resiliency — plus broad support for optimizing Microsoft Teams in a virtual environment. And that's all just for starters.
 
 **Watch [this video](https://www.youtube.com/watch?v=rvHKQmdFWKs)** to see how Citrix adds value to Azure Virtual Desktop so you can increase flexibility, agility, and security—all while driving down costs:
 
