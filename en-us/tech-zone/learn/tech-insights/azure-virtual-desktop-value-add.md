@@ -9,7 +9,7 @@ tz_products: citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-
 ---
 # Tech Insight: Citrix Value Adds to Azure Virtual Desktop
 
-Azure Virtual Desktop offers numerous advantages for [supporting the modern hybrid workforce](https://www.citrix.com/global-partners/microsoft/resources/virtual-desktop-infrastructure-on-azure-e-book.html). Microsoft’s desktop as a service (DaaS) offering allows organizations to securely deliver virtual apps and desktops from the Azure cloud. This makes Azure Virtual Desktop a great option for organizations that want to [modernize IT](https://www.citrix.com/global-partners/microsoft/azure-virtual-desktop.html) and reduce capital expenditures.
+Azure Virtual Desktop offers numerous advantages for [supporting the modern hybrid workforce](https://www.citrix.com/global-partners/microsoft/resources/virtual-desktop-infrastructure-on-azure-e-book.html). Microsoft's desktop as a service (DaaS) offering allows organizations to securely deliver virtual apps and desktops from the Azure cloud. This makes Azure Virtual Desktop a great option for organizations that want to [modernize IT](https://www.citrix.com/global-partners/microsoft/azure-virtual-desktop.html) and reduce capital expenditures.
 
 However, the benefits don't end there.
 
