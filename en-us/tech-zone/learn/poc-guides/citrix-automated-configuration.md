@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Thamara Trejos
-specialThanksTo: Amir Trujillo, Nitin Mehta, Daniel Feller, Mark Hoffman, Bala Swaminathan
+specialThanksTo: Nitin Mehta, Amir Trujillo, Dan Feller, Ana Ruiz, Mark Hoffman, Bala Swaminathan
 description: Learn how to use the Automated Configuration tool to automate moving your Citrix Virtual Apps and Desktops configuration to your Citrix Virtual Apps and Desktops Service deployment, as well as moving your configuration between Citrix Virtual Apps and Desktops Service deployments.
 tz_title: Automated Configuration Tool
 tz_products: citrix-virtual-apps-and-desktops;
@@ -51,6 +51,8 @@ The tool also allows administrators to **merge multiple on-premises sites into a
 
 ### Cloud-related components
 
+**Note:** If migrating between cloud sites (cloud to cloud migration) refer to the [Official Documentation](/en-us/citrix-virtual-apps-desktops-service/migrate/migrate-cloud-to-cloud.html) for detailed steps.
+
 *  Valid **CVADS** or **Workspace Premium Plus** licenses.
 *  Administrator must be able to log into the [Cloud Portal](https://citrix.cloud.com) and obtain: The **resource location name**, **customer ID**, **client Secret** (**app ID** and **Secret Key**)
 *  The existing Citrix Cloud **Resource Location** has at least **one Cloud Connector**, which is marked as green (Healthy) and is part of the same domain as the On-Premises setup. **Note:** Citrix recommends having **two or more Cloud Connectors** (for redundancy and High Availability). For information on how to set up your Cloud Connectors, refer to [this guide](/en-us/tech-zone/learn/poc-guides/cvads.html).
@@ -76,23 +78,23 @@ These steps must be run in your DDC or the domain-joined machine where you want 
 
 5.  After the **MSI** runs, a window indicating successful completion pops up. Click **Finish** to close the **MSI setup** window. [![Pre-requisites](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_on-install-004.png)
 
-*  **Note**: Upon successful execution, the **MSI** creates the corresponding folder structure, located in ```C:\Users\<username>\Documents\Citrix\AutoConfig```, and also a desktop icon called **Auto Config**, which launches a PowerShell command prompt. This tool is the one used on subsequent steps.
+*  **Note**: Upon successful execution, the **MSI** creates the corresponding folder structure, located in `C:\Users\<username>\Documents\Citrix\AutoConfig`, and also a desktop icon called **Auto Config**, which launches a PowerShell command prompt. This tool is the one used on subsequent steps.
 
 ## Export your On-Premises site configuration
 
-Using an ```export``` PowerShell command, you can export your existing On-Premises configuration and obtain the necessary *.yml* files. These files are used to import your desired configuration into **Citrix Cloud**.
+Using an `export` PowerShell command, you can export your existing On-Premises configuration and obtain the necessary *.yml* files. These files are used to import your desired configuration into **Citrix Cloud**.
 
 1.  After running the **MSI** installer on the previous step, you get an **Auto Config** shortcut automatically created on the Desktop. Right-click this shortcut and click **Run as Administrator.**
-2.  Run the ```Export-CvadAcToFile``` command. This command exports policies, manually provisioned catalogs, and delivery groups. It also exports applications, application folders, icons, zone mappings, tags, admin roles and scopes, and other items. **Note:** For **MCS** machine catalogs and delivery groups, refer to the steps on [Requisites for Importing Site Configuration using different Provisioning Methods section](#requisites-for-importing-site-configuration-using-different-provisioning-methods) in this guide.
+2.  Run the `Export-CvadAcToFile` command. This command exports policies, manually provisioned catalogs, and delivery groups. It also exports applications, application folders, icons, zone mappings, tags, admin roles and scopes, and other items. **Note:** For **MCS** machine catalogs and delivery groups, refer to the steps on [Requisites for Importing Site Configuration using different Provisioning Methods section](#requisites-for-importing-site-configuration-using-different-provisioning-methods) in this guide.
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002-1.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-002-1.png)
 
-3.  Once the tool finishes running, the **Overall status** shows as **True** and the export process is completed (the output lines shown match the following illustration). **Note:** If there are any errors, diagnostic files are created in the action-specific subfolders ```(Export, Import, Merge, Restore, Sync, Backup, Compare)```, which can be found under ```%HOMEPATH%\Documents\Citrix\AutoConfig```. Refer to the [Troubleshooting Tips section](#troubleshooting-tips) if you encounter any errors.
+3.  Once the tool finishes running, the **Overall status** shows as **True** and the export process is completed (the output lines shown match the following illustration). **Note:** If there are any errors, diagnostic files are created in the action-specific subfolders `(Export, Import, Merge, Restore, Sync, Backup, Compare)`, which can be found under `%HOMEPATH%\Documents\Citrix\AutoConfig`. Refer to the [Troubleshooting Tips section](#troubleshooting-tips) if you encounter any errors.
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-003.png)
 
-4.  The resulting *.yml* files are now in the current user’s ```Documents\Citrix\AutoConfig``` path:
+4.  The resulting *.yml* files are now in the current user’s `Documents\Citrix\AutoConfig` path:
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-004.png)
 
-*  **Note:** See the following image for an example of the contents on a *.yml* file (```Application.yml```)
+*  **Note:** See the following image for an example of the contents on a *.yml* file (`Application.yml`)
 
 [![Exporting Config](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-005.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_export-config-005.png)
 
@@ -124,7 +126,7 @@ Go to your **Resource Location** and make sure your **Cloud Connectors** are bot
 
 No extra steps are required to import your **PVS Catalogs** and their corresponding applications at this time. Follow the steps mentioned on the [Import your Site Configuration into Cloud](#import-your-site-configuration-into-cloud) section in this guide.
 
-### Dealing with Machine Creation Services (MCS): Pooled VDI multi-session (Random) and RDS Machine Catalogs (PREVIEW)
+### Dealing with Machine Creation Services (MCS): Pooled VDI multi-session (Random) and RDS Machine Catalogs
 
 **Note:** A separate section is available with instructions for Static assigned virtual machines. Refer to the steps mentioned on the [MCS Static Assigned VDIs](#dealing-with-machine-creation-services-mcs-static-assigned-machines) section in this guide.
 
@@ -134,7 +136,6 @@ When machines are turned on, their state might change, affecting import data for
 
 **Important Considerations:**
 
-*  Since this process is still in preview, it is not automatically enabled. You must contact Citrix support or your Customer Success Management team to enable this feature for your org ID.
 *  The MCS catalog import process can take a couple of hours based on the size of the master image. Therefore the import command within the tool only starts the MCS catalog creation and does not wait for it to finish.
 *  After the import has completed, the catalog creation progress can be monitored via Studio in the cloud deployment.
 *  Once the master image is created you can provision machines. Consider your hypervisor's existing capacity, since you have consumption from your on-premises usage.
@@ -143,7 +144,7 @@ When machines are turned on, their state might change, affecting import data for
 
 **Note:** After these considerations, follow [Import your Site Configuration into Cloud section](#import-your-site-configuration-into-cloud) in this guide to merge your configuration as needed.
 
-### Dealing with Machine Creation Services (MCS): Static Assigned Machines (PREVIEW)
+### Dealing with Machine Creation Services (MCS): Static Assigned Machines
 
 **Note:** A separate section is available with instructions for Pooled and RDS Machines. Refer to the steps mentioned on the [MCS Pooled VDI and RDS Machines](#dealing-with-machine-creation-services-mcs-pooled-random-and-rds-machine-catalogs)
 
@@ -151,7 +152,6 @@ The import and export commands are supported for this task now. This process imp
 
 **Important Considerations:**
 
-*  Since this process is still in preview, you must reach out to Citrix in order to enable this feature for your org ID, since this is not automatically enabled.
 *  The VDAs **need** to be pointed to the Cloud Connectors for them to register with **Citrix Cloud**.
 *  Refer to the [**Activating sites**](/en-us/citrix-virtual-apps-desktops-service/migrate.html#activating-sites) documentation to activate your Cloud site and thus control reboot schedule, power management, and others, via **Citrix Cloud**.
 *  Once the migration is completed, if you want to delete the corresponding catalog from your **on-premises site**, you **must** select the option to **leave VM and AD account**. Otherwise both records will be deleted and the Cloud site left pointing to the deleted virtual machine.
@@ -165,46 +165,46 @@ During this step, you obtain the **customer connection details**, manually creat
 
 ### Obtaining Customer Connection Details
 
-Administrators must edit the ```CustomerInfo.yml``` file and add the corresponding **CustomerName**, **CustomerID,** and **SecretKey** values to it. These values can be obtained and generated from the **Cloud portal**, as shown in the following steps.
+Administrators must edit the `CustomerInfo.yml` file and add the corresponding **CustomerName**, **CustomerID,** and **SecretKey** values to it. These values can be obtained and generated from the **Cloud portal**, as shown in the following steps.
 
-1.  First, open your ```CustomerInfo.yml``` file using a text editor application, such as **Notepad**. The following screenshot shows the ```CustomerInfo.yml``` file values that must be edited (underlined in red):
+1.  First, open your `CustomerInfo.yml` file using a text editor application, such as **Notepad**. The following screenshot shows the `CustomerInfo.yml` file values that must be edited (underlined in red):
 ![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-001.png)
 
 2.  On your [Cloud portal](https://citrix.cloud.com) click the **hamburger menu** again and go to **Identity and Access Management**:
 ![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-002.png)
 
-3.  Go to the **API Access** tab and copy the **Customer ID** value, which can be found next to the ```customer ID``` text as seen on the following screenshot (red rectangle):
+3.  Go to the **API Access** tab and copy the **Customer ID** value, which can be found next to the `customer ID` text as seen on the following screenshot (red rectangle):
 ![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-003.png)
 
-4.  Paste the retrieved value **between the quotes** that follow the **CustomerId field** in your ```CustomerInfo.yml``` file, between the ```“”``` (quotes):
+4.  Paste the retrieved value **between the quotes** that follow the **CustomerId field** in your `CustomerInfo.yml` file, between the `“”` (quotes):
 ![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-004.png)
 
-5.  Back on your **Cloud portal**, go to the **Identity and Access Management** portal and **API Access** tab. Enter the name you want to identify this API key with on the **Name your Secure Client** box. Then click the **Create Client** button. **Note:** This action generates the ```Client ID``` and the ```Secret Key```.
+5.  Back on your **Cloud portal**, go to the **Identity and Access Management** portal and **API Access** tab. Enter the name you want to identify this API key with on the **Name your Secure Client** box. Then click the **Create Client** button. **Note:** This action generates the `Client ID` and the `Secret Key`.
 ![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-005.png)
 
-6.  Copy the ```ID``` and the ```Secret``` values, one by one (paste them on the ```CustomerInfo.yml``` file as shown in the following step). Then click **Download** to save the file for later reference.
+6.  Copy the `ID` and the `Secret` values, one by one (paste them on the `CustomerInfo.yml` file as shown in the following step). Then click **Download** to save the file for later reference.
 ![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-006.png)
 
-7.  Paste the ```ID``` and ```Secret``` values onto the corresponding fields in the ```CustomerInfo.yml``` file:
+7.  Paste the `ID` and `Secret` values onto the corresponding fields in the `CustomerInfo.yml` file:
 ![Importing Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_importing-connection-details-007.png)
 
 ### Manually create the Zone Mapping file (ZoneMapping.yml)
 
-**On-Premises Zones** cannot be automatically migrated to a **cloud Resource Location**, so they must be mapped using the ```ZoneMapping.yml``` file. **Note:** Migration failures occur if the zone is not mapped with a homonymous resource location (a Resource Location with the **exact same name**).
+**On-Premises Zones** cannot be automatically migrated to a **cloud Resource Location**, so they must be mapped using the `ZoneMapping.yml` file. **Note:** Migration failures occur if the zone is not mapped with a homonymous resource location (a Resource Location with the **exact same name**).
 
-1.  Back in the same directory where your *.yml* files reside ```(Documents\Citrix\AutoConfig)```, open up the ```ZoneMapping.yml``` using **Notepad** or your preferred text editor. **Note:** The ```Primary``` value must be replaced with the name of your corresponding **Zone** you want to migrate objects from (in your On-Premises environment).
+1.  Back in the same directory where your *.yml* files reside `(Documents\Citrix\AutoConfig)`, open up the `ZoneMapping.yml` using **Notepad** or your preferred text editor. **Note:** The `Primary` value must be replaced with the name of your corresponding **Zone** you want to migrate objects from (in your On-Premises environment).
 [![Zone Mapping](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-001.png)
 
-2.  You can find this name under your **On-Premises Citrix Studio console > Configuration > Zones**. **Note:** if your Zone is named ```Primary``` in your On-Premises environment, this value on the ```ZoneMapping.yml``` file doesn’t need to be changed:
+2.  You can find this name under your **On-Premises Citrix Studio console > Configuration > Zones**. **Note:** if your Zone is named `Primary` in your On-Premises environment, this value on the `ZoneMapping.yml` file doesn’t need to be changed:
 [![Zone Mapping](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-002.png)
 
-3.  Still on the ```ZoneMapping.yml``` file, the ```Name_Of_Your_Resource_Zone``` value must be replaced with your **Cloud Resource Location name**. This value can be found on your [cloud portal](https://citrix.cloud.com) under the Hamburger menu > **Resource Locations**:
+3.  Still on the `ZoneMapping.yml` file, the `Name_Of_Your_Resource_Zone` value must be replaced with your **Cloud Resource Location name**. This value can be found on your [cloud portal](https://citrix.cloud.com) under the Hamburger menu > **Resource Locations**:
 [![Zone Mapping](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-003.png)
 
-4.  Copy your **Resource Location name** (Shown as ```My Resource Location``` on the following screenshot):
+4.  Copy your **Resource Location name** (Shown as `My Resource Location` on the following screenshot):
 [![Zone Mapping](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-004.png)
 
-5.  Paste this value on the ```ZoneMapping.yml``` file instead of the ```Name_Of_Your_Resouce_Zone``` value:
+5.  Paste this value on the `ZoneMapping.yml` file instead of the `Name_Of_Your_Resouce_Zone` value:
 [![Zone Mapping](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-005.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_zone-mapping-005.png)
 
 *  **Note:** Multiple Zones in your On-Premises environment can also map to **one Resource Location** in the cloud. However there always must be one row in the file for **each zone** in the **On-Premises environment**. For **multiple zones on-premises** and **one Resource Location**, the format on this file would look as follows:
@@ -217,18 +217,18 @@ When mapping **Zones** to different **Resource locations**, the file must look l
 
 ### Merging configuration
 
-1.  Back on the **Migration tool PowerShell console**, run the following command: ```Merge-CvadAcToSite``` to merge the existing Cloud configuration (if any exists) with the configuration exported from the On-Premises site.
+1.  Back on the **Migration tool PowerShell console**, run the following command: `Merge-CvadAcToSite` to merge the existing Cloud configuration (if any exists) with the configuration exported from the On-Premises site.
 [![Merging Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_merging-config-001.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_merging-config-001.png)
 
 2.  When each task runs successfully, the output looks green as *.yml* files are imported and the corresponding components are added to the cloud site:
 [![Merging Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_merging-config-002.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_merging-config-002.png)
 
-3.  The resulting files show in the following directory: ```<This PC>\Documents\Citrix\AutoConfig\Import_<YYYY_MM_DD_HH_mm_ss>```
+3.  The resulting files show in the following directory: `<This PC>\Documents\Citrix\AutoConfig\Import_<YYYY_MM_DD_HH_mm_ss>`
 [![Merging Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_merging-config-003.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_merging-config-003.png)
 
-4.  On this same folder, you can find a ```Backup_YYYY_MM_DD_HH_mm_ss``` folder. **Note:** Copy this folder somewhere safe as it is a backup of the configuration.
+4.  On this same folder, you can find a `Backup_YYYY_MM_DD_HH_mm_ss` folder. **Note:** Copy this folder somewhere safe as it is a backup of the configuration.
 
-5.  The ```Backup``` folder contains the following files, which are helpful for reverting changes, if needed:
+5.  The `Backup` folder contains the following files, which are helpful for reverting changes, if needed:
 [![Merging Configuration](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_merging-config-004.png)](/en-us/tech-zone/learn/media/poc-guides_citrix-automated-configuration_merging-config-004.png)
 
 ### Verify configuration created in Cloud Studio
@@ -249,11 +249,11 @@ If everything looks as expected, your CVADS migration is complete.
 **General information for troubleshooting:**
 
 *  Running any cmdlet creates a **log file** and an entry in the **master history log file**. The entries contain the date, operation, result, backup, and log file locations of the execution. This log provides potential solutions and fixes to common errors.
-*  The **master history log** is located in ```%HOMEPATH%\Documents\Citrix\AutoConfig```, in the file named ```History.Log```.*  All operation log files are placed in a **backup folder**.
-*  All log file names begin with ```CitrixLog```, then show the ```auto-config``` operation and the **date** and **timestamp** of the cmdlet execution.
+*  The **master history log** is located in `%HOMEPATH%\Documents\Citrix\AutoConfig`, in the file named `History.Log`.*  All operation log files are placed in a **backup folder**.
+*  All log file names begin with `CitrixLog`, then show the `auto-config` operation and the **date** and **timestamp** of the cmdlet execution.
 *  Logs **do not** auto-delete.
-*  Console logging can be suppressed by using the ```-quiet``` parameter
-*  New support cmdlet to zip all log files for transfer to Citrix for support. Back up the cloud’s current state by running the ```Backup-CvadAcToFile``` command. Then collect all log and ```*.yml``` files into a single zip by running ```New-CvadAcZipInfoForSupport```. **No customer security information is included.** Forward the zip file at the following location ```%HOMEPATH%\Documents\Citrix\AutoConfig\CvadAcSupport_yyyy_mm_dd_hh_mm_ss.zipNew-CvadAcZipInfoForSupport```.
+*  Console logging can be suppressed by using the `-quiet` parameter
+*  New support cmdlet to zip all log files for transfer to Citrix for support. Back up the cloud’s current state by running the `Backup-CvadAcToFile` command. Then collect all log and `*.yml` files into a single zip by running `New-CvadAcZipInfoForSupport`. **No customer security information is included.** Forward the zip file at the following location `%HOMEPATH%\Documents\Citrix\AutoConfig\CvadAcSupport_yyyy_mm_dd_hh_mm_ss.zipNew-CvadAcZipInfoForSupport`.
 
 **For more information:**
 
@@ -267,4 +267,7 @@ If everything looks as expected, your CVADS migration is complete.
 
 5.  Check out our On-demand **August 19 webinar recording** - ["Why Citrix Cloud migration is easier than ever"](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/form/technology-in-practice-webinar-august-2020/). We shared more information on the tool and hosted a **Live Q&A session** with a panel of Citrix experts.
 
-6.  If after consulting the information listed previously you still need assistance, get in touch with your Citrix representatives, Customer Success Manager, or Support.
+6.  Refer to the Citrix Virtual Apps and Desktosp Service **Migrate to cloud** section for more information and the [Official Documentation](/en-us/citrix-virtual-apps-desktops-service/migrate/migrate-cloud-to-cloud.html).
+
+7.  If after consulting the information listed previously you still need assistance, get in touch with your Citrix representatives, Customer Success Manager, or Support.
+  
