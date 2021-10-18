@@ -4,6 +4,7 @@ h3InToc: true
 contributedBy: Steven Wright
 description: Tech Paper focused on the steps that a Citrix ADC administrator should follow to deploy a new ADC instance with best practice settings.
 tz_title: Tech Paper: Best practices for Citrix ADC Deployments
+tz_products: citrix-networking
 ---
 # Tech Paper: Best practices for Citrix ADC Deployments
 
