@@ -267,4 +267,4 @@ This is the end of the proof of concept guide. While following this guide you:
 
 ## Further reading
 
--  More details on integrating Citrix Podio app with Citrix Workspace microapps: </en-us/citrix-microapps/set-up-template-integrations/integrate-podio.html>
+-  More details on integrating Citrix Podio app with Citrix Workspace microapps: [Integrate Podio](/en-us/citrix-microapps/set-up-template-integrations/integrate-podio.html)
