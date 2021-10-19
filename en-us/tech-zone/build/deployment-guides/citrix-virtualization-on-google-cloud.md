@@ -12,7 +12,7 @@ contributedBy:
 
 ## Introduction
 
-This step-by-step Deployment and Configuration guide is for technical professionals, IT decision-makers, partners, and system integrators who deploy and manages Citrix infrastructure on Google Cloud. You can think of this guide as a double click down from the [Citrix Virtualization on Google Cloud Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) document, also available on Citrix TechZone. The Reference Architecture helps you decide **the virtualization system's architecture**. We implement the [Cloud Forward](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern) design on Google Cloud to keep this Deployment and Configuration guide focused and succinct. The design outlined in this guide may not match the architecture of your environment. However, it should help you through most of the tasks required to create a functional Citrix infrastructure on Google Cloud. To help guide you on this journey of understanding, we are breaking down each of the major steps into **goals**, followed by step-by-step guides on **one way** to accomplish our **prime goal: build a Citrix virtualization system on Google Cloud**.
+This step-by-step Deployment and Configuration guide is for technical professionals who deploy and manages Citrix infrastructure on Google Cloud. You can think of this guide as a double click down from the [Citrix Virtualization on Google Cloud Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) document, also available on Citrix TechZone. The Reference Architecture helps you decide **the virtualization system's architecture**. We implement the [Cloud Forward](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern) design on Google Cloud to keep this Deployment and Configuration guide focused and succinct. To help guide you on this journey of understanding, we are breaking down each of the major steps into **goals**, followed by step-by-step guides on **one way** to accomplish our **prime goal: build a Citrix virtualization system on Google Cloud**.
 
 As you take this journey with us, we encourage you to share your comments, contributions, questions, suggestions, and feedback along the way. Drop us a line via email to [Citrix on Google SME working group](mailto:caceb231.citrix.onmicrosoft.com@amer.teams.ms).
 
@@ -34,7 +34,7 @@ The following list provides an overview of the goals and **tasks** necessary to 
 
 ## 1 Define the deployment architecture
 
-Before you build a Citrix virtualization system on **ANY** platform, you need to figure out **WHAT** you’re building – the deployment architecture. The flexibility of the Citrix technology stack can be a challenge. However, we break down the most important design decisions to consider in the [Citrix Virtualization on Google Cloud Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) document. In this guide, we are building a Citrix solution based on the [Cloud Forward](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern) design as illustrated in Figure 1:
+Before you build a Citrix virtualization system on **ANY** platform, you need to figure out **WHAT** you are building – the deployment architecture. The flexibility of the Citrix technology stack can be a challenge. However, we break down the most important design decisions to consider in the [Citrix Virtualization on Google Cloud Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) document. In this guide, we are building a Citrix solution based on the [Cloud Forward](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern) design as illustrated in Figure 1:
 
 ![cloud-forward-deployment-architecture](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_cloud-forward-deployment-architecture.png)
 
@@ -60,9 +60,9 @@ When complete, you have:
 
 ## **Google Cloud Primer**
 
-Google Cloud consists of services and resources hosted in data centers around the globe and vary according to [geographic regions](https://cloud.google.com/about/locations#network). Data centers are referenced by their global region such as Central US, Western Europe, and East Asia. A zone is an isolated location within a region. The zone determines what computing resources are available and where your data is stored and accessed. A region can have three or more zones. For example, the us-west1 region denotes a region on the west coast of the United States that has three zones us-west1-a, us-west1-b, and us-west1-c.
+Google Cloud consists of services and resources hosted in data centers around the globe which varies according to [geographic regions](https://cloud.google.com/about/locations#network). Google Cloud infrastructure services are available in locations across North America, South America, Europe, Asia, and Australia. These locations are divided into regions and zones. A zone is an isolated location within a region. The zone determines what computing resources are available and where your data is stored and accessed. A region can have three or more zones. For example, the us-west1 region denotes a region on the west coast of the United States that has three zones us-west1-a, us-west1-b, and us-west1-c.
 
-[Google Billing](https://cloud.google.com/billing/docs) accounts are a prerequisite for creating Google Project and deploying the Compute Engine instances. The Google billing is linked to a Google payments profile. In a GCP environment, billing accounts can be linked to one or more projects which are aligned to an organization (Figure 3). It is important to ensure that the proper billing structure is in place in your organization before proceeding forward. Billing in GCP is based on usage, similar to other public cloud vendors. Google does not charge for virtual machines while they are in terminated state; however, Google charges for storing the preserved state of suspended virtual machines. Google offers committed use discounts (1 or 3 years) for virtual machine usage which is ideal for workloads with predictable resource needs. Also, Google offers sustained use discounts which automatically applies the discount for specific Compute Engine used more than 25% a month. However, the sustained use discounts are not applicable to the E2 and A2 machine instances. Google also provides sizing recommendations for VMs instances using built-in intelligence.
+[Google Billing](https://cloud.google.com/billing/docs) accounts are a prerequisite for creating Google Project and deploying the Compute Engine instances. The Google billing is linked to a Google payments profile. In a GCP environment, billing accounts can be linked to one or more projects which are aligned to an organization (Figure 3). It is important to ensure that the proper billing structure is in place in your organization before proceeding forward. Billing in GCP is based on usage, similar to other public cloud vendors. Google does not charge for virtual machines while they are in terminated state; however, Google charges for storing the preserved state of suspended virtual machines. Google offers committed use discounts (1 or 3 years) for virtual machine usage which is ideal for workloads with predictable resource needs. Also, Google offers sustained use discounts which automatically apply the discount for specific Compute Engine used more than 25% a month. However, the sustained use discounts are not applicable to the E2 and A2 machine instances. Google also provides sizing recommendations for VMs instances using built-in intelligence.
 
 ![google-billing](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_google-billing.png)
 
@@ -78,9 +78,9 @@ GCP organizes the resources into a project. All [GCP projects](https://cloud.goo
 
 ### 2.1 Create or Access Google Project
 
-The goal of this task is to ultimately gain access to the Google Cloud Project that contains your Citrix virtualization assets. If someone else in your organization is responsible for creating projects, they need to assign you the Identity Access Management (IAM) “Owner” role inside the project for you to complete the rest of this goal. If you’re the one creating the project, the following steps guides you through the process.
+The goal of this task is to ultimately gain access to the Google Cloud Project that contains your Citrix virtualization assets. If someone else in your organization is responsible for creating projects, they need to assign you the Identity Access Management (IAM) "Owner" role to complete the rest of this goal. If you are the one creating the project, the following steps guide you through the process.
 
-The following steps are completed from within the Google Cloud Console ([https://console.cloud.google.com](https://console.cloud.google.com)). Make sure that you’re logged into this console with the valid user account.
+The following steps are completed from within the Google Cloud Console ([https://console.cloud.google.com](https://console.cloud.google.com)). Make sure that you are logged into this console with the valid user account.
 
 1.  Click **Select a project** from the drop-down list
 
@@ -104,7 +104,7 @@ The following steps are completed from within the Google Cloud Console ([https:/
 
 ### 2.2 Enable Google Cloud APIs
 
-Citrix Cloud interacts with your Google Cloud project by using several different APIs. These APIs are not necessarily enabled by default, but they are necessary for Citrix VDA fleet creation and lifecycle management. For Citrix Cloud to function, the following Google APIs must be enabled on your project:
+Citrix Cloud interacts with your Google Cloud project by using several different APIs. These APIs are not necessarily enabled by default, but they are necessary for Citrix Virtual Delivery Agent (VDA) fleet creation and lifecycle management. For Citrix Cloud to function, the following Google APIs must be enabled on your project:
 
 -  Compute Engine API
 
@@ -118,7 +118,7 @@ Citrix Cloud interacts with your Google Cloud project by using several different
 
 > ***Note**:
 >
-> The Cloud DNS API is required to configure DNS services for your project, which are necessary to setup Active Directory on Google Cloud. If your infrastructure team manages the Active Directory and DNS infrastructure components, you can effectively skip this step. The other four APIs are used by Citrix Cloud and must be enabled.
+> The Cloud DNS API is required to configure DNS services for your project, which are necessary to configure Active Directory on Google Cloud. If your infrastructure team manages the Active Directory and DNS infrastructure components, you can effectively skip this step. The other four APIs are used by Citrix Cloud and must be enabled.
 
 The Google APIs can be enabled from the [APIs and Services/Dashboard or APIs and Services/Library](https://cloud.google.com/apis/docs/getting-started) pages if you prefer to use the graphical console. Enabling APIs can also be completed **quickly** by using the Google Cloud Shell as described:
 
@@ -146,7 +146,7 @@ The Google APIs can be enabled from the [APIs and Services/Dashboard or APIs and
 
 ### 2.3 Create/update service accounts
 
-Google Identity and Access Management (IAM) allows you to grant granular access to specific Google Cloud resources. The **WHO** has access to **WHICH** resources, and **WHAT** they can do with those resources. Service accounts ‘live’ inside projects, similar to other resources you provision on Google Cloud.
+Google Identity and Access Management (IAM) allows you to grant granular access to specific Google Cloud resources. The **WHO** has access to **WHICH** resources, and **WHAT** they can do with those resources. Service accounts live inside projects, similar to other resources you provision on Google Cloud.
 
 Citrix Cloud uses **two** separate service accounts within the Google Cloud project:
 
@@ -336,7 +336,7 @@ Citrix Cloud uses **two** separate service accounts within the Google Cloud proj
 
 > **Note**:
 >
->To deploy Citrix VDAs onto a Google Cloud Shared Virtual Private Cloud (VPC), there are some additional permissions the Citrix Cloud service account requires that are NOT covered here. To prepare for deploying VDA’s on Shared VPCs, see “[Google Cloud Platform environments, Shared Virtual Private Cloud](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html#shared-virtual-private-cloud)”.
+>If you plan to deploy Citrix VDAs onto a Google Cloud Shared Virtual Private Cloud (VPC), there are some additional permissions the Citrix Cloud service account requires that are NOT covered here. To prepare for deploying VDAs on Shared VPCs, see “[Google Cloud Platform environments, Shared Virtual Private Cloud](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html#shared-virtual-private-cloud)”.
 
 #### 2.3.3 Generate and save Citrix Cloud service account keys
 
@@ -391,17 +391,17 @@ Building and configuring a network becomes complex relative to the size of the o
 
 -  A network layer securing using Google's VPC firewall.
 
-Your organization may have a different way of providing the necessary functionalities we describe here. If the goals are completed and functionally verified, you should be well on your way to building the Citrix virtualization environment.
+Your organization can have a different way of providing the necessary functionalities we describe here. If the goals are completed and functionally verified, you should be well on your way to building the Citrix virtualization environment.
 
 ### 3.1 Create/access a network for VDAs and Cloud Connectors
 
-On Google Cloud, virtual machine resources need a [VPC](https://cloud.google.com/vpc#section-5) network for communication. A VPC ‘lives’ inside a specific Google Cloud project and can be optionally shared [between multiple projects](https://cloud.google.com/vpc/docs/shared-vpc) as needed. Google calls the latter feature “[Shared VPC](https://cloud.google.com/vpc/docs/shared-vpc)”. Citrix Cloud supports [deploying Citrix VDA’s on Shared VPC networks](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html#shared-virtual-private-cloud), the setup and configuration is outside of the scope of this simplified guide.
+On Google Cloud, virtual machine resources need a [VPC](https://cloud.google.com/vpc#section-5) network for communication. A VPC lives inside a specific Google Cloud project and can be optionally shared [between multiple projects](https://cloud.google.com/vpc/docs/shared-vpc) as needed. Google calls the latter feature[Shared VPC](https://cloud.google.com/vpc/docs/shared-vpc). Citrix Cloud supports [deploying Citrix VDAs on Shared VPC networks](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html#shared-virtual-private-cloud), the setup, and configuration is outside of the scope of this simplified guide.
 
-A VPC is a project global construct, meaning it can span not only zones inside regions, but also span regions around the globe. At least one subnet is required in each region where virtual machines will be deployed.
+A VPC is a project global construct, meaning it can span not only zones inside regions, but also span regions around the globe. At minimum one subnet is required in each region where virtual machines are deployed.
 
 For this deployment guide a VPC network is used to provide the internal (private) connectivity between the three Google zones (us-west1-a, us-west1-b and us-west1-c). A VPC (Figure 3) is a virtual version of a physical network implemented within the Google’s worldwide network. A VPC is considered a global resource and it is not associated with any Google region or zone. A VPC network can be created using auto mode or custom mode. The auto mode VPC network creates a single subnet per region automatically when the network is created. As new regions become available, new subnets in those regions are automatically added to the auto mode network. A custom mode VPC network requires all subnets to be created manually.
 
-Note also that there is a [cost](https://cloud.google.com/vpc/network-pricing) associated with traffic flows on Google Cloud. The VPC ingress traffic is free. The egress traffic to the same zone, to a different GCP service in the same region, and to Google products are all free; however, the egress traffic between zones in the same region or regions within the US costs $0.01/GB.
+Note also that there is a [cost](https://cloud.google.com/vpc/network-pricing) associated with traffic flows on Google Cloud. The VPC ingress traffic is free. The egress traffic to the same zone, to a different GCP service in the same region, and to Google products are all free. However, the egress traffic between zones in the same region or regions within the US costs $0.01/GB.
 
 ![virtual-private-cloud](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_virtual-private-cloud.png)
 
@@ -457,7 +457,7 @@ The goal of this task is to create a functional VPC that is used build a Citrix 
 
 #### 3.1.2 Configure outbound connectivity to Citrix Cloud
 
-Citrix Cloud is built based on a suite of APIs which are securely accessed over the Internet. The Citrix Cloud Connector virtual machines must be able to communicate to Citrix Cloud to function. While there are many ways to accomplish this goal, for this guide we’re going to use Google’s [Cloud NAT](https://cloud.google.com/nat/docs/overview). Cloud NAT service is used to facilitate communication between Citrix Cloud and Google Cloud. Cloud NAT allows certain resources without external IP addresses to create outbound connections to the internet. If there is a requirement to establish a connection between the on-premises data center and GCP, then [Cloud Interconnect](https://cloud.google.com/network-connectivity/docs/interconnect) provides a low latency and high availability connection. Cloud Interconnect enables internal IP address communication, which means internal IP addresses are directly accessible from both networks. However, the traffic between on-premises network and the GCP network doesn’t traverse the public internet. You can choose either deploying a dedicated interconnect or using a partner interconnect to provide connectivity between on-premises data center and GCP.
+Citrix Cloud is built based on a suite of APIs which are securely accessed over the Internet. The Citrix Cloud Connector virtual machines must be able to communicate to Citrix Cloud to function. While there are many ways to accomplish this goal, for this guide we’re going to use Google’s [Cloud NAT](https://cloud.google.com/nat/docs/overview). Cloud NAT service is used to facilitate communication between Citrix Cloud and Google Cloud. Cloud NAT allows certain resources without external IP addresses to create outbound connections to the internet. If there is a requirement to establish a connection between the on-premises data center and GCP, then [Cloud Interconnect](https://cloud.google.com/network-connectivity/docs/interconnect) provides a low latency and high availability connection. Cloud Interconnect enables internal IP address communication, which means internal IP addresses are directly accessible from both networks. However, the traffic between on-premises network and the GCP network doesn’t traverse the public internet. You can choose either deploying a dedicated or partner interconnect to provide connectivity between on-premises data center and GCP.
 
 Before you configure Cloud NAT, you must configure the Cloud Router as Cloud NAT uses it.
 
@@ -491,7 +491,7 @@ Before you configure Cloud NAT, you must configure the Cloud Router as Cloud NAT
 
 8.  Select the region **us-west1**
 
-9.  Input the Google ASN value. You can use any private ASN value (64512 - 65534, 4200000000 – 4294967294)
+9.  Input the Google ASN value. You can use any private ASN value (from 64512 through 65534, from 4200000000 through 4294967294)
 
 10.  Input the BGP peer keepalive interval value **20** (default)
 
@@ -563,9 +563,9 @@ Domain Name System (DNS) services are a baseline requirement for any connected n
 
 8.  Input a unique Description: **Forwarding zone to integrate Google DNS with Active Directory**
 
-9.  Click the Options drop down and select **Forward queries to another server**
+9.  Click the Options drop-down and select **Forward queries to another server**
 
-10.  Under the Networks section, click the drop down and select the network created in the [Virtual Private Cloud](#_Steps_to_create) section: **citrixcloudnetwork**.
+10.  Under the Networks section, click the drop-down and select the network created in the [Virtual Private Cloud](#_Steps_to_create) section: **citrixcloudnetwork**.
 
 11.  Enter the first DNS IP Address: **10.240.1.2**
 
@@ -583,7 +583,7 @@ Domain Name System (DNS) services are a baseline requirement for any connected n
 
 ### 3.2 Configure network layer security using Google Cloud VPC firewall
 
-Every production and/or Internet connected system needs to have multiple layers of security implemented for obvious reasons. VPC Firewall is one of the many security features provided by Google Cloud. VPC firewall rules allow ingress and egress traffic to be allowed or denied based on a flexible set of defined policies attached to the VPC and virtual machines. The VPC firewall rules are defined at the network level, and connections are allowed or denied on a per instance basis. The VPC firewall protects instances within the same VPC network and between an instance and other VPC networks.
+Every production and/or Internet connected system needs to have multiple layers of security implemented for obvious reasons. VPC Firewall is one of the many security features provided by Google Cloud. VPC firewall rules allow ingress and egress traffic to be allowed or denied. VPC firewall rules are based on a flexible set of defined policies attached to the VPC and virtual machines. The VPC firewall rules are defined at the network level, and connections are allowed or denied on a per instance basis. The VPC firewall protects instances within the same VPC network and between an instance and other VPC networks.
 
 A Citrix Cloud Resource Location needs some basic firewall rules to function. The following table summarizes the protocol, ports, and network tags that are required/allowed for this deployment to be functional. The tasks which follow guides you through creating firewall rules to match:
 
@@ -737,13 +737,13 @@ Now that you have a functional Google Cloud project and core network services in
 
 -  One or more Citrix VDAs
 
-Applying the “[Cloud Forward](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern)” design pattern, these resources are deployed on virtual machine instances attached to a VPC. The virtual machine instances are deployed in a highly available manner by splitting multiple VM instances between Google Cloud zones in the region.
+Applying the “[Cloud Forward](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern)” design pattern, these resources are deployed on virtual machine instances attached to a VPC. The virtual machine instances are deployed in a highly available manner by splitting between Google Cloud zones in the region.
 
-In this section of the Deployment and Configuration guide, we provide additional background on Google Cloud resource and service types, followed by creating the virtual machine instances.
+In this section of the guide, we provide additional information on Google Cloud resource and service types, followed by creating the virtual machine instances.
 
 ### About Google Cloud virtual machine resources
 
-Google Cloud provides reliable, high performance block storage for use by virtual machine instances. Block storage is presented to virtual machines as [Persistent Disks](https://cloud.google.com/persistent-disk). The persistent disks, available either as standard hard drive or solid-state drives (SSD). The persistent disks are durable network storage devices that your instance can access as though they were physical disks in a desktop or a server. Google Compute Engine instances by default have a single root persistent disk with an operating system. Extra disks can be added later for instances where applications require more local storage. The choices for disk expansion are Standard or SSD persistent disks, Local SSDs, and Cloud Storage Buckets. Local SSD is not recommended for Citrix Virtual Apps deployment because the data stored on the local SSD persists until you stop or delete the instance. The persistent disks are located independently from the virtual machine instances. You have an option to detach or move persistent disks to retain data even after the VM instance is deleted. The persistent disks performance scales automatically with size. This allows you to resize the persistent disks or add more persistent disks to an instance to meet performance to storage space requirements. The persistent disk has no per I/O cost, so estimate the monthly I/O budget is unnecessary. SSD persistent disks have a read IOPS of 40,000 and write IOPS of 30,000 per instance. Compared to standard persistent disks, which only have a read IOPS of 3,000 and write IOPS of 15,000. The SSD persistent disk is recommended for deploying Citrix Virtual Apps workloads. When estimating storage capacity, remember that Virtual Apps and Desktops deployments have two storage needs: (1) storage for Virtual Apps servers and applications and (2) storage for user profiles. Deploying a Virtual Apps server master image requires approximately 50 GB of storage which can vary based on installed applications and the Windows Server operating system version. For example, the Windows Server 2016 OS boot size is 50 GB while the Windows Server 2012 R2 is 32 GB. Citrix recommends creating a new Virtual Apps master image to minimize the required capacity instead of migrating an existing on-premise image.
+Google Cloud provides reliable, high performance block storage for use by virtual machine instances. Block storage is presented to virtual machines as [Persistent Disks](https://cloud.google.com/persistent-disk). The persistent disks, available either as standard hard drive or solid-state drives (SSD). The persistent disks are durable network storage devices that your instance can access as though they were physical disks in a desktop or a server. Google Compute Engine instances by default have a single root persistent disk with an operating system. Extra disks can be added later for instances where applications require more local storage. The choices for disk expansion are Standard or SSD persistent disks, Local SSDs, and Cloud Storage Buckets. Local SSD is not recommended for Citrix Virtual Apps deployment because data stored on local SSD are temporary. The persistent disks are located independently from the virtual machine instances. You can choose to detach or move persistent disks to retain data even after the VM instance is deleted. The persistent disks performance scales automatically with size. This allows you to resize the persistent disks or add more persistent disks to an instance to meet performance to storage space requirements. The persistent disk has no per I/O cost, so estimate the monthly I/O budget is unnecessary. SSD persistent disks have a read IOPS of 40,000 and write IOPS of 30,000 per instance. Compared to standard persistent disks, which only have a read IOPS of 3,000 and write IOPS of 15,000. The SSD persistent disk is recommended for deploying Citrix Virtual Apps workloads. When estimating storage capacity, remember that Virtual Apps and Desktops deployments have two storage needs: (1) storage for Virtual Apps servers and applications and (2) storage for user profiles. Deploying a Virtual Apps server master image requires 50 GB of storage which can vary based on installed applications and the Windows Server operating system version. For example, the Windows Server 2016 OS boot size is 50 GB while the Windows Server 2012 R2 is 32 GB. Citrix recommends creating a new Virtual Apps master image to minimize the required capacity instead of migrating an existing on-premise image.
 
 On Google Cloud, the service that runs virtual machine instances is referred to as Google Compute Engine. Compute Engine offers predefined virtual machines configurations for every requirement. The offerings range from small micro instances to high memory and high CPU configurations. The following compute resources are relevant to any Virtual Apps deployment on GCP:
 
@@ -753,9 +753,9 @@ On Google Cloud, the service that runs virtual machine instances is referred to 
 
 -  Custom Machine Type – provide the flexibility to configure the vCPU and memory for specific needs and potentially reducing the cost.
 
-[Microsoft licensing](https://cloud.google.com/compute/docs/instances/windows/ms-licensing) requires that the virtual machine instances are not deployed on shared infrastructure when deploying Windows desktop operating systems via Citrix Virtual Desktop in a non-Microsoft public cloud. You can accomplish this on GCP by using either [Sole Tenant Nodes](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes) (STN) or Google Cloud VMware Engine (GCVE). STN and GCVE are beyond the scope of this deployment guide.
+[Microsoft licensing](https://cloud.google.com/compute/docs/instances/windows/ms-licensing) requires that the virtual machine instances are not deployed on shared infrastructure when deploying Windows desktop operating systems via Citrix Virtual Desktop in a non-Microsoft public cloud. You can implement Citrix Virtual Desktop on GCP by using either [Sole Tenant Nodes](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes) (STN) or Google Cloud VMware Engine (GCVE). STN and GCVE are beyond the scope of this deployment guide.
 
-Microsoft License Mobility enables the deployment of Windows Server applications (Citrix Virtual Apps), such as Remote Desktop Services (RDS), in GCP while using your existing Microsoft licenses. You are recommended to review your Microsoft licensing agreements with Microsoft prior to starting this deployment. Microsoft Windows Server instances require an internet network connection to activate with the GCP KMS host kms.windows.googlecloud.com. The standard grace period for Windows Server instances to register with the KMS host is 30 days. After 30 days, the instances will cease functioning. Alternatively, you can also bring your own Windows KMS licensing into GCP and host the required licenses. In this guide, we are not deploying a Microsoft RDS server. Instead, we are using the 30-days grace period for validation.
+Microsoft License Mobility enables the deployment of Windows Server applications (Citrix Virtual Apps), such as Remote Desktop Services (RDS), in GCP while using your existing Microsoft licenses. You are recommended to review your Microsoft licensing agreements with Microsoft before starting this deployment. Microsoft Windows Server instances require an internet network connection to activate with the GCP KMS host kms.windows.googlecloud.com. The standard grace period for Windows Server instances to register with the KMS host is 30 days. After 30 days, the instances will cease functioning. Alternatively, you can also bring your own Windows KMS licensing into GCP and host the required licenses. In this guide, we are not deploying a Microsoft RDS server. Instead, we are using the 30-days grace period for validation.
 
 #### 4.1 Create virtual machine instances
 
@@ -887,7 +887,7 @@ Table 2
 
 ## 5 Configure access to virtual machine consoles
 
-Now that we’ve gone through the process of creating the Windows virtual machine instances. The next step is to identify a way to remotely access the consoles of these virtual machines to configure them. Google Cloud handles remote console access by relying upon network connectivity to the virtual machine instance, and a ‘remote console interface’ running inside the virtual machine. For Windows virtual machines, that means using an RDP client to connect to the RDP listener running inside the instances. For non-Windows machines, the connection is handled by SSH.
+Now that we’ve gone through the process of creating the Windows virtual machine instances. The next step is to identify a way to remotely access the consoles of these virtual machines to configure them. Google Cloud handles remote console access by relying upon network connectivity to the virtual machine instance, and a ‘remote console interface’ running inside the virtual machine. For Windows virtual machines, that means using an RDP client to connect to the RDP listener running inside the instances. SSH handles the connection for non-Windows machines.
 
 The tools and techniques you use to gain access to the VM consoles can differ based on the operating system and network location of your workstation. They can also differ based on how your organization handles security. The goal of this section is *ensuring you’ve got the ability to establish remote console connections to the virtual machines in your Google Cloud project.*
 
@@ -1160,7 +1160,7 @@ This guide deploys a new Microsoft Active Directory on Google Cloud and integrat
 
      > **note**
      >
-     > DSRM mode helps gain access to the Active Directory environment if all domain administrator accounts lose access or if the Domain Controller fails.
+     > DSRM mode provides access to the Active Directory environment if the domain administrator lose access or the Domain Controller fails.
 
 7.  Repeat the password: P@$$w0rd!@#
 
@@ -1386,7 +1386,7 @@ This deployment guide requires you to have a Citrix Cloud account with an active
 
 ### Citrix Cloud Resource Location
 
-Resource locations contain the resources required to deliver cloud services to your subscribers. You manage these resources from the Citrix Cloud console. To create a resource location, install at least two Cloud Connectors in your domain. The resource location is wherever the resources reside, whether that’s a public or private cloud. In the case of this deployment guide, the resources reside on Google Cloud Platform. The choice of location is impacted by proximity to subscribers or data. This guide deploys a single Server VDA resource location in Google Cloud Platform region us-west1. A single Citrix Cloud Connector is installed each in us-west1-a and us-west1-b zone for high availability.
+Resource locations contain the resources required to deliver cloud services to your subscribers. You manage these resources from the Citrix Cloud console. To create a resource location, install at least two Cloud Connectors in your domain. The resource location is wherever the resources reside, whether that’s a public or private cloud. In the case of this deployment guide, the resources reside on Google Cloud Platform. The proximity to subscribers or data influences the choice of location. This guide deploys a single Server VDA resource location in Google Cloud Platform region us-west1. A single Citrix Cloud Connector is installed each in us-west1-a and us-west1-b zone for high availability.
 
 ### 7.1 Create Citrix Cloud resource location
 
@@ -1442,7 +1442,7 @@ The goal of this first task is to create the resource location we are installing
 
 #### Citrix Cloud Connector
 
-The Citrix Cloud Connector is a Citrix component that serves as a channel for communication between Citrix Cloud and your resource locations. The Cloud Connector authenticates and encrypts all communication between Citrix Cloud and the resource locations. All Cloud Connector outbound only communication is initiated using the standard HTTPS port (443) and the TCP protocol. For continuous availability and to manage load Citrix recommends at least two Cloud Connectors in each resource location. Since each Cloud Connector is stateless, the load can be automatically distributed across all available Cloud Connectors.
+The Citrix Cloud Connector serves as a communication channel between Citrix Cloud and your resource locations. The Cloud Connector authenticates and encrypts all communication between Citrix Cloud and the resource locations. All Cloud Connector outbound only communication is initiated using the standard HTTPS port (443) and the TCP protocol. For continuous availability and to manage load Citrix recommends at least two Cloud Connectors in each resource location. Since each Cloud Connector is stateless, the load can be automatically distributed across all available Cloud Connectors.
 
 ### 7.2 Install Citrix Cloud Connectors
 
@@ -1534,7 +1534,7 @@ Repeat step **1 through 19** for the second Cloud Connector (CC2).
 
 Once you’ve installed Citrix Cloud Connectors into your Citrix Cloud tenant, you should be ready to begin configuring the Virtual Apps and Desktops service. You can verify readiness to begin configuring the CVAD service by checking the following:
 
-Navigate and click on the appropriate resource location. You should see your Cloud Connectors, they should be listed in the correct resource location, and they should show a green status:
+Navigate and click the appropriate resource location. You should see your Cloud Connectors, they should be listed in the correct resource location, and they should show a green status:
 
 ![Verify](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_cloud-connectors-verify.png)
 
@@ -1568,7 +1568,7 @@ The Citrix Virtual Apps and Desktops service (commonly referred to as “CVADS�
 
 ### 8.2 Configure the Hosting Connection and Resources
 
-You need to configure a hosting connection to allow Citrix Cloud to create ad manage app and desktop resources on Google Cloud. The JSON key created earlier is used to establish the hosting connection with Citrix Cloud. The hosting connection configuration is completed using the CVADS console:
+The next step is to configure a hosting connection to allow Citrix Cloud to manage app and desktop resources on Google Cloud. The **JSON** key created earlier is used to establish the hosting connection with Citrix Cloud. The hosting connection configuration is completed using the CVADS console:
 
 1.  Click Hosting
 
@@ -1866,7 +1866,7 @@ For this Deployment and Configuration Guide, we’re going to build your first n
 
      ![Click from start menu](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_click-from-start-menu.png)
 
-10.  Allow the applications to be enumerated from the Server VDAs, scroll down and select **Notepad**
+10.  Allow the applications to be enumerated from the Server VDAs, scroll down, and select **Notepad**
 
 11.  Select **Paint**
 
@@ -1956,7 +1956,7 @@ The result should be similar to the image:
 
 ![Workspace configuration result](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_workspace-configuration-result.png)
 
-## 9 Test launch virtual app and desktop resources
+## 9 Test launch virtual app and desktop resource
 
 1.  Navigate to the Workspace URL you customized in the Configuring Citrix Workspace Service section. At the login screen input the username: **ctx\user1**
 
