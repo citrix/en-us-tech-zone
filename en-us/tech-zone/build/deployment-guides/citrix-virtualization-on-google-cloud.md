@@ -1581,7 +1581,7 @@ The next step is to configure a hosting connection to allow Citrix Cloud to mana
 
 4.  Click **Import Key** and select the JSON key you generated under the [Generating JSON Key](#_Generating_JSON_Keys) section.
 
-5.  Service Account ID field should auto-populate once you import the key
+5.  Service Account ID field auto-populates once you import the key
 
 6.  Select the zone name: **Server VDA – Google US-West1**
 
@@ -1593,7 +1593,7 @@ The next step is to configure a hosting connection to allow Citrix Cloud to mana
 
     ![Click Next](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_click-next.png)
 
-10.  The project field should default to your Google Project. If not, click the drop-down list and select the corresponding Google Project
+10.  The project field defaults to your Google Project. If not, click the drop-down list and select the corresponding Google Project
 
 11.  Select the region: **us-west1**
 
@@ -1819,9 +1819,9 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
      ![Click yes](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_click-yes-8.4-29.png)
 
-30.  The **Power State** column should display **On**
+30.  The **Power State** column displays **On**
 
-31.  The **Registration State** column should display **Registered**
+31.  The **Registration State** column displays **Registered**
 
      ![Registration state](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_registration-state-column.png)
 
@@ -1909,11 +1909,11 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
      ![Double click on the Delivery Group ](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_double-click-delivery-group.png)
 
-25.  The Delivery Group column should display the configured Delivery Group name
+25.  The Delivery Group column displays the configured Delivery Group name
 
-26.  The **Power State** column should display On
+26.  The **Power State** column displays On
 
-27.  The **Registration State** column should display **Registered**
+27.  The **Registration State** column displays **Registered**
 
      ![Delivery group registration state](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_delivery-group-registration-state.png)
 
