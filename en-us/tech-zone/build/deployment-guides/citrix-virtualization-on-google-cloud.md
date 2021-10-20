@@ -210,7 +210,7 @@ Citrix Cloud uses **two** separate service accounts within the Google Cloud proj
 
     ![google-cloud-shell-select-role](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_google-cloud-shell-select-role.png)
 
-8.  Click the drop-down list and input **Compute Instance Admin**
+8.  Click the drop-down and input **Compute Instance Admin**
 
 9.  Click **Compute Instance Admin (v1)** from the list
 
@@ -224,7 +224,7 @@ Citrix Cloud uses **two** separate service accounts within the Google Cloud proj
 
      ![compute-instance-admin-select-role](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_compute-instance-admin-select-role.png)
 
-12.  Click the drop-down list and input **Service Account User**
+12.  Click the drop-down and input **Service Account User**
 
 13.  Click **Service Account User** from the list
 
@@ -290,7 +290,7 @@ Citrix Cloud uses **two** separate service accounts within the Google Cloud proj
 
      ![compute-storage-admin-select-role](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_compute-storage-admin-select-role.png)
 
-17.  Click the drop-down list and input **Cloud Build Editor**
+17.  Click the drop-down and input **Cloud Build Editor**
 
 18.  Click **Cloud Build Editor** from the list
 
@@ -300,7 +300,7 @@ Citrix Cloud uses **two** separate service accounts within the Google Cloud proj
 
      ![build-editor-add-another-role](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_build-editor-add-another-role.png)
 
-20.  Click the drop-down list and input **Service Account User**
+20.  Click the drop-down and input **Service Account User**
 
 21.  Click **Service Account User** from the list
 
@@ -310,7 +310,7 @@ Citrix Cloud uses **two** separate service accounts within the Google Cloud proj
 
      ![build-editor-service-account-add-another-role](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_build-editor-service-account-add-another-role.png)
 
-23.  Click the drop-down list and input **Cloud Datastore User**
+23.  Click the drop-down and input **Cloud Datastore User**
 
 24.  Click **Cloud Datastore User** from the list
 
@@ -625,9 +625,9 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 12.  Select the **Specified protocol and ports** option
 
-13.  Select the **tcp** checkbox and enter the allowed ports: **88, 135, 389, 445, 464, 636, 3268, 3269, 5985, 9389, 49152-65535**
+13.  Select the **tcp** check box and enter the allowed ports: **88, 135, 389, 445, 464, 636, 3268, 3269, 5985, 9389, 49152-65535**
 
-14.  Select the **udp** checkbox and enter the allowed ports: **88, 123, 389, 464**
+14.  Select the **UDP** check box and enter the allowed ports: **88, 123, 389, 464**
 
 15.  Click **Create**
 
@@ -657,9 +657,9 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 9.  Select the **Specified protocol and ports** option
 
-10.  Select the **tcp** checkbox and enter the allowed ports: **53**
+10.  Select the **tcp** check box and enter the allowed ports: **53**
 
-11.  Select the udp checkbox and enter the allowed ports: **53**
+11.  Select the UDP check box and enter the allowed ports: **53**
 
 12.  Click **Create**
 
@@ -689,9 +689,9 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 9.  Select the **Specified protocol and ports option**
 
-10.  Select the **tcp** checkbox and enter the allowed ports: **80, 443, 1494, 2598, 8008**
+10.  Select the **tcp** check box and enter the allowed ports: **80, 443, 1494, 2598, 8008**
 
-11.  Select the **udp** checkbox and enter the allowed ports: **1494, 2598, 16500-16509**
+11.  Select the **UDP** check box and enter the allowed ports: **1494, 2598, 16500-16509**
 
 12.  Click **Create**
 
@@ -721,7 +721,7 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 9.  Select the **Specified protocol and ports option**
 
-10.  Select the **tcp** checkbox and enter the allowed ports: **80**
+10.  Select the **tcp** check box and enter the allowed ports: **80**
 
 11.  Click **Create**
 
@@ -814,7 +814,7 @@ Table 2
 
 19.  Expand **Networking** section and input the corresponding virtual machine network tags: **dc dns**
 
-20.  Input a hostname as listed in the Table 2: dc1.ctx.lab
+20.  Input a host name as listed in the Table 2: dc1.ctx.lab
 
      ![dc-dns-networking](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_dc-dns-networking.png)
 
@@ -938,7 +938,7 @@ Configuring Identity Aware Proxy is a two-step process: the first step is to con
 
 11.  Select **Specified protocols and ports**
 
-12.  Select the **tcp** checkbox
+12.  Select the **tcp** check box
 
 13.  Click **Create**
 
@@ -978,7 +978,7 @@ Configuring Identity Aware Proxy is a two-step process: the first step is to con
 
 9.  To grant users, groups, or service accounts access to the resources, specify their email addresses in the New principals field. If you are the only user testing this feature, you can enter your email address.
 
-10.  To grant the members access to the resources through Cloud IAP TCP forwarding feature, in the **Role** drop-down list, select **Cloud IAP**”
+10.  To grant the members access to the resources through Cloud IAP TCP forwarding feature, in the **Role** drop-down, select **Cloud IAP**”
 
 11.  Select **IAP-secured Tunnel User**
 
@@ -1509,7 +1509,7 @@ Password: **P@$$w0rd!@#**
 
      ![Sign in](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_cloud-connectors-signin.png)
 
-15.  Click the drop-down list and select the corresponding Citrix Cloud Organization ID
+15.  Click the drop-down and select the corresponding Citrix Cloud Organization ID
 
 16.  Click **Install**
 
@@ -1577,7 +1577,7 @@ The next step is to configure a hosting connection to allow Citrix Cloud to mana
 
     ![Click Add Connection](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_click-add-connection-resources.png)
 
-3.  Click the drop-down list and select **Google Cloud Platform**
+3.  Click the drop-down and select **Google Cloud Platform**
 
 4.  Click **Import Key** and select the JSON key you generated under the [Generating JSON Key](#_Generating_JSON_Keys) section.
 
@@ -1859,7 +1859,7 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
      ![Click next](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_click-next-8.5-7.png)
 
-8.  Click **Add** drop-down list
+8.  Click **Add** drop-down menu
 
 9.  Select and click **From Start menu…**
 
