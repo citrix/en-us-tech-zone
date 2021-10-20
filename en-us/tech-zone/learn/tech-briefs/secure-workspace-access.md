@@ -2,7 +2,7 @@
 layout: doc
 h3InToc: true
 contributedBy: Florin Lazurca
-specialThanksTo: Frank Srp, Martin Zugec
+specialThanksTo: Frank Srp
 description: With Secure Private Access, organizations go beyond access and aggregation to provide IT with policy controls that provide conditional access to cloud apps and internet browsing, enhancing the organization's overall security and compliance posture.
 tz_title: Secure Private Access
 tz_products: citrix-secure-workspace-access;
@@ -13,13 +13,12 @@ tz_products: citrix-secure-workspace-access;
 
 As people consume more SaaS-based applications, organizations must be able to unify access to all apps and simplify end user authentication while still enforcing security and privacy standards. It’s also crucial to monitor vendor SLAs, application utilization, and security analytics. Citrix Secure Private Access delivers on those requirements and more.
 
-Secure Private Access provides instant Single-Sign On (SSO) access to SaaS and web applications, granular and contextual security policies, app protection policies for all apps, web browser isolation, and web filtering policies. Secure Private Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators:
+Secure Private Access provides instant Single-Sign On (SSO) access to SaaS and web applications, granular and adaptive security policies, app protection policies for all apps, and web browser isolation. Secure Private Access combines elements of several Citrix Cloud services to deliver an integrated experience for end users and administrators:
 
 *  MFA and Device Trust
 *  Web and SaaS SSO
 *  Gateway
 *  Cloud App Control
-*  Web filtering
 *  Secure Browser
 *  App protection
 *  Analytics
@@ -73,7 +72,7 @@ Learn more [here](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html)
  Secure Private Access enables end users to safely browse the internet. When an end user launches a SaaS application from Citrix Workspace, several decisions are dynamically made to decide how best to serve this SaaS application. Secure Private Access provides three ways to serve this application to the end-user:
 
 *  Launch the application in the local browser without enhanced security
-*  Launch the application in the embedded browser within Citrix Workspace
+*  Launch the application in the Citrix Workspace Browser within Citrix Workspace
 *  Launch the application in a Secure Browser session — a virtualized browser
 
 ![Browser Options ](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsec.png)
@@ -82,35 +81,31 @@ Figure 5: Multiple browser options
 
 Beside using the local web browser, Citrix offers two alternatives to accessing apps within Workspace.
 
-First, the Citrix Workspace-embedded browser is a Chrome-based browser running on the client machine embedded in the Citrix Workspace security sandbox. Running locally gives end users the best performance for rendering webpages of SaaS applications. The secure sandbox protects the end user and the enterprise against malware, performance degradation, data loss, and unintended end user behavior.
-
-![Workspace App](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_workspaceapp.png)
-
-Figure 6: Citrix Workspace-embedded browser
+First, the Citrix Workspace Browser is a Chrome-based browser running on the client machine embedded in the Citrix Workspace security sandbox. Running locally gives end users the best performance for rendering webpages of SaaS applications. The secure sandbox protects the end user and the enterprise against malware, performance degradation, data loss, and unintended end user behavior.
 
 Second, the Citrix Secure Browser Service is a cloud hosted browser service that does not require any browser to be installed on end user devices. The Secure Browser service is essentially a virtualized browser running in Citrix Cloud. This hosted browser service provides a secure way to access internet and corporate browser-based applications. It creates an air gap between the browser and users, devices, and networks, protecting them from dangerous malware.
 
-Web links to unknown or risky websites can be automatically redirected to the Citrix Workspace embedded browser or the Secure Browser service to protect end-users from potentially malicious websites. This transition is completely transparent for the end-user and keeps organizations safe while allowing employees to get their job done.
+Web links can be automatically redirected to the Citrix Workspace Browser or the Secure Browser service to protect end-users from potentially malicious websites. This transition is completely transparent for the end-user and keeps organizations safe while allowing employees to get their job done.
 
 Secure Private Access has a large database of URIs that are risk scored and administrators can set policies on specific domains to allow or block URIs. Administrators can also set policies on how applications need to be served to end-users.
 
 ![Browser Isolation](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_browseiso.gif)
 
-Figure 7: Web browser isolation with the Citrix Workspace-embedded browser and Secure Browser Service
+Figure 6: Web browser isolation with the Citrix Workspace Browser and Secure Browser Service
 
-The following diagram contrasts the communication flow to sanctioned SaaS apps when using Workspace App with embedded browser versus a local browser.
+The following diagram contrasts the communication flow to sanctioned SaaS apps when using Workspace App with Workspace Browser versus a local browser.
 
 ![Enhanced Security Flow Diagram](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsecdiag.png)
 
-Figure 8: Enhanced Security Flow Diagram
+Figure 7: Enhanced Security Flow Diagram
 
 ## Enhanced Security
 
-To protect content, Secure Private Access incorporates enhanced security policies within SaaS applications. Each policy enforces a restriction on the embedded browser when using the Workspace app or on the Secure Browser service when using the Workspace on web or mobile.
+To protect content, Secure Private Access incorporates enhanced security policies within SaaS applications. Each policy enforces a restriction on the Workspace Browser when using the Workspace app or on the Secure Browser service when using the Workspace on web or mobile.
 
 Referred to as Cloud App Control, this capability provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications:
 
-*  Preferred browser: Disables local browser use and relies on the embedded browser engine (Workspace app - desktop) or Secure Browser (Workspace app – mobile and web).
+*  Preferred browser: Disables local browser use and relies on the Workspace Browser engine (Workspace app - desktop) or Secure Browser (Workspace app – mobile and web).
 *  Restrict clipboard access: Disables cut/copy/paste operations between the app and endpoint clipboard.
 *  Restrict printing: Disables ability to print from within the app browser.
 *  Restrict navigation: Disables the next/back browser buttons.
@@ -119,7 +114,7 @@ Referred to as Cloud App Control, this capability provides IT with a way to enfo
 
 ![Enhanced Security](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_enhsecweb.gif)
 
-Figure 9: Enhanced Security policies with an internal web app
+Figure 8: Enhanced Security policies with an internal web app
 
 ## App Protection
 
@@ -136,31 +131,7 @@ A less malicious but equally dangerous risk is accidental screen sharing. The li
 
 ![App Protection](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_appprotslack.gif)
 
-Figure 10: App Protection policies protecting Citrix Workspace privacy while using a screen sharing app
-
-## Web Filtering
-
- Secure Private Access includes a URL filtering engine. By using the information contained in URLs, this feature helps admins monitor and control user access to malicious websites on the internet. Together with the previously mentioned browser isolation options, web filtering gives admins options to choose from. They can completely block a URL, require to access a URL in the embedded browser, or require access a URL in a Secure Browser session.
-
-The web filtering controller uses a categorization database and URLs list. When the request comes to the web filtering controller, it first checks the global allow list which also contains critical Citrix Cloud URLs. Then it checks to "Lists and Categorization" and verifies with blocked and allowed and redirect to Secure Browser URLs. If none of the URLs match, then by default it falls back to the default list.
-
-![Web Filtering](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_urlfilter.png)
-
-Figure 11: Web Filtering Process
-
-Admins can take a cautious approach even for accessing allow list URLs. This approach ensures users get access to the information they need. It doesn’t impact on productivity while providing protection against any unforeseen threats or malicious content delivered from the internet.
-
-A traditional URL filtering engine that assumes trust for a allow list URL. Secure Private Access does not implicitly trust an allow list URL since webpages, deemed safe by URL filtering engines, can host malicious links. With Secure Private Access, URLs on trusted sites are also tested.
-
-![Web Filtering](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_websitefilter.gif)
-
-Figure 12: Web filtering policies protecting end users who inadvertently access sites on the block list
-
-The following diagram contrasts the communication flow to URLs within sanctioned SaaS apps when using Workspace App with embedded browser versus a local browser.
-
-![Enhanced Security Flow Diagram](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_urlfilterdiag.png)
-
-Figure 13: URL Filter Flow Diagram
+Figure 9: App Protection policies protecting Citrix Workspace privacy while using a screen sharing app
 
 ## Security Analytics
 
@@ -173,8 +144,6 @@ End users invariably access SaaS apps that have enhanced security enabled. Works
 *  URL Access
 *  Data upload
 *  Data download
-
-The web filtering feature evaluates the risk of each hyperlink selected within the SaaS application. Accessing these sites and monitoring changes in user behavior increases the user’s overall risk score. It signals the endpoint device is compromised and started to infect or encrypt data or the user and device are stealing intellectual property.
 
 ## Usage analytics
 
@@ -207,35 +176,28 @@ Workspace is able to create a connection to on-premises web apps without relying
 
 ![VPN-less Access](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_usecase1.png)
 
-Figure 14: Use Case 1: VPN-less Access
+Figure 10: Use Case 1: VPN-less Access
 
 ### SSO and Security Controls for SaaS Apps
 
 Secure Private Access offers single sign-on and contextual policies for access to web and SaaS apps. Using Citrix Gateway or Okta as the IdP provides support for all multifactor authentication mechanisms and contextual controls. These integrations protect customers' existing identity ecosystem investment and ease their move to cloud without a rip and replace forklift upgrade.
 
-Although an authorized SaaS app is considered safe, content in the SaaS app actually can be dangerous - constituting a security risk. When a user clicks a hyperlink within a SaaS app, the traffic is routed through the web filtering feature, which provides a risk assessment for the hyperlink. Based on the hyperlink’s risk assessment, and URL categories, the web filtering feature allows, denies, or redirects the request from the user as follows:
-
-*  Approved: The hyperlink is considered safe and the embedded browser accesses within the Workspace app accesses the hyperlink.
-*  Denied: The hyperlink is considered dangerous and access is denied.
-*  Redirected: The hyperlink request is redirected to the embedded browser or Secure Browser service, where the user’s internet browsing activities are isolated from the endpoint device, the corporate network, and the SaaS app
-
-Enhanced security with App Protection provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying the following controls:
+Although an authorized SaaS app is considered safe, content in the SaaS app actually can be dangerous - constituting a security risk. Enhanced security with App Protection provides IT with a way to enforce security policies on both web and SaaS applications that they provision to employees. These policies protect data stored in these applications by applying the following controls:
 
 *  Watermarking
 *  Restrict navigating
 *  Restrict downloads
 *  Restrict keylogging
-*  Website filtering
 *  Restrict screen capture
 *  Restrict printing
 
 More remote workers mean more remote meetings and web conferencing through various applications. These meetings usually require employees to share their screen, which opens the possibility of exposing sensitive data by mistake. The App Protection feature protects against screenshot malware and web conference screen capturing by returning a blank screenshot instead of the information on a user’s screen. This protection also applies to the most common snipping tools, print-screen tools, screen capture, and recording tools.
 
-Browser isolation for internet traffic protects end users and enterprises from web-based threats. With the Embedded Browser and Secure Browser service, admins get a choice to access sites in a local Chrome based browser a cloud hosted virtual machine (VM). With the service, possible attacks are contained in the cloud. Browsers run in an isolated environment where the VM is destroyed after use and a new instance is created for each app access. Policies control functions like "Copy and Paste" so that no files or data can reach the corporate network.
+Browser isolation for internet traffic protects end users and enterprises from web-based threats. With Workspace Browser and Secure Browser service, admins get a choice to access sites in a local Chrome based browser a cloud hosted virtual machine (VM). With the service, possible attacks are contained in the cloud. Browsers run in an isolated environment where the VM is destroyed after use and a new instance is created for each app access. Policies control functions like "Copy and Paste" so that no files or data can reach the corporate network.
 
 ![SSO and Security Controls for SaaS Apps](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_usecase2.png)
 
-Figure 15: Use Case 2: SSO and Security Controls for SaaS Apps
+Figure 11: Use Case 2: SSO and Security Controls for SaaS Apps
 
 ### Protecting User and Corporate Data on BYO and Unmanaged Endpoints
 
@@ -249,7 +211,7 @@ The App Protection feature makes the text entered by the user indecipherable by 
 
 ![Protecting User and Corporate Data on BYO and Unmanaged Devices](/en-us/tech-zone/learn/media/tech-briefs_secure-workspace-access_usecase3.png)
 
-Figure 16: Use Case 3: Protecting user and Corporate Data on BYO and Unmanaged Devices
+Figure 12: Use Case 3: Protecting user and Corporate Data on BYO and Unmanaged Devices
 
 ## Summary
 
