@@ -760,6 +760,24 @@ Microsoft License Mobility enables the deployment of Windows Server applications
 
 The Cloud Forward design pattern requires three different types of virtual machine instances to be deployed (Active Directory, Citrix Cloud Connector, Citrix VDA). Using the details in the table, repeat the steps outlined to create and start each virtual machine. Once complete, generate and store credentials to log in to each virtual machine instance the first time.
 
++----------------------------------+-------------------+--------------------------+-----------------+---------------------------------+--------------------------+------------------+
+| VM Type                          | Compute Sizing    | VPC Network              | Google Zone     | Hostname                        | IP Address               | Network Tags     |
++----------------------------------+-------------------+--------------------------+-----------------+---------------------------------+--------------------------+------------------+
+|                                  |                   |                          |                 |                                 |                          |                  |
+| Active Directory Domain #1       | N1-Standard-2     | Citrix Cloud Network     | us-west1-a      | dc1.ctx.lab                     | 10.240.1.2               | dc dns           |
++----------------------------------+-------------------+--------------------------+-----------------+---------------------------------+--------------------------+------------------+
+|                                  |                   |                          |                 |                                 |                          |                  |
+| Active Directory Domain #2       | N1-Standard-2     | Citrix Cloud Network     | us-west1-b      | dc2.ctx.lab                     | 10.240.1.3               | dc dns           |
++----------------------------------+-------------------+--------------------------+-----------------+---------------------------------+--------------------------+------------------+
+|                                  |                   |                          |                 |                                 |                          |                  |
+| Server VDA Cloud Connector #1    | N2-Standard-4     | Citrix Cloud Network     | us-west1-a      | cc1.ctx.lab                     | 10.240.1.4               | cc               |
++----------------------------------+-------------------+--------------------------+-----------------+---------------------------------+--------------------------+------------------+
+|                                  |                   |                          |                 |                                 |                          |                  |
+| Server VDA Cloud Connector #2    | N2-Standard-4     | Citrix Cloud Network     | us-west1-b      | cc2.ctx.lab                     | 10.240.1.5               | cc               |
++----------------------------------+-------------------+--------------------------+-----------------+---------------------------------+--------------------------+------------------+
+|                                  |                   |                          |                 |                                 |                          |                  |
+| Server VDA Master Image          | N2-Standard-4     | Citrix Cloud Network     | us-west1-a      | mcs.ctx.lab                     | Ephemeral (Automatic)    | vda              |
++----------------------------------+-------------------+--------------------------+-----------------+---------------------------------+--------------------------+------------------+
 ![tabel2-virtual-machine-instances](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_tabel2-virtual-machine-instances.png)
 
 Table 2
