@@ -587,6 +587,21 @@ Every production and/or Internet connected system needs to have multiple layers 
 
 A Citrix Cloud Resource Location needs some basic firewall rules to function. The following table summarizes the protocol, ports, and network tags that are required/allowed for this deployment to be functional. The tasks which follow guides you through creating firewall rules to match:
 
++--+-------------------------------------------------------------------------+------------------+-------------------------+---------------------+-----------------------------------------------------------------------+
+|  | Description                                                             | Traffic Flow     | Target Network Tags     | Source IP Range     | Protocol and Ports                                                    |
++--+-------------------------------------------------------------------------+------------------+-------------------------+---------------------+-----------------------------------------------------------------------+
+|  | Allow internal traffic between Domain Controller and other VM instances | Ingress          | dc                      | 10.240.1.0/24       | TCP: 88, 135, 389, 445, 464, 636, 3268, 3269, 5985, 9389, 49152-65535 |
+| |                                                                         |                  |                         |                     | UDP: 88, 123, 389, 464                                                |
++--+-------------------------------------------------------------------------+------------------+-------------------------+---------------------+-----------------------------------------------------------------------+
+|  | Allow forwarding from Google DNS                                        | Ingress          | dns                     | 35.199.192.0/19     | TCP: 53                                                               |
+|  |                                                                         |                  |                         | 10.240.1.0/24       | UDP: 53                                                               |
++--+-------------------------------------------------------------------------+------------------+-------------------------+---------------------+-----------------------------------------------------------------------+
+|  | Allow traffic from Cloud Connector to VDA                               | Ingress          | vda                     | 10.240.1.0/24       | TCP: 80, 443, 1494, 2598, 8008                                        |
+|  |                                                                         |                  |                         |                     | UDP: 1494, 2598, 16500-16509                                          |
++--+-------------------------------------------------------------------------+------------------+-------------------------+---------------------+-----------------------------------------------------------------------+
+|  | Allow traffic from VDA and Cloud Connector                              | Ingress          | cc                      | 10.240.1.0/24       | TCP: 80                                                               |
++--+-------------------------------------------------------------------------+------------------+-------------------------+---------------------+-----------------------------------------------------------------------+
+
 ![table-protocol-network-tags](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_table-protocol-network-tags.png)
 
 Table 1
@@ -767,10 +782,6 @@ The Cloud Forward design pattern requires three different types of virtual machi
 |     Server VDA Cloud Connector #1    |     N2-Standard-4      |      Citrix Cloud Network     |     us-west1-a      |     cc1.ctx.lab                      |     10.240.1.4               |     cc           |
 |     Server VDA Cloud Connector #2    |     N2-Standard-4      |      Citrix Cloud Network     |     us-west1-b      |     cc2.ctx.lab                      |     10.240.1.5               |     cc           |
 |     Server VDA Master Image          |     N2-Standard-4      |      Citrix Cloud Network     |     us-west1-a      |     mcs.ctx.lab                      |     Ephemeral (Automatic)    |     vda          |
-
-![tabel2-virtual-machine-instances](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_tabel2-virtual-machine-instances.png)
-
-Table 2
 
 1.  Click the hamburger icon, located in the top left-hand corner of the Google Console
 
