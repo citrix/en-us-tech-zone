@@ -594,10 +594,6 @@ A Citrix Cloud Resource Location needs some basic firewall rules to function. Th
 |   | Allow traffic from Cloud Connector to VDA                               | Ingress          | vda                     | 10.240.1.0/24                 | **TCP:** 80, 443, 1494, 2598, 8008 </br> **UDP:** 1494, 2598, 16500-16509                                  |
 |   | Allow traffic from VDA and Cloud Connector                              | Ingress          | cc                      | 10.240.1.0/24                 | **TCP:** 80                                                                                      |
 
-![table-protocol-network-tags](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_table-protocol-network-tags.png)
-
-Table 1
-
 We use the target network tags to apply these rules to the virtual machines we are creating later in this guide.
 
 #### 3.2.1.1 Create a firewall rule to allow internal traffic to Active Directory
@@ -774,6 +770,8 @@ The Cloud Forward design pattern requires three different types of virtual machi
 |     Server VDA Cloud Connector #1    |     N2-Standard-4      |      Citrix Cloud Network     |     us-west1-a      |     cc1.ctx.lab                      |     10.240.1.4               |     cc           |
 |     Server VDA Cloud Connector #2    |     N2-Standard-4      |      Citrix Cloud Network     |     us-west1-b      |     cc2.ctx.lab                      |     10.240.1.5               |     cc           |
 |     Server VDA Master Image          |     N2-Standard-4      |      Citrix Cloud Network     |     us-west1-a      |     mcs.ctx.lab                      |     Ephemeral (Automatic)    |     vda          |
+
+                                             Table 2
 
 1.  Click the hamburger icon, located in the top left-hand corner of the Google Console
 
