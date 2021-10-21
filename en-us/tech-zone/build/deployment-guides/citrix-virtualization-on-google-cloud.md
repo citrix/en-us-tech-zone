@@ -24,7 +24,7 @@ The following list provides an overview of the goals and **tasks** necessary to 
 
 1.  Define the deployment architecture
 2.  Prepare Google Cloud Project
-3.  Configure network and network services
+3.  Configure network services
 4.  Create virtual machines
 5.  Configure access to virtual machine consoles
 6.  Deploy Active Directory
@@ -34,11 +34,9 @@ The following list provides an overview of the goals and **tasks** necessary to 
 
 ## 1 Define the deployment architecture
 
-Before you build a Citrix virtualization system on **ANY** platform, you need to figure out the deployment architecture. The flexibility of the Citrix technology stack can be a challenge. However, we break down the most important design decisions to consider in the [Citrix Virtualization on Google Cloud Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) document. In this guide, we are building a Citrix solution based on the [Cloud Forward](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern) design as illustrated in Figure 1:
+Before you build a Citrix virtualization system on **ANY** platform, you need to figure out the deployment architecture. The flexibility of the Citrix technology stack can be a challenge. However, we break down the most important design decisions to consider in the [Citrix Virtualization on Google Cloud Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) document. In this guide, we are building a Citrix solution based on the [Cloud Forward](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern) design as illustrated:
 
 ![cloud-forward-deployment-architecture](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_cloud-forward-deployment-architecture.png)
-
-Figure 1: Cloud Forward Deployment Architecture
 
 ## 2 Prepare Google Cloud Project
 
@@ -336,7 +334,7 @@ Citrix Cloud uses **two** separate service accounts within the Google Cloud proj
 
 > **Note**:
 >
->If you plan to deploy Citrix VDAs onto a Google Cloud Shared Virtual Private Cloud (VPC), there are some additional permissions the Citrix Cloud service account requires that are NOT covered here. To prepare for deploying VDAs on Shared VPCs, review "[Shared Virtual Private Cloud](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html#shared-virtual-private-cloud)".
+>If you plan to deploy Citrix VDAs onto a Google Cloud Shared Virtual Private Cloud (VPC), there are some additional permissions the Citrix Cloud service account requires that are **NOT** covered here. To prepare for deploying VDAs on Shared VPCs, review [Shared Virtual Private Cloud](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html#shared-virtual-private-cloud).
 
 #### 2.3.3 Generate and save Citrix Cloud service account keys
 
@@ -770,7 +768,6 @@ The Cloud Forward design pattern requires three different types of virtual machi
 |     Server VDA Cloud Connector #1    |     N2-Standard-4      |      Citrix Cloud Network     |     us-west1-a      |     cc1.ctx.lab                      |     10.240.1.4               |     cc           |
 |     Server VDA Cloud Connector #2    |     N2-Standard-4      |      Citrix Cloud Network     |     us-west1-b      |     cc2.ctx.lab                      |     10.240.1.5               |     cc           |
 |     Server VDA Master Image          |     N2-Standard-4      |      Citrix Cloud Network     |     us-west1-a      |     mcs.ctx.lab                      |     Ephemeral (Automatic)    |     vda          |
-Table 2
 
 1.  Click the hamburger icon, located in the top left-hand corner of the Google Console
 
@@ -794,7 +791,7 @@ Table 2
 
 9.  Select **N2 series**
 
-10.  Select **n2-standard-2** (follow the corresponding compute sizing listed for each virtual machine in the Table 2)
+10.  Select **n2-standard-2** (follow the corresponding compute sizing listed for each virtual machine in the table at the beginning of this section.)
 
      ![vm-dc1](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_vm-dc1.png)
 
@@ -822,7 +819,7 @@ Table 2
 
 19.  Expand **Networking** section and input the corresponding virtual machine network tags: **dc dns**
 
-20.  Input a host name as listed in the Table 2: dc1.ctx.lab
+20.  Input a host name as listed in the table at the beginning of this section: dc1.ctx.lab
 
      ![dc-dns-networking](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_dc-dns-networking.png)
 
