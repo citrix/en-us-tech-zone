@@ -12,11 +12,11 @@ contributedBy:
 
 ## Introduction
 
-This step-by-step Deployment and Configuration guide is for technical professionals who deploy and manages Citrix infrastructure on the Google Cloud. You can think of this guide as a double click down from the [Citrix Virtualization on Google Cloud Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) document, also available on Citrix TechZone. The Reference Architecture helps you decide **the virtualization system's architecture**. We implement the [Cloud Forward](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern) design on Google Cloud to keep this Deployment and Configuration guide focused and succinct. To help guide you on this journey of understanding, we are breaking down each of the major steps into **goals**, followed by step-by-step guides on **one way** to accomplish our **prime goal: build a Citrix virtualization system on Google Cloud**.
+This step-by-step Deployment and Configuration guide is for technical professionals who deploy and manages Citrix infrastructure on the Google Cloud. You can think of this guide as a double click down from the [Citrix Virtualization on Google Cloud Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) document, also available on Citrix TechZone. The Reference Architecture helps you decide **the virtualization system's architecture**. To help guide you on this journey of understanding, we are breaking down each of the major steps into **goals**, followed by step-by-step guides on **one way** to accomplish our **prime goal: build a Citrix virtualization system on Google Cloud**.
 
 As you take this journey with us, we encourage you to share your comments, contributions, questions, suggestions, and feedback along the way. Drop us a line via email to [Citrix on Google SME working group](mailto:caceb231.citrix.onmicrosoft.com@amer.teams.ms).
 
-Citrix offers self-paced and instructor lead versions. For more information, see the following Citrix Education website at [https://training.citrix.com/learning](https://training.citrix.com/learning). Or contact your Citrix Customer Success Manager for more information.
+If you are interested in training on Citrix virtualization and Google Cloud, Citrix offers self-paced and instructor lead versions. For more information, see the following Citrix Education website at [https://training.citrix.com/learning](https://training.citrix.com/learning). Or contact your Citrix Customer Success Manager for more information.
 
 ## Deployment Overview
 
@@ -60,11 +60,9 @@ When complete, you have:
 
 Google Cloud consists of services and resources hosted in data centers around the globe which varies according to [geographic regions](https://cloud.google.com/about/locations#network). Google Cloud infrastructure services are available in locations across North America, South America, Europe, Asia, and Australia. These locations are divided into regions and zones. A zone is an isolated location within a region. The zone determines what computing resources are available and where your data is stored and accessed. A region can have three or more zones. For example, the us-west1 region denotes a region on the west coast of the United States that has three zones us-west1-a, us-west1-b, and us-west1-c.
 
-[Google Billing](https://cloud.google.com/billing/docs) accounts are a prerequisite for creating a Google Project. The Google billing is linked to a Google payments profile. In a GCP environment, billing accounts can be linked to one or more projects which are aligned to an organization (Figure 3). It's recommended that the proper billing structure is in place in your organization before proceeding forward. Billing in GCP is based on usage, similar to other public cloud vendors. Google does not charge for virtual machines while they are in terminated state. However, Google charges for storing the preserved state of suspended virtual machines. Google offers committed use discounts (1 or 3 years) for virtual machine usage which is ideal for workloads with predictable resource needs. Also, Google offers sustained use discounts which automatically apply the discount for specific Compute Engine used more than 25% a month. However, the sustained use discounts aren't applicable to the E2 and A2 machine instances. Google also provides sizing recommendations for VMs instances using built-in intelligence.
+[Google Billing](https://cloud.google.com/billing/docs) accounts are a prerequisite for creating a Google Project. The Google billing is linked to a Google payments profile. In a GCP environment, billing accounts can be linked to one or more projects which are aligned to an organization. It's recommended that the proper billing structure is in place in your organization before proceeding forward. Billing in GCP is based on usage, similar to other public cloud vendors. Google does not charge for virtual machines while they are in terminated state. However, Google charges for storing the preserved state of suspended virtual machines. Google offers committed use discounts (1 or 3 years) for virtual machine usage which is ideal for workloads with predictable resource needs. Also, Google offers sustained use discounts which automatically apply the discount for specific Compute Engine used more than 25% a month. However, the sustained use discounts aren't applicable to the E2 and A2 machine instances. Google also provides sizing recommendations for VMs instances using built-in intelligence.
 
 ![google-billing](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_google-billing.png)
-
-Figure 2
 
 GCP organizes the resources into a project. All [GCP projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects) are assigned to a single user project creator role by default. Create extra project members and identity access and management roles to control access to the GCP project. A project consists of a set of users, a set of APIs, billing, authentication, and monitoring settings for the APIs. The GCP project has the following components:
 
@@ -78,7 +76,7 @@ GCP organizes the resources into a project. All [GCP projects](https://cloud.goo
 
 The goal of this task is to ultimately gain access to the Google Cloud Project that contains your Citrix virtualization assets. If someone else in your organization is responsible for creating projects, they need to assign you the Identity Access Management (IAM) "Owner" role to complete the rest of this goal. If you're creating the project, the following steps guide you through the process.
 
-You can complete the following steps from within the Google Cloud Console ([https://console.cloud.google.com](https://console.cloud.google.com)). Make sure that you're logged into this console with the valid user account.
+You can complete the following steps from within the Google Cloud Console ([https://console.cloud.google.com](https://console.cloud.google.com)). Make sure that you're logged into this console with a valid user account.
 
 1.  Click **Select a project** from the drop-down list
 
@@ -368,7 +366,7 @@ In this task, you generate and download the service account keys. The service ac
 
      ![service-create-json](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_service-create-json.png)
 
-11.  The JSON private key automatically downloads. Locate the JSON file and store it securely -- it is required when creating the hosting connection between Citrix Cloud and Google Cloud in upcoming steps.
+11.  The JSON private key automatically downloads. Locate the JSON file and store it securely - it is required when creating the hosting connection between Citrix Cloud and Google Cloud in upcoming steps.
 
 12.  Click **Close**
 
@@ -397,13 +395,11 @@ On the Google Cloud, virtual machine resources need a [VPC](https://cloud.google
 
 A VPC is a project global construct, meaning it can span not only zones inside regions, but also span regions around the globe. At minimum one subnet is required in each region where virtual machines are deployed.
 
-For this deployment guide a VPC network is used to provide the internal (private) connectivity between the three Google zones (us-west1-a, us-west1-b and us-west1-c). A VPC (Figure 3) is a virtual version of a physical network implemented within the Google network. A VPC is considered a global resource and it is not associated with any Google region or zone. A VPC network can be created using auto mode or custom mode. The auto mode VPC network creates a single subnet per region automatically when the network is created. As new regions become available, new subnets in those regions are automatically added to the auto mode network. A custom mode VPC network requires all subnets to be created manually.
+For this deployment guide a VPC network is used to provide the internal (private) connectivity between the three Google zones (us-west1-a, us-west1-b and us-west1-c). A VPC is a virtual version of a physical network implemented within the Google network. A VPC is considered a global resource and it is not associated with any Google region or zone. A VPC network can be created using auto mode or custom mode. The auto mode VPC network creates a single subnet per region automatically when the network is created. As new regions become available, new subnets in those regions are automatically added to the auto mode network. A custom mode VPC network requires all subnets to be created manually.
 
 Note also that there is a [cost](https://cloud.google.com/vpc/network-pricing) associated with traffic flows on Google Cloud. The VPC ingress traffic is free. The egress traffic to the same zone, to a different GCP service in the same region, and to Google products are all free. However, the egress traffic between zones in the same region or regions within the US costs $0.01/GB.
 
 ![virtual-private-cloud](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_virtual-private-cloud.png)
-
-Figure 3 Virtual Private Cloud
 
 The goal of this task is to create a functional VPC that is used build a Citrix Cloud Resource Location on the Google Cloud. This task can be considered complete when the Citrix Cloud service account (created earlier) can deploy a virtual machine on a functional VPC.
 
