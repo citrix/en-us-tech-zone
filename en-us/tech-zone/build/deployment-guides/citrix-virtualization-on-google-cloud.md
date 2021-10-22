@@ -397,7 +397,7 @@ A VPC is a project global construct, meaning it can span not only zones inside r
 
 For this deployment guide a VPC network is used to provide the internal (private) connectivity between the three Google zones (us-west1-a, us-west1-b and us-west1-c). A VPC is a virtual version of a physical network implemented within the Google network. A VPC is considered a global resource and it is not associated with any Google region or zone. A VPC network can be created using auto mode or custom mode. The auto mode VPC network creates a single subnet per region automatically when the network is created. As new regions become available, new subnets in those regions are automatically added to the auto mode network. A custom mode VPC network requires all subnets to be created manually.
 
-Note also that there is a [cost](https://cloud.google.com/vpc/network-pricing) associated with traffic flows on Google Cloud. The VPC ingress traffic is free. The egress traffic to the same zone, to a different GCP service in the same region, and to Google products are all free. However, the egress traffic between zones in the same region or regions within the US costs $0.01/GB.
+Note also that there is a [cost](https://cloud.google.com/vpc/network-pricing) associated with traffic flows on Google Cloud. The VPC ingress traffic is free. The egress traffic to the same zone, to a different GCP service in the same region, and to Google products are all free. However, there is a [cost](https://cloud.google.com/vpc/network-pricing) for the egress traffic between zones in the same region or regions within the US.
 
 ![virtual-private-cloud](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_virtual-private-cloud.png)
 
