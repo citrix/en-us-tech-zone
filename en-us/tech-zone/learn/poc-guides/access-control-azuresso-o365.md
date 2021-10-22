@@ -154,10 +154,21 @@ To federate authentication to Citrix Workspace, Azure must verify the fully qual
 
 [![Domain Verification 03](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-03.png)](/en-us/tech-zone/learn/media/poc-guides_access-control-azuresso-o365_verify-domain-03.png)
 
+###  Domain Federation
+
+The final configuration is to have Azure use Citrix Workspace as the federated authority for the verified domain. 
+*  There are two methods to handle the federation; 
+1.  Use a verified domain and federate the entire domain to Citrix Workspace. 
+2.  Use a subdomain of a verified domain.  This is useful if there is only one verified custom domain available.
+
+### Verify a subdomain (If applicable)
+*  Use the Microsoft article for specific instructions on verifying a subdomain and configuring it as a root domain: [Change subdomain authentication type in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/domains-verify-custom-subdomain)
+
+**Note**: Use a subdomain that is identifiable within your organization for this role; ie. workspaces.mydomain.net
+*  Once the subdomain has been verified, and it has been set to a root, you can proceed with the instructions below to federate the new subdomain to use Citrix Workspace.  
+
 ### Configure Domain Federation
-
-The final configuration is to have Azure use Citrix Workspace as the federated authority for the verified domain. Configuring federation must be done with PowerShell.
-
+Configuring federation must be done with PowerShell.
 *  Launch PowerShell
 *  Add the appropriate modules with the following commands
 
