@@ -742,7 +742,7 @@ Google Cloud provides reliable, high performance block storage for use by virtua
 
 On the Google Cloud, the service that runs virtual machine instances is referred to as the Google Compute Engine. Compute Engine offers predefined virtual machines configurations for every requirement. The offerings range from small micro instances to high memory and high CPU configurations. The following compute resources are relevant to any Virtual Apps deployment on GCP:
 
--  General purpose or Workload Optimized
+-  [General purpose or Workload Optimized](https://cloud.google.com/compute/docs/machine-types) - you can choose between general purpose or workload optimized based on workloads requirments.
 
 -  Predefined Machine Type – has a predefined number of vCPUs and memory and is charged at a set price described in the [pricing](https://cloud.google.com/products/calculator?skip_cache=true) page.
 
