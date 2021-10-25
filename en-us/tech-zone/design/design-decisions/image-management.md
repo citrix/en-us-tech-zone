@@ -1,7 +1,7 @@
 ---
 layout: doc
 h3InToc: true
-contributedBy: Martin Zugec
+contributedBy: Martin Zugec, Steve Beals
 description: Learn about the different decision factors involved in choosing the right provisioning model for image management. Learn more about Citrix Provisioning and Machine Creation Services solutions.
 tz_title: Provisioning Model for Image Management
 tz_products: citrix-virtual-apps-and-desktops;
@@ -45,9 +45,9 @@ If your project involves provisioning to physical machines (typically classrooms
 
 ### Cloud Deployment
 
-If you are planning to run virtual apps and desktops in one of the public infrastructures as a service (IaaS) environments like Microsoft Azure, Amazon Web Services or Google Cloud Platform, be aware that such environments do not support Citrix PVS. There are technical limitations that prevent PVS from running in such environments - most notably the requirement for PXE firmware, which is required even when the BDM boot partition is used. While this limitation prevents you from running Citrix PVS in true cloud environments, it is still possible to run them in hosted virtualized environments.
+If you are planning to run virtual apps and desktops in one of the public infrastructures as a service (IaaS) environments like Microsoft Azure, Amazon Web Services or Google Cloud Platform,  Citrix PVS is supported today in Microsoft Azure only via [tech preview](/en-us/preview/citrix-provisioning/azure/provisioning-on-azure-managed-devices.html). A tech preview for Google Cloud is targeted for 2022. There are technical limitations that prevent some features of PVS from running in cloud environments - such as PXE and ISO boot of master and target VMs, 32-bit operating systems, and support of Gen1 VMs.  If any of the above are required for your Citrix PVS implementation, it is still possible to run them in hosted virtualized environments.
 
-**Recommended model:** MCS
+**Recommended model:** MCS preferred
 
 ### Persistent Desktops
 
