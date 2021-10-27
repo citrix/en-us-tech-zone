@@ -4,7 +4,7 @@ h3InToc: true
 contributedBy: Daniel Feller
 description: Learn how to set up a Citrix Secure Private Access environment that uses Citrix as the single sign-on provider for SaaS applications.
 tz_title: Secure Access to SaaS Applications with Citrix Secure Private Access
-tz_products: citrix-secure-workspace-access;
+tz_products: citrix-secure-private-access;
 ---
 # PoC Guide: Secure Access to SaaS Applications with Citrix Secure Private Access
 
