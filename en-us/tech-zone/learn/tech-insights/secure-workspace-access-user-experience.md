@@ -5,7 +5,7 @@ contributedBy: Frank Srp
 specialThanksTo: Daniel Feller
 description: Securely access corporate web, and SaaS applications, with advanced security controls and website filtering for managed, unmanaged, and BYO devices.
 tz_title: Secure Private Access User Experience
-tz_products: citrix-secure-workspace-access;
+tz_products: citrix-secure-private-access;
 ---
 # Tech Insight: Secure Private Access User Experience
 
