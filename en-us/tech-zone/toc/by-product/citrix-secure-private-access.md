@@ -20,7 +20,6 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 [Secure Private Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-workspace-access-user-experience.html) - Securely access corporate web, and SaaS applications, with advanced security controls and website filtering for managed, unmanaged, and BYO devices.
 
-
 ## Learn - Tech Briefs
 
 Tech Briefs are short overview documents explaining a technology, a feature, a function next to a technical diagram.
