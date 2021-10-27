@@ -1,6 +1,7 @@
 ---
 layout: doc
 ---
+
 # Articles: Citrix Secure Private Access
 
 List of articles related to Citrix Secure Private Access.
@@ -18,6 +19,7 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 [Secure Private Access for SaaS Apps](/en-us/tech-zone/learn/tech-insights/access-control.html) - Single sign-on, secure remote access, URL, and content inspection and filtering for SaaS and web applications.
 
 [Secure Private Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-workspace-access-user-experience.html) - Securely access corporate web, and SaaS applications, with advanced security controls and website filtering for managed, unmanaged, and BYO devices.
+
 
 ## Learn - Tech Briefs
 

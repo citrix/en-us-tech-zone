@@ -160,7 +160,7 @@ CompanyA wants to limit the risk of data loss and data remanence on BYO devices.
 CompanyA has developed prescriptive access models to meet its security requirements:
 
 *  BYO devices **without** the Workspace app use Secure Private Access to launch a SaaS or web app through an isolated browser using the Citrix Secure Browser service. Secure Private Access provides SSO and enforces adaptive access policies such as download, print, copy, and paste restrictions to web and SaaS apps.
-*  BYO devices **with** the Workspace app use Secure Private Access to launch a Saas or web app using a local, containerized browser. The embedded browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app. Secure Private Access provides SSO and enforces adaptive access policies (download, print, copy, and paste restrictions).
+*  BYO devices **with** the Workspace app use Secure Private Access to launch a Saas or web app using the Citrix Workspace Browser - a local, containerized browser. The browser creates a connection to the SaaS app or a Zero Trust Network Access connection to the internal web app. Secure Private Access provides SSO and enforces adaptive access policies (download, print, copy, and paste restrictions).
 *  App Protection policies protect web and SaaS apps using screen scraping and key-logger restrictions. If the BYO Device does not have app protection available, adaptive access policies prevent the user from launching the app.
 *  When users access virtual apps and desktops, the Virtual Apps and Desktops service provides SSO and enforces lockdown policies. The service restricts downloading, printing, and unidirectional and bidirectional copy & paste actions.
 
