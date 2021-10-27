@@ -5,7 +5,7 @@ contributedBy: Daniel Feller
 specialThanksTo: Krishna Kumar
 description: Learn how to set up a Citrix Secure Private Access environment that provides single sign-on and enhanced security to Office 365.
 tz_title: Secure Access to Office 365 with Citrix Secure Private Access
-tz_products: citrix-secure-workspace-access;
+tz_products: citrix-secure-private-access;
 ---
 # PoC Guide: Secure Access to Office 365 with Citrix Secure Private Access
 

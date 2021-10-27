@@ -17,8 +17,8 @@
 /en-us/tech-zone/learn/tech-briefs/virtual-assistant.html /en-us/tech-zone/learn/tech-briefs.html 302!
 
 # Redirect all Access Control for StoreFront articles to landing page (Citrix Secure Workspace Access)
-/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html /en-us/tech-zone.html#citrix-secure-workspace-access
-/en-us/tech-zone/learn/tech-insights/access-control-storefront.html /en-us/tech-zone.html#citrix-secure-workspace-access
+/en-us/tech-zone/learn/tech-briefs/access-control-storefront.html /en-us/tech-zone.html#citrix-secure-private-access
+/en-us/tech-zone/learn/tech-insights/access-control-storefront.html /en-us/tech-zone.html#citrix-secure-private-access
  
 # Redirect all Access Control content to Citrix Secure Workspace Access (11/18/2020)
 /en-us/tech-zone/learn/tech-briefs/access-control.html /en-us/tech-zone/learn/tech-briefs/secure-workspace-access.html
