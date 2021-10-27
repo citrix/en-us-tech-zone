@@ -5,7 +5,7 @@ contributedBy: Florin Lazurca
 specialThanksTo: Frank Srp
 description: With Secure Private Access, organizations go beyond access and aggregation to provide IT with policy controls that provide conditional access to cloud apps and internet browsing, enhancing the organization's overall security and compliance posture.
 tz_title: Secure Private Access
-tz_products: citrix-secure-workspace-access;
+tz_products: citrix-secure-private-access;
 ---
 # Tech Brief: Secure Private Access
 

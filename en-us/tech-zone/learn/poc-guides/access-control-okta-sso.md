@@ -4,7 +4,7 @@ h3InToc: true
 contributedBy: Daniel Feller
 description: Learn how to set up a Citrix Secure Private Access environment that is able to use Okta as the single sign-on provider for SaaS applications.
 tz_title: Secure Access to SaaS Applications with Okta and Citrix Secure Private Access
-tz_products: citrix-secure-workspace-access;
+tz_products: citrix-secure-private-access;
 ---
 # PoC Guide: Secure Access to SaaS Applications with Okta and Citrix Secure Private Access
 
