@@ -1,9 +1,11 @@
 ---
 layout: doc
 h3InToc: true
-author: Sameer Sharma
-Special thanks: Rick Dehlinger
-contributedBy: 
+contributedBy: Sameer Sharma
+specialThanksTo: Rick Dehlinger
+description: Learn how to deploy Citrix infrastructure on the Google Cloud.
+tz_title: Citrix virtualization on Google Cloud
+tz_products: citrix-virtual-apps-and-desktops;
 ---
 
 # Citrix virtualization on Google Cloud
@@ -12,7 +14,7 @@ contributedBy:
 
 ## Introduction
 
-This step-by-step Deployment and Configuration guide is for technical professionals who deploy and manages Citrix infrastructure on the Google Cloud. You can think of this guide as a double click down from the [Citrix Virtualization on Google Cloud Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) document, also available on Citrix TechZone. The Reference Architecture helps you decide **the virtualization system's architecture**. To help guide you on this journey of understanding, we are breaking down each of the major steps into **goals**, followed by step-by-step guides on **one way** to accomplish our **prime goal: build a Citrix virtualization system on Google Cloud**.
+This step-by-step Deployment and Configuration guide is for technical professionals who deploy and manages Citrix infrastructure on the Google Cloud. You can think of this guide as a double click down from the [Citrix Virtualization on Google Cloud Reference Architecture](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) document, also available on Citrix TechZone. The Reference Architecture helps you decide **the virtualization system's architecture**. To help guide you on this journey of understanding, we are breaking down each of the major steps into **goals**, followed by step-by-step guides on **one way** to accomplish our **prime goal: build a Citrix virtualization system on Google Cloud**.
 
 As you take this journey with us, we encourage you to share your comments, contributions, questions, suggestions, and feedback along the way. Drop us a line via email to [Citrix on Google SME working group](mailto:caceb231.citrix.onmicrosoft.com@amer.teams.ms).
 
@@ -34,13 +36,13 @@ The following list provides an overview of the goals and **tasks** necessary to 
 
 ## 1 Define the deployment architecture
 
-Before you build a Citrix virtualization system on **ANY** platform, you need to figure out the deployment architecture. The flexibility of the Citrix technology stack can be a challenge. However, we break down the most important design decisions to consider in the [Citrix Virtualization on Google Cloud Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) document. In this guide, we are building a Citrix solution based on the [Cloud Forward](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern) design as illustrated:
+Before you build a Citrix virtualization system on **ANY** platform, you need to figure out the deployment architecture. The flexibility of the Citrix technology stack can be a challenge. However, we break down the most important design decisions to consider in the [Citrix Virtualization on Google Cloud Reference Architecture](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) document. In this guide, we are building a Citrix solution based on the [Cloud Forward](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern) design as illustrated:
 
 ![cloud-forward-deployment-architecture](/en-us/tech-zone/learn/media/citrix-virtualization-on-google-cloud_cloud-forward-deployment-architecture.png)
 
 ## 2 Prepare Google Cloud Project
 
-The goal is this section is to prepare the Google Cloud project which is being used as your Citrix Cloud Virtual Apps and Desktops Service [Resource Location](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html). You can either create a new or gain access to an existing Google Cloud project.  
+The goal is this section is to prepare the Google Cloud project which is being used as your Citrix Cloud Virtual Apps and Desktops Service [Resource Location](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html). You can either create a new or gain access to an existing Google Cloud project.  
 
 When complete, you have:
 
@@ -54,7 +56,7 @@ When complete, you have:
 
 > **Note**:
 >
-> This section provides a walk-through for [creating a resource location on Google Cloud](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html). While these requirements were complete and correct at the time of writing, you want to refer to the product documentation for the most current requirements.
+> This section provides a walk-through for [creating a resource location on Google Cloud](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html). While these requirements were complete and correct at the time of writing, you want to refer to the product documentation for the most current requirements.
 
 ### **Google Cloud Primer**
 
@@ -332,7 +334,7 @@ Citrix Cloud uses **two** separate service accounts within the Google Cloud proj
 
 > **Note**:
 >
->If you plan to deploy Citrix VDAs onto a Google Cloud Shared Virtual Private Cloud (VPC), there are some additional permissions the Citrix Cloud service account requires that are **NOT** covered here. To prepare for deploying VDAs on Shared VPCs, review [Shared Virtual Private Cloud](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html#shared-virtual-private-cloud).
+>If you plan to deploy Citrix VDAs onto a Google Cloud Shared Virtual Private Cloud (VPC), there are some additional permissions the Citrix Cloud service account requires that are **NOT** covered here. To prepare for deploying VDAs on Shared VPCs, review [Shared Virtual Private Cloud](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html#shared-virtual-private-cloud).
 
 #### 2.3.3 Generate and save Citrix Cloud service account keys
 
@@ -374,7 +376,7 @@ In this task, you generate and download the service account keys. The service ac
 
 ## 3 Configure/verify network and network services
 
-This segment covers the networking services required to host a Citrix Cloud [Resource Location](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html) on Google Cloud. Completion of the last goal leaves you with an empty project on the Google Cloud, into which we are building a Citrix virtualization system. This section aims to layer in the networking-related services needed to complete our prime goal.
+This segment covers the networking services required to host a Citrix Cloud [Resource Location](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html) on Google Cloud. Completion of the last goal leaves you with an empty project on the Google Cloud, into which we are building a Citrix virtualization system. This section aims to layer in the networking-related services needed to complete our prime goal.
 Building and configuring a network becomes complex relative to the size of the organization's underlying system requirements. In essence, a Citrix virtualization system on Google Cloud requires the following to function:
 
 -  A Virtual Private Cloud (VPC) to interconnect Citrix VDAs and Citrix Cloud Connectors.
@@ -391,7 +393,7 @@ Your organization can have a different way of deploying the necessary functional
 
 ### 3.1 Create/access a network for VDAs and Cloud Connectors
 
-On the Google Cloud, virtual machine resources need a [VPC](https://cloud.google.com/vpc#section-5) network for communication. A VPC lives inside a specific Google Cloud project and can be optionally shared [between multiple projects](https://cloud.google.com/vpc/docs/shared-vpc) as needed. Google calls the latter feature[Shared VPC](https://cloud.google.com/vpc/docs/shared-vpc). Citrix Cloud supports [deploying Citrix VDAs on Shared VPC networks](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html#shared-virtual-private-cloud), the setup, and configuration is not detailed this simplified guide.
+On the Google Cloud, virtual machine resources need a [VPC](https://cloud.google.com/vpc#section-5) network for communication. A VPC lives inside a specific Google Cloud project and can be optionally shared [between multiple projects](https://cloud.google.com/vpc/docs/shared-vpc) as needed. Google calls the latter feature[Shared VPC](https://cloud.google.com/vpc/docs/shared-vpc). Citrix Cloud supports [deploying Citrix VDAs on Shared VPC networks](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location/google.html#shared-virtual-private-cloud), the setup, and configuration is not detailed this simplified guide.
 
 A VPC is a project global construct, meaning it can span not only zones inside regions, but also span regions around the globe. At minimum one subnet is required in each region where virtual machines are deployed.
 
@@ -726,7 +728,7 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 ## 4 Create virtual machines
 
-Now that you have a functional Google Cloud project and core network services in place. The next step is to create the virtual machine resources needed to have a functional Citrix Cloud resource location. As described in the [Reference Architecture: Citrix Virtualization on Google Cloud](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html), a functional resource location requires the following:
+Now that you have a functional Google Cloud project and core network services in place. The next step is to create the virtual machine resources needed to have a functional Citrix Cloud resource location. As described in the [Reference Architecture: Citrix Virtualization on Google Cloud](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html), a functional resource location requires the following:
 
 -  Active Directory domain services
 
@@ -734,7 +736,7 @@ Now that you have a functional Google Cloud project and core network services in
 
 -  One or more Citrix VDAs
 
-Applying the [Cloud Forward](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern) design pattern, these resources are deployed on virtual machine instances attached to a VPC. The virtual machine instances are deployed in a highly available manner by splitting between Google Cloud zones in the region.
+Applying the [Cloud Forward](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern) design pattern, these resources are deployed on virtual machine instances attached to a VPC. The virtual machine instances are deployed in a highly available manner by splitting between Google Cloud zones in the region.
 In this section of the guide, we provide additional information on Google Cloud resource and service types, followed by creating the virtual machine instances.
 
 **Google Cloud virtual machine resources**
@@ -1379,9 +1381,9 @@ Repeat **step 1 through 13** for the second Cloud Connector (CC2) and the Server
 
 This section aims to access the Citrix Cloud Console, integrate it with your Google Cloud project and resources, and prepare to publish applications and desktops.
 
-Citrix Cloud is a platform that hosts and administers Citrix services. It connects to your resources through [connectors](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-resource-locations/resource-locations.html) on any cloud or infrastructure you choose (on-premises, public cloud, private cloud, or hybrid cloud). It allows you to create, manage, and deploy workspaces with apps and data to your end-users from a single console.
+Citrix Cloud is a platform that hosts and administers Citrix services. It connects to your resources through [connectors](/en-us/citrix-cloud/citrix-cloud-resource-locations/resource-locations.html) on any cloud or infrastructure you choose (on-premises, public cloud, private cloud, or hybrid cloud). It allows you to create, manage, and deploy workspaces with apps and data to your end-users from a single console.
 
-This deployment guide requires you to have a Citrix Cloud account with an active CVADS subscription. After [signing up for Citrix Cloud](https://docs.citrix.com/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html), you can request service trials for the Citrix Virtual Apps and Desktops service within the console. You need both a Citrix Cloud account and an active subscription before you can complete this goal.
+This deployment guide requires you to have a Citrix Cloud account with an active CVADS subscription. After [signing up for Citrix Cloud](/en-us/citrix-cloud/overview/signing-up-for-citrix-cloud/signing-up-for-citrix-cloud.html), you can request service trials for the Citrix Virtual Apps and Desktops service within the console. You need both a Citrix Cloud account and an active subscription before you can complete this goal.
 
 ### Citrix Cloud Resource Location
 
@@ -1629,7 +1631,7 @@ Now that you've got a functional hosting connection, the next step is to prepare
 
 ### 8.3 Prepare the 'master image' for your first catalog of Citrix VDAs
 
-For this Deployment and Configuration Guide, we're going to build your first non-persistent multi session Server OS. [Image Management Reference Architecture](https://docs.citrix.com/en-us/tech-zone/design/reference-architectures/image-management.html) provides an overview of the functionality and design architecture for an image management to ensure efficient delivery of application and desktop workloads. Before the machine catalog can be provisioned, the Virtual Delivery Agent (VDA) software must be installed on the master image. The VDA software allows the machine and the resources it is hosting to be made available to users. Also, the VDA enables the machine to register with the Citrix Cloud Connector.
+For this Deployment and Configuration Guide, we're going to build your first non-persistent multi session Server OS. [Image Management Reference Architecture](/en-us/tech-zone/design/reference-architectures/image-management.html) provides an overview of the functionality and design architecture for an image management to ensure efficient delivery of application and desktop workloads. Before the machine catalog can be provisioned, the Virtual Delivery Agent (VDA) software must be installed on the master image. The VDA software allows the machine and the resources it is hosting to be made available to users. Also, the VDA enables the machine to register with the Citrix Cloud Connector.
 
 1.  Log in to MCS virtual machine using the following domain credentials
 
