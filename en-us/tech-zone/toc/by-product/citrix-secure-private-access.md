@@ -1,9 +1,9 @@
 ---
 layout: doc
 ---
-# Articles: Citrix Secure Workspace Access
+# Articles: Citrix Secure Private Access
 
-List of articles related to Citrix Secure Workspace Access.
+List of articles related to Citrix Secure Private Access.
 
 ## Learn - Tech Insights
 
