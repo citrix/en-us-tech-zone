@@ -38,7 +38,7 @@ The following list provides an overview of the goals and **tasks** necessary to 
 
 Before you build a Citrix virtualization system on **ANY** platform, you need to figure out the deployment architecture. The flexibility of the Citrix technology stack can be a challenge. However, we break down the most important design decisions to consider in the [Citrix Virtualization on Google Cloud Reference Architecture](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html) document. In this guide, we are building a Citrix solution based on the [Cloud Forward](/en-us/tech-zone/design/reference-architectures/citrix-google-virtualization.html#the-cloud-forward-design-pattern) design as illustrated:
 
-![cloud-forward-deployment-architecture](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-forward-deployment-architecture.png)
+![cloud-forward-deployment-architecture](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-forward-deployment-architecture.png)
 
 ## 2 Prepare Google Cloud Project
 
@@ -64,7 +64,7 @@ Google Cloud consists of services and resources hosted in data centers around th
 
 [Google Billing](https://cloud.google.com/billing/docs) accounts are a prerequisite for creating a Google Project. The Google billing is linked to a Google payments profile. In a GCP environment, billing accounts can be linked to one or more projects which are aligned to an organization. It's recommended that the proper billing structure is in place in your organization before proceeding forward. Billing in GCP is based on usage, similar to other public cloud vendors. Google does not charge for virtual machines while they are in terminated state. However, Google charges for storing the preserved state of suspended virtual machines. Google offers committed use discounts (1 or 3 years) for virtual machine usage which is ideal for workloads with predictable resource needs. Also, Google offers sustained use discounts which automatically apply the discount for specific Compute Engine used more than 25% a month. However, the sustained use discounts aren't applicable to the E2 and A2 machine instances. Google also provides sizing recommendations for VMs instances using built-in intelligence.
 
-![google-billing](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_google-billing.png)
+![google-billing](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_google-billing.png)
 
 GCP organizes the resources into a project. All [GCP projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects) are assigned to a single user project creator role by default. Create extra project members and identity access and management roles to control access to the GCP project. A project consists of a set of users, a set of APIs, billing, authentication, and monitoring settings for the APIs. The GCP project has the following components:
 
@@ -82,11 +82,11 @@ You can complete the following steps from within the Google Cloud Console ([http
 
 1.  Click **Select a project** from the drop-down list
 
-    ![google-cloud-platform-dashboard](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_google-cloud-platform-dashboard.png)
+    ![google-cloud-platform-dashboard](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_google-cloud-platform-dashboard.png)
 
 2.  Click **New Project**
 
-    ![google-cloud-platform-new-project](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_google-cloud-platform-new-project.png)
+    ![google-cloud-platform-new-project](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_google-cloud-platform-new-project.png)
 
 3.  Input a unique project name (e.g., citrixcloud)
 
@@ -94,11 +94,11 @@ You can complete the following steps from within the Google Cloud Console ([http
 
 5.  Click **Create**
 
-    ![google-cloud-platform-create](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_google-cloud-platform-create.png)
+    ![google-cloud-platform-create](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_google-cloud-platform-create.png)
 
 6.  Validate the project is successfully created
 
-    ![google-cloud-platform-project-info](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_google-cloud-platform-project-info.png)
+    ![google-cloud-platform-project-info](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_google-cloud-platform-project-info.png)
 
 ### 2.2 Enable Google Cloud APIs
 
@@ -122,11 +122,11 @@ The Google APIs can be enabled from the [APIs and Services/Dashboard or APIs and
 
 1.  Click the Google Shell icon located in the top right-hand corner of the Google Console:
 
-    ![google-shell-icon](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_google-shell-icon.png)
+    ![google-shell-icon](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_google-shell-icon.png)
 
 2.  The following Cloud Shell appears within the Google Console:
 
-    ![google-shell-console](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_google-shell-console.png)
+    ![google-shell-console](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_google-shell-console.png)
 
 3.  Paste the following four commands into the Cloud Shell, if the Cloud Shell prompts, click **Authorize**:
 
@@ -140,7 +140,7 @@ The Google APIs can be enabled from the [APIs and Services/Dashboard or APIs and
 
     gcloud services enable dns.googleapis.com
 
-    ![google-cloud-shell](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_google-cloud-shell.png)
+    ![google-cloud-shell](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_google-cloud-shell.png)
 
 ### 2.3 Create/update service accounts
 
@@ -176,7 +176,7 @@ Citrix Cloud uses **two** separate service accounts within the Google Cloud proj
 
 3.  Click **IAM**
 
-    ![google-console-iam-admin](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_google-console-iam-admin.png)
+    ![google-console-iam-admin](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_google-console-iam-admin.png)
 
 4.  Locate the Cloud Build service account, identifiable with an email address that begins with the Project ID, for e.g., [\<project-id\>@cloudbuild.gserviceaccount.com](mailto:112233445566@cloudbuild.gserviceaccount.com). The Cloud Build Service Account role is applied by default.
 
@@ -198,43 +198,43 @@ Citrix Cloud uses **two** separate service accounts within the Google Cloud proj
 
 5.  Click the pencil icon to edit the Cloud Build account roles
 
-    ![pencil-icon-to-edit](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_pencil-icon-to-edit.png)
+    ![pencil-icon-to-edit](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_pencil-icon-to-edit.png)
 
 6.  Click **Add Another Role**
 
-    ![google-shell-add-another-role](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_google-shell-add-another-role.png)
+    ![google-shell-add-another-role](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_google-shell-add-another-role.png)
 
 7.  Click **Select a role** drop-down menu
 
-    ![google-cloud-shell-select-role](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_google-cloud-shell-select-role.png)
+    ![google-cloud-shell-select-role](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_google-cloud-shell-select-role.png)
 
 8.  Click the drop-down and input **Compute Instance Admin**
 
 9.  Click **Compute Instance Admin (v1)** from the list
 
-    ![compute-instance-admin-v1](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-instance-admin-v1.png)
+    ![compute-instance-admin-v1](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-instance-admin-v1.png)
 
 10.  Click **Add Another Role**
 
-     ![compute-instance-admin-add-another-role](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-instance-admin-add-another-role.png)
+     ![compute-instance-admin-add-another-role](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-instance-admin-add-another-role.png)
 
 11.  Click **Select a role** drop-down menu
 
-     ![compute-instance-admin-select-role](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-instance-admin-select-role.png)
+     ![compute-instance-admin-select-role](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-instance-admin-select-role.png)
 
 12.  Click the drop-down and input **Service Account User**
 
 13.  Click **Service Account User** from the list
 
-     ![service-account-iam-admin](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-instance-admin-service-account.png)
+     ![service-account-iam-admin](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-instance-admin-service-account.png)
 
 14.  Click **Save**
 
-     ![compute-instance-admin-save](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-instance-admin-save.png)
+     ![compute-instance-admin-save](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-instance-admin-save.png)
 
 15.  Validate the roles are assigned successfully
 
-     ![compute-instance-admin-assigned-successfully](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-instance-admin-assigned-successfully.png)
+     ![compute-instance-admin-assigned-successfully](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-instance-admin-assigned-successfully.png)
 
 #### 2.3.2 Create and assign roles to Citrix Cloud Service Account
 
@@ -244,11 +244,11 @@ Citrix Cloud uses **two** separate service accounts within the Google Cloud proj
 
 3.  Click **Service Accounts**
 
-    ![service-account-iam-admin](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_service-account-iam-admin.png)
+    ![service-account-iam-admin](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_service-account-iam-admin.png)
 
 4.  Click + **Create Service Account**
 
-    ![create-service-account](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-service-account.png)
+    ![create-service-account](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-service-account.png)
 
 5.  Input a unique **Service account name**
 
@@ -258,79 +258,79 @@ Citrix Cloud uses **two** separate service accounts within the Google Cloud proj
 
 8.  Click **Create and Continue**
 
-    ![create-and-continue](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-and-continue.png)
+    ![create-and-continue](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-and-continue.png)
 
 9.  Click **Select a role** drop-down menu
 
-    ![select-role](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_select-role.png)
+    ![select-role](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_select-role.png)
 
 10.  Click the drop-down list and input **Compute Admin**
 
 11.  Click **Compute Admin** from the list
 
-     ![compute-admin](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-admin.png)
+     ![compute-admin](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-admin.png)
 
 12.  Click **Add Another Role**
 
-     ![compute-add-another-role](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-add-another-role.png)
+     ![compute-add-another-role](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-add-another-role.png)
 
 13.  Click **Select a role** drop-down menu
 
-     ![compute-select-role](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-select-role.png)
+     ![compute-select-role](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-select-role.png)
 
 14.  Click the drop-down list and input **Storage Admin**
 
 15.  Click **Storage Admin** from the list
 
-     ![compute-storage-admin](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-storage-admin.png)
+     ![compute-storage-admin](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-storage-admin.png)
 
 16.  Click **Select a role** drop-down menu
 
-     ![compute-storage-admin-select-role](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-storage-admin-select-role.png)
+     ![compute-storage-admin-select-role](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_compute-storage-admin-select-role.png)
 
 17.  Click the drop-down and input **Cloud Build Editor**
 
 18.  Click **Cloud Build Editor** from the list
 
-     ![build-editor](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_build-editor.png)
+     ![build-editor](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_build-editor.png)
 
 19.  Click **Add Another Role**
 
-     ![build-editor-add-another-role](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_build-editor-add-another-role.png)
+     ![build-editor-add-another-role](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_build-editor-add-another-role.png)
 
 20.  Click the drop-down and input **Service Account User**
 
 21.  Click **Service Account User** from the list
 
-     ![build-editor-service-account](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_build-editor-service-account.png)
+     ![build-editor-service-account](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_build-editor-service-account.png)
 
 22.  Click **Add Another Role**
 
-     ![build-editor-service-account-add-another-role](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_build-editor-service-account-add-another-role.png)
+     ![build-editor-service-account-add-another-role](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_build-editor-service-account-add-another-role.png)
 
 23.  Click the drop-down and input **Cloud Datastore User**
 
 24.  Click **Cloud Datastore User** from the list
 
-     ![datastore-user](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_datastore-user.png)
+     ![datastore-user](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_datastore-user.png)
 
 25.  Click **Continue**
 
-     ![datastore-user-continue](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_datastore-user-continue.png)
+     ![datastore-user-continue](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_datastore-user-continue.png)
 
 26.  Click **Done**
 
-     ![datastore-done](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_datastore-done.png)
+     ![datastore-done](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_datastore-done.png)
 
 27.  Navigate to IAM main console
 
-     ![navigate-iam](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_navigate-iam.png)
+     ![navigate-iam](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_navigate-iam.png)
 
 28.  Identify the Service Account created
 
 29.  Validate the five roles are assigned successfully
 
-     ![build-editor-validate](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_build-editor-validate.png)
+     ![build-editor-validate](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_build-editor-validate.png)
 
 > **Note**:
 >
@@ -346,13 +346,13 @@ In this task, you generate and download the service account keys. The service ac
 
 3.  Click **Service Accounts**
 
-    ![service-account](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_service-account.png)
+    ![service-account](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_service-account.png)
 
 4.  Click the previously created Service Account
 
 5.  There are likely no keys created yet
 
-    ![service-no-keys](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_service-no-keys.png)
+    ![service-no-keys](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_service-no-keys.png)
 
 6.  Click **Keys** tab
 
@@ -360,19 +360,19 @@ In this task, you generate and download the service account keys. The service ac
 
 8.  Select **Create new key**
 
-    ![service-create-keys](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_service-create-keys.png)
+    ![service-create-keys](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_service-create-keys.png)
 
 9.  Select key type **JSON** (default)
 
 10.  Click **Create**
 
-     ![service-create-json](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_service-create-json.png)
+     ![service-create-json](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_service-create-json.png)
 
 11.  The JSON private key automatically downloads. Locate the JSON file and store it securely - it is required when creating the hosting connection between Citrix Cloud and Google Cloud in upcoming steps.
 
 12.  Click **Close**
 
-     ![service-create-json-close](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_service-create-json-close.png)
+     ![service-create-json-close](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_service-create-json-close.png)
 
 ## 3 Configure/verify network and network services
 
@@ -401,7 +401,7 @@ For this deployment guide a VPC network is used to provide the internal (private
 
 Note also that there is a [cost](https://cloud.google.com/vpc/network-pricing) associated with traffic flows on Google Cloud. The VPC ingress traffic is free. The egress traffic to the same zone, to a different GCP service in the same region, and to Google products are all free. However, there is a [cost](https://cloud.google.com/vpc/network-pricing) for the egress traffic between zones in the same region or regions within the US.
 
-![virtual-private-cloud](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_virtual-private-cloud.png)
+![virtual-private-cloud](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_virtual-private-cloud.png)
 
 The goal of this task is to create a functional VPC that is used build a Citrix Cloud Resource Location on the Google Cloud. This task can be considered complete when the Citrix Cloud service account (created earlier) can deploy a virtual machine on a functional VPC.
 
@@ -413,17 +413,17 @@ The goal of this task is to create a functional VPC that is used build a Citrix 
 
 3.  Click **VPC networks**
 
-    ![vpc-networks](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks.png)
+    ![vpc-networks](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks.png)
 
 4.  Click **Create VPC Network**
 
-    ![vpc-networks-create](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-create.png)
+    ![vpc-networks-create](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-create.png)
 
 5.  Input a unique name for the VPC network
 
 6.  Input a description for the VPC network
 
-    ![vpc-networks-input-description](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-input-description.png)
+    ![vpc-networks-input-description](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-input-description.png)
 
 7.  Select **Custom**
 
@@ -439,17 +439,17 @@ The goal of this task is to create a functional VPC that is used build a Citrix 
 
 13.  Click **Done**
 
-     ![vpc-networks-click-done](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-click-done.png)
+     ![vpc-networks-click-done](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-click-done.png)
 
 14.  Select **Regional** under the **Dynamic routing mode** section
 
 15.  Click **Create** to complete the VPC network creation process
 
-     ![vpc-networks-creation-process](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-creation-process.png)
+     ![vpc-networks-creation-process](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-creation-process.png)
 
 16.  Validate the VPC network created successfully
 
-     ![vpc-networks-create-successfully](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-create-successfully.png)
+     ![vpc-networks-create-successfully](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-create-successfully.png)
 
 #### 3.1.2 Configure outbound connectivity to Citrix Cloud
 
@@ -473,11 +473,11 @@ Before you configure Cloud NAT, you must configure the Cloud Router as Cloud NAT
 
 3.  Click **Cloud Routers**
 
-    ![cloud-routers](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-routers.png)
+    ![cloud-routers](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-routers.png)
 
 4.  Click **Create Router**
 
-    ![cloud-routers-create](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-routers-create.png)
+    ![cloud-routers-create](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-routers-create.png)
 
 5.  Input a unique name for the Cloud Router
 
@@ -493,11 +493,11 @@ Before you configure Cloud NAT, you must configure the Cloud Router as Cloud NAT
 
 11.  Click **Create**
 
-     ![create-cloud-router](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-cloud-router.png)
+     ![create-cloud-router](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-cloud-router.png)
 
 12.  Validate the Cloud Router is created successfully
 
-     ![cloud-routers-validated-successfully](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-routers-validated-successfully.png)
+     ![cloud-routers-validated-successfully](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-routers-validated-successfully.png)
 
 ##### 3.1.2.2 Step 2: Deploy Google Cloud NAT
 
@@ -507,11 +507,11 @@ Before you configure Cloud NAT, you must configure the Cloud Router as Cloud NAT
 
 3.  Click **Cloud NAT**
 
-    ![cloud-nat](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-nat.png)
+    ![cloud-nat](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-nat.png)
 
 4.  Click **Get Started**
 
-    ![cloud-nat-get-started](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-nat-get-started.png)
+    ![cloud-nat-get-started](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-nat-get-started.png)
 
 5.  Input a unique name for the Cloud NAT
 
@@ -523,11 +523,11 @@ Before you configure Cloud NAT, you must configure the Cloud Router as Cloud NAT
 
 9.  Click **Create**
 
-    ![cloud-nat-gateway](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-nat-gateway.png)
+    ![cloud-nat-gateway](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-nat-gateway.png)
 
 10.  Validate the Cloud NAT is created successfully
 
-     ![cloud-nat-validated](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-nat-validated.png)
+     ![cloud-nat-validated](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-nat-validated.png)
 
 ##### 3.1.2.3 Configure DNS Services via Google Cloud DNS
 
@@ -545,11 +545,11 @@ Domain Name System (DNS) services are a baseline requirement for any connected n
 
 3.  Click **Cloud DNS**
 
-    ![cloud-dns](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-dns.png)
+    ![cloud-dns](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-dns.png)
 
 4.  Click **Create Zone**
 
-    ![cloud-dns-zone](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-dns-zone.png)
+    ![cloud-dns-zone](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-dns-zone.png)
 
 5.  Select **Private** under the Zone type
 
@@ -571,11 +571,11 @@ Domain Name System (DNS) services are a baseline requirement for any connected n
 
 14.  Click **Create**
 
-     ![cloud-dns-create-zone](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-dns-create-zone.png)
+     ![cloud-dns-create-zone](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-dns-create-zone.png)
 
 15.  Validate the DNS Zone created successfully
 
-     ![cloud-dns-zone-validate](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-dns-zone-validate.png)
+     ![cloud-dns-zone-validate](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-dns-zone-validate.png)
 
 ### 3.2 Configure network layer security using Google Cloud VPC firewall
 
@@ -600,11 +600,11 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 3.  Click **Firewall**
 
-    ![vpn-network-firewall](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vpn-network-firewall.png)
+    ![vpn-network-firewall](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vpn-network-firewall.png)
 
 4.  Click **Create Firewall Rule** option
 
-    ![firewall-create-rule](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_firewall-create-rule.png)
+    ![firewall-create-rule](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_firewall-create-rule.png)
 
 5.  Input a unique name for the firewall rule: **citrix-allow-internal-dc**
 
@@ -618,7 +618,7 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 10.  Input the network target tags that are configured under the deploying the Google Compute Instance: **dc**
 
-     ![create-a-firewall-rule](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-a-firewall-rule.png)
+     ![create-a-firewall-rule](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-a-firewall-rule.png)
 
 11.  Set the Source IP ranges to **10.240.1.0 / 24**
 
@@ -630,13 +630,13 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 15.  Click **Create**
 
-     ![firewall-create-rule-udp-tcp](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_firewall-create-rule-udp-tcp.png)
+     ![firewall-create-rule-udp-tcp](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_firewall-create-rule-udp-tcp.png)
 
 #### 3.2.1.2 Create a firewall rule to allow forwarding from Google Cloud DNS
 
 1.  Click **Create Firewall Rule** option
 
-    ![create-firewall-rule-allow-dns](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-rule-allow-dns.png)
+    ![create-firewall-rule-allow-dns](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-rule-allow-dns.png)
 
 2.  Input a unique name for the firewall rule: **citrix-allow-external-dns**
 
@@ -650,7 +650,7 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 7.  Input the network target tags that is configured under the deploying the Google Compute Instance: **dns**
 
-    ![create-firewall-rule-dns](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-rule-dns.png)
+    ![create-firewall-rule-dns](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-rule-dns.png)
 
 8.  Set the Source IP ranges to **35.199.192.0/19** and **10.240.1.0 / 24**
 
@@ -662,13 +662,13 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 12.  Click **Create**
 
-     ![create-firewall-ip-range](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-ip-range.png)
+     ![create-firewall-ip-range](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-ip-range.png)
 
 #### 3.2.1.3 Create a firewall rule to allow traffic from Cloud Connector to VDA
 
 1.  Click create Firewall Rule option
 
-    ![create-firewall-rule-vda](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-rule-vda.png)
+    ![create-firewall-rule-vda](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-rule-vda.png)
 
 2.  Input a unique name for the firewall rule: **citrix-allow-internal-cc-vda**
 
@@ -682,7 +682,7 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 7.  Input the network target tags that are configured under the deploying the Google Compute Instance: **vda**
 
-    ![create-a-firewall-rule-vda](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-a-firewall-rule-vda.png)
+    ![create-a-firewall-rule-vda](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-a-firewall-rule-vda.png)
 
 8.  Set the Source IP ranges to **10.240.1.0 / 24**
 
@@ -694,13 +694,13 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 12.  Click **Create**
 
-     ![create-a-firewall-rule-vda-ip-range](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-a-firewall-rule-vda-ip-range.png)
+     ![create-a-firewall-rule-vda-ip-range](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-a-firewall-rule-vda-ip-range.png)
 
 #### 3.2.1.4 Create a firewall rule to allow traffic from VDA to Cloud Connector
 
 1.  Click **Create Firewall Rule option**
 
-     ![create-firewall-vda-to-cloud](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-vda-to-cloud.png)
+     ![create-firewall-vda-to-cloud](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-vda-to-cloud.png)
 
 2.  Input a unique name for the firewall rule: **citrix-allow-internal-vda-cc**
 
@@ -714,7 +714,7 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 7.  Input the network target tags that is configured under the deploying the Google Compute Instance: **cc**
 
-    ![create-firewall-rule-vda-to-cloud](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-rule-vda-to-cloud.png)
+    ![create-firewall-rule-vda-to-cloud](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-rule-vda-to-cloud.png)
 
 8.  Set the Source IP ranges to **10.240.1.0 / 24**
 
@@ -724,7 +724,7 @@ We use the target network tags to apply these rules to the virtual machines we a
 
 11.  Click **Create**
 
-     ![create-firewall-rule-vda-to-cloud-ip-range](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-rule-vda-to-cloud-ip-range.png)
+     ![create-firewall-rule-vda-to-cloud-ip-range](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-firewall-rule-vda-to-cloud-ip-range.png)
 
 ## 4 Create virtual machines
 
@@ -772,11 +772,11 @@ The Cloud Forward design pattern requires three different types of virtual machi
 
 3.  Click **VM Instances**
 
-    ![vm-instances](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-instances.png)
+    ![vm-instances](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-instances.png)
 
 4.  Click **Create Instance**
 
-    ![vm-create-instances](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-create-instances.png)
+    ![vm-create-instances](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-create-instances.png)
 
 5.  Input a name: **dc1**
 
@@ -790,11 +790,11 @@ The Cloud Forward design pattern requires three different types of virtual machi
 
 10.  Select **n2-standard-2** (follow the corresponding compute sizing listed for each virtual machine in the table at the beginning of this section.)
 
-     ![vm-dc1](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-dc1.png)
+     ![vm-dc1](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-dc1.png)
 
 11.  At Boot disk click **Change**
 
-     ![vm-boot-disk](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-boot-disk.png)
+     ![vm-boot-disk](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-boot-disk.png)
 
 12.  Click **Public Image** tab
 
@@ -808,17 +808,17 @@ The Cloud Forward design pattern requires three different types of virtual machi
 
 17.  Click **Select**
 
-     ![vm-public-images](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-public-images.png)
+     ![vm-public-images](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-public-images.png)
 
 18.  Expand the **management, security, disks, networking, sole tenancy** blade
 
-     ![vm-blade](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-blade.png)
+     ![vm-blade](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-blade.png)
 
 19.  Expand **Networking** section and input the corresponding virtual machine network tags: **dc dns**
 
 20.  Input a host name as listed in the table at the beginning of this section: dc1.ctx.lab
 
-     ![dc-dns-networking](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_dc-dns-networking.png)
+     ![dc-dns-networking](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_dc-dns-networking.png)
 
 21.  Select the network created in the [Virtual Private Cloud](#_Steps_to_create) section: **citrixcloudnetwork**
 
@@ -836,11 +836,11 @@ The Cloud Forward design pattern requires three different types of virtual machi
 
 26.  Click **Done**
 
-     ![dc-dns-network-interface](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_dc-dns-network-interface.png)
+     ![dc-dns-network-interface](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_dc-dns-network-interface.png)
 
 27.  Click **Create**
 
-     ![dc-dns-network-interface-create](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_dc-dns-network-interface-create.png)
+     ![dc-dns-network-interface-create](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_dc-dns-network-interface-create.png)
 
 28.  Once the machine has been created and powered on, the next step is to create a default username and password.
 
@@ -850,11 +850,11 @@ The Cloud Forward design pattern requires three different types of virtual machi
 
         There are multiple ways to access the 'Set Windows password function' - here's one of them, and it starts by clicking the VM instance to view instance details.
 
-        ![vm-instances-view-details](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-instances-view-details.png)
+        ![vm-instances-view-details](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-instances-view-details.png)
 
 29.  Under the VM instance details section, click **Set Windows password**
 
-     ![vm-instances-details](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-instances-details.png)
+     ![vm-instances-details](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-instances-details.png)
 
 30.  Input the username **admin**
 
@@ -864,7 +864,7 @@ The Cloud Forward design pattern requires three different types of virtual machi
         >
         > If during creation of the password you are prompted an error "***Windows password could not be set. Try again. If you just created this instance, allow 10 minutes for it to be ready.***", we recommend allowing the suggested time before trying to create the password.
 
-        ![vm-set-new-password](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-set-new-password.png)
+        ![vm-set-new-password](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-set-new-password.png)
 
 32.  By default, a unique new password is auto generated by Google Cloud and cannot be changed from the console. If a custom password is required, you need do the password change within the Windows operating system.
 
@@ -872,11 +872,11 @@ The Cloud Forward design pattern requires three different types of virtual machi
 
 34.  Click **Close**
 
-     ![vm-set-new-windows-password](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-set-new-windows-password.png)
+     ![vm-set-new-windows-password](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-set-new-windows-password.png)
 
      After following steps 1 through 35 to build each VM as indicated in the table at the beginning of this section. The results should be similar to the image:
 
-     ![vm-instances-tabel-result](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-instances-tabel-result.png)
+     ![vm-instances-tabel-result](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-instances-tabel-result.png)
 
 35.  If you are unable to view the Network tags column, click the column display option icon
 
@@ -884,7 +884,7 @@ The Cloud Forward design pattern requires three different types of virtual machi
 
 37.  Click OK
 
-     ![vm-network-tags](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-network-tags.png)
+     ![vm-network-tags](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-network-tags.png)
 
 ## 5 Configure access to virtual machine consoles
 
@@ -918,11 +918,11 @@ Configuring Identity Aware Proxy is a two-step process: the first step is to con
 
 3.  Click **Firewall**
 
-     ![vpc-networks-firewall](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-firewall.png)
+     ![vpc-networks-firewall](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-firewall.png)
 
 4.  Click **Create Firewall Rule**
 
-     ![vpc-networks-firewall-rule](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-firewall-rule.png)
+     ![vpc-networks-firewall-rule](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vpc-networks-firewall-rule.png)
 
 5.  Input a unique name for the Firewall rule: **allow-iap-access**
 
@@ -932,7 +932,7 @@ Configuring Identity Aware Proxy is a two-step process: the first step is to con
 
 8.  Select **Ingress** traffic
 
-     ![vm-ingress-create-firewall-rule](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-ingress-create-firewall-rule.png)
+     ![vm-ingress-create-firewall-rule](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-ingress-create-firewall-rule.png)
 
 9.  In the Targets field, select **All instances in the network**
 
@@ -944,11 +944,11 @@ Configuring Identity Aware Proxy is a two-step process: the first step is to con
 
 13.  Click **Create**
 
-     ![vm-ingress-ip-ranges](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-ingress-ip-ranges.png)
+     ![vm-ingress-ip-ranges](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-ingress-ip-ranges.png)
 
 14.  Validate the Firewall rule is created
 
-     ![vm-ingress-firewall-validation](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-ingress-firewall-validation.png)
+     ![vm-ingress-firewall-validation](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_vm-ingress-firewall-validation.png)
 
 #### 5.1 Enable and Configure the Identity Aware Proxy
 
@@ -958,15 +958,15 @@ Configuring Identity Aware Proxy is a two-step process: the first step is to con
 
 3.  Click **Identity-Aware Proxy**
 
-    ![identity-aware-proxy](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_identity-aware-proxy.png)
+    ![identity-aware-proxy](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_identity-aware-proxy.png)
 
 4.  If prompted, click **Enable API**
 
-    ![identity-aware-proxy-enable-api](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_identity-aware-proxy-enable-api.png)
+    ![identity-aware-proxy-enable-api](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_identity-aware-proxy-enable-api.png)
 
 5.  Click **Go to Identity-Aware Proxy**
 
-    ![identity-aware-proxy-go-to](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_identity-aware-proxy-go-to.png)
+    ![identity-aware-proxy-go-to](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_identity-aware-proxy-go-to.png)
 
     The following screen appears after clicking:
 
@@ -976,7 +976,7 @@ Configuring Identity Aware Proxy is a two-step process: the first step is to con
 
 8.  Click **Add Principal**
 
-    ![identity-aware-proxy-add-principal](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_identity-aware-proxy-add-principal.png)
+    ![identity-aware-proxy-add-principal](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_identity-aware-proxy-add-principal.png)
 
 9.  To grant users, groups, or service accounts access to the resources, specify their email addresses in the New principals field. If you are the only user testing this feature, you can enter your email address.
 
@@ -984,11 +984,11 @@ Configuring Identity Aware Proxy is a two-step process: the first step is to con
 
 11.  Select **IAP-secured Tunnel User**
 
-     ![iap-secured-tunnel-user](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-secured-tunnel-user.png)
+     ![iap-secured-tunnel-user](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-secured-tunnel-user.png)
 
 12.  Click **Save**
 
-     ![iap-add-principals](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-add-principals.png)
+     ![iap-add-principals](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-add-principals.png)
 
 ### 5.2 Install, configure, and use IAP Desktop for remote console access
 
@@ -996,33 +996,33 @@ Once the Identity Aware Proxy has been enabled, the next step is to connect to t
 
 1.  Click **Sign in with Google**
 
-    ![iap-desktop](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-desktop.png)
+    ![iap-desktop](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-desktop.png)
 
 2.  Select the account associated with the Google Cloud. Depending on your account configuration, you must provide Username, Password, and a token.
 
-    ![iap-choose-account](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-choose-account.png)
+    ![iap-choose-account](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-choose-account.png)
 
 3.  Upon a successful authentication, you are prompted with the following permission window. Select the **See, edit, configure and delete your Google Cloud Platform data**
 
 4.  Click **Continue**
 
-    ![iap-desktop-access](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-desktop-access.png)
+    ![iap-desktop-access](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-desktop-access.png)
 
 5.  Select the **Google Cloud Project**
 
 6.  Click **Add Project**
 
-    ![iap-add-project](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-add-project.png)
+    ![iap-add-project](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-add-project.png)
 
 7.  All the machines created under the **Deploying Google Compute Instance** section earlier are enumerated:
 
-    ![iap-project-explorer](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-project-explorer.png)
+    ![iap-project-explorer](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-project-explorer.png)
 
 8.  To log in to the virtual machine instance, right Click on the target virtual machine
 
 9.  Select **Connect as user…**
 
-    ![iap-connect-as-user](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-connect-as-user.png)
+    ![iap-connect-as-user](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-connect-as-user.png)
 
 10.  Click **User a different account**
 
@@ -1032,11 +1032,11 @@ Once the Identity Aware Proxy has been enabled, the next step is to connect to t
 
 13.  Click **OK**
 
-     ![iap-enter-your-credentials](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-enter-your-credentials.png)
+     ![iap-enter-your-credentials](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-enter-your-credentials.png)
 
 14.  Upon successful authentication, you can log in to the virtual machine
 
-     ![iap-remote-desktop-ssh](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-remote-desktop-ssh.png)
+     ![iap-remote-desktop-ssh](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_iap-remote-desktop-ssh.png)
 
 Once you have completed this goal (using IAP, a jump box, or some other technique), you have a functional method for connecting to the remote consoles of your virtual machines. In the next section, you use this method to configure the virtual machines into a functional Citrix Cloud resource location.
 
@@ -1062,49 +1062,49 @@ This guide deploys a new Microsoft Active Directory on Google Cloud and integrat
 
 1.  log in to the **DC1** virtual machine using the local administrator credentials generated in the previous step
 
-     ![log in to DC1](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_log in-to-dc1.png)
+     ![log in to DC1](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_log in-to-dc1.png)
 
 2.  Click **Start** menu
 
 3.  Click **Server Manager**
 
-     ![Click server manager](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-server-manager.png)
+     ![Click server manager](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-server-manager.png)
 
 4.  Click **Add roles and features**
 
-     ![Add roles and features](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-roles-and-features.png)
+     ![Add roles and features](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-roles-and-features.png)
 
 5.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_before-you-begin.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_before-you-begin.png)
 
 6.  Accept the default option, click **Next**
 
-     ![click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_select-installation-type.png)
+     ![click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_select-installation-type.png)
 
 7.  Select the destination server on which the role is installed. Confirm the IP address displayed is that of the selected server. Else, close the Server Manager and retry. Click Next.
 
-     ![Select destination server](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_select-destination-server.png)
+     ![Select destination server](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_select-destination-server.png)
 
 8.  The basic requirement to promote this server into a domain controller is Active Directory Domain Services.
 
-     ![Select server tools](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_select-server-tools.png)
+     ![Select server tools](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_select-server-tools.png)
 
 9.  When prompted, click **Add Features**
 
-     ![Add features](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_add-features-active-directory-domain-services.png)
+     ![Add features](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_add-features-active-directory-domain-services.png)
 
 10.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-server-tools.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-server-tools.png)
 
 11.  The features for this role are ready to be installed. The basic features required for this service are selected by default. Click **Next**.
 
-     ![Select features](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_select-features-click-next.png)
+     ![Select features](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_select-features-click-next.png)
 
 12.  Click **Next** to continue
 
-     ![Active Directory Domain Services](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_active-directory-domain-srevice.png)
+     ![Active Directory Domain Services](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_active-directory-domain-srevice.png)
 
 13.  Click **Install**
 
@@ -1112,34 +1112,34 @@ This guide deploys a new Microsoft Active Directory on Google Cloud and integrat
      >
      >Select the "Restart the destination server automatically if required" option.
 
-     ![Click install](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_confirm-installation-selection.png)
+     ![Click install](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_confirm-installation-selection.png)
 
 14.  At this point the installation starts
 
-     ![Installation progress](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_installation-progress.png)
+     ![Installation progress](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_installation-progress.png)
 
 15.  Upon successful installation, the installation process displays **Configuration required. Installation succeeded on dc1**
 
 16.  Click Close to exit out of the **Add Roles and Features** installation process
 
-     ![Click close](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-close-to-exit-out-the-add-roles-and-features.png)
+     ![Click close](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-close-to-exit-out-the-add-roles-and-features.png)
 
 17.  Before you start the process of promoting the server to Domain Controller, you must configure a complex local administrator password to meet the password complexity requirement.
 
 18.  Right-click the Windows menu and select **Windows PowerShell (Admin)**
 
-     ![Select Windows PowerShell](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_select-windows-powershell.png)
+     ![Select Windows PowerShell](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_select-windows-powershell.png)
 
 19.  User Account Control prompts you for permission, Click **Yes**
 
-     ![User account control prompt](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_user-account-control-prompt.png)
+     ![User account control prompt](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_user-account-control-prompt.png)
 
 20.  Input the following command in the Windows PowerShell console, press **Enter** to execute the command:
      **net user Administrator P@$$w0rd!@# /passwordreq:yes**
 
 21.  Click the close Windows icon to exit out of the Windows PowerShell console
 
-     ![Windows PowerShell console](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_windows-powershell-console.png)
+     ![Windows PowerShell console](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_windows-powershell-console.png)
 
 ### 6.2 Configure the Primary Domain Controller
 
@@ -1147,7 +1147,7 @@ This guide deploys a new Microsoft Active Directory on Google Cloud and integrat
 
 2.  Click **Promote this server to a domain controller**
 
-     ![Promote this server to a domain controller](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_promote-server-domain-controller.png)
+     ![Promote this server to a domain controller](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_promote-server-domain-controller.png)
 
 3.  Select **Add a new forest**
 
@@ -1155,7 +1155,7 @@ This guide deploys a new Microsoft Active Directory on Google Cloud and integrat
 
 5.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_deployment-configuration.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_deployment-configuration.png)
 
 6.  Specify a new Directory Services Restore Mode (DSRM) password that meets Microsoft Windows password complexity requirement: **P@$$w0rd!@#**
 
@@ -1167,31 +1167,31 @@ This guide deploys a new Microsoft Active Directory on Google Cloud and integrat
 
 8.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_domain-controller-option.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_domain-controller-option.png)
 
 9.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_dns-option.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_dns-option.png)
 
 10.  The NetBIOS domain name automatically populates, you can change the name if necessary
 
 11.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_additional-options.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_additional-options.png)
 
 12.  Accept the default folder path and click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_paths.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_paths.png)
 
 13.  Review your selections and click **Next**
 
-     ![Review options](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_review-options.png)
+     ![Review options](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_review-options.png)
 
 14.  The Domain Controller promotion wizard does a prerequisite validation and upon successful it displays **All prerequisite checks passed successfully**. Once completed, click **Install**
 
 15.  Click **Install** to complete the Domain Controller promotion process.
 
-     ![Click install](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_prerequistites-check.png)
+     ![Click install](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_prerequistites-check.png)
 
 ### 6.3 Configure the Secondary Domain Controller
 
@@ -1203,7 +1203,7 @@ This guide deploys a new Microsoft Active Directory on Google Cloud and integrat
 
 2.  Click **Promote this server to a domain controller**
 
-     ![Promote this server to a domain controller](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_promote-server-domain-controller-dc2.png)
+     ![Promote this server to a domain controller](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_promote-server-domain-controller-dc2.png)
 
 3.  Select option **Add a domain controller to an existing domain**
 
@@ -1211,7 +1211,7 @@ This guide deploys a new Microsoft Active Directory on Google Cloud and integrat
 
 5.  Click **Select**
 
-     ![Click select](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_deployment-configuration-dc2.png)
+     ![Click select](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_deployment-configuration-dc2.png)
 
 6.  Input the Domain Administrator username: **ctx\administrator**
 
@@ -1219,17 +1219,17 @@ This guide deploys a new Microsoft Active Directory on Google Cloud and integrat
 
 8.  Click **OK**
 
-     ![Click ok](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_credentials-for-deployment-operation.png)
+     ![Click ok](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_credentials-for-deployment-operation.png)
 
 9.  Another window pops up. Select the **ctx.lab** domain
 
 10.  Click **OK**
 
-     ![Click ok](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-ctx-lab.png)
+     ![Click ok](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-ctx-lab.png)
 
 11.  Back at the Deployment Configuration page, click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_deployment-configuration-click-next.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_deployment-configuration-click-next.png)
 
 12.  Specify a new Directory Services Restore Mode (DSRM) password that meets the Microsoft Windows password complexity requirement: **P@$$w0rd!@#**
 
@@ -1241,31 +1241,31 @@ This guide deploys a new Microsoft Active Directory on Google Cloud and integrat
 
 14.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_domain-controller-option-click-next.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_domain-controller-option-click-next.png)
 
 15.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_dns-option-click-next.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_dns-option-click-next.png)
 
 16.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_additional-options-click-next.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_additional-options-click-next.png)
 
 17.  Accept the default folder path and click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_default-folder-path-click-next.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_default-folder-path-click-next.png)
 
 18.  Review your selection and click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_review-options-click-next.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_review-options-click-next.png)
 
 19.  The Domain Controller promotion wizard does a prerequisite validation, and upon successful validation, it displays **All prerequisite checks passed successfully**. Once completed, click **Install**
 
-     ![Click install](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_prerequistites-validation-click-install.png)
+     ![Click install](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_prerequistites-validation-click-install.png)
 
 20.  Click **Close** to restart the Secondary Domain Controller to apply the configuration
 
-     ![Click close](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_active-directory-domain-configuration-click-close.png)
+     ![Click close](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_active-directory-domain-configuration-click-close.png)
 
 ### 6.4 Create a new test User Account
 
@@ -1277,13 +1277,13 @@ A domain user account is recommended to be used to assign and launch any resourc
 
      Password: P@$$w0rd!@#
 
-     ![Log in to DC1](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_login-to-dc1-virtual-machine.png)
+     ![Log in to DC1](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_login-to-dc1-virtual-machine.png)
 
 2.  Click the Tools menu located in the top right-hand corner of the Server Manager console
 
 3.  Select Active Directory Users and Computers
 
-     ![Select Active Directory Users and Computers](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_select-active-directory-users-computers.png)
+     ![Select Active Directory Users and Computers](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_select-active-directory-users-computers.png)
 
 4.  Expand the ctx.lab domain
 
@@ -1293,7 +1293,7 @@ A domain user account is recommended to be used to assign and launch any resourc
 
 7.  Select and click **User**
 
-     ![Click user](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_select-and-click-user.png)
+     ![Click user](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_select-and-click-user.png)
 
 8.  Input First Name: **user**
 
@@ -1303,7 +1303,7 @@ A domain user account is recommended to be used to assign and launch any resourc
 
 11.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_user-details-click-next.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_user-details-click-next.png)
 
 12.  Input password: P@$$w0rd!@#
 
@@ -1313,15 +1313,15 @@ A domain user account is recommended to be used to assign and launch any resourc
 
 15.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_user-login-click-next.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_user-login-click-next.png)
 
 16.  Review the user details and click **Finish**
 
-     ![Click finish](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_user-creation-click-finish.png)
+     ![Click finish](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_user-creation-click-finish.png)
 
 17.  Confirm that the user creation is successful
 
-     ![Successful](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_user-creation-successful.png)
+     ![Successful](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_user-creation-successful.png)
 
 ### 6.5 Add extra VMs to Active Directory
 
@@ -1333,23 +1333,23 @@ Before we can begin configuring the other VMs in our environment, they need to b
 
 1.  Log in to the **CC1** virtual machine using the local administrator credentials generated in the previous step
 
-     ![Log in to the CC1](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_login-to-cc1-vm.png)
+     ![Log in to the CC1](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_login-to-cc1-vm.png)
 
 2.  Launch Server Manager and click **Local Server**
 
 3.  Click **Workgroup**
 
-     ![Click workgroup](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-workgroup.png)
+     ![Click workgroup](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-workgroup.png)
 
 4.  Click **Change**
 
-     ![Click change](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-change.png)
+     ![Click change](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-change.png)
 
 5.  Select the **Domain** option and input the domain name: **ctx.lab**
 
 6.  Click **OK**
 
-     ![Click ok](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_select-domain-click-ok.png)
+     ![Click ok](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_select-domain-click-ok.png)
 
 7.  Input the domain administrator username: **ctx\administrator**
 
@@ -1357,23 +1357,23 @@ Before we can begin configuring the other VMs in our environment, they need to b
 
 9.  Click **OK**
 
-     ![Click ok](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_domain-change-click-ok.png)
+     ![Click ok](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_domain-change-click-ok.png)
 
 10.  Upon successful authentication, you receive a messaging welcoming you to the domain. Click **OK**
 
-     ![Click ok](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_welcome-message-click-ok.png)
+     ![Click ok](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_welcome-message-click-ok.png)
 
 11.  Click **OK** again to restart the computer
 
-     ![Click ok](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_restart-computer-clcik-ok.png)
+     ![Click ok](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_restart-computer-clcik-ok.png)
 
 12.  Click **Close**
 
-     ![Click close](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_system-properties-click-close.png)
+     ![Click close](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_system-properties-click-close.png)
 
 13.  Click **Restart Now**
 
-     ![Click restart](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-restart-now.png)
+     ![Click restart](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-restart-now.png)
 
 Repeat **step 1 through 13** for the second Cloud Connector (CC2) and the Server VDA Master Image.
 
@@ -1401,17 +1401,17 @@ The goal of this first task is to create the resource location we are installing
 
 4.  Click **Sign In**
 
-     ![Sign in](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_resource-location-sign-in.png)
+     ![Sign in](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_resource-location-sign-in.png)
 
 5.  Enter the verification code provided by your authenticator app
 
 6.  Click **Verify**
 
-     ![Click verify](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_resource-location-verify.png)
+     ![Click verify](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_resource-location-verify.png)
 
 7.  Select your Citrix Cloud account when a **Select a Customer** screen is presented
 
-     ![Select customer](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_resource-location-select-customer.png)
+     ![Select customer](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_resource-location-select-customer.png)
 
 8.  Click **Edit or Add New** under the Resource Location section.
 
@@ -1419,13 +1419,13 @@ The goal of this first task is to create the resource location we are installing
      >
      > A single Resource Location is created by default.
 
-     ![Edit or Add New](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_resource-location-edit-add-new.png)
+     ![Edit or Add New](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_resource-location-edit-add-new.png)
 
 9.  Click the three horizontal ellipses on the top left corner of the My Resource Location
 
 10.  Select **Manage Resource Location**
 
-     ![Manage resource location](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_manage-resource-location.png)
+     ![Manage resource location](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_manage-resource-location.png)
 
 11.  Input a unique name for the resource location: **Server VDA – Google US-West1**
 
@@ -1435,11 +1435,11 @@ The goal of this first task is to create the resource location we are installing
      >
      > By default, Citrix Cloud installs updates on each connector, one at a time, when these updates become available. To ensure that updates are installed quickly without unduly affecting your users' Citrix Cloud experience, you can schedule these updates for a preferred schedule.
 
-     ![Manage resource location](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-confirm-manage-resource.png)
+     ![Manage resource location](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-confirm-manage-resource.png)
 
 13.  The result should be similar to the image:
 
-     ![Manage resource location result](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_manage-resource-location-result.png)
+     ![Manage resource location result](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_manage-resource-location-result.png)
 
 #### Citrix Cloud Connector
 
@@ -1459,7 +1459,7 @@ Password: **P@$$w0rd!@#**
 
 1.  Log in to the **CC1** virtual machine using the domain credentials provided
 
-     ![Log in to the cc1](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_login-to-cc1.png)
+     ![Log in to the cc1](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_login-to-cc1.png)
 
 2.  Navigate to [https://cloud.citrix.com](https://cloud.citrix.com) and log in to the Citrix Cloud console using your username
 
@@ -1467,17 +1467,17 @@ Password: **P@$$w0rd!@#**
 
 4.  Click **Sign In**
 
-     ![Sign in](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_citrix-cloud-signin.png)
+     ![Sign in](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_citrix-cloud-signin.png)
 
 5.  Enter the verification code provided by your authenticator app
 
 6.  Click **Verify**
 
-     ![Verify](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_citrix-cloud-verify.png)
+     ![Verify](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_citrix-cloud-verify.png)
 
 7.  Select your Citrix Cloud account when a **Select a Customer** screen is presented
 
-     ![Select customer](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_citrix-cloud-select-customer.png)
+     ![Select customer](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_citrix-cloud-select-customer.png)
 
 8.  Click **Edit or Add New** under the Resource Location section.
 
@@ -1485,49 +1485,49 @@ Password: **P@$$w0rd!@#**
      >
      > A single Resource Location is created by default.
 
-     ![dit or Add New](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_citrix-cloud-edt-or-add-location.png)
+     ![dit or Add New](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_citrix-cloud-edt-or-add-location.png)
 
 9.  Click **Cloud Connectors**
 
-     ![Cloud Connectors](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-cloud-connectors.png)
+     ![Cloud Connectors](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-cloud-connectors.png)
 
 10.  Click **Download**
 
-     ![Download](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-connectors-download.png)
+     ![Download](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-connectors-download.png)
 
 11.  Click **Save**
 
-     ![Save](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-cloud-connectors-save.png)
+     ![Save](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-cloud-connectors-save.png)
 
 12.  Click **Open Folder**
 
-     ![Open folder](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-cloud-connectors-opne-folder.png)
+     ![Open folder](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-cloud-connectors-opne-folder.png)
 
 13.  Right-click the executable and select **Run as administrator**
 
-     ![Run as administrator](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-connectors-run-administrator.png)
+     ![Run as administrator](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-connectors-run-administrator.png)
 
 14.  Click **Sign In**, provide username and password if prompted
 
-     ![Sign in](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-connectors-signin.png)
+     ![Sign in](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-connectors-signin.png)
 
 15.  Click the drop-down and select the corresponding Citrix Cloud Organization ID
 
 16.  Click **Install**
 
-     ![Install](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-connectors-install.png)
+     ![Install](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-connectors-install.png)
 
 17.  The installation begins and displays the progress
 
-     ![Installing](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_displays-the-progress.png)
+     ![Installing](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_displays-the-progress.png)
 
 18.  Once the installation completes, the installer does a final connectivity check to verify communication between the Cloud Connector and Citrix Cloud.
 
-     ![installation completes](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_testing-service-connectivity.png)
+     ![installation completes](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_testing-service-connectivity.png)
 
 19.  The following screen is displayed once the connectivity test is successful. Click **Close**
 
-     ![connectivity test is successful](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_conectivity-test-successfull.png)
+     ![connectivity test is successful](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_conectivity-test-successfull.png)
 
 Repeat the step **1 through 19** for the second Cloud Connector (CC2).
 
@@ -1537,7 +1537,7 @@ Once you've installed Citrix Cloud Connectors into your Citrix Cloud tenant, you
 
 Navigate and click the appropriate resource location. You should see your Cloud Connectors, they should be listed in the correct resource location, and they should show a green status:
 
-![Verify](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-connectors-verify.png)
+![Verify](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_cloud-connectors-verify.png)
 
 Now that you've successfully created and initialized your Citrix Cloud resource location on the Google Cloud, it's time to configure the Virtual Apps and Desktops service.
 
@@ -1553,19 +1553,19 @@ The Citrix Virtual Apps and Desktops service (commonly referred to as "CVADS" fo
 
 2.  Click the hamburger menu located on the top right section
 
-    ![IAP-secured Web App User](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_hamburger-menu.png)
+    ![IAP-secured Web App User](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_hamburger-menu.png)
 
 3.  Select **My Services**
 
 4.  Click **Virtual Apps and Desktops**
 
-    ![Virtual Apps and Desktops](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-virtual-apps-desktops.png)
+    ![Virtual Apps and Desktops](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-virtual-apps-desktops.png)
 
 5.  Click **Manage** to access the Virtual Apps and Desktops Service console
 
 6.  You can now view the Virtual Apps and Desktops Service options
 
-    ![view the Virtual Apps and Desktops Service](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_view-virtualapps-desktops-service.png )
+    ![view the Virtual Apps and Desktops Service](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_view-virtualapps-desktops-service.png )
 
 ### 8.2 Configure the Hosting Connection and Resources
 
@@ -1573,11 +1573,11 @@ The next step is to configure a hosting connection to allow Citrix Cloud to mana
 
 1.  Click Hosting
 
-    ![Click Hosting](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-hosting.png)
+    ![Click Hosting](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-hosting.png)
 
 2.  Click Add Connection and Resources
 
-    ![Click Add Connection](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-connection-resources.png)
+    ![Click Add Connection](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-connection-resources.png)
 
 3.  Click the drop-down and select **Google Cloud Platform**
 
@@ -1593,7 +1593,7 @@ The next step is to configure a hosting connection to allow Citrix Cloud to mana
 
 9.  Click **Next**
 
-    ![Click Next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next.png)
+    ![Click Next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next.png)
 
 10.  The project field defaults to your Google Project. If not, click the drop-down list and select the corresponding Google Project
 
@@ -1601,7 +1601,7 @@ The next step is to configure a hosting connection to allow Citrix Cloud to mana
 
 12.  Click **Next**
 
-     ![Click Next12](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next12.png)
+     ![Click Next12](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next12.png)
 
 13.  Input a unique name for the network resource being created: **GCPNetwork**
 
@@ -1611,21 +1611,21 @@ The next step is to configure a hosting connection to allow Citrix Cloud to mana
 
 16.  Click **Next**
 
-     ![Click Next16](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next16.png)
+     ![Click Next16](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next16.png)
 
 17.  Accept the default option and click **Next**
 
-     ![Click Next17](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next17.png)
+     ![Click Next17](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next17.png)
 
 18.  Review and confirm the connection parameters
 
 19.  Click **Finish**
 
-     ![Click finish](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish.png)
+     ![Click finish](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish.png)
 
       The result should be similar to the image:
 
-     ![Click result](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_rusult.png)
+     ![Click result](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_rusult.png)
 
 Now that you've got a functional hosting connection, the next step is to prepare the Citrix Virtual Delivery Agent to execute the workloads.
 
@@ -1639,45 +1639,45 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
     Password: **P@$$w0rd!@#**
 
-     ![connect as user](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_connect-as-user.png)
+     ![connect as user](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_connect-as-user.png)
 
 2.  Navigate to [https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/product-software/citrix-virtual-apps-and-desktops-2106.html](https://www.citrix.com/downloads/citrix-virtual-apps-and-desktops/product-software/citrix-virtual-apps-and-desktops-2106.html)
 
-     ![Navigate to](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_navigate-to.png)
+     ![Navigate to](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_navigate-to.png)
 
 3.  You need a Citrix account to log in and download the Multi-session OS Virtual Delivery Agent. If you do not have a Citrix account, you can choose **Create Citrix Account**
 
-     ![Create Citrix Account](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-citrix-account.png)
+     ![Create Citrix Account](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-citrix-account.png)
 
 4.  Upon successful login, download the Multi-session OS Virtual Delivery Agent
 
-     ![download Virtual Delivery Agent](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_download-virtual-delivery-agent.png)
+     ![download Virtual Delivery Agent](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_download-virtual-delivery-agent.png)
 
 5.  Click **Save**
 
-     ![click save](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-save.png)
+     ![click save](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-save.png)
 
 6.  Click **Open Folder**
 
-     ![click open folder](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-open-folder.png)
+     ![click open folder](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-open-folder.png)
 
 7.  Right-click the VDA server software installer and select **Run as administrator**
 
-     ![Run administrator](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_run-administrator.png)
+     ![Run administrator](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_run-administrator.png)
 
 8.  Select **Create a master MCS image**
 
 9.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3.png)
 
 10.  Accept the default options and click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_accept-default-options-click-next.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_accept-default-options-click-next.png)
 
 11.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-11.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-11.png)
 
 12.  Input the first Cloud Connector fully qualified domain name: **cc1.ctx.lab**
 
@@ -1685,7 +1685,7 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 14.  Click **Add**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-8.3-14.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-8.3-14.png)
 
 15.  Input the second Cloud Connector fully qualified domain name: **cc2.ctx.lab**
 
@@ -1693,21 +1693,21 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 17.  Click **Add**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-8.3-17.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-8.3-17.png)
 
 18.  Confirm both the Cloud Connectors are added successfully
 
 19.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-19.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-19.png)
 
 20.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-20.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-20.png)
 
 21.  Accept the default firewall setting. Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-21.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-21.png)
 
 22.  Review the summary screen. Click **Install**
 
@@ -1715,37 +1715,37 @@ For this Deployment and Configuration Guide, we're going to build your first non
      >
      > The installer requires multiple reboots
 
-     ![Click install](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-install.png)
+     ![Click install](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-install.png)
 
 23.  Uncheck the **Collect diagnostic information** option
 
 24.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-24.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-24.png)
 
 25.  Click **Finish**. The installer reboots the machine to complete the installation process. Continue to shut down the machine.
 
-     ![Click finish](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish-8.3-25.png)
+     ![Click finish](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish-8.3-25.png)
 
 ### 8.4 Create Machine Catalogs
 
 1.  Click **Machine Catalogs**
 
-     ![Click machine catalogs](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-machine-catalogs.png)
+     ![Click machine catalogs](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-machine-catalogs.png)
 
 2.  Click **Create Machine Catalog**
 
-     ![Create machine catalogs](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_createmachine-catalogs.png)
+     ![Create machine catalogs](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_createmachine-catalogs.png)
 
 3.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-3.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-3.png)
 
 4.  Select **Multi-session OS**
 
 5.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-5.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-5.png)
 
 6.  Select **Machines that are power managed (for example, virtual machines or blade PCs)**
 
@@ -1753,13 +1753,13 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 8.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-8.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-8.png)
 
 9.  Click your master image: **mcs**
 
 10.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-10.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-10.png)
 
 11.  How many virtual machines do you want to create: 2
 
@@ -1767,17 +1767,17 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 13.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-13.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-13.png)
 
 14.  Input the account naming scheme: **VDA##**
 
 15.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-15.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-15.png)
 
 16.  Click **Enter credentials**
 
-     ![Click enter credentials](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-enter-credentials.png)
+     ![Click enter credentials](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-enter-credentials.png)
 
 17.  Input username: **ctx\administrator**
 
@@ -1785,11 +1785,11 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 19.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-19.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-19.png)
 
 20.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-20.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-20.png)
 
 21.  Input a unique Machine catalog name: **GCP – Hosted Apps Catalog**
 
@@ -1797,75 +1797,75 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 23.  Click **Finish**
 
-     ![Click finish](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish-8.4-23.png)
+     ![Click finish](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish-8.4-23.png)
 
 24.  Click Hide progress to return to the Citrix Cloud Console
 
-     ![Click hide progress](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-hide-progress.png)
+     ![Click hide progress](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-hide-progress.png)
 
 25.  Allow the Machine Catalog creation process to complete
 
-     ![Allow the Machine Catalog creation process](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_allow-machine-catalog-creation-process.png)
+     ![Allow the Machine Catalog creation process](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_allow-machine-catalog-creation-process.png)
 
 26.  Double click on the Machine Catalog to view the virtual machines
 
-     ![View virtual machines](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_view-virtual-machines.png)
+     ![View virtual machines](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_view-virtual-machines.png)
 
 27.  Select both the virtual machines
 
 28.  Click **Start** to power on the machines
 
-     ![Click Start to power on the machines](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_clickstart-power-on-the-machines.png)
+     ![Click Start to power on the machines](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_clickstart-power-on-the-machines.png)
 
 29.  Click **Yes**
 
-     ![Click yes](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-yes-8.4-29.png)
+     ![Click yes](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-yes-8.4-29.png)
 
 30.  The **Power State** column displays **On**
 
 31.  The **Registration State** column displays **Registered**
 
-     ![Registration state](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_registration-state-column.png)
+     ![Registration state](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_registration-state-column.png)
 
 32.  Navigate to Google Cloud Console. Select **Compute Engine** and **VM Instances**
 
-     ![Google Cloud Console](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_navigate-to-google-cloud-console.png)
+     ![Google Cloud Console](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_navigate-to-google-cloud-console.png)
 
 33.  The **vda01** and **vda02** virtual machines are now successfully created in the **us-west1-c** zone.
 
-     ![virtual machines](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_virtual-machines-successfully-created.png)
+     ![virtual machines](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_virtual-machines-successfully-created.png)
 
 ### 8.5 Create Delivery Groups
 
 1.  Click **Delivery Groups**
 
-     ![Click delivery groups](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-delivery-groups.png)
+     ![Click delivery groups](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-delivery-groups.png)
 
 2.  Click **Create Delivery Group**
 
-     ![Create delivery groups](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_create-delivery-group.png)
+     ![Create delivery groups](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_create-delivery-group.png)
 
 3.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.5-3.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.5-3.png)
 
 4.  Increase the value to **2**
 
 5.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.5-5.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.5-5.png)
 
 6.  Select the **Allow any authenticated users to use this delivery group** option
 
 7.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.5-7.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.5-7.png)
 
 8.  Click **Add** drop-down menu
 
 9.  Select and click **From Start menu…**
 
-     ![Click from start menu](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-from-start-menu.png)
+     ![Click from start menu](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-from-start-menu.png)
 
 10.  Allow the applications to be enumerated from the Server VDAs, scroll down, and select **Notepad**
 
@@ -1873,17 +1873,17 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 12.  Click **OK**
 
-     ![Click ok](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-ok-8.5-12.png)
+     ![Click ok](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-ok-8.5-12.png)
 
 13.  Review your application selection
 
 14.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next8.5-14.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next8.5-14.png)
 
 15.  Click **Add** to configure Published Desktop
 
-     ![Click add](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-configure-published-desktop.png)
+     ![Click add](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-configure-published-desktop.png)
 
 16.  Input a unique Display name: **Windows Shared Desktop**
 
@@ -1891,13 +1891,13 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 18.  Click **OK**
 
-     ![Click ok](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-ok-8.5-18.png)
+     ![Click ok](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-ok-8.5-18.png)
 
 19.  Review the Desktops configuration
 
 20.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.5-20.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.5-20.png)
 
 21.  Input unique Delivery Group name: **GCP-Hosted Apps Delivery Group**
 
@@ -1905,11 +1905,11 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 23.  Click **Finish**
 
-     ![Click finish](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish-8.5-23.png)
+     ![Click finish](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish-8.5-23.png)
 
 24.  Double click on the Delivery Group to view the virtual machines
 
-     ![Double click on the Delivery Group ](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_double-click-delivery-group.png)
+     ![Double click on the Delivery Group ](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_double-click-delivery-group.png)
 
 25.  The Delivery Group column displays the configured Delivery Group name
 
@@ -1917,7 +1917,7 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 27.  The **Registration State** column displays **Registered**
 
-     ![Delivery group registration state](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_delivery-group-registration-state.png)
+     ![Delivery group registration state](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_delivery-group-registration-state.png)
 
 ### 8.6 Configure Workspace UI and session proxy settings
 
@@ -1929,17 +1929,17 @@ This deployment guide uses the Citrix Gateway service to provide secure remote a
 
 2.  Click the hamburger menu located on the top right section
 
-     ![hamburger menu](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_hamburger-menu.png)
+     ![hamburger menu](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_hamburger-menu.png)
 
 3.  Select **Workspace Configuration**
 
-     ![Workspace configuration](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_select-workspace-configuration.png)
+     ![Workspace configuration](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_select-workspace-configuration.png)
 
 4.  If disabled, toggle on the Enable button
 
 5.  Click Edit to customize the Workspace URL
 
-     ![Workspace url](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-edit-customize-workspace-url.png)
+     ![Workspace url](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-edit-customize-workspace-url.png)
 
 6.  Input a unique Workspace URL of your choice: gcplab.cloud.com
 
@@ -1951,11 +1951,11 @@ This deployment guide uses the Citrix Gateway service to provide secure remote a
 
 8.  Click **Save**
 
-     ![Click save](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-save-workspace-configuration.png)
+     ![Click save](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-save-workspace-configuration.png)
 
 The result should be similar to the image:
 
-![Workspace configuration result](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_workspace-configuration-result.png)
+![Workspace configuration result](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_workspace-configuration-result.png)
 
 ## 9 Test published resource launch
 
@@ -1965,11 +1965,11 @@ The result should be similar to the image:
 
 3.  Click **Log On**
 
-     ![Click log on](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-log-on.png)
+     ![Click log on](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-log-on.png)
 
 4.  You are recommended to download and install the latest Citrix Workspace app or click **Use web browser** to use the HTML5 to start the application in a new browser tab
 
-     ![Use web browser](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-use-web-browser.png)
+     ![Use web browser](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-use-web-browser.png)
 
 5.  Expand **Apps**
 
@@ -1977,11 +1977,11 @@ The result should be similar to the image:
 
 7.  Choose the application you would like to launch (e.g., Notepad)
 
-     ![Choose the application](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_choose-the-application.png)
+     ![Choose the application](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_choose-the-application.png)
 
 8.  The publish application should launch on a separate browser tab
 
-     ![Publish application](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_publish-application.png)
+     ![Publish application](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_publish-application.png)
 
 9.  Expand **Desktops**
 
@@ -1989,8 +1989,8 @@ The result should be similar to the image:
 
 11.  Click Windows Shared Desktop to launch
 
-     ![Windows shared desktop to launch](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_click-windows-shared-desktop-launch.png)
+     ![Windows shared desktop to launch](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-windows-shared-desktop-launch.png)
 
 12.  The published desktop should launch on a separate browser tab
 
-     ![published desktop](/en-us/tech-zone/learn/media/deployment-guides_citrix-virtualization-on-google-cloud_published-desktop.png)
+     ![published desktop](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_published-desktop.png)
