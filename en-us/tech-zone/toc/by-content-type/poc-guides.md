@@ -11,6 +11,10 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 [Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
 
+## Citrix Content Collaboration
+
+[Citrix Workspace App for Microsoft Teams](/en-us/tech-zone/learn/poc-guides/citrix-workspace-app-for-microsoft-teams.html) - Learn how to enable the Citrix Workspace App for Microsoft Teams to enable your users to easily access their Citrix ShareFile documents and share them within Teams.
+
 ## Citrix Networking
 
 [nFactor for Citrix Gateway Authentication with Device Certificate](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-device-certificate.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Device Certificates.
@@ -39,7 +43,7 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 [Citrix Secure Internet Access with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html) - Learn how to set up Citrix Secure Internet Access within a Citrix Virtual Apps and Desktops environment that provides secure access to virtual desktops and applications, anywhere, from any device.
 
-## Citrix Secure Workspace Access
+## Citrix Secure Private Access
 
 [Secure Access to Azure-managed SaaS Applications and Citrix Secure Private Access](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Secure Private Access environment that provides enhanced security to Microsoft Azure SaaS Apps.
 
@@ -57,6 +61,8 @@ Learn firsthand, the functionality of the solution by following these guides wit
 
 [Citrix Virtual Apps and Desktops with Azure Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Azure Virtual Desktop (AVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the AVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
 
+[Citrix Workspace App for Microsoft Teams](/en-us/tech-zone/learn/poc-guides/citrix-workspace-app-for-microsoft-teams.html) - Learn how to enable the Citrix Workspace App for Microsoft Teams to enable your users to easily access their Citrix ShareFile documents and share them within Teams.
+
 [Getting Started with Citrix Virtual Apps and Desktop Service](/en-us/tech-zone/learn/poc-guides/cvads.html) - Learn how to get started with Citrix Virtual Apps and Desktop Service to deliver virtual apps and desktops to your end users while having the management plane hosted on Citrix Cloud.
 
 [Microsoft Azure Active Directory Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC](/en-us/tech-zone/learn/poc-guides/cvad-azuread-federation.html) - Learn how to use Microsoft Azure Active Directory as an identity provider for Citrix Virtual Apps and Desktops with Citrix ADC using SAML.
@@ -64,6 +70,12 @@ Learn firsthand, the functionality of the solution by following these guides wit
 [Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html) - Learn how to deliver the Citrix HDX Optimization for Microsoft Teams in a Citrix environment. The optimization offers clear, crisp high-definition video calls, audio-video or audio-only calls to and from other Teams users, optimized Teams users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
 
 [Remote PC Access with Citrix Virtual Desktops service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html) - Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from anywhere and on any device.
+
+## Citrix Workspace
+
+[Citrix Workspace App for Microsoft Teams](/en-us/tech-zone/learn/poc-guides/citrix-workspace-app-for-microsoft-teams.html) - Learn how to enable the Citrix Workspace App for Microsoft Teams to enable your users to easily access their Citrix ShareFile documents and share them within Teams.
+
+[Proof of Concept Guide - Use App Builder to roll out Citrix Podio-backed Broadcast and FAQ microapp templates to Citrix Workspace](/en-us/tech-zone/learn/poc-guides/app-builder.html) - Learn how to get started with Citrix App Builder and deploy Podio-backed Integrations to Workspace
 
 ## Security
 

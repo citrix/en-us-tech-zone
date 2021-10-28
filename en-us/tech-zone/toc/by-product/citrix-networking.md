@@ -118,3 +118,9 @@ Deployment guides provide step-by-step instruction on how to perform key tasks a
 [Citrix SD-WAN with Azure Virtual WAN](/en-us/tech-zone/build/deployment-guides/sdwan-azure-virtualwan.html) - Learn how to establish connectivity between SD-WAN and Azure Virtual WAN, and connect workloads on Azure with on-premises infrastructure.
 
 [Migrating Citrix ADM to Citrix ADM service](/en-us/tech-zone/build/deployment-guides/citrix-adm-service-migration.html) - Learn how to migrate your on-premises Citrix ADM (Application Delivery Management) to Citrix Cloud.
+
+## Build - Tech Papers
+
+Tech papers are deep dives into specific problem, technology or solution providing details, leading practices and architectural insights.
+
+[Best practices for Citrix ADC Deployments](/en-us/tech-zone/build/tech-papers/best-practices-citrix-adc-deployments.html) - Tech Paper focused on the steps that a Citrix ADC administrator should follow to deploy a new ADC instance with best practice settings.

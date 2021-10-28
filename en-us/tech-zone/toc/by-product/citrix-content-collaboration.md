@@ -5,6 +5,12 @@ layout: doc
 
 List of articles related to Citrix Content Collaboration.
 
+## Learn - PoC Guides
+
+PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
+
+[Citrix Workspace App for Microsoft Teams](/en-us/tech-zone/learn/poc-guides/citrix-workspace-app-for-microsoft-teams.html) - Learn how to enable the Citrix Workspace App for Microsoft Teams to enable your users to easily access their Citrix ShareFile documents and share them within Teams.
+
 ## Design - Reference Architectures
 
 Reference architectures are comprehensive guides that assist organizations in planning their Citrix implementations complete with use cases, recommendations, and more.

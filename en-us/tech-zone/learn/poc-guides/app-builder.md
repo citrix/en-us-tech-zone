@@ -6,7 +6,7 @@ description: Learn how to get started with Citrix App Builder and deploy Podio-b
 tz_title: Proof of Concept Guide - Use App Builder to roll out Citrix Podio-backed Broadcast and FAQ microapp templates to Citrix Workspace
 tz_products: citrix-workspace
 ---
-# Proof of Concept Guide - App Builder
+# PoC Guide: Proof of Concept Guide - Use App Builder to roll out Citrix Podio-backed Broadcast and FAQ microapp templates to Citrix Workspace
 
 ## Overview
 

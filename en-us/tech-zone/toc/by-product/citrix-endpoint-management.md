@@ -9,6 +9,8 @@ List of articles related to Citrix Endpoint Management.
 
 Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
 
+[Contact Center Solution](/en-us/tech-zone/learn/tech-insights/citrix-google-contact-center-solution.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers.
+
 [Google Chrome OS Management](/en-us/tech-zone/learn/tech-insights/google-chrome-os-management.html) - Manage Chrome OS devices with Citrix Endpoint Management.
 
 [MDX Containers for iOS](/en-us/tech-zone/learn/tech-insights/mdx-containers.html) - Citrix Endpoint Management MDX containers protect mobile apps and control their access to device resources through policy mitigating the risk of unwanted enterprise data loss.
