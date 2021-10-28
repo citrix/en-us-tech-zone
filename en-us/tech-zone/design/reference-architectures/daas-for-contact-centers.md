@@ -5,7 +5,7 @@ contributedBy: Ana Ruiz
 specialThanksTo: Dan Feller, Manjunatha Gali, Shashidhar Reddy, John Panagulias
 description: Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
 tz_title: DaaS for Contact Centers Reference Architectures
-tz_products: citrix-analytics;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops;citrix-workspace
+tz_products: citrix-analytics;citrix-endpoint-management;citrix-networking;citrix-secure-internet-access;citrix-secure-private-access;citrix-virtual-apps-and-desktops;citrix-workspace
 ---
 # Reference Architecture: DaaS for Contact Centers Reference Architectures
 
