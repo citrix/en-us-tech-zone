@@ -21,6 +21,8 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 [Citrix Value Adds to Azure Virtual Desktop](/en-us/tech-zone/learn/tech-insights/azure-virtual-desktop-value-add.html) - Learn about how Citrix provides key capabilities to increase flexibility, agility, security, and more to Azure Virtual Desktop, while also driving down costs.
 
+[Contact Center Solution](/en-us/tech-zone/learn/tech-insights/citrix-google-contact-center-solution.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers.
+
 [Microapps](/en-us/tech-zone/learn/tech-insights/microapps.html) - Increase productivity by adding microapps to Citrix Workspace. Microapps allow users to view information and perform actions without launching the full application.
 
 [Microapps Custom Integrations](/en-us/tech-zone/learn/tech-insights/microapps-custom-integrations.html) - Create custom integrations with the microapp builder through the HTTP connector.
@@ -48,6 +50,14 @@ Tech Briefs are short overview documents explaining a technology, a feature, a f
 [Workspace Microapps](/en-us/tech-zone/learn/tech-briefs/workspace-microapps.html) - Streamline functionality from complex enterprise applications creating simple actions users can complete right within their feed.
 
 [Workspace Single Sign-On](/en-us/tech-zone/learn/tech-briefs/workspace-sso.html) - Learn how Citrix Workspace provides single sign-on capabilities to SaaS apps, web apps, mobile apps, Windows virtual apps and Windows virtual desktops. In addition, learn how Workspace single sign-on can support IdP chaining configurations.
+
+## Learn - PoC Guides
+
+PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
+
+[Citrix Workspace App for Microsoft Teams](/en-us/tech-zone/learn/poc-guides/citrix-workspace-app-for-microsoft-teams.html) - Learn how to enable the Citrix Workspace App for Microsoft Teams to enable your users to easily access their Citrix ShareFile documents and share them within Teams.
+
+[Proof of Concept Guide - Use App Builder to roll out Citrix Podio-backed Broadcast and FAQ microapp templates to Citrix Workspace](/en-us/tech-zone/learn/poc-guides/app-builder.html) - Learn how to get started with Citrix App Builder and deploy Podio-backed Integrations to Workspace
 
 ## Learn - Diagrams and Posters
 

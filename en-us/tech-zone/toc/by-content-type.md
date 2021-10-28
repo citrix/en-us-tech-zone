@@ -17,6 +17,8 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 ### Citrix Endpoint Management
 
+[Contact Center Solution](/en-us/tech-zone/learn/tech-insights/citrix-google-contact-center-solution.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers.
+
 [Google Chrome OS Management](/en-us/tech-zone/learn/tech-insights/google-chrome-os-management.html) - Manage Chrome OS devices with Citrix Endpoint Management.
 
 [MDX Containers for iOS](/en-us/tech-zone/learn/tech-insights/mdx-containers.html) - Citrix Endpoint Management MDX containers protect mobile apps and control their access to device resources through policy mitigating the risk of unwanted enterprise data loss.
@@ -43,13 +45,15 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 ### Citrix Secure Internet Access
 
+[Contact Center Solution](/en-us/tech-zone/learn/tech-insights/citrix-google-contact-center-solution.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers.
+
 [Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
 [Protect contractor and temp worker access](/en-us/tech-zone/learn/tech-insights/protect-contractor-and-temp-worker-access.html) - See how to support contractors and temp workers without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
 [Secure Internet Access User Experience](/en-us/tech-zone/learn/tech-insights/secure-internet-access-user-experience.html) - Secure access to all applications, anywhere, from any device with unified security management without compromising the employee experience.
 
-### Citrix Secure Workspace Access
+### Citrix Secure Private Access
 
 [Protect apps and data on bring-your-own devices](/en-us/tech-zone/learn/tech-insights/protect-apps-and-data-on-bring-your-own-devices.html) - See how to support bring-your-own-devices without compromising IT security. The Tech Insight video incorporates Secure Internet Access, Secure Private Access, Web App Firewall and Virtual Apps and Desktops
 
@@ -68,6 +72,8 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 [Citrix Desktop-as-a-Service (DaaS)](/en-us/tech-zone/learn/tech-insights/citrix-daas.html) - Learn how Citrix Desktop-as-a-Service (DaaS) offerings enable customers to deploy workloads in the cloud within minutes.
 
 [Citrix Value Adds to Azure Virtual Desktop](/en-us/tech-zone/learn/tech-insights/azure-virtual-desktop-value-add.html) - Learn about how Citrix provides key capabilities to increase flexibility, agility, security, and more to Azure Virtual Desktop, while also driving down costs.
+
+[Contact Center Solution](/en-us/tech-zone/learn/tech-insights/citrix-google-contact-center-solution.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers.
 
 [Federated Authentication Service](/en-us/tech-zone/learn/tech-insights/federated-authentication-service.html) - Single Sign-on to Windows-based virtual apps and desktops when using a non-Active Directory based Citrix Workspace identity.
 
@@ -103,6 +109,8 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 
 [Citrix Value Adds to Azure Virtual Desktop](/en-us/tech-zone/learn/tech-insights/azure-virtual-desktop-value-add.html) - Learn about how Citrix provides key capabilities to increase flexibility, agility, security, and more to Azure Virtual Desktop, while also driving down costs.
 
+[Contact Center Solution](/en-us/tech-zone/learn/tech-insights/citrix-google-contact-center-solution.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers.
+
 [Microapps](/en-us/tech-zone/learn/tech-insights/microapps.html) - Increase productivity by adding microapps to Citrix Workspace. Microapps allow users to view information and perform actions without launching the full application.
 
 [Microapps Custom Integrations](/en-us/tech-zone/learn/tech-insights/microapps-custom-integrations.html) - Create custom integrations with the microapp builder through the HTTP connector.
@@ -120,6 +128,10 @@ Tech Insights are short, 10-15 minutes videos explaining a technology, a feature
 ### Security
 
 [Citrix Value Adds to Azure Virtual Desktop](/en-us/tech-zone/learn/tech-insights/azure-virtual-desktop-value-add.html) - Learn about how Citrix provides key capabilities to increase flexibility, agility, security, and more to Azure Virtual Desktop, while also driving down costs.
+
+### Google Cloud Platform
+
+[Contact Center Solution](/en-us/tech-zone/learn/tech-insights/citrix-google-contact-center-solution.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers.
 
 ## Tech Briefs
 
@@ -159,7 +171,7 @@ Tech Briefs are short overview documents explaining a technology, a feature, a f
 
 [Citrix Secure Internet Access](/en-us/tech-zone/learn/tech-briefs/secure-internet-access.html) - The expansive demand for remote work and the shift of applications to the cloud has made it an absolute must for enterprises to secure user Internet access. Citrix Secure Internet Access (CSIA) shifts the focus from defending perimeters to following users to ensure Internet access is secure regardless of location.
 
-### Citrix Secure Workspace Access
+### Citrix Secure Private Access
 
 [Citrix Workspace Essentials and Secure Private Access Getting Started Guide](/en-us/tech-zone/learn/tech-briefs/citrix-workspace-essentials-quickstart.html) - This guide demonstrates how to configure SaaS and internal web apps with single sign-on (SSO) in Citrix Workspace.
 
@@ -215,6 +227,10 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 [Proof of Concept-Performance Analytics](/en-us/tech-zone/learn/poc-guides/performance-analytics.html) - Learn how to get started with Citrix Analytics for Performance.
 
+### Citrix Content Collaboration
+
+[Citrix Workspace App for Microsoft Teams](/en-us/tech-zone/learn/poc-guides/citrix-workspace-app-for-microsoft-teams.html) - Learn how to enable the Citrix Workspace App for Microsoft Teams to enable your users to easily access their Citrix ShareFile documents and share them within Teams.
+
 ### Citrix Networking
 
 [nFactor for Citrix Gateway Authentication with Device Certificate](/en-us/tech-zone/learn/poc-guides/nfactor-citrix-gateway-device-certificate.html) - Learn how to implement a Proof of Concept environment consisting of nFactor for Citrix Gateway Authentication with Device Certificates.
@@ -243,7 +259,7 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 [Citrix Secure Internet Access with Citrix Virtual Apps and Desktops](/en-us/tech-zone/learn/poc-guides/secure-internet-access-cvad.html) - Learn how to set up Citrix Secure Internet Access within a Citrix Virtual Apps and Desktops environment that provides secure access to virtual desktops and applications, anywhere, from any device.
 
-### Citrix Secure Workspace Access
+### Citrix Secure Private Access
 
 [Secure Access to Azure-managed SaaS Applications and Citrix Secure Private Access](/en-us/tech-zone/learn/poc-guides/access-control-azuresso-saas.html) - Learn how to set up a Citrix Secure Private Access environment that provides enhanced security to Microsoft Azure SaaS Apps.
 
@@ -261,6 +277,8 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 
 [Citrix Virtual Apps and Desktops with Azure Virtual Desktop Hybrid](/en-us/tech-zone/learn/poc-guides/cvads-windows-virtual-desktops.html) - Learn how to deliver Azure Virtual Desktop (AVD) based desktops and apps and on-premises resources to your users in a single place. Manage both the AVD environment in Azure and your on-premises environment from a single place in Citrix Cloud with Citrix Virtual Apps and Desktops service.
 
+[Citrix Workspace App for Microsoft Teams](/en-us/tech-zone/learn/poc-guides/citrix-workspace-app-for-microsoft-teams.html) - Learn how to enable the Citrix Workspace App for Microsoft Teams to enable your users to easily access their Citrix ShareFile documents and share them within Teams.
+
 [Getting Started with Citrix Virtual Apps and Desktop Service](/en-us/tech-zone/learn/poc-guides/cvads.html) - Learn how to get started with Citrix Virtual Apps and Desktop Service to deliver virtual apps and desktops to your end users while having the management plane hosted on Citrix Cloud.
 
 [Microsoft Azure Active Directory Federated Authentication for Citrix Virtual Apps and Desktops with Citrix ADC](/en-us/tech-zone/learn/poc-guides/cvad-azuread-federation.html) - Learn how to use Microsoft Azure Active Directory as an identity provider for Citrix Virtual Apps and Desktops with Citrix ADC using SAML.
@@ -268,6 +286,12 @@ PoC guides provide step-by-step instructions to learn about functionality of the
 [Microsoft Teams optimization in Citrix Virtual Apps and Desktops environments](/en-us/tech-zone/learn/poc-guides/microsoft-teams-optimizations.html) - Learn how to deliver the Citrix HDX Optimization for Microsoft Teams in a Citrix environment. The optimization offers clear, crisp high-definition video calls, audio-video or audio-only calls to and from other Teams users, optimized Teams users and other standards-based video desktop and conference room systems. Support for screen sharing is also available.
 
 [Remote PC Access with Citrix Virtual Desktops service](/en-us/tech-zone/learn/poc-guides/remote-pc-access.html) - Learn how to remotely connect your users working from home to their physical PCs in the office. Quickly connect your on-premises physical machines to Citrix Cloud with Citrix Virtual Desktops service and allow remote access from anywhere and on any device.
+
+### Citrix Workspace
+
+[Citrix Workspace App for Microsoft Teams](/en-us/tech-zone/learn/poc-guides/citrix-workspace-app-for-microsoft-teams.html) - Learn how to enable the Citrix Workspace App for Microsoft Teams to enable your users to easily access their Citrix ShareFile documents and share them within Teams.
+
+[Proof of Concept Guide - Use App Builder to roll out Citrix Podio-backed Broadcast and FAQ microapp templates to Citrix Workspace](/en-us/tech-zone/learn/poc-guides/app-builder.html) - Learn how to get started with Citrix App Builder and deploy Podio-backed Integrations to Workspace
 
 ### Security
 
@@ -367,7 +391,7 @@ Reference architectures are comprehensive guides that assist organizations in pl
 
 [Zero Trust Network Access for Contractors and Temp Workers](/en-us/tech-zone/design/reference-architectures/protect-contractor-and-temp-worker-access.html) - This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
 
-### Citrix Secure Workspace Access
+### Citrix Secure Private Access
 
 [DaaS for Contact Centers Reference Architectures](/en-us/tech-zone/design/reference-architectures/daas-for-contact-centers.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, Citrix Workspace, Citrix Secure Internet Access, Citrix Endpoint Management and Security Analytics.
 
@@ -546,6 +570,10 @@ Deployment guides provide step-by-step instruction on how to perform key tasks a
 ## Tech Papers
 
 Tech papers are deep dives into specific problem, technology or solution providing details, leading practices and architectural insights.
+
+### Citrix Networking
+
+[Best practices for Citrix ADC Deployments](/en-us/tech-zone/build/tech-papers/best-practices-citrix-adc-deployments.html) - Tech Paper focused on the steps that a Citrix ADC administrator should follow to deploy a new ADC instance with best practice settings.
 
 ### Citrix Virtual Apps and Desktops
 

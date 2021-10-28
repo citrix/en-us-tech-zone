@@ -6,7 +6,7 @@ description: Learn how to design an environment that uses Desktop-as-a-Service a
 tz_title: Contact Center Solution
 tz_products: citrix-endpoint-management;citrix-secure-internet-access;citrix-virtual-apps-and-desktops;citrix-workspace;google-cloud-platform;
 ---
-# Tech Insight: Citrix & Google Contact Center Solution
+# Tech Insight: Contact Center Solution
 
 Contact Centers are vital with customer interaction and satisfaction. Often customer service agents are the face of a company and represent the only interface between a company and its customers. Learn how Citrix Cloud services and Google Chromebooks provide a reliable, flexible, and secure WFH environment.
 

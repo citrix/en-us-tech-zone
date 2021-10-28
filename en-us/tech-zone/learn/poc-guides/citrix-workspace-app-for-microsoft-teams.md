@@ -7,7 +7,7 @@ description: Learn how to enable the Citrix Workspace App for Microsoft Teams to
 tz_title: Citrix Workspace App for Microsoft Teams
 tz_products: citrix-content-collaboration;citrix-virtual-apps-and-desktops;citrix-workspace;
 ---
-# POC Guide:  Citrix Workspace App for Microsoft Teams
+# PoC Guide: Citrix Workspace App for Microsoft Teams
 
 ## Overview
 

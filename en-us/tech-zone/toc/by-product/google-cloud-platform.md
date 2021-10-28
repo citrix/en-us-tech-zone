@@ -5,6 +5,12 @@ layout: doc
 
 List of articles related to Google Cloud Platform.
 
+## Learn - Tech Insights
+
+Tech Insights are short, 10-15 minutes videos explaining a technology, a feature, a function with foundational technical insights and a visual walkthrough of the technology.
+
+[Contact Center Solution](/en-us/tech-zone/learn/tech-insights/citrix-google-contact-center-solution.html) - Learn how to design an environment that uses Desktop-as-a-Service and Chrome OS for Contact Centers.
+
 ## Learn - PoC Guides
 
 PoC guides provide step-by-step instructions to learn about functionality of the solution by following these guides in test environment.
