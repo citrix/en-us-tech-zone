@@ -5,7 +5,7 @@ contributedBy: Ana Ruiz
 specialThanksTo: Mayank Singh, Dan Feller, & Matthew Brooks
 description: Learn how to design an environment that uses Desktop-as-a-Service as a Business Continuity solution. This reference architecture incorporates Citrix Virtual Apps and Desktops service, SD-WAN, and Performance Analytics.
 tz_title: Desktop-as-a-Service for Business Continuity
-tz_products: citrix-analytics;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;other;security
+tz_products: citrix-analytics;citrix-networking;citrix-secure-internet-access;citrix-secure-private-access;citrix-virtual-apps-and-desktops-standard-for-azure;citrix-virtual-apps-and-desktops;citrix-workspace;other;security
 ---
 # Reference Architecture: Desktop-as-a-Service for Business Continuity
 

@@ -4,7 +4,7 @@ h3InToc: true
 contributedBy: Florin Lazurca
 description: This reference architecture explains CompanyA's Zero Trust Network Access plan to protect contractor and temp worker access to its data and apps.
 tz_title: Zero Trust Network Access for Contractors and Temp Workers
-tz_products: citrix-analytics;citrix-networking;citrix-secure-internet-access;citrix-secure-workspace-access;citrix-virtual-apps-and-desktops;citrix-workspace
+tz_products: citrix-analytics;citrix-networking;citrix-secure-internet-access;citrix-secure-private-access;citrix-virtual-apps-and-desktops;citrix-workspace
 ---
 # Reference Architecture: Zero Trust Network Access for Contractors and Temp Workers
 
