@@ -5,6 +5,10 @@ layout: doc
 
 Technical deep dives into specific problem, technology or solution providing details, leading practices and architectural insights.
 
+## Citrix Networking
+
+[Best practices for Citrix ADC Deployments](/en-us/tech-zone/build/tech-papers/best-practices-citrix-adc-deployments.html) - Tech Paper focused on the steps that a Citrix ADC administrator should follow to deploy a new ADC instance with best practice settings.
+
 ## Citrix Virtual Apps and Desktops
 
 [Deploying Google Chrome](/en-us/tech-zone/build/tech-papers/google-chrome.html) - Tech Paper focused on installation, configuration, and various optimizations for Google Chrome browser running on Citrix Virtual Apps and Desktops.
