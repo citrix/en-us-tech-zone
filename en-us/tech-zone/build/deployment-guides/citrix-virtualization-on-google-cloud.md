@@ -42,7 +42,7 @@ Before you build a Citrix virtualization system on **ANY** platform, you need to
 
 ## 2 Prepare Google Cloud Project
 
-The goal is this section is to prepare the Google Cloud project which is being used as your Citrix Cloud Virtual Apps and Desktops Service [Resource Location](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html). You can either create a new or gain access to an existing Google Cloud project.  
+The goal is this section is to prepare the Google Cloud project which is being used as your Citrix Cloud Virtual Apps and Desktops Service [Resource Location](/en-us/citrix-virtual-apps-desktops-service/install-configure/resource-location.html). You can either create a new or gain access to an existing Google Cloud project.
 
 When complete, you have:
 
