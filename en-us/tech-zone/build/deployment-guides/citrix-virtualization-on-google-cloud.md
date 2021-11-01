@@ -148,13 +148,13 @@ Google Identity and Access Management (IAM) allows you to grant granular access 
 Citrix Cloud uses **two** separate service accounts within the Google Cloud project:
 
 -  **Cloud Build Service Account** – provisioned **automatically** once the Google APIs are enabled, the Cloud Build service account is identifiable with an email address that begins with the Project ID, for e.g., [\<project-id\>@cloudbuild.gserviceaccount.com](mailto:112233445566@cloudbuild.gserviceaccount.com). The Cloud Build Account requires the following three roles:
-  
+
     -  Cloud Build Service Account (assigned by default)
 
     -  Compute Instance Admin
-  
+
     -  Service Account User
-  
+
 -  Citrix Cloud Service Account - the Service Account is used by Citrix Cloud to authenticate to Google Cloud using a pre-generated key. The Service Account enables Citrix Cloud to access the Google project, provision, and manage machines. The Service Account is created **manually** and identifiable with an email address, for e.g., [\<my-service-account\>@\<project-id\>.iam.gserviceaccount.com](mailto:serviceaccount@xxx-deployment-iam.gserviceaccount.com). By applying the principle of least privilege, grant the following roles to the Service Account:
 
     -  Compute Admin
