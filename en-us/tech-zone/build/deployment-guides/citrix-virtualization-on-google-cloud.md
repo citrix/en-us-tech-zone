@@ -3,11 +3,10 @@ layout: doc
 h3InToc: true
 contributedBy: Sameer Sharma
 specialThanksTo: Rick Dehlinger
-description: Learn how to deploy Citrix infrastructure on the Google Cloud.
+description: Learn how to deploy Citrix infrastructure on the Google Cloud
 tz_title: Citrix virtualization on Google Cloud
 tz_products: citrix-virtual-apps-and-desktops;
 ---
-
 # Citrix virtualization on Google Cloud
 
 ## Deployment and Configuration Guide
