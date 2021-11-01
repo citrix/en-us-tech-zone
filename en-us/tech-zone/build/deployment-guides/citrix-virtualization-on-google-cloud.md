@@ -1564,7 +1564,7 @@ The Citrix Virtual Apps and Desktops service (commonly referred to as "CVADS" fo
 
 6.  You can now view the Virtual Apps and Desktops Service options
 
-    ![view the Virtual Apps and Desktops Service](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_view-virtualapps-desktops-service.png )
+    ![view the Virtual Apps and Desktops Service](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_view-virtualapps-desktops-service.png)
 
 ### 8.2 Configure the Hosting Connection and Resources
 
@@ -1668,7 +1668,7 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 9.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-3.png)
 
 10.  Accept the default options and click **Next**
 
