@@ -1676,7 +1676,7 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 11.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-11.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-3-11.png)
 
 12.  Input the first Cloud Connector fully qualified domain name: **cc1.ctx.lab**
 
@@ -1684,7 +1684,7 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 14.  Click **Add**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-8.3-14.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-8-3-14.png)
 
 15.  Input the second Cloud Connector fully qualified domain name: **cc2.ctx.lab**
 
@@ -1692,21 +1692,21 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 17.  Click **Add**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-8.3-17.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-add-8-3-17.png)
 
 18.  Confirm both the Cloud Connectors are added successfully
 
 19.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-19.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-3-19.png)
 
 20.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-20.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-3-20.png)
 
 21.  Accept the default firewall setting. Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-21.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-3-21.png)
 
 22.  Review the summary screen. Click **Install**
 
@@ -1720,11 +1720,11 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 24.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.3-24.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-3-24.png)
 
 25.  Click **Finish**. The installer reboots the machine to complete the installation process. Continue to shut down the machine.
 
-     ![Click finish](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish-8.3-25.png)
+     ![Click finish](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish-8-3-25.png)
 
 ### 8.4 Create Machine Catalogs
 
@@ -1738,13 +1738,13 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 3.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-3.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-4-3.png)
 
 4.  Select **Multi-session OS**
 
 5.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-5.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-4-5.png)
 
 6.  Select **Machines that are power managed (for example, virtual machines or blade PCs)**
 
@@ -1752,13 +1752,13 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 8.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-8.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-4-8.png)
 
 9.  Click your master image: **mcs**
 
 10.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-10.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-4-10.png)
 
 11.  How many virtual machines do you want to create: 2
 
@@ -1766,13 +1766,13 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 13.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-13.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-4-13.png)
 
 14.  Input the account naming scheme: **VDA##**
 
 15.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-15.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-4-15.png)
 
 16.  Click **Enter credentials**
 
@@ -1784,11 +1784,11 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 19.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-19.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-4-19.png)
 
 20.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.4-20.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-4-20.png)
 
 21.  Input a unique Machine catalog name: **GCP – Hosted Apps Catalog**
 
@@ -1796,7 +1796,7 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 23.  Click **Finish**
 
-     ![Click finish](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish-8.4-23.png)
+     ![Click finish](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish-8-4-23.png)
 
 24.  Click Hide progress to return to the Citrix Cloud Console
 
@@ -1818,7 +1818,7 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 29.  Click **Yes**
 
-     ![Click yes](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-yes-8.4-29.png)
+     ![Click yes](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-yes-8-4-29.png)
 
 30.  The **Power State** column displays **On**
 
@@ -1846,19 +1846,19 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 3.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.5-3.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-5-3.png)
 
 4.  Increase the value to **2**
 
 5.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.5-5.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-5-5.png)
 
 6.  Select the **Allow any authenticated users to use this delivery group** option
 
 7.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.5-7.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-5-7.png)
 
 8.  Click **Add** drop-down menu
 
@@ -1872,13 +1872,13 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 12.  Click **OK**
 
-     ![Click ok](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-ok-8.5-12.png)
+     ![Click ok](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-ok-8-5-12.png)
 
 13.  Review your application selection
 
 14.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next8.5-14.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next8-5-14.png)
 
 15.  Click **Add** to configure Published Desktop
 
@@ -1890,13 +1890,13 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 18.  Click **OK**
 
-     ![Click ok](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-ok-8.5-18.png)
+     ![Click ok](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-ok-8-5-18.png)
 
 19.  Review the Desktops configuration
 
 20.  Click **Next**
 
-     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8.5-20.png)
+     ![Click next](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-next-8-5-20.png)
 
 21.  Input unique Delivery Group name: **GCP-Hosted Apps Delivery Group**
 
@@ -1904,7 +1904,7 @@ For this Deployment and Configuration Guide, we're going to build your first non
 
 23.  Click **Finish**
 
-     ![Click finish](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish-8.5-23.png)
+     ![Click finish](/en-us/tech-zone/build/media/deployment-guides_citrix-virtualization-on-google-cloud_click-finish-8-5-23.png)
 
 24.  Double click on the Delivery Group to view the virtual machines
 
